@@ -254,6 +254,13 @@ def _is_repeated_safe_simplification(ptype: str, before: str, after: str) -> boo
     return ok
 
 
+def _is_duplicate_table_row_delete(before: str, after: str) -> bool:
+    if after.strip():
+        return False
+    stripped = before.strip()
+    return stripped.startswith("|") and stripped.endswith("|")
+
+
 _NEUTRAL_EVIDENCE_WORDS = frozenset({
     "examined", "evaluated", "assessed", "studied", "tested",
     "investigated", "reported", "described",
@@ -834,6 +841,18 @@ def apply_patches(
             ))
             continue
         if n_occurrences > 1:
+            if _is_duplicate_table_row_delete(before, after):
+                new_md = _apply_text_patch(new_md, before, after)
+                results.append(PatchResult(
+                    patch_id=pid, patch_type=ptype, severity=sev,
+                    decision="applied",
+                    reason_for_decision=(
+                        f"duplicate table row appeared {n_occurrences}x; "
+                        f"deleted one occurrence. {full_reason}"
+                    ),
+                    before=before, after=after,
+                ))
+                continue
             if _is_cited_artifact_delete(
                 ptype, before, after,
             ) or _is_role_repair_artifact_delete(

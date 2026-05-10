@@ -735,10 +735,15 @@ def build_tension_matrix(
     to compare, but the matrix shell still carries the receipts so
     downstream code has something to render.
     """
-    sorted_summaries = sorted(summaries, key=lambda s: s.receipt_id)
+    deduped_summaries = {
+        s.receipt_id: s for s in sorted(summaries, key=lambda s: s.receipt_id)
+    }
+    sorted_summaries = list(deduped_summaries.values())
     pairs: list[Tension] = []
     for i, a in enumerate(sorted_summaries):
         for b in sorted_summaries[i + 1:]:
+            if a.receipt_id == b.receipt_id:
+                continue
             pairs.append(_classify_pair(a, b))
     return TensionMatrix(
         receipts=tuple(sorted_summaries),

@@ -146,7 +146,7 @@ def test_restore_required_section_body_when_post_processing_strips_depth() -> No
         ),
     )
     out = orch._restore_rendered_section_contract(paper, sections)
-    assert "Too short." not in out
+    assert "Still short." not in out
     assert orch._word_count(
         orch._rendered_section_match(
             out, "## Cross-Domain Synthesis",
@@ -157,7 +157,7 @@ def test_restore_required_section_body_when_post_processing_strips_depth() -> No
     assert "word849" in out
 
 
-def test_restore_required_section_body_does_not_reintroduce_unsafe_source() -> None:
+def test_restore_required_section_body_drops_unsafe_short_restore() -> None:
     paper = "## Introduction\n\nToo short.\n"
     sections = (
         SynthesisSection(
@@ -170,16 +170,12 @@ def test_restore_required_section_body_does_not_reintroduce_unsafe_source() -> N
         ),
     )
     out = orch._restore_rendered_section_contract(paper, sections)
-    assert "Unsafe numeric source-context sentence" not in out
-    assert "compiled from" not in out
-    assert "compiler" not in out
-    assert "direct clinical evidence" in out
-    assert orch._word_count(
-        orch._rendered_section_match(out, "## Introduction").group(1),
-    ) >= 400
+    body = orch._rendered_section_match(out, "## Introduction").group(1)
+    assert "Unsafe numeric source-context sentence" not in body
+    assert body.strip() == "Too short."
 
 
-def test_restore_required_section_body_compiles_safe_fallback() -> None:
+def test_restore_required_section_body_uses_safe_short_writer_section() -> None:
     paper = "## Conclusion\n\nToo short.\n"
     sections = (
         SynthesisSection(
@@ -191,15 +187,13 @@ def test_restore_required_section_body_compiles_safe_fallback() -> None:
     out = orch._restore_rendered_section_contract(paper, sections)
     match = orch._rendered_section_match(out, "## Conclusion")
     assert match is not None
-    assert orch._word_count(match.group(1)) >= 250
     assert "Too short." not in out
     assert "compiled from" not in out
     assert "compiler" not in out
-    assert "off-label for geroprotection" in out
-    assert "receipt-bound synthesis" not in out
+    assert "Still short." in match.group(1)
 
 
-def test_restore_public_surface_floors_without_typed_sections() -> None:
+def test_restore_public_surface_floors_does_not_inject_filler() -> None:
     paper = (
         "## Abstract\n\n" + _words(160) + "\n\n"
         "## Introduction\n\nToo short.\n\n"
@@ -212,14 +206,8 @@ def test_restore_public_surface_floors_without_typed_sections() -> None:
         "## Conclusion\n\n" + _words(260) + "\n"
     )
     out, log = orch._restore_public_surface_floors(paper)
-    assert log == [{
-        "fix_type": "surface_floor_backstop",
-        "section": "Introduction",
-        "reason": "replace_short_section",
-    }]
-    body = orch._rendered_section_match(out, "## Introduction").group(1)
-    assert "Too short." not in body
-    assert orch._word_count(body) >= 400
+    assert out == paper
+    assert log == []
 
 
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
@@ -236,8 +224,7 @@ def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     )
     body = orch._rendered_section_match(out, "## Results").group(1)
     assert "word499" not in body
-    assert "receipt-level summaries" in body
-    assert orch._word_count(body) >= 500
+    assert body.strip() == "Too short."
 
 
 def test_restore_contract_collapses_consecutive_qei_headings() -> None:
@@ -252,17 +239,3 @@ def test_restore_contract_collapses_consecutive_qei_headings() -> None:
     assert out.count("## Quantitative Evidence Index") == 1
     assert "## Quantitative Evidence Index — Urolithin A" in out
     assert "57%" in out
-
-
-def test_public_section_backstop_covers_abstract() -> None:
-    md = orch._compile_public_section_backstop("Abstract", 150)
-    assert md.startswith("## Abstract")
-    assert orch._word_count(md) >= 150
-
-
-def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -> None:
-    md = orch._compile_public_section_backstop("Results", 500)
-    body = md.split("\n\n", 1)[1]
-    paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
-    assert orch._word_count(body) >= 500
-    assert len(paragraphs) == len(set(paragraphs))

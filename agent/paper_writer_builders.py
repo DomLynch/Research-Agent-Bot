@@ -140,6 +140,43 @@ _HEDGE_PHRASES = (
 )
 
 
+_OUTCOME_TOKEN_STOPWORDS = {
+    "and", "or", "the", "a", "an", "of", "for", "in", "to", "from",
+    "outcome", "outcomes", "endpoint", "endpoints", "finding",
+    "findings", "clinical", "function", "functions", "effect",
+    "effects", "domain", "domains",
+}
+
+
+def _word_tokens(text: str) -> set[str]:
+    return {
+        w for w in re.findall(r"[a-z0-9]+", text.lower())
+        if w and w not in _OUTCOME_TOKEN_STOPWORDS
+    }
+
+
+def _results_subsection_accepts_receipts(
+    heading: str,
+    receipt_ids: Sequence[str],
+    outcome_by_id: dict[str, str],
+) -> bool:
+    """Results subsections are outcome-scoped.
+
+    If the LLM puts a muscle-function receipt inside a longevity or
+    cardiometabolic H3, drop that paragraph instead of relying on a
+    later scrubber. Cross-domain interpretation belongs in the
+    Cross-Domain Synthesis section, not Results-by-outcome.
+    """
+    heading_tokens = _word_tokens(heading)
+    if not heading_tokens:
+        return True
+    for rid in receipt_ids:
+        outcome_tokens = _word_tokens(outcome_by_id.get(rid, ""))
+        if outcome_tokens and outcome_tokens.isdisjoint(heading_tokens):
+            return False
+    return True
+
+
 def _check_scoped_paragraph(
     text: str,
     topic: str,
@@ -266,6 +303,10 @@ def build_results_from_parsed(
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
+    outcome_by_id = {
+        r.receipt_id: str(getattr(r, "outcome_class", "") or "")
+        for r in accepted
+    }
     corpus_norm = _accepted_corpus_norm(accepted)
     body_lines: list[str] = ["## Results", ""]
     anchors: list[SynthesisClaimAnchor] = []
@@ -288,6 +329,10 @@ def build_results_from_parsed(
             repaired_rids, _repair_log = repair_receipt_ids(
                 [str(r) for r in rids], accepted_ids,
             )
+            if not _results_subsection_accepts_receipts(
+                str(h3), repaired_rids, outcome_by_id,
+            ):
+                continue
             ok, _reason = _check_anchored_paragraph(
                 text, repaired_rids, accepted_ids, corpus_norm,
             )

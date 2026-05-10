@@ -21,10 +21,9 @@ Fix #21 reshape (per the asymmetric-fix reviewer guidance):
     Tension kind | Severity | Receipt A | Receipt B | Outcome class
     | Summary | Practical implication
 
-  Table 4 (supplemental) — Per-Domain Risk of Bias
-    Cochrane RoB-2 / ROBINS-I-style per-tier domain grades
-    (allocation, blinding, attrition, …). Kept from Fix #14 for
-    PhD-grade reviewer credibility.
+  Table 4 (supplemental) — Design-Level Evidence Weighting Heuristic
+    Tier-derived design limitation grades (allocation, blinding,
+    attrition, …). This is not a formal source-text RoB assessment.
 
 Architecture: pure deterministic, no LLM, no I/O. Operates on a list
 of ReceiptSummary objects (post-citation-substitution if Fix #3 ran)
@@ -405,22 +404,33 @@ def render_table_3_cross_domain_tensions(matrix: object | None) -> str:
             "no non-orthogonal tensions in matrix", "—",
         ) + "\n"
     rows: list[str] = []
+    seen: set[tuple[str, str, str, str]] = set()
     for t in pairs:
         kind = _safe(getattr(t, "kind", None), "—")
         sev = getattr(t, "severity", 0) or 0
+        a = _safe(getattr(t, "receipt_a_id", None), "—")
+        b = _safe(getattr(t, "receipt_b_id", None), "—")
+        outcome = _public_label(getattr(t, "outcome_class", None))
+        if a == b:
+            continue
+        left, right = sorted((a, b))
+        key = (left, right, outcome, _public_label(kind))
+        if key in seen:
+            continue
+        seen.add(key)
         rows.append(_row(
             _public_label(kind),
             str(sev),
-            _safe(getattr(t, "receipt_a_id", None), "—"),
-            _safe(getattr(t, "receipt_b_id", None), "—"),
-            _public_label(getattr(t, "outcome_class", None)),
+            a,
+            b,
+            outcome,
             _public_label(getattr(t, "summary", None)),
             _tension_implication(kind, int(sev)),
         ))
     return header + "\n".join(rows) + "\n"
 
 
-# --- Table 4 (supplemental): Per-Domain Risk of Bias --------------------
+# --- Table 4 (supplemental): Design-level evidence weighting -------------
 
 
 # Domain → grade. Each tier gets a tuple matching the column order:
@@ -452,17 +462,13 @@ def _rob_domains(tier: str) -> tuple[str, ...]:
     return _ROB_DOMAINS_BY_TIER.get(tier, _ROB_DOMAINS_BY_TIER["unknown"])
 
 
-# Fix #26: which RoB framework applies per study tier. Reviewers
-# expect to see the named tool, not just generic "RoB". Cochrane
-# RoB-2 for RCTs, ROBINS-I for observational, SYRCLE's risk-of-bias
-# tool for animal studies, AMSTAR-2-style for systematic reviews.
 _ROB_TOOL_BY_TIER: dict[str, str] = {
-    "A1": "Cochrane RoB-2",
-    "A2": "Cochrane RoB-2",
-    "B1": "AMSTAR-2 (review)",
-    "B2": "ROBINS-I",
-    "C1": "SYRCLE (animal)",
-    "C2": "SYRCLE (in-vitro)",
+    "A1": "RCT design",
+    "A2": "RCT biomarker design",
+    "B1": "review/synthesis design",
+    "B2": "observational design",
+    "C1": "animal-model design",
+    "C2": "in-vitro design",
     "unknown": "n/a",
 }
 
@@ -507,7 +513,7 @@ def _weight_in_synthesis(
     d = (directness or "").lower()
     r = (overall_rob or "unclear").lower()
     if r == "high":
-        return "**hypothesis-generating** (high RoB on load-bearing domain)"
+        return "**hypothesis-generating** (high design limitation)"
     if t == "A1" and d == "direct":
         return "**load-bearing** (direct clinical RCT)"
     if t == "A2" or (t == "A1" and d == "mechanistic"):
@@ -522,40 +528,26 @@ def _weight_in_synthesis(
 
 
 def render_table_4_evidence_limitations(receipts: list) -> str:
-    """Table 4 (supplemental) — per-study × per-domain RoB grades.
-
-    Cochrane RoB-2 / ROBINS-I / SYRCLE / AMSTAR-2 terminology where
-    applicable. Per-tier defaults are pipeline-level (derived from
-    evidence_tier metadata, NOT extracted from source text) — caveat
-    above the table makes this explicit so a Cochrane-trained reviewer
-    doesn't mistake it for a per-paper assessment from the source PDFs.
-
-    Fix #24 + #26: adds Tool column (which RoB framework applies),
-    Overall RoB column (worst-of roll-up across per-domain grades),
-    and Weight-in-Synthesis column (qualitative contribution label
-    derived from tier × directness × overall_rob). Together these
-    turn the table from a 7-domain grade dump into the actual
-    evidence-weighting table reviewers expect."""
+    """Table 4: tier-derived design weighting, not formal RoB."""
     header_cells = (
-        ["Citation", "Tier", "Tool"]
+        ["Citation", "Tier", "Design class"]
         + list(_ROB_DOMAIN_HEADERS)
-        + ["Overall RoB", "Weight in synthesis", "Effect direction notes"]
+        + ["Overall limitation", "Weight in synthesis", "Effect direction notes"]
     )
     sep_cells = ["---"] * len(header_cells)
     header = (
-        "## Table 4 (supplemental): Per-Domain Risk of Bias + "
-        "Synthesis Weight\n\n"
-        "*Per-domain grades + the named RoB tool are derived from "
+        "## Table 4 (supplemental): Design-Level Evidence Weighting "
+        "Heuristic\n\n"
+        "*Per-domain grades + the named design tool are derived from "
         "each study's evidence tier (A1/A2/B1/B2/C1/C2) — they capture "
-        "design-level limitations, NOT a per-paper Cochrane RoB-2 / "
-        "ROBINS-I assessment from the source text. Domains follow "
-        "Cochrane RoB-2 (RCTs), ROBINS-I (observational), SYRCLE "
-        "(animal), and AMSTAR-2 (systematic review) terminology; "
+        "design-level limitations, NOT a formal source-text risk-of-bias "
+        "assessment. Domains use framework-compatible labels by design "
+        "class; "
         "`n/a` indicates the domain is not meaningful for that design "
         "(e.g. blinding for an observational cohort). The "
         "**Weight in synthesis** column is the qualitative weighting "
         "the synthesis applies to each receipt — derived from "
-        "tier × directness × overall RoB.*\n\n"
+        "tier × directness × overall limitation.*\n\n"
         + _row(*header_cells) + "\n"
         + _row(*sep_cells) + "\n"
     )
@@ -786,7 +778,7 @@ def render_all_tables(
         "the tables; prose references them. Tables 1-3 follow the "
         "Researka v1 schema (included studies, per-study endpoint "
         "evidence, cross-domain tensions); Table 4 is a supplemental "
-        "Cochrane RoB-2 / ROBINS-I per-domain risk-of-bias roll-up; "
+        "design-level evidence-weighting heuristic; "
         "Table 5 surfaces the underlying per-paper numeric index.*\n\n"
     )
     return (

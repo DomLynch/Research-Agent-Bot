@@ -192,14 +192,17 @@ def _restore_required_section_bodies(
         floor = _REQUIRED_SECTIONS.get(title)
         if floor is None:
             continue
-        fallback_md = _compile_public_section_backstop(title, floor)
         rendered = _rendered_section_match(out, heading)
         original = section.body_md.strip()
-        original_long_enough = (
+        typed_safe = (
             prefer_typed_sections
-            and _word_count(_section_body_text(original, heading)) >= floor
+            and not _section_body_has_public_residue(
+                _section_body_text(original, heading),
+            )
         )
-        replacement_md = original if original_long_enough else fallback_md
+        if not typed_safe:
+            continue
+        replacement_md = original
         if rendered is not None:
             rendered_body = rendered.group(1)
             if _word_count(rendered_body) >= floor:
@@ -228,473 +231,13 @@ def _restore_required_section_bodies(
 def _restore_public_surface_floors(
     paper_md: str,
 ) -> tuple[str, list[dict[str, str]]]:
-    """Final public-section floor guard, independent of writer objects.
+    """Do not synthesize filler prose after review/scrub.
 
-    Late patching can shorten a rendered section after the typed
-    section contract was restored. This pass reads the public markdown
-    itself and compiles a safe corpus-level backstop for any required
-    journal-surface section still below its floor.
+    Short or missing sections should fail the public gates so the writer
+    can be fixed at source. Padding them here created public scaffold
+    leakage and stale-count prose.
     """
-    try:
-        from agent.journal_surface_gate import _REQUIRED_SECTIONS
-    except ImportError:
-        return paper_md, []
-    out = paper_md
-    log: list[dict[str, str]] = []
-    titles = tuple(_REQUIRED_SECTIONS.keys())
-    for idx, title in enumerate(titles):
-        floor = int(_REQUIRED_SECTIONS[title])
-        heading = f"## {title}"
-        fallback_md = _compile_public_section_backstop(title, floor)
-        if not fallback_md:
-            continue
-        match = _rendered_section_match(out, heading)
-        if match is not None and _word_count(match.group(1)) >= floor:
-            continue
-        if match is not None:
-            out = (
-                out[:match.start()].rstrip() + "\n\n"
-                + fallback_md + "\n\n"
-                + out[match.end():].lstrip()
-            ).lstrip()
-            reason = "replace_short_section"
-        else:
-            next_headings = tuple(f"## {t}" for t in titles[idx + 1:])
-            pos = _first_heading_after(out, next_headings + ("## References",), 0)
-            if pos < 0:
-                out = out.rstrip() + "\n\n" + fallback_md + "\n"
-            else:
-                out = (
-                    out[:pos].rstrip() + "\n\n"
-                    + fallback_md + "\n\n"
-                    + out[pos:].lstrip()
-                )
-            reason = "insert_missing_section"
-        log.append({
-            "fix_type": "surface_floor_backstop",
-            "section": title,
-            "reason": reason,
-        })
-    return out, log
-
-
-def _topic_display_name() -> str:
-    topic = _ACTIVE_TOPIC.replace("_", " ").replace("-", " ").strip()
-    return topic or "the topic"
-
-
-def _compile_public_section_backstop(title: str, floor: int) -> str:
-    """Safe public-prose fallback compiled from manifest metadata.
-
-    The fallback must read like conservative manuscript prose. It may
-    use only corpus-level metadata already present in the run manifest:
-    receipt counts, outcome/effect buckets, directness tiers, citation
-    tokens, and tension counts. It must not restore source-level numeric
-    claims that were stripped for source-context safety.
-    """
-    allowed = {
-        "Abstract", "Introduction", "Background", "Results",
-        "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
-    }
-    if title not in allowed:
-        return ""
-    topic = _topic_display_name()
-    ctx = _section_backstop_context()
-    receipt_n = ctx["receipt_n"]
-    claim_n = ctx["claim_n"]
-    tension_n = ctx["tension_n"]
-    direct = ctx["direct"]
-    indirect = ctx["indirect"]
-    mechanistic = ctx["mechanistic"]
-    pos = ctx["positive"]
-    neg = ctx["negative"]
-    null = ctx["null"]
-    mixed = ctx["mixed"]
-    direct_refs = ctx["direct_refs"]
-    mech_refs = ctx["mech_refs"]
-    pos_refs = ctx["positive_refs"]
-    null_refs = ctx["null_refs"]
-    neg_refs = ctx["negative_refs"]
-    thesis = ctx["thesis"]
-
-    paragraphs_by_title = {
-        "Abstract": [
-            (
-                f"This paper synthesizes {topic} as an aging-related "
-                f"intervention across {receipt_n} accepted source papers and "
-                f"{claim_n} high-confidence extracted claims."
-            ),
-            (
-                f"The evidence profile contains {direct} direct clinical "
-                f"receipt(s), {indirect} indirect clinical receipt(s), and "
-                f"{mechanistic} mechanistic or model-system receipt(s), with "
-                f"{tension_n} non-orthogonal tension(s) across the receipt "
-                "graph."
-            ),
-            (
-                f"Positive receipt-level signals concentrate in {pos}, null "
-                f"signals in {null}, and negative signals in {neg}. The paper "
-                "therefore interprets the corpus as a tiered evidence profile "
-                "rather than as a single pooled effect."
-            ),
-            (
-                f"The conclusion is that {topic} remains a bounded "
-                "geroscience case: mechanistic plausibility and selected "
-                "clinical signals justify further targeted testing, while "
-                "mixed and null findings limit any unqualified anti-aging "
-                "claim."
-            ),
-        ],
-        "Introduction": [
-            (
-                f"This synthesis evaluates {topic} as an aging-related "
-                f"intervention across {receipt_n} accepted source papers and "
-                f"{claim_n} high-confidence extracted claims. The review is "
-                "organized around the distinction between direct clinical "
-                "evidence, indirect clinical evidence, and mechanistic evidence "
-                "so that biological plausibility is not confused with clinical "
-                "certainty."
-            ),
-            (
-                f"The corpus contains {direct} direct clinical receipt(s), "
-                f"{indirect} indirect clinical receipt(s), and {mechanistic} "
-                "mechanistic or model-system receipt(s). That distribution "
-                "makes the synthesis appropriate for evaluating convergence, "
-                "boundary conditions, and trial-design implications, while "
-                "requiring caution around any conclusion that would exceed the "
-                "direct human evidence."
-            ),
-            (
-                f"The thesis is: {thesis} This thesis is treated "
-                "as an organizing claim, not as a substitute for the receipt "
-                "table, because the source record includes supportive, null, "
-                "and adverse signals across different outcome classes."
-            ),
-        ],
-        "Background": [
-            (
-                f"The background evidence for {topic} is heterogeneous rather "
-                "than uniformly confirmatory. Direct clinical receipts such as "
-                f"{direct_refs} are interpreted separately from mechanistic "
-                f"receipts such as {mech_refs}, because these evidence roles "
-                "answer different questions about aging biology and clinical "
-                "translation."
-            ),
-            (
-                "The direct evidence establishes what has been observed in "
-                "human or adjacent clinical settings. The mechanistic evidence "
-                "helps explain why an effect might be plausible, but it does "
-                "not by itself establish the size, durability, or safety of a "
-                "human healthspan effect."
-            ),
-            (
-                f"Across the accepted receipts, positive signals cluster around "
-                f"{pos}; null signals around {null}; and negative or adverse "
-                f"signals around {neg}. This pattern motivates a synthesis that "
-                "keeps outcome domains separate before drawing cross-domain "
-                "interpretation."
-            ),
-        ],
-        "Results": [
-            (
-                f"The accepted {topic} corpus contributes {receipt_n} receipt-"
-                f"level summaries and {claim_n} high-confidence claims. "
-                f"Positive receipt-level signals are represented by {pos_refs}; "
-                f"null signals by {null_refs}; and negative signals by "
-                f"{neg_refs}. These groupings describe the direction of the "
-                "validated receipt summaries, not a pooled treatment estimate."
-            ),
-            (
-                f"Outcome-level interpretation remains mixed. Positive signals "
-                f"are concentrated in {pos}, while null signals are concentrated "
-                f"in {null}. Negative signals are concentrated in {neg}. The "
-                "result is not a single uniform effect profile, but a set of "
-                "domain-specific findings that differ by endpoint, evidence "
-                "tier, and study context."
-            ),
-            (
-                f"The tension matrix identifies {tension_n} non-orthogonal "
-                "tension(s). These tensions are load-bearing because they show "
-                "where receipts do not simply accumulate in the same direction. "
-                "The synthesis therefore treats disagreement and null findings "
-                "as evidence, not as noise to be smoothed away."
-            ),
-        ],
-        "Cross-Domain Synthesis": [
-            (
-                f"Cross-domain interpretation of {topic} is constrained by the "
-                f"relationship between clinical receipt(s) ({direct_refs}) and "
-                f"mechanistic receipt(s) ({mech_refs}). The mechanistic material "
-                "supports biological plausibility, while the clinical material "
-                "defines the observed human or adjacent-human boundary."
-            ),
-            (
-                f"The main cross-domain pattern is the coexistence of positive "
-                f"signals in {pos} with null signals in {null} and negative "
-                f"signals in {neg}. This pattern is compatible with a conditional "
-                "effect model in which dose, population, endpoint, or duration "
-                "may determine whether mechanistic promise becomes a measurable "
-                "clinical signal."
-            ),
-            (
-                f"The {tension_n} non-orthogonal tension(s) prevent the evidence "
-                "from being reduced to a simple positive or negative verdict. "
-                "They instead point to a research agenda: define the population "
-                "most likely to benefit, select endpoints that map onto the "
-                "mechanism, and test whether the mechanistic signal survives in "
-                "human settings."
-            ),
-        ],
-        "Discussion": [
-            (
-                f"The {topic} evidence base is best interpreted as conditionally "
-                "supportive rather than definitive. The receipt graph contains "
-                f"{direct} direct clinical receipt(s) and {mechanistic} "
-                "mechanistic receipt(s), so the strongest claims concern where "
-                "signals converge and where translation remains uncertain."
-            ),
-            (
-                f"Positive receipts ({pos_refs}) are important, but they must be "
-                f"read alongside null receipts ({null_refs}) and negative "
-                f"receipts ({neg_refs}). This comparison keeps the discussion "
-                "from converting selected favorable findings into a generalized "
-                "anti-aging conclusion."
-            ),
-            (
-                "The practical implication is a calibrated research position. "
-                f"{topic.title()} may justify further targeted testing when the "
-                "mechanistic rationale, clinical endpoint, and population risk "
-                "profile align, but the present corpus does not justify claims "
-                "that ignore the null or adverse parts of the receipt graph."
-            ),
-        ],
-        "Limitations": [
-            (
-                f"The principal limitation is evidence-role imbalance. The "
-                f"accepted corpus contains {direct} direct clinical receipt(s), "
-                f"{indirect} indirect clinical receipt(s), and {mechanistic} "
-                "mechanistic or model-system receipt(s), which means causal "
-                "interpretation depends on how much weight is assigned to each "
-                "evidence tier."
-            ),
-            (
-                "A second limitation is endpoint heterogeneity. Receipt-level "
-                f"signals span {pos}, {null}, {neg}, and {mixed}; these domains "
-                "cannot be pooled narratively without losing clinically relevant "
-                "differences in measurement, population, and study design."
-            ),
-            (
-                "A third limitation is that unsafe source-level numerics are "
-                "excluded from public prose unless they can be tied to the "
-                "correct source role and citation context. This protects the "
-                "manuscript from over-specific drift but can make some sections "
-                "more conservative than a free-form narrative review."
-            ),
-        ],
-        "Conclusion": [
-            (
-                f"The final interpretation is deliberately tiered. {topic.title()} "
-                "has a biologically plausible geroscience rationale and selected "
-                "clinical signals, but the corpus does not support treating "
-                "mechanistic target engagement, intermediate biomarkers, and "
-                "patient-relevant outcomes as interchangeable evidence."
-            ),
-            (
-                f"The strongest interpretation is that positive signals in {pos} "
-                f"coexist with null signals in {null} and negative signals in "
-                f"{neg}. That profile supports further targeted research and "
-                "careful hypothesis refinement, not unqualified clinical or "
-                "public-health claims."
-            ),
-            (
-                "Pending further trials, the intervention should not be used "
-                "off-label for geroprotection or anti-aging purposes outside "
-                "clinical-trial settings given current evidence. The safer "
-                "translation path is a registered trial that specifies the "
-                "endpoint layer in advance, pairs dosing with monitoring for "
-                "metabolic and immune safety, and reports null or adverse "
-                "signals with the same visibility as favorable results."
-            ),
-            (
-                f"Future work should prioritize studies that connect "
-                f"mechanistic receipts ({mech_refs}) to direct clinical outcomes "
-                f"represented by {direct_refs}. Until that bridge is stronger, "
-                f"{topic} remains a promising but bounded geroscience case whose "
-                "most useful contribution is to define the next trial rather "
-                "than to justify current clinical adoption."
-            ),
-        ],
-    }
-    shared = [
-        (
-            "The synthesis therefore uses a tiered reading of the evidence. "
-            "Direct clinical evidence carries the highest interpretive weight; "
-            "indirect clinical receipts help define adjacent human signals; "
-            "mechanistic receipts explain plausibility and candidate pathways."
-        ),
-        (
-            "The presence of multiple evidence roles is a strength for research "
-            "agenda setting, but it is also a limitation for clinical certainty. "
-            "Where the clinical and mechanistic layers align, the paper treats "
-            "that alignment as a hypothesis-strengthening signal. Where they "
-            "diverge, the divergence is retained as a boundary condition."
-        ),
-        (
-            "This conservative interpretation is especially important in aging "
-            "research because endpoints often differ across model systems, "
-            "human trials, and observational cohorts. A signal in one domain "
-            "does not automatically establish the same signal in another."
-        ),
-        (
-            "The receipt-level structure also prevents selective emphasis. "
-            "Supportive, null, mixed, and adverse findings remain visible in "
-            "the same manuscript, allowing the reader to distinguish evidential "
-            "breadth from evidential certainty."
-        ),
-        (
-            "The resulting paper is therefore a calibrated synthesis: it can "
-            "identify plausible mechanisms, direct clinical signals, unresolved "
-            "tensions, and trial-design priorities without converting them into "
-            "claims stronger than the accepted corpus can support."
-        ),
-        (
-            "No section should be read as a pooled meta-analytic estimate unless "
-            "the table explicitly says so. The text summarizes receipt-level "
-            "patterns, while the quantitative evidence index preserves the "
-            "source-bound numeric record."
-        ),
-        (
-            "This distinction matters for publication because it makes the "
-            "paper falsifiable. A future receipt can strengthen, weaken, or "
-            "reverse the synthesis by changing the evidence tier, direction, "
-            "or outcome-class balance."
-        ),
-        (
-            "The clinical layer should also be read in relation to the "
-            "population and endpoint represented by each receipt. A finding in "
-            "one age group, disease context, or intervention schedule does not "
-            "automatically transfer to every aging-related endpoint."
-        ),
-        (
-            "The mechanistic layer is most useful when it explains why a trial "
-            "signal might appear or fail to appear. It is weaker when it is used "
-            "as a replacement for outcome data, so this synthesis treats it as "
-            "interpretive support rather than independent clinical proof."
-        ),
-        (
-            "Null findings have a specific role in this evidence model. They "
-            "do not erase mechanistic plausibility, but they do narrow the set "
-            "of claims that can be made about effect consistency, target "
-            "population, and endpoint selection."
-        ),
-        (
-            "Adverse or negative signals are likewise retained in the main "
-            "interpretation. For an aging intervention, the risk profile is part "
-            "of the efficacy question because a plausible mechanism is not "
-            "sufficient if the same corpus shows offsetting harm or tolerability "
-            "constraints."
-        ),
-        (
-            "The receipt graph also distinguishes breadth from certainty. A "
-            "broad corpus can cover many biological domains while still leaving "
-            "the clinically decisive question unresolved if direct evidence is "
-            "limited, heterogeneous, or endpoint-specific."
-        ),
-        (
-            "For that reason, the manuscript does not collapse every receipt "
-            "into a single recommendation. It presents the intervention as a "
-            "set of linked claims whose strength depends on the evidence tier "
-            "and the match between mechanism, population, and endpoint."
-        ),
-        (
-            "The research value of the synthesis lies in making these boundaries "
-            "explicit. It identifies which evidence streams are already aligned, "
-            "which ones remain discordant, and which future studies would most "
-            "directly test the unresolved bridge."
-        ),
-        (
-            "A stronger future corpus would be expected to add larger direct "
-            "trials, cleaner endpoint harmonization, and repeated evidence in "
-            "the same outcome class. Until then, confidence remains calibrated "
-            "to the currently accepted receipt profile."
-        ),
-        (
-            "This framing also preserves comparability across topics. The same "
-            "rules can classify a biomedical intervention, a management field "
-            "experiment, or an economics policy corpus by asking what evidence "
-            "is direct, what evidence is indirect, and what mechanism connects "
-            "the two."
-        ),
-        (
-            "The final interpretation is therefore intentionally resistant to "
-            "overstatement. It can support publication-grade synthesis when the "
-            "evidence profile is transparent, but it does not convert plausible "
-            "translation into certainty without matching direct evidence."
-        ),
-    ]
-    paragraphs = paragraphs_by_title[title] + shared
-    selected: list[str] = []
-    for paragraph in paragraphs:
-        if paragraph not in selected:
-            selected.append(paragraph)
-        if _word_count("\n\n".join(selected)) >= floor + 25:
-            break
-    body = "\n\n".join(selected)
-    return f"## {title}\n\n{body}"
-
-
-def _section_backstop_context() -> dict[str, object]:
-    manifest = _ACTIVE_MANIFEST or {}
-    receipts = list(manifest.get("receipts") or [])
-
-    def _count(field: str, value: str) -> int:
-        return sum(1 for r in receipts if str(r.get(field, "")).lower() == value)
-
-    def _labels(field: str, value: str, limit: int = 3) -> str:
-        labels: list[str] = []
-        for r in receipts:
-            if str(r.get(field, "")).lower() != value:
-                continue
-            label = str(
-                r.get("citation_token") or r.get("body_citation")
-                or r.get("paper_id") or r.get("receipt_id") or "",
-            ).strip()
-            if label and label not in labels:
-                labels.append(label)
-            if len(labels) >= limit:
-                break
-        return ", ".join(labels) if labels else "the accepted receipt set"
-
-    def _outcomes(effect: str) -> str:
-        counts: Counter[str] = Counter(
-            str(r.get("outcome_class") or "other").replace("_", " ")
-            for r in receipts
-            if str(r.get("effect_direction", "")).lower() == effect
-        )
-        top = [k for k, _v in counts.most_common(3) if k]
-        return ", ".join(top) if top else "no dominant outcome class"
-
-    direct = _count("directness", "direct")
-    indirect = _count("directness", "indirect")
-    mechanistic = _count("directness", "mechanistic")
-    return {
-        "receipt_n": int(manifest.get("n_receipts") or len(receipts)),
-        "claim_n": int(manifest.get("n_high_confidence_claims_total") or 0),
-        "tension_n": int(manifest.get("n_non_orthogonal_tensions") or 0),
-        "direct": direct,
-        "indirect": indirect,
-        "mechanistic": mechanistic,
-        "positive": _outcomes("positive"),
-        "negative": _outcomes("negative"),
-        "null": _outcomes("null"),
-        "mixed": _outcomes("mixed"),
-        "direct_refs": _labels("directness", "direct"),
-        "mech_refs": _labels("directness", "mechanistic"),
-        "positive_refs": _labels("effect_direction", "positive"),
-        "negative_refs": _labels("effect_direction", "negative"),
-        "null_refs": _labels("effect_direction", "null"),
-        "thesis": str(manifest.get("thesis") or "The evidence profile is mixed."),
-    }
+    return paper_md, []
 
 
 def _section_heading_from_body(section_md: str) -> str:
@@ -706,6 +249,19 @@ def _section_body_text(section_md: str, heading: str) -> str:
     if section_md.lstrip().startswith(heading):
         return section_md.lstrip().split("\n", 1)[1] if "\n" in section_md else ""
     return section_md
+
+
+def _section_body_has_public_residue(body: str) -> bool:
+    lowered = body.lower()
+    return any(
+        phrase in lowered
+        for phrase in (
+            "source-context sentence",
+            "unsupported sentence",
+            "source passage cannot support its own specificity",
+            "single . when a cannot",
+        )
+    )
 
 
 def _rendered_section_match(markdown: str, heading: str) -> re.Match[str] | None:
@@ -1537,9 +1093,14 @@ def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
     effect_directions = disagreement. Different outcome_classes with
     one direct + one mechanistic = cross-domain tension."""
     pairs: list[Tension] = []
-    sorted_receipts = sorted(receipts, key=lambda r: r.receipt_id)
+    deduped_receipts = {
+        r.receipt_id: r for r in sorted(receipts, key=lambda r: r.receipt_id)
+    }
+    sorted_receipts = list(deduped_receipts.values())
     for i, a in enumerate(sorted_receipts):
         for b in sorted_receipts[i + 1:]:
+            if a.receipt_id == b.receipt_id:
+                continue
             if a.outcome_class == b.outcome_class:
                 # Fix #5 reviewer P2: explicit branches for the new
                 # null/mixed direction values; agreement covers same-
@@ -1596,7 +1157,7 @@ def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
                 summary=summary,
                 severity=severity,
             ))
-    return TensionMatrix(receipts=tuple(receipts), pairs=tuple(pairs))
+    return TensionMatrix(receipts=tuple(sorted_receipts), pairs=tuple(pairs))
 
 
 def build_thesis(
@@ -2109,6 +1670,7 @@ async def _run(
             "effect_direction": r.effect_direction,
             "evidence_tier": r.evidence_tier,
             "directness": r.directness,
+            "spar_verdict": r.spar_verdict,
             "n_claims": r.n_claims,
             "canonical_trial_id": r.canonical_trial_id,
             # Slice 7 P1b fix (2026-05-05): populate citation_token
@@ -2202,16 +1764,29 @@ async def _run(
     )
 
     # Fix #25: append the deterministic 'What This Synthesis Adds'
-    # section AFTER Conclusion and BEFORE Tables. Templated from
+    # section BEFORE Conclusion and BEFORE Tables. Templated from
     # writer_receipts + writer_matrix + thesis so the originality
     # claim is grounded in pipeline data (zero LLM cost). Position
     # gives a PhD reviewer the explicit "beyond prior reviews"
-    # statement right after the conclusion they just read.
+    # statement without polluting the final conclusion.
     what_adds_md = build_what_this_adds_section(
         writer_receipts, writer_matrix, thesis, topic=topic,
     )
     if what_adds_md:
-        full_paper_md = full_paper_md.rstrip() + "\n\n" + what_adds_md
+        conclusion = re.search(
+            r"(?m)^##\s+Conclusion\b",
+            full_paper_md,
+        )
+        if conclusion:
+            full_paper_md = (
+                full_paper_md[:conclusion.start()].rstrip()
+                + "\n\n"
+                + what_adds_md.strip()
+                + "\n\n"
+                + full_paper_md[conclusion.start():].lstrip()
+            )
+        else:
+            full_paper_md = full_paper_md.rstrip() + "\n\n" + what_adds_md
 
     # Wave 23 trust-spine: deterministic table renderers (Included
     # Studies / Per-Study Endpoint / Cross-Domain Tensions / Evidence

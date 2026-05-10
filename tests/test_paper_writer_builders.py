@@ -14,19 +14,25 @@ from __future__ import annotations
 
 from agent.paper_writer_builders import (
     build_anchored_from_parsed,
+    build_results_from_parsed,
     build_scoped_from_parsed,
 )
 from agent.synthesis_schemas import ReceiptSummary
 
 
-def _accepted(rid: str, *, p_values: tuple[str, ...] = ()) -> ReceiptSummary:
+def _accepted(
+    rid: str,
+    *,
+    p_values: tuple[str, ...] = (),
+    outcome_class: str = "muscle_function",
+) -> ReceiptSummary:
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
         thesis_text=f"thesis for {rid}",
         spar_verdict="accept_clean",
         n_claims=1, n_failed_traces=0, canonical_trial_id=None,
         evidence_tier="A1", directness="direct",
-        outcome_class="muscle_function", effect_direction="negative",
+        outcome_class=outcome_class, effect_direction="negative",
         p_values=p_values, population_summary="older adults",
     )
 
@@ -185,3 +191,41 @@ def test_anchored_repair_handles_mixed_correct_and_typo_ids() -> None:
     assert "metformin-multi-001-cfab-c01" in rids
     assert "metformin-multi-001-cfab-c04" in rids
     assert "metformin-multi-001-cfab-04" not in rids
+
+
+def test_results_drops_receipt_from_wrong_outcome_subsection() -> None:
+    accepted = [
+        _accepted(
+            "walton-2019",
+            p_values=("p=0.003",),
+            outcome_class="muscle_function",
+        ),
+        _accepted(
+            "kim-2020",
+            p_values=("p=0.01",),
+            outcome_class="cardiometabolic",
+        ),
+    ]
+    parsed = {
+        "subsections": [
+            {
+                "heading": "Cardiometabolic Outcomes",
+                "paragraphs": [
+                    {
+                        "text": "Walton reports p=0.003.",
+                        "receipt_ids": ["walton-2019"],
+                    },
+                    {
+                        "text": "Kim reports p=0.01.",
+                        "receipt_ids": ["kim-2020"],
+                    },
+                ],
+            },
+        ],
+    }
+
+    section = build_results_from_parsed(parsed, accepted=accepted)
+
+    assert section is not None
+    assert "Kim reports" in section.body_md
+    assert "Walton reports" not in section.body_md

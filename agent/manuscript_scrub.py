@@ -55,6 +55,15 @@ _RESIDUE_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"\*{0,2}Selected\s+thesis:\*{0,2}\s*", re.I),
     re.compile(r"\bsource-context\s+sentence\b", re.I),
     re.compile(r"\bunsupported\s+sentence\b", re.I),
+    re.compile(r"\bIn\s+the\s+Conclusion,\s+this\s+framing\b", re.I),
+    re.compile(r"\bIn\s+the\s+Limitations,\s+this\s+framing\b", re.I),
+    re.compile(r"\bThe\s+surviving\s+section\s+therefore\b", re.I),
+    re.compile(
+        r"\bsource\s+passage\s+cannot\s+support\s+its\s+own\s+specificity\b",
+        re.I,
+    ),
+    re.compile(r"\bCochrane\s+RoB-2\b", re.I),
+    re.compile(r"\bROBINS-I\b", re.I),
 )
 
 

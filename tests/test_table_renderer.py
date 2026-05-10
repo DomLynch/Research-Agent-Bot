@@ -233,7 +233,7 @@ def test_render_all_tables_returns_empty_on_empty_receipts() -> None:
 def test_render_all_tables_concatenates_four_tables() -> None:
     """Fix #21: render_all_tables emits Tables 1-4 (Tables 1-3 follow
     the asymmetric-fix reviewer spec; Table 4 is the supplemental
-    Cochrane RoB-2 / ROBINS-I roll-up retained from Fix #14)."""
+    design-level evidence weighting table retained from Fix #14)."""
     receipts = [_FakeReceipt(receipt_id="X 2020")]
     md = tr.render_all_tables(receipts)
     for tbl in ("## Table 1", "## Table 2", "## Table 3", "## Table 4"):
@@ -464,13 +464,12 @@ def test_table_2_columns_match_user_spec() -> None:
         assert col in md, f"missing column: {col}"
 
 
-def test_table_3_includes_per_domain_caveat() -> None:
-    """Fix #14: caveat above Table 3 acknowledges per-domain grades
-    are tier-derived, NOT extracted from source PDFs."""
+def test_table_3_includes_design_level_caveat() -> None:
+    """Caveat states this is a design-level heuristic, not formal RoB."""
     receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
     md = tr.render_table_3_evidence_limitations(receipts)
-    assert "Cochrane" in md or "rob-2" in md.lower()
-    assert "ROBINS-I" in md  # observational equivalent named
+    assert "Design-Level Evidence Weighting Heuristic" in md
+    assert "NOT a formal source-text risk-of-bias assessment" in md
 
 
 def test_table_3_has_seven_rob_domain_columns() -> None:
@@ -498,11 +497,11 @@ def test_b2_observational_has_na_for_blinding() -> None:
     """Discrim: blinding domain not meaningful for observational
     cohorts → 'n/a', not a fake 'low/high' grade.
 
-    Fix #24/#26: Table 4 layout updated — Tool column now at index 2,
+    Fix #24/#26: Table 4 layout updated — Design class column at index 2,
     so RoB domains shift one position right. Layout:
-    Citation | Tier | Tool | Allocation | Blinding | Attrition |
+    Citation | Tier | Design class | Allocation | Blinding | Attrition |
     OutcomeMeasure | Reporting | Confounding | Generalizability |
-    Overall RoB | Weight in synthesis | note. Blinding now index 4."""
+    Overall limitation | Weight in synthesis | note. Blinding now index 4."""
     receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="B2")]
     md = tr.render_table_3_evidence_limitations(receipts)
     line = [ln for ln in md.split("\n") if "X 2020" in ln][0]
@@ -812,16 +811,40 @@ def test_table_3_tensions_implication_uses_severity_label() -> None:
     assert "minor" in md_low
 
 
+def test_table_3_tensions_skips_self_pairs_and_duplicate_pairs() -> None:
+    @dataclass
+    class _T:
+        receipt_a_id: str
+        receipt_b_id: str
+        kind: str = "disagreement"
+        outcome_class: str = "muscle_function"
+        summary: str = "summary"
+        severity: int = 5
+
+    @dataclass
+    class _M:
+        pairs: tuple
+
+        def non_orthogonal(self):
+            return list(self.pairs)
+
+    md = tr.render_table_3_cross_domain_tensions(_M((
+        _T("Walton 2019", "Walton 2019"),
+        _T("Walton 2019", "Konopka 2019"),
+        _T("Konopka 2019", "Walton 2019"),
+    )))
+    assert "Walton 2019 | Walton 2019" not in md
+    assert md.count("Walton 2019") == 1
+    assert md.count("Konopka 2019") == 1
+
+
 def test_table_4_renames_evidence_limitations() -> None:
-    """Fix #21: per-domain RoB (formerly Table 3) is now Table 4
-    (supplemental) to make room for the cross-domain tensions table
-    at slot 3. Heading updated; backward-compat alias preserved."""
+    """Table 4 is an evidence-weighting heuristic, not formal RoB."""
     receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
     md = tr.render_table_4_evidence_limitations(receipts)
     assert "## Table 4 (supplemental)" in md
-    assert "Per-Domain Risk of Bias" in md
-    # Same caveat preserved
-    assert "Cochrane" in md or "ROBINS-I" in md
+    assert "Design-Level Evidence Weighting Heuristic" in md
+    assert "risk-of-bias roll-up" not in md
 
 
 def test_render_table_3_evidence_limitations_alias_works() -> None:
@@ -994,9 +1017,8 @@ def test_render_all_tables_threads_claims_to_table_5() -> None:
 # ============ Fix #24 + #26 — RoB tool + overall + weight ==============
 
 
-def test_table_4_includes_tool_column() -> None:
-    """Fix #26: Tool column names the RoB framework (Cochrane RoB-2,
-    ROBINS-I, SYRCLE, AMSTAR-2) so reviewers see what was applied."""
+def test_table_4_includes_design_class_column() -> None:
+    """Design class column avoids claiming formal RoB assessment."""
     receipts = [
         _FakeReceipt(receipt_id="A1 2020", evidence_tier="A1"),
         _FakeReceipt(receipt_id="B2 2020", evidence_tier="B2"),
@@ -1004,11 +1026,11 @@ def test_table_4_includes_tool_column() -> None:
         _FakeReceipt(receipt_id="B1 2020", evidence_tier="B1"),
     ]
     md = tr.render_table_4_evidence_limitations(receipts)
-    assert "Tool" in md
-    assert "Cochrane RoB-2" in md       # A1 RCT
-    assert "ROBINS-I" in md             # B2 observational
-    assert "SYRCLE" in md               # C1 preclinical
-    assert "AMSTAR-2" in md             # B1 review
+    assert "Design class" in md
+    assert "RCT design" in md
+    assert "observational design" in md
+    assert "animal-model design" in md
+    assert "review/synthesis design" in md
 
 
 def test_overall_rob_high_when_load_bearing_domain_high() -> None:
@@ -1053,13 +1075,13 @@ def test_weight_in_synthesis_supporting_for_b1_review() -> None:
     assert "supporting" in weight
 
 
-def test_weight_in_synthesis_high_rob_overrides_to_hypothesis_generating() -> None:
-    """Even an A1 RCT with high overall RoB → hypothesis-generating.
+def test_weight_in_synthesis_high_limitation_overrides_to_hypothesis_generating() -> None:
+    """Even an A1 RCT with high design limitation → hypothesis-generating.
     A reviewer should see immediately that the trust collapses to
-    'use cautiously' when RoB is bad."""
+    'use cautiously' when design limitations are high."""
     weight = tr._weight_in_synthesis("A1", "direct", "high")
     assert "hypothesis-generating" in weight
-    assert "high RoB" in weight
+    assert "high design limitation" in weight
 
 
 def test_weight_in_synthesis_handles_unknown_tier() -> None:
@@ -1077,7 +1099,7 @@ def test_table_4_includes_overall_rob_and_weight_columns() -> None:
                      directness="direct"),
     ]
     md = tr.render_table_4_evidence_limitations(receipts)
-    assert "Overall RoB" in md
+    assert "Overall limitation" in md
     assert "Weight in synthesis" in md
     # Walton should show load-bearing weight; MILES should show mechanistic
     walton_row = [ln for ln in md.split("\n") if "Walton 2019" in ln][0]

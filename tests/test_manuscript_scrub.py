@@ -54,6 +54,18 @@ def test_scrub_residue_removes_h3_section_tags() -> None:
     assert "### Cardiometabolic Outcomes" in out
 
 
+def test_scrub_residue_removes_repair_scaffold_phrases() -> None:
+    md = (
+        "## Limitations\n\nIn the Limitations, this framing names a "
+        "compiler repair scaffold. The surviving section therefore "
+        "should not reach public markdown.\n"
+    )
+    out, n = scrub_engine_residue(md)
+    assert n >= 2
+    assert "In the Limitations, this framing" not in out
+    assert "The surviving section therefore" not in out
+
+
 # ---- abstract truncation ------------------------------------------------
 
 
@@ -295,7 +307,7 @@ def test_dedupe_runs_across_multiple_evidence_tables() -> None:
         "| Citation | Tier |\n| --- | --- |\n"
         "| Walton 2019 | A1 |\n"
         "| Walton 2019 | A1 |\n"
-        "## Table 4 (supplemental): Per-Domain Risk of Bias\n\n"
+        "## Table 4 (supplemental): Design-Level Evidence Weighting\n\n"
         "| Citation | Domain1 | Domain2 |\n| --- | --- | --- |\n"
         "| Konopka 2019 | Some | Concerns |\n"
         "| Konopka 2019 | Some | Concerns |\n"

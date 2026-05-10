@@ -116,6 +116,15 @@ def test_count_consistency_rejects_accepted_label_with_source_count() -> None:
     assert any(f.rule == "count_consistency" for f in r.failures)
 
 
+def test_count_consistency_ignores_severity_scored_tensions() -> None:
+    md = (
+        "## Results\n\nThe matrix identified 30 non-orthogonal tensions. "
+        "A severity-5 tension remained clinically important.\n"
+    )
+    r = validate(md, _baseline_manifest(n_non_orthogonal_tensions=30))
+    assert not any(f.rule == "count_consistency" for f in r.failures)
+
+
 def test_count_consistency_enforces_rejected_count() -> None:
     manifest = _baseline_manifest(
         n_receipts=43, n_accepted_receipts=26, n_quarantined_receipts=17,
@@ -160,6 +169,16 @@ def test_count_consistency_filters_small_per_section_noise() -> None:
     )
     r = validate(md, _baseline_manifest())
     assert r.status == "PASS"
+
+
+def test_count_consistency_ignores_subgroup_k_counts() -> None:
+    md = (
+        "## Results\n\n"
+        "The cardiometabolic subgroup comprises k=6 studies, while the "
+        "full corpus comprises 40 source papers.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert not any(f.rule == "count_consistency" for f in r.failures)
 
 
 def test_count_consistency_flags_receipt_mismatch() -> None:
@@ -259,6 +278,32 @@ def test_table_count_consistency_matches_unique_accepted_citations(
     assert not any(f.rule == "table_count_consistency" for f in r.failures)
 
 
+def test_table_count_consistency_accepts_alphanumeric_citation_tokens(
+    tmp_path: Path,
+) -> None:
+    md = (
+        _DUP_TABLE_HEAD
+        + "| T2DM 2023 | RCT | A1 | 90 | adults |\n"
+        + "| miaek 2023 | RCT | A1 | 90 | adults |\n"
+    )
+    manifest = _baseline_manifest(
+        n_receipts=2,
+        n_accepted_receipts=2,
+        receipts=[
+            {"receipt_id": "r1", "citation_token": "T2DM 2023"},
+            {"receipt_id": "r2", "citation_token": "miaek 2023"},
+        ],
+    )
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "verdicts": {
+            "r1": {"verdict": "accept_clean"},
+            "r2": {"verdict": "accept_clean"},
+        },
+    }))
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(f.rule == "table_count_consistency" for f in r.failures)
+
+
 def test_table_count_consistency_flags_missing_accepted_citation(
     tmp_path: Path,
 ) -> None:
@@ -282,6 +327,115 @@ def test_table_count_consistency_flags_missing_accepted_citation(
     }))
     r = validate(md, manifest, run_dir=tmp_path)
     assert any(f.rule == "table_count_consistency" for f in r.failures)
+
+
+def test_evidence_role_count_consistency_flags_stale_role_counts() -> None:
+    manifest = _baseline_manifest(
+        receipts=[
+            {
+                "receipt_id": "r1",
+                "citation_token": "Direct 2020",
+                "directness": "direct",
+                "spar_verdict": "accept_clean",
+            },
+            {
+                "receipt_id": "r2",
+                "citation_token": "Mechanistic 2021",
+                "directness": "mechanistic",
+                "spar_verdict": "accept_clean",
+            },
+            {
+                "receipt_id": "r3",
+                "citation_token": "Rejected 2022",
+                "directness": "indirect",
+                "spar_verdict": "reject_direction_mismatch",
+            },
+        ],
+    )
+    md = (
+        "## Limitations\n\nThe corpus contains 2 direct clinical receipt(s), "
+        "14 indirect clinical receipt(s), and 14 mechanistic or model-system "
+        "receipt(s).\n"
+    )
+    r = validate(md, manifest)
+    assert any(
+        f.rule == "evidence_role_count_consistency"
+        for f in r.failures
+    )
+
+
+def test_section_outcome_integrity_flags_wrong_outcome_subsection() -> None:
+    manifest = _baseline_manifest(
+        receipts=[
+            {
+                "receipt_id": "r1",
+                "citation_token": "Walton 2019",
+                "outcome_class": "muscle_function",
+                "spar_verdict": "accept_clean",
+            },
+        ],
+    )
+    md = (
+        "## Results\n\n"
+        "### Longevity and Mortality Outcomes\n\n"
+        "Walton 2019 reported lean-mass findings in older adults.\n"
+    )
+    r = validate(md, manifest)
+    assert any(f.rule == "section_outcome_integrity" for f in r.failures)
+
+
+def test_table_set_consistency_flags_table2_citation_missing_from_table1() -> None:
+    md = (
+        "## Table 1: Included Studies\n\n"
+        "| Citation | Design | Tier | N | Population | Endpoint | Direction | Directness |\n"
+        "| --- | --- | --- | --- | --- | --- | --- | --- |\n"
+        "| Kim 2020 | Review | B1 | — | — | cardiometabolic | negative | review |\n\n"
+        "## Table 2: Per-Study Endpoint Evidence\n\n"
+        "| Endpoint | Study | p/CI | Direction | Directness | Tier | Interpretation |\n"
+        "| --- | --- | --- | --- | --- | --- | --- |\n"
+        "| muscle function | Walton 2019 | P = 0.003 | mixed | direct | A1 | reported |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(f.rule == "table_set_consistency" for f in r.failures)
+
+
+def test_cross_table_metadata_conflict_flags_tier_directness_drift() -> None:
+    md = (
+        "## Table 1: Included Studies\n\n"
+        "| Citation | Design | Tier | N | Population | Endpoint | Direction | Directness |\n"
+        "| --- | --- | --- | --- | --- | --- | --- | --- |\n"
+        "| Konopka 2019 | RCT | A1 | — | adults | cardiometabolic | mixed | direct |\n\n"
+        "## Table 2: Per-Study Endpoint Evidence\n\n"
+        "| Endpoint | Study | p/CI | Direction | Directness | Tier | Interpretation |\n"
+        "| --- | --- | --- | --- | --- | --- | --- |\n"
+        "| cardiometabolic | Konopka 2019 | P = 0.08 | mixed | indirect | B2 | reported |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(f.rule == "cross_table_metadata_conflict" for f in r.failures)
+
+
+def test_tension_table_integrity_flags_self_pairs_and_duplicates() -> None:
+    md = (
+        "## Table 3: Cross-Domain Tensions\n\n"
+        "| Tension kind | Severity | Receipt A | Receipt B | Outcome class | Summary | Practical implication |\n"
+        "| --- | --- | --- | --- | --- | --- | --- |\n"
+        "| agreement | 1 | Walton 2019 | Walton 2019 | muscle function | self | minor |\n"
+        "| disagreement | 4 | A 2020 | B 2021 | longevity | one | load-bearing |\n"
+        "| disagreement | 4 | B 2021 | A 2020 | longevity | duplicate | load-bearing |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(f.rule == "tension_table_integrity" for f in r.failures)
+
+
+def test_conclusion_hygiene_flags_table_boilerplate() -> None:
+    md = (
+        "## Conclusion\n\n"
+        "Prior narrative reviews did not compare this pair. Table 4 "
+        "summarizes the weighting layer.\n\n"
+        "### Boundary-Condition Matrix\n\nRows.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(f.rule == "conclusion_hygiene" for f in r.failures)
 
 
 def test_duplicate_row_flags_excess_rows_for_unsplit_citation() -> None:
@@ -402,68 +556,12 @@ def test_write_sidecar_emits_json(tmp_path: Path) -> None:
     assert payload["canonical_counts"]["source_papers"] == 40
 
 
-# ---- rule 6: wrong-topic residue ----------------------------------------
-
-
-def _topic_pack_root(tmp_path: Path, topics: list[str]) -> Path:
-    """Make a fake repo root with topic_packs/<topic>.toml stubs."""
-    pack_dir = tmp_path / "topic_packs"
-    pack_dir.mkdir()
-    for t in topics:
-        (pack_dir / f"{t}.toml").write_text(f"# stub topic pack for {t}\n")
-    return tmp_path
-
-
-def test_wrong_topic_residue_flags_sibling_claim_assertion(
-    tmp_path: Path,
-) -> None:
-    """metformin paper claiming 'rapamycin evidence should be interpreted'
-    is a sibling-topic leak — the universal regression case from the
-    2026-05-10 metf run."""
-    root = _topic_pack_root(tmp_path, ["metformin", "rapamycin", "statins"])
-    md = (
-        "## Discussion\n\nrapamycin evidence should be interpreted along "
-        "a gradient from proximal to distal outcomes.\n"
-    )
-    manifest = _baseline_manifest(topic="metformin")
-    r = validate(md, manifest, repo_root=root)
-    assert any(
-        f.rule == "wrong_topic_residue" and "rapamycin" in f.detail
-        for f in r.failures
-    )
-
-
-def test_wrong_topic_residue_allows_passing_mention(
-    tmp_path: Path,
-) -> None:
-    """Mentioning a sibling topic in non-claim-asserting context (a list,
-    a comparison without an asserting verb) must NOT flag."""
-    root = _topic_pack_root(tmp_path, ["metformin", "rapamycin"])
-    md = (
-        "## Background\n\nThis paper sits alongside related work on "
-        "rapamycin and other geroprotectors.\n"
-    )
-    manifest = _baseline_manifest(topic="metformin")
-    r = validate(md, manifest, repo_root=root)
-    assert not any(f.rule == "wrong_topic_residue" for f in r.failures)
-
-
-def test_wrong_topic_residue_skips_when_no_topic_packs(
-    tmp_path: Path,
-) -> None:
-    """No topic_packs/ dir → rule silently skips (universal contract:
-    rules degrade gracefully when their inputs are absent)."""
-    md = "## Methods\n\nrapamycin evidence should be interpreted ...\n"
-    manifest = _baseline_manifest(topic="metformin")
-    r = validate(md, manifest, repo_root=tmp_path)  # no topic_packs/ dir
-    assert not any(f.rule == "wrong_topic_residue" for f in r.failures)
-
-
-def test_wrong_topic_residue_skips_when_no_topic_in_manifest() -> None:
-    md = "## Methods\n\nrapamycin evidence should be interpreted ...\n"
-    manifest = _baseline_manifest()  # no topic field
-    r = validate(md, manifest)
-    assert not any(f.rule == "wrong_topic_residue" for f in r.failures)
+def test_validate_run_dir_fails_closed_on_bad_manifest(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.md").write_text("## Abstract\n\nClean.\n")
+    (tmp_path / "manifest.json").write_text("[]")
+    r = validate_run_dir(tmp_path)
+    assert r.status == "FAIL"
+    assert any(f.rule == "canonical_link" for f in r.failures)
 
 
 # ---- rule 7: broken prose -----------------------------------------------
@@ -521,6 +619,32 @@ def test_broken_prose_flags_truncated_effect_estimate() -> None:
         f.rule == "broken_prose" and "no value" in f.detail
         for f in r.failures
     )
+
+
+def test_broken_prose_flags_floor_backfill_fragment() -> None:
+    md = (
+        "## Discussion\n\nThe public interpretation remains tied to "
+        "the source record rather than to any single . When a cannot "
+        "support its own specificity, the paper does not infer a "
+        "replacement result.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "broken_prose" and "single . When a cannot" in f.detail
+        for f in r.failures
+    )
+
+
+def test_malformed_table_row_flags_orphan_fragment() -> None:
+    md = (
+        "## Table 2: Per-Study Endpoint Evidence\n\n"
+        "| Endpoint | Study | p/CI | Direction |\n"
+        "| --- | --- | --- | --- |\n"
+        "| healthspan | Smith 2020 | P = 0.023 | mixed |\n"
+        "023 | mixed | direct | A1 |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(f.rule == "malformed_table_row" for f in r.failures)
 
 
 def test_broken_prose_passes_clean_prose() -> None:

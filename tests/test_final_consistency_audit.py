@@ -435,7 +435,7 @@ def test_apply_fixes_keeps_manifest_referenced_et_al_parenthetical() -> None:
     )
 
 
-def test_apply_fixes_backfills_low_discussion_hedge_density() -> None:
+def test_apply_fixes_does_not_backfill_low_discussion_hedge_density() -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
@@ -447,12 +447,8 @@ def test_apply_fixes_backfills_low_discussion_hedge_density() -> None:
         "outcome proximity rather than as a pooled effect.\n"
     )
     out, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
-    assert "### Confidence calibration" in out
-    assert "context-dependent" in out
-    assert any(
-        item["fix_type"] == "discussion_hedge_density_backfill"
-        for item in log
-    )
+    assert "### Confidence calibration" not in out
+    assert not any("backfill" in item["fix_type"] for item in log)
 
 
 def test_apply_fixes_strips_orphan_inference_fragments() -> None:
@@ -617,7 +613,7 @@ def test_apply_fixes_strips_duplicate_long_sentences() -> None:
     assert any(item["fix_type"] == "duplicate_sentence" for item in log)
 
 
-def test_apply_fixes_backfills_results_after_numeric_strips() -> None:
+def test_apply_fixes_does_not_backfill_short_results() -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
@@ -625,13 +621,9 @@ def test_apply_fixes_backfills_results_after_numeric_strips() -> None:
 
     paper = "## Results\n\n" + " ".join(f"word{i}" for i in range(380))
     out, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
-    assert "### Result-interpretation guardrail" in out
-    assert fixer._section_word_count(out, "Results") >= 500
-    assert any(
-        item["fix_type"] == "analytical_depth_backfill"
-        and "'Results'" in item["description"]
-        for item in log
-    )
+    assert "### Result-interpretation guardrail" not in out
+    assert fixer._section_word_count(out, "Results") == 380
+    assert not any("backfill" in item["fix_type"] for item in log)
 
 
 # P1 reviewer fix: trial acronyms extracted as short forms
@@ -1298,7 +1290,7 @@ def test_apply_fixes_normalizes_public_topic_slug_from_manifest() -> None:
     assert [e for e in log if e["fix_type"] == "public_topic_slug_normalization"]
 
 
-def test_apply_fixes_depth_backfill_reaches_floor_after_large_strip() -> None:
+def test_apply_fixes_does_not_depth_backfill_after_large_strip() -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
@@ -1311,14 +1303,12 @@ def test_apply_fixes_depth_backfill_reaches_floor_after_large_strip() -> None:
         + "Discussion safe sentence. " * 70
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
-    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") >= 850
-    assert fixer._section_word_count(fixed, "Discussion") >= 800
-    depth = [e for e in log if e["fix_type"] == "analytical_depth_backfill"]
-    assert len(depth) == 2
-    assert all(e["n_changes"] >= 2 for e in depth)
+    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") < 850
+    assert fixer._section_word_count(fixed, "Discussion") < 800
+    assert not any("backfill" in e["fix_type"] for e in log)
 
 
-def test_apply_fixes_backfills_public_bookend_sections() -> None:
+def test_apply_fixes_does_not_backfill_public_bookend_sections() -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
@@ -1331,16 +1321,13 @@ def test_apply_fixes_backfills_public_bookend_sections() -> None:
         + "\n\n## Conclusion\n\n" + "Conclusion safe sentence. " * 50
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
-    assert fixer._section_word_count(fixed, "Introduction") >= 400
-    assert fixer._section_word_count(fixed, "Background") >= 300
-    assert fixer._section_word_count(fixed, "Limitations") >= 250
-    assert fixer._section_word_count(fixed, "Conclusion") >= 250
+    assert fixer._section_word_count(fixed, "Introduction") < 400
+    assert fixer._section_word_count(fixed, "Background") < 300
+    assert fixer._section_word_count(fixed, "Limitations") < 250
+    assert fixer._section_word_count(fixed, "Conclusion") < 250
     assert "The synthesis supports a bounded conclusion" not in fixed
     assert "### Closing interpretation" not in fixed
-    assert [
-        e for e in log
-        if e["fix_type"] == "analytical_depth_backfill"
-    ]
+    assert not any("backfill" in e["fix_type"] for e in log)
 
 
 def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
@@ -1370,31 +1357,10 @@ def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
     conclusion = fixed.split("## Conclusion", 1)[1]
     assert duplicate not in conclusion
     assert duplicate in fixed.split("## Conclusion", 1)[0]
-    assert fixer._section_word_count(fixed, "Conclusion") >= 250
+    assert fixer._section_word_count(fixed, "Conclusion") < 250
     assert [
         e for e in log
         if e["fix_type"] == "conclusion_cross_section_duplicate"
-    ]
-
-
-def test_apply_fixes_depth_backfill_is_document_global_idempotent() -> None:
-    import sys as _sys
-    from pathlib import Path as _Path
-    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
-    import apply_consistency_fixes as fixer
-
-    paper = (
-        "## Introduction\n\n"
-        + fixer._BACKGROUND_BACKFILL
-        + "\n\n## Background\n\n"
-        + "short background. " * 20
-    )
-    fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
-    assert fixed.count("### Evidence-context framing") == 1
-    assert not [
-        e for e in log
-        if e["fix_type"] == "analytical_depth_backfill"
-        and "'Background'" in e["description"]
     ]
 
 
@@ -1729,9 +1695,8 @@ def test_apply_fixes_preserves_methods_after_qei_not_run_block() -> None:
     assert fixed.index("### LLM roles") < fixed.index("## Results")
 
 
-def test_apply_fixes_backfills_cross_domain_after_review_trim() -> None:
-    """Grok can shorten Cross-Domain after writer backstop runs; the
-    deterministic fixer restores the Q12 floor without new numerics."""
+def test_apply_fixes_does_not_backfill_cross_domain_after_review_trim() -> None:
+    """Short Cross-Domain should fail the audit, not get filler prose."""
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(
@@ -1749,8 +1714,8 @@ def test_apply_fixes_backfills_cross_domain_after_review_trim() -> None:
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest=_empty_manifest())
     ok, msg = audit_v06._check_cross_domain_depth(fixed)
-    assert ok is True, msg
-    assert "analytical_depth_backfill" in {x["fix_type"] for x in log}
+    assert ok is False, msg
+    assert "analytical_depth_backfill" not in {x["fix_type"] for x in log}
 
 
 def test_apply_fixes_restores_depth_after_final_public_dedupe(monkeypatch) -> None:
@@ -1784,7 +1749,7 @@ def test_apply_fixes_restores_depth_after_final_public_dedupe(monkeypatch) -> No
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
     assert fixed.count(para) == 1
-    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") >= 850
+    assert fixer._section_word_count(fixed, "Cross-Domain Synthesis") < 850
     assert "exact_public_duplicate_paragraph_post_depth" in {
         x["fix_type"] for x in log
     }

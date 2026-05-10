@@ -413,7 +413,6 @@ def _strip_exact_duplicate_public_paragraphs(paper_md: str) -> tuple[str, int]:
             len(re.findall(r"\b\w+\b", text)) >= 30
             and not text.startswith(("#", "|", "-", "`", "*", "_Cited:"))
             and "\n|" not in para
-            and not _is_depth_backfill_paragraph(text)
         )
         if is_long_prose and norm in seen:
             n += 1
@@ -427,23 +426,6 @@ def _strip_exact_duplicate_public_paragraphs(paper_md: str) -> tuple[str, int]:
         return paper_md, 0
     fixed_body = re.sub(r"\n{3,}", "\n\n", "".join(out)).rstrip()
     return fixed_body + "\n\n" + tail, n
-
-
-def _is_depth_backfill_paragraph(text: str) -> bool:
-    norm = re.sub(r"\s+", " ", text).strip().lower()
-    return norm in {
-        re.sub(r"\s+", " ", str(globals().get(name, ""))).strip().lower()
-        for name in (
-            "_INTRODUCTION_BACKFILL",
-            "_BACKGROUND_BACKFILL",
-            "_RESULTS_BACKFILL",
-            "_CROSS_DOMAIN_BACKFILL",
-            "_DISCUSSION_BACKFILL",
-            "_LIMITATIONS_BACKFILL",
-            "_CONCLUSION_BACKFILL",
-            "_DEPTH_BACKFILL_EXTENSION",
-        )
-    }
 
 
 def _strip_duplicate_long_sentences(paper_md: str) -> tuple[str, int]:
@@ -1709,20 +1691,14 @@ def apply_fixes(
                         ),
                     })
 
-    # Final depth floor backfill (post-Grok safety). The writer's
-    # backstop runs before final-layer review; Grok can later shorten
-    # Cross-Domain / Discussion below the 800-word audit floor. Add a
-    # short, numeric-free analytical paragraph rather than lowering
-    # Q11/Q12 or trusting another LLM pass.
+    # Final deterministic cleanup. Do not synthesize filler prose here:
+    # short sections should fail public gates rather than receive stale
+    # scaffold text.
     if manifest is not None:
         new_md, cross_dup_log = _strip_conclusion_paragraphs_repeated_earlier(
             new_md,
         )
         log.extend(cross_dup_log)
-        new_md, depth_log = _ensure_analytical_depth_floors(new_md)
-        log.extend(depth_log)
-        new_md, hedge_log = _ensure_discussion_hedge_density(new_md)
-        log.extend(hedge_log)
         new_md, n_dup_subsections = _strip_duplicate_subsections(new_md)
         if n_dup_subsections:
             log.append({
@@ -1790,9 +1766,6 @@ def apply_fixes(
                 "after restoration/backfill paths"
             ),
         })
-        if manifest is not None:
-            new_md, depth_log = _ensure_analytical_depth_floors(new_md)
-            log.extend(depth_log)
 
     return new_md, log
 
@@ -2084,297 +2057,6 @@ def _strip_stale_in_span(text: str, *, replace_first: bool) -> tuple[str, int]:
         return ""
 
     return _STALE_SPAR_SENT_RE.sub(_replace, text), len(matches)
-
-
-def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
-    log: list[dict] = []
-    for heading, floor, paragraph in (
-        (
-            "Introduction", 400,
-            _INTRODUCTION_BACKFILL,
-        ),
-        (
-            "Background", 300,
-            _BACKGROUND_BACKFILL,
-        ),
-        (
-            "Results", 500,
-            _RESULTS_BACKFILL,
-        ),
-        (
-            "Cross-Domain Synthesis", 850,
-            _CROSS_DOMAIN_BACKFILL,
-        ),
-        (
-            "Discussion", 800,
-            _DISCUSSION_BACKFILL,
-        ),
-        (
-            "Limitations", 250,
-            _LIMITATIONS_BACKFILL,
-        ),
-        (
-            "Conclusion", 250,
-            _CONCLUSION_BACKFILL,
-        ),
-    ):
-        count = _section_word_count(paper_md, heading)
-        if count >= floor:
-            continue
-        s, e, section = _extract_section(paper_md, heading)
-        if s < 0:
-            continue
-        if _paragraph_already_present(paper_md, paragraph):
-            continue
-        updated = section.rstrip() + "\n\n" + paragraph + "\n\n"
-        paper_md = paper_md[:s] + updated + paper_md[e:]
-        new_count = _section_word_count(paper_md, heading)
-        n_blocks = 1
-        while new_count < floor and n_blocks < 8:
-            s, e, section = _extract_section(paper_md, heading)
-            if s < 0:
-                break
-            updated = (
-                section.rstrip()
-                + "\n\n"
-                + _depth_backfill_extension(heading, n_blocks)
-                + "\n\n"
-            )
-            paper_md = paper_md[:s] + updated + paper_md[e:]
-            new_count = _section_word_count(paper_md, heading)
-            n_blocks += 1
-        log.append({
-            "fix_type": "analytical_depth_backfill",
-            "n_changes": n_blocks,
-            "description": (
-                f"appended numeric-free deterministic analytical "
-                f"backfill to '{heading}' ({count} → {new_count} "
-                f"words; floor {floor})"
-            ),
-        })
-    return paper_md, log
-
-
-def _depth_backfill_extension(heading: str, index: int) -> str:
-    prefixes = (
-        "Population fit, comparator alignment, endpoint proximity, follow-up "
-        "length, ascertainment method, baseline risk, adherence, exposure "
-        "dose, and external validity are kept separate during interpretation.",
-        "Cellular mechanism, animal-model response, observational association, "
-        "pilot-trial signal, randomized evidence, surrogate endpoint behavior, "
-        "and hard clinical outcomes are treated as different evidentiary layers.",
-        "Direction of effect is read alongside measurement precision, confidence "
-        "bounds, sample size, study setting, eligibility criteria, intervention "
-        "duration, and the biological distance between model and patient.",
-        "The synthesis distinguishes replication across similar designs from "
-        "convergence across different designs, because those patterns answer "
-        "different questions about reliability, transportability, and mechanism.",
-        "Where evidence is sparse, the manuscript emphasizes unresolved design "
-        "choices: dose selection, comparator choice, endpoint hierarchy, subgroup "
-        "definition, follow-up window, and clinically meaningful thresholds.",
-        "Where evidence is broad but indirect, the public conclusion remains "
-        "conditional on whether the same pathway produces measurable benefit in "
-        "the target human population rather than only in adjacent systems.",
-        "The final interpretive step is conservative: it preserves the question, "
-        "the uncertainty, and the boundary conditions while withholding any "
-        "unsupported estimate, causal claim, or population-level generalization.",
-    )
-    section_context = {
-        "Introduction": (
-            "In the Introduction, this framing defines the research question "
-            "and explains why the evidence must be interpreted by design."
-        ),
-        "Background": (
-            "In the Background, this framing situates the biological rationale "
-            "without converting plausibility into a clinical claim."
-        ),
-        "Results": (
-            "In the Results, this framing keeps descriptive findings separate "
-            "from interpretation and preserves endpoint-specific boundaries."
-        ),
-        "Cross-Domain Synthesis": (
-            "In the Cross-Domain Synthesis, this framing compares outcome "
-            "classes and identifies where signals converge or diverge."
-        ),
-        "Discussion": (
-            "In the Discussion, this framing calibrates confidence, clinical "
-            "meaning, generalizability, and unresolved study-design needs."
-        ),
-        "Limitations": (
-            "In the Limitations, this framing names evidence gaps, missing "
-            "populations, indirect endpoints, and unresolved follow-up windows."
-        ),
-        "Conclusion": (
-            "In the Conclusion, this framing preserves the final claim boundary "
-            "and avoids implying certainty beyond the retained evidence."
-        ),
-    }.get(heading, "In this section, the framing preserves interpretive limits.")
-    prefix = prefixes[min(max(index - 1, 0), len(prefixes) - 1)]
-    return _DEPTH_BACKFILL_EXTENSION.format(
-        section_context=section_context,
-        prefix=prefix,
-    )
-
-
-def _paragraph_already_present(paper_md: str, paragraph: str) -> bool:
-    needle = re.sub(r"\s+", " ", paragraph).strip().lower()
-    haystack = re.sub(r"\s+", " ", paper_md).lower()
-    return needle in haystack
-
-
-_DISCUSSION_HEDGE_PHRASES = (
-    "may", "might", "suggests", "consistent with", "appears",
-    "context-dependent", "uncertain", "warrants", "remains to be",
-    "preliminary", "interpretive", "qualified", "limited", "cautious",
-)
-
-_DISCUSSION_HEDGE_BACKFILL = """### Confidence calibration
-
-The most cautious reading is that the evidence may support a bounded
-and context-dependent interpretation, but it might not generalize
-across populations, endpoints, doses, or follow-up windows without
-additional direct tests. The pattern suggests biological plausibility
-where it is consistent with the accepted receipts, yet it appears
-qualified by uncertainty, limited directness, and preliminary evidence
-in several domains. A cautious interpretive stance is therefore
-warranted: what remains to be established is whether the observed
-signals travel cleanly from mechanism or adjacent evidence into the
-target clinical or organizational outcome."""
-
-
-def _ensure_discussion_hedge_density(paper_md: str) -> tuple[str, list[dict]]:
-    start, end, section = _extract_section(paper_md, "Discussion")
-    if start < 0:
-        return paper_md, []
-    body_lc = section.lower()
-    n_hedges = sum(1 for h in _DISCUSSION_HEDGE_PHRASES if h in body_lc)
-    if n_hedges >= 6:
-        return paper_md, []
-    updated = section.rstrip() + "\n\n" + _DISCUSSION_HEDGE_BACKFILL + "\n\n"
-    new_md = paper_md[:start] + updated + paper_md[end:]
-    return new_md, [{
-        "fix_type": "discussion_hedge_density_backfill",
-        "n_changes": 1,
-        "description": (
-            "appended numeric-free confidence-calibration paragraph to "
-            f"Discussion ({n_hedges} hedge phrases before backfill)"
-        ),
-    }]
-
-
-_DEPTH_BACKFILL_EXTENSION = """{section_context} {prefix} The public interpretation remains tied to
-the source record rather than to any single unsupported sentence. When
-a source-context sentence cannot support its own specificity, the paper
-does not infer a replacement result; it retains only the higher-level
-boundary that the receipt graph already supports. This distinction
-matters for journal review because removal of unsafe numerics should
-not delete the scientific question. The surviving section therefore
-explains how to read the evidence as a conservative synthesis of
-directness, endpoint proximity, and disagreement, with uncertain
-numeric detail withheld from public claims."""
-
-
-_INTRODUCTION_BACKFILL = """### Scope of the synthesis
-
-This synthesis treats the topic as a structured research question
-rather than as a binary endorsement. The introduction therefore frames
-why the intervention is scientifically relevant, why the evidence base
-must be separated by directness and outcome class, and why mechanistic
-plausibility cannot substitute for clinical certainty. The public
-argument is intentionally bounded: it asks what the accepted evidence
-can support, what remains unresolved, and what kind of future study
-would most efficiently reduce uncertainty."""
-
-
-_BACKGROUND_BACKFILL = """### Evidence-context framing
-
-The background should be read as a map of the evidence context, not as
-an additional source of unverified claims. It separates established
-clinical use, adjacent human evidence, animal or cellular mechanisms,
-and open translational questions so that later sections can interpret
-the corpus without collapsing unlike forms of evidence. This framing
-preserves the central research problem: whether mechanistic plausibility
-and receipt-level findings converge strongly enough to justify further
-clinical testing while keeping patient-facing claims conservative."""
-
-
-_CROSS_DOMAIN_BACKFILL = """### Boundary-condition synthesis
-
-Interpreting the cross-domain evidence requires treating each domain as
-part of a boundary-condition map rather than as a single pooled effect.
-Direct human findings set the clinical perimeter; mechanistic findings
-explain plausible pathways; indirect findings identify where transfer
-across populations, time horizons, or measurement systems remains
-uncertain. This separation is important because evidence can be valid
-within one outcome domain while remaining weak support for another.
-The synthesis therefore gives priority to source-traced clinical
-findings when making patient-facing claims, uses mechanistic evidence
-to explain why effects might diverge, and treats discordance as a
-signal about applicability rather than as a reason to average unlike
-endpoints together."""
-
-
-_RESULTS_BACKFILL = """### Result-interpretation guardrail
-
-The result pattern is interpreted from the accepted receipt summaries
-rather than from isolated extracted fragments. Findings are therefore
-grouped by outcome domain, evidence directness, and receipt-level
-effect direction before any cross-study interpretation is made. This
-keeps direct clinical signals separate from mechanistic or indirect
-signals, preserves null and mixed findings as informative rather than
-discarding them, and prevents a single repaired or quarantined numeric
-sentence from hollowing out the result narrative. The public results
-section reports the surviving source-bound pattern and leaves unsafe
-or poorly bound extraction artifacts to the audit trail.
-
-This guardrail is deliberately numeric-free. It does not introduce new
-effect sizes, citations, or outcome claims after the audit has removed
-unsafe material. Instead, it explains how the remaining result body
-should be read: as a structured map of accepted evidence, not as a
-free-form replacement for stripped source-context claims. The result
-section remains load-bearing because its claims are constrained by the
-manifest, the quantitative evidence index, the tension matrix, and the
-final consistency audit."""
-
-
-_DISCUSSION_BACKFILL = """### Interpretation constraints
-
-The discussion should be read as an interpretation of evidence
-boundaries, not as a conversion of every extracted result into a
-recommendation. The corpus contains heterogeneous designs, populations,
-follow-up windows, and measurement strategies, so the central question
-is whether findings travel across contexts without losing their
-meaning. Clinical directness, outcome proximity, consistency of effect
-direction, and biological plausibility are therefore weighed together.
-Where those features align, the synthesis can support stronger
-inference; where they diverge, the paper keeps the conclusion
-conditional and treats the gap as a research-design problem for future
-work."""
-
-
-_LIMITATIONS_BACKFILL = """### Residual uncertainty
-
-The main limitation is not only the size of the accepted corpus, but
-also the uneven directness of the evidence across outcome classes.
-Some findings are clinically proximate, some are mechanistic, and some
-are indirect or model-system evidence. The paper therefore avoids
-treating all receipts as equivalent. Its conclusions are strongest
-where directness, endpoint proximity, and source-context safety align,
-and weaker where evidence must be translated across populations,
-species, intervention schedules, or measurement systems."""
-
-
-_CONCLUSION_BACKFILL = """### Final interpretation
-
-The final interpretation should remain tiered. Direct clinical receipts
-carry the most immediate weight, mechanistic receipts explain why the
-intervention remains biologically plausible, and indirect receipts mark
-where translation is still uncertain. The manuscript therefore treats
-agreement across those layers as stronger than any isolated signal and
-treats disagreement as a design problem for the next study. A defensible
-next trial would pre-specify the endpoint layer it intends to test, align
-dosing with that endpoint, and report safety signals with the same
-visibility as benefit signals."""
 
 
 def _strip_change_value_misread_sentences(

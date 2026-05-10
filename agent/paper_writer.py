@@ -701,25 +701,6 @@ async def render_full_paper(
     sections["references_full"] = build_references_full_section(receipts)
     _log_section_done("references_full (deterministic)", sections["references_full"])
 
-    # Fix #55 v2: orchestrator-side section-rerender backstop.
-    # See agent/paper_writer_backstop.py for the per-section retry
-    # logic. This is the FINAL retry layer (4th attempt) for any
-    # audit-gated section that came in below floor. Single-shot to
-    # bound wall time.
-    from agent.paper_writer_backstop import apply_section_backstop
-    sections = await apply_section_backstop(
-        sections,
-        user_prompt=user,
-        section_prompts=_prompts,
-        topic=topic,
-        accepted=accepted,
-        matrix=matrix,
-        chain=chain, client=client, ledger=ledger, seed=seed,
-        background_lit_entries=background_lit_entries,
-        write_anchored_fn=_write_anchored_section,
-        write_scoped_fn=_write_scoped_section,
-    )
-
     ordered = tuple(sections[n] for n in _FULL_PAPER_SECTION_ORDER)
     body_md = title_md + "\n".join(s.body_md for s in ordered).rstrip() + "\n"
     body_md = _strip_rendered_citation_markers(body_md)

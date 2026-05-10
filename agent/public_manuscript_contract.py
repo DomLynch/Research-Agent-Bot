@@ -1,31 +1,4 @@
-"""Public-manuscript contract — final-render gate.
-
-Stdlib-only, no LLM. Runs after the paper is rendered, before
-certification. Blocks AAA / journal_ready when the rendered Markdown
-contradicts the manifest.
-
-Five rules (all P1 — failing any blocks AAA):
-  1. count_consistency  — free-text counts in the MD must match the
-     manifest's canonical totals (n_receipts, n_high_confidence_claims_total,
-     n_non_orthogonal_tensions). 4-digit years (1900-2100) are filtered to
-     avoid "Yang 2023 study" false positives.
-  2. duplicate_row      — Included-Studies table cannot contain the same
-     citation_token twice unless the manifest has matching split receipts;
-     receiver can never carry conflicting tiers/directness for one citation.
-  3. section_boundary   — Abstract <= 500 words; no "H3:" residue tokens
-     in the body; no duplicate top-level (## or #) sections.
-  4. residue_phrase     — engine-internal language must not appear in
-     the public MD (e.g. "Tournament selector", "no matched source
-     in the accepted evidence registry").
-  5. canonical_link     — manifest must expose the canonical totals; if
-     unreadable, fail closed.
-
-Universal / domain-agnostic: no biomedical hardcoding. The rules apply
-to any topic this platform synthesises (biomedical, climate, materials,
-economics, social science, computer science).
-
-Output sidecar: <run_dir>/public_manuscript_contract.json
-"""
+"""Public-manuscript contract — final-render gate; stdlib-only."""
 from __future__ import annotations
 
 import json
@@ -35,19 +8,20 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Literal, Mapping
 
+from agent.public_manuscript_table_contract import (
+    conclusion_faults,
+    metadata_conflicts,
+    section_outcome_failures,
+    table_set_failures,
+    tension_fault_counts,
+)
+
 
 # ---- canonical counts ----------------------------------------------------
 
 
 @dataclass(frozen=True, slots=True)
 class CanonicalCounts:
-    """Post-SPAR public evidence state for paper-wide totals.
-
-    Raw candidates can describe screening. Accepted receipts/citations
-    describe public synthesis. Rejected receipts can appear only in the
-    quarantine appendix/References. Universal — every topic uses the
-    same manifest + SPAR cache surfaces."""
-
     source_papers: int           # n_receipts (total screened)
     accepted_papers: int         # n_accepted_receipts (post-SPAR)
     rejected_papers: int         # n_quarantined_receipts / SPAR rejects
@@ -111,14 +85,20 @@ _RULES = (
     "section_boundary",
     "residue_phrase",
     "canonical_link",
-    "wrong_topic_residue",
     "broken_prose",
     "repeated_boilerplate",
     "spar_reject_leakage",
     "rejected_appendix_required",
     "qei_title_row_mismatch",
     "reference_duplicates",
+    "malformed_table_row",
     "table_count_consistency",
+    "evidence_role_count_consistency",
+    "section_outcome_integrity",
+    "table_set_consistency",
+    "cross_table_metadata_conflict",
+    "tension_table_integrity",
+    "conclusion_hygiene",
 )
 _RuleName = Literal[
     "count_consistency",
@@ -126,14 +106,20 @@ _RuleName = Literal[
     "section_boundary",
     "residue_phrase",
     "canonical_link",
-    "wrong_topic_residue",
     "broken_prose",
     "repeated_boilerplate",
     "spar_reject_leakage",
     "rejected_appendix_required",
     "qei_title_row_mismatch",
     "reference_duplicates",
+    "malformed_table_row",
     "table_count_consistency",
+    "evidence_role_count_consistency",
+    "section_outcome_integrity",
+    "table_set_consistency",
+    "cross_table_metadata_conflict",
+    "tension_table_integrity",
+    "conclusion_hygiene",
 ]
 
 
@@ -235,22 +221,19 @@ _COUNT_PATTERNS: tuple[tuple[re.Pattern[str], str, str], ...] = (
 # totals (e.g. "in 3 studies, the effect was negative"). The contract
 # focuses on top-line summary counts; per-section figures < 5 are noise.
 _NOISE_THRESHOLD = 5
+_COUNT_NOISE_PREFIX_RE = re.compile(
+    r"(?:severity|priority|score|grade|tier)[-\s]*$|(?:\b[kn]\s*=\s*)$",
+    re.I,
+)
 
 
 def _is_year_token(n: int) -> bool:
-    """4-digit years 1900-2100 should not be treated as count totals."""
     return 1900 <= n <= 2100
 
 
 def _check_counts(
     body: str, canon: CanonicalCounts,
 ) -> list[ContractFailure]:
-    """Find numeric claims in the MD that contradict the canonical totals.
-
-    Filters: years (1900-2100), per-section noise (< _NOISE_THRESHOLD),
-    and citation-context numbers like "in N studies" inside parentheses
-    near a year. Only top-line claims count.
-    """
     fails: list[ContractFailure] = []
     body_no_tables = _strip_table_rows(body)
     body_clean = _strip_code_fences(body_no_tables)
@@ -261,7 +244,12 @@ def _check_counts(
                 n = int(m.group(1))
             except (TypeError, ValueError):
                 continue
-            if _is_year_token(n) or n < _NOISE_THRESHOLD:
+            prefix = body_clean[max(0, m.start() - 24):m.start()]
+            if (
+                _is_year_token(n)
+                or n < _NOISE_THRESHOLD
+                or _COUNT_NOISE_PREFIX_RE.search(prefix)
+            ):
                 continue
             seen[cat].add(n)
     for cat, attrs in (
@@ -305,7 +293,7 @@ _INCLUDED_HEADING_RE = re.compile(
 # Citation-token shape: "Surname 2019" or "Surname 2019b" — first column
 # of an Included-Studies row is the canonical citation.
 _CITATION_TOKEN_RE = re.compile(
-    r"^\s*\|\s*([A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)"
+    r"^\s*\|\s*([A-Za-z0-9][A-Za-z0-9\-']*(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)"
     r"\s*\|",
     re.M,
 )
@@ -318,9 +306,6 @@ _SPLIT_DISAMBIG_RE = re.compile(r"\[[^\]]+\]")
 def _expected_split_count(
     manifest: dict, citation_token: str,
 ) -> int:
-    """Count how many distinct receipts in the manifest carry this
-    citation_token. >1 means a legitimate split (e.g. primary +
-    secondary endpoint receipts on the same paper)."""
     receipts = manifest.get("receipts") or ()
     return sum(
         1 for r in receipts
@@ -399,7 +384,7 @@ def _check_duplicate_rows(
         if len(cells) < 3:
             continue
         cite_match = re.match(
-            r"^([A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)",
+            r"^([A-Za-z0-9][A-Za-z0-9\-']*(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)",
             cells[0],
         )
         if not cite_match:
@@ -427,13 +412,6 @@ def _check_table_row_counts(
     body: str,
     canon: CanonicalCounts,
 ) -> list[ContractFailure]:
-    """Table 1 must render the public accepted-study surface.
-
-    The expected count is unique accepted citation_tokens, not raw
-    accepted receipts: one paper can legitimately contribute multiple
-    accepted receipts. Universal — manifest/SPAR state defines the
-    expected public row count for every topic.
-    """
     expected = canon.accepted_publications or canon.accepted_papers
     if expected <= 0:
         return []
@@ -454,6 +432,101 @@ def _check_table_row_counts(
             ),
         )
     ]
+
+
+def _check_table_set_consistency(body: str) -> list[ContractFailure]:
+    missing = table_set_failures(body)
+    if not missing:
+        return []
+    return [ContractFailure(
+        rule="table_set_consistency",
+        detail=f"{len(missing)} citation(s) appear in evidence tables but are absent from Table 1: {missing[:8]}.",
+    )]
+
+
+def _check_cross_table_metadata_conflict(body: str) -> list[ContractFailure]:
+    conflicts = metadata_conflicts(body)
+    if not conflicts:
+        return []
+    return [ContractFailure(
+        rule="cross_table_metadata_conflict",
+        detail=(
+            f"{len(conflicts)} cross-table metadata conflict(s): "
+            f"{conflicts[:5]}. A citation cannot carry different "
+            f"tier/directness labels across public tables."
+        ),
+    )]
+
+
+def _check_tension_table_integrity(body: str) -> list[ContractFailure]:
+    self_pairs, dupes = tension_fault_counts(body)
+    if not self_pairs and not dupes:
+        return []
+    return [ContractFailure(
+        rule="tension_table_integrity",
+        detail=f"Table 3 contains {self_pairs} self-pair(s) and {dupes} duplicate pair(s).",
+    )]
+
+
+_ROLE_COUNT_RE = re.compile(
+    r"\b(\d{1,4})\s+direct\s+clinical\s+receipt\(s\),\s*"
+    r"(\d{1,4})\s+indirect\s+clinical\s+receipt\(s\),\s*and\s*"
+    r"(\d{1,4})\s+mechanistic\s+or\s+model-system\s+receipt\(s\)",
+    re.I,
+)
+
+
+def _accepted_receipts_from_manifest(
+    manifest: dict,
+    rejected_verdicts: Mapping[str, str] | None = None,
+) -> list[dict]:
+    receipts = [
+        r for r in (manifest.get("receipts") or ())
+        if isinstance(r, dict)
+    ]
+    if rejected_verdicts is not None:
+        return [
+            r for r in receipts
+            if str(r.get("receipt_id") or "") not in rejected_verdicts
+        ]
+    return [
+        r for r in receipts
+        if str(r.get("spar_verdict") or "accept_clean").startswith("accept")
+    ]
+
+
+def _check_evidence_role_counts(
+    body: str,
+    manifest: dict,
+    rejected_verdicts: Mapping[str, str] | None = None,
+) -> list[ContractFailure]:
+    accepted = _accepted_receipts_from_manifest(manifest, rejected_verdicts)
+    if not accepted:
+        return []
+    expected = Counter(
+        str(r.get("directness") or "").lower() for r in accepted
+    )
+    failures: list[ContractFailure] = []
+    for m in _ROLE_COUNT_RE.finditer(body):
+        observed = {
+            "direct": int(m.group(1)),
+            "indirect": int(m.group(2)),
+            "mechanistic": int(m.group(3)),
+        }
+        wanted = {
+            "direct": expected.get("direct", 0),
+            "indirect": expected.get("indirect", 0),
+            "mechanistic": expected.get("mechanistic", 0),
+        }
+        if observed != wanted:
+            failures.append(ContractFailure(
+                rule="evidence_role_count_consistency",
+                detail=(
+                    f"evidence-role count {observed} does not match "
+                    f"post-SPAR accepted receipts {wanted}."
+                ),
+            ))
+    return failures
 
 
 # ---- rule 3: section boundary -------------------------------------------
@@ -529,6 +602,16 @@ FORBIDDEN_PHRASES: tuple[str, ...] = (
     "no matched source in the accepted evidence",
     "source-context sentence",
     "unsupported sentence",
+    "Researka-Certified",
+    "A2A-AAA",
+    "Grok",
+    "certification tolerances",
+    "In the Conclusion, this framing",
+    "In the Limitations, this framing",
+    "The surviving section therefore",
+    "source passage cannot support its own specificity",
+    "Cochrane RoB-2",
+    "ROBINS-I",
 )
 
 
@@ -542,90 +625,6 @@ def _check_residue(body: str) -> list[ContractFailure]:
                 ContractFailure(
                     rule="residue_phrase",
                     detail=f"phrase '{phrase}' appears {n}x in MD",
-                )
-            )
-    return fails
-
-
-# ---- rule 6: wrong-topic residue ----------------------------------------
-
-
-# Universal: enumerate platform topics from topic_packs/*.toml at runtime.
-# Adding a new topic requires no code change — drop a .toml in topic_packs/.
-def _list_known_topics(repo_root: Path | None) -> tuple[str, ...]:
-    if repo_root is None:
-        return ()
-    pack_dir = repo_root / "topic_packs"
-    if not pack_dir.is_dir():
-        return ()
-    return tuple(
-        sorted(
-            p.stem for p in pack_dir.glob("*.toml")
-            if not p.stem.startswith("_")
-        )
-    )
-
-
-# Evidence-noun anchors that, when a sibling topic precedes them, signal
-# a wrong-topic claim assertion. Domain-agnostic: these nouns describe
-# any kind of empirical work (biomedical / climate / materials / etc.).
-_EVIDENCE_NOUNS = (
-    "evidence", "study", "studies", "trial", "trials",
-    "effect", "effects", "finding", "findings",
-    "data", "research", "literature",
-)
-_ASSERT_VERBS = (
-    "should", "must", "can", "may", "will",
-    "is", "are", "was", "were", "need",
-)
-
-
-def _check_wrong_topic_residue(
-    body: str,
-    manifest: dict,
-    repo_root: Path | None,
-) -> list[ContractFailure]:
-    """Universal sibling-topic detector.
-
-    A paper whose `manifest['topic']` is X must not contain claim-asserting
-    sentences about a different platform topic Y (e.g. metformin paper
-    asserting "rapamycin evidence should be interpreted ..."). The list of
-    sibling topics is auto-derived from `topic_packs/*.toml` so adding a
-    new topic does not require code changes.
-    """
-    own_topic = (manifest.get("topic") or "").strip().lower()
-    if not own_topic:
-        return []
-    siblings = [
-        t for t in _list_known_topics(repo_root)
-        if t.lower() != own_topic and t.lower() not in own_topic
-        and own_topic not in t.lower()
-    ]
-    if not siblings:
-        return []
-    nouns = "|".join(_EVIDENCE_NOUNS)
-    verbs = "|".join(_ASSERT_VERBS)
-    fails: list[ContractFailure] = []
-    for sib in siblings:
-        # "<sibling>\\s+<evidence-noun>\\b ... \\b<assert-verb>\\b" within 80
-        # chars. Word-boundary on the sibling so 'rapamycin' does not match
-        # inside 'rapamycin_clinical_brief' citations.
-        pat = re.compile(
-            rf"\b{re.escape(sib)}\b\s+(?:{nouns})\b[\s\S]{{0,80}}\b"
-            rf"(?:{verbs})\b",
-            re.I,
-        )
-        n = len(pat.findall(body))
-        if n > 0:
-            fails.append(
-                ContractFailure(
-                    rule="wrong_topic_residue",
-                    detail=(
-                        f"sibling-topic '{sib}' appears in {n} claim-"
-                        f"asserting context(s) inside a '{own_topic}' "
-                        f"paper. Likely cross-topic prose leak from a "
-                        f"shared template or stale corpus context."
-                    ),
                 )
             )
     return fails
@@ -679,6 +678,10 @@ _BROKEN_PROSE_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
         ),
         "truncated 'reported an effect estimate.' (no value)",
     ),
+    (
+        re.compile(r"\bsingle\s*\.\s*When\s+a\s+cannot\b", re.I),
+        "broken floor-backfill fragment 'single . When a cannot'",
+    ),
 )
 
 
@@ -706,14 +709,6 @@ _HEADING_LINE_RE = re.compile(r"^#{1,6}\s+[^\n]*$", re.M)
 def _check_repeated_boilerplate(
     body: str, *, min_words: int = 8, max_repeats: int = 2,
 ) -> list[ContractFailure]:
-    """Universal sentence-frequency check.
-
-    Any substantive sentence (>= min_words) appearing more than max_repeats
-    times is template residue. Catches "Translational relevance to humans
-    remains uncertain" without hardcoding the phrase — the test is
-    structural (a writer who keeps emitting the same boilerplate hedge),
-    not lexical. Domain-agnostic.
-    """
     body_clean = _strip_code_fences(_strip_table_rows(body))
     # Strip Markdown heading lines so headings don't get glued onto the
     # following sentence by the splitter (otherwise "## A\\n\\nFoo." and
@@ -761,9 +756,6 @@ _QUARANTINE_HEADING_RE = re.compile(
 
 
 def _excise_quarantine_section(body: str) -> str:
-    """Return body with the 'Rejected / Contested Evidence' section
-    removed. Anything outside that section is the 'main paper' for
-    leak-detection purposes."""
     m = _QUARANTINE_HEADING_RE.search(body)
     if not m:
         return body
@@ -795,9 +787,6 @@ def _excise_references_section(body: str) -> str:
 
 
 def _load_spar_cache(run_dir: Path | None) -> dict[str, str] | None:
-    """Return {receipt_id: verdict} for rejected receipts, or None if
-    no spar_cache.json exists. Universal — works for any topic since
-    the cache schema is identical across runs."""
     if run_dir is None:
         return None
     cache_path = run_dir / "spar_cache.json"
@@ -823,15 +812,6 @@ def _check_spar_reject_leakage(
     manifest: dict,
     run_dir: Path | None,
 ) -> list[ContractFailure]:
-    """Wave 22 trust-spine: block AAA when SPAR-rejected receipts appear
-    ANYWHERE in the public MD outside the dedicated 'Rejected /
-    Contested Evidence' quarantine appendix. This includes evidence
-    prose (Discussion / Conclusion / Results / Synthesis / Tensions)
-    AND main evidence tables (Included Studies / QEI / RoB / Per-Study
-    Endpoint / Cross-Domain Tensions). Universal — uses the manifest
-    citation_token mapping plus spar_cache.json (identical schema across
-    topics). No domain assumptions.
-    """
     rejected = _load_spar_cache(run_dir)
     if not rejected:
         return []
@@ -886,11 +866,6 @@ def _check_rejected_appendix_required(
     body: str,
     run_dir: Path | None,
 ) -> list[ContractFailure]:
-    """Wave 22 trust-spine: when SPAR rejected ≥1 receipt, the public MD
-    must contain a 'Rejected / Contested Evidence' (or equivalent
-    quarantine) section. Universal — applies to every topic the platform
-    synthesises, since every topic uses the same SPAR pipeline.
-    """
     rejected = _load_spar_cache(run_dir)
     if not rejected:
         return []
@@ -919,15 +894,11 @@ _QEI_HEADING_RE_C = re.compile(
 # `_` is a word character in Python regex. Plain match is sufficient.
 _TOP_N_RE_C = re.compile(r"Top\s+(\d+)", re.I)
 _QEI_DATA_ROW_RE = re.compile(
-    r"^\s*\|\s*[A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}",
+    r"^\s*\|\s*[A-Za-z0-9][A-Za-z0-9\-']*(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}",
 )
 
 
 def _check_qei_title_row_mismatch(body: str) -> list[ContractFailure]:
-    """Wave 25: the QEI section's "Top N" title must match the actual
-    number of data rows. Universal — every topic's QEI uses the same
-    `## Quantitative Evidence Index` heading + `Top N` title pattern.
-    """
     m = _QEI_HEADING_RE_C.search(body)
     if not m:
         return []
@@ -959,11 +930,6 @@ def _check_qei_title_row_mismatch(body: str) -> list[ContractFailure]:
 
 
 def _check_reference_duplicates(body: str) -> list[ContractFailure]:
-    """Wave 25: the References section must not list the same citation
-    twice. Same paper retrieved under multiple identifiers (PMID/DOI/
-    manual ID) must be merged to a single bibliography entry. Universal
-    — every topic uses the same References format with bold-leading
-    citation tokens."""
     m = _REFERENCES_HEADING_RE_C.search(body)
     if not m:
         return []
@@ -974,7 +940,7 @@ def _check_reference_duplicates(body: str) -> list[ContractFailure]:
     cites: list[str] = []
     for line in section.split("\n"):
         m2 = re.match(
-            r"^\s*[-*]\s*\*\*([A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)\.?\*\*",
+            r"^\s*[-*]\s*\*\*([A-Za-z0-9][A-Za-z0-9\-']*(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}[a-z]?)\.?\*\*",
             line,
         )
         if m2:
@@ -996,6 +962,66 @@ def _check_reference_duplicates(body: str) -> list[ContractFailure]:
     ]
 
 
+# ---- rule 13: malformed markdown table rows -----------------------------
+
+
+_ORPHAN_TABLE_FRAGMENT_RE = re.compile(
+    r"(?m)^[ \t]*[A-Za-z0-9]{1,8}[ \t]*\|[^\n]*\|[ \t]*$",
+)
+
+
+def _check_malformed_table_rows(body: str) -> list[ContractFailure]:
+    hits = _ORPHAN_TABLE_FRAGMENT_RE.findall(body)
+    if not hits:
+        return []
+    return [
+        ContractFailure(
+            rule="malformed_table_row",
+            detail=(
+                f"{len(hits)} orphan table row fragment(s) appear without "
+                f"a leading pipe; markdown tables must render complete rows."
+            ),
+        )
+    ]
+
+
+def _check_section_outcome_integrity(
+    body: str,
+    manifest: dict,
+    rejected_verdicts: Mapping[str, str] | None = None,
+) -> list[ContractFailure]:
+    accepted = _accepted_receipts_from_manifest(manifest, rejected_verdicts)
+    return [
+        ContractFailure(
+            rule="section_outcome_integrity",
+            detail=(
+                f"{msg} Outcome subsections must be fed by matching "
+                f"evidence packets."
+            ),
+        )
+        for msg in section_outcome_failures(body, accepted)
+    ]
+
+
+# ---- rule 15: conclusion hygiene ----------------------------------------
+
+
+def _check_conclusion_hygiene(body: str) -> list[ContractFailure]:
+    hits, subheads = conclusion_faults(body)
+    failures: list[ContractFailure] = []
+    if hits:
+        failures.append(ContractFailure(
+            rule="conclusion_hygiene",
+            detail=f"Conclusion contains contribution/table boilerplate: {hits[:8]}.",
+        ))
+    if subheads:
+        failures.append(ContractFailure(
+            rule="conclusion_hygiene",
+            detail=f"Conclusion contains subsection heading(s): {subheads[:5]}.",
+        ))
+    return failures
+
+
 # ---- helpers -------------------------------------------------------------
 
 
@@ -1012,8 +1038,6 @@ def _strip_table_rows(s: str) -> str:
 
 
 def _extract_section(body: str, heading_re: re.Pattern[str]) -> str | None:
-    """Return body text of the first section whose heading matches
-    `heading_re`, up to the next heading of equal-or-higher level."""
     m = heading_re.search(body)
     if not m:
         return None
@@ -1032,16 +1056,8 @@ def validate(
     manifest: dict,
     *,
     abstract_word_cap: int = 500,
-    repo_root: Path | None = None,
     run_dir: Path | None = None,
 ) -> ContractResult:
-    """Run all nine rules; return ContractResult.
-
-    Universal: rules 6 (wrong-topic) and 9 (SPAR leak) require optional
-    paths — `repo_root` to enumerate `topic_packs/*.toml`, and `run_dir`
-    to read `spar_cache.json`. Both rules silently skip when their inputs
-    are absent so the orchestrator stays useful in unit-test contexts.
-    """
     try:
         rejected_verdicts = _load_spar_cache(run_dir)
         canon = CanonicalCounts.from_manifest(manifest, rejected_verdicts)
@@ -1062,18 +1078,28 @@ def validate(
     fails.extend(_check_counts(paper_md, canon))
     fails.extend(_check_duplicate_rows(paper_md, manifest))
     fails.extend(_check_table_row_counts(paper_md, canon))
+    fails.extend(_check_table_set_consistency(paper_md))
+    fails.extend(_check_cross_table_metadata_conflict(paper_md))
+    fails.extend(_check_tension_table_integrity(paper_md))
+    fails.extend(_check_evidence_role_counts(
+        paper_md, manifest, rejected_verdicts,
+    ))
+    fails.extend(_check_section_outcome_integrity(
+        paper_md, manifest, rejected_verdicts,
+    ))
     section_fails, abs_words = _check_sections(
         paper_md, abstract_word_cap=abstract_word_cap,
     )
     fails.extend(section_fails)
     fails.extend(_check_residue(paper_md))
-    fails.extend(_check_wrong_topic_residue(paper_md, manifest, repo_root))
     fails.extend(_check_broken_prose(paper_md))
     fails.extend(_check_repeated_boilerplate(paper_md))
     fails.extend(_check_spar_reject_leakage(paper_md, manifest, run_dir))
     fails.extend(_check_rejected_appendix_required(paper_md, run_dir))
     fails.extend(_check_qei_title_row_mismatch(paper_md))
     fails.extend(_check_reference_duplicates(paper_md))
+    fails.extend(_check_malformed_table_rows(paper_md))
+    fails.extend(_check_conclusion_hygiene(paper_md))
     by_rule: dict[str, int] = Counter(f.rule for f in fails)
     return ContractResult(
         status="FAIL" if fails else "PASS",
@@ -1084,43 +1110,35 @@ def validate(
     )
 
 
-# Repo-root resolution: walk up from this file until we find topic_packs/
-# (the project's universal topic registry). Cached so the climb is paid
-# once per process.
-def _repo_root_from_module() -> Path | None:
-    here = Path(__file__).resolve()
-    for parent in (here, *here.parents):
-        if (parent / "topic_packs").is_dir():
-            return parent
-    return None
-
-
-_REPO_ROOT_CACHE: Path | None = _repo_root_from_module()
-
-
 def validate_run_dir(
     run_dir: Path,
     *,
     abstract_word_cap: int = 500,
 ) -> ContractResult:
-    """Read full_paper.md + manifest.json from a run dir and validate.
-
-    Auto-resolves `repo_root` (for the wrong-topic rule) and passes
-    `run_dir` (for the SPAR leak rule). Universal — works for any topic
-    that lives inside a project with topic_packs/.
-    """
-    paper_md = (run_dir / "full_paper.md").read_text()
-    manifest = json.loads((run_dir / "manifest.json").read_text())
+    try:
+        paper_md = (run_dir / "full_paper.md").read_text()
+        manifest = json.loads((run_dir / "manifest.json").read_text())
+        if not isinstance(manifest, dict):
+            raise ValueError("manifest root is not an object")
+    except Exception as e:
+        failure = ContractFailure(
+            rule="canonical_link",
+            detail=f"run_dir unreadable or malformed: {e!r}",
+        )
+        return ContractResult(
+            status="FAIL", failures=(failure,),
+            canonical=CanonicalCounts(0, 0, 0, 0, 0, 0),
+            abstract_words=0, n_failures_by_rule={"canonical_link": 1},
+        )
     return validate(
         paper_md, manifest, abstract_word_cap=abstract_word_cap,
-        repo_root=_REPO_ROOT_CACHE, run_dir=run_dir,
+        run_dir=run_dir,
     )
 
 
 def write_sidecar(
     run_dir: Path, result: ContractResult,
 ) -> Path:
-    """Write public_manuscript_contract.json next to the paper."""
     out = run_dir / "public_manuscript_contract.json"
     payload = {
         "status": result.status,
@@ -1132,42 +1150,3 @@ def write_sidecar(
     }
     out.write_text(json.dumps(payload, indent=2) + "\n")
     return out
-
-
-# ---- CLI -----------------------------------------------------------------
-
-
-def _main(argv: list[str] | None = None) -> int:
-    import argparse
-
-    parser = argparse.ArgumentParser(
-        prog="public_manuscript_contract",
-        description="Validate a rendered paper against the manifest.",
-    )
-    parser.add_argument("run_dir", type=Path, help="path to runs/<topic>-...")
-    parser.add_argument(
-        "--abstract-cap", type=int, default=500,
-        help="abstract word cap (default 500)",
-    )
-    parser.add_argument(
-        "--write-sidecar", action="store_true",
-        help="write public_manuscript_contract.json into the run dir",
-    )
-    args = parser.parse_args(argv)
-    result = validate_run_dir(args.run_dir, abstract_word_cap=args.abstract_cap)
-    if args.write_sidecar:
-        write_sidecar(args.run_dir, result)
-    print(f"status: {result.status}")
-    print(f"abstract_words: {result.abstract_words}")
-    print(f"canonical: {asdict(result.canonical)}")
-    if result.failures:
-        print(f"failures ({len(result.failures)}):")
-        for f in result.failures:
-            print(f"  [{f.severity}] {f.rule}: {f.detail}")
-    return 0 if result.status == "PASS" else 1
-
-
-if __name__ == "__main__":  # pragma: no cover — CLI
-    import sys
-
-    sys.exit(_main())

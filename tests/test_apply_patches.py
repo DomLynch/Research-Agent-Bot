@@ -482,6 +482,29 @@ def test_known_cited_artifact_delete_replaces_all_occurrences() -> None:
     assert "Paragraph one" in out and "Paragraph two" in out
 
 
+def test_duplicate_table_row_deletion_removes_one_occurrence_only() -> None:
+    p = {
+        "id": "P-TABLE-DUP", "patch_type": "formatting", "severity": "P3",
+        "location": "Table 1",
+        "before": "\n| Walton 2019 | RCT | A1 |",
+        "after": "",
+        "reason": "remove duplicate row",
+    }
+    paper = (
+        "## Table 1: Included Studies\n\n"
+        "| Citation | Design | Tier |\n"
+        "| --- | --- | --- |"
+        "\n| Walton 2019 | RCT | A1 |"
+        "\n| Walton 2019 | RCT | A1 |"
+        "\n| Konopka 2019 | RCT | A1 |\n"
+    )
+    out, results = apply_patches.apply_patches(paper, [p], _manifest())
+    assert results[0].decision == "applied"
+    assert "deleted one occurrence" in results[0].reason_for_decision
+    assert out.count("| Walton 2019 | RCT | A1 |") == 1
+    assert "| Konopka 2019 | RCT | A1 |" in out
+
+
 def test_known_role_repair_artifact_delete_replaces_all_occurrences() -> None:
     p = {
         "id": "P-ROLE", "patch_type": "formatting", "severity": "P1",
