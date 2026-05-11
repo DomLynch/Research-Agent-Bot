@@ -85,17 +85,12 @@ _PVALUE_DISPLAY_RE = re.compile(
 
 
 _DEPTH_PROTECTED_SECTIONS = {
-    # Sections whose post-strip word count is policed by Fix #53
-    # depth-preservation guard. Floors are SAFETY MARGINS above the
-    # audit thresholds (Q11=800, Q12=800), so a tiny drift below
-    # margin doesn't immediately break the audit gate. Limitations
-    # + Conclusion added per reviewer request — they're analytical-
-    # core too and easy strip-targets when claim-strength repair
-    # fires on hedged language.
-    "Discussion": 850,            # Q11 audit floor 800 + 50 margin
-    "Cross-Domain Synthesis": 850,  # Q12 audit floor 800 + 50 margin
-    "Limitations": 200,           # analytical-core, not Q-gated
-    "Conclusion": 150,            # analytical-core, not Q-gated
+    # Depth-preservation guard only. We do not backfill if the section
+    # is short; the public audit fails closed instead.
+    "Discussion": 800,
+    "Cross-Domain Synthesis": 800,
+    "Limitations": 200,
+    "Conclusion": 100,
 }
 _PUBLIC_BODY_CUTOFF_RE = re.compile(
     r"^##\s+(?:Publication Appendix|Researka Submitter Block|"

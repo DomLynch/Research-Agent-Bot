@@ -530,14 +530,11 @@ def test_render_all_tables_includes_pointer_sentence() -> None:
 
 
 def test_render_all_tables_pointer_explains_table_layout() -> None:
-    """Fix #21: pointer block at the top names the table layout (1-3
-    follow the Researka v1 schema; 4 is supplemental). Replaces the
-    Fix #6 footnote that explained Table 2 aggregate semantics —
-    Table 2 is no longer an aggregator under the new spec."""
+    """Pointer block names the table layout without product jargon."""
     receipts = [_FakeReceipt(receipt_id="X 2020")]
     md = tr.render_all_tables(receipts)
-    assert "Researka v1 schema" in md
-    assert "supplemental" in md.lower()
+    assert "included studies" in md
+    assert "Researka v1 schema" not in md
 
 
 # ----- 2nd-pass reviewer fix tests (post second 2x review on Fix #6) ----

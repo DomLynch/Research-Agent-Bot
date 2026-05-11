@@ -15,7 +15,7 @@ def _words(n: int, prefix: str = "word") -> str:
 def _paper(row: str) -> str:
     return (
         f"## Abstract\n\n{_words(150, 'abstract')}\n\n"
-        f"## Introduction\n\n{_words(400, 'intro')}\n\n"
+        f"## Introduction\n\n{_words(150, 'intro')}\n\n"
         f"## Background\n\n{_words(300, 'background')}\n\n"
         "## Quantitative Evidence Index — topic\n\n"
         "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
@@ -23,10 +23,10 @@ def _paper(row: str) -> str:
         f"{row}\n\n"
         f"## Methods\n\n{_words(300, 'methods')}\n\n"
         f"## Results\n\n{_words(500, 'results')}\n\n"
-        f"## Cross-Domain Synthesis\n\n{_words(850, 'cross')}\n\n"
-        f"## Discussion\n\n{_words(800, 'discussion')}\n\n"
-        f"## Limitations\n\n{_words(250, 'limits')}\n\n"
-        f"## Conclusion\n\n{_words(250, 'conclusion')}\n"
+        f"## Cross-Domain Synthesis\n\n{_words(500, 'cross')}\n\n"
+        f"## Discussion\n\n{_words(300, 'discussion')}\n\n"
+        f"## Limitations\n\n{_words(200, 'limits')}\n\n"
+        f"## Conclusion\n\n{_words(100, 'conclusion')}\n"
     )
 
 

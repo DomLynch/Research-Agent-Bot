@@ -855,6 +855,60 @@ def test_rejected_appendix_required_passes_when_section_present(
     )
 
 
+def test_rejected_appendix_required_passes_when_section_in_supplement(
+    tmp_path: Path,
+) -> None:
+    md = "## Methods\n\nClean methods.\n"
+    manifest = _baseline_manifest()
+    (tmp_path / "spar_cache.json").write_text(json.dumps({
+        "judge_model": "g",
+        "verdicts": {
+            "r1": {
+                "receipt_id": "r1",
+                "verdict": "reject_internal_contradiction",
+                "rationale": "x", "judge_model": "g",
+                "fail_soft_default": False,
+            },
+        },
+    }))
+    (tmp_path / "supplement.md").write_text(
+        "## Rejected / Contested Evidence\n\n_listed below._\n",
+    )
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert not any(
+        f.rule == "rejected_appendix_required" for f in r.failures
+    )
+
+
+def test_table_contract_reads_structured_evidence_sidecar(
+    tmp_path: Path,
+) -> None:
+    """Journal main can omit full evidence tables, but the contract still
+    audits the deterministic table sidecar."""
+    md = "## Abstract\n\nShort.\n## Methods\n\nClean methods.\n"
+    manifest = _baseline_manifest(receipts=[
+        {"receipt_id": "r1", "citation_token": "Walton 2019"},
+    ])
+    (tmp_path / "structured_evidence_tables.md").write_text(
+        "## Structured Evidence Tables\n\n"
+        "### Table 1: Included Studies\n\n"
+        "| Citation | Tier |\n|---|---|\n"
+        "| Walton 2019 | A1 |\n"
+        "| Walton 2019 | A1 |\n",
+    )
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert any(f.rule == "duplicate_row" for f in r.failures)
+
+
+def test_residue_flags_cited_marker_in_public_main() -> None:
+    md = "## Results\n\n_Cited: `Walton 2019`_\n"
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "residue_phrase" and "_Cited:" in f.detail
+        for f in r.failures
+    )
+
+
 def test_rejected_appendix_required_skips_when_no_rejects(
     tmp_path: Path,
 ) -> None:

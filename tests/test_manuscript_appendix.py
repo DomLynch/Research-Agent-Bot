@@ -123,7 +123,7 @@ def test_search_provenance_renders_selection_flow_counts() -> None:
     md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
     assert "Selection flow (PRISMA-style counts)" in md
     assert "| Quant-claim files screened | 287 |" in md
-    assert "| Accepted high-confidence receipt papers | 40 |" in md
+    assert "| Pre-SPAR high-confidence receipt candidates | 40 |" in md
     assert "not a PRISMA claim" in md
 
 

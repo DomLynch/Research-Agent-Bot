@@ -1799,7 +1799,9 @@ async def _run(
         _accepted_writer_receipts, writer_matrix, claims_by_citation,
     )
     if tables_md:
-        full_paper_md = full_paper_md.rstrip() + "\n\n" + tables_md
+        (out_dir / "structured_evidence_tables.md").write_text(tables_md)
+        if os.environ.get("INLINE_STRUCTURED_EVIDENCE_TABLES") == "1":
+            full_paper_md = full_paper_md.rstrip() + "\n\n" + tables_md
     # Pass the registry to References so its Author-Year tokens come
     # from the SAME source as the table cells — no drift possible.
     full_paper_md = _append_references_block(
@@ -2339,6 +2341,11 @@ async def _run_post_paper_pipeline(
         )
     )
     _refix_log.extend(_final_polish_log)
+    paper_md = _restore_rendered_section_contract(
+        paper_md, sections,
+        prefer_typed_sections=prefer_typed_restore,
+    )
+    paper_md = _strip_rendered_citation_markers(paper_md)
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
@@ -2419,12 +2426,9 @@ async def _run_post_paper_pipeline(
         file=sys.stderr,
     )
 
-    # Stage 5b (publication-prep): splice journal-required appendix
-    # sections (Search Provenance / AI-Use Disclosure / Human
-    # Accountability / Data + Code Availability) into the paper just
-    # before the References section. Idempotent — re-runs don't
-    # duplicate. Pure prose with no numerics, citations, or tier
-    # labels, so audit gates already passed are unaffected.
+    # Stage 5b (publication-prep): write journal supplement. Keep the
+    # public manuscript journal-shaped by default; the audit/provenance
+    # bundle remains available in supplement.md.
     try:
         from agent.manuscript_appendix import (
             compose_appendix, splice_appendix_before_references,
@@ -2476,14 +2480,23 @@ async def _run_post_paper_pipeline(
             verdict=unified.verdict,
             spar_cache=_spar_cache_dict,
         )
-        paper_md = splice_appendix_before_references(
-            paper_md, appendix_md,
-        )
+        tables_path = paper_path.with_name("structured_evidence_tables.md")
+        if tables_path.is_file():
+            appendix_md = (
+                tables_path.read_text().rstrip()
+                + "\n\n"
+                + appendix_md.lstrip()
+            )
+        supplement_path = paper_path.with_name("supplement.md")
+        supplement_path.write_text(appendix_md)
+        if os.environ.get("INLINE_PUBLICATION_APPENDIX") == "1":
+            paper_md = splice_appendix_before_references(
+                paper_md, appendix_md,
+            )
         paper_path.write_text(paper_md)
         print(
-            "[pipeline] Stage 5b — manuscript appendix spliced "
-            "(Search Provenance / AI Disclosure / Accountability / "
-            "Data Availability)",
+            "[pipeline] Stage 5b — supplement.md written "
+            "(set INLINE_PUBLICATION_APPENDIX=1 to inline it)",
             file=sys.stderr,
         )
     except Exception as _e:  # pragma: no cover — best-effort

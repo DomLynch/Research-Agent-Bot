@@ -695,9 +695,8 @@ def _adaptive_hedge_threshold() -> int:
     return 6 if n_uncertain / n_total > 0.5 else 4
 
 
-# Fix #41: Discussion depth gate. The grok-smart run produced a
-# 310-word Discussion in a 12k paper — desk-reject territory. The
-# fat baseline (aaa-real2) had 1,048 words. Floor: ≥800.
+# Fix #41: Discussion depth gate. Fail closed on thin analysis; the
+# repair layer must not synthesize filler to satisfy this gate.
 def _check_discussion_depth(paper: str) -> tuple[bool, str]:
     m = re.search(
         r"##\s+Discussion(.*?)(?=^##\s+\w|\Z)",
@@ -709,14 +708,12 @@ def _check_discussion_depth(paper: str) -> tuple[bool, str]:
     n = len(body.split())
     return n >= 800, (
         f"Discussion {n} words "
-        "(threshold ≥800 — Fix #41 depth gate)"
+        "(threshold ≥800 — analytical-depth gate)"
     )
 
 
-# Fix #42: Cross-Domain Synthesis depth gate. The grok-smart run had
-# 525 words; the fat baseline had 1,172. The cross-domain section is
-# the paper's intellectual core (explicit cross-outcome tension
-# adjudication). Floor: ≥800.
+# Fix #42: Cross-Domain Synthesis depth gate. Fail closed on thin
+# synthesis; the repair layer must not synthesize filler prose.
 def _check_cross_domain_depth(paper: str) -> tuple[bool, str]:
     m = re.search(
         r"##\s+Cross-Domain Synthesis(.*?)(?=^##\s+\w|\Z)",
@@ -728,7 +725,7 @@ def _check_cross_domain_depth(paper: str) -> tuple[bool, str]:
     n = len(body.split())
     return n >= 800, (
         f"Cross-Domain Synthesis {n} words "
-        "(threshold ≥800 — Fix #42 depth gate)"
+        "(threshold ≥800 — analytical-depth gate)"
     )
 
 

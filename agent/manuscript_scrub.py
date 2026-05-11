@@ -64,6 +64,8 @@ _RESIDUE_PATTERNS: tuple[re.Pattern[str], ...] = (
     ),
     re.compile(r"\bCochrane\s+RoB-2\b", re.I),
     re.compile(r"\bROBINS-I\b", re.I),
+    re.compile(r"\brisk-of-bias\s+roll-up\b", re.I),
+    re.compile(r"\btaken\s+together,\s*", re.I),
 )
 
 
@@ -355,7 +357,8 @@ def fix_qei_title_count(md: str) -> tuple[str, bool]:
 
 
 _BROKEN_EFFECT_SENTENCE_RE = re.compile(
-    r"(^|(?<=[.!?])\s+)([^.\n]*\breported\s+an\s+effect\s+estimate\.)\s*",
+    r"(^|(?<=[.!?])\s+)([^.\n]*\breported\s+an\s+effect\s+estimate"
+    r"(?:\s+of\s+[^.!?\n]+)?\.)\s*",
     re.I | re.M,
 )
 _PROTECTED_REJECT_HEADING_RE = re.compile(

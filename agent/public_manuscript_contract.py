@@ -79,27 +79,6 @@ class CanonicalCounts:
 # ---- failure record ------------------------------------------------------
 
 
-_RULES = (
-    "count_consistency",
-    "duplicate_row",
-    "section_boundary",
-    "residue_phrase",
-    "canonical_link",
-    "broken_prose",
-    "repeated_boilerplate",
-    "spar_reject_leakage",
-    "rejected_appendix_required",
-    "qei_title_row_mismatch",
-    "reference_duplicates",
-    "malformed_table_row",
-    "table_count_consistency",
-    "evidence_role_count_consistency",
-    "section_outcome_integrity",
-    "table_set_consistency",
-    "cross_table_metadata_conflict",
-    "tension_table_integrity",
-    "conclusion_hygiene",
-)
 _RuleName = Literal[
     "count_consistency",
     "duplicate_row",
@@ -608,13 +587,17 @@ def _check_sections(
 # Keep entries non-overlapping (no entry should be a strict prefix of
 # another) so we don't double-count the same residue site.
 FORBIDDEN_PHRASES: tuple[str, ...] = (
-    "no LLM authorship", "LLM proposes, code disposes", "deterministic evidence summary",
-    "Tournament selector", "Selected thesis:", "no matched source in the accepted evidence",
-    "source-context sentence", "unsupported sentence", "Researka-Certified", "A2A-AAA",
-    "Grok", "certification tolerances", "In the Conclusion, this framing",
-    "In the Limitations, this framing", "The surviving section therefore",
-    "source passage cannot support its own specificity", "Cochrane RoB-2", "ROBINS-I",
-    "risk-of-bias roll-up",
+    "no LLM authorship", "LLM proposes, code disposes",
+    "deterministic evidence summary", "Tournament selector",
+    "Selected thesis:", "no matched source in the accepted evidence",
+    "source-context sentence", "unsupported sentence", "Researka-Certified",
+    "A2A-AAA", "Grok", "certification tolerances",
+    "In the Conclusion, this framing", "In the Limitations, this framing",
+    "The surviving section therefore",
+    "source passage cannot support its own specificity", "Cochrane RoB-2",
+    "ROBINS-I", "risk-of-bias roll-up", "_Cited:", "trust-spine",
+    "trust spine", "Publication Appendix", "Search Provenance and Selection",
+    "AI-Use Disclosure", "Researka Submitter Block",
 )
 
 
@@ -874,14 +857,24 @@ def _check_rejected_appendix_required(
         return []
     if _QUARANTINE_HEADING_RE.search(body):
         return []
+    if run_dir is not None:
+        supplement = run_dir / "supplement.md"
+        try:
+            if supplement.is_file() and _QUARANTINE_HEADING_RE.search(
+                supplement.read_text()
+            ):
+                return []
+        except OSError:
+            pass
     return [
         ContractFailure(
             rule="rejected_appendix_required",
             detail=(
                 f"{len(rejected)} SPAR-rejected receipt(s) exist for this "
-                f"run but the public MD has no 'Rejected / Contested "
-                f"Evidence' quarantine section. Trust-spine ordering "
-                f"requires every reject to be listed transparently."
+                f"run but neither the public MD nor supplement.md has a "
+                f"'Rejected / Contested Evidence' quarantine section. "
+                f"Trust-spine ordering requires every reject to be listed "
+                f"transparently."
             ),
         )
     ]
@@ -1051,6 +1044,20 @@ def _extract_section(body: str, heading_re: re.Pattern[str]) -> str | None:
     return body[start:end]
 
 
+def _with_structured_evidence_sidecar(
+    paper_md: str, run_dir: Path | None,
+) -> str:
+    """Append deterministic evidence tables when journal main omits them."""
+    try:
+        sidecar = (
+            (run_dir / "structured_evidence_tables.md").read_text()
+            if run_dir else ""
+        )
+    except OSError:
+        sidecar = ""
+    return paper_md.rstrip() + "\n\n" + sidecar if sidecar else paper_md
+
+
 # ---- orchestrator --------------------------------------------------------
 
 
@@ -1078,16 +1085,17 @@ def validate(
             n_failures_by_rule={"canonical_link": 1},
         )
     fails: list[ContractFailure] = []
+    evidence_md = _with_structured_evidence_sidecar(paper_md, run_dir)
     fails.extend(_check_counts(paper_md, canon))
-    fails.extend(_check_duplicate_rows(paper_md, manifest))
-    fails.extend(_check_table_row_counts(paper_md, canon))
-    fails.extend(_check_table_set_consistency(paper_md))
-    fails.extend(_check_cross_table_metadata_conflict(paper_md))
-    fails.extend(_check_tension_table_integrity(paper_md))
+    fails.extend(_check_duplicate_rows(evidence_md, manifest))
+    fails.extend(_check_table_row_counts(evidence_md, canon))
+    fails.extend(_check_table_set_consistency(evidence_md))
+    fails.extend(_check_cross_table_metadata_conflict(evidence_md))
+    fails.extend(_check_tension_table_integrity(evidence_md))
     fails.extend(_check_evidence_role_counts(
-        paper_md, manifest, rejected_verdicts,
+        evidence_md, manifest, rejected_verdicts,
     ))
-    fails.extend(_check_appendix_distribution_counts(paper_md, canon))
+    fails.extend(_check_appendix_distribution_counts(evidence_md, canon))
     fails.extend(_check_section_outcome_integrity(
         paper_md, manifest, rejected_verdicts,
     ))
@@ -1098,11 +1106,11 @@ def validate(
     fails.extend(_check_residue(paper_md))
     fails.extend(_check_broken_prose(paper_md))
     fails.extend(_check_repeated_boilerplate(paper_md))
-    fails.extend(_check_spar_reject_leakage(paper_md, manifest, run_dir))
+    fails.extend(_check_spar_reject_leakage(evidence_md, manifest, run_dir))
     fails.extend(_check_rejected_appendix_required(paper_md, run_dir))
-    fails.extend(_check_qei_title_row_mismatch(paper_md))
+    fails.extend(_check_qei_title_row_mismatch(evidence_md))
     fails.extend(_check_reference_duplicates(paper_md))
-    fails.extend(_check_malformed_table_rows(paper_md))
+    fails.extend(_check_malformed_table_rows(evidence_md))
     fails.extend(_check_conclusion_hygiene(paper_md))
     by_rule: dict[str, int] = Counter(f.rule for f in fails)
     return ContractResult(

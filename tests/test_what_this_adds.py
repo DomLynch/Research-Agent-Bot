@@ -206,6 +206,18 @@ def test_section_includes_research_contribution_layer() -> None:
     assert "direct clinical gap" in md
 
 
+def test_section_uses_design_weighting_not_risk_rollup_language() -> None:
+    md = build_what_this_adds_section(
+        [_r("Direct 2024", tier="A1")],
+        _matrix([_r("Direct 2024", tier="A1")]),
+        _thesis(),
+        topic="rapamycin",
+    )
+    assert "design-level evidence-weighting heuristic" in md
+    assert "risk-of-bias roll-up" not in md
+    assert "overall RoB" not in md
+
+
 def test_research_contribution_layer_humanizes_public_labels() -> None:
     receipts = [
         _r("Direct 2024", outcome="muscle_function", directness="direct"),

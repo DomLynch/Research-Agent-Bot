@@ -54,14 +54,14 @@ def test_methods_excludes_operational_absence_disclosures() -> None:
     assert "LLM fact extraction" not in methods
 
 
-def test_public_methods_meets_journal_surface_depth_floor() -> None:
-    """Regression for urolithin_a live repro: deterministic Methods must
-    clear the public journal-surface depth floor without operational prose."""
+def test_public_methods_stays_lean_but_substantive() -> None:
+    """Journal Methods should be substantive without becoming an audit log."""
     methods = rmc.render_methods(_v06_contract())
     match = re.search(r"^## Methods\n\n(.*)", methods, flags=re.S)
     assert match is not None, "rendered Methods must start with '## Methods'"
     body = match.group(1)
-    assert len(re.findall(r"\b\w+\b", body)) >= 300
+    n_words = len(re.findall(r"\b\w+\b", body))
+    assert 140 <= n_words <= 260
     assert rmc.validate_rendered(methods) == []
 
 

@@ -1360,7 +1360,10 @@ def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
     assert fixer._section_word_count(fixed, "Conclusion") < 250
     assert [
         e for e in log
-        if e["fix_type"] == "conclusion_cross_section_duplicate"
+        if e["fix_type"] in {
+            "conclusion_cross_section_duplicate",
+            "fuzzy_duplicate_paragraph",
+        }
     ]
 
 

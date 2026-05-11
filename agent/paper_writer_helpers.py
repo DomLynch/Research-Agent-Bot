@@ -20,9 +20,7 @@ logger = logging.getLogger(__name__)
 # ~60s headroom for a Ministral fallback round-trip.
 PER_CALL_TIMEOUT_SEC = 240.0
 
-_RENDERED_CITED_RE = re.compile(
-    r"(?m)^[ \t]*_Cited:\s*`[^`\n]+`(?:\s*,\s*`[^`\n]+`)*_[ \t]*\n?"
-)
+_RENDERED_CITED_RE = re.compile(r"(?m)^[ \t]*_Cited:[^\n]*_?[ \t]*\n?")
 
 
 async def call_llm_section(

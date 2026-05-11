@@ -775,11 +775,10 @@ def render_all_tables(
         "## Structured Evidence Tables\n\n"
         "*The following tables present the structured evidence "
         "summary referenced throughout this paper. Numbers live in "
-        "the tables; prose references them. Tables 1-3 follow the "
-        "Researka v1 schema (included studies, per-study endpoint "
-        "evidence, cross-domain tensions); Table 4 is a supplemental "
-        "design-level evidence-weighting heuristic; "
-        "Table 5 surfaces the underlying per-paper numeric index.*\n\n"
+        "the tables; prose references them. Tables 1-3 cover included "
+        "studies, per-study endpoint evidence, and cross-domain "
+        "tensions; Table 4 is a design-level evidence-weighting "
+        "heuristic; Table 5 surfaces the per-paper numeric index.*\n\n"
     )
     return (
         pointer

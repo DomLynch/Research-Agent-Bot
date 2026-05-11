@@ -125,6 +125,7 @@ def test_strip_rendered_citation_markers_removes_body_metadata() -> None:
     md = (
         "## Results\n\n"
         "_Cited: `Moel 2025`_\n"
+        " _Cited: Moel 2025, Stanfield 2026_\n"
         "Rapamycin evidence remains bounded.\n"
     )
     out = strip_rendered_citation_markers(md)

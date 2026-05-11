@@ -66,6 +66,21 @@ def test_scrub_residue_removes_repair_scaffold_phrases() -> None:
     assert "The surviving section therefore" not in out
 
 
+def test_scrub_residue_removes_template_connector() -> None:
+    md = "## Conclusion\n\nThese findings, taken together, suggest caution.\n"
+    out, n = scrub_engine_residue(md)
+    assert n == 1
+    assert "taken together" not in out
+    assert "These findings, suggest caution." in out
+
+
+def test_scrub_residue_removes_risk_of_bias_rollup_phrase() -> None:
+    md = "## Discussion\n\nThe paper used a risk-of-bias roll-up.\n"
+    out, n = scrub_engine_residue(md)
+    assert n == 1
+    assert "risk-of-bias roll-up" not in out
+
+
 # ---- abstract truncation ------------------------------------------------
 
 
@@ -258,6 +273,19 @@ def test_scrub_broken_effect_estimate_sentence_removed() -> None:
     assert n == 1
     assert "reported an effect estimate." not in out
     assert "The next sentence remains supported." in out
+
+
+def test_scrub_broken_effect_estimate_duration_sentence_removed() -> None:
+    md = (
+        "## Results\n\n"
+        "The first sentence remains. Chakraborty 2023 reported an "
+        "effect estimate of 10 weeks. The next sentence remains.\n"
+    )
+    out, n = scrub_broken_effect_estimates(md)
+    assert n == 1
+    assert "effect estimate of 10 weeks" not in out
+    assert "The first sentence remains." in out
+    assert "The next sentence remains." in out
 
 
 def test_scrub_rejected_leaks_deletes_main_body_only() -> None:

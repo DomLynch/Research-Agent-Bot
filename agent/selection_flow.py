@@ -20,7 +20,7 @@ def render_selection_flow_lines(receipt_funnel: Any) -> list[str]:
         ),
         ("Receipt candidate union", receipt_funnel.get("receipt_candidate_union")),
         (
-            "Accepted high-confidence receipt papers",
+            "Pre-SPAR high-confidence receipt candidates",
             counts.get("accepted_high_confidence"),
         ),
         (
