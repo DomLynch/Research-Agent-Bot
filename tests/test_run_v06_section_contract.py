@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
@@ -258,3 +259,135 @@ def test_restore_contract_collapses_consecutive_qei_headings() -> None:
     assert out.count("## Quantitative Evidence Index") == 1
     assert "## Quantitative Evidence Index — Urolithin A" in out
     assert "57%" in out
+
+
+def test_split_quantitative_evidence_index_moves_table_out_of_main() -> None:
+    paper = (
+        "## Abstract\n\nShort abstract.\n\n"
+        "## Quantitative Evidence Index — topic\n\n"
+        "_Top 1 high-confidence numeric claim._\n\n"
+        "| Study | Endpoint |\n|---|---|\n| Smith 2020 | BMI |\n\n"
+        "## Methods\n\nMethods prose.\n"
+    )
+    main, qei = orch._split_quantitative_evidence_index(paper)
+    assert "## Quantitative Evidence Index" not in main
+    assert "## Abstract" in main and "## Methods" in main
+    assert qei.startswith("## Quantitative Evidence Index")
+    assert "Smith 2020" in qei
+
+
+def test_split_quantitative_evidence_index_collapses_duplicate_heading() -> None:
+    paper = (
+        "## Abstract\n\nA.\n\n"
+        "## Quantitative Evidence Index — topic\n\n"
+        "## Quantitative Evidence Index — topic\n\n"
+        "_Top 40 claims._\n\n"
+        "| Study | Endpoint |\n|---|---|\n| Smith 2020 | BMI |\n"
+        "| Jones 2021 | weight |\n\n"
+        "## Methods\n\nM.\n"
+    )
+    main, qei = orch._split_quantitative_evidence_index(paper)
+    assert "## Quantitative Evidence Index" not in main
+    assert qei.count("## Quantitative Evidence Index") == 1
+    assert "Top 2 claims" in qei
+
+
+def test_drop_cross_outcome_paragraphs_removes_wrong_section_citation() -> None:
+    paper = (
+        "## Results\n\n"
+        "### Immune Outcomes\n\n"
+        "Meydani 2016 found an immune signal.\n\n"
+        "Beavers 2022 reported gait speed.\n\n"
+        "### Frailty Outcomes\n\n"
+        "Beavers 2022 reported gait speed.\n"
+    )
+    manifest = {"receipts": [
+        {
+            "citation_token": "Meydani 2016",
+            "outcome_class": "immune",
+            "spar_verdict": "accept_clean",
+        },
+        {
+            "citation_token": "Beavers 2022",
+            "outcome_class": "frailty",
+            "spar_verdict": "accept_clean",
+        },
+    ]}
+    out, n = orch._drop_cross_outcome_paragraphs(paper, manifest)
+    immune = out.split("### Immune Outcomes", 1)[1].split(
+        "### Frailty Outcomes", 1,
+    )[0]
+    frailty = out.split("### Frailty Outcomes", 1)[1]
+    assert n == 1
+    assert "Beavers 2022" not in immune
+    assert "Meydani 2016" in immune
+    assert "Beavers 2022" in frailty
+
+
+def test_replace_conclusion_with_bounded_summary_removes_exact_numeric() -> None:
+    paper = (
+        "## Discussion\n\nInterpretation.\n\n"
+        "## Conclusion\n\n"
+        "Chakraborty 2023 reported an effect estimate of 10 weeks. "
+        "This should not survive.\n\n"
+        "## References\n\nRef.\n"
+    )
+    out, changed = orch._replace_conclusion_with_bounded_summary(
+        paper, {"topic": "caloric_restriction"},
+    )
+    assert changed is True
+    conclusion = out.split("## Conclusion", 1)[1].split("## References", 1)[0]
+    assert "10 weeks" not in conclusion
+    assert "caloric restriction" in conclusion
+    assert "## References" in out
+
+
+def test_neutralize_final_consistency_issue_replaces_sentence_only() -> None:
+    paper = (
+        "## Background\n\n"
+        "The first sentence is safe. However, the translation of these "
+        "preclinical findings to human disease prevention is ungrounded. "
+        "The last sentence remains useful.\n"
+    )
+    issues = [SimpleNamespace(
+        severity="P1",
+        issue_type="source_context_drift",
+        evidence=(
+            "However, the translation of these preclinical findings to "
+            "human disease prevention is ungrounded."
+        ),
+    )]
+    out, n = orch._neutralize_final_consistency_issues(paper, issues)
+    assert n == 1
+    assert "preclinical findings to human disease prevention" not in out
+    assert "The first sentence is safe." in out
+    assert "The last sentence remains useful." in out
+    assert "interpretive context" in out
+
+
+def test_shape_abstract_moves_intro_leakage_to_introduction() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "First abstract sentence states the question. "
+        "Second sentence gives the corpus and finding. "
+        "Third sentence gives the boundary condition. "
+        "Fourth sentence keeps the abstract specific. "
+        "Fifth sentence closes the abstract claim. "
+        "The intervention, defined as a long contextual explanation, "
+        "belongs in the Introduction. "
+        "The geroscience hypothesis posits another introductory claim "
+        "(Lopez-Otin et al.\n\n"
+        "## Introduction\n\n"
+        "Original introduction.\n\n"
+        "## Methods\n\nMethods.\n"
+    )
+    out, changed = orch._shape_abstract_and_intro(
+        paper, {"topic": "caloric_restriction"},
+    )
+    abstract = out.split("## Abstract", 1)[1].split("## Introduction", 1)[0]
+    intro = out.split("## Introduction", 1)[1].split("## Methods", 1)[0]
+    assert changed is True
+    assert "defined as" not in abstract
+    assert "defined as" in intro
+    assert "geroscience hypothesis posits" not in intro
+    assert "Original introduction" in intro

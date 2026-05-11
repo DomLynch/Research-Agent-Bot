@@ -900,6 +900,23 @@ def test_table_contract_reads_structured_evidence_sidecar(
     assert any(f.rule == "duplicate_row" for f in r.failures)
 
 
+def test_qei_contract_reads_quantitative_evidence_sidecar(
+    tmp_path: Path,
+) -> None:
+    """Journal main can omit QEI, but the contract still audits it."""
+    md = "## Abstract\n\nShort.\n## Methods\n\nClean methods.\n"
+    manifest = _baseline_manifest()
+    (tmp_path / "quantitative_evidence_index.md").write_text(
+        "## Quantitative Evidence Index — topic\n\n"
+        "_Top 40 high-confidence numeric claims._\n\n"
+        "| Study | Endpoint |\n| --- | --- |\n"
+        "| Smith 2020 | A |\n"
+        "| Jones 2021 | B |\n"
+    )
+    r = validate(md, manifest, run_dir=tmp_path)
+    assert any(f.rule == "qei_title_row_mismatch" for f in r.failures)
+
+
 def test_residue_flags_cited_marker_in_public_main() -> None:
     md = "## Results\n\n_Cited: `Walton 2019`_\n"
     r = validate(md, _baseline_manifest())

@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from agent.manuscript_scrub import (  # type: ignore[import-not-found]
     dedupe_included_studies,
+    filter_qei_clinical_rows,
     rejected_citation_tokens_from_artifacts,
     scrub_broken_effect_estimates,
     scrub_engine_residue,
@@ -243,6 +244,26 @@ def test_fix_qei_title_no_op_when_count_matches() -> None:
     out, fixed = fix_qei_title_count(md)
     assert not fixed
     assert out == md
+
+
+def test_filter_qei_clinical_rows_drops_sample_sizes_and_caps_rows() -> None:
+    md = (
+        "## Quantitative Evidence Index — testing\n\n"
+        "_Top 4 high-confidence numeric claims._\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "| --- | --- | --- | --- | --- | --- |\n"
+        "| A 2020 | body weight | cr | 5 kg | kg | — |\n"
+        "| B 2021 | body weight | control | n = 16 | sample size | — |\n"
+        "| C 2022 | mortality | cr | HR = 1.2 | hazard ratio | — |\n"
+        "| D 2023 | questionnaire | cr | 7 | score | — |\n"
+    )
+    out, removed = filter_qei_clinical_rows(md, max_rows=20)
+    assert removed == 2
+    assert "n = 16" not in out
+    assert "questionnaire" not in out
+    assert "body weight" in out
+    assert "mortality" in out
+    assert "Top 2" in out
 
 
 def test_rejected_tokens_from_artifacts_maps_spar_rejects() -> None:

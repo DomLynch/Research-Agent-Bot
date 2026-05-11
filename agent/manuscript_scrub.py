@@ -331,14 +331,13 @@ def fix_qei_title_count(md: str) -> tuple[str, bool]:
     nxt = re.search(r"^##\s+\S", md[start:], re.M)
     end = start + nxt.start() if nxt else len(md)
     section = md[start:end]
-    # Count data rows (start with `| ` and contain a citation).
-    rows = [
-        line for line in section.split("\n")
-        if re.match(
-            r"\s*\|\s*[A-Z][A-Za-z\-']+(?:\s+(?:et\s+al\.?|&\s+\S+))?\s+\d{4}",
-            line,
-        )
-    ]
+    rows = []
+    for line in section.split("\n"):
+        if not line.strip().startswith("|") or "---" in line:
+            continue
+        cells = [c.strip().lower() for c in line.split("|")[1:-1]]
+        if cells and cells[0] not in {"study", "citation"}:
+            rows.append(line)
     actual_n = len(rows)
     if actual_n == 0:
         return md, False
@@ -351,6 +350,53 @@ def fix_qei_title_count(md: str) -> tuple[str, bool]:
         return md, False
     new_section = section[:title_m.start()] + f"Top {actual_n}" + section[title_m.end():]
     return md[:start] + new_section + md[end:], True
+
+
+_QEI_CLINICAL_ENDPOINT_RE = re.compile(
+    r"weight|mass|lean|fat|bmi|body mass|strength|grip|gait|bone|density|"
+    r"blood pressure|systolic|diastolic|crp|tnf|inflamm|hba1c|glucose|"
+    r"insulin|lipid|cholesterol|mortality|adherence",
+    re.I,
+)
+_QEI_EXCLUDED_TYPES = {"sample size"}
+
+
+def filter_qei_clinical_rows(md: str, *, max_rows: int = 20) -> tuple[str, int]:
+    """Keep journal-facing QEI rows clinically interpretable.
+
+    Universal rendering rule: sample sizes and generic extracted values
+    belong in the full supplement tables, while QEI should foreground
+    effect-like rows for outcomes a reader can interpret clinically.
+    """
+    lines = md.splitlines()
+    out: list[str] = []
+    kept = removed = 0
+    in_table = False
+    for line in lines:
+        if not line.strip().startswith("|"):
+            out.append(line)
+            continue
+        cells = [c.strip() for c in line.split("|")[1:-1]]
+        if not cells or cells[0].lower() == "study" or "---" in line:
+            out.append(line)
+            in_table = True
+            continue
+        if in_table:
+            endpoint = cells[1] if len(cells) > 1 else ""
+            value_type = cells[4].lower() if len(cells) > 4 else ""
+            keep = (
+                kept < max_rows
+                and value_type not in _QEI_EXCLUDED_TYPES
+                and bool(_QEI_CLINICAL_ENDPOINT_RE.search(endpoint))
+            )
+            if keep:
+                out.append(line)
+                kept += 1
+            else:
+                removed += 1
+    new_md = "\n".join(out) + ("\n" if md.endswith("\n") else "")
+    new_md, _ = fix_qei_title_count(new_md)
+    return new_md, removed
 
 
 # ---- Wave 26: SPAR-source deterministic leak scrub ----------------------

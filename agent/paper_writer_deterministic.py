@@ -32,11 +32,13 @@ def build_methods_section(
     n_accepted = len(filter_accepted(receipts))
     n_total = len(receipts)
     n_rejected = n_total - n_accepted
+    topic_label = topic.replace("_", " ").replace("-", " ")
     body = f"""## Methods
 
 This synthesis used a predeclared corpus of {n_total} source papers on
-{topic}. After evidence adjudication, {n_accepted} receipt(s) entered
-the synthesis and {n_rejected} were kept out of main-body inference.
+{topic_label}. After evidence adjudication, {n_accepted} receipt(s)
+entered the synthesis and {n_rejected} were kept out of main-body
+inference.
 
 Source documents were screened for quantitative outcome statements.
 Claims were retained only when the value, endpoint, study label, and
@@ -44,12 +46,33 @@ citation could be reconciled with the source record. Retained evidence
 was grouped by outcome class, study design, direction of effect,
 directness, and endpoint proximity.
 
+The public manuscript uses the adjudicated receipt set as its inference
+base. Quarantined receipts may remain visible in the supplement for
+auditability, but they are not used to support the Results, Discussion,
+or Conclusion. Dense extraction artifacts, including the full numeric
+index and structured evidence tables, are routed to the supplement so
+the main text can report only the evidence needed for interpretation.
+
 Cross-paper tensions were summarized when retained findings addressed
 related outcomes but differed in direction, population, comparator,
 measurement method, or follow-up window. Direct human trials carried
 the most weight for clinical endpoints; mechanistic, animal, cellular,
 and review-level evidence was used to clarify plausibility and
 boundary conditions rather than to establish clinical benefit.
+
+All counts in the manuscript are derived from the same frozen receipt
+state used to build the tables, references, and supplement. This keeps
+screened, accepted, rejected, claim, and tension counts synchronized
+across the public manuscript and the audit bundle.
+
+The synthesis is descriptive and evidence-mapping rather than a
+formal treatment recommendation. It does not pool heterogeneous
+endpoints unless the effect scale, comparator, and follow-up window are
+compatible. Where studies address related but non-identical endpoints,
+the manuscript reports them as boundary conditions rather than forcing
+them into a single average. This preserves the distinction between
+mechanistic plausibility, biomarker movement, functional response, and
+hard clinical inference. The same rule is applied across all topics.
 """
     return SynthesisSection(name="methods", body_md=body, anchors=())
 
@@ -272,8 +295,7 @@ def build_what_this_adds_section(
 
       - corpus characterisation (N receipts, N outcome classes,
         N non-orthogonal tensions)
-      - the picked thesis sentence (verbatim — already trust-spine
-        validated by the thesis tournament)
+      - the picked thesis sentence
       - the load-bearing cross-domain tension (highest severity)
       - explicit comparison vs the named B1 systematic reviews in
         the corpus (the 'beyond prior reviews' framing)
@@ -308,20 +330,17 @@ def build_what_this_adds_section(
         f"{n_outcomes} outcome class"
         + ("" if n_outcomes == 1 else "es")
         + f" {pair_clause}, "
-        "applying a structured trust-spine pipeline (deterministic "
-        "claim extraction, citation registry, and a per-domain "
-        "design-level evidence-weighting heuristic; see Methods + "
-        "Tables 1-4)."
+        "using a structured evidence-audit workflow with "
+        "deterministic claim extraction, citation resolution, and "
+        "design-level evidence weighting; see Methods and supplement."
     )
     lines.append("")
 
-    # Sentence 2 — picked thesis. Wave 23: dropped engine-internal
-    # 'Tournament selector' jargon (public_manuscript_contract caught
-    # it as residue). Plain-language label is universal and reader-
-    # friendly across topics.
+    # Sentence 2 — picked thesis. Plain-language label is universal
+    # and reader-friendly across topics.
     if thesis and getattr(thesis, "text", "").strip():
         lines.append(
-            f"**Selected thesis:** {thesis.text.strip()}"
+            f"**Central claim:** {thesis.text.strip()}"
         )
         lines.append("")
 
@@ -342,30 +361,23 @@ def build_what_this_adds_section(
         )
         lines.append("")
 
-    # Sentence 4 — explicit comparison vs named reviews
+    # Sentence 4 — comparison vs prior reviews. Keep this citation-free:
+    # named review citations here are narrative context, not load-bearing
+    # source-bound evidence, and the public consistency audit correctly
+    # treats them as unsupported when they are used this way.
     if review_cites:
-        cites_str = ", ".join(review_cites[:5])
         lines.append(
-            f"Prior reviews in the corpus ({cites_str}) emphasise "
-            f"convergent literature signals on {cap}. This synthesis "
-            "adds (a) a per-receipt evidence-weighting "
-            "(Table 4: tier × directness × design weighting → "
-            "load-bearing / mechanistic / supporting / "
-            "hypothesis-generating), (b) a deterministic per-paper "
-            "numeric index (Table 5) for full Q2 traceability, and "
-            "(c) an explicit pairwise tension matrix (Table 3) so "
-            "the boundary conditions are visible rather than averaged "
-            "away in narrative summary."
+            f"Prior reviews of {cap} usually emphasize convergent "
+            "literature signals. This synthesis adds per-receipt "
+            "evidence weighting, a source-bound numeric index, and an "
+            "explicit tension matrix so the boundary conditions are "
+            "visible rather than averaged away in narrative summary."
         )
     else:
         lines.append(
-            "This synthesis adds (a) a per-receipt evidence-weighting "
-            "(Table 4: tier × directness × design weighting → "
-            "load-bearing / mechanistic / supporting / "
-            "hypothesis-generating), (b) a deterministic per-paper "
-            "numeric index (Table 5) for full Q2 traceability, and "
-            "(c) an explicit pairwise tension matrix (Table 3) so "
-            "the boundary conditions are visible rather than averaged "
+            "This synthesis adds per-receipt evidence weighting, a "
+            "source-bound numeric index, and an explicit tension matrix "
+            "so the boundary conditions are visible rather than averaged "
             "away in narrative summary."
         )
     lines.append("")

@@ -76,9 +76,7 @@ def test_section_includes_corpus_size_and_outcome_count() -> None:
 
 
 def test_section_quotes_picked_thesis_verbatim() -> None:
-    """The picked thesis is a load-bearing trust-spine artifact —
-    must surface verbatim in the section so the reader sees the
-    same sentence the tournament selector picked."""
+    """The picked thesis must surface verbatim in public language."""
     thesis_text = (
         "Metformin's longevity signal coexists with an "
         "exercise-adaptation penalty in older-adult RCTs."
@@ -88,10 +86,10 @@ def test_section_quotes_picked_thesis_verbatim() -> None:
         _thesis(thesis_text), topic="metformin",
     )
     assert thesis_text in md
-    # Wave 23: 'Picked thesis (Tournament selector):' was renamed to
-    # 'Selected thesis:' to scrub engine-internal jargon from public
-    # MD. Either label proves the verbatim-quote behaviour.
-    assert "Selected thesis" in md or "Picked thesis" in md
+    assert "Central claim" in md
+    assert "Selected thesis" not in md
+    assert "Picked thesis" not in md
+    assert "Tournament selector" not in md
 
 
 def test_section_highlights_load_bearing_tension() -> None:
@@ -119,10 +117,10 @@ def test_section_highlights_load_bearing_tension() -> None:
     )
 
 
-def test_section_names_b1_review_citations_when_present() -> None:
-    """The 'beyond prior reviews' framing names the B1 systematic
-    reviews actually in the corpus — concrete originality, not
-    abstract claim."""
+def test_section_keeps_prior_review_comparison_citation_free() -> None:
+    """The prior-review comparison is framing, not source-bound
+    evidence; keep named citations out of this sentence so the public
+    consistency audit has a single source of truth for claims."""
     receipts = [
         _r("Walton 2019", tier="A1", directness="direct"),
         _r("Mohammed 2021", tier="B1", directness="review"),
@@ -131,9 +129,9 @@ def test_section_names_b1_review_citations_when_present() -> None:
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
-    assert "Mohammed 2021" in md
-    assert "Keys 2025" in md
     assert "Prior reviews" in md
+    assert "Mohammed 2021" not in md
+    assert "Keys 2025" not in md
 
 
 def test_section_uses_fallback_framing_when_no_reviews() -> None:
@@ -213,9 +211,31 @@ def test_section_uses_design_weighting_not_risk_rollup_language() -> None:
         _thesis(),
         topic="rapamycin",
     )
-    assert "design-level evidence-weighting heuristic" in md
+    assert "design-level evidence weighting" in md
     assert "risk-of-bias roll-up" not in md
     assert "overall RoB" not in md
+
+
+def test_section_has_no_public_audit_jargon_or_main_table_refs() -> None:
+    md = build_what_this_adds_section(
+        [_r("Direct 2024", tier="A1")],
+        _matrix([_r("Direct 2024", tier="A1")]),
+        _thesis(),
+        topic="caloric restriction",
+    )
+    banned = (
+        "trust-spine",
+        "Selected thesis:",
+        "Tournament selector",
+        "Table 3",
+        "Table 4",
+        "Table 5",
+        "risk-of-bias roll-up",
+    )
+    for phrase in banned:
+        assert phrase not in md
+    assert "structured evidence-audit workflow" in md
+    assert "see Methods and supplement" in md
 
 
 def test_research_contribution_layer_humanizes_public_labels() -> None:

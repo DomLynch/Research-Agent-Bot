@@ -6,12 +6,14 @@ import pytest
 from agent.framework_section import (
     SectionConfig,
     build_framework_section,
+    build_novel_framework_section,
     enrich_receipts_with_registry,
     render_engagement_section,
     render_engagement_summary_line,
     render_framework_paragraph,
 )
 from agent.field_engagement import FrameworkEngagement, evaluate_engagement
+from agent.synthesis_schemas import ReceiptSummary, TensionMatrix
 
 
 # ---- enrich_receipts_with_registry ----------------------------------------
@@ -175,6 +177,33 @@ def test_section_respects_explicit_framework_order() -> None:
 
 
 # ---- build_framework_section (end-to-end) ---------------------------------
+
+
+def test_novel_framework_names_metabolic_functional_tradeoff() -> None:
+    receipts = [
+        ReceiptSummary(
+            receipt_id="A", receipt_path="runs/A", topic="demo",
+            thesis_text="x", spar_verdict="accept_clean", n_claims=1,
+            n_failed_traces=0, canonical_trial_id=None,
+            evidence_tier="A1", directness="direct",
+            outcome_class="cardiometabolic", effect_direction="positive",
+            p_values=(), population_summary="adults",
+        ),
+        ReceiptSummary(
+            receipt_id="B", receipt_path="runs/B", topic="demo",
+            thesis_text="x", spar_verdict="accept_clean", n_claims=1,
+            n_failed_traces=0, canonical_trial_id=None,
+            evidence_tier="A1", directness="direct",
+            outcome_class="muscle_function", effect_direction="negative",
+            p_values=(), population_summary="adults",
+        ),
+    ]
+    section = build_novel_framework_section(
+        receipts, TensionMatrix(receipts=tuple(receipts), pairs=()),
+        topic="caloric_restriction",
+    )
+    assert "## Metabolic-Functional Tradeoff Framework" in section.body_md
+    assert "Endpoint-Sensitivity" not in section.body_md
 
 
 def test_build_section_uses_default_5_frameworks() -> None:

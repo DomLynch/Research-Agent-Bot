@@ -164,11 +164,25 @@ def build_novel_framework_section(
             "null_vs_positive",
         ) if label in tension_kinds
     ) or "cross-receipt"
+    outcome_classes = {str(r.outcome_class).lower() for r in receipts}
+    has_metabolic = any(
+        "cardio" in o or "metabolic" in o or "weight" in o
+        for o in outcome_classes
+    )
+    has_functional = any(
+        "muscle" in o or "frailty" in o or "function" in o or "bone" in o
+        for o in outcome_classes
+    )
+    framework_name = (
+        "Metabolic-Functional Tradeoff Framework"
+        if has_metabolic and has_functional
+        else "Endpoint-Sensitivity Framework"
+    )
     subject = (topic.strip() or "the corpus").rstrip("_").replace("_", " ")
     body = [
-        "## Novel Synthesis Framework",
+        f"## {framework_name}",
         "",
-        "We propose an Endpoint-Sensitivity framework for this corpus: "
+        f"We propose a {framework_name} for this corpus: "
         f"{subject} evidence should be interpreted along a gradient from "
         "proximal pathway effects, through intermediate functional or "
         "biomarker endpoints, to distal observable outcomes.",

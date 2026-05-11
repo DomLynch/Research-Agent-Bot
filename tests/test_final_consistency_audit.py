@@ -1788,3 +1788,26 @@ def test_lightweight_public_polish_strips_duplicate_paragraphs_pre_final_audit()
     assert fixed.count("specific interpretive boundary") == 1
     assert "distinct discussion paragraph" in fixed
     assert any(item["fix_type"] == "fuzzy_duplicate_paragraph" for item in log)
+
+
+def test_lightweight_public_polish_neutralizes_prior_review_name_lists() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## What This Synthesis Adds\n\n"
+        "Prior reviews in the corpus (Kazeminasab 2025, Yi 2025) emphasise "
+        "convergent literature signals on caloric restriction.\n"
+    )
+
+    fixed, log = fixer.apply_lightweight_public_polish(paper)
+
+    assert "Kazeminasab 2025" not in fixed
+    assert "Yi 2025" not in fixed
+    assert "Prior reviews of caloric restriction" in fixed
+    assert any(
+        item["fix_type"] == "prior_review_name_list_neutralized"
+        for item in log
+    )

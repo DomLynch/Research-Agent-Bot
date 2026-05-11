@@ -1047,15 +1047,18 @@ def _extract_section(body: str, heading_re: re.Pattern[str]) -> str | None:
 def _with_structured_evidence_sidecar(
     paper_md: str, run_dir: Path | None,
 ) -> str:
-    """Append deterministic evidence tables when journal main omits them."""
-    try:
-        sidecar = (
-            (run_dir / "structured_evidence_tables.md").read_text()
-            if run_dir else ""
-        )
-    except OSError:
-        sidecar = ""
-    return paper_md.rstrip() + "\n\n" + sidecar if sidecar else paper_md
+    if run_dir is None:
+        return paper_md
+    names = "quantitative_evidence_index.md", "structured_evidence_tables.md"
+    sidecars = [
+        (run_dir / name).read_text().strip()
+        for name in names
+        if (run_dir / name).is_file()
+    ]
+    return (
+        paper_md.rstrip() + "\n\n" + "\n\n".join(sidecars) + "\n"
+        if sidecars else paper_md
+    )
 
 
 # ---- orchestrator --------------------------------------------------------

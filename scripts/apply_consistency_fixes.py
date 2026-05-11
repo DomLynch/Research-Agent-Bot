@@ -259,7 +259,28 @@ def apply_lightweight_public_polish(
                 "during final lightweight polish"
             ),
         })
+    new_md, n_review_sentence = _neutralize_prior_review_name_list(new_md)
+    if n_review_sentence:
+        log.append({
+            "fix_type": "prior_review_name_list_neutralized",
+            "n_changes": n_review_sentence,
+            "description": (
+                "removed named review citation lists from public framing "
+                "sentences"
+            ),
+        })
     return new_md, log
+
+
+def _neutralize_prior_review_name_list(paper_md: str) -> tuple[str, int]:
+    pattern = re.compile(
+        r"Prior reviews in the corpus \([^)]+\) emphasise "
+        r"convergent literature signals on ([^.]+)\.",
+    )
+    return pattern.subn(
+        r"Prior reviews of \1 usually emphasize convergent literature signals.",
+        paper_md,
+    )
 
 
 def _strip_consecutive_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:

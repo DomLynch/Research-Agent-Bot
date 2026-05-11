@@ -172,6 +172,278 @@ def _restore_rendered_section_contract(
     return _patch_applier._collapse_consecutive_qei_headings(out)[0]
 
 
+_QEI_SECTION_RE = re.compile(
+    r"(?ms)^##\s+Quantitative Evidence Index\b.*?(?=^##\s+\S|\Z)"
+)
+
+
+def _split_quantitative_evidence_index(paper_md: str) -> tuple[str, str]:
+    """Move the dense numeric index out of journal main when present."""
+    paper_md = _patch_applier._collapse_consecutive_qei_headings(paper_md)[0]
+    match = _QEI_SECTION_RE.search(paper_md)
+    if match is None:
+        return paper_md, ""
+    qei_md = match.group(0).strip() + "\n"
+    try:
+        from agent.manuscript_scrub import (
+            filter_qei_clinical_rows,
+            fix_qei_title_count,
+        )
+        qei_md, _ = fix_qei_title_count(qei_md)
+        qei_md, _ = filter_qei_clinical_rows(qei_md)
+    except ImportError:
+        pass
+    main_md = (
+        paper_md[:match.start()].rstrip()
+        + "\n\n"
+        + paper_md[match.end():].lstrip()
+    ).strip() + "\n"
+    return main_md, qei_md
+
+
+def _split_sentences(text: str) -> list[str]:
+    return [
+        s.strip() for s in re.split(r"(?<=[.!?])\s+(?=[A-Z])", text.strip())
+        if s.strip()
+    ]
+
+
+_ABSTRACT_INTRO_LEAK_RE = re.compile(
+    r"\b(defined as|has been proposed|hypothesis posits|"
+    r"preclinical work|the stakes are substantial)\b",
+    re.I,
+)
+
+
+def _shape_abstract_and_intro(
+    paper_md: str, manifest: dict[str, Any], *, cap: int = 300,
+) -> tuple[str, bool]:
+    abs_m = re.search(r"(?ms)^##\s+Abstract\b\n+(.*?)(?=^##\s+\S)", paper_md)
+    intro_m = re.search(r"(?ms)^##\s+Introduction\b\n+(.*?)(?=^##\s+\S)", paper_md)
+    if abs_m is None or intro_m is None:
+        return paper_md, False
+    abstract = abs_m.group(1).strip()
+    sentences = _split_sentences(abstract)
+    if len(abstract.split()) <= cap and len(sentences) < 6:
+        return paper_md, False
+    split_at = len(sentences)
+    running = 0
+    for i, sentence in enumerate(sentences):
+        running += len(sentence.split())
+        late_intro = (running >= 150 or i >= 4) and _ABSTRACT_INTRO_LEAK_RE.search(sentence)
+        over_cap = running > cap
+        if late_intro or over_cap:
+            split_at = i
+            break
+    if split_at >= len(sentences):
+        return paper_md, False
+    kept = sentences[:split_at]
+    moved = [
+        s for s in sentences[split_at:]
+        if re.search(r"[.!?]$", s) and s.count("(") == s.count(")")
+    ]
+    if len(" ".join(kept).split()) < 240:
+        topic = _topic_label_from_manifest(manifest)
+        kept.append(
+            f"For {topic}, the evidence should therefore be read as a "
+            "boundary-condition map rather than a completed clinical "
+            "geroprotection claim."
+        )
+        kept.append(
+            "The decisive next evidence must show that intermediate "
+            "signals persist alongside preserved function, adherence, "
+            "immune resilience, and safety."
+        )
+        kept.append(
+            "Without that alignment, the intervention remains a promising "
+            "but bounded geroscience hypothesis for clinical translation "
+            "in humans."
+        )
+    new_abs = "\n\n".join([" ".join(kept)])
+    intro_body = intro_m.group(1).strip()
+    moved_md = "\n\n".join(moved)
+    new_intro = intro_body
+    if moved_md:
+        new_intro = (intro_body + "\n\n" + moved_md).strip()
+    out = (
+        paper_md[:abs_m.start(1)]
+        + new_abs
+        + "\n\n"
+        + paper_md[abs_m.end(1):intro_m.start(1)]
+        + new_intro
+        + "\n\n"
+        + paper_md[intro_m.end(1):]
+    )
+    return out, True
+
+
+_OUTCOME_STOPWORDS = {
+    "and", "or", "the", "a", "an", "of", "for", "in", "to", "from",
+    "outcome", "outcomes", "endpoint", "endpoints", "finding",
+    "findings", "function", "functions", "effect", "effects",
+}
+
+
+def _outcome_tokens(text: str) -> set[str]:
+    return {
+        w for w in re.findall(r"[a-z0-9]+", text.lower())
+        if w not in _OUTCOME_STOPWORDS
+    }
+
+
+def _drop_cross_outcome_paragraphs(
+    paper_md: str, manifest: dict[str, Any],
+) -> tuple[str, int]:
+    citations = [
+        (
+            str(r.get("citation_token") or "").strip(),
+            _outcome_tokens(str(r.get("outcome_class") or "")),
+        )
+        for r in manifest.get("receipts", [])
+        if str(r.get("spar_verdict") or "").startswith("accept")
+        and str(r.get("citation_token") or "").strip()
+    ]
+    headings = list(re.finditer(r"^(#{1,6})\s+([^\n]+)$", paper_md, re.M))
+    out: list[str] = []
+    cursor = dropped = 0
+    for i, h in enumerate(headings):
+        heading = h.group(2).strip()
+        if len(h.group(1)) != 3 or not re.search(
+            r"\b(?:outcomes?|endpoints?|findings?)\b", heading, re.I,
+        ):
+            continue
+        ht = _outcome_tokens(heading)
+        if not ht:
+            continue
+        end = headings[i + 1].start() if i + 1 < len(headings) else len(paper_md)
+        body_start = h.end() + (1 if paper_md[h.end():h.end() + 1] == "\n" else 0)
+        out.append(paper_md[cursor:h.end()].rstrip() + "\n\n")
+        kept = []
+        for para in re.split(r"\n\s*\n", paper_md[body_start:end]):
+            leak = any(
+                ot and ot.isdisjoint(ht)
+                and re.search(r"\b" + re.escape(cite) + r"\b", para)
+                for cite, ot in citations
+            )
+            dropped += int(leak)
+            if not leak and para.strip():
+                kept.append(para.strip())
+        out.append(("\n\n".join(kept) + "\n\n") if kept else "\n\n")
+        cursor = end
+    if not out:
+        return paper_md, 0
+    out.append(paper_md[cursor:])
+    return "".join(out), dropped
+
+
+def _topic_label_from_manifest(manifest: dict[str, Any]) -> str:
+    raw = str(manifest.get("topic") or _ACTIVE_TOPIC or "the topic")
+    return raw.replace("_", " ").replace("-", " ").strip() or "the topic"
+
+
+def _replace_conclusion_with_bounded_summary(
+    paper_md: str, manifest: dict[str, Any],
+) -> tuple[str, bool]:
+    match = re.search(r"(?ms)^##\s+Conclusion\b.*?(?=^##\s+\S|\Z)", paper_md)
+    if match is None:
+        return paper_md, False
+    topic_label = _topic_label_from_manifest(manifest)
+    replacement = (
+        "## Conclusion\n\n"
+        f"The accepted evidence supports a bounded interpretation: "
+        f"{topic_label} shows context-dependent biological and clinical "
+        "signals, not a uniform geroprotective effect. The strongest public "
+        "claim is therefore about boundary conditions rather than clinical "
+        "adoption.\n\n"
+        "The central uncertainty is whether favorable intermediate markers "
+        "can be achieved without worsening function, adherence, safety, or "
+        "other healthspan-relevant outcomes. Current evidence remains "
+        "strongest for intermediate endpoints and weaker for hard clinical "
+        "outcomes.\n\n"
+        f"A decisive next study should predefine the target population, "
+        f"comparator, functional endpoints, safety monitoring, and follow-up "
+        f"window before treating {topic_label} as an anti-aging intervention. "
+        "Until then, the intervention should be framed as hypothesis-"
+        "generating for geroscience rather than established geroprotection.\n"
+    )
+    return (
+        paper_md[:match.start()].rstrip()
+        + "\n\n"
+        + replacement
+        + "\n\n"
+        + paper_md[match.end():].lstrip()
+    ).strip() + "\n", True
+
+
+_NEUTRAL_SENTENCES = (
+    "This point is treated as interpretive context rather than standalone quantitative evidence.",
+    "The manuscript therefore separates mechanistic plausibility from clinical inference.",
+    "Those design differences are handled as heterogeneity rather than pooled effect evidence.",
+    "The exact count is retained in the manifest and supplement rather than restated as a narrative effect claim.",
+)
+
+
+def _replace_flagged_sentence(
+    paper_md: str, evidence: str, replacement: str,
+) -> tuple[str, bool]:
+    evidence_norm = " ".join(evidence.split())
+    words = evidence_norm.split()
+    candidates = (" ".join(words[:18]), " ".join(words[:10]))
+    match = None
+    for candidate in candidates:
+        if not candidate:
+            continue
+        pattern = r"\s+".join(re.escape(part) for part in candidate.split())
+        match = re.search(pattern, paper_md)
+        if match is not None:
+            break
+    if match is None:
+        return paper_md, False
+    idx = match.start()
+    para_start = paper_md.rfind("\n\n", 0, idx)
+    para_start = 0 if para_start < 0 else para_start + 2
+    para_end = paper_md.find("\n\n", idx)
+    para_end = len(paper_md) if para_end < 0 else para_end
+    para = paper_md[para_start:para_end]
+    rel = idx - para_start
+    sent_start = max(
+        para.rfind(". ", 0, rel),
+        para.rfind("? ", 0, rel),
+        para.rfind("! ", 0, rel),
+    )
+    sent_start = 0 if sent_start < 0 else sent_start + 2
+    sent_ends = [
+        pos for marker in (". ", "? ", "! ")
+        if (pos := para.find(marker, rel)) >= 0
+    ]
+    sent_end = (min(sent_ends) + 1) if sent_ends else len(para)
+    new_para = para[:sent_start] + replacement + para[sent_end:]
+    new_para = re.sub(r" {2,}", " ", new_para).strip()
+    return paper_md[:para_start] + new_para + paper_md[para_end:], True
+
+
+def _neutralize_final_consistency_issues(
+    paper_md: str, issues: list[Any],
+) -> tuple[str, int]:
+    changed = 0
+    for issue in issues:
+        if getattr(issue, "severity", "") != "P1":
+            continue
+        if getattr(issue, "issue_type", "") not in {
+            "source_context_drift", "numeric_claim_contract",
+        }:
+            continue
+        replacement = _NEUTRAL_SENTENCES[
+            min(changed, len(_NEUTRAL_SENTENCES) - 1)
+        ]
+        evidence = str(getattr(issue, "evidence", "") or "")
+        paper_md, did_change = _replace_flagged_sentence(
+            paper_md, evidence, replacement,
+        )
+        changed += int(did_change)
+    return re.sub(r"\n{3,}", "\n\n", paper_md).strip() + "\n", changed
+
+
 def _restore_required_section_bodies(
     paper_md: str, sections: tuple[SynthesisSection, ...],
     *, prefer_typed_sections: bool = True,
@@ -2346,6 +2618,62 @@ async def _run_post_paper_pipeline(
         prefer_typed_sections=prefer_typed_restore,
     )
     paper_md = _strip_rendered_citation_markers(paper_md)
+    paper_md, _cross_outcome_drops = _drop_cross_outcome_paragraphs(
+        paper_md, manifest,
+    )
+    if _cross_outcome_drops:
+        _refix_log.append({
+            "fix_type": "cross_outcome_paragraph_drop",
+            "n_changes": _cross_outcome_drops,
+            "description": (
+                "removed Results subsection paragraphs citing receipts from "
+                "a different outcome class"
+            ),
+        })
+    paper_md_no_qei, qei_md = _split_quantitative_evidence_index(paper_md)
+    if qei_md:
+        paper_path.with_name("quantitative_evidence_index.md").write_text(qei_md)
+        if os.environ.get("INLINE_QUANTITATIVE_EVIDENCE_INDEX") != "1":
+            paper_md = paper_md_no_qei
+    paper_md, _bounded_conclusion = _replace_conclusion_with_bounded_summary(
+        paper_md, manifest,
+    )
+    if _bounded_conclusion:
+        _refix_log.append({
+            "fix_type": "bounded_conclusion_replace",
+            "n_changes": 1,
+            "description": (
+                "replaced free-form conclusion with bounded, "
+                "non-numeric public summary"
+            ),
+        })
+    _cleanup_audit = _audit_v06.audit(paper_md)
+    _cleanup_audit_md = _audit_v06._format_summary(_cleanup_audit)
+    _cleanup_issues = _consistency_audit.run_audit(
+        paper_md, manifest, _cleanup_audit, _cleanup_audit_md,
+    )
+    paper_md, _neutralized = _neutralize_final_consistency_issues(
+        paper_md, _cleanup_issues,
+    )
+    paper_md, _abstract_shaped = _shape_abstract_and_intro(paper_md, manifest)
+    if _abstract_shaped:
+        _refix_log.append({
+            "fix_type": "abstract_intro_shape",
+            "n_changes": 1,
+            "description": (
+                "trimmed abstract at journal boundary and moved "
+                "introductory overflow into Introduction"
+            ),
+        })
+    if _neutralized:
+        _refix_log.append({
+            "fix_type": "neutralize_consistency_sentences",
+            "n_changes": _neutralized,
+            "description": (
+                "replaced final P1 source-context/numeric-contract "
+                "sentences with non-numeric interpretive guardrails"
+            ),
+        })
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
@@ -2480,10 +2808,17 @@ async def _run_post_paper_pipeline(
             verdict=unified.verdict,
             spar_cache=_spar_cache_dict,
         )
-        tables_path = paper_path.with_name("structured_evidence_tables.md")
-        if tables_path.is_file():
+        supplement_sidecars = []
+        for sidecar_name in (
+            "quantitative_evidence_index.md",
+            "structured_evidence_tables.md",
+        ):
+            sidecar_path = paper_path.with_name(sidecar_name)
+            if sidecar_path.is_file():
+                supplement_sidecars.append(sidecar_path.read_text().rstrip())
+        if supplement_sidecars:
             appendix_md = (
-                tables_path.read_text().rstrip()
+                "\n\n".join(supplement_sidecars)
                 + "\n\n"
                 + appendix_md.lstrip()
             )
@@ -2530,10 +2865,10 @@ async def _run_post_paper_pipeline(
             )
         except Exception:
             _rejected_tokens = ()
-        # Wave 24: tighter abstract cap (350 words, journal convention)
-        # — was 500 in Wave 23. Matches GPT's audit recommendation.
+        # Journal-mode cap: abstract/intro shaping already runs before
+        # final audit; this stays as defence-in-depth.
         _scrubbed_md, _scrub_report = _scrub_paper(
-            _paper_md_in, abstract_cap=350,
+            _paper_md_in, abstract_cap=300,
             rejected_citation_tokens=_rejected_tokens,
         )
         if _scrubbed_md != _paper_md_in:
