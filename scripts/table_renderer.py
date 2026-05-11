@@ -206,6 +206,60 @@ def _design_from_tier(tier: str | None) -> str:
     return _DESIGN_BY_TIER.get(tier, tier)
 
 
+_TIER_RANK: dict[str, int] = {
+    "A1": 0, "A2": 1, "B1": 2, "B2": 3, "C1": 4, "C2": 5,
+}
+_DIRECTNESS_RANK: dict[str, int] = {
+    "direct": 0, "review": 1, "indirect": 2, "mechanistic": 3,
+}
+
+
+def _citation_key(r: object) -> str:
+    """Public citation token used to collapse receipt-level variants."""
+    return _safe(
+        getattr(r, "citation_token", None)
+        or getattr(r, "receipt_id", None),
+        "—",
+    )
+
+
+def _canonical_score(r: object) -> tuple[int, int, int]:
+    """Lower is stronger: evidence tier, then directness, then n claims."""
+    tier = str(getattr(r, "evidence_tier", "") or "").upper()
+    directness = str(getattr(r, "directness", "") or "").lower()
+    n_claims = getattr(r, "n_claims", 0)
+    n = n_claims if isinstance(n_claims, int) else 0
+    return (
+        _TIER_RANK.get(tier, 99),
+        _DIRECTNESS_RANK.get(directness, 99),
+        -n,
+    )
+
+
+def _canonical_public_receipts(receipts: list) -> list:
+    """One public row per citation token, preserving first-seen order.
+
+    SPAR may admit several receipt roles for one paper. Public evidence
+    tables should show one paper-level profile, using the strongest
+    tier/directness metadata across those roles.
+    """
+    best_by_key: dict[str, object] = {}
+    order: list[str] = []
+    for r in receipts:
+        key = _citation_key(r)
+        if key not in best_by_key:
+            order.append(key)
+            best_by_key[key] = r
+            continue
+        if _canonical_score(r) < _canonical_score(best_by_key[key]):
+            best_by_key[key] = r
+    return [best_by_key[k] for k in order]
+
+
+def _canonical_profile_by_citation(receipts: list) -> dict[str, object]:
+    return {_citation_key(r): r for r in _canonical_public_receipts(receipts)}
+
+
 # --- Table 1: Included Studies ------------------------------------------
 
 
@@ -231,7 +285,7 @@ def render_table_1_included_studies(receipts: list) -> str:
         + _row(*(["---"] * 11)) + "\n"
     )
     rows: list[str] = []
-    for r in receipts:
+    for r in _canonical_public_receipts(receipts):
         pop_raw = getattr(r, "population_summary", None) or "—"
         n_str, pop_label = _split_population_n(pop_raw)
         # Fix #21 follow-up: Q9 numeric-density check requires the
@@ -245,7 +299,7 @@ def render_table_1_included_studies(receipts: list) -> str:
         )
         tier = _safe(getattr(r, "evidence_tier", None), "—")
         rows.append(_row(
-            _safe(getattr(r, "receipt_id", None), "—"),
+            _citation_key(r),
             _design_from_tier(tier),
             tier,
             n_cell,
@@ -326,12 +380,14 @@ def render_table_2_endpoint_evidence(receipts: list) -> str:
         + _row(*(["---"] * 7)) + "\n"
     )
     rows: list[str] = []
+    canonical_profiles = _canonical_profile_by_citation(receipts)
     for r in receipts:
-        study = _safe(getattr(r, "receipt_id", None), "—")
+        study = _citation_key(r)
+        profile = canonical_profiles.get(study, r)
         endpoint = _safe(getattr(r, "outcome_class", None), "—")
         direction = _safe(getattr(r, "effect_direction", None), "—")
-        directness = _safe(getattr(r, "directness", None), "—")
-        tier = _safe(getattr(r, "evidence_tier", None), "—")
+        directness = _safe(getattr(profile, "directness", None), "—")
+        tier = _safe(getattr(profile, "evidence_tier", None), "—")
         endpoint_display = _public_label(endpoint)
         direction_display_base = _public_label(direction)
         pvals = [p for p in (getattr(r, "p_values", None) or ()) if p]
@@ -552,7 +608,7 @@ def render_table_4_evidence_limitations(receipts: list) -> str:
         + _row(*sep_cells) + "\n"
     )
     rows: list[str] = []
-    for r in receipts:
+    for r in _canonical_public_receipts(receipts):
         tier = getattr(r, "evidence_tier", "") or "unknown"
         domains = _rob_domains(tier)
         overall = _overall_rob(domains)
@@ -568,7 +624,7 @@ def render_table_4_evidence_limitations(receipts: list) -> str:
         else:
             note = f"{direction} effect — see Tables 1/2"
         cells = (
-            [_safe(getattr(r, "receipt_id", None), "—"),
+            [_citation_key(r),
              tier, _rob_tool(tier)]
             + list(domains)
             + [overall, weight, note]

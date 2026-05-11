@@ -1115,3 +1115,78 @@ def test_table_4_caveat_mentions_synthesis_weight() -> None:
     assert "tier × directness × overall RoB" in md or (
         "qualitative weighting" in md
     )
+
+
+def test_public_tables_canonicalize_duplicate_citation_profiles() -> None:
+    """One paper can have multiple accepted receipt roles; public
+    tables expose one strongest paper-level metadata profile."""
+    receipts = [
+        _FakeReceipt(
+            receipt_id="Konopka 2019", evidence_tier="B2",
+            directness="indirect",
+        ),
+        _FakeReceipt(
+            receipt_id="Konopka 2019", evidence_tier="A1",
+            directness="direct",
+        ),
+        _FakeReceipt(receipt_id="Walton 2019", evidence_tier="A1"),
+        _FakeReceipt(receipt_id="Walton 2019", evidence_tier="A1"),
+    ]
+
+    table1 = tr.render_table_1_included_studies(receipts)
+    konopka_rows = [
+        ln for ln in table1.splitlines()
+        if ln.startswith("| Konopka 2019 |")
+    ]
+    walton_rows = [
+        ln for ln in table1.splitlines()
+        if ln.startswith("| Walton 2019 |")
+    ]
+    assert len(konopka_rows) == 1
+    assert "| RCT (clinical) | A1 |" in konopka_rows[0]
+    assert "| direct |" in konopka_rows[0]
+    assert len(walton_rows) == 1
+
+
+def test_table_2_uses_canonical_metadata_for_duplicate_citation() -> None:
+    receipts = [
+        _FakeReceipt(
+            receipt_id="Konopka 2019", evidence_tier="B2",
+            directness="indirect", outcome_class="cardiometabolic",
+        ),
+        _FakeReceipt(
+            receipt_id="Konopka 2019", evidence_tier="A1",
+            directness="direct", outcome_class="muscle_function",
+        ),
+    ]
+
+    md = tr.render_table_2_endpoint_evidence(receipts)
+    rows = [
+        ln for ln in md.splitlines()
+        if ln.startswith("| cardiometabolic | Konopka 2019 |")
+        or ln.startswith("| muscle function | Konopka 2019 |")
+    ]
+    assert len(rows) == 2
+    assert all("| direct | A1 |" in row for row in rows)
+
+
+def test_table_4_canonicalizes_duplicate_citation_profiles() -> None:
+    receipts = [
+        _FakeReceipt(
+            receipt_id="Konopka 2019", evidence_tier="B2",
+            directness="indirect",
+        ),
+        _FakeReceipt(
+            receipt_id="Konopka 2019", evidence_tier="A1",
+            directness="direct",
+        ),
+    ]
+
+    md = tr.render_table_4_evidence_limitations(receipts)
+    rows = [
+        ln for ln in md.splitlines()
+        if ln.startswith("| Konopka 2019 |")
+    ]
+    assert len(rows) == 1
+    assert "| A1 |" in rows[0]
+    assert "load-bearing" in rows[0]
