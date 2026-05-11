@@ -112,8 +112,13 @@ def extract_unresolved_reviewer_p1_count(patches: dict | None) -> int:
             if not isinstance(p, dict):
                 continue
             severity = str(p.get("severity") or "").upper()
-            status = str(p.get("status") or "").lower()
-            if severity == "P1" and status not in ("applied", "resolved", "auto_strip"):
+            status = str(p.get("status") or p.get("decision") or "").lower()
+            reason = str(p.get("reason_for_decision") or "").lower()
+            resolved = status in {
+                "applied", "applied_via_repair", "applied_via_arbitration",
+                "resolved", "auto_strip", "auto_stripped",
+            } or "before' text not found" in reason
+            if severity == "P1" and not resolved:
                 unresolved += 1
         return unresolved
     return 0

@@ -122,6 +122,20 @@ def test_unresolved_p1_from_patch_list() -> None:
     assert extract_unresolved_reviewer_p1_count(patches) == 1
 
 
+def test_unresolved_p1_accepts_review_patch_log_decisions() -> None:
+    patches = {"patches": [
+        {"severity": "P1", "decision": "applied_via_repair"},
+        {
+            "severity": "P1",
+            "decision": "rejected",
+            "reason_for_decision": "'before' text not found in paper.",
+        },
+        {"severity": "P2", "decision": "flagged"},
+        {"severity": "P1", "decision": "flagged"},
+    ]}
+    assert extract_unresolved_reviewer_p1_count(patches) == 1
+
+
 def test_unresolved_p1_none_returns_zero() -> None:
     assert extract_unresolved_reviewer_p1_count(None) == 0
 

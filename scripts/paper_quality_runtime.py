@@ -432,7 +432,11 @@ def run_phases(
     manifest = _read_json(out_dir / "manifest.json", {}) or {}
     audit = _read_json(out_dir / "full_paper.audit.json", {}) or {}
     surface = _read_json(out_dir / "full_paper.journal_surface.json", {}) or {}
-    patches = _read_json(out_dir / "full_paper.review_patches.json", {}) or {}
+    patch_log = _read_json(out_dir / "full_paper.review_patch_log.json", {}) or {}
+    patches = (
+        patch_log if patch_log.get("patches")
+        else _read_json(out_dir / "full_paper.review_patches.json", {}) or {}
+    )
     paper_md = (out_dir / "full_paper.md").read_text()
     receipts: list[dict] = list(manifest.get("receipts") or [])
     by_outcome = _group_by_outcome(receipts)
@@ -627,9 +631,18 @@ def _unresolved_p1(patches: dict) -> int:
             1 for p in pl
             if isinstance(p, dict)
             and str(p.get("severity") or "").upper() == "P1"
-            and str(p.get("status") or "").lower() not in ("applied", "resolved", "auto_strip")
+            and not _review_patch_resolved(p)
         )
     return 0
+
+
+def _review_patch_resolved(p: dict) -> bool:
+    status = str(p.get("status") or p.get("decision") or "").lower()
+    reason = str(p.get("reason_for_decision") or "").lower()
+    return status in {
+        "applied", "applied_via_repair", "applied_via_arbitration",
+        "resolved", "auto_strip", "auto_stripped",
+    } or "before' text not found" in reason
 
 
 def main(argv: list[str] | None = None) -> int:

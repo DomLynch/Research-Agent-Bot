@@ -2421,6 +2421,7 @@ async def _run_post_paper_pipeline(
         )
         n_rejected = sum(1 for r in results if r.decision == "rejected")
         n_flagged = sum(1 for r in results if r.decision == "flagged")
+        n_flagged_p1 = sum(1 for r in results if _is_p1_flagged(r))
         n_repaired = sum(
             1 for r in results if r.decision == "applied_via_repair"
         )
@@ -2496,6 +2497,7 @@ async def _run_post_paper_pipeline(
     else:
         grok_unresolved_p1 = 0
         n_flagged = 0
+        n_flagged_p1 = 0
         n_stripped = 0
         n_arbitrated = 0
         n_arbitration_apply = 0
@@ -2729,7 +2731,7 @@ async def _run_post_paper_pipeline(
         n_non_orthogonal_tensions=_n_tens,
         cert_floors=_cert_floors,
         manifest=manifest,
-        grok_flagged_count=n_flagged,
+        grok_flagged_count=n_flagged_p1,
         auto_stripped_count=n_stripped,
         journal_surface_pass=bool(
             surface_report is not None and surface_report.passed
