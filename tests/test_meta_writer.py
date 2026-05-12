@@ -39,7 +39,12 @@ def test_meta_writer_renders_source_run_boundaries() -> None:
     assert "`synthesis-taurine-v06-TEST` remains scoped support only" in md
     assert "not assert human journal review" in md
     assert "pipeline-qualified" in md
+    assert "Source papers | Eligible sources" in md
+    assert "Public disagreements | Pipeline tensions" in md
+    assert "Count semantics: source papers are the corpus entering the run" in md
+    assert "10 source papers and 10 eligible sources" in md
     assert "Maturity" not in md
+    assert "Receipts" not in md.split("## Pipeline Evidence Lane", 1)[0]
     assert "Excluded and SCOP topics do not drive primary conclusions" in md
 
 

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from scripts.run_cross_topic_meta_synthesis import select_best_runs
+from agent.cross_topic_aggregator import load_topic_run_summary
 
 
 def test_select_best_runs_prefers_complete_certified_run_over_larger_legacy(
@@ -92,6 +93,32 @@ def test_select_best_runs_excludes_benchmark_variants(tmp_path: Path) -> None:
     assert brief not in selected
     assert len(selected) == 1
     assert selected[0].name.startswith("synthesis-rapamycin-v06-")
+
+
+def test_topic_summary_uses_public_count_semantics(tmp_path: Path) -> None:
+    run = _write_run(
+        tmp_path,
+        "synthesis-metformin-v06-PUBLIC-2026-05-11T00-00-00Z",
+        receipts=43,
+        track="AAA-CLIN",
+        audit_total=14,
+    )
+    _write_json(run / "public_manuscript_contract.json", {
+        "canonical_counts": {
+            "source_papers": 43,
+            "accepted_papers": 26,
+            "high_confidence_claims": 373,
+            "tensions": 116,
+        }
+    })
+
+    summary = load_topic_run_summary(run)
+
+    assert summary.n_source_papers == 43
+    assert summary.n_accepted_papers == 26
+    assert summary.n_high_confidence_claims == 373
+    assert summary.n_public_tensions == 116
+    assert summary.n_pipeline_tensions == 1
 
 
 def _write_run(

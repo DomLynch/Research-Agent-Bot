@@ -25,6 +25,10 @@ def render_cross_topic_meta_synthesis(
         "## Topic Eligibility",
         _topic_table(primary + analytical + scoped + excluded),
         "",
+        "_Count semantics: source papers are the corpus entering the run; eligible "
+        "sources and public disagreements come from the final public-contract "
+        "state; pipeline tensions are the raw matrix count._",
+        "",
         "## Pipeline Evidence Lane",
         _primary_lane(primary, analytical),
         "",
@@ -47,14 +51,15 @@ def render_cross_topic_meta_synthesis(
 
 def _topic_table(topics: list) -> str:
     rows = [
-        "| Topic | Lane | Pipeline status | Human review | Receipts | Claims | Tensions | Run |",
-        "|---|---:|---:|---:|---:|---:|---:|---|",
+        "| Topic | Lane | Pipeline status | Human review | Source papers | Eligible sources | Claims / observations | Public disagreements | Pipeline tensions | Run |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
     ]
     for t in topics:
         rows.append(
             f"| {t.topic} | {_lane_label(t.eligibility)} | {_status_label(t.eligibility)} | "
-            f"not manually reviewed | {t.n_receipts} | "
-            f"{t.n_high_confidence_claims} | {t.n_tensions} | `{t.run_id}` |"
+            f"not manually reviewed | {_source_papers(t)} | {_eligible_sources(t)} | "
+            f"{t.n_high_confidence_claims} | {_public_tensions(t)} | "
+            f"{_pipeline_tensions(t)} | `{t.run_id}` |"
         )
     return "\n".join(rows)
 
@@ -80,9 +85,26 @@ def _primary_lane(primary: list, analytical: list) -> str:
         domains = ", ".join(topic.outcome_domains) or "unspecified"
         lines.append(
             f"- `{topic.run_id}` enters the {lane} lane with "
-            f"{topic.n_receipts} receipts across {domains}."
+            f"{_source_papers(topic)} source papers and "
+            f"{_eligible_sources(topic)} eligible sources across {domains}."
         )
     return "\n".join(lines)
+
+
+def _source_papers(topic) -> int:
+    return int(getattr(topic, "n_source_papers", 0) or topic.n_receipts)
+
+
+def _eligible_sources(topic) -> int:
+    return int(getattr(topic, "n_accepted_papers", 0) or topic.n_receipts)
+
+
+def _public_tensions(topic) -> int:
+    return int(getattr(topic, "n_public_tensions", 0) or topic.n_tensions)
+
+
+def _pipeline_tensions(topic) -> int:
+    return int(getattr(topic, "n_pipeline_tensions", 0) or topic.n_tensions)
 
 
 def _convergence_section(convergences: tuple[MechanismConvergence, ...]) -> str:
