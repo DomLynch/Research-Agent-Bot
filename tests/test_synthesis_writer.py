@@ -322,6 +322,27 @@ def test_full_paper_references_use_publication_grade_citation() -> None:
     assert "metformin-multi-001-cfab-c01" in body
 
 
+def test_full_paper_references_keep_one_clean_doi() -> None:
+    from agent.paper_writer_deterministic import build_references_full_section
+    rich = ReceiptSummary(
+        receipt_id="caloric-001",
+        receipt_path="runs/x", topic="caloric_restriction",
+        thesis_text="Caloric restriction review",
+        spar_verdict="accept_clean", n_claims=4, n_failed_traces=0,
+        canonical_trial_id=None,
+        evidence_tier="B1", directness="review",
+        outcome_class="cardiometabolic", effect_direction="mixed",
+        p_values=(), population_summary="adults",
+        source_title="Review paper",
+        source_year=2023, source_venue="Nutrients",
+        source_pmid=None,
+        source_doi="10.3390/nu15234911. DOI: 10.1186/s12966-024-01657-9",
+    )
+    body = build_references_full_section([rich]).body_md
+    assert "10.3390/nu15234911" in body
+    assert "10.1186/s12966-024-01657-9" not in body
+
+
 def test_spar_adjudication_section_renders_verdict_table() -> None:
     receipts = [_summary("r-A"), _summary("r-B")]
     sect = build_spar_adjudication_section(receipts)

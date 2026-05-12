@@ -7,6 +7,7 @@ modules under the 600-cloc per-file cap.
 """
 from __future__ import annotations
 
+import re
 from collections.abc import Sequence
 from typing import Any
 
@@ -20,6 +21,17 @@ __all__ = [
     "build_references_full_section",
     "build_what_this_adds_section",
 ]
+
+_DOI_RE = re.compile(r"\b10\.\d{4,9}/[^\s;,)]+", re.IGNORECASE)
+
+
+def _first_clean_doi(value: str | None) -> str | None:
+    if not value:
+        return None
+    match = _DOI_RE.search(str(value))
+    if not match:
+        return None
+    return match.group(0).rstrip(".,")
 
 
 def build_methods_section(
@@ -95,8 +107,8 @@ def format_bibliographic_citation(r: ReceiptSummary) -> str:
         parts.append(f"{r.source_venue}.")
     if r.source_pmid:
         parts.append(f"PMID: {r.source_pmid}.")
-    if r.source_doi:
-        parts.append(f"doi:{r.source_doi}.")
+    if doi := _first_clean_doi(r.source_doi):
+        parts.append(f"doi:{doi}.")
     if r.canonical_trial_id:
         parts.append(f"Trial: {r.canonical_trial_id}.")
     if not parts:

@@ -6,12 +6,16 @@ LLM should physically not see what it's not allowed to cite.
 """
 from __future__ import annotations
 
+import asyncio
+
+from agent import paper_writer
 from agent.paper_writer_helpers import strip_rendered_citation_markers
-from agent.paper_writer import _build_user_prompt
+from agent.paper_writer import _build_user_prompt, write_results_section
 from agent.synthesis_schemas import (
     EffectDirection,
     OutcomeClass,
     ReceiptSummary,
+    SynthesisSection,
     SynthesisThesis,
     TensionMatrix,
 )
@@ -119,6 +123,55 @@ def test_build_user_prompt_no_rejected_input_still_works() -> None:
     )
     assert "r-A" in prompt
     assert "QUARANTINED" not in prompt
+
+
+def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> None:
+    receipts = [
+        _summary("r-immune", outcome="immune"),
+        _summary("r-longevity", outcome="longevity"),
+    ]
+    parsed_by_call = iter([
+        {"subsections": [{
+            "outcome_class": "immune",
+            "paragraphs": [{
+                "text": "Immune evidence remains mixed across included sources.",
+                "receipt_ids": ["r-immune"],
+            }],
+        }]},
+        {"subsections": [{
+            "outcome_class": "longevity",
+            "paragraphs": [{
+                "text": "Longevity evidence discusses lifespan and offspring context.",
+                "receipt_ids": ["r-longevity"],
+            }],
+        }]},
+    ])
+
+    async def fake_call(**_kwargs):
+        return next(parsed_by_call)
+
+    async def fake_citation_fix(section, **_kwargs):
+        if section and "### Longevity Outcomes" in section.body_md:
+            return SynthesisSection(
+                name="results",
+                body_md=section.body_md.replace("### Longevity Outcomes\n\n", ""),
+                anchors=section.anchors,
+            )
+        return section
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", fake_call)
+    monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", fake_citation_fix)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 0)
+
+    section = asyncio.run(write_results_section(
+        receipts, [], _matrix(receipts), _thesis(),
+        topic="caloric_restriction", chain=(),
+    ))
+
+    assert "### Immune Outcomes" in section.body_md
+    assert "### Longevity Outcomes" in section.body_md
+    immune_body = section.body_md.split("### Immune Outcomes", 1)[1].split("###", 1)[0]
+    assert "lifespan" not in immune_body
 
 
 def test_strip_rendered_citation_markers_removes_body_metadata() -> None:
