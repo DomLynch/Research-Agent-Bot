@@ -76,12 +76,18 @@ def export_bundle(
     """Copy artifacts from run_dir → bundle_dir. Returns
     {'copied': [...], 'skipped': [...], 'missing_required': [...]}."""
     bundle_dir.mkdir(parents=True, exist_ok=True)
-    result = {
+    result: dict[str, list[str]] = {
         "copied": [], "skipped": [], "missing_required": [],
     }
     for src_name, dst_name in _FILE_MAP.items():
         src = run_dir / src_name
         if not src.exists():
+            if src_name == "full_paper.review_patch_log.json":
+                _write_empty_patch_log(run_dir, bundle_dir / dst_name)
+                result["copied"].append(
+                    f"{src_name} → {dst_name} (synthesized empty log)"
+                )
+                continue
             if src_name in _OPTIONAL:
                 result["skipped"].append(src_name)
             else:
@@ -95,6 +101,19 @@ def export_bundle(
     (bundle_dir / "README.md").write_text(readme)
     result["copied"].append("README.md (composed)")
     return result
+
+
+def _write_empty_patch_log(run_dir: Path, dst: Path) -> None:
+    """Create a public patch-log artifact when review ran with no decisions."""
+    patches = _read_json_safe(run_dir / "full_paper.review_patches.json") or {}
+    dst.write_text(json.dumps({
+        "n_proposed": int(patches.get("n_patches", 0) or 0),
+        "n_applied": 0,
+        "n_rejected": 0,
+        "n_flagged": 0,
+        "n_auto_stripped": 0,
+        "patches": [],
+    }, indent=2))
 
 
 def _compose_readme(run_dir: Path, bundle_dir: Path) -> str:

@@ -314,3 +314,25 @@ def test_bundle_optional_set_is_subset_of_file_map() -> None:
         f"_OPTIONAL has filenames not in _FILE_MAP: "
         f"{bundle._OPTIONAL - src_names}"
     )
+
+
+def test_bundle_synthesizes_empty_patch_log_when_review_had_no_decisions(
+    tmp_path: Path,
+) -> None:
+    """Runs with no review decisions still export a public patch_log.json."""
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    for src_name in bundle._FILE_MAP:
+        if src_name in bundle._OPTIONAL or src_name == "full_paper.review_patch_log.json":
+            continue
+        path = run_dir / src_name
+        path.write_text("{}" if src_name.endswith(".json") else "ok\n")
+    (run_dir / "full_paper.review_patches.json").write_text('{"n_patches": 0}')
+
+    out_dir = tmp_path / "bundle"
+    result = bundle.export_bundle(run_dir, out_dir)
+
+    assert result["missing_required"] == []
+    log = json.loads((out_dir / "patch_log.json").read_text())
+    assert log["n_proposed"] == 0
+    assert log["patches"] == []
