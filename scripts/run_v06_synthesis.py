@@ -468,6 +468,26 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "profile align, but the present corpus does not justify claims "
                 "that ignore the null or adverse parts of the evidence base."
             ),
+            (
+                f"The favorable evidence should therefore be read as endpoint-"
+                f"specific rather than global. Signals in {pos} can justify "
+                "continued mechanistic and clinical follow-up, but they do not "
+                f"cancel null results in {null} or adverse results in {neg}. "
+                "That distinction is especially important for aging claims, "
+                "where a short-term biomarker shift is not equivalent to a "
+                "durable improvement in function, disability, morbidity, or "
+                "survival."
+            ),
+            (
+                "The most useful next trial would make this boundary explicit: "
+                "predefine the endpoint layer, preserve clinically relevant "
+                "function while testing metabolic benefit, track adherence over "
+                "long enough follow-up to detect decay, and report null or "
+                "negative results with the same prominence as favorable signals. "
+                "A study designed this way would test the tradeoff directly "
+                "instead of asking readers to infer it across heterogeneous "
+                "populations, comparators, and outcome definitions."
+            ),
         ],
         "Limitations": [
             (
@@ -553,13 +573,13 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ),
         (
             "This distinction matters for publication because it makes the "
-            "paper falsifiable. A future receipt can strengthen, weaken, or "
+            "paper falsifiable. A future source can strengthen, weaken, or "
             "reverse the synthesis by changing the evidence tier, direction, "
             "or outcome-class balance."
         ),
         (
             "The clinical layer should also be read in relation to the "
-            "population and endpoint represented by each receipt. A finding in "
+            "population and endpoint represented by each source. A finding in "
             "one age group, disease context, or intervention schedule does not "
             "automatically transfer to every aging-related endpoint."
         ),
@@ -589,7 +609,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "limited, heterogeneous, or endpoint-specific."
         ),
         (
-            "For that reason, the manuscript does not collapse every receipt "
+            "For that reason, the manuscript does not collapse every source "
             "into a single recommendation. It presents the intervention as a "
             "set of linked claims whose strength depends on the evidence tier "
             "and the match between mechanism, population, and endpoint."

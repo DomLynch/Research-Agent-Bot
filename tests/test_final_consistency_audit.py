@@ -354,7 +354,7 @@ def test_apply_fixes_renormalizes_meta_phrases_after_depth_restore() -> None:
     assert "audited corpus" not in lower
     assert "audited evidence structure" not in lower
     assert "stripped sentence" not in lower
-    assert "accepted corpus" in lower
+    assert "retained corpus" in lower
     assert any(
         item["fix_type"] == "public_meta_phrase_normalization_post_depth"
         for item in log

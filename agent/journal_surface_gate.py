@@ -38,7 +38,7 @@ _PUBLIC_ARTIFACT_PATTERNS = (
     "should be read as", "### background references", "### final interpretation",
     "**thesis:**", "accepted receipt", "receipt set", "receipt graph",
     "mechanistic receipts", "direct clinical receipts", "indirect clinical receipts",
-    "accepted corpus",
+    "accepted corpus", "receipt",
 )
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)

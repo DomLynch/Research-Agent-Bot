@@ -793,7 +793,7 @@ def _normalize_public_meta_phrases(paper_md: str) -> tuple[str, int]:
         ),
         (
             re.compile(r"audited corpus", re.IGNORECASE),
-            "accepted corpus",
+            "retained corpus",
         ),
         (
             re.compile(r"audited evidence structure", re.IGNORECASE),
@@ -2629,7 +2629,7 @@ The most cautious reading is that the evidence may support a bounded
 and context-dependent interpretation, but it might not generalize
 across populations, endpoints, doses, or follow-up windows without
 additional direct tests. The pattern suggests biological plausibility
-where it is consistent with the accepted receipts, yet it appears
+where it is consistent with the retained sources, yet it appears
 qualified by uncertainty, limited directness, and preliminary evidence
 in several domains. A cautious interpretive stance is therefore
 warranted: what remains to be established is whether the observed
@@ -2714,7 +2714,7 @@ _RESULTS_BACKFILL = """### Result-interpretation guardrail
 
 The result pattern is interpreted from the retained study summaries
 rather than from isolated extracted fragments. Findings are therefore
-grouped by outcome domain, evidence directness, and receipt-level
+grouped by outcome domain, evidence directness, and study-level
 effect direction before any cross-study interpretation is made. This
 keeps direct clinical signals separate from mechanistic or indirect
 signals, preserves null and mixed findings as informative rather than
