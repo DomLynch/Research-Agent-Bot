@@ -19,8 +19,8 @@ def render_cross_topic_meta_synthesis(
         "# Cross-Topic GeroScience Meta-Synthesis",
         "",
         "This meta-synthesis compares finalized Researka topic runs only. It does "
-        "not promote source-topic maturity, introduce raw-paper claims, or convert "
-        "scoped evidence into full-AAA conclusions.",
+        "not assert human journal review, introduce raw-paper claims, or convert "
+        "scoped evidence into pipeline-primary conclusions.",
         "",
         "## Topic Eligibility",
         _topic_table(primary + analytical + scoped + excluded),
@@ -47,16 +47,28 @@ def render_cross_topic_meta_synthesis(
 
 def _topic_table(topics: list) -> str:
     rows = [
-        "| Topic | Eligibility | Verdict | Maturity | Receipts | Claims | Tensions | Run |",
+        "| Topic | Lane | Pipeline status | Human review | Receipts | Claims | Tensions | Run |",
         "|---|---:|---:|---:|---:|---:|---:|---|",
     ]
     for t in topics:
         rows.append(
-            f"| {t.topic} | {t.eligibility} | {t.verdict or 'NA'} | "
-            f"{t.maturity_label or 'NA'} | {t.n_receipts} | "
+            f"| {t.topic} | {_lane_label(t.eligibility)} | {_status_label(t.eligibility)} | "
+            f"not manually reviewed | {t.n_receipts} | "
             f"{t.n_high_confidence_claims} | {t.n_tensions} | `{t.run_id}` |"
         )
     return "\n".join(rows)
+
+
+def _lane_label(eligibility: str) -> str:
+    return {
+        "full_aaa_primary": "pipeline-primary",
+        "analytical_support": "analytical-support",
+        "scoped_support": "scoped-support",
+    }.get(eligibility, "excluded")
+
+
+def _status_label(eligibility: str) -> str:
+    return "pipeline-qualified" if eligibility != "excluded" else "excluded"
 
 
 def _primary_lane(primary: list, analytical: list) -> str:
@@ -98,7 +110,7 @@ def _scoped_section(scoped: list) -> str:
     if not scoped:
         return "No scoped-support topics were included."
     return "\n".join(
-        f"- `{topic.run_id}` remains scoped support only "
-        f"({topic.certification_track}, {topic.maturity_label})."
+        f"- `{topic.run_id}` remains scoped support only; human-review status "
+        "is not asserted."
         for topic in scoped
     )
