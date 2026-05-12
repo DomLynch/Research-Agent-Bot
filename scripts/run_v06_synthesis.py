@@ -721,11 +721,6 @@ def _word_count(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
 
 
-def _display_outcome_class(raw: str) -> str:
-    label = (raw or "other").replace("_", " ").strip()
-    return label.title() if label else "Other"
-
-
 def _ensure_results_summary_table(
     markdown: str, manifest: dict[str, Any],
 ) -> tuple[str, bool]:
@@ -773,9 +768,9 @@ def _ensure_results_summary_table(
             limitation = "single-source support"
         else:
             limitation = "population and endpoint heterogeneity"
+        label = outcome.replace("_", " ").strip().title() or "Other"
         rows.append(
-            f"| {_display_outcome_class(outcome)} | "
-            f"{signal_name} in {dominant_n}/{len(group)} sources | "
+            f"| {label} | {signal_name} in {dominant_n}/{len(group)} sources | "
             f"{'; '.join(direct_parts) or 'not classified'} | {limitation} |"
         )
     table = "\n".join([

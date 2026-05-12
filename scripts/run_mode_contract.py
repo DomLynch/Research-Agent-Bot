@@ -1,23 +1,8 @@
-"""Fix #2: Run-mode contract + deterministic Methods renderer.
+"""Run-mode contract and deterministic public Methods renderer.
 
-Pre-fix the Methods section was an LLM-templated narrative inherited
-from the older SPAR/receipt-cluster pipeline. Even after `v0.6
-quant-claim adapter` runs (no SPAR, no fact extraction, no cluster
-machinery), Methods still contained verbiage about "Fact extraction —
-LLM proposes verbatim source-quote facts", "SPAR adjudication", "panel
-verdict computed deterministically", "thesis tournament" — none of
-which happened in this run.
-
-Fix: declare what actually ran in a frozen RunModeContract and render
-Methods deterministically from it. The LLM never writes Methods. The
-renderer's output is bounded by an explicit ALLOWED-PHRASES list and
-is incapable of producing the legacy boilerplate that triggered both
-audit Q5 (fabricated methods) and Layer-1 stale-method checks.
-
-Architectural rule: this module never imports the LLM client. The
-contract is built by the orchestrator from settings + manifest +
-known pipeline-stage facts; the renderer is a pure function over
-that contract. No proposal happens here, only deterministic disposal.
+The LLM never writes Methods. The orchestrator freezes what actually
+ran in RunModeContract; this module renders only from that contract and
+blocks legacy pipeline boilerplate from public manuscript prose.
 """
 from __future__ import annotations
 
