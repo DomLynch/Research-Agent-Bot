@@ -28,6 +28,12 @@ _PLACEHOLDER_PATTERNS = (
 _META_PATTERNS = (
     "this synthesis was produced by", "submission `synthesis-", "final-layer reviewer", "patches are auto-applied", "rejected-evidence quarantine did not run",
     "full grok review", "run manifest", "bundle contains", "certification record",
+    "tournament selector", "trust-spine", "grok", "a2a",
+)
+_PUBLIC_ARTIFACT_PATTERNS = (
+    "<h3>", "</h3>", "### h3.", "rapamycin evidence should be interpreted",
+    "source-context sentence cannot support", "the surviving section therefore",
+    "risk-of-bias roll-up",
 )
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)
@@ -45,6 +51,7 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     qei_heads = list(_QEI_HEADING_RE.finditer(body_md))
     issues.extend(SurfaceIssue("placeholder_prose", pat) for pat in _PLACEHOLDER_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("template_meta", pat) for pat in _META_PATTERNS if pat in low)
+    issues.extend(SurfaceIssue("public_artifact", pat) for pat in _PUBLIC_ARTIFACT_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("duplicate_paragraph", msg) for msg in _duplicate_paragraph_issue_messages(body_md))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_artifact_issue_messages(body_md))
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
@@ -140,7 +147,7 @@ def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
 
 
 def _duplicate_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
-    paras = []
+    paras: list[tuple[int, set[str]]] = []
     for para in re.split(r"\n\s*\n", paper_md):
         text = para.strip()
         if not text or text.startswith(("#", "|", "_Cited:")):

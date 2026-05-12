@@ -178,10 +178,11 @@ def validate_contract(c: RunModeContract) -> list[str]:
 def render_methods(c: RunModeContract) -> str:
     """Deterministic Methods section. Pure function over the contract;
     output is bounded so it cannot contain blocked phrases."""
+    topic_label = c.topic.replace("_", " ").replace("-", " ").strip()
     return (
         f"## Methods\n\n"
         f"The review used a predeclared corpus of {c.n_papers_in_corpus} "
-        f"source papers on {c.topic}. Source documents were screened for "
+        f"source papers on {topic_label}. Source documents were screened for "
         f"quantitative outcome statements, and "
         f"{c.n_high_confidence_claims_used_by_writer} source-bound "
         f"observations were retained for synthesis after role, unit, and "

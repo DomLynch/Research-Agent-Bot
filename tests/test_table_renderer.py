@@ -465,12 +465,11 @@ def test_table_2_columns_match_user_spec() -> None:
 
 
 def test_table_3_includes_per_domain_caveat() -> None:
-    """Fix #14: caveat above Table 3 acknowledges per-domain grades
-    are tier-derived, NOT extracted from source PDFs."""
+    """Caveat says grades are tier-derived, not formal RoB claims."""
     receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
     md = tr.render_table_3_evidence_limitations(receipts)
-    assert "Cochrane" in md or "rob-2" in md.lower()
-    assert "ROBINS-I" in md  # observational equivalent named
+    assert "Design-Level Evidence Weighting Heuristic" in md
+    assert "NOT a formal per-paper risk-of-bias assessment" in md
 
 
 def test_table_3_has_seven_rob_domain_columns() -> None:
@@ -531,13 +530,11 @@ def test_render_all_tables_includes_pointer_sentence() -> None:
 
 
 def test_render_all_tables_pointer_explains_table_layout() -> None:
-    """Fix #21: pointer block at the top names the table layout (1-3
-    follow the Researka v1 schema; 4 is supplemental). Replaces the
-    Fix #6 footnote that explained Table 2 aggregate semantics —
-    Table 2 is no longer an aggregator under the new spec."""
+    """Pointer block names the public table layout without product jargon."""
     receipts = [_FakeReceipt(receipt_id="X 2020")]
     md = tr.render_all_tables(receipts)
-    assert "Researka v1 schema" in md
+    assert "included studies, per-study endpoint evidence" in md
+    assert "design-level evidence weighting heuristic" in md
     assert "supplemental" in md.lower()
 
 
@@ -813,15 +810,12 @@ def test_table_3_tensions_implication_uses_severity_label() -> None:
 
 
 def test_table_4_renames_evidence_limitations() -> None:
-    """Fix #21: per-domain RoB (formerly Table 3) is now Table 4
-    (supplemental) to make room for the cross-domain tensions table
-    at slot 3. Heading updated; backward-compat alias preserved."""
+    """Table 4 is a design-level weighting heuristic, not a RoB roll-up."""
     receipts = [_FakeReceipt(receipt_id="X 2020", evidence_tier="A1")]
     md = tr.render_table_4_evidence_limitations(receipts)
     assert "## Table 4 (supplemental)" in md
-    assert "Per-Domain Risk of Bias" in md
-    # Same caveat preserved
-    assert "Cochrane" in md or "ROBINS-I" in md
+    assert "Design-Level Evidence Weighting Heuristic" in md
+    assert "risk-of-bias roll-up" not in md
 
 
 def test_render_table_3_evidence_limitations_alias_works() -> None:

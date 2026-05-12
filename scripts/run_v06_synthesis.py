@@ -717,6 +717,20 @@ def _rendered_section_match(markdown: str, heading: str) -> re.Match[str] | None
     )
 
 
+def _pop_h2_section_by_prefix(
+    markdown: str, title_prefix: str,
+) -> tuple[str, str]:
+    match = re.search(
+        rf"^##\s+{re.escape(title_prefix)}\b.*?(?=^##\s+|\Z)",
+        markdown,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+    if match is None:
+        return markdown, ""
+    remaining = (markdown[:match.start()].rstrip() + "\n\n" + markdown[match.end():].lstrip()).strip()
+    return remaining + "\n", match.group(0).strip()
+
+
 def _word_count(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
 
@@ -2171,6 +2185,13 @@ async def _run(
         receipts, citation_registry,
     )
 
+    supplement_parts: list[str] = []
+    full_paper_md, qei_md = _pop_h2_section_by_prefix(
+        full_paper_md, "Quantitative Evidence Index",
+    )
+    if qei_md:
+        supplement_parts.append(qei_md)
+
     # Fix #25: append the deterministic 'What This Synthesis Adds'
     # section AFTER Conclusion and BEFORE Tables. Templated from
     # writer_receipts + writer_matrix + thesis so the originality
@@ -2187,7 +2208,7 @@ async def _run(
         writer_receipts, writer_matrix, claims_by_citation,
     )
     if tables_md:
-        full_paper_md = full_paper_md.rstrip() + "\n\n" + tables_md
+        supplement_parts.append(tables_md.rstrip())
     # Pass the registry to References so its Author-Year tokens come
     # from the SAME source as the table cells — no drift possible.
     full_paper_md = _append_references_block(
@@ -2229,23 +2250,20 @@ async def _run(
     tension_artifact = _paper_quality.write_tension_plans(
         out_dir, writer_matrix,
     )
-    full_paper_md = _paper_quality.insert_before_heading(
-        full_paper_md,
-        "## Results",
-        _paper_quality.render_quality_section_for_paper(
-            quality_artifact["bundle"],
-        ),
-    )
-    full_paper_md = _paper_quality.insert_before_heading(
-        full_paper_md,
-        "## Cross-Domain Synthesis",
-        _paper_quality.render_meta_analysis_section(meta_artifact),
-    )
-    full_paper_md = _paper_quality.insert_before_heading(
-        full_paper_md,
-        "## Discussion",
-        _paper_quality.render_tension_section(tension_artifact),
-    )
+    for supplement_name in (
+        "quality_methods.md",
+        "meta_analysis_results.md",
+        "tension_elaboration_plans.md",
+    ):
+        supplement_path = out_dir / supplement_name
+        if supplement_path.exists():
+            supplement_parts.append(supplement_path.read_text().strip())
+    if supplement_parts:
+        (out_dir / "structured_evidence_tables.md").write_text(
+            "# Supplementary Evidence Tables and Audit Methods\n\n"
+            + "\n\n".join(part for part in supplement_parts if part)
+            + "\n",
+        )
     _ACTIVE_MANIFEST = {
         "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
@@ -2258,6 +2276,7 @@ async def _run(
         "quality_methods_path": "quality_methods.json",
         "meta_analysis_path": "meta_analysis_results.json",
         "tension_elaboration_path": "tension_elaboration_plans.json",
+        "structured_evidence_tables_path": "structured_evidence_tables.md",
     }
     full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
@@ -2390,6 +2409,19 @@ async def _run_post_paper_pipeline(
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)
     paper_path.with_suffix(".audit.md").write_text(audit_md)
+
+    paper_md, pre_review_template_log = _paper_quality.apply_template_repairs(
+        paper_md,
+    )
+    if pre_review_template_log:
+        paper_path.with_suffix(".pre_review_template_repair_log.json").write_text(
+            json.dumps(pre_review_template_log, indent=2),
+        )
+        paper_path.write_text(paper_md)
+        audit_report = _audit_v06.audit(paper_md)
+        audit_path.write_text(json.dumps(audit_report, indent=2))
+        audit_md = _audit_v06._format_summary(audit_report)
+        paper_path.with_suffix(".audit.md").write_text(audit_md)
 
     # Stage 3: Final-layer LLM review (Gemini Exacto primary, Mistral fallback).
     print(
@@ -2717,6 +2749,8 @@ async def _run_post_paper_pipeline(
     paper_md, _inserted_results_summary = _ensure_results_summary_table(
         paper_md, manifest,
     )
+    if methods_md:
+        paper_md = _run_mode.replace_methods_in_paper(paper_md, methods_md)
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
@@ -2798,16 +2832,11 @@ async def _run_post_paper_pipeline(
         file=sys.stderr,
     )
 
-    # Stage 5b (publication-prep): splice journal-required appendix
-    # sections (Search Provenance / AI-Use Disclosure / Human
-    # Accountability / Data + Code Availability) into the paper just
-    # before the References section. Idempotent — re-runs don't
-    # duplicate. Pure prose with no numerics, citations, or tier
-    # labels, so audit gates already passed are unaffected.
+    # Stage 5b: keep audit/provenance appendix out of the journal main.
+    # The public manuscript stays argument/prose; the supplement carries
+    # provenance, AI-use, accountability, and data availability machinery.
     try:
-        from agent.manuscript_appendix import (
-            compose_appendix, splice_appendix_before_references,
-        )
+        from agent.manuscript_appendix import compose_appendix
         from agent.settings import load_settings as _load_settings
         import subprocess as _sp
         try:
@@ -2844,14 +2873,21 @@ async def _run_post_paper_pipeline(
             bundle_path=f"bundles/{paper_path.parent.name}/",
             verdict=unified.verdict,
         )
-        paper_md = splice_appendix_before_references(
-            paper_md, appendix_md,
+        if "## Publication Appendix" not in appendix_md:
+            appendix_md = "## Publication Appendix\n\n" + appendix_md.lstrip()
+        supplement_path = paper_path.parent / "structured_evidence_tables.md"
+        existing = (
+            supplement_path.read_text()
+            if supplement_path.exists()
+            else "# Supplementary Evidence Tables and Audit Methods\n"
         )
-        paper_path.write_text(paper_md)
+        if "## Search Provenance and Selection" not in existing:
+            supplement_path.write_text(
+                existing.rstrip() + "\n\n" + appendix_md.rstrip() + "\n",
+            )
         print(
-            "[pipeline] Stage 5b — manuscript appendix spliced "
-            "(Search Provenance / AI Disclosure / Accountability / "
-            "Data Availability)",
+            "[pipeline] Stage 5b — appendix routed to supplement "
+            "(Search Provenance / AI Disclosure / Accountability / Data)",
             file=sys.stderr,
         )
     except Exception as _e:  # pragma: no cover — best-effort

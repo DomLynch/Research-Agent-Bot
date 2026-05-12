@@ -522,13 +522,12 @@ def _weight_in_synthesis(
 
 
 def render_table_4_evidence_limitations(receipts: list) -> str:
-    """Table 4 (supplemental) — per-study × per-domain RoB grades.
+    """Table 4 (supplemental) — design-level evidence weighting.
 
-    Cochrane RoB-2 / ROBINS-I / SYRCLE / AMSTAR-2 terminology where
-    applicable. Per-tier defaults are pipeline-level (derived from
-    evidence_tier metadata, NOT extracted from source text) — caveat
-    above the table makes this explicit so a Cochrane-trained reviewer
-    doesn't mistake it for a per-paper assessment from the source PDFs.
+    Per-tier defaults are pipeline-level (derived from evidence_tier
+    metadata, NOT extracted from source text). The caveat above the table
+    makes this explicit so a reviewer does not mistake it for a formal
+    per-paper risk-of-bias assessment from the source PDFs.
 
     Fix #24 + #26: adds Tool column (which RoB framework applies),
     Overall RoB column (worst-of roll-up across per-domain grades),
@@ -543,14 +542,13 @@ def render_table_4_evidence_limitations(receipts: list) -> str:
     )
     sep_cells = ["---"] * len(header_cells)
     header = (
-        "## Table 4 (supplemental): Per-Domain Risk of Bias + "
-        "Synthesis Weight\n\n"
-        "*Per-domain grades + the named RoB tool are derived from "
-        "each study's evidence tier (A1/A2/B1/B2/C1/C2) — they capture "
-        "design-level limitations, NOT a per-paper Cochrane RoB-2 / "
-        "ROBINS-I assessment from the source text. Domains follow "
-        "Cochrane RoB-2 (RCTs), ROBINS-I (observational), SYRCLE "
-        "(animal), and AMSTAR-2 (systematic review) terminology; "
+        "## Table 4 (supplemental): Design-Level Evidence Weighting "
+        "Heuristic\n\n"
+        "*Per-domain grades are derived from each study's evidence tier "
+        "(A1/A2/B1/B2/C1/C2) — they capture design-level limitations, "
+        "NOT a formal per-paper risk-of-bias assessment from the source "
+        "text. Domains follow design-family categories for randomized, "
+        "observational, animal, and systematic-review evidence; "
         "`n/a` indicates the domain is not meaningful for that design "
         "(e.g. blinding for an observational cohort). The "
         "**Weight in synthesis** column is the qualitative weighting "
@@ -783,10 +781,10 @@ def render_all_tables(
         "## Structured Evidence Tables\n\n"
         "*The following tables present the structured evidence "
         "summary referenced throughout this paper. Numbers live in "
-        "the tables; prose references them. Tables 1-3 follow the "
-        "Researka v1 schema (included studies, per-study endpoint "
-        "evidence, cross-domain tensions); Table 4 is a supplemental "
-        "Cochrane RoB-2 / ROBINS-I per-domain risk-of-bias roll-up; "
+        "the tables; prose references them. Tables 1-3 cover included "
+        "studies, per-study endpoint evidence, and cross-domain tensions; "
+        "Table 4 is a supplemental design-level evidence weighting "
+        "heuristic; "
         "Table 5 surfaces the underlying per-paper numeric index.*\n\n"
     )
     return (

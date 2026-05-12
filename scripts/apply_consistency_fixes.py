@@ -2181,32 +2181,32 @@ def _depth_backfill_extension(heading: str, index: int) -> str:
     )
     section_context = {
         "Introduction": (
-            "In the Introduction, this framing defines the research question "
-            "and explains why the evidence must be interpreted by design."
+            "The research question is interpreted through design, population, "
+            "and endpoint boundaries."
         ),
         "Background": (
-            "In the Background, this framing situates the biological rationale "
-            "without converting plausibility into a clinical claim."
+            "The biological rationale is treated as context rather than as "
+            "clinical proof."
         ),
         "Results": (
-            "In the Results, this framing keeps descriptive findings separate "
-            "from interpretation and preserves endpoint-specific boundaries."
+            "Descriptive findings remain separate from interpretation and "
+            "endpoint-specific boundaries."
         ),
         "Cross-Domain Synthesis": (
-            "In the Cross-Domain Synthesis, this framing compares outcome "
-            "classes and identifies where signals converge or diverge."
+            "Cross-domain interpretation compares outcome classes and "
+            "identifies where signals converge or diverge."
         ),
         "Discussion": (
-            "In the Discussion, this framing calibrates confidence, clinical "
-            "meaning, generalizability, and unresolved study-design needs."
+            "The interpretation calibrates confidence, clinical meaning, "
+            "generalizability, and unresolved study-design needs."
         ),
         "Limitations": (
-            "In the Limitations, this framing names evidence gaps, missing "
-            "populations, indirect endpoints, and unresolved follow-up windows."
+            "The limitations identify evidence gaps, missing populations, "
+            "indirect endpoints, and unresolved follow-up windows."
         ),
         "Conclusion": (
-            "In the Conclusion, this framing preserves the final claim boundary "
-            "and avoids implying certainty beyond the retained evidence."
+            "The conclusion preserves the final claim boundary and avoids "
+            "implying certainty beyond the retained evidence."
         ),
     }.get(heading, "In this section, the framing preserves interpretive limits.")
     prefix = prefixes[min(max(index - 1, 0), len(prefixes) - 1)]
@@ -2262,16 +2262,18 @@ def _ensure_discussion_hedge_density(paper_md: str) -> tuple[str, list[dict]]:
     }]
 
 
-_DEPTH_BACKFILL_EXTENSION = """{section_context} {prefix} The public interpretation remains tied to
-the source record rather than to any single unsupported sentence. When
-a source-context sentence cannot support its own specificity, the paper
-does not infer a replacement result; it retains only the higher-level
-boundary that the receipt graph already supports. This distinction
-matters for journal review because removal of unsafe numerics should
-not delete the scientific question. The surviving section therefore
-explains how to read the evidence as a conservative synthesis of
-directness, endpoint proximity, and disagreement, with uncertain
-numeric detail withheld from public claims."""
+_DEPTH_BACKFILL_EXTENSION = """{section_context} {prefix} The interpretation
+separates direct clinical findings from mechanistic and adjacent evidence,
+preserving uncertainty where endpoint, population, comparator, or follow-up
+differs. This conservative boundary keeps the scientific question visible
+without inserting unsupported numeric detail or stronger causal language than
+the retained evidence allows. Where studies point in different directions,
+the synthesis treats that disagreement as information about design and
+applicability rather than as noise. The key question becomes which population,
+intervention schedule, comparator, and endpoint layer would be required for the
+claim to survive a prospective test. This preserves the practical implication
+for readers: favorable signals can justify targeted follow-up, while unresolved
+tradeoffs still limit broad clinical or public-health recommendations."""
 
 
 _INTRODUCTION_BACKFILL = """### Scope of the synthesis

@@ -377,8 +377,8 @@ def render_tension_section(payload: dict[str, Any]) -> str:
 
 def apply_template_repairs(markdown: str) -> tuple[str, list[dict[str, str]]]:
     replacements = {
-        "In conclusion,": "Taken together,",
-        "In summary,": "Taken together,",
+        "In conclusion,": "The evidence profile indicates that",
+        "In summary,": "The evidence profile indicates that",
         "Further research is needed": "The next decisive test is",
         "This synthesis suggests": "The accepted receipt graph supports",
     }
@@ -388,6 +388,15 @@ def apply_template_repairs(markdown: str) -> tuple[str, list[dict[str, str]]]:
         if before in out:
             out = out.replace(before, after)
             log.append({"before": before, "after": after})
+    out, n_ordinal = re.subn(
+        r"\bA (?:second|third|fourth|fifth|sixth|seventh|eighth) "
+        r"(?=(?:major |critical |cross-domain )?tension)",
+        "Another ",
+        out,
+        flags=re.IGNORECASE,
+    )
+    if n_ordinal:
+        log.append({"before": "ordinal tension opener", "after": "Another"})
     return out, log
 
 

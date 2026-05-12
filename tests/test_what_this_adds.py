@@ -76,9 +76,7 @@ def test_section_includes_corpus_size_and_outcome_count() -> None:
 
 
 def test_section_quotes_picked_thesis_verbatim() -> None:
-    """The picked thesis is a load-bearing trust-spine artifact —
-    must surface verbatim in the section so the reader sees the
-    same sentence the tournament selector picked."""
+    """The selected thesis remains visible without internal selector labels."""
     thesis_text = (
         "Metformin's longevity signal coexists with an "
         "exercise-adaptation penalty in older-adult RCTs."
@@ -88,7 +86,8 @@ def test_section_quotes_picked_thesis_verbatim() -> None:
         _thesis(thesis_text), topic="metformin",
     )
     assert thesis_text in md
-    assert "Picked thesis" in md
+    assert "Picked thesis" not in md
+    assert "Tournament selector" not in md
 
 
 def test_section_highlights_load_bearing_tension() -> None:
@@ -99,7 +98,7 @@ def test_section_highlights_load_bearing_tension() -> None:
     pairs = (
         Tension(
             receipt_a_id="Walton 2019", receipt_b_id="Konopka 2019",
-            kind="directionality_disagreement",
+            kind="disagreement",
             outcome_class="muscle_function",
             summary="Walton vs Konopka on muscle/mitochondrial endpoints",
             severity=4,
@@ -109,11 +108,9 @@ def test_section_highlights_load_bearing_tension() -> None:
         receipts, _matrix(receipts, pairs), _thesis(),
         topic="metformin",
     )
-    assert "load-bearing" in md.lower()
+    assert "strongest unresolved contrast" in md.lower()
     assert "Walton 2019" in md and "Konopka 2019" in md
-    assert "directionality disagreement" in md or (
-        "directionality_disagreement" in md
-    )
+    assert "disagreement" in md
 
 
 def test_section_names_b1_review_citations_when_present() -> None:
@@ -145,7 +142,7 @@ def test_section_uses_fallback_framing_when_no_reviews() -> None:
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
     assert "Prior reviews" not in md
-    assert "This synthesis adds" in md
+    assert "This synthesis adds a design-level evidence-weighting" in md
 
 
 def test_section_handles_empty_matrix_gracefully() -> None:

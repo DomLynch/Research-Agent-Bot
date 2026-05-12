@@ -438,30 +438,24 @@ def build_what_this_adds_section(
 
     lines: list[str] = ["## What This Synthesis Adds", ""]
 
-    # Sentence 1 — corpus + structure
     pair_clause = (
-        f"and {n_pairs} non-orthogonal cross-domain tension"
+        f"and {n_pairs} cross-study disagreement"
         + ("" if n_pairs == 1 else "s")
-    ) if n_pairs else "with no non-orthogonal tensions surfaced"
+    ) if n_pairs else "with no cross-study disagreements surfaced"
     lines.append(
-        f"This synthesis adjudicates {n_acc_s} on {cap} across "
+        f"This synthesis maps {n_acc_s} on {cap} across "
         f"{n_outcomes} outcome class"
         + ("" if n_outcomes == 1 else "es")
-        + f" {pair_clause}, "
-        "applying a structured trust-spine pipeline (deterministic "
-        "claim extraction, citation registry, and per-domain risk-of-"
-        "bias roll-up; see Methods + Tables 1-4)."
+        + f" {pair_clause}. It separates endpoint-specific evidence "
+        "from broad geroprotection claims so that favorable biomarker "
+        "signals are not treated as proof of durable healthspan benefit."
     )
     lines.append("")
 
-    # Sentence 2 — picked thesis
     if thesis and getattr(thesis, "text", "").strip():
-        lines.append(
-            f"**Picked thesis (Tournament selector):** {thesis.text.strip()}"
-        )
+        lines.append(thesis.text.strip())
         lines.append("")
 
-    # Sentence 3 — load-bearing tension highlight
     if load_bearing is not None:
         a = getattr(load_bearing, "receipt_a_id", "?") or "?"
         b = getattr(load_bearing, "receipt_b_id", "?") or "?"
@@ -471,38 +465,28 @@ def build_what_this_adds_section(
         oc = getattr(load_bearing, "outcome_class", "") or "an outcome"
         sev = getattr(load_bearing, "severity", 0) or 0
         lines.append(
-            f"The load-bearing cross-domain tension this synthesis "
-            f"surfaces is the {kind} between {a} and {b} on {oc} "
-            f"(severity {sev}/5). Prior narrative reviews of {cap} "
-            "have not adjudicated this pair head-to-head."
+            f"The strongest unresolved contrast is the {kind} between "
+            f"{a} and {b} on {_public_label(oc)} (severity {sev}/5), "
+            "which defines the boundary condition future studies must "
+            "test rather than smooth over."
         )
         lines.append("")
 
-    # Sentence 4 — explicit comparison vs named reviews
     if review_cites:
         cites_str = ", ".join(review_cites[:5])
         lines.append(
-            f"Prior reviews in the corpus ({cites_str}) emphasise "
-            f"convergent literature signals on {cap}. This synthesis "
-            "adds (a) a per-receipt evidence-weighting "
-            "(Table 4: tier × directness × overall RoB → "
-            "load-bearing / mechanistic / supporting / "
-            "hypothesis-generating), (b) a deterministic per-paper "
-            "numeric index (Table 5) for full Q2 traceability, and "
-            "(c) an explicit pairwise tension matrix (Table 3) so "
-            "the boundary conditions are visible rather than averaged "
-            "away in narrative summary."
+            f"Prior reviews in the corpus ({cites_str}) emphasize "
+            f"convergent signals on {cap}. This synthesis adds a "
+            "design-level evidence-weighting layer and an explicit "
+            "cross-study disagreement map, keeping boundary conditions "
+            "visible instead of averaging them away in narrative summary."
         )
     else:
         lines.append(
-            "This synthesis adds (a) a per-receipt evidence-weighting "
-            "(Table 4: tier × directness × overall RoB → "
-            "load-bearing / mechanistic / supporting / "
-            "hypothesis-generating), (b) a deterministic per-paper "
-            "numeric index (Table 5) for full Q2 traceability, and "
-            "(c) an explicit pairwise tension matrix (Table 3) so "
-            "the boundary conditions are visible rather than averaged "
-            "away in narrative summary."
+            "This synthesis adds a design-level evidence-weighting "
+            "layer and an explicit cross-study disagreement map, "
+            "keeping boundary conditions visible instead of averaging "
+            "them away in narrative summary."
         )
     lines.append("")
     _append_research_contribution_layer(lines, accepted, matrix, cap)

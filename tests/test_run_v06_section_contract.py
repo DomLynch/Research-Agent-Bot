@@ -58,6 +58,23 @@ def test_restore_rendered_section_headings_is_idempotent() -> None:
     assert orch._restore_rendered_section_headings(paper, sections) == paper
 
 
+def test_pop_h2_section_by_prefix_routes_qei_to_supplement() -> None:
+    paper = (
+        "## Abstract\n\nAbstract body.\n\n"
+        "## Quantitative Evidence Index — demo\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Smith 2024 | weight | CR | 2 kg | kg | — |\n\n"
+        "## Methods\n\nMethods body.\n"
+    )
+    main, supplement = orch._pop_h2_section_by_prefix(
+        paper, "Quantitative Evidence Index",
+    )
+    assert "Quantitative Evidence Index" not in main
+    assert "## Methods" in main
+    assert "## Quantitative Evidence Index — demo" in supplement
+
+
 def test_absent_flagged_patch_resolved_after_final_cleanup() -> None:
     result = ap.PatchResult(
         patch_id="P02",
