@@ -3095,18 +3095,18 @@ async def _agent_repair_loop(
 
 
 def _resolve_absent_flagged_patches(results: list[Any], paper_md: str) -> list[Any]:
-    """Resolve Grok flags whose target disappeared in final cleanup.
+    """Resolve reviewer P1s whose target disappeared in final cleanup.
 
     Final cleanup can replace Methods, restore typed sections, or
     strip unsafe numeric prose after Grok proposed a P1 patch. If the
-    flagged BEFORE region is no longer present in the manuscript, the
+    unapplied BEFORE region is no longer present in the manuscript, the
     public paper no longer carries that issue, so the patch should not
     count as unresolved.
     """
     out: list[Any] = []
     for r in results:
         if (
-            r.decision == "flagged"
+            r.decision in {"flagged", "rejected"}
             and (r.severity or "").upper() in {"P1", "HIGH", "CRITICAL"}
             and r.before
             and r.before not in paper_md
@@ -3117,7 +3117,7 @@ def _resolve_absent_flagged_patches(results: list[Any], paper_md: str) -> list[A
                 severity=r.severity,
                 decision="applied",
                 reason_for_decision=(
-                    "FINAL-CLEANUP-RESOLVED: flagged BEFORE region "
+                    "FINAL-CLEANUP-RESOLVED: unapplied BEFORE region "
                     "is absent after deterministic section restoration "
                     f"and cleanup. {r.reason_for_decision}"
                 ),

@@ -107,6 +107,22 @@ def test_absent_flagged_patch_resolved_after_final_cleanup() -> None:
     assert "FINAL-CLEANUP-RESOLVED" in resolved[0].reason_for_decision
 
 
+def test_absent_rejected_patch_resolved_after_final_cleanup() -> None:
+    result = ap.PatchResult(
+        patch_id="P07",
+        patch_type="formatting",
+        severity="P1",
+        decision="rejected",
+        reason_for_decision="truncated patch contract",
+        before="DOI: 10.1007/example.",
+        after="",
+    )
+    clean_paper = "## What This Synthesis Adds\n\nClean prose only.\n"
+    resolved = orch._resolve_absent_flagged_patches([result], clean_paper)
+    assert resolved[0].decision == "applied"
+    assert "FINAL-CLEANUP-RESOLVED" in resolved[0].reason_for_decision
+
+
 def test_restore_cross_domain_heading_by_structural_boundary() -> None:
     paper = (
         "## Results\n\n"
