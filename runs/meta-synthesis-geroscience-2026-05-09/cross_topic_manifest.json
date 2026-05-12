@@ -49,9 +49,9 @@
       },
       "effect_direction_mix": {
         "mixed": 1,
-        "null": 2,
-        "positive": 5,
-        "unclear": 11
+        "null": 3,
+        "positive": 8,
+        "unclear": 7
       },
       "eligibility": "full_aaa_primary",
       "evidence_tier_mix": {
@@ -65,7 +65,7 @@
       "maturity_level": 5,
       "n_high_confidence_claims": 285,
       "n_receipts": 19,
-      "n_tensions": 103,
+      "n_tensions": 105,
       "outcome_domains": [
         "cardiometabolic",
         "immune"
@@ -73,16 +73,16 @@
       "outcome_effects": {
         "cardiometabolic": {
           "mixed": 1,
-          "null": 2,
-          "positive": 5,
-          "unclear": 10
+          "null": 3,
+          "positive": 8,
+          "unclear": 6
         },
         "immune": {
           "unclear": 1
         }
       },
-      "run_id": "synthesis-acarbose-v06-PATH1-2026-05-07T17-01-11Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-acarbose-v06-PATH1-2026-05-07T17-01-11Z",
+      "run_id": "synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z",
       "topic": "acarbose",
       "verdict": "AAA"
     },
@@ -242,8 +242,8 @@
           "unclear": 1
         }
       },
-      "run_id": "synthesis-aspirin-v06-RECOVERY-2026-05-09T5",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-aspirin-v06-RECOVERY-2026-05-09T5",
+      "run_id": "synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z",
       "topic": "aspirin",
       "verdict": "AAA"
     },
@@ -386,7 +386,7 @@
       "maturity_level": 5,
       "n_high_confidence_claims": 416,
       "n_receipts": 47,
-      "n_tensions": 366,
+      "n_tensions": 226,
       "outcome_domains": [
         "cardiometabolic",
         "frailty",
@@ -426,8 +426,8 @@
           "unclear": 1
         }
       },
-      "run_id": "synthesis-caloric_restriction-v06-PATH2RICHFIX2-2026-05-08T15-10-00Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-caloric_restriction-v06-PATH2RICHFIX2-2026-05-08T15-10-00Z",
+      "run_id": "synthesis-caloric_restriction-v06-CODEX-FIX-2026-05-11T07-01-45Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-caloric_restriction-v06-CODEX-FIX-2026-05-11T07-01-45Z",
       "topic": "caloric_restriction",
       "verdict": "AAA"
     },
@@ -779,9 +779,9 @@
       },
       "effect_direction_mix": {
         "mixed": 7,
-        "negative": 2,
-        "null": 8,
-        "positive": 2,
+        "negative": 4,
+        "null": 3,
+        "positive": 5,
         "unclear": 24
       },
       "eligibility": "full_aaa_primary",
@@ -797,7 +797,7 @@
       "maturity_level": 5,
       "n_high_confidence_claims": 373,
       "n_receipts": 43,
-      "n_tensions": 309,
+      "n_tensions": 162,
       "outcome_domains": [
         "cardiometabolic",
         "frailty",
@@ -808,30 +808,29 @@
       "outcome_effects": {
         "cardiometabolic": {
           "mixed": 3,
-          "negative": 2,
-          "null": 5,
-          "positive": 1,
-          "unclear": 6
+          "negative": 4,
+          "null": 3,
+          "positive": 3,
+          "unclear": 4
         },
         "frailty": {
           "unclear": 3
         },
         "immune": {
-          "null": 1,
+          "positive": 1,
           "unclear": 1
         },
         "longevity": {
           "mixed": 2,
-          "null": 2,
           "positive": 1,
-          "unclear": 14
+          "unclear": 16
         },
         "muscle_function": {
           "mixed": 2
         }
       },
-      "run_id": "synthesis-metformin-v06-PATH2RICHFIX5-2026-05-08TCLASSIFIER",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-metformin-v06-PATH2RICHFIX5-2026-05-08TCLASSIFIER",
+      "run_id": "synthesis-metformin-v06-CODEX-POLISH16-2026-05-11T17-57-24Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-metformin-v06-CODEX-POLISH16-2026-05-11T17-57-24Z",
       "topic": "metformin",
       "verdict": "AAA"
     },
@@ -1341,11 +1340,11 @@
         "review": 19
       },
       "effect_direction_mix": {
-        "mixed": 5,
-        "negative": 7,
-        "null": 9,
-        "positive": 8,
-        "unclear": 49
+        "mixed": 3,
+        "negative": 4,
+        "null": 13,
+        "positive": 13,
+        "unclear": 45
       },
       "eligibility": "full_aaa_primary",
       "evidence_tier_mix": {
@@ -1360,7 +1359,7 @@
       "maturity_level": 5,
       "n_high_confidence_claims": 1008,
       "n_receipts": 78,
-      "n_tensions": 1485,
+      "n_tensions": 1375,
       "outcome_domains": [
         "cardiometabolic",
         "frailty",
@@ -1369,28 +1368,27 @@
       ],
       "outcome_effects": {
         "cardiometabolic": {
-          "mixed": 2,
-          "negative": 2,
-          "null": 2,
+          "mixed": 3,
+          "null": 3,
           "unclear": 4
         },
         "frailty": {
           "negative": 1,
-          "unclear": 4
+          "null": 1,
+          "unclear": 3
         },
         "immune": {
           "negative": 1
         },
         "muscle_function": {
-          "mixed": 3,
-          "negative": 3,
-          "null": 7,
-          "positive": 8,
-          "unclear": 41
+          "negative": 2,
+          "null": 9,
+          "positive": 13,
+          "unclear": 38
         }
       },
-      "run_id": "synthesis-resistance_training-v06-WIDEBASKETFIX3-2026-05-08T00-10-29Z",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-resistance_training-v06-WIDEBASKETFIX3-2026-05-08T00-10-29Z",
+      "run_id": "synthesis-resistance_training-v06-AAA10x2-pass1-2026-05-10T00-06-05Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-resistance_training-v06-AAA10x2-pass1-2026-05-10T00-06-05Z",
       "topic": "resistance_training",
       "verdict": "AAA"
     },
@@ -1781,8 +1779,8 @@
           "unclear": 2
         }
       },
-      "run_id": "synthesis-statins-v06-PATH2RICH5-2026-05-08TSTRICT",
-      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-statins-v06-PATH2RICH5-2026-05-08TSTRICT",
+      "run_id": "synthesis-statins-v06-AAA10x2-pass2-2026-05-09T22-06-03Z",
+      "run_path": "/Users/domininclynch/Desktop/Business/Research Agent Bot/runs/synthesis-statins-v06-AAA10x2-pass2-2026-05-09T22-06-03Z",
       "topic": "statins",
       "verdict": "AAA"
     },

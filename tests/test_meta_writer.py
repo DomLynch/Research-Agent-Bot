@@ -37,7 +37,9 @@ def test_meta_writer_renders_source_run_boundaries() -> None:
 
     assert "`synthesis-rapamycin-v06-TEST`" in md
     assert "`synthesis-taurine-v06-TEST` remains scoped support only" in md
-    assert "does not promote source-topic maturity" in md
+    assert "not assert human journal review" in md
+    assert "pipeline-qualified" in md
+    assert "Maturity" not in md
     assert "Excluded and SCOP topics do not drive primary conclusions" in md
 
 

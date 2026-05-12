@@ -1,6 +1,7 @@
 """Deterministic cross-topic contradiction detector."""
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
 from typing import Any
 
@@ -61,7 +62,7 @@ def _dominant_effect(effects: dict[str, int]) -> str:
     return "mixed"
 
 
-def _unique_topics(topics: object) -> tuple[TopicRunSummary, ...]:
+def _unique_topics(topics: Iterable[TopicRunSummary]) -> tuple[TopicRunSummary, ...]:
     out: dict[str, TopicRunSummary] = {}
     for topic in topics:
         out.setdefault(topic.topic, topic)

@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections.abc import Iterable
 from collections import Counter
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -183,4 +184,6 @@ def _citation_keys(registry: dict[str, dict[str, Any]]) -> set[str]:
 
 
 def _nonempty(values: object) -> set[str]:
+    if not isinstance(values, Iterable) or isinstance(values, (str, bytes)):
+        return {str(values)} if values else set()
     return {str(v) for v in values if v}

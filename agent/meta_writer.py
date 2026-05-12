@@ -25,7 +25,7 @@ def render_cross_topic_meta_synthesis(
         "## Topic Eligibility",
         _topic_table(primary + analytical + scoped + excluded),
         "",
-        "## Primary Evidence Lane",
+        "## Pipeline Evidence Lane",
         _primary_lane(primary, analytical),
         "",
         "## Mechanism Convergences",
@@ -73,10 +73,10 @@ def _status_label(eligibility: str) -> str:
 
 def _primary_lane(primary: list, analytical: list) -> str:
     if not primary and not analytical:
-        return "No primary or analytical AAA topics were eligible."
+        return "No pipeline-primary or analytical topics were eligible."
     lines = []
     for topic in (*primary, *analytical):
-        lane = "primary" if topic.eligibility == "full_aaa_primary" else "analytical"
+        lane = "pipeline-primary" if topic.eligibility == "full_aaa_primary" else "analytical"
         domains = ", ".join(topic.outcome_domains) or "unspecified"
         lines.append(
             f"- `{topic.run_id}` enters the {lane} lane with "
