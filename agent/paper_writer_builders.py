@@ -158,11 +158,11 @@ def _backfill_results_subsection(
     ids = tuple(r.receipt_id for r in receipts)
     label = _label_for_outcome(outcome)
     text = (
-        f"The {label.lower()} evidence base included {len(receipts)} "
-        f"included source{'s' if len(receipts) != 1 else ''}, with "
-        f"{direct or 'unclassified'} evidence and a dominant {dominant} "
-        f"direction. These sources define the outcome-specific signal for "
-        f"this domain without importing claims from other outcome classes."
+        f"The {label.lower()} evidence base comprised {len(receipts)} "
+        f"source{'s' if len(receipts) != 1 else ''}; the directness profile "
+        f"was {direct or 'unclassified'}, and the dominant direction was "
+        f"{dominant}. These sources define the outcome-specific signal for "
+        f"this domain before cross-domain interpretation."
     )
     lines = [
         f"### {label} Outcomes", "", text, "",

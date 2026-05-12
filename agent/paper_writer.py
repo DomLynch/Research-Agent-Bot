@@ -33,6 +33,7 @@ from agent.paper_writer_helpers import (
 from agent.synthesis_schemas import (
     ReceiptSummary,
     SectionName,
+    SynthesisClaimAnchor,
     SynthesisSection,
     SynthesisThesis,
     TensionMatrix,
@@ -47,21 +48,11 @@ PAPER_WRITER_VERSION = "paper-writer/2026-04-29-day10-16"
 # still falls short after retries, it lands as-is and the audit picks
 # up the shortfall via the WORD_COUNT_FLOOR check.
 #
-# Fix #27 (prose compression): floors lowered ~25% to target a 9-10k
-# total paper instead of 11-13k. Tables now carry the dense numerics
-# (Tables 1-5 from Fix #21), so prose can be leaner without losing
-# evidence weight. Per the reviewer: "claim → table evidence →
-# interpretation, not long prose → citation → more prose".
 SECTION_WORD_FLOORS: Mapping[str, int] = {
     "abstract": 200,            # was 250
     "introduction": 800,        # was 1200
     "background": 700,          # was 1000
     "results": 1500,            # was 2000 (Tables 2 + 5 carry numerics)
-    # Fix #45: Restore analytical depth on the two intellectual-core
-    # sections after Fix #27 over-compressed them (310-word
-    # Discussion and 525-word Cross-Domain in the grok-smart run
-    # were desk-reject territory). Q11 + Q12 audit gates enforce
-    # 800-word floors at the audit layer too.
     "cross_domain_synthesis": 850,   # Q12 + journal-surface margin
     "discussion": 900,          # was 1100 → 900 (matches Q11 floor)
     "limitations_full": 450,    # was 600
@@ -86,26 +77,7 @@ SECTION_RETRY_BUDGET = 2
 
 
 def derive_paper_tier(summary: ReceiptSummary) -> str:
-    """Day 10.16 reviewer fix: split A1 by mechanistic-vs-clinical.
-
-    A receipt's `evidence_tier` field on the summary is the original
-    SPAR classification (A1 / A2 / B / C / mixed). For paper rendering,
-    we add a finer paper-level tier so the writer can frame human-
-    mechanistic RCTs differently from human-clinical RCTs:
-
-      A1_clinical_RCT      direct human RCT, clinical/functional endpoint
-                           (MASTERS muscle hypertrophy, MET-PREVENT
-                           walk speed, TAME cardiovascular events)
-      A2_human_mechanistic human RCT but mechanistic endpoint
-                           (MILES muscle/adipose transcriptomics,
-                           Konopka mitochondrial respiration)
-      B1_review            review / meta-analysis
-                           (Kulkarni 2022, Keys 2025, Mohammed 2021)
-      C1_preclinical       animal / in-vitro mechanistic
-      mixed                multi-source clusters
-
-    Tier is derived from existing fields — no schema change.
-    """
+    """Split evidence tier into reader-facing paper tier."""
     tier = (summary.evidence_tier or "").upper()
     directness = (summary.directness or "").lower()
     outcome = (summary.outcome_class or "").lower()
@@ -154,10 +126,7 @@ _PAPER_TIER_HUMAN_LABEL: dict[str, str] = {
 
 
 def _humanize_paper_tier(internal_label: str) -> str:
-    """Fix #33: map the internal `A1_clinical_RCT` / `C1_preclinical`
-    style label to a reader-facing study-design phrase. MiMo was
-    copy-pasting the internal token verbatim into prose; the human-
-    readable form reads naturally if MiMo includes it."""
+    """Map internal paper-tier labels to reader-facing phrases."""
     return _PAPER_TIER_HUMAN_LABEL.get(internal_label, internal_label)
 
 
@@ -170,23 +139,7 @@ def _build_user_prompt(
     topic: str,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> str:
-    """Common LLM-prompt context block — accepted receipts + tensions +
-    thesis. Each LLM section gets the same context; the system prompt
-    does the section-specific work.
-
-    Day 10.17 Fix A: rejected (SPAR-quarantined) receipts are NOT
-    included in the LLM prompt context. The pre-Fix-A code emitted a
-    'QUARANTINED (SPAR-rejected) RECEIPTS:' block hoping the LLM would
-    respect the label — empirically it didn't (10.17 e2e run leaked
-    cfab-c02 into Background prose, Q8 ship-blocked). The writer
-    cannot cite what it does not see. Trust-spine transparency is
-    preserved through deterministic non-LLM paths: Methods describes
-    the SPAR pipeline including rejection, build_references_full_section
-    lists every receipt with its verdict tag, and the brief renders
-    rejected receipts in its 'Rejected / Contested Evidence' section.
-    The `rejected` parameter is retained for caller-API stability but
-    is intentionally unused here.
-    """
+    """Common prompt block: accepted receipts, tensions, and thesis."""
     _ = rejected  # Day 10.17 Fix A — intentionally unused, see docstring.
     lines = [f"Topic: {topic}", "", "ACCEPTED RECEIPTS:"]
     for r in receipts:
@@ -391,18 +344,11 @@ async def write_results_section(
     seed: int | None = None,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
-    """ANCHORED multi-paragraph Results with code-level word retry.
-    Each subsection has its own H3 heading. Each paragraph cites
-    ≥1 accepted receipt. If overall Results word count is below
-    SECTION_WORD_FLOORS['results'], retry up to N times.
-
-    Fix #20: trail with one-shot citation-fix pass. Results rarely
-    needs background-lit context (it's anchored to the receipts) but
-    when it does, the fix pass keeps Q9 density up."""
-    user = _build_user_prompt(
-        receipts, rejected, matrix, thesis, topic=topic,
-        background_lit_entries=background_lit_entries,
-    )
+    """Render Results by outcome-owned packet groups."""
+    _ = rejected
+    by_outcome: dict[str, list[ReceiptSummary]] = {}
+    for receipt in receipts:
+        by_outcome.setdefault(receipt.outcome_class, []).append(receipt)
     # Topic-aware Results prompt (Refactor 2026-05-04)
     from agent.paper_writer_prompts import format_prompts_for_topic
     drug_class = "drug"
@@ -421,40 +367,71 @@ async def write_results_section(
     )["results"]
     fallback = "## Results\n\nAccepted receipts contain source-traced quantitative evidence; per-receipt details remain in the evidence brief and deterministic tables.\n"
     floor = SECTION_WORD_FLOORS.get("results", 0)
-    best: SynthesisSection | None = None
-    best_words = 0
-    current_prompt = user
-    for attempt in range(SECTION_RETRY_BUDGET + 1):
-        parsed = await _call_llm_section(
-            system_prompt=_results_prompt, user_prompt=current_prompt,
-            chain=chain, client=client, ledger=ledger, seed=seed,
+    per_outcome_floor = floor // max(1, len(by_outcome))
+    per_outcome_floor = max(180, min(500, per_outcome_floor))
+    result_bodies: list[str] = []
+    anchors: list[SynthesisClaimAnchor] = []
+    for outcome, group in sorted(by_outcome.items()):
+        ids = {r.receipt_id for r in group}
+        local_matrix = TensionMatrix(
+            receipts=tuple(group),
+            pairs=tuple(
+                t for t in matrix.pairs
+                if t.outcome_class == outcome
+                and t.receipt_a_id in ids
+                and t.receipt_b_id in ids
+            ),
         )
-        if not parsed:
-            continue
-        section = build_results_from_parsed(parsed, accepted=receipts)
-        if section is None:
-            continue
-        words = _section_word_count(section)
-        if words > best_words:
-            best, best_words = section, words
-        if best_words >= floor or floor == 0:
-            break
-        current_prompt = _build_retry_prompt(
-            user, section_name="results",
-            target_floor=floor, last_word_count=words,
+        user = _build_user_prompt(
+            group, (), local_matrix, thesis, topic=topic,
+            background_lit_entries=(),
         )
+        best: SynthesisSection | None = None
+        best_words = 0
+        current_prompt = user
+        for attempt in range(SECTION_RETRY_BUDGET + 1):
+            parsed = await _call_llm_section(
+                system_prompt=_results_prompt, user_prompt=current_prompt,
+                chain=chain, client=client, ledger=ledger, seed=seed,
+            )
+            if not parsed:
+                continue
+            section = build_results_from_parsed(parsed, accepted=group)
+            if section is None:
+                continue
+            words = _section_word_count(section)
+            if words > best_words:
+                best, best_words = section, words
+            if best_words >= per_outcome_floor:
+                break
+            current_prompt = _build_retry_prompt(
+                user, section_name=f"{outcome} results",
+                target_floor=per_outcome_floor, last_word_count=words,
+            )
 
-    # Fix #20: citation fix pass.
-    def _builder(parsed_dict: dict) -> SynthesisSection | None:
-        return build_results_from_parsed(parsed_dict, accepted=receipts)
-    best = await _run_citation_fix_pass(
-        best, base_user_prompt=user,
-        system_prompt=_results_prompt, builder_fn=_builder,
-        background_lit_entries=background_lit_entries,
-        chain=chain, client=client, ledger=ledger, seed=seed,
-        call_llm_fn=_call_llm_section,
-    )
-    return best or SynthesisSection(
+        def _builder(parsed_dict: dict) -> SynthesisSection | None:
+            return build_results_from_parsed(parsed_dict, accepted=group)
+
+        best = await _run_citation_fix_pass(
+            best, base_user_prompt=user,
+            system_prompt=_results_prompt, builder_fn=_builder,
+            background_lit_entries=(),
+            chain=chain, client=client, ledger=ledger, seed=seed,
+            call_llm_fn=_call_llm_section,
+        )
+        if best is None:
+            continue
+        body = best.body_md.split("\n", 1)[1].strip()
+        if body:
+            result_bodies.append(body)
+            anchors.extend(best.anchors)
+    if result_bodies and anchors:
+        return SynthesisSection(
+            name="results",
+            body_md="## Results\n\n" + "\n\n".join(result_bodies).strip() + "\n",
+            anchors=tuple(anchors),
+        )
+    return SynthesisSection(
         name="results", body_md=fallback, anchors=(),
     )
 
@@ -494,17 +471,7 @@ async def render_full_paper(
     qei_citation_tokens_by_paper_id: Mapping[str, str] | None = None,
     qei_quarantine_path: Any | None = None,
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
-    """Render the full paper from accepted-receipt corpus + brief.
-
-    Returns (body_md, sections_tuple) — the full markdown plus the
-    per-section anchors so an audit pass can scan citation coverage.
-
-    Fix #18a: optional background_lit_entries (from
-    scripts/background_literature.load_registry()) get formatted into
-    a writer-facing 'ALLOWED BACKGROUND CITATIONS' block in the user
-    prompt. The writer is told to use any of these only with the
-    canonical citation_token in the SAME sentence — Stage-2 audit
-    enforces."""
+    """Render full paper markdown plus per-section anchors."""
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",

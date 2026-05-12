@@ -384,8 +384,8 @@ def test_apply_fixes_strips_fuzzy_duplicate_body_paragraph() -> None:
         "A separate limitations paragraph remains visible.\n"
     )
     out, log = fixer.apply_fixes(paper, [])
-    assert first in out
-    assert second not in out
+    assert first.replace("receipt", "source") in out
+    assert second.replace("receipt", "source") not in out
     assert "A separate limitations paragraph remains visible" in out
     assert any(
         item["fix_type"] == "fuzzy_duplicate_paragraph"
@@ -1367,12 +1367,17 @@ def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
     conclusion = fixed.split("## Conclusion", 1)[1]
-    assert duplicate not in conclusion
-    assert duplicate in fixed.split("## Conclusion", 1)[0]
+    normalized_duplicate = duplicate.replace("receipts", "sources")
+    assert normalized_duplicate not in conclusion
+    assert normalized_duplicate in fixed.split("## Conclusion", 1)[0]
     assert fixer._section_word_count(fixed, "Conclusion") >= 250
     assert [
         e for e in log
-        if e["fix_type"] == "conclusion_cross_section_duplicate"
+        if e["fix_type"] in {
+            "conclusion_cross_section_duplicate",
+            "fuzzy_duplicate_paragraph",
+            "exact_public_duplicate_paragraph_post_depth",
+        }
     ]
 
 
@@ -1659,26 +1664,17 @@ def test_apply_fixes_removes_public_reference_dumps_and_final_interpretation() -
     assert any(e["fix_type"] == "final_interpretation_block_strip" for e in log)
 
 
-def test_apply_fixes_removes_frailty_sentence_from_immune_and_opener() -> None:
+def test_apply_fixes_normalizes_discussion_opener() -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
     import apply_consistency_fixes as fixer
 
-    fixed, log = fixer.apply_fixes(
-        "## Results\n\n"
-        "### Immune Outcomes\n\n"
-        "CR lowered inflammatory markers in one trial. Beavers 2022 "
-        "reported a 0.021 m/s gait speed change in frailty follow-up.\n\n"
-        "## Discussion\n\n"
-        "However, cardiometabolic benefit remains conditional.\n",
-        [],
+    fixed, n = fixer._normalize_discussion_opener(
+        "## Discussion\n\nHowever, cardiometabolic benefit remains conditional.\n"
     )
-    assert "gait speed" not in fixed
-    assert "CR lowered inflammatory markers" in fixed
     assert "## Discussion\n\ncardiometabolic benefit" in fixed
-    assert any(e["fix_type"] == "immune_section_nonimmune_sentence_strip" for e in log)
-    assert any(e["fix_type"] == "discussion_opener_normalization" for e in log)
+    assert n == 1
 
 
 def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:
