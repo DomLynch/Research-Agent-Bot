@@ -221,6 +221,14 @@ def test_h3_residue_heading_blocks_journal_surface():
     assert any("### h3:" in i.detail for i in report.issues)
 
 
+def test_broken_possessive_fragment_blocks_journal_surface():
+    report = evaluate_journal_surface(
+        "## Results\n\nThis contrasts with 's evidence of a blunted response.\n",
+    )
+    assert not report.passed
+    assert any("with 's evidence" in i.detail for i in report.issues)
+
+
 def test_public_thesis_marker_blocks_journal_surface():
     report = evaluate_journal_surface(
         "## Abstract\n\n**Thesis:** This synthesis argues from an "

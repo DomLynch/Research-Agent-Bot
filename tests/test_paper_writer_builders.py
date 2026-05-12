@@ -14,19 +14,25 @@ from __future__ import annotations
 
 from agent.paper_writer_builders import (
     build_anchored_from_parsed,
+    build_results_from_parsed,
     build_scoped_from_parsed,
 )
-from agent.synthesis_schemas import ReceiptSummary
+from agent.synthesis_schemas import OutcomeClass, ReceiptSummary
 
 
-def _accepted(rid: str, *, p_values: tuple[str, ...] = ()) -> ReceiptSummary:
+def _accepted(
+    rid: str,
+    *,
+    outcome_class: OutcomeClass = "muscle_function",
+    p_values: tuple[str, ...] = (),
+) -> ReceiptSummary:
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
         thesis_text=f"thesis for {rid}",
         spar_verdict="accept_clean",
         n_claims=1, n_failed_traces=0, canonical_trial_id=None,
         evidence_tier="A1", directness="direct",
-        outcome_class="muscle_function", effect_direction="negative",
+        outcome_class=outcome_class, effect_direction="negative",
         p_values=p_values, population_summary="older adults",
     )
 
@@ -185,3 +191,61 @@ def test_anchored_repair_handles_mixed_correct_and_typo_ids() -> None:
     assert "metformin-multi-001-cfab-c01" in rids
     assert "metformin-multi-001-cfab-c04" in rids
     assert "metformin-multi-001-cfab-04" not in rids
+
+
+def test_results_builder_keeps_paragraphs_inside_same_outcome_section() -> None:
+    accepted = [
+        _accepted("r-immune", outcome_class="immune"),
+        _accepted("r-frailty", outcome_class="frailty"),
+    ]
+    parsed = {
+        "subsections": [
+            {
+                "outcome_class": "immune",
+                "heading": "Immune Outcomes",
+                "paragraphs": [
+                    {
+                        "text": "Immune findings are mixed across the corpus.",
+                        "receipt_ids": ["r-immune", "r-frailty"],
+                    },
+                ],
+            },
+        ],
+    }
+
+    section = build_results_from_parsed(parsed, accepted=accepted)
+
+    assert section is not None
+    assert "### Immune Outcomes" in section.body_md
+    immune_body = section.body_md.split("### Immune Outcomes", 1)[1].split("###", 1)[0]
+    assert "`r-immune`" in immune_body
+    assert "`r-frailty`" not in immune_body
+
+
+def test_results_builder_backfills_missing_outcome_sections() -> None:
+    accepted = [
+        _accepted("r-cardio", outcome_class="cardiometabolic"),
+        _accepted("r-frailty", outcome_class="frailty"),
+    ]
+    parsed = {
+        "subsections": [
+            {
+                "outcome_class": "cardiometabolic",
+                "heading": "Cardiometabolic Outcomes",
+                "paragraphs": [
+                    {
+                        "text": "Cardiometabolic findings are bounded.",
+                        "receipt_ids": ["r-cardio"],
+                    },
+                ],
+            },
+        ],
+    }
+
+    section = build_results_from_parsed(parsed, accepted=accepted)
+
+    assert section is not None
+    assert "### Cardiometabolic Outcomes" in section.body_md
+    assert "### Frailty Outcomes" in section.body_md
+    frailty_body = section.body_md.split("### Frailty Outcomes", 1)[1]
+    assert "`r-frailty`" in frailty_body

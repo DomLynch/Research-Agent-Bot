@@ -900,45 +900,6 @@ def _strip_final_interpretation_blocks(paper_md: str) -> tuple[str, int]:
     return public + "\n\n" + appendix.lstrip(), n
 
 
-def _strip_nonimmune_sentences_from_immune(paper_md: str) -> tuple[str, int]:
-    section_re = re.compile(
-        r"(?ims)^###\s+Immune[^\n]*\n(?P<body>.*?)(?=^###\s+|^##\s+|\Z)"
-    )
-    sentence_re = re.compile(r"[^.!?\n#](?:[^.!?\n#]|\.(?=\d))*[.!?]")
-    frailty_re = re.compile(
-        r"\b(?:Beavers|Perera|gait\s+speed|frailty|physical\s+function|"
-        r"functional\s+improvement|m/s)\b",
-        re.IGNORECASE,
-    )
-    immune_re = re.compile(
-        r"\b(?:immune|inflamm|cytokine|CRP|TNF|IL-|T\s*cell|NK)\b",
-        re.IGNORECASE,
-    )
-
-    removed_total = 0
-
-    def clean(match: re.Match[str]) -> str:
-        nonlocal removed_total
-        body = match.group("body")
-        out: list[str] = []
-        last = 0
-        for sent in sentence_re.finditer(body):
-            text = sent.group(0)
-            out.append(body[last:sent.start()])
-            if frailty_re.search(text) and not immune_re.search(text):
-                removed_total += 1
-            else:
-                out.append(text)
-            last = sent.end()
-        out.append(body[last:])
-        return match.group(0)[: match.start("body") - match.start()] + "".join(out)
-
-    fixed = section_re.sub(clean, paper_md)
-    if not removed_total:
-        return paper_md, 0
-    return re.sub(r"\n{3,}", "\n\n", fixed), removed_total
-
-
 def _normalize_discussion_opener(paper_md: str) -> tuple[str, int]:
     return _DISCUSSION_HOWEVER_RE.subn(r"\1", paper_md)
 
@@ -1355,14 +1316,6 @@ def apply_fixes(
             "fix_type": "final_interpretation_block_strip",
             "n_changes": n_final_interpretation,
             "description": "removed internal final-interpretation subsection from journal main",
-        })
-
-    new_md, n_nonimmune = _strip_nonimmune_sentences_from_immune(new_md)
-    if n_nonimmune:
-        log.append({
-            "fix_type": "immune_section_nonimmune_sentence_strip",
-            "n_changes": n_nonimmune,
-            "description": "removed frailty/function prose from Immune Results",
         })
 
     new_md, n_discussion_opener = _normalize_discussion_opener(new_md)

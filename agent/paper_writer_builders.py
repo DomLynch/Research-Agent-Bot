@@ -23,7 +23,7 @@ from __future__ import annotations
 import difflib
 import re
 from collections import Counter
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
 
 from agent.synthesis_schemas import (
     ReceiptSummary,
@@ -124,7 +124,7 @@ def _norm_label(text: str) -> str:
 def _resolve_results_outcome(
     sub: dict,
     receipt_ids: Sequence[str],
-    receipt_outcomes: dict[str, str],
+    receipt_outcomes: Mapping[str, str],
 ) -> str | None:
     """Resolve Results subsection ownership from corpus facets."""
     label = _norm_label(
@@ -142,7 +142,7 @@ def _resolve_results_outcome(
 def _same_outcome_receipt_ids(
     receipt_ids: Sequence[str],
     outcome: str,
-    receipt_outcomes: dict[str, str],
+    receipt_outcomes: Mapping[str, str],
 ) -> list[str]:
     return [rid for rid in receipt_ids if receipt_outcomes.get(rid) == outcome]
 
@@ -325,15 +325,20 @@ def build_results_from_parsed(
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
+    receipt_outcomes = {r.receipt_id: r.outcome_class for r in accepted}
+    by_outcome: dict[str, list[ReceiptSummary]] = {}
+    for receipt in accepted:
+        by_outcome.setdefault(receipt.outcome_class, []).append(receipt)
     corpus_norm = _accepted_corpus_norm(accepted)
     body_lines: list[str] = ["## Results", ""]
     anchors: list[SynthesisClaimAnchor] = []
+    rendered_outcomes: set[str] = set()
     for sub in parsed.get("subsections") or []:
         if not isinstance(sub, dict):
             continue
-        h3 = sub.get("heading") or sub.get("outcome_class") or ""
         sub_paragraphs = sub.get("paragraphs") or []
-        sub_body: list[str] = [f"### {h3}", ""]
+        subsection_outcome: str | None = None
+        sub_body: list[str] = []
         sub_anchors: list[SynthesisClaimAnchor] = []
         for entry in sub_paragraphs:
             if not isinstance(entry, dict):
@@ -347,11 +352,24 @@ def build_results_from_parsed(
             repaired_rids, _repair_log = repair_receipt_ids(
                 [str(r) for r in rids], accepted_ids,
             )
+            if subsection_outcome is None:
+                subsection_outcome = _resolve_results_outcome(
+                    sub, repaired_rids, receipt_outcomes,
+                )
+            if subsection_outcome is None:
+                continue
+            repaired_rids = _same_outcome_receipt_ids(
+                repaired_rids, subsection_outcome, receipt_outcomes,
+            )
             ok, _reason = _check_anchored_paragraph(
                 text, repaired_rids, accepted_ids, corpus_norm,
             )
             if not ok:
                 continue
+            if not sub_body:
+                sub_body = [
+                    f"### {_label_for_outcome(subsection_outcome)} Outcomes", "",
+                ]
             sub_body.append(text.strip())
             sub_body.append("")
             cite_str = ", ".join(f"`{i}`" for i in repaired_rids)
@@ -368,6 +386,16 @@ def build_results_from_parsed(
         if sub_anchors:
             body_lines.extend(sub_body)
             anchors.extend(sub_anchors)
+            if subsection_outcome is not None:
+                rendered_outcomes.add(subsection_outcome)
+    for outcome in sorted(by_outcome):
+        if outcome in rendered_outcomes:
+            continue
+        sub_body, sub_anchors = _backfill_results_subsection(
+            outcome, by_outcome[outcome],
+        )
+        body_lines.extend(sub_body)
+        anchors.extend(sub_anchors)
     if not anchors:
         return None
     return SynthesisSection(
