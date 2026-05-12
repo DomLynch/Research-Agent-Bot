@@ -31,9 +31,7 @@ import argparse
 import asyncio
 import dataclasses
 import datetime as dt
-import hashlib
 import json
-import os
 import re
 import sys
 from collections import Counter, defaultdict
@@ -80,7 +78,6 @@ import evidence_taxonomy as _taxonomy  # noqa: E402
 import effect_direction as _direction  # noqa: E402
 import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
-import granite_arbitrator as _granite  # noqa: E402
 import paper_quality_runtime as _paper_quality  # noqa: E402
 
 # Workstream A (autonomous): topic-parameterized pipeline.
@@ -2540,34 +2537,14 @@ async def _run_post_paper_pipeline(
         results = _resolve_absent_flagged_patches(results, paper_md)
 
         paper_path.write_text(paper_md)
-        arbitration_log_path = paper_path.with_suffix(".arbitration_log.json")
-        arbitration_log = _load_arbitration_log(arbitration_log_path)
         paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
             "applied_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
             "n_proposed": len(results),
             "n_applied": sum(
                 1 for r in results
-                if r.decision in (
-                    "applied", "applied_via_repair", "applied_via_arbitration",
-                )
+                if r.decision in ("applied", "applied_via_repair")
             ),
             "n_rejected": sum(1 for r in results if r.decision == "rejected"),
-            "n_rejected_by_arbitration": sum(
-                1 for r in results if r.decision == "rejected_by_arbitration"
-            ),
-            "n_arbitrated": len(arbitration_log),
-            "n_arbitration_apply": sum(
-                1 for r in arbitration_log if r.get("decision") == "APPLY"
-            ),
-            "n_arbitration_reject": sum(
-                1 for r in arbitration_log if r.get("decision") == "REJECT"
-            ),
-            "n_arbitration_escalate": sum(
-                1 for r in arbitration_log if r.get("decision") == "ESCALATE"
-            ),
-            "arbitration_log": (
-                arbitration_log_path.name if arbitration_log_path.exists() else None
-            ),
             # Fix #36: surface the flagged count too — these are
             # patches the auto-applier refuses to apply because they
             # change scientific meaning (claim/numeric patches) or
@@ -2588,30 +2565,12 @@ async def _run_post_paper_pipeline(
         }, indent=2))
         n_applied = sum(
             1 for r in results
-            if r.decision in (
-                "applied", "applied_via_repair", "applied_via_arbitration",
-            )
+            if r.decision in ("applied", "applied_via_repair")
         )
         n_rejected = sum(1 for r in results if r.decision == "rejected")
         n_flagged = sum(1 for r in results if r.decision == "flagged")
         n_repaired = sum(
             1 for r in results if r.decision == "applied_via_repair"
-        )
-        n_arbitrated = len(arbitration_log)
-        n_arbitration_apply = sum(
-            1 for r in arbitration_log if r.get("decision") == "APPLY"
-        )
-        n_arbitration_reject = sum(
-            1 for r in arbitration_log if r.get("decision") == "REJECT"
-        )
-        n_arbitration_escalate = sum(
-            1 for r in arbitration_log if r.get("decision") == "ESCALATE"
-        )
-        arbitration_log_name = (
-            arbitration_log_path.name if arbitration_log_path.exists() else None
-        )
-        n_arb_rejected = sum(
-            1 for r in results if r.decision == "rejected_by_arbitration"
         )
         n_stripped = sum(
             1 for r in results if r.decision == "auto_stripped"
@@ -2625,9 +2584,6 @@ async def _run_post_paper_pipeline(
         #                             apply (BEFORE not unique etc.)
         #   - "applied_via_repair"  → repair loop succeeded, NOT
         #                             counted as unresolved
-        #   - "applied_via_arbitration" / "rejected_by_arbitration"
-        #                           → third-reviewer judgment logged in
-        #                             .arbitration_log.json; resolved
         #   - "auto_stripped"       → repair loop exhausted; offending
         #                             BEFORE region deleted; resolved
         #                             agent-to-agent. NOT counted.
@@ -2659,7 +2615,6 @@ async def _run_post_paper_pipeline(
         print(
             f"[pipeline]   applied={n_applied} rejected={n_rejected} "
             f"flagged={n_flagged} repaired={n_repaired} "
-            f"arbitrated={n_arbitrated} arb_rejected={n_arb_rejected} "
             f"auto_stripped={n_stripped}"
             + (f" (Grok-unresolved P1 after repair: "
                f"{grok_unresolved_p1})"
@@ -2670,11 +2625,6 @@ async def _run_post_paper_pipeline(
         grok_unresolved_p1 = 0
         n_flagged = 0
         n_stripped = 0
-        n_arbitrated = 0
-        n_arbitration_apply = 0
-        n_arbitration_reject = 0
-        n_arbitration_escalate = 0
-        arbitration_log_name = None
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
     # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok
@@ -2846,11 +2796,6 @@ async def _run_post_paper_pipeline(
             surface_report is not None and surface_report.passed
         ),
         journal_surface_issues=_surface_issues,
-        n_arbitrated=n_arbitrated,
-        n_arbitration_apply=n_arbitration_apply,
-        n_arbitration_reject=n_arbitration_reject,
-        n_arbitration_escalate=n_arbitration_escalate,
-        arbitration_log=arbitration_log_name,
     )
     paper_path.with_suffix(".final_verdict.json").write_text(
         json.dumps(dataclasses.asdict(unified), indent=2)
@@ -3013,234 +2958,11 @@ async def _run_post_paper_pipeline(
 _MAX_REPAIR_ROUNDS = 2
 
 
-def _env_bool(name: str, default: bool = False) -> bool:
-    raw = os.environ.get(name)
-    if raw is None:
-        return default
-    return raw.strip().lower() in {"1", "true", "yes", "on"}
-
-
-def _env_float(name: str, default: float) -> float:
-    try:
-        return float(os.environ.get(name, default))
-    except (TypeError, ValueError):
-        return default
-
-
-def _granite_config() -> _granite.GraniteArbitratorConfig:
-    settings = load_settings()
-    return _granite.GraniteArbitratorConfig(
-        base_url=os.environ.get(
-            "ARBITRATOR_BASE_URL",
-            os.environ.get("GRANITE_ARBITRATOR_BASE_URL", settings.openrouter_base_url),
-        ),
-        api_key=os.environ.get(
-            "ARBITRATOR_API_KEY",
-            os.environ.get("GRANITE_API_KEY", settings.openrouter_api_key),
-        ).strip(),
-        model=os.environ.get(
-            "ARBITRATOR_MODEL",
-            os.environ.get(
-                "GRANITE_ARBITRATOR_MODEL",
-                "mistralai/mistral-small-2603",
-            ),
-        ),
-        enabled=_env_bool(
-            "ARBITRATOR_ENABLED",
-            _env_bool("GRANITE_ARBITRATOR_ENABLED", False),
-        ),
-        timeout_sec=_env_float(
-            "ARBITRATOR_TIMEOUT_SEC",
-            _env_float("GRANITE_ARBITRATOR_TIMEOUT_SEC", 60.0),
-        ),
-    )
-
-
 def _is_p1_flagged(r: Any) -> bool:
     return (
         r.decision == "flagged"
         and (r.severity or "").upper() in {"P1", "HIGH", "CRITICAL"}
     )
-
-
-def _arbitration_context(paper_md: str, before: str, radius: int = 2500) -> str:
-    pos = paper_md.find(before) if before else -1
-    if pos < 0:
-        return paper_md[: radius * 2]
-    start = max(0, pos - radius)
-    end = min(len(paper_md), pos + len(before) + radius)
-    return paper_md[start:end]
-
-
-def _arbitration_input(r: Any, paper_md: str) -> _granite.ArbitrationInput:
-    context_hash = "sha256:" + hashlib.sha256(
-        paper_md.encode("utf-8", errors="ignore"),
-    ).hexdigest()
-    return _granite.ArbitrationInput(
-        patch_id=r.patch_id,
-        before=r.before or "",
-        after=r.after or "",
-        refusal=r.reason_for_decision or "",
-        rationale=r.reason_for_decision or "",
-        context_hash=context_hash,
-        paper_context=_arbitration_context(paper_md, r.before or ""),
-    )
-
-
-def _load_arbitration_log(path: Path) -> list[dict[str, Any]]:
-    if not path.exists():
-        return []
-    try:
-        data = json.loads(path.read_text())
-    except (OSError, json.JSONDecodeError):
-        return []
-    rows = data.get("arbitrations") if isinstance(data, dict) else None
-    return rows if isinstance(rows, list) else []
-
-
-def _write_arbitration_log(path: Path, rows: list[dict[str, Any]]) -> None:
-    if not rows:
-        return
-    path.write_text(json.dumps({
-        "schema_version": "arbitration_log_sidecar.v1",
-        "arbitrations": rows,
-    }, indent=2))
-
-
-def _with_arbitration_decision(
-    r: Any, *, decision: str, reason: str,
-) -> Any:
-    return _patch_applier.PatchResult(
-        patch_id=r.patch_id,
-        patch_type=r.patch_type,
-        severity=r.severity,
-        decision=decision,
-        reason_for_decision=reason,
-        before=r.before,
-        after=r.after,
-    )
-
-
-def _granite_apply_shape_allowed(r: Any) -> tuple[bool, str]:
-    if not (r.after or "").strip():
-        return True, "deletion patch"
-    if r.patch_type in {"formatting", "citation"}:
-        return True, "public-surface patch"
-    return False, "non-deletion semantic/numeric/structure patch"
-
-
-def _granite_delete_all_allowed(r: Any, count: int) -> bool:
-    """Allow Granite delete-all only for bounded exact deletion patches."""
-    before = (r.before or "").strip()
-    return (
-        r.patch_type in {"numeric", "formatting"}
-        and not (r.after or "").strip()
-        and 1 < count <= 5
-        and len(before) >= 24
-        and "\n" not in before
-    )
-
-
-async def _granite_arbitration_pass(
-    *,
-    paper_md: str,
-    results: list[Any],
-    manifest: dict,
-    paper_path: Path | None,
-) -> tuple[str, list[Any]]:
-    flagged_p1 = [r for r in results if _is_p1_flagged(r)]
-    config = _granite_config()
-    if not flagged_p1 or not config.enabled:
-        return paper_md, results
-    log_rows = _load_arbitration_log(
-        paper_path.with_suffix(".arbitration_log.json")
-    ) if paper_path else []
-    updated = list(results)
-    for r in flagged_p1:
-        current = next(
-            (rr for rr in updated if rr.patch_id == r.patch_id), r,
-        )
-        if not _is_p1_flagged(current):
-            continue
-        arb_input = _arbitration_input(r, paper_md)
-        decision = await _granite.request_granite_arbitration(arb_input, config)
-        entry = dict(_granite.build_audit_log_entry(
-            arb_input, decision, model=config.model,
-        ))
-        entry["pipeline_effect"] = "escalated"
-        if decision.verdict == "APPLY":
-            shape_ok, shape_reason = _granite_apply_shape_allowed(r)
-            entry["apply_shape_reason"] = shape_reason
-            if not shape_ok:
-                entry["pipeline_effect"] = "blocked_apply_shape"
-            elif not r.before:
-                entry["pipeline_effect"] = "blocked_empty_before"
-            else:
-                before_count = paper_md.count(r.before)
-                delete_all = _granite_delete_all_allowed(r, before_count)
-                if before_count != 1 and not delete_all:
-                    entry["pipeline_effect"] = "blocked_non_unique_before"
-                    log_rows.append(entry)
-                    continue
-                tentative = (
-                    paper_md.replace(r.before, r.after or "")
-                    if delete_all
-                    else paper_md.replace(r.before, r.after or "", 1)
-                )
-                safe, reason = _patch_applier._post_apply_audit_safe(
-                    pre_md=paper_md, post_md=tentative, manifest=manifest,
-                )
-                entry["post_apply_audit_safe"] = safe
-                entry["post_apply_audit_reason"] = reason
-                if safe:
-                    paper_md = tentative
-                    entry["pipeline_effect"] = (
-                        "applied_delete_all"
-                        if delete_all else "applied_exact_after"
-                    )
-                    updated = [
-                        _with_arbitration_decision(
-                            rr,
-                            decision="applied_via_arbitration",
-                            reason=(
-                                "GRANITE-ARBITRATION-APPLY: exact AFTER "
-                                f"applied after deterministic audit. {decision.rationale}"
-                            ),
-                        ) if (
-                            rr.patch_id == r.patch_id
-                            or (
-                                delete_all
-                                and _is_p1_flagged(rr)
-                                and rr.before == r.before
-                                and rr.after == r.after
-                            )
-                        ) else rr
-                        for rr in updated
-                    ]
-                else:
-                    entry["pipeline_effect"] = "blocked_post_apply_audit"
-        elif decision.verdict == "REJECT":
-            if not (r.after or "").strip():
-                entry["pipeline_effect"] = "reject_deletion_treated_as_escalate"
-            else:
-                entry["pipeline_effect"] = "rejected_grok_patch"
-                updated = [
-                    _with_arbitration_decision(
-                        rr,
-                        decision="rejected_by_arbitration",
-                        reason=(
-                            "GRANITE-ARBITRATION-REJECT: third reviewer "
-                            f"rejected Grok patch. {decision.rationale}"
-                        ),
-                    ) if rr.patch_id == r.patch_id else rr
-                    for rr in updated
-                ]
-        log_rows.append(entry)
-    if paper_path:
-        _write_arbitration_log(
-            paper_path.with_suffix(".arbitration_log.json"), log_rows,
-        )
-    return paper_md, updated
 
 
 async def _agent_repair_loop(
@@ -3334,12 +3056,6 @@ async def _agent_repair_loop(
             if r.decision == "flagged"
             and (r.severity or "").upper() in {"P1", "HIGH", "CRITICAL"}
         ]
-    paper_md, results = await _granite_arbitration_pass(
-        paper_md=paper_md,
-        results=results,
-        manifest=manifest,
-        paper_path=paper_path,
-    )
     flagged_p1 = [r for r in results if _is_p1_flagged(r)]
     # Final pass: any still-flagged P1 → auto-strip the BEFORE region.
     # Pure deletion; safer than leaving a flagged patch unresolved.
@@ -3701,13 +3417,6 @@ class UnifiedVerdict:
     p1_clean: bool
     grok_unresolved_p1: int = 0
     grok_flagged: int = 0
-    n_arbitrated: int = 0
-    n_arbitration_apply: int = 0
-    n_arbitration_reject: int = 0
-    n_arbitration_escalate: int = 0
-    arbitration_log: str | None = None
-    arbitration_count: int = 0
-    arbitration_log_path: str | None = None
     corpus_gaps: tuple[str, ...] = ()
     expansion_targets: tuple[str, ...] = ()
     maturity_level: int = 0
@@ -3742,11 +3451,6 @@ def _compute_unified_verdict(
     auto_stripped_count: int = 0,
     journal_surface_pass: bool = True,
     journal_surface_issues: tuple[str, ...] = (),
-    n_arbitrated: int = 0,
-    n_arbitration_apply: int = 0,
-    n_arbitration_reject: int = 0,
-    n_arbitration_escalate: int = 0,
-    arbitration_log: str | None = None,
 ) -> UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
     fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
@@ -3991,13 +3695,6 @@ def _compute_unified_verdict(
         p1_clean=p1_clean,
         grok_unresolved_p1=grok_unresolved_p1,
         grok_flagged=grok_flagged_count,
-        n_arbitrated=n_arbitrated,
-        n_arbitration_apply=n_arbitration_apply,
-        n_arbitration_reject=n_arbitration_reject,
-        n_arbitration_escalate=n_arbitration_escalate,
-        arbitration_log=arbitration_log,
-        arbitration_count=n_arbitrated,
-        arbitration_log_path=arbitration_log,
         corpus_gaps=corpus_gaps,
         expansion_targets=expansion_targets,
         maturity_level=maturity_level,
@@ -4045,14 +3742,6 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         f"clinical={u.evidence_weight_clinical:.2f}; "
         f"mechanistic={u.evidence_weight_mechanistic:.2f})\n"
     )
-    arbitration_line = (
-        f"- Third-layer arbitration: {u.n_arbitrated} decision(s) "
-        f"(apply={u.n_arbitration_apply}, "
-        f"reject={u.n_arbitration_reject}, "
-        f"escalate={u.n_arbitration_escalate})"
-        + (f"; log={u.arbitration_log}" if u.arbitration_log else "")
-        + "\n"
-    )
     return (
         f"# Unified Final Verdict\n\n"
         f"**Verdict: {u.verdict}**\n\n"
@@ -4074,7 +3763,6 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         )
         + "\n"
         + track_line
-        + arbitration_line
         + surface_line
         + (
             f"- Grok-flagged P1 patches unresolved: "

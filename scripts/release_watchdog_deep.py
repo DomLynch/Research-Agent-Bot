@@ -29,7 +29,6 @@ OSF_ALLOWED_PREFIXES = (
     "tests/",
     "scripts/osf_live_readiness.py",
     "scripts/release_watchdog",
-    "scripts/arbitration",
     "scripts/bundle_snapshot.py",
     "scripts/dw_register_public_bundle.py",
     "scripts/export_public_bundle.py",
