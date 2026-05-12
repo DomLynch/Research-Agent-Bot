@@ -40,7 +40,7 @@ try:
     import httpx
 except ModuleNotFoundError:  # deterministic tests can import this module without live LLM deps.
     httpx = None  # type: ignore[assignment]
-    _HTTPX_HTTP_ERROR = Exception
+    _HTTPX_HTTP_ERROR: type[BaseException] = Exception
 else:
     _HTTPX_HTTP_ERROR = httpx.HTTPError
 

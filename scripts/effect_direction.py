@@ -218,8 +218,8 @@ def _significance_by_endpoint(
                 break
         # Fallback to raw_text parsing
         if not sig:
-            p = _parse_p_value(c.get("raw_text") or "")
-            if p is not None and 0.0 < p < alpha:
+            parsed_p = _parse_p_value(c.get("raw_text") or "")
+            if parsed_p is not None and 0.0 < parsed_p < alpha:
                 sig = True
         if sig:
             has_sig[endpoint] = True

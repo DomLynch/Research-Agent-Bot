@@ -727,8 +727,3 @@ __all__ = [
     "write_results_section",
     "render_full_paper",
 ]
-
-
-# Suppressing unused-import warning — Mapping/Any kept for type-hint clarity.
-_ = Mapping
-_ = Any

@@ -432,8 +432,8 @@ def build_what_this_adds_section(
     load_bearing = _load_bearing_tension(matrix) if matrix else None
     cap = topic.strip() or "the topic"
     n_acc_s = (
-        f"{n_acc} accepted receipt" if n_acc == 1
-        else f"{n_acc} accepted receipts"
+        f"{n_acc} included source" if n_acc == 1
+        else f"{n_acc} included sources"
     )
 
     lines: list[str] = ["## What This Synthesis Adds", ""]

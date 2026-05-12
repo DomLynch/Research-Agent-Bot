@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import asyncio
 from collections.abc import Mapping, Sequence
-from typing import Any, TYPE_CHECKING
+from typing import Any, TYPE_CHECKING, cast
 
 if TYPE_CHECKING:  # pragma: no cover
     import httpx
@@ -90,7 +90,8 @@ async def apply_section_backstop(
     whichever attempt produces more words (never makes the section
     shorter than what the writer's main loop produced)."""
     for sec_name, floor in AUDIT_GATED_FLOORS.items():
-        cur = sections.get(sec_name)
+        section_name = cast(SectionName, sec_name)
+        cur = sections.get(section_name)
         if cur is None:
             continue
         words = _section_word_count(cur)
@@ -150,7 +151,7 @@ async def apply_section_backstop(
                 continue
             new_words = _section_word_count(new_section)
             if new_words > words:
-                sections[sec_name] = new_section
+                sections[section_name] = new_section
                 print(
                     f"[paper_writer] BACKSTOP: {sec_name} "
                     f"{words} → {new_words} words",
@@ -181,7 +182,8 @@ async def apply_section_backstop(
             ("cross_domain_synthesis", build_cross_domain_anchor),
             ("discussion", build_discussion_anchor),
         ):
-            cur = sections.get(sec_name)
+            section_name = cast(SectionName, sec_name)
+            cur = sections.get(section_name)
             if cur is None:
                 continue
             words = _section_word_count(cur)
@@ -192,10 +194,10 @@ async def apply_section_backstop(
             if not anchor_md:
                 continue
             new_body = cur.body_md.rstrip() + "\n\n" + anchor_md + "\n"
-            sections[sec_name] = SynthesisSection(
-                name=sec_name, body_md=new_body, anchors=cur.anchors,
+            sections[section_name] = SynthesisSection(
+                name=section_name, body_md=new_body, anchors=cur.anchors,
             )
-            new_words = _section_word_count(sections[sec_name])
+            new_words = _section_word_count(sections[section_name])
             print(
                 f"[paper_writer] BACKSTOP: {sec_name} appended "
                 f"deterministic anchor ({words} → {new_words} "

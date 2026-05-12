@@ -199,7 +199,7 @@ def _has_unsafe_match_boundary(text: str, before: str) -> bool:
         and _is_word_char(before[-1])
         and _is_word_char(text[end])
     )
-    return left_bad or right_bad
+    return bool(left_bad or right_bad)
 
 
 def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool:

@@ -39,7 +39,7 @@ import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -60,8 +60,8 @@ from agent.paper_writer_deterministic import (  # noqa: E402
 )
 from agent.outcome_class_remap import remap_outcome_class  # noqa: E402
 from agent.synthesis_schemas import (  # noqa: E402
-    ReceiptSummary, SynthesisSection, SynthesisThesis, Tension,
-    TensionMatrix,
+    EffectDirection, ReceiptSummary, SynthesisSection, SynthesisThesis,
+    Tension, TensionKind, TensionMatrix,
 )
 from agent.settings import load_settings  # noqa: E402
 
@@ -1603,8 +1603,11 @@ def build_receipts_from_quant_claims(
             evidence_tier=tier,
             directness=directness,
             outcome_class=agg["outcome_class"],
-            effect_direction=_title_guarded_effect_direction(
-                meta.get("title") or "", agg["effect_direction"],
+            effect_direction=cast(
+                EffectDirection,
+                _title_guarded_effect_direction(
+                    meta.get("title") or "", agg["effect_direction"],
+                ),
             ),
             p_values=tuple(agg["p_values"][:6]),
             population_summary=_build_population_summary(meta, agg["sample_sizes"]),
@@ -1660,7 +1663,7 @@ def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
                 if (a.directness == "direct" and b.directness == "mechanistic") or (
                     a.directness == "mechanistic" and b.directness == "direct"
                 ):
-                    kind = "cross_domain"
+                    kind = "mechanism_vs_clinical"
                     severity = 4
                     summary = (
                         f"{a.receipt_id} ({a.outcome_class}, "
@@ -1677,7 +1680,7 @@ def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
             pairs.append(Tension(
                 receipt_a_id=a.receipt_id,
                 receipt_b_id=b.receipt_id,
-                kind=kind,
+                kind=cast(TensionKind, kind),
                 outcome_class=a.outcome_class,
                 summary=summary,
                 severity=severity,
@@ -2103,8 +2106,8 @@ async def _run(
             # tokens (e.g. "Witham 2025") to this receipt's
             # quant_claims and check role match.
             "citation_token": (
-                citation_registry.get(r.receipt_id).body_citation
-                if citation_registry.get(r.receipt_id) else
+                entry.body_citation
+                if (entry := citation_registry.get(r.receipt_id)) is not None else
                 _author_year_token(r)
             ),
             # paper_id resolved from receipt_id so quant_claims
@@ -2116,7 +2119,7 @@ async def _run(
     field_engagement = tuple(
         dataclasses.asdict(item)
         for item in build_framework_engagement_records(
-            writer_receipts, _bglit.load_registry().values(),
+            writer_receipts, list(_bglit.load_registry().values()),
         )
     )
     (out_dir / "field_engagement.json").write_text(

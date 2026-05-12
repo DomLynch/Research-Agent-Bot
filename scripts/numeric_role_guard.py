@@ -363,9 +363,12 @@ def _check_no_change_nonzero_parenthetical(
     )
     if not unit_bound:
         return None
+    value_match = re.match(r"\d+\.?\d*", unit_bound.group(0))
+    if value_match is None:
+        return None
     try:
-        value = float(re.match(r"\d+\.?\d*", unit_bound.group(0)).group(0))
-    except (AttributeError, TypeError, ValueError):
+        value = float(value_match.group(0))
+    except (TypeError, ValueError):
         return None
     if value == 0:
         return None
