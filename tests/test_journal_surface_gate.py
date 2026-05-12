@@ -215,6 +215,24 @@ def test_public_artifact_language_blocks_journal_surface():
     assert "manifest, tension matrix, and citation registry" in details
 
 
+def test_h3_residue_heading_blocks_journal_surface():
+    report = evaluate_journal_surface("## Results\n\n### H3: Cardiometabolic Outcomes\n")
+    assert not report.passed
+    assert any("### h3:" in i.detail for i in report.issues)
+
+
+def test_reference_dump_and_internal_final_heading_block_journal_surface():
+    report = evaluate_journal_surface(
+        "## What This Synthesis Adds\n\n"
+        "PMID: 12345. DOI: 10.1000/example.\n\n"
+        "### Final interpretation\n\nInternal guidance.\n"
+    )
+    assert not report.passed
+    details = " ".join(i.detail for i in report.issues)
+    assert "public reference dump" in details
+    assert "### final interpretation" in details
+
+
 def test_duplicate_public_paragraph_blocks_journal_surface():
     para = " ".join(f"alpha{i}" for i in range(35))
     paper = f"## Results\n\n{para}\n\n{para} extra\n\n"

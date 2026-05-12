@@ -738,7 +738,7 @@ def _word_count(text: str) -> int:
 def _ensure_results_summary_table(
     markdown: str, manifest: dict[str, Any],
 ) -> tuple[str, bool]:
-    header = "| Outcome class | Strongest signal | Directness | Main limitation |"
+    header = "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |"
     if header in markdown:
         return markdown, False
     match = re.search(r"^## Results\s*$", markdown, re.MULTILINE)
@@ -774,6 +774,8 @@ def _ensure_results_summary_table(
             f"{directness[k]} {k}" for k in ("direct", "indirect", "mechanistic")
             if directness.get(k)
         ]
+        claim_n = sum(int(r.get("n_claims") or 0) for r in group)
+        corpus_slice = f"n={len(group)}; claims={claim_n}"
         if directness.get("direct", 0) == 0:
             limitation = "no direct clinical anchor"
         elif len(directions) > 1:
@@ -784,12 +786,13 @@ def _ensure_results_summary_table(
             limitation = "population and endpoint heterogeneity"
         label = outcome.replace("_", " ").strip().title() or "Other"
         rows.append(
-            f"| {label} | {signal_name} in {dominant_n}/{len(group)} sources | "
+            f"| {label} | {corpus_slice} | "
+            f"{signal_name} in {dominant_n}/{len(group)} sources | "
             f"{'; '.join(direct_parts) or 'not classified'} | {limitation} |"
         )
     table = "\n".join([
         header,
-        "|---|---|---|---|",
+        "|---|---|---|---|---|",
         *rows,
     ])
     insert_at = match.end()

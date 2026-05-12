@@ -309,24 +309,27 @@ def test_results_summary_table_is_manifest_driven_and_idempotent() -> None:
                 "outcome_class": "cardiometabolic",
                 "effect_direction": "positive",
                 "directness": "direct",
+                "n_claims": 4,
             },
             {
                 "outcome_class": "cardiometabolic",
                 "effect_direction": "null",
                 "directness": "indirect",
+                "n_claims": 3,
             },
             {
                 "outcome_class": "muscle_function",
                 "effect_direction": "negative",
                 "directness": "direct",
+                "n_claims": 2,
             },
         ],
     }
     out, inserted = orch._ensure_results_summary_table(paper, manifest)
     assert inserted is True
-    assert "| Outcome class | Strongest signal | Directness | Main limitation |" in out
-    assert "| Cardiometabolic | benefit signal in 1/2 sources |" in out
-    assert "| Muscle Function | adverse or limiting signal in 1/1 sources |" in out
+    assert "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |" in out
+    assert "| Cardiometabolic | n=2; claims=7 | benefit signal in 1/2 sources |" in out
+    assert "| Muscle Function | n=1; claims=2 | adverse or limiting signal in 1/1 sources |" in out
     out2, inserted2 = orch._ensure_results_summary_table(out, manifest)
     assert inserted2 is False
     assert out2 == out

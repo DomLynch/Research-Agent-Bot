@@ -1540,6 +1540,23 @@ def test_apply_fixes_strips_orphan_demonstrated_clause() -> None:
     assert any(e["fix_type"] == "orphan_demonstrated_clause_strip" for e in log)
 
 
+def test_apply_fixes_strips_orphan_demonstrated_tail() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Abstract\n\n"
+        "Weaver 2026 reported no protein effect on bone outcomes, and "
+        "demonstrated that CR induces anabolic resistance.\n",
+        [],
+    )
+    assert "demonstrated that CR induces anabolic resistance" not in fixed
+    assert "Weaver 2026 reported no protein effect on bone outcomes." in fixed
+    assert any(e["fix_type"] == "orphan_demonstrated_clause_strip" for e in log)
+
+
 def test_apply_fixes_strips_empty_attribution_sentence() -> None:
     import sys as _sys
     from pathlib import Path as _Path
@@ -1556,6 +1573,112 @@ def test_apply_fixes_strips_empty_attribution_sentence() -> None:
     assert "Roth 2022 provides real-world training context." in fixed
     assert "Next sentence remains." in fixed
     assert any(e["fix_type"] == "empty_attribution_sentence_strip" for e in log)
+
+
+def test_apply_fixes_normalizes_h3_residue_and_taken_together() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\n"
+        "### H3: Cardiometabolic Outcomes\n\n"
+        "Taken together, these findings remain bounded.\n",
+        [],
+    )
+    assert "### H3:" not in fixed
+    assert "### Cardiometabolic Outcomes" in fixed
+    assert "Taken together," not in fixed
+    assert "Across the corpus, these findings remain bounded." in fixed
+    assert any(e["fix_type"] == "h3_residue_heading_normalization" for e in log)
+    assert any(e["fix_type"] == "public_meta_phrase_normalization" for e in log)
+
+
+def test_apply_fixes_normalizes_tension_count_and_limited_evidence_phrase() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\n"
+        "The evidence base is limited to preclinical studies. "
+        "The synthesis surfaces 366 non-orthogonal tensions.\n",
+        [],
+    )
+    assert "evidence base is limited to" not in fixed
+    assert "366 non-orthogonal tensions" not in fixed
+    assert "The available evidence is concentrated in preclinical studies" in fixed
+    assert "cross-study tensions" in fixed
+    assert any(e["fix_type"] == "public_meta_phrase_normalization" for e in log)
+
+
+def test_apply_fixes_strips_toxin_mobilization_aside() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Conclusion\n\n"
+        "Clinical caution remains. Potential mobilization of lipophilic "
+        "toxins during fat-mass loss may offset benefit. Final sentence.\n",
+        [],
+    )
+    assert "lipophilic toxins" not in fixed
+    assert "Clinical caution remains." in fixed
+    assert "Final sentence." in fixed
+    assert any(e["fix_type"] == "toxin_mobilization_sentence_strip" for e in log)
+
+
+def test_apply_fixes_removes_public_reference_dumps_and_final_interpretation() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## What This Synthesis Adds\n\n"
+        "This synthesis maps the evidence.\n\n"
+        "PMID: 12345. DOI: 10.1000/a. PMID: 67890.\n\n"
+        "### Background References\n\n"
+        "DOI: 10.1000/b. PMID: 999.\n\n"
+        "## Conclusion\n\n"
+        "Clean close.\n\n"
+        "### Final interpretation\n\n"
+        "Direct clinical receipts carry the most immediate weight.\n",
+        [],
+    )
+    assert "PMID:" not in fixed
+    assert "DOI:" not in fixed
+    assert "Background References" not in fixed
+    assert "Final interpretation" not in fixed
+    assert "Clean close." in fixed
+    assert any(e["fix_type"] == "public_reference_dump_strip" for e in log)
+    assert any(e["fix_type"] == "final_interpretation_block_strip" for e in log)
+
+
+def test_apply_fixes_removes_frailty_sentence_from_immune_and_opener() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\n"
+        "### Immune Outcomes\n\n"
+        "CR lowered inflammatory markers in one trial. Beavers 2022 "
+        "reported a 0.021 m/s gait speed change in frailty follow-up.\n\n"
+        "## Discussion\n\n"
+        "However, cardiometabolic benefit remains conditional.\n",
+        [],
+    )
+    assert "gait speed" not in fixed
+    assert "CR lowered inflammatory markers" in fixed
+    assert "## Discussion\n\ncardiometabolic benefit" in fixed
+    assert any(e["fix_type"] == "immune_section_nonimmune_sentence_strip" for e in log)
+    assert any(e["fix_type"] == "discussion_opener_normalization" for e in log)
 
 
 def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:

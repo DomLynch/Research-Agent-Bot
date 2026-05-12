@@ -25,6 +25,7 @@ import re
 import sys
 import tomllib
 import unicodedata
+from collections.abc import Sequence
 from pathlib import Path
 
 __all__ = ["apply_fixes", "main"]
@@ -32,6 +33,7 @@ __all__ = ["apply_fixes", "main"]
 
 _POTENTIALLY_RE = re.compile(r"\s*\(potentially\)", re.IGNORECASE)
 _DOUBLE_HASH_RE = re.compile(r"^(#{2,4})\s+#{2,4}\s+", re.MULTILINE)
+_H3_RESIDUE_HEADING_RE = re.compile(r"(?im)^###\s+H3[:.]\s+")
 # Sentences that contain stale-SPAR phrases — strip the entire sentence.
 # Fix #29: extended phrase set per reviewer — "spar quarantine"
 # (noun form), "spar-rejected", "rejected evidence" added.
@@ -78,6 +80,30 @@ _EMPTY_ATTRIBUTION_SENT_RE = re.compile(
     r"[^.!?\n#]*\b(?:described|reported|observed|shown|demonstrated)\s+"
     r"by\s+\.[ \t]*(?:\n+)?",
     re.IGNORECASE,
+)
+_TOXIN_MOBILIZATION_SENT_RE = re.compile(
+    r"(?m)(?:^|(?<=[.!?])\s*)"
+    r"[^.!?\n#]*\b(?:polychlorinated\s+biphenyls|lipophilic\s+toxins)\b"
+    r"[^.!?\n#]*[.!?][ \t]*(?:\n+)?",
+    re.IGNORECASE,
+)
+_ORPHAN_DEMONSTRATED_TAIL_RE = re.compile(
+    r",\s+and\s+demonstrated\s+that\s+[^.!?\n#]*[.!?]",
+    re.IGNORECASE,
+)
+_PUBLIC_REFERENCE_DUMP_RE = re.compile(
+    r"(?ims)(?:^|\n\n)(?!##\s)"
+    r"(?=[^\n]*(?:\bDOI:|\bPMID:))"
+    r"[^\n]*(?:\n\n|$)"
+)
+_BACKGROUND_REFERENCES_RE = re.compile(
+    r"(?ims)^###\s+Background References\b.*?(?=^##\s+|\Z)"
+)
+_FINAL_INTERPRETATION_RE = re.compile(
+    r"(?ims)^###\s+Final interpretation\b.*?(?=^##\s+|^###\s+|\Z)"
+)
+_DISCUSSION_HOWEVER_RE = re.compile(
+    r"(?m)(^##\s+Discussion\s*\n\n)However,\s+"
 )
 _PIPELINE_META_LINE_RE = re.compile(
     r"(?m)^[^\n]*\b(?:Explicit-absence audit-trail block|"
@@ -706,6 +732,10 @@ def _normalize_public_p_values(paper_md: str) -> tuple[str, int]:
     return _PVALUE_DISPLAY_RE.subn(repl, paper_md)
 
 
+def _normalize_h3_residue_headings(paper_md: str) -> tuple[str, int]:
+    return _H3_RESIDUE_HEADING_RE.subn("### ", paper_md)
+
+
 def _strip_public_pipeline_meta(paper_md: str) -> tuple[str, int]:
     cleaned, n = _PIPELINE_META_LINE_RE.subn("", paper_md)
     if not n:
@@ -773,6 +803,21 @@ def _normalize_public_meta_phrases(paper_md: str) -> tuple[str, int]:
             re.compile(r"stripped sentence", re.IGNORECASE),
             "unsupported sentence",
         ),
+        (
+            re.compile(r"\bTaken together,\s*", re.IGNORECASE),
+            "Across the corpus, ",
+        ),
+        (
+            re.compile(r"\bthe evidence base is limited to\b", re.IGNORECASE),
+            "The available evidence is concentrated in",
+        ),
+        (
+            re.compile(
+                r"\b\d+\s+non-orthogonal\s+(?:pairwise\s+)?tensions\b",
+                re.IGNORECASE,
+            ),
+            "cross-study tensions",
+        ),
     )
     out = paper_md
     n_total = 0
@@ -810,7 +855,72 @@ def _strip_orphan_demonstrated_clauses(
     paper_md: str,
 ) -> tuple[str, int]:
     cleaned, n = _ORPHAN_DEMONSTRATED_CLAUSE_RE.subn(", and ", paper_md)
-    return (cleaned, n) if n else (paper_md, 0)
+    cleaned, n_tail = _ORPHAN_DEMONSTRATED_TAIL_RE.subn(".", cleaned)
+    total = n + n_tail
+    return (cleaned, total) if total else (paper_md, 0)
+
+
+def _strip_public_reference_dumps(paper_md: str) -> tuple[str, int]:
+    public, appendix = _split_public_body(paper_md)
+    public, n_bg = _BACKGROUND_REFERENCES_RE.subn("", public)
+    public, n_dump = _PUBLIC_REFERENCE_DUMP_RE.subn("\n\n", public)
+    total = n_bg + n_dump
+    if not total:
+        return paper_md, 0
+    public = re.sub(r"\n{3,}", "\n\n", public).rstrip()
+    return public + "\n\n" + appendix.lstrip(), total
+
+
+def _strip_final_interpretation_blocks(paper_md: str) -> tuple[str, int]:
+    public, appendix = _split_public_body(paper_md)
+    public, n = _FINAL_INTERPRETATION_RE.subn("", public)
+    if not n:
+        return paper_md, 0
+    public = re.sub(r"\n{3,}", "\n\n", public).rstrip()
+    return public + "\n\n" + appendix.lstrip(), n
+
+
+def _strip_nonimmune_sentences_from_immune(paper_md: str) -> tuple[str, int]:
+    section_re = re.compile(
+        r"(?ims)^###\s+Immune[^\n]*\n(?P<body>.*?)(?=^###\s+|^##\s+|\Z)"
+    )
+    sentence_re = re.compile(r"[^.!?\n#](?:[^.!?\n#]|\.(?=\d))*[.!?]")
+    frailty_re = re.compile(
+        r"\b(?:Beavers|Perera|gait\s+speed|frailty|physical\s+function|"
+        r"functional\s+improvement|m/s)\b",
+        re.IGNORECASE,
+    )
+    immune_re = re.compile(
+        r"\b(?:immune|inflamm|cytokine|CRP|TNF|IL-|T\s*cell|NK)\b",
+        re.IGNORECASE,
+    )
+
+    removed_total = 0
+
+    def clean(match: re.Match[str]) -> str:
+        nonlocal removed_total
+        body = match.group("body")
+        out: list[str] = []
+        last = 0
+        for sent in sentence_re.finditer(body):
+            text = sent.group(0)
+            out.append(body[last:sent.start()])
+            if frailty_re.search(text) and not immune_re.search(text):
+                removed_total += 1
+            else:
+                out.append(text)
+            last = sent.end()
+        out.append(body[last:])
+        return match.group(0)[: match.start("body") - match.start()] + "".join(out)
+
+    fixed = section_re.sub(clean, paper_md)
+    if not removed_total:
+        return paper_md, 0
+    return re.sub(r"\n{3,}", "\n\n", fixed), removed_total
+
+
+def _normalize_discussion_opener(paper_md: str) -> tuple[str, int]:
+    return _DISCUSSION_HOWEVER_RE.subn(r"\1", paper_md)
 
 
 def _strip_empty_attribution_sentences(
@@ -820,6 +930,16 @@ def _strip_empty_attribution_sentences(
     if not n:
         return paper_md, 0
     cleaned = re.sub(r" {2,}", " ", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
+def _strip_toxin_mobilization_sentences(
+    paper_md: str,
+) -> tuple[str, int]:
+    cleaned, n = _TOXIN_MOBILIZATION_SENT_RE.subn("", paper_md)
+    if not n:
+        return paper_md, 0
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned, n
 
@@ -1000,7 +1120,7 @@ def _extract_section(paper: str, heading: str) -> tuple[int, int, str]:
 
 
 def apply_fixes(
-    paper_md: str, issues: list[dict],
+    paper_md: str, issues: Sequence[object],
     *,
     manifest: dict | None = None,
     quant_claims_dir=None,
@@ -1124,6 +1244,14 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_h3_residue = _normalize_h3_residue_headings(new_md)
+    if n_h3_residue:
+        log.append({
+            "fix_type": "h3_residue_heading_normalization",
+            "n_changes": n_h3_residue,
+            "description": "rewrote leaked '### H3:' headings to normal markdown H3 headings",
+        })
+
     new_md, n_snake_label = _normalize_public_snake_case_labels(new_md)
     if n_snake_label:
         log.append({
@@ -1193,6 +1321,38 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_ref_dumps = _strip_public_reference_dumps(new_md)
+    if n_ref_dumps:
+        log.append({
+            "fix_type": "public_reference_dump_strip",
+            "n_changes": n_ref_dumps,
+            "description": "removed DOI/PMID dump blocks from journal-main prose",
+        })
+
+    new_md, n_final_interpretation = _strip_final_interpretation_blocks(new_md)
+    if n_final_interpretation:
+        log.append({
+            "fix_type": "final_interpretation_block_strip",
+            "n_changes": n_final_interpretation,
+            "description": "removed internal final-interpretation subsection from journal main",
+        })
+
+    new_md, n_nonimmune = _strip_nonimmune_sentences_from_immune(new_md)
+    if n_nonimmune:
+        log.append({
+            "fix_type": "immune_section_nonimmune_sentence_strip",
+            "n_changes": n_nonimmune,
+            "description": "removed frailty/function prose from Immune Results",
+        })
+
+    new_md, n_discussion_opener = _normalize_discussion_opener(new_md)
+    if n_discussion_opener:
+        log.append({
+            "fix_type": "discussion_opener_normalization",
+            "n_changes": n_discussion_opener,
+            "description": "removed leading contrast marker from Discussion opener",
+        })
+
     new_md, n_empty_attribution = _strip_empty_attribution_sentences(new_md)
     if n_empty_attribution:
         log.append({
@@ -1201,6 +1361,17 @@ def apply_fixes(
             "description": (
                 "removed sentences left with empty attribution fragments "
                 "such as 'described by .'"
+            ),
+        })
+
+    new_md, n_toxin = _strip_toxin_mobilization_sentences(new_md)
+    if n_toxin:
+        log.append({
+            "fix_type": "toxin_mobilization_sentence_strip",
+            "n_changes": n_toxin,
+            "description": (
+                "removed public toxin-mobilization asides that require "
+                "specialized source context outside the synthesis claim"
             ),
         })
 
@@ -2588,17 +2759,13 @@ and weaker where evidence must be translated across populations,
 species, intervention schedules, or measurement systems."""
 
 
-_CONCLUSION_BACKFILL = """### Final interpretation
-
-The final interpretation should remain tiered. Direct clinical receipts
-carry the most immediate weight, mechanistic receipts explain why the
-intervention remains biologically plausible, and indirect receipts mark
-where translation is still uncertain. The manuscript therefore treats
-agreement across those layers as stronger than any isolated signal and
-treats disagreement as a design problem for the next study. A defensible
-next trial would pre-specify the endpoint layer it intends to test, align
-dosing with that endpoint, and report safety signals with the same
-visibility as benefit signals."""
+_CONCLUSION_BACKFILL = """A defensible next study should pre-specify
+which endpoint layer it intends to test, align intervention exposure with
+that endpoint, and report functional or safety tradeoffs with the same
+visibility as benefit signals. Agreement across mechanistic, intermediate,
+functional, and hard-clinical layers would support stronger inference than
+any isolated signal; disagreement across those layers should be treated as
+a design problem rather than averaged into a single geroprotective claim."""
 
 
 def _strip_change_value_misread_sentences(
