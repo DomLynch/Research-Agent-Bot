@@ -198,9 +198,9 @@ def find_unsourced_background_uses(
         )
         entry_patterns[entry.key] = re.compile(pat)
     for entry in registry.values():
-        pat = entry_patterns[entry.key]
+        compiled_pat = entry_patterns[entry.key]
         for sent in sentences:
-            if not pat.search(sent):
+            if not compiled_pat.search(sent):
                 continue
             if entry.citation_token in sent:
                 continue  # cited — admitted

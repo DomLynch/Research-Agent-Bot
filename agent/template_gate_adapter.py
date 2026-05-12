@@ -143,12 +143,15 @@ def evaluate_template_gate(
     p1 = int(by_sev.get("P1", 0))
     p2 = int(by_sev.get("P2", 0))
     p3 = int(by_sev.get("P3", 0))
+    total_hits = summary.get("total_hits", 0)
+    if not isinstance(total_hits, (str, int, float)):
+        total_hits = 0
     return TemplateGateReport(
         template_language_blocking=bool(summary["blocking"]),
         p1_count=p1,
         p2_count=p2,
         p3_count=p3,
-        total_hits=int(summary["total_hits"]),
+        total_hits=int(total_hits),
         hits=hits_tuple,
         markdown_report=_render_markdown_report(hits_tuple, summary, source),
         json_report=_render_json_report(hits_tuple, summary, source),

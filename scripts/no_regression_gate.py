@@ -156,6 +156,10 @@ def _load_run_metrics(run_dir: Path) -> dict:
     audit = _load_json(run_dir / "full_paper.audit.json")
     consistency = _load_json(run_dir / "full_paper.consistency.json")
     manifest = _load_json(run_dir / "manifest.json")
+    if not isinstance(audit, dict):
+        audit = {}
+    if not isinstance(manifest, dict):
+        manifest = {}
     paper_path = run_dir / "full_paper.md"
     paper_md = (
         paper_path.read_text() if paper_path.exists() else ""

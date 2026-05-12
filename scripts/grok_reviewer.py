@@ -393,6 +393,9 @@ async def _call_with_fallback(
         transport_errors: tuple[type[BaseException], ...] = (httpx.HTTPError,)
     except ModuleNotFoundError:
         transport_errors = ()
+    retry_errors = transport_errors + (
+        ValueError, KeyError, json.JSONDecodeError,
+    )
     attempts: list[dict[str, Any]] = []
     for model in (primary_model, fallback_model):
         max_attempts = _attempt_count(model, primary_model)
@@ -411,9 +414,7 @@ async def _call_with_fallback(
                 })
                 parsed["_review_attempts"] = attempts
                 return parsed, model, cost
-            except (
-                *transport_errors, ValueError, KeyError, json.JSONDecodeError
-            ) as exc:
+            except retry_errors as exc:
                 retryable = _is_retryable_error(exc)
                 attempts.append({
                     "model": model,
@@ -558,7 +559,7 @@ async def repair_flagged_patches(
     own_client = client is None
     if own_client:
         import httpx
-        c = httpx.AsyncClient(timeout=300.0)
+        c: Any = httpx.AsyncClient(timeout=300.0)
     else:
         c = client
     try:
@@ -603,7 +604,7 @@ async def review_with_grok(
     own_client = client is None
     if own_client:
         import httpx
-        c = httpx.AsyncClient(timeout=300.0)
+        c: Any = httpx.AsyncClient(timeout=300.0)
     else:
         c = client
     try:
