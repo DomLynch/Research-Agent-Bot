@@ -340,10 +340,10 @@ def _ensure_public_thesis_marker(
         topic = str(manifest.get("topic") or "").strip()
     display = _topic_display_name(topic) if topic else "the topic"
     marker = (
-        f"This synthesis evaluates {display} as a context-dependent "
-        "geroscience question, separating outcome-specific signals from "
-        "broader healthspan claims and identifying the evidence gaps that "
-        "should bound interpretation."
+        f"This synthesis tests the thesis that {display} is a "
+        "context-dependent geroscience question, separating outcome-specific "
+        "signals from broader healthspan claims and identifying the evidence "
+        "gaps that should bound interpretation."
     )
     new, n = re.subn(
         r"(^##\s+Abstract\s*\n+)",

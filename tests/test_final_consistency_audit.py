@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import final_consistency_audit as audit  # noqa: E402
+import final_consistency_audit as audit  # type: ignore[import-not-found]  # noqa: E402
 
 
 def _empty_audit() -> dict:
@@ -183,7 +183,7 @@ def test_apply_fixes_idempotent_across_invocations() -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
-    import apply_consistency_fixes as fixer
+    import apply_consistency_fixes as fixer  # type: ignore[import-not-found]
     paper = (
         "## Methods\n\nWe used SPAR adjudication on the receipts.\n"
     )
@@ -1891,16 +1891,16 @@ def test_apply_fixes_backfills_public_thesis_marker() -> None:
     _sys.path.insert(0, str(
         _Path(__file__).resolve().parent.parent / "scripts"
     ))
-    import apply_consistency_fixes as fixer
-    import audit_v06_paper as audit
+    import apply_consistency_fixes as fixer  # type: ignore[import-not-found]
+    import audit_v06_paper as audit  # type: ignore[import-not-found]
 
     paper = "## Abstract\n\nThis synthesis examined accepted receipts.\n"
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "aspirin"})
 
     ok, msg = audit._check_thesis_present(fixed)
     assert ok, msg
-    assert "**Thesis:**" in fixed
-    assert "evidence profile for" in fixed
+    assert "**Thesis:**" not in fixed
+    assert "context-dependent geroscience question" in fixed
     assert any(
         e.get("fix_type") == "public_thesis_marker_backfill" for e in log
     )

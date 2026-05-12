@@ -355,7 +355,7 @@ def _append_research_contribution_layer(
         "",
         "### Boundary-Condition Matrix",
         "",
-        "| Outcome class | Direct receipts | Indirect / mechanism receipts | Direction profile | Interpretation boundary |",
+        "| Outcome class | Direct sources | Indirect / mechanism sources | Direction profile | Interpretation boundary |",
         "|---|---:|---:|---|---|",
     ]
     for _, oc, direct, indirect, directions, gap in rows:
@@ -373,7 +373,7 @@ def _append_research_contribution_layer(
     ]
     for i, (_, oc, direct, indirect, directions, gap) in enumerate(top, 1):
         rationale = (
-            f"{direct} direct and {indirect} indirect receipt(s); "
+            f"{direct} direct and {indirect} indirect source(s); "
             f"direction profile: {directions or 'unclear'}"
         )
         lines.append(f"| P{i} | {_public_label(oc)}: {gap} | {rationale} |")

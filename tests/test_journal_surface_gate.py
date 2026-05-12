@@ -221,6 +221,17 @@ def test_h3_residue_heading_blocks_journal_surface():
     assert any("### h3:" in i.detail for i in report.issues)
 
 
+def test_public_thesis_marker_blocks_journal_surface():
+    report = evaluate_journal_surface(
+        "## Abstract\n\n**Thesis:** This synthesis argues from an "
+        "accepted receipt set.\n",
+    )
+    assert not report.passed
+    details = " ".join(i.detail for i in report.issues)
+    assert "**thesis:**" in details
+    assert "accepted receipt" in details
+
+
 def test_reference_dump_and_internal_final_heading_block_journal_surface():
     report = evaluate_journal_surface(
         "## What This Synthesis Adds\n\n"

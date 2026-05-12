@@ -70,7 +70,7 @@ def test_section_includes_corpus_size_and_outcome_count() -> None:
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
-    assert "3 accepted receipts" in md
+    assert "3 included sources" in md
     assert "3 outcome classes" in md
     assert "metformin" in md
 
@@ -180,7 +180,7 @@ def test_section_filters_to_accepted_receipts_only() -> None:
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
-    assert "1 accepted receipt" in md
+    assert "1 included source" in md
     assert "Rejected 2020" not in md
 
 
