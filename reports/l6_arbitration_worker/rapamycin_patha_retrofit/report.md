@@ -13,3 +13,5 @@ L6 is confirmed only when the real consecutive certification gate returns `l6_re
 - None.
 
 ## Next Reruns
+
+- None; no topics currently require a rerun under this report.

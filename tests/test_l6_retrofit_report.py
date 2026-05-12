@@ -7,7 +7,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import l6_retrofit_report as retrofit  # noqa: E402
+import l6_retrofit_report as retrofit  # type: ignore[import-not-found]  # noqa: E402
 
 
 def _run(
@@ -257,7 +257,10 @@ def test_no_l5_data_is_no_data(tmp_path: Path) -> None:
 
 
 def test_write_report_outputs_json_and_markdown(tmp_path: Path) -> None:
-    report = retrofit.build_report([_run(tmp_path, "a1", "alpha", 5)])
+    runs = [_run(tmp_path, "a1", "alpha", 5), _run(tmp_path, "a2", "alpha", 5)]
+    report = retrofit.build_report(runs)
     retrofit.write_report(report, tmp_path / "out")
     assert json.loads((tmp_path / "out" / "report.json").read_text())["schema"]
-    assert "L6 Retrofit Report" in (tmp_path / "out" / "report.md").read_text()
+    markdown = (tmp_path / "out" / "report.md").read_text()
+    assert "L6 Retrofit Report" in markdown
+    assert "## Next Reruns\n\n- None;" in markdown

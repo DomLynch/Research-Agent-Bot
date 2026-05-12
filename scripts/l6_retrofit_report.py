@@ -91,6 +91,8 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         lines.append(
             f"- `{topic}`: `python3 scripts/run_v06_synthesis.py --topic {topic}`"
         )
+    if not reruns:
+        lines.append("- None; no topics currently require a rerun under this report.")
     return "\n".join(lines).rstrip() + "\n"
 
 
