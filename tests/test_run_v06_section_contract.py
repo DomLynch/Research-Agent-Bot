@@ -75,6 +75,22 @@ def test_pop_h2_section_by_prefix_routes_qei_to_supplement() -> None:
     assert "## Quantitative Evidence Index — demo" in supplement
 
 
+def test_pop_h2_section_by_prefix_routes_inferential_bridge_to_supplement() -> None:
+    paper = (
+        "## Results\n\nResults body.\n\n"
+        "## Inferential Bridge\n\n"
+        "[D1_inferential_bridge | confidence=medium]\n\n"
+        "## Discussion\n\nDiscussion body.\n"
+    )
+    main, supplement = orch._pop_h2_section_by_prefix(
+        paper, "Inferential Bridge",
+    )
+    assert "Inferential Bridge" not in main
+    assert "[D1_inferential_bridge" not in main
+    assert "## Discussion" in main
+    assert "## Inferential Bridge" in supplement
+
+
 def test_absent_flagged_patch_resolved_after_final_cleanup() -> None:
     result = ap.PatchResult(
         patch_id="P02",

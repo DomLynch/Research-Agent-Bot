@@ -199,6 +199,22 @@ def test_public_template_meta_blocks_journal_surface():
     assert any(i.code == "template_meta" for i in report.issues)
 
 
+def test_public_artifact_language_blocks_journal_surface():
+    paper = (
+        "## Discussion\n\n"
+        "[D1_inferential_bridge | confidence=medium]\n\n"
+        "The accepted receipt graph is described by the manifest, tension "
+        "matrix, and citation registry. The background should be read as "
+        "Evidence-context framing.\n"
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    details = " ".join(i.detail for i in report.issues)
+    assert "[d1_inferential_bridge" in details
+    assert "accepted receipt graph" in details
+    assert "manifest, tension matrix, and citation registry" in details
+
+
 def test_duplicate_public_paragraph_blocks_journal_surface():
     para = " ".join(f"alpha{i}" for i in range(35))
     paper = f"## Results\n\n{para}\n\n{para} extra\n\n"

@@ -169,7 +169,7 @@ def build_novel_framework_section(
         "pathway effects, through intermediate functional or biomarker "
         "endpoints, to distal clinical outcomes.",
         "",
-        f"The accepted receipt graph contains {directness_phrase} evidence, "
+        f"The accepted evidence base contains {directness_phrase} evidence, "
         "so the manuscript should not collapse mechanistic plausibility and "
         "clinical efficacy into one verdict.",
         "",
@@ -183,8 +183,8 @@ def build_novel_framework_section(
         "across those layers would preserve the framework.",
         "",
         "This is a paper-level organizing claim, not an added receipt: it can "
-        "guide interpretation only where the manifest, tension matrix, and "
-        "citation registry already supply support.",
+        "guide interpretation only where the underlying evidence record "
+        "already supplies support.",
     ]
     return SynthesisSection(
         name="novel_framework",

@@ -31,9 +31,11 @@ _META_PATTERNS = (
     "tournament selector", "trust-spine", "grok", "a2a",
 )
 _PUBLIC_ARTIFACT_PATTERNS = (
-    "<h3>", "</h3>", "### h3.", "rapamycin evidence should be interpreted",
+    "<h3>", "</h3>", "### h3.", "### h3:", "rapamycin evidence should be interpreted",
     "source-context sentence cannot support", "the surviving section therefore",
-    "risk-of-bias roll-up",
+    "risk-of-bias roll-up", "[d1_inferential_bridge", "accepted receipt graph",
+    "manifest, tension matrix, and citation registry", "evidence-context framing",
+    "should be read as",
 )
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)

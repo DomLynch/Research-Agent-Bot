@@ -59,7 +59,24 @@ _ROLE_REPAIR_ARTIFACT_SENT_RE = re.compile(
 _EFFECT_ESTIMATE_ARTIFACT_SENT_RE = re.compile(
     r"(?m)(?:^|(?<=[.!?])\s*)"
     r"[A-Z][A-Za-z'`.\-]+(?:\s+\d{4}[a-z]?)?\s+reported\s+an\s+"
-    r"effect\s+estimate\s+of\s+[^.!?\n]+[.!?][ \t]*(?:\n+)?",
+    r"effect\s+estimate(?:\s+of\s+(?:[^.!?\n]|\.(?=\d))*)?[.!?][ \t]*(?:\n+)?",
+    re.IGNORECASE,
+)
+_ORPHAN_THRESHOLD_SENT_RE = re.compile(
+    r"(?m)(?:^|(?<=[.!?])\s*)This\s+improvement,\s+while\s+"
+    r"statistically\s+detectable,\s+fell\s+below\s+"
+    r"(?:[^.!?\n]|\.(?=\d))*[.!?][ \t]*(?:\n+)?",
+    re.IGNORECASE,
+)
+_ORPHAN_DEMONSTRATED_CLAUSE_RE = re.compile(
+    r",\s+yet\s+demonstrated\s+that\s+"
+    r"(?:[^,\n]|\,(?!\s+and\s+))*?,\s+and\s+",
+    re.IGNORECASE,
+)
+_EMPTY_ATTRIBUTION_SENT_RE = re.compile(
+    r"(?m)(?:^|(?<=[.!?])\s*)"
+    r"[^.!?\n#]*\b(?:described|reported|observed|shown|demonstrated)\s+"
+    r"by\s+\.[ \t]*(?:\n+)?",
     re.IGNORECASE,
 )
 _PIPELINE_META_LINE_RE = re.compile(
@@ -103,11 +120,122 @@ _PUBLIC_BODY_CUTOFF_RE = re.compile(
     r"Disclosure|Accountability|References)\b",
     re.MULTILINE,
 )
-
-
+_ORDINAL_WORDS = ("First", "Second", "Third", "Fourth", "Fifth")
+_AUTHOR_YEAR_TOKEN_RE = re.compile(
+    r"\b([A-Z][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+)\s+\(?((?:19|20)\d{2})\)?\b"
+)
+_MUSCLE_OUTCOME_RE = re.compile(
+    r"\b(?:lean mass|fat-free mass|muscle|handgrip|strength|"
+    r"bone mineral|cortical thickness|anabolic)\b",
+    re.IGNORECASE,
+)
+_HEALTHSPAN_OUTCOME_RE = re.compile(
+    r"\b(?:healthspan|frailty|functional|disability|lifespan|"
+    r"longevity|mortality|survival)\b",
+    re.IGNORECASE,
+)
 def _split_public_body(paper_md: str) -> tuple[str, str]:
     m = _PUBLIC_BODY_CUTOFF_RE.search(paper_md)
     return (paper_md[:m.start()], paper_md[m.start():]) if m else (paper_md, "")
+
+
+def _receipt_outcome_map(manifest: dict | None) -> dict[str, str]:
+    if not isinstance(manifest, dict):
+        return {}
+    out: dict[str, str] = {}
+    for receipt in manifest.get("receipts") or ():
+        if not isinstance(receipt, dict):
+            continue
+        token = str(receipt.get("citation_token") or "").strip()
+        outcome = str(receipt.get("outcome_class") or "").strip()
+        if token and outcome:
+            out[token] = outcome
+    return out
+
+
+def _author_year_tokens(sentence: str) -> list[str]:
+    return [
+        f"{author} {year}"
+        for author, year in _AUTHOR_YEAR_TOKEN_RE.findall(sentence)
+    ]
+
+
+def _strip_cross_outcome_muscle_sentences(
+    paper_md: str, manifest: dict | None,
+) -> tuple[str, int]:
+    """Remove/trim outcome claims supported only by mismatched receipts.
+
+    This is a universal section-integrity guard: if public prose makes a
+    muscle or healthspan claim, receipts from unrelated outcome classes
+    cannot be its citation support. Mixed citation lists lose the mismatched
+    tokens; claims with no supporting outcome-class token are dropped.
+    """
+    outcomes = _receipt_outcome_map(manifest)
+    if not outcomes:
+        return paper_md, 0
+    public, appendix = _split_public_body(paper_md)
+    sentence_re = re.compile(r"[^.!?\n#](?:[^.!?\n#]|\.(?=\d))*[.!?]")
+    changes = 0
+    pieces: list[str] = []
+    last = 0
+    for m in sentence_re.finditer(public):
+        sentence = m.group(0)
+        tokens = [t for t in _author_year_tokens(sentence) if t in outcomes]
+        has_muscle = bool(_MUSCLE_OUTCOME_RE.search(sentence))
+        has_healthspan = bool(_HEALTHSPAN_OUTCOME_RE.search(sentence))
+        if not tokens or (not has_muscle and not has_healthspan):
+            continue
+        allowed: set[str] = set()
+        if has_muscle:
+            allowed.add("muscle_function")
+        if has_healthspan:
+            allowed.update({"frailty", "longevity", "muscle_function"})
+        bad = [t for t in tokens if outcomes[t] not in allowed]
+        good = [t for t in tokens if outcomes[t] in allowed]
+        if not bad:
+            continue
+        pieces.append(public[last:m.start()])
+        if good:
+            cleaned = sentence
+            for token in bad:
+                cleaned = re.sub(rf"(?:;\s*)?{re.escape(token)}", "", cleaned)
+                cleaned = re.sub(rf"{re.escape(token)}(?:;\s*)?", "", cleaned)
+            pieces.append(cleaned)
+        changes += 1
+        last = m.end()
+    if not changes:
+        return paper_md, 0
+    pieces.append(public[last:])
+    return "".join(pieces) + appendix, changes
+
+
+def _normalize_ordinal_gaps(paper_md: str) -> tuple[str, int]:
+    """Renumber paragraph-local ordinal openers in encounter order."""
+    ordinal_re = re.compile(r"\b(?:First|Second|Third|Fourth|Fifth),")
+    changes = 0
+    parts = re.split(r"(\n\s*\n)", paper_md)
+    for idx, part in enumerate(parts):
+        matches = list(ordinal_re.finditer(part))
+        if len(matches) < 2:
+            continue
+        seen = [m.group(0)[:-1] for m in matches]
+        expected = list(_ORDINAL_WORDS[:len(seen)])
+        if seen == expected:
+            continue
+        cursor = 0
+        rebuilt: list[str] = []
+        for n, m in enumerate(matches):
+            rebuilt.append(part[cursor:m.start()])
+            rebuilt.append(expected[n] + ",")
+            cursor = m.end()
+        rebuilt.append(part[cursor:])
+        parts[idx] = "".join(rebuilt)
+        changes += 1
+    return "".join(parts), changes
+
+
+def _strip_empty_parenthetical_citations(paper_md: str) -> tuple[str, int]:
+    return re.subn(r"\s+\(\s*(?:;\s*)?\)", "", paper_md)
 
 
 def _topic_display_name(topic: str) -> str:
@@ -668,6 +796,34 @@ def _strip_effect_estimate_artifact_sentences(
     return cleaned, n
 
 
+def _strip_orphan_threshold_sentences(
+    paper_md: str,
+) -> tuple[str, int]:
+    cleaned, n = _ORPHAN_THRESHOLD_SENT_RE.subn("", paper_md)
+    if not n:
+        return paper_md, 0
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
+def _strip_orphan_demonstrated_clauses(
+    paper_md: str,
+) -> tuple[str, int]:
+    cleaned, n = _ORPHAN_DEMONSTRATED_CLAUSE_RE.subn(", and ", paper_md)
+    return (cleaned, n) if n else (paper_md, 0)
+
+
+def _strip_empty_attribution_sentences(
+    paper_md: str,
+) -> tuple[str, int]:
+    cleaned, n = _EMPTY_ATTRIBUTION_SENT_RE.subn(" ", paper_md)
+    if not n:
+        return paper_md, 0
+    cleaned = re.sub(r" {2,}", " ", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned, n
+
+
 def _citation_key(author: str, year: str) -> str:
     folded = unicodedata.normalize("NFKD", author)
     folded = "".join(ch for ch in folded if not unicodedata.combining(ch))
@@ -933,6 +1089,41 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_cross_outcome = _strip_cross_outcome_muscle_sentences(
+        new_md, manifest,
+    )
+    if n_cross_outcome:
+        log.append({
+            "fix_type": "cross_outcome_muscle_sentence_cleanup",
+            "n_changes": n_cross_outcome,
+            "description": (
+                "removed or trimmed muscle/lean-mass sentences that were "
+                "supported only by non-muscle receipt citations"
+            ),
+        })
+
+    new_md, n_empty_parens = _strip_empty_parenthetical_citations(new_md)
+    if n_empty_parens:
+        log.append({
+            "fix_type": "empty_parenthetical_citation_strip",
+            "n_changes": n_empty_parens,
+            "description": (
+                "removed empty citation parentheses left by safe citation "
+                "stripping"
+            ),
+        })
+
+    new_md, n_ordinal_gaps = _normalize_ordinal_gaps(new_md)
+    if n_ordinal_gaps:
+        log.append({
+            "fix_type": "ordinal_gap_normalization",
+            "n_changes": n_ordinal_gaps,
+            "description": (
+                "renumbered paragraph-local ordinal openers in encounter "
+                "order to prevent stale outline fragments"
+            ),
+        })
+
     new_md, n_snake_label = _normalize_public_snake_case_labels(new_md)
     if n_snake_label:
         log.append({
@@ -977,6 +1168,39 @@ def apply_fixes(
                 "stripped generic 'reported an effect estimate of ...' "
                 "sentences that are repair artifacts rather than "
                 "publishable source-context prose"
+            ),
+        })
+
+    new_md, n_orphan_threshold = _strip_orphan_threshold_sentences(new_md)
+    if n_orphan_threshold:
+        log.append({
+            "fix_type": "orphan_threshold_sentence_strip",
+            "n_changes": n_orphan_threshold,
+            "description": (
+                "stripped anaphoric threshold-comparison sentences whose "
+                "improvement anchor was absent"
+            ),
+        })
+
+    new_md, n_orphan_demonstrated = _strip_orphan_demonstrated_clauses(new_md)
+    if n_orphan_demonstrated:
+        log.append({
+            "fix_type": "orphan_demonstrated_clause_strip",
+            "n_changes": n_orphan_demonstrated,
+            "description": (
+                "removed orphaned 'yet demonstrated that ...' clauses "
+                "left after unsupported citation cleanup"
+            ),
+        })
+
+    new_md, n_empty_attribution = _strip_empty_attribution_sentences(new_md)
+    if n_empty_attribution:
+        log.append({
+            "fix_type": "empty_attribution_sentence_strip",
+            "n_changes": n_empty_attribution,
+            "description": (
+                "removed sentences left with empty attribution fragments "
+                "such as 'described by .'"
             ),
         })
 
@@ -2288,15 +2512,14 @@ can support, what remains unresolved, and what kind of future study
 would most efficiently reduce uncertainty."""
 
 
-_BACKGROUND_BACKFILL = """### Evidence-context framing
+_BACKGROUND_BACKFILL = """### Evidence Context
 
-The background should be read as a map of the evidence context, not as
-an additional source of unverified claims. It separates established
-clinical use, adjacent human evidence, animal or cellular mechanisms,
-and open translational questions so that later sections can interpret
-the corpus without collapsing unlike forms of evidence. This framing
-preserves the central research problem: whether mechanistic plausibility
-and receipt-level findings converge strongly enough to justify further
+The evidence context combines established clinical use, adjacent human
+evidence, animal or cellular mechanisms, and open translational
+questions. Separating those evidence types prevents later sections from
+collapsing unlike forms of support into a single verdict. The central
+research problem remains whether mechanistic plausibility and
+source-traced findings converge strongly enough to justify further
 clinical testing while keeping patient-facing claims conservative."""
 
 
@@ -2341,17 +2564,16 @@ final consistency audit."""
 
 _DISCUSSION_BACKFILL = """### Interpretation constraints
 
-The discussion should be read as an interpretation of evidence
-boundaries, not as a conversion of every extracted result into a
-recommendation. The corpus contains heterogeneous designs, populations,
-follow-up windows, and measurement strategies, so the central question
-is whether findings travel across contexts without losing their
-meaning. Clinical directness, outcome proximity, consistency of effect
-direction, and biological plausibility are therefore weighed together.
-Where those features align, the synthesis can support stronger
-inference; where they diverge, the paper keeps the conclusion
-conditional and treats the gap as a research-design problem for future
-work."""
+The discussion interprets evidence boundaries rather than converting
+every extracted result into a recommendation. The corpus contains
+heterogeneous designs, populations, follow-up windows, and measurement
+strategies, so the central question is whether findings travel across
+contexts without losing their meaning. Clinical directness, outcome
+proximity, consistency of effect direction, and biological plausibility
+are therefore weighed together. Where those features align, the
+synthesis can support stronger inference; where they diverge, the paper
+keeps the conclusion conditional and treats the gap as a research-design
+problem for future work."""
 
 
 _LIMITATIONS_BACKFILL = """### Residual uncertainty

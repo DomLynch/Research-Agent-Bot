@@ -1133,16 +1133,15 @@ def test_apply_fixes_removes_duplicate_backstop_subsection() -> None:
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
     import apply_consistency_fixes as fixer
     block = (
-        "### Evidence-context framing\n\n"
-        "The section should be read as a map of the evidence context, not "
-        "as an additional source of unverified claims. It separates direct "
-        "clinical evidence from mechanistic evidence so later sections can "
-        "interpret the accepted corpus conservatively."
+        "### Evidence Context\n\n"
+        "The evidence context separates direct clinical evidence from "
+        "mechanistic evidence so later sections can interpret the accepted "
+        "corpus conservatively."
     )
     paper = f"## Background\n\n{block}\n\n{block}\n\n## Results\n\nUnique result.\n"
     out, log = fixer.apply_fixes(paper, [])
-    assert out.count("### Evidence-context framing") == 1
-    assert out.count("The section should be read as a map") == 1
+    assert out.count("### Evidence Context") == 1
+    assert out.count("The evidence context separates") == 1
     assert any(e["fix_type"] == "duplicate_subsection" for e in log)
 
 
@@ -1390,12 +1389,173 @@ def test_apply_fixes_depth_backfill_is_document_global_idempotent() -> None:
         + "short background. " * 20
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
-    assert fixed.count("### Evidence-context framing") == 1
+    assert fixed.count("### Evidence Context") == 1
     assert not [
         e for e in log
         if e["fix_type"] == "analytical_depth_backfill"
         and "'Background'" in e["description"]
     ]
+
+
+def test_apply_fixes_removes_immune_citation_from_muscle_claim() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Introduction\n\n"
+        "Older adults may experience lean mass loss even with protein "
+        "supplementation (Kazeminasab 2025; Lin 2025).\n\n"
+        "## Results\n\n"
+        "Lin 2025 compared time-restricted eating and observed that lean "
+        "mass decreased in the CR group only.\n"
+    )
+    manifest = {
+        "receipts": [
+            {"citation_token": "Kazeminasab 2025", "outcome_class": "muscle_function"},
+            {"citation_token": "Lin 2025", "outcome_class": "immune"},
+        ],
+    }
+    fixed, log = fixer.apply_fixes(paper, [], manifest=manifest)
+    assert "(Kazeminasab 2025)" in fixed
+    assert "Lin 2025 compared time-restricted" not in fixed
+    assert any(
+        e["fix_type"] == "cross_outcome_muscle_sentence_cleanup"
+        for e in log
+    )
+
+
+def test_apply_fixes_strips_parenthesized_author_outcome_mismatch() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Results\n\n"
+        "Murphy (2020), studying anabolic resistance during CR, reported "
+        "IGF-1 response changes across timepoints.\n"
+    )
+    manifest = {
+        "receipts": [
+            {"citation_token": "Murphy 2020", "outcome_class": "immune"},
+        ],
+    }
+    fixed, log = fixer.apply_fixes(paper, [], manifest=manifest)
+    assert "Murphy (2020)" not in fixed
+    assert any(
+        e["fix_type"] == "cross_outcome_muscle_sentence_cleanup"
+        for e in log
+    )
+
+
+def test_apply_fixes_strips_healthspan_claim_from_non_healthspan_receipt() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Discussion\n\n"
+        "Dorling 2025 observed that physical activity energy expenditure "
+        "was associated with markers of healthspan during prolonged CR.\n"
+    )
+    manifest = {
+        "receipts": [
+            {"citation_token": "Dorling 2025", "outcome_class": "cardiometabolic"},
+        ],
+    }
+    fixed, log = fixer.apply_fixes(paper, [], manifest=manifest)
+    assert "markers of healthspan" not in fixed
+    assert any(
+        e["fix_type"] == "cross_outcome_muscle_sentence_cleanup"
+        for e in log
+    )
+
+
+def test_apply_fixes_normalizes_paragraph_ordinal_gap() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    paper = (
+        "## Introduction\n\n"
+        "First, one boundary matters. Fourth, another boundary matters.\n"
+    )
+    fixed, log = fixer.apply_fixes(paper, [])
+    assert "First, one boundary matters. Second, another boundary matters." in fixed
+    assert any(e["fix_type"] == "ordinal_gap_normalization" for e in log)
+
+
+def test_apply_fixes_strips_decimal_effect_estimate_artifact_cleanly() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\nHouston 2025 reported an effect estimate of 4.0%.\n",
+        [],
+    )
+    assert "effect estimate" not in fixed
+    assert "0%." not in fixed
+    assert any(e["fix_type"] == "effect_estimate_artifact_sentence_strip" for e in log)
+
+
+def test_apply_fixes_strips_orphan_threshold_sentence() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\n"
+        "This improvement, while statistically detectable, fell below the "
+        "commonly cited clinically meaningful change threshold of 0.1 m/s "
+        "for gait speed in older-adult research (Perera 2006).\n",
+        [],
+    )
+    assert "This improvement" not in fixed
+    assert any(e["fix_type"] == "orphan_threshold_sentence_strip" for e in log)
+
+
+def test_apply_fixes_strips_orphan_demonstrated_clause() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Abstract\n\n"
+        "Kazeminasab 2025 found increased handgrip strength, yet "
+        "demonstrated that just two days of CR blunted IGF-1 response "
+        "(P < 0.05), and Weaver 2026 reported null bone effects.\n",
+        [],
+    )
+    assert "yet demonstrated that" not in fixed
+    assert "Kazeminasab 2025 found increased handgrip strength" in fixed
+    assert "Weaver 2026 reported null bone effects" in fixed
+    assert any(e["fix_type"] == "orphan_demonstrated_clause_strip" for e in log)
+
+
+def test_apply_fixes_strips_empty_attribution_sentence() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\n"
+        "Roth 2022 provides real-world training context. The study may "
+        "mitigate the anabolic resistance described by . Next sentence remains.\n",
+        [],
+    )
+    assert "described by ." not in fixed
+    assert "Roth 2022 provides real-world training context." in fixed
+    assert "Next sentence remains." in fixed
+    assert any(e["fix_type"] == "empty_attribution_sentence_strip" for e in log)
 
 
 def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:

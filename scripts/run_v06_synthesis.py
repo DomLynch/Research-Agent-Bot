@@ -559,7 +559,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "claims stronger than the accepted corpus can support."
         ),
         (
-            "No section should be read as a pooled meta-analytic estimate unless "
+            "No section is treated as a pooled meta-analytic estimate unless "
             "the table explicitly says so. The text summarizes receipt-level "
             "patterns, while the quantitative evidence index preserves the "
             "source-bound numeric record."
@@ -2191,6 +2191,11 @@ async def _run(
     )
     if qei_md:
         supplement_parts.append(qei_md)
+    full_paper_md, bridge_md = _pop_h2_section_by_prefix(
+        full_paper_md, "Inferential Bridge",
+    )
+    if bridge_md:
+        supplement_parts.append(bridge_md)
 
     # Fix #25: append the deterministic 'What This Synthesis Adds'
     # section AFTER Conclusion and BEFORE Tables. Templated from
@@ -2751,6 +2756,10 @@ async def _run_post_paper_pipeline(
     )
     if methods_md:
         paper_md = _run_mode.replace_methods_in_paper(paper_md, methods_md)
+    paper_md, _final_surface_floor_log = _restore_public_surface_floors(
+        paper_md,
+    )
+    _refix_log.extend(_final_surface_floor_log)
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)

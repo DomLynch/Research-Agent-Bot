@@ -380,7 +380,7 @@ def apply_template_repairs(markdown: str) -> tuple[str, list[dict[str, str]]]:
         "In conclusion,": "The evidence profile indicates that",
         "In summary,": "The evidence profile indicates that",
         "Further research is needed": "The next decisive test is",
-        "This synthesis suggests": "The accepted receipt graph supports",
+        "This synthesis suggests": "The accepted evidence base supports",
     }
     out = markdown
     log: list[dict[str, str]] = []
