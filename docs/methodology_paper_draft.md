@@ -36,6 +36,12 @@ quality alone.
 
 ## Methods
 
+This methods section documents the implemented evidence pipeline, not a claim of
+formal systematic-review equivalence. Each stage keeps a machine-readable record
+beside the public manuscript so that corpus state, extraction, adjudication,
+review patches, and final verdicts can be audited without relying on the prose
+alone.
+
 ### System Architecture
 
 The pipeline ingests topic packs, retrieves and classifies sources, extracts
