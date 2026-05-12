@@ -147,7 +147,10 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
         }]},
     ])
 
-    async def fake_call(**_kwargs):
+    prompts: list[str] = []
+
+    async def fake_call(**kwargs):
+        prompts.append(str(kwargs.get("user_prompt") or ""))
         return next(parsed_by_call)
 
     async def fake_citation_fix(section, **_kwargs):
@@ -170,6 +173,8 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
 
     assert "### Immune Outcomes" in section.body_md
     assert "### Longevity Outcomes" in section.body_md
+    assert "r-longevity" not in prompts[0]
+    assert "r-immune" not in prompts[1]
     immune_body = section.body_md.split("### Immune Outcomes", 1)[1].split("###", 1)[0]
     assert "lifespan" not in immune_body
 
