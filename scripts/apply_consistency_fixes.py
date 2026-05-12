@@ -340,10 +340,10 @@ def _ensure_public_thesis_marker(
         topic = str(manifest.get("topic") or "").strip()
     display = _topic_display_name(topic) if topic else "the topic"
     marker = (
-        f"**Thesis:** This synthesis argues that the evidence profile for "
-        f"{display} is context-dependent, so interpretation should be "
-        "bounded by the accepted receipt corpus, outcome-specific tensions, "
-        "and explicit evidence gaps."
+        f"This synthesis evaluates {display} as a context-dependent "
+        "geroscience question, separating outcome-specific signals from "
+        "broader healthspan claims and identifying the evidence gaps that "
+        "should bound interpretation."
     )
     new, n = re.subn(
         r"(^##\s+Abstract\s*\n+)",
@@ -2712,7 +2712,7 @@ endpoints together."""
 
 _RESULTS_BACKFILL = """### Result-interpretation guardrail
 
-The result pattern is interpreted from the accepted receipt summaries
+The result pattern is interpreted from the retained study summaries
 rather than from isolated extracted fragments. Findings are therefore
 grouped by outcome domain, evidence directness, and receipt-level
 effect direction before any cross-study interpretation is made. This
@@ -2726,11 +2726,8 @@ or poorly bound extraction artifacts to the audit trail.
 This guardrail is deliberately numeric-free. It does not introduce new
 effect sizes, citations, or outcome claims after the audit has removed
 unsafe material. Instead, it explains how the remaining result body
-should be read: as a structured map of accepted evidence, not as a
-free-form replacement for stripped source-context claims. The result
-section remains load-bearing because its claims are constrained by the
-manifest, the quantitative evidence index, the tension matrix, and the
-final consistency audit."""
+should be read: as a structured map of retained evidence, not as a
+free-form replacement for stripped source-context claims."""
 
 
 _DISCUSSION_BACKFILL = """### Interpretation constraints
@@ -2749,11 +2746,11 @@ problem for future work."""
 
 _LIMITATIONS_BACKFILL = """### Residual uncertainty
 
-The main limitation is not only the size of the accepted corpus, but
+The main limitation is not only the size of the retained corpus, but
 also the uneven directness of the evidence across outcome classes.
 Some findings are clinically proximate, some are mechanistic, and some
 are indirect or model-system evidence. The paper therefore avoids
-treating all receipts as equivalent. Its conclusions are strongest
+treating all sources as equivalent. Its conclusions are strongest
 where directness, endpoint proximity, and source-context safety align,
 and weaker where evidence must be translated across populations,
 species, intervention schedules, or measurement systems."""
