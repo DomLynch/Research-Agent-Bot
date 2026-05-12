@@ -1,10 +1,4 @@
-"""Deterministic sections of the full paper (Methods + References +
-What-This-Adds).
-
-These sections render from pipeline constants + receipt metadata
-without any LLM call. Extracted from paper_writer.py to keep both
-modules under the 600-cloc per-file cap.
-"""
+"""Deterministic manuscript sections: Methods, References, What-This-Adds."""
 from __future__ import annotations
 
 from collections.abc import Sequence
@@ -15,11 +9,8 @@ from agent.synthesis_schemas import (
 )
 from agent.synthesis_writer import filter_accepted
 
-__all__ = [
-    "build_methods_section",
-    "build_references_full_section",
-    "build_what_this_adds_section",
-]
+__all__ = ["build_methods_section", "build_references_full_section",
+           "build_what_this_adds_section"]
 
 
 def build_methods_section(
@@ -313,34 +304,33 @@ def build_what_this_adds_section(
     review_cites = _named_review_citations(accepted)
     load_bearing = _load_bearing_tension(matrix) if matrix else None
     cap = topic.strip() or "the topic"
-    n_acc_s = (
-        f"{n_acc} accepted receipt" if n_acc == 1
-        else f"{n_acc} accepted receipts"
-    )
+    n_acc_s = f"{n_acc} eligible source" if n_acc == 1 else f"{n_acc} eligible sources"
 
     lines: list[str] = ["## What This Synthesis Adds", ""]
 
     # Sentence 1 — corpus + structure
     pair_clause = (
-        f"and {n_pairs} non-orthogonal cross-domain tension"
+        f"and {n_pairs} cross-domain disagreement"
         + ("" if n_pairs == 1 else "s")
-    ) if n_pairs else "with no non-orthogonal tensions surfaced"
+    ) if n_pairs else "with no cross-domain disagreements surfaced"
     lines.append(
-        f"This synthesis adjudicates {n_acc_s} on {cap} across "
+        f"This synthesis maps {n_acc_s} on {cap} across "
         f"{n_outcomes} outcome class"
         + ("" if n_outcomes == 1 else "es")
-        + f" {pair_clause}, "
-        "using a structured evidence-audit workflow with "
-        "deterministic claim extraction, citation resolution, and "
-        "design-level evidence weighting; see Methods and supplement."
+        + f" {pair_clause}, showing that the apparent geroprotective "
+        "signal is conditional rather than uniform."
     )
     lines.append("")
 
-    # Sentence 2 — picked thesis. Plain-language label is universal
-    # and reader-friendly across topics.
+    # Sentence 2 — public contribution. Do not quote the selector thesis
+    # verbatim; those strings can contain direction inventories that are
+    # useful internally but read as unsupported public claims.
     if thesis and getattr(thesis, "text", "").strip():
         lines.append(
-            f"**Central claim:** {thesis.text.strip()}"
+            "Central contribution: the paper converts the evidence base "
+            "into a boundary-condition map, separating provisional "
+            "signals from the population, endpoint, and study-design "
+            "conditions that a decisive trial must resolve."
         )
         lines.append("")
 
@@ -368,19 +358,17 @@ def build_what_this_adds_section(
     if review_cites:
         lines.append(
             f"Prior reviews of {cap} usually emphasize convergent "
-            "literature signals. This synthesis adds per-receipt "
-            "evidence weighting, a source-bound numeric index, and an "
-            "explicit tension matrix so the boundary conditions are "
+            "literature signals. This synthesis adds design-level "
+            "evidence weighting, source-bound numerics, and cross-study "
+            "comparison so the boundary conditions are "
             "visible rather than averaged away in narrative summary."
         )
     else:
         lines.append(
-            "This synthesis adds per-receipt evidence weighting, a "
-            "source-bound numeric index, and an explicit tension matrix "
-            "so the boundary conditions are visible rather than averaged "
-            "away in narrative summary."
+            "This synthesis adds design-level evidence weighting, "
+            "source-bound numerics, and cross-study comparison so the "
+            "boundary conditions are visible rather than averaged away in "
+            "narrative summary."
         )
     lines.append("")
-    _append_research_contribution_layer(lines, accepted, matrix, cap)
-
     return "\n".join(lines).rstrip() + "\n"

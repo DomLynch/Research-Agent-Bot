@@ -308,11 +308,11 @@ CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE = """You write the CROSS-DOMAIN
 SYNTHESIS section. Its job: surface tensions BETWEEN outcome classes
 that single-outcome subsections miss.
 
-**HARD MINIMUM: 950-1,300 words across 4-6 paragraphs of 6-9
+**HARD MINIMUM: 1,200-1,500 words across 5-7 paragraphs of 6-9
 sentences each.** Fix #45 reverses the over-compression. The
 Cross-Domain Synthesis is the paper's intellectual core — explicit
 adjudication of cross-outcome tensions. 525 words is too thin to
-do that work.
+   do that work.
 
 Each paragraph adjudicates ONE load-bearing cross-domain tension:
 - Name the tension explicitly (cite both receipts).
@@ -323,7 +323,7 @@ Each paragraph adjudicates ONE load-bearing cross-domain tension:
 Do NOT just restate Table 3's pair list — interpret it. Do NOT add
 new numerics or citations beyond the provided receipts. If unsure,
 hedge rather than invent. Compress only repetition. NEVER compress
-away reasoning. Hard floor: 950 words.
+away reasoning. Hard floor: 1,200 words.
 
 Output ONE JSON object with this exact shape:
 
@@ -376,7 +376,7 @@ Output JSON only. No prose outside the JSON."""
 DISCUSSION_SYSTEM_PROMPT_TEMPLATE = """You write the DISCUSSION of a research
 synthesis paper.
 
-**HARD MINIMUM: 900-1,300 words across 5-7 paragraphs of 6-9
+**HARD MINIMUM: 1,500-1,900 words across 7-9 paragraphs of 6-9
 sentences each.** Fix #45 reverses the over-compression that
 hollowed out Discussion in earlier runs (310 words is desk-reject
 territory). This is a PhD-level synthesis, not an executive summary.
@@ -392,7 +392,7 @@ Preserve analytical depth:
 - If unsure, hedge rather than invent.
 
 Compress only repetition, boilerplate, and generic framing.
-NEVER compress away reasoning. Hard floor: 900 words.
+NEVER compress away reasoning. Hard floor: 1,500 words.
 
 Output ONE JSON object with this exact shape:
 

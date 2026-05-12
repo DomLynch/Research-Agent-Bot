@@ -204,6 +204,11 @@ def test_novel_framework_names_metabolic_functional_tradeoff() -> None:
     )
     assert "## Metabolic-Functional Tradeoff Framework" in section.body_md
     assert "Endpoint-Sensitivity" not in section.body_md
+    assert "receipt graph" not in section.body_md
+    assert "manifest" not in section.body_md
+    assert "| Layer | Evidence example | Supports | Cannot support |" in section.body_md
+    assert "| Metabolic marker | HbA1c, LDL, body weight, or adiposity |" in section.body_md
+    assert "hypertrophy, mitochondrial adaptation" in section.body_md
 
 
 def test_build_section_uses_default_5_frameworks() -> None:

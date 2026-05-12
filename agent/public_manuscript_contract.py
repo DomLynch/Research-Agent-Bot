@@ -8,13 +8,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Literal, Mapping
 
-from agent.public_manuscript_table_contract import (
-    conclusion_faults,
-    metadata_conflicts,
-    section_outcome_failures,
-    table_set_failures,
-    tension_fault_counts,
-)
+from agent.public_manuscript_table_contract import (conclusion_faults, metadata_conflicts, results_section_failures, section_outcome_failures, table_set_failures, tension_fault_counts)
 
 
 # ---- canonical counts ----------------------------------------------------
@@ -22,12 +16,12 @@ from agent.public_manuscript_table_contract import (
 
 @dataclass(frozen=True, slots=True)
 class CanonicalCounts:
-    source_papers: int           # n_receipts (total screened)
-    accepted_papers: int         # n_accepted_receipts (post-SPAR)
-    rejected_papers: int         # n_quarantined_receipts / SPAR rejects
+    source_papers: int
+    accepted_papers: int
+    rejected_papers: int
     high_confidence_claims: int
     tensions: int
-    accepted_publications: int   # unique accepted citation_tokens
+    accepted_publications: int
 
     @classmethod
     def from_manifest(
@@ -79,27 +73,7 @@ class CanonicalCounts:
 # ---- failure record ------------------------------------------------------
 
 
-_RuleName = Literal[
-    "count_consistency",
-    "duplicate_row",
-    "section_boundary",
-    "residue_phrase",
-    "canonical_link",
-    "broken_prose",
-    "repeated_boilerplate",
-    "spar_reject_leakage",
-    "rejected_appendix_required",
-    "qei_title_row_mismatch",
-    "reference_duplicates",
-    "malformed_table_row",
-    "table_count_consistency",
-    "evidence_role_count_consistency",
-    "section_outcome_integrity",
-    "table_set_consistency",
-    "cross_table_metadata_conflict",
-    "tension_table_integrity",
-    "conclusion_hygiene",
-]
+_RuleName = str
 
 
 @dataclass(frozen=True, slots=True)
@@ -121,79 +95,19 @@ class ContractResult:
 # ---- rule 1: count consistency ------------------------------------------
 
 
+def _cp(pattern: str, cat: str, attr: str) -> tuple[re.Pattern[str], str, str]:
+    return re.compile(pattern, re.I), cat, attr
+
+
 _COUNT_PATTERNS: tuple[tuple[re.Pattern[str], str, str], ...] = (
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+(?:candidate|source|screened|parsed)\s+"
-            r"(?:receipt\s+)?(?:papers?|stud(?:y|ies)|receipts?)\b",
-            re.I,
-        ),
-        "source paper",
-        "source_papers",
-    ),
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+source\s+papers?\s+screened\b",
-            re.I,
-        ),
-        "source paper",
-        "source_papers",
-    ),
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+(?:accepted|curated|included|contributing)"
-            r"(?:\s*/\s*(?:accepted|curated|included|contributing))*\s+"
-            r"(?:high[- ]confidence\s+)?(?:receipt\s+)?"
-            r"(?:papers?|stud(?:y|ies)|receipts?|reference\s+papers?)\b",
-            re.I,
-        ),
-        "accepted paper",
-        "accepted_papers",
-    ),
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+(?:papers?|receipts?|stud(?:y|ies))\s+"
-            r"(?:entered|entering|included\s+in)\s+(?:the\s+)?synthesis\b",
-            re.I,
-        ),
-        "accepted paper",
-        "accepted_papers",
-    ),
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+(?:rejected|quarantined|contested)\s+"
-            r"(?:receipt\s+)?(?:papers?|stud(?:y|ies)|receipts?)\b",
-            re.I,
-        ),
-        "rejected paper",
-        "rejected_papers",
-    ),
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+"
-            r"(?:reference\s+papers?|stud(?:y|ies)|papers?)\b",
-            re.I,
-        ),
-        "generic paper",
-        "source_or_accepted",
-    ),
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+"
-            r"(?:source[- ]bound\s+observations?|"
-            r"high[- ]confidence\s+claims?|claims?|observations?)\b",
-            re.I,
-        ),
-        "claim",
-        "high_confidence_claims",
-    ),
-    (
-        re.compile(
-            r"\b(\d{1,4})\s+(?:non[- ]orthogonal\s+)?tensions?\b", re.I,
-        ),
-        "tension",
-        "tensions",
-    ),
+    _cp(r"\b(\d{1,4})\s+(?:candidate|source|screened|parsed)\s+(?:receipt\s+)?(?:papers?|stud(?:y|ies)|receipts?)\b", "source paper", "source_papers"),
+    _cp(r"\b(\d{1,4})\s+source\s+papers?\s+screened\b", "source paper", "source_papers"),
+    _cp(r"\b(\d{1,4})\s+(?:accepted|curated|included|contributing)(?:\s*/\s*(?:accepted|curated|included|contributing))*\s+(?:high[- ]confidence\s+)?(?:receipt\s+)?(?:papers?|stud(?:y|ies)|receipts?|reference\s+papers?)\b", "accepted paper", "accepted_papers"),
+    _cp(r"\b(\d{1,4})\s+(?:papers?|receipts?|stud(?:y|ies))\s+(?:entered|entering|included\s+in)\s+(?:the\s+)?synthesis\b", "accepted paper", "accepted_papers"),
+    _cp(r"\b(\d{1,4})\s+(?:rejected|quarantined|contested)\s+(?:receipt\s+)?(?:papers?|stud(?:y|ies)|receipts?)\b", "rejected paper", "rejected_papers"),
+    _cp(r"\b(\d{1,4})\s+(?:reference\s+papers?|stud(?:y|ies)|papers?)\b", "generic paper", "source_or_accepted"),
+    _cp(r"\b(\d{1,4})\s+(?:source[- ]bound\s+observations?|high[- ]confidence\s+claims?|claims?|observations?)\b", "claim", "high_confidence_claims"),
+    _cp(r"\b(\d{1,4})\s+(?:non[- ]orthogonal\s+)?tensions?\b", "tension", "tensions"),
 )
 
 # Generic prose patterns where small ints are decorative, not paper-wide
@@ -204,10 +118,6 @@ _COUNT_NOISE_PREFIX_RE = re.compile(
     r"(?:severity|priority|score|grade|tier)[-\s]*$|(?:\b[kn]\s*=\s*)$",
     re.I,
 )
-
-
-def _is_year_token(n: int) -> bool:
-    return 1900 <= n <= 2100
 
 
 def _check_counts(
@@ -225,7 +135,7 @@ def _check_counts(
                 continue
             prefix = body_clean[max(0, m.start() - 24):m.start()]
             if (
-                _is_year_token(n)
+                1900 <= n <= 2100
                 or n < _NOISE_THRESHOLD
                 or _COUNT_NOISE_PREFIX_RE.search(prefix)
             ):
@@ -415,9 +325,7 @@ def _check_table_row_counts(
 
 def _check_table_set_consistency(body: str) -> list[ContractFailure]:
     missing = table_set_failures(body)
-    if not missing:
-        return []
-    return [ContractFailure(
+    return [] if not missing else [ContractFailure(
         rule="table_set_consistency",
         detail=f"{len(missing)} citation(s) appear in evidence tables but are absent from Table 1: {missing[:8]}.",
     )]
@@ -425,9 +333,7 @@ def _check_table_set_consistency(body: str) -> list[ContractFailure]:
 
 def _check_cross_table_metadata_conflict(body: str) -> list[ContractFailure]:
     conflicts = metadata_conflicts(body)
-    if not conflicts:
-        return []
-    return [ContractFailure(
+    return [] if not conflicts else [ContractFailure(
         rule="cross_table_metadata_conflict",
         detail=(
             f"{len(conflicts)} cross-table metadata conflict(s): "
@@ -439,9 +345,7 @@ def _check_cross_table_metadata_conflict(body: str) -> list[ContractFailure]:
 
 def _check_tension_table_integrity(body: str) -> list[ContractFailure]:
     self_pairs, dupes = tension_fault_counts(body)
-    if not self_pairs and not dupes:
-        return []
-    return [ContractFailure(
+    return [] if not self_pairs and not dupes else [ContractFailure(
         rule="tension_table_integrity",
         detail=f"Table 3 contains {self_pairs} self-pair(s) and {dupes} duplicate pair(s).",
     )]
@@ -527,13 +431,45 @@ def _check_appendix_distribution_counts(body: str, canon: CanonicalCounts) -> li
 
 _ABSTRACT_HEADING_RE = re.compile(r"^#{1,4}\s*Abstract\b[^\n]*\n", re.I | re.M)
 _HEADING_RE = re.compile(r"^(#{1,6})\s+([^\n]+)$", re.M)
-_H3_RESIDUE_RE = re.compile(r"\bH3:\s*", re.M)
+_H3_RESIDUE_RE = re.compile(r"\bH3[\.:]\s*", re.M)
+_TITLE_PREAMBLE_RE = re.compile(r"#\s+Research Synthesis:[^\n]+")
+_FUSED_HEADING_RE = re.compile(r"[A-Za-z0-9).,;:]#{1,6}\s+[A-Z]")
+_ABSTRACT_FRAGMENT_RE = re.compile(r"(^|(?<=[.!?])\s+)[a-z][^.!?\n]{0,80}\bmodel,", re.M)
+_ABSTRACT_DOSE_APPOS_RE = re.compile(r"\bdosed\s+at\s+\d+(?:\.\d+)?\s*(?:mg|mcg|µg|g|kg|mM|µM)\b", re.I)
+_ORDINALS = {"first": 1, "second": 2, "third": 3, "fourth": 4, "fifth": 5}
 
 
 def _check_sections(
     body: str, *, abstract_word_cap: int = 500,
 ) -> tuple[list[ContractFailure], int]:
     fails: list[ContractFailure] = []
+    abs_head = _ABSTRACT_HEADING_RE.search(body)
+    if abs_head is not None:
+        preamble = body[:abs_head.start()].strip()
+        if preamble and not _TITLE_PREAMBLE_RE.fullmatch(preamble):
+            fails.append(ContractFailure(
+                rule="section_boundary",
+                detail="public prose appears before the Abstract heading.",
+            ))
+    is_full_paper = (
+        body.lstrip().startswith("# Research Synthesis:")
+        or len(re.findall(r"(?m)^##\s+", body)) >= 6
+    )
+    if is_full_paper:
+        required = (
+            "Abstract", "Introduction", "Background", "Methods", "Results",
+            "Cross-Domain Synthesis", "Discussion", "Limitations",
+            "Conclusion",
+        )
+        missing = [
+            name for name in required
+            if re.search(rf"(?m)^##\s+{re.escape(name)}\b", body) is None
+        ]
+        if missing:
+            fails.append(ContractFailure(
+                rule="section_boundary",
+                detail=f"missing required journal section(s): {missing}",
+            ))
     abs_text = _extract_section(body, _ABSTRACT_HEADING_RE) or ""
     abs_words = len(abs_text.split()) if abs_text else 0
     if abs_words > abstract_word_cap:
@@ -547,6 +483,21 @@ def _check_sections(
                 ),
             )
         )
+    if _ABSTRACT_FRAGMENT_RE.search(abs_text):
+        fails.append(ContractFailure(
+            rule="broken_prose",
+            detail="abstract contains a lowercase sentence fragment before 'model,'.",
+        ))
+    if _ABSTRACT_DOSE_APPOS_RE.search(abs_text):
+        fails.append(ContractFailure(
+            rule="broken_prose",
+            detail="abstract contains fragile dose-as-definition prose.",
+        ))
+    if _FUSED_HEADING_RE.search(body):
+        fails.append(ContractFailure(
+            rule="section_boundary",
+            detail="heading fused to preceding prose; markdown heading must start on a new line.",
+        ))
     if _H3_RESIDUE_RE.search(body):
         n = len(_H3_RESIDUE_RE.findall(body))
         fails.append(
@@ -558,6 +509,18 @@ def _check_sections(
                 ),
             )
         )
+    cds = _extract_section(body, re.compile(
+        r"^##\s+Cross-Domain Synthesis\b[^\n]*\n", re.I | re.M,
+    )) or ""
+    found: set[int] = {
+        _ORDINALS[m.group(1).lower()]
+        for m in re.finditer(r"\b(first|second|third|fourth|fifth)\b", cds, re.I)
+    }
+    if found and found != set(range(1, max(found) + 1)):
+        fails.append(ContractFailure(
+            rule="section_boundary",
+            detail=f"Cross-Domain Synthesis has ordinal gap(s): {[i for i in range(1, max(found) + 1) if i not in found]}.",
+        ))
     # Duplicate top-level (## or #) sections — same heading text twice.
     headings: list[tuple[int, str]] = []
     for m in _HEADING_RE.finditer(body):
@@ -587,17 +550,20 @@ def _check_sections(
 # Keep entries non-overlapping (no entry should be a strict prefix of
 # another) so we don't double-count the same residue site.
 FORBIDDEN_PHRASES: tuple[str, ...] = (
-    "no LLM authorship", "LLM proposes, code disposes",
-    "deterministic evidence summary", "Tournament selector",
-    "Selected thesis:", "no matched source in the accepted evidence",
-    "source-context sentence", "unsupported sentence", "Researka-Certified",
-    "A2A-AAA", "Grok", "certification tolerances",
-    "In the Conclusion, this framing", "In the Limitations, this framing",
-    "The surviving section therefore",
-    "source passage cannot support its own specificity", "Cochrane RoB-2",
-    "ROBINS-I", "risk-of-bias roll-up", "_Cited:", "trust-spine",
-    "trust spine", "Publication Appendix", "Search Provenance and Selection",
-    "AI-Use Disclosure", "Researka Submitter Block",
+    "no LLM authorship", "LLM proposes, code disposes", "deterministic evidence summary", "Tournament selector", "Selected thesis:", "no matched source in the accepted evidence",
+    "source-context sentence", "unsupported sentence", "<H3>", "A2A-AAA", "Grok", "Researka-Certified", "certification tolerances", "In the Conclusion, this framing",
+    "In the Limitations, this framing", "The surviving section therefore", "Cochrane RoB-2", "ROBINS-I", "source passage cannot support its own specificity",
+    "risk-of-bias roll-up", "_Cited:", "trust-spine", "trust spine", "Publication Appendix", "Search Provenance and Selection", "AI-Use Disclosure",
+    "Researka Submitter Block", "receipt graph", "exact count is retained", "manifest and supplement", "This point is treated as interpretive context", "TENSION MATRIX", "accepted receipt corpus",
+    "accepted citation token", "Design strength remains heterogeneous",
+)
+
+FORBIDDEN_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"(?m)^\s*\*{0,2}Thesis:\*{0,2}"), "Thesis label"),
+    (
+        re.compile(r"(?m)(^|[.!?]\s+)(?:First|Second|Third|Fourth|Fifth),\s+"),
+        "ordinal outline fragment",
+    ),
 )
 
 
@@ -613,6 +579,13 @@ def _check_residue(body: str) -> list[ContractFailure]:
                     detail=f"phrase '{phrase}' appears {n}x in MD",
                 )
             )
+    for pat, label in FORBIDDEN_PATTERNS:
+        n = len(pat.findall(body))
+        if n:
+            fails.append(ContractFailure(
+                rule="residue_phrase",
+                detail=f"{label} appears {n}x in MD",
+            ))
     return fails
 
 
@@ -623,51 +596,18 @@ def _check_residue(body: str) -> list[ContractFailure]:
 # biomedical jargon — they detect English-language broken constructions
 # (truncations, value/unit-as-effect mismatches) that would be a
 # manuscript fail in any field.
+def _rp(pattern: str, desc: str) -> tuple[re.Pattern[str], str]:
+    return re.compile(pattern, re.I), desc
+
+
 _BROKEN_PROSE_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
-    # "but was <single-word>." — likely a truncated coordinator
-    # ("X was not associated with mortality but was mortality"). Flag a
-    # single word right after "but was" terminating a sentence.
-    (
-        re.compile(r"\bbut\s+was\s+\w+\s*[,.]\s+[A-Z]", re.I),
-        "truncated 'but was <word>' construction",
-    ),
-    # "effect estimate of <year>" — a 4-digit year cannot be an effect.
-    (
-        re.compile(r"\beffect\s+estimate\s+of\s+(\d{4})\b", re.I),
-        "year-as-effect-estimate",
-    ),
-    # "effect estimate of <number><unit>" where the unit is a dose unit
-    # (mg/kg/ml/etc.) — that's a dose, not an effect estimate.
-    (
-        re.compile(
-            r"\beffect\s+estimate\s+of\s+\d+(?:\.\d+)?\s*"
-            r"(?:mg|kg|ml|µg|mcg|nmol|mmol|L|g)\b",
-            re.I,
-        ),
-        "dose-as-effect-estimate",
-    ),
-    # "effect estimate of <N> years/months/days/etc." — that's a duration,
-    # not an effect estimate.
-    (
-        re.compile(
-            r"\beffect\s+estimate\s+of\s+\d+(?:\.\d+)?\s+"
-            r"(?:years?|months?|days?|hours?|weeks?)\b",
-            re.I,
-        ),
-        "duration-as-effect-estimate",
-    ),
-    # "reported an effect estimate." — sentence-terminated without a
-    # value. The phrase is incomplete prose.
-    (
-        re.compile(
-            r"\breported\s+an\s+effect\s+estimate\.\s+[A-Z]", re.I,
-        ),
-        "truncated 'reported an effect estimate.' (no value)",
-    ),
-    (
-        re.compile(r"\bsingle\s*\.\s*When\s+a\s+cannot\b", re.I),
-        "broken floor-backfill fragment 'single . When a cannot'",
-    ),
+    _rp(r"\bbut\s+was\s+\w+\s*[,.]\s+[A-Z]", "truncated 'but was <word>' construction"),
+    _rp(r"\beffect\s+estimate\s+of\s+(\d{4})\b", "year-as-effect-estimate"),
+    _rp(r"\beffect\s+estimate\s+of\s+\d+(?:\.\d+)?\s*(?:mg|kg|ml|µg|mcg|nmol|mmol|L|g)\b", "dose-as-effect-estimate"),
+    _rp(r"\beffect\s+estimate\s+of\s+\d+(?:\.\d+)?\s+(?:years?|months?|days?|hours?|weeks?)\b", "duration-as-effect-estimate"),
+    _rp(r"\breported\s+an\s+effect\s+estimate\.\s+[A-Z]", "truncated 'reported an effect estimate.' (no value)"),
+    _rp(r"\bsingle\s*\.\s*When\s+a\s+cannot\b", "broken floor-backfill fragment 'single . When a cannot'"),
+    _rp(r"(?<=[.!?])\s+\d{1,2}\.\s+(?=[A-Z])", "standalone numeric sentence fragment"),
 )
 
 
@@ -722,6 +662,27 @@ def _check_repeated_boilerplate(
                     detail=f"sentence repeated {n}x: '{preview}'",
                 )
             )
+    return fails
+
+
+def _check_duplicate_paragraphs(
+    body: str, *, min_words: int = 25,
+) -> list[ContractFailure]:
+    body_clean = _strip_code_fences(_strip_table_rows(body))
+    counts: Counter[str] = Counter()
+    for para in re.split(r"\n\s*\n", body_clean):
+        norm = re.sub(r"\s+", " ", para.strip())
+        if len(norm.split()) < min_words or norm.startswith(("#", "-", "*")):
+            continue
+        counts[norm] += 1
+    fails: list[ContractFailure] = []
+    for para, n in counts.most_common(5):
+        if n > 1:
+            preview = para[:100] + ("..." if len(para) > 100 else "")
+            fails.append(ContractFailure(
+                rule="repeated_boilerplate",
+                detail=f"paragraph repeated {n}x: '{preview}'",
+            ))
     return fails
 
 
@@ -958,6 +919,22 @@ def _check_reference_duplicates(body: str) -> list[ContractFailure]:
     ]
 
 
+def _check_reference_integrity(body: str) -> list[ContractFailure]:
+    section = _extract_section(body, _REFERENCES_HEADING_RE_C) or ""
+    orphan = sum(
+        1 for line in section.splitlines()
+        if "PMID:" in line and not line.lstrip().startswith(("-", "*"))
+    )
+    merged = sum(
+        1 for line in section.splitlines()
+        if line.lstrip().startswith(("-", "*")) and line.count("PMID:") > 1
+    )
+    return [] if not orphan and not merged else [ContractFailure(
+        rule="reference_integrity",
+        detail=f"References contain {orphan} orphan PMID line(s) and {merged} merged PMID entry line(s).",
+    )]
+
+
 # ---- rule 13: malformed markdown table rows -----------------------------
 
 
@@ -968,17 +945,7 @@ _ORPHAN_TABLE_FRAGMENT_RE = re.compile(
 
 def _check_malformed_table_rows(body: str) -> list[ContractFailure]:
     hits = _ORPHAN_TABLE_FRAGMENT_RE.findall(body)
-    if not hits:
-        return []
-    return [
-        ContractFailure(
-            rule="malformed_table_row",
-            detail=(
-                f"{len(hits)} orphan table row fragment(s) appear without "
-                f"a leading pipe; markdown tables must render complete rows."
-            ),
-        )
-    ]
+    return [] if not hits else [ContractFailure("malformed_table_row", f"{len(hits)} orphan table row fragment(s) appear without a leading pipe; markdown tables must render complete rows.")]
 
 
 def _check_section_outcome_integrity(
@@ -996,6 +963,9 @@ def _check_section_outcome_integrity(
             ),
         )
         for msg in section_outcome_failures(body, accepted)
+    ] + [
+        ContractFailure("section_outcome_integrity", msg)
+        for msg in results_section_failures(body, accepted)
     ]
 
 
@@ -1006,16 +976,38 @@ def _check_conclusion_hygiene(body: str) -> list[ContractFailure]:
     hits, subheads = conclusion_faults(body)
     failures: list[ContractFailure] = []
     if hits:
-        failures.append(ContractFailure(
-            rule="conclusion_hygiene",
-            detail=f"Conclusion contains contribution/table boilerplate: {hits[:8]}.",
-        ))
+        failures.append(ContractFailure("conclusion_hygiene", f"Conclusion contains contribution/table boilerplate: {hits[:8]}."))
     if subheads:
-        failures.append(ContractFailure(
-            rule="conclusion_hygiene",
-            detail=f"Conclusion contains subsection heading(s): {subheads[:5]}.",
-        ))
+        failures.append(ContractFailure("conclusion_hygiene", f"Conclusion contains subsection heading(s): {subheads[:5]}."))
     return failures
+
+
+_FRAMEWORK_RE = re.compile(
+    r"(?ms)^##\s+(?!Engagement with Established Frameworks)[^\n]*\bFramework\b[^\n]*\n.*?"
+    r"(?=^##\s+\S|\Z)"
+)
+_FRAMEWORK_TABLE_HEADER = "| Layer | Evidence example | Supports | Cannot support |"
+_WTA_RE = re.compile(
+    r"(?ms)^##\s+What This Synthesis Adds\b\n+(.*?)(?=^##\s+\S|\Z)"
+)
+
+
+def _check_framework_integrity(body: str) -> list[ContractFailure]:
+    fails: list[ContractFailure] = []
+    section = _FRAMEWORK_RE.search(body)
+    if section is None:
+        if not all(
+            re.search(rf"(?m)^##\s+{name}\b", body)
+            for name in ("Abstract", "Introduction", "Methods", "Results")
+        ):
+            return fails
+        fails.append(ContractFailure("framework_integrity", "framework section missing from journal main"))
+    elif _FRAMEWORK_TABLE_HEADER not in section.group(0):
+        fails.append(ContractFailure("framework_integrity", "framework section missing evidence-layer table"))
+    wta = _WTA_RE.search(body)
+    if wta and len(wta.group(1).split()) > 220:
+        fails.append(ContractFailure("framework_integrity", "What This Synthesis Adds exceeds 220 words"))
+    return fails
 
 
 # ---- helpers -------------------------------------------------------------
@@ -1109,12 +1101,15 @@ def validate(
     fails.extend(_check_residue(paper_md))
     fails.extend(_check_broken_prose(paper_md))
     fails.extend(_check_repeated_boilerplate(paper_md))
+    fails.extend(_check_duplicate_paragraphs(paper_md))
     fails.extend(_check_spar_reject_leakage(evidence_md, manifest, run_dir))
     fails.extend(_check_rejected_appendix_required(paper_md, run_dir))
     fails.extend(_check_qei_title_row_mismatch(evidence_md))
     fails.extend(_check_reference_duplicates(paper_md))
+    fails.extend(_check_reference_integrity(paper_md))
     fails.extend(_check_malformed_table_rows(evidence_md))
     fails.extend(_check_conclusion_hygiene(paper_md))
+    fails.extend(_check_framework_integrity(paper_md))
     by_rule: dict[str, int] = Counter(f.rule for f in fails)
     return ContractResult(
         status="FAIL" if fails else "PASS",

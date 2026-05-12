@@ -13,6 +13,10 @@ from agent.manuscript_scrub import (  # type: ignore[import-not-found]
     scrub_engine_residue,
     scrub_paper,
     scrub_rejected_evidence_leaks,
+    scrub_repeated_paragraphs,
+    scrub_repeated_sentences,
+    scrub_html_headings,
+    scrub_standalone_numeric_fragments,
     truncate_abstract,
 )
 
@@ -55,6 +59,14 @@ def test_scrub_residue_removes_h3_section_tags() -> None:
     assert "### Cardiometabolic Outcomes" in out
 
 
+def test_scrub_residue_removes_h3_dot_section_tags() -> None:
+    md = "### H3. Cardiometabolic Outcomes\n\nClean body.\n"
+    out, n = scrub_engine_residue(md)
+    assert n == 1
+    assert "H3." not in out
+    assert "### Cardiometabolic Outcomes" in out
+
+
 def test_scrub_residue_removes_repair_scaffold_phrases() -> None:
     md = (
         "## Limitations\n\nIn the Limitations, this framing names a "
@@ -75,11 +87,39 @@ def test_scrub_residue_removes_template_connector() -> None:
     assert "These findings, suggest caution." in out
 
 
+def test_scrub_residue_neutralizes_public_outline_artifacts() -> None:
+    md = (
+        "## Abstract\n\n**Thesis:** The accepted receipt corpus is bounded.\n\n"
+        "## Background\n\nFirst, the public argument continues. "
+        "Second, the next clause is public prose.\n\n"
+        "## Discussion\n\nThe tension matrix is not public prose.\n"
+    )
+    out, n = scrub_engine_residue(md)
+    assert n == 6
+    assert "**Thesis:**" not in out
+    assert "accepted receipt corpus" not in out
+    assert "First," not in out
+    assert "Second," not in out
+    assert "The next clause" in out
+    assert "tension matrix" not in out
+
+
 def test_scrub_residue_removes_risk_of_bias_rollup_phrase() -> None:
     md = "## Discussion\n\nThe paper used a risk-of-bias roll-up.\n"
     out, n = scrub_engine_residue(md)
     assert n == 1
     assert "risk-of-bias roll-up" not in out
+
+
+def test_scrub_residue_softens_aging_approval_overclaim() -> None:
+    md = (
+        "## Background\n\nThe trial aimed to gain FDA approval for a "
+        "clinical indication of \"aging\" itself.\n"
+    )
+    out, n = scrub_engine_residue(md)
+    assert n == 1
+    assert "approval for a clinical indication of" not in out
+    assert "aging-targeted prevention claims" in out
 
 
 # ---- abstract truncation ------------------------------------------------
@@ -307,6 +347,51 @@ def test_scrub_broken_effect_estimate_duration_sentence_removed() -> None:
     assert "effect estimate of 10 weeks" not in out
     assert "The first sentence remains." in out
     assert "The next sentence remains." in out
+
+
+def test_scrub_standalone_numeric_fragment_between_sentences() -> None:
+    md = (
+        "## Synthesis\n\n"
+        "A cross-domain tension remains unresolved. 02. The next "
+        "sentence is the supported claim.\n"
+    )
+    out, n = scrub_standalone_numeric_fragments(md)
+    assert n == 1
+    assert "02." not in out
+    assert "The next sentence is the supported claim." in out
+
+
+def test_scrub_html_heading_tags_to_markdown() -> None:
+    md = "## Results\n\n### <H3>Muscle Function Outcomes</H3>\n\nText.\n"
+    out, n = scrub_html_headings(md)
+    assert n == 1
+    assert "<H3>" not in out
+    assert "### Muscle Function Outcomes" in out
+
+
+def test_scrub_repeated_sentences_drops_third_public_repeat() -> None:
+    sentence = (
+        "That landmark study reported an all-cause mortality HR near "
+        "unity during the randomized comparison period."
+    )
+    md = "## Discussion\n\n" + "\n\n".join([sentence, sentence, sentence])
+    out, n = scrub_repeated_sentences(md)
+    assert n == 1
+    assert out.count(sentence) == 2
+
+
+def test_scrub_repeated_paragraphs_drops_exact_duplicate() -> None:
+    para = (
+        "Against this, the most damaging direct evidence comes from an "
+        "exercise-adaptation trial where functional interpretation remains "
+        "conditional and clinically relevant for trial design, outcome "
+        "selection, and future geroscience translation."
+    )
+    out, n = scrub_repeated_paragraphs(
+        f"## What This Synthesis Adds\n\n{para}\n\n{para}\n"
+    )
+    assert n == 1
+    assert out.count(para) == 1
 
 
 def test_scrub_rejected_leaks_deletes_main_body_only() -> None:

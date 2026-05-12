@@ -126,6 +126,7 @@ async def run_citation_fix_pass(
     ledger: CostLedger | None,
     seed: int | None,
     call_llm_fn,
+    min_words: int = 0,
 ) -> SynthesisSection | None:
     """Fix #20: One-shot re-prompt to add missing background citations.
 
@@ -159,6 +160,8 @@ async def run_citation_fix_pass(
     new_section = builder_fn(parsed)
     if new_section is None:
         return section
+    if min_words and _section_word_count(new_section) < min_words:
+        return section
     new_issues = check_unsourced_background_uses(
         new_section.body_md, background_lit_entries,
     )
@@ -168,6 +171,11 @@ async def run_citation_fix_pass(
     if len(new_issues) < len(issues):
         return new_section
     return section
+
+
+def _section_word_count(section: SynthesisSection) -> int:
+    lines = section.body_md.split("\n")
+    return len("\n".join(lines[1:]).split())
 
 
 __all__ = [

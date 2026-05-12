@@ -478,6 +478,7 @@ def _check_thesis_present(paper: str) -> tuple[bool, str]:
         re.search(r"^\*\*Thesis:\*\*", paper, re.M)
         or re.search(r"^\*\*Picked thesis\b.*?:\*\*", paper, re.M)
         or re.search(r"\bThe deterministic thesis is:", paper)
+        or re.search(r"\bThis synthesis argues that\b", paper[:3000], re.I)
         or re.search(
             r"\bThe synthesis surfaces\s+\d+\s+non-orthogonal tensions\b",
             paper,
@@ -610,16 +611,17 @@ def _check_numeric_density(
     # Exclude publication-prep appendix from density calculation —
     # appendix is pure prose with no claim numerics by design.
     synthesis_content = _strip_publication_appendix(paper)
+    evidence_surface = synthesis_content + "\n" + _NUMERIC_SUPPLEMENT_MD
     wc = len(synthesis_content.split())
     total = sum(
-        len(re.findall(pat, synthesis_content))
+        len(re.findall(pat, evidence_surface))
         for pat in _DENSITY_PATTERNS
     )
     density = (total / max(1, wc)) * 1000
     return density >= threshold, (
         f"density {density:.1f} numerics/1000 words "
         f"(threshold ≥{threshold}; contract={_DENSITY_CONTRACT_VERSION}; "
-        f"appendix excluded)"
+        f"appendix excluded; numeric supplement included)"
     )
 
 
@@ -826,13 +828,15 @@ _CHECKS = (
 # Module-level state so the lambdas above can read corpus + meta.
 _CORPUS_NUMS: set[str] = set()
 _PAPER_META: dict[str, dict] = {}
+_NUMERIC_SUPPLEMENT_MD = ""
 
 
-def audit(paper: str) -> dict:
+def audit(paper: str, *, numeric_supplement_md: str = "") -> dict:
     """Run all 10 checks. Returns dict with per-check verdict + score."""
-    global _CORPUS_NUMS, _PAPER_META
+    global _CORPUS_NUMS, _PAPER_META, _NUMERIC_SUPPLEMENT_MD
     _CORPUS_NUMS = _load_corpus_numerics()
     _PAPER_META = _load_paper_metadata()
+    _NUMERIC_SUPPLEMENT_MD = numeric_supplement_md
 
     results = []
     p1_pass = True

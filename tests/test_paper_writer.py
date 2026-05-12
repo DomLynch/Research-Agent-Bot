@@ -6,6 +6,8 @@ LLM should physically not see what it's not allowed to cite.
 """
 from __future__ import annotations
 
+import asyncio
+
 from agent.paper_writer_helpers import strip_rendered_citation_markers
 from agent.paper_writer import _build_user_prompt
 from agent.synthesis_schemas import (
@@ -13,6 +15,7 @@ from agent.synthesis_schemas import (
     OutcomeClass,
     ReceiptSummary,
     SynthesisThesis,
+    SynthesisSection,
     TensionMatrix,
 )
 
@@ -213,20 +216,19 @@ def test_section_prompts_use_explicit_targets() -> None:
         ), f"{name} prompt missing explicit word-count target"
 
 
-def test_discussion_and_cross_domain_prompts_demand_900_word_floor() -> None:
-    """Fix #45 + Fix #56: analytical-core sections require ≥900
-    (Discussion) and ≥950 (Cross-Domain) words. CDS bumped to 950 for
-    a 100-word retry cushion above the 850 journal-surface gate."""
+def test_discussion_prompt_has_post_review_depth_cushion() -> None:
+    """Analytical-core sections need enough cushion to survive reviewer
+    deletions and still clear the 800-word depth gates."""
     from agent.paper_writer_prompts import (
         CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
         DISCUSSION_SYSTEM_PROMPT,
     )
-    assert "900" in DISCUSSION_SYSTEM_PROMPT, (
-        "DISCUSSION prompt no longer carries the 900-word floor "
-        "(Fix #45 regression)"
+    assert "1,500" in DISCUSSION_SYSTEM_PROMPT, (
+        "DISCUSSION prompt no longer carries the 1,500-word floor "
+        "(post-review depth cushion regression)"
     )
-    assert "950" in CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT, (
-        "CROSS_DOMAIN prompt no longer carries the 950-word floor "
+    assert "1,200" in CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT, (
+        "CROSS_DOMAIN prompt no longer carries the 1,200-word floor "
         "(Fix #56 regression)"
     )
     for name, prompt in (
@@ -283,3 +285,70 @@ def test_conclusion_prompt_retains_overclaim_guard() -> None:
     from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
     assert "extends lifespan" in CONCLUSION_SYSTEM_PROMPT  # in the do-NOT list
     assert "unhedged clinical claim" in CONCLUSION_SYSTEM_PROMPT.lower()
+
+
+def test_render_full_paper_writes_llm_sections_concurrently(
+    monkeypatch,
+) -> None:
+    """Writer sections should overlap, but final compile order stays fixed."""
+    from agent import inferential_bridge, paper_writer, results_table
+
+    active = 0
+    max_active = 0
+
+    async def _track(name: str, heading: str) -> SynthesisSection:
+        nonlocal active, max_active
+        active += 1
+        max_active = max(max_active, active)
+        await asyncio.sleep(0.01)
+        active -= 1
+        return SynthesisSection(
+            name=name,
+            body_md=f"{heading}\n\n{name} body.\n",
+            anchors=(),
+        )
+
+    async def fake_anchored(**kwargs) -> SynthesisSection:
+        return await _track(kwargs["name"], kwargs["heading"])
+
+    async def fake_scoped(**kwargs) -> SynthesisSection:
+        return await _track(kwargs["name"], kwargs["heading"])
+
+    async def fake_results(*args, **kwargs) -> SynthesisSection:
+        return await _track("results", "## Results")
+
+    async def fake_bridge(*args, **kwargs) -> SynthesisSection:
+        return await _track("inferential_bridge", "## Inferential Bridge")
+
+    monkeypatch.setattr(paper_writer, "_write_anchored_section", fake_anchored)
+    monkeypatch.setattr(paper_writer, "_write_scoped_section", fake_scoped)
+    monkeypatch.setattr(paper_writer, "write_results_section", fake_results)
+    monkeypatch.setattr(
+        inferential_bridge,
+        "build_inferential_bridge_section",
+        fake_bridge,
+    )
+    monkeypatch.setattr(results_table, "resolve_accepted_paper_ids", lambda *a: set())
+    monkeypatch.setattr(
+        results_table,
+        "build_results_table_with_diagnostic",
+        lambda *a, **k: ("## Quantitative Evidence Index\n\nplaceholder\n", {}),
+    )
+
+    receipts = [_summary("r-A"), _summary("r-B", outcome="cardiometabolic")]
+    body, sections = asyncio.run(
+        paper_writer.render_full_paper(
+            receipts,
+            _matrix(receipts),
+            _thesis(),
+            topic="metformin",
+            submission_id="test",
+            chain=(),
+        )
+    )
+
+    names = [s.name for s in sections]
+    assert max_active > 1
+    assert max_active <= paper_writer.WRITER_SECTION_PARALLELISM
+    assert names == list(paper_writer._FULL_PAPER_SECTION_ORDER)
+    assert body.index("## Abstract") < body.index("## Introduction")

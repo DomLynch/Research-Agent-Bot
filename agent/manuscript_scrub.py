@@ -1,32 +1,4 @@
-"""Manuscript scrubber — universal post-render correctness layer.
-
-Stdlib-only, no LLM. Runs AFTER the LLM writer + appendix splice and
-BEFORE the public_manuscript_contract gate. Applies bounded reversible
-fixes for the failure classes the writer cannot self-correct:
-
-  1. truncate_abstract        — caps the Abstract at N words at the
-                                first sentence boundary, so introduction
-                                prose can't bleed into the abstract.
-  2. dedupe_included_studies  — collapses byte-identical or same-
-                                citation rows in the Included Studies
-                                table; keeps the row with the highest
-                                evidence tier.
-  3. scrub_engine_residue     — removes residual engine-internal
-                                phrases from the public MD body
-                                (defence-in-depth: source fixes already
-                                landed in framework_section.py +
-                                paper_writer_deterministic.py, but a
-                                paper rendered against a stale cache
-                                or alternative writer must not leak).
-  4. scrub_rejected_evidence  — removes SPAR-rejected citation tokens
-                                from main-body prose/table rows while
-                                preserving the quarantine appendix and
-                                References audit trail.
-
-Universal: all rules are domain-agnostic. The scrubber takes the
-public MD as input and returns the scrubbed MD; it never adds new
-content, only removes/truncates known regressions.
-"""
+"""Universal post-render manuscript scrubber: delete defects, add no claims."""
 from __future__ import annotations
 
 import re
@@ -51,7 +23,8 @@ _RESIDUE_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"deterministic\s+evidence\s+summary", re.I),
     re.compile(r"LLM\s+proposes,\s+code\s+disposes", re.I),
     re.compile(r"no\s+LLM\s+authorship", re.I),
-    re.compile(r"\bH3:\s*", re.I),
+    re.compile(r"\bH3[\.:]\s*", re.I),
+    re.compile(r"</?H[1-6]>", re.I),
     re.compile(r"\*{0,2}Selected\s+thesis:\*{0,2}\s*", re.I),
     re.compile(r"\bsource-context\s+sentence\b", re.I),
     re.compile(r"\bunsupported\s+sentence\b", re.I),
@@ -62,17 +35,48 @@ _RESIDUE_PATTERNS: tuple[re.Pattern[str], ...] = (
         r"\bsource\s+passage\s+cannot\s+support\s+its\s+own\s+specificity\b",
         re.I,
     ),
+    re.compile(
+        r"\bThis\s+point\s+is\s+treated\s+as\s+interpretive\s+context\b",
+        re.I,
+    ),
     re.compile(r"\bCochrane\s+RoB-2\b", re.I),
     re.compile(r"\bROBINS-I\b", re.I),
     re.compile(r"\brisk-of-bias\s+roll-up\b", re.I),
+    re.compile(r"\breceipt\s+graph\b", re.I),
+    re.compile(r"\bexact\s+count\s+is\s+retained\b", re.I),
+    re.compile(r"\bmanifest\s+and\s+supplement\b", re.I),
     re.compile(r"\btaken\s+together,\s*", re.I),
+)
+
+_RESIDUE_REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"(?m)^\s*\*{0,2}Thesis:\*{0,2}\s*"), ""),
+    (re.compile(r"\bTENSION\s+MATRIX\b", re.I), "cross-study tension map"),
+    (re.compile(r"\baccepted\s+receipt\s+corpus\b", re.I), "accepted evidence"),
+    (
+        re.compile(
+            r"\bgain\s+FDA\s+approval\s+for\s+a\s+clinical\s+indication\s+"
+            r"of\s+[\"']?aging[\"']?\s+itself\b",
+            re.I,
+        ),
+        (
+            "test whether a geroscience-style composite endpoint can "
+            "support aging-targeted prevention claims"
+        ),
+    ),
+    (
+        re.compile(r"(?m)(^|[.!?]\s+)(?:First|Second|Third|Fourth|Fifth),\s+"),
+        r"\1",
+    ),
+)
+_LOWERCASE_SENTENCE_START_RE = re.compile(
+    r"(?<=[.!?])\s+(?P<word>population|tradeoffs|duration|concurrent|"
+    r"the|this|these|those|a)\b"
 )
 
 
 @dataclass(frozen=True, slots=True)
 class ScrubReport:
-    """Summary of what the scrubber removed/changed. Universal — fields
-    are counters, not topic-specific."""
+    """Scrub counters; universal, not topic-specific."""
 
     abstract_words_before: int
     abstract_words_after: int
@@ -81,18 +85,24 @@ class ScrubReport:
     broken_effect_sentences_removed: int = 0
     rejected_evidence_rows_removed: int = 0
     rejected_evidence_sentences_removed: int = 0
+    numeric_fragments_removed: int = 0
+    repeated_sentences_removed: int = 0
+    repeated_paragraphs_removed: int = 0
 
 
 def scrub_engine_residue(md: str) -> tuple[str, int]:
-    """Strip known engine-internal residue phrases from the public MD.
-
-    Universal — domain-agnostic. These phrases are pipeline jargon
-    that should never reach a journal reader.
-    """
+    """Strip engine-internal residue from public MD."""
     n = 0
+    for pat, repl in _RESIDUE_REPLACEMENTS:
+        md, k = pat.subn(repl, md)
+        n += k
     for pat in _RESIDUE_PATTERNS:
         md, k = pat.subn("", md)
         n += k
+    md, k = _LOWERCASE_SENTENCE_START_RE.subn(
+        lambda m: " " + m.group("word").capitalize(), md,
+    )
+    n += k
     # Collapse any stray double spaces left after scrubbing.
     md = re.sub(r"  +", " ", md)
     return md, n
@@ -104,18 +114,7 @@ _ABSTRACT_HEADING_RE = re.compile(
 
 
 def truncate_abstract(md: str, *, cap: int = 500) -> tuple[str, int, int]:
-    """Cap the Abstract section at `cap` words at the first sentence
-    boundary at-or-after the cap. Returns (new_md, words_before,
-    words_after). Universal — works for any topic.
-
-    Algorithm:
-      - Locate '## Abstract' heading and the next '##/#'-level heading
-        (Introduction, Background, etc.).
-      - Take the body between them. Split on sentence-end punctuation.
-      - Accumulate sentences until adding the next one would exceed
-        the cap. The remainder of the original section is dropped.
-      - If the abstract is already <= cap, no-op.
-    """
+    """Cap Abstract at a sentence boundary."""
     m = _ABSTRACT_HEADING_RE.search(md)
     if not m:
         return md, 0, 0
@@ -169,8 +168,7 @@ _TIER_ORDER = {f"{lvl}{n}": i for i, (lvl, n) in enumerate(
 
 
 def _row_tier(row: str) -> int:
-    """Return tier rank (0=A1 best, 11=D3 worst) for a table row, or 999
-    if no tier cell. Used to break ties when collapsing duplicate rows."""
+    """Return tier rank for duplicate-row tie breaks."""
     cells = [c.strip() for c in row.split("|")[1:-1]]
     for cell in cells[1:5]:  # tier conventionally lives in cols 2-4
         if cell in _TIER_ORDER:
@@ -179,8 +177,7 @@ def _row_tier(row: str) -> int:
 
 
 def _dedupe_one_table(md: str, start: int, end: int) -> tuple[str, int]:
-    """Dedupe rows of a single table block by citation_token (first
-    cell). Helper shared across all evidence tables."""
+    """Dedupe one table block by first-cell citation token."""
     section = md[start:end]
     lines = section.split("\n")
     out_lines: list[str] = []
@@ -223,16 +220,7 @@ def _dedupe_one_table(md: str, start: int, end: int) -> tuple[str, int]:
 
 
 def dedupe_included_studies(md: str) -> tuple[str, int]:
-    """Collapse duplicate rows across ALL public evidence tables (Wave
-    24): Included Studies, Per-Study Endpoint, Cross-Domain Tensions,
-    Risk of Bias, Numeric Index, etc.
-
-    Two rows are considered duplicates iff their first cell (the
-    citation_token) matches. Among duplicates, keep the row with the
-    best evidence tier (A1 > A2 > ... > D3); ties go to the first
-    encountered. Universal — every topic uses the same `## Table N`
-    schema with citation_token first cell.
-    """
+    """Collapse duplicate first-cell citation rows across evidence tables."""
     n_removed_total = 0
     # Iterate non-overlapping table sections; each pass shifts offsets,
     # so we walk fresh on the updated MD until no more matches.
@@ -272,14 +260,7 @@ _REF_ENTRY_LEAD_RE = re.compile(
 
 
 def dedupe_references_section(md: str) -> tuple[str, int]:
-    """Collapse duplicate citation entries in the References section.
-
-    Two entries are duplicates iff their bold-leading citation_token
-    matches. Same paper retrieved under different identifiers (PMID
-    vs DOI vs manual ID) produces multiple receipt rows but should
-    appear once in References. Universal — every topic uses the same
-    bibliography format. Keeps first occurrence; second+ are dropped.
-    """
+    """Collapse duplicate citation entries in References."""
     m = _REFERENCES_HEADING_RE.search(md)
     if not m:
         return md, 0
@@ -321,9 +302,7 @@ _TOP_N_RE = re.compile(r"Top\s+(\d+)", re.I)
 
 
 def fix_qei_title_count(md: str) -> tuple[str, bool]:
-    """Repair the QEI title's "Top N" count to match the actual number
-    of data rows in the QEI table. Universal — every topic's QEI uses
-    the same `Top N` title pattern."""
+    """Repair QEI title's Top-N count."""
     m = _QEI_HEADING_RE.search(md)
     if not m:
         return md, False
@@ -362,12 +341,7 @@ _QEI_EXCLUDED_TYPES = {"sample size"}
 
 
 def filter_qei_clinical_rows(md: str, *, max_rows: int = 20) -> tuple[str, int]:
-    """Keep journal-facing QEI rows clinically interpretable.
-
-    Universal rendering rule: sample sizes and generic extracted values
-    belong in the full supplement tables, while QEI should foreground
-    effect-like rows for outcomes a reader can interpret clinically.
-    """
+    """Keep journal-facing QEI rows clinically interpretable."""
     lines = md.splitlines()
     out: list[str] = []
     kept = removed = 0
@@ -407,6 +381,12 @@ _BROKEN_EFFECT_SENTENCE_RE = re.compile(
     r"(?:\s+of\s+[^.!?\n]+)?\.)\s*",
     re.I | re.M,
 )
+_STANDALONE_NUMERIC_FRAGMENT_RE = re.compile(
+    r"(?<=[.!?])\s+\d{1,2}\.\s+(?=[A-Z])",
+)
+_HTML_HEADING_RE = re.compile(
+    r"(?im)^(?P<prefix>#{1,6}\s*)?<H[1-6]>(?P<title>[^<\n]+)</H[1-6]>\s*$",
+)
 _PROTECTED_REJECT_HEADING_RE = re.compile(
     r"^#{1,4}\s*(?:Rejected\s*/?\s*Contested\s+Evidence|"
     r"Quarantined\s+Evidence|Quarantined\s+Receipts|References\b)[^\n]*\n",
@@ -418,13 +398,7 @@ def rejected_citation_tokens_from_artifacts(
     manifest: Mapping[str, Any],
     spar_cache: Mapping[str, Any],
 ) -> tuple[str, ...]:
-    """Return citation_tokens whose receipt_id has a SPAR reject verdict.
-
-    Universal — uses only the manifest receipt schema and spar_cache
-    verdict schema. The public scrubber then removes those tokens from
-    main-body evidence surfaces while preserving the quarantine appendix
-    and References.
-    """
+    """Return citation tokens with a SPAR reject verdict."""
     verdicts = spar_cache.get("verdicts")
     if not isinstance(verdicts, Mapping):
         return ()
@@ -454,11 +428,7 @@ def rejected_citation_tokens_from_artifacts(
 
 
 def scrub_broken_effect_estimates(md: str) -> tuple[str, int]:
-    """Remove truncated placeholder sentences such as
-    'UKPDS 1998 reported an effect estimate.'.
-
-    Delete-only: no attempt is made to invent a replacement estimate.
-    """
+    """Remove truncated effect-estimate placeholder sentences."""
     n = 0
 
     def repl(m: re.Match[str]) -> str:
@@ -467,6 +437,81 @@ def scrub_broken_effect_estimates(md: str) -> tuple[str, int]:
         return m.group(1)
 
     return _BROKEN_EFFECT_SENTENCE_RE.sub(repl, md), n
+
+
+def scrub_standalone_numeric_fragments(md: str) -> tuple[str, int]:
+    """Remove orphan numeric fragments such as '02.' between sentences."""
+    return _STANDALONE_NUMERIC_FRAGMENT_RE.subn(" ", md)
+
+
+def scrub_html_headings(md: str) -> tuple[str, int]:
+    """Normalize HTML-style heading tags into Markdown headings."""
+
+    def repl(m: re.Match[str]) -> str:
+        prefix = m.group("prefix") or "### "
+        return f"{prefix}{m.group('title').strip()}"
+
+    return _HTML_HEADING_RE.subn(repl, md)
+
+
+def _split_para_sentences(para: str) -> list[str]:
+    return [
+        s for s in re.split(r"(?<=[.!?])\s+(?=[A-Z])", para.strip())
+        if s.strip()
+    ]
+
+
+def scrub_repeated_sentences(
+    md: str, *, max_repeats: int = 2,
+) -> tuple[str, int]:
+    """Drop exact prose sentences after their allowed repeat budget."""
+    seen: dict[str, int] = {}
+    removed = 0
+    out: list[str] = []
+    for para in re.split(r"(\n{2,})", md):
+        stripped = para.lstrip()
+        if not para.strip() or stripped.startswith(("#", "|", "-", "*")):
+            out.append(para)
+            continue
+        sentences = _split_para_sentences(para)
+        kept: list[str] = []
+        for sent in sentences:
+            key = " ".join(sent.split()).lower()
+            seen[key] = seen.get(key, 0) + 1
+            if seen[key] > max_repeats:
+                removed += 1
+                continue
+            kept.append(sent.strip())
+        out.append(" ".join(kept) if kept else "")
+    rendered = "".join(out)
+    if md.endswith("\n") and not rendered.endswith("\n"):
+        rendered += "\n"
+    return rendered, removed
+
+
+def scrub_repeated_paragraphs(md: str, *, min_words: int = 25) -> tuple[str, int]:
+    """Drop exact duplicate prose paragraphs after the first occurrence."""
+    seen: set[str] = set()
+    removed = 0
+    out: list[str] = []
+    for part in re.split(r"(\n{2,})", md):
+        stripped = part.strip()
+        if not stripped or re.fullmatch(r"\n{2,}", part):
+            out.append(part)
+            continue
+        if stripped.startswith(("#", "|", "-", "*")):
+            out.append(part)
+            continue
+        key = re.sub(r"\s+", " ", stripped).lower()
+        if len(key.split()) >= min_words and key in seen:
+            removed += 1
+            continue
+        seen.add(key)
+        out.append(part)
+    rendered = "".join(out)
+    if md.endswith("\n") and not rendered.endswith("\n"):
+        rendered += "\n"
+    return re.sub(r"\n{3,}", "\n\n", rendered), removed
 
 
 def _protected_spans_for_rejected(md: str) -> list[tuple[int, int]]:
@@ -526,13 +571,7 @@ def scrub_rejected_evidence_leaks(
     md: str,
     rejected_citation_tokens: Iterable[str],
 ) -> tuple[str, int, int]:
-    """Delete SPAR-rejected citations from main evidence surfaces.
-
-    Preserves the dedicated Rejected / Contested Evidence quarantine
-    section and References. Outside those audit-only zones, removes
-    full markdown table rows and full prose sentences containing a
-    rejected citation token. It never rewrites claims.
-    """
+    """Delete SPAR-rejected citations outside quarantine and References."""
     token_re = _compile_token_re(rejected_citation_tokens)
     if token_re is None:
         return md, 0, 0
@@ -564,18 +603,14 @@ def scrub_paper(
     md: str, *, abstract_cap: int = 500,
     rejected_citation_tokens: Iterable[str] = (),
 ) -> tuple[str, ScrubReport]:
-    """Apply all scrubber rules in order. Returns (new_md, report).
-
-    Order:
-      1. residue (lexical strip)
-      2. abstract truncation (preserves remaining prose intent)
-      3. table dedupe (operates on table structure)
-      4. references dedupe (Wave 25)
-      5. rejected evidence leak deletion (Wave 26)
-      6. QEI title row-count fix (Wave 25/26)"""
+    """Apply all scrubber rules in order."""
     md, n_residue = scrub_engine_residue(md)
     md, abs_before, abs_after = truncate_abstract(md, cap=abstract_cap)
     md, n_broken_effect = scrub_broken_effect_estimates(md)
+    md, n_numeric_fragments = scrub_standalone_numeric_fragments(md)
+    md, n_html_headings = scrub_html_headings(md)
+    md, n_repeated_sentences = scrub_repeated_sentences(md)
+    md, n_repeated_paragraphs = scrub_repeated_paragraphs(md)
     md, n_dup_tables = dedupe_included_studies(md)
     md, n_dup_refs = dedupe_references_section(md)
     md, n_reject_rows, n_reject_sentences = scrub_rejected_evidence_leaks(
@@ -590,4 +625,7 @@ def scrub_paper(
         broken_effect_sentences_removed=n_broken_effect,
         rejected_evidence_rows_removed=n_reject_rows,
         rejected_evidence_sentences_removed=n_reject_sentences,
+        numeric_fragments_removed=n_numeric_fragments + n_html_headings,
+        repeated_sentences_removed=n_repeated_sentences,
+        repeated_paragraphs_removed=n_repeated_paragraphs,
     )

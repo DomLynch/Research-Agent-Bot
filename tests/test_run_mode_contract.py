@@ -61,7 +61,7 @@ def test_public_methods_stays_lean_but_substantive() -> None:
     assert match is not None, "rendered Methods must start with '## Methods'"
     body = match.group(1)
     n_words = len(re.findall(r"\b\w+\b", body))
-    assert 140 <= n_words <= 260
+    assert 300 <= n_words <= 360
     assert rmc.validate_rendered(methods) == []
 
 

@@ -1,7 +1,8 @@
 """Full-paper writer for trust-spine synthesis manuscripts."""
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
+import asyncio
+from collections.abc import Awaitable, Callable, Mapping, Sequence
 from typing import Any
 
 import httpx
@@ -62,8 +63,8 @@ SECTION_WORD_FLOORS: Mapping[str, int] = {
     # Discussion and 525-word Cross-Domain in the grok-smart run
     # were desk-reject territory). Q11 + Q12 audit gates enforce
     # 800-word floors at the audit layer too.
-    "cross_domain_synthesis": 950,   # Q12 floor 800 + journal-surface 850 + 100-word retry cushion
-    "discussion": 900,          # was 1100 → 900 (matches Q11 floor)
+    "cross_domain_synthesis": 1200,  # survives reviewer deletions and stays above Q12 800
+    "discussion": 1500,         # survives reviewer deletions and stays above Q11 800
     "limitations_full": 450,    # was 600
     "conclusion": 250,          # was 300
 }
@@ -80,32 +81,14 @@ FULL_PAPER_WORD_FLOOR = 5000
 # turns ~50% of the misses into AAA. Worst-case wall time is +1
 # section call (~30s), acceptable trade.
 SECTION_RETRY_BUDGET = 2
+WRITER_SECTION_PARALLELISM = 3
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
 
 
 def derive_paper_tier(summary: ReceiptSummary) -> str:
-    """Day 10.16 reviewer fix: split A1 by mechanistic-vs-clinical.
-
-    A receipt's `evidence_tier` field on the summary is the original
-    SPAR classification (A1 / A2 / B / C / mixed). For paper rendering,
-    we add a finer paper-level tier so the writer can frame human-
-    mechanistic RCTs differently from human-clinical RCTs:
-
-      A1_clinical_RCT      direct human RCT, clinical/functional endpoint
-                           (MASTERS muscle hypertrophy, MET-PREVENT
-                           walk speed, TAME cardiovascular events)
-      A2_human_mechanistic human RCT but mechanistic endpoint
-                           (MILES muscle/adipose transcriptomics,
-                           Konopka mitochondrial respiration)
-      B1_review            review / meta-analysis
-                           (Kulkarni 2022, Keys 2025, Mohammed 2021)
-      C1_preclinical       animal / in-vitro mechanistic
-      mixed                multi-source clusters
-
-    Tier is derived from existing fields — no schema change.
-    """
+    """Map receipt tier/directness/outcome to a reader-facing evidence tier."""
     tier = (summary.evidence_tier or "").upper()
     directness = (summary.directness or "").lower()
     outcome = (summary.outcome_class or "").lower()
@@ -154,10 +137,7 @@ _PAPER_TIER_HUMAN_LABEL: dict[str, str] = {
 
 
 def _humanize_paper_tier(internal_label: str) -> str:
-    """Fix #33: map the internal `A1_clinical_RCT` / `C1_preclinical`
-    style label to a reader-facing study-design phrase. MiMo was
-    copy-pasting the internal token verbatim into prose; the human-
-    readable form reads naturally if MiMo includes it."""
+    """Map internal tier labels to reader-facing study-design phrases."""
     return _PAPER_TIER_HUMAN_LABEL.get(internal_label, internal_label)
 
 
@@ -170,23 +150,7 @@ def _build_user_prompt(
     topic: str,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> str:
-    """Common LLM-prompt context block — accepted receipts + tensions +
-    thesis. Each LLM section gets the same context; the system prompt
-    does the section-specific work.
-
-    Day 10.17 Fix A: rejected (SPAR-quarantined) receipts are NOT
-    included in the LLM prompt context. The pre-Fix-A code emitted a
-    'QUARANTINED (SPAR-rejected) RECEIPTS:' block hoping the LLM would
-    respect the label — empirically it didn't (10.17 e2e run leaked
-    cfab-c02 into Background prose, Q8 ship-blocked). The writer
-    cannot cite what it does not see. Trust-spine transparency is
-    preserved through deterministic non-LLM paths: Methods describes
-    the SPAR pipeline including rejection, build_references_full_section
-    lists every receipt with its verdict tag, and the brief renders
-    rejected receipts in its 'Rejected / Contested Evidence' section.
-    The `rejected` parameter is retained for caller-API stability but
-    is intentionally unused here.
-    """
+    """Build accepted-only LLM prompt context; rejected is API-stability only."""
     _ = rejected  # Day 10.17 Fix A — intentionally unused, see docstring.
     lines = [f"Topic: {topic}", "", "ACCEPTED RECEIPTS:"]
     for r in receipts:
@@ -217,7 +181,7 @@ def _build_user_prompt(
             f"    thesis: {r.thesis_text[:300]}"
         )
     non_orth = matrix.non_orthogonal()
-    lines.extend(["", "TENSION MATRIX (non-orthogonal pairs):"])
+    lines.extend(["", "Cross-study tension evidence (do not quote this label):"])
     if non_orth:
         for t in non_orth:
             lines.append(
@@ -254,19 +218,7 @@ async def _write_anchored_section(
     fallback_body: str,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
-    """Build an ANCHORED section with code-level word-count retry.
-
-    Day 10.16c: prompts ask for length but LLMs default to concise
-    output. This wrapper enforces the floor at code level: if the
-    rendered section is under SECTION_WORD_FLOORS[name], retry up to
-    SECTION_RETRY_BUDGET times with a more aggressive expansion
-    prompt. Pick the longest valid attempt across all retries.
-
-    Fix #20: after the word-count retry loop converges, run a
-    one-shot citation-fix pass — if the best attempt used background
-    numerics without the canonical citation, re-prompt MiMo to add
-    the citation IN the same sentence (rather than letting the
-    Stage-2 auto-fixer strip the sentence and tank Q9 density)."""
+    """Build an anchored section with retry and citation repair."""
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
     best: SynthesisSection | None = None
     best_words = 0
@@ -305,6 +257,7 @@ async def _write_anchored_section(
         background_lit_entries=background_lit_entries,
         chain=chain, client=client, ledger=ledger, seed=seed,
         call_llm_fn=_call_llm_section,
+        min_words=floor,
     )
     return best or SynthesisSection(
         name=name, body_md=fallback_body, anchors=(),
@@ -326,13 +279,7 @@ async def _write_scoped_section(
     fallback_body: str,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
-    """Build a SCOPED section with code-level word-count retry.
-
-    See `_write_anchored_section` for the retry contract.
-
-    Fix #20: identical citation-fix pass — applies to scoped sections
-    too (Background and Discussion are the highest-density carriers
-    for canonical clinical thresholds)."""
+    """Build a scoped section with retry and citation repair."""
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
     best: SynthesisSection | None = None
     best_words = 0
@@ -372,6 +319,7 @@ async def _write_scoped_section(
         background_lit_entries=background_lit_entries,
         chain=chain, client=client, ledger=ledger, seed=seed,
         call_llm_fn=_call_llm_section,
+        min_words=floor,
     )
     return best or SynthesisSection(
         name=name, body_md=fallback_body, anchors=(),
@@ -391,14 +339,7 @@ async def write_results_section(
     seed: int | None = None,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
-    """ANCHORED multi-paragraph Results with code-level word retry.
-    Each subsection has its own H3 heading. Each paragraph cites
-    ≥1 accepted receipt. If overall Results word count is below
-    SECTION_WORD_FLOORS['results'], retry up to N times.
-
-    Fix #20: trail with one-shot citation-fix pass. Results rarely
-    needs background-lit context (it's anchored to the receipts) but
-    when it does, the fix pass keeps Q9 density up."""
+    """Build the anchored multi-subsection Results section."""
     user = _build_user_prompt(
         receipts, rejected, matrix, thesis, topic=topic,
         background_lit_entries=background_lit_entries,
@@ -453,6 +394,7 @@ async def write_results_section(
         background_lit_entries=background_lit_entries,
         chain=chain, client=client, ledger=ledger, seed=seed,
         call_llm_fn=_call_llm_section,
+        min_words=floor,
     )
     return best or SynthesisSection(
         name="results", body_md=fallback, anchors=(),
@@ -495,17 +437,7 @@ async def render_full_paper(
     qei_citation_tokens_by_paper_id: Mapping[str, str] | None = None,
     qei_quarantine_path: Any | None = None,
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
-    """Render the full paper from accepted-receipt corpus + brief.
-
-    Returns (body_md, sections_tuple) — the full markdown plus the
-    per-section anchors so an audit pass can scan citation coverage.
-
-    Fix #18a: optional background_lit_entries (from
-    scripts/background_literature.load_registry()) get formatted into
-    a writer-facing 'ALLOWED BACKGROUND CITATIONS' block in the user
-    prompt. The writer is told to use any of these only with the
-    canonical citation_token in the SAME sentence — Stage-2 audit
-    enforces."""
+    """Render full paper markdown plus ordered synthesis sections."""
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",
@@ -552,41 +484,95 @@ async def render_full_paper(
         )
 
     print("[paper_writer] starting full-paper render", flush=True)
-    sections["abstract"] = await _write_anchored_section(
-        name="abstract", heading="## Abstract",
-        system_prompt=_prompts["abstract"], user_prompt=user,
-        accepted=accepted, chain=chain, client=client, ledger=ledger,
-        seed=seed,
-        fallback_body="## Abstract\n\nThis synthesis summarizes the accepted receipt set and deterministic audit bundle for the current topic.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("abstract", sections["abstract"])
-    sections["introduction"] = await _write_scoped_section(
-        name="introduction", heading="## Introduction",
-        system_prompt=_prompts["introduction"], user_prompt=user,
-        topic=topic, accepted=accepted, chain=chain, client=client,
-        ledger=ledger, seed=seed,
-        fallback_body="## Introduction\n\nThis paper evaluates the topic through accepted receipts, source-traced quantitative claims, and explicit audit gates.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("introduction", sections["introduction"])
-    sections["background"] = await _write_scoped_section(
-        name="background", heading="## Background",
-        system_prompt=_prompts["background"], user_prompt=user,
-        topic=topic, accepted=accepted, chain=chain, client=client,
-        ledger=ledger, seed=seed,
-        fallback_body="## Background\n\nThe background is limited to corpus-supported context and does not add load-bearing claims outside the accepted receipts.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("background", sections["background"])
     from agent.inferential_bridge import build_inferential_bridge_section
     _bridge_spec = pack.inference if pack and pack.inference.allow else None
-    sections["inferential_bridge"] = await build_inferential_bridge_section(
-        accepted, topic=topic, chain=chain, spec=_bridge_spec,
-        client=client, ledger=ledger, seed=seed,
-    )
-    if sections["inferential_bridge"].body_md:
-        _log_section_done("inferential_bridge", sections["inferential_bridge"])
+    sem = asyncio.Semaphore(WRITER_SECTION_PARALLELISM)
+
+    async def _bounded(
+        label: str,
+        factory: Callable[[], Awaitable[SynthesisSection]],
+        *,
+        log_empty: bool = True,
+    ) -> SynthesisSection:
+        async with sem:
+            section = await factory()
+        if log_empty or section.body_md:
+            _log_section_done(label, section)
+        return section
+
+    tasks: dict[SectionName, asyncio.Task[SynthesisSection]] = {
+        "abstract": asyncio.create_task(_bounded("abstract", lambda: _write_anchored_section(
+            name="abstract", heading="## Abstract",
+            system_prompt=_prompts["abstract"], user_prompt=user,
+            accepted=accepted, chain=chain, client=client, ledger=ledger,
+            seed=seed,
+            fallback_body="## Abstract\n\nThis synthesis summarizes the accepted receipt set and deterministic audit bundle for the current topic.\n",
+            background_lit_entries=background_lit_entries,
+        ))),
+        "introduction": asyncio.create_task(_bounded("introduction", lambda: _write_scoped_section(
+            name="introduction", heading="## Introduction",
+            system_prompt=_prompts["introduction"], user_prompt=user,
+            topic=topic, accepted=accepted, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            fallback_body="## Introduction\n\nThis paper evaluates the topic through accepted receipts, source-traced quantitative claims, and explicit audit gates.\n",
+            background_lit_entries=background_lit_entries,
+        ))),
+        "background": asyncio.create_task(_bounded("background", lambda: _write_scoped_section(
+            name="background", heading="## Background",
+            system_prompt=_prompts["background"], user_prompt=user,
+            topic=topic, accepted=accepted, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            fallback_body="## Background\n\nThe background is limited to corpus-supported context and does not add load-bearing claims outside the accepted receipts.\n",
+            background_lit_entries=background_lit_entries,
+        ))),
+        "inferential_bridge": asyncio.create_task(_bounded(
+            "inferential_bridge",
+            lambda: build_inferential_bridge_section(
+                accepted, topic=topic, chain=chain, spec=_bridge_spec,
+                client=client, ledger=ledger, seed=seed,
+            ),
+            log_empty=False,
+        )),
+        "results": asyncio.create_task(_bounded("results", lambda: write_results_section(
+            accepted, rejected, matrix, thesis,
+            topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
+            background_lit_entries=background_lit_entries,
+        ))),
+        "cross_domain_synthesis": asyncio.create_task(_bounded("cross_domain_synthesis", lambda: _write_anchored_section(
+            name="cross_domain_synthesis",
+            heading="## Cross-Domain Synthesis",
+            system_prompt=_prompts["cross_domain_synthesis"],
+            user_prompt=user,
+            accepted=accepted, chain=chain, client=client, ledger=ledger,
+            seed=seed,
+            fallback_body="## Cross-Domain Synthesis\n\nCross-domain interpretation is bounded by the accepted receipt set, outcome coverage, and source-traced claims.\n",
+            background_lit_entries=background_lit_entries,
+        ))),
+        "discussion": asyncio.create_task(_bounded("discussion", lambda: _write_scoped_section(
+            name="discussion", heading="## Discussion",
+            system_prompt=_prompts["discussion"], user_prompt=user,
+            topic=topic, accepted=accepted, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            fallback_body="## Discussion\n\nThe interpretation remains cautious, limited, and context-dependent because the accepted evidence spans different populations, outcomes, and evidence tiers.\n",
+            background_lit_entries=background_lit_entries,
+        ))),
+        "limitations_full": asyncio.create_task(_bounded("limitations_full", lambda: _write_anchored_section(
+            name="limitations_full", heading="## Limitations",
+            system_prompt=_prompts["limitations_full"], user_prompt=user,
+            accepted=accepted, chain=chain, client=client, ledger=ledger,
+            seed=seed,
+            fallback_body="## Limitations\n\nInference is bounded by the accepted receipt set, outcome coverage, and source-traced numeric claims.\n",
+            background_lit_entries=background_lit_entries,
+        ))),
+        "conclusion": asyncio.create_task(_bounded("conclusion", lambda: _write_scoped_section(
+            name="conclusion", heading="## Conclusion",
+            system_prompt=_prompts["conclusion"], user_prompt=user,
+            topic=topic, accepted=accepted, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            fallback_body="## Conclusion\n\nThe conclusion is limited to claims that survive receipt qualification, source-context checks, and final audit gates.\n",
+            background_lit_entries=background_lit_entries,
+        ))),
+    }
     # Universal Q9 structural fix (2026-05-04): deterministic
     # Quantitative Evidence Index built from raw corpus
     # quant_claims.json — per-CLAIM rows, not per-receipt, so the
@@ -642,23 +628,8 @@ async def render_full_paper(
         receipts, topic=topic, submission_id=submission_id,
     )
     _log_section_done("methods (deterministic)", sections["methods"])
-    sections["results"] = await write_results_section(
-        accepted, rejected, matrix, thesis,
-        topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("results", sections["results"])
-    sections["cross_domain_synthesis"] = await _write_anchored_section(
-        name="cross_domain_synthesis",
-        heading="## Cross-Domain Synthesis",
-        system_prompt=_prompts["cross_domain_synthesis"],
-        user_prompt=user,
-        accepted=accepted, chain=chain, client=client, ledger=ledger,
-        seed=seed,
-        fallback_body="## Cross-Domain Synthesis\n\nCross-domain interpretation is bounded by the accepted receipt set, outcome coverage, and source-traced claims.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
+    for name in tasks:
+        sections[name] = await tasks[name]
     sections["novel_framework"] = build_novel_framework_section(
         accepted, matrix, topic=topic,
     )
@@ -671,33 +642,6 @@ async def render_full_paper(
         "framework_engagement (deterministic)",
         sections["framework_engagement"],
     )
-    sections["discussion"] = await _write_scoped_section(
-        name="discussion", heading="## Discussion",
-        system_prompt=_prompts["discussion"], user_prompt=user,
-        topic=topic, accepted=accepted, chain=chain, client=client,
-        ledger=ledger, seed=seed,
-        fallback_body="## Discussion\n\nThe interpretation remains cautious, limited, and context-dependent because the accepted evidence spans different populations, outcomes, and evidence tiers.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("discussion", sections["discussion"])
-    sections["limitations_full"] = await _write_anchored_section(
-        name="limitations_full", heading="## Limitations",
-        system_prompt=_prompts["limitations_full"], user_prompt=user,
-        accepted=accepted, chain=chain, client=client, ledger=ledger,
-        seed=seed,
-        fallback_body="## Limitations\n\nInference is bounded by the accepted receipt set, outcome coverage, and source-traced numeric claims.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("limitations_full", sections["limitations_full"])
-    sections["conclusion"] = await _write_scoped_section(
-        name="conclusion", heading="## Conclusion",
-        system_prompt=_prompts["conclusion"], user_prompt=user,
-        topic=topic, accepted=accepted, chain=chain, client=client,
-        ledger=ledger, seed=seed,
-        fallback_body="## Conclusion\n\nThe conclusion is limited to claims that survive receipt qualification, source-context checks, and final audit gates.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("conclusion", sections["conclusion"])
     sections["references_full"] = build_references_full_section(receipts)
     _log_section_done("references_full (deterministic)", sections["references_full"])
 
@@ -715,7 +659,3 @@ __all__ = [
     "write_results_section",
     "render_full_paper",
 ]
-
-
-# Suppressing unused-import warning — Mapping/Any kept for type-hint clarity.
-_: tuple[Any, ...] = (Mapping, Any)

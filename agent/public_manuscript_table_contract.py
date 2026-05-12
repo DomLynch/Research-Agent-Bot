@@ -122,6 +122,61 @@ def _tokens(text: str) -> set[str]:
     return {w for w in re.findall(r"[a-z0-9]+", text.lower()) if w not in _OUTCOME_STOP}
 
 
+def _major_section(md: str, name: str) -> str:
+    m = re.search(rf"(?m)^##\s+{re.escape(name)}\b[^\n]*\n", md)
+    if not m:
+        return ""
+    nxt = re.search(r"(?m)^##\s+\S", md[m.end():])
+    return md[m.end():m.end() + nxt.start()] if nxt else md[m.end():]
+
+
+def _subsections(md: str) -> dict[str, str]:
+    heads = list(re.finditer(r"(?m)^###\s+([^\n]+)$", md))
+    return {
+        h.group(1).strip(): md[h.end():heads[i + 1].start() if i + 1 < len(heads) else len(md)]
+        for i, h in enumerate(heads)
+    }
+
+
+def results_section_failures(md: str, receipts: list[dict], *, min_words: int = 180) -> list[str]:
+    if not all(re.search(rf"(?m)^##\s+{h}\b", md) for h in ("Abstract", "Introduction", "Methods", "Results", "Discussion", "Conclusion")):
+        return []
+    results = _major_section(md, "Results")
+    if not results:
+        return ["Results section missing."]
+    subsections = _subsections(results)
+    if not subsections:
+        return ["Results section has no outcome subsections."]
+    cites_by_outcome: dict[str, set[str]] = {}
+    required: set[str] = set()
+    for r in receipts:
+        outcome = str(r.get("outcome_class") or "").strip()
+        cite = str(r.get("citation_token") or "").strip()
+        if not outcome or not cite:
+            continue
+        cites_by_outcome.setdefault(outcome, set()).add(cite)
+        if str(r.get("directness") or "").lower() == "direct" or str(r.get("tier") or "") == "A1":
+            required.add(outcome)
+    out: list[str] = []
+    for heading, body in subsections.items():
+        if len(re.findall(r"\b\w+\b", body)) < min_words:
+            out.append(f"Results subsection '{heading}' is under {min_words} words.")
+    for outcome, cite_set in cites_by_outcome.items():
+        cites = sorted(cite_set)
+        if len(cites) < 2 and outcome not in required:
+            continue
+        ot = _tokens(outcome)
+        match = next(((h, b) for h, b in subsections.items() if ot & _tokens(h)), None)
+        if match is None:
+            out.append(f"accepted outcome_class='{outcome}' has no matching Results subsection.")
+            continue
+        n_cited = sum(1 for c in cites if re.search(r"\b" + re.escape(c) + r"\b", match[1]))
+        need = min(2, len(cites))
+        if n_cited < need:
+            out.append(f"Results subsection '{match[0]}' cites {n_cited}/{need} expected {outcome} receipt(s).")
+    return out
+
+
 def section_outcome_failures(md: str, receipts: list[dict]) -> list[str]:
     items = [
         (

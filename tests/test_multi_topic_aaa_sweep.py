@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import sys
+import threading
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -103,3 +104,37 @@ def test_read_verdict_fail_soft_on_corrupt_json(tmp_path: Path) -> None:
     (tmp_path / "full_paper.final_verdict.json").write_text("not json")
     g = _read_verdict(tmp_path)
     assert g["verdict"] is None
+
+
+def test_main_runs_topics_in_parallel_when_jobs_gt_one(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    import multi_topic_aaa_sweep as sweep
+
+    barrier = threading.Barrier(2)
+    active = 0
+    max_active = 0
+    lock = threading.Lock()
+
+    def fake_run_topic(topic: str, **kwargs) -> dict:
+        nonlocal active, max_active
+        with lock:
+            active += 1
+            max_active = max(max_active, active)
+        barrier.wait(timeout=2)
+        with lock:
+            active -= 1
+        return {"passes": [{"pass": 1, "gates": {}}], "log_path": topic}
+
+    monkeypatch.setattr(sweep, "REPO", tmp_path)
+    monkeypatch.setattr(sweep, "_run_topic", fake_run_topic)
+
+    rc = sweep.main([
+        "--topics", "metformin", "rapamycin",
+        "--passes", "1",
+        "--jobs", "2",
+    ])
+
+    assert rc == 0
+    assert max_active == 2

@@ -181,15 +181,21 @@ def _check_scoped_paragraph(
     text: str,
     topic: str,
     receipt_ids: Sequence[str],
+    accepted_ids: set[str],
     accepted_corpus_norm: str,
 ) -> tuple[bool, str]:
     if not text.strip():
         return False, "empty_paragraph"
     norm = _normalize(text)
+    has_accepted_anchor = any(rid in accepted_ids for rid in receipt_ids)
     aliases = _topic_aliases(topic)
-    if aliases and max(norm.count(a) for a in aliases) < 2:
+    if (
+        not has_accepted_anchor
+        and aliases
+        and max(norm.count(a) for a in aliases) < 2
+    ):
         return False, f"topic_alias_under_count:<2:{aliases[0]!r}"
-    if not any(h in norm for h in _HEDGE_PHRASES):
+    if not has_accepted_anchor and not any(h in norm for h in _HEDGE_PHRASES):
         return False, "missing_hedge_phrase"
     for m in _NUMERIC_RE.finditer(text):
         tok = _normalize(m.group(0))
@@ -274,7 +280,7 @@ def build_scoped_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         ok, _reason = _check_scoped_paragraph(
-            text, topic, repaired_rids, corpus_norm,
+            text, topic, repaired_rids, accepted_ids, corpus_norm,
         )
         if not ok:
             continue

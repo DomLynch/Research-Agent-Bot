@@ -60,7 +60,7 @@ def test_section_has_required_heading() -> None:
 
 
 def test_section_includes_corpus_size_and_outcome_count() -> None:
-    """The opening sentence must report N receipts and N outcome
+    """The opening sentence must report N sources and N outcome
     classes — the corpus characterisation that grounds originality."""
     receipts = [
         _r("Walton 2019", outcome="muscle_function"),
@@ -70,13 +70,14 @@ def test_section_includes_corpus_size_and_outcome_count() -> None:
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
-    assert "3 accepted receipts" in md
+    assert "3 eligible sources" in md
     assert "3 outcome classes" in md
     assert "metformin" in md
 
 
-def test_section_quotes_picked_thesis_verbatim() -> None:
-    """The picked thesis must surface verbatim in public language."""
+def test_section_does_not_quote_picked_thesis_verbatim() -> None:
+    """The selector thesis can carry internal inventory language; the
+    public section states the contribution shape instead."""
     thesis_text = (
         "Metformin's longevity signal coexists with an "
         "exercise-adaptation penalty in older-adult RCTs."
@@ -85,11 +86,32 @@ def test_section_quotes_picked_thesis_verbatim() -> None:
         [_r("Walton 2019")], _matrix([_r("Walton 2019")]),
         _thesis(thesis_text), topic="metformin",
     )
-    assert thesis_text in md
-    assert "Central claim" in md
+    assert thesis_text not in md
+    assert "Central contribution" in md
     assert "Selected thesis" not in md
     assert "Picked thesis" not in md
     assert "Tournament selector" not in md
+
+
+def test_section_strips_pipeline_direction_inventory_from_thesis() -> None:
+    thesis_text = (
+        "Across 27 curated papers, the profile is context-dependent. "
+        "Positive signals appear in: cardiometabolic, longevity. "
+        "Negative signals appear in: muscle function. "
+        "Null findings dominate: frailty. "
+        "The synthesis surfaces 102 non-orthogonal tensions across "
+        "outcome classes — see Cross-Domain Synthesis. "
+        "The anti-aging claim remains bounded by functional tradeoffs."
+    )
+    md = build_what_this_adds_section(
+        [_r("Walton 2019")], _matrix([_r("Walton 2019")]),
+        _thesis(thesis_text), topic="metformin",
+    )
+    assert "Positive signals appear in" not in md
+    assert "Negative signals appear in" not in md
+    assert "Null findings dominate" not in md
+    assert "The synthesis surfaces" not in md
+    assert "boundary-condition map" in md
 
 
 def test_section_highlights_load_bearing_tension() -> None:
@@ -184,11 +206,11 @@ def test_section_filters_to_accepted_receipts_only() -> None:
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
-    assert "1 accepted receipt" in md
+    assert "1 eligible source" in md
     assert "Rejected 2020" not in md
 
 
-def test_section_includes_research_contribution_layer() -> None:
+def test_section_keeps_research_contribution_compact() -> None:
     receipts = [
         _r("Direct 2024", outcome="cardiometabolic", directness="direct"),
         _r("Indirect 2023", outcome="cognitive", directness="indirect",
@@ -197,11 +219,11 @@ def test_section_includes_research_contribution_layer() -> None:
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
-    assert "### Boundary-Condition Matrix" in md
-    assert "### Evidence-Gap Priority" in md
-    assert "### Next-Study Design Recommendation" in md
-    assert "| cognitive | 0 | 1 |" in md
-    assert "direct clinical gap" in md
+    body = md.split("\n", 1)[1]
+    assert "### Boundary-Condition Matrix" not in md
+    assert "### Evidence-Gap Priority" not in md
+    assert "### Next-Study Design Recommendation" not in md
+    assert len(body.split()) <= 220
 
 
 def test_section_uses_design_weighting_not_risk_rollup_language() -> None:
@@ -212,6 +234,7 @@ def test_section_uses_design_weighting_not_risk_rollup_language() -> None:
         topic="rapamycin",
     )
     assert "design-level evidence weighting" in md
+    assert "tension matrix" not in md.lower()
     assert "risk-of-bias roll-up" not in md
     assert "overall RoB" not in md
 
@@ -231,25 +254,25 @@ def test_section_has_no_public_audit_jargon_or_main_table_refs() -> None:
         "Table 4",
         "Table 5",
         "risk-of-bias roll-up",
+        "structured evidence-audit workflow",
     )
     for phrase in banned:
         assert phrase not in md
-    assert "structured evidence-audit workflow" in md
-    assert "see Methods and supplement" in md
+    assert "design-level evidence weighting" in md
 
 
-def test_research_contribution_layer_humanizes_public_labels() -> None:
+def test_what_adds_keeps_outcome_labels_out_of_main_summary() -> None:
     receipts = [
         _r("Direct 2024", outcome="muscle_function", directness="direct"),
     ]
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="urolithin A",
     )
-    assert "muscle function" in md
+    assert "outcome class" in md
     assert "muscle_function" not in md
 
 
-def test_next_study_design_targets_highest_priority_gap() -> None:
+def test_what_adds_does_not_inline_next_study_design_table() -> None:
     receipts = [
         _r("Direct Cardio", outcome="cardiometabolic", directness="direct"),
         _r("Indirect Frailty", outcome="frailty", directness="indirect",
@@ -258,5 +281,6 @@ def test_next_study_design_targets_highest_priority_gap() -> None:
     md = build_what_this_adds_section(
         receipts, _matrix(receipts), _thesis(), topic="caloric restriction",
     )
-    assert "target the **frailty** evidence gap" in md
-    assert "pre-register the primary endpoint" in md
+    assert "Next-Study Design Recommendation" not in md
+    assert "pre-register the primary endpoint" not in md
+    assert len(md.split()) <= 220

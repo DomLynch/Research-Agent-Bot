@@ -189,6 +189,54 @@ def test_count_consistency_flags_receipt_mismatch() -> None:
     assert any(f.rule == "count_consistency" for f in r.failures)
 
 
+def test_results_subsection_completeness_blocks_empty_or_missing_outcomes() -> None:
+    md = (
+        "# Research Synthesis: Topic — full paper\n\n"
+        "## Abstract\n\nSummary.\n\n## Introduction\n\nIntro.\n\n"
+        "## Background\n\nBg.\n\n## Methods\n\nMethods.\n\n"
+        "## Results\n\n### Cardiometabolic Outcomes\n\n"
+        + " ".join(f"word{i}" for i in range(190))
+        + " Smith 2020. Jones 2021.\n\n"
+        "### Longevity and Lifespan Outcomes\n\n\n"
+        "## Cross-Domain Synthesis\n\nSynthesis.\n\n"
+        "## Metabolic-Functional Tradeoff Framework\n\n"
+        "| Layer | Evidence example | Supports | Cannot support |\n"
+        "|---|---|---|---|\n| A | B | C | D |\n\n"
+        "## Discussion\n\nDiscuss.\n\n## Limitations\n\nLimit.\n\n"
+        "## Conclusion\n\nClose.\n"
+    )
+    manifest = _baseline_manifest(receipts=[
+        {"receipt_id": "r1", "citation_token": "Smith 2020", "outcome_class": "cardiometabolic"},
+        {"receipt_id": "r2", "citation_token": "Jones 2021", "outcome_class": "cardiometabolic"},
+        {"receipt_id": "r3", "citation_token": "Walton 2019", "outcome_class": "muscle_function", "directness": "direct", "tier": "A1"},
+        {"receipt_id": "r4", "citation_token": "Anisimov 2010", "outcome_class": "longevity"},
+        {"receipt_id": "r5", "citation_token": "Cabreiro 2013", "outcome_class": "longevity"},
+    ])
+    r = validate(md, manifest)
+    details = "\n".join(f.detail for f in r.failures)
+    assert any(f.rule == "section_outcome_integrity" for f in r.failures)
+    assert "Longevity and Lifespan Outcomes" in details
+    assert "muscle_function" in details
+
+
+def test_framework_integrity_requires_real_heading_not_abstract_sentence() -> None:
+    md = (
+        "# Research Synthesis: Topic — full paper\n\n"
+        "## Abstract\n\nWe propose a Metabolic-Functional Tradeoff Framework "
+        "showing the evidence is bounded.\n\n"
+        "## Introduction\n\nIntro.\n\n## Background\n\nBg.\n\n"
+        "## Methods\n\nMethods.\n\n## Results\n\nResult.\n\n"
+        "## Discussion\n\nDiscuss.\n\n## Limitations\n\nLimit.\n\n"
+        "## Conclusion\n\nClose.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "framework_integrity"
+        and "framework section missing" in f.detail
+        for f in r.failures
+    )
+
+
 # ---- rule 2: duplicate rows ---------------------------------------------
 
 
@@ -525,6 +573,37 @@ def test_section_boundary_passes_normal_paper() -> None:
     assert "section_boundary" not in rules
 
 
+def test_public_shape_flags_pre_abstract_fused_heading_and_ordinal_gap() -> None:
+    md = (
+        "Orphan public sentence before abstract.\n\n"
+        "## Abstract\n\n"
+        "Metformin is being studied. elegans model, metformin improved lifespan. "
+        "It was dosed at 850 mg for diabetes.\n\n"
+        "## Cross-Domain Synthesis\n\n"
+        "A second tension is visible. A fourth tension remains unresolved. "
+        "summary.## Metabolic-Functional Tradeoff Framework\n\n"
+        "| Layer | Evidence example | Supports | Cannot support |\n"
+        "|---|---|---|---|\n| A | B | C | D |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    details = "\n".join(f.detail for f in r.failures)
+    assert "before the Abstract" in details
+    assert "lowercase sentence fragment" in details
+    assert "dose-as-definition" in details
+    assert "heading fused" in details
+    assert "ordinal gap" in details
+
+
+def test_reference_integrity_flags_orphan_and_merged_pmids() -> None:
+    md = (
+        "## References\n\n"
+        "- **Walton 2019.** _Title._ PMID: 31557380. PMID: 30548390.\n"
+        "PMID: 12345678.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(f.rule == "reference_integrity" for f in r.failures)
+
+
 # ---- rule 4: residue phrase ---------------------------------------------
 
 
@@ -659,6 +738,18 @@ def test_broken_prose_flags_floor_backfill_fragment() -> None:
     )
 
 
+def test_broken_prose_flags_standalone_numeric_fragment() -> None:
+    md = (
+        "## Cross-Domain Synthesis\n\n"
+        "A tension remains unresolved. 02. The supported sentence follows.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "broken_prose" and "standalone numeric" in f.detail
+        for f in r.failures
+    )
+
+
 def test_malformed_table_row_flags_orphan_fragment() -> None:
     md = (
         "## Table 2: Per-Study Endpoint Evidence\n\n"
@@ -702,6 +793,48 @@ def test_repeated_boilerplate_passes_short_repeats() -> None:
     md = "## A\n\nIt was good.\n## B\n\nIt was good.\n## C\n\nIt was good.\n"
     r = validate(md, _baseline_manifest())
     assert not any(f.rule == "repeated_boilerplate" for f in r.failures)
+
+
+def test_repeated_boilerplate_flags_duplicate_paragraphs() -> None:
+    para = (
+        "Against this, the most damaging direct evidence comes from an "
+        "exercise-adaptation trial where functional interpretation remains "
+        "conditional and clinically relevant for trial design, outcome "
+        "selection, and future geroscience translation."
+    )
+    md = f"## A\n\n{para}\n\n## B\n\n{para}\n"
+    r = validate(md, _baseline_manifest())
+    assert any(
+        f.rule == "repeated_boilerplate" and "paragraph repeated" in f.detail
+        for f in r.failures
+    )
+
+
+def test_residue_flags_public_outline_artifacts() -> None:
+    md = (
+        "## Abstract\n\n**Thesis:** The accepted receipt corpus is bounded.\n\n"
+        "## Background\n\nThe context is constrained. Third, the evidence remains conditional.\n\n"
+        "## Discussion\n\nThe tension matrix should stay internal.\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert sum(f.rule == "residue_phrase" for f in r.failures) >= 4
+
+
+def test_framework_integrity_requires_public_table() -> None:
+    md = "## Endpoint-Sensitivity Framework\n\nFramework prose only.\n"
+    r = validate(md, _baseline_manifest())
+    assert any(f.rule == "framework_integrity" for f in r.failures)
+
+
+def test_framework_integrity_passes_with_evidence_layer_table() -> None:
+    md = (
+        "## Metabolic-Functional Tradeoff Framework\n\n"
+        "| Layer | Evidence example | Supports | Cannot support |\n"
+        "| --- | --- | --- | --- |\n"
+        "| Biomarker | HbA1c | metabolic signal | geroprotection |\n"
+    )
+    r = validate(md, _baseline_manifest())
+    assert not any(f.rule == "framework_integrity" for f in r.failures)
 
 
 # ---- rule 9: SPAR reject leakage ----------------------------------------

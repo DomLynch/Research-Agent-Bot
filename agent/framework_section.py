@@ -1,27 +1,4 @@
-"""Phase 3 framework-section adapter.
-
-End-to-end builder for the "Engagement with Established Frameworks"
-section: takes manifest-shaped receipts + an optional citation registry
-+ optional background references, calls `agent.field_engagement.
-evaluate_engagement`, and renders deterministic markdown.
-
-Stdlib-only. No LLM. No raw-paper shortcut. The five named frameworks
-(Mannick, Lamming, Kennedy, Kaeberlein, Lopez-Otin) are emitted only
-when the corpus actually contains supporting receipts; insufficient
-support is rendered honestly with a [provisional] marker rather than
-fabricated.
-
-Section format:
-
-    ## Engagement with Established Frameworks
-
-    Of the {N} evaluated frameworks: {S} support, {C} challenge,
-    {E} extends, {I} insufficient.
-
-    ### Mannick
-    [status-driven paragraph citing matched receipts]
-    ...
-"""
+"""Deterministic framework and framework-engagement section renderers."""
 from __future__ import annotations
 
 from collections.abc import Iterable, Mapping, Sequence
@@ -35,31 +12,16 @@ from agent.field_engagement import (
 )
 from agent.synthesis_schemas import ReceiptSummary, SynthesisSection, TensionMatrix
 
-__all__ = [
-    "SectionConfig",
-    "build_framework_engagement_records",
-    "build_framework_engagement_section",
-    "build_framework_section",
-    "build_novel_framework_section",
-    "render_engagement_section",
-    "render_engagement_summary_line",
-    "render_framework_paragraph",
-    "enrich_receipts_with_registry",
-]
+__all__ = ["SectionConfig", "build_framework_engagement_records",
+           "build_framework_engagement_section", "build_framework_section",
+           "build_novel_framework_section", "render_engagement_section",
+           "render_engagement_summary_line", "render_framework_paragraph",
+           "enrich_receipts_with_registry"]
 
 
 @dataclass(frozen=True, slots=True)
 class SectionConfig:
-    """Render-time options for the engagement section.
-
-    include_insufficient — emit an entry for each framework with status
-                           "insufficient", marked [provisional]. False
-                           hides them entirely (use when corpus is final
-                           and the gap is uninformative).
-    heading_level         — top-level heading level (## by default).
-    framework_order       — explicit framework name order; None preserves
-                           input order.
-    """
+    """Render-time options for the engagement section."""
 
     include_insufficient: bool = True
     heading_level: int = 2
@@ -138,6 +100,55 @@ def build_framework_engagement_records(
     return tuple(evaluate_engagement(receipt_rows, background_rows))
 
 
+def _public_label(value: object) -> str:
+    return str(value or "").replace("_", " ").replace("-", " ").strip()
+
+
+def _has_outcome(outcomes: set[str], *needles: str) -> bool:
+    return any(any(n in outcome for n in needles) for outcome in outcomes)
+
+
+def _framework_table(
+    framework_name: str,
+    outcomes: set[str],
+    has_mechanistic: bool,
+) -> list[str]:
+    if "Metabolic-Functional" in framework_name:
+        metabolic = (
+            "HbA1c, LDL, body weight, or adiposity"
+            if _has_outcome(outcomes, "cardio", "metabolic", "weight")
+            else "metabolic biomarkers"
+        )
+        functional = (
+            "hypertrophy, mitochondrial adaptation, gait speed, or grip strength"
+            if _has_outcome(outcomes, "muscle", "frailty", "function")
+            else "functional endpoints"
+        )
+        rows = [
+            ("Metabolic marker", metabolic, "metabolic or cardiometabolic benefit", "geroprotection"),
+            ("Mechanistic aging", "AMPK, NF-kB, senescence, or microbiome effects", "biological plausibility", "functional benefit"),
+            ("Exercise adaptation", functional, "healthspan-relevant tradeoff", "longevity claim"),
+            ("Hard outcome", "frailty, disability, multimorbidity, or mortality", "true geroprotection", "currently absent unless directly tested"),
+        ]
+    else:
+        mechanism = (
+            "pathway and cellular mechanisms"
+            if has_mechanistic else "proximal pathway markers"
+        )
+        rows = [
+            ("Pathway marker", mechanism, "target engagement", "clinical benefit"),
+            ("Intermediate biomarker", "biomarker movement", "plausible mechanism", "healthspan claim"),
+            ("Functional endpoint", "function, resilience, or safety outcomes", "early human signal", "longevity claim"),
+            ("Hard clinical endpoint", "frailty, morbidity, or mortality", "practice relevance", "currently absent unless directly tested"),
+        ]
+    lines = [
+        "| Layer | Evidence example | Supports | Cannot support |",
+        "|---|---|---|---|",
+    ]
+    lines.extend(f"| {a} | {b} | {c} | {d} |" for a, b, c, d in rows)
+    return lines
+
+
 def build_novel_framework_section(
     receipts: Sequence[ReceiptSummary],
     matrix: TensionMatrix,
@@ -165,19 +176,16 @@ def build_novel_framework_section(
         ) if label in tension_kinds
     ) or "cross-receipt"
     outcome_classes = {str(r.outcome_class).lower() for r in receipts}
-    has_metabolic = any(
-        "cardio" in o or "metabolic" in o or "weight" in o
-        for o in outcome_classes
-    )
-    has_functional = any(
-        "muscle" in o or "frailty" in o or "function" in o or "bone" in o
-        for o in outcome_classes
+    has_metabolic = _has_outcome(outcome_classes, "cardio", "metabolic", "weight")
+    has_functional = _has_outcome(
+        outcome_classes, "muscle", "frailty", "function", "bone",
     )
     framework_name = (
         "Metabolic-Functional Tradeoff Framework"
         if has_metabolic and has_functional
         else "Endpoint-Sensitivity Framework"
     )
+    has_mechanistic = "mechanistic" in directness
     subject = (topic.strip() or "the corpus").rstrip("_").replace("_", " ")
     body = [
         f"## {framework_name}",
@@ -187,7 +195,9 @@ def build_novel_framework_section(
         "proximal pathway effects, through intermediate functional or "
         "biomarker endpoints, to distal observable outcomes.",
         "",
-        f"The accepted receipt graph contains {directness_phrase} evidence, "
+        *_framework_table(framework_name, outcome_classes, has_mechanistic),
+        "",
+        f"The accepted evidence set contains {directness_phrase} evidence, "
         "so the manuscript should not collapse mechanistic plausibility and "
         "downstream observed effect into one verdict.",
         "",
@@ -201,8 +211,8 @@ def build_novel_framework_section(
         "preserve the framework.",
         "",
         "This is a paper-level organizing claim, not an added receipt: it can "
-        "guide interpretation only where the manifest, tension matrix, and "
-        "citation registry already supply support.",
+        "guide interpretation only where accepted evidence and cross-paper "
+        "tensions already supply support.",
     ]
     return SynthesisSection(
         name="novel_framework",
