@@ -12,7 +12,7 @@ from dataclasses import dataclass
 
 _DEFAULT_DETERMINISTIC_STAGES: tuple[str, ...] = (
     "quant-claim extraction (deterministic regex over per-paper sources)",
-    "receipt summarization (group claims by paper, aggregate "
+    "source summarization (group claims by paper, aggregate "
     "outcome class + effect direction)",
     "tension matrix construction (cross-paper direction conflicts)",
     "thesis selection (deterministic dominant-pattern picker — "
