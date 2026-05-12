@@ -721,6 +721,79 @@ def _word_count(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
 
 
+def _display_outcome_class(raw: str) -> str:
+    label = (raw or "other").replace("_", " ").strip()
+    return label.title() if label else "Other"
+
+
+def _ensure_results_summary_table(
+    markdown: str, manifest: dict[str, Any],
+) -> tuple[str, bool]:
+    header = "| Outcome class | Strongest signal | Directness | Main limitation |"
+    if header in markdown:
+        return markdown, False
+    match = re.search(r"^## Results\s*$", markdown, re.MULTILINE)
+    if match is None:
+        return markdown, False
+    receipts = [
+        r for r in manifest.get("receipts", [])
+        if isinstance(r, dict) and r.get("outcome_class")
+    ]
+    if not receipts:
+        return markdown, False
+    by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for receipt in receipts:
+        by_outcome[str(receipt.get("outcome_class") or "other")].append(receipt)
+    rows: list[str] = []
+    for outcome, group in sorted(
+        by_outcome.items(), key=lambda item: (-len(item[1]), item[0]),
+    )[:6]:
+        directions = Counter(
+            str(r.get("effect_direction") or "mixed").lower() for r in group
+        )
+        directness = Counter(
+            str(r.get("directness") or "indirect").lower() for r in group
+        )
+        dominant, dominant_n = directions.most_common(1)[0]
+        signal_name = {
+            "positive": "benefit signal",
+            "negative": "adverse or limiting signal",
+            "null": "null signal",
+            "mixed": "mixed signal",
+        }.get(dominant, "mixed signal")
+        direct_parts = [
+            f"{directness[k]} {k}" for k in ("direct", "indirect", "mechanistic")
+            if directness.get(k)
+        ]
+        if directness.get("direct", 0) == 0:
+            limitation = "no direct clinical anchor"
+        elif len(directions) > 1:
+            limitation = "directionally heterogeneous"
+        elif len(group) < 2:
+            limitation = "single-source support"
+        else:
+            limitation = "population and endpoint heterogeneity"
+        rows.append(
+            f"| {_display_outcome_class(outcome)} | "
+            f"{signal_name} in {dominant_n}/{len(group)} sources | "
+            f"{'; '.join(direct_parts) or 'not classified'} | {limitation} |"
+        )
+    table = "\n".join([
+        header,
+        "|---|---|---|---|",
+        *rows,
+    ])
+    insert_at = match.end()
+    return (
+        markdown[:insert_at].rstrip()
+        + "\n\n"
+        + table
+        + "\n\n"
+        + markdown[insert_at:].lstrip(),
+        True,
+    )
+
+
 def _heading_pos(markdown: str, heading: str, start: int = 0) -> int:
     match = re.search(
         rf"^{re.escape(heading)}\b", markdown[start:], re.MULTILINE,
@@ -2646,10 +2719,14 @@ async def _run_post_paper_pipeline(
         )
     )
     _refix_log.extend(_final_polish_log)
+    paper_md, _inserted_results_summary = _ensure_results_summary_table(
+        paper_md, manifest,
+    )
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
         or paper_md != pre_final_cleanup_md
+        or _inserted_results_summary
     ):
         paper_path.with_suffix(".final_fixed_log.json").write_text(
             json.dumps(_refix_log, indent=2)

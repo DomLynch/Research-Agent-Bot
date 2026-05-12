@@ -63,6 +63,13 @@ def test_public_methods_meets_journal_surface_depth_floor() -> None:
     assert rmc.validate_rendered(methods) == []
 
 
+def test_public_methods_names_search_and_eligibility_bounds() -> None:
+    methods = rmc.render_methods(_v06_contract())
+    assert "bibliographic, trial, and project-curated source indexes" in methods
+    assert "structured evidence synthesis" in methods
+    assert "traceable endpoint, citation, or study identity" in methods
+
+
 def test_methods_does_not_name_operational_models() -> None:
     """Model stack belongs in appendix/provenance, not public Methods."""
     contract = _v06_contract()

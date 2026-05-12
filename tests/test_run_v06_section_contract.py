@@ -266,3 +266,34 @@ def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -
     paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
     assert orch._word_count(body) >= 500
     assert len(paragraphs) == len(set(paragraphs))
+
+
+def test_results_summary_table_is_manifest_driven_and_idempotent() -> None:
+    paper = "## Results\n\n### Cardiometabolic Outcomes\n\nFindings.\n"
+    manifest = {
+        "receipts": [
+            {
+                "outcome_class": "cardiometabolic",
+                "effect_direction": "positive",
+                "directness": "direct",
+            },
+            {
+                "outcome_class": "cardiometabolic",
+                "effect_direction": "null",
+                "directness": "indirect",
+            },
+            {
+                "outcome_class": "muscle_function",
+                "effect_direction": "negative",
+                "directness": "direct",
+            },
+        ],
+    }
+    out, inserted = orch._ensure_results_summary_table(paper, manifest)
+    assert inserted is True
+    assert "| Outcome class | Strongest signal | Directness | Main limitation |" in out
+    assert "| Cardiometabolic | benefit signal in 1/2 sources |" in out
+    assert "| Muscle Function | adverse or limiting signal in 1/1 sources |" in out
+    out2, inserted2 = orch._ensure_results_summary_table(out, manifest)
+    assert inserted2 is False
+    assert out2 == out
