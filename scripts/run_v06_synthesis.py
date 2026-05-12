@@ -549,8 +549,9 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "can move selected biomarkers or pathway markers, but whether "
                 "those changes improve durable human function without offsetting "
                 "harm, adherence failure, or loss in another clinically relevant "
-                "domain. That question should set the bar for future claims and "
-                "for any public recommendation."
+                "domain. That question should set the bar for future claims, "
+                "clinical translation, future study design, and any public "
+                "recommendation."
             ),
         ],
     }

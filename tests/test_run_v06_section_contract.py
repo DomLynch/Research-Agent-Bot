@@ -6,8 +6,8 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import apply_patches as ap  # noqa: E402
-import run_v06_synthesis as orch  # noqa: E402
+import apply_patches as ap  # type: ignore[import-not-found]  # noqa: E402
+import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 from agent.synthesis_schemas import SynthesisSection  # noqa: E402
 
 
@@ -121,7 +121,7 @@ def test_restore_cross_domain_heading_by_structural_boundary() -> None:
     )
     sections = (
         SynthesisSection(
-            name="cross_domain",
+            name="cross_domain_synthesis",
             body_md=(
                 "## Cross-Domain Synthesis\n\n"
                 "The original anchor was revised by review."

@@ -662,7 +662,7 @@ def _strip_extra_methods_numbered_steps(paper_md: str) -> tuple[str, int]:
     if "### Pipeline stages" in methods and "### Claim source" in methods:
         allowed_steps = {
             "1": "quant-claim extraction",
-            "2": "receipt summarization",
+            "2": "source summarization",
             "3": "tension matrix construction",
             "4": "thesis selection",
             "5": "claim-strength repair",
@@ -810,6 +810,26 @@ def _normalize_public_meta_phrases(paper_md: str) -> tuple[str, int]:
         (
             re.compile(r"\bthe evidence base is limited to\b", re.IGNORECASE),
             "The available evidence is concentrated in",
+        ),
+        (
+            re.compile(r"\bevidence base is limited to\b", re.IGNORECASE),
+            "evidence base is concentrated in",
+        ),
+        (
+            re.compile(r"\breceipt-traced\b", re.IGNORECASE),
+            "source-traced",
+        ),
+        (
+            re.compile(r"\breceipt-level\b", re.IGNORECASE),
+            "source-level",
+        ),
+        (
+            re.compile(r"\breceipts\b", re.IGNORECASE),
+            "sources",
+        ),
+        (
+            re.compile(r"\breceipt\b", re.IGNORECASE),
+            "source",
         ),
         (
             re.compile(
