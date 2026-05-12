@@ -107,8 +107,18 @@ def build_quality_method_payloads(
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     rob_payload: list[dict[str, Any]] = []
     by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    seen_study_ids: set[str] = set()
     for receipt in receipts:
         paper_id = str(receipt.get("paper_id") or receipt.get("receipt_id") or "")
+        base_study_id = str(receipt.get("citation_token") or paper_id)
+        study_id = base_study_id
+        if study_id in seen_study_ids:
+            study_id = f"{base_study_id} [{paper_id}]"
+            suffix = 2
+            while study_id in seen_study_ids:
+                suffix += 1
+                study_id = f"{base_study_id} [{paper_id} #{suffix}]"
+        seen_study_ids.add(study_id)
         source_text = _parsed_text(parsed_dir, paper_id)
         design = _design_for_receipt(receipt, source_text)
         tool = {"rct": "rob2", "observational": "robins_i", "animal": "syrcle"}[design]
@@ -127,7 +137,7 @@ def build_quality_method_payloads(
                 ),
             })
         rob_payload.append({
-            "study_id": str(receipt.get("citation_token") or paper_id),
+            "study_id": study_id,
             "design": design,
             "tool": tool,
             "overall_rating": _overall(ratings),
@@ -335,10 +345,14 @@ def write_tension_plans(out_dir: Path, matrix: Any) -> dict[str, Any]:
         b = by_id.get(tension.receipt_b_id)
         if not a or not b:
             continue
+        paper_a = str(tension.receipt_a_id)
+        paper_b = str(tension.receipt_b_id)
+        if paper_a == paper_b:
+            continue
         records.append(TensionRecord(
             tension_id=f"T{idx:03d}",
-            paper_a=tension.receipt_a_id,
-            paper_b=tension.receipt_b_id,
+            paper_a=paper_a,
+            paper_b=paper_b,
             conflict_type=tension.kind,
             outcome_class=tension.outcome_class,
             severity=max(1, min(5, int(tension.severity))),

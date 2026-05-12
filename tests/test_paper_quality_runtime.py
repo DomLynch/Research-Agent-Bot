@@ -59,6 +59,21 @@ def test_quality_methods_payloads_cover_receipts_and_outcomes(tmp_path: Path) ->
     assert "Final certainty" in paper_md
 
 
+def test_quality_methods_disambiguates_duplicate_citation_tokens(tmp_path: Path) -> None:
+    parsed = tmp_path / "parsed"
+    parsed.mkdir()
+    receipts = [
+        {**_receipts()[0], "paper_id": "S1", "citation_token": "Shared 2025"},
+        {**_receipts()[1], "paper_id": "S2", "citation_token": "Shared 2025"},
+    ]
+
+    artifact = pqr.write_quality_methods(tmp_path, receipts, parsed)
+    rob = json.loads((tmp_path / "risk_of_bias.json").read_text())
+
+    assert [row["study_id"] for row in rob] == ["Shared 2025", "Shared 2025 [S2]"]
+    assert artifact["bundle"].rob_coverage == 1.0
+
+
 def _claim(text: str) -> dict:
     return {
         "claim_type": "confidence_interval",
@@ -130,6 +145,30 @@ def test_tension_directness_normalizes_review_records(tmp_path: Path) -> None:
 
     payload = pqr.write_tension_plans(tmp_path, Matrix())
     assert payload["plans"][0]["paper_a"] == "A"
+
+
+def test_tension_plans_skip_self_pairs(tmp_path: Path) -> None:
+    class Receipt:
+        receipt_id = "A"
+        evidence_tier = "A1"
+        directness = "direct"
+        p_values = ()
+
+    class Tension:
+        receipt_a_id = "A"
+        receipt_b_id = "A"
+        kind = "disagreement"
+        outcome_class = "immune"
+        severity = 5
+
+    class Matrix:
+        receipts = (Receipt(),)
+
+        def non_orthogonal(self):
+            return (Tension(),)
+
+    payload = pqr.write_tension_plans(tmp_path, Matrix())
+    assert payload == {"plans": [], "candidate_tensions": 0}
 
 
 def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
