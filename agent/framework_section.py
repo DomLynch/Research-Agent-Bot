@@ -144,7 +144,13 @@ def build_novel_framework_section(
 ) -> SynthesisSection:
     """Render a deterministic organizing framework from corpus structure."""
     directness = {str(r.directness).lower() for r in receipts}
+    outcomes = {str(r.outcome_class).lower() for r in receipts}
     tension_kinds = {t.kind for t in matrix.non_orthogonal()}
+    framework_name = (
+        "Metabolic-Functional Tradeoff"
+        if {"cardiometabolic", "muscle_function"} <= outcomes
+        else "Endpoint-Sensitivity"
+    )
     directness_phrase = ", ".join(
         label for label in ("direct", "indirect", "mechanistic")
         if label in directness
@@ -156,12 +162,12 @@ def build_novel_framework_section(
         ) if label in tension_kinds
     ) or "cross-receipt"
     body = [
-        "## Novel Synthesis Framework",
+        f"## {framework_name} Framework",
         "",
-        "We propose an Endpoint-Sensitivity framework for this corpus: "
-        "rapamycin evidence should be interpreted along a gradient from "
-        "proximal pathway effects, through intermediate functional or "
-        "biomarker endpoints, to distal clinical outcomes.",
+        f"We propose a {framework_name} framework for this corpus: the "
+        "evidence should be interpreted along a gradient from proximal "
+        "pathway effects, through intermediate functional or biomarker "
+        "endpoints, to distal clinical outcomes.",
         "",
         f"The accepted receipt graph contains {directness_phrase} evidence, "
         "so the manuscript should not collapse mechanistic plausibility and "
