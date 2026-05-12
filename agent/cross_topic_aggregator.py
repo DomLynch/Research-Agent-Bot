@@ -39,6 +39,10 @@ class TopicRunSummary:
     outcome_domains: tuple[str, ...]
     citation_keys: tuple[str, ...]
     exclusion_reason: str | None = None
+    n_source_papers: int = 0
+    n_accepted_papers: int = 0
+    n_public_tensions: int = 0
+    n_pipeline_tensions: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -85,6 +89,20 @@ def load_topic_run_summary(run_dir: Path) -> TopicRunSummary:
     manifest = _read_json(manifest_path)
     registry = _read_json(registry_path)
     receipts = manifest.get("receipts", [])
+    counts = _canonical_counts(run_dir)
+    source_papers = _count_value(
+        counts, "source_papers",
+        fallback=int(manifest.get("n_receipts") or len(receipts)),
+    )
+    accepted_papers = _count_value(
+        counts, "accepted_papers",
+        fallback=int(manifest.get("n_accepted_receipts") or source_papers),
+    )
+    public_tensions = _count_value(
+        counts, "tensions",
+        fallback=int(manifest.get("n_non_orthogonal_tensions") or 0),
+    )
+    pipeline_tensions = int(manifest.get("n_non_orthogonal_tensions") or public_tensions)
     return TopicRunSummary(
         topic=topic,
         run_id=run_id,
@@ -95,11 +113,13 @@ def load_topic_run_summary(run_dir: Path) -> TopicRunSummary:
         maturity_label=str(verdict.get("maturity_label", "")),
         certification_track=str(verdict.get("certification_track", "")),
         journal_ready=bool(verdict.get("journal_ready")),
-        n_receipts=int(manifest.get("n_receipts") or len(receipts)),
+        n_receipts=source_papers,
         n_high_confidence_claims=int(
-            manifest.get("n_high_confidence_claims_total") or 0
+            counts.get("high_confidence_claims")
+            or manifest.get("n_high_confidence_claims_total")
+            or 0
         ),
-        n_tensions=int(manifest.get("n_non_orthogonal_tensions") or 0),
+        n_tensions=pipeline_tensions,
         directness_mix=_count_field(receipts, "directness"),
         evidence_tier_mix=_count_field(receipts, "evidence_tier"),
         effect_direction_mix=_count_field(receipts, "effect_direction"),
@@ -107,6 +127,10 @@ def load_topic_run_summary(run_dir: Path) -> TopicRunSummary:
         outcome_domains=tuple(sorted(_nonempty(r.get("outcome_class") for r in receipts))),
         citation_keys=tuple(sorted(_citation_keys(registry))),
         exclusion_reason=None,
+        n_source_papers=source_papers,
+        n_accepted_papers=accepted_papers,
+        n_public_tensions=public_tensions,
+        n_pipeline_tensions=pipeline_tensions,
     )
 
 
@@ -145,6 +169,10 @@ def _excluded(run_dir: Path, topic: str, reason: str) -> TopicRunSummary:
         outcome_domains=(),
         citation_keys=(),
         exclusion_reason=reason,
+        n_source_papers=0,
+        n_accepted_papers=0,
+        n_public_tensions=0,
+        n_pipeline_tensions=0,
     )
 
 
@@ -155,6 +183,23 @@ def _topic_from_run_id(run_id: str) -> str:
 
 def _read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _canonical_counts(run_dir: Path) -> dict[str, int]:
+    path = run_dir / "public_manuscript_contract.json"
+    if not path.exists():
+        return {}
+    try:
+        counts = _read_json(path).get("canonical_counts", {})
+    except (OSError, json.JSONDecodeError):
+        return {}
+    if not isinstance(counts, dict):
+        return {}
+    return {str(k): int(v) for k, v in counts.items() if isinstance(v, int)}
+
+
+def _count_value(counts: dict[str, int], key: str, *, fallback: int) -> int:
+    return int(counts.get(key) or fallback)
 
 
 def _count_field(rows: list[dict[str, Any]], field: str) -> dict[str, int]:
