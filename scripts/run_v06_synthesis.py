@@ -327,13 +327,13 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             ),
             (
                 f"The evidence profile contains {direct} direct clinical "
-                f"receipt(s), {indirect} indirect clinical receipt(s), and "
-                f"{mechanistic} mechanistic or model-system receipt(s), with "
-                f"{tension_n} non-orthogonal tension(s) across the receipt "
-                "graph."
+                f"direct clinical source(s), {indirect} adjacent clinical "
+                f"source(s), and {mechanistic} mechanistic or model-system "
+                f"source(s), with {tension_n} non-orthogonal disagreement(s) "
+                "across the evidence base."
             ),
             (
-                f"Positive receipt-level signals concentrate in {pos}, null "
+                f"Positive study-level signals concentrate in {pos}, null "
                 f"signals in {null}, and negative signals in {neg}. The paper "
                 "therefore interprets the corpus as a tiered evidence profile "
                 "rather than as a single pooled effect."
@@ -357,9 +357,9 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "certainty."
             ),
             (
-                f"The corpus contains {direct} direct clinical receipt(s), "
-                f"{indirect} indirect clinical receipt(s), and {mechanistic} "
-                "mechanistic or model-system receipt(s). That distribution "
+                f"The corpus contains {direct} direct clinical source(s), "
+                f"{indirect} adjacent clinical source(s), and {mechanistic} "
+                "mechanistic or model-system source(s). That distribution "
                 "makes the synthesis appropriate for evaluating convergence, "
                 "boundary conditions, and trial-design implications, while "
                 "requiring caution around any conclusion that would exceed the "
@@ -367,7 +367,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             ),
             (
                 f"The thesis is: {thesis} This thesis is treated "
-                "as an organizing claim, not as a substitute for the receipt "
+                "as an organizing claim, not as a substitute for the study "
                 "table, because the source record includes supportive, null, "
                 "and adverse signals across different outcome classes."
             ),
@@ -375,9 +375,9 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         "Background": [
             (
                 f"The background evidence for {topic} is heterogeneous rather "
-                "than uniformly confirmatory. Direct clinical receipts such as "
+                "than uniformly confirmatory. Direct clinical sources such as "
                 f"{direct_refs} are interpreted separately from mechanistic "
-                f"receipts such as {mech_refs}, because these evidence roles "
+                f"studies such as {mech_refs}, because these evidence roles "
                 "answer different questions about aging biology and clinical "
                 "translation."
             ),
@@ -389,7 +389,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "human healthspan effect."
             ),
             (
-                f"Across the accepted receipts, positive signals cluster around "
+                f"Across the retained sources, positive signals cluster around "
                 f"{pos}; null signals around {null}; and negative or adverse "
                 f"signals around {neg}. This pattern motivates a synthesis that "
                 "keeps outcome domains separate before drawing cross-domain "
@@ -398,12 +398,12 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ],
         "Results": [
             (
-                f"The accepted {topic} corpus contributes {receipt_n} receipt-"
-                f"level summaries and {claim_n} high-confidence claims. "
-                f"Positive receipt-level signals are represented by {pos_refs}; "
+                f"The retained {topic} corpus contributes {receipt_n} study-"
+                f"level summaries and {claim_n} high-confidence observations. "
+                f"Positive study-level signals are represented by {pos_refs}; "
                 f"null signals by {null_refs}; and negative signals by "
                 f"{neg_refs}. These groupings describe the direction of the "
-                "validated receipt summaries, not a pooled treatment estimate."
+                "validated study summaries, not a pooled treatment estimate."
             ),
             (
                 f"Outcome-level interpretation remains mixed. Positive signals "
@@ -414,21 +414,21 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "tier, and study context."
             ),
             (
-                f"The tension matrix identifies {tension_n} non-orthogonal "
-                "tension(s). These tensions are load-bearing because they show "
-                "where receipts do not simply accumulate in the same direction. "
+                f"The synthesis identifies {tension_n} non-orthogonal "
+                "disagreement(s). These disagreements are load-bearing because they show "
+                "where sources do not simply accumulate in the same direction. "
                 "The synthesis therefore treats disagreement and null findings "
                 "as evidence, not as noise to be smoothed away."
             ),
         ],
         "Cross-Domain Synthesis": [
             (
-                f"Cross-domain interpretation of {topic} is constrained by the "
-                f"relationship between clinical receipt(s) ({direct_refs}) and "
-                f"mechanistic receipt(s) ({mech_refs}). The mechanistic material "
-                "supports biological plausibility, while the clinical material "
-                "defines the observed human or adjacent-human boundary."
-            ),
+                    f"Cross-domain interpretation of {topic} is constrained by the "
+                    f"relationship between clinical sources ({direct_refs}) and "
+                    f"mechanistic studies ({mech_refs}). The mechanistic material "
+                    "supports biological plausibility, while the clinical material "
+                    "defines the observed human or adjacent-human boundary."
+                ),
             (
                 f"The main cross-domain pattern is the coexistence of positive "
                 f"signals in {pos} with null signals in {null} and negative "
@@ -449,15 +449,15 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         "Discussion": [
             (
                 f"The {topic} evidence base is best interpreted as conditionally "
-                "supportive rather than definitive. The receipt graph contains "
-                f"{direct} direct clinical receipt(s) and {mechanistic} "
-                "mechanistic receipt(s), so the strongest claims concern where "
+                "supportive rather than definitive. The evidence base contains "
+                f"{direct} direct clinical source(s) and {mechanistic} "
+                "mechanistic source(s), so the strongest claims concern where "
                 "signals converge and where translation remains uncertain."
             ),
             (
-                f"Positive receipts ({pos_refs}) are important, but they must be "
-                f"read alongside null receipts ({null_refs}) and negative "
-                f"receipts ({neg_refs}). This comparison keeps the discussion "
+                f"Positive sources ({pos_refs}) are important, but they must be "
+                f"read alongside null sources ({null_refs}) and negative "
+                f"sources ({neg_refs}). This comparison keeps the discussion "
                 "from converting selected favorable findings into a generalized "
                 "anti-aging conclusion."
             ),
@@ -466,20 +466,20 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 f"{topic.title()} may justify further targeted testing when the "
                 "mechanistic rationale, clinical endpoint, and population risk "
                 "profile align, but the present corpus does not justify claims "
-                "that ignore the null or adverse parts of the receipt graph."
+                "that ignore the null or adverse parts of the evidence base."
             ),
         ],
         "Limitations": [
             (
                 f"The principal limitation is evidence-role imbalance. The "
-                f"accepted corpus contains {direct} direct clinical receipt(s), "
-                f"{indirect} indirect clinical receipt(s), and {mechanistic} "
-                "mechanistic or model-system receipt(s), which means causal "
+                f"retained corpus contains {direct} direct clinical source(s), "
+                f"{indirect} adjacent clinical source(s), and {mechanistic} "
+                "mechanistic or model-system source(s), which means causal "
                 "interpretation depends on how much weight is assigned to each "
                 "evidence tier."
             ),
             (
-                "A second limitation is endpoint heterogeneity. Receipt-level "
+                "A second limitation is endpoint heterogeneity. Study-level "
                 f"signals span {pos}, {null}, {neg}, and {mixed}; these domains "
                 "cannot be pooled narratively without losing clinically relevant "
                 "differences in measurement, population, and study design."
@@ -518,7 +518,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             ),
             (
                 f"Future work should prioritize studies that connect "
-                f"mechanistic receipts ({mech_refs}) to direct clinical outcomes "
+                f"mechanistic studies ({mech_refs}) to direct clinical outcomes "
                 f"represented by {direct_refs}. Until that bridge is stronger, "
                 f"{topic} remains a promising but bounded geroscience case whose "
                 "most useful contribution is to define the next trial rather "
@@ -528,26 +528,13 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
     }
     shared = [
         (
-            "The synthesis therefore uses a tiered reading of the evidence. "
-            "Direct clinical evidence carries the highest interpretive weight; "
-            "indirect clinical receipts help define adjacent human signals; "
-            "mechanistic receipts explain plausibility and candidate pathways."
-        ),
-        (
-            "The presence of multiple evidence roles is a strength for research "
-            "agenda setting, but it is also a limitation for clinical certainty. "
-            "Where the clinical and mechanistic layers align, the paper treats "
-            "that alignment as a hypothesis-strengthening signal. Where they "
-            "diverge, the divergence is retained as a boundary condition."
-        ),
-        (
             "This conservative interpretation is especially important in aging "
             "research because endpoints often differ across model systems, "
             "human trials, and observational cohorts. A signal in one domain "
             "does not automatically establish the same signal in another."
         ),
         (
-            "The receipt-level structure also prevents selective emphasis. "
+            "The study-level structure also prevents selective emphasis. "
             "Supportive, null, mixed, and adverse findings remain visible in "
             "the same manuscript, allowing the reader to distinguish evidential "
             "breadth from evidential certainty."
@@ -556,12 +543,12 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "The resulting paper is therefore a calibrated synthesis: it can "
             "identify plausible mechanisms, direct clinical signals, unresolved "
             "tensions, and trial-design priorities without converting them into "
-            "claims stronger than the accepted corpus can support."
+            "claims stronger than the retained corpus can support."
         ),
         (
             "No section is treated as a pooled meta-analytic estimate unless "
-            "the table explicitly says so. The text summarizes receipt-level "
-            "patterns, while the quantitative evidence index preserves the "
+            "the table explicitly says so. The text summarizes study-level "
+            "patterns, while the numeric supplement preserves the "
             "source-bound numeric record."
         ),
         (
@@ -596,7 +583,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "constraints."
         ),
         (
-            "The receipt graph also distinguishes breadth from certainty. A "
+            "The evidence base also distinguishes breadth from certainty. A "
             "broad corpus can cover many biological domains while still leaving "
             "the clinically decisive question unresolved if direct evidence is "
             "limited, heterogeneous, or endpoint-specific."
@@ -617,7 +604,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "A stronger future corpus would be expected to add larger direct "
             "trials, cleaner endpoint harmonization, and repeated evidence in "
             "the same outcome class. Until then, confidence remains calibrated "
-            "to the currently accepted receipt profile."
+            "to the currently retained evidence profile."
         ),
         (
             "This framing also preserves comparability across topics. The same "
@@ -633,7 +620,9 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "translation into certainty without matching direct evidence."
         ),
     ]
-    paragraphs = paragraphs_by_title[title] + shared
+    paragraphs = paragraphs_by_title[title]
+    if title != "Conclusion":
+        paragraphs += shared
     selected: list[str] = []
     for paragraph in paragraphs:
         if paragraph not in selected:
@@ -664,7 +653,7 @@ def _section_backstop_context() -> dict[str, object]:
                 labels.append(label)
             if len(labels) >= limit:
                 break
-        return ", ".join(labels) if labels else "the accepted receipt set"
+        return ", ".join(labels) if labels else "the retained evidence base"
 
     def _outcomes(effect: str) -> str:
         counts: Counter[str] = Counter(
