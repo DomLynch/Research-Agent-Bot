@@ -7,6 +7,7 @@ Methods deterministically from a frozen contract; output is bounded
 by an explicit blocked-phrase list."""
 from __future__ import annotations
 
+import dataclasses
 import sys
 from pathlib import Path
 import re
@@ -68,6 +69,13 @@ def test_public_methods_names_search_and_eligibility_bounds() -> None:
     assert "bibliographic, trial, and project-curated source indexes" in methods
     assert "structured evidence synthesis" in methods
     assert "traceable endpoint, citation, or study identity" in methods
+
+
+def test_render_methods_humanizes_topic_slug() -> None:
+    contract = dataclasses.replace(_v06_contract(), topic="caloric_restriction")
+    methods = rmc.render_methods(contract)
+    assert "caloric restriction" in methods
+    assert "caloric_restriction" not in methods
 
 
 def test_methods_does_not_name_operational_models() -> None:
