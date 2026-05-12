@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import difflib
 import re
+from collections import Counter
 from collections.abc import Sequence
 
 from agent.synthesis_schemas import (
@@ -110,6 +111,64 @@ def _accepted_corpus_norm(receipts: Sequence[ReceiptSummary]) -> str:
         parts.extend(r.p_values)
         parts.append(r.thesis_text)
     return _normalize(" ".join(parts))
+
+
+def _label_for_outcome(outcome: str) -> str:
+    return outcome.replace("_", " ").strip().title() or "Other"
+
+
+def _norm_label(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", text.lower())
+
+
+def _resolve_results_outcome(
+    sub: dict,
+    receipt_ids: Sequence[str],
+    receipt_outcomes: dict[str, str],
+) -> str | None:
+    """Resolve Results subsection ownership from corpus facets."""
+    label = _norm_label(
+        " ".join(str(sub.get(k) or "") for k in ("outcome_class", "heading"))
+    )
+    outcomes = set(receipt_outcomes.values())
+    for outcome in outcomes:
+        aliases = (_norm_label(outcome), _norm_label(_label_for_outcome(outcome)))
+        if any(alias and alias in label for alias in aliases):
+            return outcome
+    cited = {receipt_outcomes[rid] for rid in receipt_ids if rid in receipt_outcomes}
+    return next(iter(cited)) if len(cited) == 1 else None
+
+
+def _same_outcome_receipt_ids(
+    receipt_ids: Sequence[str],
+    outcome: str,
+    receipt_outcomes: dict[str, str],
+) -> list[str]:
+    return [rid for rid in receipt_ids if receipt_outcomes.get(rid) == outcome]
+
+
+def _backfill_results_subsection(
+    outcome: str,
+    receipts: Sequence[ReceiptSummary],
+) -> tuple[list[str], list[SynthesisClaimAnchor]]:
+    directions = Counter(r.effect_direction for r in receipts)
+    directness = Counter(r.directness for r in receipts)
+    dominant = directions.most_common(1)[0][0] if directions else "mixed"
+    direct = ", ".join(f"{n} {k}" for k, n in sorted(directness.items()) if k)
+    ids = tuple(r.receipt_id for r in receipts)
+    label = _label_for_outcome(outcome)
+    text = (
+        f"The {label.lower()} evidence base included {len(receipts)} "
+        f"included source{'s' if len(receipts) != 1 else ''}, with "
+        f"{direct or 'unclassified'} evidence and a dominant {dominant} "
+        f"direction. These sources define the outcome-specific signal for "
+        f"this domain without importing claims from other outcome classes."
+    )
+    lines = [
+        f"### {label} Outcomes", "", text, "",
+        "  _Cited: " + ", ".join(f"`{rid}`" for rid in ids) + "_", "",
+    ]
+    return lines, [SynthesisClaimAnchor(sentence=text, receipt_ids=ids, numerics=())]
 
 
 def _check_anchored_paragraph(
