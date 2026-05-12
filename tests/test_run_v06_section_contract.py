@@ -269,7 +269,7 @@ def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     )
     body = orch._rendered_section_match(out, "## Results").group(1)
     assert "word499" not in body
-    assert "receipt-level summaries" in body
+    assert "study-level summaries" in body
     assert orch._word_count(body) >= 500
 
 

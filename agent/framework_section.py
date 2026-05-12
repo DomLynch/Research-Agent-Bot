@@ -182,7 +182,7 @@ def build_novel_framework_section(
         "functional endpoints, and distal clinical outcomes; discordance "
         "across those layers would preserve the framework.",
         "",
-        "This is a paper-level organizing claim, not an added receipt: it can "
+        "This is a paper-level organizing claim, not an added source: it can "
         "guide interpretation only where the underlying evidence record "
         "already supplies support.",
     ]
@@ -206,7 +206,7 @@ def build_framework_engagement_section(
     body = ["## Engagement with Established Frameworks", ""]
     for item in engagements:
         if item.matched_receipts:
-            support = "receipt-level evidence matches " + ", ".join(
+            support = "source-level evidence matches " + ", ".join(
                 item.matched_receipts
             )
         elif item.matched_background_refs:
@@ -214,14 +214,14 @@ def build_framework_engagement_section(
                 item.matched_background_refs
             )
         else:
-            support = "no matched source in the accepted evidence registry"
+            support = "no matched source in the evidence registry"
         body.append(
             f"- **{item.framework_name}: {item.status}.** {support}."
         )
     body.append(
         "\nStatus labels are deterministic and conservative: background-only "
         "matches establish field presence but do not support or challenge a "
-        "framework without receipt-level outcome and direction fields."
+        "framework without source-level outcome and direction fields."
     )
     return SynthesisSection(
         name="framework_engagement",

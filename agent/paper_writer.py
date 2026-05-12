@@ -472,7 +472,6 @@ _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
     "results",
     "cross_domain_synthesis",
     "novel_framework",
-    "framework_engagement",
     "discussion",
     "limitations_full",
     "conclusion",

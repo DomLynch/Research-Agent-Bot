@@ -544,6 +544,14 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "most useful contribution is to define the next trial rather "
                 "than to justify current clinical adoption."
             ),
+            (
+                "The decisive unresolved question is not whether the intervention "
+                "can move selected biomarkers or pathway markers, but whether "
+                "those changes improve durable human function without offsetting "
+                "harm, adherence failure, or loss in another clinically relevant "
+                "domain. That question should set the bar for future claims and "
+                "for any public recommendation."
+            ),
         ],
     }
     shared = [
