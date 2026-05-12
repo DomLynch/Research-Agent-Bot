@@ -147,92 +147,9 @@ _PUBLIC_BODY_CUTOFF_RE = re.compile(
     re.MULTILINE,
 )
 _ORDINAL_WORDS = ("First", "Second", "Third", "Fourth", "Fifth")
-_AUTHOR_YEAR_TOKEN_RE = re.compile(
-    r"\b([A-Z][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+)\s+\(?((?:19|20)\d{2})\)?\b"
-)
-_MUSCLE_OUTCOME_RE = re.compile(
-    r"\b(?:lean mass|fat-free mass|muscle|handgrip|strength|"
-    r"bone mineral|cortical thickness|anabolic)\b",
-    re.IGNORECASE,
-)
-_HEALTHSPAN_OUTCOME_RE = re.compile(
-    r"\b(?:healthspan|frailty|functional|disability|lifespan|"
-    r"longevity|mortality|survival)\b",
-    re.IGNORECASE,
-)
 def _split_public_body(paper_md: str) -> tuple[str, str]:
     m = _PUBLIC_BODY_CUTOFF_RE.search(paper_md)
     return (paper_md[:m.start()], paper_md[m.start():]) if m else (paper_md, "")
-
-
-def _receipt_outcome_map(manifest: dict | None) -> dict[str, str]:
-    if not isinstance(manifest, dict):
-        return {}
-    out: dict[str, str] = {}
-    for receipt in manifest.get("receipts") or ():
-        if not isinstance(receipt, dict):
-            continue
-        token = str(receipt.get("citation_token") or "").strip()
-        outcome = str(receipt.get("outcome_class") or "").strip()
-        if token and outcome:
-            out[token] = outcome
-    return out
-
-
-def _author_year_tokens(sentence: str) -> list[str]:
-    return [
-        f"{author} {year}"
-        for author, year in _AUTHOR_YEAR_TOKEN_RE.findall(sentence)
-    ]
-
-
-def _strip_cross_outcome_muscle_sentences(
-    paper_md: str, manifest: dict | None,
-) -> tuple[str, int]:
-    """Remove/trim outcome claims supported only by mismatched receipts.
-
-    This is a universal section-integrity guard: if public prose makes a
-    muscle or healthspan claim, receipts from unrelated outcome classes
-    cannot be its citation support. Mixed citation lists lose the mismatched
-    tokens; claims with no supporting outcome-class token are dropped.
-    """
-    outcomes = _receipt_outcome_map(manifest)
-    if not outcomes:
-        return paper_md, 0
-    public, appendix = _split_public_body(paper_md)
-    sentence_re = re.compile(r"[^.!?\n#](?:[^.!?\n#]|\.(?=\d))*[.!?]")
-    changes = 0
-    pieces: list[str] = []
-    last = 0
-    for m in sentence_re.finditer(public):
-        sentence = m.group(0)
-        tokens = [t for t in _author_year_tokens(sentence) if t in outcomes]
-        has_muscle = bool(_MUSCLE_OUTCOME_RE.search(sentence))
-        has_healthspan = bool(_HEALTHSPAN_OUTCOME_RE.search(sentence))
-        if not tokens or (not has_muscle and not has_healthspan):
-            continue
-        allowed: set[str] = set()
-        if has_muscle:
-            allowed.add("muscle_function")
-        if has_healthspan:
-            allowed.update({"frailty", "longevity", "muscle_function"})
-        bad = [t for t in tokens if outcomes[t] not in allowed]
-        good = [t for t in tokens if outcomes[t] in allowed]
-        if not bad:
-            continue
-        pieces.append(public[last:m.start()])
-        if good:
-            cleaned = sentence
-            for token in bad:
-                cleaned = re.sub(rf"(?:;\s*)?{re.escape(token)}", "", cleaned)
-                cleaned = re.sub(rf"{re.escape(token)}(?:;\s*)?", "", cleaned)
-            pieces.append(cleaned)
-        changes += 1
-        last = m.end()
-    if not changes:
-        return paper_md, 0
-    pieces.append(public[last:])
-    return "".join(pieces) + appendix, changes
 
 
 def _normalize_ordinal_gaps(paper_md: str) -> tuple[str, int]:
@@ -341,8 +258,8 @@ def _ensure_public_thesis_marker(
     display = _topic_display_name(topic) if topic else "the topic"
     marker = (
         f"This synthesis tests the thesis that {display} is a "
-        "context-dependent geroscience question, separating outcome-specific "
-        "signals from broader healthspan claims and identifying the evidence "
+        "context-dependent evidence question, separating outcome-specific "
+        "signals from broader claims and identifying the evidence "
         "gaps that should bound interpretation."
     )
     new, n = re.subn(
@@ -1187,19 +1104,6 @@ def apply_fixes(
             "description": (
                 "rewrote topic-pack slug tokens in the public manuscript "
                 "body to the display topic name"
-            ),
-        })
-
-    new_md, n_cross_outcome = _strip_cross_outcome_muscle_sentences(
-        new_md, manifest,
-    )
-    if n_cross_outcome:
-        log.append({
-            "fix_type": "cross_outcome_muscle_sentence_cleanup",
-            "n_changes": n_cross_outcome,
-            "description": (
-                "removed or trimmed muscle/lean-mass sentences that were "
-                "supported only by non-muscle receipt citations"
             ),
         })
 
@@ -2804,8 +2708,8 @@ def _strip_change_value_misread_sentences(
                 # Fix #57: PROXIMITY check — change-word must be
                 # within ±40 chars of the numeric to count.
                 # Defends against long sentences where a change-
-                # word for a DIFFERENT metric ("no change in
-                # frailty, and walk speed was 0.13 m/s") falsely
+                # word for a DIFFERENT metric ("no change in one
+                # endpoint, and value Y was 0.13") falsely
                 # cleared the numeric.
                 from final_consistency_audit import (
                     _CHANGE_WORD_PROXIMITY_CHARS,
@@ -2842,8 +2746,8 @@ def _strip_change_value_anaphor_sentences(
     but performs the deletion. For each paragraph that contains a
     change-value numeric followed by a sentence that combines an
     anaphoric reference ('this walk speed value', 'the figure', etc.)
-    with threshold-comparison phrasing ('below the 0.8 m/s threshold',
-    'below the cutoff', 'frailty threshold'), the threshold-sentence
+    with threshold-comparison phrasing ('below the 0.8 threshold',
+    'below the cutoff', 'threshold'), the threshold-sentence
     is dropped. The change-numeric sentence stays — it's the
     misreading sentence (B) we lose, not the corpus-traced one (A).
     """

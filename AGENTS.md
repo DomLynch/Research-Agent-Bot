@@ -20,7 +20,7 @@ agent and paper engine.
   paper-quality sprint has lifted runner-admitted receipts from 16 to 40 via
   source-validated vocabulary and qualification fixes.
 - Current reviewer target: `google/gemini-3.1-flash-lite:exacto` with high
-  thinking; Mistral Small remains bounded fallback/arbitrator.
+  thinking; Mistral Small is bounded fallback only, not a third arbitrator.
 - Generated topic-pack V1 shipped but full generated-pack synthesis remains gated.
 - Cross-topic meta-synthesis V1 shipped; auto-selection must use only fully
   certified 14/14 runs.

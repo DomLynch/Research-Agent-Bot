@@ -272,7 +272,7 @@ SectionName = Literal[
                             # markdown table built from corpus quant_claims;
                             # universal Q9 numeric-density structural fix.
                             # See agent/results_table.py.
-    "methods",              # ~1000-1500; DETERMINISTIC — describes SPAR pipeline
+    "methods",              # ~300-600; deterministic public Methods
     "results",              # ~3000-5000; ANCHORED — multi-paragraph by outcome class
     "cross_domain_synthesis",  # ~800-1500; ANCHORED — integrates outcomes with
                             # cross-outcome tensions

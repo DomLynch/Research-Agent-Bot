@@ -45,8 +45,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   immutable pack records, safe `scripts/synthesize.py`.
 - AAA-SCOP track: scoped certification for thin but useful topics without
   inflating full AAA/L5.
-- Reviewer/arbitrator stack: MiMo writer/extractor, Gemini Exacto reviewer with
-  high thinking, Mistral-small bounded fallback/arbitrator.
+- Reviewer stack: MiMo writer/extractor, Gemini Exacto reviewer with high
+  thinking, and Mistral-small bounded fallback only when primary review fails.
 - Cross-topic meta-synthesis V1: read-only certified-run aggregation, convergence
   detector, contradiction detector, deterministic renderer.
 - Rapamycin: AAA/L6 reproducibly journal-ready flagship.
@@ -65,8 +65,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
    plots, and the publication scorer as a hard pre-submit gate remain blocking
    paper-quality tasks.
 5. Gemini Exacto is the selected reviewer but still needs replay validation
-   before being called Grok-equivalent; fallback/escalation guards remain
-   required for production-critical paper runs.
+   before being called Grok-equivalent; deterministic gates remain the
+   production-critical certification layer.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
