@@ -97,6 +97,19 @@ def derive_paper_tier(summary: ReceiptSummary) -> str:
     return tier or "unknown"
 
 
+def _outcome_results_heading(outcome: str) -> str:
+    label = outcome.replace("_", " ").strip().title() or "Other"
+    return f"### {label} Outcomes"
+
+
+def _ensure_outcome_results_heading(body_md: str, outcome: str) -> str:
+    body = body_md.split("\n", 1)[1].strip()
+    heading = _outcome_results_heading(outcome)
+    if heading in body.splitlines():
+        return body
+    return f"{heading}\n\n{body}".strip()
+
+
 # Validation helpers + paragraph builders moved to
 # agent/paper_writer_builders.py to keep this module under the 600
 # per-file LOC cap.
@@ -420,8 +433,10 @@ async def write_results_section(
             call_llm_fn=_call_llm_section,
         )
         if best is None:
+            best = build_results_from_parsed({"subsections": []}, accepted=group)
+        if best is None:
             continue
-        body = best.body_md.split("\n", 1)[1].strip()
+        body = _ensure_outcome_results_heading(best.body_md, outcome)
         if body:
             result_bodies.append(body)
             anchors.extend(best.anchors)
