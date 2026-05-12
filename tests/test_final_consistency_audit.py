@@ -1595,6 +1595,22 @@ def test_apply_fixes_normalizes_h3_residue_and_taken_together() -> None:
     assert any(e["fix_type"] == "public_meta_phrase_normalization" for e in log)
 
 
+def test_apply_fixes_normalizes_h3_tag_residue() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\n### <H3>Cardiometabolic Outcomes</H3>\n\nText.\n",
+        [],
+    )
+    assert "<H3>" not in fixed
+    assert "</H3>" not in fixed
+    assert "### Cardiometabolic Outcomes" in fixed
+    assert any(e["fix_type"] == "h3_residue_heading_normalization" for e in log)
+
+
 def test_apply_fixes_normalizes_tension_count_and_limited_evidence_phrase() -> None:
     import sys as _sys
     from pathlib import Path as _Path
@@ -1611,6 +1627,40 @@ def test_apply_fixes_normalizes_tension_count_and_limited_evidence_phrase() -> N
     assert "366 non-orthogonal tensions" not in fixed
     assert "The available evidence is concentrated in preclinical studies" in fixed
     assert "cross-study tensions" in fixed
+    assert any(e["fix_type"] == "public_meta_phrase_normalization" for e in log)
+
+
+def test_apply_fixes_normalizes_outcome_limited_evidence_phrase() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Results\n\n"
+        "The frailty evidence base is limited to a single observational analysis.\n",
+        [],
+    )
+    assert "evidence base is limited" not in fixed
+    assert "The frailty evidence base contains a single observational analysis" in fixed
+    assert any(e["fix_type"] == "public_meta_phrase_normalization" for e in log)
+
+
+def test_apply_fixes_journalizes_specific_tension_matrix_language() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## What This Synthesis Adds\n\n"
+        "The tension matrix reveals substantial heterogeneity. "
+        "The final interpretation is deliberately tiered.\n",
+        [],
+    )
+    assert "tension matrix reveals" not in fixed
+    assert "cross-study comparisons show" in fixed
+    assert "final interpretation" not in fixed.lower()
     assert any(e["fix_type"] == "public_meta_phrase_normalization" for e in log)
 
 
@@ -1645,6 +1695,7 @@ def test_apply_fixes_removes_public_reference_dumps_and_final_interpretation() -
         "### Background References\n\n"
         "DOI: 10.1000/b. PMID: 999.\n\n"
         "## Conclusion\n\n"
+        "- **renovar 2023.** _Effectiveness._ Nutrients, 2023.\n\n"
         "Clean close.\n\n"
         "### Final interpretation\n\n"
         "Direct clinical receipts carry the most immediate weight.\n",
@@ -1653,6 +1704,7 @@ def test_apply_fixes_removes_public_reference_dumps_and_final_interpretation() -
     assert "PMID:" not in fixed
     assert "DOI:" not in fixed
     assert "Background References" not in fixed
+    assert "renovar 2023" not in fixed
     assert "Final interpretation" not in fixed
     assert "Clean close." in fixed
     assert any(e["fix_type"] == "public_reference_dump_strip" for e in log)
@@ -1679,6 +1731,21 @@ def test_apply_fixes_removes_frailty_sentence_from_immune_and_opener() -> None:
     assert "## Discussion\n\ncardiometabolic benefit" in fixed
     assert any(e["fix_type"] == "immune_section_nonimmune_sentence_strip" for e in log)
     assert any(e["fix_type"] == "discussion_opener_normalization" for e in log)
+
+
+def test_apply_fixes_backfills_clinical_practice_statement() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    fixed, log = fixer.apply_fixes(
+        "## Conclusion\n\n"
+        "The conclusion remains bounded by current evidence.\n",
+        [],
+    )
+    assert "should not be used off-label" in fixed
+    assert any(e["fix_type"] == "clinical_practice_statement_backfill" for e in log)
 
 
 def test_apply_fixes_repairs_role_drift_before_strip(tmp_path) -> None:

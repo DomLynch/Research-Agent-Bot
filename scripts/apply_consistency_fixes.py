@@ -33,7 +33,9 @@ __all__ = ["apply_fixes", "main"]
 
 _POTENTIALLY_RE = re.compile(r"\s*\(potentially\)", re.IGNORECASE)
 _DOUBLE_HASH_RE = re.compile(r"^(#{2,4})\s+#{2,4}\s+", re.MULTILINE)
-_H3_RESIDUE_HEADING_RE = re.compile(r"(?im)^###\s+H3[:.]\s+")
+_H3_RESIDUE_HEADING_RE = re.compile(
+    r"(?im)^###\s+(?:H3[:.]\s+|<H3>\s*(.*?)\s*</H3>\s*$)"
+)
 # Sentences that contain stale-SPAR phrases — strip the entire sentence.
 # Fix #29: extended phrase set per reviewer — "spar quarantine"
 # (noun form), "spar-rejected", "rejected evidence" added.
@@ -95,6 +97,9 @@ _PUBLIC_REFERENCE_DUMP_RE = re.compile(
     r"(?ims)(?:^|\n\n)(?!##\s)"
     r"(?=[^\n]*(?:\bDOI:|\bPMID:))"
     r"[^\n]*(?:\n\n|$)"
+)
+_PUBLIC_REFERENCE_ENTRY_RE = re.compile(
+    r"(?m)^-\s+\*\*[^*\n]*\b(?:19|20)\d{2}\.\*\*\s+_[^_\n]+_.*(?:\n|$)"
 )
 _BACKGROUND_REFERENCES_RE = re.compile(
     r"(?ims)^###\s+Background References\b.*?(?=^##\s+|\Z)"
@@ -733,7 +738,10 @@ def _normalize_public_p_values(paper_md: str) -> tuple[str, int]:
 
 
 def _normalize_h3_residue_headings(paper_md: str) -> tuple[str, int]:
-    return _H3_RESIDUE_HEADING_RE.subn("### ", paper_md)
+    def repl(match: re.Match[str]) -> str:
+        return f"### {match.group(1) or ''}"
+
+    return _H3_RESIDUE_HEADING_RE.subn(repl, paper_md)
 
 
 def _strip_public_pipeline_meta(paper_md: str) -> tuple[str, int]:
@@ -813,10 +821,25 @@ def _normalize_public_meta_phrases(paper_md: str) -> tuple[str, int]:
         ),
         (
             re.compile(
+                r"\bthe\s+([a-z][a-z -]*?)\s+evidence base is limited to\b",
+                re.IGNORECASE,
+            ),
+            r"The \1 evidence base contains",
+        ),
+        (
+            re.compile(
                 r"\b\d+\s+non-orthogonal\s+(?:pairwise\s+)?tensions\b",
                 re.IGNORECASE,
             ),
             "cross-study tensions",
+        ),
+        (
+            re.compile(r"\bthe tension matrix reveals\b", re.IGNORECASE),
+            "cross-study comparisons show",
+        ),
+        (
+            re.compile(r"The final interpretation is deliberately tiered\.", re.IGNORECASE),
+            "The conclusion remains deliberately bounded.",
         ),
     )
     out = paper_md
@@ -864,7 +887,8 @@ def _strip_public_reference_dumps(paper_md: str) -> tuple[str, int]:
     public, appendix = _split_public_body(paper_md)
     public, n_bg = _BACKGROUND_REFERENCES_RE.subn("", public)
     public, n_dump = _PUBLIC_REFERENCE_DUMP_RE.subn("\n\n", public)
-    total = n_bg + n_dump
+    public, n_entry = _PUBLIC_REFERENCE_ENTRY_RE.subn("", public)
+    total = n_bg + n_dump + n_entry
     if not total:
         return paper_md, 0
     public = re.sub(r"\n{3,}", "\n\n", public).rstrip()
@@ -921,6 +945,20 @@ def _strip_nonimmune_sentences_from_immune(paper_md: str) -> tuple[str, int]:
 
 def _normalize_discussion_opener(paper_md: str) -> tuple[str, int]:
     return _DISCUSSION_HOWEVER_RE.subn(r"\1", paper_md)
+
+
+def _ensure_clinical_practice_statement(paper_md: str) -> tuple[str, int]:
+    if "should not be used off-label" in paper_md.lower():
+        return paper_md, 0
+    s, e, section = _extract_section(paper_md, "Conclusion")
+    if s < 0:
+        return paper_md, 0
+    statement = (
+        "Pending further trials, this intervention should not be used "
+        "off-label for geroprotection or anti-aging purposes outside "
+        "clinical-trial settings."
+    )
+    return paper_md[:s] + section.rstrip() + "\n\n" + statement + "\n\n" + paper_md[e:], 1
 
 
 def _strip_empty_attribution_sentences(
@@ -2188,6 +2226,14 @@ def apply_fixes(
         if manifest is not None:
             new_md, depth_log = _ensure_analytical_depth_floors(new_md)
             log.extend(depth_log)
+
+    new_md, n_clinical_statement = _ensure_clinical_practice_statement(new_md)
+    if n_clinical_statement:
+        log.append({
+            "fix_type": "clinical_practice_statement_backfill",
+            "n_changes": n_clinical_statement,
+            "description": "added the required bounded clinical-practice statement",
+        })
 
     return new_md, log
 

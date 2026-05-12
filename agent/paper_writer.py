@@ -7,10 +7,7 @@ from typing import Any
 import httpx
 
 from agent.llm_client import CallSpec, CostLedger
-from agent.framework_section import (
-    build_framework_engagement_section,
-    build_novel_framework_section,
-)
+from agent.framework_section import build_novel_framework_section
 from agent.paper_writer_builders import (
     build_anchored_from_parsed,
     build_results_from_parsed,
@@ -472,7 +469,6 @@ _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
     "results",
     "cross_domain_synthesis",
     "novel_framework",
-    "framework_engagement",
     "discussion",
     "limitations_full",
     "conclusion",
@@ -656,14 +652,6 @@ async def render_full_paper(
     _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
     sections["novel_framework"] = build_novel_framework_section(accepted, matrix)
     _log_section_done("novel_framework (deterministic)", sections["novel_framework"])
-    sections["framework_engagement"] = build_framework_engagement_section(
-        accepted,
-        background_refs=background_lit_entries or (),
-    )
-    _log_section_done(
-        "framework_engagement (deterministic)",
-        sections["framework_engagement"],
-    )
     sections["discussion"] = await _write_scoped_section(
         name="discussion", heading="## Discussion",
         system_prompt=_prompts["discussion"], user_prompt=user,
