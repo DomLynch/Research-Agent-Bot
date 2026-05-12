@@ -25,6 +25,8 @@ This meta-synthesis compares finalized Researka topic runs only. It does not ass
 | zone2_training | pipeline-primary | pipeline-qualified | not manually reviewed | 36 | 36 | 444 | 247 | 247 | `synthesis-zone2_training-v06-PATH1FIX-2026-05-07T18-11-50Z` |
 | taurine | scoped-support | pipeline-qualified | not manually reviewed | 2 | 2 | 17 | 1 | 1 | `synthesis-taurine-v06-LANEA2-2026-05-08T1` |
 
+_Count semantics: source papers are the corpus entering the run; eligible sources and public disagreements come from the final public-contract state; pipeline tensions are the raw matrix count._
+
 ## Pipeline Evidence Lane
 - `synthesis-acarbose-v06-AAA10x2-pass2-2026-05-09T22-41-06Z` enters the pipeline-primary lane with 19 source papers and 19 eligible sources across cardiometabolic, immune.
 - `synthesis-aspirin-v06-AAA10x2-pass2-2026-05-09T23-15-31Z` enters the pipeline-primary lane with 83 source papers and 83 eligible sources across cardiometabolic, frailty, immune, longevity, muscle_function, other, safety.
