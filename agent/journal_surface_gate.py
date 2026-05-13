@@ -159,12 +159,14 @@ def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
     defined = {
-        m.group(1)
+        number
         for m in re.finditer(
-            r"^(?:#{2,6}\s*)?Table\s+(\d+)\b",
+            r"^(?:#{2,6}\s+Table\s+(\d+)\b|Table\s+(\d+)\s*[:.\-—])",
             paper_md,
             flags=re.IGNORECASE | re.MULTILINE,
         )
+        for number in m.groups()
+        if number
     }
     missing = sorted(
         {m.group(1) for m in _TABLE_REF_RE.finditer(paper_md) if m.group(1) not in defined},

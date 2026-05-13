@@ -257,12 +257,14 @@ _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
 
 def _defined_public_table_numbers(body: str) -> set[str]:
     return {
-        m.group(1)
+        number
         for m in re.finditer(
-            r"^(?:#{2,6}\s*)?Table\s+(\d+)\b",
+            r"^(?:#{2,6}\s+Table\s+(\d+)\b|Table\s+(\d+)\s*[:.\-—])",
             body,
             flags=re.IGNORECASE | re.MULTILINE,
         )
+        for number in m.groups()
+        if number
     }
 
 

@@ -53,6 +53,30 @@ def test_lightweight_polish_journalizes_public_counter_terms() -> None:
     assert any(i["fix_type"] == "public_evidence_term_normalization" for i in log)
 
 
+def test_lightweight_polish_removes_orphan_table_and_overclaim_language() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "The topic is the most robust non-pharmacological intervention for "
+        "extending lifespan across species. Eligible studies were identified "
+        "through systematic search.\n\n"
+        "## Results\n\n"
+        "Table 2 presents per-study endpoint evidence. Endpoints are "
+        "summarized in Table 2.\n\n"
+        "## References\n\n"
+        "- Smith 2024.\n"
+    )
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "most robust non-pharmacological intervention" not in out
+    assert "extending lifespan across species" not in out
+    assert "one of the most extensively studied non-pharmacological intervention" in out
+    assert "systematic search" not in out
+    assert "structured corpus search" in out
+    assert "Table 2" not in out
+    assert "The synthesis presents per-study endpoint evidence" in out
+    assert "summarized in the evidence synthesis" in out
+    assert any(i["fix_type"] == "orphan_table_reference_normalization" for i in log)
+
+
 def test_lightweight_polish_splits_dense_conclusion_transitions() -> None:
     paper = (
         "## Conclusion\n\n"

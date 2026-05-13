@@ -26,7 +26,8 @@ def _paper(row: str) -> str:
         f"## Cross-Domain Synthesis\n\n{_words(850, 'cross')}\n\n"
         f"## Discussion\n\n{_words(800, 'discussion')}\n\n"
         f"## Limitations\n\n{_words(250, 'limits')}\n\n"
-        f"## Conclusion\n\n{_words(250, 'conclusion')}\n"
+        f"## Conclusion\n\n{_words(250, 'conclusion')}\n\n"
+        "## References\n\n- Smith 2024.\n"
     )
 
 
@@ -238,6 +239,28 @@ def test_public_thesis_marker_blocks_journal_surface():
     details = " ".join(i.detail for i in report.issues)
     assert "**thesis:**" in details
     assert "accepted receipt" in details
+
+
+def test_missing_references_blocks_journal_surface():
+    report = evaluate_journal_surface(_paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |").replace("\n\n## References\n\n- Smith 2024.\n", ""))
+    assert not report.passed
+    assert any("missing required section: References" in i.detail for i in report.issues)
+
+
+def test_orphan_table_reference_blocks_journal_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("results1", "Table 2 presents endpoint evidence", 1)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("orphan table reference: Table 2" in i.detail for i in report.issues)
+
+
+def test_labeled_table_reference_passes_journal_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("## Results\n\n", "## Results\n\nTable 2. Endpoint summary.\n\n")
+    paper = paper.replace("results1", "Table 2 presents endpoint evidence", 1)
+    report = evaluate_journal_surface(paper)
+    assert report.passed
 
 
 def test_reference_dump_and_internal_final_heading_block_journal_surface():
