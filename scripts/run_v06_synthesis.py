@@ -3119,7 +3119,21 @@ async def _run_post_paper_pipeline(
         paper_md, references_restored = _ensure_references_section(
             paper_md, citation_registry,
         )
-        if references_restored:
+        paper_md, surface_polish_log = (
+            _consistency_fixer.apply_lightweight_public_polish(
+                paper_md, manifest=manifest,
+            )
+        )
+        if surface_polish_log:
+            final_log_path = paper_path.with_suffix(".final_fixed_log.json")
+            try:
+                prior_log = json.loads(final_log_path.read_text())
+            except (OSError, ValueError, json.JSONDecodeError):
+                prior_log = []
+            final_log_path.write_text(
+                json.dumps(prior_log + surface_polish_log, indent=2)
+            )
+        if references_restored or surface_polish_log:
             paper_path.write_text(paper_md)
         from agent.journal_surface_gate import evaluate_journal_surface
         surface_report = evaluate_journal_surface(paper_md)
