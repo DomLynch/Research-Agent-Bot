@@ -555,11 +555,10 @@ Key decisions:
 **What shipped:**
 - `tests/test_schema_conformance.py` — 15 tests validating TypedDict field existence, type annotations, and well-formed dict shapes for EffectDict, ExtractionDict, EvidenceCardDict, SourceEntryDict, GoldTopicDict.
 - `scripts/unpaywall_smoke.py` — resolves 5 hardcoded OA DOIs via UnpaywallAdapter, writes `docs/weekly/YYYY-MM-DD-unpaywall.md` + `.json`, exits 1 if hit rate < 60%. Live test: 5/5 = 100%.
-- `.github/workflows/ci.yml` — pytest + ruff on push/PR to main; dead-code detector with `|| true` (warning only, not hard fail).
+- `.github/workflows/ci.yml` — pytest + ruff on push/PR to main.
 - `.github/workflows/weekly-reports.yml` — Monday 09:00 UTC cron: coverage audit + unpaywall smoke + weekly report.
 **Tradeoff accepted:** Dead-code detection was removed later because the AST-only scan produced false positives for externally exercised modules. Pytest + ruff remain the active CI gates.
 **Alternatives rejected:**
-- Hard-fail the dead-code detector — rejected, would be permanently red for schema/unpaywall.
 - Keep dead-code detection — later rejected because warning-only false positives created noise without protecting the active paper path.
 - Wire smoke test to daily cron — rejected, private repo free plan; Monday-only saves CI minutes.
 **Revisit if:** schema.py or unpaywall.py gets imported by agent internals (detector should stop flagging them), or if the project upgrades to a paid GitHub plan (then add daily smoke).

@@ -298,13 +298,7 @@ def _restore_required_section_bodies(
 def _restore_public_surface_floors(
     paper_md: str,
 ) -> tuple[str, list[dict[str, str]]]:
-    """Final public-section length guard, independent of writer objects.
-
-    Late patching can shorten or bloat a rendered section after the typed
-    section contract was restored. This pass reads the public markdown
-    itself and compiles a safe corpus-level backstop for any required section
-    outside the journal-surface length bounds.
-    """
+    """Final section length guard over rendered public markdown."""
     try:
         from agent.journal_surface_gate import _REQUIRED_SECTIONS, _SECTION_CEILINGS
     except ImportError:
