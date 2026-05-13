@@ -93,6 +93,33 @@ def _numeric_grounding(gate_inputs: dict[str, Any], audit: dict[str, Any]) -> fl
     return 0.0
 
 
+def _citation_accuracy(
+    run_dir: Path,
+    *,
+    receipts: int,
+    registry: dict[str, Any],
+    gate_inputs: dict[str, Any],
+) -> tuple[float, str]:
+    consistency = _read_json(run_dir / "full_paper.consistency.json")
+    consistency_issues = _list(consistency.get("issues")) if consistency else []
+    citation_issues = [
+        item for item in consistency_issues
+        if any(
+            token in str(item).lower()
+            for token in ("citation", "reference", "doi", "pmid")
+        )
+    ]
+    complete = bool(
+        gate_inputs.get("citation_registry_complete")
+        or (receipts and len(registry) >= receipts)
+    )
+    if complete and not citation_issues:
+        return 1.0, "registry complete; no citation consistency issues"
+    if not complete:
+        return 0.0, "citation registry incomplete"
+    return 0.5, f"{len(citation_issues)} citation consistency issue(s)"
+
+
 def _metric_row(run_dir: Path) -> dict[str, Any]:
     manifest = _read_json(run_dir / "manifest.json")
     verdict = _read_json(run_dir / "full_paper.final_verdict.json")
@@ -107,6 +134,13 @@ def _metric_row(run_dir: Path) -> dict[str, Any]:
     gate_failures = _list(gate_result.get("failures"))
     topic = str(manifest.get("topic") or _topic_from_run_name(run_dir.name) or "")
     receipts = int(manifest.get("n_receipts") or 0)
+    citation_accuracy, citation_basis = _citation_accuracy(
+        run_dir,
+        receipts=receipts,
+        registry=citation_registry,
+        gate_inputs=gate_inputs,
+    )
+    runtime = _read_json(run_dir / "benchmark_runtime.json")
     return {
         "topic": topic,
         "run_id": run_dir.name,
@@ -115,10 +149,9 @@ def _metric_row(run_dir: Path) -> dict[str, Any]:
         "receipts": receipts,
         "claims": int(manifest.get("n_high_confidence_claims_total") or 0),
         "tensions": int(manifest.get("n_non_orthogonal_tensions") or 0),
-        "citation_registry_complete": bool(
-            gate_inputs.get("citation_registry_complete")
-            or (receipts and len(citation_registry) >= receipts)
-        ),
+        "citation_accuracy": citation_accuracy,
+        "citation_accuracy_basis": citation_basis,
+        "citation_registry_complete": citation_accuracy == 1.0,
         "citation_registry_entries": len(citation_registry),
         "numeric_grounding": _numeric_grounding(gate_inputs, audit),
         "section_complete": bool(surface.get("passed")),
@@ -134,6 +167,8 @@ def _metric_row(run_dir: Path) -> dict[str, Any]:
         "stage2_p1": int(verdict.get("stage2_p1") or 0),
         "llm_calls": int(manifest.get("n_llm_calls") or 0),
         "cost_usd": float(manifest.get("total_cost_usd") or 0.0),
+        "runtime_seconds": float(runtime.get("runtime_seconds") or 0.0),
+        "fresh_run": bool(runtime.get("fresh_run")),
     }
 
 
@@ -155,6 +190,8 @@ def collect_metrics(runs_dir: Path, topics: tuple[str, ...]) -> dict[str, Any]:
         "tensions": sum(row["tensions"] for row in rows),
         "total_cost_usd": round(sum(row["cost_usd"] for row in rows), 6),
         "total_llm_calls": sum(row["llm_calls"] for row in rows),
+        "total_runtime_seconds": round(sum(row["runtime_seconds"] for row in rows), 2),
+        "fresh_topics": sum(1 for row in rows if row["fresh_run"]),
         "journal_ready_topics": sum(1 for row in rows if row["journal_ready"]),
         "section_complete_topics": sum(1 for row in rows if row["section_complete"]),
         "pre_submit_clean_topics": sum(1 for row in rows if not row["contract_failures"]),
@@ -190,27 +227,31 @@ def render_methods_paper(metrics: dict[str, Any]) -> str:
     totals = metrics["totals"]
     if rows:
         numeric_mean = sum(row["numeric_grounding"] for row in rows) / len(rows)
+        citation_mean = sum(row["citation_accuracy"] for row in rows) / len(rows)
         citation_complete = sum(1 for row in rows if row["citation_registry_complete"])
     else:
         numeric_mean = 0.0
+        citation_mean = 0.0
         citation_complete = 0
     table = [
-        "| Topic | Receipts | Claims | Numeric grounding | Section contract | Verdict | Status | Cost |",
-        "|---|---:|---:|---:|---|---|---|---:|",
+        "| Topic | Receipts | Claims | Citation accuracy | Numeric grounding | Section contract | Reviewer flags | Verdict | Runtime | Cost |",
+        "|---|---:|---:|---:|---:|---|---:|---|---:|---:|",
     ]
     for row in rows:
         section = "pass" if row["section_complete"] else f"{row['section_issue_count']} issue(s)"
         table.append(
-            "| {topic} | {receipts} | {claims} | {numeric} | {section} | "
-            "{verdict} / L{level} | {status} | ${cost:.4f} |".format(
+            "| {topic} | {receipts} | {claims} | {citation} | {numeric} | {section} | "
+            "{flags} | {verdict} / L{level} | {runtime:.0f}s | ${cost:.4f} |".format(
                 topic=row["topic"].replace("_", " "),
                 receipts=row["receipts"],
                 claims=row["claims"],
+                citation=_pct(row["citation_accuracy"]),
                 numeric=_pct(row["numeric_grounding"]),
                 section=section,
+                flags=row["reviewer_flags"],
                 verdict=row["verdict"] or "unscored",
                 level=row["maturity_level"],
-                status=_status(row),
+                runtime=row["runtime_seconds"],
                 cost=row["cost_usd"],
             )
         )
@@ -245,9 +286,10 @@ def render_methods_paper(metrics: dict[str, Any]) -> str:
         "identity, numeric traceability, section contracts, quarantine, and final "
         "verdicts. In a frozen benchmark of {n} longevity-related topics, the "
         "pipeline processed {receipts} source receipts, {claims} high-confidence "
-        "observations, and {tensions} cross-study tensions at ${cost:.4f} recorded "
-        "model cost. Mean numeric grounding across measured runs was {numeric}; "
-        "{citation}/{n_measured} runs reported complete citation registries. These "
+            "observations, and {tensions} cross-study tensions at ${cost:.4f} recorded "
+        "model cost. Mean citation-accuracy proxy was {citation_mean}; mean "
+        "numeric grounding was {numeric}; {citation}/{n_measured} runs reported "
+        "complete citation registries. These "
         "results support a bounded claim: the system produces auditable structured "
         "evidence syntheses and reproducible support bundles. They do not establish "
         "automated systematic-review equivalence, formal PRISMA compliance, or "
@@ -259,6 +301,7 @@ def render_methods_paper(metrics: dict[str, Any]) -> str:
             tensions=totals["tensions"],
             cost=totals["total_cost_usd"],
             numeric=_pct(numeric_mean),
+            citation_mean=_pct(citation_mean),
             citation=citation_complete,
         ),
         "## Introduction\n\n"
@@ -269,8 +312,10 @@ def render_methods_paper(metrics: dict[str, Any]) -> str:
         "The source of truth is a bundle of machine-readable manifests, citation "
         "registries, audit reports, reviewer flags, and verdict sidecars.",
         "## Methods\n\n"
-        "We froze a benchmark panel of longevity-related topics and evaluated the "
-        "latest completed synthesis run for each topic with required manifest, "
+        "We froze a benchmark panel of longevity-related topics and evaluated "
+        "fresh synthesis runs where runtime sidecars were available, falling back "
+        "only to the latest completed run when a fresh run was absent. Metrics "
+        "required manifest, "
         "journal-surface, and final-verdict artifacts. Metrics were read from "
         "existing sidecars: corpus size from `manifest.json`, numeric grounding "
         "and citation-registry completeness from `pre_submit_gate.json`, section "
