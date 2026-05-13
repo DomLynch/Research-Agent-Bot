@@ -33,6 +33,7 @@ import dataclasses
 import datetime as dt
 import json
 import re
+import shutil
 import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
@@ -175,9 +176,10 @@ def _organize_run_artifacts(run_dir: Path) -> dict[str, str]:
             dest_dir.mkdir(exist_ok=True)
             dest = dest_dir / name
             if dest.exists():
-                if src.is_file():
-                    src.unlink()
-                continue
+                if src.is_dir():
+                    shutil.rmtree(dest)
+                else:
+                    dest.unlink()
             src.rename(dest)
             moved[name] = str(dest.relative_to(run_dir))
     return moved

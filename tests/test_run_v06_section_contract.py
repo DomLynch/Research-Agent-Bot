@@ -92,6 +92,16 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert moved["quality_methods.json"] == "audit/quality_methods.json"
 
 
+def test_organize_run_artifacts_replaces_stale_sidecar(tmp_path: Path) -> None:
+    (tmp_path / "audit").mkdir()
+    (tmp_path / "audit" / "publication_score.json").write_text("old")
+    (tmp_path / "publication_score.json").write_text("new")
+    moved = orch._organize_run_artifacts(tmp_path)
+    assert (tmp_path / "audit" / "publication_score.json").read_text() == "new"
+    assert not (tmp_path / "publication_score.json").exists()
+    assert moved["publication_score.json"] == "audit/publication_score.json"
+
+
 def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     try:
