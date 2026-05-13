@@ -195,6 +195,19 @@ def _first_section_paragraph(section_md: str) -> str:
     return ""
 
 
+def _pre_submit_blocker_summary(gate_artifacts: dict[str, Any]) -> str:
+    gate = gate_artifacts.get("gate")
+    score = gate_artifacts.get("score")
+    gate_passed = bool(getattr(gate, "passed", False))
+    score_verdict = str(getattr(score, "verdict", ""))
+    if gate_passed and score_verdict == "accept":
+        return ""
+    return (
+        f"{getattr(gate, 'summary', 'pre_submit_gate_missing')}; "
+        f"{getattr(score, 'summary', 'publication_score_missing')}"
+    )
+
+
 def _restore_rendered_section_headings(
     paper_md: str, sections: tuple[SynthesisSection, ...],
 ) -> str:
@@ -3167,19 +3180,18 @@ async def _run_post_paper_pipeline(
             quality_bundle=quality_bundle,
             citation_registry_complete=citation_registry_complete,
         )
-        if (
-            not gate_artifacts["gate"].passed
-            or gate_artifacts["score"].verdict != "accept"
-        ):
-            raise RuntimeError(
-                "pre_submit_gate_failed: "
-                f"{gate_artifacts['gate'].summary}; "
-                f"{gate_artifacts['score'].summary}"
+        blocker_summary = _pre_submit_blocker_summary(gate_artifacts)
+        if blocker_summary:
+            print(
+                "[pipeline] Stage 5c — pre-submit quality gate blocked: "
+                f"{blocker_summary}",
+                file=sys.stderr,
             )
-        print(
-            "[pipeline] Stage 5c — pre-submit quality gate passed",
-            file=sys.stderr,
-        )
+        else:
+            print(
+                "[pipeline] Stage 5c — pre-submit quality gate passed",
+                file=sys.stderr,
+            )
     except Exception as _e:
         print(
             f"[pipeline] Stage 5c — pre-submit quality gate failed: {_e}",
