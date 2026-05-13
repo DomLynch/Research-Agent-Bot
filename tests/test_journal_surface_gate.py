@@ -241,6 +241,79 @@ def test_public_thesis_marker_blocks_journal_surface():
     assert "accepted receipt" in details
 
 
+def test_abstract_language_gate_blocks_duplicate_phrases_and_templates():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Abstract\n\n" + _words(150, "abstract"),
+        "## Abstract\n\n"
+        "The evidence profile contains 4 direct clinical direct clinical source(s). "
+        + _words(140, "abstract"),
+    )
+    report = evaluate_journal_surface(paper)
+    details = " ".join(i.detail for i in report.issues)
+    assert not report.passed
+    assert "duplicate adjacent phrase: direct clinical" in details
+    assert "unresolved public template: source(s)" in details
+
+
+def test_abstract_zero_count_profile_cannot_contradict_body():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Abstract\n\n" + _words(150, "abstract"),
+        "## Abstract\n\nThe evidence profile contains 0 mechanistic sources. "
+        + _words(140, "abstract"),
+    )
+    paper = paper.replace(
+        "background1",
+        "mechanistic studies appear in the body",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("abstract evidence-profile contradiction" in i.detail for i in report.issues)
+
+
+def test_results_table_count_must_match_section_count_claim():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    results = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Cardiometabolic | n=14; claims=132 | mixed |\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "The cardiometabolic evidence packet spans 15 curated references. "
+        f"{_words(492, 'results')}\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", results)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("Results count mismatch: Cardiometabolic Outcomes table n=14 body says 15" in i.detail for i in report.issues)
+
+
+def test_thin_analytical_paragraph_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "results1",
+        "Meta-analytic evidence corroborates the glycemic signal.\n\nresults1",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("thin analytical paragraph" in i.detail for i in report.issues)
+
+
+def test_conclusion_cannot_carry_what_this_adds_prose():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "conclusion1",
+        "It separates endpoint-specific evidence from broad geroprotection claims. conclusion1",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("What This Synthesis Adds language appears inside Conclusion" in i.detail for i in report.issues)
+
+
 def test_missing_references_blocks_journal_surface():
     report = evaluate_journal_surface(_paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |").replace("\n\n## References\n\n- Smith 2024.\n", ""))
     assert not report.passed

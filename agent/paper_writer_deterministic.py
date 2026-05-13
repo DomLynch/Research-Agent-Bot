@@ -268,8 +268,10 @@ def _append_research_contribution_layer(
         "|---|---|---|",
     ]
     for i, (_, oc, direct, indirect, directions, gap) in enumerate(top, 1):
+        n_sources = direct + indirect
         rationale = (
-            f"{direct} direct and {indirect} indirect source(s); "
+            f"{direct} direct and {indirect} indirect "
+            f"{'source' if n_sources == 1 else 'sources'}; "
             f"direction profile: {directions or 'unclear'}"
         )
         lines.append(f"| P{i} | {_public_label(oc)}: {gap} | {rationale} |")

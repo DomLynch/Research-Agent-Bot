@@ -51,7 +51,7 @@ _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|
 _PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
 _QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M)
 _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
-_UNRESOLVED_TEMPLATE_RE = re.compile(r"\b(?:source|study|trial|paper)\(s\)\b|\bstudy/studies\b", re.IGNORECASE)
+_UNRESOLVED_TEMPLATE_RE = re.compile(r"(?<![a-z])(?:source|study|trial|paper)\((?:s|es)\)(?![a-z])|\bstudy/studies\b", re.IGNORECASE)
 _COUNT_CLAIM_RE = re.compile(r"\b(?:spans|contains|includes|covers|across)\s+(\d+)\s+(?:curated\s+)?(?:references?|sources?|studies|papers)\b", re.IGNORECASE)
 _ANALYTIC_STUB_RE = re.compile(r"\b(?:evidence|findings|mechanistic|mechanistically|meta-analytic|synthesis|analysis)\b", re.IGNORECASE)
 

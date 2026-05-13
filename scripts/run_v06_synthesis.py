@@ -512,7 +512,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "clinical signal."
             ),
             (
-                f"The {tension_n} non-orthogonal tension(s) prevent the evidence "
+                f"{_count_phrase(tension_n, 'non-orthogonal tension').capitalize()} prevent the evidence "
                 "from being reduced to a simple positive or negative verdict. "
                 "They instead point to a research agenda: define the population "
                 "most likely to benefit, select endpoints that map onto the "
@@ -4030,9 +4030,18 @@ def main(argv: list[str] | None = None) -> int:
         out_dir = (
             REPO_ROOT / "runs" / f"synthesis-{args.topic}-v06-{ts}"
         )
-    return asyncio.run(_run(
-        out_dir, dry_run=args.dry_run, topic=args.topic,
-    ))
+    try:
+        return asyncio.run(_run(
+            out_dir, dry_run=args.dry_run, topic=args.topic,
+        ))
+    finally:
+        if not args.dry_run and out_dir.exists():
+            moved_artifacts = _organize_run_artifacts(out_dir)
+            if moved_artifacts:
+                print(
+                    f"[pipeline] cleanup — organized {len(moved_artifacts)} sidecar artifact(s)",
+                    file=sys.stderr,
+                )
 
 
 if __name__ == "__main__":
