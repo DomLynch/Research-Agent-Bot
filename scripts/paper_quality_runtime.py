@@ -18,7 +18,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from agent.final_gate import evaluate_final_gate
+from agent.final_gate import GateResult, evaluate_final_gate
 from agent.final_gate_mapper import build_gate_inputs
 from agent.forest_plot_svg import render_forest_plot_svg
 from agent.meta_analysis import EffectRow, pool_random_effects
@@ -440,6 +440,36 @@ def _readiness_item(
     }
 
 
+def _runtime_integrity_failure(out_dir: Path) -> str | None:
+    path = out_dir / "benchmark_runtime.json"
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        return f"benchmark_runtime_unreadable={exc.__class__.__name__}"
+    if not payload.get("fresh_run"):
+        return None
+    if payload.get("timed_out"):
+        return "benchmark_runtime_timed_out"
+    return_code = payload.get("return_code")
+    if return_code != 0:
+        return f"benchmark_runtime_return_code={return_code}"
+    return None
+
+
+def _gate_with_runtime_integrity(gate: GateResult, runtime_failure: str | None) -> GateResult:
+    if not runtime_failure:
+        return gate
+    failures = gate.failures + (runtime_failure,)
+    return GateResult(
+        passed=False,
+        failures=failures,
+        warnings=gate.warnings,
+        summary=f"FAIL — {len(failures)} blocker(s): " + "; ".join(failures),
+    )
+
+
 def build_journal_readiness_contract(
     *,
     paper_text: str,
@@ -474,8 +504,10 @@ def build_journal_readiness_contract(
         and getattr(score, "verdict", "") == "accept"
     )
     return [
-        _readiness_item(1, "product_tiers", "pass", (
-            f"evidence_bundle={getattr(gate, 'passed', False)}; "
+        _readiness_item(1, "product_tiers", (
+            "pass" if getattr(gate, "passed", False) and bool(journal_surface.get("passed")) else "not_ready"
+        ), (
+            f"pre_submit_gate={getattr(gate, 'passed', False)}; "
             f"journal_surface={bool(journal_surface.get('passed'))}; "
             f"submission_ready={submission_ready}"
         ), "Resolve non-pass readiness items before submission."),
@@ -571,7 +603,8 @@ def write_final_quality_gates(
         n_receipts=int(manifest.get("n_receipts", 0)),
         template_language_blocking=template.template_language_blocking,
     )
-    gate = evaluate_final_gate(inputs)
+    runtime_failure = _runtime_integrity_failure(out_dir)
+    gate = _gate_with_runtime_integrity(evaluate_final_gate(inputs), runtime_failure)
 
     field = json.loads((out_dir / "field_engagement.json").read_text()) if (out_dir / "field_engagement.json").exists() else []
     supported = sum(1 for item in field if item.get("status") in {"support", "extends"})
@@ -607,6 +640,7 @@ def write_final_quality_gates(
     gate_payload = {
         "inputs": dataclasses.asdict(inputs),
         "result": dataclasses.asdict(gate),
+        "runtime_integrity_failure": runtime_failure,
         "journal_readiness_contract": readiness_contract,
     }
     (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate_payload, indent=2))

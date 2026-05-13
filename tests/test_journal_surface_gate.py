@@ -314,6 +314,18 @@ def test_conclusion_cannot_carry_what_this_adds_prose():
     assert any("What This Synthesis Adds language appears inside Conclusion" in i.detail for i in report.issues)
 
 
+def test_conclusion_scope_gate_does_not_require_broad_claim_wording():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "conclusion1",
+        "It separates endpoint-specific evidence from inferential claims. conclusion1",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("What This Synthesis Adds language appears inside Conclusion" in i.detail for i in report.issues)
+
+
 def test_missing_references_blocks_journal_surface():
     report = evaluate_journal_surface(_paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |").replace("\n\n## References\n\n- Smith 2024.\n", ""))
     assert not report.passed

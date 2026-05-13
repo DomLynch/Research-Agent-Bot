@@ -197,3 +197,36 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     assert "| 12 | target_journal_finalizer | not_ready |" in gate_md
     assert "| 13 | human_signoff | not_ready |" in gate_md
     assert "| 14 | universal_benchmark_target | not_ready |" in gate_md
+
+
+def test_final_quality_gates_block_failed_fresh_runtime(tmp_path: Path) -> None:
+    parsed = tmp_path / "parsed"
+    parsed.mkdir()
+    artifact = pqr.write_quality_methods(tmp_path, _receipts(), parsed)
+    (tmp_path / "benchmark_runtime.json").write_text(json.dumps({
+        "fresh_run": True,
+        "return_code": 1,
+        "timed_out": False,
+    }))
+    result = pqr.write_final_quality_gates(
+        out_dir=tmp_path,
+        paper_text="## Limitations\n\nPending further trials.",
+        manifest={
+            "n_receipts": 40,
+            "n_non_orthogonal_tensions": 5,
+            "thesis": "Receipt-bound thesis.",
+            "receipts": _receipts(),
+        },
+        audit={"p1_pass": True, "score": 10, "max_score": 10},
+        journal_surface={"passed": True},
+        reviewer_patches={"unresolved_p1_count": 0},
+        quality_bundle=artifact["bundle"],
+        citation_registry_complete=True,
+    )
+    payload = json.loads((tmp_path / "pre_submit_gate.json").read_text())
+
+    assert not result["gate"].passed
+    assert payload["runtime_integrity_failure"] == "benchmark_runtime_return_code=1"
+    assert "benchmark_runtime_return_code=1" in payload["result"]["failures"]
+    by_name = {row["name"]: row for row in payload["journal_readiness_contract"]}
+    assert by_name["product_tiers"]["status"] == "not_ready"
