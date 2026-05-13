@@ -79,6 +79,20 @@ def _audit_counts(audit: dict[str, Any]) -> tuple[int, int]:
     return passed, total
 
 
+def _numeric_grounding(gate_inputs: dict[str, Any], audit: dict[str, Any]) -> float:
+    value = gate_inputs.get("numeric_coverage")
+    if isinstance(value, (int, float)):
+        return float(value)
+    for row in _list(audit.get("checks")):
+        if not isinstance(row, dict) or row.get("name") != "Q2_numeric_integrity":
+            continue
+        detail = str(row.get("detail") or "")
+        percent = re.search(r"\((\d+)%\)", detail)
+        if percent:
+            return int(percent.group(1)) / 100
+    return 0.0
+
+
 def _metric_row(run_dir: Path) -> dict[str, Any]:
     manifest = _read_json(run_dir / "manifest.json")
     verdict = _read_json(run_dir / "full_paper.final_verdict.json")
@@ -92,17 +106,21 @@ def _metric_row(run_dir: Path) -> dict[str, Any]:
     surface_issues = _list(surface.get("issues"))
     gate_failures = _list(gate_result.get("failures"))
     topic = str(manifest.get("topic") or _topic_from_run_name(run_dir.name) or "")
+    receipts = int(manifest.get("n_receipts") or 0)
     return {
         "topic": topic,
         "run_id": run_dir.name,
         "run_path": str(run_dir),
         "generated_at": manifest.get("generated_at"),
-        "receipts": int(manifest.get("n_receipts") or 0),
+        "receipts": receipts,
         "claims": int(manifest.get("n_high_confidence_claims_total") or 0),
         "tensions": int(manifest.get("n_non_orthogonal_tensions") or 0),
-        "citation_registry_complete": bool(gate_inputs.get("citation_registry_complete")),
+        "citation_registry_complete": bool(
+            gate_inputs.get("citation_registry_complete")
+            or (receipts and len(citation_registry) >= receipts)
+        ),
         "citation_registry_entries": len(citation_registry),
-        "numeric_grounding": float(gate_inputs.get("numeric_coverage") or 0.0),
+        "numeric_grounding": _numeric_grounding(gate_inputs, audit),
         "section_complete": bool(surface.get("passed")),
         "section_issue_count": len(surface_issues),
         "contract_failures": list(gate_failures) + list(surface_issues),
@@ -259,8 +277,10 @@ def render_methods_paper(metrics: dict[str, Any]) -> str:
         "completeness from `full_paper.journal_surface.json`, audit performance "
         "from `full_paper.audit.json`, reviewer flags and maturity from "
         "`full_paper.final_verdict.json`, and cost from manifest model-use fields. "
-        "This is an internal methods benchmark over completed runs, not a new "
-        "clinical meta-analysis and not a substitute for blinded dual screening.",
+        "This is an internal methods benchmark over completed runs: auditable "
+        "structured evidence synthesis, not automated systematic review, not a "
+        "new clinical meta-analysis, and not a substitute for blinded dual "
+        "screening.",
         "## Results\n\n" + "\n".join(table),
         "## Case Studies\n\n" + "\n\n".join(case_lines),
         "## Discussion\n\n"
