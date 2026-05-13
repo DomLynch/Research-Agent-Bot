@@ -634,6 +634,7 @@ def test_l4_aaa_but_surface_gate_blocks_journal_ready() -> None:
     assert v.maturity_level == 4
     assert v.journal_ready is False
     md = orch._format_unified_verdict(v)
+    assert "**Verdict: Pipeline AAA / L4**" in md
     assert "Journal surface gate: fail" in md
 
 

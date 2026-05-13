@@ -3873,9 +3873,14 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         f"clinical={u.evidence_weight_clinical:.2f}; "
         f"mechanistic={u.evidence_weight_mechanistic:.2f})\n"
     )
+    verdict_label = (
+        f"Pipeline {u.verdict} / L{u.maturity_level}"
+        if u.verdict == "AAA" and not u.journal_ready
+        else u.verdict
+    )
     return (
         f"# Unified Final Verdict\n\n"
-        f"**Verdict: {u.verdict}**\n\n"
+        f"**Verdict: {verdict_label}**\n\n"
         f"**Maturity: {u.maturity_label}**\n\n"
         f"{journal_line}"
         f"**Reason:** {u.reason}\n\n"

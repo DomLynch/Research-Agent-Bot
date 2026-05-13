@@ -167,7 +167,11 @@ def _empty_heading_issue_messages(paper_md: str) -> tuple[str, ...]:
     matches = list(re.finditer(r"^(#{2,6})\s+(.+?)\s*$", paper_md, flags=re.M))
     issues: list[str] = []
     for idx, match in enumerate(matches):
-        end = matches[idx + 1].start() if idx + 1 < len(matches) else len(paper_md)
+        level = len(match.group(1))
+        next_match = matches[idx + 1] if idx + 1 < len(matches) else None
+        if next_match is not None and len(next_match.group(1)) > level:
+            continue
+        end = next_match.start() if next_match else len(paper_md)
         if not paper_md[match.end():end].strip():
             issues.append(f"empty heading: {match.group(2).strip()}")
     return tuple(issues)
@@ -210,6 +214,8 @@ def _table_cells(line: str) -> list[str]:
 
 def _has_matching_outcome_heading(outcome: str, headings: Iterable[str]) -> bool:
     outcome_tokens = _outcome_tokens(outcome)
+    if not outcome_tokens:
+        return False
     return any(outcome_tokens <= _outcome_tokens(heading) for heading in headings)
 
 

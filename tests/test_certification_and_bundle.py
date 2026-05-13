@@ -16,23 +16,24 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from typing import cast
 
 import pytest
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import certification_report as cert  # noqa: E402
-import export_public_bundle as bundle  # noqa: E402
+import certification_report as cert  # type: ignore[import-not-found]  # noqa: E402
+import export_public_bundle as bundle  # type: ignore[import-not-found]  # noqa: E402
 
 
 # Pick the most-recent fix54-repro run as the canonical AAA fixture
 def _latest_aaa_run() -> Path | None:
-    """Return the most-recent run dir whose final_verdict.json says
-    AAA. Used as a real-world fixture; skip tests when absent."""
+    """Return the most-recent bundle-complete AAA journal-ready run."""
     runs_dir = REPO / "runs"
     if not runs_dir.exists():
         return None
+    required_files = set(bundle._FILE_MAP) - bundle._OPTIONAL
     candidates = []
     for d in runs_dir.iterdir():
         if not d.is_dir():
@@ -42,7 +43,11 @@ def _latest_aaa_run() -> Path | None:
             continue
         try:
             v = json.loads(verdict_path.read_text())
-            if v.get("verdict") == "AAA":
+            if (
+                v.get("verdict") == "AAA"
+                and v.get("journal_ready") is True
+                and all((d / f).exists() for f in required_files)
+            ):
                 candidates.append(d)
         except (OSError, json.JSONDecodeError):
             continue
@@ -56,6 +61,7 @@ _skip_no_aaa = pytest.mark.skipif(
     _AAA_RUN is None,
     reason="no AAA run dir present (runs/ is gitignored on CI/VPS)",
 )
+_AAA_RUN_PATH = cast(Path, _AAA_RUN)
 
 
 # =========== Cert: pure-function tests (always run) ================
@@ -190,10 +196,10 @@ def test_failure_reasons_lists_all_failed_criteria() -> None:
 @_skip_no_aaa
 def test_certify_run_on_real_aaa_run() -> None:
     """End-to-end on the most-recent AAA run dir."""
-    paper_path = _AAA_RUN / "full_paper.md"
+    paper_path = _AAA_RUN_PATH / "full_paper.md"
     verdict = cert.certify_run(paper_path)
     assert verdict.aaa_pass, (
-        f"Real AAA run dir {_AAA_RUN.name} cert says aaa_pass=False"
+        f"Real AAA run dir {_AAA_RUN_PATH.name} cert says aaa_pass=False"
     )
     assert verdict.q2_full, "Q2 must be 100% on AAA run"
     assert verdict.stage2_clean, "Stage-2 must be 0/0 on AAA run"
@@ -209,7 +215,7 @@ def test_certify_run_on_real_aaa_run() -> None:
 @_skip_no_aaa
 def test_write_certification_creates_both_artifacts() -> None:
     """certify + write_certification → JSON + MD next to paper."""
-    paper_path = _AAA_RUN / "full_paper.md"
+    paper_path = _AAA_RUN_PATH / "full_paper.md"
     verdict = cert.certify_run(paper_path)
     json_p, md_p = cert.write_certification(paper_path, verdict)
     assert json_p.exists()
@@ -218,7 +224,7 @@ def test_write_certification_creates_both_artifacts() -> None:
     assert md_p.suffix == ".md"
     # JSON round-trip
     loaded = json.loads(json_p.read_text())
-    assert loaded["run_id"] == _AAA_RUN.name
+    assert loaded["run_id"] == _AAA_RUN_PATH.name
     assert loaded["final_verdict"] == "AAA"
 
 
@@ -234,11 +240,11 @@ def test_export_bundle_copies_all_required_files(
     # Make sure cert exists on the source so this test exercises
     # the full path
     cert.write_certification(
-        _AAA_RUN / "full_paper.md",
-        cert.certify_run(_AAA_RUN / "full_paper.md"),
+        _AAA_RUN_PATH / "full_paper.md",
+        cert.certify_run(_AAA_RUN_PATH / "full_paper.md"),
     )
     out_dir = tmp_path / "test_bundle"
-    result = bundle.export_bundle(_AAA_RUN, out_dir)
+    result = bundle.export_bundle(_AAA_RUN_PATH, out_dir)
     assert result["missing_required"] == [], (
         f"Bundle missing required files: {result['missing_required']}"
     )
@@ -258,11 +264,11 @@ def test_bundle_readme_includes_cert_status(tmp_path: Path) -> None:
     """The composed README must include the cert verdict + run
     summary so a reader can scan-verify in seconds."""
     cert.write_certification(
-        _AAA_RUN / "full_paper.md",
-        cert.certify_run(_AAA_RUN / "full_paper.md"),
+        _AAA_RUN_PATH / "full_paper.md",
+        cert.certify_run(_AAA_RUN_PATH / "full_paper.md"),
     )
     out_dir = tmp_path / "test_bundle"
-    bundle.export_bundle(_AAA_RUN, out_dir)
+    bundle.export_bundle(_AAA_RUN_PATH, out_dir)
     readme = (out_dir / "README.md").read_text()
     assert "Researka Public Bundle" in readme
     assert "Final verdict:" in readme
@@ -279,11 +285,11 @@ def test_bundle_self_contained_no_repo_references(
     paths in the README. Means a reader can move bundle to OSF /
     Zenodo and links still work."""
     cert.write_certification(
-        _AAA_RUN / "full_paper.md",
-        cert.certify_run(_AAA_RUN / "full_paper.md"),
+        _AAA_RUN_PATH / "full_paper.md",
+        cert.certify_run(_AAA_RUN_PATH / "full_paper.md"),
     )
     out_dir = tmp_path / "test_bundle"
-    bundle.export_bundle(_AAA_RUN, out_dir)
+    bundle.export_bundle(_AAA_RUN_PATH, out_dir)
     readme = (out_dir / "README.md").read_text()
     # Should NOT contain absolute paths from the dev's machine
     assert "/Users/" not in readme

@@ -357,6 +357,63 @@ def test_missing_cross_domain_blocks_journal_surface():
     )
 
 
+def test_abstract_over_journal_cap_blocks_surface():
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    ).replace(
+        "## Abstract\n\n" + _words(150, "abstract"),
+        "## Abstract\n\n" + _words(301, "abstract"),
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("section too long: Abstract 301/300 words" in i.detail for i in report.issues)
+
+
+def test_empty_public_heading_blocks_surface():
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    ).replace("\n\n## References", "\n\n### Next-Study Design Recommendation\n\n## References")
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("empty heading: Next-Study Design Recommendation" in i.detail for i in report.issues)
+
+
+def test_results_table_requires_matching_outcome_sections():
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    )
+    results = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Immune | n=3 | mixed |\n"
+        "| Cardiometabolic | n=2 | positive |\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        f"{_words(500, 'results')}\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", results)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("missing Results outcome section: Immune" in i.detail for i in report.issues)
+
+
+def test_results_outcome_section_matching_allows_broader_heading_names():
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    )
+    results = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Immune | n=3 | mixed |\n\n"
+        "### Immune and Inflammatory Outcomes\n\n"
+        f"{_words(500, 'results')}\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", results)
+    report = evaluate_journal_surface(paper)
+    assert report.passed
+
+
 def test_valid_rows_pass_surface_gate():
     row = EvidenceRow(
         study_label="Smith 2024", endpoint="fasting glucose",
