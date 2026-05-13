@@ -300,11 +300,15 @@ def test_aggregator_core_auto_enables_with_key():
     assert auth == "CORE_API_KEY"
 
 
-def test_aggregator_total_source_count_is_15():
-    """Sanity check: 13 corpus sources + 2 new = 15 total in registry.
-    (10 default Tier-1 + arXiv + medRxiv = 12 Tier-1; +CORE=13 default-on
-    gated; +ChEMBL+Unpaywall=15 opt-in.)"""
+def test_aggregator_total_source_count_is_16():
+    """Sanity check: 13 corpus sources + 2 new + researka tier-2 = 16
+    total in registry. (10 default Tier-1 + arXiv + medRxiv = 12 Tier-1;
+    +CORE=13 default-on gated; +ChEMBL+Unpaywall=15 opt-in; +researka=16,
+    default-on but auth-gated by RESEARKA_DATABASE_TOKEN.)"""
     reg = _build_registry()
-    assert len(reg) == 15, (
-        f"Expected 15 registered sources, got {len(reg)}: {sorted(reg)}"
+    assert len(reg) == 16, (
+        f"Expected 16 registered sources, got {len(reg)}: {sorted(reg)}"
+    )
+    assert "researka" in reg, (
+        "researka tier-2 facts adapter missing from registry"
     )

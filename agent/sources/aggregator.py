@@ -48,6 +48,7 @@ def _build_registry() -> dict:
     from agent.sources.chembl import ChemblClient
     from agent.sources.arxiv import ArxivClient
     from agent.sources.medrxiv import MedRxivClient
+    from agent.sources.researka import ResearkaClient
     return {
         # Tier 1: free, no auth, in default discovery set
         "pubmed": (PubMedClient(), True, None),
@@ -70,6 +71,12 @@ def _build_registry() -> dict:
         # the auth_env gate handles the "off without key" semantics)
         "core": (
             CoreClient(), True, "CORE_API_KEY",
+        ),
+        # Researka tier-2 facts API (internal). Auth-gated by
+        # RESEARKA_DATABASE_TOKEN — adapter fail-softs to 0 hits when
+        # the env var is unset, so default-enabled is safe.
+        "researka": (
+            ResearkaClient(), True, "RESEARKA_DATABASE_TOKEN",
         ),
         # Tier 3: supporting (drug pharmacology, opt-in)
         "chembl": (ChemblClient(), False, None),
