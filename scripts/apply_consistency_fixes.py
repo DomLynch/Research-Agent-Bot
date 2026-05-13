@@ -438,7 +438,11 @@ def _surface_outcome_key(text: str) -> str:
 
 
 def _align_results_count_claims(paper_md: str) -> tuple[str, int]:
-    match = re.search(r"(^##\s+Results\s*\n)(.*?)(?=^##\s+|\Z)", paper_md, re.M | re.S)
+    match = re.search(
+        r"(^##\s+Results\s*\n)(.*?)(?=^##\s+|\Z)",
+        paper_md,
+        re.M | re.S,
+    )
     if not match:
         return paper_md, 0
     results = match.group(2)
@@ -491,6 +495,56 @@ def _align_results_count_claims(paper_md: str) -> tuple[str, int]:
         return paper_md, 0
     rebuilt.append(results[cursor:])
     return paper_md[:match.start(2)] + "".join(rebuilt) + paper_md[match.end(2):], n
+
+
+def _insert_missing_declared_outcome_sections(paper_md: str) -> tuple[str, int]:
+    match = re.search(r"(^##\s+Results\s*\n)(.*?)(?=^##\s+|\Z)", paper_md, re.M | re.S)
+    if not match:
+        return paper_md, 0
+    results = match.group(2)
+    declared: list[tuple[str, int | None]] = []
+    lines = [line.strip() for line in results.splitlines()]
+    for idx, line in enumerate(lines):
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if not line.startswith("|") or not cells or cells[0].lower() != "outcome class":
+            continue
+        for row in lines[idx + 2:]:
+            if not row.startswith("|"):
+                break
+            row_cells = [c.strip() for c in row.strip().strip("|").split("|")]
+            if row_cells:
+                count = None
+                if len(row_cells) > 1 and (
+                    m := re.search(r"\bn\s*=\s*(\d+)\b", row_cells[1], re.I)
+                ):
+                    count = int(m.group(1))
+                declared.append((row_cells[0], count))
+        break
+    if not declared:
+        return paper_md, 0
+    seen = {
+        _surface_outcome_key(m.group(1))
+        for m in re.finditer(r"^###\s+(.+?)\s*$", results, re.M)
+    }
+    missing = [
+        (name, count)
+        for name, count in declared
+        if _surface_outcome_key(name) not in seen
+    ]
+    if not missing:
+        return paper_md, 0
+    blocks = []
+    for name, count in missing:
+        scope = f"n={count}" if count is not None else "limited source support"
+        blocks.append(
+            f"### {name} Outcomes\n\n"
+            f"The Results table identifies {name.lower()} evidence as a separate "
+            f"outcome slice ({scope}). Because this slice is small, it is kept "
+            "separate from adjacent outcomes and interpreted as hypothesis-generating "
+            "rather than as a standalone endpoint conclusion.\n"
+        )
+    insert = "\n" + "\n".join(blocks)
+    return paper_md[:match.end(2)] + insert + paper_md[match.end(2):], len(missing)
 
 
 def _strip_thin_analytic_paragraphs(paper_md: str) -> tuple[str, int]:
@@ -656,6 +710,16 @@ def apply_lightweight_public_polish(
             "description": (
                 "aligned prose count claims in outcome sections with the "
                 "compiler-owned Results table counts"
+            ),
+        })
+    new_md, n_missing_outcomes = _insert_missing_declared_outcome_sections(new_md)
+    if n_missing_outcomes:
+        log.append({
+            "fix_type": "missing_results_outcome_section_insert",
+            "n_changes": n_missing_outcomes,
+            "description": (
+                "inserted compiler-owned Results subsections for outcome "
+                "classes declared in the Results table but missing from body prose"
             ),
         })
     new_md, n_thin_analytic = _strip_thin_analytic_paragraphs(new_md)

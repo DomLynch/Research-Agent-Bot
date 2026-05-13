@@ -115,10 +115,31 @@ def test_lightweight_polish_repairs_surface_contract_defects() -> None:
     assert "conclusion_scope_leak_strip" in fix_types
 
 
+def test_lightweight_polish_inserts_missing_declared_outcome_sections() -> None:
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Cardiometabolic | n=14; claims=20 | mixed |\n"
+        "| Immune | n=1; claims=6 | mixed |\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "The cardiometabolic evidence base spans 14 curated references.\n\n"
+        "## Cross-Domain Synthesis\n\n"
+        "The outcome map remains bounded.\n\n"
+        "## References\n\n"
+        "- Smith 2024.\n"
+    )
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "### Immune Outcomes" in out
+    assert "n=1" in out
+    assert any(i["fix_type"] == "missing_results_outcome_section_insert" for i in log)
+
+
 def test_lightweight_polish_completes_known_background_references() -> None:
     paper = (
         "## Discussion\n\n"
-        "ADA 2024 contextualizes the glycemic endpoint.\n\n"
+        "ADA 2024 contextualizes the glycemic endpoint. "
+        "Ioannidis 2005 contextualizes surrogate endpoint caution.\n\n"
         "## References\n\n"
         "- Smith 2024.\n"
     )
@@ -126,6 +147,7 @@ def test_lightweight_polish_completes_known_background_references() -> None:
     assert "ADA 2024 contextualizes" in out
     assert "### Background References" in out
     assert "- **ADA 2024.**" in out
+    assert "- **Ioannidis 2005.**" in out
     assert any(i["fix_type"] == "background_reference_completion" for i in log)
 
 
