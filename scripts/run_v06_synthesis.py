@@ -298,15 +298,15 @@ def _restore_required_section_bodies(
 def _restore_public_surface_floors(
     paper_md: str,
 ) -> tuple[str, list[dict[str, str]]]:
-    """Final public-section floor guard, independent of writer objects.
+    """Final public-section length guard, independent of writer objects.
 
-    Late patching can shorten a rendered section after the typed
+    Late patching can shorten or bloat a rendered section after the typed
     section contract was restored. This pass reads the public markdown
-    itself and compiles a safe corpus-level backstop for any required
-    journal-surface section still below its floor.
+    itself and compiles a safe corpus-level backstop for any required section
+    outside the journal-surface length bounds.
     """
     try:
-        from agent.journal_surface_gate import _REQUIRED_SECTIONS
+        from agent.journal_surface_gate import _REQUIRED_SECTIONS, _SECTION_CEILINGS
     except ImportError:
         return paper_md, []
     out = paper_md
@@ -314,20 +314,25 @@ def _restore_public_surface_floors(
     titles = tuple(_REQUIRED_SECTIONS.keys())
     for idx, title in enumerate(titles):
         floor = int(_REQUIRED_SECTIONS[title])
+        ceiling = _SECTION_CEILINGS.get(title)
         heading = f"## {title}"
         fallback_md = _compile_public_section_backstop(title, floor)
         if not fallback_md:
             continue
         match = _rendered_section_match(out, heading)
-        if match is not None and _word_count(match.group(1)) >= floor:
-            continue
+        if match is not None:
+            words = _word_count(match.group(1))
+            if words >= floor and (ceiling is None or words <= ceiling):
+                continue
+            reason = "replace_long_section" if ceiling is not None and words > ceiling else "replace_short_section"
+        else:
+            reason = "insert_missing_section"
         if match is not None:
             out = (
                 out[:match.start()].rstrip() + "\n\n"
                 + fallback_md + "\n\n"
                 + out[match.end():].lstrip()
             ).lstrip()
-            reason = "replace_short_section"
         else:
             next_headings = tuple(f"## {t}" for t in titles[idx + 1:])
             pos = _first_heading_after(out, next_headings + ("## References",), 0)
@@ -339,7 +344,6 @@ def _restore_public_surface_floors(
                     + fallback_md + "\n\n"
                     + out[pos:].lstrip()
                 )
-            reason = "insert_missing_section"
         log.append({
             "fix_type": "surface_floor_backstop",
             "section": title,
