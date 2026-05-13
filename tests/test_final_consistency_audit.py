@@ -1819,7 +1819,7 @@ def test_apply_fixes_backfills_public_thesis_marker() -> None:
     ok, msg = audit._check_thesis_present(fixed)
     assert ok, msg
     assert "**Thesis:**" not in fixed
-    assert "context-dependent geroscience question" in fixed
+    assert "evidence for Acetylsalicylic acid is context-dependent" in fixed
     assert any(
         e.get("fix_type") == "public_thesis_marker_backfill" for e in log
     )

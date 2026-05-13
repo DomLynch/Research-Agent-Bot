@@ -257,8 +257,8 @@ def _ensure_public_thesis_marker(
         topic = str(manifest.get("topic") or "").strip()
     display = _topic_display_name(topic) if topic else "the topic"
     marker = (
-        f"This synthesis tests the thesis that {display} is a "
-        "context-dependent evidence question, separating outcome-specific "
+        f"This synthesis tests the thesis that evidence for {display} is "
+        "context-dependent, separating outcome-specific "
         "signals from broader claims and identifying the evidence "
         "gaps that should bound interpretation."
     )
