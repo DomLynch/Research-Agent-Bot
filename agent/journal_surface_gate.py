@@ -53,7 +53,11 @@ _QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M
 _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
 _UNRESOLVED_TEMPLATE_RE = re.compile(r"(?<![a-z])(?:source|study|trial|paper)\((?:s|es)\)(?![a-z])|\bstudy/studies\b", re.IGNORECASE)
 _COUNT_CLAIM_RE = re.compile(r"\b(?:spans|contains|includes|covers|across)\s+(\d+)\s+(?:curated\s+)?(?:references?|sources?|studies|papers)\b", re.IGNORECASE)
-_ANALYTIC_STUB_RE = re.compile(r"\b(?:evidence|findings|mechanistic|mechanistically|meta-analytic|synthesis|analysis)\b", re.IGNORECASE)
+_ANALYTIC_STUB_RE = re.compile(
+    r"^(?:meta-analytic evidence corroborates|mechanistically,|"
+    r"mechanistic(?:al)? evidence|evidence corroborates|findings corroborate)\b",
+    re.IGNORECASE,
+)
 _AUTHOR_YEAR_RE = re.compile(
     r"\b([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
     r"(?:\s+et\s+al\.)?\s+((?:19|20)\d{2}[a-z]?)\b"

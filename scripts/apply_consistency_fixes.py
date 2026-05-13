@@ -418,6 +418,136 @@ def _split_dense_conclusion_paragraphs(paper_md: str) -> tuple[str, int]:
     )
 
 
+def _surface_outcome_key(text: str) -> str:
+    words = re.findall(r"[a-z0-9]+", text.lower())
+    while words and words[-1] in {"outcome", "outcomes", "endpoint", "endpoints"}:
+        words.pop()
+    return " ".join(words)
+
+
+def _align_results_count_claims(paper_md: str) -> tuple[str, int]:
+    match = re.search(r"(^##\s+Results\s*\n)(.*?)(?=^##\s+|\Z)", paper_md, re.M | re.S)
+    if not match:
+        return paper_md, 0
+    results = match.group(2)
+    counts: dict[str, int] = {}
+    lines = [line.strip() for line in results.splitlines()]
+    for idx, line in enumerate(lines):
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if not line.startswith("|") or not cells or cells[0].lower() != "outcome class":
+            continue
+        for row in lines[idx + 2:]:
+            if not row.startswith("|"):
+                break
+            row_cells = [c.strip() for c in row.strip().strip("|").split("|")]
+            if len(row_cells) >= 2 and (m := re.search(r"\bn\s*=\s*(\d+)\b", row_cells[1], re.I)):
+                counts[_surface_outcome_key(row_cells[0])] = int(m.group(1))
+        break
+    if not counts:
+        return paper_md, 0
+    heading_re = re.compile(r"^###\s+(.+?)\s*$", re.M)
+    headings = list(heading_re.finditer(results))
+    claim_re = re.compile(
+        r"\b(spans|contains|includes|covers|across)\s+(\d+)\s+"
+        r"((?:curated\s+)?(?:references?|sources?|studies|papers))\b",
+        re.I,
+    )
+    n = 0
+    rebuilt = []
+    cursor = 0
+    for pos, heading in enumerate(headings):
+        end = headings[pos + 1].start() if pos + 1 < len(headings) else len(results)
+        section = results[heading.end():end]
+        expected = counts.get(_surface_outcome_key(heading.group(1)))
+        rebuilt.append(results[cursor:heading.end()])
+        if expected is None:
+            rebuilt.append(section)
+        else:
+            head = section[:900]
+            tail = section[900:]
+
+            def repl(claim: re.Match[str]) -> str:
+                nonlocal n
+                if int(claim.group(2)) == expected:
+                    return claim.group(0)
+                n += 1
+                return f"{claim.group(1)} {expected} {claim.group(3)}"
+
+            rebuilt.append(claim_re.sub(repl, head, count=1) + tail)
+        cursor = end
+    if not n:
+        return paper_md, 0
+    rebuilt.append(results[cursor:])
+    return paper_md[:match.start(2)] + "".join(rebuilt) + paper_md[match.end(2):], n
+
+
+def _strip_thin_analytic_paragraphs(paper_md: str) -> tuple[str, int]:
+    body, tail = _split_public_body(paper_md)
+    analytic_re = re.compile(
+        r"^(?:meta-analytic evidence corroborates|mechanistically,|"
+        r"mechanistic(?:al)? evidence|evidence corroborates|findings corroborate)\b",
+        re.I,
+    )
+    parts = re.split(r"(\n\s*\n)", body)
+    out: list[str] = []
+    n = 0
+    for idx in range(0, len(parts), 2):
+        para = parts[idx]
+        sep = parts[idx + 1] if idx + 1 < len(parts) else ""
+        text = re.sub(r"\s+", " ", para.strip())
+        words = re.findall(r"[a-z0-9]+", text.lower())
+        is_stub = (
+            5 <= len(words) <= 14
+            and analytic_re.search(text)
+            and not re.search(r"\d|;|:", text)
+            and not text.startswith(("#", "|"))
+        )
+        if is_stub:
+            n += 1
+            continue
+        out.append(para)
+        if sep:
+            out.append(sep)
+    if not n:
+        return paper_md, 0
+    return re.sub(r"\n{3,}", "\n\n", "".join(out)).rstrip() + "\n\n" + tail, n
+
+
+def _strip_conclusion_scope_leak(paper_md: str) -> tuple[str, int]:
+    match = re.search(r"(^##\s+Conclusion\s*\n)(.*?)(?=^##\s+|\Z)", paper_md, re.M | re.S)
+    if not match:
+        return paper_md, 0
+    body, n = re.subn(
+        r"(?im)(?:^|(?<=[.!?])\s*)It separates endpoint[- ]specific evidence from broad [^.!?\n]*claims?[^.!?\n]*[.!?]\s*",
+        "The synthesis therefore supports a bounded interpretation rather than a generalized clinical recommendation. ",
+        match.group(2),
+    )
+    if not n:
+        return paper_md, 0
+    return paper_md[:match.start(2)] + body + paper_md[match.end(2):], n
+
+
+def _strip_unreferenced_citation_sentences(paper_md: str) -> tuple[str, int]:
+    try:
+        from agent.journal_surface_gate import unreferenced_citation_tokens
+    except ImportError:
+        return paper_md, 0
+    tokens = unreferenced_citation_tokens(paper_md)
+    if not tokens:
+        return paper_md, 0
+    body, tail = _split_public_body(paper_md)
+    n = 0
+    for token in tokens:
+        pattern = re.compile(
+            rf"(?m)(?:^|(?<=[.!?])\s*)[^.!?\n#]*\b{re.escape(token)}\b[^.!?\n#]*[.!?]\s*"
+        )
+        body, k = pattern.subn("", body)
+        n += k
+    if not n:
+        return paper_md, 0
+    return re.sub(r"\n{3,}", "\n\n", body).rstrip() + "\n\n" + tail, n
+
+
 def apply_lightweight_public_polish(
     paper_md: str,
     manifest: dict | None = None,
@@ -462,6 +592,45 @@ def apply_lightweight_public_polish(
             "description": (
                 "split dense conclusion transition sentences into separate "
                 "journal paragraphs without changing claims"
+            ),
+        })
+    new_md, n_count_claims = _align_results_count_claims(new_md)
+    if n_count_claims:
+        log.append({
+            "fix_type": "results_count_claim_alignment",
+            "n_changes": n_count_claims,
+            "description": (
+                "aligned prose count claims in outcome sections with the "
+                "compiler-owned Results table counts"
+            ),
+        })
+    new_md, n_thin_analytic = _strip_thin_analytic_paragraphs(new_md)
+    if n_thin_analytic:
+        log.append({
+            "fix_type": "thin_analytic_paragraph_strip",
+            "n_changes": n_thin_analytic,
+            "description": (
+                "removed underdeveloped analytical stub paragraphs from "
+                "public manuscript prose"
+            ),
+        })
+    new_md, n_conclusion_scope = _strip_conclusion_scope_leak(new_md)
+    if n_conclusion_scope:
+        log.append({
+            "fix_type": "conclusion_scope_leak_strip",
+            "n_changes": n_conclusion_scope,
+            "description": (
+                "removed What-This-Adds scope language from the Conclusion"
+            ),
+        })
+    new_md, n_unreferenced_citations = _strip_unreferenced_citation_sentences(new_md)
+    if n_unreferenced_citations:
+        log.append({
+            "fix_type": "unreferenced_citation_sentence_strip",
+            "n_changes": n_unreferenced_citations,
+            "description": (
+                "removed public sentences containing author-year citations "
+                "that were absent from References"
             ),
         })
     new_md, n_dup_words = _collapse_adjacent_duplicate_words(new_md)

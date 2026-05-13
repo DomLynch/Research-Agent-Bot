@@ -88,3 +88,32 @@ def test_lightweight_polish_splits_dense_conclusion_transitions() -> None:
     assert "\n\nThe recommended next step is" in out
     assert "\n\nUntil such evidence accrues," in out
     assert any(i["fix_type"] == "conclusion_paragraph_split" for i in log)
+
+
+def test_lightweight_polish_repairs_surface_contract_defects() -> None:
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Cardiometabolic | n=14; claims=20 | mixed |\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "The cardiometabolic evidence base spans 15 curated references.\n\n"
+        "Meta-analytic evidence corroborates the glycemic signal.\n\n"
+        "## Conclusion\n\n"
+        "It separates endpoint-specific evidence from broad treatment claims. "
+        "The final interpretation remains bounded.\n\n"
+        "## Discussion\n\n"
+        "ADA 2024 contextualizes the endpoint.\n\n"
+        "## References\n\n"
+        "- Smith 2024.\n"
+    )
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "spans 14 curated references" in out
+    assert "Meta-analytic evidence corroborates" not in out
+    assert "It separates endpoint-specific evidence" not in out
+    assert "ADA 2024 contextualizes" not in out
+    fix_types = {i["fix_type"] for i in log}
+    assert "results_count_claim_alignment" in fix_types
+    assert "thin_analytic_paragraph_strip" in fix_types
+    assert "conclusion_scope_leak_strip" in fix_types
+    assert "unreferenced_citation_sentence_strip" in fix_types

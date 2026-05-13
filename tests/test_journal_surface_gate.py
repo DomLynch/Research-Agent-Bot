@@ -320,6 +320,14 @@ def test_missing_references_blocks_journal_surface():
     assert any("missing required section: References" in i.detail for i in report.issues)
 
 
+def test_unreferenced_author_year_citation_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("discussion1", "ADA 2024 contextualizes the endpoint. discussion1", 1)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("unreferenced citation: ADA 2024" in i.detail for i in report.issues)
+
+
 def test_orphan_table_reference_blocks_journal_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("results1", "Table 2 presents endpoint evidence", 1)
