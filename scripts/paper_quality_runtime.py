@@ -414,6 +414,110 @@ def _numeric_coverage(audit: dict[str, Any]) -> float:
     return 1.0 if _audit_passed(audit) else 0.0
 
 
+def _section_word_count(markdown: str, heading: str) -> int:
+    match = re.search(
+        rf"^##\s+{re.escape(heading)}\b.*?\n(.*?)(?=^##\s+|\Z)",
+        markdown,
+        re.MULTILINE | re.DOTALL,
+    )
+    return len(re.findall(r"\b\w+\b", match.group(1))) if match else 0
+
+
+def _readiness_item(
+    item_id: int, name: str, status: str, evidence: str,
+) -> dict[str, Any]:
+    return {
+        "id": item_id,
+        "name": name,
+        "status": status,
+        "audit": evidence,
+    }
+
+
+def build_journal_readiness_contract(
+    *,
+    paper_text: str,
+    manifest: dict[str, Any],
+    gate: Any,
+    score: Any,
+    journal_surface: dict[str, Any],
+    reviewer_patches: dict[str, Any] | None,
+    citation_registry_complete: bool,
+    template_language_blocking: bool,
+) -> list[dict[str, Any]]:
+    """Map the 15-step journal-compiler roadmap to explicit run status.
+
+    This is deliberately an audit contract, not new orchestration. It prevents
+    roadmap items from being silently treated as complete.
+    """
+    receipts = int(manifest.get("n_receipts") or 0)
+    claims = int(
+        manifest.get("n_high_confidence_claims_total")
+        or sum(int(r.get("n_claims") or 0) for r in manifest.get("receipts", []))
+    )
+    tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
+    outcomes = {
+        str(r.get("outcome_class") or "").strip()
+        for r in manifest.get("receipts", [])
+        if str(r.get("outcome_class") or "").strip()
+    }
+    abstract_words = _section_word_count(paper_text, "Abstract")
+    conclusion_words = _section_word_count(paper_text, "Conclusion")
+    submission_ready = bool(
+        getattr(gate, "passed", False)
+        and getattr(score, "verdict", "") == "accept"
+    )
+    return [
+        _readiness_item(1, "product_tiers", "pass", (
+            f"evidence_bundle={getattr(gate, 'passed', False)}; "
+            f"journal_surface={bool(journal_surface.get('passed'))}; "
+            f"submission_ready={submission_ready}"
+        )),
+        _readiness_item(2, "feasibility_preflight", (
+            "pass" if receipts >= 30 else "partial" if receipts >= 10 else "not_ready"
+        ), f"receipts={receipts}; recommended>=30; minimum>=10"),
+        _readiness_item(3, "domain_pack", "partial", (
+            "domain profiles exist; run uses current topic pack metadata"
+        )),
+        _readiness_item(4, "journal_grade_retrieval", "partial", (
+            "corpus and citations are traced; exhaustive PRISMA search is not asserted"
+        )),
+        _readiness_item(5, "claim_atoms", (
+            "pass" if claims > 0 and citation_registry_complete else "not_ready"
+        ), f"claims={claims}; citation_registry_complete={citation_registry_complete}"),
+        _readiness_item(6, "evidence_graph", (
+            "pass" if outcomes and tensions > 0 else "not_ready"
+        ), f"outcome_classes={len(outcomes)}; tensions={tensions}"),
+        _readiness_item(7, "deterministic_manuscript_compiler", (
+            "pass" if bool(journal_surface.get("passed")) else "not_ready"
+        ), f"journal_surface_passed={bool(journal_surface.get('passed'))}"),
+        _readiness_item(8, "deterministic_abstract_conclusion", (
+            "pass" if 150 <= abstract_words <= 300 and 200 <= conclusion_words <= 320 else "partial"
+        ), f"abstract_words={abstract_words}; conclusion_words={conclusion_words}"),
+        _readiness_item(9, "journal_surface_gate", (
+            "pass" if bool(journal_surface.get("passed")) else "not_ready"
+        ), f"issues={len(journal_surface.get('issues') or [])}"),
+        _readiness_item(10, "section_repair_loop", "partial", (
+            "bounded final polish ran; no full multi-loop repair engine asserted"
+        )),
+        _readiness_item(11, "adversarial_reviewer_roles", (
+            "pass" if int((reviewer_patches or {}).get("unresolved_p1_count", 0)) == 0 else "not_ready"
+        ), f"unresolved_p1={int((reviewer_patches or {}).get('unresolved_p1_count', 0))}"),
+        _readiness_item(12, "target_journal_finalizer", "not_ready", (
+            "no target-journal style pack selected for this run"
+        )),
+        _readiness_item(13, "human_signoff", "not_ready", (
+            "submission requires author/domain-expert approval outside the bot"
+        )),
+        _readiness_item(14, "universal_benchmark_target", "not_ready", (
+            "single-run artifact; 20-topic benchmark threshold not evaluated here"
+        )),
+        _readiness_item(15, "end_state_architecture", (
+            "partial" if not template_language_blocking else "not_ready"
+        ), "core synthesis/gates exist; target finalizer and human signoff remain explicit gaps"),
+    ]
+
+
 def write_final_quality_gates(
     *,
     out_dir: Path,
@@ -441,9 +545,6 @@ def write_final_quality_gates(
         template_language_blocking=template.template_language_blocking,
     )
     gate = evaluate_final_gate(inputs)
-    gate_payload = {"inputs": dataclasses.asdict(inputs), "result": dataclasses.asdict(gate)}
-    (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate_payload, indent=2))
-    (out_dir / "pre_submit_gate.md").write_text("# Pre-Submit Final Gate\n\n" + gate.summary + "\n")
 
     field = json.loads((out_dir / "field_engagement.json").read_text()) if (out_dir / "field_engagement.json").exists() else []
     supported = sum(1 for item in field if item.get("status") in {"support", "extends"})
@@ -466,6 +567,23 @@ def write_final_quality_gates(
         unresolved_reviewer_p1_count=int((reviewer_patches or {}).get("unresolved_p1_count", 0)),
     )
     score = score_publication(score_inputs)
+    readiness_contract = build_journal_readiness_contract(
+        paper_text=paper_text,
+        manifest=manifest,
+        gate=gate,
+        score=score,
+        journal_surface=journal_surface,
+        reviewer_patches=reviewer_patches,
+        citation_registry_complete=citation_registry_complete,
+        template_language_blocking=template.template_language_blocking,
+    )
+    gate_payload = {
+        "inputs": dataclasses.asdict(inputs),
+        "result": dataclasses.asdict(gate),
+        "journal_readiness_contract": readiness_contract,
+    }
+    (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate_payload, indent=2))
+    (out_dir / "pre_submit_gate.md").write_text("# Pre-Submit Final Gate\n\n" + gate.summary + "\n")
     score_payload = {"inputs": dataclasses.asdict(score_inputs), "result": dataclasses.asdict(score)}
     (out_dir / "publication_score.json").write_text(json.dumps(score_payload, indent=2))
     (out_dir / "publication_score.md").write_text("# Publication Score\n\n" + score.summary + "\n")

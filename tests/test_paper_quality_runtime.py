@@ -174,3 +174,12 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     assert result["score"].verdict == "accept"
     assert (tmp_path / "pre_submit_gate.json").exists()
     assert (tmp_path / "publication_score.json").exists()
+    gate_payload = json.loads((tmp_path / "pre_submit_gate.json").read_text())
+    contract = gate_payload["journal_readiness_contract"]
+    assert len(contract) == 15
+    assert [row["id"] for row in contract] == list(range(1, 16))
+    by_name = {row["name"]: row for row in contract}
+    assert by_name["product_tiers"]["status"] == "pass"
+    assert by_name["claim_atoms"]["status"] == "pass"
+    assert by_name["target_journal_finalizer"]["status"] == "not_ready"
+    assert by_name["human_signoff"]["status"] == "not_ready"
