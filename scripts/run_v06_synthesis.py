@@ -386,6 +386,10 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
     null_refs = ctx["null_refs"]
     neg_refs = ctx["negative_refs"]
     thesis = ctx["thesis"]
+    if title == "Results":
+        results_backstop = _compile_results_outcome_backstop(topic, ctx, floor)
+        if results_backstop:
+            return results_backstop
 
     paragraphs_by_title = {
         "Abstract": [
@@ -782,7 +786,68 @@ def _section_backstop_context() -> dict[str, object]:
         "negative_refs": _labels("effect_direction", "negative"),
         "null_refs": _labels("effect_direction", "null"),
         "thesis": str(manifest.get("thesis") or "The evidence profile is mixed."),
+        "outcome_rows": _section_backstop_outcome_rows(receipts),
     }
+
+
+def _section_backstop_outcome_rows(
+    receipts: list[dict[str, Any]],
+) -> list[dict[str, object]]:
+    by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for receipt in receipts:
+        by_outcome[str(receipt.get("outcome_class") or "other")].append(receipt)
+    rows: list[dict[str, object]] = []
+    for outcome, group in sorted(by_outcome.items(), key=lambda x: (-len(x[1]), x[0]))[:6]:
+        directions = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
+        directness = Counter(str(r.get("directness") or "unclassified").lower() for r in group)
+        claim_n = sum(int(r.get("n_claims") or 0) for r in group)
+        refs = [
+            str(r.get("citation_token") or r.get("body_citation") or r.get("paper_id") or r.get("receipt_id") or "").strip()
+            for r in group[:3]
+        ]
+        rows.append({
+            "label": outcome.replace("_", " ").strip().title() or "Other",
+            "n": len(group),
+            "claims": claim_n,
+            "directions": ", ".join(f"{k}={v}" for k, v in sorted(directions.items())),
+            "directness": ", ".join(f"{k}={v}" for k, v in sorted(directness.items())),
+            "refs": ", ".join(r for r in refs if r) or "the retained evidence base",
+        })
+    return rows
+
+
+def _compile_results_outcome_backstop(
+    topic: str, ctx: dict[str, object], floor: int,
+) -> str:
+    raw_rows = ctx.get("outcome_rows")
+    rows = [r for r in raw_rows if isinstance(r, dict)] if isinstance(raw_rows, list) else []
+    if not rows:
+        return ""
+    lines = [
+        "## Results",
+        "",
+        f"The retained {topic} corpus is reported by outcome class before any cross-domain interpretation. This structure prevents favorable, null, mixed, and adverse evidence from being blended across biologically different endpoints.",
+        "",
+    ]
+    for row in rows:
+        label = str(row.get("label") or "Other")
+        lines.extend([
+            f"### {label} Outcomes",
+            "",
+            f"The {label.lower()} evidence packet includes {row.get('n')} source-level summaries and {row.get('claims')} high-confidence observations. Directional coding within this packet is {row.get('directions')}, and directness coding is {row.get('directness')}. These counts describe the frozen evidence state for this outcome, not a pooled treatment estimate.",
+            "",
+            f"Representative sources include {row.get('refs')}. This outcome is interpreted within its own packet first; any broader synthesis is deferred until the cross-domain section so that the writer cannot merge evidence from unrelated outcome classes.",
+            "",
+        ])
+    shared = (
+        "Across outcome classes, the manuscript treats disagreement as part of the evidence rather than as noise to smooth away. A null or adverse signal in one section does not cancel a favorable signal in another; it defines the boundary condition for interpretation.",
+        "The section-owned layout also protects citation integrity. Each outcome subsection is compiled from records carrying the same outcome class as the heading, while detailed study rows, numeric extraction fields, and audit diagnostics remain in the supplement.",
+    )
+    for paragraph in shared:
+        if _word_count("\n\n".join(lines)) >= floor + 25:
+            break
+        lines.extend([paragraph, ""])
+    return "\n".join(lines).rstrip()
 
 
 def _section_heading_from_body(section_md: str) -> str:

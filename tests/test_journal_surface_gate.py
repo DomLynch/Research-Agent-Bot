@@ -397,7 +397,7 @@ def test_results_table_requires_matching_outcome_sections():
     assert any("missing Results outcome section: Immune" in i.detail for i in report.issues)
 
 
-def test_results_outcome_section_matching_allows_broader_heading_names():
+def test_results_outcome_sections_must_use_declared_heading_once():
     paper = _paper(
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
     )
@@ -411,7 +411,30 @@ def test_results_outcome_section_matching_allows_broader_heading_names():
     )
     paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", results)
     report = evaluate_journal_surface(paper)
-    assert report.passed
+    assert not report.passed
+    details = " ".join(i.detail for i in report.issues)
+    assert "missing Results outcome section: Immune" in details
+    assert "unexpected Results outcome section: immune and inflammatory" in details
+
+
+def test_duplicate_declared_results_outcome_section_blocks_surface():
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    )
+    results = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Immune | n=3 | mixed |\n\n"
+        "### Immune Outcomes\n\n"
+        f"{_words(260, 'immunea')}\n\n"
+        "### Immune Outcomes\n\n"
+        f"{_words(260, 'immuneb')}\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", results)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("duplicate Results outcome section: Immune" in i.detail for i in report.issues)
 
 
 def test_valid_rows_pass_surface_gate():

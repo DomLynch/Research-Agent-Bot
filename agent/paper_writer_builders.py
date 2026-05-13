@@ -331,6 +331,7 @@ def build_results_from_parsed(
         by_outcome.setdefault(receipt.outcome_class, []).append(receipt)
     corpus_norm = _accepted_corpus_norm(accepted)
     body_lines: list[str] = ["## Results", ""]
+    outcome_bodies: dict[str, list[str]] = {}
     anchors: list[SynthesisClaimAnchor] = []
     rendered_outcomes: set[str] = set()
     for sub in parsed.get("subsections") or []:
@@ -383,11 +384,15 @@ def build_results_from_parsed(
                     for m in _NUMERIC_RE.finditer(text)
                 ),
             ))
-        if sub_anchors:
-            body_lines.extend(sub_body)
+        if sub_anchors and subsection_outcome is not None:
+            if subsection_outcome in outcome_bodies:
+                outcome_bodies[subsection_outcome].extend(sub_body[2:])
+            else:
+                outcome_bodies[subsection_outcome] = sub_body
             anchors.extend(sub_anchors)
-            if subsection_outcome is not None:
-                rendered_outcomes.add(subsection_outcome)
+            rendered_outcomes.add(subsection_outcome)
+    for outcome in sorted(outcome_bodies):
+        body_lines.extend(outcome_bodies[outcome])
     for outcome in sorted(by_outcome):
         if outcome in rendered_outcomes:
             continue

@@ -249,3 +249,32 @@ def test_results_builder_backfills_missing_outcome_sections() -> None:
     assert "### Frailty Outcomes" in section.body_md
     frailty_body = section.body_md.split("### Frailty Outcomes", 1)[1]
     assert "`r-frailty`" in frailty_body
+
+
+def test_results_builder_merges_duplicate_llm_outcome_subsections() -> None:
+    accepted = [_accepted("r-immune", outcome_class="immune")]
+    parsed = {
+        "subsections": [
+            {
+                "outcome_class": "immune",
+                "heading": "Immune Outcomes",
+                "paragraphs": [
+                    {"text": "Immune first paragraph.", "receipt_ids": ["r-immune"]},
+                ],
+            },
+            {
+                "outcome_class": "immune",
+                "heading": "Immune Outcomes",
+                "paragraphs": [
+                    {"text": "Immune second paragraph.", "receipt_ids": ["r-immune"]},
+                ],
+            },
+        ],
+    }
+
+    section = build_results_from_parsed(parsed, accepted=accepted)
+
+    assert section is not None
+    assert section.body_md.count("### Immune Outcomes") == 1
+    assert "Immune first paragraph." in section.body_md
+    assert "Immune second paragraph." in section.body_md
