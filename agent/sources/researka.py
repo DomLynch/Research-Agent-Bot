@@ -75,14 +75,20 @@ def _hit_from_paper(record: dict, query: str) -> RawHit | None:
     if not title:
         return None
     abstract = clean_text(record.get("abstract"), limit=4000)
-    year_raw = record.get("year")
+    # Live API uses `publication_year`/`journal_name`; older fixtures
+    # used `year`/`journal`. Accept either — prefer the live names.
+    year_raw = record.get("publication_year")
+    if year_raw is None:
+        year_raw = record.get("year")
     year: int | None = int(year_raw) if isinstance(year_raw, int) else None
     doi = normalize_doi(record.get("doi"))
     pmid_raw = record.get("pmid")
     pmid = str(pmid_raw).strip() if pmid_raw not in (None, "") else None
     pmcid_raw = record.get("pmcid")
     pmcid = str(pmcid_raw).strip() if pmcid_raw not in (None, "") else None
-    venue = clean_text(record.get("journal"), limit=200)
+    venue = clean_text(
+        record.get("journal_name") or record.get("journal"), limit=200,
+    )
     return RawHit(
         source="researka",
         title=title,

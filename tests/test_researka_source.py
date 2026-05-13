@@ -172,14 +172,18 @@ async def test_search_caps_limit_at_50(with_token: str) -> None:
 # ---- response normalization ----------------------------------------------
 
 
+# Matches the live `/api/v1/papers/topic` response shape (verified
+# against database.researka.org 2026-05-13): `publication_year` and
+# `journal_name`, not `year`/`journal`. The adapter still accepts the
+# legacy names as a fallback (test_legacy_year_journal_fields below).
 _SAMPLE_PAPER = {
     "title": "Berberine and aging: a randomized trial",
     "abstract": "We assessed berberine 500 mg daily for 12 weeks...",
-    "year": 2024,
+    "publication_year": 2024,
     "doi": "10.1234/example.001",
     "pmid": "12345678",
     "pmcid": "PMC9876543",
-    "journal": "Aging Cell",
+    "journal_name": "Aging Cell",
     "authors": ["Smith J", "Doe A"],
     "cited_by_count": 17,
     "similarity_score": 0.91,
@@ -270,3 +274,26 @@ async def test_results_truncated_to_caller_limit(with_token: str) -> None:
     async with _mock_client(responder) as client:
         hits = await ResearkaClient().search(client, "berberine", limit=5)
     assert len(hits) == 5
+
+
+@pytest.mark.asyncio
+async def test_legacy_year_journal_fields(with_token: str) -> None:
+    """Regression: older PaperHit fixtures used `year`/`journal`; the
+    adapter falls back to those when the live names are absent so legacy
+    fixtures stay valid."""
+    legacy = {
+        "title": "Legacy paper",
+        "abstract": "x" * 80,
+        "year": 2019,
+        "journal": "Old Journal",
+        "doi": "10.1/legacy",
+    }
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        return _ok_response([legacy])
+
+    async with _mock_client(responder) as client:
+        hits = await ResearkaClient().search(client, "berberine", limit=5)
+    assert len(hits) == 1
+    assert hits[0].year == 2019
+    assert hits[0].venue == "Old Journal"
