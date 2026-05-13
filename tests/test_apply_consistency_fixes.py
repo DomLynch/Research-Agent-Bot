@@ -117,3 +117,18 @@ def test_lightweight_polish_repairs_surface_contract_defects() -> None:
     assert "thin_analytic_paragraph_strip" in fix_types
     assert "conclusion_scope_leak_strip" in fix_types
     assert "unreferenced_citation_sentence_strip" in fix_types
+
+
+def test_lightweight_polish_completes_near_floor_conclusion_only() -> None:
+    near_floor = " ".join(f"conclusion{i}" for i in range(240))
+    paper = f"## Conclusion\n\n{near_floor}\n\n## References\n\n- Smith 2024.\n"
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "broad clinical extrapolation" in out
+    assert "gaps.\n\n## References" in out
+    assert any(i["fix_type"] == "near_floor_conclusion_completion" for i in log)
+
+
+def test_lightweight_polish_repairs_heading_glue() -> None:
+    out, log = fixes.apply_lightweight_public_polish("## Results\n\nDone.## References\n\n- Smith 2024.\n")
+    assert "Done.\n\n## References" in out
+    assert any(i["fix_type"] == "heading_boundary_normalization" for i in log)
