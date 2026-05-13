@@ -6,11 +6,13 @@ import pytest
 from agent.framework_section import (
     SectionConfig,
     build_framework_section,
+    build_novel_framework_section,
     enrich_receipts_with_registry,
     render_engagement_section,
     render_engagement_summary_line,
     render_framework_paragraph,
 )
+from agent.synthesis_schemas import ReceiptSummary, TensionMatrix
 from agent.field_engagement import FrameworkEngagement, evaluate_engagement
 
 
@@ -182,6 +184,31 @@ def test_build_section_uses_default_5_frameworks() -> None:
     assert "Of the 5 evaluated framework(s)" in md
     for name in ("Mannick", "Lamming", "Kennedy", "Kaeberlein", "Lopez-Otin"):
         assert f"### {name}" in md
+
+
+def test_novel_framework_uses_correct_article_for_vowel_framework() -> None:
+    receipt = ReceiptSummary(
+        receipt_id="R1",
+        receipt_path="",
+        topic="demo",
+        thesis_text="demo",
+        spar_verdict="accept_clean",
+        n_claims=1,
+        n_failed_traces=0,
+        canonical_trial_id=None,
+        evidence_tier="B2",
+        directness="mechanistic",
+        outcome_class="cardiometabolic",
+        effect_direction="mixed",
+        p_values=(),
+        population_summary="",
+    )
+    section = build_novel_framework_section(
+        (receipt,),
+        TensionMatrix(receipts=(receipt,), pairs=()),
+    )
+    assert "We propose an Endpoint-Sensitivity framework" in section.body_md
+    assert "We propose a Endpoint-Sensitivity framework" not in section.body_md
 
 
 def test_build_section_aaa4_shape_returns_all_insufficient_honestly() -> None:

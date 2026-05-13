@@ -147,6 +147,19 @@ def test_lightweight_polish_repairs_heading_glue() -> None:
     assert any(i["fix_type"] == "heading_boundary_normalization" for i in log)
 
 
+def test_lightweight_polish_repairs_missing_sentence_spaces() -> None:
+    out, log = fixes.apply_lightweight_public_polish(
+        "## Discussion\n\n"
+        "Evidence remains mixed. Harrison 2021 informs dosing. "
+        "Practice change.Harrison 2021 requires replication.Likewise, "
+        "safety data remain sparse.\n\n"
+        "## References\n\n- Harrison 2021.\n",
+    )
+    assert "Practice change. Harrison" in out
+    assert "replication. Likewise" in out
+    assert any(i["fix_type"] == "sentence_spacing_normalization" for i in log)
+
+
 def test_lightweight_polish_repairs_accidental_h3_split() -> None:
     out, log = fixes.apply_lightweight_public_polish("## Results\n\n#\n\n## Immune Outcomes\n\nText.\n")
     assert "### Immune Outcomes" in out
