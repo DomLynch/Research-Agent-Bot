@@ -3199,6 +3199,30 @@ async def _run_post_paper_pipeline(
         )
         raise
 
+    # Stage 5d (Wave 47 — status convergence): consolidate every sidecar
+    # into ONE source of truth (`final_status.json`). Reads runtime /
+    # audit / journal_surface / pre_submit / target_journal / human_signoff
+    # and emits a strict 6-boolean hierarchy + frozen L1–L5 label. No
+    # "AAA" string is emitted; the label is the only public level
+    # identifier. Fail-soft — if this stage breaks, the run still
+    # publishes the per-stage sidecars.
+    try:
+        from agent.final_status import (  # type: ignore[import-not-found]
+            compute_and_write as _final_status_write,
+        )
+        _fs = _final_status_write(out_dir)
+        print(
+            f"[pipeline] Stage 5d — final_status: "
+            f"{_fs.maturity_label} (submission_ready={_fs.submission_ready}, "
+            f"blockers={len(_fs.blocking_reasons)})",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — fail-soft
+        print(
+            f"[pipeline] Stage 5d — final_status skipped: {_e}",
+            file=sys.stderr,
+        )
+
     # Stage 6 (Fix #23): no-regression gate. If runs/_baseline.txt
     # names a baseline run dir, compare the new run's six dimensions
     # (P1, numeric trace, consistency, leakage, word count, orphan

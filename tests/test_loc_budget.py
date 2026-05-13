@@ -227,7 +227,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 21250
+TOTAL_LIMIT = 22200  # Wave 47-c (2026-05-13): +500 for slices 3-4 (human_signoff + submission_package builder; flagship route)
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
