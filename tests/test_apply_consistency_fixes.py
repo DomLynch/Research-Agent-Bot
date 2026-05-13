@@ -102,8 +102,6 @@ def test_lightweight_polish_repairs_surface_contract_defects() -> None:
         "## Conclusion\n\n"
         "It separates endpoint-specific evidence from broad treatment claims. "
         "The final interpretation remains bounded.\n\n"
-        "## Discussion\n\n"
-        "ADA 2024 contextualizes the endpoint.\n\n"
         "## References\n\n"
         "- Smith 2024.\n"
     )
@@ -111,12 +109,24 @@ def test_lightweight_polish_repairs_surface_contract_defects() -> None:
     assert "spans 14 curated references" in out
     assert "Meta-analytic evidence corroborates" not in out
     assert "It separates endpoint-specific evidence" not in out
-    assert "ADA 2024 contextualizes" not in out
     fix_types = {i["fix_type"] for i in log}
     assert "results_count_claim_alignment" in fix_types
     assert "thin_analytic_paragraph_strip" in fix_types
     assert "conclusion_scope_leak_strip" in fix_types
-    assert "unreferenced_citation_sentence_strip" in fix_types
+
+
+def test_lightweight_polish_completes_known_background_references() -> None:
+    paper = (
+        "## Discussion\n\n"
+        "ADA 2024 contextualizes the glycemic endpoint.\n\n"
+        "## References\n\n"
+        "- Smith 2024.\n"
+    )
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "ADA 2024 contextualizes" in out
+    assert "### Background References" in out
+    assert "- **ADA 2024.**" in out
+    assert any(i["fix_type"] == "background_reference_completion" for i in log)
 
 
 def test_lightweight_polish_completes_near_floor_conclusion_only() -> None:
@@ -129,6 +139,16 @@ def test_lightweight_polish_completes_near_floor_conclusion_only() -> None:
 
 
 def test_lightweight_polish_repairs_heading_glue() -> None:
-    out, log = fixes.apply_lightweight_public_polish("## Results\n\nDone.## References\n\n- Smith 2024.\n")
+    out, log = fixes.apply_lightweight_public_polish(
+        "## Results\n\n### Cardiometabolic Outcomes\n\nDone.## References\n\n- Smith 2024.\n",
+    )
+    assert "### Cardiometabolic Outcomes" in out
     assert "Done.\n\n## References" in out
+    assert any(i["fix_type"] == "heading_boundary_normalization" for i in log)
+
+
+def test_lightweight_polish_repairs_accidental_h3_split() -> None:
+    out, log = fixes.apply_lightweight_public_polish("## Results\n\n#\n\n## Immune Outcomes\n\nText.\n")
+    assert "### Immune Outcomes" in out
+    assert "#\n\n## Immune Outcomes" not in out
     assert any(i["fix_type"] == "heading_boundary_normalization" for i in log)

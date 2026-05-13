@@ -397,7 +397,9 @@ def _collapse_adjacent_duplicate_words(paper_md: str) -> tuple[str, int]:
 
 
 def _normalize_heading_boundaries(paper_md: str) -> tuple[str, int]:
-    return re.subn(r"(?m)(?<=[^\n#])(?=#{2,6}\s+)", "\n\n", paper_md)
+    fixed, n_split_h3 = re.subn(r"(?m)^#\s*\n\n##\s+", "### ", paper_md)
+    fixed, n_glued = re.subn(r"(?m)(?<=[^\n#])(?=#{2,6}\s+)", "\n\n", fixed)
+    return fixed, n_split_h3 + n_glued
 
 
 def _split_dense_conclusion_paragraphs(paper_md: str) -> tuple[str, int]:
@@ -531,7 +533,7 @@ def _strip_conclusion_scope_leak(paper_md: str) -> tuple[str, int]:
     return paper_md[:match.start(2)] + body + paper_md[match.end(2):], n
 
 
-def _strip_unreferenced_citation_sentences(paper_md: str) -> tuple[str, int]:
+def _append_known_background_references(paper_md: str) -> tuple[str, int]:
     try:
         from agent.journal_surface_gate import unreferenced_citation_tokens
     except ImportError:
@@ -539,17 +541,43 @@ def _strip_unreferenced_citation_sentences(paper_md: str) -> tuple[str, int]:
     tokens = unreferenced_citation_tokens(paper_md)
     if not tokens:
         return paper_md, 0
-    body, tail = _split_public_body(paper_md)
-    n = 0
-    for token in tokens:
-        pattern = re.compile(
-            rf"(?m)(?:^|(?<=[.!?])\s*)[^.!?\n#]*\b{re.escape(token)}\b[^.!?\n#]*[.!?]\s*"
-        )
-        body, k = pattern.subn("", body)
-        n += k
-    if not n:
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import background_literature as _bg
+        registry = _bg.load_registry()
+    except (ImportError, OSError, ValueError):
         return paper_md, 0
-    return re.sub(r"\n{3,}", "\n\n", body).rstrip() + "\n\n" + tail, n
+    wanted = {token for token in tokens}
+    entries = []
+    seen: set[str] = set()
+    for entry in registry.values():
+        token = entry.citation_token
+        if token in wanted and token not in seen:
+            entries.append(entry)
+            seen.add(token)
+    if not entries or not re.search(r"^##\s+References\b", paper_md, re.M):
+        return paper_md, 0
+    if "### Background References" not in paper_md:
+        block = [
+            "",
+            "### Background References",
+            "",
+            "*Canonical background sources cited in the public manuscript.*",
+            "",
+        ]
+    else:
+        block = [""]
+    for entry in entries:
+        parts = [f"- **{entry.citation_token}.**"]
+        if entry.canonical_reference:
+            parts.append(f"_{entry.canonical_reference.strip().rstrip('.')}._")
+        if entry.doi:
+            parts.append(f"DOI: {entry.doi}.")
+        if entry.pmid:
+            parts.append(f"PMID: {entry.pmid}.")
+        block.append(" ".join(parts))
+    block.append("")
+    return paper_md.rstrip() + "\n".join(block), len(entries)
 
 
 def _ensure_near_floor_conclusion(paper_md: str) -> tuple[str, int]:
@@ -643,14 +671,14 @@ def apply_lightweight_public_polish(
                 "removed What-This-Adds scope language from the Conclusion"
             ),
         })
-    new_md, n_unreferenced_citations = _strip_unreferenced_citation_sentences(new_md)
-    if n_unreferenced_citations:
+    new_md, n_background_refs = _append_known_background_references(new_md)
+    if n_background_refs:
         log.append({
-            "fix_type": "unreferenced_citation_sentence_strip",
-            "n_changes": n_unreferenced_citations,
+            "fix_type": "background_reference_completion",
+            "n_changes": n_background_refs,
             "description": (
-                "removed public sentences containing author-year citations "
-                "that were absent from References"
+                "added canonical background bibliography entries for "
+                "author-year citations used in public prose"
             ),
         })
     new_md, n_conclusion_floor = _ensure_near_floor_conclusion(new_md)
