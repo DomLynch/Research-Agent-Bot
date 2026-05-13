@@ -20,7 +20,18 @@ from __future__ import annotations
 
 import dataclasses
 import re
+import unicodedata
 from dataclasses import dataclass
+
+
+def _ascii_fold(text: str) -> str:
+    """NFKD-decompose then strip combining marks. Universal — turns any
+    Latin-script accent into its ASCII base (Hernández → Hernandez,
+    Müller → Muller, École → Ecole). Used so the author-year token in
+    References matches inline citations whatever diacritics the source
+    metadata carries. No per-language table."""
+    nfkd = unicodedata.normalize("NFKD", text)
+    return "".join(c for c in nfkd if not unicodedata.combining(c))
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -297,7 +308,14 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     first_author = (authors[0] or "").strip()
     if not first_author:
         return _title_citation_from_metadata(meta, year_str)
-    surname = re.sub(r"[^A-Za-z-]", "", first_author.split()[-1])
+    # Bug-fix 2026-05-13: surname extraction was lossy for Latin-script
+    # diacritics (Hernández → Hernndez because é dropped, breaking the
+    # journal_surface gate's "unreferenced citation" check). NFKD-fold
+    # first so the accent → ASCII base (Hernández → Hernandez); same
+    # for any other Latin-script source.
+    surname = re.sub(
+        r"[^A-Za-z-]", "", _ascii_fold(first_author.split()[-1]),
+    )
     if not surname or surname.lower() in _GENERIC_AUTHOR_TOKENS:
         return _title_citation_from_metadata(meta, year_str)
     return f"{surname} {year_str}"

@@ -541,3 +541,41 @@ def test_valid_rows_pass_surface_gate():
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
     ))
     assert report.passed
+
+
+# Bug-fix: gate must tolerate diacritic mismatch between inline
+# citations and Reference-list entries (Hernández inline / Hernandez
+# in refs). Universal — works for any Latin-script accent.
+
+
+def test_unreferenced_citation_tolerates_diacritic_match() -> None:
+    """Inline 'Hernández 2024' + ref 'Hernandez 2024' (NFKD-equivalent)
+    must NOT flag as unreferenced."""
+    from agent.journal_surface_gate import unreferenced_citation_tokens
+    paper = (
+        "## Introduction\n\nHernández 2024 reported a finding.\n\n"
+        "## References\n\n- **Hernandez 2024.** 2024.\n"
+    )
+    assert unreferenced_citation_tokens(paper) == ()
+
+
+def test_unreferenced_citation_still_flags_real_missing() -> None:
+    """Defensive: the fold helper must not silently accept genuinely
+    missing references (e.g. Jones cited inline but not in refs)."""
+    from agent.journal_surface_gate import unreferenced_citation_tokens
+    paper = (
+        "## Introduction\n\nSmith 2020 said. Jones 2021 said another.\n\n"
+        "## References\n\n- Smith 2020.\n"
+    )
+    assert "Jones 2021" in unreferenced_citation_tokens(paper)
+
+
+def test_unreferenced_citation_is_case_insensitive() -> None:
+    """Casefolding is part of the universal fold so inline 'SMITH 2020'
+    matches reference 'Smith 2020' (case shouldn't matter for ID)."""
+    from agent.journal_surface_gate import unreferenced_citation_tokens
+    paper = (
+        "## Introduction\n\nSMITH 2020 said.\n\n"
+        "## References\n\n- Smith 2020.\n"
+    )
+    assert unreferenced_citation_tokens(paper) == ()

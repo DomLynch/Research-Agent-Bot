@@ -691,3 +691,28 @@ def test_transform_matrix_sanitizes_tension_summary_strings() -> None:
     # Body-citation form is in
     assert "Walton 2019" in summary
     assert "Kulkarni 2022" in summary
+
+
+# Bug-fix 2026-05-13: NFKD fold for Latin-script diacritics so the
+# References list and the inline cites match. Universal — covers any
+# Latin-script accent, not a per-language table.
+
+
+def test_ascii_fold_latin_diacritics() -> None:
+    """Hernández (é) → Hernandez (a). Bug pre-fix: regex stripped é
+    entirely, leaving the lossy 'Hernndez' that the journal_surface
+    gate then flagged as unreferenced."""
+    assert cr._ascii_fold("Hernández") == "Hernandez"
+    assert cr._ascii_fold("Müller") == "Muller"
+    assert cr._ascii_fold("École") == "Ecole"
+    assert cr._ascii_fold("Łukasz") == "Łukasz"  # Ł has no combining decomp
+    assert cr._ascii_fold("plain") == "plain"
+
+
+def test_body_citation_from_metadata_preserves_diacritic_surname() -> None:
+    """Post-fix: an author surname with a Latin-script diacritic
+    survives the regex strip as ASCII letters (Hernández → Hernandez),
+    not as the lossy 'Hernndez' the pre-fix produced."""
+    meta = {"year": 2024, "authors": ["María Hernández"]}
+    cite = cr._body_citation_from_metadata(meta)
+    assert cite == "Hernandez 2024", cite

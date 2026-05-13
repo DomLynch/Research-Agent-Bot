@@ -185,6 +185,24 @@ def _organize_run_artifacts(run_dir: Path) -> dict[str, str]:
     return moved
 
 
+def _section_words_from_paper(paper_md: str) -> dict[str, int]:
+    """Count words per H2 section of the final paper.md. Universal —
+    keys are slugified H2 headings (`## Cross-Domain Synthesis` →
+    `cross_domain_synthesis`). Used to overwrite manifest.section_words
+    after the post-paper pipeline regenerates bounded abstract /
+    auto-fixes etc., so the manifest matches the file actually shipped."""
+    out: dict[str, int] = {}
+    parts = re.split(r"^##\s+([^\n#].*?)\s*$", paper_md, flags=re.M)
+    # re.split returns [pre, h1, body1, h2, body2, ...]
+    for i in range(1, len(parts) - 1, 2):
+        heading = parts[i].strip()
+        body = parts[i + 1]
+        slug = re.sub(r"[^a-z0-9]+", "_", heading.lower()).strip("_")
+        if slug:
+            out[slug] = len(body.split())
+    return out
+
+
 def _first_section_paragraph(section_md: str) -> str:
     body = section_md.split("\n", 1)[1] if "\n" in section_md else ""
     for para in re.split(r"\n\s*\n", body):
@@ -2606,6 +2624,14 @@ async def _run(
         methods_md=methods_md, quality_bundle=quality_artifact["bundle"],
     )
     word_count = len(final_paper_md.split())
+    # Bug-fix 2026-05-13: section_words was the writer's first-pass
+    # count, but the post-paper pipeline regenerates the bounded
+    # abstract/conclusion and auto-fixes many sentences. Re-measure
+    # from the final paper and rewrite the manifest so sidecars stay
+    # consistent (no more "manifest says 570 / pre_submit says 299").
+    manifest["section_words"] = _section_words_from_paper(final_paper_md)
+    manifest["total_words"] = word_count
+    (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
 
     print(f"\nDONE: {paper_path}", file=sys.stderr)
     print(f"  final_words: {word_count}", file=sys.stderr)

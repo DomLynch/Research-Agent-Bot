@@ -437,6 +437,13 @@ Required topics to cover:
 5. Mechanism-to-clinic gap — where the corpus has only mechanistic
    evidence for a clinically-relevant claim.
 
+FORBIDDEN content (bug-fix 2026-05-13): Do NOT include sentences
+that describe what this synthesis adds, contributes, distinguishes,
+or "separates from" prior work. Synthesis-novelty framing belongs in
+Cross-Domain Synthesis / Discussion, not here. Every paragraph in
+Limitations must name a LIMITATION (something the evidence cannot
+support), not a contribution.
+
 Output JSON only. No prose outside the JSON."""
 
 

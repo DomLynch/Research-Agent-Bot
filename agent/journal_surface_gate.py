@@ -1,9 +1,19 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from collections import Counter
 from dataclasses import dataclass
 from typing import Any, Iterable
+
+
+def _fold(text: str) -> str:
+    """NFKD-fold + strip combining marks + casefold. Universal — turns
+    Hernández/HERNÁNDEZ/hernandez into one comparable form. Used by the
+    unreferenced-citation check so an inline cite with diacritics and a
+    reference list entry without them still match (or vice versa)."""
+    nfkd = unicodedata.normalize("NFKD", text)
+    return "".join(c for c in nfkd if not unicodedata.combining(c)).casefold()
 
 
 @dataclass(frozen=True, slots=True)
@@ -397,7 +407,11 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
     out: list[str] = []
     for match in _AUTHOR_YEAR_RE.finditer(_journal_body(paper_md)):
         token = f"{match.group(1)} {match.group(2)}"
-        if token not in refs and token not in seen:
+        # Compare via _fold so diacritic mismatches (Hernández inline vs
+        # Hernandez in References) don't false-positive. Report the
+        # original (un-folded) inline token so the issue message
+        # matches what a reader sees in the manuscript.
+        if _fold(token) not in refs and token not in seen:
             seen.add(token)
             out.append(token)
     return tuple(out)
@@ -405,7 +419,10 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
 
 def _reference_labels(paper_md: str) -> set[str]:
     refs = _section_body(paper_md, "References") or ""
-    return {f"{m.group(1)} {m.group(2)}" for m in _AUTHOR_YEAR_RE.finditer(refs)}
+    return {
+        _fold(f"{m.group(1)} {m.group(2)}")
+        for m in _AUTHOR_YEAR_RE.finditer(refs)
+    }
 
 
 def _citation_reference_issue_messages(paper_md: str) -> tuple[str, ...]:
