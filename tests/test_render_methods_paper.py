@@ -73,7 +73,7 @@ def test_methods_paper_claim_is_bounded(tmp_path: Path) -> None:
     assert "auditable structured evidence synthesis" in paper
     assert "automated systematic-review equivalence" in paper
     assert "not automated systematic review" in paper
-    assert "| Topic | Receipts | Claims | Numeric grounding |" in paper
+    assert "| Topic | Receipts | Claims | Citation accuracy | Numeric grounding |" in paper
 
 
 def test_numeric_grounding_falls_back_to_audit_q2(tmp_path: Path) -> None:

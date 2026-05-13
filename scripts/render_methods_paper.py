@@ -63,7 +63,9 @@ def _latest_run(runs_dir: Path, topic: str) -> Path | None:
             "full_paper.final_verdict.json",
             "full_paper.journal_surface.json",
         )
-        if all((path / name).exists() for name in required):
+        if (path / "benchmark_runtime.json").exists() or all(
+            (path / name).exists() for name in required
+        ):
             candidates.append(path)
     return max(candidates, key=lambda p: p.stat().st_mtime) if candidates else None
 
@@ -132,8 +134,21 @@ def _metric_row(run_dir: Path) -> dict[str, Any]:
     audit_pass, audit_total = _audit_counts(audit)
     surface_issues = _list(surface.get("issues"))
     gate_failures = _list(gate_result.get("failures"))
+    incomplete = [
+        name for name in (
+            "manifest.json",
+            "full_paper.final_verdict.json",
+            "full_paper.journal_surface.json",
+        )
+        if not (run_dir / name).exists()
+    ]
+    if incomplete:
+        gate_failures.append({
+            "code": "fresh_run_incomplete",
+            "detail": "missing " + ", ".join(incomplete),
+        })
     topic = str(manifest.get("topic") or _topic_from_run_name(run_dir.name) or "")
-    receipts = int(manifest.get("n_receipts") or 0)
+    receipts = int(manifest.get("n_receipts") or len(citation_registry) or 0)
     citation_accuracy, citation_basis = _citation_accuracy(
         run_dir,
         receipts=receipts,
