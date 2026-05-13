@@ -359,7 +359,7 @@ def _abstract_profile_contradiction_issue_messages(paper_md: str) -> tuple[str, 
 
 def _conclusion_scope_issue_messages(paper_md: str) -> tuple[str, ...]:
     conclusion = _section_body(paper_md, "Conclusion") or ""
-    if re.search(r"\bseparates\s+endpoint[- ]specific\s+evidence\b.*\bbroad\b.*\bclaims?\b", conclusion, flags=re.I | re.S):
+    if re.search(r"\bseparates\s+endpoint[- ]specific\s+evidence\b", conclusion, flags=re.I):
         return ("What This Synthesis Adds language appears inside Conclusion",)
     return ()
 
