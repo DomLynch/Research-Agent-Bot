@@ -316,6 +316,31 @@ def test_restore_public_surface_floors_without_typed_sections() -> None:
     assert orch._word_count(body) >= 400
 
 
+def test_restore_public_surface_floors_replaces_overlong_abstract() -> None:
+    paper = (
+        "## Abstract\n\n" + _words(330) + "\n\n"
+        "## Introduction\n\n" + _words(420) + "\n\n"
+        "## Background\n\n" + _words(320) + "\n\n"
+        "## Methods\n\n" + _words(320) + "\n\n"
+        "## Results\n\n" + _words(520) + "\n\n"
+        "## Cross-Domain Synthesis\n\n" + _words(870) + "\n\n"
+        "## Discussion\n\n" + _words(820) + "\n\n"
+        "## Limitations\n\n" + _words(260) + "\n\n"
+        "## Conclusion\n\n" + _words(260) + "\n"
+    )
+
+    out, log = orch._restore_public_surface_floors(paper)
+
+    assert log == [{
+        "fix_type": "surface_floor_backstop",
+        "section": "Abstract",
+        "reason": "replace_long_section",
+    }]
+    match = orch._rendered_section_match(out, "## Abstract")
+    assert match is not None
+    assert 150 <= orch._word_count(match.group(1)) <= 300
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (
