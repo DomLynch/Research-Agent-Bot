@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
@@ -41,6 +42,50 @@ def test_restore_rendered_section_headings_from_typed_sections() -> None:
     out = orch._restore_rendered_section_headings(paper, sections)
     assert "## Conclusion\n\nThe boundary conditions remain unresolved." in out
     assert out.index("## Conclusion") < out.index("## References")
+
+
+def test_ensure_references_section_restores_from_registry() -> None:
+    paper = "## Abstract\n\nText.\n\n## Conclusion\n\nDone.\n"
+    registry = {
+        "A": SimpleNamespace(
+            reference_id="R02",
+            body_citation="Smith 2024",
+            title="Example title",
+            source_journal="Journal",
+            source_year=2024,
+            source_doi="10.1/example",
+            source_pmid="123",
+        )
+    }
+    out, changed = orch._ensure_references_section(paper, registry)
+    assert changed
+    assert "## References" in out
+    assert "- **Smith 2024.** _Example title._ Journal, 2024." in out
+    assert "DOI: 10.1/example." in out
+
+
+def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
+    for name in (
+        "full_paper.md",
+        "manifest.json",
+        "citation_registry.json",
+        "full_paper.audit.json",
+        "full_paper.final_verdict.json",
+        "full_paper.review_patch_log.json",
+        "quality_methods.json",
+        "quality_methods.md",
+    ):
+        (tmp_path / name).write_text("x")
+    (tmp_path / "forest_plots").mkdir()
+    moved = orch._organize_run_artifacts(tmp_path)
+    assert (tmp_path / "full_paper.md").exists()
+    assert (tmp_path / "manifest.json").exists()
+    assert (tmp_path / "full_paper.audit.json").exists()
+    assert (tmp_path / "debug" / "full_paper.review_patch_log.json").exists()
+    assert (tmp_path / "audit" / "quality_methods.json").exists()
+    assert (tmp_path / "readable" / "quality_methods.md").exists()
+    assert (tmp_path / "plots" / "forest_plots").is_dir()
+    assert moved["quality_methods.json"] == "audit/quality_methods.json"
 
 
 def test_restore_rendered_section_headings_is_idempotent() -> None:
@@ -196,11 +241,9 @@ def test_restore_required_section_body_when_post_processing_strips_depth() -> No
     )
     out = orch._restore_rendered_section_contract(paper, sections)
     assert "Too short." not in out
-    assert orch._word_count(
-        orch._rendered_section_match(
-            out, "## Cross-Domain Synthesis",
-        ).group(1),
-    ) >= 850
+    match = orch._rendered_section_match(out, "## Cross-Domain Synthesis")
+    assert match is not None
+    assert orch._word_count(match.group(1)) >= 850
     assert "compiled from" not in out
     assert "compiler" not in out
     assert "word849" in out
@@ -223,9 +266,9 @@ def test_restore_required_section_body_does_not_reintroduce_unsafe_source() -> N
     assert "compiled from" not in out
     assert "compiler" not in out
     assert "direct clinical evidence" in out
-    assert orch._word_count(
-        orch._rendered_section_match(out, "## Introduction").group(1),
-    ) >= 400
+    match = orch._rendered_section_match(out, "## Introduction")
+    assert match is not None
+    assert orch._word_count(match.group(1)) >= 400
 
 
 def test_restore_required_section_body_compiles_safe_fallback() -> None:
@@ -266,7 +309,9 @@ def test_restore_public_surface_floors_without_typed_sections() -> None:
         "section": "Introduction",
         "reason": "replace_short_section",
     }]
-    body = orch._rendered_section_match(out, "## Introduction").group(1)
+    match = orch._rendered_section_match(out, "## Introduction")
+    assert match is not None
+    body = match.group(1)
     assert "Too short." not in body
     assert orch._word_count(body) >= 400
 
@@ -283,7 +328,9 @@ def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     out = orch._restore_rendered_section_contract(
         paper, sections, prefer_typed_sections=False,
     )
-    body = orch._rendered_section_match(out, "## Results").group(1)
+    match = orch._rendered_section_match(out, "## Results")
+    assert match is not None
+    body = match.group(1)
     assert "word499" not in body
     assert "study-level summaries" in body
     assert orch._word_count(body) >= 500
