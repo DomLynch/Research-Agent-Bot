@@ -227,6 +227,14 @@ def test_final_quality_gates_block_failed_fresh_runtime(tmp_path: Path) -> None:
 
     assert not result["gate"].passed
     assert payload["runtime_integrity_failure"] == "benchmark_runtime_return_code=1"
+    assert payload["runtime_integrity"] == {
+        "failure_stage": "fresh_run",
+        "failure_type": "nonzero_return_code",
+        "detail": "benchmark_runtime_return_code=1",
+        "recoverable": True,
+        "artifact_validity": "partial",
+        "blocks_submission": True,
+    }
     assert "benchmark_runtime_return_code=1" in payload["result"]["failures"]
     by_name = {row["name"]: row for row in payload["journal_readiness_contract"]}
     assert by_name["product_tiers"]["status"] == "not_ready"

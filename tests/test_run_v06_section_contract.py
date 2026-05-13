@@ -102,6 +102,17 @@ def test_organize_run_artifacts_replaces_stale_sidecar(tmp_path: Path) -> None:
     assert moved["publication_score.json"] == "audit/publication_score.json"
 
 
+def test_pre_submit_revise_blocks_submission_without_runtime_failure() -> None:
+    gate = SimpleNamespace(passed=True, summary="PASS — evidence bundle clean")
+    score = SimpleNamespace(verdict="revise", summary="REVISE - 26/30")
+    assert (
+        orch._pre_submit_blocker_summary({"gate": gate, "score": score})
+        == "PASS — evidence bundle clean; REVISE - 26/30"
+    )
+    score = SimpleNamespace(verdict="accept", summary="ACCEPT - 30/30")
+    assert orch._pre_submit_blocker_summary({"gate": gate, "score": score}) == ""
+
+
 def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     try:

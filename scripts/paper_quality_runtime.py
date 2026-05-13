@@ -440,21 +440,42 @@ def _readiness_item(
     }
 
 
-def _runtime_integrity_failure(out_dir: Path) -> str | None:
+def _runtime_integrity_issue(out_dir: Path) -> dict[str, Any] | None:
     path = out_dir / "benchmark_runtime.json"
     if not path.exists():
         return None
     try:
         payload = json.loads(path.read_text())
     except (OSError, json.JSONDecodeError) as exc:
-        return f"benchmark_runtime_unreadable={exc.__class__.__name__}"
+        return {
+            "failure_stage": "benchmark_runtime",
+            "failure_type": "unreadable_runtime_sidecar",
+            "detail": f"benchmark_runtime_unreadable={exc.__class__.__name__}",
+            "recoverable": True,
+            "artifact_validity": "partial",
+            "blocks_submission": True,
+        }
     if not payload.get("fresh_run"):
         return None
     if payload.get("timed_out"):
-        return "benchmark_runtime_timed_out"
+        return {
+            "failure_stage": "fresh_run",
+            "failure_type": "timeout",
+            "detail": "benchmark_runtime_timed_out",
+            "recoverable": True,
+            "artifact_validity": "partial",
+            "blocks_submission": True,
+        }
     return_code = payload.get("return_code")
     if return_code != 0:
-        return f"benchmark_runtime_return_code={return_code}"
+        return {
+            "failure_stage": "fresh_run",
+            "failure_type": "nonzero_return_code",
+            "detail": f"benchmark_runtime_return_code={return_code}",
+            "recoverable": True,
+            "artifact_validity": "partial",
+            "blocks_submission": True,
+        }
     return None
 
 
@@ -603,7 +624,8 @@ def write_final_quality_gates(
         n_receipts=int(manifest.get("n_receipts", 0)),
         template_language_blocking=template.template_language_blocking,
     )
-    runtime_failure = _runtime_integrity_failure(out_dir)
+    runtime_issue = _runtime_integrity_issue(out_dir)
+    runtime_failure = str(runtime_issue["detail"]) if runtime_issue else None
     gate = _gate_with_runtime_integrity(evaluate_final_gate(inputs), runtime_failure)
 
     field = json.loads((out_dir / "field_engagement.json").read_text()) if (out_dir / "field_engagement.json").exists() else []
@@ -641,6 +663,7 @@ def write_final_quality_gates(
         "inputs": dataclasses.asdict(inputs),
         "result": dataclasses.asdict(gate),
         "runtime_integrity_failure": runtime_failure,
+        "runtime_integrity": runtime_issue or {"blocks_submission": False},
         "journal_readiness_contract": readiness_contract,
     }
     (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate_payload, indent=2))

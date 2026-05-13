@@ -161,10 +161,11 @@ def build_novel_framework_section(
             "null_vs_positive",
         ) if label in tension_kinds
     ) or "cross-receipt"
+    article = "an" if framework_name[:1].lower() in {"a", "e", "i", "o"} else "a"
     body = [
         f"## {framework_name} Framework",
         "",
-        f"We propose a {framework_name} framework for this corpus: the "
+        f"We propose {article} {framework_name} framework for this corpus: the "
         "evidence should be interpreted along a gradient from proximal "
         "pathway effects, through intermediate functional or biomarker "
         "endpoints, to distal clinical outcomes.",

@@ -402,6 +402,12 @@ def _normalize_heading_boundaries(paper_md: str) -> tuple[str, int]:
     return fixed, n_split_h3 + n_glued
 
 
+def _normalize_sentence_spacing(paper_md: str) -> tuple[str, int]:
+    body, tail = _split_public_body(paper_md)
+    fixed, n = re.subn(r"(?<=[a-z0-9)\]])\.(?=[A-Z])", ". ", body)
+    return fixed + tail, n
+
+
 def _split_dense_conclusion_paragraphs(paper_md: str) -> tuple[str, int]:
     match = re.search(
         r"(^##\s+Conclusion\s*\n+)(.*?)(?=^##\s+|\Z)",
@@ -697,6 +703,13 @@ def apply_lightweight_public_polish(
             "fix_type": "heading_boundary_normalization",
             "n_changes": n_heading_boundaries,
             "description": "restored blank lines before markdown headings",
+        })
+    new_md, n_sentence_spacing = _normalize_sentence_spacing(new_md)
+    if n_sentence_spacing:
+        log.append({
+            "fix_type": "sentence_spacing_normalization",
+            "n_changes": n_sentence_spacing,
+            "description": "restored missing spaces after sentence periods",
         })
     new_md, n_dup_words = _collapse_adjacent_duplicate_words(new_md)
     if n_dup_words:
