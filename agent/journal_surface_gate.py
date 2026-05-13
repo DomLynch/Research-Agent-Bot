@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from collections import Counter
 from dataclasses import dataclass
 from typing import Any, Iterable
 
@@ -185,8 +186,20 @@ def _results_outcome_section_issue_messages(paper_md: str) -> tuple[str, ...]:
     if not outcomes:
         return ()
     h3s = [m.group(1) for m in re.finditer(r"^###\s+(.+?)\s*$", results, flags=re.M)]
-    missing = [outcome for outcome in outcomes if not _has_matching_outcome_heading(outcome, h3s)]
-    return tuple(f"missing Results outcome section: {outcome}" for outcome in missing)
+    expected = {_outcome_key(outcome): outcome for outcome in outcomes}
+    counts = Counter(_outcome_key(heading) for heading in h3s)
+    issues: list[str] = []
+    for key, outcome in expected.items():
+        n = counts.get(key, 0)
+        if n == 0:
+            issues.append(f"missing Results outcome section: {outcome}")
+        elif n > 1:
+            issues.append(f"duplicate Results outcome section: {outcome}")
+    issues.extend(
+        f"unexpected Results outcome section: {key}"
+        for key in sorted(k for k in counts if k and k not in expected)
+    )
+    return tuple(issues)
 
 
 def _outcome_classes_from_results_table(results: str) -> tuple[str, ...]:
@@ -212,16 +225,11 @@ def _table_cells(line: str) -> list[str]:
     return [cell.strip() for cell in line.strip().strip("|").split("|")]
 
 
-def _has_matching_outcome_heading(outcome: str, headings: Iterable[str]) -> bool:
-    outcome_tokens = _outcome_tokens(outcome)
-    if not outcome_tokens:
-        return False
-    return any(outcome_tokens <= _outcome_tokens(heading) for heading in headings)
-
-
-def _outcome_tokens(text: str) -> set[str]:
-    stop = {"and", "or", "outcome", "outcomes", "endpoint", "endpoints"}
-    return {t for t in re.findall(r"[a-z0-9]+", text.lower()) if t not in stop}
+def _outcome_key(text: str) -> str:
+    words = re.findall(r"[a-z0-9]+", text.lower())
+    while words and words[-1] in {"outcome", "outcomes", "endpoint", "endpoints"}:
+        words.pop()
+    return " ".join(words)
 
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
