@@ -424,13 +424,19 @@ def _section_word_count(markdown: str, heading: str) -> int:
 
 
 def _readiness_item(
-    item_id: int, name: str, status: str, evidence: str,
+    item_id: int,
+    name: str,
+    status: str,
+    evidence: str,
+    next_action: str,
 ) -> dict[str, Any]:
     return {
         "id": item_id,
         "name": name,
         "status": status,
         "audit": evidence,
+        "blocks_submission": status != "pass",
+        "next_action": next_action,
     }
 
 
@@ -472,50 +478,71 @@ def build_journal_readiness_contract(
             f"evidence_bundle={getattr(gate, 'passed', False)}; "
             f"journal_surface={bool(journal_surface.get('passed'))}; "
             f"submission_ready={submission_ready}"
-        )),
+        ), "Resolve non-pass readiness items before submission."),
         _readiness_item(2, "feasibility_preflight", (
             "pass" if receipts >= 30 else "partial" if receipts >= 10 else "not_ready"
-        ), f"receipts={receipts}; recommended>=30; minimum>=10"),
+        ), f"receipts={receipts}; recommended>=30; minimum>=10",
+            "Expand corpus toward 30 receipts or document thin-corpus scope."),
         _readiness_item(3, "domain_pack", "partial", (
             "domain profiles exist; run uses current topic pack metadata"
-        )),
+        ), "Declare the domain profile and evidence hierarchy in the topic pack."),
         _readiness_item(4, "journal_grade_retrieval", "partial", (
             "corpus and citations are traced; exhaustive PRISMA search is not asserted"
-        )),
+        ), "Add saved search strings/exclusions before systematic-review claims."),
         _readiness_item(5, "claim_atoms", (
             "pass" if claims > 0 and citation_registry_complete else "not_ready"
-        ), f"claims={claims}; citation_registry_complete={citation_registry_complete}"),
+        ), f"claims={claims}; citation_registry_complete={citation_registry_complete}",
+            "Repair claim extraction or citation registry before manuscript use."),
         _readiness_item(6, "evidence_graph", (
             "pass" if outcomes and tensions > 0 else "not_ready"
-        ), f"outcome_classes={len(outcomes)}; tensions={tensions}"),
+        ), f"outcome_classes={len(outcomes)}; tensions={tensions}",
+            "Build outcome/tension graph before rendering prose."),
         _readiness_item(7, "deterministic_manuscript_compiler", (
             "pass" if bool(journal_surface.get("passed")) else "not_ready"
-        ), f"journal_surface_passed={bool(journal_surface.get('passed'))}"),
+        ), f"journal_surface_passed={bool(journal_surface.get('passed'))}",
+            "Fix compiler-owned section/table/reference contracts."),
         _readiness_item(8, "deterministic_abstract_conclusion", (
             "pass" if 150 <= abstract_words <= 300 and 200 <= conclusion_words <= 320 else "partial"
-        ), f"abstract_words={abstract_words}; conclusion_words={conclusion_words}"),
+        ), f"abstract_words={abstract_words}; conclusion_words={conclusion_words}",
+            "Regenerate bounded abstract/conclusion slots from registry counts."),
         _readiness_item(9, "journal_surface_gate", (
             "pass" if bool(journal_surface.get("passed")) else "not_ready"
-        ), f"issues={len(journal_surface.get('issues') or [])}"),
+        ), f"issues={len(journal_surface.get('issues') or [])}",
+            "Repair all journal-surface defects and rerun gate."),
         _readiness_item(10, "section_repair_loop", "partial", (
             "bounded final polish ran; no full multi-loop repair engine asserted"
-        )),
+        ), "Add bounded section-level retries only if recurring failures persist."),
         _readiness_item(11, "adversarial_reviewer_roles", (
             "pass" if int((reviewer_patches or {}).get("unresolved_p1_count", 0)) == 0 else "not_ready"
-        ), f"unresolved_p1={int((reviewer_patches or {}).get('unresolved_p1_count', 0))}"),
+        ), f"unresolved_p1={int((reviewer_patches or {}).get('unresolved_p1_count', 0))}",
+            "Resolve reviewer P1s or mark as human-blocking."),
         _readiness_item(12, "target_journal_finalizer", "not_ready", (
             "no target-journal style pack selected for this run"
-        )),
+        ), "Select target journal and generate style/checklist package."),
         _readiness_item(13, "human_signoff", "not_ready", (
             "submission requires author/domain-expert approval outside the bot"
-        )),
+        ), "Collect named author/domain-expert signoff before submission."),
         _readiness_item(14, "universal_benchmark_target", "not_ready", (
             "single-run artifact; 20-topic benchmark threshold not evaluated here"
-        )),
+        ), "Run the frozen benchmark and attach aggregate metrics."),
         _readiness_item(15, "end_state_architecture", (
             "partial" if not template_language_blocking else "not_ready"
-        ), "core synthesis/gates exist; target finalizer and human signoff remain explicit gaps"),
+        ), "core synthesis/gates exist; target finalizer and human signoff remain explicit gaps",
+            "Keep closing partial/not-ready items without adding new layers."),
     ]
+
+
+def _format_readiness_contract(contract: list[dict[str, Any]]) -> str:
+    rows = [
+        "| # | Item | Status | Audit | Next action |",
+        "|---:|---|---|---|---|",
+    ]
+    for item in contract:
+        rows.append(
+            f"| {item['id']} | {item['name']} | {item['status']} | "
+            f"{item['audit']} | {item['next_action']} |"
+        )
+    return "\n".join(rows)
 
 
 def write_final_quality_gates(
@@ -583,7 +610,13 @@ def write_final_quality_gates(
         "journal_readiness_contract": readiness_contract,
     }
     (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate_payload, indent=2))
-    (out_dir / "pre_submit_gate.md").write_text("# Pre-Submit Final Gate\n\n" + gate.summary + "\n")
+    (out_dir / "pre_submit_gate.md").write_text(
+        "# Pre-Submit Final Gate\n\n"
+        + gate.summary
+        + "\n\n## Journal Readiness Contract\n\n"
+        + _format_readiness_contract(readiness_contract)
+        + "\n"
+    )
     score_payload = {"inputs": dataclasses.asdict(score_inputs), "result": dataclasses.asdict(score)}
     (out_dir / "publication_score.json").write_text(json.dumps(score_payload, indent=2))
     (out_dir / "publication_score.md").write_text("# Publication Score\n\n" + score.summary + "\n")

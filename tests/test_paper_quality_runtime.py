@@ -178,8 +178,22 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     contract = gate_payload["journal_readiness_contract"]
     assert len(contract) == 15
     assert [row["id"] for row in contract] == list(range(1, 16))
+    assert all(row["next_action"] for row in contract)
+    assert all(row["blocks_submission"] is (row["status"] != "pass") for row in contract)
     by_name = {row["name"]: row for row in contract}
     assert by_name["product_tiers"]["status"] == "pass"
     assert by_name["claim_atoms"]["status"] == "pass"
     assert by_name["target_journal_finalizer"]["status"] == "not_ready"
     assert by_name["human_signoff"]["status"] == "not_ready"
+    assert by_name["universal_benchmark_target"]["status"] == "not_ready"
+    assert by_name["target_journal_finalizer"]["blocks_submission"]
+    assert "Select target journal" in by_name["target_journal_finalizer"]["next_action"]
+    assert by_name["human_signoff"]["blocks_submission"]
+    assert "signoff" in by_name["human_signoff"]["next_action"]
+    assert by_name["universal_benchmark_target"]["blocks_submission"]
+    assert "frozen benchmark" in by_name["universal_benchmark_target"]["next_action"]
+    gate_md = (tmp_path / "pre_submit_gate.md").read_text()
+    assert "## Journal Readiness Contract" in gate_md
+    assert "| 12 | target_journal_finalizer | not_ready |" in gate_md
+    assert "| 13 | human_signoff | not_ready |" in gate_md
+    assert "| 14 | universal_benchmark_target | not_ready |" in gate_md
