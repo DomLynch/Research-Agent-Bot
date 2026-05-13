@@ -12,8 +12,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
-import multi_topic_dashboard as dash  # noqa: E402
-import certification_report as cert  # noqa: E402
+import multi_topic_dashboard as dash  # type: ignore[import-not-found]  # noqa: E402
+import certification_report as cert  # type: ignore[import-not-found]  # noqa: E402
 
 
 def _make_run(
@@ -51,6 +51,7 @@ def _surface_clean_paper() -> str:
         f"## Discussion\n\n{words(800)}",
         f"## Limitations\n\n{words(250)}",
         f"## Conclusion\n\n{words(250)}",
+        "## References\n\n- Smith 2024.",
     ))
 
 

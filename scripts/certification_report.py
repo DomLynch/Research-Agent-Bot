@@ -251,7 +251,7 @@ def certify_run(paper_md_path: Path) -> CertificationVerdict:
     verdict_doc = _read_json(
         paper_md_path.with_suffix(".final_verdict.json")
     ) or {}
-    consistency = _read_json(
+    consistency: Any = _read_json(
         paper_md_path.with_suffix(".consistency.json")
     ) or []
     if not isinstance(consistency, list):
