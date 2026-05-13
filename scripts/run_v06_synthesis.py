@@ -368,12 +368,12 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         return ""
     topic = _topic_display_name()
     ctx = _section_backstop_context()
-    receipt_n = ctx["receipt_n"]
-    claim_n = ctx["claim_n"]
-    tension_n = ctx["tension_n"]
-    direct = ctx["direct"]
-    indirect = ctx["indirect"]
-    mechanistic = ctx["mechanistic"]
+    receipt_n = cast(int, ctx["receipt_n"])
+    claim_n = cast(int, ctx["claim_n"])
+    tension_n = cast(int, ctx["tension_n"])
+    direct = cast(int, ctx["direct"])
+    indirect = cast(int, ctx["indirect"])
+    mechanistic = cast(int, ctx["mechanistic"])
     pos = ctx["positive"]
     neg = ctx["negative"]
     null = ctx["null"]
@@ -397,10 +397,11 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 f"{claim_n} high-confidence extracted claims."
             ),
             (
-                f"The evidence profile contains {direct} direct clinical "
-                f"direct clinical source(s), {indirect} adjacent clinical "
-                f"source(s), and {mechanistic} mechanistic or model-system "
-                f"source(s), with {tension_n} non-orthogonal disagreement(s) "
+                "The evidence profile contains "
+                f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
+                f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
+                f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, "
+                f"with {_count_phrase(tension_n, 'cross-study disagreement')} "
                 "across the evidence base."
             ),
             (
@@ -428,9 +429,11 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "certainty."
             ),
             (
-                f"The corpus contains {direct} direct clinical source(s), "
-                f"{indirect} adjacent clinical source(s), and {mechanistic} "
-                "mechanistic or model-system source(s). That distribution "
+                "The corpus contains "
+                f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
+                f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
+                f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}. "
+                "That distribution "
                 "makes the synthesis appropriate for evaluating convergence, "
                 "boundary conditions, and trial-design implications, while "
                 "requiring caution around any conclusion that would exceed the "
@@ -486,7 +489,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             ),
             (
                 f"The synthesis identifies {tension_n} non-orthogonal "
-                "disagreement(s). These disagreements are load-bearing because they show "
+                "disagreements. These disagreements are load-bearing because they show "
                 "where sources do not simply accumulate in the same direction. "
                 "The synthesis therefore treats disagreement and null findings "
                 "as evidence, not as noise to be smoothed away."
@@ -521,8 +524,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             (
                 f"The {topic} evidence base is best interpreted as conditionally "
                 "supportive rather than definitive. The evidence base contains "
-                f"{direct} direct clinical source(s) and {mechanistic} "
-                "mechanistic source(s), so the strongest claims concern where "
+                f"{_evidence_tier_phrase(direct, 'direct clinical')} and "
+                f"{_evidence_tier_phrase(mechanistic, 'mechanistic')}, so the strongest claims concern where "
                 "signals converge and where translation remains uncertain."
             ),
             (
@@ -563,9 +566,10 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         "Limitations": [
             (
                 f"The principal limitation is evidence-role imbalance. The "
-                f"retained corpus contains {direct} direct clinical source(s), "
-                f"{indirect} adjacent clinical source(s), and {mechanistic} "
-                "mechanistic or model-system source(s), which means causal "
+                "retained corpus contains "
+                f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
+                f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
+                f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, which means causal "
                 "interpretation depends on how much weight is assigned to each "
                 "evidence tier."
             ),
@@ -883,6 +887,18 @@ def _pop_h2_section_by_prefix(
 
 def _word_count(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
+
+
+def _count_phrase(n: int, singular: str, plural: str | None = None) -> str:
+    value = n
+    return f"{value} {singular if value == 1 else (plural or singular + 's')}"
+
+
+def _evidence_tier_phrase(n: int, label: str) -> str:
+    value = n
+    if value == 0:
+        return f"no sources classified primarily as {label} evidence"
+    return f"{value} {label} {'source' if value == 1 else 'sources'}"
 
 
 def _ensure_results_summary_table(

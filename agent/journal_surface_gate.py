@@ -51,6 +51,9 @@ _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|
 _PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
 _QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M)
 _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
+_UNRESOLVED_TEMPLATE_RE = re.compile(r"\b(?:source|study|trial|paper)\(s\)\b|\bstudy/studies\b", re.IGNORECASE)
+_COUNT_CLAIM_RE = re.compile(r"\b(?:spans|contains|includes|covers|across)\s+(\d+)\s+(?:curated\s+)?(?:references?|sources?|studies|papers)\b", re.IGNORECASE)
+_ANALYTIC_STUB_RE = re.compile(r"\b(?:evidence|findings|mechanistic|mechanistically|meta-analytic|synthesis|analysis)\b", re.IGNORECASE)
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
@@ -62,6 +65,7 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     issues.extend(SurfaceIssue("template_meta", pat) for pat in _META_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("public_artifact", pat) for pat in _PUBLIC_ARTIFACT_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("duplicate_paragraph", msg) for msg in _duplicate_paragraph_issue_messages(body_md))
+    issues.extend(SurfaceIssue("public_artifact", msg) for msg in _public_language_issue_messages(body_md))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_artifact_issue_messages(body_md))
     issues.extend(SurfaceIssue("citation_artifact", f"public reference dump: {m.group(0)}") for m in _REFERENCE_DUMP_RE.finditer(body_md))
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
@@ -72,6 +76,10 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_count_mismatch_issue_messages(body_md))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _thin_analytic_paragraph_issue_messages(body_md))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _abstract_profile_contradiction_issue_messages(body_md))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _conclusion_scope_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _orphan_table_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md))
     issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
@@ -202,6 +210,31 @@ def _results_outcome_section_issue_messages(paper_md: str) -> tuple[str, ...]:
     return tuple(issues)
 
 
+def _results_count_mismatch_issue_messages(paper_md: str) -> tuple[str, ...]:
+    results = _section_body(paper_md, "Results")
+    if not results:
+        return ()
+    table_counts = _outcome_counts_from_results_table(results)
+    if not table_counts:
+        return ()
+    headings = list(re.finditer(r"^###\s+(.+?)\s*$", results, flags=re.M))
+    issues: list[str] = []
+    for idx, match in enumerate(headings):
+        key = _outcome_key(match.group(1))
+        if key not in table_counts:
+            continue
+        end = headings[idx + 1].start() if idx + 1 < len(headings) else len(results)
+        section = results[match.end():end]
+        for count_match in _COUNT_CLAIM_RE.finditer(section[:900]):
+            claimed = int(count_match.group(1))
+            expected = table_counts[key]
+            if claimed != expected:
+                issues.append(
+                    f"Results count mismatch: {match.group(1)} table n={expected} body says {claimed}"
+                )
+    return tuple(issues)
+
+
 def _outcome_classes_from_results_table(results: str) -> tuple[str, ...]:
     lines = [line.strip() for line in results.splitlines()]
     for idx, line in enumerate(lines):
@@ -219,6 +252,28 @@ def _outcome_classes_from_results_table(results: str) -> tuple[str, ...]:
                 outcomes.append(row_cells[0])
         return tuple(outcomes)
     return ()
+
+
+def _outcome_counts_from_results_table(results: str) -> dict[str, int]:
+    lines = [line.strip() for line in results.splitlines()]
+    for idx, line in enumerate(lines):
+        if not line.startswith("|"):
+            continue
+        cells = _table_cells(line)
+        if not cells or _norm(cells[0]) != "outcome class":
+            continue
+        counts: dict[str, int] = {}
+        for row in lines[idx + 2:]:
+            if not row.startswith("|"):
+                break
+            row_cells = _table_cells(row)
+            if len(row_cells) < 2:
+                continue
+            m = re.search(r"\bn\s*=\s*(\d+)\b", row_cells[1], flags=re.I)
+            if m:
+                counts[_outcome_key(row_cells[0])] = int(m.group(1))
+        return counts
+    return {}
 
 
 def _table_cells(line: str) -> list[str]:
@@ -248,6 +303,56 @@ def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
         key=int,
     )
     return tuple(f"orphan table reference: Table {n}" for n in missing)
+
+
+def _public_language_issue_messages(paper_md: str) -> tuple[str, ...]:
+    issues = [f"unresolved public template: {m.group(0)}" for m in _UNRESOLVED_TEMPLATE_RE.finditer(paper_md)]
+    abstract = _section_body(paper_md, "Abstract") or ""
+    issues.extend(_duplicate_adjacent_phrase_issue_messages(abstract))
+    return tuple(issues)
+
+
+def _duplicate_adjacent_phrase_issue_messages(text: str) -> tuple[str, ...]:
+    words = re.findall(r"[a-z0-9]+", text.lower())
+    for size in range(2, 5):
+        for idx in range(0, len(words) - (2 * size) + 1):
+            phrase = words[idx:idx + size]
+            if len(set(phrase)) > 1 and phrase == words[idx + size:idx + (2 * size)]:
+                return (f"duplicate adjacent phrase: {' '.join(phrase)}",)
+    return ()
+
+
+def _thin_analytic_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
+    issues: list[str] = []
+    for idx, paragraph in enumerate(re.split(r"\n\s*\n", paper_md), start=1):
+        text = re.sub(r"\s+", " ", paragraph.strip())
+        if not text or text.startswith(("#", "|")):
+            continue
+        n = len(re.findall(r"[a-z0-9]+", text.lower()))
+        if 5 <= n <= 14 and _ANALYTIC_STUB_RE.search(text) and not re.search(r"\d|;|:", text):
+            issues.append(f"thin analytical paragraph {idx}: {text}")
+    return tuple(issues)
+
+
+def _abstract_profile_contradiction_issue_messages(paper_md: str) -> tuple[str, ...]:
+    abstract = _section_body(paper_md, "Abstract") or ""
+    body = paper_md.replace(abstract, "", 1).lower()
+    issues: list[str] = []
+    for match in re.finditer(r"\b0\s+([a-z][a-z\s/-]+?)\s+source(?:\(s\)|s)?\b", abstract, flags=re.I):
+        terms = [
+            token for token in re.findall(r"[a-z]+", match.group(1).lower())
+            if len(token) >= 6 and token not in {"source", "sources", "clinical", "direct", "adjacent"}
+        ]
+        if terms and any(re.search(rf"\b{re.escape(term)}\b", body) for term in terms):
+            issues.append(f"abstract evidence-profile contradiction: {match.group(0)}")
+    return tuple(issues)
+
+
+def _conclusion_scope_issue_messages(paper_md: str) -> tuple[str, ...]:
+    conclusion = _section_body(paper_md, "Conclusion") or ""
+    if re.search(r"\bseparates\s+endpoint[- ]specific\s+evidence\b.*\bbroad\b.*\bclaims?\b", conclusion, flags=re.I | re.S):
+        return ("What This Synthesis Adds language appears inside Conclusion",)
+    return ()
 
 
 def _duplicate_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
