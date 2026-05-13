@@ -237,6 +237,14 @@ def _status(row: dict[str, Any]) -> str:
     return "draft-quality or blocked"
 
 
+def _failure_text(failure: Any) -> str:
+    if isinstance(failure, dict):
+        code = str(failure.get("code") or "failure")
+        detail = str(failure.get("detail") or "").strip()
+        return f"{code}: {detail}" if detail else code
+    return str(failure)
+
+
 def render_methods_paper(metrics: dict[str, Any]) -> str:
     rows = metrics["rows"]
     totals = metrics["totals"]
@@ -288,7 +296,7 @@ def render_methods_paper(metrics: dict[str, Any]) -> str:
                 citation="complete" if row["citation_registry_complete"] else "incomplete",
                 verdict=row["verdict"] or "unscored",
                 level=row["maturity_level"],
-                failures=", ".join(map(str, failures)),
+                failures=", ".join(_failure_text(failure) for failure in failures),
             )
         )
     return "\n\n".join([

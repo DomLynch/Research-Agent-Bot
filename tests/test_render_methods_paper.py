@@ -74,6 +74,7 @@ def test_methods_paper_claim_is_bounded(tmp_path: Path) -> None:
     assert "automated systematic-review equivalence" in paper
     assert "not automated systematic review" in paper
     assert "| Topic | Receipts | Claims | Citation accuracy | Numeric grounding |" in paper
+    assert "{'code':" not in paper
 
 
 def test_numeric_grounding_falls_back_to_audit_q2(tmp_path: Path) -> None:
@@ -84,3 +85,25 @@ def test_numeric_grounding_falls_back_to_audit_q2(tmp_path: Path) -> None:
     metrics = collect_metrics(tmp_path, ("alpha",))
 
     assert metrics["rows"][0]["numeric_grounding"] == 1.0
+
+
+def test_fresh_incomplete_run_does_not_fallback_to_stale_run(tmp_path: Path) -> None:
+    _run(tmp_path, "alpha")
+    fresh = tmp_path / "synthesis-alpha-v06-METHODS-FRESH"
+    fresh.mkdir()
+    _write_json(fresh / "benchmark_runtime.json", {
+        "fresh_run": True,
+        "runtime_seconds": 12,
+        "return_code": 1,
+    })
+    _write_json(fresh / "citation_registry.json", {
+        "r1": {},
+        "r2": {},
+    })
+    metrics = collect_metrics(tmp_path, ("alpha",))
+    row = metrics["rows"][0]
+
+    assert row["fresh_run"] is True
+    assert row["receipts"] == 2
+    assert row["run_id"] == "synthesis-alpha-v06-METHODS-FRESH"
+    assert row["contract_failures"][0]["code"] == "fresh_run_incomplete"
