@@ -41,6 +41,7 @@ _PUBLIC_ARTIFACT_PATTERNS = (
     "accepted corpus", "receipt", "with 's evidence", "with ’s evidence",
 )
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
+_SECTION_CEILINGS = {"Abstract": 300}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)
 _CITATION_ARTIFACT_RE = re.compile(r"\[(?:citation needed|source|ref|pmid|doi|TODO)[^\]]*\]|(?:^|\s)(?:PMID|DOI):?\s*$|<\s*(?:citation|ref)[^>]*>", re.IGNORECASE | re.MULTILINE)
 _REFERENCE_DUMP_RE = re.compile(r"\b(?:DOI|PMID):\s*\S+", re.IGNORECASE)
@@ -68,6 +69,8 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
     if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _orphan_table_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md))
     issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
@@ -154,7 +157,65 @@ def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
         n = len(re.findall(r"\b\w+\b", body))
         if n < floor:
             issues.append(f"section too short: {heading} {n}/{floor} words")
+        ceiling = _SECTION_CEILINGS.get(heading)
+        if ceiling is not None and n > ceiling:
+            issues.append(f"section too long: {heading} {n}/{ceiling} words")
     return tuple(issues)
+
+
+def _empty_heading_issue_messages(paper_md: str) -> tuple[str, ...]:
+    matches = list(re.finditer(r"^(#{2,6})\s+(.+?)\s*$", paper_md, flags=re.M))
+    issues: list[str] = []
+    for idx, match in enumerate(matches):
+        end = matches[idx + 1].start() if idx + 1 < len(matches) else len(paper_md)
+        if not paper_md[match.end():end].strip():
+            issues.append(f"empty heading: {match.group(2).strip()}")
+    return tuple(issues)
+
+
+def _results_outcome_section_issue_messages(paper_md: str) -> tuple[str, ...]:
+    results = _section_body(paper_md, "Results")
+    if not results:
+        return ()
+    outcomes = _outcome_classes_from_results_table(results)
+    if not outcomes:
+        return ()
+    h3s = [m.group(1) for m in re.finditer(r"^###\s+(.+?)\s*$", results, flags=re.M)]
+    missing = [outcome for outcome in outcomes if not _has_matching_outcome_heading(outcome, h3s)]
+    return tuple(f"missing Results outcome section: {outcome}" for outcome in missing)
+
+
+def _outcome_classes_from_results_table(results: str) -> tuple[str, ...]:
+    lines = [line.strip() for line in results.splitlines()]
+    for idx, line in enumerate(lines):
+        if not line.startswith("|"):
+            continue
+        cells = _table_cells(line)
+        if not cells or _norm(cells[0]) != "outcome class":
+            continue
+        outcomes: list[str] = []
+        for row in lines[idx + 2:]:
+            if not row.startswith("|"):
+                break
+            row_cells = _table_cells(row)
+            if row_cells:
+                outcomes.append(row_cells[0])
+        return tuple(outcomes)
+    return ()
+
+
+def _table_cells(line: str) -> list[str]:
+    return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+
+def _has_matching_outcome_heading(outcome: str, headings: Iterable[str]) -> bool:
+    outcome_tokens = _outcome_tokens(outcome)
+    return any(outcome_tokens <= _outcome_tokens(heading) for heading in headings)
+
+
+def _outcome_tokens(text: str) -> set[str]:
+    stop = {"and", "or", "outcome", "outcomes", "endpoint", "endpoints"}
+    return {t for t in re.findall(r"[a-z0-9]+", text.lower()) if t not in stop}
 
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
