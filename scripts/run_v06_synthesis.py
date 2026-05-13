@@ -744,10 +744,33 @@ def _section_backstop_context() -> dict[str, object]:
     def _count(field: str, value: str) -> int:
         return sum(1 for r in receipts if str(r.get(field, "")).lower() == value)
 
+    def _is_mechanistic_or_model_system(r: dict[str, Any]) -> bool:
+        tier = str(r.get("evidence_tier") or "").upper()
+        if str(r.get("directness") or "").lower() == "mechanistic" or tier.startswith("C"):
+            return True
+        title = str(r.get("title") or r.get("paper_id") or "").replace("_", " ")
+        cls = _taxonomy.infer_from_paper_meta({"title": title, "abstract": ""})
+        return cls.directness == "mechanistic" or cls.tier.startswith("C")
+
     def _labels(field: str, value: str, limit: int = 3) -> str:
         labels: list[str] = []
         for r in receipts:
             if str(r.get(field, "")).lower() != value:
+                continue
+            label = str(
+                r.get("citation_token") or r.get("body_citation")
+                or r.get("paper_id") or r.get("receipt_id") or "",
+            ).strip()
+            if label and label not in labels:
+                labels.append(label)
+            if len(labels) >= limit:
+                break
+        return ", ".join(labels) if labels else "the retained evidence base"
+
+    def _labels_for(receipt_filter: Any, limit: int = 3) -> str:
+        labels: list[str] = []
+        for r in receipts:
+            if not receipt_filter(r):
                 continue
             label = str(
                 r.get("citation_token") or r.get("body_citation")
@@ -770,7 +793,7 @@ def _section_backstop_context() -> dict[str, object]:
 
     direct = _count("directness", "direct")
     indirect = _count("directness", "indirect")
-    mechanistic = _count("directness", "mechanistic")
+    mechanistic = sum(1 for r in receipts if _is_mechanistic_or_model_system(r))
     return {
         "receipt_n": int(manifest.get("n_receipts") or len(receipts)),
         "claim_n": int(manifest.get("n_high_confidence_claims_total") or 0),
@@ -783,7 +806,7 @@ def _section_backstop_context() -> dict[str, object]:
         "null": _outcomes("null"),
         "mixed": _outcomes("mixed"),
         "direct_refs": _labels("directness", "direct"),
-        "mech_refs": _labels("directness", "mechanistic"),
+        "mech_refs": _labels_for(_is_mechanistic_or_model_system),
         "positive_refs": _labels("effect_direction", "positive"),
         "negative_refs": _labels("effect_direction", "negative"),
         "null_refs": _labels("effect_direction", "null"),

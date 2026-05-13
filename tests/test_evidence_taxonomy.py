@@ -176,6 +176,29 @@ def test_infer_mouse_preclinical_from_title() -> None:
     assert cls.tier == "C1"
 
 
+def test_infer_model_fish_preclinical_from_title() -> None:
+    meta = {
+        "title": (
+            "Dietary berberine alleviates high carbohydrate diet-induced "
+            "intestinal damages in largemouth bass"
+        ),
+        "abstract": "",
+    }
+    cls = et.infer_from_paper_meta(meta)
+    assert cls.tier == "C1"
+    assert cls.directness == "mechanistic"
+
+
+def test_infer_mechanism_title_as_mechanistic_context() -> None:
+    meta = {
+        "title": "Modulating gut microbiota as an anti-diabetic mechanism of berberine",
+        "abstract": "",
+    }
+    cls = et.infer_from_paper_meta(meta)
+    assert cls.tier == "C1"
+    assert cls.directness == "mechanistic"
+
+
 def test_infer_review_from_title() -> None:
     meta = {
         "title": "Metformin: a critical review of anti-aging evidence",

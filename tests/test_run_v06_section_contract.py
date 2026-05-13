@@ -88,6 +88,30 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert moved["quality_methods.json"] == "audit/quality_methods.json"
 
 
+def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 1,
+            "n_high_confidence_claims_total": 1,
+            "n_non_orthogonal_tensions": 0,
+            "receipts": [{
+                "paper_id": "PMC9539808_dietary_berberine_alleviates_in_largemouth_bass",
+                "citation_token": "Gong 2022",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "effect_direction": "positive",
+                "outcome_class": "cardiometabolic",
+                "n_claims": 1,
+            }],
+        }
+        ctx = orch._section_backstop_context()
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+    assert ctx["mechanistic"] == 1
+    assert ctx["mech_refs"] == "Gong 2022"
+
+
 def test_restore_rendered_section_headings_is_idempotent() -> None:
     paper = (
         "## Conclusion\n\n"

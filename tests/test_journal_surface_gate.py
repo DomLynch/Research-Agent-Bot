@@ -293,8 +293,8 @@ def test_results_table_count_must_match_section_count_claim():
 def test_thin_analytical_paragraph_blocks_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(
-        "results1",
-        "Meta-analytic evidence corroborates the glycemic signal.\n\nresults1",
+        "## Results\n\n",
+        "## Results\n\nMeta-analytic evidence corroborates the glycemic signal.\n\n",
         1,
     )
     report = evaluate_journal_surface(paper)

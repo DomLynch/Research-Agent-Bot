@@ -271,12 +271,12 @@ _TITLE_REVIEW_RE = re.compile(
 )
 _TITLE_PRECLINICAL_RE = re.compile(
     r"\b(in vitro|in vivo|preclinical|cell culture|molecular|"
-    r"mechanistic|biochemical)\b",
+    r"mechanistic|mechanism|biochemical)\b",
     re.IGNORECASE,
 )
 _TITLE_ANIMAL_RE = re.compile(
     r"\b(mouse|mice|rat|rats|c\.?\s*elegans|drosophila|yeast|"
-    r"primate|marmoset)\b",
+    r"primate|marmoset|zebrafish|fish|bass|nematode|worm)\b",
     re.IGNORECASE,
 )
 # P3 reviewer fix: dropped diabetic/t2d/frailty — these are conditions,
