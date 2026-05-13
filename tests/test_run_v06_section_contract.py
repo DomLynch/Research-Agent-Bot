@@ -70,6 +70,8 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
         "manifest.json",
         "citation_registry.json",
         "full_paper.audit.json",
+        "full_paper.certification.json",
+        "full_paper.certification.md",
         "full_paper.final_verdict.json",
         "full_paper.review_patch_log.json",
         "quality_methods.json",
@@ -82,6 +84,8 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "manifest.json").exists()
     assert (tmp_path / "full_paper.audit.json").exists()
     assert (tmp_path / "debug" / "full_paper.review_patch_log.json").exists()
+    assert (tmp_path / "audit" / "full_paper.certification.json").exists()
+    assert (tmp_path / "readable" / "full_paper.certification.md").exists()
     assert (tmp_path / "audit" / "quality_methods.json").exists()
     assert (tmp_path / "readable" / "quality_methods.md").exists()
     assert (tmp_path / "plots" / "forest_plots").is_dir()

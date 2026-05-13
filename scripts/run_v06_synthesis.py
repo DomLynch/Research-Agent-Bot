@@ -123,6 +123,7 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
     "readable": (
         "full_paper.audit.md",
         "full_paper.consistency.md",
+        "full_paper.certification.md",
         "full_paper.final_verdict.md",
         "full_paper.review_summary.md",
         "pre_submit_gate.md",
@@ -146,6 +147,7 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
     ),
     "audit": (
         "field_engagement.json",
+        "full_paper.certification.json",
         "grade_assessment.json",
         "meta_analysis_results.json",
         "publication_score.json",

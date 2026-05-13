@@ -54,6 +54,10 @@ _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
 _UNRESOLVED_TEMPLATE_RE = re.compile(r"(?<![a-z])(?:source|study|trial|paper)\((?:s|es)\)(?![a-z])|\bstudy/studies\b", re.IGNORECASE)
 _COUNT_CLAIM_RE = re.compile(r"\b(?:spans|contains|includes|covers|across)\s+(\d+)\s+(?:curated\s+)?(?:references?|sources?|studies|papers)\b", re.IGNORECASE)
 _ANALYTIC_STUB_RE = re.compile(r"\b(?:evidence|findings|mechanistic|mechanistically|meta-analytic|synthesis|analysis)\b", re.IGNORECASE)
+_AUTHOR_YEAR_RE = re.compile(
+    r"\b([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
+    r"(?:\s+et\s+al\.)?\s+((?:19|20)\d{2}[a-z]?)\b"
+)
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
@@ -74,6 +78,7 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
     if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
+    issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_reference_issue_messages(paper_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_count_mismatch_issue_messages(body_md))
@@ -378,6 +383,29 @@ def _duplicate_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
 
 def _citation_artifact_issue_messages(paper_md: str) -> tuple[str, ...]:
     return tuple(f"citation artifact: {m.group(0).strip()}" for m in _CITATION_ARTIFACT_RE.finditer(paper_md))
+
+
+def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
+    refs = _reference_labels(paper_md)
+    if not refs:
+        return ()
+    seen: set[str] = set()
+    out: list[str] = []
+    for match in _AUTHOR_YEAR_RE.finditer(_journal_body(paper_md)):
+        token = f"{match.group(1)} {match.group(2)}"
+        if token not in refs and token not in seen:
+            seen.add(token)
+            out.append(token)
+    return tuple(out)
+
+
+def _reference_labels(paper_md: str) -> set[str]:
+    refs = _section_body(paper_md, "References") or ""
+    return {f"{m.group(1)} {m.group(2)}" for m in _AUTHOR_YEAR_RE.finditer(refs)}
+
+
+def _citation_reference_issue_messages(paper_md: str) -> tuple[str, ...]:
+    return tuple(f"unreferenced citation: {token}" for token in unreferenced_citation_tokens(paper_md))
 
 
 def _hedge_fragment_issue_messages(paper_md: str) -> tuple[str, ...]:
