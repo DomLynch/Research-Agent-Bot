@@ -224,6 +224,65 @@ _PUBLIC_LABELS = {
 }
 
 
+_PUBLIC_TERM_REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"\bSPAR-adjudicated sources\b", re.IGNORECASE), "adjudicated sources"),
+    (re.compile(r"\baccepted evidence base\b", re.IGNORECASE), "included evidence base"),
+    (re.compile(r"\baccepted source papers\b", re.IGNORECASE), "included source papers"),
+    (re.compile(r"\baccepted sources\b", re.IGNORECASE), "included sources"),
+    (re.compile(r"\baccepted source\b", re.IGNORECASE), "included source"),
+    (re.compile(r"\baccepted receipts\b", re.IGNORECASE), "included studies"),
+    (re.compile(r"\breceipt set\b", re.IGNORECASE), "evidence base"),
+    (re.compile(r"\btension matrix\b", re.IGNORECASE), "cross-study disagreement map"),
+    (re.compile(r"\bnon-orthogonal conflicts\b", re.IGNORECASE), "cross-study disagreements"),
+    (re.compile(r"\bnon-orthogonal tensions\b", re.IGNORECASE), "cross-study disagreements"),
+    (re.compile(r"\bcross-study tensions\b", re.IGNORECASE), "cross-study disagreements"),
+)
+_PAIRWISE_TENSION_SUMMARY_RE = re.compile(
+    r"The corpus(?:'s)?\s+(?:tension matrix|cross-study disagreement map)\s+"
+    r"contains\s+(\d+)\s+pairwise tensions\s+across the source set,\s+"
+    r"of which\s+(\d+)\s+were classified as severe\s*\([^)]*\)\.",
+    re.IGNORECASE,
+)
+
+
+def _normalize_public_evidence_terms(
+    paper_md: str, manifest: dict | None,
+) -> tuple[str, int]:
+    """Journalize public body terms without touching audit/reference tails."""
+    body, tail = _split_public_body(paper_md)
+    n = 0
+    public_tension_n = None
+    if isinstance(manifest, dict):
+        raw = manifest.get("n_non_orthogonal_tensions")
+        if isinstance(raw, int) or (isinstance(raw, str) and raw.isdigit()):
+            public_tension_n = int(raw)
+
+    def tension_summary(match: re.Match[str]) -> str:
+        pairwise, severe = match.group(1), match.group(2)
+        retained = (
+            f"; {public_tension_n} public cross-study disagreements were "
+            "retained for synthesis"
+            if public_tension_n is not None
+            else ""
+        )
+        return (
+            f"The broader pairwise-comparison map contains {pairwise} "
+            f"pairwise comparisons across the source set, with {severe} "
+            f"severe comparisons{retained}."
+        )
+
+    body, k = _PAIRWISE_TENSION_SUMMARY_RE.subn(tension_summary, body)
+    n += k
+    body, k = re.subn(r"\b(\d+)\s+pairwise tensions\b", r"\1 pairwise comparisons", body, flags=re.IGNORECASE)
+    n += k
+    body, k = re.subn(r"\b(\d+)\s+severe tensions\b", r"\1 severe pairwise comparisons", body, flags=re.IGNORECASE)
+    n += k
+    for pattern, replacement in _PUBLIC_TERM_REPLACEMENTS:
+        body, k = pattern.subn(replacement, body)
+        n += k
+    return body + tail, n
+
+
 def _normalize_public_snake_case_labels(paper_md: str) -> tuple[str, int]:
     """Rewrite internal enum-style labels in the public manuscript body."""
     body, tail = _split_public_body(paper_md)
@@ -289,6 +348,28 @@ def _collapse_adjacent_duplicate_words(paper_md: str) -> tuple[str, int]:
     return dup_word_re.sub(repl, paper_md), n_dup_words
 
 
+def _split_dense_conclusion_paragraphs(paper_md: str) -> tuple[str, int]:
+    match = re.search(
+        r"(^##\s+Conclusion\s*\n+)(.*?)(?=^##\s+|\Z)",
+        paper_md,
+        re.MULTILINE | re.DOTALL,
+    )
+    if not match:
+        return paper_md, 0
+    body = match.group(2)
+    split_re = re.compile(
+        r"(?<!\n)\s+"
+        r"(The recommended next step is|Pending further trials,|Until such evidence accrues,)"
+    )
+    new_body, n = split_re.subn(r"\n\n\1", body)
+    if not n:
+        return paper_md, 0
+    return (
+        paper_md[:match.start(2)] + new_body + paper_md[match.end(2):],
+        n,
+    )
+
+
 def apply_lightweight_public_polish(
     paper_md: str,
     manifest: dict | None = None,
@@ -303,6 +384,26 @@ def apply_lightweight_public_polish(
             "description": (
                 "inserted an explicit public Abstract thesis marker when "
                 "writer prose lacked an auditor-detectable thesis sentence"
+            ),
+        })
+    new_md, n_public_terms = _normalize_public_evidence_terms(new_md, manifest)
+    if n_public_terms:
+        log.append({
+            "fix_type": "public_evidence_term_normalization",
+            "n_changes": n_public_terms,
+            "description": (
+                "rewrote audit-shaped corpus terms and raw pairwise-tension "
+                "phrases into journal-facing evidence language"
+            ),
+        })
+    new_md, n_conclusion_splits = _split_dense_conclusion_paragraphs(new_md)
+    if n_conclusion_splits:
+        log.append({
+            "fix_type": "conclusion_paragraph_split",
+            "n_changes": n_conclusion_splits,
+            "description": (
+                "split dense conclusion transition sentences into separate "
+                "journal paragraphs without changing claims"
             ),
         })
     new_md, n_dup_words = _collapse_adjacent_duplicate_words(new_md)

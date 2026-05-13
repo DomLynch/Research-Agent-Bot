@@ -108,6 +108,78 @@ _ACTIVE_TOPIC: str = ""
 # resolve receipt → quant_claims via the same global.
 _ACTIVE_MANIFEST: dict | None = None
 
+_TOP_LEVEL_RUN_ARTIFACTS = frozenset({
+    "full_paper.md",
+    "structured_evidence_tables.md",
+    "manifest.json",
+    "citation_registry.json",
+    "full_paper.audit.json",
+    "full_paper.consistency.json",
+    "full_paper.final_verdict.json",
+    "full_paper.journal_surface.json",
+    "pre_submit_gate.json",
+})
+_RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
+    "readable": (
+        "full_paper.audit.md",
+        "full_paper.consistency.md",
+        "full_paper.final_verdict.md",
+        "full_paper.review_summary.md",
+        "pre_submit_gate.md",
+        "publication_score.md",
+        "quality_methods.md",
+        "receipt_funnel.md",
+        "template_language_gate.md",
+        "meta_analysis_results.md",
+        "tension_elaboration_plans.md",
+        "no_regression_report.md",
+    ),
+    "debug": (
+        "full_paper.fixed_log.json",
+        "full_paper.final_fixed_log.json",
+        "full_paper.pre_review_template_repair_log.json",
+        "full_paper.review_patch_log.json",
+        "full_paper.review_patches.json",
+        "full_paper.template_repair_log.json",
+        "numeric_claim_quarantine.json",
+        "qei_quarantined.json",
+    ),
+    "audit": (
+        "field_engagement.json",
+        "grade_assessment.json",
+        "meta_analysis_results.json",
+        "publication_score.json",
+        "quality_methods.json",
+        "receipt_funnel.json",
+        "risk_of_bias.json",
+        "run_mode_contract.json",
+        "template_language_gate.json",
+        "tension_elaboration_plans.json",
+        "no_regression_report.json",
+    ),
+    "plots": ("forest_plots",),
+}
+
+
+def _organize_run_artifacts(run_dir: Path) -> dict[str, str]:
+    """Keep generated run roots small while preserving machine JSON state."""
+    moved: dict[str, str] = {}
+    for folder, names in _RUN_ARTIFACT_FOLDERS.items():
+        dest_dir = run_dir / folder
+        for name in names:
+            src = run_dir / name
+            if not src.exists() or name in _TOP_LEVEL_RUN_ARTIFACTS:
+                continue
+            dest_dir.mkdir(exist_ok=True)
+            dest = dest_dir / name
+            if dest.exists():
+                if src.is_file():
+                    src.unlink()
+                continue
+            src.rename(dest)
+            moved[name] = str(dest.relative_to(run_dir))
+    return moved
+
 
 def _first_section_paragraph(section_md: str) -> str:
     body = section_md.split("\n", 1)[1] if "\n" in section_md else ""
@@ -1930,6 +2002,50 @@ def _append_references_block(
     return paper_md.rstrip() + "\n".join(lines)
 
 
+def _entry_field(entry: Any, field: str) -> Any:
+    if isinstance(entry, dict):
+        return entry.get(field)
+    return getattr(entry, field, None)
+
+
+def _ensure_references_section(
+    paper_md: str,
+    citation_registry: dict | None,
+) -> tuple[str, bool]:
+    if re.search(r"^##\s+References\b", paper_md, re.MULTILINE):
+        return paper_md, False
+    if not citation_registry:
+        return paper_md, False
+    entries = sorted(
+        citation_registry.values(),
+        key=lambda e: str(_entry_field(e, "reference_id") or _entry_field(e, "body_citation") or ""),
+    )
+    lines = ["## References", ""]
+    for entry in entries:
+        body = str(_entry_field(entry, "body_citation") or "").strip()
+        if not body:
+            continue
+        parts = [f"- **{body}.**"]
+        title = str(_entry_field(entry, "title") or "").strip()
+        if title:
+            parts.append(f"_{_clean_reference_title(title)}._")
+        journal = str(_entry_field(entry, "source_journal") or "").strip()
+        year = _entry_field(entry, "source_year")
+        venue_bits = [journal.rstrip(",.")] if journal else []
+        if year:
+            venue_bits.append(str(year))
+        if venue_bits:
+            parts.append(", ".join(venue_bits) + ".")
+        if doi := _entry_field(entry, "source_doi"):
+            parts.append(f"DOI: {doi}.")
+        if pmid := _entry_field(entry, "source_pmid"):
+            parts.append(f"PMID: {pmid}.")
+        lines.append(" ".join(parts))
+    if len(lines) <= 2:
+        return paper_md, False
+    return paper_md.rstrip() + "\n\n" + "\n".join(lines) + "\n", True
+
+
 def _clean_reference_title(title: str) -> str:
     """Fix #35: collapse soft-broken hyphens in PDF-parsed titles.
     'Anti- Aging' → 'Anti-Aging'. Pattern: word-char + hyphen + space
@@ -2734,11 +2850,15 @@ async def _run_post_paper_pipeline(
         paper_md,
     )
     _refix_log.extend(_final_surface_floor_log)
+    paper_md, _references_restored = _ensure_references_section(
+        paper_md, citation_registry,
+    )
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
         or paper_md != pre_final_cleanup_md
         or _inserted_results_summary
+        or _references_restored
     ):
         paper_path.with_suffix(".final_fixed_log.json").write_text(
             json.dumps(_refix_log, indent=2)
@@ -2892,6 +3012,11 @@ async def _run_post_paper_pipeline(
             audit_path.write_text(json.dumps(audit_report, indent=2))
             audit_md = _audit_v06._format_summary(audit_report)
             paper_path.with_suffix(".audit.md").write_text(audit_md)
+        paper_md, references_restored = _ensure_references_section(
+            paper_md, citation_registry,
+        )
+        if references_restored:
+            paper_path.write_text(paper_md)
         from agent.journal_surface_gate import evaluate_journal_surface
         surface_report = evaluate_journal_surface(paper_md)
         surface_payload = {
@@ -2951,6 +3076,12 @@ async def _run_post_paper_pipeline(
     # ship). Caller-driven exit-codes happen via the standalone
     # `python scripts/no_regression_gate.py` CLI for CI.
     _maybe_run_no_regression_gate(paper_path.parent)
+    moved_artifacts = _organize_run_artifacts(paper_path.parent)
+    if moved_artifacts:
+        print(
+            f"[pipeline] Stage 7/7 — organized {len(moved_artifacts)} sidecar artifact(s)",
+            file=sys.stderr,
+        )
 
     return paper_md
 
