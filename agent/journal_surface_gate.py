@@ -48,6 +48,7 @@ _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain
 _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
 _PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
 _QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M)
+_TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
 
 
 def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
@@ -65,6 +66,9 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     issues.extend(SurfaceIssue("malformed_numeric", f"malformed numeric artifact: {m.group(0).strip()}") for m in _MALFORMED_NUMERIC_RE.finditer(body_md))
     issues.extend(SurfaceIssue("topic_slug_artifact", f"public topic-slug artifact: {m.group(0)}") for m in _PUBLIC_SLUG_RE.finditer(body_md))
     issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
+    if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
+        issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _orphan_table_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md))
     issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
     for row in _extract_qei_rows(body_md):
@@ -151,6 +155,22 @@ def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
         if n < floor:
             issues.append(f"section too short: {heading} {n}/{floor} words")
     return tuple(issues)
+
+
+def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
+    defined = {
+        m.group(1)
+        for m in re.finditer(
+            r"^(?:#{2,6}\s*)?Table\s+(\d+)\b",
+            paper_md,
+            flags=re.IGNORECASE | re.MULTILINE,
+        )
+    }
+    missing = sorted(
+        {m.group(1) for m in _TABLE_REF_RE.finditer(paper_md) if m.group(1) not in defined},
+        key=int,
+    )
+    return tuple(f"orphan table reference: Table {n}" for n in missing)
 
 
 def _duplicate_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:

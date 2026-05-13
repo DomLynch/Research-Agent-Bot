@@ -236,6 +236,15 @@ _PUBLIC_TERM_REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bnon-orthogonal conflicts\b", re.IGNORECASE), "cross-study disagreements"),
     (re.compile(r"\bnon-orthogonal tensions\b", re.IGNORECASE), "cross-study disagreements"),
     (re.compile(r"\bcross-study tensions\b", re.IGNORECASE), "cross-study disagreements"),
+    (re.compile(r"\bsystematic search\b", re.IGNORECASE), "structured corpus search"),
+    (
+        re.compile(
+            r"\b(?:the\s+)?most robust\s+([^.;\n]{1,120}?)\s+"
+            r"for\s+extending\s+lifespan\s+across\s+species\b",
+            re.IGNORECASE,
+        ),
+        r"one of the most extensively studied \1 for aging-related outcomes",
+    ),
 )
 _PAIRWISE_TENSION_SUMMARY_RE = re.compile(
     r"The corpus(?:'s)?\s+(?:tension matrix|cross-study disagreement map)\s+"
@@ -243,6 +252,43 @@ _PAIRWISE_TENSION_SUMMARY_RE = re.compile(
     r"of which\s+(\d+)\s+were classified as severe\s*\([^)]*\)\.",
     re.IGNORECASE,
 )
+_TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
+
+
+def _defined_public_table_numbers(body: str) -> set[str]:
+    return {
+        m.group(1)
+        for m in re.finditer(
+            r"^(?:#{2,6}\s*)?Table\s+(\d+)\b",
+            body,
+            flags=re.IGNORECASE | re.MULTILINE,
+        )
+    }
+
+
+def _normalize_orphan_table_references(paper_md: str) -> tuple[str, int]:
+    body, tail = _split_public_body(paper_md)
+    missing = {
+        m.group(1)
+        for m in _TABLE_REF_RE.finditer(body)
+        if m.group(1) not in _defined_public_table_numbers(body)
+    }
+    if not missing:
+        return paper_md, 0
+    n = 0
+    for number in sorted(missing, key=int, reverse=True):
+        table = rf"Table\s+{number}"
+        for pattern, replacement in (
+            (rf"\b{table}\s+presents\b", "The synthesis presents"),
+            (rf"\b{table}\s+summarizes\b", "The synthesis summarizes"),
+            (rf"\b{table}\s+shows\b", "The synthesis shows"),
+            (rf"\bdetailed\s+in\s+{table}\b", "detailed in the evidence synthesis"),
+            (rf"\bsummarized\s+in\s+{table}\b", "summarized in the evidence synthesis"),
+            (rf"\b{table}\b", "the evidence synthesis"),
+        ):
+            body, k = re.subn(pattern, replacement, body, flags=re.IGNORECASE)
+            n += k
+    return body + tail, n
 
 
 def _normalize_public_evidence_terms(
@@ -394,6 +440,16 @@ def apply_lightweight_public_polish(
             "description": (
                 "rewrote audit-shaped corpus terms and raw pairwise-tension "
                 "phrases into journal-facing evidence language"
+            ),
+        })
+    new_md, n_orphan_tables = _normalize_orphan_table_references(new_md)
+    if n_orphan_tables:
+        log.append({
+            "fix_type": "orphan_table_reference_normalization",
+            "n_changes": n_orphan_tables,
+            "description": (
+                "rewrote public references to absent numbered tables into "
+                "self-contained evidence-synthesis language"
             ),
         })
     new_md, n_conclusion_splits = _split_dense_conclusion_paragraphs(new_md)
