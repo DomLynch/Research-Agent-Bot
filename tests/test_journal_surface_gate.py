@@ -579,3 +579,173 @@ def test_unreferenced_citation_is_case_insensitive() -> None:
         "## References\n\n- Smith 2020.\n"
     )
     assert unreferenced_citation_tokens(paper) == ()
+
+
+# Bug-fix: pipeline-internal vocabulary (source-bound observation,
+# claim atom, endpoint proximity, structured corpus synthesis) must
+# not appear in the public manuscript body. Audit sidecars + supplement
+# may still use the raw terms.
+
+
+def test_pipeline_jargon_flagged_in_public_prose() -> None:
+    """Each jargon token surfaces an issue naming the academic
+    replacement so the writer / auto-fixer can swap it in."""
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    )
+    paper = paper.replace(
+        "## Methods\n\n", "## Methods\n\nThis is a structured corpus synthesis.\n\n",
+    )
+    paper = paper.replace(
+        "## Results\n\n",
+        "## Results\n\nThe source-bound observation set spans 30 receipts; endpoint proximity differs.\n\n",
+    )
+    report = evaluate_journal_surface(paper)
+    codes = [i.code for i in report.issues]
+    assert "pipeline_jargon" in codes
+    details = " | ".join(i.detail for i in report.issues if i.code == "pipeline_jargon")
+    assert "structured corpus synthesis" in details
+    assert "source-bound observation" in details
+    assert "endpoint proximity" in details
+
+
+def test_academic_prose_passes_jargon_gate() -> None:
+    """Defensive: the gate must not false-positive on standard
+    academic phrasing without the forbidden tokens."""
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    )
+    report = evaluate_journal_surface(paper)
+    assert not any(i.code == "pipeline_jargon" for i in report.issues)
+
+
+# Bug-fix: every entry in the References bibliography must be cited
+# inline at least once. Catches the failure mode where the writer
+# emits a stub reference but never names the source in prose (the
+# real-world example was "renovar 2023" appearing only in refs).
+
+
+def test_orphan_reference_flagged() -> None:
+    """Reference listed in bibliography but never cited inline → flag."""
+    from agent.journal_surface_gate import orphan_reference_tokens
+    paper = (
+        "## Introduction\n\nSmith 2020 reported.\n\n"
+        "## References\n\n- Smith 2020.\n- Cresnovar 2023.\n"
+    )
+    tokens = orphan_reference_tokens(paper)
+    assert "Cresnovar 2023" in tokens
+    assert "Smith 2020" not in tokens
+
+
+def test_orphan_reference_tolerates_diacritic_match() -> None:
+    """A reference 'Hernandez 2024' (ASCII) cited inline as
+    'Hernández 2024' (diacritic) must NOT flag as orphan."""
+    from agent.journal_surface_gate import orphan_reference_tokens
+    paper = (
+        "## Introduction\n\nHernández 2024 found a thing.\n\n"
+        "## References\n\n- Hernandez 2024.\n"
+    )
+    assert orphan_reference_tokens(paper) == ()
+
+
+def test_orphan_reference_no_refs_section_returns_empty() -> None:
+    """No References section → nothing to flag (other gates catch
+    the missing section separately)."""
+    from agent.journal_surface_gate import orphan_reference_tokens
+    paper = "## Introduction\n\nSmith 2020 reported.\n"
+    assert orphan_reference_tokens(paper) == ()
+
+
+# Bug-fix: evidence-lane labels — animal / preclinical citations must
+# appear in a paragraph that explicitly frames the evidence as
+# non-human. Universal — works for any topic that mixes human and
+# animal evidence.
+
+
+def test_is_animal_paper_keyword_set_universal() -> None:
+    """Detector hits common non-human organisms + veterinary markers."""
+    from agent.journal_surface_gate import is_animal_paper
+    assert is_animal_paper("...in obese equids and ponies")
+    assert is_animal_paper("Long-Tailed Macaque Breeding Groups")
+    assert is_animal_paper("Murine model of caloric restriction")
+    assert is_animal_paper("Journal of Veterinary Internal Medicine")
+    assert is_animal_paper("C. elegans lifespan extension")
+    # Negative: pure human-clinical text
+    assert not is_animal_paper("adults with type 2 diabetes")
+    assert not is_animal_paper("")
+    assert not is_animal_paper(None)
+
+
+def test_unlabeled_animal_citation_flagged() -> None:
+    """Animal citation in a paragraph without an animal-lane qualifier
+    fails the gate; same citation in a paragraph with 'equine' or
+    'preclinical' or any qualifier passes."""
+    bad = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    bad = bad.replace(
+        "## Results\n\n",
+        "## Results\n\nThe trial reported Zijlmans 2022 showed reductions in adipose mass over 24 weeks.\n\n",
+    )
+    report = evaluate_journal_surface(bad, animal_citations=["Zijlmans 2022"])
+    assert any(i.code == "evidence_lane" for i in report.issues)
+
+
+def test_animal_citation_with_lane_qualifier_passes() -> None:
+    """Defensive: same animal citation framed as preclinical → no flag."""
+    good = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    good = good.replace(
+        "## Results\n\n",
+        "## Results\n\nIn non-human primate evidence, Zijlmans 2022 showed reductions in adipose mass.\n\n",
+    )
+    report = evaluate_journal_surface(good, animal_citations=["Zijlmans 2022"])
+    assert not any(i.code == "evidence_lane" for i in report.issues)
+
+
+def test_evidence_lane_check_skipped_when_no_sidecar() -> None:
+    """Backward-compat: existing callers that do not pass
+    animal_citations must see identical behaviour to pre-Slice-4."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    report_old = evaluate_journal_surface(paper)
+    report_new = evaluate_journal_surface(paper, animal_citations=None)
+    assert [i.code for i in report_old.issues] == [i.code for i in report_new.issues]
+
+
+# Bug-fix: novelty / framework claims must be grounded in prior
+# literature within the same paragraph (≥1 Author-Year citation).
+# Universal — works for any topic that introduces a framework.
+
+
+def test_unsupported_novelty_claim_flagged() -> None:
+    """A 'we propose' paragraph with zero inline citations → flag."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    paper = paper.replace(
+        "## Discussion\n\n",
+        "## Discussion\n\nWe propose a novel framework that resolves all tensions in the corpus.\n\n",
+    )
+    report = evaluate_journal_surface(paper)
+    assert any(i.code == "unsupported_novelty" for i in report.issues)
+
+
+def test_grounded_novelty_claim_passes() -> None:
+    """Defensive: 'we propose' paragraph WITH a prior-lit citation → no flag."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    paper = paper.replace(
+        "## Discussion\n\n",
+        "## Discussion\n\nBuilding on prior synthesis (Smith 2024), we propose an extension that operationalizes the gradient claim-by-claim.\n\n",
+    )
+    report = evaluate_journal_surface(paper)
+    assert not any(i.code == "unsupported_novelty" for i in report.issues)
+
+
+def test_novelty_gate_catches_multiple_phrasings() -> None:
+    """Universal: 'novel framework', 'we operationalize', 'first to
+    propose' must all trigger the check."""
+    from agent.journal_surface_gate import _unsupported_novelty_claim_issue_messages
+    for phrase in (
+        "We propose a new approach.",
+        "Our novel framework explains the gap.",
+        "We operationalize a new construct.",
+        "We are the first to propose this synthesis.",
+    ):
+        body = f"## Framework\n\n{phrase}\n"
+        msgs = _unsupported_novelty_claim_issue_messages(body)
+        assert msgs, f"expected flag for: {phrase}"

@@ -16,6 +16,44 @@ def _fold(text: str) -> str:
     return "".join(c for c in nfkd if not unicodedata.combining(c)).casefold()
 
 
+# Bug-fix 2026-05-14: animal/preclinical citations blended into human
+# evidence prose without species framing is a journal desk-reject
+# class. Universal keyword set — no per-topic table; covers organism
+# names + veterinary-journal markers.
+_ANIMAL_KEYWORD_RE = re.compile(
+    r"\b("
+    r"mice|murine|mouse|rats?|rodents?|"
+    r"equids?|equine|horses?|"
+    r"primates?|monkeys?|macaques?|baboons?|"
+    r"dogs?|canine|cats?|feline|"
+    r"swine|porcine|piglets?|pigs?|"
+    r"sheep|ovine|cattle|bovine|"
+    r"zebrafish|c\.\s*elegans|drosophila|yeast|nematodes?|"
+    r"veterinary|preclinical|animal\s+model"
+    r")\b",
+    re.IGNORECASE,
+)
+# Phrases that, when present in the same paragraph as an animal-lane
+# citation, signal the author has explicitly framed the evidence as
+# non-human. The check is intentionally generous — any one of these
+# qualifies the paragraph as lane-labelled.
+_ANIMAL_LANE_QUALIFIERS = (
+    "animal", "preclinical", "rodent", "murine", "in vivo",
+    "model organism", "veterinary", "non-human",
+    "equine", "equid", "primate", "macaque", "horse",
+    "swine", "porcine", "canine", "ovine",
+)
+
+
+def is_animal_paper(text: str | None) -> bool:
+    """Return True if `text` (title + abstract + journal) mentions a
+    non-human organism or veterinary context. Universal — works across
+    any biological / ecological / agricultural topic."""
+    if not text:
+        return False
+    return bool(_ANIMAL_KEYWORD_RE.search(text))
+
+
 @dataclass(frozen=True, slots=True)
 class SurfaceIssue:
     code: str
@@ -51,6 +89,21 @@ _PUBLIC_ARTIFACT_PATTERNS = (
     "mechanistic receipts", "direct clinical receipts", "indirect clinical receipts",
     "accepted corpus", "receipt", "with 's evidence", "with ’s evidence",
 )
+# Bug-fix 2026-05-14: pipeline-language → academic-language translation
+# for the PUBLIC manuscript body only. Audit sidecars + supplement may
+# (and should) still use the internal vocabulary. Universal — applies to
+# any topic; no biomedical-specific tokens.
+_PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
+    ("source-bound observation", "extracted quantitative finding"),
+    ("source-bound claim", "extracted claim"),
+    ("source-bound", "extracted"),
+    ("claim atom", "extracted finding"),
+    ("endpoint proximity", "clinical directness"),
+    # Word-count-neutral replacement: "structured corpus synthesis"
+    # (3 words) → "AI-assisted evidence synthesis" (3 words) so the
+    # rewrite doesn't push abstracts over the section ceiling.
+    ("structured corpus synthesis", "AI-assisted evidence synthesis"),
+)
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
 _SECTION_CEILINGS = {"Abstract": 300}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)
@@ -74,7 +127,11 @@ _AUTHOR_YEAR_RE = re.compile(
 )
 
 
-def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
+def evaluate_journal_surface(
+    paper_md: str,
+    *,
+    animal_citations: Iterable[str] | None = None,
+) -> SurfaceReport:
     issues: list[SurfaceIssue] = []
     body_md = _journal_body(paper_md)
     low = body_md.lower()
@@ -93,6 +150,11 @@ def evaluate_journal_surface(paper_md: str) -> SurfaceReport:
     if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_reference_issue_messages(paper_md))
+    issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _orphan_reference_issue_messages(paper_md))
+    issues.extend(SurfaceIssue("pipeline_jargon", msg) for msg in _pipeline_jargon_issue_messages(body_md))
+    issues.extend(SurfaceIssue("unsupported_novelty", msg) for msg in _unsupported_novelty_claim_issue_messages(body_md))
+    if animal_citations is not None:
+        issues.extend(SurfaceIssue("evidence_lane", msg) for msg in _unlabeled_animal_citation_issue_messages(paper_md, animal_citations))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_count_mismatch_issue_messages(body_md))
@@ -399,6 +461,53 @@ def _citation_artifact_issue_messages(paper_md: str) -> tuple[str, ...]:
     return tuple(f"citation artifact: {m.group(0).strip()}" for m in _CITATION_ARTIFACT_RE.finditer(paper_md))
 
 
+def _pipeline_jargon_issue_messages(paper_md: str) -> tuple[str, ...]:
+    """Flag pipeline-internal vocabulary in the public manuscript body.
+    Each match emits the offending token + the academic-language
+    replacement so the auto-fixer or a human author can swap it in.
+    Universal — no topic-specific tokens."""
+    low = paper_md.lower()
+    out: list[str] = []
+    for jargon, replacement in _PIPELINE_JARGON_PUBLIC:
+        if jargon in low:
+            out.append(f"pipeline jargon in public prose: {jargon!r} → use {replacement!r}")
+    return tuple(out)
+
+
+# Bug-fix 2026-05-14: novelty/framework claims that don't cite any
+# prior literature in the same paragraph are anti-hype gate failures —
+# real frameworks "build on" or "extend" something. Universal regex,
+# no per-topic table.
+_NOVELTY_CLAIM_RE = re.compile(
+    r"\b(we\s+propose|novel\s+(?:framework|approach|method|model)|"
+    r"we\s+operationalize|we\s+introduce|"
+    r"(?:our|this)\s+(?:novel|distinct)\s+contribution|"
+    r"first\s+to\s+(?:propose|introduce|operationalize|formalize))\b",
+    re.IGNORECASE,
+)
+
+
+def _unsupported_novelty_claim_issue_messages(paper_md: str) -> tuple[str, ...]:
+    """A paragraph that asserts novelty/framework contribution must
+    cite ≥1 prior Author-Year reference in the same paragraph. Catches
+    the "we propose a novel framework" with zero engagement with prior
+    literature failure mode (the metabolic-functional tradeoff issue).
+    Universal — works for any domain."""
+    issues: list[str] = []
+    for para in re.split(r"\n\s*\n", paper_md):
+        novelty = _NOVELTY_CLAIM_RE.search(para)
+        if not novelty:
+            continue
+        if _AUTHOR_YEAR_RE.search(para):
+            continue
+        snippet = novelty.group(0)
+        issues.append(
+            f"novelty claim without prior-literature citation in same "
+            f"paragraph: {snippet!r}",
+        )
+    return tuple(issues)
+
+
 def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
     refs = _reference_labels(paper_md)
     if not refs:
@@ -417,12 +526,87 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
     return tuple(out)
 
 
-def _reference_labels(paper_md: str) -> set[str]:
+def _reference_entries(paper_md: str) -> Iterable[tuple[str, str]]:
+    """Yield (raw_token, folded_token) for each reference list entry.
+    Only the FIRST Author-Year on a line is the canonical label; later
+    matches on the same line are journal abbreviations inside the full
+    citation body (e.g. 'J Am Geriatr Soc. 2006' or 'BMJ. 2010').
+    Universal — works for `- **Author Year.**` and `[N] Author Year`
+    reference styles alike."""
     refs = _section_body(paper_md, "References") or ""
-    return {
+    for line in refs.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        m = _AUTHOR_YEAR_RE.search(line)
+        if m:
+            token = f"{m.group(1)} {m.group(2)}"
+            yield token, _fold(token)
+
+
+def _reference_labels(paper_md: str) -> set[str]:
+    return {folded for _raw, folded in _reference_entries(paper_md)}
+
+
+def orphan_reference_tokens(paper_md: str) -> tuple[str, ...]:
+    """Mirror of `unreferenced_citation_tokens`: every Author-Year row
+    in the References section MUST be cited at least once in the body.
+    A reference with zero body cites is an orphan — usually means the
+    paper was parsed into the corpus but the writer never named it,
+    or a citation-token mismatch (the bug that surfaced 'renovar 2023'
+    as the only place that source appeared)."""
+    body = _journal_body(paper_md)
+    body_folded = {
         _fold(f"{m.group(1)} {m.group(2)}")
-        for m in _AUTHOR_YEAR_RE.finditer(refs)
+        for m in _AUTHOR_YEAR_RE.finditer(body)
     }
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw, folded in _reference_entries(paper_md):
+        if folded in seen:
+            continue
+        seen.add(folded)
+        if folded not in body_folded:
+            out.append(raw)
+    return tuple(out)
+
+
+def _orphan_reference_issue_messages(paper_md: str) -> tuple[str, ...]:
+    return tuple(
+        f"orphan reference (in bibliography, not cited inline): {token}"
+        for token in orphan_reference_tokens(paper_md)
+    )
+
+
+def _unlabeled_animal_citation_issue_messages(
+    paper_md: str, animal_citations: Iterable[str],
+) -> tuple[str, ...]:
+    """For each animal-lane citation (as listed by the caller) that
+    appears in a body paragraph WITHOUT any animal-lane qualifier in
+    the same paragraph, emit an issue. Universal — `animal_citations`
+    is a free list of author-year tokens the caller has identified as
+    non-human; this gate adds no per-topic knowledge."""
+    animal_set = {_fold(c.strip()) for c in animal_citations if c and c.strip()}
+    if not animal_set:
+        return ()
+    body = _journal_body(paper_md)
+    issues: list[str] = []
+    seen: set[str] = set()
+    for para in re.split(r"\n\s*\n", body):
+        para_low = para.lower()
+        has_qualifier = any(q in para_low for q in _ANIMAL_LANE_QUALIFIERS)
+        if has_qualifier:
+            continue
+        for match in _AUTHOR_YEAR_RE.finditer(para):
+            token = f"{match.group(1)} {match.group(2)}"
+            folded = _fold(token)
+            if folded in animal_set and folded not in seen:
+                seen.add(folded)
+                issues.append(
+                    f"animal/preclinical citation in non-lane-labelled "
+                    f"paragraph: {token}",
+                )
+    return tuple(issues)
 
 
 def _citation_reference_issue_messages(paper_md: str) -> tuple[str, ...]:

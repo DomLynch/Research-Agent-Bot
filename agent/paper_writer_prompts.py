@@ -72,9 +72,9 @@ the input list. The validator drops uncited sentences entirely.
 
 Rules:
 1. First 1-2 sentences: Background — what's the question, why it matters.
-2. Next 1-2: Methods — note this is a structured corpus synthesis
-   (do NOT name specific tools or pipeline machinery; describe the
-   approach in domain language).
+2. Next 1-2: Methods — note this is an AI-assisted structured
+   evidence synthesis with audit trail (do NOT name specific tools or
+   pipeline machinery; describe the approach in domain language).
 3. Middle 4-6: Results — concrete findings from the accepted receipts,
    integrating across outcomes. Cite specific p-values / effect sizes
    when present in receipts. Do NOT invent numerics.

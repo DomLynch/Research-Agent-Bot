@@ -2610,6 +2610,29 @@ async def _run(
         ),
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    # Bug-fix 2026-05-14: derive evidence_lanes.json sidecar so the
+    # journal-surface gate can flag animal/preclinical citations that
+    # leak into human-evidence prose without lane qualifiers (the
+    # Bamford 2019 / Zijlmans 2022 species-mixing failure mode).
+    # Universal — uses is_animal_paper keyword scan over each
+    # receipt's source title + venue + population summary; no per-
+    # topic table.
+    from agent.journal_surface_gate import is_animal_paper
+    animal_citations: list[dict[str, str]] = []
+    for r in receipts:
+        blob = " ".join(s for s in (
+            r.source_title, r.source_venue, r.population_summary,
+        ) if s)
+        if is_animal_paper(blob):
+            entry = citation_registry.get(r.receipt_id)
+            cite = entry.body_citation if entry is not None else ""
+            animal_citations.append({
+                "citation": cite, "paper_id": r.receipt_id,
+            })
+    (out_dir / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": animal_citations,
+        "method": "is_animal_paper keyword scan over source_title + source_venue + population_summary",
+    }, indent=2))
     # Slice 7 step 1: publish manifest as module-global so the
     # consistency audit's _check_numeric_role_guard can resolve
     # receipts → quant_claims for source-context drift detection.
