@@ -227,7 +227,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 23650  # Wave 54 (2026-05-14): +300 for Slice 16 journal_finalizer module — single deterministic compiler-owned post-render pass (5 phases: Methods replace / lane qualifier / terminology / reference closure / structural fallback). Replaces Slice 15 inline logic in run_v06_synthesis.py with one finalize_run(out_dir) call.
+TOTAL_LIMIT = 23800  # Wave 55 (2026-05-14): +150 for Slice 16 Phase F — Results-table outcome-class reconciliation. When `### X Outcomes` subsection exists but Results table lacks the row, finalizer derives row from manifest receipts and appends. Rapamycin 31→0 issues end-to-end through Phase F.
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

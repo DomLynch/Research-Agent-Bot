@@ -1446,3 +1446,107 @@ def test_finalizer_writes_repair_log_sidecar(tmp_path) -> None:
     assert path.is_file()
     payload = _json.loads(path.read_text())
     assert "paper_changed" in payload and "entries" in payload
+
+
+# Slice 16-F — Results-table reconciliation. When a `### X Outcomes`
+# subsection exists but the Results table doesn't declare X, derive
+# a row from manifest receipts and append. Universal — no per-topic
+# knowledge; row content comes from the receipt data the run already
+# has.
+
+
+def test_finalizer_phase_f_appends_missing_outcome_row(tmp_path) -> None:
+    """Subsection 'Mechanism' exists, table lacks the row → finalizer
+    appends a row derived from manifest receipts."""
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+    paper = (
+        "## Abstract\n\nA.\n\n"
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Longevity | n=2; claims=10 | mixed | 1 direct | x |\n"
+        "\n"
+        "### Longevity Outcomes\n\nText.\n\n"
+        "### Mechanism Outcomes\n\nDai 2014 reports proteome turnover.\n\n"
+        "## Discussion\n\nD.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(_json.dumps({
+        "receipts": [
+            {"outcome_class": "longevity", "directness": "direct",
+             "effect_direction": "positive", "n_claims": 5},
+            {"outcome_class": "longevity", "directness": "indirect",
+             "effect_direction": "mixed", "n_claims": 5},
+            {"outcome_class": "mechanism", "directness": "review",
+             "effect_direction": "positive", "n_claims": 2},
+        ],
+    }))
+    report = finalize_run(tmp_path)
+    new_text = (tmp_path / "full_paper.md").read_text()
+    assert report.paper_changed
+    # Row added with derived counts
+    assert "| Mechanism | n=1; claims=2" in new_text
+    assert any(
+        e.phase == "F_reconcile_results_table"
+        and "Mechanism" in e.detail
+        for e in report.entries
+    )
+
+
+def test_finalizer_phase_f_skips_when_table_already_complete(tmp_path) -> None:
+    """All H3 subsections declared in Results table → Phase F adds
+    nothing. Universal."""
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+    paper = (
+        "## Abstract\n\nA.\n\n"
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Longevity | n=2 | mixed | 1 direct | x |\n"
+        "\n"
+        "### Longevity Outcomes\n\nText.\n\n"
+        "## Discussion\n\nD.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(_json.dumps({"receipts": []}))
+    report = finalize_run(tmp_path)
+    assert not any(
+        e.phase == "F_reconcile_results_table" for e in report.entries
+    )
+
+
+def test_finalizer_phase_f_idempotent(tmp_path) -> None:
+    """Second finalizer run must not re-add the same row. The new
+    row from the first run now satisfies the gate, so Phase F is a
+    no-op the second time."""
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+    paper = (
+        "## Abstract\n\nA.\n\n"
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Longevity | n=1 | mixed | 1 direct | x |\n"
+        "\n"
+        "### Longevity Outcomes\n\nL.\n\n"
+        "### Mechanism Outcomes\n\nM.\n\n"
+        "## Discussion\n\nD.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(_json.dumps({
+        "receipts": [
+            {"outcome_class": "longevity", "directness": "direct",
+             "effect_direction": "positive", "n_claims": 1},
+            {"outcome_class": "mechanism", "directness": "review",
+             "effect_direction": "positive", "n_claims": 1},
+        ],
+    }))
+    finalize_run(tmp_path)
+    first = (tmp_path / "full_paper.md").read_text()
+    finalize_run(tmp_path)
+    second = (tmp_path / "full_paper.md").read_text()
+    # The Mechanism row appears exactly once after re-runs
+    assert first.count("| Mechanism |") == 1
+    assert second.count("| Mechanism |") == 1

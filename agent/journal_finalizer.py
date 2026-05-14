@@ -90,6 +90,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_e_structural_fallback(text, out_dir)
     entries.extend(log)
+    text, log = _phase_f_reconcile_results_table(text, out_dir)
+    entries.extend(log)
 
     changed = text != original
     if changed:
@@ -372,3 +374,111 @@ def _phase_e_structural_fallback(
         ))
 
     return text, entries
+
+
+# --- Phase F: Reconcile Results table with H3 subsections -------------
+
+
+def _phase_f_reconcile_results_table(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    """When the manuscript has `### X Outcomes` subsections inside
+    Results that aren't declared in the Results outcome-class table,
+    append a derived row to the table so the gate's structure_surface
+    check passes. Universal — derives row from manifest receipts;
+    no per-topic logic. Data-preserving (vs deleting the section)."""
+    manifest_path = out_dir / "manifest.json"
+    if not manifest_path.is_file():
+        return text, []
+    try:
+        manifest = json.loads(manifest_path.read_text())
+    except (OSError, json.JSONDecodeError):
+        return text, []
+    receipts = manifest.get("receipts") or ()
+    if not receipts:
+        return text, []
+    # Parse the Results section
+    results_match = re.search(
+        r"^## Results\b(.*?)(?=^## (?!#))", text, flags=re.M | re.S,
+    )
+    if not results_match:
+        return text, []
+    results = results_match.group(1)
+    # Reuse gate helpers for parity with the surface check
+    from agent.journal_surface_gate import (
+        _outcome_classes_from_results_table, _outcome_key,
+    )
+    declared = {_outcome_key(o) for o in _outcome_classes_from_results_table(results)}
+    if not declared:
+        return text, []
+    h3_outcomes = re.findall(r"^###\s+(.+?)\s+Outcomes\s*$", results, flags=re.M)
+    if not h3_outcomes:
+        return text, []
+    missing_labels = [
+        h for h in h3_outcomes if _outcome_key(h) not in declared
+    ]
+    if not missing_labels:
+        return text, []
+    # Locate the table's terminating empty line so we can append rows
+    # right before it. Find the last `| ... |` table row in the
+    # Results section.
+    table_rows = list(re.finditer(r"^\|.*\|\s*$", results, flags=re.M))
+    if not table_rows:
+        return text, []
+    insertion_offset = results_match.start() + table_rows[-1].end()
+    new_rows: list[str] = []
+    log: list[FinalizerLogEntry] = []
+    for label in missing_labels:
+        slug = _outcome_key(label)
+        matching = [
+            r for r in receipts
+            if _outcome_key(str(r.get("outcome_class") or "")) == slug
+        ]
+        n = len(matching)
+        n_claims = sum(int(r.get("n_claims") or 0) for r in matching)
+        directness_counts: dict[str, int] = {}
+        for r in matching:
+            d = str(r.get("directness") or "").strip().lower()
+            if d:
+                directness_counts[d] = directness_counts.get(d, 0) + 1
+        directness_cell = "; ".join(
+            f"{count} {kind}" for kind, count in sorted(directness_counts.items())
+        ) or "—"
+        effect_counts: dict[str, int] = {}
+        for r in matching:
+            e = str(r.get("effect_direction") or "").strip().lower()
+            if e:
+                effect_counts[e] = effect_counts.get(e, 0) + 1
+        top_effect = (
+            max(effect_counts.items(), key=lambda kv: kv[1])[0]
+            if effect_counts else "unclear"
+        )
+        signal_cell = (
+            f"{top_effect} signal in {effect_counts.get(top_effect, 0)}/{n} sources"
+            if n else "no sources"
+        )
+        limitation_cell = (
+            "single-source slice; hypothesis-generating"
+            if n <= 1 else "limited corpus depth in this outcome class"
+        )
+        new_rows.append(
+            f"| {label} | n={n}; claims={n_claims} | {signal_cell} "
+            f"| {directness_cell} | {limitation_cell} |"
+        )
+        log.append(FinalizerLogEntry(
+            phase="F_reconcile_results_table",
+            rule="append_missing_outcome_row",
+            n_changes=1,
+            detail=(
+                f"added Results-table row for '{label}' (n={n}, "
+                f"claims={n_claims}) derived from manifest receipts"
+            ),
+        ))
+    if not new_rows:
+        return text, []
+    new_text = (
+        text[:insertion_offset]
+        + "\n" + "\n".join(new_rows)
+        + text[insertion_offset:]
+    )
+    return new_text, log
