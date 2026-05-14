@@ -1286,3 +1286,49 @@ def test_artifact_consistency_sidecar_round_trip(tmp_path) -> None:
     assert "passed" in payload and "checks" in payload
     assert payload["passed"] == report.passed
     assert len(payload["checks"]) == len(report.checks)
+
+
+# Slice 15 — writer-compliance scrubber. The deterministic post-render
+# helper that turns the writer's leaked pipeline jargon into the
+# academic-language equivalents. Universal — no per-topic logic.
+
+
+def test_apply_pipeline_jargon_replacements_swaps_all() -> None:
+    """Every entry in _PIPELINE_JARGON_PUBLIC gets substituted in
+    the body — single source of truth for the writer-compliance pass."""
+    from agent.journal_surface_gate import (
+        apply_pipeline_jargon_replacements, _PIPELINE_JARGON_PUBLIC,
+    )
+    body = "\n".join(
+        f"## Section {i}\n\n{jargon} appears in prose."
+        for i, (jargon, _) in enumerate(_PIPELINE_JARGON_PUBLIC)
+    )
+    out = apply_pipeline_jargon_replacements(body)
+    for jargon, replacement in _PIPELINE_JARGON_PUBLIC:
+        assert jargon not in out.lower(), f"left {jargon!r} in body"
+        # The replacement text appears in the output (may include
+        # other tokens as substrings).
+        if replacement.lower() not in (j for j, _ in _PIPELINE_JARGON_PUBLIC):
+            assert replacement.lower() in out.lower(), f"missing replacement for {jargon!r}"
+
+
+def test_apply_pipeline_jargon_replacements_longest_wins() -> None:
+    """Longest pattern replaces first so 'source-bound observation'
+    becomes 'extracted quantitative finding', not 'extracted
+    observation' (which would happen if 'source-bound' alone matched
+    first)."""
+    from agent.journal_surface_gate import apply_pipeline_jargon_replacements
+    text = "The source-bound observation set was retained."
+    out = apply_pipeline_jargon_replacements(text)
+    assert "extracted quantitative finding" in out
+    assert "source-bound" not in out.lower()
+
+
+def test_apply_pipeline_jargon_replacements_idempotent() -> None:
+    """Running twice → same result. Post-render scrubber must be safe
+    to re-apply (e.g. consistency-audit loop runs may re-scrub)."""
+    from agent.journal_surface_gate import apply_pipeline_jargon_replacements
+    text = "The source-bound observation set was retained. Endpoint proximity matters."
+    once = apply_pipeline_jargon_replacements(text)
+    twice = apply_pipeline_jargon_replacements(once)
+    assert once == twice

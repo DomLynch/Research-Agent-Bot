@@ -492,6 +492,22 @@ def _pipeline_jargon_issue_messages(paper_md: str) -> tuple[str, ...]:
     return tuple(out)
 
 
+def apply_pipeline_jargon_replacements(paper_md: str) -> str:
+    """Deterministic post-render scrubber — replaces every pipeline-
+    jargon token in the manuscript body with its academic-language
+    equivalent. Universal — applies the same _PIPELINE_JARGON_PUBLIC
+    table the gate uses (single source of truth). Caller (the
+    pipeline) runs this AFTER the writer to make sure the body is
+    journal-language-clean without depending on the LLM to comply with
+    prompt rules. Longest patterns are replaced first so 'source-bound
+    observation' wins over 'source-bound' alone."""
+    out = paper_md
+    ordered = sorted(_PIPELINE_JARGON_PUBLIC, key=lambda kv: -len(kv[0]))
+    for jargon, replacement in ordered:
+        out = re.sub(re.escape(jargon), replacement, out, flags=re.IGNORECASE)
+    return out
+
+
 # Bug-fix 2026-05-14: novelty/framework claims that don't cite any
 # prior literature in the same paragraph are anti-hype gate failures —
 # real frameworks "build on" or "extend" something. Universal regex,

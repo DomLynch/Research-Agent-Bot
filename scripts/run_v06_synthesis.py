@@ -2711,6 +2711,33 @@ async def _run(
     # abstract/conclusion and auto-fixes many sentences. Re-measure
     # from the final paper and rewrite the manifest so sidecars stay
     # consistent (no more "manifest says 570 / pre_submit says 299").
+    # Slice 15 (2026-05-14): writer-compliance post-render.
+    # (a) Replace the writer's Methods section with the deterministic
+    #     PRISMA-ScR pack-rendered version. Writer produces ~270w
+    #     fallback Methods; the pack has all 11 H3 subsections the
+    #     gate requires. Universal — no per-topic logic.
+    # (b) Scrub pipeline-jargon across the ENTIRE body (Slice 2 only
+    #     touched the Abstract prompt; the writer leaks the same
+    #     terms in Methods/Results/Discussion). Apply the canonical
+    #     substitution table deterministically.
+    import re as _re_s15
+    from agent.methods_pack import render_methods_md
+    from agent.journal_surface_gate import apply_pipeline_jargon_replacements
+    _patched = final_paper_md
+    _new_methods = render_methods_md(_methods_pack, submission_id=out_dir.name)
+    _patched = _re_s15.sub(
+        r"^## Methods\b.*?(?=^## (?!#))",
+        _new_methods,
+        _patched,
+        count=1,
+        flags=_re_s15.M | _re_s15.S,
+    )
+    _patched = apply_pipeline_jargon_replacements(_patched)
+    if _patched != final_paper_md:
+        paper_path.write_text(_patched)
+        final_paper_md = _patched
+        word_count = len(final_paper_md.split())
+
     manifest["section_words"] = _section_words_from_paper(final_paper_md)
     manifest["total_words"] = word_count
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
