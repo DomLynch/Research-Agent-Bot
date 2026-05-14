@@ -512,9 +512,15 @@ def apply_pipeline_jargon_replacements(paper_md: str) -> str:
 # prior literature in the same paragraph are anti-hype gate failures —
 # real frameworks "build on" or "extend" something. Universal regex,
 # no per-topic table.
+# 2026-05-14: "we operationalize" is intentionally NOT in this set.
+# Per the journal_finalizer doctrine (Phase E.3), the safe rewrite for
+# ungrounded "we propose" is "we operationalize ..." — the latter
+# implies building on prior work rather than claiming first invention.
+# Treating it as a novelty trigger would defeat the finalizer's
+# softening pass.
 _NOVELTY_CLAIM_RE = re.compile(
     r"\b(we\s+propose|novel\s+(?:framework|approach|method|model)|"
-    r"we\s+operationalize|we\s+introduce|"
+    r"we\s+introduce|"
     r"(?:our|this)\s+(?:novel|distinct)\s+contribution|"
     r"first\s+to\s+(?:propose|introduce|operationalize|formalize))\b",
     re.IGNORECASE,
