@@ -85,7 +85,12 @@ _PUBLIC_ARTIFACT_PATTERNS = (
     "risk-of-bias roll-up", "[d1_inferential_bridge", "accepted receipt graph",
     "manifest, tension matrix, and citation registry", "evidence-context framing",
     "should be read as", "### background references", "### final interpretation",
-    "**thesis:**", "accepted receipt", "receipt set", "receipt graph",
+    # NOTE 2026-05-14: `**thesis:**` was previously in this forbidden
+    # set as a pipeline-internal tag leak. It is now a REQUIRED
+    # publication marker per Slice 9 (Discussion thesis-taking
+    # discipline). The undeclared-thesis gate enforces its presence;
+    # public-artifact scrubber must not strip it.
+    "accepted receipt", "receipt set", "receipt graph",
     "mechanistic receipts", "direct clinical receipts", "indirect clinical receipts",
     "accepted corpus", "receipt", "with 's evidence", "with ’s evidence",
 )
@@ -154,6 +159,7 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _orphan_reference_issue_messages(paper_md))
     issues.extend(SurfaceIssue("pipeline_jargon", msg) for msg in _pipeline_jargon_issue_messages(body_md))
     issues.extend(SurfaceIssue("limitations_leak", msg) for msg in _limitations_summary_leak_issue_messages(paper_md))
+    issues.extend(SurfaceIssue("undeclared_thesis", msg) for msg in _undeclared_thesis_in_discussion_issue_messages(paper_md))
     issues.extend(SurfaceIssue("unsupported_novelty", msg) for msg in _unsupported_novelty_claim_issue_messages(body_md))
     if animal_citations is not None:
         issues.extend(SurfaceIssue("evidence_lane", msg) for msg in _unlabeled_animal_citation_issue_messages(paper_md, animal_citations))
@@ -527,6 +533,41 @@ def _limitations_summary_leak_issue_messages(paper_md: str) -> tuple[str, ...]:
             f"summary/contribution prose in Limitations section: {snippet!r}",
         )
     return tuple(out)
+
+
+_THESIS_MARKER_RE = re.compile(r"\*\*\s*thesis\s*:\s*\*\*", re.IGNORECASE)
+_RESOLUTION_MARKER_RE = re.compile(
+    r"\*\*\s*resolution\s+criteria\s*:\s*\*\*", re.IGNORECASE,
+)
+
+
+def _undeclared_thesis_in_discussion_issue_messages(
+    paper_md: str,
+) -> tuple[str, ...]:
+    """Discussion must take a position, not hedge into 'context-
+    dependent' boilerplate. Bug-fix 2026-05-14: require the writer to
+    emit a literal `**Thesis:**` marker so the reader can locate the
+    paper's claimed position in one scan. Universal — the marker is
+    topic-agnostic; the gate just confirms presence."""
+    body = _section_body(paper_md, "Discussion") or ""
+    if not body:
+        return ()
+    issues: list[str] = []
+    if not _THESIS_MARKER_RE.search(body):
+        issues.append(
+            "Discussion missing `**Thesis:**` marker — paragraph 1 must "
+            "open with one declarative defensible thesis sentence "
+            "(15-40 words). Audit will not accept hedged 'context-"
+            "dependent' framing without a named position.",
+        )
+    if not _RESOLUTION_MARKER_RE.search(body):
+        issues.append(
+            "Discussion missing `**Resolution criteria:**` marker — "
+            "the final paragraph must name the evidence that would "
+            "settle the threats to the thesis (study designs, "
+            "endpoint layers, follow-up durations).",
+        )
+    return tuple(issues)
 
 
 def _unsupported_novelty_claim_issue_messages(paper_md: str) -> tuple[str, ...]:

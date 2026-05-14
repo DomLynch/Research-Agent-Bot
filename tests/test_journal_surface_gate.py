@@ -13,6 +13,17 @@ def _words(n: int, prefix: str = "word") -> str:
 
 
 def _paper(row: str) -> str:
+    # Discussion includes the **Thesis:** and **Resolution criteria:**
+    # markers required by the Slice-9 thesis-taking gate so this default
+    # fixture stays passing for tests that target other gates. Each
+    # paragraph uses a distinct word-prefix so the duplicate-paragraph
+    # gate doesn't false-positive on the synthetic filler text.
+    discussion_body = (
+        f"**Thesis:** This synthesis takes a defensible position. "
+        f"{_words(420, 'discussion')}\n\n"
+        f"**Resolution criteria:** Settled by future trials. "
+        f"{_words(420, 'resolutionprose')}"
+    )
     return (
         f"## Abstract\n\n{_words(150, 'abstract')}\n\n"
         f"## Introduction\n\n{_words(400, 'intro')}\n\n"
@@ -24,7 +35,7 @@ def _paper(row: str) -> str:
         f"## Methods\n\n{_words(300, 'methods')}\n\n"
         f"## Results\n\n{_words(500, 'results')}\n\n"
         f"## Cross-Domain Synthesis\n\n{_words(850, 'cross')}\n\n"
-        f"## Discussion\n\n{_words(800, 'discussion')}\n\n"
+        f"## Discussion\n\n{discussion_body}\n\n"
         f"## Limitations\n\n{_words(250, 'limits')}\n\n"
         f"## Conclusion\n\n{_words(250, 'conclusion')}\n\n"
         "## References\n\n- Smith 2024.\n"
@@ -230,14 +241,20 @@ def test_broken_possessive_fragment_blocks_journal_surface():
     assert any("with 's evidence" in i.detail for i in report.issues)
 
 
-def test_public_thesis_marker_blocks_journal_surface():
+def test_public_thesis_marker_no_longer_blocks_but_pipeline_tokens_do():
+    # Slice 9 (2026-05-14): `**Thesis:**` is now a REQUIRED Discussion
+    # marker — no longer banned as a pipeline artifact. The other
+    # pipeline-internal tokens ("accepted receipt", "receipt set") are
+    # still forbidden in public prose.
     report = evaluate_journal_surface(
         "## Abstract\n\n**Thesis:** This synthesis argues from an "
         "accepted receipt set.\n",
     )
     assert not report.passed
     details = " ".join(i.detail for i in report.issues)
-    assert "**thesis:**" in details
+    # `**Thesis:**` itself must NOT be flagged anymore
+    assert "**thesis:**" not in details.lower() or "missing `**thesis:**`" in details.lower()
+    # The other pipeline leaks still are
     assert "accepted receipt" in details
 
 
@@ -833,3 +850,52 @@ def test_limitations_legit_prose_passes() -> None:
         "limits generalization beyond the enrolled cohort.\n\n## Conclusion\n"
     )
     assert _limitations_summary_leak_issue_messages(body) == ()
+
+
+# Slice 9 — Discussion thesis-taking discipline. The Discussion must
+# open with a literal **Thesis:** marker and end with a
+# **Resolution criteria:** paragraph. Universal — markers are
+# topic-agnostic.
+
+
+def test_undeclared_thesis_flagged() -> None:
+    """Discussion without a `**Thesis:**` marker → flag."""
+    from agent.journal_surface_gate import _undeclared_thesis_in_discussion_issue_messages
+    body = (
+        "## Discussion\n\nThe evidence is context-dependent and warrants "
+        "further study.\n\n## Limitations\n"
+    )
+    msgs = _undeclared_thesis_in_discussion_issue_messages(body)
+    assert any("Thesis:" in m for m in msgs)
+
+
+def test_missing_resolution_criteria_flagged() -> None:
+    """Discussion with Thesis but no Resolution criteria → flag."""
+    from agent.journal_surface_gate import _undeclared_thesis_in_discussion_issue_messages
+    body = (
+        "## Discussion\n\n**Thesis:** The intervention reduces risk in adults. "
+        "The convergent signals from Smith 2020 and Jones 2021 support this.\n\n"
+        "## Limitations\n"
+    )
+    msgs = _undeclared_thesis_in_discussion_issue_messages(body)
+    assert any("Resolution criteria:" in m for m in msgs)
+
+
+def test_discussion_with_both_markers_passes() -> None:
+    """Defensive: Discussion containing both markers → no flag."""
+    from agent.journal_surface_gate import _undeclared_thesis_in_discussion_issue_messages
+    body = (
+        "## Discussion\n\n**Thesis:** Position sentence here. Supporting prose.\n\n"
+        "**Resolution criteria:** Settled by an RCT.\n\n## Limitations\n"
+    )
+    assert _undeclared_thesis_in_discussion_issue_messages(body) == ()
+
+
+def test_thesis_marker_case_insensitive() -> None:
+    """Universal: `**THESIS:**` or `**Thesis:**` both satisfy the gate."""
+    from agent.journal_surface_gate import _undeclared_thesis_in_discussion_issue_messages
+    body = (
+        "## Discussion\n\n**THESIS:** Strong claim.\n\n"
+        "**Resolution Criteria:** Trial design.\n\n## Limitations\n"
+    )
+    assert _undeclared_thesis_in_discussion_issue_messages(body) == ()

@@ -350,10 +350,36 @@ but MUST contain an explicit interpretation marker — "we interpret",
 "this suggests", "one reading is", "the evidence supports", "in our
 view" — so the reader can distinguish evidence from interpretation.
 
-Recommended structure:
-  Paragraph 1: What the evidence supports clearly — the strongest
+**MANDATORY thesis discipline (bug-fix 2026-05-14):** The Discussion
+must take a position, not hedge into "context-dependent" boilerplate.
+
+Paragraph 1 MUST open with the literal markdown-bold marker
+`**Thesis:**` (exactly that token, including bold markers and colon)
+followed by ONE declarative defensible sentence (15-40 words) naming
+the strongest position the corpus supports. The thesis sentence must
+be falsifiable in principle — a reader should be able to state the
+evidence that would refute it. Example shape:
+
+  **Thesis:** [Intervention] produces consistent short-term [outcome
+  class] improvements but cannot, on current evidence, support
+  durable [downstream-outcome] claims in [population] because
+  [load-bearing reason].
+
+Paragraphs 2-4 each name ONE explicit "Threat to the thesis"
+(start the paragraph with `Threat 1:`, `Threat 2:`, `Threat 3:`)
+identifying a specific receipt-anchored disagreement, gap, or
+counter-signal that would unsettle the thesis if pressed harder.
+
+The final paragraph must open with `**Resolution criteria:**` and
+state, in 4-6 sentences, what evidence would settle the named
+threats — concrete study designs, endpoint layers, follow-up
+durations.
+
+Recommended supporting structure (paragraphs 5-7 if Discussion
+spans further):
+  Paragraph A: What the evidence supports clearly — the strongest
     convergent signals across receipts.
-  Paragraph 2: Where the evidence is genuinely mixed — name the
+  Paragraph B: Where the evidence is genuinely mixed — name the
     tension, attribute to specific receipts.
   Paragraph 3: Mechanism vs clinical translation — the gap between
     direct clinical-endpoint RCTs and human mechanistic/biomarker

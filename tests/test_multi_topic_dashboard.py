@@ -35,8 +35,18 @@ def _make_run(
 
 
 def _surface_clean_paper() -> str:
-    def words(n: int) -> str:
-        return " ".join(f"word{i}" for i in range(n))
+    # Slice 9 (2026-05-14): Discussion must contain `**Thesis:**` and
+    # `**Resolution criteria:**` markers to satisfy the thesis-taking
+    # gate. Two paragraphs with distinct prefixes so the duplicate-
+    # paragraph gate doesn't false-positive on the filler text.
+    def words(n: int, prefix: str = "word") -> str:
+        return " ".join(f"{prefix}{i}" for i in range(n))
+    discussion = (
+        f"**Thesis:** This synthesis takes a defensible position. "
+        f"{words(420, 'thesisprose')}\n\n"
+        f"**Resolution criteria:** Settled by future trials. "
+        f"{words(420, 'resolutionprose')}"
+    )
     return "\n\n".join((
         f"## Abstract\n\n{words(150)}",
         f"## Introduction\n\n{words(400)}",
@@ -48,7 +58,7 @@ def _surface_clean_paper() -> str:
         f"## Methods\n\n{words(300)}",
         f"## Results\n\n{words(500)}",
         f"## Cross-Domain Synthesis\n\n{words(850)}",
-        f"## Discussion\n\n{words(800)}",
+        f"## Discussion\n\n{discussion}",
         f"## Limitations\n\n{words(250)}",
         f"## Conclusion\n\n{words(250)}",
         "## References\n\n- Smith 2024.",
