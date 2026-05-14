@@ -60,6 +60,19 @@ class FinalizerReport:
 
 _ANIMAL_QUALIFIER_LEAD = "In animal/preclinical evidence, "
 
+
+def _lowercase_first_letter(text: str) -> str:
+    """Lowercase the first alpha char unless that word is an all-caps
+    acronym (RCT, ATP). Used after a sentence-front qualifier prepend."""
+    stripped = text.lstrip()
+    if not stripped or not stripped[0].isalpha():
+        return text
+    first = re.match(r"\S+", stripped)
+    if first and len(first.group(0)) > 1 and first.group(0).isupper():
+        return text
+    pad = text[: len(text) - len(stripped)]
+    return pad + stripped[0].lower() + stripped[1:]
+
 # Conservative lead-in prefix for orphan-ref closure. Sentence is
 # academically defensible — explicitly frames the cluster as
 # corpus-supporting context that didn't anchor a foregrounded claim.
@@ -92,6 +105,12 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_f_reconcile_results_table(text, out_dir)
     entries.extend(log)
+    # Phase G runs after prose is stable. It does NOT change the paper —
+    # it refreshes sidecars whose state drifted (e.g. a hand-patched
+    # run retrofit where prose now passes but the verdict json still
+    # shows the pre-patch failing surface state). Universal.
+    g_log = _phase_g_refresh_sidecars(out_dir)
+    entries.extend(g_log)
 
     changed = text != original
     if changed:
@@ -193,8 +212,10 @@ def _phase_b_lane_qualifier(
         para_low = para.lower()
         if any(q in para_low for q in qualifiers):
             continue
-        # Prepend the lead-in to the first sentence
-        paragraphs[i] = _ANIMAL_QUALIFIER_LEAD + para.lstrip()
+        # Prepend the lead-in to the first sentence + lowercase the
+        # following first letter so the joined clause reads naturally
+        # ("...evidence, the corpus..." not "...evidence, The corpus...").
+        paragraphs[i] = _ANIMAL_QUALIFIER_LEAD + _lowercase_first_letter(para.lstrip())
         n_patched += 1
     if n_patched == 0:
         return text, []
@@ -359,9 +380,15 @@ def _phase_e_structural_fallback(
             para,
         ):
             continue
-        paragraphs[i] = _WE_PROPOSE_RE.sub(
-            "we operationalize", para,
-        )
+        # Preserve original capitalization — "We propose" → "We
+        # operationalize"; "we propose" → "we operationalize".
+        def _soften(m: re.Match[str]) -> str:
+            return (
+                "We operationalize"
+                if m.group(0)[0].isupper()
+                else "we operationalize"
+            )
+        paragraphs[i] = _WE_PROPOSE_RE.sub(_soften, para)
         n_softened += 1
     if n_softened:
         text = "".join(paragraphs)
@@ -494,3 +521,74 @@ def _phase_f_reconcile_results_table(
         + text[insertion_offset:]
     )
     return new_text, log
+
+
+# --- Phase G: refresh stale sidecars after prose stabilises ------------
+
+
+def _load_sidecar(p: Path) -> Any:
+    try:
+        return json.loads(p.read_text()) if p.is_file() else None
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
+    """Reconcile sidecars that drift when phases A-F fix prose after
+    gates were already written (hand-patch retrofit). Two no-ops when
+    consistent: final_verdict surface state, readiness item 13.
+    Universal — accountability_model drives item 13 shape."""
+    log: list[FinalizerLogEntry] = []
+    verdict = _load_sidecar(out_dir / "full_paper.final_verdict.json")
+    surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
+    if isinstance(verdict, dict) and isinstance(surface, dict):
+        passed = bool(surface.get("passed"))
+        issues = tuple(
+            f"{i.get('code', '')}: {i.get('detail', '')}"
+            if isinstance(i, dict) else str(i)
+            for i in (surface.get("issues") or []))
+        cur = (bool(verdict.get("journal_surface_pass")),
+               tuple(verdict.get("journal_surface_issues") or ()))
+        if cur != (passed, issues):
+            verdict["journal_surface_pass"] = passed
+            verdict["journal_surface_issues"] = list(issues)
+            (out_dir / "full_paper.final_verdict.json").write_text(
+                json.dumps(verdict, indent=2))
+            log.append(FinalizerLogEntry(
+                phase="G_refresh_sidecars",
+                rule="reconcile_final_verdict_surface_state", n_changes=1,
+                detail=f"journal_surface_pass {cur[0]}→{passed}; "
+                       f"issues {len(cur[1])}→{len(issues)}"))
+    gate = _load_sidecar(out_dir / "pre_submit_gate.json")
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    contract = gate.get("journal_readiness_contract") if isinstance(gate, dict) else None
+    if isinstance(contract, list) and isinstance(manifest, dict):
+        from agent.accountability import accountability_pass, resolve_model
+        model = resolve_model(manifest.get("accountability_model"))
+        legacy = model == "legacy_journal_submission"
+        want = "human_signoff" if legacy else "accountability"
+        item = next((it for it in contract if isinstance(it, dict)
+                     and it.get("id") == 13), None)
+        if item is not None and item.get("name") != want:
+            ok, detail = accountability_pass(out_dir, model)
+            audit = detail or (
+                "submission requires author/domain-expert approval outside the bot"
+                if legacy else
+                "researka_agent_certified mode; verify artifact-consistency spine")
+            action = ("Collect named author/domain-expert signoff before submission."
+                      if legacy else
+                      "Restore artifact-consistency spine or citation registry.")
+            gate["journal_readiness_contract"] = [
+                {"id": 13, "name": want,
+                 "status": "pass" if ok else "not_ready",
+                 "audit": audit, "next_action": action}
+                if isinstance(it, dict) and it.get("id") == 13 else it
+                for it in contract]
+            (out_dir / "pre_submit_gate.json").write_text(
+                json.dumps(gate, indent=2))
+            log.append(FinalizerLogEntry(
+                phase="G_refresh_sidecars",
+                rule="reconcile_readiness_contract_item_13", n_changes=1,
+                detail=f"item 13 rebuilt for {model!r} "
+                       f"(was {item.get('name')!r}, now {want!r})"))
+    return log

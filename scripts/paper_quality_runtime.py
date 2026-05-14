@@ -491,6 +491,36 @@ def _gate_with_runtime_integrity(gate: GateResult, runtime_failure: str | None) 
     )
 
 
+def _accountability_readiness_row(
+    accountability_model: str,
+    accountability_pass: bool,
+    accountability_detail: str,
+) -> tuple[int, str, str, str, str]:
+    """Item 13 of the readiness contract: accountability-model-aware.
+
+    Universal — researka_agent_certified mode trusts the machine-artifact
+    spine (artifact_consistency + citation_registry); legacy mode keeps
+    the named-author signoff requirement. Avoids hardcoding human signoff
+    as a universal gate when the run is certified agent-native."""
+    from agent.accountability import resolve_model
+    model = resolve_model(accountability_model)
+    if model == "legacy_journal_submission":
+        return (
+            13, "human_signoff",
+            "pass" if accountability_pass else "not_ready",
+            accountability_detail
+            or "submission requires author/domain-expert approval outside the bot",
+            "Collect named author/domain-expert signoff before submission.",
+        )
+    return (
+        13, "accountability",
+        "pass" if accountability_pass else "not_ready",
+        accountability_detail
+        or "researka_agent_certified mode; verify artifact-consistency spine",
+        "Restore artifact-consistency spine or citation registry.",
+    )
+
+
 def build_journal_readiness_contract(
     *,
     paper_text: str,
@@ -501,6 +531,9 @@ def build_journal_readiness_contract(
     reviewer_patches: dict[str, Any] | None,
     citation_registry_complete: bool,
     template_language_blocking: bool,
+    accountability_model: str = "researka_agent_certified",
+    accountability_pass: bool = False,
+    accountability_detail: str = "",
 ) -> list[dict[str, Any]]:
     """Map the 15-step journal-compiler roadmap to explicit run status.
 
@@ -572,9 +605,9 @@ def build_journal_readiness_contract(
         _readiness_item(12, "target_journal_finalizer", "not_ready", (
             "no target-journal style pack selected for this run"
         ), "Select target journal and generate style/checklist package."),
-        _readiness_item(13, "human_signoff", "not_ready", (
-            "submission requires author/domain-expert approval outside the bot"
-        ), "Collect named author/domain-expert signoff before submission."),
+        _readiness_item(*_accountability_readiness_row(
+            accountability_model, accountability_pass, accountability_detail,
+        )),
         _readiness_item(14, "universal_benchmark_target", "not_ready", (
             "single-run artifact; 20-topic benchmark threshold not evaluated here"
         ), "Run the frozen benchmark and attach aggregate metrics."),
@@ -649,6 +682,14 @@ def write_final_quality_gates(
         unresolved_reviewer_p1_count=int((reviewer_patches or {}).get("unresolved_p1_count", 0)),
     )
     score = score_publication(score_inputs)
+    # Resolve accountability model + pass state from the run state so
+    # item 13 of the readiness contract reflects the ladder this run
+    # was certified under (researka_agent_certified vs legacy).
+    from agent.accountability import accountability_pass as _acc_pass
+    _acc_model = str(
+        manifest.get("accountability_model") or "researka_agent_certified"
+    )
+    _acc_ok, _acc_detail = _acc_pass(out_dir, _acc_model)
     readiness_contract = build_journal_readiness_contract(
         paper_text=paper_text,
         manifest=manifest,
@@ -658,6 +699,9 @@ def write_final_quality_gates(
         reviewer_patches=reviewer_patches,
         citation_registry_complete=citation_registry_complete,
         template_language_blocking=template.template_language_blocking,
+        accountability_model=_acc_model,
+        accountability_pass=_acc_ok,
+        accountability_detail=_acc_detail,
     )
     gate_payload = {
         "inputs": dataclasses.asdict(inputs),

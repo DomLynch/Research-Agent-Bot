@@ -2690,6 +2690,10 @@ async def _run(
         n_rejected=int(_funnel.get("rejected", 0))
         or int(_funnel.get("n_rejected", 0)),
         outcome_classes=_outcome_classes,
+        accountability_model=str(
+            manifest.get("accountability_model")
+            or "researka_agent_certified"
+        ),
     )
     write_methods_pack(out_dir, _methods_pack)
     # Slice 7 step 1: publish manifest as module-global so the

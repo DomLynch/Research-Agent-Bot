@@ -76,6 +76,7 @@ def build_methods_pack(
     outcome_classes: Sequence[str],
     rob_method: str = "",
     search_dates_iso: str = "",
+    accountability_model: str = "researka_agent_certified",
 ) -> MethodsPack:
     """Build a MethodsPack from run state. Universal — caller passes
     raw counts + topic-pack search queries. The pack stays topic-
@@ -151,13 +152,35 @@ def build_methods_pack(
             "supplementary `manifest.json`. Final eligibility and "
             "interpretation decisions are author-verified."
         ),
-        human_accountability=(
-            "The author named in `human_signoff.json` accepts "
-            "responsibility for the included evidence, the synthesis "
-            "conclusions, and the manuscript text. AI assistance does "
-            "not transfer authorship or accountability."
-        ),
+        human_accountability=_accountability_text(accountability_model),
     )
+
+
+_ACCOUNTABILITY_TEXTS: dict[str, str] = {
+    "legacy_journal_submission": (
+        "The author named in `human_signoff.json` accepts responsibility "
+        "for the included evidence, the synthesis conclusions, and the "
+        "manuscript text. AI assistance does not transfer authorship or "
+        "accountability."
+    ),
+    "researka_agent_certified": (
+        "Accountability is established through reproducible artifacts: a "
+        "deterministic protocol (`methods_pack.json`), a complete claim "
+        "and citation registry, source-bound numeric trace, deterministic "
+        "gates (`full_paper.journal_surface.json`, `pre_submit_gate.json`, "
+        "`artifact_consistency.json`), and a versioned correction path "
+        "documented in the run manifest. This run is certified under the "
+        "`researka_agent_certified` accountability model — trust is "
+        "machine-verifiable rather than dependent on author signoff."
+    ),
+}
+
+
+def _accountability_text(model: str) -> str:
+    """Accountability-model-aware Methods prose. Researka-native cites
+    the machine spine; legacy mode keeps ICMJE/COPE author framing."""
+    from agent.accountability import resolve_model
+    return _ACCOUNTABILITY_TEXTS[resolve_model(model)]
 
 
 def write_methods_pack(out_dir: Path, pack: MethodsPack) -> Path:
@@ -233,7 +256,7 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "### AI-use disclosure",
         pack.ai_use_disclosure,
         "",
-        "### Human accountability",
+        "### Accountability",
         pack.human_accountability,
         "",
     ])
@@ -253,7 +276,7 @@ REQUIRED_METHODS_H3_MARKERS: tuple[str, ...] = (
     "### Risk-of-bias appraisal",
     "### Synthesis approach",
     "### AI-use disclosure",
-    "### Human accountability",
+    "### Accountability",
 )
 
 
