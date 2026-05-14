@@ -1192,3 +1192,97 @@ def test_reference_style_consistency_skipped_when_no_style() -> None:
     refs_body = "- **Smith 2024.** 2024. DOI: 10.1/x.\n"
     assert reference_style_consistency_issue_messages(refs_body, None) == ()
     assert reference_style_consistency_issue_messages(refs_body, "") == ()
+
+
+# Slice 14 — universal artifact consistency verifier. Kills the
+# stale-PDF / desync-supplement reviewer trap. Pure-structural,
+# no per-topic knowledge.
+
+
+def test_artifact_consistency_passes_minimal_run(tmp_path) -> None:
+    """A run dir with just full_paper.md passes (no other artifacts
+    to mismatch). Universal — graceful when optional files absent."""
+    from agent.artifact_consistency import verify_run_artifacts
+    (tmp_path / "full_paper.md").write_text("## Abstract\n\nText.\n")
+    report = verify_run_artifacts(tmp_path)
+    assert report.passed
+    assert any(c.name == "paper_present" and c.passed for c in report.checks)
+
+
+def test_artifact_consistency_flags_missing_paper(tmp_path) -> None:
+    """Run dir without full_paper.md → immediate fail."""
+    from agent.artifact_consistency import verify_run_artifacts
+    report = verify_run_artifacts(tmp_path)
+    assert not report.passed
+    assert report.checks[0].name == "paper_present"
+
+
+def test_artifact_consistency_detects_submission_drift(tmp_path) -> None:
+    """When submission_package/final_manuscript.md drifts from
+    full_paper.md → flag."""
+    from agent.artifact_consistency import verify_run_artifacts
+    (tmp_path / "full_paper.md").write_text("## Abstract\n\nOriginal.\n")
+    (tmp_path / "submission_package").mkdir()
+    (tmp_path / "submission_package" / "final_manuscript.md").write_text(
+        "## Abstract\n\nStale supplement copy.\n",
+    )
+    report = verify_run_artifacts(tmp_path)
+    assert not report.passed
+    assert any(
+        c.name == "submission_package_match" and not c.passed
+        for c in report.checks
+    )
+
+
+def test_artifact_consistency_canonicalises_whitespace(tmp_path) -> None:
+    """Cosmetic whitespace/bullet-marker differences between the
+    submission mirror and the source must NOT trip the gate —
+    canonicalisation strips them."""
+    from agent.artifact_consistency import verify_run_artifacts
+    body = "## Abstract\n\nA result is reported.\n"
+    spaced = "## Abstract\n\nA   result   is reported.\n"  # whitespace runs
+    (tmp_path / "full_paper.md").write_text(body)
+    (tmp_path / "submission_package").mkdir()
+    (tmp_path / "submission_package" / "final_manuscript.md").write_text(spaced)
+    report = verify_run_artifacts(tmp_path)
+    assert any(
+        c.name == "submission_package_match" and c.passed
+        for c in report.checks
+    )
+
+
+def test_artifact_consistency_flags_orphan_registry_entries(tmp_path) -> None:
+    """citation_registry entry whose body_citation never appears in
+    the body's References section → flag (the renovar 2023 / Hernndez
+    2024 failure mode)."""
+    import json as _json
+    from agent.artifact_consistency import verify_run_artifacts
+    (tmp_path / "full_paper.md").write_text(
+        "## Abstract\n\nSmith 2024 reported.\n\n"
+        "## References\n\n- **Smith 2024.** 2024.\n",
+    )
+    (tmp_path / "citation_registry.json").write_text(_json.dumps({
+        "rid-1": {"body_citation": "Smith 2024"},
+        "rid-2": {"body_citation": "Ghost 2099"},  # not in refs
+    }))
+    report = verify_run_artifacts(tmp_path)
+    assert any(
+        c.name == "citation_registry_coverage" and not c.passed
+        for c in report.checks
+    )
+
+
+def test_artifact_consistency_sidecar_round_trip(tmp_path) -> None:
+    """write_consistency_sidecar persists the report; the JSON shape
+    is final-status-readable (top-level `passed` + `checks` list)."""
+    import json as _json
+    from agent.artifact_consistency import (
+        verify_run_artifacts, write_consistency_sidecar,
+    )
+    (tmp_path / "full_paper.md").write_text("## Abstract\n\nOK.\n")
+    report = verify_run_artifacts(tmp_path)
+    path = write_consistency_sidecar(tmp_path, report)
+    payload = _json.loads(path.read_text())
+    assert "passed" in payload and "checks" in payload
+    assert payload["passed"] == report.passed
+    assert len(payload["checks"]) == len(report.checks)

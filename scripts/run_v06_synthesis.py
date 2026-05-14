@@ -2715,6 +2715,16 @@ async def _run(
     manifest["total_words"] = word_count
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
 
+    # Slice 14 (2026-05-14): final artifact consistency. Kills the
+    # stale-PDF / desync-supplement reviewer trap. Run AFTER manifest
+    # rewrite so the cross-checks see the final state. Result is
+    # folded into pre_submit_pass by agent/final_status.py.
+    from agent.artifact_consistency import (
+        verify_run_artifacts, write_consistency_sidecar,
+    )
+    _consistency_report = verify_run_artifacts(out_dir)
+    write_consistency_sidecar(out_dir, _consistency_report)
+
     print(f"\nDONE: {paper_path}", file=sys.stderr)
     print(f"  final_words: {word_count}", file=sys.stderr)
     print(f"  per-section: {section_words}", file=sys.stderr)

@@ -227,7 +227,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 23150  # Wave 52 (2026-05-14): +150 for Slice 13 reference-style renderer (agent/reference_styles.py: 5 canonical styles — Vancouver / Harvard / APA / Cell / Nature — plus stub-form consistency detector).
+TOTAL_LIMIT = 23350  # Wave 53 (2026-05-14): +200 for Slice 14 artifact-consistency verifier (agent/artifact_consistency.py: canonical-hash cross-check across MD/PDF/DOCX/supplement/citation_registry; folded into pre_submit_pass to kill the stale-PDF reviewer trap).
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

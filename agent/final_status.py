@@ -115,11 +115,27 @@ def _read_pre_submit(run_dir: Path) -> tuple[bool, str]:
         return (False, "pre_submit_gate missing")
     raw = d.get("result")
     result: dict[str, Any] = raw if isinstance(raw, dict) else {}
-    if result.get("passed"):
-        return (True, "")
-    fails = result.get("failures") or []
-    head = ",".join(str(f) for f in fails[:3]) if isinstance(fails, list) else ""
-    return (False, head or "pre_submit not passed")
+    if not result.get("passed"):
+        fails = result.get("failures") or []
+        head = ",".join(str(f) for f in fails[:3]) if isinstance(fails, list) else ""
+        return (False, head or "pre_submit not passed")
+    # Slice 14 (2026-05-14): fold artifact consistency into the
+    # pre_submit dimension. Kills the stale-PDF / desync-supplement
+    # reviewer trap — if any visible artifact (PDF/DOCX export,
+    # supplement mirror, citation_registry) drifts from the markdown
+    # source of truth, pre_submit fails even when the LLM-gate pipeline
+    # said pass. The artifact_consistency.json sidecar is optional;
+    # absence is treated as "not yet verified" → fail-soft pass so
+    # legacy runs without the sidecar don't regress.
+    consistency = _load(run_dir / "artifact_consistency.json")
+    if isinstance(consistency, dict) and consistency.get("passed") is False:
+        failing = [
+            c.get("name", "?")
+            for c in consistency.get("checks", ())
+            if isinstance(c, dict) and c.get("passed") is False
+        ]
+        return (False, "artifact_consistency:" + ",".join(failing[:3]))
+    return (True, "")
 
 
 def _read_target_journal(run_dir: Path) -> tuple[bool, str]:
