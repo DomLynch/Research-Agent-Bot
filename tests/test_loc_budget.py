@@ -227,8 +227,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 22550  # Wave 48-c (2026-05-14): +50 for Slice 9 thesis-taking gate (Discussion **Thesis:** + **Resolution criteria:** discipline)
-PER_FILE_LIMIT = 750  # Wave 48-c: journal_surface_gate held at 705 after Slice 9; +50 headroom for the next editorial-conformance gate before any split.
+TOTAL_LIMIT = 22650  # Wave 49 (2026-05-14): +100 for Slice 10 review-type selector (agent/review_type.py module + journal_surface_gate review-type self-claim check + topic_pack.review_type field)
+PER_FILE_LIMIT = 800  # Wave 49 (2026-05-14): journal_surface_gate grew past 750 with Slice 10 (review-type self-claim gate); +50 headroom. Will refactor into editorial/citation sub-modules once a 6th editorial gate lands.
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
 

@@ -181,6 +181,13 @@ class TopicPack:
     # has no [retrieval] block — caller falls back to the legacy
     # corpus_search_queries list.
     retrieval: "RetrievalSpec | None" = None
+    # Slice 10 (2026-05-14): declared review type, one of the 7
+    # canonical tokens in agent/review_type.REVIEW_TYPES. Drives the
+    # Methods + Abstract framing + the journal_surface gate's
+    # type-consistency check. Universal across any topic; default is
+    # `prisma_scr_scoping_synthesis` (the most honest fit for
+    # broad-corpus synthesis runs).
+    review_type: str = "prisma_scr_scoping_synthesis"
     # Optional D1 bridge config. D1 never counts as receipt evidence.
     inference: InferenceSpec = InferenceSpec()
     osf: Mapping[str, str] | None = None
@@ -440,4 +447,13 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         retrieval=retrieval,
         inference=inference,
         osf=osf,
+        review_type=_parse_review_type_field(data.get("review_type")),
     )
+
+
+def _parse_review_type_field(raw: object) -> str:
+    """Validate the optional `review_type` field at TOML load time so a
+    misspelled token in any topic pack fails fast (not later at gate
+    time). Universal — delegates to `agent.review_type.parse_review_type`."""
+    from agent.review_type import parse_review_type
+    return parse_review_type(raw if isinstance(raw, str) else None)

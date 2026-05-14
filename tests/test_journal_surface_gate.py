@@ -899,3 +899,75 @@ def test_thesis_marker_case_insensitive() -> None:
         "**Resolution Criteria:** Trial design.\n\n## Limitations\n"
     )
     assert _undeclared_thesis_in_discussion_issue_messages(body) == ()
+
+
+# Slice 10 — review-type self-claim gate. Manifest declares one of the
+# 7 canonical review types; Abstract/Methods must not self-claim a
+# stronger methodology. Universal — no per-topic knowledge.
+
+
+def test_review_type_self_claim_flagged() -> None:
+    """`We conducted a systematic review` in Methods when manifest
+    declares scoping synthesis → flag."""
+    from agent.journal_surface_gate import _review_type_overclaim_issue_messages
+    paper = (
+        "## Abstract\n\nA short abstract.\n\n"
+        "## Methods\n\nWe conducted a systematic review following PRISMA 2020.\n"
+    )
+    issues = _review_type_overclaim_issue_messages(paper, "prisma_scr_scoping_synthesis")
+    assert any("systematic review" in i for i in issues)
+
+
+def test_review_type_cited_evidence_not_flagged() -> None:
+    """Listing 'systematic reviews and meta-analyses' as included
+    evidence types is NOT a self-methodological claim — must not flag."""
+    from agent.journal_surface_gate import _review_type_overclaim_issue_messages
+    paper = (
+        "## Abstract\n\nThis synthesis integrated randomized controlled trials, "
+        "systematic reviews and meta-analyses, and observational cohorts.\n\n"
+        "## Methods\n\nSources were screened for relevance.\n"
+    )
+    assert _review_type_overclaim_issue_messages(paper, "prisma_scr_scoping_synthesis") == ()
+
+
+def test_review_type_check_skipped_for_strongest_tier() -> None:
+    """When manifest declares the strongest tier (systematic_review or
+    meta_analysis), there are no over-claims to flag — empty forbidden set."""
+    from agent.journal_surface_gate import _review_type_overclaim_issue_messages
+    paper = (
+        "## Abstract\n\nThis paper is a systematic review and meta-analysis.\n\n"
+        "## Methods\n\nWe registered with PROSPERO and followed PRISMA 2020.\n"
+    )
+    assert _review_type_overclaim_issue_messages(paper, "meta_analysis") == ()
+
+
+def test_review_type_check_skipped_when_undeclared() -> None:
+    """Backward-compat: caller does not declare a review_type → no check."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    paper = paper.replace(
+        "## Methods\n\n",
+        "## Methods\n\nWe conducted a systematic review and meta-analysis.\n\n",
+    )
+    report_no_type = evaluate_journal_surface(paper)
+    assert not any(i.code == "review_type_overclaim" for i in report_no_type.issues)
+    report_with_type = evaluate_journal_surface(
+        paper, declared_review_type="prisma_scr_scoping_synthesis",
+    )
+    assert any(i.code == "review_type_overclaim" for i in report_with_type.issues)
+
+
+def test_review_type_parse_validates() -> None:
+    """parse_review_type accepts known tokens, defaults None/empty,
+    raises on unknown tokens. Universal — no per-topic knowledge."""
+    from agent.review_type import parse_review_type, ReviewTypeError, DEFAULT_REVIEW_TYPE
+    assert parse_review_type(None) == DEFAULT_REVIEW_TYPE
+    assert parse_review_type("") == DEFAULT_REVIEW_TYPE
+    assert parse_review_type("narrative_review") == "narrative_review"
+    # case + hyphen tolerance
+    assert parse_review_type("Narrative-Review") == "narrative_review"
+    try:
+        parse_review_type("ivy_league_review")
+    except ReviewTypeError as e:
+        assert "unknown" in str(e).lower()
+    else:
+        raise AssertionError("expected ReviewTypeError for unknown token")

@@ -2608,6 +2608,15 @@ async def _run(
         "total_cost_usd": round(
             sum(c.estimated_cost_usd for c in ledger.calls), 6,
         ),
+        # Slice 10 (2026-05-14): pin the declared review type so
+        # downstream gates can enforce type-consistency between
+        # manifest, Abstract, and Methods. Falls back to the universal
+        # default when no topic pack is loaded.
+        "review_type": (
+            _TOPIC_PACK.review_type
+            if _TOPIC_PACK is not None
+            else "prisma_scr_scoping_synthesis"
+        ),
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
     # Bug-fix 2026-05-14: derive evidence_lanes.json sidecar so the
@@ -3081,6 +3090,7 @@ async def _run_post_paper_pipeline(
             paper_md,
             animal_citations=_animal_citations,
             citation_outcome_map=_citation_outcome_map,
+            declared_review_type=manifest.get("review_type"),
         )
         _surface_issues = tuple(
             f"{i.code}: {i.detail}" for i in surface_report.issues
@@ -3238,6 +3248,7 @@ async def _run_post_paper_pipeline(
             paper_md,
             animal_citations=_animal_citations,
             citation_outcome_map=_citation_outcome_map,
+            declared_review_type=manifest.get("review_type"),
         )
         surface_payload = {
             "passed": surface_report.passed,
