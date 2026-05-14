@@ -1,0 +1,138 @@
+"""Universal evidence-lane engine.
+
+Reviewer feedback 2026-05-14: every source should map to one of six
+canonical evidence lanes so the manuscript can never silently use
+animal/preclinical evidence as human clinical proof — and so reviewers
+can read each subsection knowing what lane the citations come from.
+
+The six lanes are universal across any topic (biomedical, climate,
+materials, economics, social science). For non-biomedical topics, the
+`human_*` lanes still apply when the "subjects" are humans
+(observational social-science data, field studies on participants);
+the `animal_preclinical` lane generalises to "model-system" evidence.
+
+This module is the single source of truth for lane derivation. Both
+the runtime sidecar generator and the journal-surface gate read from
+here.
+"""
+from __future__ import annotations
+
+from typing import Any, Final
+
+from agent.journal_surface_gate import is_animal_paper
+
+# Six canonical lanes, ordered by clinical / evidentiary strength.
+# Lower index = stronger direct-clinical claim weight.
+LANE_TOKENS: Final[tuple[str, ...]] = (
+    "human_rct",
+    "human_observational",
+    "human_mechanistic",
+    "review_meta_analysis",
+    "animal_preclinical",
+    "background_only",
+)
+
+LANE_DISPLAY: Final[dict[str, str]] = {
+    "human_rct": "Human randomised controlled trial",
+    "human_observational": "Human observational study",
+    "human_mechanistic": "Human mechanistic / biomarker study",
+    "review_meta_analysis": "Review or meta-analysis",
+    "animal_preclinical": "Animal / preclinical evidence",
+    "background_only": "Background / methodological reference",
+}
+
+
+def derive_lane(
+    *,
+    evidence_tier: str | None,
+    directness: str | None,
+    title: str | None = None,
+    venue: str | None = None,
+    population: str | None = None,
+) -> str:
+    """Map a receipt's (tier, directness, source-text) triple to one
+    of the six canonical lanes. Universal — no per-topic table.
+
+    Decision rules (ordered, first-match wins). Universal — based on
+    the canonical evidence-tier taxonomy used across project corpora
+    (A1=RCT, A2=strong obs., B1=review/meta, B2=weaker obs., C=preclinical):
+      1. Source-text mentions animal/veterinary keywords → animal_preclinical
+      2. directness == "review" OR evidence_tier == "B1" → review_meta_analysis
+      3. evidence_tier == "A1" → human_rct (regardless of directness — A1 is the RCT tier)
+      4. directness == "mechanistic" → human_mechanistic
+      5. evidence_tier in ("A2", "B2") → human_observational
+      6. evidence_tier == "C" → animal_preclinical (preclinical tier code)
+      7. fallback → background_only
+    """
+    blob = " ".join(s for s in (title, venue, population) if s)
+    if is_animal_paper(blob):
+        return "animal_preclinical"
+    tier = (evidence_tier or "").upper()
+    direct = (directness or "").lower()
+    if direct == "review" or tier == "B1":
+        return "review_meta_analysis"
+    if tier == "A1":
+        return "human_rct"
+    if direct == "mechanistic":
+        return "human_mechanistic"
+    if tier in ("A2", "B2"):
+        return "human_observational"
+    if tier == "C":
+        return "animal_preclinical"
+    return "background_only"
+
+
+def lane_qualifier_phrases_for(lane: str) -> tuple[str, ...]:
+    """Return the set of academic phrasings that, when found in the
+    same paragraph as a citation from this lane, satisfy the lane-label
+    requirement. Used by the journal-surface gate's evidence-lane
+    check. Universal — no topic-specific tokens."""
+    if lane == "animal_preclinical":
+        return (
+            "animal", "preclinical", "rodent", "murine", "in vivo",
+            "model organism", "veterinary", "non-human",
+            "equine", "equid", "primate", "macaque", "horse",
+            "swine", "porcine", "canine", "ovine",
+        )
+    if lane == "human_rct":
+        return ("randomised", "randomized", "rct", "clinical trial")
+    if lane == "human_observational":
+        return ("observational", "cohort", "cross-sectional", "registry")
+    if lane == "human_mechanistic":
+        return ("mechanistic", "biomarker", "in vitro", "ex vivo")
+    if lane == "review_meta_analysis":
+        return ("review", "meta-analysis", "systematic", "umbrella")
+    return ()
+
+
+def build_lane_map(receipts: Any) -> dict[str, str]:
+    """Build {citation_token: lane_token} from a receipts iterable.
+    Each receipt must expose attributes/keys: citation_token (or
+    body_citation), evidence_tier, directness, source_title, source_venue,
+    population_summary. Falls back gracefully when fields are missing.
+    Universal — works for any receipt shape that has these fields."""
+    out: dict[str, str] = {}
+    for r in receipts:
+        cite = _get(r, "citation_token") or _get(r, "body_citation")
+        if not cite:
+            continue
+        lane = derive_lane(
+            evidence_tier=_get(r, "evidence_tier"),
+            directness=_get(r, "directness"),
+            title=_get(r, "source_title"),
+            venue=_get(r, "source_venue"),
+            population=_get(r, "population_summary"),
+        )
+        out[str(cite)] = lane
+    return out
+
+
+def _get(receipt: Any, field: str) -> str | None:
+    """Universal attr-or-key getter so this works for both
+    ReceiptSummary dataclasses and dict receipts (manifest serialised
+    form)."""
+    if hasattr(receipt, field):
+        return getattr(receipt, field, None)
+    if isinstance(receipt, dict):
+        return receipt.get(field)
+    return None

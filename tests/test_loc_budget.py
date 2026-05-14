@@ -227,7 +227,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 22900  # Wave 50 (2026-05-14): +250 for Slice 11 PRISMA-ScR Methods pack (agent/methods_pack.py module + methods-pack-completeness check). Slice 10+11 gate checks moved into review_type.py + methods_pack.py per V4 rule 49 to keep journal_surface_gate under per-file limit.
+TOTAL_LIMIT = 23000  # Wave 51 (2026-05-14): +100 for Slice 12 evidence-lane engine (agent/evidence_lanes.py: 6 canonical lanes + derive_lane factory + universal build_lane_map; sidecar shape extended from animal-only to full lane map, backward compatible).
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

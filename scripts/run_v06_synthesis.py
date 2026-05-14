@@ -2626,21 +2626,39 @@ async def _run(
     # Universal — uses is_animal_paper keyword scan over each
     # receipt's source title + venue + population summary; no per-
     # topic table.
-    from agent.journal_surface_gate import is_animal_paper
+    # Slice 12 (2026-05-14): full 6-lane mapping (human RCT / human
+    # observational / human mechanistic / review-meta / animal-preclinical
+    # / background-only) per agent/evidence_lanes.LANE_TOKENS. Backward
+    # compatible — the sidecar still exposes `animal_citations` so the
+    # journal_surface_gate's animal-lane check keeps working unchanged.
+    from agent.evidence_lanes import derive_lane, LANE_TOKENS
+    lanes: dict[str, str] = {}
     animal_citations: list[dict[str, str]] = []
     for r in receipts:
-        blob = " ".join(s for s in (
-            r.source_title, r.source_venue, r.population_summary,
-        ) if s)
-        if is_animal_paper(blob):
-            entry = citation_registry.get(r.receipt_id)
-            cite = entry.body_citation if entry is not None else ""
+        entry = citation_registry.get(r.receipt_id)
+        cite = entry.body_citation if entry is not None else ""
+        if not cite:
+            continue
+        lane = derive_lane(
+            evidence_tier=r.evidence_tier,
+            directness=r.directness,
+            title=r.source_title,
+            venue=r.source_venue,
+            population=r.population_summary,
+        )
+        lanes[cite] = lane
+        if lane == "animal_preclinical":
             animal_citations.append({
                 "citation": cite, "paper_id": r.receipt_id,
             })
     (out_dir / "evidence_lanes.json").write_text(json.dumps({
-        "animal_citations": animal_citations,
-        "method": "is_animal_paper keyword scan over source_title + source_venue + population_summary",
+        "lanes": lanes,
+        "animal_citations": animal_citations,  # backward-compat alias
+        "canonical_lanes": list(LANE_TOKENS),
+        "method": (
+            "agent.evidence_lanes.derive_lane over (evidence_tier, "
+            "directness, source_title+venue+population_summary)"
+        ),
     }, indent=2))
     # Slice 11 (2026-05-14): build PRISMA-ScR Methods pack +
     # serialise to methods_pack.json sidecar. Universal across any

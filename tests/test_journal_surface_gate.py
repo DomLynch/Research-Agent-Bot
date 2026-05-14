@@ -1045,3 +1045,76 @@ def test_backtick_code_refs_exempt_from_slug_check() -> None:
     )
     report = evaluate_journal_surface(paper)
     assert not any(i.code == "topic_slug_artifact" for i in report.issues)
+
+
+# Slice 12 — universal evidence-lane engine. Six canonical lanes
+# derived from (evidence_tier, directness, source-text) triple. No
+# per-topic table; works for biomedical, climate, materials, etc.
+
+
+def test_derive_lane_human_rct() -> None:
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier="A1", directness="direct",
+        title="Randomised trial of CR in adults", venue="NEJM",
+    ) == "human_rct"
+
+
+def test_derive_lane_animal_overrides_tier() -> None:
+    """Animal keywords win over tier — Bamford 2019 is A1-direct but
+    in equids → animal_preclinical, not human_rct."""
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier="A1", directness="direct",
+        title="Caloric restriction in obese equids",
+        venue="Journal of Veterinary Internal Medicine",
+    ) == "animal_preclinical"
+
+
+def test_derive_lane_review_meta() -> None:
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier="B1", directness="review",
+        title="Systematic review of caloric restriction",
+    ) == "review_meta_analysis"
+
+
+def test_derive_lane_observational() -> None:
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier="B2", directness="indirect",
+        title="Cohort of weight loss outcomes",
+    ) == "human_observational"
+
+
+def test_derive_lane_mechanistic() -> None:
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier="A2", directness="mechanistic",
+        title="Gene-expression study in human muscle",
+    ) == "human_mechanistic"
+
+
+def test_derive_lane_fallback_background() -> None:
+    """Empty/unknown inputs → background_only (don't crash)."""
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier=None, directness=None, title=None,
+    ) == "background_only"
+
+
+def test_build_lane_map_handles_dict_receipts() -> None:
+    """Universal: works for both ReceiptSummary objects and
+    dict-shaped manifest receipts."""
+    from agent.evidence_lanes import build_lane_map
+    receipts = [
+        {"citation_token": "Smith 2024", "evidence_tier": "A1",
+         "directness": "direct", "source_title": "RCT"},
+        {"body_citation": "Jones 2022", "evidence_tier": "B1",
+         "directness": "review", "source_title": "Systematic review"},
+    ]
+    lanes = build_lane_map(receipts)
+    assert lanes == {
+        "Smith 2024": "human_rct",
+        "Jones 2022": "review_meta_analysis",
+    }
