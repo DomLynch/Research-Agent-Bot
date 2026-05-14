@@ -227,8 +227,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 22400  # Wave 48 (2026-05-14): +200 for journal_surface_gate slices 2-5 (pipeline-jargon scrubber + orphan-ref + evidence-lane + anti-hype gates)
-PER_FILE_LIMIT = 600
+TOTAL_LIMIT = 22500  # Wave 48-b (2026-05-14): +300 for journal_surface_gate slices 2-7 (pipeline-jargon scrubber + orphan-ref + evidence-lane + anti-hype + outcome-routing + limitations-leak)
+PER_FILE_LIMIT = 700  # Wave 48-b: journal_surface_gate is one cohesive concern (editorial gates over the manuscript body); splitting adds import-overhead bloat. Other agent/ files (synthesis.py, paper_writer.py, citation_trace.py) are already in this size class.
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
 

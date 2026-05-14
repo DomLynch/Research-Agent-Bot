@@ -749,3 +749,87 @@ def test_novelty_gate_catches_multiple_phrasings() -> None:
         body = f"## Framework\n\n{phrase}\n"
         msgs = _unsupported_novelty_claim_issue_messages(body)
         assert msgs, f"expected flag for: {phrase}"
+
+
+# Bug-fix: per-outcome cited-author cross-check (Slice 6 of the
+# editorial-conformance work). Every Author-Year token in a
+# `### X Outcomes` Results subsection must come from a receipt whose
+# outcome_class normalises to X. Universal — caller supplies the map.
+
+
+def test_outcome_class_mismatch_flagged() -> None:
+    """Beavers 2022 (frailty receipt) cited in Cardiometabolic
+    subsection → flag with both citation and section names."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    new_results = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "Beavers 2022 reported gait speed changes (P < 0.05).\n\n"
+        "### Frailty Outcomes\n\nFrailty stub.\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", new_results)
+    report = evaluate_journal_surface(
+        paper,
+        citation_outcome_map={"Beavers 2022": "frailty"},
+    )
+    detail = " | ".join(i.detail for i in report.issues if i.code == "outcome_routing")
+    assert "Beavers 2022" in detail
+    assert "Cardiometabolic" in detail
+
+
+def test_outcome_class_match_passes() -> None:
+    """Same citation cited in its OWN outcome subsection → no flag."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    new_results = (
+        "## Results\n\n"
+        "### Frailty Outcomes\n\n"
+        "Beavers 2022 reported gait speed changes (P < 0.05).\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", new_results)
+    report = evaluate_journal_surface(
+        paper,
+        citation_outcome_map={"Beavers 2022": "frailty"},
+    )
+    assert not any(i.code == "outcome_routing" for i in report.issues)
+
+
+def test_outcome_routing_check_skipped_without_map() -> None:
+    """Backward-compat: no map → no check (previous callers untouched)."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    report_old = evaluate_journal_surface(paper)
+    report_new = evaluate_journal_surface(paper, citation_outcome_map=None)
+    assert [i.code for i in report_old.issues] == [i.code for i in report_new.issues]
+
+
+# Bug-fix: Limitations summary-prose leak detector (Slice 7).
+# Limitations must name limitations; summary-of-findings prose or
+# synthesis-contribution prose belongs elsewhere. Universal patterns,
+# topic-agnostic.
+
+
+def test_limitations_summary_prose_flagged() -> None:
+    """Each of the canonical leak patterns is detected."""
+    from agent.journal_surface_gate import _limitations_summary_leak_issue_messages
+    for leak in (
+        "Positive signals appear in cardiometabolic.",
+        "Negative signals appear in immune.",
+        "Null findings dominate the corpus.",
+        "the evidence base for caloric restriction is incomplete.",
+        "The strongest unresolved contrast is X vs Y.",
+        "Across 47 curated reference papers, ...",
+        "It separates endpoint-specific evidence from broad claims.",
+    ):
+        body = f"## Limitations\n\nReal limitation here. {leak}\n\n## Conclusion\n"
+        msgs = _limitations_summary_leak_issue_messages(body)
+        assert msgs, f"expected flag for: {leak}"
+
+
+def test_limitations_legit_prose_passes() -> None:
+    """Defensive: real limitation sentences (no summary tokens) → no flag."""
+    from agent.journal_surface_gate import _limitations_summary_leak_issue_messages
+    body = (
+        "## Limitations\n\nThe corpus omits long-term mortality RCTs. "
+        "Single-trial outcomes cannot be replicated. Population specificity "
+        "limits generalization beyond the enrolled cohort.\n\n## Conclusion\n"
+    )
+    assert _limitations_summary_leak_issue_messages(body) == ()

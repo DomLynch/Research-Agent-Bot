@@ -2682,6 +2682,36 @@ async def _run_post_paper_pipeline(
     review what changed and why. Returns the final paper text."""
     paper_md = paper_path.read_text()
 
+    # Build universal gate inputs once: citation→outcome map (for the
+    # per-outcome subsection routing check that catches Beavers-style
+    # frailty-in-cardiometabolic leaks) + animal-citation list (from
+    # evidence_lanes.json). Both are reused by every gate call below;
+    # fail-soft when registry/sidecar absent.
+    _oc_by_rid = {
+        r["receipt_id"]: r["outcome_class"]
+        for r in manifest.get("receipts", ())
+        if r.get("outcome_class")
+    }
+    _citation_outcome_map: dict[str, str] = {}
+    for _rid, _entry in (citation_registry or {}).items():
+        _cite = getattr(_entry, "body_citation", None)
+        if _cite is None and isinstance(_entry, dict):
+            _cite = _entry.get("body_citation")
+        if _cite and _rid in _oc_by_rid:
+            _citation_outcome_map[_cite] = _oc_by_rid[_rid]
+    _animal_citations: list[str] = []
+    _lanes_path = out_dir / "evidence_lanes.json"
+    if _lanes_path.is_file():
+        try:
+            _lanes = json.loads(_lanes_path.read_text())
+            _animal_citations = [
+                str(a.get("citation", ""))
+                for a in _lanes.get("animal_citations", ())
+                if a.get("citation")
+            ]
+        except (OSError, json.JSONDecodeError):
+            pass
+
     # Stage 1: deterministic audit (Q1-Q10) on the as-written paper.
     print("[pipeline] Stage 1/5 — initial audit...", file=sys.stderr)
     audit_report = _audit_v06.audit(paper_md)
@@ -3047,7 +3077,11 @@ async def _run_post_paper_pipeline(
     )
     try:
         from agent.journal_surface_gate import evaluate_journal_surface
-        surface_report = evaluate_journal_surface(paper_md)
+        surface_report = evaluate_journal_surface(
+            paper_md,
+            animal_citations=_animal_citations,
+            citation_outcome_map=_citation_outcome_map,
+        )
         _surface_issues = tuple(
             f"{i.code}: {i.detail}" for i in surface_report.issues
         )
@@ -3200,7 +3234,11 @@ async def _run_post_paper_pipeline(
         if references_restored or surface_polish_log:
             paper_path.write_text(paper_md)
         from agent.journal_surface_gate import evaluate_journal_surface
-        surface_report = evaluate_journal_surface(paper_md)
+        surface_report = evaluate_journal_surface(
+            paper_md,
+            animal_citations=_animal_citations,
+            citation_outcome_map=_citation_outcome_map,
+        )
         surface_payload = {
             "passed": surface_report.passed,
             "issues": [dataclasses.asdict(i) for i in surface_report.issues],

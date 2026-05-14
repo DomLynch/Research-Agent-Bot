@@ -131,6 +131,7 @@ def evaluate_journal_surface(
     paper_md: str,
     *,
     animal_citations: Iterable[str] | None = None,
+    citation_outcome_map: dict[str, str] | None = None,
 ) -> SurfaceReport:
     issues: list[SurfaceIssue] = []
     body_md = _journal_body(paper_md)
@@ -152,9 +153,12 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_reference_issue_messages(paper_md))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _orphan_reference_issue_messages(paper_md))
     issues.extend(SurfaceIssue("pipeline_jargon", msg) for msg in _pipeline_jargon_issue_messages(body_md))
+    issues.extend(SurfaceIssue("limitations_leak", msg) for msg in _limitations_summary_leak_issue_messages(paper_md))
     issues.extend(SurfaceIssue("unsupported_novelty", msg) for msg in _unsupported_novelty_claim_issue_messages(body_md))
     if animal_citations is not None:
         issues.extend(SurfaceIssue("evidence_lane", msg) for msg in _unlabeled_animal_citation_issue_messages(paper_md, animal_citations))
+    if citation_outcome_map is not None:
+        issues.extend(SurfaceIssue("outcome_routing", msg) for msg in _outcome_class_mismatch_issue_messages(paper_md, citation_outcome_map))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_count_mismatch_issue_messages(body_md))
@@ -487,6 +491,44 @@ _NOVELTY_CLAIM_RE = re.compile(
 )
 
 
+# Bug-fix 2026-05-14: Limitations sections that contain corpus-
+# summary prose ("Positive signals appear in...", "the evidence base
+# for X shows...") or synthesis-contribution prose ("It separates
+# endpoint-specific evidence...") fail the editorial contract.
+# Limitations must name limitations, not summarise findings or assert
+# contributions. Universal — patterns are topic-agnostic.
+_LIMITATIONS_SUMMARY_LEAK_PATTERNS: tuple[str, ...] = (
+    r"\bpositive\s+signals?\s+appear\s+in\b",
+    r"\bnegative\s+signals?\s+appear\s+in\b",
+    r"\bnull\s+findings?\s+dominate\b",
+    r"\bthe\s+evidence\s+base\s+for\b",
+    r"\bthe\s+strongest\s+unresolved\s+contrast\b",
+    r"\bacross\s+\d+\s+curated\s+reference\s+papers?\b",
+    r"\bIt\s+separates\s+endpoint[- ]specific\s+evidence\b",
+)
+_LIMITATIONS_LEAK_RE = re.compile(
+    "|".join(f"({p})" for p in _LIMITATIONS_SUMMARY_LEAK_PATTERNS),
+    re.IGNORECASE,
+)
+
+
+def _limitations_summary_leak_issue_messages(paper_md: str) -> tuple[str, ...]:
+    """The Limitations section must name LIMITATIONS, not summarise
+    findings or assert synthesis contributions. Catches summary-prose
+    leakage like 'Positive signals appear in...' and synthesis-novelty
+    leakage like 'It separates endpoint-specific evidence...'."""
+    body = _section_body(paper_md, "Limitations") or ""
+    if not body:
+        return ()
+    out: list[str] = []
+    for match in _LIMITATIONS_LEAK_RE.finditer(body):
+        snippet = match.group(0)
+        out.append(
+            f"summary/contribution prose in Limitations section: {snippet!r}",
+        )
+    return tuple(out)
+
+
 def _unsupported_novelty_claim_issue_messages(paper_md: str) -> tuple[str, ...]:
     """A paragraph that asserts novelty/framework contribution must
     cite ≥1 prior Author-Year reference in the same paragraph. Catches
@@ -576,6 +618,60 @@ def _orphan_reference_issue_messages(paper_md: str) -> tuple[str, ...]:
         f"orphan reference (in bibliography, not cited inline): {token}"
         for token in orphan_reference_tokens(paper_md)
     )
+
+
+_OUTCOME_HEADING_RE = re.compile(r"^###\s+(.+?)\s+Outcomes\s*$", re.M)
+
+
+def _outcome_slug(label: str) -> str:
+    """Universal heading → outcome-class slug. 'Muscle Function' →
+    'muscle_function'; 'Cardiometabolic' → 'cardiometabolic'. No
+    per-topic table; just lowercased + word-joined."""
+    s = re.sub(r"[^a-z0-9]+", "_", label.lower()).strip("_")
+    return s
+
+
+def _outcome_class_mismatch_issue_messages(
+    paper_md: str, citation_outcome_map: dict[str, str],
+) -> tuple[str, ...]:
+    """For each `### X Outcomes` subsection in Results, every cited
+    Author-Year must be from a receipt whose outcome_class normalises
+    to X. Mismatches signal evidence routing errors (e.g. Beavers 2022
+    with outcome_class=frailty cited inside the Cardiometabolic
+    subsection). Universal — the caller passes the citation→outcome
+    map derived from manifest.receipts; this gate adds no per-topic
+    knowledge."""
+    if not citation_outcome_map:
+        return ()
+    folded_map = {_fold(k): v for k, v in citation_outcome_map.items()}
+    results = _section_body(paper_md, "Results") or ""
+    matches = list(_OUTCOME_HEADING_RE.finditer(results))
+    if not matches:
+        return ()
+    issues: list[str] = []
+    seen: set[tuple[str, str]] = set()
+    for i, m in enumerate(matches):
+        section_slug = _outcome_slug(m.group(1))
+        start = m.end()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(results)
+        body = results[start:end]
+        for am in _AUTHOR_YEAR_RE.finditer(body):
+            cite = f"{am.group(1)} {am.group(2)}"
+            expected = folded_map.get(_fold(cite))
+            if not expected:
+                continue
+            if _outcome_slug(expected) == section_slug:
+                continue
+            key = (_fold(cite), section_slug)
+            if key in seen:
+                continue
+            seen.add(key)
+            issues.append(
+                f"outcome-class mismatch: {cite} "
+                f"(receipt outcome_class={expected!r}) cited in "
+                f"'### {m.group(1)} Outcomes' subsection",
+            )
+    return tuple(issues)
 
 
 def _unlabeled_animal_citation_issue_messages(
