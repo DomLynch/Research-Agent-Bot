@@ -52,12 +52,26 @@ class FinalStatus:
     journal_surface_pass: bool
     pre_submit_pass: bool
     target_journal_pass: bool
-    human_signoff_pass: bool
+    # Slice 17 (2026-05-14): 6th dimension renamed to accountability_pass.
+    # The model (researka_agent_certified vs legacy_journal_submission)
+    # is read from `manifest.accountability_model`. `human_signoff_pass`
+    # below remains as a backward-compat mirror so existing consumers
+    # (older render_methods_paper.py scripts, audit dashboards) keep
+    # working unchanged.
+    accountability_pass: bool
+    accountability_model: str
     submission_ready: bool
     maturity_level: int
     maturity_label: str
     blocking_reasons: tuple[BlockingReason, ...] = ()
     sidecars_read: tuple[str, ...] = ()
+
+    @property
+    def human_signoff_pass(self) -> bool:
+        """Backward-compat: pre-Slice-17 callers read this field. It
+        now mirrors accountability_pass for any consumer that hasn't
+        migrated yet."""
+        return self.accountability_pass
 
 
 # --- per-dimension readers --------------------------------------------------
@@ -147,13 +161,20 @@ def _read_target_journal(run_dir: Path) -> tuple[bool, str]:
     return (False, "target_journal_pack missing 'journal' field")
 
 
-def _read_human_signoff(run_dir: Path) -> tuple[bool, str]:
-    d = _load(run_dir / "human_signoff.json")
-    if not isinstance(d, dict):
-        return (False, "no human_signoff.json")
-    if bool(d.get("ready_to_submit")):
+def _read_accountability(run_dir: Path) -> tuple[bool, str]:
+    """Slice 17 (2026-05-14): the 6th dimension is now
+    `accountability_pass`, controlled by the run's declared
+    accountability_model. researka_agent_certified (default) trusts
+    the machine artifact spine; legacy_journal_submission additionally
+    requires named human-author signoff. See agent/accountability.py."""
+    from agent.accountability import accountability_pass, resolve_model
+    manifest = _load(run_dir / "manifest.json") or {}
+    declared = manifest.get("accountability_model")
+    model = resolve_model(declared if isinstance(declared, str) else None)
+    ok, detail = accountability_pass(run_dir, model)
+    if ok:
         return (True, "")
-    return (False, "ready_to_submit=false")
+    return (False, f"[{model}] {detail}")
 
 
 # --- reason-code mapper (universal, no per-topic logic) ---------------------
@@ -173,8 +194,12 @@ _REASON_CODES: tuple[tuple[str, str, str], ...] = (
     ("pre_submit", "not passed", "pre_submit_failed"),
     ("target_journal", "no target_journal", "no_target_journal_pack"),
     ("target_journal", "missing", "invalid_target_journal_pack"),
-    ("human_signoff", "no human_signoff", "no_human_signoff"),
-    ("human_signoff", "ready_to_submit=false", "human_not_ready"),
+    # Slice 17 — accountability stage replaces the old human_signoff
+    # stage. Researka-native model fails when artifact spine
+    # incomplete; legacy model fails when human file absent / not ready.
+    ("accountability", "missing", "accountability_model_missing"),
+    ("accountability", "unreadable", "accountability_sidecar_unreadable"),
+    ("accountability", "ready_to_submit", "human_not_ready"),
 )
 
 
@@ -206,7 +231,7 @@ def _compute_level(dims: dict[str, bool]) -> int:
         return 3
     if not dims["pre_submit_pass"]:
         return 3
-    if not (dims["target_journal_pass"] and dims["human_signoff_pass"]):
+    if not (dims["target_journal_pass"] and dims["accountability_pass"]):
         return 4
     return 5
 
@@ -222,7 +247,12 @@ def compute(run_dir: Path) -> FinalStatus:
         ("journal_surface", "full_paper.journal_surface.json", _read_journal_surface),
         ("pre_submit", "pre_submit_gate.json", _read_pre_submit),
         ("target_journal", "target_journal_pack.json", _read_target_journal),
-        ("human_signoff", "human_signoff.json", _read_human_signoff),
+        # Slice 17: 6th dimension is accountability_pass; the sidecar
+        # it reads depends on the manifest's accountability_model
+        # (researka_agent_certified default reads artifact_consistency
+        # + citation_registry; legacy_journal_submission also reads
+        # human_signoff.json). Universal — see agent/accountability.py.
+        ("accountability", "manifest.json", _read_accountability),
     )
     sidecars: list[str] = []
     results: list[tuple[str, bool, str]] = []
@@ -238,6 +268,14 @@ def compute(run_dir: Path) -> FinalStatus:
         )
         for s, ok, r in results if not ok
     )
+    # Resolve the declared model so callers can see which path the
+    # accountability_pass dimension was evaluated under.
+    from agent.accountability import resolve_model
+    _manifest = _load(run_dir / "manifest.json") or {}
+    model = resolve_model(
+        _manifest.get("accountability_model")
+        if isinstance(_manifest, dict) else None,
+    )
     level = _compute_level(dims)
     return FinalStatus(
         runtime_pass=dims["runtime_pass"],
@@ -245,7 +283,8 @@ def compute(run_dir: Path) -> FinalStatus:
         journal_surface_pass=dims["journal_surface_pass"],
         pre_submit_pass=dims["pre_submit_pass"],
         target_journal_pass=dims["target_journal_pass"],
-        human_signoff_pass=dims["human_signoff_pass"],
+        accountability_pass=dims["accountability_pass"],
+        accountability_model=model,
         submission_ready=all(dims.values()),
         maturity_level=level,
         maturity_label=LABELS[level],
@@ -260,12 +299,15 @@ def write_sidecar(run_dir: Path, status: FinalStatus) -> Path:
         "submission_ready": status.submission_ready,
         "maturity_level": status.maturity_level,
         "maturity_label": status.maturity_label,
+        "accountability_model": status.accountability_model,
         "dimensions": {
             "runtime_pass": status.runtime_pass,
             "audit_pass": status.audit_pass,
             "journal_surface_pass": status.journal_surface_pass,
             "pre_submit_pass": status.pre_submit_pass,
             "target_journal_pass": status.target_journal_pass,
+            "accountability_pass": status.accountability_pass,
+            # Backward-compat mirror for pre-Slice-17 consumers
             "human_signoff_pass": status.human_signoff_pass,
         },
         "blocking_reasons": [asdict(b) for b in status.blocking_reasons],

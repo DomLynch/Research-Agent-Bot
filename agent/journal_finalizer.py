@@ -419,13 +419,25 @@ def _phase_f_reconcile_results_table(
     ]
     if not missing_labels:
         return text, []
-    # Locate the table's terminating empty line so we can append rows
-    # right before it. Find the last `| ... |` table row in the
-    # Results section.
-    table_rows = list(re.finditer(r"^\|.*\|\s*$", results, flags=re.M))
-    if not table_rows:
+    # Locate the table's terminating empty-line boundary. Robust to
+    # writer-wrapped rows split across physical lines (those wouldn't
+    # match a `^\|.*\|$` regex). The separator `|---|---|...|` line
+    # marks the start of the body; the first blank line after it
+    # marks the end. Insert immediately before that blank line.
+    sep_match = re.search(
+        r"^\|[\-:\|\s]+\|\s*$", results, flags=re.M,
+    )
+    if not sep_match:
         return text, []
-    insertion_offset = results_match.start() + table_rows[-1].end()
+    post_sep = results[sep_match.end():]
+    blank = re.search(r"\n\s*\n", post_sep)
+    if blank:
+        insertion_offset = (
+            results_match.start() + sep_match.end() + blank.start()
+        )
+    else:
+        # No blank line — append at end of Results section
+        insertion_offset = results_match.end()
     new_rows: list[str] = []
     log: list[FinalizerLogEntry] = []
     for label in missing_labels:

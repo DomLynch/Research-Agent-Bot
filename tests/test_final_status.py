@@ -31,6 +31,15 @@ def _all_pass_sidecars(run: Path) -> None:
     _write(run, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(run, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
     _write(run, "target_journal_pack.json", {"journal": "Aging Cell"})
+    # Slice 17: default accountability model is researka_agent_certified,
+    # which requires citation_registry.json + artifact_consistency.json
+    # (and ignores human_signoff.json). The legacy ladder test below
+    # exercises the human_signoff path explicitly.
+    _write(run, "manifest.json", {
+        "accountability_model": "researka_agent_certified",
+    })
+    _write(run, "citation_registry.json", {})
+    _write(run, "artifact_consistency.json", {"passed": True, "checks": []})
     _write(run, "human_signoff.json", {"ready_to_submit": True})
 
 
@@ -147,10 +156,14 @@ def test_compute_and_write_emits_final_status_json(tmp_path: Path) -> None:
     assert payload["submission_ready"] is True
     assert payload["maturity_level"] == 5
     assert payload["maturity_label"] == LABELS[5]
+    # Slice 17: 6th dimension renamed to accountability_pass;
+    # human_signoff_pass kept as backward-compat mirror.
     assert set(payload["dimensions"]) == {
         "runtime_pass", "audit_pass", "journal_surface_pass",
-        "pre_submit_pass", "target_journal_pass", "human_signoff_pass",
+        "pre_submit_pass", "target_journal_pass",
+        "accountability_pass", "human_signoff_pass",
     }
+    assert payload["accountability_model"] == "researka_agent_certified"
     assert payload["blocking_reasons"] == []
     assert "benchmark_runtime.json" in payload["sidecars_read"]
 
@@ -181,3 +194,108 @@ def test_audit_with_zero_total_fails_closed(tmp_path: Path) -> None:
     s = compute(tmp_path)
     # n_total == 0 should not count as "passed" — degenerate state.
     assert s.audit_pass is False
+
+
+# ---- Slice 17: accountability-model split ---------------------------------
+
+
+def test_researka_model_reaches_l5_without_human_signoff(tmp_path: Path) -> None:
+    """Researka-native ladder: no human_signoff file required. L5 is
+    reached on the artifact spine alone (audit + surface + pre_submit
+    + artifact_consistency + citation_registry + target_journal)."""
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {
+        "n_total": 14, "n_pass": 14, "p1_pass": True,
+    })
+    _write(tmp_path, "full_paper.journal_surface.json",
+           {"passed": True, "issues": []})
+    _write(tmp_path, "pre_submit_gate.json",
+           {"result": {"passed": True, "failures": []}})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "manifest.json",
+           {"accountability_model": "researka_agent_certified"})
+    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "artifact_consistency.json",
+           {"passed": True, "checks": []})
+    # Deliberately NO human_signoff.json
+    s = compute(tmp_path)
+    assert s.maturity_level == 5
+    assert s.accountability_pass is True
+    assert s.accountability_model == "researka_agent_certified"
+
+
+def test_legacy_model_blocks_l5_without_human_signoff(tmp_path: Path) -> None:
+    """Legacy journal ladder: ICMJE/COPE compliance — still requires
+    a named human-author signoff with ready_to_submit=true."""
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {
+        "n_total": 14, "n_pass": 14, "p1_pass": True,
+    })
+    _write(tmp_path, "full_paper.journal_surface.json",
+           {"passed": True, "issues": []})
+    _write(tmp_path, "pre_submit_gate.json",
+           {"result": {"passed": True, "failures": []}})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "manifest.json",
+           {"accountability_model": "legacy_journal_submission"})
+    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "artifact_consistency.json",
+           {"passed": True, "checks": []})
+    s = compute(tmp_path)
+    # No human signoff → accountability fails → blocked at L4
+    assert s.accountability_pass is False
+    assert s.maturity_level == 4
+    assert s.accountability_model == "legacy_journal_submission"
+
+
+def test_legacy_model_reaches_l5_with_human_signoff(tmp_path: Path) -> None:
+    """Legacy ladder with all artifacts + human signoff → L5."""
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {
+        "n_total": 14, "n_pass": 14, "p1_pass": True,
+    })
+    _write(tmp_path, "full_paper.journal_surface.json",
+           {"passed": True, "issues": []})
+    _write(tmp_path, "pre_submit_gate.json",
+           {"result": {"passed": True, "failures": []}})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "manifest.json",
+           {"accountability_model": "legacy_journal_submission"})
+    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "artifact_consistency.json",
+           {"passed": True, "checks": []})
+    _write(tmp_path, "human_signoff.json", {"ready_to_submit": True})
+    s = compute(tmp_path)
+    assert s.maturity_level == 5
+    assert s.accountability_pass is True
+
+
+def test_unknown_accountability_model_falls_back_to_researka(tmp_path: Path) -> None:
+    """An unknown/typo model in manifest → defaults to researka_agent_certified
+    (the conservative non-blocking default). Universal — fail-soft."""
+    from agent.accountability import resolve_model
+    assert resolve_model(None) == "researka_agent_certified"
+    assert resolve_model("") == "researka_agent_certified"
+    assert resolve_model("typo_unknown") == "researka_agent_certified"
+    assert resolve_model("legacy_journal_submission") == "legacy_journal_submission"
+
+
+def test_human_signoff_pass_backward_compat_mirror(tmp_path: Path) -> None:
+    """Pre-Slice-17 consumers reading `status.human_signoff_pass`
+    must still see the boolean (mirrors accountability_pass now)."""
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {
+        "n_total": 14, "n_pass": 14, "p1_pass": True,
+    })
+    _write(tmp_path, "full_paper.journal_surface.json",
+           {"passed": True, "issues": []})
+    _write(tmp_path, "pre_submit_gate.json",
+           {"result": {"passed": True, "failures": []}})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "manifest.json",
+           {"accountability_model": "researka_agent_certified"})
+    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "artifact_consistency.json",
+           {"passed": True, "checks": []})
+    s = compute(tmp_path)
+    assert s.human_signoff_pass == s.accountability_pass
