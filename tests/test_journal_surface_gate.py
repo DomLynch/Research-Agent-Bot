@@ -1118,3 +1118,77 @@ def test_build_lane_map_handles_dict_receipts() -> None:
         "Smith 2024": "human_rct",
         "Jones 2022": "review_meta_analysis",
     }
+
+
+# Slice 13 — universal reference-style renderer. Produces Vancouver
+# / Harvard / APA / Cell / Nature output from one minimal record
+# shape. Universal — no per-topic logic.
+
+
+def test_reference_style_canonical_set() -> None:
+    """5 canonical styles registered."""
+    from agent.reference_styles import CANONICAL_STYLES
+    assert set(CANONICAL_STYLES) == {
+        "Vancouver", "Harvard", "APA", "Cell", "Nature",
+    }
+
+
+def test_reference_render_vancouver() -> None:
+    """Vancouver: Authors. Title. Venue. Year. DOI/PMID."""
+    from agent.reference_styles import ReferenceRecord, render_reference
+    r = ReferenceRecord(
+        citation_token="Smith 2024", title="A trial of X",
+        year=2024, venue="NEJM", doi="10.1/x", pmid="12345",
+        authors=("Smith",),
+    )
+    out = render_reference(r, "Vancouver")
+    assert "Smith." in out and "A trial of X." in out and "NEJM." in out
+    assert "2024." in out and "doi:10.1/x." in out and "PMID: 12345." in out
+
+
+def test_reference_render_styles_differ() -> None:
+    """Each canonical style produces a distinguishable string."""
+    from agent.reference_styles import ReferenceRecord, render_reference, CANONICAL_STYLES
+    r = ReferenceRecord(
+        citation_token="Smith 2024", title="A trial of X",
+        year=2024, venue="NEJM", doi="10.1/x", pmid="12345",
+        authors=("Smith", "Jones"),
+    )
+    outs = {s: render_reference(r, s) for s in CANONICAL_STYLES}
+    # Vancouver has the year as separate '.' token, Harvard/APA use (year)
+    assert "(2024)" in outs["Harvard"]
+    assert "(2024)." in outs["APA"]
+    assert "(2024)." in outs["Cell"]
+    # All distinct
+    assert len({outs[s] for s in CANONICAL_STYLES}) >= 4
+
+
+def test_reference_unknown_style_falls_back_to_vancouver() -> None:
+    """Unknown / None style defaults to Vancouver (biomedical default)."""
+    from agent.reference_styles import ReferenceRecord, render_reference
+    r = ReferenceRecord(
+        citation_token="Smith 2024", title="T", year=2024,
+        venue="J", doi=None, pmid=None,
+    )
+    assert render_reference(r, None) == render_reference(r, "Vancouver")
+    assert render_reference(r, "made-up") == render_reference(r, "Vancouver")
+
+
+def test_reference_style_consistency_flags_stub_form() -> None:
+    """When a journal style is declared, plain `**Smith 2024.**` bold-
+    marker entries are flagged as pre-render stubs."""
+    from agent.reference_styles import reference_style_consistency_issue_messages
+    refs_body = (
+        "- **Smith 2024.** 2024. DOI: 10.1/x. PMID: 12345.\n"
+        "- **Jones 2023.** 2023. DOI: 10.2/y. PMID: 67890.\n"
+    )
+    issues = reference_style_consistency_issue_messages(refs_body, "Vancouver")
+    assert issues and "pre-render stub" in issues[0]
+
+
+def test_reference_style_consistency_skipped_when_no_style() -> None:
+    """No declared style → no check fires."""
+    from agent.reference_styles import reference_style_consistency_issue_messages
+    refs_body = "- **Smith 2024.** 2024. DOI: 10.1/x.\n"
+    assert reference_style_consistency_issue_messages(refs_body, None) == ()
+    assert reference_style_consistency_issue_messages(refs_body, "") == ()

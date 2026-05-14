@@ -227,7 +227,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 23000  # Wave 51 (2026-05-14): +100 for Slice 12 evidence-lane engine (agent/evidence_lanes.py: 6 canonical lanes + derive_lane factory + universal build_lane_map; sidecar shape extended from animal-only to full lane map, backward compatible).
+TOTAL_LIMIT = 23150  # Wave 52 (2026-05-14): +150 for Slice 13 reference-style renderer (agent/reference_styles.py: 5 canonical styles — Vancouver / Harvard / APA / Cell / Nature — plus stub-form consistency detector).
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
