@@ -2642,6 +2642,38 @@ async def _run(
         "animal_citations": animal_citations,
         "method": "is_animal_paper keyword scan over source_title + source_venue + population_summary",
     }, indent=2))
+    # Slice 11 (2026-05-14): build PRISMA-ScR Methods pack +
+    # serialise to methods_pack.json sidecar. Universal across any
+    # topic — the pack carries databases / search strings / dates /
+    # eligibility / screening flow / extraction fields / RoB approach
+    # / synthesis approach / AI-use disclosure / human accountability.
+    from agent.methods_pack import build_methods_pack, write_methods_pack
+    _funnel = manifest.get("receipt_funnel") or {}
+    _outcome_classes = sorted({
+        r.get("outcome_class") for r in manifest.get("receipts", ())
+        if r.get("outcome_class")
+    })
+    _search_queries = (
+        tuple(_TOPIC_PACK.corpus_search_queries)
+        if _TOPIC_PACK is not None
+        else ()
+    )
+    _methods_pack = build_methods_pack(
+        review_type=str(manifest.get("review_type", "")),
+        topic=_ACTIVE_TOPIC,
+        corpus_search_queries=_search_queries,
+        n_retrieved=int(_funnel.get("retrieved", 0))
+        or int(_funnel.get("n_retrieved", 0))
+        or len(manifest.get("receipts", ())),
+        n_screened=int(_funnel.get("screened", 0))
+        or int(_funnel.get("n_screened", 0))
+        or len(manifest.get("receipts", ())),
+        n_included=len(manifest.get("receipts", ())),
+        n_rejected=int(_funnel.get("rejected", 0))
+        or int(_funnel.get("n_rejected", 0)),
+        outcome_classes=_outcome_classes,
+    )
+    write_methods_pack(out_dir, _methods_pack)
     # Slice 7 step 1: publish manifest as module-global so the
     # consistency audit's _check_numeric_role_guard can resolve
     # receipts → quant_claims for source-context drift detection.

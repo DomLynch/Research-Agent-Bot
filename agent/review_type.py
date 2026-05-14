@@ -14,6 +14,7 @@ taxonomies.
 """
 from __future__ import annotations
 
+import re
 from typing import Final
 
 # Stable enum tokens used in topic_pack.toml + manifest.json.
@@ -62,3 +63,102 @@ def display_label(token: str) -> str:
     token. Used in Abstract/Methods prose so the manuscript declares
     its category in standard academic language."""
     return REVIEW_TYPES.get(parse_review_type(token), token)
+
+
+# --- Gate check: review-type self-claim overclaim ---------------------
+# Slice 10 — when manifest declares a weaker review type, Abstract/
+# Methods must not SELF-CLAIM a stronger methodology. Distinguishes
+# self-claims ("we conducted a systematic review") from legitimate
+# cited-evidence mentions ("we included systematic reviews"). Lives
+# here (not in journal_surface_gate) because the semantics are
+# review-type-specific.
+
+REVIEW_TYPE_SELF_CLAIM_TERMS: Final[dict[str, tuple[str, ...]]] = {
+    "prisma_scr_scoping_synthesis": (
+        "systematic review", "meta-analysis", "meta analysis",
+        "prospero", "prisma 2020",
+    ),
+    "structured_evidence_synthesis": (
+        "systematic review", "meta-analysis", "meta analysis",
+        "prospero", "prisma 2020", "prisma-scr",
+    ),
+    "narrative_review": (
+        "systematic review", "scoping review", "meta-analysis",
+        "meta analysis", "prospero", "prisma",
+    ),
+    "technical_survey": (
+        "systematic review", "meta-analysis", "meta analysis", "prisma",
+    ),
+    "management_literature_review": (
+        "systematic review", "meta-analysis",
+    ),
+    "systematic_review": (),
+    "meta_analysis": (),
+}
+
+SELF_CLAIM_QUALIFIERS: Final[tuple[str, ...]] = (
+    "we conducted", "we performed", "we undertook", "we report",
+    "we present a", "we registered",
+    "this is a", "this paper is", "this review is", "this synthesis is",
+    "this study is", "this analysis is",
+    "registered with prospero", "following prisma",
+    "prisma-compliant", "prisma 2020 compliant",
+    "our systematic review", "our meta-analysis", "our scoping review",
+)
+
+
+def _self_claim_proximity_window(
+    text: str, qualifier: str, token: str, max_chars: int = 60,
+) -> bool:
+    """Return True if `qualifier` appears within `max_chars` of
+    `token` in `text`. Distinguishes self-methodological claims
+    (qualifier + token adjacent) from list-construction sentences
+    (qualifier + token far apart in a multi-clause sentence)."""
+    low = text.lower()
+    q_idx = low.find(qualifier)
+    if q_idx < 0:
+        return False
+    t_idx = low.find(token, q_idx)
+    if t_idx < 0 or t_idx - q_idx - len(qualifier) > max_chars:
+        return False
+    return True
+
+
+def review_type_overclaim_issue_messages(
+    abstract_text: str, methods_text: str,
+    declared_review_type: str | None,
+) -> tuple[str, ...]:
+    """Flag Abstract/Methods SELF-CLAIMS of a stronger methodology
+    than the manifest's declared review_type. Universal — caller
+    extracts the section bodies (gate uses _section_body)."""
+    if not declared_review_type:
+        return ()
+    forbidden = REVIEW_TYPE_SELF_CLAIM_TERMS.get(declared_review_type, ())
+    if not forbidden:
+        return ()
+    scoped = (abstract_text or "") + "\n" + (methods_text or "")
+    out: list[str] = []
+    seen: set[tuple[str, str]] = set()
+    for sentence in re.split(r"(?<=[.!?])\s+", scoped):
+        for token in forbidden:
+            if token not in sentence.lower():
+                continue
+            matched_qualifier = next(
+                (q for q in SELF_CLAIM_QUALIFIERS
+                 if _self_claim_proximity_window(sentence, q, token)),
+                None,
+            )
+            if not matched_qualifier:
+                continue
+            key = (token, sentence[:80])
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(
+                f"review-type overclaim (self-claim): manifest "
+                f"declares {declared_review_type!r} but Abstract/"
+                f"Methods sentence claims own methodology as "
+                f"{token!r} (qualifier {matched_qualifier!r}): "
+                f"{sentence[:160].strip()!r}",
+            )
+    return tuple(out)

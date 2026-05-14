@@ -152,7 +152,11 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("citation_artifact", f"public reference dump: {m.group(0)}") for m in _REFERENCE_DUMP_RE.finditer(body_md))
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
     issues.extend(SurfaceIssue("malformed_numeric", f"malformed numeric artifact: {m.group(0).strip()}") for m in _MALFORMED_NUMERIC_RE.finditer(body_md))
-    issues.extend(SurfaceIssue("topic_slug_artifact", f"public topic-slug artifact: {m.group(0)}") for m in _PUBLIC_SLUG_RE.finditer(body_md))
+    # Backtick-fenced spans (`like_this`) are code/file references —
+    # exempt from the slug check (real-world conventional in Methods +
+    # AI-disclosure sections).
+    _body_for_slug_check = re.sub(r"`[^`]*`", "", body_md)
+    issues.extend(SurfaceIssue("topic_slug_artifact", f"public topic-slug artifact: {m.group(0)}") for m in _PUBLIC_SLUG_RE.finditer(_body_for_slug_check))
     issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
     if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
@@ -168,6 +172,7 @@ def evaluate_journal_surface(
         issues.extend(SurfaceIssue("outcome_routing", msg) for msg in _outcome_class_mismatch_issue_messages(paper_md, citation_outcome_map))
     if declared_review_type:
         issues.extend(SurfaceIssue("review_type_overclaim", msg) for msg in _review_type_overclaim_issue_messages(paper_md, declared_review_type))
+        issues.extend(SurfaceIssue("methods_pack_incomplete", msg) for msg in _methods_pack_completeness_issue_messages(paper_md, declared_review_type))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_count_mismatch_issue_messages(body_md))
@@ -544,111 +549,35 @@ _RESOLUTION_MARKER_RE = re.compile(
 )
 
 
-# Slice 10 (2026-05-14): when the manifest declares a review_type
-# weaker than systematic-review tier, the Abstract/Methods must not
-# claim the stronger methodology AS THE PAPER'S OWN METHOD. The check
-# only flags self-claims (this/our/we conducted), not legitimate
-# mentions of cited evidence (e.g. "we included systematic reviews"
-# or "Kazeminasab 2025 meta-analysis").
-_REVIEW_TYPE_SELF_CLAIM_TERMS: dict[str, tuple[str, ...]] = {
-    "prisma_scr_scoping_synthesis": (
-        "systematic review", "meta-analysis", "meta analysis",
-        "prospero", "prisma 2020",
-    ),
-    "structured_evidence_synthesis": (
-        "systematic review", "meta-analysis", "meta analysis",
-        "prospero", "prisma 2020", "prisma-scr",
-    ),
-    "narrative_review": (
-        "systematic review", "scoping review", "meta-analysis",
-        "meta analysis", "prospero", "prisma",
-    ),
-    "technical_survey": (
-        "systematic review", "meta-analysis", "meta analysis", "prisma",
-    ),
-    "management_literature_review": (
-        "systematic review", "meta-analysis",
-    ),
-    "systematic_review": (),
-    "meta_analysis": (),
-}
-
-# Self-claim qualifiers — verbs/phrases that ASSERT the paper itself
-# is the methodology. Distinct from listing-verbs (integrated/included/
-# spanning/drawing on/comprising) which describe what evidence the
-# review consumed, not what the review IS.
-_SELF_CLAIM_QUALIFIERS: tuple[str, ...] = (
-    "we conducted", "we performed", "we undertook", "we report",
-    "we present a", "we registered",
-    "this is a", "this paper is", "this review is", "this synthesis is",
-    "this study is", "this analysis is",
-    "registered with prospero", "following prisma",
-    "prisma-compliant", "prisma 2020 compliant",
-    "our systematic review", "our meta-analysis", "our scoping review",
-)
-
-
-def _self_claim_proximity_window(text: str, qualifier: str, token: str,
-                                 max_chars: int = 60) -> bool:
-    """Return True if `qualifier` appears within `max_chars` of `token`
-    in `text`. Universal — used to distinguish methodological self-
-    claims (qualifier and token adjacent) from list-construction
-    sentences (qualifier and token far apart in a multi-clause
-    sentence)."""
-    low = text.lower()
-    q_idx = low.find(qualifier)
-    if q_idx < 0:
-        return False
-    t_idx = low.find(token, q_idx)
-    if t_idx < 0 or t_idx - q_idx - len(qualifier) > max_chars:
-        return False
-    return True
+# Slice 10/11 thin wrappers — heavy lifting lives in the semantic
+# home modules (`agent.review_type`, `agent.methods_pack`) per V4
+# rule 49 (one module, one reason to change). This file orchestrates;
+# the editorial checks live next to the data they validate.
 
 
 def _review_type_overclaim_issue_messages(
     paper_md: str, declared_review_type: str | None,
 ) -> tuple[str, ...]:
-    """Flag Abstract/Methods SELF-CLAIMS of a stronger methodology
-    than the manifest's declared review_type. Universal — only flags
-    sentences containing both a self-claim qualifier (this/our/we) AND
-    a stronger-methodology term in the same sentence. Legitimate
-    references to cited evidence (e.g. 'we included systematic reviews
-    and observational cohorts') and references to prior published
-    meta-analyses are not flagged."""
-    if not declared_review_type:
-        return ()
-    forbidden = _REVIEW_TYPE_SELF_CLAIM_TERMS.get(declared_review_type, ())
-    if not forbidden:
-        return ()
-    scoped = ""
-    for heading in ("Abstract", "Methods"):
-        section = _section_body(paper_md, heading) or ""
-        scoped += "\n" + section
-    out: list[str] = []
-    seen: set[tuple[str, str]] = set()
-    for sentence in re.split(r"(?<=[.!?])\s+", scoped):
-        for token in forbidden:
-            if token not in sentence.lower():
-                continue
-            matched_qualifier = next(
-                (q for q in _SELF_CLAIM_QUALIFIERS
-                 if _self_claim_proximity_window(sentence, q, token)),
-                None,
-            )
-            if not matched_qualifier:
-                continue
-            key = (token, sentence[:80])
-            if key in seen:
-                continue
-            seen.add(key)
-            out.append(
-                f"review-type overclaim (self-claim): manifest "
-                f"declares {declared_review_type!r} but Abstract/"
-                f"Methods sentence claims own methodology as "
-                f"{token!r} (qualifier {matched_qualifier!r}): "
-                f"{sentence[:160].strip()!r}",
-            )
-    return tuple(out)
+    """Thin wrapper: extracts Abstract + Methods sections and
+    delegates to `agent.review_type.review_type_overclaim_issue_messages`."""
+    from agent.review_type import review_type_overclaim_issue_messages
+    return review_type_overclaim_issue_messages(
+        _section_body(paper_md, "Abstract") or "",
+        _section_body(paper_md, "Methods") or "",
+        declared_review_type,
+    )
+
+
+def _methods_pack_completeness_issue_messages(
+    paper_md: str, declared_review_type: str | None,
+) -> tuple[str, ...]:
+    """Thin wrapper: extracts Methods section and delegates to
+    `agent.methods_pack.methods_pack_completeness_issue_messages`."""
+    from agent.methods_pack import methods_pack_completeness_issue_messages
+    return methods_pack_completeness_issue_messages(
+        _section_body(paper_md, "Methods") or "",
+        declared_review_type,
+    )
 
 
 def _undeclared_thesis_in_discussion_issue_messages(

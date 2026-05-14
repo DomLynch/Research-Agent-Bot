@@ -971,3 +971,77 @@ def test_review_type_parse_validates() -> None:
         assert "unknown" in str(e).lower()
     else:
         raise AssertionError("expected ReviewTypeError for unknown token")
+
+
+# Slice 11 — PRISMA-ScR Methods pack. The Methods section must
+# contain 11 H3 subsection markers when manifest declares a review
+# type. Universal — markers are topic-agnostic.
+
+
+def test_methods_pack_completeness_flags_missing_markers() -> None:
+    """Existing-style Methods (single prose block) → 11 missing markers."""
+    from agent.journal_surface_gate import _methods_pack_completeness_issue_messages
+    paper = (
+        "## Methods\n\nWe conducted a structured synthesis. Source set frozen.\n\n"
+        "## Results\n"
+    )
+    issues = _methods_pack_completeness_issue_messages(paper, "prisma_scr_scoping_synthesis")
+    assert len(issues) == 11
+    assert any("### Search strategy" in i for i in issues)
+    assert any("### AI-use disclosure" in i for i in issues)
+
+
+def test_methods_pack_complete_passes() -> None:
+    """Methods with all 11 markers → no flag."""
+    from agent.methods_pack import build_methods_pack, render_methods_md
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="x_topic", corpus_search_queries=("q1",),
+        n_retrieved=10, n_screened=5, n_included=2, n_rejected=3,
+        outcome_classes=("a", "b"),
+    )
+    paper = render_methods_md(pack, submission_id="run-1") + "\n\n## Results\n"
+    from agent.journal_surface_gate import _methods_pack_completeness_issue_messages
+    issues = _methods_pack_completeness_issue_messages(paper, "prisma_scr_scoping_synthesis")
+    assert issues == ()
+
+
+def test_methods_pack_skipped_when_no_review_type() -> None:
+    """Backward-compat: no declared review_type → check skipped."""
+    from agent.journal_surface_gate import _methods_pack_completeness_issue_messages
+    paper = "## Methods\n\nStub.\n\n## Results\n"
+    assert _methods_pack_completeness_issue_messages(paper, None) == ()
+    assert _methods_pack_completeness_issue_messages(paper, "") == ()
+
+
+def test_methods_pack_required_fields_missing_detects_stub() -> None:
+    """MethodsPack.required_fields_missing() flags empty fields."""
+    from agent.methods_pack import MethodsPack
+    stub = MethodsPack(
+        review_type="", databases_searched=(), search_strings=(),
+        search_dates="", eligibility_criteria=(),
+        screening_flow={"n_retrieved": 0},
+        data_extraction_fields=(), exclusion_reason_summary=(),
+        risk_of_bias_approach="", synthesis_approach="",
+        ai_use_disclosure="", human_accountability="",
+    )
+    missing = set(stub.required_fields_missing())
+    # Every field should flag as missing (string empty / tuple empty /
+    # dict all-zero).
+    assert "review_type" in missing
+    assert "search_strings" in missing
+    assert "screening_flow" in missing
+    assert "ai_use_disclosure" in missing
+
+
+def test_backtick_code_refs_exempt_from_slug_check() -> None:
+    """Universal regression: code refs like `methods_pack.json` inside
+    backticks must NOT trip the public-slug artifact check, which is
+    designed to catch raw pipeline identifiers in prose."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    paper = paper.replace(
+        "## Methods\n\n",
+        "## Methods\n\nAudit trail in `methods_pack.json` and `risk_of_bias.json`.\n\n",
+    )
+    report = evaluate_journal_surface(paper)
+    assert not any(i.code == "topic_slug_artifact" for i in report.issues)
