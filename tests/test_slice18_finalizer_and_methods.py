@@ -483,6 +483,47 @@ def test_phase_b_fires_on_exclusively_animal_lane_paragraph(
     assert log[0].rule == "animal_preclinical_lead_in"
 
 
+def test_slice31_downshift_to_thin_corpus_brief_on_few_receipts() -> None:
+    """Slice 31: when n_receipts < THIN_CORPUS_MIN_RECEIPTS the
+    declared review_type is downshifted to `thin_corpus_brief`,
+    regardless of what the topic pack declared. Universal."""
+    from agent.review_type import downshift_review_type_for_thin_corpus
+    assert downshift_review_type_for_thin_corpus(
+        "systematic_review", n_receipts=2, n_tensions=5,
+    ) == "thin_corpus_brief"
+
+
+def test_slice31_downshift_on_zero_tensions() -> None:
+    """Slice 31: n_tensions==0 triggers downshift even when receipt
+    count is large (a paper with many receipts but no cross-claim
+    tensions is still a thin-evidence artifact)."""
+    from agent.review_type import downshift_review_type_for_thin_corpus
+    assert downshift_review_type_for_thin_corpus(
+        "prisma_scr_scoping_synthesis", n_receipts=40, n_tensions=0,
+    ) == "thin_corpus_brief"
+
+
+def test_slice31_no_downshift_when_corpus_is_dense() -> None:
+    """Slice 31 boundary: when both receipts and tensions clear the
+    thresholds the declared review_type is preserved as-is."""
+    from agent.review_type import downshift_review_type_for_thin_corpus
+    assert downshift_review_type_for_thin_corpus(
+        "systematic_review", n_receipts=30, n_tensions=5,
+    ) == "systematic_review"
+    # None / empty falls back to default, not thin-corpus
+    assert downshift_review_type_for_thin_corpus(
+        None, n_receipts=30, n_tensions=5,
+    ) == "prisma_scr_scoping_synthesis"
+
+
+def test_slice31_thin_corpus_brief_has_display_label() -> None:
+    """Slice 31: the new review_type token must render with a journal-
+    conventional display label, like the other 7 types."""
+    from agent.review_type import display_label, REVIEW_TYPES
+    assert "thin_corpus_brief" in REVIEW_TYPES
+    assert display_label("thin_corpus_brief") == "Thin-corpus evidence brief"
+
+
 def test_phase_i_splits_concatenated_h3_h2_heading_line() -> None:
     """Slice 30: Phase I splits a line like `### Sub Title## Next H2`
     into two heading lines separated by a blank. Universal Markdown

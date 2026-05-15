@@ -34,9 +34,34 @@ REVIEW_TYPES: Final[dict[str, str]] = {
         "Technical survey",
     "management_literature_review":
         "Management literature review",
+    # Slice 31 (2026-05-15): thin-corpus product-type downshift. Used
+    # universally when n_receipts<10 OR n_tensions=0 — signals to
+    # downstream readers + the maturity ladder that the run produced
+    # an evidence brief, not a full journal manuscript.
+    "thin_corpus_brief":
+        "Thin-corpus evidence brief",
 }
 
 DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"
+
+# Slice 31 universal thresholds for thin-corpus downshift. Universal —
+# no topic-specific values; any topic with corpus thinness below these
+# downshifts to `thin_corpus_brief` regardless of declared review type.
+THIN_CORPUS_MIN_RECEIPTS: Final[int] = 10
+THIN_CORPUS_MIN_TENSIONS: Final[int] = 1
+
+
+def downshift_review_type_for_thin_corpus(
+    declared: str | None, n_receipts: int, n_tensions: int,
+) -> str:
+    """Return `thin_corpus_brief` when the run's corpus is too thin to
+    support a full journal manuscript; otherwise return the parsed
+    declared token. Universal — no topic-specific logic. Conditions
+    track the reviewer's explicit guidance: n_receipts<10 OR
+    n_tensions==0 means render an evidence note, not a manuscript."""
+    if n_receipts < THIN_CORPUS_MIN_RECEIPTS or n_tensions < THIN_CORPUS_MIN_TENSIONS:
+        return "thin_corpus_brief"
+    return parse_review_type(declared)
 
 
 class ReviewTypeError(ValueError):
