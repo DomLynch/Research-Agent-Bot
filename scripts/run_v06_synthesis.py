@@ -2749,6 +2749,29 @@ async def _run(
     _consistency_report = verify_run_artifacts(out_dir)
     write_consistency_sidecar(out_dir, _consistency_report)
 
+    # Slice 22 (2026-05-15): the pipeline's Stage 5d inside
+    # `_run_post_paper_pipeline` computed `final_status.json` BEFORE
+    # `finalize_run` (Phase G surface re-eval) and `artifact_consistency`
+    # sidecar writes happened. That snapshot's accountability_pass +
+    # journal_surface counts were therefore stale. Re-run final_status
+    # convergence once all sidecars are in their final state.
+    # Universal — operates on whatever sidecars exist; fail-soft.
+    try:
+        from agent.final_status import compute_and_write as _fs_recompute
+        _fs_final = _fs_recompute(out_dir)
+        print(
+            f"[pipeline] Stage 5d* — final_status reconciled: "
+            f"{_fs_final.maturity_label} (submission_ready="
+            f"{_fs_final.submission_ready}, "
+            f"blockers={len(_fs_final.blocking_reasons)})",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — fail-soft
+        print(
+            f"[pipeline] Stage 5d* — final_status reconcile skipped: {_e}",
+            file=sys.stderr,
+        )
+
     print(f"\nDONE: {paper_path}", file=sys.stderr)
     print(f"  final_words: {word_count}", file=sys.stderr)
     print(f"  per-section: {section_words}", file=sys.stderr)
