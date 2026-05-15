@@ -203,8 +203,12 @@ def _phase_b_lane_qualifier(
         return text, []
     if not animal_tokens:
         return text, []
-    from agent.evidence_lanes import lane_qualifier_phrases_for
-    qualifiers = lane_qualifier_phrases_for("animal_preclinical")
+    # Slice 26: use the gate's centralised word-boundary regex so Phase B
+    # and the gate agree exactly on what counts as a qualifier. Substring
+    # matching falsely qualified paragraphs containing "replicated"
+    # (matches "rat"), "rate", "iterate", etc.
+    from agent.journal_surface_gate import _animal_lane_re
+    qualifier_re = _animal_lane_re()
     # Operate only on the body (above References). Splitting on the
     # references heading keeps the bibliography untouched.
     refs_split = re.split(r"^## References\b", text, maxsplit=1, flags=re.M)
@@ -224,8 +228,7 @@ def _phase_b_lane_qualifier(
         # misrepresent the cite set).
         if any(tok in para for tok in non_animal_tokens):
             continue
-        para_low = para.lower()
-        if any(q in para_low for q in qualifiers):
+        if qualifier_re.search(para):
             continue
         # Prepend the lead-in to the first sentence + lowercase the
         # following first letter so the joined clause reads naturally

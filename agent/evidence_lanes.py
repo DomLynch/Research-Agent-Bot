@@ -88,11 +88,23 @@ def lane_qualifier_phrases_for(lane: str) -> tuple[str, ...]:
     requirement. Used by the journal-surface gate's evidence-lane
     check. Universal — no topic-specific tokens."""
     if lane == "animal_preclinical":
+        # Slice 26 (2026-05-15): added the everyday-prose terms researchers
+        # actually use in body text ("mice", "mouse", "rat", "rats", "in
+        # vitro", "cell line"). Senolytics audit surfaced that the writer
+        # routinely writes "aged mice" or "in cultured cells" rather than
+        # the formal "rodent / murine / in vivo" — so the qualifier check
+        # missed legitimate lane-labelled prose. Caller must use word-
+        # boundary matching to avoid e.g. "rat" matching "iterate".
         return (
             "animal", "preclinical", "rodent", "murine", "in vivo",
             "model organism", "veterinary", "non-human",
             "equine", "equid", "primate", "macaque", "horse",
             "swine", "porcine", "canine", "ovine",
+            # Everyday-prose terms (Slice 26 additions):
+            "mouse", "mice", "rat", "rats",
+            "dog", "cat", "pig",  # everyday counterparts to canine/feline/porcine
+            "in vitro", "cell line",
+            "transgenic", "knockout", "knock-out", "wild-type",
         )
     if lane == "human_rct":
         return ("randomised", "randomized", "rct", "clinical trial")

@@ -330,6 +330,62 @@ def test_phase_g_refreshes_pre_submit_gate_when_surface_flips(
     assert "journal_surface_failed" in gate["result"]["failures"]
 
 
+def test_slice26_gate_qualifier_accepts_everyday_animal_terms() -> None:
+    """Slice 26: the journal-surface gate's animal-lane qualifier check
+    must accept everyday prose terms ("aged mice", "in cultured cells",
+    "senior dogs") — not just the formal taxonomy ("rodent / murine /
+    in vivo / canine"). Senolytics audit surfaced ≥5 false-positive
+    `evidence_lane` flags because the writer routinely uses "mice" and
+    "dogs"; before Slice 26 those silenced no flag."""
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    paper = (
+        "# Body\n\n"
+        "Murray 2025 studied frailty markers. Similarly, Novais 2021 found "
+        "that D+Q treatment improved physical performance in aged mice.\n"
+    )
+    # Without Slice 26 ("mice" missing from qualifier list), this would
+    # flag Novais 2021. With Slice 26 it correctly stays silent.
+    msgs = _unlabeled_animal_citation_issue_messages(paper, ["Novais 2021"])
+    assert msgs == ()
+
+
+def test_slice26_gate_qualifier_handles_plurals_via_word_boundary() -> None:
+    """Slice 26: the regex's `s?` suffix must accept English plurals
+    ("equids" → matches "equid"; "rodents" → matches "rodent"). CR
+    audit caught the regression case where "obese equids" failed to
+    silence the flag after switching from substring to word-boundary."""
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    paper = (
+        "# Body\n\n"
+        "Bamford 2019, in a model of obese equids, reported "
+        "cardiometabolic improvements.\n"
+    )
+    msgs = _unlabeled_animal_citation_issue_messages(paper, ["Bamford 2019"])
+    assert msgs == ()
+
+
+def test_slice26_word_boundary_avoids_false_positive_substring_matches() -> None:
+    """Slice 26: switching to word-boundary regex must NOT silence the
+    gate on prose that incidentally contains short substrings like
+    'rate' (was previously matching the absent 'rat' qualifier via
+    pure substring search — actually a non-issue pre-Slice-26 since
+    'rat' wasn't in the list, but `cat`/`dog` ARE now and could
+    accidentally match 'category'/'doggedly' without the boundary)."""
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    paper = (
+        "# Body\n\n"
+        "Jones 2024 examined the rate of categorical adverse events in "
+        "the dogmatic literature; doggedly tracking outcomes proved "
+        "challenging.\n"
+    )
+    # Even though "rate"/"categorical"/"dogmatic"/"doggedly" each contain
+    # an animal qualifier as substring, none should match at word
+    # boundary. Jones 2024 must still be flagged when treated as animal.
+    msgs = _unlabeled_animal_citation_issue_messages(paper, ["Jones 2024"])
+    assert len(msgs) == 1
+    assert "Jones 2024" in msgs[0]
+
+
 def test_phase_b_skips_mixed_lane_paragraphs(tmp_path: Path) -> None:
     """Slice 23 precision: Phase B must NOT prepend the lane qualifier
     when a paragraph cites BOTH animal-lane AND non-animal-lane refs.
@@ -363,24 +419,28 @@ def test_phase_b_fires_on_exclusively_animal_lane_paragraph(
 ) -> None:
     """Slice 23: Phase B SHOULD fire when every cited token in the
     paragraph is animal-lane. Confirms precision tightening did not
-    regress the positive-trigger case."""
+    regress the positive-trigger case. Slice 26 update: synthetic
+    citation tokens MUST NOT contain animal qualifier words (the
+    centralised qualifier set now includes "mouse"/"rat" — using
+    those as author surnames would make the citation itself match
+    the gate's qualifier regex)."""
     from agent.journal_finalizer import _phase_b_lane_qualifier
     run = tmp_path / "run"
     run.mkdir()
     (run / "evidence_lanes.json").write_text(json.dumps({
         "animal_citations": [
-            {"citation": "Mouse 2022", "paper_id": "p1"},
-            {"citation": "Rat 2023", "paper_id": "p2"},
+            {"citation": "Smith 2022", "paper_id": "p1"},
+            {"citation": "Jones 2023", "paper_id": "p2"},
         ],
         "lanes": {
-            "Mouse 2022": "animal_preclinical",
-            "Rat 2023": "animal_preclinical",
-            "Human 2023": "human_observational",
+            "Smith 2022": "animal_preclinical",
+            "Jones 2023": "animal_preclinical",
+            "Wilson 2023": "human_observational",
         },
     }))
     paper = (
         "# Paper\n\n"
-        "Mouse 2022 showed an effect that Rat 2023 replicated.\n"
+        "Smith 2022 showed an effect that Jones 2023 replicated.\n"
     )
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text != paper

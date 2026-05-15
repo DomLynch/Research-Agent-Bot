@@ -36,13 +36,35 @@ _ANIMAL_KEYWORD_RE = re.compile(
 # Phrases that, when present in the same paragraph as an animal-lane
 # citation, signal the author has explicitly framed the evidence as
 # non-human. The check is intentionally generous — any one of these
-# qualifies the paragraph as lane-labelled.
-_ANIMAL_LANE_QUALIFIERS = (
-    "animal", "preclinical", "rodent", "murine", "in vivo",
-    "model organism", "veterinary", "non-human",
-    "equine", "equid", "primate", "macaque", "horse",
-    "swine", "porcine", "canine", "ovine",
-)
+# qualifies the paragraph as lane-labelled. Slice 26 (2026-05-15):
+# centralised on `agent.evidence_lanes.lane_qualifier_phrases_for` so
+# the gate and Phase B agree on a single source of truth (was: two
+# duplicate tuples that drifted).
+def _animal_lane_qualifiers() -> tuple[str, ...]:
+    from agent.evidence_lanes import lane_qualifier_phrases_for
+    return lane_qualifier_phrases_for("animal_preclinical")
+
+
+# Slice 26: word-boundary match avoids "rat" matching "iterate" / "horse"
+# matching "horsepower". Compiled lazily because the tuple comes from
+# `lane_qualifier_phrases_for` at first call.
+_ANIMAL_LANE_RE: "re.Pattern[str] | None" = None
+
+
+def _animal_lane_re() -> "re.Pattern[str]":
+    global _ANIMAL_LANE_RE
+    if _ANIMAL_LANE_RE is None:
+        terms = sorted(_animal_lane_qualifiers(), key=len, reverse=True)
+        # Slice 26: `s?` suffix handles English plurals universally
+        # ("equid"→"equids", "rodent"→"rodents", "primate"→"primates")
+        # without inflating the qualifier list with each plural form.
+        # Safe for adjectives + multi-word terms: "in vivos" / "preclinicals"
+        # are not English words so the trailing `s?` never false-matches.
+        _ANIMAL_LANE_RE = re.compile(
+            r"\b(?:" + "|".join(re.escape(t) for t in terms) + r")s?\b",
+            re.IGNORECASE,
+        )
+    return _ANIMAL_LANE_RE
 
 
 def is_animal_paper(text: str | None) -> bool:
@@ -796,10 +818,12 @@ def _unlabeled_animal_citation_issue_messages(
     body = _journal_body(paper_md)
     issues: list[str] = []
     seen: set[str] = set()
+    qualifier_re = _animal_lane_re()
     for para in re.split(r"\n\s*\n", body):
-        para_low = para.lower()
-        has_qualifier = any(q in para_low for q in _ANIMAL_LANE_QUALIFIERS)
-        if has_qualifier:
+        # Slice 26: word-boundary match against the centralised qualifier
+        # set (includes everyday terms like "mice"/"rat" alongside the
+        # formal "rodent"/"murine"). Avoids "rat" → "iterate" false hits.
+        if qualifier_re.search(para):
             continue
         for match in _AUTHOR_YEAR_RE.finditer(para):
             token = f"{match.group(1)} {match.group(2)}"
