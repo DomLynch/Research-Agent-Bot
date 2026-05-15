@@ -330,6 +330,65 @@ def test_phase_g_refreshes_pre_submit_gate_when_surface_flips(
     assert "journal_surface_failed" in gate["result"]["failures"]
 
 
+def test_phase_b_skips_mixed_lane_paragraphs(tmp_path: Path) -> None:
+    """Slice 23 precision: Phase B must NOT prepend the lane qualifier
+    when a paragraph cites BOTH animal-lane AND non-animal-lane refs.
+    The qualifier would misrepresent the non-animal citations.
+    Universal — operates on the evidence_lanes.json lane map."""
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [
+            {"citation": "Mouse 2022", "paper_id": "p1"},
+        ],
+        "lanes": {
+            "Mouse 2022": "animal_preclinical",
+            "Human 2023": "human_observational",
+        },
+    }))
+    # Mixed-lane paragraph: cites the animal source AND a human source.
+    paper = (
+        "# Paper\n\n"
+        "Some context. Mouse 2022 reported a finding; Human 2023 confirmed it.\n"
+    )
+    new_text, log = _phase_b_lane_qualifier(paper, run)
+    # Phase B must skip — qualifier would misrepresent Human 2023.
+    assert new_text == paper
+    assert log == []
+
+
+def test_phase_b_fires_on_exclusively_animal_lane_paragraph(
+    tmp_path: Path,
+) -> None:
+    """Slice 23: Phase B SHOULD fire when every cited token in the
+    paragraph is animal-lane. Confirms precision tightening did not
+    regress the positive-trigger case."""
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [
+            {"citation": "Mouse 2022", "paper_id": "p1"},
+            {"citation": "Rat 2023", "paper_id": "p2"},
+        ],
+        "lanes": {
+            "Mouse 2022": "animal_preclinical",
+            "Rat 2023": "animal_preclinical",
+            "Human 2023": "human_observational",
+        },
+    }))
+    paper = (
+        "# Paper\n\n"
+        "Mouse 2022 showed an effect that Rat 2023 replicated.\n"
+    )
+    new_text, log = _phase_b_lane_qualifier(paper, run)
+    assert new_text != paper
+    assert "In animal/preclinical evidence," in new_text
+    assert len(log) == 1
+    assert log[0].rule == "animal_preclinical_lead_in"
+
+
 def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:
     run = tmp_path / "empty_run"
     run.mkdir()

@@ -179,9 +179,12 @@ def _phase_b_lane_qualifier(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     """Prepend an animal/preclinical lane qualifier to any body
-    paragraph that cites an animal-flagged source without already
-    using a lane qualifier. Universal — uses the evidence_lanes.json
-    sidecar; the gate's qualifier set is the same one."""
+    paragraph that cites EXCLUSIVELY animal-flagged sources without
+    already using a lane qualifier. Universal — uses the
+    evidence_lanes.json sidecar; Slice 23 precision: skip paragraphs
+    that mix animal + non-animal citations (the qualifier would
+    misrepresent the non-animal citations), per CR-run finding where
+    Phase D's supporting-corpus cluster had 1 animal + 8 human refs."""
     lanes_path = out_dir / "evidence_lanes.json"
     if not lanes_path.is_file():
         return text, []
@@ -190,6 +193,11 @@ def _phase_b_lane_qualifier(
         animal_tokens = {
             a.get("citation", "") for a in lanes.get("animal_citations", ())
             if a.get("citation")
+        }
+        # Slice 23: non-animal token set for the mixed-lane precision check.
+        non_animal_tokens = {
+            t for t, lane in (lanes.get("lanes") or {}).items()
+            if t and lane and lane != "animal_preclinical"
         }
     except (OSError, json.JSONDecodeError):
         return text, []
@@ -210,6 +218,11 @@ def _phase_b_lane_qualifier(
             continue
         cites_animal = any(tok in para for tok in animal_tokens)
         if not cites_animal:
+            continue
+        # Slice 23 precision: also reject mixed-lane paragraphs (any
+        # non-animal-lane citation present means the qualifier would
+        # misrepresent the cite set).
+        if any(tok in para for tok in non_animal_tokens):
             continue
         para_low = para.lower()
         if any(q in para_low for q in qualifiers):
