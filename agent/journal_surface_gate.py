@@ -80,7 +80,13 @@ _META_PATTERNS = (
     "tournament selector", "trust-spine", "grok", "a2a",
 )
 _PUBLIC_ARTIFACT_PATTERNS = (
-    "<h3>", "</h3>", "### h3.", "### h3:", "rapamycin evidence should be interpreted",
+    # Note 2026-05-15: a topic-specific leak check ("rapamycin evidence
+    # should be interpreted") was removed here — it was dead for every
+    # non-rapamycin run and violated the universal/no-hardcoding rule.
+    # The framework's "evidence should be interpreted along a gradient"
+    # prose is intentional and universal; substring-flagging it would
+    # mis-fire on every run.
+    "<h3>", "</h3>", "### h3.", "### h3:",
     "source-context sentence cannot support", "the surviving section therefore",
     "risk-of-bias roll-up", "[d1_inferential_bridge", "accepted receipt graph",
     "manifest, tension matrix, and citation registry", "evidence-context framing",
