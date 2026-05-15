@@ -386,31 +386,62 @@ def test_slice26_word_boundary_avoids_false_positive_substring_matches() -> None
     assert "Jones 2024" in msgs[0]
 
 
-def test_phase_b_skips_mixed_lane_paragraphs(tmp_path: Path) -> None:
-    """Slice 23 precision: Phase B must NOT prepend the lane qualifier
-    when a paragraph cites BOTH animal-lane AND non-animal-lane refs.
-    The qualifier would misrepresent the non-animal citations.
-    Universal — operates on the evidence_lanes.json lane map."""
+def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
+    tmp_path: Path,
+) -> None:
+    """Slice 27 (reverses Slice 23): Phase B now patches mixed-lane
+    paragraphs too. The qualifier "In animal/preclinical evidence,"
+    is a partial-truth statement about the citation set — it correctly
+    flags the animal portion without claiming the non-animal cites are
+    also animal. Leaving mixed-lane paragraphs un-qualified produces
+    a worse outcome (the gate flags every unlabelled animal cite as a
+    surface failure). Universal."""
     from agent.journal_finalizer import _phase_b_lane_qualifier
     run = tmp_path / "run"
     run.mkdir()
     (run / "evidence_lanes.json").write_text(json.dumps({
         "animal_citations": [
-            {"citation": "Mouse 2022", "paper_id": "p1"},
+            {"citation": "Smith 2022", "paper_id": "p1"},
         ],
         "lanes": {
-            "Mouse 2022": "animal_preclinical",
-            "Human 2023": "human_observational",
+            "Smith 2022": "animal_preclinical",
+            "Wilson 2023": "human_observational",
         },
     }))
     # Mixed-lane paragraph: cites the animal source AND a human source.
+    # Slice 23 made Phase B skip this; Slice 27 makes Phase B patch it.
     paper = (
         "# Paper\n\n"
-        "Some context. Mouse 2022 reported a finding; Human 2023 confirmed it.\n"
+        "Some context. Smith 2022 reported a finding; Wilson 2023 confirmed it.\n"
     )
     new_text, log = _phase_b_lane_qualifier(paper, run)
-    # Phase B must skip — qualifier would misrepresent Human 2023.
-    assert new_text == paper
+    assert new_text != paper
+    assert "In animal/preclinical evidence," in new_text
+    assert len(log) == 1
+    assert log[0].rule == "animal_preclinical_lead_in"
+
+
+def test_phase_b_still_skips_paragraphs_with_existing_qualifier(
+    tmp_path: Path,
+) -> None:
+    """Slice 27 boundary: even with the aggressive-patch reversion of
+    Slice 23, Phase B must still respect an existing qualifier (avoids
+    double-prepending). Universal."""
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [
+            {"citation": "Smith 2022", "paper_id": "p1"},
+        ],
+        "lanes": {"Smith 2022": "animal_preclinical"},
+    }))
+    paper = (
+        "# Paper\n\n"
+        "In animal/preclinical evidence, Smith 2022 reported a finding.\n"
+    )
+    new_text, log = _phase_b_lane_qualifier(paper, run)
+    assert new_text == paper  # already qualified — no change
     assert log == []
 
 
