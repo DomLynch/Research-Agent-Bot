@@ -160,16 +160,23 @@ def _make_run(tmp_path: Path, *, surface_passed: bool,
 
 
 def test_phase_g_refreshes_stale_verdict_surface_state(tmp_path: Path) -> None:
+    """Slice 19 update: Phase G now re-evaluates the surface gate against
+    the on-disk paper FIRST, then reconciles verdict to match. The stub
+    paper `# Stub\n` triggers real surface issues; verdict reconciles to
+    the freshly-evaluated state, not the pre-seeded `passed=True`."""
     run = _make_run(
         tmp_path, surface_passed=True,
         accountability_model="researka_agent_certified",
         old_contract_name="accountability",
     )
     log = _phase_g_refresh_sidecars(run)
+    surface = json.loads((run / "full_paper.journal_surface.json").read_text())
     verdict = json.loads((run / "full_paper.final_verdict.json").read_text())
-    assert verdict["journal_surface_pass"] is True
-    assert verdict["journal_surface_issues"] == []
+    # After re-eval, verdict must mirror the freshly-evaluated surface.
+    assert verdict["journal_surface_pass"] is bool(surface["passed"])
+    assert len(verdict["journal_surface_issues"]) == len(surface["issues"])
     rules = [e.rule for e in log]
+    assert "reevaluate_journal_surface_post_finalizer" in rules
     assert "reconcile_final_verdict_surface_state" in rules
 
 
@@ -213,18 +220,70 @@ def test_phase_g_rebuilds_readiness_contract_for_legacy(
 
 
 def test_phase_g_noop_when_already_consistent(tmp_path: Path) -> None:
+    """Slice 19 update: Phase G's no-op property is now defined as
+    'second call after stabilisation produces no log entries' — the
+    first call re-evaluates the surface gate and reconciles verdict,
+    leaving the run dir in a fixed-point state. A second invocation
+    against that fixed-point state must add no log entries."""
     run = _make_run(
         tmp_path, surface_passed=True,
         accountability_model="researka_agent_certified",
         old_contract_name="accountability",
     )
-    # Pre-align the verdict so refresh has nothing to do
-    verdict = json.loads((run / "full_paper.final_verdict.json").read_text())
-    verdict["journal_surface_pass"] = True
-    verdict["journal_surface_issues"] = []
-    (run / "full_paper.final_verdict.json").write_text(json.dumps(verdict))
+    _phase_g_refresh_sidecars(run)  # first call: stabilise
+    log = _phase_g_refresh_sidecars(run)  # second call: must be quiet
+    assert log == []
+
+
+def test_phase_g_reevaluates_surface_gate_on_post_finalizer_paper(
+    tmp_path: Path,
+) -> None:
+    """Slice 19: pipeline writes journal_surface.json against pre-finalizer
+    paper; Phase A then swaps in PRISMA-ScR Methods. Phase G must re-run
+    the surface gate against the on-disk paper so the sidecar reflects
+    the actual final paper state.
+
+    Concrete scenario: pre-seed the surface sidecar as a stale `passed=True
+    with 0 issues` from a hypothetical pre-finalizer evaluation. The on-
+    disk paper is a stub that the gate WILL find issues with. Phase G's
+    re-eval must rewrite the sidecar with the real, non-zero issue count,
+    and emit a `reevaluate_journal_surface_post_finalizer` log entry."""
+    run = _make_run(
+        tmp_path, surface_passed=True,
+        accountability_model="researka_agent_certified",
+        old_contract_name="accountability",
+    )
+    pre_eval = json.loads((run / "full_paper.journal_surface.json").read_text())
+    assert pre_eval["passed"] is True and pre_eval["issues"] == []
     log = _phase_g_refresh_sidecars(run)
-    assert log == []  # already consistent — Phase G is a quiet no-op
+    post_eval = json.loads((run / "full_paper.journal_surface.json").read_text())
+    # Re-eval against `# Stub\n` produces real issues — sidecar updated.
+    assert len(post_eval["issues"]) > 0
+    rules = [e.rule for e in log]
+    assert "reevaluate_journal_surface_post_finalizer" in rules
+
+
+def test_phase_g_reeval_handles_missing_inputs_gracefully(
+    tmp_path: Path,
+) -> None:
+    """Re-eval must fail-soft when its inputs (evidence_lanes.json,
+    citation_registry.json) are missing — the gate should still run with
+    empty animal_citations/citation_outcome_map fallbacks."""
+    run = tmp_path / "minimal"
+    run.mkdir()
+    (run / "full_paper.md").write_text("# Minimal\n## Methods\nstub\n")
+    (run / "manifest.json").write_text(json.dumps({
+        "review_type": "prisma_scr_scoping_synthesis",
+        "accountability_model": "researka_agent_certified",
+    }))
+    log = _phase_g_refresh_sidecars(run)
+    # Surface sidecar must now exist (re-eval wrote it).
+    assert (run / "full_paper.journal_surface.json").is_file()
+    surface = json.loads((run / "full_paper.journal_surface.json").read_text())
+    assert "issues" in surface
+    # First-call delta is `new_issues - 0` so a log entry is expected.
+    rules = [e.rule for e in log]
+    assert "reevaluate_journal_surface_post_finalizer" in rules
 
 
 def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:

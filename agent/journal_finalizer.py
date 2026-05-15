@@ -533,12 +533,51 @@ def _load_sidecar(p: Path) -> Any:
         return None
 
 
+def _reevaluate_journal_surface(out_dir: Path) -> int:
+    """Re-run journal_surface_gate against the post-finalizer paper +
+    rewrite the sidecar. Returns new_issues - old_issues; 0 if skipped.
+    Universal — closes the Stage-5-runs-before-Phase-A timing quirk."""
+    paper_path = out_dir / "full_paper.md"
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    if not paper_path.is_file() or not isinstance(manifest, dict):
+        return 0
+    lanes = _load_sidecar(out_dir / "evidence_lanes.json") or {}
+    registry = _load_sidecar(out_dir / "citation_registry.json") or {}
+    animal = [str(a.get("citation", "")) for a in (lanes.get("animal_citations") or [])
+              if isinstance(a, dict) and a.get("citation")]
+    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ())
+          if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
+    cmap = {e["body_citation"]: oc[rid] for rid, e in (registry.items() if isinstance(registry, dict) else ())
+            if isinstance(e, dict) and e.get("body_citation") and rid in oc}
+    try:
+        from agent.journal_surface_gate import evaluate_journal_surface
+        import dataclasses as _dc
+        report = evaluate_journal_surface(
+            paper_path.read_text(), animal_citations=animal,
+            citation_outcome_map=cmap,
+            declared_review_type=manifest.get("review_type"))
+    except (ImportError, ValueError):
+        return 0
+    old = _load_sidecar(out_dir / "full_paper.journal_surface.json") or {}
+    old_n = len(old.get("issues") or []) if isinstance(old, dict) else 0
+    (out_dir / "full_paper.journal_surface.json").write_text(json.dumps({
+        "passed": report.passed,
+        "issues": [_dc.asdict(i) for i in report.issues]}, indent=2))
+    return len(report.issues) - old_n
+
+
 def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
-    """Reconcile sidecars that drift when phases A-F fix prose after
-    gates were already written (hand-patch retrofit). Two no-ops when
-    consistent: final_verdict surface state, readiness item 13.
-    Universal — accountability_model drives item 13 shape."""
+    """Reconcile sidecars that drift after phases A-F mutate prose. Three
+    no-ops when already consistent: re-eval journal_surface_gate vs post-
+    finalizer paper; reconcile final_verdict; rebuild readiness item 13
+    from manifest accountability_model. Universal."""
     log: list[FinalizerLogEntry] = []
+    delta = _reevaluate_journal_surface(out_dir)
+    if delta != 0:
+        log.append(FinalizerLogEntry(
+            phase="G_refresh_sidecars",
+            rule="reevaluate_journal_surface_post_finalizer", n_changes=1,
+            detail=f"surface issues delta vs pre-finalizer gate: {delta:+d}"))
     verdict = _load_sidecar(out_dir / "full_paper.final_verdict.json")
     surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
     if isinstance(verdict, dict) and isinstance(surface, dict):
