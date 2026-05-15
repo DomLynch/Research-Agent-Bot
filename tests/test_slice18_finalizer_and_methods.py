@@ -480,6 +480,46 @@ def test_phase_b_fires_on_exclusively_animal_lane_paragraph(
     assert log[0].rule == "animal_preclinical_lead_in"
 
 
+def test_phase_h_substitutes_snake_case_slug_with_display_form(
+    tmp_path: Path,
+) -> None:
+    """Slice 28: Phase H substitutes snake_case slug with display form."""
+    from agent.journal_finalizer import _phase_h_topic_slug_normalise
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"topic": "vitamin_d"}))
+    paper = "# Body\n\nvitamin_d trials report mixed outcomes. The vitamin_d field is dense.\n"
+    new_text, log = _phase_h_topic_slug_normalise(paper, run)
+    assert "vitamin_d" not in new_text
+    assert "vitamin D" in new_text
+    assert len(log) == 1 and log[0].n_changes == 2
+
+
+def test_phase_h_preserves_backtick_spans(tmp_path: Path) -> None:
+    """Slice 28 boundary: file refs inside `` survive."""
+    from agent.journal_finalizer import _phase_h_topic_slug_normalise
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"topic": "glp1"}))
+    paper = "# Body\n\nThe glp1 corpus loaded from `topic_packs/glp1.toml`.\n"
+    new_text, log = _phase_h_topic_slug_normalise(paper, run)
+    assert "GLP-1 corpus" in new_text
+    assert "`topic_packs/glp1.toml`" in new_text
+
+
+def test_phase_h_skips_plain_english_slugs(tmp_path: Path) -> None:
+    """Slice 28 precision: senolytics/rapamycin slugs skip — substituting
+    would damage valid English prose. Gated by _PUBLIC_SLUG_RE.fullmatch."""
+    from agent.journal_finalizer import _phase_h_topic_slug_normalise
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"topic": "senolytics"}))
+    paper = "# Body\n\nTwo senolytics trials reported. The senolytics field remains preclinical-heavy.\n"
+    new_text, log = _phase_h_topic_slug_normalise(paper, run)
+    assert new_text == paper
+    assert log == []
+
+
 def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:
     run = tmp_path / "empty_run"
     run.mkdir()

@@ -105,6 +105,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_f_reconcile_results_table(text, out_dir)
     entries.extend(log)
+    text, log = _phase_h_topic_slug_normalise(text, out_dir)
+    entries.extend(log)
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
     # Phase G reads it. Phase G's surface re-evaluation reads from disk
     # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
@@ -257,6 +259,51 @@ def _phase_c_terminology(text: str) -> tuple[str, list[FinalizerLogEntry]]:
         n_changes=1,
         detail="applied _PIPELINE_JARGON_PUBLIC substitution table",
     )]
+
+
+# --- Phase H: Topic-slug → display-form normalisation -----------------
+
+
+def _phase_h_topic_slug_normalise(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    """Substitute the topic slug (``vitamin_d`` / ``glp1``) with the
+    pack's canonical display form (``vitamin D`` / ``GLP-1``).
+    Slice 28: precision-gated by `_PUBLIC_SLUG_RE.fullmatch` so plain
+    English-word slugs (senolytics/rapamycin) are skipped — substituting
+    them would damage prose. Backtick spans (file refs) are preserved."""
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    slug = (str(manifest.get("topic") or "").strip()
+            if isinstance(manifest, dict) else "")
+    from agent.journal_surface_gate import _PUBLIC_SLUG_RE
+    if not slug or not _PUBLIC_SLUG_RE.fullmatch(slug):
+        return text, []
+    try:
+        from agent.topic_pack import load_topic_pack
+        pack = load_topic_pack(
+            Path(__file__).resolve().parent.parent / "topic_packs" / f"{slug}.toml",
+        )
+        display = pack.aliases_display[0] if pack.aliases_display else ""
+    except (OSError, ValueError, ImportError, IndexError):
+        return text, []
+    if not display or display == slug:
+        return text, []
+    pattern = re.compile(rf"\b{re.escape(slug)}\b", re.IGNORECASE)
+    parts, last, n_subs = [], 0, 0
+    for m in list(re.finditer(r"`[^`]*`", text)) + [None]:
+        end = m.start() if m else len(text)
+        chunk, n = pattern.subn(display, text[last:end])
+        parts.append(chunk)
+        n_subs += n
+        if m:
+            parts.append(m.group(0))
+            last = m.end()
+    if not n_subs:
+        return text, []
+    return "".join(parts), [FinalizerLogEntry(
+        phase="H_topic_slug_normalise",
+        rule="slug_to_display_form", n_changes=n_subs,
+        detail=f"substituted {slug!r}→{display!r} in {n_subs} occurrence(s)")]
 
 
 # --- Phase D: Reference closure ---------------------------------------
