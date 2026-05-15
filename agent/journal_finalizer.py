@@ -107,6 +107,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_h_topic_slug_normalise(text, out_dir)
     entries.extend(log)
+    text, log = _phase_i_split_concatenated_headings(text)
+    entries.extend(log)
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
     # Phase G reads it. Phase G's surface re-evaluation reads from disk
     # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
@@ -304,6 +306,34 @@ def _phase_h_topic_slug_normalise(
         phase="H_topic_slug_normalise",
         rule="slug_to_display_form", n_changes=n_subs,
         detail=f"substituted {slug!r}→{display!r} in {n_subs} occurrence(s)")]
+
+
+# --- Phase I: Split concatenated heading lines -------------------------
+
+
+# Slice 30 (2026-05-15): GLP-1 run produced
+# `### Longevity Outcomes## Cross-Domain Synthesis` on one line —
+# writer/render glue defect that breaks Markdown parsing for any
+# reader. The pattern: any H2-H6 heading text immediately followed by
+# another `##`+ heading marker with no intervening newline. Insert
+# `\n\n` between them. Universal — no per-topic logic.
+_CONCAT_HEADING_RE = re.compile(
+    r"^(#{2,6}\s+[^#\n]*?)(#{2,6}\s+)", flags=re.MULTILINE,
+)
+
+
+def _phase_i_split_concatenated_headings(
+    text: str,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    """Insert `\\n\\n` between concatenated heading markers on the same
+    line. Universal Markdown-structural fix."""
+    new_text, n = _CONCAT_HEADING_RE.subn(r"\1\n\n\2", text)
+    if n == 0:
+        return text, []
+    return new_text, [FinalizerLogEntry(
+        phase="I_split_concatenated_headings",
+        rule="insert_blank_line_between_headings", n_changes=n,
+        detail=f"split {n} concatenated heading line(s)")]
 
 
 # --- Phase D: Reference closure ---------------------------------------

@@ -483,6 +483,39 @@ def test_phase_b_fires_on_exclusively_animal_lane_paragraph(
     assert log[0].rule == "animal_preclinical_lead_in"
 
 
+def test_phase_i_splits_concatenated_h3_h2_heading_line() -> None:
+    """Slice 30: Phase I splits a line like `### Sub Title## Next H2`
+    into two heading lines separated by a blank. Universal Markdown
+    structural fix — surfaced by the GLP-1 run where the writer/render
+    glued `### Longevity Outcomes## Cross-Domain Synthesis` on one line."""
+    from agent.journal_finalizer import _phase_i_split_concatenated_headings
+    text = (
+        "# Paper\n\n"
+        "Some body.\n"
+        "### Longevity Outcomes## Cross-Domain Synthesis\n\n"
+        "Next paragraph.\n"
+    )
+    new_text, log = _phase_i_split_concatenated_headings(text)
+    assert "### Longevity Outcomes\n\n## Cross-Domain Synthesis" in new_text
+    assert log and log[0].n_changes == 1
+    assert log[0].rule == "insert_blank_line_between_headings"
+
+
+def test_phase_i_noop_when_headings_already_separated() -> None:
+    """Slice 30: clean Markdown with blank-line separators must pass
+    through untouched (Phase I is a structural repair, not a reformat)."""
+    from agent.journal_finalizer import _phase_i_split_concatenated_headings
+    text = (
+        "# Paper\n\n"
+        "### Sub A\n\n"
+        "Body.\n\n"
+        "## Next Section\n\n"
+    )
+    new_text, log = _phase_i_split_concatenated_headings(text)
+    assert new_text == text
+    assert log == []
+
+
 def test_phase_h_substitutes_snake_case_slug_with_display_form(
     tmp_path: Path,
 ) -> None:
