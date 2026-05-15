@@ -212,18 +212,19 @@ def test_known_role_overrides_is_runtime_immutable() -> None:
     keeps the table sacred even if a misbehaving caller tries to mutate it.
     """
     pack = load_topic_pack(METFORMIN_PATH)
-    # All three mutation paths must raise.
+    new_record = OverrideRecord(
+        role="published_results", design="rct", tier="A1",
+    )
+    # All three mutation paths must raise. The `[index]` ignore tells
+    # mypy we are intentionally probing the Mapping protocol's
+    # immutability — the runtime TypeError IS the assertion.
     with pytest.raises(TypeError):
-        pack.known_role_overrides["NCT99999999"] = OverrideRecord(
-            role="published_results", design="rct", tier="A1"
-        )  # type: ignore[index]
+        pack.known_role_overrides["NCT99999999"] = new_record  # type: ignore[index]
     with pytest.raises(TypeError):
         del pack.known_role_overrides["NCT04264897"]  # type: ignore[attr-defined]
     # Attempting to overwrite an existing override is also a write.
     with pytest.raises(TypeError):
-        pack.known_role_overrides["NCT04264897"] = OverrideRecord(
-            role="published_results", design="rct", tier="A1"
-        )  # type: ignore[index]
+        pack.known_role_overrides["NCT04264897"] = new_record  # type: ignore[index]
 
 
 def test_known_role_overrides_still_iterable_and_readable() -> None:
