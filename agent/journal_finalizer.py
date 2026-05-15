@@ -105,16 +105,18 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_f_reconcile_results_table(text, out_dir)
     entries.extend(log)
-    # Phase G runs after prose is stable. It does NOT change the paper —
-    # it refreshes sidecars whose state drifted (e.g. a hand-patched
-    # run retrofit where prose now passes but the verdict json still
-    # shows the pre-patch failing surface state). Universal.
-    g_log = _phase_g_refresh_sidecars(out_dir)
-    entries.extend(g_log)
-
+    # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
+    # Phase G reads it. Phase G's surface re-evaluation reads from disk
+    # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
+    # the disk write must happen first or Phase G sees stale text.
     changed = text != original
     if changed:
         paper_path.write_text(text)
+    # Phase G refreshes sidecars whose state drifted (verdict + readiness
+    # contract) and re-evaluates the surface gate against the now-on-disk
+    # post-finalizer paper. Universal.
+    g_log = _phase_g_refresh_sidecars(out_dir)
+    entries.extend(g_log)
     report = FinalizerReport(
         paper_changed=changed,
         final_word_count=len(text.split()),
@@ -566,11 +568,40 @@ def _reevaluate_journal_surface(out_dir: Path) -> int:
     return len(report.issues) - old_n
 
 
+def _refresh_pre_submit_gate(out_dir: Path) -> bool:
+    """Recompute pre_submit_gate.result with the fresh surface-pass state.
+    Returns True iff the gate was rewritten (state actually changed).
+    Universal — operates on the existing inputs dict + the just-refreshed
+    journal_surface sidecar; no per-topic logic."""
+    gate = _load_sidecar(out_dir / "pre_submit_gate.json")
+    surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
+    if not isinstance(gate, dict) or not isinstance(surface, dict):
+        return False
+    inputs = gate.get("inputs")
+    if not isinstance(inputs, dict):
+        return False
+    new_surface_pass = bool(surface.get("passed"))
+    if bool(inputs.get("journal_surface_passed")) == new_surface_pass:
+        return False
+    try:
+        from agent.final_gate import GateInputs, evaluate_final_gate
+        import dataclasses as _dc
+        fresh_inputs = {**inputs, "journal_surface_passed": new_surface_pass}
+        result = evaluate_final_gate(GateInputs(**fresh_inputs))
+    except (ImportError, TypeError, ValueError):
+        return False
+    gate["inputs"] = fresh_inputs
+    gate["result"] = _dc.asdict(result)
+    (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
+    return True
+
+
 def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
-    """Reconcile sidecars that drift after phases A-F mutate prose. Three
+    """Reconcile sidecars that drift after phases A-F mutate prose. Four
     no-ops when already consistent: re-eval journal_surface_gate vs post-
-    finalizer paper; reconcile final_verdict; rebuild readiness item 13
-    from manifest accountability_model. Universal."""
+    finalizer paper; reconcile final_verdict; refresh pre_submit_gate vs
+    fresh surface state; rebuild readiness item 13 from manifest
+    accountability_model. Universal."""
     log: list[FinalizerLogEntry] = []
     delta = _reevaluate_journal_surface(out_dir)
     if delta != 0:
@@ -578,6 +609,11 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
             phase="G_refresh_sidecars",
             rule="reevaluate_journal_surface_post_finalizer", n_changes=1,
             detail=f"surface issues delta vs pre-finalizer gate: {delta:+d}"))
+    if _refresh_pre_submit_gate(out_dir):
+        log.append(FinalizerLogEntry(
+            phase="G_refresh_sidecars",
+            rule="refresh_pre_submit_gate_with_fresh_surface", n_changes=1,
+            detail="pre_submit_gate.inputs.journal_surface_passed + result recomputed"))
     verdict = _load_sidecar(out_dir / "full_paper.final_verdict.json")
     surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
     if isinstance(verdict, dict) and isinstance(surface, dict):

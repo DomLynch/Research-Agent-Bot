@@ -286,6 +286,50 @@ def test_phase_g_reeval_handles_missing_inputs_gracefully(
     assert "reevaluate_journal_surface_post_finalizer" in rules
 
 
+def test_phase_g_refreshes_pre_submit_gate_when_surface_flips(
+    tmp_path: Path,
+) -> None:
+    """Slice 20: when Phase G's surface re-eval flips journal_surface_pass,
+    the cached pre_submit_gate.result must be recomputed so the L3/L4
+    ladder responds. Universal — operates on the gate inputs dict + the
+    freshly-rewritten surface sidecar.
+
+    Direction tested: pre_submit was passing with stale `surface_passed=
+    True`; the re-eval against a thin stub paper produces real surface
+    issues, which must propagate to flip pre_submit's result to fail."""
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "full_paper.md").write_text("# Stub\n## Methods\nminimal\n")
+    (run / "manifest.json").write_text(json.dumps({
+        "review_type": "prisma_scr_scoping_synthesis",
+        "accountability_model": "researka_agent_certified",
+    }))
+    # Pre-seed pre_submit_gate as PASSING with stale `surface_passed=True`.
+    (run / "pre_submit_gate.json").write_text(json.dumps({
+        "inputs": {
+            "numeric_coverage": 1.0,
+            "audit_gates_passed": True,
+            "journal_surface_passed": True,  # stale — re-eval will flip to False
+            "citation_registry_complete": True,
+            "rob_coverage": 1.0, "grade_coverage": 1.0,
+            "n_tensions": 10, "n_receipts": 30,
+            "unresolved_reviewer_p1_count": 0,
+            "template_language_blocking": False,
+        },
+        "result": {"passed": True, "failures": [],
+                   "warnings": [], "summary": "PASS — stale"},
+    }))
+    log = _phase_g_refresh_sidecars(run)
+    rules = [e.rule for e in log]
+    assert "refresh_pre_submit_gate_with_fresh_surface" in rules
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    # Re-eval against stub paper produces surface failures → input flips
+    # → pre_submit result must reflect the flip.
+    assert gate["inputs"]["journal_surface_passed"] is False
+    assert gate["result"]["passed"] is False
+    assert "journal_surface_failed" in gate["result"]["failures"]
+
+
 def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:
     run = tmp_path / "empty_run"
     run.mkdir()
