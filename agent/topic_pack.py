@@ -188,6 +188,13 @@ class TopicPack:
     # `prisma_scr_scoping_synthesis` (the most honest fit for
     # broad-corpus synthesis runs).
     review_type: str = "prisma_scr_scoping_synthesis"
+    # Slice 21 (2026-05-15): declared submission target journal. Drives
+    # `target_journal_pack.json` sidecar at pipeline exit so final_status
+    # can resolve the target_journal dimension to pass. Universal — any
+    # topic pack may declare a target. None = no target declared, the
+    # pipeline writes a universal placeholder so final_status produces
+    # an honest "target_journal not declared" record rather than missing.
+    target_journal: str | None = None
     # Optional D1 bridge config. D1 never counts as receipt evidence.
     inference: InferenceSpec = InferenceSpec()
     osf: Mapping[str, str] | None = None
@@ -448,6 +455,11 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         inference=inference,
         osf=osf,
         review_type=_parse_review_type_field(data.get("review_type")),
+        target_journal=(
+            str(data["target_journal"]).strip() or None
+            if isinstance(data.get("target_journal"), str)
+            else None
+        ),
     )
 
 

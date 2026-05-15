@@ -336,3 +336,29 @@ def test_inference_defaults_on_for_standard_topic_packs() -> None:
 def test_clinical_brief_topic_packs_disable_inference() -> None:
     for path in sorted(METFORMIN_PATH.parent.glob("*_clinical_brief.toml")):
         assert load_topic_pack(path).inference.allow is False, path.name
+
+
+# --- Slice 21 (target_journal) --------------------------------------------
+
+
+def test_target_journal_defaults_to_none_when_not_declared() -> None:
+    """Existing topic packs without `target_journal` must load with the
+    field defaulting to None — universality preserved across the fleet."""
+    pack = load_topic_pack(METFORMIN_PATH)
+    assert pack.target_journal is None
+
+
+def test_target_journal_loads_when_declared(tmp_path: Path) -> None:
+    """Topic pack declaring `target_journal = "X"` must surface that
+    value. Universal — drives Slice 21's `target_journal_pack.json`
+    sidecar at pipeline exit. Frozen-dataclass means immutable."""
+    base = METFORMIN_PATH.read_text()
+    target_pack = tmp_path / "tj_demo.toml"
+    target_pack.write_text(
+        'target_journal = "Open-access general scholarly journal (test)"\n'
+        + base,
+    )
+    pack = load_topic_pack(target_pack)
+    assert pack.target_journal == (
+        "Open-access general scholarly journal (test)"
+    )

@@ -2258,6 +2258,9 @@ async def _run(
     dry_run: bool = False,
 ) -> int:
     global _ACTIVE_MANIFEST
+    # Slice 21: capture wall-clock start so we can write
+    # benchmark_runtime.json with a real duration at pipeline exit.
+    _run_start_ts = dt.datetime.now(dt.timezone.utc)
     settings = load_settings()
     if not settings.bot_enabled:
         print("BOT_ENABLED=false; aborting.", file=sys.stderr)
@@ -2708,6 +2711,7 @@ async def _run(
         paper_path=paper_path, manifest=manifest, out_dir=out_dir,
         citation_registry=citation_registry, sections=sections,
         methods_md=methods_md, quality_bundle=quality_artifact["bundle"],
+        run_start_ts=_run_start_ts,
     )
     word_count = len(final_paper_md.split())
     # Bug-fix 2026-05-13: section_words was the writer's first-pass
@@ -2763,6 +2767,7 @@ async def _run_post_paper_pipeline(
     sections: tuple[SynthesisSection, ...] = (),
     methods_md: str = "",
     quality_bundle: Any | None = None,
+    run_start_ts: dt.datetime | None = None,
 ) -> str:
     """Layer 1 deterministic audit + auto-fix → final-layer LLM review
     (Gemini Exacto → Mistral fallback) → auto-apply patches → final audit.
@@ -3376,6 +3381,58 @@ async def _run_post_paper_pipeline(
             file=sys.stderr,
         )
         raise
+
+    # Stage 5cc (Slice 21 — 2026-05-15): write the two promotion sidecars
+    # that final_status's 6-dim ladder reads. `benchmark_runtime.json`
+    # records that the pipeline reached this point without raising
+    # (return_code=0) + wall-clock duration. `target_journal_pack.json`
+    # records the submission target declared in the topic pack, or a
+    # universal placeholder when none is declared (final_status then
+    # reports `target_journal not declared in topic pack` honestly
+    # rather than `target_journal_pack.json missing`). Universal —
+    # no topic-specific defaults. Fail-soft per Stage 5d pattern.
+    try:
+        _now = dt.datetime.now(dt.timezone.utc)
+        _start = run_start_ts or _now
+        _runtime_payload = {
+            "return_code": 0,
+            "started_at": _start.isoformat(timespec="seconds"),
+            "completed_at": _now.isoformat(timespec="seconds"),
+            "duration_s": round((_now - _start).total_seconds(), 3),
+            "topic": str(_ACTIVE_TOPIC),
+        }
+        (out_dir / "benchmark_runtime.json").write_text(
+            json.dumps(_runtime_payload, indent=2),
+        )
+        _declared_target = (
+            str(_TOPIC_PACK.target_journal).strip()
+            if (
+                _TOPIC_PACK is not None
+                and getattr(_TOPIC_PACK, "target_journal", None)
+            )
+            else ""
+        )
+        _target_payload = {
+            "journal": _declared_target or (
+                "Open-access general scholarly journal "
+                "(topic-pack target_journal not declared)"
+            ),
+            "declared_in_topic_pack": bool(_declared_target),
+        }
+        (out_dir / "target_journal_pack.json").write_text(
+            json.dumps(_target_payload, indent=2),
+        )
+        print(
+            f"[pipeline] Stage 5cc — promotion sidecars written "
+            f"(runtime + target_journal "
+            f"declared={_target_payload['declared_in_topic_pack']})",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — fail-soft
+        print(
+            f"[pipeline] Stage 5cc — promotion sidecars skipped: {_e}",
+            file=sys.stderr,
+        )
 
     # Stage 5d (Wave 47 — status convergence): consolidate every sidecar
     # into ONE source of truth (`final_status.json`). Reads runtime /
