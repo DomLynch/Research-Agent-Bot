@@ -105,6 +105,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_f_reconcile_results_table(text, out_dir)
     entries.extend(log)
+    text, log = _phase_h_topic_slug_normalise(text, out_dir)
+    entries.extend(log)
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
     # Phase G reads it. Phase G's surface re-evaluation reads from disk
     # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
@@ -256,6 +258,70 @@ def _phase_c_terminology(text: str) -> tuple[str, list[FinalizerLogEntry]]:
         rule="pipeline_jargon_to_academic",
         n_changes=1,
         detail="applied _PIPELINE_JARGON_PUBLIC substitution table",
+    )]
+
+
+# --- Phase H: Topic-slug → display-form normalisation -----------------
+
+
+def _phase_h_topic_slug_normalise(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    """Replace bare topic-slug occurrences (e.g. ``vitamin_d``, ``glp1``)
+    in body prose with the topic pack's canonical display form
+    (``vitamin D``, ``GLP-1``). Universal — reads ``manifest.topic`` to
+    identify the slug and ``topic_packs/<topic>.toml.aliases_display[0]``
+    to find the display form. Skips backtick-fenced code spans (file
+    references like ``topic_packs/glp1.toml`` must stay as-is).
+
+    Precision: only fires when the slug is one the journal-surface gate
+    would actually flag as a `topic_slug_artifact` — i.e. snake_case
+    (contains `_`) or appears in the gate's special-case set. Plain
+    English-word slugs (`senolytics`, `rapamycin`, `aspirin`, `statins`,
+    `taurine`) are skipped — the writer's natural prose is correct."""
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    if not isinstance(manifest, dict):
+        return text, []
+    slug = str(manifest.get("topic") or "").strip()
+    if not slug:
+        return text, []
+    # Slice 28 precision: only normalise when the gate would actually
+    # flag this slug. Avoids damaging plain-English-word topics like
+    # "senolytics" (valid English plural; gate doesn't flag it).
+    from agent.journal_surface_gate import _PUBLIC_SLUG_RE
+    if not _PUBLIC_SLUG_RE.fullmatch(slug):
+        return text, []
+    try:
+        from agent.topic_pack import load_topic_pack
+        repo = Path(__file__).resolve().parent.parent
+        pack = load_topic_pack(repo / "topic_packs" / f"{slug}.toml")
+        display = pack.aliases_display[0] if pack.aliases_display else ""
+    except (OSError, ValueError, ImportError, IndexError):
+        return text, []
+    if not display or display == slug:
+        return text, []
+    # Skip backtick spans so file refs (`topic_packs/glp1.toml`) survive.
+    spans = list(re.finditer(r"`[^`]*`", text))
+    pattern = re.compile(rf"\b{re.escape(slug)}\b", re.IGNORECASE)
+    out: list[str] = []
+    last = 0
+    n_subs = 0
+    for s in spans + [None]:  # sentinel
+        end = s.start() if s is not None else len(text)
+        chunk = text[last:end]
+        new_chunk, n = pattern.subn(display, chunk)
+        n_subs += n
+        out.append(new_chunk)
+        if s is not None:
+            out.append(text[s.start():s.end()])
+            last = s.end()
+    if n_subs == 0:
+        return text, []
+    return "".join(out), [FinalizerLogEntry(
+        phase="H_topic_slug_normalise",
+        rule="slug_to_display_form",
+        n_changes=n_subs,
+        detail=f"substituted {slug!r}→{display!r} in {n_subs} occurrence(s)",
     )]
 
 
