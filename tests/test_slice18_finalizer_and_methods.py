@@ -195,7 +195,10 @@ def test_phase_g_rebuilds_readiness_contract_for_researka(
     assert item_13["name"] == "accountability"
     assert item_13["status"] == "pass"  # spine artifacts present
     rules = [e.rule for e in log]
-    assert "reconcile_readiness_contract_item_13" in rules
+    # Slice 29 broadened the rule from item-13-only to a full multi-item
+    # refresh (items 1/7/9/12/13). The single rule name now covers the
+    # whole reconciliation pass.
+    assert "reconcile_readiness_contract_items" in rules
 
 
 def test_phase_g_rebuilds_readiness_contract_for_legacy(

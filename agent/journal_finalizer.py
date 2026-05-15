@@ -692,36 +692,75 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
                 rule="reconcile_final_verdict_surface_state", n_changes=1,
                 detail=f"journal_surface_pass {cur[0]}→{passed}; "
                        f"issues {len(cur[1])}→{len(issues)}"))
-    gate = _load_sidecar(out_dir / "pre_submit_gate.json")
-    manifest = _load_sidecar(out_dir / "manifest.json")
-    contract = gate.get("journal_readiness_contract") if isinstance(gate, dict) else None
-    if isinstance(contract, list) and isinstance(manifest, dict):
-        from agent.accountability import accountability_pass, resolve_model
-        model = resolve_model(manifest.get("accountability_model"))
-        legacy = model == "legacy_journal_submission"
-        want = "human_signoff" if legacy else "accountability"
-        item = next((it for it in contract if isinstance(it, dict)
-                     and it.get("id") == 13), None)
-        if item is not None and item.get("name") != want:
-            ok, detail = accountability_pass(out_dir, model)
-            audit = detail or (
-                "submission requires author/domain-expert approval outside the bot"
-                if legacy else
-                "researka_agent_certified mode; verify artifact-consistency spine")
-            action = ("Collect named author/domain-expert signoff before submission."
-                      if legacy else
-                      "Restore artifact-consistency spine or citation registry.")
-            gate["journal_readiness_contract"] = [
-                {"id": 13, "name": want,
-                 "status": "pass" if ok else "not_ready",
-                 "audit": audit, "next_action": action}
-                if isinstance(it, dict) and it.get("id") == 13 else it
-                for it in contract]
-            (out_dir / "pre_submit_gate.json").write_text(
-                json.dumps(gate, indent=2))
-            log.append(FinalizerLogEntry(
-                phase="G_refresh_sidecars",
-                rule="reconcile_readiness_contract_item_13", n_changes=1,
-                detail=f"item 13 rebuilt for {model!r} "
-                       f"(was {item.get('name')!r}, now {want!r})"))
+    n_items = _refresh_readiness_contract_items(out_dir)
+    if n_items:
+        log.append(FinalizerLogEntry(
+            phase="G_refresh_sidecars",
+            rule="reconcile_readiness_contract_items", n_changes=n_items,
+            detail=f"refreshed {n_items} stale readiness-contract item(s) "
+                   f"against post-Phase-G sidecars"))
     return log
+
+
+def _refresh_readiness_contract_items(out_dir: Path) -> int:
+    """Slice 29: rebuild items 1/7/9/12/13 of the 15-item readiness
+    contract from current sidecar state. The contract is written once
+    at Stage 5c (before Phase G runs); these 5 items have inputs that
+    Phase G's surface re-eval + Slice 21's target_journal_pack writer
+    update, so they go stale otherwise. Universal — operates on
+    existing sidecars; no per-topic logic. Returns count of items
+    actually changed."""
+    gate = _load_sidecar(out_dir / "pre_submit_gate.json")
+    if not isinstance(gate, dict):
+        return 0
+    contract = gate.get("journal_readiness_contract")
+    if not isinstance(contract, list):
+        return 0
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    surface = _load_sidecar(out_dir / "full_paper.journal_surface.json") or {}
+    target = _load_sidecar(out_dir / "target_journal_pack.json")
+    surface_pass = bool(surface.get("passed"))
+    surface_n = len(surface.get("issues") or [])
+    gate_passed = bool((gate.get("result") or {}).get("passed"))
+    tj = target.get("journal") if isinstance(target, dict) else None
+    tj_declared = bool(target.get("declared_in_topic_pack")) if isinstance(target, dict) else False
+    from agent.accountability import accountability_pass, resolve_model
+    model = resolve_model(manifest.get("accountability_model"))
+    legacy = model == "legacy_journal_submission"
+    acc_ok, acc_detail = accountability_pass(out_dir, model)
+    submission_ready = gate_passed and surface_pass
+    fresh: dict[int, dict[str, str]] = {
+        1: {"status": "pass" if submission_ready else "not_ready",
+            "audit": f"pre_submit_gate={gate_passed}; "
+                     f"journal_surface={surface_pass}; "
+                     f"submission_ready={submission_ready}"},
+        7: {"status": "pass" if surface_pass else "not_ready",
+            "audit": f"journal_surface_passed={surface_pass}"},
+        9: {"status": "pass" if surface_pass else "not_ready",
+            "audit": f"issues={surface_n}"},
+        12: {"status": "pass" if tj and tj_declared else
+                       ("partial" if tj else "not_ready"),
+             "audit": f"target_journal={tj!r}; declared_in_topic_pack={tj_declared}"},
+        13: {"name": "human_signoff" if legacy else "accountability",
+             "status": "pass" if acc_ok else "not_ready",
+             "audit": acc_detail or (
+                 "submission requires author/domain-expert approval outside the bot"
+                 if legacy else
+                 "researka_agent_certified mode; verify artifact-consistency spine"),
+             "next_action": (
+                 "Collect named author/domain-expert signoff before submission."
+                 if legacy else
+                 "Restore artifact-consistency spine or citation registry.")},
+    }
+    n_changed = 0
+    for item in contract:
+        if not isinstance(item, dict) or item.get("id") not in fresh:
+            continue
+        f = fresh[item["id"]]
+        if any(item.get(k) != v for k, v in f.items()):
+            item.update(f)
+            item["blocks_submission"] = item.get("status") != "pass"
+            n_changed += 1
+    if n_changed:
+        (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
+    return n_changed
