@@ -57,28 +57,24 @@ __all__ = [
 
 # --- Enums ----------------------------------------------------------------
 
-OutcomeClass = Literal[
-    # Coarse outcome classification used for tension-pair compatibility.
-    # Not the topic_pack's expected_evidence_slots (which is finer-grained
-    # and pack-specific) — these are cross-topic categories that let the
-    # tension matrix work on any drug pack without per-pack rules.
-    "muscle_function",      # MASTERS-style hypertrophy / strength outcomes
-    "cardiometabolic",      # CV mortality, glycemic control, lipids
-    "cognitive",            # MMSE, dementia incidence, cognitive decline
-    "frailty",              # walk speed, grip strength, frailty index
-    "healthspan_qol",       # SF-36 / general health / emotional well-being /
-                            # pain / vitality — patient-reported QoL outcomes
-                            # that are NOT cognitive (added 2026-05-09 per
-                            # peer-review fix; previous bot output mis-routed
-                            # PEARL "emotional well-being" → "cognitive").
-    "longevity",            # all-cause mortality, exceptional longevity
-    "immune",               # vaccine response, RTI incidence, T-cell function
-    "ophthalmologic",       # AMD, diabetic retinopathy
-    "oncology",             # cancer incidence / mortality (often indirect)
-    "mechanism",            # in vitro / animal pathway findings
-    "safety",               # adverse events, tolerability, GI side effects
-    "other",                # default — caller didn't classify
-]
+# Slice 34 (2026-05-16): OutcomeClass is now an open `str` type so the
+# platform supports universal topics + industries (climate, materials,
+# economics, social science) — not biomedical-only. Topic packs declare
+# their own outcome-class vocabulary in `[outcome_classes]`; tension
+# detection + Phase K routing are string-equality based and work for any
+# vocabulary. The biomedical-canonical list below is documentation of the
+# launch-domain defaults used by `agent/synthesis._OUTCOME_KEYWORDS` for
+# auto-inference when a topic pack omits explicit per-receipt classes —
+# it is NOT a runtime constraint.
+#
+# Launch-domain canonical (biomedical): muscle_function, cardiometabolic,
+# cognitive, frailty, healthspan_qol, longevity, immune, ophthalmologic,
+# oncology, mechanism, safety, other.
+# Example non-biomedical: climate → {mitigation, adaptation, attribution,
+#   sensitivity, feedback, …}; economics → {welfare, productivity,
+#   inequality, employment, …}; materials → {fatigue, corrosion,
+#   conductivity, yield_strength, …}.
+OutcomeClass = str
 
 EffectDirection = Literal[
     "positive",   # treatment improves outcome (e.g. HR < 1 for mortality)
