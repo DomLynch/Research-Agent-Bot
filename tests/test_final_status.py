@@ -109,6 +109,24 @@ def test_audit_surface_pass_pre_submit_fail_yields_l3(tmp_path: Path) -> None:
     assert pre_blockers and pre_blockers[0].code == "audit_gates_failed"
 
 
+def test_readiness_contract_blocker_overrides_pre_submit_pass(tmp_path: Path) -> None:
+    """A passing pre-submit summary cannot override its own blocking contract."""
+    _all_pass_sidecars(tmp_path)
+    _write(tmp_path, "pre_submit_gate.json", {
+        "result": {"passed": True, "failures": []},
+        "journal_readiness_contract": [{
+            "id": 12, "name": "target_journal_finalizer",
+            "status": "not_ready", "blocks_submission": True,
+        }],
+    })
+    s = compute(tmp_path)
+    assert s.pre_submit_pass is False
+    assert s.submission_ready is False
+    assert s.maturity_level == 3
+    blockers = [b for b in s.blocking_reasons if b.stage == "pre_submit"]
+    assert blockers and blockers[0].code == "readiness_contract_blocking"
+
+
 def test_three_pass_no_target_journal_yields_l4(tmp_path: Path) -> None:
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {
