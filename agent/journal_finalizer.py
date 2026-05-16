@@ -317,18 +317,13 @@ def _phase_h_topic_slug_normalise(
 # reader. The pattern: any H2-H6 heading text immediately followed by
 # another `##`+ heading marker with no intervening newline. Insert
 # `\n\n` between them. Universal — no per-topic logic.
-_CONCAT_HEADING_RE = re.compile(
-    r"^(#{2,6}\s+[^#\n]*?)(#{2,6}\s+)", flags=re.MULTILINE,
-)
+_CONCAT_HEADING_RE = re.compile(r"^(#{2,6}\s+[^#\n]*?)(#{2,6}\s+)", re.M)
 
 
-def _phase_i_split_concatenated_headings(
-    text: str,
-) -> tuple[str, list[FinalizerLogEntry]]:
-    """Insert `\\n\\n` between concatenated heading markers on the same
-    line. Universal Markdown-structural fix."""
+def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[FinalizerLogEntry]]:
+    """Insert blank line between concatenated heading markers. Universal."""
     new_text, n = _CONCAT_HEADING_RE.subn(r"\1\n\n\2", text)
-    if n == 0:
+    if not n:
         return text, []
     return new_text, [FinalizerLogEntry(
         phase="I_split_concatenated_headings",

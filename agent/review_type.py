@@ -43,10 +43,7 @@ REVIEW_TYPES: Final[dict[str, str]] = {
 }
 
 DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"
-
-# Slice 31 universal thresholds for thin-corpus downshift. Universal —
-# no topic-specific values; any topic with corpus thinness below these
-# downshifts to `thin_corpus_brief` regardless of declared review type.
+# Slice 31 universal thresholds — no topic-specific values.
 THIN_CORPUS_MIN_RECEIPTS: Final[int] = 10
 THIN_CORPUS_MIN_TENSIONS: Final[int] = 1
 
@@ -54,11 +51,8 @@ THIN_CORPUS_MIN_TENSIONS: Final[int] = 1
 def downshift_review_type_for_thin_corpus(
     declared: str | None, n_receipts: int, n_tensions: int,
 ) -> str:
-    """Return `thin_corpus_brief` when the run's corpus is too thin to
-    support a full journal manuscript; otherwise return the parsed
-    declared token. Universal — no topic-specific logic. Conditions
-    track the reviewer's explicit guidance: n_receipts<10 OR
-    n_tensions==0 means render an evidence note, not a manuscript."""
+    """Return `thin_corpus_brief` when n_receipts<10 OR n_tensions<1
+    (render an evidence note, not a manuscript). Else parsed declared."""
     if n_receipts < THIN_CORPUS_MIN_RECEIPTS or n_tensions < THIN_CORPUS_MIN_TENSIONS:
         return "thin_corpus_brief"
     return parse_review_type(declared)
