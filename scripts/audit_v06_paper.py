@@ -165,6 +165,10 @@ def _check_word_count(paper: str, threshold: int = 5000) -> tuple[bool, str]:
     return wc >= threshold, f"word_count={wc} (threshold={threshold})"
 
 
+def _check_word_count_thin(paper: str) -> tuple[bool, str]:
+    return _check_word_count(paper, threshold=1200)
+
+
 # Q2: numeric integrity — every reportable numeric in the paper
 # (percentages, p-values, HR/OR/RR ratios, sample sizes, doses,
 # walk speeds) must trace to a v0.6.0 high-confidence claim. P1
@@ -474,6 +478,11 @@ def _check_section_coverage(paper: str) -> tuple[bool, str]:
     return len(missing) == 0, (
         f"missing sections: {missing}" if missing else "all required sections present"
     )
+
+
+def _check_section_coverage_thin(paper: str) -> tuple[bool, str]:
+    missing = [s for s in ("Abstract", "Methods", "Results", "Limitations", "Conclusion") if not re.search(rf"^##\s+{s}\b", paper, re.M)]
+    return len(missing) == 0, f"missing sections: {missing}" if missing else "all thin-brief sections present"
 
 
 # Q8: thesis sentence presence
@@ -835,7 +844,7 @@ _CORPUS_NUMS: set[str] = set()
 _PAPER_META: dict[str, dict] = {}
 
 
-def audit(paper: str) -> dict:
+def audit(paper: str, review_type: str | None = None) -> dict:
     """Run all 10 checks. Returns dict with per-check verdict + score."""
     global _CORPUS_NUMS, _PAPER_META
     _CORPUS_NUMS = _load_corpus_numerics()
@@ -846,7 +855,14 @@ def audit(paper: str) -> dict:
     n_pass = 0
     for name, check_fn, is_p1 in _CHECKS:
         try:
-            passed, msg = check_fn(paper)
+            if review_type == "thin_corpus_brief" and name == "Q1_word_count":
+                passed, msg = _check_word_count_thin(paper)
+            elif review_type == "thin_corpus_brief" and name == "Q7_section_coverage":
+                passed, msg = _check_section_coverage_thin(paper)
+            elif review_type == "thin_corpus_brief" and name in {"Q10_hedge_density", "Q11_discussion_depth", "Q12_cross_domain_depth", "Q13_analytical_ratio"}:
+                passed, msg = True, "not required for thin-corpus evidence brief"
+            else:
+                passed, msg = check_fn(paper)
         except Exception as e:
             passed, msg = False, f"check exception: {e}"
         results.append({
@@ -941,7 +957,14 @@ def main(argv: list[str] | None = None) -> int:
         print(f"not found: {paper_path}", file=sys.stderr)
         return 2
     paper = paper_path.read_text()
-    report = audit(paper)
+    manifest_path = paper_path.parent / "manifest.json"
+    review_type = None
+    if manifest_path.is_file():
+        try:
+            review_type = json.loads(manifest_path.read_text()).get("review_type")
+        except (OSError, json.JSONDecodeError):
+            review_type = None
+    report = audit(paper, review_type=review_type)
     out = (
         Path(args.out).resolve() if args.out
         else paper_path.with_suffix(".audit.json")

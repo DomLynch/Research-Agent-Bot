@@ -43,6 +43,22 @@ def test_results_summary_corpus_slice_n_is_not_sample_size() -> None:
     assert ok, msg
 
 
+def test_thin_corpus_audit_does_not_require_full_manuscript_sections() -> None:
+    paper = (
+        "## Abstract\n\n" + "a " * 250 + "\n\n"
+        "## Methods\n\n" + "m " * 300 + "\n\n"
+        "## Results\n\n" + "r " * 300 + "\n\n"
+        "## Limitations\n\n" + "l " * 250 + "\n\n"
+        "## Conclusion\n\n" + "c " * 250 + "\n"
+    )
+    report = audit.audit(paper, review_type="thin_corpus_brief")
+    failed = {c["name"] for c in report["checks"] if not c["passed"]}
+    assert "Q1_word_count" not in failed
+    assert "Q7_section_coverage" not in failed
+    assert "Q11_discussion_depth" not in failed
+    assert "Q12_cross_domain_depth" not in failed
+
+
 def test_dose_untraceable_flagged() -> None:
     """A dose value not in corpus must trip the gate."""
     paper = "Patients received 7777 mg of metformin daily."

@@ -25,6 +25,7 @@ import re
 import sys
 import tomllib
 import unicodedata
+from collections import Counter, defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -593,6 +594,33 @@ def _strip_conclusion_scope_leak(paper_md: str) -> tuple[str, int]:
     return paper_md[:match.start(2)] + body + paper_md[match.end(2):], n
 
 
+def _rebuild_thin_results_from_manifest(paper_md: str, manifest: dict | None) -> tuple[str, int]:
+    if not manifest or manifest.get("review_type") != "thin_corpus_brief":
+        return paper_md, 0
+    receipts = [r for r in manifest.get("receipts", ()) if isinstance(r, dict) and r.get("outcome_class")]
+    if not receipts or not re.search(r"^##\s+Results\b", paper_md, re.M):
+        return paper_md, 0
+    by_outcome: dict[str, list[dict]] = defaultdict(list)
+    for r in receipts:
+        by_outcome[str(r.get("outcome_class") or "other")].append(r)
+    lines = ["## Results", "", "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |", "|---|---|---|---|---|"]
+    for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
+        dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
+        direct = Counter(str(r.get("directness") or "indirect").lower() for r in group)
+        dominant, dominant_n = dirs.most_common(1)[0]
+        label = outcome.replace("_", " ").title()
+        lines.append(f"| {label} | n={len(group)}; claims={sum(int(r.get('n_claims') or 0) for r in group)} | {dominant} signal in {dominant_n}/{len(group)} sources | {direct.most_common(1)[0][1]} {direct.most_common(1)[0][0]} | {'single-source support' if len(group) == 1 else 'primary-tier limited'} |")
+    lines += ["", "This evidence brief reports outcome packets as a map of retained evidence rather than as a full journal Results narrative or pooled effect estimate."]
+    for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
+        dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
+        direct = Counter(str(r.get("directness") or "indirect").lower() for r in group)
+        label = outcome.replace("_", " ").title()
+        lines += ["", f"### {label} Outcomes", "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Directional coding: {', '.join(f'{k}={v}' for k, v in sorted(dirs.items()))}. Directness coding: {', '.join(f'{k}={v}' for k, v in sorted(direct.items()))}."]
+    rebuilt = "\n".join(lines).rstrip() + "\n"
+    patched = re.sub(r"^##\s+Results\b.*?(?=^##\s+|\Z)", rebuilt + "\n", paper_md, count=1, flags=re.M | re.S)
+    return patched, int(patched != paper_md)
+
+
 def _append_known_background_references(paper_md: str) -> tuple[str, int]:
     try:
         from agent.journal_surface_gate import unreferenced_citation_tokens
@@ -740,6 +768,13 @@ def apply_lightweight_public_polish(
             "description": (
                 "removed What-This-Adds scope language from the Conclusion"
             ),
+        })
+    new_md, n_thin_results = _rebuild_thin_results_from_manifest(new_md, manifest)
+    if n_thin_results:
+        log.append({
+            "fix_type": "thin_results_rebuild",
+            "n_changes": n_thin_results,
+            "description": "rebuilt thin-corpus Results from manifest outcome packets",
         })
     new_md, n_background_refs = _append_known_background_references(new_md)
     if n_background_refs:
