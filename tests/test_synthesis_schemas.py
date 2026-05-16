@@ -230,3 +230,42 @@ def test_thesis_candidate_carries_validation_metadata() -> None:
     )
     assert cand.word_count == 42
     assert len(cand.receipt_ids_referenced) == 3
+
+
+def test_validate_outcome_class_canonicalises_open_vocabulary() -> None:
+    """Slice 34b: universal validator accepts any snake_case [a-z][a-z0-9_]*
+    string and canonicalises Display Case / spaces / hyphens. Universal —
+    works for biomedical (longevity), climate (mitigation), economics
+    (welfare), materials (fatigue), etc."""
+    from agent.synthesis_schemas import validate_outcome_class
+    assert validate_outcome_class("longevity") == "longevity"
+    assert validate_outcome_class("Mitigation") == "mitigation"
+    assert validate_outcome_class("yield-strength") == "yield_strength"
+    assert validate_outcome_class("cardio metabolic") == "cardio_metabolic"
+
+
+def test_validate_outcome_class_rejects_structurally_invalid_values() -> None:
+    """Slice 34b: empty, non-string, leading-digit, special-char values
+    are rejected — protects against silent corruption when topic packs
+    or LLM-extracted receipts emit garbage."""
+    from agent.synthesis_schemas import OutcomeClassError, validate_outcome_class
+    import pytest
+    for bad in ("", "   ", None, 42, "123_starts_with_digit", "has space!", "Has/Slash"):
+        with pytest.raises(OutcomeClassError):
+            validate_outcome_class(bad)
+
+
+def test_validate_outcome_class_enforces_topic_pack_vocabulary() -> None:
+    """Slice 34b: when topic pack declares an allowed vocabulary, values
+    outside it are rejected — preserves type-safety guarantee that the
+    removed Literal previously provided, but per-domain not biomedical-only."""
+    from agent.synthesis_schemas import OutcomeClassError, validate_outcome_class
+    import pytest
+    biomedical_vocab = ("longevity", "cardiometabolic", "immune", "safety")
+    climate_vocab = ("mitigation", "adaptation", "attribution")
+    assert validate_outcome_class("longevity", biomedical_vocab) == "longevity"
+    assert validate_outcome_class("Mitigation", climate_vocab) == "mitigation"
+    with pytest.raises(OutcomeClassError, match="not in topic-pack vocabulary"):
+        validate_outcome_class("longevity", climate_vocab)
+    with pytest.raises(OutcomeClassError, match="not in topic-pack vocabulary"):
+        validate_outcome_class("mitigation", biomedical_vocab)

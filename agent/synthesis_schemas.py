@@ -39,6 +39,8 @@ from typing import Literal
 
 __all__ = [
     "OutcomeClass",
+    "OutcomeClassError",
+    "validate_outcome_class",
     "EffectDirection",
     "TensionKind",
     "ReceiptSummary",
@@ -75,6 +77,32 @@ __all__ = [
 #   inequality, employment, …}; materials → {fatigue, corrosion,
 #   conductivity, yield_strength, …}.
 OutcomeClass = str
+
+# Slice 34b (2026-05-16): runtime soundness validator. The Literal was
+# removed for universality, but we still enforce STRUCTURAL validity
+# (non-empty, snake_case-canonical, str). Optional `vocabulary` arg
+# accepts a topic-pack-declared allowed set for membership checks.
+# Universal — works for any vocabulary (biomedical, climate, materials).
+_OUTCOME_CLASS_RE = __import__("re").compile(r"^[a-z][a-z0-9_]*$")
+
+
+class OutcomeClassError(ValueError):
+    """Raised when an outcome_class value fails structural validation."""
+
+
+def validate_outcome_class(value: object, vocabulary: tuple[str, ...] | None = None) -> str:
+    """Validate + canonicalise an outcome_class value. Universal — no
+    biomedical-specific tokens. Pass `vocabulary` to enforce membership
+    against a topic-pack-declared set; omit for open-vocabulary mode."""
+    if not isinstance(value, str) or not value.strip():
+        raise OutcomeClassError(f"outcome_class must be non-empty str, got {value!r}")
+    canon = value.strip().lower().replace("-", "_").replace(" ", "_")
+    if not _OUTCOME_CLASS_RE.match(canon):
+        raise OutcomeClassError(f"outcome_class must be snake_case [a-z][a-z0-9_]*, got {value!r}")
+    if vocabulary is not None and canon not in vocabulary:
+        raise OutcomeClassError(f"outcome_class {value!r} not in topic-pack vocabulary {sorted(vocabulary)}")
+    return canon
+
 
 EffectDirection = Literal[
     "positive",   # treatment improves outcome (e.g. HR < 1 for mortality)
