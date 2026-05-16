@@ -31,10 +31,7 @@ REVIEW_TYPES: Final[dict[str, str]] = {
         "Technical survey",
     "management_literature_review":
         "Management literature review",
-    # Slice 31 (2026-05-15): thin-corpus product-type downshift. Used
-    # universally when n_receipts<10 OR n_tensions=0 — signals to
-    # downstream readers + the maturity ladder that the run produced
-    # an evidence brief, not a full journal manuscript.
+    "evidence_brief": "Evidence brief",
     "thin_corpus_brief":
         "Thin-corpus evidence brief",
 }
@@ -60,7 +57,11 @@ def downshift_review_type_for_thin_corpus(
     n_primary_tier: int = -1,
 ) -> str:
     sufficient, _ = corpus_sufficiency_verdict(n_receipts, n_tensions, n_primary_tier)
-    return parse_review_type(declared) if sufficient else "thin_corpus_brief"
+    if sufficient:
+        return parse_review_type(declared)
+    if n_receipts >= THIN_CORPUS_MIN_RECEIPTS and n_tensions >= THIN_CORPUS_MIN_TENSIONS:
+        return "evidence_brief"
+    return "thin_corpus_brief"
 
 
 class ReviewTypeError(ValueError):
@@ -107,6 +108,10 @@ REVIEW_TYPE_SELF_CLAIM_TERMS: Final[dict[str, tuple[str, ...]]] = {
         "prospero", "prisma 2020", "prisma-scr",
     ),
     "narrative_review": (
+        "systematic review", "scoping review", "meta-analysis",
+        "meta analysis", "prospero", "prisma",
+    ),
+    "evidence_brief": (
         "systematic review", "scoping review", "meta-analysis",
         "meta analysis", "prospero", "prisma",
     ),
