@@ -204,6 +204,7 @@ def _phase_b_lane_qualifier(
             a.get("citation", "") for a in lanes.get("animal_citations", ())
             if a.get("citation")
         }
+        lane_map = lanes.get("lanes") or {}
     except (OSError, json.JSONDecodeError):
         return text, []
     if not animal_tokens:
@@ -229,10 +230,10 @@ def _phase_b_lane_qualifier(
             continue
         if qualifier_re.search(para):
             continue
-        # Prepend the lead-in to the first sentence + lowercase the
-        # following first letter so the joined clause reads naturally
-        # ("...evidence, the corpus..." not "...evidence, The corpus...").
-        paragraphs[i] = _ANIMAL_QUALIFIER_LEAD + _lowercase_first_letter(para.lstrip())
+        citation_pool = lane_map or {tok: "animal_preclinical" for tok in animal_tokens}
+        cited = [tok for tok in citation_pool if tok in para]
+        lead = _ANIMAL_QUALIFIER_LEAD if cited and sum(tok in animal_tokens for tok in cited) * 2 > len(cited) else "Additional corpus sources included animal/preclinical evidence; "
+        paragraphs[i] = lead + _lowercase_first_letter(para.lstrip())
         n_patched += 1
     if n_patched == 0:
         return text, []

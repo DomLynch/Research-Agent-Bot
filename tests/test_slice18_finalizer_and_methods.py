@@ -392,13 +392,8 @@ def test_slice26_word_boundary_avoids_false_positive_substring_matches() -> None
 def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
     tmp_path: Path,
 ) -> None:
-    """Slice 27 (reverses Slice 23): Phase B now patches mixed-lane
-    paragraphs too. The qualifier "In animal/preclinical evidence,"
-    is a partial-truth statement about the citation set — it correctly
-    flags the animal portion without claiming the non-animal cites are
-    also animal. Leaving mixed-lane paragraphs un-qualified produces
-    a worse outcome (the gate flags every unlabelled animal cite as a
-    surface failure). Universal."""
+    """Mixed-lane paragraphs get a generic corpus-source qualifier,
+    not an all-animal lead-in."""
     from agent.journal_finalizer import _phase_b_lane_qualifier
     run = tmp_path / "run"
     run.mkdir()
@@ -419,7 +414,7 @@ def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
     )
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text != paper
-    assert "In animal/preclinical evidence," in new_text
+    assert "Additional corpus sources included animal/preclinical evidence;" in new_text
     assert len(log) == 1
     assert log[0].rule == "animal_preclinical_lead_in"
 
@@ -522,6 +517,7 @@ def test_slice31_thin_corpus_brief_has_display_label() -> None:
     from agent.review_type import display_label, REVIEW_TYPES
     assert "thin_corpus_brief" in REVIEW_TYPES
     assert display_label("thin_corpus_brief") == "Thin-corpus evidence brief"
+    assert display_label("evidence_brief") == "Evidence brief"
 
 
 def test_slice38_corpus_sufficiency_verdict_returns_explicit_reasons() -> None:
@@ -544,13 +540,13 @@ def test_slice38_corpus_sufficiency_verdict_returns_explicit_reasons() -> None:
 def test_slice38_no_primary_tier_downshifts_even_with_high_count() -> None:
     """Slice 38: the case MiMo flagged — many receipts but ZERO primary-
     tier anchors must still downshift to brief. A 65-receipt corpus of
-    pure review-tier (B2) evidence cannot anchor a structured synthesis."""
+    pure review-tier (B2) evidence becomes an evidence brief."""
     from agent.review_type import downshift_review_type_for_thin_corpus
     # 65 receipts, 12 tensions, but 0 primary-tier (all B2/C review-tier)
     assert downshift_review_type_for_thin_corpus(
         "prisma_scr_scoping_synthesis",
         n_receipts=65, n_tensions=12, n_primary_tier=0,
-    ) == "thin_corpus_brief"
+    ) == "evidence_brief"
     # Same counts with enough primary-tier anchors → full synthesis
     assert downshift_review_type_for_thin_corpus(
         "prisma_scr_scoping_synthesis",

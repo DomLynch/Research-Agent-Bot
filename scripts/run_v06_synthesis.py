@@ -1815,6 +1815,20 @@ def render_receipt_funnel_markdown(report: dict[str, Any]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def reconcile_receipt_funnel_report(report: dict[str, Any], receipts: list[ReceiptSummary]) -> dict[str, Any]:
+    counts = dict(report.get("counts") or {})
+    strict = counts.pop("accepted_high_confidence", 0)
+    counts.update({
+        "admitted_receipts": len(receipts),
+        "original_strict_high_confidence_receipts": strict,
+        "primary_tier_receipts": sum(r.evidence_tier in ("A1", "A2", "B1") for r in receipts),
+    })
+    out = dict(report)
+    out["counts"] = dict(sorted(counts.items()))
+    out["receipt_admission_policy"] = "role_aware_high_or_review_tier"
+    return out
+
+
 def _load_receipt_candidate_paper_ids() -> set[str] | None:
     active = _load_active_paper_ids()
     classified = _load_classified_receipt_candidate_ids()
@@ -2354,17 +2368,18 @@ async def _run(
     (out_dir / "receipt_funnel.md").write_text(
         render_receipt_funnel_markdown(receipt_funnel),
     )
+    receipts = build_receipts_from_quant_claims(topic=topic)
+    receipt_funnel = reconcile_receipt_funnel_report(receipt_funnel, receipts)
+    (out_dir / "receipt_funnel.json").write_text(json.dumps(receipt_funnel, indent=2))
+    (out_dir / "receipt_funnel.md").write_text(render_receipt_funnel_markdown(receipt_funnel))
     funnel_counts = receipt_funnel.get("counts", {})
     print(
         "  Receipt funnel: "
-        f"accepted={funnel_counts.get('accepted_high_confidence', 0)} "
-        f"outside_scope={funnel_counts.get('outside_active_or_classified_scope', 0)} "
-        f"partial_only={funnel_counts.get('candidate_partial_only', 0)} "
-        f"partial_none_only={funnel_counts.get('candidate_partial_and_none_only', 0)} "
-        f"none_only={funnel_counts.get('candidate_none_only', 0)}",
+        f"admitted={funnel_counts.get('admitted_receipts', 0)} "
+        f"strict_high={funnel_counts.get('original_strict_high_confidence_receipts', 0)} "
+        f"primary_tier={funnel_counts.get('primary_tier_receipts', 0)}",
         file=sys.stderr,
     )
-    receipts = build_receipts_from_quant_claims(topic=topic)
     print(
         f"  Built {len(receipts)} receipts "
         f"(one per contributing paper).",

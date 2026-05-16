@@ -19,10 +19,9 @@ def render_selection_flow_lines(receipt_funnel: Any) -> list[str]:
             receipt_funnel.get("classified_receipt_candidates"),
         ),
         ("Receipt candidate union", receipt_funnel.get("receipt_candidate_union")),
-        (
-            "Accepted high-confidence receipt papers",
-            counts.get("accepted_high_confidence"),
-        ),
+        ("Admitted receipt papers", counts.get("admitted_receipts", counts.get("accepted_high_confidence"))),
+        ("Original strict high-confidence receipts", counts.get("original_strict_high_confidence_receipts")),
+        ("Primary-tier receipt anchors", counts.get("primary_tier_receipts")),
         (
             "Excluded outside active/classified scope",
             counts.get("outside_active_or_classified_scope"),
