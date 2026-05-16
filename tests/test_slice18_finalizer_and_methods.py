@@ -603,3 +603,62 @@ def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:
     # No sidecars exist — must not raise.
     log = _phase_g_refresh_sidecars(run)
     assert log == []
+
+
+def test_phase_j_drops_long_form_sections_when_thin_corpus_brief(tmp_path: Path) -> None:
+    """Slice 32: when manifest declares thin_corpus_brief, long-form
+    discursive sections (Introduction/Discussion/Cross-Domain) are
+    dropped — Evidence Brief artifact keeps only the structural-evidence
+    minimum (Abstract/Methods/Results/Limitations/Conclusion/References)."""
+    from agent.journal_finalizer import _phase_j_thin_corpus_trim
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"review_type": "thin_corpus_brief"}))
+    text = (
+        "# Paper Title\n\n"
+        "## Abstract\nAbstract body.\n\n"
+        "## Introduction\nLong intro.\n\n"
+        "## Methods\nMethods body.\n\n"
+        "## Results\nResults body.\n\n"
+        "## Discussion\nLong discussion.\n\n"
+        "## Cross-Domain Synthesis\nMore long-form.\n\n"
+        "## Limitations\nLimits body.\n\n"
+        "## Conclusion\nConclusion body.\n\n"
+        "## References\nRefs.\n"
+    )
+    new_text, log = _phase_j_thin_corpus_trim(text, run)
+    assert "## Introduction" not in new_text
+    assert "## Discussion" not in new_text
+    assert "## Cross-Domain Synthesis" not in new_text
+    assert "## Abstract" in new_text
+    assert "## Methods" in new_text
+    assert "## Results" in new_text
+    assert "## Limitations" in new_text
+    assert "## Conclusion" in new_text
+    assert "## References" in new_text
+    assert log and log[0].n_changes == 3
+    assert log[0].rule == "drop_long_form_for_evidence_brief"
+
+
+def test_phase_j_noop_when_review_type_is_not_thin_corpus(tmp_path: Path) -> None:
+    """Slice 32: full manuscript review types pass through untouched."""
+    from agent.journal_finalizer import _phase_j_thin_corpus_trim
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"review_type": "prisma_scr_scoping_synthesis"}))
+    text = "## Abstract\nA.\n\n## Introduction\nI.\n\n## Methods\nM.\n"
+    new_text, log = _phase_j_thin_corpus_trim(text, run)
+    assert new_text == text
+    assert log == []
+
+
+def test_phase_j_noop_when_no_long_form_sections_present(tmp_path: Path) -> None:
+    """Slice 32: brief with only whitelisted sections is already minimal."""
+    from agent.journal_finalizer import _phase_j_thin_corpus_trim
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"review_type": "thin_corpus_brief"}))
+    text = "## Abstract\nA.\n\n## Methods\nM.\n\n## Results\nR.\n\n## References\nRefs.\n"
+    new_text, log = _phase_j_thin_corpus_trim(text, run)
+    assert new_text == text
+    assert log == []

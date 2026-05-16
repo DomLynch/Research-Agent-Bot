@@ -109,6 +109,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_i_split_concatenated_headings(text)
     entries.extend(log)
+    text, log = _phase_j_thin_corpus_trim(text, out_dir)
+    entries.extend(log)
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
     # Phase G reads it. Phase G's surface re-evaluation reads from disk
     # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
@@ -329,6 +331,27 @@ def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[Finalizer
         phase="I_split_concatenated_headings",
         rule="insert_blank_line_between_headings", n_changes=n,
         detail=f"split {n} concatenated heading line(s)")]
+
+
+# --- Phase J: Thin-corpus body trim (Slice 32) -------------------------
+# When manifest.review_type == "thin_corpus_brief" the long-form
+# discursive sections are dropped — Evidence Brief keeps only the
+# structural-evidence minimum (whitelist). Universal — no per-topic logic.
+_THIN_KEEP = ("abstract", "methods", "results", "limitations", "conclusion", "references")
+
+
+def _phase_j_thin_corpus_trim(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
+    """Drop long-form sections when review_type=thin_corpus_brief."""
+    m = _load_sidecar(out_dir / "manifest.json")
+    if not isinstance(m, dict) or m.get("review_type") != "thin_corpus_brief":
+        return text, []
+    parts = re.split(r"^(## [^\n]+\n)", text, flags=re.M)
+    keep = [i for i in range(1, len(parts), 2) if any(parts[i].replace("## ", "").strip().lower().startswith(p) for p in _THIN_KEEP)]
+    n_dropped = (len(parts) - 1) // 2 - len(keep)
+    if not n_dropped:
+        return text, []
+    kept = parts[0] + "".join(parts[i] + (parts[i + 1] if i + 1 < len(parts) else "") for i in keep)
+    return kept, [FinalizerLogEntry(phase="J_thin_corpus_trim", rule="drop_long_form_for_evidence_brief", n_changes=n_dropped, detail=f"dropped {n_dropped} section(s)")]
 
 
 # --- Phase D: Reference closure ---------------------------------------
@@ -636,7 +659,6 @@ def _reevaluate_journal_surface(out_dir: Path) -> int:
             if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     try:
         from agent.journal_surface_gate import evaluate_journal_surface
-        import dataclasses as _dc
         report = evaluate_journal_surface(
             paper_path.read_text(), animal_citations=animal,
             citation_outcome_map=cmap,
@@ -647,83 +669,56 @@ def _reevaluate_journal_surface(out_dir: Path) -> int:
     old_n = len(old.get("issues") or []) if isinstance(old, dict) else 0
     (out_dir / "full_paper.journal_surface.json").write_text(json.dumps({
         "passed": report.passed,
-        "issues": [_dc.asdict(i) for i in report.issues]}, indent=2))
+        "issues": [asdict(i) for i in report.issues]}, indent=2))
     return len(report.issues) - old_n
 
 
 def _refresh_pre_submit_gate(out_dir: Path) -> bool:
     """Recompute pre_submit_gate.result with the fresh surface-pass state.
-    Returns True iff the gate was rewritten (state actually changed).
-    Universal — operates on the existing inputs dict + the just-refreshed
-    journal_surface sidecar; no per-topic logic."""
+    Returns True iff the gate was rewritten (state actually changed)."""
     gate = _load_sidecar(out_dir / "pre_submit_gate.json")
     surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
-    if not isinstance(gate, dict) or not isinstance(surface, dict):
+    if not (isinstance(gate, dict) and isinstance(surface, dict) and isinstance(gate.get("inputs"), dict)):
         return False
-    inputs = gate.get("inputs")
-    if not isinstance(inputs, dict):
-        return False
-    new_surface_pass = bool(surface.get("passed"))
-    if bool(inputs.get("journal_surface_passed")) == new_surface_pass:
+    inputs = gate["inputs"]
+    new_pass = bool(surface.get("passed"))
+    if bool(inputs.get("journal_surface_passed")) == new_pass:
         return False
     try:
         from agent.final_gate import GateInputs, evaluate_final_gate
-        import dataclasses as _dc
-        fresh_inputs = {**inputs, "journal_surface_passed": new_surface_pass}
-        result = evaluate_final_gate(GateInputs(**fresh_inputs))
+        fresh = {**inputs, "journal_surface_passed": new_pass}
+        result = evaluate_final_gate(GateInputs(**fresh))
     except (ImportError, TypeError, ValueError):
         return False
-    gate["inputs"] = fresh_inputs
-    gate["result"] = _dc.asdict(result)
+    gate["inputs"], gate["result"] = fresh, asdict(result)
     (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
     return True
 
 
 def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
-    """Reconcile sidecars that drift after phases A-F mutate prose. Four
-    no-ops when already consistent: re-eval journal_surface_gate vs post-
-    finalizer paper; reconcile final_verdict; refresh pre_submit_gate vs
-    fresh surface state; rebuild readiness item 13 from manifest
-    accountability_model. Universal."""
+    """Reconcile sidecars that drift after phases A-F mutate prose."""
     log: list[FinalizerLogEntry] = []
+    _g = lambda rule, n, detail: log.append(FinalizerLogEntry(phase="G_refresh_sidecars", rule=rule, n_changes=n, detail=detail))  # noqa: E731
     delta = _reevaluate_journal_surface(out_dir)
     if delta != 0:
-        log.append(FinalizerLogEntry(
-            phase="G_refresh_sidecars",
-            rule="reevaluate_journal_surface_post_finalizer", n_changes=1,
-            detail=f"surface issues delta vs pre-finalizer gate: {delta:+d}"))
+        _g("reevaluate_journal_surface_post_finalizer", 1, f"surface issues delta vs pre-finalizer gate: {delta:+d}")
     if _refresh_pre_submit_gate(out_dir):
-        log.append(FinalizerLogEntry(
-            phase="G_refresh_sidecars",
-            rule="refresh_pre_submit_gate_with_fresh_surface", n_changes=1,
-            detail="pre_submit_gate.inputs.journal_surface_passed + result recomputed"))
+        _g("refresh_pre_submit_gate_with_fresh_surface", 1, "pre_submit_gate.inputs.journal_surface_passed + result recomputed")
     verdict = _load_sidecar(out_dir / "full_paper.final_verdict.json")
     surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
     if isinstance(verdict, dict) and isinstance(surface, dict):
         passed = bool(surface.get("passed"))
-        issues = tuple(
-            f"{i.get('code', '')}: {i.get('detail', '')}"
-            if isinstance(i, dict) else str(i)
-            for i in (surface.get("issues") or []))
-        cur = (bool(verdict.get("journal_surface_pass")),
-               tuple(verdict.get("journal_surface_issues") or ()))
+        issues = tuple(f"{i.get('code', '')}: {i.get('detail', '')}" if isinstance(i, dict) else str(i)
+                       for i in (surface.get("issues") or []))
+        cur = (bool(verdict.get("journal_surface_pass")), tuple(verdict.get("journal_surface_issues") or ()))
         if cur != (passed, issues):
             verdict["journal_surface_pass"] = passed
             verdict["journal_surface_issues"] = list(issues)
-            (out_dir / "full_paper.final_verdict.json").write_text(
-                json.dumps(verdict, indent=2))
-            log.append(FinalizerLogEntry(
-                phase="G_refresh_sidecars",
-                rule="reconcile_final_verdict_surface_state", n_changes=1,
-                detail=f"journal_surface_pass {cur[0]}→{passed}; "
-                       f"issues {len(cur[1])}→{len(issues)}"))
+            (out_dir / "full_paper.final_verdict.json").write_text(json.dumps(verdict, indent=2))
+            _g("reconcile_final_verdict_surface_state", 1, f"journal_surface_pass {cur[0]}→{passed}; issues {len(cur[1])}→{len(issues)}")
     n_items = _refresh_readiness_contract_items(out_dir)
     if n_items:
-        log.append(FinalizerLogEntry(
-            phase="G_refresh_sidecars",
-            rule="reconcile_readiness_contract_items", n_changes=n_items,
-            detail=f"refreshed {n_items} stale readiness-contract item(s) "
-                   f"against post-Phase-G sidecars"))
+        _g("reconcile_readiness_contract_items", n_items, f"refreshed {n_items} stale readiness-contract item(s) against post-Phase-G sidecars")
     return log
 
 
