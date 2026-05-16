@@ -185,9 +185,16 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
             key = str(r["outcome_class"])
             classes[key] = classes.get(key, 0) + 1
     out.update(canonical_numeric(str(v)) for v in classes.values())
-    for plan in ((manifest.get("tension_elaboration") or {}).get("plans") or ()):
+    plans = manifest.get("_tension_plans")
+    if not isinstance(plans, list):
+        raw = (manifest.get("tension_elaboration") or {}).get("plans")
+        plans = raw if isinstance(raw, list) else []
+    for plan in plans:
         if isinstance(plan, dict):
-            out.update(canonical_numeric(str(v)) for v in plan.get("numeric_anchors") or ())
+            for v in plan.get("numeric_anchors") or ():
+                s = str(v)
+                out.add(canonical_numeric(s))
+                out.update(canonical_numeric(x) for x in re.findall(r"\d+\.?\d*", s))
     return out
 
 
@@ -1035,6 +1042,9 @@ def main(argv: list[str] | None = None) -> int:
             review_type = manifest.get("review_type")
             if manifest.get("topic"):
                 _set_topic(str(manifest["topic"]))
+            plan_path = paper_path.parent / "audit" / "tension_elaboration_plans.json"
+            if plan_path.is_file():
+                manifest["_tension_plans"] = json.loads(plan_path.read_text()).get("plans", [])
         except (OSError, json.JSONDecodeError):
             review_type, manifest = None, None
     report = audit(paper, review_type=review_type, manifest=manifest)

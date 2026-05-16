@@ -296,3 +296,21 @@ def test_q2_aor_irr_smr_ratios_extracted() -> None:
         paper, corpus_nums={"0.7", "1.2", "0.8"},
     )
     assert ok is True, msg
+
+
+def test_q2_allows_manifest_outcome_counts_and_tension_anchors() -> None:
+    paper = (
+        "The synthesis includes 171 sources and 4684 tensions. "
+        "contextual other (n=83) anchors the largest class. "
+        "Numeric anchors include p = 0.003 and p = 0.013."
+    )
+    manifest = {
+        "n_receipts": 171,
+        "n_non_orthogonal_tensions": 4684,
+        "receipts": [{"outcome_class": "contextual_other"} for _ in range(83)],
+        "_tension_plans": [{"numeric_anchors": ["p = 0.003", "p = 0.013"]}],
+    }
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums=set(), manifest=manifest,
+    )
+    assert ok is True, msg

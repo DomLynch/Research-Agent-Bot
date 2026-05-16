@@ -681,15 +681,17 @@ def _reevaluate_journal_surface(out_dir: Path) -> int:
 def _refresh_pre_submit_gate(out_dir: Path) -> bool:
     gate = _load_sidecar(out_dir / "pre_submit_gate.json")
     surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
+    audit = _load_sidecar(out_dir / "full_paper.audit.json")
     if not (isinstance(gate, dict) and isinstance(surface, dict) and isinstance(gate.get("inputs"), dict)):
         return False
     inputs = gate["inputs"]
-    new_pass = bool(surface.get("passed"))
-    if bool(inputs.get("journal_surface_passed")) == new_pass:
+    new_surface = bool(surface.get("passed"))
+    new_audit = bool(isinstance(audit, dict) and audit.get("p1_pass") and audit.get("n_pass") == audit.get("n_total"))
+    if bool(inputs.get("journal_surface_passed")) == new_surface and bool(inputs.get("audit_gates_passed")) == new_audit:
         return False
     try:
         from agent.final_gate import GateInputs, evaluate_final_gate
-        fresh = {**inputs, "journal_surface_passed": new_pass}
+        fresh = {**inputs, "journal_surface_passed": new_surface, "audit_gates_passed": new_audit}
         result = evaluate_final_gate(GateInputs(**fresh))
     except (ImportError, TypeError, ValueError):
         return False
