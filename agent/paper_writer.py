@@ -490,7 +490,7 @@ async def render_full_paper(
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
     """Render full paper markdown plus per-section anchors. Slice 35:
     review_type=thin_corpus_brief skips long-form section generation."""
-    _thin = review_type == "thin_corpus_brief"
+    _thin = review_type in {"thin_corpus_brief", "evidence_brief"}
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",

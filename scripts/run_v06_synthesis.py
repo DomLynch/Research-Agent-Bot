@@ -345,7 +345,7 @@ def _restore_public_surface_floors(
         )
     except ImportError:
         return paper_md, []
-    required = _REQUIRED_SECTIONS_THIN if review_type == "thin_corpus_brief" else _REQUIRED_SECTIONS
+    required = _REQUIRED_SECTIONS_THIN if review_type in {"thin_corpus_brief", "evidence_brief"} else _REQUIRED_SECTIONS
     out = paper_md
     log: list[dict[str, str]] = []
     titles = tuple(required.keys())
