@@ -93,6 +93,16 @@ _REPORTABLE_NUMERIC_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
         ),
     ),
     ("p_value", re.compile(r"\b[Pp]\s*[<>=]\s*(0?\.\d+)\b")),
+    ("grouped_number", re.compile(r"\b(\d{1,3}(?:[,\s]\d{3})+)\b")),
+    (
+        "brief_count",
+        re.compile(
+            r"\b(\d+(?:[,\s]\d{3})*)\s+(?:included\s+)?"
+            r"(?:source\s+papers?|sources?|receipts?|claims?|tensions?|"
+            r"cross-study\s+disagreements|curated\s+reference\s+papers)\b",
+            flags=re.IGNORECASE,
+        ),
+    ),
     (
         "ratio",
         re.compile(
@@ -104,6 +114,11 @@ _REPORTABLE_NUMERIC_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("dose", re.compile(r"\b(\d+\.?\d*)\s*(?:mg|g|kg|μg|mcg|mL)\b")),
     ("speed", re.compile(r"\b(\d+\.?\d*)\s*m\s*/\s*s\b")),
 )
+_THOUSANDS_SEP_RE = re.compile(r"(?<=\d)[,\s](?=\d{3}\b)")
+
+
+def canonical_numeric(value: str) -> str:
+    return _THOUSANDS_SEP_RE.sub("", str(value).strip().lower())
 
 
 @dataclass(frozen=True, slots=True)
@@ -519,8 +534,30 @@ def _build_citation_allowed_numerics(
     return {tok: set(slot.keys()) for tok, slot in role_index.items()}
 
 
+def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
+    if not isinstance(manifest, dict):
+        return set()
+    keys = (
+        "n_receipts", "n_high_confidence_claims_total",
+        "n_non_orthogonal_tensions", "total_words",
+    )
+    out = {
+        canonical_numeric(str(manifest[k]))
+        for k in keys
+        if isinstance(manifest.get(k), (int, float))
+    }
+    counts = ((manifest.get("receipt_funnel") or {}).get("counts") or {})
+    if isinstance(counts, dict):
+        out.update(
+            canonical_numeric(str(v))
+            for v in counts.values()
+            if isinstance(v, (int, float))
+        )
+    return out
+
+
 def _build_global_allowed_numerics(
-    *, bg_lit_registry: dict | None, quant_claims_dir,
+    *, manifest: dict | None, bg_lit_registry: dict | None, quant_claims_dir,
 ) -> set[str]:
     """Strict prose-wide numeric pool.
 
@@ -529,11 +566,12 @@ def _build_global_allowed_numerics(
     ship-block the final artifact.
     """
     out: set[str] = set()
+    out.update(_manifest_structural_numerics(manifest))
     if isinstance(bg_lit_registry, dict):
         for entry in bg_lit_registry.values():
             num = (entry.get("numeric") or "").strip()
             if num:
-                out.update(_numeric_variants(num))
+                out.update(_numeric_variants(canonical_numeric(num)))
     if not quant_claims_dir:
         return out
     try:
@@ -557,7 +595,7 @@ def _build_global_allowed_numerics(
             ):
                 continue
             for value in claim.get("numeric_values", []) or []:
-                out.update(_numeric_variants(str(value)))
+                out.update(_numeric_variants(canonical_numeric(str(value))))
     return out
 
 
@@ -575,11 +613,11 @@ def _untraceable_reportable_numerics(
         for value in set(pattern.findall(clean)):
             if category == "percentage":
                 try:
-                    if not (1.0 < float(value) < 1000):
+                    if not (1.0 < float(canonical_numeric(value)) < 1000):
                         continue
                 except (TypeError, ValueError):
                     continue
-            if not (_numeric_variants(value) & allowed_numerics):
+            if not (_numeric_variants(canonical_numeric(value)) & allowed_numerics):
                 bad.add(value)
     return sorted(bad)
 
@@ -1138,6 +1176,7 @@ def scan_paper(
         quant_claims_dir=quant_claims_dir,
     )
     global_allowed_numerics = _build_global_allowed_numerics(
+        manifest=manifest,
         bg_lit_registry=bg_lit_registry,
         quant_claims_dir=quant_claims_dir,
     )

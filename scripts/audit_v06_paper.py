@@ -169,11 +169,15 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
     out = {
         canonical_numeric(str(manifest[k]))
         for k in keys
-        if isinstance(manifest.get(k), int | float)
+        if isinstance(manifest.get(k), (int, float))
     }
     counts = ((manifest.get("receipt_funnel") or {}).get("counts") or {})
     if isinstance(counts, dict):
-        out.update(canonical_numeric(str(v)) for v in counts.values() if isinstance(v, int | float))
+        out.update(
+            canonical_numeric(str(v))
+            for v in counts.values()
+            if isinstance(v, (int, float))
+        )
     return out
 
 
@@ -309,6 +313,10 @@ def _check_numeric_integrity(
     def _audit_block(block: str, pool: set[str]) -> None:
         nonlocal n_total, n_bad
         pool = {canonical_numeric(v) for v in pool}
+        block = "\n".join(
+            line for line in block.splitlines()
+            if not line.lstrip().startswith("|")
+        )
         for cat, pat in _PATTERNS_BY_CATEGORY:
             vals = set(re.findall(pat, block))
             if cat == "percentage":

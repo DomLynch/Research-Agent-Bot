@@ -639,6 +639,34 @@ def test_untraceable_numeric_guard_blocks_citationless_prose_value(tmp_path):
     assert "15.9%" not in fixed
 
 
+def test_untraceable_numeric_guard_blocks_grouped_number(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    paper = "The cohort included 26 916 participants without source trace."
+    manifest = {"n_receipts": 65, "receipts": []}
+    issues = scan_paper(paper, manifest=manifest, quant_claims_dir=qc_dir)
+    found = [i for i in issues if i.issue_type == "untraceable_numeric"]
+    assert found
+    assert "26 916" in found[0].detail
+
+
+def test_untraceable_numeric_guard_allows_manifest_brief_counts(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    manifest = {
+        "n_receipts": 65,
+        "n_high_confidence_claims_total": 1977,
+        "n_non_orthogonal_tensions": 1046,
+        "receipts": [],
+    }
+    paper = (
+        "This evidence brief includes 65 source papers, "
+        "1977 claims, and 1046 cross-study disagreements."
+    )
+    issues = scan_paper(paper, manifest=manifest, quant_claims_dir=qc_dir)
+    assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
+
+
 def test_scan_paper_back_compat_no_kwargs_works():
     """Existing callers passing only paper_md (no manifest /
     bg_lit) keep working — drift check is silently disabled."""

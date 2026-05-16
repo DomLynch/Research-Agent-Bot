@@ -2897,6 +2897,7 @@ async def _run_post_paper_pipeline(
         return _audit_v06.audit(
             paper,
             review_type=review_type if isinstance(review_type, str) else None,
+            manifest=manifest,
         )
 
     # Build universal gate inputs once: citation→outcome map (for the

@@ -1,30 +1,4 @@
-"""Post-classifier remap for known endpoint → outcome_class miscategorizations.
-
-2026-05-09 peer-review fix (Bug 2). The live runner's
-`_outcome_class_for_endpoint` (in `scripts/run_v06_synthesis.py`) consults
-domain vocab files (in `scripts/vocab/`) for endpoint → outcome_class
-mappings. The peer-review panel flagged that the rapamycin vocab maps:
-
-    "emotional well-being": "cognitive"   # WRONG — QoL, not cognitive
-
-This module provides a deterministic post-classifier remap that the
-runner can apply *after* the vocab/heuristic pass, fixing known mis-
-categorizations without modifying vocab files (which are owned by a
-separate lane).
-
-Usage (intended wiring point):
-
-    from agent.outcome_class_remap import remap_outcome_class
-
-    raw = _outcome_class_for_endpoint(endpoint)         # existing call
-    final = remap_outcome_class(endpoint, raw)          # new line
-
-The remap is conservative: it only rewrites pairs that are demonstrably
-wrong per the published literature (e.g. SF-36 emotional well-being is
-the canonical QoL/healthspan endpoint, not a cognitive endpoint). It
-never invents new outcome classes or routes endpoints away from a
-correct class.
-"""
+"""Post-classifier outcome-class cleanup."""
 from __future__ import annotations
 
 import re
@@ -39,9 +13,6 @@ __all__ = [
     "is_known_misclassification",
 ]
 
-# Direct endpoint → corrected outcome_class.
-# Keys are the canonical endpoint labels as they appear in vocab/{topic}.py.
-# Values are the corrected outcome class (must match OutcomeClass Literal).
 ENDPOINT_REMAP: Mapping[str, str] = {
     # PEARL trial QoL endpoints — vocab routes the first to "cognitive"
     # (wrong) and the others to "frailty" (debatable). All four belong
@@ -59,9 +30,6 @@ ENDPOINT_REMAP: Mapping[str, str] = {
     "vitality": "healthspan_qol",
 }
 
-# Regex patterns for fuzzy matching (case-insensitive, word-boundary aware).
-# Used when the endpoint string doesn't match an ENDPOINT_REMAP key exactly
-# but contains a recognisable QoL phrase. Order: more-specific first.
 ENDPOINT_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bemotional\s+well[-\s]?being\b", re.I), "healthspan_qol"),
     (re.compile(r"\bpsychological\s+well[-\s]?being\b", re.I), "healthspan_qol"),
@@ -85,23 +53,11 @@ BIOMEDICAL_OTHER_OUTCOME_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
 
 
 def is_known_misclassification(endpoint: str, current_class: str) -> bool:
-    """True if `endpoint` is in the corrections map and `current_class`
-    differs from the corrected class. Useful for audit logging."""
     target = _lookup(endpoint)
     return target is not None and target != current_class
 
 
 def remap_outcome_class(endpoint: str, current_class: str) -> str:
-    """Return the corrected outcome class for `endpoint`, or `current_class`
-    unchanged if no correction applies.
-
-    Lookup order:
-      1. Exact match in ENDPOINT_REMAP (lowercased + whitespace-collapsed).
-      2. First-matching pattern in ENDPOINT_PATTERNS.
-      3. No match — return current_class verbatim.
-
-    The function is deterministic and side-effect free; it's safe to call
-    on every endpoint in the pipeline."""
     target = _lookup(endpoint)
     if target is not None:
         return target
@@ -128,7 +84,6 @@ def refine_other_outcome_class(receipt: object, current_class: str) -> str:
 
 
 def _lookup(endpoint: str) -> str | None:
-    """Internal lookup; returns the corrected class or None."""
     if not isinstance(endpoint, str):
         return None
     normalized = " ".join(endpoint.strip().lower().split())

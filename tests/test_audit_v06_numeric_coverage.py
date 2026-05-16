@@ -80,6 +80,34 @@ def test_all_traceable_passes() -> None:
     assert ok, msg
 
 
+def test_grouped_and_brief_numerics_are_detected_and_trace() -> None:
+    paper = (
+        "The cohort included 26 916 participants and 26,916 matched controls. "
+        "The synthesis retained 1046 tensions (p < 0.001; HR = 1.19)."
+    )
+    corpus = {"26916", "1046", "0.001", "1.19"}
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums=corpus)
+    assert ok, msg
+    assert "grouped_number=" in msg
+    assert "brief_count=" in msg
+
+
+def test_manifest_counts_are_allowed_in_evidence_brief() -> None:
+    paper = (
+        "This evidence brief includes 65 source papers, "
+        "1977 claims, and 1046 cross-study disagreements."
+    )
+    manifest = {
+        "n_receipts": 65,
+        "n_high_confidence_claims_total": 1977,
+        "n_non_orthogonal_tensions": 1046,
+    }
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums=set(), manifest=manifest,
+    )
+    assert ok, msg
+
+
 def test_percentage_still_filtered_for_trivial_values() -> None:
     """Percentages ≤1.0 (rounding artifacts) and ≥1000 (typos) are
     still skipped to keep the existing prose-noise filter."""
