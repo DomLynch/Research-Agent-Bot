@@ -1497,7 +1497,7 @@ def test_finalizer_phase_f_appends_missing_outcome_row(tmp_path) -> None:
     assert "| Mechanism | n=1; claims=2" in new_text
     assert any(
         e.phase == "F_reconcile_results_table"
-        and "Mechanism" in e.detail
+        and e.rule == "rebuild_results_summary_table"
         for e in report.entries
     )
 
