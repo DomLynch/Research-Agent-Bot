@@ -568,7 +568,7 @@ _LIMITATIONS_SUMMARY_LEAK_PATTERNS: tuple[str, ...] = (
     r"\bpositive\s+signals?\s+appear\s+in\b",
     r"\bnegative\s+signals?\s+appear\s+in\b",
     r"\bnull\s+findings?\s+dominate\b",
-    r"\bthe\s+evidence\s+base\s+for\b",
+    r"\bthe\s+evidence\s+base\s+for\b.{0,80}\b(?:shows?|suggests?|supports?|indicates?|demonstrates?)\b",
     r"\bthe\s+strongest\s+unresolved\s+contrast\b",
     r"\bacross\s+\d+\s+curated\s+reference\s+papers?\b",
     r"\bIt\s+separates\s+endpoint[- ]specific\s+evidence\b",

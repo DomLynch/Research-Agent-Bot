@@ -844,7 +844,7 @@ def test_limitations_summary_prose_flagged() -> None:
         "Positive signals appear in cardiometabolic.",
         "Negative signals appear in immune.",
         "Null findings dominate the corpus.",
-        "the evidence base for caloric restriction is incomplete.",
+        "the evidence base for caloric restriction shows mixed signals.",
         "The strongest unresolved contrast is X vs Y.",
         "Across 47 curated reference papers, ...",
         "It separates endpoint-specific evidence from broad claims.",
@@ -860,7 +860,8 @@ def test_limitations_legit_prose_passes() -> None:
     body = (
         "## Limitations\n\nThe corpus omits long-term mortality RCTs. "
         "Single-trial outcomes cannot be replicated. Population specificity "
-        "limits generalization beyond the enrolled cohort.\n\n## Conclusion\n"
+        "limits generalization beyond the enrolled cohort. The evidence base "
+        "for pediatric populations is limited.\n\n## Conclusion\n"
     )
     assert _limitations_summary_leak_issue_messages(body) == ()
 

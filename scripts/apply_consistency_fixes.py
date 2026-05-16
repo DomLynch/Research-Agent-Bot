@@ -700,6 +700,23 @@ def _strip_empty_headings(paper_md: str) -> tuple[str, int]:
     return paper_md, len(removals)
 
 
+def _strip_reference_only_next_study_section(paper_md: str) -> tuple[str, int]:
+    pattern = re.compile(
+        r"^###\s+Next-Study Design Recommendation\s*$"
+        r"(?P<body>.*?)(?=^##\s+References\b|\Z)",
+        flags=re.M | re.S,
+    )
+
+    def repl(match: re.Match[str]) -> str:
+        body = match.group("body")
+        residue = re.sub(r"^\s*-\s+\*\*.+?\*\*.*$", "", body, flags=re.M)
+        residue = re.sub(r"(?is)\bAdditional corpus sources\b.*", "", residue)
+        return match.group(0) if residue.strip() else ""
+
+    new_md, n = pattern.subn(repl, paper_md)
+    return new_md, n
+
+
 def apply_lightweight_public_polish(
     paper_md: str,
     manifest: dict | None = None,
@@ -818,6 +835,13 @@ def apply_lightweight_public_polish(
             "fix_type": "empty_heading_strip",
             "n_changes": n_empty_headings,
             "description": "removed headings left empty after deterministic cleanup",
+        })
+    new_md, n_ref_only_next = _strip_reference_only_next_study_section(new_md)
+    if n_ref_only_next:
+        log.append({
+            "fix_type": "reference_only_next_study_strip",
+            "n_changes": n_ref_only_next,
+            "description": "removed next-study recommendation sections containing only reference residue",
         })
     new_md, n_heading_boundaries = _normalize_heading_boundaries(new_md)
     if n_heading_boundaries:
@@ -1848,6 +1872,13 @@ def apply_fixes(
             "fix_type": "empty_heading_strip",
             "n_changes": n_empty_headings,
             "description": "removed headings left empty after deterministic cleanup",
+        })
+    new_md, n_ref_only_next = _strip_reference_only_next_study_section(new_md)
+    if n_ref_only_next:
+        log.append({
+            "fix_type": "reference_only_next_study_strip",
+            "n_changes": n_ref_only_next,
+            "description": "removed next-study recommendation sections containing only reference residue",
         })
 
     new_md, n_dup_paragraphs = _strip_consecutive_duplicate_paragraphs(new_md)
