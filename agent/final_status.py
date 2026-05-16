@@ -133,6 +133,15 @@ def _read_pre_submit(run_dir: Path) -> tuple[bool, str]:
         fails = result.get("failures") or []
         head = ",".join(str(f) for f in fails[:3]) if isinstance(fails, list) else ""
         return (False, head or "pre_submit not passed")
+    contract = d.get("journal_readiness_contract")
+    if isinstance(contract, list):
+        blockers = [
+            f"{row.get('id', '?')}:{row.get('name', '?')}={row.get('status', '?')}"
+            for row in contract
+            if isinstance(row, dict) and row.get("blocks_submission")
+        ]
+        if blockers:
+            return (False, "journal_readiness_contract:" + ",".join(blockers[:3]))
     # Slice 14 (2026-05-14): fold artifact consistency into the
     # pre_submit dimension. Kills the stale-PDF / desync-supplement
     # reviewer trap — if any visible artifact (PDF/DOCX export,
@@ -194,6 +203,7 @@ _REASON_CODES: tuple[tuple[str, str, str], ...] = (
     ("journal_surface", "issues", "journal_surface_issues"),
     ("pre_submit", "missing", "pre_submit_missing"),
     ("pre_submit", "audit_gates_failed", "audit_gates_failed"),
+    ("pre_submit", "journal_readiness_contract", "readiness_contract_blocking"),
     ("pre_submit", "not passed", "pre_submit_failed"),
     ("target_journal", "no target_journal", "no_target_journal_pack"),
     ("target_journal", "not author-declared", "target_journal_not_author_declared"),
