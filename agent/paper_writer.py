@@ -110,6 +110,21 @@ def _ensure_outcome_results_heading(body_md: str, outcome: str) -> str:
     return f"{heading}\n\n{body}".strip()
 
 
+def _build_thin_results_section(receipts: Sequence[ReceiptSummary], matrix: TensionMatrix) -> SynthesisSection:
+    by_outcome: dict[str, list[ReceiptSummary]] = {}
+    tensions: dict[str, int] = {}
+    for r in receipts:
+        by_outcome.setdefault(r.outcome_class, []).append(r)
+    for t in matrix.non_orthogonal():
+        tensions[t.outcome_class] = tensions.get(t.outcome_class, 0) + 1
+    lines = ["## Results", "", f"This evidence brief includes {len(receipts)} accepted sources and {len(matrix.non_orthogonal())} same-outcome tensions. Detailed numeric claims remain in the quantitative evidence table and citation registry."]
+    for outcome, group in sorted(by_outcome.items()):
+        tiers = ", ".join(sorted({r.evidence_tier for r in group if r.evidence_tier})) or "not classified"
+        directions = ", ".join(sorted({r.effect_direction for r in group if r.effect_direction})) or "not classified"
+        lines += ["", _outcome_results_heading(outcome), "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Evidence tiers: {tiers}. Effect directions: {directions}. Non-orthogonal same-outcome tensions: {tensions.get(outcome, 0)}."]
+    return SynthesisSection(name="results", body_md="\n".join(lines).rstrip() + "\n", anchors=())
+
+
 # Validation helpers + paragraph builders moved to
 # agent/paper_writer_builders.py to keep this module under the 600
 # per-file LOC cap.
@@ -220,19 +235,7 @@ async def _write_anchored_section(
     fallback_body: str,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
-    """Build an ANCHORED section with code-level word-count retry.
-
-    Day 10.16c: prompts ask for length but LLMs default to concise
-    output. This wrapper enforces the floor at code level: if the
-    rendered section is under SECTION_WORD_FLOORS[name], retry up to
-    SECTION_RETRY_BUDGET times with a more aggressive expansion
-    prompt. Pick the longest valid attempt across all retries.
-
-    Fix #20: after the word-count retry loop converges, run a
-    one-shot citation-fix pass — if the best attempt used background
-    numerics without the canonical citation, re-prompt MiMo to add
-    the citation IN the same sentence (rather than letting the
-    Stage-2 auto-fixer strip the sentence and tank Q9 density)."""
+    """Build an anchored section with bounded retry plus citation repair."""
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
     best: SynthesisSection | None = None
     best_words = 0
@@ -292,13 +295,7 @@ async def _write_scoped_section(
     fallback_body: str,
     background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
-    """Build a SCOPED section with code-level word-count retry.
-
-    See `_write_anchored_section` for the retry contract.
-
-    Fix #20: identical citation-fix pass — applies to scoped sections
-    too (Background and Discussion are the highest-density carriers
-    for canonical clinical thresholds)."""
+    """Build a scoped section with bounded retry plus citation repair."""
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
     best: SynthesisSection | None = None
     best_words = 0
@@ -568,14 +565,14 @@ async def render_full_paper(
             background_lit_entries=background_lit_entries,
         )
         _log_section_done("background", sections["background"])
-    from agent.inferential_bridge import build_inferential_bridge_section
-    _bridge_spec = pack.inference if pack and pack.inference.allow else None
-    sections["inferential_bridge"] = await build_inferential_bridge_section(
-        accepted, topic=topic, chain=chain, spec=_bridge_spec,
-        client=client, ledger=ledger, seed=seed,
-    )
-    if sections["inferential_bridge"].body_md:
-        _log_section_done("inferential_bridge", sections["inferential_bridge"])
+    if not _thin:
+        from agent.inferential_bridge import build_inferential_bridge_section
+        _bridge_spec = pack.inference if pack and pack.inference.allow else None
+        sections["inferential_bridge"] = await build_inferential_bridge_section(
+            accepted, topic=topic, chain=chain, spec=_bridge_spec, client=client, ledger=ledger, seed=seed,
+        )
+        if sections["inferential_bridge"].body_md:
+            _log_section_done("inferential_bridge", sections["inferential_bridge"])
     # Universal Q9 structural fix (2026-05-04): deterministic
     # Quantitative Evidence Index built from raw corpus
     # quant_claims.json — per-CLAIM rows, not per-receipt, so the
@@ -626,10 +623,8 @@ async def render_full_paper(
         receipts, topic=topic, submission_id=submission_id,
     )
     _log_section_done("methods (deterministic)", sections["methods"])
-    sections["results"] = await write_results_section(
-        accepted, rejected, matrix, thesis,
-        topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
-        background_lit_entries=background_lit_entries,
+    sections["results"] = _build_thin_results_section(accepted, matrix) if _thin else await write_results_section(
+        accepted, rejected, matrix, thesis, topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
     )
     _log_section_done("results", sections["results"])
     if not _thin:
@@ -689,19 +684,13 @@ async def render_full_paper(
     # logic. This is the FINAL retry layer (4th attempt) for any
     # audit-gated section that came in below floor. Single-shot to
     # bound wall time.
-    from agent.paper_writer_backstop import apply_section_backstop
-    sections = await apply_section_backstop(
-        sections,
-        user_prompt=user,
-        section_prompts=_prompts,
-        topic=topic,
-        accepted=accepted,
-        matrix=matrix,
-        chain=chain, client=client, ledger=ledger, seed=seed,
-        background_lit_entries=background_lit_entries,
-        write_anchored_fn=_write_anchored_section,
-        write_scoped_fn=_write_scoped_section,
-    )
+    if not _thin:
+        from agent.paper_writer_backstop import apply_section_backstop
+        sections = await apply_section_backstop(
+            sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix,
+            chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries,
+            write_anchored_fn=_write_anchored_section, write_scoped_fn=_write_scoped_section,
+        )
 
     ordered = tuple(sections[n] for n in (_THIN_BRIEF_SECTION_ORDER if _thin else _FULL_PAPER_SECTION_ORDER) if n in sections)
     body_md = title_md + "\n".join(s.body_md for s in ordered).rstrip() + "\n"

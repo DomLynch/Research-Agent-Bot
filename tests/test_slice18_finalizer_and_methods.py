@@ -538,7 +538,7 @@ def test_slice38_corpus_sufficiency_verdict_returns_explicit_reasons() -> None:
     _, r2 = corpus_sufficiency_verdict(n_receipts=15, n_tensions=0, n_primary_tier=5)
     assert any("n_tensions" in r for r in r2)
     _, r3 = corpus_sufficiency_verdict(n_receipts=15, n_tensions=3, n_primary_tier=0)
-    assert any("n_primary_tier" in r and "review-tier" in r for r in r3)
+    assert any("n_primary_tier" in r and "primary-tier" in r for r in r3)
 
 
 def test_slice38_no_primary_tier_downshifts_even_with_high_count() -> None:

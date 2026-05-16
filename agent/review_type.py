@@ -50,7 +50,7 @@ def corpus_sufficiency_verdict(n_receipts: int, n_tensions: int, n_primary_tier:
     reasons = tuple(r for r in (
         f"n_receipts={n_receipts} < {THIN_CORPUS_MIN_RECEIPTS}" if n_receipts < THIN_CORPUS_MIN_RECEIPTS else "",
         f"n_tensions={n_tensions} < {THIN_CORPUS_MIN_TENSIONS}" if n_tensions < THIN_CORPUS_MIN_TENSIONS else "",
-        f"n_primary_tier={n_primary_tier} < {THIN_CORPUS_MIN_PRIMARY_TIER} (all evidence is review-tier; no primary-endpoint anchor)" if 0 <= n_primary_tier < THIN_CORPUS_MIN_PRIMARY_TIER else "",
+        f"n_primary_tier={n_primary_tier} < {THIN_CORPUS_MIN_PRIMARY_TIER} (insufficient primary-tier anchors)" if 0 <= n_primary_tier < THIN_CORPUS_MIN_PRIMARY_TIER else "",
     ) if r)
     return (not reasons, reasons)
 

@@ -179,6 +179,29 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
     assert "lifespan" not in immune_body
 
 
+def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
+    receipts = [_summary("r-immune", outcome="immune"), _summary("r-longevity", outcome="longevity")]
+
+    async def fake_anchored(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
+
+    async def fake_scoped(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
+
+    async def fail_results(*_args, **_kwargs):
+        raise AssertionError("thin_corpus_brief must not call long-form Results writer")
+
+    monkeypatch.setattr(paper_writer, "_write_anchored_section", fake_anchored)
+    monkeypatch.setattr(paper_writer, "_write_scoped_section", fake_scoped)
+    monkeypatch.setattr(paper_writer, "write_results_section", fail_results)
+    md, sections = asyncio.run(paper_writer.render_full_paper(
+        receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
+        submission_id="thin-test", chain=(), review_type="thin_corpus_brief",
+    ))
+    assert "### Immune Outcomes" in md and "### Longevity Outcomes" in md
+    assert "## Introduction" not in md and all(s.name != "inferential_bridge" for s in sections)
+
+
 def test_strip_rendered_citation_markers_removes_body_metadata() -> None:
     md = (
         "## Results\n\n"
