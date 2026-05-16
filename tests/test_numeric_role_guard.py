@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from numeric_role_guard import (  # noqa: E402
+from numeric_role_guard import (  # type: ignore[import-not-found]  # noqa: E402
     auto_strip_offending_sentences,
     repair_source_context_drift_sentences,
     scan_paper,
@@ -592,6 +592,21 @@ def test_source_context_drift_skips_deterministic_tables(tmp_path):
     )
     drift = [i for i in issues if i.issue_type == "source_context_drift"]
     assert drift == []
+
+
+def test_untraceable_numeric_guard_skips_inline_markdown_tables(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    manifest = {"receipts": []}
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice |\n"
+        "|---|---|\n"
+        "| Other | n=46; claims=1335 |\n\n"
+        "The synthesis remains bounded."
+    )
+    issues = scan_paper(paper, manifest=manifest, quant_claims_dir=qc_dir)
+    assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
 
 
 def test_untraceable_numeric_guard_blocks_citationless_prose_value(tmp_path):

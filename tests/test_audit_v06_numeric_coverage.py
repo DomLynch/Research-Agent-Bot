@@ -55,8 +55,11 @@ def test_thin_corpus_audit_does_not_require_full_manuscript_sections() -> None:
     failed = {c["name"] for c in report["checks"] if not c["passed"]}
     assert "Q1_word_count" not in failed
     assert "Q7_section_coverage" not in failed
+    assert "Q9_numeric_density" not in failed
+    assert "Q10_hedge_density" not in failed
     assert "Q11_discussion_depth" not in failed
     assert "Q12_cross_domain_depth" not in failed
+    assert "Q13_analytical_ratio" not in failed
 
 
 def test_dose_untraceable_flagged() -> None:

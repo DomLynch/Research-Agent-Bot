@@ -1073,6 +1073,13 @@ def _strip_citation_footer_lines(paper_md: str) -> str:
     )
 
 
+def _strip_markdown_table_lines(paper_md: str) -> str:
+    return "\n".join(
+        line for line in paper_md.splitlines()
+        if not line.lstrip().startswith("|")
+    )
+
+
 _NON_PROSE_GUARD_SECTION_RE = re.compile(
     r"^##\s+(?:Quantitative Evidence Index\b|Structured Evidence "
     r"Tables\b|Table\s+\d+\b|Table\s+\d+\s*\(|References\b)",
@@ -1134,9 +1141,9 @@ def scan_paper(
         bg_lit_registry=bg_lit_registry,
         quant_claims_dir=quant_claims_dir,
     )
-    prose_md = _strip_citation_footer_lines(
+    prose_md = _strip_markdown_table_lines(_strip_citation_footer_lines(
         _strip_non_prose_guard_sections(paper_md),
-    )
+    ))
     body_for_drift = _strip_references_section(prose_md)
     drift_sentences = set(_split_sentences(body_for_drift))
     for sentence in _split_sentences(prose_md):
