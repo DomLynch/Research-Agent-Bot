@@ -23,17 +23,12 @@ REVIEW_TYPES: Final[dict[str, str]] = {
     "prisma_scr_scoping_synthesis": "PRISMA-ScR structured scoping synthesis",
     "structured_evidence_synthesis": "Structured evidence synthesis",
     "narrative_review": "Narrative review",
-    "systematic_review":
-        "Systematic review",
-    "meta_analysis":
-        "Systematic review and meta-analysis",
-    "technical_survey":
-        "Technical survey",
-    "management_literature_review":
-        "Management literature review",
+    "systematic_review": "Systematic review",
+    "meta_analysis": "Systematic review and meta-analysis",
+    "technical_survey": "Technical survey",
+    "management_literature_review": "Management literature review",
     "evidence_brief": "Evidence brief",
-    "thin_corpus_brief":
-        "Thin-corpus evidence brief",
+    "thin_corpus_brief": "Thin-corpus evidence brief",
 }
 
 DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"

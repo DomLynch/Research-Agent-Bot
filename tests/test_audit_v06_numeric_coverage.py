@@ -51,7 +51,7 @@ def test_thin_corpus_audit_does_not_require_full_manuscript_sections() -> None:
         "## Limitations\n\n" + "l " * 250 + "\n\n"
         "## Conclusion\n\n" + "c " * 250 + "\n"
     )
-    report = audit.audit(paper, review_type="thin_corpus_brief")
+    report = audit.audit(paper, review_type="evidence_brief")
     failed = {c["name"] for c in report["checks"] if not c["passed"]}
     assert "Q1_word_count" not in failed
     assert "Q7_section_coverage" not in failed

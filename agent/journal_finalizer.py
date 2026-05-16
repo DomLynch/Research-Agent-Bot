@@ -182,19 +182,8 @@ def _phase_a_methods_replace(
 def _phase_b_lane_qualifier(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
-    """Prepend the animal/preclinical lane qualifier to any body
-    paragraph that cites at least one animal-flagged source AND lacks
-    a recognised qualifier. Universal — uses the evidence_lanes.json
-    sidecar.
-
-    Slice 27 (2026-05-15): reverted Slice 23's mixed-lane precision
-    skip. The qualifier "In animal/preclinical evidence," is a partial-
-    truth statement about the paragraph's citation set — it correctly
-    flags the animal-lane portion without claiming the non-animal cites
-    are also animal. Leaving mixed-lane paragraphs un-qualified produces
-    a worse outcome (the gate flags every unlabelled animal cite as a
-    surface failure). Senolytics audit demonstrated 5 such residual
-    flags that the precision skip was creating."""
+    """Lane-qualify animal/preclinical citations without over-labelling
+    mixed human/review citation clusters as all-animal."""
     lanes_path = out_dir / "evidence_lanes.json"
     if not lanes_path.is_file():
         return text, []

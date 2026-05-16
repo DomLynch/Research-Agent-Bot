@@ -15,11 +15,13 @@ from __future__ import annotations
 
 import asyncio
 import sys
+from types import SimpleNamespace
 from pathlib import Path
+from typing import Any, cast
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import audit_v06_paper as audit  # noqa: E402
-import run_v06_synthesis as orch  # noqa: E402
+import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
+import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 
 
 def test_module_paths_set_via_set_topic_no_metformin_default() -> None:
@@ -242,6 +244,15 @@ def test_receipt_funnel_reports_drop_reasons(monkeypatch, tmp_path) -> None:
     md = orch.render_receipt_funnel_markdown(report)
     assert "`candidate_partial_only`" in md
     assert "`outside_high`" in md
+
+
+def test_reconciled_receipt_funnel_renames_strict_high_confidence_count() -> None:
+    report = {"counts": {"accepted_high_confidence": 2, "candidate_partial_only": 6}}
+    receipt = SimpleNamespace(evidence_tier="B2")
+    reconciled = orch.reconcile_receipt_funnel_report(report, cast(Any, [receipt] * 5))
+    assert "accepted_high_confidence" not in reconciled["counts"]
+    assert reconciled["counts"]["admitted_receipts"] == 5
+    assert reconciled["counts"]["original_strict_high_confidence_receipts"] == 2
 
 
 def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
