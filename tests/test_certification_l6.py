@@ -7,7 +7,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import certification_report as cert  # noqa: E402
+import certification_report as cert  # type: ignore[import-not-found]  # noqa: E402
 
 
 def _paper(run_id: str) -> Path:
@@ -150,7 +150,10 @@ def test_rapamycin_patha_l6_verdicts_are_self_contained() -> None:
     ]
     selected_pair = runs[1:]
     for run_id in runs:
-        path = REPO / "runs" / run_id / "full_paper.final_verdict.json"
+        path = (
+            REPO / "tests" / "fixtures" / "certification_l6_patha"
+            / f"{run_id}.final_verdict.json"
+        )
         doc = json.loads(path.read_text(encoding="utf-8"))
         assert doc["maturity_level"] == 6
         assert doc["l6_reproducibly_journal_ready"] is True
