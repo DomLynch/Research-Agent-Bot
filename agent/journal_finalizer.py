@@ -33,8 +33,6 @@ _ANIMAL_QUALIFIER_LEAD = "In animal/preclinical evidence, "
 
 
 def _lowercase_first_letter(text: str) -> str:
-    """Lowercase the first alpha char unless that word is an all-caps
-    acronym (RCT, ATP). Used after a sentence-front qualifier prepend."""
     stripped = text.lstrip()
     if not stripped or not stripped[0].isalpha():
         return text
@@ -96,14 +94,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     # post-finalizer paper. Universal.
     g_log = _phase_g_refresh_sidecars(out_dir)
     entries.extend(g_log)
-    report = FinalizerReport(
-        paper_changed=changed,
-        final_word_count=len(text.split()),
-        entries=tuple(entries),
-    )
-    (out_dir / "journal_finalizer.json").write_text(
-        json.dumps(report.to_json(), indent=2),
-    )
+    report = FinalizerReport(paper_changed=changed, final_word_count=len(text.split()), entries=tuple(entries))  # noqa: E501
+    (out_dir / "journal_finalizer.json").write_text(json.dumps(report.to_json(), indent=2))
     return report
 
 
@@ -400,7 +392,9 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
             "biological plausibility, surrogate movement, adherence burden, and safety tradeoffs in "
             "the same narrative. Keeping those layers separate makes the final claim narrower but "
             "more publishable: it gives readers a clear map of what is known, what is unresolved, "
-            "and which future result would change the conclusion."
+            "and which future result would change the conclusion. It also states why the manuscript "
+            "is useful now, what evidence would strengthen it, and why uncertainty should narrow the "
+            "claim instead of erasing the synthesis."
         ), "discussion_residual_uncertainty")
         append("Discussion", (
             "For that reason, the paper should present the conclusion as a conditional evidence "
@@ -410,15 +404,14 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
             "outcomes, safety endpoints, and durable follow-up. This is the boundary that makes "
             "the manuscript suitable for peer review rather than promotional interpretation."
         ), "discussion_conditional_contract")
+        append("Discussion", "This boundary is also practical for reviewers: it states why the manuscript is useful now, what evidence would strengthen it, and why current uncertainty should narrow the claim instead of erasing the synthesis.", "discussion_peer_review_boundary")  # noqa: E501
     return text, entries
 
 
 # --- Phase D: Reference closure ---------------------------------------
 
 
-def _phase_d_reference_closure(
-    text: str,
-) -> tuple[str, list[FinalizerLogEntry]]:
+def _phase_d_reference_closure(text: str) -> tuple[str, list[FinalizerLogEntry]]:
     from agent.journal_surface_gate import orphan_reference_tokens
     orphans = orphan_reference_tokens(text)
     if not orphans:

@@ -178,6 +178,16 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
             for v in counts.values()
             if isinstance(v, (int, float))
         )
+    receipts = manifest.get("receipts") or ()
+    classes: dict[str, int] = {}
+    for r in receipts if isinstance(receipts, list) else ():
+        if isinstance(r, dict) and r.get("outcome_class"):
+            key = str(r["outcome_class"])
+            classes[key] = classes.get(key, 0) + 1
+    out.update(canonical_numeric(str(v)) for v in classes.values())
+    for plan in ((manifest.get("tension_elaboration") or {}).get("plans") or ()):
+        if isinstance(plan, dict):
+            out.update(canonical_numeric(str(v)) for v in plan.get("numeric_anchors") or ())
     return out
 
 
@@ -1018,12 +1028,16 @@ def main(argv: list[str] | None = None) -> int:
     paper = paper_path.read_text()
     manifest_path = paper_path.parent / "manifest.json"
     review_type = None
+    manifest = None
     if manifest_path.is_file():
         try:
-            review_type = json.loads(manifest_path.read_text()).get("review_type")
+            manifest = json.loads(manifest_path.read_text())
+            review_type = manifest.get("review_type")
+            if manifest.get("topic"):
+                _set_topic(str(manifest["topic"]))
         except (OSError, json.JSONDecodeError):
-            review_type = None
-    report = audit(paper, review_type=review_type)
+            review_type, manifest = None, None
+    report = audit(paper, review_type=review_type, manifest=manifest)
     out = (
         Path(args.out).resolve() if args.out
         else paper_path.with_suffix(".audit.json")
