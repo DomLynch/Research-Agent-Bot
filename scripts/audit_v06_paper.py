@@ -73,6 +73,16 @@ _OBJECTIVE_PARTIAL_TYPES = {
     # itself is a primary-source fact extracted from the paper text.
     "unit_value", "sample_size", "year", "sample_count",
 }
+_THOUSANDS_SEP_RE = re.compile(r"(?<=\d)[,\s](?=\d{3}\b)")
+
+
+def canonical_numeric(s: str) -> str:
+    """Canonical numeric token for trace comparison.
+
+    Handles grouped thousands such as `26 916` / `26,916` without
+    weakening the strict source-trace rule for ordinary prose numbers.
+    """
+    return _THOUSANDS_SEP_RE.sub("", str(s).strip().lower())
 
 
 def _load_corpus_numerics() -> set[str]:
@@ -138,7 +148,7 @@ def _load_table_admissible_numerics() -> set[str]:
 def _add_claim_numerics(c: dict, nums: set[str]) -> None:
     """Helper: extract numerics from one claim into the target set."""
     for v in c.get("numeric_values") or ():
-        nums.add(str(v))
+        nums.add(canonical_numeric(str(v)))
         try:
             if float(v).is_integer():
                 nums.add(str(int(v)))
@@ -146,7 +156,25 @@ def _add_claim_numerics(c: dict, nums: set[str]) -> None:
             continue
     raw = (c.get("raw_text") or "").strip()
     if raw:
-        nums.add(raw)
+        nums.add(canonical_numeric(raw))
+
+
+def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
+    if not isinstance(manifest, dict):
+        return set()
+    keys = (
+        "n_receipts", "n_high_confidence_claims_total",
+        "n_non_orthogonal_tensions", "total_words",
+    )
+    out = {
+        canonical_numeric(str(manifest[k]))
+        for k in keys
+        if isinstance(manifest.get(k), int | float)
+    }
+    counts = ((manifest.get("receipt_funnel") or {}).get("counts") or {})
+    if isinstance(counts, dict):
+        out.update(canonical_numeric(str(v)) for v in counts.values() if isinstance(v, int | float))
+    return out
 
 
 def _load_paper_metadata() -> dict[str, dict]:
@@ -187,6 +215,13 @@ _PATTERNS_BY_CATEGORY: tuple[tuple[str, str], ...] = (
         r"\b(\d+\.?\d*)\s*%(?!\s*(?:CI|confidence\s+interval))",
     ),
     ("p_value", r"\b[Pp]\s*[<>=]\s*(0?\.\d+)\b"),
+    ("grouped_number", r"\b(\d{1,3}(?:[,\s]\d{3})+)\b"),
+    (
+        "brief_count",
+        r"\b(\d+(?:[,\s]\d{3})*)\s+(?:included\s+)?"
+        r"(?:source\s+papers?|sources?|receipts?|claims?|tensions?|"
+        r"cross-study\s+disagreements|curated\s+reference\s+papers)\b",
+    ),
     # Ratios: mandatory `=` or `:` separator + digit. Pre-fix
     # `OR\s*[=:]?` (optional separator) matched English "or" in
     # prose like "5 or 10 mg" → false ratio extraction. aOR/IRR/
@@ -239,7 +274,7 @@ def _split_table_section(paper: str) -> tuple[str, str]:
 
 
 def _check_numeric_integrity(
-    paper: str, corpus_nums: set[str],
+    paper: str, corpus_nums: set[str], manifest: dict | None = None,
 ) -> tuple[bool, str]:
     """Q2: every reportable numeric in the paper must trace to the
     corpus. Prose uses the STRICT pool (`corpus_nums` arg, from
@@ -250,6 +285,8 @@ def _check_numeric_integrity(
     """
     # Strip CI-level anchors before splitting (so the strip applies
     # uniformly to both prose and table blocks).
+    strict_pool = {canonical_numeric(v) for v in corpus_nums}
+    strict_pool.update(_manifest_structural_numerics(manifest))
     paper_clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
     )
@@ -271,26 +308,28 @@ def _check_numeric_integrity(
 
     def _audit_block(block: str, pool: set[str]) -> None:
         nonlocal n_total, n_bad
+        pool = {canonical_numeric(v) for v in pool}
         for cat, pat in _PATTERNS_BY_CATEGORY:
             vals = set(re.findall(pat, block))
             if cat == "percentage":
-                vals = {v for v in vals if 1.0 < float(v) < 1000}
+                vals = {v for v in vals if 1.0 < float(canonical_numeric(v)) < 1000}
             by_cat.setdefault(cat, set()).update(vals)
             bad = []
             for v in vals:
-                f = float(v)
+                canon = canonical_numeric(v)
+                f = float(canon)
                 candidates = {
-                    v, str(f),
-                    str(int(f)) if f.is_integer() else v,
+                    v, canon, str(f),
+                    str(int(f)) if f.is_integer() else canon,
                 }
-                if not any(c in pool for c in candidates):
+                if not any(canonical_numeric(c) in pool for c in candidates):
                     bad.append(v)
             n_total += len(vals)
             n_bad += len(bad)
             if bad:
                 untraceable_by_cat.setdefault(cat, []).extend(bad)
 
-    _audit_block(prose_block, corpus_nums)
+    _audit_block(prose_block, strict_pool)
     if table_block and table_pool is not None:
         _audit_block(table_block, table_pool)
 
@@ -823,7 +862,13 @@ def _check_inferential_bridge_contract(paper: str) -> tuple[bool, str]:
 
 _CHECKS = (
     ("Q1_word_count", _check_word_count, True),  # P1
-    ("Q2_numeric_integrity", lambda p: _check_numeric_integrity(p, _CORPUS_NUMS), True),
+    (
+        "Q2_numeric_integrity",
+        lambda p: _check_numeric_integrity(
+            p, _CORPUS_NUMS, manifest=_ACTIVE_MANIFEST,
+        ),
+        True,
+    ),
     ("Q3_no_paper_id_in_body", lambda p: _check_no_paper_id_in_body(p, _PAPER_META), True),
     ("Q4_no_polarity_error", _check_no_mortality_lifespan_conflation, True),
     ("Q5_no_fabricated_methods", _check_no_fabricated_methodology, True),
@@ -842,13 +887,19 @@ _CHECKS = (
 # Module-level state so the lambdas above can read corpus + meta.
 _CORPUS_NUMS: set[str] = set()
 _PAPER_META: dict[str, dict] = {}
+_ACTIVE_MANIFEST: dict | None = None
 
 
-def audit(paper: str, review_type: str | None = None) -> dict:
+def audit(
+    paper: str,
+    review_type: str | None = None,
+    manifest: dict | None = None,
+) -> dict:
     """Run all 10 checks. Returns dict with per-check verdict + score."""
-    global _CORPUS_NUMS, _PAPER_META
+    global _CORPUS_NUMS, _PAPER_META, _ACTIVE_MANIFEST
     _CORPUS_NUMS = _load_corpus_numerics()
     _PAPER_META = _load_paper_metadata()
+    _ACTIVE_MANIFEST = manifest
 
     results = []
     p1_pass = True

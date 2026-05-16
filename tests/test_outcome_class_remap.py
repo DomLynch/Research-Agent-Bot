@@ -7,11 +7,14 @@ these without modifying the vocab files (owned by Codex's Phase 2 lane).
 """
 from __future__ import annotations
 
+from types import SimpleNamespace
+
 import pytest
 
 from agent.outcome_class_remap import (
     ENDPOINT_REMAP,
     is_known_misclassification,
+    refine_other_outcome_class,
     remap_outcome_class,
 )
 from agent.synthesis import detect_outcome_class
@@ -163,3 +166,21 @@ def test_detect_outcome_class_qol_takes_priority_over_cognitive_when_both_presen
     text = "SF-36 emotional well-being and cognitive function were both measured"
     # First-listed wins; healthspan_qol is before cognitive in the dict.
     assert detect_outcome_class(text) == "healthspan_qol"
+
+
+def test_refine_other_splits_biomedical_junk_drawer() -> None:
+    receipts = [
+        SimpleNamespace(receipt_id="a", source_title="Vitamin D and bone fracture risk", population_summary=""),
+        SimpleNamespace(receipt_id="b", source_title="All-cause mortality and survival", population_summary=""),
+        SimpleNamespace(receipt_id="c", source_title="Vitamin D deficiency prevalence status", population_summary=""),
+        SimpleNamespace(receipt_id="d", source_title="Sepsis inflammation and infection", population_summary=""),
+        SimpleNamespace(receipt_id="e", source_title="Cholecalciferol pharmacokinetic dose study", population_summary=""),
+    ]
+    classes = {refine_other_outcome_class(r, "other") for r in receipts}
+    assert len(classes) >= 4
+    assert "contextual_other" not in classes
+
+
+def test_refine_other_keeps_non_other_unchanged() -> None:
+    receipt = SimpleNamespace(receipt_id="bone", source_title="Bone trial", population_summary="")
+    assert refine_other_outcome_class(receipt, "longevity") == "longevity"

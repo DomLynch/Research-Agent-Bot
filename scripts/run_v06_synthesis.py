@@ -58,6 +58,7 @@ from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
 from agent.outcome_class_remap import remap_outcome_class  # noqa: E402
+from agent.outcome_class_remap import refine_other_outcome_class  # noqa: E402
 from agent.synthesis_schemas import (  # noqa: E402
     EffectDirection, ReceiptSummary, SynthesisSection, SynthesisThesis,
     Tension, TensionKind, TensionMatrix,
@@ -1897,7 +1898,7 @@ def build_receipts_from_quant_claims(
             paper_title=meta.get("title") or "",
             claims=claims,
         )
-        receipts.append(ReceiptSummary(
+        receipt = ReceiptSummary(
             receipt_id=paper_id,
             receipt_path=str(QUANT_DIR / f"{paper_id}.quant_claims.json"),
             topic=topic,
@@ -1922,6 +1923,12 @@ def build_receipts_from_quant_claims(
             source_doi=meta.get("doi"),
             source_pmid=meta.get("pmid"),
             source_venue=meta.get("journal"),
+        )
+        receipts.append(dataclasses.replace(
+            receipt,
+            outcome_class=refine_other_outcome_class(
+                receipt, receipt.outcome_class,
+            ),
         ))
     receipts.sort(key=lambda r: -r.n_claims)
     return receipts
