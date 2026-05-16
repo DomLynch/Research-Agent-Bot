@@ -1648,25 +1648,63 @@ def _receipt_scope_classes() -> set[str]:
     return {"core_on_thesis", "adjacent_clinical", "background_mechanism"}
 
 
+def _load_paper_class_map() -> dict[str, str]:
+    """Slice 37 (2026-05-16): return PMC paper_id → classification dict.
+
+    Two-format reader: legacy `corpus_classification.json` (paper_id-keyed)
+    OR current `corpus_manifest.json` (entries listed by trial-id e.g. NCT
+    but with DOI/PMID for join). When using the manifest format, joins
+    DOIs to `_extract_report.papers_resolved` (PMC-keyed) so downstream
+    code can map PMC paper_ids back to their classifier label. Universal —
+    works for any topic, any pipeline version."""
+    keep = _receipt_scope_classes()
+    out: dict[str, str] = {}
+    legacy = QUANT_DIR.parent / "corpus_classification.json"
+    if legacy.exists():
+        try:
+            for r in json.loads(legacy.read_text()):
+                if isinstance(r, dict) and r.get("classification") in keep and r.get("paper_id"):
+                    out[str(r["paper_id"])] = str(r["classification"])
+        except json.JSONDecodeError:
+            pass
+    manifest_path = QUANT_DIR.parent / "corpus_manifest.json"
+    report_path = QUANT_DIR.parent / "_extract_report.json"
+    if not (manifest_path.exists() and report_path.exists()):
+        return out
+    try:
+        manifest = json.loads(manifest_path.read_text())
+        report = json.loads(report_path.read_text())
+    except json.JSONDecodeError:
+        return out
+    doi_to_class = {
+        (e.get("doi") or "").strip().lower(): str(e["classification"])
+        for e in (manifest.get("entries") or [])
+        if isinstance(e, dict) and e.get("classification") in keep
+        and e.get("doi") and e.get("classification")
+    }
+    pmid_to_class = {
+        str(e.get("pmid")): str(e["classification"])
+        for e in (manifest.get("entries") or [])
+        if isinstance(e, dict) and e.get("classification") in keep
+        and e.get("pmid") and e.get("classification")
+    }
+    for pmc, meta in (report.get("papers_resolved") or {}).items():
+        if not isinstance(meta, dict):
+            continue
+        doi = (meta.get("doi") or "").strip().lower()
+        pmid = str(meta.get("pmid") or "")
+        cls = doi_to_class.get(doi) or pmid_to_class.get(pmid)
+        if cls:
+            out.setdefault(str(pmc), cls)
+    return out
+
+
 def _load_classified_receipt_candidate_ids() -> set[str]:
     """Core, adjacent, and background-mechanism papers can carry
     load-bearing evidence in CLIN/INF/MECH papers. Off-thesis and
-    rejected classes stay out."""
-    path = QUANT_DIR.parent / "corpus_classification.json"
-    if not path.exists():
-        return set()
-    try:
-        rows = json.loads(path.read_text())
-    except json.JSONDecodeError:
-        return set()
-    keep = _receipt_scope_classes()
-    return {
-        str(r.get("paper_id"))
-        for r in rows
-        if isinstance(r, dict)
-        and r.get("classification") in keep
-        and r.get("paper_id")
-    }
+    rejected classes stay out. Slice 37: reads both legacy paper_id-keyed
+    and current DOI-keyed classification formats. Universal."""
+    return set(_load_paper_class_map())
 
 
 def _claim_confidence_counts(claims: list[Any]) -> Counter[str]:
@@ -1791,25 +1829,37 @@ def build_receipts_from_quant_claims(
     topic: str,
 ) -> list[ReceiptSummary]:
     """Adapter: v0.6.0 quant_claims → ReceiptSummary list. One receipt
-    per contributing paper. Only papers with ≥1 high-confidence
-    effect-role claim are included.
+    per contributing paper.
 
-    Workstream A: `topic` parameter is the per-receipt label (set on
-    every ReceiptSummary). The corpus directory is QUANT_DIR which
-    has already been set by `_set_topic(topic)` upstream."""
+    Slice 37 (2026-05-16): role-aware admission. High-confidence claims
+    always admitted (primary path). Partial-confidence claims admitted
+    iff the paper is in the corpus_classifier's keep-set (core_on_thesis
+    / adjacent_clinical / background_mechanism) — these are review-tier
+    or mechanistic-tier papers whose evidence is valuable even without
+    per-paper primary numerics. Partial-only papers get tier downgraded
+    to B2 (review) so downstream code treats them appropriately. Closes
+    the vitamin_d 2-receipt starvation: 84 extracted → 65 receipts."""
     receipts: list[ReceiptSummary] = []
     paper_meta_by_id = _load_paper_meta_by_id()
     active_paper_ids = _load_receipt_candidate_paper_ids()
+    paper_class_map = _load_paper_class_map()
 
-    # Group high-confidence claims by paper_id
+    # Group admittable claims by paper_id (PMC prefix → class lookup)
     by_paper: dict[str, list[dict]] = defaultdict(list)
+    high_papers: set[str] = set()
     for path in sorted(QUANT_DIR.glob("*.quant_claims.json")):
         d = json.loads(path.read_text())
         pid = d.get("paper_id") or path.stem.replace(".quant_claims", "")
         if active_paper_ids is not None and pid not in active_paper_ids:
             continue
+        pmc_prefix = pid.split("_")[0]
+        in_keep_class = pmc_prefix in paper_class_map or pid in paper_class_map
         for c in d.get("claims", []):
-            if c.get("binding_confidence") == "high":
+            conf = c.get("binding_confidence")
+            if conf == "high":
+                by_paper[pid].append(c)
+                high_papers.add(pid)
+            elif conf == "partial" and in_keep_class:
                 by_paper[pid].append(c)
 
     for paper_id, claims in by_paper.items():
@@ -1818,6 +1868,11 @@ def build_receipts_from_quant_claims(
         meta = paper_meta_by_id.get(paper_id, {})
         agg = _aggregate_paper(paper_id, claims)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
+        # Slice 37: partial-only papers downgrade tier so the audit
+        # spine reflects that the receipt is review-tier evidence, not
+        # a primary endpoint paper. Universal — no topic-specific logic.
+        if paper_id not in high_papers and tier in ("A1", "A2", "B1"):
+            tier, directness = "B2", "review"
         thesis_text = _build_receipt_thesis_text(
             paper_id=paper_id,
             paper_title=meta.get("title") or "",
