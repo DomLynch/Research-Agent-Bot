@@ -700,9 +700,7 @@ def _strip_empty_headings(paper_md: str) -> tuple[str, int]:
     return paper_md, len(removals)
 
 
-def _strip_reference_only_next_study_section(
-    paper_md: str, *, force: bool = False,
-) -> tuple[str, int]:
+def _strip_reference_only_next_study_section(paper_md: str) -> tuple[str, int]:
     pattern = re.compile(
         r"^###\s+Next-Study Design Recommendation\s*$"
         r"(?P<body>.*?)(?=^##\s+References\b|\Z)",
@@ -714,9 +712,6 @@ def _strip_reference_only_next_study_section(
     def repl(match: re.Match[str]) -> str:
         nonlocal changed
         body = match.group("body")
-        if force:
-            changed += 1
-            return ""
         residue = re.sub(r"^\s*-\s+\*\*.+?\*\*.*$", "", body, flags=re.M)
         residue = re.sub(r"(?is)\bAdditional corpus sources\b.*", "", residue)
         if residue.strip():
@@ -846,12 +841,7 @@ def apply_lightweight_public_polish(
             "n_changes": n_empty_headings,
             "description": "removed headings left empty after deterministic cleanup",
         })
-    force_next = (manifest or {}).get("review_type") in {
-        "thin_corpus_brief", "evidence_brief",
-    }
-    new_md, n_ref_only_next = _strip_reference_only_next_study_section(
-        new_md, force=force_next,
-    )
+    new_md, n_ref_only_next = _strip_reference_only_next_study_section(new_md)
     if n_ref_only_next:
         log.append({
             "fix_type": "reference_only_next_study_strip",

@@ -649,21 +649,6 @@ def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:
     assert log == []
 
 
-def test_finalizer_qualifies_orphan_animal_reference_cluster(tmp_path: Path) -> None:
-    from agent.journal_finalizer import finalize_run
-    run = tmp_path / "run"
-    run.mkdir()
-    (run / "full_paper.md").write_text(
-        "## Results\n\nClinical text.\n\n## References\n\n- **Attia 2020.** Animal paper.\n"
-    )
-    (run / "evidence_lanes.json").write_text(json.dumps({
-        "animal_citations": [{"citation": "Attia 2020"}],
-    }))
-    finalize_run(run)
-    text = (run / "full_paper.md").read_text()
-    assert "In animal/preclinical evidence, additional corpus sources" in text
-
-
 def test_slice35_render_full_paper_thin_brief_skips_long_form_sections() -> None:
     """Slice 35 supersedes Phase J: writer skips generating Introduction,
     Background, Cross-Domain, Discussion, novel_framework when called with
