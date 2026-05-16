@@ -662,3 +662,78 @@ def test_phase_j_noop_when_no_long_form_sections_present(tmp_path: Path) -> None
     new_text, log = _phase_j_thin_corpus_trim(text, run)
     assert new_text == text
     assert log == []
+
+
+def test_phase_k_routes_immune_paragraph_to_immune_outcomes(tmp_path: Path) -> None:
+    """Slice 33: paragraph cite-majority is immune → moves from ###
+    Cardiometabolic Outcomes to ### Immune Outcomes. Universal — uses
+    receipt outcome_class + citation registry. Surfaced in glp1 run."""
+    from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "p1", "outcome_class": "cardiometabolic"},
+        {"receipt_id": "p2", "outcome_class": "immune"},
+        {"receipt_id": "p3", "outcome_class": "immune"},
+    ]}))
+    (run / "citation_registry.json").write_text(json.dumps({
+        "p1": {"body_citation": "Smith 2022"},
+        "p2": {"body_citation": "Jones 2023"},
+        "p3": {"body_citation": "Lee 2024"},
+    }))
+    text = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "Smith 2022 reports weight loss and glycemic improvement.\n\n"
+        "Jones 2023 and Lee 2024 found null immune-system effects across the corpus.\n\n"
+        "### Immune Outcomes\n\n"
+        "Placeholder.\n\n"
+        "## Discussion\n"
+    )
+    new_text, log = _phase_k_route_outcome_paragraphs(text, run)
+    # The immune paragraph (Jones 2023, Lee 2024) should now live under Immune Outcomes
+    immune_idx = new_text.index("### Immune Outcomes")
+    cardio_idx = new_text.index("### Cardiometabolic Outcomes")
+    assert new_text.index("Jones 2023 and Lee 2024") > immune_idx
+    assert new_text.index("Smith 2022 reports") > cardio_idx
+    assert new_text.index("Smith 2022 reports") < immune_idx
+    assert log and log[0].n_changes == 1
+    assert log[0].rule == "route_paragraph_by_citation_class"
+
+
+def test_phase_k_noop_when_no_misclassified_paragraphs(tmp_path: Path) -> None:
+    """Slice 33: paragraphs already in correct sections pass through untouched."""
+    from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "p1", "outcome_class": "cardiometabolic"},
+        {"receipt_id": "p2", "outcome_class": "immune"},
+    ]}))
+    (run / "citation_registry.json").write_text(json.dumps({
+        "p1": {"body_citation": "Smith 2022"},
+        "p2": {"body_citation": "Jones 2023"},
+    }))
+    text = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "Smith 2022 reports weight loss.\n\n"
+        "### Immune Outcomes\n\n"
+        "Jones 2023 found null effects.\n\n"
+        "## Discussion\n"
+    )
+    new_text, log = _phase_k_route_outcome_paragraphs(text, run)
+    assert log == []
+
+
+def test_phase_k_noop_when_no_results_section(tmp_path: Path) -> None:
+    """Slice 33: safe when Results section absent (e.g. Evidence Brief)."""
+    from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"receipts": []}))
+    (run / "citation_registry.json").write_text(json.dumps({}))
+    text = "## Abstract\nA.\n\n## Methods\nM.\n"
+    new_text, log = _phase_k_route_outcome_paragraphs(text, run)
+    assert new_text == text
+    assert log == []

@@ -111,6 +111,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_j_thin_corpus_trim(text, out_dir)
     entries.extend(log)
+    text, log = _phase_k_route_outcome_paragraphs(text, out_dir)
+    entries.extend(log)
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
     # Phase G reads it. Phase G's surface re-evaluation reads from disk
     # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
@@ -171,11 +173,7 @@ def _phase_a_methods_replace(
     )
     if n == 0:
         return text, []
-    return patched, [FinalizerLogEntry(
-        phase="A_methods_replace", rule="render_methods_md",
-        n_changes=1,
-        detail=f"replaced Methods section with PRISMA-ScR pack ({len(new_methods.split())} words)",
-    )]
+    return patched, [FinalizerLogEntry(phase="A_methods_replace", rule="render_methods_md", n_changes=1, detail=f"replaced Methods section with PRISMA-ScR pack ({len(new_methods.split())} words)")]
 
 
 # --- Phase B: Evidence-lane qualifier injection -----------------------
@@ -239,12 +237,7 @@ def _phase_b_lane_qualifier(
     if n_patched == 0:
         return text, []
     new_body = "".join(paragraphs)
-    return new_body + tail, [FinalizerLogEntry(
-        phase="B_lane_qualifier",
-        rule="animal_preclinical_lead_in",
-        n_changes=n_patched,
-        detail=f"prepended lane qualifier to {n_patched} paragraph(s)",
-    )]
+    return new_body + tail, [FinalizerLogEntry(phase="B_lane_qualifier", rule="animal_preclinical_lead_in", n_changes=n_patched, detail=f"prepended lane qualifier to {n_patched} paragraph(s)")]
 
 
 # --- Phase C: Terminology sanitizer -----------------------------------
@@ -257,12 +250,7 @@ def _phase_c_terminology(text: str) -> tuple[str, list[FinalizerLogEntry]]:
     out = apply_pipeline_jargon_replacements(text)
     if out == text:
         return text, []
-    return out, [FinalizerLogEntry(
-        phase="C_terminology",
-        rule="pipeline_jargon_to_academic",
-        n_changes=1,
-        detail="applied _PIPELINE_JARGON_PUBLIC substitution table",
-    )]
+    return out, [FinalizerLogEntry(phase="C_terminology", rule="pipeline_jargon_to_academic", n_changes=1, detail="applied _PIPELINE_JARGON_PUBLIC substitution table")]
 
 
 # --- Phase H: Topic-slug → display-form normalisation -----------------
@@ -304,10 +292,7 @@ def _phase_h_topic_slug_normalise(
             last = m.end()
     if not n_subs:
         return text, []
-    return "".join(parts), [FinalizerLogEntry(
-        phase="H_topic_slug_normalise",
-        rule="slug_to_display_form", n_changes=n_subs,
-        detail=f"substituted {slug!r}→{display!r} in {n_subs} occurrence(s)")]
+    return "".join(parts), [FinalizerLogEntry(phase="H_topic_slug_normalise", rule="slug_to_display_form", n_changes=n_subs, detail=f"substituted {slug!r}→{display!r} in {n_subs} occurrence(s)")]
 
 
 # --- Phase I: Split concatenated heading lines -------------------------
@@ -327,10 +312,7 @@ def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[Finalizer
     new_text, n = _CONCAT_HEADING_RE.subn(r"\1\n\n\2", text)
     if not n:
         return text, []
-    return new_text, [FinalizerLogEntry(
-        phase="I_split_concatenated_headings",
-        rule="insert_blank_line_between_headings", n_changes=n,
-        detail=f"split {n} concatenated heading line(s)")]
+    return new_text, [FinalizerLogEntry(phase="I_split_concatenated_headings", rule="insert_blank_line_between_headings", n_changes=n, detail=f"split {n} concatenated heading line(s)")]
 
 
 # --- Phase J: Thin-corpus body trim (Slice 32) -------------------------
@@ -352,6 +334,50 @@ def _phase_j_thin_corpus_trim(text: str, out_dir: Path) -> tuple[str, list[Final
         return text, []
     kept = parts[0] + "".join(parts[i] + (parts[i + 1] if i + 1 < len(parts) else "") for i in keep)
     return kept, [FinalizerLogEntry(phase="J_thin_corpus_trim", rule="drop_long_form_for_evidence_brief", n_changes=n_dropped, detail=f"dropped {n_dropped} section(s)")]
+
+
+# --- Phase K: Outcome paragraph routing (Slice 33) ---------------------
+# When a paragraph in Results' `### X Outcomes` cites majority-Y papers,
+# route it to `### Y Outcomes`. Universal — uses manifest receipt
+# outcome_class + citation registry; no per-topic tokens. Surfaced in
+# the GLP-1 run where immune + longevity content drifted into the
+# Cardiometabolic subsection and the Immune/Longevity subsections were
+# left as empty stubs.
+_CITE_AY_RE = re.compile(r"\b[A-Z][a-zA-Z\-]+ \d{4}\b")
+
+
+def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
+    """Route Results paragraphs to correct ### X Outcomes by citation outcome_class. Universal."""
+    from agent.journal_surface_gate import _outcome_key
+    from collections import Counter
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    registry = _load_sidecar(out_dir / "citation_registry.json") or {}
+    rs = re.search(r"^## Results\b.*?(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if not (isinstance(manifest, dict) and isinstance(registry, dict) and rs):
+        return text, []
+    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ())
+          if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
+    cmap = {e["body_citation"]: oc[rid] for rid, e in registry.items()
+            if isinstance(e, dict) and e.get("body_citation") and rid in oc}
+    block = rs.group(0)
+    h3s = list(re.finditer(r"^###\s+(.+?Outcomes?)\s*$", block, flags=re.M))
+    if not cmap or len(h3s) < 2:
+        return text, []
+    keys = [_outcome_key(m.group(1)) for m in h3s]
+    bodies: list[list[str]] = [[] for _ in h3s]
+    n_moved = 0
+    for i, m in enumerate(h3s):
+        end = h3s[i + 1].start() if i + 1 < len(h3s) else len(block)
+        for para in (p.strip() for p in re.split(r"\n\n+", block[m.end():end]) if p.strip()):
+            cls = Counter(cmap[x] for x in _CITE_AY_RE.findall(para) if x in cmap)
+            top_key = _outcome_key(cls.most_common(1)[0][0]) if cls else keys[i]
+            j = keys.index(top_key) if top_key in keys else i
+            bodies[j].append(para)
+            n_moved += int(j != i)
+    if not n_moved:
+        return text, []
+    new_block = block[:h3s[0].start()] + "\n\n".join(h3s[i].group(0) + "\n\n" + "\n\n".join(b) for i, b in enumerate(bodies)) + "\n\n"
+    return text[:rs.start()] + new_block + text[rs.end():], [FinalizerLogEntry(phase="K_outcome_routing", rule="route_paragraph_by_citation_class", n_changes=n_moved, detail=f"moved {n_moved} paragraph(s) to correct outcome subsection")]
 
 
 # --- Phase D: Reference closure ---------------------------------------
@@ -431,13 +457,7 @@ def _phase_e_structural_fallback(
                 + insertion
                 + text[heading_end:]
             )
-            entries.append(FinalizerLogEntry(
-                phase="E_structural_fallback",
-                rule="insert_thesis_marker",
-                n_changes=1,
-                detail=f"inserted **Thesis:** marker from manifest "
-                       f"({len(thesis_text)} chars)",
-            ))
+            entries.append(FinalizerLogEntry(phase="E_structural_fallback", rule="insert_thesis_marker", n_changes=1, detail=f"inserted **Thesis:** marker from manifest ({len(thesis_text)} chars)"))
 
     # E.2 — append **Resolution criteria:** if missing
     disc_match2 = re.search(
