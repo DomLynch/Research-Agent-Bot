@@ -194,6 +194,43 @@ def test_lightweight_polish_strips_reference_only_next_study_section() -> None:
     assert any(i["fix_type"] == "reference_only_next_study_strip" for i in log)
 
 
+def test_lightweight_polish_strips_next_study_for_evidence_brief() -> None:
+    paper = (
+        "## What This Adds\n\n### Next-Study Design Recommendation\n\n"
+        "Run a larger trial.\n\n## References\n\n- Smith 2024.\n"
+    )
+    out, log = fixes.apply_lightweight_public_polish(
+        paper, manifest={"review_type": "evidence_brief"},
+    )
+    assert "Next-Study Design Recommendation" not in out
+    assert "Run a larger trial" not in out
+    assert any(i["fix_type"] == "reference_only_next_study_strip" for i in log)
+
+
+def test_lightweight_polish_rebuilds_evidence_brief_limitations() -> None:
+    paper = (
+        "## Limitations\n\n"
+        "A citation-heavy limitation cites Smith 2024 with unsafe numerics.\n\n"
+        "## Conclusion\n\nBounded.\n"
+    )
+    manifest = {
+        "review_type": "evidence_brief",
+        "n_receipts": 65,
+        "n_non_orthogonal_tensions": 257,
+        "receipts": [
+            {"outcome_class": "bone"},
+            {"outcome_class": "immune"},
+        ],
+    }
+    out, log = fixes.apply_lightweight_public_polish(paper, manifest=manifest)
+    assert "Smith 2024" not in out
+    assert "65 included sources across 2 outcome classes" in out
+    assert "257 cross-study disagreements" in out
+    assert any(
+        i["fix_type"] == "evidence_brief_limitations_rebuild" for i in log
+    )
+
+
 def test_lightweight_polish_completes_known_background_references() -> None:
     paper = (
         "## Discussion\n\n"
