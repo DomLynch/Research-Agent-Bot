@@ -713,7 +713,7 @@ def _reference_entries(paper_md: str) -> Iterable[tuple[str, str]]:
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        m = _AUTHOR_YEAR_RE.search(line)
+        m = _AUTHOR_YEAR_RE.search(line) or _AUTHOR_YEAR_RE.search(line.title())
         if m:
             token = f"{m.group(1)} {m.group(2)}"
             yield token, _fold(token)
