@@ -2864,6 +2864,13 @@ async def _run_post_paper_pipeline(
     Each step's artifact is written to disk so a human can retroactively
     review what changed and why. Returns the final paper text."""
     paper_md = paper_path.read_text()
+    review_type = manifest.get("review_type")
+
+    def _audit(paper: str) -> dict:
+        return _audit_v06.audit(
+            paper,
+            review_type=review_type if isinstance(review_type, str) else None,
+        )
 
     # Build universal gate inputs once: citation→outcome map (for the
     # per-outcome subsection routing check that catches Beavers-style
@@ -2897,7 +2904,7 @@ async def _run_post_paper_pipeline(
 
     # Stage 1: deterministic audit (Q1-Q10) on the as-written paper.
     print("[pipeline] Stage 1/5 — initial audit...", file=sys.stderr)
-    audit_report = _audit_v06.audit(paper_md)
+    audit_report = _audit(paper_md)
     audit_path = paper_path.with_suffix(".audit.json")
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)
@@ -2928,7 +2935,7 @@ async def _run_post_paper_pipeline(
     # Re-run the audit + manifest now that auto-fixes have landed
     # (the consistency audit's verdict-overclaim check needs the
     # updated audit_md to pass).
-    audit_report = _audit_v06.audit(paper_md)
+    audit_report = _audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)
     paper_path.with_suffix(".audit.md").write_text(audit_md)
@@ -2941,7 +2948,7 @@ async def _run_post_paper_pipeline(
             json.dumps(pre_review_template_log, indent=2),
         )
         paper_path.write_text(paper_md)
-        audit_report = _audit_v06.audit(paper_md)
+        audit_report = _audit(paper_md)
         audit_path.write_text(json.dumps(audit_report, indent=2))
         audit_md = _audit_v06._format_summary(audit_report)
         paper_path.with_suffix(".audit.md").write_text(audit_md)
@@ -3138,7 +3145,7 @@ async def _run_post_paper_pipeline(
         "[pipeline] Stage 5/5 — final audit + unified verdict...",
         file=sys.stderr,
     )
-    pre_audit = _audit_v06.audit(paper_md)
+    pre_audit = _audit(paper_md)
     pre_audit_md = _audit_v06._format_summary(pre_audit)
     pre_issues = _consistency_audit.run_audit(
         paper_md, manifest, pre_audit, pre_audit_md,
@@ -3169,7 +3176,7 @@ async def _run_post_paper_pipeline(
         ),
     )
     _refix_log.extend(_post_restore_public_log)
-    post_restore_audit = _audit_v06.audit(paper_md)
+    post_restore_audit = _audit(paper_md)
     post_restore_audit_md = _audit_v06._format_summary(post_restore_audit)
     post_restore_issues = _consistency_audit.run_audit(
         paper_md, manifest, post_restore_audit, post_restore_audit_md,
@@ -3245,7 +3252,7 @@ async def _run_post_paper_pipeline(
             json.dumps(_refix_log, indent=2)
         )
         paper_path.write_text(paper_md)
-    audit_report = _audit_v06.audit(paper_md)
+    audit_report = _audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)
     paper_path.with_suffix(".audit.md").write_text(audit_md)
@@ -3394,7 +3401,7 @@ async def _run_post_paper_pipeline(
                 json.dumps(template_repair_log, indent=2)
             )
             paper_path.write_text(paper_md)
-            audit_report = _audit_v06.audit(paper_md)
+            audit_report = _audit(paper_md)
             audit_path.write_text(json.dumps(audit_report, indent=2))
             audit_md = _audit_v06._format_summary(audit_report)
             paper_path.with_suffix(".audit.md").write_text(audit_md)

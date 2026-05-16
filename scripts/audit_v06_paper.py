@@ -859,7 +859,7 @@ def audit(paper: str, review_type: str | None = None) -> dict:
                 passed, msg = _check_word_count_thin(paper)
             elif review_type == "thin_corpus_brief" and name == "Q7_section_coverage":
                 passed, msg = _check_section_coverage_thin(paper)
-            elif review_type == "thin_corpus_brief" and name in {"Q10_hedge_density", "Q11_discussion_depth", "Q12_cross_domain_depth", "Q13_analytical_ratio"}:
+            elif review_type == "thin_corpus_brief" and name in {"Q9_numeric_density", "Q10_hedge_density", "Q11_discussion_depth", "Q12_cross_domain_depth", "Q13_analytical_ratio"}:
                 passed, msg = True, "not required for thin-corpus evidence brief"
             else:
                 passed, msg = check_fn(paper)

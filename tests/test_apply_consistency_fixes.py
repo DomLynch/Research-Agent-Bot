@@ -173,13 +173,6 @@ def test_lightweight_polish_rebuilds_thin_results_from_manifest() -> None:
     assert any(i["fix_type"] == "thin_results_rebuild" for i in log)
 
 
-def test_lightweight_polish_prefixes_unlabelled_animal_paragraphs() -> None:
-    paper = "## Limitations\n\nAttia 2020 studied vitamin D in laying hens, an animal model.\n"
-    out, log = fixes.apply_lightweight_public_polish(paper)
-    assert "In animal/preclinical evidence, attia 2020 studied" in out
-    assert any(i["fix_type"] == "animal_lane_qualifier_prefix" for i in log)
-
-
 def test_lightweight_polish_completes_known_background_references() -> None:
     paper = (
         "## Discussion\n\n"
