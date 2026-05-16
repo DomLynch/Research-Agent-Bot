@@ -180,6 +180,20 @@ def test_lightweight_polish_strips_empty_headings() -> None:
     assert any(i["fix_type"] == "empty_heading_strip" for i in log)
 
 
+def test_lightweight_polish_strips_reference_only_next_study_section() -> None:
+    paper = (
+        "## What This Adds\n\n### Next-Study Design Recommendation\n\n"
+        "- **Smith 2024.** _Title._ Journal.\n\n"
+        "Additional corpus sources informed the synthesis without anchoring a foregrounded quantitative claim.\n"
+        "## References\n\n- **Smith 2024.** 2024.\n"
+    )
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "Next-Study Design Recommendation" not in out
+    assert "Additional corpus sources" not in out
+    assert "## References" in out
+    assert any(i["fix_type"] == "reference_only_next_study_strip" for i in log)
+
+
 def test_lightweight_polish_completes_known_background_references() -> None:
     paper = (
         "## Discussion\n\n"

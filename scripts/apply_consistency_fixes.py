@@ -707,14 +707,19 @@ def _strip_reference_only_next_study_section(paper_md: str) -> tuple[str, int]:
         flags=re.M | re.S,
     )
 
+    changed = 0
+
     def repl(match: re.Match[str]) -> str:
+        nonlocal changed
         body = match.group("body")
         residue = re.sub(r"^\s*-\s+\*\*.+?\*\*.*$", "", body, flags=re.M)
         residue = re.sub(r"(?is)\bAdditional corpus sources\b.*", "", residue)
-        return match.group(0) if residue.strip() else ""
+        if residue.strip():
+            return match.group(0)
+        changed += 1
+        return ""
 
-    new_md, n = pattern.subn(repl, paper_md)
-    return new_md, n
+    return pattern.sub(repl, paper_md), changed
 
 
 def apply_lightweight_public_polish(
