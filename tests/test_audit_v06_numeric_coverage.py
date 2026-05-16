@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import audit_v06_paper as audit  # noqa: E402
+import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
 
 
 def test_p_value_untraceable_flagged() -> None:
@@ -31,6 +31,16 @@ def test_sample_size_untraceable_flagged() -> None:
     paper = "The trial enrolled n=99999 participants."
     ok, msg = audit._check_numeric_integrity(paper, corpus_nums={"100"})
     assert "99999" in msg or "sample_size" in msg, msg
+
+
+def test_results_summary_corpus_slice_n_is_not_sample_size() -> None:
+    paper = (
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Other | n=46; claims=1335 | null signal in 36/46 sources |\n"
+    )
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums=set())
+    assert ok, msg
 
 
 def test_dose_untraceable_flagged() -> None:

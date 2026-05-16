@@ -43,7 +43,7 @@ DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"
 # Slice 31 universal thresholds — no topic-specific values.
 THIN_CORPUS_MIN_RECEIPTS: Final[int] = 10
 THIN_CORPUS_MIN_TENSIONS: Final[int] = 1
-THIN_CORPUS_MIN_PRIMARY_TIER: Final[int] = 1
+THIN_CORPUS_MIN_PRIMARY_TIER: Final[int] = 3
 
 
 def corpus_sufficiency_verdict(n_receipts: int, n_tensions: int, n_primary_tier: int = -1) -> tuple[bool, tuple[str, ...]]:

@@ -357,6 +357,13 @@ def test_unreferenced_author_year_citation_blocks_surface():
     assert any("unreferenced citation: ADA 2024" in i.detail for i in report.issues)
 
 
+def test_lowercase_reference_label_matches_inline_author_year():
+    paper = _paper("| Velayati 2025 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("- Smith 2024.", "- **velayati 2025.** DOI: 10.1/example.")
+    report = evaluate_journal_surface(paper)
+    assert report.passed
+
+
 def test_orphan_table_reference_blocks_journal_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("results1", "Table 2 presents endpoint evidence", 1)

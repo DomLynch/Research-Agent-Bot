@@ -249,6 +249,10 @@ def _check_numeric_integrity(
     paper_clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
     )
+    paper_clean = re.sub(
+        r"(?im)^(\|.*\b)n\s*=\s*\d+(\s*;\s*claims\s*=\s*\d+.*\|)$",
+        r"\1n=count\2", paper_clean,
+    )
     prose_block, table_block = _split_table_section(paper_clean)
 
     by_cat: dict[str, set[str]] = {}

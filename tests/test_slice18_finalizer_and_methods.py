@@ -529,7 +529,7 @@ def test_slice38_corpus_sufficiency_verdict_returns_explicit_reasons() -> None:
     just derived from a count comparison — auditable + transparent."""
     from agent.review_type import corpus_sufficiency_verdict
     # Sufficient: all dimensions clear
-    ok, reasons = corpus_sufficiency_verdict(n_receipts=15, n_tensions=3, n_primary_tier=2)
+    ok, reasons = corpus_sufficiency_verdict(n_receipts=15, n_tensions=3, n_primary_tier=3)
     assert ok is True
     assert reasons == ()
     # Insufficient on each dimension yields a distinct reason string
@@ -551,10 +551,10 @@ def test_slice38_no_primary_tier_downshifts_even_with_high_count() -> None:
         "prisma_scr_scoping_synthesis",
         n_receipts=65, n_tensions=12, n_primary_tier=0,
     ) == "thin_corpus_brief"
-    # Same counts with ≥1 primary-tier → full synthesis
+    # Same counts with enough primary-tier anchors → full synthesis
     assert downshift_review_type_for_thin_corpus(
         "prisma_scr_scoping_synthesis",
-        n_receipts=65, n_tensions=12, n_primary_tier=1,
+        n_receipts=65, n_tensions=12, n_primary_tier=3,
     ) == "prisma_scr_scoping_synthesis"
 
 
