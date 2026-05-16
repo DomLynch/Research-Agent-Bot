@@ -101,6 +101,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_d_reference_closure(text)
     entries.extend(log)
+    # Re-run Phase B against the orphan-ref cluster Phase D just added,
+    # so animal/preclinical citations inside it also get lane-qualified.
     text, log = _phase_b_lane_qualifier(text, out_dir)
     entries.extend(log)
     text, log = _phase_e_structural_fallback(text, out_dir)
