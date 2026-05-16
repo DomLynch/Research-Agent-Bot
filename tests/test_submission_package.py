@@ -49,6 +49,7 @@ def _seed_l4_run(tmp_path: Path) -> Path:
         "reference_style": "Vancouver",
         "requires_prisma": False, "requires_ai_disclosure": True,
         "allows_supplement": True, "notes": "",
+        "declared_in_topic_pack": True,
     }))
     (tmp_path / "human_signoff.json").write_text(json.dumps({
         "author": "Dom Lynch", "reviewed": True,

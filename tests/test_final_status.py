@@ -30,7 +30,7 @@ def _all_pass_sidecars(run: Path) -> None:
     })
     _write(run, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(run, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
-    _write(run, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(run, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     # Slice 17: default accountability model is researka_agent_certified,
     # which requires citation_registry.json + artifact_consistency.json
     # (and ignores human_signoff.json). The legacy ladder test below
@@ -211,7 +211,7 @@ def test_researka_model_reaches_l5_without_human_signoff(tmp_path: Path) -> None
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "researka_agent_certified"})
     _write(tmp_path, "citation_registry.json", {})
@@ -235,7 +235,7 @@ def test_legacy_model_blocks_l5_without_human_signoff(tmp_path: Path) -> None:
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "legacy_journal_submission"})
     _write(tmp_path, "citation_registry.json", {})
@@ -258,7 +258,7 @@ def test_legacy_model_reaches_l5_with_human_signoff(tmp_path: Path) -> None:
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "legacy_journal_submission"})
     _write(tmp_path, "citation_registry.json", {})
@@ -291,7 +291,7 @@ def test_human_signoff_pass_backward_compat_mirror(tmp_path: Path) -> None:
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell"})
+    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "researka_agent_certified"})
     _write(tmp_path, "citation_registry.json", {})
@@ -299,3 +299,46 @@ def test_human_signoff_pass_backward_compat_mirror(tmp_path: Path) -> None:
            {"passed": True, "checks": []})
     s = compute(tmp_path)
     assert s.human_signoff_pass == s.accountability_pass
+
+
+def test_slice36_undeclared_target_journal_blocks_submission_ready(tmp_path: Path) -> None:
+    """Slice 36: a target_journal_pack with declared_in_topic_pack=False
+    (auto-generated fallback) must NOT count as a valid submission target.
+    Previously this path quietly promoted runs to L5/submission_ready=True
+    with no human-affirmed journal — the overclaim path. Universal."""
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {"n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.6, "checks": []})
+    _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
+    _write(tmp_path, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
+    _write(tmp_path, "target_journal_pack.json", {
+        "journal": "Open-access general scholarly journal (topic-pack target_journal not declared)",
+        "declared_in_topic_pack": False,
+    })
+    _write(tmp_path, "manifest.json", {"accountability_model": "researka_agent_certified"})
+    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    s = compute(tmp_path)
+    assert s.target_journal_pass is False
+    assert s.submission_ready is False
+    assert s.maturity_level == 4
+    codes = {b.code for b in s.blocking_reasons}
+    assert "target_journal_not_author_declared" in codes
+
+
+def test_slice36_declared_target_journal_clears_l4_ceiling(tmp_path: Path) -> None:
+    """Slice 36: explicit declared_in_topic_pack=True passes the guard
+    (companion to the negative case above). This is the only path to L5."""
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {"n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.6, "checks": []})
+    _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
+    _write(tmp_path, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
+    _write(tmp_path, "target_journal_pack.json", {
+        "journal": "Journal of Climate Modelling", "declared_in_topic_pack": True,
+    })
+    _write(tmp_path, "manifest.json", {"accountability_model": "researka_agent_certified"})
+    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    s = compute(tmp_path)
+    assert s.target_journal_pass is True
+    assert s.submission_ready is True
+    assert s.maturity_level == 5

@@ -153,12 +153,15 @@ def _read_pre_submit(run_dir: Path) -> tuple[bool, str]:
 
 
 def _read_target_journal(run_dir: Path) -> tuple[bool, str]:
+    """Slice 36: target_journal passes only when declared_in_topic_pack=True (universal)."""
     d = _load(run_dir / "target_journal_pack.json")
     if not isinstance(d, dict):
         return (False, "no target_journal_pack.json")
-    if d.get("journal"):
-        return (True, "")
-    return (False, "target_journal_pack missing 'journal' field")
+    if not d.get("journal"):
+        return (False, "target_journal_pack missing 'journal' field")
+    if not d.get("declared_in_topic_pack"):
+        return (False, "target_journal not author-declared in topic_pack")
+    return (True, "")
 
 
 def _read_accountability(run_dir: Path) -> tuple[bool, str]:
@@ -193,6 +196,7 @@ _REASON_CODES: tuple[tuple[str, str, str], ...] = (
     ("pre_submit", "audit_gates_failed", "audit_gates_failed"),
     ("pre_submit", "not passed", "pre_submit_failed"),
     ("target_journal", "no target_journal", "no_target_journal_pack"),
+    ("target_journal", "not author-declared", "target_journal_not_author_declared"),
     ("target_journal", "missing", "invalid_target_journal_pack"),
     # Slice 17 — accountability stage replaces the old human_signoff
     # stage. Researka-native model fails when artifact spine

@@ -331,18 +331,26 @@ def _restore_required_section_bodies(
 
 
 def _restore_public_surface_floors(
-    paper_md: str,
+    paper_md: str, review_type: str | None = None,
 ) -> tuple[str, list[dict[str, str]]]:
-    """Final section length guard over rendered public markdown."""
+    """Final section length guard over rendered public markdown.
+
+    Slice 36: review_type='thin_corpus_brief' uses the thin skeleton
+    so the gate doesn't re-inject Introduction/Background/Cross-Domain/
+    Discussion when the writer (Slice 35) intentionally skipped them.
+    Universal — works for any thin-corpus run, any domain."""
     try:
-        from agent.journal_surface_gate import _REQUIRED_SECTIONS, _SECTION_CEILINGS
+        from agent.journal_surface_gate import (
+            _REQUIRED_SECTIONS, _REQUIRED_SECTIONS_THIN, _SECTION_CEILINGS,
+        )
     except ImportError:
         return paper_md, []
+    required = _REQUIRED_SECTIONS_THIN if review_type == "thin_corpus_brief" else _REQUIRED_SECTIONS
     out = paper_md
     log: list[dict[str, str]] = []
-    titles = tuple(_REQUIRED_SECTIONS.keys())
+    titles = tuple(required.keys())
     for idx, title in enumerate(titles):
-        floor = int(_REQUIRED_SECTIONS[title])
+        floor = int(required[title])
         ceiling = _SECTION_CEILINGS.get(title)
         heading = f"## {title}"
         fallback_md = _compile_public_section_backstop(title, floor)
@@ -3151,7 +3159,7 @@ async def _run_post_paper_pipeline(
             ),
         )
         _refix_log.extend(_final_public_log)
-    paper_md, _surface_floor_log = _restore_public_surface_floors(paper_md)
+    paper_md, _surface_floor_log = _restore_public_surface_floors(paper_md, review_type=manifest.get("review_type"))
     _refix_log.extend(_surface_floor_log)
     if _surface_floor_log:
         paper_md, _post_surface_floor_log = _consistency_fixer.apply_fixes(
@@ -3173,7 +3181,7 @@ async def _run_post_paper_pipeline(
     if methods_md:
         paper_md = _run_mode.replace_methods_in_paper(paper_md, methods_md)
     paper_md, _final_surface_floor_log = _restore_public_surface_floors(
-        paper_md,
+        paper_md, review_type=manifest.get("review_type"),
     )
     _refix_log.extend(_final_surface_floor_log)
     paper_md, _references_restored = _ensure_references_section(
