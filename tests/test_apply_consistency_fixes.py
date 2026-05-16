@@ -173,6 +173,13 @@ def test_lightweight_polish_rebuilds_thin_results_from_manifest() -> None:
     assert any(i["fix_type"] == "thin_results_rebuild" for i in log)
 
 
+def test_lightweight_polish_strips_empty_headings() -> None:
+    paper = "## What This Adds\n\n### Next-Study Design Recommendation\n\n## Methods\n\nText.\n"
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "Next-Study Design Recommendation" not in out
+    assert any(i["fix_type"] == "empty_heading_strip" for i in log)
+
+
 def test_lightweight_polish_completes_known_background_references() -> None:
     paper = (
         "## Discussion\n\n"

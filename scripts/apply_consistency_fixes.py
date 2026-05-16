@@ -684,6 +684,22 @@ def _ensure_near_floor_conclusion(paper_md: str) -> tuple[str, int]:
     return paper_md[:match.start(2)] + body + addition + "\n\n" + paper_md[match.end(2):].lstrip(), 1
 
 
+def _strip_empty_headings(paper_md: str) -> tuple[str, int]:
+    matches = list(re.finditer(r"^(#{2,6})\s+.+?\s*$", paper_md, flags=re.M))
+    removals: list[tuple[int, int]] = []
+    for idx, match in enumerate(matches):
+        level = len(match.group(1))
+        nxt = matches[idx + 1] if idx + 1 < len(matches) else None
+        if nxt is not None and len(nxt.group(1)) > level:
+            continue
+        end = nxt.start() if nxt else len(paper_md)
+        if not paper_md[match.end():end].strip():
+            removals.append((match.start(), end))
+    for start, end in reversed(removals):
+        paper_md = paper_md[:start].rstrip() + "\n\n" + paper_md[end:].lstrip()
+    return paper_md, len(removals)
+
+
 def apply_lightweight_public_polish(
     paper_md: str,
     manifest: dict | None = None,
@@ -795,6 +811,13 @@ def apply_lightweight_public_polish(
                 "completed a near-threshold Conclusion after public-surface "
                 "cleanup without introducing new evidence claims"
             ),
+        })
+    new_md, n_empty_headings = _strip_empty_headings(new_md)
+    if n_empty_headings:
+        log.append({
+            "fix_type": "empty_heading_strip",
+            "n_changes": n_empty_headings,
+            "description": "removed headings left empty after deterministic cleanup",
         })
     new_md, n_heading_boundaries = _normalize_heading_boundaries(new_md)
     if n_heading_boundaries:
@@ -1818,6 +1841,13 @@ def apply_fixes(
                 "removed repeated markdown subsections produced by "
                 "section backstops or repair loops"
             ),
+        })
+    new_md, n_empty_headings = _strip_empty_headings(new_md)
+    if n_empty_headings:
+        log.append({
+            "fix_type": "empty_heading_strip",
+            "n_changes": n_empty_headings,
+            "description": "removed headings left empty after deterministic cleanup",
         })
 
     new_md, n_dup_paragraphs = _strip_consecutive_duplicate_paragraphs(new_md)

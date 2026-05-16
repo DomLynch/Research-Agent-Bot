@@ -1817,7 +1817,11 @@ def render_receipt_funnel_markdown(report: dict[str, Any]) -> str:
 
 def reconcile_receipt_funnel_report(report: dict[str, Any], receipts: list[ReceiptSummary]) -> dict[str, Any]:
     counts = dict(report.get("counts") or {})
+    examples = dict(report.get("examples") or {})
     strict = counts.pop("accepted_high_confidence", 0)
+    strict_examples = examples.pop("accepted_high_confidence", None)
+    if strict_examples is not None:
+        examples["original_strict_high_confidence_receipts"] = strict_examples
     counts.update({
         "admitted_receipts": len(receipts),
         "original_strict_high_confidence_receipts": strict,
@@ -1825,6 +1829,7 @@ def reconcile_receipt_funnel_report(report: dict[str, Any], receipts: list[Recei
     })
     out = dict(report)
     out["counts"] = dict(sorted(counts.items()))
+    out["examples"] = dict(sorted(examples.items()))
     out["receipt_admission_policy"] = "role_aware_high_or_review_tier"
     return out
 
