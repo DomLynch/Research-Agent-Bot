@@ -101,6 +101,8 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_d_reference_closure(text)
     entries.extend(log)
+    text, log = _phase_b_lane_qualifier(text, out_dir)
+    entries.extend(log)
     text, log = _phase_e_structural_fallback(text, out_dir)
     entries.extend(log)
     text, log = _phase_f_reconcile_results_table(text, out_dir)
@@ -319,6 +321,13 @@ def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[Finalizer
 _CITE_AY_RE = re.compile(r"\b[A-Z][a-zA-Z\-]+ \d{4}\b")
 
 
+def _outcome_display(slug: str) -> str:
+    cleaned = re.sub(
+        r"\s+outcomes?$", "", slug.replace("_", " "), flags=re.I,
+    )
+    return " ".join(w.capitalize() for w in cleaned.split())
+
+
 def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     """Route Results paragraphs to correct ### X Outcomes by citation outcome_class. Universal."""
     from agent.journal_surface_gate import _outcome_key
@@ -336,6 +345,7 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
     h3s = list(re.finditer(r"^###\s+(.+?Outcomes?)\s*$", block, flags=re.M))
     if not cmap or len(h3s) < 2:
         return text, []
+    headings = [m.group(0) for m in h3s]
     keys = [_outcome_key(m.group(1)) for m in h3s]
     bodies: list[list[str]] = [[] for _ in h3s]
     n_moved = 0
@@ -343,13 +353,18 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
         end = h3s[i + 1].start() if i + 1 < len(h3s) else len(block)
         for para in (p.strip() for p in re.split(r"\n\n+", block[m.end():end]) if p.strip()):
             cls = Counter(cmap[x] for x in _CITE_AY_RE.findall(para) if x in cmap)
-            top_key = _outcome_key(cls.most_common(1)[0][0]) if cls else keys[i]
+            top_cls = cls.most_common(1)[0][0] if cls else ""
+            top_key = _outcome_key(top_cls) if top_cls else keys[i]
+            if top_key not in keys and top_cls:
+                keys.append(top_key)
+                headings.append(f"### {_outcome_display(top_cls)} Outcomes")
+                bodies.append([])
             j = keys.index(top_key) if top_key in keys else i
             bodies[j].append(para)
             n_moved += int(j != i)
     if not n_moved:
         return text, []
-    new_block = block[:h3s[0].start()] + "\n\n".join(h3s[i].group(0) + "\n\n" + "\n\n".join(b) for i, b in enumerate(bodies)) + "\n\n"
+    new_block = block[:h3s[0].start()] + "\n\n".join(headings[i] + "\n\n" + "\n\n".join(b) for i, b in enumerate(bodies)) + "\n\n"
     return text[:rs.start()] + new_block + text[rs.end():], [FinalizerLogEntry(phase="K_outcome_routing", rule="route_paragraph_by_citation_class", n_changes=n_moved, detail=f"moved {n_moved} paragraph(s) to correct outcome subsection")]
 
 
@@ -510,11 +525,8 @@ def _phase_e_structural_fallback(
 def _phase_f_reconcile_results_table(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
-    """When the manuscript has `### X Outcomes` subsections inside
-    Results that aren't declared in the Results outcome-class table,
-    append a derived row to the table so the gate's structure_surface
-    check passes. Universal — derives row from manifest receipts;
-    no per-topic logic. Data-preserving (vs deleting the section)."""
+    """Rebuild the Results outcome table from manifest receipts.
+    Universal — the registry/manifest own counts, markdown does not."""
     manifest_path = out_dir / "manifest.json"
     if not manifest_path.is_file():
         return text, []
@@ -525,55 +537,26 @@ def _phase_f_reconcile_results_table(
     receipts = manifest.get("receipts") or ()
     if not receipts:
         return text, []
-    # Parse the Results section
     results_match = re.search(
         r"^## Results\b(.*?)(?=^## (?!#))", text, flags=re.M | re.S,
     )
     if not results_match:
         return text, []
     results = results_match.group(1)
-    # Reuse gate helpers for parity with the surface check
-    from agent.journal_surface_gate import (
-        _outcome_classes_from_results_table, _outcome_key,
-    )
-    declared = {_outcome_key(o) for o in _outcome_classes_from_results_table(results)}
-    if not declared:
+    from agent.journal_surface_gate import _outcome_key
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for r in receipts:
+        if isinstance(r, dict) and r.get("outcome_class"):
+            groups.setdefault(_outcome_key(str(r["outcome_class"])), []).append(r)
+    if not groups:
         return text, []
-    h3_outcomes = re.findall(r"^###\s+(.+?)\s+Outcomes\s*$", results, flags=re.M)
-    if not h3_outcomes:
-        return text, []
-    missing_labels = [
-        h for h in h3_outcomes if _outcome_key(h) not in declared
+    rows = [
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |",
+        "|---|---|---|---|---|",
     ]
-    if not missing_labels:
-        return text, []
-    # Locate the table's terminating empty-line boundary. Robust to
-    # writer-wrapped rows split across physical lines (those wouldn't
-    # match a `^\|.*\|$` regex). The separator `|---|---|...|` line
-    # marks the start of the body; the first blank line after it
-    # marks the end. Insert immediately before that blank line.
-    sep_match = re.search(
-        r"^\|[\-:\|\s]+\|\s*$", results, flags=re.M,
-    )
-    if not sep_match:
-        return text, []
-    post_sep = results[sep_match.end():]
-    blank = re.search(r"\n\s*\n", post_sep)
-    if blank:
-        insertion_offset = (
-            results_match.start() + sep_match.end() + blank.start()
-        )
-    else:
-        # No blank line — append at end of Results section
-        insertion_offset = results_match.end()
-    new_rows: list[str] = []
-    log: list[FinalizerLogEntry] = []
-    for label in missing_labels:
-        slug = _outcome_key(label)
-        matching = [
-            r for r in receipts
-            if _outcome_key(str(r.get("outcome_class") or "")) == slug
-        ]
+    for slug, matching in sorted(
+        groups.items(), key=lambda kv: (-len(kv[1]), _outcome_display(kv[0])),
+    ):
         n = len(matching)
         n_claims = sum(int(r.get("n_claims") or 0) for r in matching)
         directness_counts: dict[str, int] = {}
@@ -590,7 +573,7 @@ def _phase_f_reconcile_results_table(
             if e:
                 effect_counts[e] = effect_counts.get(e, 0) + 1
         top_effect = (
-            max(effect_counts.items(), key=lambda kv: kv[1])[0]
+            max(effect_counts.items(), key=lambda kv: (kv[1], kv[0]))[0]
             if effect_counts else "unclear"
         )
         signal_cell = (
@@ -601,27 +584,30 @@ def _phase_f_reconcile_results_table(
             "single-source slice; hypothesis-generating"
             if n <= 1 else "limited corpus depth in this outcome class"
         )
-        new_rows.append(
-            f"| {label} | n={n}; claims={n_claims} | {signal_cell} "
+        rows.append(
+            f"| {_outcome_display(slug)} | n={n}; claims={n_claims} | {signal_cell} "
             f"| {directness_cell} | {limitation_cell} |"
         )
-        log.append(FinalizerLogEntry(
-            phase="F_reconcile_results_table",
-            rule="append_missing_outcome_row",
-            n_changes=1,
-            detail=(
-                f"added Results-table row for '{label}' (n={n}, "
-                f"claims={n_claims}) derived from manifest receipts"
-            ),
-        ))
-    if not new_rows:
+    table = "\n".join(rows) + "\n"
+    lines = results.splitlines(keepends=True)
+    try:
+        start = next(i for i, line in enumerate(lines) if line.strip() == rows[0])
+    except StopIteration:
+        new_results = "\n" + table + "\n" + results.lstrip()
+    else:
+        end = start + 2
+        while end < len(lines) and lines[end].strip():
+            end += 1
+        new_results = "".join(lines[:start]) + table + "".join(lines[end:])
+    if new_results == results:
         return text, []
-    new_text = (
-        text[:insertion_offset]
-        + "\n" + "\n".join(new_rows)
-        + text[insertion_offset:]
-    )
-    return new_text, log
+    new_text = text[:results_match.start(1)] + new_results + text[results_match.end(1):]
+    return new_text, [FinalizerLogEntry(
+        phase="F_reconcile_results_table",
+        rule="rebuild_results_summary_table",
+        n_changes=len(rows) - 2,
+        detail=f"rebuilt Results outcome table from manifest ({len(rows) - 2} row(s))",
+    )]
 
 
 # --- Phase G: refresh stale sidecars after prose stabilises ------------
