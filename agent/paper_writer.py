@@ -117,7 +117,7 @@ def _build_thin_results_section(receipts: Sequence[ReceiptSummary], matrix: Tens
         by_outcome.setdefault(r.outcome_class, []).append(r)
     for t in matrix.non_orthogonal():
         tensions[t.outcome_class] = tensions.get(t.outcome_class, 0) + 1
-    lines = ["## Results", "", f"This evidence brief includes {len(receipts)} accepted sources and {len(matrix.non_orthogonal())} same-outcome tensions. Detailed numeric claims remain in the quantitative evidence table and citation registry."]
+    lines = ["## Results", "", f"This evidence brief includes {len(receipts)} accepted sources and {len(matrix.non_orthogonal())} same-outcome tensions. Detailed numeric claims remain in the quantitative evidence table and citation registry. Because the corpus is primary-tier limited, these counts are presented as an evidence map rather than as a full journal Results narrative or pooled treatment estimate."]
     for outcome, group in sorted(by_outcome.items()):
         tiers = ", ".join(sorted({r.evidence_tier for r in group if r.evidence_tier})) or "not classified"
         directions = ", ".join(sorted({r.effect_direction for r in group if r.effect_direction})) or "not classified"

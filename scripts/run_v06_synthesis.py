@@ -2682,22 +2682,10 @@ async def _run(
         "total_cost_usd": round(
             sum(c.estimated_cost_usd for c in ledger.calls), 6,
         ),
-        # Slice 10 (2026-05-14): pin the declared review type so
-        # downstream gates can enforce type-consistency between
-        # manifest, Abstract, and Methods. Falls back to the universal
-        # default when no topic pack is loaded. Slice 31 universal
-        # thin-corpus downshift: when n_receipts<10 OR n_tensions=0,
-        # `downshift_review_type_for_thin_corpus` returns
-        # `thin_corpus_brief` so Methods, gate, and final_status all
-        # signal the run produced an evidence brief rather than a
-        # full journal manuscript.
-        "review_type": (
-            __import__("agent.review_type",
-                       fromlist=["downshift_review_type_for_thin_corpus"]).
-            downshift_review_type_for_thin_corpus(
-                getattr(_TOPIC_PACK, "review_type", None),
-                len(receipts), len(matrix.non_orthogonal()))
-        ),
+        # Pin the effective review type used by the writer. Downstream
+        # gates must not restore full-manuscript sections after a
+        # primary-tier insufficiency downshift.
+        "review_type": _review_type_effective,
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
     # Bug-fix 2026-05-14: derive evidence_lanes.json sidecar so the

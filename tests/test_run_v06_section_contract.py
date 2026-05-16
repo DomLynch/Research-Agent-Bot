@@ -390,6 +390,21 @@ def test_restore_public_surface_floors_replaces_overlong_abstract() -> None:
     assert 150 <= orch._word_count(match.group(1)) <= 300
 
 
+def test_restore_public_surface_floors_respects_thin_review_type() -> None:
+    paper = (
+        "## Abstract\n\n" + _words(120) + "\n\n"
+        "## Methods\n\n" + _words(220) + "\n\n"
+        "## Results\n\n" + _words(220) + "\n\n"
+        "## Limitations\n\n" + _words(100) + "\n\n"
+        "## Conclusion\n\n" + _words(100) + "\n"
+    )
+    out, log = orch._restore_public_surface_floors(paper, review_type="thin_corpus_brief")
+    assert log == []
+    assert "## Introduction" not in out
+    assert "## Cross-Domain Synthesis" not in out
+    assert "## Discussion" not in out
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (

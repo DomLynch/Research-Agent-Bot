@@ -847,6 +847,10 @@ def _strip_duplicate_subsections(paper_md: str) -> tuple[str, int]:
             i += 1
             continue
         body = parts[i + 1] if i + 1 < len(parts) else ""
+        if re.match(r"^###\s+.+?\s+Outcomes?\s*$", heading.strip()):
+            out.extend([heading, body])
+            i += 2
+            continue
         body_for_key, sep, tail = body.partition("\n## ")
         norm = re.sub(r"\s+", " ", f"{heading}\n{body_for_key}".strip()).lower()
         tokens = _paragraph_token_set(norm)
@@ -882,6 +886,7 @@ def _strip_fuzzy_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
     skip_sections = {
         "Methods", "References", "Publication Appendix",
         "Data and Code Availability", "Researka Submitter Block",
+        "Results",
     }
     for block in blocks:
         heading = re.match(r"^##\s+(.+?)\s*$", block)
@@ -2461,8 +2466,9 @@ def apply_fixes(
             new_md,
         )
         log.extend(cross_dup_log)
-        new_md, depth_log = _ensure_analytical_depth_floors(new_md)
-        log.extend(depth_log)
+        if manifest.get("review_type") != "thin_corpus_brief":
+            new_md, depth_log = _ensure_analytical_depth_floors(new_md)
+            log.extend(depth_log)
         new_md, hedge_log = _ensure_discussion_hedge_density(new_md)
         log.extend(hedge_log)
         new_md, n_dup_subsections = _strip_duplicate_subsections(new_md)

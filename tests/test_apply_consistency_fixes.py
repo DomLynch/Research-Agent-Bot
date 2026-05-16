@@ -135,6 +135,26 @@ def test_lightweight_polish_inserts_missing_declared_outcome_sections() -> None:
     assert any(i["fix_type"] == "missing_results_outcome_section_insert" for i in log)
 
 
+def test_duplicate_subsection_strip_preserves_distinct_outcome_sections() -> None:
+    paper = (
+        "## Results\n\n"
+        "### Longevity Outcomes\n\n"
+        "The evidence packet is kept separate from adjacent outcomes and interpreted as hypothesis-generating rather than standalone proof.\n\n"
+        "### Immune Outcomes\n\n"
+        "The evidence packet is kept separate from adjacent outcomes and interpreted as hypothesis-generating rather than standalone proof.\n"
+    )
+    out, n = fixes._strip_duplicate_subsections(paper)
+    assert n == 0
+    assert "### Longevity Outcomes" in out and "### Immune Outcomes" in out
+
+
+def test_apply_fixes_skips_full_depth_backfill_for_thin_brief() -> None:
+    paper = "## Results\n\nShort thin result.\n\n## Conclusion\n\nShort.\n"
+    out, log = fixes.apply_fixes(paper, [], manifest={"review_type": "thin_corpus_brief"})
+    assert "Result-interpretation guardrail" not in out
+    assert "analytical_depth_backfill" not in {i["fix_type"] for i in log}
+
+
 def test_lightweight_polish_completes_known_background_references() -> None:
     paper = (
         "## Discussion\n\n"
