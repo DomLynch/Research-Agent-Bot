@@ -524,6 +524,54 @@ def test_slice31_thin_corpus_brief_has_display_label() -> None:
     assert display_label("thin_corpus_brief") == "Thin-corpus evidence brief"
 
 
+def test_slice38_corpus_sufficiency_verdict_returns_explicit_reasons() -> None:
+    """Slice 38: gate decision is structured (verdict + reasons), not
+    just derived from a count comparison — auditable + transparent."""
+    from agent.review_type import corpus_sufficiency_verdict
+    # Sufficient: all dimensions clear
+    ok, reasons = corpus_sufficiency_verdict(n_receipts=15, n_tensions=3, n_primary_tier=2)
+    assert ok is True
+    assert reasons == ()
+    # Insufficient on each dimension yields a distinct reason string
+    _, r1 = corpus_sufficiency_verdict(n_receipts=2, n_tensions=5, n_primary_tier=5)
+    assert any("n_receipts" in r for r in r1)
+    _, r2 = corpus_sufficiency_verdict(n_receipts=15, n_tensions=0, n_primary_tier=5)
+    assert any("n_tensions" in r for r in r2)
+    _, r3 = corpus_sufficiency_verdict(n_receipts=15, n_tensions=3, n_primary_tier=0)
+    assert any("n_primary_tier" in r and "review-tier" in r for r in r3)
+
+
+def test_slice38_no_primary_tier_downshifts_even_with_high_count() -> None:
+    """Slice 38: the case MiMo flagged — many receipts but ZERO primary-
+    tier anchors must still downshift to brief. A 65-receipt corpus of
+    pure review-tier (B2) evidence cannot anchor a structured synthesis."""
+    from agent.review_type import downshift_review_type_for_thin_corpus
+    # 65 receipts, 12 tensions, but 0 primary-tier (all B2/C review-tier)
+    assert downshift_review_type_for_thin_corpus(
+        "prisma_scr_scoping_synthesis",
+        n_receipts=65, n_tensions=12, n_primary_tier=0,
+    ) == "thin_corpus_brief"
+    # Same counts with ≥1 primary-tier → full synthesis
+    assert downshift_review_type_for_thin_corpus(
+        "prisma_scr_scoping_synthesis",
+        n_receipts=65, n_tensions=12, n_primary_tier=1,
+    ) == "prisma_scr_scoping_synthesis"
+
+
+def test_slice38_primary_tier_check_optional_for_backcompat() -> None:
+    """Slice 38: callers that don't yet pass n_primary_tier (e.g. legacy
+    callsites) get the previous count-only behavior — back-compat."""
+    from agent.review_type import downshift_review_type_for_thin_corpus
+    # Default arg = -1 → primary-tier dimension skipped
+    assert downshift_review_type_for_thin_corpus(
+        "systematic_review", n_receipts=30, n_tensions=5,
+    ) == "systematic_review"
+    # Explicit -1 same result
+    assert downshift_review_type_for_thin_corpus(
+        "systematic_review", n_receipts=30, n_tensions=5, n_primary_tier=-1,
+    ) == "systematic_review"
+
+
 def test_phase_i_splits_concatenated_h3_h2_heading_line() -> None:
     """Slice 30: Phase I splits a line like `### Sub Title## Next H2`
     into two heading lines separated by a blank. Universal Markdown

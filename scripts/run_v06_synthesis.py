@@ -2466,12 +2466,16 @@ async def _run(
     }
 
     # Slice 35: compute effective review_type BEFORE the writer call so
-    # thin-corpus runs skip long-form section generation (was: writer
-    # produced full paper then Phase J trimmed it — wasteful tokens).
+    # thin-corpus runs skip long-form section generation. Slice 38: pass
+    # n_primary_tier so the sufficiency gate catches "65 review-tier
+    # receipts but no primary endpoint anchor" — that case should still
+    # downshift to brief, not pretend it's a structured synthesis.
     from agent.review_type import downshift_review_type_for_thin_corpus
+    _n_primary = sum(1 for r in writer_receipts if r.evidence_tier in ("A1", "A2", "B1"))
     _review_type_effective = downshift_review_type_for_thin_corpus(
         getattr(_TOPIC_PACK, "review_type", None),
         len(writer_receipts), len(writer_matrix.non_orthogonal()),
+        n_primary_tier=_n_primary,
     )
     print(
         f"\nCalling render_full_paper (review_type={_review_type_effective!r}, "

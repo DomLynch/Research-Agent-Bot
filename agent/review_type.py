@@ -46,16 +46,28 @@ DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"
 # Slice 31 universal thresholds — no topic-specific values.
 THIN_CORPUS_MIN_RECEIPTS: Final[int] = 10
 THIN_CORPUS_MIN_TENSIONS: Final[int] = 1
+THIN_CORPUS_MIN_PRIMARY_TIER: Final[int] = 1
+
+
+def corpus_sufficiency_verdict(
+    n_receipts: int, n_tensions: int, n_primary_tier: int = -1,
+) -> tuple[bool, tuple[str, ...]]:
+    reasons: list[str] = []
+    if n_receipts < THIN_CORPUS_MIN_RECEIPTS:
+        reasons.append(f"n_receipts={n_receipts} < {THIN_CORPUS_MIN_RECEIPTS}")
+    if n_tensions < THIN_CORPUS_MIN_TENSIONS:
+        reasons.append(f"n_tensions={n_tensions} < {THIN_CORPUS_MIN_TENSIONS}")
+    if n_primary_tier >= 0 and n_primary_tier < THIN_CORPUS_MIN_PRIMARY_TIER:
+        reasons.append(f"n_primary_tier={n_primary_tier} < {THIN_CORPUS_MIN_PRIMARY_TIER} (all evidence is review-tier; no primary-endpoint anchor)")
+    return (not reasons, tuple(reasons))
 
 
 def downshift_review_type_for_thin_corpus(
     declared: str | None, n_receipts: int, n_tensions: int,
+    n_primary_tier: int = -1,
 ) -> str:
-    """Return `thin_corpus_brief` when n_receipts<10 OR n_tensions<1
-    (render an evidence note, not a manuscript). Else parsed declared."""
-    if n_receipts < THIN_CORPUS_MIN_RECEIPTS or n_tensions < THIN_CORPUS_MIN_TENSIONS:
-        return "thin_corpus_brief"
-    return parse_review_type(declared)
+    sufficient, _ = corpus_sufficiency_verdict(n_receipts, n_tensions, n_primary_tier)
+    return parse_review_type(declared) if sufficient else "thin_corpus_brief"
 
 
 class ReviewTypeError(ValueError):
