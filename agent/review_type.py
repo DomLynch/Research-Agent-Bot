@@ -20,12 +20,9 @@ from typing import Final
 # Stable enum tokens used in topic_pack.toml + manifest.json.
 # Display labels are journal-conventional academic phrasing.
 REVIEW_TYPES: Final[dict[str, str]] = {
-    "prisma_scr_scoping_synthesis":
-        "PRISMA-ScR structured scoping synthesis",
-    "structured_evidence_synthesis":
-        "Structured evidence synthesis",
-    "narrative_review":
-        "Narrative review",
+    "prisma_scr_scoping_synthesis": "PRISMA-ScR structured scoping synthesis",
+    "structured_evidence_synthesis": "Structured evidence synthesis",
+    "narrative_review": "Narrative review",
     "systematic_review":
         "Systematic review",
     "meta_analysis":
@@ -49,17 +46,13 @@ THIN_CORPUS_MIN_TENSIONS: Final[int] = 1
 THIN_CORPUS_MIN_PRIMARY_TIER: Final[int] = 1
 
 
-def corpus_sufficiency_verdict(
-    n_receipts: int, n_tensions: int, n_primary_tier: int = -1,
-) -> tuple[bool, tuple[str, ...]]:
-    reasons: list[str] = []
-    if n_receipts < THIN_CORPUS_MIN_RECEIPTS:
-        reasons.append(f"n_receipts={n_receipts} < {THIN_CORPUS_MIN_RECEIPTS}")
-    if n_tensions < THIN_CORPUS_MIN_TENSIONS:
-        reasons.append(f"n_tensions={n_tensions} < {THIN_CORPUS_MIN_TENSIONS}")
-    if n_primary_tier >= 0 and n_primary_tier < THIN_CORPUS_MIN_PRIMARY_TIER:
-        reasons.append(f"n_primary_tier={n_primary_tier} < {THIN_CORPUS_MIN_PRIMARY_TIER} (all evidence is review-tier; no primary-endpoint anchor)")
-    return (not reasons, tuple(reasons))
+def corpus_sufficiency_verdict(n_receipts: int, n_tensions: int, n_primary_tier: int = -1) -> tuple[bool, tuple[str, ...]]:
+    reasons = tuple(r for r in (
+        f"n_receipts={n_receipts} < {THIN_CORPUS_MIN_RECEIPTS}" if n_receipts < THIN_CORPUS_MIN_RECEIPTS else "",
+        f"n_tensions={n_tensions} < {THIN_CORPUS_MIN_TENSIONS}" if n_tensions < THIN_CORPUS_MIN_TENSIONS else "",
+        f"n_primary_tier={n_primary_tier} < {THIN_CORPUS_MIN_PRIMARY_TIER} (all evidence is review-tier; no primary-endpoint anchor)" if 0 <= n_primary_tier < THIN_CORPUS_MIN_PRIMARY_TIER else "",
+    ) if r)
+    return (not reasons, reasons)
 
 
 def downshift_review_type_for_thin_corpus(
