@@ -2402,16 +2402,19 @@ async def _run(
         if entry.body_citation
     }
 
+    # Slice 35: compute effective review_type BEFORE the writer call so
+    # thin-corpus runs skip long-form section generation (was: writer
+    # produced full paper then Phase J trimmed it — wasteful tokens).
+    from agent.review_type import downshift_review_type_for_thin_corpus
+    _review_type_effective = downshift_review_type_for_thin_corpus(
+        getattr(_TOPIC_PACK, "review_type", None),
+        len(writer_receipts), len(writer_matrix.non_orthogonal()),
+    )
     print(
-        "\nCalling render_full_paper "
-        "(target 5-15k words, multi-section, tiered validation)...",
+        f"\nCalling render_full_paper (review_type={_review_type_effective!r}, "
+        "tiered validation)...",
         file=sys.stderr,
     )
-    # Fix #18a: load background-literature registry once and pass
-    # entries to the writer so MiMo sees the canonical citation tokens
-    # it can reference (e.g. 'Studenski 2011' for the 0.8 m/s frailty
-    # cutoff). Without this, MiMo only sees the system-prompt rule
-    # (Fix #17) and uses background numerics without their citations.
     bglit_entries = list(_bglit.load_registry().values())
     import httpx
     async with httpx.AsyncClient(timeout=180.0) as client:
@@ -2422,6 +2425,7 @@ async def _run(
             background_lit_entries=bglit_entries,
             qei_citation_tokens_by_paper_id=qei_citation_tokens,
             qei_quarantine_path=out_dir / "qei_quarantined.json",
+            review_type=_review_type_effective,
         )
     print(
         "render_full_paper done.",

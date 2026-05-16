@@ -138,6 +138,8 @@ _PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
     ("structured corpus synthesis", "AI-assisted evidence synthesis"),
 )
 _REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
+# Slice 35 thin-corpus skeleton: only structural-evidence minimum required.
+_REQUIRED_SECTIONS_THIN = {"Abstract": 100, "Methods": 200, "Results": 200, "Limitations": 80, "Conclusion": 80}
 _SECTION_CEILINGS = {"Abstract": 300}
 _APPENDIX_CUTOFF_RE = re.compile(r"^##\s+(?:Publication Appendix|Researka Submitter Block|Data and Code Availability|Search Provenance|AI(?:-Use)? Disclosure|Accountability|References)\b", flags=re.M)
 _CITATION_ARTIFACT_RE = re.compile(r"\[(?:citation needed|source|ref|pmid|doi|TODO)[^\]]*\]|(?:^|\s)(?:PMID|DOI):?\s*$|<\s*(?:citation|ref)[^>]*>", re.IGNORECASE | re.MULTILINE)
@@ -208,7 +210,7 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _abstract_profile_contradiction_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _conclusion_scope_issue_messages(body_md))
     issues.extend(SurfaceIssue("structure_surface", msg) for msg in _orphan_table_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md))
+    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md, declared_review_type))
     issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
     for row in _extract_qei_rows(body_md):
         issues.extend(SurfaceIssue("qei_surface", msg) for msg in qei_row_issue_messages(row))
@@ -283,9 +285,10 @@ def _qei_shape_issue_messages(paper_md: str) -> tuple[str, ...]:
     return tuple(issues)
 
 
-def _section_issue_messages(paper_md: str) -> tuple[str, ...]:
+def _section_issue_messages(paper_md: str, declared_review_type: str | None = None) -> tuple[str, ...]:
+    required = _REQUIRED_SECTIONS_THIN if declared_review_type == "thin_corpus_brief" else _REQUIRED_SECTIONS
     issues: list[str] = []
-    for heading, floor in _REQUIRED_SECTIONS.items():
+    for heading, floor in required.items():
         body = _section_body(paper_md, heading)
         if body is None:
             issues.append(f"missing required section: {heading}")

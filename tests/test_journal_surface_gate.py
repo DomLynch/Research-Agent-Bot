@@ -1550,3 +1550,47 @@ def test_finalizer_phase_f_idempotent(tmp_path) -> None:
     # The Mechanism row appears exactly once after re-runs
     assert first.count("| Mechanism |") == 1
     assert second.count("| Mechanism |") == 1
+
+
+def test_slice35_thin_corpus_brief_does_not_flag_missing_long_form_sections() -> None:
+    """Slice 35: when manifest declares review_type=thin_corpus_brief
+    (Slice 31 downshift), the gate must not flag Introduction / Background
+    / Cross-Domain Synthesis / Discussion as missing — Phase J intentionally
+    trims those. Universal — applies to any thin-corpus run regardless of
+    domain (biomedical, climate, materials)."""
+    from agent.journal_surface_gate import _section_issue_messages
+    brief = (
+        "## Abstract\n\n" + ("alpha " * 110) + "\n\n"
+        "## Methods\n\n" + ("beta " * 210) + "\n\n"
+        "## Results\n\n" + ("gamma " * 210) + "\n\n"
+        "## Limitations\n\n" + ("delta " * 90) + "\n\n"
+        "## Conclusion\n\n" + ("epsilon " * 90) + "\n"
+    )
+    issues = _section_issue_messages(brief, declared_review_type="thin_corpus_brief")
+    missing = [i for i in issues if i.startswith("missing required section:")]
+    # No long-form sections flagged as missing
+    for token in ("Introduction", "Background", "Cross-Domain Synthesis", "Discussion"):
+        assert not any(token in m for m in missing), (
+            f"thin_corpus_brief should not require {token!r}; got: {missing}"
+        )
+    # Sanity: same paper under full review_type WOULD flag those as missing
+    full_issues = _section_issue_messages(brief, declared_review_type="prisma_scr_scoping_synthesis")
+    full_missing = [i for i in full_issues if i.startswith("missing required section:")]
+    assert any("Introduction" in m for m in full_missing)
+    assert any("Discussion" in m for m in full_missing)
+
+
+def test_slice35_thin_corpus_brief_still_enforces_minimum_sections() -> None:
+    """Slice 35: thin_corpus_brief still requires the structural-evidence
+    minimum: Abstract, Methods, Results, Limitations, Conclusion."""
+    from agent.journal_surface_gate import _section_issue_messages
+    # Paper missing Methods + Results
+    paper = (
+        "## Abstract\n\n" + ("alpha " * 110) + "\n\n"
+        "## Limitations\n\n" + ("delta " * 90) + "\n\n"
+        "## Conclusion\n\n" + ("epsilon " * 90) + "\n"
+    )
+    issues = _section_issue_messages(paper, declared_review_type="thin_corpus_brief")
+    missing = [i for i in issues if i.startswith("missing required section:")]
+    assert any("Methods" in m for m in missing)
+    assert any("Results" in m for m in missing)

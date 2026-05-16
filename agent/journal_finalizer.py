@@ -109,8 +109,6 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_i_split_concatenated_headings(text)
     entries.extend(log)
-    text, log = _phase_j_thin_corpus_trim(text, out_dir)
-    entries.extend(log)
     text, log = _phase_k_route_outcome_paragraphs(text, out_dir)
     entries.extend(log)
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
@@ -315,25 +313,10 @@ def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[Finalizer
     return new_text, [FinalizerLogEntry(phase="I_split_concatenated_headings", rule="insert_blank_line_between_headings", n_changes=n, detail=f"split {n} concatenated heading line(s)")]
 
 
-# --- Phase J: Thin-corpus body trim (Slice 32) -------------------------
-# When manifest.review_type == "thin_corpus_brief" the long-form
-# discursive sections are dropped — Evidence Brief keeps only the
-# structural-evidence minimum (whitelist). Universal — no per-topic logic.
-_THIN_KEEP = ("abstract", "methods", "results", "limitations", "conclusion", "references")
-
-
-def _phase_j_thin_corpus_trim(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
-    """Drop long-form sections when review_type=thin_corpus_brief."""
-    m = _load_sidecar(out_dir / "manifest.json")
-    if not isinstance(m, dict) or m.get("review_type") != "thin_corpus_brief":
-        return text, []
-    parts = re.split(r"^(## [^\n]+\n)", text, flags=re.M)
-    keep = [i for i in range(1, len(parts), 2) if any(parts[i].replace("## ", "").strip().lower().startswith(p) for p in _THIN_KEEP)]
-    n_dropped = (len(parts) - 1) // 2 - len(keep)
-    if not n_dropped:
-        return text, []
-    kept = parts[0] + "".join(parts[i] + (parts[i + 1] if i + 1 < len(parts) else "") for i in keep)
-    return kept, [FinalizerLogEntry(phase="J_thin_corpus_trim", rule="drop_long_form_for_evidence_brief", n_changes=n_dropped, detail=f"dropped {n_dropped} section(s)")]
+# Slice 35 (2026-05-16): Phase J (post-render thin-corpus trim) removed.
+# Replaced by writer-side branch in `agent/paper_writer.render_full_paper`
+# which skips long-form section generation when review_type=thin_corpus_brief,
+# eliminating the generate-then-delete LLM waste the user flagged.
 
 
 # --- Phase K: Outcome paragraph routing (Slice 33) ---------------------

@@ -469,6 +469,10 @@ _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
     "conclusion",
     "references_full",
 )
+# Slice 35: Evidence-brief skeleton — skips LLM long-form generation
+# (introduction/background/cross_domain/discussion/novel_framework) when
+# review_type=thin_corpus_brief. Universal — any thin corpus, any domain.
+_THIN_BRIEF_SECTION_ORDER: tuple[SectionName, ...] = ("abstract", "quantitative_results_table", "methods", "results", "limitations_full", "conclusion", "references_full")
 
 
 async def render_full_paper(
@@ -485,8 +489,11 @@ async def render_full_paper(
     background_lit_entries: Sequence[Any] | None = None,
     qei_citation_tokens_by_paper_id: Mapping[str, str] | None = None,
     qei_quarantine_path: Any | None = None,
+    review_type: str | None = None,
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
-    """Render full paper markdown plus per-section anchors."""
+    """Render full paper markdown plus per-section anchors. Slice 35:
+    review_type=thin_corpus_brief skips long-form section generation."""
+    _thin = review_type == "thin_corpus_brief"
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",
@@ -542,24 +549,25 @@ async def render_full_paper(
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("abstract", sections["abstract"])
-    sections["introduction"] = await _write_scoped_section(
-        name="introduction", heading="## Introduction",
-        system_prompt=_prompts["introduction"], user_prompt=user,
-        topic=topic, accepted=accepted, chain=chain, client=client,
-        ledger=ledger, seed=seed,
-        fallback_body="## Introduction\n\nThis paper evaluates the topic through accepted receipts, source-traced quantitative claims, and explicit audit gates.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("introduction", sections["introduction"])
-    sections["background"] = await _write_scoped_section(
-        name="background", heading="## Background",
-        system_prompt=_prompts["background"], user_prompt=user,
-        topic=topic, accepted=accepted, chain=chain, client=client,
-        ledger=ledger, seed=seed,
-        fallback_body="## Background\n\nThe background is limited to corpus-supported context and does not add load-bearing claims outside the accepted receipts.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("background", sections["background"])
+    if not _thin:
+        sections["introduction"] = await _write_scoped_section(
+            name="introduction", heading="## Introduction",
+            system_prompt=_prompts["introduction"], user_prompt=user,
+            topic=topic, accepted=accepted, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            fallback_body="## Introduction\n\nThis paper evaluates the topic through accepted receipts, source-traced quantitative claims, and explicit audit gates.\n",
+            background_lit_entries=background_lit_entries,
+        )
+        _log_section_done("introduction", sections["introduction"])
+        sections["background"] = await _write_scoped_section(
+            name="background", heading="## Background",
+            system_prompt=_prompts["background"], user_prompt=user,
+            topic=topic, accepted=accepted, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            fallback_body="## Background\n\nThe background is limited to corpus-supported context and does not add load-bearing claims outside the accepted receipts.\n",
+            background_lit_entries=background_lit_entries,
+        )
+        _log_section_done("background", sections["background"])
     from agent.inferential_bridge import build_inferential_bridge_section
     _bridge_spec = pack.inference if pack and pack.inference.allow else None
     sections["inferential_bridge"] = await build_inferential_bridge_section(
@@ -624,36 +632,37 @@ async def render_full_paper(
         background_lit_entries=background_lit_entries,
     )
     _log_section_done("results", sections["results"])
-    sections["cross_domain_synthesis"] = await _write_anchored_section(
-        name="cross_domain_synthesis",
-        heading="## Cross-Domain Synthesis",
-        system_prompt=_prompts["cross_domain_synthesis"],
-        user_prompt=user,
-        accepted=accepted, chain=chain, client=client, ledger=ledger,
-        seed=seed,
-        fallback_body="## Cross-Domain Synthesis\n\nCross-domain interpretation is bounded by the accepted receipt set, outcome coverage, and source-traced claims.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
-    sections["novel_framework"] = build_novel_framework_section(accepted, matrix)
-    _log_section_done("novel_framework (deterministic)", sections["novel_framework"])
-    sections["framework_engagement"] = build_framework_engagement_section(
-        accepted,
-        background_refs=background_lit_entries or (),
-    )
-    _log_section_done(
-        "framework_engagement (deterministic)",
-        sections["framework_engagement"],
-    )
-    sections["discussion"] = await _write_scoped_section(
-        name="discussion", heading="## Discussion",
-        system_prompt=_prompts["discussion"], user_prompt=user,
-        topic=topic, accepted=accepted, chain=chain, client=client,
-        ledger=ledger, seed=seed,
-        fallback_body="## Discussion\n\nThe interpretation remains cautious, limited, and context-dependent because the accepted evidence spans different populations, outcomes, and evidence tiers.\n",
-        background_lit_entries=background_lit_entries,
-    )
-    _log_section_done("discussion", sections["discussion"])
+    if not _thin:
+        sections["cross_domain_synthesis"] = await _write_anchored_section(
+            name="cross_domain_synthesis",
+            heading="## Cross-Domain Synthesis",
+            system_prompt=_prompts["cross_domain_synthesis"],
+            user_prompt=user,
+            accepted=accepted, chain=chain, client=client, ledger=ledger,
+            seed=seed,
+            fallback_body="## Cross-Domain Synthesis\n\nCross-domain interpretation is bounded by the accepted receipt set, outcome coverage, and source-traced claims.\n",
+            background_lit_entries=background_lit_entries,
+        )
+        _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
+        sections["novel_framework"] = build_novel_framework_section(accepted, matrix)
+        _log_section_done("novel_framework (deterministic)", sections["novel_framework"])
+        sections["framework_engagement"] = build_framework_engagement_section(
+            accepted,
+            background_refs=background_lit_entries or (),
+        )
+        _log_section_done(
+            "framework_engagement (deterministic)",
+            sections["framework_engagement"],
+        )
+        sections["discussion"] = await _write_scoped_section(
+            name="discussion", heading="## Discussion",
+            system_prompt=_prompts["discussion"], user_prompt=user,
+            topic=topic, accepted=accepted, chain=chain, client=client,
+            ledger=ledger, seed=seed,
+            fallback_body="## Discussion\n\nThe interpretation remains cautious, limited, and context-dependent because the accepted evidence spans different populations, outcomes, and evidence tiers.\n",
+            background_lit_entries=background_lit_entries,
+        )
+        _log_section_done("discussion", sections["discussion"])
     sections["limitations_full"] = await _write_anchored_section(
         name="limitations_full", heading="## Limitations",
         system_prompt=_prompts["limitations_full"], user_prompt=user,
@@ -694,7 +703,7 @@ async def render_full_paper(
         write_scoped_fn=_write_scoped_section,
     )
 
-    ordered = tuple(sections[n] for n in _FULL_PAPER_SECTION_ORDER)
+    ordered = tuple(sections[n] for n in (_THIN_BRIEF_SECTION_ORDER if _thin else _FULL_PAPER_SECTION_ORDER) if n in sections)
     body_md = title_md + "\n".join(s.body_md for s in ordered).rstrip() + "\n"
     body_md = _strip_rendered_citation_markers(body_md)
     return body_md, ordered
