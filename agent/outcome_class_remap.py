@@ -33,7 +33,9 @@ from collections.abc import Mapping
 __all__ = [
     "ENDPOINT_REMAP",
     "ENDPOINT_PATTERNS",
+    "BIOMEDICAL_OTHER_OUTCOME_RULES",
     "remap_outcome_class",
+    "refine_other_outcome_class",
     "is_known_misclassification",
 ]
 
@@ -72,6 +74,15 @@ ENDPOINT_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bpatient[-\s]?reported\s+outcome\b", re.I), "healthspan_qol"),
 )
 
+BIOMEDICAL_OTHER_OUTCOME_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("skeletal_fracture_bone", ("bone", "fracture", "osteoporosis", "calcium", "skeletal")),
+    ("mortality_survival", ("mortality", "survival", "death", "cause_specific_death")),
+    ("deficiency_prevalence", ("deficiency", "insufficiency", "prevalence", "serum", "status")),
+    ("immune_inflammation", ("inflammation", "immune", "sepsis", "infection", "cytokine")),
+    ("dosing_pharmacokinetics", ("dose", "dosing", "supplementation", "pharmacokinetic", "cholecalciferol", "calcifediol")),
+    ("safety_comorbidity", ("safety", "adverse", "kidney", "chronic", "comorbidity")),
+)
+
 
 def is_known_misclassification(endpoint: str, current_class: str) -> bool:
     """True if `endpoint` is in the corrections map and `current_class`
@@ -95,6 +106,25 @@ def remap_outcome_class(endpoint: str, current_class: str) -> str:
     if target is not None:
         return target
     return current_class
+
+
+def refine_other_outcome_class(receipt: object, current_class: str) -> str:
+    """Split biomedical `other` into more useful sub-outcomes.
+
+    This is a conservative post-classifier fallback: it only rewrites
+    the junk-drawer `other` class and uses receipt metadata already
+    available before manifest/results rendering. Domain packs can later
+    replace the rule tuple without changing the receipt compiler.
+    """
+    if current_class != "other":
+        return current_class
+    text = " ".join(str(getattr(receipt, name, "") or "") for name in (
+        "receipt_id", "source_title", "population_summary",
+    )).lower()
+    for label, needles in BIOMEDICAL_OTHER_OUTCOME_RULES:
+        if any(needle in text for needle in needles):
+            return label
+    return "contextual_other"
 
 
 def _lookup(endpoint: str) -> str | None:
