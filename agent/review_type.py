@@ -54,10 +54,10 @@ def downshift_review_type_for_thin_corpus(
     declared: str | None, n_receipts: int, n_tensions: int,
     n_primary_tier: int = -1, n_outcome_classes: int = -1,
 ) -> str:
+    if not corpus_scope_verdict(n_receipts, n_tensions, n_outcome_classes)[0]:
+        return "evidence_map"
     sufficient, _ = corpus_sufficiency_verdict(n_receipts, n_tensions, n_primary_tier)
     if sufficient:
-        if not corpus_scope_verdict(n_receipts, n_tensions, n_outcome_classes)[0]:
-            return "evidence_map"
         return parse_review_type(declared)
     if n_receipts >= THIN_CORPUS_MIN_RECEIPTS and n_tensions >= THIN_CORPUS_MIN_TENSIONS:
         return "evidence_brief"
