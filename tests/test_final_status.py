@@ -127,6 +127,25 @@ def test_readiness_contract_blocker_overrides_pre_submit_pass(tmp_path: Path) ->
     assert blockers and blockers[0].code == "readiness_contract_blocking"
 
 
+def test_advisory_readiness_item_does_not_block_l4(tmp_path: Path) -> None:
+    """Administrative/readiness roadmap gaps should not demote a clean paper below L4."""
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {
+        "n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.5,
+    })
+    _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
+    _write(tmp_path, "pre_submit_gate.json", {
+        "result": {"passed": True, "failures": []},
+        "journal_readiness_contract": [{
+            "id": 12, "name": "target_journal_finalizer",
+            "status": "not_ready", "advisory": True, "blocks_submission": False,
+        }],
+    })
+    s = compute(tmp_path)
+    assert s.pre_submit_pass is True
+    assert s.maturity_level == 4
+
+
 def test_three_pass_no_target_journal_yields_l4(tmp_path: Path) -> None:
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {

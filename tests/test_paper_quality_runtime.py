@@ -179,7 +179,10 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     assert len(contract) == 15
     assert [row["id"] for row in contract] == list(range(1, 16))
     assert all(row["next_action"] for row in contract)
-    assert all(row["blocks_submission"] is (row["status"] != "pass") for row in contract)
+    assert all(
+        row["blocks_submission"] is (row["status"] != "pass" and not row.get("advisory", False))
+        for row in contract
+    )
     by_name = {row["name"]: row for row in contract}
     assert by_name["product_tiers"]["status"] == "pass"
     assert by_name["claim_atoms"]["status"] == "pass"
@@ -190,11 +193,13 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     # legacy `human_signoff` row.
     assert by_name["accountability"]["status"] == "not_ready"
     assert by_name["universal_benchmark_target"]["status"] == "not_ready"
-    assert by_name["target_journal_finalizer"]["blocks_submission"]
+    assert by_name["target_journal_finalizer"]["advisory"]
+    assert not by_name["target_journal_finalizer"]["blocks_submission"]
     assert "Select target journal" in by_name["target_journal_finalizer"]["next_action"]
     assert by_name["accountability"]["blocks_submission"]
     assert "artifact-consistency" in by_name["accountability"]["next_action"]
-    assert by_name["universal_benchmark_target"]["blocks_submission"]
+    assert by_name["universal_benchmark_target"]["advisory"]
+    assert not by_name["universal_benchmark_target"]["blocks_submission"]
     assert "frozen benchmark" in by_name["universal_benchmark_target"]["next_action"]
     gate_md = (tmp_path / "pre_submit_gate.md").read_text()
     assert "## Journal Readiness Contract" in gate_md

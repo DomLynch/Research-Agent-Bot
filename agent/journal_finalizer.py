@@ -746,7 +746,7 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
     legacy = model == "legacy_journal_submission"
     acc_ok, acc_detail = accountability_pass(out_dir, model)
     submission_ready = gate_passed and surface_pass
-    fresh: dict[int, dict[str, str]] = {
+    fresh: dict[int, dict[str, object]] = {
         1: {"status": "pass" if submission_ready else "not_ready",
             "audit": f"pre_submit_gate={gate_passed}; "
                      f"journal_surface={surface_pass}; "
@@ -757,7 +757,8 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
             "audit": f"issues={surface_n}"},
         12: {"status": "pass" if tj and tj_declared else
                        ("partial" if tj else "not_ready"),
-             "audit": f"target_journal={tj!r}; declared_in_topic_pack={tj_declared}"},
+             "audit": f"target_journal={tj!r}; declared_in_topic_pack={tj_declared}",
+             "advisory": True},
         13: {"name": "human_signoff" if legacy else "accountability",
              "status": "pass" if acc_ok else "not_ready",
              "audit": acc_detail or (
