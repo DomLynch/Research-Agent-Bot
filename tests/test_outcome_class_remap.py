@@ -14,6 +14,8 @@ import pytest
 from agent.outcome_class_remap import (
     ENDPOINT_REMAP,
     is_known_misclassification,
+    outcome_display,
+    outcome_key,
     refine_other_outcome_class,
     remap_outcome_class,
 )
@@ -184,3 +186,9 @@ def test_refine_other_splits_biomedical_junk_drawer() -> None:
 def test_refine_other_keeps_non_other_unchanged() -> None:
     receipt = SimpleNamespace(receipt_id="bone", source_title="Bone trial", population_summary="")
     assert refine_other_outcome_class(receipt, "longevity") == "longevity"
+
+
+def test_refined_outcome_vocabulary_has_public_labels_and_keys() -> None:
+    assert outcome_display("safety_comorbidity") == "Safety and Comorbidity"
+    assert outcome_key("Safety and Comorbidity Outcomes") == "safety_comorbidity"
+    assert outcome_key("skeletal fracture bone") == "skeletal_fracture_bone"

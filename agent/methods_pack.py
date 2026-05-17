@@ -1,23 +1,4 @@
-"""PRISMA-ScR Methods pack — deterministic journal-grade Methods
-section data.
-
-Reviewer feedback 2026-05-14: Methods section is the biggest missing
-piece for mid-tier journal readiness. Without named databases, exact
-search strings, search dates, screening counts, exclusion ledger, and
-AI-use disclosure, even strong prose looks non-standard.
-
-This module defines the canonical schema as a frozen dataclass with
-all 11 required PRISMA-ScR fields. The data is built deterministically
-from the run state (manifest + topic_pack + receipt funnel) — no LLM
-hallucination of search strings. The same struct is serialised to
-`methods_pack.json` (auditable sidecar) AND rendered to Methods prose
-(reads in normal academic language).
-
-Universal — fields are topic-agnostic. Works for biomedical, climate,
-materials, economics, social science. The schema mirrors the
-PRISMA-ScR 20-item checklist's reporting requirements where they apply
-to any structured synthesis.
-"""
+"""Deterministic Methods-pack schema and renderer."""
 from __future__ import annotations
 
 import datetime as dt

@@ -1,17 +1,4 @@
-"""Universal review-type selector — names the manuscript category up
-front so Methods, Abstract, and target-journal formatting can flow
-from a single declared contract.
-
-Reviewer feedback 2026-05-14: the manuscript must obey ONE review type
-(systematic review, scoping review, narrative review, etc.) rather
-than drift between framings. Without this, even strong prose looks
-non-standard to journal editors.
-
-Universal — no biomedical-specific tokens. Works for any field:
-biomedical, climate, materials, economics, social science. The 7
-canonical types match Cochrane / JBI / PRISMA-ScR / Greenhalgh
-taxonomies.
-"""
+"""Universal review-type selector and corpus-scope preflight."""
 from __future__ import annotations
 
 import re

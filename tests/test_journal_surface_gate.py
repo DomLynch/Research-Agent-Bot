@@ -531,7 +531,7 @@ def test_results_outcome_sections_must_use_declared_heading_once():
     assert not report.passed
     details = " ".join(i.detail for i in report.issues)
     assert "missing Results outcome section: Immune" in details
-    assert "unexpected Results outcome section: immune and inflammatory" in details
+    assert "unexpected Results outcome section: immune inflammatory" in details
 
 
 def test_duplicate_declared_results_outcome_section_blocks_surface():
@@ -552,6 +552,23 @@ def test_duplicate_declared_results_outcome_section_blocks_surface():
     report = evaluate_journal_surface(paper)
     assert not report.passed
     assert any("duplicate Results outcome section: Immune" in i.detail for i in report.issues)
+
+
+def test_refined_outcome_display_heading_satisfies_results_contract():
+    paper = _paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    )
+    results = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Safety and Comorbidity | n=1 | mixed |\n\n"
+        "### Safety and Comorbidity Outcomes\n\n"
+        f"{_words(500, 'results')}\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", results)
+    report = evaluate_journal_surface(paper)
+    assert not any("Safety and Comorbidity" in i.detail for i in report.issues)
 
 
 def test_valid_rows_pass_surface_gate():

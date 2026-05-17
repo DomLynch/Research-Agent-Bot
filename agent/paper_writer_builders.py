@@ -1,23 +1,4 @@
-"""Pure-function helpers for paper_writer.
-
-Each `_build_*_from_parsed` turns a parsed LLM JSON envelope into
-a `SynthesisSection` (or None if no valid paragraphs survived).
-Extracted from paper_writer.py to keep both modules under the
-600-cloc per-file cap.
-
-Validation rules per builder:
-  - _build_anchored_from_parsed: every paragraph cites ≥1 accepted
-    receipt; novel-numeric check; uncited paragraphs dropped.
-  - _build_scoped_from_parsed: paragraphs need topic alias ≥2x +
-    hedge phrase + no novel numerics; receipt citation OPTIONAL.
-  - _build_results_from_parsed: anchored, multi-paragraph by outcome
-    class; one H3 subsection per OutcomeClass.
-
-The paragraph-validity helpers (_check_anchored_paragraph,
-_check_scoped_paragraph, _accepted_corpus_norm, _NUMERIC_RE,
-_normalize) live in paper_writer.py and are re-exported here as
-needed by the builders.
-"""
+"""Pure-function builders for paper_writer sections."""
 from __future__ import annotations
 
 import difflib
