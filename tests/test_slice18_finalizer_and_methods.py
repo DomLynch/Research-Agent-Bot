@@ -518,6 +518,7 @@ def test_slice31_thin_corpus_brief_has_display_label() -> None:
     assert "thin_corpus_brief" in REVIEW_TYPES
     assert display_label("thin_corpus_brief") == "Thin-corpus evidence brief"
     assert display_label("evidence_brief") == "Evidence brief"
+    assert display_label("evidence_map") == "Evidence map"
 
 
 def test_slice38_corpus_sufficiency_verdict_returns_explicit_reasons() -> None:
@@ -566,6 +567,17 @@ def test_slice38_primary_tier_check_optional_for_backcompat() -> None:
     assert downshift_review_type_for_thin_corpus(
         "systematic_review", n_receipts=30, n_tensions=5, n_primary_tier=-1,
     ) == "systematic_review"
+
+
+def test_broad_topic_preflight_downshifts_to_evidence_map() -> None:
+    from agent.review_type import downshift_review_type_for_thin_corpus, corpus_scope_verdict
+    ok, reasons = corpus_scope_verdict(n_receipts=815, n_tensions=188794, n_outcome_classes=9)
+    assert ok is False
+    assert any("n_receipts" in r for r in reasons)
+    assert downshift_review_type_for_thin_corpus(
+        "prisma_scr_scoping_synthesis",
+        n_receipts=815, n_tensions=188794, n_primary_tier=10, n_outcome_classes=9,
+    ) == "evidence_map"
 
 
 def test_phase_i_splits_concatenated_h3_h2_heading_line() -> None:

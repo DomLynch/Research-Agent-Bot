@@ -202,6 +202,29 @@ def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
     assert "## Introduction" not in md and all(s.name != "inferential_bridge" for s in sections)
 
 
+def test_evidence_map_uses_compact_writer_path(monkeypatch) -> None:
+    receipts = [_summary("r-safety", outcome="safety_comorbidity")]
+
+    async def fake_anchored(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
+
+    async def fake_scoped(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
+
+    async def fail_results(*_args, **_kwargs):
+        raise AssertionError("evidence_map must not call long-form Results writer")
+
+    monkeypatch.setattr(paper_writer, "_write_anchored_section", fake_anchored)
+    monkeypatch.setattr(paper_writer, "_write_scoped_section", fake_scoped)
+    monkeypatch.setattr(paper_writer, "write_results_section", fail_results)
+    md, sections = asyncio.run(paper_writer.render_full_paper(
+        receipts, _matrix(receipts), _thesis(), topic="creatine",
+        submission_id="map-test", chain=(), review_type="evidence_map",
+    ))
+    assert "### Safety and Comorbidity Outcomes" in md
+    assert "## Introduction" not in md and all(s.name != "discussion" for s in sections)
+
+
 def test_strip_rendered_citation_markers_removes_body_metadata() -> None:
     md = (
         "## Results\n\n"
