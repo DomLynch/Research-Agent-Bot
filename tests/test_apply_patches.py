@@ -48,7 +48,7 @@ def test_claim_patch_with_semantic_substitution_is_flagged() -> None:
     semantic substitutions (same word count, no new numerics, but
     entirely different content words) ARE flagged by the
     strict-subset rule. 'extended lifespan' → 'reduced mortality'
-    is exactly this case — Grok would be inventing a new claim, not
+    is exactly this case — final-layer reviewer would be inventing a new claim, not
     deleting wrong content."""
     p = {
         "id": "P02", "patch_type": "claim", "severity": "P1",
@@ -65,14 +65,14 @@ def test_claim_patch_with_semantic_substitution_is_flagged() -> None:
     assert results[0].decision == "flagged"
     # Reason names the strict-subset failure
     assert "semantic substitution" in results[0].reason_for_decision
-    # Grok's rationale preserved in the log
+    # final-layer reviewer's rationale preserved in the log
     assert "polarity correction" in results[0].reason_for_decision
 
 
 def test_claim_patch_pure_deletion_auto_applies() -> None:
     """Fix #39: a CLAIM patch that is a pure deletion (AFTER words
     are a strict subset of BEFORE words, no new content) auto-
-    applies. This is exactly Grok's 0.13 m/s 'remove improvement'
+    applies. This is exactly final-layer reviewer's 0.13 m/s 'remove improvement'
     fix that was getting blocked under the old flag-everything
     contract."""
     p = {
@@ -151,7 +151,7 @@ def test_numeric_patch_with_value_substitution_is_flagged() -> None:
     substitution like `14%` → `32%` introduces a NEW numeric (32)
     not present in BEFORE — flagged by the no-new-numerics rule.
     The strict-subset rule + the simplification gate together
-    prevent Grok from silently flipping percentages even when the
+    prevent final-layer reviewer from silently flipping percentages even when the
     new value happens to exist somewhere in the global corpus."""
     p = {
         "id": "P04", "patch_type": "numeric", "severity": "P2",
@@ -390,7 +390,7 @@ def test_repeated_safe_citation_simplification_replaces_all() -> None:
 
 def test_citation_patch_with_unknown_receipt_is_flagged() -> None:
     """When the new citation doesn't trace to manifest receipts, the
-    citation verifier fails → flag-only. Grok's proposer rationale is
+    citation verifier fails → flag-only. final-layer reviewer's proposer rationale is
     logged for human review."""
     p = {
         "id": "P07", "patch_type": "citation", "severity": "P2",
@@ -423,7 +423,7 @@ def test_patch_with_missing_before_text_rejected() -> None:
 
 def test_patch_with_ambiguous_before_text_flagged() -> None:
     """If 'before' appears 2+ times, mechanical safety flags (not
-    rejects) — there's no way to know which occurrence Grok meant.
+    rejects) — there's no way to know which occurrence final-layer reviewer meant.
     Flagged so a downstream reviewer can pick the right span; rejected
     is reserved for unrecoverable cases (text not found, empty before)."""
     p = {
@@ -462,7 +462,7 @@ def test_repeated_safe_claim_simplification_replaces_all_occurrences() -> None:
 
 def test_known_cited_artifact_delete_replaces_all_occurrences() -> None:
     """Generated `_Cited:` metadata is a known render artifact. If
-    Grok proposes deleting it as formatting, replace every identical
+    final-layer reviewer proposes deleting it as formatting, replace every identical
     occurrence instead of blocking on the usual ambiguous-before rule."""
     p = {
         "id": "P-CITED", "patch_type": "formatting", "severity": "P1",
@@ -660,12 +660,12 @@ def test_numeric_token_with_glued_unit_suffix_verifier_reports_pass() -> None:
 def test_unknown_patch_type_is_rejected_not_flagged() -> None:
     """Reviewer P1: malformed contract (unknown patch_type) → REJECTED.
     Pre-fix this got flagged, polluting the requires-review queue and
-    hiding upstream Grok contract violations."""
+    hiding upstream final-layer reviewer contract violations."""
     p = {
         "id": "PX3", "patch_type": "rogue_type", "severity": "P2",
         "location": "Results",
         "before": "x", "after": "y",
-        "reason": "Grok shipped a typo'd patch_type",
+        "reason": "final-layer reviewer shipped a typo'd patch_type",
     }
     paper = "## Results\n\nx\n"
     _, results = apply_patches.apply_patches(paper, [p], _manifest())
@@ -675,7 +675,7 @@ def test_unknown_patch_type_is_rejected_not_flagged() -> None:
 
 
 def test_empty_before_text_is_rejected() -> None:
-    """Empty before-text → rejected (not flagged) — Grok shipped
+    """Empty before-text → rejected (not flagged) — final-layer reviewer shipped
     something fundamentally unactionable."""
     p = {
         "id": "PX4", "patch_type": "formatting", "severity": "P3",
@@ -690,23 +690,23 @@ def test_empty_before_text_is_rejected() -> None:
 
 
 def test_applied_patch_preserves_grok_rationale_in_reason() -> None:
-    """Applied patches must also carry Grok's rationale in the log.
+    """Applied patches must also carry final-layer reviewer's rationale in the log.
     Pre-fix only flagged patches had rationale logged; applied patches
     discarded it."""
     p = {
         "id": "PX5", "patch_type": "formatting", "severity": "P3",
         "location": "Abstract",
         "before": "metformin  is", "after": "metformin is",
-        "reason": "double space typo per Grok scan",
+        "reason": "double space typo per final-layer reviewer scan",
     }
     paper = "## Abstract\n\nThe metformin  is widely studied.\n"
     _, results = apply_patches.apply_patches(paper, [p], _manifest())
     assert results[0].decision == "applied"
-    assert "double space typo per Grok scan" in results[0].reason_for_decision
+    assert "double space typo per final-layer reviewer scan" in results[0].reason_for_decision
 
 
 def test_proposer_reason_is_clamped_to_500_chars() -> None:
-    """Reviewer P1: a 50KB Grok hallucination must not bloat the JSON
+    """Reviewer P1: a 50KB final-layer reviewer hallucination must not bloat the JSON
     log. Clamp at 500 chars + ellipsis."""
     huge_reason = "X" * 5000  # 5KB
     p = {
@@ -727,7 +727,7 @@ def test_proposer_reason_is_clamped_to_500_chars() -> None:
 
 
 def test_citation_patch_introducing_long_pmc_handle_is_flagged() -> None:
-    """Fix #11: pre-fix Grok could ship a citation patch whose `after`
+    """Fix #11: pre-fix final-layer reviewer could ship a citation patch whose `after`
     was `PMC12978362_molecular_mechanisms_of_metformin` and the
     verifier passed it as 'no novel citations' (no Author-Year regex
     match). The patch then auto-applied → 96 PMCID body leaks. Now
@@ -739,7 +739,7 @@ def test_citation_patch_introducing_long_pmc_handle_is_flagged() -> None:
         "after": (
             "_Cited: `PMC12978362_molecular_mechanisms_of_metformin`_"
         ),
-        "reason": "Grok wrongly enforcing receipt-key consistency",
+        "reason": "final-layer reviewer wrongly enforcing receipt-key consistency",
     }
     paper = "## Abstract\n\n_Cited: `Walton 2019`_\n"
     _, results = apply_patches.apply_patches(paper, [p], _manifest())
@@ -754,7 +754,7 @@ def test_citation_patch_introducing_author_year_trail_is_flagged() -> None:
         "location": "Abstract",
         "before": "_Cited: `Walton 2019`_",
         "after": "_Cited: `Walton_2019_MASTERS_metformin_blunts_resistance`_",
-        "reason": "Grok wants long-form receipt id",
+        "reason": "final-layer reviewer wants long-form receipt id",
     }
     paper = "## Abstract\n\n_Cited: `Walton 2019`_\n"
     _, results = apply_patches.apply_patches(paper, [p], _manifest())
@@ -818,7 +818,7 @@ def test_citation_patch_preserving_existing_handles_does_not_double_block() -> N
 
 def test_numeric_patch_with_empty_proposer_reason_logs_only_gate_reason() -> None:
     """Empty proposer_reason → reason_for_decision contains ONLY the
-    gate explanation (no trailing 'Grok rationale: ' fragment)."""
+    gate explanation (no trailing 'final-layer reviewer rationale: ' fragment)."""
     p = {
         "id": "PX7", "patch_type": "numeric", "severity": "P2",
         "location": "Results",
@@ -832,7 +832,7 @@ def test_numeric_patch_with_empty_proposer_reason_logs_only_gate_reason() -> Non
     ):
         _, results = apply_patches.apply_patches(paper, [p], _manifest())
     assert results[0].decision == "flagged"
-    assert "Grok rationale" not in results[0].reason_for_decision
+    assert "final-layer reviewer rationale" not in results[0].reason_for_decision
 
 
 def test_section_contract_restores_heading_after_review_patch() -> None:

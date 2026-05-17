@@ -72,7 +72,7 @@ sys.path.insert(0, str(REPO_ROOT / "scripts"))
 import audit_v06_paper as _audit_v06  # noqa: E402
 import final_consistency_audit as _consistency_audit  # noqa: E402
 import apply_consistency_fixes as _consistency_fixer  # noqa: E402
-from scripts import final_reviewer as _final_reviewer  # noqa: E402
+import final_reviewer as _final_reviewer  # noqa: E402
 import apply_patches as _patch_applier  # noqa: E402
 import run_mode_contract as _run_mode  # noqa: E402
 import citation_registry as _citations  # noqa: E402
@@ -2709,7 +2709,7 @@ async def _run(
         "extractor_version": "v0.6.0",
         "writer_path": "agent.paper_writer.render_full_paper (production)",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-        # Slice 7 step 3 fix: surface topic in manifest so Grok
+        # Slice 7 step 3 fix: surface topic in manifest so final-layer reviewer
         # reviewer + audit hooks can resolve topic-pack
         # background_literature for the active topic without
         # depending on module globals.
@@ -3179,7 +3179,7 @@ async def _run_post_paper_pipeline(
             f"[pipeline]   applied={n_applied} rejected={n_rejected} "
             f"flagged={n_flagged} repaired={n_repaired} "
             f"auto_stripped={n_stripped}"
-            + (f" (Grok-unresolved P1 after repair: "
+            + (f" (final-reviewer-unresolved P1 after repair: "
                f"{grok_unresolved_p1})"
                if grok_unresolved_p1 else ""),
             file=sys.stderr,
@@ -3190,11 +3190,11 @@ async def _run_post_paper_pipeline(
         n_stripped = 0
 
     # Stage 5: Final audit + UNIFIED verdict (Fix #1 reviewer-P1).
-    # Re-runs stage-1 audit AND stage-2 consistency on the post-Grok
+    # Re-runs stage-1 audit AND stage-2 consistency on the post-final-layer reviewer
     # paper, computes a single honest verdict. `final_verdict =
     # worst(stage1, stage2)`.
     #
-    # Fix #19: re-run the deterministic auto-fixer on the post-Grok
+    # Fix #19: re-run the deterministic auto-fixer on the post-final-layer reviewer
     # paper BEFORE final audit. Stage-2's auto-fix (Fix #18b strips
     # unsourced background sentences) ran in Stage 2 but final-layer reviewer's
     # patches in Stage 4 can re-introduce sentences with
@@ -4067,7 +4067,7 @@ def _d1_bridge_claim_count(stage1_report: dict[str, Any]) -> int:
 class UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). Cross-stage object →
     frozen+slots per project rule. Serialized via dataclasses.asdict()
-    to JSON. Fix #31: tracks Grok-unresolved P1 patches separately —
+    to JSON. Fix #31: tracks final-reviewer-unresolved P1 patches separately —
     even when stage1 + stage2 are clean, an unresolved final-layer reviewer P1
     flag downgrades the verdict to 'Trust-Spine Pass — Human Review
     Required' rather than AAA (the harness can't autonomously verify
@@ -4133,13 +4133,13 @@ def _compute_unified_verdict(
     fully-green (P1+P2 + zero unresolved final-layer reviewer P1). SHIP-BLOCKED if
     either deterministic stage flags a P1+ severity. Trust-Spine
     Pass otherwise — and 'Trust-Spine Pass — Human Review Required'
-    when only Grok-unresolved P1 prevents AAA.
+    when only final-reviewer-unresolved P1 prevents AAA.
 
     Defensive on inputs: missing stage1 keys → treated as failure
     (fail-closed). Empty stage1.checks → cannot return AAA (AAA
     requires evidence, not vacuous success).
 
-    Fix #31: `grok_unresolved_p1` is the count of Grok-flagged P1
+    Fix #31: `grok_unresolved_p1` is the count of final-reviewer-flagged P1
     patches that the auto-applier rejected (couldn't be safely
     applied). The harness can't autonomously verify final-layer reviewer's flag was
     wrong, so an unresolved P1 must surface as 'human review' even
@@ -4258,7 +4258,7 @@ def _compute_unified_verdict(
             f"certification track {certification_track}"
         )
     elif not grok_clean and p1_clean:
-        # Fix #31 + Fix #49: deterministic stages clean, but Grok
+        # Fix #31 + Fix #49: deterministic stages clean, but final-layer reviewer
         # flagged P1 patches that the agent-to-agent repair loop
         # AND the auto-strip safety net BOTH could not resolve
         # (e.g. the BEFORE region wasn't unique in the paper or
@@ -4270,7 +4270,7 @@ def _compute_unified_verdict(
         reason = (
             f"P1 clean (stage1 {s1_n_pass}/{s1_n_total}, "
             f"stage2 P2={s2_p2}); BUT {grok_unresolved_p1} "
-            f"Grok-flagged P1 patch(es) survived BOTH the "
+            f"final-reviewer-flagged P1 patch(es) survived BOTH the "
             "agent-to-agent repair loop AND the auto-strip safety "
             "net (Fix #49). The pipeline exhausted its autonomous "
             "options; the issue is materially unresolvable without "
@@ -4447,7 +4447,7 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
         + track_line
         + surface_line
         + (
-            f"- Grok-flagged P1 patches unresolved: "
+            f"- final-reviewer-flagged P1 patches unresolved: "
             f"{u.grok_unresolved_p1} "
             f"(downgrades AAA → 'Trust-Spine Pass — Human Review "
             f"Required'; Fix #31)\n"

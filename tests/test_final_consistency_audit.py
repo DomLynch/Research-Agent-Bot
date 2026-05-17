@@ -200,7 +200,7 @@ def test_apply_fixes_idempotent_across_invocations() -> None:
 def test_apply_fixes_strips_role_repair_artifact_sentence() -> None:
     """Role-drift repair may emit an explanatory placeholder sentence
     when no safe canonical rewrite exists. Public prose should strip
-    that artifact deterministically instead of waiting for Grok."""
+    that artifact deterministically instead of waiting for final-layer reviewer."""
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
@@ -1932,7 +1932,7 @@ def test_apply_fixes_preserves_methods_after_qei_not_run_block() -> None:
 
 
 def test_apply_fixes_backfills_cross_domain_after_review_trim() -> None:
-    """Grok can shorten Cross-Domain after writer backstop runs; the
+    """final-layer reviewer can shorten Cross-Domain after writer backstop runs; the
     deterministic fixer restores the Q12 floor without new numerics."""
     import sys as _sys
     from pathlib import Path as _Path

@@ -40,7 +40,7 @@ def test_ai_use_boundary_excludes_disclosure_meta(tmp_path: Path) -> None:
     run_dir = _run(
         tmp_path,
         "## Abstract\n\nClean public text.\n\n"
-        "## AI-Use Disclosure\n\nGrok and SPAR are documented here.\n",
+        "## AI-Use Disclosure\n\nfinal-layer reviewer and SPAR are documented here.\n",
     )
 
     report = audit.build_report([run_dir])

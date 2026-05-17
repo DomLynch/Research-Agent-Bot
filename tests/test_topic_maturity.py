@@ -48,7 +48,7 @@ def test_l3_when_floor_met_but_verdict_below_aaa():
 
 
 def test_l3_when_grok_unresolved_blocks_aaa():
-    """Stage1+2 clean + floor met but Grok flagged a P1 → L3."""
+    """Stage1+2 clean + floor met but final-layer reviewer flagged a P1 → L3."""
     m = {"n_receipts": 15, "n_high_confidence_claims_total": 60,
          "n_non_orthogonal_tensions": 12}
     assert compute_maturity_level(
@@ -72,7 +72,7 @@ def test_l4_when_aaa_with_auto_strip_surgery():
 
 
 def test_l5_when_aaa_clean_no_surgery():
-    """AAA + zero unresolved Grok + zero auto-strip → Journal-Ready."""
+    """AAA + zero unresolved final-reviewer + zero auto-strip → Journal-Ready."""
     m = {"n_receipts": 15, "n_high_confidence_claims_total": 60,
          "n_non_orthogonal_tensions": 12}
     assert compute_maturity_level(

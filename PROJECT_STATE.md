@@ -15,7 +15,7 @@ from a certified AAA/L6 artifact to candidate-publication quality.
 ## Current Truth - 2026-05-09
 ```text
 Last pre-switch clean baseline: 415621b2
-Current branch target: Gemini Exacto reviewer switch
+Current branch target: model-agnostic final-reviewer naming
 Final deployed commit: verify with git rev-parse --short HEAD after deploy
 Service: research-agent-bot.service active
 Endpoint: HTTP 200 live status page
@@ -45,8 +45,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   immutable pack records, safe `scripts/synthesize.py`.
 - AAA-SCOP track: scoped certification for thin but useful topics without
   inflating full AAA/L5.
-- Reviewer stack: MiMo writer/extractor, Gemini Exacto reviewer with high
-  thinking, and Mistral-small bounded fallback only when primary review fails.
+- Reviewer stack: MiMo writer/extractor, configured final-layer reviewer with
+  high thinking, and Mistral-small bounded fallback only when primary review fails.
 - Cross-topic meta-synthesis V1: read-only certified-run aggregation, convergence
   detector, contradiction detector, deterministic renderer.
 - Rapamycin: AAA/L6 reproducibly journal-ready flagship.

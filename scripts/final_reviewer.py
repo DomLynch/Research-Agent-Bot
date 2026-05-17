@@ -24,8 +24,8 @@ Output:
   - <paper>.review_patches.json — list of TypedPatch records
   - <paper>.review_summary.md   — human-readable review notes
 
-Default primary: Gemini 3.1 Flash Lite Exacto via OpenRouter with high
-thinking. Mistral Small is the cheap fallback.
+Default primary: configured final-layer reviewer via OpenRouter with
+high thinking. Mistral Small is the cheap fallback.
 """
 from __future__ import annotations
 
@@ -590,9 +590,9 @@ async def review_paper(
     citation_registry: dict | None = None,
 ) -> tuple[list[TypedPatch], dict, str, float]:
     """Run the final-layer review. Returns (patches, raw_response,
-    model_used, cost_usd). Gemini 3.1 Flash Lite Exacto is the primary;
-    Mistral Small is the fallback that only fires on primary outage or
-    invalid JSON."""
+    model_used, cost_usd). The configured primary runs first; Mistral
+    Small is the fallback that only fires on primary outage or invalid
+    JSON."""
     api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
         raise RuntimeError(

@@ -17,8 +17,9 @@ from typing import Any
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
+sys.path.insert(0, str(REPO / "scripts"))
 
-from scripts.final_reviewer import _normalize_patch, review_paper  # noqa: E402
+from final_reviewer import _normalize_patch, review_paper  # noqa: E402
 
 VALID_TYPES = {"formatting", "numeric", "citation", "claim", "structure"}
 VALID_SEVERITIES = {"P1", "P2", "P3"}

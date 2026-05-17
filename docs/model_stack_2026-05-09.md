@@ -8,9 +8,10 @@ Use this stack for the current synthesis/review path:
 2. Final-layer reviewer: `google/gemini-3.1-flash-lite:exacto`
 3. Fallback + bounded arbitrator: `mistralai/mistral-small-2603`
 
-`scripts/grok_reviewer.py` and `scripts/granite_arbitrator.py` keep legacy
-names for compatibility. The runtime defaults have moved off Grok and IBM
-Granite.
+`scripts/final_reviewer.py` is the model-agnostic final-reviewer module.
+`scripts/grok_reviewer.py` remains as a one-release compatibility shim.
+`scripts/granite_arbitrator.py` still carries a legacy name. The runtime
+defaults have moved off older branded reviewers.
 
 ## Evidence
 
@@ -21,7 +22,7 @@ Committed defaults:
   `google/gemini-3.1-flash-lite:exacto`.
 - `agent/settings.py`: `FALLBACK_MODEL` defaults to
   `mistralai/mistral-small-2603`.
-- `scripts/grok_reviewer.py`: `review_with_grok(...)` defaults to Gemini
+- `scripts/final_reviewer.py`: `review_paper(...)` defaults to Gemini
   3.1 Flash Lite Exacto with high thinking and Mistral fallback.
 - `scripts/run_v06_synthesis.py`: arbitration model defaults to Mistral when
   `ARBITRATOR_ENABLED` is explicitly enabled.
@@ -61,9 +62,9 @@ Evidence files:
 
 ## Cost Rationale
 
-The local pricing table in `scripts/grok_reviewer.py` records:
+The local pricing table in `scripts/final_reviewer.py` records:
 
-- Grok 4.3: `$3.00` input / `$15.00` output per million tokens.
+- Grok 4.3 escalation model: `$3.00` input / `$15.00` output per million tokens.
 - Gemini 3.1 Flash Lite Exacto: `$0.25` input / `$1.50` output per million
   tokens.
 - Mistral Small 2603: `$0.15` input / `$0.60` output per million tokens.
@@ -108,7 +109,7 @@ Conservative `ESCALATE` blocks clean certification rather than upgrading it.
 - DeepSeek is demoted because reviewer recall/latency validation was weak.
 - Numeric review recall still depends on deterministic numeric gates.
 - Mistral mixed-sample live validation is small (`6` cases).
-- Legacy names (`grok_*`, `granite_*`) remain in code and JSON fields.
+- Legacy JSON fields (`grok_*`, `granite_*`) remain for compatibility.
 - `ARBITRATOR_ENABLED` is an explicit runtime gate; default model is Mistral
   when arbitration is enabled.
 

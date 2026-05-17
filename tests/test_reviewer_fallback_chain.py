@@ -1,5 +1,5 @@
-"""Tests for the Gemini Exacto → Mistral Small fallback chain in
-scripts/grok_reviewer.py. NEVER skip the final-layer review."""
+"""Tests for the primary → fallback fallback chain in
+scripts/final_reviewer.py. NEVER skip the final-layer review."""
 from __future__ import annotations
 
 import asyncio
@@ -11,7 +11,7 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import grok_reviewer  # noqa: E402
+import final_reviewer  # noqa: E402
 
 
 def _mock_chat_response(
@@ -34,7 +34,7 @@ def test_primary_used_when_available() -> None:
         "google/gemini-3.1-flash-lite:exacto", {"patches": []},
     ))
     parsed, model_used, cost = asyncio.run(
-        grok_reviewer._call_with_fallback(
+        final_reviewer._call_with_fallback(
             "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
@@ -48,7 +48,7 @@ def test_primary_used_when_available() -> None:
 
 
 def test_low_patch_long_paper_can_escalate_to_grok() -> None:
-    """Gemini Exacto can be primary, but a suspiciously clean long paper can
+    """the primary reviewer can be primary, but a suspiciously clean long paper can
     escalate to a stronger reviewer when explicitly configured."""
     client = MagicMock()
     client.post = AsyncMock(side_effect=[
@@ -72,7 +72,7 @@ def test_low_patch_long_paper_can_escalate_to_grok() -> None:
     ])
 
     patches, raw, model_used, cost = asyncio.run(
-        grok_reviewer.review_with_grok(
+        final_reviewer.review_paper(
             "word " * 10_001,
             {"receipts": []},
             {"p1_pass": True, "score_out_of_10": 10},
@@ -98,7 +98,7 @@ def test_low_patch_short_paper_does_not_escalate_to_grok() -> None:
     ))
 
     patches, _raw, model_used, _cost = asyncio.run(
-        grok_reviewer.review_with_grok(
+        final_reviewer.review_paper(
             "short clean paper",
             {"receipts": []},
             {"p1_pass": True, "score_out_of_10": 10},
@@ -125,7 +125,7 @@ def test_primary_retry_recovers_before_mistral() -> None:
         ),
     ])
     parsed, model_used, cost = asyncio.run(
-        grok_reviewer._call_with_fallback(
+        final_reviewer._call_with_fallback(
             "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
@@ -143,17 +143,17 @@ def test_mistral_fallback_when_primary_fails(
 ) -> None:
     """When primary throws (HTTP error / parse failure), Mistral is the
     next model after primary retries are exhausted."""
-    monkeypatch.setattr(grok_reviewer, "_PRIMARY_ATTEMPTS", 2)
+    monkeypatch.setattr(final_reviewer, "_PRIMARY_ATTEMPTS", 2)
     client = MagicMock()
-    grok_failure = ValueError("invalid primary JSON")
+    reviewer_failure = ValueError("invalid primary JSON")
     mistral_success = _mock_chat_response(
         "mistralai/mistral-small-2603", {"patches": []},
     )
     client.post = AsyncMock(side_effect=[
-        grok_failure, grok_failure, mistral_success,
+        reviewer_failure, reviewer_failure, mistral_success,
     ])
     parsed, model_used, cost = asyncio.run(
-        grok_reviewer._call_with_fallback(
+        final_reviewer._call_with_fallback(
             "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
@@ -178,7 +178,7 @@ def test_reviewer_extracts_json_from_prose_or_fence() -> None:
     client = MagicMock()
     client.post = AsyncMock(return_value=response)
     parsed, model_used, _cost = asyncio.run(
-        grok_reviewer._call_with_fallback(
+        final_reviewer._call_with_fallback(
             "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
@@ -194,7 +194,7 @@ def test_both_failures_raises() -> None:
     client = MagicMock()
     client.post = AsyncMock(side_effect=ValueError("invalid provider response"))
     try:
-        asyncio.run(grok_reviewer._call_with_fallback(
+        asyncio.run(final_reviewer._call_with_fallback(
             "sys", "user", "google/gemini-3.1-flash-lite:exacto",
             "mistralai/mistral-small-2603",
             "test-key", "https://openrouter.ai/api/v1", client,
@@ -231,7 +231,7 @@ def test_prompt_uses_body_citations_when_registry_provided() -> None:
         "PMC12978362_molecular_mechanisms_of_metformin":
             _Entry(body_citation="Vujović 2026"),
     }
-    _system, user = grok_reviewer._build_grok_prompt(
+    _system, user = final_reviewer._build_reviewer_prompt(
         "## Body\n\nText.", manifest, {"p1_pass": True, "score_out_of_10": 9},
         citation_registry=registry,
     )
@@ -245,9 +245,9 @@ def test_prompt_uses_body_citations_when_registry_provided() -> None:
 
 def test_prompt_keeps_same_background_citation_with_distinct_numerics() -> None:
     """A single background citation can define multiple canonical
-    thresholds. Grok must see each token+numeric pair; deduping only by
+    thresholds. The final-layer reviewer must see each token+numeric pair; deduping only by
     citation token hides legitimate values and causes false P1 strips."""
-    _system, user = grok_reviewer._build_grok_prompt(
+    _system, user = final_reviewer._build_reviewer_prompt(
         "## Body\n\nCruz-Jentoft 2019 reports 16 kg and 27 kg thresholds.",
         {"receipts": [], "topic": "caloric_restriction"},
         {"p1_pass": True, "score_out_of_10": 10},
@@ -271,7 +271,7 @@ def test_prompt_falls_back_to_receipt_ids_without_registry() -> None:
             },
         ],
     }
-    _system, user = grok_reviewer._build_grok_prompt(
+    _system, user = final_reviewer._build_reviewer_prompt(
         "## Body\n\nText.", manifest, {"p1_pass": True, "score_out_of_10": 9},
         citation_registry=None,
     )
@@ -283,18 +283,18 @@ def test_prompt_falls_back_to_receipt_ids_without_registry() -> None:
 def test_cost_estimate_is_real_not_zero() -> None:
     """Pre-fix cost was a hardcoded 0.0 placeholder. Verify the cost
     function actually computes something for known models."""
-    gemini_cost = grok_reviewer._estimate_cost(
+    gemini_cost = final_reviewer._estimate_cost(
         "google/gemini-3.1-flash-lite:exacto", 1_000_000, 100_000,
     )
     # Gemini 3.1 Flash Lite: $0.25/Mtok in, $1.50/Mtok out → $0.25 + $0.15 = $0.40
     assert 0.39 < gemini_cost < 0.41, f"unexpected Gemini cost: {gemini_cost}"
-    grok_cost = grok_reviewer._estimate_cost("x-ai/grok-4.3", 1_000_000, 100_000)
-    # Grok 4.3: $3/Mtok in, $15/Mtok out → $3 + $1.5 = $4.50
+    grok_cost = final_reviewer._estimate_cost("x-ai/grok-4.3", 1_000_000, 100_000)
+    # Grok 4.3 escalation: $3/Mtok in, $15/Mtok out → $3 + $1.5 = $4.50
     assert 4.0 < grok_cost < 5.0, f"unexpected grok cost: {grok_cost}"
-    mistral_cost = grok_reviewer._estimate_cost(
+    mistral_cost = final_reviewer._estimate_cost(
         "mistralai/mistral-small-2603", 1_000_000, 100_000,
     )
     # Mistral: $0.15/Mtok in, $0.60/Mtok out → $0.15 + $0.06 = $0.21
     assert 0.20 < mistral_cost < 0.22, f"unexpected mistral cost: {mistral_cost}"
-    unknown_cost = grok_reviewer._estimate_cost("foo/bar-99", 1_000_000, 100_000)
+    unknown_cost = final_reviewer._estimate_cost("foo/bar-99", 1_000_000, 100_000)
     assert unknown_cost == 0.0  # no pricing table → 0

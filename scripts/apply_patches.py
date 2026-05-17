@@ -1,6 +1,6 @@
 """Day 10.17 Phase 6.2 Layer 2 — final-reviewer patch applicator.
 
-Reads <paper>.review_patches.json (from grok_reviewer.py) and applies
+Reads <paper>.review_patches.json (from final_reviewer.py) and applies
 patches per per-type gate rules:
 
   formatting   → auto-apply (typos, headers, spacing)
@@ -159,9 +159,9 @@ def _removes_bridge_contract_tags(location: str, before: str, after: str) -> boo
 
 
 def _looks_truncated_patch_field(after: str) -> bool:
-    """Detect reviewer patch fields likely clipped by grok_reviewer caps.
+    """Detect reviewer patch fields likely clipped by final_reviewer caps.
 
-    `grok_reviewer` caps `after` at 600 chars to prevent runaway JSON.
+    `final_reviewer` caps `after` at 600 chars to prevent runaway JSON.
     A non-empty replacement near that cap that ends mid-token is unsafe:
     applying it can splice a broken sentence into the manuscript.
     """
@@ -665,7 +665,7 @@ def apply_patches(
         pid = p.get("id", "?")
         sev = p.get("severity", "P3")
         location = p.get("location") or ""
-        # Reviewer P1: clamp proposer_reason length so a 50KB Grok
+        # Reviewer P1: clamp proposer_reason length so a 50KB final-layer reviewer
         # hallucination can't bloat the JSON log. 500 chars is enough
         # for any human-readable reason; truncate with ellipsis.
         raw_reason = (p.get("reason") or "").strip()
@@ -674,7 +674,7 @@ def apply_patches(
         )
 
         # Reviewer P1: malformed contract (missing/unknown patch_type)
-        # is REJECTED, not flagged. A flagged patch implies "Grok
+        # is REJECTED, not flagged. A flagged patch implies "final-layer reviewer
         # proposed something coherent that we can't apply"; rejected
         # implies "the proposal itself is broken". Different reviewer
         # action.
@@ -1138,7 +1138,7 @@ def main(argv: list[str] | None = None) -> int:
     paper_path = Path(args.paper_md).resolve()
     patches_path = paper_path.with_suffix(".review_patches.json")
     if not patches_path.exists():
-        print(f"Run grok_reviewer.py first: {patches_path}", file=sys.stderr)
+        print(f"Run final_reviewer.py first: {patches_path}", file=sys.stderr)
         return 2
     manifest_path = paper_path.parent / "manifest.json"
     paper = paper_path.read_text()

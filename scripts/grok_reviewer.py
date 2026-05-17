@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 import warnings
+import sys
+from pathlib import Path
 
-from scripts.final_reviewer import *  # noqa: F401, F403
-from scripts.final_reviewer import review_paper
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from final_reviewer import *  # noqa: F401, F403
+from final_reviewer import review_paper
 
 review_with_grok = review_paper
 warnings.warn(
@@ -12,4 +15,3 @@ warnings.warn(
     DeprecationWarning,
     stacklevel=2,
 )
-

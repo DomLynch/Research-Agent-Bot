@@ -1,10 +1,10 @@
-"""Fix #31 — Grok-unresolved P1 patches downgrade AAA → Trust-Spine
+"""Fix #31 — final-reviewer-unresolved P1 patches downgrade AAA → Trust-Spine
 Pass — Human Review Required.
 
 Trust-spine principle: the harness can autonomously verify Stage-1 +
 Stage-2 audits (deterministic checks). It CANNOT autonomously verify
-that a Grok-flagged P1 was a false positive. Therefore an unresolved
-Grok P1 surfaces as 'human review required', not as AAA."""
+that a final-reviewer-flagged P1 was a false positive. Therefore an unresolved
+final-reviewer P1 surfaces as 'human review required', not as AAA."""
 from __future__ import annotations
 
 import sys
@@ -28,7 +28,7 @@ def _full_audit() -> dict:
 
 
 def test_aaa_when_grok_clean() -> None:
-    """All-green stages + zero Grok-unresolved P1 → AAA."""
+    """All-green stages + zero final-reviewer-unresolved P1 → AAA."""
     v = orch._compute_unified_verdict(
         _full_audit(), [], grok_unresolved_p1=0,
     )
@@ -37,7 +37,7 @@ def test_aaa_when_grok_clean() -> None:
 
 
 def test_grok_unresolved_p1_blocks_aaa() -> None:
-    """All-green stages + 1 Grok-unresolved P1 → 'Trust-Spine Pass —
+    """All-green stages + 1 final-reviewer-unresolved P1 → 'Trust-Spine Pass —
     Human Review Required'. NOT AAA."""
     v = orch._compute_unified_verdict(
         _full_audit(), [], grok_unresolved_p1=1,
@@ -53,7 +53,7 @@ def test_verdict_reason_names_grok_count() -> None:
     v = orch._compute_unified_verdict(
         _full_audit(), [], grok_unresolved_p1=3,
     )
-    assert "3 Grok-flagged P1" in v.reason
+    assert "3 final-reviewer-flagged P1" in v.reason
     assert "agent-to-agent" in v.reason.lower() or (
         "auto-strip safety net" in v.reason
     )
@@ -81,8 +81,8 @@ def test_default_grok_unresolved_p1_is_zero() -> None:
 
 
 def test_p1_blocking_dominates_grok_unresolved() -> None:
-    """If Stage-1 P1 fails AND Grok has unresolved P1 → SHIP-BLOCKED
-    (P1 dominates; Grok-only downgrade only matters when stages
+    """If Stage-1 P1 fails AND final-layer reviewer has unresolved P1 → SHIP-BLOCKED
+    (P1 dominates; final-reviewer-only downgrade only matters when stages
     are clean)."""
     audit = _full_audit()
     audit["p1_pass"] = False
@@ -94,13 +94,13 @@ def test_p1_blocking_dominates_grok_unresolved() -> None:
 
 
 def test_format_unified_verdict_surfaces_grok_count() -> None:
-    """Markdown rendering must include the Grok-unresolved row when
+    """Markdown rendering must include the final-reviewer-unresolved row when
     >0 (transparency for human reviewer)."""
     v = orch._compute_unified_verdict(
         _full_audit(), [], grok_unresolved_p1=2,
     )
     md = orch._format_unified_verdict(v)
-    assert "Grok-flagged P1 patches unresolved: 2" in md
+    assert "final-reviewer-flagged P1 patches unresolved: 2" in md
     assert "Agent Review Unresolved" in md or "Fix #49" in md
 
 
@@ -111,7 +111,7 @@ def test_format_omits_grok_row_when_zero() -> None:
         _full_audit(), [], grok_unresolved_p1=0,
     )
     md = orch._format_unified_verdict(v)
-    assert "Grok-flagged P1 patches unresolved" not in md
+    assert "final-reviewer-flagged P1 patches unresolved" not in md
 
 
 # ============ Fix #36 — `flagged` decision counts as unresolved =====
@@ -123,7 +123,7 @@ def test_grok_unresolved_count_includes_flagged_p1_decisions() -> None:
     a 0.13 m/s walk-speed reinterpretation that the auto-applier
     refuses to apply because it changes scientific meaning). Pre-
     Fix-#36 the orchestrator only counted `rejected`, so the verdict
-    surfaced as AAA even though Grok had flagged a load-bearing
+    surfaced as AAA even though final-layer reviewer had flagged a load-bearing
     P1 claim error.
 
     This test pins the orchestrator-level count: a fake patch result

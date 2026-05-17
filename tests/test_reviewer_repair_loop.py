@@ -13,7 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import apply_patches as ap  # type: ignore[import-not-found]  # noqa: E402
-import grok_reviewer as gr  # type: ignore[import-not-found]  # noqa: E402
+import final_reviewer as gr  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 
 

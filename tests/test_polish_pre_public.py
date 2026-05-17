@@ -105,7 +105,7 @@ def test_writer_prompt_no_longer_emits_internal_tier_labels() -> None:
 
 def test_audit_flags_internal_tier_label_in_prose() -> None:
     """Defence-in-depth: if any internal label still leaks (e.g. via
-    Grok patches), Stage-2 C12 catches it as P2 auto-fixable."""
+    final-layer reviewer patches), Stage-2 C12 catches it as P2 auto-fixable."""
     paper = (
         "## Discussion\n\n"
         "The A1_clinical_RCT evidence from Walton 2019 demonstrates "

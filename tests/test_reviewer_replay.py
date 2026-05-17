@@ -99,10 +99,10 @@ def test_live_provider_requires_explicit_allow_live() -> None:
         )
 
 
-def test_live_provider_rejects_grok_fallback() -> None:
+def test_live_provider_rejects_escalation_fallback() -> None:
     fixture = reviewer_replay.load_fixture(FIXTURE)
 
-    with pytest.raises(RuntimeError, match="Grok fallback"):
+    with pytest.raises(RuntimeError, match="final-layer reviewer fallback"):
         reviewer_replay.asyncio.run(
             reviewer_replay.run_live(
                 fixture,
@@ -119,7 +119,7 @@ def test_live_provider_skips_timeout(monkeypatch) -> None:
         await reviewer_replay.asyncio.sleep(0.05)
         return [], {}, "google/gemini-3.1-flash-lite:exacto", 0.0
 
-    monkeypatch.setattr(reviewer_replay, "review_with_grok", slow_review)
+    monkeypatch.setattr(reviewer_replay, "review_paper", slow_review)
     fixture = reviewer_replay.load_fixture(FIXTURE)
 
     result = reviewer_replay.asyncio.run(
