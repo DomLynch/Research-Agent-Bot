@@ -5,6 +5,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -15,6 +17,7 @@ MANIFEST_NAME = "researka_reader_manifest.json"
 SCHEMA = "researka.reader_manifest.v1"
 DW_SCHEMA = "derivation_web.register_public_bundle.v1"
 DW_ACTOR_ID = "researka:system:osf-publisher:v1"
+_ORCID_RE = re.compile(r"^https://orcid\.org/\d{4}-\d{4}-\d{4}-\d{3}[\dX]$")
 
 _EXCLUDED_NAMES = {
     MANIFEST_NAME,
@@ -57,6 +60,17 @@ def _osf_value(osf: dict[str, Any] | None, *names: str) -> Any:
     return next((data[name] for name in names if data.get(name)), None)
 
 
+def _normalise_orcid(value: str | None) -> str | None:
+    if not value:
+        return None
+    raw = value.strip()
+    if re.fullmatch(r"\d{4}-\d{4}-\d{4}-\d{3}[\dX]", raw):
+        raw = f"https://orcid.org/{raw}"
+    if not _ORCID_RE.fullmatch(raw):
+        raise ValueError("submitter ORCID must be https://orcid.org/0000-0000-0000-0000")
+    return raw
+
+
 def iter_public_files(root: Path) -> list[Path]:
     """Return deterministic, non-secret public files relative to root."""
     root = root.resolve()
@@ -78,6 +92,7 @@ def build_reader_manifest(
     *,
     public_url: str | None = None,
     osf: dict[str, Any] | None = None,
+    submitter_orcid: str | None = None,
 ) -> dict[str, Any]:
     """Build a deterministic public-reader manifest."""
     root = root.resolve()
@@ -97,23 +112,28 @@ def build_reader_manifest(
     topic = _topic(root)
     osf_url = _osf_value(osf, "url", "osf_url")
     doi = _osf_value(osf, "doi", "osf_doi")
+    orcid = _normalise_orcid(submitter_orcid)
+    json_ld = {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "name": f"Researka synthesis: {topic}",
+        "about": topic,
+        "identifier": doi,
+        "url": public_url,
+        "isBasedOn": osf_url,
+    }
+    if orcid:
+        json_ld["author"] = {"@type": "Person", "identifier": orcid, "sameAs": orcid}
     return {
         "schema": SCHEMA,
         "run_id": root.name,
         "topic": topic,
         "public_url": public_url,
+        "submitter_orcid": orcid,
         "file_count": len(entries),
         "total_size": sum(entry["size"] for entry in entries),
         "entrypoints": entrypoints,
-        "json_ld": {
-            "@context": "https://schema.org",
-            "@type": "ScholarlyArticle",
-            "name": f"Researka synthesis: {topic}",
-            "about": topic,
-            "identifier": doi,
-            "url": public_url,
-            "isBasedOn": osf_url,
-        },
+        "json_ld": json_ld,
         "files": entries,
     }
 
@@ -139,7 +159,7 @@ def aggregate_files_key(reader_manifest: dict[str, Any]) -> str:
             raise ValueError("reader manifest file entry is malformed") from exc
     body = {
         "run_id": reader_manifest.get("run_id"),
-        "files": sorted(aggregate, key=lambda item: item["path"]),
+        "files": sorted(aggregate, key=lambda item: str(item["path"])),
     }
     digest = hashlib.sha256(
         json.dumps(body, sort_keys=True, separators=(",", ":")).encode()
@@ -153,8 +173,14 @@ def write_reader_manifest(
     *,
     public_url: str | None = None,
     osf: dict[str, Any] | None = None,
+    submitter_orcid: str | None = None,
 ) -> Path:
-    manifest = build_reader_manifest(root, public_url=public_url, osf=osf)
+    manifest = build_reader_manifest(
+        root,
+        public_url=public_url,
+        osf=osf,
+        submitter_orcid=submitter_orcid,
+    )
     out_path = out or root / MANIFEST_NAME
     out_path.write_text(
         json.dumps(manifest, indent=2, sort_keys=True) + "\n",
@@ -207,6 +233,7 @@ def build_dw_register_payload(
                         "run_id": reader_manifest.get("run_id"),
                         "topic": reader_manifest.get("topic"),
                         "public_url": public,
+                        "submitter_orcid": reader_manifest.get("submitter_orcid"),
                         "osf": osf_block,
                         "idempotency_key": key,
                     },
@@ -218,6 +245,7 @@ def build_dw_register_payload(
                     "run_id": reader_manifest.get("run_id"),
                     "topic": reader_manifest.get("topic"),
                     "public_url": public,
+                    "submitter_orcid": reader_manifest.get("submitter_orcid"),
                     "idempotency_key": key,
                 },
                 "actor_id": DW_ACTOR_ID,
@@ -246,6 +274,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", help=f"Output path; default <root>/{MANIFEST_NAME}")
     parser.add_argument("--public-url")
     parser.add_argument("--osf-result", help="Optional osf_publish_result.json path")
+    parser.add_argument("--submitter-orcid", default=os.getenv("RESEARKA_SUBMITTER_ORCID"))
     args = parser.parse_args(argv)
     try:
         out = write_reader_manifest(
@@ -253,8 +282,9 @@ def main(argv: list[str] | None = None) -> int:
             Path(args.out).resolve() if args.out else None,
             public_url=args.public_url,
             osf=_read_json(Path(args.osf_result)) if args.osf_result else None,
+            submitter_orcid=args.submitter_orcid,
         )
-    except OSError as exc:
+    except (OSError, ValueError) as exc:
         print(f"reader manifest failed: {exc}", file=sys.stderr)
         return 2
     print(f"reader manifest written: {out}", file=sys.stderr)
