@@ -31,6 +31,7 @@ from agent.synthesis_schemas import (
     SynthesisClaimAnchor,
     SynthesisSection,
 )
+from agent.outcome_class_remap import outcome_display, outcome_key
 
 __all__ = [
     "build_anchored_from_parsed",
@@ -114,11 +115,11 @@ def _accepted_corpus_norm(receipts: Sequence[ReceiptSummary]) -> str:
 
 
 def _label_for_outcome(outcome: str) -> str:
-    return outcome.replace("_", " ").strip().title() or "Other"
+    return outcome_display(outcome)
 
 
 def _norm_label(text: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", text.lower())
+    return re.sub(r"[^a-z0-9]+", "", outcome_key(text))
 
 
 def _resolve_results_outcome(

@@ -11,6 +11,7 @@ from agent.framework_section import (
     build_framework_engagement_section,
     build_novel_framework_section,
 )
+from agent.outcome_class_remap import outcome_display
 from agent.paper_writer_builders import (
     build_anchored_from_parsed,
     build_results_from_parsed,
@@ -98,8 +99,7 @@ def derive_paper_tier(summary: ReceiptSummary) -> str:
 
 
 def _outcome_results_heading(outcome: str) -> str:
-    label = outcome.replace("_", " ").strip().title() or "Other"
-    return f"### {label} Outcomes"
+    return f"### {outcome_display(outcome)} Outcomes"
 
 
 def _ensure_outcome_results_heading(body_md: str, outcome: str) -> str:

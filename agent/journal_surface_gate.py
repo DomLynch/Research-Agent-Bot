@@ -5,6 +5,7 @@ import unicodedata
 from collections import Counter
 from dataclasses import dataclass
 from typing import Any, Iterable
+from agent.outcome_class_remap import outcome_key
 
 
 def _fold(text: str) -> str:
@@ -411,10 +412,7 @@ def _table_cells(line: str) -> list[str]:
 
 
 def _outcome_key(text: str) -> str:
-    words = re.findall(r"[a-z0-9]+", text.lower())
-    while words and words[-1] in {"outcome", "outcomes", "endpoint", "endpoints"}:
-        words.pop()
-    return " ".join(words)
+    return outcome_key(text).replace("_", " ")
 
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
@@ -760,8 +758,7 @@ def _outcome_slug(label: str) -> str:
     """Universal heading → outcome-class slug. 'Muscle Function' →
     'muscle_function'; 'Cardiometabolic' → 'cardiometabolic'. No
     per-topic table; just lowercased + word-joined."""
-    s = re.sub(r"[^a-z0-9]+", "_", label.lower()).strip("_")
-    return s
+    return outcome_key(label)
 
 
 def _outcome_class_mismatch_issue_messages(

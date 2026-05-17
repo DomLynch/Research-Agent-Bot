@@ -57,7 +57,7 @@ from agent.paper_writer_claim_repair import repair_claim_strength  # noqa: E402
 from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
-from agent.outcome_class_remap import remap_outcome_class  # noqa: E402
+from agent.outcome_class_remap import outcome_display, remap_outcome_class  # noqa: E402
 from agent.outcome_class_remap import refine_other_outcome_class  # noqa: E402
 from agent.synthesis_schemas import (  # noqa: E402
     EffectDirection, ReceiptSummary, SynthesisSection, SynthesisThesis,
@@ -828,7 +828,7 @@ def _section_backstop_context() -> dict[str, object]:
 
     def _outcomes(effect: str) -> str:
         counts: Counter[str] = Counter(
-            str(r.get("outcome_class") or "other").replace("_", " ")
+            outcome_display(str(r.get("outcome_class") or "other")).lower()
             for r in receipts
             if str(r.get("effect_direction", "")).lower() == effect
         )
@@ -875,7 +875,7 @@ def _section_backstop_outcome_rows(
             for r in group[:3]
         ]
         rows.append({
-            "label": outcome.replace("_", " ").strip().title() or "Other",
+            "label": outcome_display(outcome),
             "n": len(group),
             "claims": claim_n,
             "directions": ", ".join(f"{k}={v}" for k, v in sorted(directions.items())),
@@ -1017,7 +1017,7 @@ def _ensure_results_summary_table(
             limitation = "single-source support"
         else:
             limitation = "population and endpoint heterogeneity"
-        label = outcome.replace("_", " ").strip().title() or "Other"
+        label = outcome_display(outcome)
         rows.append(
             f"| {label} | {corpus_slice} | "
             f"{signal_name} in {dominant_n}/{len(group)} sources | "
