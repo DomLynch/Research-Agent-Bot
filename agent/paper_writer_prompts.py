@@ -508,14 +508,13 @@ Required content:
 4. State the recommended next step (one sentence).
 5. **Clinical-practice statement (peer-review fix 2026-05-09):** state
    explicitly what the current evidence does and does not support for
-   clinical practice. Required template: "Pending further trials,
-   {topic} should not be used off-label for [the specific indication
-   examined] outside clinical-trial settings given current evidence."
-   Adjust phrasing to match topic context (e.g. for an established
-   on-label indication, narrow the statement to the off-label
-   geroprotective use). The conclusion that "evidence is mixed and
-   incomplete" is correct but insufficient — the reader needs the
-   actionable practice guidance.
+   clinical practice. For drugs, compounds, or supplements, use an
+   off-label geroprotective-use boundary. For lifestyle, dietary, or
+   exercise interventions, do not imply the intervention should be
+   avoided outside trials; instead state that general-health support is
+   separate from marketing a proven standalone anti-aging intervention.
+   The conclusion that "evidence is mixed and incomplete" is correct
+   but insufficient — the reader needs actionable practice guidance.
 
 Do NOT write "{topic} extends lifespan" or "{topic} prevents
 sarcopenia" or any other unhedged clinical claim. Use:

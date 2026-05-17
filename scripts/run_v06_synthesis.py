@@ -396,6 +396,34 @@ def _topic_display_name() -> str:
     return topic or "the topic"
 
 
+def _intervention_class() -> str:
+    manifest = _ACTIVE_MANIFEST or {}
+    value = manifest.get("intervention_class") or manifest.get("drug_class") or manifest.get("class_")
+    if value:
+        return str(value).strip().lower()
+    pack = _get_topic_pack()
+    return str(getattr(pack, "drug_class", "") or "").strip().lower()
+
+
+def _translation_boundary_statement(topic: str) -> str:
+    intervention_class = _intervention_class()
+    pharmacologic = any(k in intervention_class for k in (
+        "drug", "compound", "pharmac", "small_molecule", "supplement",
+    ))
+    if pharmacologic:
+        return (
+            "Pending further trials, the intervention should not be used "
+            "off-label for geroprotection or anti-aging purposes outside "
+            "clinical-trial settings given current evidence."
+        )
+    return (
+        f"The current corpus may support {topic} as a general health or "
+        "lifestyle intervention where otherwise indicated, but does not "
+        "justify marketing it as a standalone geroprotective or anti-aging "
+        "intervention with proven hard-longevity effects."
+    )
+
+
 def _compile_public_section_backstop(title: str, floor: int) -> str:
     """Safe public-prose fallback compiled from manifest metadata.
 
@@ -648,13 +676,11 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "public-health claims."
             ),
             (
-                "Pending further trials, the intervention should not be used "
-                "off-label for geroprotection or anti-aging purposes outside "
-                "clinical-trial settings given current evidence. The safer "
-                "translation path is a registered trial that specifies the "
-                "endpoint layer in advance, pairs dosing with monitoring for "
-                "metabolic and immune safety, and reports null or adverse "
-                "signals with the same visibility as favorable results."
+                f"{_translation_boundary_statement(topic)} The safer translation "
+                "path is a registered trial that specifies the endpoint layer "
+                "in advance, pairs dosing with monitoring for metabolic and "
+                "immune safety, and reports null or adverse signals with the "
+                "same visibility as favorable results."
             ),
             (
                 f"Future work should prioritize studies that connect "
