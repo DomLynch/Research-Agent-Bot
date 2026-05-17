@@ -402,13 +402,16 @@ def _intervention_class() -> str:
     if value:
         return str(value).strip().lower()
     pack = _get_topic_pack()
+    if pack is not None and getattr(pack, "topic", "") != _ACTIVE_TOPIC:
+        return ""
     return str(getattr(pack, "drug_class", "") or "").strip().lower()
 
 
 def _translation_boundary_statement(topic: str) -> str:
     intervention_class = _intervention_class()
-    pharmacologic = any(k in intervention_class for k in (
+    pharmacologic = not intervention_class or any(k in intervention_class for k in (
         "drug", "compound", "pharmac", "small_molecule", "supplement",
+        "nutraceutical", "boosting", "precursor",
     ))
     if pharmacologic:
         return (

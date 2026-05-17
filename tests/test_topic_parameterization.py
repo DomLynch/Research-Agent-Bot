@@ -423,3 +423,31 @@ def test_section_backstop_handles_plural_topic_names() -> None:
     assert "Nad Precursors has a biologically plausible" in backstop
     assert "off-label for geroprotection" in backstop
     assert "In conclusion, nad precursors has enough" not in backstop
+
+
+def test_section_backstop_uses_lifestyle_boundary_for_exercise() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    old_topic = orch._ACTIVE_TOPIC
+    try:
+        orch._ACTIVE_TOPIC = "aerobic_exercise"
+        orch._ACTIVE_MANIFEST = {
+            "intervention_class": "exercise_intervention",
+            "n_receipts": 15,
+            "n_high_confidence_claims_total": 85,
+            "n_non_orthogonal_tensions": 49,
+            "thesis": "The evidence profile is mixed.",
+            "receipts": [{
+                "directness": "direct",
+                "effect_direction": "positive",
+                "outcome_class": "cardiometabolic",
+                "citation_token": "Example 2025",
+            }],
+        }
+        backstop = orch._compile_public_section_backstop("Conclusion", 250)
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+        orch._ACTIVE_TOPIC = old_topic
+
+    assert "general health or lifestyle intervention" in backstop
+    assert "standalone geroprotective or anti-aging intervention" in backstop
+    assert "should not be used off-label" not in backstop

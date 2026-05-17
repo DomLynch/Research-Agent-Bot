@@ -508,8 +508,9 @@ Required content:
 4. State the recommended next step (one sentence).
 5. **Clinical-practice statement (peer-review fix 2026-05-09):** state
    explicitly what the current evidence does and does not support for
-   clinical practice. For drugs, compounds, or supplements, use an
-   off-label geroprotective-use boundary. For lifestyle, dietary, or
+   clinical practice. For drugs, compounds, or supplements, use a
+   "Pending further trials" off-label geroprotective-use boundary.
+   For lifestyle, dietary, or
    exercise interventions, do not imply the intervention should be
    avoided outside trials; instead state that general-health support is
    separate from marketing a proven standalone anti-aging intervention.

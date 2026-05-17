@@ -580,6 +580,23 @@ def test_broad_topic_preflight_downshifts_to_evidence_map() -> None:
     ) == "evidence_map"
 
 
+def test_real_topic_metric_routes_keep_flagships_full_and_megatopics_maps() -> None:
+    from agent.review_type import downshift_review_type_for_thin_corpus
+
+    assert downshift_review_type_for_thin_corpus(
+        "prisma_scr_scoping_synthesis",
+        n_receipts=815, n_tensions=188794, n_primary_tier=38, n_outcome_classes=13,
+    ) == "evidence_map"
+    assert downshift_review_type_for_thin_corpus(
+        "prisma_scr_scoping_synthesis",
+        n_receipts=497, n_tensions=73864, n_primary_tier=2, n_outcome_classes=12,
+    ) == "evidence_map"
+    assert downshift_review_type_for_thin_corpus(
+        "prisma_scr_scoping_synthesis",
+        n_receipts=171, n_tensions=4684, n_primary_tier=14, n_outcome_classes=12,
+    ) == "prisma_scr_scoping_synthesis"
+
+
 def test_phase_i_splits_concatenated_h3_h2_heading_line() -> None:
     """Slice 30: Phase I splits a line like `### Sub Title## Next H2`
     into two heading lines separated by a blank. Universal Markdown
