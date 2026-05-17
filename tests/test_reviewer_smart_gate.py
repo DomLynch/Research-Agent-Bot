@@ -1,4 +1,4 @@
-"""Fix #39 — smart Grok gate for claim/numeric patches.
+"""Fix #39 — smart final-reviewer gate for claim/numeric patches.
 
 Pure-deletion / strict-simplification patches auto-apply; semantic
 substitutions and content additions stay flagged. Per the reviewer's
@@ -22,7 +22,7 @@ def _manifest() -> dict:
 
 
 def test_pure_deletion_passes_simplification_gate() -> None:
-    """Grok's actual 0.13 m/s fix: deletes the word 'improvement'."""
+    """The reviewer's actual 0.13 m/s fix: deletes the word 'improvement'."""
     ok, msg = ap._is_safe_simplification(
         "walk speed (0.13 m/s improvement), while...",
         "walk speed (0.13 m/s), while...",
@@ -32,7 +32,7 @@ def test_pure_deletion_passes_simplification_gate() -> None:
 
 
 def test_sentence_deletion_passes_simplification_gate() -> None:
-    """Grok's actual 'consistent with 5%' fix: deletes the false
+    """The reviewer's actual 'consistent with 5%' fix: deletes the false
     consistency claim entirely, leaving just a period."""
     ok, msg = ap._is_safe_simplification(
         ", consistent with the approximately 5% typical extension "
@@ -108,8 +108,8 @@ def test_word_reorder_within_existing_set_passes() -> None:
 # ============ End-to-end gate behaviour with real paper text ==========
 
 
-def test_grok_real_walk_speed_deletion_auto_applies() -> None:
-    """End-to-end: Grok's actual P1 patch on the public-repro paper
+def test_reviewer_real_walk_speed_deletion_auto_applies() -> None:
+    """End-to-end: The reviewer's actual P1 patch on the public-repro paper
     auto-applies under Fix #39 (pure deletion of 'improvement')."""
     p = {
         "id": "P-real-1", "patch_type": "numeric", "severity": "P1",
@@ -133,7 +133,7 @@ def test_grok_real_walk_speed_deletion_auto_applies() -> None:
     )
     new_md, results = ap.apply_patches(paper, [p], _manifest())
     assert results[0].decision == "applied", (
-        f"Grok's pure-deletion patch should auto-apply under Fix "
+        f"The reviewer's pure-deletion patch should auto-apply under Fix "
         f"#39. Got: {results[0].decision} — "
         f"{results[0].reason_for_decision}"
     )
@@ -164,8 +164,8 @@ def test_final_reviewer_prompt_documents_smart_gate_contract() -> None:
     assert "GOOD" in system and "BAD" in system
 
 
-def test_grok_real_consistency_claim_deletion_auto_applies() -> None:
-    """End-to-end: Grok's deletion of the false 'consistent with 5%'
+def test_reviewer_real_consistency_claim_deletion_auto_applies() -> None:
+    """End-to-end: The reviewer's deletion of the false 'consistent with 5%'
     claim auto-applies under Fix #39."""
     p = {
         "id": "P-real-2", "patch_type": "claim", "severity": "P1",
@@ -186,7 +186,7 @@ def test_grok_real_consistency_claim_deletion_auto_applies() -> None:
     )
     new_md, results = ap.apply_patches(paper, [p], _manifest())
     assert results[0].decision == "applied", (
-        f"Grok's deletion patch should auto-apply. Got: "
+        f"The reviewer's deletion patch should auto-apply. Got: "
         f"{results[0].decision}"
     )
     assert "consistent with the approximately 5%" not in new_md

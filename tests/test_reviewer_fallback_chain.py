@@ -1,4 +1,4 @@
-"""Tests for the primary → fallback fallback chain in
+"""Tests for the primary → fallback chain in
 scripts/final_reviewer.py. NEVER skip the final-layer review."""
 from __future__ import annotations
 
@@ -47,7 +47,7 @@ def test_primary_used_when_available() -> None:
     assert cost > 0
 
 
-def test_low_patch_long_paper_can_escalate_to_grok() -> None:
+def test_low_patch_long_paper_can_escalate() -> None:
     """the primary reviewer can be primary, but a suspiciously clean long paper can
     escalate to a stronger reviewer when explicitly configured."""
     client = MagicMock()
@@ -91,7 +91,7 @@ def test_low_patch_long_paper_can_escalate_to_grok() -> None:
     assert cost > 0
 
 
-def test_low_patch_short_paper_does_not_escalate_to_grok() -> None:
+def test_low_patch_short_paper_does_not_escalate() -> None:
     client = MagicMock()
     client.post = AsyncMock(return_value=_mock_chat_response(
         "google/gemini-3.1-flash-lite:exacto", {"patches": []},
@@ -288,9 +288,9 @@ def test_cost_estimate_is_real_not_zero() -> None:
     )
     # Gemini 3.1 Flash Lite: $0.25/Mtok in, $1.50/Mtok out → $0.25 + $0.15 = $0.40
     assert 0.39 < gemini_cost < 0.41, f"unexpected Gemini cost: {gemini_cost}"
-    grok_cost = final_reviewer._estimate_cost("x-ai/grok-4.3", 1_000_000, 100_000)
+    escalation_cost = final_reviewer._estimate_cost("x-ai/grok-4.3", 1_000_000, 100_000)
     # Grok 4.3 escalation: $3/Mtok in, $15/Mtok out → $3 + $1.5 = $4.50
-    assert 4.0 < grok_cost < 5.0, f"unexpected grok cost: {grok_cost}"
+    assert 4.0 < escalation_cost < 5.0, f"unexpected escalation cost: {escalation_cost}"
     mistral_cost = final_reviewer._estimate_cost(
         "mistralai/mistral-small-2603", 1_000_000, 100_000,
     )
