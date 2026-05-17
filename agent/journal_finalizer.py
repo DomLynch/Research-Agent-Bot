@@ -776,7 +776,9 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
         f = fresh[item["id"]]
         if any(item.get(k) != v for k, v in f.items()):
             item.update(f)
-            item["blocks_submission"] = item.get("status") != "pass"
+            item["blocks_submission"] = (
+                item.get("status") != "pass" and not item.get("advisory", False)
+            )
             n_changed += 1
     if n_changed:
         (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))

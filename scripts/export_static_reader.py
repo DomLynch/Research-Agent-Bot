@@ -182,13 +182,13 @@ def _render_trust_panel(base: Path) -> str:
 
 
 def _json_ld(manifest: dict[str, Any]) -> str:
-    data = {
-        "@context": "https://schema.org",
-        "@type": "ScholarlyArticle",
-        "name": manifest.get("topic") or manifest.get("title") or "Untitled run",
-        "dateCreated": manifest.get("generated_at") or manifest.get("finished_at"),
-        "description": manifest.get("thesis", ""),
-    }
+    existing = manifest.get("json_ld")
+    data = dict(existing) if isinstance(existing, dict) else {}
+    data.setdefault("@context", "https://schema.org")
+    data.setdefault("@type", "ScholarlyArticle")
+    data.setdefault("name", manifest.get("topic") or manifest.get("title") or "Untitled run")
+    data.setdefault("dateCreated", manifest.get("generated_at") or manifest.get("finished_at"))
+    data.setdefault("description", manifest.get("thesis", ""))
     return (
         json.dumps(data, ensure_ascii=True, sort_keys=True)
         .replace("<", "\\u003c")

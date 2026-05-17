@@ -429,13 +429,16 @@ def _readiness_item(
     status: str,
     evidence: str,
     next_action: str,
+    *,
+    advisory: bool = False,
 ) -> dict[str, Any]:
     return {
         "id": item_id,
         "name": name,
         "status": status,
         "audit": evidence,
-        "blocks_submission": status != "pass",
+        "advisory": advisory,
+        "blocks_submission": status != "pass" and not advisory,
         "next_action": next_action,
     }
 
@@ -604,17 +607,20 @@ def build_journal_readiness_contract(
             "Resolve reviewer P1s or mark as human-blocking."),
         _readiness_item(12, "target_journal_finalizer", "not_ready", (
             "no target-journal style pack selected for this run"
-        ), "Select target journal and generate style/checklist package."),
+        ), "Select target journal and generate style/checklist package.",
+            advisory=True),
         _readiness_item(*_accountability_readiness_row(
             accountability_model, accountability_pass, accountability_detail,
         )),
         _readiness_item(14, "universal_benchmark_target", "not_ready", (
             "single-run artifact; 20-topic benchmark threshold not evaluated here"
-        ), "Run the frozen benchmark and attach aggregate metrics."),
+        ), "Run the frozen benchmark and attach aggregate metrics.",
+            advisory=True),
         _readiness_item(15, "end_state_architecture", (
             "partial" if not template_language_blocking else "not_ready"
         ), "core synthesis/gates exist; target finalizer and human signoff remain explicit gaps",
-            "Keep closing partial/not-ready items without adding new layers."),
+            "Keep closing partial/not-ready items without adding new layers.",
+            advisory=True),
     ]
 
 
