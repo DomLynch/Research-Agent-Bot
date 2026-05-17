@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
+from agent.outcome_class_remap import outcome_display
+
 # Hard cap per the reviewer's spec: don't build a 1000-row table even
 # if the corpus has that many high-confidence claims. 40 rows × ~3
 # numerics ≈ 120 numerics, plenty for the Q9 lift; more would
@@ -411,7 +413,7 @@ def _public_label(value: str) -> str:
         "unit_value": "unit value",
     }
     s = (value or "").strip()
-    return labels.get(s, s.replace("_", " "))
+    return labels.get(s, outcome_display(s).lower())
 
 
 def _format_statistic(claim: dict[str, Any], value: float) -> str:

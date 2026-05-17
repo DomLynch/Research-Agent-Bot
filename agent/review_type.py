@@ -27,15 +27,22 @@ REVIEW_TYPES: Final[dict[str, str]] = {
     "meta_analysis": "Systematic review and meta-analysis",
     "technical_survey": "Technical survey",
     "management_literature_review": "Management literature review",
+    "evidence_map": "Evidence map",
     "evidence_brief": "Evidence brief",
     "thin_corpus_brief": "Thin-corpus evidence brief",
 }
+COMPACT_REVIEW_TYPES: Final[frozenset[str]] = frozenset({
+    "thin_corpus_brief", "evidence_brief", "evidence_map",
+})
 
 DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"
 # Slice 31 universal thresholds — no topic-specific values.
 THIN_CORPUS_MIN_RECEIPTS: Final[int] = 10
 THIN_CORPUS_MIN_TENSIONS: Final[int] = 1
 THIN_CORPUS_MIN_PRIMARY_TIER: Final[int] = 3
+BROAD_CORPUS_MAX_RECEIPTS: Final[int] = 500
+BROAD_CORPUS_MAX_TENSIONS: Final[int] = 50_000
+BROAD_CORPUS_MAX_OUTCOMES: Final[int] = 12
 
 
 def corpus_sufficiency_verdict(n_receipts: int, n_tensions: int, n_primary_tier: int = -1) -> tuple[bool, tuple[str, ...]]:
@@ -47,12 +54,23 @@ def corpus_sufficiency_verdict(n_receipts: int, n_tensions: int, n_primary_tier:
     return (not reasons, reasons)
 
 
+def corpus_scope_verdict(n_receipts: int, n_tensions: int, n_outcome_classes: int = -1) -> tuple[bool, tuple[str, ...]]:
+    reasons = tuple(r for r in (
+        f"n_receipts={n_receipts} > {BROAD_CORPUS_MAX_RECEIPTS} (split topic or render evidence map)" if n_receipts > BROAD_CORPUS_MAX_RECEIPTS else "",
+        f"n_tensions={n_tensions} > {BROAD_CORPUS_MAX_TENSIONS} (split topic or render evidence map)" if n_tensions > BROAD_CORPUS_MAX_TENSIONS else "",
+        f"n_outcome_classes={n_outcome_classes} > {BROAD_CORPUS_MAX_OUTCOMES} (split topic or render evidence map)" if n_outcome_classes > BROAD_CORPUS_MAX_OUTCOMES else "",
+    ) if r)
+    return (not reasons, reasons)
+
+
 def downshift_review_type_for_thin_corpus(
     declared: str | None, n_receipts: int, n_tensions: int,
-    n_primary_tier: int = -1,
+    n_primary_tier: int = -1, n_outcome_classes: int = -1,
 ) -> str:
     sufficient, _ = corpus_sufficiency_verdict(n_receipts, n_tensions, n_primary_tier)
     if sufficient:
+        if not corpus_scope_verdict(n_receipts, n_tensions, n_outcome_classes)[0]:
+            return "evidence_map"
         return parse_review_type(declared)
     if n_receipts >= THIN_CORPUS_MIN_RECEIPTS and n_tensions >= THIN_CORPUS_MIN_TENSIONS:
         return "evidence_brief"
@@ -107,6 +125,10 @@ REVIEW_TYPE_SELF_CLAIM_TERMS: Final[dict[str, tuple[str, ...]]] = {
         "meta analysis", "prospero", "prisma",
     ),
     "evidence_brief": (
+        "systematic review", "scoping review", "meta-analysis",
+        "meta analysis", "prospero", "prisma",
+    ),
+    "evidence_map": (
         "systematic review", "scoping review", "meta-analysis",
         "meta analysis", "prospero", "prisma",
     ),

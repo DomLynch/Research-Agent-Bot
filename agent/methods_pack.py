@@ -26,6 +26,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Sequence
 
+from agent.outcome_class_remap import outcome_display
+
 
 @dataclass(frozen=True, slots=True)
 class MethodsPack:
@@ -138,7 +140,7 @@ def build_methods_pack(
         risk_of_bias_approach=rob,
         synthesis_approach=(
             "Evidence-tension synthesis: claims grouped by outcome class "
-            f"({', '.join(c.replace('_', ' ') for c in sorted(outcome_classes))}); "
+            f"({', '.join(outcome_display(c).lower() for c in sorted(outcome_classes))}); "
             "within-class agreement, disagreement, and directness gaps "
             "surfaced explicitly. Quantitative pooling applied only where "
             "≥3 sources reported a comparable endpoint with extractable "

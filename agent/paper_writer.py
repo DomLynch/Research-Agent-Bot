@@ -31,6 +31,7 @@ from agent.paper_writer_helpers import (
     section_word_count as _section_word_count,
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
 )
+from agent.review_type import COMPACT_REVIEW_TYPES
 from agent.synthesis_schemas import (
     ReceiptSummary,
     SectionName,
@@ -490,7 +491,7 @@ async def render_full_paper(
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
     """Render full paper markdown plus per-section anchors. Slice 35:
     review_type=thin_corpus_brief skips long-form section generation."""
-    _thin = review_type in {"thin_corpus_brief", "evidence_brief"}
+    _thin = review_type in COMPACT_REVIEW_TYPES
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",

@@ -15,6 +15,7 @@ from agent.synthesis_schemas import (
     ReceiptSummary, SynthesisSection, SynthesisThesis, TensionMatrix,
 )
 from agent.synthesis_writer import filter_accepted
+from agent.outcome_class_remap import outcome_display
 
 __all__ = [
     "build_methods_section",
@@ -208,7 +209,7 @@ def _public_label(value: str) -> str:
         "unit_value": "unit value",
     }
     s = (value or "").strip()
-    return labels.get(s, s.replace("_", " "))
+    return labels.get(s, outcome_display(s).lower())
 
 
 def _outcome_rows(
