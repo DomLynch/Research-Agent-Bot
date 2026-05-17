@@ -18,7 +18,7 @@ from typing import Any
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
-from scripts.grok_reviewer import _normalize_patch, review_with_grok  # noqa: E402
+from scripts.final_reviewer import _normalize_patch, review_paper  # noqa: E402
 
 VALID_TYPES = {"formatting", "numeric", "citation", "claim", "structure"}
 VALID_SEVERITIES = {"P1", "P2", "P3"}
@@ -92,12 +92,12 @@ async def run_live(
     if not allow_live:
         raise RuntimeError("live reviewer replay requires --allow-live")
     if fallback_model.startswith("x-ai/grok"):
-        raise RuntimeError("Grok fallback is not allowed in reviewer replay")
+        raise RuntimeError("final-layer reviewer fallback is not allowed in reviewer replay")
     rows = []
     for case in fixture["cases"][:limit]:
         try:
             patches, _raw, model_used, cost = await asyncio.wait_for(
-                review_with_grok(
+                review_paper(
                     str(case["paper_md"]),
                     case.get("manifest", {}),
                     case.get("audit", {}),

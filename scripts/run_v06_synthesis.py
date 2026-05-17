@@ -72,7 +72,7 @@ sys.path.insert(0, str(REPO_ROOT / "scripts"))
 import audit_v06_paper as _audit_v06  # noqa: E402
 import final_consistency_audit as _consistency_audit  # noqa: E402
 import apply_consistency_fixes as _consistency_fixer  # noqa: E402
-import grok_reviewer as _final_reviewer  # noqa: E402
+from scripts import final_reviewer as _final_reviewer  # noqa: E402
 import apply_patches as _patch_applier  # noqa: E402
 import run_mode_contract as _run_mode  # noqa: E402
 import citation_registry as _citations  # noqa: E402
@@ -2040,7 +2040,7 @@ def build_thesis(
     Pre-Fix: hardcoded metformin-specific narrative ('MASTERS/
     Konopka/MET-PREVENT', 'metformin's anti-aging case'). Caused
     rapamycin synthesis to ship with metformin contamination in
-    its thesis text, which Grok flagged as P1 but couldn't repair
+    its thesis text, which final-layer reviewer flagged as P1 but couldn't repair
     safely (ambiguous BEFORE replacement).
 
     Post-Fix: composes thesis from the receipts' own metadata —
@@ -2828,7 +2828,7 @@ async def _run(
     # receipts → quant_claims for source-context drift detection.
     _ACTIVE_MANIFEST = manifest
 
-    # ===== Auto-pipeline stages (Layer 1 audit + auto-fix → Grok final
+    # ===== Auto-pipeline stages (Layer 1 audit + auto-fix → final-layer
     # review → auto-apply → final audit). No manual step required —
     # this whole chain runs from one invocation. =====
     final_paper_md = await _run_post_paper_pipeline(
@@ -2917,7 +2917,7 @@ async def _run_post_paper_pipeline(
     run_start_ts: dt.datetime | None = None,
 ) -> str:
     """Layer 1 deterministic audit + auto-fix → final-layer LLM review
-    (Gemini Exacto → Mistral fallback) → auto-apply patches → final audit.
+    (primary → fallback) → auto-apply patches → final audit.
 
     Each step's artifact is written to disk so a human can retroactively
     review what changed and why. Returns the final paper text."""
@@ -3012,9 +3012,9 @@ async def _run_post_paper_pipeline(
         audit_md = _audit_v06._format_summary(audit_report)
         paper_path.with_suffix(".audit.md").write_text(audit_md)
 
-    # Stage 3: Final-layer LLM review (Gemini Exacto primary, Mistral fallback).
+    # Stage 3: Final-layer LLM review (primary reviewer, fallback reviewer).
     print(
-        "[pipeline] Stage 3/5 — final-layer review (Gemini Exacto → Mistral fallback)...",
+        "[pipeline] Stage 3/5 — final-layer review (primary → fallback)...",
         file=sys.stderr,
     )
     try:
@@ -3023,7 +3023,7 @@ async def _run_post_paper_pipeline(
         # receipt_id handles. Pre-fix reviewer behavior reverted clean citations
         # to long PMC handles because the prompt asked for "receipt-key
         # consistency" — exactly the bug the third reviewer warned about.
-        patches, _raw, model_used, cost = await _final_reviewer.review_with_grok(
+        patches, _raw, model_used, cost = await _final_reviewer.review_paper(
             paper_md, manifest, audit_report,
             citation_registry=citation_registry,
         )
@@ -3054,7 +3054,7 @@ async def _run_post_paper_pipeline(
         _final_reviewer._format_summary(patches, cost, model_used)
     )
 
-    # Stage 4: Auto-apply final-layer patches. Trust Grok with
+    # Stage 4: Auto-apply final-layer patches. Trust final-layer reviewer with
     # mechanical safety only — no flag-for-human terminal state.
     print(
         f"[pipeline] Stage 4/5 — auto-apply {len(patches)} patches...",
@@ -3074,7 +3074,7 @@ async def _run_post_paper_pipeline(
         )
 
         # Fix #49: agent-to-agent repair loop. For every flagged P1
-        # patch, re-prompt Grok with the rejection reason and ask
+        # patch, re-prompt final-layer reviewer with the rejection reason and ask
         # for a shorter/safer alternative. Pure agent-to-agent —
         # no human in the loop. Returns updated (paper_md, results)
         # with new decision states 'applied_via_repair' or
@@ -3138,7 +3138,7 @@ async def _run_post_paper_pipeline(
         n_stripped = sum(
             1 for r in results if r.decision == "auto_stripped"
         )
-        # Fix #31 + Fix #36 + Fix #49: count Grok P1 patches that
+        # Fix #31 + Fix #36 + Fix #49: count final-layer reviewer P1 patches that
         # remain unresolved AFTER the agent-to-agent repair loop.
         # Decisions:
         #   - "rejected"            → mechanical safety failed
@@ -3150,10 +3150,10 @@ async def _run_post_paper_pipeline(
         #   - "auto_stripped"       → repair loop exhausted; offending
         #                             BEFORE region deleted; resolved
         #                             agent-to-agent. NOT counted.
-        # Refactor 2026-05-04: distinguish Grok HALLUCINATIONS from
-        # genuine unresolved P1s. When Grok proposes a patch with a
+        # Refactor 2026-05-04: distinguish final-layer reviewer HALLUCINATIONS from
+        # genuine unresolved P1s. When final-layer reviewer proposes a patch with a
         # `before` text that doesn't exist in the paper, that's
-        # Grok hallucinating an issue — the paper itself is fine.
+        # final-layer reviewer hallucinating an issue — the paper itself is fine.
         # The smart-gate rejects with reason starting "'before' text
         # not found in paper". Don't count those as unresolved P1.
         def _is_grok_hallucination(r) -> bool:
@@ -3196,7 +3196,7 @@ async def _run_post_paper_pipeline(
     #
     # Fix #19: re-run the deterministic auto-fixer on the post-Grok
     # paper BEFORE final audit. Stage-2's auto-fix (Fix #18b strips
-    # unsourced background sentences) ran in Stage 2 but Grok's
+    # unsourced background sentences) ran in Stage 2 but final-layer reviewer's
     # patches in Stage 4 can re-introduce sentences with
     # background numerics. A Stage-5 re-fix closes the loop so the
     # final-audit verdict reflects post-cleanup state.
@@ -3651,7 +3651,7 @@ async def _agent_repair_loop(
 ) -> tuple[str, list[Any]]:
     """Fix #49: agent-to-agent repair loop.
 
-    For each `decision == 'flagged'` result, re-prompt Grok with the
+    For each `decision == 'flagged'` result, re-prompt final-layer reviewer with the
     rejection reason and ask for a safer alternative. The new
     proposal goes through the same smart-gate as any other patch.
     Up to _MAX_REPAIR_ROUNDS rounds. After all rounds, any still-
@@ -3680,12 +3680,12 @@ async def _agent_repair_loop(
             )
         except Exception as e:  # noqa: BLE001
             print(
-                f"[pipeline] repair-loop Grok call failed: {e}",
+                f"[pipeline] repair-loop final-layer reviewer call failed: {e}",
                 file=sys.stderr,
             )
             break
         if not repaired:
-            # Grok returned 'unfixable' for every patch
+            # final-layer reviewer returned 'unfixable' for every patch
             break
         # Re-run smart-gate on repaired patches
         repaired_dicts = [
@@ -3775,7 +3775,7 @@ def _resolve_absent_flagged_patches(results: list[Any], paper_md: str) -> list[A
     """Resolve reviewer P1s whose target disappeared in final cleanup.
 
     Final cleanup can replace Methods, restore typed sections, or
-    strip unsafe numeric prose after Grok proposed a P1 patch. If the
+    strip unsafe numeric prose after final-layer reviewer proposed a P1 patch. If the
     unapplied BEFORE region is no longer present in the manuscript, the
     public paper no longer carries that issue, so the patch should not
     count as unresolved.
@@ -4068,10 +4068,10 @@ class UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). Cross-stage object →
     frozen+slots per project rule. Serialized via dataclasses.asdict()
     to JSON. Fix #31: tracks Grok-unresolved P1 patches separately —
-    even when stage1 + stage2 are clean, an unresolved Grok P1
+    even when stage1 + stage2 are clean, an unresolved final-layer reviewer P1
     flag downgrades the verdict to 'Trust-Spine Pass — Human Review
     Required' rather than AAA (the harness can't autonomously verify
-    Grok's flag was wrong).
+    final-layer reviewer's flag was wrong).
 
     Wave 7 (2026-05-05): adds corpus_gaps + expansion_targets so a
     sub-AAA verdict carries the actionable to-do list for the next
@@ -4081,7 +4081,7 @@ class UnifiedVerdict:
     Slice 3 (Wave 7 cont.): adds maturity_level (L0-L5) and
     journal_ready bool so dashboards / readers see the topic's
     position on the certification ladder. L5 == Journal-Ready
-    (AAA + zero unresolved Grok + zero auto-strip surgery)."""
+    (AAA + zero unresolved final-layer reviewer + zero auto-strip surgery)."""
     verdict: str
     reason: str
     stage1_p1_pass: bool
@@ -4130,7 +4130,7 @@ def _compute_unified_verdict(
     journal_surface_issues: tuple[str, ...] = (),
 ) -> UnifiedVerdict:
     """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
-    fully-green (P1+P2 + zero unresolved Grok P1). SHIP-BLOCKED if
+    fully-green (P1+P2 + zero unresolved final-layer reviewer P1). SHIP-BLOCKED if
     either deterministic stage flags a P1+ severity. Trust-Spine
     Pass otherwise — and 'Trust-Spine Pass — Human Review Required'
     when only Grok-unresolved P1 prevents AAA.
@@ -4141,7 +4141,7 @@ def _compute_unified_verdict(
 
     Fix #31: `grok_unresolved_p1` is the count of Grok-flagged P1
     patches that the auto-applier rejected (couldn't be safely
-    applied). The harness can't autonomously verify Grok's flag was
+    applied). The harness can't autonomously verify final-layer reviewer's flag was
     wrong, so an unresolved P1 must surface as 'human review' even
     when both deterministic stages are green."""
     stage1_report = stage1_report or {}
@@ -4232,7 +4232,7 @@ def _compute_unified_verdict(
     bridge_req = str(min_d1) if certification_track in {"AAA-INF", "AAA-MECH"} else "n/a"
     cert_floor_clean = (flat_floor_clean or tiered_floor_clean) and bridge_clean
     # AAA requires positive evidence: at least one check ran AND all
-    # passed AND zero stage-2 issues AND zero unresolved Grok P1
+    # passed AND zero stage-2 issues AND zero unresolved final-layer reviewer P1
     # AND corpus floor met.
     all_green = (
         p1_clean
@@ -4254,7 +4254,7 @@ def _compute_unified_verdict(
         verdict = "AAA"
         reason = (
             f"All-green: stage1 {s1_n_pass}/{s1_n_total} + "
-            f"stage2 zero issues + zero unresolved Grok P1 + "
+            f"stage2 zero issues + zero unresolved final-layer reviewer P1 + "
             f"certification track {certification_track}"
         )
     elif not grok_clean and p1_clean:
@@ -4401,7 +4401,7 @@ def _format_unified_verdict(u: UnifiedVerdict) -> str:
     # Slice 3 (Wave 7): journal-ready badge + maturity ladder line.
     journal_line = (
         "**Journal-Ready: yes** — submission-grade certification "
-        "(AAA + zero unresolved Grok + zero auto-strip surgery + "
+        "(AAA + zero unresolved final-layer reviewer + zero auto-strip surgery + "
         "clean journal-surface gate).\n\n"
         if u.journal_ready
         else "**Journal-Ready: no** — see maturity level + components "

@@ -1,4 +1,4 @@
-"""Day 10.17 Phase 6.2 Layer 2 — Grok patch applicator.
+"""Day 10.17 Phase 6.2 Layer 2 — final-reviewer patch applicator.
 
 Reads <paper>.review_patches.json (from grok_reviewer.py) and applies
 patches per per-type gate rules:
@@ -178,7 +178,7 @@ def _is_word_char(ch: str) -> bool:
 def _has_unsafe_match_boundary(text: str, before: str) -> bool:
     """Reject patches whose target starts or ends inside a word.
 
-    Grok can emit a clipped `before` span that still appears exactly once
+    final-layer reviewer can emit a clipped `before` span that still appears exactly once
     in the manuscript. Applying it can leave fragments such as deleting
     `metabol` from `metabolic`. Exact-match uniqueness is necessary but
     not sufficient; the match must also be token-boundary aligned.
@@ -221,7 +221,7 @@ def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool
 def _apply_text_patch(md: str, before: str, after: str) -> str:
     """Apply an exact patch, expanding table-fragment deletions to rows.
 
-    Grok sometimes proposes deleting a pipe-free fragment from a markdown
+    final-layer reviewer sometimes proposes deleting a pipe-free fragment from a markdown
     table row. Replacing only the fragment leaves a malformed row and
     makes the post-apply audit explode. If the patch is a pure deletion
     and the unique BEFORE text lives inside one markdown table row,
@@ -272,7 +272,7 @@ def _is_safe_neutral_claim_rephrase(
 ) -> tuple[bool, str]:
     """Allow a narrow, non-additive claim downgrade.
 
-    Grok often repairs overclaiming by replacing a directional verb
+    final-layer reviewer often repairs overclaiming by replacing a directional verb
     ("increased", "improved") with a neutral evidence verb
     ("examined", "assessed"). This is safe only when the patch adds
     no numerics/citations/entities, does not lengthen the text, and
@@ -331,7 +331,7 @@ def _is_safe_neutral_claim_rephrase(
 def _is_safe_simplification(
     before: str, after: str,
 ) -> tuple[bool, str]:
-    """Fix #39: smart gate for claim/numeric Grok patches.
+    """Fix #39: smart gate for claim/numeric final-reviewer patches.
 
     A patch is a 'safe simplification' iff:
 
@@ -342,13 +342,13 @@ def _is_safe_simplification(
       3. AFTER introduces no new capitalized identifiers
          (e.g. trial names, drug names) not in BEFORE
       4. AFTER's word count is ≤ BEFORE's + a tiny tolerance
-         (Grok may rephrase a 5-word phrase as 6 words; 8+ words
+         (final-layer reviewer may rephrase a 5-word phrase as 6 words; 8+ words
          added likely means new content)
 
     All four must pass. Used by the per-type gate for
     claim + numeric patches — these are the patch types that
     historically were always flagged-for-human, blocking AAA
-    even when Grok's fix was a pure deletion.
+    even when final-layer reviewer's fix was a pure deletion.
 
     Reviewer-aligned strict semantics: AFTER's word count must be
     ≤ BEFORE's (no growth tolerance). Combined with the four
@@ -380,19 +380,19 @@ def _is_safe_simplification(
     if new_numerics:
         return False, (
             f"AFTER introduces new numeric(s) {sorted(new_numerics)} "
-            "not in BEFORE — Grok may be inventing data"
+            "not in BEFORE — final-layer reviewer may be inventing data"
         )
     new_cites = _author_years(after) - _author_years(before)
     if new_cites:
         return False, (
             f"AFTER introduces new citation(s) {sorted(new_cites)} "
-            "not in BEFORE — Grok may be hallucinating sources"
+            "not in BEFORE — final-layer reviewer may be hallucinating sources"
         )
     new_idents = _caps_idents(after) - _caps_idents(before)
     if new_idents:
         return False, (
             f"AFTER introduces new identifier(s) {sorted(new_idents)} "
-            "not in BEFORE — Grok may be introducing new entities"
+            "not in BEFORE — final-layer reviewer may be introducing new entities"
         )
     n_before = len(before.split())
     n_after = len(after.split())
@@ -577,7 +577,7 @@ def _verify_citation_patch(
       - HIGH 1: regex requires Author+Year (no false fire on
         Title-Case prose like "Section", "Discussion").
       - HIGH 2 (Fix #11): also reject internal-handle introduction
-        — pre-fix Grok could ship `PMC12978362_molecular...` as a
+        — pre-fix final-layer reviewer could ship `PMC12978362_molecular...` as a
         citation patch and the verifier passed it as "no novel
         citations" because the long form has no Author-Year.
     """
@@ -627,7 +627,7 @@ def apply_patches(
     reviewer is still an LLM. Without strict deterministic gates, it
     can launder hallucinated numerics or
     fabricated citations into the published paper. The previous
-    "trust Grok auto-apply" branch tried to honor "no humans in the
+    "trust final-layer reviewer auto-apply" branch tried to honor "no humans in the
     pipeline" but conflated it with "no deterministic verification" -
     the right reading is "replace human-review with deterministic
     proof," not "skip review entirely."
@@ -644,9 +644,9 @@ def apply_patches(
                                 deletions; otherwise flag-only
       - unknown              -> flag-only (fail-closed)
 
-    Every flagged patch keeps Grok's rationale + the deterministic
+    Every flagged patch keeps final-layer reviewer's rationale + the deterministic
     verifier's verdict in `reason_for_decision` so a retroactive
-    auditor can see what Grok proposed AND why code refused.
+    auditor can see what final-layer reviewer proposed AND why code refused.
     Mechanical safety (single-occurrence `before` text) still applies
     to every patch that passes the type gate.
     """
@@ -685,7 +685,7 @@ def apply_patches(
                 reason_for_decision=(
                     f"malformed patch contract: patch_type={ptype_raw!r} "
                     f"(known: {sorted(known_types)}). location={location!r}. "
-                    f"Grok rationale: {proposer_reason!r}"
+                    f"final-layer reviewer rationale: {proposer_reason!r}"
                 ),
                 before=before, after=after,
             ))
@@ -696,7 +696,7 @@ def apply_patches(
                 patch_id=pid, patch_type=ptype, severity=sev,
                 decision="rejected",
                 reason_for_decision=(
-                    f"empty 'before' field. Grok rationale: "
+                    f"empty 'before' field. final-layer reviewer rationale: "
                     f"{proposer_reason!r}"
                 ),
                 before=before, after=after,
@@ -710,7 +710,7 @@ def apply_patches(
                 reason_for_decision=(
                     "truncated patch contract: replacement appears "
                     "clipped near the reviewer field cap and ends mid-token. "
-                    f"Grok rationale: {proposer_reason!r}"
+                    f"final-layer reviewer rationale: {proposer_reason!r}"
                 ),
                 before=before, after=after,
             ))
@@ -725,7 +725,7 @@ def apply_patches(
                 reason_for_decision=(
                     "contract-preserving rejection: formatting patch "
                     "removes Inferential Bridge contract tags required "
-                    f"by Q14. Grok rationale: {proposer_reason!r}"
+                    f"by Q14. final-layer reviewer rationale: {proposer_reason!r}"
                 ),
                 before=before, after=after,
             ))
@@ -745,7 +745,7 @@ def apply_patches(
             )
         elif ptype == "numeric":
             # Fix #39: smart gate — auto-apply numeric patches that
-            # are pure simplifications (Grok deletes wrong wording
+            # are pure simplifications (final-layer reviewer deletes wrong wording
             # without introducing new claims). The 4-test safety
             # gate (no new numerics / no new citations / no new
             # entities / non-increasing length) preserves the trust
@@ -808,7 +808,7 @@ def apply_patches(
             )
 
         full_reason = (
-            f"{gate_reason}. Grok rationale: {proposer_reason!r}"
+            f"{gate_reason}. final-layer reviewer rationale: {proposer_reason!r}"
             if proposer_reason else gate_reason
         )
 
@@ -1048,7 +1048,7 @@ def _restore_required_section_headings(
             continue
         pos = out.find(anchor)
         if pos < 0:
-            # Try a shorter anchor; Grok may have trimmed the paragraph.
+            # Try a shorter anchor; final-layer reviewer may have trimmed the paragraph.
             short = anchor[:160].rstrip()
             pos = out.find(short) if short else -1
         if pos < 0:
@@ -1131,7 +1131,7 @@ def _post_apply_audit_safe(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Apply Grok-proposed patches with per-type gates",
+        description="Apply final-reviewer-proposed patches with per-type gates",
     )
     parser.add_argument("paper_md", help="full_paper.md")
     args = parser.parse_args(argv)
