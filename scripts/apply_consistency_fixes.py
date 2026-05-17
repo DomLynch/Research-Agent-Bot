@@ -595,7 +595,7 @@ def _strip_conclusion_scope_leak(paper_md: str) -> tuple[str, int]:
 
 
 def _rebuild_thin_results_from_manifest(paper_md: str, manifest: dict | None) -> tuple[str, int]:
-    if not manifest or manifest.get("review_type") not in {"thin_corpus_brief", "evidence_brief"}:
+    if not manifest or manifest.get("review_type") not in {"thin_corpus_brief", "evidence_brief", "evidence_map"}:
         return paper_md, 0
     receipts = [r for r in manifest.get("receipts", ()) if isinstance(r, dict) and r.get("outcome_class")]
     if not receipts or not re.search(r"^##\s+Results\b", paper_md, re.M):
@@ -2567,7 +2567,7 @@ def apply_fixes(
             new_md,
         )
         log.extend(cross_dup_log)
-        if manifest.get("review_type") not in {"thin_corpus_brief", "evidence_brief"}:
+        if manifest.get("review_type") not in {"thin_corpus_brief", "evidence_brief", "evidence_map"}:
             new_md, depth_log = _ensure_analytical_depth_floors(new_md)
             log.extend(depth_log)
         new_md, hedge_log = _ensure_discussion_hedge_density(new_md)

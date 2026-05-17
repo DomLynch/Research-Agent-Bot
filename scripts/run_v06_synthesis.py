@@ -346,7 +346,8 @@ def _restore_public_surface_floors(
         )
     except ImportError:
         return paper_md, []
-    required = _REQUIRED_SECTIONS_THIN if review_type in {"thin_corpus_brief", "evidence_brief"} else _REQUIRED_SECTIONS
+    from agent.review_type import COMPACT_REVIEW_TYPES
+    required = _REQUIRED_SECTIONS_THIN if review_type in COMPACT_REVIEW_TYPES else _REQUIRED_SECTIONS
     out = paper_md
     log: list[dict[str, str]] = []
     titles = tuple(required.keys())
@@ -2499,10 +2500,11 @@ async def _run(
     # downshift to brief, not pretend it's a structured synthesis.
     from agent.review_type import downshift_review_type_for_thin_corpus
     _n_primary = sum(1 for r in writer_receipts if r.evidence_tier in ("A1", "A2", "B1"))
+    _n_outcomes = len({r.outcome_class for r in writer_receipts})
     _review_type_effective = downshift_review_type_for_thin_corpus(
         getattr(_TOPIC_PACK, "review_type", None),
         len(writer_receipts), len(writer_matrix.non_orthogonal()),
-        n_primary_tier=_n_primary,
+        n_primary_tier=_n_primary, n_outcome_classes=_n_outcomes,
     )
     print(
         f"\nCalling render_full_paper (review_type={_review_type_effective!r}, "

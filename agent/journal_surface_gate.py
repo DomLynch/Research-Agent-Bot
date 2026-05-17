@@ -5,7 +5,9 @@ import unicodedata
 from collections import Counter
 from dataclasses import dataclass
 from typing import Any, Iterable
+
 from agent.outcome_class_remap import outcome_key
+from agent.review_type import COMPACT_REVIEW_TYPES
 
 
 def _fold(text: str) -> str:
@@ -287,7 +289,7 @@ def _qei_shape_issue_messages(paper_md: str) -> tuple[str, ...]:
 
 
 def _section_issue_messages(paper_md: str, declared_review_type: str | None = None) -> tuple[str, ...]:
-    required = _REQUIRED_SECTIONS_THIN if declared_review_type in {"thin_corpus_brief", "evidence_brief"} else _REQUIRED_SECTIONS
+    required = _REQUIRED_SECTIONS_THIN if declared_review_type in COMPACT_REVIEW_TYPES else _REQUIRED_SECTIONS
     issues: list[str] = []
     for heading, floor in required.items():
         body = _section_body(paper_md, heading)

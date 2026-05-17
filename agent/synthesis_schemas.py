@@ -1,36 +1,7 @@
-"""Synthesis-layer schemas — Day 10 end-game.
+"""Synthesis-layer schemas.
 
-The Day 9 pipeline produces atomic CLAIM RECEIPTS, one per source-paper
-cluster. The Day 10 synthesis layer takes N receipts from the same
-retrieval and produces a `paper_synthesis.md` — the actual research
-paper that integrates findings across sources, surfaces tensions, and
-hedges contested evidence honestly.
-
-This module defines the structured types that flow between the new
-synthesis stages. Stdlib only, frozen dataclasses, slots=True — same
-discipline as agent/schemas.py for the receipt layer.
-
-Hard rule (LLM PROPOSES. CODE DISPOSES.) extends to synthesis:
-  - Tension detection: deterministic features (outcome_class, tier,
-    directness, effect_sign). LLM never decides what's a tension.
-  - Synthesis thesis: LLM proposes K candidates → code disposes by
-    contract (must reference ≥3 receipts, must address ≥1 tension,
-    no new numerics).
-  - Synthesis prose: LLM-generated section text validated per
-    sentence — every claim must map to a SynthesisClaimAnchor; no
-    sentence may introduce numerics absent from any receipt.
-
-Eight new structured types. Each documents the gate in its docstring.
-
-Pipeline diagram:
-  [N claim receipts]
-    → ReceiptSummary (one-per-receipt structured summary, deterministic)
-    → TensionMatrix (per-pair tensions, deterministic)
-    → SynthesisThesisCandidate (K LLM proposals, validated)
-    → SynthesisThesis (the picked candidate, code-disposed)
-    → SynthesisSection (one per paper section, prose + claim anchors)
-    → SynthesisPaper (the assembled artifact)
-    → SynthesisQualityAudit (scores against 7-paper rubric)
+LLM proposes; code disposes. These frozen dataclasses carry receipt
+summaries, tensions, thesis candidates, anchored prose, and audit state.
 """
 from __future__ import annotations
 

@@ -20,6 +20,8 @@ import re
 import sys
 from pathlib import Path
 
+from agent.review_type import COMPACT_REVIEW_TYPES
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 # Module-level corpus paths. Sentinel until _set_topic() runs — same
 # universal-fix pattern as scripts/run_v06_synthesis.py: no metformin
@@ -931,11 +933,11 @@ def audit(
     n_pass = 0
     for name, check_fn, is_p1 in _CHECKS:
         try:
-            if review_type in {"thin_corpus_brief", "evidence_brief"} and name == "Q1_word_count":
+            if review_type in COMPACT_REVIEW_TYPES and name == "Q1_word_count":
                 passed, msg = _check_word_count_thin(paper)
-            elif review_type in {"thin_corpus_brief", "evidence_brief"} and name == "Q7_section_coverage":
+            elif review_type in COMPACT_REVIEW_TYPES and name == "Q7_section_coverage":
                 passed, msg = _check_section_coverage_thin(paper)
-            elif review_type in {"thin_corpus_brief", "evidence_brief"} and name in {"Q9_numeric_density", "Q10_hedge_density", "Q11_discussion_depth", "Q12_cross_domain_depth", "Q13_analytical_ratio"}:
+            elif review_type in COMPACT_REVIEW_TYPES and name in {"Q9_numeric_density", "Q10_hedge_density", "Q11_discussion_depth", "Q12_cross_domain_depth", "Q13_analytical_ratio"}:
                 passed, msg = True, "not required for thin-corpus evidence brief"
             else:
                 passed, msg = check_fn(paper)
