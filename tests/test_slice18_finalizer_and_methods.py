@@ -95,6 +95,38 @@ def test_methods_pack_render_matches_required_markers() -> None:
         assert marker in md, f"renderer missing required H3: {marker!r}"
 
 
+def test_methods_pack_renders_receipt_admission_funnel() -> None:
+    pack = build_methods_pack(
+        review_type="evidence_brief",
+        topic="aerobic_exercise",
+        corpus_search_queries=("aerobic exercise AND aging",),
+        n_retrieved=129, n_screened=129, n_included=129, n_rejected=0,
+        outcome_classes=("cardiometabolic",),
+        receipt_funnel={
+            "classified_receipt_candidates": 188,
+            "receipt_candidate_union": 339,
+            "counts": {
+                "admitted_receipts": 129,
+                "candidate_no_claims": 9,
+                "candidate_none_only": 13,
+                "candidate_partial_and_none_only": 120,
+                "candidate_partial_only": 4,
+                "original_strict_high_confidence_receipts": 5,
+            },
+        },
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "pre-curated receipt-candidate set" in md
+    assert "| Receipt candidate union | 339 |" in md
+    assert "| Classified receipt candidates | 188 |" in md
+    assert "| No extractable claims | 9 |" in md
+    assert "| None-only claim binding | 13 |" in md
+    assert "| Partial/none-only claim binding | 120 |" in md
+    assert "| Partial-only candidates | 4 |" in md
+    assert "| Strict high-confidence receipts | 5 |" in md
+    assert "| Admitted final receipts | 129 |" in md
+
+
 def test_methods_pack_legacy_model_swaps_accountability_prose() -> None:
     pack_researka = build_methods_pack(
         review_type="prisma_scr_scoping_synthesis", topic="example",

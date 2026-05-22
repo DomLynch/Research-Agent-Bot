@@ -2817,6 +2817,7 @@ async def _run(
         n_rejected=int(_funnel.get("rejected", 0))
         or int(_funnel.get("n_rejected", 0)),
         outcome_classes=_outcome_classes,
+        receipt_funnel=_funnel,
         accountability_model=str(
             manifest.get("accountability_model")
             or "researka_agent_certified"

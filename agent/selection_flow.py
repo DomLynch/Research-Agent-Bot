@@ -1,35 +1,33 @@
-"""Receipt-funnel selection-flow rendering for manuscript appendices."""
 from __future__ import annotations
 
 from typing import Any
 
+_ADMISSION_ROWS = (
+    ("Receipt candidate union", "receipt_candidate_union"),
+    ("Classified receipt candidates", "classified_receipt_candidates"),
+    ("No extractable claims", "candidate_no_claims"),
+    ("None-only claim binding", "candidate_none_only"),
+    ("Partial/none-only claim binding", "candidate_partial_and_none_only"),
+    ("Partial-only candidates", "candidate_partial_only"),
+    ("Strict high-confidence receipts", "original_strict_high_confidence_receipts"),
+    ("Admitted final receipts", "admitted_receipts"),
+)
+
 
 def receipt_admission_rows(receipt_funnel: Any) -> list[tuple[str, Any]]:
-    """Return manuscript-facing receipt-admission rows.
-
-    The rows are universal diagnostic counts from the receipt builder,
-    not topic-specific PRISMA exclusions.
-    """
     if not isinstance(receipt_funnel, dict):
         return []
     counts = receipt_funnel.get("counts") or receipt_funnel
     if not isinstance(counts, dict):
         counts = {}
-    rows = [
-        ("Receipt candidate union", receipt_funnel.get("receipt_candidate_union")),
-        ("Classified receipt candidates", receipt_funnel.get("classified_receipt_candidates")),
-        ("No extractable claims", counts.get("candidate_no_claims")),
-        ("None-only claim binding", counts.get("candidate_none_only")),
-        ("Partial/none-only claim binding", counts.get("candidate_partial_and_none_only")),
-        ("Partial-only candidates", counts.get("candidate_partial_only")),
-        ("Strict high-confidence receipts", counts.get("original_strict_high_confidence_receipts")),
-        ("Admitted final receipts", counts.get("admitted_receipts", counts.get("accepted_high_confidence"))),
-    ]
-    return [(label, value) for label, value in rows if value is not None]
+    values = {
+        **receipt_funnel, **counts,
+        "admitted_receipts": counts.get("admitted_receipts", counts.get("accepted_high_confidence")),
+    }
+    return [(label, values.get(key)) for label, key in _ADMISSION_ROWS if values.get(key) is not None]
 
 
 def render_selection_flow_lines(receipt_funnel: Any) -> list[str]:
-    """Render audit counts as a compact PRISMA-style flow table."""
     if not isinstance(receipt_funnel, dict):
         return []
     counts = receipt_funnel.get("counts") or {}
