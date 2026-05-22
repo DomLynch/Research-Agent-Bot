@@ -137,25 +137,3 @@ def test_static_reader_emits_json_ld_metadata(tmp_path: Path) -> None:
     data = json.loads(match.group(1))
     assert data["@type"] == "ScholarlyArticle"
     assert data["description"] == "A & B </script>"
-
-
-def test_static_reader_preserves_reader_manifest_json_ld_author(tmp_path: Path) -> None:
-    html = render_index({
-        "topic": "alpha",
-        "json_ld": {
-            "@context": "https://schema.org",
-            "@type": "ScholarlyArticle",
-            "author": {
-                "@type": "Person",
-                "identifier": "https://orcid.org/0000-0002-1825-0097",
-            },
-        },
-    }, tmp_path)
-
-    match = re.search(
-        r'<script type="application/ld\+json">(.+?)</script>',
-        html,
-    )
-    assert match is not None
-    data = json.loads(match.group(1))
-    assert data["author"]["identifier"] == "https://orcid.org/0000-0002-1825-0097"

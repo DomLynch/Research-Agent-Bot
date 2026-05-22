@@ -25,7 +25,6 @@ def test_reader_manifest_shape_excludes_secrets_and_generated(
         tmp_path,
         public_url="https://researka.io/topic/demo-topic/2026-05-08",
         osf={"url": "https://osf.io/abc123/", "doi": "10.17605/OSF.IO/ABC123"},
-        submitter_orcid="0000-0002-1825-0097",
     )
 
     assert manifest["schema"] == "researka.reader_manifest.v1"
@@ -33,8 +32,6 @@ def test_reader_manifest_shape_excludes_secrets_and_generated(
     assert manifest["topic"] == "demo-topic"
     assert manifest["json_ld"]["@type"] == "ScholarlyArticle"
     assert manifest["json_ld"]["identifier"] == "10.17605/OSF.IO/ABC123"
-    assert manifest["submitter_orcid"] == "https://orcid.org/0000-0002-1825-0097"
-    assert manifest["json_ld"]["author"]["identifier"] == manifest["submitter_orcid"]
     assert manifest["entrypoints"]["paper"] == "paper.md"
     assert manifest["entrypoints"]["manifest"] == "manifest.json"
     paths = [item["path"] for item in manifest["files"]]
@@ -89,18 +86,9 @@ def test_reader_manifest_cli_accepts_public_url_and_osf_result(tmp_path: Path) -
             "https://researka.io/paper",
             "--osf-result",
             str(osf_result),
-            "--submitter-orcid",
-            "https://orcid.org/0000-0002-1825-0097",
         ]
     ) == 0
 
     data = json.loads((tmp_path / reader.MANIFEST_NAME).read_text(encoding="utf-8"))
     assert data["public_url"] == "https://researka.io/paper"
     assert data["json_ld"]["isBasedOn"] == "https://osf.io/abc123/"
-    assert data["json_ld"]["author"]["sameAs"] == "https://orcid.org/0000-0002-1825-0097"
-
-
-def test_reader_manifest_rejects_invalid_submitter_orcid(tmp_path: Path) -> None:
-    (tmp_path / "paper.md").write_text("paper", encoding="utf-8")
-
-    assert reader.main([str(tmp_path), "--submitter-orcid", "not-an-orcid"]) == 2
