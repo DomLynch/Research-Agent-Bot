@@ -1,4 +1,3 @@
-"""Deterministic Methods-pack schema and renderer."""
 from __future__ import annotations
 
 import datetime as dt
@@ -13,9 +12,6 @@ from agent.selection_flow import receipt_admission_rows
 
 @dataclass(frozen=True, slots=True)
 class MethodsPack:
-    """Frozen schema for journal-grade Methods reporting. Every field
-    must be populated or the gate flags it as a stub."""
-
     review_type: str
     databases_searched: tuple[str, ...]
     search_strings: tuple[str, ...]
@@ -35,17 +31,13 @@ class MethodsPack:
         return d
 
     def required_fields_missing(self) -> tuple[str, ...]:
-        """Return names of fields that are empty / stub. Universal —
-        empty string, empty tuple, or all-zero counts count as missing."""
-        out: list[str] = []
-        for name, value in self.to_json().items():
-            if isinstance(value, str) and not value.strip():
-                out.append(name)
-            elif isinstance(value, (list, tuple)) and not value:
-                out.append(name)
-            elif isinstance(value, dict) and not any(v for v in value.values()):
-                out.append(name)
-        return tuple(out)
+        def missing(value: Any) -> bool:
+            return (
+                (isinstance(value, str) and not value.strip())
+                or (isinstance(value, (list, tuple)) and not value)
+                or (isinstance(value, dict) and not any(value.values()))
+            )
+        return tuple(name for name, value in self.to_json().items() if missing(value))
 
 
 def build_methods_pack(
@@ -63,14 +55,6 @@ def build_methods_pack(
     search_dates_iso: str = "",
     accountability_model: str = "researka_agent_certified",
 ) -> MethodsPack:
-    """Build a MethodsPack from run state. Universal — caller passes
-    raw counts + topic-pack search queries. The pack stays topic-
-    agnostic; no biomedical-specific assumptions in this builder.
-
-    `search_dates_iso` defaults to today (UTC) when caller hasn't
-    captured the actual retrieval window — better than leaving it
-    blank. Real runs should pass the captured retrieval timestamp.
-    """
     if not search_dates_iso:
         search_dates_iso = dt.datetime.now(dt.timezone.utc).date().isoformat()
     # Universal default eligibility — explicit; caller may override
@@ -84,11 +68,10 @@ def build_methods_pack(
         "(DOI / PMID / canonical handle).",
     )
     extraction_fields = (
-        "study design", "population / cohort", "intervention or exposure",
-        "comparator", "outcome class", "effect direction",
-        "effect size", "confidence interval or credible interval",
-        "p-value", "sample size", "follow-up duration",
-        "risk-of-bias rating",
+        "study design", "population / cohort", "intervention or exposure", "comparator",
+        "outcome class", "effect direction", "effect size",
+        "confidence interval or credible interval", "p-value", "sample size",
+        "follow-up duration", "risk-of-bias rating",
     )
     exclusion_summary = (
         f"Non-traceable findings (claim could not be linked to source text): "
@@ -104,16 +87,16 @@ def build_methods_pack(
     }
     if isinstance(receipt_funnel, dict):
         counts = receipt_funnel.get("counts") or {}
-        screening_flow.update({
-            "receipt_candidate_union": int(receipt_funnel.get("receipt_candidate_union") or 0),
-            "classified_receipt_candidates": int(receipt_funnel.get("classified_receipt_candidates") or 0),
-            "admitted_receipts": int(counts.get("admitted_receipts") or counts.get("accepted_high_confidence") or 0),
-            "candidate_no_claims": int(counts.get("candidate_no_claims") or 0),
-            "candidate_none_only": int(counts.get("candidate_none_only") or 0),
-            "candidate_partial_and_none_only": int(counts.get("candidate_partial_and_none_only") or 0),
-            "candidate_partial_only": int(counts.get("candidate_partial_only") or 0),
-            "original_strict_high_confidence_receipts": int(counts.get("original_strict_high_confidence_receipts") or 0),
-        })
+        for key in (
+            "receipt_candidate_union", "classified_receipt_candidates",
+            "candidate_no_claims", "candidate_none_only",
+            "candidate_partial_and_none_only", "candidate_partial_only",
+            "original_strict_high_confidence_receipts",
+        ):
+            screening_flow[key] = int(counts.get(key) or receipt_funnel.get(key) or 0)
+        screening_flow["admitted_receipts"] = int(
+            counts.get("admitted_receipts") or counts.get("accepted_high_confidence") or 0
+        )
     rob = rob_method or (
         "Per-source risk-of-bias was rated using design-appropriate "
         "Cochrane RoB-2 (RCTs), ROBINS-I (non-randomised studies), and "
@@ -175,22 +158,17 @@ _ACCOUNTABILITY_TEXTS: dict[str, str] = {
 
 
 def _accountability_text(model: str) -> str:
-    """Accountability-model-aware Methods prose. Researka-native cites
-    the machine spine; legacy mode keeps ICMJE/COPE author framing."""
     from agent.accountability import resolve_model
     return _ACCOUNTABILITY_TEXTS[resolve_model(model)]
 
 
 def write_methods_pack(out_dir: Path, pack: MethodsPack) -> Path:
-    """Serialise to `methods_pack.json` in the run dir. Universal."""
     path = out_dir / "methods_pack.json"
     path.write_text(json.dumps(pack.to_json(), indent=2))
     return path
 
 
 def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
-    """Render the Methods section in journal-conventional prose from a
-    MethodsPack. Universal — no topic-specific framing."""
     from agent.review_type import display_label
     lines: list[str] = [
         "## Methods",
@@ -235,22 +213,18 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "### Selection of sources of evidence",
     ])
     if admission_rows and union:
-        lines.extend([
+        lines.append(
             "The synthesis did not begin from an unfiltered database export. "
             "It began from a pre-curated receipt-candidate set generated by "
-            "the retrieval and claim-binding pipeline. "
-            f"Of {union} records in the receipt-candidate union, "
-            f"{classified or 0} were classified as receipt candidates and "
-            f"{admitted} were admitted as traceable synthesis receipts. "
-            "No additional records were excluded after final receipt admission.",
-            "",
-            "### Receipt admission funnel",
-            "",
-            "| Admission bucket | n |",
-            "|---|---:|",
-        ])
-        lines.extend(f"| {label} | {value} |" for label, value in admission_rows)
-        lines.extend(["", "### Exclusion reasons"])
+            f"the retrieval and claim-binding pipeline. Of {union} records "
+            f"in the receipt-candidate union, {classified or 0} were classified "
+            f"as receipt candidates and {admitted} were admitted as traceable "
+            "synthesis receipts. No additional records were excluded after "
+            "final receipt admission."
+        )
+        lines += ["", "### Receipt admission funnel", "", "| Admission bucket | n |", "|---|---:|"]
+        lines += [f"| {label} | {value} |" for label, value in admission_rows]
+        lines += ["", "### Exclusion reasons"]
     else:
         lines.extend([
             f"Of {sf.get('n_retrieved', 0)} records retrieved, "
@@ -305,10 +279,6 @@ REQUIRED_METHODS_H3_MARKERS: tuple[str, ...] = (
 def methods_pack_completeness_issue_messages(
     methods_section_body: str, declared_review_type: str | None,
 ) -> tuple[str, ...]:
-    """When manifest declares a review_type, the Methods section must
-    contain the 11 PRISMA-ScR H3 markers. Universal — no per-topic
-    knowledge. Skip the check when no review_type is declared or the
-    Methods section is empty (other gates catch that)."""
     if not declared_review_type or not methods_section_body:
         return ()
     return tuple(
