@@ -116,6 +116,43 @@ def test_remote_publication_dedupe_blocks_resubmission_without_local_seed(tmp_pa
     assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
 
 
+def test_remote_publication_dedupe_blocks_same_title_rerun(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    marker = daily._title_marker(daily.build_payload(run)["title"])
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-23",
+        submit=True,
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        remote_loader=lambda: ({marker}, None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["submitted"] == 0
+    assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
+
+
+def test_selection_skips_stale_older_runs_for_same_topic(tmp_path: Path) -> None:
+    older = _run(tmp_path, name="synthesis-topic-v06-older")
+    newer = _run(tmp_path, name="synthesis-topic-v06-newer")
+    older.touch()
+    newer.touch()
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-23",
+        submit=True,
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        remote_loader=lambda: ({daily.build_payload(newer)["metadata"]["content_hash"]}, None),
+    )
+
+    statuses = [row["status"] for row in ledger["considered"]]
+    assert "duplicate_remote_publication" in statuses
+    assert "superseded_topic_run" in statuses
+    assert ledger["submitted"] == 0
+
+
 def test_submit_holds_when_remote_dedupe_fails(tmp_path: Path) -> None:
     _run(tmp_path)
 

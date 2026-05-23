@@ -49,6 +49,22 @@ def _sha256(path: Path) -> str:
     return "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _normalized_key(text: str) -> str:
+    return " ".join(str(text or "").lower().split())
+
+
+def _title_marker(title: str) -> str:
+    return "title:" + _normalized_key(title)
+
+
+def _paper_title(paper: Path) -> str:
+    try:
+        first = paper.read_text(encoding="utf-8").splitlines()[0]
+    except (OSError, IndexError):
+        return ""
+    return first.lstrip("# ").strip()
+
+
 def _token() -> tuple[str, str]:
     for name in TOKEN_ENVS:
         value = os.getenv(name, "").strip()
@@ -63,6 +79,14 @@ def _runs(root: Path) -> list[Path]:
         key=lambda p: p.stat().st_mtime,
         reverse=True,
     )
+
+
+def _run_topic(run: Path) -> str:
+    manifest_topic = str(_read_json(run / "manifest.json").get("topic") or "").strip()
+    if manifest_topic:
+        return manifest_topic
+    match = re.match(r"synthesis-(?P<topic>.+?)-v\d+", run.name)
+    return match.group("topic") if match else run.name
 
 
 def _pre_submit_passed(data: dict[str, Any]) -> bool:
@@ -115,14 +139,20 @@ def select_candidate(
     local_seen = _seen(submitted_path)
     published_seen = remote_seen or set()
     considered = []
+    seen_topics: set[str] = set()
     for run in _runs(root):
+        topic = _run_topic(run)
         paper = run / "full_paper.md"
         fp = _sha256(paper) if paper.exists() else ""
+        markers = {fp, _title_marker(_paper_title(paper))} if fp else set()
         ok, status = _eligible(run)
-        if ok and fp in local_seen:
+        if topic in seen_topics:
+            ok, status = False, "superseded_topic_run"
+        elif ok and fp in local_seen:
             ok, status = False, "duplicate_submission_fingerprint"
-        elif ok and fp in published_seen:
+        elif ok and markers & published_seen:
             ok, status = False, "duplicate_remote_publication"
+        seen_topics.add(topic)
         row = {"run": run.name, "fingerprint": fp, "status": status}
         considered.append(row)
         if ok:
@@ -209,7 +239,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     return bundle
 
 
-def build_payload(run: Path, *, max_sources: int = 40) -> dict[str, Any]:
+def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
@@ -311,9 +341,13 @@ def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], st
                 continue
             raw_metadata = row.get("metadata")
             metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
-            content_hash = metadata.get("content_hash") or metadata.get("sha256")
-            if isinstance(content_hash, str) and content_hash.startswith("sha256:"):
-                out.add(content_hash)
+            for key in ("content_hash", "sha256", "full_body_sha256", "condensed_body_sha256"):
+                content_hash = metadata.get(key)
+                if isinstance(content_hash, str) and content_hash:
+                    out.add(content_hash if content_hash.startswith("sha256:") else f"sha256:{content_hash}")
+            title = row.get("title")
+            if isinstance(title, str) and title.strip():
+                out.add(_title_marker(title))
             body = row.get("body_markdown")
             if isinstance(body, str) and body.strip():
                 out.add("sha256:" + hashlib.sha256(body.encode("utf-8")).hexdigest())
