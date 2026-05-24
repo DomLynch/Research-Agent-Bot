@@ -1,5 +1,6 @@
 topic = "aerobic_exercise"
 class_ = "exercise_intervention"
+target_journal = "GeroScience"
 
 aliases = ["aerobic exercise", "endurance training", "cardiorespiratory fitness", "walking program", "VO2max", "physical activity"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiorespiratory_fitness", "cognition", "mortality"]
@@ -43,4 +44,3 @@ cognition = "higher_is_better"
 vo2max = "higher_is_better"
 gait_speed = "higher_is_better"
 physical_function = "higher_is_better"
-

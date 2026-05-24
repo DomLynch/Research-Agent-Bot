@@ -1,5 +1,6 @@
 topic = "caloric_restriction"
 class_ = "dietary_pattern"
+target_journal = "GeroScience"
 
 aliases = ["caloric restriction", "calorie restriction", "energy restriction", "dietary restriction", "CR"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "metabolic_health", "biomarkers", "adherence"]
@@ -43,4 +44,3 @@ inflammation = "lower_is_better"
 lean_mass_loss = "lower_is_better"
 bone_density = "higher_is_better"
 adherence = "higher_is_better"
-
