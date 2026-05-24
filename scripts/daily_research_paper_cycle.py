@@ -60,6 +60,9 @@ def _attempted_at(topic: str, ledger_dir: Path) -> str:
         row = _read_json(path)
         if row.get("topic") == topic and str(row.get("started_at", "")) > latest:
             latest = str(row["started_at"])
+        for attempt in row.get("attempts", []):
+            if isinstance(attempt, dict) and attempt.get("topic") == topic and str(row.get("started_at", "")) > latest:
+                latest = str(row["started_at"])
     return latest
 
 
@@ -73,9 +76,15 @@ def _published_topics(topics: list[str], markers: set[str]) -> set[str]:
     return out
 
 
-def select_topic(topics: list[str], ledger_dir: Path, *, remote_seen: set[str] | None = None) -> str | None:
+def select_topic(
+    topics: list[str],
+    ledger_dir: Path,
+    *,
+    remote_seen: set[str] | None = None,
+    exclude: set[str] | None = None,
+) -> str | None:
     blocked = _published_topics(topics, remote_seen or set())
-    candidates = [topic for topic in topics if topic not in blocked]
+    candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
     if not candidates:
         return None
     return min(candidates, key=lambda topic: (_attempted_at(topic, ledger_dir), topic))
@@ -114,6 +123,7 @@ def run_cycle(
     remote_loader: RemoteLoader | None = None,
     submit_cycle: SubmitCycle | None = None,
     timeout: int | None = None,
+    max_attempts: int = 1,
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
     ledger_dir = runs_root / LEDGER_DIR
@@ -127,6 +137,7 @@ def run_cycle(
         "submitted": 0,
         "published": 0,
         "status": "started",
+        "attempts": [],
     }
     with _lock(ledger_dir) as locked:
         if not locked:
@@ -150,36 +161,46 @@ def run_cycle(
                 ledger.update({"status": "remote_dedupe_failed", "reason": remote_error})
                 _write_json(ledger_path, ledger)
                 return ledger
-        selected = topic or select_topic(topics, ledger_dir, remote_seen=remote_seen)
-        if not selected:
-            ledger["status"] = "no_unpublished_topic_with_corpus"
-            _write_json(ledger_path, ledger)
-            return ledger
-        stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
-        out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
-        ledger.update({"topic": selected, "out_dir": out_dir.name})
-        if not run_synthesis:
-            ledger["status"] = "dry_run_selected_topic"
-            _write_json(ledger_path, ledger)
-            return ledger
-        return_code = _run_synthesis(selected, out_dir, dry_run=synthesis_dry_run, timeout=timeout)
-        ledger["synthesis_return_code"] = return_code
-        if return_code != 0:
-            ledger["status"] = "synthesis_failed"
-            _write_json(ledger_path, ledger)
-            return ledger
-        bridge = (submit_cycle or submit_bridge.run_cycle)(
-            runs_root=runs_root,
-            date=date,
-            submit=submit,
-            remote_loader=(lambda: (remote_seen, None)) if submit else None,
-        )
-        ledger["submit_bridge"] = bridge
-        ledger["submitted"] = int(bridge.get("submitted") or 0)
-        if bridge.get("status") == "submitted_to_researka":
-            ledger["status"] = "submitted_to_researka"
-        else:
-            ledger["status"] = "synthesis_completed_no_submission"
+        attempted: set[str] = set()
+        for _ in range(max(1, max_attempts if not topic else 1)):
+            selected = topic or select_topic(topics, ledger_dir, remote_seen=remote_seen, exclude=attempted)
+            if not selected:
+                ledger["status"] = "no_unpublished_topic_with_corpus"
+                break
+            stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
+            out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
+            ledger.update({"topic": selected, "out_dir": out_dir.name})
+            if not run_synthesis:
+                ledger["status"] = "dry_run_selected_topic"
+                break
+            return_code = _run_synthesis(selected, out_dir, dry_run=synthesis_dry_run, timeout=timeout)
+            bridge: dict[str, Any] = {}
+            if return_code == 0:
+                bridge = (submit_cycle or submit_bridge.run_cycle)(
+                    runs_root=runs_root,
+                    date=date,
+                    submit=submit,
+                    remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                )
+            attempt = {
+                "topic": selected,
+                "out_dir": out_dir.name,
+                "synthesis_return_code": return_code,
+                "submit_status": bridge.get("status"),
+                "submitted": int(bridge.get("submitted") or 0),
+            }
+            ledger["attempts"].append(attempt)
+            ledger["synthesis_return_code"] = return_code
+            ledger["submit_bridge"] = bridge
+            ledger["submitted"] = attempt["submitted"]
+            if return_code != 0:
+                ledger["status"] = "synthesis_failed"
+            elif bridge.get("status") == "submitted_to_researka":
+                ledger["status"] = "submitted_to_researka"
+                break
+            else:
+                ledger["status"] = "synthesis_completed_no_submission"
+            attempted.add(selected)
         _write_json(ledger_path, ledger)
         return ledger
 
@@ -193,6 +214,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--synthesis-dry-run", action="store_true")
     parser.add_argument("--submit", action="store_true")
     parser.add_argument("--timeout-sec", type=int, default=0)
+    parser.add_argument("--max-attempts", type=int, default=1)
     args = parser.parse_args(argv)
     ledger = run_cycle(
         runs_root=args.runs_root,
@@ -202,6 +224,7 @@ def main(argv: list[str] | None = None) -> int:
         submit=args.submit,
         topic=args.topic,
         timeout=args.timeout_sec or None,
+        max_attempts=args.max_attempts,
     )
     print(
         f"[daily-v3-cycle] status={ledger['status']} topic={ledger.get('topic', '-')} "
