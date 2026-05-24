@@ -13,6 +13,7 @@ import json
 import os
 import subprocess
 import sys
+import tomllib
 from collections.abc import Callable, Iterator
 from contextlib import contextmanager
 from pathlib import Path
@@ -76,6 +77,14 @@ def _published_topics(topics: list[str], markers: set[str]) -> set[str]:
     return out
 
 
+def _publication_track_topic(topic: str) -> bool:
+    try:
+        data = tomllib.loads((TOPIC_PACKS / f"{topic}.toml").read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError):
+        return False
+    return bool(str(data.get("target_journal", "")).strip())
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -87,7 +96,8 @@ def select_topic(
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
     if not candidates:
         return None
-    return min(candidates, key=lambda topic: (_attempted_at(topic, ledger_dir), topic))
+    pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
+    return min(pool, key=lambda topic: (_attempted_at(topic, ledger_dir), topic))
 
 
 @contextmanager

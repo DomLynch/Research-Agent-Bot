@@ -16,9 +16,12 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload), encoding="utf-8")
 
 
-def _topic(root: Path, topic: str, *, corpus: bool = True) -> None:
+def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool = False) -> None:
     (root / "topic_packs").mkdir(exist_ok=True)
-    (root / "topic_packs" / f"{topic}.toml").write_text("name = \"x\"\n", encoding="utf-8")
+    text = 'name = "x"\n'
+    if target_journal:
+        text += 'target_journal = "GeroScience"\n'
+    (root / "topic_packs" / f"{topic}.toml").write_text(text, encoding="utf-8")
     if corpus:
         (root / "docs" / "quality-reference" / topic).mkdir(parents=True)
 
@@ -44,6 +47,16 @@ def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_pat
     )
 
     assert selected == "metformin"
+
+
+def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "acarbose")
+    _topic(tmp_path, "caloric_restriction", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(["acarbose", "caloric_restriction"], tmp_path / cycle.LEDGER_DIR)
+
+    assert selected == "caloric_restriction"
 
 
 def test_cycle_dry_run_selects_topic_without_synthesis(tmp_path: Path, monkeypatch) -> None:
