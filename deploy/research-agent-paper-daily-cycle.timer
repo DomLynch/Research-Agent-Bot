@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Research Agent v3 daily paper production cycle
+
+[Timer]
+OnCalendar=*-*-* 01:15:00
+Persistent=false
+Unit=research-agent-paper-daily-cycle.service
+
+[Install]
+WantedBy=timers.target

@@ -43,7 +43,9 @@ def _read_json(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
-def discover_topics(topic_packs: Path = TOPIC_PACKS, corpora: Path = CORPORA) -> list[str]:
+def discover_topics(topic_packs: Path | None = None, corpora: Path | None = None) -> list[str]:
+    topic_packs = topic_packs or TOPIC_PACKS
+    corpora = corpora or CORPORA
     topics = []
     for path in sorted(topic_packs.glob("*.toml")):
         topic = path.stem
@@ -136,6 +138,10 @@ def run_cycle(
             ledger.update({"status": "topic_not_available", "topic": topic})
             _write_json(ledger_path, ledger)
             return ledger
+        if submit and submit_cycle is None and not submit_bridge._token()[0]:
+            ledger.update({"status": "submit_not_configured", "reason": "missing_v3_submit_token"})
+            _write_json(ledger_path, ledger)
+            return ledger
         remote_seen: set[str] = set()
         if submit:
             remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
@@ -201,7 +207,8 @@ def main(argv: list[str] | None = None) -> int:
         f"[daily-v3-cycle] status={ledger['status']} topic={ledger.get('topic', '-')} "
         f"submitted={ledger['submitted']} published={ledger['published']}"
     )
-    return 0 if ledger["status"] not in {"synthesis_failed", "remote_dedupe_failed"} else 2
+    failures = {"synthesis_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
+    return 0 if ledger["status"] not in failures else 2
 
 
 if __name__ == "__main__":
