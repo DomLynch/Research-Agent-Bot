@@ -135,6 +135,16 @@ _PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
     ("source-bound", "extracted"),
     ("claim atom", "extracted finding"),
     ("endpoint proximity", "clinical directness"),
+    ("accepted receipt graph", "included source set"),
+    ("accepted receipts", "included sources"),
+    ("accepted receipt", "included source"),
+    ("mechanistic receipts", "mechanistic sources"),
+    ("direct clinical receipts", "direct clinical sources"),
+    ("indirect clinical receipts", "indirect clinical sources"),
+    ("receipt set", "source set"),
+    ("receipt graph", "source set"),
+    ("receipts", "sources"),
+    ("receipt", "source"),
     # Word-count-neutral replacement: "structured corpus synthesis"
     # (3 words) → "AI-assisted evidence synthesis" (3 words) so the
     # rewrite doesn't push abstracts over the section ceiling.
