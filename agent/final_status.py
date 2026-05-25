@@ -36,6 +36,7 @@ LABELS: dict[int, str] = {
     4: "L4 — ANALYTICALLY CERTIFIED",
     5: "L5 — SUBMISSION PACKAGE READY",
 }
+ADVISORY_READINESS_ITEM_IDS = frozenset({3, 4, 8, 10, 12, 14, 15})
 
 
 @dataclass(frozen=True, slots=True)
@@ -229,14 +230,6 @@ def _reason_to_code(stage: str, reason: str) -> str:
 
 
 def _compute_level(dims: dict[str, bool]) -> int:
-    """Strict ladder — fail at any rung stops promotion.
-
-    L1: render produced (we got far enough to write sidecars).
-    L2: runtime pass.
-    L3: runtime + audit + journal_surface pass.
-    L4: L3 + pre_submit pass.
-    L5: L4 + target_journal + human_signoff.
-    """
     if not dims["runtime_pass"]:
         return 1
     if not dims["audit_pass"]:

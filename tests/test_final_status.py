@@ -136,10 +136,19 @@ def test_advisory_readiness_item_does_not_block_l4(tmp_path: Path) -> None:
     _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json", {
         "result": {"passed": True, "failures": []},
-        "journal_readiness_contract": [{
-            "id": 12, "name": "target_journal_finalizer",
-            "status": "not_ready", "advisory": True, "blocks_submission": False,
-        }],
+        "journal_readiness_contract": [
+            {
+                "id": item_id, "name": name, "status": "partial",
+                "advisory": True, "blocks_submission": False,
+            }
+            for item_id, name in (
+                (3, "domain_pack"),
+                (4, "journal_grade_retrieval"),
+                (8, "deterministic_abstract_conclusion"),
+                (10, "section_repair_loop"),
+                (12, "target_journal_finalizer"),
+            )
+        ],
     })
     s = compute(tmp_path)
     assert s.pre_submit_pass is True

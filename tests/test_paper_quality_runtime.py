@@ -196,6 +196,14 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     assert by_name["target_journal_finalizer"]["advisory"]
     assert not by_name["target_journal_finalizer"]["blocks_submission"]
     assert "Select target journal" in by_name["target_journal_finalizer"]["next_action"]
+    for name in (
+        "domain_pack",
+        "journal_grade_retrieval",
+        "deterministic_abstract_conclusion",
+        "section_repair_loop",
+    ):
+        assert by_name[name]["advisory"]
+        assert not by_name[name]["blocks_submission"]
     assert by_name["accountability"]["blocks_submission"]
     assert "artifact-consistency" in by_name["accountability"]["next_action"]
     assert by_name["universal_benchmark_target"]["advisory"]

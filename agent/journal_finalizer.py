@@ -746,6 +746,7 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
     legacy = model == "legacy_journal_submission"
     acc_ok, acc_detail = accountability_pass(out_dir, model)
     submission_ready = gate_passed and surface_pass
+    from agent.final_status import ADVISORY_READINESS_ITEM_IDS
     fresh: dict[int, dict[str, object]] = {
         1: {"status": "pass" if submission_ready else "not_ready",
             "audit": f"pre_submit_gate={gate_passed}; "
@@ -772,14 +773,16 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
     }
     n_changed = 0
     for item in contract:
-        if not isinstance(item, dict) or item.get("id") not in fresh:
+        if not isinstance(item, dict):
             continue
-        f = fresh[item["id"]]
-        if any(item.get(k) != v for k, v in f.items()):
+        before = dict(item)
+        item_id = item.get("id")
+        f = fresh.get(item_id) if isinstance(item_id, int) else None
+        if f:
             item.update(f)
-            item["blocks_submission"] = (
-                item.get("status") != "pass" and not item.get("advisory", False)
-            )
+        item["advisory"] = item.get("advisory", False) or item_id in ADVISORY_READINESS_ITEM_IDS
+        item["blocks_submission"] = item.get("status") != "pass" and not item["advisory"]
+        if item != before:
             n_changed += 1
     if n_changed:
         (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))

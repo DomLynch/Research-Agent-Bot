@@ -23,6 +23,7 @@ from pathlib import Path
 from agent.journal_finalizer import (  # type: ignore[import-not-found]
     _lowercase_first_letter,
     _phase_g_refresh_sidecars,
+    _refresh_readiness_contract_items,
 )
 from agent.methods_pack import (  # type: ignore[import-not-found]
     REQUIRED_METHODS_H3_MARKERS,
@@ -231,6 +232,38 @@ def test_phase_g_rebuilds_readiness_contract_for_researka(
     # refresh (items 1/7/9/12/13). The single rule name now covers the
     # whole reconciliation pass.
     assert "reconcile_readiness_contract_items" in rules
+
+
+def test_refresh_readiness_contract_makes_roadmap_partials_advisory(
+    tmp_path: Path,
+) -> None:
+    run = _make_run(
+        tmp_path, surface_passed=True,
+        accountability_model="researka_agent_certified",
+        old_contract_name="accountability",
+    )
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    gate["journal_readiness_contract"].extend([
+        {
+            "id": item_id, "name": name, "status": "partial",
+            "advisory": False, "blocks_submission": True,
+            "audit": "stale", "next_action": "stale",
+        }
+        for item_id, name in (
+            (3, "domain_pack"),
+            (4, "journal_grade_retrieval"),
+            (8, "deterministic_abstract_conclusion"),
+            (10, "section_repair_loop"),
+        )
+    ])
+    (run / "pre_submit_gate.json").write_text(json.dumps(gate))
+
+    assert _refresh_readiness_contract_items(run) >= 4
+    refreshed = json.loads((run / "pre_submit_gate.json").read_text())
+    by_id = {row["id"]: row for row in refreshed["journal_readiness_contract"]}
+    for item_id in (3, 4, 8, 10):
+        assert by_id[item_id]["advisory"] is True
+        assert by_id[item_id]["blocks_submission"] is False
 
 
 def test_phase_g_rebuilds_readiness_contract_for_legacy(

@@ -432,6 +432,8 @@ def _readiness_item(
     *,
     advisory: bool = False,
 ) -> dict[str, Any]:
+    from agent.final_status import ADVISORY_READINESS_ITEM_IDS
+    advisory = advisory or item_id in ADVISORY_READINESS_ITEM_IDS
     return {
         "id": item_id,
         "name": name,
