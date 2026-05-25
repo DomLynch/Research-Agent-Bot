@@ -227,6 +227,15 @@ def test_public_artifact_language_blocks_journal_surface():
     assert "manifest, tension matrix, and citation registry" in details
 
 
+def test_plain_english_receipt_does_not_block_journal_surface():
+    report = evaluate_journal_surface(
+        "## Results\n\n"
+        "The receipt of treatment was recorded in routine clinical records.\n",
+    )
+    details = {(i.code, i.detail) for i in report.issues}
+    assert ("public_artifact", "receipt") not in details
+
+
 def test_h3_residue_heading_blocks_journal_surface():
     report = evaluate_journal_surface("## Results\n\n### H3: Cardiometabolic Outcomes\n")
     assert not report.passed
@@ -1367,11 +1376,24 @@ def test_apply_pipeline_jargon_replacements_idempotent() -> None:
 
 def test_apply_pipeline_jargon_replacements_scrubs_receipt_artifacts() -> None:
     from agent.journal_surface_gate import apply_pipeline_jargon_replacements
-    text = "The accepted receipt graph retained 171 receipts for this synthesis."
+    text = (
+        "The accepted receipt graph retained 171 receipts for this synthesis. "
+        "Classified receipt candidates were reviewed in the Receipt admission funnel "
+        "before final receipt admission."
+    )
     out = apply_pipeline_jargon_replacements(text)
     assert "receipt" not in out.lower()
     assert "included source set" in out.lower()
     assert "171 sources" in out.lower()
+    assert "source candidates" in out.lower()
+    assert "source admission funnel" in out.lower()
+    assert "final source admission" in out.lower()
+
+
+def test_apply_pipeline_jargon_replacements_preserves_plain_english_receipt() -> None:
+    from agent.journal_surface_gate import apply_pipeline_jargon_replacements
+    text = "The receipt of treatment was recorded in routine clinical records."
+    assert apply_pipeline_jargon_replacements(text) == text
 
 
 # Slice 16 — agent/journal_finalizer.py. Single deterministic

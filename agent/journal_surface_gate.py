@@ -123,7 +123,7 @@ _PUBLIC_ARTIFACT_PATTERNS = (
     # public-artifact scrubber must not strip it.
     "accepted receipt", "receipt set", "receipt graph",
     "mechanistic receipts", "direct clinical receipts", "indirect clinical receipts",
-    "accepted corpus", "receipt", "with 's evidence", "with ’s evidence",
+    "accepted corpus", "with 's evidence", "with ’s evidence",
 )
 # Bug-fix 2026-05-14: pipeline-language → academic-language translation
 # for the PUBLIC manuscript body only. Audit sidecars + supplement may
@@ -136,8 +136,8 @@ _PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
     ("claim atom", "extracted finding"),
     ("endpoint proximity", "clinical directness"),
     ("accepted receipt graph", "included source set"), ("accepted receipts", "included sources"), ("accepted receipt", "included source"),
-    ("mechanistic receipts", "mechanistic sources"), ("direct clinical receipts", "direct clinical sources"), ("indirect clinical receipts", "indirect clinical sources"),
-    ("receipt set", "source set"), ("receipt graph", "source set"), ("receipts", "sources"), ("receipt", "source"),
+    ("mechanistic receipts", "mechanistic sources"), ("direct clinical receipts", "direct clinical sources"), ("indirect clinical receipts", "indirect clinical sources"), ("final receipt admission", "final source admission"), ("receipt admission funnel", "source admission funnel"), ("receipt candidates", "source candidates"),
+    ("receipt set", "source set"), ("receipt graph", "source set"), ("receipts", "sources"),
     # Word-count-neutral replacement: "structured corpus synthesis"
     # (3 words) → "AI-assisted evidence synthesis" (3 words) so the
     # rewrite doesn't push abstracts over the section ceiling.
