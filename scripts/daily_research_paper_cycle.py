@@ -30,6 +30,9 @@ BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 PREFLIGHT_MIN_RECEIPTS = 15
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = 1
+PREFLIGHT_MAX_RECEIPTS = 500
+PREFLIGHT_MAX_TENSIONS = 50_000
+PREFLIGHT_MAX_OUTCOMES = 12
 RECENT_FAILURE_COOLDOWN_HOURS = 24
 HISTOGRAM_ISSUE_THRESHOLD = 5
 
@@ -85,14 +88,16 @@ def _latest_topic_run(topic: str, runs_root: Path) -> Path | None:
     return next((p for p in runs if p.is_dir()), None)
 
 
-def _manifest_counts(run: Path | None) -> dict[str, int]:
+def _manifest_counts(run: Path | None) -> dict[str, Any]:
     manifest = _read_json(run / "manifest.json") if run else {}
     receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
     primary = sum(1 for r in receipts if str(r.get("evidence_tier") or r.get("tier") or "").upper() in {"A1", "B1"})
     return {
+        "has_manifest": bool(manifest),
         "n_receipts": int(manifest.get("n_receipts") or len(receipts) or 0),
         "n_tensions": int(manifest.get("n_non_orthogonal_tensions") or 0),
         "n_primary_tier": primary,
+        "n_outcome_classes": len({str(r.get("outcome_class") or "").strip() for r in receipts if str(r.get("outcome_class") or "").strip()}),
     }
 
 
@@ -172,12 +177,18 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
     latest = _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
     reasons = []
-    if latest and counts["n_receipts"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
+    if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
         reasons.append(f"n_receipts={counts['n_receipts']} < {PREFLIGHT_MIN_RECEIPTS}")
-    if latest and counts["n_tensions"] < PREFLIGHT_MIN_TENSIONS:
+    if counts["has_manifest"] and counts["n_tensions"] < PREFLIGHT_MIN_TENSIONS:
         reasons.append(f"n_tensions={counts['n_tensions']} < {PREFLIGHT_MIN_TENSIONS}")
-    if latest and counts["n_primary_tier"] < PREFLIGHT_MIN_PRIMARY_TIER:
+    if counts["has_manifest"] and counts["n_primary_tier"] < PREFLIGHT_MIN_PRIMARY_TIER:
         reasons.append(f"n_primary_tier={counts['n_primary_tier']} < {PREFLIGHT_MIN_PRIMARY_TIER}")
+    if counts["has_manifest"] and counts["n_receipts"] > PREFLIGHT_MAX_RECEIPTS:
+        reasons.append(f"n_receipts={counts['n_receipts']} > {PREFLIGHT_MAX_RECEIPTS} (split topic)")
+    if counts["has_manifest"] and counts["n_tensions"] > PREFLIGHT_MAX_TENSIONS:
+        reasons.append(f"n_tensions={counts['n_tensions']} > {PREFLIGHT_MAX_TENSIONS} (split topic)")
+    if counts["has_manifest"] and counts["n_outcome_classes"] > PREFLIGHT_MAX_OUTCOMES:
+        reasons.append(f"n_outcome_classes={counts['n_outcome_classes']} > {PREFLIGHT_MAX_OUTCOMES} (split topic)")
     recent_failures = _recent_failed_attempts(topic, ledger_dir)
     if recent_failures:
         reasons.append(f"recent_failed_attempts={recent_failures} within {RECENT_FAILURE_COOLDOWN_HOURS}h")
@@ -206,7 +217,7 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
     blockers = data.setdefault("blockers", {})
     issue_candidates: list[str] = []
     for row in rows:
-        status = str(row.get("status") or row.get("submit_status") or "")
+        status = str(row.get("status") or row.get("gate_status") or row.get("submit_status") or "")
         if not status or status in {"eligible", "submitted_to_researka"}:
             continue
         code = status.split(":", 1)[0]
@@ -245,6 +256,13 @@ def _run_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | N
     return int(result.returncode)
 
 
+def _current_gate_status(bridge: dict[str, Any], run_name: str) -> str:
+    for row in bridge.get("considered", []):
+        if isinstance(row, dict) and row.get("run") == run_name:
+            return str(row.get("status") or bridge.get("status") or "")
+    return str(bridge.get("status") or "")
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -256,7 +274,7 @@ def run_cycle(
     remote_loader: RemoteLoader | None = None,
     submit_cycle: SubmitCycle | None = None,
     timeout: int | None = None,
-    max_attempts: int = 1,
+    max_attempts: int = 3,
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
     ledger_dir = runs_root / LEDGER_DIR
@@ -296,7 +314,7 @@ def run_cycle(
                 return ledger
         attempted: set[str] = set()
         for _ in range(max(1, max_attempts if not topic else 1)):
-            selected = topic or select_topic(topics, ledger_dir, remote_seen=remote_seen, exclude=attempted)
+            selected = topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted)
             if not selected:
                 ledger["status"] = "no_unpublished_topic_with_corpus"
                 break
@@ -306,6 +324,22 @@ def run_cycle(
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"
                 break
+            preflight = _preflight(selected, runs_root, ledger_dir)
+            if not preflight["passed"]:
+                attempt = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": "preflight_insufficient_corpus",
+                    "failure_class": "B_corpus_fixable",
+                    "submitted": 0,
+                    "preflight": preflight,
+                }
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "preflight_skipped_no_submission"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                attempted.add(selected)
+                continue
             return_code = _run_synthesis(selected, out_dir, dry_run=synthesis_dry_run, timeout=timeout)
             bridge: dict[str, Any] = {}
             if return_code == 0:
@@ -315,17 +349,22 @@ def run_cycle(
                     submit=submit,
                     remote_loader=(lambda: (remote_seen, None)) if submit else None,
                 )
+            gate_status = "synthesis_failed" if return_code != 0 else _current_gate_status(bridge, out_dir.name)
             attempt = {
                 "topic": selected,
                 "out_dir": out_dir.name,
                 "synthesis_return_code": return_code,
                 "submit_status": bridge.get("status"),
+                "gate_status": gate_status,
+                "failure_class": _failure_class(gate_status),
                 "submitted": int(bridge.get("submitted") or 0),
             }
             ledger["attempts"].append(attempt)
             ledger["synthesis_return_code"] = return_code
             ledger["submit_bridge"] = bridge
             ledger["submitted"] = attempt["submitted"]
+            if gate_status and gate_status != "eligible":
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
             if return_code != 0:
                 ledger["status"] = "synthesis_failed"
             elif bridge.get("status") == "submitted_to_researka":
@@ -347,7 +386,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--synthesis-dry-run", action="store_true")
     parser.add_argument("--submit", action="store_true")
     parser.add_argument("--timeout-sec", type=int, default=0)
-    parser.add_argument("--max-attempts", type=int, default=1)
+    parser.add_argument("--max-attempts", type=int, default=3)
     args = parser.parse_args(argv)
     ledger = run_cycle(
         runs_root=args.runs_root,

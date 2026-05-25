@@ -26,6 +26,22 @@ def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool 
         (root / "docs" / "quality-reference" / topic).mkdir(parents=True)
 
 
+def _prior_run(root: Path, topic: str, *, receipts: int, tensions: int, primary: int = 1, level: int = 2) -> Path:
+    run = root / "runs" / f"synthesis-{topic}-v06-OLD"
+    receipts_payload = [
+        {"receipt_id": f"r{i}", "evidence_tier": "A1" if i < primary else "B2"}
+        for i in range(receipts)
+    ]
+    _write_json(run / "manifest.json", {
+        "topic": topic,
+        "n_receipts": receipts,
+        "n_non_orthogonal_tensions": tensions,
+        "receipts": receipts_payload,
+    })
+    _write_json(run / "final_status.json", {"maturity_level": level})
+    return run
+
+
 def test_discover_topics_requires_pack_and_corpus(tmp_path: Path) -> None:
     _topic(tmp_path, "creatine")
     _topic(tmp_path, "missing_corpus", corpus=False)
@@ -57,6 +73,21 @@ def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatc
     selected = cycle.select_topic(["acarbose", "caloric_restriction"], tmp_path / cycle.LEDGER_DIR)
 
     assert selected == "caloric_restriction"
+
+
+def test_select_topic_scores_prior_l4_topic_over_plain_publication_track(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "caloric_restriction", target_journal=True)
+    _topic(tmp_path, "metformin", target_journal=True)
+    _prior_run(tmp_path, "metformin", receipts=40, tensions=5, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["caloric_restriction", "metformin"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "metformin"
 
 
 def test_cycle_dry_run_selects_topic_without_synthesis(tmp_path: Path, monkeypatch) -> None:
@@ -142,6 +173,104 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
         "no_eligible_research_paper",
         "submitted_to_researka",
     ]
+
+
+def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_thin_topic", target_journal=True)
+    _topic(tmp_path, "zzz_solid_topic", target_journal=True)
+    _prior_run(tmp_path, "aaa_thin_topic", receipts=6, tensions=0, primary=0)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    topics: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+        topics.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=2,
+    )
+
+    assert topics == ["zzz_solid_topic"]
+    assert ledger["attempts"][0]["submit_status"] == "preflight_insufficient_corpus"
+    assert ledger["attempts"][0]["failure_class"] == "B_corpus_fixable"
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_mega_topic", target_journal=True)
+    _topic(tmp_path, "zzz_solid_topic", target_journal=True)
+    _prior_run(tmp_path, "aaa_mega_topic", receipts=600, tensions=60_000, primary=10)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    topics: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+        topics.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=2,
+    )
+
+    assert topics == ["zzz_solid_topic"]
+    assert any("split topic" in r for r in ledger["attempts"][0]["preflight"]["reasons"])
+
+
+def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "rapamycin", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    runs: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+        runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        return {
+            "status": "no_eligible_research_paper",
+            "submitted": 0,
+            "published": 0,
+            "considered": [{"run": runs[-1], "status": "audit_not_all_green"}],
+        }
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        topic="rapamycin",
+    )
+
+    histogram = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.BLOCKER_HISTOGRAM).read_text(encoding="utf-8"))
+    assert ledger["attempts"][0]["gate_status"] == "audit_not_all_green"
+    assert ledger["attempts"][0]["failure_class"] == "C_writer_fixable"
+    assert histogram["blockers"]["audit_not_all_green"]["count"] == 1
 
 
 def test_cycle_fails_closed_when_remote_dedupe_fails(tmp_path: Path, monkeypatch) -> None:
