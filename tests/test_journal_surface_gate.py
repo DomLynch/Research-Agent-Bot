@@ -1365,6 +1365,15 @@ def test_apply_pipeline_jargon_replacements_idempotent() -> None:
     assert once == twice
 
 
+def test_apply_pipeline_jargon_replacements_scrubs_receipt_artifacts() -> None:
+    from agent.journal_surface_gate import apply_pipeline_jargon_replacements
+    text = "The accepted receipt graph retained 171 receipts for this synthesis."
+    out = apply_pipeline_jargon_replacements(text)
+    assert "receipt" not in out.lower()
+    assert "included source set" in out.lower()
+    assert "171 sources" in out.lower()
+
+
 # Slice 16 — agent/journal_finalizer.py. Single deterministic
 # compiler-owned post-render pass. Five phases (Methods replace /
 # lane qualifier / terminology / reference closure / structural
