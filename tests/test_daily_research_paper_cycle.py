@@ -283,6 +283,42 @@ def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path
     assert any("split topic" in r for r in ledger["attempts"][0]["preflight"]["reasons"])
 
 
+def test_preflight_recent_failure_does_not_block_publication_track(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "caloric_restriction", target_journal=True)
+    _prior_run(tmp_path, "caloric_restriction", receipts=40, tensions=10, primary=2)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-05-24.json", {
+        "started_at": "2026-05-24T23:00:00+00:00",
+        "attempts": [{"topic": "caloric_restriction", "submitted": 0}],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight("caloric_restriction", tmp_path / "runs", ledger_dir)
+
+    assert preflight["passed"] is True
+    assert preflight["publication_track"] is True
+    assert preflight["recent_failed_attempts"] == 1
+    assert preflight["reasons"] == []
+
+
+def test_preflight_recent_failure_still_blocks_exploration_track(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "acarbose")
+    _prior_run(tmp_path, "acarbose", receipts=40, tensions=10, primary=2)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-05-24.json", {
+        "started_at": "2026-05-24T23:00:00+00:00",
+        "attempts": [{"topic": "acarbose", "submitted": 0}],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight("acarbose", tmp_path / "runs", ledger_dir)
+
+    assert preflight["passed"] is False
+    assert preflight["publication_track"] is False
+    assert preflight["recent_failed_attempts"] == 1
+    assert "recent_failed_attempts=1" in preflight["reasons"][0]
+
+
 def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

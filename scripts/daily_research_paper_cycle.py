@@ -176,6 +176,7 @@ def select_topic(
 def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
     latest = _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
+    publication_track = _publication_track_topic(topic)
     reasons = []
     if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
         reasons.append(f"n_receipts={counts['n_receipts']} < {PREFLIGHT_MIN_RECEIPTS}")
@@ -190,9 +191,16 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
     if counts["has_manifest"] and counts["n_outcome_classes"] > PREFLIGHT_MAX_OUTCOMES:
         reasons.append(f"n_outcome_classes={counts['n_outcome_classes']} > {PREFLIGHT_MAX_OUTCOMES} (split topic)")
     recent_failures = _recent_failed_attempts(topic, ledger_dir)
-    if recent_failures:
+    if recent_failures and not publication_track:
         reasons.append(f"recent_failed_attempts={recent_failures} within {RECENT_FAILURE_COOLDOWN_HOURS}h")
-    return {"passed": not reasons, "reasons": reasons, "latest_run": latest.name if latest else None, **counts}
+    return {
+        "passed": not reasons,
+        "publication_track": publication_track,
+        "recent_failed_attempts": recent_failures,
+        "reasons": reasons,
+        "latest_run": latest.name if latest else None,
+        **counts,
+    }
 
 
 def _failure_class(status: str) -> str:
