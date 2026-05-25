@@ -3,6 +3,7 @@ Description=Run Research Agent v3 daily paper submit
 
 [Timer]
 OnCalendar=*-*-* 09:15:00
+OnCalendar=*-*-* 22:15:00
 Persistent=false
 Unit=research-agent-paper-daily-submit.service
 
