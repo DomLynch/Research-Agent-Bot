@@ -263,6 +263,14 @@ def _current_gate_status(bridge: dict[str, Any], run_name: str) -> str:
     return str(bridge.get("status") or "")
 
 
+def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
+    if int(attempt.get("submitted") or 0):
+        return False
+    if str(attempt.get("failure_class") or "").startswith(("B_", "D_")):
+        return False
+    return True
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -275,6 +283,7 @@ def run_cycle(
     submit_cycle: SubmitCycle | None = None,
     timeout: int | None = None,
     max_attempts: int = 3,
+    max_revise_attempts: int = 3,
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
     ledger_dir = runs_root / LEDGER_DIR
@@ -340,38 +349,48 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
-            return_code = _run_synthesis(selected, out_dir, dry_run=synthesis_dry_run, timeout=timeout)
-            bridge: dict[str, Any] = {}
-            if return_code == 0:
-                bridge = (submit_cycle or submit_bridge.run_cycle)(
-                    runs_root=runs_root,
-                    date=date,
-                    submit=submit,
-                    remote_loader=(lambda: (remote_seen, None)) if submit else None,
-                )
-            gate_status = "synthesis_failed" if return_code != 0 else _current_gate_status(bridge, out_dir.name)
-            attempt = {
-                "topic": selected,
-                "out_dir": out_dir.name,
-                "synthesis_return_code": return_code,
-                "submit_status": bridge.get("status"),
-                "gate_status": gate_status,
-                "failure_class": _failure_class(gate_status),
-                "submitted": int(bridge.get("submitted") or 0),
-            }
-            ledger["attempts"].append(attempt)
-            ledger["synthesis_return_code"] = return_code
-            ledger["submit_bridge"] = bridge
-            ledger["submitted"] = attempt["submitted"]
-            if gate_status and gate_status != "eligible":
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
-            if return_code != 0:
-                ledger["status"] = "synthesis_failed"
-            elif bridge.get("status") == "submitted_to_researka":
-                ledger["status"] = "submitted_to_researka"
+            for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
+                if revise_attempt > 1:
+                    stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
+                    out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
+                    ledger["out_dir"] = out_dir.name
+                return_code = _run_synthesis(selected, out_dir, dry_run=synthesis_dry_run, timeout=timeout)
+                bridge: dict[str, Any] = {}
+                if return_code == 0:
+                    bridge = (submit_cycle or submit_bridge.run_cycle)(
+                        runs_root=runs_root,
+                        date=date,
+                        submit=submit,
+                        remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                    )
+                gate_status = "synthesis_failed" if return_code != 0 else _current_gate_status(bridge, out_dir.name)
+                attempt = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "revise_attempt": revise_attempt,
+                    "synthesis_return_code": return_code,
+                    "submit_status": bridge.get("status"),
+                    "gate_status": gate_status,
+                    "failure_class": _failure_class(gate_status),
+                    "submitted": int(bridge.get("submitted") or 0),
+                }
+                ledger["attempts"].append(attempt)
+                ledger["synthesis_return_code"] = return_code
+                ledger["submit_bridge"] = bridge
+                ledger["submitted"] = attempt["submitted"]
+                if gate_status and gate_status != "eligible":
+                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                if return_code != 0:
+                    ledger["status"] = "synthesis_failed"
+                elif bridge.get("status") == "submitted_to_researka":
+                    ledger["status"] = "submitted_to_researka"
+                    break
+                else:
+                    ledger["status"] = "synthesis_completed_no_submission"
+                if revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
+                    break
+            if ledger["status"] == "submitted_to_researka":
                 break
-            else:
-                ledger["status"] = "synthesis_completed_no_submission"
             attempted.add(selected)
         _write_json(ledger_path, ledger)
         return ledger
@@ -387,6 +406,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--submit", action="store_true")
     parser.add_argument("--timeout-sec", type=int, default=0)
     parser.add_argument("--max-attempts", type=int, default=3)
+    parser.add_argument("--max-revise-attempts", type=int, default=3)
     args = parser.parse_args(argv)
     ledger = run_cycle(
         runs_root=args.runs_root,
@@ -397,6 +417,7 @@ def main(argv: list[str] | None = None) -> int:
         topic=args.topic,
         timeout=args.timeout_sec or None,
         max_attempts=args.max_attempts,
+        max_revise_attempts=args.max_revise_attempts,
     )
     print(
         f"[daily-v3-cycle] status={ledger['status']} topic={ledger.get('topic', '-')} "

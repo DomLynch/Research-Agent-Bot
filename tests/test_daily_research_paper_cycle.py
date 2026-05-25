@@ -165,6 +165,7 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
         remote_loader=lambda: (set(), None),
         submit_cycle=fake_submit,
         max_attempts=2,
+        max_revise_attempts=1,
     )
 
     assert ledger["status"] == "submitted_to_researka"
@@ -173,6 +174,53 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
         "no_eligible_research_paper",
         "submitted_to_researka",
     ]
+
+
+def test_cycle_retries_same_topic_before_next_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "rapamycin")
+    _topic(tmp_path, "creatine")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    topics: list[str] = []
+    runs: list[str] = []
+    submit_calls = 0
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+        topics.append(topic)
+        runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        if submit_calls < 3:
+            return {
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+                "considered": [{"run": runs[-1], "status": "journal_surface_not_passed"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        max_attempts=2,
+        max_revise_attempts=3,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert topics == ["creatine", "creatine", "creatine"]
+    assert [a["revise_attempt"] for a in ledger["attempts"]] == [1, 2, 3]
+    assert "R2" in ledger["attempts"][1]["out_dir"]
+    assert "R3" in ledger["attempts"][2]["out_dir"]
 
 
 def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
@@ -265,6 +313,7 @@ def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path
         remote_loader=lambda: (set(), None),
         submit_cycle=fake_submit,
         topic="rapamycin",
+        max_revise_attempts=1,
     )
 
     histogram = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.BLOCKER_HISTOGRAM).read_text(encoding="utf-8"))
