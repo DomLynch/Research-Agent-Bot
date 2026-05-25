@@ -26,6 +26,12 @@ RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
 CORPORA = ROOT / "docs" / "quality-reference"
 LEDGER_DIR = "_daily_research_paper_cycle_ledger"
+BLOCKER_HISTOGRAM = "_blocker_histogram.json"
+PREFLIGHT_MIN_RECEIPTS = 15
+PREFLIGHT_MIN_TENSIONS = 3
+PREFLIGHT_MIN_PRIMARY_TIER = 1
+RECENT_FAILURE_COOLDOWN_HOURS = 24
+HISTOGRAM_ISSUE_THRESHOLD = 5
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -67,6 +73,59 @@ def _attempted_at(topic: str, ledger_dir: Path) -> str:
     return latest
 
 
+def _parse_time(value: str) -> dt.datetime | None:
+    try:
+        return dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def _latest_topic_run(topic: str, runs_root: Path) -> Path | None:
+    runs = sorted(runs_root.glob(f"synthesis-{topic}-v*-*"), key=lambda p: p.stat().st_mtime, reverse=True)
+    return next((p for p in runs if p.is_dir()), None)
+
+
+def _manifest_counts(run: Path | None) -> dict[str, int]:
+    manifest = _read_json(run / "manifest.json") if run else {}
+    receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
+    primary = sum(1 for r in receipts if str(r.get("evidence_tier") or r.get("tier") or "").upper() in {"A1", "B1"})
+    return {
+        "n_receipts": int(manifest.get("n_receipts") or len(receipts) or 0),
+        "n_tensions": int(manifest.get("n_non_orthogonal_tensions") or 0),
+        "n_primary_tier": primary,
+    }
+
+
+def _topic_run_stats(topic: str, runs_root: Path) -> tuple[int, int]:
+    total = l4plus = 0
+    for run in runs_root.glob(f"synthesis-{topic}-v*-*"):
+        if not run.is_dir():
+            continue
+        total += 1
+        status = _read_json(run / "final_status.json")
+        l4plus += int(int(status.get("maturity_level") or 0) >= 4)
+    return total, l4plus
+
+
+def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | None = None) -> int:
+    now = now or dt.datetime.now(dt.UTC)
+    cutoff = now - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    failures = 0
+    for path in ledger_dir.glob("*.json"):
+        row = _read_json(path)
+        started = _parse_time(str(row.get("started_at") or ""))
+        if started is None or started < cutoff:
+            continue
+        for attempt in row.get("attempts", []):
+            if (
+                isinstance(attempt, dict)
+                and attempt.get("topic") == topic
+                and int(attempt.get("submitted") or 0) == 0
+            ):
+                failures += 1
+    return failures
+
+
 def _published_topics(topics: list[str], markers: set[str]) -> set[str]:
     title_markers = [m.removeprefix("title:") for m in markers if m.startswith("title:")]
     out = set()
@@ -85,10 +144,19 @@ def _publication_track_topic(topic: str) -> bool:
     return bool(str(data.get("target_journal", "")).strip())
 
 
+def _publication_score(topic: str, ledger_dir: Path, runs_root: Path) -> int:
+    total, l4plus = _topic_run_stats(topic, runs_root)
+    pass_rate = (l4plus / total) if total else 0
+    last = _parse_time(_attempted_at(topic, ledger_dir))
+    freshness = 2 if last is None or dt.datetime.now(dt.UTC) - last > dt.timedelta(days=14) else 0
+    return round(pass_rate * 5) + int(_publication_track_topic(topic)) * 3 + freshness - _recent_failed_attempts(topic, ledger_dir) * 2
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
     *,
+    runs_root: Path = RUNS,
     remote_seen: set[str] | None = None,
     exclude: set[str] | None = None,
 ) -> str | None:
@@ -97,7 +165,62 @@ def select_topic(
     if not candidates:
         return None
     pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
-    return min(pool, key=lambda topic: (_attempted_at(topic, ledger_dir), topic))
+    return min(pool, key=lambda topic: (-_publication_score(topic, ledger_dir, runs_root), _attempted_at(topic, ledger_dir), topic))
+
+
+def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
+    latest = _latest_topic_run(topic, runs_root)
+    counts = _manifest_counts(latest)
+    reasons = []
+    if latest and counts["n_receipts"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
+        reasons.append(f"n_receipts={counts['n_receipts']} < {PREFLIGHT_MIN_RECEIPTS}")
+    if latest and counts["n_tensions"] < PREFLIGHT_MIN_TENSIONS:
+        reasons.append(f"n_tensions={counts['n_tensions']} < {PREFLIGHT_MIN_TENSIONS}")
+    if latest and counts["n_primary_tier"] < PREFLIGHT_MIN_PRIMARY_TIER:
+        reasons.append(f"n_primary_tier={counts['n_primary_tier']} < {PREFLIGHT_MIN_PRIMARY_TIER}")
+    recent_failures = _recent_failed_attempts(topic, ledger_dir)
+    if recent_failures:
+        reasons.append(f"recent_failed_attempts={recent_failures} within {RECENT_FAILURE_COOLDOWN_HOURS}h")
+    return {"passed": not reasons, "reasons": reasons, "latest_run": latest.name if latest else None, **counts}
+
+
+def _failure_class(status: str) -> str:
+    code = status.split(":", 1)[0]
+    return {
+        "journal_surface_not_passed": "A_compiler_fixable",
+        "final_verdict_not_aaa": "A_compiler_fixable",
+        "pre_submit_not_passed": "A_compiler_fixable",
+        "audit_not_all_green": "C_writer_fixable",
+        "synthesis_failed": "C_writer_fixable",
+        "preflight_insufficient_corpus": "B_corpus_fixable",
+        "missing": "C_writer_fixable",
+        "duplicate_submission_fingerprint": "D_no_action",
+        "duplicate_remote_publication": "D_no_action",
+        "superseded_topic_run": "D_no_action",
+    }.get(code, "unknown")
+
+
+def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
+    path = ledger_dir / BLOCKER_HISTOGRAM
+    data = _read_json(path)
+    blockers = data.setdefault("blockers", {})
+    issue_candidates: list[str] = []
+    for row in rows:
+        status = str(row.get("status") or row.get("submit_status") or "")
+        if not status or status in {"eligible", "submitted_to_researka"}:
+            continue
+        code = status.split(":", 1)[0]
+        item = blockers.setdefault(code, {"count": 0, "class": _failure_class(status), "samples": []})
+        item["count"] = int(item.get("count") or 0) + 1
+        item["last_seen"] = date
+        sample = {k: row.get(k) for k in ("topic", "run", "out_dir", "status", "submit_status") if row.get(k) is not None}
+        item["samples"] = ([sample] + list(item.get("samples") or []))[:3]
+        if int(item["count"]) >= HISTOGRAM_ISSUE_THRESHOLD and item.get("class") != "D_no_action":
+            item["github_issue_candidate"] = True
+            issue_candidates.append(code)
+    data["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
+    _write_json(path, data)
+    return {"path": path.name, "issue_candidates": sorted(set(issue_candidates))}
 
 
 @contextmanager
