@@ -714,6 +714,17 @@ def _refresh_final_verdict(out_dir: Path) -> bool:
         return False
 
 
+def _refresh_final_status(out_dir: Path) -> bool:
+    path = out_dir / "final_status.json"
+    before = _load_sidecar(path)
+    try:
+        from agent.final_status import compute_and_write
+        status = compute_and_write(out_dir)
+    except (ImportError, OSError, TypeError, ValueError):
+        return False
+    return before != _load_sidecar(path) or before is None and path.is_file() and status.maturity_level > 0
+
+
 def _refresh_audit_sidecar(out_dir: Path) -> bool:
     paper_path = out_dir / "full_paper.md"
     if not paper_path.is_file():
@@ -763,6 +774,8 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     n_items = _refresh_readiness_contract_items(out_dir)
     if n_items:
         _g("reconcile_readiness_contract_items", n_items, f"refreshed {n_items} stale readiness-contract item(s) against post-Phase-G sidecars")
+    if _refresh_final_status(out_dir):
+        _g("refresh_final_status_post_finalizer", 1, "final_status refreshed against post-finalizer sidecars")
     return log
 
 
