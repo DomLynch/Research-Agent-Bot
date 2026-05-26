@@ -1,25 +1,4 @@
-"""Final status convergence — single source of truth for submission readiness.
-
-Reads every sidecar produced earlier in the pipeline and emits one
-`final_status.json` with:
-
-  - A strict 6-boolean dimension table (runtime / audit / journal_surface /
-    pre_submit / target_journal / human_signoff).
-  - A frozen L1–L5 maturity label. No "AAA" string is emitted here; the
-    label is the only public level identifier the contract recognises.
-  - Snake_case reason codes per blocking dimension, so every failing run
-    has a concrete diff vs the next iteration.
-
-Universal: every topic/topic_pack writes the same sidecars; this module
-makes them agree without re-running any LLM or gate. Stdlib-only.
-
-Frozen label mapping (Wave 47 / 2026-05-13):
-    L1 — DRAFT GENERATED             paper rendered but pipeline failed at runtime
-    L2 — EVIDENCE BUNDLE VALID       runtime OK but audit failed
-    L3 — TRUST-SPINE PASS            audit + surface pass; pre-submit may still fail
-    L4 — ANALYTICALLY CERTIFIED      L3 + pre-submit pass; missing target journal / human signoff
-    L5 — SUBMISSION PACKAGE READY    all six dimensions pass
-"""
+"""Final status convergence: one source of truth for submission readiness."""
 from __future__ import annotations
 
 import json

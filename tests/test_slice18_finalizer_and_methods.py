@@ -214,6 +214,34 @@ def test_phase_g_refreshes_stale_verdict_surface_state(tmp_path: Path) -> None:
     assert "refresh_final_verdict_post_finalizer" in rules
 
 
+def test_phase_g_recomputes_stale_final_status_after_refresh(tmp_path: Path) -> None:
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "benchmark_runtime.json").write_text(json.dumps({"return_code": 0}))
+    (run / "full_paper.audit.json").write_text(json.dumps({
+        "n_total": 14, "n_pass": 14, "p1_pass": True,
+    }))
+    (run / "full_paper.journal_surface.json").write_text(json.dumps({"passed": True, "issues": []}))
+    (run / "pre_submit_gate.json").write_text(json.dumps({"result": {"passed": True, "failures": []}}))
+    (run / "target_journal_pack.json").write_text(json.dumps({
+        "journal": "GeroScience", "declared_in_topic_pack": True,
+    }))
+    (run / "manifest.json").write_text(json.dumps({"accountability_model": "researka_agent_certified"}))
+    (run / "citation_registry.json").write_text("{}")
+    (run / "artifact_consistency.json").write_text(json.dumps({"passed": True, "checks": []}))
+    (run / "final_status.json").write_text(json.dumps({
+        "maturity_level": 2,
+        "blocking_reasons": [{"stage": "audit", "code": "audit_check_failed"}],
+    }))
+
+    log = _phase_g_refresh_sidecars(run)
+    status = json.loads((run / "final_status.json").read_text())
+    assert status["dimensions"]["audit_pass"] is True
+    assert all(b["stage"] != "audit" for b in status["blocking_reasons"])
+    assert status["maturity_level"] >= 3
+    assert "refresh_final_status_post_finalizer" in [e.rule for e in log]
+
+
 def test_phase_g_rebuilds_readiness_contract_for_researka(
     tmp_path: Path,
 ) -> None:

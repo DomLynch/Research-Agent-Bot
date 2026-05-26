@@ -717,12 +717,14 @@ def _refresh_final_verdict(out_dir: Path) -> bool:
 def _refresh_final_status(out_dir: Path) -> bool:
     path = out_dir / "final_status.json"
     before = _load_sidecar(path)
+    if before is None:
+        return False
     try:
         from agent.final_status import compute_and_write
-        status = compute_and_write(out_dir)
+        compute_and_write(out_dir)
     except (ImportError, OSError, TypeError, ValueError):
         return False
-    return before != _load_sidecar(path) or before is None and path.is_file() and status.maturity_level > 0
+    return before != _load_sidecar(path)
 
 
 def _refresh_audit_sidecar(out_dir: Path) -> bool:
