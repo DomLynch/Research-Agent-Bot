@@ -7,6 +7,7 @@ caught only by stage-2 silently passed."""
 from __future__ import annotations
 
 import sys
+import json
 from dataclasses import dataclass
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
@@ -79,6 +80,31 @@ def test_stage2_p1_blocks_even_if_stage1_passes() -> None:
     u = orch._compute_unified_verdict(s1, issues)
     assert u.verdict == "SHIP-BLOCKED"
     assert u.stage2_p1 == 1
+
+
+def test_post_finalizer_verdict_refresh_resolves_absent_reviewer_p1(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.md").write_text("Clean final paper after deterministic cleanup.")
+    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+        "patches": [{"id": "P01", "severity": "P1", "before": "flagged blob"}],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01", "severity": "P1", "decision": "flagged"}],
+    }))
+    (tmp_path / "full_paper.audit.json").write_text(json.dumps(_stage1_report_with_d1_claims(3)))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 20,
+        "n_high_confidence_claims_total": 100,
+        "n_non_orthogonal_tensions": 20,
+    }))
+    (tmp_path / "full_paper.journal_surface.json").write_text(json.dumps({"passed": True, "issues": []}))
+    (tmp_path / "full_paper.consistency.json").write_text("[]")
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 1
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, 0)
+    assert orch._refresh_post_finalizer_verdict(tmp_path) is True
+    verdict = json.loads((tmp_path / "full_paper.final_verdict.json").read_text())
+    assert verdict["verdict"] == "AAA"
 
 
 def test_stage1_p2_only_returns_trust_spine_pass() -> None:

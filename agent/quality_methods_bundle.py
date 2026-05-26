@@ -1,4 +1,3 @@
-"""Quality-methods bundle: validated RoB/GRADE markdown plus coverage metrics."""
 from __future__ import annotations
 
 from collections.abc import Sequence
@@ -23,8 +22,6 @@ __all__ = [
 
 @dataclass(frozen=True, slots=True)
 class QualityMethodsBundle:
-    """Validated RoB/GRADE assessments, coverage metrics, and markdown."""
-
     rob_assessments: tuple[StudyAssessment, ...]
     grade_assessments: tuple[GradeAssessment, ...]
     rob_coverage: float
@@ -94,7 +91,6 @@ def build_quality_methods_bundle(
     receipt_count: int,
     outcome_count: int,
 ) -> QualityMethodsBundle:
-    """Validate payloads, collapse duplicate RoB rows, render, and score coverage."""
     if receipt_count < 0 or outcome_count < 0:
         raise ValueError(
             f"receipt_count ({receipt_count}) and outcome_count "

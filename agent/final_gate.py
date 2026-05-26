@@ -1,18 +1,4 @@
-"""Phase 8 deterministic pre-cert final gate.
-
-Aggregates the trust-spine signals (numeric coverage, citation registry,
-RoB-2 coverage, GRADE coverage, tension count, corpus depth, template-
-language audit) into a single pass/fail verdict. Stdlib-only, no LLM.
-
-Hard rule: LLM PROPOSES, CODE DISPOSES. The final gate is the canonical
-embodiment — every threshold is data, every check is deterministic, every
-failure is named.
-
-The gate distinguishes:
-  - failures (P1) — block the cert. Result.passed = False.
-  - warnings (P2) — emitted with the result but do not block. Caller can
-    promote to failures by tightening thresholds.
-"""
+"""Deterministic pre-cert final gate for trust-spine signals."""
 from __future__ import annotations
 
 from dataclasses import dataclass

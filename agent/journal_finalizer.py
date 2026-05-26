@@ -681,10 +681,11 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
     inputs = gate["inputs"]
     new_surface = bool(surface.get("passed"))
     new_audit = bool(isinstance(audit, dict) and audit.get("p1_pass") and audit.get("n_pass") == audit.get("n_total"))
-    reviewer_p1, _, _ = _reviewer_counts(out_dir)
-    new_reviewer = int(inputs.get("unresolved_reviewer_p1_count", reviewer_p1))
-    if "unresolved_reviewer_p1_count" in inputs:
-        new_reviewer = reviewer_p1
+    try:
+        reviewer_p1 = importlib.import_module("scripts.run_v06_synthesis")._reviewer_p1_counts_from_log(out_dir)[0]
+    except (ImportError, AttributeError, OSError, TypeError, ValueError):
+        reviewer_p1 = 0
+    new_reviewer = reviewer_p1 if "unresolved_reviewer_p1_count" in inputs else int(inputs.get("unresolved_reviewer_p1_count", 0))
     if (
         bool(inputs.get("journal_surface_passed")) == new_surface
         and bool(inputs.get("audit_gates_passed")) == new_audit
@@ -705,15 +706,6 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
     gate["inputs"], gate["result"] = fresh, asdict(result)
     (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
     return True
-
-
-def _reviewer_counts(out_dir: Path) -> tuple[int, int, int]:
-    try:
-        synth = importlib.import_module("scripts.run_v06_synthesis")
-        return synth._reviewer_p1_counts_from_log(out_dir)
-    except (ImportError, AttributeError, OSError, TypeError, ValueError):
-        return 0, 0, 0
-
 
 def _refresh_final_verdict(out_dir: Path) -> bool:
     try:
