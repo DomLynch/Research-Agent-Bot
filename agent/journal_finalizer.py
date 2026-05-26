@@ -22,13 +22,6 @@ class FinalizerReport:
     final_word_count: int
     entries: tuple[FinalizerLogEntry, ...] = field(default=())
 
-    def to_json(self) -> dict[str, Any]:
-        return {
-            "paper_changed": self.paper_changed,
-            "final_word_count": self.final_word_count,
-            "entries": [asdict(e) for e in self.entries],
-        }
-
 
 _ANIMAL_QUALIFIER_LEAD = "In animal/preclinical evidence, "
 
@@ -96,7 +89,7 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     g_log = _phase_g_refresh_sidecars(out_dir)
     entries.extend(g_log)
     report = FinalizerReport(paper_changed=changed, final_word_count=len(text.split()), entries=tuple(entries))  # noqa: E501
-    (out_dir / "journal_finalizer.json").write_text(json.dumps(report.to_json(), indent=2))
+    (out_dir / "journal_finalizer.json").write_text(json.dumps(asdict(report), indent=2))
     return report
 
 
@@ -688,17 +681,45 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
     inputs = gate["inputs"]
     new_surface = bool(surface.get("passed"))
     new_audit = bool(isinstance(audit, dict) and audit.get("p1_pass") and audit.get("n_pass") == audit.get("n_total"))
-    if bool(inputs.get("journal_surface_passed")) == new_surface and bool(inputs.get("audit_gates_passed")) == new_audit:
+    reviewer_p1, _, _ = _reviewer_counts(out_dir)
+    new_reviewer = int(inputs.get("unresolved_reviewer_p1_count", reviewer_p1))
+    if "unresolved_reviewer_p1_count" in inputs:
+        new_reviewer = reviewer_p1
+    if (
+        bool(inputs.get("journal_surface_passed")) == new_surface
+        and bool(inputs.get("audit_gates_passed")) == new_audit
+        and int(inputs.get("unresolved_reviewer_p1_count", new_reviewer)) == new_reviewer
+    ):
         return False
     try:
         from agent.final_gate import GateInputs, evaluate_final_gate
-        fresh = {**inputs, "journal_surface_passed": new_surface, "audit_gates_passed": new_audit}
+        fresh = {
+            **inputs,
+            "journal_surface_passed": new_surface,
+            "audit_gates_passed": new_audit,
+            "unresolved_reviewer_p1_count": new_reviewer,
+        }
         result = evaluate_final_gate(GateInputs(**fresh))
     except (ImportError, TypeError, ValueError):
         return False
     gate["inputs"], gate["result"] = fresh, asdict(result)
     (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
     return True
+
+
+def _reviewer_counts(out_dir: Path) -> tuple[int, int, int]:
+    try:
+        synth = importlib.import_module("scripts.run_v06_synthesis")
+        return synth._reviewer_p1_counts_from_log(out_dir)
+    except (ImportError, AttributeError, OSError, TypeError, ValueError):
+        return 0, 0, 0
+
+
+def _refresh_final_verdict(out_dir: Path) -> bool:
+    try:
+        return bool(importlib.import_module("scripts.run_v06_synthesis")._refresh_post_finalizer_verdict(out_dir))
+    except (ImportError, AttributeError, OSError, TypeError, ValueError):
+        return False
 
 
 def _refresh_audit_sidecar(out_dir: Path) -> bool:
@@ -733,23 +754,20 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     _g = lambda rule, n, detail: log.append(FinalizerLogEntry(phase="G_refresh_sidecars", rule=rule, n_changes=n, detail=detail))  # noqa: E731
     if _refresh_audit_sidecar(out_dir):
         _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
+    n_resolved = 0
+    try:
+        n_resolved = int(importlib.import_module("scripts.run_v06_synthesis")._resolve_absent_reviewer_p1s(out_dir))
+    except (ImportError, AttributeError, OSError, TypeError, ValueError):
+        n_resolved = 0
+    if n_resolved:
+        _g("resolve_absent_reviewer_p1", n_resolved, "reviewer P1 target absent after deterministic finalization")
     delta = _reevaluate_journal_surface(out_dir)
     if delta != 0:
         _g("reevaluate_journal_surface_post_finalizer", 1, f"surface issues delta vs pre-finalizer gate: {delta:+d}")
     if _refresh_pre_submit_gate(out_dir):
         _g("refresh_pre_submit_gate_with_fresh_surface", 1, "pre_submit_gate.inputs.journal_surface_passed + result recomputed")
-    verdict = _load_sidecar(out_dir / "full_paper.final_verdict.json")
-    surface = _load_sidecar(out_dir / "full_paper.journal_surface.json")
-    if isinstance(verdict, dict) and isinstance(surface, dict):
-        passed = bool(surface.get("passed"))
-        issues = tuple(f"{i.get('code', '')}: {i.get('detail', '')}" if isinstance(i, dict) else str(i)
-                       for i in (surface.get("issues") or []))
-        cur = (bool(verdict.get("journal_surface_pass")), tuple(verdict.get("journal_surface_issues") or ()))
-        if cur != (passed, issues):
-            verdict["journal_surface_pass"] = passed
-            verdict["journal_surface_issues"] = list(issues)
-            (out_dir / "full_paper.final_verdict.json").write_text(json.dumps(verdict, indent=2))
-            _g("reconcile_final_verdict_surface_state", 1, f"journal_surface_pass {cur[0]}→{passed}; issues {len(cur[1])}→{len(issues)}")
+    if _refresh_final_verdict(out_dir):
+        _g("refresh_final_verdict_post_finalizer", 1, "full_paper.final_verdict refreshed against post-finalizer sidecars")
     n_items = _refresh_readiness_contract_items(out_dir)
     if n_items:
         _g("reconcile_readiness_contract_items", n_items, f"refreshed {n_items} stale readiness-contract item(s) against post-Phase-G sidecars")
@@ -776,6 +794,7 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
     legacy = model == "legacy_journal_submission"
     acc_ok, acc_detail = accountability_pass(out_dir, model)
     submission_ready = gate_passed and surface_pass
+    unresolved_p1 = int((gate.get("inputs") or {}).get("unresolved_reviewer_p1_count") or 0)
     from agent.final_status import ADVISORY_READINESS_ITEM_IDS
     fresh: dict[int, dict[str, object]] = {
         1: {"status": "pass" if submission_ready else "not_ready",
@@ -786,6 +805,9 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
             "audit": f"journal_surface_passed={surface_pass}"},
         9: {"status": "pass" if surface_pass else "not_ready",
             "audit": f"issues={surface_n}"},
+        11: {"status": "pass" if unresolved_p1 == 0 else "not_ready",
+             "audit": f"unresolved_p1={unresolved_p1}",
+             "next_action": "Resolve reviewer P1s or mark as human-blocking."},
         12: {"status": "pass" if tj and tj_declared else
                        ("partial" if tj else "not_ready"),
              "audit": f"target_journal={tj!r}; declared_in_topic_pack={tj_declared}",

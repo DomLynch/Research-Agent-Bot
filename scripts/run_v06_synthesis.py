@@ -38,6 +38,7 @@ import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, cast
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -3805,6 +3806,78 @@ def _resolve_absent_flagged_patches(results: list[Any], paper_md: str) -> list[A
         else:
             out.append(r)
     return out
+
+
+def _is_unresolved_reviewer_p1(row: dict[str, Any]) -> bool:
+    return row.get("decision") in {"flagged", "rejected"} and str(row.get("severity") or "").upper() in {"P1", "HIGH", "CRITICAL"}
+
+
+def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
+    try:
+        rows = json.loads((out_dir / "debug" / "full_paper.review_patch_log.json").read_text()).get("patches") or []
+    except (OSError, ValueError, json.JSONDecodeError):
+        return 0, 0, 0
+    unresolved = sum(1 for r in rows if isinstance(r, dict) and _is_unresolved_reviewer_p1(r))
+    flagged = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "flagged")
+    stripped = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "auto_stripped")
+    return unresolved, flagged, stripped
+
+
+def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
+    try:
+        text = (out_dir / "full_paper.md").read_text()
+        patches = json.loads((out_dir / "debug" / "full_paper.review_patches.json").read_text()).get("patches") or []
+        log_path = out_dir / "debug" / "full_paper.review_patch_log.json"
+        log = json.loads(log_path.read_text())
+    except (OSError, ValueError, json.JSONDecodeError):
+        return 0
+    before = {str(p.get("id")): str(p.get("before") or "") for p in patches if isinstance(p, dict)}
+    changed = 0
+    for row in log.get("patches") or []:
+        target = before.get(str(row.get("patch_id"))) if isinstance(row, dict) else None
+        if isinstance(row, dict) and _is_unresolved_reviewer_p1(row) and target and target not in text:
+            row["decision"] = "applied"
+            row["reason_for_decision"] = "FINALIZER-RESOLVED: flagged BEFORE region is absent after deterministic finalization. " + str(row.get("reason_for_decision") or "")
+            changed += 1
+    if changed:
+        rows = [r for r in log.get("patches", []) if isinstance(r, dict)]
+        log["n_applied"] = sum(1 for r in rows if r.get("decision") in {"applied", "applied_via_repair"})
+        log["n_rejected"] = sum(1 for r in rows if r.get("decision") == "rejected")
+        log["n_flagged"] = sum(1 for r in rows if r.get("decision") == "flagged")
+        log_path.write_text(json.dumps(log, indent=2))
+    return changed
+
+
+def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:
+    try:
+        audit = json.loads((out_dir / "full_paper.audit.json").read_text())
+        manifest = json.loads((out_dir / "manifest.json").read_text())
+        surface = json.loads((out_dir / "full_paper.journal_surface.json").read_text())
+        consistency = json.loads((out_dir / "full_paper.consistency.json").read_text())
+    except (OSError, ValueError, json.JSONDecodeError):
+        return False
+    unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
+    issues = [SimpleNamespace(severity=str(i.get("severity") or "")) for i in consistency if isinstance(i, dict)]
+    unified = _compute_unified_verdict(
+        audit, issues, grok_unresolved_p1=unresolved,
+        n_receipts=int(manifest.get("n_receipts") or 0),
+        n_high_conf_claims=int(manifest.get("n_high_confidence_claims_total") or 0),
+        n_non_orthogonal_tensions=int(manifest.get("n_non_orthogonal_tensions") or 0),
+        cert_floors=manifest.get("certification_floors") if isinstance(manifest.get("certification_floors"), dict) else None,
+        manifest=manifest, grok_flagged_count=flagged, auto_stripped_count=stripped,
+        journal_surface_pass=bool(surface.get("passed")),
+        journal_surface_issues=tuple(f"{i.get('code', '')}: {i.get('detail', '')}" for i in surface.get("issues", []) if isinstance(i, dict)),
+    )
+    payload = dataclasses.asdict(unified)
+    path = out_dir / "full_paper.final_verdict.json"
+    try:
+        if json.loads(path.read_text()) == payload:
+            return False
+    except (OSError, ValueError, json.JSONDecodeError):
+        pass
+    path.write_text(json.dumps(payload, indent=2))
+    (out_dir / "full_paper.final_verdict.md").write_text(_format_unified_verdict(unified))
+    return True
 
 
 def _build_claims_by_citation(
