@@ -13,7 +13,8 @@ import httpx
 import pytest
 
 from agent.sources.researka import (  # type: ignore[import-not-found]
-    RESEARKA_BASE,
+    CORPUS_SEARCH_PATH,
+    FACT_SEARCH_PATH,
     TOPIC_PAPERS_PATH,
     ResearkaClient,
     _topic_from_query,
@@ -133,40 +134,52 @@ async def test_search_returns_empty_on_non_array_response(
 
 @pytest.mark.asyncio
 async def test_search_sends_topic_token_and_method(with_token: str) -> None:
-    received: dict = {}
+    received: dict[str, dict] = {}
 
     def responder(request: httpx.Request) -> httpx.Response:
-        received["method"] = request.method
-        received["url"] = str(request.url)
-        received["headers"] = dict(request.headers)
-        received["body"] = json.loads(request.content)
+        path = request.url.path
+        received[path] = {
+            "method": request.method,
+            "headers": dict(request.headers),
+            "body": json.loads(request.content),
+        }
+        if path == CORPUS_SEARCH_PATH:
+            return httpx.Response(200, json={"established": [], "discovery": [], "semantic": []})
         return _ok_response([])
 
     async with _mock_client(responder) as client:
         await ResearkaClient().search(client, "berberine AND longevity", limit=8)
 
-    assert received["method"] == "POST"
-    assert received["url"] == RESEARKA_BASE + TOPIC_PAPERS_PATH
-    # Auth header sent
-    assert received["headers"].get("x-researka-token") == "test-token"
-    # Body: extracted topic + limit + include_facts=False
-    assert received["body"]["topic"] == "berberine"
-    assert received["body"]["limit"] == 8
-    assert received["body"]["include_facts"] is False
+    assert set(received) == {FACT_SEARCH_PATH, TOPIC_PAPERS_PATH, CORPUS_SEARCH_PATH}
+    assert received[TOPIC_PAPERS_PATH]["method"] == "POST"
+    assert received[TOPIC_PAPERS_PATH]["headers"].get("x-researka-token") == "test-token"
+    assert received[TOPIC_PAPERS_PATH]["body"]["topic"] == "berberine"
+    assert received[TOPIC_PAPERS_PATH]["body"]["limit"] == 8
+    assert received[TOPIC_PAPERS_PATH]["body"]["include_facts"] is True
+    assert received[FACT_SEARCH_PATH]["body"] == {
+        "query": "berberine AND longevity",
+        "top_k": 8,
+        "min_confidence": "high",
+        "numeric_only": True,
+    }
+    assert received[CORPUS_SEARCH_PATH]["body"]["established_k"] == 8
 
 
 @pytest.mark.asyncio
 async def test_search_caps_limit_at_50(with_token: str) -> None:
     """Defensive: API may not like huge limits. Adapter caps at 50."""
-    received: dict = {}
+    received: dict[str, dict] = {}
 
     def responder(request: httpx.Request) -> httpx.Response:
-        received["body"] = json.loads(request.content)
+        received[request.url.path] = json.loads(request.content)
+        if request.url.path == CORPUS_SEARCH_PATH:
+            return httpx.Response(200, json={"established": [], "discovery": [], "semantic": []})
         return _ok_response([])
 
     async with _mock_client(responder) as client:
         await ResearkaClient().search(client, "berberine", limit=10_000)
-    assert received["body"]["limit"] == 50
+    assert received[TOPIC_PAPERS_PATH]["limit"] == 50
+    assert received[FACT_SEARCH_PATH]["top_k"] == 50
 
 
 # ---- response normalization ----------------------------------------------
@@ -187,6 +200,22 @@ _SAMPLE_PAPER = {
     "authors": ["Smith J", "Doe A"],
     "cited_by_count": 17,
     "similarity_score": 0.91,
+}
+
+_SAMPLE_FACT = {
+    "paper_id": "paper-1",
+    "paper": {
+        "title": "Berberine improves metabolic markers",
+        "doi": "10.1234/fact.001",
+        "pmid": "111",
+        "publication_year": 2025,
+        "journal_name": "GeroScience",
+    },
+    "canonical_phrase": "Berberine reduced fasting glucose by 12%",
+    "numeric_value": 12,
+    "units": "%",
+    "source_tier": "tier1",
+    "validation": {"status": "canonical"},
 }
 
 
@@ -210,6 +239,131 @@ async def test_paper_hit_maps_to_raw_hit_correctly(with_token: str) -> None:
     assert h.venue == "Aging Cell"
     # URL prefers DOI
     assert h.url == "https://doi.org/10.1234/example.001"
+
+
+@pytest.mark.asyncio
+async def test_fact_search_hits_are_embedded_and_preferred(with_token: str) -> None:
+    def responder(request: httpx.Request) -> httpx.Response:
+        if request.url.path == FACT_SEARCH_PATH:
+            return _ok_response([_SAMPLE_FACT])
+        if request.url.path == CORPUS_SEARCH_PATH:
+            return httpx.Response(200, json={"established": [], "discovery": [], "semantic": []})
+        return _ok_response([{**_SAMPLE_PAPER, "doi": "10.1234/fact.001"}])
+
+    async with _mock_client(responder) as client:
+        hits = await ResearkaClient().search(client, "berberine glucose", limit=10)
+
+    assert hits[0].doi == "10.1234/fact.001"
+    assert "Berberine reduced fasting glucose by 12%" in hits[0].abstract
+    assert hits[0].raw["database_facts"][0]["source_tier"] == "tier1"
+    assert hits[0].raw["lane"] == "fact"
+
+
+@pytest.mark.asyncio
+async def test_three_source_duplicate_prefers_tier1_fact_hit(with_token: str) -> None:
+    """Same DOI from all paths keeps the stricter fact-backed record."""
+    plain = {**_SAMPLE_PAPER, "doi": "10.1234/fact.001"}
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        if request.url.path == FACT_SEARCH_PATH:
+            return _ok_response([_SAMPLE_FACT])
+        if request.url.path == TOPIC_PAPERS_PATH:
+            return _ok_response([{**plain, "facts": [{**_SAMPLE_FACT, "source_tier": "tier2"}]}])
+        return httpx.Response(
+            200,
+            json={"established": [plain], "discovery": [], "semantic": []},
+        )
+
+    async with _mock_client(responder) as client:
+        hits = await ResearkaClient().search(client, "berberine glucose", limit=10)
+
+    assert len(hits) == 1
+    assert hits[0].raw["lane"] == "fact"
+    assert hits[0].raw["database_facts"][0]["source_tier"] == "tier1"
+
+
+@pytest.mark.asyncio
+async def test_duplicate_prefers_topic_hit_with_more_facts(with_token: str) -> None:
+    """When no Tier 1 record exists, the fact-richer duplicate wins."""
+    facts = [
+        {**_SAMPLE_FACT, "source_tier": "tier2", "canonical_phrase": "First fact"},
+        {**_SAMPLE_FACT, "source_tier": "tier2", "canonical_phrase": "Second fact"},
+    ]
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        if request.url.path == FACT_SEARCH_PATH:
+            return _ok_response([])
+        if request.url.path == TOPIC_PAPERS_PATH:
+            return _ok_response([{**_SAMPLE_PAPER, "facts": facts}])
+        return httpx.Response(
+            200,
+            json={"established": [_SAMPLE_PAPER], "discovery": [], "semantic": []},
+        )
+
+    async with _mock_client(responder) as client:
+        hits = await ResearkaClient().search(client, "berberine", limit=10)
+
+    assert len(hits) == 1
+    assert hits[0].raw["lane"] == "topic"
+    assert len(hits[0].raw["database_facts"]) == 2
+
+
+@pytest.mark.asyncio
+async def test_partial_fact_and_topic_sources_still_return_corpus_hits(with_token: str) -> None:
+    """One dead source cannot blank the whole database adapter."""
+    corpus_only = {**_SAMPLE_PAPER, "doi": "10.1234/corpus.001"}
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        if request.url.path == FACT_SEARCH_PATH:
+            return httpx.Response(503, content=b"fact backend down")
+        if request.url.path == TOPIC_PAPERS_PATH:
+            return httpx.Response(200, content=b'{"wrong":"shape"}')
+        return httpx.Response(
+            200,
+            json={"established": [corpus_only], "discovery": [], "semantic": []},
+        )
+
+    async with _mock_client(responder) as client:
+        hits = await ResearkaClient().search(client, "berberine", limit=10)
+
+    assert len(hits) == 1
+    assert hits[0].doi == "10.1234/corpus.001"
+    assert hits[0].raw["lane"] == "established"
+
+
+@pytest.mark.asyncio
+async def test_empty_or_malformed_sources_return_empty_without_error(with_token: str) -> None:
+    """Missing paper metadata or empty lanes should fail closed."""
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        if request.url.path == FACT_SEARCH_PATH:
+            return _ok_response([{"canonical_phrase": "orphan fact"}])
+        if request.url.path == TOPIC_PAPERS_PATH:
+            return httpx.Response(200, content=json.dumps([{"title": ""}, "bad"]).encode())
+        return httpx.Response(200, json={"established": [], "semantic": []})
+
+    async with _mock_client(responder) as client:
+        hits = await ResearkaClient().search(client, "berberine", limit=10)
+
+    assert hits == []
+
+
+@pytest.mark.asyncio
+async def test_broad_corpus_search_lane_maps_to_raw_hit(with_token: str) -> None:
+    def responder(request: httpx.Request) -> httpx.Response:
+        if request.url.path == CORPUS_SEARCH_PATH:
+            return httpx.Response(200, json={
+                "established": [_SAMPLE_PAPER],
+                "discovery": [],
+                "semantic": [],
+            })
+        return _ok_response([])
+
+    async with _mock_client(responder) as client:
+        hits = await ResearkaClient().search(client, "berberine longevity", limit=10)
+
+    assert len(hits) == 1
+    assert hits[0].raw["lane"] == "established"
 
 
 @pytest.mark.asyncio
@@ -263,17 +417,15 @@ async def test_non_dict_records_are_skipped(with_token: str) -> None:
 
 
 @pytest.mark.asyncio
-async def test_results_truncated_to_caller_limit(with_token: str) -> None:
-    """Even if the API returns more than the caller asked for (e.g.
-    after our internal cap-at-50), the adapter respects the caller's
-    limit."""
+async def test_results_dedupe_before_limit(with_token: str) -> None:
+    """Repeated papers from multiple database lanes collapse to one hit."""
 
     def responder(request: httpx.Request) -> httpx.Response:
         return _ok_response([_SAMPLE_PAPER] * 30)
 
     async with _mock_client(responder) as client:
         hits = await ResearkaClient().search(client, "berberine", limit=5)
-    assert len(hits) == 5
+    assert len(hits) == 1
 
 
 @pytest.mark.asyncio

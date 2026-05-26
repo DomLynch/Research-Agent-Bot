@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime as dt
 import json
 import sys
 from pathlib import Path
@@ -14,6 +15,10 @@ import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # 
 def _write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload), encoding="utf-8")
+
+
+def _recent_start() -> str:
+    return (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat()
 
 
 def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool = False) -> None:
@@ -288,7 +293,7 @@ def test_preflight_recent_failure_does_not_block_publication_track(tmp_path: Pat
     _prior_run(tmp_path, "caloric_restriction", receipts=40, tensions=10, primary=2)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     _write_json(ledger_dir / "2026-05-24.json", {
-        "started_at": "2026-05-24T23:00:00+00:00",
+        "started_at": _recent_start(),
         "attempts": [{"topic": "caloric_restriction", "submitted": 0}],
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -306,7 +311,7 @@ def test_preflight_recent_failure_still_blocks_exploration_track(tmp_path: Path,
     _prior_run(tmp_path, "acarbose", receipts=40, tensions=10, primary=2)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     _write_json(ledger_dir / "2026-05-24.json", {
-        "started_at": "2026-05-24T23:00:00+00:00",
+        "started_at": _recent_start(),
         "attempts": [{"topic": "acarbose", "submitted": 0}],
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

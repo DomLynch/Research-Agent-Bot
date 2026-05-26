@@ -1,25 +1,9 @@
-"""Researka tier-2 facts adapter (POST /api/v1/papers/topic).
-
-Wraps the topic-papers endpoint of the internal researka-database API.
-The full surface (13 endpoints) is documented at `/openapi.json` —
-this adapter intentionally wires only the most synthesis-shaped one:
-`POST /api/v1/papers/topic`, which returns `PaperHit` objects that
-map cleanly to `RawHit` (title / abstract / year / doi / pmid /
-journal / pmcid).
-
-Auth: `X-Researka-Token` header from `RESEARKA_DATABASE_TOKEN` env var.
-Fail-soft: returns `[]` when the token is absent, the call fails, or
-the response is malformed (per existing adapter convention in
-`_base.safe_get_json`).
-
-Universal: the adapter extracts the first token of the query as the
-researka `topic` slug. No per-topic logic, no domain assumptions —
-works for biomedical, climate, materials, economics topics identically.
-"""
 from __future__ import annotations
 
+import asyncio
 import os
 import re
+from typing import Any
 
 import httpx
 
@@ -28,133 +12,156 @@ from agent.types import RawHit
 
 RESEARKA_BASE = "https://database.researka.org"
 TOPIC_PAPERS_PATH = "/api/v1/papers/topic"
-_TIMEOUT = 20.0
+FACT_SEARCH_PATH = "/api/v1/tier2/facts/search"
+CORPUS_SEARCH_PATH = "/api/v1/search"
+_FIRST_WORD_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_\-]+)")
 
 
 def _researka_token() -> str | None:
-    """Return `RESEARKA_DATABASE_TOKEN` from env, stripped. None when
-    unset → adapter fail-softs to zero hits."""
     tok = os.environ.get("RESEARKA_DATABASE_TOKEN")
     return tok.strip() if tok and tok.strip() else None
 
 
-_FIRST_WORD_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_\-]+)")
-
-
 def _topic_from_query(query: str) -> str:
-    """Extract a topic slug from a free-form aggregator query.
-
-    The aggregator passes topic-anchored queries like
-    `"berberine AND randomized trial AND metabolic syndrome"`. Researka
-    expects a single topic name in its `topic` field. We take the first
-    alphabetic token. Universal — no per-topic mapping table.
-    """
     m = _FIRST_WORD_RE.search(query)
     return m.group(1).lower() if m else clean_text(query, limit=64).lower()
 
 
 def _build_url(doi: str | None, pmid: str | None, pmcid: str | None) -> str:
-    """RawHit.url construction with deterministic fallbacks: prefer DOI,
-    then PubMed, then PMC, else empty. Matches the EuropePMC adapter."""
     if doi:
         return f"https://doi.org/{doi}"
     if pmid:
         return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
-    if pmcid:
-        pid = pmcid.lstrip("PMC").lstrip("pmc")
-        if pid:
-            return f"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{pid}/"
-    return ""
+    pid = pmcid.lstrip("PMC").lstrip("pmc") if pmcid else ""
+    return f"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{pid}/" if pid else ""
 
 
-def _hit_from_paper(record: dict, query: str) -> RawHit | None:
-    """Normalize a researka PaperHit dict → RawHit. Returns None when the
-    record lacks both a title and any identifier (defensive — bad data
-    shouldn't pollute the aggregator)."""
+def _fact_phrase(fact: dict[str, Any]) -> str:
+    phrase = fact.get("canonical_phrase")
+    if not isinstance(phrase, str) or not phrase.strip():
+        return ""
+    value = fact.get("numeric_value")
+    units = clean_text(fact.get("units"), limit=40)
+    suffix = f" [{value} {units or ''}]".rstrip() if value is not None else ""
+    tier = fact.get("source_tier") or "tier2"
+    status = (fact.get("validation") or {}).get("status")
+    mark = f"{tier}:{status}" if status else str(tier)
+    return f"{phrase.strip()} ({mark}){suffix}"
+
+
+def _facts_text(facts: Any) -> str:
+    phrases = [_fact_phrase(f) for f in (facts if isinstance(facts, list) else []) if isinstance(f, dict)]
+    phrases = [p for p in phrases if p]
+    return " Database facts: " + " | ".join(phrases[:8]) if phrases else ""
+
+
+def _paper_from_fact(fact: dict[str, Any]) -> dict[str, Any] | None:
+    paper = fact.get("paper")
+    phrase = _fact_phrase(fact)
+    if not isinstance(paper, dict) or not phrase:
+        return None
+    return {**paper, "id": fact.get("paper_id"), "abstract": f"Database fact: {phrase}", "facts": [fact]}
+
+
+def _hit_from_paper(record: dict[str, Any], query: str, *, lane: str = "") -> RawHit | None:
     title = clean_text(record.get("title"), limit=400)
     if not title:
         return None
-    abstract = clean_text(record.get("abstract"), limit=4000)
-    # Live API uses `publication_year`/`journal_name`; older fixtures
-    # used `year`/`journal`. Accept either — prefer the live names.
-    year_raw = record.get("publication_year")
-    if year_raw is None:
-        year_raw = record.get("year")
-    year: int | None = int(year_raw) if isinstance(year_raw, int) else None
     doi = normalize_doi(record.get("doi"))
     pmid_raw = record.get("pmid")
-    pmid = str(pmid_raw).strip() if pmid_raw not in (None, "") else None
     pmcid_raw = record.get("pmcid")
+    pmid = str(pmid_raw).strip() if pmid_raw not in (None, "") else None
     pmcid = str(pmcid_raw).strip() if pmcid_raw not in (None, "") else None
-    venue = clean_text(
-        record.get("journal_name") or record.get("journal"), limit=200,
-    )
+    facts = record.get("facts") if isinstance(record.get("facts"), list) else []
+    abstract = clean_text(record.get("abstract"), limit=4000)
+    abstract = clean_text(abstract + _facts_text(facts), limit=5000)
     return RawHit(
         source="researka",
         title=title,
         abstract=abstract,
-        year=year,
+        year=record.get("publication_year") if isinstance(record.get("publication_year"), int) else record.get("year") if isinstance(record.get("year"), int) else None,
         url=_build_url(doi, pmid, pmcid),
         doi=doi,
         pmid=pmid,
-        venue=venue or None,
+        venue=clean_text(record.get("journal_name") or record.get("journal"), limit=200) or None,
         raw={
             "query": clean_text(query, limit=300),
+            "paper_id": record.get("id") or record.get("paper_id"),
             "pmcid": pmcid,
+            "lane": lane or record.get("lane"),
             "cited_by_count": record.get("cited_by_count"),
+            "quality_score": record.get("quality_score"),
+            "database_facts": facts,
         },
     )
 
 
-class ResearkaClient:
-    """Tier-2 facts adapter for the internal researka-database API."""
+def _key(hit: RawHit) -> str:
+    if hit.doi:
+        return f"doi:{hit.doi}"
+    if hit.pmid:
+        return f"pmid:{hit.pmid}"
+    if hit.raw.get("paper_id"):
+        return f"paper:{hit.raw['paper_id']}"
+    return f"title:{hit.title.lower()[:120]}"
 
+
+def _score(hit: RawHit) -> tuple[int, int, int]:
+    facts = hit.raw.get("database_facts") or []
+    return (int(any(f.get("source_tier") == "tier1" for f in facts if isinstance(f, dict))), len(facts), len(hit.abstract))
+
+
+def _merge(hits: list[RawHit], limit: int) -> list[RawHit]:
+    out: dict[str, RawHit] = {}
+    for hit in hits:
+        key = _key(hit)
+        if key not in out or _score(hit) > _score(out[key]):
+            out[key] = hit
+    return sorted(out.values(), key=_score, reverse=True)[:limit]
+
+
+class ResearkaClient:
     name = "researka"
 
-    async def search(
-        self,
-        client: httpx.AsyncClient,
-        query: str,
-        *,
-        limit: int,
-    ) -> list[RawHit]:
-        token = _researka_token()
-        if not token:
-            return []  # fail-soft when unauthenticated
-        topic = _topic_from_query(query)
-        if not topic:
-            return []
-        body = {
-            "topic": topic,
-            "limit": max(1, min(int(limit), 50)),
-            "include_facts": False,
-        }
+    async def _post(self, client: httpx.AsyncClient, token: str, path: str, body: dict[str, Any]) -> Any:
         try:
             resp = await client.post(
-                RESEARKA_BASE + TOPIC_PAPERS_PATH,
+                RESEARKA_BASE + path,
                 json=body,
-                headers={
-                    "X-Researka-Token": token,
-                    "User-Agent": USER_AGENT,
-                    "Accept": "application/json",
-                },
-                timeout=_TIMEOUT,
+                headers={"X-Researka-Token": token, "User-Agent": USER_AGENT, "Accept": "application/json"},
+                timeout=20.0,
             )
-        except httpx.HTTPError:
+            return resp.json() if resp.status_code == 200 else None
+        except (httpx.HTTPError, ValueError):
+            return None
+
+    async def search(self, client: httpx.AsyncClient, query: str, *, limit: int) -> list[RawHit]:
+        token = _researka_token()
+        topic = _topic_from_query(query)
+        if not token or not topic:
             return []
-        if resp.status_code != 200:
-            return []
-        try:
-            data = resp.json()
-        except ValueError:
-            return []
-        if not isinstance(data, list):
-            return []
+        cap = max(1, min(int(limit), 50))
+        facts, papers, corpus = await asyncio.gather(
+            self._post(client, token, FACT_SEARCH_PATH, {
+                "query": query, "top_k": cap, "min_confidence": "high", "numeric_only": True,
+            }),
+            self._post(client, token, TOPIC_PAPERS_PATH, {
+                "topic": topic, "limit": cap, "include_facts": True,
+                "facts_per_paper": 8, "min_confidence": "high",
+            }),
+            self._post(client, token, CORPUS_SEARCH_PATH, {
+                "query": query, "established_k": min(cap, 30),
+                "discovery_k": min(cap // 2, 25), "semantic_k": min(cap, 30),
+            }),
+        )
         hits: list[RawHit] = []
-        for record in data:
-            if not isinstance(record, dict):
-                continue
-            hit = _hit_from_paper(record, query)
-            if hit is not None:
-                hits.append(hit)
-        return hits[:limit]
+        if isinstance(facts, list):
+            hits += [h for f in facts if isinstance(f, dict) for p in [_paper_from_fact(f)] if p for h in [_hit_from_paper(p, query, lane="fact")] if h]
+        if isinstance(papers, list):
+            hits += [h for p in papers if isinstance(p, dict) for h in [_hit_from_paper(p, query, lane="topic")] if h]
+        if isinstance(corpus, dict):
+            for lane in ("established", "discovery", "semantic"):
+                rows = corpus.get(lane)
+                if isinstance(rows, list):
+                    hits += [h for p in rows if isinstance(p, dict) for h in [_hit_from_paper(p, query, lane=lane)] if h]
+        return _merge(hits, cap)
