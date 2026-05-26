@@ -337,7 +337,7 @@ def run_cycle(
                 break
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
             out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
-            ledger.update({"topic": selected, "out_dir": out_dir.name})
+            ledger.update({"topic": selected, "out_dir": out_dir.name, "attempted_topic": selected, "attempted_run": out_dir.name})
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"
                 break
@@ -361,7 +361,7 @@ def run_cycle(
                 if revise_attempt > 1:
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
-                    ledger["out_dir"] = out_dir.name
+                    ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})
                 return_code = _run_synthesis(selected, out_dir, dry_run=synthesis_dry_run, timeout=timeout)
                 bridge: dict[str, Any] = {}
                 if return_code == 0:
@@ -372,20 +372,33 @@ def run_cycle(
                         remote_loader=(lambda: (remote_seen, None)) if submit else None,
                     )
                 gate_status = "synthesis_failed" if return_code != 0 else _current_gate_status(bridge, out_dir.name)
+                candidate_obj = bridge.get("candidate")
+                candidate: dict[str, Any] = candidate_obj if isinstance(candidate_obj, dict) else {}
+                submitted_any = int(bridge.get("submitted") or 0)
+                submitted_run = str(candidate.get("run") or "")
+                submitted_topic = str(candidate.get("topic") or "")
+                submitted_current = int(bool(submitted_any) and (not submitted_run or submitted_run == out_dir.name))
+                submit_status = bridge.get("status")
+                if submitted_any and not submitted_current:
+                    submit_status = "current_run_not_submitted"
                 attempt = {
                     "topic": selected,
                     "out_dir": out_dir.name,
                     "revise_attempt": revise_attempt,
                     "synthesis_return_code": return_code,
-                    "submit_status": bridge.get("status"),
+                    "submit_status": submit_status,
+                    "bridge_status": bridge.get("status"),
                     "gate_status": gate_status,
                     "failure_class": _failure_class(gate_status),
-                    "submitted": int(bridge.get("submitted") or 0),
+                    "submitted": submitted_current,
                 }
+                if submitted_any:
+                    attempt.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
+                    ledger.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                 ledger["attempts"].append(attempt)
                 ledger["synthesis_return_code"] = return_code
                 ledger["submit_bridge"] = bridge
-                ledger["submitted"] = attempt["submitted"]
+                ledger["submitted"] = submitted_any
                 if gate_status and gate_status != "eligible":
                     ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 if return_code != 0:
@@ -428,7 +441,8 @@ def main(argv: list[str] | None = None) -> int:
         max_revise_attempts=args.max_revise_attempts,
     )
     print(
-        f"[daily-v3-cycle] status={ledger['status']} topic={ledger.get('topic', '-')} "
+        f"[daily-v3-cycle] status={ledger['status']} attempted_topic={ledger.get('attempted_topic', ledger.get('topic', '-'))} "
+        f"submitted_topic={ledger.get('submitted_topic', '-')} "
         f"submitted={ledger['submitted']} published={ledger['published']}"
     )
     failures = {"synthesis_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}

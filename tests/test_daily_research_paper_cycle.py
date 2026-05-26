@@ -140,6 +140,52 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
     assert ledger["published"] == 0
 
 
+def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "acarbose")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    runs: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+        runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        return {
+            "status": "submitted_to_researka",
+            "submitted": 1,
+            "published": 0,
+            "candidate": {"topic": "rapamycin", "run": "synthesis-rapamycin-v06-DAILY-R2"},
+            "considered": [
+                {"run": runs[-1], "status": "audit_not_all_green"},
+                {"run": "synthesis-rapamycin-v06-DAILY-R2", "status": "eligible"},
+            ],
+        }
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        max_revise_attempts=1,
+    )
+
+    attempt = ledger["attempts"][0]
+    assert ledger["submitted"] == 1
+    assert ledger["attempted_topic"] == "acarbose"
+    assert ledger["submitted_topic"] == "rapamycin"
+    assert attempt["topic"] == "acarbose"
+    assert attempt["gate_status"] == "audit_not_all_green"
+    assert attempt["submitted"] == 0
+    assert attempt["submit_status"] == "current_run_not_submitted"
+    assert attempt["bridge_status"] == "submitted_to_researka"
+
+
 def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "creatine")
