@@ -1,0 +1,33 @@
+topic = "sglt2_inhibitors"
+class_ = "cardiorenal_metabolic_drug"
+target_journal = "GeroScience"
+aliases = ["SGLT2 inhibitor", "SGLT2 inhibitors", "sodium glucose cotransporter 2 inhibitor", "empagliflozin", "dapagliflozin", "canagliflozin", "ertugliflozin"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiovascular_outcomes", "renal_outcomes", "frailty"]
+special_rules = ["Separate diabetes, heart failure, kidney disease, and primary prevention populations.", "Cardiorenal outcome benefits are not direct anti-aging evidence without frailty or survival framing.", "Genital infection, volume depletion, ketoacidosis, and amputation signals require explicit safety treatment."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["SGLT2 inhibitor", "empagliflozin", "dapagliflozin", "canagliflozin", "ertugliflozin", "gliflozin"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["SGLT2 inhibitor AND aging AND older adults", "empagliflozin AND cardiovascular outcomes AND mortality", "dapagliflozin AND kidney outcomes AND trial", "SGLT2 inhibitor AND frailty", "SGLT2 inhibitor AND heart failure AND meta-analysis"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["SGLT2 inhibitor", "SGLT2 inhibitors", "empagliflozin", "dapagliflozin", "canagliflozin", "ertugliflozin", "gliflozin"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "mortality", "cardiovascular", "heart failure", "kidney disease", "frailty", "diabetes"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "case report only"]
+date_from = 2010
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["cardiorenal mechanism", "ketone metabolism", "heart failure trial history", "kidney aging", "metabolic health"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+heart_failure = "lower_is_better"
+renal_decline = "lower_is_better"
+hba1c = "lower_is_better"
+adverse_events = "lower_is_better"

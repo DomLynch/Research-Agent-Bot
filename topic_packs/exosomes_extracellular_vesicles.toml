@@ -1,0 +1,31 @@
+topic = "exosomes_extracellular_vesicles"
+class_ = "regenerative_biologic"
+target_journal = "GeroScience"
+aliases = ["exosomes", "extracellular vesicles", "EVs", "MSC exosomes", "stem cell exosomes", "exosome therapy"]
+expected_evidence_slots = ["human_trials", "human_observational", "human_mechanism", "preclinical_mechanism", "safety_tolerability", "manufacturing_quality", "skin_aging", "immune_aging"]
+special_rules = ["Separate cell-derived exosome products from general extracellular-vesicle biomarkers.", "Manufacturing, dose, source tissue, purity, and potency assays are evidence-critical.", "Skin or orthopedic endpoints should not be generalized to systemic anti-aging claims."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["exosomes", "extracellular vesicles", "EVs", "MSC exosomes", "stem cell exosomes", "exosome therapy"]
+placebo_arm_synonyms = ["placebo", "vehicle", "sham", "control", "usual care"]
+corpus_search_queries = ["exosomes AND aging AND human", "extracellular vesicles AND skin aging", "MSC exosomes AND clinical trial", "exosome therapy AND safety", "extracellular vesicles AND immune aging"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["exosomes", "extracellular vesicles", "EVs", "MSC exosomes", "stem cell exosomes", "exosome therapy"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "regeneration", "skin aging", "immune aging", "inflammation", "safety", "clinical trial"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review", "preclinical study"]
+exclude_terms = ["cancer biomarker only", "diagnostic biomarker only", "animal only", "in vitro only"]
+date_from = 2010
+languages = ["English"]
+
+[retrieval.background]
+allow = ["extracellular vesicle biology", "MSC paracrine mechanism", "skin regeneration", "immunomodulation", "manufacturing quality"]
+
+[endpoint_polarity]
+inflammation = "lower_is_better"
+skin_quality = "higher_is_better"
+immune_function = "higher_is_better"
+adverse_events = "lower_is_better"

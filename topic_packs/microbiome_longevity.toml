@@ -1,0 +1,31 @@
+topic = "microbiome_longevity"
+class_ = "microbiome_intervention"
+target_journal = "GeroScience"
+aliases = ["microbiome longevity", "gut microbiome aging", "gut-aging axis", "microbiota aging", "postbiotics", "probiotics aging"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "preclinical_mechanism", "inflammation", "immune_aging", "metabolites"]
+special_rules = ["Separate microbiome composition associations from intervention evidence.", "Do not treat animal fecal-transfer findings as direct human longevity evidence.", "SCFA, inflammation, and immune markers are surrogate endpoints unless tied to function."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["microbiome", "gut microbiome", "microbiota", "probiotic", "postbiotic", "prebiotic", "fecal microbiota transplant"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["gut microbiome AND aging AND human", "microbiome AND longevity AND cohort", "probiotic AND older adults AND inflammation", "postbiotic AND aging AND trial", "fecal microbiota transplant AND aging"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["gut microbiome", "microbiome", "microbiota", "postbiotics", "probiotics", "prebiotics", "fecal microbiota transplant"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "inflammation", "immune aging", "metabolites", "frailty", "cognition", "sarcopenia"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "infant microbiome only", "pediatric only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["gut-aging axis", "SCFA biology", "immune aging", "microbial metabolites", "barrier function"]
+
+[endpoint_polarity]
+inflammation = "lower_is_better"
+frailty = "lower_is_better"
+microbiome_diversity = "higher_is_better"
+immune_function = "higher_is_better"

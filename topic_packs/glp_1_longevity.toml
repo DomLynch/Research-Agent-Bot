@@ -1,0 +1,34 @@
+topic = "glp_1_longevity"
+class_ = "incretin_drug"
+target_journal = "GeroScience"
+aliases = ["GLP-1 longevity", "GLP-1 receptor agonist", "semaglutide", "tirzepatide", "liraglutide", "dulaglutide", "incretin therapy", "Ozempic", "Wegovy", "Mounjaro", "Zepbound"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiovascular_outcomes", "weight_loss", "inflammation", "lean_mass"]
+special_rules = ["Aging claims are indirect unless trials measure aging, frailty, disability, or hard longevity endpoints.", "Separate weight loss benefits from muscle loss and frailty tradeoffs.", "Tirzepatide is dual GIP/GLP-1 and should not be described as pure GLP-1."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["GLP-1", "semaglutide", "tirzepatide", "liraglutide", "dulaglutide", "exenatide", "incretin"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["GLP-1 receptor agonist AND aging AND human", "semaglutide AND longevity AND healthspan", "tirzepatide AND cardiovascular outcomes AND trial", "GLP-1 AND inflammation AND older adults", "semaglutide AND lean mass AND sarcopenia"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["GLP-1 receptor agonist", "GLP-1 RA", "semaglutide", "liraglutide", "dulaglutide", "exenatide", "tirzepatide", "incretin"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "frailty", "sarcopenia", "cardiovascular", "mortality", "inflammation", "cognition", "lean mass"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["pediatric only", "pregnancy only", "animal only", "in vitro only", "case report only"]
+date_from = 2010
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["incretin mechanism", "cardiovascular outcome trials", "obesity pharmacology", "lean mass tradeoff", "inflammation mechanism"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+inflammation = "lower_is_better"
+fat_mass = "lower_is_better"
+lean_mass_loss = "lower_is_better"
+physical_function = "higher_is_better"

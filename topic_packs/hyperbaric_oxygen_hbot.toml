@@ -1,0 +1,32 @@
+topic = "hyperbaric_oxygen_hbot"
+class_ = "device_procedural_intervention"
+target_journal = "GeroScience"
+aliases = ["hyperbaric oxygen", "HBOT", "hyperbaric oxygen therapy", "hyperbaric treatment", "oxygen therapy"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "telomeres", "senescence", "cognition"]
+special_rules = ["Separate approved wound/radiation indications from anti-aging clinic claims.", "Telomere and senescence-marker changes are surrogate endpoints.", "Barotrauma, oxygen toxicity, seizure risk, and protocol intensity must be explicit."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["hyperbaric oxygen", "HBOT", "hyperbaric oxygen therapy", "hyperbaric treatment"]
+placebo_arm_synonyms = ["sham", "normobaric oxygen", "control", "usual care"]
+corpus_search_queries = ["hyperbaric oxygen therapy AND aging", "HBOT AND telomere AND senescence", "hyperbaric oxygen AND cognition AND older adults", "HBOT AND safety AND randomized trial", "hyperbaric oxygen AND anti-aging"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["hyperbaric oxygen", "HBOT", "hyperbaric oxygen therapy", "hyperbaric treatment", "oxygen therapy"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "telomere", "senescence", "cognition", "brain injury", "safety", "clinical trial"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "diving medicine only", "acute carbon monoxide only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["oxygen biology", "telomere controversy", "senescence biomarkers", "neuroplasticity", "barotrauma safety"]
+
+[endpoint_polarity]
+senescence = "lower_is_better"
+telomere_length = "higher_is_better"
+cognition = "higher_is_better"
+adverse_events = "lower_is_better"

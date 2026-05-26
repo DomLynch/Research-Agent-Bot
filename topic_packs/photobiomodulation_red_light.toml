@@ -1,0 +1,31 @@
+topic = "photobiomodulation_red_light"
+class_ = "device_light_intervention"
+target_journal = "GeroScience"
+aliases = ["photobiomodulation", "red light therapy", "near infrared light", "low-level laser therapy", "LLLT", "PBM"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "skin_aging", "inflammation", "mitochondrial_function"]
+special_rules = ["Separate red light, near-infrared, laser, and LED protocols.", "Device dose, wavelength, irradiance, duration, and treatment site must be tracked.", "Skin, pain, cognition, and systemic anti-aging claims are separate lanes."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["photobiomodulation", "red light therapy", "near infrared", "low-level laser therapy", "LLLT", "PBM"]
+placebo_arm_synonyms = ["sham", "placebo", "control", "usual care"]
+corpus_search_queries = ["photobiomodulation AND aging AND human", "red light therapy AND skin aging AND randomized", "near infrared light AND mitochondrial function", "low-level laser therapy AND inflammation AND trial", "photobiomodulation AND cognition AND older adults"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["photobiomodulation", "red light therapy", "near infrared light", "low-level laser therapy", "LLLT", "PBM", "LED therapy"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "skin aging", "mitochondrial function", "inflammation", "cognition", "recovery", "safety"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "dental orthodontic only", "photodynamic cancer therapy only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["cytochrome c oxidase", "mitochondrial photobiology", "skin collagen", "neuroinflammation", "device dosing"]
+
+[endpoint_polarity]
+skin_quality = "higher_is_better"
+inflammation = "lower_is_better"
+mitochondrial_function = "higher_is_better"
+adverse_events = "lower_is_better"

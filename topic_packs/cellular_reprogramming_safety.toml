@@ -1,0 +1,31 @@
+topic = "cellular_reprogramming_safety"
+class_ = "gene_cell_therapy_safety"
+target_journal = "GeroScience"
+aliases = ["reprogramming safety", "cellular reprogramming safety", "Yamanaka factor safety", "OSK safety", "OSKM safety", "teratoma risk", "cell identity loss"]
+expected_evidence_slots = ["human_mechanism", "preclinical_safety", "ongoing_trials", "safety_tolerability", "cancer_risk", "delivery_platform", "cell_identity"]
+special_rules = ["This is a safety-first evidence map, not an efficacy paper.", "Cancer, teratoma, off-target delivery, immune reaction, and cell-identity loss are primary outcomes.", "Preclinical efficacy cannot offset unresolved human safety uncertainty."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["cellular reprogramming", "Yamanaka factors", "OSK", "OSKM", "partial reprogramming", "reprogramming therapy"]
+placebo_arm_synonyms = ["control", "vehicle", "sham", "untreated"]
+corpus_search_queries = ["cellular reprogramming AND safety AND cancer risk", "Yamanaka factors AND teratoma risk", "partial reprogramming AND cell identity", "OSK AND delivery AND safety", "epigenetic reprogramming AND adverse events"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["cellular reprogramming safety", "reprogramming safety", "Yamanaka factor safety", "OSK safety", "OSKM safety", "teratoma risk", "cell identity loss"]
+scope_terms = ["aging", "gene therapy", "delivery", "cancer risk", "tumorigenesis", "teratoma", "cell identity", "immune response", "toxicity", "clinical trial"]
+evidence_types = ["clinical trial", "phase 1", "preclinical study", "review", "systematic review", "safety study"]
+exclude_terms = ["full iPSC generation only", "embryology only", "developmental biology only"]
+date_from = 2010
+languages = ["English"]
+
+[retrieval.background]
+allow = ["tumorigenesis mechanism", "viral delivery safety", "cell identity biology", "transient expression", "immune safety"]
+
+[endpoint_polarity]
+cancer_risk = "lower_is_better"
+teratoma = "lower_is_better"
+cell_identity_loss = "lower_is_better"
+immune_response = "lower_is_better"

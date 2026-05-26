@@ -1,0 +1,32 @@
+topic = "therapeutic_plasma_exchange"
+class_ = "procedural_intervention"
+target_journal = "GeroScience"
+aliases = ["therapeutic plasma exchange", "TPE", "plasma exchange", "plasmapheresis", "plasma dilution", "albumin replacement"]
+expected_evidence_slots = ["human_trials", "human_observational", "human_mechanism", "safety_tolerability", "dosing_regimen", "biomarker_response", "inflammation", "frailty"]
+special_rules = ["Separate standard disease indications from anti-aging plasma-dilution claims.", "Biomarker changes are surrogate endpoints unless tied to clinical function.", "Procedure risk, anticoagulation, albumin replacement, and access complications are central."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["therapeutic plasma exchange", "TPE", "plasmapheresis", "plasma dilution", "albumin replacement"]
+placebo_arm_synonyms = ["sham", "control", "usual care", "standard care"]
+corpus_search_queries = ["therapeutic plasma exchange AND aging", "plasmapheresis AND biomarkers AND aging", "plasma dilution AND rejuvenation", "therapeutic plasma exchange AND inflammation", "plasma exchange AND older adults AND safety"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["therapeutic plasma exchange", "TPE", "plasma exchange", "plasmapheresis", "plasma dilution", "albumin replacement"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "biomarkers", "inflammation", "frailty", "rejuvenation", "safety", "clinical trial"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["acute autoimmune disease only", "pediatric only", "case report only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["plasma dilution mechanism", "inflammatory proteome", "parabiosis history", "albumin exchange physiology"]
+
+[endpoint_polarity]
+inflammation = "lower_is_better"
+frailty = "lower_is_better"
+biological_age = "lower_is_better"
+adverse_events = "lower_is_better"

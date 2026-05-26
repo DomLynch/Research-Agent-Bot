@@ -1,0 +1,31 @@
+topic = "mitochondrial_peptides"
+class_ = "mitochondrial_therapy"
+target_journal = "GeroScience"
+aliases = ["mitochondrial peptides", "MOTS-c", "humanin", "SS-31", "elamipretide", "mitochondria-derived peptides", "MDPs"]
+expected_evidence_slots = ["human_trials", "human_observational", "human_mechanism", "preclinical_mechanism", "safety_tolerability", "dosing_regimen", "mitochondrial_function", "muscle_function"]
+special_rules = ["Separate MOTS-c, humanin, and elamipretide; they are not interchangeable.", "Mitochondrial biomarkers are surrogate endpoints unless tied to function.", "Disease trials should be treated as indirect for general aging claims."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["MOTS-c", "humanin", "SS-31", "elamipretide", "mitochondrial peptide", "mitochondria-derived peptide"]
+placebo_arm_synonyms = ["placebo", "control", "vehicle", "usual care"]
+corpus_search_queries = ["MOTS-c AND aging AND human", "humanin AND aging AND cognition", "elamipretide AND mitochondrial disease AND trial", "SS-31 AND aging AND muscle", "mitochondria-derived peptides AND longevity"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["mitochondrial peptides", "MOTS-c", "humanin", "SS-31", "elamipretide", "mitochondria-derived peptides", "MDPs"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "mitochondrial function", "muscle function", "exercise", "metabolic health", "cognition", "safety"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review", "preclinical study"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "mitochondrial disease only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["mitochondrial signaling", "exercise mimicry", "oxidative phosphorylation", "mitochondrial dysfunction", "preclinical aging"]
+
+[endpoint_polarity]
+mitochondrial_function = "higher_is_better"
+muscle_function = "higher_is_better"
+oxidative_stress = "lower_is_better"
+adverse_events = "lower_is_better"

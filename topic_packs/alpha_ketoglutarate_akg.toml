@@ -1,0 +1,32 @@
+topic = "alpha_ketoglutarate_akg"
+class_ = "nutritional_supplement"
+target_journal = "GeroScience"
+aliases = ["alpha-ketoglutarate", "alpha ketoglutarate", "AKG", "Ca-AKG", "calcium alpha-ketoglutarate", "Rejuvant"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "preclinical_lifespan", "meta_analysis", "safety_tolerability", "biological_age", "dosing_regimen"]
+special_rules = ["Separate calcium AKG supplement claims from metabolic alpha-ketoglutarate biology.", "Biological-age clock changes are surrogate endpoints, not clinical longevity endpoints.", "Preclinical lifespan extension is background unless human outcomes align."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["alpha-ketoglutarate", "AKG", "Ca-AKG", "calcium alpha-ketoglutarate", "Rejuvant"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["alpha-ketoglutarate AND aging AND human", "calcium alpha-ketoglutarate AND biological age", "AKG AND longevity AND trial", "alpha ketoglutarate AND epigenetic clock", "Ca-AKG AND safety AND human"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["alpha-ketoglutarate", "alpha ketoglutarate", "AKG", "Ca-AKG", "calcium alpha-ketoglutarate", "Rejuvant"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "biological age", "epigenetic clock", "inflammation", "metabolism", "frailty", "mitochondrial function"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "cancer metabolism only", "pediatric only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["TCA cycle biology", "epigenetic regulation", "preclinical lifespan", "inflammation mechanism", "stem-cell metabolism"]
+
+[endpoint_polarity]
+biological_age = "lower_is_better"
+inflammation = "lower_is_better"
+frailty = "lower_is_better"
+physical_function = "higher_is_better"
+adverse_events = "lower_is_better"

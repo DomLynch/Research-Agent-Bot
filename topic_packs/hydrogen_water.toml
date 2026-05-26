@@ -1,0 +1,32 @@
+topic = "hydrogen_water"
+class_ = "nutritional_wellness_intervention"
+target_journal = "GeroScience"
+aliases = ["hydrogen water", "molecular hydrogen water", "hydrogen-rich water", "H2 water", "molecular hydrogen"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "oxidative_stress", "inflammation", "metabolic_health"]
+special_rules = ["Separate hydrogen-rich water from inhaled hydrogen gas.", "Antioxidant biomarkers are surrogate endpoints unless tied to clinical function.", "Small sports or acute studies should not be generalized to longevity."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["hydrogen water", "molecular hydrogen water", "hydrogen-rich water", "H2 water", "molecular hydrogen"]
+placebo_arm_synonyms = ["placebo", "control water", "regular water", "usual care"]
+corpus_search_queries = ["hydrogen water AND aging AND human", "hydrogen-rich water AND oxidative stress AND randomized", "molecular hydrogen water AND inflammation", "hydrogen water AND metabolic syndrome AND trial", "hydrogen water AND safety AND human"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["hydrogen water", "molecular hydrogen water", "hydrogen-rich water", "H2 water", "molecular hydrogen"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "oxidative stress", "inflammation", "metabolic health", "exercise", "cognition", "safety"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["hydrogen gas inhalation only", "animal only", "in vitro only", "fuel cell only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["molecular hydrogen biology", "oxidative stress mechanism", "antioxidant signaling", "inflammation biology"]
+
+[endpoint_polarity]
+oxidative_stress = "lower_is_better"
+inflammation = "lower_is_better"
+metabolic_markers = "better_is_better"
+adverse_events = "lower_is_better"

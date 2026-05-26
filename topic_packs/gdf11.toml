@@ -1,0 +1,31 @@
+topic = "gdf11"
+class_ = "rejuvenation_factor"
+target_journal = "GeroScience"
+aliases = ["GDF11", "growth differentiation factor 11", "rejuvenation factor", "myostatin homolog"]
+expected_evidence_slots = ["human_observational", "human_mechanism", "preclinical_mechanism", "contradiction_map", "safety_tolerability", "muscle_function", "cardiac_function", "cognition"]
+special_rules = ["This is a contradiction-map topic; opposing findings must be surfaced, not smoothed over.", "Separate GDF11 from myostatin/GDF8 assay cross-reactivity.", "Preclinical rejuvenation claims must not be generalized to humans without direct evidence."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["GDF11", "growth differentiation factor 11", "recombinant GDF11", "rejuvenation factor"]
+placebo_arm_synonyms = ["control", "vehicle", "placebo", "usual care"]
+corpus_search_queries = ["GDF11 AND aging AND human", "growth differentiation factor 11 AND rejuvenation", "GDF11 AND cardiac aging", "GDF11 AND muscle aging controversy", "GDF11 AND myostatin assay"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["GDF11", "growth differentiation factor 11", "rejuvenation factor", "recombinant GDF11"]
+scope_terms = ["aging", "rejuvenation", "longevity", "healthspan", "cardiac aging", "muscle aging", "cognition", "controversy", "myostatin", "human"]
+evidence_types = ["cohort study", "observational study", "preclinical study", "review", "systematic review", "clinical trial"]
+exclude_terms = ["developmental biology only", "embryology only", "cancer only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["parabiosis history", "GDF11 controversy", "myostatin assay cross-reactivity", "cardiac aging mechanism", "muscle biology"]
+
+[endpoint_polarity]
+muscle_function = "higher_is_better"
+cardiac_function = "higher_is_better"
+cognition = "higher_is_better"
+adverse_events = "lower_is_better"

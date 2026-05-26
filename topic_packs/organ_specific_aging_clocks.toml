@@ -1,0 +1,31 @@
+topic = "organ_specific_aging_clocks"
+class_ = "biomarker_platform"
+target_journal = "GeroScience"
+aliases = ["organ aging clock", "organ-specific aging clock", "brain age", "immune age", "cardiovascular age", "liver age", "proteomic organ age"]
+expected_evidence_slots = ["human_observational", "human_mechanism", "biomarker_validation", "mortality_prediction", "disease_prediction", "measurement_error"]
+special_rules = ["Separate organ-specific risk prediction from whole-body biological age claims.", "Organ age estimates are biomarkers, not direct clinical endpoints.", "Do not merge brain, immune, cardiovascular, renal, and liver clocks without qualification."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["organ aging clock", "brain age", "immune age", "cardiovascular age", "proteomic organ age", "organ-specific clock"]
+placebo_arm_synonyms = ["control", "usual care", "baseline", "comparison"]
+corpus_search_queries = ["organ aging clock AND human", "proteomic organ age AND mortality", "brain age AND aging AND cohort", "immune age AND longevity", "cardiovascular age clock AND disease prediction"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["organ aging clock", "organ-specific aging clock", "brain age", "immune age", "cardiovascular age", "liver age", "proteomic organ age"]
+scope_terms = ["aging", "older adults", "mortality", "disease prediction", "biological age", "healthspan", "cognition", "immune aging", "cardiovascular risk"]
+evidence_types = ["cohort study", "observational study", "clinical trial", "meta-analysis", "systematic review", "validation study"]
+exclude_terms = ["animal only", "in vitro only", "forensic age estimation only", "pediatric only"]
+date_from = 2015
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["proteomic aging", "brain age modeling", "immune aging", "multi-organ aging", "biomarker validation"]
+
+[endpoint_polarity]
+organ_age_gap = "lower_is_better"
+mortality_risk = "lower_is_better"
+prediction_accuracy = "higher_is_better"

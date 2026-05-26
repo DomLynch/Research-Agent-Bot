@@ -1,0 +1,31 @@
+topic = "partial_epigenetic_reprogramming"
+class_ = "gene_cell_therapy"
+target_journal = "GeroScience"
+aliases = ["partial reprogramming", "partial epigenetic reprogramming", "Yamanaka factors", "OSK", "OSKM", "cellular rejuvenation", "epigenetic rejuvenation"]
+expected_evidence_slots = ["preclinical_lifespan", "human_mechanism", "ongoing_trials", "safety_tolerability", "delivery_platform", "cancer_risk", "cell_identity"]
+special_rules = ["Most evidence is preclinical; do not imply human geroprotection unless human trial data exist.", "Cancer risk, teratoma risk, delivery risk, and loss of cell identity are central safety outcomes.", "Separate transient partial reprogramming from full pluripotency induction."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["partial reprogramming", "Yamanaka factors", "OSK", "OSKM", "epigenetic reprogramming", "cellular rejuvenation"]
+placebo_arm_synonyms = ["control", "vehicle", "sham", "untreated"]
+corpus_search_queries = ["partial reprogramming AND aging", "Yamanaka factors AND rejuvenation AND safety", "OSK AND aging AND trial", "partial epigenetic reprogramming AND human", "cellular reprogramming AND cancer risk AND aging"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["partial reprogramming", "partial epigenetic reprogramming", "Yamanaka factors", "OSK", "OSKM", "cellular rejuvenation", "epigenetic rejuvenation"]
+scope_terms = ["aging", "longevity", "healthspan", "rejuvenation", "cell identity", "cancer risk", "delivery", "gene therapy", "older adults", "human trial"]
+evidence_types = ["clinical trial", "phase 1", "preclinical study", "review", "systematic review", "observational study"]
+exclude_terms = ["full iPSC generation only", "embryology only", "cancer reprogramming only"]
+date_from = 2010
+languages = ["English"]
+
+[retrieval.background]
+allow = ["Yamanaka factor biology", "epigenetic rejuvenation", "preclinical tissue repair", "delivery platform", "cell identity risk"]
+
+[endpoint_polarity]
+biological_age = "lower_is_better"
+tissue_function = "higher_is_better"
+cancer_risk = "lower_is_better"
+cell_identity_loss = "lower_is_better"

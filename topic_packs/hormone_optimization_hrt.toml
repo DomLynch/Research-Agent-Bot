@@ -1,0 +1,33 @@
+topic = "hormone_optimization_hrt"
+class_ = "endocrine_intervention"
+target_journal = "GeroScience"
+aliases = ["hormone optimization", "HRT", "hormone replacement therapy", "testosterone therapy", "estrogen therapy", "menopause hormone therapy", "DHEA", "growth hormone secretagogues"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "muscle_function", "bone_health", "cardiovascular", "cognition"]
+special_rules = ["Separate testosterone, estrogen/progestin, DHEA, and growth-hormone secretagogues.", "Sex, age, baseline deficiency, and menopause status must be stratified.", "Cancer, cardiovascular, thrombotic, fertility, sleep-apnea, and prostate risks require explicit safety framing."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["HRT", "hormone replacement therapy", "testosterone therapy", "estrogen therapy", "DHEA", "growth hormone secretagogue"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["hormone replacement therapy AND aging AND mortality", "testosterone therapy AND older men AND muscle", "menopause hormone therapy AND cardiovascular outcomes", "DHEA AND aging AND randomized trial", "growth hormone secretagogue AND older adults"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["hormone optimization", "HRT", "hormone replacement therapy", "testosterone therapy", "estrogen therapy", "menopause hormone therapy", "DHEA", "growth hormone secretagogues"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "muscle", "bone", "cardiovascular", "cognition", "menopause", "frailty", "safety"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["pediatric only", "gender dysphoria only", "contraception only", "animal only", "in vitro only"]
+date_from = 1990
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["sex hormone biology", "menopause physiology", "androgen deficiency", "bone metabolism", "muscle aging"]
+
+[endpoint_polarity]
+muscle_function = "higher_is_better"
+bone_density = "higher_is_better"
+cardiovascular_events = "lower_is_better"
+cancer_risk = "lower_is_better"
+adverse_events = "lower_is_better"

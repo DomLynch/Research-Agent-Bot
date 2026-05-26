@@ -1,0 +1,32 @@
+topic = "epigenetic_clocks"
+class_ = "biomarker_platform"
+target_journal = "GeroScience"
+aliases = ["epigenetic clock", "epigenetic clocks", "DNA methylation age", "Horvath clock", "GrimAge", "DunedinPACE", "PhenoAge", "biological age clock"]
+expected_evidence_slots = ["human_observational", "human_mechanism", "intervention_trials", "meta_analysis", "mortality_prediction", "biomarker_validation", "measurement_error"]
+special_rules = ["Clock change is a biomarker endpoint, not proof of longevity extension.", "Separate risk prediction, intervention response, and commercial testing claims.", "Name the clock version because clocks are not interchangeable."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["epigenetic clock", "DNA methylation age", "GrimAge", "DunedinPACE", "PhenoAge", "Horvath clock"]
+placebo_arm_synonyms = ["control", "usual care", "baseline", "comparison"]
+corpus_search_queries = ["epigenetic clock AND aging AND mortality", "DNA methylation age AND intervention trial", "GrimAge AND mortality AND cohort", "DunedinPACE AND aging AND cohort", "epigenetic clock AND biological age reversal"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["epigenetic clock", "epigenetic clocks", "DNA methylation age", "Horvath clock", "GrimAge", "DunedinPACE", "PhenoAge", "biological age clock"]
+scope_terms = ["aging", "longevity", "healthspan", "mortality", "intervention", "biological age", "older adults", "disease risk", "prediction", "validation"]
+evidence_types = ["cohort study", "observational study", "clinical trial", "randomized controlled trial", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "cancer diagnosis only", "forensic age estimation only"]
+date_from = 2010
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["DNA methylation biology", "clock validation", "mortality prediction", "commercial testing limitations", "multi-omic aging"]
+
+[endpoint_polarity]
+biological_age = "lower_is_better"
+mortality_risk = "lower_is_better"
+pace_of_aging = "lower_is_better"
+prediction_accuracy = "higher_is_better"

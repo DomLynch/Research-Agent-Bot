@@ -1,0 +1,31 @@
+topic = "akkermansia_muciniphila"
+class_ = "microbiome_intervention"
+target_journal = "GeroScience"
+aliases = ["Akkermansia muciniphila", "Akkermansia", "A. muciniphila", "pasteurized Akkermansia", "Akkermansia probiotic"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "preclinical_mechanism", "meta_analysis", "safety_tolerability", "metabolic_health", "gut_barrier"]
+special_rules = ["Separate live Akkermansia, pasteurized Akkermansia, and abundance biomarkers.", "Abundance associations do not prove probiotic intervention efficacy.", "Metabolic and gut-barrier outcomes are separate evidence lanes."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["Akkermansia muciniphila", "Akkermansia", "A. muciniphila", "pasteurized Akkermansia"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["Akkermansia muciniphila AND aging AND human", "pasteurized Akkermansia AND clinical trial", "Akkermansia AND metabolic health AND randomized", "Akkermansia AND gut barrier AND inflammation", "Akkermansia abundance AND longevity"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["Akkermansia muciniphila", "Akkermansia", "A. muciniphila", "pasteurized Akkermansia", "Akkermansia probiotic"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "metabolic health", "gut barrier", "inflammation", "microbiome", "insulin sensitivity", "obesity"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "food fermentation only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["mucin degradation biology", "gut barrier function", "metabolic mechanism", "pasteurized probiotic mechanism"]
+
+[endpoint_polarity]
+insulin_resistance = "lower_is_better"
+inflammation = "lower_is_better"
+gut_barrier = "higher_is_better"
+adverse_events = "lower_is_better"

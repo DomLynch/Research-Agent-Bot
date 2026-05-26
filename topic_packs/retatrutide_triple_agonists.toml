@@ -1,0 +1,33 @@
+topic = "retatrutide_triple_agonists"
+class_ = "incretin_drug"
+target_journal = "GeroScience"
+aliases = ["retatrutide", "triple agonist", "GIP GLP-1 glucagon agonist", "triple hormone receptor agonist", "LY3437943"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "ongoing_trials", "safety_tolerability", "dosing_regimen", "weight_loss", "cardiometabolic", "lean_mass"]
+special_rules = ["Separate retatrutide-specific evidence from semaglutide or tirzepatide class evidence.", "Weight loss is not equivalent to geroprotection.", "Lean-mass loss, gallbladder events, GI tolerability, and discontinuation are core safety outcomes."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["retatrutide", "LY3437943", "triple agonist", "GIP GLP-1 glucagon agonist"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["retatrutide AND clinical trial", "retatrutide AND obesity AND randomized", "LY3437943 AND cardiometabolic", "triple agonist AND GLP-1 AND aging", "retatrutide AND safety AND trial"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["retatrutide", "LY3437943", "triple agonist", "GIP GLP-1 glucagon agonist", "triple hormone receptor agonist"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "obesity", "cardiometabolic", "weight loss", "lean mass", "frailty", "cardiovascular"]
+evidence_types = ["clinical trial", "randomized controlled trial", "phase 2", "phase 3", "cohort study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "pregnancy only"]
+date_from = 2020
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["incretin biology", "glucagon receptor mechanism", "obesity pharmacology", "lean mass tradeoff"]
+
+[endpoint_polarity]
+weight = "lower_is_better"
+lean_mass_loss = "lower_is_better"
+hba1c = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+adverse_events = "lower_is_better"

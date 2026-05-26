@@ -1,0 +1,30 @@
+topic = "deuterium_depleted_water"
+class_ = "nutritional_wellness_intervention"
+target_journal = "GeroScience"
+aliases = ["deuterium depleted water", "deuterium-depleted water", "DDW", "low deuterium water", "deuterium depletion"]
+expected_evidence_slots = ["human_trials", "human_observational", "human_mechanism", "preclinical_mechanism", "safety_tolerability", "metabolic_health", "oncology_context"]
+special_rules = ["Separate oncology adjunct research from longevity or wellness claims.", "Mechanistic isotope biology is background unless tied to human outcomes.", "Commercial wellness claims require explicit evidence-gap framing."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["deuterium depleted water", "deuterium-depleted water", "DDW", "low deuterium water"]
+placebo_arm_synonyms = ["placebo", "regular water", "control water", "usual care"]
+corpus_search_queries = ["deuterium depleted water AND aging", "deuterium-depleted water AND human trial", "deuterium depletion AND mitochondria", "low deuterium water AND cancer AND trial", "DDW AND metabolic health"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["deuterium depleted water", "deuterium-depleted water", "DDW", "low deuterium water", "deuterium depletion"]
+scope_terms = ["aging", "longevity", "healthspan", "mitochondrial function", "metabolic health", "cancer", "safety", "human trial", "oxidative stress"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "review", "systematic review", "preclinical study"]
+exclude_terms = ["nuclear physics only", "geochemistry only", "animal only", "in vitro only"]
+date_from = 1990
+languages = ["English"]
+
+[retrieval.background]
+allow = ["deuterium biology", "mitochondrial isotope effects", "oncology context", "metabolic mechanism"]
+
+[endpoint_polarity]
+oxidative_stress = "lower_is_better"
+metabolic_markers = "better_is_better"
+adverse_events = "lower_is_better"

@@ -1,0 +1,32 @@
+topic = "oral_microbiome_periodontal_aging"
+class_ = "microbiome_inflammation"
+target_journal = "GeroScience"
+aliases = ["oral microbiome", "periodontal aging", "periodontitis aging", "gum disease", "oral dysbiosis", "periodontal disease"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "inflammation", "cardiovascular", "cognition", "frailty"]
+special_rules = ["Separate periodontal disease associations from oral-microbiome intervention evidence.", "Confounding by smoking, diabetes, socioeconomic status, and access to dental care must be explicit.", "Cardiovascular and dementia associations are not proof of causality."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["oral microbiome", "periodontal treatment", "periodontal therapy", "oral hygiene", "periodontitis treatment"]
+placebo_arm_synonyms = ["control", "usual care", "standard care", "no treatment"]
+corpus_search_queries = ["periodontitis AND aging AND inflammation", "oral microbiome AND cardiovascular risk AND cohort", "periodontal disease AND dementia AND meta-analysis", "periodontal therapy AND inflammation AND randomized", "oral dysbiosis AND frailty"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["oral microbiome", "periodontitis", "periodontal disease", "gum disease", "oral dysbiosis", "periodontal therapy"]
+scope_terms = ["aging", "older adults", "inflammation", "cardiovascular", "dementia", "cognition", "frailty", "mortality", "systemic inflammation"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "orthodontics only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["oral-systemic inflammation", "periodontal pathogens", "microbiome dysbiosis", "vascular inflammation", "neuroinflammation"]
+
+[endpoint_polarity]
+periodontal_inflammation = "lower_is_better"
+systemic_inflammation = "lower_is_better"
+cardiovascular_events = "lower_is_better"
+cognition = "higher_is_better"

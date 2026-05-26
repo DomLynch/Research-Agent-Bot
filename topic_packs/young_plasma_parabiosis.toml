@@ -1,0 +1,31 @@
+topic = "young_plasma_parabiosis"
+class_ = "translational_biology"
+target_journal = "GeroScience"
+aliases = ["young plasma", "parabiosis", "heterochronic parabiosis", "young blood", "plasma factors", "rejuvenation plasma"]
+expected_evidence_slots = ["preclinical_mechanism", "human_trials", "human_observational", "safety_tolerability", "ethics", "biomarker_response", "cognition"]
+special_rules = ["Separate heterochronic parabiosis animal evidence from human plasma-product claims.", "Do not imply clinical rejuvenation from animal or mechanistic studies.", "Ethical, safety, and commercial-claim issues must be explicit."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["young plasma", "young blood", "plasma factors", "heterochronic parabiosis", "plasma infusion"]
+placebo_arm_synonyms = ["placebo", "saline", "albumin", "control", "usual care"]
+corpus_search_queries = ["young plasma AND aging AND human", "heterochronic parabiosis AND aging", "young blood AND rejuvenation AND safety", "plasma factors AND cognition AND aging", "young plasma AND clinical trial"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["young plasma", "young blood", "heterochronic parabiosis", "parabiosis", "plasma factors", "plasma infusion"]
+scope_terms = ["aging", "rejuvenation", "longevity", "healthspan", "cognition", "safety", "ethics", "biomarkers", "older adults", "clinical trial"]
+evidence_types = ["clinical trial", "preclinical study", "cohort study", "observational study", "review", "systematic review"]
+exclude_terms = ["transfusion medicine only", "pediatric only", "acute hemorrhage only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["heterochronic parabiosis mechanism", "plasma proteome", "GDF11 controversy", "young plasma history", "neurogenesis mechanism"]
+
+[endpoint_polarity]
+cognition = "higher_is_better"
+inflammation = "lower_is_better"
+adverse_events = "lower_is_better"
+ethical_risk = "lower_is_better"

@@ -1,0 +1,32 @@
+topic = "glynac"
+class_ = "nutritional_supplement"
+target_journal = "GeroScience"
+aliases = ["GlyNAC", "glycine N-acetylcysteine", "glycine and N-acetylcysteine", "glycine plus NAC", "glutathione precursor"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "oxidative_stress", "mitochondrial_function", "physical_function"]
+special_rules = ["Separate combined GlyNAC from glycine-only or NAC-only studies.", "Treat glutathione and oxidative-stress biomarkers as surrogate endpoints unless tied to function.", "Do not generalize small older-adult trials into hard longevity claims."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["GlyNAC", "glycine N-acetylcysteine", "glycine plus NAC", "N-acetylcysteine plus glycine"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["GlyNAC AND aging AND human trial", "glycine N-acetylcysteine AND older adults", "GlyNAC AND glutathione AND mitochondrial function", "GlyNAC AND oxidative stress AND randomized", "glycine plus NAC AND physical function AND aging"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["GlyNAC", "glycine N-acetylcysteine", "glycine and N-acetylcysteine", "glycine plus NAC", "glutathione precursor"]
+scope_terms = ["aging", "older adults", "elderly", "longevity", "healthspan", "glutathione", "oxidative stress", "mitochondrial function", "inflammation", "physical function", "insulin resistance"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "acute overdose only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["glutathione biology", "oxidative stress mechanism", "mitochondrial aging", "redox homeostasis", "inflammaging"]
+
+[endpoint_polarity]
+oxidative_stress = "lower_is_better"
+inflammation = "lower_is_better"
+glutathione = "higher_is_better"
+physical_function = "higher_is_better"
+adverse_events = "lower_is_better"

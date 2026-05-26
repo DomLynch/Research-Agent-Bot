@@ -1,0 +1,31 @@
+topic = "nad_iv_therapy"
+class_ = "wellness_clinic_intervention"
+target_journal = "GeroScience"
+aliases = ["IV NAD", "NAD IV therapy", "intravenous NAD", "NAD infusion", "NAD+ infusion", "NAD drip"]
+expected_evidence_slots = ["human_trials", "human_observational", "human_mechanism", "safety_tolerability", "dosing_regimen", "bioavailability", "clinic_claims"]
+special_rules = ["Separate IV NAD therapy from oral NAD precursors.", "Clinic marketing claims are not evidence.", "Bioavailability, pharmacokinetics, acute adverse events, and lack of hard endpoints are central."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["IV NAD", "NAD IV therapy", "intravenous NAD", "NAD infusion", "NAD+ infusion", "NAD drip"]
+placebo_arm_synonyms = ["placebo", "saline", "control", "usual care"]
+corpus_search_queries = ["intravenous NAD AND aging", "NAD infusion AND human trial", "NAD IV therapy AND safety", "NAD+ infusion AND pharmacokinetics", "IV NAD AND mitochondrial function"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["IV NAD", "NAD IV therapy", "intravenous NAD", "NAD infusion", "NAD+ infusion", "NAD drip"]
+scope_terms = ["aging", "longevity", "healthspan", "mitochondrial function", "wellness clinic", "safety", "pharmacokinetics", "fatigue", "older adults"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "systematic review", "pharmacokinetic study"]
+exclude_terms = ["oral only", "animal only", "in vitro only", "addiction clinic only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["NAD metabolism", "infusion safety", "bioavailability", "mitochondrial energetics", "clinic claim context"]
+
+[endpoint_polarity]
+nad_level = "higher_is_better"
+fatigue = "lower_is_better"
+adverse_events = "lower_is_better"

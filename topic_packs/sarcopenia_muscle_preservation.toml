@@ -1,0 +1,33 @@
+topic = "sarcopenia_muscle_preservation"
+class_ = "muscle_health_intervention"
+target_journal = "GeroScience"
+aliases = ["sarcopenia", "muscle preservation", "lean mass preservation", "HMB", "leucine", "protein supplementation", "muscle aging"]
+expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "muscle_mass", "strength", "physical_function", "falls"]
+special_rules = ["Separate muscle mass, strength, physical performance, falls, frailty, and disability outcomes.", "Protein/leucine/HMB, resistance training, GLP-1 lean-mass loss, and disease cachexia are different evidence lanes.", "Lean mass alone is not enough without function or clinical outcomes."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["protein supplementation", "leucine", "HMB", "resistance training", "muscle preservation", "sarcopenia intervention"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care"]
+corpus_search_queries = ["sarcopenia AND aging AND randomized trial", "protein supplementation AND older adults AND muscle strength", "HMB AND sarcopenia AND meta-analysis", "leucine AND muscle preservation AND older adults", "GLP-1 AND lean mass loss AND sarcopenia"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["sarcopenia", "muscle preservation", "lean mass preservation", "HMB", "leucine", "protein supplementation", "muscle aging", "resistance training"]
+scope_terms = ["aging", "older adults", "elderly", "healthspan", "frailty", "falls", "disability", "strength", "physical function", "lean mass", "GLP-1"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "athlete only", "pediatric only"]
+date_from = 2000
+languages = ["English"]
+species = ["humans"]
+
+[retrieval.background]
+allow = ["muscle protein synthesis", "frailty biology", "falls prevention", "lean mass loss", "anabolic resistance"]
+
+[endpoint_polarity]
+muscle_mass = "higher_is_better"
+strength = "higher_is_better"
+physical_function = "higher_is_better"
+falls = "lower_is_better"
+frailty = "lower_is_better"

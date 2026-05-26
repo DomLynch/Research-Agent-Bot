@@ -1,0 +1,32 @@
+topic = "klotho"
+class_ = "longevity_protein"
+target_journal = "GeroScience"
+aliases = ["klotho", "alpha-klotho", "Klotho protein", "soluble klotho", "KL gene", "Klotho therapy"]
+expected_evidence_slots = ["human_observational", "human_mechanism", "preclinical_mechanism", "genetic_association", "safety_tolerability", "cognition", "kidney_function", "vascular_function"]
+special_rules = ["Separate soluble klotho biomarker associations from klotho protein or gene-therapy interventions.", "Kidney disease confounding is central and must be handled explicitly.", "Cognition, vascular aging, and kidney outcomes are separate evidence lanes."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["klotho", "alpha-klotho", "soluble klotho", "Klotho protein", "KL gene"]
+placebo_arm_synonyms = ["control", "usual care", "baseline", "comparison"]
+corpus_search_queries = ["klotho AND aging AND human", "soluble klotho AND mortality AND cohort", "klotho AND cognition AND older adults", "klotho AND kidney disease AND aging", "klotho protein AND vascular aging"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["klotho", "alpha-klotho", "soluble klotho", "Klotho protein", "KL gene"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "cognition", "kidney disease", "vascular aging", "mortality", "frailty", "inflammation"]
+evidence_types = ["cohort study", "observational study", "clinical trial", "genetic association study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "renal assay only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["klotho biology", "FGF23 axis", "kidney aging", "vascular calcification", "cognition mechanism"]
+
+[endpoint_polarity]
+klotho = "higher_is_better"
+cognition = "higher_is_better"
+kidney_function = "higher_is_better"
+mortality = "lower_is_better"
+vascular_calcification = "lower_is_better"

@@ -1,0 +1,31 @@
+topic = "mesenchymal_stem_cells_mscs"
+class_ = "regenerative_cell_therapy"
+target_journal = "GeroScience"
+aliases = ["mesenchymal stem cells", "MSC", "MSCs", "mesenchymal stromal cells", "stem cell therapy", "allogeneic MSC"]
+expected_evidence_slots = ["human_trials", "human_observational", "human_mechanism", "preclinical_mechanism", "safety_tolerability", "manufacturing_quality", "frailty", "inflammation"]
+special_rules = ["Separate licensed/regulated MSC trials from commercial anti-aging clinic claims.", "Cell source, donor, expansion, dose, route, and potency assays must be tracked.", "Frailty or immune-aging claims require direct human outcome evidence."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["mesenchymal stem cells", "MSC", "MSCs", "mesenchymal stromal cells", "stem cell therapy"]
+placebo_arm_synonyms = ["placebo", "vehicle", "sham", "control", "usual care"]
+corpus_search_queries = ["mesenchymal stem cells AND aging AND human", "MSC therapy AND frailty AND clinical trial", "mesenchymal stromal cells AND inflammation AND older adults", "stem cell therapy AND anti-aging AND safety", "MSC AND randomized trial AND aging"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["mesenchymal stem cells", "MSC", "MSCs", "mesenchymal stromal cells", "stem cell therapy", "allogeneic MSC"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "frailty", "inflammation", "immune aging", "regeneration", "safety", "clinical trial"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review", "phase 1", "phase 2"]
+exclude_terms = ["animal only", "in vitro only", "orthopedic injury only", "cancer only", "pediatric only"]
+date_from = 2005
+languages = ["English"]
+
+[retrieval.background]
+allow = ["MSC immunomodulation", "paracrine signaling", "cell manufacturing", "frailty biology", "inflammaging"]
+
+[endpoint_polarity]
+frailty = "lower_is_better"
+inflammation = "lower_is_better"
+physical_function = "higher_is_better"
+adverse_events = "lower_is_better"
