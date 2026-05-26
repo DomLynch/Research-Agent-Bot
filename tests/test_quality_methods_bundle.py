@@ -239,12 +239,15 @@ def test_realistic_3_rcts_5_outcomes_partial_coverage() -> None:
     assert "_No GRADE data provided._" not in bundle.markdown
 
 
-def test_duplicate_rob_study_ids_rejected_by_renderer() -> None:
-    """Two RoBs with the same study_id is a data error; the renderer's
-    assert_studies_unique guard fails closed."""
+def test_duplicate_rob_study_ids_collapsed_before_bundle_render() -> None:
+    """Duplicate receipt-level RoB rows must not abort synthesis sidecars."""
     rob = [_rob_json("Same Study"), _rob_json("Same Study", rating="some_concerns")]
-    with pytest.raises(ValueError, match="duplicate study_id"):
-        build_quality_methods_bundle(
-            rob_payload=rob, grade_payload=None,
-            receipt_count=4, outcome_count=1,
-        )
+    bundle = build_quality_methods_bundle(
+        rob_payload=rob, grade_payload=None,
+        receipt_count=4, outcome_count=1,
+    )
+    assert len(bundle.rob_assessments) == 1
+    assert bundle.rob_assessments[0].study_id == "Same Study"
+    assert bundle.rob_assessments[0].overall_rating == "low"
+    assert bundle.rob_coverage == pytest.approx(1 / 4)
+    assert bundle.markdown.count("Same Study") == 1

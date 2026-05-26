@@ -13,8 +13,6 @@ yields coverage 0.0 (fail-closed; the caller cannot divide by zero).
 Missing RoB or GRADE payloads yield coverage 0.0 plus an explicit
 "_No data provided._" placeholder in the markdown — the gate metric
 fails closed but the renderer still produces a readable artifact.
-Duplicate RoB rows for the same study are collapsed before rendering so
-duplicated receipt records cannot abort the downstream synthesis run.
 """
 from __future__ import annotations
 
@@ -91,21 +89,6 @@ def compute_grade_coverage(
     return min(1.0, max(0.0, coverage))
 
 
-def _dedupe_rob_assessments(
-    rob_assessments: Sequence[StudyAssessment],
-) -> tuple[StudyAssessment, ...]:
-    """Keep the first RoB per study_id; renderer remains strict on duplicates."""
-    seen: set[str] = set()
-    unique: list[StudyAssessment] = []
-    for study in rob_assessments:
-        key = study.study_id.strip().casefold()
-        if key in seen:
-            continue
-        seen.add(key)
-        unique.append(study)
-    return tuple(unique)
-
-
 def _render_rob_section(rob: Sequence[StudyAssessment]) -> str:
     if not rob:
         return "# Risk-of-Bias Summary\n\n_No RoB data provided._"
@@ -142,8 +125,6 @@ def build_quality_methods_bundle(
       - rob_payload (if provided) must conform to risk_of_bias_schema:
         each entry validates via StudyAssessment dataclass on construction.
         Invalid → ValueError propagates.
-        Duplicate study_id rows are collapsed by first occurrence before
-        coverage/rendering.
       - grade_payload (if provided) must conform to grade_schema:
         each entry validates via GradeAssessment dataclass on construction.
         Invalid → ValueError propagates.
@@ -163,13 +144,11 @@ def build_quality_methods_bundle(
             f"({outcome_count}) must be ≥0"
         )
 
-    rob_assessments = (
-        _dedupe_rob_assessments(studies_from_json(rob_payload))
-        if rob_payload else tuple()
-    )
-    grade_assessments = (
-        tuple(grades_from_json(grade_payload)) if grade_payload else tuple()
-    )
+    rob_by_id: dict[str, StudyAssessment] = {}
+    for study in studies_from_json(rob_payload or []):
+        rob_by_id.setdefault(study.study_id.strip().casefold(), study)
+    rob_assessments = tuple(rob_by_id.values())
+    grade_assessments = tuple(grades_from_json(grade_payload)) if grade_payload else tuple()
 
     rob_coverage = compute_rob_coverage(rob_assessments, receipt_count)
     grade_coverage = compute_grade_coverage(grade_assessments, outcome_count)
