@@ -1,19 +1,4 @@
-"""Phase 4 quality-methods bundle builder.
-
-Combines validated RoB (RoB 2 / ROBINS-I / SYRCLE) + GRADE assessments
-into a single markdown bundle plus the coverage metrics the final gate
-consumes. Stdlib-only.
-
-Coverage definitions:
-  rob_coverage   = len(unique RoB study_ids) / receipt_count
-  grade_coverage = len(unique GRADE outcomes) / outcome_count
-
-Both values are clamped to [0, 1]. Receipt_count or outcome_count of 0
-yields coverage 0.0 (fail-closed; the caller cannot divide by zero).
-Missing RoB or GRADE payloads yield coverage 0.0 plus an explicit
-"_No data provided._" placeholder in the markdown — the gate metric
-fails closed but the renderer still produces a readable artifact.
-"""
+"""Quality-methods bundle: validated RoB/GRADE markdown plus coverage metrics."""
 from __future__ import annotations
 
 from collections.abc import Sequence
@@ -38,17 +23,7 @@ __all__ = [
 
 @dataclass(frozen=True, slots=True)
 class QualityMethodsBundle:
-    """Output of the quality-methods bundle builder.
-
-    rob_assessments    — validated RoB studies (frozen tuple).
-    grade_assessments  — validated GRADE outcomes (frozen tuple).
-    rob_coverage       — fraction of receipts with a RoB assessment, [0,1].
-    grade_coverage     — fraction of outcome classes with a GRADE
-                         assessment, [0,1].
-    receipt_count      — denominator for rob_coverage.
-    outcome_count      — denominator for grade_coverage.
-    markdown           — combined RoB + GRADE markdown.
-    """
+    """Validated RoB/GRADE assessments, coverage metrics, and markdown."""
 
     rob_assessments: tuple[StudyAssessment, ...]
     grade_assessments: tuple[GradeAssessment, ...]
@@ -119,25 +94,7 @@ def build_quality_methods_bundle(
     receipt_count: int,
     outcome_count: int,
 ) -> QualityMethodsBundle:
-    """Validate JSON payloads, render markdown, compute coverage.
-
-    Validation:
-      - rob_payload (if provided) must conform to risk_of_bias_schema:
-        each entry validates via StudyAssessment dataclass on construction.
-        Invalid → ValueError propagates.
-      - grade_payload (if provided) must conform to grade_schema:
-        each entry validates via GradeAssessment dataclass on construction.
-        Invalid → ValueError propagates.
-
-    Coverage:
-      - rob_coverage  = unique RoB study_ids / receipt_count
-      - grade_coverage = unique GRADE outcomes / outcome_count
-      - 0.0 when denominator is 0 or payload is empty (fail-closed for the gate).
-
-    Markdown:
-      - Always emits a top-level "# Quality Methods Bundle" header.
-      - Missing RoB or GRADE payloads render explicit placeholders.
-    """
+    """Validate payloads, collapse duplicate RoB rows, render, and score coverage."""
     if receipt_count < 0 or outcome_count < 0:
         raise ValueError(
             f"receipt_count ({receipt_count}) and outcome_count "

@@ -1447,13 +1447,21 @@ def test_finalizer_phase_e_inserts_thesis_marker(tmp_path) -> None:
     )
     (tmp_path / "full_paper.md").write_text(paper)
     (tmp_path / "manifest.json").write_text(_json.dumps({
+        "topic": "demo",
+        "review_type": "thin_corpus_brief",
         "thesis": "X improves Y but not Z in human RCTs.",
+    }))
+    (tmp_path / "full_paper.audit.json").write_text(_json.dumps({
+        "checks": [{"name": "Q8_thesis_present", "passed": False}],
     }))
     report = finalize_run(tmp_path)
     new_text = (tmp_path / "full_paper.md").read_text()
     assert report.paper_changed
     assert "**Thesis:**" in new_text
     assert "X improves Y but not Z in human RCTs." in new_text
+    refreshed = _json.loads((tmp_path / "full_paper.audit.json").read_text())
+    q8 = next(c for c in refreshed["checks"] if c["name"] == "Q8_thesis_present")
+    assert q8["passed"] is True
 
 
 def test_finalizer_phase_e_softens_we_propose(tmp_path) -> None:
