@@ -173,6 +173,7 @@ def _make_run(tmp_path: Path, *, surface_passed: bool,
             "OLD_ISSUE: stale issue from earlier point in run",
         ],
     }))
+    (run / "full_paper.consistency.json").write_text("[]")
     # Stale readiness contract — item 13 has the OLD shape
     (run / "pre_submit_gate.json").write_text(json.dumps({
         "result": {"passed": surface_passed, "failures": []},
@@ -210,7 +211,7 @@ def test_phase_g_refreshes_stale_verdict_surface_state(tmp_path: Path) -> None:
     assert len(verdict["journal_surface_issues"]) == len(surface["issues"])
     rules = [e.rule for e in log]
     assert "reevaluate_journal_surface_post_finalizer" in rules
-    assert "reconcile_final_verdict_surface_state" in rules
+    assert "refresh_final_verdict_post_finalizer" in rules
 
 
 def test_phase_g_rebuilds_readiness_contract_for_researka(

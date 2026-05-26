@@ -3868,7 +3868,7 @@ def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:
         journal_surface_pass=bool(surface.get("passed")),
         journal_surface_issues=tuple(f"{i.get('code', '')}: {i.get('detail', '')}" for i in surface.get("issues", []) if isinstance(i, dict)),
     )
-    payload = dataclasses.asdict(unified)
+    payload = json.loads(json.dumps(dataclasses.asdict(unified)))
     path = out_dir / "full_paper.final_verdict.json"
     try:
         if json.loads(path.read_text()) == payload:
