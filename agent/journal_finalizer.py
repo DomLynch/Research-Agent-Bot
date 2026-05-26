@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import importlib
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -700,9 +701,38 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
     return True
 
 
+def _refresh_audit_sidecar(out_dir: Path) -> bool:
+    paper_path = out_dir / "full_paper.md"
+    if not paper_path.is_file():
+        return False
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    if not isinstance(manifest, dict):
+        manifest = {}
+    try:
+        audit_v06 = importlib.import_module("scripts.audit_v06_paper")
+        topic = str(manifest.get("topic") or "").strip()
+        if topic:
+            audit_v06._set_topic(topic)
+        review_type = manifest.get("review_type")
+        report = audit_v06.audit(
+            paper_path.read_text(),
+            review_type=review_type if isinstance(review_type, str) else None,
+            manifest=manifest,
+        )
+    except (ImportError, OSError, TypeError, ValueError):
+        return False
+    if _load_sidecar(out_dir / "full_paper.audit.json") == report:
+        return False
+    (out_dir / "full_paper.audit.json").write_text(json.dumps(report, indent=2))
+    (out_dir / "full_paper.audit.md").write_text(audit_v06._format_summary(report))
+    return True
+
+
 def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     log: list[FinalizerLogEntry] = []
     _g = lambda rule, n, detail: log.append(FinalizerLogEntry(phase="G_refresh_sidecars", rule=rule, n_changes=n, detail=detail))  # noqa: E731
+    if _refresh_audit_sidecar(out_dir):
+        _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
     delta = _reevaluate_journal_surface(out_dir)
     if delta != 0:
         _g("reevaluate_journal_surface_post_finalizer", 1, f"surface issues delta vs pre-finalizer gate: {delta:+d}")
