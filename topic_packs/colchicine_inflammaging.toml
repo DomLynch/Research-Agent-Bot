@@ -1,0 +1,35 @@
+topic = "colchicine_inflammaging"
+class_ = "generated_biomedical"
+target_journal = "GeroScience"
+aliases = ["colchicine inflammaging", "colchicine_inflammaging", "colchicine-inflammaging", "colchicine", "low-dose colchicine", "inflammaging", "cardiovascular inflammation"]
+expected_evidence_slots = ["human_trials", "human_observational", "meta_analysis", "human_mechanism", "biomarkers", "clinical_outcomes", "safety_tolerability", "dose_or_exposure"]
+special_rules = ["Separate biomarker aging signals from hard clinical longevity outcomes.", "Treat mechanistic plausibility as hypothesis-generating unless supported by direct human outcomes.", "Track population, exposure intensity, comparator, endpoint, and adverse-event context explicitly."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["colchicine inflammaging", "colchicine_inflammaging", "colchicine-inflammaging", "colchicine", "low-dose colchicine", "inflammaging", "cardiovascular inflammation"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care", "sham", "vehicle"]
+corpus_search_queries = ["colchicine inflammaging AND aging AND human", "colchicine inflammaging AND older adults", "colchicine inflammaging AND randomized controlled trial", "colchicine AND aging AND human", "colchicine AND older adults", "colchicine AND randomized controlled trial", "low-dose colchicine AND aging AND human", "low-dose colchicine AND older adults", "low-dose colchicine AND randomized controlled trial", "inflammaging AND aging AND human"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["colchicine inflammaging", "colchicine", "low-dose colchicine", "inflammaging", "cardiovascular inflammation"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "frailty", "mortality", "biological age", "inflammation", "cardiometabolic risk", "safety"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "case report only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["hallmarks of aging", "biological age measurement", "inflammaging", "human geroscience", "healthspan biomarkers"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+frailty = "lower_is_better"
+inflammation = "lower_is_better"
+cardiometabolic_risk = "lower_is_better"
+adverse_events = "lower_is_better"
+physical_function = "higher_is_better"
+cognition = "higher_is_better"
+biomarker_validity = "higher_is_better"

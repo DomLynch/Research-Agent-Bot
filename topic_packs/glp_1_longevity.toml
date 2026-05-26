@@ -1,7 +1,7 @@
 topic = "glp_1_longevity"
 class_ = "incretin_drug"
 target_journal = "GeroScience"
-aliases = ["GLP-1 longevity", "GLP-1 receptor agonist", "semaglutide", "tirzepatide", "liraglutide", "dulaglutide", "incretin therapy", "Ozempic", "Wegovy", "Mounjaro", "Zepbound"]
+aliases = ["GLP-1 longevity", "incretin longevity", "semaglutide healthspan", "tirzepatide healthspan", "GLP-1 geroscience"]
 expected_evidence_slots = ["human_rcts", "human_observational", "human_mechanism", "meta_analysis", "safety_tolerability", "dosing_regimen", "cardiovascular_outcomes", "weight_loss", "inflammation", "lean_mass"]
 special_rules = ["Aging claims are indirect unless trials measure aging, frailty, disability, or hard longevity endpoints.", "Separate weight loss benefits from muscle loss and frailty tradeoffs.", "Tirzepatide is dual GIP/GLP-1 and should not be described as pure GLP-1."]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]

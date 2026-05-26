@@ -1,0 +1,35 @@
+topic = "circadian_light_timing"
+class_ = "generated_biomedical"
+target_journal = "GeroScience"
+aliases = ["circadian light timing", "circadian_light_timing", "circadian-light-timing", "circadian rhythm", "light exposure", "morning light", "melatonin rhythm"]
+expected_evidence_slots = ["human_trials", "human_observational", "meta_analysis", "human_mechanism", "biomarkers", "clinical_outcomes", "safety_tolerability", "dose_or_exposure"]
+special_rules = ["Separate biomarker aging signals from hard clinical longevity outcomes.", "Treat mechanistic plausibility as hypothesis-generating unless supported by direct human outcomes.", "Track population, exposure intensity, comparator, endpoint, and adverse-event context explicitly."]
+forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
+forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
+active_arm_synonyms = ["circadian light timing", "circadian_light_timing", "circadian-light-timing", "circadian rhythm", "light exposure", "morning light", "melatonin rhythm"]
+placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care", "sham", "vehicle"]
+corpus_search_queries = ["circadian light timing AND aging AND human", "circadian light timing AND older adults", "circadian light timing AND randomized controlled trial", "circadian rhythm AND aging AND human", "circadian rhythm AND older adults", "circadian rhythm AND randomized controlled trial", "light exposure AND aging AND human", "light exposure AND older adults", "light exposure AND randomized controlled trial", "morning light AND aging AND human"]
+canonical_rct_paper_ids = []
+canonical_trials = []
+known_role_overrides = {}
+
+[retrieval]
+topic_terms = ["circadian light timing", "circadian rhythm", "light exposure", "morning light", "melatonin rhythm"]
+scope_terms = ["aging", "older adults", "longevity", "healthspan", "frailty", "mortality", "biological age", "inflammation", "cardiometabolic risk", "safety"]
+evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
+exclude_terms = ["animal only", "in vitro only", "pediatric only", "case report only"]
+date_from = 2000
+languages = ["English"]
+
+[retrieval.background]
+allow = ["hallmarks of aging", "biological age measurement", "inflammaging", "human geroscience", "healthspan biomarkers"]
+
+[endpoint_polarity]
+mortality = "lower_is_better"
+frailty = "lower_is_better"
+inflammation = "lower_is_better"
+cardiometabolic_risk = "lower_is_better"
+adverse_events = "lower_is_better"
+physical_function = "higher_is_better"
+cognition = "higher_is_better"
+biomarker_validity = "higher_is_better"
