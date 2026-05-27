@@ -291,6 +291,25 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     discussion = parts.get("Discussion", "")
     limitations = parts.get("Limitations", "")
     conclusion = parts.get("Conclusion", "")
+    metadata: dict[str, Any] = {
+        "artifact_type": "research_paper",
+        "run_id": run.name,
+        "topic": topic,
+        "content_hash": _sha256(run / "full_paper.md"),
+        "counts": {
+            "n_receipts": manifest.get("n_receipts"),
+            "n_claims": manifest.get("n_high_confidence_claims_total"),
+            "n_tensions": manifest.get("n_non_orthogonal_tensions"),
+        },
+    }
+    revision = _read_json(run / "researka_revision_request.json")
+    if revision:
+        metadata["revision_of"] = {
+            key: revision.get(key)
+            for key in ("artifactId", "submissionId", "source_run", "title")
+            if revision.get(key)
+        }
+        metadata["revision_feedback"] = revision.get("feedback")
     return {
         "title": title[:300],
         "abstract": abstract,
@@ -312,17 +331,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "domain_slug": os.getenv("RESEARKA_DOMAIN_SLUG_V3", "longevity"),
         "core_claims_resolved": True,
         "author_signature": _sha256(run / "full_paper.md"),
-        "metadata": {
-            "artifact_type": "research_paper",
-            "run_id": run.name,
-            "topic": topic,
-            "content_hash": _sha256(run / "full_paper.md"),
-            "counts": {
-                "n_receipts": manifest.get("n_receipts"),
-                "n_claims": manifest.get("n_high_confidence_claims_total"),
-                "n_tensions": manifest.get("n_non_orthogonal_tensions"),
-            },
-        },
+        "metadata": metadata,
     }
 
 
