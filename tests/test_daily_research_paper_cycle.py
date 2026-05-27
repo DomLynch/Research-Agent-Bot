@@ -245,8 +245,10 @@ def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypa
     assert result["status"] == "corpus_seeded"
     assert result["n_quant_claims_before"] == 0
     assert result["n_quant_claims"] == 1
-    assert seen["cmd"][-2:] == ["--topic", "new_topic"]
+    assert seen["cmd"][2:4] == ["--topic", "new_topic"]
+    assert seen["cmd"][-4:] == ["--limit", str(cycle.AUTO_SEED_LIMIT), "--max-per-source", str(cycle.AUTO_SEED_LIMIT)]
     assert "seed_topic_corpus.py" in seen["cmd"][1]
+    assert result["seed_limit"] == cycle.AUTO_SEED_LIMIT
 
 
 def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_path: Path, monkeypatch) -> None:
