@@ -228,6 +228,13 @@ def _pre_submit_blocker_summary(gate_artifacts: dict[str, Any]) -> str:
     )
 
 
+def _append_structured_tables_to_public_body(markdown: str, tables_md: str) -> str:
+    tables = tables_md.strip()
+    if not tables or "## Structured Evidence Tables" in markdown:
+        return markdown
+    return markdown.rstrip() + "\n\n" + tables + "\n"
+
+
 def _restore_rendered_section_headings(
     paper_md: str, sections: tuple[SynthesisSection, ...],
 ) -> str:
@@ -2620,6 +2627,9 @@ async def _run(
         writer_receipts, writer_matrix, claims_by_citation,
     )
     if tables_md:
+        full_paper_md = _append_structured_tables_to_public_body(
+            full_paper_md, tables_md,
+        )
         supplement_parts.append(tables_md.rstrip())
     # Pass the registry to References so its Author-Year tokens come
     # from the SAME source as the table cells — no drift possible.

@@ -620,6 +620,16 @@ def test_unreferenced_citation_still_flags_real_missing() -> None:
     assert "Jones 2021" in unreferenced_citation_tokens(paper)
 
 
+def test_unreferenced_citation_ignores_possessive_year_phrase() -> None:
+    from agent.journal_surface_gate import unreferenced_citation_tokens
+    paper = (
+        "## Introduction\n\n"
+        "The Food and Drug Administration's 2023 decision is regulatory context.\n\n"
+        "## References\n\n- Smith 2020.\n"
+    )
+    assert unreferenced_citation_tokens(paper) == ()
+
+
 def test_unreferenced_citation_is_case_insensitive() -> None:
     """Casefolding is part of the universal fold so inline 'SMITH 2020'
     matches reference 'Smith 2020' (case shouldn't matter for ID)."""
@@ -1379,10 +1389,11 @@ def test_apply_pipeline_jargon_replacements_scrubs_receipt_artifacts() -> None:
     text = (
         "The accepted receipt graph retained 171 receipts for this synthesis. "
         "Classified receipt candidates were reviewed in the Receipt admission funnel "
-        "before final receipt admission."
+        "before final receipt admission. The accepted corpus was then rendered."
     )
     out = apply_pipeline_jargon_replacements(text)
     assert "receipt" not in out.lower()
+    assert "accepted corpus" not in out.lower()
     assert "included source set" in out.lower()
     assert "171 sources" in out.lower()
     assert "source candidates" in out.lower()

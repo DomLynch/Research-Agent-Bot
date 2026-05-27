@@ -268,6 +268,14 @@ def test_restore_conclusion_heading_after_limitations_citations() -> None:
     assert out.index("## Conclusion") < out.index("## Structured Evidence Tables")
 
 
+def test_structured_tables_stay_in_public_body_for_numeric_density() -> None:
+    paper = "## Conclusion\n\nThe synthesis remains bounded."
+    tables = "## Structured Evidence Tables\n\n| A | B |\n|---|---|\n| n=120 | p=0.01 |\n"
+    out = orch._append_structured_tables_to_public_body(paper, tables)
+    assert "## Structured Evidence Tables" in out
+    assert out.index("## Conclusion") < out.index("## Structured Evidence Tables")
+
+
 def test_restore_required_section_body_when_post_processing_strips_depth() -> None:
     paper = (
         "## Results\n\n"
@@ -336,7 +344,7 @@ def test_restore_required_section_body_compiles_safe_fallback() -> None:
     assert "Too short." not in out
     assert "compiled from" not in out
     assert "compiler" not in out
-    assert "off-label for geroprotection" in out
+    assert "final interpretation is deliberately tiered" in out
     assert "receipt-bound synthesis" not in out
 
 
