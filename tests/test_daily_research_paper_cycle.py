@@ -142,6 +142,35 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
     assert ledger["published"] == 0
 
 
+def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Path, monkeypatch) -> None:
+    seen: dict[str, Any] = {}
+
+    class Result:
+        returncode = 0
+
+    def fake_run(*args: Any, **kwargs: Any) -> Result:
+        seen["args"] = args
+        seen["kwargs"] = kwargs
+        return Result()
+
+    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+
+    rc = cycle._run_synthesis(
+        "aspirin_geroprotection",
+        tmp_path / "revised-run",
+        dry_run=False,
+        timeout=123,
+        revision_feedback="Add clinical-use caveat.",
+    )
+
+    cmd = seen["args"][0]
+    assert rc == 0
+    assert cmd[:4] == [sys.executable, "scripts/run_v06_synthesis.py", "--topic", "aspirin_geroprotection"]
+    assert seen["kwargs"]["cwd"] == cycle.ROOT
+    assert seen["kwargs"]["timeout"] == 123
+    assert seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"] == "Add clinical-use caveat."
+
+
 def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "new_topic", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
