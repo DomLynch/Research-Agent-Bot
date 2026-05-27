@@ -490,6 +490,87 @@ def test_cycle_applies_researka_revision_feedback_on_same_topic_retry(tmp_path: 
     assert ledger["attempts"][1]["revision_feedback_applied"] is True
 
 
+def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
+    _topic(tmp_path, "rapamycin", target_journal=True)
+    source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
+    paper = source_run / "full_paper.md"
+    paper.write_text(
+        "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.",
+        encoding="utf-8",
+    )
+    fingerprint = cycle.submit_bridge._sha256(paper)
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": "2026-05-27",
+        "run": source_run.name,
+        "topic": "aspirin_geroprotection",
+        "fingerprint": fingerprint,
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    feedback_seen: list[str | None] = []
+    out_dirs: list[Path] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+    ) -> int:
+        assert topic == "aspirin_geroprotection"
+        feedback_seen.append(revision_feedback)
+        out_dirs.append(out_dir)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([{
+            "artifactId": "review-art-1",
+            "submissionId": "review-sub-1",
+            "title": "Research Synthesis: Aspirin Geroprotection — full paper",
+            "feedback": "Add clinical-use caveat and resubmit.",
+        }], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert feedback_seen == ["Add clinical-use caveat and resubmit."]
+    assert ledger["revision_source"]["artifactId"] == "review-art-1"
+    assert ledger["attempts"][0]["revision_feedback_applied"] is True
+    sidecar = json.loads((out_dirs[0] / "researka_revision_request.json").read_text(encoding="utf-8"))
+    assert sidecar["source_run"] == source_run.name
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][0]["key"] == "review-art-1"
+
+
+def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([{
+            "artifactId": "alpha-1",
+            "title": "Acarbose alpha memo",
+            "feedback": "revise",
+        }], None),
+    )
+
+    assert pending is None
+    assert error is None
+
+
 def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)

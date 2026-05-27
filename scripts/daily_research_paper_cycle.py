@@ -11,9 +11,12 @@ import datetime as dt
 import fcntl
 import json
 import os
+import re
 import subprocess
 import sys
 import tomllib
+import urllib.error
+import urllib.request
 from collections.abc import Callable, Iterator
 from contextlib import contextmanager
 from pathlib import Path
@@ -27,6 +30,7 @@ TOPIC_PACKS = ROOT / "topic_packs"
 CORPORA = ROOT / "docs" / "quality-reference"
 LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
+HANDLED_REVISIONS = "_handled_revision_requests.json"
 PREFLIGHT_MIN_RECEIPTS = 15
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = 1
@@ -40,6 +44,7 @@ AUTO_SEED_LIMIT = 120
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
 CorpusBuilder = Callable[..., dict[str, Any]]
+RevisionLoader = Callable[[], tuple[list[dict[str, Any]], str | None]]
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -145,6 +150,112 @@ def _published_topics(topics: list[str], markers: set[str]) -> set[str]:
         if display and any(display in marker for marker in title_markers):
             out.add(topic)
     return out
+
+
+def _review_rows(payload: Any) -> list[dict[str, Any]]:
+    if isinstance(payload, dict):
+        rows = payload.get("records") or payload.get("reviews") or payload.get("decisions")
+        if not rows:
+            rows = payload.get("props", {}).get("pageProps", {}).get("records")
+        return [row for row in rows if isinstance(row, dict)] if isinstance(rows, list) else []
+    return [row for row in payload if isinstance(row, dict)] if isinstance(payload, list) else []
+
+
+def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
+    target = str(url or os.getenv("RESEARKA_REVIEWS_URL", "https://researka.org/reviews"))
+    agent_ids = {
+        "agent-v3-full-paper",
+        os.getenv("RESEARKA_AGENT_SLUG_V3", ""),
+        os.getenv("AGENT_ID", ""),
+    }
+    agent_ids.discard("")
+    try:
+        with urllib.request.urlopen(urllib.request.Request(target, headers={"Accept": "text/html,application/json"}), timeout=30) as response:
+            text = response.read().decode("utf-8", errors="replace")
+        if "<script" in text:
+            match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', text, re.S)
+            payload = json.loads(match.group(1)) if match else {}
+        else:
+            payload = json.loads(text)
+    except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [], f"{type(exc).__name__}: {exc}"
+    out: list[dict[str, Any]] = []
+    for row in _review_rows(payload):
+        if str(row.get("decision") or "").lower() != "revise":
+            continue
+        if str(row.get("artifactType") or row.get("artifact_type") or "") != "research_paper":
+            continue
+        if agent_ids and str(row.get("agentId") or row.get("agent_id") or "") not in agent_ids:
+            continue
+        raw_required = row.get("requiredRevisions")
+        required: list[Any] = raw_required if isinstance(raw_required, list) else []
+        feedback = "; ".join(str(item) for item in required if str(item).strip()) or str(row.get("reviewSummary") or "")
+        out.append({
+            "artifactId": row.get("artifactId"),
+            "submissionId": row.get("submissionId"),
+            "title": row.get("title"),
+            "feedback": " ".join(feedback.split())[:4000],
+        })
+    return out, None
+
+
+def _handled_revision_ids(ledger_dir: Path) -> set[str]:
+    data = _read_json(ledger_dir / HANDLED_REVISIONS)
+    rows = data.get("handled")
+    return {str(row.get("key")) for row in rows if isinstance(row, dict) and row.get("key")} if isinstance(rows, list) else set()
+
+
+def _revision_key(row: dict[str, Any]) -> str:
+    return str(row.get("artifactId") or row.get("submissionId") or submit_bridge._title_marker(str(row.get("title") or "")))
+
+
+def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str) -> None:
+    path = ledger_dir / HANDLED_REVISIONS
+    data = _read_json(path)
+    raw_rows = data.get("handled")
+    rows: list[dict[str, Any]] = raw_rows if isinstance(raw_rows, list) else []
+    rows.append({
+        "key": _revision_key(row),
+        "status": status,
+        "title": row.get("title"),
+        "handled_at": dt.datetime.now(dt.UTC).isoformat(),
+    })
+    _write_json(path, {"handled": rows[-100:]})
+
+
+def _pending_remote_revision(
+    runs_root: Path,
+    ledger_dir: Path,
+    *,
+    loader: RevisionLoader | None = None,
+) -> tuple[dict[str, Any] | None, str | None]:
+    rows, error = (loader or _remote_revision_requests)()
+    if error:
+        return None, error
+    handled = _handled_revision_ids(ledger_dir)
+    submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
+    records: list[Any] = raw_records if isinstance(raw_records, list) else []
+    for request in rows:
+        if _revision_key(request) in handled:
+            continue
+        title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
+        for record in records if isinstance(records, list) else []:
+            if not isinstance(record, dict):
+                continue
+            run = runs_root / str(record.get("run") or "")
+            paper = run / "full_paper.md"
+            if not paper.exists():
+                continue
+            markers = {
+                str(record.get("fingerprint") or ""),
+                submit_bridge._title_marker(submit_bridge._paper_title(paper)),
+            }
+            if title_marker in markers:
+                request["topic"] = record.get("topic") or submit_bridge._run_topic(run)
+                request["source_run"] = run.name
+                return request, None
+    return None, None
 
 
 def _publication_track_topic(topic: str) -> bool:
@@ -354,6 +465,7 @@ def run_cycle(
     submit: bool = False,
     topic: str | None = None,
     remote_loader: RemoteLoader | None = None,
+    revision_loader: RevisionLoader | None = None,
     submit_cycle: SubmitCycle | None = None,
     ensure_corpus: CorpusBuilder | None = None,
     timeout: int | None = None,
@@ -396,9 +508,20 @@ def run_cycle(
                 ledger.update({"status": "remote_dedupe_failed", "reason": remote_error})
                 _write_json(ledger_path, ledger)
                 return ledger
+        remote_revision: dict[str, Any] | None = None
+        if submit and topic is None:
+            remote_revision, revision_error = _pending_remote_revision(runs_root, ledger_dir, loader=revision_loader)
+            ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
+            if revision_error:
+                ledger["remote_revisions"]["error"] = revision_error
         attempted: set[str] = set()
         for _ in range(max(1, max_attempts if not topic else 1)):
-            selected = topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted)
+            revision_source = remote_revision if remote_revision and not attempted else None
+            selected = (
+                str(revision_source.get("topic") or "")
+                if revision_source
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted)
+            )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
                 break
@@ -441,7 +564,13 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
-            revision_feedback = ""
+            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
+            if revision_source:
+                ledger["revision_source"] = {
+                    key: revision_source.get(key)
+                    for key in ("artifactId", "submissionId", "source_run", "title")
+                    if revision_source.get(key)
+                }
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
                 if revise_attempt > 1:
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
@@ -455,6 +584,8 @@ def run_cycle(
                     timeout=timeout,
                     revision_feedback=revision_feedback or None,
                 )
+                if revision_source and out_dir.exists():
+                    _write_json(out_dir / "researka_revision_request.json", revision_source)
                 bridge: dict[str, Any] = {}
                 if return_code == 0:
                     bridge = (submit_cycle or submit_bridge.run_cycle)(
@@ -509,6 +640,8 @@ def run_cycle(
                     ledger["status"] = "synthesis_completed_no_submission"
                 if revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
                     break
+            if revision_source:
+                _mark_revision_handled(ledger_dir, revision_source, status=str(ledger.get("status") or ""))
             if ledger["status"] == "submitted_to_researka":
                 break
             attempted.add(selected)

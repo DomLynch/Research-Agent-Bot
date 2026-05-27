@@ -69,6 +69,27 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert "published" not in payload
 
 
+def test_payload_carries_revision_metadata_when_present(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {
+        "artifactId": "art-1",
+        "submissionId": "sub-1",
+        "source_run": "old-run",
+        "title": "Research Synthesis: Topic",
+        "feedback": "Add clearer caveats and resubmit.",
+    })
+
+    payload = daily.build_payload(run)
+
+    assert payload["metadata"]["revision_of"] == {
+        "artifactId": "art-1",
+        "submissionId": "sub-1",
+        "source_run": "old-run",
+        "title": "Research Synthesis: Topic",
+    }
+    assert payload["metadata"]["revision_feedback"] == "Add clearer caveats and resubmit."
+
+
 def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None:
     _run(tmp_path)
 
