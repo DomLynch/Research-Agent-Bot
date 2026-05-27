@@ -135,6 +135,39 @@ def test_lightweight_polish_inserts_missing_declared_outcome_sections() -> None:
     assert any(i["fix_type"] == "missing_results_outcome_section_insert" for i in log)
 
 
+def test_missing_outcome_insert_uses_canonical_surface_keys() -> None:
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Dosing Pharmacokinetics | n=4; claims=20 | mixed signal | 4 review | indirect |\n"
+        "| Immune | n=2; claims=6 | null signal | 2 indirect | sparse |\n\n"
+        "### Dosing and Pharmacokinetics Outcomes\n\n"
+        "The dosing packet already has the canonical public heading.\n\n"
+        "## Cross-Domain Synthesis\n\n"
+        "The outcome map remains bounded.\n"
+    )
+    out, n = fixes._insert_missing_declared_outcome_sections(paper)
+    assert n == 1
+    assert out.count("### Dosing and Pharmacokinetics Outcomes") == 1
+    assert "### Immune Outcomes" in out
+
+
+def test_inserted_outcome_stubs_do_not_trip_duplicate_surface_gate() -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Cardiometabolic | n=3; claims=20 | null signal | 1 direct; 2 indirect | bounded |\n"
+        "| Safety and Comorbidity | n=3; claims=18 | null signal | 1 direct; 2 indirect | bounded |\n"
+    )
+    out, n = fixes._insert_missing_declared_outcome_sections(paper)
+    assert n == 2
+    assert _duplicate_paragraph_issue_messages(out) == ()
+
+
 def test_duplicate_subsection_strip_preserves_distinct_outcome_sections() -> None:
     paper = (
         "## Results\n\n"
@@ -146,6 +179,28 @@ def test_duplicate_subsection_strip_preserves_distinct_outcome_sections() -> Non
     out, n = fixes._strip_duplicate_subsections(paper)
     assert n == 0
     assert "### Longevity Outcomes" in out and "### Immune Outcomes" in out
+
+
+def test_results_depth_backfill_is_not_an_outcome_h3() -> None:
+    assert not fixes._RESULTS_BACKFILL.startswith("###")
+
+
+def test_unexpected_results_h3_is_demoted() -> None:
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Immune | n=2; claims=6 | null |\n\n"
+        "### Result-interpretation guardrail\n\n"
+        "This explains how to read the result pattern.\n\n"
+        "### Immune Outcomes\n\n"
+        "The immune packet is preserved.\n"
+    )
+    out, n = fixes._demote_unexpected_results_h3s(paper)
+    assert n == 1
+    assert "### Result-interpretation guardrail" not in out
+    assert "**Result-interpretation guardrail.**" in out
+    assert "### Immune Outcomes" in out
 
 
 def test_apply_fixes_skips_full_depth_backfill_for_thin_brief() -> None:

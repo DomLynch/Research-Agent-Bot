@@ -545,14 +545,72 @@ def _insert_missing_declared_outcome_sections(paper_md: str) -> tuple[str, int]:
         scope = f"n={count}" if count is not None else "limited source support"
         blocks.append(
             f"### {name} Outcomes\n\n"
-            f"The {name.lower()} packet is reported separately because the Results "
-            f"table assigns it {scope}. Within this packet, the strongest signal is "
-            f"{signal.lower()}, directness is {directness.lower()}, and the main "
-            f"limitation is {limitation.lower()}. This preserves the endpoint "
-            "boundary without converting the slice into a pooled longevity claim.\n"
+            f"{name} is retained as a separate Results slice ({scope}; "
+            f"{signal.lower()}; {directness.lower()}; {limitation.lower()}) "
+            "and is not pooled into adjacent endpoint classes.\n"
         )
     insert = "\n" + "\n".join(blocks)
     return paper_md[:match.end(2)] + insert + paper_md[match.end(2):], len(missing)
+
+
+def _demote_unexpected_results_h3s(paper_md: str) -> tuple[str, int]:
+    match = re.search(r"(^##\s+Results\s*\n)(.*?)(?=^##\s+|\Z)", paper_md, re.M | re.S)
+    if not match:
+        return paper_md, 0
+    results = match.group(2)
+    declared: set[str] = set()
+    lines = [line.strip() for line in results.splitlines()]
+    for idx, line in enumerate(lines):
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if not line.startswith("|") or not cells or cells[0].lower() != "outcome class":
+            continue
+        for row in lines[idx + 2:]:
+            if not row.startswith("|"):
+                break
+            row_cells = [c.strip() for c in row.strip().strip("|").split("|")]
+            if row_cells:
+                declared.add(_surface_outcome_key(row_cells[0]))
+        break
+    if not declared:
+        return paper_md, 0
+
+    n = 0
+
+    def repl(m: re.Match[str]) -> str:
+        nonlocal n
+        heading = m.group(1).strip()
+        if _surface_outcome_key(heading) in declared:
+            return m.group(0)
+        n += 1
+        return f"**{heading}.**"
+
+    new_results = re.sub(r"^###\s+(.+?)\s*$", repl, results, flags=re.M)
+    if not n:
+        return paper_md, 0
+    return paper_md[:match.start(2)] + new_results + paper_md[match.end(2):], n
+
+
+def _shorten_legacy_results_outcome_stubs(paper_md: str) -> tuple[str, int]:
+    pattern = re.compile(
+        r"The Results table identifies ([^.]+?) evidence as a separate "
+        r"outcome slice \(([^)]+)\)\. Because this slice is small, it is kept "
+        r"separate from adjacent outcomes and interpreted as hypothesis-generating "
+        r"rather than as a standalone endpoint conclusion\.",
+        re.I,
+    )
+    n = 0
+
+    def repl(m: re.Match[str]) -> str:
+        nonlocal n
+        n += 1
+        name = m.group(1).strip().title()
+        return (
+            f"{name} remains a separate Results slice ({m.group(2)}) "
+            "and is not pooled into adjacent endpoint classes."
+        )
+
+    out = pattern.sub(repl, paper_md)
+    return out, n
 
 
 def _strip_thin_analytic_paragraphs(paper_md: str) -> tuple[str, int]:
@@ -793,6 +851,16 @@ def apply_lightweight_public_polish(
             "description": (
                 "inserted compiler-owned Results subsections for outcome "
                 "classes declared in the Results table but missing from body prose"
+            ),
+        })
+    new_md, n_unexpected_results_h3s = _demote_unexpected_results_h3s(new_md)
+    if n_unexpected_results_h3s:
+        log.append({
+            "fix_type": "unexpected_results_h3_demote",
+            "n_changes": n_unexpected_results_h3s,
+            "description": (
+                "demoted non-outcome Results H3 headings so the surface gate "
+                "only treats declared outcome classes as Results subsections"
             ),
         })
     new_md, n_thin_analytic = _strip_thin_analytic_paragraphs(new_md)
