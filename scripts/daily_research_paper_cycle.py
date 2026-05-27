@@ -212,10 +212,12 @@ def _failure_class(status: str) -> str:
         "audit_not_all_green": "C_writer_fixable",
         "synthesis_failed": "C_writer_fixable",
         "submission_rejected_by_researka": "C_writer_fixable",
+        "submission_revise_requested": "C_writer_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
         "missing": "C_writer_fixable",
         "duplicate_submission_fingerprint": "D_no_action",
         "duplicate_remote_publication": "D_no_action",
+        "researka_revision_fingerprint": "D_no_action",
         "superseded_topic_run": "D_no_action",
     }.get(code, "unknown")
 
@@ -257,11 +259,22 @@ def _lock(ledger_dir: Path) -> Iterator[bool]:
         yield True
 
 
-def _run_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+def _run_synthesis(
+    topic: str,
+    out_dir: Path,
+    *,
+    dry_run: bool,
+    timeout: int | None = None,
+    revision_feedback: str | None = None,
+) -> int:
     cmd = [sys.executable, "scripts/run_v06_synthesis.py", "--topic", topic, "--out-dir", str(out_dir)]
     if dry_run:
         cmd.append("--dry-run")
-    result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None)
+    env = None
+    if revision_feedback:
+        env = os.environ.copy()
+        env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
+    result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
     return int(result.returncode)
 
 
@@ -358,12 +371,20 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
+            revision_feedback = ""
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
                 if revise_attempt > 1:
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
                     ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})
-                return_code = _run_synthesis(selected, out_dir, dry_run=synthesis_dry_run, timeout=timeout)
+                feedback_applied = bool(revision_feedback)
+                return_code = _run_synthesis(
+                    selected,
+                    out_dir,
+                    dry_run=synthesis_dry_run,
+                    timeout=timeout,
+                    revision_feedback=revision_feedback or None,
+                )
                 bridge: dict[str, Any] = {}
                 if return_code == 0:
                     bridge = (submit_cycle or submit_bridge.run_cycle)(
@@ -389,6 +410,7 @@ def run_cycle(
                     "topic": selected,
                     "out_dir": out_dir.name,
                     "revise_attempt": revise_attempt,
+                    "revision_feedback_applied": feedback_applied,
                     "synthesis_return_code": return_code,
                     "submit_status": submit_status,
                     "bridge_status": bridge_status,
@@ -403,6 +425,9 @@ def run_cycle(
                 ledger["synthesis_return_code"] = return_code
                 ledger["submit_bridge"] = bridge
                 ledger["submitted"] = submitted_any
+                if isinstance(bridge.get("revision_feedback"), str):
+                    revision_feedback = str(bridge["revision_feedback"])
+                    attempt["revision_feedback_received"] = bool(revision_feedback)
                 if gate_status and gate_status != "eligible":
                     ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 if return_code != 0:

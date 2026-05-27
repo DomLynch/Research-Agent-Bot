@@ -114,7 +114,7 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     calls: dict[str, Any] = {}
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         calls["synthesis"] = {"topic": topic, "out_dir": out_dir.name, "dry_run": dry_run, "timeout": timeout}
         out_dir.mkdir(parents=True)
         return 0
@@ -146,7 +146,7 @@ def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_pat
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     runs: list[str] = []
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
         return 0
@@ -194,7 +194,7 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
     topics: list[str] = []
     submit_calls = 0
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
         return 0
@@ -236,7 +236,7 @@ def test_cycle_retries_same_topic_before_next_topic(tmp_path: Path, monkeypatch)
     runs: list[str] = []
     submit_calls = 0
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         topics.append(topic)
         runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
@@ -283,7 +283,7 @@ def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Pa
     runs: list[str] = []
     submit_calls = 0
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         topics.append(topic)
         runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
@@ -321,6 +321,60 @@ def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Pa
     assert ledger["attempts"][1]["submitted"] == 1
 
 
+def test_cycle_applies_researka_revision_feedback_on_same_topic_retry(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "rapamycin", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    feedback_seen: list[str | None] = []
+    runs: list[str] = []
+    submit_calls = 0
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+    ) -> int:
+        feedback_seen.append(revision_feedback)
+        runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        if submit_calls == 1:
+            return {
+                "status": "submission_revise_requested",
+                "submitted": 0,
+                "published": 0,
+                "revision_feedback": "Revise headline and resubmit.",
+                "considered": [{"run": runs[-1], "status": "eligible"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        topic="rapamycin",
+        max_revise_attempts=3,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert feedback_seen == [None, "Revise headline and resubmit."]
+    assert ledger["attempts"][0]["failure_class"] == "C_writer_fixable"
+    assert ledger["attempts"][0]["revision_feedback_received"] is True
+    assert ledger["attempts"][1]["revision_feedback_applied"] is True
+
+
 def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
@@ -329,7 +383,7 @@ def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: P
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     topics: list[str] = []
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
         return 0
@@ -360,7 +414,7 @@ def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     topics: list[str] = []
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
         return 0
@@ -424,7 +478,7 @@ def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path
 
     runs: list[str] = []
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None) -> int:
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
         return 0

@@ -125,6 +125,20 @@ def test_build_user_prompt_no_rejected_input_still_works() -> None:
     assert "QUARANTINED" not in prompt
 
 
+def test_build_user_prompt_includes_revision_feedback_as_guidance(monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", "Revise headline; remove unsupported mechanistic overclaim.")
+    accepted = [_summary("r-A")]
+
+    prompt = _build_user_prompt(
+        accepted, [], _matrix(accepted), _thesis(),
+        topic="metformin",
+    )
+
+    assert "REVISION FEEDBACK TO ADDRESS IF SOURCE-SUPPORTED" in prompt
+    assert "Revise headline" in prompt
+    assert "Treat this as reviewer guidance, not evidence" in prompt
+
+
 def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> None:
     receipts = [
         _summary("r-immune", outcome="immune"),

@@ -1,6 +1,7 @@
 """Full-paper writer for trust-spine synthesis manuscripts."""
 from __future__ import annotations
 
+import os
 from collections.abc import Mapping, Sequence
 from typing import Any
 
@@ -73,6 +74,18 @@ FULL_PAPER_WORD_FLOOR = 5000
 # turns ~50% of the misses into AAA. Worst-case wall time is +1
 # section call (~30s), acceptable trade.
 SECTION_RETRY_BUDGET = 2
+
+
+def _revision_feedback_block() -> str:
+    feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
+    if not feedback:
+        return ""
+    return (
+        "REVISION FEEDBACK TO ADDRESS IF SOURCE-SUPPORTED:\n"
+        f"{feedback}\n"
+        "Treat this as reviewer guidance, not evidence. Do not add claims, citations, "
+        "or numerics unless they are supported by accepted receipts above."
+    )
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
@@ -216,6 +229,9 @@ def _build_user_prompt(
     bg_block = _build_background_lit_block(background_lit_entries)
     if bg_block:
         lines.append(bg_block)
+    revision_block = _revision_feedback_block()
+    if revision_block:
+        lines.extend(["", revision_block])
     return "\n".join(lines)
 
 
