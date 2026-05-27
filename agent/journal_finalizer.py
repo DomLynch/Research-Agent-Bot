@@ -268,10 +268,8 @@ _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
 
 
 def _outcome_display(slug: str) -> str:
-    cleaned = re.sub(
-        r"\s+outcomes?$", "", slug.replace("_", " "), flags=re.I,
-    )
-    return " ".join(w.capitalize() for w in cleaned.split())
+    from agent.outcome_class_remap import outcome_display
+    return outcome_display(re.sub(r"\s+outcomes?$", "", slug, flags=re.I))
 
 
 def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:

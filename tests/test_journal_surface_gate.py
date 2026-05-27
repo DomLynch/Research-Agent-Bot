@@ -1592,6 +1592,61 @@ def test_finalizer_phase_f_skips_when_table_already_complete(tmp_path) -> None:
     )
 
 
+def test_finalizer_phase_f_adds_missing_outcome_subsections(tmp_path) -> None:
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+    paper = (
+        "## Abstract\n\nA.\n\n"
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Longevity | n=1 | mixed | 1 direct | x |\n\n"
+        "### Longevity Outcomes\n\nL.\n\n"
+        "## Discussion\n\nD.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(_json.dumps({
+        "receipts": [
+            {"outcome_class": "longevity", "directness": "direct",
+             "effect_direction": "positive", "n_claims": 1},
+            {"outcome_class": "frailty", "directness": "direct",
+             "effect_direction": "mixed", "n_claims": 2},
+        ],
+    }))
+    finalize_run(tmp_path)
+    new_text = (tmp_path / "full_paper.md").read_text()
+    assert "| Frailty | n=1; claims=2" in new_text
+    assert "### Frailty Outcomes" in new_text
+
+
+def test_finalizer_load_bearing_tensions_are_public_safe(tmp_path) -> None:
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+    (tmp_path / "audit").mkdir()
+    (tmp_path / "full_paper.md").write_text(
+        "## Abstract\n\nA.\n\n"
+        "## Cross-Domain Synthesis\n\nShort.\n\n"
+        "## Discussion\n\nD.\n"
+    )
+    (tmp_path / "manifest.json").write_text(_json.dumps({"receipts": []}))
+    (tmp_path / "audit" / "tension_elaboration_plans.json").write_text(_json.dumps({
+        "plans": [{
+            "paper_a": "A 2026",
+            "paper_b": "B 2026",
+            "outcome_class": "dosing_pharmacokinetics",
+            "conflict_type": "disagreement",
+            "severity": 4,
+            "numeric_anchors": {"p = 0.002": 1},
+            "hypotheses": ["dose-regime difference"],
+        }],
+    }))
+    finalize_run(tmp_path)
+    new_text = (tmp_path / "full_paper.md").read_text()
+    assert "Dosing and Pharmacokinetics" in new_text
+    assert "dosing_pharmacokinetics" not in new_text
+    assert "0.002" not in new_text
+
+
 def test_finalizer_phase_f_idempotent(tmp_path) -> None:
     """Second finalizer run must not re-add the same row. The new
     row from the first run now satisfies the gate, so Phase F is a
