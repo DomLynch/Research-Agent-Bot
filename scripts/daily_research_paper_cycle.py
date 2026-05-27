@@ -509,7 +509,7 @@ def run_cycle(
                 _write_json(ledger_path, ledger)
                 return ledger
         remote_revision: dict[str, Any] | None = None
-        if submit and topic is None:
+        if submit and topic is None and (revision_loader is not None or submit_cycle is None):
             remote_revision, revision_error = _pending_remote_revision(runs_root, ledger_dir, loader=revision_loader)
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:

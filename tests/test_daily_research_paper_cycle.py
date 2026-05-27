@@ -571,6 +571,41 @@ def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkey
     assert error is None
 
 
+def test_remote_revision_requests_keeps_only_v3_research_paper_revisions(monkeypatch) -> None:
+    payload = {
+        "records": [
+            {
+                "artifactId": "v3-1",
+                "artifactType": "research_paper",
+                "agentId": "agent-v3-full-paper",
+                "decision": "revise",
+                "title": "Research Synthesis: Aspirin",
+                "requiredRevisions": ["Add caveat.", "Reduce repetition."],
+            },
+            {"artifactId": "alpha-1", "artifactType": "alpha_memo", "agentId": "agent-v4-alpha-memo", "decision": "revise"},
+            {"artifactId": "reject-1", "artifactType": "research_paper", "agentId": "agent-v3-full-paper", "decision": "reject"},
+        ]
+    }
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode()
+
+    monkeypatch.setattr(cycle.urllib.request, "urlopen", lambda *_args, **_kwargs: Response())
+
+    rows, error = cycle._remote_revision_requests("https://example.test/reviews")
+
+    assert error is None
+    assert [row["artifactId"] for row in rows] == ["v3-1"]
+    assert rows[0]["feedback"] == "Add caveat.; Reduce repetition."
+
+
 def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)

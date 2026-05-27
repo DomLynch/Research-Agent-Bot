@@ -625,7 +625,7 @@ def test_apply_fixes_backfills_results_after_numeric_strips() -> None:
 
     paper = "## Results\n\n" + " ".join(f"word{i}" for i in range(380))
     out, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
-    assert "### Result-interpretation guardrail" in out
+    assert "**Result-interpretation guardrail.**" in out
     assert fixer._section_word_count(out, "Results") >= 500
     assert any(
         item["fix_type"] == "analytical_depth_backfill"

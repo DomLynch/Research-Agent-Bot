@@ -4,34 +4,13 @@ from __future__ import annotations
 import re
 from collections.abc import Mapping
 
-__all__ = [
-    "ENDPOINT_REMAP",
-    "ENDPOINT_PATTERNS",
-    "BIOMEDICAL_OTHER_OUTCOME_RULES",
-    "OUTCOME_VOCAB",
-    "outcome_display",
-    "outcome_key",
-    "remap_outcome_class",
-    "refine_other_outcome_class",
-    "is_known_misclassification",
-]
+__all__ = ["ENDPOINT_REMAP", "ENDPOINT_PATTERNS", "BIOMEDICAL_OTHER_OUTCOME_RULES", "OUTCOME_VOCAB", "outcome_display", "outcome_key", "remap_outcome_class", "refine_other_outcome_class", "is_known_misclassification"]
 
-ENDPOINT_REMAP: Mapping[str, str] = {
-    # PEARL trial QoL endpoints — vocab routes the first to "cognitive"
-    # (wrong) and the others to "frailty" (debatable). All four belong
-    # under healthspan_qol.
-    "emotional well-being": "healthspan_qol",
-    "psychological well-being": "healthspan_qol",
-    "general health": "healthspan_qol",
-    "self-reported health": "healthspan_qol",
-    "self-reported pain": "healthspan_qol",
-    "pain score": "healthspan_qol",
-    "quality of life": "healthspan_qol",
-    "qol": "healthspan_qol",
-    "sf-36": "healthspan_qol",
-    "sf36": "healthspan_qol",
-    "vitality": "healthspan_qol",
-}
+# PEARL trial QoL endpoints belong under healthspan_qol.
+ENDPOINT_REMAP: Mapping[str, str] = dict.fromkeys((
+    "emotional well-being", "psychological well-being", "general health", "self-reported health", "self-reported pain",
+    "pain score", "quality of life", "qol", "sf-36", "sf36", "vitality",
+), "healthspan_qol")
 
 ENDPOINT_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bemotional\s+well[-\s]?being\b", re.I), "healthspan_qol"),
@@ -49,7 +28,7 @@ OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
     "cardiometabolic": ("Cardiometabolic", (), ()),
     "cognitive": ("Cognitive", (), ()),
     "contextual_other": ("Contextual Other", (), ()),
-    "deficiency_prevalence": ("Deficiency and Prevalence", ("deficiency prevalence",), ("deficiency", "insufficiency", "prevalence", "serum", "status")),
+    "deficiency_prevalence": ("Deficiency Prevalence", ("deficiency prevalence",), ("deficiency", "insufficiency", "prevalence", "serum", "status")),
     "dosing_pharmacokinetics": ("Dosing and Pharmacokinetics", ("dosing pharmacokinetics",), ("dose", "dosing", "supplementation", "pharmacokinetic", "cholecalciferol", "calcifediol")),
     "frailty": ("Frailty", (), ()),
     "healthspan_qol": ("Healthspan and Quality of Life", ("healthspan qol", "quality of life"), ()),
@@ -121,9 +100,7 @@ def refine_other_outcome_class(receipt: object, current_class: str) -> str:
     """
     if current_class != "other":
         return current_class
-    text = " ".join(str(getattr(receipt, name, "") or "") for name in (
-        "receipt_id", "source_title", "population_summary",
-    )).lower()
+    text = " ".join(str(getattr(receipt, name, "") or "") for name in ("receipt_id", "source_title", "population_summary")).lower()
     for label, needles in BIOMEDICAL_OTHER_OUTCOME_RULES:
         if any(needle in text for needle in needles):
             return label
