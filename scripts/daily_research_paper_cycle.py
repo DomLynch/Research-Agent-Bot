@@ -640,9 +640,9 @@ def run_cycle(
                     ledger["status"] = "synthesis_completed_no_submission"
                 if revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
                     break
-            if revision_source:
-                _mark_revision_handled(ledger_dir, revision_source, status=str(ledger.get("status") or ""))
             if ledger["status"] == "submitted_to_researka":
+                if revision_source:
+                    _mark_revision_handled(ledger_dir, revision_source, status="submitted_to_researka")
                 break
             attempted.add(selected)
         _write_json(ledger_path, ledger)
