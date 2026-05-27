@@ -510,6 +510,9 @@ def run_cycle(
     timeout: int | None = None,
     max_attempts: int = 5,
     max_revise_attempts: int = 3,
+    decision_poll_seconds: int = DECISION_POLL_SECONDS,
+    decision_poll_interval_seconds: int = DECISION_POLL_INTERVAL_SECONDS,
+    decision_sleep: Sleeper = time.sleep,
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
     ledger_dir = runs_root / LEDGER_DIR
@@ -674,6 +677,29 @@ def run_cycle(
                     ledger["status"] = "synthesis_failed"
                 elif bridge.get("status") == "submitted_to_researka":
                     ledger["status"] = "submitted_to_researka"
+                    if (
+                        submit
+                        and not revision_source
+                        and bool(submitted_current)
+                        and revise_attempt < max(1, max_revise_attempts)
+                        and (revision_loader is not None or submit_cycle is None)
+                    ):
+                        followup, poll = _poll_remote_revision(
+                            runs_root,
+                            ledger_dir,
+                            loader=revision_loader,
+                            seconds=decision_poll_seconds,
+                            interval_seconds=decision_poll_interval_seconds,
+                            sleeper=decision_sleep,
+                        )
+                        ledger["decision_poll"] = poll
+                        if followup:
+                            revision_source = followup
+                            revision_feedback = str(followup.get("feedback") or "")
+                            ledger["status"] = "submission_revise_requested"
+                            attempt["remote_revision_requested"] = True
+                            attempt["revision_feedback_received"] = bool(revision_feedback)
+                            continue
                     break
                 else:
                     ledger["status"] = "synthesis_completed_no_submission"
@@ -699,6 +725,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--timeout-sec", type=int, default=0)
     parser.add_argument("--max-attempts", type=int, default=5)
     parser.add_argument("--max-revise-attempts", type=int, default=3)
+    parser.add_argument("--decision-poll-sec", type=int, default=DECISION_POLL_SECONDS)
+    parser.add_argument("--decision-poll-interval-sec", type=int, default=DECISION_POLL_INTERVAL_SECONDS)
     args = parser.parse_args(argv)
     ledger = run_cycle(
         runs_root=args.runs_root,
@@ -710,6 +738,8 @@ def main(argv: list[str] | None = None) -> int:
         timeout=args.timeout_sec or None,
         max_attempts=args.max_attempts,
         max_revise_attempts=args.max_revise_attempts,
+        decision_poll_seconds=args.decision_poll_sec,
+        decision_poll_interval_seconds=args.decision_poll_interval_sec,
     )
     print(
         f"[daily-v3-cycle] status={ledger['status']} attempted_topic={ledger.get('attempted_topic', ledger.get('topic', '-'))} "
