@@ -28,7 +28,9 @@ def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool 
         text += 'target_journal = "GeroScience"\n'
     (root / "topic_packs" / f"{topic}.toml").write_text(text, encoding="utf-8")
     if corpus:
-        (root / "docs" / "quality-reference" / topic).mkdir(parents=True)
+        qdir = root / "docs" / "quality-reference" / topic / "quant_claims"
+        qdir.mkdir(parents=True)
+        _write_json(qdir / "seed.quant_claims.json", {"paper_id": "seed", "claims": []})
 
 
 def _prior_run(root: Path, topic: str, *, receipts: int, tensions: int, primary: int = 1, level: int = 2) -> Path:
@@ -47,14 +49,14 @@ def _prior_run(root: Path, topic: str, *, receipts: int, tensions: int, primary:
     return run
 
 
-def test_discover_topics_requires_pack_and_corpus(tmp_path: Path) -> None:
+def test_discover_topics_includes_pack_before_corpus_exists(tmp_path: Path) -> None:
     _topic(tmp_path, "creatine")
-    _topic(tmp_path, "missing_corpus", corpus=False)
+    _topic(tmp_path, "new_topic", corpus=False)
     (tmp_path / "topic_packs" / "_biomedical_default.toml").write_text("", encoding="utf-8")
 
     topics = cycle.discover_topics(tmp_path / "topic_packs", tmp_path / "docs" / "quality-reference")
 
-    assert topics == ["creatine"]
+    assert topics == ["creatine", "new_topic"]
 
 
 def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_path: Path) -> None:
@@ -138,6 +140,91 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
     assert calls["synthesis"]["topic"] == "creatine"
     assert calls["submit"]["submit"] is True
     assert ledger["published"] == 0
+
+
+def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "new_topic", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    calls: dict[str, Any] = {}
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        calls["corpus"] = {"topic": topic, "dry_run": dry_run, "timeout": timeout}
+        return {"status": "corpus_seeded", "n_quant_claims": 7}
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        calls["synthesis"] = {"topic": topic, "out_dir": out_dir.name}
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=fake_corpus,
+        timeout=99,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert calls["corpus"] == {"topic": "new_topic", "dry_run": False, "timeout": 99}
+    assert calls["synthesis"]["topic"] == "new_topic"
+    assert ledger["corpus"]["status"] == "corpus_seeded"
+
+
+def test_cycle_skips_empty_seed_and_tries_next_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_empty", corpus=False, target_journal=True)
+    _topic(tmp_path, "zzz_seeded", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    synthesis_topics: list[str] = []
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        if topic == "aaa_empty":
+            return {"status": "corpus_seed_empty", "n_quant_claims": 0}
+        return {"status": "corpus_seeded", "n_quant_claims": 8}
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        synthesis_topics.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=fake_corpus,
+        max_attempts=2,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["attempts"][0]["submit_status"] == "corpus_seed_empty"
+    assert ledger["attempts"][0]["failure_class"] == "B_corpus_fixable"
+    assert synthesis_topics == ["zzz_seeded"]
+
+
+def test_corpus_seed_failure_is_corpus_fixable(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    def fail_run(*_args: Any, **_kwargs: Any) -> None:
+        raise OSError("offline")
+
+    monkeypatch.setattr(cycle.subprocess, "run", fail_run)
+
+    result = cycle._ensure_topic_corpus("new_topic", dry_run=False)
+
+    assert result["status"] == "corpus_seed_failed"
+    assert result["n_quant_claims"] == 0
+    assert cycle._failure_class(result["status"]) == "B_corpus_fixable"
 
 
 def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_path: Path, monkeypatch) -> None:
@@ -512,6 +599,20 @@ def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path
     assert ledger["attempts"][0]["gate_status"] == "audit_not_all_green"
     assert ledger["attempts"][0]["failure_class"] == "C_writer_fixable"
     assert histogram["blockers"]["audit_not_all_green"]["count"] == 1
+
+
+def test_blocker_histogram_marks_repeated_compiler_failure_as_auto_fix_candidate(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    row = {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "out_dir": "run"}
+
+    for i in range(cycle.HISTOGRAM_ISSUE_THRESHOLD):
+        cycle._record_blockers(ledger_dir, f"2026-05-{24 + i:02d}", [row])
+
+    histogram = json.loads((ledger_dir / cycle.BLOCKER_HISTOGRAM).read_text(encoding="utf-8"))
+    blocker = histogram["blockers"]["journal_surface_not_passed"]
+    assert blocker["github_issue_candidate"] is True
+    assert blocker["auto_fix_candidate"] is True
+    assert blocker["samples"][0]["gate_status"] == "journal_surface_not_passed"
 
 
 def test_cycle_fails_closed_when_remote_dedupe_fails(tmp_path: Path, monkeypatch) -> None:

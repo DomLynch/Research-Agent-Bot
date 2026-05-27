@@ -219,6 +219,9 @@ def _failure_class(status: str) -> str:
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
+        "corpus_missing_dry_run": "B_corpus_fixable",
+        "corpus_seed_empty": "B_corpus_fixable",
+        "corpus_seed_failed": "B_corpus_fixable",
         "missing": "C_writer_fixable",
         "duplicate_submission_fingerprint": "D_no_action",
         "duplicate_remote_publication": "D_no_action",
@@ -307,7 +310,16 @@ def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = Non
     if dry_run:
         return {"status": "corpus_missing_dry_run", "n_quant_claims": 0}
     cmd = [sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic]
-    result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, capture_output=True, text=True)
+    try:
+        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, capture_output=True, text=True)
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return {
+            "status": "corpus_seed_failed",
+            "return_code": None,
+            "n_quant_claims_before": before,
+            "n_quant_claims": _quant_claim_count(topic),
+            "error": f"{type(exc).__name__}: {exc}",
+        }
     after = _quant_claim_count(topic)
     status = "corpus_seeded" if result.returncode == 0 and after else "corpus_seed_empty" if result.returncode == 0 else "corpus_seed_failed"
     return {
@@ -374,7 +386,7 @@ def run_cycle(
         for _ in range(max(1, max_attempts if not topic else 1)):
             selected = topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted)
             if not selected:
-                ledger["status"] = "no_unpublished_topic_with_corpus"
+                ledger["status"] = "no_unpublished_topic_available"
                 break
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
             out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
