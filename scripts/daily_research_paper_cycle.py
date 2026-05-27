@@ -14,6 +14,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import tomllib
 import urllib.error
 import urllib.request
@@ -40,11 +41,14 @@ PREFLIGHT_MAX_OUTCOMES = 12
 RECENT_FAILURE_COOLDOWN_HOURS = 24
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
+DECISION_POLL_SECONDS = 900
+DECISION_POLL_INTERVAL_SECONDS = 30
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
 CorpusBuilder = Callable[..., dict[str, Any]]
 RevisionLoader = Callable[[], tuple[list[dict[str, Any]], str | None]]
+Sleeper = Callable[[float], None]
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -256,6 +260,41 @@ def _pending_remote_revision(
                 request["source_run"] = run.name
                 return request, None
     return None, None
+
+
+def _poll_remote_revision(
+    runs_root: Path,
+    ledger_dir: Path,
+    *,
+    loader: RevisionLoader | None = None,
+    seconds: int = DECISION_POLL_SECONDS,
+    interval_seconds: int = DECISION_POLL_INTERVAL_SECONDS,
+    sleeper: Sleeper = time.sleep,
+) -> tuple[dict[str, Any] | None, dict[str, Any]]:
+    meta: dict[str, Any] = {
+        "checked": seconds > 0,
+        "seconds": max(0, seconds),
+        "interval_seconds": max(1, interval_seconds),
+        "attempts": 0,
+    }
+    if seconds <= 0:
+        return None, meta
+    deadline = time.monotonic() + seconds
+    last_error = None
+    while True:
+        meta["attempts"] = int(meta["attempts"]) + 1
+        revision, error = _pending_remote_revision(runs_root, ledger_dir, loader=loader)
+        if revision:
+            meta.update({"matched": True})
+            return revision, meta
+        last_error = error or last_error
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            meta.update({"matched": False})
+            if last_error:
+                meta["last_error"] = last_error
+            return None, meta
+        sleeper(min(float(meta["interval_seconds"]), remaining))
 
 
 def _publication_track_topic(topic: str) -> bool:
