@@ -227,6 +227,28 @@ def test_corpus_seed_failure_is_corpus_fixable(tmp_path: Path, monkeypatch) -> N
     assert cycle._failure_class(result["status"]) == "B_corpus_fixable"
 
 
+def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    seen: dict[str, Any] = {}
+
+    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
+        seen["cmd"] = cmd
+        qdir = cycle.CORPORA / "new_topic" / "quant_claims"
+        qdir.mkdir(parents=True)
+        _write_json(qdir / "seed.quant_claims.json", {"paper_id": "seed", "claims": []})
+        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
+
+    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+
+    result = cycle._ensure_topic_corpus("new_topic", dry_run=False)
+
+    assert result["status"] == "corpus_seeded"
+    assert result["n_quant_claims_before"] == 0
+    assert result["n_quant_claims"] == 1
+    assert seen["cmd"][-2:] == ["--topic", "new_topic"]
+    assert "seed_topic_corpus.py" in seen["cmd"][1]
+
+
 def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
