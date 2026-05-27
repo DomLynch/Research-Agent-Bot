@@ -78,13 +78,10 @@ SECTION_RETRY_BUDGET = 2
 
 def _revision_feedback_block() -> str:
     feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
-    if not feedback:
-        return ""
-    return (
+    return "" if not feedback else (
         "REVISION FEEDBACK TO ADDRESS IF SOURCE-SUPPORTED:\n"
         f"{feedback}\n"
-        "Treat this as reviewer guidance, not evidence. Do not add claims, citations, "
-        "or numerics unless they are supported by accepted receipts above."
+        "Treat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics."
     )
 
 
