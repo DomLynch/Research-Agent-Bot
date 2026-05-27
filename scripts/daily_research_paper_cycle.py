@@ -38,6 +38,7 @@ HISTOGRAM_ISSUE_THRESHOLD = 5
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
+CorpusBuilder = Callable[..., dict[str, Any]]
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -55,13 +56,17 @@ def _read_json(path: Path) -> dict[str, Any]:
 
 def discover_topics(topic_packs: Path | None = None, corpora: Path | None = None) -> list[str]:
     topic_packs = topic_packs or TOPIC_PACKS
-    corpora = corpora or CORPORA
+    _ = corpora
     topics = []
     for path in sorted(topic_packs.glob("*.toml")):
         topic = path.stem
-        if not topic.startswith("_") and (corpora / topic).is_dir():
+        if not topic.startswith("_"):
             topics.append(topic)
     return topics
+
+
+def _quant_claim_count(topic: str) -> int:
+    return sum(1 for _ in (CORPORA / topic / "quant_claims").glob("*.quant_claims.json"))
 
 
 def _attempted_at(topic: str, ledger_dir: Path) -> str:
@@ -235,10 +240,12 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
         item = blockers.setdefault(code, {"count": 0, "class": _failure_class(status), "samples": []})
         item["count"] = int(item.get("count") or 0) + 1
         item["last_seen"] = date
-        sample = {k: row.get(k) for k in ("topic", "run", "out_dir", "status", "submit_status") if row.get(k) is not None}
+        sample = {k: row.get(k) for k in ("topic", "run", "out_dir", "status", "gate_status", "submit_status") if row.get(k) is not None}
         item["samples"] = ([sample] + list(item.get("samples") or []))[:3]
         if int(item["count"]) >= HISTOGRAM_ISSUE_THRESHOLD and item.get("class") != "D_no_action":
             item["github_issue_candidate"] = True
+            if item.get("class") == "A_compiler_fixable":
+                item["auto_fix_candidate"] = True
             issue_candidates.append(code)
     data["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
     _write_json(path, data)
@@ -293,6 +300,25 @@ def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
     return True
 
 
+def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+    before = _quant_claim_count(topic)
+    if before:
+        return {"status": "corpus_ready", "n_quant_claims": before}
+    if dry_run:
+        return {"status": "corpus_missing_dry_run", "n_quant_claims": 0}
+    cmd = [sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic]
+    result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, capture_output=True, text=True)
+    after = _quant_claim_count(topic)
+    status = "corpus_seeded" if result.returncode == 0 and after else "corpus_seed_empty" if result.returncode == 0 else "corpus_seed_failed"
+    return {
+        "status": status,
+        "return_code": int(result.returncode),
+        "n_quant_claims_before": before,
+        "n_quant_claims": after,
+        "stderr_tail": result.stderr[-1200:],
+    }
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -303,6 +329,7 @@ def run_cycle(
     topic: str | None = None,
     remote_loader: RemoteLoader | None = None,
     submit_cycle: SubmitCycle | None = None,
+    ensure_corpus: CorpusBuilder | None = None,
     timeout: int | None = None,
     max_attempts: int = 5,
     max_revise_attempts: int = 3,
@@ -355,6 +382,23 @@ def run_cycle(
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"
                 break
+            corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
+            ledger["corpus"] = corpus
+            if corpus.get("status") not in {"corpus_ready", "corpus_seeded"}:
+                attempt = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": corpus.get("status"),
+                    "failure_class": "B_corpus_fixable",
+                    "submitted": 0,
+                    "corpus": corpus,
+                }
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "corpus_unavailable_no_submission"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                attempted.add(selected)
+                continue
             preflight = _preflight(selected, runs_root, ledger_dir)
             if not preflight["passed"]:
                 attempt = {
