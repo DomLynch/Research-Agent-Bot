@@ -135,7 +135,7 @@ _PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
     ("source-bound", "extracted"),
     ("claim atom", "extracted finding"),
     ("endpoint proximity", "clinical directness"),
-    ("accepted receipt graph", "included source set"), ("accepted receipts", "included sources"), ("accepted receipt", "included source"),
+    ("accepted receipt graph", "included source set"), ("accepted corpus", "included studies"), ("accepted receipts", "included sources"), ("accepted receipt", "included source"),
     ("mechanistic receipts", "mechanistic sources"), ("direct clinical receipts", "direct clinical sources"), ("indirect clinical receipts", "indirect clinical sources"), ("final receipt admission", "final source admission"), ("receipt admission funnel", "source admission funnel"), ("receipt candidates", "source candidates"),
     ("receipt set", "source set"), ("receipt graph", "source set"), ("receipts", "sources"),
     # Word-count-neutral replacement: "structured corpus synthesis"
@@ -694,6 +694,8 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
     out: list[str] = []
     for match in _AUTHOR_YEAR_RE.finditer(_journal_body(paper_md)):
         token = f"{match.group(1)} {match.group(2)}"
+        if match.group(1).casefold().endswith(("'s", "’s")):
+            continue
         # Compare via _fold so diacritic mismatches (Hernández inline vs
         # Hernandez in References) don't false-positive. Report the
         # original (un-folded) inline token so the issue message
