@@ -76,8 +76,9 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     entries.extend(log)
     text, log = _phase_l_strengthen_analytical_sections(text, out_dir)
     entries.extend(log)
-    text, log = _phase_m_review_noise_control(text, out_dir)
-    entries.extend(log)
+    from scripts.review_noise_control import apply_review_noise_control
+    text, noise_changes = apply_review_noise_control(text, out_dir)
+    entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
     # Phase G reads it. Phase G's surface re-evaluation reads from disk
     # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
@@ -399,146 +400,6 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
         ), "discussion_conditional_contract")
         append("Discussion", "This boundary is also practical for reviewers: it states why the manuscript is useful now, what evidence would strengthen it, and why current uncertainty should narrow the claim instead of erasing the synthesis.", "discussion_peer_review_boundary")  # noqa: E501
     return text, entries
-
-
-def _phase_m_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
-    entries: list[FinalizerLogEntry] = []
-
-    new_text, n = re.subn(r"\bContextual Other\b", "Contextual Adjacent Evidence", text)
-    if n:
-        text = new_text
-        entries.append(FinalizerLogEntry(
-            "M_review_noise_control", "rename_contextual_other", n,
-            "renamed broad contextual bucket to explicit adjacent-evidence label",
-        ))
-    if "Contextual Adjacent Evidence" in text and "not pooled with direct outcome evidence" not in text:
-        note = (
-            "\n\n**Outcome-class note:** Contextual Adjacent Evidence denotes "
-            "background, boundary-condition, or adjacent-outcome sources. It is "
-            "not pooled with direct outcome evidence.\n"
-        )
-        text, inserted = re.subn(r"(^## Results\b)", r"\1" + note, text, count=1, flags=re.M)
-        if inserted:
-            entries.append(FinalizerLogEntry(
-                "M_review_noise_control", "explain_contextual_adjacent_evidence", 1,
-                "defined the broad adjacent-evidence bucket before Results interpretation",
-            ))
-
-    text, n = _dedupe_repeated_blocks(text)
-    if n:
-        entries.append(FinalizerLogEntry(
-            "M_review_noise_control", "dedupe_repeated_blocks", n,
-            f"removed {n} repeated prose/table block(s)",
-        ))
-
-    text, n = _trim_cross_domain_tables(text)
-    if n:
-        entries.append(FinalizerLogEntry(
-            "M_review_noise_control", "trim_low_value_cross_domain_rows", n,
-            f"removed {n} low-severity agreement row(s) from cross-domain tables",
-        ))
-
-    if _has_verification_limited_sources(out_dir) and "verification-limited context" not in text:
-        note = (
-            "\n\n**Verification note:** Reference-only or no-abstract records "
-            "are treated as verification-limited context, not as equal-weight "
-            "support for the main claim.\n"
-        )
-        text, inserted = re.subn(r"(^## Limitations\b)", r"\1" + note, text, count=1, flags=re.M)
-        if inserted:
-            entries.append(FinalizerLogEntry(
-                "M_review_noise_control", "flag_verification_limited_sources", 1,
-                "flagged reference-only/no-abstract records as lower-weight context",
-            ))
-    return text, entries
-
-
-def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
-    parts = re.split(r"(^## References\b.*)", text, maxsplit=1, flags=re.M | re.S)
-    body, tail = parts[0], "".join(parts[1:])
-    chunks = re.split(r"(\n{2,})", body)
-    seen: set[str] = set()
-    removed = 0
-    for i in range(0, len(chunks), 2):
-        block = chunks[i]
-        norm = re.sub(r"\s+", " ", block.strip())
-        words = norm.split()
-        table_like = block.lstrip().startswith("|") and block.count("\n|") >= 1
-        prose_like = len(words) >= 18
-        if not norm or not (table_like or prose_like):
-            continue
-        if norm in seen:
-            chunks[i] = ""
-            removed += 1
-        else:
-            seen.add(norm)
-    return "".join(chunks) + tail, removed
-
-
-def _cells(line: str) -> list[str]:
-    return [c.strip() for c in line.strip().strip("|").split("|")]
-
-
-def _separator_row(line: str) -> bool:
-    return bool(re.fullmatch(r"\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*", line))
-
-
-def _trim_cross_domain_tables(text: str) -> tuple[str, int]:
-    match = re.search(r"^## Cross-Domain Synthesis\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
-    if not match:
-        return text, 0
-    section = match.group(0)
-    lines = section.splitlines()
-    out: list[str] = []
-    removed = 0
-    i = 0
-    while i < len(lines):
-        if not lines[i].lstrip().startswith("|"):
-            out.append(lines[i])
-            i += 1
-            continue
-        start = i
-        while i < len(lines) and lines[i].lstrip().startswith("|"):
-            i += 1
-        table = lines[start:i]
-        if len(table) < 3 or not _separator_row(table[1]):
-            out.extend(table)
-            continue
-        header = [c.lower() for c in _cells(table[0])]
-        sev_idx = next((j for j, c in enumerate(header) if "severity" in c), -1)
-        kind_idx = next((j for j, c in enumerate(header) if any(k in c for k in ("kind", "type", "tension", "conflict"))), -1)
-        if sev_idx < 0 and kind_idx < 0:
-            out.extend(table)
-            continue
-        kept = table[:2]
-        for row in table[2:]:
-            cells = _cells(row)
-            kind = cells[kind_idx].lower() if 0 <= kind_idx < len(cells) else ""
-            severity = None
-            if 0 <= sev_idx < len(cells):
-                m = re.search(r"\b([0-5])\b", cells[sev_idx])
-                severity = int(m.group(1)) if m else None
-            low_value = (severity is not None and severity <= 1) or (
-                "agreement" in kind and "disagreement" not in kind
-            )
-            if low_value:
-                removed += 1
-            else:
-                kept.append(row)
-        out.extend(kept)
-    return text[:match.start()] + "\n".join(out) + text[match.end():], removed
-
-
-def _has_verification_limited_sources(out_dir: Path) -> bool:
-    registry = _load_sidecar(out_dir / "citation_registry.json")
-    if not isinstance(registry, dict):
-        return False
-    for row in registry.values():
-        if not isinstance(row, dict):
-            continue
-        if not row.get("title") and not row.get("source_journal"):
-            return True
-    return False
 
 
 # --- Phase D: Reference closure ---------------------------------------

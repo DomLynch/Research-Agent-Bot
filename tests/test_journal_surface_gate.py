@@ -1647,6 +1647,58 @@ def test_finalizer_load_bearing_tensions_are_public_safe(tmp_path) -> None:
     assert "0.002" not in new_text
 
 
+def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> None:
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+
+    repeated_table = (
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Contextual Other | n=26; claims=1346 | adjacent context |\n"
+    )
+    repeated_finding = (
+        "Key findings repeated verbatim across sections with enough words to "
+        "trigger the duplicate-block guard before submission to review.\n"
+    )
+    paper = (
+        "## Abstract\n\nA.\n\n"
+        "## Results\n\n"
+        f"{repeated_table}\n{repeated_table}\n"
+        f"{repeated_finding}\n{repeated_finding}\n"
+        "## Cross-Domain Synthesis\n\n"
+        "| Pair | Kind | Severity | Interpretation |\n"
+        "|---|---|---|---|\n"
+        "| A-B | agreement | 1 | minor same-direction context |\n"
+        "| C-D | null_vs_positive | 3 | notable tension |\n"
+        "| E-F | disagreement | 5 | load-bearing disagreement |\n\n"
+        "## Limitations\n\nL.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "citation_registry.json").write_text(_json.dumps({
+        "r1": {"body_citation": "Smith 2024", "title": None, "source_journal": None},
+    }))
+
+    report = finalize_run(tmp_path)
+    new_text = (tmp_path / "full_paper.md").read_text()
+    rules = {entry.rule for entry in report.entries}
+
+    assert "Contextual Other" not in new_text
+    assert "Contextual Adjacent Evidence" in new_text
+    assert "not pooled with direct outcome evidence" in new_text
+    assert new_text.count("Key findings repeated verbatim") == 1
+    assert "minor same-direction context" not in new_text
+    assert "notable tension" in new_text
+    assert "load-bearing disagreement" in new_text
+    assert "verification-limited context" in new_text
+    assert {
+        "rename_contextual_other",
+        "explain_contextual_adjacent_evidence",
+        "dedupe_repeated_blocks",
+        "trim_low_value_cross_domain_rows",
+        "flag_verification_limited_sources",
+    } <= rules
+
+
 def test_finalizer_phase_f_idempotent(tmp_path) -> None:
     """Second finalizer run must not re-add the same row. The new
     row from the first run now satisfies the gate, so Phase F is a

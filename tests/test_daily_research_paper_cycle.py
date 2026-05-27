@@ -519,6 +519,83 @@ def test_cycle_applies_researka_revision_feedback_on_same_topic_retry(tmp_path: 
     assert ledger["attempts"][1]["revision_feedback_applied"] is True
 
 
+def test_cycle_polls_revision_after_submit_and_resubmits(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "ace_inhibitors_aging", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    feedback_seen: list[str | None] = []
+    run_names: list[str] = []
+    loader_calls = 0
+    submit_calls = 0
+
+    title = "Research Synthesis: ACE Inhibitors Aging — full paper"
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+    ) -> int:
+        assert topic == "ace_inhibitors_aging"
+        feedback_seen.append(revision_feedback)
+        run_names.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text(f"# {title}\n\n## Abstract\n\nA.", encoding="utf-8")
+        return 0
+
+    def fake_submit(**kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        runs_root = kwargs["runs_root"]
+        paper = runs_root / run_names[-1] / "full_paper.md"
+        _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+            "run": run_names[-1],
+            "topic": "ace_inhibitors_aging",
+            "fingerprint": cycle.submit_bridge._sha256(paper),
+        }])
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    def fake_revision_loader() -> tuple[list[dict[str, Any]], str | None]:
+        nonlocal loader_calls
+        loader_calls += 1
+        if loader_calls == 1:
+            return [], None
+        return ([{
+            "artifactId": "ace-review-1",
+            "title": title,
+            "feedback": "Define Contextual Other, dedupe repeated blocks, and trim minor rows.",
+        }], None)
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=fake_revision_loader,
+        submit_cycle=fake_submit,
+        max_revise_attempts=3,
+        decision_poll_seconds=1,
+        decision_poll_interval_seconds=1,
+        decision_sleep=lambda _seconds: None,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert submit_calls == 2
+    assert feedback_seen == [
+        None,
+        "Define Contextual Other, dedupe repeated blocks, and trim minor rows.",
+    ]
+    assert ledger["attempts"][0]["remote_revision_requested"] is True
+    assert ledger["attempts"][1]["revision_feedback_applied"] is True
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][0]["key"] == "ace-review-1"
+
+
 def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
     _topic(tmp_path, "rapamycin", target_journal=True)
