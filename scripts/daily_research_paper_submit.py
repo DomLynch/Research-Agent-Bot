@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
 REJECTED_FINGERPRINTS = "_rejected_fingerprints.json"
+REVISION_FINGERPRINTS = "_revision_fingerprints.json"
 TOKEN_ENVS = (
     "RESEARKA_API_KEY_V3",
     "RESEARKA_API_TOKEN_V3",
@@ -143,6 +144,26 @@ def _append_record(path: Path, row: dict[str, Any]) -> None:
     _write_json(path, records)
 
 
+def _feedback_text(payload: Any) -> str:
+    if isinstance(payload, str):
+        text = payload
+    else:
+        text = json.dumps(payload, sort_keys=True)
+    return " ".join(text.split())[:2000]
+
+
+def _is_revision_feedback(text: str) -> bool:
+    lowered = text.lower()
+    return any(marker in lowered for marker in ("revise", "revision", "resubmit", "needs revision"))
+
+
+def _mark_considered_status(rows: list[dict[str, Any]], run_name: str, status: str) -> None:
+    for row in rows:
+        if row.get("run") == run_name:
+            row["status"] = status
+            return
+
+
 def select_candidate(
     root: Path,
     submitted_path: Path,
@@ -151,6 +172,7 @@ def select_candidate(
 ) -> tuple[Path | None, list[dict[str, Any]]]:
     local_seen = _seen(submitted_path)
     rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
+    revision_seen = _seen(submitted_path.with_name(REVISION_FINGERPRINTS))
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
@@ -164,6 +186,8 @@ def select_candidate(
             ok, status = False, "superseded_topic_run"
         elif ok and fp in rejected_seen:
             ok, status = False, "researka_rejected_fingerprint"
+        elif ok and fp in revision_seen:
+            ok, status = False, "researka_revision_fingerprint"
         elif ok and fp in local_seen:
             ok, status = False, "duplicate_submission_fingerprint"
         elif ok and markers & published_seen:
@@ -419,17 +443,24 @@ def run_cycle(
     if result.get("ok"):
         _append_record(submitted_path, {"date": date, "run": run.name, "topic": metadata.get("topic"), "fingerprint": fp})
         ledger.update({"status": "submitted_to_researka", "submitted": 1})
+        _mark_considered_status(considered, run.name, "submitted_to_researka")
     elif 400 <= int(result.get("status") or 0) < 500:
-        _append_record(submitted_path.with_name(REJECTED_FINGERPRINTS), {
+        feedback = _feedback_text(result.get("response"))
+        is_revision = _is_revision_feedback(feedback)
+        status = "submission_revise_requested" if is_revision else "submission_rejected_by_researka"
+        _append_record(submitted_path.with_name(REVISION_FINGERPRINTS if is_revision else REJECTED_FINGERPRINTS), {
             "date": date,
             "run": run.name,
             "topic": metadata.get("topic"),
             "fingerprint": fp,
             "status": result.get("status"),
+            "feedback": feedback,
         })
-        ledger.update({"status": "submission_rejected_by_researka"})
+        ledger.update({"status": status, "revision_feedback": feedback if is_revision else ""})
+        _mark_considered_status(considered, run.name, status)
     else:
         ledger.update({"status": "submission_failed"})
+        _mark_considered_status(considered, run.name, "submission_failed")
     _write_json(ledger_path, ledger)
     return ledger
 
