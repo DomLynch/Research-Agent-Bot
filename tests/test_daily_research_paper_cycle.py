@@ -281,11 +281,13 @@ def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Pa
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     topics: list[str] = []
     runs: list[str] = []
+    feedback_seen: list[str | None] = []
     submit_calls = 0
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         topics.append(topic)
         runs.append(out_dir.name)
+        feedback_seen.append(revision_feedback)
         out_dir.mkdir(parents=True)
         return 0
 
@@ -297,6 +299,7 @@ def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Pa
                 "status": "submission_rejected_by_researka",
                 "submitted": 0,
                 "published": 0,
+                "revision_feedback": "Rejected: narrow the scope and resubmit.",
                 "considered": [{"run": runs[-1], "status": "eligible"}],
             }
         return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
@@ -316,6 +319,7 @@ def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Pa
 
     assert ledger["status"] == "submitted_to_researka"
     assert topics == ["creatine", "creatine"]
+    assert feedback_seen == [None, "Rejected: narrow the scope and resubmit."]
     assert ledger["attempts"][0]["gate_status"] == "submission_rejected_by_researka"
     assert ledger["attempts"][0]["failure_class"] == "C_writer_fixable"
     assert ledger["attempts"][1]["submitted"] == 1

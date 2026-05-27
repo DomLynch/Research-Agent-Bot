@@ -456,7 +456,7 @@ def run_cycle(
             "status": result.get("status"),
             "feedback": feedback,
         })
-        ledger.update({"status": status, "revision_feedback": feedback if is_revision else ""})
+        ledger.update({"status": status, "revision_feedback": feedback})
         _mark_considered_status(considered, run.name, status)
     else:
         ledger.update({"status": "submission_failed"})

@@ -112,6 +112,7 @@ def test_researka_rejection_records_and_skips_same_paper(tmp_path: Path) -> None
     assert ledger["status"] == "submission_rejected_by_researka"
     assert ledger["submitted"] == 0
     assert ledger["considered"][0]["status"] == "submission_rejected_by_researka"
+    assert ledger["revision_feedback"] == "gate rejected"
     rejected = json.loads((tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).read_text(encoding="utf-8"))
     assert rejected[0]["topic"] == "topic"
 
