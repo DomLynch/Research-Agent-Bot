@@ -211,6 +211,7 @@ def _failure_class(status: str) -> str:
         "pre_submit_not_passed": "A_compiler_fixable",
         "audit_not_all_green": "C_writer_fixable",
         "synthesis_failed": "C_writer_fixable",
+        "submission_rejected_by_researka": "C_writer_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
         "missing": "C_writer_fixable",
         "duplicate_submission_fingerprint": "D_no_action",
@@ -290,7 +291,7 @@ def run_cycle(
     remote_loader: RemoteLoader | None = None,
     submit_cycle: SubmitCycle | None = None,
     timeout: int | None = None,
-    max_attempts: int = 3,
+    max_attempts: int = 5,
     max_revise_attempts: int = 3,
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
@@ -372,6 +373,9 @@ def run_cycle(
                         remote_loader=(lambda: (remote_seen, None)) if submit else None,
                     )
                 gate_status = "synthesis_failed" if return_code != 0 else _current_gate_status(bridge, out_dir.name)
+                bridge_status = str(bridge.get("status") or "")
+                if gate_status == "eligible" and bridge_status not in {"", "submitted_to_researka"}:
+                    gate_status = bridge_status
                 candidate_obj = bridge.get("candidate")
                 candidate: dict[str, Any] = candidate_obj if isinstance(candidate_obj, dict) else {}
                 submitted_any = int(bridge.get("submitted") or 0)
@@ -387,7 +391,7 @@ def run_cycle(
                     "revise_attempt": revise_attempt,
                     "synthesis_return_code": return_code,
                     "submit_status": submit_status,
-                    "bridge_status": bridge.get("status"),
+                    "bridge_status": bridge_status,
                     "gate_status": gate_status,
                     "failure_class": _failure_class(gate_status),
                     "submitted": submitted_current,
@@ -426,7 +430,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--synthesis-dry-run", action="store_true")
     parser.add_argument("--submit", action="store_true")
     parser.add_argument("--timeout-sec", type=int, default=0)
-    parser.add_argument("--max-attempts", type=int, default=3)
+    parser.add_argument("--max-attempts", type=int, default=5)
     parser.add_argument("--max-revise-attempts", type=int, default=3)
     args = parser.parse_args(argv)
     ledger = run_cycle(

@@ -22,6 +22,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
+REJECTED_FINGERPRINTS = "_rejected_fingerprints.json"
 TOKEN_ENVS = (
     "RESEARKA_API_KEY_V3",
     "RESEARKA_API_TOKEN_V3",
@@ -130,6 +131,18 @@ def _seen(path: Path) -> set[str]:
     return {str(row.get("fingerprint")) for row in data if isinstance(row, dict)}
 
 
+def _append_record(path: Path, row: dict[str, Any]) -> None:
+    records = []
+    try:
+        records = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        pass
+    if not isinstance(records, list):
+        records = []
+    records.append(row)
+    _write_json(path, records)
+
+
 def select_candidate(
     root: Path,
     submitted_path: Path,
@@ -137,6 +150,7 @@ def select_candidate(
     remote_seen: set[str] | None = None,
 ) -> tuple[Path | None, list[dict[str, Any]]]:
     local_seen = _seen(submitted_path)
+    rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
@@ -148,6 +162,8 @@ def select_candidate(
         ok, status = _eligible(run)
         if topic in seen_topics:
             ok, status = False, "superseded_topic_run"
+        elif ok and fp in rejected_seen:
+            ok, status = False, "researka_rejected_fingerprint"
         elif ok and fp in local_seen:
             ok, status = False, "duplicate_submission_fingerprint"
         elif ok and markers & published_seen:
@@ -401,16 +417,17 @@ def run_cycle(
     result = submitter(payload)
     ledger["submission"] = result
     if result.get("ok"):
-        records = []
-        try:
-            records = json.loads(submitted_path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            pass
-        if not isinstance(records, list):
-            records = []
-        records.append({"date": date, "run": run.name, "topic": metadata.get("topic"), "fingerprint": fp})
-        _write_json(submitted_path, records)
+        _append_record(submitted_path, {"date": date, "run": run.name, "topic": metadata.get("topic"), "fingerprint": fp})
         ledger.update({"status": "submitted_to_researka", "submitted": 1})
+    elif 400 <= int(result.get("status") or 0) < 500:
+        _append_record(submitted_path.with_name(REJECTED_FINGERPRINTS), {
+            "date": date,
+            "run": run.name,
+            "topic": metadata.get("topic"),
+            "fingerprint": fp,
+            "status": result.get("status"),
+        })
+        ledger.update({"status": "submission_rejected_by_researka"})
     else:
         ledger.update({"status": "submission_failed"})
     _write_json(ledger_path, ledger)

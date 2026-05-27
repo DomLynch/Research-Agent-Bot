@@ -98,6 +98,28 @@ def test_duplicate_fingerprint_is_not_resubmitted(tmp_path: Path) -> None:
     assert ledger["considered"][0]["status"] == "duplicate_submission_fingerprint"
 
 
+def test_researka_rejection_records_and_skips_same_paper(tmp_path: Path) -> None:
+    _run(tmp_path)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-23",
+        submit=True,
+        submitter=lambda _payload: {"ok": False, "status": 422, "response": "gate rejected"},
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submission_rejected_by_researka"
+    assert ledger["submitted"] == 0
+    rejected = json.loads((tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).read_text(encoding="utf-8"))
+    assert rejected[0]["topic"] == "topic"
+
+    retry = daily.run_cycle(runs_root=tmp_path, date="2026-05-24")
+
+    assert retry["status"] == "no_eligible_research_paper"
+    assert retry["considered"][0]["status"] == "researka_rejected_fingerprint"
+
+
 def test_remote_publication_dedupe_blocks_resubmission_without_local_seed(tmp_path: Path) -> None:
     run = _run(tmp_path)
     fp = daily.build_payload(run)["metadata"]["content_hash"]
