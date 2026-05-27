@@ -334,16 +334,15 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
     for p in (plans.get("plans") or [])[:15] if isinstance(plans, dict) else []:
         if not isinstance(p, dict):
             continue
-        anchors = ", ".join(dict.fromkeys(p.get("numeric_anchors") or ()).keys())
-        anchors = anchors[:120].rstrip(", ")
         hypotheses = "; ".join((p.get("hypotheses") or [])[:2])
         rows.append(
             f"- {p.get('paper_a')} versus {p.get('paper_b')} defines a "
-            f"{p.get('outcome_class')} {p.get('conflict_type')} with severity "
-            f"{p.get('severity')}. Numeric anchors include {anchors}. The "
-            f"leading explanation is {hypotheses}. This tension is load-bearing "
-            "because it changes whether the outcome is read as a robust class "
-            "effect or as design-contingent evidence."
+            f"{_outcome_display(str(p.get('outcome_class') or 'other'))} "
+            f"{p.get('conflict_type')} with severity {p.get('severity')}. "
+            f"The leading explanation is {hypotheses}. Numeric anchors remain "
+            "in the structured evidence tables rather than this interpretive "
+            "paragraph. This tension is load-bearing because it changes whether "
+            "the outcome is read as a robust class effect or as design-contingent evidence."
         )
     if rows:
         append("Cross-Domain Synthesis", "### Load-Bearing Tensions\n\n" + "\n".join(rows), "load_bearing_tensions")
@@ -577,6 +576,7 @@ def _phase_f_reconcile_results_table(
         "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |",
         "|---|---|---|---|---|",
     ]
+    stubs: list[tuple[str, str, int, int, str, str, str]] = []
     for slug, matching in sorted(
         groups.items(), key=lambda kv: (-len(kv[1]), _outcome_display(kv[0])),
     ):
@@ -611,6 +611,10 @@ def _phase_f_reconcile_results_table(
             f"| {_outcome_display(slug)} | n={n}; claims={n_claims} | {signal_cell} "
             f"| {directness_cell} | {limitation_cell} |"
         )
+        stubs.append((
+            slug, _outcome_display(slug), n, n_claims, signal_cell,
+            directness_cell, limitation_cell,
+        ))
     table = "\n".join(rows) + "\n"
     lines = results.splitlines(keepends=True)
     try:
@@ -622,6 +626,22 @@ def _phase_f_reconcile_results_table(
         while end < len(lines) and lines[end].strip():
             end += 1
         new_results = "".join(lines[:start]) + table + "".join(lines[end:])
+    existing = {
+        _outcome_key(m.group(1))
+        for m in re.finditer(r"^###\s+(.+?)\s*$", new_results, flags=re.M)
+    }
+    missing_blocks = []
+    for slug, display, n, n_claims, signal, directness, limitation in stubs:
+        if slug in existing:
+            continue
+        missing_blocks.append(
+            f"### {display} Outcomes\n\n"
+            f"{display} remains a separate Results slice (n={n}; claims={n_claims}; "
+            f"{signal}; {directness}; {limitation}) and is not pooled into adjacent "
+            "endpoint classes.\n"
+        )
+    if missing_blocks:
+        new_results = new_results.rstrip() + "\n\n" + "\n".join(missing_blocks)
     if new_results == results:
         return text, []
     new_text = text[:results_match.start(1)] + new_results + text[results_match.end(1):]
