@@ -35,6 +35,7 @@ PREFLIGHT_MAX_TENSIONS = 50_000
 PREFLIGHT_MAX_OUTCOMES = 12
 RECENT_FAILURE_COOLDOWN_HOURS = 24
 HISTOGRAM_ISSUE_THRESHOLD = 5
+AUTO_SEED_LIMIT = 120
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -303,13 +304,24 @@ def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
     return True
 
 
+def _auto_seed_limit() -> int:
+    try:
+        return max(1, int(os.environ.get("RESEARCH_AGENT_AUTO_SEED_LIMIT", str(AUTO_SEED_LIMIT))))
+    except ValueError:
+        return AUTO_SEED_LIMIT
+
+
 def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
     before = _quant_claim_count(topic)
     if before:
         return {"status": "corpus_ready", "n_quant_claims": before}
     if dry_run:
         return {"status": "corpus_missing_dry_run", "n_quant_claims": 0}
-    cmd = [sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic]
+    seed_limit = _auto_seed_limit()
+    cmd = [
+        sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic,
+        "--limit", str(seed_limit), "--max-per-source", str(seed_limit),
+    ]
     try:
         result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, capture_output=True, text=True)
     except (OSError, subprocess.TimeoutExpired) as exc:
@@ -318,6 +330,7 @@ def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = Non
             "return_code": None,
             "n_quant_claims_before": before,
             "n_quant_claims": _quant_claim_count(topic),
+            "seed_limit": seed_limit,
             "error": f"{type(exc).__name__}: {exc}",
         }
     after = _quant_claim_count(topic)
@@ -327,6 +340,7 @@ def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = Non
         "return_code": int(result.returncode),
         "n_quant_claims_before": before,
         "n_quant_claims": after,
+        "seed_limit": seed_limit,
         "stderr_tail": result.stderr[-1200:],
     }
 
