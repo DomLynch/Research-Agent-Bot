@@ -552,6 +552,75 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
     assert handled["handled"][0]["key"] == "review-art-1"
 
 
+def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
+    source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
+    paper = source_run / "full_paper.md"
+    paper.write_text("# Research Synthesis: Aspirin Geroprotection — full paper\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source_run.name,
+        "topic": "aspirin_geroprotection",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_args, **_kwargs: 4)
+    request = {
+        "artifactId": "review-art-1",
+        "title": "Research Synthesis: Aspirin Geroprotection — full paper",
+        "feedback": "Add caveat.",
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "no_eligible_research_paper", "submitted": 0, "published": 0},
+        max_revise_attempts=1,
+    )
+
+    assert ledger["attempts"][0]["topic"] == "aspirin_geroprotection"
+    assert ledger["attempts"][0]["synthesis_return_code"] == 4
+    assert not (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).exists()
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([request], None),
+    )
+    assert error is None
+    assert pending and pending["artifactId"] == "review-art-1"
+
+
+def test_handled_delayed_revision_is_not_reprocessed(tmp_path: Path) -> None:
+    source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
+    paper = source_run / "full_paper.md"
+    paper.write_text("# Research Synthesis: Aspirin Geroprotection — full paper\n", encoding="utf-8")
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "_submitted_fingerprints.json", [{
+        "run": source_run.name,
+        "topic": "aspirin_geroprotection",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{"key": "review-art-1"}]})
+
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        ledger_dir,
+        loader=lambda: ([{
+            "artifactId": "review-art-1",
+            "title": "Research Synthesis: Aspirin Geroprotection — full paper",
+            "feedback": "Add caveat.",
+        }], None),
+    )
+
+    assert pending is None
+    assert error is None
+
+
 def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
