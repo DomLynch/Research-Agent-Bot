@@ -223,6 +223,36 @@ def test_legacy_missing_outcome_stubs_are_shortened() -> None:
     assert _duplicate_paragraph_issue_messages(out) == ()
 
 
+def test_sentence_like_h3_headings_are_demoted() -> None:
+    paper = (
+        "## Methods\n\n"
+        "### Information sources were retrieved across PubMed, Europe PMC, OpenAlex, Semantic Scholar, Crossref, DOAJ, OpenAIRE, PMC OAI, bioRxiv, medRxiv, arXiv, and ClinicalTrials.gov. Retrieval window: 2026-05-27.\n\n"
+        "### Search strategy\n\n"
+        "Queries were executed.\n"
+    )
+    out, n = fixes._demote_sentence_like_headings(paper)
+    assert n == 1
+    assert "### Information sources were retrieved" not in out
+    assert "**Information sources were retrieved" in out
+    assert "### Search strategy" in out
+
+
+def test_fuzzy_duplicate_strip_handles_bold_thesis_prefix() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "**Thesis:** Across 57 curated reference papers, the evidence base shows a context-dependent profile. "
+        "Positive signals appear in contextual outcomes. Negative signals appear in immune outcomes. "
+        "Null findings dominate adjacent domains. The synthesis surfaces cross-study disagreements across outcome classes.\n\n"
+        "## Discussion\n\n"
+        "Across 57 curated reference papers, the evidence base shows a context-dependent profile. "
+        "Positive signals appear in contextual outcomes. Negative signals appear in immune outcomes. "
+        "Null findings dominate adjacent domains. The synthesis surfaces cross-study disagreements across outcome classes.\n"
+    )
+    out, n = fixes._strip_fuzzy_duplicate_paragraphs(paper)
+    assert n == 1
+    assert out.count("Across 57 curated reference papers") == 1
+
+
 def test_apply_fixes_skips_full_depth_backfill_for_thin_brief() -> None:
     paper = "## Results\n\nShort thin result.\n\n## Conclusion\n\nShort.\n"
     out, log = fixes.apply_fixes(paper, [], manifest={"review_type": "thin_corpus_brief"})

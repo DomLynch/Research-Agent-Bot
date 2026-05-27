@@ -967,6 +967,16 @@ def apply_lightweight_public_polish(
             "n_changes": n_heading_boundaries,
             "description": "restored blank lines before markdown headings",
         })
+    new_md, n_sentence_headings_late = _demote_sentence_like_headings(new_md)
+    if n_sentence_headings_late:
+        log.append({
+            "fix_type": "sentence_like_heading_demote_post_boundary",
+            "n_changes": n_sentence_headings_late,
+            "description": (
+                "demoted sentence-like H3 lines introduced after heading "
+                "boundary normalization"
+            ),
+        })
     new_md, n_sentence_spacing = _normalize_sentence_spacing(new_md)
     if n_sentence_spacing:
         log.append({
@@ -1002,6 +1012,15 @@ def apply_lightweight_public_polish(
             "description": (
                 "removed later body paragraphs with high token overlap "
                 "during final lightweight polish"
+            ),
+        })
+    new_md, n_sentence_headings_final = _demote_sentence_like_headings(new_md)
+    if n_sentence_headings_final:
+        log.append({
+            "fix_type": "sentence_like_heading_demote_final",
+            "n_changes": n_sentence_headings_final,
+            "description": (
+                "demoted sentence-like H3 lines after final duplicate cleanup"
             ),
         })
     return new_md, log
