@@ -41,3 +41,10 @@ docs/weekly/
 # docs/quality-reference/metformin/README.md. Mirror copy lives on
 # the VPS under the same path; binary blobs don't go in git.
 docs/quality-reference/metformin/pdfs/
+
+# Auto-seeded topic corpora are runtime cache, not source.
+docs/quality-reference/*/_extract_report.json
+docs/quality-reference/*/corpus_manifest.json
+docs/quality-reference/*/corpus_manifest.md
+docs/quality-reference/*/parsed/
+docs/quality-reference/*/quant_claims/
