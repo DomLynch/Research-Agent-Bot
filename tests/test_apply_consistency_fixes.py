@@ -203,6 +203,26 @@ def test_unexpected_results_h3_is_demoted() -> None:
     assert "### Immune Outcomes" in out
 
 
+def test_legacy_missing_outcome_stubs_are_shortened() -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    paper = (
+        "## Results\n\n"
+        "### Immune Outcomes\n\n"
+        "The Results table identifies immune evidence as a separate outcome slice (n=12). "
+        "Because this slice is small, it is kept separate from adjacent outcomes and "
+        "interpreted as hypothesis-generating rather than as a standalone endpoint conclusion.\n\n"
+        "### Immune and Inflammation Outcomes\n\n"
+        "The Results table identifies immune and inflammation evidence as a separate outcome slice (n=5). "
+        "Because this slice is small, it is kept separate from adjacent outcomes and "
+        "interpreted as hypothesis-generating rather than as a standalone endpoint conclusion.\n"
+    )
+    out, n = fixes._shorten_legacy_results_outcome_stubs(paper)
+    assert n == 2
+    assert "The Results table identifies" not in out
+    assert _duplicate_paragraph_issue_messages(out) == ()
+
+
 def test_apply_fixes_skips_full_depth_backfill_for_thin_brief() -> None:
     paper = "## Results\n\nShort thin result.\n\n## Conclusion\n\nShort.\n"
     out, log = fixes.apply_fixes(paper, [], manifest={"review_type": "thin_corpus_brief"})

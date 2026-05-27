@@ -765,6 +765,23 @@ def _strip_empty_headings(paper_md: str) -> tuple[str, int]:
     return paper_md, len(removals)
 
 
+def _demote_sentence_like_headings(paper_md: str) -> tuple[str, int]:
+    n = 0
+
+    def repl(match: re.Match[str]) -> str:
+        nonlocal n
+        level, heading = match.group(1), match.group(2).strip()
+        words = re.findall(r"\b\w+\b", heading)
+        is_sentence = len(words) >= 12 or heading.endswith(".")
+        if level == "###" and is_sentence:
+            n += 1
+            return f"**{heading}**"
+        return match.group(0)
+
+    out = re.sub(r"^(#{2,6})\s+(.+?)\s*$", repl, paper_md, flags=re.M)
+    return out, n
+
+
 def _strip_reference_only_next_study_section(paper_md: str) -> tuple[str, int]:
     pattern = re.compile(
         r"^###\s+Next-Study Design Recommendation\s*$"
@@ -863,6 +880,16 @@ def apply_lightweight_public_polish(
                 "only treats declared outcome classes as Results subsections"
             ),
         })
+    new_md, n_legacy_outcome_stubs = _shorten_legacy_results_outcome_stubs(new_md)
+    if n_legacy_outcome_stubs:
+        log.append({
+            "fix_type": "legacy_results_outcome_stub_shorten",
+            "n_changes": n_legacy_outcome_stubs,
+            "description": (
+                "shortened older compiler-owned outcome stubs that were too "
+                "template-like for the duplicate-paragraph surface gate"
+            ),
+        })
     new_md, n_thin_analytic = _strip_thin_analytic_paragraphs(new_md)
     if n_thin_analytic:
         log.append({
@@ -907,6 +934,16 @@ def apply_lightweight_public_polish(
             "description": (
                 "completed a near-threshold Conclusion after public-surface "
                 "cleanup without introducing new evidence claims"
+            ),
+        })
+    new_md, n_sentence_headings = _demote_sentence_like_headings(new_md)
+    if n_sentence_headings:
+        log.append({
+            "fix_type": "sentence_like_heading_demote",
+            "n_changes": n_sentence_headings,
+            "description": (
+                "demoted sentence-like H3 lines that markdown rendering had "
+                "mistaken for empty section headings"
             ),
         })
     new_md, n_empty_headings = _strip_empty_headings(new_md)
@@ -1066,9 +1103,9 @@ def _strip_fuzzy_duplicate_paragraphs(paper_md: str) -> tuple[str, int]:
             is_prose = (
                 len(stripped.split()) >= 25
                 and tokens
-                and not stripped.startswith(("#", "|", "-", "`", "*"))
-                and "\n|" not in para
-            )
+            and not stripped.startswith(("#", "|", "-", "`", "* "))
+            and "\n|" not in para
+        )
             if is_prose and any(
                 _jaccard(tokens, prior) >= 0.82 for prior in seen
             ):
