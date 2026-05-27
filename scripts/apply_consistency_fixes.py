@@ -29,6 +29,8 @@ from collections import Counter, defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 
+from agent.outcome_class_remap import outcome_key
+
 __all__ = ["apply_fixes", "main"]
 
 
@@ -432,10 +434,7 @@ def _split_dense_conclusion_paragraphs(paper_md: str) -> tuple[str, int]:
 
 
 def _surface_outcome_key(text: str) -> str:
-    words = re.findall(r"[a-z0-9]+", text.lower())
-    while words and words[-1] in {"outcome", "outcomes", "endpoint", "endpoints"}:
-        words.pop()
-    return " ".join(words)
+    return outcome_key(text).replace("_", " ")
 
 
 def _align_results_count_claims(paper_md: str) -> tuple[str, int]:
@@ -503,7 +502,7 @@ def _insert_missing_declared_outcome_sections(paper_md: str) -> tuple[str, int]:
     if not match:
         return paper_md, 0
     results = match.group(2)
-    declared: list[tuple[str, int | None]] = []
+    declared: list[tuple[str, int | None, str, str, str]] = []
     lines = [line.strip() for line in results.splitlines()]
     for idx, line in enumerate(lines):
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
@@ -519,7 +518,13 @@ def _insert_missing_declared_outcome_sections(paper_md: str) -> tuple[str, int]:
                     m := re.search(r"\bn\s*=\s*(\d+)\b", row_cells[1], re.I)
                 ):
                     count = int(m.group(1))
-                declared.append((row_cells[0], count))
+                declared.append((
+                    row_cells[0],
+                    count,
+                    row_cells[2] if len(row_cells) > 2 else "direction not pooled",
+                    row_cells[3] if len(row_cells) > 3 else "directness not classified",
+                    row_cells[4] if len(row_cells) > 4 else "bounded endpoint support",
+                ))
         break
     if not declared:
         return paper_md, 0
@@ -528,21 +533,23 @@ def _insert_missing_declared_outcome_sections(paper_md: str) -> tuple[str, int]:
         for m in re.finditer(r"^###\s+(.+?)\s*$", results, re.M)
     }
     missing = [
-        (name, count)
-        for name, count in declared
+        row
+        for row in declared
+        for name in (row[0],)
         if _surface_outcome_key(name) not in seen
     ]
     if not missing:
         return paper_md, 0
     blocks = []
-    for name, count in missing:
+    for name, count, signal, directness, limitation in missing:
         scope = f"n={count}" if count is not None else "limited source support"
         blocks.append(
             f"### {name} Outcomes\n\n"
-            f"The Results table identifies {name.lower()} evidence as a separate "
-            f"outcome slice ({scope}). Because this slice is small, it is kept "
-            "separate from adjacent outcomes and interpreted as hypothesis-generating "
-            "rather than as a standalone endpoint conclusion.\n"
+            f"The {name.lower()} packet is reported separately because the Results "
+            f"table assigns it {scope}. Within this packet, the strongest signal is "
+            f"{signal.lower()}, directness is {directness.lower()}, and the main "
+            f"limitation is {limitation.lower()}. This preserves the endpoint "
+            "boundary without converting the slice into a pooled longevity claim.\n"
         )
     insert = "\n" + "\n".join(blocks)
     return paper_md[:match.end(2)] + insert + paper_md[match.end(2):], len(missing)
@@ -3164,7 +3171,7 @@ signal about applicability rather than as a reason to average unlike
 endpoints together."""
 
 
-_RESULTS_BACKFILL = """### Result-interpretation guardrail
+_RESULTS_BACKFILL = """**Result-interpretation guardrail.**
 
 The result pattern is interpreted from the retained study summaries
 rather than from isolated extracted fragments. Findings are therefore
