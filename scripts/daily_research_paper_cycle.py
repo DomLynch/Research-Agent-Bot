@@ -476,6 +476,8 @@ def _repair_existing_run(
         return False, "repair_precondition_failed"
     try:
         shutil.copytree(source_dir, out_dir)
+        paper_path = out_dir / "full_paper.md"
+        before = paper_path.read_text(encoding="utf-8") if repair_reason else ""
         if revision_source or revision_feedback:
             payload = dict(revision_source or {})
             payload.setdefault("source_run", source_dir.name)
@@ -485,6 +487,18 @@ def _repair_existing_run(
             _write_json(out_dir / "internal_repair_request.json", {"source_run": source_dir.name, "reason": repair_reason})
         from agent.journal_finalizer import finalize_run
         finalize_run(out_dir)
+        if repair_reason:
+            after = paper_path.read_text(encoding="utf-8")
+            if after == before:
+                shutil.rmtree(out_dir, ignore_errors=True)
+                return False, "repair_noop"
+            if repair_reason == "journal_surface_not_passed":
+                from agent.journal_surface_gate import evaluate_journal_surface
+                surface = evaluate_journal_surface(after)
+                if not surface.passed:
+                    codes = ",".join(sorted({issue.code for issue in surface.issues}))
+                    shutil.rmtree(out_dir, ignore_errors=True)
+                    return False, f"surface_after_repair_failed:{codes}"
     except (OSError, RuntimeError, ValueError, ImportError) as exc:
         shutil.rmtree(out_dir, ignore_errors=True)
         return False, f"{type(exc).__name__}: {exc}"

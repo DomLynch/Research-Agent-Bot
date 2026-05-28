@@ -442,13 +442,12 @@ _WE_PROPOSE_RE = re.compile(r"\bwe\s+propose\b", re.IGNORECASE)
 def _soften_novelty_phrase(match: re.Match[str]) -> str:
     phrase = match.group(0)
     low = phrase.lower()
-    if low.startswith("we propose") or low.startswith("we introduce"):
-        return "We operationalize" if phrase[0].isupper() else "we operationalize"
-    if "novel " in low:
-        return re.sub(r"\bnovel\b", "structured", phrase, flags=re.IGNORECASE)
+    if low.startswith(("we propose", "we introduce")):
+        return f"{'We' if phrase[0].isupper() else 'we'} operationalize"
     if "first to" in low:
         return re.sub(r"\bfirst\s+to\b", "designed to", phrase, flags=re.IGNORECASE)
-    return re.sub(r"\b(?:novel|distinct)\s+contribution\b", "synthesis contribution", phrase, flags=re.IGNORECASE)
+    phrase = re.sub(r"\b(?:novel|distinct)\s+contribution\b", "synthesis contribution", phrase, flags=re.IGNORECASE)
+    return re.sub(r"\bnovel\b", "structured", phrase, flags=re.IGNORECASE)
 
 
 def _phase_e_structural_fallback(
@@ -520,14 +519,7 @@ def _phase_e_structural_fallback(
         ))
 
     # E.3 — soften ungrounded novelty claims
-    try:
-        from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _NOVELTY_CLAIM_RE
-    except ImportError:
-        _AUTHOR_YEAR_RE = re.compile(
-            r"\b([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
-            r"(?:\s+et\s+al\.)?\s+((?:19|20)\d{2})\b",
-        )
-        _NOVELTY_CLAIM_RE = _WE_PROPOSE_RE
+    from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _NOVELTY_CLAIM_RE
     paragraphs = re.split(r"(\n\s*\n)", text)
     n_we_propose = n_other_novelty = 0
     for i in range(0, len(paragraphs), 2):
@@ -541,21 +533,12 @@ def _phase_e_structural_fallback(
         paragraphs[i] = _NOVELTY_CLAIM_RE.sub(_soften_novelty_phrase, para)
     if n_we_propose or n_other_novelty:
         text = "".join(paragraphs)
-    if n_we_propose:
-        entries.append(FinalizerLogEntry(
-            phase="E_structural_fallback",
-            rule="soften_we_propose",
-            n_changes=n_we_propose,
-            detail=f"softened 'we propose' → 'we operationalize' in "
-                   f"{n_we_propose} ungrounded paragraph(s)",
-        ))
-    if n_other_novelty:
-        entries.append(FinalizerLogEntry(
-            phase="E_structural_fallback",
-            rule="soften_unsupported_novelty",
-            n_changes=n_other_novelty,
-            detail=f"softened {n_other_novelty} ungrounded novelty phrase(s)",
-        ))
+    for rule, n, detail in (
+        ("soften_we_propose", n_we_propose, f"softened 'we propose' → 'we operationalize' in {n_we_propose} ungrounded paragraph(s)"),
+        ("soften_unsupported_novelty", n_other_novelty, f"softened {n_other_novelty} ungrounded novelty phrase(s)"),
+    ):
+        if n:
+            entries.append(FinalizerLogEntry("E_structural_fallback", rule, n, detail))
 
     return text, entries
 

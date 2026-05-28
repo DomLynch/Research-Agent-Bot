@@ -1494,6 +1494,27 @@ def test_finalizer_phase_e_softens_we_propose(tmp_path) -> None:
     )
 
 
+def test_finalizer_phase_e_softens_unsupported_novelty_variants(tmp_path) -> None:
+    """Ungrounded novelty variants like 'novel approach' are compiler-fixable."""
+    from agent.journal_finalizer import finalize_run
+    paper = (
+        "## Abstract\n\nA.\n\n"
+        "## Discussion\n\n**Thesis:** X.\n\n"
+        "This novel approach organizes the evidence without claiming treatment guidance.\n\n"
+        "## Limitations\n\nL.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    report = finalize_run(tmp_path)
+    new_text = (tmp_path / "full_paper.md").read_text()
+    assert "novel approach" not in new_text.lower()
+    assert "structured approach" in new_text.lower()
+    assert any(e.rule == "soften_unsupported_novelty" for e in report.entries)
+    assert not any(
+        i.code == "unsupported_novelty"
+        for i in evaluate_journal_surface(new_text).issues
+    )
+
+
 def test_finalizer_idempotent(tmp_path) -> None:
     """Re-running the finalizer must not double-patch. Required so a
     re-run of run_v06_synthesis on the same out_dir is safe."""

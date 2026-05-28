@@ -17,6 +17,32 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload), encoding="utf-8")
 
 
+def _words(n: int, prefix: str) -> str:
+    return " ".join(f"{prefix}{i}" for i in range(n))
+
+
+def _surface_passing_paper(*, discussion_extra: str = "") -> str:
+    return (
+        f"## Abstract\n\n{_words(160, 'abstract')}\n\n"
+        f"## Introduction\n\nSmith 2024 provides prior context. {_words(410, 'intro')}\n\n"
+        f"## Background\n\n{_words(310, 'background')}\n\n"
+        "## Quantitative Evidence Index — topic\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Smith 2024 | fasting glucose | treatment | 89 mg/dL | mg/dL | mean |\n\n"
+        f"## Methods\n\n{_words(310, 'methods')}\n\n"
+        f"## Results\n\n{_words(510, 'results')}\n\n"
+        f"## Cross-Domain Synthesis\n\n{_words(860, 'cross')}\n\n"
+        "## Discussion\n\n"
+        "**Thesis:** This synthesis takes a defensible bounded position. "
+        f"{discussion_extra} {_words(820, 'discussion')}\n\n"
+        f"**Resolution criteria:** Future trials would settle the claim. {_words(40, 'resolution')}\n\n"
+        f"## Limitations\n\n{_words(260, 'limits')}\n\n"
+        f"## Conclusion\n\n{_words(260, 'conclusion')}\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+
 def _recent_start() -> str:
     return (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat()
 
@@ -953,7 +979,12 @@ def test_cycle_reuses_existing_work_for_compiler_fixable_retry(tmp_path: Path, m
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         synthesis_runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
-        (out_dir / "full_paper.md").write_text("# Paper\n\n## Abstract\n\nA.", encoding="utf-8")
+        (out_dir / "full_paper.md").write_text(
+            _surface_passing_paper(
+                discussion_extra="This novel approach organizes the evidence without claiming treatment guidance.",
+            ),
+            encoding="utf-8",
+        )
         return 0
 
     def fake_submit(**_kwargs: Any) -> dict[str, Any]:
@@ -987,6 +1018,52 @@ def test_cycle_reuses_existing_work_for_compiler_fixable_retry(tmp_path: Path, m
     assert ledger["attempts"][1]["repair_reason"] == "journal_surface_not_passed"
     sidecar = json.loads((tmp_path / "runs" / ledger["attempts"][1]["out_dir"] / "internal_repair_request.json").read_text(encoding="utf-8"))
     assert sidecar["source_run"] == ledger["attempts"][0]["out_dir"]
+
+
+def test_internal_repair_clears_surface_novelty_without_resynthesis(tmp_path: Path) -> None:
+    source = tmp_path / "source"
+    out = tmp_path / "out"
+    source.mkdir()
+    (source / "full_paper.md").write_text(
+        _surface_passing_paper(
+            discussion_extra="This novel approach organizes the evidence without claiming treatment guidance.",
+        ),
+        encoding="utf-8",
+    )
+
+    ok, error = cycle._repair_existing_run(source, out, repair_reason="journal_surface_not_passed")
+
+    assert ok is True
+    assert error == ""
+    text = (out / "full_paper.md").read_text(encoding="utf-8")
+    assert "novel approach" not in text.lower()
+    assert "structured approach" in text.lower()
+    sidecar = json.loads((out / "internal_repair_request.json").read_text(encoding="utf-8"))
+    assert sidecar == {"source_run": "source", "reason": "journal_surface_not_passed"}
+
+
+def test_internal_repair_noop_cleans_output_for_synthesis_fallback(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    import agent.journal_finalizer as finalizer
+
+    source = tmp_path / "source"
+    out = tmp_path / "out"
+    source.mkdir()
+    (source / "full_paper.md").write_text(
+        _surface_passing_paper(
+            discussion_extra="This novel approach organizes the evidence without claiming treatment guidance.",
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(finalizer, "finalize_run", lambda _out_dir: None)
+
+    ok, error = cycle._repair_existing_run(source, out, repair_reason="journal_surface_not_passed")
+
+    assert ok is False
+    assert error == "repair_noop"
+    assert not out.exists()
 
 
 def test_cycle_rewrites_for_writer_fixable_retry(tmp_path: Path, monkeypatch) -> None:
