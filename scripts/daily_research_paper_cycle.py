@@ -471,9 +471,9 @@ def _repair_existing_run(
     revision_source: dict[str, Any] | None = None,
     revision_feedback: str | None = None,
     repair_reason: str | None = None,
-) -> bool:
+) -> tuple[bool, str]:
     if not (revision_feedback or repair_reason) or not (source_dir / "full_paper.md").is_file() or out_dir.exists():
-        return False
+        return False, "repair_precondition_failed"
     try:
         shutil.copytree(source_dir, out_dir)
         if revision_source or revision_feedback:
@@ -485,10 +485,10 @@ def _repair_existing_run(
             _write_json(out_dir / "internal_repair_request.json", {"source_run": source_dir.name, "reason": repair_reason})
         from agent.journal_finalizer import finalize_run
         finalize_run(out_dir)
-    except (OSError, RuntimeError, ValueError, ImportError):
+    except (OSError, RuntimeError, ValueError, ImportError) as exc:
         shutil.rmtree(out_dir, ignore_errors=True)
-        return False
-    return True
+        return False, f"{type(exc).__name__}: {exc}"
+    return True, ""
 
 
 def _numeric_density_downshift(run: Path | None) -> str | None:
@@ -688,16 +688,17 @@ def run_cycle(
                 if revise_attempt > 1 and last_attempt and str(last_attempt.get("failure_class") or "").startswith("A_"):
                     repair_reason = str(last_attempt.get("gate_status") or last_attempt.get("submit_status") or "")
                 feedback_applied = bool(revision_feedback)
-                existing_repair = bool(
-                    revision_base_dir
-                    and _repair_existing_run(
+                repair_attempted = bool(revision_base_dir and (revision_feedback or repair_reason))
+                existing_repair = False
+                repair_error = ""
+                if revision_base_dir:
+                    existing_repair, repair_error = _repair_existing_run(
                         revision_base_dir,
                         out_dir,
                         revision_source=revision_source,
                         revision_feedback=revision_feedback or None,
                         repair_reason=repair_reason or None,
                     )
-                )
                 synthesis_kwargs: dict[str, Any] = {
                     "dry_run": synthesis_dry_run,
                     "timeout": timeout,
@@ -742,6 +743,10 @@ def run_cycle(
                     "submitted": submitted_current,
                     "existing_work_reused": existing_repair,
                 }
+                if repair_attempted:
+                    attempt["repair_attempted"] = True
+                if repair_error:
+                    attempt["repair_error"] = repair_error
                 if repair_reason:
                     attempt["repair_reason"] = repair_reason
                 if review_type_override:
