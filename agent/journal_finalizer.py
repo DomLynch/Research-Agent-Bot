@@ -61,7 +61,7 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
         if new_text == text:
             break
         text = new_text
-        if _surface_passed(text, out_dir):
+        if (report := _surface_report(text, out_dir)) and report.passed:
             break
     # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
     # Phase G reads it. Phase G's surface re-evaluation reads from disk
@@ -73,8 +73,7 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     # Phase G refreshes sidecars whose state drifted (verdict + readiness
     # contract) and re-evaluates the surface gate against the now-on-disk
     # post-finalizer paper. Universal.
-    g_log = _phase_g_refresh_sidecars(out_dir)
-    entries.extend(g_log)
+    entries.extend(_phase_g_refresh_sidecars(out_dir))
     report = FinalizerReport(paper_changed=changed, final_word_count=len(text.split()), entries=tuple(entries))  # noqa: E501
     (out_dir / "journal_finalizer.json").write_text(json.dumps(asdict(report), indent=2))
     return report
@@ -82,57 +81,35 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
 
 def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     entries: list[FinalizerLogEntry] = []
-    text, log = _phase_a_methods_replace(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_b_lane_qualifier(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_c_terminology(text)
-    entries.extend(log)
-    text, log = _phase_d_reference_closure(text)
-    entries.extend(log)
-    text, log = _phase_b_lane_qualifier(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_e_structural_fallback(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_f_reconcile_results_table(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_h_topic_slug_normalise(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_i_split_concatenated_headings(text)
-    entries.extend(log)
-    text, log = _phase_k_route_outcome_paragraphs(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_l_strengthen_analytical_sections(text, out_dir)
-    entries.extend(log)
+    for phase in (
+        lambda t: _phase_a_methods_replace(t, out_dir),
+        lambda t: _phase_b_lane_qualifier(t, out_dir),
+        _phase_c_terminology, _phase_d_reference_closure,
+        lambda t: _phase_b_lane_qualifier(t, out_dir),
+        lambda t: _phase_e_structural_fallback(t, out_dir),
+        lambda t: _phase_f_reconcile_results_table(t, out_dir),
+        lambda t: _phase_h_topic_slug_normalise(t, out_dir), _phase_i_split_concatenated_headings,
+        lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
+        lambda t: _phase_l_strengthen_analytical_sections(t, out_dir),
+    ):
+        text, log = phase(text)
+        entries.extend(log)
     from scripts.review_noise_control import apply_review_noise_control
     text, noise_changes = apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
     return text, entries
 
 
-def _surface_passed(text: str, out_dir: Path) -> bool:
-    report = _surface_report(text, out_dir)
-    return bool(report and report.passed)
-
-
 def _surface_report(text: str, out_dir: Path) -> Any | None:
     manifest = _load_sidecar(out_dir / "manifest.json")
     manifest = manifest if isinstance(manifest, dict) else {}
-    lanes = _load_sidecar(out_dir / "evidence_lanes.json") or {}
-    registry = _load_sidecar(out_dir / "citation_registry.json") or {}
-    animal = [str(a.get("citation", "")) for a in (lanes.get("animal_citations") or [])
-              if isinstance(a, dict) and a.get("citation")]
-    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ())
-          if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
-    cmap = {e["body_citation"]: oc[rid] for rid, e in (registry.items() if isinstance(registry, dict) else ())
-            if isinstance(e, dict) and e.get("body_citation") and rid in oc}
+    lanes, registry = _load_sidecar(out_dir / "evidence_lanes.json") or {}, _load_sidecar(out_dir / "citation_registry.json") or {}
+    animal = [str(a.get("citation", "")) for a in (lanes.get("animal_citations") or []) if isinstance(a, dict) and a.get("citation")]
+    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
+    cmap = {e["body_citation"]: oc[rid] for rid, e in (registry.items() if isinstance(registry, dict) else ()) if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     try:
         from agent.journal_surface_gate import evaluate_journal_surface
-        return evaluate_journal_surface(
-            text, animal_citations=animal,
-            citation_outcome_map=cmap,
-            declared_review_type=manifest.get("review_type"),
-        )
+        return evaluate_journal_surface(text, animal_citations=animal, citation_outcome_map=cmap, declared_review_type=manifest.get("review_type"))
     except (ImportError, ValueError):
         return None
 

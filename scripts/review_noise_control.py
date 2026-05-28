@@ -25,6 +25,12 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     text, n = _dedupe_repeated_blocks(text)
     if n:
         changes.append(("dedupe_repeated_blocks", n, f"removed {n} repeated prose/table block(s)"))
+    text, n = _dedupe_duplicate_table_rows(text)
+    if n:
+        changes.append(("dedupe_duplicate_table_rows", n, f"removed {n} duplicate table row(s)"))
+    text, n = _dedupe_repeated_h3_blocks(text)
+    if n:
+        changes.append(("dedupe_repeated_h3_blocks", n, f"removed {n} repeated subsection block(s)"))
     text, n = _trim_cross_domain_tables(text)
     if n:
         changes.append(("trim_low_value_cross_domain_rows", n, f"removed {n} low-severity agreement row(s)"))
@@ -84,6 +90,7 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
     body, tail = parts[0], "".join(parts[1:])
     chunks = re.split(r"(\n{2,})", body)
     seen: set[str] = set()
+    seen_tokens: list[set[str]] = []
     removed = 0
     for i in range(0, len(chunks), 2):
         block = chunks[i]
@@ -92,12 +99,20 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
         if not norm:
             continue
         table_like = block.lstrip().startswith("|") and block.count("\n|") >= 1
-        if norm in seen and (table_like or len(words) >= 18):
+        tokens = set(re.findall(r"[a-z0-9]+", norm.lower()))
+        near_seen = len(words) >= 30 and any(_token_overlap(tokens, prior) >= 0.85 for prior in seen_tokens)
+        if (norm in seen and (table_like or len(words) >= 18)) or near_seen:
             chunks[i] = ""
             removed += 1
         else:
             seen.add(norm)
+            if len(words) >= 18 and not table_like:
+                seen_tokens.append(tokens)
     return "".join(chunks) + tail, removed
+
+
+def _token_overlap(a: set[str], b: set[str]) -> float:
+    return len(a & b) / max(1, min(len(a), len(b)))
 
 
 def _cells(line: str) -> list[str]:
@@ -106,6 +121,61 @@ def _cells(line: str) -> list[str]:
 
 def _separator_row(line: str) -> bool:
     return bool(re.fullmatch(r"\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*", line))
+
+
+def _dedupe_duplicate_table_rows(text: str) -> tuple[str, int]:
+    lines = text.splitlines()
+    out: list[str] = []
+    removed = 0
+    i = 0
+    while i < len(lines):
+        if not lines[i].lstrip().startswith("|"):
+            out.append(lines[i])
+            i += 1
+            continue
+        start = i
+        while i < len(lines) and lines[i].lstrip().startswith("|"):
+            i += 1
+        table = lines[start:i]
+        if len(table) < 3 or not _separator_row(table[1]):
+            out.extend(table)
+            continue
+        header = [c.lower() for c in _cells(table[0])]
+        idxs = [next((j for j, c in enumerate(header) if name in c), -1) for name in ("study", "endpoint", "arm")]
+        if min(idxs) < 0:
+            out.extend(table)
+            continue
+        seen: set[tuple[str, ...]] = set()
+        kept = table[:2]
+        for row in table[2:]:
+            cells = _cells(row)
+            key = tuple(cells[j].lower() for j in idxs if j < len(cells))
+            if len(key) == len(idxs) and key in seen:
+                removed += 1
+            else:
+                seen.add(key)
+                kept.append(row)
+        out.extend(kept)
+    return "\n".join(out), removed
+
+
+def _dedupe_repeated_h3_blocks(text: str) -> tuple[str, int]:
+    match = re.search(r"^## Methods\b(.*?)(?=^## |\Z)", text, flags=re.M | re.S)
+    if not match or "### " not in match.group(0):
+        return text, 0
+    parts = re.split(r"(?=^###\s+)", match.group(0), flags=re.M)
+    kept = [parts[0]]
+    seen: set[str] = set()
+    removed = 0
+    for block in parts[1:]:
+        body = re.sub(r"^###.*?\n", "", block, count=1, flags=re.S).strip()
+        norm = re.sub(r"\s+", " ", body).lower()
+        if len(norm.split()) >= 12 and norm in seen:
+            removed += 1
+        else:
+            seen.add(norm)
+            kept.append(block)
+    return text[:match.start()] + "".join(kept) + text[match.end():], removed
 
 
 def _trim_cross_domain_tables(text: str) -> tuple[str, int]:

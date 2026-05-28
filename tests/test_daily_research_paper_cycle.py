@@ -56,7 +56,8 @@ def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool 
     if corpus:
         qdir = root / "docs" / "quality-reference" / topic / "quant_claims"
         qdir.mkdir(parents=True)
-        _write_json(qdir / "seed.quant_claims.json", {"paper_id": "seed", "claims": []})
+        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"seed-{i}", "claims": []})
 
 
 def _prior_run(root: Path, topic: str, *, receipts: int, tensions: int, primary: int = 1, level: int = 2) -> Path:
@@ -234,7 +235,7 @@ def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path,
 
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
         calls["corpus"] = {"topic": topic, "dry_run": dry_run, "timeout": timeout}
-        return {"status": "corpus_seeded", "n_quant_claims": 7}
+        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         calls["synthesis"] = {"topic": topic, "out_dir": out_dir.name}
@@ -270,7 +271,7 @@ def test_cycle_skips_empty_seed_and_tries_next_topic(tmp_path: Path, monkeypatch
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
         if topic == "aaa_empty":
             return {"status": "corpus_seed_empty", "n_quant_claims": 0}
-        return {"status": "corpus_seeded", "n_quant_claims": 8}
+        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         synthesis_topics.append(topic)
@@ -294,6 +295,32 @@ def test_cycle_skips_empty_seed_and_tries_next_topic(tmp_path: Path, monkeypatch
     assert ledger["attempts"][0]["submit_status"] == "corpus_seed_empty"
     assert ledger["attempts"][0]["failure_class"] == "B_corpus_fixable"
     assert synthesis_topics == ["zzz_seeded"]
+
+
+def test_cycle_skips_thin_quant_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "thin_topic", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    def no_synthesis(*_args: Any, **_kwargs: Any) -> int:
+        raise AssertionError("thin corpus should not reach synthesis")
+
+    monkeypatch.setattr(cycle, "_run_synthesis", no_synthesis)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=lambda *_args, **_kwargs: {"status": "corpus_seeded", "n_quant_claims": 3},
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "preflight_skipped_no_submission"
+    assert ledger["attempts"][0]["submit_status"] == "preflight_thin_quant_corpus"
+    assert ledger["attempts"][0]["failure_class"] == "B_corpus_fixable"
+    assert ledger["attempts"][0]["preflight"]["reasons"] == [f"n_quant_claims=3 < {cycle.PREFLIGHT_MIN_QUANT_CLAIMS}"]
 
 
 def test_corpus_seed_failure_is_corpus_fixable(tmp_path: Path, monkeypatch) -> None:

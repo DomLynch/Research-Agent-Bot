@@ -34,6 +34,7 @@ LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
 PREFLIGHT_MIN_RECEIPTS = 15
+PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = 1
 PREFLIGHT_MAX_RECEIPTS = 500
@@ -380,6 +381,15 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
     }
 
 
+def _quant_claim_preflight(corpus: dict[str, Any]) -> dict[str, Any]:
+    try:
+        n_quant_claims = int(corpus.get("n_quant_claims") or 0)
+    except (TypeError, ValueError):
+        n_quant_claims = 0
+    reasons = [] if n_quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS else [f"n_quant_claims={n_quant_claims} < {PREFLIGHT_MIN_QUANT_CLAIMS}"]
+    return {"passed": not reasons, "reasons": reasons, "n_quant_claims": n_quant_claims}
+
+
 def _failure_class(status: str) -> str:
     code = status.split(":", 1)[0]
     return {
@@ -672,6 +682,23 @@ def run_cycle(
                 }
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "corpus_unavailable_no_submission"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                attempted.add(selected)
+                continue
+            quant_preflight = _quant_claim_preflight(corpus)
+            if not quant_preflight["passed"]:
+                attempt = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": "preflight_thin_quant_corpus",
+                    "failure_class": "B_corpus_fixable",
+                    "submitted": 0,
+                    "preflight": quant_preflight,
+                    "corpus": corpus,
+                }
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "preflight_skipped_no_submission"
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
