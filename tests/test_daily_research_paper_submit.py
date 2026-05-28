@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 import urllib.request
 from pathlib import Path
@@ -209,8 +210,8 @@ def test_remote_publication_dedupe_blocks_same_title_rerun(tmp_path: Path) -> No
 def test_selection_skips_stale_older_runs_for_same_topic(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-older")
     newer = _run(tmp_path, name="synthesis-topic-v06-newer")
-    older.touch()
-    newer.touch()
+    os.utime(older, (1, 1))
+    os.utime(newer, (2, 2))
 
     ledger = daily.run_cycle(
         runs_root=tmp_path,
@@ -230,8 +231,8 @@ def test_selection_submits_older_retry_when_newer_retry_fails_gates(tmp_path: Pa
     older = _run(tmp_path, name="synthesis-topic-v06-R2")
     newer = _run(tmp_path, name="synthesis-topic-v06-R3")
     _write_json(newer / "full_paper.journal_surface.json", {"passed": False, "issues": ["short_conclusion"]})
-    older.touch()
-    newer.touch()
+    os.utime(older, (1, 1))
+    os.utime(newer, (2, 2))
 
     ledger = daily.run_cycle(
         runs_root=tmp_path,
