@@ -491,14 +491,8 @@ def _phase_e_structural_fallback(
             # Insert the marker as the very first paragraph of
             # Discussion, before existing prose
             heading_end = disc_match.start(1)
-            insertion = (
-                f"\n\n**Thesis:** {thesis_text}\n\n"
-            )
-            text = (
-                text[:heading_end]
-                + insertion
-                + text[heading_end:]
-            )
+            insertion = f"\n\n**Thesis:** {thesis_text}\n\n"
+            text = text[:heading_end] + insertion + text[heading_end:]
             entries.append(FinalizerLogEntry(phase="E_structural_fallback", rule="insert_thesis_marker", n_changes=1, detail=f"inserted **Thesis:** marker from manifest ({len(thesis_text)} chars)"))
 
     # E.2 — append **Resolution criteria:** if missing
@@ -515,20 +509,12 @@ def _phase_e_structural_fallback(
         # The match ends right BEFORE the next `## ` heading; we want
         # to insert just before that heading line.
         insertion = (
-            "\n\n**Resolution criteria:** The thesis would be "
-            "reinforced by adequately powered trials with "
-            "pre-specified clinical endpoints, ≥2-year follow-up, "
-            "intention-to-treat and per-protocol analyses, and "
-            "concurrent biomarker plus functional measurement. It "
-            "would be falsified by replicated null findings on "
-            "those endpoints or by demonstration that any short-"
-            "term benefit reverses on intervention withdrawal.\n"
+            "\n\n**Resolution criteria:** The thesis would be reinforced by adequately powered trials with "
+            "pre-specified clinical endpoints, ≥2-year follow-up, intention-to-treat and per-protocol analyses, "
+            "and concurrent biomarker plus functional measurement. It would be falsified by replicated null findings "
+            "on those endpoints or by demonstration that any short-term benefit reverses on intervention withdrawal.\n"
         )
-        text = (
-            text[:section_end]
-            + insertion
-            + text[section_end:]
-        )
+        text = text[:section_end] + insertion + text[section_end:]
         entries.append(FinalizerLogEntry(
             phase="E_structural_fallback",
             rule="insert_resolution_criteria",
@@ -808,12 +794,12 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
 
 
 def _refresh_artifact_consistency_sidecar(out_dir: Path) -> bool:
+    if not (out_dir / "full_paper.md").is_file():
+        return False
     path = out_dir / "artifact_consistency.json"
     before = _load_sidecar(path)
     try:
-        from agent.artifact_consistency import (
-            verify_run_artifacts, write_consistency_sidecar,
-        )
+        from agent.artifact_consistency import verify_run_artifacts, write_consistency_sidecar
         write_consistency_sidecar(out_dir, verify_run_artifacts(out_dir))
     except (AttributeError, ImportError, OSError, TypeError, ValueError):
         return False

@@ -150,7 +150,8 @@ def test_methods_pack_legacy_model_swaps_accountability_prose() -> None:
 
 def _make_run(tmp_path: Path, *, surface_passed: bool,
               accountability_model: str,
-              old_contract_name: str) -> Path:
+              old_contract_name: str,
+              artifact_consistency: bool = True) -> Path:
     """Set up a minimal stale-sidecar run dir for Phase G tests."""
     run = tmp_path / "run"
     run.mkdir()
@@ -186,10 +187,11 @@ def _make_run(tmp_path: Path, *, surface_passed: bool,
         ],
     }))
     # Spine artifacts so researka_check passes when needed
-    (run / "citation_registry.json").write_text("[]")
-    (run / "artifact_consistency.json").write_text(json.dumps({
-        "passed": True,
-    }))
+    (run / "citation_registry.json").write_text("{}")
+    if artifact_consistency:
+        (run / "artifact_consistency.json").write_text(json.dumps({
+            "passed": True,
+        }))
     return run
 
 
@@ -261,6 +263,26 @@ def test_phase_g_rebuilds_readiness_contract_for_researka(
     # refresh (items 1/7/9/12/13). The single rule name now covers the
     # whole reconciliation pass.
     assert "reconcile_readiness_contract_items" in rules
+
+
+def test_phase_g_writes_consistency_before_readiness_contract(
+    tmp_path: Path,
+) -> None:
+    run = _make_run(
+        tmp_path, surface_passed=True,
+        accountability_model="researka_agent_certified",
+        old_contract_name="accountability",
+        artifact_consistency=False,
+    )
+
+    log = _phase_g_refresh_sidecars(run)
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    item_13 = next(i for i in gate["journal_readiness_contract"] if i["id"] == 13)
+
+    assert (run / "artifact_consistency.json").is_file()
+    assert item_13["name"] == "accountability"
+    assert item_13["status"] == "pass"
+    assert "refresh_artifact_consistency_post_finalizer" in [e.rule for e in log]
 
 
 def test_refresh_readiness_contract_makes_roadmap_partials_advisory(
