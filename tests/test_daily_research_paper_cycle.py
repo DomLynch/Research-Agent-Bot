@@ -1020,6 +1020,59 @@ def test_cycle_reuses_existing_work_for_compiler_fixable_retry(tmp_path: Path, m
     assert sidecar["source_run"] == ledger["attempts"][0]["out_dir"]
 
 
+def test_cycle_repairs_audit_failure_when_surface_also_failed(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "cgm_glucose_variability", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    synthesis_runs: list[str] = []
+    repair_reasons: list[str | None] = []
+    submit_calls = 0
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        synthesis_runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text("# Paper\n", encoding="utf-8")
+        _write_json(out_dir / "full_paper.journal_surface.json", {"passed": False, "issues": [{"code": "duplicate_blocks"}]})
+        return 0
+
+    def fake_repair(source_dir: Path, out_dir: Path, **kwargs: Any) -> tuple[bool, str]:
+        repair_reasons.append(kwargs.get("repair_reason"))
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text((source_dir / "full_paper.md").read_text(encoding="utf-8"), encoding="utf-8")
+        return True, ""
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        if submit_calls == 1:
+            return {
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+                "considered": [{"run": synthesis_runs[-1], "status": "audit_not_all_green"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_existing_run", fake_repair)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        topic="cgm_glucose_variability",
+        max_revise_attempts=2,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert synthesis_runs == [ledger["attempts"][0]["out_dir"]]
+    assert repair_reasons == ["journal_surface_not_passed"]
+    assert ledger["attempts"][1]["existing_work_reused"] is True
+
+
 def test_internal_repair_clears_surface_novelty_without_resynthesis(tmp_path: Path) -> None:
     source = tmp_path / "source"
     out = tmp_path / "out"
