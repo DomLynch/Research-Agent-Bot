@@ -9,6 +9,7 @@ Change = tuple[str, int, str]
 
 def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Change]]:
     changes: list[Change] = []
+    feedback = _revision_feedback(out_dir)
     text, n = re.subn(r"\bContextual Other\b", "Contextual Adjacent Evidence", text)
     if n:
         changes.append(("rename_contextual_other", n, "renamed broad contextual bucket"))
@@ -36,7 +37,46 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
         text, n = re.subn(r"(^## Limitations\b)", r"\1" + note, text, count=1, flags=re.M)
         if n:
             changes.append(("flag_verification_limited_sources", 1, "flagged lower-weight context sources"))
+    text, n = _apply_clinical_policy_caveat(text, feedback)
+    if n:
+        changes.append(("add_clinical_policy_caveat", n, "addressed reviewer caveat request"))
     return text, changes
+
+
+def _revision_feedback(out_dir: Path) -> str:
+    try:
+        data = json.loads((out_dir / "researka_revision_request.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    return " ".join(str(data.get("feedback") or "").split())[:4000] if isinstance(data, dict) else ""
+
+
+def _apply_clinical_policy_caveat(text: str, feedback: str) -> tuple[str, int]:
+    lowered = feedback.lower()
+    if not (
+        ("clinical" in lowered or "medical" in lowered or "policy" in lowered)
+        and any(term in lowered for term in ("caveat", "not supported", "not support", "not recommended"))
+    ):
+        return text, 0
+    sentence = (
+        "Current evidence does not support clinical or policy use for geroprotection; "
+        "the synthesis is evidentiary, not medical guidance."
+    )
+    changed = 0
+    for heading in ("Abstract", "Conclusion"):
+        text, n = _append_section_sentence(text, heading, sentence)
+        changed += n
+    return text, changed
+
+
+def _append_section_sentence(text: str, heading: str, sentence: str) -> tuple[str, int]:
+    pattern = re.compile(rf"(^## {re.escape(heading)}\b\s*\n)(?P<body>.*?)(?=^## |\Z)", re.M | re.S)
+    match = pattern.search(text)
+    if not match or sentence.lower() in match.group("body").lower():
+        return text, 0
+    body = match.group("body").rstrip()
+    replacement = match.group(1) + body + ("\n\n" if body else "") + sentence + "\n\n"
+    return text[:match.start()] + replacement + text[match.end():], 1
 
 
 def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:

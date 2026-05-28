@@ -586,12 +586,12 @@ def test_cycle_polls_revision_after_submit_and_resubmits(tmp_path: Path, monkeyp
 
     assert ledger["status"] == "submitted_to_researka"
     assert submit_calls == 2
-    assert feedback_seen == [
-        None,
-        "Define Contextual Other, dedupe repeated blocks, and trim minor rows.",
-    ]
+    assert feedback_seen == [None]
     assert ledger["attempts"][0]["remote_revision_requested"] is True
     assert ledger["attempts"][1]["revision_feedback_applied"] is True
+    assert ledger["attempts"][1]["existing_work_reused"] is True
+    sidecar = json.loads((tmp_path / "runs" / ledger["attempts"][1]["out_dir"] / "researka_revision_request.json").read_text(encoding="utf-8"))
+    assert sidecar["source_run"] == run_names[0]
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
     assert handled["handled"][0]["key"] == "ace-review-1"
 
@@ -614,8 +614,7 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
     }])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    feedback_seen: list[str | None] = []
-    out_dirs: list[Path] = []
+    synthesis_calls: list[str] = []
 
     def fake_synthesis(
         topic: str,
@@ -625,10 +624,7 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
         timeout: int | None = None,
         revision_feedback: str | None = None,
     ) -> int:
-        assert topic == "aspirin_geroprotection"
-        feedback_seen.append(revision_feedback)
-        out_dirs.append(out_dir)
-        out_dir.mkdir(parents=True)
+        synthesis_calls.append(topic)
         return 0
 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
@@ -649,10 +645,11 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert feedback_seen == ["Add clinical-use caveat and resubmit."]
+    assert synthesis_calls == []
     assert ledger["revision_source"]["artifactId"] == "review-art-1"
     assert ledger["attempts"][0]["revision_feedback_applied"] is True
-    sidecar = json.loads((out_dirs[0] / "researka_revision_request.json").read_text(encoding="utf-8"))
+    assert ledger["attempts"][0]["existing_work_reused"] is True
+    sidecar = json.loads((tmp_path / "runs" / ledger["attempts"][0]["out_dir"] / "researka_revision_request.json").read_text(encoding="utf-8"))
     assert sidecar["source_run"] == source_run.name
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
     assert handled["handled"][0]["key"] == "review-art-1"
@@ -690,7 +687,8 @@ def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, 
     )
 
     assert ledger["attempts"][0]["topic"] == "aspirin_geroprotection"
-    assert ledger["attempts"][0]["synthesis_return_code"] == 4
+    assert ledger["attempts"][0]["existing_work_reused"] is True
+    assert ledger["attempts"][0]["synthesis_return_code"] == 0
     assert not (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).exists()
     pending, error = cycle._pending_remote_revision(
         tmp_path / "runs",

@@ -1699,6 +1699,27 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
     } <= rules
 
 
+def test_finalizer_phase_m_adds_requested_clinical_policy_caveat(tmp_path) -> None:
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+
+    paper = (
+        "## Abstract\n\nEvidence is mixed.\n\n"
+        "## Results\n\nR.\n\n"
+        "## Conclusion\n\nThe synthesis remains provisional.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "researka_revision_request.json").write_text(_json.dumps({
+        "feedback": "Add a clear caveat that clinical or policy use is not supported.",
+    }))
+
+    report = finalize_run(tmp_path)
+    new_text = (tmp_path / "full_paper.md").read_text()
+
+    assert new_text.count("does not support clinical or policy use") == 2
+    assert any(entry.rule == "add_clinical_policy_caveat" for entry in report.entries)
+
+
 def test_finalizer_phase_f_idempotent(tmp_path) -> None:
     """Second finalizer run must not re-add the same row. The new
     row from the first run now satisfies the gate, so Phase F is a

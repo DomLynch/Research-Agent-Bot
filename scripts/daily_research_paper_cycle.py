@@ -12,6 +12,7 @@ import fcntl
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -439,6 +440,29 @@ def _run_synthesis(
     return int(result.returncode)
 
 
+def _repair_existing_revision(
+    source_dir: Path,
+    out_dir: Path,
+    *,
+    revision_source: dict[str, Any] | None = None,
+    revision_feedback: str | None = None,
+) -> bool:
+    if not revision_feedback or not (source_dir / "full_paper.md").is_file() or out_dir.exists():
+        return False
+    try:
+        shutil.copytree(source_dir, out_dir)
+        payload = dict(revision_source or {})
+        payload.setdefault("source_run", source_dir.name)
+        payload["feedback"] = revision_feedback[:4000]
+        _write_json(out_dir / "researka_revision_request.json", payload)
+        from agent.journal_finalizer import finalize_run
+        finalize_run(out_dir)
+    except (OSError, RuntimeError, ValueError, ImportError):
+        shutil.rmtree(out_dir, ignore_errors=True)
+        return False
+    return True
+
+
 def _current_gate_status(bridge: dict[str, Any], run_name: str) -> str:
     for row in bridge.get("considered", []):
         if isinstance(row, dict) and row.get("run") == run_name:
@@ -614,12 +638,23 @@ def run_cycle(
                     if revision_source.get(key)
                 }
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
+                revision_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
                 if revise_attempt > 1:
+                    revision_base_dir = out_dir
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
                     ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})
                 feedback_applied = bool(revision_feedback)
-                return_code = _run_synthesis(
+                existing_repair = bool(
+                    revision_base_dir
+                    and _repair_existing_revision(
+                        revision_base_dir,
+                        out_dir,
+                        revision_source=revision_source,
+                        revision_feedback=revision_feedback or None,
+                    )
+                )
+                return_code = 0 if existing_repair else _run_synthesis(
                     selected,
                     out_dir,
                     dry_run=synthesis_dry_run,
@@ -660,6 +695,7 @@ def run_cycle(
                     "gate_status": gate_status,
                     "failure_class": _failure_class(gate_status),
                     "submitted": submitted_current,
+                    "existing_work_reused": existing_repair,
                 }
                 if submitted_any:
                     attempt.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
