@@ -62,6 +62,11 @@ def test_discover_topics_includes_pack_before_corpus_exists(tmp_path: Path) -> N
 def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_path: Path) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     _write_json(ledger_dir / "2026-05-23.json", {"topic": "creatine", "started_at": "2026-05-23T00:00:00Z"})
+    _write_json(tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": dt.datetime.now(dt.UTC).isoformat(),
+        "topic": "aerobic_exercise",
+        "fingerprint": "sha256:abc",
+    }])
 
     selected = cycle.select_topic(
         ["aerobic_exercise", "creatine", "metformin"],
@@ -70,6 +75,28 @@ def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_pat
     )
 
     assert selected == "metformin"
+
+
+def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aerobic_exercise", target_journal=True)
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    old = dt.datetime.now(dt.UTC) - dt.timedelta(days=cycle.PUBLISHED_TOPIC_COOLDOWN_DAYS + 1)
+    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": old.isoformat(),
+        "topic": "aerobic_exercise",
+        "fingerprint": "sha256:abc",
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["aerobic_exercise"],
+        ledger_dir,
+        runs_root=runs_root,
+        remote_seen={"title:researka agent-certified evidence brief: aerobic exercise and human geroscience"},
+    )
+
+    assert selected == "aerobic_exercise"
 
 
 def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatch) -> None:
@@ -161,6 +188,7 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
         dry_run=False,
         timeout=123,
         revision_feedback="Add clinical-use caveat.",
+        review_type_override="thin_corpus_brief",
     )
 
     cmd = seen["args"][0]
@@ -169,6 +197,7 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
     assert seen["kwargs"]["cwd"] == cycle.ROOT
     assert seen["kwargs"]["timeout"] == 123
     assert seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"] == "Add clinical-use caveat."
+    assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] == "thin_corpus_brief"
 
 
 def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
@@ -912,6 +941,132 @@ def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path
     assert ledger["attempts"][0]["gate_status"] == "audit_not_all_green"
     assert ledger["attempts"][0]["failure_class"] == "C_writer_fixable"
     assert histogram["blockers"]["audit_not_all_green"]["count"] == 1
+
+
+def test_cycle_reuses_existing_work_for_compiler_fixable_retry(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "allostatic_load", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    synthesis_runs: list[str] = []
+    submit_calls = 0
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        synthesis_runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text("# Paper\n\n## Abstract\n\nA.", encoding="utf-8")
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        if submit_calls == 1:
+            return {
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+                "considered": [{"run": synthesis_runs[-1], "status": "journal_surface_not_passed"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        topic="allostatic_load",
+        max_revise_attempts=2,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert synthesis_runs == [ledger["attempts"][0]["out_dir"]]
+    assert ledger["attempts"][1]["existing_work_reused"] is True
+    assert ledger["attempts"][1]["repair_reason"] == "journal_surface_not_passed"
+    sidecar = json.loads((tmp_path / "runs" / ledger["attempts"][1]["out_dir"] / "internal_repair_request.json").read_text(encoding="utf-8"))
+    assert sidecar["source_run"] == ledger["attempts"][0]["out_dir"]
+
+
+def test_cycle_rewrites_for_writer_fixable_retry(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "rapamycin", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    synthesis_runs: list[str] = []
+    submit_calls = 0
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        synthesis_runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text("# Paper\n\n## Abstract\n\nA.", encoding="utf-8")
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        if submit_calls == 1:
+            return {
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+                "considered": [{"run": synthesis_runs[-1], "status": "audit_not_all_green"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        topic="rapamycin",
+        max_revise_attempts=2,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert len(synthesis_runs) == 2
+    assert ledger["attempts"][1]["existing_work_reused"] is False
+
+
+def test_cycle_downshifts_after_recent_numeric_density_failure(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "akkermansia_muciniphila", target_journal=True)
+    prior = _prior_run(tmp_path, "akkermansia_muciniphila", receipts=40, tensions=8, primary=4)
+    _write_json(prior / "full_paper.audit.json", {"checks": [{"name": "Q9_numeric_density", "passed": False}]})
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    overrides: list[str | None] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        overrides.append(review_type_override)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        topic="akkermansia_muciniphila",
+    )
+
+    assert overrides == ["thin_corpus_brief"]
+    assert ledger["attempts"][0]["review_type_override"] == "thin_corpus_brief"
 
 
 def test_blocker_histogram_marks_repeated_compiler_failure_as_auto_fix_candidate(tmp_path: Path) -> None:

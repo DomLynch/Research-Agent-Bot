@@ -32,6 +32,7 @@ import asyncio
 import dataclasses
 import datetime as dt
 import json
+import os
 import re
 import shutil
 import sys
@@ -2535,7 +2536,7 @@ async def _run(
     # n_primary_tier so the sufficiency gate catches "65 review-tier
     # receipts but no primary endpoint anchor" — that case should still
     # downshift to brief, not pretend it's a structured synthesis.
-    from agent.review_type import downshift_review_type_for_thin_corpus
+    from agent.review_type import downshift_review_type_for_thin_corpus, parse_review_type
     _n_primary = sum(1 for r in writer_receipts if r.evidence_tier in ("A1", "A2", "B1"))
     _n_outcomes = len({r.outcome_class for r in writer_receipts})
     _review_type_effective = downshift_review_type_for_thin_corpus(
@@ -2543,6 +2544,8 @@ async def _run(
         len(writer_receipts), len(writer_matrix.non_orthogonal()),
         n_primary_tier=_n_primary, n_outcome_classes=_n_outcomes,
     )
+    if override := os.environ.get("RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE", "").strip():
+        _review_type_effective = parse_review_type(override)
     print(
         f"\nCalling render_full_paper (review_type={_review_type_effective!r}, "
         "tiered validation)...",
