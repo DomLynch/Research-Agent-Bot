@@ -795,6 +795,8 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
         _g("reevaluate_journal_surface_post_finalizer", 1, f"surface issues delta vs pre-finalizer gate: {delta:+d}")
     if _refresh_pre_submit_gate(out_dir):
         _g("refresh_pre_submit_gate_with_fresh_surface", 1, "pre_submit_gate.inputs.journal_surface_passed + result recomputed")
+    if _refresh_artifact_consistency_sidecar(out_dir):
+        _g("refresh_artifact_consistency_post_finalizer", 1, "artifact_consistency refreshed before readiness/final_status")
     if _refresh_final_verdict(out_dir):
         _g("refresh_final_verdict_post_finalizer", 1, "full_paper.final_verdict refreshed against post-finalizer sidecars")
     n_items = _refresh_readiness_contract_items(out_dir)
@@ -803,6 +805,19 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     if _refresh_final_status(out_dir):
         _g("refresh_final_status_post_finalizer", 1, "final_status refreshed against post-finalizer sidecars")
     return log
+
+
+def _refresh_artifact_consistency_sidecar(out_dir: Path) -> bool:
+    path = out_dir / "artifact_consistency.json"
+    before = _load_sidecar(path)
+    try:
+        from agent.artifact_consistency import (
+            verify_run_artifacts, write_consistency_sidecar,
+        )
+        write_consistency_sidecar(out_dir, verify_run_artifacts(out_dir))
+    except (AttributeError, ImportError, OSError, TypeError, ValueError):
+        return False
+    return before != _load_sidecar(path)
 
 
 def _refresh_readiness_contract_items(out_dir: Path) -> int:
