@@ -1735,15 +1735,31 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
         "|---|---|---|\n"
         "| Contextual Other | n=26; claims=1346 | adjacent context |\n"
     )
+    duplicate_qei = (
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Smith 2024 | glucose | treatment | 89 mg/dL | mg/dL | mean |\n"
+        "| Smith 2024 | glucose | treatment | 91 mg/dL | mg/dL | mean |\n"
+    )
+    repeated_methods = (
+        "The search protocol used identical eligibility checks, extraction rules, "
+        "and reviewer weighting before synthesis.\n"
+    )
     repeated_finding = (
         "Key findings repeated verbatim across sections with enough words to "
-        "trigger the duplicate-block guard before submission to review.\n"
+        "trigger the duplicate-block guard before submission to review using "
+        "overlapping language about source weighting and table interpretation.\n"
     )
+    near_finding = repeated_finding.replace("submission to review", "submission to peer review")
     paper = (
         "## Abstract\n\nA.\n\n"
+        "## Methods\n\n"
+        f"### Search\n\n{repeated_methods}\n"
+        f"### Screening\n\n{repeated_methods}\n"
         "## Results\n\n"
+        f"{duplicate_qei}\n"
         f"{repeated_table}\n{repeated_table}\n"
-        f"{repeated_finding}\n{repeated_finding}\n"
+        f"{repeated_finding}\n{near_finding}\n"
         "## Cross-Domain Synthesis\n\n"
         "| Pair | Kind | Severity | Interpretation |\n"
         "|---|---|---|---|\n"
@@ -1764,7 +1780,9 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
     assert "Contextual Other" not in new_text
     assert "Contextual Adjacent Evidence" in new_text
     assert "not pooled with direct outcome evidence" in new_text
+    assert new_text.count("| Smith 2024 | glucose | treatment |") == 1
     assert new_text.count("Key findings repeated verbatim") == 1
+    assert new_text.count("The search protocol used identical eligibility checks") == 1
     assert "minor same-direction context" not in new_text
     assert "notable tension" in new_text
     assert "load-bearing disagreement" in new_text
@@ -1773,6 +1791,8 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
         "rename_contextual_other",
         "explain_contextual_adjacent_evidence",
         "dedupe_repeated_blocks",
+        "dedupe_duplicate_table_rows",
+        "dedupe_repeated_h3_blocks",
         "trim_low_value_cross_domain_rows",
         "flag_verification_limited_sources",
     } <= rules
