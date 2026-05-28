@@ -250,6 +250,50 @@ def test_selection_submits_older_retry_when_newer_retry_fails_gates(tmp_path: Pa
     ]
 
 
+def test_selection_repairs_stale_accountability_sidecar_before_skip(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "target_journal_pack.json", {
+        "journal": "GeroScience", "declared_in_topic_pack": True,
+    })
+    _write_json(run / "benchmark_runtime.json", {"return_code": 0})
+    _write_json(run / "pre_submit_gate.json", {
+        "result": {"passed": True, "failures": []},
+        "journal_readiness_contract": [{
+            "id": 13, "name": "accountability", "status": "not_ready",
+            "audit": "researka model missing: artifact consistency sidecar",
+            "blocks_submission": True,
+        }],
+    })
+    def fake_refresh(path: Path) -> list[object]:
+        _write_json(path / "artifact_consistency.json", {"passed": True, "checks": []})
+        gate = json.loads((path / "pre_submit_gate.json").read_text(encoding="utf-8"))
+        gate["journal_readiness_contract"][0].update({
+            "status": "pass", "audit": "researka_agent_certified mode",
+            "blocks_submission": False,
+        })
+        _write_json(path / "pre_submit_gate.json", gate)
+        return [object()]
+
+    import agent.journal_finalizer as finalizer
+    monkeypatch.setattr(finalizer, "_phase_g_refresh_sidecars", fake_refresh)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-28",
+        submit=True,
+        submitter=lambda payload: {"ok": True, "status": 201, "response": {"title": payload["title"]}},
+        remote_loader=lambda: (set(), None),
+    )
+    gate = json.loads((run / "pre_submit_gate.json").read_text(encoding="utf-8"))
+    item_13 = next(row for row in gate["journal_readiness_contract"] if row["id"] == 13)
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert (run / "artifact_consistency.json").is_file()
+    assert item_13["status"] == "pass"
+
+
 def test_submit_holds_when_remote_dedupe_fails(tmp_path: Path) -> None:
     _run(tmp_path)
 

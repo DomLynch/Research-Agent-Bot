@@ -96,7 +96,27 @@ def _pre_submit_passed(data: dict[str, Any]) -> bool:
     return bool(data.get("passed") is True or isinstance(result, dict) and result.get("passed") is True)
 
 
+def _refresh_stale_accountability_sidecar(run: Path) -> bool:
+    contract = _read_json(run / "pre_submit_gate.json").get("journal_readiness_contract")
+    if not isinstance(contract, list):
+        return False
+    stale = any(
+        isinstance(row, dict)
+        and row.get("id") == 13
+        and "artifact consistency sidecar" in str(row.get("audit") or "")
+        for row in contract
+    )
+    if not stale:
+        return False
+    try:
+        from agent.journal_finalizer import _phase_g_refresh_sidecars
+        return bool(_phase_g_refresh_sidecars(run))
+    except (ImportError, OSError, RuntimeError, TypeError, ValueError):
+        return False
+
+
 def _eligible(run: Path) -> tuple[bool, str]:
+    _refresh_stale_accountability_sidecar(run)
     required = (
         "full_paper.md",
         "manifest.json",
