@@ -1515,6 +1515,64 @@ def test_finalizer_phase_e_softens_unsupported_novelty_variants(tmp_path) -> Non
     )
 
 
+def test_finalizer_iterates_until_deterministic_surface_repairs_converge(tmp_path, monkeypatch) -> None:
+    """If a later deterministic phase introduces a surface issue, finalize_run
+    should fix it in the same call instead of waiting for a full re-synthesis."""
+    import json as _json
+    import agent.journal_finalizer as finalizer
+    from agent.methods_pack import build_methods_pack, write_methods_pack
+
+    row = "| Smith 2024 | fasting glucose | treatment | 89 mg/dL | mg/dL | mean |"
+    (tmp_path / "full_paper.md").write_text(_paper(row))
+    (tmp_path / "manifest.json").write_text(_json.dumps({"review_type": "thin_corpus_brief"}))
+    write_methods_pack(
+        tmp_path,
+        build_methods_pack(
+            review_type="thin_corpus_brief",
+            topic="glucose variability",
+            corpus_search_queries=("glucose variability aging",),
+            n_retrieved=20,
+            n_screened=12,
+            n_included=10,
+            n_rejected=2,
+            outcome_classes=("cardiometabolic",),
+            search_dates_iso="2026-05-28",
+        ),
+    )
+    calls = 0
+
+    def late_novelty_phase(text, _out_dir):
+        nonlocal calls
+        calls += 1
+        if calls > 1:
+            return text, []
+        patched = text.replace(
+            "## Limitations",
+            "This novel approach remains a synthesis-only framing.\n\n## Limitations",
+        )
+        return patched, [
+            finalizer.FinalizerLogEntry(
+                "F_reconcile_results_table",
+                "test_late_surface_issue",
+                1,
+                "introduced a late deterministic surface issue",
+            )
+        ]
+
+    monkeypatch.setattr(finalizer, "_phase_f_reconcile_results_table", late_novelty_phase)
+    monkeypatch.setattr(finalizer, "_phase_l_strengthen_analytical_sections", lambda text, _out_dir: (text, []))
+
+    report = finalizer.finalize_run(tmp_path)
+    new_text = (tmp_path / "full_paper.md").read_text()
+
+    assert calls == 2
+    assert report.paper_changed
+    assert "novel approach" not in new_text.lower()
+    assert "structured approach" in new_text.lower()
+    assert any(e.rule == "soften_unsupported_novelty" for e in report.entries)
+    assert evaluate_journal_surface(new_text, declared_review_type="thin_corpus_brief").passed
+
+
 def test_finalizer_idempotent(tmp_path) -> None:
     """Re-running the finalizer must not double-patch. Required so a
     re-run of run_v06_synthesis on the same out_dir is safe."""
