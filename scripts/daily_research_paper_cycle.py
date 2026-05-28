@@ -44,6 +44,7 @@ HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
+PUBLISHED_TOPIC_COOLDOWN_DAYS = 30
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -94,9 +95,10 @@ def _attempted_at(topic: str, ledger_dir: Path) -> str:
 
 def _parse_time(value: str) -> dt.datetime | None:
     try:
-        return dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError:
         return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
 
 
 def _latest_topic_run(topic: str, runs_root: Path) -> Path | None:
@@ -147,12 +149,30 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
     return failures
 
 
-def _published_topics(topics: list[str], markers: set[str]) -> set[str]:
+def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    path = ledger_dir.parent / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    try:
+        rows = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        rows = []
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(days=PUBLISHED_TOPIC_COOLDOWN_DAYS)
+    topic_set = set(topics)
+    out: set[str] = set()
+    for row in rows if isinstance(rows, list) else []:
+        if not isinstance(row, dict) or str(row.get("topic") or "") not in topic_set:
+            continue
+        when = _parse_time(str(row.get("date") or row.get("submitted_at") or ""))
+        if when and when >= cutoff:
+            out.add(str(row["topic"]))
+    return out
+
+
+def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | None = None) -> set[str]:
+    out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
     title_markers = [m.removeprefix("title:") for m in markers if m.startswith("title:")]
-    out = set()
     for topic in topics:
         display = submit_bridge._normalized_key(submit_bridge._display_topic(topic))
-        if display and any(display in marker for marker in title_markers):
+        if ledger_dir is None and display and any(display in marker for marker in title_markers):
             out.add(topic)
     return out
 
@@ -322,7 +342,7 @@ def select_topic(
     remote_seen: set[str] | None = None,
     exclude: set[str] | None = None,
 ) -> str | None:
-    blocked = _published_topics(topics, remote_seen or set())
+    blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
     if not candidates:
         return None
@@ -428,39 +448,55 @@ def _run_synthesis(
     dry_run: bool,
     timeout: int | None = None,
     revision_feedback: str | None = None,
+    review_type_override: str | None = None,
 ) -> int:
     cmd = [sys.executable, "scripts/run_v06_synthesis.py", "--topic", topic, "--out-dir", str(out_dir)]
     if dry_run:
         cmd.append("--dry-run")
-    env = None
-    if revision_feedback:
+    env: dict[str, str] | None = None
+    if revision_feedback or review_type_override:
         env = os.environ.copy()
-        env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
+        if revision_feedback:
+            env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
+        if review_type_override:
+            env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
     result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
     return int(result.returncode)
 
 
-def _repair_existing_revision(
+def _repair_existing_run(
     source_dir: Path,
     out_dir: Path,
     *,
     revision_source: dict[str, Any] | None = None,
     revision_feedback: str | None = None,
+    repair_reason: str | None = None,
 ) -> bool:
-    if not revision_feedback or not (source_dir / "full_paper.md").is_file() or out_dir.exists():
+    if not (revision_feedback or repair_reason) or not (source_dir / "full_paper.md").is_file() or out_dir.exists():
         return False
     try:
         shutil.copytree(source_dir, out_dir)
-        payload = dict(revision_source or {})
-        payload.setdefault("source_run", source_dir.name)
-        payload["feedback"] = revision_feedback[:4000]
-        _write_json(out_dir / "researka_revision_request.json", payload)
+        if revision_source or revision_feedback:
+            payload = dict(revision_source or {})
+            payload.setdefault("source_run", source_dir.name)
+            payload["feedback"] = (revision_feedback or "")[:4000]
+            _write_json(out_dir / "researka_revision_request.json", payload)
+        else:
+            _write_json(out_dir / "internal_repair_request.json", {"source_run": source_dir.name, "reason": repair_reason})
         from agent.journal_finalizer import finalize_run
         finalize_run(out_dir)
     except (OSError, RuntimeError, ValueError, ImportError):
         shutil.rmtree(out_dir, ignore_errors=True)
         return False
     return True
+
+
+def _numeric_density_downshift(run: Path | None) -> str | None:
+    audit = _read_json(run / "full_paper.audit.json") if run else {}
+    for check in audit.get("checks", []):
+        if isinstance(check, dict) and check.get("name") == "Q9_numeric_density" and check.get("passed") is False:
+            return "thin_corpus_brief"
+    return None
 
 
 def _current_gate_status(bridge: dict[str, Any], run_name: str) -> str:
@@ -637,6 +673,10 @@ def run_cycle(
                     for key in ("artifactId", "submissionId", "source_run", "title")
                     if revision_source.get(key)
                 }
+            review_type_override = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
+            if review_type_override:
+                ledger["review_type_override"] = {"topic": selected, "value": review_type_override, "reason": "Q9_numeric_density"}
+            last_attempt: dict[str, Any] | None = None
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
                 revision_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
                 if revise_attempt > 1:
@@ -644,23 +684,28 @@ def run_cycle(
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
                     ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})
+                repair_reason = ""
+                if revise_attempt > 1 and last_attempt and str(last_attempt.get("failure_class") or "").startswith("A_"):
+                    repair_reason = str(last_attempt.get("gate_status") or last_attempt.get("submit_status") or "")
                 feedback_applied = bool(revision_feedback)
                 existing_repair = bool(
                     revision_base_dir
-                    and _repair_existing_revision(
+                    and _repair_existing_run(
                         revision_base_dir,
                         out_dir,
                         revision_source=revision_source,
                         revision_feedback=revision_feedback or None,
+                        repair_reason=repair_reason or None,
                     )
                 )
-                return_code = 0 if existing_repair else _run_synthesis(
-                    selected,
-                    out_dir,
-                    dry_run=synthesis_dry_run,
-                    timeout=timeout,
-                    revision_feedback=revision_feedback or None,
-                )
+                synthesis_kwargs: dict[str, Any] = {
+                    "dry_run": synthesis_dry_run,
+                    "timeout": timeout,
+                    "revision_feedback": revision_feedback or None,
+                }
+                if review_type_override:
+                    synthesis_kwargs["review_type_override"] = review_type_override
+                return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 if revision_source and out_dir.exists():
                     _write_json(out_dir / "researka_revision_request.json", revision_source)
                 bridge: dict[str, Any] = {}
@@ -697,10 +742,15 @@ def run_cycle(
                     "submitted": submitted_current,
                     "existing_work_reused": existing_repair,
                 }
+                if repair_reason:
+                    attempt["repair_reason"] = repair_reason
+                if review_type_override:
+                    attempt["review_type_override"] = review_type_override
                 if submitted_any:
                     attempt.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                     ledger.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                 ledger["attempts"].append(attempt)
+                last_attempt = attempt
                 ledger["synthesis_return_code"] = return_code
                 ledger["submit_bridge"] = bridge
                 ledger["submitted"] = submitted_any
