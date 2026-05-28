@@ -100,10 +100,18 @@ def _refresh_stale_accountability_sidecar(run: Path) -> bool:
     contract = _read_json(run / "pre_submit_gate.json").get("journal_readiness_contract")
     if not isinstance(contract, list):
         return False
+    try:
+        from agent.accountability import resolve_model
+    except ImportError:
+        return False
+    model = resolve_model(str(_read_json(run / "manifest.json").get("accountability_model") or ""))
+    if model != "researka_agent_certified":
+        return False
     stale = any(
         isinstance(row, dict)
         and row.get("id") == 13
-        and "artifact consistency sidecar" in str(row.get("audit") or "")
+        and row.get("status") != "pass"
+        and bool(row.get("blocks_submission"))
         for row in contract
     )
     if not stale:

@@ -262,7 +262,7 @@ def test_selection_repairs_stale_accountability_sidecar_before_skip(
         "result": {"passed": True, "failures": []},
         "journal_readiness_contract": [{
             "id": 13, "name": "accountability", "status": "not_ready",
-            "audit": "researka model missing: artifact consistency sidecar",
+            "audit": "machine proof package unavailable",
             "blocks_submission": True,
         }],
     })
