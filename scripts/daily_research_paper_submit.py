@@ -181,7 +181,8 @@ def select_candidate(
         paper = run / "full_paper.md"
         fp = _sha256(paper) if paper.exists() else ""
         markers = {fp, _title_marker(_paper_title(paper))} if fp else set()
-        ok, status = _eligible(run)
+        locally_eligible, status = _eligible(run)
+        ok = locally_eligible
         if topic in seen_topics:
             ok, status = False, "superseded_topic_run"
         elif ok and fp in rejected_seen:
@@ -192,7 +193,8 @@ def select_candidate(
             ok, status = False, "duplicate_submission_fingerprint"
         elif ok and markers & published_seen:
             ok, status = False, "duplicate_remote_publication"
-        seen_topics.add(topic)
+        if locally_eligible:
+            seen_topics.add(topic)
         row = {"run": run.name, "fingerprint": fp, "status": status}
         considered.append(row)
         if ok:
