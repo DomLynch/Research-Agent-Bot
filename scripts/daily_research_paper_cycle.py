@@ -528,6 +528,17 @@ def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
     return True
 
 
+def _repair_reason_for_retry(run: Path, attempt: dict[str, Any]) -> str:
+    status = str(attempt.get("gate_status") or attempt.get("submit_status") or "")
+    if str(attempt.get("failure_class") or "").startswith("A_"):
+        return status
+    if status == "audit_not_all_green":
+        surface = _read_json(run / "full_paper.journal_surface.json")
+        if surface and surface.get("passed") is not True:
+            return "journal_surface_not_passed"
+    return ""
+
+
 def _auto_seed_limit() -> int:
     try:
         return max(1, int(os.environ.get("RESEARCH_AGENT_AUTO_SEED_LIMIT", str(AUTO_SEED_LIMIT))))
@@ -699,8 +710,8 @@ def run_cycle(
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
                     ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})
                 repair_reason = ""
-                if revise_attempt > 1 and last_attempt and str(last_attempt.get("failure_class") or "").startswith("A_"):
-                    repair_reason = str(last_attempt.get("gate_status") or last_attempt.get("submit_status") or "")
+                if revise_attempt > 1 and last_attempt and revision_base_dir:
+                    repair_reason = _repair_reason_for_retry(revision_base_dir, last_attempt)
                 feedback_applied = bool(revision_feedback)
                 repair_attempted = bool(revision_base_dir and (revision_feedback or repair_reason))
                 existing_repair = False
