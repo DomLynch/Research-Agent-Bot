@@ -835,15 +835,18 @@ def run_cycle(
                 if revise_attempt > 1 and last_attempt and revision_base_dir:
                     repair_reason = _repair_reason_for_retry(revision_base_dir, last_attempt)
                 feedback_applied = bool(revision_feedback)
-                repair_attempted = bool(revision_base_dir and (revision_feedback or repair_reason))
+                # Researka content revises carry reviewer feedback that must reach the
+                # feedback-aware writer (_run_synthesis injects RESEARKA_REVISION_FEEDBACK);
+                # only mechanical internal repairs (a gate-failure repair_reason with no
+                # external feedback) reuse the deterministic finalizer.
+                repair_attempted = bool(revision_base_dir and repair_reason and not revision_feedback)
                 existing_repair = False
                 repair_error = ""
-                if revision_base_dir:
+                if repair_attempted and revision_base_dir:
                     existing_repair, repair_error = _repair_existing_run(
                         revision_base_dir,
                         out_dir,
                         revision_source=revision_source,
-                        revision_feedback=revision_feedback or None,
                         repair_reason=repair_reason or None,
                     )
                 synthesis_kwargs: dict[str, Any] = {
