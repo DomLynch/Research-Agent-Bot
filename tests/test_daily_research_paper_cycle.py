@@ -3,6 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import sys
+import urllib.request
 from pathlib import Path
 from typing import Any
 
@@ -823,6 +824,47 @@ def test_handled_revision_ids_caps_after_max_rounds(tmp_path: Path) -> None:
     assert "art-1" not in cycle._handled_revision_ids(ledger_dir)  # below cap -> re-routable
     _write_rounds(cycle.MAX_REVISE_ROUNDS)
     assert "art-1" in cycle._handled_revision_ids(ledger_dir)  # at cap -> permanently handled
+
+
+def _patch_reviews(monkeypatch, rows: list[dict[str, Any]]) -> None:
+    class _Resp:
+        def __enter__(self) -> "_Resp":
+            return self
+
+        def __exit__(self, *_a: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps({"reviews": rows}).encode("utf-8")
+
+    monkeypatch.setattr(urllib.request, "urlopen", lambda *_a, **_k: _Resp())
+
+
+def test_remote_revision_keeps_only_latest_review_per_title(monkeypatch) -> None:
+    # Researka issues a new artifactId per submission; a stale revise must not
+    # be re-routed when a fresher review exists for the same paper title.
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    base = {"artifactType": "research_paper", "agentId": "agent-v3-full-paper", "title": title}
+    _patch_reviews(monkeypatch, [
+        {**base, "decision": "revise", "reviewedAt": "2026-05-29T13:51:08+04:00", "requiredRevisions": ["stale"]},
+        {**base, "decision": "reject", "reviewedAt": "2026-05-29T15:33:15+04:00", "requiredRevisions": ["rejected"]},
+        {**base, "decision": "revise", "reviewedAt": "2026-05-29T17:31:01+04:00", "requiredRevisions": ["fresh"]},
+    ])
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+    assert err is None
+    assert [r["feedback"] for r in out] == ["fresh"]  # only the latest revise, not the stale one
+
+
+def test_remote_revision_suppressed_when_latest_decision_is_reject(monkeypatch) -> None:
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    base = {"artifactType": "research_paper", "agentId": "agent-v3-full-paper", "title": title}
+    _patch_reviews(monkeypatch, [
+        {**base, "decision": "revise", "reviewedAt": "2026-05-29T13:51:08+04:00", "requiredRevisions": ["stale"]},
+        {**base, "decision": "reject", "reviewedAt": "2026-05-29T17:31:01+04:00", "requiredRevisions": ["rejected"]},
+    ])
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+    assert err is None
+    assert out == []  # latest decision is reject -> no revise routed
 
 
 def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkeypatch) -> None:

@@ -200,6 +200,17 @@ def _review_rows(payload: Any) -> list[dict[str, Any]]:
     return [row for row in payload if isinstance(row, dict)] if isinstance(payload, list) else []
 
 
+def _review_ts(row: dict[str, Any]) -> dt.datetime:
+    """Parse a review row's decision timestamp for latest-wins comparison.
+    Unparseable timestamps sort oldest so they never mask a dated decision."""
+    raw = str(row.get("reviewedAt") or row.get("reviewed_at") or "")
+    try:
+        parsed = dt.datetime.fromisoformat(raw)
+    except ValueError:
+        return dt.datetime.min.replace(tzinfo=dt.UTC)
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
+
+
 def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
     target = str(url or os.getenv("RESEARKA_REVIEWS_URL", "https://researka.org/reviews"))
     agent_ids = {
@@ -218,13 +229,22 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
             payload = json.loads(text)
     except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         return [], f"{type(exc).__name__}: {exc}"
-    out: list[dict[str, Any]] = []
+    # Researka assigns a new artifactId per submission, so a paper can have
+    # several reviews over time. Keep only the latest review per paper title;
+    # a revise superseded by a newer decision (a reject, or a fresher revise)
+    # is then dropped instead of re-routed with stale feedback.
+    latest: dict[str, dict[str, Any]] = {}
     for row in _review_rows(payload):
-        if str(row.get("decision") or "").lower() != "revise":
-            continue
         if str(row.get("artifactType") or row.get("artifact_type") or "") != "research_paper":
             continue
         if agent_ids and str(row.get("agentId") or row.get("agent_id") or "") not in agent_ids:
+            continue
+        key = submit_bridge._title_marker(str(row.get("title") or ""))
+        if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+            latest[key] = row
+    out: list[dict[str, Any]] = []
+    for row in latest.values():
+        if str(row.get("decision") or "").lower() != "revise":
             continue
         raw_required = row.get("requiredRevisions")
         required: list[Any] = raw_required if isinstance(raw_required, list) else []
