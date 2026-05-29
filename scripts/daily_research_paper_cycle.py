@@ -266,21 +266,28 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
 
 
 def _handled_revision_ids(ledger_dir: Path) -> set[str]:
-    """Revision keys that have hit the per-artifact round cap. A paper may be
-    re-processed up to MAX_REVISE_ROUNDS times across cycles (one row appended
-    per round); only once the count reaches the cap is the artifact treated as
-    permanently handled. Below the cap, a fresh Researka revise is re-routed so
-    feedback-aware re-renders can iterate toward acceptance."""
+    """Revision keys (paper-title markers) that have hit the per-paper round
+    cap. A paper may be re-processed up to MAX_REVISE_ROUNDS times across cycles
+    (one row appended per round); once the count reaches the cap the paper is
+    treated as permanently handled so it stops monopolising the cycle and the
+    bot rotates to fresh topics. Counting is by title — Researka mints a new
+    artifactId per submission, so artifactId counts never accumulate."""
     data = _read_json(ledger_dir / HANDLED_REVISIONS)
     rows = data.get("handled")
     if not isinstance(rows, list):
         return set()
-    counts = Counter(str(row.get("key")) for row in rows if isinstance(row, dict) and row.get("key"))
+    counts = Counter(
+        submit_bridge._title_marker(str(row.get("title") or ""))
+        for row in rows if isinstance(row, dict) and row.get("title")
+    )
     return {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
 
 
 def _revision_key(row: dict[str, Any]) -> str:
-    return str(row.get("artifactId") or row.get("submissionId") or submit_bridge._title_marker(str(row.get("title") or "")))
+    # Title-first so the round cap is per-paper, not per-submission: Researka
+    # assigns a new artifactId per submission, which would otherwise reset the
+    # count every round and let a never-converging paper loop forever.
+    return submit_bridge._title_marker(str(row.get("title") or "")) or str(row.get("artifactId") or row.get("submissionId") or "")
 
 
 def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str) -> None:

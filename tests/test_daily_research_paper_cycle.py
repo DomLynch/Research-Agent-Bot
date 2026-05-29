@@ -676,7 +676,7 @@ def test_cycle_polls_revision_after_submit_and_resubmits(tmp_path: Path, monkeyp
     sidecar = json.loads((tmp_path / "runs" / ledger["attempts"][1]["out_dir"] / "researka_revision_request.json").read_text(encoding="utf-8"))
     assert sidecar["source_run"] == run_names[0]
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
-    assert handled["handled"][0]["key"] == "ace-review-1"
+    assert handled["handled"][0]["key"] == cycle.submit_bridge._title_marker(title)  # per-paper key
 
 
 def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, monkeypatch) -> None:
@@ -735,7 +735,8 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
     sidecar = json.loads((tmp_path / "runs" / ledger["attempts"][0]["out_dir"] / "researka_revision_request.json").read_text(encoding="utf-8"))
     assert sidecar["source_run"] == source_run.name
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
-    assert handled["handled"][0]["key"] == "review-art-1"
+    assert handled["handled"][0]["key"] == cycle.submit_bridge._title_marker(
+        "Research Synthesis: Aspirin Geroprotection — full paper")  # per-paper key
 
 
 def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:
@@ -809,21 +810,25 @@ def test_handled_delayed_revision_is_not_reprocessed(tmp_path: Path) -> None:
 
 
 def test_handled_revision_ids_caps_after_max_rounds(tmp_path: Path) -> None:
-    # A Researka revise is re-routable until it has been handled
-    # MAX_REVISE_ROUNDS times for the same artifact; only then is it treated
-    # as permanently handled. This is what lets feedback-aware re-renders
-    # iterate instead of stalling after a single round.
+    # A Researka revise is re-routable until the same PAPER (by title, since
+    # Researka mints a new artifactId per submission) has been handled
+    # MAX_REVISE_ROUNDS times; only then is it permanently handled so it stops
+    # monopolising the cycle. Rounds across distinct artifactIds still count.
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
+    marker = cycle.submit_bridge._title_marker("Research Synthesis: Foo — full paper")
 
     def _write_rounds(occurrences: int) -> None:
-        _write_json(ledger_dir / cycle.HANDLED_REVISIONS,
-                    {"handled": [{"key": "art-1"} for _ in range(occurrences)]})
+        # distinct artifactId each round, same title -> must still accumulate
+        _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+            {"key": f"art-{i}", "title": "Research Synthesis: Foo — full paper"}
+            for i in range(occurrences)
+        ]})
 
     _write_rounds(cycle.MAX_REVISE_ROUNDS - 1)
-    assert "art-1" not in cycle._handled_revision_ids(ledger_dir)  # below cap -> re-routable
+    assert marker not in cycle._handled_revision_ids(ledger_dir)  # below cap -> re-routable
     _write_rounds(cycle.MAX_REVISE_ROUNDS)
-    assert "art-1" in cycle._handled_revision_ids(ledger_dir)  # at cap -> permanently handled
+    assert marker in cycle._handled_revision_ids(ledger_dir)  # at cap -> permanently handled
 
 
 def _patch_reviews(monkeypatch, rows: list[dict[str, Any]]) -> None:
