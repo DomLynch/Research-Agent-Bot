@@ -872,7 +872,15 @@ def _section_backstop_context() -> dict[str, object]:
             if str(r.get("effect_direction", "")).lower() == effect
         )
         top = [k for k, _v in counts.most_common(3) if k]
-        return ", ".join(top) if top else "no dominant outcome class"
+        # Return a self-contained noun phrase so prose templates like
+        # `"concentrate in {pos}"` read naturally regardless of label count.
+        # Bare labels (e.g. "immune") triggered Researka "truncated sentence"
+        # complaints when slotted into those templates.
+        if not top:
+            return "no dominant outcome class"
+        if len(top) == 1:
+            return f"the {top[0]} outcome class"
+        return f"the {', '.join(top[:-1])} and {top[-1]} outcome classes"
 
     direct = _count("directness", "direct")
     indirect = _count("directness", "indirect")
