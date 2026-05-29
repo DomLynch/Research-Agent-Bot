@@ -223,6 +223,7 @@ def select_candidate(
     submitted_path: Path,
     *,
     remote_seen: set[str] | None = None,
+    candidate_run: Path | None = None,
 ) -> tuple[Path | None, list[dict[str, Any]]]:
     local_seen = _seen(submitted_path)
     rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
@@ -230,7 +231,7 @@ def select_candidate(
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
-    for run in _runs(root):
+    for run in ([candidate_run] if candidate_run else _runs(root)):
         topic = _run_topic(run)
         paper = run / "full_paper.md"
         fp = _sha256(paper) if paper.exists() else ""
@@ -468,6 +469,7 @@ def run_cycle(
     submit: bool = False,
     submitter: Submitter | None = None,
     remote_loader: RemoteLoader | None = None,
+    candidate_run: Path | None = None,
 ) -> dict[str, Any]:
     ledger_path = runs_root / LEDGER_DIR / f"{date}.json"
     submitted_path = runs_root / LEDGER_DIR / "_submitted_fingerprints.json"
@@ -485,7 +487,7 @@ def run_cycle(
             ledger.update({"status": "remote_dedupe_failed", "reason": remote_error})
             _write_json(ledger_path, ledger)
             return ledger
-    run, considered = select_candidate(runs_root, submitted_path, remote_seen=remote_seen)
+    run, considered = select_candidate(runs_root, submitted_path, remote_seen=remote_seen, candidate_run=candidate_run)
     ledger["considered"] = considered
     if run is None:
         ledger.update({"status": "no_eligible_research_paper"})

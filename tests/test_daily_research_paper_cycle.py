@@ -197,6 +197,38 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
     assert ledger["published"] == 0
 
 
+def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "creatine")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TOKEN_ENV"))
+    calls: dict[str, Any] = {}
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text("# Research Synthesis: Creatine — full paper\n", encoding="utf-8")
+        return 0
+
+    def fake_submit_bridge(**kwargs: Any) -> dict[str, Any]:
+        calls.update(kwargs)
+        return {"status": "no_eligible_research_paper", "submitted": 0, "published": 0}
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle.submit_bridge, "run_cycle", fake_submit_bridge)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-29",
+        run_synthesis=True,
+        submit=True,
+        topic="creatine",
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "synthesis_completed_no_submission"
+    assert calls["candidate_run"] == tmp_path / "runs" / ledger["attempts"][-1]["out_dir"]
+
+
 def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Path, monkeypatch) -> None:
     seen: dict[str, Any] = {}
 

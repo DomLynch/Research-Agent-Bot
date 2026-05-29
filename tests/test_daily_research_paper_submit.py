@@ -110,6 +110,31 @@ def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None
     assert records[0]["topic"] == "topic"
 
 
+def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:
+    older = _run(tmp_path, name="synthesis-topic-v06-eligible-old")
+    current = _run(tmp_path, name="synthesis-topic-v06-current")
+    _write_json(current / "full_paper.journal_surface.json", {"passed": False, "issues": ["short_conclusion"]})
+    os.utime(older, (1, 1))
+    os.utime(current, (2, 2))
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-29",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("should not submit older run")),
+        remote_loader=lambda: (set(), None),
+        candidate_run=current,
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["submitted"] == 0
+    assert ledger["considered"] == [{
+        "run": current.name,
+        "fingerprint": daily._sha256(current / "full_paper.md"),
+        "status": "journal_surface_not_passed",
+    }]
+
+
 def test_duplicate_fingerprint_is_not_resubmitted(tmp_path: Path) -> None:
     run = _run(tmp_path)
     fp = daily.build_payload(run)["metadata"]["content_hash"]

@@ -861,12 +861,21 @@ def run_cycle(
                     _write_json(out_dir / "researka_revision_request.json", revision_source)
                 bridge: dict[str, Any] = {}
                 if return_code == 0:
-                    bridge = (submit_cycle or submit_bridge.run_cycle)(
-                        runs_root=runs_root,
-                        date=date,
-                        submit=submit,
-                        remote_loader=(lambda: (remote_seen, None)) if submit else None,
-                    )
+                    if submit_cycle is None:
+                        bridge = submit_bridge.run_cycle(
+                            runs_root=runs_root,
+                            date=date,
+                            submit=submit,
+                            remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                            candidate_run=out_dir,
+                        )
+                    else:
+                        bridge = submit_cycle(
+                            runs_root=runs_root,
+                            date=date,
+                            submit=submit,
+                            remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                        )
                 gate_status = "synthesis_failed" if return_code != 0 else _current_gate_status(bridge, out_dir.name)
                 bridge_status = str(bridge.get("status") or "")
                 if gate_status == "eligible" and bridge_status not in {"", "submitted_to_researka"}:
