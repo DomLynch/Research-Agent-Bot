@@ -241,7 +241,7 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "",
         "### Data items",
         "The following fields were extracted from each included source: " +
-        ", ".join(pack.data_extraction_fields) + ".",
+        ", ".join(pack.data_extraction_fields) + ". Source verification in the public bundle is limited to reference-level metadata; reported statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias appraisal, and claim registry) rather than from re-parsed full text.",  # noqa: E501
         "",
         "### Risk-of-bias appraisal",
         pack.risk_of_bias_approach,

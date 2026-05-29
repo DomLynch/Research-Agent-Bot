@@ -97,6 +97,24 @@ def test_methods_pack_render_matches_required_markers() -> None:
         assert marker in md, f"renderer missing required H3: {marker!r}"
 
 
+def test_methods_data_items_carries_source_grounding_disclosure() -> None:
+    # Researka repeatedly revised papers (CoQ10, brain_age_mri) asking them to
+    # disclose that the public bundle is reference-level and that stats rest on
+    # extraction artifacts. The Methods Data-items section must carry that
+    # disclosure universally so reviewers stop flagging unverifiable grounding.
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="example_topic",
+        corpus_search_queries=("example query",),
+        n_retrieved=10, n_screened=10, n_included=8, n_rejected=2,
+        outcome_classes=("primary_outcome",),
+        accountability_model="researka_agent_certified",
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "reference-level metadata" in md
+    assert "claim registry" in md
+
+
 def test_methods_pack_renders_receipt_admission_funnel() -> None:
     pack = build_methods_pack(
         review_type="evidence_brief",
