@@ -7,6 +7,7 @@ shapes that were captured during smoke-test development.
 """
 from __future__ import annotations
 
+import asyncio
 import os
 import xml.etree.ElementTree as ET
 from typing import Any
@@ -22,6 +23,8 @@ from agent.sources.arxiv import ArxivClient, _build_search_query
 from agent.sources.biorxiv import BioRxivClient
 from agent.sources.medrxiv import MedRxivClient
 from agent.sources.openalex import OpenAlexClient
+import agent.sources.semantic_scholar as semantic_scholar
+from agent.sources.semantic_scholar import SemanticScholarClient
 
 
 # ---------- arXiv ---------------------------------------------------
@@ -168,6 +171,45 @@ def test_openalex_anonymous_when_neither_set():
            if k not in ("OPENALEX_API_KEY", "CROSSREF_POLITE_EMAIL")}
     with patch.dict(os.environ, env, clear=True):
         assert cli._auth_params() == {}
+
+
+# ---------- Semantic Scholar ---------------------------------------
+
+def test_semantic_scholar_accepts_s2_api_key_alias(monkeypatch) -> None:
+    monkeypatch.delenv("SEMANTIC_SCHOLAR_API_KEY", raising=False)
+    monkeypatch.setenv("S2_API_KEY", "s2k-test")
+
+    assert SemanticScholarClient()._headers() == {"x-api-key": "s2k-test"}
+
+
+def test_semantic_scholar_search_uses_resumable_cache(tmp_path, monkeypatch) -> None:
+    calls = 0
+
+    async def no_sleep() -> None:
+        return None
+
+    async def fake_get_json(*_args: Any, **_kwargs: Any) -> dict[str, Any]:
+        nonlocal calls
+        calls += 1
+        return {"data": [{
+            "paperId": "p1", "title": "Metformin and aging",
+            "abstract": "Aging evidence " * 20, "year": 2024,
+            "externalIds": {"DOI": "10.1/X", "PubMed": "123"},
+            "venue": "Journal", "openAccessPdf": {"url": "https://example.test/p.pdf"},
+        }]}
+
+    monkeypatch.setenv("SEMANTIC_SCHOLAR_CACHE_DIR", str(tmp_path))
+    monkeypatch.setattr(semantic_scholar, "_await_rate_limit", no_sleep)
+    monkeypatch.setattr(semantic_scholar, "safe_get_json", fake_get_json)
+
+    async def run() -> None:
+        client = SemanticScholarClient()
+        assert len(await client.search(object(), "metformin aging", limit=3)) == 1  # type: ignore[arg-type]
+        assert len(await client.search(object(), "metformin aging", limit=3)) == 1  # type: ignore[arg-type]
+
+    asyncio.run(run())
+    assert calls == 1
+    assert len(list(tmp_path.glob("*.json"))) == 1
 
 
 # ---------- iCite enrichment ---------------------------------------

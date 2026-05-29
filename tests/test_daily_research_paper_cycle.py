@@ -356,6 +356,54 @@ def test_cycle_skips_thin_quant_corpus_before_synthesis(tmp_path: Path, monkeypa
     assert ledger["attempts"][0]["preflight"]["reasons"] == [f"n_quant_claims=3 < {cycle.PREFLIGHT_MIN_QUANT_CLAIMS}"]
 
 
+def test_paper_strategy_skips_terminal_sparse_researka_feedback() -> None:
+    strategy = cycle._paper_strategy(
+        {"status": "corpus_ready", "n_quant_claims": 37},
+        {"has_manifest": True, "n_receipts": 37, "n_tensions": 113, "n_primary_tier": 1},
+        "The evidence base is mixed and sparse, which precludes a strong accept verdict. No material revisions.",
+    )
+
+    assert strategy["action"] == "skip_topic"
+    assert strategy["selected"]["name"] == "skip_topic"
+    assert strategy["reason"] == "terminal_sparse_researka_feedback"
+
+
+def test_cycle_skips_terminal_sparse_revision_before_resynthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "colchicine_inflammaging", target_journal=True)
+    source = _prior_run(tmp_path, "colchicine_inflammaging", receipts=37, tensions=113, primary=1, level=5)
+    paper = source / "full_paper.md"
+    paper.write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": "colchicine_inflammaging",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("should not rerender terminal sparse revise")))
+    request = {
+        "artifactId": "colchicine-review",
+        "title": "Research Synthesis: Colchicine Inflammaging",
+        "feedback": "The evidence base is mixed and sparse, which precludes a strong accept verdict. No material revisions.",
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-29",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "strategy_skipped_no_submission"
+    assert ledger["attempts"][0]["submit_status"] == "strategy_evidence_insufficient"
+    assert ledger["attempts"][0]["paper_strategy"]["selected"]["name"] == "skip_topic"
+    assert (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).exists()
+
+
 def test_corpus_seed_failure_is_corpus_fixable(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 

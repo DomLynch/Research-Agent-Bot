@@ -59,6 +59,9 @@ AUTO_SEED_LIMIT = 120
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 30
+FRAME_MIN_FULL_SCORE = 0.65
+_SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
+_TERMINAL_SPARSE_RE = re.compile(r"\b(precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -478,6 +481,40 @@ def _quant_claim_preflight(corpus: dict[str, Any]) -> dict[str, Any]:
     return {"passed": not reasons, "reasons": reasons, "n_quant_claims": n_quant_claims}
 
 
+def _paper_strategy(corpus: dict[str, Any], preflight: dict[str, Any], revision_feedback: str = "") -> dict[str, Any]:
+    q = int(corpus.get("n_quant_claims") or 0)
+    receipts = int(preflight.get("n_receipts") or q)
+    tensions = int(preflight.get("n_tensions") or 0)
+    primary = int(preflight.get("n_primary_tier") or 0)
+    sparse = bool(_SPARSE_REVIEW_RE.search(revision_feedback))
+    terminal_sparse = bool(_TERMINAL_SPARSE_RE.search(revision_feedback))
+    if not preflight.get("has_manifest") and not sparse:
+        return {
+            "action": "write",
+            "review_type_override": None,
+            "reason": "no_prior_manifest",
+            "frames": [{"name": "full_paper", "score": 1.0}],
+            "selected": {"name": "full_paper", "score": 1.0},
+        }
+    full = min(1.0, q / 50) * 0.15 + min(1.0, receipts / 30) * 0.40 + min(1.0, tensions / 10) * 0.30 + min(1.0, primary / 3) * 0.15 - (0.45 if sparse else 0)
+    brief = min(1.0, q / 10) * 0.35 + min(1.0, receipts / 10) * 0.25 + min(1.0, primary) * 0.10 + (0.20 if sparse else 0)
+    skip = 1.1 if terminal_sparse and full < FRAME_MIN_FULL_SCORE else 0.05
+    scores = [
+        ("full_paper", round(max(0.0, full), 3)),
+        ("thin_corpus_brief", round(min(1.0, brief), 3)),
+        ("skip_topic", round(skip, 3)),
+    ]
+    selected_name, selected_score = max(scores, key=lambda row: (row[1], row[0] == "full_paper"))
+    frames = [{"name": name, "score": score} for name, score in scores]
+    return {
+        "action": "skip_topic" if selected_name == "skip_topic" else "write",
+        "review_type_override": "thin_corpus_brief" if selected_name == "thin_corpus_brief" else None,
+        "reason": "terminal_sparse_researka_feedback" if terminal_sparse else "sparse_researka_feedback" if sparse else "highest_frame_score",
+        "frames": frames,
+        "selected": {"name": selected_name, "score": selected_score},
+    }
+
+
 def _failure_class(status: str) -> str:
     code = status.split(":", 1)[0]
     return {
@@ -488,6 +525,7 @@ def _failure_class(status: str) -> str:
         "synthesis_failed": "C_writer_fixable",
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
+        "strategy_evidence_insufficient": "B_corpus_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
         "corpus_missing_dry_run": "B_corpus_fixable",
         "corpus_seed_empty": "B_corpus_fixable",
@@ -814,15 +852,37 @@ def run_cycle(
                 attempted.add(selected)
                 continue
             revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
+            strategy = _paper_strategy(corpus, preflight, revision_feedback)
+            ledger["paper_strategy"] = strategy
+            if strategy.get("action") == "skip_topic":
+                attempt = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": "strategy_evidence_insufficient",
+                    "failure_class": _failure_class("strategy_evidence_insufficient"),
+                    "submitted": 0,
+                    "paper_strategy": strategy,
+                }
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "strategy_skipped_no_submission"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                if revision_source:
+                    _mark_revision_handled(ledger_dir, revision_source, status="strategy_evidence_insufficient")
+                attempted.add(selected)
+                continue
             if revision_source:
                 ledger["revision_source"] = {
                     key: revision_source.get(key)
                     for key in ("artifactId", "submissionId", "source_run", "title")
                     if revision_source.get(key)
                 }
-            review_type_override = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
+            strategy_review_type = str(strategy.get("review_type_override") or "") or None
+            numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
+            review_type_override = numeric_review_type or strategy_review_type
             if review_type_override:
-                ledger["review_type_override"] = {"topic": selected, "value": review_type_override, "reason": "Q9_numeric_density"}
+                reason = "Q9_numeric_density" if numeric_review_type else str(strategy.get("reason") or "paper_strategy")
+                ledger["review_type_override"] = {"topic": selected, "value": review_type_override, "reason": reason}
             last_attempt: dict[str, Any] | None = None
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
                 revision_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None

@@ -1,21 +1,12 @@
-"""Semantic Scholar adapter.
-
-Endpoint: https://api.semanticscholar.org/graph/v1/paper/search
-Authenticated (with SEMANTIC_SCHOLAR_API_KEY): 1 req/s cumulative
-across all endpoints. Without key: ~100 req/5min public tier.
-
-Refactor 2026-05-04: added a class-level async rate limit (1 req/s)
-to keep the SourceAggregator's parallel fan-out below threshold.
-The user's S2 key (s2k-...) was approved with the standard 1 rps
-limit — exceeding that gets 429 + the key gets temporarily blocked.
-
-Returns rich citation graph + abstract + open-access PDFs.
-"""
+"""Semantic Scholar adapter with 1 rps throttling + resumable query cache."""
 from __future__ import annotations
 
 import asyncio
+import hashlib
+import json
 import os
 import time
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -52,11 +43,17 @@ async def _await_rate_limit() -> None:
         _last_call_ts = time.monotonic()
 
 
+def _cache_path(params: dict[str, str]) -> Path:
+    root = Path(os.environ.get("SEMANTIC_SCHOLAR_CACHE_DIR", ".cache/semantic_scholar"))
+    key = hashlib.sha256(json.dumps(params, sort_keys=True).encode()).hexdigest()
+    return root / f"{key}.json"
+
+
 class SemanticScholarClient:
     name = "semanticscholar"
 
     def _headers(self) -> dict[str, str]:
-        api_key = os.environ.get("SEMANTIC_SCHOLAR_API_KEY")
+        api_key = os.environ.get("SEMANTIC_SCHOLAR_API_KEY") or os.environ.get("S2_API_KEY")
         if api_key:
             return {"x-api-key": api_key}
         return {}
@@ -73,12 +70,15 @@ class SemanticScholarClient:
             "limit": str(max(1, min(limit, 100))),
             "fields": _FIELDS,
         }
-        # Rate-limit gate (1 req per 1.1s cumulative)
-        await _await_rate_limit()
-        payload = await safe_get_json(
-            client, _SEMANTIC_SCHOLAR_URL,
-            params=params, headers=self._headers(),
-        )
+        cache = _cache_path(params)
+        try:
+            payload = json.loads(cache.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            await _await_rate_limit()
+            payload = await safe_get_json(client, _SEMANTIC_SCHOLAR_URL, params=params, headers=self._headers())
+            if payload is not None:
+                cache.parent.mkdir(parents=True, exist_ok=True)
+                cache.write_text(json.dumps(payload, sort_keys=True), encoding="utf-8")
         if payload is None:
             return []
         data = payload.get("data", [])
