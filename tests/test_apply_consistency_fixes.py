@@ -253,6 +253,35 @@ def test_fuzzy_duplicate_strip_handles_bold_thesis_prefix() -> None:
     assert out.count("Across 57 curated reference papers") == 1
 
 
+def test_thesis_marker_not_injected_when_abstract_already_thesis_framed() -> None:
+    # Abstract already opens with a "This paper synthesizes ..." framing
+    # sentence; injecting another "This synthesis tests the thesis ..." line
+    # stacks two near-identical openers (the redundancy Researka flagged).
+    paper = (
+        "## Abstract\n\n"
+        "This paper synthesizes cold exposure as an aging-related intervention "
+        "across 37 source papers and 1333 claims.\n\n"
+        "The conclusion is that it remains a bounded geroscience case.\n\n"
+        "## Discussion\n\nBody.\n"
+    )
+    out, n = fixes._ensure_public_thesis_marker(paper, {"topic": "cold_exposure"})
+    assert n == 0
+    assert "This synthesis tests the thesis" not in out
+
+
+def test_thesis_marker_injected_when_abstract_lacks_thesis_framing() -> None:
+    # No thesis-framing opener anywhere -> the marker must still be injected.
+    paper = (
+        "## Abstract\n\n"
+        "Cold exposure was reviewed across many studies with mixed endpoints "
+        "and no single pooled estimate.\n\n"
+        "## Discussion\n\nBody.\n"
+    )
+    out, n = fixes._ensure_public_thesis_marker(paper, {"topic": "cold_exposure"})
+    assert n == 1
+    assert "tests the thesis" in out
+
+
 def test_apply_fixes_skips_full_depth_backfill_for_thin_brief() -> None:
     paper = "## Results\n\nShort thin result.\n\n## Conclusion\n\nShort.\n"
     out, log = fixes.apply_fixes(paper, [], manifest={"review_type": "thin_corpus_brief"})

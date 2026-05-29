@@ -359,6 +359,20 @@ def _ensure_public_thesis_marker(
             re.IGNORECASE,
         )
         or re.search(r"thesis(?:\s+is)?\s+that", paper_md[:3000], re.IGNORECASE)
+        # Abstract already opens with a thesis-framing sentence ("This
+        # synthesis/paper tests/synthesizes/maps ..."). Injecting another
+        # "This synthesis tests the thesis ..." sentence on top stacks two
+        # near-identical openers — the redundancy Researka flagged. Treat the
+        # existing opener as the thesis. Universal academic framing, no topic
+        # terms; the gate-required **Thesis:** marker is added separately in
+        # Discussion by the finalizer, so skipping here never leaves a paper
+        # thesis-less.
+        or re.search(
+            r"^##\s+Abstract\s*\n+(?:\*\*[^*\n]+\*\*\s+)?"
+            r"This\s+(?:synthesis|paper|review|analysis|study)\s+"
+            r"(?:synthesi[sz]es|tests|maps|evaluates|examines|assesses|presents|reports|investigates|analy[sz]es)\b",
+            paper_md, re.IGNORECASE | re.MULTILINE,
+        )
     )
     if has_thesis:
         return paper_md, 0
