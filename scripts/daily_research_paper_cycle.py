@@ -27,6 +27,13 @@ from typing import Any
 import daily_research_paper_submit as submit_bridge
 
 ROOT = Path(__file__).resolve().parent.parent
+# Enable in-process `from scripts.X import Y` when systemd launches us as
+# `python scripts/daily_research_paper_cycle.py` (script-style invocation
+# only puts scripts/ on sys.path, not the repo root). Mirrors
+# scripts/run_v06_synthesis.py:46. Without this, _repair_existing_run hits
+# ModuleNotFoundError for scripts.review_noise_control and falls back to a
+# full rewrite, burning the 2-hour cycle budget.
+sys.path.insert(0, str(ROOT))
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
 CORPORA = ROOT / "docs" / "quality-reference"
