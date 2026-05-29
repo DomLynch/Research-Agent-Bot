@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -292,6 +293,44 @@ def test_selection_repairs_stale_accountability_sidecar_before_skip(
     assert ledger["status"] == "submitted_to_researka"
     assert (run / "artifact_consistency.json").is_file()
     assert item_13["status"] == "pass"
+
+
+def _recording_refresh(called: list[Path]):
+    def fake_refresh(path: Path) -> list[object]:
+        called.append(path)
+        return [object()]
+    return fake_refresh
+
+
+def test_stale_audit_refresh_fires_for_recent_failing_run(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "full_paper.audit.json", {"p1_pass": False, "n_pass": 13, "n_total": 14})
+    called: list[Path] = []
+    import agent.journal_finalizer as finalizer
+    monkeypatch.setattr(finalizer, "_phase_g_refresh_sidecars", _recording_refresh(called))
+    assert daily._refresh_stale_audit_sidecar(run) is True
+    assert called == [run]
+
+
+def test_stale_audit_refresh_skips_old_failing_run(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "full_paper.audit.json", {"p1_pass": False, "n_pass": 13, "n_total": 14})
+    old = time.time() - (daily.STALE_AUDIT_REFRESH_WINDOW_S + 3600)
+    os.utime(run, (old, old))
+    called: list[Path] = []
+    import agent.journal_finalizer as finalizer
+    monkeypatch.setattr(finalizer, "_phase_g_refresh_sidecars", _recording_refresh(called))
+    assert daily._refresh_stale_audit_sidecar(run) is False
+    assert called == []
+
+
+def test_stale_audit_refresh_skips_all_green_run(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)  # _run writes an all-green audit (p1_pass True, 14/14)
+    called: list[Path] = []
+    import agent.journal_finalizer as finalizer
+    monkeypatch.setattr(finalizer, "_phase_g_refresh_sidecars", _recording_refresh(called))
+    assert daily._refresh_stale_audit_sidecar(run) is False
+    assert called == []
 
 
 def test_submit_holds_when_remote_dedupe_fails(tmp_path: Path) -> None:

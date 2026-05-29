@@ -22,6 +22,10 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
+# Re-audit window for stale-audit self-heal: only recently produced runs are
+# re-audited at submit time so a now-fixed audit check propagates without a
+# re-synthesis. Bounds cost — historical runs are not re-audited every cycle.
+STALE_AUDIT_REFRESH_WINDOW_S = 48 * 3600
 REJECTED_FINGERPRINTS = "_rejected_fingerprints.json"
 REVISION_FINGERPRINTS = "_revision_fingerprints.json"
 TOKEN_ENVS = (
@@ -123,8 +127,30 @@ def _refresh_stale_accountability_sidecar(run: Path) -> bool:
         return False
 
 
+def _refresh_stale_audit_sidecar(run: Path) -> bool:
+    """Re-run the deterministic audit + gate sidecars for a recently produced
+    run whose stored audit is not all-green, so a now-fixed audit check (e.g.
+    the Q2 References numeric exclusion) propagates to disk and the run can
+    become submit-eligible without a re-synthesis. Structural trigger (stored
+    audit not all-green); bounded to recent runs. Re-runs the real audit, so a
+    genuinely failing paper stays blocked."""
+    audit = _read_json(run / "full_paper.audit.json")
+    if not audit or (audit.get("p1_pass") is True and audit.get("n_pass") == audit.get("n_total")):
+        return False
+    try:
+        if dt.datetime.now(dt.UTC).timestamp() - run.stat().st_mtime > STALE_AUDIT_REFRESH_WINDOW_S:
+            return False
+        from agent.journal_finalizer import _phase_g_refresh_sidecars
+        return bool(_phase_g_refresh_sidecars(run))
+    except (ImportError, OSError, RuntimeError, TypeError, ValueError):
+        return False
+
+
 def _eligible(run: Path) -> tuple[bool, str]:
-    _refresh_stale_accountability_sidecar(run)
+    # Phase G refreshes all sidecars (audit + gate + accountability); run it at
+    # most once — prefer the accountability path, else the stale-audit path.
+    if not _refresh_stale_accountability_sidecar(run):
+        _refresh_stale_audit_sidecar(run)
     required = (
         "full_paper.md",
         "manifest.json",
