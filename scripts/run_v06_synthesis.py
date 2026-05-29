@@ -469,6 +469,11 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
     null_refs = ctx["null_refs"]
     neg_refs = ctx["negative_refs"]
     thesis = ctx["thesis"]
+    # Bound the "clinical signals" claim to the evidence profile. When no
+    # source is direct clinical evidence (direct == 0), asserting "clinical
+    # signals" contradicts the disclosed profile — Researka flagged this as an
+    # unbounded conclusion claim. Conditioned on the count, not on any topic.
+    clinical_signal = "selected clinical signals" if direct > 0 else "selected adjacent-clinical and mechanistic signals"
     if title == "Results":
         results_backstop = _compile_results_outcome_backstop(topic, ctx, floor)
         if results_backstop:
@@ -497,8 +502,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             ),
             (
                 f"The conclusion is that {topic} remains a bounded "
-                "geroscience case: mechanistic plausibility and selected "
-                "clinical signals justify further targeted testing, while "
+                f"geroscience case: mechanistic plausibility and {clinical_signal} "
+                "justify further targeted testing, while "
                 "mixed and null findings limit any unqualified anti-aging "
                 "claim."
             ),
@@ -675,8 +680,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         "Conclusion": [
             (
                 f"The final interpretation is deliberately tiered. {topic.title()} "
-                "has a biologically plausible geroscience rationale and selected "
-                "clinical signals, but the corpus does not support treating "
+                f"has a biologically plausible geroscience rationale and {clinical_signal}, "
+                "but the corpus does not support treating "
                 "mechanistic target engagement, intermediate biomarkers, and "
                 "patient-relevant outcomes as interchangeable evidence."
             ),
