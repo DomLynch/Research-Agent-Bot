@@ -702,12 +702,16 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
         and int(inputs.get("unresolved_reviewer_p1_count", new_reviewer)) == new_reviewer
     ):
         return False
+    # numeric_coverage is audit-derived (the Q2 "N/M trace" ratio). Refresh it
+    # alongside audit_gates_passed so a now-fixed Q2 propagates into the gate
+    # instead of leaving the stale pre-fix coverage that keeps blocking submit.
     try:
         from agent.final_gate import GateInputs, evaluate_final_gate
         fresh = {
             **inputs,
             "journal_surface_passed": new_surface,
             "audit_gates_passed": new_audit,
+            "numeric_coverage": next((int(m[1]) / int(m[2]) for c in (audit.get("checks") or []) if isinstance(c, dict) and c.get("name") == "Q2_numeric_integrity" and (m := re.search(r"(\d+)/(\d+)", str(c.get("detail") or ""))) and int(m[2])), inputs.get("numeric_coverage")) if isinstance(audit, dict) else inputs.get("numeric_coverage"),  # noqa: E501
             "unresolved_reviewer_p1_count": new_reviewer,
         }
         result = evaluate_final_gate(GateInputs(**fresh))

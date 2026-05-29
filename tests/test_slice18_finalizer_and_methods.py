@@ -23,6 +23,7 @@ from pathlib import Path
 from agent.journal_finalizer import (  # type: ignore[import-not-found]
     _lowercase_first_letter,
     _phase_g_refresh_sidecars,
+    _refresh_pre_submit_gate,
     _refresh_readiness_contract_items,
 )
 from agent.methods_pack import (  # type: ignore[import-not-found]
@@ -352,6 +353,39 @@ def test_phase_g_noop_when_already_consistent(tmp_path: Path) -> None:
     _phase_g_refresh_sidecars(run)  # first call: stabilise
     log = _phase_g_refresh_sidecars(run)  # second call: must be quiet
     assert log == []
+
+
+def test_refresh_pre_submit_gate_recomputes_numeric_coverage(tmp_path: Path) -> None:
+    """When a now-fixed Q2 flips audit_gates_passed False->True, the gate's
+    numeric_coverage input must be recomputed from the fresh audit (it is
+    audit-derived) — not left at the stale pre-fix value that keeps the gate
+    failing. Regression for the References-strip throughput unblock."""
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "full_paper.journal_surface.json").write_text(json.dumps({"passed": True, "issues": []}))
+    # Fresh audit: Q2 now traces 8/8 (post References-strip) and all gates pass.
+    (run / "full_paper.audit.json").write_text(json.dumps({
+        "n_total": 14, "n_pass": 14, "p1_pass": True,
+        "checks": [{"name": "Q2_numeric_integrity", "passed": True,
+                    "detail": "8/8 numerics trace to corpus (100%)"}],
+    }))
+    # Stale gate: audit_gates_passed False + numeric_coverage 0.9 (pre-fix).
+    (run / "pre_submit_gate.json").write_text(json.dumps({
+        "inputs": {
+            "numeric_coverage": 0.9, "audit_gates_passed": False,
+            "journal_surface_passed": False, "citation_registry_complete": True,
+            "rob_coverage": 1.0, "grade_coverage": 1.0, "n_tensions": 5,
+            "n_receipts": 20, "unresolved_reviewer_p1_count": 0,
+            "template_language_blocking": False,
+        },
+        "result": {"passed": False, "failures": ["numeric_coverage=0.900 < threshold 1.000"]},
+    }))
+    changed = _refresh_pre_submit_gate(run)
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    assert changed is True
+    assert gate["inputs"]["numeric_coverage"] == 1.0
+    assert gate["inputs"]["audit_gates_passed"] is True
+    assert gate["result"]["passed"] is True
 
 
 def test_phase_g_reevaluates_surface_gate_on_post_finalizer_paper(
