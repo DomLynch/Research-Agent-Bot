@@ -86,6 +86,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_c_terminology, _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
+        _phase_i_split_concatenated_headings,
         lambda t: _phase_e_structural_fallback(t, out_dir),
         lambda t: _phase_f_reconcile_results_table(t, out_dir),
         lambda t: _phase_h_topic_slug_normalise(t, out_dir), _phase_i_split_concatenated_headings,
@@ -262,10 +263,13 @@ def _phase_h_topic_slug_normalise(
 # another `##`+ heading marker with no intervening newline. Insert
 # `\n\n` between them. Universal — no per-topic logic.
 _CONCAT_HEADING_RE = re.compile(r"^(#{2,6}\s+[^#\n]*?)(#{2,6}\s+)", re.M)
+_INLINE_HEADING_RE = re.compile(r"([^#\n])(?=#{2,6}\s+[A-Z][^#\n]*(?:\n|$))")
 
 
 def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[FinalizerLogEntry]]:
     new_text, n = _CONCAT_HEADING_RE.subn(r"\1\n\n\2", text)
+    new_text, inline_n = _INLINE_HEADING_RE.subn(r"\1\n\n", new_text)
+    n += inline_n
     if not n:
         return text, []
     return new_text, [FinalizerLogEntry(phase="I_split_concatenated_headings", rule="insert_blank_line_between_headings", n_changes=n, detail=f"split {n} concatenated heading line(s)")]
@@ -301,10 +305,8 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
     rs = re.search(r"^## Results\b.*?(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not (isinstance(manifest, dict) and isinstance(registry, dict) and rs):
         return text, []
-    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ())
-          if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
-    cmap = {e["body_citation"]: oc[rid] for rid, e in registry.items()
-            if isinstance(e, dict) and e.get("body_citation") and rid in oc}
+    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
+    cmap = {e["body_citation"]: oc[rid] for rid, e in registry.items() if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     block = rs.group(0)
     h3s = list(re.finditer(r"^###\s+(.+?Outcomes?)\s*$", block, flags=re.M))
     if not cmap or len(h3s) < 2:
@@ -329,10 +331,16 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
                 j = keys.index(top_key) if top_key in keys else i
                 bodies[j].append(chunk)
                 n_moved += int(j != i)
-    if not n_moved:
+    fallback = "Evidence for this outcome class is represented in the structured results table, but the retained narrative paragraphs were more strongly assigned to adjacent outcome classes. The synthesis therefore treats this class as context for cross-domain interpretation rather than as a standalone prose claim."
+    filled = sum(1 for body in bodies if not body)
+    for body in bodies:
+        body[:] = body or [fallback]
+    if not n_moved and not filled:
         return text, []
     new_block = block[:h3s[0].start()] + "\n\n".join(headings[i] + "\n\n" + "\n\n".join(b) for i, b in enumerate(bodies)) + "\n\n"
-    return text[:rs.start()] + new_block + text[rs.end():], [FinalizerLogEntry(phase="K_outcome_routing", rule="route_paragraph_by_citation_class", n_changes=n_moved, detail=f"moved {n_moved} paragraph(s) to correct outcome subsection")]
+    entries = [FinalizerLogEntry(phase="K_outcome_routing", rule="route_paragraph_by_citation_class", n_changes=n_moved, detail=f"moved {n_moved} paragraph(s) to correct outcome subsection")] if n_moved else []
+    entries += [FinalizerLogEntry(phase="K_outcome_routing", rule="fill_empty_outcome_heading", n_changes=filled, detail=f"filled {filled} empty outcome subsection(s)")] if filled else []
+    return text[:rs.start()] + new_block + text[rs.end():], entries
 
 
 def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
@@ -500,27 +508,14 @@ def _phase_e_structural_fallback(
         r"^## Discussion\b(.*?)(?=^## (?!#))", text,
         flags=re.M | re.S,
     )
-    if (
-        disc_match2
-        and not _RESOLUTION_MARKER_PRESENT.search(disc_match2.group(1))
-    ):
+    if disc_match2 and not _RESOLUTION_MARKER_PRESENT.search(disc_match2.group(1)):
         # Insert before the section's closing boundary
         section_end = disc_match2.end()
         # The match ends right BEFORE the next `## ` heading; we want
         # to insert just before that heading line.
-        insertion = (
-            "\n\n**Resolution criteria:** The thesis would be reinforced by adequately powered trials with "
-            "pre-specified clinical endpoints, ≥2-year follow-up, intention-to-treat and per-protocol analyses, "
-            "and concurrent biomarker plus functional measurement. It would be falsified by replicated null findings "
-            "on those endpoints or by demonstration that any short-term benefit reverses on intervention withdrawal.\n"
-        )
+        insertion = "\n\n**Resolution criteria:** The thesis would be reinforced by adequately powered trials with pre-specified clinical endpoints, ≥2-year follow-up, intention-to-treat and per-protocol analyses, and concurrent biomarker plus functional measurement. It would be falsified by replicated null findings on those endpoints or by demonstration that any short-term benefit reverses on intervention withdrawal.\n"
         text = text[:section_end] + insertion + text[section_end:]
-        entries.append(FinalizerLogEntry(
-            phase="E_structural_fallback",
-            rule="insert_resolution_criteria",
-            n_changes=1,
-            detail="appended **Resolution criteria:** paragraph",
-        ))
+        entries.append(FinalizerLogEntry(phase="E_structural_fallback", rule="insert_resolution_criteria", n_changes=1, detail="appended **Resolution criteria:** paragraph"))
 
     # E.3 — soften ungrounded novelty claims
     from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _NOVELTY_CLAIM_RE

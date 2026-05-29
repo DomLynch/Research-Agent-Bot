@@ -1475,6 +1475,30 @@ def test_finalizer_phase_e_inserts_thesis_marker(tmp_path) -> None:
     assert q8["passed"] is True
 
 
+def test_finalizer_preserves_inserted_thesis_after_noise_dedupe(tmp_path) -> None:
+    """A thesis marker may repeat Abstract wording; noise-control dedupe
+    must not delete the required Discussion marker."""
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+
+    thesis = "The evidence remains bounded and should not support broad clinical claims."
+    paper = (
+        f"## Abstract\n\n{thesis}\n\n"
+        "## Methods\n\nM.\n\n"
+        "## Results\n\nR.\n\n"
+        "## Discussion\n\nFreeform discussion prose only.\n\n"
+        "## Limitations\n\nL.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(_json.dumps({"topic": "demo", "thesis": thesis}))
+
+    finalize_run(tmp_path)
+
+    new_text = (tmp_path / "full_paper.md").read_text()
+    assert "**Thesis:**" in new_text
+    assert thesis in new_text
+
+
 def test_finalizer_phase_e_softens_we_propose(tmp_path) -> None:
     """Ungrounded 'we propose' (no inline citation in same paragraph)
     → softened to 'we operationalize' (a non-novelty-claim phrasing)."""

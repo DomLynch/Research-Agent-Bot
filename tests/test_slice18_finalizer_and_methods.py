@@ -783,6 +783,16 @@ def test_phase_i_splits_concatenated_h3_h2_heading_line() -> None:
     assert log[0].rule == "insert_blank_line_between_headings"
 
 
+def test_phase_i_splits_body_concatenated_h2_heading() -> None:
+    """Writer/render glue can attach an H2 directly to prose. Split it
+    before structural phases look for required sections."""
+    from agent.journal_finalizer import _phase_i_split_concatenated_headings
+    text = "# Paper\n\nPrior paragraph.## Discussion\n\nBody.\n"
+    new_text, log = _phase_i_split_concatenated_headings(text)
+    assert "Prior paragraph.\n\n## Discussion\n\nBody." in new_text
+    assert log and log[0].n_changes == 1
+
+
 def test_phase_i_noop_when_headings_already_separated() -> None:
     """Slice 30: clean Markdown with blank-line separators must pass
     through untouched (Phase I is a structural repair, not a reformat)."""
@@ -953,6 +963,41 @@ def test_phase_k_creates_missing_outcome_section_from_manifest_class(tmp_path: P
     contextual = new_text.split("### Contextual Other Outcomes", 1)[1].split("###", 1)[0]
     assert "Smith 2022 describes broad context" in contextual
     assert "He 2017" not in contextual
+    assert log and log[0].n_changes == 1
+
+
+def test_phase_k_backfills_empty_outcome_section_after_routing(tmp_path: Path) -> None:
+    """When all prose moves out of an outcome heading, keep the heading
+    non-empty so the public Results contract remains parseable."""
+    from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "p1", "outcome_class": "safety_comorbidity"},
+        {"receipt_id": "p2", "outcome_class": "immune"},
+    ]}))
+    (run / "citation_registry.json").write_text(json.dumps({
+        "p1": {"body_citation": "Smith 2022"},
+        "p2": {"body_citation": "Jones 2023"},
+    }))
+    text = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Safety and Comorbidity | n=1 | mixed |\n"
+        "| Immune | n=1 | null |\n\n"
+        "### Safety and Comorbidity Outcomes\n\n"
+        "Jones 2023 reports immune findings.\n\n"
+        "### Immune Outcomes\n\n"
+        "Placeholder.\n\n"
+        "## Discussion\n"
+    )
+    new_text, log = _phase_k_route_outcome_paragraphs(text, run)
+    safety = new_text.split("### Safety and Comorbidity Outcomes", 1)[1].split("###", 1)[0]
+    assert "represented in the structured results table" in safety
+    assert not any("empty heading: Safety and Comorbidity Outcomes" in i.detail for i in evaluate_journal_surface(new_text).issues)
     assert log and log[0].n_changes == 1
 
 

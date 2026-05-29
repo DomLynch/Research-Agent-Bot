@@ -98,6 +98,8 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
         words = norm.split()
         if not norm:
             continue
+        if re.match(r"\*\*\s*(?:thesis|resolution\s+criteria)\s*:", norm, flags=re.I):
+            continue
         table_like = block.lstrip().startswith("|") and block.count("\n|") >= 1
         tokens = set(re.findall(r"[a-z0-9]+", norm.lower()))
         near_seen = len(words) >= 18 and any(_token_overlap(tokens, prior) >= 0.85 for prior in seen_tokens)
