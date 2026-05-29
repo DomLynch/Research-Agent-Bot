@@ -211,7 +211,11 @@ def _review_ts(row: dict[str, Any]) -> dt.datetime:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
 
 
-def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
+def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
+    """Latest research_paper review per paper title for this agent. Researka
+    assigns a new artifactId per submission, so latest-wins by reviewedAt drops
+    decisions a newer one supersedes. Shared by revise-routing and
+    reject-tracking so both read the same authoritative current decision."""
     target = str(url or os.getenv("RESEARKA_REVIEWS_URL", "https://researka.org/reviews"))
     agent_ids = {
         "agent-v3-full-paper",
@@ -228,11 +232,7 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
         else:
             payload = json.loads(text)
     except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-        return [], f"{type(exc).__name__}: {exc}"
-    # Researka assigns a new artifactId per submission, so a paper can have
-    # several reviews over time. Keep only the latest review per paper title;
-    # a revise superseded by a newer decision (a reject, or a fresher revise)
-    # is then dropped instead of re-routed with stale feedback.
+        return {}, f"{type(exc).__name__}: {exc}"
     latest: dict[str, dict[str, Any]] = {}
     for row in _review_rows(payload):
         if str(row.get("artifactType") or row.get("artifact_type") or "") != "research_paper":
@@ -242,6 +242,13 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
         key = submit_bridge._title_marker(str(row.get("title") or ""))
         if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
             latest[key] = row
+    return latest, None
+
+
+def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
+    latest, err = _latest_reviews_by_title(url)
+    if err:
+        return [], err
     out: list[dict[str, Any]] = []
     for row in latest.values():
         if str(row.get("decision") or "").lower() != "revise":
@@ -323,6 +330,39 @@ def _pending_remote_revision(
                 request["source_run"] = run.name
                 return request, None
     return None, None
+
+
+def _rejected_topics(
+    runs_root: Path,
+    *,
+    loader: Callable[[], tuple[dict[str, dict[str, Any]], str | None]] | None = None,
+) -> set[str]:
+    """Topics whose LATEST Researka review is a reject. Excluding these from
+    selection makes a reject terminal-for-topic — the bot stops re-synthesising
+    and re-submitting a paper the platform rejected (until a newer decision
+    supersedes it). Title -> submitted-run -> topic matching mirrors
+    _pending_remote_revision; universal, no per-topic knowledge."""
+    latest, error = (loader or _latest_reviews_by_title)()
+    if error:
+        return set()
+    reject_markers = {
+        submit_bridge._title_marker(str(row.get("title") or ""))
+        for row in latest.values()
+        if str(row.get("decision") or "").lower() == "reject" and row.get("title")
+    }
+    if not reject_markers:
+        return set()
+    submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
+    topics: set[str] = set()
+    for record in raw_records if isinstance(raw_records, list) else []:
+        if not isinstance(record, dict):
+            continue
+        run = runs_root / str(record.get("run") or "")
+        paper = run / "full_paper.md"
+        if paper.exists() and submit_bridge._title_marker(submit_bridge._paper_title(paper)) in reject_markers:
+            topics.add(str(record.get("topic") or submit_bridge._run_topic(run)))
+    return topics
 
 
 def _poll_remote_revision(
@@ -687,18 +727,25 @@ def run_cycle(
                 _write_json(ledger_path, ledger)
                 return ledger
         remote_revision: dict[str, Any] | None = None
+        reject_excluded: set[str] = set()
         if submit and topic is None and (revision_loader is not None or submit_cycle is None):
             remote_revision, revision_error = _pending_remote_revision(runs_root, ledger_dir, loader=revision_loader)
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
                 ledger["remote_revisions"]["error"] = revision_error
+            # Production only (live reviews poll): drop topics Researka has
+            # rejected so a reject is terminal-for-topic, not re-synthesised.
+            if revision_loader is None:
+                reject_excluded = _rejected_topics(runs_root)
+                if reject_excluded:
+                    ledger["reject_excluded_topics"] = sorted(reject_excluded)
         attempted: set[str] = set()
         for _ in range(max(1, max_attempts if not topic else 1)):
             revision_source = remote_revision if remote_revision and not attempted else None
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted)
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | reject_excluded)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"

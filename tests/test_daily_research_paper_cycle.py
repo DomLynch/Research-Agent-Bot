@@ -867,6 +867,31 @@ def test_remote_revision_suppressed_when_latest_decision_is_reject(monkeypatch) 
     assert out == []  # latest decision is reject -> no revise routed
 
 
+def _seed_submitted_run(runs: Path, topic: str, title_line: str) -> Path:
+    run = runs / f"synthesis-{topic}-v06-DAILY-2026-05-29T00-00-00Z"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text(f"{title_line}\n\nbody\n", encoding="utf-8")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
+                [{"run": run.name, "topic": topic, "fingerprint": "sha256:x"}])
+    return run
+
+
+def test_rejected_topics_excludes_topic_with_latest_reject(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
+    latest = {"k": {"decision": "reject", "title": "Research Synthesis: Foo Topic"}}
+    out = cycle._rejected_topics(runs, loader=lambda: (latest, None))
+    assert out == {"foo_topic"}  # reject is terminal-for-topic
+
+
+def test_rejected_topics_ignores_topic_whose_latest_is_revise(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
+    latest = {"k": {"decision": "revise", "title": "Research Synthesis: Foo Topic"}}
+    out = cycle._rejected_topics(runs, loader=lambda: (latest, None))
+    assert out == set()  # latest is revise, not reject -> still allowed
+
+
 def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
