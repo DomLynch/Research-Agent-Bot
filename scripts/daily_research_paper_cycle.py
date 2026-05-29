@@ -19,6 +19,7 @@ import time
 import tomllib
 import urllib.error
 import urllib.request
+from collections import Counter
 from collections.abc import Callable, Iterator
 from contextlib import contextmanager
 from pathlib import Path
@@ -40,6 +41,11 @@ CORPORA = ROOT / "docs" / "quality-reference"
 LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
+# A Researka revise may be re-processed up to this many rounds per artifact
+# before it is treated as permanently handled. Single-round handling left
+# papers stuck after one revise; the cap lets feedback-aware re-renders iterate
+# while bounding resubmissions to the live platform.
+MAX_REVISE_ROUNDS = 3
 PREFLIGHT_MIN_RECEIPTS = 15
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
@@ -233,9 +239,17 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
 
 
 def _handled_revision_ids(ledger_dir: Path) -> set[str]:
+    """Revision keys that have hit the per-artifact round cap. A paper may be
+    re-processed up to MAX_REVISE_ROUNDS times across cycles (one row appended
+    per round); only once the count reaches the cap is the artifact treated as
+    permanently handled. Below the cap, a fresh Researka revise is re-routed so
+    feedback-aware re-renders can iterate toward acceptance."""
     data = _read_json(ledger_dir / HANDLED_REVISIONS)
     rows = data.get("handled")
-    return {str(row.get("key")) for row in rows if isinstance(row, dict) and row.get("key")} if isinstance(rows, list) else set()
+    if not isinstance(rows, list):
+        return set()
+    counts = Counter(str(row.get("key")) for row in rows if isinstance(row, dict) and row.get("key"))
+    return {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
 
 
 def _revision_key(row: dict[str, Any]) -> str:

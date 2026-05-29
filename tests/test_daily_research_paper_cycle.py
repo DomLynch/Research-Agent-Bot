@@ -807,6 +807,24 @@ def test_handled_delayed_revision_is_not_reprocessed(tmp_path: Path) -> None:
     assert error is None
 
 
+def test_handled_revision_ids_caps_after_max_rounds(tmp_path: Path) -> None:
+    # A Researka revise is re-routable until it has been handled
+    # MAX_REVISE_ROUNDS times for the same artifact; only then is it treated
+    # as permanently handled. This is what lets feedback-aware re-renders
+    # iterate instead of stalling after a single round.
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+
+    def _write_rounds(occurrences: int) -> None:
+        _write_json(ledger_dir / cycle.HANDLED_REVISIONS,
+                    {"handled": [{"key": "art-1"} for _ in range(occurrences)]})
+
+    _write_rounds(cycle.MAX_REVISE_ROUNDS - 1)
+    assert "art-1" not in cycle._handled_revision_ids(ledger_dir)  # below cap -> re-routable
+    _write_rounds(cycle.MAX_REVISE_ROUNDS)
+    assert "art-1" in cycle._handled_revision_ids(ledger_dir)  # at cap -> permanently handled
+
+
 def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
