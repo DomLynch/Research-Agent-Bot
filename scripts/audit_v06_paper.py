@@ -310,6 +310,13 @@ def _check_numeric_integrity(
     # uniformly to both prose and table blocks).
     strict_pool = {canonical_numeric(v) for v in corpus_nums}
     strict_pool.update(_manifest_structural_numerics(manifest))
+    # References entries are bibliographic: a cited paper's title can carry
+    # its own sample size (e.g. "... study of 435,046 UK Biobank
+    # participants"), which is not a claim THIS synthesis makes. Exclude the
+    # References section (and its ### subsections) from numeric tracing so
+    # such figures don't fail Q2 coverage. Universal — section-structural,
+    # no topic terms.
+    paper = re.sub(r"(?ms)^##\s+References\b.*?(?=^##\s+(?!#)|\Z)", "", paper)
     paper_clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
     )

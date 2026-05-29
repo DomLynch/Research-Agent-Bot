@@ -314,3 +314,32 @@ def test_q2_allows_manifest_outcome_counts_and_tension_anchors() -> None:
         paper, corpus_nums=set(), manifest=manifest,
     )
     assert ok is True, msg
+
+
+def test_reference_title_grouped_number_not_audited() -> None:
+    """A cited paper's title sample size lives in References and is
+    bibliographic, not a synthesis claim — it must not fail Q2 tracing.
+    Regression for the live blocker where '435,046'/'88,000' in reference
+    titles dragged numeric coverage below 1.000."""
+    paper = (
+        "## Abstract\n\nThe effect was positive (p < 0.05).\n\n"
+        "## References\n\n"
+        "- Liu 2023. Telomere length and dementia risk: an observational "
+        "and mendelian randomization study of 435,046 UK Biobank "
+        "participants. Aging Cell, 2023.\n"
+    )
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums={"0.05"})
+    assert ok is True, msg
+    assert "435,046" not in msg
+
+
+def test_body_grouped_number_still_audited() -> None:
+    """An untraceable grouped number in the body (not References) still
+    trips the gate — the References exclusion must not weaken body tracing."""
+    paper = (
+        "## Results\n\nThe pooled analysis covered 435,046 participants.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums={"0.05"})
+    assert ok is False
+    assert "435,046" in msg or "grouped_number" in msg, msg
