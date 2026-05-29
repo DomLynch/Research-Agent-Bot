@@ -134,9 +134,24 @@ def test_build_user_prompt_includes_revision_feedback_as_guidance(monkeypatch) -
         topic="metformin",
     )
 
-    assert "REVISION FEEDBACK TO ADDRESS IF SOURCE-SUPPORTED" in prompt
-    assert "Revise headline" in prompt
+    assert "REVISION FEEDBACK — address EACH point below" in prompt
+    assert "1. Revise headline" in prompt
+    assert "2. remove unsupported mechanistic overclaim" in prompt
     assert "Treat this as reviewer guidance, not evidence" in prompt
+
+
+def test_build_user_prompt_single_revision_ask_renders_one_checklist_item(monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", "Complete the truncated sentence in the abstract.")
+    accepted = [_summary("r-A")]
+
+    prompt = _build_user_prompt(
+        accepted, [], _matrix(accepted), _thesis(),
+        topic="metformin",
+    )
+
+    assert "REVISION FEEDBACK — address EACH point below" in prompt
+    assert "1. Complete the truncated sentence" in prompt
+    assert "2." not in prompt.split("REVISION FEEDBACK", 1)[1][:200]  # one ask → no second item
 
 
 def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> None:

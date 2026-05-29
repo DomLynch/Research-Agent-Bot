@@ -78,11 +78,12 @@ SECTION_RETRY_BUDGET = 2
 
 def _revision_feedback_block() -> str:
     feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
-    return "" if not feedback else (
-        "REVISION FEEDBACK TO ADDRESS IF SOURCE-SUPPORTED:\n"
-        f"{feedback}\n"
-        "Treat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics."
-    )
+    if not feedback:
+        return ""
+    # Researka joins requiredRevisions with "; "; enumerate so the writer addresses each distinct ask, not a run-on blob. Topic-agnostic.
+    asks = [a.strip() for a in feedback.split(";") if a.strip()]
+    body = "\n".join(f"  {i}. {ask}" for i, ask in enumerate(asks, 1))
+    return f"REVISION FEEDBACK — address EACH point below if source-supported:\n{body}\nTreat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics; do not fabricate to satisfy a point you cannot support."
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
