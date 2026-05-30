@@ -532,6 +532,7 @@ def _failure_class(status: str) -> str:
         "final_verdict_not_aaa": "A_compiler_fixable",
         "pre_submit_not_passed": "A_compiler_fixable",
         "audit_not_all_green": "C_writer_fixable",
+        "revision_coverage_unmet": "C_writer_fixable",
         "synthesis_failed": "C_writer_fixable",
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
@@ -546,6 +547,30 @@ def _failure_class(status: str) -> str:
         "researka_revision_fingerprint": "D_no_action",
         "superseded_topic_run": "D_no_action",
     }.get(code, "unknown")
+
+
+def _revision_asks(feedback: str) -> list[str]:
+    """The enumerated reviewer asks recovered from the '; '-joined feedback."""
+    return [a.strip() for a in feedback.split(";") if a.strip()]
+
+
+def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
+    """Reviewer asks the rendered paper does NOT materially address, per the
+    coverage judge. Fail-open (empty on any error). Monkeypatched in tests."""
+    paper = out_dir / "full_paper.md"
+    if not paper.is_file():
+        return []
+    import revision_coverage
+    return revision_coverage.unmet_asks(paper.read_text(encoding="utf-8"), _revision_asks(feedback))
+
+
+def _escalate_feedback(feedback: str, unmet: list[str]) -> str:
+    """Prepend an explicit escalation so an unmet ask is materially fixed on the
+    bounded re-render, not skimmed again."""
+    return (
+        "PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS — you MUST make a "
+        f"substantive change to satisfy EACH: {'; '.join(unmet)}. {feedback}"
+    )
 
 
 def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -931,8 +956,11 @@ def run_cycle(
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 if revision_source and out_dir.exists():
                     _write_json(out_dir / "researka_revision_request.json", revision_source)
+                # Coverage gate: a content revise must materially address every
+                # enumerated reviewer ask before it may be submitted.
+                unmet = _unmet_revision_asks(out_dir, revision_feedback) if (return_code == 0 and revision_feedback) else []
                 bridge: dict[str, Any] = {}
-                if return_code == 0:
+                if return_code == 0 and not unmet:
                     if submit_cycle is None:
                         bridge = submit_bridge.run_cycle(
                             runs_root=runs_root,
@@ -948,7 +976,11 @@ def run_cycle(
                             submit=submit,
                             remote_loader=(lambda: (remote_seen, None)) if submit else None,
                         )
-                gate_status = "synthesis_failed" if return_code != 0 else _current_gate_status(bridge, out_dir.name)
+                gate_status = (
+                    "synthesis_failed" if return_code != 0
+                    else "revision_coverage_unmet" if unmet
+                    else _current_gate_status(bridge, out_dir.name)
+                )
                 bridge_status = str(bridge.get("status") or "")
                 if gate_status == "eligible" and bridge_status not in {"", "submitted_to_researka"}:
                     gate_status = bridge_status
@@ -974,6 +1006,9 @@ def run_cycle(
                     "submitted": submitted_current,
                     "existing_work_reused": existing_repair,
                 }
+                if unmet:
+                    attempt["unmet_revision_asks"] = unmet
+                    revision_feedback = _escalate_feedback(revision_feedback, unmet)
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:

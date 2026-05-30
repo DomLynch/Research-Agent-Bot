@@ -4,6 +4,8 @@ import datetime as dt
 import json
 import sys
 import urllib.request
+
+import pytest
 from pathlib import Path
 from typing import Any
 
@@ -11,6 +13,14 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # noqa: E402
+
+
+@pytest.fixture(autouse=True)
+def _offline_coverage_judge(monkeypatch):
+    """The revision coverage judge calls a live model; default every test to
+    "all asks met" so revise tests stay deterministic and offline. The four
+    coverage-gate tests override this with their own monkeypatch."""
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: [])
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -829,6 +839,90 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
     assert handled["handled"][0]["key"] == cycle.submit_bridge._title_marker(
         "Research Synthesis: Aspirin Geroprotection — full paper")  # per-paper key
+
+
+# --- Coverage gate: every reviewer ask must be addressed before submit -------
+
+def _seed_delayed_revise(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
+    source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
+    paper = source_run / "full_paper.md"
+    paper.write_text("# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": "2026-05-27", "run": source_run.name, "topic": "aspirin_geroprotection",
+        "fingerprint": cycle.submit_bridge._sha256(paper)}])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+
+def _aspirin_revise_loader() -> tuple[list[dict[str, Any]], None]:
+    return ([{"artifactId": "rev-1", "submissionId": "sub-1",
+              "title": "Research Synthesis: Aspirin Geroprotection — full paper",
+              "feedback": "Hedge the cognitive claims"}], None)
+
+
+def _coverage_fake_synthesis(feedback_seen: list[str | None]):
+    def fake(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None,
+             revision_feedback: str | None = None, review_type_override: str | None = None) -> int:
+        feedback_seen.append(revision_feedback)
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text(
+            "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.", encoding="utf-8")
+        return 0
+    return fake
+
+
+def _run_coverage_cycle(tmp_path: Path, monkeypatch, *, unmet, submit_cycle, max_revise_attempts=3):
+    feedback_seen: list[str | None] = []
+    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen))
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: list(unmet))
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-05-28", run_synthesis=True, submit=True,
+        remote_loader=lambda: (set(), None), revision_loader=_aspirin_revise_loader,
+        submit_cycle=submit_cycle, max_revise_attempts=max_revise_attempts)
+    return ledger, feedback_seen
+
+
+def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    ledger, _ = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=[],
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
+    assert ledger["attempts"][0]["submitted"] == 1                    # all asks met -> submitted
+    assert "unmet_revision_asks" not in ledger["attempts"][0]
+
+
+def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    submitted: list[int] = []
+
+    def fake_submit(**_k: Any) -> dict[str, Any]:
+        submitted.append(1)
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    ledger, _ = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=["Hedge the cognitive claims"], submit_cycle=fake_submit)
+    assert submitted == []                                            # one ask unmet -> never submitted
+    assert ledger["attempts"][0]["gate_status"] == "revision_coverage_unmet"
+    assert ledger["attempts"][0]["unmet_revision_asks"] == ["Hedge the cognitive claims"]
+    assert int(ledger.get("submitted") or 0) == 0
+
+
+def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    _, feedback_seen = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=["Hedge the cognitive claims"],
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
+    assert feedback_seen[0] == "Hedge the cognitive claims"           # first render: verbatim ask
+    assert any("PRIOR REVISION DID NOT ADDRESS" in (f or "") for f in feedback_seen[1:])  # repeat -> escalated
+
+
+def test_coverage_unmet_stops_after_max_rounds(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    _, feedback_seen = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=["Hedge the cognitive claims"], max_revise_attempts=3,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
+    assert len(feedback_seen) == 3                                    # bounded: stops after max_revise_attempts
 
 
 def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:
