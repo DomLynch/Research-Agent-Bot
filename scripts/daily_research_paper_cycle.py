@@ -58,6 +58,7 @@ HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
+CYCLE_BUDGET_SECONDS = 6300
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 30
 FRAME_MIN_FULL_SCORE = 0.65
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
@@ -789,8 +790,11 @@ def run_cycle(
     decision_poll_seconds: int = DECISION_POLL_SECONDS,
     decision_poll_interval_seconds: int = DECISION_POLL_INTERVAL_SECONDS,
     decision_sleep: Sleeper = time.sleep,
+    cycle_budget_seconds: int = CYCLE_BUDGET_SECONDS,
+    clock: Callable[[], float] = time.monotonic,
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
+    started_mono = clock()
     ledger_dir = runs_root / LEDGER_DIR
     ledger_path = ledger_dir / f"{date}.json"
     ledger: dict[str, Any] = {
@@ -843,6 +847,13 @@ def run_cycle(
         attempted: set[str] = set()
         submitted_total = 0
         for _ in range(max(1, max_attempts if not topic else 1)):
+            if cycle_budget_seconds > 0 and clock() - started_mono >= cycle_budget_seconds:
+                ledger.update({
+                    "status": "cycle_budget_exhausted",
+                    "cycle_elapsed_seconds": int(clock() - started_mono),
+                    "cycle_budget_seconds": cycle_budget_seconds,
+                })
+                break
             revision_source = remote_revision if remote_revision and not attempted else None
             selected = (
                 str(revision_source.get("topic") or "")
@@ -942,6 +953,21 @@ def run_cycle(
                 ledger["review_type_override"] = {"topic": selected, "value": review_type_override, "reason": reason}
             last_attempt: dict[str, Any] | None = None
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
+                if cycle_budget_seconds > 0 and clock() - started_mono >= cycle_budget_seconds:
+                    attempt = {
+                        "topic": selected,
+                        "out_dir": out_dir.name,
+                        "revise_attempt": revise_attempt,
+                        "synthesis_return_code": None,
+                        "submit_status": "cycle_budget_exhausted",
+                        "failure_class": "D_no_action",
+                        "submitted": 0,
+                        "cycle_elapsed_seconds": int(clock() - started_mono),
+                        "cycle_budget_seconds": cycle_budget_seconds,
+                    }
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = "cycle_budget_exhausted"
+                    break
                 revision_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
                 if revise_attempt > 1:
                     revision_base_dir = out_dir
@@ -1093,6 +1119,8 @@ def run_cycle(
                     ledger["status"] = "synthesis_completed_no_submission"
                 if revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
                     break
+            if ledger["status"] == "cycle_budget_exhausted":
+                break
             if ledger["status"] == "submitted_to_researka":
                 submitted_total += int(ledger.get("submitted") or 0)
                 if revision_source:
@@ -1127,6 +1155,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-revise-attempts", type=int, default=3)
     parser.add_argument("--decision-poll-sec", type=int, default=DECISION_POLL_SECONDS)
     parser.add_argument("--decision-poll-interval-sec", type=int, default=DECISION_POLL_INTERVAL_SECONDS)
+    parser.add_argument("--cycle-budget-sec", type=int, default=CYCLE_BUDGET_SECONDS)
     args = parser.parse_args(argv)
     ledger = run_cycle(
         runs_root=args.runs_root,
@@ -1140,6 +1169,7 @@ def main(argv: list[str] | None = None) -> int:
         max_revise_attempts=args.max_revise_attempts,
         decision_poll_seconds=args.decision_poll_sec,
         decision_poll_interval_seconds=args.decision_poll_interval_sec,
+        cycle_budget_seconds=args.cycle_budget_sec,
     )
     print(
         f"[daily-v3-cycle] status={ledger['status']} attempted_topic={ledger.get('attempted_topic', ledger.get('topic', '-'))} "
