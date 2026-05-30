@@ -3403,6 +3403,14 @@ async def _run_post_paper_pipeline(
     paper_path.with_suffix(".final_verdict.md").write_text(
         _format_unified_verdict(unified)
     )
+    # FactReview-style audit pack: roll the persisted trust signals (citation
+    # registry, audit, this verdict, retraction check) into paper_audit.json +
+    # paper_audit.md. Advisory — never break synthesis on it.
+    try:
+        import paper_audit_pack
+        paper_audit_pack.write_audit_pack(paper_path.parent)
+    except (OSError, ValueError, ImportError, TypeError, KeyError, AttributeError) as _audit_exc:
+        print(f"[pipeline] paper_audit_pack skipped: {_audit_exc}", file=sys.stderr)
     print(
         f"[pipeline] DONE — verdict={unified.verdict} "
         f"(stage1 {unified.stage1_pass_rate}; "
