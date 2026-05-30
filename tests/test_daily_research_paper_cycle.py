@@ -1612,3 +1612,103 @@ def test_cycle_holds_before_synthesis_when_submit_token_missing(tmp_path: Path, 
 
     assert ledger["status"] == "submit_not_configured"
     assert "topic" not in ledger
+
+
+# --- A-Z throughput lanes: --mode fresh|revise|mixed -------------------------
+
+
+def test_fresh_mode_ignores_revise_backlog(tmp_path: Path, monkeypatch) -> None:
+    """Fresh lane never polls the revise backlog — it always attempts new output,
+    so a revision backlog can no longer starve fresh papers (the May-30 regression)."""
+    _topic(tmp_path, "creatine")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    runs: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        runs.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def boom_revision() -> Any:
+        raise AssertionError("fresh lane must not poll the revise backlog")
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        revision_loader=boom_revision,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["mode"] == "fresh"
+    assert "remote_revisions" not in ledger  # revise backlog never polled
+    assert runs == ["creatine"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_revise_mode_with_no_pending_revise_does_nothing(tmp_path: Path, monkeypatch) -> None:
+    """Revise lane with an empty backlog exits cleanly without writing a fresh paper."""
+    _topic(tmp_path, "creatine")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("revise lane must not synthesise a fresh paper")))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["mode"] == "revise"
+    assert ledger["status"] == "no_revise_pending"
+    assert ledger["attempts"] == []
+
+
+def test_revise_mode_never_rotates_to_fresh_topic(tmp_path: Path, monkeypatch) -> None:
+    """Revise lane processes only the pending revise — it must not fall through to a
+    fresh topic even when one is available (lane isolation)."""
+    _topic(tmp_path, "colchicine_inflammaging", target_journal=True)
+    _topic(tmp_path, "creatine")  # a fresh topic is available to rotate to
+    source = _prior_run(tmp_path, "colchicine_inflammaging", receipts=37, tensions=113, primary=1, level=5)
+    paper = source / "full_paper.md"
+    paper.write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": "colchicine_inflammaging",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("terminal sparse revise should not synthesise")))
+    request = {
+        "artifactId": "colchicine-review",
+        "title": "Research Synthesis: Colchicine Inflammaging",
+        "feedback": "The evidence base is mixed and sparse, which precludes a strong accept verdict. No material revisions.",
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-29",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["mode"] == "revise"
+    # only the revise topic is ever touched — never the available fresh topic
+    assert [a["topic"] for a in ledger["attempts"]] == ["colchicine_inflammaging"]
+    assert "creatine" not in {a["topic"] for a in ledger["attempts"]}

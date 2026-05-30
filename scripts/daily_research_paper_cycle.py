@@ -779,6 +779,7 @@ def run_cycle(
     run_synthesis: bool = False,
     synthesis_dry_run: bool = False,
     submit: bool = False,
+    mode: str = "mixed",
     topic: str | None = None,
     remote_loader: RemoteLoader | None = None,
     revision_loader: RevisionLoader | None = None,
@@ -795,6 +796,7 @@ def run_cycle(
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
     started_mono = clock()
+    mode = mode if mode in {"fresh", "revise", "mixed"} else "mixed"
     ledger_dir = runs_root / LEDGER_DIR
     ledger_path = ledger_dir / f"{date}.json"
     ledger: dict[str, Any] = {
@@ -803,6 +805,7 @@ def run_cycle(
         "run_synthesis": run_synthesis,
         "synthesis_dry_run": synthesis_dry_run,
         "submit": submit,
+        "mode": mode,
         "submitted": 0,
         "published": 0,
         "status": "started",
@@ -832,7 +835,7 @@ def run_cycle(
                 return ledger
         remote_revision: dict[str, Any] | None = None
         terminal_excluded: set[str] = set()
-        if submit and topic is None and (revision_loader is not None or submit_cycle is None):
+        if submit and topic is None and mode != "fresh" and (revision_loader is not None or submit_cycle is None):
             remote_revision, revision_error = _pending_remote_revision(runs_root, ledger_dir, loader=revision_loader)
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
@@ -855,6 +858,13 @@ def run_cycle(
                 })
                 break
             revision_source = remote_revision if remote_revision and not attempted else None
+            # Revise lane: only process pending revises — never rotate to a fresh
+            # topic. Once the one revise is handled (revision_source drops to None
+            # on the next pass), stop. No pending revise at all -> nothing to do.
+            if mode == "revise" and revision_source is None:
+                if not ledger["attempts"]:
+                    ledger["status"] = "no_revise_pending"
+                break
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
@@ -1093,6 +1103,7 @@ def run_cycle(
                     ledger["status"] = "submitted_to_researka"
                     if (
                         submit
+                        and mode != "fresh"  # fresh lane ships and exits; the revise lane handles decisions
                         and not revision_source
                         and bool(submitted_current)
                         and revise_attempt < max(1, max_revise_attempts)
@@ -1150,6 +1161,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--run-synthesis", action="store_true")
     parser.add_argument("--synthesis-dry-run", action="store_true")
     parser.add_argument("--submit", action="store_true")
+    parser.add_argument("--mode", choices=["fresh", "revise", "mixed"], default="mixed",
+                        help="lane: fresh=new papers only, revise=process one pending revise only, mixed=interleave (default)")
     parser.add_argument("--timeout-sec", type=int, default=0)
     parser.add_argument("--max-attempts", type=int, default=5)
     parser.add_argument("--max-revise-attempts", type=int, default=3)
@@ -1163,6 +1176,7 @@ def main(argv: list[str] | None = None) -> int:
         run_synthesis=args.run_synthesis,
         synthesis_dry_run=args.synthesis_dry_run,
         submit=args.submit,
+        mode=args.mode,
         topic=args.topic,
         timeout=args.timeout_sec or None,
         max_attempts=args.max_attempts,
