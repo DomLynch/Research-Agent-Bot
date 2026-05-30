@@ -48,6 +48,14 @@ def test_evaluate_all_skips_topics_without_a_run(tmp_path: Path) -> None:
     assert result == {"foo": [], "bar": None}  # bar skipped (no run), foo passes
 
 
+def test_evaluate_all_skips_run_without_final_status(tmp_path: Path) -> None:
+    # An uncertified run (dir exists, no final_status sidecar) is "not produced
+    # yet", not a quality FAIL — otherwise the eval cries wolf on freshly-seeded
+    # or still-running topics.
+    _run(tmp_path, None)  # run dir, but no final_status.json
+    assert gpe.evaluate_all(tmp_path, [{"topic": "foo", **_EXPECT}]) == {"foo": None}
+
+
 def test_curated_golden_set_loads_and_is_well_formed() -> None:
     golden = gpe.load_golden()
     assert len(golden) >= 10

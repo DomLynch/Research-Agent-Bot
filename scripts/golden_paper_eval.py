@@ -57,12 +57,18 @@ def _latest_run(runs_root: Path, topic: str) -> Path | None:
 
 
 def evaluate_all(runs_root: Path, golden: list[dict[str, Any]] | None = None) -> dict[str, list[str] | None]:
-    """topic -> failures (empty = pass) or None when no run exists yet (skip)."""
+    """topic -> failures (empty = pass), or None when the topic has no certified
+    run yet (no run dir, or a run without a final_status sidecar). Skipping
+    uncertified runs keeps FAIL meaning a substandard *paper* — not a topic that
+    simply has not been produced/finished yet."""
     out: dict[str, list[str] | None] = {}
     for entry in (golden if golden is not None else load_golden()):
         topic = str(entry.get("topic") or "")
         run = _latest_run(runs_root, topic)
-        out[topic] = None if run is None else evaluate_run(run, entry)
+        if run is not None and (run / "final_status.json").is_file():
+            out[topic] = evaluate_run(run, entry)
+        else:
+            out[topic] = None
     return out
 
 
