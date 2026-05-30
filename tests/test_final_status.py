@@ -55,6 +55,18 @@ def test_all_pass_yields_l5_submission_ready(tmp_path: Path) -> None:
     assert s.blocking_reasons == ()
 
 
+def test_journal_surface_failure_blocks_l5_and_submission_ready(tmp_path: Path) -> None:
+    # GPT-flagged invariant ("looks ready but refused"): a paper that fails the
+    # journal-surface gate must never label L5 or report submission_ready, even
+    # with every OTHER trust-spine dimension green.
+    _all_pass_sidecars(tmp_path)
+    _write(tmp_path, "full_paper.journal_surface.json", {"passed": False, "issues": ["x"]})
+    s = compute(tmp_path)
+    assert s.journal_surface_pass is False
+    assert s.maturity_level < 5
+    assert s.submission_ready is False
+
+
 def test_no_runtime_yields_l1(tmp_path: Path) -> None:
     # Nothing written — runtime fails first.
     s = compute(tmp_path)
