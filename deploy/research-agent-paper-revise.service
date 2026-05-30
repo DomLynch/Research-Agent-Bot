@@ -1,0 +1,12 @@
+[Unit]
+Description=Research Agent v3 REVISE lane — process one pending Researka revise (never blocks the fresh lane)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/research-agent-bot
+EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
+ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode revise --run-synthesis --submit --max-revise-attempts 2 --cycle-budget-sec 2400
+Environment=PYTHONUNBUFFERED=1
+TimeoutStartSec=3000

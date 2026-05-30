@@ -1712,3 +1712,29 @@ def test_revise_mode_never_rotates_to_fresh_topic(tmp_path: Path, monkeypatch) -
     # only the revise topic is ever touched — never the available fresh topic
     assert [a["topic"] for a in ledger["attempts"]] == ["colchicine_inflammaging"]
     assert "creatine" not in {a["topic"] for a in ledger["attempts"]}
+
+
+def test_lock_distinct_lane_names_are_independent(tmp_path: Path) -> None:
+    """Fresh and revise lanes use distinct lock files, so they never block each
+    other — a revise run no longer waits on an in-flight fresh synthesis."""
+    d = tmp_path / "ledger"
+    with cycle._lock(d, ".lock.fresh") as fresh, cycle._lock(d, ".lock.revise") as revise:
+        assert fresh is True
+        assert revise is True
+    # same lane held twice is still exclusive (no concurrent duplicate run)
+    with cycle._lock(d, ".lock.fresh") as first:
+        assert first is True
+        with cycle._lock(d, ".lock.fresh") as second:
+            assert second is False
+
+
+def test_submit_lock_blocks_until_free(tmp_path: Path) -> None:
+    """The shared submit lock is blocking: a second holder is refused while the
+    first holds it, keeping submission single-threaded across lanes."""
+    d = tmp_path / "ledger"
+    with cycle._lock(d, ".submit.lock", block=True) as held:
+        assert held is True
+        with cycle._lock(d, ".submit.lock") as contended:  # non-blocking probe
+            assert contended is False
+    with cycle._lock(d, ".submit.lock", block=True) as reacquired:
+        assert reacquired is True

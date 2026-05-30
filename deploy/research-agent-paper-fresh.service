@@ -1,0 +1,12 @@
+[Unit]
+Description=Research Agent v3 FRESH lane — always attempt a new paper (never blocked by revise backlog)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/research-agent-bot
+EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
+ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode fresh --run-synthesis --submit --max-attempts 5 --cycle-budget-sec 6000
+Environment=PYTHONUNBUFFERED=1
+TimeoutStartSec=7200

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Research Agent v3 FRESH lane every 2h
+
+[Timer]
+OnCalendar=*-*-* 00/2:00:00
+Persistent=false
+Unit=research-agent-paper-fresh.service
+
+[Install]
+WantedBy=timers.target

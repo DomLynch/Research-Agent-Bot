@@ -620,11 +620,15 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
 
 
 @contextmanager
-def _lock(ledger_dir: Path) -> Iterator[bool]:
+def _lock(ledger_dir: Path, name: str = ".lock", *, block: bool = False) -> Iterator[bool]:
+    """Advisory file lock. Distinct `name`s are independent locks, so the fresh
+    and revise lanes (`.lock.fresh` / `.lock.revise`) never block each other.
+    `block=True` waits for the holder instead of returning False — used by the
+    shared submit lock so submission stays single-threaded across lanes."""
     ledger_dir.mkdir(parents=True, exist_ok=True)
-    with (ledger_dir / ".lock").open("w", encoding="utf-8") as handle:
+    with (ledger_dir / name).open("w", encoding="utf-8") as handle:
         try:
-            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(handle, fcntl.LOCK_EX if block else fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             yield False
             return
@@ -811,7 +815,7 @@ def run_cycle(
         "status": "started",
         "attempts": [],
     }
-    with _lock(ledger_dir) as locked:
+    with _lock(ledger_dir, f".lock.{mode}") as locked:
         if not locked:
             ledger["status"] = "cycle_already_running"
             _write_json(ledger_path, ledger)
@@ -1022,21 +1026,25 @@ def run_cycle(
                 overclaims = _abstract_overclaims(out_dir) if return_code == 0 else []
                 bridge: dict[str, Any] = {}
                 if return_code == 0 and not unmet and not retracted and not overclaims:
-                    if submit_cycle is None:
-                        bridge = submit_bridge.run_cycle(
-                            runs_root=runs_root,
-                            date=date,
-                            submit=submit,
-                            remote_loader=(lambda: (remote_seen, None)) if submit else None,
-                            candidate_run=out_dir,
-                        )
-                    else:
-                        bridge = submit_cycle(
-                            runs_root=runs_root,
-                            date=date,
-                            submit=submit,
-                            remote_loader=(lambda: (remote_seen, None)) if submit else None,
-                        )
+                    # Submission stays single-threaded across lanes: the fresh and
+                    # revise lanes run concurrently but share one blocking submit
+                    # lock so they never race the fingerprint-dedupe / double-submit.
+                    with _lock(ledger_dir, ".submit.lock", block=True):
+                        if submit_cycle is None:
+                            bridge = submit_bridge.run_cycle(
+                                runs_root=runs_root,
+                                date=date,
+                                submit=submit,
+                                remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                                candidate_run=out_dir,
+                            )
+                        else:
+                            bridge = submit_cycle(
+                                runs_root=runs_root,
+                                date=date,
+                                submit=submit,
+                                remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                            )
                 gate_status = (
                     "synthesis_failed" if return_code != 0
                     else "retracted_source_cited" if retracted
