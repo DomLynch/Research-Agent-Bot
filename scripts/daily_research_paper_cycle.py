@@ -785,6 +785,7 @@ def run_cycle(
                 if reject_excluded:
                     ledger["reject_excluded_topics"] = sorted(reject_excluded)
         attempted: set[str] = set()
+        submitted_total = 0
         for _ in range(max(1, max_attempts if not topic else 1)):
             revision_source = remote_revision if remote_revision and not attempted else None
             selected = (
@@ -1016,10 +1017,22 @@ def run_cycle(
                 if revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
                     break
             if ledger["status"] == "submitted_to_researka":
+                submitted_total += int(ledger.get("submitted") or 0)
                 if revision_source:
+                    # Revise shipped — record it, then keep the cycle going so it
+                    # still produces a fresh paper. A backlog of revises otherwise
+                    # monopolises the one-submit-per-cycle budget and starves new
+                    # output (the May-30 throughput regression). Universal.
                     _mark_revision_handled(ledger_dir, revision_source, status="submitted_to_researka")
+                    remote_revision = None
+                    attempted.add(selected)
+                    continue
                 break
             attempted.add(selected)
+        if submitted_total:
+            ledger["submitted"] = submitted_total
+            if ledger["status"] not in {"submitted_to_researka", "submission_revise_requested"}:
+                ledger["status"] = "submitted_to_researka"
         _write_json(ledger_path, ledger)
         return ledger
 

@@ -815,8 +815,12 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert synthesis_calls == ["aspirin_geroprotection"]
-    assert feedback_seen == ["Add clinical-use caveat and resubmit."]
+    # Interleave: the delayed revise is handled first, then the cycle still ships a
+    # fresh paper so a revise backlog cannot starve new-topic output.
+    assert synthesis_calls[0] == "aspirin_geroprotection"
+    assert feedback_seen[0] == "Add clinical-use caveat and resubmit."
+    assert "rapamycin" in synthesis_calls
+    assert ledger["submitted"] == 2
     assert ledger["revision_source"]["artifactId"] == "review-art-1"
     assert ledger["attempts"][0]["revision_feedback_applied"] is True
     assert ledger["attempts"][0]["existing_work_reused"] is False
