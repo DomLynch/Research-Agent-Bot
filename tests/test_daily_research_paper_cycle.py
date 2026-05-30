@@ -21,6 +21,7 @@ def _offline_coverage_judge(monkeypatch):
     "all asks met" so revise tests stay deterministic and offline. The four
     coverage-gate tests override this with their own monkeypatch."""
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: [])
+    monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda out_dir: [])
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -923,6 +924,22 @@ def test_coverage_unmet_stops_after_max_rounds(tmp_path: Path, monkeypatch) -> N
         tmp_path, monkeypatch, unmet=["Hedge the cognitive claims"], max_revise_attempts=3,
         submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
     assert len(feedback_seen) == 3                                    # bounded: stops after max_revise_attempts
+
+
+def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
+    # A paper citing a retracted source must never reach Researka.
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda out_dir: ["10.2/retracted"])
+    submitted: list[int] = []
+
+    def fake_submit(**_k: Any) -> dict[str, Any]:
+        submitted.append(1)
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    ledger, _ = _run_coverage_cycle(tmp_path, monkeypatch, unmet=[], submit_cycle=fake_submit)
+    assert submitted == []                                            # retraction gate blocked submit
+    assert ledger["attempts"][0]["gate_status"] == "retracted_source_cited"
+    assert ledger["attempts"][0]["retracted_cited_sources"] == ["10.2/retracted"]
 
 
 def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:
