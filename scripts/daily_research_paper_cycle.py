@@ -257,8 +257,10 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
         if str(row.get("decision") or "").lower() != "revise":
             continue
         raw_required = row.get("requiredRevisions")
-        required: list[Any] = raw_required if isinstance(raw_required, list) else []
-        feedback = "; ".join(str(item) for item in required if str(item).strip()) or str(row.get("reviewSummary") or "")
+        required = [str(item).strip() for item in raw_required if str(item).strip()] if isinstance(raw_required, list) else []
+        if not required:
+            continue  # "revise" with zero concrete required revisions is a no-op — don't burn a re-render
+        feedback = "; ".join(required)
         out.append({
             "artifactId": row.get("artifactId"),
             "submissionId": row.get("submissionId"),

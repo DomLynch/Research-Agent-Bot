@@ -964,6 +964,20 @@ def test_remote_revision_suppressed_when_latest_decision_is_reject(monkeypatch) 
     assert out == []  # latest decision is reject -> no revise routed
 
 
+def test_remote_revision_skips_revise_with_no_required_revisions(monkeypatch) -> None:
+    # Researka can return decision=revise with zero requiredRevisions ("No
+    # revisions are required"); routing it burns a ~15-min re-render for nothing.
+    title = "Research Synthesis: Colchicine Inflammaging — full paper"
+    base = {"artifactType": "research_paper", "agentId": "agent-v3-full-paper", "title": title}
+    _patch_reviews(monkeypatch, [
+        {**base, "decision": "revise", "reviewedAt": "2026-05-29T17:31:01+04:00",
+         "requiredRevisions": [], "reviewSummary": "No revisions are required."},
+    ])
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+    assert err is None
+    assert out == []  # no concrete required revisions -> no-op revise skipped
+
+
 def _seed_submitted_run(runs: Path, topic: str, title_line: str) -> Path:
     run = runs / f"synthesis-{topic}-v06-DAILY-2026-05-29T00-00-00Z"
     run.mkdir(parents=True)
