@@ -1738,3 +1738,46 @@ def test_submit_lock_blocks_until_free(tmp_path: Path) -> None:
             assert contended is False
     with cycle._lock(d, ".submit.lock", block=True) as reacquired:
         assert reacquired is True
+
+
+def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Path) -> None:
+    """A topic that fails the SAME deterministic gate twice in-window is skipped;
+    different gates, single failures, transient statuses, and stale windows are not."""
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    now = dt.datetime.now(dt.UTC).isoformat()
+    stale = (dt.datetime.now(dt.UTC) - dt.timedelta(hours=cycle.RECENT_FAILURE_COOLDOWN_HOURS + 1)).isoformat()
+    cycle._write_json(ledger_dir / "2026-05-29.json", {"started_at": now, "attempts": [
+        {"topic": "epigenetic_clocks", "gate_status": "journal_surface_not_passed", "submitted": 0},
+        {"topic": "ergothioneine", "gate_status": "journal_surface_not_passed", "submitted": 0},
+    ]})
+    cycle._write_json(ledger_dir / "2026-05-30.json", {"started_at": now, "attempts": [
+        {"topic": "epigenetic_clocks", "gate_status": "journal_surface_not_passed", "submitted": 0},  # 2nd same gate
+        {"topic": "ergothioneine", "gate_status": "audit_not_all_green", "submitted": 0},             # different gate
+        {"topic": "creatine", "gate_status": "cycle_budget_exhausted", "submitted": 0},               # transient
+        {"topic": "creatine", "gate_status": "cycle_budget_exhausted", "submitted": 0},
+    ]})
+    cycle._write_json(ledger_dir / "2026-05-01.json", {"started_at": stale, "attempts": [
+        {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "submitted": 0},
+        {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "submitted": 0},
+    ]})
+
+    assert cycle._surface_repeat_topics(ledger_dir) == {"epigenetic_clocks"}
+
+
+def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
+    """The derived queue view classifies every topic by its strongest signal:
+    surface-repeat > terminal > submitted > ready."""
+    status = cycle._topic_status_map(
+        ["epigenetic_clocks", "egcg", "colchicine", "rapamycin", "egcg_dup"],
+        terminal={"egcg", "egcg_dup"},
+        surface_repeat={"epigenetic_clocks", "egcg_dup"},  # surface-repeat wins over terminal
+        submitted={"colchicine"},
+    )
+    assert status == {
+        "colchicine": "submitted",
+        "egcg": "terminal",
+        "egcg_dup": "terminal_surface_repeat",
+        "epigenetic_clocks": "terminal_surface_repeat",
+        "rapamycin": "ready",
+    }

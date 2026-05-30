@@ -54,6 +54,7 @@ PREFLIGHT_MAX_RECEIPTS = 500
 PREFLIGHT_MAX_TENSIONS = 50_000
 PREFLIGHT_MAX_OUTCOMES = 12
 RECENT_FAILURE_COOLDOWN_HOURS = 24
+SURFACE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 DECISION_POLL_SECONDS = 900
@@ -165,6 +166,39 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
             ):
                 failures += 1
     return failures
+
+
+# Statuses that are transient or already routed elsewhere — they must never
+# count toward a deterministic-gate "surface repeat" (universal; no topic- or
+# domain-specific knowledge).
+_NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
+                                  "cycle_budget_exhausted", "current_run_not_submitted", "synthesis_failed"})
+
+
+def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    """Topics where the SAME deterministic gate failed >= SURFACE_REPEAT_THRESHOLD
+    times within the failure-cooldown window. Re-rendering from scratch cannot
+    change a deterministic gate's outcome, so skip the topic until the failure
+    class changes (plan F: don't write R3 for a repeated surface failure).
+    Universal — keyed on the gate code itself, not on any specific gate."""
+    now = now or dt.datetime.now(dt.UTC)
+    cutoff = now - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    counts: dict[tuple[str, str], int] = {}
+    for path in ledger_dir.glob("*.json"):
+        row = _read_json(path)
+        started = _parse_time(str(row.get("started_at") or ""))
+        if started is None or started < cutoff:
+            continue
+        for attempt in row.get("attempts", []):
+            if not isinstance(attempt, dict) or int(attempt.get("submitted") or 0):
+                continue
+            topic = str(attempt.get("topic") or "")
+            status = str(attempt.get("gate_status") or attempt.get("submit_status") or "")
+            code = status.split(":", 1)[0]
+            if not topic or code in _NON_REPEAT_STATUSES or _failure_class(status) == "D_no_action":
+                continue
+            counts[(topic, code)] = counts.get((topic, code), 0) + 1
+    return {topic for (topic, _code), n in counts.items() if n >= SURFACE_REPEAT_THRESHOLD}
 
 
 def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -451,6 +485,30 @@ def select_topic(
         return None
     pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
     return min(pool, key=lambda topic: (-_publication_score(topic, ledger_dir, runs_root), _attempted_at(topic, ledger_dir), topic))
+
+
+def _topic_status_map(
+    topics: list[str],
+    *,
+    terminal: set[str],
+    surface_repeat: set[str],
+    submitted: set[str],
+) -> dict[str, str]:
+    """Derived, read-only queue state per topic — the 'one queue ledger' view
+    (plan H). Consolidates the exclusion signals already computed this cycle so
+    the state that prevents looping is visible in one place; it is NOT a second
+    authoritative store (no write-path to drift out of sync)."""
+    status: dict[str, str] = {}
+    for topic in sorted(topics):
+        if topic in surface_repeat:
+            status[topic] = "terminal_surface_repeat"
+        elif topic in terminal:
+            status[topic] = "terminal"
+        elif topic in submitted:
+            status[topic] = "submitted"
+        else:
+            status[topic] = "ready"
+    return status
 
 
 def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
@@ -851,6 +909,16 @@ def run_cycle(
                 terminal_excluded = _terminal_topics(runs_root)
                 if terminal_excluded:
                     ledger["terminal_excluded_topics"] = sorted(terminal_excluded)
+        # Skip topics that keep failing the SAME deterministic gate — re-rendering
+        # them only burns a slot (plan F). Applies to fresh auto-selection only;
+        # a forced --topic and pending revises bypass select_topic entirely.
+        surface_repeat = _surface_repeat_topics(ledger_dir)
+        if surface_repeat:
+            ledger["surface_repeat_excluded_topics"] = sorted(surface_repeat)
+        ledger["topic_status"] = _topic_status_map(
+            topics, terminal=terminal_excluded, surface_repeat=surface_repeat,
+            submitted=_recent_submitted_topics(topics, ledger_dir),
+        )
         attempted: set[str] = set()
         submitted_total = 0
         for _ in range(max(1, max_attempts if not topic else 1)):
@@ -872,7 +940,7 @@ def run_cycle(
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded)
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | surface_repeat)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
