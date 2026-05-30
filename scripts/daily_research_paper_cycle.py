@@ -248,24 +248,28 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
     return latest, None
 
 
+def _actionable_revisions(row: dict[str, Any]) -> list[str]:
+    """Concrete required revisions on a review row. A revise with none (a
+    publication-overlap flag, or "no revisions required") has nothing the
+    writer can act on — re-rendering it just bounces at the same verdict."""
+    raw = row.get("requiredRevisions")
+    return [str(item).strip() for item in raw if str(item).strip()] if isinstance(raw, list) else []
+
+
 def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
     latest, err = _latest_reviews_by_title(url)
     if err:
         return [], err
     out: list[dict[str, Any]] = []
     for row in latest.values():
-        if str(row.get("decision") or "").lower() != "revise":
-            continue
-        raw_required = row.get("requiredRevisions")
-        required = [str(item).strip() for item in raw_required if str(item).strip()] if isinstance(raw_required, list) else []
-        if not required:
-            continue  # "revise" with zero concrete required revisions is a no-op — don't burn a re-render
-        feedback = "; ".join(required)
+        required = _actionable_revisions(row)
+        if str(row.get("decision") or "").lower() != "revise" or not required:
+            continue  # only route revises that carry concrete, actionable required revisions
         out.append({
             "artifactId": row.get("artifactId"),
             "submissionId": row.get("submissionId"),
             "title": row.get("title"),
-            "feedback": " ".join(feedback.split())[:4000],
+            "feedback": " ".join("; ".join(required).split())[:4000],
         })
     return out, None
 
@@ -344,25 +348,29 @@ def _pending_remote_revision(
     return None, None
 
 
-def _rejected_topics(
+def _terminal_topics(
     runs_root: Path,
     *,
     loader: Callable[[], tuple[dict[str, dict[str, Any]], str | None]] | None = None,
 ) -> set[str]:
-    """Topics whose LATEST Researka review is a reject. Excluding these from
-    selection makes a reject terminal-for-topic — the bot stops re-synthesising
-    and re-submitting a paper the platform rejected (until a newer decision
-    supersedes it). Title -> submitted-run -> topic matching mirrors
-    _pending_remote_revision; universal, no per-topic knowledge."""
+    """Topics whose LATEST Researka review is terminal — a reject, or a revise
+    with no actionable required revisions (a publication-overlap flag or "no
+    revisions required"). Excluding these from selection stops the bot from
+    re-synthesising and re-submitting a paper it cannot improve by re-rendering,
+    until a newer decision supersedes it. Title -> submitted-run -> topic
+    matching mirrors _pending_remote_revision; universal, no per-topic knowledge."""
     latest, error = (loader or _latest_reviews_by_title)()
     if error:
         return set()
-    reject_markers = {
+    terminal_markers = {
         submit_bridge._title_marker(str(row.get("title") or ""))
         for row in latest.values()
-        if str(row.get("decision") or "").lower() == "reject" and row.get("title")
+        if row.get("title") and (
+            (decision := str(row.get("decision") or "").lower()) == "reject"
+            or (decision == "revise" and not _actionable_revisions(row))
+        )
     }
-    if not reject_markers:
+    if not terminal_markers:
         return set()
     submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
@@ -372,7 +380,7 @@ def _rejected_topics(
             continue
         run = runs_root / str(record.get("run") or "")
         paper = run / "full_paper.md"
-        if paper.exists() and submit_bridge._title_marker(submit_bridge._paper_title(paper)) in reject_markers:
+        if paper.exists() and submit_bridge._title_marker(submit_bridge._paper_title(paper)) in terminal_markers:
             topics.add(str(record.get("topic") or submit_bridge._run_topic(run)))
     return topics
 
@@ -774,18 +782,19 @@ def run_cycle(
                 _write_json(ledger_path, ledger)
                 return ledger
         remote_revision: dict[str, Any] | None = None
-        reject_excluded: set[str] = set()
+        terminal_excluded: set[str] = set()
         if submit and topic is None and (revision_loader is not None or submit_cycle is None):
             remote_revision, revision_error = _pending_remote_revision(runs_root, ledger_dir, loader=revision_loader)
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
                 ledger["remote_revisions"]["error"] = revision_error
-            # Production only (live reviews poll): drop topics Researka has
-            # rejected so a reject is terminal-for-topic, not re-synthesised.
+            # Production only (live reviews poll): drop topics whose latest review
+            # is terminal (reject, or a revise with no actionable revisions such as
+            # a duplicate-overlap flag) so the bot stops re-synthesising them.
             if revision_loader is None:
-                reject_excluded = _rejected_topics(runs_root)
-                if reject_excluded:
-                    ledger["reject_excluded_topics"] = sorted(reject_excluded)
+                terminal_excluded = _terminal_topics(runs_root)
+                if terminal_excluded:
+                    ledger["terminal_excluded_topics"] = sorted(terminal_excluded)
         attempted: set[str] = set()
         submitted_total = 0
         for _ in range(max(1, max_attempts if not topic else 1)):
@@ -793,7 +802,7 @@ def run_cycle(
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | reject_excluded)
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"

@@ -987,20 +987,35 @@ def _seed_submitted_run(runs: Path, topic: str, title_line: str) -> Path:
     return run
 
 
-def test_rejected_topics_excludes_topic_with_latest_reject(tmp_path: Path) -> None:
+def test_terminal_topics_excludes_topic_with_latest_reject(tmp_path: Path) -> None:
     runs = tmp_path / "runs"
     _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
     latest = {"k": {"decision": "reject", "title": "Research Synthesis: Foo Topic"}}
-    out = cycle._rejected_topics(runs, loader=lambda: (latest, None))
+    out = cycle._terminal_topics(runs, loader=lambda: (latest, None))
     assert out == {"foo_topic"}  # reject is terminal-for-topic
 
 
-def test_rejected_topics_ignores_topic_whose_latest_is_revise(tmp_path: Path) -> None:
+def test_terminal_topics_ignores_topic_with_actionable_revise(tmp_path: Path) -> None:
     runs = tmp_path / "runs"
     _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
-    latest = {"k": {"decision": "revise", "title": "Research Synthesis: Foo Topic"}}
-    out = cycle._rejected_topics(runs, loader=lambda: (latest, None))
-    assert out == set()  # latest is revise, not reject -> still allowed
+    latest = {"k": {"decision": "revise", "title": "Research Synthesis: Foo Topic",
+                    "requiredRevisions": ["Add a clinical-use caveat."]}}
+    out = cycle._terminal_topics(runs, loader=lambda: (latest, None))
+    assert out == set()  # actionable revise -> re-processed, not terminal
+
+
+def test_terminal_topics_excludes_revise_with_no_actionable_revisions(tmp_path: Path) -> None:
+    # Real EGCG production failure: Researka returns decision=revise with empty
+    # requiredRevisions and "High overlap with publication ... differentiate to
+    # resubmit". The writer cannot act on it, so re-synthesising just bounces —
+    # the topic must be terminal-for-selection.
+    runs = tmp_path / "runs"
+    _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
+    latest = {"k": {"decision": "revise", "title": "Research Synthesis: Foo Topic",
+                    "requiredRevisions": [],
+                    "reviewSummary": "High overlap with publication 873ff54a. Differentiate to resubmit."}}
+    out = cycle._terminal_topics(runs, loader=lambda: (latest, None))
+    assert out == {"foo_topic"}  # no actionable revisions -> terminal-for-topic
 
 
 def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkeypatch) -> None:
