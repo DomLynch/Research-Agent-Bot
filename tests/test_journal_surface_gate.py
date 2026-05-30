@@ -328,6 +328,21 @@ def test_thin_analytical_paragraph_blocks_surface():
     assert any("thin analytical paragraph" in i.detail for i in report.issues)
 
 
+def test_truncated_sentence_blocks_surface():
+    # EGCG revise reason: a sentence cut off mid-thought ("...null versus
+    # positive findings...") must be caught before submit, not by Researka.
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Results\n\n",
+        "## Results\n\nAcross the included randomized trials the pooled estimate "
+        "suggests a clear divergence between the null and positive findings...\n\n",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("truncated sentence" in i.detail for i in report.issues)
+
+
 def test_conclusion_cannot_carry_what_this_adds_prose():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(

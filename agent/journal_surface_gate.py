@@ -464,6 +464,8 @@ def _thin_analytic_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
         n = len(re.findall(r"[a-z0-9]+", text.lower()))
         if 5 <= n <= 14 and _ANALYTIC_STUB_RE.search(text) and not re.search(r"\d|;|:", text):
             issues.append(f"thin analytical paragraph {idx}: {text}")
+        elif n >= 6 and re.search(r"(?:\.\.\.|…)$|\b(?:versus|vs|and|or|but|of|to|with|for|than|between|whereas|while)$", re.sub(r"""[\s)\]"'*_`]+$""", "", text), re.I):
+            issues.append(f"truncated sentence paragraph {idx}: …{text[-60:]}")
     return tuple(issues)
 
 
