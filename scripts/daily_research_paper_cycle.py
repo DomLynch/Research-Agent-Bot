@@ -533,6 +533,7 @@ def _failure_class(status: str) -> str:
         "pre_submit_not_passed": "A_compiler_fixable",
         "audit_not_all_green": "C_writer_fixable",
         "revision_coverage_unmet": "C_writer_fixable",
+        "abstract_overclaim": "C_writer_fixable",
         "retracted_source_cited": "D_no_action",
         "synthesis_failed": "C_writer_fixable",
         "submission_rejected_by_researka": "C_writer_fixable",
@@ -570,6 +571,17 @@ def _retracted_cited_sources(out_dir: Path) -> list[str]:
     error); monkeypatched in tests so they stay offline."""
     import retraction_check
     return retraction_check.retracted_cited_sources(out_dir)
+
+
+def _abstract_overclaims(out_dir: Path) -> list[str]:
+    """Abstract claims the paper's evidence does not support / overstates
+    (claim-support judge). Fail-open (empty on any error); monkeypatched in
+    tests so they stay offline."""
+    paper = out_dir / "full_paper.md"
+    if not paper.is_file():
+        return []
+    import revision_coverage
+    return revision_coverage.unsupported_abstract_claims(paper.read_text(encoding="utf-8"))
 
 
 def _escalate_feedback(feedback: str, unmet: list[str]) -> str:
@@ -969,8 +981,11 @@ def run_cycle(
                 unmet = _unmet_revision_asks(out_dir, revision_feedback) if (return_code == 0 and revision_feedback) else []
                 # Retraction gate: never submit a paper that cites retracted science.
                 retracted = _retracted_cited_sources(out_dir) if return_code == 0 else []
+                # Claim-support gate: never submit an abstract whose claims the
+                # paper's own evidence does not support / overstates.
+                overclaims = _abstract_overclaims(out_dir) if return_code == 0 else []
                 bridge: dict[str, Any] = {}
-                if return_code == 0 and not unmet and not retracted:
+                if return_code == 0 and not unmet and not retracted and not overclaims:
                     if submit_cycle is None:
                         bridge = submit_bridge.run_cycle(
                             runs_root=runs_root,
@@ -989,6 +1004,7 @@ def run_cycle(
                 gate_status = (
                     "synthesis_failed" if return_code != 0
                     else "retracted_source_cited" if retracted
+                    else "abstract_overclaim" if overclaims
                     else "revision_coverage_unmet" if unmet
                     else _current_gate_status(bridge, out_dir.name)
                 )
@@ -1022,6 +1038,8 @@ def run_cycle(
                     revision_feedback = _escalate_feedback(revision_feedback, unmet)
                 if retracted:
                     attempt["retracted_cited_sources"] = retracted
+                if overclaims:
+                    attempt["abstract_overclaims"] = overclaims
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:

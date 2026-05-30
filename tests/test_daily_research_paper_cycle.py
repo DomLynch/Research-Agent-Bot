@@ -22,6 +22,7 @@ def _offline_coverage_judge(monkeypatch):
     coverage-gate tests override this with their own monkeypatch."""
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: [])
     monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda out_dir: [])
+    monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: [])
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -940,6 +941,22 @@ def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert submitted == []                                            # retraction gate blocked submit
     assert ledger["attempts"][0]["gate_status"] == "retracted_source_cited"
     assert ledger["attempts"][0]["retracted_cited_sources"] == ["10.2/retracted"]
+
+
+def test_abstract_overclaim_blocks_submit(tmp_path: Path, monkeypatch) -> None:
+    # An abstract whose claims the evidence does not support must not be submitted.
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: ["EGCG reverses aging"])
+    submitted: list[int] = []
+
+    def fake_submit(**_k: Any) -> dict[str, Any]:
+        submitted.append(1)
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    ledger, _ = _run_coverage_cycle(tmp_path, monkeypatch, unmet=[], submit_cycle=fake_submit)
+    assert submitted == []                                            # claim-support gate blocked submit
+    assert ledger["attempts"][0]["gate_status"] == "abstract_overclaim"
+    assert ledger["attempts"][0]["abstract_overclaims"] == ["EGCG reverses aging"]
 
 
 def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:

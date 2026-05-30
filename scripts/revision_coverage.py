@@ -10,6 +10,7 @@ Researka; no per-topic knowledge.
 from __future__ import annotations
 
 import asyncio
+import re
 from collections.abc import Awaitable, Callable, Sequence
 from typing import Any
 
@@ -65,3 +66,52 @@ def unmet_asks(
     if not isinstance(flags, list) or len(flags) != len(clean):
         return []  # malformed verdict — fail-open
     return [a for a, ok in zip(clean, flags, strict=True) if not ok]
+
+
+_CLAIM_SYS = "You are a strict manuscript reviewer. Reply with JSON only."
+_CLAIM_USER = (
+    "Below is a paper's ABSTRACT and the rest of the manuscript. List any abstract "
+    "claim the manuscript's own evidence does NOT support, or that overstates it "
+    "(too strong / unhedged given mixed or indirect evidence) — the most common "
+    "reason an abstract is sent back for revision. Reply with JSON "
+    '{{"unsupported": [<verbatim claim>, ...]}} — empty if every abstract claim '
+    "is supported and appropriately hedged.\n\n"
+    "ABSTRACT:\n{abstract}\n\n=== REST OF MANUSCRIPT ===\n{body}"
+)
+
+
+def _abstract(paper_md: str) -> str:
+    m = re.search(r"^##\s+Abstract\b.*?\n(.*?)(?=^##\s)", paper_md, re.M | re.S)
+    return m.group(1).strip() if m else ""
+
+
+def unsupported_abstract_claims(
+    paper_md: str,
+    *,
+    chat: Callable[..., Awaitable[LLMResponse]] = chat_json,
+    runner: Callable[..., Any] = asyncio.run,
+    settings: Any | None = None,
+) -> list[str]:
+    """Abstract claims the manuscript's evidence does not support / overstates
+    (paper-qa contradiction-check borrow). Empty when the abstract is supported,
+    or fail-open ([]) on any error/malformed verdict. Bounded: one judge call."""
+    abstract = _abstract(paper_md)
+    if not abstract:
+        return []
+    body = paper_md.replace(abstract, "", 1)
+    try:
+        resp = runner(chat(
+            messages=[
+                {"role": "system", "content": _CLAIM_SYS},
+                {"role": "user", "content": _CLAIM_USER.format(abstract=abstract[:6000], body=body[:18000])},
+            ],
+            chain=build_judge_chain(settings or load_settings()),
+            temperature=0.0,
+            seed=7,
+        ))
+        claims = resp.parsed.get("unsupported", [])
+    except (LLMError, ValueError, KeyError, TypeError, AttributeError, OSError, RuntimeError):
+        return []  # fail-open
+    if not isinstance(claims, list):
+        return []
+    return [str(c).strip() for c in claims if str(c).strip()]

@@ -46,3 +46,33 @@ def test_unmet_asks_failopen_on_judge_error(monkeypatch) -> None:
         raise revision_coverage.LLMError("judge down")
 
     assert revision_coverage.unmet_asks("M", ["a"], chat=boom, settings=object()) == []
+
+
+_PAPER = "## Abstract\n\nEGCG reverses aging in humans.\n\n## Results\n\nMixed, mostly null.\n"
+
+
+def _claims(parsed: dict[str, Any], monkeypatch) -> list[str]:
+    monkeypatch.setattr(revision_coverage, "build_judge_chain", lambda _s: ())
+    return revision_coverage.unsupported_abstract_claims(_PAPER, chat=_chat(parsed), settings=object())
+
+
+def test_unsupported_abstract_claims_flags_overclaim(monkeypatch) -> None:
+    assert _claims({"unsupported": ["EGCG reverses aging in humans."]}, monkeypatch) == ["EGCG reverses aging in humans."]
+
+
+def test_unsupported_abstract_claims_empty_when_supported(monkeypatch) -> None:
+    assert _claims({"unsupported": []}, monkeypatch) == []
+
+
+def test_unsupported_abstract_claims_no_abstract_is_empty(monkeypatch) -> None:
+    monkeypatch.setattr(revision_coverage, "build_judge_chain", lambda _s: ())
+    assert revision_coverage.unsupported_abstract_claims("## Results\n\nx\n", chat=_chat({"unsupported": ["x"]}), settings=object()) == []
+
+
+def test_unsupported_abstract_claims_failopen_on_error(monkeypatch) -> None:
+    monkeypatch.setattr(revision_coverage, "build_judge_chain", lambda _s: ())
+
+    async def boom(**_kwargs: Any) -> Any:
+        raise revision_coverage.LLMError("judge down")
+
+    assert revision_coverage.unsupported_abstract_claims(_PAPER, chat=boom, settings=object()) == []
