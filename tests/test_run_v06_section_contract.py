@@ -513,6 +513,7 @@ def test_restore_required_section_body_compiles_safe_fallback() -> None:
     match = orch._rendered_section_match(out, "## Conclusion")
     assert match is not None
     assert orch._word_count(match.group(1)) >= 250
+    assert orch._word_count(match.group(1).split("\n\n", 1)[0]) >= 250
     assert "Too short." not in out
     assert "compiled from" not in out
     assert "compiler" not in out
