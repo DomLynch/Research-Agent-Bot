@@ -757,6 +757,81 @@ def render_table_5_numeric_index(
     return header + "\n".join(rows) + "\n"
 
 
+def _inline_cell(value: Any) -> str:
+    return _safe(value, "—").replace("|", "/").replace("\n", " ").strip()
+
+
+def _rank_receipts_for_public(receipts: list, limit: int) -> list:
+    tier_weight = {"A1": 5, "A2": 4, "B1": 3, "B2": 2, "C1": 1, "C2": 1}
+    return sorted(
+        receipts,
+        key=lambda r: (
+            -tier_weight.get(_safe(getattr(r, "evidence_tier", None), "").upper(), 0),
+            str(getattr(r, "directness", "")) != "direct",
+            -int(getattr(r, "n_claims", 0) or 0),
+            str(getattr(r, "receipt_id", "")),
+        ),
+    )[:limit]
+
+
+def _public_tension_lines(matrix: object | None, limit: int) -> list[str]:
+    if matrix is None:
+        return ["- No tension matrix was supplied for this run."]
+    pairs = sorted(
+        list(getattr(matrix, "non_orthogonal", lambda: [])()),
+        key=lambda t: (-int(getattr(t, "severity", 0) or 0), str(getattr(t, "kind", ""))),
+    )[:limit]
+    if not pairs:
+        return ["- No load-bearing cross-study tensions were detected."]
+    return [
+        "- "
+        + f"Severity {int(getattr(t, 'severity', 0) or 0)} "
+        + f"{_public_label(getattr(t, 'kind', 'tension'))}: "
+        + f"{_inline_cell(getattr(t, 'receipt_a_id', '—'))} vs "
+        + f"{_inline_cell(getattr(t, 'receipt_b_id', '—'))}; "
+        + _inline_cell(getattr(t, "summary", "bounded disagreement."))
+        for t in pairs
+    ]
+
+
+def render_public_evidence_snapshot(
+    receipts: list,
+    matrix: object | None = None,
+    *,
+    max_studies: int = 10,
+    max_tensions: int = 8,
+) -> str:
+    """Compact manuscript-facing evidence view; full tables stay in supplement."""
+    if not receipts:
+        return ""
+    lines = [
+        "## Evidence Snapshot",
+        "",
+        "The manuscript foregrounds the load-bearing evidence; the full evidence tables remain in the supplement.",
+        "",
+        "### Load-Bearing Included Studies",
+        "",
+    ]
+    for r in _rank_receipts_for_public(receipts, max_studies):
+        n_str, pop_label = _split_population_n(getattr(r, "population_summary", None) or "—")
+        p_value = _representative_p_value(r)
+        bits = [
+            _inline_cell(getattr(r, "receipt_id", "—")),
+            _design_from_tier(getattr(r, "evidence_tier", "")),
+            f"tier={_inline_cell(getattr(r, 'evidence_tier', '—'))}",
+            f"directness={_inline_cell(getattr(r, 'directness', '—'))}",
+            f"N={n_str}",
+            f"population={_inline_cell(pop_label)}",
+            f"endpoint={_public_label(getattr(r, 'outcome_class', '—'))}",
+            f"direction={_public_label(getattr(r, 'effect_direction', '—'))}",
+        ]
+        if p_value != "—":
+            bits.append(f"representative statistic={_inline_cell(p_value)}")
+        lines.append("- " + "; ".join(bits) + ".")
+    lines.extend(["", "### Load-Bearing Tensions", "", *_public_tension_lines(matrix, max_tensions), ""])
+    return "\n".join(lines)
+
+
 # --- Top-level renderer --------------------------------------------------
 
 
@@ -808,4 +883,5 @@ __all__ = [
     "render_table_3_cross_domain_tensions",
     "render_table_4_evidence_limitations",
     "render_table_5_numeric_index",
+    "render_public_evidence_snapshot",
 ]

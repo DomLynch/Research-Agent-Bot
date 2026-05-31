@@ -251,7 +251,7 @@ def _run_polish_compiler_gate(out_dir: Path) -> dict[str, Any]:
 
 def _append_structured_tables_to_public_body(markdown: str, tables_md: str) -> str:
     tables = tables_md.strip()
-    if not tables or "## Structured Evidence Tables" in markdown:
+    if not tables or "## Evidence Snapshot" in markdown:
         return markdown
     return markdown.rstrip() + "\n\n" + tables + "\n"
 
@@ -2691,8 +2691,11 @@ async def _run(
         writer_receipts, writer_matrix, claims_by_citation,
     )
     if tables_md:
+        public_tables_md = _tables.render_public_evidence_snapshot(
+            writer_receipts, writer_matrix,
+        )
         full_paper_md = _append_structured_tables_to_public_body(
-            full_paper_md, tables_md,
+            full_paper_md, public_tables_md,
         )
         supplement_parts.append(tables_md.rstrip())
     # Pass the registry to References so its Author-Year tokens come
