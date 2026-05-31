@@ -1,0 +1,52 @@
+{
+  "schema": "researka.public_exports.v1",
+  "topic": "rapamycin",
+  "title": "Research Synthesis: Rapamycin \u2014 full paper",
+  "quality_score": 100.0,
+  "files": {
+    "paper_ir": {
+      "path": "paper_ir.json",
+      "exists": true
+    },
+    "paper_quality_score": {
+      "path": "paper_quality_score.json",
+      "exists": true
+    },
+    "markdown": {
+      "path": "full_paper.md",
+      "exists": true
+    },
+    "pdf": {
+      "path": null,
+      "exists": false
+    },
+    "docx": {
+      "path": "full_paper.docx",
+      "exists": true
+    },
+    "bibtex": {
+      "path": "references.bib",
+      "exists": true
+    },
+    "paper_audit": {
+      "path": null,
+      "exists": false
+    },
+    "claim_cards": {
+      "path": null,
+      "exists": false
+    },
+    "evidence_table_csv": {
+      "path": "evidence_table.csv",
+      "exists": true
+    },
+    "contradiction_map": {
+      "path": "contradiction_map.json",
+      "exists": true
+    },
+    "supplement": {
+      "path": "structured_evidence_tables.md",
+      "exists": true
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "tensions": [
+    {
+      "tension_id": "T1219",
+      "paper_a": "Gao 2015",
+      "paper_b": "Geissler 2015",
+      "conflict_type": "disagreement",
+      "outcome_class": "contextual_other",
+      "severity": 5,
+      "numeric_anchors": [
+        "P > 0.05",
+        "P < 0.05",
+        "P < 0.01",
+        "P < 0.05",
+        "P < 0.01",
+        "P < 0.05",
+        "P = 0.1493",
+        "P = 0.2796",
+        "P \u2264 0.0499",
+        "P = 0.0381",
+        "P = 0.0386",
+        "P \u2264 0.0383"
+      ],
+      "hypotheses": [
+        "Dose-regime difference: intermittent vs chronic dosing produces qualitatively different effects.",
+        "Co-intervention interaction: a concurrent intervention (e.g., exercise) modifies the drug effect."
+      ],
+      "corpus_weight_winner": "tie"
+    },
+    {
+      "tension_id": "T1281",
+      "paper_a": "Geissler 2015",
+      "paper_b": "Zurlo 2023",
+      "conflict_type": "disagreement",
+      "outcome_class": "contextual_other",
+      "severity": 5,
+      "numeric_anchors": [
+        "P = 0.1493",
+        "P = 0.2796",
+        "P \u2264 0.0499",
+        "P = 0.0381",
+        "P = 0.0386",
+        "P \u2264 0.0383",
+        "p < .05",
+        "p < .01",
+        "p < .05",
+        "p < .01",
+        "p < .05",
+        "p < .01"
+      ],
+      "hypotheses": [
+        "Dose-regime difference: intermittent vs chronic dosing produces qualitatively different effects.",
+        "Co-intervention interaction: a concurrent intervention (e.g., exercise) modifies the drug effect."
+      ],
+      "corpus_weight_winner": "tie"
+    },
+    {
+      "tension_id": "T094",
+      "paper_a": "Phillips 2022b",
+      "paper_b": "Geissler 2015",
+      "conflict_type": "disagreement",
+      "outcome_class": "contextual_other",
+      "severity": 5,
+      "numeric_anchors": [
+        "p=0.0015",
+        "p=0.03",
+        "P<0.001",
+        "p=0.0015",
+        "P<0.001",
+        "P = 0.1493",
+        "P = 0.2796",
+        "P \u2264 0.0499",
+        "P = 0.0381",
+        "P = 0.0386",
+        "P \u2264 0.0383"
+      ],
+      "hypotheses": [
+        "Dose-regime difference: intermittent vs chronic dosing produces qualitatively different effects.",
+        "Co-intervention interaction: a concurrent intervention (e.g., exercise) modifies the drug effect."
+      ],
+      "corpus_weight_winner": "Geissler 2015"
+    },
+    {
+      "tension_id": "T1280",
+      "paper_a": "Geissler 2015",
+      "paper_b": "Phillips 2022",
+      "conflict_type": "disagreement",
+      "outcome_class": "contextual_other",
+      "severity": 5,
+      "numeric_anchors": [
+        "P = 0.1493",
+        "P = 0.2796",
+        "P \u2264 0.0499",
+        "P = 0.0381",
+        "P = 0.0386",
+        "P \u2264 0.0383",
+        "p = 0.0015",
+        "p = 0.03",
+        "p < 0.001",
+        "p = 0.0015",
+        "p < 0.001",
+        "p = 0.06"
+      ],
+      "hypotheses": [
+        "Dose-regime difference: intermittent vs chronic dosing produces qualitatively different effects.",
+        "Co-intervention interaction: a concurrent intervention (e.g., exercise) modifies the drug effect."
+      ],
+      "corpus_weight_winner": "Geissler 2015"
+    },
+    {
+      "tension_id": "T1139",
+      "paper_a": "Spilman 2010",
+      "paper_b": "Gao 2015",
+      "conflict_type": "disagreement",
+      "outcome_class": "contextual_other",
+      "severity": 5,
+      "numeric_anchors": [
+        "P <0.001",
+        "P <0.0001",
+        "P = 0.036",
+        "P = 0.91",
+        "P <0.0001",
+        "P <0.001",
+        "P > 0.05",
+        "P < 0.05",
+        "P < 0.01",
+        "P < 0.05",
+        "P < 0.01",
+        "P < 0.05"
+      ],
+      "hypotheses": [
+        "Dose-regime difference: intermittent vs chronic dosing produces qualitatively different effects.",
+        "Co-intervention interaction: a concurrent intervention (e.g., exercise) modifies the drug effect."
+      ],
+      "corpus_weight_winner": "Gao 2015"
+    }
+  ]
+}
