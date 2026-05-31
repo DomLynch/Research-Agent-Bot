@@ -247,7 +247,10 @@ def _run_polish_compiler_gate(out_dir: Path) -> dict[str, Any]:
             if isinstance(gate, dict) and gate.get("status") == "failed"
         ]
         raise RuntimeError("polish_compiler_failed:" + ",".join(failed))
-    report["paper_ir"] = _paper_ir.compile_run(out_dir)
+    paper_ir_report = _paper_ir.compile_run(out_dir)
+    report["paper_ir"] = paper_ir_report
+    report["paper_quality_score"] = paper_ir_report.get("quality_score")
+    report["public_export_manifest"] = paper_ir_report.get("export_manifest")
     return report
 
 
