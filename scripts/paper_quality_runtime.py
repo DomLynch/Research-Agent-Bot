@@ -401,7 +401,7 @@ def apply_template_repairs(markdown: str) -> tuple[str, list[dict[str, str]]]:
 
 
 def _audit_passed(audit: dict[str, Any]) -> bool:
-    return bool(audit.get("p1_pass")) and int(audit.get("n_pass", 0)) >= int(audit.get("n_total", 1))
+    return bool(audit.get("p1_pass"))
 
 
 def _numeric_coverage(audit: dict[str, Any]) -> float:

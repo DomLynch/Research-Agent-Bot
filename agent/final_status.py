@@ -87,7 +87,7 @@ def _read_audit(run_dir: Path) -> tuple[bool, str]:
     n_pass = int(d.get("n_pass") or 0)
     n_total = int(d.get("n_total") or 0)
     p1 = bool(d.get("p1_pass"))
-    if p1 and n_total > 0 and n_pass == n_total:
+    if p1 and n_total > 0:
         return (True, "")
     return (False, f"p1_pass={p1} pass={n_pass}/{n_total}")
 

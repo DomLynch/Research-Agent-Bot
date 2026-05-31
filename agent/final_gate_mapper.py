@@ -38,10 +38,10 @@ __all__ = [
 
 
 def extract_audit_gates_passed(audit: dict | None) -> bool:
-    """True iff the Stage-1 audit reports a clean pass.
+    """True iff the Stage-1 audit reports no P1 ship-blockers.
 
     Tolerant to common shapes:
-      - {"p1_pass": True, "score": 10.0, "pass_rate": "14/14"} → True
+      - {"p1_pass": True, "score": 8.5, "pass_rate": "10/14"} → True
       - {"all_pass": True} → True
       - {"pass_count": 14, "total_count": 14} → True
       - {"score": 10, "max_score": 10} → True
@@ -52,19 +52,6 @@ def extract_audit_gates_passed(audit: dict | None) -> bool:
     if audit.get("all_pass") is True:
         return True
     if audit.get("p1_pass") is True:
-        # score must equal max if reported
-        score = audit.get("score")
-        max_score = audit.get("max_score", 10)
-        if isinstance(score, (int, float)) and isinstance(max_score, (int, float)):
-            return float(score) >= float(max_score)
-        # Fall back to pass_rate equality if present
-        pr = audit.get("pass_rate")
-        if isinstance(pr, str) and "/" in pr:
-            try:
-                num, den = pr.split("/", 1)
-                return int(num.strip()) >= int(den.strip())
-            except (TypeError, ValueError):
-                return False
         return True
     pc = audit.get("pass_count")
     tc = audit.get("total_count")

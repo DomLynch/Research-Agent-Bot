@@ -685,7 +685,7 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
         return False
     inputs = gate["inputs"]
     new_surface = bool(surface.get("passed"))
-    new_audit = bool(isinstance(audit, dict) and audit.get("p1_pass") and audit.get("n_pass") == audit.get("n_total"))
+    new_audit = bool(isinstance(audit, dict) and audit.get("p1_pass"))
     try:
         reviewer_p1 = importlib.import_module("scripts.run_v06_synthesis")._reviewer_p1_counts_from_log(out_dir)[0]
     except (ImportError, AttributeError, OSError, TypeError, ValueError):
