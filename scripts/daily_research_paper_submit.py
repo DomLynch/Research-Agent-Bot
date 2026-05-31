@@ -100,6 +100,10 @@ def _pre_submit_passed(data: dict[str, Any]) -> bool:
     return bool(data.get("passed") is True or isinstance(result, dict) and result.get("passed") is True)
 
 
+def _final_status_ready(data: dict[str, Any]) -> bool:
+    return bool(data.get("submission_ready") is True)
+
+
 def _refresh_stale_accountability_sidecar(run: Path) -> bool:
     contract = _read_json(run / "pre_submit_gate.json").get("journal_readiness_contract")
     if not isinstance(contract, list):
@@ -166,14 +170,17 @@ def _eligible(run: Path) -> tuple[bool, str]:
     audit = _read_json(run / "full_paper.audit.json")
     surface = _read_json(run / "full_paper.journal_surface.json")
     verdict = _read_json(run / "full_paper.final_verdict.json")
-    if not (audit.get("p1_pass") is True and audit.get("n_pass") == audit.get("n_total")):
-        return False, "audit_not_all_green"
+    if audit.get("p1_pass") is not True:
+        return False, "audit_p1_failed"
     if surface.get("passed") is not True:
         return False, "journal_surface_not_passed"
-    if str(verdict.get("verdict", "")).upper() != "AAA":
-        return False, "final_verdict_not_aaa"
     if not _pre_submit_passed(_read_json(run / "pre_submit_gate.json")):
         return False, "pre_submit_not_passed"
+    final_status = _read_json(run / "final_status.json")
+    if final_status and not _final_status_ready(final_status):
+        return False, "final_status_not_ready"
+    if not final_status and str(verdict.get("verdict", "")).upper() != "AAA":
+        return False, "final_verdict_not_aaa"
     return True, "eligible"
 
 

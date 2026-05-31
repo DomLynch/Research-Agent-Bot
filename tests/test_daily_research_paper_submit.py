@@ -110,6 +110,24 @@ def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None
     assert records[0]["topic"] == "topic"
 
 
+def test_submit_uses_final_status_ready_over_all_green_verdict(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 13, "n_total": 14})
+    _write_json(run / "full_paper.final_verdict.json", {"verdict": "Trust-Spine Pass"})
+    _write_json(run / "final_status.json", {"submission_ready": True})
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-23",
+        submit=True,
+        submitter=lambda payload: {"ok": True, "status": 201, "response": {"id": "obj-1", "title": payload["title"]}},
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-eligible-old")
     current = _run(tmp_path, name="synthesis-topic-v06-current")

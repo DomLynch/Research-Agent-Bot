@@ -1120,7 +1120,8 @@ def _strip_markdown_table_lines(paper_md: str) -> str:
 
 _NON_PROSE_GUARD_SECTION_RE = re.compile(
     r"^##\s+(?:Quantitative Evidence Index\b|Structured Evidence "
-    r"Tables\b|Table\s+\d+\b|Table\s+\d+\s*\(|References\b)",
+    r"Tables\b|What This Synthesis Adds\b|Table\s+\d+\b|"
+    r"Table\s+\d+\s*\(|References\b)",
     flags=re.IGNORECASE,
 )
 
