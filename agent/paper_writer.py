@@ -22,6 +22,10 @@ from agent.paper_writer_citations import (
     build_background_lit_block as _build_background_lit_block,
     run_citation_fix_pass as _run_citation_fix_pass,
 )
+from agent.paper_writer_claim_repair import (
+    repair_abstract_claim_strength,
+    repair_claim_strength,
+)
 from agent.paper_writer_deterministic import (
     build_methods_section,
     build_references_full_section,
@@ -560,6 +564,16 @@ async def render_full_paper(
         fallback_body="## Abstract\n\nThis synthesis summarizes the accepted receipt set and deterministic audit bundle for the current topic.\n",
         background_lit_entries=background_lit_entries,
     )
+    abstract_md, abstract_softened = repair_abstract_claim_strength(sections["abstract"].body_md)
+    abstract_md, abstract_repairs = repair_claim_strength(abstract_md, accepted)
+    if abstract_md != sections["abstract"].body_md:
+        sections["abstract"] = SynthesisSection(
+            name="abstract", body_md=abstract_md, anchors=sections["abstract"].anchors,
+        )
+        print(
+            f"[paper_writer] abstract claim repair: softened={abstract_softened} strength={len(abstract_repairs)}",
+            flush=True,
+        )
     _log_section_done("abstract", sections["abstract"])
     if not _thin:
         sections["introduction"] = await _write_scoped_section(
@@ -673,6 +687,12 @@ async def render_full_paper(
             background_lit_entries=background_lit_entries,
         )
         _log_section_done("discussion", sections["discussion"])
+        from agent.paper_writer_backstop import apply_section_backstop
+        sections = await apply_section_backstop(
+            sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix,
+            chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries,
+            write_anchored_fn=_write_anchored_section, write_scoped_fn=_write_scoped_section,
+        )
     sections["limitations_full"] = await _write_anchored_section(
         name="limitations_full", heading="## Limitations",
         system_prompt=_prompts["limitations_full"], user_prompt=user,
@@ -700,7 +720,6 @@ async def render_full_paper(
     # audit-gated section that came in below floor. Single-shot to
     # bound wall time.
     if not _thin:
-        from agent.paper_writer_backstop import apply_section_backstop
         sections = await apply_section_backstop(
             sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix,
             chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries,

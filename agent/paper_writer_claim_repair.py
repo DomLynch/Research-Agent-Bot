@@ -126,14 +126,7 @@ def _has_hedge(sentence: str) -> bool:
 def repair_abstract_claim_strength(body_md: str) -> tuple[str, int]:
     """Conservatively soften abstract-only overclaim phrasing before gates."""
     repaired = body_md
-    patterns = (
-        (r"\bpositive signals\b", "context-specific signals"),
-        (r"\bsupport(?:s|ed)? biological plausibility for\b", "are consistent with biological plausibility but do not establish"),
-        (r"\bIn a preclinical model,\s*", "In preclinical evidence, "),
-        (r"\battenuated\b", "was reported to attenuate"),
-        (r"\bmodulated\b", "was reported to modulate"),
-    )
-    for pattern, repl in patterns:
+    for pattern, repl in ((r"\bpositive signals\b", "context-specific signals"), (r"\bsupport(?:s|ed)? biological plausibility for\b", "are consistent with biological plausibility but do not establish"), (r"\bIn a preclinical model,\s*", "In preclinical evidence, "), (r"\battenuated\b", "was reported to attenuate"), (r"\bmodulated\b", "was reported to modulate")):
         repaired = re.sub(pattern, repl, repaired, flags=re.IGNORECASE)
     return repaired, int(repaired != body_md)
 

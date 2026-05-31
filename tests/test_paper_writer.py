@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import asyncio
 
+import agent.paper_writer_backstop as writer_backstop
 from agent import paper_writer
 from agent.paper_writer_helpers import strip_rendered_citation_markers
 from agent.paper_writer import _build_user_prompt, write_results_section
@@ -252,6 +253,56 @@ def test_evidence_map_uses_compact_writer_path(monkeypatch) -> None:
     ))
     assert "### Safety and Comorbidity Outcomes" in md
     assert "## Introduction" not in md and all(s.name != "discussion" for s in sections)
+
+
+def test_full_render_repairs_abstract_and_discussion_before_assembly(monkeypatch) -> None:
+    receipts = [_summary("r-mech", tier="C", directness="mechanistic")]
+    order: list[str] = []
+
+    async def fake_anchored(**kwargs):
+        name = kwargs["name"]
+        if name == "abstract":
+            body = (
+                "## Abstract\n\nPositive signals support biological plausibility for anti-aging effects. "
+                "In a preclinical model, treatment attenuated frailty and modulated cytokines."
+            )
+        else:
+            body = f"{kwargs['heading']}\n\n" + " ".join([f"{name} words"] * 120)
+        return SynthesisSection(name=name, body_md=body, anchors=())
+
+    async def fake_scoped(**kwargs):
+        name = kwargs["name"]
+        order.append(name)
+        body = f"{kwargs['heading']}\n\nToo short." if name == "discussion" else f"{kwargs['heading']}\n\n" + " ".join([f"{name} words"] * 120)
+        return SynthesisSection(name=name, body_md=body, anchors=())
+
+    async def fake_results(*_args, **_kwargs):
+        return SynthesisSection(name="results", body_md="## Results\n\nResults remain bounded.", anchors=())
+
+    async def fake_backstop(sections, **_kwargs):
+        order.append("backstop")
+        if "discussion" in sections:
+            sections["discussion"] = SynthesisSection(
+                name="discussion",
+                body_md="## Discussion\n\n" + " ".join(["substantive discussion"] * 500),
+                anchors=(),
+            )
+        return sections
+
+    monkeypatch.setattr(paper_writer, "_write_anchored_section", fake_anchored)
+    monkeypatch.setattr(paper_writer, "_write_scoped_section", fake_scoped)
+    monkeypatch.setattr(paper_writer, "write_results_section", fake_results)
+    monkeypatch.setattr(writer_backstop, "apply_section_backstop", fake_backstop)
+
+    md, _sections = asyncio.run(paper_writer.render_full_paper(
+        receipts, _matrix(receipts), _thesis(), topic="ace_inhibitors_aging",
+        submission_id="writer-loop", chain=(),
+    ))
+
+    assert "context-specific signals" in md
+    assert "was reported to attenuate" in md
+    assert "substantive discussion" in md
+    assert order.index("backstop") < order.index("conclusion")
 
 
 def test_strip_rendered_citation_markers_removes_body_metadata() -> None:

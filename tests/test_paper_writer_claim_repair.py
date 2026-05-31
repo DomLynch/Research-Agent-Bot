@@ -13,6 +13,7 @@ from __future__ import annotations
 
 from agent.paper_writer_claim_repair import (
     REPAIR_PREFIX,
+    repair_abstract_claim_strength,
     repair_claim_strength,
 )
 from agent.synthesis_schemas import ReceiptSummary
@@ -43,6 +44,20 @@ def _mech(rid: str) -> ReceiptSummary:
 # ============================================================
 # Repair detection — load-bearing positives
 # ============================================================
+
+
+def test_abstract_repair_softens_live_overclaim_phrases() -> None:
+    body = (
+        "## Abstract\n\n"
+        "Positive signals support biological plausibility for anti-aging effects. "
+        "In a preclinical model, treatment attenuated frailty and modulated cytokines."
+    )
+    repaired, n = repair_abstract_claim_strength(body)
+    assert n == 1
+    assert "context-specific signals" in repaired
+    assert "do not establish" in repaired
+    assert "In preclinical evidence" in repaired
+    assert "was reported to attenuate" in repaired
 
 
 def test_repair_fires_on_unhedged_causal_verb_citing_mechanistic_receipt() -> None:

@@ -708,8 +708,10 @@ def _repair_abstract_overclaim_phrasing(out_dir: Path, overclaims: list[str]) ->
     for claim in overclaims:
         needle = str(claim).strip()
         if needle and needle in repaired:
+            from agent.paper_writer_claim_repair import repair_abstract_claim_strength
             safer = re.sub(r"\b[Dd]emonstrated\s+(?:in|by)\b", "suggested by", needle)
             safer = re.sub(r"\b[Pp]ositive\s+([A-Za-z][A-Za-z -]{2,80}?signals)\b", r"context-specific \1", safer)
+            safer, _ = repair_abstract_claim_strength(safer)
             repaired = repaired.replace(needle, safer)
     if repaired == abstract:
         return False
