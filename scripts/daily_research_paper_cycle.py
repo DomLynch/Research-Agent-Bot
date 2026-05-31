@@ -718,12 +718,37 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     ask_lower = ask.lower()
     payload_section_ask = "key findings" in ask_lower or "evidence landscape" in ask_lower
     payload_clip_ask = "truncated" in ask_lower and "abstract" in ask_lower and "research question" in ask_lower
-    if not (payload_section_ask or payload_clip_ask):
+    source_excerpt_ask = (
+        ("source_bundle" in ask_lower or "source bundle" in ask_lower or "source" in ask_lower)
+        and any(token in ask_lower for token in ("abstract", "excerpt", "directional coding", "claim extraction"))
+    )
+    evidence_type_ask = (
+        "evidence_type" in ask_lower
+        or ("review" in ask_lower and "primary" in ask_lower and ("source_bundle" in ask_lower or "source bundle" in ask_lower))
+    )
+    if not (payload_section_ask or payload_clip_ask or source_excerpt_ask or evidence_type_ask):
         return False
     try:
         payload = submit_bridge.build_payload(out_dir)
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
         return False
+    if source_excerpt_ask or evidence_type_ask:
+        bundle = payload.get("source_bundle")
+        if not isinstance(bundle, list) or not bundle:
+            return False
+        rows = [row for row in bundle if isinstance(row, dict)]
+        if evidence_type_ask and "primary" not in {str(row.get("evidence_type") or "").lower() for row in rows}:
+            return False
+        if source_excerpt_ask:
+            top_rows = rows[:min(14, len(rows))]
+            meaningful = [
+                str(row.get("excerpt") or "")
+                for row in top_rows
+                if len(str(row.get("excerpt") or "").split()) >= 12
+                and " is registered as " not in str(row.get("excerpt") or "").lower()
+            ]
+            return len(meaningful) == len(top_rows)
+        return True
     sections = payload.get("sections", {})
     if not isinstance(sections, dict):
         return False

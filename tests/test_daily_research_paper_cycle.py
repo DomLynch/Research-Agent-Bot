@@ -1018,6 +1018,43 @@ def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: P
     )
 
 
+def test_payload_source_bundle_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    bundle = [
+        {"evidence_type": "primary", "excerpt": "This source reports GDF11 dosing, measured outcomes, and directional effects in a bounded experiment."}
+        for _ in range(14)
+    ]
+    bundle.append({"evidence_type": "review", "excerpt": "This review summarizes context without being counted as primary evidence."})
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {"source_bundle": bundle})
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Provide abstracts or meaningful source excerpts in source_bundle so directional coding and claim extraction can be verified.",
+    )
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Clarify why all source_bundle entries have evidence_type review when the manuscript claims primary and review evidence.",
+    )
+
+
+def test_payload_source_bundle_revision_ask_rejects_generic_registry_summaries(tmp_path: Path, monkeypatch) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "source_bundle": [{"evidence_type": "review", "excerpt": "NCT123 is registered as a clinical trial."}]
+    })
+
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Provide abstracts or meaningful source excerpts in source_bundle.",
+    )
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Clarify why all source_bundle entries have evidence_type review when the manuscript claims primary evidence.",
+    )
+
+
 def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     _, feedback_seen = _run_coverage_cycle(
