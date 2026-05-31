@@ -84,6 +84,7 @@ import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
 import paper_quality_runtime as _paper_quality  # noqa: E402
 import v3_polish_compiler as _polish_compiler  # noqa: E402
+import v3_paper_ir as _paper_ir  # noqa: E402
 
 # Workstream A (autonomous): topic-parameterized pipeline.
 # Module-level corpus paths + active topic — populated by
@@ -246,6 +247,7 @@ def _run_polish_compiler_gate(out_dir: Path) -> dict[str, Any]:
             if isinstance(gate, dict) and gate.get("status") == "failed"
         ]
         raise RuntimeError("polish_compiler_failed:" + ",".join(failed))
+    report["paper_ir"] = _paper_ir.compile_run(out_dir)
     return report
 
 

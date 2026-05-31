@@ -142,6 +142,7 @@ def test_polish_compiler_gate_allows_optional_tool_skips(monkeypatch, tmp_path) 
         }
 
     monkeypatch.setattr(orch._polish_compiler, "compile_run", fake_compile)
+    monkeypatch.setattr(orch._paper_ir, "compile_run", lambda _run_dir: {"paper_ir": {"schema": "test"}})
     assert orch._run_polish_compiler_gate(tmp_path)["passed"] is True
 
 
@@ -179,6 +180,32 @@ def test_polish_compiler_gate_writes_paper_ir_sidecars(monkeypatch, tmp_path) ->
     assert exports["files"]["paper_ir"] == {"path": "paper_ir.json", "exists": True}
     for name in ("paper_ir.json", "paper_quality_score.json", "public_export_manifest.json"):
         assert (tmp_path / name).is_file()
+
+
+def test_polish_compiler_gate_calls_paper_ir_from_production_boundary(monkeypatch, tmp_path) -> None:
+    calls: list[Path] = []
+
+    def fake_polish(_run_dir: Path) -> dict:
+        return {
+            "passed": True,
+            "typst": {"status": "skipped"},
+            "sciwrite_lint": {"status": "skipped"},
+            "gates": {"raw_pipe_tables": {"status": "passed"}},
+        }
+
+    def fake_paper_ir(run_dir: Path) -> dict:
+        calls.append(run_dir)
+        (run_dir / "paper_ir.json").write_text(json.dumps({"schema": "direct"}), encoding="utf-8")
+        return {"paper_ir": {"schema": "direct"}}
+
+    monkeypatch.setattr(orch._polish_compiler, "compile_run", fake_polish)
+    monkeypatch.setattr(orch._paper_ir, "compile_run", fake_paper_ir)
+
+    report = orch._run_polish_compiler_gate(tmp_path)
+
+    assert calls == [tmp_path]
+    assert report["paper_ir"] == {"paper_ir": {"schema": "direct"}}
+    assert json.loads((tmp_path / "paper_ir.json").read_text(encoding="utf-8")) == {"schema": "direct"}
 
 
 def test_polish_compiler_gate_blocks_deterministic_failures(monkeypatch, tmp_path) -> None:
