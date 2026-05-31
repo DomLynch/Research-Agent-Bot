@@ -147,6 +147,10 @@ def test_polish_compiler_gate_allows_optional_tool_skips(monkeypatch, tmp_path) 
 
 def test_polish_compiler_gate_writes_paper_ir_sidecars(monkeypatch, tmp_path) -> None:
     (tmp_path / "audit").mkdir()
+    (tmp_path / "paper_ir.json").write_text(
+        json.dumps({"schema": "stale", "title": "Old Paper"}),
+        encoding="utf-8",
+    )
     (tmp_path / "full_paper.md").write_text(
         "# Research Synthesis: Demo\n\n"
         "## Abstract\n\nThis paper is bounded.\n\n"
@@ -165,6 +169,14 @@ def test_polish_compiler_gate_writes_paper_ir_sidecars(monkeypatch, tmp_path) ->
 
     assert report["passed"] is True
     assert report["paper_ir"]["paper_ir"]["schema"] == "researka.paper_ir.v1"
+    paper_ir = json.loads((tmp_path / "paper_ir.json").read_text(encoding="utf-8"))
+    score = json.loads((tmp_path / "paper_quality_score.json").read_text(encoding="utf-8"))
+    exports = json.loads((tmp_path / "public_export_manifest.json").read_text(encoding="utf-8"))
+    assert paper_ir["title"] == "Research Synthesis: Demo"
+    assert paper_ir["schema"] == "researka.paper_ir.v1"
+    assert paper_ir["tables"] == []
+    assert score["schema"] == "researka.paper_quality_score.v1"
+    assert exports["files"]["paper_ir"] == {"path": "paper_ir.json", "exists": True}
     for name in ("paper_ir.json", "paper_quality_score.json", "public_export_manifest.json"):
         assert (tmp_path / name).is_file()
 
