@@ -56,6 +56,14 @@ def _sha256(path: Path) -> str:
     return "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _payload_fingerprint(payload: dict[str, Any]) -> str:
+    material = {
+        key: payload.get(key)
+        for key in ("title", "abstract", "artifact_type", "article_type", "author_agent_id", "body_markdown", "sections", "source_bundle")
+    }
+    return "sha256:" + hashlib.sha256(json.dumps(material, sort_keys=True).encode("utf-8")).hexdigest()
+
+
 def _normalized_key(text: str) -> str:
     return " ".join(str(text or "").lower().split())
 
@@ -250,10 +258,11 @@ def select_candidate(
     for run in ([candidate_run] if candidate_run else _runs(root)):
         topic = _run_topic(run)
         paper = run / "full_paper.md"
-        fp = _sha256(paper) if paper.exists() else ""
-        markers = {fp, _title_marker(_paper_title(paper))} if fp else set()
+        paper_sha = _sha256(paper) if paper.exists() else ""
+        markers = {paper_sha, _title_marker(_paper_title(paper))} if paper_sha else set()
         locally_eligible, status = _eligible(run)
         ok = locally_eligible
+        fp = _payload_fingerprint(build_payload(run)) if locally_eligible else paper_sha
         if topic in seen_topics:
             ok, status = False, "superseded_topic_run"
         elif ok and fp in rejected_seen:
@@ -383,7 +392,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             if revision.get(key)
         }
         metadata["revision_feedback"] = revision.get("feedback")
-    return {
+    payload = {
         "title": title[:300],
         "abstract": abstract,
         "artifact_type": "research_paper",
@@ -407,6 +416,8 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "author_signature": _sha256(run / "full_paper.md"),
         "metadata": metadata,
     }
+    metadata["submission_payload_hash"] = _payload_fingerprint(payload)
+    return payload
 
 
 def _submitter(url: str, token: str, agent_slug: str) -> Submitter:
@@ -464,7 +475,7 @@ def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], st
                 continue
             raw_metadata = row.get("metadata")
             metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
-            for key in ("content_hash", "sha256", "full_body_sha256", "condensed_body_sha256"):
+            for key in ("submission_payload_hash", "content_hash", "sha256", "full_body_sha256", "condensed_body_sha256"):
                 content_hash = metadata.get(key)
                 if isinstance(content_hash, str) and content_hash:
                     out.add(content_hash if content_hash.startswith("sha256:") else f"sha256:{content_hash}")
@@ -511,7 +522,7 @@ def run_cycle(
         _write_json(ledger_path, ledger)
         return ledger
     payload = build_payload(run)
-    fp = payload["metadata"]["content_hash"]
+    fp = _payload_fingerprint(payload)
     raw_metadata = payload.get("metadata")
     metadata: dict[str, Any] = raw_metadata if isinstance(raw_metadata, dict) else {}
     ledger["candidate"] = {"run": run.name, "topic": metadata.get("topic"), "fingerprint": fp}
@@ -525,7 +536,13 @@ def run_cycle(
     result = submitter(payload)
     ledger["submission"] = result
     if result.get("ok"):
-        _append_record(submitted_path, {"date": date, "run": run.name, "topic": metadata.get("topic"), "fingerprint": fp})
+        _append_record(submitted_path, {
+            "date": date,
+            "run": run.name,
+            "topic": metadata.get("topic"),
+            "fingerprint": fp,
+            "paper_sha256": metadata.get("content_hash"),
+        })
         ledger.update({"status": "submitted_to_researka", "submitted": 1})
         _mark_considered_status(considered, run.name, "submitted_to_researka")
     elif 400 <= int(result.get("status") or 0) < 500:
