@@ -106,3 +106,18 @@ def test_compile_run_writes_optional_adapter_sidecars(tmp_path, monkeypatch) -> 
     assert (run / "offline_eval_harness.json").exists()
     assert (run / "structured_output_contract.json").exists()
     assert (run / "paper_quality_score.json").exists()
+
+
+def test_compile_run_failsofts_paper_ir_sidecar(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
+    monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
+    monkeypatch.setattr(polish, "_run_sciwrite", lambda _paper: {"status": "skipped"})
+
+    def boom(_run_dir: Path) -> dict:
+        raise OSError("readonly export dir")
+
+    monkeypatch.setattr(polish._paper_ir, "compile_run", boom)
+    report = polish.compile_run(_run_dir(tmp_path))
+    assert report["passed"] is True
+    assert report["paper_ir"]["status"] == "failed"
+    assert "readonly export dir" in report["paper_ir"]["error"]

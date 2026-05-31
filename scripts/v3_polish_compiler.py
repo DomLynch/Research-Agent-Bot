@@ -305,7 +305,10 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
     report["offline_eval_harness"] = _optional.run_offline_eval_harness(
         run_dir, report, run_dir / "offline_eval_harness.json",
     )
-    report["paper_ir"] = _paper_ir.compile_run(run_dir)
+    try:
+        report["paper_ir"] = _paper_ir.compile_run(run_dir)
+    except Exception as exc:
+        report["paper_ir"] = {"status": "failed", "error": str(exc)[:500]}
     (run_dir / "polish_compiler.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     (run_dir / "polish_compiler.md").write_text(_format_report(report), encoding="utf-8")
     return report

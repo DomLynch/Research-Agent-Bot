@@ -247,7 +247,11 @@ def _run_polish_compiler_gate(out_dir: Path) -> dict[str, Any]:
             if isinstance(gate, dict) and gate.get("status") == "failed"
         ]
         raise RuntimeError("polish_compiler_failed:" + ",".join(failed))
-    paper_ir_report = _paper_ir.compile_run(out_dir)
+    try:
+        paper_ir_report = _paper_ir.compile_run(out_dir)
+    except Exception as exc:  # export sidecars must never block synthesis
+        print(f"[pipeline] Stage 5c2 — PaperIR export failed: {exc}", file=sys.stderr)
+        paper_ir_report = {"status": "failed", "error": str(exc)[:500]}
     report["paper_ir"] = paper_ir_report
     report["paper_quality_score"] = paper_ir_report.get("quality_score")
     report["public_export_manifest"] = paper_ir_report.get("export_manifest")

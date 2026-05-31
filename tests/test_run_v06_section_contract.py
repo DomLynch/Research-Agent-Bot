@@ -245,6 +245,27 @@ def test_polish_compiler_gate_overwrites_indirect_paper_ir_artifact(monkeypatch,
     assert json.loads((tmp_path / "paper_ir.json").read_text(encoding="utf-8")) == {"schema": "direct"}
 
 
+def test_polish_compiler_gate_failsofts_paper_ir_export(monkeypatch, tmp_path, capsys) -> None:
+    monkeypatch.setattr(orch._polish_compiler, "compile_run", lambda _run_dir: {
+        "passed": True,
+        "typst": {"status": "skipped"},
+        "sciwrite_lint": {"status": "skipped"},
+        "gates": {"raw_pipe_tables": {"status": "passed"}},
+    })
+
+    def boom(_run_dir: Path) -> dict:
+        raise OSError("disk full")
+
+    monkeypatch.setattr(orch._paper_ir, "compile_run", boom)
+
+    report = orch._run_polish_compiler_gate(tmp_path)
+
+    assert report["passed"] is True
+    assert report["paper_ir"]["status"] == "failed"
+    assert "disk full" in report["paper_ir"]["error"]
+    assert "PaperIR export failed" in capsys.readouterr().err
+
+
 def test_polish_compiler_gate_blocks_deterministic_failures(monkeypatch, tmp_path) -> None:
     monkeypatch.setattr(orch._polish_compiler, "compile_run", lambda _run_dir: {
         "passed": False,
