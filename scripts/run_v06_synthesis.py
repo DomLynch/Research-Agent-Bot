@@ -1048,8 +1048,8 @@ def _evidence_tier_phrase(n: int, label: str) -> str:
 def _ensure_results_summary_table(
     markdown: str, manifest: dict[str, Any],
 ) -> tuple[str, bool]:
-    header = "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |"
-    if header in markdown:
+    heading = "### Results Summary"
+    if heading in markdown:
         return markdown, False
     match = re.search(r"^## Results\s*$", markdown, re.MULTILINE)
     if match is None:
@@ -1096,20 +1096,17 @@ def _ensure_results_summary_table(
             limitation = "population and endpoint heterogeneity"
         label = outcome_display(outcome)
         rows.append(
-            f"| {label} | {corpus_slice} | "
+            f"- {label}: {corpus_slice}; "
             f"{signal_name} in {dominant_n}/{len(group)} sources | "
-            f"{'; '.join(direct_parts) or 'not classified'} | {limitation} |"
+            f"directness: {'; '.join(direct_parts) or 'not classified'}; "
+            f"main limitation: {limitation}."
         )
-    table = "\n".join([
-        header,
-        "|---|---|---|---|---|",
-        *rows,
-    ])
+    summary = "\n".join([heading, "", *rows])
     insert_at = match.end()
     return (
         markdown[:insert_at].rstrip()
         + "\n\n"
-        + table
+        + summary
         + "\n\n"
         + markdown[insert_at:].lstrip(),
         True,
@@ -1582,6 +1579,11 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     everything else → "B/indirect") incorrectly tagged human
     observational mortality studies as "mechanistic" — a category
     error that propagated into the synthesis."""
+    pack = _get_topic_pack()
+    is_rct_papers = pack.canonical_rct_paper_ids if pack is not None else ()
+    paper_id_l = paper_id.lower()
+    if any(str(name).lower() in paper_id_l for name in is_rct_papers):
+        return "A1", "direct"
     # Explicit-field path: metadata sources MAY include these fields
     # directly. Empty/missing fields fall through to inference.
     explicit_design = paper_meta.get("study_design")
@@ -1601,13 +1603,6 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     # ("MASTERS", "MET_PREVENT", "Konopka_2019") — now reads from
     # the active topic pack's canonical_rct_paper_ids.
     if cls.tier == "unknown":
-        pack = _get_topic_pack()
-        is_rct_papers = (
-            pack.canonical_rct_paper_ids if pack is not None
-            else ()
-        )
-        if any(name in paper_id for name in is_rct_papers):
-            return "A1", "direct"
         if paper_id.startswith("PMC"):
             # P1 reviewer fix: PMC* prefix alone is NOT a reliable
             # mechanistic signal — many PMC papers are human

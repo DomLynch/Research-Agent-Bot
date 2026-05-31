@@ -116,6 +116,8 @@ _PUBLIC_ARTIFACT_PATTERNS = (
     "risk-of-bias roll-up", "[d1_inferential_bridge", "accepted receipt graph",
     "manifest, tension matrix, and citation registry", "evidence-context framing",
     "should be read as", "### background references", "### final interpretation",
+    "decision: accept", "gate failures:", "published by researka",
+    "living evidence brief", "not extracted",
     # NOTE 2026-05-14: `**thesis:**` was previously in this forbidden
     # set as a pipeline-internal tag leak. It is now a REQUIRED
     # publication marker per Slice 9 (Discussion thesis-taking
@@ -124,6 +126,10 @@ _PUBLIC_ARTIFACT_PATTERNS = (
     "accepted receipt", "receipt set", "receipt graph",
     "mechanistic receipts", "direct clinical receipts", "indirect clinical receipts",
     "accepted corpus", "with 's evidence", "with ’s evidence",
+)
+_RAW_PIPE_TABLE_RE = re.compile(r"(?m)^\|.+\|\n\|[-:| ]+\|")
+_QEI_SECTION_RE = re.compile(
+    r"(?ms)^##\s+Quantitative Evidence Index\b.*?(?=^##\s+|\Z)",
 )
 # Bug-fix 2026-05-14: pipeline-language → academic-language translation
 # for the PUBLIC manuscript body only. Audit sidecars + supplement may
@@ -182,6 +188,8 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("placeholder_prose", pat) for pat in _PLACEHOLDER_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("template_meta", pat) for pat in _META_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("public_artifact", pat) for pat in _PUBLIC_ARTIFACT_PATTERNS if pat in low)
+    body_without_qei = _QEI_SECTION_RE.sub("", body_md)
+    issues.extend(SurfaceIssue("public_artifact", "raw markdown table in public manuscript") for _ in _RAW_PIPE_TABLE_RE.finditer(body_without_qei))
     issues.extend(SurfaceIssue("duplicate_paragraph", msg) for msg in _duplicate_paragraph_issue_messages(body_md))
     issues.extend(SurfaceIssue("public_artifact", msg) for msg in _public_language_issue_messages(body_md))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_artifact_issue_messages(body_md))
