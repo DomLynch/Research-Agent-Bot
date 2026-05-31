@@ -755,6 +755,9 @@ def _repair_abstract_overclaim_phrasing(out_dir: Path, overclaims: list[str]) ->
             safer, _ = repair_abstract_claim_strength(safer)
             repaired = repaired.replace(needle, safer)
     if repaired == abstract:
+        from agent.paper_writer_claim_repair import repair_abstract_claim_strength
+        repaired, _ = repair_abstract_claim_strength(abstract)
+    if repaired == abstract:
         return False
     paper.write_text(text[:match.start()] + repaired + text[match.end():], encoding="utf-8")
     _write_json(out_dir / "abstract_overclaim_repair.json", {"overclaims": overclaims})

@@ -1062,6 +1062,22 @@ def test_submission_ready_final_status_makes_duplicate_overclaim_advisory(tmp_pa
     assert ledger["attempts"][0]["abstract_overclaim_advisory_claims"] == ["profile summary overclaim"]
 
 
+def test_abstract_overclaim_repair_handles_paraphrased_judge_claim(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    paper = (
+        "# Research Synthesis: Aspirin Geroprotection — full paper\n\n"
+        "## Abstract\n\n"
+        "Positive signals demonstrated in preclinical models justify further targeted testing.\n\n"
+        "## Methods\n\nBody."
+    )
+    (out_dir / "full_paper.md").write_text(paper, encoding="utf-8")
+
+    assert cycle._repair_abstract_overclaim_phrasing(out_dir, ["judge paraphrased this overclaim"])
+    body = (out_dir / "full_paper.md").read_text(encoding="utf-8")
+    assert "context-specific signals suggested by preclinical models can motivate further targeted testing" in body
+
+
 def test_abstract_overclaim_repair_rechecks_before_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     calls = iter([[
