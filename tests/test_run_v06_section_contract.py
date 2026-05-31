@@ -605,6 +605,33 @@ def test_abstract_claim_strength_repair_runs_before_gate() -> None:
     assert "can motivate further targeted testing" in out
 
 
+def test_abstract_claim_strength_repair_records_pre_gate_log() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Robust signals demonstrated in preclinical models justify further targeted testing.\n\n"
+        "## Methods\n\nMethods.\n"
+    )
+    log: list[dict[str, str]] = []
+
+    out = orch._apply_abstract_claim_strength_repair(paper, log)
+
+    assert "context-dependent signals" in out
+    assert log == [{"fix_type": "abstract_claim_strength_pre_gate"}]
+    out2 = orch._apply_abstract_claim_strength_repair(out, log)
+    assert out2 == out
+    assert log == [{"fix_type": "abstract_claim_strength_pre_gate"}]
+
+
+def test_stage_5c_repairs_abstract_before_surface_gate() -> None:
+    source = Path(orch.__file__).read_text(encoding="utf-8")
+    stage = source.split("# Stage 5c: paper-quality pre-submit gate.", 1)[1]
+    assert (
+        stage.index("_apply_abstract_claim_strength_repair")
+        < stage.index("evaluate_journal_surface")
+        < stage.index("write_final_quality_gates")
+    )
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (

@@ -228,6 +228,16 @@ def _repair_abstract_claim_strength_before_gate(paper_md: str) -> tuple[str, boo
     return paper_md[:match.start()] + abstract + paper_md[match.end():], True
 
 
+def _apply_abstract_claim_strength_repair(
+    paper_md: str,
+    fix_log: list[dict[str, Any]],
+) -> str:
+    repaired, changed = _repair_abstract_claim_strength_before_gate(paper_md)
+    if changed:
+        fix_log.append({"fix_type": "abstract_claim_strength_pre_gate"})
+    return repaired
+
+
 def _first_section_paragraph(section_md: str) -> str:
     body = section_md.split("\n", 1)[1] if "\n" in section_md else ""
     for para in re.split(r"\n\s*\n", body):
@@ -2787,9 +2797,11 @@ async def _run(
     full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
     )
-    full_paper_md, abstract_strength_repaired = (
-        _repair_abstract_claim_strength_before_gate(full_paper_md)
+    _initial_abstract_log: list[dict[str, Any]] = []
+    full_paper_md = _apply_abstract_claim_strength_repair(
+        full_paper_md, _initial_abstract_log,
     )
+    abstract_strength_repaired = bool(_initial_abstract_log)
     (out_dir / "run_mode_contract.json").write_text(
         json.dumps(dataclasses.asdict(contract), indent=2)
     )
@@ -3400,6 +3412,7 @@ async def _run_post_paper_pipeline(
     paper_md, _references_restored = _ensure_references_section(
         paper_md, citation_registry,
     )
+    paper_md = _apply_abstract_claim_strength_repair(paper_md, _refix_log)
     if (
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
@@ -3590,6 +3603,20 @@ async def _run_post_paper_pipeline(
                 json.dumps(prior_log + surface_polish_log, indent=2)
             )
         if references_restored or surface_polish_log:
+            paper_path.write_text(paper_md)
+        _pre_gate_log: list[dict[str, Any]] = []
+        paper_md = _apply_abstract_claim_strength_repair(
+            paper_md, _pre_gate_log,
+        )
+        if _pre_gate_log:
+            final_log_path = paper_path.with_suffix(".final_fixed_log.json")
+            try:
+                prior_log = json.loads(final_log_path.read_text())
+            except (OSError, ValueError, json.JSONDecodeError):
+                prior_log = []
+            final_log_path.write_text(
+                json.dumps(prior_log + _pre_gate_log, indent=2)
+            )
             paper_path.write_text(paper_md)
         from agent.journal_surface_gate import evaluate_journal_surface
         surface_report = evaluate_journal_surface(
