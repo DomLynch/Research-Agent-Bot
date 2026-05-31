@@ -625,6 +625,21 @@ def test_untraceable_numeric_guard_skips_what_this_adds_evidence_lists(tmp_path)
     assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
 
 
+def test_untraceable_numeric_guard_skips_evidence_snapshot_lists(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "### Load-Bearing Included Studies\n\n"
+        "- Meattini 2025; RCT; representative statistic=P < 0.001.\n"
+        "- Mostaza 2022; Observational; representative statistic=P = 0.044.\n\n"
+        "## Discussion\n\n"
+        "The synthesis remains bounded."
+    )
+    issues = scan_paper(paper, manifest={"receipts": []}, quant_claims_dir=qc_dir)
+    assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
+
+
 def test_untraceable_numeric_guard_blocks_citationless_prose_value(tmp_path):
     """Q2-blocking numerics must be stripped even when the sentence
     names an author without an exact Author-Year citation token."""
