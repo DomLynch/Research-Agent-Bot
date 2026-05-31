@@ -319,7 +319,7 @@ def _results_outcome_section_issue_messages(paper_md: str) -> tuple[str, ...]:
     outcomes = _outcome_classes_from_results_table(results)
     if not outcomes:
         return ()
-    h3s = [m.group(1) for m in re.finditer(r"^###\s+(.+?)\s*$", results, flags=re.M)]
+    h3s = [m.group(1) for m in re.finditer(r"^###\s+(.+?\bOutcomes?)\s*$", results, flags=re.M)]
     expected = {_outcome_key(outcome): outcome for outcome in outcomes}
     counts = Counter(_outcome_key(heading) for heading in h3s)
     issues: list[str] = []

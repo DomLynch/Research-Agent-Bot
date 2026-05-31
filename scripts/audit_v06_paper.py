@@ -183,7 +183,11 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
     receipts = manifest.get("receipts") or ()
     classes: dict[str, int] = {}
     for r in receipts if isinstance(receipts, list) else ():
-        if isinstance(r, dict) and r.get("outcome_class"):
+        if not isinstance(r, dict):
+            continue
+        for p_value in r.get("p_values") or ():
+            out.update(canonical_numeric(v) for v in re.findall(r"\d+\.?\d*", str(p_value)))
+        if r.get("outcome_class"):
             key = str(r["outcome_class"])
             classes[key] = classes.get(key, 0) + 1
     out.update(canonical_numeric(str(v)) for v in classes.values())
