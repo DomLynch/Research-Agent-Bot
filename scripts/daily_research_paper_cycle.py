@@ -55,6 +55,7 @@ PREFLIGHT_MAX_TENSIONS = 50_000
 PREFLIGHT_MAX_OUTCOMES = 12
 RECENT_FAILURE_COOLDOWN_HOURS = 24
 SURFACE_REPEAT_THRESHOLD = 2
+WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 CORPUS_REPAIR_LIMIT = 1
@@ -227,6 +228,42 @@ def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | Non
         if topic and code in _PREFLIGHT_BLOCK_STATUSES and isinstance(stamps, list):
             if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
                 out.add(topic)
+    return out
+
+
+def _writer_gate_repeat_policy(
+    ledger_dir: Path, *, now: dt.datetime | None = None,
+) -> dict[str, dict[str, Any]]:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    data = _read_json(ledger_dir / BLOCKER_HISTOGRAM)
+    repeats = data.get("repeats", {})
+    writer_runs = data.get("writer_gate_runs", {})
+    out: dict[str, dict[str, Any]] = {}
+    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
+        topic, _, code = str(key).partition("\x1f")
+        if (
+            not topic
+            or not code
+            or not _failure_class(code).startswith("C_")
+            or not isinstance(stamps, list)
+        ):
+            continue
+        recent = [s for s in stamps if (t := _parse_time(str(s))) and t >= cutoff]
+        if len(recent) < WRITER_GATE_REPEAT_THRESHOLD:
+            continue
+        runs = writer_runs.get(key, []) if isinstance(writer_runs, dict) else []
+        brief_failed = any(
+            isinstance(row, dict)
+            and row.get("review_type_override") == "thin_corpus_brief"
+            and (t := _parse_time(str(row.get("at") or "")))
+            and t >= cutoff
+            for row in runs if isinstance(runs, list)
+        )
+        out[topic] = {
+            "gate": code,
+            "count": len(recent),
+            "action": "skip_topic" if brief_failed else "thin_corpus_brief",
+        }
     return out
 
 
@@ -737,6 +774,7 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
     # rewritten each run and cannot hold a cross-run count, so the repeat-skip
     # heuristic reads this instead. Windowed to the failure cooldown.
     repeats = data.setdefault("repeats", {})
+    writer_runs = data.setdefault("writer_gate_runs", {})
     now_dt = dt.datetime.now(dt.UTC)
     cutoff = now_dt - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     issue_candidates: list[str] = []
@@ -756,6 +794,20 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
             kept = [s for s in repeats.get(key, []) if (t := _parse_time(str(s))) and t >= cutoff]
             kept.append(now_dt.isoformat())
             repeats[key] = kept[-12:]
+            if _failure_class(code).startswith("C_"):
+                prior = writer_runs.get(key, [])
+                kept_rows = [
+                    r for r in prior
+                    if isinstance(r, dict)
+                    and (t := _parse_time(str(r.get("at") or "")))
+                    and t >= cutoff
+                ]
+                kept_rows.append({
+                    "at": now_dt.isoformat(),
+                    "review_type_override": row.get("review_type_override"),
+                    "out_dir": row.get("out_dir") or row.get("run"),
+                })
+                writer_runs[key] = kept_rows[-12:]
         if int(item["count"]) >= HISTOGRAM_ISSUE_THRESHOLD and item.get("class") != "D_no_action":
             item["github_issue_candidate"] = True
             if item.get("class") == "A_compiler_fixable":
@@ -1033,6 +1085,15 @@ def run_cycle(
         preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
         if preflight_blocked:
             ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
+        writer_gate_policy: dict[str, dict[str, Any]] = {} if topic else _writer_gate_repeat_policy(ledger_dir)
+        writer_gate_skip = {
+            t for t, p in writer_gate_policy.items()
+            if p.get("action") == "skip_topic"
+        }
+        if writer_gate_skip:
+            ledger["writer_gate_skip_topics"] = sorted(writer_gate_skip)
+        if writer_gate_policy:
+            ledger["writer_gate_repeat_policy"] = writer_gate_policy
         submitted_topics = _recent_submitted_topics(topics, ledger_dir)
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
@@ -1070,7 +1131,7 @@ def run_cycle(
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | surface_repeat | preflight_blocked)
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | surface_repeat | preflight_blocked | writer_gate_skip)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
@@ -1184,9 +1245,15 @@ def run_cycle(
                 }
             strategy_review_type = str(strategy.get("review_type_override") or "") or None
             numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
-            review_type_override = numeric_review_type or strategy_review_type
+            repeat_policy = writer_gate_policy.get(selected, {})
+            repeat_review_type = "thin_corpus_brief" if repeat_policy.get("action") == "thin_corpus_brief" else None
+            review_type_override = numeric_review_type or strategy_review_type or repeat_review_type
             if review_type_override:
-                reason = "Q9_numeric_density" if numeric_review_type else str(strategy.get("reason") or "paper_strategy")
+                reason = "Q9_numeric_density" if numeric_review_type else (
+                    str(strategy.get("reason") or "paper_strategy")
+                    if strategy_review_type
+                    else f"writer_gate_repeat:{repeat_policy.get('gate')}"
+                )
                 ledger["review_type_override"] = {"topic": selected, "value": review_type_override, "reason": reason}
             last_attempt: dict[str, Any] | None = None
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):

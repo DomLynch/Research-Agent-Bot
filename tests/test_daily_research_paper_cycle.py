@@ -1898,6 +1898,26 @@ def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Pat
     assert cycle._surface_repeat_topics(ledger_dir, now=now) == {"epigenetic_clocks", "coenzyme_q10_ubiquinol"}
 
 
+def test_writer_gate_repeat_policy_downshifts_then_skips_after_brief_failure(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    row = {"topic": "gdf11", "gate_status": "abstract_overclaim", "submitted": 0}
+    cycle._record_blockers(ledger_dir, "2026-05-31", [row])
+    cycle._record_blockers(ledger_dir, "2026-05-31", [row])
+
+    policy = cycle._writer_gate_repeat_policy(ledger_dir)
+
+    assert policy["gdf11"]["action"] == "thin_corpus_brief"
+    assert policy["gdf11"]["gate"] == "abstract_overclaim"
+
+    cycle._record_blockers(ledger_dir, "2026-05-31", [{
+        **row,
+        "review_type_override": "thin_corpus_brief",
+    }])
+
+    assert cycle._writer_gate_repeat_policy(ledger_dir)["gdf11"]["action"] == "skip_topic"
+
+
 def test_record_blockers_accumulates_repeat_log_across_runs(tmp_path: Path) -> None:
     """_record_blockers builds the cumulative per-(topic, gate) log that survives
     the daily-ledger rewrite, so two separate runs trip the repeat skip."""
@@ -1920,6 +1940,93 @@ def test_recent_preflight_blocked_topics_skip_after_one_recent_failure(tmp_path:
     )
 
     assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"epigenetic_clocks"}
+
+
+def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "gdf11", target_journal=True)
+    _prior_run(tmp_path, "gdf11", receipts=40, tensions=8, primary=3)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    row = {"topic": "gdf11", "gate_status": "abstract_overclaim", "submitted": 0}
+    cycle._record_blockers(ledger_dir, "2026-05-31", [row])
+    cycle._record_blockers(ledger_dir, "2026-05-31", [row])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    overrides: list[str | None] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        overrides.append(review_type_override)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-31",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert overrides == ["thin_corpus_brief"]
+    assert ledger["review_type_override"]["reason"] == "writer_gate_repeat:abstract_overclaim"
+    assert ledger["attempts"][0]["review_type_override"] == "thin_corpus_brief"
+
+
+def test_cycle_skips_topic_after_brief_fails_same_writer_gate(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_gdf11", target_journal=True)
+    _topic(tmp_path, "zzz_creatine", target_journal=True)
+    _prior_run(tmp_path, "aaa_gdf11", receipts=40, tensions=8, primary=3)
+    _prior_run(tmp_path, "zzz_creatine", receipts=40, tensions=8, primary=3)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    row = {"topic": "aaa_gdf11", "gate_status": "abstract_overclaim", "submitted": 0}
+    cycle._record_blockers(ledger_dir, "2026-05-31", [row])
+    cycle._record_blockers(ledger_dir, "2026-05-31", [row])
+    cycle._record_blockers(ledger_dir, "2026-05-31", [{
+        **row,
+        "review_type_override": "thin_corpus_brief",
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    topics: list[str] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        topics.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-31",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["writer_gate_skip_topics"] == ["aaa_gdf11"]
+    assert topics == ["zzz_creatine"]
 
 
 def test_corpus_repair_topics_include_preflight_and_retracted_only(tmp_path: Path) -> None:
