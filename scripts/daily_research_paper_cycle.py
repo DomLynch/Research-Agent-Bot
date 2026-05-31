@@ -57,6 +57,7 @@ RECENT_FAILURE_COOLDOWN_HOURS = 24
 SURFACE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
+CORPUS_REPAIR_LIMIT = 1
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
@@ -184,6 +185,7 @@ _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "synthesis_failed", "terminal_surface_repeat"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus"})
+_CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited"}
 
 
 def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -218,6 +220,18 @@ def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | Non
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
         if topic and code in _PREFLIGHT_BLOCK_STATUSES and isinstance(stamps, list):
+            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
+                out.add(topic)
+    return out
+
+
+def _corpus_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
+    out: set[str] = set()
+    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
+        topic, _, code = str(key).partition("\x1f")
+        if topic and code in _CORPUS_REPAIR_STATUSES and isinstance(stamps, list):
             if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
                 out.add(topic)
     return out
@@ -536,7 +550,7 @@ def _topic_status_map(
     return status
 
 
-def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
+def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_claims: int | None = None) -> dict[str, Any]:
     latest = _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
     publication_track = _publication_track_topic(topic)
@@ -556,6 +570,11 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path) -> dict[str, Any]:
     recent_failures = _recent_failed_attempts(topic, ledger_dir)
     if recent_failures and not publication_track:
         reasons.append(f"recent_failed_attempts={recent_failures} within {RECENT_FAILURE_COOLDOWN_HOURS}h")
+    if current_quant_claims is not None and current_quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS:
+        # A prior failed run's manifest can be stale after corpus repair/backfill.
+        # Keep true stop signs (overbroad split/recent cooldown), but don't let
+        # old receipt/tension/primary counts permanently block a rebuilt topic.
+        reasons = [r for r in reasons if ">" in r or r.startswith("recent_failed_attempts=")]
     return {
         "passed": not reasons,
         "publication_track": publication_track,
@@ -839,17 +858,22 @@ def _auto_seed_limit() -> int:
         return AUTO_SEED_LIMIT
 
 
-def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+def _corpus_repair_limit() -> int:
+    try:
+        return max(0, int(os.environ.get("RESEARCH_AGENT_CORPUS_REPAIR_LIMIT", str(CORPUS_REPAIR_LIMIT))))
+    except ValueError:
+        return CORPUS_REPAIR_LIMIT
+
+
+def _seed_topic(topic: str, *, timeout: int | None = None, force_extract: bool = False) -> dict[str, Any]:
     before = _quant_claim_count(topic)
-    if before:
-        return {"status": "corpus_ready", "n_quant_claims": before}
-    if dry_run:
-        return {"status": "corpus_missing_dry_run", "n_quant_claims": 0}
     seed_limit = _auto_seed_limit()
     cmd = [
         sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic,
         "--limit", str(seed_limit), "--max-per-source", str(seed_limit),
     ]
+    if force_extract:
+        cmd.append("--force-extract")
     try:
         result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, capture_output=True, text=True)
     except (OSError, subprocess.TimeoutExpired) as exc:
@@ -870,6 +894,26 @@ def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = Non
         "n_quant_claims": after,
         "seed_limit": seed_limit,
         "stderr_tail": result.stderr[-1200:],
+    }
+
+
+def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+    before = _quant_claim_count(topic)
+    if before:
+        return {"status": "corpus_ready", "n_quant_claims": before}
+    if dry_run:
+        return {"status": "corpus_missing_dry_run", "n_quant_claims": 0}
+    return _seed_topic(topic, timeout=timeout)
+
+
+def _repair_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+    before = _quant_claim_count(topic)
+    if dry_run:
+        return {"status": "corpus_repair_dry_run", "n_quant_claims": before}
+    result = _seed_topic(topic, timeout=timeout, force_extract=True)
+    return {
+        **result,
+        "status": "corpus_repaired" if result.get("status") in {"corpus_ready", "corpus_seeded"} else result.get("status"),
     }
 
 
