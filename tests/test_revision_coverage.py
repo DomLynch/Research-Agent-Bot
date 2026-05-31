@@ -65,6 +65,7 @@ def test_unsupported_abstract_claims_ignores_neutral_profile_summaries(monkeypat
         "unsupported": [
             "The evidence profile contains no sources classified primarily as mechanistic evidence.",
             "Positive study-level signals concentrate in no dominant outcome class.",
+            "positive signals concentrated in contextual cardioprotection, negative signals in cardiometabolic domains",
             "EGCG reverses aging in humans.",
         ],
     }

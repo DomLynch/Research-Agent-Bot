@@ -83,7 +83,7 @@ _CLAIM_USER = (
 _PROFILE_SUMMARY_RE = re.compile(
     r"\b("
     r"evidence profile contains|no sources classified primarily as|"
-    r"positive study-level signals (?:concentrate|are summarized|are represented)|"
+    r"positive (?:study-level )?signals (?:concentrate|concentrated|cluster|are summarized|are represented)|"
     r"no single positive outcome class dominates|"
     r"null signals (?:in|cluster)|negative signals (?:in|cluster)|"
     r"cross-study disagreement"
