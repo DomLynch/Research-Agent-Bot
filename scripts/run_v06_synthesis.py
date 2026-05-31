@@ -2722,6 +2722,7 @@ async def _run(
         f"Claim-strength repair: {len(repair_log)} sentence(s) repaired",
         file=sys.stderr,
     )
+    full_paper_md = _insert_review_heavy_abstraction_note(full_paper_md, accepted)
 
     # Belt-and-braces: even though Fix #3 substituted upstream, run the
     # registry-backed substitution again as a safety net. Idempotent —

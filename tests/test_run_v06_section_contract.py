@@ -11,11 +11,30 @@ sys.path.insert(0, str(REPO / "scripts"))
 
 import apply_patches as ap  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
-from agent.synthesis_schemas import SynthesisSection  # noqa: E402
+from agent.synthesis_schemas import ReceiptSummary, SynthesisSection  # noqa: E402
 
 
 def _words(n: int) -> str:
     return " ".join(f"word{i}" for i in range(n))
+
+
+def _receipt(rid: str, directness: str) -> ReceiptSummary:
+    return ReceiptSummary(
+        receipt_id=rid,
+        receipt_path=f"runs/{rid}",
+        topic="topic",
+        thesis_text="bounded evidence",
+        spar_verdict="accept_clean",
+        n_claims=1,
+        n_failed_traces=0,
+        canonical_trial_id=None,
+        evidence_tier="B2",
+        directness=directness,
+        outcome_class="immune",
+        effect_direction="mixed",
+        p_values=(),
+        population_summary="adults",
+    )
 
 
 def test_restore_rendered_section_headings_from_typed_sections() -> None:
@@ -306,6 +325,26 @@ def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
     assert ctx["mechanistic"] == 1
     assert ctx["mech_refs"] == "Gong 2022"
+
+
+def test_review_heavy_abstraction_note_distinguishes_reference_papers_from_trials() -> None:
+    receipts = [_receipt(f"review-{i}", "review") for i in range(5)]
+    receipts += [_receipt("indirect-1", "indirect"), _receipt("mechanistic-1", "mechanistic")]
+    paper = "## Abstract\n\nThis synthesis maps the evidence.\n\n## Introduction\n\nIntro.\n"
+
+    out = orch._insert_review_heavy_abstraction_note(paper, receipts)
+
+    assert "not 7 independent primary clinical trials" in out
+    assert "review-level, preclinical, and other indirect evidence" in out
+    assert out.count("Evidence-abstraction note.") == 1
+    assert out.index("Evidence-abstraction note.") < out.index("## Introduction")
+
+
+def test_review_heavy_abstraction_note_is_not_added_to_direct_trial_corpus() -> None:
+    receipts = [_receipt(f"direct-{i}", "direct") for i in range(5)]
+    paper = "## Abstract\n\nThis synthesis maps the evidence.\n\n## Introduction\n\nIntro.\n"
+
+    assert orch._insert_review_heavy_abstraction_note(paper, receipts) == paper
 
 
 def test_restore_rendered_section_headings_is_idempotent() -> None:
