@@ -15,6 +15,12 @@ sys.path.insert(0, str(REPO / "scripts"))
 import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # noqa: E402
 
 
+def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
+    assert "researka_revision_fingerprint" in cycle._TERMINAL_REVISION_STATUSES
+    assert "research_revision_fingerprint" not in cycle._TERMINAL_REVISION_STATUSES
+    assert cycle._failure_class("researka_revision_fingerprint") == "D_no_action"
+
+
 @pytest.fixture(autouse=True)
 def _offline_coverage_judge(monkeypatch):
     """The revision coverage judge calls a live model; default every test to
