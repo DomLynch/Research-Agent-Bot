@@ -317,9 +317,14 @@ def _quality_score(ir: PaperIR, paper: str, receipts: list[dict[str, Any]], tens
 
 
 def _export_manifest(run_dir: Path, ir: PaperIR, score: dict[str, Any]) -> dict[str, Any]:
+    export_paths = {
+        "paper_ir": "paper_ir.json",
+        "paper_quality_score": "paper_quality_score.json",
+        **ir.exports,
+    }
     files = {
         name: {"path": rel, "exists": bool(rel and (run_dir / rel).exists())}
-        for name, rel in ir.exports.items()
+        for name, rel in export_paths.items()
     }
     return {
         "schema": "researka.public_exports.v1",

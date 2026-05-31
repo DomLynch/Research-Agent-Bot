@@ -26,6 +26,12 @@ topic pack
   evidence-map detail.
 - `manifest.json`, `claim_graph.json`, `citation_registry.json`, and audit
   sidecars - machine-readable trust-spine artifacts.
+- `paper_ir.json` - typed PaperIR containing thesis, sections, framework axes,
+  tables, references, and export pointers.
+- `paper_quality_score.json` and `public_export_manifest.json` - deterministic
+  reader/export readiness summaries.
+- `references.bib`, `evidence_table.csv`, `contradiction_map.json`, and
+  `full_paper.docx` - portable reader and publisher exports.
 - Optional polish outputs - Typst PDF, sciwrite-lint report, and offline eval
   JSON when those tools are installed.
 
