@@ -674,6 +674,7 @@ def _failure_class(status: str) -> str:
     code = status.split(":", 1)[0]
     return {
         "journal_surface_not_passed": "A_compiler_fixable",
+        "journal_surface_failed": "A_compiler_fixable",
         "final_verdict_not_aaa": "A_compiler_fixable",
         "pre_submit_not_passed": "A_compiler_fixable",
         "audit_not_all_green": "C_writer_fixable",
@@ -981,6 +982,18 @@ def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
     if str(attempt.get("failure_class") or "").startswith(("B_", "D_")):
         return False
     return True
+
+
+def _same_gate_failure_count(attempts: list[dict[str, Any]], topic: str, status: str) -> int:
+    code = status.split(":", 1)[0]
+    if not code or code in {"eligible", "submitted_to_researka"}:
+        return 0
+    return sum(
+        1 for row in attempts
+        if row.get("topic") == topic
+        and not int(row.get("submitted") or 0)
+        and str(row.get("gate_status") or row.get("submit_status") or "").split(":", 1)[0] == code
+    )
 
 
 def _repair_reason_for_retry(run: Path, attempt: dict[str, Any]) -> str:
@@ -1480,6 +1493,10 @@ def run_cycle(
                     attempt.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                     ledger.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                 ledger["attempts"].append(attempt)
+                same_gate_failures = _same_gate_failure_count(ledger["attempts"], selected, gate_status)
+                if same_gate_failures >= 2:
+                    attempt["same_gate_repeat_count"] = same_gate_failures
+                    attempt["same_gate_repeat_stop"] = True
                 last_attempt = attempt
                 ledger["synthesis_return_code"] = return_code
                 ledger["submit_bridge"] = bridge
@@ -1522,7 +1539,7 @@ def run_cycle(
                     break
                 else:
                     ledger["status"] = "synthesis_completed_no_submission"
-                if revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
+                if same_gate_failures >= 2 or revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
                     break
             if ledger["status"] == "cycle_budget_exhausted":
                 break
