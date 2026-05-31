@@ -1742,30 +1742,35 @@ def test_submit_lock_blocks_until_free(tmp_path: Path) -> None:
 
 def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Path) -> None:
     """A topic that fails the SAME deterministic gate twice in-window is skipped;
-    different gates, single failures, transient statuses, and stale windows are not."""
+    different gates, single failures, transient statuses, and stale windows are not.
+    Source is the CUMULATIVE histogram (the daily ledger is rewritten each run)."""
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
-    now = dt.datetime.now(dt.UTC).isoformat()
-    stale = (dt.datetime.now(dt.UTC) - dt.timedelta(hours=cycle.RECENT_FAILURE_COOLDOWN_HOURS + 1)).isoformat()
-    cycle._write_json(ledger_dir / "2026-05-29.json", {"started_at": now, "attempts": [
-        {"topic": "epigenetic_clocks", "gate_status": "journal_surface_not_passed", "submitted": 0},
-        {"topic": "ergothioneine", "gate_status": "journal_surface_not_passed", "submitted": 0},
-    ]})
-    cycle._write_json(ledger_dir / "2026-05-30.json", {"started_at": now, "attempts": [
-        {"topic": "epigenetic_clocks", "gate_status": "journal_surface_not_passed", "submitted": 0},  # 2nd same gate
-        {"topic": "ergothioneine", "gate_status": "audit_not_all_green", "submitted": 0},             # different gate
-        {"topic": "creatine", "gate_status": "cycle_budget_exhausted", "submitted": 0},               # transient
-        {"topic": "creatine", "gate_status": "cycle_budget_exhausted", "submitted": 0},
-        # D_no_action gate (cited retracted source) re-rendering can't fix -> counts
-        {"topic": "coenzyme_q10_ubiquinol", "gate_status": "retracted_source_cited", "submitted": 0},
-        {"topic": "coenzyme_q10_ubiquinol", "gate_status": "retracted_source_cited", "submitted": 0},
-    ]})
-    cycle._write_json(ledger_dir / "2026-05-01.json", {"started_at": stale, "attempts": [
-        {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "submitted": 0},
-        {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "submitted": 0},
-    ]})
+    now = dt.datetime.now(dt.UTC)
+    recent, older = now.isoformat(), (now - dt.timedelta(minutes=5)).isoformat()
+    stale = (now - dt.timedelta(hours=cycle.RECENT_FAILURE_COOLDOWN_HOURS + 1)).isoformat()
+    s = "\x1f"
+    cycle._write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {"repeats": {
+        f"epigenetic_clocks{s}journal_surface_not_passed": [older, recent],     # 2 in-window -> skip
+        f"coenzyme_q10_ubiquinol{s}retracted_source_cited": [older, recent],    # D_no_action counts -> skip
+        f"ergothioneine{s}journal_surface_not_passed": [recent],                # single -> no
+        f"creatine{s}cycle_budget_exhausted": [older, recent],                  # transient code -> no
+        f"rapamycin{s}journal_surface_not_passed": [stale, stale],              # out of window -> no
+    }})
 
-    assert cycle._surface_repeat_topics(ledger_dir) == {"epigenetic_clocks", "coenzyme_q10_ubiquinol"}
+    assert cycle._surface_repeat_topics(ledger_dir, now=now) == {"epigenetic_clocks", "coenzyme_q10_ubiquinol"}
+
+
+def test_record_blockers_accumulates_repeat_log_across_runs(tmp_path: Path) -> None:
+    """_record_blockers builds the cumulative per-(topic, gate) log that survives
+    the daily-ledger rewrite, so two separate runs trip the repeat skip."""
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    attempt = {"topic": "coenzyme_q10_ubiquinol", "gate_status": "retracted_source_cited", "submitted": 0}
+    cycle._record_blockers(ledger_dir, "2026-05-31", [attempt])
+    assert cycle._surface_repeat_topics(ledger_dir) == set()  # one failure so far
+    cycle._record_blockers(ledger_dir, "2026-05-31", [attempt])  # a later run
+    assert cycle._surface_repeat_topics(ledger_dir) == {"coenzyme_q10_ubiquinol"}
 
 
 def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkeypatch) -> None:
@@ -1778,13 +1783,14 @@ def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkey
         "run": source.name, "topic": "colchicine_inflammaging",
         "fingerprint": cycle.submit_bridge._sha256(source / "full_paper.md"),
     }])
-    # prime two prior deterministic-gate failures so the topic is in surface_repeat
+    # prime two prior deterministic-gate failures in the cumulative histogram
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
-    now = dt.datetime.now(dt.UTC).isoformat()
-    _write_json(ledger_dir / "2026-05-28.json", {"started_at": now, "attempts": [
-        {"topic": "colchicine_inflammaging", "gate_status": "retracted_source_cited", "submitted": 0},
-        {"topic": "colchicine_inflammaging", "gate_status": "retracted_source_cited", "submitted": 0},
-    ]})
+    ledger_dir.mkdir(parents=True, exist_ok=True)
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {"repeats": {
+        "colchicine_inflammaging\x1fretracted_source_cited":
+            [(now - dt.timedelta(minutes=10)).isoformat(), now.isoformat()],
+    }})
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("repeat-failing revise must not re-synthesise")))

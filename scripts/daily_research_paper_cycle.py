@@ -172,7 +172,8 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
 # count toward a deterministic-gate "surface repeat" (universal; no topic- or
 # domain-specific knowledge).
 _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
-                                  "cycle_budget_exhausted", "current_run_not_submitted", "synthesis_failed"})
+                                  "cycle_budget_exhausted", "current_run_not_submitted",
+                                  "synthesis_failed", "terminal_surface_repeat"})
 
 
 def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -182,25 +183,22 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
     class changes (plan F: don't write R3 for a repeated surface failure).
     D_no_action gates (e.g. a cited retracted source) count too — "no action"
     means re-rendering can't fix it, which is exactly when to stop retrying.
+
+    Reads the CUMULATIVE per-(topic, gate) timestamp log in the blocker
+    histogram — the daily ledger is rewritten each run, so it cannot hold a
+    cross-run count. Windowed so a topic auto-recovers once its corpus is fixed.
     Universal — keyed on the gate code itself, not on any specific gate."""
-    now = now or dt.datetime.now(dt.UTC)
-    cutoff = now - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    counts: dict[tuple[str, str], int] = {}
-    for path in ledger_dir.glob("*.json"):
-        row = _read_json(path)
-        started = _parse_time(str(row.get("started_at") or ""))
-        if started is None or started < cutoff:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
+    out: set[str] = set()
+    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
+        topic, _, code = str(key).partition("\x1f")
+        if not topic or code in _NON_REPEAT_STATUSES or not isinstance(stamps, list):
             continue
-        for attempt in row.get("attempts", []):
-            if not isinstance(attempt, dict) or int(attempt.get("submitted") or 0):
-                continue
-            topic = str(attempt.get("topic") or "")
-            status = str(attempt.get("gate_status") or attempt.get("submit_status") or "")
-            code = status.split(":", 1)[0]
-            if not topic or code in _NON_REPEAT_STATUSES:
-                continue
-            counts[(topic, code)] = counts.get((topic, code), 0) + 1
-    return {topic for (topic, _code), n in counts.items() if n >= SURFACE_REPEAT_THRESHOLD}
+        recent = sum(1 for s in stamps if (t := _parse_time(str(s))) and t >= cutoff)
+        if recent >= SURFACE_REPEAT_THRESHOLD:
+            out.add(topic)
+    return out
 
 
 def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -659,6 +657,12 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
     path = ledger_dir / BLOCKER_HISTOGRAM
     data = _read_json(path)
     blockers = data.setdefault("blockers", {})
+    # Cumulative per-(topic, gate) failure timestamps — the daily ledger is
+    # rewritten each run and cannot hold a cross-run count, so the repeat-skip
+    # heuristic reads this instead. Windowed to the failure cooldown.
+    repeats = data.setdefault("repeats", {})
+    now_dt = dt.datetime.now(dt.UTC)
+    cutoff = now_dt - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     issue_candidates: list[str] = []
     for row in rows:
         status = str(row.get("status") or row.get("gate_status") or row.get("submit_status") or "")
@@ -670,12 +674,18 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
         item["last_seen"] = date
         sample = {k: row.get(k) for k in ("topic", "run", "out_dir", "status", "gate_status", "submit_status") if row.get(k) is not None}
         item["samples"] = ([sample] + list(item.get("samples") or []))[:3]
+        topic = str(row.get("topic") or "")
+        if topic and code not in _NON_REPEAT_STATUSES:
+            key = f"{topic}\x1f{code}"
+            kept = [s for s in repeats.get(key, []) if (t := _parse_time(str(s))) and t >= cutoff]
+            kept.append(now_dt.isoformat())
+            repeats[key] = kept[-12:]
         if int(item["count"]) >= HISTOGRAM_ISSUE_THRESHOLD and item.get("class") != "D_no_action":
             item["github_issue_candidate"] = True
             if item.get("class") == "A_compiler_fixable":
                 item["auto_fix_candidate"] = True
             issue_candidates.append(code)
-    data["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
+    data["updated_at"] = now_dt.isoformat()
     _write_json(path, data)
     return {"path": path.name, "issue_candidates": sorted(set(issue_candidates))}
 
