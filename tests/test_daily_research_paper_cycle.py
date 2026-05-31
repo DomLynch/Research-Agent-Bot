@@ -978,13 +978,17 @@ def test_abstract_overclaim_blocks_submit(tmp_path: Path, monkeypatch) -> None:
 
 def test_abstract_overclaim_repair_rechecks_before_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
-    calls = iter([["mechanistic plausibility—demonstrated in preclinical frailty attenuation"], []])
+    calls = iter([[
+        "mechanistic plausibility—demonstrated in preclinical frailty attenuation",
+        "positive cardioprotection signals",
+    ], []])
     monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: next(calls))
     submitted: list[int] = []
     paper = (
         "# Research Synthesis: Aspirin Geroprotection — full paper\n\n"
         "## Abstract\n\n"
         "The synthesis finds mechanistic plausibility—demonstrated in preclinical frailty attenuation.\n\n"
+        "It also reports positive cardioprotection signals alongside null functional endpoints.\n\n"
         "## Methods\n\nBody."
     )
 
@@ -996,7 +1000,9 @@ def test_abstract_overclaim_repair_rechecks_before_submit(tmp_path: Path, monkey
     out_dir = tmp_path / "runs" / ledger["attempts"][0]["out_dir"]
     assert submitted == [1]
     assert ledger["attempts"][0]["abstract_overclaim_repaired"] is True
-    assert "suggested by preclinical frailty attenuation" in (out_dir / "full_paper.md").read_text(encoding="utf-8")
+    body = (out_dir / "full_paper.md").read_text(encoding="utf-8")
+    assert "suggested by preclinical frailty attenuation" in body
+    assert "context-specific cardioprotection signals" in body
 
 
 def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:
