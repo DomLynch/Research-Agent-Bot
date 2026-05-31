@@ -180,6 +180,8 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
     times within the failure-cooldown window. Re-rendering from scratch cannot
     change a deterministic gate's outcome, so skip the topic until the failure
     class changes (plan F: don't write R3 for a repeated surface failure).
+    D_no_action gates (e.g. a cited retracted source) count too — "no action"
+    means re-rendering can't fix it, which is exactly when to stop retrying.
     Universal — keyed on the gate code itself, not on any specific gate."""
     now = now or dt.datetime.now(dt.UTC)
     cutoff = now - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
@@ -195,7 +197,7 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
             topic = str(attempt.get("topic") or "")
             status = str(attempt.get("gate_status") or attempt.get("submit_status") or "")
             code = status.split(":", 1)[0]
-            if not topic or code in _NON_REPEAT_STATUSES or _failure_class(status) == "D_no_action":
+            if not topic or code in _NON_REPEAT_STATUSES:
                 continue
             counts[(topic, code)] = counts.get((topic, code), 0) + 1
     return {topic for (topic, _code), n in counts.items() if n >= SURFACE_REPEAT_THRESHOLD}
@@ -607,6 +609,7 @@ def _failure_class(status: str) -> str:
         "duplicate_remote_publication": "D_no_action",
         "researka_revision_fingerprint": "D_no_action",
         "superseded_topic_run": "D_no_action",
+        "terminal_surface_repeat": "D_no_action",
     }.get(code, "unknown")
 
 
@@ -910,8 +913,9 @@ def run_cycle(
                 if terminal_excluded:
                     ledger["terminal_excluded_topics"] = sorted(terminal_excluded)
         # Skip topics that keep failing the SAME deterministic gate — re-rendering
-        # them only burns a slot (plan F). Applies to fresh auto-selection only;
-        # a forced --topic and pending revises bypass select_topic entirely.
+        # them only burns a slot (plan F). Excluded from fresh auto-selection
+        # below, and pending revises for such topics are marked terminal in the
+        # loop (a forced --topic is left untouched on purpose).
         surface_repeat = _surface_repeat_topics(ledger_dir)
         if surface_repeat:
             ledger["surface_repeat_excluded_topics"] = sorted(surface_repeat)
@@ -951,6 +955,26 @@ def run_cycle(
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"
                 break
+            # A pending revise whose topic keeps failing the SAME deterministic gate
+            # cannot be fixed by re-rendering — mark it terminal so it stops
+            # monopolising revise slots instead of re-synthesising every cycle.
+            if revision_source and selected in surface_repeat:
+                attempt: dict[str, Any] = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": "terminal_surface_repeat",
+                    "gate_status": "terminal_surface_repeat",
+                    "failure_class": _failure_class("terminal_surface_repeat"),
+                    "submitted": 0,
+                }
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "revise_terminal_surface_repeat"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _mark_revision_handled(ledger_dir, revision_source, status="terminal_surface_repeat")
+                attempted.add(selected)
+                remote_revision = None
+                continue
             corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
             ledger["corpus"] = corpus
             if corpus.get("status") not in {"corpus_ready", "corpus_seeded"}:

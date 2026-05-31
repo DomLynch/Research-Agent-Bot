@@ -1756,13 +1756,50 @@ def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Pat
         {"topic": "ergothioneine", "gate_status": "audit_not_all_green", "submitted": 0},             # different gate
         {"topic": "creatine", "gate_status": "cycle_budget_exhausted", "submitted": 0},               # transient
         {"topic": "creatine", "gate_status": "cycle_budget_exhausted", "submitted": 0},
+        # D_no_action gate (cited retracted source) re-rendering can't fix -> counts
+        {"topic": "coenzyme_q10_ubiquinol", "gate_status": "retracted_source_cited", "submitted": 0},
+        {"topic": "coenzyme_q10_ubiquinol", "gate_status": "retracted_source_cited", "submitted": 0},
     ]})
     cycle._write_json(ledger_dir / "2026-05-01.json", {"started_at": stale, "attempts": [
         {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "submitted": 0},
         {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "submitted": 0},
     ]})
 
-    assert cycle._surface_repeat_topics(ledger_dir) == {"epigenetic_clocks"}
+    assert cycle._surface_repeat_topics(ledger_dir) == {"epigenetic_clocks", "coenzyme_q10_ubiquinol"}
+
+
+def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkeypatch) -> None:
+    """A pending revise whose topic keeps failing the same deterministic gate is
+    marked terminal (handled) instead of being re-synthesised every cycle."""
+    _topic(tmp_path, "colchicine_inflammaging", target_journal=True)
+    source = _prior_run(tmp_path, "colchicine_inflammaging", receipts=37, tensions=113, primary=1, level=5)
+    (source / "full_paper.md").write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name, "topic": "colchicine_inflammaging",
+        "fingerprint": cycle.submit_bridge._sha256(source / "full_paper.md"),
+    }])
+    # prime two prior deterministic-gate failures so the topic is in surface_repeat
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    now = dt.datetime.now(dt.UTC).isoformat()
+    _write_json(ledger_dir / "2026-05-28.json", {"started_at": now, "attempts": [
+        {"topic": "colchicine_inflammaging", "gate_status": "retracted_source_cited", "submitted": 0},
+        {"topic": "colchicine_inflammaging", "gate_status": "retracted_source_cited", "submitted": 0},
+    ]})
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("repeat-failing revise must not re-synthesise")))
+    request = {"artifactId": "colchicine-review", "title": "Research Synthesis: Colchicine Inflammaging",
+               "feedback": "Please add a subgroup analysis for the 65+ cohort and report absolute risk reduction."}
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-05-29", run_synthesis=True, submit=True, mode="revise",
+        remote_loader=lambda: (set(), None), revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["status"] == "revise_terminal_surface_repeat"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_surface_repeat"
+    assert (ledger_dir / cycle.HANDLED_REVISIONS).exists()
 
 
 def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
