@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 from types import SimpleNamespace
+from typing import Any, cast
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
@@ -141,6 +143,30 @@ def test_polish_compiler_gate_allows_optional_tool_skips(monkeypatch, tmp_path) 
 
     monkeypatch.setattr(orch._polish_compiler, "compile_run", fake_compile)
     assert orch._run_polish_compiler_gate(tmp_path)["passed"] is True
+
+
+def test_polish_compiler_gate_writes_paper_ir_sidecars(monkeypatch, tmp_path) -> None:
+    (tmp_path / "audit").mkdir()
+    (tmp_path / "full_paper.md").write_text(
+        "# Research Synthesis: Demo\n\n"
+        "## Abstract\n\nThis paper is bounded.\n\n"
+        "## Methods\n\nSources were admitted through deterministic gates.\n\n"
+        "## Results\n\n| Study | Result |\n|---|---|\n| A | B |\n\n"
+        "## Discussion\n\nThis corpus supports a bounded thesis.\n\n"
+        "## Conclusion\n\nFuture work should run a registered trial.\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "demo_topic"}), encoding="utf-8")
+    monkeypatch.setattr(orch._polish_compiler, "_embedding_vectors", lambda _texts: None)
+    monkeypatch.setattr(orch._polish_compiler, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
+    monkeypatch.setattr(orch._polish_compiler, "_run_sciwrite", lambda _paper: {"status": "skipped"})
+
+    report = orch._run_polish_compiler_gate(tmp_path)
+
+    assert report["passed"] is True
+    assert report["paper_ir"]["paper_ir"]["schema"] == "researka.paper_ir.v1"
+    for name in ("paper_ir.json", "paper_quality_score.json", "public_export_manifest.json"):
+        assert (tmp_path / name).is_file()
 
 
 def test_polish_compiler_gate_blocks_deterministic_failures(monkeypatch, tmp_path) -> None:
@@ -573,7 +599,7 @@ def test_results_summary_table_is_manifest_driven_and_idempotent() -> None:
 def test_canonical_rct_topic_pack_override_wins_before_abstract_inference() -> None:
     old_pack = orch._TOPIC_PACK
     try:
-        orch._TOPIC_PACK = SimpleNamespace(canonical_rct_paper_ids=("Depommier",))
+        orch._TOPIC_PACK = cast(Any, SimpleNamespace(canonical_rct_paper_ids=("Depommier",)))
         tier, directness = orch._classify_paper_tier(
             "Depommier_2019_akkermansia",
             1,

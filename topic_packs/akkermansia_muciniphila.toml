@@ -24,6 +24,12 @@ languages = ["English"]
 [retrieval.background]
 allow = ["mucin degradation biology", "gut barrier function", "metabolic mechanism", "pasteurized probiotic mechanism"]
 
+[paper_framework]
+name = "Microbiome Context Framework"
+class_terms = ["microbiome", "probiotic", "gut"]
+axes = ["Outcome", "Host state", "Preparation", "Dose", "Strain", "Model"]
+falsifier = "a direct human trial showing the same effect across host states, preparations, doses, and strains"
+
 [endpoint_polarity]
 insulin_resistance = "lower_is_better"
 inflammation = "lower_is_better"
