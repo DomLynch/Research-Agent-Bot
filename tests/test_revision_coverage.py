@@ -60,6 +60,17 @@ def test_unsupported_abstract_claims_flags_overclaim(monkeypatch) -> None:
     assert _claims({"unsupported": ["EGCG reverses aging in humans."]}, monkeypatch) == ["EGCG reverses aging in humans."]
 
 
+def test_unsupported_abstract_claims_ignores_neutral_profile_summaries(monkeypatch) -> None:
+    parsed = {
+        "unsupported": [
+            "The evidence profile contains no sources classified primarily as mechanistic evidence.",
+            "Positive study-level signals concentrate in no dominant outcome class.",
+            "EGCG reverses aging in humans.",
+        ],
+    }
+    assert _claims(parsed, monkeypatch) == ["EGCG reverses aging in humans."]
+
+
 def test_unsupported_abstract_claims_empty_when_supported(monkeypatch) -> None:
     assert _claims({"unsupported": []}, monkeypatch) == []
 

@@ -469,11 +469,18 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
     null_refs = ctx["null_refs"]
     neg_refs = ctx["negative_refs"]
     thesis = ctx["thesis"]
-    # Bound the "clinical signals" claim to the evidence profile. When no
-    # source is direct clinical evidence (direct == 0), asserting "clinical
-    # signals" contradicts the disclosed profile — Researka flagged this as an
-    # unbounded conclusion claim. Conditioned on the count, not on any topic.
-    clinical_signal = "selected clinical signals" if direct > 0 else "selected adjacent-clinical and mechanistic signals"
+    evidence_basis = "the retained evidence profile"
+    if direct > 0 and mechanistic > 0:
+        evidence_basis = "the retained clinical and mechanistic evidence profile"
+    elif direct + indirect > 0:
+        evidence_basis = "the retained clinical and adjacent evidence profile"
+    elif mechanistic > 0:
+        evidence_basis = "the retained mechanistic evidence profile"
+    signal_profile = (
+        f"Positive study-level signals are summarized in {pos}, null signals in {null}, and negative signals in {neg}."
+        if pos != "no dominant outcome class"
+        else f"No single positive outcome class dominates the retained corpus; null signals cluster in {null}, and negative signals cluster in {neg}."
+    )
     if title == "Results":
         results_backstop = _compile_results_outcome_backstop(topic, ctx, floor)
         if results_backstop:
@@ -495,15 +502,14 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "across the evidence base."
             ),
             (
-                f"Positive study-level signals concentrate in {pos}, null "
-                f"signals in {null}, and negative signals in {neg}. The paper "
+                f"{signal_profile} The paper "
                 "therefore interprets the corpus as a tiered evidence profile "
                 "rather than as a single pooled effect."
             ),
             (
                 f"The conclusion is that {topic} remains a bounded "
-                f"geroscience case: mechanistic plausibility and {clinical_signal} "
-                "justify further targeted testing, while "
+                f"geroscience case: {evidence_basis} defines the scope for targeted "
+                "testing, while "
                 "mixed and null findings limit any unqualified anti-aging "
                 "claim."
             ),
@@ -679,16 +685,15 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ],
         "Conclusion": [
             (
-                f"The final interpretation is deliberately tiered. {topic.title()} "
-                f"has a biologically plausible geroscience rationale and {clinical_signal}, "
+                f"For {topic}, the final interpretation is deliberately tiered: "
+                f"{evidence_basis} defines a bounded geroscience rationale, "
                 "but the corpus does not support treating "
                 "mechanistic target engagement, intermediate biomarkers, and "
                 "patient-relevant outcomes as interchangeable evidence."
             ),
             (
-                f"The strongest interpretation is that positive signals in {pos} "
-                f"coexist with null signals in {null} and negative signals in "
-                f"{neg}. That profile supports further targeted research and "
+                f"The strongest interpretation is that {signal_profile[0].lower()}{signal_profile[1:]} "
+                "That profile supports further targeted research and "
                 "careful hypothesis refinement, not unqualified clinical or "
                 "public-health claims."
             ),

@@ -73,10 +73,22 @@ _CLAIM_USER = (
     "Below is a paper's ABSTRACT and the rest of the manuscript. List any abstract "
     "claim the manuscript's own evidence does NOT support, or that overstates it "
     "(too strong / unhedged given mixed or indirect evidence) — the most common "
-    "reason an abstract is sent back for revision. Reply with JSON "
+    "reason an abstract is sent back for revision. Do not list neutral "
+    "corpus-composition summaries (evidence-tier counts, outcome-bucket summaries, "
+    "or disagreement counts) unless they assert efficacy or causal benefit. Reply with JSON "
     '{{"unsupported": [<verbatim claim>, ...]}} — empty if every abstract claim '
     "is supported and appropriately hedged.\n\n"
     "ABSTRACT:\n{abstract}\n\n=== REST OF MANUSCRIPT ===\n{body}"
+)
+_PROFILE_SUMMARY_RE = re.compile(
+    r"\b("
+    r"evidence profile contains|no sources classified primarily as|"
+    r"positive study-level signals (?:concentrate|are summarized|are represented)|"
+    r"no single positive outcome class dominates|"
+    r"null signals (?:in|cluster)|negative signals (?:in|cluster)|"
+    r"cross-study disagreement"
+    r")\b",
+    re.I,
 )
 
 
@@ -114,4 +126,7 @@ def unsupported_abstract_claims(
         return []  # fail-open
     if not isinstance(claims, list):
         return []
-    return [str(c).strip() for c in claims if str(c).strip()]
+    return [
+        claim for c in claims
+        if (claim := str(c).strip()) and not _PROFILE_SUMMARY_RE.search(claim)
+    ]
