@@ -101,6 +101,16 @@ def test_audit_pass_surface_fail_yields_l3(tmp_path: Path) -> None:
     assert s.journal_surface_pass is False
 
 
+def test_advisory_audit_miss_does_not_block_audit_pass(tmp_path: Path) -> None:
+    _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
+    _write(tmp_path, "full_paper.audit.json", {
+        "n_total": 14, "n_pass": 13, "p1_pass": True, "score_out_of_10": 9.3,
+    })
+    s = compute(tmp_path)
+    assert s.audit_pass is True
+    assert not [b for b in s.blocking_reasons if b.stage == "audit"]
+
+
 def test_audit_surface_pass_pre_submit_fail_yields_l3(tmp_path: Path) -> None:
     """Wave 47 — pre-submit failure keeps the level at L3 (not L4),
     matching the user's truth-table: pre_submit_pass is required to

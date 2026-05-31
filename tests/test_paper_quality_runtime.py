@@ -216,6 +216,29 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     assert "| 14 | universal_benchmark_target | not_ready |" in gate_md
 
 
+def test_final_quality_gates_allow_advisory_audit_miss(tmp_path: Path) -> None:
+    parsed = tmp_path / "parsed"
+    parsed.mkdir()
+    artifact = pqr.write_quality_methods(tmp_path, _receipts(), parsed)
+    audit = {"p1_pass": True, "n_pass": 13, "n_total": 14, "checks": [
+        {"name": "Q2_numeric_integrity", "detail": "10/10 numerics trace"},
+        {"name": "Q9_numeric_density", "passed": False, "detail": "density below advisory target"},
+    ]}
+    result = pqr.write_final_quality_gates(
+        out_dir=tmp_path,
+        paper_text="## Limitations\n\nPending further trials, rapamycin should not be used off-label for healthspan extension outside clinical-trial settings.",
+        manifest={"n_receipts": 40, "n_non_orthogonal_tensions": 5, "thesis": "Receipt-bound thesis.", "receipts": _receipts()},
+        audit=audit,
+        journal_surface={"passed": True},
+        reviewer_patches={"unresolved_p1_count": 0},
+        quality_bundle=artifact["bundle"],
+        citation_registry_complete=True,
+    )
+    gate_payload = json.loads((tmp_path / "pre_submit_gate.json").read_text())
+    assert result["gate"].passed
+    assert gate_payload["inputs"]["audit_gates_passed"] is True
+
+
 def test_final_quality_gates_block_failed_fresh_runtime(tmp_path: Path) -> None:
     parsed = tmp_path / "parsed"
     parsed.mkdir()

@@ -45,10 +45,10 @@ def test_audit_p1_pass_with_max_score_returns_true() -> None:
     ) is True
 
 
-def test_audit_p1_pass_with_partial_score_returns_false() -> None:
+def test_audit_p1_pass_with_partial_score_returns_true() -> None:
     assert extract_audit_gates_passed(
         {"p1_pass": True, "score": 8.5, "max_score": 10}
-    ) is False
+    ) is True
 
 
 def test_audit_pass_rate_string_format_parsed() -> None:
@@ -57,7 +57,7 @@ def test_audit_pass_rate_string_format_parsed() -> None:
     ) is True
     assert extract_audit_gates_passed(
         {"p1_pass": True, "pass_rate": "10/14"}
-    ) is False
+    ) is True
 
 
 def test_audit_pass_count_total_count_format() -> None:

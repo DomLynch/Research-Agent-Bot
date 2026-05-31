@@ -406,6 +406,31 @@ def test_refresh_pre_submit_gate_recomputes_numeric_coverage(tmp_path: Path) -> 
     assert gate["result"]["passed"] is True
 
 
+def test_refresh_pre_submit_gate_uses_p1_pass_not_all_green(tmp_path: Path) -> None:
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "full_paper.journal_surface.json").write_text(json.dumps({"passed": True, "issues": []}))
+    (run / "full_paper.audit.json").write_text(json.dumps({
+        "n_total": 14, "n_pass": 13, "p1_pass": True,
+        "checks": [{"name": "Q2_numeric_integrity", "passed": True,
+                    "detail": "8/8 numerics trace to corpus (100%)"}],
+    }))
+    (run / "pre_submit_gate.json").write_text(json.dumps({
+        "inputs": {
+            "numeric_coverage": 1.0, "audit_gates_passed": False,
+            "journal_surface_passed": True, "citation_registry_complete": True,
+            "rob_coverage": 1.0, "grade_coverage": 1.0, "n_tensions": 5,
+            "n_receipts": 20, "unresolved_reviewer_p1_count": 0,
+            "template_language_blocking": False,
+        },
+        "result": {"passed": False, "failures": ["audit_gates_failed"]},
+    }))
+    assert _refresh_pre_submit_gate(run) is True
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    assert gate["inputs"]["audit_gates_passed"] is True
+    assert gate["result"]["passed"] is True
+
+
 def test_phase_g_reevaluates_surface_gate_on_post_finalizer_paper(
     tmp_path: Path,
 ) -> None:
