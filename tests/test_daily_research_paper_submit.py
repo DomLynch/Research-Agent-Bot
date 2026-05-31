@@ -74,6 +74,26 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert "published" not in payload
 
 
+def test_payload_key_findings_distill_not_duplicate_evidence_landscape(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\nAbstract overview.\n\n"
+        "## Results\n\n| Outcome | Signal |\n|---|---|\n| immune | mixed |\n\nResults repeat table detail.\n\n"
+        "## Limitations\n\nThe evidence base is dominated by preclinical and review evidence.\n\n"
+        "## Conclusion\n\nThe core finding is that human application remains bounded by few direct clinical trials. "
+        "Future work should test patient-relevant outcomes.\n\n"
+        "## References\n\nR01.",
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+
+    assert payload["sections"]["Evidence Landscape"] != payload["sections"]["Key Findings"]
+    assert "|" not in payload["sections"]["Key Findings"]
+    assert "few direct clinical trials" in payload["sections"]["Key Findings"]
+
+
 def test_payload_empty_agent_env_still_uses_v3_slug(tmp_path: Path, monkeypatch: Any) -> None:
     run = _run(tmp_path)
     monkeypatch.setenv("AGENT_ID", "")

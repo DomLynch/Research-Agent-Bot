@@ -710,7 +710,23 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
     if not paper.is_file():
         return []
     import revision_coverage
-    return revision_coverage.unmet_asks(paper.read_text(encoding="utf-8"), _revision_asks(feedback))
+    unmet = revision_coverage.unmet_asks(paper.read_text(encoding="utf-8"), _revision_asks(feedback))
+    return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
+
+
+def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
+    if "key findings" not in ask.lower() and "evidence landscape" not in ask.lower():
+        return False
+    try:
+        payload = submit_bridge.build_payload(out_dir)
+    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+        return False
+    sections = payload.get("sections", {})
+    if not isinstance(sections, dict):
+        return False
+    landscape = str(sections.get("Evidence Landscape") or "")
+    findings = str(sections.get("Key Findings") or "")
+    return bool(findings and landscape and findings != landscape and "|" not in findings)
 
 
 def _retracted_cited_sources(out_dir: Path) -> list[str]:

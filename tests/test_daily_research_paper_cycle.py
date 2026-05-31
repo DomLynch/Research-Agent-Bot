@@ -973,6 +973,26 @@ def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert int(ledger.get("submitted") or 0) == 0
 
 
+def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\nAbstract overview.\n\n"
+        "## Results\n\n| Outcome | Signal |\n|---|---|\n| immune | mixed |\n\n"
+        "## Conclusion\n\nThe key finding is bounded human application with few direct clinical trials.\n",
+        encoding="utf-8",
+    )
+    _write_json(out_dir / "manifest.json", {"topic": "topic", "receipts": []})
+    _write_json(out_dir / "citation_registry.json", {})
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Remove duplication between Evidence Landscape and Key Findings",
+    )
+    assert not cycle._payload_revision_ask_satisfied(out_dir, "tighten the abstract")
+
+
 def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     _, feedback_seen = _run_coverage_cycle(

@@ -300,6 +300,14 @@ def _sections(markdown: str) -> dict[str, str]:
     }
 
 
+def _key_findings(abstract: str, discussion: str, limitations: str, conclusion: str) -> str:
+    """Short synthetic payload field, not a duplicate of Evidence Landscape."""
+    source = "\n\n".join(part for part in (conclusion, discussion, limitations, abstract) if part).strip()
+    sentences = re.findall(r"[^.!?]+[.!?]", source)
+    text = " ".join(s.strip() for s in sentences[:3]).strip() or source[:900]
+    return text[:1400]
+
+
 def _demote_headings(markdown: str) -> str:
     return re.sub(r"^(#{1,5})(\s+)", r"#\1\2", markdown.strip(), flags=re.M)
 
@@ -401,7 +409,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             "Research Question": f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? {abstract}",
             "Search Summary": methods or abstract,
             "Evidence Landscape": results or abstract,
-            "Key Findings": results or discussion or abstract,
+            "Key Findings": _key_findings(abstract, discussion, limitations, conclusion),
             "Limitations": limitations or discussion or abstract,
             "Gaps Identified": discussion or limitations or abstract,
             "Conclusion": conclusion or abstract,
