@@ -516,7 +516,15 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
     topics: list[str] = []
     submit_calls = 0
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
         return 0
@@ -1209,7 +1217,7 @@ def test_remote_revision_requests_keeps_only_v3_research_paper_revisions(monkeyp
     assert rows[0]["feedback"] == "Add caveat.; Reduce repetition."
 
 
-def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_does_not_let_stale_thin_manifest_block_healthy_corpus(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
     _prior_run(tmp_path, "aaa_thin_topic", receipts=6, tensions=0, primary=0)
@@ -1217,7 +1225,15 @@ def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: P
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     topics: list[str] = []
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
         return 0
@@ -1234,9 +1250,7 @@ def test_cycle_preflights_insufficient_prior_corpus_before_synthesis(tmp_path: P
         max_attempts=2,
     )
 
-    assert topics == ["zzz_solid_topic"]
-    assert ledger["attempts"][0]["submit_status"] == "preflight_insufficient_corpus"
-    assert ledger["attempts"][0]["failure_class"] == "B_corpus_fixable"
+    assert topics == ["aaa_thin_topic"]
     assert ledger["status"] == "submitted_to_researka"
 
 
@@ -1248,7 +1262,15 @@ def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     topics: list[str] = []
 
-    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
         return 0
@@ -1790,6 +1812,7 @@ def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Pat
     cycle._write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {"repeats": {
         f"epigenetic_clocks{s}journal_surface_not_passed": [older, recent],     # 2 in-window -> skip
         f"coenzyme_q10_ubiquinol{s}retracted_source_cited": [older, recent],    # D_no_action counts -> skip
+        f"gdf11{s}abstract_overclaim": [older, recent],                         # writer-fixable -> no
         f"ergothioneine{s}journal_surface_not_passed": [recent],                # single -> no
         f"creatine{s}cycle_budget_exhausted": [older, recent],                  # transient code -> no
         f"rapamycin{s}journal_surface_not_passed": [stale, stale],              # out of window -> no
@@ -1820,6 +1843,68 @@ def test_recent_preflight_blocked_topics_skip_after_one_recent_failure(tmp_path:
     )
 
     assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"epigenetic_clocks"}
+
+
+def test_corpus_repair_topics_include_preflight_and_retracted_only(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    for topic, status in [
+        ("epigenetic_clocks", "preflight_insufficient_corpus"),
+        ("coenzyme_q10_ubiquinol", "retracted_source_cited"),
+        ("gdf11", "abstract_overclaim"),
+    ]:
+        cycle._record_blockers(ledger_dir, "2026-05-31", [{"topic": topic, "gate_status": status, "submitted": 0}])
+
+    assert cycle._corpus_repair_topics(ledger_dir) == {"epigenetic_clocks", "coenzyme_q10_ubiquinol"}
+
+
+def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_thin_topic", target_journal=True)
+    _topic(tmp_path, "zzz_solid_topic", target_journal=True)
+    _prior_run(tmp_path, "aaa_thin_topic", receipts=6, tensions=0, primary=0)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-05-31",
+        [{"topic": "aaa_thin_topic", "submit_status": "preflight_insufficient_corpus", "submitted": 0}],
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: {
+        "status": "corpus_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    })
+    topics: list[str] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        topics.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-31",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["corpus_repairs"][0]["topic"] == "aaa_thin_topic"
+    assert ledger["topic_status"]["aaa_thin_topic"] == "ready"
+    assert topics == ["aaa_thin_topic"]
+    assert ledger["status"] == "submitted_to_researka"
 
 
 def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkeypatch) -> None:

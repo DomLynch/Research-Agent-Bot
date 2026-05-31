@@ -205,7 +205,12 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
     out: set[str] = set()
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
-        if not topic or code in _NON_REPEAT_STATUSES or not isinstance(stamps, list):
+        if (
+            not topic
+            or code in _NON_REPEAT_STATUSES
+            or _failure_class(code).startswith("C_")
+            or not isinstance(stamps, list)
+        ):
             continue
         recent = sum(1 for s in stamps if (t := _parse_time(str(s))) and t >= cutoff)
         if recent >= SURFACE_REPEAT_THRESHOLD:
@@ -1002,9 +1007,21 @@ def run_cycle(
         preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
         if preflight_blocked:
             ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
+        submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+        if run_synthesis and mode != "revise" and topic is None:
+            repairs: list[dict[str, Any]] = []
+            repairable = _corpus_repair_topics(ledger_dir) - terminal_excluded - submitted_topics
+            for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
+                repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
+                repairs.append({"topic": repair_topic, **repair})
+                if int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS:
+                    preflight_blocked.discard(repair_topic)
+                    surface_repeat.discard(repair_topic)
+            if repairs:
+                ledger["corpus_repairs"] = repairs
         ledger["topic_status"] = _topic_status_map(
             topics, terminal=terminal_excluded, surface_repeat=surface_repeat, preflight_blocked=preflight_blocked,
-            submitted=_recent_submitted_topics(topics, ledger_dir),
+            submitted=submitted_topics,
         )
         attempted: set[str] = set()
         submitted_total = 0
@@ -1092,7 +1109,12 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
-            preflight = _preflight(selected, runs_root, ledger_dir)
+            preflight = _preflight(
+                selected,
+                runs_root,
+                ledger_dir,
+                current_quant_claims=int(corpus.get("n_quant_claims") or 0),
+            )
             if not preflight["passed"]:
                 attempt = {
                     "topic": selected,
