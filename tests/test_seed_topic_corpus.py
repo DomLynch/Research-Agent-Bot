@@ -7,7 +7,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import seed_topic_corpus as seed  # noqa: E402
+import seed_topic_corpus as seed  # type: ignore[import-not-found]  # noqa: E402
 
 
 def test_abstract_fallback_writes_paper_sections_schema(tmp_path):
@@ -17,7 +17,7 @@ def test_abstract_fallback_writes_paper_sections_schema(tmp_path):
             "In older adults, mTOR inhibition improved immune response "
             "after vaccination in a randomized trial."
         ),
-        url="https://example.test/paper",
+        url="",
         year=2014,
         venue="Science Translational Medicine",
         doi="10.1126/scitranslmed.3009892",
@@ -107,3 +107,22 @@ def test_abstract_fallback_skips_hits_without_abstract(tmp_path):
     )
     assert seed._write_abstract_fallback(hit, tmp_path, reason="x") is None
     assert list(tmp_path.iterdir()) == []
+
+
+def test_docling_fallback_can_replace_abstract_fallback(tmp_path, monkeypatch):
+    hit = SimpleNamespace(
+        title="Closed paper with source PDF",
+        abstract="",
+        url="https://example.test/paper.pdf",
+        year=2024,
+        venue="Example",
+        doi="10.1/example",
+        pmid="123",
+    )
+
+    def fake_docling(**kwargs):
+        assert kwargs["source_uri"] == hit.url
+        return {"status": "passed", "paper_id": kwargs["paper_id"]}
+
+    monkeypatch.setattr(seed._optional_adapters, "write_docling_paper_sections", fake_docling)
+    assert seed._write_abstract_fallback(hit, tmp_path, reason="fulltext_unavailable") == "PMID123_closed_paper_with_source_pdf"

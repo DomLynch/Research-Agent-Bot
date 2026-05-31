@@ -60,14 +60,43 @@ def test_compile_run_writes_sidecars_with_optional_tools_skipped(tmp_path, monke
     assert (tmp_path / "run" / "polish_tensions_appendix.json").exists()
 
 
-def test_raw_pipe_table_fails_gate_and_is_removed_from_typst(tmp_path, monkeypatch) -> None:
+def test_canonical_pipe_table_is_advisory_and_removed_from_typst(tmp_path, monkeypatch) -> None:
     monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
     monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
     monkeypatch.setattr(polish, "_run_sciwrite", lambda _paper: {"status": "skipped"})
     run = _run_dir(tmp_path, table=True)
     report = polish.compile_run(run)
     typ = (run / "full_paper.typ").read_text(encoding="utf-8")
-    assert report["passed"] is False
-    assert report["gates"]["raw_pipe_tables"]["status"] == "failed"
+    assert report["passed"] is True
+    assert report["gates"]["raw_pipe_tables"]["status"] == "advisory"
     assert "| Study | Result |" not in typ
     assert "Structured table omitted from PDF main text" in typ
+
+
+def test_malformed_pipe_table_still_blocks(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
+    monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
+    monkeypatch.setattr(polish, "_run_sciwrite", lambda _paper: {"status": "skipped"})
+    run = _run_dir(tmp_path)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    (run / "full_paper.md").write_text(
+        paper.replace("The result is described in prose.", "| A | B |\n|---|---|\n| only-one-cell |"),
+        encoding="utf-8",
+    )
+    report = polish.compile_run(run)
+    assert report["passed"] is False
+    assert report["gates"]["raw_pipe_tables"]["status"] == "failed"
+
+
+def test_compile_run_writes_optional_adapter_sidecars(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
+    monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
+    monkeypatch.setattr(polish, "_run_sciwrite", lambda _paper: {"status": "skipped"})
+    run = _run_dir(tmp_path)
+    report = polish.compile_run(run)
+    assert report["docling_fallback"]["status"] == "skipped"
+    assert report["structured_output"]["status"] == "passed"
+    assert (run / "biomed_normalization.json").exists()
+    assert (run / "docling_fallback.json").exists()
+    assert (run / "offline_eval_harness.json").exists()
+    assert (run / "structured_output_contract.json").exists()

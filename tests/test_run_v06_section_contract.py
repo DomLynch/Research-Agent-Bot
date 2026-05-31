@@ -74,11 +74,15 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
         "full_paper.certification.md",
         "full_paper.final_verdict.json",
         "full_paper.review_patch_log.json",
+        "biomed_normalization.json",
+        "docling_fallback.json",
+        "offline_eval_harness.json",
         "quality_methods.json",
         "quality_methods.md",
         "polish_compiler.json",
         "polish_compiler.md",
         "polish_tensions_appendix.json",
+        "structured_output_contract.json",
     ):
         (tmp_path / name).write_text("x")
     (tmp_path / "full_paper.pdf").write_text("x")
@@ -93,6 +97,10 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "audit" / "quality_methods.json").exists()
     assert (tmp_path / "audit" / "polish_compiler.json").exists()
     assert (tmp_path / "audit" / "polish_tensions_appendix.json").exists()
+    assert (tmp_path / "audit" / "biomed_normalization.json").exists()
+    assert (tmp_path / "audit" / "docling_fallback.json").exists()
+    assert (tmp_path / "audit" / "offline_eval_harness.json").exists()
+    assert (tmp_path / "audit" / "structured_output_contract.json").exists()
     assert (tmp_path / "readable" / "polish_compiler.md").exists()
     assert (tmp_path / "plots" / "full_paper.pdf").exists()
     assert (tmp_path / "readable" / "quality_methods.md").exists()

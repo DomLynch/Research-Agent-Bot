@@ -15,6 +15,13 @@ def _write_json(path: Path, payload: dict[str, Any]) -> dict[str, Any]:
     return payload
 
 
+def _module_available(name: str) -> bool:
+    try:
+        return importlib.util.find_spec(name) is not None
+    except ModuleNotFoundError:
+        return False
+
+
 def _sections_from_markdown(markdown: str) -> dict[str, str]:
     sections = {k: "" for k in ("abstract", "introduction", "methods", "results", "discussion", "limitations", "conclusion", "references")}
     current = "abstract"
@@ -49,7 +56,7 @@ def write_docling_paper_sections(
         return {"status": "skipped", "reason": "no_source_uri"}
     if not (source_uri.startswith(("http://", "https://")) or Path(source_uri).exists()):
         return {"status": "skipped", "reason": "source_missing"}
-    if importlib.util.find_spec("docling.document_converter") is None:
+    if not _module_available("docling.document_converter"):
         return {"status": "skipped", "reason": "docling_not_installed"}
     try:
         from docling.document_converter import DocumentConverter  # type: ignore[import-not-found]
@@ -127,7 +134,7 @@ def validate_structured_output(payload: dict[str, Any], schema: dict[str, str], 
     result = {
         "status": "passed" if not errors else "failed",
         "adapter": "stdlib_schema",
-        "outlines_available": importlib.util.find_spec("outlines") is not None,
+        "outlines_available": _module_available("outlines"),
         "errors": errors,
     }
     return _write_json(out_path, result) if out_path else result
@@ -145,7 +152,7 @@ def run_offline_eval_harness(run_dir: Path, report: dict[str, Any], out_path: Pa
         "status": "passed" if all(checks.values()) else "failed",
         "checks": checks,
         "optional_eval_tools": {
-            name: importlib.util.find_spec(name) is not None
+            name: _module_available(name)
             for name in ("deepeval", "dspy", "textgrad")
         },
     }
