@@ -288,7 +288,18 @@ def _section(markdown: str, heading: str, *, fallback: str = "") -> str:
         re.M | re.S,
     )
     match = pattern.search(markdown)
-    return " ".join((match.group("body") if match else fallback).split())[:1400]
+    return _clip_text(" ".join((match.group("body") if match else fallback).split()))
+
+
+def _clip_text(text: str, *, limit: int = 1400) -> str:
+    text = " ".join(text.split())
+    if len(text) <= limit:
+        return text
+    head = text[:limit].rstrip()
+    cut = max(head.rfind("."), head.rfind("!"), head.rfind("?"))
+    if cut >= limit // 2:
+        return head[:cut + 1]
+    return head.rstrip(" ,;:-") + "."
 
 
 def _sections(markdown: str) -> dict[str, str]:
@@ -305,7 +316,7 @@ def _key_findings(abstract: str, discussion: str, limitations: str, conclusion: 
     source = "\n\n".join(part for part in (conclusion, discussion, limitations, abstract) if part).strip()
     sentences = re.findall(r"[^.!?]+[.!?]", source)
     text = " ".join(s.strip() for s in sentences[:3]).strip() or source[:900]
-    return text[:1400]
+    return _clip_text(text)
 
 
 def _demote_headings(markdown: str) -> str:
@@ -406,7 +417,10 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "artifact_type": "research_paper",
         "body_markdown": paper.strip(),
         "sections": {
-            "Research Question": f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? {abstract}",
+            "Research Question": _clip_text(
+                f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? "
+                f"{_clip_text(abstract, limit=650)}",
+            ),
             "Search Summary": methods or abstract,
             "Evidence Landscape": results or abstract,
             "Key Findings": _key_findings(abstract, discussion, limitations, conclusion),

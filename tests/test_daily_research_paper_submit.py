@@ -94,6 +94,24 @@ def test_payload_key_findings_distill_not_duplicate_evidence_landscape(tmp_path:
     assert "few direct clinical trials" in payload["sections"]["Key Findings"]
 
 
+def test_payload_text_fields_do_not_truncate_mid_sentence(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    long_abstract = " ".join(f"Sentence {i} supports a bounded evidence interpretation." for i in range(80))
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        f"## Abstract\n\n{long_abstract}\n\n"
+        "## Results\n\nResult sentence.\n\n"
+        "## Conclusion\n\nConclusion sentence.\n\n",
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+
+    assert payload["abstract"][-1] == "."
+    assert payload["sections"]["Research Question"][-1] == "."
+    assert len(payload["sections"]["Research Question"]) < 900
+
+
 def test_payload_empty_agent_env_still_uses_v3_slug(tmp_path: Path, monkeypatch: Any) -> None:
     run = _run(tmp_path)
     monkeypatch.setenv("AGENT_ID", "")
