@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import table_renderer as tr  # noqa: E402
+import table_renderer as tr  # type: ignore[import-not-found]  # noqa: E402
 
 
 @dataclass
@@ -538,6 +538,19 @@ def test_render_all_tables_pointer_explains_table_layout() -> None:
     assert "supplemental" in md.lower()
 
 
+def test_public_evidence_snapshot_is_compact_and_not_pipe_table() -> None:
+    receipts = [
+        _FakeReceipt(receipt_id="Depommier 2019", evidence_tier="A1"),
+        _FakeReceipt(receipt_id="Cani 2022", evidence_tier="B2", directness="indirect"),
+    ]
+    md = tr.render_public_evidence_snapshot(receipts, max_studies=1)
+    assert "## Evidence Snapshot" in md
+    assert "Depommier 2019" in md
+    assert "Cani 2022" not in md
+    assert "|---|" not in md
+    assert "\n|" not in md
+
+
 # ----- 2nd-pass reviewer fix tests (post second 2x review on Fix #6) ----
 
 
@@ -607,8 +620,8 @@ def test_replace_paper_ids_uses_registry_when_provided() -> None:
     sys.path.insert(0, str(
         Path(__file__).resolve().parent.parent / "scripts"
     ))
-    import run_v06_synthesis as orch  # noqa: E402
-    import citation_registry as cr  # noqa: E402
+    import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
+    import citation_registry as cr  # type: ignore[import-not-found]  # noqa: E402
 
     @dataclass
     class _SchemaReceipt:

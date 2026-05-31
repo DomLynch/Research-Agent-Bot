@@ -316,12 +316,13 @@ def test_restore_conclusion_heading_after_limitations_citations() -> None:
     assert out.index("## Conclusion") < out.index("## Structured Evidence Tables")
 
 
-def test_structured_tables_stay_in_public_body_for_numeric_density() -> None:
+def test_public_evidence_snapshot_stays_in_body_without_raw_tables() -> None:
     paper = "## Conclusion\n\nThe synthesis remains bounded."
-    tables = "## Structured Evidence Tables\n\n| A | B |\n|---|---|\n| n=120 | p=0.01 |\n"
+    tables = "## Evidence Snapshot\n\n- Study A; N=n=120; p=0.01.\n"
     out = orch._append_structured_tables_to_public_body(paper, tables)
-    assert "## Structured Evidence Tables" in out
-    assert out.index("## Conclusion") < out.index("## Structured Evidence Tables")
+    assert "## Evidence Snapshot" in out
+    assert "|---|" not in out
+    assert out.index("## Conclusion") < out.index("## Evidence Snapshot")
 
 
 def test_restore_required_section_body_when_post_processing_strips_depth() -> None:
@@ -559,9 +560,28 @@ def test_results_summary_table_is_manifest_driven_and_idempotent() -> None:
     }
     out, inserted = orch._ensure_results_summary_table(paper, manifest)
     assert inserted is True
-    assert "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |" in out
-    assert "| Cardiometabolic | n=2; claims=7 | benefit signal in 1/2 sources |" in out
-    assert "| Muscle Function | n=1; claims=2 | adverse or limiting signal in 1/1 sources |" in out
+    assert "### Results Summary" in out
+    assert "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |" not in out
+    assert "|---|" not in out
+    assert "- Cardiometabolic: n=2; claims=7; benefit signal in 1/2 sources" in out
+    assert "- Muscle Function: n=1; claims=2; adverse or limiting signal in 1/1 sources" in out
     out2, inserted2 = orch._ensure_results_summary_table(out, manifest)
     assert inserted2 is False
     assert out2 == out
+
+
+def test_canonical_rct_topic_pack_override_wins_before_abstract_inference() -> None:
+    old_pack = orch._TOPIC_PACK
+    try:
+        orch._TOPIC_PACK = SimpleNamespace(canonical_rct_paper_ids=("Depommier",))
+        tier, directness = orch._classify_paper_tier(
+            "Depommier_2019_akkermansia",
+            1,
+            {
+                "title": "Akkermansia abundance observational cohort",
+                "abstract": "This observational cohort associated abundance with biomarkers.",
+            },
+        )
+    finally:
+        orch._TOPIC_PACK = old_pack
+    assert (tier, directness) == ("A1", "direct")

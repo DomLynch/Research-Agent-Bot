@@ -123,6 +123,33 @@ def test_surface_gate_flags_public_topic_slug_artifacts():
     assert any(i.code == "topic_slug_artifact" for i in report.issues)
 
 
+def test_surface_gate_flags_platform_wrapper_artifacts():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("abstract1", "DECISION: ACCEPT", 1)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "public_artifact" and "decision: accept" in i.detail for i in report.issues)
+
+
+def test_surface_gate_flags_not_extracted_preview_text():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("abstract1", "not extracted", 1)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "public_artifact" and "not extracted" in i.detail for i in report.issues)
+
+
+def test_surface_gate_flags_raw_public_pipe_tables_outside_qei():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Results\n\n",
+        "## Results\n\n| Outcome | Finding |\n|---|---|\n| glucose | lower |\n\n",
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("raw markdown table" in i.detail for i in report.issues)
+
+
 def test_malformed_qei_row_in_appendix_does_not_block_public_body():
     paper = (
         _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
