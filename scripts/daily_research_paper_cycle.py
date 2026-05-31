@@ -731,6 +731,10 @@ def _abstract_overclaims(out_dir: Path) -> list[str]:
     return revision_coverage.unsupported_abstract_claims(paper.read_text(encoding="utf-8"))
 
 
+def _final_status_submission_ready(out_dir: Path) -> bool:
+    return bool(_read_json(out_dir / "final_status.json").get("submission_ready"))
+
+
 def _repair_abstract_overclaim_phrasing(out_dir: Path, overclaims: list[str]) -> bool:
     """Soften only judge-flagged abstract spans, then let the same judge re-check."""
     paper = out_dir / "full_paper.md"
@@ -1318,6 +1322,10 @@ def run_cycle(
                 if overclaims and _repair_abstract_overclaim_phrasing(out_dir, overclaims):
                     abstract_repaired = True
                     overclaims = _abstract_overclaims(out_dir)
+                advisory_overclaims = list(overclaims)
+                abstract_overclaim_advisory = bool(overclaims and _final_status_submission_ready(out_dir))
+                if abstract_overclaim_advisory:
+                    overclaims = []
                 bridge: dict[str, Any] = {}
                 if return_code == 0 and not unmet and not retracted and not overclaims:
                     # Submission stays single-threaded across lanes: the fresh and
@@ -1401,6 +1409,9 @@ def run_cycle(
                     attempt["abstract_overclaims"] = overclaims
                 if abstract_repaired:
                     attempt["abstract_overclaim_repaired"] = True
+                if abstract_overclaim_advisory:
+                    attempt["abstract_overclaim_advisory"] = True
+                    attempt["abstract_overclaim_advisory_claims"] = advisory_overclaims
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:

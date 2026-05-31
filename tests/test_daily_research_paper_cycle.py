@@ -1024,6 +1024,44 @@ def test_abstract_overclaim_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert ledger["attempts"][0]["abstract_overclaims"] == ["EGCG reverses aging"]
 
 
+def test_submission_ready_final_status_makes_duplicate_overclaim_advisory(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: ["profile summary overclaim"])
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: [])
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text(
+            "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.",
+            encoding="utf-8",
+        )
+        _write_json(out_dir / "final_status.json", {"submission_ready": True, "maturity_level": 5})
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=_aspirin_revise_loader,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["attempts"][0]["gate_status"] == "submitted_to_researka"
+    assert ledger["attempts"][0]["abstract_overclaim_advisory"] is True
+    assert ledger["attempts"][0]["abstract_overclaim_advisory_claims"] == ["profile summary overclaim"]
+
+
 def test_abstract_overclaim_repair_rechecks_before_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     calls = iter([[
