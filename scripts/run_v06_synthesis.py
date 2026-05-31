@@ -2299,6 +2299,38 @@ def _replace_paper_ids_with_author_year(
     return out
 
 
+def _review_heavy_abstraction_note(receipts: list[ReceiptSummary]) -> str:
+    total = len(receipts)
+    if total < 5:
+        return ""
+    directness = Counter(str(r.directness or "unclassified").lower() for r in receipts)
+    direct = directness.get("direct", 0)
+    abstracted = sum(directness.get(k, 0) for k in ("review", "indirect", "mechanistic"))
+    if abstracted < max(4, int(total * 0.6)) and direct:
+        return ""
+    direct_phrase = f"{direct} are classified as direct clinical evidence"
+    if direct == 0:
+        direct_phrase = "none are classified as direct clinical evidence"
+    return (
+        f"**Evidence-abstraction note.** The {total} retained reference papers are "
+        f"not {total} independent primary clinical trials: {abstracted} are review, "
+        f"indirect, or mechanistic source-level summaries, and {direct_phrase}. "
+        "Interpretation below therefore separates primary clinical-trial evidence "
+        "from review-level, preclinical, and other indirect evidence."
+    )
+
+
+def _insert_review_heavy_abstraction_note(paper_md: str, receipts: list[ReceiptSummary]) -> str:
+    note = _review_heavy_abstraction_note(receipts)
+    if not note or "Evidence-abstraction note." in paper_md:
+        return paper_md
+    match = re.search(r"(?ms)^##\s+Abstract\b.*?(?=^##\s+|\Z)", paper_md)
+    if not match:
+        return paper_md.rstrip() + "\n\n" + note + "\n"
+    abstract = match.group(0).rstrip()
+    return paper_md[:match.start()] + abstract + "\n\n" + note + "\n\n" + paper_md[match.end():].lstrip()
+
+
 def _append_references_block(
     paper_md: str, receipts: list[ReceiptSummary],
     *, registry: dict | None = None,
