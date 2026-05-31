@@ -76,6 +76,8 @@ def test_static_reader_exports_from_run_dir(tmp_path: Path) -> None:
     assert index == out / "index.html"
     assert "full_paper.md" in index.read_text(encoding="utf-8")
     assert (out / "versions.html").exists()
+    assert 'class="reader-shell"' in index.read_text(encoding="utf-8")
+    assert '<aside id="audit" class="audit-pane">' in index.read_text(encoding="utf-8")
 
 
 def test_static_reader_prefers_reader_manifest(tmp_path: Path) -> None:

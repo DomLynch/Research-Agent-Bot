@@ -36,15 +36,18 @@ def render_index(manifest: dict[str, Any], base: Path) -> str:
         "<!doctype html>\n"
         '<html lang="en">\n<head><meta charset="utf-8">'
         f"<title>{topic}</title>"
+        "<style>.reader-shell{display:grid;grid-template-columns:minmax(0,3fr) minmax(18rem,1fr);gap:2rem;align-items:start}.audit-pane{border-left:1px solid #ddd;padding-left:1rem}@media(max-width:800px){.reader-shell{display:block}.audit-pane{border-left:0;padding-left:0}}</style>"
         f'<script type="application/ld+json">{json_ld}</script></head>\n<body>\n'
         f"<h1>{topic}</h1>\n"
         f"<p><strong>Generated:</strong> {generated}</p>\n"
         f"<p>{thesis}</p>\n"
-        f"{trust}\n"
+        '<main class="reader-shell">\n'
+        f'<section class="manuscript-pane">{paper}</section>\n'
+        f'<aside id="audit" class="audit-pane">{trust}\n'
         "<h2>Artifacts</h2>\n"
         f"<ul>\n{items}\n</ul>\n"
-        "<p><a href=\"versions.html\">Version index</a></p>\n"
-        f"{paper}\n"
+        "<p><a href=\"versions.html\">Version index</a></p></aside>\n"
+        "</main>\n"
         "</body>\n</html>\n"
     )
 
