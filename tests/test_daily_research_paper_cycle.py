@@ -248,6 +248,54 @@ def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monke
     assert calls["candidate_run"] == tmp_path / "runs" / ledger["attempts"][-1]["out_dir"]
 
 
+def test_cycle_retries_real_submit_bridge_when_current_run_rechecks_eligible(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "curcumin_inflammaging")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TOKEN_ENV"))
+    calls: list[Path] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def fake_submit_bridge(**kwargs: Any) -> dict[str, Any]:
+        calls.append(kwargs["candidate_run"])
+        if len(calls) == 1:
+            return {"status": "no_eligible_research_paper", "submitted": 0, "published": 0}
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    def fake_select_candidate(*_args: Any, candidate_run: Path | None = None, **_kwargs: Any) -> tuple[Path | None, list[dict[str, str]]]:
+        assert candidate_run is not None
+        return candidate_run, [{"run": candidate_run.name, "status": "eligible"}]
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle.submit_bridge, "run_cycle", fake_submit_bridge)
+    monkeypatch.setattr(cycle.submit_bridge, "select_candidate", fake_select_candidate)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-31",
+        run_synthesis=True,
+        submit=True,
+        topic="curcumin_inflammaging",
+        remote_loader=lambda: (set(), None),
+        decision_poll_seconds=0,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert len(calls) == 2
+    assert ledger["submit_bridge"]["retry_after_no_eligible"]["eligibility_recheck"][0]["status"] == "eligible"
+
+
 def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Path, monkeypatch) -> None:
     seen: dict[str, Any] = {}
 
