@@ -605,7 +605,7 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
     ]
 
 
-def test_cycle_retries_same_topic_before_next_topic(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_rotates_after_same_gate_fails_twice(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin")
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -646,10 +646,11 @@ def test_cycle_retries_same_topic_before_next_topic(tmp_path: Path, monkeypatch)
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert topics == ["creatine", "creatine", "creatine"]
-    assert [a["revise_attempt"] for a in ledger["attempts"]] == [1, 2, 3]
+    assert topics == ["creatine", "creatine", "rapamycin"]
+    assert [a["revise_attempt"] for a in ledger["attempts"]] == [1, 2, 1]
     assert "R2" in ledger["attempts"][1]["out_dir"]
-    assert "R3" in ledger["attempts"][2]["out_dir"]
+    assert ledger["attempts"][1]["same_gate_repeat_stop"] is True
+    assert "R3" not in ledger["attempts"][2]["out_dir"]
 
 
 def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Path, monkeypatch) -> None:
