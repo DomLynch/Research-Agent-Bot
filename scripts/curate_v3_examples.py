@@ -72,6 +72,7 @@ def _clean_public_manuscript(markdown: str) -> str:
     out = markdown
     for heading in ("Quantitative Evidence Index", "Structured Evidence Tables", "Inferential Bridge"):
         out = re.sub(rf"(?ms)^##\s+{re.escape(heading)}\b.*?(?=^##\s+|\Z)", "", out)
+    out = re.sub(r"(?ms)^\|.+?\|\n\|[-:| ]+\|\n(?:\|.*?\|\n?)+", "", out)
     out = re.sub(r"\n{3,}", "\n\n", out).strip()
     return out + "\n"
 

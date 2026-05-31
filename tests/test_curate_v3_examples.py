@@ -14,7 +14,7 @@ def _run(root: Path, name: str, score: float) -> Path:
     run = root / f"synthesis-{name}-v06"
     run.mkdir(parents=True)
     (run / "full_paper.md").write_text(
-        "# Paper\n\n## Results\n\nClean.\n\n## Structured Evidence Tables\n\n| A | B |\n|---|---|\n| x | y |\n\n## Conclusion\n\nDone.\n",
+        "# Paper\n\n## Results\n\nClean.\n\n| Outcome | Finding |\n|---|---|\n| glucose | lower |\n\n## Structured Evidence Tables\n\n| A | B |\n|---|---|\n| x | y |\n\n## Conclusion\n\nDone.\n",
         encoding="utf-8",
     )
     (run / "paper_ir.json").write_text("{}", encoding="utf-8")
