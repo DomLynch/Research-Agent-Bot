@@ -17,7 +17,9 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
         note = (
             "\n\n**Outcome-class note:** Contextual Adjacent Evidence denotes "
             "background, boundary-condition, or adjacent-outcome sources. It is "
-            "not pooled with direct outcome evidence.\n"
+            "not pooled with direct outcome evidence; these sources bound scope, "
+            "safety, methods, and translation rather than serving as equal-weight "
+            "support for the main efficacy claim.\n"
         )
         text, n = re.subn(r"(^## Results\b)", r"\1" + note, text, count=1, flags=re.M)
         if n:

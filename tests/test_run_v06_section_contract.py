@@ -780,6 +780,19 @@ def test_results_summary_table_is_manifest_driven_and_idempotent() -> None:
     assert out2 == out
 
 
+def test_results_summary_treats_null_as_unadjudicated_not_negative() -> None:
+    paper = "## Results\n\nBody.\n"
+    manifest = {"receipts": [
+        {"outcome_class": "skeletal_fracture_bone", "effect_direction": "null", "directness": "review", "n_claims": 100},
+        {"outcome_class": "skeletal_fracture_bone", "effect_direction": "null", "directness": "review", "n_claims": 42},
+    ]}
+    out, inserted = orch._ensure_results_summary_table(paper, manifest)
+    assert inserted is True
+    assert "no extracted directional signal in 2/2 sources" in out
+    assert "directness: 2 review" in out
+    assert "null signal in 2/2 sources" not in out
+
+
 def test_canonical_rct_topic_pack_override_wins_before_abstract_inference() -> None:
     old_pack = orch._TOPIC_PACK
     try:

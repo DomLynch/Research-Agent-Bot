@@ -1136,11 +1136,11 @@ def _ensure_results_summary_table(
         signal_name = {
             "positive": "benefit signal",
             "negative": "adverse or limiting signal",
-            "null": "null signal",
+            "null": "no extracted directional signal",
             "mixed": "mixed signal",
         }.get(dominant, "mixed signal")
         direct_parts = [
-            f"{directness[k]} {k}" for k in ("direct", "indirect", "mechanistic")
+            f"{directness[k]} {k}" for k in ("direct", "indirect", "mechanistic", "review")
             if directness.get(k)
         ]
         claim_n = sum(int(r.get("n_claims") or 0) for r in group)

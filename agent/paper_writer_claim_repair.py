@@ -97,9 +97,9 @@ def repair_abstract_claim_strength(body_md: str) -> tuple[str, int]:
     replacements = (
         (r"\bpositive signals\b", "context-specific signals"),
         (r"\b[Dd]emonstrated\s+(?:in|by)\b", "suggested by"),
-        (r"\b[Ee]stablish(?:es|ed)?\b", "is consistent with"),
-        (r"\b[Pp]rove(?:s|d)?\b", "is consistent with"),
-        (r"\b[Cc]onfirm(?:s|ed)?\b", "is consistent with"),
+        (r"(?<!not yet )(?<!not )(?<!cannot )\b[Ee]stablish(?:es|ed)?\b", "is consistent with"),
+        (r"(?<!not yet )(?<!not )(?<!cannot )\b[Pp]rove(?:s|d)?\b", "is consistent with"),
+        (r"(?<!not yet )(?<!not )(?<!cannot )\b[Cc]onfirm(?:s|ed)?\b", "is consistent with"),
         (r"\bsupport(?:s|ed)? biological plausibility for\b", "are consistent with biological plausibility but do not establish"),
         (r"\bIn a preclinical model,\s*", "In preclinical evidence, "),
         (r"\b[Rr]obust\s+(effects?|benefits?|signals?)\b", r"context-dependent \1"),
