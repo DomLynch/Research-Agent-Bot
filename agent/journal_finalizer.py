@@ -599,9 +599,9 @@ def _phase_f_reconcile_results_table(
             if effect_counts else "unclear"
         )
         signal_cell = (
-            f"{top_effect} signal in {effect_counts.get(top_effect, 0)}/{n} sources"
-            if n else "no sources"
-        )
+            f"no extracted directional signal in {effect_counts.get(top_effect, 0)}/{n} sources"
+            if top_effect == "null" else f"{top_effect} signal in {effect_counts.get(top_effect, 0)}/{n} sources"
+        ) if n else "no sources"
         limitation_cell = (
             "single-source slice; hypothesis-generating"
             if n <= 1 else "limited corpus depth in this outcome class"
