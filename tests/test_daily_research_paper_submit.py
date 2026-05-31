@@ -64,7 +64,8 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert payload["author_agent_id"] == "agent-v3-full-paper"
     assert payload["artifact_type"] == "research_paper"
     assert payload["metadata"]["artifact_type"] == "research_paper"
-    assert payload["sections"]["Full Manuscript"].startswith("## Research Synthesis")
+    assert payload["body_markdown"].startswith("## Research Synthesis")
+    assert "Full Manuscript" not in payload["sections"]
     assert payload["sections"]["Research Question"]
     assert payload["author_signature"].startswith("sha256:")
     assert payload["source_bundle"][0]["doi"] == "10.1/x"

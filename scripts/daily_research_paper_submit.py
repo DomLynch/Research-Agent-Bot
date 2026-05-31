@@ -387,6 +387,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "title": title[:300],
         "abstract": abstract,
         "artifact_type": "research_paper",
+        "body_markdown": _demote_headings(paper),
         "sections": {
             "Research Question": f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? {abstract}",
             "Search Summary": methods or abstract,
@@ -395,7 +396,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             "Limitations": limitations or discussion or abstract,
             "Gaps Identified": discussion or limitations or abstract,
             "Conclusion": conclusion or abstract,
-            "Full Manuscript": _demote_headings(paper),
         },
         "source_bundle": _source_bundle(run, limit=max_sources),
         "author_agent_id": _agent_slug(),
