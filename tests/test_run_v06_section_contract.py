@@ -453,6 +453,30 @@ def test_public_section_backstop_covers_abstract() -> None:
     assert orch._word_count(md) >= 150
 
 
+def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 1,
+            "n_high_confidence_claims_total": 8,
+            "n_non_orthogonal_tensions": 2,
+            "receipts": [{
+                "directness": "indirect",
+                "effect_direction": "null",
+                "outcome_class": "frailty",
+                "citation_token": "Example 2025",
+            }],
+        }
+        md = orch._compile_public_section_backstop("Abstract", 150)
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+
+    assert "Positive study-level signals concentrate in no dominant outcome class" not in md
+    assert "mechanistic plausibility" not in md
+    assert "No single positive outcome class dominates the retained corpus" in md
+    assert "the retained clinical and adjacent evidence profile defines the scope" in md
+
+
 def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -> None:
     md = orch._compile_public_section_backstop("Results", 500)
     body = md.split("\n\n", 1)[1]
