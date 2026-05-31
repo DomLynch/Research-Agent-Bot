@@ -55,7 +55,10 @@ from agent.paper_writer import render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
 )
-from agent.paper_writer_claim_repair import repair_claim_strength  # noqa: E402
+from agent.paper_writer_claim_repair import (  # noqa: E402
+    repair_abstract_claim_strength,
+    repair_claim_strength,
+)
 from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
@@ -213,6 +216,16 @@ def _section_words_from_paper(paper_md: str) -> dict[str, int]:
         if slug:
             out[slug] = len(body.split())
     return out
+
+
+def _repair_abstract_claim_strength_before_gate(paper_md: str) -> tuple[str, bool]:
+    match = re.search(r"(?ms)^##\s+Abstract\b.*?(?=^##\s+|\Z)", paper_md)
+    if not match:
+        return paper_md, False
+    abstract, changed = repair_abstract_claim_strength(match.group(0))
+    if not changed:
+        return paper_md, False
+    return paper_md[:match.start()] + abstract + paper_md[match.end():], True
 
 
 def _first_section_paragraph(section_md: str) -> str:
@@ -2774,6 +2787,9 @@ async def _run(
     full_paper_md = _restore_rendered_section_contract(
         full_paper_md, sections,
     )
+    full_paper_md, abstract_strength_repaired = (
+        _repair_abstract_claim_strength_before_gate(full_paper_md)
+    )
     (out_dir / "run_mode_contract.json").write_text(
         json.dumps(dataclasses.asdict(contract), indent=2)
     )
@@ -2818,6 +2834,7 @@ async def _run(
         "section_words": section_words,
         "total_words": word_count,
         "claim_strength_repairs": len(repair_log),
+        "abstract_claim_strength_repaired": abstract_strength_repaired,
         "n_llm_calls": len(ledger.calls),
         "total_cost_usd": round(
             sum(c.estimated_cost_usd for c in ledger.calls), 6,

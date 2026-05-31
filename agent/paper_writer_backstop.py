@@ -1,18 +1,4 @@
-"""Fix #55 v2: orchestrator-side section-rerender backstop.
-
-The writer's per-section retry loop (SECTION_RETRY_BUDGET=2, so
-3 attempts max) sometimes still produces below-floor Discussion /
-Conclusion / Cross-Domain sections, especially on thin corpora.
-This backstop runs AFTER all sections render: for each audit-gated
-section that came in below its Q-audit floor, attempt ONE more
-rerender with an aggressive audit-aware prompt that names the
-exact word target. Single retry (4th attempt) — bounds wall time.
-
-Pure helper module: takes the rendered sections + writer context,
-returns a possibly-updated sections dict. No I/O beyond the LLM
-calls themselves; the caller in render_full_paper handles logging
-and disk writes.
-"""
+"""Section rerender and deterministic writer backstops."""
 from __future__ import annotations
 
 import asyncio
@@ -30,7 +16,8 @@ from agent.paper_writer_helpers import (
     section_word_count as _section_word_count,
 )
 from agent.synthesis_schemas import (
-    ReceiptSummary, SectionName, SynthesisSection, TensionMatrix,
+    ReceiptSummary, SectionName, SynthesisSection, SynthesisThesis,
+    TensionMatrix,
 )
 
 
@@ -45,13 +32,48 @@ AUDIT_GATED_FLOORS: Mapping[str, int] = {
 BACKSTOP_CALL_TIMEOUT_SEC = 90.0
 
 
+def repair_discussion_minimum_quality(
+    section: SynthesisSection,
+    thesis: SynthesisThesis,
+) -> SynthesisSection:
+    body = section.body_md.strip()
+    if not body.lower().startswith("## discussion"):
+        return section
+    inserts: list[str] = []
+    if "**Thesis:**" not in body:
+        thesis_text = " ".join(str(thesis.text or "").split()).strip() or (
+            "the synthesis supports only the bounded interpretation "
+            "that survives the included evidence profile"
+        )
+        inserts.append(
+            f"**Thesis:** {thesis_text.rstrip('.')}. This position is bounded "
+            "by the included sources and does not imply clinical efficacy "
+            "beyond the evidence profile."
+        )
+    if "**Resolution criteria:**" not in body:
+        inserts.append(
+            "**Resolution criteria:** This thesis should be revised if "
+            "larger direct human studies, prespecified endpoints, longer "
+            "follow-up, or consistent cross-outcome effect directions contradict "
+            "the current evidence profile."
+        )
+    if not inserts:
+        return section
+    if inserts and inserts[0].startswith("**Thesis:**"):
+        body = body.replace("## Discussion", "## Discussion\n\n" + inserts.pop(0), 1)
+    if inserts:
+        body = body.rstrip() + "\n\n" + "\n\n".join(inserts)
+    return SynthesisSection(
+        name=section.name,
+        body_md=body.rstrip() + "\n",
+        anchors=section.anchors,
+    )
+
+
 def build_backstop_prompt(
     base_prompt: str, section_name: str, prev_words: int,
     floor: int,
 ) -> str:
-    """Append a CRITICAL AUDIT REQUIREMENT block to the section's
-    base prompt, naming the exact target word count + the audit
-    consequence."""
     return (
         base_prompt
         + f"\n\n## CRITICAL AUDIT REQUIREMENT\n\n"
@@ -82,13 +104,7 @@ async def apply_section_backstop(
     write_anchored_fn,
     write_scoped_fn,
 ) -> dict[SectionName, SynthesisSection]:
-    """Apply the audit-aware backstop. Returns the updated sections
-    dict (in-place mutation; same object returned for chaining).
-
-    For each AUDIT_GATED_FLOORS section currently below floor,
-    attempts ONE more rerender with the audit-aware prompt. Keeps
-    whichever attempt produces more words (never makes the section
-    shorter than what the writer's main loop produced)."""
+    """Apply one bounded audit-aware rerender to below-floor sections."""
     for sec_name, floor in AUDIT_GATED_FLOORS.items():
         section_name = cast(SectionName, sec_name)
         cur = sections.get(section_name)
@@ -212,5 +228,6 @@ __all__ = [
     "AUDIT_GATED_FLOORS",
     "BACKSTOP_CALL_TIMEOUT_SEC",
     "build_backstop_prompt",
+    "repair_discussion_minimum_quality",
     "apply_section_backstop",
 ]

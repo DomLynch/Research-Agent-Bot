@@ -301,6 +301,8 @@ def test_full_render_repairs_abstract_and_discussion_before_assembly(monkeypatch
 
     assert "context-specific signals" in md
     assert "was reported to attenuate" in md
+    assert "**Thesis:**" in md
+    assert "**Resolution criteria:**" in md
     assert "substantive discussion" in md
     assert order.index("backstop") < order.index("conclusion")
 

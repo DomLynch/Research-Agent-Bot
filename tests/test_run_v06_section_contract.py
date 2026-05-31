@@ -585,6 +585,26 @@ def test_restore_public_surface_floors_respects_thin_review_type() -> None:
     assert "## Discussion" not in out
 
 
+def test_abstract_claim_strength_repair_runs_before_gate() -> None:
+    paper = (
+        "# Research Synthesis\n\n"
+        "## Abstract\n\n"
+        "Robust signals demonstrated in preclinical models justify further targeted testing.\n\n"
+        "## Methods\n\n" + _words(320) + "\n\n"
+        "## Results\n\n" + _words(520) + "\n\n"
+        "## Limitations\n\n" + _words(260) + "\n\n"
+        "## Conclusion\n\n" + _words(260) + "\n\n"
+        "## References\n\nRef.\n"
+    )
+
+    out, changed = orch._repair_abstract_claim_strength_before_gate(paper)
+
+    assert changed is True
+    assert "context-dependent signals" in out
+    assert "suggested by preclinical models" in out
+    assert "can motivate further targeted testing" in out
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (

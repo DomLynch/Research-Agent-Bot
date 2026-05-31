@@ -156,6 +156,7 @@ _AUTHOR_YEAR_RE = re.compile(
     r"\b([A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
     r"(?:\s+et\s+al\.)?\s+((?:19|20)\d{2}[a-z]?)\b"
 )
+_MONTH_AUTHOR_TOKENS = set("january february march april may june july august september october november december".split())
 
 
 def evaluate_journal_surface(
@@ -685,9 +686,10 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
     seen: set[str] = set()
     out: list[str] = []
     for match in _AUTHOR_YEAR_RE.finditer(_journal_body(paper_md)):
-        token = f"{match.group(1)} {match.group(2)}"
-        if match.group(1).casefold().endswith(("'s", "’s")):
+        author = match.group(1)
+        if author.casefold().rstrip(".") in _MONTH_AUTHOR_TOKENS or author.casefold().endswith(("'s", "’s")):
             continue
+        token = f"{author} {match.group(2)}"
         # Compare via _fold so diacritic mismatches (Hernández inline vs
         # Hernandez in References) don't false-positive. Report the
         # original (un-folded) inline token so the issue message
@@ -728,10 +730,7 @@ def orphan_reference_tokens(paper_md: str) -> tuple[str, ...]:
     or a citation-token mismatch (the bug that surfaced 'renovar 2023'
     as the only place that source appeared)."""
     body = _journal_body(paper_md)
-    body_folded = {
-        _fold(f"{m.group(1)} {m.group(2)}")
-        for m in _AUTHOR_YEAR_RE.finditer(body)
-    }
+    body_folded = {_fold(f"{m.group(1)} {m.group(2)}") for m in _AUTHOR_YEAR_RE.finditer(body) if m.group(1).casefold().rstrip(".") not in _MONTH_AUTHOR_TOKENS}
     out: list[str] = []
     seen: set[str] = set()
     for raw, folded in _reference_entries(paper_md):

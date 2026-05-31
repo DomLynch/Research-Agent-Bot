@@ -1,29 +1,4 @@
-"""Day 10.17 Fix B — claim-strength repair pass.
-
-Q10 in synthesis_audit_q8q9q10.py catches sentences that cite tier-C
-or mechanistic receipts AND use causal verbs ("improves / demonstrates
-/ robust / potent") AND lack any Q10 hedge phrase ("may / suggests /
-consistent with / etc."). The Day 10.17 e2e run produced 1-3 such
-sentences per paper despite the writer prompts asking for hedges.
-Prompt obedience is unreliable for hard rules; this module enforces
-the contract deterministically.
-
-The repair is minimal: when a violation is detected, prepend
-"Evidence suggests that " to the sentence. That phrase contains
-"suggests" which Q10's hedge regex matches; the original sentence
-text is preserved so the reader still sees the underlying claim.
-The repaired prose reads slightly awkward but is unambiguously
-hedged.
-
-Anti-gaming: every repair is logged in a returned list of
-ClaimStrengthRepair entries. The caller (orchestrator) writes that
-list to claim_strength_repairs.json AND audits it via Q11
-(>8 repairs → ship-block). The system can fix small numbers of
-violations; it cannot launder a wholly-overclaimed paper.
-
-Module is intentionally narrow — single function, single side-effect-
-free transformation, no LLM call.
-"""
+"""Deterministic claim-strength repair pass for writer/audit gates."""
 from __future__ import annotations
 
 import re
@@ -49,13 +24,7 @@ REPAIR_INLINE_HEDGE = " (potentially)"
 
 @dataclass(frozen=True, slots=True)
 class ClaimStrengthRepair:
-    """One audit-log entry per repaired sentence.
-
-    `original` and `repaired` are the verbatim before/after — the
-    artifact log makes every edit auditable. `receipt_ids` is the
-    set of weak-tier (C / mechanistic / indirect) receipts cited in
-    the violating sentence; used downstream for severity scoring.
-    """
+    """One audit-log entry per repaired sentence."""
     original: str
     repaired: str
     receipt_ids: tuple[str, ...]
@@ -125,7 +94,22 @@ def _has_hedge(sentence: str) -> bool:
 
 def repair_abstract_claim_strength(body_md: str) -> tuple[str, int]:
     repaired = body_md
-    for pattern, repl in ((r"\bpositive signals\b", "context-specific signals"), (r"\bsupport(?:s|ed)? biological plausibility for\b", "are consistent with biological plausibility but do not establish"), (r"\bIn a preclinical model,\s*", "In preclinical evidence, "), (r"\battenuated\b", "was reported to attenuate"), (r"\bmodulated\b", "was reported to modulate")):
+    replacements = (
+        (r"\bpositive signals\b", "context-specific signals"),
+        (r"\b[Dd]emonstrated\s+(?:in|by)\b", "suggested by"),
+        (r"\b[Ee]stablish(?:es|ed)?\b", "is consistent with"),
+        (r"\b[Pp]rove(?:s|d)?\b", "is consistent with"),
+        (r"\b[Cc]onfirm(?:s|ed)?\b", "is consistent with"),
+        (r"\bsupport(?:s|ed)? biological plausibility for\b", "are consistent with biological plausibility but do not establish"),
+        (r"\bIn a preclinical model,\s*", "In preclinical evidence, "),
+        (r"\b[Rr]obust\s+(effects?|benefits?|signals?)\b", r"context-dependent \1"),
+        (r"\bclinical signals justify\b", "clinical signals can motivate"),
+        (r"\bjustify further targeted testing\b", "can motivate further targeted testing"),
+        (r"\bremains a bounded geroscience case\b", "should be treated as a bounded geroscience hypothesis"),
+        (r"\battenuated\b", "was reported to attenuate"),
+        (r"\bmodulated\b", "was reported to modulate"),
+    )
+    for pattern, repl in replacements:
         repaired = re.sub(pattern, repl, repaired, flags=re.IGNORECASE)
     return repaired, int(repaired != body_md)
 
@@ -134,14 +118,6 @@ def repair_claim_strength(
     body_md: str,
     accepted: Sequence[ReceiptSummary],
 ) -> tuple[str, list[ClaimStrengthRepair]]:
-    """Scan `body_md` for tier-C / mechanistic sentences with causal
-    verbs and no hedge. Prepend "Evidence suggests that " to each
-    violating sentence and return (repaired_body, repair_log).
-
-    The repair preserves byte-for-byte everything outside the
-    violating sentences — non-violating sentences pass through
-    untouched. The _Cited: markdown footers are NOT modified.
-    """
     weak_ids = {
         r.receipt_id for r in accepted
         if (r.evidence_tier or "").upper() == "C"

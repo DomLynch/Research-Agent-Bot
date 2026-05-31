@@ -60,6 +60,22 @@ def test_abstract_repair_softens_live_overclaim_phrases() -> None:
     assert "was reported to attenuate" in repaired
 
 
+def test_abstract_repair_softens_broad_claim_strength_phrases() -> None:
+    body = (
+        "## Abstract\n\n"
+        "Robust benefits demonstrated in preclinical models confirm the thesis. "
+        "Selected clinical signals justify further targeted testing, so the "
+        "intervention remains a bounded geroscience case."
+    )
+    repaired, n = repair_abstract_claim_strength(body)
+    assert n == 1
+    assert "context-dependent benefits" in repaired
+    assert "suggested by preclinical models" in repaired
+    assert "is consistent with the thesis" in repaired
+    assert "can motivate further targeted testing" in repaired
+    assert "bounded geroscience hypothesis" in repaired
+
+
 def test_repair_fires_on_unhedged_causal_verb_citing_mechanistic_receipt() -> None:
     """The empirical 10.17 e2e bug: unhedged 'demonstrated' on tier-C
     evidence. Repair must prepend 'Evidence suggests that '."""

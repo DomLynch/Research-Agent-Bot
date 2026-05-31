@@ -677,6 +677,16 @@ def test_unreferenced_citation_ignores_possessive_year_phrase() -> None:
     assert unreferenced_citation_tokens(paper) == ()
 
 
+def test_unreferenced_citation_ignores_date_ranges() -> None:
+    from agent.journal_surface_gate import unreferenced_citation_tokens
+    paper = (
+        "## Results\n\n"
+        "Participants were enrolled between June 2023 and September 2024.\n\n"
+        "## References\n\n- Chai 2026.\n"
+    )
+    assert unreferenced_citation_tokens(paper) == ()
+
+
 def test_unreferenced_citation_is_case_insensitive() -> None:
     """Casefolding is part of the universal fold so inline 'SMITH 2020'
     matches reference 'Smith 2020' (case shouldn't matter for ID)."""
@@ -1832,8 +1842,14 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
         "overlapping language about source weighting and table interpretation.\n"
     )
     near_finding = repeated_finding.replace("submission to review", "submission to peer review")
+    front_matter_recap = (
+        "This front matter deliberately recaps the same evidence profile using "
+        "enough shared tokens that body-dedupe must not delete it from the "
+        "abstract or introduction sections before journal surface evaluation.\n"
+    )
     paper = (
-        "## Abstract\n\nA.\n\n"
+        f"## Abstract\n\n{front_matter_recap}\n"
+        f"## Introduction\n\n{front_matter_recap}\n"
         "## Methods\n\n"
         f"### Search\n\n{repeated_methods}\n"
         f"### Screening\n\n{repeated_methods}\n"
@@ -1860,6 +1876,7 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
 
     assert "Contextual Other" not in new_text
     assert "Contextual Adjacent Evidence" in new_text
+    assert new_text.count("This front matter deliberately recaps") == 2
     assert "not pooled with direct outcome evidence" in new_text
     assert new_text.count("| Smith 2024 | glucose | treatment |") == 1
     assert new_text.count("Key findings repeated verbatim") == 1

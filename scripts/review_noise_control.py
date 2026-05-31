@@ -88,6 +88,10 @@ def _append_section_sentence(text: str, heading: str, sentence: str) -> tuple[st
 def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
     parts = re.split(r"(^## References\b.*)", text, maxsplit=1, flags=re.M | re.S)
     body, tail = parts[0], "".join(parts[1:])
+    # Abstracts and introductions intentionally recap body findings; never let
+    # cross-section near-duplicate pruning collapse the public front matter.
+    start = re.search(r"^##\s+(?:Background|Methods|Results)\b", body, flags=re.M)
+    prefix, body = (body[:start.start()], body[start.start():]) if start else ("", body)
     chunks = re.split(r"(\n{2,})", body)
     seen: set[str] = set()
     seen_tokens: list[set[str]] = []
@@ -110,7 +114,7 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
             seen.add(norm)
             if len(words) >= 18 and not table_like:
                 seen_tokens.append(tokens)
-    return "".join(chunks) + tail, removed
+    return prefix + "".join(chunks) + tail, removed
 
 
 def _token_overlap(a: set[str], b: set[str]) -> float:
