@@ -111,6 +111,36 @@ def test_topic_pack_framework_overrides_keyword_registry(tmp_path: Path, monkeyp
     assert thesis["axes"] == ["Signal", "Population", "Comparator"]
 
 
+def test_malformed_topic_pack_framework_falls_back_cleanly(tmp_path: Path, monkeypatch) -> None:
+    repo = tmp_path / "repo"
+    packs = repo / "topic_packs"
+    packs.mkdir(parents=True)
+    (packs / "precision_topic.toml").write_text(
+        'topic = "precision_topic"\n'
+        'class_ = "microbiome_intervention"\n'
+        '[paper_framework]\n'
+        'name = "Incomplete Framework"\n',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(ir, "REPO", repo)
+    result = ir.compile_run(_run(tmp_path, topic="precision_topic"))
+    assert result["paper_ir"]["thesis"]["framework_name"] == "Microbiome Context Framework"
+
+
+def test_docx_handles_ragged_pipe_table_as_plain_text(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    (run / "full_paper.md").write_text(
+        paper.replace("| Depommier 2019 | A1 |", "| Depommier 2019 |"),
+        encoding="utf-8",
+    )
+    ir.compile_run(run)
+    with zipfile.ZipFile(run / "full_paper.docx") as zf:
+        document = zf.read("word/document.xml").decode()
+    assert "<w:tbl>" not in document
+    assert "Depommier 2019" in document
+
+
 def test_public_bundle_copies_v3_export_sidecars_when_present(tmp_path: Path) -> None:
     run = _run(tmp_path)
     ir.compile_run(run)
