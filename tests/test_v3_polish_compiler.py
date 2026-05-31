@@ -58,6 +58,9 @@ def test_compile_run_writes_sidecars_with_optional_tools_skipped(tmp_path, monke
     assert (tmp_path / "run" / "full_paper.typ").exists()
     assert (tmp_path / "run" / "polish_compiler.json").exists()
     assert (tmp_path / "run" / "polish_tensions_appendix.json").exists()
+    assert (tmp_path / "run" / "paper_ir.json").exists()
+    assert (tmp_path / "run" / "public_export_manifest.json").exists()
+    assert report["paper_ir"]["paper_ir"]["schema"] == "researka.paper_ir.v1"
 
 
 def test_canonical_pipe_table_is_advisory_and_rendered_to_typst(tmp_path, monkeypatch) -> None:
@@ -102,3 +105,4 @@ def test_compile_run_writes_optional_adapter_sidecars(tmp_path, monkeypatch) -> 
     assert (run / "docling_fallback.json").exists()
     assert (run / "offline_eval_harness.json").exists()
     assert (run / "structured_output_contract.json").exists()
+    assert (run / "paper_quality_score.json").exists()

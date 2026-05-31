@@ -58,6 +58,14 @@ _FILE_MAP: dict[str, str] = {
     "no_regression_report.json": "no_regression_report.json",
     "no_regression_report.md": "no_regression_report.md",
     "run_mode_contract.json": "run_mode_contract.json",
+    "paper_ir.json": "paper_ir.json",
+    "paper_quality_score.json": "paper_quality_score.json",
+    "public_export_manifest.json": "public_export_manifest.json",
+    "references.bib": "references.bib",
+    "evidence_table.csv": "evidence_table.csv",
+    "contradiction_map.json": "contradiction_map.json",
+    "full_paper.docx": "paper.docx",
+    "full_paper.pdf": "paper.pdf",
 }
 
 # Files that, if missing, just get skipped (not an error).
@@ -67,6 +75,14 @@ _OPTIONAL = {
     "no_regression_report.json",
     "no_regression_report.md",
     "run_mode_contract.json",
+    "full_paper.pdf",
+    "paper_ir.json",
+    "paper_quality_score.json",
+    "public_export_manifest.json",
+    "references.bib",
+    "evidence_table.csv",
+    "contradiction_map.json",
+    "full_paper.docx",
 }
 
 
@@ -76,7 +92,7 @@ def export_bundle(
     """Copy artifacts from run_dir → bundle_dir. Returns
     {'copied': [...], 'skipped': [...], 'missing_required': [...]}."""
     bundle_dir.mkdir(parents=True, exist_ok=True)
-    result = {
+    result: dict[str, list[str]] = {
         "copied": [], "skipped": [], "missing_required": [],
     }
     for src_name, dst_name in _FILE_MAP.items():

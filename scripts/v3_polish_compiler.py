@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 import v3_optional_adapters as _optional
+import v3_paper_ir as _paper_ir
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TEMPLATE = REPO_ROOT / "templates" / "paper.typ"
@@ -304,6 +305,7 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
     report["offline_eval_harness"] = _optional.run_offline_eval_harness(
         run_dir, report, run_dir / "offline_eval_harness.json",
     )
+    report["paper_ir"] = _paper_ir.compile_run(run_dir)
     (run_dir / "polish_compiler.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     (run_dir / "polish_compiler.md").write_text(_format_report(report), encoding="utf-8")
     return report
