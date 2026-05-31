@@ -25,7 +25,12 @@ def test_phase_f_fills_existing_empty_results_outcome_heading(tmp_path: Path) ->
 
 
 def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path) -> None:
-    paper = "## Results\n\n## References\n\n- Smith 2024.\n"
+    paper = (
+        "## Results\n\n"
+        "### Results Summary\n\n"
+        "- Skeletal, Fracture, and Bone: n=2; claims=142; null signal in 2/2 sources.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
         {"outcome_class": "skeletal_fracture_bone", "n_claims": 142, "effect_direction": "null", "directness": "review"},
         {"outcome_class": "skeletal_fracture_bone", "n_claims": 0, "effect_direction": "null", "directness": "review"},

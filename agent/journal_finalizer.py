@@ -641,6 +641,7 @@ def _phase_f_reconcile_results_table(
         missing_blocks.append(block)
     if missing_blocks:
         new_results = new_results.rstrip() + "\n\n" + "\n".join(missing_blocks)
+    new_results = re.sub(r"\bnull signal in (\d+/\d+ sources)", r"no extracted directional signal in \1", new_results)
     if new_results == results:
         return text, []
     new_text = text[:results_match.start(1)] + new_results + text[results_match.end(1):]

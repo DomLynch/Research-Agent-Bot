@@ -76,6 +76,17 @@ def test_abstract_repair_softens_broad_claim_strength_phrases() -> None:
     assert "bounded geroscience hypothesis" in repaired
 
 
+def test_abstract_repair_does_not_break_negative_establish_claims() -> None:
+    body = (
+        "## Abstract\n\n"
+        "The existing clinical trial evidence does not yet establish definitive efficacy."
+    )
+    repaired, n = repair_abstract_claim_strength(body)
+    assert n == 0
+    assert "does not yet establish definitive efficacy" in repaired
+    assert "does not yet is consistent with" not in repaired
+
+
 def test_repair_fires_on_unhedged_causal_verb_citing_mechanistic_receipt() -> None:
     """The empirical 10.17 e2e bug: unhedged 'demonstrated' on tier-C
     evidence. Repair must prepend 'Evidence suggests that '."""

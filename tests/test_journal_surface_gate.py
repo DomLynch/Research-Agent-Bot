@@ -1878,6 +1878,7 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
     assert "Contextual Adjacent Evidence" in new_text
     assert new_text.count("This front matter deliberately recaps") == 2
     assert "not pooled with direct outcome evidence" in new_text
+    assert "these sources bound scope, safety, methods, and translation" in new_text
     assert new_text.count("| Smith 2024 | glucose | treatment |") == 1
     assert new_text.count("Key findings repeated verbatim") == 1
     assert new_text.count("The search protocol used identical eligibility checks") == 1
