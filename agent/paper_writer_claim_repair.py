@@ -32,11 +32,7 @@ from dataclasses import dataclass
 
 from agent.synthesis_schemas import ReceiptSummary
 
-__all__ = [
-    "ClaimStrengthRepair",
-    "repair_claim_strength",
-    "REPAIR_PREFIX",
-]
+__all__ = ["ClaimStrengthRepair", "repair_abstract_claim_strength", "repair_claim_strength", "REPAIR_PREFIX"]
 
 # Pre-pended to violating sentences. Contains "suggests" which Q10's
 # hedge regex matches, AND "evidence suggests" as a fuller phrase.
@@ -125,6 +121,21 @@ def _normalize(text: str) -> str:
 def _has_hedge(sentence: str) -> bool:
     sentence_norm = _normalize(sentence)
     return any(h.strip() in sentence_norm for h in _REPAIR_HEDGES)
+
+
+def repair_abstract_claim_strength(body_md: str) -> tuple[str, int]:
+    """Conservatively soften abstract-only overclaim phrasing before gates."""
+    repaired = body_md
+    patterns = (
+        (r"\bpositive signals\b", "context-specific signals"),
+        (r"\bsupport(?:s|ed)? biological plausibility for\b", "are consistent with biological plausibility but do not establish"),
+        (r"\bIn a preclinical model,\s*", "In preclinical evidence, "),
+        (r"\battenuated\b", "was reported to attenuate"),
+        (r"\bmodulated\b", "was reported to modulate"),
+    )
+    for pattern, repl in patterns:
+        repaired = re.sub(pattern, repl, repaired, flags=re.IGNORECASE)
+    return repaired, int(repaired != body_md)
 
 
 def repair_claim_strength(
