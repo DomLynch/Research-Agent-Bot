@@ -83,6 +83,7 @@ import effect_direction as _direction  # noqa: E402
 import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
 import paper_quality_runtime as _paper_quality  # noqa: E402
+import v3_polish_compiler as _polish_compiler  # noqa: E402
 
 # Workstream A (autonomous): topic-parameterized pipeline.
 # Module-level corpus paths + active topic — populated by
@@ -132,6 +133,7 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "full_paper.review_summary.md",
         "pre_submit_gate.md",
         "publication_score.md",
+        "polish_compiler.md",
         "quality_methods.md",
         "receipt_funnel.md",
         "template_language_gate.md",
@@ -155,6 +157,8 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "grade_assessment.json",
         "meta_analysis_results.json",
         "publication_score.json",
+        "polish_compiler.json",
+        "polish_tensions_appendix.json",
         "quality_methods.json",
         "receipt_funnel.json",
         "risk_of_bias.json",
@@ -163,7 +167,7 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "tension_elaboration_plans.json",
         "no_regression_report.json",
     ),
-    "plots": ("forest_plots",),
+    "plots": ("forest_plots", "full_paper.pdf"),
 }
 
 
@@ -3600,6 +3604,23 @@ async def _run_post_paper_pipeline(
             file=sys.stderr,
         )
         raise
+
+    # Stage 5c2: v3 polish compiler. Optional external tools (Typst,
+    # sciwrite-lint, sentence-transformers) are sidecars only; deterministic
+    # gates are recorded in polish_compiler.json for submit/runtime review.
+    try:
+        _polish = _polish_compiler.compile_run(out_dir)
+        print(
+            f"[pipeline] Stage 5c2 — polish compiler "
+            f"passed={_polish['passed']} typst={_polish['typst']['status']} "
+            f"sciwrite={_polish['sciwrite_lint']['status']}",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — fail-soft sidecar
+        print(
+            f"[pipeline] Stage 5c2 — polish compiler skipped: {_e}",
+            file=sys.stderr,
+        )
 
     # Stage 5cc (Slice 21 — 2026-05-15): write the two promotion sidecars
     # that final_status's 6-dim ladder reads. `benchmark_runtime.json`

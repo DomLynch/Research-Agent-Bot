@@ -76,8 +76,12 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
         "full_paper.review_patch_log.json",
         "quality_methods.json",
         "quality_methods.md",
+        "polish_compiler.json",
+        "polish_compiler.md",
+        "polish_tensions_appendix.json",
     ):
         (tmp_path / name).write_text("x")
+    (tmp_path / "full_paper.pdf").write_text("x")
     (tmp_path / "forest_plots").mkdir()
     moved = orch._organize_run_artifacts(tmp_path)
     assert (tmp_path / "full_paper.md").exists()
@@ -87,6 +91,10 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "audit" / "full_paper.certification.json").exists()
     assert (tmp_path / "readable" / "full_paper.certification.md").exists()
     assert (tmp_path / "audit" / "quality_methods.json").exists()
+    assert (tmp_path / "audit" / "polish_compiler.json").exists()
+    assert (tmp_path / "audit" / "polish_tensions_appendix.json").exists()
+    assert (tmp_path / "readable" / "polish_compiler.md").exists()
+    assert (tmp_path / "plots" / "full_paper.pdf").exists()
     assert (tmp_path / "readable" / "quality_methods.md").exists()
     assert (tmp_path / "plots" / "forest_plots").is_dir()
     assert moved["quality_methods.json"] == "audit/quality_methods.json"
