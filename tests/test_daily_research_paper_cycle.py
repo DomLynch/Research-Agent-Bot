@@ -17,8 +17,9 @@ import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # 
 
 def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
     assert "researka_revision_fingerprint" in cycle._TERMINAL_REVISION_STATUSES
-    assert "research_revision_fingerprint" not in cycle._TERMINAL_REVISION_STATUSES
+    assert "research_revision_fingerprint" in cycle._TERMINAL_REVISION_STATUSES
     assert cycle._failure_class("researka_revision_fingerprint") == "D_no_action"
+    assert cycle._failure_class("research_revision_fingerprint") == "D_no_action"
 
 
 @pytest.fixture(autouse=True)
@@ -1781,6 +1782,18 @@ def test_record_blockers_accumulates_repeat_log_across_runs(tmp_path: Path) -> N
     assert cycle._surface_repeat_topics(ledger_dir) == {"coenzyme_q10_ubiquinol"}
 
 
+def test_recent_preflight_blocked_topics_skip_after_one_recent_failure(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-05-31",
+        [{"topic": "epigenetic_clocks", "submit_status": "preflight_insufficient_corpus", "submitted": 0}],
+    )
+
+    assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"epigenetic_clocks"}
+
+
 def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkeypatch) -> None:
     """A pending revise whose topic keeps failing the same deterministic gate is
     marked terminal (handled) instead of being re-synthesised every cycle."""
@@ -1818,11 +1831,12 @@ def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkey
 
 def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
     """The derived queue view classifies every topic by its strongest signal:
-    surface-repeat > terminal > submitted > ready."""
+    surface-repeat > preflight-blocked > terminal > submitted > ready."""
     status = cycle._topic_status_map(
-        ["epigenetic_clocks", "egcg", "colchicine", "rapamycin", "egcg_dup"],
+        ["epigenetic_clocks", "egcg", "colchicine", "rapamycin", "egcg_dup", "thin_topic"],
         terminal={"egcg", "egcg_dup"},
         surface_repeat={"epigenetic_clocks", "egcg_dup"},  # surface-repeat wins over terminal
+        preflight_blocked={"thin_topic"},
         submitted={"colchicine"},
     )
     assert status == {
@@ -1831,4 +1845,5 @@ def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
         "egcg_dup": "terminal_surface_repeat",
         "epigenetic_clocks": "terminal_surface_repeat",
         "rapamycin": "ready",
+        "thin_topic": "preflight_blocked",
     }

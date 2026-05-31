@@ -68,6 +68,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "duplicate_remote_publication",
     "duplicate_submission_fingerprint",
     "researka_revision_fingerprint",
+    "research_revision_fingerprint",
     "retracted_source_cited",
     "terminal_surface_repeat",
 })
@@ -181,6 +182,8 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
 _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "cycle_budget_exhausted", "current_run_not_submitted",
                                   "synthesis_failed", "terminal_surface_repeat"})
+_PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
+                                        "preflight_insufficient_corpus", "preflight_thin_quant_corpus"})
 
 
 def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -205,6 +208,18 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
         recent = sum(1 for s in stamps if (t := _parse_time(str(s))) and t >= cutoff)
         if recent >= SURFACE_REPEAT_THRESHOLD:
             out.add(topic)
+    return out
+
+
+def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
+    out: set[str] = set()
+    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
+        topic, _, code = str(key).partition("\x1f")
+        if topic and code in _PREFLIGHT_BLOCK_STATUSES and isinstance(stamps, list):
+            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
+                out.add(topic)
     return out
 
 
@@ -499,6 +514,7 @@ def _topic_status_map(
     *,
     terminal: set[str],
     surface_repeat: set[str],
+    preflight_blocked: set[str],
     submitted: set[str],
 ) -> dict[str, str]:
     """Derived, read-only queue state per topic — the 'one queue ledger' view
@@ -509,6 +525,8 @@ def _topic_status_map(
     for topic in sorted(topics):
         if topic in surface_repeat:
             status[topic] = "terminal_surface_repeat"
+        elif topic in preflight_blocked:
+            status[topic] = "preflight_blocked"
         elif topic in terminal:
             status[topic] = "terminal"
         elif topic in submitted:
@@ -613,6 +631,7 @@ def _failure_class(status: str) -> str:
         "duplicate_submission_fingerprint": "D_no_action",
         "duplicate_remote_publication": "D_no_action",
         "researka_revision_fingerprint": "D_no_action",
+        "research_revision_fingerprint": "D_no_action",
         "superseded_topic_run": "D_no_action",
         "terminal_surface_repeat": "D_no_action",
     }.get(code, "unknown")
@@ -936,8 +955,11 @@ def run_cycle(
         surface_repeat = _surface_repeat_topics(ledger_dir)
         if surface_repeat:
             ledger["surface_repeat_excluded_topics"] = sorted(surface_repeat)
+        preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
+        if preflight_blocked:
+            ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
         ledger["topic_status"] = _topic_status_map(
-            topics, terminal=terminal_excluded, surface_repeat=surface_repeat,
+            topics, terminal=terminal_excluded, surface_repeat=surface_repeat, preflight_blocked=preflight_blocked,
             submitted=_recent_submitted_topics(topics, ledger_dir),
         )
         attempted: set[str] = set()
@@ -961,7 +983,7 @@ def run_cycle(
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | surface_repeat)
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | surface_repeat | preflight_blocked)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
