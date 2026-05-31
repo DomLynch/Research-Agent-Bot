@@ -941,13 +941,13 @@ def run_cycle(
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
                 ledger["remote_revisions"]["error"] = revision_error
+        if submit and topic is None and revision_loader is None:
             # Production only (live reviews poll): drop topics whose latest review
             # is terminal (reject, or a revise with no actionable revisions such as
             # a duplicate-overlap flag) so the bot stops re-synthesising them.
-            if revision_loader is None:
-                terminal_excluded = _terminal_topics(runs_root)
-                if terminal_excluded:
-                    ledger["terminal_excluded_topics"] = sorted(terminal_excluded)
+            terminal_excluded = _terminal_topics(runs_root)
+            if terminal_excluded:
+                ledger["terminal_excluded_topics"] = sorted(terminal_excluded)
         # Skip topics that keep failing the SAME deterministic gate — re-rendering
         # them only burns a slot (plan F). Excluded from fresh auto-selection
         # below, and pending revises for such topics are marked terminal in the

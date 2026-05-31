@@ -1661,6 +1661,34 @@ def test_fresh_mode_ignores_revise_backlog(tmp_path: Path, monkeypatch) -> None:
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_fresh_mode_excludes_terminal_review_topics(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_terminal")
+    _topic(tmp_path, "zzz_fresh")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_terminal_topics", lambda _runs_root: {"aaa_terminal"})
+    runs: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
+        runs.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-24",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["terminal_excluded_topics"] == ["aaa_terminal"]
+    assert runs == ["zzz_fresh"]
+
+
 def test_revise_mode_with_no_pending_revise_does_nothing(tmp_path: Path, monkeypatch) -> None:
     """Revise lane with an empty backlog exits cleanly without writing a fresh paper."""
     _topic(tmp_path, "creatine")
