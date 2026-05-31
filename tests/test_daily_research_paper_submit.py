@@ -74,6 +74,45 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert "published" not in payload
 
 
+def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(daily, "ROOT", tmp_path)
+    run = _run(tmp_path)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "topic"
+    manifest["receipts"] = [{
+        "receipt_id": "r1",
+        "outcome_class": "longevity",
+        "n_claims": 9,
+        "effect_direction": "mixed",
+        "directness": "indirect",
+    }]
+    _write_json(run / "manifest.json", manifest)
+    claims_dir = tmp_path / "docs" / "quality-reference" / "topic" / "quant_claims"
+    claims_dir.mkdir(parents=True)
+    _write_json(claims_dir / "r1.quant_claims.json", {
+        "claims": [
+            {"sentence": "Generic extraction noise.", "binding_confidence": "none"},
+            {"sentence": "GDF11 changed a measured endpoint in the retained source.", "binding_confidence": "partial"},
+        ],
+    })
+
+    payload = daily.build_payload(run)
+
+    assert payload["source_bundle"][0]["evidence_type"] == "primary"
+    assert payload["source_bundle"][0]["excerpt"] == "GDF11 changed a measured endpoint in the retained source."
+
+
+def test_source_bundle_keeps_review_type_for_review_receipts(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["receipts"][0]["directness"] = "review"
+    _write_json(run / "manifest.json", manifest)
+
+    payload = daily.build_payload(run)
+
+    assert payload["source_bundle"][0]["evidence_type"] == "review"
+
+
 def test_payload_key_findings_distill_not_duplicate_evidence_landscape(tmp_path: Path) -> None:
     run = _run(tmp_path)
     (run / "full_paper.md").write_text(

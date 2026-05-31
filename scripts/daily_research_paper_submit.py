@@ -338,9 +338,37 @@ def _citation_url(row: dict[str, Any]) -> str | None:
     return f"https://www.ncbi.nlm.nih.gov/pmc/articles/{pmcid}/" if pmcid else None
 
 
+def _evidence_type_for_source(receipt: dict[str, Any]) -> str:
+    directness = str(receipt.get("directness") or "").lower()
+    if directness == "review":
+        return "review"
+    return "primary" if directness in {"direct", "indirect", "mechanistic"} else "evidence"
+
+
+def _claim_excerpt(topic: str, receipt_id: str, *, limit: int = 2) -> str:
+    path = ROOT / "docs" / "quality-reference" / topic / "quant_claims" / f"{receipt_id}.quant_claims.json"
+    data = _read_json(path)
+    claims = data.get("claims")
+    if not isinstance(claims, list):
+        return ""
+    sentences: list[str] = []
+    for claim in claims:
+        if not isinstance(claim, dict):
+            continue
+        if str(claim.get("binding_confidence") or "") == "none":
+            continue
+        sentence = " ".join(str(claim.get("sentence") or "").split())
+        if sentence and sentence not in sentences:
+            sentences.append(sentence)
+        if len(sentences) >= limit:
+            break
+    return " ".join(sentences)[:900]
+
+
 def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     manifest = _read_json(run / "manifest.json")
     registry = _read_json(run / "citation_registry.json")
+    topic = str(manifest.get("topic") or run.name)
     receipts = {
         str(item.get("receipt_id")): item
         for item in manifest.get("receipts", [])
@@ -358,9 +386,9 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     bundle = []
     for row in rows[:limit]:
         receipt = receipts.get(str(row.get("receipt_id")), {})
-        directness = str(receipt.get("directness") or "").lower()
         title = str(row.get("title") or row.get("body_citation") or row.get("receipt_id") or "Evidence receipt")[:300]
-        excerpt = (
+        claim_excerpt = _claim_excerpt(topic, str(row.get("receipt_id") or ""))
+        excerpt = claim_excerpt or (
             f"{row.get('body_citation') or title} is registered as {row.get('reference_id') or 'a source'} "
             f"for outcome {receipt.get('outcome_class') or 'unspecified'} with "
             f"{receipt.get('n_claims') or 0} extracted claim(s), "
@@ -375,7 +403,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             "doi": row.get("source_doi") or None,
             "excerpt": excerpt,
             "year": row.get("source_year") if isinstance(row.get("source_year"), int) else None,
-            "evidence_type": "primary" if directness == "direct" else "review",
+            "evidence_type": _evidence_type_for_source(receipt),
         })
     return bundle
 
