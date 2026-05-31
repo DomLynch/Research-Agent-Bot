@@ -6,7 +6,7 @@ from typing import cast
 import pytest
 
 from agent import paper_writer_backstop as backstop
-from agent.synthesis_schemas import SectionName, SynthesisSection, SynthesisThesis
+from agent.synthesis_schemas import ReceiptSummary, SectionName, SynthesisSection, SynthesisThesis, TensionMatrix
 
 
 def _section(name: str, words: int) -> SynthesisSection:
@@ -15,6 +15,25 @@ def _section(name: str, words: int) -> SynthesisSection:
         name=section_name,
         body_md=f"## {name}\n\n" + "word " * words,
         anchors=(),
+    )
+
+
+def _receipt(rid: str) -> ReceiptSummary:
+    return ReceiptSummary(
+        receipt_id=rid,
+        receipt_path=f"runs/{rid}",
+        topic="glycation_ages",
+        thesis_text="bounded glycation evidence",
+        spar_verdict="accept_clean",
+        n_claims=4,
+        n_failed_traces=0,
+        canonical_trial_id=f"NCT-{rid}",
+        evidence_tier="A1",
+        directness="direct",
+        outcome_class="cardiometabolic",
+        effect_direction="mixed",
+        p_values=("p=0.01",),
+        population_summary="older adults",
     )
 
 
@@ -89,3 +108,30 @@ async def test_backstop_accepts_longer_section() -> None:
     )
 
     assert "word " * 900 in out["discussion"].body_md
+
+
+@pytest.mark.asyncio
+async def test_backstop_appends_conclusion_anchor_when_rerender_does_not_improve() -> None:
+    async def write_scoped(**kwargs):
+        return _section(kwargs["name"], 10)
+
+    sections: dict[SectionName, SynthesisSection] = {"conclusion": _section("conclusion", 10)}
+    receipts = (_receipt("r1"), _receipt("r2"))
+    out = await backstop.apply_section_backstop(
+        sections,
+        user_prompt="u",
+        section_prompts={"conclusion": "s"},
+        topic="glycation_ages",
+        accepted=receipts,
+        matrix=TensionMatrix(receipts=receipts, pairs=()),
+        chain=(),
+        client=None,
+        ledger=None,
+        seed=None,
+        background_lit_entries=None,
+        write_anchored_fn=None,
+        write_scoped_fn=write_scoped,
+    )
+
+    assert "### Bounded conclusion" in out["conclusion"].body_md
+    assert backstop._section_word_count(out["conclusion"]) >= backstop.AUDIT_GATED_FLOORS["conclusion"]

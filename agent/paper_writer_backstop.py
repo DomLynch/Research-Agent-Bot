@@ -9,7 +9,7 @@ if TYPE_CHECKING:  # pragma: no cover
     import httpx
 
 from agent.deterministic_anchors import (
-    build_cross_domain_anchor, build_discussion_anchor,
+    build_conclusion_anchor, build_cross_domain_anchor, build_discussion_anchor,
 )
 from agent.llm_client import CallSpec, CostLedger
 from agent.paper_writer_helpers import (
@@ -197,6 +197,7 @@ async def apply_section_backstop(
         for sec_name, anchor_fn in (
             ("cross_domain_synthesis", build_cross_domain_anchor),
             ("discussion", build_discussion_anchor),
+            ("conclusion", build_conclusion_anchor),
         ):
             section_name = cast(SectionName, sec_name)
             cur = sections.get(section_name)
