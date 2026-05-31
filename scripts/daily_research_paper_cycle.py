@@ -715,7 +715,10 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
 
 
 def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
-    if "key findings" not in ask.lower() and "evidence landscape" not in ask.lower():
+    ask_lower = ask.lower()
+    payload_section_ask = "key findings" in ask_lower or "evidence landscape" in ask_lower
+    payload_clip_ask = "truncated" in ask_lower and "abstract" in ask_lower and "research question" in ask_lower
+    if not (payload_section_ask or payload_clip_ask):
         return False
     try:
         payload = submit_bridge.build_payload(out_dir)
@@ -724,6 +727,15 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     sections = payload.get("sections", {})
     if not isinstance(sections, dict):
         return False
+    if payload_clip_ask:
+        abstract = str(payload.get("abstract") or "").strip()
+        research_question = str(sections.get("Research Question") or "").strip()
+        return bool(
+            abstract
+            and research_question
+            and abstract.endswith((".", "!", "?"))
+            and research_question.endswith((".", "!", "?"))
+        )
     landscape = str(sections.get("Evidence Landscape") or "")
     findings = str(sections.get("Key Findings") or "")
     return bool(findings and landscape and findings != landscape and "|" not in findings)

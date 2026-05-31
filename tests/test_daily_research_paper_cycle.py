@@ -993,6 +993,31 @@ def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path
     assert not cycle._payload_revision_ask_satisfied(out_dir, "tighten the abstract")
 
 
+def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    long_abstract = (
+        "This synthesis keeps the public abstract sentence safe and bounded. "
+        "It repeats enough context to exceed the remote payload limit while still "
+        "ending at a complete sentence. "
+    ) * 40
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\n"
+        f"{long_abstract}\n\n"
+        "## Results\n\nEvidence remains mixed.\n\n"
+        "## Conclusion\n\nThe conclusion is bounded and complete.\n",
+        encoding="utf-8",
+    )
+    _write_json(out_dir / "manifest.json", {"topic": "topic", "receipts": []})
+    _write_json(out_dir / "citation_registry.json", {})
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Fix the truncated text at the end of the Abstract and Research Question sections.",
+    )
+
+
 def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     _, feedback_seen = _run_coverage_cycle(
