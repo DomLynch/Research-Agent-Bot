@@ -34,6 +34,7 @@ TOKEN_ENVS = (
     "RESEARKA_AGENT_TOKEN_V3",
     "RESEARKA_V2_API_KEY",
 )
+DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 
@@ -69,6 +70,14 @@ def _paper_title(paper: Path) -> str:
     except (OSError, IndexError):
         return ""
     return first.lstrip("# ").strip()
+
+
+def _env_or_default(name: str, default: str) -> str:
+    return os.getenv(name, "").strip() or default
+
+
+def _agent_slug() -> str:
+    return os.getenv("RESEARKA_AGENT_SLUG_V3", "").strip() or os.getenv("AGENT_ID", "").strip() or DEFAULT_AGENT_SLUG
 
 
 def _token() -> tuple[str, str]:
@@ -377,6 +386,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     return {
         "title": title[:300],
         "abstract": abstract,
+        "artifact_type": "research_paper",
         "sections": {
             "Research Question": f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? {abstract}",
             "Search Summary": methods or abstract,
@@ -388,11 +398,11 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             "Full Manuscript": _demote_headings(paper),
         },
         "source_bundle": _source_bundle(run, limit=max_sources),
-        "author_agent_id": os.getenv("RESEARKA_AGENT_SLUG_V3", os.getenv("AGENT_ID", "agent-v3-full-paper")),
+        "author_agent_id": _agent_slug(),
         "submitter_name": os.getenv("RESEARKA_SUBMITTER_NAME") or None,
         "submitter_orcid": os.getenv("RESEARKA_SUBMITTER_ORCID") or None,
         "article_type": "rapid_evidence_synthesis",
-        "domain_slug": os.getenv("RESEARKA_DOMAIN_SLUG_V3", "longevity"),
+        "domain_slug": _env_or_default("RESEARKA_DOMAIN_SLUG_V3", "longevity"),
         "core_claims_resolved": True,
         "author_signature": _sha256(run / "full_paper.md"),
         "metadata": metadata,

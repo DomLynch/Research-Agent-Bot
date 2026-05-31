@@ -62,6 +62,7 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
 
     assert payload["article_type"] == "rapid_evidence_synthesis"
     assert payload["author_agent_id"] == "agent-v3-full-paper"
+    assert payload["artifact_type"] == "research_paper"
     assert payload["metadata"]["artifact_type"] == "research_paper"
     assert payload["sections"]["Full Manuscript"].startswith("## Research Synthesis")
     assert payload["sections"]["Research Question"]
@@ -69,6 +70,16 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert payload["source_bundle"][0]["doi"] == "10.1/x"
     assert payload["source_bundle"][0]["evidence_type"] == "primary"
     assert "published" not in payload
+
+
+def test_payload_empty_agent_env_still_uses_v3_slug(tmp_path: Path, monkeypatch: Any) -> None:
+    run = _run(tmp_path)
+    monkeypatch.setenv("AGENT_ID", "")
+    monkeypatch.setenv("RESEARKA_AGENT_SLUG_V3", "")
+
+    payload = daily.build_payload(run)
+
+    assert payload["author_agent_id"] == "agent-v3-full-paper"
 
 
 def test_payload_carries_revision_metadata_when_present(tmp_path: Path) -> None:
