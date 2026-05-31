@@ -1,12 +1,12 @@
 topic = "coenzyme_q10_ubiquinol"
 class_ = "generated_biomedical"
 target_journal = "GeroScience"
-aliases = ["coenzyme Q10 ubiquinol", "coenzyme_Q10_ubiquinol", "coenzyme-Q10-ubiquinol", "CoQ10", "coenzyme Q10", "ubiquinol", "mitochondrial support", "statin users"]
+aliases = ["coenzyme Q10 ubiquinol", "coenzyme_Q10_ubiquinol", "coenzyme-Q10-ubiquinol", "CoQ10", "coenzyme Q10", "ubiquinol", "mitochondrial support"]
 expected_evidence_slots = ["human_trials", "human_observational", "meta_analysis", "human_mechanism", "biomarkers", "clinical_outcomes", "safety_tolerability", "dose_or_exposure"]
 special_rules = ["Separate biomarker aging signals from hard clinical longevity outcomes.", "Treat mechanistic plausibility as hypothesis-generating unless supported by direct human outcomes.", "Track population, exposure intensity, comparator, endpoint, and adverse-event context explicitly."]
 forbidden_verbs_for_protocol_role = ["found", "showed", "improved", "reduced", "demonstrated", "established", "proved"]
 forbidden_verbs_for_results_role_with_protocol_keywords = ["planned", "will assess", "pending", "ongoing", "awaiting"]
-active_arm_synonyms = ["coenzyme Q10 ubiquinol", "coenzyme_Q10_ubiquinol", "coenzyme-Q10-ubiquinol", "CoQ10", "coenzyme Q10", "ubiquinol", "mitochondrial support", "statin users"]
+active_arm_synonyms = ["coenzyme Q10 ubiquinol", "coenzyme_Q10_ubiquinol", "coenzyme-Q10-ubiquinol", "CoQ10", "coenzyme Q10", "ubiquinol", "mitochondrial support"]
 placebo_arm_synonyms = ["placebo", "control", "usual care", "standard care", "sham", "vehicle"]
 corpus_search_queries = ["coenzyme Q10 ubiquinol AND aging AND human", "coenzyme Q10 ubiquinol AND older adults", "coenzyme Q10 ubiquinol AND randomized controlled trial", "CoQ10 AND aging AND human", "CoQ10 AND older adults", "CoQ10 AND randomized controlled trial", "coenzyme Q10 AND aging AND human", "coenzyme Q10 AND older adults", "coenzyme Q10 AND randomized controlled trial", "ubiquinol AND aging AND human"]
 canonical_rct_paper_ids = []
@@ -14,7 +14,7 @@ canonical_trials = []
 known_role_overrides = {}
 
 [retrieval]
-topic_terms = ["coenzyme Q10 ubiquinol", "CoQ10", "coenzyme Q10", "ubiquinol", "mitochondrial support", "statin users"]
+topic_terms = ["coenzyme Q10 ubiquinol", "CoQ10", "coenzyme Q10", "ubiquinol", "mitochondrial support"]
 scope_terms = ["aging", "older adults", "longevity", "healthspan", "frailty", "mortality", "biological age", "inflammation", "cardiometabolic risk", "safety"]
 evidence_types = ["clinical trial", "randomized controlled trial", "cohort study", "observational study", "meta-analysis", "systematic review"]
 exclude_terms = ["animal only", "in vitro only", "pediatric only", "case report only"]

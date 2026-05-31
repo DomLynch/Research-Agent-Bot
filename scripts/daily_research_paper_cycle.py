@@ -64,6 +64,13 @@ PUBLISHED_TOPIC_COOLDOWN_DAYS = 30
 FRAME_MIN_FULL_SCORE = 0.65
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
 _TERMINAL_SPARSE_RE = re.compile(r"\b(precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
+_TERMINAL_REVISION_STATUSES = frozenset({
+    "duplicate_remote_publication",
+    "duplicate_submission_fingerprint",
+    "researka_revision_fingerprint",
+    "retracted_source_cited",
+    "terminal_surface_repeat",
+})
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -1207,6 +1214,8 @@ def run_cycle(
                     attempt["revision_feedback_received"] = bool(revision_feedback)
                 if gate_status and gate_status != "eligible":
                     ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                if revision_source and gate_status.split(":", 1)[0] in _TERMINAL_REVISION_STATUSES:
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 if return_code != 0:
                     ledger["status"] = "synthesis_failed"
                 elif bridge.get("status") == "submitted_to_researka":

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 
 def _seed_topic_dirs(topic_root: Path) -> None:
@@ -129,3 +130,39 @@ def test_slice37_high_confidence_paper_keeps_primary_tier(tmp_path: Path) -> Non
     assert len(receipts) == 1
     # Should NOT be downgraded to B2 — paper has a high-conf claim
     assert receipts[0].evidence_tier != "B2" or receipts[0].directness != "review"
+
+
+def test_receipt_builder_excludes_retracted_and_off_topic_active_arm_noise(tmp_path: Path) -> None:
+    """Runtime receipt admission refuses retracted titles and stale corpus rows
+    that do not mention the active topic synonym. This prevents a bad topic-pack
+    alias/corpus cache from feeding unrelated papers to the writer."""
+    root = tmp_path / "test_topic"
+    _seed_topic_dirs(root)
+    (root / "_extract_report.json").write_text(json.dumps({
+        "active_paper_ids": ["PMC1_good", "PMC2_statin", "PMC3_retracted"],
+    }))
+    for pid, title in {
+        "PMC1_good": "Coenzyme Q10 improves inflammatory biomarkers",
+        "PMC2_statin": "The impact of statin use on mortality",
+        "PMC3_retracted": "Retracted Article: Coenzyme Q10 supplement trial",
+    }.items():
+        (root / "parsed" / f"{pid}.paper_sections.json").write_text(json.dumps({
+            "paper_id": pid, "title": title, "abstract": title,
+        }))
+        (root / "quant_claims" / f"{pid}.quant_claims.json").write_text(json.dumps({
+            "paper_id": pid,
+            "claims": [{"binding_confidence": "high", "claim_type": "effect_size",
+                        "endpoint": "mortality", "arm": "coenzyme q10", "direction": "decrease"}],
+        }))
+    _set_active_topic(root, "test_topic")
+    import importlib
+    mod = importlib.import_module("scripts.run_v06_synthesis")
+    setattr(mod, "_TOPIC_PACK", SimpleNamespace(
+        active_arm_synonyms=frozenset({"coenzyme q10"}),
+        placebo_arm_synonyms=frozenset({"placebo", "control"}),
+        canonical_rct_paper_ids=frozenset(),
+    ))
+
+    receipts = mod.build_receipts_from_quant_claims(topic="test_topic")
+
+    assert [r.receipt_id for r in receipts] == ["PMC1_good"]

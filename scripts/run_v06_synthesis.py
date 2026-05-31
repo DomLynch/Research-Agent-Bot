@@ -1663,6 +1663,27 @@ def _build_receipt_thesis_text(
     return f"{title} — source excerpts: " + " | ".join(evidence_lines)
 
 
+def _is_retracted_source(paper_meta: dict) -> bool:
+    title = str(paper_meta.get("title") or "")
+    return bool(re.search(r"\b(?:retracted\s+article|retraction\s+notice)\b", title, re.I))
+
+
+def _receipt_mentions_active_topic(topic: str, paper_meta: dict, claims: list[dict]) -> bool:
+    if _get_active_topic() != topic:
+        return True
+    pack = _get_topic_pack()
+    if pack is None:
+        return True
+    synonyms = tuple(getattr(pack, "active_arm_synonyms", ()) or ())
+    if not synonyms:
+        return True
+    text = " ".join(
+        [str(paper_meta.get(k) or "") for k in ("title", "abstract")]
+        + [str(c.get(k) or "") for c in claims for k in ("sentence", "context_window", "raw_text")]
+    )
+    return _mentions_any_synonym(text, synonyms)
+
+
 def _load_paper_meta_by_id() -> dict[str, dict]:
     """Load all parsed-paper metadata (paper_id → dict). Used both
     by the receipt builder AND by Fix #10's citation-registry call
@@ -1938,6 +1959,8 @@ def build_receipts_from_quant_claims(
         if not claims:
             continue
         meta = paper_meta_by_id.get(paper_id, {})
+        if _is_retracted_source(meta) or not _receipt_mentions_active_topic(topic, meta, claims):
+            continue
         agg = _aggregate_paper(paper_id, claims)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
         # Slice 37: partial-only papers downgrade tier so the audit

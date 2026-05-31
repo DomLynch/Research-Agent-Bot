@@ -941,6 +941,8 @@ def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert submitted == []                                            # retraction gate blocked submit
     assert ledger["attempts"][0]["gate_status"] == "retracted_source_cited"
     assert ledger["attempts"][0]["retracted_cited_sources"] == ["10.2/retracted"]
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text())
+    assert handled["handled"][0]["status"] == "retracted_source_cited"  # terminal revise: don't rerender next slot
 
 
 def test_abstract_overclaim_blocks_submit(tmp_path: Path, monkeypatch) -> None:
