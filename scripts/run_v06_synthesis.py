@@ -3619,20 +3619,21 @@ async def _run_post_paper_pipeline(
 
     # Stage 5c2: v3 polish compiler. Optional external tools (Typst,
     # sciwrite-lint, sentence-transformers) are sidecars only; deterministic
-    # gates are recorded in polish_compiler.json for submit/runtime review.
+    # polish failures block the run before final_status promotion.
     try:
-        _polish = _polish_compiler.compile_run(out_dir)
+        _polish = _run_polish_compiler_gate(out_dir)
         print(
             f"[pipeline] Stage 5c2 — polish compiler "
             f"passed={_polish['passed']} typst={_polish['typst']['status']} "
             f"sciwrite={_polish['sciwrite_lint']['status']}",
             file=sys.stderr,
         )
-    except Exception as _e:  # pragma: no cover — fail-soft sidecar
+    except Exception as _e:
         print(
-            f"[pipeline] Stage 5c2 — polish compiler skipped: {_e}",
+            f"[pipeline] Stage 5c2 — polish compiler failed: {_e}",
             file=sys.stderr,
         )
+        raise
 
     # Stage 5cc (Slice 21 — 2026-05-15): write the two promotion sidecars
     # that final_status's 6-dim ladder reads. `benchmark_runtime.json`

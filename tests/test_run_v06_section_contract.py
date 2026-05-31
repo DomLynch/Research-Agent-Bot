@@ -121,6 +121,38 @@ def test_pre_submit_revise_blocks_submission_without_runtime_failure() -> None:
     assert orch._pre_submit_blocker_summary({"gate": gate, "score": score}) == ""
 
 
+def test_polish_compiler_gate_allows_optional_tool_skips(monkeypatch, tmp_path) -> None:
+    def fake_compile(run_dir: Path) -> dict:
+        assert run_dir == tmp_path
+        return {
+            "passed": True,
+            "typst": {"status": "skipped"},
+            "sciwrite_lint": {"status": "skipped"},
+            "gates": {"raw_pipe_tables": {"status": "passed"}},
+        }
+
+    monkeypatch.setattr(orch._polish_compiler, "compile_run", fake_compile)
+    assert orch._run_polish_compiler_gate(tmp_path)["passed"] is True
+
+
+def test_polish_compiler_gate_blocks_deterministic_failures(monkeypatch, tmp_path) -> None:
+    monkeypatch.setattr(orch._polish_compiler, "compile_run", lambda _run_dir: {
+        "passed": False,
+        "typst": {"status": "skipped"},
+        "sciwrite_lint": {"status": "skipped"},
+        "gates": {
+            "raw_pipe_tables": {"status": "failed"},
+            "top_claim_source_ids": {"status": "skipped"},
+        },
+    })
+    try:
+        orch._run_polish_compiler_gate(tmp_path)
+    except RuntimeError as exc:
+        assert str(exc) == "polish_compiler_failed:raw_pipe_tables"
+    else:  # pragma: no cover
+        raise AssertionError("expected deterministic polish failure")
+
+
 def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     try:
