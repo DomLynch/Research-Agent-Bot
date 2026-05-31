@@ -878,20 +878,20 @@ def _aspirin_revise_loader() -> tuple[list[dict[str, Any]], None]:
               "feedback": "Hedge the cognitive claims"}], None)
 
 
-def _coverage_fake_synthesis(feedback_seen: list[str | None]):
+def _coverage_fake_synthesis(feedback_seen: list[str | None], paper_md: str | None = None):
     def fake(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None,
              revision_feedback: str | None = None, review_type_override: str | None = None) -> int:
         feedback_seen.append(revision_feedback)
         out_dir.mkdir(parents=True)
         (out_dir / "full_paper.md").write_text(
-            "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.", encoding="utf-8")
+            paper_md or "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.", encoding="utf-8")
         return 0
     return fake
 
 
-def _run_coverage_cycle(tmp_path: Path, monkeypatch, *, unmet, submit_cycle, max_revise_attempts=3):
+def _run_coverage_cycle(tmp_path: Path, monkeypatch, *, unmet, submit_cycle, max_revise_attempts=3, paper_md: str | None = None):
     feedback_seen: list[str | None] = []
-    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen))
+    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen, paper_md))
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: list(unmet))
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs", date="2026-05-28", run_synthesis=True, submit=True,
@@ -974,6 +974,29 @@ def test_abstract_overclaim_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert submitted == []                                            # claim-support gate blocked submit
     assert ledger["attempts"][0]["gate_status"] == "abstract_overclaim"
     assert ledger["attempts"][0]["abstract_overclaims"] == ["EGCG reverses aging"]
+
+
+def test_abstract_overclaim_repair_rechecks_before_submit(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    calls = iter([["mechanistic plausibility—demonstrated in preclinical frailty attenuation"], []])
+    monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: next(calls))
+    submitted: list[int] = []
+    paper = (
+        "# Research Synthesis: Aspirin Geroprotection — full paper\n\n"
+        "## Abstract\n\n"
+        "The synthesis finds mechanistic plausibility—demonstrated in preclinical frailty attenuation.\n\n"
+        "## Methods\n\nBody."
+    )
+
+    def fake_submit(**_k: Any) -> dict[str, Any]:
+        submitted.append(1)
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    ledger, _ = _run_coverage_cycle(tmp_path, monkeypatch, unmet=[], submit_cycle=fake_submit, paper_md=paper)
+    out_dir = tmp_path / "runs" / ledger["attempts"][0]["out_dir"]
+    assert submitted == [1]
+    assert ledger["attempts"][0]["abstract_overclaim_repaired"] is True
+    assert "suggested by preclinical frailty attenuation" in (out_dir / "full_paper.md").read_text(encoding="utf-8")
 
 
 def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:

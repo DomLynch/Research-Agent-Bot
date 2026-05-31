@@ -83,6 +83,9 @@ Rules:
 5. Take a position on the load-bearing tension (mechanistic plausibility
    vs functional tradeoff for {topic} in aging). Do NOT default to
    "evidence is mixed."
+6. Never say mechanistic/preclinical evidence "demonstrates" benefit or
+   "positive signals" unless the cited receipts directly support that exact
+   clinical claim; use "suggests", "context-specific", or "reported" instead.
 
 Output JSON only. No prose outside the JSON."""
 

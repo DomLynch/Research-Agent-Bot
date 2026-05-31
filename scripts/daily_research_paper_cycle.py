@@ -694,6 +694,30 @@ def _abstract_overclaims(out_dir: Path) -> list[str]:
     return revision_coverage.unsupported_abstract_claims(paper.read_text(encoding="utf-8"))
 
 
+def _repair_abstract_overclaim_phrasing(out_dir: Path, overclaims: list[str]) -> bool:
+    """Soften only judge-flagged abstract spans, then let the same judge re-check."""
+    paper = out_dir / "full_paper.md"
+    if not overclaims or not paper.is_file():
+        return False
+    text = paper.read_text(encoding="utf-8")
+    match = re.search(r"(?ms)^##\s+Abstract\b.*?(?=^##\s+|\Z)", text)
+    if not match:
+        return False
+    abstract = match.group(0)
+    repaired = abstract
+    for claim in overclaims:
+        needle = str(claim).strip()
+        if needle and needle in repaired:
+            safer = re.sub(r"\b[Dd]emonstrated\s+(?:in|by)\b", "suggested by", needle)
+            safer = re.sub(r"\b[Pp]ositive\s+([A-Za-z][A-Za-z -]{2,80}?signals)\b", r"context-specific \1", safer)
+            repaired = repaired.replace(needle, safer)
+    if repaired == abstract:
+        return False
+    paper.write_text(text[:match.start()] + repaired + text[match.end():], encoding="utf-8")
+    _write_json(out_dir / "abstract_overclaim_repair.json", {"overclaims": overclaims})
+    return True
+
+
 def _escalate_feedback(feedback: str, unmet: list[str]) -> str:
     """Prepend an explicit escalation so an unmet ask is materially fixed on the
     bounded re-render, not skimmed again."""
@@ -1221,6 +1245,10 @@ def run_cycle(
                 # Claim-support gate: never submit an abstract whose claims the
                 # paper's own evidence does not support / overstates.
                 overclaims = _abstract_overclaims(out_dir) if return_code == 0 else []
+                abstract_repaired = False
+                if overclaims and _repair_abstract_overclaim_phrasing(out_dir, overclaims):
+                    abstract_repaired = True
+                    overclaims = _abstract_overclaims(out_dir)
                 bridge: dict[str, Any] = {}
                 if return_code == 0 and not unmet and not retracted and not overclaims:
                     # Submission stays single-threaded across lanes: the fresh and
@@ -1281,6 +1309,8 @@ def run_cycle(
                     attempt["retracted_cited_sources"] = retracted
                 if overclaims:
                     attempt["abstract_overclaims"] = overclaims
+                if abstract_repaired:
+                    attempt["abstract_overclaim_repaired"] = True
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:
