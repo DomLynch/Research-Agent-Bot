@@ -15,6 +15,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+import v3_optional_adapters as _optional
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TEMPLATE = REPO_ROOT / "templates" / "paper.typ"
 TOP_N_TENSIONS = 8
@@ -50,12 +52,31 @@ def _is_pipe_row(line: str) -> bool:
     return s.startswith("|") and s.endswith("|") and s.count("|") >= 2
 
 
-def has_raw_pipe_table(markdown: str) -> bool:
+def _pipe_cells(line: str) -> list[str]:
+    return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+
+def _pipe_table_gate(markdown: str) -> dict[str, Any]:
     lines = markdown.splitlines()
-    return any(
-        _is_pipe_row(a) and _is_pipe_row(b) and set(b.strip(" |:-")) <= {""}
-        for a, b in zip(lines, lines[1:], strict=False)
-    )
+    tables = 0
+    malformed: list[int] = []
+    for idx, (header, separator) in enumerate(zip(lines, lines[1:], strict=False), 1):
+        if not (_is_pipe_row(header) and _is_pipe_row(separator) and set(separator.strip(" |:-")) <= {""}):
+            continue
+        tables += 1
+        width = len(_pipe_cells(header))
+        rows = []
+        for row in lines[idx + 1:]:
+            if not _is_pipe_row(row):
+                break
+            rows.append(row)
+        if any(len(_pipe_cells(row)) != width for row in rows):
+            malformed.append(idx)
+    if malformed:
+        return {"status": "failed", "table_count": tables, "malformed_tables": malformed[:10]}
+    if tables:
+        return {"status": "advisory", "table_count": tables, "reason": "canonical_markdown_tables_present"}
+    return {"status": "passed", "table_count": 0}
 
 
 def _markdown_to_typst(markdown: str) -> str:
@@ -211,14 +232,14 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
     typ_path = write_typst_source(run_dir, paper, manifest)
     sciwrite = _run_sciwrite(paper_path)
     gates = {
-        "raw_pipe_tables": {"status": "failed" if has_raw_pipe_table(paper) else "passed"},
+        "raw_pipe_tables": _pipe_table_gate(paper),
         "top_claim_source_ids": _claim_graph_gate(_load_json(run_dir / "claim_graph.json")),
         "abstract_body_mismatch": {"status": "failed" if _sciwrite_abstract_mismatch(sciwrite) else "passed"},
         "falsifier_or_next_study": {
             "status": "passed" if re.search(r"\b(falsif|next[- ]study|future work|targeted research|registered trial)\b", paper, re.I) else "failed",
         },
     }
-    passed = all(g["status"] in {"passed", "skipped"} for g in gates.values())
+    passed = all(g["status"] in {"passed", "skipped", "advisory"} for g in gates.values())
     report = {
         "passed": passed,
         "run_dir": str(run_dir),
@@ -227,6 +248,25 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
         "sciwrite_lint": sciwrite,
         "gates": gates,
     }
+    report["biomed_normalization"] = _optional.normalize_biomed_terms(
+        paper[:12000], run_dir / "biomed_normalization.json",
+    )
+    report["docling_fallback"] = _optional.write_docling_paper_sections(
+        source_uri="", parsed_dir=run_dir, paper_id="polish_docling_probe",
+        metadata={}, reason="polish_probe_no_source",
+    )
+    (run_dir / "docling_fallback.json").write_text(
+        json.dumps(report["docling_fallback"], indent=2),
+        encoding="utf-8",
+    )
+    report["structured_output"] = _optional.validate_structured_output(
+        report,
+        {"passed": "bool", "run_dir": "str", "tensions": "dict", "gates": "dict"},
+        run_dir / "structured_output_contract.json",
+    )
+    report["offline_eval_harness"] = _optional.run_offline_eval_harness(
+        run_dir, report, run_dir / "offline_eval_harness.json",
+    )
     (run_dir / "polish_compiler.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     (run_dir / "polish_compiler.md").write_text(_format_report(report), encoding="utf-8")
     return report

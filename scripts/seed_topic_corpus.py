@@ -52,6 +52,7 @@ from agent.corpus_pipeline import (  # noqa: E402
     classify_and_filter, extraction_pools_for_pack, format_funnel_md,
     topic_aliases_for_classification,
 )
+import v3_optional_adapters as _optional_adapters  # noqa: E402
 
 
 def _manifest_entry_to_dict(entry) -> dict[str, Any]:
@@ -139,12 +140,28 @@ def _write_abstract_fallback(
     resolved_meta: dict[str, Any] | None = None,
 ) -> str | None:
     resolved_meta = resolved_meta or {}
+    paper_id = _paper_id_from_hit(hit)
+    docling = _optional_adapters.write_docling_paper_sections(
+        source_uri=hit.url or "",
+        parsed_dir=parsed_dir,
+        paper_id=paper_id,
+        metadata={
+            "title": hit.title or "",
+            "authors": resolved_meta.get("authors") or [],
+            "year": resolved_meta.get("year") or hit.year,
+            "journal": resolved_meta.get("journal") or hit.venue or "",
+            "doi": resolved_meta.get("doi") or hit.doi or "",
+            "pmid": resolved_meta.get("pmid") or hit.pmid or "",
+        },
+        reason=reason,
+    )
+    if docling.get("status") == "passed":
+        return str(docling.get("paper_id") or paper_id)
     abstract = (
         hit.abstract or resolved_meta.get("abstract") or ""
     ).strip()
     if not abstract:
         return None
-    paper_id = _paper_id_from_hit(hit)
     sections = {
         "abstract": abstract,
         "introduction": "",
@@ -265,9 +282,9 @@ async def _do_seed(
             file=sys.stderr,
         )
         params = resolve_params("calibrated")
-        report = await run_waves(pack.retrieval, params=params)
+        wave_report = await run_waves(pack.retrieval, params=params)
         manifest = classify_and_filter(
-            report, topic=topic,
+            wave_report, topic=topic,
             topic_aliases=topic_aliases_for_classification(pack),
             expected_slots=pack.expected_evidence_slots,
             exclude_terms=(

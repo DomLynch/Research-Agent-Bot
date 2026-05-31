@@ -153,6 +153,9 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
     ),
     "audit": (
         "field_engagement.json",
+        "biomed_normalization.json",
+        "docling_fallback.json",
+        "offline_eval_harness.json",
         "full_paper.certification.json",
         "grade_assessment.json",
         "meta_analysis_results.json",
@@ -163,6 +166,7 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "receipt_funnel.json",
         "risk_of_bias.json",
         "run_mode_contract.json",
+        "structured_output_contract.json",
         "template_language_gate.json",
         "tension_elaboration_plans.json",
         "no_regression_report.json",
