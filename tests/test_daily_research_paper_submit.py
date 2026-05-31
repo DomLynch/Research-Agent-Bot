@@ -167,7 +167,7 @@ def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path:
 
 def test_duplicate_fingerprint_is_not_resubmitted(tmp_path: Path) -> None:
     run = _run(tmp_path)
-    fp = daily.build_payload(run)["metadata"]["content_hash"]
+    fp = daily._payload_fingerprint(daily.build_payload(run))
     _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{"fingerprint": fp}])
 
     ledger = daily.run_cycle(runs_root=tmp_path, date="2026-05-23")
