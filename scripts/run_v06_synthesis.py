@@ -233,6 +233,18 @@ def _pre_submit_blocker_summary(gate_artifacts: dict[str, Any]) -> str:
     )
 
 
+def _run_polish_compiler_gate(out_dir: Path) -> dict[str, Any]:
+    report = _polish_compiler.compile_run(out_dir)
+    if not bool(report.get("passed")):
+        gates = report.get("gates", {})
+        failed = [
+            name for name, gate in gates.items()
+            if isinstance(gate, dict) and gate.get("status") == "failed"
+        ]
+        raise RuntimeError("polish_compiler_failed:" + ",".join(failed))
+    return report
+
+
 def _append_structured_tables_to_public_body(markdown: str, tables_md: str) -> str:
     tables = tables_md.strip()
     if not tables or "## Structured Evidence Tables" in markdown:
