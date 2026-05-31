@@ -108,6 +108,24 @@ def test_manifest_counts_are_allowed_in_evidence_brief() -> None:
     assert ok, msg
 
 
+def test_manifest_receipt_p_values_are_traceable_structural_numerics() -> None:
+    paper = "Representative statistic: P < 0.001. Secondary statistic: P = 0.044."
+    manifest = {"receipts": [{"p_values": ["P < 0.001", "P = 0.044"]}]}
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums=set(), manifest=manifest)
+    assert ok, msg
+
+
+def test_evidence_snapshot_representative_p_values_are_appendix_metadata() -> None:
+    paper = (
+        "## Results\n\nNo reportable p-value here.\n\n"
+        "## Evidence Snapshot\n\n"
+        "### Load-Bearing Included Studies\n\n"
+        "- Smith 2024; representative statistic=P < 0.001.\n"
+    )
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums=set())
+    assert ok, msg
+
+
 def test_percentage_still_filtered_for_trivial_values() -> None:
     """Percentages ≤1.0 (rounding artifacts) and ≥1000 (typos) are
     still skipped to keep the existing prose-noise filter."""

@@ -321,6 +321,9 @@ def _check_numeric_integrity(
     # such figures don't fail Q2 coverage. Universal — section-structural,
     # no topic terms.
     paper = re.sub(r"(?ms)^##\s+References\b.*?(?=^##\s+(?!#)|\Z)", "", paper)
+    # Evidence Snapshot is deterministic appendix metadata (representative
+    # study stats, tension previews), not authored synthesis prose.
+    paper = re.sub(r"(?ms)^##\s+Evidence Snapshot\b.*?(?=^##\s+(?!#)|\Z)", "", paper)
     paper_clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
     )

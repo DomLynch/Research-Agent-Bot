@@ -631,12 +631,7 @@ def _phase_f_reconcile_results_table(
     }
     missing_blocks = []
     for slug, display, n, n_claims, signal, directness, limitation in stubs:
-        block = (
-            f"### {display} Outcomes\n\n"
-            f"{display} remains a separate Results slice (n={n}; claims={n_claims}; "
-            f"{signal}; {directness}; {limitation}) and is not pooled into adjacent "
-            "endpoint classes.\n"
-        )
+        block = f"### {display} Outcomes\n\n{display} remains a separate Results slice (n={n}; claims={n_claims}; {signal}; {directness}; {limitation}) and is not pooled into adjacent endpoint classes.\n"
         empty = re.search(rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\s*(?=^###\s+|\Z)", new_results)
         if empty:
             new_results = new_results[:empty.start()] + block + new_results[empty.end():]

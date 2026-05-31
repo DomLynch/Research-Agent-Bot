@@ -574,6 +574,22 @@ def test_results_outcome_sections_must_use_declared_heading_once():
     assert "unexpected Results outcome section: immune inflammatory" in details
 
 
+def test_results_summary_heading_is_not_an_outcome_section() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    results = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal |\n"
+        "|---|---|---|\n"
+        "| Immune | n=3 | mixed |\n\n"
+        "### Results Summary\n\n"
+        "This paragraph summarizes the Results section before outcome-specific subsections.\n\n"
+        "### Immune Outcomes\n\n"
+        f"{_words(500, 'results')}\n\n"
+    )
+    report = evaluate_journal_surface(paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", results))
+    assert not any("unexpected Results outcome section: results summary" in i.detail for i in report.issues)
+
+
 def test_duplicate_declared_results_outcome_section_blocks_surface():
     paper = _paper(
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
