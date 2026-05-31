@@ -13,7 +13,10 @@ import curate_v3_examples as curate  # type: ignore[import-not-found]  # noqa: E
 def _run(root: Path, name: str, score: float) -> Path:
     run = root / f"synthesis-{name}-v06"
     run.mkdir(parents=True)
-    (run / "full_paper.md").write_text("# Paper", encoding="utf-8")
+    (run / "full_paper.md").write_text(
+        "# Paper\n\n## Results\n\nClean.\n\n## Structured Evidence Tables\n\n| A | B |\n|---|---|\n| x | y |\n\n## Conclusion\n\nDone.\n",
+        encoding="utf-8",
+    )
     (run / "paper_ir.json").write_text("{}", encoding="utf-8")
     (run / "public_export_manifest.json").write_text(
         json.dumps({"files": {"markdown": {"path": "full_paper.md", "exists": True}}}),
@@ -38,6 +41,10 @@ def test_curate_examples_copies_only_scored_export_runs(tmp_path: Path) -> None:
 
     assert [p.name for p in written] == ["alpha-topic"]
     assert (out / "alpha-topic" / "full_paper.md").is_file()
+    manuscript = (out / "alpha-topic" / "full_paper.md").read_text(encoding="utf-8")
+    assert "Structured Evidence Tables" not in manuscript
+    assert "|---|" not in manuscript
+    assert "## Conclusion" in manuscript
     assert (out / "alpha-topic" / "paper_ir.json").is_file()
     assert (out / "alpha-topic" / "evidence_table.csv").is_file()
     assert not (out / "beta-topic").exists()

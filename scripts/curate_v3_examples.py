@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shutil
 from pathlib import Path
 from typing import Any
@@ -37,6 +38,10 @@ def curate_examples(
             src = run / name
             if src.is_file():
                 shutil.copy2(src, target / name)
+        (target / "full_paper.md").write_text(
+            _clean_public_manuscript((run / "full_paper.md").read_text(encoding="utf-8")),
+            encoding="utf-8",
+        )
         (target / "README.md").write_text(_readme(run, score), encoding="utf-8")
         written.append(target)
     return written
@@ -63,6 +68,14 @@ def _read_json(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
+def _clean_public_manuscript(markdown: str) -> str:
+    out = markdown
+    for heading in ("Quantitative Evidence Index", "Structured Evidence Tables", "Inferential Bridge"):
+        out = re.sub(rf"(?ms)^##\s+{re.escape(heading)}\b.*?(?=^##\s+|\Z)", "", out)
+    out = re.sub(r"\n{3,}", "\n\n", out).strip()
+    return out + "\n"
+
+
 def _slug(name: str) -> str:
     return name.removeprefix("synthesis-").split("-v", 1)[0].replace("_", "-")
 
@@ -72,7 +85,7 @@ def _readme(run: Path, score: float) -> str:
         f"# {run.name}\n\n"
         f"Curated v3 example copied from `{run.name}`.\n\n"
         f"- Paper quality score: {score:.1f}/100\n"
-        "- Includes clean manuscript, PaperIR, export manifest, evidence CSV, "
+        "- Includes cleaned manuscript, PaperIR, export manifest, evidence CSV, "
         "references, contradiction map, and supplement when present.\n"
     )
 
