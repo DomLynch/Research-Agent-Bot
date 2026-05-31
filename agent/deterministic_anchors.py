@@ -169,6 +169,48 @@ def build_discussion_anchor(
     return "\n".join(paragraphs)
 
 
+def build_conclusion_anchor(
+    receipts: Sequence[ReceiptSummary],
+    matrix: TensionMatrix,
+) -> str:
+    """Conclusion-section anchor. Gives the paper a bounded, corpus-derived
+    closing when the LLM returns a tiny conclusion and the retry does not
+    improve it."""
+    accepted = [
+        r for r in receipts
+        if r.spar_verdict in ("accept_clean", "accept_caveated")
+    ]
+    if not accepted:
+        return ""
+    tier_counts: Counter[str] = Counter(r.evidence_tier for r in accepted if r.evidence_tier)
+    direct_counts: Counter[str] = Counter(r.directness for r in accepted if r.directness)
+    direction_counts: Counter[str] = Counter(r.effect_direction for r in accepted if r.effect_direction)
+    n_tensions = len(matrix.pairs)
+    n_with_p = sum(1 for r in accepted if r.p_values)
+    return "\n".join([
+        "### Bounded conclusion",
+        "",
+        (
+            f"This synthesis supports a bounded interpretation across {len(accepted)} accepted receipts. "
+            f"The evidence tiers are {_format_kinds(tier_counts)}, and directness is {_format_kinds(direct_counts)}. "
+            f"Effect directions are {_format_kinds(direction_counts)}, with {n_with_p} receipts carrying source-traced "
+            f"p-values and {n_tensions} documented cross-receipt tensions. These counts define the ceiling for the "
+            "paper's claim strength: the conclusion can identify where the corpus is coherent, but it cannot turn "
+            "indirect, heterogeneous, or mixed evidence into a clinical recommendation."
+        ),
+        "",
+        (
+            "The practical result is therefore conservative. Positive or negative signals should be read only inside "
+            "the populations, outcome classes, follow-up windows, and evidence tiers represented in the accepted "
+            "receipts. Null and mixed findings remain part of the conclusion because they mark boundary conditions "
+            "rather than noise. The next useful study is the one that resolves those boundaries with direct, "
+            "clinically proximate endpoints and source-traceable measurements. Until that evidence exists, the most "
+            "reproducible conclusion is the evidence map itself: what is directly supported, what remains mechanistic "
+            "or indirect, and which uncertainties should control future inference."
+        ),
+    ])
+
+
 def _format_kinds(kinds: Counter[str]) -> str:
     if not kinds:
         return "none"
@@ -192,6 +234,7 @@ def _format_populations(pops: list[str]) -> str:
 
 
 __all__ = [
+    "build_conclusion_anchor",
     "build_cross_domain_anchor",
     "build_discussion_anchor",
 ]
