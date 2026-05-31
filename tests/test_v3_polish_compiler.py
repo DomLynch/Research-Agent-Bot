@@ -60,7 +60,7 @@ def test_compile_run_writes_sidecars_with_optional_tools_skipped(tmp_path, monke
     assert (tmp_path / "run" / "polish_tensions_appendix.json").exists()
 
 
-def test_canonical_pipe_table_is_advisory_and_removed_from_typst(tmp_path, monkeypatch) -> None:
+def test_canonical_pipe_table_is_advisory_and_rendered_to_typst(tmp_path, monkeypatch) -> None:
     monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
     monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
     monkeypatch.setattr(polish, "_run_sciwrite", lambda _paper: {"status": "skipped"})
@@ -70,7 +70,9 @@ def test_canonical_pipe_table_is_advisory_and_removed_from_typst(tmp_path, monke
     assert report["passed"] is True
     assert report["gates"]["raw_pipe_tables"]["status"] == "advisory"
     assert "| Study | Result |" not in typ
-    assert "Structured table omitted from PDF main text" in typ
+    assert "#table(" in typ
+    assert "[*Study*]" in typ
+    assert "[B]" in typ
 
 
 def test_malformed_pipe_table_still_blocks(tmp_path, monkeypatch) -> None:

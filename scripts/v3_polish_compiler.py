@@ -38,6 +38,8 @@ def _title(paper: str, manifest: dict[str, Any] | None) -> str:
 def _typ_escape(text: str) -> str:
     return (
         text.replace("\\", "\\\\")
+        .replace("[", "\\[")
+        .replace("]", "\\]")
         .replace("#", "\\#")
         .replace("$", "\\$")
         .replace("_", "\\_")
@@ -56,22 +58,41 @@ def _pipe_cells(line: str) -> list[str]:
     return [cell.strip() for cell in line.strip().strip("|").split("|")]
 
 
+def _table_block_at(lines: list[str], idx: int) -> tuple[list[list[str]], int] | None:
+    if idx + 1 >= len(lines):
+        return None
+    header, separator = lines[idx], lines[idx + 1]
+    if not (_is_pipe_row(header) and _is_pipe_row(separator) and set(separator.strip(" |:-")) <= {""}):
+        return None
+    width = len(_pipe_cells(header))
+    rows = [_pipe_cells(header)]
+    next_idx = idx + 2
+    while next_idx < len(lines) and _is_pipe_row(lines[next_idx]):
+        cells = _pipe_cells(lines[next_idx])
+        if len(cells) != width:
+            return None
+        rows.append(cells)
+        next_idx += 1
+    return rows, next_idx
+
+
 def _pipe_table_gate(markdown: str) -> dict[str, Any]:
     lines = markdown.splitlines()
     tables = 0
     malformed: list[int] = []
-    for idx, (header, separator) in enumerate(zip(lines, lines[1:], strict=False), 1):
-        if not (_is_pipe_row(header) and _is_pipe_row(separator) and set(separator.strip(" |:-")) <= {""}):
+    idx = 0
+    while idx < len(lines) - 1:
+        separator = lines[idx + 1]
+        if not (_is_pipe_row(lines[idx]) and _is_pipe_row(separator) and set(separator.strip(" |:-")) <= {""}):
+            idx += 1
             continue
         tables += 1
-        width = len(_pipe_cells(header))
-        rows = []
-        for row in lines[idx + 1:]:
-            if not _is_pipe_row(row):
-                break
-            rows.append(row)
-        if any(len(_pipe_cells(row)) != width for row in rows):
-            malformed.append(idx)
+        block = _table_block_at(lines, idx)
+        if block is None:
+            malformed.append(idx + 1)
+            idx += 2
+            continue
+        _, idx = block
     if malformed:
         return {"status": "failed", "table_count": tables, "malformed_tables": malformed[:10]}
     if tables:
@@ -79,16 +100,31 @@ def _pipe_table_gate(markdown: str) -> dict[str, Any]:
     return {"status": "passed", "table_count": 0}
 
 
+def _typ_table(rows: list[list[str]]) -> str:
+    cells: list[str] = []
+    for ridx, row in enumerate(rows):
+        for cell in row:
+            body = _typ_escape(cell)
+            cells.append(f"[*{body}*]" if ridx == 0 else f"[{body}]")
+    return (
+        "#table(\n  columns: " + str(len(rows[0]))
+        + ",\n  inset: 4pt,\n  "
+        + ",\n  ".join(cells)
+        + ",\n)"
+    )
+
+
 def _markdown_to_typst(markdown: str) -> str:
     out: list[str] = []
-    in_table = False
-    for line in markdown.splitlines():
-        if _is_pipe_row(line):
-            if not in_table:
-                out.append("_Structured table omitted from PDF main text; see audit sidecars._")
-                in_table = True
+    lines = markdown.splitlines()
+    idx = 0
+    while idx < len(lines):
+        line = lines[idx]
+        table = _table_block_at(lines, idx)
+        if table:
+            rows, idx = table
+            out.append(_typ_table(rows))
             continue
-        in_table = False
         m = re.match(r"^(#{1,4})\s+(.+)$", line)
         if m:
             out.append(f"{'=' * len(m.group(1))} {_typ_escape(m.group(2).strip())}")
@@ -96,6 +132,7 @@ def _markdown_to_typst(markdown: str) -> str:
             out.append(f"- {_typ_escape(line[2:].strip())}")
         else:
             out.append(_typ_escape(line))
+        idx += 1
     return "\n".join(out).strip() + "\n"
 
 
