@@ -1385,6 +1385,16 @@ def test_artifact_consistency_sidecar_round_trip(tmp_path) -> None:
     assert len(payload["checks"]) == len(report.checks)
 
 
+def test_artifact_consistency_skips_missing_optional_docx_extractor(tmp_path, monkeypatch) -> None:
+    from agent import artifact_consistency as ac
+    (tmp_path / "full_paper.md").write_text("## Abstract\n\nOK.\n")
+    (tmp_path / "full_paper.docx").write_bytes(b"not parsed without optional dependency")
+    monkeypatch.setattr(ac, "_extract_docx_text", lambda _p: (_ for _ in ()).throw(ImportError("No module named 'docx'")))
+    report = ac.verify_run_artifacts(tmp_path)
+    assert report.passed
+    assert any(c.name == "docx_extraction_skipped" and c.passed for c in report.checks)
+
+
 # Slice 15 — writer-compliance scrubber. The deterministic post-render
 # helper that turns the writer's leaked pipeline jargon into the
 # academic-language equivalents. Universal — no per-topic logic.

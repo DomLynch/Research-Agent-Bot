@@ -112,7 +112,13 @@ def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
             continue
         try:
             export_text = exporter(export_path)
-        except (ImportError, OSError, ValueError) as e:
+        except ImportError as e:
+            checks.append(ConsistencyCheck(
+                name=f"{ext}_extraction_skipped", passed=True,
+                detail=f"{ext} present but optional text extractor unavailable: {e!r}",
+            ))
+            continue
+        except (OSError, ValueError) as e:
             checks.append(ConsistencyCheck(
                 name=f"{ext}_extracted", passed=False,
                 detail=f"{ext} present but text extraction failed: {e!r}",
