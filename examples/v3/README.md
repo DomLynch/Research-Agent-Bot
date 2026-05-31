@@ -12,3 +12,7 @@ after a run has:
 
 Do not bulk-commit generated `runs/` output. Keep at most 2-3 polished examples
 here, each with a short README explaining why it is representative.
+
+Use `scripts/curate_v3_examples.py --runs-dir runs --out-dir examples/v3` to
+copy only runs that already have PaperIR, export manifest, and quality-score
+sidecars.
