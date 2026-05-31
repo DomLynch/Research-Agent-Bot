@@ -98,7 +98,7 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
     topic = str(manifest.get("topic") or _topic_from_run(run_dir))
     receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
     tensions = _load_tensions(run_dir)
-    framework = select_domain_framework(topic, _topic_class(topic), receipts)
+    framework = select_domain_framework(topic, _topic_class(topic), receipts, _topic_framework(topic))
     thesis = _build_thesis(paper, topic, framework, receipts, tensions)
     exports = _write_exports(run_dir, paper, manifest, receipts, tensions)
     ir = PaperIR(
@@ -121,7 +121,10 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
 
 def select_domain_framework(
     topic: str, topic_class: str, receipts: list[dict[str, Any]],
+    configured: DomainFramework | None = None,
 ) -> DomainFramework:
+    if configured:
+        return configured
     haystack = " ".join(
         [topic, topic_class]
         + [str(r.get("outcome_class") or "") for r in receipts[:40]]
@@ -147,14 +150,32 @@ def _topic_from_run(run_dir: Path) -> str:
 
 
 def _topic_class(topic: str) -> str:
+    data = _topic_pack(topic)
+    return str(data.get("class_") or data.get("class") or "") if data else ""
+
+
+def _topic_framework(topic: str) -> DomainFramework | None:
+    data = _topic_pack(topic)
+    if not data or not isinstance(data.get("paper_framework"), dict):
+        return None
+    raw = data["paper_framework"]
+    name = str(raw.get("name") or "").strip()
+    axes = tuple(str(x).strip() for x in raw.get("axes", []) if str(x).strip())
+    falsifier = str(raw.get("falsifier") or "").strip()
+    terms = tuple(str(x).strip().lower() for x in raw.get("class_terms", []) if str(x).strip())
+    if not (name and axes and falsifier):
+        return None
+    return DomainFramework(name, terms or (topic.replace("_", " "),), axes, falsifier)
+
+
+def _topic_pack(topic: str) -> dict[str, Any] | None:
     pack = REPO / "topic_packs" / f"{topic}.toml"
     if not pack.exists():
-        return ""
+        return None
     try:
-        data = tomllib.loads(pack.read_text(encoding="utf-8"))
+        return tomllib.loads(pack.read_text(encoding="utf-8"))
     except tomllib.TOMLDecodeError:
-        return ""
-    return str(data.get("class_") or data.get("class") or "")
+        return None
 
 
 def _load_tensions(run_dir: Path) -> list[dict[str, Any]]:
@@ -293,15 +314,65 @@ def _write_bib(path: Path, refs: list[str], manifest: dict[str, Any]) -> None:
 
 
 def _write_docx(path: Path, paper: str) -> None:
-    paragraphs = [
-        re.sub(r"^#{1,6}\s+", "", p).strip()
-        for p in re.split(r"\n\s*\n", paper) if p.strip()
-    ][:400]
-    document = "".join(f"<w:p><w:r><w:t>{escape(p)}</w:t></w:r></w:p>" for p in paragraphs)
+    document = _docx_body(paper)
     with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         zf.writestr("[Content_Types].xml", '<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>')
         zf.writestr("_rels/.rels", '<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>')
         zf.writestr("word/document.xml", f'<?xml version="1.0"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>{document}</w:body></w:document>')
+
+
+def _docx_body(paper: str) -> str:
+    out: list[str] = []
+    lines = paper.splitlines()
+    idx = 0
+    while idx < len(lines) and len(out) < 700:
+        table = _table_at(lines, idx)
+        if table:
+            rows, idx = table
+            out.append(_docx_table(rows))
+            continue
+        line = lines[idx].strip()
+        if line:
+            m = re.match(r"^(#{1,6})\s+(.+)$", line)
+            text = m.group(2).strip() if m else line
+            bold = bool(m)
+            out.append(f"<w:p><w:r>{'<w:b/>' if bold else ''}<w:t>{escape(text)}</w:t></w:r></w:p>")
+        idx += 1
+    return "".join(out)
+
+
+def _table_at(lines: list[str], idx: int) -> tuple[list[list[str]], int] | None:
+    if idx + 1 >= len(lines):
+        return None
+    if not (_is_pipe_row(lines[idx]) and _is_pipe_row(lines[idx + 1]) and set(lines[idx + 1].strip(" |:-")) <= {""}):
+        return None
+    width = len(_pipe_cells(lines[idx]))
+    rows = [_pipe_cells(lines[idx])]
+    idx += 2
+    while idx < len(lines) and _is_pipe_row(lines[idx]):
+        cells = _pipe_cells(lines[idx])
+        if len(cells) != width:
+            return None
+        rows.append(cells)
+        idx += 1
+    return rows, idx
+
+
+def _is_pipe_row(line: str) -> bool:
+    s = line.strip()
+    return s.startswith("|") and s.endswith("|") and s.count("|") >= 2
+
+
+def _pipe_cells(line: str) -> list[str]:
+    return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+
+def _docx_table(rows: list[list[str]]) -> str:
+    trs = []
+    for row in rows:
+        cells = "".join(f"<w:tc><w:p><w:r><w:t>{escape(cell)}</w:t></w:r></w:p></w:tc>" for cell in row)
+        trs.append(f"<w:tr>{cells}</w:tr>")
+    return "<w:tbl>" + "".join(trs) + "</w:tbl>"
 
 
 def _quality_score(ir: PaperIR, paper: str, receipts: list[dict[str, Any]], tensions: list[dict[str, Any]]) -> dict[str, Any]:
