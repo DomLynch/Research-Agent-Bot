@@ -747,6 +747,36 @@ def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
     assert "the retained clinical and adjacent evidence profile defines the scope" in md
 
 
+def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 2,
+            "n_high_confidence_claims_total": 12,
+            "n_non_orthogonal_tensions": 2,
+            "receipts": [
+                {
+                    "directness": "indirect",
+                    "effect_direction": "negative",
+                    "outcome_class": "immune",
+                    "citation_token": "Example A 2025",
+                },
+                {
+                    "directness": "indirect",
+                    "effect_direction": "negative",
+                    "outcome_class": "immune_inflammation",
+                    "citation_token": "Example B 2025",
+                },
+            ],
+        }
+        md = orch._compile_public_section_backstop("Abstract", 150)
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+
+    assert "immune and immune and inflammation" not in md
+    assert "negative signals cluster in the immune, immune and inflammation outcome classes" in md
+
+
 def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -> None:
     md = orch._compile_public_section_backstop("Results", 500)
     body = md.split("\n\n", 1)[1]

@@ -916,6 +916,19 @@ def _section_backstop_context() -> dict[str, object]:
     manifest = _ACTIVE_MANIFEST or {}
     receipts = list(manifest.get("receipts") or [])
 
+    def _outcome_list_phrase(labels: list[str]) -> str:
+        if not labels:
+            return "no dominant outcome class"
+        if len(labels) == 1:
+            return f"the {labels[0]} outcome class"
+        # Some canonical outcome labels contain "and" already (for example
+        # "immune and inflammation"). Avoid prose like "immune and immune and
+        # inflammation", which the public-surface gate correctly treats as a
+        # duplicated adjacent phrase.
+        if any(" and " in label for label in labels):
+            return f"the {', '.join(labels)} outcome classes"
+        return f"the {', '.join(labels[:-1])} and {labels[-1]} outcome classes"
+
     def _count(field: str, value: str) -> int:
         return sum(1 for r in receipts if str(r.get(field, "")).lower() == value)
 
@@ -968,11 +981,7 @@ def _section_backstop_context() -> dict[str, object]:
         # `"concentrate in {pos}"` read naturally regardless of label count.
         # Bare labels (e.g. "immune") triggered Researka "truncated sentence"
         # complaints when slotted into those templates.
-        if not top:
-            return "no dominant outcome class"
-        if len(top) == 1:
-            return f"the {top[0]} outcome class"
-        return f"the {', '.join(top[:-1])} and {top[-1]} outcome classes"
+        return _outcome_list_phrase(top)
 
     direct = _count("directness", "direct")
     indirect = _count("directness", "indirect")
