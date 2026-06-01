@@ -551,6 +551,32 @@ def test_public_evidence_snapshot_is_compact_and_not_pipe_table() -> None:
     assert "\n|" not in md
 
 
+def test_public_evidence_snapshot_hides_low_fill_included_studies_preview() -> None:
+    receipts = [
+        _FakeReceipt(
+            receipt_id="not extracted",
+            evidence_tier="",
+            directness="",
+            outcome_class="not extracted",
+            effect_direction="not extracted",
+            population_summary="not extracted",
+        ),
+        _FakeReceipt(
+            receipt_id="CORRECTING 2019",
+            evidence_tier="",
+            directness="",
+            outcome_class="not extracted",
+            effect_direction="not extracted",
+            population_summary="not extracted",
+        ),
+    ]
+    md = tr.render_public_evidence_snapshot(receipts)
+    assert "### Included Sources" in md
+    assert "### Load-Bearing Included Studies" not in md
+    assert "not extracted" not in md.lower()
+    assert "Included source 1" in md
+
+
 # ----- 2nd-pass reviewer fix tests (post second 2x review on Fix #6) ----
 
 

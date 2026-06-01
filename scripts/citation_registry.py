@@ -191,6 +191,12 @@ _BLOCKED_BODY_CITATION_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"^[A-Z][a-zA-Z]+_\d{4}$"),
     # Bare PMCID with no year decoration
     re.compile(r"^PMC\d{6,9}$"),
+    # Extraction / correction artifacts are not author-year citations.
+    re.compile(r"^CORRECT(?:ING|ION)?\s+\d{4}[a-z]?$", re.IGNORECASE),
+    # Duplicate-year malformed labels (e.g. "Smith 2019 2019").
+    re.compile(r"\b(19\d{2}|20\d{2})\b.*\b\1\b"),
+    # Long all-caps title fragments; short acronyms such as HBOT are OK.
+    re.compile(r"^(?!PMC\d)[A-Z][A-Z0-9-]{5,}(?:\s+\d{4}[a-z]?)?$"),
 )
 
 

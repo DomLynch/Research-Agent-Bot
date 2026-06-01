@@ -340,6 +340,17 @@ def test_review_heavy_abstraction_note_distinguishes_reference_papers_from_trial
     assert out.index("Evidence-abstraction note.") < out.index("## Introduction")
 
 
+def test_review_heavy_abstraction_note_does_not_call_observational_corpus_no_clinical_evidence() -> None:
+    receipts = [_receipt(f"obs-{i}", "indirect") for i in range(5)]
+    paper = "## Abstract\n\nThis synthesis maps the evidence.\n\n## Introduction\n\nIntro.\n"
+
+    out = orch._insert_review_heavy_abstraction_note(paper, receipts)
+
+    assert "no source is classified as direct interventional hard-endpoint evidence" in out
+    assert "human observational/prognostic or review-level evidence is present" in out
+    assert "none are classified as direct clinical evidence" not in out
+
+
 def test_review_heavy_abstraction_note_is_not_added_to_direct_trial_corpus() -> None:
     receipts = [_receipt(f"direct-{i}", "direct") for i in range(5)]
     paper = "## Abstract\n\nThis synthesis maps the evidence.\n\n## Introduction\n\nIntro.\n"

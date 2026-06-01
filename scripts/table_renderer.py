@@ -69,7 +69,7 @@ def _safe(v: Any, default: str = "n/a") -> str:
 
 def _public_label(value: Any) -> str:
     """Human-readable display for internal enum/claim labels."""
-    s = _safe(value, "—").strip()
+    s = _public_value(value).strip()
     labels = {
         "ci": "confidence interval",
         "cross_domain": "cross-domain",
@@ -758,7 +758,65 @@ def render_table_5_numeric_index(
 
 
 def _inline_cell(value: Any) -> str:
-    return _safe(value, "—").replace("|", "/").replace("\n", " ").strip()
+    return _public_value(value).replace("|", "/").replace("\n", " ").strip()
+
+
+_MISSING_PUBLIC_VALUES = {
+    "", "-", "—", "–", "none", "n/a", "na", "unknown", "not extracted",
+    "not_extracted", "not available", "not reported",
+}
+
+
+def _is_missing_public_value(value: Any) -> bool:
+    return str(value or "").strip().lower() in _MISSING_PUBLIC_VALUES
+
+
+def _public_value(value: Any, default: str = "—") -> str:
+    return default if _is_missing_public_value(value) else str(value)
+
+
+def _included_study_fill_rate(receipts: list) -> float:
+    fields = (
+        "receipt_id", "evidence_tier", "directness", "population_summary",
+        "outcome_class", "effect_direction",
+    )
+    total = len(receipts) * len(fields)
+    if not total:
+        return 1.0
+    filled = sum(
+        1
+        for receipt in receipts
+        for field in fields
+        if not _is_missing_public_value(getattr(receipt, field, None))
+    )
+    return filled / total
+
+
+def _source_list_label(receipt: Any, idx: int) -> str:
+    for field in ("source_title", "title", "receipt_id"):
+        value = getattr(receipt, field, None)
+        if not _is_missing_public_value(value):
+            return _inline_cell(value)
+    return f"Included source {idx}"
+
+
+def _render_compact_source_list(receipts: list) -> list[str]:
+    lines = [
+        "### Included Sources",
+        "",
+        "Structured study fields were sparsely extracted, so the public manuscript lists sources rather than rendering an incomplete study table.",
+        "",
+    ]
+    for idx, r in enumerate(_rank_receipts_for_public(receipts, 10), start=1):
+        bits = [_source_list_label(r, idx)]
+        if not _is_missing_public_value(getattr(r, "source_venue", None)):
+            bits.append(_inline_cell(getattr(r, "source_venue")))
+        if not _is_missing_public_value(getattr(r, "source_year", None)):
+            bits.append(str(getattr(r, "source_year")))
+        if not _is_missing_public_value(getattr(r, "source_doi", None)):
+            bits.append(f"DOI {_inline_cell(getattr(r, 'source_doi'))}")
+        lines.append("- " + "; ".join(bits) + ".")
+    return lines
 
 
 def _rank_receipts_for_public(receipts: list, limit: int) -> list:
@@ -809,25 +867,28 @@ def render_public_evidence_snapshot(
         "",
         "The manuscript foregrounds the load-bearing evidence; the full evidence tables remain in the supplement.",
         "",
-        "### Load-Bearing Included Studies",
-        "",
     ]
-    for r in _rank_receipts_for_public(receipts, max_studies):
-        n_str, pop_label = _split_population_n(getattr(r, "population_summary", None) or "—")
-        p_value = _representative_p_value(r)
-        bits = [
-            _inline_cell(getattr(r, "receipt_id", "—")),
-            _design_from_tier(getattr(r, "evidence_tier", "")),
-            f"tier={_inline_cell(getattr(r, 'evidence_tier', '—'))}",
-            f"directness={_inline_cell(getattr(r, 'directness', '—'))}",
-            f"N={n_str}",
-            f"population={_inline_cell(pop_label)}",
-            f"endpoint={_public_label(getattr(r, 'outcome_class', '—'))}",
-            f"direction={_public_label(getattr(r, 'effect_direction', '—'))}",
-        ]
-        if p_value != "—":
-            bits.append(f"representative statistic={_inline_cell(p_value)}")
-        lines.append("- " + "; ".join(bits) + ".")
+    ranked = _rank_receipts_for_public(receipts, max_studies)
+    if _included_study_fill_rate(ranked) < 0.5:
+        lines.extend(_render_compact_source_list(ranked))
+    else:
+        lines.extend(["### Load-Bearing Included Studies", ""])
+        for r in ranked:
+            n_str, pop_label = _split_population_n(getattr(r, "population_summary", None) or "—")
+            p_value = _representative_p_value(r)
+            bits = [
+                _inline_cell(getattr(r, "receipt_id", "—")),
+                _design_from_tier(getattr(r, "evidence_tier", "")),
+                f"tier={_inline_cell(getattr(r, 'evidence_tier', '—'))}",
+                f"directness={_inline_cell(getattr(r, 'directness', '—'))}",
+                f"N={_inline_cell(n_str)}",
+                f"population={_inline_cell(pop_label)}",
+                f"endpoint={_public_label(getattr(r, 'outcome_class', '—'))}",
+                f"direction={_public_label(getattr(r, 'effect_direction', '—'))}",
+            ]
+            if p_value != "—":
+                bits.append(f"representative statistic={_inline_cell(p_value)}")
+            lines.append("- " + "; ".join(bits) + ".")
     lines.extend(["", "### Load-Bearing Tensions", "", *_public_tension_lines(matrix, max_tensions), ""])
     return "\n".join(lines)
 
