@@ -44,7 +44,10 @@ def test_local_counts_reports_top_blockers_and_repeats(tmp_path: Path) -> None:
     (submit / "2026-05-30.json").write_text(json.dumps({"status": "no_eligible_research_paper"}))
     (ledger / "_blocker_histogram.json").write_text(json.dumps({
         "blockers": {"retracted_source_cited": {"count": 4, "class": "D_no_action"}},
-        "repeats": {"coenzyme_q10_ubiquinol\u001fretracted_source_cited": ["2026-05-30T20:00:00+00:00"]},
+        "repeats": {
+            "coenzyme_q10_ubiquinol\u001fretracted_source_cited": ["2026-05-30T20:00:00+00:00"],
+            "coenzyme_q10_ubiquinol\u001fabstract_overclaim": ["2026-05-30T21:00:00+00:00"],
+        },
     }))
 
     counts = report._local_counts(tmp_path, "2026-05-30")
