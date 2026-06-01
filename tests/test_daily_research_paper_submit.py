@@ -246,6 +246,29 @@ def test_low_source_topic_precision_blocks_submit(tmp_path: Path, monkeypatch) -
     assert ledger["considered"][0]["status"] == "source_topic_precision_low:1/4<0.35"
 
 
+def test_source_topic_precision_uses_topic_aliases(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path / "runs", name="synthesis-hydrogen_water-v06-test")
+    (tmp_path / "topic_packs").mkdir()
+    (tmp_path / "topic_packs" / "hydrogen_water.toml").write_text(
+        'aliases = ["molecular hydrogen", "hydrogen-rich water"]\n',
+        encoding="utf-8",
+    )
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "hydrogen_water"
+    manifest["receipts"] = [
+        {"receipt_id": "randomized_molecular_hydrogen_trial", "paper_id": "randomized_molecular_hydrogen_trial"},
+        {"receipt_id": "molecular_hydrogen_human_metabolic_trial", "paper_id": "molecular_hydrogen_human_metabolic_trial"},
+        {"receipt_id": "molecular_hydrogen_improves_blueberry_plant_traits", "paper_id": "molecular_hydrogen_improves_blueberry_plant_traits"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ok, status = daily._source_topic_precision(run)
+
+    assert ok
+    assert status == "source_topic_precision_ok:2/3"
+
+
 def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-eligible-old")
     current = _run(tmp_path, name="synthesis-topic-v06-current")
