@@ -162,13 +162,17 @@ def capacity_plan(
                 f"python scripts/materialize_fact_topic_packs.py --strategy fact-field-cross --limit {unique_gap}"
                 if unique_gap else "none"
             ),
+            "fact_pair_projection_command": (
+                f"python scripts/materialize_fact_topic_packs.py --strategy fact-pair-cross --limit {unique_gap}"
+                if unique_gap else "none"
+            ),
             "materializer_persist_rule": "persist only if projection.created > 0",
             "capacity_warning": (
                 "run materializer projection against live fact rows; current grouped fact topics may be exhausted"
                 if unique_gap else "none"
             ),
             "next_strategy": (
-                "if grouped projection creates 0, run fact-field-cross projection; persist only specific packs that pass peer specificity"
+                "if grouped/field-cross projections create 0, run fact-pair-cross; persist only repeated intervention-population packs that pass peer specificity"
                 if unique_gap else "none"
             ),
             "next_generated_candidates": list(expansion_candidates),

@@ -130,9 +130,10 @@ def test_capacity_plan_includes_unique_topic_expansion_path() -> None:
         "fact_materializer_rows_needed": 4511,
         "materializer_projection_command": "python scripts/materialize_fact_topic_packs.py --limit 4511",
         "field_cross_projection_command": "python scripts/materialize_fact_topic_packs.py --strategy fact-field-cross --limit 4511",
+        "fact_pair_projection_command": "python scripts/materialize_fact_topic_packs.py --strategy fact-pair-cross --limit 4511",
         "materializer_persist_rule": "persist only if projection.created > 0",
         "capacity_warning": "run materializer projection against live fact rows; current grouped fact topics may be exhausted",
-        "next_strategy": "if grouped projection creates 0, run fact-field-cross projection; persist only specific packs that pass peer specificity",
+        "next_strategy": "if grouped/field-cross projections create 0, run fact-pair-cross; persist only repeated intervention-population packs that pass peer specificity",
         "next_generated_candidates": [{"topic": "PCSK9", "slug": "pcsk9", "candidate_count": 90}],
     }
 

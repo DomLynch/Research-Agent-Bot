@@ -129,3 +129,30 @@ def test_fact_field_cross_strategy_uses_fact_json_fields() -> None:
     assert "claim_kind" not in materializer.FACT_FIELD_CROSS_SQL
     assert "extraction_confidence" not in materializer.FACT_FIELD_CROSS_SQL
     assert "'other'" in materializer.FACT_FIELD_CROSS_SQL
+
+
+def test_fact_pair_cross_strategy_requires_intervention_population_and_repeated_papers() -> None:
+    sql = materializer.FACT_PAIR_CROSS_SQL
+
+    assert "ft.fact_json->>'intervention'" in sql
+    assert "ft.fact_json->>'population'" in sql
+    assert "count(DISTINCT ft.paper_id) AS papers" in sql
+    assert "papers >= %(min_papers)s" in sql
+    assert "exact_facts >= %(min_exact_facts)s" in sql
+    assert "lower(split_part(sub_topic, ' in ', 1)) != lower(topic)" in sql
+
+
+def test_materialize_rows_keeps_repeated_intervention_population_pack(tmp_path: Path) -> None:
+    rows = [{
+        "topic": "fasting",
+        "sub_topic": "30% caloric restriction in male c57bl/6j mice",
+        "claim_type": "effect_size",
+        "facts": 5,
+        "exact_facts": 5,
+        "papers": 2,
+    }]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=True)
+
+    assert result["created"][0]["slug"] == "fasting_30_caloric_restriction_in_male_c57bl_6j_mice_effects"
+    assert result["skipped"] == []
