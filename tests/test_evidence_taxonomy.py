@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import evidence_taxonomy as et  # noqa: E402
+import evidence_taxonomy as et  # type: ignore[import-not-found]  # noqa: E402
 
 
 def test_human_rct_with_clinical_endpoint_is_a1() -> None:
@@ -74,6 +74,17 @@ def test_human_observational_cohort_is_b2_not_mechanistic() -> None:
     assert cls.tier == "B2"
     assert cls.directness == "indirect"
     assert cls.directness != "mechanistic"
+
+
+def test_public_directness_phrase_keeps_observational_human_evidence_visible() -> None:
+    phrase = et.public_directness_phrase(["B2"], ["indirect"])
+    assert phrase == "human observational/prognostic evidence is present"
+    assert "no direct clinical evidence" not in phrase
+
+
+def test_public_directness_phrase_separates_review_and_preclinical_only() -> None:
+    assert et.public_directness_phrase(["B1"], ["review"]) == "review-level evidence is present"
+    assert et.public_directness_phrase(["C1"], ["mechanistic"]) == "preclinical/mechanistic evidence is present"
 
 
 def test_target_trial_emulation_is_b2() -> None:

@@ -5,6 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import apply_consistency_fixes as fixes  # type: ignore[import-not-found]  # noqa: E402
+import review_noise_control as noise  # type: ignore[import-not-found]  # noqa: E402
 
 
 def test_public_snake_case_labels_normalize_in_body_only() -> None:
@@ -51,6 +52,33 @@ def test_lightweight_polish_journalizes_public_counter_terms() -> None:
     assert "366 public cross-study disagreements" in out
     assert "DOI: 10.1/example." in out
     assert any(i["fix_type"] == "public_evidence_term_normalization" for i in log)
+
+
+def test_lightweight_polish_repairs_connector_punctuation() -> None:
+    paper = (
+        "## Discussion\n\n"
+        "These findings, suggest caution.\n\n"
+        "## References\n\n"
+        "- Smith 2024.\n"
+    )
+    out, log = fixes.apply_lightweight_public_polish(paper)
+    assert "These findings suggest caution." in out
+    assert "These findings, suggest caution." not in out
+    assert any(i["fix_type"] == "connector_punctuation_repair" for i in log)
+
+
+def test_review_noise_dedupes_rows_across_two_duplicate_heading_tables(tmp_path: Path) -> None:
+    table = (
+        "## Table 1: Included Studies\n\n"
+        "| Study | Endpoint | Arm | Value |\n"
+        "|---|---|---|---|\n"
+        "| Smith 2024 | glucose | treatment | 10 |\n"
+        "| Smith 2024 | glucose | treatment | 10 |\n\n"
+    )
+    paper = table + "## Results\n\nInterpretation.\n\n" + table
+    out, changes = noise.apply_review_noise_control(paper, tmp_path)
+    assert out.count("| Smith 2024 | glucose | treatment | 10 |") == 2
+    assert any(c[0] == "dedupe_duplicate_table_rows" and c[1] == 2 for c in changes)
 
 
 def test_lightweight_polish_removes_orphan_table_and_overclaim_language() -> None:

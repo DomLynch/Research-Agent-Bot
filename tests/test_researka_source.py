@@ -98,6 +98,18 @@ async def test_search_returns_empty_on_500(with_token: str) -> None:
 
 
 @pytest.mark.asyncio
+async def test_search_result_marks_500_as_server_error(with_token: str) -> None:
+    def responder(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(500, content=b"server error")
+
+    async with _mock_client(responder) as client:
+        result = await ResearkaClient().search_result(client, "berberine", limit=5)
+    assert result.hits == []
+    assert result.status == "server_error"
+    assert "HTTP 500" in result.error
+
+
+@pytest.mark.asyncio
 async def test_search_returns_empty_on_401(with_token: str) -> None:
     def responder(request: httpx.Request) -> httpx.Response:
         return httpx.Response(401, content=b'{"detail":"invalid token"}')
@@ -108,6 +120,18 @@ async def test_search_returns_empty_on_401(with_token: str) -> None:
 
 
 @pytest.mark.asyncio
+async def test_search_result_marks_401_and_429_as_non_empty_status(with_token: str) -> None:
+    statuses: list[str] = []
+    for code in (401, 429):
+        def responder(request: httpx.Request, code: int = code) -> httpx.Response:
+            return httpx.Response(code, content=b"blocked")
+
+        async with _mock_client(responder) as client:
+            statuses.append((await ResearkaClient().search_result(client, "berberine", limit=5)).status)
+    assert statuses == ["auth_failed", "rate_limited"]
+
+
+@pytest.mark.asyncio
 async def test_search_returns_empty_on_malformed_json(with_token: str) -> None:
     def responder(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, content=b"{not json")
@@ -115,6 +139,17 @@ async def test_search_returns_empty_on_malformed_json(with_token: str) -> None:
     async with _mock_client(responder) as client:
         hits = await ResearkaClient().search(client, "berberine", limit=5)
     assert hits == []
+
+
+@pytest.mark.asyncio
+async def test_search_result_marks_malformed_json_as_bad_json(with_token: str) -> None:
+    def responder(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, content=b"{not json")
+
+    async with _mock_client(responder) as client:
+        result = await ResearkaClient().search_result(client, "berberine", limit=5)
+    assert result.hits == []
+    assert result.status == "bad_json"
 
 
 @pytest.mark.asyncio

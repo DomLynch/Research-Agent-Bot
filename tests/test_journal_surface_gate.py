@@ -139,6 +139,17 @@ def test_surface_gate_flags_not_extracted_preview_text():
     assert any(i.code == "public_artifact" and "not extracted" in i.detail for i in report.issues)
 
 
+def test_surface_gate_allows_methods_risk_of_bias_tool_names():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "methods1",
+        "Cochrane RoB-2, ROBINS-I, and risk-of-bias roll-up methods were prespecified.",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not any(i.code == "public_artifact" and "risk-of-bias" in i.detail for i in report.issues)
+
+
 def test_malformed_qei_row_in_appendix_does_not_block_public_body():
     paper = (
         _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
