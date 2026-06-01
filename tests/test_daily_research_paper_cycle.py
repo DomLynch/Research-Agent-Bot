@@ -2344,6 +2344,27 @@ def test_low_source_precision_repair_quarantines_and_reseeds(tmp_path: Path, mon
     ]
 
 
+def test_source_precision_repair_force_quarantines_misses_above_floor(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "hydrogen_water", corpus=False)
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / "hydrogen_water" / "quant_claims"
+    qdir.mkdir(parents=True)
+    _write_json(qdir / "hydrogen_water_trial.quant_claims.json", {"paper_id": "hydrogen_water_trial"})
+    _write_json(qdir / "hydrogen_water_human_review.quant_claims.json", {"paper_id": "hydrogen_water_human_review"})
+    _write_json(qdir / "cheminform_hydrogen_catalyst.quant_claims.json", {"paper_id": "cheminform_hydrogen_catalyst"})
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_kwargs: {"status": "corpus_ready", "n_quant_claims": 2})
+
+    repaired = cycle._repair_low_source_precision_corpus("hydrogen_water", dry_run=False, force=True)
+
+    assert repaired["status"] == "source_precision_repaired"
+    assert repaired["source_topic_precision_before"] == "source_topic_precision_ok:2/3"
+    assert repaired["off_topic_quant_claims_quarantined"] == 1
+    assert sorted(path.name for path in qdir.glob("*.quant_claims.json")) == [
+        "hydrogen_water_human_review.quant_claims.json",
+        "hydrogen_water_trial.quant_claims.json",
+    ]
+
+
 def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "epigenome_editing_longevity")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
