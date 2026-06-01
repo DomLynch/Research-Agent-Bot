@@ -124,3 +124,20 @@ def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp
     limitations = text.split("## Limitations", 1)[1].split("## Conclusion", 1)[0]
     assert len(limitations.split()) >= 250
     assert any(entry.phase == "N_surface_floor_backstop" for entry in report.entries)
+
+
+def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
+    from scripts.review_noise_control import apply_review_noise_control
+
+    paper = (
+        "## Discussion\n\n"
+        "The Week 2022 trial is cited with the wrong year.\n\n"
+        "## References\n\n"
+        "- **Week 2020.** Hydrogen-rich water trial.\n"
+    )
+
+    fixed, changes = apply_review_noise_control(paper, Path("/tmp/no-run"))
+
+    assert "Week 2022" not in fixed
+    assert "Week 2020 trial" in fixed
+    assert ("repair_unreferenced_citation_year", 1, "aligned 1 inline citation year(s) with References") in changes

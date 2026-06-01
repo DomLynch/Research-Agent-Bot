@@ -33,6 +33,9 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     )
     if n:
         changes.append(("expand_contextual_adjacent_evidence_note", n, "clarified contextual-source integration role"))
+    text, n = _repair_unreferenced_citation_years(text)
+    if n:
+        changes.append(("repair_unreferenced_citation_year", n, f"aligned {n} inline citation year(s) with References"))
     text, n = _dedupe_repeated_blocks(text)
     if n:
         changes.append(("dedupe_repeated_blocks", n, f"removed {n} repeated prose/table block(s)"))
@@ -58,6 +61,28 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     if n:
         changes.append(("add_clinical_policy_caveat", n, "addressed reviewer caveat request"))
     return text, changes
+
+
+def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
+    from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _fold, _reference_entries, unreferenced_citation_tokens
+    refs_by_author: dict[str, list[str]] = {}
+    for raw, _folded in _reference_entries(text):
+        match = _AUTHOR_YEAR_RE.search(raw)
+        if not match:
+            continue
+        refs_by_author.setdefault(_fold(match.group(1)), []).append(raw)
+    out = text
+    n = 0
+    for token in unreferenced_citation_tokens(text):
+        match = _AUTHOR_YEAR_RE.fullmatch(token)
+        if not match:
+            continue
+        candidates = refs_by_author.get(_fold(match.group(1)), [])
+        if len(candidates) != 1 or candidates[0] == token:
+            continue
+        out, changed = re.subn(rf"\b{re.escape(token)}\b", candidates[0], out, count=1)
+        n += changed
+    return out, n
 
 
 def restore_surface_floors(text: str, out_dir: Path, entries: list[Any], entry_cls: type[Any]) -> tuple[str, list[Any]]:
