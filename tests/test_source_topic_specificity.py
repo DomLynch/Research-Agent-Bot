@@ -1,4 +1,4 @@
-from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, topic_aliases  # type: ignore[import-not-found]
+from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # type: ignore[import-not-found]
 
 
 def test_hydrogen_water_rejects_chemistry_drift() -> None:
@@ -45,6 +45,33 @@ def test_multi_token_topic_accepts_named_intervention_without_generic_outcome() 
         "low_dose_naltrexone_inflammation",
         text,
         aliases=("low dose naltrexone inflammation",),
+    )
+
+
+def test_source_gate_aliases_drop_broad_one_token_aliases_for_composite_topics() -> None:
+    aliases = source_gate_aliases(
+        "digital_frailty_index",
+        ("digital frailty index", "digital biomarkers", "frailty prediction", "wearable frailty"),
+    )
+
+    assert aliases == ("digital frailty index",)
+
+
+def test_composite_topic_rejects_broad_alias_only_source() -> None:
+    aliases = source_gate_aliases(
+        "digital_frailty_index",
+        ("digital frailty index", "digital biomarkers", "frailty prediction"),
+    )
+
+    assert not is_source_topic_specific(
+        "digital_frailty_index",
+        "Digital biomarkers for Alzheimer speech analysis in older adults",
+        aliases=aliases,
+    )
+    assert is_source_topic_specific(
+        "digital_frailty_index",
+        "Validation of a digital frailty index using wearable sensors",
+        aliases=aliases,
     )
 
 
