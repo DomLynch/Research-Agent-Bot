@@ -102,6 +102,31 @@ ORDER BY exact_facts DESC, papers DESC, facts DESC, topic, sub_topic, claim_type
 LIMIT %(limit)s;
 """
 
+FACT_INTERVENTION_CROSS_SQL = """
+WITH expanded AS (
+    SELECT
+        trim(ft.fact_json->>'intervention') AS topic,
+        COALESCE(NULLIF(ft.fact_json->>'topic', ''), 'general') AS sub_topic,
+        COALESCE(NULLIF(ft.claim_type, ''), 'claim') AS claim_type,
+        count(*) AS facts,
+        count(DISTINCT ft.paper_id) AS papers,
+        count(*) FILTER (WHERE fv.status = 'exact') AS exact_facts
+    FROM facts_tier2 ft
+    LEFT JOIN fact_validations fv ON fv.fact_id = ft.id
+    WHERE ft.numeric_value IS NOT NULL
+      AND length(trim(COALESCE(ft.fact_json->>'intervention', ''))) BETWEEN 3 AND 80
+    GROUP BY 1, 2, 3
+)
+SELECT topic, sub_topic, claim_type, facts, papers, exact_facts
+FROM expanded
+WHERE lower(topic) NOT IN ('', 'other', 'unknown', 'none', 'false', 'true', 'global', 'baseline', 'control', 'control group', 'placebo', 'healthy controls', 'methodology', 'n/a', 'na')
+  AND lower(topic) != lower(sub_topic)
+  AND exact_facts >= %(min_exact_facts)s
+  AND papers >= %(min_papers)s
+ORDER BY exact_facts DESC, papers DESC, facts DESC, topic, sub_topic, claim_type
+LIMIT %(limit)s;
+"""
+
 CLAIM_LABELS = {
     "effect_size": "effects",
     "rate": "rates",
@@ -216,6 +241,7 @@ def fetch_rows(
             "grouped": FACT_TOPIC_SQL,
             "fact-field-cross": FACT_FIELD_CROSS_SQL,
             "fact-pair-cross": FACT_PAIR_CROSS_SQL,
+            "fact-intervention-cross": FACT_INTERVENTION_CROSS_SQL,
         }[strategy]
         cur.execute(sql, {"min_exact_facts": min_exact_facts, "min_papers": min_papers, "limit": limit})
         return [dict(row) for row in cur.fetchall()]
@@ -237,7 +263,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--min-exact-facts", type=int, default=2)
     parser.add_argument("--min-papers", type=int, default=2)
     parser.add_argument("--limit", type=int, default=500)
-    parser.add_argument("--strategy", choices=("grouped", "fact-field-cross", "fact-pair-cross"), default="grouped")
+    parser.add_argument(
+        "--strategy",
+        choices=("grouped", "fact-field-cross", "fact-pair-cross", "fact-intervention-cross"),
+        default="grouped",
+    )
     parser.add_argument("--persist", action="store_true")
     args = parser.parse_args(argv)
 
