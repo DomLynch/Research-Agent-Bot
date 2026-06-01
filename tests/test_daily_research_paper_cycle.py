@@ -562,6 +562,10 @@ def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, m
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     runs: list[str] = []
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
+        "status": "source_precision_repair_incomplete",
+        "source_topic_precision_after": "source_topic_precision_low:1/4<0.35",
+    })
 
     def fake_synthesis(
         topic: str,
@@ -2271,11 +2275,148 @@ def test_corpus_repair_topics_include_preflight_and_retracted_only(tmp_path: Pat
     for topic, status in [
         ("epigenetic_clocks", "preflight_insufficient_corpus"),
         ("coenzyme_q10_ubiquinol", "retracted_source_cited"),
+        ("epigenome_editing_longevity", "source_topic_precision_low:1/4<0.35"),
         ("gdf11", "abstract_overclaim"),
     ]:
         cycle._record_blockers(ledger_dir, "2026-05-31", [{"topic": topic, "gate_status": status, "submitted": 0}])
 
-    assert cycle._corpus_repair_topics(ledger_dir) == {"epigenetic_clocks", "coenzyme_q10_ubiquinol"}
+    assert cycle._corpus_repair_topics(ledger_dir) == {
+        "epigenetic_clocks",
+        "coenzyme_q10_ubiquinol",
+        "epigenome_editing_longevity",
+    }
+    assert cycle._source_precision_repair_topics(ledger_dir) == {"epigenome_editing_longevity"}
+
+
+def test_low_source_precision_repair_quarantines_and_reseeds(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "epigenome_editing_longevity", corpus=False)
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / "epigenome_editing_longevity" / "quant_claims"
+    qdir.mkdir(parents=True)
+    _write_json(qdir / "epigenome_editing_locus_specific.quant_claims.json", {"paper_id": "epigenome_editing_locus_specific"})
+    _write_json(qdir / "supercapacitor_material.quant_claims.json", {"paper_id": "supercapacitor_material"})
+    _write_json(qdir / "plant_flowering.quant_claims.json", {"paper_id": "plant_flowering"})
+    _write_json(qdir / "glucose_transport.quant_claims.json", {"paper_id": "glucose_transport"})
+
+    def fake_seed(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        _write_json(qdir / "epigenome_editing_database_fact.quant_claims.json", {"paper_id": "epigenome_editing_database_fact"})
+        return {"status": "corpus_seeded", "n_quant_claims": 2}
+
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_seed)
+
+    repaired = cycle._repair_low_source_precision_corpus("epigenome_editing_longevity", dry_run=False)
+
+    assert repaired["status"] == "source_precision_repaired"
+    assert repaired["source_topic_precision_before"] == "source_topic_precision_low:1/4<0.35"
+    assert repaired["source_topic_precision_after"] == "source_topic_precision_ok:2/2"
+    assert repaired["off_topic_quant_claims_quarantined"] == 3
+    assert sorted(path.name for path in qdir.glob("*.quant_claims.json")) == [
+        "epigenome_editing_database_fact.quant_claims.json",
+        "epigenome_editing_locus_specific.quant_claims.json",
+    ]
+
+
+def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "epigenome_editing_longevity")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    runs: list[str] = []
+    submit_calls = 0
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        if submit_calls == 1:
+            return {
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+                "considered": [{"run": runs[-1], "status": "source_topic_precision_low:1/4<0.35"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
+        "status": "source_precision_repaired",
+        "source_topic_precision_after": "source_topic_precision_ok:12/12",
+        "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    })
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        max_attempts=1,
+        max_revise_attempts=2,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert len(runs) == 2
+    assert ledger["attempts"][0]["source_precision_repair"]["status"] == "source_precision_repaired"
+
+
+def test_cycle_repairs_large_low_precision_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "epigenome_editing_longevity", corpus=False)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / "epigenome_editing_longevity" / "quant_claims"
+    qdir.mkdir(parents=True)
+    for i in range(5):
+        _write_json(qdir / f"epigenome_editing_{i}.quant_claims.json", {"paper_id": f"epigenome_editing_{i}"})
+    for i in range(15):
+        _write_json(qdir / f"supercapacitor_{i}.quant_claims.json", {"paper_id": f"supercapacitor_{i}"})
+    synthesized: list[str] = []
+
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
+        "status": "source_precision_repaired",
+        "source_topic_precision_before": "source_topic_precision_low:5/20<0.35",
+        "source_topic_precision_after": "source_topic_precision_ok:20/20",
+        "n_quant_claims": 20,
+    })
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert synthesized == ["epigenome_editing_longevity"]
+    assert ledger["source_precision_repair"]["source_topic_precision_before"] == "source_topic_precision_low:5/20<0.35"
+    assert ledger["status"] == "submitted_to_researka"
 
 
 def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path, monkeypatch) -> None:

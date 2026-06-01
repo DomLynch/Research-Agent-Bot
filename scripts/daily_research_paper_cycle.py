@@ -1111,6 +1111,69 @@ def _repair_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = Non
     }
 
 
+def _quant_claim_identity(path: Path) -> str:
+    data = _read_json(path)
+    fields = [
+        path.stem,
+        data.get("paper_id"),
+        data.get("title"),
+        data.get("source_title"),
+        data.get("citation"),
+    ]
+    meta = data.get("metadata")
+    if isinstance(meta, dict):
+        fields.extend([meta.get("title"), meta.get("citation")])
+    return " ".join(str(field or "") for field in fields).lower()
+
+
+def _quant_claim_source_precision(topic: str) -> tuple[bool, str, list[Path]]:
+    tokens = submit_bridge._topic_tokens(topic)
+    paths = sorted((CORPORA / topic / "quant_claims").glob("*.quant_claims.json"))
+    if not tokens or not paths:
+        return True, "source_topic_precision_unscored", []
+    misses = [path for path in paths if not any(token in _quant_claim_identity(path) for token in tokens)]
+    hits = len(paths) - len(misses)
+    ratio = hits / len(paths)
+    if ratio < submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR:
+        return False, f"source_topic_precision_low:{hits}/{len(paths)}<{submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR:.2f}", misses
+    return True, f"source_topic_precision_ok:{hits}/{len(paths)}", misses
+
+
+def _repair_low_source_precision_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+    ok, before_status, misses = _quant_claim_source_precision(topic)
+    if ok:
+        return {"status": "source_precision_ready", "source_topic_precision": before_status, "n_quant_claims": _quant_claim_count(topic)}
+    before = _quant_claim_count(topic)
+    if dry_run:
+        return {
+            "status": "source_precision_repair_dry_run",
+            "source_topic_precision_before": before_status,
+            "off_topic_quant_claims": len(misses),
+            "n_quant_claims": before,
+        }
+    stamp = dt.datetime.now(dt.UTC).strftime("%Y%m%dT%H%M%SZ")
+    quarantine = CORPORA / topic / "quant_claims_quarantine" / stamp
+    moved = 0
+    for path in misses:
+        if not path.exists():
+            continue
+        quarantine.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(path), str(quarantine / path.name))
+        moved += 1
+    seed = _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
+    ok_after, after_status, _ = _quant_claim_source_precision(topic)
+    return {
+        "status": "source_precision_repaired" if ok_after else "source_precision_repair_incomplete",
+        "source_topic_precision_before": before_status,
+        "source_topic_precision_after": after_status,
+        "off_topic_quant_claims_quarantined": moved,
+        "quarantine_dir": str(quarantine) if moved else "",
+        "n_quant_claims_before": before,
+        "n_quant_claims": _quant_claim_count(topic),
+        "seed": seed,
+    }
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -1206,15 +1269,22 @@ def run_cycle(
         if writer_gate_policy:
             ledger["writer_gate_repeat_policy"] = writer_gate_policy
         submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+        source_precision_repaired_ok: set[str] = set()
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
             repairable = _corpus_repair_topics(ledger_dir) - terminal_excluded - submitted_topics
+            source_precision_repairable = _source_precision_repair_topics(ledger_dir)
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
-                repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
+                if repair_topic in source_precision_repairable:
+                    repair = _repair_low_source_precision_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
+                else:
+                    repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
                 repairs.append({"topic": repair_topic, **repair})
                 if int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS:
                     preflight_blocked.discard(repair_topic)
                     surface_repeat.discard(repair_topic)
+                if repair.get("status") == "source_precision_repaired":
+                    source_precision_repaired_ok.add(repair_topic)
             if repairs:
                 ledger["corpus_repairs"] = repairs
         ledger["topic_status"] = _topic_status_map(
@@ -1290,6 +1360,36 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
+            source_precision_ok, _, _ = _quant_claim_source_precision(selected)
+            source_precision_needs_repair = (
+                selected in _source_precision_repair_topics(ledger_dir)
+                or (
+                    not source_precision_ok
+                    and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS * 2
+                )
+            )
+            if selected not in source_precision_repaired_ok and source_precision_needs_repair:
+                source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                ledger["source_precision_repair"] = {"topic": selected, **source_repair}
+                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                ledger["corpus"] = corpus
+                if source_repair.get("status") == "source_precision_repair_incomplete":
+                    attempt = {
+                        "topic": selected,
+                        "out_dir": out_dir.name,
+                        "synthesis_return_code": None,
+                        "submit_status": _SOURCE_PRECISION_STATUS,
+                        "gate_status": _SOURCE_PRECISION_STATUS,
+                        "failure_class": _failure_class(_SOURCE_PRECISION_STATUS),
+                        "submitted": 0,
+                        "corpus": corpus,
+                        "source_precision_repair": source_repair,
+                    }
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = "source_precision_repair_incomplete_no_submission"
+                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    attempted.add(selected)
+                    continue
             quant_preflight = _quant_claim_preflight(corpus)
             if not quant_preflight["passed"]:
                 attempt = {
@@ -1523,6 +1623,11 @@ def run_cycle(
                 if abstract_overclaim_advisory:
                     attempt["abstract_overclaim_advisory"] = True
                     attempt["abstract_overclaim_advisory_claims"] = advisory_overclaims
+                source_precision_retry = False
+                if gate_status.split(":", 1)[0] == _SOURCE_PRECISION_STATUS:
+                    source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                    attempt["source_precision_repair"] = source_repair
+                    source_precision_retry = source_repair.get("status") == "source_precision_repaired"
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:
@@ -1583,6 +1688,8 @@ def run_cycle(
                     ledger["status"] = "synthesis_completed_no_submission"
                     if gate_status and gate_status != "eligible":
                         ledger["no_submission_reason"] = gate_status
+                if source_precision_retry and revise_attempt < max(1, max_revise_attempts):
+                    continue
                 if same_gate_failures >= 2 or revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
                     break
             if ledger["status"] == "cycle_budget_exhausted":
