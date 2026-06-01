@@ -43,9 +43,11 @@ def capacity_plan(
     topic_reuse_capacity = int(topic_count * days // max(1, cooldown_days))
     capacity_limited_by = min(calendar_slots, topic_reuse_capacity)
     required_success_rate = target / calendar_slots if calendar_slots else 1.0
+    generated_publishable_ratio = generated_publishable / generated_records if generated_records else 0.0
     required_interval_minutes = (days * 24 * 60) / target if target else 0.0
     calendar_gap = max(0, target - calendar_slots)
     topic_gap = max(0, target - topic_reuse_capacity)
+    publishable_ratio_gap = max(0.0, required_success_rate - generated_publishable_ratio)
     return {
         "target": target,
         "years": years,
@@ -55,7 +57,7 @@ def capacity_plan(
         "topic_count": topic_count,
         "generated_records": generated_records,
         "generated_publishable": generated_publishable,
-        "generated_publishable_ratio": round(generated_publishable / generated_records, 3) if generated_records else 0.0,
+        "generated_publishable_ratio": round(generated_publishable_ratio, 3),
         "cooldown_days": cooldown_days,
         "topic_reuse_capacity": topic_reuse_capacity,
         "capacity_limited_by": capacity_limited_by,
@@ -63,7 +65,10 @@ def capacity_plan(
         "calendar_gap_to_target": calendar_gap,
         "topic_limited": topic_reuse_capacity < target,
         "topic_gap_to_target": topic_gap,
-        "target_reachable_at_current_interval": capacity_limited_by >= target and required_success_rate <= 1.0,
+        "slot_target_reachable_at_current_interval": capacity_limited_by >= target and required_success_rate <= 1.0,
+        "publishable_ratio_limited": publishable_ratio_gap > 0,
+        "publishable_ratio_gap_to_required_success_rate": round(publishable_ratio_gap, 3),
+        "target_reachable_at_current_interval": capacity_limited_by >= target and required_success_rate <= 1.0 and publishable_ratio_gap == 0,
         "required_success_rate": round(required_success_rate, 3),
         "required_interval_minutes_at_100pct_success": round(required_interval_minutes, 1),
     }
