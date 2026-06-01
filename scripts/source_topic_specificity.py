@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 MIN_GENERATED_PACK_CANDIDATES = 10
 MIN_SPECIFIC_GENERATED_PACK_CANDIDATES = 3
-MIN_GENERATED_PACK_TOKENS = 3
+MIN_GENERATED_PACK_TOKENS = 2
 
 TOPIC_STOPWORDS = {
     "aging", "ageing", "longevity", "research", "synthesis", "paper",
@@ -106,17 +106,18 @@ def generated_pack_publishable(
     if not raw_terms:
         return False
     terms = _pack_tokens(raw_terms)
+    scope_terms = _pack_tokens(retrieval.get("scope_terms", ())) if isinstance(retrieval, dict) else set()
     entity_like = any(
         any(ch.isdigit() for ch in str(term))
         or any(ch.isupper() for ch in str(term)[1:])
         or "-" in str(term)
         for term in raw_terms
     )
-    rare_terms = _peer_rare_tokens(terms, peer_records)
+    rare_terms = _peer_rare_tokens(terms, peer_records) - scope_terms
     structurally_specific = bool(
         entity_like
         or rare_terms
-        or (not peer_records and len(terms) >= MIN_GENERATED_PACK_TOKENS)
+        or (not peer_records and len(terms - scope_terms) >= MIN_GENERATED_PACK_TOKENS)
     )
     floor = (
         MIN_SPECIFIC_GENERATED_PACK_CANDIDATES
@@ -135,7 +136,7 @@ def _pack_tokens(raw_terms: Iterable[object]) -> set[str]:
         token
         for term in raw_terms
         for token in re.findall(r"[a-z0-9]+", str(term).lower())
-        if len(token) > 2
+        if len(token) > 2 and token not in TOPIC_STOPWORDS
     }
 
 

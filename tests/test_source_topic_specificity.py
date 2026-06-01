@@ -58,6 +58,44 @@ def test_generated_pack_publishable_uses_peer_relative_specificity() -> None:
     assert not generated_pack_publishable(broad, peer_records=peers)
 
 
+def test_generated_pack_scope_axis_is_not_enough_for_specificity() -> None:
+    broad_scope_only = {
+        "candidate_count": 25,
+        "pack_data": {
+            "topic": "cancer_mortality_effects",
+            "aliases": ["cancer mortality effects", "cancer", "mortality"],
+            "retrieval": {
+                "topic_terms": ["cancer mortality effects", "cancer", "mortality"],
+                "scope_terms": ["mortality", "biomarkers", "frailty"],
+            },
+        },
+    }
+    specific = {
+        "candidate_count": 12,
+        "pack_data": {
+            "topic": "telomere_biomarker_effects",
+            "aliases": ["telomere biomarker effects", "telomere", "biomarker"],
+            "retrieval": {
+                "topic_terms": ["telomere biomarker effects", "telomere", "biomarker"],
+                "scope_terms": ["mortality", "biomarkers", "frailty"],
+            },
+        },
+    }
+    peers = [
+        broad_scope_only,
+        specific,
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_biomarker_effects", "aliases": ["cancer biomarker effects", "cancer", "biomarker"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_rates", "aliases": ["cancer rates", "cancer"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_safety", "aliases": ["cancer safety", "cancer"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_frailty", "aliases": ["cancer frailty", "cancer"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_survival", "aliases": ["cancer survival", "cancer"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "fasting_mortality", "aliases": ["fasting mortality", "fasting", "mortality"]}},
+    ]
+
+    assert not generated_pack_publishable(broad_scope_only, peer_records=peers)
+    assert generated_pack_publishable(specific, peer_records=peers)
+
+
 def test_topic_aliases_loads_local_and_generated_terms(tmp_path) -> None:
     (tmp_path / "topic_packs").mkdir()
     (tmp_path / "topic_packs" / "hydrogen_water.toml").write_text(
