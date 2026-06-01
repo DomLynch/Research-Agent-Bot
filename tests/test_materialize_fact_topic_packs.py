@@ -158,6 +158,14 @@ def test_materialize_rows_keeps_repeated_intervention_population_pack(tmp_path: 
     assert result["skipped"] == []
 
 
+def test_build_topic_name_does_not_repeat_overlapping_topic_and_subtopic() -> None:
+    assert materializer.build_topic_name({
+        "topic": "resveratrol supplementation",
+        "sub_topic": "resveratrol",
+        "claim_type": "effect_size",
+    }) == "resveratrol supplementation effects"
+
+
 def test_fact_intervention_cross_strategy_promotes_repeated_interventions() -> None:
     sql = materializer.FACT_INTERVENTION_CROSS_SQL
 

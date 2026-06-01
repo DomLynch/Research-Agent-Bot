@@ -148,7 +148,9 @@ def build_topic_name(row: dict[str, Any]) -> str:
     if sub_topic.lower() in GENERIC_SUBTOPICS:
         return f"{topic} {claim}"
     parts = [topic]
-    if sub_topic.lower() != topic.lower():
+    topic_s = _singular_label(topic).lower()
+    sub_topic_s = _singular_label(sub_topic).lower()
+    if sub_topic_s != topic_s and sub_topic_s not in topic_s and topic_s not in sub_topic_s:
         parts.append(sub_topic)
     if _singular_label(claim).lower() not in _singular_label(" ".join(parts)).lower():
         parts.append(claim)
