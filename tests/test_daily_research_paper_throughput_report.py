@@ -113,3 +113,48 @@ def test_capacity_snapshot_reports_errors(monkeypatch) -> None:
     monkeypatch.setattr(report, "live_plan", broken_live_plan)
 
     assert report._capacity_snapshot() == {"error": "RuntimeError: capacity unavailable"}
+
+
+def test_pace_snapshot_reports_daily_target_and_observed_gap() -> None:
+    local = {"throughput": {"submitted": 3, "published": 1}}
+    public = {"decisions": {"accept": 2, "revise": 1}}
+    capacity = {
+        "one_year": {"target": 5000, "days": 365},
+        "two_year": {"target": 5000, "days": 730},
+    }
+
+    pace = report._pace_snapshot(local, public, capacity)
+
+    assert pace["required_daily_average"] == {"one_year": 13.7, "two_year": 6.85}
+    assert pace["today_observed"] == {
+        "local_submitted": 3,
+        "local_published": 1,
+        "public_accepts": 2,
+    }
+    assert pace["today_gap_to_two_year_daily_average"] == {
+        "by_local_submissions": 3.85,
+        "by_local_published": 5.85,
+        "by_public_accepts": 4.85,
+    }
+
+
+def test_summarize_includes_pace(monkeypatch, tmp_path: Path) -> None:
+    monkeypatch.setattr(report, "_capacity_snapshot", lambda: {
+        "one_year": {"target": 5000, "days": 365},
+        "two_year": {"target": 5000, "days": 730},
+    })
+    monkeypatch.setattr(report, "_public_counts", lambda *_args, **_kwargs: {"decisions": {"accept": 7}})
+    ledger = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger.mkdir()
+    (ledger / "_daily_throughput_summary.json").write_text(json.dumps({
+        "days": {"2026-06-02": {"submitted": 8, "published": 6}},
+    }))
+
+    summary = report.summarize("2026-06-02", runs_root=tmp_path)
+
+    assert summary["pace"]["today_observed"] == {
+        "local_submitted": 8,
+        "local_published": 6,
+        "public_accepts": 7,
+    }
+    assert summary["pace"]["today_gap_to_two_year_daily_average"]["by_public_accepts"] == 0.0

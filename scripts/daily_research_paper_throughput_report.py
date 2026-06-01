@@ -125,13 +125,61 @@ def _capacity_snapshot() -> dict[str, Any]:
         return {"error": f"{type(exc).__name__}: {exc}"}
 
 
+def _int_value(value: Any) -> int:
+    try:
+        return int(value or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _required_daily(plan: dict[str, Any]) -> float:
+    target = _int_value(plan.get("target"))
+    days = _int_value(plan.get("days"))
+    return round(target / days, 2) if days else 0.0
+
+
+def _pace_snapshot(local: dict[str, Any], public: dict[str, Any], capacity: dict[str, Any]) -> dict[str, Any]:
+    throughput = local.get("throughput")
+    throughput = throughput if isinstance(throughput, dict) else {}
+    decisions = public.get("decisions")
+    decisions = decisions if isinstance(decisions, dict) else {}
+    two_year = capacity.get("two_year")
+    two_year = two_year if isinstance(two_year, dict) else {}
+    one_year = capacity.get("one_year")
+    one_year = one_year if isinstance(one_year, dict) else {}
+    two_year_daily = _required_daily(two_year)
+    submitted = _int_value(throughput.get("submitted"))
+    local_published = _int_value(throughput.get("published"))
+    public_accepts = _int_value(decisions.get("accept"))
+    return {
+        "required_daily_average": {
+            "one_year": _required_daily(one_year),
+            "two_year": two_year_daily,
+        },
+        "today_observed": {
+            "local_submitted": submitted,
+            "local_published": local_published,
+            "public_accepts": public_accepts,
+        },
+        "today_gap_to_two_year_daily_average": {
+            "by_local_submissions": max(0.0, round(two_year_daily - submitted, 2)),
+            "by_local_published": max(0.0, round(two_year_daily - local_published, 2)),
+            "by_public_accepts": max(0.0, round(two_year_daily - public_accepts, 2)),
+        },
+    }
+
+
 def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://researka.org/papers",
               reviews_url: str = "https://researka.org/reviews") -> dict[str, Any]:
+    capacity = _capacity_snapshot()
+    public = _public_counts(date, papers_url=papers_url, reviews_url=reviews_url)
+    local = _local_counts(runs_root, date)
     return {
         "date": date,
-        "capacity": _capacity_snapshot(),
-        "public": _public_counts(date, papers_url=papers_url, reviews_url=reviews_url),
-        "local": _local_counts(runs_root, date),
+        "capacity": capacity,
+        "pace": _pace_snapshot(local, public, capacity),
+        "public": public,
+        "local": local,
     }
 
 
