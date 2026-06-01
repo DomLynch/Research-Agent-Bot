@@ -212,7 +212,7 @@ def materialize_rows(
                 pack,
                 db_dir,
                 candidate_count=candidate_count,
-                generated_by="fact-topic-materializer-v1",
+                generated_by=f"fact-topic-materializer-v1:{quality_mode}",
             )
         created.append({
             "topic": pack.topic,
@@ -276,8 +276,6 @@ def _high_precision_pack(pack: object) -> bool:
     if tier in {"mainstream", "emerging", "contested"}:
         return True
     raw_terms = " ".join(str(term) for term in getattr(pack, "aliases", ()))
-    if any(ch.isdigit() for ch in raw_terms) or any(ch.isupper() for ch in raw_terms[1:]):
-        return True
     tokens = set(re.findall(r"[a-z0-9]+", raw_terms.lower()))
     return bool(tokens & HIGH_PRECISION_ACTION_TERMS)
 

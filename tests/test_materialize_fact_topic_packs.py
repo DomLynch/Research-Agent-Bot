@@ -166,6 +166,30 @@ def test_build_topic_name_does_not_repeat_overlapping_topic_and_subtopic() -> No
     }) == "resveratrol supplementation effects"
 
 
+def test_high_precision_quality_mode_filters_demographic_exposure(tmp_path: Path) -> None:
+    rows = [
+        {"topic": "female sex", "sub_topic": "aging", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "COVID 19 infection", "sub_topic": "rates", "claim_type": "rate", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "metabolism", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+    ]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=False, quality_mode="high-precision")
+
+    assert [item["slug"] for item in result["created"]] == ["metformin_metabolism_effects"]
+    assert [item["reason"] for item in result["skipped"]] == ["quality_filter_failed", "quality_filter_failed"]
+
+
+def test_materialize_rows_max_created_caps_batch(tmp_path: Path) -> None:
+    rows = [
+        {"topic": "metformin", "sub_topic": "metabolism", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "acarbose", "sub_topic": "fasting", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+    ]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=False, max_created=1)
+
+    assert [item["slug"] for item in result["created"]] == ["metformin_metabolism_effects"]
+
+
 def test_fact_intervention_cross_strategy_promotes_repeated_interventions() -> None:
     sql = materializer.FACT_INTERVENTION_CROSS_SQL
 
