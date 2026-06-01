@@ -1719,6 +1719,24 @@ def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatc
     assert preflight["reasons"] == ["latest_run_missing_manifest"]
 
 
+def test_preflight_allows_latest_run_with_manifest(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "metformin_biomarker_subgroups", target_journal=True)
+    run = _prior_run(tmp_path, "metformin_biomarker_subgroups", receipts=40, tensions=10, primary=2)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight(
+        "metformin_biomarker_subgroups",
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        current_quant_claims=40,
+    )
+
+    assert preflight["passed"] is True
+    assert preflight["latest_run"] == run.name
+    assert preflight["has_manifest"] is True
+    assert preflight["reasons"] == []
+
+
 def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

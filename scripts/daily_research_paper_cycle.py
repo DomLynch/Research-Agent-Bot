@@ -657,6 +657,12 @@ def _topic_status_map(
     return status
 
 
+def _preflight_reason_survives_corpus_refresh(reason: str) -> bool:
+    if reason == "latest_run_missing_manifest" or reason.startswith("recent_failed_attempts="):
+        return True
+    return reason.startswith(("n_receipts=", "n_tensions=", "n_outcome_classes=")) and reason.endswith("(split topic)")
+
+
 def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_claims: int | None = None) -> dict[str, Any]:
     latest = _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
@@ -683,10 +689,7 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_c
         # A prior failed run's manifest can be stale after corpus repair/backfill.
         # Keep true stop signs (overbroad split/recent cooldown), but don't let
         # old receipt/tension/primary counts permanently block a rebuilt topic.
-        reasons = [
-            r for r in reasons
-            if ">" in r or r.startswith(("recent_failed_attempts=", "latest_run_missing_manifest"))
-        ]
+        reasons = [r for r in reasons if _preflight_reason_survives_corpus_refresh(r)]
     return {
         "passed": not reasons,
         "publication_track": publication_track,
