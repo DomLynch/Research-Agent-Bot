@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -139,6 +140,11 @@ CLAIM_LABELS = {
     "methodology": "measurement methods",
 }
 GENERIC_SUBTOPICS = {"", "general", "other", "unknown"}
+HIGH_PRECISION_ACTION_TERMS = {
+    "agonist", "agonists", "antagonist", "antagonists", "diet", "fasting",
+    "inhibitor", "inhibitors", "rehabilitation", "restriction", "supplementation",
+    "therapy", "transplantation", "treatment", "vaccination", "vaccine",
+}
 
 
 def build_topic_name(row: dict[str, Any]) -> str:
@@ -162,6 +168,8 @@ def materialize_rows(
     *,
     db_dir: Path,
     persist: bool,
+    quality_mode: str = "standard",
+    max_created: int | None = None,
 ) -> dict[str, Any]:
     created: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
@@ -184,6 +192,9 @@ def materialize_rows(
         candidate_count = int(row.get("exact_facts") or row.get("facts") or 0)
         if not generated_pack_publishable(record, peer_records=peer_records):
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "low_information_topic"})
+            continue
+        if quality_mode == "high-precision" and not _high_precision_pack(pack):
+            skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "quality_filter_failed"})
             continue
         path = db_dir / pack.slug / "latest.json"
         digest = pack_hash(pack.to_topic_pack_dict())
@@ -211,6 +222,8 @@ def materialize_rows(
             "papers": int(row.get("papers") or 0),
             "path": str(path if persisted is None else db_dir / pack.slug / f"v{persisted.version}.json"),
         })
+        if max_created is not None and len(created) >= max_created:
+            break
     return {"created": created, "skipped": skipped}
 
 
@@ -258,6 +271,17 @@ def _singular_label(value: str) -> str:
     return " ".join(token[:-1] if token.endswith("s") and len(token) > 4 else token for token in value.split())
 
 
+def _high_precision_pack(pack: object) -> bool:
+    tier = str(getattr(pack, "tier", ""))
+    if tier in {"mainstream", "emerging", "contested"}:
+        return True
+    raw_terms = " ".join(str(term) for term in getattr(pack, "aliases", ()))
+    if any(ch.isdigit() for ch in raw_terms) or any(ch.isupper() for ch in raw_terms[1:]):
+        return True
+    tokens = set(re.findall(r"[a-z0-9]+", raw_terms.lower()))
+    return bool(tokens & HIGH_PRECISION_ACTION_TERMS)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--db-dir", type=Path, default=REPO_ROOT / "topic_packs_db")
@@ -271,6 +295,8 @@ def main(argv: list[str] | None = None) -> int:
         choices=("grouped", "fact-field-cross", "fact-pair-cross", "fact-intervention-cross"),
         default="grouped",
     )
+    parser.add_argument("--quality-mode", choices=("standard", "high-precision"), default="standard")
+    parser.add_argument("--max-created", type=int, help="Stop after creating this many packs")
     parser.add_argument("--persist", action="store_true")
     args = parser.parse_args(argv)
 
@@ -288,7 +314,13 @@ def main(argv: list[str] | None = None) -> int:
             limit=args.limit,
             strategy=args.strategy,
         )
-    result = materialize_rows(rows, db_dir=args.db_dir, persist=args.persist)
+    result = materialize_rows(
+        rows,
+        db_dir=args.db_dir,
+        persist=args.persist,
+        quality_mode=args.quality_mode,
+        max_created=args.max_created,
+    )
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 
