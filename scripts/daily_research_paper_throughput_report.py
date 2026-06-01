@@ -138,6 +138,48 @@ def _required_daily(plan: dict[str, Any]) -> float:
     return round(target / days, 2) if days else 0.0
 
 
+def _rolling_pace_snapshot(runs_root: Path, capacity: dict[str, Any], *, window_days: int = 7) -> dict[str, Any]:
+    ledger_dir = runs_root / "_daily_research_paper_cycle_ledger"
+    days = _read_json(ledger_dir / "_daily_throughput_summary.json").get("days")
+    if not isinstance(days, dict) or not days:
+        return {
+            "window_days": window_days,
+            "observed_days": 0,
+            "source": "_daily_throughput_summary.json",
+            "status": "missing_throughput_summary",
+        }
+    selected_dates = sorted(str(date) for date in days)[-window_days:]
+    selected = [days[date] for date in selected_dates if isinstance(days.get(date), dict)]
+    submitted = sum(_int_value(day.get("submitted")) for day in selected)
+    published = sum(_int_value(day.get("published")) for day in selected)
+    cycles = sum(_int_value(day.get("cycles")) for day in selected)
+    one_year = capacity.get("one_year")
+    two_year = capacity.get("two_year")
+    one_year_daily = _required_daily(one_year if isinstance(one_year, dict) else {})
+    two_year_daily = _required_daily(two_year if isinstance(two_year, dict) else {})
+    observed_days = len(selected)
+    two_year_required = round(two_year_daily * observed_days, 2)
+    one_year_required = round(one_year_daily * observed_days, 2)
+    return {
+        "window_days": window_days,
+        "observed_days": observed_days,
+        "dates": selected_dates,
+        "local_submitted": submitted,
+        "local_published": published,
+        "cycles": cycles,
+        "required_for_observed_window": {
+            "one_year": one_year_required,
+            "two_year": two_year_required,
+        },
+        "gap_to_required_for_observed_window": {
+            "one_year_by_local_submissions": max(0.0, round(one_year_required - submitted, 2)),
+            "two_year_by_local_submissions": max(0.0, round(two_year_required - submitted, 2)),
+            "one_year_by_local_published": max(0.0, round(one_year_required - published, 2)),
+            "two_year_by_local_published": max(0.0, round(two_year_required - published, 2)),
+        },
+    }
+
+
 def _pace_snapshot(local: dict[str, Any], public: dict[str, Any], capacity: dict[str, Any]) -> dict[str, Any]:
     throughput = local.get("throughput")
     throughput = throughput if isinstance(throughput, dict) else {}
@@ -177,7 +219,10 @@ def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://r
     return {
         "date": date,
         "capacity": capacity,
-        "pace": _pace_snapshot(local, public, capacity),
+        "pace": {
+            **_pace_snapshot(local, public, capacity),
+            "rolling": _rolling_pace_snapshot(runs_root, capacity),
+        },
         "public": public,
         "local": local,
     }
