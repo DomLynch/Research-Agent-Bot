@@ -1240,12 +1240,15 @@ def test_handled_delayed_revision_is_not_reprocessed(tmp_path: Path) -> None:
     paper = source_run / "full_paper.md"
     paper.write_text("# Research Synthesis: Aspirin Geroprotection — full paper\n", encoding="utf-8")
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
-    _write_json(ledger_dir / "_submitted_fingerprints.json", [{
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "run": source_run.name,
         "topic": "aspirin_geroprotection",
         "fingerprint": cycle.submit_bridge._sha256(paper),
     }])
-    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{"key": "review-art-1"}]})
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+        {"key": f"review-art-{i}", "title": "Research Synthesis: Aspirin Geroprotection — full paper"}
+        for i in range(cycle.MAX_REVISE_ROUNDS)
+    ]})
 
     pending, error = cycle._pending_remote_revision(
         tmp_path / "runs",
@@ -1281,6 +1284,35 @@ def test_handled_revision_ids_caps_after_max_rounds(tmp_path: Path) -> None:
     assert marker not in cycle._handled_revision_ids(ledger_dir)  # below cap -> re-routable
     _write_rounds(cycle.MAX_REVISE_ROUNDS)
     assert marker in cycle._handled_revision_ids(ledger_dir)  # at cap -> permanently handled
+
+
+def test_submitted_revision_waits_for_newer_review_before_reprocessing(tmp_path: Path) -> None:
+    source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
+    paper = source_run / "full_paper.md"
+    title = "Research Synthesis: Aspirin Geroprotection — full paper"
+    paper.write_text(f"# {title}\n", encoding="utf-8")
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source_run.name,
+        "topic": "aspirin_geroprotection",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": cycle.submit_bridge._title_marker(title),
+        "title": title,
+        "status": "submitted_to_researka",
+        "handled_at": "2026-05-29T13:00:00+00:00",
+    }]})
+
+    old_review = {"artifactId": "r1", "title": title, "feedback": "Revise.", "reviewedAt": "2026-05-29T12:00:00+00:00"}
+    pending, error = cycle._pending_remote_revision(tmp_path / "runs", ledger_dir, loader=lambda: ([old_review], None))
+    assert error is None
+    assert pending is None
+
+    newer_review = {**old_review, "artifactId": "r2", "reviewedAt": "2026-05-29T14:00:00+00:00"}
+    pending, error = cycle._pending_remote_revision(tmp_path / "runs", ledger_dir, loader=lambda: ([newer_review], None))
+    assert error is None
+    assert pending and pending["artifactId"] == "r2"
 
 
 def _patch_reviews(monkeypatch, rows: list[dict[str, Any]]) -> None:

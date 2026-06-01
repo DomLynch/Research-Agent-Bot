@@ -382,12 +382,13 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
             "artifactId": row.get("artifactId"),
             "submissionId": row.get("submissionId"),
             "title": row.get("title"),
+            "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
             "feedback": " ".join("; ".join(required).split())[:4000],
         })
     return out, None
 
 
-def _handled_revision_ids(ledger_dir: Path) -> set[str]:
+def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
     """Revision keys (paper-title markers) that have hit the per-paper round
     cap. A paper may be re-processed up to MAX_REVISE_ROUNDS times across cycles
     (one row appended per round); once the count reaches the cap the paper is
@@ -402,7 +403,20 @@ def _handled_revision_ids(ledger_dir: Path) -> set[str]:
         submit_bridge._title_marker(str(row.get("title") or ""))
         for row in rows if isinstance(row, dict) and row.get("title")
     )
-    return {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
+    handled = {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
+    active_reviewed = {
+        _revision_key(row): _parse_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
+        for row in (active_requests or [])
+    }
+    for row in rows:
+        if not isinstance(row, dict) or row.get("status") != "submitted_to_researka":
+            continue
+        key = _revision_key(row)
+        handled_at = _parse_time(str(row.get("handled_at") or ""))
+        reviewed_at = active_reviewed.get(key)
+        if reviewed_at is None or (handled_at and (reviewed_at is None or handled_at >= reviewed_at)):
+            handled.add(key)
+    return handled
 
 
 def _revision_key(row: dict[str, Any]) -> str:
@@ -435,7 +449,7 @@ def _pending_remote_revision(
     rows, error = (loader or _remote_revision_requests)()
     if error:
         return None, error
-    handled = _handled_revision_ids(ledger_dir)
+    handled = _handled_revision_ids(ledger_dir, rows)
     submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
     records: list[Any] = raw_records if isinstance(raw_records, list) else []
