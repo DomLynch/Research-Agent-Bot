@@ -187,7 +187,8 @@ _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "final_status_not_ready"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus"})
-_CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited"}
+_SOURCE_PRECISION_STATUS = "source_topic_precision_low"
+_CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited", _SOURCE_PRECISION_STATUS}
 
 
 def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -275,6 +276,18 @@ def _corpus_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
         if topic and code in _CORPUS_REPAIR_STATUSES and isinstance(stamps, list):
+            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
+                out.add(topic)
+    return out
+
+
+def _source_precision_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
+    out: set[str] = set()
+    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
+        topic, _, code = str(key).partition("\x1f")
+        if topic and code == _SOURCE_PRECISION_STATUS and isinstance(stamps, list):
             if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
                 out.add(topic)
     return out
