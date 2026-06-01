@@ -2330,13 +2330,13 @@ def _review_heavy_abstraction_note(receipts: list[ReceiptSummary]) -> str:
     abstracted = sum(directness.get(k, 0) for k in ("review", "indirect", "mechanistic"))
     if abstracted < max(4, int(total * 0.6)) and direct:
         return ""
-    direct_phrase = f"{direct} are classified as direct clinical evidence"
+    direct_phrase = f"{direct} are classified as direct interventional evidence"
     if direct == 0:
-        if tiers.get("B2") or tiers.get("B1"):
+        evidence_phrase = _taxonomy.public_directness_phrase(tiers.elements(), directness.elements())
+        if evidence_phrase.startswith(("human", "review")):
             direct_phrase = (
                 "no source is classified as direct interventional "
-                "hard-endpoint evidence, although human observational/"
-                "prognostic or review-level evidence is present"
+                f"hard-endpoint evidence, although {evidence_phrase}"
             )
         else:
             direct_phrase = "none are classified as direct clinical evidence"

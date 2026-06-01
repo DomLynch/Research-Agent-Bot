@@ -334,6 +334,17 @@ def _normalize_public_evidence_terms(
     return body + tail, n
 
 
+def _repair_connector_punctuation(paper_md: str) -> tuple[str, int]:
+    body, tail = _split_public_body(paper_md)
+    body, n = re.subn(
+        r"\bThese findings,\s+suggest\b",
+        "These findings suggest",
+        body,
+        flags=re.IGNORECASE,
+    )
+    return body + tail, n
+
+
 def _normalize_public_snake_case_labels(paper_md: str) -> tuple[str, int]:
     """Rewrite internal enum-style labels in the public manuscript body."""
     body, tail = _split_public_body(paper_md)
@@ -843,6 +854,13 @@ def apply_lightweight_public_polish(
                 "rewrote audit-shaped corpus terms and raw pairwise-tension "
                 "phrases into journal-facing evidence language"
             ),
+        })
+    new_md, n_connector_punctuation = _repair_connector_punctuation(new_md)
+    if n_connector_punctuation:
+        log.append({
+            "fix_type": "connector_punctuation_repair",
+            "n_changes": n_connector_punctuation,
+            "description": "repaired punctuation left by template-phrase cleanup",
         })
     new_md, n_orphan_tables = _normalize_orphan_table_references(new_md)
     if n_orphan_tables:

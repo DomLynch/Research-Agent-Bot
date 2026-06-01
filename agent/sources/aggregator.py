@@ -173,9 +173,16 @@ async def discover_calibrated(
 
     async def _safe_search(name: str, client, query: str):
         try:
-            hits = await client.search(
-                http, query, limit=per_source_limit,
-            )
+            if hasattr(client, "search_result"):
+                result = await client.search_result(http, query, limit=per_source_limit)
+                hits = result.hits
+                stats[f"status_{name}"] = result.status
+                if result.status != "ok":
+                    stats[f"err_{name}"] = 1
+                    if result.error:
+                        stats[f"err_{name}_detail"] = result.error[:160]
+            else:
+                hits = await client.search(http, query, limit=per_source_limit)
             stats[f"raw_{name}"] = len(hits)
             return hits
         except (httpx.HTTPError, ValueError, OSError) as e:
@@ -288,9 +295,9 @@ async def discover(
 
     async def _safe_search(name: str, client) -> list[RawHit]:
         try:
-            return await client.search(
-                http, topic_keywords, limit=limit_per_source,
-            )
+            if hasattr(client, "search_result"):
+                return (await client.search_result(http, topic_keywords, limit=limit_per_source)).hits
+            return await client.search(http, topic_keywords, limit=limit_per_source)
         except (httpx.HTTPError, ValueError, OSError) as e:
             print(
                 f"  ! source {name} failed: "

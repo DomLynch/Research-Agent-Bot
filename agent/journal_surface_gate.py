@@ -107,7 +107,7 @@ _META_PATTERNS = (
 _PUBLIC_ARTIFACT_PATTERNS = (
     "<h3>", "</h3>", "### h3.", "### h3:",
     "source-context sentence cannot support", "the surviving section therefore",
-    "risk-of-bias roll-up", "[d1_inferential_bridge", "accepted receipt graph",
+    "[d1_inferential_bridge", "accepted receipt graph",
     "manifest, tension matrix, and citation registry", "evidence-context framing",
     "should be read as", "### background references", "### final interpretation",
     "decision: accept", "gate failures:", "published by researka", "living evidence brief", "not extracted",

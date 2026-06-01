@@ -30,6 +30,8 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from enum import Enum
+from typing import Iterable
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -40,6 +42,32 @@ class EvidenceClassification:
     tier: str           # A1 | A2 | B1 | B2 | C1 | C2 | unknown
     directness: str     # direct | indirect | mechanistic | review | unknown
     rationale: str      # one-sentence why-this-tier (audit trail)
+
+
+class DirectnessSemantics(str, Enum):
+    HARD_ENDPOINT_RCT = "hard_endpoint_RCT"
+    HUMAN_INTERVENTIONAL_SURROGATE = "human_interventional_surrogate"
+    HUMAN_OBSERVATIONAL = "human_observational"
+    REVIEW_LEVEL = "review_level"
+    PRECLINICAL_MECHANISTIC = "preclinical_mechanistic"
+    UNKNOWN = "unknown"
+
+
+def public_directness_phrase(tiers: Iterable[str], directnesses: Iterable[str]) -> str:
+    """Reader-facing directness phrase from existing tier/directness labels."""
+    tier_set = {str(t or "").upper() for t in tiers}
+    direct_set = {str(d or "").lower() for d in directnesses}
+    if "A1" in tier_set or "direct" in direct_set:
+        return "direct interventional evidence is present"
+    if "A2" in tier_set:
+        return "human interventional surrogate-endpoint evidence is present"
+    if "B2" in tier_set or "indirect" in direct_set:
+        return "human observational/prognostic evidence is present"
+    if "B1" in tier_set or "review" in direct_set:
+        return "review-level evidence is present"
+    if {"C1", "C2"} & tier_set or "mechanistic" in direct_set:
+        return "preclinical/mechanistic evidence is present"
+    return "directness is not yet classifiable from the structured metadata"
 
 
 # Vocabulary normalization. The classifier accepts either canonical
