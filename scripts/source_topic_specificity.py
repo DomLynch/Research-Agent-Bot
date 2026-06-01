@@ -19,6 +19,10 @@ TOPIC_STOPWORDS = {
     "effect", "effects", "therapy", "treatment", "evidence",
     "optimization",
 }
+PHRASE_FRAGMENT_WORDS = {
+    "and", "as", "at", "by", "for", "from", "in", "of", "on", "respectively",
+    "the", "to", "via", "with",
+}
 
 BIOMED_ANCHORS = {
     "adult", "aged", "animal", "biomarker", "cell", "clinical", "cohort",
@@ -144,7 +148,7 @@ def generated_pack_publishable(
     raw_count = record.get("candidate_count")
     candidate_count = raw_count if isinstance(raw_count, int) else 0
     topic = str(pack_data.get("topic") or "") if isinstance(pack_data, dict) else ""
-    if _generic_fallback_topic(topic):
+    if _generic_fallback_topic(topic) or _fragment_topic(topic):
         return False
     raw_terms = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
     retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
@@ -179,6 +183,24 @@ def generated_pack_publishable(
 
 def _generic_fallback_topic(topic: str) -> bool:
     return topic.endswith("_aging_evidence") or topic.endswith(" aging evidence")
+
+
+def _fragment_topic(topic: str) -> bool:
+    text = " ".join(str(topic or "").replace("_", " ").replace("-", " ").lower().split())
+    words = re.findall(r"[a-z0-9]+", text)
+    if not words:
+        return True
+    if "na" in words or any(a == "n" and b == "a" for a, b in zip(words, words[1:])):
+        return True
+    if any(a == b for a, b in zip(words, words[1:])):
+        return True
+    if words[0] in PHRASE_FRAGMENT_WORDS or words[-1] in PHRASE_FRAGMENT_WORDS:
+        return True
+    if len(words) > 2 and words[1] in PHRASE_FRAGMENT_WORDS:
+        return True
+    if len(words) > 2 and words[-2] in PHRASE_FRAGMENT_WORDS:
+        return True
+    return False
 
 
 def _pack_tokens(raw_terms: Iterable[object]) -> set[str]:

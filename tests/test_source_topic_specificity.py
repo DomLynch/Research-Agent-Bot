@@ -125,6 +125,22 @@ def test_generated_pack_publishable_allows_high_support_single_rare_topic() -> N
     assert not generated_pack_publishable(records[1], peer_records=records)
 
 
+def test_generated_pack_publishable_rejects_fragments_and_placeholders() -> None:
+    for topic in (
+        "senescence_the_expression_effects",
+        "metformin_metformin_and_effects",
+        "resveratrol_and_respectively_effects",
+        "longevity_intervention_n_a_rates",
+        "telomere_telomere_length_effects",
+        "of_metformin_effects",
+        "blood_pressure_in",
+    ):
+        assert not generated_pack_publishable({
+            "candidate_count": 50,
+            "pack_data": {"topic": topic, "aliases": [topic.replace("_", " ")]},
+        })
+
+
 def test_generated_pack_scope_axis_is_not_enough_for_specificity() -> None:
     broad_scope_only = {
         "candidate_count": 25,
