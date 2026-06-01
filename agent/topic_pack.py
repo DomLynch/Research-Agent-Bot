@@ -23,6 +23,7 @@ from typing import Literal
 __all__ = (
     "OverrideRecord", "CanonicalTrial", "BackgroundLiteratureEntry",
     "InferenceSpec", "TopicPack", "TopicPackError", "load_topic_pack",
+    "load_topic_pack_data",
 )
 
 # Type aliases match agent/types.py Role/Tier/Design literals so a hit in the
@@ -339,7 +340,12 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         raise TopicPackError(f"topic pack not found: {p}")
     with p.open("rb") as fh:
         data = tomllib.load(fh)
+    return load_topic_pack_data(data, p)
 
+
+def load_topic_pack_data(data: dict, path: str | Path = "<topic-pack-data>") -> TopicPack:
+    """Load an already-parsed topic-pack dict into a frozen TopicPack."""
+    p = Path(path)
     _validate_top_level_keys(data, p)
 
     aliases_raw = data["aliases"]
