@@ -122,4 +122,10 @@ def test_materialize_rows_uses_existing_peer_records_for_specificity(tmp_path: P
 
 def test_fact_field_cross_strategy_uses_fact_json_fields() -> None:
     assert "jsonb_each_text(ft.fact_json::jsonb)" in materializer.FACT_FIELD_CROSS_SQL
-    assert "kv.key NOT IN" in materializer.FACT_FIELD_CROSS_SQL
+    assert "kv.key IN ('sub_topic', 'population', 'intervention'" in materializer.FACT_FIELD_CROSS_SQL
+    assert "lower(trim(kv.value)) != lower" in materializer.FACT_FIELD_CROSS_SQL
+    assert "'design'" not in materializer.FACT_FIELD_CROSS_SQL
+    assert "'comparator'" not in materializer.FACT_FIELD_CROSS_SQL
+    assert "claim_kind" not in materializer.FACT_FIELD_CROSS_SQL
+    assert "extraction_confidence" not in materializer.FACT_FIELD_CROSS_SQL
+    assert "'other'" in materializer.FACT_FIELD_CROSS_SQL

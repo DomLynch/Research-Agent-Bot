@@ -47,7 +47,10 @@ FACT_FIELD_CROSS_SQL = """
 WITH expanded AS (
     SELECT
         COALESCE(NULLIF(ft.fact_json->>'topic', ''), 'unknown') AS topic,
-        concat(kv.key, ' ', kv.value) AS sub_topic,
+        CASE
+            WHEN kv.key = 'sub_topic' THEN kv.value
+            ELSE concat(kv.key, ' ', kv.value)
+        END AS sub_topic,
         COALESCE(NULLIF(ft.claim_type, ''), 'claim') AS claim_type,
         count(*) AS facts,
         count(DISTINCT ft.paper_id) AS papers,
@@ -56,7 +59,9 @@ WITH expanded AS (
     LEFT JOIN fact_validations fv ON fv.fact_id = ft.id
     CROSS JOIN LATERAL jsonb_each_text(ft.fact_json::jsonb) AS kv(key, value)
     WHERE ft.numeric_value IS NOT NULL
-      AND kv.key NOT IN ('topic', 'sub_topic', 'paper_id', 'source_id', 'claim', 'quote', 'text')
+      AND kv.key IN ('sub_topic', 'population', 'intervention', 'outcome', 'endpoint', 'condition', 'species')
+      AND (kv.key != 'intervention' OR lower(trim(kv.value)) != lower(COALESCE(NULLIF(ft.fact_json->>'topic', ''), '')))
+      AND lower(trim(kv.value)) NOT IN ('', 'other', 'unknown', 'none', 'false', 'true', 'global', 'baseline', 'control', 'control group', 'placebo', 'healthy controls', 'methodology')
       AND length(trim(kv.value)) BETWEEN 3 AND 80
     GROUP BY 1, 2, 3
 )
