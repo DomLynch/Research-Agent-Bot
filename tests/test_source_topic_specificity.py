@@ -1,4 +1,4 @@
-from scripts.source_topic_specificity import is_source_topic_specific
+from source_topic_specificity import is_source_topic_specific  # type: ignore[import-not-found]
 
 
 def test_hydrogen_water_rejects_chemistry_drift() -> None:

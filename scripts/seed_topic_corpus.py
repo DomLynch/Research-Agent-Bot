@@ -54,7 +54,7 @@ from agent.corpus_pipeline import (  # noqa: E402
     topic_aliases_for_classification,
 )
 import v3_optional_adapters as _optional_adapters  # noqa: E402
-from scripts.source_topic_specificity import is_source_topic_specific  # noqa: E402
+from source_topic_specificity import is_source_topic_specific  # noqa: E402
 
 
 def _manifest_entry_to_dict(entry) -> dict[str, Any]:
