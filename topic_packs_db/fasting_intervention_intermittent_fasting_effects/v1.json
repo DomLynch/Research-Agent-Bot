@@ -1,0 +1,160 @@
+{
+  "candidate_count": 10,
+  "generated_by": "fact-topic-materializer-v1",
+  "pack_data": {
+    "active_arm_synonyms": [
+      "fasting intervention intermittent fasting effects",
+      "fasting",
+      "intervention intermittent fasting"
+    ],
+    "aliases": [
+      "fasting intervention intermittent fasting effects",
+      "fasting",
+      "intervention intermittent fasting"
+    ],
+    "canonical_rct_paper_ids": [],
+    "canonical_trials": [],
+    "class_": "generated_biomedical",
+    "corpus_search_queries": [
+      "fasting intervention intermittent fasting effects aging",
+      "fasting intervention intermittent fasting effects older adults",
+      "fasting intervention intermittent fasting effects randomized controlled trial",
+      "fasting aging",
+      "fasting older adults",
+      "fasting randomized controlled trial",
+      "intervention intermittent fasting aging",
+      "intervention intermittent fasting older adults",
+      "intervention intermittent fasting randomized controlled trial"
+    ],
+    "endpoint_polarity": {
+      "adherence": "higher_is_better",
+      "adverse_events": "lower_is_better",
+      "cardiometabolic_risk": "lower_is_better",
+      "cardiovascular_events": "lower_is_better",
+      "cognition": "higher_is_better",
+      "frailty": "lower_is_better",
+      "inflammation": "lower_is_better",
+      "lean_mass": "higher_is_better",
+      "mortality": "lower_is_better",
+      "muscle_function": "higher_is_better",
+      "physical_function": "higher_is_better"
+    },
+    "expected_evidence_slots": [
+      "human_rcts",
+      "human_observational",
+      "human_mechanism",
+      "preclinical_lifespan",
+      "meta_analysis",
+      "systematic_review",
+      "safety_tolerability",
+      "dosing_regimen",
+      "cardiometabolic",
+      "muscle_function",
+      "cognition",
+      "frailty",
+      "mortality",
+      "inflammation",
+      "biomarkers"
+    ],
+    "forbidden_verbs_for_protocol_role": [
+      "found",
+      "showed",
+      "improved",
+      "reduced",
+      "demonstrated",
+      "established",
+      "proved"
+    ],
+    "forbidden_verbs_for_results_role_with_protocol_keywords": [
+      "planned",
+      "will assess",
+      "pending",
+      "ongoing",
+      "awaiting"
+    ],
+    "known_role_overrides": {},
+    "placebo_arm_synonyms": [
+      "placebo",
+      "control",
+      "usual care",
+      "standard care",
+      "vehicle",
+      "no intervention",
+      "waitlist"
+    ],
+    "retrieval": {
+      "background": {
+        "allow": [
+          "mechanism",
+          "dose rationale",
+          "field history",
+          "preclinical lifespan signal",
+          "mitochondrial function",
+          "autophagy mechanism",
+          "inflammation biology",
+          "safety history"
+        ]
+      },
+      "date_from": 2000,
+      "evidence_types": [
+        "clinical trial",
+        "randomized controlled trial",
+        "cohort study",
+        "observational study",
+        "meta-analysis",
+        "systematic review"
+      ],
+      "exclude_terms": [
+        "pediatric only",
+        "pregnancy only",
+        "case report only",
+        "cosmetic device only",
+        "sports performance only"
+      ],
+      "languages": [
+        "English"
+      ],
+      "scope_terms": [
+        "aging",
+        "older adults",
+        "elderly",
+        "geriatric",
+        "longevity",
+        "healthspan",
+        "frailty",
+        "sarcopenia",
+        "muscle function",
+        "physical function",
+        "cognition",
+        "cardiometabolic",
+        "cardiovascular",
+        "mortality",
+        "inflammation",
+        "biomarkers",
+        "safety"
+      ],
+      "species": [],
+      "topic_terms": [
+        "fasting intervention intermittent fasting effects",
+        "fasting",
+        "intervention intermittent fasting"
+      ]
+    },
+    "special_rules": [
+      "Separate direct human endpoints from indirect mechanistic evidence.",
+      "Biomarker improvements are not healthspan or lifespan extension.",
+      "Disease evidence is aging-relevant only with explicit outcome directness."
+    ],
+    "target_journal": "GeroScience",
+    "topic": "fasting_intervention_intermittent_fasting_effects"
+  },
+  "pack_hash": "1aac82e797bd2135c5f9695db05cabef8bba6e0903dfbc4189840afb2beb5887",
+  "parent_id": null,
+  "slug": "fasting_intervention_intermittent_fasting_effects",
+  "status": "proceed",
+  "tier": "adjacent",
+  "topic_name": "fasting intervention intermittent fasting effects",
+  "topic_pack_id": "d8fcbde6-898d-508f-85a3-dc0c4ccf6c46",
+  "validated_at": "2026-06-01T22:49:55.958517+00:00",
+  "version": 1
+}

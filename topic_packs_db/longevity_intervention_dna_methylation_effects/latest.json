@@ -1,0 +1,160 @@
+{
+  "candidate_count": 4,
+  "generated_by": "fact-topic-materializer-v1",
+  "pack_data": {
+    "active_arm_synonyms": [
+      "longevity intervention dna methylation effects",
+      "longevity",
+      "intervention dna methylation"
+    ],
+    "aliases": [
+      "longevity intervention DNA methylation effects",
+      "longevity",
+      "intervention DNA methylation"
+    ],
+    "canonical_rct_paper_ids": [],
+    "canonical_trials": [],
+    "class_": "generated_biomedical",
+    "corpus_search_queries": [
+      "longevity intervention DNA methylation effects aging",
+      "longevity intervention DNA methylation effects older adults",
+      "longevity intervention DNA methylation effects randomized controlled trial",
+      "longevity aging",
+      "longevity older adults",
+      "longevity randomized controlled trial",
+      "intervention DNA methylation aging",
+      "intervention DNA methylation older adults",
+      "intervention DNA methylation randomized controlled trial"
+    ],
+    "endpoint_polarity": {
+      "adherence": "higher_is_better",
+      "adverse_events": "lower_is_better",
+      "cardiometabolic_risk": "lower_is_better",
+      "cardiovascular_events": "lower_is_better",
+      "cognition": "higher_is_better",
+      "frailty": "lower_is_better",
+      "inflammation": "lower_is_better",
+      "lean_mass": "higher_is_better",
+      "mortality": "lower_is_better",
+      "muscle_function": "higher_is_better",
+      "physical_function": "higher_is_better"
+    },
+    "expected_evidence_slots": [
+      "human_rcts",
+      "human_observational",
+      "human_mechanism",
+      "preclinical_lifespan",
+      "meta_analysis",
+      "systematic_review",
+      "safety_tolerability",
+      "dosing_regimen",
+      "cardiometabolic",
+      "muscle_function",
+      "cognition",
+      "frailty",
+      "mortality",
+      "inflammation",
+      "biomarkers"
+    ],
+    "forbidden_verbs_for_protocol_role": [
+      "found",
+      "showed",
+      "improved",
+      "reduced",
+      "demonstrated",
+      "established",
+      "proved"
+    ],
+    "forbidden_verbs_for_results_role_with_protocol_keywords": [
+      "planned",
+      "will assess",
+      "pending",
+      "ongoing",
+      "awaiting"
+    ],
+    "known_role_overrides": {},
+    "placebo_arm_synonyms": [
+      "placebo",
+      "control",
+      "usual care",
+      "standard care",
+      "vehicle",
+      "no intervention",
+      "waitlist"
+    ],
+    "retrieval": {
+      "background": {
+        "allow": [
+          "mechanism",
+          "dose rationale",
+          "field history",
+          "preclinical lifespan signal",
+          "mitochondrial function",
+          "autophagy mechanism",
+          "inflammation biology",
+          "safety history"
+        ]
+      },
+      "date_from": 2000,
+      "evidence_types": [
+        "clinical trial",
+        "randomized controlled trial",
+        "cohort study",
+        "observational study",
+        "meta-analysis",
+        "systematic review"
+      ],
+      "exclude_terms": [
+        "pediatric only",
+        "pregnancy only",
+        "case report only",
+        "cosmetic device only",
+        "sports performance only"
+      ],
+      "languages": [
+        "English"
+      ],
+      "scope_terms": [
+        "aging",
+        "older adults",
+        "elderly",
+        "geriatric",
+        "longevity",
+        "healthspan",
+        "frailty",
+        "sarcopenia",
+        "muscle function",
+        "physical function",
+        "cognition",
+        "cardiometabolic",
+        "cardiovascular",
+        "mortality",
+        "inflammation",
+        "biomarkers",
+        "safety"
+      ],
+      "species": [],
+      "topic_terms": [
+        "longevity intervention DNA methylation effects",
+        "longevity",
+        "intervention DNA methylation"
+      ]
+    },
+    "special_rules": [
+      "Separate direct human endpoints from indirect mechanistic evidence.",
+      "Biomarker improvements are not healthspan or lifespan extension.",
+      "Disease evidence is aging-relevant only with explicit outcome directness."
+    ],
+    "target_journal": "GeroScience",
+    "topic": "longevity_intervention_dna_methylation_effects"
+  },
+  "pack_hash": "39086bb3e643be1908851fdb285d3ff58b81edf3fb2ac43e2e159bb1cf770164",
+  "parent_id": null,
+  "slug": "longevity_intervention_dna_methylation_effects",
+  "status": "proceed",
+  "tier": "adjacent",
+  "topic_name": "longevity intervention DNA methylation effects",
+  "topic_pack_id": "32784cb5-fd96-54a0-ac7c-c9183d142098",
+  "validated_at": "2026-06-01T22:49:57.721166+00:00",
+  "version": 1
+}

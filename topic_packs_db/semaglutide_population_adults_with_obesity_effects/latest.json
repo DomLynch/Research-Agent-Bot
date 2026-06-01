@@ -1,0 +1,160 @@
+{
+  "candidate_count": 4,
+  "generated_by": "fact-topic-materializer-v1",
+  "pack_data": {
+    "active_arm_synonyms": [
+      "semaglutide population adults with obesity effects",
+      "semaglutide",
+      "population adults with obesity"
+    ],
+    "aliases": [
+      "semaglutide population adults with obesity effects",
+      "semaglutide",
+      "population adults with obesity"
+    ],
+    "canonical_rct_paper_ids": [],
+    "canonical_trials": [],
+    "class_": "generated_biomedical",
+    "corpus_search_queries": [
+      "semaglutide population adults with obesity effects aging",
+      "semaglutide population adults with obesity effects older adults",
+      "semaglutide population adults with obesity effects randomized controlled trial",
+      "semaglutide aging",
+      "semaglutide older adults",
+      "semaglutide randomized controlled trial",
+      "population adults with obesity aging",
+      "population adults with obesity older adults",
+      "population adults with obesity randomized controlled trial"
+    ],
+    "endpoint_polarity": {
+      "adherence": "higher_is_better",
+      "adverse_events": "lower_is_better",
+      "cardiometabolic_risk": "lower_is_better",
+      "cardiovascular_events": "lower_is_better",
+      "cognition": "higher_is_better",
+      "frailty": "lower_is_better",
+      "inflammation": "lower_is_better",
+      "lean_mass": "higher_is_better",
+      "mortality": "lower_is_better",
+      "muscle_function": "higher_is_better",
+      "physical_function": "higher_is_better"
+    },
+    "expected_evidence_slots": [
+      "human_rcts",
+      "human_observational",
+      "human_mechanism",
+      "preclinical_lifespan",
+      "meta_analysis",
+      "systematic_review",
+      "safety_tolerability",
+      "dosing_regimen",
+      "cardiometabolic",
+      "muscle_function",
+      "cognition",
+      "frailty",
+      "mortality",
+      "inflammation",
+      "biomarkers"
+    ],
+    "forbidden_verbs_for_protocol_role": [
+      "found",
+      "showed",
+      "improved",
+      "reduced",
+      "demonstrated",
+      "established",
+      "proved"
+    ],
+    "forbidden_verbs_for_results_role_with_protocol_keywords": [
+      "planned",
+      "will assess",
+      "pending",
+      "ongoing",
+      "awaiting"
+    ],
+    "known_role_overrides": {},
+    "placebo_arm_synonyms": [
+      "placebo",
+      "control",
+      "usual care",
+      "standard care",
+      "vehicle",
+      "no intervention",
+      "waitlist"
+    ],
+    "retrieval": {
+      "background": {
+        "allow": [
+          "mechanism",
+          "dose rationale",
+          "field history",
+          "preclinical lifespan signal",
+          "mitochondrial function",
+          "autophagy mechanism",
+          "inflammation biology",
+          "safety history"
+        ]
+      },
+      "date_from": 2000,
+      "evidence_types": [
+        "clinical trial",
+        "randomized controlled trial",
+        "cohort study",
+        "observational study",
+        "meta-analysis",
+        "systematic review"
+      ],
+      "exclude_terms": [
+        "pediatric only",
+        "pregnancy only",
+        "case report only",
+        "cosmetic device only",
+        "sports performance only"
+      ],
+      "languages": [
+        "English"
+      ],
+      "scope_terms": [
+        "aging",
+        "older adults",
+        "elderly",
+        "geriatric",
+        "longevity",
+        "healthspan",
+        "frailty",
+        "sarcopenia",
+        "muscle function",
+        "physical function",
+        "cognition",
+        "cardiometabolic",
+        "cardiovascular",
+        "mortality",
+        "inflammation",
+        "biomarkers",
+        "safety"
+      ],
+      "species": [],
+      "topic_terms": [
+        "semaglutide population adults with obesity effects",
+        "semaglutide",
+        "population adults with obesity"
+      ]
+    },
+    "special_rules": [
+      "Separate direct human endpoints from indirect mechanistic evidence.",
+      "Biomarker improvements are not healthspan or lifespan extension.",
+      "Disease evidence is aging-relevant only with explicit outcome directness."
+    ],
+    "target_journal": "GeroScience",
+    "topic": "semaglutide_population_adults_with_obesity_effects"
+  },
+  "pack_hash": "ada36302ebef0e52c22b801acf6342b18319c7dd12e40a6a3dc176818dd146ed",
+  "parent_id": null,
+  "slug": "semaglutide_population_adults_with_obesity_effects",
+  "status": "proceed",
+  "tier": "adjacent",
+  "topic_name": "semaglutide population adults with obesity effects",
+  "topic_pack_id": "01cad99d-04c8-5706-8bf5-e4442b8f200f",
+  "validated_at": "2026-06-01T22:49:57.338812+00:00",
+  "version": 1
+}

@@ -1,0 +1,160 @@
+{
+  "candidate_count": 3,
+  "generated_by": "fact-topic-materializer-v1",
+  "pack_data": {
+    "active_arm_synonyms": [
+      "senescence population older adults effects",
+      "senescence",
+      "population older adults"
+    ],
+    "aliases": [
+      "senescence population older adults effects",
+      "senescence",
+      "population older adults"
+    ],
+    "canonical_rct_paper_ids": [],
+    "canonical_trials": [],
+    "class_": "generated_biomedical",
+    "corpus_search_queries": [
+      "senescence population older adults effects aging",
+      "senescence population older adults effects older adults",
+      "senescence population older adults effects randomized controlled trial",
+      "senescence aging",
+      "senescence older adults",
+      "senescence randomized controlled trial",
+      "population older adults aging",
+      "population older adults older adults",
+      "population older adults randomized controlled trial"
+    ],
+    "endpoint_polarity": {
+      "adherence": "higher_is_better",
+      "adverse_events": "lower_is_better",
+      "cardiometabolic_risk": "lower_is_better",
+      "cardiovascular_events": "lower_is_better",
+      "cognition": "higher_is_better",
+      "frailty": "lower_is_better",
+      "inflammation": "lower_is_better",
+      "lean_mass": "higher_is_better",
+      "mortality": "lower_is_better",
+      "muscle_function": "higher_is_better",
+      "physical_function": "higher_is_better"
+    },
+    "expected_evidence_slots": [
+      "human_rcts",
+      "human_observational",
+      "human_mechanism",
+      "preclinical_lifespan",
+      "meta_analysis",
+      "systematic_review",
+      "safety_tolerability",
+      "dosing_regimen",
+      "cardiometabolic",
+      "muscle_function",
+      "cognition",
+      "frailty",
+      "mortality",
+      "inflammation",
+      "biomarkers"
+    ],
+    "forbidden_verbs_for_protocol_role": [
+      "found",
+      "showed",
+      "improved",
+      "reduced",
+      "demonstrated",
+      "established",
+      "proved"
+    ],
+    "forbidden_verbs_for_results_role_with_protocol_keywords": [
+      "planned",
+      "will assess",
+      "pending",
+      "ongoing",
+      "awaiting"
+    ],
+    "known_role_overrides": {},
+    "placebo_arm_synonyms": [
+      "placebo",
+      "control",
+      "usual care",
+      "standard care",
+      "vehicle",
+      "no intervention",
+      "waitlist"
+    ],
+    "retrieval": {
+      "background": {
+        "allow": [
+          "mechanism",
+          "dose rationale",
+          "field history",
+          "preclinical lifespan signal",
+          "mitochondrial function",
+          "autophagy mechanism",
+          "inflammation biology",
+          "safety history"
+        ]
+      },
+      "date_from": 2000,
+      "evidence_types": [
+        "clinical trial",
+        "randomized controlled trial",
+        "cohort study",
+        "observational study",
+        "meta-analysis",
+        "systematic review"
+      ],
+      "exclude_terms": [
+        "pediatric only",
+        "pregnancy only",
+        "case report only",
+        "cosmetic device only",
+        "sports performance only"
+      ],
+      "languages": [
+        "English"
+      ],
+      "scope_terms": [
+        "aging",
+        "older adults",
+        "elderly",
+        "geriatric",
+        "longevity",
+        "healthspan",
+        "frailty",
+        "sarcopenia",
+        "muscle function",
+        "physical function",
+        "cognition",
+        "cardiometabolic",
+        "cardiovascular",
+        "mortality",
+        "inflammation",
+        "biomarkers",
+        "safety"
+      ],
+      "species": [],
+      "topic_terms": [
+        "senescence population older adults effects",
+        "senescence",
+        "population older adults"
+      ]
+    },
+    "special_rules": [
+      "Separate direct human endpoints from indirect mechanistic evidence.",
+      "Biomarker improvements are not healthspan or lifespan extension.",
+      "Disease evidence is aging-relevant only with explicit outcome directness."
+    ],
+    "target_journal": "GeroScience",
+    "topic": "senescence_population_older_adults_effects"
+  },
+  "pack_hash": "445387dd688fdcbce1d754964c03e2e8b575a0665faac3186823652dad8e37c5",
+  "parent_id": null,
+  "slug": "senescence_population_older_adults_effects",
+  "status": "proceed",
+  "tier": "adjacent",
+  "topic_name": "senescence population older adults effects",
+  "topic_pack_id": "7315c359-e64b-5d9b-8c20-861ab62994b5",
+  "validated_at": "2026-06-01T22:49:58.886045+00:00",
+  "version": 1
+}
