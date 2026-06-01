@@ -230,6 +230,22 @@ def test_select_topic_scores_prior_l4_topic_over_plain_publication_track(tmp_pat
     assert selected == "metformin"
 
 
+def test_select_topic_prefers_more_fact_supported_publication_track_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "low_fact_topic", target_journal=True)
+    _topic(tmp_path, "high_fact_topic", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    for i in range(20):
+        _write_json(
+            cycle.CORPORA / "high_fact_topic" / "quant_claims" / f"extra-{i}.quant_claims.json",
+            {"paper_id": f"extra-{i}"},
+        )
+
+    selected = cycle.select_topic(["low_fact_topic", "high_fact_topic"], tmp_path / cycle.LEDGER_DIR)
+
+    assert selected == "high_fact_topic"
+
+
 def test_cycle_dry_run_selects_topic_without_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

@@ -619,6 +619,14 @@ def _publication_score(topic: str, ledger_dir: Path, runs_root: Path) -> int:
     return round(pass_rate * 5) + int(_publication_track_topic(topic)) * 3 + freshness - _recent_failed_attempts(topic, ledger_dir) * 2
 
 
+def _topic_support_score(topic: str) -> int:
+    record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
+    count = record.get("candidate_count")
+    if isinstance(count, int) and count > 0:
+        return count
+    return _quant_claim_count(topic)
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -632,7 +640,7 @@ def select_topic(
     if not candidates:
         return None
     pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
-    return min(pool, key=lambda topic: (-_publication_score(topic, ledger_dir, runs_root), _attempted_at(topic, ledger_dir), topic))
+    return min(pool, key=lambda topic: (-_publication_score(topic, ledger_dir, runs_root), -_topic_support_score(topic), _attempted_at(topic, ledger_dir), topic))
 
 
 def _topic_status_map(
