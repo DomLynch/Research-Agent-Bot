@@ -2584,6 +2584,34 @@ def test_source_precision_uses_topic_aliases_without_keeping_plant_drift(tmp_pat
     assert [path.name for path in misses] == ["molecular_hydrogen_improves_blueberry_plant_traits.quant_claims.json"]
 
 
+def test_source_precision_repair_uses_submit_gate_aliases(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "low_dose_naltrexone_inflammation", corpus=False)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    (tmp_path / "topic_packs_db" / "low_dose_naltrexone_inflammation").mkdir(parents=True)
+    _write_json(
+        tmp_path / "topic_packs_db" / "low_dose_naltrexone_inflammation" / "latest.json",
+        {
+            "pack_data": {
+                "aliases": ["inflammation"],
+                "retrieval": {"topic_terms": ["inflammation", "naltrexone"]},
+            },
+        },
+    )
+    qdir = cycle.CORPORA / "low_dose_naltrexone_inflammation" / "quant_claims"
+    qdir.mkdir(parents=True)
+    _write_json(qdir / "named.quant_claims.json", {"paper_id": "low dose naltrexone trial"})
+    _write_json(qdir / "broad.quant_claims.json", {"paper_id": "inflammation biomarker cohort"})
+
+    ok, status, misses = cycle._quant_claim_source_precision(
+        "low_dose_naltrexone_inflammation", floor=0.75,
+    )
+
+    assert not ok
+    assert status == "source_topic_precision_low:1/2<0.75"
+    assert [path.name for path in misses] == ["broad.quant_claims.json"]
+
+
 def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "epigenome_editing_longevity")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
