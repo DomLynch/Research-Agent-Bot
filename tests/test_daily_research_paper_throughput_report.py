@@ -88,3 +88,28 @@ def test_local_counts_reports_mode_ledgers_and_daily_sidecars(tmp_path: Path) ->
     assert counts["cycle_modes"]["fresh"]["submitted"] == 1
     assert counts["throughput"]["submitted"] == 14
     assert counts["decisions"]["counts"] == {"accept": 6, "revise": 3}
+
+
+def test_capacity_snapshot_reports_one_and_two_year_plans(monkeypatch) -> None:
+    calls: list[tuple[int, float, int]] = []
+
+    def fake_live_plan(*, target: int, years: float, interval_minutes: int) -> dict:
+        calls.append((target, years, interval_minutes))
+        return {"target_reachable_at_current_interval": years == 2.0}
+
+    monkeypatch.setattr(report, "live_plan", fake_live_plan)
+
+    snapshot = report._capacity_snapshot()
+
+    assert calls == [(5000, 1.0, 120), (5000, 2.0, 120)]
+    assert snapshot["one_year"]["target_reachable_at_current_interval"] is False
+    assert snapshot["two_year"]["target_reachable_at_current_interval"] is True
+
+
+def test_capacity_snapshot_reports_errors(monkeypatch) -> None:
+    def broken_live_plan(*, target: int, years: float, interval_minutes: int) -> dict:
+        raise RuntimeError("capacity unavailable")
+
+    monkeypatch.setattr(report, "live_plan", broken_live_plan)
+
+    assert report._capacity_snapshot() == {"error": "RuntimeError: capacity unavailable"}

@@ -51,6 +51,9 @@ def capacity_plan(
     publishable_ratio_gap = max(0.0, required_success_rate - generated_publishable_ratio)
     slots_at_current_ratio = math.ceil(target / generated_publishable_ratio) if generated_publishable_ratio else 0
     interval_at_current_ratio = (days * 24 * 60) / slots_at_current_ratio if slots_at_current_ratio else 0.0
+    lanes_at_current_ratio = math.ceil(slots_at_current_ratio / calendar_slots) if calendar_slots and slots_at_current_ratio else 0
+    lanes_at_perfect_success = math.ceil(target / calendar_slots) if calendar_slots and target else 0
+    target_reachable = capacity_limited_by >= target and required_success_rate <= 1.0 and publishable_ratio_gap == 0
     return {
         "target": target,
         "years": years,
@@ -71,7 +74,7 @@ def capacity_plan(
         "slot_target_reachable_at_current_interval": capacity_limited_by >= target and required_success_rate <= 1.0,
         "publishable_ratio_limited": publishable_ratio_gap > 0,
         "publishable_ratio_gap_to_required_success_rate": round(publishable_ratio_gap, 3),
-        "target_reachable_at_current_interval": capacity_limited_by >= target and required_success_rate <= 1.0 and publishable_ratio_gap == 0,
+        "target_reachable_at_current_interval": target_reachable,
         "required_success_rate": round(required_success_rate, 3),
         "required_interval_minutes_at_100pct_success": round(required_interval_minutes, 1),
         "mitigation_at_100pct_success": {
@@ -84,6 +87,17 @@ def capacity_plan(
             "extra_slots_to_target": max(0, slots_at_current_ratio - calendar_slots),
             "extra_slots_per_day": round(max(0, slots_at_current_ratio - calendar_slots) / days, 2) if days else 0.0,
             "required_interval_minutes": round(interval_at_current_ratio, 1),
+        },
+        "operational_strategy": {
+            "keep_current_interval": target_reachable,
+            "two_hour_lanes_required_at_100pct_success": lanes_at_perfect_success,
+            "two_hour_lanes_required_at_current_publishable_ratio": lanes_at_current_ratio,
+            "additional_two_hour_lanes_required_at_current_ratio": max(0, lanes_at_current_ratio - 1),
+            "recommended_path": (
+                "keep_current_2h_lane"
+                if target_reachable
+                else "add_parallel_2h_lane_or_raise_success_rate_before_shortening_interval"
+            ),
         },
     }
 

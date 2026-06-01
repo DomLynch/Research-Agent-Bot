@@ -8,6 +8,8 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from publishing_capacity_plan import live_plan
+
 
 AGENT_ID = "agent-v3-full-paper"
 RUNS = Path(__file__).resolve().parent.parent / "runs"
@@ -113,10 +115,24 @@ def _local_counts(runs_root: Path, date: str) -> dict[str, Any]:
     }
 
 
+def _capacity_snapshot() -> dict[str, Any]:
+    try:
+        return {
+            "one_year": live_plan(target=5000, years=1.0, interval_minutes=120),
+            "two_year": live_plan(target=5000, years=2.0, interval_minutes=120),
+        }
+    except Exception as exc:
+        return {"error": f"{type(exc).__name__}: {exc}"}
+
+
 def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://researka.org/papers",
               reviews_url: str = "https://researka.org/reviews") -> dict[str, Any]:
-    return {"date": date, "public": _public_counts(date, papers_url=papers_url, reviews_url=reviews_url),
-            "local": _local_counts(runs_root, date)}
+    return {
+        "date": date,
+        "capacity": _capacity_snapshot(),
+        "public": _public_counts(date, papers_url=papers_url, reviews_url=reviews_url),
+        "local": _local_counts(runs_root, date),
+    }
 
 
 def main(argv: list[str] | None = None) -> int:
