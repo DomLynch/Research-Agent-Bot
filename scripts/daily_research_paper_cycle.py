@@ -35,8 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # ModuleNotFoundError for scripts.review_noise_control and falls back to a
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
-from source_topic_specificity import is_source_topic_specific  # noqa: E402
-from agent.topic_pack_store import generated_pack_publishable  # noqa: E402
+from source_topic_specificity import generated_pack_publishable, is_source_topic_specific  # noqa: E402
 
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"

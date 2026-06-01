@@ -15,37 +15,6 @@ from uuid import NAMESPACE_URL, uuid5
 from agent.topic_pack import load_topic_pack_data
 from agent.topic_pack_generator import GeneratedTopicPack
 
-GENERIC_TOPIC_TERMS = {
-    "adverse",
-    "aging",
-    "biomarker",
-    "biomarkers",
-    "cancer",
-    "cardiometabolic",
-    "cardiovascular",
-    "cognition",
-    "durations",
-    "effect",
-    "effects",
-    "evidence",
-    "frailty",
-    "general",
-    "immune",
-    "inflammation",
-    "lifespan",
-    "longevity",
-    "measurement",
-    "methods",
-    "metabolism",
-    "mortality",
-    "other",
-    "rates",
-    "regimens",
-    "safety",
-    "subgroups",
-    "thresholds",
-}
-
 
 @dataclass(frozen=True, slots=True)
 class TopicPackRecord:
@@ -119,20 +88,6 @@ def load_topic_pack_record(path: str | Path) -> TopicPackRecord:
 def load_generated_topic_pack(topic: str, db_dir: str | Path):
     path = Path(db_dir) / topic / "latest.json"
     return load_topic_pack_data(load_topic_pack_record(path).pack_data, path)
-
-
-def generated_pack_publishable(pack_data: dict[str, object]) -> bool:
-    """Generated packs need one concrete anchor beyond outcome/claim labels."""
-    raw_terms = pack_data.get("aliases", ())
-    if not isinstance(raw_terms, list | tuple):
-        return False
-    terms = {
-        token
-        for term in raw_terms
-        for token in str(term).lower().replace("-", " ").split()
-        if token
-    }
-    return bool(terms - GENERIC_TOPIC_TERMS)
 
 
 def _next_version(topic_dir: Path) -> int:

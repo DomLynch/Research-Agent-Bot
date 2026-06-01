@@ -17,11 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
 from agent.topic_pack_generator import generate_candidate_topic_pack  # noqa: E402
-from agent.topic_pack_store import (  # noqa: E402
-    generated_pack_publishable,
-    pack_hash,
-    persist_generated_pack,
-)
+from agent.topic_pack_store import pack_hash, persist_generated_pack  # noqa: E402
+from source_topic_specificity import generated_pack_publishable  # noqa: E402
 
 FACT_TOPIC_SQL = """
 WITH grouped AS (

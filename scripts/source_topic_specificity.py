@@ -27,6 +27,14 @@ NON_BIOMED_DRIFT = {
     "supercapacitor", "trapping",
 }
 
+GENERIC_TOPIC_TERMS = {
+    "adverse", "aging", "biomarker", "biomarkers", "cancer", "cardiometabolic",
+    "cardiovascular", "cognition", "durations", "effect", "effects",
+    "evidence", "frailty", "general", "immune", "inflammation", "lifespan",
+    "longevity", "measurement", "methods", "metabolism", "mortality", "other",
+    "rates", "regimens", "safety", "subgroups", "thresholds",
+}
+
 
 def topic_tokens(topic: str) -> list[str]:
     return [
@@ -47,3 +55,17 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     if drift and not any(anchor in haystack for anchor in DRIFT_RESCUE_ANCHORS):
         return False
     return alias_hit or token_hits == len(tokens) or (biomed and token_hits > 0)
+
+
+def generated_pack_publishable(pack_data: dict[str, object]) -> bool:
+    """Generated packs need one concrete anchor beyond outcome/claim labels."""
+    raw_terms = pack_data.get("aliases", ())
+    if not isinstance(raw_terms, list | tuple):
+        return False
+    terms = {
+        token
+        for term in raw_terms
+        for token in str(term).lower().replace("-", " ").split()
+        if token
+    }
+    return bool(terms - GENERIC_TOPIC_TERMS)
