@@ -662,6 +662,8 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_c
     counts = _manifest_counts(latest)
     publication_track = _publication_track_topic(topic)
     reasons = []
+    if latest and not counts["has_manifest"]:
+        reasons.append("latest_run_missing_manifest")
     if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
         reasons.append(f"n_receipts={counts['n_receipts']} < {PREFLIGHT_MIN_RECEIPTS}")
     if counts["has_manifest"] and counts["n_tensions"] < PREFLIGHT_MIN_TENSIONS:
