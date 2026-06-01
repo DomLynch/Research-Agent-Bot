@@ -45,6 +45,7 @@ LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
 DAILY_THROUGHPUT_SUMMARY = "_daily_throughput_summary.json"
+DECISIONS_BY_DAY = "_decisions_by_day.json"
 # A Researka revise may be re-processed up to this many rounds per artifact
 # before it is treated as permanently handled. Single-round handling left
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
@@ -126,7 +127,8 @@ def _record_daily_throughput(ledger_dir: Path, ledger: dict[str, Any]) -> None:
     day["submitted"] = sum(int(run.get("submitted") or 0) for run in runs if isinstance(run, dict))
     day["published"] = sum(int(run.get("published") or 0) for run in runs if isinstance(run, dict))
     day["cycles"] = len([run for run in runs if isinstance(run, dict)])
-    day["latest_status"] = ledger.get("status") or "unknown"
+    latest = max((run for run in runs if isinstance(run, dict)), key=lambda run: str(run.get("started_at") or ""), default={})
+    day["latest_status"] = latest.get("status") or "unknown"
     day["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
     data["days"] = days
     _write_json(path, data)
@@ -447,6 +449,43 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
         if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
             latest[key] = row
     return latest, None
+
+
+def _record_review_decisions(ledger_dir: Path, latest: dict[str, dict[str, Any]]) -> None:
+    if not latest:
+        return
+    path = ledger_dir / DECISIONS_BY_DAY
+    data = _read_json(path)
+    days = data.get("days")
+    if not isinstance(days, dict):
+        days = {}
+    for row in latest.values():
+        ts = _review_ts(row)
+        day_key = (ts if ts != dt.datetime.min.replace(tzinfo=dt.UTC) else dt.datetime.now(dt.UTC)).date().isoformat()
+        day = days.setdefault(day_key, {})
+        records = day.setdefault("records", [])
+        if not isinstance(records, list):
+            records = []
+        artifact_id = str(row.get("artifactId") or row.get("artifact_id") or "")
+        title = str(row.get("title") or "")
+        record_id = artifact_id or submit_bridge._title_marker(title)
+        entry = {
+            "id": record_id,
+            "title": title,
+            "decision": row.get("decision"),
+            "status": row.get("status"),
+            "reviewed_at": row.get("reviewedAt") or row.get("reviewed_at"),
+        }
+        records = [
+            existing for existing in records
+            if not (isinstance(existing, dict) and existing.get("id") == record_id)
+        ] + [entry]
+        counts = Counter(str(record.get("decision") or "unknown").lower() for record in records if isinstance(record, dict))
+        day["records"] = records
+        day["counts"] = dict(sorted(counts.items()))
+    data["days"] = days
+    data["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
+    _write_json(path, data)
 
 
 def _actionable_revisions(row: dict[str, Any]) -> list[str]:
@@ -1394,7 +1433,15 @@ def run_cycle(
             # Production only (live reviews poll): drop topics whose latest review
             # is terminal (reject, or a revise with no actionable revisions such as
             # a duplicate-overlap flag) so the bot stops re-synthesising them.
-            terminal_excluded = _terminal_topics(runs_root)
+            if submit_cycle is None:
+                latest_reviews, review_error = _latest_reviews_by_title()
+                if not review_error:
+                    _record_review_decisions(ledger_dir, latest_reviews)
+                terminal_excluded = _terminal_topics(
+                    runs_root, loader=lambda: (latest_reviews, review_error),
+                )
+            else:
+                terminal_excluded = _terminal_topics(runs_root)
             if terminal_excluded:
                 ledger["terminal_excluded_topics"] = sorted(terminal_excluded)
         # Skip topics that keep failing the SAME deterministic gate — re-rendering

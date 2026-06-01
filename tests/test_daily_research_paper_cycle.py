@@ -286,6 +286,65 @@ def test_cycle_writes_mode_specific_ledgers(tmp_path: Path, monkeypatch) -> None
     assert (ledger_dir / "2026-06-01-revise.json").exists()
 
 
+def test_daily_throughput_summary_survives_later_zero_submit_cycle(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    first = {
+        "date": "2026-06-01",
+        "started_at": "2026-06-01T10:00:00+00:00",
+        "mode": "fresh",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "topic": "grip_strength_longevity",
+    }
+    second = {
+        "date": "2026-06-01",
+        "started_at": "2026-06-01T10:15:00+00:00",
+        "mode": "revise",
+        "status": "no_revise_pending",
+        "submitted": 0,
+        "published": 0,
+    }
+
+    cycle._record_daily_throughput(ledger_dir, first)
+    cycle._record_daily_throughput(ledger_dir, second)
+    cycle._record_daily_throughput(ledger_dir, first)
+
+    summary = json.loads((ledger_dir / cycle.DAILY_THROUGHPUT_SUMMARY).read_text(encoding="utf-8"))
+    day = summary["days"]["2026-06-01"]
+    assert day["submitted"] == 1
+    assert day["published"] == 0
+    assert day["cycles"] == 2
+    assert day["latest_status"] == "no_revise_pending"
+
+
+def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    latest = {
+        "hrv": {
+            "artifactId": "art-1",
+            "title": "Research Synthesis: HRV",
+            "decision": "revise",
+            "status": None,
+            "reviewedAt": "2026-06-01T08:35:00+00:00",
+        },
+        "glynac": {
+            "artifactId": "art-2",
+            "title": "Research Synthesis: GlyNAC",
+            "decision": "accept",
+            "status": "published",
+            "reviewedAt": "2026-06-01T05:42:00+00:00",
+        },
+    }
+
+    cycle._record_review_decisions(ledger_dir, latest)
+
+    data = json.loads((ledger_dir / cycle.DECISIONS_BY_DAY).read_text(encoding="utf-8"))
+    day = data["days"]["2026-06-01"]
+    assert day["counts"] == {"accept": 1, "revise": 1}
+    assert any(record["decision"] == "revise" and record["status"] is None for record in day["records"])
+
+
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

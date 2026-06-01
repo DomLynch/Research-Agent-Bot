@@ -14,10 +14,7 @@ from agent.synthesis_schemas import SynthesisSection
 logger = logging.getLogger(__name__)
 
 
-# Per-LLM-call timeout. If a single section call (including chain
-# fallback to Ministral) takes longer than this, treat it as a hang
-# and let the retry loop move on. 240s = MiMo full 180s budget plus
-# ~60s headroom for a Ministral fallback round-trip.
+# Per-LLM-call timeout: MiMo 180s plus fallback headroom.
 PER_CALL_TIMEOUT_SEC = 240.0
 SECTION_TIMEOUT_RETRIES = 1
 
@@ -48,11 +45,6 @@ async def call_llm_section(
                     chain=chain,
                     client=client,
                     ledger=ledger,
-                    # Fix #50: 0.0 → 0.5 for genuine synthesis
-                    # reasoning. The deterministic gates (Q2/Q9/
-                    # Q11-Q13/smart-gate/Fix #46) catch any
-                    # hallucination — LLMs should think freely
-                    # within the trust-spine envelope.
                     temperature=0.5,
                     seed=seed,
                 ),
