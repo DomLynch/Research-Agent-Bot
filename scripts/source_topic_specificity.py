@@ -17,6 +17,7 @@ MIN_GENERATED_PACK_TOKENS = 2
 TOPIC_STOPWORDS = {
     "aging", "ageing", "longevity", "research", "synthesis", "paper",
     "effect", "effects", "therapy", "treatment", "evidence",
+    "optimization",
 }
 
 BIOMED_ANCHORS = {
@@ -41,7 +42,7 @@ NON_BIOMED_DRIFT = {
 def topic_tokens(topic: str) -> list[str]:
     return [
         token for token in re.findall(r"[a-z0-9]+", topic.replace("_", " ").lower())
-        if len(token) > 3 and token not in TOPIC_STOPWORDS
+        if len(token) >= 3 and token not in TOPIC_STOPWORDS
     ]
 
 
