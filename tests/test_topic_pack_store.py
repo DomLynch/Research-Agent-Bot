@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from agent.topic_pack_generator import generate_candidate_topic_pack
 from agent.topic_pack_store import (
+    load_generated_topic_pack,
     load_topic_pack_record,
     persist_generated_pack,
 )
@@ -46,3 +47,15 @@ def test_persist_generated_pack_rejects_invalid_pack(tmp_path) -> None:
         assert "out_of_scope" in str(exc)
     else:  # pragma: no cover - keeps assertion explicit without pytest import
         raise AssertionError("invalid generated pack persisted")
+
+
+def test_generated_topic_pack_loads_as_runtime_topic_pack(tmp_path) -> None:
+    pack = generate_candidate_topic_pack("senescence biomarker effects")
+    persist_generated_pack(pack, tmp_path, candidate_count=12)
+
+    loaded = load_generated_topic_pack(pack.slug, tmp_path)
+
+    assert loaded.topic == pack.slug
+    assert "senescence biomarker effects" in loaded.aliases
+    assert loaded.target_journal == "GeroScience"
+    assert loaded.retrieval is not None

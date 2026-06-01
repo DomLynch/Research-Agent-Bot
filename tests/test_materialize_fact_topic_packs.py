@@ -1,0 +1,40 @@
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "scripts"))
+
+import materialize_fact_topic_packs as materializer  # type: ignore[import-not-found]  # noqa: E402
+
+
+def test_build_topic_name_uses_fact_topic_subtopic_and_claim_type() -> None:
+    row = {"topic": "senescence", "sub_topic": "biomarker", "claim_type": "effect_size"}
+
+    assert materializer.build_topic_name(row) == "senescence biomarker effects"
+
+
+def test_build_topic_name_replaces_generic_subtopic_with_aging_evidence() -> None:
+    row = {"topic": "resveratrol", "sub_topic": "other", "claim_type": "regimen"}
+
+    assert materializer.build_topic_name(row) == "resveratrol regimens aging evidence"
+
+
+def test_materialize_rows_is_idempotent_for_unchanged_pack(tmp_path: Path) -> None:
+    rows = [{
+        "topic": "senescence",
+        "sub_topic": "biomarker",
+        "claim_type": "effect_size",
+        "facts": 12,
+        "exact_facts": 7,
+        "papers": 4,
+    }]
+
+    first = materializer.materialize_rows(rows, db_dir=tmp_path, persist=True)
+    second = materializer.materialize_rows(rows, db_dir=tmp_path, persist=True)
+
+    assert first["created"][0]["slug"] == "senescence_biomarker_effects"
+    assert (tmp_path / "senescence_biomarker_effects" / "latest.json").exists()
+    assert second["created"] == []
+    assert second["skipped"][0]["reason"] == "unchanged"

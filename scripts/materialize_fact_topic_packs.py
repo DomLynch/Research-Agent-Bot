@@ -65,7 +65,12 @@ def build_topic_name(row: dict[str, Any]) -> str:
     claim = CLAIM_LABELS.get(str(row.get("claim_type") or "").strip(), _label(row.get("claim_type")) or "evidence")
     if sub_topic.lower() in GENERIC_SUBTOPICS:
         return f"{topic} {claim} aging evidence"
-    return f"{topic} {sub_topic} {claim}"
+    parts = [topic]
+    if sub_topic.lower() != topic.lower():
+        parts.append(sub_topic)
+    if claim.lower() not in " ".join(parts).lower():
+        parts.append(claim)
+    return " ".join(parts)
 
 
 def materialize_rows(

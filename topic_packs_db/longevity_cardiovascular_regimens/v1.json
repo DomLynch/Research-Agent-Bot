@@ -1,0 +1,160 @@
+{
+  "candidate_count": 3,
+  "generated_by": "fact-topic-materializer-v1",
+  "pack_data": {
+    "active_arm_synonyms": [
+      "longevity cardiovascular regimens",
+      "longevity",
+      "cardiovascular"
+    ],
+    "aliases": [
+      "longevity cardiovascular regimens",
+      "longevity",
+      "cardiovascular"
+    ],
+    "canonical_rct_paper_ids": [],
+    "canonical_trials": [],
+    "class_": "generated_biomedical",
+    "corpus_search_queries": [
+      "longevity cardiovascular regimens aging",
+      "longevity cardiovascular regimens older adults",
+      "longevity cardiovascular regimens randomized controlled trial",
+      "longevity aging",
+      "longevity older adults",
+      "longevity randomized controlled trial",
+      "cardiovascular aging",
+      "cardiovascular older adults",
+      "cardiovascular randomized controlled trial"
+    ],
+    "endpoint_polarity": {
+      "adherence": "higher_is_better",
+      "adverse_events": "lower_is_better",
+      "cardiometabolic_risk": "lower_is_better",
+      "cardiovascular_events": "lower_is_better",
+      "cognition": "higher_is_better",
+      "frailty": "lower_is_better",
+      "inflammation": "lower_is_better",
+      "lean_mass": "higher_is_better",
+      "mortality": "lower_is_better",
+      "muscle_function": "higher_is_better",
+      "physical_function": "higher_is_better"
+    },
+    "expected_evidence_slots": [
+      "human_rcts",
+      "human_observational",
+      "human_mechanism",
+      "preclinical_lifespan",
+      "meta_analysis",
+      "systematic_review",
+      "safety_tolerability",
+      "dosing_regimen",
+      "cardiometabolic",
+      "muscle_function",
+      "cognition",
+      "frailty",
+      "mortality",
+      "inflammation",
+      "biomarkers"
+    ],
+    "forbidden_verbs_for_protocol_role": [
+      "found",
+      "showed",
+      "improved",
+      "reduced",
+      "demonstrated",
+      "established",
+      "proved"
+    ],
+    "forbidden_verbs_for_results_role_with_protocol_keywords": [
+      "planned",
+      "will assess",
+      "pending",
+      "ongoing",
+      "awaiting"
+    ],
+    "known_role_overrides": {},
+    "placebo_arm_synonyms": [
+      "placebo",
+      "control",
+      "usual care",
+      "standard care",
+      "vehicle",
+      "no intervention",
+      "waitlist"
+    ],
+    "retrieval": {
+      "background": {
+        "allow": [
+          "mechanism",
+          "dose rationale",
+          "field history",
+          "preclinical lifespan signal",
+          "mitochondrial function",
+          "autophagy mechanism",
+          "inflammation biology",
+          "safety history"
+        ]
+      },
+      "date_from": 2000,
+      "evidence_types": [
+        "clinical trial",
+        "randomized controlled trial",
+        "cohort study",
+        "observational study",
+        "meta-analysis",
+        "systematic review"
+      ],
+      "exclude_terms": [
+        "pediatric only",
+        "pregnancy only",
+        "case report only",
+        "cosmetic device only",
+        "sports performance only"
+      ],
+      "languages": [
+        "English"
+      ],
+      "scope_terms": [
+        "aging",
+        "older adults",
+        "elderly",
+        "geriatric",
+        "longevity",
+        "healthspan",
+        "frailty",
+        "sarcopenia",
+        "muscle function",
+        "physical function",
+        "cognition",
+        "cardiometabolic",
+        "cardiovascular",
+        "mortality",
+        "inflammation",
+        "biomarkers",
+        "safety"
+      ],
+      "species": [],
+      "topic_terms": [
+        "longevity cardiovascular regimens",
+        "longevity",
+        "cardiovascular"
+      ]
+    },
+    "special_rules": [
+      "Separate direct human endpoints from indirect mechanistic evidence.",
+      "Biomarker improvements are not healthspan or lifespan extension.",
+      "Disease evidence is aging-relevant only with explicit outcome directness."
+    ],
+    "target_journal": "GeroScience",
+    "topic": "longevity_cardiovascular_regimens"
+  },
+  "pack_hash": "c7fbc6f24ff573e4c8c7ace5430bc0a68bdeee45ab662506ef6953f638c4ce6d",
+  "parent_id": null,
+  "slug": "longevity_cardiovascular_regimens",
+  "status": "proceed",
+  "tier": "adjacent",
+  "topic_name": "longevity cardiovascular regimens",
+  "topic_pack_id": "3ebee2fe-85de-59de-b6b3-423b328fa331",
+  "validated_at": "2026-06-01T12:29:24.789797+00:00",
+  "version": 1
+}

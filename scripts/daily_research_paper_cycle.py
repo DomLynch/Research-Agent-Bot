@@ -103,7 +103,7 @@ def discover_topics(
     topic_pack_db: Path | None = None,
 ) -> list[str]:
     topic_packs = topic_packs or TOPIC_PACKS
-    topic_pack_db = topic_pack_db or TOPIC_PACKS_DB
+    topic_pack_db = topic_pack_db or topic_packs.parent / "topic_packs_db"
     _ = corpora
     topics: set[str] = set()
     for path in sorted(topic_packs.glob("*.toml")):

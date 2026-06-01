@@ -107,6 +107,31 @@ def test_discover_topics_includes_pack_before_corpus_exists(tmp_path: Path) -> N
     assert topics == ["creatine", "new_topic"]
 
 
+def test_discover_topics_includes_generated_pack_records(tmp_path: Path) -> None:
+    _topic(tmp_path, "creatine")
+    _write_json(tmp_path / "topic_packs_db" / "senescence_biomarker_effects" / "latest.json", {
+        "pack_data": {"topic": "senescence_biomarker_effects", "target_journal": "GeroScience"},
+    })
+
+    topics = cycle.discover_topics(
+        tmp_path / "topic_packs",
+        tmp_path / "docs" / "quality-reference",
+        tmp_path / "topic_packs_db",
+    )
+
+    assert topics == ["creatine", "senescence_biomarker_effects"]
+
+
+def test_generated_pack_record_counts_as_publication_track(tmp_path: Path, monkeypatch) -> None:
+    _write_json(tmp_path / "topic_packs_db" / "senescence_biomarker_effects" / "latest.json", {
+        "pack_data": {"topic": "senescence_biomarker_effects", "target_journal": "GeroScience"},
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+
+    assert cycle._publication_track_topic("senescence_biomarker_effects") is True
+
+
 def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_path: Path) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     _write_json(ledger_dir / "2026-05-23.json", {"topic": "creatine", "started_at": "2026-05-23T00:00:00Z"})
