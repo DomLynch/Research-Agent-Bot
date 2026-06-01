@@ -4,6 +4,9 @@ from __future__ import annotations
 import re
 from collections.abc import Iterable
 
+MIN_GENERATED_PACK_CANDIDATES = 10
+MIN_GENERATED_PACK_TOKENS = 3
+
 TOPIC_STOPWORDS = {
     "aging", "ageing", "longevity", "research", "synthesis", "paper",
     "effect", "effects", "therapy", "treatment", "evidence",
@@ -25,14 +28,6 @@ NON_BIOMED_DRIFT = {
     "crop", "electrode", "fuel cell", "fruit", "geolog", "ionomer", "metal",
     "oxide", "photocatal", "plant", "semiconductor", "silicon",
     "supercapacitor", "trapping",
-}
-
-GENERIC_TOPIC_TERMS = {
-    "adverse", "aging", "biomarker", "biomarkers", "cancer", "cardiometabolic",
-    "cardiovascular", "cognition", "durations", "effect", "effects",
-    "evidence", "frailty", "general", "immune", "inflammation", "lifespan",
-    "longevity", "measurement", "methods", "metabolism", "mortality", "other",
-    "rates", "regimens", "safety", "subgroups", "thresholds",
 }
 
 
@@ -57,15 +52,27 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     return alias_hit or token_hits == len(tokens) or (biomed and token_hits > 0)
 
 
-def generated_pack_publishable(pack_data: dict[str, object]) -> bool:
-    """Generated packs need one concrete anchor beyond outcome/claim labels."""
-    raw_terms = pack_data.get("aliases", ())
-    if not isinstance(raw_terms, list | tuple):
+def generated_pack_publishable(record: dict[str, object]) -> bool:
+    """Generated packs need enough facts plus structurally specific terms."""
+    pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else record
+    raw_count = record.get("candidate_count")
+    candidate_count = raw_count if isinstance(raw_count, int) else 0
+    raw_terms = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
+    retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
+    if isinstance(retrieval, dict) and isinstance(retrieval.get("topic_terms"), list | tuple):
+        raw_terms.extend(retrieval["topic_terms"])
+    if candidate_count < MIN_GENERATED_PACK_CANDIDATES or not raw_terms:
         return False
     terms = {
         token
         for term in raw_terms
-        for token in str(term).lower().replace("-", " ").split()
+        for token in re.findall(r"[a-z0-9]+", str(term).lower())
         if token
     }
-    return bool(terms - GENERIC_TOPIC_TERMS)
+    entity_like = any(
+        any(ch.isdigit() for ch in str(term))
+        or any(ch.isupper() for ch in str(term)[1:])
+        or "-" in str(term)
+        for term in raw_terms
+    )
+    return len(terms) >= MIN_GENERATED_PACK_TOKENS or entity_like
