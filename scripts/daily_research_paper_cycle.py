@@ -306,6 +306,11 @@ def _source_precision_repair_topics(ledger_dir: Path, *, now: dt.datetime | None
     return out
 
 
+def _revision_requests_source_precision(feedback: str) -> bool:
+    text = str(feedback or "").lower()
+    return "source" in text and any(token in text for token in ("off-topic", "off topic", "source bundle"))
+
+
 def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
     path = ledger_dir.parent / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     try:
@@ -1158,9 +1163,11 @@ def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> 
     return True, f"source_topic_precision_ok:{hits}/{len(paths)}", misses
 
 
-def _repair_low_source_precision_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+def _repair_low_source_precision_corpus(
+    topic: str, *, dry_run: bool, timeout: int | None = None, force: bool = False,
+) -> dict[str, Any]:
     ok, before_status, misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
-    if ok:
+    if ok and not (force and misses):
         return {"status": "source_precision_ready", "source_topic_precision": before_status, "n_quant_claims": _quant_claim_count(topic)}
     before = _quant_claim_count(topic)
     if dry_run:
@@ -1390,16 +1397,21 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
+            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
+            revision_source_repair = _revision_requests_source_precision(revision_feedback)
             source_precision_ok, _, _ = _quant_claim_source_precision(selected, floor=SOURCE_TOPIC_REPAIR_FLOOR)
             source_precision_needs_repair = (
                 selected in _source_precision_repair_topics(ledger_dir)
+                or revision_source_repair
                 or (
                     not source_precision_ok
                     and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS * 2
                 )
             )
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:
-                source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                source_repair = _repair_low_source_precision_corpus(
+                    selected, dry_run=synthesis_dry_run, timeout=timeout, force=revision_source_repair,
+                )
                 ledger["source_precision_repair"] = {"topic": selected, **source_repair}
                 corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
                 ledger["corpus"] = corpus
@@ -1458,7 +1470,6 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
-            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
             strategy = _paper_strategy(corpus, preflight, revision_feedback)
             ledger["paper_strategy"] = strategy
             if strategy.get("action") == "skip_topic":
