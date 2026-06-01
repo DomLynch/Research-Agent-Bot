@@ -347,7 +347,7 @@ def test_review_heavy_abstraction_note_does_not_call_observational_corpus_no_cli
     out = orch._insert_review_heavy_abstraction_note(paper, receipts)
 
     assert "no source is classified as direct interventional hard-endpoint evidence" in out
-    assert "human observational/prognostic or review-level evidence is present" in out
+    assert "human observational/prognostic evidence is present" in out
     assert "none are classified as direct clinical evidence" not in out
 
 

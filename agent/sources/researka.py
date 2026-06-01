@@ -120,6 +120,14 @@ def _merge(hits: list[RawHit], limit: int) -> list[RawHit]:
     return sorted(out.values(), key=_score, reverse=True)[:limit]
 
 
+def _shape_status(path: str, data: Any) -> tuple[str, str]:
+    if path in {FACT_SEARCH_PATH, TOPIC_PAPERS_PATH}:
+        return ("ok", "") if isinstance(data, list) else ("bad_shape", f"{path} returned {type(data).__name__}")
+    if path == CORPUS_SEARCH_PATH:
+        return ("ok", "") if isinstance(data, dict) else ("bad_shape", f"{path} returned {type(data).__name__}")
+    return "ok", ""
+
+
 class ResearkaClient:
     name = "researka"
 
@@ -176,9 +184,14 @@ class ResearkaClient:
                 rows = corpus.get(lane)
                 if isinstance(rows, list):
                     hits += [h for p in rows if isinstance(p, dict) for h in [_hit_from_paper(p, query, lane=lane)] if h]
-        statuses = [fact_result[1], paper_result[1], corpus_result[1]]
+        shaped = [
+            _shape_status(FACT_SEARCH_PATH, facts) if fact_result[1] == "ok" else (fact_result[1], fact_result[2]),
+            _shape_status(TOPIC_PAPERS_PATH, papers) if paper_result[1] == "ok" else (paper_result[1], paper_result[2]),
+            _shape_status(CORPUS_SEARCH_PATH, corpus) if corpus_result[1] == "ok" else (corpus_result[1], corpus_result[2]),
+        ]
+        statuses = [status for status, _error in shaped]
         status = "ok" if all(s == "ok" for s in statuses) else next(s for s in statuses if s != "ok")
-        error = "; ".join(e for e in (fact_result[2], paper_result[2], corpus_result[2]) if e)
+        error = "; ".join(e for _status, e in shaped if e)
         return SourceResult(_merge(hits, cap), status, error)
 
     async def search(self, client: httpx.AsyncClient, query: str, *, limit: int) -> list[RawHit]:

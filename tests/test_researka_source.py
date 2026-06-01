@@ -164,6 +164,18 @@ async def test_search_returns_empty_on_non_array_response(
     assert hits == []
 
 
+@pytest.mark.asyncio
+async def test_search_result_marks_wrong_payload_shape_as_bad_shape(with_token: str) -> None:
+    def responder(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, content=b'{"data": "wrong shape"}')
+
+    async with _mock_client(responder) as client:
+        result = await ResearkaClient().search_result(client, "berberine", limit=5)
+    assert result.hits == []
+    assert result.status == "bad_shape"
+    assert "returned dict" in result.error
+
+
 # ---- request shape -------------------------------------------------------
 
 
