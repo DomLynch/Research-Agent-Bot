@@ -66,7 +66,7 @@ SOURCE_TOPIC_REPAIR_FLOOR = 0.50
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
-PUBLISHED_TOPIC_COOLDOWN_DAYS = 30
+PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
 FRAME_MIN_FULL_SCORE = 0.65
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
 _TERMINAL_SPARSE_RE = re.compile(r"\b(precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
@@ -116,7 +116,7 @@ def discover_topics(
         topic = path.parent.name
         record = _read_json(path)
         pack_data = record.get("pack_data")
-        if not topic.startswith("_") and isinstance(pack_data, dict) and generated_pack_publishable(pack_data):
+        if not topic.startswith("_") and isinstance(pack_data, dict) and generated_pack_publishable(record):
             topics.add(topic)
     return sorted(topics)
 
@@ -588,7 +588,7 @@ def _publication_track_topic(topic: str) -> bool:
         record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
         pack_data = record.get("pack_data")
         data = pack_data if isinstance(pack_data, dict) else {}
-        if data and not generated_pack_publishable(data):
+        if data and not generated_pack_publishable(record):
             return False
     return bool(str(data.get("target_journal", "")).strip())
 

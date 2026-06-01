@@ -88,7 +88,8 @@ def materialize_rows(
         if pack.status != "proceed" or pack.validation_errors:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": pack.stop_reason or pack.validation_errors})
             continue
-        if not generated_pack_publishable(pack.to_topic_pack_dict()):
+        candidate_count = int(row.get("exact_facts") or row.get("facts") or 0)
+        if not generated_pack_publishable({"pack_data": pack.to_topic_pack_dict(), "candidate_count": candidate_count}):
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "low_information_topic"})
             continue
         path = db_dir / pack.slug / "latest.json"
@@ -106,7 +107,7 @@ def materialize_rows(
             record = persist_generated_pack(
                 pack,
                 db_dir,
-                candidate_count=int(row.get("exact_facts") or row.get("facts") or 0),
+                candidate_count=candidate_count,
                 generated_by="fact-topic-materializer-v1",
             )
         created.append({

@@ -57,6 +57,9 @@ def generated_pack_publishable(record: dict[str, object]) -> bool:
     pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else record
     raw_count = record.get("candidate_count")
     candidate_count = raw_count if isinstance(raw_count, int) else 0
+    topic = str(pack_data.get("topic") or "") if isinstance(pack_data, dict) else ""
+    if topic.endswith("_aging_evidence") or topic.endswith(" aging evidence"):
+        return False
     raw_terms = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
     retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
     if isinstance(retrieval, dict) and isinstance(retrieval.get("topic_terms"), list | tuple):

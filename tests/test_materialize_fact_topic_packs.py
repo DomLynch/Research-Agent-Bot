@@ -27,7 +27,7 @@ def test_materialize_rows_is_idempotent_for_unchanged_pack(tmp_path: Path) -> No
         "sub_topic": "biomarker",
         "claim_type": "effect_size",
         "facts": 12,
-        "exact_facts": 7,
+        "exact_facts": 12,
         "papers": 4,
     }]
 
@@ -46,7 +46,7 @@ def test_materialize_rows_skips_low_information_fact_groups(tmp_path: Path) -> N
         "sub_topic": "general",
         "claim_type": "effect_size",
         "facts": 12,
-        "exact_facts": 7,
+        "exact_facts": 12,
         "papers": 4,
     }]
 

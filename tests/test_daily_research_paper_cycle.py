@@ -110,6 +110,7 @@ def test_discover_topics_includes_pack_before_corpus_exists(tmp_path: Path) -> N
 def test_discover_topics_includes_generated_pack_records(tmp_path: Path) -> None:
     _topic(tmp_path, "creatine")
     _write_json(tmp_path / "topic_packs_db" / "senescence_biomarker_effects" / "latest.json", {
+        "candidate_count": 12,
         "pack_data": {"topic": "senescence_biomarker_effects", "aliases": ["senescence biomarker effects", "senescence"], "target_journal": "GeroScience"},
     })
 
@@ -124,9 +125,11 @@ def test_discover_topics_includes_generated_pack_records(tmp_path: Path) -> None
 
 def test_discover_topics_excludes_low_information_generated_pack_records(tmp_path: Path) -> None:
     _write_json(tmp_path / "topic_packs_db" / "biomarker_effects" / "latest.json", {
+        "candidate_count": 12,
         "pack_data": {"topic": "biomarker_effects", "aliases": ["biomarker effects", "biomarker"], "target_journal": "GeroScience"},
     })
     _write_json(tmp_path / "topic_packs_db" / "telomere_biomarker_effects" / "latest.json", {
+        "candidate_count": 12,
         "pack_data": {"topic": "telomere_biomarker_effects", "aliases": ["telomere biomarker effects", "telomere"], "target_journal": "GeroScience"},
     })
 
@@ -141,6 +144,7 @@ def test_discover_topics_excludes_low_information_generated_pack_records(tmp_pat
 
 def test_generated_pack_record_counts_as_publication_track(tmp_path: Path, monkeypatch) -> None:
     _write_json(tmp_path / "topic_packs_db" / "senescence_biomarker_effects" / "latest.json", {
+        "candidate_count": 12,
         "pack_data": {"topic": "senescence_biomarker_effects", "aliases": ["senescence biomarker effects", "senescence"], "target_journal": "GeroScience"},
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -151,6 +155,7 @@ def test_generated_pack_record_counts_as_publication_track(tmp_path: Path, monke
 
 def test_low_information_generated_pack_is_not_publication_track(tmp_path: Path, monkeypatch) -> None:
     _write_json(tmp_path / "topic_packs_db" / "biomarker_effects" / "latest.json", {
+        "candidate_count": 12,
         "pack_data": {"topic": "biomarker_effects", "aliases": ["biomarker effects", "biomarker"], "target_journal": "GeroScience"},
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
