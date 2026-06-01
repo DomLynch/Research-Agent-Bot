@@ -260,6 +260,7 @@ def select_candidate(
         paper = run / "full_paper.md"
         paper_sha = _sha256(paper) if paper.exists() else ""
         markers = {paper_sha, _title_marker(_paper_title(paper))} if paper_sha else set()
+        revision = bool(_read_json(run / "researka_revision_request.json"))
         locally_eligible, status = _eligible(run)
         ok = locally_eligible
         fp = _payload_fingerprint(build_payload(run)) if locally_eligible else paper_sha
@@ -271,7 +272,7 @@ def select_candidate(
             ok, status = False, "researka_revision_fingerprint"
         elif ok and fp in local_seen:
             ok, status = False, "duplicate_submission_fingerprint"
-        elif ok and markers & published_seen:
+        elif ok and not revision and markers & published_seen:
             ok, status = False, "duplicate_remote_publication"
         if locally_eligible:
             seen_topics.add(topic)
