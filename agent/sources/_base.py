@@ -1,10 +1,4 @@
-"""Source adapter contract and shared helpers.
-
-Every adapter implements `SourceClient`. Adapters are stateless and DO NOT
-own their own httpx client — retrieve.py owns a single shared
-`httpx.AsyncClient` and passes it in. This reuses TCP connections and
-avoids socket exhaustion under fan-out.
-"""
+"""Source adapter contract and shared helpers."""
 from __future__ import annotations
 
 import html
@@ -41,22 +35,7 @@ async def safe_get_json(
     headers: dict[str, str] | None = None,
     timeout: float = _DEFAULT_TIMEOUT,
 ) -> dict[str, Any] | None:
-    """GET + parse JSON, fail-soft on every failure mode.
-
-    Returns None when the call fails for any of these reasons (the caller
-    should treat None as "this source contributed 0 hits this run", and
-    the SourceAggregator continues with the other sources):
-      - Network/transport error (httpx.HTTPError, includes timeouts)
-      - Rate limit (429) or auth failure (401/403)
-      - Server error (5xx)
-      - Any non-200 status
-      - JSON parse failure (malformed body)
-
-    Centralizing this pattern lets every adapter say `data = await
-    safe_get_json(...); if data is None: return []` instead of repeating
-    the 8-line try/except/status/parse block. Also gives one place to
-    update the fail-soft policy (e.g. add 503 → retry-after handling).
-    """
+    """GET + parse JSON, fail-soft on transport/status/parse failure."""
     try:
         response = await client.get(
             url, params=params, headers=headers, timeout=timeout,
@@ -81,11 +60,7 @@ async def safe_get_text(
     headers: dict[str, str] | None = None,
     timeout: float = _DEFAULT_TIMEOUT,
 ) -> str | None:
-    """GET raw text body, fail-soft (for XML/Atom adapters).
-
-    Same fail-soft contract as safe_get_json but returns the raw response
-    text instead of parsed JSON. For PubMed (XML), arXiv (Atom), and any
-    future non-JSON adapter."""
+    """GET raw text body, fail-soft for XML/Atom adapters."""
     try:
         response = await client.get(
             url, params=params, headers=headers, timeout=timeout,
@@ -121,18 +96,7 @@ _HTML_BLOCK_RE = re.compile(
 
 
 def clean_text(value: object, *, limit: int = 1600) -> str:
-    """Strip recognized HTML / JATS tags, decode entities, collapse whitespace.
-
-    Inline tags (sup, sub, i, b, etc.) are removed with no space so e.g.
-    '<sup>13</sup>C-labeled' stays '13C-labeled'.
-    Block / structural tags (h1-h6, sec, p, etc.) are replaced with a space
-    so '<h4>Methods</h4>METFORAGING' becomes 'Methods METFORAGING'.
-    Trailing split-join collapses any runs of whitespace either step
-    introduces.
-
-    Math-style inequalities ('p<0.05', 'x>2') survive because only
-    whitelisted tag names are stripped, not arbitrary '<...>' content.
-    """
+    """Strip recognized HTML / JATS tags and collapse whitespace."""
     text = str(value or "")
     text = _HTML_INLINE_RE.sub("", text)
     text = _HTML_BLOCK_RE.sub(" ", text)

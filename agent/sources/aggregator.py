@@ -1,14 +1,4 @@
-"""SourceAggregator — fan-out across all wired source clients.
-
-Used by `scripts/seed_topic_corpus.py --auto-corpus` to discover a
-fresh corpus per topic without manual triage. The aggregator
-queries every enabled source in parallel, dedupes by DOI / PMCID /
-title, ranks by query-relevance + tier (clinical trial > journal
-article > preprint), and returns the top-N hits.
-
-No topic-specific logic. Reads the topic pack for query strings
-+ alias whitelist; everything else is generic.
-"""
+"""SourceAggregator — fan-out across all wired source clients."""
 from __future__ import annotations
 
 import asyncio
@@ -108,10 +98,7 @@ def list_available_sources() -> list[dict]:
 
 @dataclass(frozen=True, slots=True)
 class AggregatedHit:
-    """Deduplicated hit with provenance from each source that
-    returned it. `sources` lists the source names that produced
-    this paper; `n_sources` = how many independent sources had
-    it (more sources = higher relevance signal)."""
+    """Deduplicated hit with source provenance."""
     title: str
     abstract: str
     doi: str | None
@@ -143,17 +130,7 @@ async def discover_calibrated(
     enabled_sources: Iterable[str] | None = None,
     timeout: float = 120.0,
 ) -> tuple[list[AggregatedHit], dict[str, int]]:
-    """Slice 6 step 4 (Wave 7 cont., 2026-05-05): calibrated discovery.
-
-    Builds a per-source advanced query from `spec` (via query_builder)
-    and runs each source with a per-call limit appropriate for its
-    API (~1000 per source × ~14 sources ≈ up to 14K candidates pre-
-    dedupe, typically 3-8K post-dedupe for a calibrated query).
-
-    Honors `params.safety_cap` as a hard ceiling on output size.
-    Returns `(hits, stats)` where stats is a dict of per-source raw
-    counts + dedup totals — fed into the funnel dashboard.
-    """
+    """Calibrated multi-source discovery with per-source stats."""
     from agent.query_builder import build_query_for_source
     from agent.retrieval_modes import resolve_params
     p = params or resolve_params("calibrated")
@@ -225,9 +202,7 @@ async def discover_calibrated(
 def _merge_and_dedupe(
     results: list[list[RawHit]], stats: dict[str, int],
 ) -> list[AggregatedHit]:
-    """Flatten per-source raw hits into deduped AggregatedHits.
-    Extracted from `discover` so calibrated and legacy code share
-    the same dedup semantics. Mutates `stats` to add dedup totals."""
+    """Flatten per-source raw hits into deduped AggregatedHits."""
     all_hits: list[RawHit] = []
     for r in results:
         all_hits.extend(r)
@@ -276,12 +251,7 @@ async def discover(
     limit_per_source: int = 25,
     timeout: float = 60.0,
 ) -> list[AggregatedHit]:
-    """Fan-out search across all enabled sources for the given
-    keyword query. Returns deduplicated, source-merged hits.
-
-    `topic_keywords` is a free-text query like 'rapamycin AND
-    aging AND human'. `enabled_sources` overrides the default set;
-    pass None to use registry defaults (filtered by env-var auth)."""
+    """Fan-out keyword search across enabled sources."""
     registry = _build_registry()
     if enabled_sources is None:
         # Default: all default_enabled sources whose auth is met
