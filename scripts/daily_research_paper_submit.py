@@ -139,12 +139,13 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
     if not tokens or not rows:
         return True, "source_topic_precision_unscored"
     base = run.parent.parent if run.parent.name == "runs" else run.parent
-    aliases = topic_aliases(topic, root=base)
+    aliases = topic_aliases(topic, root=base, include_generated_terms=False)
     hits = 0
     for row in rows:
         haystack = " ".join(
             str(row.get(key) or "")
             for key in ("receipt_id", "paper_id", "citation_token")
+            + ("source_title", "source_doi", "source_pmid")
         ).lower()
         hits += int(is_source_topic_specific(topic, haystack, aliases=aliases))
     ratio = hits / len(rows)

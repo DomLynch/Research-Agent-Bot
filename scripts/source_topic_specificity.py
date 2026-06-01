@@ -45,7 +45,9 @@ def topic_tokens(topic: str) -> list[str]:
     ]
 
 
-def topic_aliases(topic: str, *, root: Path | None = None) -> tuple[str, ...]:
+def topic_aliases(
+    topic: str, *, root: Path | None = None, include_generated_terms: bool = True,
+) -> tuple[str, ...]:
     """Load local/generated topic aliases without making specificity topic-specific."""
     base = root or ROOT
     out: list[str] = [topic, topic.replace("_", " ")]
@@ -54,16 +56,17 @@ def topic_aliases(topic: str, *, root: Path | None = None) -> tuple[str, ...]:
         out.extend(alias for alias in pack.get("aliases", []) if isinstance(alias, str))
     except (OSError, tomllib.TOMLDecodeError):
         pass
-    try:
-        record = json.loads((base / "topic_packs_db" / topic / "latest.json").read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        record = {}
-    pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else {}
-    if isinstance(pack_data, dict):
-        out.extend(alias for alias in pack_data.get("aliases", []) if isinstance(alias, str))
-        retrieval = pack_data.get("retrieval")
-        if isinstance(retrieval, dict):
-            out.extend(term for term in retrieval.get("topic_terms", []) if isinstance(term, str))
+    if include_generated_terms:
+        try:
+            record = json.loads((base / "topic_packs_db" / topic / "latest.json").read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            record = {}
+        pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else {}
+        if isinstance(pack_data, dict):
+            out.extend(alias for alias in pack_data.get("aliases", []) if isinstance(alias, str))
+            retrieval = pack_data.get("retrieval")
+            if isinstance(retrieval, dict):
+                out.extend(term for term in retrieval.get("topic_terms", []) if isinstance(term, str))
     seen: set[str] = set()
     aliases: list[str] = []
     for alias in (item.strip().lower() for item in out):

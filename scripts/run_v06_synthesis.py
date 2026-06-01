@@ -88,6 +88,7 @@ import background_literature as _bglit  # noqa: E402
 import paper_quality_runtime as _paper_quality  # noqa: E402
 import v3_polish_compiler as _polish_compiler  # noqa: E402
 import v3_paper_ir as _paper_ir  # noqa: E402
+from source_topic_specificity import is_source_topic_specific, topic_aliases  # noqa: E402
 
 # Workstream A (autonomous): topic-parameterized pipeline.
 # Module-level corpus paths + active topic — populated by
@@ -1743,6 +1744,18 @@ def _build_receipt_thesis_text(
     return f"{title} — source excerpts: " + " | ".join(evidence_lines)
 
 
+def _receipt_topic_identity(paper_id: str, paper_meta: dict, claims: list[dict]) -> str:
+    fields = [
+        paper_id,
+        paper_meta.get("title"),
+        paper_meta.get("abstract"),
+        paper_meta.get("journal"),
+    ]
+    for claim in claims[:8]:
+        fields.extend(claim.get(key) for key in ("sentence", "context_window", "raw_text", "arm"))
+    return " ".join(str(field or "") for field in fields)
+
+
 def _is_retracted_source(paper_meta: dict) -> bool:
     title = str(paper_meta.get("title") or "")
     return bool(re.search(r"\b(?:retracted\s+article|retraction\s+notice)\b", title, re.I))
@@ -2016,6 +2029,7 @@ def build_receipts_from_quant_claims(
     paper_meta_by_id = _load_paper_meta_by_id()
     active_paper_ids = _load_receipt_candidate_paper_ids()
     paper_class_map = _load_paper_class_map()
+    aliases = topic_aliases(topic, root=REPO_ROOT, include_generated_terms=False)
 
     # Group admittable claims by paper_id (PMC prefix → class lookup)
     by_paper: dict[str, list[dict]] = defaultdict(list)
@@ -2039,6 +2053,8 @@ def build_receipts_from_quant_claims(
         if not claims:
             continue
         meta = paper_meta_by_id.get(paper_id, {})
+        if not is_source_topic_specific(topic, _receipt_topic_identity(paper_id, meta, claims), aliases=aliases):
+            continue
         if _is_retracted_source(meta) or not _receipt_mentions_active_topic(topic, meta, claims):
             continue
         agg = _aggregate_paper(paper_id, claims)
@@ -2669,6 +2685,9 @@ async def _run(
             # paper_id resolved from receipt_id so quant_claims
             # files are findable.
             "paper_id": r.receipt_id,
+            "source_title": r.source_title,
+            "source_doi": r.source_doi,
+            "source_pmid": r.source_pmid,
         }
         for r in receipts
     ]

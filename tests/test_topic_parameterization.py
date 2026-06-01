@@ -144,7 +144,7 @@ def test_build_receipts_from_quant_claims_uses_topic_arg(
         _json.dumps({
             "paper_id": "Walton_2019_test",
             "year": 2019,
-            "title": "Test",
+            "title": "Rapamycin Test",
         }),
     )
     monkeypatch.setattr(orch, "QUANT_DIR", qdir)
@@ -180,7 +180,7 @@ def test_build_receipts_filters_to_active_extract_report(
             }],
         }))
         (pdir / f"{pid}.paper_sections.json").write_text(_json.dumps({
-            "paper_id": pid, "year": 2024, "title": pid,
+            "paper_id": pid, "year": 2024, "title": f"Test topic {pid}",
         }))
     (tmp_path / "_extract_report.json").write_text(_json.dumps({
         "active_paper_ids": ["active_paper"],
@@ -189,6 +189,42 @@ def test_build_receipts_filters_to_active_extract_report(
     monkeypatch.setattr(orch, "PARSED_DIR", pdir)
     receipts = orch.build_receipts_from_quant_claims(topic="test_topic")
     assert [r.receipt_id for r in receipts] == ["active_paper"]
+
+
+def test_build_receipts_prunes_off_topic_high_claim_sources(
+    monkeypatch, tmp_path,
+) -> None:
+    import json as _json
+    qdir = tmp_path / "quant_claims"
+    qdir.mkdir()
+    pdir = tmp_path / "parsed"
+    pdir.mkdir()
+    rows = {
+        "semaglutide_cardiometabolic_trial": "Semaglutide effects on insulin sensitivity",
+        "oral_magnesium_supplementation_trial": "Oral magnesium supplementation in older adults",
+    }
+    for pid, title in rows.items():
+        (qdir / f"{pid}.quant_claims.json").write_text(_json.dumps({
+            "paper_id": pid,
+            "claims": [{
+                "binding_confidence": "high",
+                "claim_type": "p_value",
+                "raw_text": "p < 0.05",
+                "endpoint": "cardiometabolic",
+                "arm": "intervention",
+                "direction": "positive",
+                "sentence": f"{title} reported a cardiometabolic endpoint.",
+            }],
+        }))
+        (pdir / f"{pid}.paper_sections.json").write_text(_json.dumps({
+            "paper_id": pid, "year": 2026, "title": title,
+        }))
+    monkeypatch.setattr(orch, "QUANT_DIR", qdir)
+    monkeypatch.setattr(orch, "PARSED_DIR", pdir)
+
+    receipts = orch.build_receipts_from_quant_claims(topic="magnesium_longevity")
+
+    assert [r.receipt_id for r in receipts] == ["oral_magnesium_supplementation_trial"]
 
 
 def test_receipt_funnel_reports_drop_reasons(monkeypatch, tmp_path) -> None:
