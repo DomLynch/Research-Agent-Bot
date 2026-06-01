@@ -79,3 +79,42 @@ def test_materialize_rows_keeps_specific_generic_subtopic_pack_publishable(tmp_p
     latest = tmp_path / "metformin_effects" / "latest.json"
     assert latest.exists()
     assert result["skipped"] == []
+
+
+def test_materialize_rows_uses_existing_peer_records_for_specificity(tmp_path: Path) -> None:
+    for slug in [
+        "longevity_lifespan_effects",
+        "longevity_lifespan_thresholds",
+        "longevity_mortality_effects",
+        "longevity_biomarker_effects",
+        "mortality_rates",
+        "frailty_rates",
+        "inflammation_rates",
+        "metabolism_rates",
+    ]:
+        existing = tmp_path / slug
+        existing.mkdir()
+        topic = slug.replace("_", " ")
+        (existing / "latest.json").write_text(
+            '{"candidate_count": 80, "pack_data": {"topic": "%s", '
+            '"aliases": ["%s", "longevity"], '
+            '"retrieval": {"topic_terms": ["%s", "longevity"]}}}' % (topic, topic, topic),
+            encoding="utf-8",
+        )
+    rows = [{
+        "topic": "longevity",
+        "sub_topic": "general",
+        "claim_type": "rate",
+        "facts": 39,
+        "exact_facts": 39,
+        "papers": 28,
+    }]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=True)
+
+    assert result["created"] == []
+    assert result["skipped"] == [{
+        "topic": "longevity rates",
+        "slug": "longevity_rates",
+        "reason": "low_information_topic",
+    }]

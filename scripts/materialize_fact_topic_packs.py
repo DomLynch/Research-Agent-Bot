@@ -89,7 +89,7 @@ def materialize_rows(
             "pack_data": pack.to_topic_pack_dict(),
             "candidate_count": int(row.get("exact_facts") or row.get("facts") or 0),
         }))
-    peer_records = [record for _, _, record in candidates]
+    peer_records = _existing_records(db_dir) + [record for _, _, record in candidates]
     for row, pack, record in candidates:
         if pack.status != "proceed" or pack.validation_errors:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": pack.stop_reason or pack.validation_errors})
@@ -125,6 +125,18 @@ def materialize_rows(
             "path": str(path if persisted is None else db_dir / pack.slug / f"v{persisted.version}.json"),
         })
     return {"created": created, "skipped": skipped}
+
+
+def _existing_records(db_dir: Path) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    for path in sorted(db_dir.glob("*/latest.json")):
+        try:
+            record = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(record, dict):
+            records.append(record)
+    return records
 
 
 def fetch_rows(*, dsn: str, min_exact_facts: int, min_papers: int, limit: int) -> list[dict[str, Any]]:
