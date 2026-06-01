@@ -1493,7 +1493,7 @@ def run_cycle(
                     attempt.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                     ledger.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                 ledger["attempts"].append(attempt)
-                same_gate_failures = 0 if revision_feedback else _same_gate_failure_count(ledger["attempts"], selected, gate_status)
+                same_gate_failures = 0 if (revision_source and revision_feedback) else _same_gate_failure_count(ledger["attempts"], selected, gate_status)
                 if same_gate_failures >= 2:
                     attempt["same_gate_repeat_count"] = same_gate_failures
                     attempt["same_gate_repeat_stop"] = True
