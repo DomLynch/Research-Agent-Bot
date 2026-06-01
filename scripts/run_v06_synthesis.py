@@ -2304,13 +2304,21 @@ def _review_heavy_abstraction_note(receipts: list[ReceiptSummary]) -> str:
     if total < 5:
         return ""
     directness = Counter(str(r.directness or "unclassified").lower() for r in receipts)
+    tiers = Counter(str(r.evidence_tier or "").upper() for r in receipts)
     direct = directness.get("direct", 0)
     abstracted = sum(directness.get(k, 0) for k in ("review", "indirect", "mechanistic"))
     if abstracted < max(4, int(total * 0.6)) and direct:
         return ""
     direct_phrase = f"{direct} are classified as direct clinical evidence"
     if direct == 0:
-        direct_phrase = "none are classified as direct clinical evidence"
+        if tiers.get("B2") or tiers.get("B1"):
+            direct_phrase = (
+                "no source is classified as direct interventional "
+                "hard-endpoint evidence, although human observational/"
+                "prognostic or review-level evidence is present"
+            )
+        else:
+            direct_phrase = "none are classified as direct clinical evidence"
     return (
         f"**Evidence-abstraction note.** The {total} retained reference papers are "
         f"not {total} independent primary clinical trials: {abstracted} are review, "
