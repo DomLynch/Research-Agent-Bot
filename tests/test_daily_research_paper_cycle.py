@@ -1701,6 +1701,24 @@ def test_preflight_recent_failure_still_blocks_exploration_track(tmp_path: Path,
     assert "recent_failed_attempts=1" in preflight["reasons"][0]
 
 
+def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "cancer_biomarker_subgroups", target_journal=True)
+    run = tmp_path / "runs" / "synthesis-cancer_biomarker_subgroups-v06-DAILY-2026-06-01T16-04-43Z"
+    run.mkdir(parents=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight(
+        "cancer_biomarker_subgroups",
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        current_quant_claims=39,
+    )
+
+    assert preflight["passed"] is False
+    assert preflight["latest_run"] == run.name
+    assert preflight["reasons"] == ["latest_run_missing_manifest"]
+
+
 def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
