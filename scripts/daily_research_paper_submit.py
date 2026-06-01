@@ -22,7 +22,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from scripts.source_topic_specificity import is_source_topic_specific, topic_tokens  # noqa: E402
+from source_topic_specificity import is_source_topic_specific, topic_tokens  # noqa: E402
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"

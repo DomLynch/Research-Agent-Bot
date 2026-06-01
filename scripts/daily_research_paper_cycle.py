@@ -26,7 +26,6 @@ from pathlib import Path
 from typing import Any
 
 import daily_research_paper_submit as submit_bridge
-from source_topic_specificity import is_source_topic_specific
 
 ROOT = Path(__file__).resolve().parent.parent
 # Enable in-process `from scripts.X import Y` when systemd launches us as
@@ -36,6 +35,8 @@ ROOT = Path(__file__).resolve().parent.parent
 # ModuleNotFoundError for scripts.review_noise_control and falls back to a
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
+from scripts.source_topic_specificity import is_source_topic_specific  # noqa: E402
+
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
 TOPIC_PACKS_DB = ROOT / "topic_packs_db"

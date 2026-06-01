@@ -1,9 +1,4 @@
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-
-from source_topic_specificity import is_source_topic_specific  # noqa: E402
+from scripts.source_topic_specificity import is_source_topic_specific
 
 
 def test_hydrogen_water_rejects_chemistry_drift() -> None:
