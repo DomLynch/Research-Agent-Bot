@@ -57,6 +57,27 @@ def test_discussion_quality_repair_adds_required_markers() -> None:
     assert "**Resolution criteria:**" in repaired.body_md
 
 
+def test_discussion_quality_repair_handles_empty_discussion() -> None:
+    section = SynthesisSection(
+        name="discussion",
+        body_md="## Discussion\n\n",
+        anchors=(),
+    )
+    thesis = SynthesisThesis(
+        text="",
+        receipt_ids_referenced=(),
+        tensions_addressed=(),
+        rejected_candidates=(),
+        picker_rationale="test",
+    )
+
+    repaired = backstop.repair_discussion_minimum_quality(section, thesis)
+
+    assert repaired.body_md.startswith("## Discussion\n\n**Thesis:**")
+    assert "bounded interpretation" in repaired.body_md
+    assert "**Resolution criteria:**" in repaired.body_md
+
+
 @pytest.mark.asyncio
 async def test_backstop_timeout_keeps_existing_section(monkeypatch) -> None:
     monkeypatch.setattr(backstop, "BACKSTOP_CALL_TIMEOUT_SEC", 0.01)
