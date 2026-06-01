@@ -243,6 +243,33 @@ def test_cycle_dry_run_selects_topic_without_synthesis(tmp_path: Path, monkeypat
     assert ledger["published"] == 0
 
 
+def test_cycle_writes_mode_specific_ledgers(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "creatine", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    fresh = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        mode="fresh",
+    )
+    revise = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        mode="revise",
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([], None),
+        submit_cycle=lambda **_kwargs: {"status": "no_eligible_research_paper", "submitted": 0, "published": 0},
+    )
+
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    assert fresh["status"] == "dry_run_selected_topic"
+    assert revise["status"] == "no_revise_pending"
+    assert (ledger_dir / "2026-06-01-fresh.json").exists()
+    assert (ledger_dir / "2026-06-01-revise.json").exists()
+
+
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

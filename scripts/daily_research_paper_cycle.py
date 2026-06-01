@@ -91,6 +91,11 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
 
 
+def _cycle_ledger_path(ledger_dir: Path, date: str, mode: str) -> Path:
+    suffix = "" if mode == "mixed" else f"-{mode}"
+    return ledger_dir / f"{date}{suffix}.json"
+
+
 def _read_json(path: Path) -> dict[str, Any]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -1263,7 +1268,7 @@ def run_cycle(
     started_mono = clock()
     mode = mode if mode in {"fresh", "revise", "mixed"} else "mixed"
     ledger_dir = runs_root / LEDGER_DIR
-    ledger_path = ledger_dir / f"{date}.json"
+    ledger_path = _cycle_ledger_path(ledger_dir, date, mode)
     ledger: dict[str, Any] = {
         "date": date,
         "started_at": started_at,
