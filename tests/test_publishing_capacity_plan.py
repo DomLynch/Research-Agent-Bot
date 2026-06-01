@@ -121,7 +121,9 @@ def test_capacity_plan_includes_unique_topic_expansion_path() -> None:
         "known_unique_topic_shortfall_vs_target": 4511,
         "new_unique_topics_needed_per_day": 6.18,
         "fact_materializer_rows_needed": 4511,
-        "materializer_command": "python scripts/materialize_fact_topic_packs.py --limit 4511 --persist",
+        "materializer_projection_command": "python scripts/materialize_fact_topic_packs.py --limit 4511",
+        "materializer_persist_rule": "persist only if projection.created > 0",
+        "capacity_warning": "run materializer projection against live fact rows; current grouped fact topics may be exhausted",
         "next_generated_candidates": [{"topic": "PCSK9", "slug": "pcsk9", "candidate_count": 90}],
     }
 
