@@ -148,12 +148,26 @@ def _synthesize_from_pack(domain: str) -> Any:
       domain-specific endpoints can still override by creating
       vocab/<topic>.py.
 
-    Raises FileNotFoundError if no topic_packs/<domain>.toml exists —
-    no silent metformin fallback (universal-fix-no-hardcoding rule).
+    Generated packs under topic_packs_db/<domain>/latest.json are accepted too,
+    so fact-backed topics do not fall back to the shared base.
     """
     repo = Path(__file__).resolve().parent.parent.parent
     tp_path = repo / "topic_packs" / f"{domain}.toml"
-    if not tp_path.exists():
+    pack = None
+    if tp_path.exists():
+        import sys
+        sys.path.insert(0, str(repo))
+        from agent.topic_pack import load_topic_pack
+        pack = load_topic_pack(tp_path)
+    else:
+        import sys
+        sys.path.insert(0, str(repo))
+        try:
+            from agent.topic_pack_store import load_generated_topic_pack
+            pack = load_generated_topic_pack(domain, repo / "topic_packs_db")
+        except (OSError, ValueError):
+            pack = None
+    if pack is None:
         # No pack on disk — degrade to the cardiometabolic shared
         # base (vocab.metformin) so tests that exercise unrelated
         # topics don't crash on import. Pipeline runs always have a
@@ -167,10 +181,6 @@ def _synthesize_from_pack(domain: str) -> Any:
             file=sys.stderr,
         )
         return importlib.import_module("vocab.metformin")
-    import sys
-    sys.path.insert(0, str(repo))
-    from agent.topic_pack import load_topic_pack
-    pack = load_topic_pack(tp_path)
     # Inherit endpoint vocab from the shared cardiometabolic base
     # (currently vocab/metformin.py). This is a SHARED-BASE
     # inheritance for endpoints that cross-cut all drug topics —

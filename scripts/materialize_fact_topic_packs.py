@@ -18,6 +18,7 @@ sys.path.insert(0, str(REPO_ROOT))
 
 from agent.topic_pack_generator import generate_candidate_topic_pack  # noqa: E402
 from agent.topic_pack_store import (  # noqa: E402
+    generated_pack_publishable,
     pack_hash,
     persist_generated_pack,
 )
@@ -89,6 +90,9 @@ def materialize_rows(
         )
         if pack.status != "proceed" or pack.validation_errors:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": pack.stop_reason or pack.validation_errors})
+            continue
+        if not generated_pack_publishable(pack.to_topic_pack_dict()):
+            skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "low_information_topic"})
             continue
         path = db_dir / pack.slug / "latest.json"
         digest = pack_hash(pack.to_topic_pack_dict())

@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
 from source_topic_specificity import is_source_topic_specific  # noqa: E402
+from agent.topic_pack_store import generated_pack_publishable  # noqa: E402
 
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
@@ -114,7 +115,9 @@ def discover_topics(
             topics.add(topic)
     for path in sorted(topic_pack_db.glob("*/latest.json")):
         topic = path.parent.name
-        if not topic.startswith("_"):
+        record = _read_json(path)
+        pack_data = record.get("pack_data")
+        if not topic.startswith("_") and isinstance(pack_data, dict) and generated_pack_publishable(pack_data):
             topics.add(topic)
     return sorted(topics)
 
@@ -586,6 +589,8 @@ def _publication_track_topic(topic: str) -> bool:
         record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
         pack_data = record.get("pack_data")
         data = pack_data if isinstance(pack_data, dict) else {}
+        if data and not generated_pack_publishable(data):
+            return False
     return bool(str(data.get("target_journal", "")).strip())
 
 

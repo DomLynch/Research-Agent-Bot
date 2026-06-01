@@ -14,13 +14,14 @@ import importlib
 import os
 import sys
 from pathlib import Path
+from typing import Any
 
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 
-def _reload_quant_endpoints() -> object:
+def _reload_quant_endpoints() -> Any:
     """Re-import quant_endpoints with the current TOPIC_DOMAIN env."""
     if "quant_endpoints" in sys.modules:
         del sys.modules["quant_endpoints"]
@@ -144,6 +145,14 @@ def test_topic_pack_only_topic_auto_synthesizes_vocab() -> None:
     ) == "rosuvastatin"
 
 
+def test_generated_topic_pack_auto_synthesizes_vocab() -> None:
+    """Fact-backed topic_packs_db records should not fall back to metformin."""
+    os.environ["TOPIC_DOMAIN"] = "telomere_biomarker_effects"
+    qe = _reload_quant_endpoints()
+
+    assert qe.match_arm("The telomere group showed shorter attrition.") == "telomere"
+
+
 def test_topic_pack_endpoint_polarity_extends_auto_vocab() -> None:
     """Topic-pack [endpoint_polarity] keys are load-bearing endpoint
     vocab. New topics should not need scripts/vocab/<topic>.py just to
@@ -263,7 +272,7 @@ def test_rapamycin_vocab_covers_rescue_endpoint_terms() -> None:
 
 def test_runner_uses_active_rapamycin_vocab_for_outcome_and_polarity() -> None:
     os.environ["TOPIC_DOMAIN"] = "rapamycin"
-    import run_v06_synthesis as runner
+    import run_v06_synthesis as runner  # type: ignore[import-not-found]
 
     runner._set_topic("rapamycin")
     assert runner._outcome_class_for_endpoint("autophagy") == "longevity"

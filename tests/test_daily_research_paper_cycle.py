@@ -110,7 +110,7 @@ def test_discover_topics_includes_pack_before_corpus_exists(tmp_path: Path) -> N
 def test_discover_topics_includes_generated_pack_records(tmp_path: Path) -> None:
     _topic(tmp_path, "creatine")
     _write_json(tmp_path / "topic_packs_db" / "senescence_biomarker_effects" / "latest.json", {
-        "pack_data": {"topic": "senescence_biomarker_effects", "target_journal": "GeroScience"},
+        "pack_data": {"topic": "senescence_biomarker_effects", "aliases": ["senescence biomarker effects", "senescence"], "target_journal": "GeroScience"},
     })
 
     topics = cycle.discover_topics(
@@ -122,14 +122,42 @@ def test_discover_topics_includes_generated_pack_records(tmp_path: Path) -> None
     assert topics == ["creatine", "senescence_biomarker_effects"]
 
 
+def test_discover_topics_excludes_low_information_generated_pack_records(tmp_path: Path) -> None:
+    _write_json(tmp_path / "topic_packs_db" / "biomarker_effects" / "latest.json", {
+        "pack_data": {"topic": "biomarker_effects", "aliases": ["biomarker effects", "biomarker"], "target_journal": "GeroScience"},
+    })
+    _write_json(tmp_path / "topic_packs_db" / "telomere_biomarker_effects" / "latest.json", {
+        "pack_data": {"topic": "telomere_biomarker_effects", "aliases": ["telomere biomarker effects", "telomere"], "target_journal": "GeroScience"},
+    })
+
+    topics = cycle.discover_topics(
+        tmp_path / "topic_packs",
+        tmp_path / "docs" / "quality-reference",
+        tmp_path / "topic_packs_db",
+    )
+
+    assert topics == ["telomere_biomarker_effects"]
+
+
 def test_generated_pack_record_counts_as_publication_track(tmp_path: Path, monkeypatch) -> None:
     _write_json(tmp_path / "topic_packs_db" / "senescence_biomarker_effects" / "latest.json", {
-        "pack_data": {"topic": "senescence_biomarker_effects", "target_journal": "GeroScience"},
+        "pack_data": {"topic": "senescence_biomarker_effects", "aliases": ["senescence biomarker effects", "senescence"], "target_journal": "GeroScience"},
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
 
     assert cycle._publication_track_topic("senescence_biomarker_effects") is True
+
+
+def test_low_information_generated_pack_is_not_publication_track(tmp_path: Path, monkeypatch) -> None:
+    _write_json(tmp_path / "topic_packs_db" / "biomarker_effects" / "latest.json", {
+        "pack_data": {"topic": "biomarker_effects", "aliases": ["biomarker effects", "biomarker"], "target_journal": "GeroScience"},
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+
+    assert cycle._publication_track_topic("biomarker_effects") is False
+
 
 
 def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_path: Path) -> None:

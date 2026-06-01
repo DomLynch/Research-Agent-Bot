@@ -38,3 +38,20 @@ def test_materialize_rows_is_idempotent_for_unchanged_pack(tmp_path: Path) -> No
     assert (tmp_path / "senescence_biomarker_effects" / "latest.json").exists()
     assert second["created"] == []
     assert second["skipped"][0]["reason"] == "unchanged"
+
+
+def test_materialize_rows_skips_low_information_fact_groups(tmp_path: Path) -> None:
+    rows = [{
+        "topic": "biomarker",
+        "sub_topic": "general",
+        "claim_type": "effect_size",
+        "facts": 12,
+        "exact_facts": 7,
+        "papers": 4,
+    }]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=True)
+
+    assert result["created"] == []
+    assert result["skipped"][0]["slug"] == "biomarker_effects_aging_evidence"
+    assert result["skipped"][0]["reason"] == "low_information_topic"
