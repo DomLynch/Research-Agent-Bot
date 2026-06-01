@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
+TOPIC_PACKS_DB = ROOT / "topic_packs_db"
 CORPORA = ROOT / "docs" / "quality-reference"
 LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
@@ -96,15 +97,24 @@ def _read_json(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
-def discover_topics(topic_packs: Path | None = None, corpora: Path | None = None) -> list[str]:
+def discover_topics(
+    topic_packs: Path | None = None,
+    corpora: Path | None = None,
+    topic_pack_db: Path | None = None,
+) -> list[str]:
     topic_packs = topic_packs or TOPIC_PACKS
+    topic_pack_db = topic_pack_db or TOPIC_PACKS_DB
     _ = corpora
-    topics = []
+    topics: set[str] = set()
     for path in sorted(topic_packs.glob("*.toml")):
         topic = path.stem
         if not topic.startswith("_"):
-            topics.append(topic)
-    return topics
+            topics.add(topic)
+    for path in sorted(topic_pack_db.glob("*/latest.json")):
+        topic = path.parent.name
+        if not topic.startswith("_"):
+            topics.add(topic)
+    return sorted(topics)
 
 
 def _quant_claim_count(topic: str) -> int:
@@ -566,7 +576,9 @@ def _publication_track_topic(topic: str) -> bool:
     try:
         data = tomllib.loads((TOPIC_PACKS / f"{topic}.toml").read_text(encoding="utf-8"))
     except (OSError, tomllib.TOMLDecodeError):
-        return False
+        record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
+        pack_data = record.get("pack_data")
+        data = pack_data if isinstance(pack_data, dict) else {}
     return bool(str(data.get("target_journal", "")).strip())
 
 

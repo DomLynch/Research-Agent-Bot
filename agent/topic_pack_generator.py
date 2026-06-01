@@ -164,6 +164,7 @@ class GeneratedTopicPack:
             "placebo_arm_synonyms": list(_PLACEBO_SYNONYMS),
             "corpus_search_queries": list(self.corpus_search_queries),
             "canonical_rct_paper_ids": [],
+            "target_journal": "GeroScience",
             "retrieval": {
                 "topic_terms": list(self.topic_terms),
                 "scope_terms": list(self.scope_terms),

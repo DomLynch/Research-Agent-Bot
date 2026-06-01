@@ -46,6 +46,7 @@ from agent.sources.aggregator import (  # noqa: E402
 from agent.topic_pack import (  # noqa: E402
     TopicPack, load_topic_pack,
 )
+from agent.topic_pack_store import load_generated_topic_pack  # noqa: E402
 from agent.wave_retrieval import run_waves  # noqa: E402
 from agent.retrieval_modes import GLOBAL_SAFETY_CAP, resolve_params  # noqa: E402
 from agent.corpus_pipeline import (  # noqa: E402
@@ -83,6 +84,13 @@ def _manifest_to_dict(manifest) -> dict[str, Any]:
 
 def _topic_pack_path(topic: str) -> Path:
     return REPO / "topic_packs" / f"{topic}.toml"
+
+
+def _load_topic_pack(topic: str) -> TopicPack:
+    pack_path = _topic_pack_path(topic)
+    if pack_path.exists():
+        return load_topic_pack(pack_path)
+    return load_generated_topic_pack(topic, REPO / "topic_packs_db")
 
 
 def _corpus_paths(topic: str) -> tuple[Path, Path]:
@@ -247,13 +255,13 @@ async def _do_seed(
     sources: list[str] | None,
     force_extract: bool = False,
 ) -> dict[str, Any]:
-    pack_path = _topic_pack_path(topic)
-    if not pack_path.exists():
+    try:
+        pack: TopicPack = _load_topic_pack(topic)
+    except (FileNotFoundError, ValueError) as exc:
         raise FileNotFoundError(
-            f"Topic pack not found: {pack_path}. Create the TOML "
-            "first (use topic_packs/metformin.toml as template)."
-        )
-    pack: TopicPack = load_topic_pack(pack_path)
+            f"Topic pack not found for {topic!r}. Create topic_packs/{topic}.toml "
+            f"or topic_packs_db/{topic}/latest.json."
+        ) from exc
 
     quant_dir, parsed_dir = _corpus_paths(topic)
     parsed_dir.mkdir(parents=True, exist_ok=True)
@@ -325,7 +333,7 @@ async def _do_seed(
     else:
         if not pack.corpus_search_queries:
             raise ValueError(
-                f"Topic pack {pack_path} has no [retrieval] block "
+                f"Topic pack {topic!r} has no [retrieval] block "
                 f"AND no corpus_search_queries. Add one of them."
             )
         # 1. Fan-out search across all enabled sources (legacy path)

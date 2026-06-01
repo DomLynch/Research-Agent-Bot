@@ -1257,11 +1257,12 @@ def _set_topic(topic: str) -> None:
     # Load topic pack (best-effort — pack may not exist for new topics)
     try:
         from agent.topic_pack import load_topic_pack
+        from agent.topic_pack_store import load_generated_topic_pack
         tp_path = REPO_ROOT / "topic_packs" / f"{topic}.toml"
         if tp_path.exists():
             _TOPIC_PACK = load_topic_pack(tp_path)
         else:
-            _TOPIC_PACK = None
+            _TOPIC_PACK = load_generated_topic_pack(topic, REPO_ROOT / "topic_packs_db")
     except (ImportError, OSError, ValueError) as e:
         print(
             f"  ! topic pack load failed for {topic}: {e}",
