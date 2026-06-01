@@ -52,3 +52,36 @@ def test_local_counts_reports_top_blockers_and_repeats(tmp_path: Path) -> None:
     assert counts["cycle"]["attempted_topic"] == "epigenetic_clocks"
     assert counts["top_blockers"][0]["code"] == "retracted_source_cited"
     assert counts["surface_repeat_topics"] == ["coenzyme_q10_ubiquinol"]
+
+
+def test_local_counts_reports_mode_ledgers_and_daily_sidecars(tmp_path: Path) -> None:
+    ledger = tmp_path / "_daily_research_paper_cycle_ledger"
+    submit = tmp_path / "_daily_research_paper_ledger"
+    ledger.mkdir()
+    submit.mkdir()
+    (ledger / "2026-06-01-fresh.json").write_text(json.dumps({
+        "started_at": "2026-06-01T22:00:00+00:00",
+        "mode": "fresh",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "attempted_topic": "pcsk9_inhibitors_longevity",
+    }))
+    (ledger / "2026-06-01-revise.json").write_text(json.dumps({
+        "started_at": "2026-06-01T23:15:00+00:00",
+        "mode": "revise",
+        "status": "no_revise_pending",
+        "submitted": 0,
+    }))
+    (ledger / "_daily_throughput_summary.json").write_text(json.dumps({
+        "days": {"2026-06-01": {"submitted": 14, "published": 6, "cycles": 9}},
+    }))
+    (ledger / "_decisions_by_day.json").write_text(json.dumps({
+        "days": {"2026-06-01": {"counts": {"accept": 6, "revise": 3}}},
+    }))
+
+    counts = report._local_counts(tmp_path, "2026-06-01")
+
+    assert counts["cycle"]["mode"] == "revise"
+    assert counts["cycle_modes"]["fresh"]["submitted"] == 1
+    assert counts["throughput"]["submitted"] == 14
+    assert counts["decisions"]["counts"] == {"accept": 6, "revise": 3}

@@ -72,10 +72,25 @@ def _read_json(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
+def _cycle_view(data: dict[str, Any]) -> dict[str, Any]:
+    return {k: data.get(k) for k in ("started_at", "mode", "status", "submitted", "published", "attempted_topic")}
+
+
 def _local_counts(runs_root: Path, date: str) -> dict[str, Any]:
-    cycle = _read_json(runs_root / "_daily_research_paper_cycle_ledger" / f"{date}.json")
+    ledger_dir = runs_root / "_daily_research_paper_cycle_ledger"
+    cycles = {
+        mode: _read_json(ledger_dir / f"{date}{suffix}.json")
+        for mode, suffix in (("mixed", ""), ("fresh", "-fresh"), ("revise", "-revise"))
+    }
+    cycle = max(
+        (row for row in cycles.values() if row),
+        key=lambda row: str(row.get("started_at") or ""),
+        default={},
+    )
     submit = _read_json(runs_root / "_daily_research_paper_ledger" / f"{date}.json")
-    hist = _read_json(runs_root / "_daily_research_paper_cycle_ledger" / "_blocker_histogram.json")
+    hist = _read_json(ledger_dir / "_blocker_histogram.json")
+    throughput = _read_json(ledger_dir / "_daily_throughput_summary.json").get("days", {}).get(date, {})
+    decisions = _read_json(ledger_dir / "_decisions_by_day.json").get("days", {}).get(date, {})
     raw_blockers = hist.get("blockers")
     blockers = raw_blockers if isinstance(raw_blockers, dict) else {}
     top = sorted(
@@ -88,7 +103,10 @@ def _local_counts(runs_root: Path, date: str) -> dict[str, Any]:
     repeats = hist.get("repeats")
     repeat_keys = repeats if isinstance(repeats, dict) else {}
     return {
-        "cycle": {k: cycle.get(k) for k in ("started_at", "mode", "status", "submitted", "published", "attempted_topic")},
+        "cycle": _cycle_view(cycle),
+        "cycle_modes": {mode: _cycle_view(data) for mode, data in cycles.items() if data},
+        "throughput": throughput if isinstance(throughput, dict) else {},
+        "decisions": decisions if isinstance(decisions, dict) else {},
         "submit": {k: submit.get(k) for k in ("status", "submitted", "published", "topic", "run")},
         "top_blockers": top[:8],
         "surface_repeat_topics": sorted(str(k).split("\x1f", 1)[0] for k in repeat_keys),
