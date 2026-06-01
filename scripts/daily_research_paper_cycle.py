@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # ModuleNotFoundError for scripts.review_noise_control and falls back to a
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
-from source_topic_specificity import generated_pack_publishable, is_source_topic_specific  # noqa: E402
+from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, topic_aliases  # noqa: E402
 
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
@@ -1153,12 +1153,13 @@ def _quant_claim_identity(path: Path) -> str:
 def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
     floor = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR if floor is None else floor
     tokens = submit_bridge._topic_tokens(topic)
+    aliases = topic_aliases(topic, root=TOPIC_PACKS.parent)
     paths = sorted((CORPORA / topic / "quant_claims").glob("*.quant_claims.json"))
     if not tokens or not paths:
         return True, "source_topic_precision_unscored", []
     misses = [
         path for path in paths
-        if not is_source_topic_specific(topic, _quant_claim_identity(path))
+        if not is_source_topic_specific(topic, _quant_claim_identity(path), aliases=aliases)
     ]
     hits = len(paths) - len(misses)
     ratio = hits / len(paths)

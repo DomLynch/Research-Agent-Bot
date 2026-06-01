@@ -2398,6 +2398,26 @@ def test_source_precision_repair_force_quarantines_misses_above_floor(tmp_path: 
     ]
 
 
+def test_source_precision_uses_topic_aliases_without_keeping_plant_drift(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "hydrogen_water", corpus=False)
+    (tmp_path / "topic_packs" / "hydrogen_water.toml").write_text(
+        'aliases = ["molecular hydrogen", "hydrogen-rich water"]\n',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / "hydrogen_water" / "quant_claims"
+    qdir.mkdir(parents=True)
+    _write_json(qdir / "randomized_molecular_hydrogen_trial.quant_claims.json", {"paper_id": "randomized_molecular_hydrogen_trial"})
+    _write_json(qdir / "molecular_hydrogen_improves_blueberry_plant_traits.quant_claims.json", {"paper_id": "molecular_hydrogen_improves_blueberry_plant_traits"})
+
+    ok, status, misses = cycle._quant_claim_source_precision("hydrogen_water", floor=0.75)
+
+    assert not ok
+    assert status == "source_topic_precision_low:1/2<0.75"
+    assert [path.name for path in misses] == ["molecular_hydrogen_improves_blueberry_plant_traits.quant_claims.json"]
+
+
 def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "epigenome_editing_longevity")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

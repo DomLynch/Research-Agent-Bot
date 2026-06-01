@@ -2,7 +2,12 @@
 from __future__ import annotations
 
 import re
+import json
+import tomllib
 from collections.abc import Iterable
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
 
 MIN_GENERATED_PACK_CANDIDATES = 10
 MIN_GENERATED_PACK_TOKENS = 3
@@ -36,6 +41,34 @@ def topic_tokens(topic: str) -> list[str]:
         token for token in re.findall(r"[a-z0-9]+", topic.replace("_", " ").lower())
         if len(token) > 3 and token not in TOPIC_STOPWORDS
     ]
+
+
+def topic_aliases(topic: str, *, root: Path | None = None) -> tuple[str, ...]:
+    """Load local/generated topic aliases without making specificity topic-specific."""
+    base = root or ROOT
+    out: list[str] = [topic, topic.replace("_", " ")]
+    try:
+        pack = tomllib.loads((base / "topic_packs" / f"{topic}.toml").read_text(encoding="utf-8"))
+        out.extend(alias for alias in pack.get("aliases", []) if isinstance(alias, str))
+    except (OSError, tomllib.TOMLDecodeError):
+        pass
+    try:
+        record = json.loads((base / "topic_packs_db" / topic / "latest.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        record = {}
+    pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else {}
+    if isinstance(pack_data, dict):
+        out.extend(alias for alias in pack_data.get("aliases", []) if isinstance(alias, str))
+        retrieval = pack_data.get("retrieval")
+        if isinstance(retrieval, dict):
+            out.extend(term for term in retrieval.get("topic_terms", []) if isinstance(term, str))
+    seen: set[str] = set()
+    aliases: list[str] = []
+    for alias in (item.strip().lower() for item in out):
+        if alias and alias not in seen:
+            seen.add(alias)
+            aliases.append(alias)
+    return tuple(aliases)
 
 
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:

@@ -22,7 +22,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from source_topic_specificity import is_source_topic_specific, topic_tokens  # noqa: E402
+from source_topic_specificity import is_source_topic_specific, topic_aliases, topic_tokens  # noqa: E402
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
@@ -132,18 +132,21 @@ def _topic_tokens(topic: str) -> list[str]:
 
 def _source_topic_precision(run: Path) -> tuple[bool, str]:
     manifest = _read_json(run / "manifest.json")
-    tokens = _topic_tokens(str(manifest.get("topic") or _run_topic(run)))
+    topic = str(manifest.get("topic") or _run_topic(run))
+    tokens = _topic_tokens(topic)
     receipts = manifest.get("receipts")
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not tokens or not rows:
         return True, "source_topic_precision_unscored"
+    base = run.parent.parent if run.parent.name == "runs" else run.parent
+    aliases = topic_aliases(topic, root=base)
     hits = 0
     for row in rows:
         haystack = " ".join(
             str(row.get(key) or "")
             for key in ("receipt_id", "paper_id", "citation_token")
         ).lower()
-        hits += int(is_source_topic_specific(str(manifest.get("topic") or _run_topic(run)), haystack))
+        hits += int(is_source_topic_specific(topic, haystack, aliases=aliases))
     ratio = hits / len(rows)
     if ratio < SOURCE_TOPIC_PRECISION_FLOOR:
         return False, f"source_topic_precision_low:{hits}/{len(rows)}<{SOURCE_TOPIC_PRECISION_FLOOR:.2f}"
