@@ -1417,10 +1417,16 @@ def run_cycle(
                 continue
             revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
             revision_source_repair = _revision_requests_source_precision(revision_feedback)
-            source_precision_ok, _, _ = _quant_claim_source_precision(selected, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+            source_precision_ok, _, source_precision_misses = _quant_claim_source_precision(selected, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+            source_precision_has_misses = (
+                source_precision_ok
+                and bool(source_precision_misses)
+                and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS * 2
+            )
             source_precision_needs_repair = (
                 selected in _source_precision_repair_topics(ledger_dir)
                 or revision_source_repair
+                or source_precision_has_misses
                 or (
                     not source_precision_ok
                     and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS * 2
@@ -1428,7 +1434,7 @@ def run_cycle(
             )
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:
                 source_repair = _repair_low_source_precision_corpus(
-                    selected, dry_run=synthesis_dry_run, timeout=timeout, force=revision_source_repair,
+                    selected, dry_run=synthesis_dry_run, timeout=timeout, force=revision_source_repair or source_precision_has_misses,
                 )
                 ledger["source_precision_repair"] = {"topic": selected, **source_repair}
                 corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)

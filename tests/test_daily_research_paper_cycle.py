@@ -2521,6 +2521,50 @@ def test_cycle_repairs_large_low_precision_corpus_before_synthesis(tmp_path: Pat
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_quarantines_source_precision_misses_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "hydrogen_water", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / "hydrogen_water" / "quant_claims"
+    qdir.mkdir(parents=True)
+    for i in range(24):
+        _write_json(qdir / f"hydrogen_water_{i}.quant_claims.json", {"paper_id": f"hydrogen_water_{i}"})
+    _write_json(qdir / "blueberry_plant.quant_claims.json", {"paper_id": "blueberry plant traits"})
+    repaired: list[dict[str, Any]] = []
+    synthesized: list[str] = []
+
+    def fake_repair(topic: str, **kwargs: Any) -> dict[str, Any]:
+        repaired.append({"topic": topic, **kwargs})
+        return {
+            "status": "source_precision_repaired",
+            "source_topic_precision_before": "source_topic_precision_ok:24/25",
+            "source_topic_precision_after": "source_topic_precision_ok:24/24",
+            "n_quant_claims": 24,
+        }
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert repaired == [{"topic": "hydrogen_water", "dry_run": False, "timeout": None, "force": True}]
+    assert synthesized == ["hydrogen_water"]
+    assert ledger["source_precision_repair"]["source_topic_precision_after"] == "source_topic_precision_ok:24/24"
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
