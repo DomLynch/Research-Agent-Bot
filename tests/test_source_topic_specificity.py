@@ -21,6 +21,24 @@ def test_single_token_biomedical_topic_accepts_anchor() -> None:
     assert is_source_topic_specific("rapamycin", text, aliases=("rapamycin",))
 
 
+def test_multi_token_topic_rejects_single_generic_biomed_token() -> None:
+    text = "Randomized exercise intervention reduced inflammation in older adults"
+    assert not is_source_topic_specific(
+        "low_dose_naltrexone_inflammation",
+        text,
+        aliases=("low dose naltrexone", "naltrexone"),
+    )
+
+
+def test_multi_token_topic_accepts_named_intervention_and_context() -> None:
+    text = "Low-dose naltrexone trial in adults with inflammatory symptoms"
+    assert is_source_topic_specific(
+        "low_dose_naltrexone_inflammation",
+        text,
+        aliases=("low dose naltrexone", "naltrexone"),
+    )
+
+
 def test_generated_pack_publishable_uses_structural_specificity() -> None:
     assert generated_pack_publishable({
         "candidate_count": 12,

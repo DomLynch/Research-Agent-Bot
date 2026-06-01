@@ -74,7 +74,7 @@ def topic_aliases(topic: str, *, root: Path | None = None) -> tuple[str, ...]:
 
 
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
-    haystack = " ".join(str(text or "").lower().split())
+    haystack = " ".join(str(text or "").replace("_", " ").replace("-", " ").lower().split())
     tokens = topic_tokens(topic)
     if not haystack or not tokens:
         return True
@@ -84,7 +84,12 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     drift = any(term in haystack for term in NON_BIOMED_DRIFT)
     if drift and not any(anchor in haystack for anchor in DRIFT_RESCUE_ANCHORS):
         return False
-    return alias_hit or token_hits == len(tokens) or (biomed and token_hits > 0)
+    if alias_hit or token_hits == len(tokens):
+        return True
+    # Single-token topics can be specific with a biomedical anchor. Multi-token
+    # topics need more than one generic biomedical word; otherwise broad source
+    # bundles like "inflammation" swamp named interventions such as naltrexone.
+    return biomed and len(tokens) == 1 and token_hits > 0
 
 
 def generated_pack_publishable(
