@@ -15,10 +15,10 @@ def test_build_topic_name_uses_fact_topic_subtopic_and_claim_type() -> None:
     assert materializer.build_topic_name(row) == "senescence biomarker effects"
 
 
-def test_build_topic_name_replaces_generic_subtopic_with_aging_evidence() -> None:
+def test_build_topic_name_uses_topic_and_claim_for_generic_subtopic() -> None:
     row = {"topic": "resveratrol", "sub_topic": "other", "claim_type": "regimen"}
 
-    assert materializer.build_topic_name(row) == "resveratrol regimens aging evidence"
+    assert materializer.build_topic_name(row) == "resveratrol regimens"
 
 
 def test_materialize_rows_is_idempotent_for_unchanged_pack(tmp_path: Path) -> None:
@@ -53,5 +53,23 @@ def test_materialize_rows_skips_low_information_fact_groups(tmp_path: Path) -> N
     result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=True)
 
     assert result["created"] == []
-    assert result["skipped"][0]["slug"] == "biomarker_effects_aging_evidence"
+    assert result["skipped"][0]["slug"] == "biomarker_effects"
     assert result["skipped"][0]["reason"] == "low_information_topic"
+
+
+def test_materialize_rows_keeps_specific_generic_subtopic_pack_publishable(tmp_path: Path) -> None:
+    rows = [{
+        "topic": "metformin",
+        "sub_topic": "other",
+        "claim_type": "effect_size",
+        "facts": 65,
+        "exact_facts": 65,
+        "papers": 12,
+    }]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=True)
+
+    assert result["created"][0]["slug"] == "metformin_effects"
+    latest = tmp_path / "metformin_effects" / "latest.json"
+    assert latest.exists()
+    assert result["skipped"] == []

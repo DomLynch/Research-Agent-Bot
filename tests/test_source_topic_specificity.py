@@ -85,6 +85,19 @@ def test_generated_pack_publishable_uses_peer_relative_specificity() -> None:
     assert not generated_pack_publishable(broad, peer_records=peers)
 
 
+def test_generated_pack_publishable_allows_high_support_single_rare_topic() -> None:
+    records = [
+        {"candidate_count": 65, "pack_data": {"topic": "metformin_effects", "aliases": ["metformin effects", "metformin"]}},
+        {"candidate_count": 30, "pack_data": {"topic": "metabolism_effects", "aliases": ["metabolism effects", "metabolism"]}},
+        {"candidate_count": 20, "pack_data": {"topic": "metabolism_rates", "aliases": ["metabolism rates", "metabolism"]}},
+        {"candidate_count": 20, "pack_data": {"topic": "metabolism_biomarkers", "aliases": ["metabolism biomarkers", "metabolism"]}},
+        {"candidate_count": 20, "pack_data": {"topic": "metabolism_thresholds", "aliases": ["metabolism thresholds", "metabolism"]}},
+    ]
+
+    assert generated_pack_publishable(records[0], peer_records=records)
+    assert not generated_pack_publishable(records[1], peer_records=records)
+
+
 def test_generated_pack_scope_axis_is_not_enough_for_specificity() -> None:
     broad_scope_only = {
         "candidate_count": 25,

@@ -61,7 +61,7 @@ def build_topic_name(row: dict[str, Any]) -> str:
     sub_topic = _label(row.get("sub_topic"))
     claim = CLAIM_LABELS.get(str(row.get("claim_type") or "").strip(), _label(row.get("claim_type")) or "evidence")
     if sub_topic.lower() in GENERIC_SUBTOPICS:
-        return f"{topic} {claim} aging evidence"
+        return f"{topic} {claim}"
     parts = [topic]
     if sub_topic.lower() != topic.lower():
         parts.append(sub_topic)
@@ -80,7 +80,10 @@ def materialize_rows(
     skipped: list[dict[str, Any]] = []
     candidates = []
     for row in rows:
-        seed_terms = tuple(term for term in (_label(row.get("topic")), _label(row.get("sub_topic"))) if term)
+        seed_terms = tuple(
+            term for term in (_label(row.get("topic")), _label(row.get("sub_topic")))
+            if term and term.lower() not in GENERIC_SUBTOPICS
+        )
         pack = generate_candidate_topic_pack(build_topic_name(row), seed_terms=seed_terms)
         candidates.append((row, pack, {
             "pack_data": pack.to_topic_pack_dict(),

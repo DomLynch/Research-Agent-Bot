@@ -137,7 +137,10 @@ def generated_pack_publishable(
         if structurally_specific
         else MIN_GENERATED_PACK_CANDIDATES
     )
-    return candidate_count >= floor and len(terms) >= MIN_GENERATED_PACK_TOKENS and structurally_specific
+    enough_terms = len(terms) >= MIN_GENERATED_PACK_TOKENS or (
+        structurally_specific and candidate_count >= MIN_GENERATED_PACK_CANDIDATES
+    )
+    return candidate_count >= floor and enough_terms and structurally_specific
 
 
 def _generic_fallback_topic(topic: str) -> bool:
