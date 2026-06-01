@@ -76,6 +76,35 @@ def topic_aliases(
     return tuple(aliases)
 
 
+def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
+    """Keep aliases that name the topic, not broad retrieval axes.
+
+    Generated packs often carry helpful retrieval terms such as "blood pressure"
+    or "sleep". Those improve search breadth but are too broad for source
+    admission. A source-gate alias must overlap the topic text itself.
+    """
+    topic_text = " ".join(topic.replace("_", " ").replace("-", " ").lower().split())
+    topic_raw_tokens = {
+        token for token in re.findall(r"[a-z0-9]+", topic_text)
+        if len(token) > 2 and token not in TOPIC_STOPWORDS
+    }
+    out: list[str] = []
+    seen: set[str] = set()
+    for alias in aliases:
+        norm = " ".join(str(alias or "").replace("_", " ").replace("-", " ").lower().split())
+        if not norm:
+            continue
+        alias_tokens = {
+            token for token in re.findall(r"[a-z0-9]+", norm)
+            if len(token) > 2 and token not in TOPIC_STOPWORDS
+        }
+        if norm in topic_text or topic_text in norm or topic_raw_tokens & alias_tokens:
+            if norm not in seen:
+                seen.add(norm)
+                out.append(str(alias))
+    return tuple(out)
+
+
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
     haystack = " ".join(str(text or "").replace("_", " ").replace("-", " ").lower().split())
     tokens = topic_tokens(topic)

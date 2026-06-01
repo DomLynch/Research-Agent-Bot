@@ -22,7 +22,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from source_topic_specificity import is_source_topic_specific, topic_aliases, topic_tokens  # noqa: E402
+from source_topic_specificity import (  # noqa: E402
+    is_source_topic_specific, source_gate_aliases, topic_aliases, topic_tokens,
+)
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
@@ -139,7 +141,9 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
     if not tokens or not rows:
         return True, "source_topic_precision_unscored"
     base = run.parent.parent if run.parent.name == "runs" else run.parent
-    aliases = topic_aliases(topic, root=base, include_generated_terms=False)
+    aliases = source_gate_aliases(
+        topic, topic_aliases(topic, root=base, include_generated_terms=False),
+    )
     hits = 0
     for row in rows:
         haystack = " ".join(

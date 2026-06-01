@@ -88,7 +88,9 @@ import background_literature as _bglit  # noqa: E402
 import paper_quality_runtime as _paper_quality  # noqa: E402
 import v3_polish_compiler as _polish_compiler  # noqa: E402
 import v3_paper_ir as _paper_ir  # noqa: E402
-from source_topic_specificity import is_source_topic_specific, topic_aliases  # noqa: E402
+from source_topic_specificity import (  # noqa: E402
+    is_source_topic_specific, source_gate_aliases, topic_aliases,
+)
 
 # Workstream A (autonomous): topic-parameterized pipeline.
 # Module-level corpus paths + active topic — populated by
@@ -2029,7 +2031,9 @@ def build_receipts_from_quant_claims(
     paper_meta_by_id = _load_paper_meta_by_id()
     active_paper_ids = _load_receipt_candidate_paper_ids()
     paper_class_map = _load_paper_class_map()
-    aliases = topic_aliases(topic, root=REPO_ROOT, include_generated_terms=False)
+    aliases = source_gate_aliases(
+        topic, topic_aliases(topic, root=REPO_ROOT, include_generated_terms=False),
+    )
 
     # Group admittable claims by paper_id (PMC prefix → class lookup)
     by_paper: dict[str, list[dict]] = defaultdict(list)
