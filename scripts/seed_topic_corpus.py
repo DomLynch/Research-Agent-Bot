@@ -54,6 +54,7 @@ from agent.corpus_pipeline import (  # noqa: E402
     topic_aliases_for_classification,
 )
 import v3_optional_adapters as _optional_adapters  # noqa: E402
+from source_topic_specificity import is_source_topic_specific  # noqa: E402
 
 
 def _manifest_entry_to_dict(entry) -> dict[str, Any]:
@@ -119,6 +120,11 @@ def _paper_id_from_hit(hit) -> str:
     if hit.doi:
         return f"DOI_{_slug(hit.doi, limit=80)}_{slug}".strip("_")
     return f"HIT_{slug}" if slug else "HIT_untitled"
+
+
+def _hit_specific_to_topic(topic: str, pack: TopicPack, hit) -> bool:
+    text = " ".join(str(getattr(hit, attr, "") or "") for attr in ("title", "abstract", "venue"))
+    return is_source_topic_specific(topic, text, aliases=pack.aliases)
 
 
 def _parsed_paths_for_pmcid(parsed_dir: Path, pmcid: str) -> list[Path]:
@@ -323,6 +329,7 @@ async def _do_seed(
         selected = [
             e.hit for e in manifest.entries
             if e.keep_for_extraction and e.pool in active_pools
+            and _hit_specific_to_topic(topic, pack, e.hit)
         ][:limit]
         print(
             f"=== Selecting top {len(selected)} "
@@ -380,7 +387,7 @@ async def _do_seed(
         deduped.sort(
             key=lambda h: (-h.n_sources, -(h.year or 0)),
         )
-        selected = deduped[:limit]
+        selected = [h for h in deduped if _hit_specific_to_topic(topic, pack, h)][:limit]
         print(
             f"=== Selecting top {len(selected)} for fetch ===",
             file=sys.stderr,

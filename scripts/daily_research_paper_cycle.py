@@ -26,6 +26,7 @@ from pathlib import Path
 from typing import Any
 
 import daily_research_paper_submit as submit_bridge
+from source_topic_specificity import is_source_topic_specific
 
 ROOT = Path(__file__).resolve().parent.parent
 # Enable in-process `from scripts.X import Y` when systemd launches us as
@@ -1145,7 +1146,10 @@ def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> 
     paths = sorted((CORPORA / topic / "quant_claims").glob("*.quant_claims.json"))
     if not tokens or not paths:
         return True, "source_topic_precision_unscored", []
-    misses = [path for path in paths if not any(token in _quant_claim_identity(path) for token in tokens)]
+    misses = [
+        path for path in paths
+        if not is_source_topic_specific(topic, _quant_claim_identity(path))
+    ]
     hits = len(paths) - len(misses)
     ratio = hits / len(paths)
     if ratio < floor:
