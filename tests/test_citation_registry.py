@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import citation_registry as cr  # noqa: E402
+import citation_registry as cr  # type: ignore[import-not-found]  # noqa: E402
 
 
 @dataclass
@@ -73,6 +73,14 @@ def test_validate_body_citation_passes_clean_forms() -> None:
     assert cr.validate_body_citation("Walton 2019") == []
     assert cr.validate_body_citation("PMC12978362 2026") == []
     assert cr.validate_body_citation("Smith et al. 2026") == []
+
+
+def test_validate_body_citation_catches_extraction_artifact_labels() -> None:
+    assert cr.validate_body_citation("CORRECTING 2019")
+    assert cr.validate_body_citation("CORRECTION 2019b")
+    assert cr.validate_body_citation("MITOCHONDRIAL 2021")
+    assert cr.validate_body_citation("Smith 2019 2019")
+    assert cr.validate_body_citation("HBOT 2024") == []
 
 
 def test_build_registry_raises_on_internal_leak() -> None:
@@ -186,10 +194,10 @@ def test_citation_entry_is_frozen_kw_only() -> None:
         receipt_id="X", body_citation="X 2020", reference_id="R01",
     )
     with pytest.raises(Exception):  # FrozenInstanceError
-        e.body_citation = "mutated"
+        e.body_citation = "mutated"  # type: ignore[misc]
     # kw_only: positional construction must fail
     with pytest.raises(TypeError):
-        cr.CitationEntry("X", "X 2020", "R01")  # type: ignore[call-arg]
+        cr.CitationEntry("X", "X 2020", "R01")  # type: ignore[call-arg,misc]
 
 
 def test_substitute_idempotent_on_already_clean_paper() -> None:

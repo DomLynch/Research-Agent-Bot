@@ -768,7 +768,10 @@ _MISSING_PUBLIC_VALUES = {
 
 
 def _is_missing_public_value(value: Any) -> bool:
-    return str(value or "").strip().lower() in _MISSING_PUBLIC_VALUES
+    raw = str(value or "").strip()
+    if raw.lower() in _MISSING_PUBLIC_VALUES:
+        return True
+    return bool(re.match(r"^correct(?:ing|ion)?\s+\d{4}[a-z]?$", raw, re.I))
 
 
 def _public_value(value: Any, default: str = "—") -> str:
