@@ -111,7 +111,9 @@ def test_methods_data_items_carries_source_grounding_disclosure() -> None:
         accountability_model="researka_agent_certified",
     )
     md = render_methods_md(pack, submission_id="run-0000")
+    assert "calibration rule" in md
     assert "reference-level metadata" in md
+    assert "exact statistics" in md
     assert "claim registry" in md
 
 
@@ -141,8 +143,9 @@ def test_methods_pack_renders_receipt_admission_funnel() -> None:
     assert "| Classified receipt candidates | 188 |" in md
     assert "| No extractable claims | 9 |" in md
     assert "| None-only claim binding | 13 |" in md
-    assert "| Partial/none-only claim binding | 120 |" in md
-    assert "| Partial-only candidates | 4 |" in md
+    assert "| Mixed partial-or-none claim-binding candidates | 120 |" in md
+    assert "| Partial-only claim-binding candidates | 4 |" in md
+    assert "not additive exclusion totals" in md
     assert "| Strict high-confidence receipts | 5 |" in md
     assert "| Admitted final receipts | 129 |" in md
 

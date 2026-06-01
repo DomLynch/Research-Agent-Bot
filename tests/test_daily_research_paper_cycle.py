@@ -2063,6 +2063,7 @@ def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Pat
         f"gdf11{s}abstract_overclaim": [older, recent],                         # writer-fixable -> no
         f"ergothioneine{s}journal_surface_not_passed": [recent],                # single -> no
         f"creatine{s}cycle_budget_exhausted": [older, recent],                  # transient code -> no
+        f"glynac{s}final_status_not_ready": [older, recent],                    # readiness refreshable -> no
         f"rapamycin{s}journal_surface_not_passed": [stale, stale],              # out of window -> no
     }})
 

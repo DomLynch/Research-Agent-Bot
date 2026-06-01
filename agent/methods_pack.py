@@ -219,8 +219,10 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
             f"the retrieval and claim-binding pipeline. Of {union} records "
             f"in the receipt-candidate union, {classified or 0} were classified "
             f"as receipt candidates and {admitted} were admitted as traceable "
-            "synthesis receipts. No additional records were excluded after "
-            "final receipt admission."
+            "synthesis receipts. Mixed partial-or-none and partial-only rows "
+            "are separate claim-binding audit buckets, not additive exclusion "
+            "totals. No additional records were excluded after final receipt "
+            "admission."
         )
         lines += ["", "### Receipt admission funnel", "", "| Admission bucket | n |", "|---|---:|"]
         lines += [f"| {label} | {value} |" for label, value in admission_rows]
@@ -241,7 +243,7 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "",
         "### Data items",
         "The following fields were extracted from each included source: " +
-        ", ".join(pack.data_extraction_fields) + ". Source verification in the public bundle is limited to reference-level metadata; reported statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias appraisal, and claim registry) rather than from re-parsed full text.",  # noqa: E501
+        ", ".join(pack.data_extraction_fields) + ". Under the calibration rule, source verification in the public bundle is limited to reference-level metadata; exact statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias appraisal, and claim registry) rather than from re-parsed full text.",  # noqa: E501
         "",
         "### Risk-of-bias appraisal",
         pack.risk_of_bias_approach,

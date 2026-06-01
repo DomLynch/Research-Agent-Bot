@@ -125,7 +125,8 @@ def test_search_provenance_renders_selection_flow_counts() -> None:
     assert "| Quant-claim files screened | 287 |" in md
     assert "| Receipt candidate union | 40 |" in md
     assert "| No extractable claims | 49 |" in md
-    assert "| Partial/none-only claim binding | 57 |" in md
+    assert "| Mixed partial-or-none claim-binding candidates | 57 |" in md
+    assert "not additive exclusion totals" in md
     assert "| Admitted final receipts | 40 |" in md
     assert "not a PRISMA claim" in md
 
