@@ -1485,6 +1485,34 @@ def test_submitted_revision_waits_for_newer_review_before_reprocessing(tmp_path:
     assert pending and pending["artifactId"] == "r2"
 
 
+def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "hydrogen_water", target_journal=True)
+    _topic(tmp_path, "telomere_biomarker_effects", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    title = "Research Synthesis: Hydrogen Water — full paper"
+    _seed_submitted_run(tmp_path / "runs", "hydrogen_water", f"# {title}")
+    revision = {
+        "artifactId": "rev-1",
+        "title": title,
+        "feedback": "Revise source specificity.",
+        "reviewedAt": "2026-06-01T10:00:00+00:00",
+    }
+    monkeypatch.setattr(cycle, "_remote_revision_requests", lambda: ([revision], None))
+    monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TEST_TOKEN"))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        mode="fresh",
+        submit=True,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["pending_revision_exclusions"] == {"checked": True, "topics": ["hydrogen_water"]}
+    assert ledger["topic"] == "telomere_biomarker_effects"
+
+
 def _patch_reviews(monkeypatch, rows: list[dict[str, Any]]) -> None:
     class _Resp:
         def __enter__(self) -> "_Resp":

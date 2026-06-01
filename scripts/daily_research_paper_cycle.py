@@ -527,6 +527,34 @@ def _pending_remote_revision(
     return None, None
 
 
+def _pending_remote_revision_topics(
+    runs_root: Path,
+    ledger_dir: Path,
+    *,
+    loader: RevisionLoader | None = None,
+) -> tuple[set[str], str | None]:
+    rows, error = (loader or _remote_revision_requests)()
+    if error:
+        return set(), error
+    handled = _handled_revision_ids(ledger_dir, rows)
+    submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
+    records: list[Any] = raw_records if isinstance(raw_records, list) else []
+    out: set[str] = set()
+    for request in rows:
+        if _revision_key(request) in handled:
+            continue
+        title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            run = runs_root / str(record.get("run") or "")
+            paper = run / "full_paper.md"
+            if paper.exists() and title_marker == submit_bridge._title_marker(submit_bridge._paper_title(paper)):
+                out.add(str(record.get("topic") or submit_bridge._run_topic(run)))
+    return out, None
+
+
 def _terminal_topics(
     runs_root: Path,
     *,
@@ -1318,6 +1346,14 @@ def run_cycle(
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
                 ledger["remote_revisions"]["error"] = revision_error
+        pending_revision_excluded: set[str] = set()
+        if submit and topic is None and mode == "fresh" and revision_loader is None and submit_cycle is None:
+            pending_revision_excluded, revision_error = _pending_remote_revision_topics(
+                runs_root, ledger_dir, loader=revision_loader,
+            )
+            ledger["pending_revision_exclusions"] = {"checked": True, "topics": sorted(pending_revision_excluded)}
+            if revision_error:
+                ledger["pending_revision_exclusions"]["error"] = revision_error
         if submit and topic is None and revision_loader is None:
             # Production only (live reviews poll): drop topics whose latest review
             # is terminal (reject, or a revise with no actionable revisions such as
@@ -1348,7 +1384,7 @@ def run_cycle(
         source_precision_repaired_ok: set[str] = set()
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
-            repairable = _corpus_repair_topics(ledger_dir) - terminal_excluded - submitted_topics
+            repairable = _corpus_repair_topics(ledger_dir) - terminal_excluded - submitted_topics - pending_revision_excluded
             source_precision_repairable = _source_precision_repair_topics(ledger_dir)
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
@@ -1388,7 +1424,7 @@ def run_cycle(
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | surface_repeat | preflight_blocked | writer_gate_skip)
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
