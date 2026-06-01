@@ -39,6 +39,15 @@ def test_multi_token_topic_accepts_named_intervention_and_context() -> None:
     )
 
 
+def test_multi_token_topic_accepts_named_intervention_without_generic_outcome() -> None:
+    text = "Partial efficacy of low-dose naltrexone in chronic pain management"
+    assert is_source_topic_specific(
+        "low_dose_naltrexone_inflammation",
+        text,
+        aliases=("low dose naltrexone inflammation",),
+    )
+
+
 def test_generated_pack_publishable_uses_structural_specificity() -> None:
     assert generated_pack_publishable({
         "candidate_count": 12,

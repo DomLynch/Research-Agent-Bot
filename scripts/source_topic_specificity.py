@@ -79,12 +79,20 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     if not haystack or not tokens:
         return True
     token_hits = sum(1 for token in tokens if token in haystack)
-    alias_hit = any(str(alias or "").lower() in haystack for alias in aliases if str(alias or "").strip())
+    alias_hit = any(
+        " ".join(str(alias or "").replace("_", " ").replace("-", " ").lower().split()) in haystack
+        for alias in aliases
+        if str(alias or "").strip()
+    )
     biomed = any(anchor in haystack for anchor in BIOMED_ANCHORS)
     drift = any(term in haystack for term in NON_BIOMED_DRIFT)
     if drift and not any(anchor in haystack for anchor in DRIFT_RESCUE_ANCHORS):
         return False
     if alias_hit or token_hits == len(tokens):
+        return True
+    specific_hits = [token for token in tokens if token in haystack and token not in BIOMED_ANCHORS]
+    missing_tokens = [token for token in tokens if token not in haystack]
+    if specific_hits and all(token in BIOMED_ANCHORS for token in missing_tokens):
         return True
     # Single-token topics can be specific with a biomedical anchor. Multi-token
     # topics need more than one generic biomedical word; otherwise broad source
