@@ -156,3 +156,15 @@ def test_materialize_rows_keeps_repeated_intervention_population_pack(tmp_path: 
 
     assert result["created"][0]["slug"] == "fasting_30_caloric_restriction_in_male_c57bl_6j_mice_effects"
     assert result["skipped"] == []
+
+
+def test_fact_intervention_cross_strategy_promotes_repeated_interventions() -> None:
+    sql = materializer.FACT_INTERVENTION_CROSS_SQL
+
+    assert "trim(ft.fact_json->>'intervention') AS topic" in sql
+    assert "COALESCE(NULLIF(ft.fact_json->>'topic', ''), 'general') AS sub_topic" in sql
+    assert "papers >= %(min_papers)s" in sql
+    assert "exact_facts >= %(min_exact_facts)s" in sql
+    assert "lower(topic) != lower(sub_topic)" in sql
+    assert "lower(topic) NOT LIKE 'none%'" in sql
+    assert "'placebo'" in sql

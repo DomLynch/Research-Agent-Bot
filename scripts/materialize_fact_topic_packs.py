@@ -120,6 +120,7 @@ WITH expanded AS (
 SELECT topic, sub_topic, claim_type, facts, papers, exact_facts
 FROM expanded
 WHERE lower(topic) NOT IN ('', 'other', 'unknown', 'none', 'false', 'true', 'global', 'baseline', 'control', 'control group', 'placebo', 'healthy controls', 'methodology', 'n/a', 'na')
+  AND lower(topic) NOT LIKE 'none%'
   AND lower(topic) != lower(sub_topic)
   AND exact_facts >= %(min_exact_facts)s
   AND papers >= %(min_papers)s
