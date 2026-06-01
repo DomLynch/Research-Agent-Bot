@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 # and let the retry loop move on. 240s = MiMo full 180s budget plus
 # ~60s headroom for a Ministral fallback round-trip.
 PER_CALL_TIMEOUT_SEC = 240.0
+SECTION_TIMEOUT_RETRIES = 1
 
 _RENDERED_CITED_RE = re.compile(
     r"(?m)^[ \t]*_Cited:\s*`[^`\n]+`(?:\s*,\s*`[^`\n]+`)*_[ \t]*\n?"
@@ -36,32 +37,40 @@ async def call_llm_section(
 ) -> dict | None:
     """One LLM call returning a parsed JSON dict (or None if malformed
     or timed out). Per-call timeout enforced via asyncio.wait_for."""
-    try:
-        response = await asyncio.wait_for(
-            chat_json(
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-                chain=chain,
-                client=client,
-                ledger=ledger,
-                # Fix #50: 0.0 → 0.5 for genuine synthesis
-                # reasoning. The deterministic gates (Q2/Q9/
-                # Q11-Q13/smart-gate/Fix #46) catch any
-                # hallucination — LLMs should think freely
-                # within the trust-spine envelope.
-                temperature=0.5,
-                seed=seed,
-            ),
-            timeout=PER_CALL_TIMEOUT_SEC,
-        )
-    except asyncio.TimeoutError:
-        logger.warning(
-            "paper_writer LLM call exceeded %.0fs timeout — moving on",
-            PER_CALL_TIMEOUT_SEC,
-        )
-        return None
+    for attempt in range(SECTION_TIMEOUT_RETRIES + 1):
+        try:
+            response = await asyncio.wait_for(
+                chat_json(
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    chain=chain,
+                    client=client,
+                    ledger=ledger,
+                    # Fix #50: 0.0 → 0.5 for genuine synthesis
+                    # reasoning. The deterministic gates (Q2/Q9/
+                    # Q11-Q13/smart-gate/Fix #46) catch any
+                    # hallucination — LLMs should think freely
+                    # within the trust-spine envelope.
+                    temperature=0.5,
+                    seed=seed,
+                ),
+                timeout=PER_CALL_TIMEOUT_SEC,
+            )
+            break
+        except asyncio.TimeoutError:
+            if attempt < SECTION_TIMEOUT_RETRIES:
+                logger.warning(
+                    "paper_writer LLM call exceeded %.0fs timeout — retrying once",
+                    PER_CALL_TIMEOUT_SEC,
+                )
+                continue
+            logger.warning(
+                "paper_writer LLM call exceeded %.0fs timeout — moving on",
+                PER_CALL_TIMEOUT_SEC,
+            )
+            return None
     if isinstance(response.parsed, dict):
         return response.parsed
     return None
@@ -106,6 +115,7 @@ def build_retry_prompt(
 
 __all__ = [
     "PER_CALL_TIMEOUT_SEC",
+    "SECTION_TIMEOUT_RETRIES",
     "build_retry_prompt",
     "call_llm_section",
     "section_word_count",

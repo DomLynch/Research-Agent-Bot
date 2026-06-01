@@ -44,6 +44,7 @@ CORPORA = ROOT / "docs" / "quality-reference"
 LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
+DAILY_THROUGHPUT_SUMMARY = "_daily_throughput_summary.json"
 # A Researka revise may be re-processed up to this many rounds per artifact
 # before it is treated as permanently handled. Single-round handling left
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
@@ -94,6 +95,41 @@ def _write_json(path: Path, payload: Any) -> None:
 def _cycle_ledger_path(ledger_dir: Path, date: str, mode: str) -> Path:
     suffix = "" if mode == "mixed" else f"-{mode}"
     return ledger_dir / f"{date}{suffix}.json"
+
+
+def _record_daily_throughput(ledger_dir: Path, ledger: dict[str, Any]) -> None:
+    date = str(ledger.get("date") or "")
+    started_at = str(ledger.get("started_at") or "")
+    if not date or not started_at:
+        return
+    path = ledger_dir / DAILY_THROUGHPUT_SUMMARY
+    data = _read_json(path)
+    days = data.get("days")
+    if not isinstance(days, dict):
+        days = {}
+    day = days.setdefault(date, {})
+    runs = day.setdefault("runs", [])
+    if not isinstance(runs, list):
+        runs = []
+    run_id = f"{ledger.get('mode') or 'mixed'}:{started_at}"
+    if not any(isinstance(run, dict) and run.get("run_id") == run_id for run in runs):
+        runs.append({
+            "run_id": run_id,
+            "mode": ledger.get("mode") or "mixed",
+            "status": ledger.get("status") or "unknown",
+            "submitted": int(ledger.get("submitted") or 0),
+            "published": int(ledger.get("published") or 0),
+            "topic": ledger.get("submitted_topic") or ledger.get("topic") or ledger.get("attempted_topic"),
+            "started_at": started_at,
+        })
+    day["runs"] = runs
+    day["submitted"] = sum(int(run.get("submitted") or 0) for run in runs if isinstance(run, dict))
+    day["published"] = sum(int(run.get("published") or 0) for run in runs if isinstance(run, dict))
+    day["cycles"] = len([run for run in runs if isinstance(run, dict)])
+    day["latest_status"] = ledger.get("status") or "unknown"
+    day["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
+    data["days"] = days
+    _write_json(path, data)
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -1833,6 +1869,7 @@ def run_cycle(
             ledger["submitted"] = submitted_total
             if ledger["status"] not in {"submitted_to_researka", "submission_revise_requested"}:
                 ledger["status"] = "submitted_to_researka"
+        _record_daily_throughput(ledger_dir, ledger)
         _write_json(ledger_path, ledger)
         return ledger
 
