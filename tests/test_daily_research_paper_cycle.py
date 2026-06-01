@@ -628,6 +628,7 @@ def test_cycle_rotates_after_same_gate_fails_twice(tmp_path: Path, monkeypatch) 
                 "status": "no_eligible_research_paper",
                 "submitted": 0,
                 "published": 0,
+                "revision_feedback": "Internal gate feedback should not disable duplicate-gate rotation.",
                 "considered": [{"run": runs[-1], "status": "journal_surface_not_passed"}],
             }
         return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
