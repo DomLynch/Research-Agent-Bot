@@ -158,7 +158,7 @@ def generated_pack_publishable(
         or "-" in str(term)
         for term in raw_terms
     )
-    rare_terms = _peer_rare_tokens(terms, peer_records) - scope_terms
+    rare_terms = _peer_rare_tokens(terms, peer_records) - scope_terms - BIOMED_ANCHORS
     structurally_specific = bool(
         entity_like
         or rare_terms
