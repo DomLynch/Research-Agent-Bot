@@ -10,7 +10,7 @@ import json
 import math
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Sequence
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -25,8 +25,35 @@ def _generated_records(db: Path) -> list[dict[str, Any]]:
     for path in sorted(db.glob("*/latest.json")):
         record = cycle._read_json(path)
         if record:
+            record = dict(record)
+            record["_slug"] = path.parent.name
             out.append(record)
     return out
+
+
+def _submitted_topics() -> set[str]:
+    try:
+        rows = json.loads((cycle.RUNS / "_daily_research_paper_ledger" / "_submitted_fingerprints.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        rows = []
+    if isinstance(rows, list):
+        return {str(row.get("topic") or "") for row in rows if isinstance(row, dict) and row.get("topic")}
+    return set()
+
+
+def _expansion_candidates(records: Sequence[dict[str, Any]], topics: set[str], *, limit: int = 12) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for record in records:
+        slug = str(record.get("_slug") or "")
+        if slug not in topics or not generated_pack_publishable(record, peer_records=records):
+            continue
+        pack = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else {}
+        candidates.append({
+            "topic": str(pack.get("topic") or slug.replace("_", " ")) if isinstance(pack, dict) else slug.replace("_", " "),
+            "slug": slug,
+            "candidate_count": int(record.get("candidate_count") or 0),
+        })
+    return sorted(candidates, key=lambda item: (-item["candidate_count"], item["slug"]))[:limit]
 
 
 def capacity_plan(
@@ -38,6 +65,9 @@ def capacity_plan(
     generated_records: int,
     generated_publishable: int,
     cooldown_days: int,
+    known_unique_topics: int | None = None,
+    submitted_unique_topics: int = 0,
+    expansion_candidates: Sequence[dict[str, Any]] = (),
 ) -> dict[str, Any]:
     days = int(round(years * 365))
     calendar_slots = int((days * 24 * 60) // interval_minutes)
@@ -54,6 +84,8 @@ def capacity_plan(
     lanes_at_current_ratio = math.ceil(slots_at_current_ratio / calendar_slots) if calendar_slots and slots_at_current_ratio else 0
     lanes_at_perfect_success = math.ceil(target / calendar_slots) if calendar_slots and target else 0
     target_reachable = capacity_limited_by >= target and required_success_rate <= 1.0 and publishable_ratio_gap == 0
+    unique_topics = topic_count if known_unique_topics is None else known_unique_topics
+    unique_gap = max(0, target - unique_topics)
     return {
         "target": target,
         "years": years,
@@ -99,6 +131,20 @@ def capacity_plan(
                 else "add_parallel_2h_lane_or_raise_success_rate_before_shortening_interval"
             ),
         },
+        "unique_topic_expansion": {
+            "known_unique_topics": unique_topics,
+            "submitted_unique_topics": submitted_unique_topics,
+            "remaining_known_unique_topics": max(0, unique_topics - submitted_unique_topics),
+            "publishable_topic_shortfall_vs_target": max(0, target - topic_count),
+            "known_unique_topic_shortfall_vs_target": unique_gap,
+            "new_unique_topics_needed_per_day": round(unique_gap / days, 2) if days else 0.0,
+            "fact_materializer_rows_needed": unique_gap,
+            "materializer_command": (
+                f"python scripts/materialize_fact_topic_packs.py --limit {unique_gap} --persist"
+                if unique_gap else "none"
+            ),
+            "next_generated_candidates": list(expansion_candidates),
+        },
     }
 
 
@@ -106,6 +152,9 @@ def live_plan(*, target: int, years: float, interval_minutes: int) -> dict[str, 
     records = _generated_records(cycle.TOPIC_PACKS_DB)
     publishable = sum(1 for record in records if generated_pack_publishable(record, peer_records=records))
     topics = cycle.discover_topics()
+    static_topics = {path.stem for path in cycle.TOPIC_PACKS.glob("*.toml") if not path.stem.startswith("_")}
+    generated_topics = {str(record.get("_slug") or "") for record in records if record.get("_slug")}
+    topic_set = set(topics)
     return capacity_plan(
         target=target,
         years=years,
@@ -114,6 +163,9 @@ def live_plan(*, target: int, years: float, interval_minutes: int) -> dict[str, 
         generated_records=len(records),
         generated_publishable=publishable,
         cooldown_days=cycle.PUBLISHED_TOPIC_COOLDOWN_DAYS,
+        known_unique_topics=len(static_topics | generated_topics),
+        submitted_unique_topics=len(_submitted_topics()),
+        expansion_candidates=_expansion_candidates(records, topic_set),
     )
 
 
