@@ -9,11 +9,21 @@ from __future__ import annotations
 
 import html
 import re
+from dataclasses import dataclass
 from typing import Any, Protocol
 
 import httpx
 
 from agent.types import RawHit
+
+SourceStatus = str
+
+
+@dataclass(frozen=True, slots=True)
+class SourceResult:
+    hits: list[RawHit]
+    status: SourceStatus
+    error: str = ""
 
 USER_AGENT = "research-agent/1.0 (+https://research-agent.domlynch.com)"
 
