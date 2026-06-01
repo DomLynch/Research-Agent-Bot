@@ -59,6 +59,7 @@ WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 CORPUS_REPAIR_LIMIT = 1
+SOURCE_TOPIC_REPAIR_FLOOR = 0.50
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
@@ -1126,7 +1127,8 @@ def _quant_claim_identity(path: Path) -> str:
     return " ".join(str(field or "") for field in fields).lower()
 
 
-def _quant_claim_source_precision(topic: str) -> tuple[bool, str, list[Path]]:
+def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
+    floor = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR if floor is None else floor
     tokens = submit_bridge._topic_tokens(topic)
     paths = sorted((CORPORA / topic / "quant_claims").glob("*.quant_claims.json"))
     if not tokens or not paths:
@@ -1134,13 +1136,13 @@ def _quant_claim_source_precision(topic: str) -> tuple[bool, str, list[Path]]:
     misses = [path for path in paths if not any(token in _quant_claim_identity(path) for token in tokens)]
     hits = len(paths) - len(misses)
     ratio = hits / len(paths)
-    if ratio < submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR:
-        return False, f"source_topic_precision_low:{hits}/{len(paths)}<{submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR:.2f}", misses
+    if ratio < floor:
+        return False, f"source_topic_precision_low:{hits}/{len(paths)}<{floor:.2f}", misses
     return True, f"source_topic_precision_ok:{hits}/{len(paths)}", misses
 
 
 def _repair_low_source_precision_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
-    ok, before_status, misses = _quant_claim_source_precision(topic)
+    ok, before_status, misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
     if ok:
         return {"status": "source_precision_ready", "source_topic_precision": before_status, "n_quant_claims": _quant_claim_count(topic)}
     before = _quant_claim_count(topic)
@@ -1161,13 +1163,24 @@ def _repair_low_source_precision_corpus(topic: str, *, dry_run: bool, timeout: i
         shutil.move(str(path), str(quarantine / path.name))
         moved += 1
     seed = _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
-    ok_after, after_status, _ = _quant_claim_source_precision(topic)
+    ok_after, after_status, misses_after = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+    post_seed_moved = 0
+    if not ok_after:
+        post_seed_dir = quarantine / "post_seed"
+        for path in misses_after:
+            if not path.exists():
+                continue
+            post_seed_dir.mkdir(parents=True, exist_ok=True)
+            shutil.move(str(path), str(post_seed_dir / path.name))
+            post_seed_moved += 1
+        ok_after, after_status, _ = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
     return {
         "status": "source_precision_repaired" if ok_after else "source_precision_repair_incomplete",
         "source_topic_precision_before": before_status,
         "source_topic_precision_after": after_status,
-        "off_topic_quant_claims_quarantined": moved,
+        "off_topic_quant_claims_quarantined": moved + post_seed_moved,
         "quarantine_dir": str(quarantine) if moved else "",
+        "post_seed_quarantined": post_seed_moved,
         "n_quant_claims_before": before,
         "n_quant_claims": _quant_claim_count(topic),
         "seed": seed,
@@ -1360,7 +1373,7 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
-            source_precision_ok, _, _ = _quant_claim_source_precision(selected)
+            source_precision_ok, _, _ = _quant_claim_source_precision(selected, floor=SOURCE_TOPIC_REPAIR_FLOOR)
             source_precision_needs_repair = (
                 selected in _source_precision_repair_topics(ledger_dir)
                 or (

@@ -564,7 +564,7 @@ def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, m
     runs: list[str] = []
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
         "status": "source_precision_repair_incomplete",
-        "source_topic_precision_after": "source_topic_precision_low:1/4<0.35",
+        "source_topic_precision_after": "source_topic_precision_low:1/4<0.50",
     })
 
     def fake_synthesis(
@@ -2300,16 +2300,19 @@ def test_low_source_precision_repair_quarantines_and_reseeds(tmp_path: Path, mon
 
     def fake_seed(topic: str, **_kwargs: Any) -> dict[str, Any]:
         _write_json(qdir / "epigenome_editing_database_fact.quant_claims.json", {"paper_id": "epigenome_editing_database_fact"})
-        return {"status": "corpus_seeded", "n_quant_claims": 2}
+        for i in range(3):
+            _write_json(qdir / f"new_supercapacitor_noise_{i}.quant_claims.json", {"paper_id": f"new_supercapacitor_noise_{i}"})
+        return {"status": "corpus_seeded", "n_quant_claims": 5}
 
     monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_seed)
 
     repaired = cycle._repair_low_source_precision_corpus("epigenome_editing_longevity", dry_run=False)
 
     assert repaired["status"] == "source_precision_repaired"
-    assert repaired["source_topic_precision_before"] == "source_topic_precision_low:1/4<0.35"
+    assert repaired["source_topic_precision_before"] == "source_topic_precision_low:1/4<0.50"
     assert repaired["source_topic_precision_after"] == "source_topic_precision_ok:2/2"
-    assert repaired["off_topic_quant_claims_quarantined"] == 3
+    assert repaired["off_topic_quant_claims_quarantined"] == 6
+    assert repaired["post_seed_quarantined"] == 3
     assert sorted(path.name for path in qdir.glob("*.quant_claims.json")) == [
         "epigenome_editing_database_fact.quant_claims.json",
         "epigenome_editing_locus_specific.quant_claims.json",
@@ -2385,7 +2388,7 @@ def test_cycle_repairs_large_low_precision_corpus_before_synthesis(tmp_path: Pat
 
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
         "status": "source_precision_repaired",
-        "source_topic_precision_before": "source_topic_precision_low:5/20<0.35",
+        "source_topic_precision_before": "source_topic_precision_low:5/20<0.50",
         "source_topic_precision_after": "source_topic_precision_ok:20/20",
         "n_quant_claims": 20,
     })
@@ -2415,7 +2418,7 @@ def test_cycle_repairs_large_low_precision_corpus_before_synthesis(tmp_path: Pat
     )
 
     assert synthesized == ["epigenome_editing_longevity"]
-    assert ledger["source_precision_repair"]["source_topic_precision_before"] == "source_topic_precision_low:5/20<0.35"
+    assert ledger["source_precision_repair"]["source_topic_precision_before"] == "source_topic_precision_low:5/20<0.50"
     assert ledger["status"] == "submitted_to_researka"
 
 
