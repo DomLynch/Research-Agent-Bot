@@ -1312,7 +1312,12 @@ def _repair_low_source_precision_corpus(
 ) -> dict[str, Any]:
     ok, before_status, misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
     if ok and not (force and misses):
-        return {"status": "source_precision_ready", "source_topic_precision": before_status, "n_quant_claims": _quant_claim_count(topic)}
+        n_quant_claims = _quant_claim_count(topic)
+        return {
+            "status": "source_precision_ready" if n_quant_claims else "source_precision_repair_incomplete",
+            "source_topic_precision": before_status,
+            "n_quant_claims": n_quant_claims,
+        }
     before = _quant_claim_count(topic)
     if dry_run:
         return {
@@ -1342,15 +1347,16 @@ def _repair_low_source_precision_corpus(
             shutil.move(str(path), str(post_seed_dir / path.name))
             post_seed_moved += 1
         ok_after, after_status, _ = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+    n_quant_claims = _quant_claim_count(topic)
     return {
-        "status": "source_precision_repaired" if ok_after else "source_precision_repair_incomplete",
+        "status": "source_precision_repaired" if ok_after and n_quant_claims else "source_precision_repair_incomplete",
         "source_topic_precision_before": before_status,
         "source_topic_precision_after": after_status,
         "off_topic_quant_claims_quarantined": moved + post_seed_moved,
         "quarantine_dir": str(quarantine) if moved else "",
         "post_seed_quarantined": post_seed_moved,
         "n_quant_claims_before": before,
-        "n_quant_claims": _quant_claim_count(topic),
+        "n_quant_claims": n_quant_claims,
         "seed": seed,
     }
 

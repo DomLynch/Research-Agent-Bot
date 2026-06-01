@@ -2543,6 +2543,35 @@ def test_low_source_precision_repair_quarantines_and_reseeds(tmp_path: Path, mon
     ]
 
 
+def test_source_precision_repair_does_not_treat_empty_corpus_as_repaired(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "digital_frailty_index", corpus=False)
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    repaired = cycle._repair_low_source_precision_corpus("digital_frailty_index", dry_run=False)
+
+    assert repaired["status"] == "source_precision_repair_incomplete"
+    assert repaired["source_topic_precision"] == "source_topic_precision_unscored"
+    assert repaired["n_quant_claims"] == 0
+
+
+def test_source_precision_repair_fails_closed_when_all_claims_quarantined(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "digital_frailty_index", corpus=False)
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / "digital_frailty_index" / "quant_claims"
+    qdir.mkdir(parents=True)
+    _write_json(qdir / "generic_sensor.quant_claims.json", {"paper_id": "generic sensor biomarker"})
+    _write_json(qdir / "voice_cough.quant_claims.json", {"paper_id": "voice cough digital biomarker"})
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_kwargs: {"status": "corpus_repaired", "n_quant_claims": 0})
+
+    repaired = cycle._repair_low_source_precision_corpus("digital_frailty_index", dry_run=False)
+
+    assert repaired["status"] == "source_precision_repair_incomplete"
+    assert repaired["source_topic_precision_before"] == "source_topic_precision_low:0/2<0.50"
+    assert repaired["source_topic_precision_after"] == "source_topic_precision_unscored"
+    assert repaired["off_topic_quant_claims_quarantined"] == 2
+    assert repaired["n_quant_claims"] == 0
+
+
 def test_source_precision_repair_force_quarantines_misses_above_floor(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", corpus=False)
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
