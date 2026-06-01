@@ -96,6 +96,41 @@ def test_generated_pack_scope_axis_is_not_enough_for_specificity() -> None:
     assert generated_pack_publishable(specific, peer_records=peers)
 
 
+def test_generated_pack_plural_scope_terms_are_not_specificity() -> None:
+    broad = {
+        "candidate_count": 21,
+        "pack_data": {
+            "topic": "cancer_mortality_rates",
+            "aliases": ["cancer mortality rates", "cancer", "mortality"],
+            "retrieval": {
+                "topic_terms": ["cancer mortality rates", "cancer", "mortality"],
+                "scope_terms": ["mortality", "biomarkers", "frailty", "rates"],
+            },
+        },
+    }
+    specific = {
+        "candidate_count": 24,
+        "pack_data": {
+            "topic": "telomere_cancer_rates",
+            "aliases": ["telomere cancer rates", "telomere", "cancer"],
+            "retrieval": {
+                "topic_terms": ["telomere cancer rates", "telomere", "cancer"],
+                "scope_terms": ["mortality", "biomarkers", "frailty", "rates"],
+            },
+        },
+    }
+    peers = [
+        broad,
+        specific,
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_rates", "aliases": ["cancer rates", "cancer"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_subgroups", "aliases": ["cancer subgroups", "cancer"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "fasting_mortality", "aliases": ["fasting mortality", "fasting", "mortality"]}},
+    ]
+
+    assert not generated_pack_publishable(broad, peer_records=peers)
+    assert generated_pack_publishable(specific, peer_records=peers)
+
+
 def test_topic_aliases_loads_local_and_generated_terms(tmp_path) -> None:
     (tmp_path / "topic_packs").mkdir()
     (tmp_path / "topic_packs" / "hydrogen_water.toml").write_text(

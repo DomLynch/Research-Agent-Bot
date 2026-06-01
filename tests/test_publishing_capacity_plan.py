@@ -24,6 +24,9 @@ def test_capacity_plan_names_calendar_limit_for_one_year_two_hour_cadence() -> N
     assert plan["topic_reuse_capacity"] == 4953
     assert plan["calendar_limited"] is True
     assert plan["topic_limited"] is True
+    assert plan["calendar_gap_to_target"] == 620
+    assert plan["topic_gap_to_target"] == 47
+    assert plan["target_reachable_at_current_interval"] is False
     assert plan["required_interval_minutes_at_100pct_success"] == 105.1
 
 
@@ -42,5 +45,6 @@ def test_capacity_plan_shows_two_year_goal_is_success_rate_limited_not_calendar_
     assert plan["topic_reuse_capacity"] == 9907
     assert plan["calendar_limited"] is False
     assert plan["topic_limited"] is False
+    assert plan["target_reachable_at_current_interval"] is True
     assert plan["required_success_rate"] == 0.571
     assert plan["generated_publishable_ratio"] == 0.553

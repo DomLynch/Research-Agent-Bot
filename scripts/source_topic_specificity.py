@@ -133,11 +133,20 @@ def _generic_fallback_topic(topic: str) -> bool:
 
 def _pack_tokens(raw_terms: Iterable[object]) -> set[str]:
     return {
-        token
+        _normalize_pack_token(token)
         for term in raw_terms
         for token in re.findall(r"[a-z0-9]+", str(term).lower())
         if len(token) > 2 and token not in TOPIC_STOPWORDS
     }
+
+
+def _normalize_pack_token(token: str) -> str:
+    """Collapse simple plural variants so scope/peer checks stay structural."""
+    if token.endswith("ies") and len(token) > 4:
+        return f"{token[:-3]}y"
+    if token.endswith("s") and len(token) > 4 and not token.endswith("ss"):
+        return token[:-1]
+    return token
 
 
 def _peer_rare_tokens(terms: set[str], peer_records: Sequence[dict[str, object]]) -> set[str]:
