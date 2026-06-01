@@ -336,6 +336,33 @@ def test_refresh_readiness_contract_makes_roadmap_partials_advisory(
         assert by_id[item_id]["blocks_submission"] is False
 
 
+def test_refresh_readiness_contract_repairs_feasibility_minimum(
+    tmp_path: Path,
+) -> None:
+    run = _make_run(
+        tmp_path, surface_passed=True,
+        accountability_model="researka_agent_certified",
+        old_contract_name="accountability",
+    )
+    manifest = json.loads((run / "manifest.json").read_text())
+    manifest["n_receipts"] = 16
+    (run / "manifest.json").write_text(json.dumps(manifest))
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    gate["journal_readiness_contract"].append({
+        "id": 2, "name": "feasibility_preflight", "status": "partial",
+        "advisory": False, "blocks_submission": True,
+        "audit": "receipts=16; recommended>=30; minimum>=10",
+        "next_action": "stale",
+    })
+    (run / "pre_submit_gate.json").write_text(json.dumps(gate))
+
+    assert _refresh_readiness_contract_items(run) >= 1
+    refreshed = json.loads((run / "pre_submit_gate.json").read_text())
+    item_2 = next(row for row in refreshed["journal_readiness_contract"] if row["id"] == 2)
+    assert item_2["status"] == "pass"
+    assert item_2["blocks_submission"] is False
+
+
 def test_phase_g_rebuilds_readiness_contract_for_legacy(
     tmp_path: Path,
 ) -> None:

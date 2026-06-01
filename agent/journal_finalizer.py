@@ -827,12 +827,15 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
     acc_ok, acc_detail = accountability_pass(out_dir, model)
     submission_ready = gate_passed and surface_pass
     unresolved_p1 = int((gate.get("inputs") or {}).get("unresolved_reviewer_p1_count") or 0)
+    receipts = int(manifest.get("n_receipts") or 0)
     from agent.final_status import ADVISORY_READINESS_ITEM_IDS
     fresh: dict[int, dict[str, object]] = {
         1: {"status": "pass" if submission_ready else "not_ready",
             "audit": f"pre_submit_gate={gate_passed}; "
                      f"journal_surface={surface_pass}; "
                      f"submission_ready={submission_ready}"},
+        2: {"status": "pass" if receipts >= 10 else "not_ready",
+            "audit": f"receipts={receipts}; recommended>=30; minimum>=10"},
         7: {"status": "pass" if surface_pass else "not_ready",
             "audit": f"journal_surface_passed={surface_pass}"},
         9: {"status": "pass" if surface_pass else "not_ready",
