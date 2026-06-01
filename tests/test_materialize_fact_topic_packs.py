@@ -21,6 +21,12 @@ def test_build_topic_name_uses_topic_and_claim_for_generic_subtopic() -> None:
     assert materializer.build_topic_name(row) == "resveratrol regimens"
 
 
+def test_build_topic_name_does_not_duplicate_plural_claim_axis() -> None:
+    row = {"topic": "metabolism", "sub_topic": "threshold", "claim_type": "threshold"}
+
+    assert materializer.build_topic_name(row) == "metabolism threshold"
+
+
 def test_materialize_rows_is_idempotent_for_unchanged_pack(tmp_path: Path) -> None:
     rows = [{
         "topic": "senescence",

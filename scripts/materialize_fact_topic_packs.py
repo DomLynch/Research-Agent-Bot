@@ -65,7 +65,7 @@ def build_topic_name(row: dict[str, Any]) -> str:
     parts = [topic]
     if sub_topic.lower() != topic.lower():
         parts.append(sub_topic)
-    if claim.lower() not in " ".join(parts).lower():
+    if _singular_label(claim).lower() not in _singular_label(" ".join(parts)).lower():
         parts.append(claim)
     return " ".join(parts)
 
@@ -143,6 +143,10 @@ def fetch_rows(*, dsn: str, min_exact_facts: int, min_papers: int, limit: int) -
 
 def _label(value: object) -> str:
     return " ".join(str(value or "").replace("_", " ").replace("-", " ").split())
+
+
+def _singular_label(value: str) -> str:
+    return " ".join(token[:-1] if token.endswith("s") and len(token) > 4 else token for token in value.split())
 
 
 def main(argv: list[str] | None = None) -> int:
