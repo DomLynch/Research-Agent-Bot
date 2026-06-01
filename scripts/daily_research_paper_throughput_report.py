@@ -109,7 +109,7 @@ def _local_counts(runs_root: Path, date: str) -> dict[str, Any]:
         "decisions": decisions if isinstance(decisions, dict) else {},
         "submit": {k: submit.get(k) for k in ("status", "submitted", "published", "topic", "run")},
         "top_blockers": top[:8],
-        "surface_repeat_topics": sorted(str(k).split("\x1f", 1)[0] for k in repeat_keys),
+        "surface_repeat_topics": sorted({str(k).split("\x1f", 1)[0] for k in repeat_keys}),
     }
 
 
