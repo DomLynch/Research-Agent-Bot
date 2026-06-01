@@ -269,6 +269,29 @@ def test_source_topic_precision_uses_topic_aliases(tmp_path: Path, monkeypatch) 
     assert status == "source_topic_precision_ok:2/3"
 
 
+def test_source_topic_precision_counts_static_hrt_aliases(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path / "runs", name="synthesis-hormone_optimization_hrt-v06-test")
+    (tmp_path / "topic_packs").mkdir()
+    (tmp_path / "topic_packs" / "hormone_optimization_hrt.toml").write_text(
+        'aliases = ["HRT", "hormone replacement therapy", "menopause hormone therapy"]\n',
+        encoding="utf-8",
+    )
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "hormone_optimization_hrt"
+    manifest["receipts"] = [
+        {"receipt_id": "hormone_replacement_therapy_associated_with_cognition", "paper_id": "hormone_replacement_therapy_associated_with_cognition"},
+        {"receipt_id": "benefits_and_risks_of_menopause_hormone_therapy", "paper_id": "benefits_and_risks_of_menopause_hormone_therapy"},
+        {"receipt_id": "growth_hormone_replacement_in_older_adults", "paper_id": "growth_hormone_replacement_in_older_adults"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ok, status = daily._source_topic_precision(run)
+
+    assert ok
+    assert status == "source_topic_precision_ok:2/3"
+
+
 def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-eligible-old")
     current = _run(tmp_path, name="synthesis-topic-v06-current")
