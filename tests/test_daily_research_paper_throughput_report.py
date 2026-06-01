@@ -138,6 +138,39 @@ def test_pace_snapshot_reports_daily_target_and_observed_gap() -> None:
     }
 
 
+def test_rolling_pace_snapshot_reports_window_gap(tmp_path: Path) -> None:
+    ledger = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger.mkdir()
+    (ledger / "_daily_throughput_summary.json").write_text(json.dumps({
+        "days": {
+            "2026-06-01": {"submitted": 14, "published": 6, "cycles": 9},
+            "2026-06-02": {"submitted": 8, "published": 3, "cycles": 4},
+        },
+    }))
+    capacity = {
+        "one_year": {"target": 5000, "days": 365},
+        "two_year": {"target": 5000, "days": 730},
+    }
+
+    pace = report._rolling_pace_snapshot(tmp_path, capacity)
+
+    assert pace["observed_days"] == 2
+    assert pace["local_submitted"] == 22
+    assert pace["required_for_observed_window"] == {"one_year": 27.4, "two_year": 13.7}
+    assert pace["gap_to_required_for_observed_window"]["two_year_by_local_submissions"] == 0.0
+
+
+def test_rolling_pace_snapshot_reports_missing_source(tmp_path: Path) -> None:
+    pace = report._rolling_pace_snapshot(tmp_path, {"two_year": {"target": 5000, "days": 730}})
+
+    assert pace == {
+        "window_days": 7,
+        "observed_days": 0,
+        "source": "_daily_throughput_summary.json",
+        "status": "missing_throughput_summary",
+    }
+
+
 def test_summarize_includes_pace(monkeypatch, tmp_path: Path) -> None:
     monkeypatch.setattr(report, "_capacity_snapshot", lambda: {
         "one_year": {"target": 5000, "days": 365},
@@ -158,3 +191,4 @@ def test_summarize_includes_pace(monkeypatch, tmp_path: Path) -> None:
         "public_accepts": 7,
     }
     assert summary["pace"]["today_gap_to_two_year_daily_average"]["by_public_accepts"] == 0.0
+    assert summary["pace"]["rolling"]["local_submitted"] == 8
