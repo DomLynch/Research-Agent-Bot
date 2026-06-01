@@ -19,6 +19,8 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
+from source_topic_specificity import is_source_topic_specific, topic_tokens
+
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
@@ -36,10 +38,6 @@ TOKEN_ENVS = (
 )
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.35
-_TOPIC_STOPWORDS = {
-    "aging", "ageing", "longevity", "research", "synthesis", "paper",
-    "effect", "effects", "therapy", "treatment", "evidence",
-}
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 
@@ -127,11 +125,7 @@ def _final_status_ready(data: dict[str, Any]) -> bool:
 
 
 def _topic_tokens(topic: str) -> list[str]:
-    return [
-        token
-        for token in re.findall(r"[a-z0-9]+", topic.replace("_", " ").lower())
-        if len(token) > 3 and token not in _TOPIC_STOPWORDS
-    ]
+    return topic_tokens(topic)
 
 
 def _source_topic_precision(run: Path) -> tuple[bool, str]:
@@ -147,7 +141,7 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
             str(row.get(key) or "")
             for key in ("receipt_id", "paper_id", "citation_token")
         ).lower()
-        hits += int(any(token in haystack for token in tokens))
+        hits += int(is_source_topic_specific(str(manifest.get("topic") or _run_topic(run)), haystack))
     ratio = hits / len(rows)
     if ratio < SOURCE_TOPIC_PRECISION_FLOOR:
         return False, f"source_topic_precision_low:{hits}/{len(rows)}<{SOURCE_TOPIC_PRECISION_FLOOR:.2f}"
