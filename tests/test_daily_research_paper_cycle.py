@@ -30,6 +30,7 @@ def _offline_coverage_judge(monkeypatch):
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: [])
     monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda out_dir: [])
     monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: [])
+    monkeypatch.setattr(cycle, "_numeric_effect_direction_issues", lambda out_dir: [])
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -1091,6 +1092,25 @@ def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert ledger["attempts"][0]["retracted_cited_sources"] == ["10.2/retracted"]
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text())
     assert handled["handled"][0]["status"] == "retracted_source_cited"  # terminal revise: don't rerender next slot
+
+
+def test_numeric_effect_mismatch_blocks_submit(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(cycle, "_numeric_effect_direction_issues", lambda out_dir: [
+        "non-significant p-value described as significant: LF HRV decreased significantly (p = 0.08)."
+    ])
+    submitted: list[int] = []
+
+    def fake_submit(**_k: Any) -> dict[str, Any]:
+        submitted.append(1)
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    ledger, _ = _run_coverage_cycle(tmp_path, monkeypatch, unmet=[], submit_cycle=fake_submit)
+    assert submitted == []
+    assert ledger["attempts"][0]["gate_status"] == "numeric_effect_mismatch"
+    assert ledger["attempts"][0]["numeric_effect_direction_issues"] == [
+        "non-significant p-value described as significant: LF HRV decreased significantly (p = 0.08)."
+    ]
 
 
 def test_abstract_overclaim_blocks_submit(tmp_path: Path, monkeypatch) -> None:

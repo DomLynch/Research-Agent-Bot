@@ -694,6 +694,7 @@ def _failure_class(status: str) -> str:
         "pre_submit_not_passed": "A_compiler_fixable",
         "audit_not_all_green": "C_writer_fixable",
         "revision_coverage_unmet": "C_writer_fixable",
+        "numeric_effect_mismatch": "C_writer_fixable",
         "abstract_overclaim": "C_writer_fixable",
         "retracted_source_cited": "D_no_action",
         "synthesis_failed": "C_writer_fixable",
@@ -798,6 +799,14 @@ def _abstract_overclaims(out_dir: Path) -> list[str]:
         return []
     import revision_coverage
     return revision_coverage.unsupported_abstract_claims(paper.read_text(encoding="utf-8"))
+
+
+def _numeric_effect_direction_issues(out_dir: Path) -> list[str]:
+    paper = out_dir / "full_paper.md"
+    if not paper.is_file():
+        return []
+    import revision_coverage
+    return revision_coverage.numeric_effect_direction_issues(paper.read_text(encoding="utf-8"))
 
 
 def _final_status_submission_ready(out_dir: Path) -> bool:
@@ -1402,6 +1411,7 @@ def run_cycle(
                 # Claim-support gate: never submit an abstract whose claims the
                 # paper's own evidence does not support / overstates.
                 overclaims = _abstract_overclaims(out_dir) if return_code == 0 else []
+                numeric_issues = _numeric_effect_direction_issues(out_dir) if return_code == 0 else []
                 abstract_repaired = False
                 if overclaims and _repair_abstract_overclaim_phrasing(out_dir, overclaims):
                     abstract_repaired = True
@@ -1411,7 +1421,7 @@ def run_cycle(
                 if abstract_overclaim_advisory:
                     overclaims = []
                 bridge: dict[str, Any] = {}
-                if return_code == 0 and not unmet and not retracted and not overclaims:
+                if return_code == 0 and not unmet and not retracted and not numeric_issues and not overclaims:
                     # Submission stays single-threaded across lanes: the fresh and
                     # revise lanes run concurrently but share one blocking submit
                     # lock so they never race the fingerprint-dedupe / double-submit.
@@ -1455,6 +1465,7 @@ def run_cycle(
                 gate_status = (
                     "synthesis_failed" if return_code != 0
                     else "retracted_source_cited" if retracted
+                    else "numeric_effect_mismatch" if numeric_issues
                     else "abstract_overclaim" if overclaims
                     else "revision_coverage_unmet" if unmet
                     else _current_gate_status(bridge, out_dir.name)
@@ -1489,6 +1500,8 @@ def run_cycle(
                     revision_feedback = _escalate_feedback(revision_feedback, unmet)
                 if retracted:
                     attempt["retracted_cited_sources"] = retracted
+                if numeric_issues:
+                    attempt["numeric_effect_direction_issues"] = numeric_issues
                 if overclaims:
                     attempt["abstract_overclaims"] = overclaims
                 if abstract_repaired:

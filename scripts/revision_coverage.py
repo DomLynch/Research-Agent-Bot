@@ -93,7 +93,10 @@ _PROFILE_SUMMARY_RE = re.compile(
 _P_VALUE_RE = re.compile(r"\bp\s*(?:=|>|≥|>=)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
 _CI_RE = re.compile(r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?(-?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(-?\d+(?:\.\d+)?)", re.I)
 _SIG_RE = re.compile(r"\b(?:statistically\s+)?significant(?:ly)?\b", re.I)
-_NONSIG_RE = re.compile(r"\b(?:non[- ]?significant|not\s+(?:statistically\s+)?significant|did\s+not\s+reach\s+significance)\b", re.I)
+_NONSIG_RE = re.compile(
+    r"\b(?:non[- ]?significant(?:ly)?|not\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
+    re.I,
+)
 
 
 def _abstract(paper_md: str) -> str:

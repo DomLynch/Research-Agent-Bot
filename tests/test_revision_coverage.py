@@ -88,3 +88,43 @@ def test_unsupported_abstract_claims_failopen_on_error(monkeypatch) -> None:
         raise revision_coverage.LLMError("judge down")
 
     assert revision_coverage.unsupported_abstract_claims(_PAPER, chat=boom, settings=object()) == []
+
+
+def test_numeric_effect_direction_flags_non_significant_p_value_called_significant() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a significant reduction in LF HRV power (p = 0.08).\n\n"
+        "## Results\n\nThe body reports the same source.\n"
+    )
+    assert revision_coverage.numeric_effect_direction_issues(paper) == [
+        "non-significant p-value described as significant: Waghmare 2024 showed a significant reduction in LF HRV power (p = 0.08)."
+    ]
+
+
+def test_numeric_effect_direction_allows_explicit_non_significant_language() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a non-significant reduction in LF HRV power (p = 0.08).\n\n"
+        "## Results\n\nThe body reports the same source.\n"
+    )
+    assert revision_coverage.numeric_effect_direction_issues(paper) == []
+
+
+def test_numeric_effect_direction_allows_not_significantly_language() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 did not significantly reduce LF HRV power (p = 0.08).\n\n"
+        "## Results\n\nThe body reports the same source.\n"
+    )
+    assert revision_coverage.numeric_effect_direction_issues(paper) == []
+
+
+def test_numeric_effect_direction_flags_ci_crossing_null_called_significant() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "The pooled effect was statistically significant (95% CI 0.84-1.18).\n\n"
+        "## Results\n\nThe confidence interval crosses the null.\n"
+    )
+    assert revision_coverage.numeric_effect_direction_issues(paper) == [
+        "CI crossing null described as significant: The pooled effect was statistically significant (95% CI 0.84-1.18)."
+    ]
