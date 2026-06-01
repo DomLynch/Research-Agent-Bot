@@ -785,6 +785,48 @@ def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -
     assert len(paragraphs) == len(set(paragraphs))
 
 
+def test_results_outcome_backstop_uses_compact_source_lines_to_avoid_surface_duplicates() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 3,
+            "n_high_confidence_claims_total": 222,
+            "n_non_orthogonal_tensions": 0,
+            "receipts": [
+                {
+                    "directness": "direct",
+                    "effect_direction": "mixed",
+                    "outcome_class": "cardiometabolic",
+                    "citation_token": "Yang 2026",
+                    "n_claims": 50,
+                },
+                {
+                    "directness": "indirect",
+                    "effect_direction": "null",
+                    "outcome_class": "deficiency_prevalence",
+                    "citation_token": "Meer 2026",
+                    "n_claims": 121,
+                },
+                {
+                    "directness": "indirect",
+                    "effect_direction": "unclear",
+                    "outcome_class": "skeletal_fracture_bone",
+                    "citation_token": "Moretti 2026",
+                    "n_claims": 51,
+                },
+            ],
+        }
+        md = orch._compile_public_section_backstop("Results", 200)
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    assert "This outcome is interpreted within its own packet first" not in md
+    assert "Representative sources: Yang 2026." in md
+    assert _duplicate_paragraph_issue_messages(md) == ()
+
+
 def test_results_summary_table_is_manifest_driven_and_idempotent() -> None:
     paper = "## Results\n\n### Cardiometabolic Outcomes\n\nFindings.\n"
     manifest = {

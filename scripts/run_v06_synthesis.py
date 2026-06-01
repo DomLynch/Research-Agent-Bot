@@ -1053,7 +1053,7 @@ def _compile_results_outcome_backstop(
             "",
             f"The {label.lower()} evidence packet includes {row.get('n')} source-level summaries and {row.get('claims')} high-confidence observations. Directional coding within this packet is {row.get('directions')}, and directness coding is {row.get('directness')}. These counts describe the frozen evidence state for this outcome, not a pooled treatment estimate.",
             "",
-            f"Representative sources include {row.get('refs')}. This outcome is interpreted within its own packet first; any broader synthesis is deferred until the cross-domain section so that the writer cannot merge evidence from unrelated outcome classes.",
+            f"Representative sources: {row.get('refs')}.",
             "",
         ])
     shared = (
