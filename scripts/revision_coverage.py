@@ -90,11 +90,45 @@ _PROFILE_SUMMARY_RE = re.compile(
     r")\b",
     re.I,
 )
+_P_VALUE_RE = re.compile(r"\bp\s*(?:=|>|≥|>=)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
+_CI_RE = re.compile(r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?(-?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(-?\d+(?:\.\d+)?)", re.I)
+_SIG_RE = re.compile(r"\b(?:statistically\s+)?significant(?:ly)?\b", re.I)
+_NONSIG_RE = re.compile(r"\b(?:non[- ]?significant|not\s+(?:statistically\s+)?significant|did\s+not\s+reach\s+significance)\b", re.I)
 
 
 def _abstract(paper_md: str) -> str:
     m = re.search(r"^##\s+Abstract\b.*?\n(.*?)(?=^##\s)", paper_md, re.M | re.S)
     return m.group(1).strip() if m else ""
+
+
+def _section(paper_md: str, name: str) -> str:
+    m = re.search(rf"^##\s+{re.escape(name)}\b.*?\n(.*?)(?=^##\s|\Z)", paper_md, re.M | re.S | re.I)
+    return m.group(1).strip() if m else ""
+
+
+def _sentences(text: str) -> list[str]:
+    return [s.strip() for s in re.split(r"(?<=[.!?])\s+", text.replace("\n", " ")) if s.strip()]
+
+
+def numeric_effect_direction_issues(paper_md: str) -> list[str]:
+    """Deterministic numeric sanity gate for the common reviewer failure:
+    calling p>=0.05 or a CI crossing null "significant". Bounded and fail-closed
+    only on explicit numeric contradictions, not absence of statistics."""
+    scope = "\n".join(part for part in (_abstract(paper_md), _section(paper_md, "Conclusion")) if part)
+    issues: list[str] = []
+    for sentence in _sentences(scope):
+        if not _SIG_RE.search(sentence) or _NONSIG_RE.search(sentence):
+            continue
+        for value in _P_VALUE_RE.findall(sentence):
+            if float(value) >= 0.05:
+                issues.append(f"non-significant p-value described as significant: {sentence}")
+                break
+        for lo, hi in _CI_RE.findall(sentence):
+            low, high = float(lo), float(hi)
+            if low <= 0 <= high or (low <= 1 <= high and min(abs(low), abs(high)) > 0):
+                issues.append(f"CI crossing null described as significant: {sentence}")
+                break
+    return issues
 
 
 def unsupported_abstract_claims(
