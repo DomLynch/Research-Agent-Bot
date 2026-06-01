@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 import re
+import importlib
 from pathlib import Path
+from typing import Any
 
 Change = tuple[str, int, str]
 
@@ -56,6 +58,36 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     if n:
         changes.append(("add_clinical_policy_caveat", n, "addressed reviewer caveat request"))
     return text, changes
+
+
+def restore_surface_floors(text: str, out_dir: Path, entries: list[Any], entry_cls: type[Any]) -> tuple[str, list[Any]]:
+    manifest = _load_json(out_dir / "manifest.json")
+    if not (out_dir / "full_paper.journal_surface.json").is_file() or not isinstance(manifest, dict) or not (
+        isinstance(manifest.get("total_words"), int) or isinstance(manifest.get("section_words"), dict)
+    ):
+        return text, entries
+    try:
+        orch = importlib.import_module("scripts.run_v06_synthesis")
+        setattr(orch, "_ACTIVE_TOPIC", str(manifest.get("topic") or ""))
+        setattr(orch, "_ACTIVE_MANIFEST", manifest)
+        fixed, repairs = orch._restore_public_surface_floors(
+            text,
+            review_type=manifest.get("review_type") if isinstance(manifest.get("review_type"), str) else None,
+        )
+    except (AttributeError, ImportError, OSError, TypeError, ValueError):
+        return text, entries
+    entries.extend(
+        entry_cls("N_surface_floor_backstop", str(item.get("reason") or "surface_floor_backstop"), 1, f"{item.get('section')}: restored journal-surface floor")
+        for item in repairs
+    )
+    return fixed, entries
+
+
+def _load_json(path: Path) -> Any:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
 
 
 def _revision_feedback(out_dir: Path) -> str:

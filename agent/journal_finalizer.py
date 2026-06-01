@@ -95,47 +95,11 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     ):
         text, log = phase(text)
         entries.extend(log)
-    from scripts.review_noise_control import apply_review_noise_control
+    from scripts.review_noise_control import apply_review_noise_control, restore_surface_floors
     text, noise_changes = apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
-    manifest = _load_sidecar(out_dir / "manifest.json")
-    production_manifest = isinstance(manifest, dict) and (
-        isinstance(manifest.get("total_words"), int)
-        or isinstance(manifest.get("section_words"), dict)
-    )
-    if production_manifest and (out_dir / "full_paper.journal_surface.json").is_file():
-        text, floor_changes = _phase_n_surface_floor_backstop(text, out_dir)
-        entries.extend(floor_changes)
+    text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
     return text, entries
-
-
-def _phase_n_surface_floor_backstop(
-    text: str, out_dir: Path,
-) -> tuple[str, list[FinalizerLogEntry]]:
-    """Restore journal-surface section floors after finalizer mutations."""
-    manifest = _load_sidecar(out_dir / "manifest.json")
-    manifest = manifest if isinstance(manifest, dict) else {}
-    try:
-        orch = importlib.import_module("scripts.run_v06_synthesis")
-        setattr(orch, "_ACTIVE_TOPIC", str(manifest.get("topic") or ""))
-        setattr(orch, "_ACTIVE_MANIFEST", manifest)
-        fixed, repairs = orch._restore_public_surface_floors(
-            text,
-            review_type=manifest.get("review_type") if isinstance(manifest.get("review_type"), str) else None,
-        )
-    except (AttributeError, ImportError, OSError, TypeError, ValueError):
-        return text, []
-    if fixed == text:
-        return text, []
-    return fixed, [
-        FinalizerLogEntry(
-            phase="N_surface_floor_backstop",
-            rule=str(item.get("reason") or "surface_floor_backstop"),
-            n_changes=1,
-            detail=f"{item.get('section')}: restored journal-surface floor",
-        )
-        for item in repairs
-    ]
 
 
 def _surface_report(text: str, out_dir: Path) -> Any | None:
