@@ -889,6 +889,7 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
             "feedback": "Add clinical-use caveat and resubmit.",
         }], None),
         submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        decision_poll_seconds=0,
     )
 
     assert ledger["status"] == "submitted_to_researka"
