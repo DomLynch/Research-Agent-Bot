@@ -198,6 +198,9 @@ def test_section_includes_research_contribution_layer() -> None:
     assert "### Next-Study Design Recommendation" in md
     assert "| cognitive | 0 | 1 |" in md
     assert "direct clinical gap" in md
+    assert "at least 200 participants per arm" in md
+    assert "priority population" in md
+    assert "at least 12 months" in md
 
 
 def test_research_contribution_layer_humanizes_public_labels() -> None:

@@ -276,7 +276,15 @@ def _append_research_contribution_layer(
             f"direction profile: {directions or 'unclear'}"
         )
         lines.append(f"| P{i} | {_public_label(oc)}: {gap} | {rationale} |")
-    target = _public_label(top[0][1])
+    _, target_oc, direct, indirect, _, gap = top[0]
+    target = _public_label(target_oc)
+    population = (
+        "adults or older adults with baseline risk in the target outcome domain"
+        if direct == 0 else
+        "the same population type as the strongest direct receipt cluster"
+    )
+    duration = "at least 12 months" if gap == "direct clinical gap" else "at least 24 weeks"
+    sample_size = "at least 200 participants per arm" if direct == 0 else "at least 100 participants per arm"
     lines += [
         "",
         "### Next-Study Design Recommendation",
@@ -286,7 +294,9 @@ def _append_research_contribution_layer(
         "separate clinical from mechanistic endpoints, preserve safety "
         "and adherence capture, and include an analysis plan that can "
         "falsify the current boundary-condition claim rather than only "
-        "confirming a favorable direction.",
+        f"confirming a favorable direction. Minimum useful design: {sample_size}, "
+        f"a priority population of {population}, and follow-up lasting {duration}; "
+        "shorter or smaller studies should be treated as hypothesis-generating.",
     ]
 
 
