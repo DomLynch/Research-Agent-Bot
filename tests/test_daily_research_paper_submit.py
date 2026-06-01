@@ -55,6 +55,42 @@ def test_dry_run_selects_eligible_research_paper(tmp_path: Path) -> None:
     assert (tmp_path / daily.LEDGER_DIR / "2026-05-23.json").exists()
 
 
+def test_pre_submit_corpus_floor_returns_specific_blocker(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "pre_submit_gate.json", {
+        "result": {
+            "passed": False,
+            "failures": [
+                "n_receipts=3 < threshold 10",
+                "n_tensions=0 < threshold 1",
+            ],
+        }
+    })
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == (
+        "preflight_insufficient_corpus:"
+        "n_receipts=3 < threshold 10; n_tensions=0 < threshold 1"
+    )
+
+
+def test_pre_submit_passing_gate_still_selects_candidate(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected == run
+    assert considered[0]["status"] == "eligible"
+
+
 def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     run = _run(tmp_path)
 

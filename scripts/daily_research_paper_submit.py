@@ -124,6 +124,21 @@ def _pre_submit_passed(data: dict[str, Any]) -> bool:
     return bool(data.get("passed") is True or isinstance(result, dict) and result.get("passed") is True)
 
 
+def _pre_submit_status(data: dict[str, Any]) -> str:
+    if _pre_submit_passed(data):
+        return "eligible"
+    result = data.get("result")
+    raw_failures = result.get("failures") if isinstance(result, dict) else ()
+    failures = raw_failures if isinstance(raw_failures, list | tuple) else ()
+    corpus_floor = [
+        " ".join(str(failure).split())
+        for failure in failures if str(failure).startswith(("n_receipts=", "n_tensions="))
+    ]
+    if corpus_floor:
+        return "preflight_insufficient_corpus:" + "; ".join(corpus_floor)
+    return "pre_submit_not_passed"
+
+
 def _final_status_ready(data: dict[str, Any]) -> bool:
     return bool(data.get("submission_ready") is True)
 
@@ -228,8 +243,9 @@ def _eligible(run: Path) -> tuple[bool, str]:
         return False, "audit_p1_failed"
     if surface.get("passed") is not True:
         return False, "journal_surface_not_passed"
-    if not _pre_submit_passed(_read_json(run / "pre_submit_gate.json")):
-        return False, "pre_submit_not_passed"
+    pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
+    if pre_submit_status != "eligible":
+        return False, pre_submit_status
     final_status = _read_json(run / "final_status.json")
     if final_status and not _final_status_ready(final_status):
         return False, "final_status_not_ready"
