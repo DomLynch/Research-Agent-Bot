@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 from typing import Any
@@ -48,6 +49,8 @@ def capacity_plan(
     calendar_gap = max(0, target - calendar_slots)
     topic_gap = max(0, target - topic_reuse_capacity)
     publishable_ratio_gap = max(0.0, required_success_rate - generated_publishable_ratio)
+    slots_at_current_ratio = math.ceil(target / generated_publishable_ratio) if generated_publishable_ratio else 0
+    interval_at_current_ratio = (days * 24 * 60) / slots_at_current_ratio if slots_at_current_ratio else 0.0
     return {
         "target": target,
         "years": years,
@@ -71,6 +74,17 @@ def capacity_plan(
         "target_reachable_at_current_interval": capacity_limited_by >= target and required_success_rate <= 1.0 and publishable_ratio_gap == 0,
         "required_success_rate": round(required_success_rate, 3),
         "required_interval_minutes_at_100pct_success": round(required_interval_minutes, 1),
+        "mitigation_at_100pct_success": {
+            "extra_slots_to_target": calendar_gap,
+            "extra_slots_per_day": round(calendar_gap / days, 2) if days else 0.0,
+            "required_interval_minutes": round(required_interval_minutes, 1),
+        },
+        "mitigation_at_current_publishable_ratio": {
+            "required_slots": slots_at_current_ratio,
+            "extra_slots_to_target": max(0, slots_at_current_ratio - calendar_slots),
+            "extra_slots_per_day": round(max(0, slots_at_current_ratio - calendar_slots) / days, 2) if days else 0.0,
+            "required_interval_minutes": round(interval_at_current_ratio, 1),
+        },
     }
 
 
