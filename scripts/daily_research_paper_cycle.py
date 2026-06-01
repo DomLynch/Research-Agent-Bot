@@ -112,13 +112,26 @@ def discover_topics(
         topic = path.stem
         if not topic.startswith("_"):
             topics.add(topic)
+    generated_records = _generated_pack_records(topic_pack_db)
     for path in sorted(topic_pack_db.glob("*/latest.json")):
         topic = path.parent.name
         record = _read_json(path)
         pack_data = record.get("pack_data")
-        if not topic.startswith("_") and isinstance(pack_data, dict) and generated_pack_publishable(record):
+        if (
+            not topic.startswith("_")
+            and isinstance(pack_data, dict)
+            and generated_pack_publishable(record, peer_records=generated_records)
+        ):
             topics.add(topic)
     return sorted(topics)
+
+
+def _generated_pack_records(topic_pack_db: Path | None = None) -> list[dict[str, Any]]:
+    db = topic_pack_db or TOPIC_PACKS_DB
+    return [
+        record for path in sorted(db.glob("*/latest.json"))
+        if (record := _read_json(path))
+    ]
 
 
 def _quant_claim_count(topic: str) -> int:
@@ -588,7 +601,7 @@ def _publication_track_topic(topic: str) -> bool:
         record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
         pack_data = record.get("pack_data")
         data = pack_data if isinstance(pack_data, dict) else {}
-        if data and not generated_pack_publishable(record):
+        if data and not generated_pack_publishable(record, peer_records=_generated_pack_records()):
             return False
     return bool(str(data.get("target_journal", "")).strip())
 

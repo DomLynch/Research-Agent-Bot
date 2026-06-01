@@ -4,12 +4,14 @@ from __future__ import annotations
 import re
 import json
 import tomllib
-from collections.abc import Iterable
+from collections import Counter
+from collections.abc import Iterable, Sequence
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
 MIN_GENERATED_PACK_CANDIDATES = 10
+MIN_SPECIFIC_GENERATED_PACK_CANDIDATES = 3
 MIN_GENERATED_PACK_TOKENS = 3
 
 TOPIC_STOPWORDS = {
@@ -85,30 +87,66 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     return alias_hit or token_hits == len(tokens) or (biomed and token_hits > 0)
 
 
-def generated_pack_publishable(record: dict[str, object]) -> bool:
-    """Generated packs need enough facts plus structurally specific terms."""
+def generated_pack_publishable(
+    record: dict[str, object],
+    *,
+    peer_records: Sequence[dict[str, object]] = (),
+) -> bool:
+    """Generated packs need fact support plus peer-relative specificity."""
     pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else record
     raw_count = record.get("candidate_count")
     candidate_count = raw_count if isinstance(raw_count, int) else 0
     topic = str(pack_data.get("topic") or "") if isinstance(pack_data, dict) else ""
-    if topic.endswith("_aging_evidence") or topic.endswith(" aging evidence"):
-        return False
     raw_terms = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
     retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
     if isinstance(retrieval, dict) and isinstance(retrieval.get("topic_terms"), list | tuple):
         raw_terms.extend(retrieval["topic_terms"])
-    if candidate_count < MIN_GENERATED_PACK_CANDIDATES or not raw_terms:
+    if not raw_terms:
         return False
-    terms = {
-        token
-        for term in raw_terms
-        for token in re.findall(r"[a-z0-9]+", str(term).lower())
-        if token
-    }
+    terms = _pack_tokens(raw_terms)
     entity_like = any(
         any(ch.isdigit() for ch in str(term))
         or any(ch.isupper() for ch in str(term)[1:])
         or "-" in str(term)
         for term in raw_terms
     )
-    return len(terms) >= MIN_GENERATED_PACK_TOKENS or entity_like
+    rare_terms = _peer_rare_tokens(terms, peer_records)
+    structurally_specific = bool(
+        entity_like
+        or rare_terms
+        or (not peer_records and len(terms) >= MIN_GENERATED_PACK_TOKENS and not _generic_fallback_topic(topic))
+    )
+    floor = (
+        MIN_SPECIFIC_GENERATED_PACK_CANDIDATES
+        if structurally_specific
+        else MIN_GENERATED_PACK_CANDIDATES
+    )
+    return candidate_count >= floor and len(terms) >= MIN_GENERATED_PACK_TOKENS and structurally_specific
+
+
+def _generic_fallback_topic(topic: str) -> bool:
+    return topic.endswith("_aging_evidence") or topic.endswith(" aging evidence")
+
+
+def _pack_tokens(raw_terms: Iterable[object]) -> set[str]:
+    return {
+        token
+        for term in raw_terms
+        for token in re.findall(r"[a-z0-9]+", str(term).lower())
+        if len(token) > 2
+    }
+
+
+def _peer_rare_tokens(terms: set[str], peer_records: Sequence[dict[str, object]]) -> set[str]:
+    if not peer_records:
+        return set()
+    counts: Counter[str] = Counter()
+    for record in peer_records:
+        pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else record
+        raw_terms = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
+        retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
+        if isinstance(retrieval, dict) and isinstance(retrieval.get("topic_terms"), list | tuple):
+            raw_terms.extend(retrieval["topic_terms"])
+        counts.update(_pack_tokens(raw_terms))
+    common_cutoff = max(3, int(len(peer_records) * 0.12))
+    return {token for token in terms if counts[token] <= common_cutoff}

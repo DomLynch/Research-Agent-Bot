@@ -78,18 +78,21 @@ def materialize_rows(
 ) -> dict[str, Any]:
     created: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
+    candidates = []
     for row in rows:
-        pack = generate_candidate_topic_pack(
-            build_topic_name(row),
-            seed_terms=tuple(
-                term for term in (_label(row.get("topic")), _label(row.get("sub_topic"))) if term
-            ),
-        )
+        seed_terms = tuple(term for term in (_label(row.get("topic")), _label(row.get("sub_topic"))) if term)
+        pack = generate_candidate_topic_pack(build_topic_name(row), seed_terms=seed_terms)
+        candidates.append((row, pack, {
+            "pack_data": pack.to_topic_pack_dict(),
+            "candidate_count": int(row.get("exact_facts") or row.get("facts") or 0),
+        }))
+    peer_records = [record for _, _, record in candidates]
+    for row, pack, record in candidates:
         if pack.status != "proceed" or pack.validation_errors:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": pack.stop_reason or pack.validation_errors})
             continue
         candidate_count = int(row.get("exact_facts") or row.get("facts") or 0)
-        if not generated_pack_publishable({"pack_data": pack.to_topic_pack_dict(), "candidate_count": candidate_count}):
+        if not generated_pack_publishable(record, peer_records=peer_records):
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "low_information_topic"})
             continue
         path = db_dir / pack.slug / "latest.json"
@@ -102,9 +105,9 @@ def materialize_rows(
             if current.get("pack_hash") == digest:
                 skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "unchanged"})
                 continue
-        record = None
+        persisted = None
         if persist:
-            record = persist_generated_pack(
+            persisted = persist_generated_pack(
                 pack,
                 db_dir,
                 candidate_count=candidate_count,
@@ -116,7 +119,7 @@ def materialize_rows(
             "facts": int(row.get("facts") or 0),
             "exact_facts": int(row.get("exact_facts") or 0),
             "papers": int(row.get("papers") or 0),
-            "path": str(path if record is None else db_dir / pack.slug / f"v{record.version}.json"),
+            "path": str(path if persisted is None else db_dir / pack.slug / f"v{persisted.version}.json"),
         })
     return {"created": created, "skipped": skipped}
 
