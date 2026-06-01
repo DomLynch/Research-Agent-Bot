@@ -174,5 +174,5 @@ def test_fact_intervention_cross_strategy_promotes_repeated_interventions() -> N
     assert "papers >= %(min_papers)s" in sql
     assert "exact_facts >= %(min_exact_facts)s" in sql
     assert "lower(topic) != lower(sub_topic)" in sql
-    assert "lower(topic) NOT LIKE 'none%'" in sql
+    assert "lower(topic) NOT LIKE 'none%%'" in sql
     assert "'placebo'" in sql
