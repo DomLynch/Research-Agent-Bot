@@ -118,3 +118,8 @@ def test_materialize_rows_uses_existing_peer_records_for_specificity(tmp_path: P
         "slug": "longevity_rates",
         "reason": "low_information_topic",
     }]
+
+
+def test_fact_field_cross_strategy_uses_fact_json_fields() -> None:
+    assert "jsonb_each_text(ft.fact_json::jsonb)" in materializer.FACT_FIELD_CROSS_SQL
+    assert "kv.key NOT IN" in materializer.FACT_FIELD_CROSS_SQL

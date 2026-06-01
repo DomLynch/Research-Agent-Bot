@@ -43,6 +43,32 @@ ORDER BY exact_facts DESC, papers DESC, facts DESC, topic, sub_topic, claim_type
 LIMIT %(limit)s;
 """
 
+FACT_FIELD_CROSS_SQL = """
+WITH expanded AS (
+    SELECT
+        COALESCE(NULLIF(ft.fact_json->>'topic', ''), 'unknown') AS topic,
+        concat(kv.key, ' ', kv.value) AS sub_topic,
+        COALESCE(NULLIF(ft.claim_type, ''), 'claim') AS claim_type,
+        count(*) AS facts,
+        count(DISTINCT ft.paper_id) AS papers,
+        count(*) FILTER (WHERE fv.status = 'exact') AS exact_facts
+    FROM facts_tier2 ft
+    LEFT JOIN fact_validations fv ON fv.fact_id = ft.id
+    CROSS JOIN LATERAL jsonb_each_text(ft.fact_json::jsonb) AS kv(key, value)
+    WHERE ft.numeric_value IS NOT NULL
+      AND kv.key NOT IN ('topic', 'sub_topic', 'paper_id', 'source_id', 'claim', 'quote', 'text')
+      AND length(trim(kv.value)) BETWEEN 3 AND 80
+    GROUP BY 1, 2, 3
+)
+SELECT topic, sub_topic, claim_type, facts, papers, exact_facts
+FROM expanded
+WHERE topic NOT IN ('', 'other', 'unknown')
+  AND exact_facts >= %(min_exact_facts)s
+  AND papers >= %(min_papers)s
+ORDER BY exact_facts DESC, papers DESC, facts DESC, topic, sub_topic, claim_type
+LIMIT %(limit)s;
+"""
+
 CLAIM_LABELS = {
     "effect_size": "effects",
     "rate": "rates",
@@ -139,7 +165,14 @@ def _existing_records(db_dir: Path) -> list[dict[str, Any]]:
     return records
 
 
-def fetch_rows(*, dsn: str, min_exact_facts: int, min_papers: int, limit: int) -> list[dict[str, Any]]:
+def fetch_rows(
+    *,
+    dsn: str,
+    min_exact_facts: int,
+    min_papers: int,
+    limit: int,
+    strategy: str = "grouped",
+) -> list[dict[str, Any]]:
     try:
         import psycopg2  # type: ignore[import-untyped]
         from psycopg2.extras import RealDictCursor  # type: ignore[import-untyped]
@@ -147,7 +180,7 @@ def fetch_rows(*, dsn: str, min_exact_facts: int, min_papers: int, limit: int) -
         raise RuntimeError("psycopg2 is required for live DB materialization") from exc
     with psycopg2.connect(dsn) as conn, conn.cursor(cursor_factory=RealDictCursor) as cur:
         cur.execute(
-            FACT_TOPIC_SQL,
+            FACT_FIELD_CROSS_SQL if strategy == "fact-field-cross" else FACT_TOPIC_SQL,
             {"min_exact_facts": min_exact_facts, "min_papers": min_papers, "limit": limit},
         )
         return [dict(row) for row in cur.fetchall()]
@@ -169,6 +202,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--min-exact-facts", type=int, default=2)
     parser.add_argument("--min-papers", type=int, default=2)
     parser.add_argument("--limit", type=int, default=500)
+    parser.add_argument("--strategy", choices=("grouped", "fact-field-cross"), default="grouped")
     parser.add_argument("--persist", action="store_true")
     args = parser.parse_args(argv)
 
@@ -184,6 +218,7 @@ def main(argv: list[str] | None = None) -> int:
             min_exact_facts=args.min_exact_facts,
             min_papers=args.min_papers,
             limit=args.limit,
+            strategy=args.strategy,
         )
     result = materialize_rows(rows, db_dir=args.db_dir, persist=args.persist)
     print(json.dumps(result, indent=2, sort_keys=True))

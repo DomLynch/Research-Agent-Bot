@@ -19,6 +19,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import daily_research_paper_cycle as cycle  # noqa: E402
 from source_topic_specificity import generated_pack_publishable  # noqa: E402
 
+RECOMMENDED_SUCCESS_BUFFER = 0.60
+
 
 def _generated_records(db: Path) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
@@ -79,6 +81,8 @@ def capacity_plan(
     calendar_gap = max(0, target - calendar_slots)
     topic_gap = max(0, target - topic_reuse_capacity)
     publishable_ratio_gap = max(0.0, required_success_rate - generated_publishable_ratio)
+    buffer_gap = max(0.0, RECOMMENDED_SUCCESS_BUFFER - generated_publishable_ratio)
+    ratio_margin = generated_publishable_ratio - required_success_rate
     slots_at_current_ratio = math.ceil(target / generated_publishable_ratio) if generated_publishable_ratio else 0
     interval_at_current_ratio = (days * 24 * 60) / slots_at_current_ratio if slots_at_current_ratio else 0.0
     lanes_at_current_ratio = math.ceil(slots_at_current_ratio / calendar_slots) if calendar_slots and slots_at_current_ratio else 0
@@ -106,6 +110,17 @@ def capacity_plan(
         "slot_target_reachable_at_current_interval": capacity_limited_by >= target and required_success_rate <= 1.0,
         "publishable_ratio_limited": publishable_ratio_gap > 0,
         "publishable_ratio_gap_to_required_success_rate": round(publishable_ratio_gap, 3),
+        "publishable_ratio_buffer": {
+            "minimum_recommended": RECOMMENDED_SUCCESS_BUFFER,
+            "margin_to_required_success_rate": round(ratio_margin, 3),
+            "meets_recommended_buffer": buffer_gap == 0,
+            "buffer_gap_to_minimum_recommended": round(buffer_gap, 3),
+            "warning": (
+                "thin_margin"
+                if ratio_margin >= 0 and buffer_gap > 0
+                else "below_required_success_rate" if ratio_margin < 0 else "ok"
+            ),
+        },
         "target_reachable_at_current_interval": target_reachable,
         "required_success_rate": round(required_success_rate, 3),
         "required_interval_minutes_at_100pct_success": round(required_interval_minutes, 1),
@@ -143,9 +158,17 @@ def capacity_plan(
                 f"python scripts/materialize_fact_topic_packs.py --limit {unique_gap}"
                 if unique_gap else "none"
             ),
+            "field_cross_projection_command": (
+                f"python scripts/materialize_fact_topic_packs.py --strategy fact-field-cross --limit {unique_gap}"
+                if unique_gap else "none"
+            ),
             "materializer_persist_rule": "persist only if projection.created > 0",
             "capacity_warning": (
                 "run materializer projection against live fact rows; current grouped fact topics may be exhausted"
+                if unique_gap else "none"
+            ),
+            "next_strategy": (
+                "if grouped projection creates 0, run fact-field-cross projection; persist only specific packs that pass peer specificity"
                 if unique_gap else "none"
             ),
             "next_generated_candidates": list(expansion_candidates),

@@ -90,6 +90,13 @@ def test_capacity_plan_two_year_live_ratio_keeps_single_two_hour_lane() -> None:
     )
 
     assert plan["target_reachable_at_current_interval"] is True
+    assert plan["publishable_ratio_buffer"] == {
+        "minimum_recommended": 0.6,
+        "margin_to_required_success_rate": 0.021,
+        "meets_recommended_buffer": False,
+        "buffer_gap_to_minimum_recommended": 0.008,
+        "warning": "thin_margin",
+    }
     assert plan["operational_strategy"] == {
         "keep_current_interval": True,
         "two_hour_lanes_required_at_100pct_success": 1,
@@ -122,8 +129,10 @@ def test_capacity_plan_includes_unique_topic_expansion_path() -> None:
         "new_unique_topics_needed_per_day": 6.18,
         "fact_materializer_rows_needed": 4511,
         "materializer_projection_command": "python scripts/materialize_fact_topic_packs.py --limit 4511",
+        "field_cross_projection_command": "python scripts/materialize_fact_topic_packs.py --strategy fact-field-cross --limit 4511",
         "materializer_persist_rule": "persist only if projection.created > 0",
         "capacity_warning": "run materializer projection against live fact rows; current grouped fact topics may be exhausted",
+        "next_strategy": "if grouped projection creates 0, run fact-field-cross projection; persist only specific packs that pass peer specificity",
         "next_generated_candidates": [{"topic": "PCSK9", "slug": "pcsk9", "candidate_count": 90}],
     }
 
