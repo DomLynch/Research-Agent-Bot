@@ -98,7 +98,8 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
             token for token in re.findall(r"[a-z0-9]+", norm)
             if len(token) > 2 and token not in TOPIC_STOPWORDS
         }
-        if norm in topic_text or topic_text in norm or topic_raw_tokens & alias_tokens:
+        min_overlap = 2 if len(topic_raw_tokens) >= 3 else 1
+        if norm in topic_text or topic_text in norm or len(topic_raw_tokens & alias_tokens) >= min_overlap:
             if norm not in seen:
                 seen.add(norm)
                 out.append(str(alias))
