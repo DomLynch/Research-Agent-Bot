@@ -195,8 +195,9 @@ _BLOCKED_BODY_CITATION_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"^CORRECT(?:ING|ION)?\s+\d{4}[a-z]?$", re.IGNORECASE),
     # Duplicate-year malformed labels (e.g. "Smith 2019 2019").
     re.compile(r"\b(19\d{2}|20\d{2})\b.*\b\1\b"),
-    # Long all-caps title fragments; short acronyms such as HBOT are OK.
-    re.compile(r"^(?!PMC\d)[A-Z][A-Z0-9-]{5,}(?:\s+\d{4}[a-z]?)?$"),
+    # Long all-caps title fragments; short acronyms and surname-year labels
+    # such as HBOT 2024 / TSUBONE 2013 are OK.
+    re.compile(r"^(?!PMC\d)[A-Z][A-Z0-9-]{12,}(?:\s+\d{4}[a-z]?)?$"),
 )
 
 

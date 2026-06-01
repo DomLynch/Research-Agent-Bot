@@ -701,6 +701,7 @@ def _failure_class(status: str) -> str:
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
         "strategy_evidence_insufficient": "B_corpus_fixable",
+        "source_topic_precision_low": "B_corpus_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
         "corpus_missing_dry_run": "B_corpus_fixable",
         "corpus_seed_empty": "B_corpus_fixable",
@@ -1567,6 +1568,8 @@ def run_cycle(
                     break
                 else:
                     ledger["status"] = "synthesis_completed_no_submission"
+                    if gate_status and gate_status != "eligible":
+                        ledger["no_submission_reason"] = gate_status
                 if same_gate_failures >= 2 or revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
                     break
             if ledger["status"] == "cycle_budget_exhausted":

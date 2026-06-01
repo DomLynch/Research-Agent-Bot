@@ -32,10 +32,10 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test") -> Path:
         "n_receipts": 12,
         "n_high_confidence_claims_total": 34,
         "n_non_orthogonal_tensions": 5,
-        "receipts": [{"receipt_id": "r1", "outcome_class": "longevity", "n_claims": 9, "effect_direction": "mixed", "directness": "direct"}],
+        "receipts": [{"receipt_id": "topic_effect", "outcome_class": "longevity", "n_claims": 9, "effect_direction": "mixed", "directness": "direct"}],
     })
     _write_json(run / "citation_registry.json", {
-        "r1": {"receipt_id": "r1", "body_citation": "Smith 2026", "reference_id": "R01", "source_year": 2026, "source_doi": "10.1/x", "source_pmid": "123"}
+        "topic_effect": {"receipt_id": "topic_effect", "body_citation": "Smith 2026", "reference_id": "R01", "source_year": 2026, "source_doi": "10.1/x", "source_pmid": "123"}
     })
     _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 14, "n_total": 14})
     _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
@@ -87,6 +87,9 @@ def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, mo
         "directness": "indirect",
     }]
     _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        "r1": {"receipt_id": "r1", "body_citation": "Smith 2026", "reference_id": "R01", "source_year": 2026, "source_doi": "10.1/x", "source_pmid": "123"}
+    })
     claims_dir = tmp_path / "docs" / "quality-reference" / "topic" / "quant_claims"
     claims_dir.mkdir(parents=True)
     _write_json(claims_dir / "r1.quant_claims.json", {
@@ -216,6 +219,31 @@ def test_submit_uses_final_status_ready_over_all_green_verdict(tmp_path: Path, m
     )
 
     assert ledger["status"] == "submitted_to_researka"
+
+
+def test_low_source_topic_precision_blocks_submit(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path, name="synthesis-epigenome_editing_longevity-v06-test")
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "epigenome_editing_longevity"
+    manifest["receipts"] = [
+        {"receipt_id": "supercapacitor_electrode_material", "paper_id": "supercapacitor_electrode_material"},
+        {"receipt_id": "plant_genetics_flowering", "paper_id": "plant_genetics_flowering"},
+        {"receipt_id": "glucose_transporter_fgt1", "paper_id": "glucose_transporter_fgt1"},
+        {"receipt_id": "epigenome_editing_locus_specific", "paper_id": "epigenome_editing_locus_specific"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-01",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("off-topic corpus must not submit")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "source_topic_precision_low:1/4<0.35"
 
 
 def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:

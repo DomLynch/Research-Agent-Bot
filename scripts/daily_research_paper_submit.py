@@ -35,6 +35,11 @@ TOKEN_ENVS = (
     "RESEARKA_V2_API_KEY",
 )
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
+SOURCE_TOPIC_PRECISION_FLOOR = 0.35
+_TOPIC_STOPWORDS = {
+    "aging", "ageing", "longevity", "research", "synthesis", "paper",
+    "effect", "effects", "therapy", "treatment", "evidence",
+}
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 
@@ -121,6 +126,34 @@ def _final_status_ready(data: dict[str, Any]) -> bool:
     return bool(data.get("submission_ready") is True)
 
 
+def _topic_tokens(topic: str) -> list[str]:
+    return [
+        token
+        for token in re.findall(r"[a-z0-9]+", topic.replace("_", " ").lower())
+        if len(token) > 3 and token not in _TOPIC_STOPWORDS
+    ]
+
+
+def _source_topic_precision(run: Path) -> tuple[bool, str]:
+    manifest = _read_json(run / "manifest.json")
+    tokens = _topic_tokens(str(manifest.get("topic") or _run_topic(run)))
+    receipts = manifest.get("receipts")
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not tokens or not rows:
+        return True, "source_topic_precision_unscored"
+    hits = 0
+    for row in rows:
+        haystack = " ".join(
+            str(row.get(key) or "")
+            for key in ("receipt_id", "paper_id", "citation_token")
+        ).lower()
+        hits += int(any(token in haystack for token in tokens))
+    ratio = hits / len(rows)
+    if ratio < SOURCE_TOPIC_PRECISION_FLOOR:
+        return False, f"source_topic_precision_low:{hits}/{len(rows)}<{SOURCE_TOPIC_PRECISION_FLOOR:.2f}"
+    return True, f"source_topic_precision_ok:{hits}/{len(rows)}"
+
+
 def _refresh_stale_accountability_sidecar(run: Path) -> bool:
     contract = _read_json(run / "pre_submit_gate.json").get("journal_readiness_contract")
     if not isinstance(contract, list):
@@ -198,6 +231,9 @@ def _eligible(run: Path) -> tuple[bool, str]:
         return False, "final_status_not_ready"
     if not final_status and str(verdict.get("verdict", "")).upper() != "AAA":
         return False, "final_verdict_not_aaa"
+    source_precise, source_status = _source_topic_precision(run)
+    if not source_precise:
+        return False, source_status
     return True, "eligible"
 
 

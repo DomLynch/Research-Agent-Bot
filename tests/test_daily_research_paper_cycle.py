@@ -557,6 +557,50 @@ def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_pat
     assert attempt["bridge_status"] == "submitted_to_researka"
 
 
+def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "epigenome_editing_longevity")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    runs: list[str] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        return {
+            "status": "no_eligible_research_paper",
+            "submitted": 0,
+            "published": 0,
+            "considered": [{"run": runs[-1], "status": "source_topic_precision_low:1/4<0.35"}],
+        }
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "synthesis_completed_no_submission"
+    assert ledger["no_submission_reason"] == "source_topic_precision_low:1/4<0.35"
+    assert ledger["attempts"][0]["gate_status"] == "source_topic_precision_low:1/4<0.35"
+
+
 def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "creatine")

@@ -73,6 +73,7 @@ def test_validate_body_citation_passes_clean_forms() -> None:
     assert cr.validate_body_citation("Walton 2019") == []
     assert cr.validate_body_citation("PMC12978362 2026") == []
     assert cr.validate_body_citation("Smith et al. 2026") == []
+    assert cr.validate_body_citation("TSUBONE 2013") == []
 
 
 def test_validate_body_citation_catches_extraction_artifact_labels() -> None:
