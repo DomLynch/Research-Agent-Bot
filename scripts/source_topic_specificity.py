@@ -97,6 +97,8 @@ def generated_pack_publishable(
     raw_count = record.get("candidate_count")
     candidate_count = raw_count if isinstance(raw_count, int) else 0
     topic = str(pack_data.get("topic") or "") if isinstance(pack_data, dict) else ""
+    if _generic_fallback_topic(topic):
+        return False
     raw_terms = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
     retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
     if isinstance(retrieval, dict) and isinstance(retrieval.get("topic_terms"), list | tuple):
@@ -114,7 +116,7 @@ def generated_pack_publishable(
     structurally_specific = bool(
         entity_like
         or rare_terms
-        or (not peer_records and len(terms) >= MIN_GENERATED_PACK_TOKENS and not _generic_fallback_topic(topic))
+        or (not peer_records and len(terms) >= MIN_GENERATED_PACK_TOKENS)
     )
     floor = (
         MIN_SPECIFIC_GENERATED_PACK_CANDIDATES

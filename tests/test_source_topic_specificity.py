@@ -36,6 +36,28 @@ def test_generated_pack_publishable_uses_structural_specificity() -> None:
     })
 
 
+def test_generated_pack_publishable_uses_peer_relative_specificity() -> None:
+    broad = {
+        "candidate_count": 5,
+        "pack_data": {"topic": "biomarker_effects", "aliases": ["biomarker effects", "biomarker"]},
+    }
+    specific = {
+        "candidate_count": 3,
+        "pack_data": {"topic": "metformin_biomarker_subgroups", "aliases": ["metformin biomarker subgroups", "metformin", "biomarker"]},
+    }
+    peers = [
+        broad,
+        specific,
+        {"candidate_count": 4, "pack_data": {"topic": "cardiovascular_subgroups", "aliases": ["cardiovascular subgroups", "cardiovascular"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "cancer_subgroups", "aliases": ["cancer subgroups", "cancer"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "fasting_subgroups", "aliases": ["fasting subgroups", "fasting"]}},
+        {"candidate_count": 4, "pack_data": {"topic": "rapamycin_subgroups", "aliases": ["rapamycin subgroups", "rapamycin"]}},
+    ]
+
+    assert generated_pack_publishable(specific, peer_records=peers)
+    assert not generated_pack_publishable(broad, peer_records=peers)
+
+
 def test_topic_aliases_loads_local_and_generated_terms(tmp_path) -> None:
     (tmp_path / "topic_packs").mkdir()
     (tmp_path / "topic_packs" / "hydrogen_water.toml").write_text(
