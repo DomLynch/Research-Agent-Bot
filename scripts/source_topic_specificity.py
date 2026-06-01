@@ -15,6 +15,11 @@ BIOMED_ANCHORS = {
     "mouse", "patient", "randomized", "rat", "review", "trial",
 }
 
+DRIFT_RESCUE_ANCHORS = {
+    "adult", "aged", "animal", "clinical", "cohort", "human", "intervention",
+    "mice", "mouse", "patient", "randomized", "rat", "trial",
+}
+
 NON_BIOMED_DRIFT = {
     "alloy", "adsorption", "astrophys", "battery", "catalyst", "cheminform",
     "crop", "electrode", "fuel cell", "fruit", "geolog", "ionomer", "metal",
@@ -39,6 +44,6 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     alias_hit = any(str(alias or "").lower() in haystack for alias in aliases if str(alias or "").strip())
     biomed = any(anchor in haystack for anchor in BIOMED_ANCHORS)
     drift = any(term in haystack for term in NON_BIOMED_DRIFT)
-    if drift and not biomed:
+    if drift and not any(anchor in haystack for anchor in DRIFT_RESCUE_ANCHORS):
         return False
     return alias_hit or token_hits == len(tokens) or (biomed and token_hits > 0)
