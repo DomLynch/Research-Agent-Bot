@@ -1,4 +1,3 @@
-"""Small writer-loop helpers extracted from agent/paper_writer.py."""
 from __future__ import annotations
 
 import asyncio
@@ -32,8 +31,6 @@ async def call_llm_section(
     ledger: CostLedger | None,
     seed: int | None,
 ) -> dict | None:
-    """One LLM call returning a parsed JSON dict (or None if malformed
-    or timed out). Per-call timeout enforced via asyncio.wait_for."""
     for attempt in range(SECTION_TIMEOUT_RETRIES + 1):
         try:
             response = await asyncio.wait_for(
@@ -69,14 +66,12 @@ async def call_llm_section(
 
 
 def section_word_count(section: SynthesisSection) -> int:
-    """Count words in the section body, excluding the heading line."""
     lines = section.body_md.split("\n")
     body = "\n".join(lines[1:]) if lines else ""
     return len(body.split())
 
 
 def strip_rendered_citation_markers(markdown: str) -> str:
-    """Remove writer metadata that must not appear in body prose."""
     return _RENDERED_CITED_RE.sub("", markdown)
 
 
@@ -87,11 +82,6 @@ def build_retry_prompt(
     target_floor: int,
     last_word_count: int,
 ) -> str:
-    """Append explicit retry guidance when a section under-produced.
-
-    Empirically, LLMs default to concise output even when prompts
-    request length. A retry that names the under-production and the
-    floor is much more likely to hit the target than a fresh call."""
     return (
         base_user_prompt
         + f"\n\nRETRY GUIDANCE: the previous attempt at the "
