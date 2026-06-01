@@ -37,6 +37,10 @@ def _receipt(rid: str) -> ReceiptSummary:
     )
 
 
+def test_backstop_timeout_matches_llm_retry_budget() -> None:
+    assert backstop.BACKSTOP_CALL_TIMEOUT_SEC >= 180.0
+
+
 def test_discussion_quality_repair_adds_required_markers() -> None:
     section = SynthesisSection(
         name="discussion",

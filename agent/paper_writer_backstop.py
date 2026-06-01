@@ -29,7 +29,7 @@ AUDIT_GATED_FLOORS: Mapping[str, int] = {
     "discussion": 800,               # Q11 audit floor
     "conclusion": 250,
 }
-BACKSTOP_CALL_TIMEOUT_SEC = 90.0
+BACKSTOP_CALL_TIMEOUT_SEC = 180.0
 
 
 def repair_discussion_minimum_quality(
