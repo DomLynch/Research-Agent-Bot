@@ -139,8 +139,13 @@ def capacity_plan(
             "known_unique_topic_shortfall_vs_target": unique_gap,
             "new_unique_topics_needed_per_day": round(unique_gap / days, 2) if days else 0.0,
             "fact_materializer_rows_needed": unique_gap,
-            "materializer_command": (
-                f"python scripts/materialize_fact_topic_packs.py --limit {unique_gap} --persist"
+            "materializer_projection_command": (
+                f"python scripts/materialize_fact_topic_packs.py --limit {unique_gap}"
+                if unique_gap else "none"
+            ),
+            "materializer_persist_rule": "persist only if projection.created > 0",
+            "capacity_warning": (
+                "run materializer projection against live fact rows; current grouped fact topics may be exhausted"
                 if unique_gap else "none"
             ),
             "next_generated_candidates": list(expansion_candidates),
