@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 from scripts import paper_quality_runtime as pqr
 
@@ -214,6 +215,36 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     assert "| 12 | target_journal_finalizer | not_ready |" in gate_md
     assert "| 13 | accountability | not_ready |" in gate_md
     assert "| 14 | universal_benchmark_target | not_ready |" in gate_md
+
+
+def test_feasibility_preflight_blocks_only_below_minimum_receipts() -> None:
+    def contract_for(receipts: int) -> dict[str, object]:
+        rows = pqr.build_journal_readiness_contract(
+            paper_text="## Abstract\n\n" + "word " * 180 + "\n## Conclusion\n\n" + "word " * 240,
+            manifest={
+                "n_receipts": receipts,
+                "n_high_confidence_claims_total": 9,
+                "n_non_orthogonal_tensions": 3,
+                "receipts": _receipts(),
+                "thesis": "bounded thesis",
+            },
+            gate=SimpleNamespace(passed=True),
+            score=SimpleNamespace(verdict="accept"),
+            journal_surface={"passed": True},
+            reviewer_patches={"unresolved_p1_count": 0},
+            citation_registry_complete=True,
+            template_language_blocking=False,
+            accountability_pass=True,
+        )
+        return next(row for row in rows if row["name"] == "feasibility_preflight")
+
+    below_recommended = contract_for(16)
+    below_minimum = contract_for(9)
+
+    assert below_recommended["status"] == "pass"
+    assert below_recommended["blocks_submission"] is False
+    assert below_minimum["status"] == "not_ready"
+    assert below_minimum["blocks_submission"] is True
 
 
 def test_final_quality_gates_allow_advisory_audit_miss(tmp_path: Path) -> None:

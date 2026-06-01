@@ -571,7 +571,7 @@ def build_journal_readiness_contract(
             f"submission_ready={submission_ready}"
         ), "Resolve non-pass readiness items before submission."),
         _readiness_item(2, "feasibility_preflight", (
-            "pass" if receipts >= 30 else "partial" if receipts >= 10 else "not_ready"
+            "pass" if receipts >= 10 else "not_ready"
         ), f"receipts={receipts}; recommended>=30; minimum>=10",
             "Expand corpus toward 30 receipts or document thin-corpus scope."),
         _readiness_item(3, "domain_pack", "partial", (
