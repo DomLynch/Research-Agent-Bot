@@ -6,6 +6,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
+import publishing_capacity_plan as planner  # type: ignore[import-not-found]  # noqa: E402
 from publishing_capacity_plan import capacity_plan  # type: ignore[import-not-found]  # noqa: E402
 
 
@@ -96,3 +97,65 @@ def test_capacity_plan_two_year_live_ratio_keeps_single_two_hour_lane() -> None:
         "additional_two_hour_lanes_required_at_current_ratio": 0,
         "recommended_path": "keep_current_2h_lane",
     }
+
+
+def test_capacity_plan_includes_unique_topic_expansion_path() -> None:
+    plan = capacity_plan(
+        target=5000,
+        years=2,
+        interval_minutes=120,
+        topic_count=331,
+        generated_records=387,
+        generated_publishable=229,
+        cooldown_days=21,
+        known_unique_topics=489,
+        submitted_unique_topics=35,
+        expansion_candidates=[{"topic": "PCSK9", "slug": "pcsk9", "candidate_count": 90}],
+    )
+
+    assert plan["unique_topic_expansion"] == {
+        "known_unique_topics": 489,
+        "submitted_unique_topics": 35,
+        "remaining_known_unique_topics": 454,
+        "publishable_topic_shortfall_vs_target": 4669,
+        "known_unique_topic_shortfall_vs_target": 4511,
+        "new_unique_topics_needed_per_day": 6.18,
+        "fact_materializer_rows_needed": 4511,
+        "materializer_command": "python scripts/materialize_fact_topic_packs.py --limit 4511 --persist",
+        "next_generated_candidates": [{"topic": "PCSK9", "slug": "pcsk9", "candidate_count": 90}],
+    }
+
+
+def test_live_plan_counts_submitted_topics_and_expansion_candidates(tmp_path: Path, monkeypatch) -> None:
+    topic_packs = tmp_path / "topic_packs"
+    topic_db = tmp_path / "topic_packs_db"
+    runs = tmp_path / "runs"
+    topic_packs.mkdir()
+    (topic_packs / "curcumin.toml").write_text("aliases = ['curcumin']\n", encoding="utf-8")
+    (topic_db / "senescence_biomarker_effects").mkdir(parents=True)
+    (topic_db / "pcsk9_inhibitors_longevity").mkdir(parents=True)
+    for slug, topic, count in [
+        ("senescence_biomarker_effects", "senescence biomarker effects", 12),
+        ("pcsk9_inhibitors_longevity", "PCSK9 inhibitors longevity", 80),
+    ]:
+        (topic_db / slug / "latest.json").write_text(
+            '{"candidate_count": %d, "pack_data": {"topic": "%s", "aliases": ["%s"], "retrieval": {"topic_terms": ["%s"]}}}'
+            % (count, topic, topic, topic),
+            encoding="utf-8",
+        )
+    submitted = runs / "_daily_research_paper_ledger"
+    submitted.mkdir(parents=True)
+    (submitted / "_submitted_fingerprints.json").write_text(
+        '[{"topic": "curcumin"}, {"topic": "pcsk9_inhibitors_longevity"}]',
+        encoding="utf-8",
+    )
+
+    monkeypatch.setattr(planner.cycle, "TOPIC_PACKS", topic_packs)
+    monkeypatch.setattr(planner.cycle, "TOPIC_PACKS_DB", topic_db)
+    monkeypatch.setattr(planner.cycle, "RUNS", runs)
+
+    plan = planner.live_plan(target=5000, years=2, interval_minutes=120)
+
+    assert plan["unique_topic_expansion"]["known_unique_topics"] == 3
+    assert plan["unique_topic_expansion"]["submitted_unique_topics"] == 2
+    assert plan["unique_topic_expansion"]["next_generated_candidates"][0]["slug"] == "pcsk9_inhibitors_longevity"
