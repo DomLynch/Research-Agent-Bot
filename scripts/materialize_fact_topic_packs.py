@@ -18,7 +18,6 @@ sys.path.insert(0, str(REPO_ROOT))
 
 from agent.topic_pack_generator import generate_candidate_topic_pack  # noqa: E402
 from agent.topic_pack_store import (  # noqa: E402
-    generated_pack_record_path,
     pack_hash,
     persist_generated_pack,
 )
@@ -91,7 +90,7 @@ def materialize_rows(
         if pack.status != "proceed" or pack.validation_errors:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": pack.stop_reason or pack.validation_errors})
             continue
-        path = generated_pack_record_path(pack.slug, db_dir)
+        path = db_dir / pack.slug / "latest.json"
         digest = pack_hash(pack.to_topic_pack_dict())
         if path.exists():
             try:

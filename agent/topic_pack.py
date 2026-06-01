@@ -330,23 +330,15 @@ def _build_overrides(raw: dict, path: Path) -> Mapping[str, OverrideRecord]:
 
 
 def load_topic_pack(path: str | Path) -> TopicPack:
-    """Load a topic pack TOML file into a frozen TopicPack.
-
-    Raises TopicPackError on malformed input — preferable to silent
-    misclassification later in the pipeline.
-    """
     p = Path(path)
     if not p.exists():
         raise TopicPackError(f"topic pack not found: {p}")
     with p.open("rb") as fh:
-        data = tomllib.load(fh)
-    return load_topic_pack_data(data, p)
+        return load_topic_pack_data(tomllib.load(fh), p)
 
 
 def load_topic_pack_data(data: dict, path: str | Path = "<topic-pack-data>") -> TopicPack:
-    """Load an already-parsed topic-pack dict into a frozen TopicPack."""
-    p = Path(path)
-    _validate_top_level_keys(data, p)
+    _validate_top_level_keys(data, p := Path(path))
 
     aliases_raw = data["aliases"]
     if not aliases_raw:

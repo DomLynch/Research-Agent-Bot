@@ -12,7 +12,7 @@ from hashlib import sha256
 from pathlib import Path
 from uuid import NAMESPACE_URL, uuid5
 
-from agent.topic_pack import TopicPack, load_topic_pack_data
+from agent.topic_pack import load_topic_pack_data
 from agent.topic_pack_generator import GeneratedTopicPack
 
 
@@ -85,14 +85,9 @@ def load_topic_pack_record(path: str | Path) -> TopicPackRecord:
     return TopicPackRecord(**data)
 
 
-def generated_pack_record_path(topic: str, db_dir: str | Path) -> Path:
-    return Path(db_dir) / topic / "latest.json"
-
-
-def load_generated_topic_pack(topic: str, db_dir: str | Path) -> TopicPack:
-    path = generated_pack_record_path(topic, db_dir)
-    record = load_topic_pack_record(path)
-    return load_topic_pack_data(record.pack_data, path)
+def load_generated_topic_pack(topic: str, db_dir: str | Path):
+    path = Path(db_dir) / topic / "latest.json"
+    return load_topic_pack_data(load_topic_pack_record(path).pack_data, path)
 
 
 def _next_version(topic_dir: Path) -> int:
