@@ -87,6 +87,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_c_terminology,
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
+        lambda t: _phase_d_actionable_gaps(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
         _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
@@ -552,6 +553,68 @@ def _revision_asks_single_source_proportionality(feedback: str) -> bool:
         ("single-source" in lower or "single source" in lower)
         and any(token in lower for token in ("hypothesis-generating", "proportionality", "reduce narrative depth"))
     )
+
+
+def _phase_d_actionable_gaps(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_actionable_gaps(feedback) or _actionable_gaps_are_present(text):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    outcomes = []
+    for row in rows:
+        outcome = str(row.get("outcome_class") or "").strip()
+        if outcome and outcome not in outcomes:
+            outcomes.append(outcome)
+    outcome_text = ", ".join(_outcome_display(outcome) for outcome in outcomes[:4]) or "the main outcome classes"
+    topic = str(manifest.get("topic") or "").replace("_", " ").strip() if isinstance(manifest, dict) else ""
+    label = topic or "this intervention"
+    section = (
+        "## Gaps Identified\n\n"
+        f"1. Run adequately powered prospective trials in the priority population for {label}, "
+        f"with prespecified clinical endpoints across {outcome_text} and at least 2-year follow-up.\n"
+        "2. Standardize exposure, comparator, dose, measurement timing, and endpoint definitions "
+        "so future syntheses can pool effects instead of resolving heterogeneity narratively.\n"
+        "3. Add safety, function, and patient-relevant endpoints in direct human studies, while "
+        "separating direct outcome evidence from adjacent context before interpreting clinical relevance.\n"
+    )
+    existing = re.search(r"^## (?:Gaps Identified|Evidence-Gap Priority)\b.*?(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if existing:
+        patched = text[:existing.start()] + section + "\n" + text[existing.end():]
+    else:
+        ref = re.search(r"^## References\b", text, flags=re.M)
+        insert_at = ref.start() if ref else len(text)
+        patched = text[:insert_at].rstrip() + "\n\n" + section + "\n" + text[insert_at:].lstrip()
+    return patched, [FinalizerLogEntry(
+        phase="D_actionable_gaps",
+        rule="write_prioritized_actionable_gaps",
+        n_changes=1,
+        detail="added prioritized actionable Gaps Identified section",
+    )]
+
+
+def _revision_asks_actionable_gaps(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return "gaps identified" in lower and any(token in lower for token in ("actionable", "future research", "next steps"))
+
+
+def _actionable_gaps_are_present(text: str) -> bool:
+    match = re.search(r"^## (?:Gaps Identified|Evidence-Gap Priority)\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if not match:
+        return False
+    scope = match.group(1).lower()
+    if len(scope.split()) < 40:
+        return False
+    tokens = (
+        "sample size", "powered", "priority population", "population",
+        "follow-up", "endpoint", "trial", "prospective", "safety",
+        "dose", "comparator", "measurement",
+    )
+    return sum(1 for token in tokens if token in scope) >= 3
 
 
 _REFERENCE_ID_RE = re.compile(
