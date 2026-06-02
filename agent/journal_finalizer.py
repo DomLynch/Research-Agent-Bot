@@ -539,7 +539,9 @@ _DIRECTIONAL_CODING_NOTE = (
     "specific outcome class; it is not an absence-of-support finding. Positive, "
     "negative, mixed, unclear, and null are outcome-specific codes, so a bounded "
     "rationale can be supported by adjacent or different outcome evidence while "
-    "another outcome remains null or unclear."
+    "another outcome remains null or unclear. Contextual claims contain "
+    "bibliographic background, mechanism, methods, exposure definitions, or "
+    "population context rather than effect-direction evidence."
 )
 
 
@@ -570,6 +572,7 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
     return (
         "directional coding" in lower
         or ("no extracted directional signal" in lower and "clarify" in lower)
+        or ("contextual claim" in lower and "directional signal" in lower)
         or ("null" in lower and "absence of support" in lower)
     )
 

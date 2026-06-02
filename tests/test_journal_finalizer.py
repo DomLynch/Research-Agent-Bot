@@ -327,6 +327,24 @@ def test_directional_coding_note_repairs_schema_ask(tmp_path: Path) -> None:
     ]
 
 
+def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify what the contextual claims contain if no directional signal was "
+        "extracted, and explain the discrepancy between the organized evidence "
+        "landscape and the near-total absence of directional findings."
+    )
+    paper = "## Evidence Landscape\n\nNo extracted directional signal dominates.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, _ = journal_finalizer._phase_d_directional_coding_note(paper, tmp_path)
+
+    assert "Contextual claims contain bibliographic background" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
 def test_evidence_boundary_note_repairs_broad_claim_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
