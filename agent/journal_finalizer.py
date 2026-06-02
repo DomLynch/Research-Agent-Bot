@@ -85,7 +85,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_a_methods_replace(t, out_dir),
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_c_terminology,
-        _phase_d_source_verification_transparency,
+        lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
         _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
@@ -470,8 +470,12 @@ _SOURCE_VERIFICATION_SENTENCE = (
 
 
 def _phase_d_source_verification_transparency(
-    text: str,
+    text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_source_verification_transparency(feedback):
+        return text, []
     methods = re.search(r"^## Methods\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not methods:
         return text, []
@@ -490,6 +494,15 @@ def _phase_d_source_verification_transparency(
         n_changes=1,
         detail="added source-bundle verification transparency sentence to Methods",
     )]
+
+
+def _revision_asks_source_verification_transparency(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        ("source bundle" in lower or "reference-only" in lower)
+        and any(token in lower for token in ("external verification", "independently verified", "exact statistics", "detailed quantitative"))
+        and any(token in lower for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
+    )
 
 
 _REFERENCE_ID_RE = re.compile(

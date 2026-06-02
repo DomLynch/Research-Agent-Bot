@@ -126,7 +126,7 @@ def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp
     assert any(entry.phase == "N_surface_floor_backstop" for entry in report.entries)
 
 
-def test_source_verification_transparency_is_inserted_into_methods() -> None:
+def test_source_verification_transparency_is_inserted_into_methods(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
     ask = (
@@ -135,8 +135,9 @@ def test_source_verification_transparency_is_inserted_into_methods() -> None:
         "supplementary artifacts (manifest.json, methods_pack.json)."
     )
     paper = "## Methods\n\nWe screened sources.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
 
-    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper)
+    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper, tmp_path)
 
     assert "source bundle and supplementary artifacts" in fixed
     assert "manifest.json" in fixed and "methods_pack.json" in fixed
@@ -151,7 +152,7 @@ def test_source_verification_transparency_is_inserted_into_methods() -> None:
     ]
 
 
-def test_source_verification_transparency_is_not_duplicated() -> None:
+def test_source_verification_transparency_is_not_duplicated(tmp_path: Path) -> None:
     paper = (
         "## Methods\n\nThe source bundle and supplementary artifacts "
         "(manifest.json and methods_pack.json when present) define the evidence state; "
@@ -159,7 +160,23 @@ def test_source_verification_transparency_is_not_duplicated() -> None:
         "and the cited source records.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
     )
 
-    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper)
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": (
+            "reference-only source bundle limits external verification of detailed "
+            "quantitative claims; consult supplementary artifacts manifest.json and "
+            "methods_pack.json"
+        ),
+    }))
+    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
+def test_source_verification_transparency_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Methods\n\nWe screened sources.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+
+    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper, tmp_path)
 
     assert fixed == paper
     assert logs == []
