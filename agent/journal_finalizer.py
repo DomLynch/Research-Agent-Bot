@@ -86,6 +86,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_c_terminology,
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
+        lambda t: _phase_d_prisma_all_included_rationale(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
@@ -549,7 +550,40 @@ _DIRECTIONAL_CODING_NOTE = (
     "another outcome remains null or unclear. Contextual claims contain "
     "bibliographic background, mechanism, methods, exposure definitions, or "
     "population context rather than effect-direction evidence."
-)
+    )
+
+
+def _phase_d_prisma_all_included_rationale(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_prisma_all_included_rationale(feedback):
+        return text, []
+    note = (
+        "PRISMA-ScR inclusion rationale: 100% of retrieved records were included "
+        "because the screening scope used prequalified eligibility criteria from "
+        "the topic pack; the rationale is that all retrieved records already met "
+        "the source-bound inclusion scope."
+    )
+    patched, n = _prepend_section_paragraph(text, "Methods", note)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_prisma_all_included_rationale",
+        rule="explain_all_retrieved_records_included",
+        n_changes=1,
+        detail="added PRISMA-ScR 100%-included rationale to Methods",
+    )]
+
+
+def _revision_asks_prisma_all_included_rationale(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "100%" in lower
+        and any(token in lower for token in ("retrieved records", "records were included", "included"))
+        and any(token in lower for token in ("prisma", "eligibility criteria", "eligibility"))
+    )
 
 
 def _phase_d_directional_coding_note(

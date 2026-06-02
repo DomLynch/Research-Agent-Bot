@@ -656,6 +656,29 @@ def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> 
     assert logs[0].phase == "D_source_statistics_landscape"
 
 
+def test_prisma_all_included_rationale_repairs_revision_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Clarify why 100% of retrieved records were included, given the stated PRISMA-ScR methodology and eligibility criteria."
+    paper = "## Methods\n\nThe PRISMA-ScR flow retained all records.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_prisma_all_included_rationale(paper, tmp_path)
+
+    assert "100% of retrieved records were included because" in fixed
+    assert "prequalified eligibility criteria" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_prisma_all_included_rationale",
+            rule="explain_all_retrieved_records_included",
+            n_changes=1,
+            detail="added PRISMA-ScR 100%-included rationale to Methods",
+        )
+    ]
+
+
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
