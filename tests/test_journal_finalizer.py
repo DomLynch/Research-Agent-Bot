@@ -182,6 +182,68 @@ def test_source_verification_transparency_is_revision_scoped(tmp_path: Path) -> 
     assert logs == []
 
 
+def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "For single-source outcome classes (frailty, immune/inflammation), "
+        "explicitly state upfront that these are hypothesis-generating only and "
+        "reduce narrative depth accordingly to maintain proportionality."
+    )
+    paper = "## Evidence Landscape\n\nEvidence summary.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"outcome_class": "frailty"},
+            {"outcome_class": "immune_inflammation"},
+            {"outcome_class": "cardiometabolic"},
+            {"outcome_class": "cardiometabolic"},
+        ]
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_single_source_proportionality(paper, tmp_path)
+
+    assert "Single-source outcome classes" in fixed
+    assert "hypothesis-generating" in fixed
+    assert "proportional narrative depth" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_single_source_proportionality",
+            rule="state_single_source_proportionality",
+            n_changes=1,
+            detail="added single-source proportionality statement for 2 outcome class(es)",
+        )
+    ]
+
+
+def test_single_source_proportionality_statement_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Evidence Landscape\n\nEvidence summary.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{"outcome_class": "frailty"}]}))
+
+    fixed, logs = journal_finalizer._phase_d_single_source_proportionality(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
+def test_single_source_proportionality_statement_is_not_duplicated(tmp_path: Path) -> None:
+    ask = "single-source outcome classes should be hypothesis-generating to maintain proportionality"
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Single-source outcome classes are treated as hypothesis-generating and receive "
+        "proportional narrative depth rather than standalone evidentiary weight.\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{"outcome_class": "frailty"}]}))
+
+    fixed, logs = journal_finalizer._phase_d_single_source_proportionality(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_reference_identifier_enrichment_uses_registry_ids(tmp_path: Path) -> None:
     paper = (
         "## Abstract\n\nSmith 2024 and Jones 2025 reported.\n\n"

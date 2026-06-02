@@ -86,6 +86,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_c_terminology,
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
+        lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
         _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
@@ -502,6 +503,54 @@ def _revision_asks_source_verification_transparency(feedback: str) -> bool:
         ("source bundle" in lower or "reference-only" in lower)
         and any(token in lower for token in ("external verification", "independently verified", "exact statistics", "detailed quantitative"))
         and any(token in lower for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
+    )
+
+
+def _phase_d_single_source_proportionality(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_single_source_proportionality(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    counts: dict[str, int] = {}
+    for row in rows:
+        outcome = str(row.get("outcome_class") or "").strip()
+        if outcome:
+            counts[outcome] = counts.get(outcome, 0) + 1
+    singletons = [_outcome_display(outcome) for outcome, count in sorted(counts.items()) if count == 1]
+    if not singletons:
+        return text, []
+    statement = (
+        "Single-source outcome classes"
+        f" ({', '.join(singletons[:6])}) are treated as hypothesis-generating "
+        "and receive proportional narrative depth rather than standalone "
+        "evidentiary weight."
+    )
+    if "single-source outcome classes" in text.lower() and "hypothesis-generating" in text.lower():
+        return text, []
+    for heading in ("Evidence Landscape", "Key Findings", "Limitations", "Conclusion"):
+        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        if match:
+            insert_at = match.end()
+            patched = text[:insert_at] + "\n\n" + statement + text[insert_at:]
+            return patched, [FinalizerLogEntry(
+                phase="D_single_source_proportionality",
+                rule="state_single_source_proportionality",
+                n_changes=1,
+                detail=f"added single-source proportionality statement for {len(singletons)} outcome class(es)",
+            )]
+    return text, []
+
+
+def _revision_asks_single_source_proportionality(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        ("single-source" in lower or "single source" in lower)
+        and any(token in lower for token in ("hypothesis-generating", "proportionality", "reduce narrative depth"))
     )
 
 
