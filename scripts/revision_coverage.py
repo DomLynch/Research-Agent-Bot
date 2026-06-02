@@ -91,10 +91,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
     if _asks_evidence_type_metadata(lower):
         return _evidence_type_metadata_is_resolved(paper_md)
-    if _asks_source_directness_breakdown(lower):
-        return _source_directness_breakdown_is_stated(paper_md)
     if _asks_source_inclusion_rationale(lower):
         return _source_inclusion_rationale_is_stated(paper_md)
+    if _asks_source_directness_breakdown(lower):
+        return _source_directness_breakdown_is_stated(paper_md)
     if _asks_source_statistics_landscape(lower):
         return _source_statistics_landscape_is_stated(paper_md)
     if _asks_source_verification_transparency(lower):
