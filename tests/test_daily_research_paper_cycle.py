@@ -1570,6 +1570,19 @@ def test_terminal_source_precision_handled_row_bypasses_round_cap(tmp_path: Path
     assert marker in cycle._handled_revision_ids(ledger_dir)
 
 
+def test_terminal_receipt_preflight_handled_row_bypasses_round_cap(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    marker = cycle.submit_bridge._title_marker("Research Synthesis: HRV Autonomic Aging — full paper")
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": "Research Synthesis: HRV Autonomic Aging — full paper",
+        "status": "terminal_receipt_preflight_insufficient",
+    }]})
+
+    assert marker in cycle._handled_revision_ids(ledger_dir)
+
+
 def test_submitted_revision_waits_for_newer_review_before_reprocessing(tmp_path: Path) -> None:
     source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
     paper = source_run / "full_paper.md"
@@ -2461,6 +2474,18 @@ def test_recent_preflight_blocked_topics_skip_after_one_recent_failure(tmp_path:
     assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"epigenetic_clocks"}
 
 
+def test_recent_preflight_blocked_topics_include_receipt_preflight(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-06-02",
+        [{"topic": "hrv_autonomic_aging", "gate_status": "receipt_preflight_insufficient", "submitted": 0}],
+    )
+
+    assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"hrv_autonomic_aging"}
+
+
 def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "gdf11", target_journal=True)
     _prior_run(tmp_path, "gdf11", receipts=40, tensions=8, primary=3)
@@ -2859,6 +2884,51 @@ def test_cycle_skips_sparse_receipt_topic_before_synthesis(tmp_path: Path, monke
     assert synthesized == []
     assert ledger["status"] == "receipt_preflight_skipped_no_submission"
     assert ledger["attempts"][0]["receipt_preflight"]["n_receipts"] == 5
+
+
+def test_revise_lane_terminalizes_sparse_receipt_preflight(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "hrv_autonomic_aging", target_journal=True)
+    source = _prior_run(tmp_path, "hrv_autonomic_aging", receipts=12, tensions=2, primary=1, level=5)
+    paper = source / "full_paper.md"
+    paper.write_text("# Research Synthesis: HRV Autonomic Aging\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": "hrv_autonomic_aging",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {
+        "passed": False,
+        "status": "receipt_preflight_insufficient",
+        "n_receipts": 2,
+        "min_receipts": 10,
+    })
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("sparse receipt revise must not synthesize")))
+    request = {
+        "artifactId": "hrv-review",
+        "title": "Research Synthesis: HRV Autonomic Aging",
+        "feedback": "Revise with better support.",
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-02",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["status"] == "revise_terminal_receipt_preflight_insufficient"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_receipt_preflight_insufficient"
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][0]["status"] == "terminal_receipt_preflight_insufficient"
 
 
 def test_cycle_quarantines_source_precision_misses_before_synthesis(tmp_path: Path, monkeypatch) -> None:

@@ -926,6 +926,7 @@ def _failure_class(status: str) -> str:
         "corpus_missing_dry_run": "B_corpus_fixable",
         "corpus_seed_empty": "B_corpus_fixable",
         "corpus_seed_failed": "B_corpus_fixable",
+        "receipt_preflight_insufficient": "B_corpus_fixable",
         "missing": "C_writer_fixable",
         "duplicate_submission_fingerprint": "D_no_action",
         "duplicate_remote_publication": "D_no_action",
@@ -1849,20 +1850,32 @@ def run_cycle(
                     else _receipt_preflight(selected, out_dir, timeout=timeout)
                 )
                 if not receipt_preflight.get("passed"):
+                    gate_status = (
+                        "terminal_receipt_preflight_insufficient"
+                        if revision_source
+                        else str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
+                    )
                     attempt = {
                         "topic": selected,
                         "out_dir": out_dir.name,
                         "revise_attempt": revise_attempt,
                         "synthesis_return_code": None,
-                        "submit_status": str(receipt_preflight.get("status") or "receipt_preflight_insufficient"),
-                        "gate_status": str(receipt_preflight.get("status") or "receipt_preflight_insufficient"),
-                        "failure_class": "B_corpus_fixable",
+                        "submit_status": gate_status,
+                        "gate_status": gate_status,
+                        "failure_class": _failure_class(gate_status),
                         "submitted": 0,
                         "receipt_preflight": receipt_preflight,
                     }
                     ledger["attempts"].append(attempt)
-                    ledger["status"] = "receipt_preflight_skipped_no_submission"
+                    ledger["status"] = (
+                        "revise_terminal_receipt_preflight_insufficient"
+                        if revision_source
+                        else "receipt_preflight_skipped_no_submission"
+                    )
                     ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    if revision_source:
+                        _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                        remote_revision = None
                     attempted.add(selected)
                     break
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
