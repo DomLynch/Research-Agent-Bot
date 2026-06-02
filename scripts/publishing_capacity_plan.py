@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import sys
 from pathlib import Path
 from typing import Any, Sequence
@@ -17,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import daily_research_paper_cycle as cycle  # noqa: E402
+from materialize_fact_topic_packs import DSN_ENV_NAMES, dsn_from_env  # noqa: E402
 from source_topic_specificity import generated_pack_publishable  # noqa: E402
 
 RECOMMENDED_SUCCESS_BUFFER = 0.60
@@ -56,6 +58,24 @@ def _expansion_candidates(records: Sequence[dict[str, Any]], topics: set[str], *
             "candidate_count": int(record.get("candidate_count") or 0),
         })
     return sorted(candidates, key=lambda item: (-item["candidate_count"], item["slug"]))[:limit]
+
+
+def _bulk_materializer_access() -> dict[str, Any]:
+    dsn = dsn_from_env()
+    if dsn:
+        return {"status": "ok", "mode": "postgres", "env_names_checked": list(DSN_ENV_NAMES)}
+    if os.getenv("RESEARKA_DATABASE_URL", "").strip() and os.getenv("RESEARKA_DATABASE_TOKEN", "").strip():
+        return {
+            "status": "missing_postgres_dsn",
+            "mode": "http_search_only",
+            "env_names_checked": list(DSN_ENV_NAMES),
+            "reason": "bulk topic materialization needs SQL access to facts_tier2; HTTP search can retrieve facts but cannot scan/group the full fact table",
+        }
+    return {
+        "status": "missing_database_credentials",
+        "mode": "none",
+        "env_names_checked": list(DSN_ENV_NAMES),
+    }
 
 
 def capacity_plan(
@@ -202,7 +222,7 @@ def live_plan(*, target: int, years: float, interval_minutes: int) -> dict[str, 
         known_unique_topics=len(static_topics | generated_topics),
         submitted_unique_topics=len(_submitted_topics()),
         expansion_candidates=_expansion_candidates(records, topic_set),
-    )
+    ) | {"bulk_materializer_access": _bulk_materializer_access()}
 
 
 def main(argv: list[str] | None = None) -> int:

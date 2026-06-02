@@ -145,6 +145,15 @@ HIGH_PRECISION_ACTION_TERMS = {
     "inhibitor", "inhibitors", "rehabilitation", "restriction", "supplementation",
     "therapy", "transplantation", "treatment", "vaccination", "vaccine",
 }
+DSN_ENV_NAMES = ("RESEARKA_DATABASE_DSN", "DATABASE_URL", "POSTGRES_DSN", "POSTGRES_URL")
+
+
+def dsn_from_env() -> str:
+    for name in DSN_ENV_NAMES:
+        value = os.getenv(name, "").strip()
+        if value.startswith(("postgres://", "postgresql://")):
+            return value
+    return ""
 
 
 def build_topic_name(row: dict[str, Any]) -> str:
@@ -283,7 +292,7 @@ def _high_precision_pack(pack: object) -> bool:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--db-dir", type=Path, default=REPO_ROOT / "topic_packs_db")
-    parser.add_argument("--dsn", default=os.getenv("RESEARKA_DATABASE_DSN", ""))
+    parser.add_argument("--dsn", default=dsn_from_env())
     parser.add_argument("--rows-json", type=Path, help="Use exported rows instead of live Postgres")
     parser.add_argument("--min-exact-facts", type=int, default=2)
     parser.add_argument("--min-papers", type=int, default=2)
@@ -304,7 +313,10 @@ def main(argv: list[str] | None = None) -> int:
             raise SystemExit("--rows-json must contain a JSON list")
     else:
         if not args.dsn:
-            raise SystemExit("Provide --dsn/RESEARKA_DATABASE_DSN or --rows-json")
+            raise SystemExit(
+                "Provide --dsn, one Postgres DSN env "
+                f"({', '.join(DSN_ENV_NAMES)}), or --rows-json"
+            )
         rows = fetch_rows(
             dsn=args.dsn,
             min_exact_facts=args.min_exact_facts,

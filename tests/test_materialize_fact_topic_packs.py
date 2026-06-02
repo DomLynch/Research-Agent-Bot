@@ -3,6 +3,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import pytest
+
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
@@ -200,3 +202,12 @@ def test_fact_intervention_cross_strategy_promotes_repeated_interventions() -> N
     assert "lower(topic) != lower(sub_topic)" in sql
     assert "lower(topic) NOT LIKE 'none%%'" in sql
     assert "'placebo'" in sql
+
+
+def test_dsn_from_env_accepts_common_postgres_env_names(monkeypatch: pytest.MonkeyPatch) -> None:
+    for name in materializer.DSN_ENV_NAMES:
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("RESEARKA_DATABASE_URL", "https://database.researka.org")
+    assert materializer.dsn_from_env() == ""
+    monkeypatch.setenv("DATABASE_URL", "postgresql://user:pass@localhost/db")
+    assert materializer.dsn_from_env() == "postgresql://user:pass@localhost/db"
