@@ -172,3 +172,23 @@ def test_live_plan_counts_submitted_topics_and_expansion_candidates(tmp_path: Pa
     assert plan["unique_topic_expansion"]["known_unique_topics"] == 3
     assert plan["unique_topic_expansion"]["submitted_unique_topics"] == 2
     assert plan["unique_topic_expansion"]["next_generated_candidates"][0]["slug"] == "pcsk9_inhibitors_longevity"
+
+
+def test_live_plan_reports_http_only_materializer_gap(tmp_path: Path, monkeypatch) -> None:
+    topic_packs = tmp_path / "topic_packs"
+    topic_db = tmp_path / "topic_packs_db"
+    runs = tmp_path / "runs"
+    topic_packs.mkdir()
+    topic_db.mkdir()
+    monkeypatch.setattr(planner.cycle, "TOPIC_PACKS", topic_packs)
+    monkeypatch.setattr(planner.cycle, "TOPIC_PACKS_DB", topic_db)
+    monkeypatch.setattr(planner.cycle, "RUNS", runs)
+    for name in planner.DSN_ENV_NAMES:
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("RESEARKA_DATABASE_URL", "https://database.researka.org")
+    monkeypatch.setenv("RESEARKA_DATABASE_TOKEN", "token")
+
+    plan = planner.live_plan(target=5000, years=2, interval_minutes=120)
+
+    assert plan["bulk_materializer_access"]["status"] == "missing_postgres_dsn"
+    assert plan["bulk_materializer_access"]["mode"] == "http_search_only"
