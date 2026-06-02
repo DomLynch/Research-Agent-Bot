@@ -682,14 +682,26 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     paper = "## Evidence Landscape\n\nThe corpus includes several sources.\n"
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
-        {"citation_token": "Smith 2024", "outcome_class": "cardiometabolic"},
-        {"citation_token": "Jones 2025", "outcome_class": "immune"},
+        {
+            "citation_token": "Smith 2024",
+            "outcome_class": "cardiometabolic",
+            "directness": "direct",
+            "evidence_tier": "A1",
+        },
+        {
+            "citation_token": "Jones 2025",
+            "outcome_class": "immune",
+            "directness": "review",
+            "evidence_tier": "B1",
+        },
     ]}))
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
-    assert "Source outcome-class map: Smith 2024 -> outcome=Cardiometabolic; Jones 2025 -> outcome=Immune." in fixed
+    assert "### Source Outcome-Class Map" in fixed
+    assert "- Smith 2024: outcome=Cardiometabolic; directness=direct; tier=A1." in fixed
+    assert "- Jones 2025: outcome=Immune; directness=review; tier=B1." in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 

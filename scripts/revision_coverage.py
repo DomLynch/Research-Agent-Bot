@@ -118,7 +118,7 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
             or "direct interventional hard-endpoint evidence" in text
         )
     if _asks_evidence_boundary(lower):
-        return _evidence_boundary_is_stated(paper_md)
+        return _evidence_boundary_is_stated(paper_md, lower)
     if _asks_conclusion_unproven_humans(lower):
         return _conclusion_unproven_humans_is_stated(paper_md)
     if _asks_directional_coding(lower):
@@ -586,7 +586,12 @@ def _source_directness_breakdown_is_stated(paper_md: str) -> bool:
     return has_map and has_directness and has_direct and has_adjacent
 
 
-def _evidence_boundary_is_stated(paper_md: str) -> bool:
+def _evidence_boundary_is_stated(paper_md: str, ask: str = "") -> bool:
+    if "abstract and key findings" in ask:
+        return all(
+            _section_evidence_boundary_is_stated(_section(paper_md, name))
+            for name in ("Abstract", "Key Findings")
+        )
     scope = " ".join(
         part for part in (
             _abstract(paper_md),
@@ -600,6 +605,16 @@ def _evidence_boundary_is_stated(paper_md: str) -> bool:
     directness = any(token in scope for token in ("direct interventional hard-endpoint evidence", "direct clinical evidence", "adjacent/mechanistic", "mechanistic"))
     population = "population-level" in scope or "broad causal" in scope or "policy claims" in scope
     return bounded and directness and population
+
+
+def _section_evidence_boundary_is_stated(section: str) -> bool:
+    scope = section.lower()
+    return (
+        bool(scope)
+        and any(token in scope for token in ("hypothesis-generating", "not definitive", "does not support broad"))
+        and any(token in scope for token in ("direct interventional", "adjacent/mechanistic", "mechanistic"))
+        and any(token in scope for token in ("broad causal", "policy claims", "population-level"))
+    )
 
 
 def _conclusion_unproven_humans_is_stated(paper_md: str) -> bool:

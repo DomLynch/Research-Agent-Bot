@@ -614,7 +614,7 @@ def _phase_d_directional_coding_note(
                 )]
         return text, []
     for heading in ("Evidence Landscape", "Evidence Snapshot", "Results", "Key Findings"):
-        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        match = re.search(rf"^## {re.escape(heading)}\b", patched, flags=re.M)
         if match:
             patched = text[:match.end()] + "\n\n" + _DIRECTIONAL_CODING_NOTE + text[match.end():]
             return patched, [FinalizerLogEntry(
@@ -654,19 +654,28 @@ def _phase_d_evidence_boundary_note(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     if not _revision_asks_evidence_boundary_note(feedback):
         return text, []
-    if "evidence-boundary note:" in text.lower():
-        return text, []
-    for heading in ("Abstract", "Key Findings", "Conclusion"):
+    lower = " ".join(feedback.lower().split())
+    headings = [h for h in ("Abstract", "Key Findings", "Conclusion") if h.lower() in lower]
+    if not headings:
+        headings = ["Abstract", "Key Findings", "Conclusion"]
+    patched = text
+    n = 0
+    for heading in headings:
+        section = re.search(rf"^## {re.escape(heading)}\b(.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
+        if section and "evidence-boundary note:" in section.group(1).lower():
+            continue
         match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
         if match:
-            patched = text[:match.end()] + "\n\n" + _EVIDENCE_BOUNDARY_NOTE + text[match.end():]
-            return patched, [FinalizerLogEntry(
-                phase="D_evidence_boundary",
-                rule="state_no_broad_population_level_proof",
-                n_changes=1,
-                detail=f"added evidence-boundary note to {heading}",
-            )]
-    return text, []
+            patched = patched[:match.end()] + "\n\n" + _EVIDENCE_BOUNDARY_NOTE + patched[match.end():]
+            n += 1
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_evidence_boundary",
+        rule="state_no_broad_population_level_proof",
+        n_changes=n,
+        detail=f"added evidence-boundary note to {n} section(s)",
+    )]
 
 
 def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
@@ -1105,8 +1114,10 @@ def _phase_d_source_outcome_class_map(
     for row in rows[:40]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
-        examples.append(f"{citation} -> outcome={outcome}")
-    note = "Source outcome-class map: " + "; ".join(examples) + "."
+        directness = str(row.get("directness") or "unknown").strip() or "unknown"
+        tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
+        examples.append(f"- {citation}: outcome={outcome}; directness={directness}; tier={tier}.")
+    note = "### Source Outcome-Class Map\n\n" + "\n".join(examples)
     patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
     if not n:
         return text, []
