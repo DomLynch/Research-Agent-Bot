@@ -631,7 +631,7 @@ def test_evidence_boundary_note_is_revision_scoped(tmp_path: Path) -> None:
 def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Path) -> None:
     paper = (
         "## Abstract\n\nThis synthesis supports clinical translation.\n\n"
-        "## Conclusion\n\nThe evidence supports use in practice.\n"
+        "## Conclusion\n\nThe current corpus may support the topic as a general health or lifestyle intervention where otherwise indicated.\n"
     )
     (tmp_path / "manifest.json").write_text(json.dumps({
         "receipts": [
@@ -650,14 +650,16 @@ def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Pa
     assert "hypothesis-generating only" in fixed
     assert "no direct interventional hard-endpoint evidence" in fixed
     assert "does not support broad causal, clinical, or policy claims" in fixed
+    assert "may support the topic as a general health or lifestyle intervention" not in fixed
+    assert "non-supportive for clinical efficacy or general health-intervention claims" in fixed
     assert refixed == fixed
     assert relogs == []
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
             phase="D_evidence_honesty_guard",
             rule="bound_null_signal_and_directness_claims",
-            n_changes=2,
-            detail="added evidence-honesty note to 2 section(s); null_or_no_signal=3/4; direct=0/4",
+            n_changes=3,
+            detail="added evidence-honesty note to 2 section(s); replaced unsupported conclusion claims=1; null_or_no_signal=3/4; direct=0/4",
         )
     ]
 

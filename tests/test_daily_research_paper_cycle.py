@@ -1331,6 +1331,20 @@ def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: P
     )
 
 
+def test_abstract_only_truncation_revision_ask_accepts_complete_abstract(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\n"
+        "This abstract is complete and ends with a normal sentence.\n\n"
+        "## Results\n\nEvidence remains mixed.\n",
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(out_dir, "Fix the truncated sentence in the abstract.")
+
+
 def test_payload_source_bundle_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()

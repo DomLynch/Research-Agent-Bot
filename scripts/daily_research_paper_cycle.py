@@ -1064,6 +1064,8 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         return True
     if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
         return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
+    if "truncated" in ask_lower and "abstract" in ask_lower and _abstract_has_complete_sentence(paper_text):
+        return True
     payload_section_ask = "key findings" in ask_lower or "evidence landscape" in ask_lower
     payload_clip_ask = "truncated" in ask_lower and "abstract" in ask_lower and "research question" in ask_lower
     source_topic_ask = "source" in ask_lower and any(token in ask_lower for token in ("address", "off-topic", "off topic", "topic"))
@@ -1132,6 +1134,12 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     landscape = str(sections.get("Evidence Landscape") or "")
     findings = str(sections.get("Key Findings") or "")
     return bool(findings and landscape and findings != landscape and "|" not in findings)
+
+
+def _abstract_has_complete_sentence(paper_text: str) -> bool:
+    match = re.search(r"^##\s+abstract\b(?P<body>.*?)(?=^##\s+|\Z)", paper_text, flags=re.M | re.S)
+    body = " ".join((match.group("body") if match else "").split())
+    return bool(body and re.search(r"[.!?][\"')\]]?$", body) and not body.endswith(("...", "\u2026")))
 
 
 def _strict_source_topic_revision_ask(ask_lower: str) -> bool:
