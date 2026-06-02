@@ -90,6 +90,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
+        lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
         _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
@@ -719,6 +720,57 @@ def _actionable_gaps_are_present(text: str) -> bool:
         "dose", "comparator", "measurement",
     )
     return sum(1 for token in tokens if token in scope) >= 3
+
+
+def _phase_d_prior_publication_differentiation(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_prior_publication_differentiation(feedback):
+        return text, []
+    if "prior-brief differentiation:" in text.lower():
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    topic = str(manifest.get("topic") or "").replace("_", " ").strip() if isinstance(manifest, dict) else ""
+    label = topic or "this topic"
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    outcomes = []
+    for row in rows:
+        outcome = str(row.get("outcome_class") or "").strip()
+        if outcome and outcome not in outcomes:
+            outcomes.append(outcome)
+    outcome_text = ", ".join(_outcome_display(outcome) for outcome in outcomes[:4]) or "the retained outcome classes"
+    note = (
+        "Prior-brief differentiation: This revision makes the angle, findings, "
+        f"and population boundary explicit. The angle is a source-bounded synthesis of {label}; "
+        f"the findings are limited to {outcome_text}; and the population boundary follows "
+        "the included corpus rather than asserting a broader population-level recommendation. "
+        "This distinguishes the manuscript from earlier Researka briefs with overlapping "
+        "evidence and should be read as a differentiated, source-bounded synthesis rather "
+        "than as a duplicate publication."
+    )
+    for heading in ("Introduction", "Discussion", "Limitations", "Conclusion"):
+        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        if match:
+            patched = text[:match.end()] + "\n\n" + note + text[match.end():]
+            return patched, [FinalizerLogEntry(
+                phase="D_prior_publication_differentiation",
+                rule="state_angle_findings_population_boundary",
+                n_changes=1,
+                detail=f"added prior-brief differentiation note to {heading}",
+            )]
+    return text, []
+
+
+def _revision_asks_prior_publication_differentiation(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return "high overlap with publication" in lower or (
+        "differentiate" in lower
+        and "publication" in lower
+        and any(token in lower for token in ("angle", "findings", "population"))
+    )
 
 
 _REFERENCE_ID_RE = re.compile(

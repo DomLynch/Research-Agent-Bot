@@ -257,6 +257,49 @@ def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> No
     assert logs == []
 
 
+def test_prior_publication_differentiation_repairs_overlap_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "High overlap with publication 5f852f5b. Differentiate angle, "
+        "findings, or population to resubmit."
+    )
+    paper = "## Introduction\n\nThis evidence brief summarizes the current corpus.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "melatonin_aging",
+        "receipts": [
+            {"outcome_class": "sleep_architecture"},
+            {"outcome_class": "safety_comorbidity"},
+        ],
+    }))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_prior_publication_differentiation(paper, tmp_path)
+
+    assert "Prior-brief differentiation:" in fixed
+    assert "angle, findings, and population boundary" in fixed
+    assert "retained outcome classes" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_prior_publication_differentiation",
+            rule="state_angle_findings_population_boundary",
+            n_changes=1,
+            detail="added prior-brief differentiation note to Introduction",
+        )
+    ]
+
+
+def test_prior_publication_differentiation_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Introduction\n\nThis evidence brief summarizes the current corpus.\n"
+
+    fixed, logs = journal_finalizer._phase_d_prior_publication_differentiation(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_directional_coding_note_repairs_schema_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

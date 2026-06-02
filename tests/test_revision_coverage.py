@@ -361,6 +361,32 @@ def test_deterministic_unmet_still_flags_identifierless_reference_entry() -> Non
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_deterministic_unmet_flags_missing_prior_publication_differentiation() -> None:
+    ask = (
+        "High overlap with publication 5f852f5b. Differentiate angle, "
+        "findings, or population to resubmit."
+    )
+    paper = "## Introduction\n\nThis evidence brief summarizes the current corpus.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_prior_publication_differentiation() -> None:
+    ask = (
+        "High overlap with publication 5f852f5b. Differentiate angle, "
+        "findings, or population to resubmit."
+    )
+    paper = (
+        "## Introduction\n\n"
+        "Prior-brief differentiation: This revision makes the angle, findings, "
+        "and population boundary explicit. The angle is a source-bounded synthesis; "
+        "the findings are limited to cardiometabolic and sleep outcomes; and the "
+        "population boundary follows the included corpus.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_missing_source_verification_transparency() -> None:
     ask = (
         "Add a verification transparency statement acknowledging that the reference-only source bundle "
