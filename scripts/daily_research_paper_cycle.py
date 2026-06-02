@@ -365,6 +365,30 @@ def _source_precision_repair_topics(ledger_dir: Path, *, now: dt.datetime | None
     return out
 
 
+def _unrepairable_source_precision_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    out: set[str] = set()
+    for path in ledger_dir.glob("*.json"):
+        if path.name.startswith("_"):
+            continue
+        ledger = _read_json(path)
+        started = _parse_time(str(ledger.get("started_at") or ""))
+        if started is None or started < cutoff:
+            continue
+        for attempt in ledger.get("attempts", []):
+            if not isinstance(attempt, dict):
+                continue
+            repair = attempt.get("source_precision_repair")
+            if (
+                isinstance(repair, dict)
+                and repair.get("status") == "source_precision_repair_incomplete"
+                and int(repair.get("n_quant_claims") or 0) == 0
+                and attempt.get("topic")
+            ):
+                out.add(str(attempt["topic"]))
+    return out
+
+
 def _current_low_source_precision_topics(topics: list[str]) -> set[str]:
     out: set[str] = set()
     for topic in topics:
@@ -1592,6 +1616,24 @@ def run_cycle(
                 ledger["status"] = "revise_terminal_surface_repeat"
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 _mark_revision_handled(ledger_dir, revision_source, status="terminal_surface_repeat")
+                attempted.add(selected)
+                remote_revision = None
+                continue
+            if revision_source and selected in _unrepairable_source_precision_topics(ledger_dir):
+                gate_status = "terminal_source_precision_repair_incomplete"
+                attempt = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": gate_status,
+                    "gate_status": gate_status,
+                    "failure_class": _failure_class(gate_status),
+                    "submitted": 0,
+                }
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "revise_terminal_source_precision_repair_incomplete"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 attempted.add(selected)
                 remote_revision = None
                 continue

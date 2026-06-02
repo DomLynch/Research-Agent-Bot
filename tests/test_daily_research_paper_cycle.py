@@ -3067,6 +3067,41 @@ def test_revise_lane_marks_unrepairable_source_precision_terminal(tmp_path: Path
     assert handled["handled"][0]["status"] == "terminal_source_precision_repair_incomplete"
 
 
+def test_revise_lane_does_not_reseed_recent_unrepairable_source_precision(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "digital_frailty_index", target_journal=True)
+    source = _prior_run(tmp_path, "digital_frailty_index", receipts=37, tensions=113, primary=1, level=5)
+    (source / "full_paper.md").write_text("# Research Synthesis: Digital Frailty Index\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name, "topic": "digital_frailty_index",
+        "fingerprint": cycle.submit_bridge._sha256(source / "full_paper.md"),
+    }])
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-01-revise.json", {
+        "started_at": _recent_start(),
+        "attempts": [{
+            "topic": "digital_frailty_index",
+            "source_precision_repair": {
+                "status": "source_precision_repair_incomplete",
+                "n_quant_claims": 0,
+            },
+        }],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "_terminal_topics", lambda *_a, **_k: set())
+    request = {"artifactId": "digital-frailty-review", "title": "Research Synthesis: Digital Frailty Index",
+               "feedback": "The source bundle includes off-topic records; revise with topic-specific sources."}
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-06-02", run_synthesis=True, submit=True, mode="revise",
+        remote_loader=lambda: (set(), None), revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("known-unrepairable revise must not reseed")),
+    )
+
+    assert ledger["status"] == "revise_terminal_source_precision_repair_incomplete"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_source_precision_repair_incomplete"
+
+
 def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
     """The derived queue view classifies every topic by its strongest signal:
     surface-repeat > preflight-blocked > terminal > submitted > ready."""
