@@ -396,6 +396,18 @@ def test_classification_criteria_note_repairs_outcome_directness_ask(tmp_path: P
     ]
 
 
+def test_classification_criteria_note_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Methods\n\nSources were grouped from the manifest.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Rewrite the Gaps Identified section with actionable future research steps.",
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_classification_criteria_note(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
