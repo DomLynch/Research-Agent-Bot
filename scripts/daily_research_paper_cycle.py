@@ -46,6 +46,7 @@ BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
 DAILY_THROUGHPUT_SUMMARY = "_daily_throughput_summary.json"
 DECISIONS_BY_DAY = "_decisions_by_day.json"
+REVISE_REASONS = "_revise_reasons.json"
 # A Researka revise may be re-processed up to this many rounds per artifact
 # before it is treated as permanently handled. Single-round handling left
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
@@ -539,15 +540,62 @@ def _record_review_decisions(ledger_dir: Path, latest: dict[str, dict[str, Any]]
     data["days"] = days
     data["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
     _write_json(path, data)
+    _record_revise_reasons(ledger_dir, latest)
+
+
+def _record_revise_reasons(ledger_dir: Path, latest: dict[str, dict[str, Any]]) -> None:
+    rows: list[dict[str, Any]] = []
+    bucket_counts: Counter[str] = Counter()
+    for row in sorted(latest.values(), key=_review_ts):
+        if str(row.get("decision") or "").lower() != "revise":
+            continue
+        asks = []
+        for text in _required_revision_items(row):
+            bucket = _revise_reason_bucket(text)
+            asks.append({"bucket": bucket, "text": text})
+            bucket_counts[bucket] += 1
+        if asks:
+            rows.append({
+                "id": str(row.get("artifactId") or row.get("artifact_id") or submit_bridge._title_marker(str(row.get("title") or ""))),
+                "title": str(row.get("title") or ""),
+                "reviewed_at": row.get("reviewedAt") or row.get("reviewed_at"),
+                "asks": asks,
+            })
+    _write_json(ledger_dir / REVISE_REASONS, {
+        "updated_at": dt.datetime.now(dt.UTC).isoformat(),
+        "total_reviews": len(rows),
+        "total_revision_asks": sum(bucket_counts.values()),
+        "bucket_counts": dict(sorted(bucket_counts.items())),
+        "reviews": rows,
+    })
+
+
+def _revise_reason_bucket(text: str) -> str:
+    lower = " ".join(str(text or "").lower().split())
+    taxonomy = (
+        ("directness_honesty", ("direct clinical", "direct interventional", "indirect", "adjacent", "mechanistic", "overclaim", "hypothesis-generating", "broad population-level proof", "no direct")),
+        ("null_signal_reconciliation", ("null directional", "no extracted directional signal", "no directional signal", "strongest signal", "reconcile", "supports", "bounded rationale")),
+        ("source_relevance_classification", ("source bundle", "source directness", "source classification", "outcome class", "evidence_type", "evidence type", "off-topic", "operationalize", "included under")),
+        ("numeric_claim_rigor", ("p-value", "p value", "confidence interval", "significant", "non-significant", "effect direction", "factual error", "statistic")),
+        ("readability_redundancy", ("repetitive", "duplication", "truncated", "grammatical", "readability", "verbatim repetition")),
+        ("actionable_gaps", ("gaps identified", "actionable", "future research", "next steps")),
+    )
+    for bucket, tokens in taxonomy:
+        if any(token in lower for token in tokens):
+            return bucket
+    return "unknown"
+
+
+def _required_revision_items(row: dict[str, Any]) -> list[str]:
+    raw = row.get("requiredRevisions")
+    return [str(item).strip() for item in raw if str(item).strip()] if isinstance(raw, list) else []
 
 
 def _actionable_revisions(row: dict[str, Any]) -> list[str]:
     """Concrete required revisions on a review row. A revise with none (a
     publication-overlap flag, or "no revisions required") has nothing the
     writer can act on — re-rendering it just bounces at the same verdict."""
-    raw = row.get("requiredRevisions")
-    items = [str(item).strip() for item in raw if str(item).strip()] if isinstance(raw, list) else []
-    return [item for item in items if not _calibration_only_revision(item)]
+    return [item for item in _required_revision_items(row) if not _calibration_only_revision(item)]
 
 
 def _calibration_only_revision(text: str) -> bool:

@@ -385,7 +385,19 @@ def _null_signal_conclusion_is_bounded(paper_md: str) -> bool:
         return False
     if "bounded geroscience rationale" in scope and "null" not in scope:
         return False
-    return any(token in scope for token in ("null", "mixed", "hypothesis-generating", "does not support", "not definitive"))
+    support_claim = bool(re.search(r"\bsupports?\b", scope))
+    corrective = any(token in scope for token in (
+        "does not support",
+        "non-supportive",
+        "hypothesis-generating only",
+        "hypothesis-generating and not definitive",
+    ))
+    if support_claim and not corrective:
+        return False
+    return (
+        any(token in scope for token in ("null", "mixed", "no extracted directional signal"))
+        and any(token in scope for token in ("hypothesis-generating", "does not support", "non-supportive", "not definitive"))
+    )
 
 
 def _internal_duplication_scope(paper_md: str, ask: str) -> str:

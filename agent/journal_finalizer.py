@@ -771,7 +771,12 @@ def _phase_d_evidence_honesty_guard(
     for heading in ("Abstract", "Conclusion"):
         if "evidence-honesty note:" in _section_body(patched, heading).lower():
             continue
-        patched, added = _prepend_or_create_section_paragraph(patched, heading, note)
+        match = re.search(rf"^## {re.escape(heading)}\b", patched, flags=re.M)
+        if match:
+            patched = patched[:match.end()] + "\n\n" + note + patched[match.end():]
+            added = 1
+        else:
+            patched, added = _create_section_paragraph(patched, heading, note)
         n += added
     if not n:
         return text, []
@@ -785,7 +790,25 @@ def _phase_d_evidence_honesty_guard(
 
 def _receipt_has_null_or_no_signal(row: dict[str, Any]) -> bool:
     direction = str(row.get("effect_direction") or row.get("direction") or "").lower()
-    return any(token in direction for token in ("null", "no_signal", "no signal", "no extracted directional signal"))
+    return any(token in direction for token in (
+        "null",
+        "no_signal",
+        "no signal",
+        "no_extracted_directional_signal",
+        "no extracted directional signal",
+        "no_directional_signal",
+    ))
+
+
+def _create_section_paragraph(text: str, section: str, paragraph: str) -> tuple[str, int]:
+    for target in ("Results", "Key Findings", "Discussion", "References"):
+        match = re.search(rf"^## {target}\b", text, flags=re.M)
+        if match:
+            insert = f"## {section}\n\n{paragraph}\n\n"
+            prefix = text[:match.start()].rstrip()
+            sep = "\n\n" if prefix else ""
+            return prefix + sep + insert + text[match.start():].lstrip(), 1
+    return text.rstrip() + f"\n\n## {section}\n\n{paragraph}\n", 1
 
 
 def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
