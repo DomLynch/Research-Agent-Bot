@@ -65,6 +65,7 @@ HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 CORPUS_REPAIR_LIMIT = 1
 SOURCE_TOPIC_REPAIR_FLOOR = 0.50
+REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
@@ -919,6 +920,7 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     ask_lower = ask.lower()
     payload_section_ask = "key findings" in ask_lower or "evidence landscape" in ask_lower
     payload_clip_ask = "truncated" in ask_lower and "abstract" in ask_lower and "research question" in ask_lower
+    source_topic_ask = "source" in ask_lower and any(token in ask_lower for token in ("address", "off-topic", "off topic", "topic"))
     source_excerpt_ask = (
         ("source_bundle" in ask_lower or "source bundle" in ask_lower or "source" in ask_lower)
         and any(token in ask_lower for token in ("abstract", "excerpt", "directional coding", "claim extraction"))
@@ -927,17 +929,32 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         "evidence_type" in ask_lower
         or ("review" in ask_lower and "primary" in ask_lower and ("source_bundle" in ask_lower or "source bundle" in ask_lower))
     )
-    if not (payload_section_ask or payload_clip_ask or source_excerpt_ask or evidence_type_ask):
+    if not (payload_section_ask or payload_clip_ask or source_topic_ask or source_excerpt_ask or evidence_type_ask):
         return False
     try:
         payload = submit_bridge.build_payload(out_dir)
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
         return False
-    if source_excerpt_ask or evidence_type_ask:
+    if source_topic_ask or source_excerpt_ask or evidence_type_ask:
         bundle = payload.get("source_bundle")
         if not isinstance(bundle, list) or not bundle:
             return False
         rows = [row for row in bundle if isinstance(row, dict)]
+        if source_topic_ask:
+            metadata = payload.get("metadata")
+            topic = str(metadata.get("topic") or "") if isinstance(metadata, dict) else ""
+            aliases = source_gate_aliases(
+                topic, topic_aliases(topic, root=TOPIC_PACKS.parent, include_generated_terms=False),
+            )
+            hits = sum(
+                is_source_topic_specific(
+                    topic,
+                    " ".join(str(row.get(key) or "") for key in ("title", "excerpt", "doi", "id", "url")).lower(),
+                    aliases=aliases,
+                )
+                for row in rows
+            )
+            return bool(topic) and hits / len(rows) >= REVISION_SOURCE_BUNDLE_TOPIC_FLOOR
         if evidence_type_ask and "primary" not in {str(row.get("evidence_type") or "").lower() for row in rows}:
             return False
         if source_excerpt_ask:

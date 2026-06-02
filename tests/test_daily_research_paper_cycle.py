@@ -1267,6 +1267,48 @@ def test_payload_source_bundle_revision_ask_rejects_generic_registry_summaries(t
     )
 
 
+def test_payload_source_bundle_topicality_revision_ask_uses_structured_bundle(tmp_path: Path, monkeypatch) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "metadata": {"topic": "melatonin_aging"},
+        "source_bundle": [
+            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
+            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
+            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on sleep and biomarkers."},
+            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human trial outcomes."},
+            {"title": "Context E", "excerpt": "A broad clinical cohort measured unrelated cardiovascular endpoints."},
+        ],
+    })
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Verify that all 50 bundle sources actually address melatonin and aging.",
+    )
+
+
+def test_payload_source_bundle_topicality_revision_ask_rejects_polluted_bundle(tmp_path: Path, monkeypatch) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "metadata": {"topic": "melatonin_aging"},
+        "source_bundle": [
+            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
+            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
+            {"title": "Context C", "excerpt": "A broad clinical cohort measured unrelated cardiovascular endpoints."},
+            {"title": "Context D", "excerpt": "A generic review covered unrelated surgery outcomes."},
+            {"title": "Context E", "excerpt": "A broad clinical cohort measured unrelated metabolic endpoints."},
+        ],
+    })
+
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Verify that all 50 bundle sources actually address melatonin and aging.",
+    )
+
+
 def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     _, feedback_seen = _run_coverage_cycle(
