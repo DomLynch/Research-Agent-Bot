@@ -662,6 +662,42 @@ def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Pa
     ]
 
 
+def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    duplicate = (
+        "The retained corpus is interpreted as hypothesis-generating because it combines indirect, "
+        "review-level, and adjacent mechanistic sources rather than direct interventional hard-endpoint "
+        "evidence. This paragraph deliberately contains enough distinct scientific tokens for the public "
+        "surface gate to treat a later repeated copy as a duplicate paragraph artifact."
+    )
+    paper = (
+        "## Abstract\n\n"
+        f"{duplicate}\n\n"
+        "## Results\n\n"
+        "The results table separates cardiometabolic, immune, and longevity outcomes without making a "
+        "clinical efficacy claim from indirect evidence.\n\n"
+        "## Discussion\n\n"
+        f"{duplicate}\n\n"
+        "## References\n\n"
+        "- Smith 2024.\n"
+    )
+
+    assert _duplicate_paragraph_issue_messages(paper)
+    fixed, logs = journal_finalizer._phase_m_strip_surface_duplicate_paragraphs(paper)
+
+    assert _duplicate_paragraph_issue_messages(fixed) == ()
+    assert fixed.count(duplicate) == 1
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="M_duplicate_paragraph_strip",
+            rule="remove_later_surface_duplicate_paragraphs",
+            n_changes=1,
+            detail="removed 1 duplicate public prose paragraph(s)",
+        )
+    ]
+
+
 def test_long_term_safety_scope_repairs_older_adult_safety_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

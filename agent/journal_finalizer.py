@@ -116,6 +116,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     ):
         text, log = phase(text)
         entries.extend(log)
+    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
+    entries.extend(log)
     from scripts.review_noise_control import apply_review_noise_control, restore_surface_floors
     text, noise_changes = apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
@@ -125,8 +127,6 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, log = _phase_d_numeric_significance_correction(text, out_dir)
     entries.extend(log)
     text, log = _phase_d_unproven_human_longevity(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
     entries.extend(log)
     return text, entries
 
