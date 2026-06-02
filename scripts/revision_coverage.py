@@ -511,7 +511,7 @@ _NONSIG_RE = re.compile(
 
 
 def _abstract(paper_md: str) -> str:
-    m = re.search(r"^##\s+Abstract\b.*?\n(.*?)(?=^##\s)", paper_md, re.M | re.S)
+    m = re.search(r"^##\s+Abstract\b.*?\n(.*?)(?=^##\s|\Z)", paper_md, re.M | re.S)
     return m.group(1).strip() if m else ""
 
 

@@ -327,6 +327,43 @@ def test_directional_coding_note_repairs_schema_ask(tmp_path: Path) -> None:
     ]
 
 
+def test_evidence_boundary_note_repairs_broad_claim_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify in the abstract and key findings that the evidence is mixed and does not "
+        "support broad causal or policy claims. Explicitly state that the synthesis is "
+        "mechanistic and hypothesis-generating rather than definitive."
+    )
+    paper = "## Abstract\n\nThe evidence supports a plausible anti-aging signal.\n\n## References\n\n- Smith 2024.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_evidence_boundary_note(paper, tmp_path)
+
+    assert "Evidence-boundary note:" in fixed
+    assert "does not support broad causal or policy claims" in fixed
+    assert "broad population-level proof is missing" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_evidence_boundary",
+            rule="state_no_broad_population_level_proof",
+            n_changes=1,
+            detail="added evidence-boundary note to Abstract",
+        )
+    ]
+
+
+def test_evidence_boundary_note_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Abstract\n\nThe evidence supports a plausible signal.\n"
+
+    fixed, logs = journal_finalizer._phase_d_evidence_boundary_note(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_directional_coding_note_is_revision_scoped(tmp_path: Path) -> None:
     paper = "## Evidence Landscape\n\nNo extracted directional signal dominates.\n"
 

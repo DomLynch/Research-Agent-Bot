@@ -109,6 +109,34 @@ def test_deterministic_unmet_accepts_bounded_null_signal_conclusion() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_missing_evidence_boundary() -> None:
+    ask = (
+        "Clarify in the abstract and key findings that the evidence is mixed and does not "
+        "support broad causal or policy claims. Explicitly state that the synthesis is "
+        "mechanistic and hypothesis-generating rather than definitive."
+    )
+    paper = "## Abstract\n\nThe evidence supports a plausible anti-aging signal.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_evidence_boundary() -> None:
+    ask = (
+        "The manuscript is technically sound, but the absence of direct clinical evidence "
+        "and reliance on adjacent/mechanistic data requires a revise status to signal that "
+        "broad population-level proof is missing."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Evidence-boundary note: Because the retained corpus relies on limited direct "
+        "interventional hard-endpoint evidence and adjacent/mechanistic evidence, this "
+        "synthesis is hypothesis-generating and not definitive. It does not support broad "
+        "causal or policy claims; broad population-level proof is missing.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_directional_signal_explanation() -> None:
     ask = (
         "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class, "
