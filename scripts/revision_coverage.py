@@ -89,14 +89,22 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     if _asks_source_classification_map(lower):
         text = paper_md.lower()
         return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
+    if _asks_evidence_type_metadata(lower):
+        return _evidence_type_metadata_is_resolved(paper_md)
     if _asks_source_directness_breakdown(lower):
         return _source_directness_breakdown_is_stated(paper_md)
+    if _asks_source_inclusion_rationale(lower):
+        return _source_inclusion_rationale_is_stated(paper_md)
     if _asks_source_verification_transparency(lower):
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
         return _section_source_grounding_is_stated(paper_md)
+    if _asks_evidence_tier_directness_bounds(lower):
+        return _evidence_tier_directness_bounds_are_stated(paper_md)
     if _asks_admission_funnel_numeric_consistency(lower):
         return _admission_funnel_numeric_consistency_is_stated(paper_md)
+    if _asks_prisma_all_included_rationale(lower):
+        return _prisma_all_included_rationale_is_stated(paper_md)
     if _asks_single_source_proportionality(lower):
         return _single_source_proportionality_is_stated(paper_md)
     if _asks_direct_evidence_definition(lower):
@@ -111,6 +119,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _directional_coding_explanation_is_material(paper_md)
     if _asks_directional_table_narrative_consistency(lower):
         return _directional_table_narrative_is_consistent(paper_md)
+    if _asks_contextual_without_directional_signal(lower):
+        return _contextual_without_directional_signal_is_explained(paper_md)
     if _asks_actionable_gaps(lower):
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
@@ -125,6 +135,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _prior_publication_differentiation_is_stated(paper_md)
     if _asks_numeric_effect_accuracy(lower):
         return not numeric_effect_direction_issues(paper_md)
+    if _asks_numeric_effect_audit(lower):
+        return _numeric_effect_audit_is_stated(paper_md) and not numeric_effect_direction_issues(paper_md)
+    if _asks_grammar_correction(lower):
+        return _grammar_artifacts_are_absent(paper_md)
     return True
 
 
@@ -140,6 +154,10 @@ def _asks_source_classification_map(text: str) -> bool:
     )
 
 
+def _asks_evidence_type_metadata(text: str) -> bool:
+    return "evidence_type" in text or ("evidence type" in text and "metadata" in text)
+
+
 def _asks_source_directness_breakdown(text: str) -> bool:
     return (
         "source directness" in text
@@ -152,6 +170,14 @@ def _asks_source_directness_breakdown(text: str) -> bool:
             ))
             and any(token in text for token in ("adjacent", "general", "broader", "contextual", "off-topic", "off topic", "versus", "vs."))
         )
+    )
+
+
+def _asks_source_inclusion_rationale(text: str) -> bool:
+    return (
+        "source" in text
+        and any(token in text for token in ("included under", "inclusion criteria", "included", "umbrella", "operationalize", "classified as addressing"))
+        and any(token in text for token in ("unrelated", "general", "other digital", "non-digital", "why sources"))
     )
 
 
@@ -170,12 +196,29 @@ def _asks_section_source_grounding(text: str) -> bool:
     )
 
 
+def _asks_evidence_tier_directness_bounds(text: str) -> bool:
+    return (
+        "claims" in text
+        and any(token in text for token in ("key findings", "conclusion"))
+        and "evidence tier" in text
+        and "directness" in text
+    )
+
+
 def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
     return (
         any(token in text for token in ("admission funnel", "source admission", "receipt admission"))
         and any(token in text for token in ("numerical inconsistency", "numeric inconsistency", "inconsistently", "both equal", "contradictory", "contradiction", "clarify"))
     ) or ("no extractable claims" in text and "admitted final" in text) or (
         "partial/none-only" in text and "partial-only" in text
+    )
+
+
+def _asks_prisma_all_included_rationale(text: str) -> bool:
+    return (
+        "100%" in text
+        and any(token in text for token in ("retrieved records", "records were included", "included"))
+        and any(token in text for token in ("prisma", "eligibility criteria", "eligibility"))
     )
 
 
@@ -209,6 +252,13 @@ def _asks_directional_table_narrative_consistency(text: str) -> bool:
         and any(token in text for token in ("no directional signal", "null directional signal", "all null directional"))
         and any(token in text for token in ("positive", "mixed", "negative", "positive association", "positive associations", "positive signal", "positive signals"))
         and any(token in text for token in ("contradiction", "inconsistency", "narrative", "rest of the manuscript", "table coding", "needs correction"))
+    )
+
+
+def _asks_contextual_without_directional_signal(text: str) -> bool:
+    return (
+        "contextual claim" in text
+        and any(token in text for token in ("no directional signal", "absence of directional", "near-total absence"))
     )
 
 
@@ -248,6 +298,17 @@ def _asks_numeric_effect_accuracy(text: str) -> bool:
         any(token in text for token in ("p-value", "p value", "p-values", "reported p", "confidence interval", "effect direction"))
         and any(token in text for token in ("significant", "non-significant", "factual error", "correct", "audit", "direction"))
     )
+
+
+def _asks_numeric_effect_audit(text: str) -> bool:
+    return (
+        any(token in text for token in ("audit all reported p-values", "audit all reported p values", "reported p-values", "reported p values"))
+        and any(token in text for token in ("effect directions", "source bundle excerpts", "discrepancies"))
+    )
+
+
+def _asks_grammar_correction(text: str) -> bool:
+    return any(token in text for token in ("grammatical error", "grammar error", "correct the grammatical"))
 
 
 def _gaps_section_is_actionable(paper_md: str) -> bool:
@@ -315,6 +376,44 @@ def _long_term_safety_scope_is_stated(paper_md: str) -> bool:
     return safety and population
 
 
+def _evidence_type_metadata_is_resolved(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Results")) if part).lower()
+    return (
+        any(token in scope for token in ("evidence_type", "evidence type"))
+        and any(token in scope for token in ("review", "rct", "trial", "excerpt"))
+        and any(token in scope for token in ("resolved", "reclassified", "classification criteria", "source classification map"))
+    )
+
+
+def _source_inclusion_rationale_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Limitations")) if part).lower()
+    return (
+        any(token in scope for token in ("inclusion rationale", "topic-fit rationale", "source directness breakdown", "source classification map"))
+        and any(token in scope for token in ("operationalize", "directly addresses", "adjacent", "contextual", "excluded", "reclassified"))
+    )
+
+
+def _evidence_tier_directness_bounds_are_stated(paper_md: str) -> bool:
+    sections = [_section(paper_md, name).lower() for name in ("Key Findings", "Conclusion")]
+    if not all(sections):
+        return False
+    return all(
+        re.search(r"\b(?:a1|a2|b1|b2|c1|c2|evidence tier)\b", section)
+        and re.search(r"\b(?:directness|direct|indirect|review|mechanistic)\b", section)
+        for section in sections
+    )
+
+
+def _prisma_all_included_rationale_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape")) if part).lower()
+    return (
+        "100%" in scope
+        and any(token in scope for token in ("retrieved records", "records were included", "all retrieved"))
+        and any(token in scope for token in ("eligibility", "screening", "scope"))
+        and any(token in scope for token in ("because", "rationale", "reason"))
+    )
+
+
 def _directional_coding_explanation_is_material(paper_md: str) -> bool:
     scope = " ".join(
         part
@@ -351,6 +450,15 @@ def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
         for token in ("different outcome", "other outcome", "separately reported", "does not mean absence", "not absence of support", "directional coding", "reconciled")
     )
     return reconciled and not (no_signal and positive_narrative and not reconciled)
+
+
+def _contextual_without_directional_signal_is_explained(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Evidence Landscape"), _section(paper_md, "Results"), _section(paper_md, "Discussion")) if part).lower()
+    return (
+        "contextual claim" in scope
+        and any(token in scope for token in ("no extracted directional signal", "no directional signal", "absence of directional"))
+        and any(token in scope for token in ("bibliographic", "mechanistic context", "background", "not effect-direction", "not directional"))
+    )
 
 
 def _section_source_grounding_is_stated(paper_md: str) -> bool:
@@ -512,6 +620,18 @@ def _references_are_traceable(paper_md: str) -> bool:
         re.I,
     )
     return all(identifier.search(line) or explicit_caveat.search(line) for line in lines)
+
+
+def _numeric_effect_audit_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Limitations")) if part).lower()
+    return (
+        any(token in scope for token in ("numeric effect audit", "p-value audit", "p value audit", "effect-direction audit"))
+        and any(token in scope for token in ("source excerpt", "source bundle", "extracted statistic"))
+    )
+
+
+def _grammar_artifacts_are_absent(paper_md: str) -> bool:
+    return not re.search(r"\b(?:is|are|was|were)\s+insufficient\s+to\s+(?:is|are|was|were)\b", paper_md, flags=re.I)
 
 
 _CLAIM_SYS = "You are a strict manuscript reviewer. Reply with JSON only."
