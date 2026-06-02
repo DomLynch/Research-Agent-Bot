@@ -733,6 +733,8 @@ def _phase_d_numeric_significance_correction(
     for section in ("Abstract", "Conclusion"):
         patched, changed = _repair_non_significant_effect_claims_in_section(patched, section)
         n += changed
+    patched, changed = _ensure_named_numeric_correction_statement(patched, feedback)
+    n += changed
     if _revision_asks_numeric_effect_audit(feedback):
         patched, changed = _ensure_numeric_effect_audit_statement(patched)
         n += changed
@@ -807,6 +809,55 @@ def _ensure_numeric_effect_audit_statement(text: str) -> tuple[str, int]:
         return text, 0
     insert_at = match.end()
     return text[:insert_at] + "\n\n" + statement + text[insert_at:], 1
+
+
+def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tuple[str, int]:
+    source = re.search(r"regarding\s+([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
+    p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
+    if not source or not p_value:
+        return text, 0
+    source_label = f"{source.group(1)} {source.group(2)}"
+    p_text = f"p = {p_value.group(1)}"
+    scope = " ".join(
+        part for part in (
+            _section_body(text, "Abstract"),
+            _section_body(text, "Evidence Landscape"),
+            _section_body(text, "Conclusion"),
+        ) if part
+    )
+    if source_label.lower() in scope.lower() and p_text.lower() in scope.lower() and _FINALIZER_NONSIGNIFICANT_RE.search(scope):
+        return text, 0
+    outcome = _numeric_correction_outcome(feedback)
+    statement = (
+        f"Numeric correction: {source_label} reported a non-significant result"
+        f" ({p_text}){outcome}; this synthesis treats that finding as non-significant."
+    )
+    return _prepend_section_paragraph(text, "Abstract", statement)
+
+
+def _numeric_correction_outcome(feedback: str) -> str:
+    match = re.search(r"not\s+a\s+significant\s+([^.;]+)", feedback, flags=re.I)
+    if not match:
+        return ""
+    outcome = match.group(1).strip()
+    if not outcome:
+        return ""
+    return f" for {outcome}"
+
+
+def _section_body(text: str, section: str) -> str:
+    match = re.search(rf"^## {re.escape(section)}\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    return match.group(1) if match else ""
+
+
+def _prepend_section_paragraph(text: str, section: str, paragraph: str) -> tuple[str, int]:
+    match = re.search(rf"^## {re.escape(section)}\b", text, flags=re.M)
+    if not match:
+        return text, 0
+    insert_at = match.end()
+    if paragraph.lower() in text.lower():
+        return text, 0
+    return text[:insert_at] + "\n\n" + paragraph + text[insert_at:], 1
 
 
 def _phase_d_tier_directness_boundaries(

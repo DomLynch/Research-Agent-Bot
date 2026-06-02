@@ -587,6 +587,30 @@ def test_numeric_significance_correction_adds_audit_statement_when_requested(tmp
     assert logs[0].n_changes == 2
 
 
+def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "
+        "reports a non-significant result (p = 0.08), not a significant reduction in LF HRV power."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "The HRV evidence base remains mixed across observational cohorts.\n\n"
+        "## Evidence Landscape\n\n"
+        "Waghmare 2024 contributed cardiometabolic evidence.\n\n"
+        "## Conclusion\n\nThe corpus remains mixed.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "Numeric correction: Waghmare 2024 reported a non-significant result (p = 0.08)" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].n_changes == 1
+
+
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
