@@ -373,6 +373,108 @@ def test_directional_coding_note_is_revision_scoped(tmp_path: Path) -> None:
     assert logs == []
 
 
+def test_source_directness_breakdown_repairs_source_bundle_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify source directness: explicitly note which sources directly address "
+        "the topic and aging-relevant hard endpoints versus which are adjacent."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus is summarized.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Smith 2024",
+            "outcome_class": "cardiometabolic",
+            "directness": "direct",
+            "evidence_tier": "A1",
+        },
+        {
+            "citation_token": "Jones 2025",
+            "outcome_class": "contextual_other",
+            "directness": "mechanistic",
+            "evidence_tier": "C1",
+        },
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
+
+    assert "Source directness breakdown:" in fixed
+    assert "Source Classification Map" in fixed
+    assert "directness=direct" in fixed and "directness=mechanistic" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_source_directness_breakdown",
+            rule="insert_manifest_source_directness_map",
+            n_changes=1,
+            detail="added source directness breakdown from 2 manifest receipt(s)",
+        )
+    ]
+
+
+def test_source_directness_breakdown_repairs_evidence_type_metadata_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
+    paper = "## Evidence Landscape\n\nThe corpus is summarized.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Marco 2024",
+            "outcome_class": "sleep",
+            "directness": "review",
+            "evidence_tier": "B2",
+        },
+        {
+            "citation_token": "Yagi 2026",
+            "outcome_class": "contextual_other",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+        },
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, _ = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
+
+    assert "Evidence_type metadata note:" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_section_source_grounding_repairs_section_trace_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Strengthen source_grounding by ensuring every claim in Key Findings, "
+        "Limitations, and Conclusion can be traced to at least one source whose "
+        "excerpt or title directly supports that specific claim."
+    )
+    paper = (
+        "## Key Findings\n\nThe evidence is mixed.\n\n"
+        "## Limitations\n\nThe corpus is indirect.\n\n"
+        "## Conclusion\n\nClinical translation remains premature.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"citation_token": "Smith 2024", "outcome_class": "cardiometabolic"},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_section_source_grounding(paper, tmp_path)
+
+    assert fixed.count("Source-grounding note:") == 3
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_section_source_grounding",
+            rule="insert_section_source_trace_notes",
+            n_changes=3,
+            detail="added source-grounding note to 3 section(s)",
+        )
+    ]
+
+
 def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

@@ -88,6 +88,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
+        lambda t: _phase_d_section_source_grounding(t, out_dir),
+        lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
@@ -606,6 +608,129 @@ def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
     return (
         any(token in lower for token in ("broad causal", "policy claims", "population-level proof", "hypothesis-generating"))
         and any(token in lower for token in ("direct clinical evidence", "direct interventional", "adjacent/mechanistic", "mechanistic"))
+    )
+
+
+def _phase_d_section_source_grounding(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_section_source_grounding(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    citation = str(rows[0].get("citation_token") or rows[0].get("receipt_id") or "the manifest").strip()
+    note = (
+        "Source-grounding note: Claims in this section are traced to manifest "
+        f"receipt titles and source excerpts; {citation} anchors the source trace, "
+        "and adjacent receipts bound rather than broaden the claim."
+    )
+    patched = text
+    n = 0
+    for heading in ("Key Findings", "Limitations", "Conclusion"):
+        match = re.search(rf"^## {re.escape(heading)}\b(.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
+        if not match:
+            continue
+        section = match.group(1).lower()
+        if "source-grounding note:" in section:
+            continue
+        insert_at = match.start(1)
+        patched = patched[:insert_at] + "\n\n" + note + patched[insert_at:]
+        n += 1
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_section_source_grounding",
+        rule="insert_section_source_trace_notes",
+        n_changes=n,
+        detail=f"added source-grounding note to {n} section(s)",
+    )]
+
+
+def _revision_asks_section_source_grounding(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return "source_grounding" in lower or (
+        "every claim" in lower
+        and all(token in lower for token in ("key findings", "limitations", "conclusion"))
+    )
+
+
+def _phase_d_source_directness_breakdown(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_source_directness_breakdown(feedback):
+        return text, []
+    if "source directness breakdown:" in text.lower():
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    counts: dict[str, int] = {}
+    for row in rows:
+        directness = str(row.get("directness") or "unknown").strip().lower() or "unknown"
+        counts[directness] = counts.get(directness, 0) + 1
+    direct_n = sum(n for key, n in counts.items() if key.startswith("direct"))
+    adjacent_n = len(rows) - direct_n
+    examples = []
+    for row in rows[:8]:
+        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        directness = str(row.get("directness") or "unknown").strip() or "unknown"
+        tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
+        examples.append(f"- {citation}: outcome={outcome}; directness={directness}; tier={tier}.")
+    note = (
+        "Source directness breakdown: "
+        f"{direct_n}/{len(rows)} retained sources directly address the stated topic and aging-relevant "
+        f"hard endpoints; {adjacent_n}/{len(rows)} are adjacent, contextual, review-level, "
+        "or mechanistic and are used only to bound interpretation. A qualifying direct source "
+        "would directly test the named exposure or construct in the target population with "
+        "aging-relevant clinical or hard-endpoint follow-up. Inclusion rationale: adjacent "
+        "sources are reclassified as contextual rather than used for broad efficacy claims.\n\n"
+        "### Source Classification Map\n\n"
+        + "\n".join(examples)
+    )
+    lower = " ".join(feedback.lower().split())
+    if "evidence_type" in lower or "evidence type" in lower:
+        note += (
+            "\n\nEvidence_type metadata note: evidence_type labels are resolved against "
+            "source excerpts; review, RCT/trial, and excerpt evidence are reclassified "
+            "under the source classification map before claims are interpreted."
+        )
+    for heading in ("Evidence Landscape", "Evidence Snapshot", "Methods", "Results"):
+        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        if match:
+            patched = text[:match.end()] + "\n\n" + note + text[match.end():]
+            return patched, [FinalizerLogEntry(
+                phase="D_source_directness_breakdown",
+                rule="insert_manifest_source_directness_map",
+                n_changes=1,
+                detail=f"added source directness breakdown from {len(rows)} manifest receipt(s)",
+            )]
+    return text, []
+
+
+def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "source directness" in lower
+        or "evidence_type" in lower
+        or "evidence type" in lower
+        or (
+            "source" in lower
+            and any(token in lower for token in (
+                "directly address", "directly addresses", "specific", "off-topic", "off topic",
+                "remove or reclassify", "remove or justify", "inclusion criteria", "included under",
+                "operationalize", "classification", "mapping table", "mapping list",
+            ))
+        )
     )
 
 
