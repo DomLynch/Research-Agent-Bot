@@ -904,7 +904,7 @@ def _phase_d_tier_directness_boundaries(
     if not _revision_asks_tier_directness_boundaries(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
@@ -960,7 +960,7 @@ def _phase_d_section_source_grounding(
     if not _revision_asks_section_source_grounding(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
@@ -1096,7 +1096,7 @@ def _phase_d_source_outcome_class_map(
     if not _revision_asks_source_outcome_class_map(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []

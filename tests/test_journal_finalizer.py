@@ -659,6 +659,21 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
+def test_source_outcome_class_map_no_receipts_does_not_crash(tmp_path: Path) -> None:
+    ask = (
+        "Provide a mapping table or list showing which of the 28 bundle sources were "
+        "assigned to which outcome class, to allow external verification of the evidence landscape table."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus includes several sources.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({}))
+
+    fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
