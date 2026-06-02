@@ -1557,6 +1557,19 @@ def test_handled_revision_ids_caps_after_max_rounds(tmp_path: Path) -> None:
     assert marker in cycle._handled_revision_ids(ledger_dir)  # at cap -> permanently handled
 
 
+def test_terminal_source_precision_handled_row_bypasses_round_cap(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    marker = cycle.submit_bridge._title_marker("Research Synthesis: Digital Frailty Index — full paper")
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": "Research Synthesis: Digital Frailty Index — full paper",
+        "status": "terminal_source_precision_repair_incomplete",
+    }]})
+
+    assert marker in cycle._handled_revision_ids(ledger_dir)
+
+
 def test_submitted_revision_waits_for_newer_review_before_reprocessing(tmp_path: Path) -> None:
     source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
     paper = source_run / "full_paper.md"

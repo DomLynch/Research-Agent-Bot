@@ -80,6 +80,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "research_revision_fingerprint",
     "retracted_source_cited",
     "terminal_surface_repeat",
+    "terminal_source_precision_repair_incomplete",
 })
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
@@ -564,7 +565,16 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         submit_bridge._title_marker(str(row.get("title") or ""))
         for row in rows if isinstance(row, dict) and row.get("title")
     )
-    handled = {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
+    terminal = {
+        submit_bridge._title_marker(str(row.get("title") or ""))
+        for row in rows
+        if (
+            isinstance(row, dict)
+            and row.get("title")
+            and str(row.get("status") or "") in _TERMINAL_REVISION_STATUSES
+        )
+    }
+    handled = terminal | {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
     active_reviewed = {
         _revision_key(row): _parse_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
         for row in (active_requests or [])
