@@ -170,6 +170,45 @@ def test_deterministic_unmet_accepts_long_term_safety_scope() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_reference_without_identifier() -> None:
+    ask = (
+        "Ensure all cited sources in the reference list have verifiable bibliographic identifiers "
+        "(DOI/PMID) and are traceable to the source bundle."
+    )
+    paper = (
+        "## References\n\n"
+        "- Smith 2024. Trial of intervention in older adults.\n"
+        "- Jones 2025. Cohort evidence. DOI: 10.1000/example.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_reference_identifiers() -> None:
+    ask = (
+        "Ensure all cited sources in the reference list have verifiable bibliographic identifiers "
+        "(DOI/PMID) and are traceable to the source bundle."
+    )
+    paper = (
+        "## References\n\n"
+        "- Smith 2024. Trial of intervention in older adults. DOI: 10.1000/example.\n"
+        "- Jones 2025. Cohort evidence. PMID: 12345678.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_reference_identifier_caveat() -> None:
+    ask = "Make every reference traceable to the source bundle and clarify missing DOI/PMID entries."
+    paper = (
+        "## References\n\n"
+        "- Smith 2024. Registered trial. Trial registration: NCT01234567.\n"
+        "- Jones 2025. Registry protocol. Identifier unavailable; no DOI or PMID in source metadata.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 _PAPER = "## Abstract\n\nEGCG reverses aging in humans.\n\n## Results\n\nMixed, mostly null.\n"
 
 

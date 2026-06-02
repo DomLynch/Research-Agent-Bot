@@ -106,6 +106,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _internal_duplication_is_low(paper_md)
     if _asks_long_term_safety_scope(lower):
         return _long_term_safety_scope_is_stated(paper_md)
+    if _asks_reference_traceability(lower):
+        return _references_are_traceable(paper_md)
     return True
 
 
@@ -145,6 +147,13 @@ def _asks_internal_duplication(text: str) -> bool:
 
 def _asks_long_term_safety_scope(text: str) -> bool:
     return "long-term safety" in text or ("safety data" in text and "older adult" in text)
+
+
+def _asks_reference_traceability(text: str) -> bool:
+    return (
+        "reference list" in text
+        and any(token in text for token in ("doi", "pmid", "bibliographic identifier", "source bundle", "traceable"))
+    ) or "traceable to the source bundle" in text
 
 
 def _gaps_section_is_actionable(paper_md: str) -> bool:
@@ -192,6 +201,28 @@ def _long_term_safety_scope_is_stated(paper_md: str) -> bool:
     safety = "long-term safety" in scope or "long term safety" in scope or "safety data" in scope
     population = "older adult" in scope or "older adults" in scope or "aged" in scope
     return safety and population
+
+
+def _references_are_traceable(paper_md: str) -> bool:
+    refs = _section(paper_md, "References")
+    if not refs:
+        return False
+    lines = [
+        line.strip().lstrip("-* ").strip()
+        for line in refs.splitlines()
+        if line.strip() and not line.lstrip().startswith("|")
+    ]
+    if not lines:
+        return False
+    identifier = re.compile(
+        r"\b(?:doi\s*:|https?://doi\.org/|pmid\s*:|pmcid\s*:|pmc\d+|nct\d+|isrctn\d+|clinicaltrials\.gov)",
+        re.I,
+    )
+    explicit_caveat = re.compile(
+        r"\b(?:identifier unavailable|no doi|no pmid|trial registration|protocol registration)\b",
+        re.I,
+    )
+    return all(identifier.search(line) or explicit_caveat.search(line) for line in lines)
 
 
 _CLAIM_SYS = "You are a strict manuscript reviewer. Reply with JSON only."
