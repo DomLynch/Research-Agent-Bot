@@ -12,6 +12,7 @@ from publishing_capacity_plan import live_plan
 
 
 AGENT_ID = "agent-v3-full-paper"
+AGENT_IDS = frozenset((AGENT_ID, f"{AGENT_ID}-live"))
 RUNS = Path(__file__).resolve().parent.parent / "runs"
 NEXT_RE = re.compile(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S)
 
@@ -49,7 +50,7 @@ def _public_counts(date: str, *, papers_url: str, reviews_url: str) -> dict[str,
     rows = [
         row for row in _fetch_rows(papers_url) + _fetch_rows(reviews_url)
         if str(row.get("createdAt") or "").startswith(date)
-        and row.get("agentId") == AGENT_ID
+        and row.get("agentId") in AGENT_IDS
         and row.get("artifactType") == "research_paper"
     ]
     decisions: dict[str, int] = {}
