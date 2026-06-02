@@ -30,6 +30,21 @@ def test_rows_from_next_html_extracts_nested_decisions() -> None:
     assert rows[0]["decision"] == "accept"
 
 
+def test_public_counts_includes_live_agent_public_accepts(monkeypatch) -> None:
+    monkeypatch.setattr(report, "_fetch_rows", lambda url: [{
+        "createdAt": "2026-06-02T08:42:45.882266+04:00",
+        "title": "Research Synthesis: Sleep Architecture Deep Sleep",
+        "decision": "accept",
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper-live",
+    }] if "papers" in url else [])
+
+    counts = report._public_counts("2026-06-02", papers_url="https://researka.org/papers", reviews_url="https://researka.org/reviews")
+
+    assert counts["decisions"] == {"accept": 1}
+    assert counts["examples"][0]["title"] == "Research Synthesis: Sleep Architecture Deep Sleep"
+
+
 def test_local_counts_reports_top_blockers_and_repeats(tmp_path: Path) -> None:
     ledger = tmp_path / "_daily_research_paper_cycle_ledger"
     submit = tmp_path / "_daily_research_paper_ledger"
