@@ -172,6 +172,44 @@ def test_payload_key_findings_distill_not_duplicate_evidence_landscape(tmp_path:
     assert "few direct clinical trials" in payload["sections"]["Key Findings"]
 
 
+def test_payload_gaps_identified_is_actionable_not_limitations_duplicate(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\nAbstract overview.\n\n"
+        "## Results\n\nOutcome evidence is mixed.\n\n"
+        "## Discussion\n\nThe evidence base is sparse and mixed.\n\n"
+        "## Limitations\n\nThe evidence base is sparse and mixed.\n\n"
+        "## Conclusion\n\nConservative conclusion.\n\n",
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+    gaps = payload["sections"]["Gaps Identified"]
+
+    assert gaps != payload["sections"]["Limitations"]
+    assert "Run adequately powered human studies" in gaps
+    assert "Standardize exposure, comparator, follow-up duration, and endpoint definitions" in gaps
+    assert "direct evidence is" in gaps
+
+
+def test_payload_gaps_identified_preserves_distinct_paper_section(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\nAbstract overview.\n\n"
+        "## Gaps Identified\n\nRecruit older adult cohorts with prespecified endpoints and 12-month follow-up.\n\n"
+        "## Limitations\n\nThe evidence base is sparse and mixed.\n\n",
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+
+    assert payload["sections"]["Gaps Identified"] == (
+        "Recruit older adult cohorts with prespecified endpoints and 12-month follow-up."
+    )
+
+
 def test_payload_text_fields_do_not_truncate_mid_sentence(tmp_path: Path) -> None:
     run = _run(tmp_path)
     long_abstract = " ".join(f"Sentence {i} supports a bounded evidence interpretation." for i in range(80))
