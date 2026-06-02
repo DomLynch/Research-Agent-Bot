@@ -130,6 +130,44 @@ def test_deterministic_unmet_accepts_general_vs_direct_source_breakdown() -> Non
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_off_topic_source_audit_without_breakdown() -> None:
+    ask = (
+        "Audit the source bundle for sources that are clearly off-topic to hydrogen "
+        "water in humans or animals and either remove them or explain their inclusion "
+        "as contextual adjacent evidence."
+    )
+    paper = "## Evidence Landscape\n\nThe included sources are summarized below.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_off_topic_source_audit_breakdown() -> None:
+    ask = (
+        "Audit the source bundle for sources that are clearly off-topic to hydrogen "
+        "water in humans or animals and either remove them or explain their inclusion "
+        "as contextual adjacent evidence."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Source Directness Breakdown\n\n"
+        "- Smith 2024: directly addresses the intervention and hard endpoints; directness=direct.\n"
+        "- Jones 2025: contextual adjacent evidence retained for mechanism only; directness=contextual.\n"
+        "- Lee 2026: mechanistic animal evidence; directness=mechanistic.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_remove_or_justify_off_topic_sources() -> None:
+    ask = (
+        "Remove or justify clearly off-topic sources from the corpus, and update "
+        "the source count and evidence landscape accordingly."
+    )
+    paper = "## Evidence Landscape\n\nAll sources are summarized.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
 def test_deterministic_unmet_flags_weak_gaps_section() -> None:
     ask = "Rewrite the 'Gaps Identified' section to provide specific, actionable research gaps."
     paper = "## Gaps Identified\n\nMore research is needed because the current corpus is limited.\n"
@@ -260,6 +298,44 @@ def test_deterministic_unmet_accepts_reconciled_directional_table_narrative() ->
         "## Key Findings\n\n"
         "Positive associations are separately reported in other outcome classes; the frailty row's "
         "no directional signal coding does not mean absence of support across the whole corpus.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_null_directional_vs_positive_narrative() -> None:
+    ask = (
+        "Resolve the inconsistency between the Evidence Landscape table (all null "
+        "directional signals) and the rest of the manuscript (references to positive, "
+        "mixed, and negative signals in the frailty class)."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Direction |\n"
+        "|---|---|\n"
+        "| Frailty | all null directional signals |\n\n"
+        "## Key Findings\n\n"
+        "The frailty class shows positive signals in several sources.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_null_directional_reconciled_narrative() -> None:
+    ask = (
+        "Resolve the inconsistency between the Evidence Landscape table (all null "
+        "directional signals) and the rest of the manuscript (references to positive, "
+        "mixed, and negative signals in the frailty class)."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Direction |\n"
+        "|---|---|\n"
+        "| Frailty | all null directional signals |\n\n"
+        "## Key Findings\n\n"
+        "Positive and mixed signals are separately reported in other outcome classes; "
+        "the frailty row's null directional signal does not mean absence of support "
+        "outside that specific coded slice.\n"
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []

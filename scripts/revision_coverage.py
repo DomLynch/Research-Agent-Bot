@@ -150,7 +150,7 @@ def _asks_source_directness_breakdown(text: str) -> bool:
                 "general digital biomarker", "broader", "off-topic", "off topic",
                 "remove or reclassify", "remove or justify", "clearly address",
             ))
-            and any(token in text for token in ("adjacent", "general", "broader", "contextual", "versus", "vs."))
+            and any(token in text for token in ("adjacent", "general", "broader", "contextual", "off-topic", "off topic", "versus", "vs."))
         )
     )
 
@@ -207,8 +207,8 @@ def _asks_directional_table_narrative_consistency(text: str) -> bool:
     return (
         "evidence landscape" in text
         and any(token in text for token in ("no directional signal", "null directional signal", "all null directional"))
-        and any(token in text for token in ("positive association", "positive associations", "positive signal", "positive signals"))
-        and any(token in text for token in ("contradiction", "narrative", "table coding", "needs correction"))
+        and any(token in text for token in ("positive", "mixed", "negative", "positive association", "positive associations", "positive signal", "positive signals"))
+        and any(token in text for token in ("contradiction", "inconsistency", "narrative", "rest of the manuscript", "table coding", "needs correction"))
     )
 
 
@@ -348,9 +348,9 @@ def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
     )
     reconciled = any(
         token in (table_scope + " " + narrative_scope)
-        for token in ("different outcome", "other outcome", "separately reported", "does not mean absence", "not absence of support")
+        for token in ("different outcome", "other outcome", "separately reported", "does not mean absence", "not absence of support", "directional coding", "reconciled")
     )
-    return not (no_signal and positive_narrative and not reconciled)
+    return reconciled and not (no_signal and positive_narrative and not reconciled)
 
 
 def _section_source_grounding_is_stated(paper_md: str) -> bool:
