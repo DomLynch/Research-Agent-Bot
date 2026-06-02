@@ -51,10 +51,12 @@ def test_multi_token_topic_accepts_named_intervention_without_generic_outcome() 
 def test_source_gate_aliases_drop_generic_biomed_alias_for_composite_topic() -> None:
     aliases = source_gate_aliases(
         "low_dose_naltrexone_inflammation",
-        ("low dose naltrexone inflammation", "low-dose naltrexone", "LDN", "inflammation", "immune modulation"),
+        ("low dose naltrexone inflammation", "low-dose naltrexone", "ldn", "inflammation", "immune modulation"),
     )
 
-    assert aliases == ("low dose naltrexone inflammation", "low-dose naltrexone", "LDN")
+    assert aliases == ("low dose naltrexone inflammation", "low-dose naltrexone", "ldn")
+    assert is_source_topic_specific("low_dose_naltrexone_inflammation", "LDN chronic pain trial", aliases=aliases)
+    assert not is_source_topic_specific("low_dose_naltrexone_inflammation", "exercise inflammation cohort", aliases=aliases)
 
 
 def test_source_gate_aliases_drop_broad_one_token_aliases_for_composite_topics() -> None:
