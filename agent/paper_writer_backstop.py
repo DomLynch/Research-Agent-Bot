@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import asyncio
-from collections.abc import Mapping, Sequence
+from collections.abc import Awaitable, Callable, Mapping, Sequence
 from typing import Any, TYPE_CHECKING, cast
 
 if TYPE_CHECKING:  # pragma: no cover
@@ -30,6 +30,33 @@ AUDIT_GATED_FLOORS: Mapping[str, int] = {
     "conclusion": 250,
 }
 BACKSTOP_CALL_TIMEOUT_SEC = 180.0
+BACKSTOP_TIMEOUT_RETRIES = 1
+
+
+def _backstop_timeout_sec(chain: Sequence[CallSpec]) -> float:
+    configured = max((float(spec.timeout_sec or 0) for spec in chain), default=0.0)
+    return max(BACKSTOP_CALL_TIMEOUT_SEC, configured + 60.0)
+
+
+async def _run_backstop_call(
+    make_call: Callable[[], Awaitable[SynthesisSection]],
+    *,
+    chain: Sequence[CallSpec],
+    section_name: str,
+) -> SynthesisSection:
+    timeout = _backstop_timeout_sec(chain)
+    for attempt in range(BACKSTOP_TIMEOUT_RETRIES + 1):
+        try:
+            return await asyncio.wait_for(make_call(), timeout=timeout)
+        except asyncio.TimeoutError:
+            if attempt >= BACKSTOP_TIMEOUT_RETRIES:
+                raise
+            print(
+                f"[paper_writer] BACKSTOP: {section_name} rerender timed "
+                f"out after {timeout:g}s; retrying once",
+                flush=True,
+            )
+    raise RuntimeError("unreachable backstop retry state")
 
 
 def repair_discussion_minimum_quality(
@@ -122,46 +149,50 @@ async def apply_section_backstop(
         backstop_prompt = build_backstop_prompt(
             section_prompts[sec_name], sec_name, words, floor,
         )
+        fallback_body = cur.body_md
         try:
             if sec_name == "cross_domain_synthesis":
-                new_section = await asyncio.wait_for(
-                    write_anchored_fn(
+                new_section = await _run_backstop_call(
+                    lambda: write_anchored_fn(
                         name=sec_name,
                         heading="## Cross-Domain Synthesis",
                         system_prompt=backstop_prompt,
                         user_prompt=user_prompt,
                         accepted=accepted, chain=chain, client=client,
                         ledger=ledger, seed=seed,
-                        fallback_body=cur.body_md,
+                        fallback_body=fallback_body,
                         background_lit_entries=background_lit_entries,
                     ),
-                    timeout=BACKSTOP_CALL_TIMEOUT_SEC,
+                    chain=chain,
+                    section_name=sec_name,
                 )
             elif sec_name == "discussion":
-                new_section = await asyncio.wait_for(
-                    write_scoped_fn(
+                new_section = await _run_backstop_call(
+                    lambda: write_scoped_fn(
                         name=sec_name, heading="## Discussion",
                         system_prompt=backstop_prompt,
                         user_prompt=user_prompt,
                         topic=topic, accepted=accepted, chain=chain,
                         client=client, ledger=ledger, seed=seed,
-                        fallback_body=cur.body_md,
+                        fallback_body=fallback_body,
                         background_lit_entries=background_lit_entries,
                     ),
-                    timeout=BACKSTOP_CALL_TIMEOUT_SEC,
+                    chain=chain,
+                    section_name=sec_name,
                 )
             elif sec_name == "conclusion":
-                new_section = await asyncio.wait_for(
-                    write_scoped_fn(
+                new_section = await _run_backstop_call(
+                    lambda: write_scoped_fn(
                         name=sec_name, heading="## Conclusion",
                         system_prompt=backstop_prompt,
                         user_prompt=user_prompt,
                         topic=topic, accepted=accepted, chain=chain,
                         client=client, ledger=ledger, seed=seed,
-                        fallback_body=cur.body_md,
+                        fallback_body=fallback_body,
                         background_lit_entries=background_lit_entries,
                     ),
-                    timeout=BACKSTOP_CALL_TIMEOUT_SEC,
+                    chain=chain,
+                    section_name=sec_name,
                 )
             else:
                 continue
@@ -228,6 +259,7 @@ async def apply_section_backstop(
 __all__ = [
     "AUDIT_GATED_FLOORS",
     "BACKSTOP_CALL_TIMEOUT_SEC",
+    "BACKSTOP_TIMEOUT_RETRIES",
     "build_backstop_prompt",
     "repair_discussion_minimum_quality",
     "apply_section_backstop",
