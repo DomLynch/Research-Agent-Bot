@@ -92,6 +92,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
+        lambda t: _phase_d_source_statistics_landscape(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
@@ -1050,6 +1051,65 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
             "operationalize", "directly study", "directly addresses",
         ))
     )
+
+
+def _phase_d_source_statistics_landscape(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_source_statistics_landscape(feedback):
+        return text, []
+    note = _source_statistics_landscape_note(feedback)
+    if not note:
+        return text, []
+    patched, n = _prepend_section_paragraph(text, "Evidence Landscape", note)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_source_statistics_landscape",
+        rule="map_named_source_statistic_to_outcome_class",
+        n_changes=1,
+        detail="added reviewer-named source statistic to Evidence Landscape",
+    )]
+
+
+def _revision_asks_source_statistics_landscape(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "specific statistics" in lower
+        and "evidence landscape" in lower
+        and any(token in lower for token in ("source bundle", "outcome class", "buried"))
+    )
+
+
+def _source_statistics_landscape_note(feedback: str) -> str:
+    match = re.search(
+        r"\b([A-Z][A-Za-z'’.\-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?)\b[^.;()]{0,80}?"
+        r"(\d+(?:\.\d+)?\s*(?:%|percent))\s+([^.;,)]+)",
+        feedback,
+    )
+    if not match:
+        return ""
+    source, statistic, descriptor = (part.strip() for part in match.groups())
+    descriptor = re.sub(r"\s+", " ", descriptor).strip()
+    outcome = _outcome_class_from_statistic_descriptor(descriptor)
+    return (
+        f"Source-statistics mapping: {source} is mapped to outcome class={outcome} "
+        f"and reports {statistic} {descriptor}; the statistic is visible in the "
+        "outcome-class landscape rather than only in the source bundle."
+    )
+
+
+def _outcome_class_from_statistic_descriptor(descriptor: str) -> str:
+    lower = descriptor.lower()
+    if any(token in lower for token in ("lifespan", "healthspan", "survival", "mortality")):
+        return "longevity"
+    if any(token in lower for token in ("glucose", "insulin", "metabolic", "lipid")):
+        return "cardiometabolic"
+    if any(token in lower for token in ("inflamm", "immune", "cytokine")):
+        return "immune"
+    return "contextual_other"
 
 
 def _phase_d_source_directness_breakdown(
