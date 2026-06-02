@@ -88,6 +88,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_prisma_all_included_rationale(t, out_dir),
         lambda t: _phase_d_classification_criteria_note(t, out_dir),
+        lambda t: _phase_d_conflict_severity_note(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_evidence_honesty_guard(t, out_dir),
@@ -653,6 +654,18 @@ _CLASSIFICATION_CRITERIA_NOTE = (
     "interpreted."
 )
 
+_CONFLICT_SEVERITY_NOTE = (
+    "Conflict-map severity note: severity-level-3 disagreements are defined "
+    "and scored as material null-versus-positive or cross-outcome directional "
+    "conflicts that change interpretation within an outcome class. "
+    "Severity-level-4 disagreements are defined and scored as higher-weight "
+    "conflicts in which stronger or more direct evidence conflicts with weaker, "
+    "adjacent, or review-level evidence. The scoring inputs are recorded in "
+    "contradiction_map.json and the source-audit sidecars; the main text uses "
+    "these ordinal levels to weight interpretive caution, not as effect-size "
+    "estimates."
+)
+
 
 def _phase_d_classification_criteria_note(
     text: str, out_dir: Path,
@@ -674,10 +687,39 @@ def _phase_d_classification_criteria_note(
     )]
 
 
+def _phase_d_conflict_severity_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_conflict_severity_note(feedback):
+        return text, []
+    if "conflict-map severity note:" in text.lower():
+        return text, []
+    patched, n = _prepend_or_create_section_paragraph(text, "Methods", _CONFLICT_SEVERITY_NOTE)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_conflict_severity_note",
+        rule="define_conflict_map_severity_scoring",
+        n_changes=1,
+        detail="added severity-level disagreement scoring note",
+    )]
+
+
 def _revision_asks_classification_criteria(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return "classification criteria" in lower or (
         "assign" in lower and "outcome class" in lower and "directness" in lower
+    )
+
+
+def _revision_asks_conflict_severity_note(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        any(token in lower for token in ("severity-level", "severity level"))
+        and any(token in lower for token in ("disagreement", "disagreements", "conflict", "conflict map"))
+        and any(token in lower for token in ("defined", "scored", "scoring", "supplementary", "supplemental"))
     )
 
 
