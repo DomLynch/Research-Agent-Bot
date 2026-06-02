@@ -897,6 +897,7 @@ def _failure_class(status: str) -> str:
         "research_revision_fingerprint": "D_no_action",
         "superseded_topic_run": "D_no_action",
         "terminal_surface_repeat": "D_no_action",
+        "terminal_source_precision_repair_incomplete": "D_no_action",
     }.get(code, "unknown")
 
 
@@ -1636,20 +1637,32 @@ def run_cycle(
                 corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
                 ledger["corpus"] = corpus
                 if source_repair.get("status") == "source_precision_repair_incomplete":
+                    gate_status = (
+                        "terminal_source_precision_repair_incomplete"
+                        if revision_source
+                        else _SOURCE_PRECISION_STATUS
+                    )
                     attempt = {
                         "topic": selected,
                         "out_dir": out_dir.name,
                         "synthesis_return_code": None,
-                        "submit_status": _SOURCE_PRECISION_STATUS,
-                        "gate_status": _SOURCE_PRECISION_STATUS,
-                        "failure_class": _failure_class(_SOURCE_PRECISION_STATUS),
+                        "submit_status": gate_status,
+                        "gate_status": gate_status,
+                        "failure_class": _failure_class(gate_status),
                         "submitted": 0,
                         "corpus": corpus,
                         "source_precision_repair": source_repair,
                     }
                     ledger["attempts"].append(attempt)
-                    ledger["status"] = "source_precision_repair_incomplete_no_submission"
+                    ledger["status"] = (
+                        "revise_terminal_source_precision_repair_incomplete"
+                        if revision_source
+                        else "source_precision_repair_incomplete_no_submission"
+                    )
                     ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    if revision_source:
+                        _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                        remote_revision = None
                     attempted.add(selected)
                     continue
             quant_preflight = _quant_claim_preflight(corpus)

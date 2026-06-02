@@ -3033,6 +3033,40 @@ def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkey
     assert (ledger_dir / cycle.HANDLED_REVISIONS).exists()
 
 
+def test_revise_lane_marks_unrepairable_source_precision_terminal(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "digital_frailty_index", target_journal=True)
+    source = _prior_run(tmp_path, "digital_frailty_index", receipts=37, tensions=113, primary=1, level=5)
+    (source / "full_paper.md").write_text("# Research Synthesis: Digital Frailty Index\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name, "topic": "digital_frailty_index",
+        "fingerprint": cycle.submit_bridge._sha256(source / "full_paper.md"),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_terminal_topics", lambda *_a, **_k: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (False, "source_topic_precision_low:0/107<0.50", [Path("bad.json")]))
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda *_a, **_k: {
+        "status": "source_precision_repair_incomplete",
+        "source_topic_precision_before": "source_topic_precision_low:0/107<0.50",
+        "source_topic_precision_after": "source_topic_precision_unscored",
+        "n_quant_claims": 0,
+    })
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("unrepairable source revise must not re-synthesise")))
+    request = {"artifactId": "digital-frailty-review", "title": "Research Synthesis: Digital Frailty Index",
+               "feedback": "The source bundle includes off-topic records; revise with topic-specific sources."}
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-06-02", run_synthesis=True, submit=True, mode="revise",
+        remote_loader=lambda: (set(), None), revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["status"] == "revise_terminal_source_precision_repair_incomplete"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_source_precision_repair_incomplete"
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][0]["status"] == "terminal_source_precision_repair_incomplete"
+
+
 def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
     """The derived queue view classifies every topic by its strongest signal:
     surface-repeat > preflight-blocked > terminal > submitted > ready."""
