@@ -114,6 +114,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, noise_changes = apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
     text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
+    text, log = _phase_d_unproven_human_longevity(text, out_dir)
+    entries.extend(log)
     return text, entries
 
 

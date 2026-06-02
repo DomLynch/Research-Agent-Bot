@@ -126,6 +126,46 @@ def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp
     assert any(entry.phase == "N_surface_floor_backstop" for entry in report.entries)
 
 
+def test_finalize_run_preserves_unproven_human_longevity_after_surface_restore(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Strengthen the conclusion to explicitly state that longevity benefits "
+        "are currently unproven in humans, not merely incomplete or biologically plausible."
+    )
+    paper = (
+        "## Abstract\n\n" + ("alpha " * 160) + "\n\n"
+        "## Introduction\n\n" + ("intro " * 420) + "\n\n"
+        "## Background\n\n" + ("background " * 320) + "\n\n"
+        "## Methods\n\n" + ("methods " * 320) + "\n\n"
+        "## Results\n\n" + ("results " * 520) + "\n\n"
+        "## Cross-Domain Synthesis\n\n" + ("synthesis " * 870) + "\n\n"
+        "## Discussion\n\n" + ("discussion " * 820) + "\n\n"
+        "## Limitations\n\n" + ("limits " * 165) + "\n\n"
+        "## Conclusion\n\nThe evidence remains incomplete and biologically plausible.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "glp_1_longevity",
+        "total_words": 4000,
+        "section_words": {"limitations": 165, "conclusion": 8},
+        "receipts": [],
+    }), encoding="utf-8")
+    (tmp_path / "full_paper.journal_surface.json").write_text(json.dumps({
+        "passed": False,
+        "issues": [{"code": "structure_surface", "detail": "section too short: Limitations 165/250 words"}],
+    }), encoding="utf-8")
+
+    report = journal_finalizer.finalize_run(tmp_path)
+    text = (tmp_path / "full_paper.md").read_text(encoding="utf-8")
+
+    assert "Longevity benefits are currently unproven in humans" in text
+    assert revision_coverage.deterministic_unmet_asks(text, [ask]) == []
+    assert any(entry.phase == "D_unproven_human_longevity" for entry in report.entries)
+
+
 def test_source_verification_transparency_is_inserted_into_methods(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
