@@ -89,6 +89,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     if _asks_source_classification_map(lower):
         text = paper_md.lower()
         return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
+    if _asks_source_verification_transparency(lower):
+        return _source_verification_transparency_is_stated(paper_md)
     if _asks_direct_evidence_definition(lower):
         text = paper_md.lower()
         return (
@@ -120,6 +122,14 @@ def _asks_classification_criteria(text: str) -> bool:
 def _asks_source_classification_map(text: str) -> bool:
     return "mapping table" in text or "mapping list" in text or (
         "which of the" in text and "source" in text and "outcome class" in text
+    )
+
+
+def _asks_source_verification_transparency(text: str) -> bool:
+    return (
+        ("source bundle" in text or "reference-only" in text)
+        and any(token in text for token in ("external verification", "independently verified", "exact statistics", "detailed quantitative"))
+        and any(token in text for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
     )
 
 
@@ -201,6 +211,24 @@ def _long_term_safety_scope_is_stated(paper_md: str) -> bool:
     safety = "long-term safety" in scope or "long term safety" in scope or "safety data" in scope
     population = "older adult" in scope or "older adults" in scope or "aged" in scope
     return safety and population
+
+
+def _source_verification_transparency_is_stated(paper_md: str) -> bool:
+    scope = " ".join(
+        part
+        for part in (_section(paper_md, "Methods"), _section(paper_md, "Limitations"), _section(paper_md, "References"))
+        if part
+    ).lower()
+    if not scope:
+        return False
+    limitation = (
+        "reference-only" in scope
+        or "external verification" in scope
+        or "independently verified" in scope
+        or "traceability" in scope
+    )
+    artifact = any(token in scope for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
+    return "source bundle" in scope and limitation and artifact
 
 
 def _references_are_traceable(paper_md: str) -> bool:
