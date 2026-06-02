@@ -611,6 +611,32 @@ def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Pat
     assert logs[0].n_changes == 1
 
 
+def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "For cited sources with specific statistics (e.g., Weiss 2026 33% lifespan increase), "
+        "ensure these appear in the evidence landscape and are connected to the appropriate "
+        "outcome class rather than buried in the source bundle."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus includes several sources.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_source_statistics_landscape(paper, tmp_path)
+
+    assert "Weiss 2026 is mapped to outcome class=longevity and reports 33% lifespan increase" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_source_statistics_landscape",
+            rule="map_named_source_statistic_to_outcome_class",
+            n_changes=1,
+            detail="added reviewer-named source statistic to Evidence Landscape",
+        )
+    ]
+
+
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
