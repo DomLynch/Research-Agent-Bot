@@ -22,6 +22,7 @@ from pathlib import Path
 
 from agent.journal_finalizer import (  # type: ignore[import-not-found]
     _lowercase_first_letter,
+    _phase_c_terminology,
     _phase_g_refresh_sidecars,
     _refresh_pre_submit_gate,
     _refresh_readiness_contract_items,
@@ -81,6 +82,19 @@ def test_methods_pack_h3_markers_no_longer_say_human_accountability() -> None:
     # Slice 18: heading was renamed; constant must match the renderer.
     assert "### Accountability" in REQUIRED_METHODS_H3_MARKERS
     assert "### Human accountability" not in REQUIRED_METHODS_H3_MARKERS
+
+
+def test_phase_c_calibrates_public_directness_language() -> None:
+    out, log = _phase_c_terminology(
+        "The paper has no direct clinical evidence and a direct clinical gap. "
+        "Direct clinical evidence carries the highest weight."
+    )
+
+    assert "direct clinical evidence" not in out
+    assert "direct clinical gap" not in out
+    assert "direct interventional hard-endpoint evidence" in out
+    assert "direct interventional hard-endpoint gap" in out
+    assert log
 
 
 def test_methods_pack_render_matches_required_markers() -> None:
