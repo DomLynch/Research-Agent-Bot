@@ -117,6 +117,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _long_term_safety_scope_is_stated(paper_md)
     if _asks_reference_traceability(lower):
         return _references_are_traceable(paper_md)
+    if _asks_prior_publication_differentiation(lower):
+        return _prior_publication_differentiation_is_stated(paper_md)
     return True
 
 
@@ -203,6 +205,14 @@ def _asks_reference_traceability(text: str) -> bool:
         "reference list" in text
         and any(token in text for token in ("doi", "pmid", "bibliographic identifier", "source bundle", "traceable"))
     ) or "traceable to the source bundle" in text
+
+
+def _asks_prior_publication_differentiation(text: str) -> bool:
+    return "high overlap with publication" in text or (
+        "differentiate" in text
+        and "publication" in text
+        and any(token in text for token in ("angle", "findings", "population"))
+    )
 
 
 def _gaps_section_is_actionable(paper_md: str) -> bool:
@@ -338,6 +348,25 @@ def _source_verification_transparency_is_stated(paper_md: str) -> bool:
     )
     artifact = any(token in scope for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
     return "source bundle" in scope and limitation and artifact
+
+
+def _prior_publication_differentiation_is_stated(paper_md: str) -> bool:
+    scope = " ".join(
+        part for part in (
+            _section(paper_md, "Introduction"),
+            _section(paper_md, "Discussion"),
+            _section(paper_md, "Limitations"),
+            _section(paper_md, "Conclusion"),
+        ) if part
+    ).lower()
+    if not scope:
+        return False
+    return (
+        "prior-brief differentiation" in scope
+        and "angle" in scope
+        and "finding" in scope
+        and "population" in scope
+    )
 
 
 def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
