@@ -85,6 +85,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_a_methods_replace(t, out_dir),
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_c_terminology,
+        _phase_d_source_verification_transparency,
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
         _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
@@ -458,6 +459,37 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
 
 
 # --- Phase D: Reference closure ---------------------------------------
+
+
+_SOURCE_VERIFICATION_SENTENCE = (
+    "The source bundle and supplementary artifacts (manifest.json and "
+    "methods_pack.json when present) define the evidence state; detailed "
+    "quantitative claims require external verification against those artifacts "
+    "and the cited source records."
+)
+
+
+def _phase_d_source_verification_transparency(
+    text: str,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    methods = re.search(r"^## Methods\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if not methods:
+        return text, []
+    scope = methods.group(1).lower()
+    if (
+        "source bundle" in scope
+        and "external" in scope
+        and ("manifest" in scope or "methods_pack" in scope)
+    ):
+        return text, []
+    insertion = "\n\n" + _SOURCE_VERIFICATION_SENTENCE + "\n"
+    patched = text[:methods.end(1)] + insertion + text[methods.end(1):]
+    return patched, [FinalizerLogEntry(
+        phase="D_source_verification_transparency",
+        rule="state_source_bundle_verification_boundary",
+        n_changes=1,
+        detail="added source-bundle verification transparency sentence to Methods",
+    )]
 
 
 _REFERENCE_ID_RE = re.compile(

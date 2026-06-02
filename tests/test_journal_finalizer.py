@@ -126,6 +126,45 @@ def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp
     assert any(entry.phase == "N_surface_floor_backstop" for entry in report.entries)
 
 
+def test_source_verification_transparency_is_inserted_into_methods() -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Add a verification transparency statement acknowledging that the reference-only source bundle "
+        "limits external verification of detailed quantitative claims, and that readers should consult "
+        "supplementary artifacts (manifest.json, methods_pack.json)."
+    )
+    paper = "## Methods\n\nWe screened sources.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+
+    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper)
+
+    assert "source bundle and supplementary artifacts" in fixed
+    assert "manifest.json" in fixed and "methods_pack.json" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_source_verification_transparency",
+            rule="state_source_bundle_verification_boundary",
+            n_changes=1,
+            detail="added source-bundle verification transparency sentence to Methods",
+        )
+    ]
+
+
+def test_source_verification_transparency_is_not_duplicated() -> None:
+    paper = (
+        "## Methods\n\nThe source bundle and supplementary artifacts "
+        "(manifest.json and methods_pack.json when present) define the evidence state; "
+        "detailed quantitative claims should be externally verified against those artifacts "
+        "and the cited source records.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_reference_identifier_enrichment_uses_registry_ids(tmp_path: Path) -> None:
     paper = (
         "## Abstract\n\nSmith 2024 and Jones 2025 reported.\n\n"
