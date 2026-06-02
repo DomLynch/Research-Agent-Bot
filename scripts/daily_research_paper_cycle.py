@@ -1487,11 +1487,10 @@ def run_cycle(
             current_source_precision = _current_low_source_precision_topics(topics)
             if current_source_precision:
                 ledger["source_precision_backlog_topics"] = sorted(current_source_precision)
+                ledger["source_precision_backlog_count"] = len(current_source_precision)
                 preflight_blocked |= current_source_precision
-            repairable = (
-                _corpus_repair_topics(ledger_dir) | current_source_precision
-            ) - terminal_excluded - submitted_topics - pending_revision_excluded
-            source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
+            repairable = _corpus_repair_topics(ledger_dir) - terminal_excluded - submitted_topics - pending_revision_excluded
+            source_precision_repairable = _source_precision_repair_topics(ledger_dir)
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
                     repair = _repair_low_source_precision_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)

@@ -2663,9 +2663,10 @@ def test_source_precision_drops_generic_static_alias_for_composite_topic(tmp_pat
 
 
 def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "epigenome_editing_longevity")
+    _topic(tmp_path, "epigenome_editing_longevity", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
     runs: list[str] = []
     submit_calls = 0
 
@@ -2858,7 +2859,7 @@ def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path,
     assert ledger["status"] == "submitted_to_researka"
 
 
-def test_cycle_proactively_repairs_current_low_source_precision_backlog(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_blocks_current_low_source_precision_backlog_without_broad_repair(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_low_source", target_journal=True)
     _topic(tmp_path, "bbb_low_source", target_journal=True)
     _topic(tmp_path, "zzz_clean_topic", target_journal=True)
@@ -2902,8 +2903,10 @@ def test_cycle_proactively_repairs_current_low_source_precision_backlog(tmp_path
     )
 
     assert ledger["source_precision_backlog_topics"] == ["aaa_low_source", "bbb_low_source"]
-    assert repairs == ["aaa_low_source"]
-    assert synthesized == ["aaa_low_source"]
+    assert ledger["source_precision_backlog_count"] == 2
+    assert repairs == []
+    assert synthesized == ["zzz_clean_topic"]
+    assert ledger["topic_status"]["aaa_low_source"] == "preflight_blocked"
     assert ledger["topic_status"]["bbb_low_source"] == "preflight_blocked"
     assert ledger["status"] == "submitted_to_researka"
 
