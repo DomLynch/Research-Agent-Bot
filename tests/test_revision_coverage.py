@@ -597,6 +597,36 @@ def test_numeric_effect_direction_flags_non_significant_p_value_called_significa
     ]
 
 
+def test_deterministic_unmet_flags_numeric_effect_revision_still_wrong() -> None:
+    ask = (
+        "Correct factual error in abstract regarding Waghmare 2024: source excerpt reports "
+        "non-significant result (p = 0.08), not significant reduction. Audit all reported "
+        "p-values and effect directions."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a significant reduction in LF HRV power (p = 0.08).\n\n"
+        "## Conclusion\n\nThe corpus remains mixed.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_corrected_numeric_effect_revision() -> None:
+    ask = (
+        "Correct factual error in abstract regarding Waghmare 2024: source excerpt reports "
+        "non-significant result (p = 0.08), not significant reduction. Audit all reported "
+        "p-values and effect directions."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a non-significant trend in LF HRV power (p = 0.08).\n\n"
+        "## Conclusion\n\nThe corpus remains mixed.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_numeric_effect_direction_allows_explicit_non_significant_language() -> None:
     paper = (
         "## Abstract\n\n"

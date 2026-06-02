@@ -121,6 +121,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _references_are_traceable(paper_md)
     if _asks_prior_publication_differentiation(lower):
         return _prior_publication_differentiation_is_stated(paper_md)
+    if _asks_numeric_effect_accuracy(lower):
+        return not numeric_effect_direction_issues(paper_md)
     return True
 
 
@@ -221,6 +223,13 @@ def _asks_prior_publication_differentiation(text: str) -> bool:
         "differentiate" in text
         and "publication" in text
         and any(token in text for token in ("angle", "findings", "population"))
+    )
+
+
+def _asks_numeric_effect_accuracy(text: str) -> bool:
+    return (
+        any(token in text for token in ("p-value", "p value", "p-values", "reported p", "confidence interval", "effect direction"))
+        and any(token in text for token in ("significant", "non-significant", "factual error", "correct", "audit", "direction"))
     )
 
 
