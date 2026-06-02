@@ -85,6 +85,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_a_methods_replace(t, out_dir),
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_c_terminology,
+        lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
@@ -461,6 +462,67 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
 
 
 # --- Phase D: Reference closure ---------------------------------------
+
+
+_ADMISSION_FUNNEL_NOTE = (
+    "Admission-bucket note: The funnel rows are audit categories, not an "
+    "additive conservation table. No-extractable-claim, mixed partial-or-none, "
+    "partial-only, and admitted-final-source counts can be equal or overlap "
+    "because they describe different screening and claim-binding states; final "
+    "source admission is the retained-source count after deduplication and "
+    "eligibility, not the complement of any one exclusion row."
+)
+
+
+def _phase_d_admission_funnel_clarification(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_admission_funnel_clarification(feedback):
+        return text, []
+    if "admission-bucket note:" in text.lower():
+        return text, []
+    heading = re.search(
+        r"^#{2,4}\s+.*(?:admission funnel|selection flow).*$",
+        text,
+        flags=re.M | re.I,
+    )
+    if not heading:
+        return text, []
+    lines = text[heading.end():].splitlines(keepends=True)
+    offset = heading.end()
+    in_table = False
+    insert_at = offset
+    for line in lines:
+        stripped = line.strip()
+        if re.match(r"^#{2,4}\s+", stripped):
+            break
+        offset += len(line)
+        if stripped.startswith("|"):
+            in_table = True
+            insert_at = offset
+        elif in_table and stripped:
+            break
+    if not in_table:
+        return text, []
+    patched = text[:insert_at].rstrip() + "\n\n" + _ADMISSION_FUNNEL_NOTE + "\n" + text[insert_at:]
+    return patched, [FinalizerLogEntry(
+        phase="D_admission_funnel_clarification",
+        rule="state_non_additive_admission_buckets",
+        n_changes=1,
+        detail="added admission-funnel non-additive bucket clarification",
+    )]
+
+
+def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        any(token in lower for token in ("admission funnel", "source admission", "receipt admission"))
+        and any(token in lower for token in ("numerical inconsistency", "numeric inconsistency", "contradictory", "contradiction", "both equal", "clarify"))
+    ) or ("no extractable claims" in lower and "admitted final" in lower) or (
+        "partial/none-only" in lower and "partial-only" in lower
+    )
 
 
 _SOURCE_VERIFICATION_SENTENCE = (

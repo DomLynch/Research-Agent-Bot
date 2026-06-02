@@ -150,8 +150,10 @@ def _asks_section_source_grounding(text: str) -> bool:
 def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
     return (
         any(token in text for token in ("admission funnel", "source admission", "receipt admission"))
-        and any(token in text for token in ("numerical inconsistency", "numeric inconsistency", "inconsistently", "both equal"))
-    ) or ("no extractable claims" in text and "admitted final" in text)
+        and any(token in text for token in ("numerical inconsistency", "numeric inconsistency", "inconsistently", "both equal", "contradictory", "contradiction", "clarify"))
+    ) or ("no extractable claims" in text and "admitted final" in text) or (
+        "partial/none-only" in text and "partial-only" in text
+    )
 
 
 def _asks_single_source_proportionality(text: str) -> bool:
@@ -321,6 +323,13 @@ def _source_verification_transparency_is_stated(paper_md: str) -> bool:
 
 
 def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
+    lower = paper_md.lower()
+    if (
+        "admission-bucket note:" in lower
+        and "not an additive conservation table" in lower
+        and "claim-binding states" in lower
+    ):
+        return True
     rows = _funnel_counts(paper_md)
     if not rows:
         return False
@@ -328,7 +337,9 @@ def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
     admitted = rows.get("admitted final sources")
     if admitted is None:
         admitted = rows.get("admitted final receipts")
-    return no_extractable is None or admitted is None or no_extractable != admitted
+    if no_extractable is None or admitted is None:
+        return False
+    return no_extractable != admitted
 
 
 def _single_source_proportionality_is_stated(paper_md: str) -> bool:

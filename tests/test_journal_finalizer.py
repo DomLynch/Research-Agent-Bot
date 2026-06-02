@@ -182,6 +182,79 @@ def test_source_verification_transparency_is_revision_scoped(tmp_path: Path) -> 
     assert logs == []
 
 
+def test_admission_funnel_clarification_repairs_numeric_inconsistency_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Resolve the numerical inconsistency in the admission funnel where "
+        "'No extractable claims' and 'Admitted final sources' both equal 56."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| No extractable claims | 56 |\n"
+        "| Admitted final sources | 56 |\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert "Admission-bucket note:" in fixed
+    assert "not an additive conservation table" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_admission_funnel_clarification",
+            rule="state_non_additive_admission_buckets",
+            n_changes=1,
+            detail="added admission-funnel non-additive bucket clarification",
+        )
+    ]
+
+
+def test_admission_funnel_clarification_covers_partial_binding_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify the admission funnel numbers; 'Partial/none-only claim binding: 24' "
+        "and 'Partial-only candidates: 11' appear contradictory."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### Source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Mixed partial-or-none claim-binding candidates | 24 |\n"
+        "| Partial-only claim-binding candidates | 11 |\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, _ = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert "claim-binding states" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> None:
+    paper = (
+        "## Methods\n\n"
+        "### source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| No extractable claims | 56 |\n"
+        "| Admitted final sources | 56 |\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
