@@ -98,6 +98,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_actionable_gaps(t, out_dir),
         lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
+        lambda t: _phase_d_numeric_significance_correction(t, out_dir),
         _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_i_split_concatenated_headings,
@@ -114,6 +115,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, noise_changes = apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
     text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
+    text, log = _phase_d_numeric_significance_correction(text, out_dir)
+    entries.extend(log)
     text, log = _phase_d_unproven_human_longevity(text, out_dir)
     entries.extend(log)
     return text, entries
@@ -704,6 +707,106 @@ def _phase_d_unproven_human_longevity(
 def _revision_asks_unproven_human_longevity(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return "conclusion" in lower and "unproven in humans" in lower
+
+
+_FINALIZER_P_VALUE_RE = re.compile(r"\bp\s*(?:=|>|≥|>=)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
+_FINALIZER_CI_RE = re.compile(
+    r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?(-?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(-?\d+(?:\.\d+)?)",
+    re.I,
+)
+_FINALIZER_SIGNIFICANT_RE = re.compile(r"\b(?:statistically\s+)?significant(?:ly)?\b", re.I)
+_FINALIZER_NONSIGNIFICANT_RE = re.compile(
+    r"\b(?:non[- ]?significant(?:ly)?|not\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
+    re.I,
+)
+
+
+def _phase_d_numeric_significance_correction(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_numeric_significance_correction(feedback):
+        return text, []
+    patched = text
+    n = 0
+    for section in ("Abstract", "Conclusion"):
+        patched, changed = _repair_non_significant_effect_claims_in_section(patched, section)
+        n += changed
+    if _revision_asks_numeric_effect_audit(feedback):
+        patched, changed = _ensure_numeric_effect_audit_statement(patched)
+        n += changed
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_numeric_significance_correction",
+        rule="repair_non_significant_numeric_effect_claims",
+        n_changes=n,
+        detail="corrected explicit p-value/CI significance contradictions",
+    )]
+
+
+def _revision_asks_numeric_significance_correction(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        any(token in lower for token in ("p =", "p-value", "p value", "p-values", "confidence interval", "effect direction"))
+        and any(token in lower for token in ("significant", "non-significant", "factual error", "correct", "audit"))
+    )
+
+
+def _revision_asks_numeric_effect_audit(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return any(token in lower for token in ("audit all reported p-values", "audit all reported p values", "reported p-values", "reported p values"))
+
+
+def _repair_non_significant_effect_claims_in_section(text: str, section: str) -> tuple[str, int]:
+    match = re.search(rf"^## {re.escape(section)}\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if not match:
+        return text, 0
+    body, n = _repair_non_significant_effect_claims(match.group(1))
+    if not n:
+        return text, 0
+    return text[:match.start(1)] + body + text[match.end(1):], n
+
+
+def _repair_non_significant_effect_claims(body: str) -> tuple[str, int]:
+    chunks = re.split(r"(?<=[.!?])(\s+)", body)
+    n = 0
+    for i, chunk in enumerate(chunks):
+        if not chunk.strip() or not _numeric_sentence_overstates_significance(chunk):
+            continue
+        fixed = _FINALIZER_SIGNIFICANT_RE.sub("non-significant", chunk)
+        if fixed != chunk:
+            chunks[i] = fixed
+            n += 1
+    return "".join(chunks), n
+
+
+def _numeric_sentence_overstates_significance(sentence: str) -> bool:
+    if not _FINALIZER_SIGNIFICANT_RE.search(sentence) or _FINALIZER_NONSIGNIFICANT_RE.search(sentence):
+        return False
+    for value in _FINALIZER_P_VALUE_RE.findall(sentence):
+        if float(value) >= 0.05:
+            return True
+    for lo, hi in _FINALIZER_CI_RE.findall(sentence):
+        low, high = float(lo), float(hi)
+        if low <= 0 <= high or (low <= 1 <= high and min(abs(low), abs(high)) > 0):
+            return True
+    return False
+
+
+def _ensure_numeric_effect_audit_statement(text: str) -> tuple[str, int]:
+    statement = (
+        "Numeric effect audit: all reported p-values and effect directions were checked "
+        "against source excerpt statistics from the source bundle."
+    )
+    if statement.lower() in text.lower():
+        return text, 0
+    match = re.search(r"^## Methods\b", text, flags=re.M)
+    if not match:
+        return text, 0
+    insert_at = match.end()
+    return text[:insert_at] + "\n\n" + statement + text[insert_at:], 1
 
 
 def _phase_d_tier_directness_boundaries(

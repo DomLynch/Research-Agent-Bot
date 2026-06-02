@@ -516,6 +516,77 @@ def test_unproven_human_longevity_repairs_conclusion_ask(tmp_path: Path) -> None
     ]
 
 
+def test_numeric_significance_correction_repairs_p_value_revision(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "
+        "reports a non-significant result (p = 0.08), not a significant reduction in LF HRV power."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a significant reduction in LF HRV power (p = 0.08).\n\n"
+        "## Conclusion\n\nThe corpus remains mixed.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "non-significant reduction in LF HRV power (p = 0.08)" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_numeric_significance_correction",
+            rule="repair_non_significant_numeric_effect_claims",
+            n_changes=1,
+            detail="corrected explicit p-value/CI significance contradictions",
+        )
+    ]
+
+
+def test_numeric_significance_correction_keeps_existing_non_significant_wording(tmp_path: Path) -> None:
+    ask = (
+        "Correct factual error in abstract regarding Waghmare 2024: source excerpt reports "
+        "non-significant result (p = 0.08), not significant reduction."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a non-significant reduction in LF HRV power (p = 0.08).\n\n"
+        "## Conclusion\n\nThe corpus remains mixed.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
+def test_numeric_significance_correction_adds_audit_statement_when_requested(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Correct factual error in abstract regarding Waghmare 2024: source excerpt reports "
+        "non-significant result (p = 0.08), not significant reduction. Audit all reported "
+        "p-values and effect directions."
+    )
+    paper = (
+        "## Methods\n\nExisting methods.\n\n"
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a significant reduction in LF HRV power (p = 0.08).\n\n"
+        "## Conclusion\n\nThe corpus remains mixed.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "Numeric effect audit: all reported p-values and effect directions were checked" in fixed
+    assert "non-significant reduction in LF HRV power (p = 0.08)" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].n_changes == 2
+
+
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
