@@ -628,11 +628,6 @@ def _phase_d_section_source_grounding(
     n = 0
     for heading in ("Key Findings", "Limitations", "Conclusion"):
         match = re.search(rf"^## {re.escape(heading)}\b(.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
-        if not match:
-            continue
-        section = match.group(1).lower()
-        if "source-grounding note" in section:
-            continue
         if heading == "Key Findings":
             note = (
                 "Source-grounding note for Key Findings: The finding-level claims "
@@ -651,6 +646,15 @@ def _phase_d_section_source_grounding(
                 f"source-traced evidence from {citation} and the manifest receipts; "
                 "it does not extend beyond the cited source titles or excerpts."
             )
+        if not match:
+            insert_at = _source_grounding_section_insert_at(patched, heading)
+            section = f"## {heading}\n\n{note}\n"
+            patched = patched[:insert_at].rstrip() + "\n\n" + section + "\n" + patched[insert_at:].lstrip()
+            n += 1
+            continue
+        section_text = match.group(1).lower()
+        if "source-grounding note" in section_text:
+            continue
         insert_at = match.start(1)
         patched = patched[:insert_at] + "\n\n" + note + patched[insert_at:]
         n += 1
@@ -662,6 +666,21 @@ def _phase_d_section_source_grounding(
         n_changes=n,
         detail=f"added source-grounding note to {n} section(s)",
     )]
+
+
+def _source_grounding_section_insert_at(text: str, heading: str) -> int:
+    if heading == "Key Findings":
+        for target in ("Results", "Methods", "Introduction"):
+            match = re.search(rf"^## {target}\b", text, flags=re.M)
+            if match:
+                return match.start()
+    if heading == "Limitations":
+        for target in ("Conclusion", "References"):
+            match = re.search(rf"^## {target}\b", text, flags=re.M)
+            if match:
+                return match.start()
+    ref = re.search(r"^## References\b", text, flags=re.M)
+    return ref.start() if ref else len(text)
 
 
 def _revision_asks_section_source_grounding(feedback: str) -> bool:

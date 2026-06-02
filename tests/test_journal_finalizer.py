@@ -475,6 +475,43 @@ def test_section_source_grounding_repairs_section_trace_ask(tmp_path: Path) -> N
     ]
 
 
+def test_section_source_grounding_inserts_missing_key_findings(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Strengthen source_grounding by ensuring every claim in Key Findings, "
+        "Limitations, and Conclusion can be traced to at least one source whose "
+        "excerpt or title directly supports that specific claim."
+    )
+    paper = (
+        "## Abstract\n\nThe synthesis is bounded.\n\n"
+        "## Results\n\nThe evidence is mixed.\n\n"
+        "## Limitations\n\nThe corpus is indirect.\n\n"
+        "## Conclusion\n\nClinical translation remains premature.\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"citation_token": "Smith 2024", "outcome_class": "cardiometabolic"},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_section_source_grounding(paper, tmp_path)
+
+    assert "## Key Findings" in fixed
+    assert fixed.index("## Key Findings") < fixed.index("## Results")
+    assert fixed.count("Source-grounding note") == 3
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_section_source_grounding",
+            rule="insert_section_source_trace_notes",
+            n_changes=3,
+            detail="added source-grounding note to 3 section(s)",
+        )
+    ]
+
+
 def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
