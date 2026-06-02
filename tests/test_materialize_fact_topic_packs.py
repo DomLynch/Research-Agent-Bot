@@ -199,6 +199,22 @@ def test_materialize_rows_max_created_caps_batch(tmp_path: Path) -> None:
     assert [item["slug"] for item in result["created"]] == ["metformin_metabolism_effects"]
 
 
+def test_materialize_rows_counts_duplicate_slug_once_per_batch(tmp_path: Path) -> None:
+    rows = [
+        {"topic": "metformin", "sub_topic": "other", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "general", "claim_type": "effect_size", "facts": 12, "exact_facts": 12, "papers": 4},
+    ]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=False)
+
+    assert [item["slug"] for item in result["created"]] == ["metformin_effects"]
+    assert result["skipped"] == [{
+        "topic": "metformin effects",
+        "slug": "metformin_effects",
+        "reason": "duplicate_batch_slug",
+    }]
+
+
 def test_fact_intervention_cross_strategy_promotes_repeated_interventions() -> None:
     sql = materializer.FACT_INTERVENTION_CROSS_SQL
 

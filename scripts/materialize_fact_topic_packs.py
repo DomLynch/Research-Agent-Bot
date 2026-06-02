@@ -203,9 +203,13 @@ def materialize_rows(
             "candidate_count": int(row.get("exact_facts") or row.get("facts") or 0),
         }))
     peer_records = _existing_records(db_dir) + [record for _, _, record in candidates]
+    batch_slugs: set[str] = set()
     for row, pack, record in candidates:
         if pack.status != "proceed" or pack.validation_errors:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": pack.stop_reason or pack.validation_errors})
+            continue
+        if pack.slug in batch_slugs:
+            skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "duplicate_batch_slug"})
             continue
         candidate_count = int(row.get("exact_facts") or row.get("facts") or 0)
         if not generated_pack_publishable(record, peer_records=peer_records):
@@ -240,6 +244,7 @@ def materialize_rows(
             "papers": int(row.get("papers") or 0),
             "path": str(path if persisted is None else db_dir / pack.slug / f"v{persisted.version}.json"),
         })
+        batch_slugs.add(pack.slug)
         if max_created is not None and len(created) >= max_created:
             break
     return {"created": created, "skipped": skipped}
