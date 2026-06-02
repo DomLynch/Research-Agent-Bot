@@ -86,6 +86,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_c_terminology,
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
+        lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
@@ -522,6 +523,47 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
         and any(token in lower for token in ("numerical inconsistency", "numeric inconsistency", "contradictory", "contradiction", "both equal", "clarify"))
     ) or ("no extractable claims" in lower and "admitted final" in lower) or (
         "partial/none-only" in lower and "partial-only" in lower
+    )
+
+
+_DIRECTIONAL_CODING_NOTE = (
+    "Directional coding note: Null or no extracted directional signal means "
+    "no coded positive, negative, or mixed effect was extracted for that "
+    "specific outcome class; it is not an absence-of-support finding. Positive, "
+    "negative, mixed, unclear, and null are outcome-specific codes, so a bounded "
+    "rationale can be supported by adjacent or different outcome evidence while "
+    "another outcome remains null or unclear."
+)
+
+
+def _phase_d_directional_coding_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_directional_coding_note(feedback):
+        return text, []
+    if "directional coding note:" in text.lower():
+        return text, []
+    for heading in ("Evidence Landscape", "Evidence Snapshot", "Results", "Key Findings"):
+        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        if match:
+            patched = text[:match.end()] + "\n\n" + _DIRECTIONAL_CODING_NOTE + text[match.end():]
+            return patched, [FinalizerLogEntry(
+                phase="D_directional_coding_note",
+                rule="define_directional_coding_schema",
+                n_changes=1,
+                detail=f"added directional coding schema note to {heading}",
+            )]
+    return text, []
+
+
+def _revision_asks_directional_coding_note(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "directional coding" in lower
+        or ("no extracted directional signal" in lower and "clarify" in lower)
+        or ("null" in lower and "absence of support" in lower)
     )
 
 

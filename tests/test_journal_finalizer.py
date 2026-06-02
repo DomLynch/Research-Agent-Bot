@@ -257,6 +257,42 @@ def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> No
     assert logs == []
 
 
+def test_directional_coding_note_repairs_schema_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Define the directional coding schema (null, unclear, positive, mixed) "
+        "in the Evidence Landscape section so readers can audit how claims were classified."
+    )
+    paper = "## Evidence Landscape\n\nNo extracted directional signal dominates.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_directional_coding_note(paper, tmp_path)
+
+    assert "Directional coding note:" in fixed
+    assert "Positive, negative, mixed, unclear, and null" in fixed
+    assert "different outcome evidence" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_directional_coding_note",
+            rule="define_directional_coding_schema",
+            n_changes=1,
+            detail="added directional coding schema note to Evidence Landscape",
+        )
+    ]
+
+
+def test_directional_coding_note_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Evidence Landscape\n\nNo extracted directional signal dominates.\n"
+
+    fixed, logs = journal_finalizer._phase_d_directional_coding_note(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
