@@ -280,6 +280,38 @@ def test_deterministic_unmet_accepts_actionable_gaps_section() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_gaps_that_repeat_limitations() -> None:
+    ask = (
+        "Rewrite the 'Gaps Identified' section to provide specific, actionable "
+        "research gaps instead of repeating the limitations."
+    )
+    paper = (
+        "## Gaps Identified\n\n"
+        "The main gaps are the same as the limitations: the corpus is indirect, "
+        "heterogeneous, and lacks definitive evidence.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_gaps_rewritten_as_actionable_next_steps() -> None:
+    ask = (
+        "Rewrite the 'Gaps Identified' section to provide specific, actionable "
+        "research gaps instead of repeating the limitations."
+    )
+    paper = (
+        "## Gaps Identified\n\n"
+        "1. Run a powered prospective trial in the priority population with a "
+        "prespecified comparator, dose documentation, and clinical endpoint hierarchy.\n"
+        "2. Extend follow-up duration to at least 24 months with safety monitoring and "
+        "patient-relevant functional measurement.\n"
+        "3. Standardize measurement timing across cardiometabolic and functional endpoints "
+        "so future analyses can test pooled effects rather than restating heterogeneity.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_unbounded_null_signal_conclusion() -> None:
     ask = "Reconcile the null directional signals with the concluding claim that a bounded geroscience rationale exists."
     paper = "## Conclusion\n\nThis synthesis supports a bounded geroscience rationale for clinical use.\n"
