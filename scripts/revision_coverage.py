@@ -68,6 +68,97 @@ def unmet_asks(
     return [a for a, ok in zip(clean, flags, strict=True) if not ok]
 
 
+def deterministic_unmet_asks(paper_md: str, asks: Sequence[str]) -> list[str]:
+    """Reviewer asks with deterministic manuscript evidence.
+
+    The LLM coverage judge stays useful for semantic asks, but these recurring
+    Researka revise classes are structural enough to verify directly. This
+    makes the gate resilient when the judge fails open.
+    """
+    clean = [a.strip() for a in asks if a and a.strip()]
+    if not clean:
+        return []
+    return [ask for ask in clean if not _deterministic_ask_satisfied(paper_md, ask)]
+
+
+def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
+    lower = " ".join(ask.lower().split())
+    if _asks_classification_criteria(lower):
+        text = paper_md.lower()
+        return all(token in text for token in ("classification criteria", "outcome class", "directness", "evidence tier"))
+    if _asks_source_classification_map(lower):
+        text = paper_md.lower()
+        return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
+    if _asks_direct_evidence_definition(lower):
+        text = paper_md.lower()
+        return (
+            "qualifying direct source" in text
+            or "direct interventional hard-endpoint evidence" in text
+        )
+    if _asks_directional_coding(lower):
+        text = paper_md.lower()
+        return "directional coding" in text and all(token in text for token in ("null", "unclear", "positive", "mixed"))
+    if _asks_actionable_gaps(lower):
+        return _gaps_section_is_actionable(paper_md)
+    if _asks_null_signal_reconciliation(lower):
+        return _null_signal_conclusion_is_bounded(paper_md)
+    return True
+
+
+def _asks_classification_criteria(text: str) -> bool:
+    return "classification criteria" in text or (
+        "assign" in text and "outcome class" in text and "directness" in text
+    )
+
+
+def _asks_source_classification_map(text: str) -> bool:
+    return "mapping table" in text or "mapping list" in text or (
+        "which of the" in text and "source" in text and "outcome class" in text
+    )
+
+
+def _asks_direct_evidence_definition(text: str) -> bool:
+    return "direct evidence" in text and any(token in text for token in ("definition", "qualifying", "qualify", "0/"))
+
+
+def _asks_directional_coding(text: str) -> bool:
+    return "directional coding" in text or (
+        "no extracted directional signal" in text and "clarify" in text
+    )
+
+
+def _asks_actionable_gaps(text: str) -> bool:
+    return "gaps identified" in text and any(token in text for token in ("actionable", "future research", "next steps"))
+
+
+def _asks_null_signal_reconciliation(text: str) -> bool:
+    return "null directional" in text and any(token in text for token in ("concluding", "conclusion", "rationale"))
+
+
+def _gaps_section_is_actionable(paper_md: str) -> bool:
+    gaps = _section(paper_md, "Gaps Identified") or _section(paper_md, "Evidence-Gap Priority")
+    if not gaps:
+        return False
+    text = gaps.lower()
+    if len(gaps.split()) < 55:
+        return False
+    action_tokens = (
+        "sample size", "powered", "priority population", "population", "follow-up",
+        "duration", "endpoint", "trial", "randomized", "prospective", "safety",
+        "dose", "comparator", "measurement",
+    )
+    return sum(1 for token in action_tokens if token in text) >= 3
+
+
+def _null_signal_conclusion_is_bounded(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_abstract(paper_md), _section(paper_md, "Conclusion")) if part).lower()
+    if not scope:
+        return False
+    if "bounded geroscience rationale" in scope and "null" not in scope:
+        return False
+    return any(token in scope for token in ("null", "mixed", "hypothesis-generating", "does not support", "not definitive"))
+
+
 _CLAIM_SYS = "You are a strict manuscript reviewer. Reply with JSON only."
 _CLAIM_USER = (
     "Below is a paper's ABSTRACT and the rest of the manuscript. List any abstract "
