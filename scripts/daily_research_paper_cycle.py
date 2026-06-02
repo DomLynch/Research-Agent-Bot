@@ -812,6 +812,7 @@ def _topic_status_map(
     terminal: set[str],
     surface_repeat: set[str],
     preflight_blocked: set[str],
+    source_precision_blocked: set[str] | None = None,
     submitted: set[str],
 ) -> dict[str, str]:
     """Derived, read-only queue state per topic — the 'one queue ledger' view
@@ -819,9 +820,12 @@ def _topic_status_map(
     the state that prevents looping is visible in one place; it is NOT a second
     authoritative store (no write-path to drift out of sync)."""
     status: dict[str, str] = {}
+    source_precision_blocked = source_precision_blocked or set()
     for topic in sorted(topics):
         if topic in surface_repeat:
             status[topic] = "terminal_surface_repeat"
+        elif topic in source_precision_blocked:
+            status[topic] = "source_precision_blocked"
         elif topic in preflight_blocked:
             status[topic] = "preflight_blocked"
         elif topic in terminal:
@@ -1594,6 +1598,7 @@ def run_cycle(
             ledger["writer_gate_repeat_policy"] = writer_gate_policy
         submitted_topics = _recent_submitted_topics(topics, ledger_dir)
         source_precision_repaired_ok: set[str] = set()
+        source_precision_auto_excluded: set[str] = set()
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
             current_source_precision = _current_low_source_precision_topics(topics)
@@ -1613,10 +1618,14 @@ def run_cycle(
                     surface_repeat.discard(repair_topic)
                 if repair.get("status") == "source_precision_repaired":
                     source_precision_repaired_ok.add(repair_topic)
+            source_precision_auto_excluded = current_source_precision - source_precision_repaired_ok
+            if source_precision_auto_excluded:
+                ledger["source_precision_auto_excluded_topics"] = sorted(source_precision_auto_excluded)
             if repairs:
                 ledger["corpus_repairs"] = repairs
         ledger["topic_status"] = _topic_status_map(
             topics, terminal=terminal_excluded, surface_repeat=surface_repeat, preflight_blocked=preflight_blocked,
+            source_precision_blocked=source_precision_auto_excluded,
             submitted=submitted_topics,
         )
         attempted: set[str] = set()
@@ -1640,7 +1649,7 @@ def run_cycle(
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip)
+                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip | source_precision_auto_excluded)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
