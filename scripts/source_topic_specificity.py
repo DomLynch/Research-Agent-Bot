@@ -50,6 +50,11 @@ def topic_tokens(topic: str) -> list[str]:
     ]
 
 
+def _specificity_token(token: str) -> str:
+    token = _normalize_pack_token(token)
+    return "age" if token in {"aged", "ageing", "aging"} else token
+
+
 def topic_aliases(
     topic: str, *, root: Path | None = None, include_generated_terms: bool = True,
 ) -> tuple[str, ...]:
@@ -90,14 +95,15 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
     """
     topic_text = " ".join(topic.replace("_", " ").replace("-", " ").lower().split())
     topic_raw_tokens = {
-        token for token in re.findall(r"[a-z0-9]+", topic_text)
+        _specificity_token(token) for token in re.findall(r"[a-z0-9]+", topic_text)
         if len(token) > 2 and token not in TOPIC_STOPWORDS
     }
     raw_aliases = [str(alias or "").strip() for alias in aliases]
     acronym_aliases: set[str] = set()
     for phrase in (topic_text, *raw_aliases):
         phrase_tokens = [
-            token for token in re.findall(r"[a-z0-9]+", phrase.replace("_", " ").replace("-", " ").lower())
+            _specificity_token(token)
+            for token in re.findall(r"[a-z0-9]+", phrase.replace("_", " ").replace("-", " ").lower())
             if len(token) > 2 and token not in TOPIC_STOPWORDS
         ]
         if len(phrase_tokens) >= 2:
@@ -109,7 +115,7 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
         if not norm:
             continue
         alias_tokens = {
-            token for token in re.findall(r"[a-z0-9]+", norm)
+            _specificity_token(token) for token in re.findall(r"[a-z0-9]+", norm)
             if len(token) > 2 and token not in TOPIC_STOPWORDS
         }
         acronym_alias = norm in acronym_aliases or bool(re.fullmatch(r"[A-Z0-9]{2,8}", raw))
@@ -137,7 +143,13 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     tokens = topic_tokens(topic)
     if not haystack or not tokens:
         return True
-    token_hits = sum(1 for token in tokens if token in haystack)
+    normalized_tokens = [_specificity_token(token) for token in tokens]
+    haystack_tokens = {
+        _specificity_token(token)
+        for token in re.findall(r"[a-z0-9]+", haystack)
+        if len(token) > 2
+    }
+    token_hits = sum(1 for token in normalized_tokens if token in haystack_tokens)
     alias_hit = any(
         " ".join(str(alias or "").replace("_", " ").replace("-", " ").lower().split()) in haystack
         for alias in aliases
@@ -149,8 +161,8 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
         return False
     if alias_hit or token_hits == len(tokens):
         return True
-    specific_hits = [token for token in tokens if token in haystack and token not in BIOMED_ANCHORS]
-    missing_tokens = [token for token in tokens if token not in haystack]
+    specific_hits = [token for token in normalized_tokens if token in haystack_tokens and token not in BIOMED_ANCHORS]
+    missing_tokens = [token for token in normalized_tokens if token not in haystack_tokens]
     if specific_hits and all(token in BIOMED_ANCHORS for token in missing_tokens):
         return True
     # Single-token topics can be specific with a biomedical anchor. Multi-token

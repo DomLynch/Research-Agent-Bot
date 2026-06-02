@@ -97,6 +97,32 @@ def test_composite_topic_rejects_broad_alias_only_source() -> None:
     )
 
 
+def test_age_clock_topics_accept_scientific_morphology_variants() -> None:
+    aliases = source_gate_aliases(
+        "metabolomic_age_clocks",
+        ("metabolomic age clocks", "metabolomic aging signature"),
+    )
+
+    assert is_source_topic_specific(
+        "metabolomic_age_clocks",
+        "Estimation of biological aging clocks based on NMR metabolomics",
+        aliases=aliases,
+    )
+
+
+def test_age_clock_topics_reject_broad_omics_without_age_clock_context() -> None:
+    aliases = source_gate_aliases(
+        "metabolomic_age_clocks",
+        ("metabolomic age clocks", "metabolomic aging signature"),
+    )
+
+    assert not is_source_topic_specific(
+        "metabolomic_age_clocks",
+        "Untargeted metabolomics biomarkers of frailty in adults",
+        aliases=aliases,
+    )
+
+
 def test_generated_pack_publishable_uses_structural_specificity() -> None:
     assert generated_pack_publishable({
         "candidate_count": 12,
