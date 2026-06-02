@@ -553,6 +553,23 @@ def _phase_d_directional_coding_note(
     if not _revision_asks_directional_coding_note(feedback):
         return text, []
     if "directional coding note:" in text.lower():
+        if "contextual claims contain" not in text.lower():
+            patched = text.replace(
+                "another outcome remains null or unclear.",
+                (
+                    "another outcome remains null or unclear. Contextual claims "
+                    "contain bibliographic background, mechanism, methods, exposure "
+                    "definitions, or population context rather than effect-direction evidence."
+                ),
+                1,
+            )
+            if patched != text:
+                return patched, [FinalizerLogEntry(
+                    phase="D_directional_coding_note",
+                    rule="upgrade_contextual_claims_explanation",
+                    n_changes=1,
+                    detail="expanded existing directional coding note with contextual-claims explanation",
+                )]
         return text, []
     for heading in ("Evidence Landscape", "Evidence Snapshot", "Results", "Key Findings"):
         match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)

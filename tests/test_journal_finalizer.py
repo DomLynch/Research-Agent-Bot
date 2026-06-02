@@ -345,6 +345,40 @@ def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_directional_coding_note_upgrades_existing_contextual_claims_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify what the contextual claims contain if no directional signal was "
+        "extracted, and explain the discrepancy between the organized evidence "
+        "landscape and the near-total absence of directional findings."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Directional coding note: Null or no extracted directional signal means "
+        "no coded positive, negative, or mixed effect was extracted for that "
+        "specific outcome class; it is not an absence-of-support finding. Positive, "
+        "negative, mixed, unclear, and null are outcome-specific codes, so a bounded "
+        "rationale can be supported by adjacent or different outcome evidence while "
+        "another outcome remains null or unclear.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_directional_coding_note(paper, tmp_path)
+
+    assert "Contextual claims contain bibliographic background" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_directional_coding_note",
+            rule="upgrade_contextual_claims_explanation",
+            n_changes=1,
+            detail="expanded existing directional coding note with contextual-claims explanation",
+        )
+    ]
+
+
 def test_evidence_boundary_note_repairs_broad_claim_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
