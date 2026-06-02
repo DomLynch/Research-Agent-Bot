@@ -874,4 +874,27 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
             n_changed += 1
     if n_changed:
         (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
+        _write_pre_submit_gate_markdown(out_dir, gate)
     return n_changed
+
+
+def _write_pre_submit_gate_markdown(out_dir: Path, gate: dict[str, object]) -> None:
+    contract = gate.get("journal_readiness_contract")
+    result = gate.get("result")
+    if not isinstance(contract, list) or not isinstance(result, dict):
+        return
+    try:
+        from scripts.paper_quality_runtime import _format_readiness_contract
+    except ImportError:
+        return
+    summary = str(result.get("summary") or "")
+    text = (
+        "# Pre-Submit Final Gate\n\n"
+        + summary
+        + "\n\n## Journal Readiness Contract\n\n"
+        + _format_readiness_contract([row for row in contract if isinstance(row, dict)])
+        + "\n"
+    )
+    for path in (out_dir / "pre_submit_gate.md", out_dir / "readable" / "pre_submit_gate.md"):
+        if path.parent.exists():
+            path.write_text(text)

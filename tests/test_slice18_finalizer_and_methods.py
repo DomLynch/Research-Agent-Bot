@@ -287,6 +287,28 @@ def test_phase_g_rebuilds_readiness_contract_for_researka(
     assert "reconcile_readiness_contract_items" in rules
 
 
+def test_readiness_contract_refresh_updates_pre_submit_markdown(
+    tmp_path: Path,
+) -> None:
+    run = _make_run(
+        tmp_path, surface_passed=True,
+        accountability_model="researka_agent_certified",
+        old_contract_name="human_signoff",
+    )
+    (run / "readable").mkdir()
+    (run / "pre_submit_gate.md").write_text("STALE FAIL")
+    (run / "readable" / "pre_submit_gate.md").write_text("STALE FAIL")
+
+    assert _refresh_readiness_contract_items(run) > 0
+
+    root_md = (run / "pre_submit_gate.md").read_text()
+    readable_md = (run / "readable" / "pre_submit_gate.md").read_text()
+    assert "STALE FAIL" not in root_md
+    assert "STALE FAIL" not in readable_md
+    assert "## Journal Readiness Contract" in readable_md
+    assert "| 13 | accountability | pass |" in readable_md
+
+
 def test_phase_g_writes_consistency_before_readiness_contract(
     tmp_path: Path,
 ) -> None:
