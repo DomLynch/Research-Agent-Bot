@@ -2285,7 +2285,7 @@ def _write_pre_submit_gate_markdown(out_dir: Path, gate: dict[str, object]) -> i
     if not isinstance(contract, list) or not isinstance(result, dict):
         return 0
     try:
-        from scripts.paper_quality_runtime import _format_readiness_contract
+        from paper_quality_runtime import _format_readiness_contract
     except ImportError:
         return 0
     summary = str(result.get("summary") or "")
