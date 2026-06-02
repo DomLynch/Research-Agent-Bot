@@ -320,7 +320,7 @@ def test_daily_throughput_summary_survives_later_zero_submit_cycle(tmp_path: Pat
 
 def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
-    latest = {
+    latest: dict[str, dict[str, Any]] = {
         "hrv": {
             "artifactId": "art-1",
             "title": "Research Synthesis: HRV",
@@ -2665,8 +2665,10 @@ def test_source_precision_drops_generic_static_alias_for_composite_topic(tmp_pat
 def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "epigenome_editing_longevity", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     runs: list[str] = []
     submit_calls = 0
 
@@ -2721,7 +2723,9 @@ def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Pa
 def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "epigenome_editing_longevity", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     qdir = cycle.CORPORA / "epigenome_editing_longevity" / "quant_claims"
     qdir.mkdir(parents=True)
     for i in range(4):
@@ -2766,10 +2770,48 @@ def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tm
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_skips_sparse_receipt_topic_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "oral_microbiome_periodontal_aging", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {
+        "passed": False,
+        "status": "receipt_preflight_insufficient",
+        "n_receipts": 5,
+        "min_receipts": 10,
+    })
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert synthesized == []
+    assert ledger["status"] == "receipt_preflight_skipped_no_submission"
+    assert ledger["attempts"][0]["receipt_preflight"]["n_receipts"] == 5
+
+
 def test_cycle_quarantines_source_precision_misses_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     qdir = cycle.CORPORA / "hydrogen_water" / "quant_claims"
     qdir.mkdir(parents=True)
     for i in range(24):
@@ -2823,6 +2865,7 @@ def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path,
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
     monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: {
         "status": "corpus_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
@@ -2865,6 +2908,7 @@ def test_cycle_records_backlog_and_repairs_selected_low_source_precision(tmp_pat
     _topic(tmp_path, "bbb_low_source", target_journal=True)
     _topic(tmp_path, "zzz_clean_topic", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
 
@@ -2892,6 +2936,7 @@ def test_cycle_records_backlog_and_repairs_selected_low_source_precision(tmp_pat
 
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
 
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs",
