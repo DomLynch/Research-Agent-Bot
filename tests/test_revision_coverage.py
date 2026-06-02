@@ -141,6 +141,25 @@ def test_deterministic_unmet_flags_off_topic_source_audit_without_breakdown() ->
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_deterministic_unmet_flags_evidence_type_metadata_inconsistency() -> None:
+    ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
+    paper = "## Methods\n\nSources were grouped by topic.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_evidence_type_metadata_resolution() -> None:
+    ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
+    paper = (
+        "## Methods\n\n"
+        "### Source Classification Map\n\n"
+        "Evidence_type labels were resolved against excerpts: review records with RCT excerpt data "
+        "were reclassified under classification criteria that separate review, RCT, and trial evidence.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_off_topic_source_audit_breakdown() -> None:
     ask = (
         "Audit the source bundle for sources that are clearly off-topic to hydrogen "
@@ -166,6 +185,32 @@ def test_deterministic_unmet_flags_remove_or_justify_off_topic_sources() -> None
     paper = "## Evidence Landscape\n\nAll sources are summarized.\n"
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_flags_umbrella_source_inclusion_without_rationale() -> None:
+    ask = (
+        "Add a note explaining why sources on opioid monitoring and geolocation are included "
+        "under the digital frailty index umbrella, given that none appear to operationalize a frailty index."
+    )
+    paper = "## Evidence Landscape\n\nThe included sources are summarized.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_umbrella_source_inclusion_rationale() -> None:
+    ask = (
+        "Add a note explaining why sources on opioid monitoring and geolocation are included "
+        "under the digital frailty index umbrella, given that none appear to operationalize a frailty index."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Source Classification Map\n\n"
+        "Inclusion rationale: sources that directly addresses frailty-index operationalization are "
+        "kept as direct; contextual digital-biomarker sources are reclassified as adjacent and not "
+        "used for broad claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
 def test_deterministic_unmet_flags_weak_gaps_section() -> None:
@@ -234,6 +279,34 @@ def test_deterministic_unmet_accepts_evidence_boundary() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_claims_not_bounded_by_tier_directness() -> None:
+    ask = (
+        "Ensure that all claims in the Key Findings and Conclusion sections are explicitly "
+        "bounded by the evidence tiers and directness ratings provided in the manuscript."
+    )
+    paper = (
+        "## Key Findings\n\nThe signal is promising.\n\n"
+        "## Conclusion\n\nThe intervention is biologically plausible.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_claims_bounded_by_tier_directness() -> None:
+    ask = (
+        "Ensure that all claims in the Key Findings and Conclusion sections are explicitly "
+        "bounded by the evidence tiers and directness ratings provided in the manuscript."
+    )
+    paper = (
+        "## Key Findings\n\nA B2 indirect evidence tier supports only hypothesis-generating "
+        "claims; directness is indirect/review rather than direct.\n\n"
+        "## Conclusion\n\nThe conclusion is bounded to A1/B2 evidence tier patterns and "
+        "directness ratings that separate direct, indirect, review, and mechanistic sources.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_directional_signal_explanation() -> None:
     ask = (
         "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class, "
@@ -264,6 +337,31 @@ def test_deterministic_unmet_flags_weak_directional_signal_explanation() -> None
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_flags_contextual_claims_without_direction_explanation() -> None:
+    ask = (
+        "Clarify what the contextual claims contain if no directional signal was extracted, "
+        "and explain the discrepancy between the organized evidence landscape and the near-total absence of directional findings."
+    )
+    paper = "## Evidence Landscape\n\nThe table reports no directional signal.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_contextual_claims_without_direction_explanation() -> None:
+    ask = (
+        "Clarify what the contextual claims contain if no directional signal was extracted, "
+        "and explain the discrepancy between the organized evidence landscape and the near-total absence of directional findings."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Contextual claims are bibliographic and mechanistic context, not effect-direction findings. "
+        "A no extracted directional signal row means the extracted statistic was not directional for "
+        "that outcome slice; it is not directional evidence of benefit.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
 def test_deterministic_unmet_flags_directional_table_narrative_contradiction() -> None:
