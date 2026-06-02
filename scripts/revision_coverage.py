@@ -423,7 +423,14 @@ def _evidence_type_metadata_is_resolved(paper_md: str) -> bool:
 
 
 def _source_inclusion_rationale_is_stated(paper_md: str) -> bool:
-    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Limitations")) if part).lower()
+    scope = " ".join(
+        part for part in (
+            _section(paper_md, "Methods"),
+            _section(paper_md, "Evidence Snapshot"),
+            _section(paper_md, "Evidence Landscape"),
+            _section(paper_md, "Limitations"),
+        ) if part
+    ).lower()
     return (
         any(token in scope for token in ("inclusion rationale", "topic-fit rationale", "source directness breakdown", "source classification map"))
         and any(token in scope for token in ("operationalize", "directly addresses", "adjacent", "contextual", "excluded", "reclassified"))

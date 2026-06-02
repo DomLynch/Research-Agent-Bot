@@ -149,6 +149,22 @@ def test_deterministic_unmet_accepts_topic_fit_rationale_for_umbrella_source_ask
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_topic_fit_rationale_in_evidence_snapshot() -> None:
+    ask = (
+        "Add a note explaining why sources are included under the digital frailty "
+        "index umbrella when they do not operationalize a frailty index."
+    )
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "Topic-fit rationale: Sources are retained only when they operationalize "
+        "digital frailty index directly or provide adjacent/contextual boundary "
+        "evidence for the same construct. Adjacent sources are reclassified as "
+        "boundary evidence rather than used for broad efficacy claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_off_topic_source_audit_without_breakdown() -> None:
     ask = (
         "Audit the source bundle for sources that are clearly off-topic to hydrogen "
