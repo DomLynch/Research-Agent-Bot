@@ -637,6 +637,25 @@ def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Pat
     ]
 
 
+def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "For cited sources with specific statistics (e.g., Weiss 2026 33% lifespan increase), "
+        "ensure these appear in the evidence landscape and are connected to the appropriate "
+        "outcome class rather than buried in the source bundle."
+    )
+    paper = "## Results\n\nThe corpus includes several sources.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_source_statistics_landscape(paper, tmp_path)
+
+    assert fixed.startswith("## Evidence Landscape")
+    assert "Weiss 2026 is mapped to outcome class=longevity and reports 33% lifespan increase" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_source_statistics_landscape"
+
+
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

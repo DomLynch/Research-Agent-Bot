@@ -1063,7 +1063,7 @@ def _phase_d_source_statistics_landscape(
     note = _source_statistics_landscape_note(feedback)
     if not note:
         return text, []
-    patched, n = _prepend_section_paragraph(text, "Evidence Landscape", note)
+    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
     if not n:
         return text, []
     return patched, [FinalizerLogEntry(
@@ -1110,6 +1110,22 @@ def _outcome_class_from_statistic_descriptor(descriptor: str) -> str:
     if any(token in lower for token in ("inflamm", "immune", "cytokine")):
         return "immune"
     return "contextual_other"
+
+
+def _prepend_or_create_section_paragraph(text: str, section: str, paragraph: str) -> tuple[str, int]:
+    patched, n = _prepend_section_paragraph(text, section, paragraph)
+    if n:
+        return patched, n
+    if paragraph.lower() in text.lower():
+        return text, 0
+    for target in ("Results", "Key Findings", "Discussion", "References"):
+        match = re.search(rf"^## {target}\b", text, flags=re.M)
+        if match:
+            insert = f"## {section}\n\n{paragraph}\n\n"
+            prefix = text[:match.start()].rstrip()
+            sep = "\n\n" if prefix else ""
+            return prefix + sep + insert + text[match.start():].lstrip(), 1
+    return text.rstrip() + f"\n\n## {section}\n\n{paragraph}\n", 1
 
 
 def _phase_d_source_directness_breakdown(
