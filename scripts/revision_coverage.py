@@ -102,6 +102,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
         return _null_signal_conclusion_is_bounded(paper_md)
+    if _asks_internal_duplication(lower):
+        return _internal_duplication_is_low(paper_md)
+    if _asks_long_term_safety_scope(lower):
+        return _long_term_safety_scope_is_stated(paper_md)
     return True
 
 
@@ -135,6 +139,14 @@ def _asks_null_signal_reconciliation(text: str) -> bool:
     return "null directional" in text and any(token in text for token in ("concluding", "conclusion", "rationale"))
 
 
+def _asks_internal_duplication(text: str) -> bool:
+    return any(token in text for token in ("internal duplication", "repetitive narrative", "verbatim repetition", "non-repetitive"))
+
+
+def _asks_long_term_safety_scope(text: str) -> bool:
+    return "long-term safety" in text or ("safety data" in text and "older adult" in text)
+
+
 def _gaps_section_is_actionable(paper_md: str) -> bool:
     gaps = _section(paper_md, "Gaps Identified") or _section(paper_md, "Evidence-Gap Priority")
     if not gaps:
@@ -157,6 +169,29 @@ def _null_signal_conclusion_is_bounded(paper_md: str) -> bool:
     if "bounded geroscience rationale" in scope and "null" not in scope:
         return False
     return any(token in scope for token in ("null", "mixed", "hypothesis-generating", "does not support", "not definitive"))
+
+
+def _internal_duplication_is_low(paper_md: str) -> bool:
+    seen: list[set[str]] = []
+    for paragraph in re.split(r"\n\s*\n", paper_md):
+        text = " ".join(line.strip() for line in paragraph.splitlines() if not line.lstrip().startswith(("|", "#", "- [")))
+        words = re.findall(r"[a-z0-9]+", text.lower())
+        if len(words) < 18:
+            continue
+        tokens = set(words)
+        if any(len(tokens & prior) / max(1, min(len(tokens), len(prior))) >= 0.75 for prior in seen):
+            return False
+        seen.append(tokens)
+    return True
+
+
+def _long_term_safety_scope_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_abstract(paper_md), _section(paper_md, "Conclusion"), _section(paper_md, "Limitations")) if part).lower()
+    if not scope:
+        return False
+    safety = "long-term safety" in scope or "long term safety" in scope or "safety data" in scope
+    population = "older adult" in scope or "older adults" in scope or "aged" in scope
+    return safety and population
 
 
 _CLAIM_SYS = "You are a strict manuscript reviewer. Reply with JSON only."

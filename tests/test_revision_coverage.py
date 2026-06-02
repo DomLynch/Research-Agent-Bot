@@ -109,6 +109,67 @@ def test_deterministic_unmet_accepts_bounded_null_signal_conclusion() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_internal_duplication() -> None:
+    ask = "Remove internal duplication of content across the Evidence Landscape and Key Findings sections."
+    repeated = (
+        "This synthesis separates direct intervention evidence from indirect biomarker evidence and "
+        "shows that the current evidence base remains mixed, hypothesis-generating, and not sufficient "
+        "for broad clinical or policy claims."
+    )
+    paper = f"## Evidence Landscape\n\n{repeated}\n\n## Key Findings\n\n{repeated}\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_flags_near_duplicate_narrative() -> None:
+    ask = "Remove repetitive narrative across the Evidence Landscape and Key Findings sections."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "This synthesis separates direct intervention evidence from indirect biomarker evidence and shows "
+        "that the current evidence base remains mixed, hypothesis-generating, and insufficient for broad "
+        "clinical or policy claims.\n\n"
+        "## Key Findings\n\n"
+        "The synthesis separates direct intervention evidence from indirect biomarker evidence, showing "
+        "that the current evidence base remains mixed and hypothesis-generating rather than sufficient "
+        "for broad clinical policy claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_non_repetitive_sections() -> None:
+    ask = "Remove internal duplication and present a single, non-repetitive narrative."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "The evidence landscape separates direct intervention evidence from indirect biomarker evidence "
+        "and identifies mixed signals across outcome domains.\n\n"
+        "## Key Findings\n\n"
+        "The key finding is that clinical translation remains premature because source directness and "
+        "endpoint maturity vary across the corpus.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_missing_long_term_safety_scope() -> None:
+    ask = "Add a brief statement in the abstract and conclusion about the lack of long-term safety data in older adults."
+    paper = "## Abstract\n\nThe evidence is mixed.\n\n## Conclusion\n\nClinical translation remains premature.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_long_term_safety_scope() -> None:
+    ask = "Add a brief statement in the abstract and conclusion about the lack of long-term safety data in older adults."
+    paper = (
+        "## Abstract\n\n"
+        "The evidence is mixed, and long-term safety data in older adults remain insufficient.\n\n"
+        "## Conclusion\n\n"
+        "Because long-term safety in older adults is not established, clinical translation remains premature.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 _PAPER = "## Abstract\n\nEGCG reverses aging in humans.\n\n## Results\n\nMixed, mostly null.\n"
 
 
