@@ -84,7 +84,9 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     for phase in (
         lambda t: _phase_a_methods_replace(t, out_dir),
         lambda t: _phase_b_lane_qualifier(t, out_dir),
-        _phase_c_terminology, _phase_d_reference_closure,
+        _phase_c_terminology,
+        lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
+        _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         _phase_i_split_concatenated_headings,
         lambda t: _phase_e_structural_fallback(t, out_dir),
@@ -456,6 +458,79 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
 
 
 # --- Phase D: Reference closure ---------------------------------------
+
+
+_REFERENCE_ID_RE = re.compile(
+    r"\b(?:doi\s*:|https?://doi\.org/|pmid\s*:|pmcid\s*:|pmc\d+|nct\d+|isrctn\d+|clinicaltrials\.gov|identifier unavailable)",
+    re.I,
+)
+
+
+def _clean_reference_id(value: object) -> str:
+    return str(value or "").strip().strip(" .;,")
+
+
+def _reference_identifier_suffix(entry: dict[str, Any]) -> str:
+    parts: list[str] = []
+    doi = _clean_reference_id(entry.get("source_doi") or entry.get("doi"))
+    pmid = _clean_reference_id(entry.get("source_pmid") or entry.get("pmid"))
+    pmcid = _clean_reference_id(entry.get("source_pmcid") or entry.get("pmcid"))
+    trial = _clean_reference_id(entry.get("canonical_trial_id") or entry.get("trial_id"))
+    if doi:
+        parts.append(f"DOI: {doi}.")
+    if pmid:
+        parts.append(f"PMID: {pmid}.")
+    if pmcid:
+        parts.append(f"PMCID: {pmcid}.")
+    if trial:
+        parts.append(f"Trial registration: {trial}.")
+    return " ".join(parts) or "Identifier unavailable; no DOI or PMID in source metadata."
+
+
+def _phase_d_reference_identifier_enrichment(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    registry = _load_sidecar(out_dir / "citation_registry.json") or {}
+    if not isinstance(registry, dict):
+        return text, []
+    entries = [
+        e for e in registry.values()
+        if isinstance(e, dict) and str(e.get("body_citation") or "").strip()
+    ]
+    if not entries:
+        return text, []
+    refs = re.search(r"^## References\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if not refs:
+        return text, []
+    body = refs.group(1)
+    n = 0
+    lines: list[str] = []
+    for raw in body.splitlines(keepends=True):
+        newline = "\n" if raw.endswith("\n") else ""
+        line = raw[:-1] if newline else raw
+        patched = line
+        if line.strip() and not _REFERENCE_ID_RE.search(line):
+            for entry in entries:
+                token = str(entry.get("body_citation") or "").strip()
+                if token and token.lower() in line.lower():
+                    patched = line.rstrip()
+                    patched += "" if patched.endswith(".") else "."
+                    patched += " " + _reference_identifier_suffix(entry)
+                    n += 1
+                    break
+        lines.append(patched + newline)
+    if not n:
+        return text, []
+    new_body = "".join(lines)
+    return (
+        text[:refs.start(1)] + new_body + text[refs.end(1):],
+        [FinalizerLogEntry(
+            phase="D_reference_identifier_enrichment",
+            rule="restore_registry_identifiers",
+            n_changes=n,
+            detail=f"added DOI/PMID/PMCID/caveat to {n} reference line(s)",
+        )],
+    )
 
 
 def _phase_d_reference_closure(text: str) -> tuple[str, list[FinalizerLogEntry]]:

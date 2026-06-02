@@ -126,6 +126,70 @@ def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp
     assert any(entry.phase == "N_surface_floor_backstop" for entry in report.entries)
 
 
+def test_reference_identifier_enrichment_uses_registry_ids(tmp_path: Path) -> None:
+    paper = (
+        "## Abstract\n\nSmith 2024 and Jones 2025 reported.\n\n"
+        "## References\n\n"
+        "- **Smith 2024.** Trial of X.\n"
+        "- **Jones 2025.** Cohort of Y.\n"
+    )
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {
+            "body_citation": "Smith 2024",
+            "source_doi": "10.1000/example",
+            "source_pmid": "12345678",
+        },
+        "r2": {"body_citation": "Jones 2025", "source_pmcid": "PMC1234567"},
+    }), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_d_reference_identifier_enrichment(paper, tmp_path)
+
+    assert "DOI: 10.1000/example." in fixed
+    assert "PMID: 12345678." in fixed
+    assert "PMCID: PMC1234567." in fixed
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_reference_identifier_enrichment",
+            rule="restore_registry_identifiers",
+            n_changes=2,
+            detail="added DOI/PMID/PMCID/caveat to 2 reference line(s)",
+        )
+    ]
+
+
+def test_reference_identifier_enrichment_adds_missing_id_caveat(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Make every reference traceable to the source bundle and clarify missing DOI/PMID entries."
+    paper = (
+        "## References\n\n"
+        "- **Smith 2024.** Source metadata row lacks public identifiers.\n"
+    )
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Smith 2024"},
+    }), encoding="utf-8")
+
+    fixed, _ = journal_finalizer._phase_d_reference_identifier_enrichment(paper, tmp_path)
+
+    assert "Identifier unavailable; no DOI or PMID in source metadata." in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_reference_identifier_enrichment_preserves_existing_ids(tmp_path: Path) -> None:
+    paper = (
+        "## References\n\n"
+        "- **Smith 2024.** Trial of X. DOI: 10.1000/example.\n"
+    )
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Smith 2024", "source_pmid": "12345678"},
+    }), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_d_reference_identifier_enrichment(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
     from scripts.review_noise_control import apply_review_noise_control
 
