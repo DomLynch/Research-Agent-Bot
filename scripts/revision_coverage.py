@@ -86,6 +86,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     if _asks_classification_criteria(lower):
         text = paper_md.lower()
         return all(token in text for token in ("classification criteria", "outcome class", "directness", "evidence tier"))
+    if _asks_source_outcome_class_map(lower):
+        return _source_outcome_class_map_is_stated(paper_md)
     if _asks_source_classification_map(lower):
         text = paper_md.lower()
         return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
@@ -184,6 +186,15 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
         "source" in text
         and any(token in text for token in ("included under", "inclusion criteria", "included", "umbrella", "operationalize", "classified as addressing"))
         and any(token in text for token in ("unrelated", "general", "other digital", "non-digital", "why sources"))
+    )
+
+
+def _asks_source_outcome_class_map(text: str) -> bool:
+    return (
+        "source" in text
+        and "outcome class" in text
+        and any(token in text for token in ("mapping table", "mapping list", "assigned to which", "which outcome"))
+        and any(token in text for token in ("external verification", "evidence landscape", "bundle sources", "source bundle"))
     )
 
 
@@ -444,6 +455,15 @@ def _source_statistics_landscape_is_stated(paper_md: str) -> bool:
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", landscape)
         and re.search(r"\b\d+(?:\.\d+)?\s*(?:%|percent\b|p\s*=|ci\b|confidence interval\b|hazard ratio\b|odds ratio\b|relative risk\b)", landscape, flags=re.I)
         and re.search(r"\b(outcome class|outcome=|classified|mapped)\b", landscape, flags=re.I)
+    )
+
+
+def _source_outcome_class_map_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Evidence Landscape"), _section(paper_md, "Evidence Snapshot")) if part).lower()
+    return (
+        "source outcome-class map" in scope
+        and "outcome=" in scope
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope, flags=re.I) is not None
     )
 
 

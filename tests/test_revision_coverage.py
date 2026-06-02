@@ -1020,6 +1020,30 @@ def test_deterministic_unmet_flags_source_statistics_missing_from_landscape() ->
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_deterministic_unmet_flags_missing_source_outcome_class_map() -> None:
+    ask = (
+        "Provide a mapping table or list showing which of the 28 bundle sources were "
+        "assigned to which outcome class, to allow external verification of the evidence landscape table."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus includes several sources.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_source_outcome_class_map() -> None:
+    ask = (
+        "Provide a mapping table or list showing which of the 28 bundle sources were "
+        "assigned to which outcome class, to allow external verification of the evidence landscape table."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Source outcome-class map: Smith 2024 -> outcome=cardiometabolic; "
+        "Jones 2025 -> outcome=immune.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_source_statistics_in_landscape() -> None:
     ask = (
         "For cited sources with specific statistics, ensure these appear in the evidence landscape "

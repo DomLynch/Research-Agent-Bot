@@ -93,6 +93,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
+        lambda t: _phase_d_source_outcome_class_map(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
@@ -1084,6 +1085,45 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
             "included under", "inclusion criteria", "why sources", "umbrella",
             "operationalize", "directly study", "directly addresses",
         ))
+    )
+
+
+def _phase_d_source_outcome_class_map(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_source_outcome_class_map(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    examples = []
+    for row in rows[:40]:
+        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        examples.append(f"{citation} -> outcome={outcome}")
+    note = "Source outcome-class map: " + "; ".join(examples) + "."
+    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_source_outcome_class_map",
+        rule="map_sources_to_outcome_classes",
+        n_changes=1,
+        detail=f"added source outcome-class map from {len(rows)} manifest receipt(s)",
+    )]
+
+
+def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "source" in lower
+        and "outcome class" in lower
+        and any(token in lower for token in ("mapping table", "mapping list", "assigned to which", "which outcome"))
+        and any(token in lower for token in ("external verification", "evidence landscape", "bundle sources", "source bundle"))
     )
 
 
