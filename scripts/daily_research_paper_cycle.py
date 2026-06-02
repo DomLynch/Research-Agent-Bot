@@ -1071,7 +1071,7 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
                 "conflict-map severity note",
                 "severity-level-3",
                 "severity-level-4",
-                "contradiction_map.json",
+                "contradiction-map",
             )
         )
     if "truncated" in ask_lower and "abstract" in ask_lower and _abstract_has_complete_sentence(paper_text):

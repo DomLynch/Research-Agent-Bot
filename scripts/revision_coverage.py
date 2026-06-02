@@ -94,7 +94,7 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
                 "conflict-map severity note",
                 "severity-level-3",
                 "severity-level-4",
-                "contradiction_map.json",
+                "contradiction-map",
             )
         )
     if _asks_source_outcome_class_map(lower):

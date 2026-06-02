@@ -661,7 +661,7 @@ _CONFLICT_SEVERITY_NOTE = (
     "severity-level-4 disagreements are defined and scored as higher-weight "
     "conflicts in which stronger or more direct evidence conflicts with weaker, "
     "adjacent, or review-level evidence. The scoring inputs are recorded in "
-    "contradiction_map.json and the source-audit sidecars; the main text uses "
+    "the supplementary contradiction-map and source-audit sidecars; the main text uses "
     "these ordinal levels to weight interpretive caution, not as effect-size "
     "estimates."
 )
