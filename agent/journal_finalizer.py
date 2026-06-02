@@ -657,8 +657,8 @@ _CLASSIFICATION_CRITERIA_NOTE = (
 _CONFLICT_SEVERITY_NOTE = (
     "Conflict-map severity note: severity-level-3 disagreements are defined "
     "and scored as material null-versus-positive or cross-outcome directional "
-    "conflicts that change interpretation within an outcome class. "
-    "Severity-level-4 disagreements are defined and scored as higher-weight "
+    "conflicts that change interpretation within an outcome class, and "
+    "severity-level-4 disagreements are defined and scored as higher-weight "
     "conflicts in which stronger or more direct evidence conflicts with weaker, "
     "adjacent, or review-level evidence. The scoring inputs are recorded in "
     "contradiction_map.json and the source-audit sidecars; the main text uses "

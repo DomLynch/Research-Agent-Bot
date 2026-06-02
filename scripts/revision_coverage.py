@@ -86,6 +86,17 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     if _asks_classification_criteria(lower):
         text = paper_md.lower()
         return all(token in text for token in ("classification criteria", "outcome class", "directness", "evidence tier"))
+    if _asks_conflict_severity_criteria(lower):
+        text = paper_md.lower()
+        return all(
+            token in text
+            for token in (
+                "conflict-map severity note",
+                "severity-level-3",
+                "severity-level-4",
+                "contradiction_map.json",
+            )
+        )
     if _asks_source_outcome_class_map(lower):
         return _source_outcome_class_map_is_stated(paper_md)
     if _asks_source_classification_map(lower):
@@ -153,6 +164,14 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
 def _asks_classification_criteria(text: str) -> bool:
     return "classification criteria" in text or (
         "assign" in text and "outcome class" in text and "directness" in text
+    )
+
+
+def _asks_conflict_severity_criteria(text: str) -> bool:
+    return (
+        any(token in text for token in ("severity-level", "severity level"))
+        and any(token in text for token in ("disagreement", "disagreements", "conflict", "conflict map"))
+        and any(token in text for token in ("defined", "scored", "scoring", "supplementary", "supplemental"))
     )
 
 

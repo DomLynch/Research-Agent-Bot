@@ -1266,6 +1266,31 @@ def test_classification_revision_asks_can_be_satisfied_by_public_sections(tmp_pa
     )
 
 
+def test_conflict_severity_revision_ask_can_be_satisfied_by_public_note(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Methods\n\n"
+        "Conflict-map severity note: severity-level-3 disagreements are defined and scored "
+        "as material null-versus-positive conflicts. severity-level-4 disagreements are "
+        "defined and scored as higher-weight conflicts. The scoring inputs are recorded "
+        "in contradiction_map.json and the source-audit sidecars.\n",
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Add a brief explanation in the main text of how 'severity-level-3' and "
+        "'severity-level-4' disagreements are defined and scored, or provide a clear "
+        "pointer to the exact supplementary file where this is defined.",
+    )
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Rewrite the Gaps Identified section with actionable future research steps.",
+    )
+
+
 def test_unmet_revision_asks_uses_deterministic_gate_when_judge_fails_open(tmp_path: Path, monkeypatch) -> None:
     import revision_coverage  # type: ignore[import-not-found]
 

@@ -408,6 +408,47 @@ def test_classification_criteria_note_is_revision_scoped(tmp_path: Path) -> None
     assert logs == []
 
 
+def test_conflict_severity_note_repairs_disagreement_scoring_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Add a brief explanation in the main text of how 'severity-level-3' and "
+        "'severity-level-4' disagreements are defined and scored, or provide a "
+        "clear pointer to the exact supplementary file where this is defined."
+    )
+    paper = "## Methods\n\nSources were grouped from the manifest.\n\n## Results\n\nDisagreements are summarized.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_conflict_severity_note(paper, tmp_path)
+
+    assert "Conflict-map severity note:" in fixed
+    assert "severity-level-3 disagreements are defined and scored" in fixed
+    assert "severity-level-4 disagreements are defined and scored" in fixed
+    assert "contradiction_map.json" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_conflict_severity_note",
+            rule="define_conflict_map_severity_scoring",
+            n_changes=1,
+            detail="added severity-level disagreement scoring note",
+        )
+    ]
+
+
+def test_conflict_severity_note_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Methods\n\nSources were grouped from the manifest.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Rewrite the Gaps Identified section with actionable future research steps.",
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_conflict_severity_note(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_evidence_boundary_repairs_population_proof_calibration_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
