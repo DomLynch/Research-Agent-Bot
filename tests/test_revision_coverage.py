@@ -71,6 +71,37 @@ def test_deterministic_unmet_accepts_classification_criteria_and_map() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
 
 
+def test_deterministic_unmet_flags_missing_source_directness_breakdown() -> None:
+    ask = (
+        "Clarify source directness: explicitly note which of the 28 sources directly "
+        "address deep sleep manipulation and aging-relevant hard endpoints versus which "
+        "are adjacent (e.g., insomnia drug trials, general sleep architecture descriptions, "
+        "preclinical models)."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus is adjacent and mixed.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_source_directness_breakdown() -> None:
+    ask = (
+        "Clarify source directness: explicitly note which of the 28 sources directly "
+        "address deep sleep manipulation and aging-relevant hard endpoints versus which "
+        "are adjacent (e.g., insomnia drug trials, general sleep architecture descriptions, "
+        "preclinical models)."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Source Directness Breakdown\n\n"
+        "- Smith 2024: directly addresses deep sleep manipulation and aging-relevant hard endpoints; "
+        "directness=direct_interventional.\n"
+        "- Jones 2025: adjacent insomnia-drug trial evidence; directness=adjacent.\n"
+        "- Lee 2026: mechanistic sleep-architecture model; directness=mechanistic.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_weak_gaps_section() -> None:
     ask = "Rewrite the 'Gaps Identified' section to provide specific, actionable research gaps."
     paper = "## Gaps Identified\n\nMore research is needed because the current corpus is limited.\n"
