@@ -1252,7 +1252,7 @@ def test_classification_revision_asks_can_be_satisfied_by_public_sections(tmp_pa
         out_dir,
         "Clarify the definition of 'direct evidence' and provide a qualifying direct source example.",
     )
-    assert cycle._payload_revision_ask_satisfied(
+    assert not cycle._payload_revision_ask_satisfied(
         out_dir,
         "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class.",
     )

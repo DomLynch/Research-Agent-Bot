@@ -1012,8 +1012,6 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         return True
     if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
         return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
-    if "no extracted directional signal" in ask_lower and "**directional signal**" in paper_text:
-        return True
     payload_section_ask = "key findings" in ask_lower or "evidence landscape" in ask_lower
     payload_clip_ask = "truncated" in ask_lower and "abstract" in ask_lower and "research question" in ask_lower
     source_topic_ask = "source" in ask_lower and any(token in ask_lower for token in ("address", "off-topic", "off topic", "topic"))
