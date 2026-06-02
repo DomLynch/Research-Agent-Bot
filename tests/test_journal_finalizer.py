@@ -451,6 +451,31 @@ def test_long_term_safety_scope_is_revision_scoped(tmp_path: Path) -> None:
     assert logs == []
 
 
+def test_unproven_human_longevity_repairs_conclusion_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Strengthen the conclusion to explicitly state that longevity benefits "
+        "are currently unproven in humans, not merely incomplete or biologically plausible."
+    )
+    paper = "## Conclusion\n\nThe evidence remains incomplete and biologically plausible.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_unproven_human_longevity(paper, tmp_path)
+
+    assert "Longevity benefits are currently unproven in humans" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_unproven_human_longevity",
+            rule="state_longevity_benefits_unproven_in_humans",
+            n_changes=1,
+            detail="added unproven human longevity boundary to Conclusion",
+        )
+    ]
+
+
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
