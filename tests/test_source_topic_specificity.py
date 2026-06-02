@@ -59,6 +59,17 @@ def test_source_gate_aliases_drop_generic_biomed_alias_for_composite_topic() -> 
     assert not is_source_topic_specific("low_dose_naltrexone_inflammation", "exercise inflammation cohort", aliases=aliases)
 
 
+def test_source_gate_aliases_drop_pathway_only_alias_for_composite_topic() -> None:
+    aliases = source_gate_aliases(
+        "sulforaphane_nrf2",
+        ("sulforaphane nrf2", "sulforaphane", "nrf2"),
+    )
+
+    assert aliases == ("sulforaphane nrf2",)
+    assert is_source_topic_specific("sulforaphane_nrf2", "sulforaphane activates NRF2 in adults", aliases=aliases)
+    assert not is_source_topic_specific("sulforaphane_nrf2", "serum NRF2 levels in traumatic injury", aliases=aliases)
+
+
 def test_source_gate_aliases_drop_broad_one_token_aliases_for_composite_topics() -> None:
     aliases = source_gate_aliases(
         "digital_frailty_index",

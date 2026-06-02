@@ -93,10 +93,18 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
         token for token in re.findall(r"[a-z0-9]+", topic_text)
         if len(token) > 2 and token not in TOPIC_STOPWORDS
     }
+    raw_aliases = [str(alias or "").strip() for alias in aliases]
+    acronym_aliases: set[str] = set()
+    for phrase in (topic_text, *raw_aliases):
+        phrase_tokens = [
+            token for token in re.findall(r"[a-z0-9]+", phrase.replace("_", " ").replace("-", " ").lower())
+            if len(token) > 2 and token not in TOPIC_STOPWORDS
+        ]
+        if len(phrase_tokens) >= 2:
+            acronym_aliases.add("".join(token[0] for token in phrase_tokens))
     out: list[str] = []
     seen: set[str] = set()
-    for alias in aliases:
-        raw = str(alias or "").strip()
+    for raw in raw_aliases:
         norm = " ".join(raw.replace("_", " ").replace("-", " ").lower().split())
         if not norm:
             continue
@@ -104,33 +112,23 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
             token for token in re.findall(r"[a-z0-9]+", norm)
             if len(token) > 2 and token not in TOPIC_STOPWORDS
         }
-        acronym_alias = bool(re.fullmatch(r"[A-Z0-9]{2,8}", raw))
-        single_alias_token = next(iter(alias_tokens), "")
-        named_synonym_alias = (
-            len(topic_raw_tokens) > 1
-            and len(alias_tokens) == 1
-            and len(single_alias_token) <= 8
-            and single_alias_token not in BIOMED_ANCHORS
-            and single_alias_token not in topic_raw_tokens
-        )
+        acronym_alias = norm in acronym_aliases or bool(re.fullmatch(r"[A-Z0-9]{2,8}", raw))
         if (
             len(topic_raw_tokens) > 1
             and len(alias_tokens) == 1
-            and single_alias_token in BIOMED_ANCHORS
             and not acronym_alias
         ):
             continue
         min_overlap = 2 if len(topic_raw_tokens) >= 3 else 1
         if (
             acronym_alias
-            or named_synonym_alias
             or norm in topic_text
             or topic_text in norm
             or len(topic_raw_tokens & alias_tokens) >= min_overlap
         ):
             if norm not in seen:
                 seen.add(norm)
-                out.append(str(alias))
+                out.append(raw)
     return tuple(out)
 
 
