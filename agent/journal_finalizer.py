@@ -89,6 +89,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
+        lambda t: _phase_d_unproven_human_longevity(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
@@ -669,6 +670,38 @@ def _phase_d_long_term_safety_scope(
 def _revision_asks_long_term_safety_scope(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return "long-term safety" in lower or ("safety data" in lower and "older adult" in lower)
+
+
+_UNPROVEN_HUMAN_LONGEVITY_NOTE = (
+    "Human-longevity boundary: Longevity benefits are currently unproven in "
+    "humans and are not established clinically; the synthesis should therefore "
+    "be read as biologically plausible or hypothesis-generating rather than as "
+    "evidence of human longevity benefit."
+)
+
+
+def _phase_d_unproven_human_longevity(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_unproven_human_longevity(feedback):
+        return text, []
+    match = re.search(r"^## Conclusion\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if not match or "human-longevity boundary:" in match.group(1).lower():
+        return text, []
+    patched = text[:match.start(1)] + "\n\n" + _UNPROVEN_HUMAN_LONGEVITY_NOTE + text[match.start(1):]
+    return patched, [FinalizerLogEntry(
+        phase="D_unproven_human_longevity",
+        rule="state_longevity_benefits_unproven_in_humans",
+        n_changes=1,
+        detail="added unproven human longevity boundary to Conclusion",
+    )]
+
+
+def _revision_asks_unproven_human_longevity(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return "conclusion" in lower and "unproven in humans" in lower
 
 
 def _phase_d_tier_directness_boundaries(
