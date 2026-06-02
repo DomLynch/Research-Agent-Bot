@@ -87,6 +87,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_c_terminology,
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
+        lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
@@ -565,6 +566,46 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
         "directional coding" in lower
         or ("no extracted directional signal" in lower and "clarify" in lower)
         or ("null" in lower and "absence of support" in lower)
+    )
+
+
+_EVIDENCE_BOUNDARY_NOTE = (
+    "Evidence-boundary note: Because the retained corpus relies on absent or "
+    "limited direct interventional hard-endpoint evidence and includes adjacent/"
+    "mechanistic evidence, this synthesis is hypothesis-generating and not "
+    "definitive. It does not support broad causal or policy claims; broad "
+    "population-level proof is missing until direct human outcome studies "
+    "replicate the signal with durable follow-up."
+)
+
+
+def _phase_d_evidence_boundary_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_evidence_boundary_note(feedback):
+        return text, []
+    if "evidence-boundary note:" in text.lower():
+        return text, []
+    for heading in ("Abstract", "Key Findings", "Conclusion"):
+        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        if match:
+            patched = text[:match.end()] + "\n\n" + _EVIDENCE_BOUNDARY_NOTE + text[match.end():]
+            return patched, [FinalizerLogEntry(
+                phase="D_evidence_boundary",
+                rule="state_no_broad_population_level_proof",
+                n_changes=1,
+                detail=f"added evidence-boundary note to {heading}",
+            )]
+    return text, []
+
+
+def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        any(token in lower for token in ("broad causal", "policy claims", "population-level proof", "hypothesis-generating"))
+        and any(token in lower for token in ("direct clinical evidence", "direct interventional", "adjacent/mechanistic", "mechanistic"))
     )
 
 

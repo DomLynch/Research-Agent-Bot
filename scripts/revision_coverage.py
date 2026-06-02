@@ -103,6 +103,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
             "qualifying direct source" in text
             or "direct interventional hard-endpoint evidence" in text
         )
+    if _asks_evidence_boundary(lower):
+        return _evidence_boundary_is_stated(paper_md)
     if _asks_directional_coding(lower):
         return _directional_coding_explanation_is_material(paper_md)
     if _asks_directional_table_narrative_consistency(lower):
@@ -167,6 +169,13 @@ def _asks_single_source_proportionality(text: str) -> bool:
 
 def _asks_direct_evidence_definition(text: str) -> bool:
     return "direct evidence" in text and any(token in text for token in ("definition", "qualifying", "qualify", "0/"))
+
+
+def _asks_evidence_boundary(text: str) -> bool:
+    return (
+        any(token in text for token in ("broad causal", "policy claims", "population-level proof", "hypothesis-generating"))
+        and any(token in text for token in ("direct clinical evidence", "direct interventional", "adjacent/mechanistic", "mechanistic"))
+    )
 
 
 def _asks_directional_coding(text: str) -> bool:
@@ -348,6 +357,22 @@ def _source_verification_transparency_is_stated(paper_md: str) -> bool:
     )
     artifact = any(token in scope for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
     return "source bundle" in scope and limitation and artifact
+
+
+def _evidence_boundary_is_stated(paper_md: str) -> bool:
+    scope = " ".join(
+        part for part in (
+            _abstract(paper_md),
+            _section(paper_md, "Key Findings"),
+            _section(paper_md, "Conclusion"),
+        ) if part
+    ).lower()
+    if not scope:
+        return False
+    bounded = any(token in scope for token in ("hypothesis-generating", "not definitive", "does not support broad", "broad population-level proof is missing"))
+    directness = any(token in scope for token in ("direct interventional hard-endpoint evidence", "direct clinical evidence", "adjacent/mechanistic", "mechanistic"))
+    population = "population-level" in scope or "broad causal" in scope or "policy claims" in scope
+    return bounded and directness and population
 
 
 def _prior_publication_differentiation_is_stated(paper_md: str) -> bool:
