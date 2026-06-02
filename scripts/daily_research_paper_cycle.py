@@ -1488,7 +1488,6 @@ def run_cycle(
             if current_source_precision:
                 ledger["source_precision_backlog_topics"] = sorted(current_source_precision)
                 ledger["source_precision_backlog_count"] = len(current_source_precision)
-                preflight_blocked |= current_source_precision
             repairable = _corpus_repair_topics(ledger_dir) - terminal_excluded - submitted_topics - pending_revision_excluded
             source_precision_repairable = _source_precision_repair_topics(ledger_dir)
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
@@ -1591,7 +1590,7 @@ def run_cycle(
                 or source_precision_has_misses
                 or (
                     not source_precision_ok
-                    and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS * 2
+                    and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
                 )
             )
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:

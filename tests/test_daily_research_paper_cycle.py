@@ -2718,13 +2718,13 @@ def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Pa
     assert ledger["attempts"][0]["source_precision_repair"]["status"] == "source_precision_repaired"
 
 
-def test_cycle_repairs_large_low_precision_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "epigenome_editing_longevity", corpus=False)
+def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "epigenome_editing_longevity", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     qdir = cycle.CORPORA / "epigenome_editing_longevity" / "quant_claims"
     qdir.mkdir(parents=True)
-    for i in range(5):
+    for i in range(4):
         _write_json(qdir / f"epigenome_editing_{i}.quant_claims.json", {"paper_id": f"epigenome_editing_{i}"})
     for i in range(15):
         _write_json(qdir / f"supercapacitor_{i}.quant_claims.json", {"paper_id": f"supercapacitor_{i}"})
@@ -2732,9 +2732,9 @@ def test_cycle_repairs_large_low_precision_corpus_before_synthesis(tmp_path: Pat
 
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
         "status": "source_precision_repaired",
-        "source_topic_precision_before": "source_topic_precision_low:5/20<0.50",
-        "source_topic_precision_after": "source_topic_precision_ok:20/20",
-        "n_quant_claims": 20,
+        "source_topic_precision_before": "source_topic_precision_low:4/19<0.50",
+        "source_topic_precision_after": "source_topic_precision_ok:19/19",
+        "n_quant_claims": 19,
     })
 
     def fake_synthesis(
@@ -2762,7 +2762,7 @@ def test_cycle_repairs_large_low_precision_corpus_before_synthesis(tmp_path: Pat
     )
 
     assert synthesized == ["epigenome_editing_longevity"]
-    assert ledger["source_precision_repair"]["source_topic_precision_before"] == "source_topic_precision_low:5/20<0.50"
+    assert ledger["source_precision_repair"]["source_topic_precision_before"] == "source_topic_precision_low:4/19<0.50"
     assert ledger["status"] == "submitted_to_researka"
 
 
@@ -2823,6 +2823,7 @@ def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path,
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
     monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: {
         "status": "corpus_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
     })
@@ -2859,7 +2860,7 @@ def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path,
     assert ledger["status"] == "submitted_to_researka"
 
 
-def test_cycle_blocks_current_low_source_precision_backlog_without_broad_repair(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_records_backlog_and_repairs_selected_low_source_precision(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_low_source", target_journal=True)
     _topic(tmp_path, "bbb_low_source", target_journal=True)
     _topic(tmp_path, "zzz_clean_topic", target_journal=True)
@@ -2904,10 +2905,9 @@ def test_cycle_blocks_current_low_source_precision_backlog_without_broad_repair(
 
     assert ledger["source_precision_backlog_topics"] == ["aaa_low_source", "bbb_low_source"]
     assert ledger["source_precision_backlog_count"] == 2
-    assert repairs == []
-    assert synthesized == ["zzz_clean_topic"]
-    assert ledger["topic_status"]["aaa_low_source"] == "preflight_blocked"
-    assert ledger["topic_status"]["bbb_low_source"] == "preflight_blocked"
+    assert repairs == ["aaa_low_source"]
+    assert synthesized == ["aaa_low_source"]
+    assert ledger["source_precision_repair"]["topic"] == "aaa_low_source"
     assert ledger["status"] == "submitted_to_researka"
 
 
