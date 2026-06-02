@@ -382,11 +382,18 @@ def _references_are_traceable(paper_md: str) -> bool:
     refs = _section(paper_md, "References")
     if not refs:
         return False
-    lines = [
-        line.strip().lstrip("-* ").strip()
-        for line in refs.splitlines()
-        if line.strip() and not line.lstrip().startswith("|")
-    ]
+    lines: list[str] = []
+    for line in refs.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("|") or stripped.startswith("#"):
+            continue
+        if stripped.startswith(("*", "_")) and not stripped.startswith(("- ", "* ")):
+            continue
+        if stripped.startswith(("- ", "* ")):
+            lines.append(stripped.lstrip("-* ").strip())
+            continue
+        if re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", stripped):
+            lines.append(stripped)
     if not lines:
         return False
     identifier = re.compile(

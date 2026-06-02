@@ -278,6 +278,38 @@ def test_deterministic_unmet_accepts_reference_identifier_caveat() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_ignores_reference_headings_and_notes() -> None:
+    ask = (
+        "Ensure all cited sources in the reference list have verifiable bibliographic identifiers "
+        "(DOI/PMID) and are traceable to the source bundle."
+    )
+    paper = (
+        "## References\n\n"
+        "- Smith 2024. Trial of intervention in older adults. DOI: 10.1000/example.\n\n"
+        "### Background References\n\n"
+        "*Canonical clinical thresholds cited in prose; entries below remain source-traceable.*\n\n"
+        "- Jones 2025. Cohort evidence. PMID: 12345678.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_still_flags_identifierless_reference_entry() -> None:
+    ask = (
+        "Ensure all cited sources in the reference list have verifiable bibliographic identifiers "
+        "(DOI/PMID) and are traceable to the source bundle."
+    )
+    paper = (
+        "## References\n\n"
+        "- Smith 2024. Trial of intervention in older adults. DOI: 10.1000/example.\n\n"
+        "### Background References\n\n"
+        "*Canonical clinical thresholds cited in prose; entries below remain source-traceable.*\n\n"
+        "- Jones 2025. Cohort evidence without a public identifier.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
 def test_deterministic_unmet_flags_missing_source_verification_transparency() -> None:
     ask = (
         "Add a verification transparency statement acknowledging that the reference-only source bundle "
