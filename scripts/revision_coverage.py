@@ -91,6 +91,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
     if _asks_source_verification_transparency(lower):
         return _source_verification_transparency_is_stated(paper_md)
+    if _asks_section_source_grounding(lower):
+        return _section_source_grounding_is_stated(paper_md)
     if _asks_direct_evidence_definition(lower):
         text = paper_md.lower()
         return (
@@ -129,6 +131,13 @@ def _asks_source_verification_transparency(text: str) -> bool:
         ("source bundle" in text or "reference-only" in text)
         and any(token in text for token in ("external verification", "independently verified", "exact statistics", "detailed quantitative"))
         and any(token in text for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
+    )
+
+
+def _asks_section_source_grounding(text: str) -> bool:
+    return "source_grounding" in text or "directly supports that specific claim" in text or (
+        "every claim" in text
+        and all(token in text for token in ("key findings", "limitations", "conclusion"))
     )
 
 
@@ -227,6 +236,20 @@ def _directional_coding_explanation_is_material(paper_md: str) -> bool:
         and any(token in scope for token in ("other outcome", "elsewhere", "separately reported", "different outcome"))
     )
     return directional and null_scope and cross_context
+
+
+def _section_source_grounding_is_stated(paper_md: str) -> bool:
+    sections = [_section(paper_md, name) for name in ("Key Findings", "Limitations", "Conclusion")]
+    return all(section and _has_source_trace_marker(section) for section in sections)
+
+
+def _has_source_trace_marker(text: str) -> bool:
+    lower = text.lower()
+    author_year = re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", text)
+    source_note = ("source-grounding" in lower or "source grounding" in lower) and any(
+        token in lower for token in ("excerpt", "title", "trace", "source")
+    )
+    return bool(author_year or source_note)
 
 
 def _source_verification_transparency_is_stated(paper_md: str) -> bool:

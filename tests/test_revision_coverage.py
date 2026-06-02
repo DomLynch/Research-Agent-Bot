@@ -268,6 +268,43 @@ def test_deterministic_unmet_accepts_source_verification_transparency() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_missing_section_source_grounding() -> None:
+    ask = (
+        "Strengthen source_grounding by ensuring every claim in Key Findings, Limitations, "
+        "and Conclusion can be traced to at least one source whose excerpt or title directly "
+        "supports that specific claim."
+    )
+    paper = (
+        "## Limitations\n\n"
+        "The corpus is heterogeneous, but no source trace is provided.\n\n"
+        "## Conclusion\n\n"
+        "The conclusion is bounded, but no source trace is provided.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_section_source_grounding() -> None:
+    ask = (
+        "Strengthen source_grounding by ensuring every claim in Key Findings, Limitations, "
+        "and Conclusion can be traced to at least one source whose excerpt or title directly "
+        "supports that specific claim."
+    )
+    paper = (
+        "## Key Findings\n\n"
+        "Movahedian 2025 supports the cardiometabolic signal, while Casper 2024 supports the "
+        "sleep-outcome boundary condition.\n\n"
+        "## Limitations\n\n"
+        "Bradfield 2025 and Gupta 2025 are adjacent-context sources, so the claim is bounded "
+        "to source-traceable context rather than direct aging efficacy.\n\n"
+        "## Conclusion\n\n"
+        "Mohammadi 2025 supports the review-level synthesis boundary; the conclusion does not "
+        "add claims beyond those source-traced observations.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 _PAPER = "## Abstract\n\nEGCG reverses aging in humans.\n\n## Results\n\nMixed, mostly null.\n"
 
 
