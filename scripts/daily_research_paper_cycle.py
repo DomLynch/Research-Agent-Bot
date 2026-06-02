@@ -296,6 +296,18 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
     return out
 
 
+def _recent_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
+    out: set[str] = set()
+    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
+        topic, _, code = str(key).partition("\x1f")
+        if topic and code not in _NON_REPEAT_STATUSES and isinstance(stamps, list):
+            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
+                out.add(topic)
+    return out
+
+
 def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
@@ -802,6 +814,9 @@ def select_topic(
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
     if not candidates:
         return None
+    recent_blocked = _recent_blocked_topics(ledger_dir)
+    fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
+    candidates = fresh_candidates or candidates
     pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
     return min(pool, key=lambda topic: (-_publication_score(topic, ledger_dir, runs_root), -_topic_support_score(topic), _attempted_at(topic, ledger_dir), topic))
 

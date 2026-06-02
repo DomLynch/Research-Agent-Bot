@@ -185,6 +185,19 @@ def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_pat
     assert selected == "metformin"
 
 
+def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-06-02",
+        [{"topic": "aaa_recent_failure", "gate_status": "receipt_preflight_insufficient", "submitted": 0}],
+    )
+
+    selected = cycle.select_topic(["aaa_recent_failure", "zzz_clean"], ledger_dir)
+
+    assert selected == "zzz_clean"
+
+
 def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aerobic_exercise", target_journal=True)
     runs_root = tmp_path / "runs"
