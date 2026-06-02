@@ -2,17 +2,17 @@
 
 | Stage | Count |
 |---|---|
-| Retrieved (post-dedupe) | 2381 |
-| Classified — keep | 456 |
-| Classified — drop | 1925 |
-| Extractable — core pool | 35 |
-| Extractable — background pool | 90 |
-| Extractable — adjacent pool | 331 |
+| Retrieved (post-dedupe) | 2392 |
+| Classified — keep | 468 |
+| Classified — drop | 1924 |
+| Extractable — core pool | 115 |
+| Extractable — background pool | 88 |
+| Extractable — adjacent pool | 265 |
 
 **Class distribution:**
 
-- `core_on_thesis`: 35
-- `background_mechanism`: 90
-- `adjacent_clinical`: 331
+- `core_on_thesis`: 115
+- `background_mechanism`: 88
+- `adjacent_clinical`: 265
 - `off_thesis`: 1917
-- `reject`: 8
+- `reject`: 7

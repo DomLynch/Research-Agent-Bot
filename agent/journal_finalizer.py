@@ -212,9 +212,35 @@ def _phase_b_lane_qualifier(
 def _phase_c_terminology(text: str) -> tuple[str, list[FinalizerLogEntry]]:
     from agent.journal_surface_gate import apply_pipeline_jargon_replacements
     out = apply_pipeline_jargon_replacements(text)
+    out, n_directness = _calibrate_public_directness_language(out)
     if out == text:
         return text, []
-    return out, [FinalizerLogEntry(phase="C_terminology", rule="pipeline_jargon_to_academic", n_changes=1, detail="applied _PIPELINE_JARGON_PUBLIC substitution table")]
+    detail = "applied _PIPELINE_JARGON_PUBLIC substitution table"
+    if n_directness:
+        detail += f"; calibrated {n_directness} directness phrase(s)"
+    return out, [FinalizerLogEntry(phase="C_terminology", rule="pipeline_jargon_to_academic", n_changes=1, detail=detail)]
+
+
+def _calibrate_public_directness_language(text: str) -> tuple[str, int]:
+    replacements = (
+        ("direct clinical evidence", "direct interventional hard-endpoint evidence"),
+        ("Direct clinical evidence", "Direct interventional hard-endpoint evidence"),
+        ("direct clinical gap", "direct interventional hard-endpoint gap"),
+        ("Direct clinical gap", "Direct interventional hard-endpoint gap"),
+        ("direct clinical records", "direct interventional hard-endpoint records"),
+        ("direct clinical signals", "direct interventional hard-endpoint signals"),
+        ("direct clinical outcomes", "direct interventional hard-endpoint outcomes"),
+        ("direct clinical trials", "direct interventional hard-endpoint trials"),
+        ("direct clinical recommendation", "direct interventional hard-endpoint recommendation"),
+    )
+    out = text
+    n = 0
+    for old, new in replacements:
+        changed = out.count(old)
+        if changed:
+            out = out.replace(old, new)
+            n += changed
+    return out, n
 
 
 # --- Phase H: Topic-slug → display-form normalisation -----------------

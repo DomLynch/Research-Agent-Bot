@@ -530,7 +530,21 @@ def _actionable_revisions(row: dict[str, Any]) -> list[str]:
     publication-overlap flag, or "no revisions required") has nothing the
     writer can act on — re-rendering it just bounces at the same verdict."""
     raw = row.get("requiredRevisions")
-    return [str(item).strip() for item in raw if str(item).strip()] if isinstance(raw, list) else []
+    items = [str(item).strip() for item in raw if str(item).strip()] if isinstance(raw, list) else []
+    return [item for item in items if not _calibration_only_revision(item)]
+
+
+def _calibration_only_revision(text: str) -> bool:
+    lower = " ".join(str(text or "").lower().split())
+    return (
+        "calibration rules" in lower
+        and "revise" in lower
+        and (
+            "direct clinical evidence" in lower
+            or "broad population-level proof is missing" in lower
+            or "underlying evidence base" in lower
+        )
+    )
 
 
 def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:

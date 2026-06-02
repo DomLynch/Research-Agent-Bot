@@ -1773,6 +1773,20 @@ def test_terminal_topics_excludes_revise_with_no_actionable_revisions(tmp_path: 
     assert out == {"foo_topic"}  # no actionable revisions -> terminal-for-topic
 
 
+def test_terminal_topics_excludes_calibration_only_direct_evidence_revise(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
+    latest = {"k": {
+        "decision": "revise",
+        "title": "Research Synthesis: Foo Topic",
+        "requiredRevisions": [
+            "Per calibration rules, the explicit absence of direct clinical evidence requires a revise status because broad population-level proof is missing.",
+        ],
+    }}
+    out = cycle._terminal_topics(runs, loader=lambda: (latest, None))
+    assert out == {"foo_topic"}
+
+
 def test_cycle_ignores_unmatched_delayed_revision_request(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aspirin_geroprotection", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
