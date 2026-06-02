@@ -286,6 +286,8 @@ def _asks_directional_coding(text: str) -> bool:
         "no extracted directional signal" in text and "clarify" in text
     ) or (
         "no extracted directional signal" in text and "reconcile" in text
+    ) or (
+        "no extracted directional signal" in text and "proportion" in text
     )
 
 
@@ -513,7 +515,8 @@ def _directional_coding_explanation_is_material(paper_md: str) -> bool:
         any(token in scope for token in ("positive", "mixed", "negative"))
         and any(token in scope for token in ("other outcome", "elsewhere", "separately reported", "different outcome"))
     )
-    return directional and null_scope and cross_context
+    proportion_scope = "proportion" in scope and "source" in scope and any(token in scope for token in ("x/y", "/"))
+    return directional and null_scope and (cross_context or proportion_scope)
 
 
 def _directional_table_narrative_is_consistent(paper_md: str) -> bool:

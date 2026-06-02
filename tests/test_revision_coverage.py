@@ -1228,6 +1228,35 @@ def test_deterministic_unmet_accepts_population_proof_calibration_boundary() -> 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_mixed_indirect_overclaim_boundary() -> None:
+    ask = (
+        "Add explicit language in the abstract and conclusion highlighting the mixed "
+        "and indirect nature of the evidence base to preempt any overclaiming."
+    )
+    paper = "## Abstract\n\nEvidence is promising.\n\n## Conclusion\n\nTranslation remains limited.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_mixed_indirect_overclaim_boundary() -> None:
+    ask = (
+        "Add explicit language in the abstract and conclusion highlighting the mixed "
+        "and indirect nature of the evidence base to preempt any overclaiming."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Evidence-boundary note: Because the retained corpus relies on limited direct "
+        "interventional hard-endpoint evidence and includes mixed, indirect, adjacent/mechanistic "
+        "evidence, this synthesis is hypothesis-generating and not definitive. It does not "
+        "support broad causal or policy claims.\n\n"
+        "## Conclusion\n\n"
+        "Evidence-boundary note: Because the retained corpus relies on mixed, indirect evidence, "
+        "this synthesis is not definitive and does not support broad causal or policy claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_named_numeric_correction_without_audit_ask() -> None:
     ask = (
         "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "

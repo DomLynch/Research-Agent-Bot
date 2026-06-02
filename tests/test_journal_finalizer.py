@@ -451,6 +451,32 @@ def test_evidence_boundary_population_note_is_revision_scoped(tmp_path: Path) ->
     assert logs == []
 
 
+def test_evidence_boundary_repairs_mixed_indirect_overclaim_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Add explicit language in the abstract and conclusion highlighting the mixed "
+        "and indirect nature of the evidence base to preempt any overclaiming."
+    )
+    paper = "## Abstract\n\nResveratrol has signals.\n\n## Conclusion\n\nTranslation remains limited.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_evidence_boundary_note(paper, tmp_path)
+
+    assert "mixed, indirect" in fixed
+    assert "does not support broad causal or policy claims" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_evidence_boundary",
+            rule="state_no_broad_population_level_proof",
+            n_changes=2,
+            detail="added evidence-boundary note to 2 section(s)",
+        )
+    ]
+
+
 def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
@@ -493,6 +519,32 @@ def test_directional_coding_note_repairs_live_strongest_signal_ask(tmp_path: Pat
 
     assert "Directional coding note:" in fixed
     assert "specific outcome class" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_directional_coding_note",
+            rule="define_directional_coding_schema",
+            n_changes=1,
+            detail="added directional coding schema note to Evidence Landscape",
+        )
+    ]
+
+
+def test_directional_coding_note_repairs_no_signal_proportion_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Ensure all outcome-class summaries in the 'Evidence Landscape' table explicitly "
+        "note the proportion of sources with no extracted directional signal to avoid ambiguity."
+    )
+    paper = "## Evidence Landscape\n\n| Outcome | Strongest signal |\n|---|---|\n| Immune | no extracted directional signal |\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_directional_coding_note(paper, tmp_path)
+
+    assert "source proportion" in fixed
+    assert "X/Y sources" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs == [
         journal_finalizer.FinalizerLogEntry(

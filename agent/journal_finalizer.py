@@ -551,7 +551,9 @@ _DIRECTIONAL_CODING_NOTE = (
     "rationale can be supported by adjacent or different outcome evidence while "
     "another outcome remains null or unclear. Contextual claims contain "
     "bibliographic background, mechanism, methods, exposure definitions, or "
-    "population context rather than effect-direction evidence."
+    "population context rather than effect-direction evidence. When an outcome-"
+    "class summary uses no extracted directional signal, it should state the "
+    "source proportion, such as X/Y sources, to avoid ambiguity."
     )
 
 
@@ -676,6 +678,7 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
         or ("evidence landscape" in lower and "strongest signal" in lower and "directional signal" in lower)
         or ("contextual claim" in lower and "directional signal" in lower)
         or ("null" in lower and "absence of support" in lower)
+        or ("no extracted directional signal" in lower and "proportion" in lower)
     )
 
 
