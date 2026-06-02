@@ -130,6 +130,25 @@ def test_deterministic_unmet_accepts_general_vs_direct_source_breakdown() -> Non
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_topic_fit_rationale_for_umbrella_source_ask() -> None:
+    ask = (
+        "Add a note explaining why sources on opioid monitoring, sports workload, "
+        "geolocation in psychiatric disorders, and Alzheimer's speech analysis are "
+        "included under the 'digital frailty index' umbrella, given that none appear "
+        "to operationalize a frailty index."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Topic-fit rationale: Sources are retained only when they operationalize "
+        "digital frailty index directly or provide adjacent/contextual boundary "
+        "evidence for the same construct. 0/4 retained sources are classified as "
+        "direct; adjacent, contextual, review-level, or mechanistic sources are "
+        "reclassified as boundary evidence rather than used for broad efficacy claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_off_topic_source_audit_without_breakdown() -> None:
     ask = (
         "Audit the source bundle for sources that are clearly off-topic to hydrogen "
