@@ -244,6 +244,83 @@ def test_single_source_proportionality_statement_is_not_duplicated(tmp_path: Pat
     assert logs == []
 
 
+def test_actionable_gaps_section_is_inserted_for_revision_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "In the 'Gaps Identified' section, provide a numbered or prioritized list "
+        "of the top 3-5 specific, actionable research gaps and future research next steps."
+    )
+    paper = "## Discussion\n\nEvidence remains mixed.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "glp_1_longevity",
+        "receipts": [
+            {"outcome_class": "mortality_survival"},
+            {"outcome_class": "cardiometabolic"},
+        ],
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_actionable_gaps(paper, tmp_path)
+
+    assert "## Gaps Identified" in fixed
+    assert "1. Run adequately powered prospective trials" in fixed
+    assert "prespecified clinical endpoints" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_actionable_gaps",
+            rule="write_prioritized_actionable_gaps",
+            n_changes=1,
+            detail="added prioritized actionable Gaps Identified section",
+        )
+    ]
+
+
+def test_actionable_gaps_section_replaces_weak_existing_section(tmp_path: Path) -> None:
+    ask = "Gaps Identified should include actionable future research next steps."
+    paper = (
+        "## Gaps Identified\n\nMore work is needed.\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": []}))
+
+    fixed, _ = journal_finalizer._phase_d_actionable_gaps(paper, tmp_path)
+
+    assert "More work is needed" not in fixed
+    assert "Standardize exposure, comparator, dose" in fixed
+
+
+def test_actionable_gaps_section_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Discussion\n\nEvidence remains mixed.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+
+    fixed, logs = journal_finalizer._phase_d_actionable_gaps(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
+def test_actionable_gaps_section_is_not_duplicated(tmp_path: Path) -> None:
+    ask = "Gaps Identified should include actionable future research next steps."
+    paper = (
+        "## Gaps Identified\n\n"
+        "1. Run adequately powered prospective trials in the priority population with "
+        "prespecified clinical endpoints and at least 2-year follow-up so the clinical "
+        "signal can be separated from short-term surrogate movement.\n"
+        "2. Standardize exposure, comparator, dose, measurement timing, and endpoint definitions "
+        "across populations before attempting pooled effects.\n"
+        "3. Add safety endpoints in direct human studies with patient-relevant function measures.\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_actionable_gaps(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_reference_identifier_enrichment_uses_registry_ids(tmp_path: Path) -> None:
     paper = (
         "## Abstract\n\nSmith 2024 and Jones 2025 reported.\n\n"
