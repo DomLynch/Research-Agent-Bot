@@ -946,3 +946,86 @@ def test_deterministic_unmet_accepts_known_grammar_artifact_repair() -> None:
     paper = "## Abstract\n\nThe evidence is insufficient to establish therapeutic efficacy.\n"
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_source_statistics_missing_from_landscape() -> None:
+    ask = (
+        "For cited sources with specific statistics, ensure these appear in the evidence landscape "
+        "and are connected to the appropriate outcome class rather than buried in the source bundle."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus includes several sources.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_source_statistics_in_landscape() -> None:
+    ask = (
+        "For cited sources with specific statistics, ensure these appear in the evidence landscape "
+        "and are connected to the appropriate outcome class rather than buried in the source bundle."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Weiss 2026 is mapped to outcome class=longevity and reports a 33% lifespan increase; "
+        "the statistic is visible in the outcome-class landscape rather than only in the source bundle.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_soft_human_longevity_conclusion() -> None:
+    ask = (
+        "Strengthen the conclusion to explicitly state that longevity benefits are currently "
+        "unproven in humans, not merely incomplete or biologically plausible."
+    )
+    paper = "## Conclusion\n\nThe human longevity evidence remains biologically plausible but incomplete.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_unproven_human_longevity_conclusion() -> None:
+    ask = (
+        "Strengthen the conclusion to explicitly state that longevity benefits are currently "
+        "unproven in humans, not merely incomplete or biologically plausible."
+    )
+    paper = "## Conclusion\n\nLongevity benefits are currently unproven in humans and not established clinically.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_named_numeric_correction_without_audit_ask() -> None:
+    ask = (
+        "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "
+        "reports a non-significant result (p = 0.08), not a significant reduction in LF HRV power."
+    )
+    paper = "## Abstract\n\nWaghmare 2024 reported a non-significant result in LF HRV power (p = 0.08).\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_unclear_table_vs_positive_negative_narrative() -> None:
+    ask = (
+        "Reconcile the Evidence Landscape table signals (predominantly 'unclear') with the "
+        "narrative claims of positive/negative signals in each outcome section."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Signal |\n|---|---|\n| HRV | predominantly unclear |\n\n"
+        "## Results\n\nPositive/negative signals are emphasized in the outcome sections.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_unclear_table_reconciled_with_narrative() -> None:
+    ask = (
+        "Reconcile the Evidence Landscape table signals (predominantly 'unclear') with the "
+        "narrative claims of positive/negative signals in each outcome section."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Signal |\n|---|---|\n| HRV | predominantly unclear |\n\n"
+        "## Results\n\nPositive/negative signals are separately reported in other outcome classes; "
+        "directional coding for the HRV row is reconciled and does not mean absence of support.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []

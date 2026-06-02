@@ -427,7 +427,7 @@ def _source_statistics_landscape_is_stated(paper_md: str) -> bool:
     return bool(
         landscape
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", landscape)
-        and re.search(r"\b\d+(?:\.\d+)?\s*(?:%|percent|p\s*=|ci\b|confidence interval|hazard ratio|odds ratio|relative risk)\b", landscape, flags=re.I)
+        and re.search(r"\b\d+(?:\.\d+)?\s*(?:%|percent\b|p\s*=|ci\b|confidence interval\b|hazard ratio\b|odds ratio\b|relative risk\b)", landscape, flags=re.I)
         and re.search(r"\b(outcome class|outcome=|classified|mapped)\b", landscape, flags=re.I)
     )
 
