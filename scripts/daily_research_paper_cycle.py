@@ -1128,6 +1128,24 @@ def _run_synthesis(
     return int(result.returncode)
 
 
+def _receipt_preflight(topic: str, out_dir: Path, *, timeout: int | None = None) -> dict[str, Any]:
+    probe_dir = out_dir.with_name(f"{out_dir.name}-receipt-preflight")
+    try:
+        rc = _run_synthesis(topic, probe_dir, dry_run=True, timeout=timeout)
+        report = _read_json(probe_dir / "receipt_funnel.json")
+    finally:
+        shutil.rmtree(probe_dir, ignore_errors=True)
+    counts = report.get("counts") if isinstance(report, dict) else {}
+    n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+    return {
+        "passed": rc == 0 and n_receipts >= 10,
+        "status": "receipt_preflight_ok" if rc == 0 and n_receipts >= 10 else "receipt_preflight_insufficient",
+        "return_code": rc,
+        "n_receipts": n_receipts,
+        "min_receipts": 10,
+    }
+
+
 def _repair_existing_run(
     source_dir: Path,
     out_dir: Path,
@@ -1740,6 +1758,28 @@ def run_cycle(
                 }
                 if review_type_override:
                     synthesis_kwargs["review_type_override"] = review_type_override
+                receipt_preflight = (
+                    {"passed": True}
+                    if existing_repair
+                    else _receipt_preflight(selected, out_dir, timeout=timeout)
+                )
+                if not receipt_preflight.get("passed"):
+                    attempt = {
+                        "topic": selected,
+                        "out_dir": out_dir.name,
+                        "revise_attempt": revise_attempt,
+                        "synthesis_return_code": None,
+                        "submit_status": str(receipt_preflight.get("status") or "receipt_preflight_insufficient"),
+                        "gate_status": str(receipt_preflight.get("status") or "receipt_preflight_insufficient"),
+                        "failure_class": "B_corpus_fixable",
+                        "submitted": 0,
+                        "receipt_preflight": receipt_preflight,
+                    }
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = "receipt_preflight_skipped_no_submission"
+                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    attempted.add(selected)
+                    break
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 if revision_source and out_dir.exists():
                     _write_json(out_dir / "researka_revision_request.json", revision_source)
