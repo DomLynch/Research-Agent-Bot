@@ -364,6 +364,15 @@ def _source_precision_repair_topics(ledger_dir: Path, *, now: dt.datetime | None
     return out
 
 
+def _current_low_source_precision_topics(topics: list[str]) -> set[str]:
+    out: set[str] = set()
+    for topic in topics:
+        ok, _status, _misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+        if not ok:
+            out.add(topic)
+    return out
+
+
 def _revision_requests_source_precision(feedback: str) -> bool:
     text = str(feedback or "").lower()
     return "source" in text and any(token in text for token in ("off-topic", "off topic", "source bundle"))
@@ -1475,8 +1484,14 @@ def run_cycle(
         source_precision_repaired_ok: set[str] = set()
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
-            repairable = _corpus_repair_topics(ledger_dir) - terminal_excluded - submitted_topics - pending_revision_excluded
-            source_precision_repairable = _source_precision_repair_topics(ledger_dir)
+            current_source_precision = _current_low_source_precision_topics(topics)
+            if current_source_precision:
+                ledger["source_precision_backlog_topics"] = sorted(current_source_precision)
+                preflight_blocked |= current_source_precision
+            repairable = (
+                _corpus_repair_topics(ledger_dir) | current_source_precision
+            ) - terminal_excluded - submitted_topics - pending_revision_excluded
+            source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
                     repair = _repair_low_source_precision_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
