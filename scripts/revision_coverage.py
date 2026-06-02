@@ -103,6 +103,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         )
     if _asks_directional_coding(lower):
         return _directional_coding_explanation_is_material(paper_md)
+    if _asks_directional_table_narrative_consistency(lower):
+        return _directional_table_narrative_is_consistent(paper_md)
     if _asks_actionable_gaps(lower):
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
@@ -157,6 +159,15 @@ def _asks_direct_evidence_definition(text: str) -> bool:
 def _asks_directional_coding(text: str) -> bool:
     return "directional coding" in text or (
         "no extracted directional signal" in text and "clarify" in text
+    )
+
+
+def _asks_directional_table_narrative_consistency(text: str) -> bool:
+    return (
+        "evidence landscape" in text
+        and "no directional signal" in text
+        and any(token in text for token in ("positive association", "positive associations", "positive signal", "positive signals"))
+        and any(token in text for token in ("contradiction", "narrative", "table coding", "needs correction"))
     )
 
 
@@ -245,6 +256,27 @@ def _directional_coding_explanation_is_material(paper_md: str) -> bool:
         and any(token in scope for token in ("other outcome", "elsewhere", "separately reported", "different outcome"))
     )
     return directional and null_scope and cross_context
+
+
+def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
+    table_scope = " ".join(
+        part for part in (_section(paper_md, "Evidence Snapshot"), _section(paper_md, "Evidence Landscape")) if part
+    ).lower()
+    narrative_scope = " ".join(
+        part for part in (_section(paper_md, "Key Findings"), _section(paper_md, "Results"), _section(paper_md, "Conclusion")) if part
+    ).lower()
+    if not table_scope or not narrative_scope:
+        return False
+    no_signal = "no extracted directional signal" in table_scope or "no directional signal" in table_scope
+    positive_narrative = any(
+        token in narrative_scope
+        for token in ("positive association", "positive associations", "positive signal", "positive signals")
+    )
+    reconciled = any(
+        token in (table_scope + " " + narrative_scope)
+        for token in ("different outcome", "other outcome", "separately reported", "does not mean absence", "not absence of support")
+    )
+    return not (no_signal and positive_narrative and not reconciled)
 
 
 def _section_source_grounding_is_stated(paper_md: str) -> bool:

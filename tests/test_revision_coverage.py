@@ -141,6 +141,43 @@ def test_deterministic_unmet_flags_weak_directional_signal_explanation() -> None
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_deterministic_unmet_flags_directional_table_narrative_contradiction() -> None:
+    ask = (
+        "Resolve the contradiction between the Evidence Landscape table showing no directional signal "
+        "and the narrative claiming positive associations in frailty-outcome studies. Either the table "
+        "coding or the narrative needs correction."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Strongest signal |\n"
+        "|---|---|\n"
+        "| Frailty | no directional signal in 20/20 sources |\n\n"
+        "## Key Findings\n\n"
+        "The corpus shows positive associations in frailty-outcome studies.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_reconciled_directional_table_narrative() -> None:
+    ask = (
+        "Resolve the contradiction between the Evidence Landscape table showing no directional signal "
+        "and the narrative claiming positive associations in frailty-outcome studies. Either the table "
+        "coding or the narrative needs correction."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Strongest signal |\n"
+        "|---|---|\n"
+        "| Frailty | no directional signal in 20/20 sources |\n\n"
+        "## Key Findings\n\n"
+        "Positive associations are separately reported in other outcome classes; the frailty row's "
+        "no directional signal coding does not mean absence of support across the whole corpus.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_internal_duplication() -> None:
     ask = "Remove internal duplication of content across the Evidence Landscape and Key Findings sections."
     repeated = (
@@ -300,6 +337,38 @@ def test_deterministic_unmet_accepts_section_source_grounding() -> None:
         "## Conclusion\n\n"
         "Mohammadi 2025 supports the review-level synthesis boundary; the conclusion does not "
         "add claims beyond those source-traced observations.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_admission_funnel_equal_opposite_counts() -> None:
+    ask = (
+        "Resolve the numerical inconsistency in the admission funnel where "
+        "'No extractable claims' and 'Admitted final sources' both equal 56."
+    )
+    paper = (
+        "## Source Admission Funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| No extractable claims | 56 |\n"
+        "| Admitted final sources | 56 |\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_admission_funnel_distinct_opposite_counts() -> None:
+    ask = (
+        "Resolve the numerical inconsistency in the admission funnel where "
+        "'No extractable claims' and 'Admitted final sources' both equal 56."
+    )
+    paper = (
+        "## Source Admission Funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| No extractable claims | 24 |\n"
+        "| Admitted final sources | 13 |\n"
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
