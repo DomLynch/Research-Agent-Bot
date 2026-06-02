@@ -81,6 +81,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "retracted_source_cited",
     "terminal_surface_repeat",
     "terminal_source_precision_repair_incomplete",
+    "terminal_receipt_preflight_insufficient",
 })
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
@@ -259,7 +260,8 @@ _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "synthesis_failed", "terminal_surface_repeat",
                                   "final_status_not_ready"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
-                                        "preflight_insufficient_corpus", "preflight_thin_quant_corpus"})
+                                        "preflight_insufficient_corpus", "preflight_thin_quant_corpus",
+                                        "receipt_preflight_insufficient"})
 _SOURCE_PRECISION_STATUS = "source_topic_precision_low"
 _CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited", _SOURCE_PRECISION_STATUS}
 
@@ -932,6 +934,7 @@ def _failure_class(status: str) -> str:
         "superseded_topic_run": "D_no_action",
         "terminal_surface_repeat": "D_no_action",
         "terminal_source_precision_repair_incomplete": "D_no_action",
+        "terminal_receipt_preflight_insufficient": "D_no_action",
     }.get(code, "unknown")
 
 
