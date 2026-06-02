@@ -200,6 +200,7 @@ def test_admission_funnel_clarification_repairs_numeric_inconsistency_ask(tmp_pa
     )
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
 
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
 
     assert "Admission-bucket note:" in fixed
@@ -233,6 +234,7 @@ def test_admission_funnel_clarification_covers_partial_binding_ask(tmp_path: Pat
     )
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
 
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, _ = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
 
     assert "claim-binding states" in fixed
