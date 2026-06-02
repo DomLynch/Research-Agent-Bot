@@ -93,6 +93,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
         return _section_source_grounding_is_stated(paper_md)
+    if _asks_admission_funnel_numeric_consistency(lower):
+        return _admission_funnel_numeric_consistency_is_stated(paper_md)
     if _asks_direct_evidence_definition(lower):
         text = paper_md.lower()
         return (
@@ -139,6 +141,13 @@ def _asks_section_source_grounding(text: str) -> bool:
         "every claim" in text
         and all(token in text for token in ("key findings", "limitations", "conclusion"))
     )
+
+
+def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
+    return (
+        any(token in text for token in ("admission funnel", "source admission", "receipt admission"))
+        and any(token in text for token in ("numerical inconsistency", "numeric inconsistency", "inconsistently", "both equal"))
+    ) or ("no extractable claims" in text and "admitted final" in text)
 
 
 def _asks_direct_evidence_definition(text: str) -> bool:
@@ -268,6 +277,37 @@ def _source_verification_transparency_is_stated(paper_md: str) -> bool:
     )
     artifact = any(token in scope for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
     return "source bundle" in scope and limitation and artifact
+
+
+def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
+    rows = _funnel_counts(paper_md)
+    if not rows:
+        return False
+    no_extractable = rows.get("no extractable claims")
+    admitted = rows.get("admitted final sources")
+    if admitted is None:
+        admitted = rows.get("admitted final receipts")
+    return no_extractable is None or admitted is None or no_extractable != admitted
+
+
+def _funnel_counts(paper_md: str) -> dict[str, int]:
+    rows: dict[str, int] = {}
+    in_funnel = False
+    for line in paper_md.splitlines():
+        stripped = line.strip()
+        if re.match(r"^#{2,4}\s+", stripped):
+            in_funnel = "admission funnel" in stripped.lower() or "selection flow" in stripped.lower()
+            continue
+        if not in_funnel or not stripped.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in stripped.strip("|").split("|")]
+        if len(cells) < 2 or cells[0].lower() in {"admission bucket", "---"}:
+            continue
+        try:
+            rows[cells[0].lower()] = int(cells[1].replace(",", ""))
+        except ValueError:
+            continue
+    return rows
 
 
 def _references_are_traceable(paper_md: str) -> bool:
