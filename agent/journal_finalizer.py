@@ -107,6 +107,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_h_topic_slug_normalise(t, out_dir), _phase_i_split_concatenated_headings,
         lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
         lambda t: _phase_l_strengthen_analytical_sections(t, out_dir),
+        lambda t: _phase_d_unproven_human_longevity(t, out_dir),
     ):
         text, log = phase(text)
         entries.extend(log)
