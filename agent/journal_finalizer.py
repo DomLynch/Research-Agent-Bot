@@ -89,7 +89,6 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
-        lambda t: _phase_d_unproven_human_longevity(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
