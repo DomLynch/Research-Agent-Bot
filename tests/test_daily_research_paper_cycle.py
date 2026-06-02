@@ -1360,7 +1360,9 @@ def test_payload_source_bundle_revision_ask_rejects_generic_registry_summaries(t
     )
 
 
-def test_payload_source_bundle_topicality_revision_ask_uses_structured_bundle(tmp_path: Path, monkeypatch) -> None:
+def test_payload_source_bundle_topicality_revision_ask_requires_all_rows_for_all_sources_ask(
+    tmp_path: Path, monkeypatch,
+) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -1375,9 +1377,53 @@ def test_payload_source_bundle_topicality_revision_ask_uses_structured_bundle(tm
         ],
     })
 
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Verify that all 50 bundle sources actually address melatonin and aging.",
+    )
+
+
+def test_payload_source_bundle_topicality_revision_ask_accepts_all_specific_rows(tmp_path: Path, monkeypatch) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "metadata": {"topic": "melatonin_aging"},
+        "source_bundle": [
+            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
+            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
+            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on sleep and biomarkers."},
+            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human trial outcomes."},
+            {"title": "Mechanistic E", "excerpt": "Melatonin signaling was evaluated in aging-relevant inflammatory pathways."},
+        ],
+    })
+
     assert cycle._payload_revision_ask_satisfied(
         out_dir,
         "Verify that all 50 bundle sources actually address melatonin and aging.",
+    )
+
+
+def test_payload_source_bundle_topicality_revision_ask_accepts_labeled_adjacent_context(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "metadata": {"topic": "melatonin_aging"},
+        "source_bundle": [
+            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
+            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
+            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on sleep and biomarkers."},
+            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human trial outcomes."},
+            {"title": "Context E", "excerpt": "Contextual adjacent evidence: a broader clinical cohort measured cardiovascular endpoints."},
+        ],
+    })
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Remove or reclassify sources whose excerpts clearly address unrelated topics; if contextual adjacent, label explicitly in bundle.",
     )
 
 

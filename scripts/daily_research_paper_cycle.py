@@ -1040,14 +1040,18 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
             aliases = source_gate_aliases(
                 topic, topic_aliases(topic, root=TOPIC_PACKS.parent, include_generated_terms=False),
             )
-            hits = sum(
-                is_source_topic_specific(
-                    topic,
-                    " ".join(str(row.get(key) or "") for key in ("title", "excerpt", "doi", "id", "url")).lower(),
-                    aliases=aliases,
-                )
+            row_texts = [
+                " ".join(str(row.get(key) or "") for key in ("title", "excerpt", "doi", "id", "url", "evidence_type")).lower()
                 for row in rows
-            )
+            ]
+            hits = sum(is_source_topic_specific(topic, text, aliases=aliases) for text in row_texts)
+            if _strict_source_topic_revision_ask(ask_lower):
+                allow_adjacent = "reclassify" in ask_lower or "contextual adjacent" in ask_lower
+                return bool(topic) and all(
+                    is_source_topic_specific(topic, text, aliases=aliases)
+                    or (allow_adjacent and "contextual adjacent" in text)
+                    for text in row_texts
+                )
             return bool(topic) and hits / len(rows) >= REVISION_SOURCE_BUNDLE_TOPIC_FLOOR
         if evidence_type_ask and "primary" not in {str(row.get("evidence_type") or "").lower() for row in rows}:
             return False
@@ -1076,6 +1080,19 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     landscape = str(sections.get("Evidence Landscape") or "")
     findings = str(sections.get("Key Findings") or "")
     return bool(findings and landscape and findings != landscape and "|" not in findings)
+
+
+def _strict_source_topic_revision_ask(ask_lower: str) -> bool:
+    return (
+        ("all" in ask_lower and "actually address" in ask_lower)
+        or "verify that all" in ask_lower
+        or "directly and specifically" in ask_lower
+        or "clearly off-topic" in ask_lower
+        or "clearly off topic" in ask_lower
+        or "unrelated topic" in ask_lower
+        or "unrelated topics" in ask_lower
+        or "remove or reclassify" in ask_lower
+    )
 
 
 def _retracted_cited_sources(out_dir: Path) -> list[str]:
