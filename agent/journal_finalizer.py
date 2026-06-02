@@ -88,6 +88,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
+        lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
@@ -608,6 +609,62 @@ def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
     return (
         any(token in lower for token in ("broad causal", "policy claims", "population-level proof", "hypothesis-generating"))
         and any(token in lower for token in ("direct clinical evidence", "direct interventional", "adjacent/mechanistic", "mechanistic"))
+    )
+
+
+def _phase_d_tier_directness_boundaries(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_tier_directness_boundaries(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    tiers = sorted({str(row.get("evidence_tier") or "").strip() for row in rows if row.get("evidence_tier")})
+    directness = sorted({str(row.get("directness") or "").strip() for row in rows if row.get("directness")})
+    tier_text = ", ".join(tiers[:6]) or "the recorded evidence tier"
+    direct_text = ", ".join(directness[:6]) or "the recorded directness rating"
+    patched = text
+    n = 0
+    for heading in ("Key Findings", "Conclusion"):
+        match = re.search(rf"^## {re.escape(heading)}\b(.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
+        note = (
+            f"Evidence-tier/directness boundary for {heading}: Claims in this section "
+            f"are bounded to evidence tier {tier_text} and directness ratings "
+            f"{direct_text}; indirect, review, mechanistic, or adjacent evidence "
+            "cannot support broader efficacy or population-level conclusions."
+        )
+        if not match:
+            insert_at = _source_grounding_section_insert_at(patched, heading)
+            patched = patched[:insert_at].rstrip() + f"\n\n## {heading}\n\n{note}\n\n" + patched[insert_at:].lstrip()
+            n += 1
+            continue
+        if "evidence-tier/directness boundary" in match.group(1).lower():
+            continue
+        insert_at = match.start(1)
+        patched = patched[:insert_at] + "\n\n" + note + patched[insert_at:]
+        n += 1
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_tier_directness_boundaries",
+        rule="bound_key_findings_and_conclusion_by_tier_directness",
+        n_changes=n,
+        detail=f"added tier/directness boundary note to {n} section(s)",
+    )]
+
+
+def _revision_asks_tier_directness_boundaries(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "key findings" in lower
+        and "conclusion" in lower
+        and "evidence tier" in lower
+        and "directness" in lower
     )
 
 
