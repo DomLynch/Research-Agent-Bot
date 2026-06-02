@@ -8,7 +8,6 @@ from __future__ import annotations
 import argparse
 import json
 import math
-import os
 import sys
 from pathlib import Path
 from typing import Any, Sequence
@@ -18,7 +17,13 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import daily_research_paper_cycle as cycle  # noqa: E402
-from materialize_fact_topic_packs import DSN_ENV_NAMES, dsn_from_env  # noqa: E402
+from materialize_fact_topic_packs import (  # noqa: E402
+    DSN_ENV_NAMES,
+    HTTP_TOKEN_ENV,
+    HTTP_URL_ENV,
+    dsn_from_env,
+    http_credentials_from_env,
+)
 from source_topic_specificity import generated_pack_publishable  # noqa: E402
 
 RECOMMENDED_SUCCESS_BUFFER = 0.60
@@ -64,12 +69,13 @@ def _bulk_materializer_access() -> dict[str, Any]:
     dsn = dsn_from_env()
     if dsn:
         return {"status": "ok", "mode": "postgres", "env_names_checked": list(DSN_ENV_NAMES)}
-    if os.getenv("RESEARKA_DATABASE_URL", "").strip() and os.getenv("RESEARKA_DATABASE_TOKEN", "").strip():
+    base_url, token = http_credentials_from_env()
+    if base_url and token:
         return {
-            "status": "missing_postgres_dsn",
-            "mode": "http_search_only",
+            "status": "ok",
+            "mode": "http_topic_groups",
             "env_names_checked": list(DSN_ENV_NAMES),
-            "reason": "bulk topic materialization needs SQL access to facts_tier2; HTTP search can retrieve facts but cannot scan/group the full fact table",
+            "http_env_names_checked": [HTTP_URL_ENV, HTTP_TOKEN_ENV],
         }
     return {
         "status": "missing_database_credentials",

@@ -11,6 +11,8 @@ import json
 import os
 import re
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 from typing import Any
 
@@ -146,6 +148,9 @@ HIGH_PRECISION_ACTION_TERMS = {
     "therapy", "transplantation", "treatment", "vaccination", "vaccine",
 }
 DSN_ENV_NAMES = ("RESEARKA_DATABASE_DSN", "DATABASE_URL", "POSTGRES_DSN", "POSTGRES_URL")
+HTTP_URL_ENV = "RESEARKA_DATABASE_URL"
+HTTP_TOKEN_ENV = "RESEARKA_DATABASE_TOKEN"
+TOPIC_GROUPS_PATH = "/api/v1/tier2/facts/topic-groups"
 
 
 def dsn_from_env() -> str:
@@ -154,6 +159,10 @@ def dsn_from_env() -> str:
         if value.startswith(("postgres://", "postgresql://")):
             return value
     return ""
+
+
+def http_credentials_from_env() -> tuple[str, str]:
+    return os.getenv(HTTP_URL_ENV, "").strip(), os.getenv(HTTP_TOKEN_ENV, "").strip()
 
 
 def build_topic_name(row: dict[str, Any]) -> str:
@@ -272,6 +281,52 @@ def fetch_rows(
         return [dict(row) for row in cur.fetchall()]
 
 
+def fetch_rows_http(
+    *,
+    base_url: str,
+    token: str,
+    min_exact_facts: int,
+    min_papers: int,
+    limit: int,
+    strategy: str = "grouped",
+) -> list[dict[str, Any]]:
+    rows = _post_json(
+        base_url.rstrip("/") + TOPIC_GROUPS_PATH,
+        token,
+        {
+            "strategy": strategy,
+            "limit": limit,
+            "min_exact_facts": min_exact_facts,
+            "min_papers": min_papers,
+        },
+    )
+    if not isinstance(rows, list):
+        raise RuntimeError("topic-groups endpoint returned non-list payload")
+    return [dict(row) for row in rows if isinstance(row, dict)]
+
+
+def _post_json(url: str, token: str, payload: dict[str, object]) -> object:
+    body = json.dumps(payload).encode("utf-8")
+    request = urllib.request.Request(
+        url,
+        data=body,
+        headers={
+            "Content-Type": "application/json",
+            "X-Researka-Token": token,
+            "User-Agent": "research-agent-bot-topic-materializer/1",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=120) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"topic-groups endpoint failed: HTTP {exc.code}: {detail}") from exc
+    except urllib.error.URLError as exc:
+        raise RuntimeError(f"topic-groups endpoint unavailable: {exc.reason}") from exc
+
+
 def _label(value: object) -> str:
     return " ".join(str(value or "").replace("_", " ").replace("-", " ").split())
 
@@ -312,18 +367,29 @@ def main(argv: list[str] | None = None) -> int:
         if not isinstance(rows, list):
             raise SystemExit("--rows-json must contain a JSON list")
     else:
-        if not args.dsn:
-            raise SystemExit(
-                "Provide --dsn, one Postgres DSN env "
-                f"({', '.join(DSN_ENV_NAMES)}), or --rows-json"
+        if args.dsn:
+            rows = fetch_rows(
+                dsn=args.dsn,
+                min_exact_facts=args.min_exact_facts,
+                min_papers=args.min_papers,
+                limit=args.limit,
+                strategy=args.strategy,
             )
-        rows = fetch_rows(
-            dsn=args.dsn,
-            min_exact_facts=args.min_exact_facts,
-            min_papers=args.min_papers,
-            limit=args.limit,
-            strategy=args.strategy,
-        )
+        else:
+            base_url, token = http_credentials_from_env()
+            if not base_url or not token:
+                raise SystemExit(
+                    "Provide --dsn, one Postgres DSN env "
+                    f"({', '.join(DSN_ENV_NAMES)}), {HTTP_URL_ENV}+{HTTP_TOKEN_ENV}, or --rows-json"
+                )
+            rows = fetch_rows_http(
+                base_url=base_url,
+                token=token,
+                min_exact_facts=args.min_exact_facts,
+                min_papers=args.min_papers,
+                limit=args.limit,
+                strategy=args.strategy,
+            )
     result = materialize_rows(
         rows,
         db_dir=args.db_dir,

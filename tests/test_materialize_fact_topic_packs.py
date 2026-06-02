@@ -211,3 +211,54 @@ def test_dsn_from_env_accepts_common_postgres_env_names(monkeypatch: pytest.Monk
     assert materializer.dsn_from_env() == ""
     monkeypatch.setenv("DATABASE_URL", "postgresql://user:pass@localhost/db")
     assert materializer.dsn_from_env() == "postgresql://user:pass@localhost/db"
+
+
+def test_fetch_rows_http_uses_topic_groups_endpoint(monkeypatch: pytest.MonkeyPatch) -> None:
+    captured: dict[str, object] = {}
+
+    def _fake_post_json(url: str, token: str, payload: dict[str, object]) -> object:
+        captured.update({"url": url, "token": token, "payload": payload})
+        return [{
+            "topic": "metformin",
+            "sub_topic": "glucose metabolism",
+            "claim_type": "effect_size",
+            "facts": 25,
+            "papers": 6,
+            "exact_facts": 20,
+        }]
+
+    monkeypatch.setattr(materializer, "_post_json", _fake_post_json)
+
+    rows = materializer.fetch_rows_http(
+        base_url="https://database.researka.org/",
+        token="secret",
+        strategy="fact-field-cross",
+        min_exact_facts=4,
+        min_papers=3,
+        limit=12,
+    )
+
+    assert rows[0]["topic"] == "metformin"
+    assert captured == {
+        "url": "https://database.researka.org/api/v1/tier2/facts/topic-groups",
+        "token": "secret",
+        "payload": {
+            "strategy": "fact-field-cross",
+            "limit": 12,
+            "min_exact_facts": 4,
+            "min_papers": 3,
+        },
+    }
+
+
+def test_fetch_rows_http_rejects_non_list_payload(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(materializer, "_post_json", lambda *_args, **_kwargs: {"rows": []})
+
+    with pytest.raises(RuntimeError, match="non-list"):
+        materializer.fetch_rows_http(
+            base_url="https://database.researka.org",
+            token="secret",
+            min_exact_facts=2,
+            min_papers=2,
+            limit=5,
+        )
