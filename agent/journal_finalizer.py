@@ -624,11 +624,6 @@ def _phase_d_section_source_grounding(
     if not rows:
         return text, []
     citation = str(rows[0].get("citation_token") or rows[0].get("receipt_id") or "the manifest").strip()
-    note = (
-        "Source-grounding note: Claims in this section are traced to manifest "
-        f"receipt titles and source excerpts; {citation} anchors the source trace, "
-        "and adjacent receipts bound rather than broaden the claim."
-    )
     patched = text
     n = 0
     for heading in ("Key Findings", "Limitations", "Conclusion"):
@@ -636,8 +631,26 @@ def _phase_d_section_source_grounding(
         if not match:
             continue
         section = match.group(1).lower()
-        if "source-grounding note:" in section:
+        if "source-grounding note" in section:
             continue
+        if heading == "Key Findings":
+            note = (
+                "Source-grounding note for Key Findings: The finding-level claims "
+                f"use {citation} as the lead manifest source trace and rely on "
+                "receipt titles/excerpts rather than unsupported narrative expansion."
+            )
+        elif heading == "Limitations":
+            note = (
+                "Source-grounding note for Limitations: Limitation claims are tied "
+                f"to source directness and excerpt scope, with {citation} anchoring "
+                "the trace and adjacent receipts treated as boundary evidence."
+            )
+        else:
+            note = (
+                "Source-grounding note for Conclusion: The conclusion is bounded to "
+                f"source-traced evidence from {citation} and the manifest receipts; "
+                "it does not extend beyond the cited source titles or excerpts."
+            )
         insert_at = match.start(1)
         patched = patched[:insert_at] + "\n\n" + note + patched[insert_at:]
         n += 1

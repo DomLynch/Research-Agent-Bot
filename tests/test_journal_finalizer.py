@@ -463,7 +463,7 @@ def test_section_source_grounding_repairs_section_trace_ask(tmp_path: Path) -> N
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_section_source_grounding(paper, tmp_path)
 
-    assert fixed.count("Source-grounding note:") == 3
+    assert fixed.count("Source-grounding note") == 3
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
