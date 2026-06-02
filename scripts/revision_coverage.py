@@ -175,8 +175,9 @@ def _asks_source_directness_breakdown(text: str) -> bool:
                 "directly address", "directly addresses", "hard endpoint", "hard endpoints",
                 "general digital biomarker", "broader", "off-topic", "off topic",
                 "remove or reclassify", "remove or justify", "clearly address",
+                "actually address",
             ))
-            and any(token in text for token in ("adjacent", "general", "broader", "contextual", "off-topic", "off topic", "versus", "vs."))
+            and any(token in text for token in ("adjacent", "general", "broader", "contextual", "off-topic", "off topic", "unrelated", "versus", "vs."))
         )
     )
 
@@ -275,6 +276,8 @@ def _asks_conclusion_unproven_humans(text: str) -> bool:
 def _asks_directional_coding(text: str) -> bool:
     return "directional coding" in text or (
         "no extracted directional signal" in text and "clarify" in text
+    ) or (
+        "no extracted directional signal" in text and "reconcile" in text
     )
 
 

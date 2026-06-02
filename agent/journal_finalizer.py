@@ -631,6 +631,7 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
     return (
         "directional coding" in lower
         or ("no extracted directional signal" in lower and "clarify" in lower)
+        or ("evidence landscape" in lower and "strongest signal" in lower and "directional signal" in lower)
         or ("contextual claim" in lower and "directional signal" in lower)
         or ("null" in lower and "absence of support" in lower)
     )

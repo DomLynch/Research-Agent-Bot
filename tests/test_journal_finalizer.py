@@ -385,6 +385,41 @@ def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_directional_coding_note_repairs_live_strongest_signal_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "In the Evidence Landscape table, the column 'Strongest signal' states "
+        "'no extracted directional signal in 20/20 sources'. Given that some "
+        "sources in the bundle report directional results, reconcile the table "
+        "coding with the narrative."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Strongest signal |\n"
+        "|---|---|\n"
+        "| Contextual Adjacent Evidence | no extracted directional signal in 20/20 sources |\n\n"
+        "## Key Findings\n\n"
+        "Some bundle sources report directional results.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_directional_coding_note(paper, tmp_path)
+
+    assert "Directional coding note:" in fixed
+    assert "specific outcome class" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_directional_coding_note",
+            rule="define_directional_coding_schema",
+            n_changes=1,
+            detail="added directional coding schema note to Evidence Landscape",
+        )
+    ]
+
+
 def test_directional_coding_note_upgrades_existing_contextual_claims_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

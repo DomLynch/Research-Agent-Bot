@@ -312,6 +312,67 @@ def test_deterministic_unmet_accepts_gaps_rewritten_as_actionable_next_steps() -
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_live_top_bucket_matrix() -> None:
+    asks = [
+        (
+            "In the Evidence Landscape table, the column 'Strongest signal' states "
+            "'no extracted directional signal in 20/20 sources'. Given that some sources "
+            "report directional results, reconcile the table coding with the narrative."
+        ),
+        "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data.",
+        (
+            "Verify that all 50 bundle sources actually address melatonin and aging; "
+            "remove or reclassify sources whose excerpts clearly address unrelated topics."
+        ),
+        (
+            "The manuscript's explicit absence of direct clinical evidence and reliance on "
+            "adjacent/mechanistic data requires a revise status to signal that broad "
+            "population-level proof is missing."
+        ),
+        (
+            "Rewrite the 'Gaps Identified' section to provide specific, actionable "
+            "research gaps instead of repeating the limitations."
+        ),
+    ]
+    missing = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Strongest signal |\n|---|---|\n"
+        "| Contextual Adjacent Evidence | no extracted directional signal in 20/20 sources |\n\n"
+        "## Gaps Identified\n\nThe limitations are indirect evidence and heterogeneity.\n\n"
+        "## Conclusion\n\nA broad geroscience rationale remains plausible.\n"
+    )
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "Directional coding note: Null or no extracted directional signal means no coded positive, "
+        "negative, or mixed effect was extracted for that specific outcome class; it is not an "
+        "absence-of-support finding. Positive, negative, mixed, unclear, and null are "
+        "outcome-specific codes, so signals in other outcome evidence are separately reported.\n\n"
+        "Source directness breakdown: 1/3 retained sources directly address the stated topic and "
+        "aging-relevant hard endpoints; 2/3 are adjacent, contextual, review-level, or mechanistic "
+        "and are used only to bound interpretation.\n\n"
+        "### Source Classification Map\n\n"
+        "- Smith 2024: outcome=cardiometabolic; directness=direct; tier=A1.\n"
+        "- Jones 2025: outcome=contextual adjacent evidence; directness=adjacent; tier=B2.\n\n"
+        "Evidence_type metadata note: evidence_type labels are resolved against source excerpts; "
+        "review, RCT/trial, and excerpt evidence are reclassified under the source classification map.\n\n"
+        "## Gaps Identified\n\n"
+        "1. Run a powered prospective trial in the priority population with a prespecified "
+        "comparator, dose documentation, and clinical endpoint hierarchy.\n"
+        "2. Extend follow-up duration to at least 24 months with safety monitoring and "
+        "patient-relevant functional measurement.\n"
+        "3. Standardize measurement timing across cardiometabolic and functional endpoints "
+        "so future analyses can test pooled effects rather than restating heterogeneity.\n\n"
+        "## Conclusion\n\n"
+        "Evidence-boundary note: Because the retained corpus relies on limited direct "
+        "interventional hard-endpoint evidence and includes adjacent/mechanistic evidence, "
+        "this synthesis is hypothesis-generating and not definitive. It does not support "
+        "broad causal or policy claims; broad population-level proof is missing.\n"
+    )
+
+    assert set(revision_coverage.deterministic_unmet_asks(missing, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
 def test_deterministic_unmet_flags_unbounded_null_signal_conclusion() -> None:
     ask = "Reconcile the null directional signals with the concluding claim that a bounded geroscience rationale exists."
     paper = "## Conclusion\n\nThis synthesis supports a bounded geroscience rationale for clinical use.\n"
