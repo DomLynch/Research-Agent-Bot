@@ -1205,6 +1205,44 @@ def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path
     assert not cycle._payload_revision_ask_satisfied(out_dir, "tighten the abstract")
 
 
+def test_classification_revision_asks_can_be_satisfied_by_public_sections(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\n"
+        "No source is classified as direct interventional hard-endpoint evidence.\n\n"
+        "## Evidence Snapshot\n\n"
+        "### Classification Criteria\n\n"
+        "- **Outcome class** is assigned from endpoint and claim text.\n"
+        "- **Directness** is coded as direct only when a source tests the topic; "
+        "a qualifying direct source would be a human interventional study.\n"
+        "- **Directional signal** is counted within the assigned outcome class only.\n"
+        "- **Evidence tier** follows the deterministic taxonomy.\n\n"
+        "### Source Classification Map\n\n"
+        "- Hayashi 2025: outcome=contextual adjacent evidence; directness=mechanistic; "
+        "tier=C1; direction=positive; claims=12.\n",
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Define the classification criteria used to assign studies to outcome classes and to code directness.",
+    )
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Provide a mapping table or list showing which of the 28 bundle sources were assigned to which outcome class.",
+    )
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Clarify the definition of 'direct evidence' and provide a qualifying direct source example.",
+    )
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class.",
+    )
+
+
 def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: Path) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()

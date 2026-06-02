@@ -828,7 +828,8 @@ def _classification_criteria_lines() -> list[str]:
         "### Classification Criteria",
         "",
         "- **Outcome class** is assigned from the source's bound endpoint, population, and claim text; adjacent/background sources are separated from clinical outcome slices.",
-        "- **Directness** is coded as direct only when the source tests the topic against a clinically proximate outcome in the relevant population; indirect human, review-level, and mechanistic sources are weighted separately.",
+        "- **Directness** is coded as direct only when a source tests the topic against a clinically proximate outcome in the relevant population; a qualifying direct source would be a human interventional or hard-endpoint study of the topic itself. Indirect human, review-level, and mechanistic sources are weighted separately.",
+        "- **Directional signal** is counted within the assigned outcome class only. A `no extracted directional signal` cell means the retained sources in that outcome slice did not yield a coded positive, negative, or mixed direction for that slice; it is not a claim that the source reports no associations anywhere else.",
         "- **Evidence tier** follows the deterministic tier/directness taxonomy used in the receipt builder; the prose writer cannot move a source between classes after receipts are frozen.",
         "",
     ]

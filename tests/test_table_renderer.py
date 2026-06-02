@@ -576,6 +576,8 @@ def test_public_evidence_snapshot_exposes_classification_criteria_and_mapping() 
     assert "### Source Classification Map" in md
     assert "Outcome class" in md
     assert "Directness" in md
+    assert "qualifying direct source" in md
+    assert "Directional signal" in md
     assert "Hayashi 2025: outcome=contextual adjacent evidence; directness=mechanistic; tier=C1" in md
     assert "Yiallourou 2025: outcome=cognitive; directness=indirect; tier=B2" in md
     assert "|---|" not in md
