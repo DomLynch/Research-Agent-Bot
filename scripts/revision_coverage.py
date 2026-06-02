@@ -510,7 +510,7 @@ def _directional_coding_explanation_is_material(paper_md: str) -> bool:
     if not scope:
         return False
     directional = "directional coding" in scope and "no extracted directional signal" in scope
-    null_scope = "null" in scope and ("unclear" in scope or "no signal" in scope)
+    null_scope = "null" in scope and any(token in scope for token in ("unclear", "no signal", "no extracted directional signal"))
     cross_context = (
         any(token in scope for token in ("positive", "mixed", "negative"))
         and any(token in scope for token in ("other outcome", "elsewhere", "separately reported", "different outcome"))

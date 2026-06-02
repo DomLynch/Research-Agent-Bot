@@ -1257,6 +1257,32 @@ def test_deterministic_unmet_accepts_mixed_indirect_overclaim_boundary() -> None
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_missing_no_signal_proportion_note() -> None:
+    ask = (
+        "Ensure all outcome-class summaries in the 'Evidence Landscape' table explicitly "
+        "note the proportion of sources with no extracted directional signal to avoid ambiguity."
+    )
+    paper = "## Evidence Landscape\n\n| Outcome | Signal |\n|---|---|\n| Immune | no extracted directional signal |\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_no_signal_proportion_note() -> None:
+    ask = (
+        "Ensure all outcome-class summaries in the 'Evidence Landscape' table explicitly "
+        "note the proportion of sources with no extracted directional signal to avoid ambiguity."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Directional coding note: Null or no extracted directional signal means no coded positive, "
+        "negative, or mixed effect was extracted for that specific outcome class. When an outcome-class "
+        "summary uses no extracted directional signal, it states the source proportion, such as X/Y "
+        "sources, to avoid ambiguity.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_named_numeric_correction_without_audit_ask() -> None:
     ask = (
         "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "
