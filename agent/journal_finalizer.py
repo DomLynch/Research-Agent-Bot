@@ -87,6 +87,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_c_terminology,
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_prisma_all_included_rationale(t, out_dir),
+        lambda t: _phase_d_classification_criteria_note(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
@@ -584,6 +585,47 @@ def _revision_asks_prisma_all_included_rationale(feedback: str) -> bool:
         "100%" in lower
         and any(token in lower for token in ("retrieved records", "records were included", "included"))
         and any(token in lower for token in ("prisma", "eligibility criteria", "eligibility"))
+    )
+
+
+_CLASSIFICATION_CRITERIA_NOTE = (
+    "Classification criteria: Outcome class assignment follows the primary "
+    "endpoint or claim role recorded in the manifest, with contextual adjacent "
+    "evidence separated from cardiometabolic, immune, safety, functional, and "
+    "other endpoint classes. Directness is coded as direct when the source tests "
+    "the named exposure or construct in the target population with aging-relevant "
+    "clinical or hard endpoints; indirect when human evidence uses surrogate or "
+    "adjacent endpoints; mechanistic when the evidence is preclinical, pathway, "
+    "or model-based; and review when the source synthesizes rather than directly "
+    "tests effects. Evidence tier records the same hierarchy before claims are "
+    "interpreted."
+)
+
+
+def _phase_d_classification_criteria_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_classification_criteria(feedback):
+        return text, []
+    if "classification criteria:" in text.lower():
+        return text, []
+    patched, n = _prepend_or_create_section_paragraph(text, "Methods", _CLASSIFICATION_CRITERIA_NOTE)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_classification_criteria",
+        rule="define_outcome_directness_tier_criteria",
+        n_changes=1,
+        detail="added outcome/directness/evidence-tier classification criteria",
+    )]
+
+
+def _revision_asks_classification_criteria(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return "classification criteria" in lower or (
+        "assign" in lower and "outcome class" in lower and "directness" in lower
     )
 
 
