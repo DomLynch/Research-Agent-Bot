@@ -374,6 +374,39 @@ def test_deterministic_unmet_accepts_admission_funnel_distinct_opposite_counts()
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_missing_single_source_proportionality() -> None:
+    ask = (
+        "For single-source outcome classes (frailty, immune/inflammation, muscle function), "
+        "explicitly state upfront that these are hypothesis-generating only and reduce "
+        "narrative depth accordingly to maintain proportionality."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Frailty and immune outcomes are discussed as major findings.\n\n"
+        "## Conclusion\n\n"
+        "The paper summarizes these outcome classes as part of the overall synthesis.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_single_source_proportionality_statement() -> None:
+    ask = (
+        "For single-source outcome classes (frailty, immune/inflammation, muscle function), "
+        "explicitly state upfront that these are hypothesis-generating only and reduce "
+        "narrative depth accordingly to maintain proportionality."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Single-source outcome classes are treated as hypothesis-generating and receive "
+        "proportional narrative depth rather than standalone evidentiary weight.\n\n"
+        "## Conclusion\n\n"
+        "The synthesis keeps one-source findings bounded.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 _PAPER = "## Abstract\n\nEGCG reverses aging in humans.\n\n## Results\n\nMixed, mostly null.\n"
 
 

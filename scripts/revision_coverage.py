@@ -95,6 +95,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _section_source_grounding_is_stated(paper_md)
     if _asks_admission_funnel_numeric_consistency(lower):
         return _admission_funnel_numeric_consistency_is_stated(paper_md)
+    if _asks_single_source_proportionality(lower):
+        return _single_source_proportionality_is_stated(paper_md)
     if _asks_direct_evidence_definition(lower):
         text = paper_md.lower()
         return (
@@ -150,6 +152,13 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
         any(token in text for token in ("admission funnel", "source admission", "receipt admission"))
         and any(token in text for token in ("numerical inconsistency", "numeric inconsistency", "inconsistently", "both equal"))
     ) or ("no extractable claims" in text and "admitted final" in text)
+
+
+def _asks_single_source_proportionality(text: str) -> bool:
+    return (
+        ("single-source" in text or "single source" in text)
+        and any(token in text for token in ("hypothesis-generating", "proportionality", "reduce narrative depth"))
+    )
 
 
 def _asks_direct_evidence_definition(text: str) -> bool:
@@ -320,6 +329,22 @@ def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
     if admitted is None:
         admitted = rows.get("admitted final receipts")
     return no_extractable is None or admitted is None or no_extractable != admitted
+
+
+def _single_source_proportionality_is_stated(paper_md: str) -> bool:
+    scope = " ".join(
+        part for part in (
+            _section(paper_md, "Evidence Landscape"),
+            _section(paper_md, "Key Findings"),
+            _section(paper_md, "Limitations"),
+            _section(paper_md, "Conclusion"),
+        ) if part
+    ).lower()
+    if not scope:
+        return False
+    single_source = any(token in scope for token in ("single-source", "single source", "one-source", "one source"))
+    bounded = "hypothesis-generating" in scope or "proportional" in scope or "proportionality" in scope
+    return single_source and bounded
 
 
 def _funnel_counts(paper_md: str) -> dict[str, int]:
