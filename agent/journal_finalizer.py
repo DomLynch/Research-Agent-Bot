@@ -814,7 +814,7 @@ def _phase_d_evidence_honesty_guard(
         + " The conclusion therefore does not support broad causal, clinical, or policy claims."
     )
     patched = text
-    n = 0
+    note_n = 0
     for heading in ("Abstract", "Conclusion"):
         if "evidence-honesty note:" in _section_body(patched, heading).lower():
             continue
@@ -824,15 +824,36 @@ def _phase_d_evidence_honesty_guard(
             added = 1
         else:
             patched, added = _create_section_paragraph(patched, heading, note)
-        n += added
+        note_n += added
+    patched, claim_n = _replace_unsupported_general_health_claim(patched) if (nullish / total >= 0.5 or direct == 0) else (patched, 0)
+    n = note_n + claim_n
     if not n:
         return text, []
     return patched, [FinalizerLogEntry(
         phase="D_evidence_honesty_guard",
         rule="bound_null_signal_and_directness_claims",
         n_changes=n,
-        detail=f"added evidence-honesty note to {n} section(s); null_or_no_signal={nullish}/{total}; direct={direct}/{total}",
+        detail=f"added evidence-honesty note to {note_n} section(s); replaced unsupported conclusion claims={claim_n}; null_or_no_signal={nullish}/{total}; direct={direct}/{total}",
     )]
+
+
+def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
+    replacement = (
+        "The current corpus is non-supportive for clinical efficacy or general "
+        "health-intervention claims; it supports only hypothesis generation and "
+        "structured follow-up within the limits of indirect evidence."
+    )
+    pattern = re.compile(
+        r"(?P<sentence>[^.\n]*\bmay\s+support\b[^.\n]*\b(?:general\s+health|lifestyle\s+intervention)\b[^.\n]*\.)",
+        flags=re.I,
+    )
+    match = re.search(r"^## Conclusion\b(?P<body>.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    if not match or replacement.lower() in match.group("body").lower():
+        return text, 0
+    body, n = pattern.subn(replacement, match.group("body"), count=1)
+    if not n:
+        return text, 0
+    return text[:match.start("body")] + body + text[match.end("body"):], n
 
 
 def _receipt_has_null_or_no_signal(row: dict[str, Any]) -> bool:
