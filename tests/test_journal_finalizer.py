@@ -367,6 +367,35 @@ def test_directional_coding_note_repairs_schema_ask(tmp_path: Path) -> None:
     ]
 
 
+def test_classification_criteria_note_repairs_outcome_directness_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Define the classification criteria used to assign studies to outcome classes "
+        "(Contextual Adjacent Evidence, Cardiometabolic, etc.) and to code directness "
+        "as 'indirect', 'mechanistic', or 'review'."
+    )
+    paper = "## Methods\n\nSources were grouped from the manifest.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_classification_criteria_note(paper, tmp_path)
+
+    assert "Classification criteria:" in fixed
+    assert "Outcome class assignment" in fixed
+    assert "Directness is coded as direct" in fixed
+    assert "Evidence tier records" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_classification_criteria",
+            rule="define_outcome_directness_tier_criteria",
+            n_changes=1,
+            detail="added outcome/directness/evidence-tier classification criteria",
+        )
+    ]
+
+
 def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
