@@ -89,6 +89,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     if _asks_source_classification_map(lower):
         text = paper_md.lower()
         return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
+    if _asks_source_directness_breakdown(lower):
+        return _source_directness_breakdown_is_stated(paper_md)
     if _asks_source_verification_transparency(lower):
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
@@ -135,6 +137,17 @@ def _asks_classification_criteria(text: str) -> bool:
 def _asks_source_classification_map(text: str) -> bool:
     return "mapping table" in text or "mapping list" in text or (
         "which of the" in text and "source" in text and "outcome class" in text
+    )
+
+
+def _asks_source_directness_breakdown(text: str) -> bool:
+    return (
+        "source directness" in text
+        or (
+            "source" in text
+            and "adjacent" in text
+            and any(token in text for token in ("directly address", "directly addresses", "hard endpoint", "hard endpoints"))
+        )
     )
 
 
@@ -366,6 +379,15 @@ def _source_verification_transparency_is_stated(paper_md: str) -> bool:
     )
     artifact = any(token in scope for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
     return "source bundle" in scope and limitation and artifact
+
+
+def _source_directness_breakdown_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    has_map = "source directness" in text or "source classification map" in text or "directness breakdown" in text
+    has_directness = "directness=" in text or "directness:" in text
+    has_direct = any(token in text for token in ("directly addresses", "directly address", "direct interventional", "hard endpoint", "hard endpoints"))
+    has_adjacent = any(token in text for token in ("adjacent", "mechanistic", "review-level"))
+    return has_map and has_directness and has_direct and has_adjacent
 
 
 def _evidence_boundary_is_stated(paper_md: str) -> bool:
