@@ -96,15 +96,24 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
     out: list[str] = []
     seen: set[str] = set()
     for alias in aliases:
-        norm = " ".join(str(alias or "").replace("_", " ").replace("-", " ").lower().split())
+        raw = str(alias or "").strip()
+        norm = " ".join(raw.replace("_", " ").replace("-", " ").lower().split())
         if not norm:
             continue
         alias_tokens = {
             token for token in re.findall(r"[a-z0-9]+", norm)
             if len(token) > 2 and token not in TOPIC_STOPWORDS
         }
+        acronym_alias = bool(re.fullmatch(r"[A-Z0-9]{2,8}", raw))
+        if (
+            len(topic_raw_tokens) > 1
+            and len(alias_tokens) == 1
+            and next(iter(alias_tokens), "") in BIOMED_ANCHORS
+            and not acronym_alias
+        ):
+            continue
         min_overlap = 2 if len(topic_raw_tokens) >= 3 else 1
-        if norm in topic_text or topic_text in norm or len(topic_raw_tokens & alias_tokens) >= min_overlap:
+        if acronym_alias or norm in topic_text or topic_text in norm or len(topic_raw_tokens & alias_tokens) >= min_overlap:
             if norm not in seen:
                 seen.add(norm)
                 out.append(str(alias))

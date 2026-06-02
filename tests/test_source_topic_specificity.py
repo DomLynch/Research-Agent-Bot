@@ -48,6 +48,15 @@ def test_multi_token_topic_accepts_named_intervention_without_generic_outcome() 
     )
 
 
+def test_source_gate_aliases_drop_generic_biomed_alias_for_composite_topic() -> None:
+    aliases = source_gate_aliases(
+        "low_dose_naltrexone_inflammation",
+        ("low dose naltrexone inflammation", "low-dose naltrexone", "LDN", "inflammation", "immune modulation"),
+    )
+
+    assert aliases == ("low dose naltrexone inflammation", "low-dose naltrexone", "LDN")
+
+
 def test_source_gate_aliases_drop_broad_one_token_aliases_for_composite_topics() -> None:
     aliases = source_gate_aliases(
         "digital_frailty_index",
