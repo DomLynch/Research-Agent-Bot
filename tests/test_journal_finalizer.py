@@ -364,6 +364,60 @@ def test_evidence_boundary_note_is_revision_scoped(tmp_path: Path) -> None:
     assert logs == []
 
 
+def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Ensure that all claims in the Key Findings and Conclusion sections are explicitly "
+        "bounded by the evidence tiers and directness ratings provided in the manuscript."
+    )
+    paper = (
+        "## Key Findings\n\nThe signal is promising.\n\n"
+        "## Conclusion\n\nClinical translation remains plausible.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"evidence_tier": "B2", "directness": "indirect"},
+        {"evidence_tier": "C1", "directness": "mechanistic"},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_tier_directness_boundaries(paper, tmp_path)
+
+    assert fixed.count("Evidence-tier/directness boundary") == 2
+    assert "evidence tier B2, C1" in fixed
+    assert "directness ratings indirect, mechanistic" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_tier_directness_boundaries",
+            rule="bound_key_findings_and_conclusion_by_tier_directness",
+            n_changes=2,
+            detail="added tier/directness boundary note to 2 section(s)",
+        )
+    ]
+
+
+def test_tier_directness_boundary_inserts_missing_key_findings(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Ensure that all claims in the Key Findings and Conclusion sections are explicitly "
+        "bounded by the evidence tiers and directness ratings provided in the manuscript."
+    )
+    paper = "## Results\n\nMixed evidence.\n\n## Conclusion\n\nClinical translation remains plausible.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"evidence_tier": "B1", "directness": "review"},
+    ]}))
+
+    fixed, _ = journal_finalizer._phase_d_tier_directness_boundaries(paper, tmp_path)
+
+    assert "## Key Findings" in fixed
+    assert fixed.index("## Key Findings") < fixed.index("## Results")
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
 def test_directional_coding_note_is_revision_scoped(tmp_path: Path) -> None:
     paper = "## Evidence Landscape\n\nNo extracted directional signal dominates.\n"
 
