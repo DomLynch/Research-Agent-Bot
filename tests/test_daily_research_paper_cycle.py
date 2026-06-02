@@ -1275,6 +1275,29 @@ def test_unmet_revision_asks_uses_deterministic_gate_when_judge_fails_open(tmp_p
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
 
 
+def test_unmet_revision_asks_accepts_material_directional_explanation(tmp_path: Path, monkeypatch) -> None:
+    import revision_coverage  # type: ignore[import-not-found]
+
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Evidence Snapshot\n\n"
+        "Directional coding is counted within each assigned outcome class only. A no extracted directional "
+        "signal cell means null or unclear coding for that outcome slice; positive and mixed signals in "
+        "other outcome classes remain separately reported and do not change that row.\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda *_args, **_kwargs: [])
+
+    ask = (
+        "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class, "
+        "given that some sources report positive or mixed associations elsewhere."
+    )
+
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
+
+
 def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: Path) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()

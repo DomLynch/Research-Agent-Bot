@@ -109,6 +109,21 @@ def test_deterministic_unmet_accepts_bounded_null_signal_conclusion() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_directional_signal_explanation() -> None:
+    ask = (
+        "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class, "
+        "given that some sources report positive or mixed associations elsewhere."
+    )
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "Directional coding is counted within each assigned outcome class only. A no extracted directional "
+        "signal cell means null or unclear coding for that outcome slice; positive and mixed signals in "
+        "other outcome classes remain separately reported and do not change that row.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_internal_duplication() -> None:
     ask = "Remove internal duplication of content across the Evidence Landscape and Key Findings sections."
     repeated = (
