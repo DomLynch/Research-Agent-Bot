@@ -88,8 +88,10 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
+        lambda t: _phase_d_long_term_safety_scope(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
+        lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
@@ -612,6 +614,43 @@ def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
     )
 
 
+_LONG_TERM_SAFETY_NOTE = (
+    "Long-term safety scope: Long-term safety data in older adults remain "
+    "insufficient, so clinical translation should stay provisional until "
+    "durable follow-up in older adult populations is available."
+)
+
+
+def _phase_d_long_term_safety_scope(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_long_term_safety_scope(feedback):
+        return text, []
+    patched = text
+    n = 0
+    for heading in ("Abstract", "Conclusion"):
+        match = re.search(rf"^## {re.escape(heading)}\b(.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
+        if not match or "long-term safety scope:" in match.group(1).lower():
+            continue
+        patched = patched[:match.start(1)] + "\n\n" + _LONG_TERM_SAFETY_NOTE + patched[match.start(1):]
+        n += 1
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_long_term_safety_scope",
+        rule="state_long_term_safety_gap_in_older_adults",
+        n_changes=n,
+        detail=f"added long-term safety scope note to {n} section(s)",
+    )]
+
+
+def _revision_asks_long_term_safety_scope(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return "long-term safety" in lower or ("safety data" in lower and "older adult" in lower)
+
+
 def _phase_d_tier_directness_boundaries(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
@@ -745,6 +784,62 @@ def _revision_asks_section_source_grounding(feedback: str) -> bool:
     return "source_grounding" in lower or (
         "every claim" in lower
         and all(token in lower for token in ("key findings", "limitations", "conclusion"))
+    )
+
+
+def _phase_d_source_inclusion_rationale(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_source_inclusion_rationale(feedback):
+        return text, []
+    if "topic-fit rationale:" in text.lower():
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    if not isinstance(manifest, dict):
+        return text, []
+    topic = str(manifest.get("topic") or "").replace("_", " ").strip() or "the stated topic"
+    receipts = manifest.get("receipts")
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    direct = sum(1 for row in rows if str(row.get("directness") or "").lower().startswith("direct"))
+    examples = []
+    for row in rows[:5]:
+        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        directness = str(row.get("directness") or "unknown").strip() or "unknown"
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        examples.append(f"{citation} ({directness}; {outcome})")
+    note = (
+        "Topic-fit rationale: Sources are retained only when they operationalize "
+        f"{topic} directly or provide adjacent/contextual boundary evidence for "
+        f"the same construct. {direct}/{len(rows)} retained sources are classified "
+        "as direct; adjacent, contextual, review-level, or mechanistic sources are "
+        "reclassified as boundary evidence rather than used for broad efficacy "
+        f"claims. Representative source-fit checks: {', '.join(examples)}."
+    )
+    for heading in ("Evidence Landscape", "Evidence Snapshot", "Methods", "Limitations"):
+        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        if match:
+            patched = text[:match.end()] + "\n\n" + note + text[match.end():]
+            return patched, [FinalizerLogEntry(
+                phase="D_source_inclusion_rationale",
+                rule="state_topic_fit_rationale",
+                n_changes=1,
+                detail=f"added source inclusion rationale from {len(rows)} manifest receipt(s)",
+            )]
+    return text, []
+
+
+def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "source" in lower
+        and any(token in lower for token in (
+            "included under", "inclusion criteria", "why sources", "umbrella",
+            "operationalize", "directly study", "directly addresses",
+        ))
     )
 
 

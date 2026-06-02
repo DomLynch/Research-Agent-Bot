@@ -364,6 +364,41 @@ def test_evidence_boundary_note_is_revision_scoped(tmp_path: Path) -> None:
     assert logs == []
 
 
+def test_long_term_safety_scope_repairs_older_adult_safety_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Add a brief statement in the abstract and conclusion about the lack of "
+        "long-term safety data in older adults."
+    )
+    paper = "## Abstract\n\nThe evidence is mixed.\n\n## Conclusion\n\nClinical translation remains premature.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_long_term_safety_scope(paper, tmp_path)
+
+    assert fixed.count("Long-term safety scope:") == 2
+    assert "Long-term safety data in older adults remain insufficient" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_long_term_safety_scope",
+            rule="state_long_term_safety_gap_in_older_adults",
+            n_changes=2,
+            detail="added long-term safety scope note to 2 section(s)",
+        )
+    ]
+
+
+def test_long_term_safety_scope_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Abstract\n\nThe evidence is mixed.\n\n## Conclusion\n\nClinical translation remains premature.\n"
+
+    fixed, logs = journal_finalizer._phase_d_long_term_safety_scope(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
@@ -597,6 +632,56 @@ def test_section_source_grounding_inserts_missing_key_findings(tmp_path: Path) -
             detail="added source-grounding note to 3 section(s)",
         )
     ]
+
+
+def test_source_inclusion_rationale_repairs_umbrella_source_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Add a note explaining why sources on adjacent biomarkers are included "
+        "under the digital frailty index umbrella, given that none appear to "
+        "operationalize a frailty index."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus is summarized.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "digital_frailty_index", "receipts": [
+        {
+            "citation_token": "Smith 2024",
+            "outcome_class": "frailty",
+            "directness": "direct",
+        },
+        {
+            "citation_token": "Jones 2025",
+            "outcome_class": "contextual_other",
+            "directness": "indirect",
+        },
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_source_inclusion_rationale(paper, tmp_path)
+
+    assert "Topic-fit rationale:" in fixed
+    assert "operationalize digital frailty index directly" in fixed
+    assert "reclassified as boundary evidence" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_source_inclusion_rationale",
+            rule="state_topic_fit_rationale",
+            n_changes=1,
+            detail="added source inclusion rationale from 2 manifest receipt(s)",
+        )
+    ]
+
+
+def test_source_inclusion_rationale_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Evidence Landscape\n\nThe corpus is summarized.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{"citation_token": "Smith 2024"}]}))
+
+    fixed, logs = journal_finalizer._phase_d_source_inclusion_rationale(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
 
 
 def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> None:
