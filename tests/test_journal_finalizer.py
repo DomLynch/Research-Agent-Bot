@@ -425,7 +425,7 @@ def test_conflict_severity_note_repairs_disagreement_scoring_ask(tmp_path: Path)
     assert "Conflict-map severity note:" in fixed
     assert "severity-level-3 disagreements are defined and scored" in fixed
     assert "severity-level-4 disagreements are defined and scored" in fixed
-    assert "contradiction_map.json" in fixed
+    assert "supplementary contradiction-map" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs == [
         journal_finalizer.FinalizerLogEntry(

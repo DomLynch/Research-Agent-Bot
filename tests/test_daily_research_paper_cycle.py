@@ -1275,7 +1275,7 @@ def test_conflict_severity_revision_ask_can_be_satisfied_by_public_note(tmp_path
         "Conflict-map severity note: severity-level-3 disagreements are defined and scored "
         "as material null-versus-positive conflicts. severity-level-4 disagreements are "
         "defined and scored as higher-weight conflicts. The scoring inputs are recorded "
-        "in contradiction_map.json and the source-audit sidecars.\n",
+        "in the supplementary contradiction-map and source-audit sidecars.\n",
         encoding="utf-8",
     )
 
