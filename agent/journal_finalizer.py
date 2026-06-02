@@ -730,6 +730,10 @@ def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
     return (
         any(token in lower for token in ("broad causal", "policy claims", "population-level proof", "hypothesis-generating"))
         and any(token in lower for token in ("direct clinical evidence", "direct interventional", "adjacent/mechanistic", "mechanistic"))
+    ) or (
+        "calibration rules" in lower
+        and "direct clinical evidence" in lower
+        and any(token in lower for token in ("broad population", "population-level proof", "proof is missing"))
     )
 
 
