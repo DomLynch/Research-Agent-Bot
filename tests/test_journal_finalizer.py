@@ -442,6 +442,39 @@ def test_source_directness_breakdown_repairs_evidence_type_metadata_ask(tmp_path
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_evidence_type_note_added_when_directness_breakdown_already_exists(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Source directness breakdown: 0/2 retained sources directly address the stated topic; "
+        "2/2 are adjacent or review-level.\n\n"
+        "### Source Classification Map\n\n"
+        "- Marco 2024: outcome=sleep; directness=review; tier=B2.\n"
+        "- Yagi 2026: outcome=contextual; directness=indirect; tier=B2.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"citation_token": "Marco 2024", "outcome_class": "sleep", "directness": "review", "evidence_tier": "B2"},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
+
+    assert fixed.count("Source directness breakdown:") == 1
+    assert "Evidence_type metadata note:" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_source_directness_breakdown",
+            rule="insert_evidence_type_metadata_note",
+            n_changes=1,
+            detail="added evidence_type metadata note to Evidence Landscape",
+        )
+    ]
+
+
 def test_section_source_grounding_repairs_section_trace_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

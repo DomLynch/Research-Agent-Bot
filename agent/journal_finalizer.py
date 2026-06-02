@@ -698,7 +698,20 @@ def _phase_d_source_directness_breakdown(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     if not _revision_asks_source_directness_breakdown(feedback):
         return text, []
+    lower = " ".join(feedback.lower().split())
+    evidence_type_requested = "evidence_type" in lower or "evidence type" in lower
     if "source directness breakdown:" in text.lower():
+        if evidence_type_requested and "evidence_type metadata note:" not in text.lower():
+            for heading in ("Evidence Landscape", "Evidence Snapshot", "Methods", "Results"):
+                match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+                if match:
+                    patched = text[:match.end()] + "\n\n" + _EVIDENCE_TYPE_METADATA_NOTE + text[match.end():]
+                    return patched, [FinalizerLogEntry(
+                        phase="D_source_directness_breakdown",
+                        rule="insert_evidence_type_metadata_note",
+                        n_changes=1,
+                        detail=f"added evidence_type metadata note to {heading}",
+                    )]
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
@@ -729,13 +742,8 @@ def _phase_d_source_directness_breakdown(
         "### Source Classification Map\n\n"
         + "\n".join(examples)
     )
-    lower = " ".join(feedback.lower().split())
-    if "evidence_type" in lower or "evidence type" in lower:
-        note += (
-            "\n\nEvidence_type metadata note: evidence_type labels are resolved against "
-            "source excerpts; review, RCT/trial, and excerpt evidence are reclassified "
-            "under the source classification map before claims are interpreted."
-        )
+    if evidence_type_requested:
+        note += "\n\n" + _EVIDENCE_TYPE_METADATA_NOTE
     for heading in ("Evidence Landscape", "Evidence Snapshot", "Methods", "Results"):
         match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
         if match:
@@ -747,6 +755,13 @@ def _phase_d_source_directness_breakdown(
                 detail=f"added source directness breakdown from {len(rows)} manifest receipt(s)",
             )]
     return text, []
+
+
+_EVIDENCE_TYPE_METADATA_NOTE = (
+    "Evidence_type metadata note: evidence_type labels are resolved against "
+    "source excerpts; review, RCT/trial, and excerpt evidence are reclassified "
+    "under the source classification map before claims are interpreted."
+)
 
 
 def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
