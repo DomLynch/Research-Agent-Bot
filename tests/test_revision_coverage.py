@@ -206,6 +206,57 @@ def test_deterministic_unmet_flags_near_duplicate_narrative() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_duplication_check_scopes_to_named_sections() -> None:
+    ask = "Streamline the Gaps Identified and Discussion sections to avoid verbatim repetition."
+    repeated_results = (
+        "92 included sources were assigned to this outcome class. Directional coding includes mixed, "
+        "negative, null, positive, and unclear signals. Directness coding includes direct, indirect, "
+        "mechanistic, and review sources."
+    )
+    paper = (
+        "## Results\n\n"
+        f"{repeated_results}\n\n"
+        "14 included sources were assigned to this outcome class. Directional coding includes mixed, "
+        "negative, null, positive, and unclear signals. Directness coding includes direct, indirect, "
+        "mechanistic, and review sources.\n\n"
+        "## Gaps Identified\n\n"
+        "Future trials should define endpoints, comparators, follow-up duration, and safety monitoring.\n\n"
+        "## Discussion\n\n"
+        "The discussion interprets the evidence without repeating the gap list or corpus statistics.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_duplication_check_flags_named_section_overlap() -> None:
+    ask = "Streamline the Gaps Identified and Discussion sections to avoid verbatim repetition."
+    repeated = (
+        "The current corpus is mixed and hypothesis-generating, with evidence distribution statistics "
+        "showing indirect and review evidence rather than settled clinical translation."
+    )
+    paper = (
+        f"## Gaps Identified\n\n{repeated}\n\n"
+        f"## Discussion\n\n{repeated}\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_duplication_check_does_not_fallback_when_named_sections_absent() -> None:
+    ask = "Streamline the Gaps Identified and Discussion sections to avoid verbatim repetition."
+    paper = (
+        "## Results\n\n"
+        "92 included sources were assigned to this outcome class. Directional coding includes mixed, "
+        "negative, null, positive, and unclear signals. Directness coding includes direct, indirect, "
+        "mechanistic, and review sources.\n\n"
+        "14 included sources were assigned to this outcome class. Directional coding includes mixed, "
+        "negative, null, positive, and unclear signals. Directness coding includes direct, indirect, "
+        "mechanistic, and review sources.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_non_repetitive_sections() -> None:
     ask = "Remove internal duplication and present a single, non-repetitive narrative."
     paper = (

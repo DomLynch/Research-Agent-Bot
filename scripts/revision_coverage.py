@@ -112,7 +112,7 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     if _asks_null_signal_reconciliation(lower):
         return _null_signal_conclusion_is_bounded(paper_md)
     if _asks_internal_duplication(lower):
-        return _internal_duplication_is_low(paper_md)
+        return _internal_duplication_is_low(paper_md, lower)
     if _asks_long_term_safety_scope(lower):
         return _long_term_safety_scope_is_stated(paper_md)
     if _asks_reference_traceability(lower):
@@ -229,9 +229,27 @@ def _null_signal_conclusion_is_bounded(paper_md: str) -> bool:
     return any(token in scope for token in ("null", "mixed", "hypothesis-generating", "does not support", "not definitive"))
 
 
-def _internal_duplication_is_low(paper_md: str) -> bool:
+def _internal_duplication_scope(paper_md: str, ask: str) -> str:
+    names = (
+        "Evidence Landscape", "Key Findings", "Results", "Full Manuscript",
+        "Gaps Identified", "Discussion", "Limitations", "Conclusion",
+    )
+    sections = []
+    named = False
+    for name in names:
+        if name.lower() in ask:
+            named = True
+            if name == "Full Manuscript":
+                return paper_md
+            section = _section(paper_md, name)
+            if section:
+                sections.append(f"## {name}\n\n{section}")
+    return "\n\n".join(sections) if named else paper_md
+
+
+def _internal_duplication_is_low(paper_md: str, ask: str = "") -> bool:
     seen: list[set[str]] = []
-    for paragraph in re.split(r"\n\s*\n", paper_md):
+    for paragraph in re.split(r"\n\s*\n", _internal_duplication_scope(paper_md, ask)):
         text = " ".join(line.strip() for line in paragraph.splitlines() if not line.lstrip().startswith(("|", "#", "- [")))
         words = re.findall(r"[a-z0-9]+", text.lower())
         if len(words) < 18:
