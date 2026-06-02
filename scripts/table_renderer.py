@@ -73,6 +73,7 @@ def _public_label(value: Any) -> str:
     labels = {
         "ci": "confidence interval",
         "cross_domain": "cross-domain",
+        "contextual_other": "contextual adjacent evidence",
         "mean_sd": "mean ± SD",
         "null_vs_positive": "null vs positive",
         "p_value": "p-value",
@@ -822,6 +823,41 @@ def _render_compact_source_list(receipts: list) -> list[str]:
     return lines
 
 
+def _classification_criteria_lines() -> list[str]:
+    return [
+        "### Classification Criteria",
+        "",
+        "- **Outcome class** is assigned from the source's bound endpoint, population, and claim text; adjacent/background sources are separated from clinical outcome slices.",
+        "- **Directness** is coded as direct only when the source tests the topic against a clinically proximate outcome in the relevant population; indirect human, review-level, and mechanistic sources are weighted separately.",
+        "- **Evidence tier** follows the deterministic tier/directness taxonomy used in the receipt builder; the prose writer cannot move a source between classes after receipts are frozen.",
+        "",
+    ]
+
+
+def _classification_map_lines(receipts: list, *, limit: int = 40) -> list[str]:
+    rows = _rank_receipts_for_public(receipts, limit)
+    if not rows:
+        return []
+    lines = [
+        "### Source Classification Map",
+        "",
+        "Each retained source is mapped to its public evidence role so the evidence landscape can be checked without opening the supplement.",
+        "",
+    ]
+    for idx, r in enumerate(rows, start=1):
+        label = _source_list_label(r, idx)
+        outcome = _public_label(getattr(r, "outcome_class", "—"))
+        directness = _inline_cell(getattr(r, "directness", "—"))
+        tier = _inline_cell(getattr(r, "evidence_tier", "—"))
+        direction = _public_label(getattr(r, "effect_direction", "—"))
+        claims = _inline_cell(getattr(r, "n_claims", "—"))
+        lines.append(
+            f"- {label}: outcome={outcome}; directness={directness}; "
+            f"tier={tier}; direction={direction}; claims={claims}."
+        )
+    return lines
+
+
 def _rank_receipts_for_public(receipts: list, limit: int) -> list:
     tier_weight = {"A1": 5, "A2": 4, "B1": 3, "B2": 2, "C1": 1, "C2": 1}
     return sorted(
@@ -871,6 +907,9 @@ def render_public_evidence_snapshot(
         "The manuscript foregrounds the load-bearing evidence; the full evidence tables remain in the supplement.",
         "",
     ]
+    lines.extend(_classification_criteria_lines())
+    lines.extend(_classification_map_lines(receipts))
+    lines.append("")
     ranked = _rank_receipts_for_public(receipts, max_studies)
     if _included_study_fill_rate(ranked) < 0.5:
         lines.extend(_render_compact_source_list(ranked))

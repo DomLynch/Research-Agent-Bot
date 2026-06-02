@@ -546,7 +546,38 @@ def test_public_evidence_snapshot_is_compact_and_not_pipe_table() -> None:
     md = tr.render_public_evidence_snapshot(receipts, max_studies=1)
     assert "## Evidence Snapshot" in md
     assert "Depommier 2019" in md
-    assert "Cani 2022" not in md
+    included = md.split("### Load-Bearing Included Studies", 1)[1]
+    assert "Cani 2022" not in included
+    assert "|---|" not in md
+    assert "\n|" not in md
+
+
+def test_public_evidence_snapshot_exposes_classification_criteria_and_mapping() -> None:
+    receipts = [
+        _FakeReceipt(
+            receipt_id="Hayashi 2025",
+            evidence_tier="C1",
+            directness="mechanistic",
+            outcome_class="contextual_other",
+            effect_direction="positive",
+        ),
+        _FakeReceipt(
+            receipt_id="Yiallourou 2025",
+            evidence_tier="B2",
+            directness="indirect",
+            outcome_class="cognitive",
+            effect_direction="mixed",
+        ),
+    ]
+
+    md = tr.render_public_evidence_snapshot(receipts)
+
+    assert "### Classification Criteria" in md
+    assert "### Source Classification Map" in md
+    assert "Outcome class" in md
+    assert "Directness" in md
+    assert "Hayashi 2025: outcome=contextual adjacent evidence; directness=mechanistic; tier=C1" in md
+    assert "Yiallourou 2025: outcome=cognitive; directness=indirect; tier=B2" in md
     assert "|---|" not in md
     assert "\n|" not in md
 
