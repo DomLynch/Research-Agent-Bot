@@ -406,7 +406,15 @@ def _long_term_safety_scope_is_stated(paper_md: str) -> bool:
 
 
 def _evidence_type_metadata_is_resolved(paper_md: str) -> bool:
-    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Results")) if part).lower()
+    scope = " ".join(
+        part
+        for part in (
+            _section(paper_md, "Methods"),
+            _section(paper_md, "Evidence Snapshot"),
+            _section(paper_md, "Evidence Landscape"),
+            _section(paper_md, "Results"),
+        ) if part
+    ).lower()
     return (
         any(token in scope for token in ("evidence_type", "evidence type"))
         and any(token in scope for token in ("review", "rct", "trial", "excerpt"))

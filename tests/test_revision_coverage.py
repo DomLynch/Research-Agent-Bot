@@ -160,6 +160,18 @@ def test_deterministic_unmet_accepts_evidence_type_metadata_resolution() -> None
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_evidence_type_metadata_in_evidence_snapshot() -> None:
+    ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "### Source Classification Map\n\n"
+        "Evidence_type metadata note: evidence_type labels are resolved against source excerpts; "
+        "review, RCT/trial, and excerpt evidence are reclassified under the source classification map.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_off_topic_source_audit_breakdown() -> None:
     ask = (
         "Audit the source bundle for sources that are clearly off-topic to hydrogen "
