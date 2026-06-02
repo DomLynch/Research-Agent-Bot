@@ -30,12 +30,13 @@ AUDIT_GATED_FLOORS: Mapping[str, int] = {
     "conclusion": 250,
 }
 BACKSTOP_CALL_TIMEOUT_SEC = 180.0
+BACKSTOP_CALL_TIMEOUT_HEADROOM_SEC = 120.0
 BACKSTOP_TIMEOUT_RETRIES = 1
 
 
 def _backstop_timeout_sec(chain: Sequence[CallSpec]) -> float:
     configured = max((float(spec.timeout_sec or 0) for spec in chain), default=0.0)
-    return max(BACKSTOP_CALL_TIMEOUT_SEC, configured + 60.0)
+    return max(BACKSTOP_CALL_TIMEOUT_SEC, configured + BACKSTOP_CALL_TIMEOUT_HEADROOM_SEC)
 
 
 async def _run_backstop_call(
@@ -259,6 +260,7 @@ async def apply_section_backstop(
 __all__ = [
     "AUDIT_GATED_FLOORS",
     "BACKSTOP_CALL_TIMEOUT_SEC",
+    "BACKSTOP_CALL_TIMEOUT_HEADROOM_SEC",
     "BACKSTOP_TIMEOUT_RETRIES",
     "build_backstop_prompt",
     "repair_discussion_minimum_quality",

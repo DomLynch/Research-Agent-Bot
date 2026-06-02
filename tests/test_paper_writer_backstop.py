@@ -39,6 +39,16 @@ def _receipt(rid: str) -> ReceiptSummary:
 
 def test_backstop_timeout_matches_llm_retry_budget() -> None:
     assert backstop.BACKSTOP_CALL_TIMEOUT_SEC >= 180.0
+    assert backstop._backstop_timeout_sec((_call_spec(180.0),)) == 300.0
+
+
+def _call_spec(timeout: float) -> backstop.CallSpec:
+    return backstop.CallSpec(
+        base_url="https://example.test/v1",
+        api_key="k",
+        model="test/model",
+        timeout_sec=timeout,
+    )
 
 
 def test_discussion_quality_repair_adds_required_markers() -> None:
@@ -84,13 +94,14 @@ def test_discussion_quality_repair_handles_empty_discussion() -> None:
 
 @pytest.mark.asyncio
 async def test_backstop_timeout_keeps_existing_section(monkeypatch) -> None:
-    monkeypatch.setattr(backstop, "BACKSTOP_CALL_TIMEOUT_SEC", 0.01)
+    monkeypatch.setattr(backstop, "_backstop_timeout_sec", lambda _chain: 0.01)
 
     async def slow_write_scoped(**_kwargs):
         await asyncio.sleep(1)
         return _section("discussion", 1000)
 
     sections: dict[SectionName, SynthesisSection] = {"discussion": _section("discussion", 10)}
+    original_body = sections["discussion"].body_md
     out = await backstop.apply_section_backstop(
         sections,
         user_prompt="u",
@@ -107,7 +118,40 @@ async def test_backstop_timeout_keeps_existing_section(monkeypatch) -> None:
         write_scoped_fn=slow_write_scoped,
     )
 
-    assert out["discussion"].body_md == sections["discussion"].body_md
+    assert out["discussion"].body_md == original_body
+
+
+@pytest.mark.asyncio
+async def test_backstop_retries_timeout_once_then_accepts_repair(monkeypatch) -> None:
+    monkeypatch.setattr(backstop, "_backstop_timeout_sec", lambda _chain: 0.01)
+    calls = 0
+
+    async def flaky_write_scoped(**_kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            await asyncio.sleep(1)
+        return _section("discussion", 900)
+
+    sections: dict[SectionName, SynthesisSection] = {"discussion": _section("discussion", 10)}
+    out = await backstop.apply_section_backstop(
+        sections,
+        user_prompt="u",
+        section_prompts={"discussion": "s"},
+        topic="rapamycin",
+        accepted=(),
+        matrix=None,
+        chain=(),
+        client=None,
+        ledger=None,
+        seed=None,
+        background_lit_entries=None,
+        write_anchored_fn=None,
+        write_scoped_fn=flaky_write_scoped,
+    )
+
+    assert calls == 2
+    assert "word " * 900 in out["discussion"].body_md
 
 
 @pytest.mark.asyncio
