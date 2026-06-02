@@ -1225,7 +1225,7 @@ def _phase_d_source_directness_breakdown(
                     )]
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
