@@ -309,6 +309,30 @@ def test_readiness_contract_refresh_updates_pre_submit_markdown(
     assert "| 13 | accountability | pass |" in readable_md
 
 
+def test_readiness_contract_refresh_updates_stale_markdown_even_when_json_clean(
+    tmp_path: Path,
+) -> None:
+    run = _make_run(
+        tmp_path, surface_passed=True,
+        accountability_model="researka_agent_certified",
+        old_contract_name="accountability",
+    )
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    gate["journal_readiness_contract"][1].update({
+        "name": "accountability",
+        "status": "pass",
+        "audit": "artifact_consistency passed; citation registry present",
+        "advisory": False,
+        "blocks_submission": False,
+    })
+    (run / "pre_submit_gate.json").write_text(json.dumps(gate))
+    (run / "readable").mkdir()
+    (run / "readable" / "pre_submit_gate.md").write_text("STALE FAIL")
+
+    assert _refresh_readiness_contract_items(run) >= 1
+    assert "STALE FAIL" not in (run / "readable" / "pre_submit_gate.md").read_text()
+
+
 def test_phase_g_writes_consistency_before_readiness_contract(
     tmp_path: Path,
 ) -> None:
