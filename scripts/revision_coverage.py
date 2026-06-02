@@ -98,8 +98,7 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
             or "direct interventional hard-endpoint evidence" in text
         )
     if _asks_directional_coding(lower):
-        text = paper_md.lower()
-        return "directional coding" in text and all(token in text for token in ("null", "unclear", "positive", "mixed"))
+        return _directional_coding_explanation_is_material(paper_md)
     if _asks_actionable_gaps(lower):
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
@@ -211,6 +210,23 @@ def _long_term_safety_scope_is_stated(paper_md: str) -> bool:
     safety = "long-term safety" in scope or "long term safety" in scope or "safety data" in scope
     population = "older adult" in scope or "older adults" in scope or "aged" in scope
     return safety and population
+
+
+def _directional_coding_explanation_is_material(paper_md: str) -> bool:
+    scope = " ".join(
+        part
+        for part in (_section(paper_md, "Evidence Snapshot"), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Results"), _section(paper_md, "Conclusion"))
+        if part
+    ).lower()
+    if not scope:
+        return False
+    directional = "directional coding" in scope and "no extracted directional signal" in scope
+    null_scope = "null" in scope and ("unclear" in scope or "no signal" in scope)
+    cross_context = (
+        any(token in scope for token in ("positive", "mixed", "negative"))
+        and any(token in scope for token in ("other outcome", "elsewhere", "separately reported", "different outcome"))
+    )
+    return directional and null_scope and cross_context
 
 
 def _source_verification_transparency_is_stated(paper_md: str) -> bool:
