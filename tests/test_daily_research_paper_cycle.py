@@ -2931,6 +2931,55 @@ def test_revise_lane_terminalizes_sparse_receipt_preflight(tmp_path: Path, monke
     assert handled["handled"][0]["status"] == "terminal_receipt_preflight_insufficient"
 
 
+def test_fresh_lane_tries_next_after_sparse_receipt_preflight(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_sparse_receipts", target_journal=True)
+    _topic(tmp_path, "zzz_ready", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, **_k: Any) -> dict[str, Any]:
+        if topic == "aaa_sparse_receipts":
+            return {
+                "passed": False,
+                "status": "receipt_preflight_insufficient",
+                "n_receipts": 3,
+                "min_receipts": 10,
+            }
+        return {"passed": True, "status": "receipt_preflight_ok", "n_receipts": 18, "min_receipts": 10}
+
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "final_status.json", {"submission_ready": True})
+        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-02",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=2,
+    )
+
+    assert synthesized == ["zzz_ready"]
+    assert ledger["status"] == "submitted_to_researka"
+    assert [a["topic"] for a in ledger["attempts"]] == ["aaa_sparse_receipts", "zzz_ready"]
+    assert ledger["attempts"][0]["gate_status"] == "receipt_preflight_insufficient"
+    assert ledger["attempts"][1]["submit_status"] == "submitted_to_researka"
+
+
 def test_cycle_quarantines_source_precision_misses_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
