@@ -419,6 +419,35 @@ def test_deterministic_unmet_accepts_evidence_boundary() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_requires_abstract_and_key_findings_boundary() -> None:
+    ask = (
+        "Clarify in the abstract and key findings that the evidence is mixed and does not "
+        "support broad causal or policy claims. Explicitly state that the synthesis is "
+        "mechanistic and hypothesis-generating rather than definitive."
+    )
+    abstract_only = (
+        "## Abstract\n\n"
+        "Evidence-boundary note: Because the retained corpus relies on limited direct "
+        "interventional hard-endpoint evidence and adjacent/mechanistic evidence, this "
+        "synthesis is hypothesis-generating and not definitive. It does not support broad "
+        "causal or policy claims; broad population-level proof is missing.\n\n"
+        "## Key Findings\n\nThe signal is promising.\n"
+    )
+    both_sections = abstract_only.replace(
+        "## Key Findings\n\nThe signal is promising.",
+        (
+            "## Key Findings\n\n"
+            "Evidence-boundary note: Because the retained corpus relies on limited direct "
+            "interventional hard-endpoint evidence and adjacent/mechanistic evidence, this "
+            "synthesis is hypothesis-generating and not definitive. It does not support broad "
+            "causal or policy claims; broad population-level proof is missing."
+        ),
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(abstract_only, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(both_sections, [ask]) == []
+
+
 def test_deterministic_unmet_flags_claims_not_bounded_by_tier_directness() -> None:
     ask = (
         "Ensure that all claims in the Key Findings and Conclusion sections are explicitly "

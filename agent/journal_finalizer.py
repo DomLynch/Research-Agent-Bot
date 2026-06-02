@@ -614,7 +614,7 @@ def _phase_d_directional_coding_note(
                 )]
         return text, []
     for heading in ("Evidence Landscape", "Evidence Snapshot", "Results", "Key Findings"):
-        match = re.search(rf"^## {re.escape(heading)}\b", patched, flags=re.M)
+        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
         if match:
             patched = text[:match.end()] + "\n\n" + _DIRECTIONAL_CODING_NOTE + text[match.end():]
             return patched, [FinalizerLogEntry(
@@ -664,9 +664,14 @@ def _phase_d_evidence_boundary_note(
         section = re.search(rf"^## {re.escape(heading)}\b(.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
         if section and "evidence-boundary note:" in section.group(1).lower():
             continue
-        match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+        match = re.search(rf"^## {re.escape(heading)}\b", patched, flags=re.M)
         if match:
             patched = patched[:match.end()] + "\n\n" + _EVIDENCE_BOUNDARY_NOTE + patched[match.end():]
+            n += 1
+        elif heading == "Key Findings":
+            insert_at = _source_grounding_section_insert_at(patched, heading)
+            new_section = f"## {heading}\n\n{_EVIDENCE_BOUNDARY_NOTE}\n"
+            patched = patched[:insert_at].rstrip() + "\n\n" + new_section + "\n" + patched[insert_at:].lstrip()
             n += 1
     if not n:
         return text, []

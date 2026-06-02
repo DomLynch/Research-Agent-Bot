@@ -469,6 +469,7 @@ def test_evidence_boundary_note_repairs_broad_claim_ask(tmp_path: Path) -> None:
     fixed, logs = journal_finalizer._phase_d_evidence_boundary_note(paper, tmp_path)
 
     assert "Evidence-boundary note:" in fixed
+    assert "## Key Findings" in fixed
     assert "does not support broad causal or policy claims" in fixed
     assert "broad population-level proof is missing" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
@@ -476,8 +477,8 @@ def test_evidence_boundary_note_repairs_broad_claim_ask(tmp_path: Path) -> None:
         journal_finalizer.FinalizerLogEntry(
             phase="D_evidence_boundary",
             rule="state_no_broad_population_level_proof",
-            n_changes=1,
-            detail="added evidence-boundary note to Abstract",
+            n_changes=2,
+            detail="added evidence-boundary note to 2 section(s)",
         )
     ]
 
