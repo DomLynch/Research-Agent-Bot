@@ -1116,6 +1116,51 @@ def test_phase_k_backfills_empty_outcome_section_after_routing(tmp_path: Path) -
     assert log and log[0].n_changes == 1
 
 
+def test_phase_k_moves_contextual_prose_out_of_immune_outcome(tmp_path: Path) -> None:
+    """Late interpretive prose can be appended under the final outcome
+    heading. Citation ownership still wins and prevents journal-surface
+    outcome_routing failures."""
+    from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "p1", "outcome_class": "contextual_other"},
+        {"receipt_id": "p2", "outcome_class": "immune_inflammation"},
+    ]}))
+    (run / "citation_registry.json").write_text(json.dumps({
+        "p1": {"body_citation": "Wu 2025"},
+        "p2": {"body_citation": "Gorabi 2021"},
+    }))
+    text = (
+        "## Results\n\n"
+        "### Contextual Adjacent Evidence Outcomes\n\n"
+        "Contextual records bound interpretation.\n\n"
+        "### Immune and Inflammation Outcomes\n\n"
+        "Gorabi 2021 reports immune findings.\n\n"
+        "The postmenopausal women's pain and symptom meta-analysis draws on a "
+        "narrow contextual pool (Wu 2025).\n\n"
+        "## Discussion\n"
+    )
+
+    assert any(i.code == "outcome_routing" for i in evaluate_journal_surface(
+        text,
+        citation_outcome_map={"Wu 2025": "contextual_other", "Gorabi 2021": "immune_inflammation"},
+    ).issues)
+    new_text, log = _phase_k_route_outcome_paragraphs(text, run)
+
+    contextual = new_text.split("### Contextual Adjacent Evidence Outcomes", 1)[1].split("###", 1)[0]
+    immune = new_text.split("### Immune and Inflammation Outcomes", 1)[1].split("##", 1)[0]
+    assert "Wu 2025" in contextual
+    assert "Wu 2025" not in immune
+    assert not any(i.code == "outcome_routing" for i in evaluate_journal_surface(
+        new_text,
+        citation_outcome_map={"Wu 2025": "contextual_other", "Gorabi 2021": "immune_inflammation"},
+    ).issues)
+    assert log and log[0].rule == "route_paragraph_by_citation_class"
+
+
 def test_phase_k_noop_when_no_results_section(tmp_path: Path) -> None:
     """Slice 33: safe when Results section absent (e.g. Evidence Brief)."""
     from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
