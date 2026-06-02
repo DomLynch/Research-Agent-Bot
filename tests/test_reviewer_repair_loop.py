@@ -7,6 +7,7 @@ remaining unique offending region is deleted fail-closed.
 from __future__ import annotations
 
 import asyncio
+import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -15,6 +16,26 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import apply_patches as ap  # type: ignore[import-not-found]  # noqa: E402
 import final_reviewer as gr  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
+
+
+def test_revision_feedback_env_writes_sidecar_before_finalizer(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", "  Add severity-level explanation.   ")
+
+    orch._write_revision_feedback_sidecar(tmp_path)
+
+    assert json.loads((tmp_path / "researka_revision_request.json").read_text()) == {
+        "feedback": "Add severity-level explanation.",
+    }
+
+
+def test_revision_feedback_env_does_not_overwrite_existing_sidecar(tmp_path: Path, monkeypatch) -> None:
+    path = tmp_path / "researka_revision_request.json"
+    path.write_text(json.dumps({"feedback": "existing", "artifactId": "art_1"}))
+    monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", "new feedback")
+
+    orch._write_revision_feedback_sidecar(tmp_path)
+
+    assert json.loads(path.read_text()) == {"feedback": "existing", "artifactId": "art_1"}
 
 
 def test_repair_prompt_lists_each_rejected_patch() -> None:

@@ -59,6 +59,14 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
     repair_abstract_claim_strength,
     repair_claim_strength,
 )
+
+
+def _write_revision_feedback_sidecar(out_dir: Path) -> None:
+    feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
+    path = out_dir / "researka_revision_request.json"
+    if not feedback or path.is_file():
+        return
+    path.write_text(json.dumps({"feedback": feedback}, indent=2))
 from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
@@ -3066,6 +3074,7 @@ async def _run(
     #   E — Structural fallback (thesis marker / resolution criteria /
     #       soften ungrounded "we propose" → "we operationalize")
     # Universal — no per-topic logic; reads existing sidecars.
+    _write_revision_feedback_sidecar(out_dir)
     from agent.journal_finalizer import finalize_run
     _finalizer_report = finalize_run(out_dir)
     if _finalizer_report.paper_changed:
