@@ -681,11 +681,12 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
 
 _EVIDENCE_BOUNDARY_NOTE = (
     "Evidence-boundary note: Because the retained corpus relies on absent or "
-    "limited direct interventional hard-endpoint evidence and includes adjacent/"
-    "mechanistic evidence, this synthesis is hypothesis-generating and not "
-    "definitive. It does not support broad causal or policy claims; broad "
-    "population-level proof is missing until direct human outcome studies "
-    "replicate the signal with durable follow-up."
+    "limited direct interventional hard-endpoint evidence and includes mixed, "
+    "indirect, adjacent/mechanistic evidence, this synthesis is hypothesis-"
+    "generating and not definitive. Null clinical findings and mechanistic "
+    "plausibility are interpreted separately, so it does not support broad "
+    "causal or policy claims; broad population-level proof is missing until "
+    "direct human outcome studies replicate the signal with durable follow-up."
 )
 
 
@@ -734,6 +735,10 @@ def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
         "calibration rules" in lower
         and "direct clinical evidence" in lower
         and any(token in lower for token in ("broad population", "population-level proof", "proof is missing"))
+    ) or (
+        any(token in lower for token in ("mixed and indirect", "indirect nature", "indirect evidence"))
+        and any(token in lower for token in ("abstract and conclusion", "abstract", "conclusion"))
+        and any(token in lower for token in ("overclaim", "proportionality", "mechanistic plausibility"))
     )
 
 

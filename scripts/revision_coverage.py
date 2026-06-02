@@ -267,6 +267,10 @@ def _asks_evidence_boundary(text: str) -> bool:
         "calibration rules" in text
         and "direct clinical evidence" in text
         and any(token in text for token in ("broad population", "population-level proof", "proof is missing"))
+    ) or (
+        any(token in text for token in ("mixed and indirect", "indirect nature", "indirect evidence"))
+        and any(token in text for token in ("abstract and conclusion", "abstract", "conclusion"))
+        and any(token in text for token in ("overclaim", "proportionality", "mechanistic plausibility"))
     )
 
 
@@ -606,8 +610,8 @@ def _evidence_boundary_is_stated(paper_md: str, ask: str = "") -> bool:
     if not scope:
         return False
     bounded = any(token in scope for token in ("hypothesis-generating", "not definitive", "does not support broad", "broad population-level proof is missing"))
-    directness = any(token in scope for token in ("direct interventional hard-endpoint evidence", "direct clinical evidence", "adjacent/mechanistic", "mechanistic"))
-    population = "population-level" in scope or "broad causal" in scope or "policy claims" in scope
+    directness = any(token in scope for token in ("direct interventional hard-endpoint evidence", "direct clinical evidence", "mixed, indirect", "indirect", "adjacent/mechanistic", "mechanistic"))
+    population = "population-level" in scope or "broad causal" in scope or "policy claims" in scope or "overclaim" in scope
     return bounded and directness and population
 
 
@@ -616,8 +620,8 @@ def _section_evidence_boundary_is_stated(section: str) -> bool:
     return (
         bool(scope)
         and any(token in scope for token in ("hypothesis-generating", "not definitive", "does not support broad"))
-        and any(token in scope for token in ("direct interventional", "adjacent/mechanistic", "mechanistic"))
-        and any(token in scope for token in ("broad causal", "policy claims", "population-level"))
+        and any(token in scope for token in ("direct interventional", "mixed, indirect", "indirect", "adjacent/mechanistic", "mechanistic"))
+        and any(token in scope for token in ("broad causal", "policy claims", "population-level", "overclaim"))
     )
 
 
