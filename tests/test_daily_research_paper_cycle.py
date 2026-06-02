@@ -2641,6 +2641,27 @@ def test_source_precision_repair_uses_submit_gate_aliases(tmp_path: Path, monkey
     assert [path.name for path in misses] == ["broad.quant_claims.json"]
 
 
+def test_source_precision_drops_generic_static_alias_for_composite_topic(tmp_path: Path, monkeypatch) -> None:
+    topic = "low_dose_naltrexone_inflammation"
+    _topic(tmp_path, topic, corpus=False)
+    (tmp_path / "topic_packs" / f"{topic}.toml").write_text(
+        'aliases = ["low dose naltrexone", "LDN", "inflammation", "immune modulation"]\n',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / topic / "quant_claims"
+    qdir.mkdir(parents=True)
+    _write_json(qdir / "ldn_trial.quant_claims.json", {"paper_id": "low dose naltrexone trial"})
+    _write_json(qdir / "inflammation_only.quant_claims.json", {"paper_id": "exercise inflammation cohort"})
+
+    ok, status, misses = cycle._quant_claim_source_precision(topic, floor=0.75)
+
+    assert not ok
+    assert status == "source_topic_precision_low:1/2<0.75"
+    assert [path.name for path in misses] == ["inflammation_only.quant_claims.json"]
+
+
 def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "epigenome_editing_longevity")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
