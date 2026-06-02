@@ -380,6 +380,17 @@ def test_deterministic_unmet_flags_unbounded_null_signal_conclusion() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_deterministic_unmet_flags_supportive_null_signal_even_if_hypothesis_generating() -> None:
+    ask = "Reconcile the null directional signals with the concluding claim that a bounded geroscience rationale exists."
+    paper = (
+        "## Conclusion\n\n"
+        "Because most directional signals are null, this synthesis supports a bounded geroscience "
+        "rationale and is hypothesis-generating for clinical translation.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
 def test_deterministic_unmet_accepts_bounded_null_signal_conclusion() -> None:
     ask = "Reconcile the null directional signals with the concluding claim that a bounded geroscience rationale exists."
     paper = (

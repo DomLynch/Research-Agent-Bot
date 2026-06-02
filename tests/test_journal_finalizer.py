@@ -628,6 +628,40 @@ def test_evidence_boundary_note_is_revision_scoped(tmp_path: Path) -> None:
     assert logs == []
 
 
+def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Path) -> None:
+    paper = (
+        "## Abstract\n\nThis synthesis supports clinical translation.\n\n"
+        "## Conclusion\n\nThe evidence supports use in practice.\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"effect_direction": "null", "directness": "indirect"},
+            {"effect_direction": "no_extracted_directional_signal", "directness": "review"},
+            {"effect_direction": "no signal", "directness": "adjacent"},
+            {"effect_direction": "positive", "directness": "mechanistic"},
+        ],
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_evidence_honesty_guard(paper, tmp_path)
+    refixed, relogs = journal_finalizer._phase_d_evidence_honesty_guard(fixed, tmp_path)
+
+    assert fixed.count("Evidence-honesty note:") == 2
+    assert "non-supportive for clinical efficacy claims" in fixed
+    assert "hypothesis-generating only" in fixed
+    assert "no direct interventional hard-endpoint evidence" in fixed
+    assert "does not support broad causal, clinical, or policy claims" in fixed
+    assert refixed == fixed
+    assert relogs == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_evidence_honesty_guard",
+            rule="bound_null_signal_and_directness_claims",
+            n_changes=2,
+            detail="added evidence-honesty note to 2 section(s); null_or_no_signal=3/4; direct=0/4",
+        )
+    ]
+
+
 def test_long_term_safety_scope_repairs_older_adult_safety_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

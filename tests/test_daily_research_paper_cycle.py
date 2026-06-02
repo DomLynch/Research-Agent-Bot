@@ -342,6 +342,10 @@ def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
             "decision": "revise",
             "status": None,
             "reviewedAt": "2026-06-01T08:35:00+00:00",
+            "requiredRevisions": [
+                "Clarify direct clinical evidence boundaries and avoid overclaiming.",
+                "Correct the truncated sentence in the abstract.",
+            ],
         },
         "glynac": {
             "artifactId": "art-2",
@@ -358,6 +362,10 @@ def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
     day = data["days"]["2026-06-01"]
     assert day["counts"] == {"accept": 1, "revise": 1}
     assert any(record["decision"] == "revise" and record["status"] is None for record in day["records"])
+    reasons = json.loads((ledger_dir / cycle.REVISE_REASONS).read_text(encoding="utf-8"))
+    assert reasons["total_reviews"] == 1
+    assert reasons["total_revision_asks"] == 2
+    assert reasons["bucket_counts"] == {"directness_honesty": 1, "readability_redundancy": 1}
 
 
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:

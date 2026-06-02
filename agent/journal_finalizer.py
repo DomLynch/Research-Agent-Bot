@@ -90,6 +90,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_classification_criteria_note(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
+        lambda t: _phase_d_evidence_honesty_guard(t, out_dir),
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
@@ -729,6 +730,85 @@ def _phase_d_evidence_boundary_note(
         n_changes=n,
         detail=f"added evidence-boundary note to {n} section(s)",
     )]
+
+
+def _phase_d_evidence_honesty_guard(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    total = len(rows)
+    nullish = sum(1 for row in rows if _receipt_has_null_or_no_signal(row))
+    direct = sum(1 for row in rows if str(row.get("directness") or "").lower().startswith("direct"))
+    pieces: list[str] = []
+    if nullish / total >= 0.5:
+        pieces.append(
+            f"{nullish}/{total} retained sources are coded as null or no extracted directional signal; "
+            "this corpus is non-supportive for clinical efficacy claims and hypothesis-generating only."
+        )
+    if direct == 0:
+        pieces.append(
+            "The retained evidence has no direct interventional hard-endpoint evidence; indirect, "
+            "review-level, adjacent, or mechanistic sources are used only to bound interpretation."
+        )
+    elif direct < total:
+        pieces.append(
+            f"{total - direct}/{total} retained sources are indirect, review-level, adjacent, or "
+            "mechanistic and are used only to bound interpretation."
+        )
+    if not pieces:
+        return text, []
+    note = (
+        "Evidence-honesty note: "
+        + " ".join(pieces)
+        + " The conclusion therefore does not support broad causal, clinical, or policy claims."
+    )
+    patched = text
+    n = 0
+    for heading in ("Abstract", "Conclusion"):
+        if "evidence-honesty note:" in _section_body(patched, heading).lower():
+            continue
+        match = re.search(rf"^## {re.escape(heading)}\b", patched, flags=re.M)
+        if match:
+            patched = patched[:match.end()] + "\n\n" + note + patched[match.end():]
+            added = 1
+        else:
+            patched, added = _create_section_paragraph(patched, heading, note)
+        n += added
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_evidence_honesty_guard",
+        rule="bound_null_signal_and_directness_claims",
+        n_changes=n,
+        detail=f"added evidence-honesty note to {n} section(s); null_or_no_signal={nullish}/{total}; direct={direct}/{total}",
+    )]
+
+
+def _receipt_has_null_or_no_signal(row: dict[str, Any]) -> bool:
+    direction = str(row.get("effect_direction") or row.get("direction") or "").lower()
+    return any(token in direction for token in (
+        "null",
+        "no_signal",
+        "no signal",
+        "no_extracted_directional_signal",
+        "no extracted directional signal",
+        "no_directional_signal",
+    ))
+
+
+def _create_section_paragraph(text: str, section: str, paragraph: str) -> tuple[str, int]:
+    for target in ("Results", "Key Findings", "Discussion", "References"):
+        match = re.search(rf"^## {target}\b", text, flags=re.M)
+        if match:
+            insert = f"## {section}\n\n{paragraph}\n\n"
+            prefix = text[:match.start()].rstrip()
+            sep = "\n\n" if prefix else ""
+            return prefix + sep + insert + text[match.start():].lstrip(), 1
+    return text.rstrip() + f"\n\n## {section}\n\n{paragraph}\n", 1
 
 
 def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
