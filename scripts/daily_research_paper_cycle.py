@@ -415,7 +415,11 @@ def _current_low_source_precision_topics(topics: list[str]) -> set[str]:
 
 def _revision_requests_source_precision(feedback: str) -> bool:
     text = str(feedback or "").lower()
-    return "source" in text and any(token in text for token in ("off-topic", "off topic", "source bundle"))
+    return "source" in text and any(token in text for token in (
+        "off-topic", "off topic", "source bundle", "directly address",
+        "directly addresses", "narrow the source", "remove or reclassify",
+        "unrelated topic", "unrelated topics", "operationalize",
+    ))
 
 
 def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:

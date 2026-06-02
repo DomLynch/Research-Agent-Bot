@@ -102,6 +102,34 @@ def test_deterministic_unmet_accepts_source_directness_breakdown() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_general_vs_direct_source_breakdown() -> None:
+    ask = (
+        "Clarify which of the 52 sources directly address a composite digital "
+        "frailty index versus general digital biomarker research, and bound the "
+        "synthesis claims accordingly."
+    )
+    paper = "## Evidence Landscape\n\nThe source set is heterogeneous.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_general_vs_direct_source_breakdown() -> None:
+    ask = (
+        "Clarify which of the 52 sources directly address a composite digital "
+        "frailty index versus general digital biomarker research, and bound the "
+        "synthesis claims accordingly."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Source Directness Breakdown\n\n"
+        "- Smith 2024: directly addresses the composite index endpoint; directness=direct.\n"
+        "- Jones 2025: broader general digital biomarker research; directness=contextual.\n"
+        "- Lee 2026: adjacent frailty assessment evidence; directness=adjacent.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_weak_gaps_section() -> None:
     ask = "Rewrite the 'Gaps Identified' section to provide specific, actionable research gaps."
     paper = "## Gaps Identified\n\nMore research is needed because the current corpus is limited.\n"

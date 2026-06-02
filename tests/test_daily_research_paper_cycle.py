@@ -3398,6 +3398,25 @@ def test_revise_lane_marks_unrepairable_source_precision_terminal(tmp_path: Path
     assert handled["handled"][0]["status"] == "terminal_source_precision_repair_incomplete"
 
 
+def test_revision_source_precision_request_matches_direct_source_wording() -> None:
+    feedback = (
+        "Clarify which of the 52 sources directly address a composite digital "
+        "frailty index versus general digital biomarker research, and bound the "
+        "synthesis claims accordingly."
+    )
+
+    assert cycle._revision_requests_source_precision(feedback)
+
+
+def test_revision_source_precision_request_matches_remove_or_reclassify_wording() -> None:
+    feedback = (
+        "Verify that all 50 bundle sources actually address melatonin and aging; "
+        "remove or reclassify sources whose excerpts clearly address unrelated topics."
+    )
+
+    assert cycle._revision_requests_source_precision(feedback)
+
+
 def test_revise_lane_does_not_reseed_recent_unrepairable_source_precision(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "digital_frailty_index", target_journal=True)
     source = _prior_run(tmp_path, "digital_frailty_index", receipts=37, tensions=113, primary=1, level=5)

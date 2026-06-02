@@ -145,8 +145,12 @@ def _asks_source_directness_breakdown(text: str) -> bool:
         "source directness" in text
         or (
             "source" in text
-            and "adjacent" in text
-            and any(token in text for token in ("directly address", "directly addresses", "hard endpoint", "hard endpoints"))
+            and any(token in text for token in (
+                "directly address", "directly addresses", "hard endpoint", "hard endpoints",
+                "general digital biomarker", "broader", "off-topic", "off topic",
+                "remove or reclassify", "remove or justify", "clearly address",
+            ))
+            and any(token in text for token in ("adjacent", "general", "broader", "contextual", "versus", "vs."))
         )
     )
 
@@ -202,7 +206,7 @@ def _asks_directional_coding(text: str) -> bool:
 def _asks_directional_table_narrative_consistency(text: str) -> bool:
     return (
         "evidence landscape" in text
-        and "no directional signal" in text
+        and any(token in text for token in ("no directional signal", "null directional signal", "all null directional"))
         and any(token in text for token in ("positive association", "positive associations", "positive signal", "positive signals"))
         and any(token in text for token in ("contradiction", "narrative", "table coding", "needs correction"))
     )
@@ -337,7 +341,7 @@ def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
     ).lower()
     if not table_scope or not narrative_scope:
         return False
-    no_signal = "no extracted directional signal" in table_scope or "no directional signal" in table_scope
+    no_signal = any(token in table_scope for token in ("no extracted directional signal", "no directional signal", "null directional signal", "all null directional"))
     positive_narrative = any(
         token in narrative_scope
         for token in ("positive association", "positive associations", "positive signal", "positive signals")
@@ -386,7 +390,7 @@ def _source_directness_breakdown_is_stated(paper_md: str) -> bool:
     has_map = "source directness" in text or "source classification map" in text or "directness breakdown" in text
     has_directness = "directness=" in text or "directness:" in text
     has_direct = any(token in text for token in ("directly addresses", "directly address", "direct interventional", "hard endpoint", "hard endpoints"))
-    has_adjacent = any(token in text for token in ("adjacent", "mechanistic", "review-level"))
+    has_adjacent = any(token in text for token in ("adjacent", "mechanistic", "review-level", "general", "broader", "contextual"))
     return has_map and has_directness and has_direct and has_adjacent
 
 
