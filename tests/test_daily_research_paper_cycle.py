@@ -3197,7 +3197,53 @@ def test_cycle_records_backlog_and_repairs_selected_low_source_precision(tmp_pat
     assert ledger["source_precision_backlog_count"] == 2
     assert repairs == ["aaa_low_source"]
     assert synthesized == ["aaa_low_source"]
-    assert ledger["source_precision_repair"]["topic"] == "aaa_low_source"
+    assert ledger["corpus_repairs"][0]["topic"] == "aaa_low_source"
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_cycle_auto_excludes_unrepaired_low_source_precision_topics(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_low_source", target_journal=True)
+    _topic(tmp_path, "bbb_low_source", target_journal=True)
+    _topic(tmp_path, "zzz_clean_topic", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+
+    def fake_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
+        if topic in {"aaa_low_source", "bbb_low_source"}:
+            return False, "source_topic_precision_low:0/4<0.50", [Path(f"{topic}.json")]
+        return True, "source_topic_precision_ok:4/4", []
+
+    synthesized: list[str] = []
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
+        "status": "source_precision_repair_incomplete",
+        "source_topic_precision_after": "source_topic_precision_low:0/4<0.50",
+        "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    })
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-01",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_low_source", "bbb_low_source"]
+    assert ledger["topic_status"]["aaa_low_source"] == "source_precision_blocked"
+    assert synthesized == ["zzz_clean_topic"]
     assert ledger["status"] == "submitted_to_researka"
 
 
