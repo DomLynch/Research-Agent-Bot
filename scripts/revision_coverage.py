@@ -263,6 +263,10 @@ def _asks_evidence_boundary(text: str) -> bool:
     return (
         any(token in text for token in ("broad causal", "policy claims", "population-level proof", "hypothesis-generating"))
         and any(token in text for token in ("direct clinical evidence", "direct interventional", "adjacent/mechanistic", "mechanistic"))
+    ) or (
+        "calibration rules" in text
+        and "direct clinical evidence" in text
+        and any(token in text for token in ("broad population", "population-level proof", "proof is missing"))
     )
 
 

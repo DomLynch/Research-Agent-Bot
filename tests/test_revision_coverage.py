@@ -1200,6 +1200,34 @@ def test_deterministic_unmet_accepts_unproven_human_longevity_conclusion() -> No
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_population_proof_calibration_boundary() -> None:
+    ask = (
+        "The manuscript is technically sound and highly bounded, but per calibration rules, "
+        "the explicit absence of direct clinical evidence and the reliance on adjacent/mechanistic "
+        "data requires a 'revise' status to signal that broad population-level proof is missing."
+    )
+    paper = "## Abstract\n\nThis synthesis is bounded but does not state the population proof boundary.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_population_proof_calibration_boundary() -> None:
+    ask = (
+        "The manuscript is technically sound and highly bounded, but per calibration rules, "
+        "the explicit absence of direct clinical evidence and the reliance on adjacent/mechanistic "
+        "data requires a 'revise' status to signal that broad population-level proof is missing."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Evidence-boundary note: Because the retained corpus relies on limited direct "
+        "interventional hard-endpoint evidence and includes adjacent/mechanistic evidence, "
+        "this synthesis is hypothesis-generating and not definitive. It does not support "
+        "broad causal or policy claims; broad population-level proof is missing.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_named_numeric_correction_without_audit_ask() -> None:
     ask = (
         "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "

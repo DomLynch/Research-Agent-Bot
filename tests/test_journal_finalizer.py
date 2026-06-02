@@ -408,6 +408,49 @@ def test_classification_criteria_note_is_revision_scoped(tmp_path: Path) -> None
     assert logs == []
 
 
+def test_evidence_boundary_repairs_population_proof_calibration_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "The manuscript is technically sound and highly bounded, but per calibration rules, "
+        "the explicit absence of direct clinical evidence and the reliance on adjacent/mechanistic "
+        "data requires a 'revise' status to signal that broad population-level proof is missing."
+    )
+    paper = (
+        "## Abstract\n\nThis synthesis is bounded.\n\n"
+        "## Key Findings\n\nSignals are mixed.\n\n"
+        "## Conclusion\n\nClinical translation remains limited.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_evidence_boundary_note(paper, tmp_path)
+
+    assert fixed.count("Evidence-boundary note:") == 3
+    assert "broad population-level proof is missing" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_evidence_boundary",
+            rule="state_no_broad_population_level_proof",
+            n_changes=3,
+            detail="added evidence-boundary note to 3 section(s)",
+        )
+    ]
+
+
+def test_evidence_boundary_population_note_is_revision_scoped(tmp_path: Path) -> None:
+    paper = "## Abstract\n\nThis synthesis is bounded.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Rewrite the Gaps Identified section with actionable future research steps.",
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_evidence_boundary_note(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
