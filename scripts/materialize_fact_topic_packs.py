@@ -143,9 +143,9 @@ CLAIM_LABELS = {
 }
 GENERIC_SUBTOPICS = {"", "general", "other", "unknown"}
 HIGH_PRECISION_ACTION_TERMS = {
-    "agonist", "agonists", "antagonist", "antagonists", "diet", "fasting",
+    "agonist", "agonists", "antagonist", "antagonists", "fasting",
     "inhibitor", "inhibitors", "rehabilitation", "restriction", "supplementation",
-    "therapy", "transplantation", "treatment", "vaccination", "vaccine",
+    "vaccination", "vaccine",
 }
 DSN_ENV_NAMES = ("RESEARKA_DATABASE_DSN", "DATABASE_URL", "POSTGRES_DSN", "POSTGRES_URL")
 HTTP_URL_ENV = "RESEARKA_DATABASE_URL"
@@ -211,7 +211,7 @@ def materialize_rows(
         if not generated_pack_publishable(record, peer_records=peer_records):
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "low_information_topic"})
             continue
-        if quality_mode == "high-precision" and not _high_precision_pack(pack):
+        if quality_mode == "high-precision" and not _high_precision_pack(row, pack):
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "quality_filter_failed"})
             continue
         path = db_dir / pack.slug / "latest.json"
@@ -335,7 +335,9 @@ def _singular_label(value: str) -> str:
     return " ".join(token[:-1] if token.endswith("s") and len(token) > 4 else token for token in value.split())
 
 
-def _high_precision_pack(pack: object) -> bool:
+def _high_precision_pack(row: dict[str, Any], pack: object) -> bool:
+    if str(row.get("claim_type") or "").strip() == "methodology":
+        return False
     tier = str(getattr(pack, "tier", ""))
     if tier in {"mainstream", "emerging", "contested"}:
         return True
