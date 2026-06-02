@@ -376,6 +376,33 @@ def _key_findings(abstract: str, discussion: str, limitations: str, conclusion: 
     return _clip_text(text)
 
 
+def _same_text(left: str, right: str) -> bool:
+    return " ".join(left.lower().split()) == " ".join(right.lower().split())
+
+
+def _actionable_gaps(topic: str, manifest: dict[str, Any], explicit: str, discussion: str, limitations: str, abstract: str) -> str:
+    explicit = _clip_text(explicit)
+    if explicit and not any(_same_text(explicit, other) for other in (discussion, limitations, abstract)):
+        return explicit
+    receipts = [row for row in manifest.get("receipts", []) if isinstance(row, dict)]
+    outcomes = [
+        str(row.get("outcome_class") or "").replace("_", " ")
+        for row in receipts
+        if str(row.get("outcome_class") or "").strip()
+    ]
+    top_outcomes = ", ".join(dict.fromkeys(outcomes[:4])) or "the primary outcome classes"
+    direct = sum(str(row.get("directness") or "").lower() == "direct" for row in receipts)
+    n_receipts = int(manifest.get("n_receipts") or len(receipts) or 0)
+    n_tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
+    label = _display_topic(topic).lower()
+    gaps = [
+        f"Run adequately powered human studies that test {label} against prespecified endpoints in {top_outcomes}.",
+        f"Standardize exposure, comparator, follow-up duration, and endpoint definitions so future syntheses can pool effects instead of resolving {n_tensions} disagreement(s) narratively.",
+        f"Separate direct source rows from adjacent context before submission; current direct evidence is {direct}/{n_receipts} admitted source(s).",
+    ]
+    return _clip_text(" ".join(gaps))
+
+
 def _demote_headings(markdown: str) -> str:
     return re.sub(r"^(#{1,5})(\s+)", r"#\1\2", markdown.strip(), flags=re.M)
 
@@ -510,7 +537,9 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             "Evidence Landscape": results or abstract,
             "Key Findings": _key_findings(abstract, discussion, limitations, conclusion),
             "Limitations": limitations or discussion or abstract,
-            "Gaps Identified": discussion or limitations or abstract,
+            "Gaps Identified": _actionable_gaps(
+                topic, manifest, parts.get("Gaps Identified", ""), discussion, limitations, abstract,
+            ),
             "Conclusion": conclusion or abstract,
         },
         "source_bundle": _source_bundle(run, limit=max_sources),
