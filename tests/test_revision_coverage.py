@@ -209,6 +209,33 @@ def test_deterministic_unmet_accepts_reference_identifier_caveat() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_missing_source_verification_transparency() -> None:
+    ask = (
+        "Add a verification transparency statement acknowledging that the reference-only source bundle "
+        "limits external verification of detailed quantitative claims, and direct readers to "
+        "supplementary artifacts (manifest.json, methods_pack.json) for full traceability."
+    )
+    paper = "## Limitations\n\nThe corpus is limited.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_source_verification_transparency() -> None:
+    ask = (
+        "Add a verification transparency statement acknowledging that the reference-only source bundle "
+        "limits external verification of detailed quantitative claims, and direct readers to "
+        "supplementary artifacts (manifest.json, methods_pack.json) for full traceability."
+    )
+    paper = (
+        "## Limitations\n\n"
+        "The source bundle is reference-only, so exact statistics may not be independently verified "
+        "from the public manuscript alone. Readers should use the supplementary artifacts, including "
+        "manifest.json and methods_pack.json, for source-bundle traceability.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 _PAPER = "## Abstract\n\nEGCG reverses aging in humans.\n\n## Results\n\nMixed, mostly null.\n"
 
 
