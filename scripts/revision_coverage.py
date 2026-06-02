@@ -95,6 +95,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_directness_breakdown_is_stated(paper_md)
     if _asks_source_inclusion_rationale(lower):
         return _source_inclusion_rationale_is_stated(paper_md)
+    if _asks_source_statistics_landscape(lower):
+        return _source_statistics_landscape_is_stated(paper_md)
     if _asks_source_verification_transparency(lower):
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
@@ -115,6 +117,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         )
     if _asks_evidence_boundary(lower):
         return _evidence_boundary_is_stated(paper_md)
+    if _asks_conclusion_unproven_humans(lower):
+        return _conclusion_unproven_humans_is_stated(paper_md)
     if _asks_directional_coding(lower):
         return _directional_coding_explanation_is_material(paper_md)
     if _asks_directional_table_narrative_consistency(lower):
@@ -133,10 +137,12 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _references_are_traceable(paper_md)
     if _asks_prior_publication_differentiation(lower):
         return _prior_publication_differentiation_is_stated(paper_md)
-    if _asks_numeric_effect_accuracy(lower):
-        return not numeric_effect_direction_issues(paper_md)
     if _asks_numeric_effect_audit(lower):
         return _numeric_effect_audit_is_stated(paper_md) and not numeric_effect_direction_issues(paper_md)
+    if _asks_named_numeric_correction(lower):
+        return _named_numeric_correction_is_stated(paper_md, lower) and not numeric_effect_direction_issues(paper_md)
+    if _asks_numeric_effect_accuracy(lower):
+        return not numeric_effect_direction_issues(paper_md)
     if _asks_grammar_correction(lower):
         return _grammar_artifacts_are_absent(paper_md)
     return True
@@ -178,6 +184,14 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
         "source" in text
         and any(token in text for token in ("included under", "inclusion criteria", "included", "umbrella", "operationalize", "classified as addressing"))
         and any(token in text for token in ("unrelated", "general", "other digital", "non-digital", "why sources"))
+    )
+
+
+def _asks_source_statistics_landscape(text: str) -> bool:
+    return (
+        "specific statistics" in text
+        and "evidence landscape" in text
+        and any(token in text for token in ("source bundle", "outcome class", "buried"))
     )
 
 
@@ -240,6 +254,13 @@ def _asks_evidence_boundary(text: str) -> bool:
     )
 
 
+def _asks_conclusion_unproven_humans(text: str) -> bool:
+    return (
+        "conclusion" in text
+        and any(token in text for token in ("unproven in humans", "currently unproven", "not proven in humans"))
+    )
+
+
 def _asks_directional_coding(text: str) -> bool:
     return "directional coding" in text or (
         "no extracted directional signal" in text and "clarify" in text
@@ -249,8 +270,8 @@ def _asks_directional_coding(text: str) -> bool:
 def _asks_directional_table_narrative_consistency(text: str) -> bool:
     return (
         "evidence landscape" in text
-        and any(token in text for token in ("no directional signal", "null directional signal", "all null directional"))
-        and any(token in text for token in ("positive", "mixed", "negative", "positive association", "positive associations", "positive signal", "positive signals"))
+        and any(token in text for token in ("no directional signal", "null directional signal", "all null directional", "predominantly unclear", "unclear"))
+        and any(token in text for token in ("positive", "mixed", "negative", "positive/negative", "positive association", "positive associations", "positive signal", "positive signals"))
         and any(token in text for token in ("contradiction", "inconsistency", "narrative", "rest of the manuscript", "table coding", "needs correction"))
     )
 
@@ -304,6 +325,14 @@ def _asks_numeric_effect_audit(text: str) -> bool:
     return (
         any(token in text for token in ("audit all reported p-values", "audit all reported p values", "reported p-values", "reported p values"))
         and any(token in text for token in ("effect directions", "source bundle excerpts", "discrepancies"))
+    )
+
+
+def _asks_named_numeric_correction(text: str) -> bool:
+    return (
+        "correct" in text
+        and any(token in text for token in ("p =", "p-value", "p value", "confidence interval"))
+        and any(token in text for token in ("non-significant", "not significant", "significant reduction", "factual error"))
     )
 
 
@@ -393,6 +422,16 @@ def _source_inclusion_rationale_is_stated(paper_md: str) -> bool:
     )
 
 
+def _source_statistics_landscape_is_stated(paper_md: str) -> bool:
+    landscape = _section(paper_md, "Evidence Landscape")
+    return bool(
+        landscape
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", landscape)
+        and re.search(r"\b\d+(?:\.\d+)?\s*(?:%|percent|p\s*=|ci\b|confidence interval|hazard ratio|odds ratio|relative risk)\b", landscape, flags=re.I)
+        and re.search(r"\b(outcome class|outcome=|classified|mapped)\b", landscape, flags=re.I)
+    )
+
+
 def _evidence_tier_directness_bounds_are_stated(paper_md: str) -> bool:
     sections = [_section(paper_md, name).lower() for name in ("Key Findings", "Conclusion")]
     if not all(sections):
@@ -440,10 +479,10 @@ def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
     ).lower()
     if not table_scope or not narrative_scope:
         return False
-    no_signal = any(token in table_scope for token in ("no extracted directional signal", "no directional signal", "null directional signal", "all null directional"))
+    no_signal = any(token in table_scope for token in ("no extracted directional signal", "no directional signal", "null directional signal", "all null directional", "predominantly unclear", "unclear"))
     positive_narrative = any(
         token in narrative_scope
-        for token in ("positive association", "positive associations", "positive signal", "positive signals")
+        for token in ("positive association", "positive associations", "positive signal", "positive signals", "positive/negative", "negative signal", "negative signals")
     )
     reconciled = any(
         token in (table_scope + " " + narrative_scope)
@@ -516,6 +555,15 @@ def _evidence_boundary_is_stated(paper_md: str) -> bool:
     directness = any(token in scope for token in ("direct interventional hard-endpoint evidence", "direct clinical evidence", "adjacent/mechanistic", "mechanistic"))
     population = "population-level" in scope or "broad causal" in scope or "policy claims" in scope
     return bounded and directness and population
+
+
+def _conclusion_unproven_humans_is_stated(paper_md: str) -> bool:
+    conclusion = _section(paper_md, "Conclusion").lower()
+    return bool(
+        conclusion
+        and "human" in conclusion
+        and any(token in conclusion for token in ("unproven", "not proven", "not established"))
+    )
 
 
 def _prior_publication_differentiation_is_stated(paper_md: str) -> bool:
@@ -628,6 +676,17 @@ def _numeric_effect_audit_is_stated(paper_md: str) -> bool:
         any(token in scope for token in ("numeric effect audit", "p-value audit", "p value audit", "effect-direction audit"))
         and any(token in scope for token in ("source excerpt", "source bundle", "extracted statistic"))
     )
+
+
+def _named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
+    source = re.search(r"regarding\s+([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
+    p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", ask, flags=re.I)
+    scope = " ".join(part for part in (_abstract(paper_md), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Conclusion")) if part).lower()
+    if source and f"{source.group(1).lower()} {source.group(2).lower()}" not in scope:
+        return False
+    if p_value and f"p = {p_value.group(1)}" not in scope and f"p={p_value.group(1)}" not in scope:
+        return False
+    return any(token in scope for token in ("non-significant", "not significant", "did not reach significance"))
 
 
 def _grammar_artifacts_are_absent(paper_md: str) -> bool:

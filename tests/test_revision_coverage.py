@@ -852,6 +852,9 @@ def test_deterministic_unmet_accepts_corrected_numeric_effect_revision() -> None
         "p-values and effect directions."
     )
     paper = (
+        "## Methods\n\n"
+        "Numeric effect audit: all reported p-values and effect directions were checked against "
+        "source excerpt statistics from the source bundle.\n\n"
         "## Abstract\n\n"
         "Waghmare 2024 showed a non-significant trend in LF HRV power (p = 0.08).\n\n"
         "## Conclusion\n\nThe corpus remains mixed.\n"
@@ -887,3 +890,59 @@ def test_numeric_effect_direction_flags_ci_crossing_null_called_significant() ->
     assert revision_coverage.numeric_effect_direction_issues(paper) == [
         "CI crossing null described as significant: The pooled effect was statistically significant (95% CI 0.84-1.18)."
     ]
+
+
+def test_deterministic_unmet_flags_missing_numeric_effect_audit_statement() -> None:
+    ask = "Audit all reported p-values and effect directions in the manuscript against source bundle excerpts."
+    paper = (
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a non-significant trend in LF HRV power (p = 0.08).\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_numeric_effect_audit_statement() -> None:
+    ask = "Audit all reported p-values and effect directions in the manuscript against source bundle excerpts."
+    paper = (
+        "## Methods\n\n"
+        "Numeric effect audit: all reported p-values and effect directions were checked against "
+        "source excerpt statistics from the source bundle.\n\n"
+        "## Abstract\n\n"
+        "Waghmare 2024 showed a non-significant trend in LF HRV power (p = 0.08).\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_prisma_all_included_without_rationale() -> None:
+    ask = "Clarify why 100% of retrieved records were included given the PRISMA-ScR eligibility criteria."
+    paper = "## Methods\n\nThe PRISMA-ScR flow retained all records.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_prisma_all_included_rationale() -> None:
+    ask = "Clarify why 100% of retrieved records were included given the PRISMA-ScR eligibility criteria."
+    paper = (
+        "## Methods\n\n"
+        "100% of retrieved records were included because the screening scope used prequalified "
+        "eligibility criteria from the topic pack; the rationale is that all retrieved records "
+        "already met the source-bound inclusion scope.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_known_grammar_artifact() -> None:
+    ask = "Correct the grammatical error in the abstract: 'is insufficient to is consistent with therapeutic efficacy'."
+    paper = "## Abstract\n\nThe evidence is insufficient to is consistent with therapeutic efficacy.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_known_grammar_artifact_repair() -> None:
+    ask = "Correct the grammatical error in the abstract: 'is insufficient to is consistent with therapeutic efficacy'."
+    paper = "## Abstract\n\nThe evidence is insufficient to establish therapeutic efficacy.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []

@@ -370,6 +370,18 @@ def test_truncated_sentence_blocks_surface():
     assert any("truncated sentence" in i.detail for i in report.issues)
 
 
+def test_known_grammar_artifact_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "abstract1",
+        "The evidence is insufficient to is consistent with therapeutic efficacy.",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "grammar_artifact" for i in report.issues)
+
+
 def test_conclusion_cannot_carry_what_this_adds_prose():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(
