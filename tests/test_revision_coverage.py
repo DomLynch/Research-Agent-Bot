@@ -48,6 +48,67 @@ def test_unmet_asks_failopen_on_judge_error(monkeypatch) -> None:
     assert revision_coverage.unmet_asks("M", ["a"], chat=boom, settings=object()) == []
 
 
+def test_deterministic_unmet_flags_missing_classification_criteria() -> None:
+    ask = "Define the classification criteria used to assign studies to outcome classes and to code directness."
+
+    assert revision_coverage.deterministic_unmet_asks("## Methods\n\nMethods.\n", [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_classification_criteria_and_map() -> None:
+    paper = (
+        "## Methods\n\n"
+        "### Classification criteria\n\n"
+        "**Outcome class** records the endpoint family. **Directness** records whether evidence is direct, "
+        "indirect, mechanistic, or review. **Evidence tier** records A1, A2, B1, B2, C1, or C2.\n\n"
+        "### Source classification map\n\n"
+        "- Smith 2024: outcome=cardiometabolic; directness=indirect; tier=B2.\n"
+    )
+    asks = [
+        "Define the classification criteria used to assign studies to outcome classes and to code directness.",
+        "Provide a mapping table or list showing which sources were assigned to which outcome class.",
+    ]
+
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_unmet_flags_weak_gaps_section() -> None:
+    ask = "Rewrite the 'Gaps Identified' section to provide specific, actionable research gaps."
+    paper = "## Gaps Identified\n\nMore research is needed because the current corpus is limited.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_actionable_gaps_section() -> None:
+    ask = "Rewrite the 'Gaps Identified' section to provide specific, actionable future research directions."
+    paper = (
+        "## Gaps Identified\n\n"
+        "The next study should use a powered randomized trial in an older adult priority population, "
+        "with a prespecified comparator, 12-month follow-up duration, clinically meaningful endpoint "
+        "selection, dose documentation, and safety monitoring. Measurement should separate sleep, "
+        "functional, and cardiometabolic endpoints so the evidence gap is testable rather than generic.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_flags_unbounded_null_signal_conclusion() -> None:
+    ask = "Reconcile the null directional signals with the concluding claim that a bounded geroscience rationale exists."
+    paper = "## Conclusion\n\nThis synthesis supports a bounded geroscience rationale for clinical use.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_bounded_null_signal_conclusion() -> None:
+    ask = "Reconcile the null directional signals with the concluding claim that a bounded geroscience rationale exists."
+    paper = (
+        "## Conclusion\n\n"
+        "Because most directional signals are null or mixed, this synthesis is hypothesis-generating and "
+        "does not support a clinical recommendation. The bounded rationale is limited to study design.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 _PAPER = "## Abstract\n\nEGCG reverses aging in humans.\n\n## Results\n\nMixed, mostly null.\n"
 
 

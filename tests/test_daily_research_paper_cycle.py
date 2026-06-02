@@ -14,6 +14,8 @@ sys.path.insert(0, str(REPO / "scripts"))
 
 import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # noqa: E402
 
+_REAL_UNMET_REVISION_ASKS = cycle._unmet_revision_asks
+
 
 def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
     assert "researka_revision_fingerprint" in cycle._TERMINAL_REVISION_STATUSES
@@ -1241,6 +1243,23 @@ def test_classification_revision_asks_can_be_satisfied_by_public_sections(tmp_pa
         out_dir,
         "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class.",
     )
+
+
+def test_unmet_revision_asks_uses_deterministic_gate_when_judge_fails_open(tmp_path: Path, monkeypatch) -> None:
+    import revision_coverage  # type: ignore[import-not-found]
+
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Methods\n\nMethods.\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda *_args, **_kwargs: [])
+
+    ask = "Define the classification criteria used to assign studies to outcome classes and to code directness."
+
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
 
 
 def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: Path) -> None:

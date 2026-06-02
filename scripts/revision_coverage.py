@@ -140,7 +140,7 @@ def _gaps_section_is_actionable(paper_md: str) -> bool:
     if not gaps:
         return False
     text = gaps.lower()
-    if len(gaps.split()) < 55:
+    if len(gaps.split()) < 40:
         return False
     action_tokens = (
         "sample size", "powered", "priority population", "population", "follow-up",
