@@ -507,7 +507,14 @@ def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
 
 
 def _contextual_without_directional_signal_is_explained(paper_md: str) -> bool:
-    scope = " ".join(part for part in (_section(paper_md, "Evidence Landscape"), _section(paper_md, "Results"), _section(paper_md, "Discussion")) if part).lower()
+    scope = " ".join(
+        part for part in (
+            _section(paper_md, "Evidence Snapshot"),
+            _section(paper_md, "Evidence Landscape"),
+            _section(paper_md, "Results"),
+            _section(paper_md, "Discussion"),
+        ) if part
+    ).lower()
     return (
         "contextual claim" in scope
         and any(token in scope for token in ("no extracted directional signal", "no directional signal", "absence of directional"))

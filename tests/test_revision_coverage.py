@@ -411,6 +411,21 @@ def test_deterministic_unmet_accepts_contextual_claims_without_direction_explana
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_contextual_claims_explanation_in_evidence_snapshot() -> None:
+    ask = (
+        "Clarify what the contextual claims contain if no directional signal was extracted, "
+        "and explain the discrepancy between the organized evidence landscape and the near-total absence of directional findings."
+    )
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "Directional coding note: Null or no extracted directional signal means no coded effect was "
+        "extracted for that outcome class. Contextual claims contain bibliographic background, "
+        "mechanistic context, methods, or population context rather than effect-direction evidence.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_directional_table_narrative_contradiction() -> None:
     ask = (
         "Resolve the contradiction between the Evidence Landscape table showing no directional signal "
