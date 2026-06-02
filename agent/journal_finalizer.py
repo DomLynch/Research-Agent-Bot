@@ -126,6 +126,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_d_unproven_human_longevity(text, out_dir)
     entries.extend(log)
+    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
+    entries.extend(log)
     return text, entries
 
 
@@ -141,6 +143,48 @@ def _surface_report(text: str, out_dir: Path) -> Any | None:
         return evaluate_journal_surface(text, animal_citations=animal, citation_outcome_map=cmap, declared_review_type=manifest.get("review_type"))
     except (ImportError, ValueError):
         return None
+
+
+def _phase_m_strip_surface_duplicate_paragraphs(
+    text: str,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    boundary = re.search(r"^##\s+(?:References|Appendix|Supplement)\b", text, flags=re.M)
+    head, tail = (text[:boundary.start()], text[boundary.start():]) if boundary else (text, "")
+    chunks = re.split(r"(\n\s*\n)", head)
+    seen: list[set[str]] = []
+    out: list[str] = []
+    n = 0
+    for i in range(0, len(chunks), 2):
+        para = chunks[i]
+        sep = chunks[i + 1] if i + 1 < len(chunks) else ""
+        tokens = _surface_duplicate_tokens(para)
+        if tokens and any(len(tokens & prior) / max(1, len(tokens | prior)) >= 0.9 for prior in seen):
+            n += 1
+            continue
+        if tokens:
+            seen.append(tokens)
+        out.append(para)
+        if sep:
+            out.append(sep)
+    if not n:
+        return text, []
+    return "".join(out).rstrip() + ("\n\n" if tail and not tail.startswith("\n") else "") + tail, [
+        FinalizerLogEntry(
+            phase="M_duplicate_paragraph_strip",
+            rule="remove_later_surface_duplicate_paragraphs",
+            n_changes=n,
+            detail=f"removed {n} duplicate public prose paragraph(s)",
+        )
+    ]
+
+
+def _surface_duplicate_tokens(paragraph: str) -> set[str]:
+    text = paragraph.strip()
+    if not text or text.startswith(("#", "|", "_Cited:")):
+        return set()
+    tokens = re.findall(r"[a-z0-9]+", text.lower())
+    real_tokens = {token for token in tokens if not re.fullmatch(r"word\d+", token)}
+    return set(tokens) if len(tokens) >= 30 and len(real_tokens) >= 20 else set()
 
 
 # --- Phase A: Methods replace -----------------------------------------
