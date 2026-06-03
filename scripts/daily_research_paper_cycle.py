@@ -1706,7 +1706,9 @@ def run_cycle(
             ledger["writer_gate_repeat_policy"] = writer_gate_policy
         submitted_topics = _recent_submitted_topics(topics, ledger_dir)
         source_precision_repaired_ok: set[str] = set()
-        source_precision_auto_excluded: set[str] = set()
+        source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
+        if source_precision_auto_excluded:
+            ledger["source_precision_unrepairable_topics"] = sorted(source_precision_auto_excluded)
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
             current_source_precision = _current_low_source_precision_topics(topics)
@@ -1728,7 +1730,7 @@ def run_cycle(
                     surface_repeat.discard(repair_topic)
                 if repair.get("status") == "source_precision_repaired":
                     source_precision_repaired_ok.add(repair_topic)
-            source_precision_auto_excluded = current_source_precision - source_precision_repaired_ok
+            source_precision_auto_excluded |= current_source_precision - source_precision_repaired_ok
             if source_precision_auto_excluded:
                 ledger["source_precision_auto_excluded_topics"] = sorted(source_precision_auto_excluded)
             if repairs:

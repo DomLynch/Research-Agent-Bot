@@ -371,7 +371,12 @@ def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     calls: dict[str, Any] = {}
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
@@ -403,7 +408,12 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
 def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TOKEN_ENV"))
     calls: dict[str, Any] = {}
 
@@ -3373,6 +3383,55 @@ def test_cycle_auto_excludes_unrepaired_low_source_precision_topics(tmp_path: Pa
     assert ledger["source_precision_auto_excluded_topics"] == ["aaa_low_source", "bbb_low_source"]
     assert ledger["topic_status"]["aaa_low_source"] == "source_precision_blocked"
     assert synthesized == ["zzz_clean_topic"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_cycle_auto_excludes_recent_unrepairable_zero_source_precision_topic(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "aaa_bad_source", target_journal=True)
+    _topic(tmp_path, "zzz_ready_topic", target_journal=True)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-01-fresh.json", {
+        "started_at": dt.datetime.now(dt.UTC).isoformat(),
+        "attempts": [{
+            "topic": "aaa_bad_source",
+            "source_precision_repair": {
+                "status": "source_precision_repair_incomplete",
+                "n_quant_claims": 0,
+            },
+        }],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_unscored", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-02",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["source_precision_unrepairable_topics"] == ["aaa_bad_source"]
+    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_bad_source"]
+    assert ledger["topic_status"]["aaa_bad_source"] == "source_precision_blocked"
+    assert synthesized == ["zzz_ready_topic"]
     assert ledger["status"] == "submitted_to_researka"
 
 

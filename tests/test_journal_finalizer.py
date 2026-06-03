@@ -741,6 +741,43 @@ def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> No
     ]
 
 
+def test_relabel_public_metadata_table_headers_repairs_surface_gate(tmp_path: Path) -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Cardiometabolic | n=4 | mixed | indirect | short follow-up |\n\n"
+        "## Discussion\n\n"
+        "| Outcome class | Direct sources | Indirect / mechanism sources | Direction profile | Interpretation boundary |\n"
+        "|---|---:|---:|---|---|\n"
+        "| Immune | 0 | 3 | null | indirect evidence only |\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+    assert any(
+        "classification metadata leaked as study row" in issue.detail
+        for issue in evaluate_journal_surface(paper).issues
+    )
+    fixed, logs = journal_finalizer._phase_m_relabel_public_metadata_table_headers(paper, tmp_path)
+
+    assert "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |" in fixed
+    assert "| Evidence domain | Direct sources | Indirect / mechanism sources | Direction profile | Interpretation boundary |" in fixed
+    assert not any(
+        "classification metadata leaked as study row" in issue.detail
+        for issue in evaluate_journal_surface(fixed).issues
+    )
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="M_public_metadata_header_relabel",
+            rule="relabel_surface_metadata_table_headers",
+            n_changes=2,
+            detail="relabelled 2 public metadata table header(s)",
+        )
+    ]
+
+
 def test_long_term_safety_scope_repairs_older_adult_safety_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
