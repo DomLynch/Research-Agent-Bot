@@ -1766,6 +1766,7 @@ def run_cycle(
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
                 break
+            numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
             out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
             ledger.update({"topic": selected, "out_dir": out_dir.name, "attempted_topic": selected, "attempted_run": out_dir.name})
@@ -1944,7 +1945,6 @@ def run_cycle(
                     if revision_source.get(key)
                 }
             strategy_review_type = str(strategy.get("review_type_override") or "") or None
-            numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
             repeat_policy = writer_gate_policy.get(selected, {})
             repeat_review_type = "thin_corpus_brief" if repeat_policy.get("action") == "thin_corpus_brief" else None
             review_type_override = numeric_review_type or strategy_review_type or repeat_review_type

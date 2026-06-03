@@ -80,7 +80,7 @@ def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool 
         qdir = root / "docs" / "quality-reference" / topic / "quant_claims"
         qdir.mkdir(parents=True)
         for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
-            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"seed-{i}", "claims": []})
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic} seed {i}", "claims": []})
 
 
 def _prior_run(root: Path, topic: str, *, receipts: int, tensions: int, primary: int = 1, level: int = 2) -> Path:
@@ -445,7 +445,12 @@ def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monke
 def test_cycle_retries_real_submit_bridge_when_current_run_rechecks_eligible(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "curcumin_inflammaging")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TOKEN_ENV"))
     calls: list[Path] = []
 
@@ -524,7 +529,9 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
 def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "new_topic", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     calls: dict[str, Any] = {}
 
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
@@ -559,7 +566,9 @@ def test_cycle_skips_empty_seed_and_tries_next_topic(tmp_path: Path, monkeypatch
     _topic(tmp_path, "aaa_empty", corpus=False, target_journal=True)
     _topic(tmp_path, "zzz_seeded", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     synthesis_topics: list[str] = []
 
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
@@ -640,7 +649,14 @@ def test_cycle_skips_terminal_sparse_revision_before_resynthesis(tmp_path: Path,
         "fingerprint": cycle.submit_bridge._sha256(paper),
     }])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_ensure_topic_corpus", lambda topic, **_k: {
+        "status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    })
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
     monkeypatch.setattr(cycle, "_run_synthesis", lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("should not rerender terminal sparse revise")))
     request = {
         "artifactId": "colchicine-review",
@@ -705,9 +721,14 @@ def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypa
 
 
 def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "acarbose")
+    _topic(tmp_path, "acarbose", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     runs: list[str] = []
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
@@ -751,9 +772,14 @@ def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_pat
 
 
 def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "epigenome_editing_longevity")
+    _topic(tmp_path, "epigenome_editing_longevity", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     runs: list[str] = []
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
         "status": "source_precision_repair_incomplete",
@@ -799,10 +825,15 @@ def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, m
 
 
 def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "acarbose")
-    _topic(tmp_path, "creatine")
+    _topic(tmp_path, "acarbose", target_journal=True)
+    _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     topics: list[str] = []
     submit_calls = 0
 
@@ -848,10 +879,15 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
 
 
 def test_cycle_rotates_after_same_gate_fails_twice(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "rapamycin")
-    _topic(tmp_path, "creatine")
+    _topic(tmp_path, "rapamycin", target_journal=True)
+    _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     topics: list[str] = []
     runs: list[str] = []
     submit_calls = 0
@@ -900,7 +936,9 @@ def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Pa
     _topic(tmp_path, "rapamycin", target_journal=True)
     _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     topics: list[str] = []
     runs: list[str] = []
     feedback_seen: list[str | None] = []
@@ -950,7 +988,9 @@ def test_cycle_regenerates_after_researka_rejection_before_rotating(tmp_path: Pa
 def test_cycle_applies_researka_revision_feedback_on_same_topic_retry(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     feedback_seen: list[str | None] = []
     runs: list[str] = []
     submit_calls = 0
@@ -1004,7 +1044,9 @@ def test_cycle_applies_researka_revision_feedback_on_same_topic_retry(tmp_path: 
 def test_cycle_polls_revision_after_submit_and_resubmits(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "ace_inhibitors_aging", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     feedback_seen: list[str | None] = []
     run_names: list[str] = []
     loader_calls = 0
@@ -1095,7 +1137,9 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
         "fingerprint": fingerprint,
     }])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     synthesis_calls: list[str] = []
     feedback_seen: list[str | None] = []
 
@@ -1162,7 +1206,9 @@ def _seed_delayed_revise(tmp_path: Path, monkeypatch) -> None:
         "date": "2026-05-27", "run": source_run.name, "topic": "aspirin_geroprotection",
         "fingerprint": cycle.submit_bridge._sha256(paper)}])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
 
 
 def _aspirin_revise_loader() -> tuple[list[dict[str, Any]], None]:
@@ -1669,7 +1715,9 @@ def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, 
         "fingerprint": cycle.submit_bridge._sha256(paper),
     }])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
 
     monkeypatch.setattr(cycle, "_run_synthesis", lambda *_args, **_kwargs: 4)
     request = {
@@ -2004,7 +2052,9 @@ def test_cycle_does_not_let_stale_thin_manifest_block_healthy_corpus(tmp_path: P
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
     _prior_run(tmp_path, "aaa_thin_topic", receipts=6, tensions=0, primary=0)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     topics: list[str] = []
 
     def fake_synthesis(
@@ -2148,7 +2198,9 @@ def test_preflight_allows_latest_run_with_manifest(tmp_path: Path, monkeypatch) 
 def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
 
     runs: list[str] = []
 
@@ -2187,7 +2239,9 @@ def test_cycle_records_blocker_histogram_for_current_gate_failure(tmp_path: Path
 def test_cycle_reuses_existing_work_for_compiler_fixable_retry(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "allostatic_load", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     synthesis_runs: list[str] = []
     submit_calls = 0
 
@@ -2238,7 +2292,9 @@ def test_cycle_reuses_existing_work_for_compiler_fixable_retry(tmp_path: Path, m
 def test_cycle_repairs_audit_failure_when_surface_also_failed(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "cgm_glucose_variability", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     synthesis_runs: list[str] = []
     repair_reasons: list[str | None] = []
     submit_calls = 0
@@ -2337,7 +2393,9 @@ def test_internal_repair_noop_cleans_output_for_synthesis_fallback(
 def test_cycle_rewrites_for_writer_fixable_retry(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     synthesis_runs: list[str] = []
     submit_calls = 0
 
