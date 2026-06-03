@@ -405,6 +405,13 @@ def test_legitimate_to_be_consistent_sentence_does_not_trigger_grammar_artifact(
     assert not any(i.code == "grammar_artifact" for i in report.issues)
 
 
+def test_sentence_initial_infinitive_does_not_trigger_grammar_artifact():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("abstract0 abstract1", "abstract0. To be rigorous is important for this evidence synthesis.", 1)
+    report = evaluate_journal_surface(paper)
+    assert not any(i.code == "grammar_artifact" for i in report.issues)
+
+
 def test_classification_metadata_row_blocks_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(

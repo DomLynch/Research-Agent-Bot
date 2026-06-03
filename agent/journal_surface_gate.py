@@ -188,7 +188,7 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("citation_artifact", f"public reference dump: {m.group(0)}") for m in _REFERENCE_DUMP_RE.finditer(body_md))
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
     issues.extend(SurfaceIssue("malformed_numeric", f"malformed numeric artifact: {m.group(0).strip()}") for m in _MALFORMED_NUMERIC_RE.finditer(body_md))
-    issues.extend(SurfaceIssue("grammar_artifact", f"grammar artifact: {m.group(0).strip()}") for m in _GRAMMAR_ARTIFACT_RE.finditer(body_md))
+    issues.extend(SurfaceIssue("grammar_artifact", msg) for msg in _grammar_artifact_issue_messages(body_md))
     issues.extend(SurfaceIssue("public_artifact", msg) for msg in _classification_metadata_row_issue_messages(body_md))
     # Backtick-fenced spans (`like_this`) are code/file references —
     # exempt from the slug check (real-world conventional in Methods +
@@ -236,6 +236,19 @@ def _classification_metadata_row_issue_messages(paper_md: str) -> tuple[str, ...
         for line in paper_md.splitlines()
         if _CLASSIFICATION_META_ROW_RE.search(line.strip())
     )
+
+
+def _grammar_artifact_issue_messages(paper_md: str) -> tuple[str, ...]:
+    messages: list[str] = []
+    for match in _GRAMMAR_ARTIFACT_RE.finditer(paper_md):
+        prefix = paper_md[:match.start()]
+        stripped_prefix = prefix.rstrip()
+        if match.group(0).lower().startswith("to be") and (
+            not stripped_prefix or stripped_prefix[-1] in ".!?" or prefix.endswith("\n")
+        ):
+            continue
+        messages.append(f"grammar artifact: {match.group(0).strip()}")
+    return tuple(messages)
 
 
 def is_publishable_qei_row(row: Any) -> bool:
