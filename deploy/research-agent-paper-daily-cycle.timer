@@ -1,8 +1,8 @@
 [Unit]
-Description=Run Research Agent v3 daily paper production cycle
+Description=Run Research Agent v3 daily paper production cycle every 4h
 
 [Timer]
-OnCalendar=*-*-* 01/2:30:00
+OnCalendar=*-*-* 01/4:30:00
 Persistent=false
 Unit=research-agent-paper-daily-cycle.service
 

@@ -1,8 +1,8 @@
 [Unit]
-Description=Run Research Agent v3 REVISE lane every 30min (staggered off the fresh lane)
+Description=Run Research Agent v3 REVISE lane every 4h (staggered off the fresh lane)
 
 [Timer]
-OnCalendar=*-*-* *:15/30:00
+OnCalendar=*-*-* 00/4:15:00
 Persistent=false
 Unit=research-agent-paper-revise.service
 
