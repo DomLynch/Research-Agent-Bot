@@ -2441,6 +2441,7 @@ def test_cycle_downshifts_after_recent_numeric_density_failure(tmp_path: Path, m
     _write_json(prior / "full_paper.audit.json", {"checks": [{"name": "Q9_numeric_density", "passed": False}]})
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_args, **_kwargs: {"passed": True})
     overrides: list[str | None] = []
 
     def fake_synthesis(
@@ -2530,6 +2531,7 @@ def test_fresh_mode_ignores_revise_backlog(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_args, **_kwargs: {"passed": True})
     runs: list[str] = []
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
@@ -2763,6 +2765,7 @@ def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, mon
     cycle._record_blockers(ledger_dir, "2026-05-31", [row])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_args, **_kwargs: {"passed": True})
     overrides: list[str | None] = []
 
     def fake_synthesis(
@@ -3114,7 +3117,7 @@ def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tm
     )
 
     assert synthesized == ["epigenome_editing_longevity"]
-    assert ledger["source_precision_repair"]["source_topic_precision_before"] == "source_topic_precision_low:4/19<0.50"
+    assert ledger["corpus_repairs"][0]["source_topic_precision_before"] == "source_topic_precision_low:4/19<0.50"
     assert ledger["status"] == "submitted_to_researka"
 
 

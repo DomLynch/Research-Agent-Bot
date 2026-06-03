@@ -1705,6 +1705,7 @@ def run_cycle(
         if writer_gate_policy:
             ledger["writer_gate_repeat_policy"] = writer_gate_policy
         submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+        corpus_repaired_ok: set[str] = set()
         source_precision_repaired_ok: set[str] = set()
         source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
         if source_precision_auto_excluded:
@@ -1728,6 +1729,7 @@ def run_cycle(
                 if int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS:
                     preflight_blocked.discard(repair_topic)
                     surface_repeat.discard(repair_topic)
+                    corpus_repaired_ok.add(repair_topic)
                 if repair.get("status") == "source_precision_repaired":
                     source_precision_repaired_ok.add(repair_topic)
             source_precision_auto_excluded |= current_source_precision - source_precision_repaired_ok
@@ -1758,10 +1760,12 @@ def run_cycle(
                 if not ledger["attempts"]:
                     ledger["status"] = "no_revise_pending"
                 break
+            excluded = attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip | source_precision_auto_excluded
+            repaired_candidates = sorted((corpus_repaired_ok | source_precision_repaired_ok) - excluded)
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip | source_precision_auto_excluded)
+                else topic or select_topic(repaired_candidates or topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=excluded)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
