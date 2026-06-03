@@ -382,6 +382,42 @@ def test_known_grammar_artifact_blocks_surface():
     assert any(i.code == "grammar_artifact" for i in report.issues)
 
 
+def test_double_copula_splice_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "abstract1",
+        "The boundary conditions for any clinical benefit remain to be rigorously is consistent with.",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "grammar_artifact" and "to be rigorously is" in i.detail for i in report.issues)
+
+
+def test_legitimate_to_be_consistent_sentence_does_not_trigger_grammar_artifact():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "abstract1",
+        "The evidence appears to be consistent with a bounded hypothesis.",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not any(i.code == "grammar_artifact" for i in report.issues)
+
+
+def test_classification_metadata_row_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Results\n\n",
+        "## Results\n\n"
+        "| **Outcome class** is assigned from endpoint text | not extracted | not extracted |\n\n",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("classification metadata leaked as study row" in i.detail for i in report.issues)
+
+
 def test_conclusion_cannot_carry_what_this_adds_prose():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(

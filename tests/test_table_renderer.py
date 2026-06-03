@@ -546,8 +546,11 @@ def test_public_evidence_snapshot_is_compact_and_not_pipe_table() -> None:
     md = tr.render_public_evidence_snapshot(receipts, max_studies=1)
     assert "## Evidence Snapshot" in md
     assert "Depommier 2019" in md
-    included = md.split("### Load-Bearing Included Studies", 1)[1]
+    included = md.split("### Load-Bearing Included Studies", 1)[1].split(
+        "### Source Classification Map", 1
+    )[0]
     assert "Cani 2022" not in included
+    assert md.index("### Load-Bearing Included Studies") < md.index("### Classification Criteria")
     assert "|---|" not in md
     assert "\n|" not in md
 
