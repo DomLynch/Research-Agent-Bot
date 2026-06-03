@@ -908,9 +908,6 @@ def render_public_evidence_snapshot(
         "The manuscript foregrounds the load-bearing evidence; the full evidence tables remain in the supplement.",
         "",
     ]
-    lines.extend(_classification_criteria_lines())
-    lines.extend(_classification_map_lines(receipts))
-    lines.append("")
     ranked = _rank_receipts_for_public(receipts, max_studies)
     if _included_study_fill_rate(ranked) < 0.5:
         lines.extend(_render_compact_source_list(ranked))
@@ -932,6 +929,8 @@ def render_public_evidence_snapshot(
             if p_value != "—":
                 bits.append(f"representative statistic={_inline_cell(p_value)}")
             lines.append("- " + "; ".join(bits) + ".")
+    lines.extend(["", *_classification_map_lines(receipts), ""])
+    lines.extend(_classification_criteria_lines())
     lines.extend(["", "### Load-Bearing Tensions", "", *_public_tension_lines(matrix, max_tensions), ""])
     return "\n".join(lines)
 

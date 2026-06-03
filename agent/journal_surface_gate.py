@@ -142,7 +142,15 @@ _CITATION_ARTIFACT_RE = re.compile(r"\[(?:citation needed|source|ref|pmid|doi|TO
 _REFERENCE_DUMP_RE = re.compile(r"\b(?:DOI|PMID):\s*\S+", re.IGNORECASE)
 _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain|preliminary|context[- ]dependent|not definitive|requires confirmation)\.?$", re.IGNORECASE)
 _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
-_GRAMMAR_ARTIFACT_RE = re.compile(r"\b(?:is|are|was|were)\s+insufficient\s+to\s+(?:is|are|was|were)\b", re.IGNORECASE)
+_GRAMMAR_ARTIFACT_RE = re.compile(
+    r"\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
+    r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were))\b",
+    re.IGNORECASE,
+)
+_CLASSIFICATION_META_ROW_RE = re.compile(
+    r"^\|\s*\*{0,2}(?:outcome class|directness|directional signal|evidence tier)\*{0,2}\b",
+    re.IGNORECASE,
+)
 _PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
 _QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M)
 _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
@@ -181,6 +189,7 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
     issues.extend(SurfaceIssue("malformed_numeric", f"malformed numeric artifact: {m.group(0).strip()}") for m in _MALFORMED_NUMERIC_RE.finditer(body_md))
     issues.extend(SurfaceIssue("grammar_artifact", f"grammar artifact: {m.group(0).strip()}") for m in _GRAMMAR_ARTIFACT_RE.finditer(body_md))
+    issues.extend(SurfaceIssue("public_artifact", msg) for msg in _classification_metadata_row_issue_messages(body_md))
     # Backtick-fenced spans (`like_this`) are code/file references —
     # exempt from the slug check (real-world conventional in Methods +
     # AI-disclosure sections).
@@ -219,6 +228,14 @@ def evaluate_journal_surface(
 def _journal_body(paper_md: str) -> str:
     m = _APPENDIX_CUTOFF_RE.search(paper_md)
     return paper_md[:m.start()] if m else paper_md
+
+
+def _classification_metadata_row_issue_messages(paper_md: str) -> tuple[str, ...]:
+    return tuple(
+        f"classification metadata leaked as study row: {line.strip()}"
+        for line in paper_md.splitlines()
+        if _CLASSIFICATION_META_ROW_RE.search(line.strip())
+    )
 
 
 def is_publishable_qei_row(row: Any) -> bool:
