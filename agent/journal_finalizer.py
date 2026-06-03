@@ -110,6 +110,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_i_split_concatenated_headings,
         lambda t: _phase_e_structural_fallback(t, out_dir),
         lambda t: _phase_f_reconcile_results_table(t, out_dir),
+        lambda t: _phase_m_relabel_public_metadata_table_headers(t, out_dir),
         lambda t: _phase_h_topic_slug_normalise(t, out_dir), _phase_i_split_concatenated_headings,
         lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
         lambda t: _phase_l_strengthen_analytical_sections(t, out_dir),
@@ -180,6 +181,49 @@ def _phase_m_strip_surface_duplicate_paragraphs(
             detail=f"removed {n} duplicate public prose paragraph(s)",
         )
     ]
+
+
+_PUBLIC_METADATA_HEADER_LABELS = {
+    "outcome class": "Evidence domain",
+    "directness": "Source directness",
+    "directional signal": "Evidence signal",
+    "evidence tier": "Evidence level",
+}
+
+
+def _phase_m_relabel_public_metadata_table_headers(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    report = _surface_report(text, out_dir)
+    if report is None:
+        return text, []
+    patched = text
+    n_changed = 0
+    for issue in getattr(report, "issues", ()):
+        if getattr(issue, "code", "") != "public_artifact":
+            continue
+        prefix = "classification metadata leaked as study row: "
+        detail = str(getattr(issue, "detail", ""))
+        if not detail.startswith(prefix):
+            continue
+        line = detail.removeprefix(prefix).strip()
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) < 2:
+            continue
+        replacement = _PUBLIC_METADATA_HEADER_LABELS.get(cells[0].lower())
+        if not replacement:
+            continue
+        new_line = "| " + " | ".join((replacement, *cells[1:])) + " |"
+        patched, changed = re.subn(rf"^{re.escape(line)}$", new_line, patched, flags=re.M)
+        n_changed += changed
+    if not n_changed:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="M_public_metadata_header_relabel",
+        rule="relabel_surface_metadata_table_headers",
+        n_changes=n_changed,
+        detail=f"relabelled {n_changed} public metadata table header(s)",
+    )]
 
 
 def _surface_duplicate_tokens(paragraph: str) -> set[str]:
