@@ -1346,22 +1346,48 @@ def _run_synthesis(
     return int(result.returncode)
 
 
-def _receipt_preflight(topic: str, out_dir: Path, *, timeout: int | None = None) -> dict[str, Any]:
-    probe_dir = out_dir.with_name(f"{out_dir.name}-receipt-preflight")
-    try:
-        rc = _run_synthesis(topic, probe_dir, dry_run=True, timeout=timeout)
-        report = _read_json(probe_dir / "receipt_funnel.json")
-    finally:
-        shutil.rmtree(probe_dir, ignore_errors=True)
-    counts = report.get("counts") if isinstance(report, dict) else {}
-    n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+def _receipt_preflight(
+    topic: str,
+    out_dir: Path,
+    *,
+    timeout: int | None = None,
+    repair: bool = True,
+    dry_run: bool = False,
+) -> dict[str, Any]:
     min_receipts = DEFAULT_THRESHOLDS.min_receipts
+    rounds = _receipt_preflight_repair_rounds() if repair and not dry_run else 0
+    probes: list[dict[str, Any]] = []
+    repairs: list[dict[str, Any]] = []
+    rc = 1
+    n_receipts = 0
+    for round_idx in range(rounds + 1):
+        suffix = "receipt-preflight" if round_idx == 0 else f"receipt-preflight-{round_idx + 1}"
+        probe_dir = out_dir.with_name(f"{out_dir.name}-{suffix}")
+        try:
+            rc = _run_synthesis(topic, probe_dir, dry_run=True, timeout=timeout)
+            report = _read_json(probe_dir / "receipt_funnel.json")
+        finally:
+            shutil.rmtree(probe_dir, ignore_errors=True)
+        counts = report.get("counts") if isinstance(report, dict) else {}
+        n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+        probes.append({"return_code": rc, "n_receipts": n_receipts, "min_receipts": min_receipts})
+        if rc == 0 and n_receipts >= min_receipts:
+            break
+        if rc != 0 or round_idx >= rounds:
+            break
+        corpus_repair = _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
+        repairs.append(corpus_repair)
+        if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
+            break
+    passed = rc == 0 and n_receipts >= min_receipts
     return {
-        "passed": rc == 0 and n_receipts >= min_receipts,
-        "status": "receipt_preflight_ok" if rc == 0 and n_receipts >= min_receipts else "receipt_preflight_insufficient",
+        "passed": passed,
+        "status": "receipt_preflight_ok" if passed else "receipt_preflight_insufficient",
         "return_code": rc,
         "n_receipts": n_receipts,
         "min_receipts": min_receipts,
+        "probes": probes,
+        **({"repairs": repairs} if repairs else {}),
     }
 
 
@@ -2032,7 +2058,13 @@ def run_cycle(
                 receipt_preflight = (
                     {"passed": True}
                     if existing_repair
-                    else _receipt_preflight(selected, out_dir, timeout=timeout)
+                    else _receipt_preflight(
+                        selected,
+                        out_dir,
+                        timeout=timeout,
+                        repair=not revision_source,
+                        dry_run=synthesis_dry_run,
+                    )
                 )
                 if not receipt_preflight.get("passed"):
                     gate_status = (
@@ -2157,6 +2189,7 @@ def run_cycle(
                     "failure_class": _failure_class(gate_status),
                     "submitted": submitted_current,
                     "existing_work_reused": existing_repair,
+                    "receipt_preflight": receipt_preflight,
                 }
                 if unmet:
                     attempt["unmet_revision_asks"] = unmet

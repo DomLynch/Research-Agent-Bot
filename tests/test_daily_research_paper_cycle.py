@@ -3157,6 +3157,97 @@ def test_cycle_skips_sparse_receipt_topic_before_synthesis(tmp_path: Path, monke
     assert ledger["attempts"][0]["receipt_preflight"]["n_receipts"] == 5
 
 
+def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monkeypatch) -> None:
+    counts = [7, cycle.DEFAULT_THRESHOLDS.min_receipts]
+    repairs: list[dict[str, Any]] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, **_kwargs: Any) -> int:
+        assert topic == "urolithin_a"
+        assert dry_run is True
+        assert timeout == 99
+        n_receipts = counts.pop(0)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": n_receipts}})
+        return 0
+
+    def fake_repair(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        repair = {"topic": topic, "dry_run": dry_run, "timeout": timeout, "status": "corpus_repaired"}
+        repairs.append(repair)
+        return repair
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
+
+    result = cycle._receipt_preflight("urolithin_a", tmp_path / "run", timeout=99)
+
+    assert result["passed"] is True
+    assert result["n_receipts"] == cycle.DEFAULT_THRESHOLDS.min_receipts
+    assert [probe["n_receipts"] for probe in result["probes"]] == [7, cycle.DEFAULT_THRESHOLDS.min_receipts]
+    assert repairs == [{"topic": "urolithin_a", "dry_run": False, "timeout": 99, "status": "corpus_repaired"}]
+    assert result["repairs"] == repairs
+
+
+def test_receipt_preflight_dry_run_does_not_repair(tmp_path: Path, monkeypatch) -> None:
+    repairs: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": 7}})
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: repairs.append(topic))
+
+    result = cycle._receipt_preflight("urolithin_a", tmp_path / "run", dry_run=True)
+
+    assert result["passed"] is False
+    assert [probe["n_receipts"] for probe in result["probes"]] == [7]
+    assert repairs == []
+
+
+def test_fresh_cycle_repairs_sparse_receipt_preflight_before_submit(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "urolithin_a", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: {"status": "corpus_repaired", "n_quant_claims": 18})
+    receipt_counts = [7, cycle.DEFAULT_THRESHOLDS.min_receipts]
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        if dry_run:
+            _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": receipt_counts.pop(0)}})
+        else:
+            synthesized.append(topic)
+            _write_json(out_dir / "final_status.json", {"submission_ready": True})
+            (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-04",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert synthesized == ["urolithin_a"]
+    assert [probe["n_receipts"] for probe in ledger["attempts"][0]["receipt_preflight"]["probes"]] == [
+        7,
+        cycle.DEFAULT_THRESHOLDS.min_receipts,
+    ]
+    assert ledger["attempts"][0]["receipt_preflight"]["repairs"][0]["status"] == "corpus_repaired"
+
+
 def test_revise_lane_terminalizes_sparse_receipt_preflight(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hrv_autonomic_aging", target_journal=True)
     source = _prior_run(tmp_path, "hrv_autonomic_aging", receipts=12, tensions=2, primary=1, level=5)
