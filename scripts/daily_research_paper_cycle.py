@@ -66,6 +66,7 @@ WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 CORPUS_REPAIR_LIMIT = 1
+RECEIPT_PREFLIGHT_REPAIR_ROUNDS = 2
 SOURCE_TOPIC_REPAIR_FLOOR = 0.50
 REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
 DECISION_POLL_SECONDS = 900
@@ -1463,6 +1464,13 @@ def _corpus_repair_limit() -> int:
         return max(0, int(os.environ.get("RESEARCH_AGENT_CORPUS_REPAIR_LIMIT", str(CORPUS_REPAIR_LIMIT))))
     except ValueError:
         return CORPUS_REPAIR_LIMIT
+
+
+def _receipt_preflight_repair_rounds() -> int:
+    try:
+        return max(0, int(os.environ.get("RESEARCH_AGENT_RECEIPT_PREFLIGHT_REPAIR_ROUNDS", str(RECEIPT_PREFLIGHT_REPAIR_ROUNDS))))
+    except ValueError:
+        return RECEIPT_PREFLIGHT_REPAIR_ROUNDS
 
 
 def _seed_topic(topic: str, *, timeout: int | None = None, force_extract: bool = False) -> dict[str, Any]:
