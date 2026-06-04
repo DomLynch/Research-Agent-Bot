@@ -1375,7 +1375,12 @@ def _receipt_preflight(
             break
         if rc != 0 or round_idx >= rounds:
             break
-        corpus_repair = _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
+        corpus_repair = _repair_topic_corpus(
+            topic,
+            dry_run=False,
+            timeout=timeout,
+            seed_limit=_auto_seed_limit() * (round_idx + 2),
+        )
         repairs.append(corpus_repair)
         if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
             break
@@ -1499,9 +1504,15 @@ def _receipt_preflight_repair_rounds() -> int:
         return RECEIPT_PREFLIGHT_REPAIR_ROUNDS
 
 
-def _seed_topic(topic: str, *, timeout: int | None = None, force_extract: bool = False) -> dict[str, Any]:
+def _seed_topic(
+    topic: str,
+    *,
+    timeout: int | None = None,
+    force_extract: bool = False,
+    seed_limit: int | None = None,
+) -> dict[str, Any]:
     before = _quant_claim_count(topic)
-    seed_limit = _auto_seed_limit()
+    seed_limit = max(1, seed_limit or _auto_seed_limit())
     cmd = [
         sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic,
         "--limit", str(seed_limit), "--max-per-source", str(seed_limit),
@@ -1540,11 +1551,17 @@ def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = Non
     return _seed_topic(topic, timeout=timeout)
 
 
-def _repair_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+def _repair_topic_corpus(
+    topic: str,
+    *,
+    dry_run: bool,
+    timeout: int | None = None,
+    seed_limit: int | None = None,
+) -> dict[str, Any]:
     before = _quant_claim_count(topic)
     if dry_run:
         return {"status": "corpus_repair_dry_run", "n_quant_claims": before}
-    result = _seed_topic(topic, timeout=timeout, force_extract=True)
+    result = _seed_topic(topic, timeout=timeout, force_extract=True, seed_limit=seed_limit)
     return {
         **result,
         "status": "corpus_repaired" if result.get("status") in {"corpus_ready", "corpus_seeded"} else result.get("status"),
