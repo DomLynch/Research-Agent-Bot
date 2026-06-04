@@ -239,10 +239,13 @@ def test_feasibility_preflight_blocks_only_below_minimum_receipts() -> None:
         return next(row for row in rows if row["name"] == "feasibility_preflight")
 
     below_recommended = contract_for(16)
-    below_minimum = contract_for(9)
+    at_minimum = contract_for(12)
+    below_minimum = contract_for(11)
 
     assert below_recommended["status"] == "pass"
     assert below_recommended["blocks_submission"] is False
+    assert at_minimum["status"] == "pass"
+    assert at_minimum["blocks_submission"] is False
     assert below_minimum["status"] == "not_ready"
     assert below_minimum["blocks_submission"] is True
 

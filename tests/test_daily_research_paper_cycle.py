@@ -3132,7 +3132,7 @@ def test_cycle_skips_sparse_receipt_topic_before_synthesis(tmp_path: Path, monke
         "passed": False,
         "status": "receipt_preflight_insufficient",
         "n_receipts": 5,
-        "min_receipts": 10,
+        "min_receipts": 12,
     })
     synthesized: list[str] = []
 
@@ -3176,7 +3176,7 @@ def test_revise_lane_terminalizes_sparse_receipt_preflight(tmp_path: Path, monke
         "passed": False,
         "status": "receipt_preflight_insufficient",
         "n_receipts": 2,
-        "min_receipts": 10,
+        "min_receipts": 12,
     })
     monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("sparse receipt revise must not synthesize")))
     request = {
@@ -3217,9 +3217,9 @@ def test_fresh_lane_tries_next_after_sparse_receipt_preflight(tmp_path: Path, mo
                 "passed": False,
                 "status": "receipt_preflight_insufficient",
                 "n_receipts": 3,
-                "min_receipts": 10,
+                "min_receipts": 12,
             }
-        return {"passed": True, "status": "receipt_preflight_ok", "n_receipts": 18, "min_receipts": 10}
+        return {"passed": True, "status": "receipt_preflight_ok", "n_receipts": 18, "min_receipts": 12}
 
     synthesized: list[str] = []
 

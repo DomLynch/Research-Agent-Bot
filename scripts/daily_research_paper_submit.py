@@ -148,7 +148,7 @@ def _source_floor_status(run: Path) -> str:
         rows = manifest.get("receipts")
         receipts = len(rows) if isinstance(rows, list) else 0
     citations = len(registry) if isinstance(registry, dict) else 0
-    available = min(receipts, citations) if citations else receipts
+    available = min(receipts, citations)
     floor = DEFAULT_THRESHOLDS.min_receipts
     if available < floor:
         return f"preflight_insufficient_corpus:n_receipts={available} < threshold {floor}"

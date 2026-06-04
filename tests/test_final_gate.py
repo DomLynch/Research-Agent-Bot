@@ -35,7 +35,7 @@ def _green_inputs(**overrides) -> GateInputs:
 
 def test_default_thresholds_construct() -> None:
     assert DEFAULT_THRESHOLDS.min_numeric_coverage == 1.0
-    assert DEFAULT_THRESHOLDS.min_receipts == 10
+    assert DEFAULT_THRESHOLDS.min_receipts == 12
 
 
 @pytest.mark.parametrize("field,bad", [
@@ -154,7 +154,7 @@ def test_zero_tensions_fails() -> None:
 
 
 def test_thin_corpus_below_min_fails() -> None:
-    r = evaluate_final_gate(_green_inputs(n_receipts=3))
+    r = evaluate_final_gate(_green_inputs(n_receipts=11))
     assert not r.passed
     assert any("n_receipts" in f for f in r.failures)
 

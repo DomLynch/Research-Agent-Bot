@@ -414,7 +414,7 @@ def test_refresh_readiness_contract_repairs_feasibility_minimum(
     gate["journal_readiness_contract"].append({
         "id": 2, "name": "feasibility_preflight", "status": "partial",
         "advisory": False, "blocks_submission": True,
-        "audit": "receipts=16; recommended>=30; minimum>=10",
+        "audit": "receipts=16; recommended>=30; minimum>=12",
         "next_action": "stale",
     })
     (run / "pre_submit_gate.json").write_text(json.dumps(gate))

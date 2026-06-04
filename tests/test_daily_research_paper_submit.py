@@ -27,15 +27,33 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test") -> Path:
         "# Research Synthesis: Topic\n\n## Abstract\n\nFull abstract.\n\n## References\n\nR01.",
         encoding="utf-8",
     )
+    receipts = [
+        {
+            "receipt_id": f"topic_effect_{i}",
+            "outcome_class": "longevity",
+            "n_claims": 9,
+            "effect_direction": "mixed",
+            "directness": "direct",
+        }
+        for i in range(12)
+    ]
     _write_json(run / "manifest.json", {
         "topic": "topic",
         "n_receipts": 12,
         "n_high_confidence_claims_total": 34,
         "n_non_orthogonal_tensions": 5,
-        "receipts": [{"receipt_id": "topic_effect", "outcome_class": "longevity", "n_claims": 9, "effect_direction": "mixed", "directness": "direct"}],
+        "receipts": receipts,
     })
     _write_json(run / "citation_registry.json", {
-        "topic_effect": {"receipt_id": "topic_effect", "body_citation": "Smith 2026", "reference_id": "R01", "source_year": 2026, "source_doi": "10.1/x", "source_pmid": "123"}
+        row["receipt_id"]: {
+            "receipt_id": row["receipt_id"],
+            "body_citation": f"Smith {idx} 2026",
+            "reference_id": f"R{idx:02d}",
+            "source_year": 2026,
+            "source_doi": "10.1/x" if idx == 1 else f"10.1/{idx}",
+            "source_pmid": str(123 + idx),
+        }
+        for idx, row in enumerate(receipts, start=1)
     })
     _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 14, "n_total": 14})
     _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
@@ -61,7 +79,7 @@ def test_pre_submit_corpus_floor_returns_specific_blocker(tmp_path: Path) -> Non
         "result": {
             "passed": False,
             "failures": [
-                "n_receipts=3 < threshold 10",
+                "n_receipts=3 < threshold 12",
                 "n_tensions=0 < threshold 1",
             ],
         }
@@ -75,7 +93,52 @@ def test_pre_submit_corpus_floor_returns_specific_blocker(tmp_path: Path) -> Non
     assert selected is None
     assert considered[0]["status"] == (
         "preflight_insufficient_corpus:"
-        "n_receipts=3 < threshold 10; n_tensions=0 < threshold 1"
+        "n_receipts=3 < threshold 12; n_tensions=0 < threshold 1"
+    )
+
+
+def test_source_floor_blocks_stale_passing_gate_below_researka_minimum(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["n_receipts"] = 11
+    manifest["receipts"] = [
+        {"receipt_id": f"r{i}", "outcome_class": "longevity", "n_claims": 1}
+        for i in range(11)
+    ]
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        f"r{i}": {"receipt_id": f"r{i}", "body_citation": f"Smith {i}", "reference_id": f"R{i:02d}"}
+        for i in range(11)
+    })
+    _write_json(run / "pre_submit_gate.json", {"result": {"passed": True}})
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == (
+        "preflight_insufficient_corpus:n_receipts=11 < threshold 12"
+    )
+
+
+def test_source_floor_uses_actual_citation_bundle_not_manifest_only(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "citation_registry.json", {
+        f"r{i}": {"receipt_id": f"r{i}", "body_citation": f"Smith {i}", "reference_id": f"R{i:02d}"}
+        for i in range(11)
+    })
+    _write_json(run / "pre_submit_gate.json", {"result": {"passed": True}})
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == (
+        "preflight_insufficient_corpus:n_receipts=11 < threshold 12"
     )
 
 
