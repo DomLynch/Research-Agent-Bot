@@ -9,10 +9,17 @@ from pathlib import Path
 from typing import Any
 from urllib.request import Request
 
+import pytest
+
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import daily_research_paper_submit as daily  # type: ignore[import-not-found]  # noqa: E402
+
+
+@pytest.fixture(autouse=True)
+def _disable_live_pubmed_fetch(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("RESEARKA_SOURCE_ABSTRACT_LIMIT", "0")
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -202,6 +209,42 @@ def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, mo
 
     assert payload["source_bundle"][0]["evidence_type"] == "primary"
     assert payload["source_bundle"][0]["excerpt"] == "GDF11 changed a measured endpoint in the retained source."
+
+
+def test_source_bundle_prefers_pubmed_abstract_over_registry_summary(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["receipts"] = [{
+        "receipt_id": "r1",
+        "source_title": "Real source title",
+        "outcome_class": "longevity",
+        "n_claims": 9,
+        "effect_direction": "mixed",
+        "directness": "direct",
+    }]
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        "r1": {"receipt_id": "r1", "body_citation": "Smith 2026", "reference_id": "R01", "source_year": 2026, "source_pmid": "123"}
+    })
+    monkeypatch.setattr(daily, "_pubmed_abstracts", lambda pmids: {"123": "PubMed abstract with methods, outcomes, and directional findings."})
+
+    payload = daily.build_payload(run)
+
+    assert payload["source_bundle"][0]["title"] == "Real source title"
+    assert payload["source_bundle"][0]["excerpt"] == "PubMed abstract with methods, outcomes, and directional findings."
+    assert "registered as" not in payload["source_bundle"][0]["excerpt"]
+
+
+def test_source_bundle_structured_fallback_is_audit_specific(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(daily, "_pubmed_abstracts", lambda pmids: {})
+    run = _run(tmp_path)
+
+    payload = daily.build_payload(run)
+
+    excerpt = payload["source_bundle"][0]["excerpt"]
+    assert "Source-bundle audit" in excerpt
+    assert "effect_direction=" in excerpt
+    assert "registered as" not in excerpt
 
 
 def test_source_bundle_keeps_review_type_for_review_receipts(tmp_path: Path) -> None:
