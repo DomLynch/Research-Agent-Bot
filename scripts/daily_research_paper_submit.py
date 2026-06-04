@@ -721,6 +721,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "author_signature": _sha256(run / "full_paper.md"),
         "metadata": metadata,
     }
+    _repair_null_coding_payload(payload, manifest)
     metadata["submission_payload_hash"] = _payload_fingerprint(payload)
     return payload
 

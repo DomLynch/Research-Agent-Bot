@@ -247,7 +247,7 @@ def test_source_bundle_structured_fallback_is_audit_specific(tmp_path: Path, mon
     assert "registered as" not in excerpt
 
 
-def test_high_null_no_direct_abstract_bundle_blocks_submit(tmp_path: Path, monkeypatch) -> None:
+def test_high_null_no_direct_abstract_bundle_is_repaired_before_submit(tmp_path: Path, monkeypatch) -> None:
     run = _run(tmp_path)
     (run / "full_paper.md").write_text(
         "# Research Synthesis: Topic\n\n"
@@ -280,17 +280,29 @@ def test_high_null_no_direct_abstract_bundle_blocks_submit(tmp_path: Path, monke
         "_pubmed_abstracts",
         lambda pmids: {pmid: f"BACKGROUND: Source {pmid} reports extractable outcome direction." for pmid in pmids},
     )
+    submitted: list[dict[str, Any]] = []
+
+    def submitter(payload: dict[str, Any]) -> dict[str, Any]:
+        submitted.append(payload)
+        return {"ok": True, "status": 201, "response": {}}
 
     ledger = daily.run_cycle(
         runs_root=tmp_path,
         date="2026-06-04",
         submit=True,
-        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("mismatched null coding must not submit")),
+        submitter=submitter,
         remote_loader=lambda: (set(), None),
     )
 
-    assert ledger["status"] == "no_eligible_research_paper"
-    assert ledger["considered"][0]["status"] == "null_coding_requires_reconciliation:15/16_null_no_direct"
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["considered"][0]["status"] == "submitted_to_researka"
+    assert daily._null_coding_audit_status(submitted[0], manifest) == "eligible"
+    assert "15/16 retained sources are coded as null" not in submitted[0]["body_markdown"]
+    assert submitted[0]["metadata"]["pre_submit_repairs"] == [{
+        "repair": "source_bundle_reconciliation_note",
+        "status": "null_coding_requires_reconciliation:15/16_null_no_direct",
+    }]
+    assert "Source-Bundle Reconciliation" in submitted[0]["sections"]
 
 
 def test_lower_null_ratio_abstract_bundle_still_eligible(tmp_path: Path, monkeypatch) -> None:
