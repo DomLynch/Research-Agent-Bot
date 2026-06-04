@@ -247,6 +247,85 @@ def test_source_bundle_structured_fallback_is_audit_specific(tmp_path: Path, mon
     assert "registered as" not in excerpt
 
 
+def test_high_null_no_direct_abstract_bundle_blocks_submit(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\nEvidence-honesty note: 15/16 retained sources are coded as null or no extracted directional signal. "
+        "The retained evidence has no direct interventional hard-endpoint evidence.\n\n",
+        encoding="utf-8",
+    )
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["n_receipts"] = 16
+    manifest["receipts"] = [
+        {
+            "receipt_id": f"topic_r{i}",
+            "paper_id": f"topic_r{i}",
+            "source_pmid": str(1000 + i),
+            "source_title": f"Topic source {i}",
+            "effect_direction": "null",
+            "directness": "indirect",
+            "outcome_class": "context",
+            "n_claims": 3,
+        }
+        for i in range(16)
+    ]
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "reference_id": f"R{i:02d}"}
+        for i in range(16)
+    })
+    monkeypatch.setattr(
+        daily,
+        "_pubmed_abstracts",
+        lambda pmids: {pmid: f"BACKGROUND: Source {pmid} reports extractable outcome direction." for pmid in pmids},
+    )
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-04",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("mismatched null coding must not submit")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "null_coding_requires_reconciliation:15/16_null_no_direct"
+
+
+def test_lower_null_ratio_abstract_bundle_still_eligible(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\nEvidence-honesty note: 15/27 retained sources are coded as null or no extracted directional signal.\n\n",
+        encoding="utf-8",
+    )
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["n_receipts"] = 27
+    manifest["receipts"] = [
+        {"receipt_id": f"topic_r{i}", "paper_id": f"topic_r{i}", "source_pmid": str(1000 + i), "effect_direction": "null", "directness": "indirect"}
+        for i in range(27)
+    ]
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "reference_id": f"R{i:02d}"}
+        for i in range(27)
+    })
+    monkeypatch.setattr(
+        daily,
+        "_pubmed_abstracts",
+        lambda pmids: {pmid: f"BACKGROUND: Source {pmid} reports extractable outcome direction." for pmid in pmids},
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected == run
+    assert considered[0]["status"] == "eligible"
+
+
 def test_source_bundle_keeps_review_type_for_review_receipts(tmp_path: Path) -> None:
     run = _run(tmp_path)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))

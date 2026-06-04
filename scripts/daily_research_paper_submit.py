@@ -44,6 +44,7 @@ TOKEN_ENVS = (
 )
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.35
+NULL_CODING_AUDIT_FLOOR = 0.90
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 
@@ -188,6 +189,33 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
     if ratio < SOURCE_TOPIC_PRECISION_FLOOR:
         return False, f"source_topic_precision_low:{hits}/{len(rows)}<{SOURCE_TOPIC_PRECISION_FLOOR:.2f}"
     return True, f"source_topic_precision_ok:{hits}/{len(rows)}"
+
+
+def _null_coding_audit_status(payload: dict[str, Any], manifest: dict[str, Any]) -> str:
+    paper = str(payload.get("body_markdown") or "")
+    match = re.search(
+        r"(\d+)\s*/\s*(\d+)\s+retained sources[^.]{0,120}"
+        r"(?:null|no extracted directional signal)",
+        paper,
+        re.I,
+    )
+    if not match:
+        return "eligible"
+    null_n, total_n = int(match.group(1)), max(1, int(match.group(2)))
+    if null_n / total_n < NULL_CODING_AUDIT_FLOOR:
+        return "eligible"
+    receipts = [row for row in manifest.get("receipts", []) if isinstance(row, dict)]
+    direct = sum(str(row.get("directness") or "").lower() == "direct" for row in receipts)
+    if direct:
+        return "eligible"
+    bundle = [row for row in payload.get("source_bundle", []) if isinstance(row, dict)]
+    abstract_like = sum(
+        any(token in str(row.get("excerpt") or "")[:220].lower() for token in ("background:", "objective:", "methods:", "study design:"))
+        for row in bundle
+    )
+    if bundle and abstract_like / len(bundle) >= 0.5:
+        return f"null_coding_requires_reconciliation:{null_n}/{total_n}_null_no_direct"
+    return "eligible"
 
 
 def _refresh_stale_accountability_sidecar(run: Path) -> bool:
@@ -339,7 +367,12 @@ def select_candidate(
         revision = bool(_read_json(run / "researka_revision_request.json"))
         locally_eligible, status = _eligible(run)
         ok = locally_eligible
-        fp = _payload_fingerprint(build_payload(run)) if locally_eligible else paper_sha
+        payload = build_payload(run) if locally_eligible else {}
+        if locally_eligible:
+            null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
+            if null_status != "eligible":
+                ok, status = False, null_status
+        fp = _payload_fingerprint(payload) if locally_eligible else paper_sha
         if topic in seen_topics:
             ok, status = False, "superseded_topic_run"
         elif ok and fp in rejected_seen:
