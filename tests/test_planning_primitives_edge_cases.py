@@ -239,7 +239,7 @@ def test_final_gate_at_threshold_boundaries() -> None:
         numeric_coverage=1.0, audit_gates_passed=True,
         journal_surface_passed=True, citation_registry_complete=True,
         rob_coverage=0.8, grade_coverage=1.0,
-        n_tensions=1, n_receipts=10, unresolved_reviewer_p1_count=0,
+        n_tensions=1, n_receipts=12, unresolved_reviewer_p1_count=0,
         template_language_blocking=False,
     )
     assert evaluate_final_gate(pass_inputs).passed
@@ -247,7 +247,7 @@ def test_final_gate_at_threshold_boundaries() -> None:
         numeric_coverage=1.0, audit_gates_passed=True,
         journal_surface_passed=True, citation_registry_complete=True,
         rob_coverage=0.7999999999, grade_coverage=1.0,
-        n_tensions=1, n_receipts=10, unresolved_reviewer_p1_count=0,
+        n_tensions=1, n_receipts=12, unresolved_reviewer_p1_count=0,
         template_language_blocking=False,
     )
     assert not evaluate_final_gate(fail_inputs).passed
