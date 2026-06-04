@@ -705,6 +705,30 @@ def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Pa
     ]
 
 
+def test_evidence_honesty_guard_preserves_count_and_reconciles_source_bundle(tmp_path: Path) -> None:
+    paper = "## Abstract\n\nInitial synthesis.\n\n## Conclusion\n\nInitial conclusion.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"effect_direction": "null", "directness": "indirect"}
+            for _ in range(15)
+        ] + [{"effect_direction": "positive", "directness": "indirect"}],
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_evidence_honesty_guard(paper, tmp_path)
+
+    assert "15/16 retained sources are coded as null or no extracted directional signal" in fixed
+    assert "Source-bundle reconciliation note:" in fixed
+    assert "not a statement that the source texts contain no directional findings" in fixed
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_evidence_honesty_guard",
+            rule="bound_null_signal_and_directness_claims",
+            n_changes=2,
+            detail="added evidence-honesty note to 2 section(s); replaced unsupported conclusion claims=0; null_or_no_signal=15/16; direct=0/16",
+        )
+    ]
+
+
 def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> None:
     from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
 
