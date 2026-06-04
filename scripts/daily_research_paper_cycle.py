@@ -310,16 +310,26 @@ def _recent_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
     return out
 
 
-def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+def _recent_blocked_topics_by_status(
+    ledger_dir: Path, statuses: set[str] | frozenset[str], *, now: dt.datetime | None = None,
+) -> set[str]:
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
     out: set[str] = set()
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
-        if topic and code in _PREFLIGHT_BLOCK_STATUSES and isinstance(stamps, list):
+        if topic and code in statuses and isinstance(stamps, list):
             if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
                 out.add(topic)
     return out
+
+
+def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    return _recent_blocked_topics_by_status(ledger_dir, _PREFLIGHT_BLOCK_STATUSES, now=now)
+
+
+def _recent_receipt_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    return _recent_blocked_topics_by_status(ledger_dir, {"receipt_preflight_insufficient"}, now=now)
 
 
 def _writer_gate_repeat_policy(
@@ -1697,6 +1707,7 @@ def run_cycle(
         preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
         if preflight_blocked:
             ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
+        receipt_preflight_blocked = set() if topic else _recent_receipt_preflight_blocked_topics(ledger_dir)
         writer_gate_policy: dict[str, dict[str, Any]] = {} if topic else _writer_gate_repeat_policy(ledger_dir)
         writer_gate_skip = {
             t for t, p in writer_gate_policy.items()
@@ -1729,9 +1740,10 @@ def run_cycle(
                     repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
                 repairs.append({"topic": repair_topic, **repair})
                 if int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS:
-                    preflight_blocked.discard(repair_topic)
-                    surface_repeat.discard(repair_topic)
-                    corpus_repaired_ok.add(repair_topic)
+                    if repair_topic not in receipt_preflight_blocked:
+                        preflight_blocked.discard(repair_topic)
+                        surface_repeat.discard(repair_topic)
+                        corpus_repaired_ok.add(repair_topic)
                 if repair.get("status") == "source_precision_repaired":
                     source_precision_repaired_ok.add(repair_topic)
             source_precision_auto_excluded |= current_source_precision - source_precision_repaired_ok
