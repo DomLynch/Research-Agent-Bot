@@ -15,6 +15,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
+import xml.etree.ElementTree as ET
 from collections.abc import Callable
 from pathlib import Path
 from typing import Any
@@ -468,6 +469,65 @@ def _claim_excerpt(topic: str, receipt_id: str, *, limit: int = 2) -> str:
     return " ".join(sentences)[:900]
 
 
+def _parsed_source_excerpt(topic: str, receipt_id: str) -> str:
+    data = _read_json(ROOT / "docs" / "quality-reference" / topic / "parsed" / f"{receipt_id}.paper_sections.json")
+    raw_sections = data.get("sections")
+    sections: dict[str, Any] = raw_sections if isinstance(raw_sections, dict) else {}
+    for name in ("abstract", "results", "conclusion", "discussion"):
+        text = " ".join(str(sections.get(name) or "").split())
+        if text:
+            return _clip_text(text, limit=1200)
+    return ""
+
+
+def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
+    unique = list(dict.fromkeys(p for p in pmids if p.isdigit()))
+    limit = int(os.getenv("RESEARKA_SOURCE_ABSTRACT_LIMIT", "120") or "0")
+    if not unique or limit <= 0:
+        return {}
+    url = (
+        "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+        f"?db=pubmed&id={','.join(unique[:limit])}&retmode=xml"
+    )
+    try:
+        with urllib.request.urlopen(url, timeout=20) as response:
+            root = ET.fromstring(response.read())
+    except Exception:
+        return {}
+    out: dict[str, str] = {}
+    for article in root.findall(".//PubmedArticle"):
+        pmid = "".join(article.findtext(".//PMID") or "").strip()
+        parts: list[str] = []
+        for node in article.findall(".//Abstract/AbstractText"):
+            text = " ".join(node.itertext()).strip()
+            if not text:
+                continue
+            label = str(node.attrib.get("Label") or "").strip()
+            parts.append(f"{label}: {text}" if label else text)
+        if pmid and parts:
+            out[pmid] = _clip_text(" ".join(parts), limit=1200)
+    return out
+
+
+def _structured_source_excerpt(topic: str, row: dict[str, Any], receipt: dict[str, Any], title: str) -> str:
+    ids = ", ".join(
+        part for part in (
+            f"DOI {row.get('source_doi')}" if row.get("source_doi") else "",
+            f"PMID {row.get('source_pmid')}" if row.get("source_pmid") else "",
+            f"reference {row.get('reference_id')}" if row.get("reference_id") else "",
+        )
+        if part
+    )
+    return _clip_text(
+        f"{title}. Source-bundle audit for {_display_topic(topic)}: "
+        f"outcome={receipt.get('outcome_class') or 'unspecified'}; "
+        f"effect_direction={receipt.get('effect_direction') or 'unclear'}; "
+        f"directness={receipt.get('directness') or 'unspecified'}; "
+        f"evidence_tier={receipt.get('evidence_tier') or 'unspecified'}; "
+        f"extracted_claims={receipt.get('n_claims') or 0}. {ids}."
+    )
+
+
 def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     manifest = _read_json(run / "manifest.json")
     registry = _read_json(run / "citation_registry.json")
@@ -486,17 +546,24 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         ),
         reverse=True,
     )
+    pubmed_abstracts = _pubmed_abstracts([str(row.get("source_pmid") or "") for row in rows[:limit]])
     bundle = []
     for row in rows[:limit]:
         receipt = receipts.get(str(row.get("receipt_id")), {})
-        title = str(row.get("title") or row.get("body_citation") or row.get("receipt_id") or "Evidence receipt")[:300]
+        title = str(
+            row.get("title")
+            or receipt.get("source_title")
+            or row.get("body_citation")
+            or row.get("receipt_id")
+            or "Evidence receipt"
+        )[:300]
         claim_excerpt = _claim_excerpt(topic, str(row.get("receipt_id") or ""))
-        excerpt = claim_excerpt or (
-            f"{row.get('body_citation') or title} is registered as {row.get('reference_id') or 'a source'} "
-            f"for outcome {receipt.get('outcome_class') or 'unspecified'} with "
-            f"{receipt.get('n_claims') or 0} extracted claim(s), "
-            f"{receipt.get('effect_direction') or 'unclear'} direction, and "
-            f"{receipt.get('directness') or 'unspecified'} directness."
+        pmid = str(row.get("source_pmid") or "")
+        excerpt = (
+            pubmed_abstracts.get(pmid)
+            or claim_excerpt
+            or _parsed_source_excerpt(topic, str(row.get("receipt_id") or ""))
+            or _structured_source_excerpt(topic, row, receipt, title)
         )
         bundle.append({
             "source_type": "pubmed" if row.get("source_pmid") else "corpus",
