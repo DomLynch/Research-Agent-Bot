@@ -3158,7 +3158,7 @@ def test_cycle_skips_sparse_receipt_topic_before_synthesis(tmp_path: Path, monke
 
 
 def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monkeypatch) -> None:
-    counts = [7, cycle.DEFAULT_THRESHOLDS.min_receipts]
+    counts = [7, 9, cycle.DEFAULT_THRESHOLDS.min_receipts]
     repairs: list[dict[str, Any]] = []
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, **_kwargs: Any) -> int:
@@ -3170,8 +3170,20 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
         _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": n_receipts}})
         return 0
 
-    def fake_repair(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
-        repair = {"topic": topic, "dry_run": dry_run, "timeout": timeout, "status": "corpus_repaired"}
+    def fake_repair(
+        topic: str,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        seed_limit: int | None = None,
+    ) -> dict[str, Any]:
+        repair = {
+            "topic": topic,
+            "dry_run": dry_run,
+            "timeout": timeout,
+            "seed_limit": seed_limit,
+            "status": "corpus_repaired",
+        }
         repairs.append(repair)
         return repair
 
@@ -3182,8 +3194,11 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
 
     assert result["passed"] is True
     assert result["n_receipts"] == cycle.DEFAULT_THRESHOLDS.min_receipts
-    assert [probe["n_receipts"] for probe in result["probes"]] == [7, cycle.DEFAULT_THRESHOLDS.min_receipts]
-    assert repairs == [{"topic": "urolithin_a", "dry_run": False, "timeout": 99, "status": "corpus_repaired"}]
+    assert [probe["n_receipts"] for probe in result["probes"]] == [7, 9, cycle.DEFAULT_THRESHOLDS.min_receipts]
+    assert repairs == [
+        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.AUTO_SEED_LIMIT * 2, "status": "corpus_repaired"},
+        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.AUTO_SEED_LIMIT * 3, "status": "corpus_repaired"},
+    ]
     assert result["repairs"] == repairs
 
 
