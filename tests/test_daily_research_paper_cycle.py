@@ -3348,6 +3348,58 @@ def test_cycle_repairs_preflight_blocked_topic_then_retries_once(tmp_path: Path,
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_does_not_retry_receipt_preflight_topic_after_quant_repair(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_sparse_receipts", target_journal=True)
+    _topic(tmp_path, "zzz_solid_topic", target_journal=True)
+    _prior_run(tmp_path, "aaa_sparse_receipts", receipts=5, tensions=2, primary=1)
+    _prior_run(tmp_path, "zzz_solid_topic", receipts=18, tensions=2, primary=5)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-06-04",
+        [{"topic": "aaa_sparse_receipts", "gate_status": "receipt_preflight_insufficient", "submitted": 0}],
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True, "n_receipts": 18, "min_receipts": 12})
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: {
+        "status": "corpus_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    })
+    synthesized: list[str] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-04",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["corpus_repairs"][0]["topic"] == "aaa_sparse_receipts"
+    assert ledger["topic_status"]["aaa_sparse_receipts"] == "preflight_blocked"
+    assert synthesized == ["zzz_solid_topic"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_records_backlog_and_repairs_selected_low_source_precision(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_low_source", target_journal=True)
     _topic(tmp_path, "bbb_low_source", target_journal=True)
