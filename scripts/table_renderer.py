@@ -781,7 +781,7 @@ def _public_value(value: Any, default: str = "—") -> str:
 
 def _included_study_fill_rate(receipts: list) -> float:
     fields = (
-        "receipt_id", "evidence_tier", "directness", "population_summary",
+        "receipt_id", "evidence_tier", "directness",
         "outcome_class", "effect_direction",
     )
     total = len(receipts) * len(fields)
@@ -914,15 +914,11 @@ def render_public_evidence_snapshot(
     else:
         lines.extend(["### Load-Bearing Included Studies", ""])
         for r in ranked:
-            n_str, pop_label = _split_population_n(getattr(r, "population_summary", None) or "—")
             p_value = _representative_p_value(r)
             bits = [
                 _inline_cell(getattr(r, "receipt_id", "—")),
-                _design_from_tier(getattr(r, "evidence_tier", "")),
                 f"tier={_inline_cell(getattr(r, 'evidence_tier', '—'))}",
                 f"directness={_inline_cell(getattr(r, 'directness', '—'))}",
-                f"N={_inline_cell(n_str)}",
-                f"population={_inline_cell(pop_label)}",
                 f"endpoint={_public_label(getattr(r, 'outcome_class', '—'))}",
                 f"direction={_public_label(getattr(r, 'effect_direction', '—'))}",
             ]

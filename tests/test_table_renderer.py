@@ -6,6 +6,7 @@ from __future__ import annotations
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any, cast
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import table_renderer as tr  # type: ignore[import-not-found]  # noqa: E402
@@ -546,6 +547,12 @@ def test_public_evidence_snapshot_is_compact_and_not_pipe_table() -> None:
     md = tr.render_public_evidence_snapshot(receipts, max_studies=1)
     assert "## Evidence Snapshot" in md
     assert "Depommier 2019" in md
+    assert "tier=A1" in md
+    assert "directness=direct" in md
+    assert "endpoint=longevity" in md
+    assert "direction=positive" in md
+    assert "N=" not in md
+    assert "population=" not in md
     included = md.split("### Load-Bearing Included Studies", 1)[1].split(
         "### Source Classification Map", 1
     )[0]
@@ -721,7 +728,7 @@ def test_replace_paper_ids_uses_registry_when_provided() -> None:
         "showed effects.\n"
     )
     out = orch._replace_paper_ids_with_author_year(
-        paper, receipts, registry=registry,
+        paper, cast(Any, receipts), registry=registry,
     )
     # Body prose should now contain the registry's body_citation
     # (PMC12978362 2026), NOT the raw long handle.
@@ -747,7 +754,7 @@ def test_replace_paper_ids_falls_back_when_no_registry() -> None:
     paper = "Walton_2019_MASTERS_metformin showed muscle blunting."
     # No registry → falls back to _author_year_for_receipt → "Walton 2019"
     out = orch._replace_paper_ids_with_author_year(
-        paper, [_Receipt()], registry=None,
+        paper, cast(Any, [_Receipt()]), registry=None,
     )
     assert "Walton 2019" in out
 
