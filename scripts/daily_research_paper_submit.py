@@ -45,13 +45,6 @@ TOKEN_ENVS = (
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.35
 NULL_CODING_AUDIT_FLOOR = 0.90
-NULL_CODING_RECONCILIATION_NOTE = (
-    "Source-bundle reconciliation note: Directional coding is conservative claim-level coding from extracted "
-    "claim records, not a statement that the source texts contain no directional findings. The submitted source "
-    "bundle includes abstract/results-level context for reviewer verification; source-level positive, negative, "
-    "or unclear findings should be interpreted through the coded outcome class, directness, and claim-count "
-    "fields rather than as clinical support."
-)
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 
@@ -211,7 +204,8 @@ def _null_coding_claim(paper: str) -> tuple[int, int] | None:
 
 
 def _null_coding_audit_status(payload: dict[str, Any], manifest: dict[str, Any]) -> str:
-    claim = _null_coding_claim(str(payload.get("body_markdown") or ""))
+    paper = str(payload.get("body_markdown") or "")
+    claim = _null_coding_claim(paper)
     if not claim:
         return "eligible"
     null_n, total_n = claim
@@ -226,46 +220,11 @@ def _null_coding_audit_status(payload: dict[str, Any], manifest: dict[str, Any])
         any(token in str(row.get("excerpt") or "")[:220].lower() for token in ("background:", "objective:", "methods:", "study design:"))
         for row in bundle
     )
+    if abstract_like and "source-bundle reconciliation note:" in paper.lower():
+        return "eligible"
     if bundle and abstract_like / len(bundle) >= 0.5:
         return f"null_coding_requires_reconciliation:{null_n}/{total_n}_null_no_direct"
     return "eligible"
-
-
-def _repair_null_coding_text(text: str) -> str:
-    if not _null_coding_claim(text):
-        return text
-    pattern = re.compile(
-        r"Evidence-honesty note:\s*\d+\s*/\s*\d+\s+retained sources[^.\n]{0,180}"
-        r"(?:null|no extracted directional signal)[^\n]*(?:\n|$)",
-        re.I,
-    )
-    if pattern.search(text):
-        return pattern.sub(NULL_CODING_RECONCILIATION_NOTE + "\n", text, count=1)
-    return NULL_CODING_RECONCILIATION_NOTE + " " + text
-
-
-def _repair_null_coding_payload(payload: dict[str, Any], manifest: dict[str, Any]) -> None:
-    status = _null_coding_audit_status(payload, manifest)
-    if status == "eligible":
-        return
-    payload["body_markdown"] = _repair_null_coding_text(str(payload.get("body_markdown") or ""))
-    payload["abstract"] = _repair_null_coding_text(str(payload.get("abstract") or ""))
-    sections = payload.get("sections")
-    if isinstance(sections, dict):
-        for key in ("Evidence Landscape", "Limitations", "Research Question"):
-            if key in sections:
-                sections[key] = _repair_null_coding_text(str(sections.get(key) or ""))
-        sections["Source-Bundle Reconciliation"] = NULL_CODING_RECONCILIATION_NOTE
-    raw_metadata = payload.get("metadata")
-    metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
-    repairs = metadata.setdefault("pre_submit_repairs", [])
-    if isinstance(repairs, list):
-        repairs.append({"status": status, "repair": "source_bundle_reconciliation_note"})
-    if _null_coding_audit_status(payload, manifest) != "eligible":
-        payload["metadata"] = metadata
-        return
-    payload["core_claims_resolved"] = True
-    payload["metadata"] = metadata
 
 
 def _refresh_stale_accountability_sidecar(run: Path) -> bool:
@@ -721,7 +680,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "author_signature": _sha256(run / "full_paper.md"),
         "metadata": metadata,
     }
-    _repair_null_coding_payload(payload, manifest)
     metadata["submission_payload_hash"] = _payload_fingerprint(payload)
     return payload
 

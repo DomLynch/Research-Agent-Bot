@@ -651,6 +651,14 @@ _DIRECTIONAL_CODING_NOTE = (
     "source proportion, such as X/Y sources, to avoid ambiguity."
     )
 
+_SOURCE_BUNDLE_RECONCILIATION_SENTENCE = (
+    "Source-bundle reconciliation note: Directional coding is conservative "
+    "claim-level coding from extracted claim records, not a statement that the "
+    "source texts contain no directional findings; source-level positive, "
+    "negative, or unclear findings should be interpreted through the coded "
+    "outcome class, directness, and claim-count fields."
+)
+
 
 def _phase_d_prisma_all_included_rationale(
     text: str, out_dir: Path,
@@ -880,7 +888,8 @@ def _phase_d_evidence_honesty_guard(
     if nullish / total >= 0.5:
         pieces.append(
             f"{nullish}/{total} retained sources are coded as null or no extracted directional signal; "
-            "this corpus is non-supportive for clinical efficacy claims and hypothesis-generating only."
+            "this corpus is non-supportive for clinical efficacy claims and hypothesis-generating only. "
+            + _SOURCE_BUNDLE_RECONCILIATION_SENTENCE
         )
     if direct == 0:
         pieces.append(

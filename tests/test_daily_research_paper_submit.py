@@ -247,7 +247,7 @@ def test_source_bundle_structured_fallback_is_audit_specific(tmp_path: Path, mon
     assert "registered as" not in excerpt
 
 
-def test_high_null_no_direct_abstract_bundle_is_repaired_before_submit(tmp_path: Path, monkeypatch) -> None:
+def test_high_null_no_direct_abstract_bundle_blocks_without_generation_reconciliation(tmp_path: Path, monkeypatch) -> None:
     run = _run(tmp_path)
     (run / "full_paper.md").write_text(
         "# Research Synthesis: Topic\n\n"
@@ -280,6 +280,46 @@ def test_high_null_no_direct_abstract_bundle_is_repaired_before_submit(tmp_path:
         "_pubmed_abstracts",
         lambda pmids: {pmid: f"BACKGROUND: Source {pmid} reports extractable outcome direction." for pmid in pmids},
     )
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-04",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("unreconciled paper must not submit")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "null_coding_requires_reconciliation:15/16_null_no_direct"
+
+
+def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    note = (
+        "Evidence-honesty note: 15/16 retained sources are coded as null or no extracted directional signal; "
+        "this corpus is non-supportive for clinical efficacy claims and hypothesis-generating only. "
+        "Source-bundle reconciliation note: Directional coding is conservative claim-level coding from extracted claim records, "
+        "not a statement that the source texts contain no directional findings.\n\n"
+    )
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n## Abstract\n\n" + note + "## Conclusion\n\n" + note,
+        encoding="utf-8",
+    )
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["n_receipts"] = 16
+    manifest["receipts"] = [
+        {"receipt_id": f"topic_r{i}", "paper_id": f"topic_r{i}", "source_pmid": str(1000 + i), "effect_direction": "null", "directness": "indirect"}
+        for i in range(16)
+    ]
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "reference_id": f"R{i:02d}"}
+        for i in range(16)
+    })
+    monkeypatch.setattr(
+        daily,
+        "_pubmed_abstracts",
+        lambda pmids: {pmid: f"BACKGROUND: Source {pmid} reports extractable outcome direction." for pmid in pmids},
+    )
     submitted: list[dict[str, Any]] = []
 
     def submitter(payload: dict[str, Any]) -> dict[str, Any]:
@@ -295,14 +335,11 @@ def test_high_null_no_direct_abstract_bundle_is_repaired_before_submit(tmp_path:
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert ledger["considered"][0]["status"] == "submitted_to_researka"
     assert daily._null_coding_audit_status(submitted[0], manifest) == "eligible"
-    assert "15/16 retained sources are coded as null" not in submitted[0]["body_markdown"]
-    assert submitted[0]["metadata"]["pre_submit_repairs"] == [{
-        "repair": "source_bundle_reconciliation_note",
-        "status": "null_coding_requires_reconciliation:15/16_null_no_direct",
-    }]
-    assert "Source-Bundle Reconciliation" in submitted[0]["sections"]
+    assert submitted[0]["body_markdown"] == (run / "full_paper.md").read_text(encoding="utf-8").strip()
+    assert submitted[0]["author_signature"] == daily._sha256(run / "full_paper.md")
+    assert submitted[0]["metadata"]["content_hash"] == daily._sha256(run / "full_paper.md")
+    assert "pre_submit_repairs" not in submitted[0]["metadata"]
 
 
 def test_lower_null_ratio_abstract_bundle_still_eligible(tmp_path: Path, monkeypatch) -> None:
