@@ -7,9 +7,14 @@ __all__ = [
     "GateThresholds",
     "GateInputs",
     "GateResult",
+    "RESEARKA_MIN_SOURCE_CITATIONS",
+    "RECOMMENDED_SOURCE_CITATIONS",
     "DEFAULT_THRESHOLDS",
     "evaluate_final_gate",
 ]
+
+RESEARKA_MIN_SOURCE_CITATIONS = 12
+RECOMMENDED_SOURCE_CITATIONS = 30
 
 
 @dataclass(frozen=True, slots=True)
@@ -25,7 +30,7 @@ class GateThresholds:
       min_rob_coverage                  >=80% of receipts have source-text RoB.
       min_grade_coverage                every outcome class has GRADE (1.0).
       min_tensions                      >=1 tension surfaced.
-      min_receipts                      >=10 receipts.
+      min_receipts                      >=12 receipts.
       template_language_must_pass       template-language gate clean.
 
     P2 thresholds (warning if violated, not blocking):
@@ -37,9 +42,9 @@ class GateThresholds:
     min_rob_coverage: float = 0.8
     min_grade_coverage: float = 1.0
     min_tensions: int = 1
-    min_receipts: int = 10
+    min_receipts: int = RESEARKA_MIN_SOURCE_CITATIONS
     template_language_must_pass: bool = True
-    warn_below_receipts: int = 30
+    warn_below_receipts: int = RECOMMENDED_SOURCE_CITATIONS
 
     def __post_init__(self) -> None:
         for name in ("min_numeric_coverage", "min_rob_coverage", "min_grade_coverage"):

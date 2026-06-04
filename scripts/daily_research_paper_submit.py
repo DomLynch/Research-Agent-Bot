@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT))
 from source_topic_specificity import (  # noqa: E402
     is_source_topic_specific, source_gate_aliases, topic_aliases, topic_tokens,
 )
+from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
@@ -139,6 +140,21 @@ def _pre_submit_status(data: dict[str, Any]) -> str:
     return "pre_submit_not_passed"
 
 
+def _source_floor_status(run: Path) -> str:
+    manifest = _read_json(run / "manifest.json")
+    registry = _read_json(run / "citation_registry.json")
+    receipts = int(manifest.get("n_receipts") or 0)
+    if not receipts:
+        rows = manifest.get("receipts")
+        receipts = len(rows) if isinstance(rows, list) else 0
+    citations = len(registry) if isinstance(registry, dict) else 0
+    available = min(receipts, citations) if citations else receipts
+    floor = DEFAULT_THRESHOLDS.min_receipts
+    if available < floor:
+        return f"preflight_insufficient_corpus:n_receipts={available} < threshold {floor}"
+    return "eligible"
+
+
 def _final_status_ready(data: dict[str, Any]) -> bool:
     return bool(data.get("submission_ready") is True)
 
@@ -246,6 +262,9 @@ def _eligible(run: Path) -> tuple[bool, str]:
     pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
     if pre_submit_status != "eligible":
         return False, pre_submit_status
+    source_floor_status = _source_floor_status(run)
+    if source_floor_status != "eligible":
+        return False, source_floor_status
     final_status = _read_json(run / "final_status.json")
     if final_status and not _final_status_ready(final_status):
         return False, "final_status_not_ready"

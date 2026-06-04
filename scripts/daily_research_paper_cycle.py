@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
+from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
@@ -1343,12 +1344,13 @@ def _receipt_preflight(topic: str, out_dir: Path, *, timeout: int | None = None)
         shutil.rmtree(probe_dir, ignore_errors=True)
     counts = report.get("counts") if isinstance(report, dict) else {}
     n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+    min_receipts = DEFAULT_THRESHOLDS.min_receipts
     return {
-        "passed": rc == 0 and n_receipts >= 10,
-        "status": "receipt_preflight_ok" if rc == 0 and n_receipts >= 10 else "receipt_preflight_insufficient",
+        "passed": rc == 0 and n_receipts >= min_receipts,
+        "status": "receipt_preflight_ok" if rc == 0 and n_receipts >= min_receipts else "receipt_preflight_insufficient",
         "return_code": rc,
         "n_receipts": n_receipts,
-        "min_receipts": 10,
+        "min_receipts": min_receipts,
     }
 
 

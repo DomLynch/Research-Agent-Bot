@@ -18,7 +18,12 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from agent.final_gate import GateResult, evaluate_final_gate
+from agent.final_gate import (
+    DEFAULT_THRESHOLDS,
+    GateResult,
+    RECOMMENDED_SOURCE_CITATIONS,
+    evaluate_final_gate,
+)
 from agent.final_gate_mapper import build_gate_inputs
 from agent.forest_plot_svg import render_forest_plot_svg
 from agent.meta_analysis import EffectRow, pool_random_effects
@@ -571,8 +576,11 @@ def build_journal_readiness_contract(
             f"submission_ready={submission_ready}"
         ), "Resolve non-pass readiness items before submission."),
         _readiness_item(2, "feasibility_preflight", (
-            "pass" if receipts >= 10 else "not_ready"
-        ), f"receipts={receipts}; recommended>=30; minimum>=10",
+            "pass" if receipts >= DEFAULT_THRESHOLDS.min_receipts else "not_ready"
+        ), (
+            f"receipts={receipts}; recommended>={RECOMMENDED_SOURCE_CITATIONS}; "
+            f"minimum>={DEFAULT_THRESHOLDS.min_receipts}"
+        ),
             "Expand corpus toward 30 receipts or document thin-corpus scope."),
         _readiness_item(3, "domain_pack", "partial", (
             "domain profiles exist; run uses current topic pack metadata"

@@ -151,7 +151,7 @@ def _score_synthesis(s: ScoreInputs) -> tuple[int, list[str]]:
     elif s.n_receipts >= 5:
         score += 1
     else:
-        notes.append(f"synthesis: only {s.n_receipts} receipts (panel expects >=10)")
+        notes.append(f"synthesis: only {s.n_receipts} receipts (panel expects >=12)")
     if s.n_tensions >= 3:
         score += 2
     elif s.n_tensions >= 1:
@@ -318,4 +318,3 @@ def _collect_blockers(
     if overclaim != "none":
         out.append(f"overclaim={overclaim}")
     return tuple(out)
-
