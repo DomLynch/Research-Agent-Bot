@@ -1477,7 +1477,8 @@ def _receipt_preflight(
             topic,
             dry_run=False,
             timeout=timeout,
-            seed_limit=_auto_seed_limit() * (round_idx + 2),
+            seed_limit=_receipt_repair_seed_limit(n_receipts, min_receipts, round_idx),
+            force_extract=False,
         )
         repairs.append(corpus_repair)
         if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
@@ -1602,6 +1603,11 @@ def _receipt_preflight_repair_rounds() -> int:
         return RECEIPT_PREFLIGHT_REPAIR_ROUNDS
 
 
+def _receipt_repair_seed_limit(n_receipts: int, min_receipts: int, round_idx: int) -> int:
+    missing = max(1, min_receipts - max(0, n_receipts))
+    return max(min_receipts, n_receipts + missing * (round_idx + 1))
+
+
 def _seed_topic(
     topic: str,
     *,
@@ -1655,11 +1661,12 @@ def _repair_topic_corpus(
     dry_run: bool,
     timeout: int | None = None,
     seed_limit: int | None = None,
+    force_extract: bool = True,
 ) -> dict[str, Any]:
     before = _quant_claim_count(topic)
     if dry_run:
         return {"status": "corpus_repair_dry_run", "n_quant_claims": before}
-    result = _seed_topic(topic, timeout=timeout, force_extract=True, seed_limit=seed_limit)
+    result = _seed_topic(topic, timeout=timeout, force_extract=force_extract, seed_limit=seed_limit)
     return {
         **result,
         "status": "corpus_repaired" if result.get("status") in {"corpus_ready", "corpus_seeded"} else result.get("status"),
@@ -2462,7 +2469,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--mode", choices=["fresh", "revise", "mixed"], default="mixed",
                         help="lane: fresh=new papers only, revise=process one pending revise only, mixed=interleave (default)")
     parser.add_argument("--timeout-sec", type=int, default=0)
-    parser.add_argument("--max-attempts", type=int, default=5)
+    parser.add_argument("--max-attempts", type=int, default=0,
+                        help="0 means keep trying topics until budget/no candidate")
     parser.add_argument("--max-revise-attempts", type=int, default=3)
     parser.add_argument("--decision-poll-sec", type=int, default=DECISION_POLL_SECONDS)
     parser.add_argument("--decision-poll-interval-sec", type=int, default=DECISION_POLL_INTERVAL_SECONDS)

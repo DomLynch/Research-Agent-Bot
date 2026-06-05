@@ -648,15 +648,35 @@ def test_cycle_skips_empty_seed_and_tries_next_topic(tmp_path: Path, monkeypatch
     assert synthesis_topics == ["zzz_seeded"]
 
 
-def test_cycle_skips_thin_quant_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_repairs_thin_quant_corpus_before_skip(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "thin_topic", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    repairs: list[dict[str, Any]] = []
 
     def no_synthesis(*_args: Any, **_kwargs: Any) -> int:
         raise AssertionError("thin corpus should not reach synthesis")
 
+    def fake_repair(
+        topic: str,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        seed_limit: int | None = None,
+    ) -> dict[str, Any]:
+        repair = {
+            "status": "corpus_repaired",
+            "n_quant_claims": 3,
+            "topic": topic,
+            "dry_run": dry_run,
+            "timeout": timeout,
+            "seed_limit": seed_limit,
+        }
+        repairs.append(repair)
+        return repair
+
     monkeypatch.setattr(cycle, "_run_synthesis", no_synthesis)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs",
         date="2026-05-24",
@@ -672,6 +692,113 @@ def test_cycle_skips_thin_quant_corpus_before_synthesis(tmp_path: Path, monkeypa
     assert ledger["attempts"][0]["submit_status"] == "preflight_thin_quant_corpus"
     assert ledger["attempts"][0]["failure_class"] == "B_corpus_fixable"
     assert ledger["attempts"][0]["preflight"]["reasons"] == [f"n_quant_claims=3 < {cycle.PREFLIGHT_MIN_QUANT_CLAIMS}"]
+    assert [row["seed_limit"] for row in ledger["attempts"][0]["quant_corpus_repairs"]] == [
+        cycle.AUTO_SEED_LIMIT * 2,
+        cycle.AUTO_SEED_LIMIT * 3,
+    ]
+    assert ledger["attempts"][0]["quant_corpus_repairs"] == repairs
+
+
+def test_cycle_repairs_thin_quant_corpus_then_submits(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "thin_topic", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    n_claims = {"value": 4}
+    repairs: list[dict[str, Any]] = []
+    synthesized: list[str] = []
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        return {"status": "corpus_ready", "n_quant_claims": n_claims["value"]}
+
+    def fake_repair(
+        topic: str,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        seed_limit: int | None = None,
+    ) -> dict[str, Any]:
+        n_claims["value"] = cycle.PREFLIGHT_MIN_QUANT_CLAIMS
+        repair = {
+            "status": "corpus_repaired",
+            "n_quant_claims": n_claims["value"],
+            "seed_limit": seed_limit,
+        }
+        repairs.append(repair)
+        return repair
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-05",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=fake_corpus,
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert synthesized == ["thin_topic"]
+    assert ledger["attempts"][0]["quant_corpus_repairs"] == repairs
+    assert repairs[0]["seed_limit"] == cycle.AUTO_SEED_LIMIT * 2
+
+
+def test_fresh_cycle_keeps_searching_after_failed_quant_repair_by_default(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_thin_topic", corpus=False, target_journal=True)
+    _topic(tmp_path, "zzz_solid_topic", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_topic_support_score", lambda topic: 100 if topic == "aaa_thin_topic" else 10)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    synthesized: list[str] = []
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        if topic == "aaa_thin_topic":
+            return {"status": "corpus_ready", "n_quant_claims": 4}
+        return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_repair(
+        topic: str,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        seed_limit: int | None = None,
+    ) -> dict[str, Any]:
+        return {"status": "corpus_repaired", "n_quant_claims": 4, "seed_limit": seed_limit}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-05",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=fake_corpus,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert [attempt["topic"] for attempt in ledger["attempts"]] == ["aaa_thin_topic", "zzz_solid_topic"]
+    assert ledger["attempts"][0]["submit_status"] == "preflight_thin_quant_corpus"
+    assert synthesized == ["zzz_solid_topic"]
 
 
 def test_paper_strategy_skips_terminal_sparse_researka_feedback() -> None:
@@ -3224,12 +3351,14 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
         dry_run: bool,
         timeout: int | None = None,
         seed_limit: int | None = None,
+        force_extract: bool = True,
     ) -> dict[str, Any]:
         repair = {
             "topic": topic,
             "dry_run": dry_run,
             "timeout": timeout,
             "seed_limit": seed_limit,
+            "force_extract": force_extract,
             "status": "corpus_repaired",
         }
         repairs.append(repair)
@@ -3244,8 +3373,8 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
     assert result["n_receipts"] == cycle.DEFAULT_THRESHOLDS.min_receipts
     assert [probe["n_receipts"] for probe in result["probes"]] == [7, 9, cycle.DEFAULT_THRESHOLDS.min_receipts]
     assert repairs == [
-        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.AUTO_SEED_LIMIT * 2, "status": "corpus_repaired"},
-        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.AUTO_SEED_LIMIT * 3, "status": "corpus_repaired"},
+        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts, "force_extract": False, "status": "corpus_repaired"},
+        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": 15, "force_extract": False, "status": "corpus_repaired"},
     ]
     assert result["repairs"] == repairs
 
