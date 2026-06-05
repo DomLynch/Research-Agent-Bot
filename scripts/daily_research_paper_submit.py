@@ -726,6 +726,23 @@ def _publications_url() -> str:
     return base + "/publications"
 
 
+def _publication_row_has_public_proof(row: dict[str, Any], metadata: dict[str, Any]) -> bool:
+    for source in (row, metadata):
+        decision = str(source.get("decision") or source.get("review_decision") or source.get("researka_decision") or "").strip().lower()
+        if decision in {"accept", "accepted"}:
+            return True
+        status = str(source.get("status") or source.get("publication_status") or "").strip().lower()
+        if status in {"accepted", "public", "published"}:
+            return True
+        if source.get("publicVisible") is True or source.get("public_visible") is True or source.get("published") is True:
+            return True
+        for key in ("publishedAt", "published_at", "published_at_iso"):
+            value = source.get(key)
+            if isinstance(value, str) and value.strip():
+                return True
+    return False
+
+
 def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], str | None]:
     target = url or _publications_url()
     req = urllib.request.Request(target, headers={"Accept": "application/json"})
@@ -739,6 +756,8 @@ def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], st
                 continue
             raw_metadata = row.get("metadata")
             metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
+            if not _publication_row_has_public_proof(row, metadata):
+                continue
             for key in ("submission_payload_hash", "content_hash", "sha256", "full_body_sha256", "condensed_body_sha256"):
                 content_hash = metadata.get(key)
                 if isinstance(content_hash, str) and content_hash:
