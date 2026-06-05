@@ -1769,7 +1769,7 @@ def run_cycle(
     submit_cycle: SubmitCycle | None = None,
     ensure_corpus: CorpusBuilder | None = None,
     timeout: int | None = None,
-    max_attempts: int = 5,
+    max_attempts: int = 0,
     max_revise_attempts: int = 3,
     decision_poll_seconds: int = DECISION_POLL_SECONDS,
     decision_poll_interval_seconds: int = DECISION_POLL_INTERVAL_SECONDS,
@@ -1912,7 +1912,13 @@ def run_cycle(
         )
         attempted: set[str] = set()
         submitted_total = 0
-        for _ in range(max(1, max_attempts if not topic else 1)):
+        attempt_count = 0
+        while True:
+            if topic and attempt_count:
+                break
+            if max_attempts > 0 and attempt_count >= max_attempts:
+                break
+            attempt_count += 1
             if cycle_budget_seconds > 0 and clock() - started_mono >= cycle_budget_seconds:
                 ledger.update({
                     "status": "cycle_budget_exhausted",
@@ -2054,6 +2060,29 @@ def run_cycle(
                     attempted.add(selected)
                     continue
             quant_preflight = _quant_claim_preflight(corpus)
+            quant_corpus_repairs: list[dict[str, Any]] = []
+            if not quant_preflight["passed"] and not synthesis_dry_run:
+                for round_idx in range(_receipt_preflight_repair_rounds()):
+                    corpus_repair = _repair_topic_corpus(
+                        selected,
+                        dry_run=False,
+                        timeout=timeout,
+                        seed_limit=_auto_seed_limit() * (round_idx + 2),
+                    )
+                    quant_corpus_repairs.append(corpus_repair)
+                    if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
+                        break
+                    refreshed = (ensure_corpus or _ensure_topic_corpus)(
+                        selected, dry_run=synthesis_dry_run, timeout=timeout,
+                    )
+                    if int(refreshed.get("n_quant_claims") or 0) >= int(corpus_repair.get("n_quant_claims") or 0):
+                        corpus = refreshed
+                    else:
+                        corpus = corpus_repair
+                    ledger["corpus"] = corpus
+                    quant_preflight = _quant_claim_preflight(corpus)
+                    if quant_preflight["passed"]:
+                        break
             if not quant_preflight["passed"]:
                 attempt = {
                     "topic": selected,
@@ -2065,6 +2094,8 @@ def run_cycle(
                     "preflight": quant_preflight,
                     "corpus": corpus,
                 }
+                if quant_corpus_repairs:
+                    attempt["quant_corpus_repairs"] = quant_corpus_repairs
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "preflight_skipped_no_submission"
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
@@ -2311,6 +2342,8 @@ def run_cycle(
                     "existing_work_reused": existing_repair,
                     "receipt_preflight": receipt_preflight,
                 }
+                if quant_corpus_repairs:
+                    attempt["quant_corpus_repairs"] = quant_corpus_repairs
                 if unmet:
                     attempt["unmet_revision_asks"] = unmet
                     revision_feedback = _escalate_feedback(revision_feedback, unmet)
