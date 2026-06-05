@@ -722,8 +722,7 @@ def _publications_url() -> str:
     explicit = os.getenv("RESEARKA_PUBLICATIONS_URL", "").strip()
     if explicit:
         return explicit
-    base = os.getenv("RESEARKA_URL", "https://api.researka.org").rstrip("/")
-    return base + "/publications"
+    return "https://researka.org/api/publications"
 
 
 def _publication_row_has_public_proof(row: dict[str, Any], metadata: dict[str, Any]) -> bool:

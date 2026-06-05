@@ -910,6 +910,13 @@ def test_submit_without_token_is_held(tmp_path: Path, monkeypatch) -> None:
     assert calls == 0
 
 
+def test_publications_url_defaults_to_public_api(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("RESEARKA_PUBLICATIONS_URL", raising=False)
+    monkeypatch.setenv("RESEARKA_URL", "https://api.researka.org")
+
+    assert daily._publications_url() == "https://researka.org/api/publications"
+
+
 def test_remote_published_fingerprints_ignores_title_only_publication_row(monkeypatch: pytest.MonkeyPatch) -> None:
     payload = {
         "publications": [{
