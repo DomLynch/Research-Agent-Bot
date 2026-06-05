@@ -1,0 +1,10 @@
+[Unit]
+Description=Reconcile Research Agent v3 publication ledgers between paper runs
+
+[Timer]
+OnCalendar=*-*-* *:05,20,35,50:00
+Persistent=false
+Unit=research-agent-paper-reconcile.service
+
+[Install]
+WantedBy=timers.target

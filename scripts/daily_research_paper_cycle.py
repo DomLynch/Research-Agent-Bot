@@ -2498,7 +2498,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--run-synthesis", action="store_true")
     parser.add_argument("--synthesis-dry-run", action="store_true")
     parser.add_argument("--submit", action="store_true")
-    parser.add_argument("--mode", choices=["fresh", "revise", "mixed"], default="mixed",
+    parser.add_argument("--mode", choices=["fresh", "revise", "mixed"], default=None,
                         help="lane: fresh=new papers only, revise=process one pending revise only, mixed=interleave (default)")
     parser.add_argument("--timeout-sec", type=int, default=0)
     parser.add_argument("--max-attempts", type=int, default=0,
@@ -2523,7 +2523,7 @@ def main(argv: list[str] | None = None) -> int:
         run_synthesis=args.run_synthesis,
         synthesis_dry_run=args.synthesis_dry_run,
         submit=args.submit,
-        mode=args.mode,
+        mode=args.mode or "mixed",
         topic=args.topic,
         timeout=args.timeout_sec or None,
         max_attempts=args.max_attempts,

@@ -233,6 +233,55 @@ def test_reconcile_publication_ledgers_updates_submitted_public_ledger(tmp_path:
     assert throughput["days"]["2026-06-05"]["runs"][0]["published"] == 1
 
 
+def test_reconcile_publication_ledgers_updates_submit_bridge_ledger(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    run = runs_root / "synthesis-longevity_lifespan_effects-v06-TEST"
+    paper = run / "full_paper.md"
+    paper.parent.mkdir(parents=True)
+    title = "Research Synthesis: Longevity Lifespan Effects — full paper"
+    paper.write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
+    submit_ledger_dir = runs_root / cycle.submit_bridge.LEDGER_DIR
+    _write_json(submit_ledger_dir / "2026-06-05.json", {
+        "date": "2026-06-05",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "candidate": {"run": run.name, "topic": "longevity_lifespan_effects"},
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-05",
+        mode="fresh",
+        remote_loader=lambda: ({cycle.submit_bridge._title_marker(title)}, None),
+    )
+
+    ledger = json.loads((submit_ledger_dir / "2026-06-05.json").read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["_daily_research_paper_ledger/2026-06-05.json"]
+    assert ledger["status"] == "published"
+    assert ledger["published"] == 1
+    assert ledger["publication_reconciliation"]["source"] == "remote_publications"
+
+
+def test_reconcile_cli_without_mode_checks_all_lanes(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    seen: dict[str, Any] = {}
+
+    def fake_reconcile(**kwargs: Any) -> dict[str, Any]:
+        seen.update(kwargs)
+        return {
+            "status": "no_publication_reconciliation_needed",
+            "checked": 0,
+            "updated": 0,
+            "updated_ledgers": [],
+        }
+
+    monkeypatch.setattr(cycle, "reconcile_publication_ledgers", fake_reconcile)
+
+    assert cycle.main(["--runs-root", str(tmp_path / "runs"), "--date", "2026-06-05", "--reconcile-publications"]) == 0
+    assert seen["mode"] is None
+
+
 def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     cycle._record_blockers(
