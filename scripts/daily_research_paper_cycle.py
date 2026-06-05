@@ -160,10 +160,22 @@ def _ledger_paths_for_reconciliation(ledger_dir: Path, date: str | None, mode: s
     return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
 
 
+def _submit_ledger_paths_for_reconciliation(runs_root: Path, date: str | None) -> list[Path]:
+    ledger_dir = runs_root / submit_bridge.LEDGER_DIR
+    if date:
+        return [ledger_dir / f"{date}.json"]
+    return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
+
+
 def _ledger_run_names(ledger: dict[str, Any]) -> list[str]:
     names: list[str] = []
     for key in ("submitted_run", "attempted_run", "out_dir"):
         value = ledger.get(key)
+        if isinstance(value, str) and value:
+            names.append(value)
+    candidate = ledger.get("candidate")
+    if isinstance(candidate, dict):
+        value = candidate.get("run")
         if isinstance(value, str) and value:
             names.append(value)
     attempts = ledger.get("attempts")
@@ -237,6 +249,14 @@ def reconcile_publication_ledgers(
             _write_json(ledger_path, ledger)
             _record_daily_throughput(ledger_dir, ledger)
             updated.append(ledger_path.name)
+    for ledger_path in _submit_ledger_paths_for_reconciliation(runs_root, date):
+        ledger = _read_json(ledger_path)
+        if not ledger:
+            continue
+        checked += 1
+        if _reconcile_published_ledger(ledger, runs_root, remote_seen):
+            _write_json(ledger_path, ledger)
+            updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}")
     return {
         "status": "publication_reconciled" if updated else "no_publication_reconciliation_needed",
         "checked": checked,
