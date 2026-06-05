@@ -3335,6 +3335,7 @@ def test_cycle_skips_sparse_receipt_topic_before_synthesis(tmp_path: Path, monke
 def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monkeypatch) -> None:
     counts = [7, 9, cycle.DEFAULT_THRESHOLDS.min_receipts]
     repairs: list[dict[str, Any]] = []
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: 0)
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, **_kwargs: Any) -> int:
         assert topic == "urolithin_a"
@@ -3374,9 +3375,36 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
     assert [probe["n_receipts"] for probe in result["probes"]] == [7, 9, cycle.DEFAULT_THRESHOLDS.min_receipts]
     assert repairs == [
         {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts, "force_extract": False, "status": "corpus_repaired"},
-        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": 15, "force_extract": False, "status": "corpus_repaired"},
+        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts, "force_extract": False, "status": "corpus_repaired"},
     ]
     assert result["repairs"] == repairs
+
+
+def test_receipt_preflight_repair_keeps_best_probe_after_regression(tmp_path: Path, monkeypatch) -> None:
+    probes = [(0, 7), (2, 0), (0, cycle.DEFAULT_THRESHOLDS.min_receipts)]
+    repairs: list[dict[str, Any]] = []
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: 34)
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, **_kwargs: Any) -> int:
+        rc, n_receipts = probes.pop(0)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": n_receipts}})
+        return rc
+
+    def fake_repair(topic: str, **kwargs: Any) -> dict[str, Any]:
+        repair = {"topic": topic, "status": "corpus_repaired", **kwargs}
+        repairs.append(repair)
+        return repair
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
+
+    result = cycle._receipt_preflight("partial_epigenetic_reprogramming", tmp_path / "run")
+
+    assert result["passed"] is True
+    assert [probe["n_receipts"] for probe in result["probes"]] == [7, 0, cycle.DEFAULT_THRESHOLDS.min_receipts]
+    assert [repair["seed_limit"] for repair in repairs] == [59, 84]
+    assert all(repair["force_extract"] is False for repair in repairs)
 
 
 def test_receipt_preflight_dry_run_does_not_repair(tmp_path: Path, monkeypatch) -> None:

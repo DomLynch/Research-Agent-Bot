@@ -1458,6 +1458,7 @@ def _receipt_preflight(
     repairs: list[dict[str, Any]] = []
     rc = 1
     n_receipts = 0
+    best_receipts = 0
     for round_idx in range(rounds + 1):
         suffix = "receipt-preflight" if round_idx == 0 else f"receipt-preflight-{round_idx + 1}"
         probe_dir = out_dir.with_name(f"{out_dir.name}-{suffix}")
@@ -1468,16 +1469,22 @@ def _receipt_preflight(
             shutil.rmtree(probe_dir, ignore_errors=True)
         counts = report.get("counts") if isinstance(report, dict) else {}
         n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+        best_receipts = max(best_receipts, n_receipts)
         probes.append({"return_code": rc, "n_receipts": n_receipts, "min_receipts": min_receipts})
         if rc == 0 and n_receipts >= min_receipts:
             break
-        if rc != 0 or round_idx >= rounds:
+        if round_idx >= rounds:
+            break
+        current_quant_claims = _quant_claim_count(topic)
+        if rc != 0 and not (best_receipts or current_quant_claims):
             break
         corpus_repair = _repair_topic_corpus(
             topic,
             dry_run=False,
             timeout=timeout,
-            seed_limit=_receipt_repair_seed_limit(n_receipts, min_receipts, round_idx),
+            seed_limit=_receipt_repair_seed_limit(
+                max(n_receipts, best_receipts), min_receipts, round_idx, current_quant_claims=current_quant_claims,
+            ),
             force_extract=False,
         )
         repairs.append(corpus_repair)
@@ -1488,7 +1495,7 @@ def _receipt_preflight(
         "passed": passed,
         "status": "receipt_preflight_ok" if passed else "receipt_preflight_insufficient",
         "return_code": rc,
-        "n_receipts": n_receipts,
+        "n_receipts": n_receipts if passed else best_receipts,
         "min_receipts": min_receipts,
         "probes": probes,
         **({"repairs": repairs} if repairs else {}),
@@ -1603,9 +1610,14 @@ def _receipt_preflight_repair_rounds() -> int:
         return RECEIPT_PREFLIGHT_REPAIR_ROUNDS
 
 
-def _receipt_repair_seed_limit(n_receipts: int, min_receipts: int, round_idx: int) -> int:
+def _receipt_repair_seed_limit(
+    n_receipts: int, min_receipts: int, round_idx: int, *, current_quant_claims: int = 0,
+) -> int:
     missing = max(1, min_receipts - max(0, n_receipts))
-    return max(min_receipts, n_receipts + missing * (round_idx + 1))
+    current_quant_claims = max(0, current_quant_claims)
+    observed_receipts = max(1, n_receipts)
+    claims_per_receipt = max(1, (max(current_quant_claims, observed_receipts) + observed_receipts - 1) // observed_receipts)
+    return max(min_receipts, current_quant_claims + missing * claims_per_receipt * (round_idx + 1))
 
 
 def _seed_topic(
