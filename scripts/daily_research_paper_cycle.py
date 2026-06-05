@@ -119,16 +119,20 @@ def _record_daily_throughput(ledger_dir: Path, ledger: dict[str, Any]) -> None:
     if not isinstance(runs, list):
         runs = []
     run_id = f"{ledger.get('mode') or 'mixed'}:{started_at}"
-    if not any(isinstance(run, dict) and run.get("run_id") == run_id for run in runs):
-        runs.append({
-            "run_id": run_id,
-            "mode": ledger.get("mode") or "mixed",
-            "status": ledger.get("status") or "unknown",
-            "submitted": int(ledger.get("submitted") or 0),
-            "published": int(ledger.get("published") or 0),
-            "topic": ledger.get("submitted_topic") or ledger.get("topic") or ledger.get("attempted_topic"),
-            "started_at": started_at,
-        })
+    run_row = {
+        "run_id": run_id,
+        "mode": ledger.get("mode") or "mixed",
+        "status": ledger.get("status") or "unknown",
+        "submitted": int(ledger.get("submitted") or 0),
+        "published": int(ledger.get("published") or 0),
+        "topic": ledger.get("submitted_topic") or ledger.get("topic") or ledger.get("attempted_topic"),
+        "started_at": started_at,
+    }
+    existing = next((run for run in runs if isinstance(run, dict) and run.get("run_id") == run_id), None)
+    if existing is not None:
+        existing.update(run_row)
+    else:
+        runs.append(run_row)
     day["runs"] = runs
     day["submitted"] = sum(int(run.get("submitted") or 0) for run in runs if isinstance(run, dict))
     day["published"] = sum(int(run.get("published") or 0) for run in runs if isinstance(run, dict))
@@ -146,6 +150,100 @@ def _read_json(path: Path) -> dict[str, Any]:
     except (OSError, json.JSONDecodeError):
         return {}
     return data if isinstance(data, dict) else {}
+
+
+def _ledger_paths_for_reconciliation(ledger_dir: Path, date: str | None, mode: str | None) -> list[Path]:
+    if date and mode:
+        return [_cycle_ledger_path(ledger_dir, date, mode)]
+    if date:
+        return [_cycle_ledger_path(ledger_dir, date, lane) for lane in ("mixed", "fresh", "revise")]
+    return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
+
+
+def _ledger_run_names(ledger: dict[str, Any]) -> list[str]:
+    names: list[str] = []
+    for key in ("submitted_run", "attempted_run", "out_dir"):
+        value = ledger.get(key)
+        if isinstance(value, str) and value:
+            names.append(value)
+    attempts = ledger.get("attempts")
+    for attempt in attempts if isinstance(attempts, list) else []:
+        if not isinstance(attempt, dict) or not int(attempt.get("submitted") or 0):
+            continue
+        for key in ("submitted_run", "out_dir"):
+            value = attempt.get(key)
+            if isinstance(value, str) and value:
+                names.append(value)
+    return list(dict.fromkeys(names))
+
+
+def _publication_markers_for_run(runs_root: Path, run_name: str) -> set[str]:
+    paper = runs_root / run_name / "full_paper.md"
+    if not paper.exists():
+        return set()
+    markers = {submit_bridge._sha256(paper)}
+    title = submit_bridge._paper_title(paper)
+    if title:
+        markers.add(submit_bridge._title_marker(title))
+    return markers
+
+
+def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_seen: set[str]) -> bool:
+    if not int(ledger.get("submitted") or 0) or int(ledger.get("published") or 0):
+        return False
+    matches: set[str] = set()
+    submitted_runs = set(_ledger_run_names(ledger))
+    for run_name in submitted_runs:
+        matches.update(_publication_markers_for_run(runs_root, run_name) & remote_seen)
+    if not matches:
+        return False
+    ledger["published"] = 1
+    if str(ledger.get("status") or "") == "submitted_to_researka":
+        ledger["status"] = "published"
+    ledger["publication_reconciliation"] = {
+        "source": "remote_publications",
+        "matched": sorted(matches)[:5],
+        "reconciled_at": dt.datetime.now(dt.UTC).isoformat(),
+    }
+    attempts = ledger.get("attempts")
+    for attempt in attempts if isinstance(attempts, list) else []:
+        if not isinstance(attempt, dict) or not int(attempt.get("submitted") or 0):
+            continue
+        attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
+        if not attempt_run or attempt_run in submitted_runs:
+            attempt["published"] = 1
+    return True
+
+
+def reconcile_publication_ledgers(
+    *,
+    runs_root: Path = RUNS,
+    date: str | None = None,
+    mode: str | None = None,
+    remote_loader: RemoteLoader | None = None,
+) -> dict[str, Any]:
+    remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
+    if remote_error:
+        return {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
+    ledger_dir = runs_root / LEDGER_DIR
+    checked = 0
+    updated: list[str] = []
+    for ledger_path in _ledger_paths_for_reconciliation(ledger_dir, date, mode):
+        ledger = _read_json(ledger_path)
+        if not ledger:
+            continue
+        checked += 1
+        if _reconcile_published_ledger(ledger, runs_root, remote_seen):
+            _write_json(ledger_path, ledger)
+            _record_daily_throughput(ledger_dir, ledger)
+            updated.append(ledger_path.name)
+    return {
+        "status": "publication_reconciled" if updated else "no_publication_reconciliation_needed",
+        "checked": checked,
+        "updated": len(updated),
+        "updated_ledgers": updated,
+        "known_fingerprints": len(remote_seen),
+    }
 
 
 def discover_topics(
