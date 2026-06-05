@@ -271,7 +271,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         "## Recovery Commands",
         "",
         "- Dirty state: `git status --short --untracked-files=all`",
-        "- Full SHA: `git rev-parse HEAD && git rev-parse origin/main`",
+        "- Full SHA: `git rev-parse HEAD && git rev-parse @{upstream}`",
         "- VPS read-only: `python scripts/tri_sync_status.py --repo . --vps-host root@49.12.7.18 --ssh-key ~/.ssh/binance_futures_tool --json`",
         "- Final tests: `python -m pytest`",
     ]

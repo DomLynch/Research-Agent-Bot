@@ -185,6 +185,54 @@ def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_pat
     assert selected == "metformin"
 
 
+def test_reconcile_publication_ledgers_updates_submitted_public_ledger(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    run = runs_root / "synthesis-mitochondrial_health-v06-TEST"
+    paper = run / "full_paper.md"
+    paper.parent.mkdir(parents=True)
+    paper.write_text("# Research Synthesis: Mitochondrial Health Effects\n\nBody.\n", encoding="utf-8")
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    started_at = "2026-06-05T08:00:00+00:00"
+    _write_json(ledger_dir / "2026-06-05-fresh.json", {
+        "date": "2026-06-05",
+        "mode": "fresh",
+        "started_at": started_at,
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "submitted_topic": "mitochondrial_health",
+        "submitted_run": run.name,
+        "attempts": [{"out_dir": run.name, "submitted": 1}],
+    })
+    cycle._record_daily_throughput(ledger_dir, {
+        "date": "2026-06-05",
+        "mode": "fresh",
+        "started_at": started_at,
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "submitted_topic": "mitochondrial_health",
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-05",
+        mode="fresh",
+        remote_loader=lambda: ({cycle.submit_bridge._title_marker("Research Synthesis: Mitochondrial Health Effects")}, None),
+    )
+
+    ledger = json.loads((ledger_dir / "2026-06-05-fresh.json").read_text(encoding="utf-8"))
+    throughput = json.loads((ledger_dir / cycle.DAILY_THROUGHPUT_SUMMARY).read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["2026-06-05-fresh.json"]
+    assert ledger["status"] == "published"
+    assert ledger["published"] == 1
+    assert ledger["attempts"][0]["published"] == 1
+    assert ledger["publication_reconciliation"]["source"] == "remote_publications"
+    assert throughput["days"]["2026-06-05"]["published"] == 1
+    assert throughput["days"]["2026-06-05"]["runs"][0]["published"] == 1
+
+
 def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     cycle._record_blockers(

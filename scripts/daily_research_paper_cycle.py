@@ -1816,6 +1816,11 @@ def run_cycle(
                 ledger.update({"status": "remote_dedupe_failed", "reason": remote_error})
                 _write_json(ledger_path, ledger)
                 return ledger
+            ledger["publication_reconciliation_preflight"] = reconcile_publication_ledgers(
+                runs_root=runs_root,
+                date=date,
+                remote_loader=lambda: (remote_seen, None),
+            )
         remote_revision: dict[str, Any] | None = None
         terminal_excluded: set[str] = set()
         if submit and topic is None and mode != "fresh" and (revision_loader is not None or submit_cycle is None):
@@ -2429,7 +2434,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--decision-poll-sec", type=int, default=DECISION_POLL_SECONDS)
     parser.add_argument("--decision-poll-interval-sec", type=int, default=DECISION_POLL_INTERVAL_SECONDS)
     parser.add_argument("--cycle-budget-sec", type=int, default=CYCLE_BUDGET_SECONDS)
+    parser.add_argument("--reconcile-publications", action="store_true",
+                        help="Reconcile submitted ledgers against Researka public publications and exit")
     args = parser.parse_args(argv)
+    if args.reconcile_publications:
+        result = reconcile_publication_ledgers(runs_root=args.runs_root, date=args.date, mode=args.mode)
+        print(
+            f"[daily-v3-cycle] status={result['status']} checked={result['checked']} "
+            f"updated={result['updated']} ledgers={','.join(result.get('updated_ledgers', [])) or '-'}"
+        )
+        return 0 if result["status"] != "remote_dedupe_failed" else 2
     ledger = run_cycle(
         runs_root=args.runs_root,
         date=args.date,

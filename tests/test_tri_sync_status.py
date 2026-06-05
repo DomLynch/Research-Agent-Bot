@@ -63,6 +63,33 @@ def test_render_text_without_vps() -> None:
     assert "dirty_count: 0" in text
 
 
+def test_local_status_uses_configured_upstream(monkeypatch, tmp_path: Path) -> None:
+    calls: list[list[str]] = []
+
+    def fake_run_or_none(args: list[str], *, cwd: Path) -> str | None:
+        calls.append(args)
+        if args[-1] == "@{upstream}":
+            return "origin/codex/019e0b4c/main"
+        if args[-1] == "HEAD":
+            return "abc1234"
+        if args[-1] == "origin/codex/019e0b4c/main":
+            return "abc1234"
+        if args[1] == "status":
+            return ""
+        if args[1] == "rev-list":
+            return "0\t0"
+        return None
+
+    monkeypatch.setattr(tri, "_run_or_none", fake_run_or_none)
+
+    status = tri.local_status(tmp_path)
+
+    assert status["upstream_ref"] == "origin/codex/019e0b4c/main"
+    assert status["state"] == "synced"
+    assert ["git", "rev-list", "--left-right", "--count", "HEAD...origin/main"] not in calls
+    assert ["git", "rev-list", "--left-right", "--count", "HEAD...origin/codex/019e0b4c/main"] in calls
+
+
 def test_remote_probe_command_is_read_only() -> None:
     command = tri._remote_probe_command("/opt/research-agent-bot")
     forbidden = ("pull", "fetch", "reset", "checkout", "restart", "systemctl restart")

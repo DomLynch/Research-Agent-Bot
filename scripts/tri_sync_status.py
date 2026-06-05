@@ -88,13 +88,20 @@ def _run_or_none(args: list[str], *, cwd: Path) -> str | None:
         return None
 
 
-def local_status(repo: Path) -> dict[str, Any]:
+def _upstream_ref(repo: Path, override: str | None = None) -> str:
+    if override:
+        return override
+    return _run_or_none(["git", "rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{upstream}"], cwd=repo) or "origin/main"
+
+
+def local_status(repo: Path, upstream_ref: str | None = None) -> dict[str, Any]:
     repo = repo.resolve()
+    upstream_ref = _upstream_ref(repo, upstream_ref)
     head = _run_or_none(["git", "rev-parse", "--short=8", "HEAD"], cwd=repo)
-    origin = _run_or_none(["git", "rev-parse", "--short=8", "origin/main"], cwd=repo)
+    upstream = _run_or_none(["git", "rev-parse", "--short=8", upstream_ref], cwd=repo)
     porcelain = _run_or_none(["git", "status", "--porcelain"], cwd=repo) or ""
     counts = _run_or_none(
-        ["git", "rev-list", "--left-right", "--count", "HEAD...origin/main"],
+        ["git", "rev-list", "--left-right", "--count", f"HEAD...{upstream_ref}"],
         cwd=repo,
     )
     ahead, behind = parse_ahead_behind(counts or "")
@@ -102,7 +109,9 @@ def local_status(repo: Path) -> dict[str, Any]:
     return {
         "repo": str(repo),
         "head": head,
-        "origin_main": origin,
+        "upstream_ref": upstream_ref,
+        "upstream_head": upstream,
+        "origin_main": upstream,
         "dirty_count": dirty,
         "ahead": ahead,
         "behind": behind,
@@ -111,7 +120,7 @@ def local_status(repo: Path) -> dict[str, Any]:
             ahead=ahead,
             behind=behind,
             head=head,
-            origin=origin,
+            origin=upstream,
         ),
     }
 
@@ -177,7 +186,7 @@ def probe_vps(
 
 
 def build_status(args: argparse.Namespace) -> dict[str, Any]:
-    status = {"local": local_status(Path(args.repo)), "vps": []}
+    status: dict[str, Any] = {"local": local_status(Path(args.repo), upstream_ref=args.upstream_ref), "vps": []}
     if args.vps_host:
         for path in (args.opt_path, args.root_path):
             if path:
@@ -192,7 +201,8 @@ def render_text(status: dict[str, Any]) -> str:
     lines = [
         "Tri-sync status",
         f"local_head: {local['head']}",
-        f"origin_main: {local['origin_main']}",
+        f"upstream_ref: {local.get('upstream_ref', 'origin/main')}",
+        f"upstream_head: {local.get('upstream_head') or local.get('origin_main')}",
         f"dirty_count: {local['dirty_count']}",
         f"ahead_behind: {local['ahead']}/{local['behind']}",
         f"local_state: {local['state']}",
@@ -217,6 +227,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--json", action="store_true", help="Emit JSON")
     parser.add_argument("--vps-host", help="Optional SSH host, e.g. root@49.12.7.18")
     parser.add_argument("--ssh-key", help="Optional SSH private key path")
+    parser.add_argument("--upstream-ref", help="Optional git ref to compare against; defaults to @{upstream}")
     parser.add_argument("--opt-path", default="/opt/research-agent-bot")
     parser.add_argument("--root-path", default="/root/Research-Agent-Bot")
     args = parser.parse_args(argv)
