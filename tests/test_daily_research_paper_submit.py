@@ -910,6 +910,65 @@ def test_submit_without_token_is_held(tmp_path: Path, monkeypatch) -> None:
     assert calls == 0
 
 
+def test_remote_published_fingerprints_ignores_title_only_publication_row(monkeypatch: pytest.MonkeyPatch) -> None:
+    payload = {
+        "publications": [{
+            "title": "Research Synthesis: Oral Microbiome Periodontal Aging — full paper",
+            "metadata": {"content_hash": "sha256:abc"},
+            "body_markdown": "published-looking body",
+            "decision": None,
+            "publicVisible": None,
+            "publishedAt": None,
+            "submissionId": None,
+        }],
+    }
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode("utf-8")
+
+    monkeypatch.setattr(urllib.request, "urlopen", lambda _req, timeout: Response())
+
+    markers, error = daily._remote_published_fingerprints("https://api.example/publications")
+
+    assert error is None
+    assert markers == set()
+
+
+def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatch: pytest.MonkeyPatch) -> None:
+    title = "Research Synthesis: Vitamin D Supplementation Effects — full paper"
+    payload = {
+        "publications": [{
+            "title": title,
+            "metadata": {"content_hash": "sha256:abc"},
+            "decision": "accept",
+        }],
+    }
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode("utf-8")
+
+    monkeypatch.setattr(urllib.request, "urlopen", lambda _req, timeout: Response())
+
+    markers, error = daily._remote_published_fingerprints("https://api.example/publications")
+
+    assert error is None
+    assert markers == {"sha256:abc", daily._title_marker(title)}
+
+
 def test_http_submitter_sends_runtime_key_headers_and_idempotency(monkeypatch) -> None:
     seen: dict[str, Any] = {}
 
