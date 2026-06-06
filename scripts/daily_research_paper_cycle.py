@@ -53,7 +53,7 @@ REVISE_REASONS = "_revise_reasons.json"
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
 # while bounding resubmissions to the live platform.
 MAX_REVISE_ROUNDS = 3
-PREFLIGHT_MIN_RECEIPTS = 15
+PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = 1
@@ -67,7 +67,7 @@ HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 CORPUS_REPAIR_LIMIT = 1
 RECEIPT_PREFLIGHT_REPAIR_ROUNDS = 2
-SOURCE_TOPIC_REPAIR_FLOOR = 0.50
+SOURCE_TOPIC_REPAIR_FLOOR = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
 REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
@@ -1757,6 +1757,7 @@ def _repair_low_source_precision_corpus(
         n_quant_claims = _quant_claim_count(topic)
         return {
             "status": "source_precision_ready" if n_quant_claims else "source_precision_repair_incomplete",
+            "topic": topic,
             "source_topic_precision": before_status,
             "n_quant_claims": n_quant_claims,
         }
@@ -1764,6 +1765,7 @@ def _repair_low_source_precision_corpus(
     if dry_run:
         return {
             "status": "source_precision_repair_dry_run",
+            "topic": topic,
             "source_topic_precision_before": before_status,
             "off_topic_quant_claims": len(misses),
             "n_quant_claims": before,
@@ -1792,6 +1794,7 @@ def _repair_low_source_precision_corpus(
     n_quant_claims = _quant_claim_count(topic)
     return {
         "status": "source_precision_repaired" if ok_after and n_quant_claims else "source_precision_repair_incomplete",
+        "topic": topic,
         "source_topic_precision_before": before_status,
         "source_topic_precision_after": after_status,
         "off_topic_quant_claims_quarantined": moved + post_seed_moved,

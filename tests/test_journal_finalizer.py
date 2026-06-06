@@ -765,6 +765,52 @@ def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> No
     ]
 
 
+def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    paper = (
+        "## Results\n\n"
+        "### Results Summary\n\n"
+        "### Metabolic Outcomes\n\n"
+        "The causal bridge to be rigorously is bounded by directness and follow-up limits.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+    assert any(i.code == "grammar_artifact" for i in evaluate_journal_surface(paper).issues)
+    assert any("empty heading: Results Summary" in i.detail for i in evaluate_journal_surface(paper).issues)
+
+    fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
+
+    assert "### Results Summary" not in fixed
+    assert "to be rigorously is" not in fixed
+    assert "is rigorously bounded" in fixed
+    assert not any(i.code == "grammar_artifact" for i in evaluate_journal_surface(fixed).issues)
+    assert not any("empty heading: Results Summary" in i.detail for i in evaluate_journal_surface(fixed).issues)
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="M_surface_artifact_cleanup",
+            rule="repair_known_surface_artifacts",
+            n_changes=2,
+            detail="grammar_artifact=1; empty_subheading=1",
+        )
+    ]
+
+
+def test_surface_artifact_cleanup_keeps_parent_heading_with_child_content() -> None:
+    paper = (
+        "## Results\n\n"
+        "### Results Summary\n\n"
+        "#### Metabolic Outcomes\n\n"
+        "The child section carries the result text.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_relabel_public_metadata_table_headers_repairs_surface_gate(tmp_path: Path) -> None:
     from agent.journal_surface_gate import evaluate_journal_surface
 

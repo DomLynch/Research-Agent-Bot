@@ -120,6 +120,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         entries.extend(log)
     text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
     entries.extend(log)
+    text, log = _phase_m_repair_surface_artifacts(text)
+    entries.extend(log)
     from scripts.review_noise_control import apply_review_noise_control, restore_surface_floors
     text, noise_changes = apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
@@ -181,6 +183,55 @@ def _phase_m_strip_surface_duplicate_paragraphs(
             detail=f"removed {n} duplicate public prose paragraph(s)",
         )
     ]
+
+
+def _phase_m_repair_surface_artifacts(text: str) -> tuple[str, list[FinalizerLogEntry]]:
+    out, n_grammar = _repair_known_grammar_artifacts(text)
+    out, n_headings = _remove_empty_subheadings(out)
+    if out == text:
+        return text, []
+    changes = []
+    if n_grammar:
+        changes.append(f"grammar_artifact={n_grammar}")
+    if n_headings:
+        changes.append(f"empty_subheading={n_headings}")
+    return out, [
+        FinalizerLogEntry(
+            phase="M_surface_artifact_cleanup",
+            rule="repair_known_surface_artifacts",
+            n_changes=n_grammar + n_headings,
+            detail="; ".join(changes),
+        )
+    ]
+
+
+def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
+    pattern = re.compile(r"\bto\s+be\s+((?:[A-Za-z]+[\s-]+){0,5}?)(is|are|was|were)\b", re.I)
+
+    def repl(match: re.Match[str]) -> str:
+        middle = " ".join(match.group(1).split())
+        verb = match.group(2)
+        return f"{verb} {middle}".rstrip()
+
+    return pattern.subn(repl, text)
+
+
+def _remove_empty_subheadings(text: str) -> tuple[str, int]:
+    matches = list(re.finditer(r"^(#{3,6})\s+(.+?)\s*$", text, flags=re.M))
+    remove: list[tuple[int, int]] = []
+    for idx, match in enumerate(matches):
+        next_match = matches[idx + 1] if idx + 1 < len(matches) else None
+        if next_match is not None and len(next_match.group(1)) > len(match.group(1)):
+            continue
+        end = next_match.start() if next_match else len(text)
+        if not text[match.end():end].strip():
+            remove.append((match.start(), end))
+    if not remove:
+        return text, 0
+    out = text
+    for start, end in reversed(remove):
+        out = out[:start].rstrip() + "\n\n" + out[end:].lstrip()
+    return out, len(remove)
 
 
 _PUBLIC_METADATA_HEADER_LABELS = {

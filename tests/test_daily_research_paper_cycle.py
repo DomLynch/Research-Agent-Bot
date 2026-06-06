@@ -24,6 +24,11 @@ def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
     assert cycle._failure_class("research_revision_fingerprint") == "D_no_action"
 
 
+def test_daily_paper_policy_uses_12_receipts_and_shared_source_precision() -> None:
+    assert cycle.PREFLIGHT_MIN_RECEIPTS == 12
+    assert cycle.SOURCE_TOPIC_REPAIR_FLOOR == cycle.submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
+
+
 @pytest.fixture(autouse=True)
 def _offline_coverage_judge(monkeypatch):
     """The revision coverage judge calls a live model; default every test to
@@ -1078,7 +1083,7 @@ def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, m
             "status": "no_eligible_research_paper",
             "submitted": 0,
             "published": 0,
-            "considered": [{"run": runs[-1], "status": "source_topic_precision_low:1/4<0.35"}],
+            "considered": [{"run": runs[-1], "status": "source_topic_precision_low:1/4<0.50"}],
         }
 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
@@ -1094,8 +1099,8 @@ def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, m
     )
 
     assert ledger["status"] == "synthesis_completed_no_submission"
-    assert ledger["no_submission_reason"] == "source_topic_precision_low:1/4<0.35"
-    assert ledger["attempts"][0]["gate_status"] == "source_topic_precision_low:1/4<0.35"
+    assert ledger["no_submission_reason"] == "source_topic_precision_low:1/4<0.50"
+    assert ledger["attempts"][0]["gate_status"] == "source_topic_precision_low:1/4<0.50"
 
 
 def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) -> None:
@@ -3124,7 +3129,7 @@ def test_corpus_repair_topics_include_preflight_and_retracted_only(tmp_path: Pat
     for topic, status in [
         ("epigenetic_clocks", "preflight_insufficient_corpus"),
         ("coenzyme_q10_ubiquinol", "retracted_source_cited"),
-        ("epigenome_editing_longevity", "source_topic_precision_low:1/4<0.35"),
+        ("epigenome_editing_longevity", "source_topic_precision_low:1/4<0.50"),
         ("gdf11", "abstract_overclaim"),
     ]:
         cycle._record_blockers(ledger_dir, "2026-05-31", [{"topic": topic, "gate_status": status, "submitted": 0}])
@@ -3318,7 +3323,7 @@ def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Pa
                 "status": "no_eligible_research_paper",
                 "submitted": 0,
                 "published": 0,
-                "considered": [{"run": runs[-1], "status": "source_topic_precision_low:1/4<0.35"}],
+                "considered": [{"run": runs[-1], "status": "source_topic_precision_low:1/4<0.50"}],
             }
         return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
 

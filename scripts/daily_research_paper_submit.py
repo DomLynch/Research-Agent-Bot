@@ -43,8 +43,16 @@ TOKEN_ENVS = (
     "RESEARKA_V2_API_KEY",
 )
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
-SOURCE_TOPIC_PRECISION_FLOOR = 0.35
+DEFAULT_ARTICLE_TYPE = "research_synthesis"
+SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 NULL_CODING_AUDIT_FLOOR = 0.90
+PUBLICATION_IDENTITY_KEYS = (
+    "submission_identity_key",
+    "submission_payload_hash",
+    "content_hash",
+    "source_citation_hash",
+    "author_signature",
+)
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 
@@ -74,6 +82,10 @@ def _payload_fingerprint(payload: dict[str, Any]) -> str:
     return "sha256:" + hashlib.sha256(json.dumps(material, sort_keys=True).encode("utf-8")).hexdigest()
 
 
+def _hash_json(material: Any) -> str:
+    return "sha256:" + hashlib.sha256(json.dumps(material, sort_keys=True).encode("utf-8")).hexdigest()
+
+
 def _normalized_key(text: str) -> str:
     return " ".join(str(text or "").lower().split())
 
@@ -96,6 +108,10 @@ def _env_or_default(name: str, default: str) -> str:
 
 def _agent_slug() -> str:
     return os.getenv("RESEARKA_AGENT_SLUG_V3", "").strip() or os.getenv("AGENT_ID", "").strip() or DEFAULT_AGENT_SLUG
+
+
+def _article_type() -> str:
+    return os.getenv("RESEARKA_ARTICLE_TYPE_V3", "").strip() or DEFAULT_ARTICLE_TYPE
 
 
 def _token() -> tuple[str, str]:
@@ -320,7 +336,15 @@ def _seen(path: Path) -> set[str]:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         pass
-    return {str(row.get("fingerprint")) for row in data if isinstance(row, dict)}
+    out: set[str] = set()
+    for row in data if isinstance(data, list) else []:
+        if not isinstance(row, dict):
+            continue
+        for key in ("fingerprint", *PUBLICATION_IDENTITY_KEYS):
+            value = row.get(key)
+            if isinstance(value, str) and value:
+                out.add(value)
+    return out
 
 
 def _append_record(path: Path, row: dict[str, Any]) -> None:
@@ -377,11 +401,15 @@ def select_candidate(
         locally_eligible, status = _eligible(run)
         ok = locally_eligible
         payload = build_payload(run) if locally_eligible else {}
+        metadata = payload.get("metadata") if isinstance(payload, dict) else {}
+        metadata = metadata if isinstance(metadata, dict) else {}
         if locally_eligible:
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
             if null_status != "eligible":
                 ok, status = False, null_status
         fp = _payload_fingerprint(payload) if locally_eligible else paper_sha
+        if locally_eligible:
+            markers.update(_metadata_markers(metadata))
         if topic in seen_topics:
             ok, status = False, "superseded_topic_run"
         elif ok and fp in rejected_seen:
@@ -488,7 +516,7 @@ def _evidence_type_for_source(receipt: dict[str, Any]) -> str:
     directness = str(receipt.get("directness") or "").lower()
     if directness == "review":
         return "review"
-    return "primary" if directness in {"direct", "indirect", "mechanistic"} else "evidence"
+    return "primary"
 
 
 def _claim_excerpt(topic: str, receipt_id: str, *, limit: int = 2) -> str:
@@ -620,6 +648,35 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     return bundle
 
 
+def _source_citation_hash(source_bundle: list[dict[str, Any]]) -> str:
+    material = [
+        {
+            key: row.get(key)
+            for key in ("id", "title", "url", "doi", "year", "evidence_type")
+            if row.get(key) not in (None, "")
+        }
+        for row in source_bundle
+    ]
+    return _hash_json(material)
+
+
+def _submission_identity_key(*, agent_slug: str, title: str, content_hash: str, source_citation_hash: str) -> str:
+    return _hash_json({
+        "agent_slug": agent_slug,
+        "title": _normalized_key(title),
+        "content_hash": content_hash,
+        "source_citation_hash": source_citation_hash,
+    })
+
+
+def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
+    return {
+        value if value.startswith("sha256:") else f"sha256:{value}"
+        for key in PUBLICATION_IDENTITY_KEYS
+        if isinstance((value := metadata.get(key)), str) and value
+    }
+
+
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
     manifest = _read_json(run / "manifest.json")
@@ -632,11 +689,37 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     discussion = parts.get("Discussion", "")
     limitations = parts.get("Limitations", "")
     conclusion = parts.get("Conclusion", "")
+    source_bundle = _source_bundle(run, limit=max_sources)
+    content_hash = _sha256(run / "full_paper.md")
+    source_hash = _source_citation_hash(source_bundle)
+    agent_slug = _agent_slug()
+    article_type = _article_type()
+    rapid_sections = {
+        "Research Question": _clip_text(
+            f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? "
+            f"{_clip_text(abstract, limit=650)}",
+        ),
+        "Search Summary": methods or abstract,
+        "Evidence Landscape": results or abstract,
+        "Key Findings": _key_findings(abstract, discussion, limitations, conclusion),
+        "Limitations": limitations or discussion or abstract,
+        "Gaps Identified": _actionable_gaps(
+            topic, manifest, parts.get("Gaps Identified", ""), discussion, limitations, abstract,
+        ),
+        "Conclusion": conclusion or abstract,
+    }
     metadata: dict[str, Any] = {
         "artifact_type": "research_paper",
         "run_id": run.name,
         "topic": topic,
-        "content_hash": _sha256(run / "full_paper.md"),
+        "content_hash": content_hash,
+        "source_citation_hash": source_hash,
+        "submission_identity_key": _submission_identity_key(
+            agent_slug=agent_slug,
+            title=title,
+            content_hash=content_hash,
+            source_citation_hash=source_hash,
+        ),
         "counts": {
             "n_receipts": manifest.get("n_receipts"),
             "n_claims": manifest.get("n_high_confidence_claims_total"),
@@ -656,28 +739,15 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "abstract": abstract,
         "artifact_type": "research_paper",
         "body_markdown": paper.strip(),
-        "sections": {
-            "Research Question": _clip_text(
-                f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? "
-                f"{_clip_text(abstract, limit=650)}",
-            ),
-            "Search Summary": methods or abstract,
-            "Evidence Landscape": results or abstract,
-            "Key Findings": _key_findings(abstract, discussion, limitations, conclusion),
-            "Limitations": limitations or discussion or abstract,
-            "Gaps Identified": _actionable_gaps(
-                topic, manifest, parts.get("Gaps Identified", ""), discussion, limitations, abstract,
-            ),
-            "Conclusion": conclusion or abstract,
-        },
-        "source_bundle": _source_bundle(run, limit=max_sources),
-        "author_agent_id": _agent_slug(),
+        "sections": {**rapid_sections, **parts} if article_type == "research_synthesis" else rapid_sections,
+        "source_bundle": source_bundle,
+        "author_agent_id": agent_slug,
         "submitter_name": os.getenv("RESEARKA_SUBMITTER_NAME") or None,
         "submitter_orcid": os.getenv("RESEARKA_SUBMITTER_ORCID") or None,
-        "article_type": "rapid_evidence_synthesis",
+        "article_type": article_type,
         "domain_slug": _env_or_default("RESEARKA_DOMAIN_SLUG_V3", "longevity"),
         "core_claims_resolved": True,
-        "author_signature": _sha256(run / "full_paper.md"),
+        "author_signature": content_hash,
         "metadata": metadata,
     }
     metadata["submission_payload_hash"] = _payload_fingerprint(payload)
@@ -688,6 +758,7 @@ def _submitter(url: str, token: str, agent_slug: str) -> Submitter:
     def submit(payload: dict[str, Any]) -> dict[str, Any]:
         metadata = payload.get("metadata")
         content_hash = metadata.get("content_hash") if isinstance(metadata, dict) else ""
+        identity_key = metadata.get("submission_identity_key") if isinstance(metadata, dict) else ""
         req = urllib.request.Request(
             url,
             data=json.dumps(payload).encode("utf-8"),
@@ -697,7 +768,7 @@ def _submitter(url: str, token: str, agent_slug: str) -> Submitter:
                 "Content-Type": "application/json",
                 "x-api-key": token,
                 "X-Agent-Slug": agent_slug,
-                "Idempotency-Key": str(content_hash or ""),
+                "Idempotency-Key": str(identity_key or content_hash or ""),
             },
         )
         try:
@@ -757,7 +828,8 @@ def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], st
             metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
             if not _publication_row_has_public_proof(row, metadata):
                 continue
-            for key in ("submission_payload_hash", "content_hash", "sha256", "full_body_sha256", "condensed_body_sha256"):
+            out.update(_metadata_markers(metadata))
+            for key in ("sha256", "full_body_sha256", "condensed_body_sha256"):
                 content_hash = metadata.get(key)
                 if isinstance(content_hash, str) and content_hash:
                     out.add(content_hash if content_hash.startswith("sha256:") else f"sha256:{content_hash}")
@@ -818,12 +890,16 @@ def run_cycle(
     result = submitter(payload)
     ledger["submission"] = result
     if result.get("ok"):
+        response = result.get("response")
+        submission_id = response.get("id") if isinstance(response, dict) else None
         _append_record(submitted_path, {
             "date": date,
             "run": run.name,
             "topic": metadata.get("topic"),
             "fingerprint": fp,
             "paper_sha256": metadata.get("content_hash"),
+            "submission_id": submission_id,
+            **{key: metadata.get(key) for key in PUBLICATION_IDENTITY_KEYS if metadata.get(key)},
         })
         ledger.update({"status": "submitted_to_researka", "submitted": 1})
         _mark_considered_status(considered, run.name, "submitted_to_researka")

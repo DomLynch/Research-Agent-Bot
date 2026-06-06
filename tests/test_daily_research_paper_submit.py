@@ -31,7 +31,15 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test") -> Path:
     run = root / name
     run.mkdir(parents=True)
     (run / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n## Abstract\n\nFull abstract.\n\n## References\n\nR01.",
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\nFull abstract.\n\n"
+        "## Introduction\n\nIntroduction text.\n\n"
+        "## Methods\n\nMethods text.\n\n"
+        "## Results\n\nResults text.\n\n"
+        "## Discussion\n\nDiscussion text.\n\n"
+        "## Limitations\n\nLimitations text.\n\n"
+        "## Conclusion\n\nConclusion text.\n\n"
+        "## References\n\nR01.",
         encoding="utf-8",
     )
     receipts = [
@@ -166,14 +174,18 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
 
     payload = daily.build_payload(run)
 
-    assert payload["article_type"] == "rapid_evidence_synthesis"
+    assert payload["article_type"] == "research_synthesis"
     assert payload["author_agent_id"] == "agent-v3-full-paper"
     assert payload["artifact_type"] == "research_paper"
     assert payload["metadata"]["artifact_type"] == "research_paper"
+    assert payload["metadata"]["source_citation_hash"].startswith("sha256:")
+    assert payload["metadata"]["submission_identity_key"].startswith("sha256:")
+    assert payload["metadata"]["submission_payload_hash"].startswith("sha256:")
     assert payload["body_markdown"].startswith("# Research Synthesis")
     assert "\n## Abstract" in payload["body_markdown"]
     assert "Full Manuscript" not in payload["sections"]
-    assert payload["sections"]["Research Question"]
+    assert payload["sections"]["Abstract"]
+    assert payload["sections"]["Methods"]
     assert payload["author_signature"].startswith("sha256:")
     assert payload["source_bundle"][0]["doi"] == "10.1/x"
     assert payload["source_bundle"][0]["evidence_type"] == "primary"
@@ -509,6 +521,9 @@ def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None
     assert ledger["published"] == 0
     records = json.loads((tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json").read_text(encoding="utf-8"))
     assert records[0]["topic"] == "topic"
+    assert records[0]["submission_id"] == "obj-1"
+    assert records[0]["submission_identity_key"].startswith("sha256:")
+    assert records[0]["submission_payload_hash"].startswith("sha256:")
 
 
 def test_submit_uses_final_status_ready_over_all_green_verdict(tmp_path: Path, monkeypatch) -> None:
@@ -551,7 +566,7 @@ def test_low_source_topic_precision_blocks_submit(tmp_path: Path, monkeypatch) -
     )
 
     assert ledger["status"] == "no_eligible_research_paper"
-    assert ledger["considered"][0]["status"] == "source_topic_precision_low:1/4<0.35"
+    assert ledger["considered"][0]["status"] == "source_topic_precision_low:1/4<0.50"
 
 
 def test_source_topic_precision_uses_topic_aliases(tmp_path: Path, monkeypatch) -> None:
@@ -953,7 +968,7 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     payload = {
         "publications": [{
             "title": title,
-            "metadata": {"content_hash": "sha256:abc"},
+            "metadata": {"content_hash": "sha256:abc", "submission_identity_key": "sha256:identity"},
             "decision": "accept",
         }],
     }
@@ -973,7 +988,7 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     markers, error = daily._remote_published_fingerprints("https://api.example/publications")
 
     assert error is None
-    assert markers == {"sha256:abc", daily._title_marker(title)}
+    assert markers == {"sha256:abc", "sha256:identity", daily._title_marker(title)}
 
 
 def test_http_submitter_sends_runtime_key_headers_and_idempotency(monkeypatch) -> None:
@@ -999,11 +1014,11 @@ def test_http_submitter_sends_runtime_key_headers_and_idempotency(monkeypatch) -
     monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
 
     result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(
-        {"title": "paper", "metadata": {"content_hash": "sha256:abc"}},
+        {"title": "paper", "metadata": {"content_hash": "sha256:abc", "submission_identity_key": "sha256:identity"}},
     )
 
     assert result["ok"] is True
     assert seen["headers"]["Authorization"] == "Bearer secret"
     assert seen["headers"]["X-api-key"] == "secret"
     assert seen["headers"]["X-agent-slug"] == "agent-v3"
-    assert seen["headers"]["Idempotency-key"] == "sha256:abc"
+    assert seen["headers"]["Idempotency-key"] == "sha256:identity"
