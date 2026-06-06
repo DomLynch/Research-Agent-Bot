@@ -201,8 +201,16 @@ def _publication_markers_for_run(runs_root: Path, run_name: str) -> set[str]:
 
 
 def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_seen: set[str]) -> bool:
-    if not int(ledger.get("submitted") or 0) or int(ledger.get("published") or 0):
+    if not int(ledger.get("submitted") or 0):
         return False
+    if int(ledger.get("published") or 0):
+        changed = False
+        if str(ledger.get("status") or "") == "submitted_to_researka":
+            ledger["status"] = "published"
+            changed = True
+        before = len(ledger)
+        ledger.pop("no_submission_reason", None)
+        return changed or len(ledger) != before
     matches: set[str] = set()
     submitted_runs = set(_ledger_run_names(ledger))
     for run_name in submitted_runs:
@@ -212,6 +220,7 @@ def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_
     ledger["published"] = 1
     if str(ledger.get("status") or "") == "submitted_to_researka":
         ledger["status"] = "published"
+    ledger.pop("no_submission_reason", None)
     ledger["publication_reconciliation"] = {
         "source": "remote_publications",
         "matched": sorted(matches)[:5],
