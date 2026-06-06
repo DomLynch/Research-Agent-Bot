@@ -2501,7 +2501,7 @@ def run_cycle(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date", default=dt.datetime.now(dt.UTC).date().isoformat())
+    parser.add_argument("--date")
     parser.add_argument("--runs-root", type=Path, default=RUNS)
     parser.add_argument("--topic")
     parser.add_argument("--run-synthesis", action="store_true")
@@ -2528,7 +2528,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if result["status"] != "remote_dedupe_failed" else 2
     ledger = run_cycle(
         runs_root=args.runs_root,
-        date=args.date,
+        date=args.date or dt.datetime.now(dt.UTC).date().isoformat(),
         run_synthesis=args.run_synthesis,
         synthesis_dry_run=args.synthesis_dry_run,
         submit=args.submit,

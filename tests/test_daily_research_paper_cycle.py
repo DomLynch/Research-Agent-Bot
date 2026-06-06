@@ -314,6 +314,24 @@ def test_reconcile_cli_without_mode_checks_all_lanes(monkeypatch: pytest.MonkeyP
     assert seen["mode"] is None
 
 
+def test_reconcile_cli_without_date_checks_all_dates(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    seen: dict[str, Any] = {}
+
+    def fake_reconcile(**kwargs: Any) -> dict[str, Any]:
+        seen.update(kwargs)
+        return {
+            "status": "no_publication_reconciliation_needed",
+            "checked": 0,
+            "updated": 0,
+            "updated_ledgers": [],
+        }
+
+    monkeypatch.setattr(cycle, "reconcile_publication_ledgers", fake_reconcile)
+
+    assert cycle.main(["--runs-root", str(tmp_path / "runs"), "--reconcile-publications"]) == 0
+    assert seen["date"] is None
+
+
 def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     cycle._record_blockers(
