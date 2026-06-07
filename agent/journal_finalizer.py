@@ -2299,6 +2299,8 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
         _g("reevaluate_journal_surface_post_finalizer", 1, f"surface issues delta vs pre-finalizer gate: {delta:+d}")
     if _refresh_pre_submit_gate(out_dir):
         _g("refresh_pre_submit_gate_with_fresh_surface", 1, "pre_submit_gate.inputs.journal_surface_passed + result recomputed")
+    if _refresh_final_consistency_sidecar(out_dir):
+        _g("refresh_final_consistency_post_finalizer", 1, "full_paper.consistency refreshed against post-finalizer manuscript")
     if _refresh_artifact_consistency_sidecar(out_dir):
         _g("refresh_artifact_consistency_post_finalizer", 1, "artifact_consistency refreshed before readiness/final_status")
     if _refresh_final_verdict(out_dir):
@@ -2309,6 +2311,40 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     if _refresh_final_status(out_dir):
         _g("refresh_final_status_post_finalizer", 1, "final_status refreshed against post-finalizer sidecars")
     return log
+
+
+def _refresh_final_consistency_sidecar(out_dir: Path) -> bool:
+    paper_path = out_dir / "full_paper.md"
+    if not paper_path.is_file():
+        return False
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    audit = _load_sidecar(out_dir / "full_paper.audit.json")
+    if not isinstance(manifest, dict) or not isinstance(audit, dict):
+        return False
+    try:
+        consistency_audit = importlib.import_module("scripts.final_consistency_audit")
+        audit_md = (
+            (out_dir / "full_paper.audit.md").read_text()
+            if (out_dir / "full_paper.audit.md").is_file()
+            else ""
+        )
+        issues = consistency_audit.run_audit(
+            paper_path.read_text(), manifest, audit, audit_md,
+        )
+        payload = [asdict(i) for i in issues]
+    except (AttributeError, ImportError, OSError, TypeError, ValueError):
+        return False
+    path = out_dir / "full_paper.consistency.json"
+    if _load_sidecar(path) == payload:
+        return False
+    path.write_text(json.dumps(payload, indent=2))
+    try:
+        (out_dir / "full_paper.consistency.md").write_text(
+            consistency_audit._format_summary(issues),
+        )
+    except (AttributeError, OSError):
+        pass
+    return True
 
 
 def _refresh_artifact_consistency_sidecar(out_dir: Path) -> bool:
