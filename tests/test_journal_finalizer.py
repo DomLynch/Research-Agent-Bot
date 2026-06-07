@@ -773,6 +773,7 @@ def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None
         "### Results Summary\n\n"
         "### Metabolic Outcomes\n\n"
         "The causal bridge to be rigorously is bounded by directness and follow-up limits.\n\n"
+        "A signal in one domain does not automatically is consistent with the same signal in another.\n\n"
         "## References\n\n- Smith 2024.\n"
     )
 
@@ -784,14 +785,16 @@ def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None
     assert "### Results Summary" not in fixed
     assert "to be rigorously is" not in fixed
     assert "is rigorously bounded" in fixed
+    assert "does not automatically is" not in fixed
+    assert "is not automatically consistent" in fixed
     assert not any(i.code == "grammar_artifact" for i in evaluate_journal_surface(fixed).issues)
     assert not any("empty heading: Results Summary" in i.detail for i in evaluate_journal_surface(fixed).issues)
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
             phase="M_surface_artifact_cleanup",
             rule="repair_known_surface_artifacts",
-            n_changes=2,
-            detail="grammar_artifact=1; empty_subheading=1",
+            n_changes=3,
+            detail="grammar_artifact=2; empty_subheading=1",
         )
     ]
 

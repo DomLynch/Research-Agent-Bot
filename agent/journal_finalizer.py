@@ -207,13 +207,20 @@ def _phase_m_repair_surface_artifacts(text: str) -> tuple[str, list[FinalizerLog
 
 def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
     pattern = re.compile(r"\bto\s+be\s+((?:[A-Za-z]+[\s-]+){0,5}?)(is|are|was|were)\b", re.I)
+    transfer_pattern = re.compile(r"\bdoes\s+not\s+automatically\s+(is|are|was|were)\b", re.I)
 
     def repl(match: re.Match[str]) -> str:
         middle = " ".join(match.group(1).split())
         verb = match.group(2)
         return f"{verb} {middle}".rstrip()
 
-    return pattern.subn(repl, text)
+    out, n = pattern.subn(repl, text)
+
+    def transfer_repl(match: re.Match[str]) -> str:
+        return f"{match.group(1)} not automatically"
+
+    out, n_transfer = transfer_pattern.subn(transfer_repl, out)
+    return out, n + n_transfer
 
 
 def _remove_empty_subheadings(text: str) -> tuple[str, int]:

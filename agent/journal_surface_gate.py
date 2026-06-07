@@ -144,8 +144,14 @@ _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain
 _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
 _GRAMMAR_ARTIFACT_RE = re.compile(
     r"\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
-    r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were))\b",
+    r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were)"
+    r"|does\s+not\s+automatically\s+(?:is|are|was|were))\b",
     re.IGNORECASE,
+)
+_CITATION_ONLY_STUB_RE = re.compile(
+    r"^(?:[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
+    r"(?:\s+et\s+al\.)?\s+(?:19|20)\d{2}[a-z]?\s+"
+    r"(?:reported|showed|found|observed|demonstrated|concluded)\.?$"
 )
 _CLASSIFICATION_META_ROW_RE = re.compile(
     r"^\|\s*\*{0,2}(?:outcome class|directness|directional signal|evidence tier)\*{0,2}\b",
@@ -487,6 +493,8 @@ def _thin_analytic_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
         n = len(re.findall(r"[a-z0-9]+", text.lower()))
         if 5 <= n <= 14 and _ANALYTIC_STUB_RE.search(text) and not re.search(r"\d|;|:", text):
             issues.append(f"thin analytical paragraph {idx}: {text}")
+        elif _CITATION_ONLY_STUB_RE.match(text):
+            issues.append(f"citation-only stub paragraph {idx}: {text}")
         elif n >= 6 and re.search(r"(?:\.\.\.|…)$|\b(?:versus|vs|and|or|but|of|to|with|for|than|between|whereas|while)$", re.sub(r"""[\s)\]"'*_`]+$""", "", text), re.I):
             issues.append(f"truncated sentence paragraph {idx}: …{text[-60:]}")
     return tuple(issues)

@@ -370,6 +370,14 @@ def test_truncated_sentence_blocks_surface():
     assert any("truncated sentence" in i.detail for i in report.issues)
 
 
+def test_citation_only_reported_stub_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("## Cross-Domain Synthesis\n\n", "## Cross-Domain Synthesis\n\nWu 2025 reported.\n\n", 1)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("citation-only stub" in i.detail for i in report.issues)
+
+
 def test_known_grammar_artifact_blocks_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(
@@ -392,6 +400,18 @@ def test_double_copula_splice_blocks_surface():
     report = evaluate_journal_surface(paper)
     assert not report.passed
     assert any(i.code == "grammar_artifact" and "to be rigorously is" in i.detail for i in report.issues)
+
+
+def test_domain_transfer_grammar_artifact_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "abstract1",
+        "A signal in one domain does not automatically is consistent with the same signal in another.",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "grammar_artifact" and "automatically is" in i.detail for i in report.issues)
 
 
 def test_legitimate_to_be_consistent_sentence_does_not_trigger_grammar_artifact():

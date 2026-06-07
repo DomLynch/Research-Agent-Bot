@@ -23,13 +23,13 @@ import argparse
 import json
 import re
 import sys
-import tomllib
 import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 
 from agent.outcome_class_remap import outcome_key
+from agent.topic_display import humanize_topic
 
 __all__ = ["apply_fixes", "main"]
 
@@ -186,18 +186,7 @@ def _strip_empty_parenthetical_citations(paper_md: str) -> tuple[str, int]:
 
 def _topic_display_name(topic: str) -> str:
     repo = Path(__file__).resolve().parent.parent
-    pack_path = repo / "topic_packs" / f"{topic}.toml"
-    if pack_path.exists():
-        try:
-            pack = tomllib.loads(pack_path.read_text())
-            aliases = pack.get("aliases") or []
-            for alias in aliases:
-                if isinstance(alias, str) and alias.strip():
-                    if alias.isupper() or "-" in alias or " " in alias:
-                        return alias.strip()[:1].upper() + alias.strip()[1:]
-        except (OSError, ValueError, tomllib.TOMLDecodeError):
-            pass
-    return topic.replace("_", " ").title()
+    return humanize_topic(topic, title_case=True, root=repo)
 
 
 def _normalize_public_topic_slug(
