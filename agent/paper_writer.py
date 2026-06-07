@@ -43,6 +43,7 @@ from agent.synthesis_schemas import (
     TensionMatrix,
 )
 from agent.synthesis_writer import filter_accepted
+from agent.topic_display import humanize_topic
 
 # Day 10.16c — per-section word-count budgets enforced AT CODE LEVEL.
 # Prompts ask for length; this dict defines the floors that the writer
@@ -539,7 +540,7 @@ async def render_full_paper(
     # flagged this as 'too much internal pipeline language' and
     # Fix #56 was already stripping it; now we don't emit it in the
     # first place.
-    topic_title = topic.replace("_", " ").replace("-", " ").title()
+    topic_title = humanize_topic(topic, title_case=True, root=_repo)
     title_md = f"# Research Synthesis: {topic_title} — full paper\n\n"
     sections: dict[SectionName, SynthesisSection] = {}
 

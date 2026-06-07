@@ -77,6 +77,7 @@ from agent.synthesis_schemas import (  # noqa: E402
     Tension, TensionKind, TensionMatrix,
 )
 from agent.settings import load_settings  # noqa: E402
+from agent.topic_display import humanize_topic  # noqa: E402
 
 # Pipeline-stage modules (auto-included after writer; final-layer
 # review by the final-layer reviewer with Mistral fallback closes the loop with NO
@@ -464,8 +465,7 @@ def _restore_public_surface_floors(
 
 
 def _topic_display_name() -> str:
-    topic = _ACTIVE_TOPIC.replace("_", " ").replace("-", " ").strip()
-    return topic or "the topic"
+    return humanize_topic(_ACTIVE_TOPIC, root=REPO_ROOT)
 
 
 def _intervention_class() -> str:
@@ -552,8 +552,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
     paragraphs_by_title = {
         "Abstract": [
             (
-                f"This paper synthesizes {topic} as an aging-related "
-                f"intervention across {receipt_n} accepted source papers and "
+                f"This paper synthesizes evidence on {topic} across "
+                f"{receipt_n} accepted source papers and "
                 f"{claim_n} high-confidence extracted claims."
             ),
             (
@@ -579,8 +579,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ],
         "Introduction": [
             (
-                f"This synthesis evaluates {topic} as an aging-related "
-                f"intervention across {receipt_n} accepted source papers and "
+                f"This synthesis evaluates evidence on {topic} across "
+                f"{receipt_n} accepted source papers and "
                 f"{claim_n} high-confidence extracted claims. The review is "
                 "organized around the distinction between direct clinical "
                 "evidence, indirect clinical evidence, and mechanistic evidence "
@@ -696,7 +696,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             ),
             (
                 "The practical implication is a calibrated research position. "
-                f"{topic.title()} may justify further targeted testing when the "
+                f"{topic[:1].upper() + topic[1:]} may justify further targeted testing when the "
                 "mechanistic rationale, clinical endpoint, and population risk "
                 "profile align, but the present corpus does not justify claims "
                 "that ignore the null or adverse parts of the evidence base."
@@ -828,15 +828,15 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ),
         (
             "The resulting paper is therefore a calibrated synthesis: it can "
-            "identify plausible mechanisms, direct clinical signals, unresolved "
-            "tensions, and trial-design priorities without converting them into "
-            "claims stronger than the retained corpus can support."
+            "identify plausible mechanisms, observed direct signals when present, "
+            "unresolved tensions, and trial-design priorities without converting "
+            "them into claims stronger than the retained corpus can support."
         ),
         (
             "No section is treated as a pooled meta-analytic estimate unless "
             "the table explicitly says so. The text summarizes study-level "
             "patterns, while the numeric supplement preserves the "
-            "source-bound numeric record."
+            "extracted numeric record."
         ),
         (
             "This distinction matters for publication because it makes the "

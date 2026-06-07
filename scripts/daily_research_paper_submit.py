@@ -27,6 +27,7 @@ from source_topic_specificity import (  # noqa: E402
     is_source_topic_specific, source_gate_aliases, topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.topic_display import humanize_topic  # noqa: E402
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
@@ -576,7 +577,7 @@ def _demote_headings(markdown: str) -> str:
 
 
 def _display_topic(slug: str) -> str:
-    return slug.replace("_", " ").strip().title() or "Research Synthesis"
+    return humanize_topic(slug, title_case=True, root=ROOT)
 
 
 def _citation_url(row: dict[str, Any]) -> str | None:
