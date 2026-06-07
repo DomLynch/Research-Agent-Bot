@@ -27,18 +27,22 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload), encoding="utf-8")
 
 
+def _words(token: str, count: int) -> str:
+    return " ".join([token] * count)
+
+
 def _run(root: Path, name: str = "synthesis-topic-v06-test") -> Path:
     run = root / name
     run.mkdir(parents=True)
     (run / "full_paper.md").write_text(
         "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\nFull abstract.\n\n"
-        "## Introduction\n\nIntroduction text.\n\n"
-        "## Methods\n\nMethods text.\n\n"
-        "## Results\n\nResults text.\n\n"
-        "## Discussion\n\nDiscussion text.\n\n"
-        "## Limitations\n\nLimitations text.\n\n"
-        "## Conclusion\n\nConclusion text.\n\n"
+        f"## Abstract\n\n{_words('abstract', 90)}.\n\n"
+        f"## Introduction\n\n{_words('introduction', 350)}.\n\n"
+        f"## Methods\n\n{_words('methods', 300)}.\n\n"
+        f"## Results\n\n{_words('results', 850)}.\n\n"
+        f"## Discussion\n\n{_words('discussion', 500)}.\n\n"
+        f"## Limitations\n\n{_words('limitations', 200)}.\n\n"
+        f"## Conclusion\n\n{_words('conclusion', 120)}.\n\n"
         "## References\n\nR01.",
         encoding="utf-8",
     )
@@ -194,6 +198,50 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert "published" not in payload
 
 
+def test_researka_preflight_blocks_thin_full_paper_before_submit(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\n" + _words("abstract", 90) + ".\n\n"
+        "## Introduction\n\nThin introduction.\n\n"
+        "## Methods\n\nThin methods.\n\n"
+        "## Results\n\nThin results.\n\n"
+        "## Discussion\n\nThin discussion.\n\n"
+        "## Limitations\n\nThin limitations.\n\n"
+        "## Conclusion\n\nThin conclusion.\n\n",
+        encoding="utf-8",
+    )
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-07",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("thin paper must not submit")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["reason"].startswith("researka_preflight_body_words:")
+    assert ledger["submitted"] == 0
+
+
+def test_researka_preflight_uses_exact_research_synthesis_sections(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_ARTICLE_TYPE_V3", "research_synthesis")
+    payload = daily.build_payload(_run(tmp_path))
+
+    assert daily._researka_preflight_status(payload) == "eligible"
+
+    payload["sections"].pop("Methods")
+    assert daily._researka_preflight_status(payload) == "researka_preflight_missing_sections:Methods"
+
+
+def test_researka_preflight_requires_twelve_sources(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["source_bundle"] = payload["source_bundle"][:11]
+
+    assert daily._researka_preflight_status(payload) == "researka_preflight_insufficient_sources:11 < 12"
+
+
 def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(daily, "ROOT", tmp_path)
     run = _run(tmp_path)
@@ -314,10 +362,17 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
         "Source-bundle reconciliation note: Directional coding is conservative claim-level coding from extracted claim records, "
         "not a statement that the source texts contain no directional findings.\n\n"
     )
-    (run / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n## Abstract\n\n" + note + "## Conclusion\n\n" + note,
-        encoding="utf-8",
+    paper = (
+        "# Research Synthesis: Topic\n\n"
+        "## Abstract\n\n" + note + _words("abstract", 90) + ".\n\n"
+        "## Introduction\n\n" + _words("introduction", 350) + ".\n\n"
+        "## Methods\n\n" + _words("methods", 300) + ".\n\n"
+        "## Results\n\n" + _words("results", 850) + ".\n\n"
+        "## Discussion\n\n" + _words("discussion", 500) + ".\n\n"
+        "## Limitations\n\n" + _words("limitations", 200) + ".\n\n"
+        "## Conclusion\n\n" + note + _words("conclusion", 120) + ".\n\n"
     )
+    (run / "full_paper.md").write_text(paper, encoding="utf-8")
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     manifest["n_receipts"] = 16
     manifest["receipts"] = [
@@ -993,7 +1048,7 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     assert markers == {"sha256:abc", "sha256:identity", daily._title_marker(title)}
 
 
-def test_http_submitter_sends_runtime_key_headers_and_idempotency(monkeypatch) -> None:
+def test_http_submitter_sends_runtime_key_headers_and_idempotency(tmp_path: Path, monkeypatch) -> None:
     seen: dict[str, Any] = {}
 
     class Response:
@@ -1015,12 +1070,11 @@ def test_http_submitter_sends_runtime_key_headers_and_idempotency(monkeypatch) -
 
     monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
 
-    result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(
-        {"title": "paper", "metadata": {"content_hash": "sha256:abc", "submission_identity_key": "sha256:identity"}},
-    )
+    payload = daily.build_payload(_run(tmp_path))
+    result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(payload)
 
     assert result["ok"] is True
     assert seen["headers"]["Authorization"] == "Bearer secret"
     assert seen["headers"]["X-api-key"] == "secret"
     assert seen["headers"]["X-agent-slug"] == "agent-v3"
-    assert seen["headers"]["Idempotency-key"] == "sha256:identity"
+    assert seen["headers"]["Idempotency-key"] == payload["metadata"]["submission_identity_key"]

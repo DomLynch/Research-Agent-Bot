@@ -53,6 +53,45 @@ PUBLICATION_IDENTITY_KEYS = (
     "source_citation_hash",
     "author_signature",
 )
+RESEARKA_MIN_CITATIONS = 12
+RESEARKA_FULL_PAPER_MIN_BODY_WORDS = 2000
+RESEARKA_REQUIRED_SECTIONS = {
+    "rapid_evidence_synthesis": (
+        "Research Question",
+        "Search Summary",
+        "Evidence Landscape",
+        "Key Findings",
+        "Limitations",
+        "Gaps Identified",
+        "Conclusion",
+    ),
+    "research_synthesis": (
+        "Abstract",
+        "Introduction",
+        "Methods",
+        "Results",
+        "Discussion",
+        "Limitations",
+        "Conclusion",
+    ),
+}
+RESEARKA_RECOMMENDED_SECTIONS = {
+    "research_synthesis": (
+        "Background",
+        "Inferential Bridge",
+        "Quantitative Evidence Index",
+        "Cross-Domain Synthesis",
+        "References",
+    ),
+}
+RESEARKA_QUESTION_SECTION = {
+    "rapid_evidence_synthesis": "Research Question",
+    "research_synthesis": "Abstract",
+}
+RESEARKA_MIN_QUESTION_WORDS = {
+    "rapid_evidence_synthesis": 50,
+    "research_synthesis": 75,
+}
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 
@@ -170,6 +209,45 @@ def _source_floor_status(run: Path) -> str:
     floor = DEFAULT_THRESHOLDS.min_receipts
     if available < floor:
         return f"preflight_insufficient_corpus:n_receipts={available} < threshold {floor}"
+    return "eligible"
+
+
+def _word_count(text: object) -> int:
+    return len(str(text or "").split())
+
+
+def _researka_preflight_status(payload: dict[str, Any]) -> str:
+    article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
+    sections_raw = payload.get("sections")
+    sections: dict[str, Any] = sections_raw if isinstance(sections_raw, dict) else {}
+    source_bundle_raw = payload.get("source_bundle")
+    source_bundle = [row for row in source_bundle_raw if isinstance(row, dict)] if isinstance(source_bundle_raw, list) else []
+    if len(source_bundle) < RESEARKA_MIN_CITATIONS:
+        return f"researka_preflight_insufficient_sources:{len(source_bundle)} < {RESEARKA_MIN_CITATIONS}"
+
+    required_sections = RESEARKA_REQUIRED_SECTIONS.get(article_type, RESEARKA_REQUIRED_SECTIONS[DEFAULT_ARTICLE_TYPE])
+    missing = [name for name in required_sections if not str(sections.get(name) or "").strip()]
+    if missing:
+        return "researka_preflight_missing_sections:" + ",".join(missing)
+
+    question_section = RESEARKA_QUESTION_SECTION.get(article_type, "Research Question")
+    minimum_question_words = RESEARKA_MIN_QUESTION_WORDS.get(article_type, 50)
+    question_words = _word_count(sections.get(question_section))
+    if question_words < minimum_question_words:
+        return (
+            "researka_preflight_question_words:"
+            f"{question_section}={question_words} < {minimum_question_words}"
+        )
+
+    if article_type == "research_synthesis":
+        body_words = sum(
+            _word_count(sections.get(name))
+            for name in (*required_sections, *RESEARKA_RECOMMENDED_SECTIONS.get(article_type, ()))
+        )
+    else:
+        body_words = _word_count(payload.get("body_markdown"))
+    if body_words < RESEARKA_FULL_PAPER_MIN_BODY_WORDS:
+        return f"researka_preflight_body_words:{body_words} < {RESEARKA_FULL_PAPER_MIN_BODY_WORDS}"
     return "eligible"
 
 
@@ -756,6 +834,9 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
 
 def _submitter(url: str, token: str, agent_slug: str) -> Submitter:
     def submit(payload: dict[str, Any]) -> dict[str, Any]:
+        preflight_status = _researka_preflight_status(payload)
+        if preflight_status != "eligible":
+            return {"ok": False, "status": 0, "response": preflight_status, "preflight": True}
         metadata = payload.get("metadata")
         content_hash = metadata.get("content_hash") if isinstance(metadata, dict) else ""
         identity_key = metadata.get("submission_identity_key") if isinstance(metadata, dict) else ""
@@ -887,6 +968,13 @@ def run_cycle(
     if submitter is None:
         ledger["submit_token_env"] = token_env
         submitter = _submitter(_submit_url(), token, str(payload["author_agent_id"]))
+    preflight_status = _researka_preflight_status(payload)
+    ledger["researka_preflight"] = preflight_status
+    if preflight_status != "eligible":
+        ledger.update({"status": "no_eligible_research_paper", "reason": preflight_status})
+        _mark_considered_status(considered, run.name, preflight_status)
+        _write_json(ledger_path, ledger)
+        return ledger
     result = submitter(payload)
     ledger["submission"] = result
     if result.get("ok"):
