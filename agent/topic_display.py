@@ -44,17 +44,26 @@ def _topic_pack_alias(topic: str, root: Path) -> str:
     aliases = pack.get("aliases")
     for alias in aliases if isinstance(aliases, list) else ():
         if isinstance(alias, str) and _looks_public_alias(alias):
-            return alias.strip()[:1].upper() + alias.strip()[1:]
+            return _humanize_alias(alias)
     return ""
 
 
 def _looks_public_alias(alias: str) -> bool:
     clean = alias.strip()
-    return bool(clean) and (clean.isupper() or "-" in clean or " " in clean)
+    return bool(clean) and ("-" in clean or " " in clean)
 
 
 def _display_token(token: str, *, title_case: bool) -> str:
-    key = token.lower()
+    key = re.sub(r"[^a-z0-9]", "", token.lower())
     if key in _TOKEN_DISPLAY:
         return _TOKEN_DISPLAY[key]
-    return key[:1].upper() + key[1:] if title_case else key
+    return token[:1].upper() + token[1:] if title_case else token.lower()
+
+
+def _humanize_alias(alias: str) -> str:
+    words = []
+    for token in alias.split():
+        key = re.sub(r"[^a-z0-9]", "", token.lower())
+        words.append(_TOKEN_DISPLAY.get(key, token))
+    text = " ".join(words).strip()
+    return text[:1].upper() + text[1:] if text else ""

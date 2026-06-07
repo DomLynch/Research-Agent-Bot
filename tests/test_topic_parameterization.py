@@ -456,7 +456,7 @@ def test_section_backstop_handles_plural_topic_names() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
         orch._ACTIVE_TOPIC = old_topic
 
-    assert "For nad precursors, the final interpretation is deliberately tiered" in backstop
+    assert "For NAD+ precursor, the final interpretation is deliberately tiered" in backstop
     assert "off-label for geroprotection" in backstop
     assert "In conclusion, nad precursors has enough" not in backstop
 
