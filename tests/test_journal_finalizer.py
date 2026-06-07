@@ -799,6 +799,31 @@ def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None
     ]
 
 
+def test_lane_qualifier_preserves_bullet_marker(tmp_path: Path) -> None:
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Curran 2025"}],
+        "lanes": {"Curran 2025": "animal_preclinical"},
+    }))
+    paper = (
+        "## Results\n\n"
+        "- Curran 2025 reported a model-system finding.\n\n"
+        "## References\n\n- Curran 2025.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_b_lane_qualifier(paper, tmp_path)
+
+    assert "evidence; -" not in fixed
+    assert "- In animal/preclinical evidence, curran 2025 reported" in fixed
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="B_lane_qualifier",
+            rule="animal_preclinical_lead_in",
+            n_changes=1,
+            detail="prepended lane qualifier to 1 paragraph(s)",
+        )
+    ]
+
+
 def test_surface_artifact_cleanup_keeps_parent_heading_with_child_content() -> None:
     paper = (
         "## Results\n\n"
