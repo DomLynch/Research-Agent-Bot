@@ -17,6 +17,7 @@ Universal — no topic-specific fixtures; uses synthetic minimal sidecars.
 """
 from __future__ import annotations
 
+import importlib
 import json
 from pathlib import Path
 
@@ -24,6 +25,7 @@ from agent.journal_finalizer import (  # type: ignore[import-not-found]
     _lowercase_first_letter,
     _phase_c_terminology,
     _phase_g_refresh_sidecars,
+    _refresh_final_consistency_sidecar,
     _refresh_pre_submit_gate,
     _refresh_readiness_contract_items,
 )
@@ -250,6 +252,58 @@ def test_phase_g_refreshes_stale_verdict_surface_state(tmp_path: Path) -> None:
     rules = [e.rule for e in log]
     assert "reevaluate_journal_surface_post_finalizer" in rules
     assert "refresh_final_verdict_post_finalizer" in rules
+
+
+def test_refresh_final_consistency_removes_stale_p1_before_verdict(
+    tmp_path: Path,
+) -> None:
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "full_paper.md").write_text(
+        "# Paper\n\n"
+        "## Abstract\n\nBounded synthesis.\n\n"
+        "## Introduction\n\nContext overview.\n\n"
+        "## Methods\n\nSearch strategy described.\n\n"
+        "## Results\n\nFindings remain limited.\n\n"
+        "## Discussion\n\nInterpretation stays cautious.\n\n"
+        "## References\n\n- Smith 2024."
+    )
+    (run / "manifest.json").write_text(json.dumps({
+        "accountability_model": "researka_agent_certified",
+        "n_receipts": 20,
+        "n_high_confidence_claims_total": 100,
+        "n_non_orthogonal_tensions": 20,
+    }))
+    (run / "full_paper.audit.json").write_text(json.dumps({
+        "p1_pass": True,
+        "score_out_of_10": 9.0,
+        "checks": [{"name": "Q1", "passed": True}],
+    }))
+    (run / "full_paper.journal_surface.json").write_text(json.dumps({
+        "passed": True,
+        "issues": [],
+    }))
+    (run / "full_paper.consistency.json").write_text(json.dumps([{
+        "id": "STALE-P1",
+        "severity": "P1",
+        "issue_type": "stale",
+        "auto_fixable": True,
+        "evidence": "text removed by finalizer",
+        "suggested_fix": "Refresh consistency sidecar.",
+    }]))
+
+    assert _refresh_final_consistency_sidecar(run) is True
+    refreshed = json.loads((run / "full_paper.consistency.json").read_text())
+    assert refreshed == []
+
+    _refresh_post_finalizer_verdict = importlib.import_module(
+        "scripts.run_v06_synthesis",
+    )._refresh_post_finalizer_verdict
+
+    assert _refresh_post_finalizer_verdict(run) is True
+    verdict = json.loads((run / "full_paper.final_verdict.json").read_text())
+    assert verdict["verdict"] != "SHIP-BLOCKED"
+    assert verdict["stage2_p1"] == 0
 
 
 def test_phase_g_recomputes_stale_final_status_after_refresh(tmp_path: Path) -> None:
