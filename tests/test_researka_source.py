@@ -208,6 +208,7 @@ async def test_search_sends_topic_token_and_method(with_token: str) -> None:
         "top_k": 8,
         "min_confidence": "high",
         "numeric_only": True,
+        "strict_audit_required": True,
     }
     assert received[CORPUS_SEARCH_PATH]["body"]["established_k"] == 8
 
