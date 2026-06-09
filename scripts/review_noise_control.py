@@ -33,9 +33,15 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     )
     if n:
         changes.append(("expand_contextual_adjacent_evidence_note", n, "clarified contextual-source integration role"))
+    text, n = _repair_public_artifact_phrases(text)
+    if n:
+        changes.append(("repair_public_artifact_phrase", n, f"rewrote {n} public artifact phrase(s)"))
     text, n = _repair_unreferenced_citation_years(text)
     if n:
         changes.append(("repair_unreferenced_citation_year", n, f"aligned {n} inline citation year(s) with References"))
+    text, n = _repair_reference_title_citation_fragments(text)
+    if n:
+        changes.append(("repair_reference_title_citation_fragment", n, f"aligned {n} source-title citation fragment(s)"))
     text, n = _dedupe_repeated_blocks(text)
     if n:
         changes.append(("dedupe_repeated_blocks", n, f"removed {n} repeated prose/table block(s)"))
@@ -63,6 +69,10 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     return text, changes
 
 
+def _repair_public_artifact_phrases(text: str) -> tuple[str, int]:
+    return re.subn(r"\bshould be read as\b", "is interpreted as", text, flags=re.I)
+
+
 def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
     from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _fold, _reference_entries, unreferenced_citation_tokens
     refs_by_author: dict[str, list[str]] = {}
@@ -81,6 +91,36 @@ def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
         if len(candidates) != 1 or candidates[0] == token:
             continue
         out, changed = re.subn(rf"\b{re.escape(token)}\b", candidates[0], out, count=1)
+        n += changed
+    return out, n
+
+
+def _repair_reference_title_citation_fragments(text: str) -> tuple[str, int]:
+    from agent.journal_surface_gate import (
+        _AUTHOR_YEAR_RE,
+        _fold,
+        _reference_entries,
+        _section_body,
+        unreferenced_citation_tokens,
+    )
+    canonical = {_fold(raw): raw for raw, _folded in _reference_entries(text)}
+    refs = _section_body(text, "References") or ""
+    aliases: dict[str, str] = {}
+    for line in refs.splitlines():
+        matches = list(_AUTHOR_YEAR_RE.finditer(line))
+        if len(matches) < 2:
+            continue
+        first = f"{matches[0].group(1)} {matches[0].group(2)}"
+        replacement = canonical.get(_fold(first), first)
+        for match in matches[1:]:
+            aliases[_fold(f"{match.group(1)} {match.group(2)}")] = replacement
+    out = text
+    n = 0
+    for token in unreferenced_citation_tokens(text):
+        alias_replacement = aliases.get(_fold(token))
+        if not alias_replacement:
+            continue
+        out, changed = re.subn(rf"\b{re.escape(token)}\b", alias_replacement, out, count=1)
         n += changed
     return out, n
 
