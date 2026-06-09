@@ -88,7 +88,7 @@ except ModuleNotFoundError:
         RemoteProtocolError = RuntimeError
         PoolTimeout = TimeoutError
 
-    httpx = _FakeHttpx()
+    httpx = _FakeHttpx()  # type: ignore[assignment]
 
 from agent.llm_client import (
     CallSpec,
@@ -221,6 +221,15 @@ def _ok_body(content: str = '{"x": 1}', prompt_tok: int = 10, comp_tok: int = 20
     }
 
 
+def _anthropic_ok_body(
+    content: str = '{"x": 1}', input_tok: int = 10, output_tok: int = 20,
+) -> dict:
+    return {
+        "content": [{"type": "text", "text": content}],
+        "usage": {"input_tokens": input_tok, "output_tokens": output_tok},
+    }
+
+
 def _run(coro):
     return asyncio.run(coro)
 
@@ -245,6 +254,49 @@ def test_chat_json_happy_path_returns_parsed() -> None:
     assert resp.input_tokens == 10
     assert resp.output_tokens == 20
     assert resp.model == "test/model"
+
+
+def test_chat_json_anthropic_compatible_minimax_m3() -> None:
+    captured: dict[str, Any] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["url"] = str(request.url)
+        captured["payload"] = json.loads(request.content)
+        return httpx.Response(200, json=_anthropic_ok_body())
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[
+                    {"role": "system", "content": "Return JSON only."},
+                    {"role": "user", "content": "hi"},
+                ],
+                chain=(
+                    _spec(
+                        model="MiniMax-M3",
+                        base_url="https://api.minimax.io/anthropic",
+                    ),
+                ),
+                client=client,
+                max_tokens=123,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert captured["url"] == "https://api.minimax.io/anthropic/v1/messages"
+    assert captured["payload"] == {
+        "model": "MiniMax-M3",
+        "temperature": 0.2,
+        "max_tokens": 123,
+        "messages": [{"role": "user", "content": "hi"}],
+        "system": "Return JSON only.",
+    }
+    assert resp.parsed == {"x": 1}
+    assert resp.input_tokens == 10
+    assert resp.output_tokens == 20
+    assert resp.model == "MiniMax-M3"
 
 
 def test_chat_json_falls_back_on_5xx() -> None:
@@ -654,8 +706,8 @@ def _settings(
     mimo_key: str = "mimo-key", openrouter_key: str = "or-key",
 ) -> Settings:
     return Settings(
-        mimo_api_key=mimo_key, mimo_model="mimo-v2.5-pro",
-        mimo_base_url="https://m.example/v1", mimo_timeout_sec=30.0,
+        mimo_api_key=mimo_key, mimo_model="MiniMax-M3",
+        mimo_base_url="https://api.minimax.io/anthropic", mimo_timeout_sec=30.0,
         openrouter_api_key=openrouter_key,
         openrouter_base_url="https://or.example/v1",
         judge_model="google/gemma-4-31b-it",
@@ -670,7 +722,7 @@ def _settings(
 def test_build_extract_chain_yields_mimo_then_mistral() -> None:
     chain = build_extract_chain(_settings())
     assert len(chain) == 2
-    assert chain[0].model == "mimo-v2.5-pro"
+    assert chain[0].model == "MiniMax-M3"
     assert chain[1].model == "mistralai/mistral-small-2603"
 
 
@@ -707,7 +759,7 @@ def test_build_judge_chain_yields_gemma_mimo_mistral() -> None:
     chain = build_judge_chain(_settings())
     assert len(chain) == 3
     assert chain[0].model == "google/gemma-4-31b-it"
-    assert chain[1].model == "mimo-v2.5-pro"
+    assert chain[1].model == "MiniMax-M3"
     assert chain[2].model == "mistralai/mistral-small-2603"
 
 

@@ -29,9 +29,10 @@ def isolated_dotenv(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     keys it might touch. Each test starts from a known-empty env."""
     monkeypatch.setattr(settings_module, "_REPO_ROOT", tmp_path)
     for k in (
-        "MIMO_API_KEY", "OPENROUTER_API_KEY", "MIMO_MODEL", "MIMO_BASE_URL",
-        "JUDGE_MODEL", "FALLBACK_MODEL", "DOTENV_TEST_KEY", "DOTENV_QUOTED",
-        "FINAL_LAYER_REVIEWER_MODEL", "DOTENV_OVERRIDE_TEST",
+        "MINIMAX_API_KEY", "MIMO_API_KEY", "OPENROUTER_API_KEY",
+        "MIMO_MODEL", "MIMO_BASE_URL", "JUDGE_MODEL", "FALLBACK_MODEL",
+        "DOTENV_TEST_KEY", "DOTENV_QUOTED", "FINAL_LAYER_REVIEWER_MODEL",
+        "DOTENV_OVERRIDE_TEST",
     ):
         monkeypatch.delenv(k, raising=False)
     return tmp_path
@@ -93,7 +94,8 @@ def test_load_settings_defaults_when_unset(
     s = settings_module.load_settings()
     assert s.mimo_api_key == ""
     assert s.openrouter_api_key == ""
-    assert s.mimo_model == "mimo-v2.5-pro"
+    assert s.mimo_model == "MiniMax-M3"
+    assert s.mimo_base_url == "https://api.minimax.io/anthropic"
     assert s.judge_model == "google/gemma-4-31b-it"
     assert s.fallback_model == "mistralai/mistral-small-2603"
     assert s.final_layer_reviewer_model == "google/gemini-3.1-flash-lite:exacto"
@@ -108,6 +110,18 @@ def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:
     s = settings_module.load_settings()
     assert s.mimo_api_key == "mimo-test-key"
     assert s.openrouter_api_key == "or-test-key"
+
+
+def test_load_settings_prefers_minimax_key_alias(
+    isolated_dotenv: Path,
+) -> None:
+    (isolated_dotenv / ".env").write_text(
+        "MINIMAX_API_KEY=minimax-test-key\n"
+        "MIMO_API_KEY=mimo-test-key\n",
+        encoding="utf-8",
+    )
+    s = settings_module.load_settings()
+    assert s.mimo_api_key == "minimax-test-key"
 
 
 def test_real_repo_dotenv_loads_when_present() -> None:
