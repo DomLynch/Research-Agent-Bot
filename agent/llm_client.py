@@ -69,7 +69,9 @@ _RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 # fall back to (0, 0) so cost is recorded as 0 rather than crashing the
 # pipeline when a new model is wired up but not yet priced.
 _PRICING: Mapping[str, tuple[float, float]] = {
-    # MiMo V2.5 Pro (Xiaomi-hosted): $0.14/1M in, $0.28/1M out
+    # MiniMax M3 standard tier, <=512k input tokens: $0.30/1M in, $1.20/1M out
+    "MiniMax-M3": (0.00030, 0.00120),
+    # Legacy MiMo V2.5 Pro (Xiaomi-hosted): $0.14/1M in, $0.28/1M out
     "mimo-v2.5-pro": (0.00014, 0.00028),
     # Mistral Small via OpenRouter: ~$0.10/1M in, ~$0.30/1M out
     "mistralai/mistral-small-2603": (0.00010, 0.00030),
@@ -214,6 +216,37 @@ def _request_headers(spec: CallSpec) -> dict[str, str]:
     return headers
 
 
+def _uses_anthropic_api(spec: CallSpec) -> bool:
+    return "/anthropic" in spec.base_url.lower().rstrip("/")
+
+
+def _anthropic_messages(
+    messages: Sequence[Mapping[str, str]],
+) -> tuple[str | None, list[dict[str, Any]]]:
+    system_parts: list[str] = []
+    out: list[dict[str, Any]] = []
+    for msg in messages:
+        role = str(msg.get("role", "user"))
+        content = str(msg.get("content", ""))
+        if role == "system":
+            system_parts.append(content)
+        else:
+            out.append({"role": role, "content": content})
+    return ("\n\n".join(system_parts) or None, out)
+
+
+def _anthropic_text(body: Mapping[str, Any]) -> str:
+    blocks = body.get("content")
+    if not isinstance(blocks, list):
+        return "{}"
+    text_parts = [
+        block.get("text", "")
+        for block in blocks
+        if isinstance(block, dict) and block.get("type") == "text"
+    ]
+    return "\n".join(part for part in text_parts if isinstance(part, str)) or "{}"
+
+
 def _err_summary(exc: BaseException) -> str:
     text = str(exc).strip()
     if len(text) > 220:
@@ -254,6 +287,36 @@ async def _call_one(
     """Single OpenAI-compatible chat call. Caller catches errors for fallback."""
     if not spec.api_key:
         raise LLMError(f"missing api_key for model={spec.model}")
+    if _uses_anthropic_api(spec):
+        system, anthropic_messages = _anthropic_messages(messages)
+        anthropic_payload: dict[str, Any] = {
+            "model": spec.model,
+            "temperature": temperature,
+            "max_tokens": max_tokens or 4096,
+            "messages": anthropic_messages,
+        }
+        if system:
+            anthropic_payload["system"] = system
+        url = spec.base_url.rstrip("/") + "/v1/messages"
+        response = await client.post(
+            url, json=anthropic_payload, headers=_request_headers(spec),
+            timeout=spec.timeout_sec,
+        )
+        response.raise_for_status()
+        body = response.json()
+        text = _anthropic_text(body)
+        parsed = extract_json(text)
+        usage = body.get("usage", {}) or {}
+        in_tok = int(usage.get("input_tokens", 0) or 0)
+        out_tok = int(usage.get("output_tokens", 0) or 0)
+        return LLMResponse(
+            text=_strip_response(text),
+            parsed=parsed,
+            model=spec.model,
+            input_tokens=in_tok,
+            output_tokens=out_tok,
+            estimated_cost_usd=_estimate_cost(spec.model, in_tok, out_tok),
+        )
     payload: dict[str, Any] = {
         "model": spec.model,
         "temperature": temperature,

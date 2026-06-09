@@ -35,7 +35,7 @@ def _float(name: str, default: float) -> float:
 
 @dataclass(frozen=True, slots=True)
 class Settings:
-    # Provider — primary writer
+    # Provider — primary writer/extractor
     mimo_api_key: str
     mimo_model: str
     mimo_base_url: str
@@ -62,9 +62,12 @@ class Settings:
 def load_settings() -> Settings:
     _load_dotenv_if_present()
     return Settings(
-        mimo_api_key=os.environ.get("MIMO_API_KEY", "").strip(),
-        mimo_model=os.environ.get("MIMO_MODEL", "mimo-v2.5-pro"),
-        mimo_base_url=os.environ.get("MIMO_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"),
+        mimo_api_key=(
+            os.environ.get("MINIMAX_API_KEY")
+            or os.environ.get("MIMO_API_KEY", "")
+        ).strip(),
+        mimo_model=os.environ.get("MIMO_MODEL", "MiniMax-M3"),
+        mimo_base_url=os.environ.get("MIMO_BASE_URL", "https://api.minimax.io/anthropic"),
         mimo_timeout_sec=_float("MIMO_TIMEOUT_SEC", 180.0),
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
         openrouter_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
