@@ -145,6 +145,21 @@ def test_load_settings_prefers_minimax_provider_names(
     assert s.mimo_model == s.minimax_model
 
 
+def test_load_settings_keeps_legacy_mimo_provider_fallback_until_sunset(
+    isolated_dotenv: Path,
+) -> None:
+    (isolated_dotenv / ".env").write_text(
+        "MIMO_MODEL=legacy-m3\n"
+        "MIMO_BASE_URL=https://legacy.example/v1\n"
+        "MIMO_TIMEOUT_SEC=9\n",
+        encoding="utf-8",
+    )
+    s = settings_module.load_settings()
+    assert s.minimax_model == "legacy-m3"
+    assert s.minimax_base_url == "https://legacy.example/v1"
+    assert s.minimax_timeout_sec == 9.0
+
+
 def test_real_repo_dotenv_loads_when_present() -> None:
     """The real repo's .env (if present) populates the provider key at
     `load_settings()`. This is the integration check that the live

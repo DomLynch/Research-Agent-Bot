@@ -79,6 +79,8 @@ class Settings:
 def load_settings() -> Settings:
     _load_dotenv_if_present()
     return Settings(
+        # Legacy MIMO_* fallbacks are deploy-rollback compatibility only.
+        # Remove after 2026-07-10 once all live env files have run on MINIMAX_*.
         minimax_api_key=(
             os.environ.get("MINIMAX_API_KEY")
             or os.environ.get("MIMO_API_KEY", "")
