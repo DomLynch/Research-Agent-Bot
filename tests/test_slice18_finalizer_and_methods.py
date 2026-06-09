@@ -1215,6 +1215,48 @@ def test_phase_k_moves_contextual_prose_out_of_immune_outcome(tmp_path: Path) ->
     assert log and log[0].rule == "route_paragraph_by_citation_class"
 
 
+def test_phase_k_routes_suffixed_author_year_citations(tmp_path: Path) -> None:
+    """Author-year suffixes must route the same way the surface gate audits them."""
+    from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "p1", "outcome_class": "contextual_other"},
+        {"receipt_id": "p2", "outcome_class": "cardiometabolic"},
+    ]}))
+    (run / "citation_registry.json").write_text(json.dumps({
+        "p1": {"body_citation": "Zhang 2026d"},
+        "p2": {"body_citation": "Smith 2024"},
+    }))
+    text = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "Smith 2024 reports cardiometabolic findings.\n\n"
+        "Zhang 2026d describes contextual stress biology.\n\n"
+        "### Contextual Adjacent Evidence Outcomes\n\n"
+        "Contextual records bound interpretation.\n\n"
+        "## Discussion\n"
+    )
+
+    assert any(i.code == "outcome_routing" for i in evaluate_journal_surface(
+        text,
+        citation_outcome_map={"Zhang 2026d": "contextual_other", "Smith 2024": "cardiometabolic"},
+    ).issues)
+    new_text, log = _phase_k_route_outcome_paragraphs(text, run)
+
+    contextual = new_text.split("### Contextual Adjacent Evidence Outcomes", 1)[1].split("##", 1)[0]
+    cardio = new_text.split("### Cardiometabolic Outcomes", 1)[1].split("###", 1)[0]
+    assert "Zhang 2026d" in contextual
+    assert "Zhang 2026d" not in cardio
+    assert not any(i.code == "outcome_routing" for i in evaluate_journal_surface(
+        new_text,
+        citation_outcome_map={"Zhang 2026d": "contextual_other", "Smith 2024": "cardiometabolic"},
+    ).issues)
+    assert log and log[0].rule == "route_paragraph_by_citation_class"
+
+
 def test_phase_k_noop_when_no_results_section(tmp_path: Path) -> None:
     """Slice 33: safe when Results section absent (e.g. Evidence Brief)."""
     from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
