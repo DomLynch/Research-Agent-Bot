@@ -431,7 +431,7 @@ def build_fallback_thesis(
             f"with the highest-severity unresolved tension being "
             f"{top.kind} on {top.outcome_class}"
         )
-        addressed = (f"{top.kind}:{top.outcome_class}",)
+        addressed: tuple[str, ...] = (f"{top.kind}:{top.outcome_class}",)
     else:
         tensions_clause = "with receipts covering distinct outcomes"
         addressed = ()

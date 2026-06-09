@@ -116,7 +116,7 @@ async def retrieve(
         )
         flat: list[RawHit] = []
         for (adapter, q), r in zip(plan, results, strict=True):
-            if isinstance(r, Exception):
+            if isinstance(r, BaseException):
                 logger.warning(
                     "source %s failed for query %r: %s",
                     adapter.name, q, type(r).__name__ + ": " + str(r),

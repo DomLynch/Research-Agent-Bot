@@ -22,8 +22,8 @@ Modes:
                       orchestrator's force_overwrite flag is honored.
 
 LLM chains:
-  Fact extraction:  MiMo V2.5 Pro → Mistral Small (fallback)
-  SPAR judges:      Gemma 4 31B → MiMo V2.5 Pro → Mistral Small
+  Fact extraction:  MiniMax M3 → Mistral Small (fallback)
+  SPAR judges:      Gemma 4 31B → MiniMax M3 → Mistral Small
 
 Trace clients: fixture by default; pass `TRACE_BACKEND=http` env var to
 hit live CT.gov / ChEMBL / Europe PMC.
@@ -63,6 +63,7 @@ from agent.llm_client import CostLedger, build_extract_chain, build_judge_chain
 from agent.orchestrator import RunReceipts, run_proof, run_proof_multi_receipt
 from agent.retrieve import normalize_and_dedup, retrieve
 from agent.settings import load_settings
+from agent.sources._base import SourceClient
 from agent.sources.clinicaltrials import ClinicalTrialsClient
 from agent.sources.europepmc import EuropePMCClient
 from agent.sources.openalex import OpenAlexClient
@@ -166,7 +167,7 @@ async def _retrieve_live(
     whether the broad query happens to surface the trial that drives
     the topic's strongest evidence cluster.
     """
-    sources_clients = [
+    sources_clients: list[SourceClient] = [
         PubMedClient(),
         OpenAlexClient(),
         EuropePMCClient(),
@@ -265,7 +266,7 @@ def _format_path(path: Path) -> str:
 
 # --- Best-of-N helpers (Day 9.2) -----------------------------------------
 #
-# At MiMo temperature 0 the trust spine is principled but not deterministic
+# At MiniMax temperature 0 the trust spine is principled but not deterministic
 # across runs — different fact subsets get surfaced, leading to different
 # SPAR verdicts. `--best-of N` runs the orchestrator N times against the
 # SAME corpus and picks the highest-quality run as the canonical receipt.
@@ -356,22 +357,22 @@ async def _run(args: argparse.Namespace) -> int:
     # Validate keys BEFORE the expensive retrieve+bundle phase.
     if not any(spec.api_key for spec in extract_chain):
         print(
-            "ERROR: no API keys for fact extraction. Set MIMO_API_KEY "
-            "(MiMo primary) or OPENROUTER_API_KEY (Mistral fallback).",
+            "ERROR: no API keys for fact extraction. Set MINIMAX_API_KEY "
+            "(MiniMax primary) or OPENROUTER_API_KEY (Mistral fallback).",
             file=sys.stderr,
         )
         return 2
-    if not settings.openrouter_api_key and not settings.mimo_api_key:
+    if not settings.openrouter_api_key and not settings.minimax_api_key:
         print(
             "ERROR: no API keys for SPAR judges. Set OPENROUTER_API_KEY "
-            "(for Gemma judge + Mistral fallback) AND/OR MIMO_API_KEY.",
+            "(for Gemma judge + Mistral fallback) AND/OR MINIMAX_API_KEY.",
             file=sys.stderr,
         )
         return 2
     if not settings.openrouter_api_key:
         print(
             "WARN: OPENROUTER_API_KEY not set — Gemma judge AND Mistral "
-            "fallback will be skipped; only MiMo will fire in the SPAR "
+            "fallback will be skipped; only MiniMax will fire in the SPAR "
             "chain. Set OPENROUTER_API_KEY for the full chain.",
             file=sys.stderr,
         )
@@ -710,7 +711,7 @@ async def _run_synthesize(args: argparse.Namespace) -> int:
     judge_chain = build_judge_chain(settings)
     if not any(spec.api_key for spec in judge_chain):
         print(
-            "ERROR: no API keys for synthesis LLM calls. Set MIMO_API_KEY "
+            "ERROR: no API keys for synthesis LLM calls. Set MINIMAX_API_KEY "
             "or OPENROUTER_API_KEY.",
             file=sys.stderr,
         )
@@ -1046,7 +1047,7 @@ def main() -> int:
     parser.add_argument(
         "--seed", type=int, default=None,
         help="Forward an OpenAI-compatible seed to every LLM call. With "
-             "temperature 0 + same seed + same prompt, MiMo + OpenRouter "
+             "temperature 0 + same seed + same prompt, MiniMax + OpenRouter "
              "produce byte-identical responses. With --best-of N, attempt "
              "i uses seed=base+i, so the N receipts are reproducible. "
              "Default: None (stochastic legacy behavior).",

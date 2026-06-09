@@ -2537,26 +2537,26 @@ def _used_background_lit_entries(paper_md: str) -> list:
 
 
 def _build_call_chain() -> list[CallSpec]:
-    """Bulk paper writer chain — MiMo v2.5 Pro is PRIMARY.
+    """Bulk paper writer chain — MiniMax M3 is PRIMARY.
 
-    Order: MiMo v2.5 Pro (unlimited token plan) → Mistral Small (paid
+    Order: MiniMax M3 → Mistral Small (paid
     fallback) → Gemma 4 31B (paid fallback). OpenRouter fires only if
-    MiMo is unreachable; the user's MiMo plan is unlimited while
+    MiniMax is unreachable; the user's MiniMax plan is primary while
     OpenRouter is metered.
 
     All identifiers come from agent/settings.py — never hardcode here.
-    Past drift put `mimo-vl-7b-rl` (a vision model) and Gemma 3 27B as
-    primaries, silently bypassing MiMo v2.5 Pro entirely.
+    Past drift put a vision model and Gemma 3 27B as primaries,
+    silently bypassing the intended writer entirely.
     """
     settings = load_settings()
     chain: list[CallSpec] = []
-    if settings.mimo_api_key:
+    if settings.minimax_api_key:
         chain.append(CallSpec(
-            base_url=settings.mimo_base_url,
-            api_key=settings.mimo_api_key,
-            model=settings.mimo_model,
-            timeout_sec=settings.mimo_timeout_sec,
-            max_attempts=configured_attempts_for_url(settings.mimo_base_url),
+            base_url=settings.minimax_base_url,
+            api_key=settings.minimax_api_key,
+            model=settings.minimax_model,
+            timeout_sec=settings.minimax_timeout_sec,
+            max_attempts=configured_attempts_for_url(settings.minimax_base_url),
         ))
     if settings.openrouter_api_key:
         for openrouter_model in (settings.fallback_model, settings.judge_model):
@@ -2564,7 +2564,7 @@ def _build_call_chain() -> list[CallSpec]:
                 base_url=settings.openrouter_base_url,
                 api_key=settings.openrouter_api_key,
                 model=openrouter_model,
-                timeout_sec=settings.mimo_timeout_sec,
+                timeout_sec=settings.minimax_timeout_sec,
                 max_attempts=configured_attempts_for_url(
                     settings.openrouter_base_url,
                 ),
@@ -3632,10 +3632,10 @@ async def _run_post_paper_pipeline(
         # from the _run() scope. Cheap call (env-var read).
         _settings = _load_settings()
         model_stack = {
-            "writer": _settings.mimo_model,
+            "writer": _settings.minimax_model,
             "reviewer": _settings.final_layer_reviewer_model,
-            "extractor": _settings.mimo_model,
-            "thesis": _settings.mimo_model,
+            "extractor": _settings.minimax_model,
+            "thesis": _settings.minimax_model,
         }
         # P1 reviewer fix (2026-05-04 wave 5): use the orchestrator's
         # _ACTIVE_TOPIC directly. The previous regex on the run-dir
@@ -4267,7 +4267,7 @@ def _build_run_mode_contract(
         submission_id=submission_id,
         n_papers_in_corpus=n_papers,
         n_high_confidence_claims_used_by_writer=n_claims,
-        writer_model=settings.mimo_model,
+        writer_model=settings.minimax_model,
         in_writing_judge_model=settings.judge_model,
         final_layer_reviewer_model=settings.final_layer_reviewer_model,
         final_layer_fallback_model=settings.fallback_model,

@@ -45,7 +45,7 @@ __all__ = [
 
 ClaimType = Literal["efficacy", "safety", "mechanism", "indirect", "context"]
 Directness = Literal["direct", "indirect", "mechanistic"]
-EvidenceTier = Literal["A1", "A2", "B", "mixed"]
+EvidenceTier = Literal["A1", "A2", "B", "C", "mixed"]
 Confidence = Literal["high", "moderate", "low"]
 EdgeKind = Literal["supports", "qualifies", "contradicts", "mechanism_of"]
 TraceType = Literal[

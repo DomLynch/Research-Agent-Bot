@@ -703,11 +703,13 @@ def test_chat_json_seed_forwarded_to_every_chain_spec() -> None:
 
 
 def _settings(
-    mimo_key: str = "mimo-key", openrouter_key: str = "or-key",
+    minimax_key: str = "minimax-key", openrouter_key: str = "or-key",
 ) -> Settings:
     return Settings(
-        mimo_api_key=mimo_key, mimo_model="MiniMax-M3",
-        mimo_base_url="https://api.minimax.io/anthropic", mimo_timeout_sec=30.0,
+        minimax_api_key=minimax_key,
+        minimax_model="MiniMax-M3",
+        minimax_base_url="https://api.minimax.io/anthropic",
+        minimax_timeout_sec=30.0,
         openrouter_api_key=openrouter_key,
         openrouter_base_url="https://or.example/v1",
         judge_model="google/gemma-4-31b-it",
@@ -719,7 +721,7 @@ def _settings(
     )
 
 
-def test_build_extract_chain_yields_mimo_then_mistral() -> None:
+def test_build_extract_chain_yields_minimax_then_mistral() -> None:
     chain = build_extract_chain(_settings())
     assert len(chain) == 2
     assert chain[0].model == "MiniMax-M3"
@@ -728,7 +730,7 @@ def test_build_extract_chain_yields_mimo_then_mistral() -> None:
 
 def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
     """Specs with empty api_keys stay in the chain — chat_json skips them."""
-    chain = build_extract_chain(_settings(mimo_key=""))
+    chain = build_extract_chain(_settings(minimax_key=""))
     assert len(chain) == 2
     assert chain[0].api_key == ""  # unset, will be skipped at call time
     assert chain[1].api_key == "or-key"
@@ -737,8 +739,8 @@ def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
 def test_build_extract_chain_uses_settings_timeout() -> None:
     s = _settings()
     chain = build_extract_chain(s)
-    assert chain[0].timeout_sec == s.mimo_timeout_sec
-    assert chain[1].timeout_sec == s.mimo_timeout_sec  # both share MiMo timeout
+    assert chain[0].timeout_sec == s.minimax_timeout_sec
+    assert chain[1].timeout_sec == s.minimax_timeout_sec  # both share MiniMax timeout
 
 
 def test_build_extract_chain_sets_retry_attempts(
@@ -752,8 +754,8 @@ def test_build_extract_chain_sets_retry_attempts(
 # --- build_judge_chain (Day 5.3) -----------------------------------------
 
 
-def test_build_judge_chain_yields_gemma_mimo_mistral() -> None:
-    """SPAR judge chain: Gemma 4 (primary) → MiMo (fallback) → Mistral.
+def test_build_judge_chain_yields_gemma_minimax_mistral() -> None:
+    """SPAR judge chain: Gemma 4 (primary) → MiniMax (fallback) → Mistral.
     Different cognitive style than extract chain — judges benefit from
     the stronger reasoning model."""
     chain = build_judge_chain(_settings())
@@ -769,5 +771,5 @@ def test_build_judge_chain_keeps_empty_keys_in_chain() -> None:
     chain = build_judge_chain(_settings(openrouter_key=""))
     assert len(chain) == 3
     assert chain[0].api_key == ""  # Gemma: skipped at call time
-    assert chain[1].api_key == "mimo-key"  # MiMo: fires
+    assert chain[1].api_key == "minimax-key"  # MiniMax: fires
     assert chain[2].api_key == ""  # Mistral: also under openrouter, skipped

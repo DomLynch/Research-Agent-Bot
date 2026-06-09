@@ -467,32 +467,32 @@ async def chat_json(
 
 
 def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """Fact-extraction default chain: MiMo (primary) → Mistral (fallback).
+    """Fact-extraction default chain: MiniMax (primary) → Mistral (fallback).
 
     Specs with empty api_keys remain in the chain — `chat_json` skips them.
-    A partially-configured environment (only Mistral set, MiMo missing)
+    A partially-configured environment (only Mistral set, MiniMax missing)
     still produces useful work without crashing the pipeline.
     """
     return (
         CallSpec(
-            base_url=settings.mimo_base_url,
-            api_key=settings.mimo_api_key,
-            model=settings.mimo_model,
-            timeout_sec=settings.mimo_timeout_sec,
-            max_attempts=_configured_attempts(settings.mimo_base_url),
+            base_url=settings.minimax_base_url,
+            api_key=settings.minimax_api_key,
+            model=settings.minimax_model,
+            timeout_sec=settings.minimax_timeout_sec,
+            max_attempts=_configured_attempts(settings.minimax_base_url),
         ),
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.fallback_model,
-            timeout_sec=settings.mimo_timeout_sec,
+            timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
 
 
 def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """SPAR judge chain: Gemma 4 (primary) → MiMo (fallback) → Mistral.
+    """SPAR judge chain: Gemma 4 (primary) → MiniMax (fallback) → Mistral.
 
     Different cognitive style than `build_extract_chain` — judges
     benefit from a stronger reasoning model. Empty-api_key specs are
@@ -503,21 +503,21 @@ def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.judge_model,
-            timeout_sec=settings.mimo_timeout_sec,
+            timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
         CallSpec(
-            base_url=settings.mimo_base_url,
-            api_key=settings.mimo_api_key,
-            model=settings.mimo_model,
-            timeout_sec=settings.mimo_timeout_sec,
-            max_attempts=_configured_attempts(settings.mimo_base_url),
+            base_url=settings.minimax_base_url,
+            api_key=settings.minimax_api_key,
+            model=settings.minimax_model,
+            timeout_sec=settings.minimax_timeout_sec,
+            max_attempts=_configured_attempts(settings.minimax_base_url),
         ),
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.fallback_model,
-            timeout_sec=settings.mimo_timeout_sec,
+            timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
