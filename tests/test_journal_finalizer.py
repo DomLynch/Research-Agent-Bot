@@ -1651,3 +1651,28 @@ def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
     assert "Week 2022" not in fixed
     assert "Week 2020 trial" in fixed
     assert ("repair_unreferenced_citation_year", 1, "aligned 1 inline citation year(s) with References") in changes
+
+
+def test_review_noise_repairs_public_artifact_phrase() -> None:
+    from scripts.review_noise_control import apply_review_noise_control
+
+    paper = "## Results\n\nThe p-values should be read as descriptive only.\n"
+
+    fixed, changes = apply_review_noise_control(paper, Path("/tmp/no-run"))
+
+    assert "should be read as" not in fixed
+    assert "p-values can be interpreted as descriptive only" in fixed
+    assert ("repair_public_artifact_phrase", 1, "rewrote 1 public artifact phrase(s)") in changes
+
+
+def test_unreferenced_citation_ignores_reference_title_fragment() -> None:
+    from agent.journal_surface_gate import unreferenced_citation_tokens
+
+    paper = (
+        "## Results\n\n"
+        "World Health Organization 2020 guidelines on physical activity are contextual.\n\n"
+        "## References\n\n"
+        "- **Bull 2020.** _World Health Organization 2020 guidelines on physical activity and sedentary behaviour._ British Journal of Sports Medicine, 2020.\n"
+    )
+
+    assert unreferenced_citation_tokens(paper) == ()

@@ -723,6 +723,7 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
     refs = _reference_labels(paper_md)
     if not refs:
         return ()
+    reference_title_tokens = _reference_nonlabel_tokens(paper_md)
     seen: set[str] = set()
     out: list[str] = []
     for match in _AUTHOR_YEAR_RE.finditer(_journal_body(paper_md)):
@@ -730,6 +731,8 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
         if author.casefold().rstrip(".") in _MONTH_AUTHOR_TOKENS or author.casefold().endswith(("'s", "’s")):
             continue
         token = f"{author} {match.group(2)}"
+        if _fold(token) in reference_title_tokens:
+            continue
         # Compare via _fold so diacritic mismatches (Hernández inline vs
         # Hernandez in References) don't false-positive. Report the
         # original (un-folded) inline token so the issue message
@@ -760,6 +763,16 @@ def _reference_entries(paper_md: str) -> Iterable[tuple[str, str]]:
 
 def _reference_labels(paper_md: str) -> set[str]:
     return {folded for _raw, folded in _reference_entries(paper_md)}
+
+
+def _reference_nonlabel_tokens(paper_md: str) -> set[str]:
+    refs = _section_body(paper_md, "References") or ""
+    out: set[str] = set()
+    for line in refs.splitlines():
+        matches = list(_AUTHOR_YEAR_RE.finditer(line))
+        for match in matches[1:]:
+            out.add(_fold(f"{match.group(1)} {match.group(2)}"))
+    return out
 
 
 def orphan_reference_tokens(paper_md: str) -> tuple[str, ...]:
