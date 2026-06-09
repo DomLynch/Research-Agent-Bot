@@ -497,7 +497,7 @@ def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[Finalizer
 # the GLP-1 run where immune + longevity content drifted into the
 # Cardiometabolic subsection and the Immune/Longevity subsections were
 # left as empty stubs.
-_CITE_AY_RE = re.compile(r"\b[A-Z][a-zA-Z\-]+ \d{4}\b")
+_CITE_AY_RE = re.compile(r"\b[A-Z][a-zA-Z\-]+ \d{4}[a-z]?\b")
 _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
 
 
