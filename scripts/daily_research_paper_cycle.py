@@ -1607,6 +1607,15 @@ def _same_gate_failure_count(attempts: list[dict[str, Any]], topic: str, status:
     )
 
 
+def _same_topic_retry_count(attempts: list[dict[str, Any]], topic: str) -> int:
+    return sum(
+        1 for row in attempts
+        if row.get("topic") == topic
+        and not int(row.get("submitted") or 0)
+        and str(row.get("failure_class") or "").startswith(("A_", "C_"))
+    )
+
+
 def _repair_reason_for_retry(run: Path, attempt: dict[str, Any]) -> str:
     status = str(attempt.get("gate_status") or attempt.get("submit_status") or "")
     if str(attempt.get("failure_class") or "").startswith("A_"):
@@ -2430,6 +2439,12 @@ def run_cycle(
                 if same_gate_failures >= 2:
                     attempt["same_gate_repeat_count"] = same_gate_failures
                     attempt["same_gate_repeat_stop"] = True
+                same_topic_retries = (
+                    0 if revision_source else _same_topic_retry_count(ledger["attempts"], selected)
+                )
+                if same_topic_retries >= 2:
+                    attempt["same_topic_retry_count"] = same_topic_retries
+                    attempt["same_topic_retry_stop"] = True
                 last_attempt = attempt
                 ledger["synthesis_return_code"] = return_code
                 ledger["submit_bridge"] = bridge
@@ -2476,7 +2491,12 @@ def run_cycle(
                         ledger["no_submission_reason"] = gate_status
                 if source_precision_retry and revise_attempt < max(1, max_revise_attempts):
                     continue
-                if same_gate_failures >= 2 or revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
+                if (
+                    same_topic_retries >= 2
+                    or same_gate_failures >= 2
+                    or revise_attempt >= max(1, max_revise_attempts)
+                    or not _should_retry_same_topic(attempt)
+                ):
                     break
             if ledger["status"] == "cycle_budget_exhausted":
                 break
