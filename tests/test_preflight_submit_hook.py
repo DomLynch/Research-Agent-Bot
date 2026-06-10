@@ -26,6 +26,40 @@ def _payload(body: str) -> dict:
     }
 
 
+def test_payload_adds_reference_bib_citations_to_source_bundle(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_ARTICLE_TYPE_V3", "research_synthesis")
+    run = tmp_path / "synthesis-aerobic_exercise-v06-test"
+    run.mkdir()
+    run.joinpath("full_paper.md").write_text(
+        "# Research Synthesis: Aerobic Exercise\n\n"
+        "## Abstract\n\nThis may be limited.\n\n"
+        "## Methods\n\nReferences include DOI 10.1001/jama.2010.1923.\n\n"
+        "## Results\n\nThis may be limited.\n\n"
+        "## Discussion\n\nContext only.\n\n"
+        "## Limitations\n\nLimited.\n\n"
+        "## Conclusion\n\nBounded.\n",
+        encoding="utf-8",
+    )
+    run.joinpath("manifest.json").write_text(
+        '{"topic":"aerobic_exercise","receipts":[]}', encoding="utf-8",
+    )
+    run.joinpath("citation_registry.json").write_text("{}", encoding="utf-8")
+    run.joinpath("references.bib").write_text(
+        "@misc{context_ref,\n"
+        "  title = {Context reference. DOI: 10.1001/jama.2010.1923.},\n"
+        "  year = {2010}\n"
+        "}\n",
+        encoding="utf-8",
+    )
+
+    payload = submit.build_payload(run)  # type: ignore[attr-defined]
+
+    assert any(
+        row.get("doi") == "10.1001/jama.2010.1923"
+        for row in payload["source_bundle"]
+    )
+
+
 def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))

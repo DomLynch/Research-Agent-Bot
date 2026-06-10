@@ -57,6 +57,8 @@ PUBLICATION_IDENTITY_KEYS = (
 )
 RESEARKA_MIN_CITATIONS = 12
 RESEARKA_FULL_PAPER_MIN_BODY_WORDS = 2000
+DOI_RE = re.compile(r"\b10\.\d{4,9}/[^\s\])}>,;]+", re.I)
+PMID_RE = re.compile(r"\bPMID[:\s#-]*(\d{4,12})\b", re.I)
 RESEARKA_REQUIRED_SECTIONS = {
     "rapid_evidence_synthesis": (
         "Research Question",
@@ -767,6 +769,68 @@ def _structured_source_excerpt(topic: str, row: dict[str, Any], receipt: dict[st
     )
 
 
+def _clean_doi(value: str) -> str:
+    return value.strip().rstrip(".,;:)]}>").lower()
+
+
+def _cited_reference_ids(text: str) -> tuple[set[str], set[str]]:
+    return (
+        {_clean_doi(value) for value in DOI_RE.findall(text) if _clean_doi(value)},
+        {value.strip() for value in PMID_RE.findall(text) if value.strip()},
+    )
+
+
+def _bib_reference_stubs(run: Path) -> dict[str, dict[str, Any]]:
+    try:
+        bib = (run / "references.bib").read_text(encoding="utf-8")
+    except OSError:
+        return {}
+    stubs: dict[str, dict[str, Any]] = {}
+    for block in re.split(r"\n\s*\n(?=@)", bib):
+        doi_match = DOI_RE.search(block)
+        pmid_match = PMID_RE.search(block)
+        if not doi_match and not pmid_match:
+            continue
+        title_match = re.search(r"title\s*=\s*\{(?P<title>.*?)\}\s*,?\n", block, re.S | re.I)
+        year_match = re.search(r"year\s*=\s*\{(?P<year>\d{4})\}", block, re.I)
+        title = _clip_text(" ".join((title_match.group("title") if title_match else "Reference citation").split()), limit=300)
+        doi = _clean_doi(doi_match.group(0)) if doi_match else ""
+        pmid = pmid_match.group(1).strip() if pmid_match else ""
+        row: dict[str, Any] = {
+            "source_type": "reference",
+            "id": pmid or doi,
+            "pmid": pmid or None,
+            "title": title,
+            "url": f"https://doi.org/{doi}" if doi else None,
+            "doi": doi or None,
+            "excerpt": _clip_text(f"Reference-list provenance stub. {title}", limit=1200),
+            "year": int(year_match.group("year")) if year_match else None,
+            "evidence_type": "reference",
+        }
+        if doi:
+            stubs[f"doi:{doi}"] = row
+        if pmid:
+            stubs[f"pmid:{pmid}"] = row
+    return stubs
+
+
+def _augment_source_bundle_with_cited_references(
+    run: Path, paper: str, bundle: list[dict[str, Any]], *, limit: int,
+) -> list[dict[str, Any]]:
+    cited_dois, cited_pmids = _cited_reference_ids(paper)
+    existing_dois = {_clean_doi(str(row.get("doi") or "")) for row in bundle}
+    existing_pmids = {str(row.get("pmid") or row.get("id") or "").strip() for row in bundle}
+    stubs = _bib_reference_stubs(run)
+    out = list(bundle)
+    for key in [*(f"doi:{doi}" for doi in sorted(cited_dois - existing_dois)), *(f"pmid:{pmid}" for pmid in sorted(cited_pmids - existing_pmids))]:
+        if len(out) >= limit:
+            break
+        row = stubs.get(key)
+        if row is not None:
+            out.append(dict(row))
+    return out
+
+
 def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     manifest = _read_json(run / "manifest.json")
     registry = _read_json(run / "citation_registry.json")
@@ -858,7 +922,9 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     discussion = parts.get("Discussion", "")
     limitations = parts.get("Limitations", "")
     conclusion = parts.get("Conclusion", "")
-    source_bundle = _source_bundle(run, limit=max_sources)
+    source_bundle = _augment_source_bundle_with_cited_references(
+        run, paper, _source_bundle(run, limit=max_sources), limit=max_sources,
+    )
     content_hash = _sha256(run / "full_paper.md")
     source_hash = _source_citation_hash(source_bundle)
     agent_slug = _agent_slug()
