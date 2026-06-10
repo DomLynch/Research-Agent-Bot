@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import importlib
 import sys
 from pathlib import Path
+from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import apply_consistency_fixes as fixes  # type: ignore[import-not-found]  # noqa: E402
-import review_noise_control as noise  # type: ignore[import-not-found]  # noqa: E402
+fixes: Any = importlib.import_module("apply_consistency_fixes")
+noise: Any = importlib.import_module("review_noise_control")
 
 
 def test_public_snake_case_labels_normalize_in_body_only() -> None:
@@ -401,6 +403,54 @@ def test_lightweight_polish_repairs_missing_sentence_spaces() -> None:
     assert "Practice change. Harrison" in out
     assert "replication. Likewise" in out
     assert any(i["fix_type"] == "sentence_spacing_normalization" for i in log)
+
+
+def test_apply_fixes_repairs_abstract_direction_summary_from_manifest() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "and muscle function outcome classes, null signals in the skeletal "
+        "outcome class, and negative signals in the retained evidence base. "
+        "The paper therefore interprets the corpus cautiously.\n\n"
+        "## Results\n\n"
+        "Results text.\n"
+    )
+    manifest = {"receipts": [
+        {"outcome_class": "cardiometabolic", "effect_direction": "null"},
+        {"outcome_class": "muscle_function", "effect_direction": "positive"},
+        {"outcome_class": "skeletal", "effect_direction": "negative"},
+    ]}
+    out, log = fixes.apply_fixes(paper, [], manifest=manifest)
+    abstract = out.split("## Results", 1)[0]
+    assert "Positive study-level signals are summarized in the muscle function outcome class" in abstract
+    assert "null signals are summarized in the cardiometabolic outcome class" in abstract
+    assert "negative signals are summarized in the skeletal outcome class" in abstract
+    assert "Positive study-level signals are summarized in the cardiometabolic" not in abstract
+    assert any(
+        i["fix_type"] == "abstract_results_direction_consistency_repair"
+        for i in log
+    )
+
+
+def test_apply_fixes_does_not_repair_abstract_without_receipts() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "outcome class, null signals in the skeletal outcome class, and "
+        "negative signals in the retained evidence base.\n\n"
+        "## Results\n\n"
+        "Results text.\n"
+    )
+    out, log = fixes.apply_fixes(paper, [], manifest={"receipts": []})
+    assert (
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "outcome class, null signals in the skeletal outcome class, and "
+        "negative signals in the retained evidence base."
+    ) in out
+    assert not [
+        i for i in log
+        if i["fix_type"] == "abstract_results_direction_consistency_repair"
+    ]
 
 
 def test_lightweight_polish_repairs_accidental_h3_split() -> None:

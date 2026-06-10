@@ -65,6 +65,54 @@ def test_methods_not_run_disclosure_is_not_stale_boilerplate() -> None:
     assert stale == []
 
 
+def test_direction_consistency_issues_are_advisory_not_publish_blocking() -> None:
+    manifest = {
+        "writer_path": "agent.paper_writer.render_full_paper (production)",
+        "receipts": [
+            {
+                "receipt_id": "Bliss_2023_review",
+                "body_citation": "Bliss 2023",
+                "outcome_class": "cardiometabolic",
+                "effect_direction": "null",
+            },
+            {
+                "receipt_id": "Lo_2021_trial",
+                "body_citation": "Lo 2021",
+                "outcome_class": "muscle_function",
+                "effect_direction": "positive",
+            },
+            {
+                "receipt_id": "Smith_2022_trial",
+                "body_citation": "Smith 2022",
+                "outcome_class": "skeletal",
+                "effect_direction": "negative",
+            },
+        ],
+    }
+    paper = (
+        "## Abstract\n\n"
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "and muscle function outcome classes, null signals in the skeletal "
+        "outcome class, and negative signals in the retained evidence base.\n\n"
+        "## Results\n\n"
+        "Bliss 2023 surfaces positive signals in cardiometabolic outcomes.\n"
+    )
+    issues = audit.run_audit(paper, manifest, _empty_audit())
+    direction_issues = [
+        i for i in issues
+        if i.issue_type in {
+            "abstract_results_direction_consistency",
+            "metadata_prose_direction_consistency",
+        }
+    ]
+    assert {i.issue_type for i in direction_issues} == {
+        "abstract_results_direction_consistency",
+        "metadata_prose_direction_consistency",
+    }
+    assert all(i.severity == "P2" for i in direction_issues)
+    assert not [i for i in direction_issues if i.severity == "P1"]
+
+
 def test_duplicate_references_section_is_p1() -> None:
     """## References appearing twice = duplicate section bug."""
     paper = (

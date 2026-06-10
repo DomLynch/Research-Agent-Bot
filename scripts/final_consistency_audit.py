@@ -104,8 +104,26 @@ def _check_manifest_paper_consistency(
     contradict that count or specifically reject any accepted paper."""
     issues: list[ConsistencyIssue] = []
     accepted_ids = {
-        r["receipt_id"] for r in manifest.get("receipts", [])
+        str(r.get("receipt_id", "")).strip()
+        for r in manifest.get("receipts", [])
+        if isinstance(r, dict) and str(r.get("receipt_id", "")).strip()
     }
+    missing_receipt_ids = sum(
+        1 for r in manifest.get("receipts", [])
+        if isinstance(r, dict) and not str(r.get("receipt_id", "")).strip()
+    )
+    if missing_receipt_ids:
+        issues.append(ConsistencyIssue(
+            id="C01-manifest-receipt-id-missing",
+            severity="P2",
+            issue_type="manifest_receipt_id_missing",
+            auto_fixable=False,
+            evidence=f"{missing_receipt_ids} receipt row(s) lack receipt_id",
+            suggested_fix=(
+                "Populate receipt_id in manifest rows when available. "
+                "Advisory only; missing IDs must not crash or block publication."
+            ),
+        ))
 
     # Build short forms (e.g. "Witham 2025") from accepted receipt_ids.
     # P1 reviewer fix: also extract trial-acronym short forms (e.g.

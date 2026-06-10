@@ -69,8 +69,11 @@ def outcome_direction_profile(manifest: Mapping[str, Any]) -> tuple[OutcomeDirec
 
 
 def abstract_direction_sentence(manifest: Mapping[str, Any]) -> str:
+    profile = outcome_direction_profile(manifest)
+    if not profile:
+        return ""
     groups: dict[str, list[str]] = {"positive": [], "null": [], "negative": [], "mixed": []}
-    for row in outcome_direction_profile(manifest):
+    for row in profile:
         groups[row.direction].append(row.outcome_label)
 
     def phrase(direction: str, noun: str) -> str:
@@ -103,6 +106,8 @@ def repair_abstract_direction_summary(paper_md: str, manifest: Mapping[str, Any]
     if not _DIRECTION_SUMMARY_RE.search(abstract):
         return paper_md, 0
     replacement = abstract_direction_sentence(manifest)
+    if not replacement:
+        return paper_md, 0
     repaired, n = _DIRECTION_SUMMARY_RE.subn(replacement, abstract, count=1)
     if not n:
         return paper_md, 0
