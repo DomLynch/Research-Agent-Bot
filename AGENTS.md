@@ -49,7 +49,8 @@ LLM PROPOSES. CODE DISPOSES.
 - Current runtime LOC ceiling: 21,250 cloc in `agent/`; per-file hard cap: 600.
 - Soft budgets: file ~300 cloc, function ~50 cloc.
 - All cross-stage objects should be explicit dataclasses or schema-shaped dicts.
-- No imports from `agent_legacy/` or `agent_archived/`.
+- Do not reintroduce parallel `*_legacy/`/`*_archived/` runtime trees; the
+  single shipped package is `agent/` (git history holds the old code).
 - LLMs may write, review, or arbitrate; they do not assign categorical truth,
   certify maturity, silently elevate L5/L6, or introduce unsupported numerics.
 - Any new paper-quality tooling should generalize beyond rapamycin unless it is

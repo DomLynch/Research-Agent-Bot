@@ -14,6 +14,8 @@ logs/*_master.log
 .cache/
 # Claude Code session state — local IDE artifacts, never commit.
 .claude/
+# Agent worktree scratch dirs — local git worktrees, never source.
+.codex-worktrees/
 # Ignore runs/ contents EXCEPT e2e-baselines (v4 Rule 26 metric-loop artifacts)
 # AND the small set of "proof receipts" PROJECT_STATE references as evidence
 # of the trust-spine claims (Day 8.2 reviewer P2: a fresh clone must include
@@ -131,8 +133,6 @@ runs/e2e-baselines/*.tmp
 # below the 5k floor — Day 10.16b prompt-strengthening + Methods-
 # template expansion targets that gap.
 !runs/synthesis-metformin-010-2026-04-29T16-21-11Z-61f4/
-tests_legacy/golden/fixture_runs/
-tests_legacy/golden/fixture_runs_debug/
 *.egg-info/
 .env*
 !.env.example

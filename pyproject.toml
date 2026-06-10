@@ -50,11 +50,6 @@ include = ["agent", "agent.*"]
 mypy_path = "$MYPY_CONFIG_FILE_DIR"
 explicit_package_bases = true
 namespace_packages = true
-exclude = [
-    "^agent_archived/",
-    "^agent_legacy/",
-    "^tests_legacy/",
-]
 
 [[tool.mypy.overrides]]
 # Flat sys.path-hack imports of scripts/*.py from run_v06_synthesis,
