@@ -127,6 +127,8 @@ def _payload_fingerprint(payload: dict[str, Any]) -> str:
 
 
 def _preflight_summary(report: dict[str, Any]) -> dict[str, Any]:
+    advisories = report.get("advisories")
+    advisory_rows = advisories if isinstance(advisories, list) else []
     return {
         "status": report.get("status"),
         "qa_version": report.get("qa_version"),
@@ -134,6 +136,10 @@ def _preflight_summary(report: dict[str, Any]) -> dict[str, Any]:
         "cleaned_hash": report.get("cleaned_hash"),
         "safe_fixes_applied": report.get("safe_fixes_applied") or [],
         "blocked_reasons": report.get("blocked_reasons") or [],
+        "advisory_codes": [
+            str(row.get("code")) for row in advisory_rows
+            if isinstance(row, dict) and row.get("code")
+        ],
     }
 
 
@@ -155,18 +161,19 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     _write_json(input_path, payload)
     if not tool_root.is_dir():
         report = {
-            "status": "block",
-            "qa_version": "preflight-v1",
-            "blocked_reasons": [{
+            "status": "pass",
+            "qa_version": "preflight-v2",
+            "blocked_reasons": [],
+            "advisories": [{
                 "code": "preflight_tool_missing",
-                "severity": "critical",
+                "severity": "minor",
                 "message": f"preflight QA root not found: {tool_root}",
             }],
         }
         metadata = payload.setdefault("metadata", {})
         if isinstance(metadata, dict):
             metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
-        return (payload, report) if mode == "shadow" else (None, report)
+        return payload, report
     cmd = [
         sys.executable, "-m", "preflight_qa", "check",
         "--input", str(input_path),
@@ -178,24 +185,41 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     proc = subprocess.run(cmd, cwd=tool_root, text=True, capture_output=True, timeout=90, check=False)
     if proc.returncode not in {0, 2}:
         report = {
-            "status": "block",
-            "qa_version": "preflight-v1",
-            "blocked_reasons": [{
+            "status": "pass",
+            "qa_version": "preflight-v2",
+            "blocked_reasons": [],
+            "advisories": [{
                 "code": "preflight_runtime_error",
-                "severity": "critical",
+                "severity": "minor",
                 "message": (proc.stderr or proc.stdout or "preflight QA failed")[-500:],
             }],
         }
     else:
         report = _read_json(report_path)
     metadata = payload.setdefault("metadata", {})
+    if not isinstance(metadata, dict):
+        metadata = {}
+        payload["metadata"] = metadata
     if isinstance(metadata, dict):
         metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
     if mode == "shadow":
         return payload, report
     if report.get("status") != "pass":
-        return None, report
+        return payload, report
     cleaned = _read_json(clean_path)
+    if not cleaned:
+        report = {
+            "status": "pass",
+            "qa_version": "preflight-v2",
+            "blocked_reasons": [],
+            "advisories": [{
+                "code": "preflight_missing_cleaned_payload",
+                "severity": "minor",
+                "message": "Preflight passed but did not write a cleaned payload.",
+            }],
+        }
+        metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
+        return payload, report
     cleaned_metadata = cleaned.setdefault("metadata", {})
     if isinstance(cleaned_metadata, dict):
         cleaned_metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}

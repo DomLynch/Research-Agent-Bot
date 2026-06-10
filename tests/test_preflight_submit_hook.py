@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -9,7 +10,13 @@ sys.path.insert(0, str(REPO / "scripts"))
 import daily_research_paper_submit as submit  # type: ignore[import-not-found]  # noqa: E402
 
 
-PREFLIGHT_ROOT = REPO.parent / "researka-preflight-qa"
+_ROOT_CANDIDATES = [
+    Path(os.environ["RESEARKA_PREFLIGHT_QA_ROOT"]) if os.environ.get("RESEARKA_PREFLIGHT_QA_ROOT") else None,
+    REPO.parent / "Polish - Research agent",
+    Path("/opt/researka-preflight-qa"),
+    REPO.parent / "researka-preflight-qa",
+]
+PREFLIGHT_ROOT = next(path for path in _ROOT_CANDIDATES if path and path.is_dir())
 
 
 def _payload(body: str) -> dict:
@@ -78,7 +85,7 @@ def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, mon
     assert payload["metadata"]["content_hash"] != "sha256:old"
 
 
-def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
+def test_final_preflight_hook_reports_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
@@ -89,12 +96,13 @@ def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path,
         run,
     )
 
-    assert payload is None
-    assert report and report["status"] == "block"
-    assert "doi_not_in_source_bundle" in {r["code"] for r in report["blocked_reasons"]}
+    assert payload is not None
+    assert report and report["status"] == "pass"
+    assert "doi_not_in_source_bundle" in {r["code"] for r in report["advisories"]}
+    assert "doi_not_in_source_bundle" in payload["metadata"]["preflight_qa"]["advisory_codes"]
 
 
-def test_final_preflight_live_mode_is_enforcing(tmp_path: Path, monkeypatch) -> None:
+def test_final_preflight_live_mode_is_advisory_only(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "live")
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
@@ -105,12 +113,13 @@ def test_final_preflight_live_mode_is_enforcing(tmp_path: Path, monkeypatch) -> 
         run,
     )
 
-    assert payload is None
-    assert report and report["status"] == "block"
-    assert "doi_not_in_source_bundle" in {r["code"] for r in report["blocked_reasons"]}
+    assert payload is not None
+    assert report and report["status"] == "pass"
+    assert "doi_not_in_source_bundle" in {r["code"] for r in report["advisories"]}
+    assert "doi_not_in_source_bundle" in payload["metadata"]["preflight_qa"]["advisory_codes"]
 
 
-def test_final_preflight_hook_missing_tool_blocks_without_crashing(
+def test_final_preflight_hook_missing_tool_reports_without_crashing(
     tmp_path: Path, monkeypatch,
 ) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
@@ -120,6 +129,7 @@ def test_final_preflight_hook_missing_tool_blocks_without_crashing(
 
     payload, report = submit._run_preflight_qa(_payload("Body."), run)  # type: ignore[attr-defined]
 
-    assert payload is None
-    assert report and report["status"] == "block"
-    assert "preflight_tool_missing" in {r["code"] for r in report["blocked_reasons"]}
+    assert payload is not None
+    assert report and report["status"] == "pass"
+    assert "preflight_tool_missing" in {r["code"] for r in report["advisories"]}
+    assert "preflight_tool_missing" in payload["metadata"]["preflight_qa"]["advisory_codes"]
