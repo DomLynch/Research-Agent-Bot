@@ -930,6 +930,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     agent_slug = _agent_slug()
     article_type = _article_type()
     domain_slug = _env_or_default("RESEARKA_DOMAIN_SLUG_V3", "longevity")
+    category = _env_or_default("RESEARKA_CATEGORY_V3", domain_slug).removesuffix("_research")
     rapid_sections = {
         "Research Question": _clip_text(
             f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? "
@@ -948,6 +949,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "artifact_type": "research_paper",
         "article_type": article_type,
         "domain_slug": domain_slug,
+        "category": category,
         "run_id": run.name,
         "topic": topic,
         "content_hash": content_hash,
@@ -984,6 +986,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "submitter_orcid": os.getenv("RESEARKA_SUBMITTER_ORCID") or None,
         "article_type": article_type,
         "domain_slug": domain_slug,
+        "category": category,
         "core_claims_resolved": True,
         "author_signature": content_hash,
         "metadata": metadata,
