@@ -1,5 +1,16 @@
 # DECISION JOURNAL
 
+## 2026-06-10 — LOC budget headroom raise
+**Decision:** Raise `agent/` cloc ceiling from 24,150 to 29,150. Per-file hard
+cap remains 800.
+**Why:** Operator requested 5,000 LOC of headroom after moving audit tooling out
+of `agent/` and restoring the budget gate to green. This avoids noisy budget
+failures while preserving the per-file guardrail against large runtime modules.
+**Alternatives rejected:** Raising the per-file cap was rejected because the
+current risk is total runway, not oversized individual files.
+**Revisit if:** New runtime additions use the headroom without direct
+paper-quality, publish-safety, or trust-spine value.
+
 ## 2026-05-09 — LOC budget raise for publication scoring and HR normalization
 **Decision:** Raise `agent/` cloc ceiling from 20,750 to 21,250.
 **Why:** Claude's final integration lane added two runtime primitives that are
