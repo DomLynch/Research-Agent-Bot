@@ -7,7 +7,7 @@ Wants=network-online.target
 Type=oneshot
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode fresh --run-synthesis --submit --max-attempts 0 --cycle-budget-sec 6000
+ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode fresh --run-synthesis --submit --max-attempts 0 --cycle-budget-sec 10800
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARCH_AGENT_CORPUS_REPAIR_LIMIT=1
-TimeoutStartSec=7200
+TimeoutStartSec=14400
