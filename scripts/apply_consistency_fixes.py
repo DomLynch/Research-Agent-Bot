@@ -28,9 +28,9 @@ from collections import Counter, defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 
-from agent.outcome_class_remap import outcome_key
-from agent.direction_consistency import repair_abstract_direction_summary
 from agent.topic_display import humanize_topic
+from agent.outcome_class_remap import outcome_key
+from direction_consistency import repair_abstract_direction_summary
 
 __all__ = ["apply_fixes", "main"]
 

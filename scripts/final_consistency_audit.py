@@ -45,7 +45,7 @@ import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from agent.direction_consistency import (
+from direction_consistency import (
     abstract_direction_mismatches,
     metadata_prose_direction_mismatches,
 )

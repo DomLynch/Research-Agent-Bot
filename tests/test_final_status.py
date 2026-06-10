@@ -55,6 +55,26 @@ def test_all_pass_yields_l5_submission_ready(tmp_path: Path) -> None:
     assert s.blocking_reasons == ()
 
 
+def test_direction_consistency_p2_sidecar_does_not_block_submission_ready(
+    tmp_path: Path,
+) -> None:
+    """P2 direction-consistency notes stay outside the six readiness dimensions."""
+    _all_pass_sidecars(tmp_path)
+    (tmp_path / "full_paper.consistency.json").write_text(json.dumps([{
+        "id": "C18-abstract-results-direction-1",
+        "severity": "P2",
+        "issue_type": "abstract_results_direction_consistency",
+        "auto_fixable": True,
+        "evidence": "abstract=positive results=null",
+        "suggested_fix": "advisory repair only",
+    }]))
+    s = compute(tmp_path)
+    assert s.submission_ready is True
+    assert s.maturity_level == 5
+    assert "full_paper.consistency.json" not in s.sidecars_read
+    assert s.blocking_reasons == ()
+
+
 def test_journal_surface_failure_blocks_l5_and_submission_ready(tmp_path: Path) -> None:
     # GPT-flagged invariant ("looks ready but refused"): a paper that fails the
     # journal-surface gate must never label L5 or report submission_ready, even
