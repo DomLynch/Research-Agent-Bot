@@ -45,6 +45,11 @@ import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from agent.direction_consistency import (
+    abstract_direction_mismatches,
+    metadata_prose_direction_mismatches,
+)
+
 __all__ = ["ConsistencyIssue", "run_audit", "main"]
 
 
@@ -345,6 +350,51 @@ def _check_audit_verdict_gate(
     return issues
 
 
+def _check_abstract_results_direction_consistency(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    issues: list[ConsistencyIssue] = []
+    for idx, mismatch in enumerate(abstract_direction_mismatches(paper, manifest), start=1):
+        outcome = mismatch["outcome"]
+        issues.append(ConsistencyIssue(
+            id=f"C18-abstract-results-direction-{idx}",
+            severity="P2",
+            issue_type="abstract_results_direction_consistency",
+            auto_fixable=True,
+            evidence=(
+                f"{outcome}: abstract={mismatch['abstract']} "
+                f"results={mismatch['results']}"
+            ),
+            suggested_fix=(
+                "Rewrite the Abstract direction-summary sentence from "
+                "manifest receipt direction counts. Advisory only; never "
+                "blocks publication."
+            ),
+        ))
+    return issues
+
+
+def _check_metadata_prose_direction_consistency(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    issues: list[ConsistencyIssue] = []
+    for idx, mismatch in enumerate(metadata_prose_direction_mismatches(paper, manifest), start=1):
+        issues.append(ConsistencyIssue(
+            id=f"C19-metadata-prose-direction-{idx}",
+            severity="P2",
+            issue_type="metadata_prose_direction_consistency",
+            auto_fixable=False,
+            evidence=mismatch["evidence"],
+            suggested_fix=(
+                f"Align prose direction for {mismatch['source']} with "
+                f"metadata direction={mismatch['metadata']} rather than "
+                f"prose={mismatch['prose']}. Advisory only; never blocks "
+                "publication."
+            ),
+        ))
+    return issues
+
+
 def _check_broken_paper_id_citations(paper: str) -> list[ConsistencyIssue]:
     """Internal handles leaking into prose. Two shapes:
       a) Truncated Author_Year_TRIAL_keyword_ ids (post-processor miss)
@@ -412,6 +462,12 @@ def run_audit(
     issues.extend(_check_malformed_headers(paper_md))
     issues.extend(_check_repair_artifacts(paper_md))
     issues.extend(_check_audit_verdict_gate(audit, audit_md_text))
+    issues.extend(_check_abstract_results_direction_consistency(
+        paper_md, manifest,
+    ))
+    issues.extend(_check_metadata_prose_direction_consistency(
+        paper_md, manifest,
+    ))
     issues.extend(_check_broken_paper_id_citations(paper_md))
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
     issues.extend(_check_background_lit_unsourced(paper_md, manifest))  # Fix #16

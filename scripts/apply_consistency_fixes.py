@@ -29,6 +29,7 @@ from collections.abc import Sequence
 from pathlib import Path
 
 from agent.outcome_class_remap import outcome_key
+from agent.direction_consistency import repair_abstract_direction_summary
 from agent.topic_display import humanize_topic
 
 __all__ = ["apply_fixes", "main"]
@@ -1820,6 +1821,20 @@ def apply_fixes(
                 "body to the display topic name"
             ),
         })
+
+    if manifest is not None:
+        new_md, n_abstract_direction = repair_abstract_direction_summary(
+            new_md, manifest,
+        )
+        if n_abstract_direction:
+            log.append({
+                "fix_type": "abstract_results_direction_consistency_repair",
+                "n_changes": n_abstract_direction,
+                "description": (
+                    "rewrote the Abstract direction-summary sentence from "
+                    "manifest receipt direction counts; advisory repair only"
+                ),
+            })
 
     new_md, n_empty_parens = _strip_empty_parenthetical_citations(new_md)
     if n_empty_parens:
