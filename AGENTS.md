@@ -46,7 +46,8 @@ LLM PROPOSES. CODE DISPOSES.
 - Python >= 3.11.
 - Runtime dependency discipline: prefer stdlib and existing deps; justify any new
   dependency in `DECISIONS.md`.
-- Current runtime LOC ceiling: 29,150 cloc in `agent/`; per-file hard cap: 800.
+- Current runtime LOC ceiling: 29,150 cloc in `agent/`; test-enforced per-file
+  hard cap: 800.
 - Soft budgets: file ~300 cloc, function ~50 cloc.
 - All cross-stage objects should be explicit dataclasses or schema-shaped dicts.
 - No imports from `agent_legacy/` or `agent_archived/`.
