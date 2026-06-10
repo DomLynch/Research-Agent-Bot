@@ -137,6 +137,8 @@ def _preflight_summary(report: dict[str, Any]) -> dict[str, Any]:
 
 def _preflight_mode() -> str:
     mode = os.getenv(PREFLIGHT_MODE_ENV, "off").strip().lower()
+    if mode == "live":
+        return "enforce"
     return mode if mode in {"off", "shadow", "enforce"} else "off"
 
 
