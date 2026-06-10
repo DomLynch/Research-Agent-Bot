@@ -11,10 +11,7 @@ from agent.review_type import COMPACT_REVIEW_TYPES
 
 
 def _fold(text: str) -> str:
-    """NFKD-fold + strip combining marks + casefold. Universal — turns
-    Hernández/HERNÁNDEZ/hernandez into one comparable form. Used by the
-    unreferenced-citation check so an inline cite with diacritics and a
-    reference list entry without them still match (or vice versa)."""
+    # NFKD-fold + strip combining marks + casefold for citation matching.
     nfkd = unicodedata.normalize("NFKD", text)
     return "".join(c for c in nfkd if not unicodedata.combining(c)).casefold()
 
@@ -71,9 +68,7 @@ def _animal_lane_re() -> "re.Pattern[str]":
 
 
 def is_animal_paper(text: str | None) -> bool:
-    """Return True if `text` (title + abstract + journal) mentions a
-    non-human organism or veterinary context. Universal — works across
-    any biological / ecological / agricultural topic."""
+    # Universal: title + abstract + journal mentions non-human evidence.
     if not text:
         return False
     return bool(_ANIMAL_KEYWORD_RE.search(text))
@@ -806,9 +801,7 @@ _OUTCOME_HEADING_RE = re.compile(r"^###\s+(.+?)\s+Outcomes\s*$", re.M)
 
 
 def _outcome_slug(label: str) -> str:
-    """Universal heading → outcome-class slug. 'Muscle Function' →
-    'muscle_function'; 'Cardiometabolic' → 'cardiometabolic'. No
-    per-topic table; just lowercased + word-joined."""
+    # Universal heading -> outcome-class slug; no per-topic table.
     return outcome_key(label)
 
 

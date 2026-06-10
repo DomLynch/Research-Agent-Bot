@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 import urllib.error
 import urllib.request
@@ -95,6 +96,7 @@ RESEARKA_MIN_QUESTION_WORDS = {
 }
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
+PREFLIGHT_MODE_ENV = "RESEARKA_PREFLIGHT_QA"
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -120,6 +122,78 @@ def _payload_fingerprint(payload: dict[str, Any]) -> str:
         for key in ("title", "abstract", "artifact_type", "article_type", "author_agent_id", "body_markdown", "sections", "source_bundle")
     }
     return "sha256:" + hashlib.sha256(json.dumps(material, sort_keys=True).encode("utf-8")).hexdigest()
+
+
+def _preflight_summary(report: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "status": report.get("status"),
+        "qa_version": report.get("qa_version"),
+        "input_hash": report.get("input_hash"),
+        "cleaned_hash": report.get("cleaned_hash"),
+        "safe_fixes_applied": report.get("safe_fixes_applied") or [],
+        "blocked_reasons": report.get("blocked_reasons") or [],
+    }
+
+
+def _preflight_mode() -> str:
+    mode = os.getenv(PREFLIGHT_MODE_ENV, "off").strip().lower()
+    return mode if mode in {"off", "shadow", "enforce"} else "off"
+
+
+def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any] | None, dict[str, Any] | None]:
+    mode = _preflight_mode()
+    if mode == "off":
+        return payload, None
+    tool_root = Path(os.getenv("RESEARKA_PREFLIGHT_QA_ROOT", ROOT.parent / "researka-preflight-qa"))
+    input_path = run / "researka_preflight_input.json"
+    report_path = run / "researka_preflight_report.json"
+    clean_path = run / "researka_preflight_cleaned_payload.json"
+    _write_json(input_path, payload)
+    cmd = [
+        sys.executable, "-m", "preflight_qa", "check",
+        "--input", str(input_path),
+        "--out", str(report_path),
+        "--clean-out", str(clean_path),
+    ]
+    if os.getenv("RESEARKA_PREFLIGHT_USE_M3", "").strip().lower() in {"1", "true", "yes", "on"}:
+        cmd.append("--use-m3")
+    proc = subprocess.run(cmd, cwd=tool_root, text=True, capture_output=True, timeout=90, check=False)
+    if proc.returncode not in {0, 2}:
+        report = {
+            "status": "block",
+            "qa_version": "preflight-v1",
+            "blocked_reasons": [{
+                "code": "preflight_runtime_error",
+                "severity": "critical",
+                "message": (proc.stderr or proc.stdout or "preflight QA failed")[-500:],
+            }],
+        }
+    else:
+        report = _read_json(report_path)
+    metadata = payload.setdefault("metadata", {})
+    if isinstance(metadata, dict):
+        metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
+    if mode == "shadow":
+        return payload, report
+    if report.get("status") != "pass":
+        return None, report
+    cleaned = _read_json(clean_path)
+    cleaned_metadata = cleaned.setdefault("metadata", {})
+    if isinstance(cleaned_metadata, dict):
+        cleaned_metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
+        body = str(cleaned.get("body_markdown") or "")
+        content_hash = "sha256:" + hashlib.sha256(body.encode("utf-8")).hexdigest()
+        cleaned_metadata["preflight_original_content_hash"] = cleaned_metadata.get("content_hash")
+        cleaned_metadata["content_hash"] = content_hash
+        cleaned["author_signature"] = content_hash
+        cleaned_metadata["submission_identity_key"] = _submission_identity_key(
+            agent_slug=str(cleaned.get("author_agent_id") or ""),
+            title=str(cleaned.get("title") or ""),
+            content_hash=content_hash,
+            source_citation_hash=str(cleaned_metadata.get("source_citation_hash") or ""),
+        )
+        cleaned_metadata["submission_payload_hash"] = _payload_fingerprint(cleaned)
+    return cleaned, report
 
 
 def _hash_json(material: Any) -> str:
@@ -343,7 +417,7 @@ def _refresh_stale_accountability_sidecar(run: Path) -> bool:
     if not stale:
         return False
     try:
-        from agent.journal_finalizer import _phase_g_refresh_sidecars
+        from agent.journal_finalizer import _phase_g_refresh_sidecars  # type: ignore[attr-defined]
         return bool(_phase_g_refresh_sidecars(run))
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
@@ -362,7 +436,7 @@ def _refresh_stale_audit_sidecar(run: Path) -> bool:
     try:
         if dt.datetime.now(dt.UTC).timestamp() - run.stat().st_mtime > STALE_AUDIT_REFRESH_WINDOW_S:
             return False
-        from agent.journal_finalizer import _phase_g_refresh_sidecars
+        from agent.journal_finalizer import _phase_g_refresh_sidecars  # type: ignore[attr-defined]
         return bool(_phase_g_refresh_sidecars(run))
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
@@ -969,6 +1043,20 @@ def run_cycle(
     if submitter is None:
         ledger["submit_token_env"] = token_env
         submitter = _submitter(_submit_url(), token, str(payload["author_agent_id"]))
+    checked_payload, preflight_report = _run_preflight_qa(payload, run)
+    if preflight_report:
+        ledger["preflight_qa"] = _preflight_summary(preflight_report)
+    if checked_payload is None:
+        reason = "preflight_qa_blocked"
+        ledger.update({"status": "no_eligible_research_paper", "reason": reason})
+        _mark_considered_status(considered, run.name, reason)
+        _write_json(ledger_path, ledger)
+        return ledger
+    payload = checked_payload
+    fp = _payload_fingerprint(payload)
+    raw_metadata = payload.get("metadata")
+    metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
+    ledger["candidate"] = {"run": run.name, "topic": metadata.get("topic"), "fingerprint": fp}
     preflight_status = _researka_preflight_status(payload)
     ledger["researka_preflight"] = preflight_status
     if preflight_status != "eligible":
