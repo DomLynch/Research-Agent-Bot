@@ -149,6 +149,20 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     report_path = run / "researka_preflight_report.json"
     clean_path = run / "researka_preflight_cleaned_payload.json"
     _write_json(input_path, payload)
+    if not tool_root.is_dir():
+        report = {
+            "status": "block",
+            "qa_version": "preflight-v1",
+            "blocked_reasons": [{
+                "code": "preflight_tool_missing",
+                "severity": "critical",
+                "message": f"preflight QA root not found: {tool_root}",
+            }],
+        }
+        metadata = payload.setdefault("metadata", {})
+        if isinstance(metadata, dict):
+            metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
+        return (payload, report) if mode == "shadow" else (None, report)
     cmd = [
         sys.executable, "-m", "preflight_qa", "check",
         "--input", str(input_path),

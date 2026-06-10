@@ -9,6 +9,9 @@ sys.path.insert(0, str(REPO / "scripts"))
 import daily_research_paper_submit as submit  # type: ignore[import-not-found]  # noqa: E402
 
 
+PREFLIGHT_ROOT = REPO.parent / "researka-preflight-qa"
+
+
 def _payload(body: str) -> dict:
     return {
         "title": "Research Synthesis",
@@ -25,6 +28,7 @@ def _payload(body: str) -> dict:
 
 def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
     run.mkdir()
 
@@ -42,6 +46,7 @@ def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, mon
 
 def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
     run.mkdir()
 
@@ -53,3 +58,18 @@ def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path,
     assert payload is None
     assert report and report["status"] == "block"
     assert "doi_not_in_source_bundle" in {r["code"] for r in report["blocked_reasons"]}
+
+
+def test_final_preflight_hook_missing_tool_blocks_without_crashing(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(tmp_path / "missing"))
+    run = tmp_path / "run"
+    run.mkdir()
+
+    payload, report = submit._run_preflight_qa(_payload("Body."), run)  # type: ignore[attr-defined]
+
+    assert payload is None
+    assert report and report["status"] == "block"
+    assert "preflight_tool_missing" in {r["code"] for r in report["blocked_reasons"]}
