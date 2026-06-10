@@ -60,6 +60,22 @@ def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path,
     assert "doi_not_in_source_bundle" in {r["code"] for r in report["blocked_reasons"]}
 
 
+def test_final_preflight_live_mode_is_enforcing(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "live")
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
+    run = tmp_path / "run"
+    run.mkdir()
+
+    payload, report = submit._run_preflight_qa(  # type: ignore[attr-defined]
+        _payload("This may cite DOI 10.9999/missing."),
+        run,
+    )
+
+    assert payload is None
+    assert report and report["status"] == "block"
+    assert "doi_not_in_source_bundle" in {r["code"] for r in report["blocked_reasons"]}
+
+
 def test_final_preflight_hook_missing_tool_blocks_without_crashing(
     tmp_path: Path, monkeypatch,
 ) -> None:
