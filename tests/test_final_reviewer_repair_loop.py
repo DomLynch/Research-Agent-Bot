@@ -15,7 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import apply_patches as ap  # noqa: E402
-import grok_reviewer as gr  # noqa: E402
+import final_reviewer as gr  # noqa: E402
 import run_v06_synthesis as orch  # noqa: E402
 
 

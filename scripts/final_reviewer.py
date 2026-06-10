@@ -45,7 +45,7 @@ sys.path.insert(0, str(REPO_ROOT))
 from agent.llm_client import extract_json  # noqa: E402
 from agent.settings import load_settings  # noqa: E402  loads .env
 
-__all__ = ["TypedPatch", "review_with_grok", "main"]
+__all__ = ["TypedPatch", "review_paper", "main"]
 
 
 PATCH_TYPES = (
@@ -71,7 +71,7 @@ class TypedPatch:
     requires_trace: bool  # numeric / citation must verify against corpus
 
 
-def _build_grok_prompt(
+def _build_review_prompt(
     paper_md: str, manifest: dict, audit: dict,
     citation_registry: dict | None = None,
 ) -> tuple[str, str]:
@@ -578,7 +578,7 @@ async def repair_flagged_patches(
     return out
 
 
-async def review_with_grok(
+async def review_paper(
     paper_md: str, manifest: dict, audit: dict,
     *, model: str = "google/gemini-3.1-flash-lite:exacto",
     fallback_model: str = "mistralai/mistral-small-2603",
@@ -597,7 +597,7 @@ async def review_with_grok(
         raise RuntimeError(
             "OPENROUTER_API_KEY not set; cannot run final-layer review"
         )
-    system, user = _build_grok_prompt(
+    system, user = _build_review_prompt(
         paper_md, manifest, audit, citation_registry=citation_registry,
     )
     own_client = client is None
@@ -721,7 +721,7 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     patches, raw, model_used, cost_usd = asyncio.run(
-        review_with_grok(paper, manifest, audit, model=args.model),
+        review_paper(paper, manifest, audit, model=args.model),
     )
     out_json = paper_path.with_suffix(".review_patches.json")
     out_md = paper_path.with_suffix(".review_summary.md")

@@ -72,7 +72,7 @@ sys.path.insert(0, str(REPO_ROOT / "scripts"))
 import audit_v06_paper as _audit_v06  # noqa: E402
 import final_consistency_audit as _consistency_audit  # noqa: E402
 import apply_consistency_fixes as _consistency_fixer  # noqa: E402
-import grok_reviewer as _final_reviewer  # noqa: E402
+import final_reviewer as _final_reviewer  # noqa: E402
 import apply_patches as _patch_applier  # noqa: E402
 import run_mode_contract as _run_mode  # noqa: E402
 import citation_registry as _citations  # noqa: E402
@@ -2304,7 +2304,7 @@ async def _run_post_paper_pipeline(
         # receipt_id handles. Pre-fix reviewer behavior reverted clean citations
         # to long PMC handles because the prompt asked for "receipt-key
         # consistency" — exactly the bug the third reviewer warned about.
-        patches, _raw, model_used, cost = await _final_reviewer.review_with_grok(
+        patches, _raw, model_used, cost = await _final_reviewer.review_paper(
             paper_md, manifest, audit_report,
             citation_registry=citation_registry,
         )

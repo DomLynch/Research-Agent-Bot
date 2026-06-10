@@ -40,7 +40,7 @@ include = ["agent", "agent.*"]
 [tool.mypy]
 # Only `.` on mypy_path. Production imports of scripts/*.py all use the
 # package form (`from scripts.X import Y` — see agent/quality_methods_bundle).
-# Flat sys.path-hack imports (`import grok_reviewer`, `import granite_arbitrator`,
+# Flat sys.path-hack imports (`import final_reviewer`, `import granite_arbitrator`,
 # etc.) come from scripts/run_v06_synthesis.py and a handful of tests; those
 # are listed in the [[tool.mypy.overrides]] block below with
 # ignore_missing_imports=true so mypy doesn't error on them.
@@ -69,7 +69,7 @@ module = [
     "export_public_bundle", "export_static_reader",
     "fetch_oa_corpus", "final_checkpoint_report", "final_consistency_audit",
     "fitz",
-    "generate_brief", "grade_assessment", "granite_arbitrator", "grok_reviewer",
+    "generate_brief", "grade_assessment", "granite_arbitrator", "final_reviewer",
     "journal_surface_batch_audit", "journal_surface_root_cause",
     "l6_batch_report", "l6_retrofit_report",
     "methods_evidence_renderer", "multi_topic_dashboard",
