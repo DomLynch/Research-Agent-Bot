@@ -3676,7 +3676,16 @@ def test_fresh_lane_tries_next_after_sparse_receipt_preflight(tmp_path: Path, mo
     assert ledger["attempts"][1]["submit_status"] == "submitted_to_researka"
 
 
-def test_fresh_lane_moves_on_after_same_topic_gate_retry_exhausted(tmp_path: Path, monkeypatch) -> None:
+@pytest.mark.parametrize(
+    ("first_gate", "second_gate"),
+    [
+        ("journal_surface_failed", "abstract_overclaim"),
+        ("pre_submit_not_passed", "audit_not_all_green"),
+    ],
+)
+def test_fresh_lane_moves_on_after_same_topic_gate_retry_exhausted(
+    tmp_path: Path, monkeypatch, first_gate: str, second_gate: str,
+) -> None:
     _topic(tmp_path, "aaa_bad_surface", target_journal=True)
     _topic(tmp_path, "zzz_ready", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -3697,7 +3706,7 @@ def test_fresh_lane_moves_on_after_same_topic_gate_retry_exhausted(tmp_path: Pat
         (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
         return 0
 
-    gate_statuses = iter(["journal_surface_failed", "abstract_overclaim", "submitted_to_researka"])
+    gate_statuses = iter([first_gate, second_gate, "submitted_to_researka"])
 
     def fake_submit(**_kwargs: Any) -> dict[str, Any]:
         status = next(gate_statuses)
@@ -3728,6 +3737,45 @@ def test_fresh_lane_moves_on_after_same_topic_gate_retry_exhausted(tmp_path: Pat
     assert [a["topic"] for a in ledger["attempts"]] == ["aaa_bad_surface", "aaa_bad_surface", "zzz_ready"]
     assert ledger["attempts"][1]["same_topic_retry_stop"] is True
     assert ledger["attempts"][2]["submit_status"] == "submitted_to_researka"
+
+
+def test_fresh_lane_retries_once_after_transient_synthesis_failure(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_transient", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        if len(synthesized) == 1:
+            return 1
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "final_status.json", {"submission_ready": True})
+        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-10",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert synthesized == ["aaa_transient", "aaa_transient"]
+    assert ledger["attempts"][0]["gate_status"] == "synthesis_failed"
+    assert "same_topic_retry_stop" not in ledger["attempts"][0]
+    assert ledger["attempts"][1]["submit_status"] == "submitted_to_researka"
 
 
 def test_cycle_quarantines_source_precision_misses_before_synthesis(tmp_path: Path, monkeypatch) -> None:
