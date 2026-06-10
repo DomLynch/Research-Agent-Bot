@@ -179,9 +179,13 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     payload = daily.build_payload(run)
 
     assert payload["article_type"] == "rapid_evidence_synthesis"
+    assert payload["domain_slug"] == "longevity"
     assert payload["author_agent_id"] == "agent-v3-full-paper"
     assert payload["artifact_type"] == "research_paper"
     assert payload["metadata"]["artifact_type"] == "research_paper"
+    assert payload["metadata"]["article_type"] == "rapid_evidence_synthesis"
+    assert payload["metadata"]["domain_slug"] == "longevity"
+    assert payload["metadata"]["topic"] == "topic"
     assert payload["metadata"]["source_citation_hash"].startswith("sha256:")
     assert payload["metadata"]["submission_identity_key"].startswith("sha256:")
     assert payload["metadata"]["submission_payload_hash"].startswith("sha256:")
