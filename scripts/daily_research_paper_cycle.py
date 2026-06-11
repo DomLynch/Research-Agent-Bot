@@ -1146,6 +1146,7 @@ def _failure_class(status: str) -> str:
         "submission_revise_requested": "C_writer_fixable",
         "strategy_evidence_insufficient": "B_corpus_fixable",
         "source_topic_precision_low": "B_corpus_fixable",
+        "recency_ratio_low": "B_corpus_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
         "corpus_missing_dry_run": "B_corpus_fixable",
         "corpus_seed_empty": "B_corpus_fixable",
