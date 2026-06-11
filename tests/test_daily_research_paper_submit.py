@@ -286,6 +286,16 @@ def test_evidence_map_scope_meets_live_question_word_floor(tmp_path: Path) -> No
     assert payload["sections"]["Scope"].startswith("This evidence map surveys")
 
 
+def test_evidence_map_tension_density_boundary_is_inclusive(tmp_path: Path) -> None:
+    # 12 receipts: density == 1.0 (exactly the floor) routes to the landscape
+    # lane; one fewer tension (density 11/12 < 1.0) stays on the thesis lane.
+    at_floor = daily.build_payload(_run(tmp_path, name="synthesis-at-v06", tensions=12))
+    below_floor = daily.build_payload(_run(tmp_path, name="synthesis-below-v06", tensions=11))
+
+    assert at_floor["article_type"] == "evidence_map"
+    assert below_floor["article_type"] == "rapid_evidence_synthesis"
+
+
 def test_researka_preflight_requires_twelve_sources(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["source_bundle"] = payload["source_bundle"][:11]

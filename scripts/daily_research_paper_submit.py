@@ -296,13 +296,15 @@ def _threshold(article_type: str, key: str) -> float:
 
 
 # Auto-select doctrine: with no explicit override, route a corpus to
-# `evidence_map` once its cross-source tension structure dominates — it
-# generates at least as many non-orthogonal tensions as it has receipts
-# (density >= floor). Such a corpus is a heterogeneous, often non-convergent
-# landscape; forcing it into a single-thesis synthesis is what makes the writer
-# overclaim against its own evidence table. The map reviews it on the right
-# axis (landscape fidelity, not convergence). Universal: density is
-# topic-agnostic; the floor is env-tunable.
+# `evidence_map` when its tension density — n_non_orthogonal_tensions divided by
+# n_receipts — is >= the floor (default 1.0). The predicate is INCLUSIVE at the
+# boundary: density == floor routes to evidence_map, because a corpus carrying
+# at least as many cross-source tensions as it has receipts is already a
+# heterogeneous, non-convergent landscape. Forcing such a corpus into a
+# single-thesis synthesis is what makes the writer overclaim against its own
+# evidence table; the map instead reviews it on the right axis (landscape
+# fidelity, not convergence). Universal: density is topic-agnostic; the floor is
+# env-tunable via RESEARKA_EVIDENCE_MAP_TENSION_FLOOR.
 EVIDENCE_MAP_TENSION_DENSITY_FLOOR = 1.0
 
 
