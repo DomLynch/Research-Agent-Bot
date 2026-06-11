@@ -1875,6 +1875,36 @@ def test_finalizer_phase_f_adds_missing_outcome_subsections(tmp_path) -> None:
     assert "### Frailty Outcomes" in new_text
 
 
+def test_finalizer_closes_orphan_references_terminally(tmp_path) -> None:
+    """Orphan-reference closure must survive every later section rebuild.
+
+    Regression for the 2026-06-11 publish stall: the in-loop closure inserted
+    an inline supporting-corpus cluster, but surface-floor/structural rebuilds
+    that ran afterwards dropped it, so the gate still saw bibliography entries
+    as uncited. The terminal closure pass guarantees the cluster persists.
+    """
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+    from agent.journal_surface_gate import orphan_reference_tokens
+    (tmp_path / "audit").mkdir()
+    # A body that cites nobody + a References section listing two papers ->
+    # both are orphans until the closure cluster is appended inline.
+    (tmp_path / "full_paper.md").write_text(
+        "## Abstract\n\n" + ("alpha " * 60) + "\n\n"
+        "## Discussion\n\n" + ("discussion " * 60) + "\n\n"
+        "## References\n\n"
+        "- **Zarate 2019.** A mitochondrial peptide study. DOI: 10.1/x.\n"
+        "- **Okada 2017.** Another corpus source. DOI: 10.2/y.\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(_json.dumps({"receipts": []}), encoding="utf-8")
+    assert len(orphan_reference_tokens((tmp_path / "full_paper.md").read_text())) == 2
+    finalize_run(tmp_path)
+    final = (tmp_path / "full_paper.md").read_text()
+    assert orphan_reference_tokens(final) == ()
+    assert "catalogued for completeness" in final
+
+
 def test_finalizer_load_bearing_tensions_are_public_safe(tmp_path) -> None:
     import json as _json
     from agent.journal_finalizer import finalize_run

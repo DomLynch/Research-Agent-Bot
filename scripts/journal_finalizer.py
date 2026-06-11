@@ -146,6 +146,15 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_d_unproven_human_longevity(text, out_dir)
     entries.extend(log)
+    # Orphan-reference closure MUST be terminal. The earlier in-loop pass
+    # (above) inserts the inline supporting-corpus cluster, but section
+    # rebuilds that follow it — structural fallback, surface-floor backstop,
+    # outcome-routing — re-render the tail section and drop the cluster, so
+    # the gate still sees the references as uncited. Running it last (after
+    # every section mutation) guarantees the cluster survives to disk. It is
+    # idempotent: a no-op when no orphans remain.
+    text, log = _phase_d_reference_closure(text)
+    entries.extend(log)
     return text, entries
 
 
