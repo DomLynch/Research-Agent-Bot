@@ -122,12 +122,14 @@ def repair_claim_strength(
         r.receipt_id for r in accepted
         if (r.evidence_tier or "").upper() == "C"
         or r.directness in ("mechanistic", "indirect")
-        # A receipt the evidence table coded null/unclear carries no
-        # direction — a causal/directional verb anchored to it overclaims
-        # against the paper's own table (the dominant reviewer revise ask).
-        # Hedge it like any other weak anchor. Universal: keyed on the
-        # coded effect_direction, no topic-specific assumptions.
-        or str(r.effect_direction or "").lower() in ("null", "unclear")
+        # A receipt the evidence table coded null/unclear/mixed does not
+        # support a single asserted direction — a causal/directional verb
+        # anchored to it overclaims against the paper's own table (the
+        # dominant reviewer revise ask). null/unclear carry no direction;
+        # `mixed` has findings in BOTH directions, so asserting one is also
+        # an overclaim. Hedge like any other weak anchor. Universal: keyed
+        # on the coded effect_direction, no topic-specific assumptions.
+        or str(r.effect_direction or "").lower() in ("null", "unclear", "mixed")
     }
     # Note: we deliberately do NOT short-circuit on empty weak_ids.
     # Q5 healthspan-claim violations can fire on prose with no

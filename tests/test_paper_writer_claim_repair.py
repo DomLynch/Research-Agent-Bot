@@ -136,6 +136,15 @@ def test_repair_fires_on_direction_overclaim_against_null_coded_receipt() -> Non
     assert "metformin-multi-001-null-c07" in log[0].receipt_ids
 
 
+def test_repair_fires_on_direction_overclaim_against_mixed_coded_receipt() -> None:
+    """A 'mixed' receipt has findings in BOTH directions, so asserting a
+    single direction is an overclaim and must hedge — same as null/unclear."""
+    body = "Metformin improves survival (metformin-multi-001-mixed-c09)."
+    repaired, log = repair_claim_strength(body, [_direct_dir("metformin-multi-001-mixed-c09", "mixed")])
+    assert REPAIR_PREFIX in repaired, f"mixed-direction overclaim not hedged: {repaired!r}"
+    assert len(log) == 1
+
+
 def test_repair_does_not_fire_for_direct_positive_receipt() -> None:
     """Control: a direct receipt genuinely coded 'positive' is NOT an
     overclaim — the directional verb is faithful, so no hedge."""
