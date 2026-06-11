@@ -48,6 +48,12 @@ DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 DEFAULT_ARTICLE_TYPE = "rapid_evidence_synthesis"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 NULL_CODING_AUDIT_FLOOR = 0.90
+# Mirror of Researka's intake recency gate (contracts/submissions.py:
+# RECENT_PUBLICATION_YEAR_FLOOR=2020, minimum_recency_ratio=0.5). Checking it
+# pre-submit stops the bot wasting a synthesis cycle — and tripping the intake
+# backoff — on a corpus whose published source bundle is too old to clear it.
+RECENT_PUBLICATION_YEAR_FLOOR = 2020
+RECENCY_RATIO_FLOOR = 0.50
 PUBLICATION_IDENTITY_KEYS = (
     "submission_identity_key",
     "submission_payload_hash",
@@ -402,6 +408,26 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
     return True, f"source_topic_precision_ok:{hits}/{len(rows)}"
 
 
+def _recency_ratio_status(payload: dict[str, Any]) -> str:
+    """Pre-submit mirror of Researka's intake recency gate. Computed over the
+    BUILT source bundle (not the registry): citation-floor padding appends
+    older reference-list stubs that drag the published recency down, so only
+    the bundle the journal actually receives predicts the gate. Universal —
+    year-based, no topic/domain assumptions; fail-open when no years are known."""
+    bundle = payload.get("source_bundle")
+    years = [
+        row["year"]
+        for row in (bundle if isinstance(bundle, list) else [])
+        if isinstance(row, dict) and isinstance(row.get("year"), int)
+    ]
+    if not years:
+        return "eligible"
+    recent = sum(1 for year in years if year >= RECENT_PUBLICATION_YEAR_FLOOR)
+    if recent / len(years) < RECENCY_RATIO_FLOOR:
+        return f"recency_ratio_low:{recent}/{len(years)}<{RECENCY_RATIO_FLOOR:.2f}"
+    return "eligible"
+
+
 def _null_coding_claim(paper: str) -> tuple[int, int] | None:
     match = re.search(
         r"(\d+)\s*/\s*(\d+)\s+retained sources[^.]{0,120}"
@@ -602,6 +628,8 @@ def select_candidate(
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
             if null_status != "eligible":
                 ok, status = False, null_status
+            elif (recency_status := _recency_ratio_status(payload)) != "eligible":
+                ok, status = False, recency_status
         fp = _payload_fingerprint(payload) if locally_eligible else paper_sha
         if locally_eligible:
             markers.update(_metadata_markers(metadata))

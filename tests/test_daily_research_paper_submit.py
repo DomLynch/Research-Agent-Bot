@@ -678,6 +678,25 @@ def test_source_topic_precision_counts_static_hrt_aliases(tmp_path: Path, monkey
     assert status == "source_topic_precision_ok:2/3"
 
 
+def test_recency_ratio_blocks_old_source_bundle() -> None:
+    # 2/5 of dated entries are 2020+ -> below the 0.50 floor (Researka would
+    # reject at intake). Computed over the published bundle, so the padded
+    # older reference stubs count against it.
+    old_bundle = {"source_bundle": [
+        {"year": 2021}, {"year": 2020},
+        {"year": 2015}, {"year": 2013}, {"year": 2009},
+        {"year": None}, {"title": "no year"},  # undated rows ignored
+    ]}
+    assert daily._recency_ratio_status(old_bundle) == "recency_ratio_low:2/5<0.50"
+
+
+def test_recency_ratio_passes_recent_bundle_and_fails_open_when_undated() -> None:
+    recent = {"source_bundle": [{"year": 2024}, {"year": 2022}, {"year": 2021}, {"year": 2014}]}
+    assert daily._recency_ratio_status(recent) == "eligible"  # 3/4 = 75%
+    assert daily._recency_ratio_status({"source_bundle": [{"title": "x"}]}) == "eligible"  # no years -> fail-open
+    assert daily._recency_ratio_status({}) == "eligible"
+
+
 def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-eligible-old")
     current = _run(tmp_path, name="synthesis-topic-v06-current")
