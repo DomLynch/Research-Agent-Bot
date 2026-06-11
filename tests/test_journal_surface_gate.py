@@ -1881,26 +1881,41 @@ def test_finalizer_load_bearing_tensions_are_public_safe(tmp_path) -> None:
     (tmp_path / "audit").mkdir()
     (tmp_path / "full_paper.md").write_text(
         "## Abstract\n\nA.\n\n"
-        "## Cross-Domain Synthesis\n\nShort.\n\n"
+        "## Cross-Domain Synthesis\n\nA 2026 and B 2026 disagree on dosing.\n\n"
         "## Discussion\n\nD.\n"
     )
     (tmp_path / "manifest.json").write_text(_json.dumps({"receipts": []}))
     (tmp_path / "audit" / "tension_elaboration_plans.json").write_text(_json.dumps({
-        "plans": [{
-            "paper_a": "A 2026",
-            "paper_b": "B 2026",
-            "outcome_class": "dosing_pharmacokinetics",
-            "conflict_type": "disagreement",
-            "severity": 4,
-            "numeric_anchors": {"p = 0.002": 1},
-            "hypotheses": ["dose-regime difference"],
-        }],
+        "plans": [
+            {
+                "paper_a": "A 2026",
+                "paper_b": "B 2026",
+                "outcome_class": "dosing_pharmacokinetics",
+                "conflict_type": "disagreement",
+                "severity": 4,
+                "numeric_anchors": {"p = 0.002": 1},
+                "hypotheses": ["dose-regime difference"],
+            },
+            {
+                # Papers the document never cites: the row must be dropped,
+                # or it would trip the unreferenced-citation gate.
+                "paper_a": "Uncited 2025",
+                "paper_b": "Ghost 2024",
+                "outcome_class": "other",
+                "conflict_type": "null_vs_positive",
+                "severity": 3,
+                "hypotheses": ["x"],
+            },
+        ],
     }))
     finalize_run(tmp_path)
     new_text = (tmp_path / "full_paper.md").read_text()
     assert "Dosing and Pharmacokinetics" in new_text
     assert "dosing_pharmacokinetics" not in new_text
     assert "0.002" not in new_text
+    assert "severity 4" not in new_text
+    assert "null_vs_positive" not in new_text
+    assert "Uncited 2025" not in new_text and "Ghost 2024" not in new_text
 
 
 def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> None:

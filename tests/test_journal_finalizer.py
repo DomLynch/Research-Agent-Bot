@@ -813,7 +813,10 @@ def test_lane_qualifier_preserves_bullet_marker(tmp_path: Path) -> None:
     fixed, logs = journal_finalizer._phase_b_lane_qualifier(paper, tmp_path)
 
     assert "evidence; -" not in fixed
-    assert "- In animal/preclinical evidence, curran 2025 reported" in fixed
+    # Citation tokens keep their capitalization: lowercasing "Curran 2025"
+    # breaks exact reference matching and trips the unreferenced-citation
+    # gate (live failure: "Abu-Zaid 2025" -> "abu-Zaid 2025" on 2026-06-11).
+    assert "- In animal/preclinical evidence, Curran 2025 reported" in fixed
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
             phase="B_lane_qualifier",

@@ -38,6 +38,15 @@ def _lowercase_first_letter(text: str) -> str:
     first = re.match(r"\S+", stripped)
     if first and len(first.group(0)) > 1 and first.group(0).isupper():
         return text
+    # Never demote proper-noun / citation tokens: a word with internal
+    # capitals ("Abu-Zaid", "McKay") or a capitalized word followed by a
+    # year ("Turner 2015"). Lowercasing those breaks exact reference
+    # matching downstream (citation_artifact: unreferenced citation).
+    word = first.group(0) if first else ""
+    if any(ch.isupper() for ch in word[1:]) or re.match(
+        r"[A-Z][\w'\-]*\s+(?:19|20)\d{2}\b", stripped
+    ):
+        return text
     pad = text[: len(text) - len(stripped)]
     return pad + stripped[0].lower() + stripped[1:]
 
@@ -570,23 +579,42 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
             text = text[:m.end(1)] + "\n\n" + block + "\n" + text[m.end(1):]
             entries.append(FinalizerLogEntry("L_analytical_depth", rule, 1, f"appended manifest-derived analytical depth to {name}"))
 
+    from agent.paper_writer_deterministic import _public_label
+
     plans = _load_sidecar(out_dir / "audit" / "tension_elaboration_plans.json") or {}
     rows = []
     for p in (plans.get("plans") or [])[:15] if isinstance(plans, dict) else []:
         if not isinstance(p, dict):
             continue
-        hypotheses = "; ".join((p.get("hypotheses") or [])[:2])
+        paper_a = str(p.get("paper_a") or "").strip()
+        paper_b = str(p.get("paper_b") or "").strip()
+        # Appended rows may only cite labels the document already cites —
+        # introducing a new label here trips the unreferenced-citation gate.
+        if not paper_a or not paper_b or paper_a not in text or paper_b not in text:
+            continue
+        hypotheses = "; ".join(
+            str(h).strip().rstrip(".")
+            for h in (p.get("hypotheses") or [])[:2]
+            if str(h).strip()
+        )
         rows.append(
-            f"- {p.get('paper_a')} versus {p.get('paper_b')} defines a "
+            f"- {paper_a} versus {paper_b}: a "
             f"{_outcome_display(str(p.get('outcome_class') or 'other'))} "
-            f"{p.get('conflict_type')} with severity {p.get('severity')}. "
-            f"The leading explanation is {hypotheses}. Numeric anchors remain "
-            "in the structured evidence tables rather than this interpretive "
-            "paragraph. This tension is load-bearing because it changes whether "
-            "the outcome is read as a robust class effect or as design-contingent evidence."
+            f"{_public_label(str(p.get('conflict_type') or 'tension'))} tension. "
+            f"Leading explanations: {hypotheses or 'not yet adjudicated'}."
         )
     if rows:
-        append("Cross-Domain Synthesis", "### Load-Bearing Tensions\n\n" + "\n".join(rows), "load_bearing_tensions")
+        intro = (
+            "Each tension below is load-bearing: it changes whether the outcome "
+            "is read as a robust class effect or as design-contingent evidence. "
+            "Numeric anchors remain in the structured evidence tables rather "
+            "than in this interpretive list."
+        )
+        append(
+            "Cross-Domain Synthesis",
+            "### Load-Bearing Tensions\n\n" + intro + "\n\n" + "\n".join(rows),
+            "load_bearing_tensions",
+        )
 
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts") or [] if isinstance(manifest, dict) else []

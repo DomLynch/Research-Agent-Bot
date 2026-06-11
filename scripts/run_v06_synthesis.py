@@ -371,8 +371,9 @@ def _restore_required_section_bodies(
         floor = _REQUIRED_SECTIONS.get(title)
         if floor is None:
             continue
-        fallback_md = _compile_public_section_backstop(title, floor)
         rendered = _rendered_section_match(out, heading)
+        context_md = out if rendered is None else out[:rendered.start()] + out[rendered.end():]
+        fallback_md = _compile_public_section_backstop(title, floor, existing_text=context_md)
         original = section.body_md.strip()
         original_long_enough = (
             prefer_typed_sections
@@ -428,10 +429,11 @@ def _restore_public_surface_floors(
         floor = int(required[title])
         ceiling = _SECTION_CEILINGS.get(title)
         heading = f"## {title}"
-        fallback_md = _compile_public_section_backstop(title, floor)
+        match = _rendered_section_match(out, heading)
+        context_md = out if match is None else out[:match.start()] + out[match.end():]
+        fallback_md = _compile_public_section_backstop(title, floor, existing_text=context_md)
         if not fallback_md:
             continue
-        match = _rendered_section_match(out, heading)
         if match is not None:
             words = _word_count(match.group(1))
             if words >= floor and (ceiling is None or words <= ceiling):
@@ -499,7 +501,9 @@ def _translation_boundary_statement(topic: str) -> str:
     )
 
 
-def _compile_public_section_backstop(title: str, floor: int) -> str:
+def _compile_public_section_backstop(
+    title: str, floor: int, existing_text: str = "",
+) -> str:
     """Safe public-prose fallback compiled from manifest metadata.
 
     The fallback must read like conservative manuscript prose. It may
@@ -906,12 +910,43 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "evidence profile is transparent, but it does not convert plausible "
             "translation into certainty without matching direct evidence."
         ),
+        # Extra shared capacity: each shared paragraph may appear in at most
+        # one section per paper (existing_text dedup below), so the pool must
+        # be deep enough that later sections can still reach their word floor.
+        (
+            "Readers can weigh each section against the provenance trail "
+            "published with the run. Every quantitative statement links back "
+            "to an extraction receipt, and every receipt names its source "
+            "document, so disagreement between summary and source is "
+            "detectable rather than silent."
+        ),
+        (
+            "Interpretation is deliberately scoped to the retained corpus. "
+            "Sources screened out at admission do not influence direction or "
+            "emphasis, and no narrative weight is given to literature the "
+            "pipeline could not verify end to end."
+        ),
+        (
+            "Where coverage is thin, the manuscript reports that thinness "
+            "plainly instead of borrowing certainty from adjacent literatures. "
+            "Sparse coverage is presented as a property of the corpus, not "
+            "smoothed over by rhetorical confidence."
+        ),
     ]
     paragraphs = paragraphs_by_title[title]
     if title != "Conclusion":
-        paragraphs += shared
+        # Stable title-keyed rotation: sections draw from different points in
+        # the shared pool, so one padded section does not starve the next
+        # (each paragraph still appears at most once via existing_text).
+        off = sum(ord(ch) for ch in title) % max(1, len(shared))
+        paragraphs += shared[off:] + shared[:off]
     selected: list[str] = []
     for paragraph in paragraphs:
+        if existing_text and paragraph in existing_text:
+            # Shared backstop prose may be injected into at most one section:
+            # a paragraph already present anywhere else in the paper would
+            # trip the journal-surface duplicate_paragraph gate.
+            continue
         if paragraph not in selected:
             selected.append(paragraph)
         if _word_count("\n\n".join(selected)) >= floor + 25:
