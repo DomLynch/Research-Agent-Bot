@@ -371,6 +371,8 @@ def _researka_preflight_status(payload: dict[str, Any]) -> str:
         body_words = _word_count(payload.get("body_markdown"))
     if body_words < RESEARKA_FULL_PAPER_MIN_BODY_WORDS:
         return f"researka_preflight_body_words:{body_words} < {RESEARKA_FULL_PAPER_MIN_BODY_WORDS}"
+    if (recency_status := _recency_ratio_status(payload)) != "eligible":
+        return recency_status
     return "eligible"
 
 

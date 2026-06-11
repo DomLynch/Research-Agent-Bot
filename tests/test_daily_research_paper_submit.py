@@ -697,6 +697,27 @@ def test_recency_ratio_passes_recent_bundle_and_fails_open_when_undated() -> Non
     assert daily._recency_ratio_status({}) == "eligible"
 
 
+def test_preflight_and_submitter_block_low_recency_before_http(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    for row in payload["source_bundle"]:
+        row["year"] = 2001
+
+    def fail_urlopen(_req: Request, timeout: int) -> object:
+        raise AssertionError("low-recency payload must not reach HTTP")
+
+    monkeypatch.setattr(urllib.request, "urlopen", fail_urlopen)
+
+    assert daily._researka_preflight_status(payload) == "recency_ratio_low:0/12<0.50"
+    result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(payload)
+
+    assert result == {
+        "ok": False,
+        "status": 0,
+        "response": "recency_ratio_low:0/12<0.50",
+        "preflight": True,
+    }
+
+
 def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-eligible-old")
     current = _run(tmp_path, name="synthesis-topic-v06-current")
