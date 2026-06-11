@@ -829,7 +829,13 @@ def _bib_reference_stubs(run: Path) -> dict[str, dict[str, Any]]:
             "doi": doi or None,
             "excerpt": _clip_text(f"Reference-list provenance stub. {title}", limit=1200),
             "year": int(year_match.group("year")) if year_match else None,
-            "evidence_type": "reference",
+            # Researka's SourceBundleEntry contract is Literal["primary","review"];
+            # a reference-list citation is a secondary/contextual source, so the
+            # schema-valid + conservative label is "review" (was "reference",
+            # which failed intake with source_bundle_entry_invalid:literal_error
+            # and tripped the agent_backoff_intake_rejections lockout on
+            # 2026-06-10/11 for every paper that needed citation-floor padding).
+            "evidence_type": "review",
         }
         if doi:
             stubs[f"doi:{doi}"] = row
