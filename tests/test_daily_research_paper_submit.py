@@ -31,7 +31,7 @@ def _words(token: str, count: int) -> str:
     return " ".join([token] * count)
 
 
-def _run(root: Path, name: str = "synthesis-topic-v06-test") -> Path:
+def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 5) -> Path:
     run = root / name
     run.mkdir(parents=True)
     (run / "full_paper.md").write_text(
@@ -60,7 +60,7 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test") -> Path:
         "topic": "topic",
         "n_receipts": 12,
         "n_high_confidence_claims_total": 34,
-        "n_non_orthogonal_tensions": 5,
+        "n_non_orthogonal_tensions": tensions,
         "receipts": receipts,
     })
     _write_json(run / "citation_registry.json", {
@@ -239,6 +239,51 @@ def test_researka_preflight_uses_exact_research_synthesis_sections(tmp_path: Pat
 
     payload["sections"].pop("Methods")
     assert daily._researka_preflight_status(payload) == "researka_preflight_missing_sections:Methods"
+
+
+def test_evidence_map_auto_selected_for_high_tension_corpus(tmp_path: Path) -> None:
+    # Tension density 20/12 = 1.67 >= 1.0 floor: a non-convergent landscape.
+    payload = daily.build_payload(_run(tmp_path, tensions=20))
+
+    assert payload["article_type"] == "evidence_map"
+    assert payload["metadata"]["article_type"] == "evidence_map"
+    for name in ("Scope", "Search Summary", "Evidence Landscape", "Findings Map", "Tensions and Gaps", "Limitations"):
+        assert payload["sections"][name].strip(), name
+    # Thesis-lane sections must not leak into a landscape payload.
+    assert "Research Question" not in payload["sections"]
+    assert "Key Findings" not in payload["sections"]
+    assert daily._researka_preflight_status(payload) == "eligible"
+
+
+def test_low_tension_corpus_stays_default_thesis_lane(tmp_path: Path) -> None:
+    # Tension density 5/12 = 0.42 < 1.0: coherent enough for a single thesis.
+    payload = daily.build_payload(_run(tmp_path, tensions=5))
+
+    assert payload["article_type"] == "rapid_evidence_synthesis"
+
+
+def test_explicit_article_type_overrides_landscape_auto_select(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_ARTICLE_TYPE_V3", "rapid_evidence_synthesis")
+    # High tension would auto-select evidence_map, but the explicit override wins.
+    payload = daily.build_payload(_run(tmp_path, tensions=40))
+
+    assert payload["article_type"] == "rapid_evidence_synthesis"
+
+
+def test_evidence_map_tension_floor_is_env_tunable(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_EVIDENCE_MAP_TENSION_FLOOR", "5.0")
+    # Density 20/12 = 1.67 now falls below the raised 5.0 floor.
+    payload = daily.build_payload(_run(tmp_path, tensions=20))
+
+    assert payload["article_type"] == "rapid_evidence_synthesis"
+
+
+def test_evidence_map_scope_meets_live_question_word_floor(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path, tensions=20))
+
+    # Scope is evidence_map's research-question section; the live core floor is 30.
+    assert daily._word_count(payload["sections"]["Scope"]) >= 30
+    assert payload["sections"]["Scope"].startswith("This evidence map surveys")
 
 
 def test_researka_preflight_requires_twelve_sources(tmp_path: Path) -> None:
