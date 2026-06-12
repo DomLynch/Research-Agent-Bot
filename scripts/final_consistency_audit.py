@@ -522,7 +522,10 @@ def _appraisal_is_backed(paper: str, run_dir: Path | None) -> bool:
     prose section that defers to a sidecar which doesn't exist is NOT backing —
     that is precisely the unbacked-claim failure this gate exists to catch."""
     if run_dir is not None:
-        for p in run_dir.glob("*.json"):
+        # rglob, not glob: the pipeline writes risk_of_bias.json to the run root
+        # but _organize_run_artifacts relocates it into the audit/ subfolder, so
+        # the backing artifact can live at either depth depending on stage.
+        for p in run_dir.rglob("*.json"):
             if not re.search(r"risk[_-]?of[_-]?bias|appraisal", p.name, re.IGNORECASE):
                 continue
             try:

@@ -2113,6 +2113,18 @@ def test_appraisal_claim_backed_by_populated_sidecar_passes(tmp_path: Path) -> N
     assert audit._check_unbacked_appraisal_claim("AMSTAR-2 was applied.\n", tmp_path) == []
 
 
+def test_appraisal_backed_by_populated_sidecar_in_subfolder(tmp_path: Path) -> None:
+    # The pipeline relocates risk_of_bias.json into an audit/ subfolder, so the
+    # backing artifact must be found recursively, not just at the run root.
+    sub = tmp_path / "audit"
+    sub.mkdir()
+    (sub / "risk_of_bias.json").write_text(
+        '[{"study_id": "Greilberger 2023", "tool": "robins_i", "overall_rating": "some_concerns"}]',
+        encoding="utf-8",
+    )
+    assert audit._check_unbacked_appraisal_claim("RoB-2 and ROBINS-I were applied.\n", tmp_path) == []
+
+
 def test_appraisal_stub_section_with_missing_sidecar_is_unbacked(tmp_path: Path) -> None:
     # The real metformin defect: a prose RoB section that defers to a sidecar
     # which was never written, with no in-paper appraisal table.
