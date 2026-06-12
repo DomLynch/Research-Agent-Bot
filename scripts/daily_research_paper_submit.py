@@ -1042,6 +1042,14 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             or _parsed_source_excerpt(topic, str(row.get("receipt_id") or ""))
             or _structured_source_excerpt(topic, row, receipt, title)
         )
+        # Surface the author-year citation token (the registry's body_citation,
+        # e.g. "Zufry 2025") inside the entry so a reviewer can ground every
+        # author-year cite in the prose to a real bundle source. The strict
+        # SourceBundleEntry schema forbids new keys, so it rides the free-text
+        # excerpt; author-year citation is domain-agnostic (universal).
+        cite = str(row.get("body_citation") or "").strip()
+        if cite and cite.lower() not in (excerpt or "").lower():
+            excerpt = _clip_text(f"{cite}. {excerpt}", limit=1200)
         bundle.append({
             "source_type": "pubmed" if row.get("source_pmid") else "corpus",
             "id": str(row.get("source_pmid") or row.get("source_pmcid") or row.get("reference_id") or row.get("receipt_id") or ""),
