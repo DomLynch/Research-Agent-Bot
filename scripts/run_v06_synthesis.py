@@ -3230,6 +3230,7 @@ async def _run_post_paper_pipeline(
     print("[pipeline] Stage 2/5 — consistency audit + auto-fix...", file=sys.stderr)
     issues = _consistency_audit.run_audit(
         paper_md, manifest, audit_report, audit_md,
+        run_dir=paper_path.parent,
     )
     paper_path.with_suffix(".consistency.json").write_text(
         json.dumps([_issue_to_dict(i) for i in issues], indent=2)
@@ -3465,6 +3466,7 @@ async def _run_post_paper_pipeline(
     pre_audit_md = _audit_v06._format_summary(pre_audit)
     pre_issues = _consistency_audit.run_audit(
         paper_md, manifest, pre_audit, pre_audit_md,
+        run_dir=paper_path.parent,
     )
     pre_final_cleanup_md = paper_md
     paper_md, _refix_log = _consistency_fixer.apply_fixes(
@@ -3496,6 +3498,7 @@ async def _run_post_paper_pipeline(
     post_restore_audit_md = _audit_v06._format_summary(post_restore_audit)
     post_restore_issues = _consistency_audit.run_audit(
         paper_md, manifest, post_restore_audit, post_restore_audit_md,
+        run_dir=paper_path.parent,
     )
     if any(i.auto_fixable for i in post_restore_issues):
         paper_md, _post_restore_log = _consistency_fixer.apply_fixes(
@@ -3575,6 +3578,7 @@ async def _run_post_paper_pipeline(
     paper_path.with_suffix(".audit.md").write_text(audit_md)
     final_issues = _consistency_audit.run_audit(
         paper_md, manifest, audit_report, audit_md,
+        run_dir=paper_path.parent,
     )
     paper_path.with_suffix(".consistency.json").write_text(
         json.dumps([_issue_to_dict(i) for i in final_issues], indent=2)

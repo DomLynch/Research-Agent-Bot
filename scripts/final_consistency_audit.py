@@ -658,6 +658,13 @@ def run_audit(
 ) -> list[ConsistencyIssue]:
     issues: list[ConsistencyIssue] = []
     year = current_year if current_year is not None else datetime.now(timezone.utc).year
+    # Load the citation registry from the run dir when the caller didn't pass
+    # one, so pipeline call sites only need to thread `run_dir`.
+    if registry is None and run_dir is not None:
+        try:
+            registry = json.loads((run_dir / "citation_registry.json").read_text())
+        except (OSError, ValueError):
+            registry = None
     issues.extend(_check_future_dated_citations(registry, current_year=year))
     issues.extend(_check_unbacked_appraisal_claim(paper_md, run_dir))
     issues.extend(_check_source_classification_claims(paper_md, manifest))

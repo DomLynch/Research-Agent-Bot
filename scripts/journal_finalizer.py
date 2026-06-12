@@ -2372,6 +2372,7 @@ def _refresh_final_consistency_sidecar(out_dir: Path) -> bool:
         )
         issues = consistency_audit.run_audit(
             paper_path.read_text(), manifest, audit, audit_md,
+            run_dir=out_dir,
         )
         payload = [asdict(i) for i in issues]
     except (AttributeError, ImportError, OSError, TypeError, ValueError):
