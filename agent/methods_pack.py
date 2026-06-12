@@ -152,8 +152,9 @@ _ACCOUNTABILITY_TEXTS: dict[str, str] = {
         "`artifact_consistency.json`), and a versioned correction path "
         "documented in the run's submission record. Certification under the "
         "`researka_agent_certified` model verifies that the manuscript is "
-        "internally consistent, provenance-traced, and format-checked against "
-        "these artifacts; it does not adjudicate domain correctness, corpus "
+        "machine-verifiable, internally consistent, provenance-traced, and "
+        "format-checked against these artifacts; it does not adjudicate "
+        "domain correctness, corpus "
         "fit, or novelty, which remain subject to expert and reader review."
     ),
 }
