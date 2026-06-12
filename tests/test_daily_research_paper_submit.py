@@ -331,7 +331,8 @@ def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, mo
     payload = daily.build_payload(run)
 
     assert payload["source_bundle"][0]["evidence_type"] == "primary"
-    assert payload["source_bundle"][0]["excerpt"] == "Smith 2026. GDF11 changed a measured endpoint in the retained source."
+    assert payload["source_bundle"][0]["excerpt"] == "GDF11 changed a measured endpoint in the retained source."
+    assert payload["source_bundle"][0]["cited_as"] == "Smith 2026"
 
 
 def test_source_bundle_prefers_pubmed_abstract_over_registry_summary(tmp_path: Path, monkeypatch) -> None:
@@ -354,17 +355,17 @@ def test_source_bundle_prefers_pubmed_abstract_over_registry_summary(tmp_path: P
     payload = daily.build_payload(run)
 
     assert payload["source_bundle"][0]["title"] == "Real source title"
-    assert payload["source_bundle"][0]["excerpt"] == "Smith 2026. PubMed abstract with methods, outcomes, and directional findings."
+    assert payload["source_bundle"][0]["excerpt"] == "PubMed abstract with methods, outcomes, and directional findings."
     assert "registered as" not in payload["source_bundle"][0]["excerpt"]
 
 
-def test_source_bundle_grounds_author_year_citation_in_excerpt(tmp_path: Path, monkeypatch) -> None:
+def test_source_bundle_grounds_author_year_citation_via_cited_as(tmp_path: Path, monkeypatch) -> None:
     """Reviewer grounding (2026-06-12 semaglutide revise): prose cites sources
-    author-year (e.g. 'Zufry 2025') but the strict SourceBundleEntry schema has
-    no author field, so a reviewer could not map the citation to a bundle source
-    and returned a revise. The registry's body_citation now rides the free-text
-    excerpt so every author-year cite is grounded — no new schema key, length
-    stays within the safe cap. Universal across domains."""
+    author-year (e.g. 'Zufry 2025') but bundle entries carried only
+    doi/pmid/title/year, so the reviewer could not map the citation to a source
+    and returned a revise. The entry now emits the registry's body_citation as
+    the first-class `cited_as` field the Researka reviewer matches on
+    (workflow.py: cited_as / title / year). Universal across domains."""
     run = _run(tmp_path)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     manifest["receipts"] = [{
@@ -378,10 +379,9 @@ def test_source_bundle_grounds_author_year_citation_in_excerpt(tmp_path: Path, m
     monkeypatch.setattr(daily, "_pubmed_abstracts", lambda pmids: {"123": "Abstract body text."})
 
     entry = daily.build_payload(run)["source_bundle"][0]
-    assert entry["excerpt"].startswith("Zufry 2025. ")
-    # strict schema: no new keys; length within the safe cap that intake accepts
-    assert set(entry) == {"source_type", "id", "title", "url", "doi", "excerpt", "year", "evidence_type"}
-    assert len(entry["excerpt"]) <= 1200
+    assert entry["cited_as"] == "Zufry 2025"
+    # Grounding rides the dedicated cited_as field; excerpt is left clean.
+    assert entry["excerpt"] == "Abstract body text."
 
 
 def test_source_bundle_structured_fallback_is_audit_specific(tmp_path: Path, monkeypatch) -> None:
