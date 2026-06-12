@@ -328,9 +328,13 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     return f"{surname} {year_str}"
 
 
-_TITLE_CITATION_SKIP: frozenset[str] = frozenset({
-    "a", "an", "the", "study", "effect", "effects", "role",
-    "association", "associations", "comparison", "comparative",
+# Common English function words kept lowercase inside a title-derived
+# citation phrase. Domain-agnostic (biomedical, AI, business, any field) —
+# used only to format the no-author title fallback below.
+_TITLE_CONNECTORS: frozenset[str] = frozenset({
+    "a", "an", "the", "of", "on", "in", "for", "and", "or", "to", "with",
+    "by", "from", "at", "as", "vs", "versus", "into", "within", "among",
+    "between", "during", "after", "before", "via",
 })
 
 _GENERIC_AUTHOR_TOKENS: frozenset[str] = frozenset({
@@ -342,19 +346,31 @@ _GENERIC_AUTHOR_TOKENS: frozenset[str] = frozenset({
 def _title_citation_from_metadata(meta: dict, year_str: str) -> str | None:
     """Fallback for abstract-only hits with no author metadata.
 
-    Closed-access DOI/HIT records often have title+year but no parsed
-    authors. A conservative title-derived token is better than leaking
-    internal handles into public prose.
+    Closed-access DOI/HIT records often carry title+year but no parsed
+    authors. A title-derived token beats leaking an internal handle into
+    public prose — but it must read as a TITLE, not a fabricated surname:
+    a lone leading word ("Impact 2025", "Effect 2025") is indistinguishable
+    from an author-year cite. So emit a short multi-word title phrase
+    ("Impact of Intermittent Fasting 2025"), capped at the third content
+    word, connectors preserved. Universal across domains — no word list.
     """
     title = str(meta.get("title") or "").strip()
+    # A parenthesised study/trial acronym is a recognised short name.
     for acronym in re.findall(r"\(([A-Z][A-Z0-9-]{2,})\)", title):
         return f"{acronym.split('-', 1)[0]} {year_str}"
-    for token in re.findall(r"[A-Za-z][A-Za-z\-]{2,}", title):
-        cleaned = token.strip("-")
-        if cleaned.lower() in _TITLE_CITATION_SKIP:
-            continue
-        return f"{_smart_title(cleaned)} {year_str}"
-    return None
+    phrase: list[str] = []
+    content = 0
+    for word in re.findall(r"[A-Za-z][A-Za-z'’\-]*", title):
+        connector = word.lower() in _TITLE_CONNECTORS
+        if connector and not phrase:
+            continue  # never lead with an article / preposition
+        phrase.append(word.lower() if connector else _smart_title(word.strip("-")))
+        content += 0 if connector else 1
+        if content >= 3:
+            break
+    while phrase and phrase[-1].lower() in _TITLE_CONNECTORS:
+        phrase.pop()  # never end on a connector
+    return f"{' '.join(phrase)} {year_str}" if phrase else None
 
 
 def _safe_variants_across_registry(

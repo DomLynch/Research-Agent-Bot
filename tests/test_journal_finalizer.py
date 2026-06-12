@@ -1668,6 +1668,35 @@ def test_review_noise_repairs_public_artifact_phrase() -> None:
     assert ("repair_public_artifact_phrase", 1, "rewrote 1 public artifact phrase(s)") in changes
 
 
+def test_dedupe_keeps_methods_search_query_list_with_subset_vocab() -> None:
+    """Regression: a templated search-query list has a tiny vocabulary that is
+    a SUBSET of richer earlier prose. The asymmetric near-duplicate test
+    (overlap / min-len) would score it 1.0 and prune it, blanking the
+    Methods "Search strategy" body. A bulleted block is structured
+    enumeration — pruned only on EXACT duplication, never fuzzy overlap.
+    Universal across domains (no per-topic vocabulary)."""
+    from scripts.review_noise_control import _dedupe_repeated_blocks
+
+    paper = (
+        "## Results\n\n"
+        "Across the corpus, fasting and intermittent fasting as an "
+        "intervention showed mixed effects on aging outcomes in older adults, "
+        "with several randomized controlled trial reports and review sources "
+        "disagreeing here.\n\n"
+        "## Methods\n\n### Search strategy\n\n"
+        "- `fasting intervention intermittent fasting effects aging`\n"
+        "- `fasting intervention intermittent fasting effects older adults`\n"
+        "- `fasting intervention intermittent fasting randomized controlled trial`\n"
+        "- `fasting aging older adults randomized trial`\n\n"
+        "### Eligibility criteria\n\n- Sources addressing fasting.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+    out, removed = _dedupe_repeated_blocks(paper)
+    assert removed == 0, f"list block wrongly pruned: {out!r}"
+    assert out.count("- `") == 4
+    assert "fasting aging older adults randomized trial" in out
+
+
 def test_unreferenced_citation_ignores_reference_title_fragment() -> None:
     from agent.journal_surface_gate import unreferenced_citation_tokens
 

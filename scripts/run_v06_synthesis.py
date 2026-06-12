@@ -74,7 +74,7 @@ from agent.outcome_class_remap import outcome_display, remap_outcome_class  # no
 from agent.outcome_class_remap import refine_other_outcome_class  # noqa: E402
 from agent.synthesis_schemas import (  # noqa: E402
     EffectDirection, ReceiptSummary, SynthesisSection, SynthesisThesis,
-    Tension, TensionKind, TensionMatrix,
+    TensionMatrix,
 )
 from agent.settings import load_settings  # noqa: E402
 from agent.topic_display import humanize_topic  # noqa: E402
@@ -2161,73 +2161,6 @@ def build_receipts_from_quant_claims(
     return receipts
 
 
-def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
-    """Pairwise tensions between receipts. Same outcome_class + opposite
-    effect_directions = disagreement. Different outcome_classes with
-    one direct + one mechanistic = cross-domain tension."""
-    pairs: list[Tension] = []
-    sorted_receipts = sorted(receipts, key=lambda r: r.receipt_id)
-    for i, a in enumerate(sorted_receipts):
-        for b in sorted_receipts[i + 1:]:
-            if a.outcome_class == b.outcome_class:
-                # Fix #5 reviewer P2: explicit branches for the new
-                # null/mixed direction values; agreement covers same-
-                # value pairs (incl. null-vs-null and mixed-vs-mixed).
-                if a.effect_direction == b.effect_direction:
-                    kind = "agreement"
-                    severity = 1
-                elif "mixed" in (a.effect_direction, b.effect_direction):
-                    # mixed vs anything (positive / negative / null) is a
-                    # partial disagreement — strongest evidence the paper
-                    # has internal contradiction worth surfacing.
-                    kind = "disagreement"
-                    severity = 4
-                elif "null" in (a.effect_direction, b.effect_direction):
-                    kind = "null_vs_positive"
-                    severity = 3
-                elif {a.effect_direction, b.effect_direction} == {
-                    "positive", "negative",
-                }:
-                    kind = "disagreement"
-                    severity = 5
-                else:
-                    kind = "orthogonal"
-                    severity = 0
-                summary = (
-                    f"{a.receipt_id} ({a.effect_direction}) vs "
-                    f"{b.receipt_id} ({b.effect_direction}) on "
-                    f"{a.outcome_class}"
-                )
-            else:
-                # Cross-domain tension if one is direct and the other mechanistic.
-                if (a.directness == "direct" and b.directness == "mechanistic") or (
-                    a.directness == "mechanistic" and b.directness == "direct"
-                ):
-                    kind = "mechanism_vs_clinical"
-                    severity = 4
-                    summary = (
-                        f"{a.receipt_id} ({a.outcome_class}, "
-                        f"{a.directness}) vs {b.receipt_id} "
-                        f"({b.outcome_class}, {b.directness})"
-                    )
-                else:
-                    kind = "orthogonal"
-                    severity = 0
-                    summary = (
-                        f"{a.receipt_id} and {b.receipt_id} address "
-                        "different outcome classes"
-                    )
-            pairs.append(Tension(
-                receipt_a_id=a.receipt_id,
-                receipt_b_id=b.receipt_id,
-                kind=cast(TensionKind, kind),
-                outcome_class=a.outcome_class,
-                summary=summary,
-                severity=severity,
-            ))
-    return TensionMatrix(receipts=tuple(receipts), pairs=tuple(pairs))
-
-
 def build_thesis(
     receipts: list[ReceiptSummary], matrix: TensionMatrix,
     topic: str,
@@ -2667,6 +2600,11 @@ async def _run(
     if not receipts:
         print("No high-confidence claims found.", file=sys.stderr)
         return 2
+    # Single canonical tension classifier (agent.synthesis) — the manifest
+    # count, review-type routing, and consistency-audit replay must all read
+    # the SAME matrix. A divergent local copy here previously inflated the
+    # published n_non_orthogonal_tensions (~2.6x) vs the canonical replay.
+    from agent.synthesis import build_tension_matrix
     matrix = build_tension_matrix(receipts)
     thesis = build_thesis(receipts, matrix, topic=topic)
 

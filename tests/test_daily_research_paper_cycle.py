@@ -29,11 +29,11 @@ def test_daily_paper_policy_uses_12_receipts_and_shared_source_precision() -> No
     assert cycle.SOURCE_TOPIC_REPAIR_FLOOR == cycle.submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
 
 
-def test_fresh_lane_keeps_4h_cadence_with_larger_search_budget() -> None:
+def test_fresh_lane_keeps_8h_cadence_with_larger_search_budget() -> None:
     service = (REPO / "deploy" / "research-agent-paper-fresh.service").read_text(encoding="utf-8")
     timer = (REPO / "deploy" / "research-agent-paper-fresh.timer").read_text(encoding="utf-8")
 
-    assert "OnCalendar=*-*-* 00/4:00:00" in timer
+    assert "OnCalendar=*-*-* 00/8:00:00" in timer
     assert "--max-attempts 0" in service
     assert "--cycle-budget-sec 10800" in service
     assert "TimeoutStartSec=14400" in service

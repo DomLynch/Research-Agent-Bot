@@ -370,6 +370,25 @@ def test_tension_orthogonal_when_both_unclear() -> None:
     assert matrix.pairs[0].kind == "orthogonal"
 
 
+def test_tension_mechanism_vs_clinical_for_direct_vs_review_cross_outcome() -> None:
+    """Regression (Fix #1): a direct trial vs a review-tier source on a
+    DIFFERENT outcome is a cross-domain mechanism_vs_clinical tension. The
+    retired duplicate classifier in run_v06 only recognised
+    directness=='mechanistic' here, so it mislabelled direct-vs-review and
+    direct-vs-indirect pairs orthogonal and inflated the published
+    non-orthogonal count (~2.6x) vs this canonical classifier — now the single
+    source feeding the manifest count, review-type routing, and audit replay."""
+    direct_t = _summary(
+        "trial", outcome="muscle_function", direction="positive", directness="direct",
+    )
+    review_t = _summary(
+        "review", outcome="frailty", direction="mixed", directness="review",
+    )
+    matrix = build_tension_matrix([direct_t, review_t])
+    assert len(matrix.pairs) == 1
+    assert matrix.pairs[0].kind == "mechanism_vs_clinical"
+
+
 # ============================================================
 # Canonical pair ordering
 # ============================================================

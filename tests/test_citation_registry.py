@@ -348,8 +348,10 @@ def test_registry_uses_title_year_for_abstract_fallback_without_authors() -> Non
             },
         },
     )
-    assert registry[receipts[0].receipt_id].body_citation == "Rosuvastatin 2009"
-    assert registry[receipts[1].receipt_id].body_citation == "Bempedoic 2026"
+    # No parsed authors: cite by a short multi-word title phrase, never a lone
+    # leading word (which would masquerade as an author surname). See Fix #3.
+    assert registry[receipts[0].receipt_id].body_citation == "Rosuvastatin to Prevent Vascular 2009"
+    assert registry[receipts[1].receipt_id].body_citation == "Bempedoic Acid versus Statins 2026"
 
 
 def test_build_registry_raises_on_empty_receipt_id() -> None:
@@ -581,6 +583,26 @@ def test_body_citation_from_metadata_helper_handles_edge_cases() -> None:
         ),
         "year": 2002,
     }) == "ALLHAT 2002"
+
+
+def test_no_author_title_citation_is_multiword_not_fake_surname() -> None:
+    """Regression: closed-access records with no parsed authors must NOT cite
+    as a single leading title word ("Impact 2025") — that masquerades as a
+    fabricated author surname. Emit a short multi-word title phrase instead.
+    Universal across domains (no per-topic word list)."""
+    cite = cr._body_citation_from_metadata({
+        "title": "Impact of Intermittent Fasting on Gut Barrier Function",
+        "year": 2025,
+    })
+    assert cite == "Impact of Intermittent Fasting 2025"
+    # Never a lone word + year (the defect shape a reviewer flagged 3x).
+    assert len(cite.rsplit(" ", 1)[0].split()) >= 2
+    # A leading article is dropped, not used as the citation head.
+    assert cr._body_citation_from_metadata({
+        "title": "The Effect of Metformin on Glucose Metabolism", "year": 2024,
+    }) == "Effect of Metformin on Glucose 2024"
+    # Output is leak-clean.
+    assert not cr.validate_body_citation(cite)
 
 
 def test_year_suffix_after_helper_extracts_correct_year() -> None:
