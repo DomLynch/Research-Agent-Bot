@@ -325,6 +325,22 @@ def test_tension_null_vs_positive_when_one_null_one_signed() -> None:
     assert matrix.pairs[0].severity == 4
 
 
+def test_tension_orthogonal_for_non_opposable_directions() -> None:
+    """A pair only conflicts when its directions are genuinely opposed. Pairs
+    where neither side asserts an opposable direction (unclear/mixed, both
+    mixed, null/mixed, both unclear) stay orthogonal — they do NOT inflate the
+    tension count. Locks the seam a reviewer flagged as manufacturing tensions."""
+    combos: tuple[tuple[EffectDirection, EffectDirection], ...] = (
+        ("unclear", "mixed"), ("mixed", "mixed"),
+        ("null", "mixed"), ("unclear", "unclear"),
+    )
+    for da, db in combos:
+        a = _summary(f"a-{da}-{db}", outcome="muscle_function", direction=da)
+        b = _summary(f"b-{da}-{db}", outcome="muscle_function", direction=db)
+        matrix = build_tension_matrix([a, b])
+        assert matrix.pairs[0].kind == "orthogonal", f"{da} vs {db}"
+
+
 def test_tension_indirectness_gap_when_direct_meets_mechanistic() -> None:
     """MASTERS (direct A1, muscle, negative) and a synthetic mechanism-
     of-muscle receipt (mechanistic, unclear) → indirectness_gap. This

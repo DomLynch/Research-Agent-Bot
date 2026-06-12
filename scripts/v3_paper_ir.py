@@ -388,10 +388,20 @@ def _quality_score(ir: PaperIR, paper: str, receipts: list[dict[str, Any]], tens
 
 
 def _export_manifest(run_dir: Path, ir: PaperIR, score: dict[str, Any]) -> dict[str, Any]:
+    # Appraisal sidecars are public artifacts, but _organize_run_artifacts
+    # relocates them into audit/; resolve either location so the public
+    # manifest points at the populated file instead of reading "not appraised".
+    def _rel(name: str) -> str:
+        return name if (run_dir / name).exists() else f"audit/{name}"
+    # Explicit/appraisal keys are declared AFTER **ir.exports so a named public
+    # sidecar always wins over an exports-dict collision.
     export_paths = {
+        **ir.exports,
         "paper_ir": "paper_ir.json",
         "paper_quality_score": "paper_quality_score.json",
-        **ir.exports,
+        "risk_of_bias": _rel("risk_of_bias.json"),
+        "grade_assessment": _rel("grade_assessment.json"),
+        "quality_methods": _rel("quality_methods.json"),
     }
     files = {
         name: {"path": rel, "exists": bool(rel and (run_dir / rel).exists())}

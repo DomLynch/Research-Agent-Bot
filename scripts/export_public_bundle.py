@@ -66,6 +66,11 @@ _FILE_MAP: dict[str, str] = {
     "contradiction_map.json": "contradiction_map.json",
     "full_paper.docx": "paper.docx",
     "full_paper.pdf": "paper.pdf",
+    # Quality-appraisal sidecars (the reviewer's transparency surface). The run
+    # organizer files these under audit/, so reference them there.
+    "audit/risk_of_bias.json": "risk_of_bias.json",
+    "audit/grade_assessment.json": "grade_assessment.json",
+    "audit/quality_methods.json": "quality_methods.json",
 }
 
 # Files that, if missing, just get skipped (not an error).
@@ -83,6 +88,9 @@ _OPTIONAL = {
     "evidence_table.csv",
     "contradiction_map.json",
     "full_paper.docx",
+    "audit/risk_of_bias.json",
+    "audit/grade_assessment.json",
+    "audit/quality_methods.json",
 }
 
 

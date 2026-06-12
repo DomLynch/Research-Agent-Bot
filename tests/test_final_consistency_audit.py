@@ -2178,6 +2178,34 @@ def test_source_count_match_ignores_screened_yield() -> None:
     assert audit._check_source_count_consistency(paper, manifest) == []
 
 
+def test_directness_coding_flags_review_titled_coded_direct() -> None:
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "direct",
+        "source_title": "Intermittent fasting: a systematic review and meta-analysis"}]}
+    issues = audit._check_directness_coding(manifest)
+    assert [i.issue_type for i in issues] == ["directness_coding_mismatch"]
+
+
+def test_directness_coding_flags_primary_titled_coded_review() -> None:
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
+        "source_title": "Effect of fasting on weight: a randomized controlled trial"}]}
+    issues = audit._check_directness_coding(manifest)
+    assert [i.issue_type for i in issues] == ["directness_coding_mismatch"]
+
+
+def test_directness_coding_meta_analysis_of_rcts_not_flagged() -> None:
+    # Review markers win: a meta-analysis OF RCTs names trials but IS a review.
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
+        "source_title": "Intermittent fasting for rheumatic diseases: a systematic "
+        "review and meta-analysis of randomized controlled trials"}]}
+    assert audit._check_directness_coding(manifest) == []
+
+
+def test_directness_coding_consistent_coding_not_flagged() -> None:
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
+        "source_title": "A systematic review of intermittent fasting"}]}
+    assert audit._check_directness_coding(manifest) == []
+
+
 def test_run_audit_threads_registry_and_run_dir(tmp_path: Path) -> None:
     registry = {"r1": {"body_citation": "Future 2099", "source_year": 2099}}
     issues = audit.run_audit(

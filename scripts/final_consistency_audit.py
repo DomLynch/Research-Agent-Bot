@@ -654,6 +654,58 @@ def _check_source_count_consistency(
     return issues
 
 
+# Review markers (the source IS a secondary synthesis) vs primary-study
+# markers. Review markers WIN: a meta-analysis *of* randomized trials
+# legitimately names RCTs in its title, so a trial mention does not make a
+# source primary. This inverse-aware rule is why the naive "title says trial ->
+# not a review" check would mis-flag the meta-analyses that dominate
+# evidence-map corpora. Universal study-design vocabulary, no topic terms.
+_REVIEW_TITLE_RE = re.compile(
+    r"\b(systematic review|meta-?analys|umbrella review|scoping review|"
+    r"pooled analys|narrative review|review of)\b", re.IGNORECASE,
+)
+_PRIMARY_TITLE_RE = re.compile(
+    r"\b(randomi[sz]ed controlled trial|\bRCT\b|controlled clinical (?:study|trial)|"
+    r"double-blind|placebo-controlled|crossover trial|cohort study)\b", re.IGNORECASE,
+)
+
+
+def _check_directness_coding(manifest: dict) -> list[ConsistencyIssue]:
+    """A source's coded `directness` must agree with what its title says it is.
+    Flags two real mis-codings: a review-titled source coded `direct`, or a
+    primary-study-titled source (with NO review markers) coded `review`. Review
+    markers win so meta-analyses of RCTs stay `review` and are not mis-flagged."""
+    issues: list[ConsistencyIssue] = []
+    for r in manifest.get("receipts", []):
+        if not isinstance(r, dict):
+            continue
+        title = str(r.get("source_title") or r.get("body_citation") or "")
+        if not title:
+            continue
+        d = str(r.get("directness") or "").lower()
+        is_review = bool(_REVIEW_TITLE_RE.search(title))
+        is_primary = bool(_PRIMARY_TITLE_RE.search(title))
+        problem = ""
+        if d == "direct" and is_review and not is_primary:
+            problem = "review-titled source coded directness=direct"
+        elif d in ("review", "indirect") and is_primary and not is_review:
+            problem = f"primary-study-titled source coded directness={d}"
+        if problem:
+            issues.append(ConsistencyIssue(
+                id=f"C24-directness-{str(r.get('receipt_id'))[:24]}",
+                severity="P2",
+                issue_type="directness_coding_mismatch",
+                auto_fixable=False,
+                evidence=f"{problem}: {title[:120]}",
+                suggested_fix=(
+                    "Re-code directness to match the source's study design; "
+                    "review markers (systematic review / meta-analysis) win over "
+                    "a trial mention."
+                ),
+            ))
+    return issues
+
+
 def run_audit(
     paper_md: str, manifest: dict, audit: dict, audit_md_text: str = "",
     *, registry: dict | None = None, run_dir: Path | None = None,
@@ -672,6 +724,7 @@ def run_audit(
     issues.extend(_check_unbacked_appraisal_claim(paper_md, run_dir))
     issues.extend(_check_source_classification_claims(paper_md, manifest))
     issues.extend(_check_source_count_consistency(paper_md, manifest))
+    issues.extend(_check_directness_coding(manifest))
     issues.extend(_check_manifest_paper_consistency(paper_md, manifest))
     issues.extend(_check_stale_methods(paper_md, manifest))
     issues.extend(_check_stale_spar_in_prose(paper_md, manifest))  # Fix #29
