@@ -661,8 +661,9 @@ def _check_source_count_consistency(
 # not a review" check would mis-flag the meta-analyses that dominate
 # evidence-map corpora. Universal study-design vocabulary, no topic terms.
 _REVIEW_TITLE_RE = re.compile(
-    r"\b(systematic review|meta-?analys|umbrella review|scoping review|"
-    r"pooled analys|narrative review|review of)\b", re.IGNORECASE,
+    r"\b(systematic review|meta-?analys(?:is|es)?|umbrella review|"
+    r"scoping review|pooled analys(?:is|es)?|narrative review|review of)\b",
+    re.IGNORECASE,
 )
 _PRIMARY_TITLE_RE = re.compile(
     r"\b(randomi[sz]ed controlled trial|\bRCT\b|controlled clinical (?:study|trial)|"
@@ -686,7 +687,7 @@ def _check_directness_coding(manifest: dict) -> list[ConsistencyIssue]:
         is_review = bool(_REVIEW_TITLE_RE.search(title))
         is_primary = bool(_PRIMARY_TITLE_RE.search(title))
         problem = ""
-        if d == "direct" and is_review and not is_primary:
+        if d == "direct" and is_review:
             problem = "review-titled source coded directness=direct"
         elif d in ("review", "indirect") and is_primary and not is_review:
             problem = f"primary-study-titled source coded directness={d}"

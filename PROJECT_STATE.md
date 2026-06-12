@@ -67,6 +67,11 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 5. Gemini Exacto is the selected reviewer but still needs replay validation
    before being called Grok-equivalent; deterministic gates remain the
    production-critical certification layer.
+6. Tension-count drift follow-up: some manifests have reported
+   `n_non_orthogonal_tensions` above a recomputed
+   `build_tension_matrix(...).non_orthogonal()` count (observed 47 vs 18 on a
+   fasting run). Because evidence-map routing uses this density, reconcile the
+   manifest writer before tuning that routing threshold.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.

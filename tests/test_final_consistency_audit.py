@@ -2185,6 +2185,19 @@ def test_directness_coding_flags_review_titled_coded_direct() -> None:
     assert [i.issue_type for i in issues] == ["directness_coding_mismatch"]
 
 
+def test_directness_coding_review_markers_win_when_coded_direct() -> None:
+    titles = [
+        "A systematic review and meta-analysis of a randomized controlled trial",
+        "A meta-analysis of RCT evidence",
+        "A systematic review of placebo-controlled trials",
+    ]
+    for title in titles:
+        manifest = {"receipts": [{"receipt_id": "r1", "directness": "direct",
+            "source_title": title}]}
+        issues = audit._check_directness_coding(manifest)
+        assert [i.issue_type for i in issues] == ["directness_coding_mismatch"]
+
+
 def test_directness_coding_flags_primary_titled_coded_review() -> None:
     manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
         "source_title": "Effect of fasting on weight: a randomized controlled trial"}]}
