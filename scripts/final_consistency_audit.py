@@ -43,6 +43,7 @@ import json
 import re
 import sys
 from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 
 from direction_consistency import (
@@ -468,10 +469,199 @@ def _check_broken_paper_id_citations(paper: str) -> list[ConsistencyIssue]:
     return issues
 
 
+# --- Certification-integrity checks (2026-06-12) -------------------------
+# Universal, cross-artifact checks that defend the certification surface: the
+# "0 gate failures" stamp must never sit on top of (a) a citation dated in the
+# future, (b) a named appraisal framework that was never run, (c) a
+# "no <category> sources" claim the classification contradicts, or (d) a source
+# count that disagrees across artifacts. Topic-agnostic — no domain vocabulary;
+# categories and counts are read from the run's own manifest/registry.
+
+# Formal appraisal frameworks a manuscript may *name*. Naming one asserts it
+# was applied, which requires a populated appraisal artifact. A paper that
+# names none simply never trips this check (works for any domain).
+_APPRAISAL_FRAMEWORKS = ("RoB-2", "RoB 2", "ROBINS-I", "AMSTAR-2", "AMSTAR 2", "GRADE")
+
+
+def _check_future_dated_citations(
+    registry: dict | None, *, current_year: int,
+) -> list[ConsistencyIssue]:
+    """A cited source cannot be published after the run. Catches mis-parsed or
+    fabricated publication years (e.g. 'Pragmatic 2035'). Reads source_year
+    from the citation registry — the authoritative year field."""
+    issues: list[ConsistencyIssue] = []
+    rows = registry.values() if isinstance(registry, dict) else []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        year = row.get("source_year")
+        if isinstance(year, int) and year > current_year:
+            cite = str(
+                row.get("body_citation") or row.get("reference_id")
+                or row.get("receipt_id") or "source"
+            )
+            issues.append(ConsistencyIssue(
+                id=f"C20-future-citation-{cite[:24].replace(' ', '_')}",
+                severity="P1",
+                issue_type="future_dated_citation",
+                auto_fixable=False,
+                evidence=f"{cite}: source_year={year} > run year {current_year}",
+                suggested_fix=(
+                    f"Citation '{cite}' is dated {year}, after the run year "
+                    f"{current_year}. Correct the source year or drop the source; "
+                    "a future-dated citation must never pass certification."
+                ),
+            ))
+    return issues
+
+
+def _appraisal_is_backed(paper: str, run_dir: Path | None) -> bool:
+    """True only when a named appraisal framework is backed by *evidence*, not
+    just a heading: either a populated risk-of-bias sidecar, or an in-paper
+    appraisal section containing an actual table (header + ≥1 data row). A
+    prose section that defers to a sidecar which doesn't exist is NOT backing —
+    that is precisely the unbacked-claim failure this gate exists to catch."""
+    if run_dir is not None:
+        for p in run_dir.glob("*.json"):
+            if not re.search(r"risk[_-]?of[_-]?bias|appraisal", p.name, re.IGNORECASE):
+                continue
+            try:
+                data = json.loads(p.read_text())
+            except (OSError, ValueError):
+                continue
+            if data:  # non-empty dict/list of ratings
+                return True
+    section = re.search(
+        r"(?im)^#{2,4}\s+(?:risk[ -]of[ -]bias|quality appraisal).*?(?=^#{2,4}\s|\Z)",
+        paper, re.DOTALL,
+    )
+    if section:
+        # Count only non-separator table rows: a header + >=1 data row means a
+        # populated appraisal. An empty scaffold (header + `|---|`) does not.
+        rows = [
+            r for r in re.findall(r"^\s*\|.*\|\s*$", section.group(0), re.MULTILINE)
+            if not re.fullmatch(r"\s*\|[\s:|-]+\|\s*", r)
+        ]
+        if len(rows) >= 2:
+            return True
+    return False
+
+
+def _check_unbacked_appraisal_claim(
+    paper: str, run_dir: Path | None,
+) -> list[ConsistencyIssue]:
+    """Naming a formal risk-of-bias / quality-appraisal framework asserts it
+    was applied. Require backing — a populated risk-of-bias sidecar OR an
+    in-paper appraisal table — else the methodology claim is unbacked."""
+    named = sorted({
+        fw for fw in _APPRAISAL_FRAMEWORKS
+        if re.search(rf"\b{re.escape(fw)}\b", paper)
+    })
+    if not named:
+        return []
+    if _appraisal_is_backed(paper, run_dir):
+        return []
+    return [ConsistencyIssue(
+        id="C21-unbacked-appraisal-claim",
+        severity="P1",
+        issue_type="unbacked_appraisal_claim",
+        auto_fixable=False,
+        evidence=f"names {', '.join(named)} but provides no populated appraisal (no ratings table or sidecar)",
+        suggested_fix=(
+            f"Populate a risk-of-bias / quality-appraisal artifact (one row per "
+            f"source) or remove the {', '.join(named)} claim. A named appraisal "
+            "framework must be backed by an actual appraisal."
+        ),
+    )]
+
+
+def _check_source_classification_claims(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """A 'no <category> sources' claim must agree with the manifest's own
+    classification. Universal: the category set is read from the receipts'
+    directness values, never a hardcoded domain list."""
+    receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
+    present = {str(r.get("directness") or "").lower() for r in receipts}
+    present.discard("")
+    if not present:
+        return []
+    issues: list[ConsistencyIssue] = []
+    patterns = (
+        re.compile(r"\bno\s+([a-z][a-z-]+)\s+(?:sources?|studies)\b", re.IGNORECASE),
+        re.compile(
+            r"\bno\s+sources?\s+(?:were\s+)?classified\s+(?:primarily\s+)?as\s+([a-z][a-z-]+)",
+            re.IGNORECASE,
+        ),
+    )
+    for pat in patterns:
+        for m in pat.finditer(paper):
+            category = m.group(1).lower()
+            if category in present:
+                n = sum(
+                    1 for r in receipts
+                    if str(r.get("directness") or "").lower() == category
+                )
+                issues.append(ConsistencyIssue(
+                    id=f"C22-classification-claim-{m.start()}",
+                    severity="P2",
+                    issue_type="source_classification_claim_contradiction",
+                    auto_fixable=False,
+                    evidence=paper[max(0, m.start() - 20):m.end() + 20].strip()[:200],
+                    suggested_fix=(
+                        f"Prose claims no '{category}' sources, but the "
+                        f"classification table has {n}. Align the claim with the table."
+                    ),
+                ))
+    return issues
+
+
+def _check_source_count_consistency(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """The 'included/retained' source count stated in prose must equal the
+    manifest receipt count (catches the 56-vs-59 cross-artifact drift class).
+    Only the *included* count is compared — 'identified/screened' search yield
+    is legitimately larger and is excluded."""
+    n_receipts = manifest.get("n_receipts")
+    if not isinstance(n_receipts, int) or n_receipts <= 0:
+        n_receipts = len([r for r in manifest.get("receipts", []) if isinstance(r, dict)])
+    if not n_receipts:
+        return []
+    issues: list[ConsistencyIssue] = []
+    pat = re.compile(
+        r"\b(\d{1,4})\s+(?:sources?|studies|papers|references|receipts)\s+"
+        r"(?:were\s+)?(?:included|retained|synthesi[sz]ed|admitted)\b",
+        re.IGNORECASE,
+    )
+    for m in pat.finditer(paper):
+        stated = int(m.group(1))
+        if stated != n_receipts:
+            issues.append(ConsistencyIssue(
+                id=f"C23-source-count-{m.start()}",
+                severity="P2",
+                issue_type="source_count_inconsistency",
+                auto_fixable=False,
+                evidence=paper[max(0, m.start() - 20):m.end() + 20].strip()[:200],
+                suggested_fix=(
+                    f"Prose states {stated} included sources but the manifest has "
+                    f"{n_receipts} receipts; reconcile to a single number."
+                ),
+            ))
+    return issues
+
+
 def run_audit(
     paper_md: str, manifest: dict, audit: dict, audit_md_text: str = "",
+    *, registry: dict | None = None, run_dir: Path | None = None,
+    current_year: int | None = None,
 ) -> list[ConsistencyIssue]:
     issues: list[ConsistencyIssue] = []
+    year = current_year if current_year is not None else datetime.now(timezone.utc).year
+    issues.extend(_check_future_dated_citations(registry, current_year=year))
+    issues.extend(_check_unbacked_appraisal_claim(paper_md, run_dir))
+    issues.extend(_check_source_classification_claims(paper_md, manifest))
+    issues.extend(_check_source_count_consistency(paper_md, manifest))
     issues.extend(_check_manifest_paper_consistency(paper_md, manifest))
     issues.extend(_check_stale_methods(paper_md, manifest))
     issues.extend(_check_stale_spar_in_prose(paper_md, manifest))  # Fix #29
@@ -972,8 +1162,15 @@ def main(argv: list[str] | None = None) -> int:
     audit_md_text = (
         audit_md_path.read_text() if audit_md_path.exists() else ""
     )
+    registry_path = paper_path.parent / "citation_registry.json"
+    registry: dict = (
+        json.loads(registry_path.read_text()) if registry_path.exists() else {}
+    )
 
-    issues = run_audit(paper, manifest, audit, audit_md_text)
+    issues = run_audit(
+        paper, manifest, audit, audit_md_text,
+        registry=registry, run_dir=paper_path.parent,
+    )
     out_json = paper_path.with_suffix(".consistency.json")
     out_md = paper_path.with_suffix(".consistency.md")
     out_json.write_text(json.dumps(

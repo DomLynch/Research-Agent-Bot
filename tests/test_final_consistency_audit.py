@@ -2070,3 +2070,107 @@ def test_lightweight_public_polish_strips_duplicate_paragraphs_pre_final_audit()
     assert fixed.count("specific interpretive boundary") == 1
     assert "distinct discussion paragraph" in fixed
     assert any(item["fix_type"] == "fuzzy_duplicate_paragraph" for item in log)
+
+
+# --- Certification-integrity checks (2026-06-12) -------------------------
+
+def test_future_dated_citation_is_p1() -> None:
+    registry = {
+        "r1": {"body_citation": "Pragmatic 2035", "source_year": 2035},
+        "r2": {"body_citation": "Real 2024", "source_year": 2024},
+    }
+    issues = audit._check_future_dated_citations(registry, current_year=2026)
+    assert [i.issue_type for i in issues] == ["future_dated_citation"]
+    assert issues[0].severity == "P1"
+    assert "2035" in issues[0].evidence
+
+
+def test_no_future_citation_when_years_past() -> None:
+    registry = {"r1": {"body_citation": "Real 2024", "source_year": 2024}}
+    assert audit._check_future_dated_citations(registry, current_year=2026) == []
+    assert audit._check_future_dated_citations(None, current_year=2026) == []
+
+
+def test_unbacked_appraisal_claim_is_p1(tmp_path: Path) -> None:
+    paper = "## Methods\n\nRisk of bias was rated with RoB-2 and ROBINS-I.\n"
+    issues = audit._check_unbacked_appraisal_claim(paper, tmp_path)
+    assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
+    assert issues[0].severity == "P1"
+
+
+def test_appraisal_claim_backed_by_section_passes(tmp_path: Path) -> None:
+    paper = (
+        "## Methods\n\nWe applied RoB-2.\n\n"
+        "## Risk of Bias\n\n| Source | Domain | Judgment |\n| A | randomization | low |\n"
+    )
+    assert audit._check_unbacked_appraisal_claim(paper, tmp_path) == []
+
+
+def test_appraisal_claim_backed_by_populated_sidecar_passes(tmp_path: Path) -> None:
+    (tmp_path / "risk_of_bias.json").write_text(
+        '{"r1": {"tool": "RoB-2", "judgment": "low"}}', encoding="utf-8",
+    )
+    assert audit._check_unbacked_appraisal_claim("AMSTAR-2 was applied.\n", tmp_path) == []
+
+
+def test_appraisal_stub_section_with_missing_sidecar_is_unbacked(tmp_path: Path) -> None:
+    # The real metformin defect: a prose RoB section that defers to a sidecar
+    # which was never written, with no in-paper appraisal table.
+    paper = (
+        "### Risk-of-bias appraisal\nPer-source risk-of-bias was rated using "
+        "RoB-2, ROBINS-I, and AMSTAR-2. Ratings recorded in `risk_of_bias.json`.\n"
+    )
+    issues = audit._check_unbacked_appraisal_claim(paper, tmp_path)
+    assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
+
+
+def test_empty_sidecar_does_not_back_claim(tmp_path: Path) -> None:
+    (tmp_path / "risk_of_bias.json").write_text("{}", encoding="utf-8")
+    issues = audit._check_unbacked_appraisal_claim("RoB-2 was applied.\n", tmp_path)
+    assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
+
+
+def test_paper_naming_no_framework_does_not_trip() -> None:
+    assert audit._check_unbacked_appraisal_claim("We screened and summarized.\n", None) == []
+
+
+def test_classification_claim_contradiction_is_flagged() -> None:
+    manifest = {"receipts": [{"directness": "direct"}, {"directness": "review"}]}
+    issues = audit._check_source_classification_claims(
+        "The corpus contains no direct sources for the question.\n", manifest,
+    )
+    assert [i.issue_type for i in issues] == ["source_classification_claim_contradiction"]
+
+
+def test_classification_claim_true_to_taxonomy_passes() -> None:
+    # The metformin case: "no mechanistic" when the classifier emitted none
+    # is TRUE to the taxonomy and must NOT flag.
+    manifest = {"receipts": [{"directness": "review"}, {"directness": "indirect"}]}
+    paper = "No sources were classified primarily as mechanistic or model.\n"
+    assert audit._check_source_classification_claims(paper, manifest) == []
+
+
+def test_source_count_mismatch_is_p2() -> None:
+    manifest = {"n_receipts": 56, "receipts": []}
+    issues = audit._check_source_count_consistency(
+        "After screening, 58 studies were included in the synthesis.\n", manifest,
+    )
+    assert [i.issue_type for i in issues] == ["source_count_inconsistency"]
+    assert issues[0].severity == "P2"
+
+
+def test_source_count_match_ignores_screened_yield() -> None:
+    manifest = {"n_receipts": 56, "receipts": []}
+    # "identified 15578 results" must NOT be compared (different stage word).
+    paper = "We identified 15578 results; 56 studies were included.\n"
+    assert audit._check_source_count_consistency(paper, manifest) == []
+
+
+def test_run_audit_threads_registry_and_run_dir(tmp_path: Path) -> None:
+    registry = {"r1": {"body_citation": "Future 2099", "source_year": 2099}}
+    issues = audit.run_audit(
+        "## Abstract\n\nClean body.\n",
+        _empty_manifest(), _empty_audit(),
+        registry=registry, run_dir=tmp_path, current_year=2026,
+    )
+    assert any(i.issue_type == "future_dated_citation" for i in issues)

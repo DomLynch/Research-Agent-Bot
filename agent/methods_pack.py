@@ -150,9 +150,11 @@ _ACCOUNTABILITY_TEXTS: dict[str, str] = {
         "and citation registry, source-bound numeric trace, deterministic "
         "gates (`full_paper.journal_surface.json`, `pre_submit_gate.json`, "
         "`artifact_consistency.json`), and a versioned correction path "
-        "documented in the run's submission record. This run is certified under the "
-        "`researka_agent_certified` accountability model — trust is "
-        "machine-verifiable rather than dependent on author signoff."
+        "documented in the run's submission record. Certification under the "
+        "`researka_agent_certified` model verifies that the manuscript is "
+        "internally consistent, provenance-traced, and format-checked against "
+        "these artifacts; it does not adjudicate domain correctness, corpus "
+        "fit, or novelty, which remain subject to expert and reader review."
     ),
 }
 
