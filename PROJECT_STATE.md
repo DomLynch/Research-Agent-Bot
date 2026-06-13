@@ -23,6 +23,15 @@ Full pytest at current branch validation: 2961 passed, 5 warnings
 Ruff: clean
 ```
 
+## Canonical deploy branch (#9, 2026-06-13)
+The v3 producer deploys from `origin/codex/019e9ce8/main`; the Mac mirror
+tracks `claude/3809304f/main` and the VPS `/opt` + `/root` reset to
+`origin/codex/019e9ce8/main`. These hold identical content — treat
+`codex/019e9ce8/main` as the single source of truth. `origin/claude/finalizer-surface-fix`
+(@ b586c114) is a STALE ancestor, not a separate colleague branch; do not deploy
+or "sync" from it, and do not force-delete remote refs (another session may
+reference them) — consolidation is by convention, not by pruning.
+
 ## System Boundary
 ```text
 research-agent-bot = paper-producing synthesis engine
