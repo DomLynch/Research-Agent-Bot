@@ -11,6 +11,7 @@ __all__ = [
     "RECOMMENDED_SOURCE_CITATIONS",
     "DEFAULT_THRESHOLDS",
     "evaluate_final_gate",
+    "landscape_thresholds",
 ]
 
 RESEARKA_MIN_SOURCE_CITATIONS = 12
@@ -63,6 +64,22 @@ class GateThresholds:
 
 
 DEFAULT_THRESHOLDS: GateThresholds = GateThresholds()
+
+
+def landscape_thresholds(n_receipts: int, n_tensions: int) -> GateThresholds | None:
+    """Relaxed thresholds for a zero-tension evidence_map landscape, else None.
+
+    An evidence_map is reviewed for fidelity, not convergence: a corpus with no
+    non-orthogonal cross-source tension is a valid landscape survey (nothing to
+    adjudicate), not a failed thesis. For such corpora the >=1-tension floor is
+    lifted; every integrity threshold (numeric trace, citation registry, RoB,
+    GRADE, receipts, template language) is unchanged. Returns None for ordinary
+    corpora so the caller falls back to DEFAULT_THRESHOLDS. High-tension
+    landscapes already clear min_tensions=1, so only the zero-tension case
+    needs relaxing here. Universal — keyed on tension count, not topic."""
+    if n_receipts > 0 and n_tensions <= 0:
+        return GateThresholds(min_tensions=0)
+    return None
 
 
 @dataclass(frozen=True, slots=True)

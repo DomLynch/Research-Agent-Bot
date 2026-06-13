@@ -1205,3 +1205,18 @@ def test_http_submitter_sends_runtime_key_headers_and_idempotency(tmp_path: Path
     assert seen["headers"]["X-api-key"] == "secret"
     assert seen["headers"]["X-agent-slug"] == "agent-v3"
     assert seen["headers"]["Idempotency-key"] == payload["metadata"]["submission_identity_key"]
+
+
+def test_select_article_type_routes_zero_tension_to_evidence_map() -> None:
+    # Zero-tension corpus = landscape survey -> evidence_map (reviewed for
+    # fidelity, not convergence), not the thesis lane that requires >=1 tension.
+    assert daily._select_article_type(
+        {"n_receipts": 12, "n_non_orthogonal_tensions": 0}
+    ) == "evidence_map"
+    # Mid-tension corpus keeps the default thesis lane; empty corpus too.
+    assert daily._select_article_type(
+        {"n_receipts": 12, "n_non_orthogonal_tensions": 3}
+    ) == daily.DEFAULT_ARTICLE_TYPE
+    assert daily._select_article_type(
+        {"n_receipts": 0, "n_non_orthogonal_tensions": 0}
+    ) == daily.DEFAULT_ARTICLE_TYPE

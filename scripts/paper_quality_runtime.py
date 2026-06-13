@@ -23,6 +23,7 @@ from agent.final_gate import (
     GateResult,
     RECOMMENDED_SOURCE_CITATIONS,
     evaluate_final_gate,
+    landscape_thresholds,
 )
 from agent.final_gate_mapper import build_gate_inputs
 from agent.forest_plot_svg import render_forest_plot_svg
@@ -675,7 +676,13 @@ def write_final_quality_gates(
     )
     runtime_issue = _runtime_integrity_issue(out_dir)
     runtime_failure = str(runtime_issue["detail"]) if runtime_issue else None
-    gate = _gate_with_runtime_integrity(evaluate_final_gate(inputs), runtime_failure)
+    gate = _gate_with_runtime_integrity(
+        evaluate_final_gate(
+            inputs,
+            thresholds=landscape_thresholds(inputs.n_receipts, inputs.n_tensions),
+        ),
+        runtime_failure,
+    )
 
     field = json.loads((out_dir / "field_engagement.json").read_text()) if (out_dir / "field_engagement.json").exists() else []
     supported = sum(1 for item in field if item.get("status") in {"support", "extends"})

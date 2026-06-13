@@ -323,7 +323,11 @@ def _select_article_type(manifest: dict[str, Any]) -> str:
         return override
     receipts = int(manifest.get("n_receipts") or 0)
     tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
-    if receipts and tensions / receipts >= _evidence_map_tension_floor():
+    # A zero-tension corpus is a landscape survey (nothing to adjudicate), not a
+    # failed thesis — route it to evidence_map (reviewed for fidelity, not
+    # convergence) rather than the thesis lane that requires >=1 tension. Pairs
+    # with final_gate.landscape_thresholds, which lifts only the tension floor.
+    if receipts and (tensions == 0 or tensions / receipts >= _evidence_map_tension_floor()):
         return "evidence_map"
     return DEFAULT_ARTICLE_TYPE
 
