@@ -20,9 +20,28 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import final_consistency_audit as fca  # noqa: E402
 import apply_consistency_fixes as fixer  # noqa: E402
+
+
+def _quant_corpus_present() -> bool:
+    """The Fix #54 detector builds its change-value map from QUANT_DIR's
+    quant_claims; with no seeded corpus the map is empty and it returns []. Skip
+    rather than report a false red in checkouts without the corpus."""
+    try:
+        import run_v06_synthesis as _orch
+        return _orch.QUANT_DIR.exists() and any(_orch.QUANT_DIR.glob("*.quant_claims.json"))
+    except (ImportError, AttributeError):
+        return False
+
+
+pytestmark = pytest.mark.skipif(
+    not _quant_corpus_present(),
+    reason="QUANT_DIR corpus not seeded in this environment (Fix #54 needs change-value claims)",
+)
 
 
 def _empty_audit() -> dict:

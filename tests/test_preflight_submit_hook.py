@@ -4,6 +4,8 @@ import os
 import sys
 from pathlib import Path
 
+import pytest
+
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
@@ -16,7 +18,15 @@ _ROOT_CANDIDATES = [
     Path("/opt/researka-preflight-qa"),
     REPO.parent / "researka-preflight-qa",
 ]
-PREFLIGHT_ROOT = next(path for path in _ROOT_CANDIDATES if path and path.is_dir())
+# Hermetic: the external researka-preflight-qa repo is absent in many checkouts
+# (CI, /tmp worktrees). Resolve tolerantly and skip this module's tests rather
+# than raising StopIteration at import, which previously halted collection of
+# the ENTIRE suite. Set RESEARKA_PREFLIGHT_QA_ROOT to run them.
+PREFLIGHT_ROOT = next((path for path in _ROOT_CANDIDATES if path and path.is_dir()), None)
+pytestmark = pytest.mark.skipif(
+    PREFLIGHT_ROOT is None,
+    reason="external researka-preflight-qa repo not present (set RESEARKA_PREFLIGHT_QA_ROOT)",
+)
 
 
 def _payload(body: str) -> dict:
