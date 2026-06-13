@@ -212,14 +212,11 @@ def evaluate_journal_surface(
     if declared_review_type:
         issues.extend(SurfaceIssue("review_type_overclaim", msg) for msg in _review_type_overclaim_issue_messages(paper_md, declared_review_type))
         issues.extend(SurfaceIssue("methods_pack_incomplete", msg) for msg in _methods_pack_completeness_issue_messages(paper_md, declared_review_type))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_count_mismatch_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _thin_analytic_paragraph_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _abstract_profile_contradiction_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _conclusion_scope_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _orphan_table_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md, declared_review_type))
+    for _msgs in (
+        _empty_heading_issue_messages(body_md), _results_outcome_section_issue_messages(body_md), _results_count_mismatch_issue_messages(body_md),
+        _thin_analytic_paragraph_issue_messages(body_md), _abstract_profile_contradiction_issue_messages(body_md), _conclusion_scope_issue_messages(body_md),
+        _orphan_table_issue_messages(body_md), _section_issue_messages(body_md, declared_review_type)):
+        issues.extend(SurfaceIssue("structure_surface", msg) for msg in _msgs)
     issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
     for row in _extract_qei_rows(body_md):
         issues.extend(SurfaceIssue("qei_surface", msg) for msg in qei_row_issue_messages(row))
