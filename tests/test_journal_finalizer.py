@@ -1725,3 +1725,31 @@ def test_phase_n_labels_discussion_thesis_and_resolution_markers() -> None:
     assert len(log) == 1 and out.count("**Thesis:**") == 1
     # idempotent: a second pass makes no change
     assert journal_finalizer._phase_n_declare_discussion_thesis(out)[1] == []
+
+
+def test_smoke_combo_paper_finalizes_to_clean_surface() -> None:
+    # End-to-end smoke (#10): a combo-topic paper with a legitimate cross-outcome
+    # reference and a Discussion missing the thesis markers must finalize to a
+    # CLEAN journal surface — i.e. it would clear pre-submit instead of looping.
+    # Locks blockers #2 (sentence-dominant routing) + #3 (marker self-heal).
+    from agent.journal_surface_gate import evaluate_journal_surface
+    paper = (
+        "# Research Synthesis: Test\n\n"
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "The exposure in Sahay 2026 maps onto the cardiometabolic effects in "
+        "Hong 2026 and Lim 2026.\n\n"
+        "## Discussion\n\n"
+        "The corpus supports a context-dependent cardiometabolic profile.\n\n"
+        "Future randomized trials with longer follow-up would settle the open threats.\n\n"
+        "## Limitations\n\nBounded by the accepted receipts.\n"
+    )
+    cmap = {"Sahay 2026": "dosing_pharmacokinetics",
+            "Hong 2026": "cardiometabolic", "Lim 2026": "cardiometabolic"}
+    before = evaluate_journal_surface(paper, citation_outcome_map=cmap)
+    assert any(i.code == "undeclared_thesis" for i in before.issues)        # starts blocked
+    assert not any(i.code == "outcome_routing" for i in before.issues)      # #2: cross-ref not a routing error
+    fixed, _log = journal_finalizer._phase_n_declare_discussion_thesis(paper)
+    after = evaluate_journal_surface(fixed, citation_outcome_map=cmap)
+    assert not any(i.code == "undeclared_thesis" for i in after.issues)     # #3: markers injected
+    assert not any(i.code == "outcome_routing" for i in after.issues)
