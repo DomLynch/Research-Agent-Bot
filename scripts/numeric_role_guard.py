@@ -610,6 +610,12 @@ def _untraceable_reportable_numerics(
     )
     bad: set[str] = set()
     for category, pattern in _REPORTABLE_NUMERIC_PATTERNS:
+        if category == "p_value":
+            # Significance thresholds (p < 0.05 / 0.01 / 0.001 ...) are
+            # statistical convention, not corpus-traceable data values, so they
+            # are never "untraceable" against the citationless numeric pool.
+            # Citation-bound drift still catches a p-value with the wrong source.
+            continue
         for value in set(pattern.findall(clean)):
             if category == "percentage":
                 try:
