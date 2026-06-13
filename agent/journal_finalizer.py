@@ -1,7 +1,14 @@
 """Compatibility wrapper for the journal finalizer implementation.
 
-The implementation lives in scripts/ because it is pipeline tooling, while
-existing production and tests import agent.journal_finalizer.
+The implementation lives in scripts/journal_finalizer.py (pipeline tooling),
+while production and tests import ``agent.journal_finalizer``. ``import_module``
+keeps the dependency dynamic (no static ``import-not-found`` when ``scripts`` is
+off the mypy path), the ``sys.modules`` swap makes callers receive the real
+module, and the module-level ``__getattr__`` forwards every symbol — including
+the private ``_phase_*`` helpers — so both callers and mypy see them without
+enumerating internals. The previous explicit per-symbol ``getattr`` lines only
+covered a hand-maintained subset, so mypy reported ``has no attribute`` for the
+rest.
 """
 from __future__ import annotations
 
@@ -15,28 +22,8 @@ if str(_SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS_DIR))
 
 _impl = importlib.import_module("journal_finalizer")
-
-globals().update({
-    name: value
-    for name, value in vars(_impl).items()
-    if not (name.startswith("__") and name.endswith("__"))
-})
-
-FinalizerLogEntry: Any = getattr(_impl, "FinalizerLogEntry")
-FinalizerReport: Any = getattr(_impl, "FinalizerReport")
-finalize_run: Any = getattr(_impl, "finalize_run")
-_phase_b_lane_qualifier: Any = getattr(_impl, "_phase_b_lane_qualifier")
-_phase_g_refresh_sidecars: Any = getattr(_impl, "_phase_g_refresh_sidecars")
-_phase_h_topic_slug_normalise: Any = getattr(_impl, "_phase_h_topic_slug_normalise")
-_phase_i_split_concatenated_headings: Any = getattr(
-    _impl, "_phase_i_split_concatenated_headings",
-)
-_phase_k_route_outcome_paragraphs: Any = getattr(
-    _impl, "_phase_k_route_outcome_paragraphs",
-)
 sys.modules[__name__] = _impl
 
-__all__ = [
-    name for name in globals()
-    if not (name.startswith("__") and name.endswith("__"))
-]
+
+def __getattr__(name: str) -> Any:
+    return getattr(_impl, name)
