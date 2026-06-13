@@ -20,7 +20,7 @@ import tomllib
 import urllib.error
 import urllib.request
 from collections import Counter
-from collections.abc import Callable, Iterator
+from collections.abc import Callable, Iterator, Sequence
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
@@ -1739,6 +1739,53 @@ def _quant_claim_identity(path: Path) -> str:
     return " ".join(str(field or "") for field in fields).lower()
 
 
+def _entity_topic_terms(topic: str) -> tuple[str, ...]:
+    """Entity/synonym retrieval terms for *topic*, minus the bare slug phrase
+    and bare non-leading slug modifiers (e.g. ``lifespan`` in
+    ``rapamycin_lifespan_effects``). Reads only the generated pack record so
+    .toml-only field-named topics (e.g. ``metabolomic_age_clocks``) yield ()
+    and keep the gate's existing behavior. The entity/modifier split is read
+    from the slug itself (no per-topic word lists), universal across domains.
+    """
+    try:
+        record = json.loads((TOPIC_PACKS_DB / topic / "latest.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ()
+    pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else record
+    retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
+    raw = retrieval.get("topic_terms", ()) if isinstance(retrieval, dict) else ()
+    slug_tokens = [t for t in re.findall(r"[a-z0-9]+", topic.lower()) if len(t) >= 3]
+    modifiers = set(slug_tokens[1:]) if len(slug_tokens) >= 2 else set()
+    entity = slug_tokens[0] if slug_tokens else ""
+    slug_phrase = " ".join(topic.replace("_", " ").replace("-", " ").lower().split())
+    seen: set[str] = set()
+    out: list[str] = []
+    for term in raw:
+        norm = " ".join(str(term).replace("_", " ").replace("-", " ").lower().split())
+        if not norm or norm == slug_phrase or norm in seen:
+            continue
+        if " " not in norm and norm != entity and norm in modifiers:
+            continue
+        seen.add(norm)
+        out.append(norm)
+    return tuple(out)
+
+
+def _on_entity_quant_claims(paths: Sequence[Path], entity_terms: Sequence[str]) -> set[Path]:
+    """Subset of *paths* whose identity names the topic entity or a synonym."""
+    if not entity_terms:
+        return set()
+    on_entity: set[Path] = set()
+    for path in paths:
+        haystack = " ".join(_quant_claim_identity(path).replace("_", " ").replace("-", " ").lower().split())
+        # Word-boundary match so a short entity token (``nad``) does not
+        # substring-hit unrelated words (``gonad``, ``nadolol``); multi-word
+        # synonyms ("nicotinamide riboside") still match as a phrase.
+        if any(re.search(rf"\b{re.escape(term)}\b", haystack) for term in entity_terms):
+            on_entity.add(path)
+    return on_entity
+
+
 def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
     floor = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR if floor is None else floor
     tokens = submit_bridge._topic_tokens(topic)
@@ -1755,6 +1802,24 @@ def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> 
     hits = len(paths) - len(misses)
     ratio = hits / len(paths)
     if ratio < floor:
+        # Drift matcher requires the literal slug modifier (``lifespan``) so a
+        # genuine entity-only paper ("Rapamycin extends survival in aged mice")
+        # scores off-topic and the whole corpus is quarantined to zero. When the
+        # ratio is below the floor, fall back to an entity-grounded ABSOLUTE
+        # count: keep the subset whose identity names the entity/synonym and
+        # pass iff that core meets the synthesis minimum. misses become the
+        # off-entity remainder, so the (forced) quarantine strips only those and
+        # never the on-entity core. An empty core (generic same-field bundle)
+        # still fails — this is not a ratio relaxation.
+        on_entity = _on_entity_quant_claims(paths, _entity_topic_terms(topic))
+        if len(on_entity) >= PREFLIGHT_MIN_QUANT_CLAIMS:
+            entity_misses = [path for path in paths if path not in on_entity]
+            return (
+                True,
+                f"source_topic_precision_entity_floor:{len(on_entity)}>={PREFLIGHT_MIN_QUANT_CLAIMS}"
+                f"(ratio={hits}/{len(paths)}<{floor:.2f})",
+                entity_misses,
+            )
         return False, f"source_topic_precision_low:{hits}/{len(paths)}<{floor:.2f}", misses
     return True, f"source_topic_precision_ok:{hits}/{len(paths)}", misses
 

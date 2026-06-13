@@ -4216,3 +4216,68 @@ def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
         "rapamycin": "ready",
         "thin_topic": "preflight_blocked",
     }
+
+
+# --- Entity-floor fallback for compound topics (corpus dilution fix) -------
+
+def _entity_floor_corpus(tmp_path, monkeypatch, *, n_on_entity, n_off_entity,
+                         entity_terms=("zzdrug",)):
+    topic = "zzdrug_zzmodifier_effects"
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    qdir = cycle.CORPORA / topic / "quant_claims"
+    qdir.mkdir(parents=True)
+    for i in range(n_on_entity):
+        _write_json(qdir / f"zzdrug_study_{i}.quant_claims.json",
+                    {"paper_id": f"zzdrug pivotal study {i}"})
+    for i in range(n_off_entity):
+        _write_json(qdir / f"offtopic_{i}.quant_claims.json",
+                    {"paper_id": f"unrelated zzmodifier review {i}"})
+    monkeypatch.setattr(cycle, "_entity_topic_terms", lambda _t: entity_terms)
+    return topic
+
+
+def test_entity_floor_passes_when_drift_zero_but_enough_entity(tmp_path, monkeypatch) -> None:
+    # Drift matcher scores 0/17 (no source has the literal modifier), but >=10
+    # name the entity -> entity-floor passes and quarantines only the off-entity.
+    topic = _entity_floor_corpus(tmp_path, monkeypatch, n_on_entity=12, n_off_entity=5)
+    ok, status, misses = cycle._quant_claim_source_precision(topic)
+    assert ok is True
+    assert status.startswith("source_topic_precision_entity_floor:12>=")
+    assert len(misses) == 5 and all("offtopic" in m.name for m in misses)
+
+
+def test_entity_floor_rejects_below_minimum(tmp_path, monkeypatch) -> None:
+    topic = _entity_floor_corpus(tmp_path, monkeypatch, n_on_entity=9, n_off_entity=5)
+    ok, status, _m = cycle._quant_claim_source_precision(topic)
+    assert ok is False and status.startswith("source_topic_precision_low:")
+
+
+def test_entity_floor_rejects_empty_core(tmp_path, monkeypatch) -> None:
+    # Entity terms exist but no source names the entity -> empty core -> fail
+    # (a generic same-field bundle cannot pass; not a ratio relaxation).
+    topic = _entity_floor_corpus(tmp_path, monkeypatch, n_on_entity=0, n_off_entity=14)
+    ok, status, _m = cycle._quant_claim_source_precision(topic)
+    assert ok is False and status.startswith("source_topic_precision_low:")
+
+
+def test_entity_floor_does_not_fire_without_pack_entity(tmp_path, monkeypatch) -> None:
+    # Field-named / no-db-pack topic -> entity_terms=() -> branch never fires,
+    # broad-field rejection preserved (defends the metabolomic_age_clocks class).
+    topic = _entity_floor_corpus(tmp_path, monkeypatch, n_on_entity=12, n_off_entity=5,
+                                 entity_terms=())
+    ok, status, _m = cycle._quant_claim_source_precision(topic)
+    assert ok is False and status.startswith("source_topic_precision_low:")
+
+
+def test_entity_topic_terms_drops_bare_modifier_keeps_synonyms(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    d = cycle.TOPIC_PACKS_DB / "zzdrug_zzfield_effects"
+    d.mkdir(parents=True)
+    _write_json(d / "latest.json", {"pack_data": {"retrieval": {"topic_terms": [
+        "zzdrug zzfield effects", "zzdrug", "zzfield", "zzdrug analogue",
+    ]}}})
+    out = cycle._entity_topic_terms("zzdrug_zzfield_effects")
+    assert "zzdrug" in out                       # entity kept
+    assert "zzdrug analogue" in out              # multi-word synonym kept
+    assert "zzfield" not in out                  # bare slug modifier dropped
+    assert "zzdrug zzfield effects" not in out   # bare slug phrase dropped
