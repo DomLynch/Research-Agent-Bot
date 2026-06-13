@@ -13,6 +13,7 @@ Code disposes; this file is the table the code reads.
 """
 from __future__ import annotations
 
+import re
 import tomllib
 from collections.abc import Mapping
 from dataclasses import dataclass, field
@@ -337,6 +338,34 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         return load_topic_pack_data(tomllib.load(fh), p)
 
 
+def _anchor_topic_terms(topic: str, topic_terms: tuple[str, ...]) -> tuple[str, ...]:
+    """Drop bare single-word retrieval terms that are non-entity slug
+    modifiers — the lone ``cancer`` in ``resveratrol_cancer_thresholds`` or
+    ``lifespan`` in ``rapamycin_lifespan_effects``. Such terms OR into the
+    retrieval query (``... OR cancer ...``) and pull off-entity papers (a
+    generic cancer study with no resveratrol), diluting the corpus below the
+    source-precision floor so the topic is abandoned before a paper is written.
+
+    Kept: the primary entity (first slug token), every multi-word phrase, and
+    single-word terms that are NOT slug tokens — genuine synonyms such as
+    ``niacinamide`` for ``nad`` or ``sirolimus`` for ``rapamycin``. The
+    entity/modifier split is read from the topic slug itself (no per-topic word
+    lists), so it is universal across domains. No-op for single-token topics or
+    when the filter would empty the set.
+    """
+    slug_tokens = [t for t in re.findall(r"[a-z0-9]+", topic.lower()) if len(t) >= 3]
+    if len(slug_tokens) < 2:
+        return topic_terms
+    entity, modifiers = slug_tokens[0], set(slug_tokens[1:])
+    kept = tuple(
+        term for term in topic_terms
+        if " " in term.strip()
+        or term.strip().lower() == entity
+        or term.strip().lower() not in modifiers
+    )
+    return kept or topic_terms
+
+
 def load_topic_pack_data(data: dict, path: str | Path = "<topic-pack-data>") -> TopicPack:
     _validate_top_level_keys(data, p := Path(path))
 
@@ -397,7 +426,9 @@ def load_topic_pack_data(data: dict, path: str | Path = "<topic-pack-data>") -> 
     if isinstance(raw_retrieval, dict):
         bg_block = raw_retrieval.get("background", {}) or {}
         retrieval = RetrievalSpec(
-            topic_terms=tuple(raw_retrieval.get("topic_terms", ())),
+            topic_terms=_anchor_topic_terms(
+                data["topic"], tuple(raw_retrieval.get("topic_terms", ())),
+            ),
             scope_terms=tuple(raw_retrieval.get("scope_terms", ())),
             evidence_types=tuple(
                 raw_retrieval.get("evidence_types", ())
