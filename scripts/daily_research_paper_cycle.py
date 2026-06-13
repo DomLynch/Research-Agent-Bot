@@ -1786,6 +1786,21 @@ def _on_entity_quant_claims(paths: Sequence[Path], entity_terms: Sequence[str]) 
     return on_entity
 
 
+def _claim_text_has_scope(path: Path, modifiers: Sequence[str]) -> bool:
+    """True if the source's full claim text evidences a non-entity topic
+    modifier (e.g. ``lifespan``), not just the entity in its title. A lifespan
+    study may title itself "survival", so the modifier is matched against the
+    whole claim record, not the title identity. Modifiers are slug-derived (no
+    per-topic word lists)."""
+    if not modifiers:
+        return True
+    try:
+        body = path.read_text(encoding="utf-8", errors="ignore").lower()
+    except OSError:
+        return False
+    return any(re.search(rf"\b{re.escape(m)}", body) for m in modifiers)
+
+
 def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
     floor = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR if floor is None else floor
     tokens = submit_bridge._topic_tokens(topic)
@@ -1811,14 +1826,27 @@ def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> 
         # off-entity remainder, so the (forced) quarantine strips only those and
         # never the on-entity core. An empty core (generic same-field bundle)
         # still fails — this is not a ratio relaxation.
-        on_entity = _on_entity_quant_claims(paths, _entity_topic_terms(topic))
+        entity_terms = _entity_topic_terms(topic)
+        on_entity = _on_entity_quant_claims(paths, entity_terms)
+        # Codex adversarial review (2026-06-13): an entity-only core can be a
+        # generic entity corpus, not the scoped compound topic — exactly the
+        # dilution this gate exists to catch. Require the retained core to ALSO
+        # evidence a non-entity slug modifier (``lifespan`` for
+        # rapamycin_lifespan) in its claim text, so the core is genuinely
+        # topic-specific and not just every paper that names the drug. Modifiers
+        # are slug-derived (no per-topic word lists); single-entity topics have
+        # none and keep the entity-only core.
+        ent_words = {w for term in entity_terms for w in str(term).split()}
+        modifiers = tuple(t for t in tokens if t not in ent_words)
+        if modifiers:
+            on_entity = {p for p in on_entity if _claim_text_has_scope(p, modifiers)}
         if len(on_entity) >= PREFLIGHT_MIN_QUANT_CLAIMS:
-            entity_misses = [path for path in paths if path not in on_entity]
+            scoped_misses = [path for path in paths if path not in on_entity]
             return (
                 True,
-                f"source_topic_precision_entity_floor:{len(on_entity)}>={PREFLIGHT_MIN_QUANT_CLAIMS}"
+                f"source_topic_precision_scoped_floor:{len(on_entity)}>={PREFLIGHT_MIN_QUANT_CLAIMS}"
                 f"(ratio={hits}/{len(paths)}<{floor:.2f})",
-                entity_misses,
+                scoped_misses,
             )
         return False, f"source_topic_precision_low:{hits}/{len(paths)}<{floor:.2f}", misses
     return True, f"source_topic_precision_ok:{hits}/{len(paths)}", misses

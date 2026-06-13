@@ -4221,29 +4221,43 @@ def test_topic_status_map_consolidates_queue_state(tmp_path: Path) -> None:
 # --- Entity-floor fallback for compound topics (corpus dilution fix) -------
 
 def _entity_floor_corpus(tmp_path, monkeypatch, *, n_on_entity, n_off_entity,
-                         entity_terms=("zzdrug",)):
-    topic = "zzdrug_zzmodifier_effects"
+                         entity_terms=("zzdrug",), scope_in_core=True):
+    topic = "zzdrug_zzmodifier_effects"  # tokens -> entity zzdrug + modifier zzmodifier
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     qdir = cycle.CORPORA / topic / "quant_claims"
     qdir.mkdir(parents=True)
+    # On-entity files name the entity in the title; scope_in_core controls
+    # whether their claim text also evidences the modifier (zzmodifier).
+    sentence = "zzdrug improved zzmodifier outcome" if scope_in_core else "zzdrug improved an outcome"
     for i in range(n_on_entity):
         _write_json(qdir / f"zzdrug_study_{i}.quant_claims.json",
-                    {"paper_id": f"zzdrug pivotal study {i}"})
+                    {"paper_id": f"zzdrug pivotal study {i}", "claims": [{"sentence": f"{sentence} {i}"}]})
     for i in range(n_off_entity):
         _write_json(qdir / f"offtopic_{i}.quant_claims.json",
-                    {"paper_id": f"unrelated zzmodifier review {i}"})
+                    {"paper_id": f"unrelated topic review {i}"})
     monkeypatch.setattr(cycle, "_entity_topic_terms", lambda _t: entity_terms)
     return topic
 
 
-def test_entity_floor_passes_when_drift_zero_but_enough_entity(tmp_path, monkeypatch) -> None:
-    # Drift matcher scores 0/17 (no source has the literal modifier), but >=10
-    # name the entity -> entity-floor passes and quarantines only the off-entity.
+def test_entity_floor_passes_when_drift_zero_but_enough_scoped_entity(tmp_path, monkeypatch) -> None:
+    # Drift matcher scores 0/17 (no source title has the literal modifier), but
+    # >=10 name the entity AND evidence the modifier in claim text -> scoped
+    # floor passes and quarantines only the off-entity remainder.
     topic = _entity_floor_corpus(tmp_path, monkeypatch, n_on_entity=12, n_off_entity=5)
     ok, status, misses = cycle._quant_claim_source_precision(topic)
     assert ok is True
-    assert status.startswith("source_topic_precision_entity_floor:12>=")
+    assert status.startswith("source_topic_precision_scoped_floor:12>=")
     assert len(misses) == 5 and all("offtopic" in m.name for m in misses)
+
+
+def test_scoped_floor_rejects_generic_entity_without_topic_scope(tmp_path, monkeypatch) -> None:
+    # Codex adversarial review (2026-06-13): >=10 papers naming the entity but
+    # with NO topic-scope modifier in their claim text is a generic entity
+    # corpus, not the compound topic -> must stay blocked.
+    topic = _entity_floor_corpus(tmp_path, monkeypatch, n_on_entity=12, n_off_entity=5,
+                                 scope_in_core=False)
+    ok, status, _m = cycle._quant_claim_source_precision(topic)
+    assert ok is False and status.startswith("source_topic_precision_low:")
 
 
 def test_entity_floor_rejects_below_minimum(tmp_path, monkeypatch) -> None:
