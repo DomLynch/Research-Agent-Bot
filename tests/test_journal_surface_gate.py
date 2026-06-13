@@ -1002,6 +1002,28 @@ def test_outcome_class_match_passes() -> None:
     assert not any(i.code == "outcome_routing" for i in report.issues)
 
 
+def test_outcome_cross_reference_in_anchored_sentence_passes() -> None:
+    """Sentence-dominant routing (2026-06-13): a sentence anchored to its own
+    outcome class may reference another class for cross-domain synthesis ("the
+    exposure in Sahay 2026 maps onto the cardiometabolic effects in Hong 2026")
+    without being flagged — the minority cross-reference is legitimate."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    new_results = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "The exposure in Sahay 2026 maps onto the cardiometabolic effects in "
+        "Hong 2026 and Lim 2026.\n\n"
+        "### Frailty Outcomes\n\nFrailty stub.\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", new_results)
+    report = evaluate_journal_surface(paper, citation_outcome_map={
+        "Sahay 2026": "dosing_pharmacokinetics",
+        "Hong 2026": "cardiometabolic",
+        "Lim 2026": "cardiometabolic",
+    })
+    assert not any(i.code == "outcome_routing" for i in report.issues)
+
+
 def test_outcome_routing_check_skipped_without_map() -> None:
     """Backward-compat: no map → no check (previous callers untouched)."""
     paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")

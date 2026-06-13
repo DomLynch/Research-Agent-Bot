@@ -828,23 +828,37 @@ def _outcome_class_mismatch_issue_messages(
         section_slug = _outcome_slug(m.group(1))
         start = m.end()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(results)
-        body = results[start:end]
-        for am in _AUTHOR_YEAR_RE.finditer(body):
-            cite = f"{am.group(1)} {am.group(2)}"
-            expected = folded_map.get(_fold(cite))
-            if not expected:
+        # Judge routing per SENTENCE, not per citation: a sentence anchored to
+        # this outcome class may reference another class for cross-domain
+        # synthesis ("the exposure in Sahay 2026 maps onto the clinical effects
+        # in Hong 2026") — that is legitimate, not a routing error. Flag only
+        # when this section's class is a strict minority in the sentence (a
+        # genuinely misplaced sentence). Matches the finalizer's sentence-
+        # majority routing (Phase K). Universal — no per-topic knowledge.
+        for sentence in re.split(r"(?<=[.!?])\s+", results[start:end]):
+            cited = [
+                (cite, expected)
+                for am in _AUTHOR_YEAR_RE.finditer(sentence)
+                if (cite := f"{am.group(1)} {am.group(2)}")
+                and (expected := folded_map.get(_fold(cite)))
+            ]
+            if not cited:
                 continue
-            if _outcome_slug(expected) == section_slug:
-                continue
-            key = (_fold(cite), section_slug)
-            if key in seen:
-                continue
-            seen.add(key)
-            issues.append(
-                f"outcome-class mismatch: {cite} "
-                f"(receipt outcome_class={expected!r}) cited in "
-                f"'### {m.group(1)} Outcomes' subsection",
-            )
+            counts = Counter(_outcome_slug(exp) for _, exp in cited)
+            if counts.get(section_slug, 0) == max(counts.values()):
+                continue  # this class is (tied-)dominant -> sentence is anchored here
+            for cite, expected in cited:
+                if _outcome_slug(expected) == section_slug:
+                    continue
+                key = (_fold(cite), section_slug)
+                if key in seen:
+                    continue
+                seen.add(key)
+                issues.append(
+                    f"outcome-class mismatch: {cite} "
+                    f"(receipt outcome_class={expected!r}) cited in "
+                    f"'### {m.group(1)} Outcomes' subsection",
+                )
     return tuple(issues)
 
 
