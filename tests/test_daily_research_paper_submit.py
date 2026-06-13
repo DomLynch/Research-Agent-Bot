@@ -944,6 +944,30 @@ def test_remote_publication_dedupe_allows_revision_of_existing_title(tmp_path: P
     assert ledger["considered"][0]["status"] == "submitted_to_researka"
 
 
+def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(tmp_path: Path) -> None:
+    # Fasting-bug regression (2026-06-13): an already-published paper
+    # re-submitted while carrying a stale revision_request is an exact-content
+    # duplicate -> must block. The revision exemption is title-only; identity/
+    # content markers in published_seen block regardless of revision.
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {
+        "artifactId": "a", "submissionId": "s", "feedback": "stale",
+    })
+    content_markers = daily._metadata_markers(daily.build_payload(run)["metadata"])
+    assert content_markers  # identity/content hashes, not the title marker
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-23",
+        submit=True,
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        remote_loader=lambda: (content_markers, None),
+    )
+
+    assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
+    assert ledger["submitted"] == 0
+
+
 def test_selection_skips_stale_older_runs_for_same_topic(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-older")
     newer = _run(tmp_path, name="synthesis-topic-v06-newer")
