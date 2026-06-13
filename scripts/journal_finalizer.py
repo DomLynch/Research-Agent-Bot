@@ -129,6 +129,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
         lambda t: _phase_l_strengthen_analytical_sections(t, out_dir),
         lambda t: _phase_d_unproven_human_longevity(t, out_dir),
+        _phase_n_declare_discussion_thesis,
     ):
         text, log = phase(text)
         entries.extend(log)
@@ -573,6 +574,40 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
     entries = [FinalizerLogEntry(phase="K_outcome_routing", rule="route_paragraph_by_citation_class", n_changes=n_moved, detail=f"moved {n_moved} paragraph(s) to correct outcome subsection")] if n_moved else []
     entries += [FinalizerLogEntry(phase="K_outcome_routing", rule="fill_empty_outcome_heading", n_changes=filled, detail=f"filled {filled} empty outcome subsection(s)")] if filled else []
     return text[:rs.start()] + new_block + text[rs.end():], entries
+
+
+_THESIS_MARK_RE = re.compile(r"\*\*\s*thesis\s*:\s*\*\*", re.I)
+_RESOLUTION_MARK_RE = re.compile(r"\*\*\s*resolution\s+criteria\s*:\s*\*\*", re.I)
+
+
+def _phase_n_declare_discussion_thesis(text: str) -> tuple[str, list[FinalizerLogEntry]]:
+    """Ensure Discussion carries the literal `**Thesis:**` and
+    `**Resolution criteria:**` markers the journal-surface gate requires. The
+    writer's prose is kept verbatim — the markers only label the existing first
+    and last Discussion paragraphs so the reader can locate the position; no
+    content is fabricated. Idempotent (no-op when both markers are present).
+    Universal — the markers are topic-agnostic."""
+    m = re.search(r"^(##\s+Discussion\b[^\n]*\n)(.*?)(?=^##\s|\Z)", text, re.M | re.S)
+    if not m:
+        return text, []
+    body = m.group(2)
+    paras = [p for p in re.split(r"\n\s*\n", body) if p.strip()]
+    if not paras:
+        return text, []
+    changed: list[str] = []
+    if not _THESIS_MARK_RE.search(body):
+        paras[0] = f"**Thesis:** {paras[0].lstrip()}"
+        changed.append("thesis")
+    if not _RESOLUTION_MARK_RE.search(body):
+        paras[-1] = f"**Resolution criteria:** {paras[-1].lstrip()}"
+        changed.append("resolution_criteria")
+    if not changed:
+        return text, []
+    new_text = text[:m.start()] + m.group(1) + "\n\n".join(paras) + "\n\n" + text[m.end():]
+    return new_text, [FinalizerLogEntry(
+        phase="N_declare_thesis", rule="inject_discussion_markers",
+        n_changes=len(changed), detail=f"labelled Discussion {', '.join(changed)} marker(s)",
+    )]
 
 
 def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:

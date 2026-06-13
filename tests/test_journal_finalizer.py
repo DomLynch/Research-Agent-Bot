@@ -1708,3 +1708,20 @@ def test_unreferenced_citation_ignores_reference_title_fragment() -> None:
     )
 
     assert unreferenced_citation_tokens(paper) == ()
+
+
+def test_phase_n_labels_discussion_thesis_and_resolution_markers() -> None:
+    # Blocker #3: gate requires literal **Thesis:** / **Resolution criteria:**
+    # markers in Discussion; the finalizer now labels the existing first/last
+    # paragraphs (no fabrication) so the gate is self-healing.
+    paper = (
+        "# T\n\n## Discussion\n\n"
+        "Metformin shows a context-dependent metabolic profile across the corpus.\n\n"
+        "Future trials with longer follow-up would settle the open threats.\n\n"
+        "## Limitations\n\nstub.\n"
+    )
+    out, log = journal_finalizer._phase_n_declare_discussion_thesis(paper)
+    assert "**Thesis:**" in out and "**Resolution criteria:**" in out
+    assert len(log) == 1 and out.count("**Thesis:**") == 1
+    # idempotent: a second pass makes no change
+    assert journal_finalizer._phase_n_declare_discussion_thesis(out)[1] == []
