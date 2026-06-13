@@ -522,7 +522,13 @@ def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[Finalizer
 # Cardiometabolic subsection and the Immune/Longevity subsections were
 # left as empty stubs.
 _CITE_AY_RE = re.compile(r"\b[A-Z][a-zA-Z\-]+ \d{4}[a-z]?\b")
-_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
+# Sentence boundary aligned with the journal_surface outcome_routing gate
+# (`(?<=[.!?])\s+`). The previous `(?=[A-Z])` lookahead missed boundaries where
+# the next sentence opens with a lowercase word or a numeral, leaving a
+# minority cross-class citation (e.g. a dosing cite inside a contextual
+# paragraph) merged into the majority chunk — so Phase K could not relocate
+# what the gate flags. Matching the gate guarantees the repair covers the flag.
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 
 def _outcome_display(slug: str) -> str:

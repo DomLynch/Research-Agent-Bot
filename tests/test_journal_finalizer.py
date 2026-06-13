@@ -1753,3 +1753,59 @@ def test_smoke_combo_paper_finalizes_to_clean_surface() -> None:
     after = evaluate_journal_surface(fixed, citation_outcome_map=cmap)
     assert not any(i.code == "undeclared_thesis" for i in after.issues)     # #3: markers injected
     assert not any(i.code == "outcome_routing" for i in after.issues)
+
+
+def test_phase_k_relocates_misrouted_cite_in_lowercase_led_sentence(tmp_path: Path) -> None:
+    # Regression for task_a7129e8b — the residual the gate flagged but Phase K
+    # could not repair. Phase K's sentence splitter used a `(?=[A-Z])`
+    # lookahead; the journal_surface outcome_routing gate uses none. When a
+    # misrouted citation lived in a sentence that opens with a lowercase word or
+    # numeral (here "to isolate ... (Sahay 2026)."), the lookahead failed to
+    # split it out, the dosing sentence stayed merged in the contextual-majority
+    # paragraph, and Phase K left it unmoved — so the gate flagged a routing
+    # error the finalizer could not clear. Aligning the splitter to the gate's
+    # `(?<=[.!?])\s+` makes Phase K relocate exactly what the gate flags.
+    # Paragraph shape is taken verbatim from the live metformin R2 run.
+    from agent.journal_surface_gate import evaluate_journal_surface
+    paper = (
+        "# T\n\n## Results\n\n"
+        "### Contextual Adjacent Evidence Outcomes\n\n"
+        "Hamsho 2026's negative label sits in partial conflict with the null "
+        "directional labels carried by Tahir 2026 and Rattarasarn 2026. "
+        "to isolate the contribution of the fixed-dose combination to glycemic "
+        "and pharmacokinetic outcomes, the metformin component is embedded "
+        "within both arms of the comparison (Sahay 2026).\n\n"
+        "### Dosing and Pharmacokinetics Outcomes\n\n"
+        "The pharmacokinetic context is shaped by the gut-liver axis.\n\n"
+        "## References\n\n- Sahay 2026.\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "r1", "outcome_class": "contextual_other"},
+        {"receipt_id": "r2", "outcome_class": "contextual_other"},
+        {"receipt_id": "r3", "outcome_class": "contextual_other"},
+        {"receipt_id": "r4", "outcome_class": "dosing_pharmacokinetics"},
+    ]}), encoding="utf-8")
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Hamsho 2026"},
+        "r2": {"body_citation": "Tahir 2026"},
+        "r3": {"body_citation": "Rattarasarn 2026"},
+        "r4": {"body_citation": "Sahay 2026"},
+    }), encoding="utf-8")
+    cmap = {"Hamsho 2026": "contextual_other", "Tahir 2026": "contextual_other",
+            "Rattarasarn 2026": "contextual_other", "Sahay 2026": "dosing_pharmacokinetics"}
+
+    # Precondition: the gate flags the misroute on the un-finalized paper.
+    assert any(i.code == "outcome_routing"
+               for i in evaluate_journal_surface(paper, citation_outcome_map=cmap).issues)
+
+    fixed, logs = journal_finalizer._phase_k_route_outcome_paragraphs(paper, tmp_path)
+    assert any(e.rule == "route_paragraph_by_citation_class" and e.n_changes >= 1 for e in logs)
+
+    # Sahay's sentence now lives under Dosing, not Contextual.
+    ctx = fixed.split("### Contextual Adjacent Evidence Outcomes", 1)[1].split("###", 1)[0]
+    dosing = fixed.split("### Dosing and Pharmacokinetics Outcomes", 1)[1].split("### ", 1)[0]
+    assert "Sahay 2026" not in ctx
+    assert "Sahay 2026" in dosing
+    # End-to-end: the gate is now clean of routing errors.
+    assert not any(i.code == "outcome_routing"
+                   for i in evaluate_journal_surface(fixed, citation_outcome_map=cmap).issues)
