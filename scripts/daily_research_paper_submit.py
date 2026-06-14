@@ -1387,13 +1387,76 @@ def run_cycle(
     return ledger
 
 
+def run_cycle_capped(
+    *,
+    runs_root: Path = RUNS,
+    date: str,
+    submit: bool = False,
+    submitter: Submitter | None = None,
+    remote_loader: RemoteLoader | None = None,
+    max_submissions: int = 1,
+) -> dict[str, Any]:
+    """Submit up to `max_submissions` distinct ready candidates this cycle.
+
+    Each underlying `run_cycle` re-selects via the submitted-fingerprints
+    file, so successive calls return the next distinct topic (a submitted
+    fingerprint is excluded on the following pass). Stops early on the
+    first non-submit terminal status (no_eligible / rejected / failed).
+
+    `max_submissions <= 1` is an exact passthrough to `run_cycle` — same
+    ledger shape, same behaviour, no extra remote-dedupe fetches — so the
+    fresh lane and existing callers are unaffected. Only the standalone
+    submit lane opts into a higher cap to drain the ready backlog.
+    """
+    if max_submissions <= 1:
+        return run_cycle(
+            runs_root=runs_root, date=date, submit=submit,
+            submitter=submitter, remote_loader=remote_loader,
+        )
+    submissions: list[dict[str, Any]] = []
+    total = 0
+    first_candidate: dict[str, Any] | None = None
+    last: dict[str, Any] = {}
+    for _ in range(max_submissions):
+        last = run_cycle(
+            runs_root=runs_root, date=date, submit=submit,
+            submitter=submitter, remote_loader=remote_loader,
+        )
+        n = int(last.get("submitted") or 0)
+        total += n
+        submissions.append({
+            "status": last.get("status"),
+            "candidate": last.get("candidate"),
+            "submitted": n,
+        })
+        if n and first_candidate is None:
+            first_candidate = last.get("candidate")
+        if last.get("status") != "submitted_to_researka":
+            break
+    agg = dict(last)
+    agg["submitted"] = total
+    agg["submissions"] = submissions
+    agg["status"] = "submitted_to_researka" if total else last.get("status")
+    if first_candidate is not None:
+        agg["candidate"] = first_candidate
+    _write_json(runs_root / LEDGER_DIR / f"{date}.json", agg)
+    return agg
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", default=dt.datetime.now(dt.UTC).date().isoformat())
     parser.add_argument("--runs-root", type=Path, default=RUNS)
     parser.add_argument("--submit", action="store_true")
+    parser.add_argument(
+        "--max-submissions", type=int, default=3,
+        help="Max distinct ready candidates to submit this cycle (default 3).",
+    )
     args = parser.parse_args(argv)
-    ledger = run_cycle(runs_root=args.runs_root, date=args.date, submit=args.submit)
+    ledger = run_cycle_capped(
+        runs_root=args.runs_root, date=args.date, submit=args.submit,
+        max_submissions=max(1, args.max_submissions),
+    )
     print(
         f"[daily-v3] status={ledger['status']} submitted={ledger['submitted']} "
         f"published={ledger['published']} run={ledger.get('candidate', {}).get('run', '-')}"

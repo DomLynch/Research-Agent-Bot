@@ -1244,3 +1244,60 @@ def test_select_article_type_routes_zero_tension_to_evidence_map() -> None:
     assert daily._select_article_type(
         {"n_receipts": 0, "n_non_orthogonal_tensions": 0}
     ) == daily.DEFAULT_ARTICLE_TYPE
+
+
+def test_run_cycle_capped_passthrough_at_cap_one(tmp_path: Path, monkeypatch) -> None:
+    """max_submissions<=1 is an exact passthrough to run_cycle — same ledger
+    object, one call, no aggregate fields — so the fresh lane and existing
+    single-candidate callers are unaffected."""
+    sentinel = {"status": "submitted_to_researka", "submitted": 1, "published": 0,
+                "candidate": {"run": "r1"}}
+    calls: list[dict] = []
+
+    def _fake(**kw: Any) -> dict:
+        calls.append(kw)
+        return sentinel
+
+    monkeypatch.setattr(daily, "run_cycle", _fake)
+    out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-14", submit=True, max_submissions=1)
+    assert out is sentinel
+    assert len(calls) == 1
+    assert "submissions" not in out
+
+
+def test_run_cycle_capped_submits_up_to_cap(tmp_path: Path, monkeypatch) -> None:
+    """Up to max_submissions distinct candidates submit in one cycle; the
+    aggregate ledger reports the total and preserves the first candidate."""
+    seq = iter([
+        {"status": "submitted_to_researka", "submitted": 1, "published": 0, "candidate": {"run": "r1", "topic": "a"}},
+        {"status": "submitted_to_researka", "submitted": 1, "published": 0, "candidate": {"run": "r2", "topic": "b"}},
+        {"status": "submitted_to_researka", "submitted": 1, "published": 0, "candidate": {"run": "r3", "topic": "c"}},
+    ])
+    monkeypatch.setattr(daily, "run_cycle", lambda **kw: next(seq))
+    out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-14", submit=True, max_submissions=3)
+    assert out["submitted"] == 3
+    assert out["status"] == "submitted_to_researka"
+    assert len(out["submissions"]) == 3
+    assert out["candidate"]["run"] == "r1"
+    assert (tmp_path / daily.LEDGER_DIR / "2026-06-14.json").exists()
+
+
+def test_run_cycle_capped_stops_on_no_eligible(tmp_path: Path, monkeypatch) -> None:
+    """When the ready backlog drains, the cycle stops at the first non-submit
+    terminal status and does not burn the remaining cap."""
+    seq = iter([
+        {"status": "submitted_to_researka", "submitted": 1, "published": 0, "candidate": {"run": "r1"}},
+        {"status": "no_eligible_research_paper", "submitted": 0, "published": 0},
+    ])
+    calls: list[dict] = []
+
+    def _fake(**kw: Any) -> dict:
+        calls.append(kw)
+        return next(seq)
+
+    monkeypatch.setattr(daily, "run_cycle", _fake)
+    out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-14", submit=True, max_submissions=3)
+    assert out["submitted"] == 1
+    assert out["status"] == "submitted_to_researka"
+    assert out["candidate"]["run"] == "r1"
+    assert len(calls) == 2
