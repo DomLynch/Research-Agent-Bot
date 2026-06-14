@@ -169,6 +169,94 @@ def build_quality_method_payloads(
     return rob_payload, grade_payload
 
 
+def _write_rob_consistency_sidecar(out_dir: Path, rob_payload: list[dict[str, Any]]) -> None:
+    """Advisory: flag any study whose stated overall_rating understates its
+    worst domain (RoB worst-domain rule), via the rubric tree. Writes
+    rob_consistency.json. Fail-open — never breaks finalize. Currently expected
+    to report 0 inconsistent because `_overall` already derives worst-domain;
+    it is a forward guard for when independent per-domain ratings feed in."""
+    try:
+        from agent.risk_of_bias_schema import DomainAssessment, StudyAssessment
+        from agent.rob_consistency import inconsistent_studies
+        studies = [
+            StudyAssessment(
+                study_id=s["study_id"], design=s["design"], tool=s["tool"],
+                domains=tuple(
+                    DomainAssessment(
+                        domain=d["domain"], rating=d["rating"],
+                        rationale=d.get("rationale", ""),
+                    )
+                    for d in s["domains"]
+                ),
+                overall_rating=s["overall_rating"], notes=s.get("notes", ""),
+            )
+            for s in rob_payload
+        ]
+        bad = inconsistent_studies(studies)
+        payload = {
+            "n_studies": len(studies),
+            "n_inconsistent": len(bad),
+            "inconsistent": [
+                {
+                    "study_id": r.study_id,
+                    "stated_overall": r.stated_rating,
+                    "worst_domain": r.worst_domain,
+                    "worst_domain_rating": r.worst_domain_rating,
+                    "message": r.message,
+                }
+                for r in bad
+            ],
+        }
+        (out_dir / "rob_consistency.json").write_text(json.dumps(payload, indent=2))
+    except Exception:
+        # advisory sidecar only — must never block finalize
+        pass
+
+
+def _write_provenance_sidecar(
+    out_dir: Path, manifest: dict[str, Any], gate_result: dict[str, Any],
+) -> None:
+    """Tamper-evident provenance receipt for the shipped paper: binds the
+    author/reviewer model families + verdict + SHA-256 of full_paper.md, so a
+    reader can re-hash and confirm the artifact is the one that was graded.
+    Fail-open; writes provenance.json to the RUN DIR (not the submitted
+    bundle, to avoid Researka payload-validation risk)."""
+    try:
+        from agent.provenance_sidecar import write_provenance_sidecar
+        artifact = out_dir / "full_paper.md"
+        if not artifact.is_file():
+            return
+        author_model = "unknown"
+        reviewer_models = ["unknown"]
+        try:
+            from agent.settings import load_settings
+            s = load_settings()
+            author_model = getattr(s, "minimax_model", "") or "unknown"
+            reviewer_models = [
+                m for m in (
+                    getattr(s, "judge_model", ""),
+                    getattr(s, "final_layer_reviewer_model", ""),
+                ) if m
+            ] or ["unknown"]
+        except Exception:
+            pass  # model names are best-effort; SHA + verdict still bind
+        verdict = str(
+            gate_result.get("status") or gate_result.get("level")
+            or ("blocked" if gate_result.get("blocks_submission") else "ready")
+        )
+        write_provenance_sidecar(
+            out_dir,
+            run_id=out_dir.name,
+            artifact_path=artifact,
+            author_model=author_model,
+            reviewer_models=reviewer_models,
+            verdict=verdict,
+            generated_at=str(manifest.get("generated_at") or ""),
+        )
+    except Exception:
+        pass
+
+
 def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_dir: Path) -> dict[str, Any]:
     rob_payload, grade_payload = build_quality_method_payloads(receipts, parsed_dir)
     outcomes = {str(r.get("outcome_class") or "other") for r in receipts}
@@ -179,6 +267,7 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
         outcome_count=len(outcomes),
     )
     (out_dir / "risk_of_bias.json").write_text(json.dumps(rob_payload, indent=2))
+    _write_rob_consistency_sidecar(out_dir, rob_payload)
     (out_dir / "grade_assessment.json").write_text(json.dumps(grade_payload, indent=2))
     (out_dir / "quality_methods.md").write_text(bundle.markdown)
     summary = {
@@ -750,4 +839,5 @@ def write_final_quality_gates(
     score_payload = {"inputs": dataclasses.asdict(score_inputs), "result": dataclasses.asdict(score)}
     (out_dir / "publication_score.json").write_text(json.dumps(score_payload, indent=2))
     (out_dir / "publication_score.md").write_text("# Publication Score\n\n" + score.summary + "\n")
+    _write_provenance_sidecar(out_dir, manifest, dataclasses.asdict(gate))
     return {"template": template, "gate": gate, "score": score}

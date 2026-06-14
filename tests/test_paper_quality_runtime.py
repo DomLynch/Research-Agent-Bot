@@ -340,3 +340,52 @@ def test_evidence_graph_ready_for_zero_tension_landscape_brief() -> None:
     eg = next(r for r in rows if r["name"] == "evidence_graph")
     assert eg["status"] == "pass"
     assert eg["blocks_submission"] is False
+
+
+def test_write_quality_methods_emits_rob_consistency_sidecar(tmp_path: Path) -> None:
+    parsed = tmp_path / "parsed"
+    parsed.mkdir()
+    (parsed / "S1.paper_sections.json").write_text(json.dumps({
+        "sections": {"abstract": "randomized double-blind placebo trial"}
+    }))
+    pqr.write_quality_methods(tmp_path, _receipts(), parsed)
+    sidecar = tmp_path / "rob_consistency.json"
+    assert sidecar.exists()
+    data = json.loads(sidecar.read_text())
+    assert data["n_studies"] >= 1
+    # `_overall` already derives worst-domain, so live data is internally
+    # consistent — the sidecar is a forward guard, expected clean here.
+    assert data["n_inconsistent"] == 0
+
+
+def test_write_final_quality_gates_emits_provenance_sidecar(tmp_path: Path) -> None:
+    from agent.provenance_sidecar import verify_provenance_sidecar
+    parsed = tmp_path / "parsed"
+    parsed.mkdir()
+    artifact = pqr.write_quality_methods(tmp_path, _receipts(), parsed)
+    (tmp_path / "full_paper.md").write_text("# paper\n\nbody\n")
+    (tmp_path / "field_engagement.json").write_text(json.dumps([
+        {"framework_name": "Mannick", "status": "support"},
+    ]))
+    manifest = {
+        "n_receipts": 40, "n_non_orthogonal_tensions": 5,
+        "thesis": "Receipt-bound thesis.", "receipts": _receipts(),
+        "generated_at": "2026-06-14T12:00:00Z",
+    }
+    audit = {"p1_pass": True, "n_pass": 14, "n_total": 14, "checks": [
+        {"name": "Q2_numeric_integrity", "detail": "10/10 numerics trace"}
+    ]}
+    pqr.write_final_quality_gates(
+        out_dir=tmp_path,
+        paper_text="## Limitations\n\nshould not be used off-label\n",
+        manifest=manifest, audit=audit, journal_surface={"passed": True},
+        reviewer_patches={"unresolved_p1_count": 0},
+        quality_bundle=artifact["bundle"], citation_registry_complete=True,
+    )
+    prov = tmp_path / "provenance.json"
+    assert prov.exists()
+    rec = json.loads(prov.read_text())
+    assert rec["artifact"] == "full_paper.md"
+    assert rec["sha256"]
+    assert rec["verdict"]
+    assert verify_provenance_sidecar(tmp_path) is True
