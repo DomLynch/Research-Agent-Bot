@@ -192,3 +192,37 @@ def test_refined_outcome_vocabulary_has_public_labels_and_keys() -> None:
     assert outcome_display("safety_comorbidity") == "Safety and Comorbidity"
     assert outcome_key("Safety and Comorbidity Outcomes") == "safety_comorbidity"
     assert outcome_key("skeletal fracture bone") == "skeletal_fracture_bone"
+
+
+def test_refine_other_does_not_misfile_supplementation_as_pharmacokinetics() -> None:
+    """Feedback #3: 'supplementation' is an intervention descriptor, not a
+    pharmacokinetic outcome — it appears in nearly every supplement study's
+    title. A supplement study with a non-PK focus that fell into 'other' must
+    NOT be reclassified as dosing/pharmacokinetics."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Resveratrol supplementation and cardiovascular outcomes",
+        population_summary="older adults",
+    )
+    assert refine_other_outcome_class(receipt, "other") != "dosing_pharmacokinetics"
+
+
+def test_refine_other_keeps_genuine_pharmacokinetics() -> None:
+    """A genuine dose / pharmacokinetic study still routes correctly."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Pharmacokinetic dose-response study",
+        population_summary="",
+    )
+    assert refine_other_outcome_class(receipt, "other") == "dosing_pharmacokinetics"
+
+
+def test_dosing_pharmacokinetics_needles_carry_no_topic_specific_compounds() -> None:
+    """Universal-no-hardcoding: the dosing class must not bake in topic-specific
+    drug/compound names (e.g. vitamin-D forms) — those belong in topic packs,
+    not the universal outcome vocabulary."""
+    from agent.outcome_class_remap import OUTCOME_VOCAB
+    needles = OUTCOME_VOCAB["dosing_pharmacokinetics"][2]
+    assert "cholecalciferol" not in needles
+    assert "calcifediol" not in needles
+    assert "supplementation" not in needles

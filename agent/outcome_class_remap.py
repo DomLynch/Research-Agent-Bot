@@ -29,7 +29,7 @@ OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
     "cognitive": ("Cognitive", (), ()),
     "contextual_other": ("Contextual Adjacent Evidence", ("contextual other", "adjacent evidence"), ()),
     "deficiency_prevalence": ("Deficiency Prevalence", ("deficiency prevalence",), ("deficiency", "insufficiency", "prevalence", "serum", "status")),
-    "dosing_pharmacokinetics": ("Dosing and Pharmacokinetics", ("dosing pharmacokinetics",), ("dose", "dosing", "supplementation", "pharmacokinetic", "cholecalciferol", "calcifediol")),
+    "dosing_pharmacokinetics": ("Dosing and Pharmacokinetics", ("dosing pharmacokinetics",), ("dose", "dosing", "pharmacokinetic")),
     "frailty": ("Frailty", (), ()),
     "healthspan_qol": ("Healthspan and Quality of Life", ("healthspan qol", "quality of life"), ()),
     "immune": ("Immune", (), ()),
