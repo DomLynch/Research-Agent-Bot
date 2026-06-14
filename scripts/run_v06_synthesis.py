@@ -1195,7 +1195,8 @@ def _ensure_results_summary_table(
             "mixed": "mixed signal",
         }.get(dominant, "mixed signal")
         direct_parts = [
-            f"{directness[k]} {k}" for k in ("direct", "indirect", "mechanistic", "review")
+            f"{directness[k]} {k}"
+            for k in ("direct", "indirect", "mechanistic", "review", "protocol")
             if directness.get(k)
         ]
         claim_n = sum(int(r.get("n_claims") or 0) for r in group)
@@ -2312,7 +2313,9 @@ def _review_heavy_abstraction_note(receipts: list[ReceiptSummary]) -> str:
     directness = Counter(str(r.directness or "unclassified").lower() for r in receipts)
     tiers = Counter(str(r.evidence_tier or "").upper() for r in receipts)
     direct = directness.get("direct", 0)
-    abstracted = sum(directness.get(k, 0) for k in ("review", "indirect", "mechanistic"))
+    abstracted = sum(
+        directness.get(k, 0) for k in ("review", "indirect", "mechanistic", "protocol")
+    )
     if abstracted < max(4, int(total * 0.6)) and direct:
         return ""
     direct_phrase = f"{direct} are classified as direct interventional evidence"
@@ -2328,7 +2331,8 @@ def _review_heavy_abstraction_note(receipts: list[ReceiptSummary]) -> str:
     return (
         f"**Evidence-abstraction note.** The {total} retained reference papers are "
         f"not {total} independent primary clinical trials: {abstracted} are review, "
-        f"indirect, or mechanistic source-level summaries, and {direct_phrase}. "
+        f"indirect, mechanistic, or registered-protocol source-level summaries, "
+        f"and {direct_phrase}. "
         "Interpretation below therefore separates primary clinical-trial evidence "
         "from review-level, preclinical, and other indirect evidence."
     )
