@@ -240,10 +240,10 @@ def _write_provenance_sidecar(
             ] or ["unknown"]
         except Exception:
             pass  # model names are best-effort; SHA + verdict still bind
-        verdict = str(
-            gate_result.get("status") or gate_result.get("level")
-            or ("blocked" if gate_result.get("blocks_submission") else "ready")
-        )
+        # GateResult exposes `passed` (+ failures/warnings/summary) — NOT
+        # status/level/blocks_submission. Key off it, and default a missing/
+        # falsy value to "blocked" so provenance never overstates a failed gate.
+        verdict = "ready" if gate_result.get("passed") else "blocked"
         write_provenance_sidecar(
             out_dir,
             run_id=out_dir.name,

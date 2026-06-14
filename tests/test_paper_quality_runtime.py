@@ -387,5 +387,27 @@ def test_write_final_quality_gates_emits_provenance_sidecar(tmp_path: Path) -> N
     rec = json.loads(prov.read_text())
     assert rec["artifact"] == "full_paper.md"
     assert rec["sha256"]
-    assert rec["verdict"]
+    assert rec["verdict"] == "ready"  # this run's gate passes
     assert verify_provenance_sidecar(tmp_path) is True
+
+
+def test_provenance_verdict_reflects_failed_gate(tmp_path: Path) -> None:
+    # Regression: a failed GateResult (passed=False) must NOT be stamped
+    # "ready". GateResult has no status/level/blocks_submission — only `passed`.
+    (tmp_path / "full_paper.md").write_text("# paper\n\nbody\n")
+    pqr._write_provenance_sidecar(
+        tmp_path, {"generated_at": "2026-06-14T12:00:00Z"},
+        {"passed": False, "failures": ["audit_gates_failed"], "warnings": [], "summary": "x"},
+    )
+    rec = json.loads((tmp_path / "provenance.json").read_text())
+    assert rec["verdict"] == "blocked"
+
+
+def test_provenance_verdict_reflects_passed_gate(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.md").write_text("# paper\n\nbody\n")
+    pqr._write_provenance_sidecar(
+        tmp_path, {"generated_at": "2026-06-14T12:00:00Z"},
+        {"passed": True, "failures": [], "warnings": [], "summary": "ok"},
+    )
+    rec = json.loads((tmp_path / "provenance.json").read_text())
+    assert rec["verdict"] == "ready"
