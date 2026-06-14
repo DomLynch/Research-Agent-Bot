@@ -73,12 +73,33 @@ def build_methods_pack(
         "confidence interval or credible interval", "p-value", "sample size",
         "follow-up duration", "risk-of-bias rating",
     )
-    exclusion_summary = (
-        f"Non-traceable findings (claim could not be linked to source text): "
-        f"{max(0, n_rejected)} records.",
-        "Wrong population / off-topic sources excluded at screening.",
-        "Duplicate records deduplicated by DOI / PMID before screening.",
+    # Count-backed exclusion summary: state an exclusion reason ONLY when a
+    # real count backs it, so the "Exclusion reasons" list can never
+    # contradict a "0 excluded" screening flow (reviewer-flagged). When no
+    # instrumented gate recorded exclusions, say so plainly instead of
+    # listing phantom reasons. Universal — no per-topic logic.
+    n_screening_excluded = max(
+        0, int(n_retrieved) - int(n_included) - max(0, int(n_rejected))
     )
+    exclusion_lines: list[str] = []
+    if int(n_rejected) > 0:
+        exclusion_lines.append(
+            "Non-traceable findings (claim could not be linked to source "
+            f"text): {int(n_rejected)} records."
+        )
+    if n_screening_excluded > 0:
+        exclusion_lines.append(
+            "Off-topic or ineligible-population sources removed during "
+            f"title/abstract screening: {n_screening_excluded} records."
+        )
+    if not exclusion_lines:
+        exclusion_lines.append(
+            "No records were excluded at the gates instrumented for this "
+            "run: the eligibility criteria above were applied during "
+            "retrieval and claim-binding but produced no post-screening "
+            "exclusions with recorded counts for this corpus."
+        )
+    exclusion_summary = tuple(exclusion_lines)
     screening_flow = {
         "n_retrieved": int(n_retrieved),
         "n_screened": int(n_screened),

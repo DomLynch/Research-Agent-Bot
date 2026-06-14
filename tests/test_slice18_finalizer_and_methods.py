@@ -166,6 +166,42 @@ def test_methods_pack_renders_receipt_admission_funnel() -> None:
     assert "| Admitted final receipts | 129 |" in md
 
 
+def test_methods_exclusion_reasons_do_not_contradict_zero_excluded() -> None:
+    """Reviewer-flagged contradiction: the flow reported 0 excluded while the
+    'Exclusion reasons' list still enumerated population/duplicate exclusions.
+    With no recorded exclusions the section must say so — no phantom reasons —
+    while the required H3 marker stays present."""
+    pack = build_methods_pack(
+        review_type="evidence_brief",
+        topic="example_topic",
+        corpus_search_queries=("q",),
+        n_retrieved=12, n_screened=12, n_included=12, n_rejected=0,
+        outcome_classes=("primary_outcome",),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "### Exclusion reasons" in md
+    assert "No records were excluded" in md
+    assert "Wrong population" not in md
+    assert "Duplicate records deduplicated" not in md
+
+
+def test_methods_exclusion_reasons_are_count_backed() -> None:
+    """When exclusions occurred, each listed reason carries its real count and
+    the totals reconcile (50 retrieved - 12 included - 3 non-traceable = 35
+    screened out)."""
+    pack = build_methods_pack(
+        review_type="evidence_brief",
+        topic="example_topic",
+        corpus_search_queries=("q",),
+        n_retrieved=50, n_screened=50, n_included=12, n_rejected=3,
+        outcome_classes=("primary_outcome",),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "3 records" in md
+    assert "35 records" in md
+    assert "No records were excluded" not in md
+
+
 def test_methods_pack_legacy_model_swaps_accountability_prose() -> None:
     pack_researka = build_methods_pack(
         review_type="prisma_scr_scoping_synthesis", topic="example",
