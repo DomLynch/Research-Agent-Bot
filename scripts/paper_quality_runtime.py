@@ -594,9 +594,15 @@ def build_journal_readiness_contract(
         ), f"claims={claims}; citation_registry_complete={citation_registry_complete}",
             "Repair claim extraction or citation registry before manuscript use."),
         _readiness_item(6, "evidence_graph", (
-            "pass" if outcomes and tensions > 0 else "not_ready"
+            # The outcome graph is "built" once there is >=1 outcome class.
+            # Zero non-orthogonal tensions is a valid finding for a
+            # landscape / agreement corpus (the evidence-map path exists for
+            # exactly these null-dominant briefs), so it must not block a paper
+            # that otherwise carries a full outcome graph. Universal — no topic
+            # knowledge; tensions stay reported as a richness signal.
+            "pass" if outcomes else "not_ready"
         ), f"outcome_classes={len(outcomes)}; tensions={tensions}",
-            "Build outcome/tension graph before rendering prose."),
+            "Build the outcome graph (>=1 outcome class) before rendering prose."),
         _readiness_item(7, "deterministic_manuscript_compiler", (
             "pass" if bool(journal_surface.get("passed")) else "not_ready"
         ), f"journal_surface_passed={bool(journal_surface.get('passed'))}",

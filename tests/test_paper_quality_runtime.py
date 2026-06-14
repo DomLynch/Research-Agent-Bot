@@ -312,3 +312,31 @@ def test_final_quality_gates_block_failed_fresh_runtime(tmp_path: Path) -> None:
     assert "benchmark_runtime_return_code=1" in payload["result"]["failures"]
     by_name = {row["name"]: row for row in payload["journal_readiness_contract"]}
     assert by_name["product_tiers"]["status"] == "not_ready"
+
+
+def test_evidence_graph_ready_for_zero_tension_landscape_brief() -> None:
+    # A landscape/agreement corpus can carry a full outcome graph with zero
+    # non-orthogonal tensions; readiness item #6 (evidence_graph) must not block
+    # submission for that — the evidence-map path exists for exactly these
+    # null-dominant briefs. Regression for v3 zero-tension briefs
+    # (telomere/senescence biomarker) stuck at final_status_not_ready.
+    rows = pqr.build_journal_readiness_contract(
+        paper_text="## Abstract\n\n" + "word " * 180 + "\n## Conclusion\n\n" + "word " * 240,
+        manifest={
+            "n_receipts": 26,
+            "n_high_confidence_claims_total": 12,
+            "n_non_orthogonal_tensions": 0,
+            "receipts": _receipts(),
+            "thesis": "bounded thesis",
+        },
+        gate=SimpleNamespace(passed=True),
+        score=SimpleNamespace(verdict="accept"),
+        journal_surface={"passed": True},
+        reviewer_patches={"unresolved_p1_count": 0},
+        citation_registry_complete=True,
+        template_language_blocking=False,
+        accountability_pass=True,
+    )
+    eg = next(r for r in rows if r["name"] == "evidence_graph")
+    assert eg["status"] == "pass"
+    assert eg["blocks_submission"] is False
