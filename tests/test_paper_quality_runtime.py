@@ -411,3 +411,26 @@ def test_provenance_verdict_reflects_passed_gate(tmp_path: Path) -> None:
     )
     rec = json.loads((tmp_path / "provenance.json").read_text())
     assert rec["verdict"] == "ready"
+
+
+def test_provenance_verdict_prefers_reconciled_final_status(tmp_path: Path) -> None:
+    # The reconcile can promote a paper AFTER the finalize-time gate. Provenance
+    # must report the authoritative final_status.submission_ready, not the stale
+    # pre-reconcile gate (finalize said blocked; final_status says ready).
+    (tmp_path / "full_paper.md").write_text("# paper\n\nbody\n")
+    (tmp_path / "final_status.json").write_text(json.dumps({"submission_ready": True}))
+    pqr._write_provenance_sidecar(
+        tmp_path, {"generated_at": "x"}, {"passed": False, "failures": ["x"]},
+    )
+    rec = json.loads((tmp_path / "provenance.json").read_text())
+    assert rec["verdict"] == "ready"
+
+
+def test_provenance_verdict_blocked_when_final_status_not_ready(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.md").write_text("# paper\n\nbody\n")
+    (tmp_path / "final_status.json").write_text(json.dumps({"submission_ready": False}))
+    pqr._write_provenance_sidecar(
+        tmp_path, {"generated_at": "x"}, {"passed": True, "failures": []},
+    )
+    rec = json.loads((tmp_path / "provenance.json").read_text())
+    assert rec["verdict"] == "blocked"

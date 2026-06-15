@@ -240,10 +240,20 @@ def _write_provenance_sidecar(
             ] or ["unknown"]
         except Exception:
             pass  # model names are best-effort; SHA + verdict still bind
-        # GateResult exposes `passed` (+ failures/warnings/summary) — NOT
-        # status/level/blocks_submission. Key off it, and default a missing/
-        # falsy value to "blocked" so provenance never overstates a failed gate.
+        # Verdict prefers the AUTHORITATIVE final_status.json (submission_ready),
+        # which is written/reconciled AFTER finalize — so a paper promoted by the
+        # post-finalize reconcile is reported correctly. Falls back to the
+        # finalize-time gate's `passed` (GateResult has no status/level field)
+        # when final_status.json isn't on disk yet; default "blocked" on missing.
         verdict = "ready" if gate_result.get("passed") else "blocked"
+        fs_path = out_dir / "final_status.json"
+        if fs_path.is_file():
+            try:
+                fs = json.loads(fs_path.read_text(encoding="utf-8"))
+                if "submission_ready" in fs:
+                    verdict = "ready" if fs.get("submission_ready") else "blocked"
+            except (OSError, ValueError):
+                pass
         write_provenance_sidecar(
             out_dir,
             run_id=out_dir.name,

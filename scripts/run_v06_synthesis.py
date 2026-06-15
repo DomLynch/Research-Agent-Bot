@@ -3851,6 +3851,10 @@ async def _run_post_paper_pipeline(
             f"blockers={len(_fs.blocking_reasons)})",
             file=sys.stderr,
         )
+        # Refresh provenance.json so its verdict reflects the reconciled
+        # final_status — the finalize-time write (Stage 5c) predates this and
+        # would otherwise report a pre-reconcile "blocked" for a promoted run.
+        _paper_quality._write_provenance_sidecar(out_dir, manifest, {})
     except Exception as _e:  # pragma: no cover — fail-soft
         print(
             f"[pipeline] Stage 5d — final_status skipped: {_e}",
