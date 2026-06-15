@@ -1286,6 +1286,18 @@ def test_derive_lane_animal_overrides_tier() -> None:
     ) == "animal_preclinical"
 
 
+def test_derive_lane_source_excerpt_flips_generic_title() -> None:
+    """Species named only in the body text (not the title) still flips the
+    lane — a generic-titled study whose claim excerpt says 'arctic foxes'
+    is animal_preclinical, not human_observational."""
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier="B2", directness="indirect",
+        title="Steroidogenesis under seasonal photoperiod",
+        source_excerpt="testicular steroidogenesis in male arctic foxes",
+    ) == "animal_preclinical"
+
+
 def test_derive_lane_review_meta() -> None:
     from agent.evidence_lanes import derive_lane
     assert derive_lane(

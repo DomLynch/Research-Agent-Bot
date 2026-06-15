@@ -49,6 +49,7 @@ def derive_lane(
     title: str | None = None,
     venue: str | None = None,
     population: str | None = None,
+    source_excerpt: str | None = None,
 ) -> str:
     """Map a receipt's (tier, directness, source-text) triple to one
     of the six canonical lanes. Universal — no per-topic table.
@@ -64,7 +65,10 @@ def derive_lane(
       6. evidence_tier == "C" → animal_preclinical (preclinical tier code)
       7. fallback → background_only
     """
-    blob = " ".join(s for s in (title, venue, population) if s)
+    # source_excerpt (the receipt's claim-sentence excerpts) is included so
+    # species named only in the body text — "in male arctic foxes", "broiler
+    # chickens" — flip the lane even when the title is generic.
+    blob = " ".join(s for s in (title, venue, population, source_excerpt) if s)
     if is_animal_paper(blob):
         return "animal_preclinical"
     tier = (evidence_tier or "").upper()
@@ -134,6 +138,7 @@ def build_lane_map(receipts: Any) -> dict[str, str]:
             title=_get(r, "source_title"),
             venue=_get(r, "source_venue"),
             population=_get(r, "population_summary"),
+            source_excerpt=_get(r, "thesis_text"),
         )
         out[str(cite)] = lane
     return out

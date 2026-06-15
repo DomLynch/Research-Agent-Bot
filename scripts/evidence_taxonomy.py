@@ -83,10 +83,18 @@ _SPECIES_HUMAN_TOKENS: tuple[str, ...] = (
     "children",
 )
 _SPECIES_ANIMAL_TOKENS: tuple[str, ...] = (
-    "mouse", "mice", "rat", "rats", "c. elegans", "c elegans",
-    "worm", "worms", "yeast", "drosophila", "fly", "flies",
-    "monkey", "monkeys", "non-human primate", "marmoset", "marmosets",
-    "dog", "dogs", "rabbit", "rabbits",
+    "mouse", "mice", "murine", "rat", "rats", "rodent", "rodents",
+    "c. elegans", "c elegans", "nematode", "nematodes",
+    "worm", "worms", "yeast", "drosophila", "fly", "flies", "zebrafish",
+    "monkey", "monkeys", "macaque", "macaques", "baboon", "baboons",
+    "non-human primate", "nonhuman primate", "marmoset", "marmosets",
+    "dog", "dogs", "rabbit", "rabbits", "hamster", "hamsters",
+    "guinea pig", "fox", "foxes", "vulpes",
+    "broiler", "broilers", "chicken", "chickens", "poultry", "fowl",
+    "avian", "cow", "cows", "cattle", "bovine",
+    "pig", "pigs", "piglet", "piglets", "porcine", "swine",
+    "sheep", "ovine", "goat", "goats", "caprine",
+    "horse", "horses", "equine",
 )
 
 # Design markers — STRONG (high-precision) vs WEAK (broader, lower
@@ -150,6 +158,40 @@ def _is_human(species: str) -> bool:
 
 def _is_animal(species: str) -> bool:
     return _has_token(species, _SPECIES_ANIMAL_TOKENS)
+
+
+# Free-text population classifier. `_is_human`/`_is_animal` substring-
+# match the *controlled* `species` metadata field; `population_of` scans
+# *free text* (title + abstract + claim sentences) so it must be word-
+# boundary-anchored — bare "rat" must not fire inside "literature",
+# "cow" inside "coworker", "fox" inside "foxglove". Lookarounds (not
+# \b) so multi-word / punctuated tokens ("guinea pig", "c. elegans")
+# anchor correctly.
+def _word_boundary_re(tokens: tuple[str, ...]) -> "re.Pattern[str]":
+    parts = sorted((re.escape(t) for t in tokens), key=len, reverse=True)
+    return re.compile(r"(?<![a-z])(?:" + "|".join(parts) + r")(?![a-z])", re.I)
+
+
+_HUMAN_TEXT_RE = _word_boundary_re(_SPECIES_HUMAN_TOKENS)
+_ANIMAL_TEXT_RE = _word_boundary_re(_SPECIES_ANIMAL_TOKENS)
+
+
+def population_of(text: str) -> str:
+    """Classify a source's study population from free text as
+    'human' | 'animal' | 'unknown'.
+
+    Human markers win ties: a translational "mouse model of human
+    disease" source stays 'human' and is therefore never pruned on
+    population grounds — only an unambiguously non-human source (an
+    animal marker present, no human marker) is classifiable 'animal'.
+    Universal species vocabulary — no per-topic tokens. Consumed by the
+    relative corpus population-coherence gate in run_v06_synthesis."""
+    blob = _normalize(text)
+    if _HUMAN_TEXT_RE.search(blob):
+        return "human"
+    if _ANIMAL_TEXT_RE.search(blob):
+        return "animal"
+    return "unknown"
 
 
 def _design_class(design: str) -> str:
