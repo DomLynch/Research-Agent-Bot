@@ -86,10 +86,10 @@ def test_empty_records_returns_empty() -> None:
 
 def test_severity_drives_primary_ranking() -> None:
     records = [
-        _record("t1", severity=2),
-        _record("t2", severity=5),
-        _record("t3", severity=4),
-        _record("t4", severity=3),
+        _record("t1", severity=2, paper_a="a1", paper_b="b1"),
+        _record("t2", severity=5, paper_a="a2", paper_b="b2"),
+        _record("t3", severity=4, paper_a="a3", paper_b="b3"),
+        _record("t4", severity=3, paper_a="a4", paper_b="b4"),
     ]
     plans = select_top_tensions(records, top_n=3)
     assert [p.tension_id for p in plans] == ["t2", "t3", "t4"]
@@ -97,9 +97,9 @@ def test_severity_drives_primary_ranking() -> None:
 
 def test_weight_breaks_severity_tie() -> None:
     records = [
-        _record("low", severity=4, weight_a=1.0, weight_b=1.0),
-        _record("hi", severity=4, weight_a=3.0, weight_b=2.0),
-        _record("mid", severity=4, weight_a=2.0, weight_b=2.0),
+        _record("low", severity=4, weight_a=1.0, weight_b=1.0, paper_a="a1", paper_b="b1"),
+        _record("hi", severity=4, weight_a=3.0, weight_b=2.0, paper_a="a2", paper_b="b2"),
+        _record("mid", severity=4, weight_a=2.0, weight_b=2.0, paper_a="a3", paper_b="b3"),
     ]
     plans = select_top_tensions(records, top_n=3)
     assert [p.tension_id for p in plans] == ["hi", "mid", "low"]
@@ -108,9 +108,11 @@ def test_weight_breaks_severity_tie() -> None:
 def test_directness_breaks_weight_tie() -> None:
     records = [
         _record("indirect", severity=4, weight_a=1.0, weight_b=1.0,
-                directness_a="indirect", directness_b="indirect"),
+                directness_a="indirect", directness_b="indirect",
+                paper_a="a1", paper_b="b1"),
         _record("direct", severity=4, weight_a=1.0, weight_b=1.0,
-                directness_a="direct", directness_b="direct"),
+                directness_a="direct", directness_b="direct",
+                paper_a="a2", paper_b="b2"),
     ]
     plans = select_top_tensions(records, top_n=2)
     assert [p.tension_id for p in plans] == ["direct", "indirect"]
@@ -118,16 +120,19 @@ def test_directness_breaks_weight_tie() -> None:
 
 def test_tension_id_lexicographic_final_tie_break() -> None:
     records = [
-        _record("zzz", severity=3),
-        _record("aaa", severity=3),
-        _record("mmm", severity=3),
+        _record("zzz", severity=3, paper_a="a1", paper_b="b1"),
+        _record("aaa", severity=3, paper_a="a2", paper_b="b2"),
+        _record("mmm", severity=3, paper_a="a3", paper_b="b3"),
     ]
     plans = select_top_tensions(records, top_n=3)
     assert [p.tension_id for p in plans] == ["aaa", "mmm", "zzz"]
 
 
 def test_top_n_caps_returned_count() -> None:
-    records = [_record(f"t{i}", severity=3) for i in range(10)]
+    records = [
+        _record(f"t{i}", severity=3, paper_a=f"a{i}", paper_b=f"b{i}")
+        for i in range(10)
+    ]
     plans = select_top_tensions(records, top_n=5)
     assert len(plans) == 5
     assert DEFAULT_TOP_N == 5
@@ -155,6 +160,45 @@ def test_duplicate_tension_id_rejected() -> None:
         select_top_tensions(records)
 
 
+# ---- Single-anchor cap (#5 — one outlier must not spawn N tensions) -------
+
+
+def test_single_outlier_capped_to_one_plan() -> None:
+    """An outlier paper that conflicts with every other receipt produces
+    C(N,1) identically-ranked pairs; the cap keeps only one of them."""
+    records = [
+        _record(f"O-{x}", paper_a="OUTLIER", paper_b=x, severity=4)
+        for x in ("A", "B", "C", "D", "E")
+    ]
+    plans = select_top_tensions(records, top_n=5)
+    outlier_plans = [p for p in plans if "OUTLIER" in (p.paper_a, p.paper_b)]
+    assert len(outlier_plans) == 1  # default cap = 1
+
+
+def test_distinct_second_anchor_tension_survives_the_cap() -> None:
+    """The cap diversifies, it does not gut: a genuinely distinct tension
+    between two OTHER papers still surfaces alongside the outlier's one."""
+    records = [
+        _record("o1", paper_a="OUTLIER", paper_b="A", severity=5),
+        _record("o2", paper_a="OUTLIER", paper_b="B", severity=5),
+        _record("o3", paper_a="OUTLIER", paper_b="C", severity=5),
+        _record("distinct", paper_a="X", paper_b="Y", severity=4),
+    ]
+    plans = select_top_tensions(records, top_n=5)
+    ids = {p.tension_id for p in plans}
+    assert "distinct" in ids
+    assert len([p for p in plans if "OUTLIER" in (p.paper_a, p.paper_b)]) == 1
+
+
+def test_cap_can_be_disabled_with_zero() -> None:
+    records = [
+        _record(f"O-{x}", paper_a="OUTLIER", paper_b=x, severity=4)
+        for x in ("A", "B", "C")
+    ]
+    plans = select_top_tensions(records, top_n=5, max_per_anchor=0)
+    assert len(plans) == 3  # cap off → all kept
+
+
 # ---- Plan construction ----------------------------------------------------
 
 
@@ -166,6 +210,14 @@ def test_hypotheses_match_registry_for_known_conflict_type() -> None:
 def test_unknown_conflict_type_falls_back_to_default() -> None:
     plan = build_plan(_record(conflict_type="some_novel_conflict"))
     assert plan.hypotheses == DEFAULT_HYPOTHESES
+
+
+def test_null_vs_negative_has_its_own_registry_hypotheses() -> None:
+    """#5: null_vs_negative must be in the registry — not silently degrade
+    to DEFAULT_HYPOTHESES the way an unmapped key would."""
+    plan = build_plan(_record(conflict_type="null_vs_negative"))
+    assert plan.hypotheses == HYPOTHESIS_REGISTRY["null_vs_negative"]
+    assert plan.hypotheses != DEFAULT_HYPOTHESES
 
 
 def test_corpus_weight_winner_paper_a() -> None:

@@ -76,6 +76,7 @@ def _public_label(value: Any) -> str:
         "contextual_other": "contextual adjacent evidence",
         "mean_sd": "mean ± SD",
         "null_vs_positive": "null vs positive",
+        "null_vs_negative": "null vs negative",
         "p_value": "p-value",
         "sample_size": "sample size",
         "unit_value": "unit value",

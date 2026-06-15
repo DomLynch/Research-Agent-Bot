@@ -325,6 +325,19 @@ def test_tension_null_vs_positive_when_one_null_one_signed() -> None:
     assert matrix.pairs[0].severity == 4
 
 
+def test_tension_null_vs_negative_when_signed_arm_negative() -> None:
+    """#5: a null arm vs a NEGATIVE signed arm must label as
+    null_vs_negative (not null_vs_positive) so the public label matches the
+    signed arm's true direction. Same severity (4) as null_vs_positive."""
+    null_t = _summary("null-trial", outcome="frailty", direction="null")
+    neg_t = _summary("negative-frailty", outcome="frailty", direction="negative")
+    matrix = build_tension_matrix([null_t, neg_t])
+    assert len(matrix.pairs) == 1
+    assert matrix.pairs[0].kind == "null_vs_negative"
+    assert matrix.pairs[0].severity == 4
+    assert "negative" in matrix.pairs[0].summary
+
+
 def test_tension_orthogonal_for_non_opposable_directions() -> None:
     """A pair only conflicts when its directions are genuinely opposed. Pairs
     where neither side asserts an opposable direction (unclear/mixed, both

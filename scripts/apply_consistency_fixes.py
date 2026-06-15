@@ -211,6 +211,7 @@ _PUBLIC_LABELS = {
     "cross_domain": "cross-domain",
     "mean_sd": "mean ± SD",
     "null_vs_positive": "null vs positive",
+    "null_vs_negative": "null vs negative",
     "p_value": "p-value",
     "sample_size": "sample size",
     "unit_value": "unit value",

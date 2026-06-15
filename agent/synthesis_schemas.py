@@ -89,6 +89,9 @@ TensionKind = Literal[
     "indirectness_gap",  # one direct trial finding + one mechanistic claim about
                        # the same outcome class — synthesis must keep them separate
     "null_vs_positive",  # one receipt is null, another is positive — partial conflict
+    "null_vs_negative",  # one receipt is null, another is negative — partial conflict
+                       # (kept distinct from null_vs_positive so the public
+                       # label matches the signed arm's true direction)
     # Day 10.17 Phase 2 — cross-domain tension. Different outcome
     # classes BUT one receipt is direct/clinical and the other is
     # mechanistic/preclinical. This is where the metformin paper's

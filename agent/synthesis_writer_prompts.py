@@ -20,7 +20,7 @@ research synthesis paper.
 
 Input: a list of non-orthogonal tensions across receipts. Each
 tension is one of: agreement, disagreement, indirectness_gap,
-null_vs_positive.
+null_vs_positive, null_vs_negative.
 
 Output ONE JSON object with this exact shape:
 
