@@ -327,6 +327,37 @@ def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
     assert ctx["mech_refs"] == "Gong 2022"
 
 
+def test_abstract_source_type_tally_partitions_corpus() -> None:
+    """The abstract direct/adjacent/mechanistic tally must sum to n_receipts:
+    review + protocol receipts (previously dropped, so 2+17+9 read 28 != 33)
+    are folded into 'adjacent' so the three buckets partition the corpus."""
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        receipts = (
+            [{"directness": "direct", "evidence_tier": "A1", "effect_direction": "positive",
+              "outcome_class": "cardiometabolic", "citation_token": f"D{i}"} for i in range(2)]
+            + [{"directness": "indirect", "evidence_tier": "B2", "effect_direction": "null",
+                "outcome_class": "contextual_other", "citation_token": f"I{i}"} for i in range(17)]
+            + [{"directness": "mechanistic", "evidence_tier": "C1", "effect_direction": "null",
+                "outcome_class": "contextual_other", "citation_token": f"M{i}"} for i in range(8)]
+            + [{"directness": "review", "evidence_tier": "B1", "effect_direction": "positive",
+                "outcome_class": "cardiometabolic", "citation_token": f"R{i}"} for i in range(5)]
+            + [{"directness": "protocol", "evidence_tier": "D1", "effect_direction": "unclear",
+                "outcome_class": "contextual_other", "citation_token": "P0"}]
+        )
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 33,
+            "n_high_confidence_claims_total": 10,
+            "n_non_orthogonal_tensions": 0,
+            "receipts": receipts,
+        }
+        ctx = orch._section_backstop_context()
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+    assert int(ctx["direct"]) + int(ctx["indirect"]) + int(ctx["mechanistic"]) == 33  # type: ignore[call-overload]
+    assert ctx["direct"] == 2
+
+
 def test_review_heavy_abstraction_note_distinguishes_reference_papers_from_trials() -> None:
     receipts = [_receipt(f"review-{i}", "review") for i in range(5)]
     receipts += [_receipt("indirect-1", "indirect"), _receipt("mechanistic-1", "mechanistic")]

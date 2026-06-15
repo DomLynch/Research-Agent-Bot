@@ -6,6 +6,7 @@ Pure-function tests; no LLM calls, no IO.
 from __future__ import annotations
 
 from agent.deterministic_anchors import (
+    build_conclusion_anchor,
     build_cross_domain_anchor,
     build_discussion_anchor,
     _format_kinds,
@@ -159,3 +160,18 @@ def test_anchors_contribute_meaningful_word_count():
     )
     for hedge in ("may", "context-dependent", "uncertain", "preliminary"):
         assert hedge in disc.lower()
+
+
+def test_conclusion_anchor_uses_non_orthogonal_tension_count() -> None:
+    """The Bounded conclusion must report the canonical non-orthogonal tension
+    count (== manifest n_non_orthogonal_tensions), not len(matrix.pairs) — the
+    latter leaked the full pairwise count (e.g. 528 vs 86)."""
+    receipts = [_r("r1"), _r("r2"), _r("r3")]
+    matrix = _matrix(
+        _t("r1", "r2", kind="orthogonal", sev=0),
+        _t("r1", "r3", kind="orthogonal", sev=0),
+        _t("r2", "r3", kind="null_vs_positive", sev=4),  # the only non-orthogonal
+    )
+    text = build_conclusion_anchor(receipts, matrix)
+    assert "1 documented cross-receipt tensions" in text  # len(non_orthogonal())
+    assert "3 documented" not in text  # not len(pairs)

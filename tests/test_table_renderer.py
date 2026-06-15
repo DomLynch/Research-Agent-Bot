@@ -314,6 +314,44 @@ def test_table_1_includes_representative_p_value_column() -> None:
     assert "17" in md  # n_claims rendered
 
 
+def test_representative_p_value_coherent_reconciles_null_with_significant_stat() -> None:
+    """A receipt coded direction=null but carrying a significant p-value (off a
+    secondary endpoint) must NOT surface a bare 'p<0.001' that reads as an
+    incoherent 'null; p<0.001'; it is annotated off-summary. A signed-direction
+    receipt with the same stat is left bare (coherent)."""
+    @dataclass
+    class _RNull:
+        effect_direction: str = "null"
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
+
+    @dataclass
+    class _RPos:
+        effect_direction: str = "positive"
+        p_values: tuple[str, ...] = ("p < 0.001",)
+
+    assert tr._representative_p_value_coherent(_RNull()) == "p < 0.001 (off-summary)"
+    assert tr._representative_p_value_coherent(_RPos()) == "p < 0.001"
+
+
+def test_table_1_null_direction_does_not_surface_bare_significant_p_value() -> None:
+    """Integration: the incoherent 'direction=null; p<0.001' pairing from the
+    resveratrol Chen-2015 row must render reconciled in Table 1."""
+    @dataclass
+    class _R:
+        receipt_id: str = "Chen 2015"
+        evidence_tier: str = "A1"
+        directness: str = "direct"
+        outcome_class: str = "cardiometabolic"
+        effect_direction: str = "null"
+        population_summary: str | None = "NAFLD, n=60"
+        canonical_trial_id: str | None = None
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
+        n_claims: int = 5
+
+    md = tr.render_table_1_included_studies([_R()])
+    assert "(off-summary)" in md
+
+
 def test_table_1_falls_back_to_dash_when_no_p_value() -> None:
     """Receipt without p_values → '—' in p-value column (no fabrication)."""
     @dataclass

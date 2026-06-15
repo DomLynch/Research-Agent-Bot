@@ -1027,8 +1027,16 @@ def _section_backstop_context() -> dict[str, object]:
         return _outcome_list_phrase(top)
 
     direct = _count("directness", "direct")
-    indirect = _count("directness", "indirect")
     mechanistic = sum(1 for r in receipts if _is_mechanistic_or_model_system(r))
+    # The 3-bucket abstract tally must PARTITION the corpus so the rendered
+    # numbers sum to receipt_n: "adjacent" absorbs every non-direct,
+    # non-mechanistic receipt (indirect + review + protocol), which were
+    # previously dropped (2 + 17 + 9 read 28 != 33). mechanistic keeps the
+    # broader "mechanistic OR model-system" definition by design (a model-system
+    # study is mechanistic-grade for the headline even if stored directness is
+    # indirect — see test_section_backstop_counts_model_system_sources).
+    _receipt_n = int(manifest.get("n_receipts") or len(receipts))
+    indirect = max(0, _receipt_n - direct - mechanistic)
     return {
         "receipt_n": int(manifest.get("n_receipts") or len(receipts)),
         "claim_n": int(manifest.get("n_high_confidence_claims_total") or 0),

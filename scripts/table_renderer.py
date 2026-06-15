@@ -177,6 +177,22 @@ def _representative_p_value(r: object) -> str:
     return parsed[0][1]
 
 
+def _representative_p_value_coherent(r: object) -> str:
+    """Representative p-value reconciled with the coded direction, for the
+    summary surfaces (Table 1 + the public Evidence Snapshot). A receipt coded
+    direction=null can still carry a significant p-value on a secondary /
+    off-summary endpoint; surfacing that bare value beside "null" reads as an
+    incoherent "null; p<0.001". When that happens, annotate it as off-summary so
+    the summary stays coherent — the dense per-endpoint statistic still lives in
+    Table 2. Mirrors the Table-2 reconciliation (_display_direction/_interpretation)."""
+    stat = _representative_p_value(r)
+    if stat == "—":
+        return stat
+    if str(getattr(r, "effect_direction", "") or "").lower() == "null" and _has_significant_p_value(stat):
+        return f"{stat} (off-summary)"
+    return stat
+
+
 def _n_claims(r: object) -> str:
     """High-confidence-claim count for a receipt."""
     n = getattr(r, "n_claims", None)
@@ -256,7 +272,7 @@ def render_table_1_included_studies(receipts: list) -> str:
             _public_label(getattr(r, "effect_direction", None)),
             _safe(getattr(r, "directness", None), "—"),
             _safe(getattr(r, "canonical_trial_id", None), "—"),
-            _representative_p_value(r),
+            _representative_p_value_coherent(r),
             _n_claims(r),
         ))
     return header + "\n".join(rows) + "\n"
@@ -914,7 +930,7 @@ def render_public_evidence_snapshot(
     else:
         lines.extend(["### Load-Bearing Included Studies", ""])
         for r in ranked:
-            p_value = _representative_p_value(r)
+            p_value = _representative_p_value_coherent(r)
             bits = [
                 _inline_cell(getattr(r, "receipt_id", "—")),
                 f"tier={_inline_cell(getattr(r, 'evidence_tier', '—'))}",

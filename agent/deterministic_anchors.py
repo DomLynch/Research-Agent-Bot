@@ -150,7 +150,10 @@ def build_conclusion_anchor(
     tier_counts: Counter[str] = Counter(r.evidence_tier for r in accepted if r.evidence_tier)
     direct_counts: Counter[str] = Counter(r.directness for r in accepted if r.directness)
     direction_counts: Counter[str] = Counter(r.effect_direction for r in accepted if r.effect_direction)
-    n_tensions = len(matrix.pairs)
+    # Canonical public count = non-orthogonal tensions (== manifest
+    # n_non_orthogonal_tensions), the value every other surface uses. Using
+    # len(matrix.pairs) here leaked the full pairwise count (e.g. 528 vs 86).
+    n_tensions = len(matrix.non_orthogonal())
     n_with_p = sum(1 for r in accepted if r.p_values)
     return "\n\n".join([
         "### Bounded conclusion",

@@ -24,12 +24,28 @@ import unicodedata
 from dataclasses import dataclass
 
 
+# Latin-script letters whose modification is a stroke/slash/ligature have NO
+# NFKD base+combining decomposition, so NFKD leaves them intact and the
+# downstream [^A-Za-z-] strip then DELETES them — corrupting surnames
+# (Ławiński → "awinski", Strømland → "Strmland", Đorđević → "orevic").
+# Transliterate them to an ASCII base first. Standard Unicode→ASCII set,
+# domain-agnostic (any Latin-script author, any field).
+_TRANSLIT = {
+    "Ł": "L", "ł": "l", "Ø": "O", "ø": "o", "Đ": "D", "đ": "d",
+    "Ð": "D", "ð": "d", "Þ": "Th", "þ": "th", "Æ": "Ae", "æ": "ae",
+    "Œ": "Oe", "œ": "oe", "ß": "ss", "Ħ": "H", "ħ": "h",
+    "İ": "I", "ı": "i",
+}
+
+
 def _ascii_fold(text: str) -> str:
-    """NFKD-decompose then strip combining marks. Universal — turns any
-    Latin-script accent into its ASCII base (Hernández → Hernandez,
-    Müller → Muller, École → Ecole). Used so the author-year token in
-    References matches inline citations whatever diacritics the source
-    metadata carries. No per-language table."""
+    """Transliterate stroke/ligature letters, then NFKD-decompose and strip
+    combining marks. Universal — turns any Latin-script letter into its ASCII
+    base (Hernández → Hernandez, Müller → Muller, Ławiński → Lawinski,
+    Strømland → Stromland). Used so the author-year token in References matches
+    inline citations whatever diacritics the source metadata carries, and so a
+    leading non-decomposable letter is never dropped. No per-language table."""
+    text = "".join(_TRANSLIT.get(c, c) for c in text)
     nfkd = unicodedata.normalize("NFKD", text)
     return "".join(c for c in nfkd if not unicodedata.combining(c))
 
@@ -325,6 +341,9 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     )
     if not surname or surname.lower() in _GENERIC_AUTHOR_TOKENS:
         return _title_citation_from_metadata(meta, year_str)
+    # A citation key must never begin lowercase (defense-in-depth if any glyph
+    # still slips through the fold above).
+    surname = surname[:1].upper() + surname[1:]
     return f"{surname} {year_str}"
 
 

@@ -736,8 +736,18 @@ def test_ascii_fold_latin_diacritics() -> None:
     assert cr._ascii_fold("Hernández") == "Hernandez"
     assert cr._ascii_fold("Müller") == "Muller"
     assert cr._ascii_fold("École") == "Ecole"
-    assert cr._ascii_fold("Łukasz") == "Łukasz"  # Ł has no combining decomp
     assert cr._ascii_fold("plain") == "plain"
+
+
+def test_ascii_fold_stroke_and_ligature_letters() -> None:
+    """Stroke/slash/ligature letters have no NFKD base+combining decomposition,
+    so the pre-fix fold left them for the [^A-Za-z-] strip to DELETE — eating
+    the leading char of a surname (Ławiński → 'awinski', Strømland → 'Strmland').
+    They must transliterate to an ASCII base instead."""
+    assert cr._ascii_fold("Ławiński") == "Lawinski"
+    assert cr._ascii_fold("Strømland") == "Stromland"
+    assert cr._ascii_fold("Đorđević") == "Dordevic"
+    assert cr._ascii_fold("Håkansson") == "Hakansson"  # combining path still OK
 
 
 def test_body_citation_from_metadata_preserves_diacritic_surname() -> None:
@@ -747,3 +757,11 @@ def test_body_citation_from_metadata_preserves_diacritic_surname() -> None:
     meta = {"year": 2024, "authors": ["María Hernández"]}
     cite = cr._body_citation_from_metadata(meta)
     assert cite == "Hernandez 2024", cite
+
+
+def test_body_citation_from_metadata_stroke_surname_not_lowercase() -> None:
+    """Regression for 'awinski 2025': a stroke-letter surname (Ławiński) must
+    yield 'Lawinski 2025', and no citation key may begin lowercase."""
+    cite = cr._body_citation_from_metadata({"year": 2025, "authors": ["Paweł Ławiński"]})
+    assert cite == "Lawinski 2025", cite
+    assert not cite[0].islower()
