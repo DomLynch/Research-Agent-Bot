@@ -131,8 +131,16 @@ def abstract_direction_mismatches(paper_md: str, manifest: Mapping[str, Any]) ->
     return tuple(issues)
 
 
+def _body_before_references(paper_md: str) -> str:
+    """Paper text up to the References block. The bibliography repeats source
+    TITLES whose verbs (e.g. "... improves ...") are not directional CLAIMS
+    about the source's result, so direction checks must exclude it."""
+    refs = re.search(r"^##\s+References\b", paper_md, re.MULTILINE)
+    return paper_md[: refs.start()] if refs else paper_md
+
+
 def metadata_prose_direction_mismatches(paper_md: str, manifest: Mapping[str, Any]) -> tuple[dict[str, str], ...]:
-    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])|\n\n+", paper_md)
+    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])|\n\n+", _body_before_references(paper_md))
     issues: list[dict[str, str]] = []
     for receipt in manifest.get("receipts", ()):
         if not isinstance(receipt, dict):
@@ -162,5 +170,81 @@ def metadata_prose_direction_mismatches(paper_md: str, manifest: Mapping[str, An
                     "prose": observed,
                     "evidence": sentence.strip()[:180],
                 })
+                break
+    return tuple(issues)
+
+
+# Aggregate/anaphora overclaim patterns — universal English, no topic tokens.
+_ALL_POSITIVE_RE = re.compile(
+    r"\bpositive\b[^.]*\b(?:both|all|each|every)\b"
+    r"|\b(?:both|all|each|every)\b[^.]*\bpositive\b",
+    re.IGNORECASE,
+)
+_NO_NULL_OR_NEGATIVE_RE = re.compile(
+    r"\bno\b[^.]*\b(?:source|sources|study|studies)\b[^.]*\b(?:null|negative|adverse)\b"
+    r"|\bno\b[^.]*\b(?:null|negative|adverse)\b[^.]*\b(?:effect|finding|signal|result)s?\b",
+    re.IGNORECASE,
+)
+
+
+def _outcome_section(paper_md: str, outcome_label: str) -> str:
+    """Body of the Results subsection whose heading names this outcome class."""
+    pattern = re.compile(
+        rf"^#{{2,4}}\s+[^\n]*{re.escape(outcome_label)}[^\n]*\n(.*?)(?=^#{{1,4}}\s|\Z)",
+        re.IGNORECASE | re.MULTILINE | re.DOTALL,
+    )
+    match = pattern.search(paper_md)
+    return match.group(1) if match else ""
+
+
+def outcome_prose_direction_mismatches(
+    paper_md: str, manifest: Mapping[str, Any],
+) -> tuple[dict[str, str], ...]:
+    """Per-outcome-class direction OVERCLAIMS: prose asserting a stronger
+    directional consensus than the class's receipts support. Two universal
+    patterns, read against the receipts' coded effect_direction only (no topic
+    or domain tokens):
+      - an all-positive claim ("positive ... for both/all") in a sentence that
+        does not itself acknowledge a null/negative result, when the class
+        contains a non-positive receipt;
+      - an absence-of-null/negative claim ("no source ... null or negative")
+        when the class contains a null- or negative-coded receipt.
+    These are the unambiguous prose-vs-receipt contradictions; the per-token
+    metadata_prose check stays advisory."""
+    by_outcome: dict[str, Counter] = defaultdict(Counter)
+    for receipt in manifest.get("receipts", ()):
+        if not isinstance(receipt, dict):
+            continue
+        outcome = str(receipt.get("outcome_class") or "").strip()
+        if outcome:
+            by_outcome[outcome][normalize_direction(receipt.get("effect_direction"))] += 1
+
+    issues: list[dict[str, str]] = []
+    for outcome, counts in by_outcome.items():
+        has_non_positive = sum(n for d, n in counts.items() if d != "positive") > 0
+        has_null_or_negative = counts["null"] + counts["negative"] > 0
+        if not (has_non_positive or has_null_or_negative):
+            continue
+        label = outcome_display(outcome).lower()
+        section = _outcome_section(paper_md, label)
+        if not section:
+            continue
+        profile = ", ".join(f"{d}x{n}" for d, n in sorted(counts.items()))
+        for sentence in re.split(r"(?<=[.!?])\s+", section):
+            text = sentence.strip()
+            if (
+                has_non_positive
+                and _ALL_POSITIVE_RE.search(text)
+                and not _NULL_RE.search(text)
+                and not _NEGATIVE_RE.search(text)
+            ):
+                issues.append({"outcome": label, "claim": "all_positive",
+                               "directions": profile, "evidence": text[:180]})
+                break
+        for sentence in re.split(r"(?<=[.!?])\s+", section):
+            text = sentence.strip()
+            if has_null_or_negative and _NO_NULL_OR_NEGATIVE_RE.search(text):
+                issues.append({"outcome": label, "claim": "no_null_or_negative",
+                               "directions": profile, "evidence": text[:180]})
                 break
     return tuple(issues)

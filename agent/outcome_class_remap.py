@@ -32,18 +32,23 @@ OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
     "dosing_pharmacokinetics": ("Dosing and Pharmacokinetics", ("dosing pharmacokinetics",), ("dose", "dosing", "pharmacokinetic")),
     "frailty": ("Frailty", (), ()),
     "healthspan_qol": ("Healthspan and Quality of Life", ("healthspan qol", "quality of life"), ()),
-    "immune": ("Immune", (), ()),
-    "immune_inflammation": ("Immune and Inflammation", ("immune inflammation",), ("inflammation", "immune", "sepsis", "infection", "cytokine")),
+    # "immune" is merged into immune_inflammation (same domain) so a corpus
+    # does not fragment into two singleton sections; outcome_key canonicalizes
+    # both ids to immune_inflammation.
+    "immune_inflammation": ("Immune and Inflammation", ("immune inflammation", "immune"), ("inflammation", "immune", "sepsis", "infection", "cytokine")),
     "longevity": ("Longevity", (), ()),
     "mechanism": ("Mechanism", (), ()),
     "mortality_survival": ("Mortality and Survival", ("mortality survival",), ("mortality", "survival", "death", "cause_specific_death")),
-    "muscle_function": ("Muscle Function", (), ()),
+    "muscle_function": ("Muscle Function", (), ("muscle", "sarcopenia", "myopathy")),
     "oncology": ("Oncology", (), ()),
     "ophthalmologic": ("Ophthalmologic", (), ()),
     "other": ("Other", (), ()),
     "safety": ("Safety", (), ()),
     "safety_comorbidity": ("Safety and Comorbidity", ("safety comorbidity",), ("safety", "adverse", "kidney", "chronic", "comorbidity")),
-    "skeletal_fracture_bone": ("Skeletal, Fracture, and Bone", ("skeletal fracture bone", "bone fracture"), ("bone", "fracture", "osteoporosis", "calcium", "skeletal")),
+    # NB: bare "skeletal" was dropped — it substring-matched "skeletal muscle",
+    # mis-filing muscle papers as bone. muscle_function (above, earlier in dict
+    # order) now claims those via its "muscle" needle.
+    "skeletal_fracture_bone": ("Skeletal, Fracture, and Bone", ("skeletal fracture bone", "bone fracture"), ("bone", "fracture", "osteoporosis", "calcium")),
 }
 
 BIOMEDICAL_OTHER_OUTCOME_RULES: tuple[tuple[str, tuple[str, ...]], ...] = tuple(

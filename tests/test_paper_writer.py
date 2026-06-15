@@ -201,11 +201,11 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
         topic="caloric_restriction", chain=(),
     ))
 
-    assert "### Immune Outcomes" in section.body_md
+    assert "### Immune and Inflammation Outcomes" in section.body_md
     assert "### Longevity Outcomes" in section.body_md
     assert "r-longevity" not in prompts[0]
     assert "r-immune" not in prompts[1]
-    immune_body = section.body_md.split("### Immune Outcomes", 1)[1].split("###", 1)[0]
+    immune_body = section.body_md.split("### Immune and Inflammation Outcomes", 1)[1].split("###", 1)[0]
     assert "lifespan" not in immune_body
 
 
@@ -228,7 +228,7 @@ def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
         receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
         submission_id="thin-test", chain=(), review_type="thin_corpus_brief",
     ))
-    assert "### Immune Outcomes" in md and "### Longevity Outcomes" in md
+    assert "### Immune and Inflammation Outcomes" in md and "### Longevity Outcomes" in md
     assert "## Introduction" not in md and all(s.name != "inferential_bridge" for s in sections)
 
 

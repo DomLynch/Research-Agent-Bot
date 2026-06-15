@@ -1089,7 +1089,7 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
 
     assert "### Source Outcome-Class Map" in fixed
     assert "- Smith 2024: outcome=Cardiometabolic; directness=direct; tier=A1." in fixed
-    assert "- Jones 2025: outcome=Immune; directness=review; tier=B1." in fixed
+    assert "- Jones 2025: outcome=Immune and Inflammation; directness=review; tier=B1." in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 

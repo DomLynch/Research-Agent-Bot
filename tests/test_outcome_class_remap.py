@@ -217,6 +217,36 @@ def test_refine_other_keeps_genuine_pharmacokinetics() -> None:
     assert refine_other_outcome_class(receipt, "other") == "dosing_pharmacokinetics"
 
 
+def test_refine_other_does_not_misfile_skeletal_muscle_as_bone() -> None:
+    """'Skeletal muscle' must route to muscle_function, not the bone class —
+    the bare 'skeletal' needle previously substring-matched it as bone."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Treadmill exercise alleviates methylglyoxal-induced skeletal muscle dysfunction",
+        population_summary="aged mice",
+    )
+    result = refine_other_outcome_class(receipt, "other")
+    assert result != "skeletal_fracture_bone"
+    assert result == "muscle_function"
+
+
+def test_refine_other_keeps_genuine_bone_as_bone() -> None:
+    """A genuine bone-outcome study still routes to the bone class."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Effect of the intervention on bone fracture risk and osteoporosis",
+        population_summary="postmenopausal women",
+    )
+    assert refine_other_outcome_class(receipt, "other") == "skeletal_fracture_bone"
+
+
+def test_immune_and_immune_inflammation_canonicalize_together() -> None:
+    """The two near-duplicate immune classes collapse to one canonical key so a
+    corpus does not fragment into two singleton sections."""
+    assert outcome_key("immune") == outcome_key("immune_inflammation")
+    assert outcome_key("immune") == "immune_inflammation"
+
+
 def test_dosing_pharmacokinetics_needles_carry_no_topic_specific_compounds() -> None:
     """Universal-no-hardcoding: the dosing class must not bake in topic-specific
     drug/compound names (e.g. vitamin-D forms) — those belong in topic packs,

@@ -307,10 +307,14 @@ def build_results_from_parsed(
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
-    receipt_outcomes = {r.receipt_id: r.outcome_class for r in accepted}
+    # Group/resolve on the CANONICAL outcome key (outcome_key) so near-duplicate
+    # classes (e.g. "immune" vs "immune_inflammation") collapse to one section,
+    # matching the finalizer's _outcome_key routing. Idempotent for classes that
+    # are already canonical.
+    receipt_outcomes = {r.receipt_id: outcome_key(r.outcome_class) for r in accepted}
     by_outcome: dict[str, list[ReceiptSummary]] = {}
     for receipt in accepted:
-        by_outcome.setdefault(receipt.outcome_class, []).append(receipt)
+        by_outcome.setdefault(outcome_key(receipt.outcome_class), []).append(receipt)
     corpus_norm = _accepted_corpus_norm(accepted)
     body_lines: list[str] = ["## Results", ""]
     outcome_bodies: dict[str, list[str]] = {}

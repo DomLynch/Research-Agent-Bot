@@ -804,8 +804,10 @@ def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() 
     finally:
         orch._ACTIVE_MANIFEST = old_manifest
 
+    # "immune" now canonicalizes to immune_inflammation, so the two receipts
+    # collapse to one class (no duplicate "immune and immune and inflammation").
     assert "immune and immune and inflammation" not in md
-    assert "negative signals cluster in the immune, immune and inflammation outcome classes" in md
+    assert "the immune and inflammation outcome class" in md
 
 
 def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -> None:

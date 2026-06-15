@@ -49,6 +49,7 @@ from pathlib import Path
 from direction_consistency import (
     abstract_direction_mismatches,
     metadata_prose_direction_mismatches,
+    outcome_prose_direction_mismatches,
 )
 
 __all__ = ["ConsistencyIssue", "run_audit", "main"]
@@ -707,6 +708,35 @@ def _check_directness_coding(manifest: dict) -> list[ConsistencyIssue]:
     return issues
 
 
+def _check_outcome_direction_overclaim(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """C20: prose that overclaims an outcome class's direction relative to its
+    receipts' coded effect_direction ("positive for both" / "no source reported
+    null or negative" when the class contains a null/negative receipt) is a hard
+    prose-vs-data contradiction. Unlike the advisory per-token C19, this is a
+    publish blocker (P1) — the verifiable record must not refute the narrative."""
+    issues: list[ConsistencyIssue] = []
+    for idx, mismatch in enumerate(
+        outcome_prose_direction_mismatches(paper, manifest), start=1,
+    ):
+        issues.append(ConsistencyIssue(
+            id=f"C20-outcome-direction-overclaim-{idx}",
+            severity="P1",
+            issue_type="outcome_direction_overclaim",
+            auto_fixable=False,
+            evidence=mismatch["evidence"],
+            suggested_fix=(
+                f"Prose for the {mismatch['outcome']} outcome class overstates "
+                f"direction ({mismatch['claim']}) versus its receipts "
+                f"(directions: {mismatch['directions']}). Restate to match the "
+                "coded effect_direction — acknowledge the null/negative source — "
+                "before publication."
+            ),
+        ))
+    return issues
+
+
 def run_audit(
     paper_md: str, manifest: dict, audit: dict, audit_md_text: str = "",
     *, registry: dict | None = None, run_dir: Path | None = None,
@@ -740,6 +770,7 @@ def run_audit(
     issues.extend(_check_metadata_prose_direction_consistency(
         paper_md, manifest,
     ))
+    issues.extend(_check_outcome_direction_overclaim(paper_md, manifest))
     issues.extend(_check_broken_paper_id_citations(paper_md))
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
     issues.extend(_check_background_lit_unsourced(paper_md, manifest))  # Fix #16

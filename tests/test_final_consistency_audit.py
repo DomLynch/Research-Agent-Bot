@@ -113,6 +113,42 @@ def test_direction_consistency_issues_are_advisory_not_publish_blocking() -> Non
     assert not [i for i in direction_issues if i.severity == "P1"]
 
 
+def _cardiometabolic_split_manifest() -> dict:
+    return {
+        "receipts": [
+            {"receipt_id": "A 2022", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+            {"receipt_id": "B 2015", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+        ],
+    }
+
+
+def test_outcome_direction_overclaim_is_publish_blocking_p1() -> None:
+    """A per-class direction overclaim vs the receipts (positive-for-both / no
+    null-or-negative while the class carries a null receipt) is a P1 ship
+    blocker, distinct from the advisory C19."""
+    paper = (
+        "## Results\n\n### Cardiometabolic Outcomes\n\n"
+        "The source-traced numerics support a positive direction of effect for "
+        "both pieces of evidence. No source in this outcome class reported a "
+        "null or negative effect.\n\n## References\n\n- **B 2015.** A trial.\n"
+    )
+    issues = audit.run_audit(paper, _cardiometabolic_split_manifest(), _empty_audit())
+    overclaim = [i for i in issues if i.issue_type == "outcome_direction_overclaim"]
+    assert overclaim, "expected an outcome_direction_overclaim issue"
+    assert all(i.severity == "P1" for i in overclaim)
+
+
+def test_honest_outcome_prose_is_not_overclaim_blocked() -> None:
+    """Honest per-class prose that acknowledges the null source must NOT raise
+    the P1 overclaim block (guards against false ship-blocks)."""
+    paper = (
+        "## Results\n\n### Cardiometabolic Outcomes\n\n"
+        "One source reported a positive effect and one reported a null effect.\n"
+    )
+    issues = audit.run_audit(paper, _cardiometabolic_split_manifest(), _empty_audit())
+    assert not [i for i in issues if i.issue_type == "outcome_direction_overclaim"]
+
+
 def test_duplicate_references_section_is_p1() -> None:
     """## References appearing twice = duplicate section bug."""
     paper = (
