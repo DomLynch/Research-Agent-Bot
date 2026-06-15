@@ -83,10 +83,18 @@ _SPECIES_HUMAN_TOKENS: tuple[str, ...] = (
     "children",
 )
 _SPECIES_ANIMAL_TOKENS: tuple[str, ...] = (
-    "mouse", "mice", "rat", "rats", "c. elegans", "c elegans",
-    "worm", "worms", "yeast", "drosophila", "fly", "flies",
-    "monkey", "monkeys", "non-human primate", "marmoset", "marmosets",
-    "dog", "dogs", "rabbit", "rabbits",
+    "mouse", "mice", "murine", "rat", "rats", "rodent", "rodents",
+    "c. elegans", "c elegans", "nematode", "nematodes",
+    "worm", "worms", "yeast", "drosophila", "fly", "flies", "zebrafish",
+    "monkey", "monkeys", "macaque", "macaques", "baboon", "baboons",
+    "non-human primate", "nonhuman primate", "marmoset", "marmosets",
+    "dog", "dogs", "rabbit", "rabbits", "hamster", "hamsters",
+    "guinea pig", "fox", "foxes", "vulpes",
+    "broiler", "broilers", "chicken", "chickens", "poultry", "fowl",
+    "avian", "cow", "cows", "cattle", "bovine",
+    "pig", "pigs", "piglet", "piglets", "porcine", "swine",
+    "sheep", "ovine", "goat", "goats", "caprine",
+    "horse", "horses", "equine",
 )
 
 # Design markers — STRONG (high-precision) vs WEAK (broader, lower
