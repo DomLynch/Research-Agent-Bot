@@ -147,7 +147,11 @@ def load_registry(
 
 
 _KIND_PHRASE: dict[str, str] = {
-    "threshold": "canonical clinical reference values",
+    # Domain-neutral: the registry is biomedical at launch but the
+    # platform is topic-agnostic, so the rendered label must not assume a
+    # clinical domain. "reference values" covers clinical cutoffs, physical
+    # constants, economic baselines, etc. equally.
+    "threshold": "canonical reference values",
     "reference": "methodological references",
 }
 

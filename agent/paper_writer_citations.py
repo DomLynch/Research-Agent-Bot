@@ -44,8 +44,8 @@ def build_background_lit_block(entries: Sequence[Any] | None) -> str:
         "citation_token in the SAME sentence as the numeric. If you",
         "use the numeric without the citation_token, the audit gates",
         "WILL strip the sentence. Entries marked (methodological",
-        "reference) are NOT clinical thresholds — do not present them as",
-        "numeric cutoffs.",
+        "reference) are NOT numeric thresholds — do not present them as",
+        "cutoffs.",
         "",
     ]
     for e in entries:

@@ -45,10 +45,10 @@ def intervention_label(
     Effects'). This returns the compound NAME: the leading slug token plus
     any trailing compound DESIGNATORS (short suffixes like 'a'/'d', or
     alphanumerics with a digit like 'q10'), dropping full-word ASPECT
-    tokens ('metabolism', 'effects', 'longevity', 'aging'). So
-    'resveratrol_metabolism_effects' → 'resveratrol', but 'urolithin_a' →
-    'urolithin a' and 'coenzyme_q10' → 'coenzyme q10'. Token-shape based,
-    universal — no aspect-word list, no per-topic table. `root` is
+    tokens (e.g. 'metabolism'/'effects' in biomed, 'efficiency'/'pricing'
+    in other domains). So 'resveratrol_metabolism_effects' → 'resveratrol',
+    but 'urolithin_a' → 'urolithin a' and 'coenzyme_q10' → 'coenzyme q10'.
+    Token-shape based, universal — no aspect-word list, no per-topic table. `root` is
     accepted for call-site parity with `humanize_topic`."""
     raw = str(topic or "").strip()
     if not raw:

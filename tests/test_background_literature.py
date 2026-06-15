@@ -190,10 +190,10 @@ def test_entry_is_frozen_kw_only() -> None:
         context="",
     )
     with pytest.raises(Exception):  # FrozenInstanceError
-        e.numeric = "0.9 m/s"
+        e.numeric = "0.9 m/s"  # type: ignore[misc]
     # kw_only enforcement: positional construction fails
     with pytest.raises(TypeError):
-        bg.BackgroundLitEntry(  # type: ignore[call-arg]
+        bg.BackgroundLitEntry(  # type: ignore[misc]
             "x", "0.8 m/s", "ctx", "Studenski 2011", "ref",
         )
 
@@ -332,12 +332,12 @@ def test_seed_entry_kind_typing() -> None:
 
 def test_background_kinds_phrase_matches_the_data() -> None:
     assert bg.background_kinds_phrase({"threshold"}) == (
-        "Canonical clinical reference values"
+        "Canonical reference values"
     )
     assert bg.background_kinds_phrase({"reference"}) == (
         "Methodological references"
     )
     assert bg.background_kinds_phrase({"threshold", "reference"}) == (
-        "Canonical clinical reference values and methodological references"
+        "Canonical reference values and methodological references"
     )
     assert bg.background_kinds_phrase(set()) == "Background references"
