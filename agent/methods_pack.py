@@ -121,8 +121,7 @@ def build_methods_pack(
     rob = rob_method or (
         "Per-source risk-of-bias was rated using design-appropriate "
         "Cochrane RoB-2 (RCTs), ROBINS-I (non-randomised studies), and "
-        "AMSTAR-2 (systematic reviews / meta-analyses). Ratings recorded "
-        "in `risk_of_bias.json`."
+        "AMSTAR-2 (systematic reviews / meta-analyses)."
     )
     return MethodsPack(
         review_type=review_type,

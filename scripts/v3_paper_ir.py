@@ -387,6 +387,42 @@ def _quality_score(ir: PaperIR, paper: str, receipts: list[dict[str, Any]], tens
     return {"schema": "researka.paper_quality_score.v1", "score_out_of_100": round(100 * sum(checks.values()) / len(checks), 1), "checks": checks}
 
 
+def reresolve_export_manifest(run_dir: Path) -> bool:
+    """Re-point public_export_manifest.json at post-organize file locations.
+
+    The manifest is written by compile_run BEFORE _organize_run_artifacts
+    relocates appraisal sidecars into audit/, so a recorded bare path can go
+    stale (the file is no longer top-level yet `exists` stays True) and the
+    public bundle then drops the populated sidecar — the reader shows
+    "not appraised". Re-resolve any recorded path that no longer exists to its
+    audit/ location. Idempotent; fail-open. Returns True if anything changed."""
+    path = run_dir / "public_export_manifest.json"
+    try:
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    files = manifest.get("files")
+    if not isinstance(files, dict):
+        return False
+    changed = False
+    for entry in files.values():
+        if not isinstance(entry, dict):
+            continue
+        rel = str(entry.get("path") or "")
+        if not rel or (run_dir / rel).exists():
+            continue
+        audit_rel = f"audit/{rel.rsplit('/', 1)[-1]}"
+        if (run_dir / audit_rel).exists():
+            entry["path"], entry["exists"] = audit_rel, True
+            changed = True
+        elif entry.get("exists"):
+            entry["exists"] = False
+            changed = True
+    if changed:
+        path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    return changed
+
+
 def _export_manifest(run_dir: Path, ir: PaperIR, score: dict[str, Any]) -> dict[str, Any]:
     # Appraisal sidecars are public artifacts, but _organize_run_artifacts
     # relocates them into audit/; resolve either location so the public

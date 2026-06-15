@@ -209,6 +209,13 @@ def _organize_run_artifacts(run_dir: Path) -> dict[str, str]:
                     dest.unlink()
             src.rename(dest)
             moved[name] = str(dest.relative_to(run_dir))
+    # The export manifest was written before this relocation; re-point any
+    # appraisal sidecar that moved into audit/ so the public bundle ships the
+    # populated file instead of a stale top-level path (reader "not appraised").
+    try:
+        _paper_ir.reresolve_export_manifest(run_dir)
+    except Exception:
+        pass
     return moved
 
 

@@ -166,3 +166,25 @@ def test_public_bundle_copies_v3_export_sidecars_when_present(tmp_path: Path) ->
     assert (out / "paper_ir.json").is_file()
     assert (out / "paper.docx").is_file()
     assert (out / "evidence_table.csv").is_file()
+
+
+def test_reresolve_export_manifest_repoints_sidecar_moved_to_audit(tmp_path) -> None:
+    """A sidecar relocated into audit/ after the manifest was written must be
+    re-pointed (path -> audit/..., exists True) so the public bundle ships the
+    populated file rather than a stale top-level path."""
+    (tmp_path / "public_export_manifest.json").write_text(json.dumps({
+        "schema": "researka.public_exports.v1",
+        "files": {
+            "risk_of_bias": {"path": "risk_of_bias.json", "exists": True},  # stale
+            "paper_ir": {"path": "paper_ir.json", "exists": True},
+        },
+    }), encoding="utf-8")
+    (tmp_path / "paper_ir.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "audit").mkdir()
+    (tmp_path / "audit" / "risk_of_bias.json").write_text("[]", encoding="utf-8")
+
+    assert ir.reresolve_export_manifest(tmp_path) is True
+    files = json.loads((tmp_path / "public_export_manifest.json").read_text())["files"]
+    assert files["risk_of_bias"] == {"path": "audit/risk_of_bias.json", "exists": True}
+    assert files["paper_ir"]["path"] == "paper_ir.json"  # unchanged
+    assert ir.reresolve_export_manifest(tmp_path) is False  # idempotent
