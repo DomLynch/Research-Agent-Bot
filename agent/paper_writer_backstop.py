@@ -239,7 +239,14 @@ async def apply_section_backstop(
             floor = AUDIT_GATED_FLOORS.get(sec_name, 800)
             if words >= floor:
                 continue
-            anchor_md = anchor_fn(accepted, matrix)
+            # Assemble the whole paper so the anchor can drop its generic
+            # hedge when that framing is already present (cross-section +
+            # re-run dedup); recomputed each iteration so a later section
+            # sees an earlier section's just-appended anchor.
+            existing_text = "\n\n".join(
+                s.body_md for s in sections.values() if s is not None
+            )
+            anchor_md = anchor_fn(accepted, matrix, existing_text=existing_text)
             if not anchor_md:
                 continue
             new_body = cur.body_md.rstrip() + "\n\n" + anchor_md + "\n"

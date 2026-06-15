@@ -175,3 +175,47 @@ def test_conclusion_anchor_uses_non_orthogonal_tension_count() -> None:
     text = build_conclusion_anchor(receipts, matrix)
     assert "1 documented cross-receipt tensions" in text  # len(non_orthogonal())
     assert "3 documented" not in text  # not len(pairs)
+
+
+# ---- #8: cross-section hedge dedup (no duplicated meta-hedge) ----------
+
+
+def test_discussion_anchor_keeps_structural_drops_hedge_when_marker_present():
+    """#8: when the conservative-framing hedge is already in the paper, the
+    discussion anchor emits only its corpus-derived structural block."""
+    from agent.deterministic_anchors import CONSERVATIVE_FRAMING_MARKER
+    receipts = [_r("a"), _r("b")]
+    fresh = build_discussion_anchor(receipts, _matrix())
+    assert "### Interpretation constraints" in fresh
+    assert CONSERVATIVE_FRAMING_MARKER in fresh
+
+    deduped = build_discussion_anchor(
+        receipts, _matrix(),
+        existing_text=f"...{CONSERVATIVE_FRAMING_MARKER}...",
+    )
+    assert "### Evidence Summary" in deduped          # structural kept
+    assert "### Interpretation constraints" not in deduped  # hedge dropped
+    assert len(deduped) < len(fresh)
+
+
+def test_conclusion_anchor_drops_hedge_once_discussion_added_it():
+    """#8: the generic hedge appears at most once across discussion +
+    conclusion — the conclusion keeps its corpus counts but not a second
+    copy of the conservative-framing hedge."""
+    from agent.deterministic_anchors import CONSERVATIVE_FRAMING_MARKER
+    receipts = [_r("a"), _r("b")]
+    disc = build_discussion_anchor(receipts, _matrix())
+    concl = build_conclusion_anchor(receipts, _matrix(), existing_text=disc)
+    assert "### Bounded conclusion" in concl          # structural kept
+    assert CONSERVATIVE_FRAMING_MARKER not in concl   # hedge skipped
+    # Across both sections the marker appears exactly once.
+    assert (disc + "\n" + concl).count(CONSERVATIVE_FRAMING_MARKER) == 1
+
+
+def test_anchor_hedge_is_idempotent_on_rerun():
+    """Re-running the backstop must not stack a second hedge copy."""
+    from agent.deterministic_anchors import CONSERVATIVE_FRAMING_MARKER
+    receipts = [_r("a"), _r("b")]
+    first = build_discussion_anchor(receipts, _matrix())
+    second = build_discussion_anchor(receipts, _matrix(), existing_text=first)
+    assert CONSERVATIVE_FRAMING_MARKER not in second
