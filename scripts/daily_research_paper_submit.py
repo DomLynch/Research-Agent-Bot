@@ -688,6 +688,22 @@ def _seen(path: Path) -> set[str]:
     return out
 
 
+def _seen_topics(path: Path) -> set[str]:
+    """Topics recorded in a ledger file (submitted/revision). Complements
+    `_seen`, which keys on content/identity fingerprints: a re-synthesized run
+    of an already-submitted topic carries a fresh fingerprint, so topic-level
+    dedup is needed to avoid re-sending a paper Researka already has pending."""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return set()
+    return {
+        str(row["topic"])
+        for row in (data if isinstance(data, list) else [])
+        if isinstance(row, dict) and isinstance(row.get("topic"), str) and row["topic"]
+    }
+
+
 def _append_record(path: Path, row: dict[str, Any]) -> None:
     records = []
     try:
@@ -730,6 +746,8 @@ def select_candidate(
     local_seen = _seen(submitted_path)
     rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
     revision_seen = _seen(submitted_path.with_name(REVISION_FINGERPRINTS))
+    submitted_topics = _seen_topics(submitted_path)
+    revision_topics = _seen_topics(submitted_path.with_name(REVISION_FINGERPRINTS))
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
@@ -772,6 +790,18 @@ def select_candidate(
             # re-submit of an already-published topic. A genuine revision
             # (changed content, same title) falls through and is allowed.
             ok, status = False, "duplicate_remote_publication"
+        elif (
+            ok
+            and topic in submitted_topics
+            and topic not in revision_topics
+            and not revision
+        ):
+            # Already submitted to Researka and still pending (not published,
+            # not revise-requested): a re-synthesized run carries a fresh
+            # fingerprint so the content checks above miss it, but Researka
+            # dedups on the pending submission and returns duplicate_submission.
+            # Skip it so the cycle spends the window on a genuinely new topic.
+            ok, status = False, "topic_already_submitted_pending"
         if locally_eligible:
             seen_topics.add(topic)
         row = {"run": run.name, "fingerprint": fp, "status": status}
@@ -1456,8 +1486,12 @@ def run_cycle_capped(
 
     Each underlying `run_cycle` re-selects via the submitted-fingerprints
     file, so successive calls return the next distinct topic (a submitted
-    fingerprint is excluded on the following pass). Stops early on the
-    first non-submit terminal status (no_eligible / rejected / failed).
+    fingerprint is excluded on the following pass). A candidate that was
+    consumed — submitted, or recorded as rejected/revise-requested so the
+    next pass skips it — does NOT stop the cycle; the loop moves on to the
+    next ready candidate so one duplicate rejection cannot stall the window.
+    It stops only on a no-progress terminal status (no_eligible /
+    remote_dedupe_failed / submit_not_configured / submission_failed).
 
     `max_submissions <= 1` is an exact passthrough to `run_cycle` — same
     ledger shape, same behaviour, no extra remote-dedupe fetches — so the
@@ -1487,7 +1521,14 @@ def run_cycle_capped(
         })
         if n and first_candidate is None:
             first_candidate = last.get("candidate")
-        if last.get("status") != "submitted_to_researka":
+        # Continue past a consumed candidate (published, or recorded as
+        # rejected/revise-requested so the next pass skips it); stop only when
+        # there is no further progress to make this window.
+        if last.get("status") not in {
+            "submitted_to_researka",
+            "submission_rejected_by_researka",
+            "submission_revise_requested",
+        }:
             break
     agg = dict(last)
     agg["submitted"] = total

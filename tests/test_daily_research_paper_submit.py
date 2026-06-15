@@ -884,6 +884,53 @@ def test_duplicate_fingerprint_is_not_resubmitted(tmp_path: Path) -> None:
     assert ledger["considered"][0]["status"] == "duplicate_submission_fingerprint"
 
 
+def test_already_submitted_pending_topic_is_not_resubmitted(tmp_path: Path) -> None:
+    """A re-synthesized run of a topic already submitted to Researka (still
+    pending — not published, not revise-requested) must be skipped: its fresh
+    content fingerprint dodges the content-level dedup, but Researka dedups on
+    the pending submission and returns duplicate_submission, so re-sending just
+    burns the window. Topic-level skip prevents it."""
+    _run(tmp_path)  # topic "topic"
+    _write_json(
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        [{"topic": "topic", "fingerprint": "sha256:earlier-different-content"}],
+    )
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-15",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("pending topic must not be resubmitted")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "topic_already_submitted_pending"
+
+
+def test_already_submitted_topic_still_allows_revision(tmp_path: Path) -> None:
+    """The pending-topic skip must NOT block a genuine revision: a run carrying
+    a researka_revision_request is still submitted even though its topic is in
+    the submitted ledger."""
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json",
+                {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
+    _write_json(
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        [{"topic": "topic", "fingerprint": "sha256:earlier-different-content"}],
+    )
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-15",
+        submit=True,
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_researka_rejection_records_and_skips_same_paper(tmp_path: Path) -> None:
     _run(tmp_path)
 
@@ -1350,3 +1397,26 @@ def test_run_cycle_capped_stops_on_no_eligible(tmp_path: Path, monkeypatch) -> N
     assert out["status"] == "submitted_to_researka"
     assert out["candidate"]["run"] == "r1"
     assert len(calls) == 2
+
+
+def test_run_cycle_capped_continues_past_rejection(tmp_path: Path, monkeypatch) -> None:
+    """A duplicate/rejection consumes a candidate but must NOT stall the cycle:
+    the loop proceeds to the next ready candidate within the cap and still
+    lands the publish. (Before: any non-submit status broke the loop, so a
+    single duplicate rejection blocked every other ready paper that window.)"""
+    seq = iter([
+        {"status": "submission_rejected_by_researka", "submitted": 0, "published": 0, "candidate": {"run": "dup"}},
+        {"status": "submitted_to_researka", "submitted": 1, "published": 0, "candidate": {"run": "new", "topic": "b"}},
+    ])
+    calls: list[dict] = []
+
+    def _fake(**kw: Any) -> dict:
+        calls.append(kw)
+        return next(seq)
+
+    monkeypatch.setattr(daily, "run_cycle", _fake)
+    out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-15", submit=True, max_submissions=2)
+    assert len(calls) == 2  # the rejection did not stop the loop
+    assert out["submitted"] == 1
+    assert out["status"] == "submitted_to_researka"
+    assert out["candidate"]["run"] == "new"
