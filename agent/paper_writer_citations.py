@@ -37,17 +37,24 @@ def build_background_lit_block(entries: Sequence[Any] | None) -> str:
         return ""
     lines = [
         "",
-        "ALLOWED BACKGROUND CITATIONS (canonical clinical thresholds):",
+        "ALLOWED BACKGROUND CITATIONS (canonical reference values and "
+        "methodological citations):",
         "These are pre-vetted background-context numerics. You MAY use",
         "any of these IF AND ONLY IF you include the corresponding",
         "citation_token in the SAME sentence as the numeric. If you",
         "use the numeric without the citation_token, the audit gates",
-        "WILL strip the sentence.",
+        "WILL strip the sentence. Entries marked (methodological",
+        "reference) are NOT clinical thresholds — do not present them as",
+        "numeric cutoffs.",
         "",
     ]
     for e in entries:
+        kind_note = (
+            " (methodological reference)"
+            if getattr(e, "kind", "threshold") == "reference" else ""
+        )
         lines.append(
-            f"  - numeric: {e.numeric!r}\n"
+            f"  - numeric: {e.numeric!r}{kind_note}\n"
             f"    citation_token: {e.citation_token!r} "
             f"(use exactly this string in the same sentence)\n"
             f"    context: {e.context}"

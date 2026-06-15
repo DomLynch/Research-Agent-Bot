@@ -304,3 +304,40 @@ def test_is_table_dominated_helper() -> None:
     assert bg._is_table_dominated(mixed_table_heavy) is True  # 4/5
     assert bg._is_table_dominated(mixed_prose_heavy) is False  # 1/4
     assert bg._is_table_dominated("") is False  # empty
+
+
+# ---- #6: background-ref typing + Schulz fabrication removal -------------
+
+
+def test_seed_registry_drops_fabricated_schulz_attrition() -> None:
+    """#6: rct_attrition_typical attributed a fabricated '20%' attrition
+    statistic to Schulz 2010 (CONSORT 2010 states no such figure). It must
+    not be in the seed registry — guards the fabrication from re-entering."""
+    reg = bg.load_registry(topic="__none__")
+    offenders = [
+        e for e in reg.values()
+        if e.citation_token == "Schulz 2010" and e.numeric == "20%"
+    ]
+    assert offenders == []
+
+
+def test_seed_entry_kind_typing() -> None:
+    """#6: methodological references carry kind='reference'; numeric
+    thresholds default to kind='threshold' — so code can label by kind
+    instead of stamping every entry a 'clinical threshold'."""
+    reg = bg.load_registry(topic="__none__")
+    assert reg["surrogate_endpoint_caution"].kind == "reference"
+    assert reg["gait_speed_frailty_cutoff"].kind == "threshold"
+
+
+def test_background_kinds_phrase_matches_the_data() -> None:
+    assert bg.background_kinds_phrase({"threshold"}) == (
+        "Canonical clinical reference values"
+    )
+    assert bg.background_kinds_phrase({"reference"}) == (
+        "Methodological references"
+    )
+    assert bg.background_kinds_phrase({"threshold", "reference"}) == (
+        "Canonical clinical reference values and methodological references"
+    )
+    assert bg.background_kinds_phrase(set()) == "Background references"

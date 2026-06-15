@@ -8,21 +8,25 @@ References listed only the corpus receipts → public reader sees
 from __future__ import annotations
 
 import sys
-from dataclasses import dataclass
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import run_v06_synthesis as orch  # noqa: E402
+from agent.synthesis_schemas import ReceiptSummary  # noqa: E402
 
 
-@dataclass(frozen=True)
-class _Receipt:
-    receipt_id: str = "Walton_2019_MASTERS"
-    source_year: int | None = 2019
-    source_title: str | None = "Test Title"
-    source_venue: str | None = "Test Journal"
-    source_doi: str | None = "10.0000/test"
-    source_pmid: str | None = None
+def _receipt(**kw: object) -> ReceiptSummary:
+    base: dict = dict(
+        receipt_id="Walton_2019_MASTERS", receipt_path="/tmp/x", topic="t",
+        thesis_text="", spar_verdict="accept_clean", n_claims=1,
+        n_failed_traces=0, canonical_trial_id=None, evidence_tier="A1",
+        directness="direct", outcome_class="metabolic_health",
+        effect_direction="positive", p_values=(), population_summary="",
+        source_year=2019, source_title="Test Title", source_venue="Test Journal",
+        source_doi="10.0000/test", source_pmid=None,
+    )
+    base.update(kw)
+    return ReceiptSummary(**base)
 
 
 def test_background_refs_subsection_appears_when_citation_in_prose() -> None:
@@ -35,7 +39,7 @@ def test_background_refs_subsection_appears_when_citation_in_prose() -> None:
         "(Studenski 2011).\n\n"
     )
     out = orch._append_references_block(
-        paper, [_Receipt()], registry=None,
+        paper, [_receipt()], registry=None,
     )
     assert "## References" in out
     assert "### Background References" in out
@@ -51,7 +55,7 @@ def test_background_refs_omitted_when_no_bglit_in_prose() -> None:
         "Pure corpus content. No background-lit tokens here.\n\n"
     )
     out = orch._append_references_block(
-        paper, [_Receipt()], registry=None,
+        paper, [_receipt()], registry=None,
     )
     assert "## References" in out
     assert "### Background References" not in out
@@ -67,7 +71,7 @@ def test_background_refs_de_duplicate_by_token() -> None:
         "0.6 m/s (Cesari 2009).\n\n"
     )
     out = orch._append_references_block(
-        paper, [_Receipt()], registry=None,
+        paper, [_receipt()], registry=None,
     )
     # Each unique citation_token in the prose appears EXACTLY once
     # in the Background References list (avoid duplication when the
@@ -87,13 +91,30 @@ def test_background_refs_include_canonical_reference_text() -> None:
         "Walk-speed below 0.8 m/s (Studenski 2011) signals frailty.\n"
     )
     out = orch._append_references_block(
-        paper, [_Receipt()], registry=None,
+        paper, [_receipt()], registry=None,
     )
     bg_block = out.split("### Background References")[1]
     # Studenski's seed entry has 'Studenski et al. JAMA 2011' as the
     # canonical_reference (per docs/background_literature.json)
     assert "Studenski" in bg_block
     assert "JAMA" in bg_block or "2011" in bg_block
+
+
+def test_methodological_reference_labeled_not_threshold() -> None:
+    """#6: a kind='reference' entry (Ioannidis 2005) is annotated as a
+    methodological reference, and the caption no longer claims every
+    background entry is a 'clinical threshold'."""
+    paper = (
+        "## Discussion\n\n"
+        "Surrogate associations do not guarantee hard-outcome validity "
+        "(Ioannidis 2005).\n"
+    )
+    out = orch._append_references_block(paper, [_receipt()], registry=None)
+    bg_block = out.split("### Background References")[1]
+    assert "Ioannidis 2005" in bg_block
+    assert "(methodological reference)" in bg_block
+    # The mislabel ("clinical thresholds cited in prose") is gone.
+    assert "clinical thresholds cited in prose" not in out.lower()
 
 
 def test_used_background_lit_entries_helper_returns_used_only() -> None:

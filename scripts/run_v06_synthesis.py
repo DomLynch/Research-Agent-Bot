@@ -2473,10 +2473,12 @@ def _append_references_block(
     # Fix #30: background-literature references used in prose
     used_bglit = _used_background_lit_entries(paper_md)
     if used_bglit:
+        kinds = {getattr(e, "kind", "threshold") for e in used_bglit}
+        kinds_phrase = _bglit.background_kinds_phrase(kinds)
         lines.extend([
             "### Background References",
             "",
-            "*Canonical clinical thresholds cited in prose. Each "
+            f"*{kinds_phrase} cited in prose. Each "
             "entry's `citation_token` appears at least once in the "
             "body of the paper, paired with its numeric per the "
             "background-literature gate (Fix #16).*",
@@ -2490,6 +2492,8 @@ def _append_references_block(
             bg_parts = [f"- **{entry.citation_token}.**"]
             if ref_clean:
                 bg_parts.append(f"_{ref_clean}._")
+            if getattr(entry, "kind", "threshold") == "reference":
+                bg_parts.append("(methodological reference)")
             if entry.doi:
                 bg_parts.append(f"DOI: {entry.doi}.")
             if entry.pmid:

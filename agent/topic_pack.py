@@ -114,6 +114,11 @@ class BackgroundLiteratureEntry:
     canonical_reference: str
     doi: str | None = None
     pmid: str | None = None
+    # See scripts/background_literature.BackgroundLitEntry.kind —
+    # "threshold" (clinical cutoff / reference value) vs "reference"
+    # (methodological / reporting citation). Defaulted so existing packs
+    # that omit it still load.
+    kind: str = "threshold"
 
 
 @dataclass(frozen=True, slots=True)
@@ -407,6 +412,7 @@ def load_topic_pack_data(data: dict, path: str | Path = "<topic-pack-data>") -> 
             canonical_reference=row["canonical_reference"],
             doi=row.get("doi"),
             pmid=row.get("pmid"),
+            kind=row.get("kind", "threshold"),
         )
         for row in bg_lit_raw
         if all(k in row for k in (

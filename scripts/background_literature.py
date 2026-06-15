@@ -52,6 +52,12 @@ class BackgroundLitEntry:
     canonical_reference: str  # full reference (Author. Year. Title. Journal)
     doi: str | None = None
     pmid: str | None = None
+    # Categorical entry kind. "threshold" = a clinical decision cutoff /
+    # canonical reference value (gait speed, HbA1c target, BMI band);
+    # "reference" = a methodological / reporting citation that is NOT a
+    # threshold (e.g. a surrogate-endpoint caution). Code must label by
+    # this field, never assume every entry is a "clinical threshold".
+    kind: str = "threshold"
 
 
 def load_registry(
@@ -102,6 +108,7 @@ def load_registry(
                 ),
                 doi=v.get("doi"),
                 pmid=v.get("pmid"),
+                kind=v.get("kind", "threshold"),
             )
     # Merge topic pack entries (override globals on key clash;
     # topic packs are more specific so they win).
@@ -129,6 +136,7 @@ def load_registry(
                         ),
                         doi=entry.doi,
                         pmid=entry.pmid,
+                        kind=getattr(entry, "kind", "threshold"),
                     )
         except (ImportError, OSError, ValueError) as e:
             print(
@@ -136,6 +144,22 @@ def load_registry(
                 file=__import__("sys").stderr,
             )
     return out
+
+
+_KIND_PHRASE: dict[str, str] = {
+    "threshold": "canonical clinical reference values",
+    "reference": "methodological references",
+}
+
+
+def background_kinds_phrase(kinds: set[str]) -> str:
+    """Sentence-case phrase describing the kinds of background entries
+    actually present, so a rendered caption matches the data instead of
+    hardcoding 'clinical thresholds'. Universal — kinds are categorical,
+    not topic words."""
+    present = [_KIND_PHRASE[k] for k in ("threshold", "reference") if k in kinds]
+    phrase = " and ".join(present) if present else "background references"
+    return phrase[0].upper() + phrase[1:]
 
 
 def numeric_values(registry: dict[str, BackgroundLitEntry]) -> set[str]:
