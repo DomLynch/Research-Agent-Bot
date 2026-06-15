@@ -33,6 +33,47 @@ def humanize_topic(topic: str, *, title_case: bool = False, root: Path | None = 
     return " ".join(words) or ("Research Synthesis" if title_case else "the topic")
 
 
+def intervention_label(
+    topic: str, *, title_case: bool = False, root: Path | None = None,
+) -> str:
+    """The intervention / compound ENTITY ('resveratrol', 'vitamin d',
+    'NAD+') — distinct from the humanized topic PHRASE (`humanize_topic`,
+    used for the title).
+
+    The slug doubles as both the title-phrase and, wrongly, the compound
+    noun in prose ('the candidate compound Resveratrol Metabolism
+    Effects'). This returns the compound NAME: the leading slug token plus
+    any trailing compound DESIGNATORS (short suffixes like 'a'/'d', or
+    alphanumerics with a digit like 'q10'), dropping full-word ASPECT
+    tokens ('metabolism', 'effects', 'longevity', 'aging'). So
+    'resveratrol_metabolism_effects' → 'resveratrol', but 'urolithin_a' →
+    'urolithin a' and 'coenzyme_q10' → 'coenzyme q10'. Token-shape based,
+    universal — no aspect-word list, no per-topic table. `root` is
+    accepted for call-site parity with `humanize_topic`."""
+    raw = str(topic or "").strip()
+    if not raw:
+        return "the intervention"
+    tokens = _compound_name_tokens(raw)
+    rendered = [_display_token(t, title_case=title_case) for t in tokens]
+    return " ".join(rendered) or "the intervention"
+
+
+def _compound_name_tokens(raw: str) -> list[str]:
+    """Leading token + trailing compound designators (≤2 chars, or
+    contains a digit). The first full-word token after the head is an
+    aspect, not part of the compound name, and ends the run."""
+    tokens = [t for t in re.split(r"[_\s-]+", raw) if t]
+    if not tokens:
+        return []
+    out = [tokens[0]]
+    for tok in tokens[1:]:
+        if len(tok) <= 2 or any(c.isdigit() for c in tok):
+            out.append(tok)
+        else:
+            break
+    return out
+
+
 def _topic_pack_alias(topic: str, root: Path) -> str:
     pack_path = root / "topic_packs" / f"{topic}.toml"
     if not pack_path.exists():

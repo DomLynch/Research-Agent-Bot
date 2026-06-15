@@ -28,7 +28,7 @@ from collections import Counter, defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 
-from agent.topic_display import humanize_topic
+from agent.topic_display import humanize_topic, intervention_label
 from agent.outcome_class_remap import outcome_key
 from direction_consistency import repair_abstract_direction_summary
 
@@ -199,7 +199,12 @@ def _normalize_public_topic_slug(
     if not topic or ("_" not in topic and topic not in {"glp1", "omega3"}):
         return paper_md, 0
     body, tail = _split_public_body(paper_md)
-    display = _topic_display_name(topic)
+    # A raw underscore slug leaking into prose is a COMPOUND-NOUN position
+    # ("studies of resveratrol_metabolism_effects"), so replace it with the
+    # intervention entity ('Resveratrol', 'Urolithin A') — the compound
+    # name, not the multi-token topic phrase that includes aspect words.
+    repo = Path(__file__).resolve().parent.parent
+    display = intervention_label(topic, title_case=True, root=repo)
     pattern = re.compile(rf"\b{re.escape(topic)}\b", re.IGNORECASE)
     body, n = pattern.subn(display, body)
     return body + tail, n

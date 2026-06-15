@@ -463,3 +463,20 @@ def test_conclusion_prompt_retains_overclaim_guard() -> None:
     from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
     assert "extends lifespan" in CONCLUSION_SYSTEM_PROMPT  # in the do-NOT list
     assert "unhedged clinical claim" in CONCLUSION_SYSTEM_PROMPT.lower()
+
+
+def test_writer_prompts_frame_intervention_entity_not_topic_phrase() -> None:
+    """#7: paper_writer feeds intervention_label(topic) — not the raw slug
+    or the multi-token humanized phrase — into the {topic} slot of the
+    section prompts, so the LLM names the compound ('resveratrol'), never
+    'the candidate compound Resveratrol Metabolism Effects'."""
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    from agent.topic_display import intervention_label
+    entity = intervention_label("resveratrol_metabolism_effects")
+    assert entity == "resveratrol"
+    blob = " ".join(
+        format_prompts_for_topic(topic=entity, drug_class="polyphenol").values()
+    )
+    assert "resveratrol" in blob.lower()
+    assert "resveratrol_metabolism_effects" not in blob
+    assert "Resveratrol Metabolism Effects" not in blob

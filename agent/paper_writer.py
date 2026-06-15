@@ -43,7 +43,7 @@ from agent.synthesis_schemas import (
     TensionMatrix,
 )
 from agent.synthesis_writer import filter_accepted
-from agent.topic_display import humanize_topic
+from agent.topic_display import humanize_topic, intervention_label
 
 # Day 10.16c — per-section word-count budgets enforced AT CODE LEVEL.
 # Prompts ask for length; this dict defines the floors that the writer
@@ -388,7 +388,7 @@ async def write_results_section(
     except (ImportError, OSError, ValueError):
         pass
     _results_prompt = format_prompts_for_topic(
-        topic=topic, drug_class=drug_class,
+        topic=intervention_label(topic, root=_repo), drug_class=drug_class,
     )["results"]
     fallback = "## Results\n\nAccepted receipts contain source-traced quantitative evidence; per-receipt details remain in the evidence brief and deterministic tables.\n"
     floor = SECTION_WORD_FLOORS.get("results", 0)
@@ -528,7 +528,7 @@ async def render_full_paper(
     except (ImportError, OSError, ValueError):
         pass
     _prompts = format_prompts_for_topic(
-        topic=topic, drug_class=drug_class,
+        topic=intervention_label(topic, root=_repo), drug_class=drug_class,
     )
     user = _build_user_prompt(
         accepted, rejected, matrix, thesis, topic=topic,
