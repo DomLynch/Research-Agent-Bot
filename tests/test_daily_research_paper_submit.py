@@ -759,6 +759,55 @@ def test_source_topic_precision_counts_static_hrt_aliases(tmp_path: Path, monkey
     assert status == "source_topic_precision_ok:2/3"
 
 
+def test_source_topic_precision_entity_rescue_compound_topic(tmp_path: Path, monkeypatch) -> None:
+    """Compound-topic blocker fix: the per-source gate requires EVERY
+    specificity token, so a corpus whose titles name the entity but rarely a
+    secondary axis term (resveratrol present, "metabolism" sparse) scores below
+    the 0.50 floor even though every source is about the named entity. The
+    entity rescue counts the dominant-entity (non-drift) sources. Pins the fix
+    so future matcher tightening cannot silently re-block compound topics."""
+    run = _run(tmp_path / "runs", name="synthesis-resveratrol_metabolism_effects-v06-test")
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "resveratrol_metabolism_effects"
+    manifest["receipts"] = [
+        {"receipt_id": "r1", "source_title": "Resveratrol supplementation improves glucose tolerance in adults"},
+        {"receipt_id": "r2", "source_title": "Trans-resveratrol and treadmill exercise on lipid profile"},
+        {"receipt_id": "r3", "source_title": "Efficacy of resveratrol on glucose and lipid metabolism"},
+        {"receipt_id": "r4", "source_title": "Resveratrol-coated metal oxide electrode for a supercapacitor"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ok, status = daily._source_topic_precision(run)
+
+    # Strict precision is 1/4 (only r3 carries both "resveratrol" + "metabolism").
+    # The rescue admits r1/r2/r3 (entity in a biomedical, non-drift title) and
+    # excludes r4 (non-biomed drift: metal/oxide/electrode/supercapacitor).
+    assert ok
+    assert status == "source_topic_precision_ok:3/4:entity=resveratrol"
+
+
+def test_source_topic_precision_entity_rescue_skips_drifted_corpus(tmp_path: Path, monkeypatch) -> None:
+    """The rescue does not paper over a genuinely off-entity corpus: when the
+    dominant entity is named in too few titles, the run stays blocked."""
+    run = _run(tmp_path / "runs", name="synthesis-epigenome_editing_longevity-v06-test")
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "epigenome_editing_longevity"
+    manifest["receipts"] = [
+        {"receipt_id": "r1", "source_title": "Supercapacitor electrode material performance"},
+        {"receipt_id": "r2", "source_title": "Plant genetics of flowering time"},
+        {"receipt_id": "r3", "source_title": "Glucose transporter expression in muscle"},
+        {"receipt_id": "r4", "source_title": "Locus-specific epigenome editing for longevity"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ok, status = daily._source_topic_precision(run)
+
+    assert not ok
+    assert status == "source_topic_precision_low:1/4<0.50"
+
+
 def test_recency_ratio_blocks_old_source_bundle() -> None:
     # 2/5 of dated entries are 2020+ -> below the 0.50 floor (Researka would
     # reject at intake). Computed over the published bundle, so the padded

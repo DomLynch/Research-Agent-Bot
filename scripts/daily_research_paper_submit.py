@@ -25,7 +25,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from source_topic_specificity import (  # noqa: E402
-    is_source_topic_specific, source_gate_aliases, topic_aliases, topic_tokens,
+    BIOMED_ANCHORS, DRIFT_RESCUE_ANCHORS, NON_BIOMED_DRIFT,
+    _specificity_token, is_source_topic_specific, source_gate_aliases,
+    topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.topic_display import humanize_topic  # noqa: E402
@@ -443,6 +445,61 @@ def _topic_tokens(topic: str) -> list[str]:
     return topic_tokens(topic)
 
 
+def _receipt_haystack(row: dict[str, Any]) -> str:
+    return " ".join(
+        str(row.get(key) or "")
+        for key in (
+            "receipt_id", "paper_id", "citation_token",
+            "source_title", "source_doi", "source_pmid",
+        )
+    ).lower()
+
+
+def _entity_rescue(tokens: list[str], haystacks: list[str]) -> tuple[int, str | None]:
+    """Corpus-dominant-entity rescue for compound topics.
+
+    The per-source gate (`is_source_topic_specific`) requires EVERY specificity
+    token, so a focused corpus whose titles name the entity but rarely a
+    secondary axis term (e.g. "resveratrol_metabolism": titles say
+    "resveratrol", seldom "metabolism") scores below the floor even though every
+    source is about the named entity. The entity is the specificity token
+    covering the most receipt titles; count the sources that name it in a
+    biomedical (non-drift) context. Returns (rescued_hits, entity | None).
+
+    Additive by construction: callers apply it only when the strict ratio is
+    already below the floor, so it can never demote a run; the drift guard
+    (mirrors `is_source_topic_specific`) keeps off-domain sources out.
+    """
+    specific = [
+        token for token in (_specificity_token(tok) for tok in tokens)
+        if token not in BIOMED_ANCHORS
+    ]
+    if not specific:
+        return 0, None
+    title_tokens = [
+        {
+            _specificity_token(tok)
+            for tok in re.findall(r"[a-z0-9]+", haystack)
+            if len(tok) > 2
+        }
+        for haystack in haystacks
+    ]
+    coverage = {token: sum(token in tt for tt in title_tokens) for token in specific}
+    entity = max(specific, key=lambda token: coverage[token])
+    rescued = 0
+    for haystack, present in zip(haystacks, title_tokens):
+        if entity not in present:
+            continue
+        drift = any(term in haystack for term in NON_BIOMED_DRIFT)
+        # Rescue anchors match whole words only: a substring check would let the
+        # "rat" anchor fire inside "resve(rat)rol", neutering the drift guard.
+        rescue_words = set(re.findall(r"[a-z0-9]+", haystack)) & DRIFT_RESCUE_ANCHORS
+        if drift and not rescue_words:
+            continue
+        rescued += 1
+    return rescued, entity
+
+
 def _source_topic_precision(run: Path) -> tuple[bool, str]:
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or _run_topic(run))
@@ -455,18 +512,17 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
     aliases = source_gate_aliases(
         topic, topic_aliases(topic, root=base, include_generated_terms=False),
     )
-    hits = 0
-    for row in rows:
-        haystack = " ".join(
-            str(row.get(key) or "")
-            for key in ("receipt_id", "paper_id", "citation_token")
-            + ("source_title", "source_doi", "source_pmid")
-        ).lower()
-        hits += int(is_source_topic_specific(topic, haystack, aliases=aliases))
-    ratio = hits / len(rows)
-    if ratio < SOURCE_TOPIC_PRECISION_FLOOR:
-        return False, f"source_topic_precision_low:{hits}/{len(rows)}<{SOURCE_TOPIC_PRECISION_FLOOR:.2f}"
-    return True, f"source_topic_precision_ok:{hits}/{len(rows)}"
+    haystacks = [_receipt_haystack(row) for row in rows]
+    hits = sum(is_source_topic_specific(topic, h, aliases=aliases) for h in haystacks)
+    n = len(rows)
+    if hits / n >= SOURCE_TOPIC_PRECISION_FLOOR:
+        return True, f"source_topic_precision_ok:{hits}/{n}"
+    # Below the floor: a compound topic may be entity-focused but axis-sparse in
+    # titles. Rescue on the corpus-dominant entity (non-drift) before blocking.
+    rescued, entity = _entity_rescue(tokens, haystacks)
+    if entity is not None and rescued / n >= SOURCE_TOPIC_PRECISION_FLOOR:
+        return True, f"source_topic_precision_ok:{rescued}/{n}:entity={entity}"
+    return False, f"source_topic_precision_low:{hits}/{n}<{SOURCE_TOPIC_PRECISION_FLOOR:.2f}"
 
 
 def _recency_ratio_status(payload: dict[str, Any]) -> str:
