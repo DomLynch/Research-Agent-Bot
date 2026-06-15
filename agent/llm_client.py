@@ -491,14 +491,31 @@ def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
     )
 
 
-def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """SPAR judge chain: Gemma 4 (primary) → MiniMax (fallback) → Mistral.
-
-    Different cognitive style than `build_extract_chain` — judges
-    benefit from a stronger reasoning model. Empty-api_key specs are
-    skipped at call time so a partial-config env still produces output.
+def _model_family(model: str) -> str:
+    """Coarse provider/family key for a model id, used to keep the SPAR judge
+    in a different family than the writer. ``vendor/model`` -> vendor
+    (``google/gemma-4-31b-it`` -> ``google``); a bare id -> its leading token
+    (``MiniMax-M3`` -> ``minimax``).
     """
-    return (
+    m = model.strip().lower()
+    if not m:
+        return ""
+    return m.split("/", 1)[0] if "/" in m else m.split("-", 1)[0]
+
+
+def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
+    """SPAR judge chain: Gemma 4 (primary) → Mistral (fallback).
+
+    Trust-spine rule — *judge != writer*: a model cannot independently grade
+    its own output, so the judge chain must never contain the writer/extractor
+    family (``settings.minimax_model``). Any writer-family spec is dropped —
+    including a misconfigured primary — so a provider outage can never silently
+    route judging back to the writer. Non-writer specs with empty api_keys are
+    kept (``chat_json`` skips them at call time). Raises if no non-writer judge
+    model remains.
+    """
+    writer_family = _model_family(settings.minimax_model)
+    candidates = (
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
@@ -521,3 +538,11 @@ def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
+    chain = tuple(c for c in candidates if _model_family(c.model) != writer_family)
+    if not chain:
+        raise ValueError(
+            "build_judge_chain: no judge model outside the writer family "
+            f"{writer_family!r}; set JUDGE_MODEL/FALLBACK_MODEL to a different "
+            "family than the writer (never let a model grade its own output)."
+        )
+    return chain
