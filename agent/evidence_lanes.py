@@ -49,6 +49,7 @@ def derive_lane(
     title: str | None = None,
     venue: str | None = None,
     population: str | None = None,
+    source_excerpt: str | None = None,
 ) -> str:
     """Map a receipt's (tier, directness, source-text) triple to one
     of the six canonical lanes. Universal — no per-topic table.

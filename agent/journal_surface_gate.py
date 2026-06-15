@@ -20,14 +20,17 @@ def _fold(text: str) -> str:
 # evidence prose without species framing is a journal desk-reject
 # class. Universal keyword set — no per-topic table; covers organism
 # names + veterinary-journal markers.
+# Keep aligned with scripts/evidence_taxonomy._SPECIES_ANIMAL_TOKENS
+# (the population classifier) so the two species signals don't drift.
 _ANIMAL_KEYWORD_RE = re.compile(
     r"\b("
     r"mice|murine|mouse|rats?|rodents?|"
     r"equids?|equine|horses?|"
-    r"primates?|monkeys?|macaques?|baboons?|"
-    r"dogs?|canine|cats?|feline|"
+    r"primates?|monkeys?|macaques?|baboons?|marmosets?|"
+    r"dogs?|canine|cats?|feline|rabbits?|hamsters?|"
     r"swine|porcine|piglets?|pigs?|"
-    r"sheep|ovine|cattle|bovine|"
+    r"sheep|ovine|goats?|caprine|cattle|bovine|"
+    r"foxe?s?|vulpes|broilers?|chickens?|poultry|fowl|avian|"
     r"zebrafish|c\.\s*elegans|drosophila|yeast|nematodes?|"
     r"veterinary|preclinical|animal\s+model"
     r")\b",

@@ -2081,6 +2081,57 @@ def _load_receipt_candidate_paper_ids() -> set[str] | None:
     return (active or set()) | classified
 
 
+# Floor below which the population gate never prunes — a corpus this
+# small cannot afford to lose receipts even if some are off-population.
+_POPULATION_GATE_FLOOR = 12
+
+
+def _interventional_grade(r: ReceiptSummary) -> bool:
+    """Human-interventional-grade by the canonical tier taxonomy
+    (A1=RCT, A2=human surrogate, directness=direct). Animal/model-system
+    sources never carry these, so this is a safe never-prune exemption."""
+    return r.directness == "direct" or r.evidence_tier in ("A1", "A2")
+
+
+def _enforce_population_coherence(
+    typed: list[tuple[ReceiptSummary, str]],
+    high_papers: set[str],
+) -> list[ReceiptSummary]:
+    """Relative, self-calibrating corpus population-coherence gate.
+
+    When a corpus's high-confidence / interventional core is clearly
+    human-dominant, drop off-population (animal) background receipts that
+    are not interventional-grade — so an arctic-fox PK study or a
+    broiler-chicken cohort cannot anchor an outcome class in a human-
+    aging synthesis. Self-calibrating: an animal-dominant corpus
+    (veterinary, model-organism, C. elegans) is not human-dominant, so
+    its animal sources are left untouched. Floor-guarded so it can never
+    starve a synthesis. Universal — population is read from species
+    vocabulary, never from topic words (no denylist, no per-domain rule)."""
+    receipts = [r for r, _ in typed]
+    if len(receipts) < _POPULATION_GATE_FLOOR:
+        return receipts
+    core = [
+        pop for r, pop in typed
+        if r.receipt_id in high_papers or _interventional_grade(r)
+    ]
+    n_human = core.count("human")
+    n_animal = core.count("animal")
+    # Activate only when the unambiguous spine is clearly human. A tie or
+    # animal-leaning core → leave the corpus intact (fail-open).
+    if n_human < 3 or n_human <= n_animal:
+        return receipts
+    kept = [
+        r for r, pop in typed
+        if pop != "animal" or _interventional_grade(r)
+    ]
+    # Never starve: if pruning drops below the floor (or prunes nothing),
+    # keep the full set.
+    if len(kept) < _POPULATION_GATE_FLOOR or len(kept) == len(receipts):
+        return receipts
+    return kept
+
+
 def build_receipts_from_quant_claims(
     topic: str,
 ) -> list[ReceiptSummary]:
@@ -2095,7 +2146,6 @@ def build_receipts_from_quant_claims(
     per-paper primary numerics. Partial-only papers get tier downgraded
     to B2 (review) so downstream code treats them appropriately. Closes
     the vitamin_d 2-receipt starvation: 84 extracted → 65 receipts."""
-    receipts: list[ReceiptSummary] = []
     paper_meta_by_id = _load_paper_meta_by_id()
     active_paper_ids = _load_receipt_candidate_paper_ids()
     paper_class_map = _load_paper_class_map()
@@ -2121,11 +2171,13 @@ def build_receipts_from_quant_claims(
             elif conf == "partial" and in_keep_class:
                 by_paper[pid].append(c)
 
+    typed: list[tuple[ReceiptSummary, str]] = []
     for paper_id, claims in by_paper.items():
         if not claims:
             continue
         meta = paper_meta_by_id.get(paper_id, {})
-        if not is_source_topic_specific(topic, _receipt_topic_identity(paper_id, meta, claims), aliases=aliases):
+        identity = _receipt_topic_identity(paper_id, meta, claims)
+        if not is_source_topic_specific(topic, identity, aliases=aliases):
             continue
         if _is_retracted_source(meta) or not _receipt_mentions_active_topic(topic, meta, claims):
             continue
@@ -2167,14 +2219,15 @@ def build_receipts_from_quant_claims(
             source_pmid=meta.get("pmid"),
             source_venue=meta.get("journal"),
         )
-        receipts.append(dataclasses.replace(
+        receipt = dataclasses.replace(
             receipt,
             outcome_class=refine_other_outcome_class(
                 receipt, receipt.outcome_class,
             ),
-        ))
-    receipts.sort(key=lambda r: -r.n_claims)
-    return receipts
+        )
+        typed.append((receipt, _taxonomy.population_of(identity)))
+    typed.sort(key=lambda rp: -rp[0].n_claims)
+    return _enforce_population_coherence(typed, high_papers)
 
 
 def build_thesis(
