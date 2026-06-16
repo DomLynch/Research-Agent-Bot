@@ -1009,7 +1009,21 @@ def select_topic(
     fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
     candidates = fresh_candidates or candidates
     pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
-    return min(pool, key=lambda topic: (-_publication_score(topic, ledger_dir, runs_root), -_topic_support_score(topic), _attempted_at(topic, ledger_dir), topic))
+    # Frontier-advance: a never-attempted topic outranks any already-attempted
+    # one, so the cycle works through the untried publish-ready backlog instead
+    # of orbiting a handful of already-worked topics (whose prior pass-rate +
+    # large corpus otherwise let them win every cycle, then dedup at submit).
+    # Within each group the existing order still applies — publication score,
+    # then fact support, then least-recently attempted. Revisiting proven
+    # topics is the revise cycle's job, not the fresh cycle's.
+    untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
+    return min(pool, key=lambda topic: (
+        0 if topic in untried else 1,
+        -_publication_score(topic, ledger_dir, runs_root),
+        -_topic_support_score(topic),
+        _attempted_at(topic, ledger_dir),
+        topic,
+    ))
 
 
 def _topic_status_map(

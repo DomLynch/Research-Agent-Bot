@@ -392,7 +392,11 @@ def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatc
     assert selected == "caloric_restriction"
 
 
-def test_select_topic_scores_prior_l4_topic_over_plain_publication_track(tmp_path: Path, monkeypatch) -> None:
+def test_select_topic_prefers_untried_over_prior_l4_to_advance_frontier(tmp_path: Path, monkeypatch) -> None:
+    """Frontier-advance: a never-attempted publish-ready topic outranks a
+    re-run of an already-worked one, so the cycle works through the untried
+    backlog instead of orbiting a handful of proven topics. (Was: prior-L4
+    preferred — that preference is what stalled the new-topic frontier.)"""
     _topic(tmp_path, "caloric_restriction", target_journal=True)
     _topic(tmp_path, "metformin", target_journal=True)
     _prior_run(tmp_path, "metformin", receipts=40, tensions=5, level=4)
@@ -404,7 +408,28 @@ def test_select_topic_scores_prior_l4_topic_over_plain_publication_track(tmp_pat
         runs_root=tmp_path / "runs",
     )
 
-    assert selected == "metformin"
+    assert selected == "caloric_restriction"  # untried beats the re-run
+
+
+def test_select_topic_falls_back_to_score_when_all_attempted(tmp_path: Path, monkeypatch) -> None:
+    """Steady state (NOT the orbit bug): once every publish-ready candidate has
+    been attempted, the untried-first flag is uniform, so selection falls back
+    to the existing order — the higher-pass-rate topic wins. The bug was never
+    reaching fresh topics; preferring a proven topic among already-tried ones is
+    correct."""
+    _topic(tmp_path, "caloric_restriction", target_journal=True)
+    _topic(tmp_path, "metformin", target_journal=True)
+    _prior_run(tmp_path, "caloric_restriction", receipts=8, tensions=1, level=1)
+    _prior_run(tmp_path, "metformin", receipts=40, tensions=5, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["caloric_restriction", "metformin"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "metformin"  # all tried → higher-pass-rate wins
 
 
 def test_select_topic_prefers_more_fact_supported_publication_track_topic(tmp_path: Path, monkeypatch) -> None:
@@ -2340,6 +2365,10 @@ def test_cycle_does_not_let_stale_thin_manifest_block_healthy_corpus(tmp_path: P
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
     _prior_run(tmp_path, "aaa_thin_topic", receipts=6, tensions=0, primary=0)
+    # Both topics already attempted, so the new untried-first selection rule is
+    # uniform and the existing alphabetical tiebreak (aaa < zzz) still picks the
+    # thin-manifest topic — this test asserts that topic is NOT blocked.
+    _prior_run(tmp_path, "zzz_solid_topic", receipts=40, tensions=5, primary=3)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
@@ -2379,6 +2408,11 @@ def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path
     _topic(tmp_path, "aaa_mega_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
     _prior_run(tmp_path, "aaa_mega_topic", receipts=600, tensions=60_000, primary=10)
+    # Both topics already attempted, so untried-first is uniform and the
+    # alphabetical tiebreak selects the overbroad aaa_mega_topic first — it gets
+    # preflight-rejected ("split topic"), and the cycle falls back to the
+    # healthy (non-overbroad) zzz_solid_topic.
+    _prior_run(tmp_path, "zzz_solid_topic", receipts=40, tensions=5, primary=3)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     topics: list[str] = []
