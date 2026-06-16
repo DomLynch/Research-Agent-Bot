@@ -361,6 +361,38 @@ def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path) -
 
 
 def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monkeypatch) -> None:
+    """The 21-day cooldown rate-limits re-submission of a topic that was
+    submitted but is NOT published (pending/rejected): after the window it is
+    selectable again. remote_seen is empty here — the topic is not published."""
+    _topic(tmp_path, "aerobic_exercise", target_journal=True)
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    old = dt.datetime.now(dt.UTC) - dt.timedelta(days=cycle.PUBLISHED_TOPIC_COOLDOWN_DAYS + 1)
+    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": old.isoformat(),
+        "topic": "aerobic_exercise",
+        "fingerprint": "sha256:abc",
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["aerobic_exercise"],
+        ledger_dir,
+        runs_root=runs_root,
+        remote_seen=set(),  # not published → only the submission cooldown applies
+    )
+
+    assert selected == "aerobic_exercise"
+
+
+def test_select_topic_skips_published_topic_even_after_cooldown(tmp_path: Path, monkeypatch) -> None:
+    """A topic whose paper is ALREADY PUBLISHED (its title is in the remote
+    published set) must NOT be re-selected by the fresh cycle even once the
+    submission cooldown lapses: a fresh non-revision re-run of a published title
+    always dedups at submit (duplicate_remote_publication), wasting the
+    synthesis. Updating a published paper is the revise cycle's job. Regression
+    for the 2026-06 stall where telomere_effects (published) was re-selected
+    every cycle and dedup'd, yielding published=0 for days."""
     _topic(tmp_path, "aerobic_exercise", target_journal=True)
     runs_root = tmp_path / "runs"
     ledger_dir = runs_root / cycle.LEDGER_DIR
@@ -379,7 +411,7 @@ def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monk
         remote_seen={"title:researka agent-certified evidence brief: aerobic exercise and human geroscience"},
     )
 
-    assert selected == "aerobic_exercise"
+    assert selected is None  # published → permanently excluded from the fresh cycle
 
 
 def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatch) -> None:

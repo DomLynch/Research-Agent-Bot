@@ -581,11 +581,23 @@ def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.dat
 
 
 def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | None = None) -> set[str]:
+    """Topics the fresh cycle must skip: (1) recently re-submitted ones still in
+    cooldown (rate-limit, expires), and (2) ALREADY-PUBLISHED ones (permanent).
+
+    The remote-title exclusion was previously gated on `ledger_dir is None`, but
+    select_topic — the only caller — always passes a ledger_dir, so that branch
+    never ran: published topics were excluded only while their submission
+    cooldown held, then became re-selectable, re-synthesized, and dedup'd at
+    submit (a fresh non-revision re-run of a published title always returns
+    duplicate_remote_publication). Applying the remote-published exclusion
+    unconditionally stops the cycle burning synthesis on already-published
+    topics. Universal — keys on the run's own deterministic topic->title, no
+    topic terms. Re-publishing an updated paper is the revise cycle's job."""
     out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
     title_markers = [m.removeprefix("title:") for m in markers if m.startswith("title:")]
     for topic in topics:
         display = submit_bridge._normalized_key(submit_bridge._display_topic(topic))
-        if ledger_dir is None and display and any(display in marker for marker in title_markers):
+        if display and any(display in marker for marker in title_markers):
             out.add(topic)
     return out
 
