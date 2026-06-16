@@ -1809,3 +1809,31 @@ def test_phase_k_relocates_misrouted_cite_in_lowercase_led_sentence(tmp_path: Pa
     # End-to-end: the gate is now clean of routing errors.
     assert not any(i.code == "outcome_routing"
                    for i in evaluate_journal_surface(fixed, citation_outcome_map=cmap).issues)
+
+
+def test_phase_k_no_duplicate_fallback_for_multiple_thin_outcome_classes(tmp_path: Path) -> None:
+    """Repro: 2+ thin outcome classes must NOT each receive the same long
+    fallback paragraph — that produced two near-identical >=30-token paragraphs
+    that tripped the journal-surface duplicate_paragraph gate (sirtuin L3).
+    Only one long fallback; the rest get short distinct pointers (<30 tokens)."""
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"receipts": [{"receipt_id": "R1", "outcome_class": "cardiometabolic"}]}),
+        encoding="utf-8",
+    )
+    (tmp_path / "citation_registry.json").write_text(
+        json.dumps({"R1": {"body_citation": "Smith 2024"}}), encoding="utf-8",
+    )
+    text = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "### Cognitive Outcomes\n\n"
+        "## Discussion\n\nContext.\n"
+    )
+    out, _ = journal_finalizer._phase_k_route_outcome_paragraphs(text, tmp_path)
+    # exactly one long fallback paragraph across both thin classes
+    assert out.count("Evidence for this outcome class is represented") == 1
+    # and the duplicate_paragraph detector finds nothing
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from journal_surface_batch_audit import scan_duplicate_paragraphs  # type: ignore[import-not-found]
+    assert not any("duplicate_paragraph" in str(i) for i in scan_duplicate_paragraphs(out))
