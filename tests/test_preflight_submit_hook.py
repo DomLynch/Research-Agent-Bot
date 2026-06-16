@@ -43,7 +43,12 @@ def _payload(body: str) -> dict:
     }
 
 
-def test_payload_adds_reference_bib_citations_to_source_bundle(tmp_path: Path, monkeypatch) -> None:
+def test_payload_source_bundle_excludes_cited_only_references(tmp_path: Path, monkeypatch) -> None:
+    """source_bundle is the RETAINED/on-topic source set (== receipts), so a
+    cited external reference that is NOT a retained source must NOT be padded
+    into it — otherwise the public surface certifies more "sources on topic"
+    than the evidence base has (the 13-receipts-but-22-bundle mismatch). Such
+    cited references remain in the body's ## References, not this count."""
     monkeypatch.setenv("RESEARKA_ARTICLE_TYPE_V3", "research_synthesis")
     run = tmp_path / "synthesis-aerobic_exercise-v06-test"
     run.mkdir()
@@ -58,7 +63,7 @@ def test_payload_adds_reference_bib_citations_to_source_bundle(tmp_path: Path, m
         encoding="utf-8",
     )
     run.joinpath("manifest.json").write_text(
-        '{"topic":"aerobic_exercise","receipts":[]}', encoding="utf-8",
+        '{"topic":"aerobic_exercise","receipts":[],"n_receipts":0}', encoding="utf-8",
     )
     run.joinpath("citation_registry.json").write_text("{}", encoding="utf-8")
     run.joinpath("references.bib").write_text(
@@ -71,10 +76,13 @@ def test_payload_adds_reference_bib_citations_to_source_bundle(tmp_path: Path, m
 
     payload = submit.build_payload(run)  # type: ignore[attr-defined]
 
-    assert any(
+    # cited-only reference is NOT counted as a retained source; bundle stays
+    # equal to the (here zero) receipt set.
+    assert not any(
         row.get("doi") == "10.1001/jama.2010.1923"
         for row in payload["source_bundle"]
     )
+    assert len(payload["source_bundle"]) == 0
 
 
 def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:

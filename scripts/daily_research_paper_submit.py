@@ -1200,9 +1200,25 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     discussion = parts.get("Discussion", "")
     limitations = parts.get("Limitations", "")
     conclusion = parts.get("Conclusion", "")
-    source_bundle = _augment_source_bundle_with_cited_references(
-        run, paper, _source_bundle(run, limit=max_sources), limit=max_sources,
-    )
+    # source_bundle is the RETAINED/ON-TOPIC source set (== the receipts the
+    # paper body reports), so the public surface can never certify more
+    # "sources on topic" than the evidence base actually has. Cited external
+    # references (background refs, prose-cited papers) are NOT retrieved
+    # sources — they remain in the body's ## References (rendered from
+    # body_markdown), not padded into this count. (Previously this was
+    # augmented with cited references, inflating e.g. 13 receipts → 22 and
+    # mismatching the body's 13.)
+    source_bundle = _source_bundle(run, limit=max_sources)
+    n_receipts = int(manifest.get("n_receipts") or 0)
+    if n_receipts and len(source_bundle) != n_receipts:
+        # Reconciliation invariant: the retained-source count must equal the
+        # receipt count the body reports. Surfacing rather than silently
+        # shipping a mismatch.
+        print(
+            f"[submit] WARN source_bundle={len(source_bundle)} != "
+            f"n_receipts={n_receipts} for {run.name}",
+            file=sys.stderr,
+        )
     content_hash = _sha256(run / "full_paper.md")
     source_hash = _source_citation_hash(source_bundle)
     agent_slug = _agent_slug()
