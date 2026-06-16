@@ -298,9 +298,47 @@ def test_extract_year_picks_plausible_year_not_n_value() -> None:
 
 
 def test_extract_year_rejects_implausible_years() -> None:
-    """A 4-digit number outside 1990-2100 is not a publication year."""
+    """A 4-digit number outside 1990–current-year is not a publication year."""
     assert cr._extract_year_from_id("PMC123_n_3500_subjects") is None
     assert cr._extract_year_from_id("PMC123_n_1850_subjects") is None
+
+
+def test_future_year_is_implausible_and_clamped() -> None:
+    """A publication year can never be in the future. An ongoing trial's
+    estimated-completion year (e.g. 2035) must normalize to None, not leak
+    a future-dated citation that trips the certification gate."""
+    assert cr._is_plausible_year(cr._current_year()) is True
+    assert cr._is_plausible_year(cr._current_year() + 1) is False
+    assert cr._normalize_pub_year(2035) is None
+    assert cr._normalize_pub_year(cr._current_year()) == cr._current_year()
+    assert cr._normalize_pub_year(None) is None
+    assert cr._normalize_pub_year("not-a-year") is None
+
+
+def test_metadata_citation_renders_future_year_as_undated() -> None:
+    """The exact resveratrol/metformin failure: a HIT source whose only
+    year is a future completion date cites undated ('n.d.'), never '2035'."""
+    cite = cr._body_citation_from_metadata(
+        {"title": "Pragmatic Trial of Metformin for Glucose Intolerance",
+         "year": 2035},
+    )
+    assert cite is not None and cite.endswith("n.d.") and "2035" not in cite
+
+
+def test_build_registry_clamps_future_source_year() -> None:
+    """End-to-end: a receipt with a future source_year yields a registry
+    entry with source_year=None (gate-safe) and no future year in the
+    body citation."""
+    rid = "HIT_pragmatic_trial_of_metformin_for_glucose_intolerance"
+    receipts = [_FakeReceipt(receipt_id=rid, source_year=2035)]
+    # Production passes the parsed metadata; its TITLE drives the citation
+    # while the future YEAR (2035) is rejected — that rejection IS the fix.
+    meta = {rid: {"title": "Pragmatic Trial of Metformin for Glucose Intolerance",
+                  "year": 2035}}
+    entry = cr.build_registry(receipts, meta)[rid]
+    assert entry.source_year is None          # future year clamped → gate-safe
+    assert "2035" not in entry.body_citation  # never render a future date
+    assert entry.body_citation.endswith("n.d.")  # undated form instead
 
 
 def test_validate_body_citation_catches_bare_handles() -> None:

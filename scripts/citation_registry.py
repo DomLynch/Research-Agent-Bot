@@ -19,6 +19,7 @@ allowed-shape list (Surname YYYY / Surname et al YYYY / PMCID YYYY)."""
 from __future__ import annotations
 
 import dataclasses
+import datetime as dt
 import re
 import unicodedata
 from dataclasses import dataclass
@@ -75,9 +76,27 @@ class CitationEntry:
 # multi-word surnames (Van de Werf, O'Brien, Smith-Jones).
 _PMCID_RE = re.compile(r"^(PMC\d{6,9})(?:_|$)")
 _YEAR_RE = re.compile(r"^(20\d{2}|19\d{2})$")
-# Plausibility window for inferred publication years.
+# Plausibility window for inferred publication years. The upper bound is
+# the current year, not a fixed ceiling: a publication year can never be
+# in the future. Without this a source carrying a future date (e.g. an
+# ongoing trial's estimated completion year, 2035) leaks a future-dated
+# citation that correctly trips the certification gate. Universal — no
+# topic logic; a future year is invalid in every domain.
 _MIN_PLAUSIBLE_YEAR = 1990
-_MAX_PLAUSIBLE_YEAR = 2100
+
+
+def _current_year() -> int:
+    return dt.date.today().year
+
+
+def _normalize_pub_year(value: object) -> int | None:
+    """Coerce a raw year to a plausible publication year, or None when it
+    is missing / unparseable / out-of-window / in the future."""
+    try:
+        year = int(str(value).strip())
+    except (TypeError, ValueError):
+        return None
+    return year if _is_plausible_year(year) else None
 
 
 def _body_citation_for(receipt_id: str, source_year: int | None = None) -> str:
@@ -126,7 +145,7 @@ def _body_citation_for(receipt_id: str, source_year: int | None = None) -> str:
 
 
 def _is_plausible_year(y: int) -> bool:
-    return _MIN_PLAUSIBLE_YEAR <= y <= _MAX_PLAUSIBLE_YEAR
+    return _MIN_PLAUSIBLE_YEAR <= y <= _current_year()
 
 
 # Lowercase nobiliary particles preserved as-is in surnames (the
@@ -258,7 +277,9 @@ def build_registry(
         # Prefer metadata-derived Author-Year for PMC papers; fall
         # back to receipt_id-derived form (legacy + Walton-style).
         meta = paper_meta_by_id.get(receipt_id, {})
-        source_year = getattr(r, "source_year", None)
+        # Normalize once: every citation-derivation path and the stored
+        # source_year use the clamped year, so a future date never renders.
+        source_year = _normalize_pub_year(getattr(r, "source_year", None))
         body_citation = (
             _author_year_citation_from_id(receipt_id, source_year)
             or _body_citation_from_metadata(meta)
@@ -288,7 +309,7 @@ def build_registry(
             receipt_id=receipt_id,
             body_citation=body_citation,
             reference_id=reference_id,
-            source_year=getattr(r, "source_year", None),
+            source_year=source_year,  # normalized above (no future years)
             source_doi=getattr(r, "source_doi", None),
             source_pmid=getattr(r, "source_pmid", None),
             source_pmcid=getattr(r, "source_pmcid", None),
@@ -318,14 +339,15 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     suffix handles collisions."""
     if not meta:
         return None
-    year = meta.get("year")
-    if not year:
+    raw_year = meta.get("year")
+    if not raw_year:
         return None
     authors = meta.get("authors") or []
-    try:
-        year_str = str(int(year))
-    except (ValueError, TypeError):
-        return None
+    # A present-but-future/implausible year (e.g. an ongoing trial's 2035
+    # completion estimate) must never render as a real publication year:
+    # cite the source undated ("n.d.") instead of fabricating a future date.
+    normalized = _normalize_pub_year(raw_year)
+    year_str = str(normalized) if normalized is not None else "n.d."
     if not authors:
         return _title_citation_from_metadata(meta, year_str)
     first_author = (authors[0] or "").strip()
