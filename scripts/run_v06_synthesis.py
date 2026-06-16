@@ -1558,6 +1558,44 @@ def _author_year_token(receipt) -> str | None:
     return None
 
 
+def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
+    """Serialize a receipt into the manifest['receipts'] entry.
+
+    p_values MUST be carried through: ReceiptSummary.p_values is populated
+    from claim_type=="p_value" claims (real extracted source statistics),
+    and audit_v06_paper._manifest_structural_numerics() harvests
+    receipts[].p_values into the Q2 numeric pool. When this hand-built
+    dict dropped the field, Q2_numeric_integrity counted every cited
+    source p-value as untraceable and failed the 100% gate — the 2026-06
+    publish stall. A fabricated p-value (present in no source claim) is
+    still absent here, so the gate's anti-fabrication role is preserved.
+    Universal — no topic terms; p-values are domain-agnostic.
+
+    citation_token (Slice 7 P1b) lets the source-context drift check map
+    prose tokens (e.g. "Witham 2025") back to this receipt's quant_claims.
+    """
+    entry = citation_registry.get(receipt.receipt_id)
+    return {
+        "receipt_id": receipt.receipt_id,
+        "outcome_class": receipt.outcome_class,
+        "effect_direction": receipt.effect_direction,
+        "evidence_tier": receipt.evidence_tier,
+        "directness": receipt.directness,
+        "n_claims": receipt.n_claims,
+        "p_values": list(receipt.p_values),
+        "canonical_trial_id": receipt.canonical_trial_id,
+        "citation_token": (
+            entry.body_citation if entry is not None
+            else _author_year_token(receipt)
+        ),
+        # paper_id resolved from receipt_id so quant_claims are findable.
+        "paper_id": receipt.receipt_id,
+        "source_title": receipt.source_title,
+        "source_doi": receipt.source_doi,
+        "source_pmid": receipt.source_pmid,
+    }
+
+
 def _claim_topic_effect(claim: dict) -> int:
     """Returns +1 if the active topic's compound has a good effect
     on this endpoint, -1 if bad, 0 if unclear/null.
@@ -2211,7 +2249,12 @@ def build_receipts_from_quant_claims(
                     meta.get("title") or "", agg["effect_direction"],
                 ),
             ),
-            p_values=tuple(agg["p_values"][:6]),
+            # Dedup + a generous bound (was [:6], which dropped cited
+            # source p-values in stats-dense papers — e.g. Janic 2019 has
+            # 19, so the 7th+ never reached the Q2 numeric pool and failed
+            # the 100% gate). Consumers (table_renderer, quality scoring)
+            # pick a representative, so a longer list does not bloat output.
+            p_values=tuple(dict.fromkeys(agg["p_values"]))[:40],
             population_summary=_build_population_summary(meta, agg["sample_sizes"]),
             source_title=meta.get("title"),
             source_year=meta.get("year"),
@@ -2735,31 +2778,7 @@ async def _run(
         for rid, entry in citation_registry.items()
     }, indent=2))
     manifest_receipts = [
-        {
-            "receipt_id": r.receipt_id,
-            "outcome_class": r.outcome_class,
-            "effect_direction": r.effect_direction,
-            "evidence_tier": r.evidence_tier,
-            "directness": r.directness,
-            "n_claims": r.n_claims,
-            "canonical_trial_id": r.canonical_trial_id,
-            # Slice 7 P1b fix (2026-05-05): populate citation_token
-            # so the source-context drift check can map prose
-            # tokens (e.g. "Witham 2025") to this receipt's
-            # quant_claims and check role match.
-            "citation_token": (
-                entry.body_citation
-                if (entry := citation_registry.get(r.receipt_id)) is not None else
-                _author_year_token(r)
-            ),
-            # paper_id resolved from receipt_id so quant_claims
-            # files are findable.
-            "paper_id": r.receipt_id,
-            "source_title": r.source_title,
-            "source_doi": r.source_doi,
-            "source_pmid": r.source_pmid,
-        }
-        for r in receipts
+        _manifest_receipt_dict(r, citation_registry) for r in receipts
     ]
     field_engagement = tuple(
         dataclasses.asdict(item)

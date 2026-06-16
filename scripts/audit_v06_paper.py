@@ -83,8 +83,12 @@ def canonical_numeric(s: str) -> str:
 
     Handles grouped thousands such as `26 916` / `26,916` without
     weakening the strict source-trace rule for ordinary prose numbers.
+    Also normalizes a leading bare decimal (`.0038` -> `0.0038`) so a
+    body value written with a leading zero matches a source claim that
+    omitted it (and vice-versa) — common for p-values (`P = .0038`).
     """
-    return _THOUSANDS_SEP_RE.sub("", str(s).strip().lower())
+    v = _THOUSANDS_SEP_RE.sub("", str(s).strip().lower())
+    return f"0{v}" if v.startswith(".") else v
 
 
 def _load_corpus_numerics() -> set[str]:
@@ -186,7 +190,7 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
         if not isinstance(r, dict):
             continue
         for p_value in r.get("p_values") or ():
-            out.update(canonical_numeric(v) for v in re.findall(r"\d+\.?\d*", str(p_value)))
+            out.update(canonical_numeric(v) for v in re.findall(r"\d*\.?\d+", str(p_value)))
         if r.get("outcome_class"):
             key = str(r["outcome_class"])
             classes[key] = classes.get(key, 0) + 1
@@ -200,7 +204,7 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
             for v in plan.get("numeric_anchors") or ():
                 s = str(v)
                 out.add(canonical_numeric(s))
-                out.update(canonical_numeric(x) for x in re.findall(r"\d+\.?\d*", s))
+                out.update(canonical_numeric(x) for x in re.findall(r"\d*\.?\d+", s))
     return out
 
 
