@@ -414,6 +414,27 @@ def test_select_topic_skips_published_topic_even_after_cooldown(tmp_path: Path, 
     assert selected is None  # published → permanently excluded from the fresh cycle
 
 
+def test_modifier_stem_matches_word_family_universally() -> None:
+    # stem catches the whole word family (no per-topic word lists)…
+    assert cycle._modifier_stem("metabolism") == "metabol"
+    assert cycle._modifier_stem("regimens") == "regimen"
+    # …while content scopes with no strippable suffix stay exact.
+    assert cycle._modifier_stem("lifespan") == "lifespan"
+    assert cycle._modifier_stem("cardiovascular") == "cardiovascular"
+
+
+def test_claim_scope_matches_modifier_word_family(tmp_path: Path) -> None:
+    """A fasting-metabolism study that says 'metabolic rate' (not the literal
+    'metabolism') now counts on-scope via the stem; an off-aspect claim does
+    not — so genuine aspect corpora pass while the anti-dilution floor holds."""
+    on = tmp_path / "on.quant_claims.json"
+    on.write_text('{"claims":[{"text":"resting metabolic rate fell 12%"}]}', encoding="utf-8")
+    off = tmp_path / "off.quant_claims.json"
+    off.write_text('{"claims":[{"text":"mood scores improved"}]}', encoding="utf-8")
+    assert cycle._claim_text_has_scope(on, ["metabolism"]) is True
+    assert cycle._claim_text_has_scope(off, ["metabolism"]) is False
+
+
 def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "caloric_restriction", target_journal=True)

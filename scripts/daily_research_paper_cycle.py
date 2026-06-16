@@ -1812,19 +1812,41 @@ def _on_entity_quant_claims(paths: Sequence[Path], entity_terms: Sequence[str]) 
     return on_entity
 
 
+_MODIFIER_SUFFIXES = ("ization", "isation", "ism", "ies", "ing", "es", "s")
+
+
+def _modifier_stem(word: str) -> str:
+    """Morphological stem of a slug modifier so the scope match catches the
+    whole word family — ``metabolism`` -> ``metabol`` (prefix-matches
+    metabolic/metabolite), ``regimens`` -> ``regimen`` — not just the literal
+    slug token. Strips a small fixed set of common English suffixes with a
+    length guard; universal, no per-topic word lists. A modifier with no
+    strippable suffix (``lifespan``, ``cardiovascular``) is returned unchanged,
+    so content scopes keep their exact prefix match. This unblocks genuine
+    aspect topics (a fasting-metabolism corpus where studies say "metabolic
+    rate", not the literal word "metabolism") WITHOUT relaxing the floor, so a
+    thin variant with too few on-aspect sources still fails the gate."""
+    w = word.lower()
+    for suf in _MODIFIER_SUFFIXES:
+        if w.endswith(suf) and len(w) - len(suf) >= 4:
+            return w[: len(w) - len(suf)]
+    return w
+
+
 def _claim_text_has_scope(path: Path, modifiers: Sequence[str]) -> bool:
     """True if the source's full claim text evidences a non-entity topic
     modifier (e.g. ``lifespan``), not just the entity in its title. A lifespan
     study may title itself "survival", so the modifier is matched against the
     whole claim record, not the title identity. Modifiers are slug-derived (no
-    per-topic word lists)."""
+    per-topic word lists) and matched by morphological STEM so the whole word
+    family counts (see _modifier_stem)."""
     if not modifiers:
         return True
     try:
         body = path.read_text(encoding="utf-8", errors="ignore").lower()
     except OSError:
         return False
-    return any(re.search(rf"\b{re.escape(m)}", body) for m in modifiers)
+    return any(re.search(rf"\b{re.escape(_modifier_stem(m))}", body) for m in modifiers)
 
 
 def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
