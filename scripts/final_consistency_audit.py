@@ -738,7 +738,9 @@ def _check_outcome_direction_overclaim(
 
 
 _WEAK_SIG_RE = re.compile(
-    r"\b(?:marginal(?:ly)?|borderline|non-?significan\w*|not\s+significant"
+    r"\b(?:marginal(?:ly)?|borderline"
+    r"|non\s*-?\s*significan\w*"          # non significant / non-significant / nonsignificant
+    r"|not(?:\s+\w+){0,2}\s+significan\w*"  # not significant / not (very|statistically) significant(ly)
     r"|trend(?:ing|ed|s)?\s+to(?:ward|wards)?|a\s+trend)\b",
     re.IGNORECASE,
 )

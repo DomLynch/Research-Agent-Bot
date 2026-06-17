@@ -962,3 +962,6 @@ def test_duration_numeric_not_classified_as_population():
     assert r("Monda 2026 enrolled 400 adults over 12 months", "400") == "population"
     assert r("older adults aged 65 years received it", "65") == "population"
     assert r("a cohort of 65-year-old participants", "65") == "population"
+    # plural "years old" with a population cue must stay population (is_age
+    # broadening) — not be skipped as a duration
+    assert r("participants 65 years old at entry", "65") == "population"

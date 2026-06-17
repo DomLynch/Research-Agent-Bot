@@ -902,7 +902,7 @@ def _classify_prose_numeric_role(
     followed_by_time = re.match(
         r"\s*[-–—]?\s*(?:month|year|week|day|hour|wk|yr|mo)s?\b", tail,
     )
-    is_age = re.search(r"\b(?:aged?|years?\s+of\s+age|year[-\s]old)\b", window)
+    is_age = re.search(r"\b(?:aged?|years?\s+of\s+age|years?[-\s]old)\b", window)
     is_duration = bool(followed_by_time) and not is_age
     # Order matters: more specific patterns checked first
     for pattern, role in _PROSE_ROLE_PATTERNS:

@@ -173,7 +173,9 @@ def _smallest_p_string(pvals: list[str]) -> str:
     if not cleaned:
         return "—"
     parsed = [(f, p) for p in cleaned if (f := _parse_p_value(p)) is not None]
-    return min(parsed, key=lambda t: t[0])[1] if parsed else cleaned[0]
+    # If nothing parses as a number, emit "—" rather than a non-p-value string
+    # (e.g. CI notation) — honours the "or '—'" contract for both callers.
+    return min(parsed, key=lambda t: t[0])[1] if parsed else "—"
 
 
 def _representative_p_value(r: object) -> str:

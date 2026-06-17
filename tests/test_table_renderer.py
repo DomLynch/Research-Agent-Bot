@@ -411,6 +411,16 @@ def test_representative_p_value_falls_back_to_first_when_unparseable() -> None:
     assert tr._representative_p_value(_R()) == "p = 0.02"
 
 
+def test_representative_p_value_dash_when_all_unparseable() -> None:
+    """Bug-4: when NO value parses as a number, emit '—' rather than a
+    non-p-value string in the summary cell."""
+    @dataclass
+    class _R:
+        p_values: tuple[str, ...] = ("not reported", "see table", "NS")
+
+    assert tr._representative_p_value(_R()) == "—"
+
+
 def test_representative_p_value_helper_returns_dash_when_empty() -> None:
     @dataclass
     class _R:
