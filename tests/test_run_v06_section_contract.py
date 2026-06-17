@@ -100,6 +100,8 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
         "offline_eval_harness.json",
         "quality_methods.json",
         "quality_methods.md",
+        "risk_of_bias.json",
+        "grade_assessment.json",
         "polish_compiler.json",
         "polish_compiler.md",
         "polish_tensions_appendix.json",
@@ -115,7 +117,13 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "debug" / "full_paper.review_patch_log.json").exists()
     assert (tmp_path / "audit" / "full_paper.certification.json").exists()
     assert (tmp_path / "readable" / "full_paper.certification.md").exists()
-    assert (tmp_path / "audit" / "quality_methods.json").exists()
+    # Public appraisal sidecars stay top-level (served by Researka from the run
+    # root) — NOT relocated into audit/, else the public reader shows
+    # "not appraised" despite a populated appraisal.
+    assert (tmp_path / "quality_methods.json").exists()
+    assert (tmp_path / "risk_of_bias.json").exists()
+    assert (tmp_path / "grade_assessment.json").exists()
+    assert not (tmp_path / "audit" / "risk_of_bias.json").exists()
     assert (tmp_path / "audit" / "polish_compiler.json").exists()
     assert (tmp_path / "audit" / "polish_tensions_appendix.json").exists()
     assert (tmp_path / "audit" / "biomed_normalization.json").exists()
@@ -126,7 +134,9 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "plots" / "full_paper.pdf").exists()
     assert (tmp_path / "readable" / "quality_methods.md").exists()
     assert (tmp_path / "plots" / "forest_plots").is_dir()
-    assert moved["quality_methods.json"] == "audit/quality_methods.json"
+    assert moved["polish_compiler.json"] == "audit/polish_compiler.json"
+    assert "quality_methods.json" not in moved  # public sidecar stays top-level
+    assert "risk_of_bias.json" not in moved
 
 
 def test_organize_run_artifacts_replaces_stale_sidecar(tmp_path: Path) -> None:

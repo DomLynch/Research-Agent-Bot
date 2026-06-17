@@ -578,6 +578,7 @@ def trace_alias_match(
     claim: Claim,
     pack: TopicPack,
     drug_client: DrugAliasClient,
+    item: EvidenceItem | None = None,
 ) -> Iterator[CitationTrace]:
     """For each drug-name-like capitalized token in the claim text, look
     up the alias in DrugAliasClient. None response = case 4 (alias drift)
@@ -597,6 +598,14 @@ def trace_alias_match(
     """
     seen: set[str] = set()
     trial_tokens = _trial_name_tokens(pack)
+    # When an EvidenceItem is supplied, bind each alias to THAT source: the
+    # trace is keyed to its ref and the alias must appear in its abstract
+    # (claim-AND-source specific, one trace per token×ref). Without one
+    # (token-level callers), fall back to the global name-validity check at
+    # ref=0. This replaces a single claim-level trace that validated names
+    # globally but never tied them to the sources backing the claim.
+    abstract = (getattr(item, "abstract", "") or "").lower() if item is not None else None
+    ref = item.source.ref if item is not None else 0
     for raw_token in _DRUG_CANDIDATE_RE.findall(claim.text):
         token = raw_token
         if token.lower() in _DRUG_CANDIDATE_STOPWORDS:
@@ -614,14 +623,16 @@ def trace_alias_match(
             continue
         seen.add(token.lower())
         record = drug_client.lookup(token)
-        passed = record is not None
+        in_source = abstract is None or token.lower() in abstract
+        passed = record is not None and in_source
+        resolved = f"resolved to {record.canonical_name!r}" if record else "NOT resolved (drift)"
+        presence = "" if abstract is None else (
+            "; present in source" if token.lower() in abstract else "; ABSENT from source"
+        )
         yield CitationTrace(
-            claim_id=claim.claim_id, ref=0,
+            claim_id=claim.claim_id, ref=ref,
             trace_type="alias_match", passed=passed,
-            detail=(
-                f"alias {token!r} {'resolved to' if passed else 'NOT resolved (drift)'}"
-                + (f" {record.canonical_name!r}" if record else "")
-            ),
+            detail=f"alias {token!r} {resolved}{presence}",
         )
 
 
@@ -646,7 +657,7 @@ def trace_claim(
          b. p_value_in_text (per p-value)
          c. percentage_in_text (per percentage)
          d. numeric_in_text (per HR/OR/RR/ηp²/β/CI/etc — Day 9.1)
-      3. alias_match (claim-level, per drug-name candidate)
+         e. alias_match (per drug-name candidate, bound to this source)
 
     `literature` is wired for Day 3.2+ (fact-extraction will fetch
     abstracts when the local copy is missing). Unused in Day 3.1 traces.
@@ -666,8 +677,9 @@ def trace_claim(
         traces.extend(trace_p_value_in_text(claim, item))
         traces.extend(trace_percentage_in_text(claim, item))
         traces.extend(trace_numeric_in_text(claim, item))
-
-    traces.extend(trace_alias_match(claim, pack, drug_client))
+        # Per-ref: bind each drug alias in the claim to THIS source (was a
+        # single claim-level global validity check at ref=0).
+        traces.extend(trace_alias_match(claim, pack, drug_client, item))
     return traces
 
 

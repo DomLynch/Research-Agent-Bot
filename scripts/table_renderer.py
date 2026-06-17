@@ -157,41 +157,43 @@ def _split_population_n(population_summary: str) -> tuple[str, str]:
     return n_str, pop_label or "—"
 
 
+def _parse_p_value(p: str) -> float | None:
+    m = re.search(r"\d*\.?\d+(?:[eE][-+]?\d+)?", p)
+    if not m:
+        return None
+    try:
+        return float(m.group(0))
+    except (ValueError, TypeError):
+        return None
+
+
+def _smallest_p_string(pvals: list[str]) -> str:
+    """Most-significant (smallest) p-value string from a list, or '—'."""
+    cleaned = [p.strip() for p in pvals if p and p.strip()]
+    if not cleaned:
+        return "—"
+    parsed = [(f, p) for p in cleaned if (f := _parse_p_value(p)) is not None]
+    return min(parsed, key=lambda t: t[0])[1] if parsed else cleaned[0]
+
+
 def _representative_p_value(r: object) -> str:
     """Smallest (most-significant) p-value from receipt's p_values."""
-    pvals = [p.strip() for p in (getattr(r, "p_values", None) or ())
-             if p and p.strip()]
-    if not pvals:
-        return "—"
-    parsed: list[tuple[float, str]] = []
-    for p in pvals:
-        m = re.search(r"\d*\.?\d+(?:[eE][-+]?\d+)?", p)
-        if not m:
-            continue
-        try:
-            parsed.append((float(m.group(0)), p))
-        except (ValueError, TypeError):
-            continue
-    if not parsed:
-        return pvals[0]
-    parsed.sort(key=lambda t: t[0])
-    return parsed[0][1]
+    return _smallest_p_string(list(getattr(r, "p_values", None) or ()))
 
 
 def _representative_p_value_coherent(r: object) -> str:
     """Representative p-value reconciled with the coded direction, for the
     summary surfaces (Table 1 + the public Evidence Snapshot). A receipt coded
-    direction=null can still carry a significant p-value on a secondary /
-    off-summary endpoint; surfacing that bare value beside "null" reads as an
-    incoherent "null; p<0.001". When that happens, annotate it as off-summary so
-    the summary stays coherent — the dense per-endpoint statistic still lives in
-    Table 2. Mirrors the Table-2 reconciliation (_display_direction/_interpretation)."""
-    stat = _representative_p_value(r)
-    if stat == "—":
-        return stat
-    if str(getattr(r, "effect_direction", "") or "").lower() == "null" and _has_significant_p_value(stat):
-        return f"{stat} (off-summary)"
-    return stat
+    direction=null must NOT surface a significant p — a bare "null; p<0.001"
+    reads as a contradiction. RESOLVE it (don't merely tag it "off-summary"):
+    keep only the receipt's non-significant p-values and show the smallest, or
+    "—" if it has none. Resolution selects only among the receipt's OWN values
+    — never invents or relabels — so the dense per-endpoint statistics in
+    Table 2 stay the source of truth. Universal."""
+    pvals = [p for p in (getattr(r, "p_values", None) or ()) if p and p.strip()]
+    if str(getattr(r, "effect_direction", "") or "").lower() == "null":
+        pvals = [p for p in pvals if not _has_significant_p_value(p)]
+    return _smallest_p_string(pvals)
 
 
 def _n_claims(r: object) -> str:

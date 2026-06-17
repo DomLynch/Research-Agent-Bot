@@ -2263,3 +2263,22 @@ def test_run_audit_threads_registry_and_run_dir(tmp_path: Path) -> None:
         registry=registry, run_dir=tmp_path, current_year=2026,
     )
     assert any(i.issue_type == "future_dated_citation" for i in issues)
+
+
+def test_prose_data_coherence_flags_marginal_with_strong_p():
+    """C22 (Item 1): a significance-weakness qualifier + strong p (<0.01) in one
+    sentence is incoherent — the Tavakoli 'marginal signal (P<0.001)' case.
+    Effect-size words (modest/small) and weak p's are NOT flagged."""
+    flagged = audit._check_prose_data_coherence(
+        "Results showed a marginal adiponectin signal (P < 0.001) in the cohort.",
+    )
+    assert flagged and flagged[0].id == "C22-prose-data-incoherence"
+    assert flagged[0].severity == "P2"
+    # effect-SIZE word + strong p is legitimate (small but precise effect)
+    assert not audit._check_prose_data_coherence(
+        "There was a modest but significant reduction (p < 0.001).",
+    )
+    # weak qualifier + non-strong p is internally consistent
+    assert not audit._check_prose_data_coherence(
+        "A non-significant trend was observed (p = 0.08).",
+    )

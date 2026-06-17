@@ -737,6 +737,58 @@ def _check_outcome_direction_overclaim(
     return issues
 
 
+_WEAK_SIG_RE = re.compile(
+    r"\b(?:marginal(?:ly)?|borderline|non-?significan\w*|not\s+significant"
+    r"|trend(?:ing|ed|s)?\s+to(?:ward|wards)?|a\s+trend)\b",
+    re.IGNORECASE,
+)
+
+
+def _has_strong_p_value(sentence: str) -> bool:
+    for m in re.finditer(r"\b[Pp]\s*([<=])\s*(0?\.\d+)", sentence):
+        try:
+            value = float(m.group(2))
+        except ValueError:
+            continue
+        if value < 0.01 or (m.group(1) == "<" and value <= 0.01):
+            return True
+    return False
+
+
+def _check_prose_data_coherence(paper: str) -> list[ConsistencyIssue]:
+    """Flag a significance-WEAKNESS qualifier (marginal / borderline /
+    non-significant / trend-toward) co-occurring with a STRONG p-value (p<0.01)
+    in one sentence — e.g. "a marginal adiponectin signal (P<0.001)". The two
+    contradict (one cannot be marginal/borderline AND strongly significant);
+    this is the prose-vs-data incoherence flagged on the null-coded Tavakoli
+    receipt. Effect-SIZE words (modest/small) are intentionally excluded — a
+    small effect can be highly significant. Flag-only (P2). Universal —
+    statistical English only, no topic/author terms."""
+    body = re.split(r"(?im)^##\s+References\b", paper, maxsplit=1)[0]
+    out: list[ConsistencyIssue] = []
+    seen: set[str] = set()
+    for sentence in re.split(r"(?<=[.!?])\s+", body):
+        if not (_WEAK_SIG_RE.search(sentence) and _has_strong_p_value(sentence)):
+            continue
+        key = sentence.strip()[:80]
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(ConsistencyIssue(
+            id="C22-prose-data-incoherence",
+            severity="P2",
+            issue_type="prose_data_incoherence",
+            auto_fixable=False,
+            evidence=f"weak-significance qualifier with p<0.01 in one sentence: {key}",
+            suggested_fix=(
+                "A 'marginal/borderline/non-significant/trend' description "
+                "contradicts p<0.01 — align the qualifier with the statistic or "
+                "omit one."
+            ),
+        ))
+    return out
+
+
 def run_audit(
     paper_md: str, manifest: dict, audit: dict, audit_md_text: str = "",
     *, registry: dict | None = None, run_dir: Path | None = None,
@@ -753,6 +805,7 @@ def run_audit(
             registry = None
     issues.extend(_check_future_dated_citations(registry, current_year=year))
     issues.extend(_check_unbacked_appraisal_claim(paper_md, run_dir))
+    issues.extend(_check_prose_data_coherence(paper_md))
     issues.extend(_check_source_classification_claims(paper_md, manifest))
     issues.extend(_check_source_count_consistency(paper_md, manifest))
     issues.extend(_check_directness_coding(manifest))

@@ -315,12 +315,18 @@ def test_table_1_includes_representative_p_value_column() -> None:
 
 
 def test_representative_p_value_coherent_reconciles_null_with_significant_stat() -> None:
-    """A receipt coded direction=null but carrying a significant p-value (off a
-    secondary endpoint) must NOT surface a bare 'p<0.001' that reads as an
-    incoherent 'null; p<0.001'; it is annotated off-summary. A signed-direction
-    receipt with the same stat is left bare (coherent)."""
+    """A receipt coded direction=null must NOT surface a significant p (an
+    incoherent 'null; p<0.001'). It is RESOLVED — not tagged: the null receipt
+    shows its smallest NON-significant p, or '—' if it has none. A signed
+    receipt keeps its significant stat. Resolution only selects among the
+    receipt's own values."""
     @dataclass
     class _RNull:
+        effect_direction: str = "null"
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.20")
+
+    @dataclass
+    class _RNullAllSig:
         effect_direction: str = "null"
         p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
 
@@ -329,13 +335,16 @@ def test_representative_p_value_coherent_reconciles_null_with_significant_stat()
         effect_direction: str = "positive"
         p_values: tuple[str, ...] = ("p < 0.001",)
 
-    assert tr._representative_p_value_coherent(_RNull()) == "p < 0.001 (off-summary)"
+    assert tr._representative_p_value_coherent(_RNull()) == "p = 0.20"
+    assert tr._representative_p_value_coherent(_RNullAllSig()) == "—"
     assert tr._representative_p_value_coherent(_RPos()) == "p < 0.001"
 
 
 def test_table_1_null_direction_does_not_surface_bare_significant_p_value() -> None:
     """Integration: the incoherent 'direction=null; p<0.001' pairing from the
-    resveratrol Chen-2015 row must render reconciled in Table 1."""
+    resveratrol Chen-2015 row renders RESOLVED in Table 1 — the null row shows
+    no significant p (here '—', as both its p's are significant) and no
+    '(off-summary)' tag."""
     @dataclass
     class _R:
         receipt_id: str = "Chen 2015"
@@ -349,7 +358,8 @@ def test_table_1_null_direction_does_not_surface_bare_significant_p_value() -> N
         n_claims: int = 5
 
     md = tr.render_table_1_included_studies([_R()])
-    assert "(off-summary)" in md
+    assert "(off-summary)" not in md
+    assert "p < 0.001" not in md  # significant p never surfaced beside null
 
 
 def test_table_1_falls_back_to_dash_when_no_p_value() -> None:

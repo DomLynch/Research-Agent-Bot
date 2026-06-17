@@ -139,6 +139,14 @@ _TOP_LEVEL_RUN_ARTIFACTS = frozenset({
     "full_paper.final_verdict.json",
     "full_paper.journal_surface.json",
     "pre_submit_gate.json",
+    # Public appraisal sidecars: exported in public_export_manifest and served
+    # by Researka from the run root (like contradiction_map.json). Keeping them
+    # top-level — NOT relocating into audit/ — is what lets the public reader
+    # show the populated risk-of-bias / GRADE appraisal instead of
+    # "not appraised", even though the data was always computed. Universal.
+    "risk_of_bias.json",
+    "grade_assessment.json",
+    "quality_methods.json",
 })
 _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
     "readable": (
@@ -173,14 +181,11 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "docling_fallback.json",
         "offline_eval_harness.json",
         "full_paper.certification.json",
-        "grade_assessment.json",
         "meta_analysis_results.json",
         "publication_score.json",
         "polish_compiler.json",
         "polish_tensions_appendix.json",
-        "quality_methods.json",
         "receipt_funnel.json",
-        "risk_of_bias.json",
         "run_mode_contract.json",
         "structured_output_contract.json",
         "template_language_gate.json",

@@ -893,8 +893,21 @@ def _classify_prose_numeric_role(
     start = max(0, num_pos - 60)
     end = min(len(sentence), num_pos + len(num) + 30)
     window = sentence[start:end].lower()
+    # A numeric immediately followed by a time unit is a study DURATION
+    # (design parameter), never a participant count — so "enrolled ... over 12
+    # months" must not render as "a population descriptor of 12 months". Ages
+    # ("aged 65 years", "65-year-old") are the one time-unit case that IS a
+    # population descriptor, so they are exempted. Universal — structural cues.
+    tail = sentence[num_pos + len(num): num_pos + len(num) + 14].lower()
+    followed_by_time = re.match(
+        r"\s*[-–—]?\s*(?:month|year|week|day|hour|wk|yr|mo)s?\b", tail,
+    )
+    is_age = re.search(r"\b(?:aged?|years?\s+of\s+age|year[-\s]old)\b", window)
+    is_duration = bool(followed_by_time) and not is_age
     # Order matters: more specific patterns checked first
     for pattern, role in _PROSE_ROLE_PATTERNS:
+        if role == "population" and is_duration:
+            continue
         if re.search(pattern, window, flags=re.IGNORECASE):
             return role
     return "outcome"

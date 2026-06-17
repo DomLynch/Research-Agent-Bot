@@ -943,3 +943,22 @@ def test_role_drift_fail_soft_when_source_lacks_claim_role(tmp_path):
     drift = [i for i in issues if i.issue_type == "source_context_drift"]
     # Without claim_role on source, fail-soft passes
     assert drift == []
+
+
+def test_duration_numeric_not_classified_as_population():
+    """Item 6b: a numeric followed by a time unit is a study DURATION, never a
+    participant count — 'enrolled ... over 12 months' must not render as a
+    population descriptor. Ages ('aged 65 years') stay population."""
+    from numeric_role_guard import _classify_prose_numeric_role as role  # noqa: PLC0415
+
+    def r(sent, num):
+        return role(sent, sent.index(num), num)
+
+    # durations must NOT be population
+    assert r("Monda 2026 enrolled 400 adults over 12 months", "12") != "population"
+    assert r("a 12-month randomized trial enrolled patients", "12") != "population"
+    assert r("Recruited 150 subjects for 6 weeks", "6") != "population"
+    # genuine counts + ages stay population
+    assert r("Monda 2026 enrolled 400 adults over 12 months", "400") == "population"
+    assert r("older adults aged 65 years received it", "65") == "population"
+    assert r("a cohort of 65-year-old participants", "65") == "population"

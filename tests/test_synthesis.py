@@ -942,3 +942,18 @@ def test_build_receipt_summary_pulls_p_values_from_thesis() -> None:
     # ("attenuated" IS a negative verb, so this comes back as negative,
     # which is correct for Konopka's framing)
     assert summary.effect_direction == "negative"
+
+
+def test_classify_pair_null_vs_requires_comparable_strata() -> None:
+    """Item 4: a null mechanistic (preclinical) finding vs a signed clinical
+    one (same outcome, different strata) is NOT a null_vs disagreement — it
+    falls to orthogonal, dissolving the spurious all-vs-one severity-4 cluster.
+    Comparable strata (both non-mechanistic) still form a real null_vs."""
+    from agent.synthesis import _classify_pair  # noqa: PLC0415
+    mech_null = _summary("MECH", direction="null", directness="mechanistic")
+    clin_neg = _summary("CLIN", direction="negative", directness="indirect")
+    assert _classify_pair(mech_null, clin_neg).kind == "orthogonal"
+    # both non-mechanistic → genuine null_vs preserved
+    a = _summary("A", direction="null", directness="indirect")
+    b = _summary("B", direction="negative", directness="indirect")
+    assert _classify_pair(a, b).kind == "null_vs_negative"
