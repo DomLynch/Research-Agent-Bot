@@ -2641,21 +2641,38 @@ def _clean_reference_title(title: str) -> str:
     return cleaned.strip().rstrip(".")
 
 
+_BG_BODY_CUTOFF_RE = re.compile(
+    r"^##\s+(?:Structured Evidence Tables|Search Provenance|References"
+    r"|Evidence Snapshot|Publication Appendix|Data and Code Availability"
+    r"|Researka Submitter Block)\b|^###\s+Background References\b",
+    re.MULTILINE,
+)
+
+
 def _used_background_lit_entries(paper_md: str) -> list:
-    """Fix #30: load the background_literature registry, return the
-    entries whose citation_token appears anywhere in `paper_md`.
-    Returns an ordered, de-duplicated list (entry-key insertion
-    order from the registry)."""
+    """Fix #30: load the background_literature registry, return the entries
+    whose citation_token appears in the AUTHORED BODY of `paper_md`.
+
+    Restricted to the body (everything before the first deterministic
+    section — Structured Evidence Tables / References / Evidence Snapshot /
+    appendix) so a token that only appears in the bibliography or a metadata
+    appendix — never cited in prose — is NOT listed. This keeps the Fix #16
+    'each entry's citation_token appears at least once in the body' guarantee
+    true: pre-fix a whole-document substring match listed static-pack entries
+    (Tinetti 1988, Tancredi 2015) that the body never cites. Returns an
+    ordered, de-duplicated list (registry insertion order)."""
     try:
         registry = _bglit.load_registry()
     except (ImportError, FileNotFoundError, ValueError):
         return []
+    cut = _BG_BODY_CUTOFF_RE.search(paper_md)
+    body = paper_md[: cut.start()] if cut else paper_md
     seen_tokens: set[str] = set()
     used: list = []
     for entry in registry.values():
         if entry.citation_token in seen_tokens:
             continue
-        if entry.citation_token in paper_md:
+        if entry.citation_token in body:
             used.append(entry)
             seen_tokens.add(entry.citation_token)
     return used

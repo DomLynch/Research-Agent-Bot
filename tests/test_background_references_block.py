@@ -127,3 +127,25 @@ def test_used_background_lit_entries_helper_returns_used_only() -> None:
     assert "Studenski 2011" in cites
     # Cesari 2009 NOT in paper → should not appear
     assert "Cesari 2009" not in cites
+
+
+def test_used_background_lit_entries_excludes_appendix_only_citations() -> None:
+    """Fix #16 guarantee: a background token appearing ONLY in the appended
+    References/appendix (never cited in prose) must NOT be listed — else the
+    'appears at least once in the body' claim is false (the Tinetti/Tancredi
+    static-pack leak from a whole-document substring match)."""
+    appendix_only = (
+        "Walk speed matters in older adults.\n\n"
+        "## References\n\n- **Studenski 2011.** Gait speed and survival.\n"
+    )
+    assert "Studenski 2011" not in [
+        e.citation_token for e in orch._used_background_lit_entries(appendix_only)
+    ]
+    # the SAME token cited in body prose is still listed
+    in_prose = (
+        "Walk speed (Studenski 2011) predicts survival.\n\n"
+        "## References\n\n- x\n"
+    )
+    assert "Studenski 2011" in [
+        e.citation_token for e in orch._used_background_lit_entries(in_prose)
+    ]
