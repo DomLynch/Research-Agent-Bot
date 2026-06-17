@@ -1737,6 +1737,32 @@ def _title_guarded_effect_direction(title: str, current: str) -> str:
     return current
 
 
+_RCT_RE = re.compile(
+    r"\brandomi[sz]ed\b.{0,24}\btrials?\b"     # randomized [controlled/clinical] trial
+    r"|\brandomi[sz]ed[\s,\-]+controlled\b"    # randomized controlled (study/…)
+    r"|\bRCTs?\b",
+    re.IGNORECASE,
+)
+_REVIEW_RE = re.compile(
+    r"\b(?:systematic\s+review|meta[\s\-]?analys[ei]s|scoping\s+review"
+    r"|narrative\s+review|umbrella\s+review|pooled\s+analysis|review\s+of)\b",
+    re.IGNORECASE,
+)
+
+
+def _is_randomized_trial(paper_meta: dict) -> bool:
+    """True if the source is a PRIMARY randomized controlled trial, read from
+    its title/study_design. A primary RCT is direct interventional evidence and
+    must never be coded directness='review' — the load-bearing Monda 2026
+    mis-code (a 12-month RCT labelled a review) falsely zeroed the paper's
+    'direct interventional' count and manufactured spurious Monda-vs-X
+    tensions. Meta-analyses / systematic reviews *of* randomized trials are
+    EXCLUDED — they are reviews, not primary trials. Universal — study-design
+    English only, no topic terms."""
+    text = f"{paper_meta.get('title') or ''} {paper_meta.get('study_design') or ''}"
+    return bool(_RCT_RE.search(text)) and not _REVIEW_RE.search(text)
+
+
 def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tuple[str, str]:
     """Return (evidence_tier, directness) — Fix #4: deterministic
     classification from structured metadata via evidence_taxonomy.
@@ -1752,6 +1778,11 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     is_rct_papers = pack.canonical_rct_paper_ids if pack is not None else ()
     paper_id_l = paper_id.lower()
     if any(str(name).lower() in paper_id_l for name in is_rct_papers):
+        return "A1", "direct"
+    # Directness validator: a primary randomized trial is direct interventional
+    # evidence and can never be 'review'. Reads the title/study_design so a
+    # title-only RCT (Monda 2026) is not mislabelled when study_design is blank.
+    if _is_randomized_trial(paper_meta):
         return "A1", "direct"
     # Explicit-field path: metadata sources MAY include these fields
     # directly. Empty/missing fields fall through to inference.
@@ -2224,7 +2255,14 @@ def build_receipts_from_quant_claims(
         # Slice 37: partial-only papers downgrade tier so the audit
         # spine reflects that the receipt is review-tier evidence, not
         # a primary endpoint paper. Universal — no topic-specific logic.
-        if paper_id not in high_papers and tier in ("A1", "A2", "B1"):
+        # Exempt primary RCTs: a randomized trial is a primary endpoint paper
+        # regardless of high-confidence-claim count, so it must keep its
+        # direct/interventional coding (the Monda 2026 downgrade-to-review bug).
+        if (
+            paper_id not in high_papers
+            and tier in ("A1", "A2", "B1")
+            and not _is_randomized_trial(meta)
+        ):
             tier, directness = "B2", "review"
         thesis_text = _build_receipt_thesis_text(
             paper_id=paper_id,
