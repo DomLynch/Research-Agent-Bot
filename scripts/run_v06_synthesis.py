@@ -2946,7 +2946,11 @@ async def _run(
     # gives a PhD reviewer the explicit "beyond prior reviews"
     # statement right after the conclusion they just read.
     what_adds_md = build_what_this_adds_section(
-        writer_receipts, writer_matrix, thesis, topic=topic,
+        writer_receipts, writer_matrix, thesis,
+        # Full scoped display title ("Fasting Regimens"), not the aspect-stripped
+        # intervention label ("Fasting"), so the synthesis-adds prose names the
+        # actual topic. Derived from the canonical slug — universal, no terms.
+        topic=humanize_topic(_ACTIVE_TOPIC, title_case=True),
     )
     if what_adds_md:
         full_paper_md = full_paper_md.rstrip() + "\n\n" + what_adds_md

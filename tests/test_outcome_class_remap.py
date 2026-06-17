@@ -256,3 +256,21 @@ def test_dosing_pharmacokinetics_needles_carry_no_topic_specific_compounds() -> 
     assert "cholecalciferol" not in needles
     assert "calcifediol" not in needles
     assert "supplementation" not in needles
+
+
+def test_mechanistic_other_routes_to_mechanism_not_catchall() -> None:
+    """5a: a mechanistic-directness source whose outcome WHAT is not classifiable
+    becomes 'mechanism' (a real class), not the 'contextual_other' catch-all —
+    draining the junk drawer. Non-mechanistic 'other' stays contextual_other,
+    and non-'other' classes are never rewritten. Universal — directness only."""
+    mech = SimpleNamespace(
+        receipt_id="", source_title="murine BHB-chromatin study",
+        population_summary="", directness="mechanistic",
+    )
+    assert refine_other_outcome_class(mech, "other") == "mechanism"
+    obs = SimpleNamespace(
+        receipt_id="", source_title="murine BHB-chromatin study",
+        population_summary="", directness="indirect",
+    )
+    assert refine_other_outcome_class(obs, "other") == "contextual_other"
+    assert refine_other_outcome_class(mech, "cardiometabolic") == "cardiometabolic"

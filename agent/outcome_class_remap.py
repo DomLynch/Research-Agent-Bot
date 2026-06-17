@@ -109,6 +109,13 @@ def refine_other_outcome_class(receipt: object, current_class: str) -> str:
     for label, needles in BIOMEDICAL_OTHER_OUTCOME_RULES:
         if any(needle in text for needle in needles):
             return label
+    # A mechanistic-directness source whose outcome WHAT wasn't classifiable
+    # above is MECHANISM evidence, not the undifferentiated catch-all — this
+    # drains the "contextual adjacent" junk drawer (mostly preclinical work)
+    # and separates mechanistic from clinical strata for tension grouping.
+    # Universal: keys on the directness field, no topic terms.
+    if str(getattr(receipt, "directness", "") or "").lower() == "mechanistic":
+        return "mechanism"
     return "contextual_other"
 
 
