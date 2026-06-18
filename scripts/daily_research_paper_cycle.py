@@ -562,27 +562,43 @@ def _revision_requests_source_precision(feedback: str) -> bool:
     ))
 
 
+def _topic_family(topic: str) -> str:
+    """Grouping key for sibling topic slugs: the lead entity token (first alnum
+    token >= 3 chars). A cooldown on one variant (e.g. ``nad_effects``) then also
+    covers its siblings (``nad_biomarker_effects``, ``nad_metabolism_effects``)
+    so the cycle stops walking every near-duplicate slug of an entity it just
+    covered. Universal — derived from the slug, mirroring the entity used by
+    ``_topic_retrieval_terms``; no per-topic or per-domain word lists."""
+    tokens = [t for t in re.findall(r"[a-z0-9]+", topic.lower()) if len(t) >= 3]
+    return tokens[0] if tokens else " ".join(str(topic).lower().split())
+
+
 def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    """Candidate topics in cooldown: those whose *family* (lead entity) was
+    submitted within PUBLISHED_TOPIC_COOLDOWN_DAYS. Family-level so distinct
+    sibling slugs of a just-covered entity are held too (and re-selectable once
+    the window lapses), not just the exact slug."""
     path = ledger_dir.parent / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     try:
         rows = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         rows = []
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(days=PUBLISHED_TOPIC_COOLDOWN_DAYS)
-    topic_set = set(topics)
-    out: set[str] = set()
+    recent_families: set[str] = set()
     for row in rows if isinstance(rows, list) else []:
-        if not isinstance(row, dict) or str(row.get("topic") or "") not in topic_set:
+        if not isinstance(row, dict):
             continue
+        topic = str(row.get("topic") or "")
         when = _parse_time(str(row.get("date") or row.get("submitted_at") or ""))
-        if when and when >= cutoff:
-            out.add(str(row["topic"]))
-    return out
+        if topic and when and when >= cutoff:
+            recent_families.add(_topic_family(topic))
+    return {topic for topic in topics if _topic_family(topic) in recent_families}
 
 
 def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | None = None) -> set[str]:
-    """Topics the fresh cycle must skip: (1) recently re-submitted ones still in
-    cooldown (rate-limit, expires), and (2) ALREADY-PUBLISHED ones (permanent).
+    """Topics the fresh cycle must skip: (1) recently-submitted families still in
+    cooldown (rate-limit, expires — covers sibling slugs of the same entity), and
+    (2) ALREADY-PUBLISHED ones (permanent).
 
     The remote-title exclusion was previously gated on `ledger_dir is None`, but
     select_topic — the only caller — always passes a ledger_dir, so that branch

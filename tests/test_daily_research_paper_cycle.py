@@ -414,6 +414,65 @@ def test_select_topic_skips_published_topic_even_after_cooldown(tmp_path: Path, 
     assert selected is None  # published → permanently excluded from the fresh cycle
 
 
+def test_topic_family_groups_sibling_slugs_by_lead_entity() -> None:
+    fam = cycle._topic_family
+    # sibling slugs of the same entity collapse to one family key…
+    assert fam("nad_effects") == fam("nad_biomarker_effects") == fam("nad_metabolism_effects") == "nad"
+    # …while distinct entities stay distinct (no over-broad collapse).
+    assert fam("rapamycin_longevity") != fam("nad_effects")
+    assert fam("aerobic_exercise") == "aerobic"
+
+
+def test_select_topic_freezes_sibling_topic_within_family_cooldown(tmp_path: Path, monkeypatch) -> None:
+    """A sibling slug of a recently-submitted topic (same lead entity) is held
+    by the family cooldown. Regression for the 2026-06 NAD walk: nad_effects
+    (submitted) left nad_metabolism_effects selectable, producing a near-dup
+    researka held as a duplicate (published=0)."""
+    _topic(tmp_path, "nad_metabolism_effects", target_journal=True)
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    recent = dt.datetime.now(dt.UTC) - dt.timedelta(days=1)
+    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": recent.isoformat(),
+        "topic": "nad_effects",
+        "fingerprint": "sha256:abc",
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["nad_metabolism_effects"],
+        ledger_dir,
+        runs_root=runs_root,
+        remote_seen=set(),  # not published → only the family cooldown applies
+    )
+
+    assert selected is None  # sibling of nad_effects frozen (was selectable before the family fix)
+
+
+def test_select_topic_allows_sibling_after_family_cooldown(tmp_path: Path, monkeypatch) -> None:
+    """The family cooldown is a rate-limit, not a ban: once the window lapses a
+    sibling slug becomes selectable again."""
+    _topic(tmp_path, "nad_metabolism_effects", target_journal=True)
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    old = dt.datetime.now(dt.UTC) - dt.timedelta(days=cycle.PUBLISHED_TOPIC_COOLDOWN_DAYS + 1)
+    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": old.isoformat(),
+        "topic": "nad_effects",
+        "fingerprint": "sha256:abc",
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["nad_metabolism_effects"],
+        ledger_dir,
+        runs_root=runs_root,
+        remote_seen=set(),
+    )
+
+    assert selected == "nad_metabolism_effects"  # cooldown lapsed → family freeze lifts
+
+
 def test_modifier_stem_matches_word_family_universally() -> None:
     # stem catches the whole word family (no per-topic word lists)…
     assert cycle._modifier_stem("metabolism") == "metabol"
