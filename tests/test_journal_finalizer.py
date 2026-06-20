@@ -1710,6 +1710,123 @@ def test_unreferenced_citation_ignores_reference_title_fragment() -> None:
     assert unreferenced_citation_tokens(paper) == ()
 
 
+def test_phase_h_humanizes_unknown_public_topic_slug(tmp_path: Path) -> None:
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"topic": "epigenome_editing_longevity"}), encoding="utf-8",
+    )
+    paper = (
+        "# Research Synthesis: epigenome_editing_longevity\n\n"
+        "## Background\n\n"
+        "The epigenome_editing_longevity corpus is bounded. "
+        "`epigenome_editing_longevity` is a file slug.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_h_topic_slug_normalise(paper, tmp_path)
+
+    assert "epigenome_editing_longevity corpus" not in fixed
+    assert "epigenome editing longevity corpus" in fixed
+    assert "`epigenome_editing_longevity`" in fixed
+    assert any(e.rule == "slug_to_display_form" for e in logs)
+
+
+def test_surface_artifact_cleanup_repairs_abbrev_and_duplicate_heading() -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    paper = (
+        "## Results\n\n"
+        "The direction remained uncertain.g., the corpus stayed indirect.\n\n"
+        "### Immune and Inflammation Outcomes\n\n"
+        "### Immune and Inflammation Outcomes\n\n"
+        "The immune slice was retained.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+    before = evaluate_journal_surface(paper)
+    assert any(i.code == "grammar_artifact" for i in before.issues)
+    assert any(i.code == "duplicate_heading" for i in before.issues)
+
+    fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
+    after = evaluate_journal_surface(fixed)
+    assert "uncertain.g.," not in fixed
+    assert fixed.count("### Immune and Inflammation Outcomes") == 1
+    assert not any(i.code == "grammar_artifact" for i in after.issues)
+    assert not any(i.code == "duplicate_heading" for i in after.issues)
+    assert any(e.rule == "repair_known_surface_artifacts" for e in logs)
+
+
+def test_phase_b_labels_weak_corpus_from_manifest_directness(tmp_path: Path) -> None:
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"receipts": [
+            {"directness": "mechanistic"},
+            {"directness": "mechanistic"},
+            {"directness": "adjacent"},
+        ]}),
+        encoding="utf-8",
+    )
+
+    fixed, logs = journal_finalizer._phase_b_corpus_strength_label(
+        "# Research Synthesis: Alpha-ketoglutarate Effects\n\n## Results\n\nBody.\n",
+        tmp_path,
+    )
+
+    assert fixed.startswith("# Mechanistic Evidence Map: Alpha-ketoglutarate Effects")
+    assert any(e.rule == "label_weak_corpus_from_directness_profile" for e in logs)
+
+
+def test_phase_b_labels_adjacent_corpus_from_manifest_directness(tmp_path: Path) -> None:
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"receipts": [
+            {"directness": "review"},
+            {"directness": "adjacent"},
+            {"directness": "indirect"},
+        ]}),
+        encoding="utf-8",
+    )
+
+    fixed, _logs = journal_finalizer._phase_b_corpus_strength_label(
+        "# Research Synthesis: EGCG Effects\n\n## Results\n\nBody.\n",
+        tmp_path,
+    )
+
+    assert fixed.startswith("# Adjacent Evidence Brief: EGCG Effects")
+
+
+def test_phase_b_labels_low_direct_human_corpus_as_hypothesis_generating(tmp_path: Path) -> None:
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"receipts": [
+            {"directness": "direct"},
+            {"directness": "review"},
+            {"directness": "mechanistic"},
+            {"directness": "adjacent"},
+        ]}),
+        encoding="utf-8",
+    )
+
+    fixed, _logs = journal_finalizer._phase_b_corpus_strength_label(
+        "# Research Synthesis: Mixed Effects\n\n## Results\n\nBody.\n",
+        tmp_path,
+    )
+
+    assert fixed.startswith("# Hypothesis-Generating Brief: Mixed Effects")
+
+
+def test_phase_b_keeps_research_synthesis_when_direct_corpus_is_sufficient(tmp_path: Path) -> None:
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"receipts": [
+            {"directness": "direct"},
+            {"directness": "direct"},
+            {"directness": "review"},
+        ]}),
+        encoding="utf-8",
+    )
+    paper = "# Research Synthesis: Acarbose Effects\n\n## Results\n\nBody.\n"
+
+    fixed, logs = journal_finalizer._phase_b_corpus_strength_label(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_phase_n_labels_discussion_thesis_and_resolution_markers() -> None:
     # Blocker #3: gate requires literal **Thesis:** / **Resolution criteria:**
     # markers in Discussion; the finalizer now labels the existing first/last

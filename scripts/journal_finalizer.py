@@ -307,14 +307,19 @@ def _corpus_strength_label(receipts: list[dict[str, Any]]) -> str:
         return ""
     total = len(receipts)
     direct = sum(1 for r in receipts if str(r.get("directness") or "").lower() == "direct")
-    weak = sum(
-        1 for r in receipts
-        if str(r.get("directness") or "").lower() in {"mechanistic", "adjacent", "indirect", "review"}
+    mechanistic = sum(
+        1 for r in receipts if str(r.get("directness") or "").lower() == "mechanistic"
     )
-    if direct == 0 and weak * 2 >= total:
+    adjacent = sum(
+        1 for r in receipts
+        if str(r.get("directness") or "").lower() in {"adjacent", "indirect", "review"}
+    )
+    if direct == 0 and mechanistic * 2 >= total:
         return "Mechanistic Evidence Map"
+    if direct == 0 and adjacent * 2 >= total:
+        return "Adjacent Evidence Brief"
     if direct < 2 or direct * 5 < total:
-        return "Hypothesis-Generating Evidence Map"
+        return "Hypothesis-Generating Brief"
     return ""
 
 

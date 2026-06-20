@@ -141,13 +141,12 @@ _REFERENCE_DUMP_RE = re.compile(r"\b(?:DOI|PMID):\s*\S+", re.IGNORECASE)
 _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain|preliminary|context[- ]dependent|not definitive|requires confirmation)\.?$", re.IGNORECASE)
 _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
 _GRAMMAR_ARTIFACT_RE = re.compile(
-    r"\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
+    r"(?:\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
     r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were)"
-    r"|does\s+not\s+automatically\s+(?:is|are|was|were))\b",
+    r"|does\s+not\s+automatically\s+(?:is|are|was|were))\b|(?<=[A-Za-z])\.g\.,)",
     re.IGNORECASE,
 )
-_DANGLING_ABBREV_RE = re.compile(r"(?<=[A-Za-z])\.g\.,")
-_DUPLICATE_ANY_HEADING_RE = re.compile(r"^(#{2,6})\s+(.+?)\s*\n+(?=\1\s+\2\s*$)", re.M)
+_DUPLICATE_ANY_HEADING_RE = re.compile(r"^(#{2,6})\s+(.+?)\s*\n+(?=\1\s+\2\s*$)|^(##)\s+(Quantitative\s+Evidence\s+Index\b.*)\s*\n+(?=\3\s+Quantitative\s+Evidence\s+Index\b)", re.M)
 _CITATION_ONLY_STUB_RE = re.compile(
     r"^(?:[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
     r"(?:\s+et\s+al\.)?\s+(?:19|20)\d{2}[a-z]?\s+"
@@ -158,7 +157,6 @@ _CLASSIFICATION_META_ROW_RE = re.compile(
     re.IGNORECASE,
 )
 _PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
-_QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M)
 _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
 _UNRESOLVED_TEMPLATE_RE = re.compile(r"(?<![a-z])(?:source|study|trial|paper)\((?:s|es)\)(?![a-z])|\bstudy/studies\b", re.IGNORECASE)
 _COUNT_CLAIM_RE = re.compile(r"\b(?:spans|contains|includes|covers|across)\s+(\d+)\s+(?:curated\s+)?(?:references?|sources?|studies|papers)\b", re.IGNORECASE)
@@ -184,7 +182,6 @@ def evaluate_journal_surface(
     issues: list[SurfaceIssue] = []
     body_md = _journal_body(paper_md)
     low = body_md.lower()
-    qei_heads = list(_QEI_HEADING_RE.finditer(body_md))
     issues.extend(SurfaceIssue("placeholder_prose", pat) for pat in _PLACEHOLDER_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("template_meta", pat) for pat in _META_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("public_artifact", pat) for pat in _PUBLIC_ARTIFACT_PATTERNS if pat in low)
@@ -195,15 +192,13 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
     issues.extend(SurfaceIssue("malformed_numeric", f"malformed numeric artifact: {m.group(0).strip()}") for m in _MALFORMED_NUMERIC_RE.finditer(body_md))
     issues.extend(SurfaceIssue("grammar_artifact", msg) for msg in _grammar_artifact_issue_messages(body_md))
-    issues.extend(SurfaceIssue("grammar_artifact", f"dangling abbreviation artifact: {m.group(0)}") for m in _DANGLING_ABBREV_RE.finditer(body_md))
     issues.extend(SurfaceIssue("public_artifact", msg) for msg in _classification_metadata_row_issue_messages(body_md))
     # Backtick-fenced spans (`like_this`) are code/file references —
     # exempt from the slug check (real-world conventional in Methods +
     # AI-disclosure sections).
     _body_for_slug_check = re.sub(r"`[^`]*`", "", body_md)
     issues.extend(SurfaceIssue("topic_slug_artifact", f"public topic-slug artifact: {m.group(0)}") for m in _PUBLIC_SLUG_RE.finditer(_body_for_slug_check))
-    issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
-    issues.extend(SurfaceIssue("duplicate_heading", f"duplicate consecutive heading: {m.group(2)}") for m in _DUPLICATE_ANY_HEADING_RE.finditer(body_md))
+    issues.extend(SurfaceIssue("duplicate_heading", f"duplicate consecutive heading: {m.group(2) or m.group(4)}") for m in _DUPLICATE_ANY_HEADING_RE.finditer(body_md))
     if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_reference_issue_messages(paper_md))
