@@ -294,13 +294,23 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
 
 
 def render_quality_section_for_paper(bundle: Any) -> str:
-    lines = [
-        "## Risk of Bias and GRADE",
-        "",
+    has_rob = bool(getattr(bundle, "rob_assessments", ()))
+    has_grade = bool(getattr(bundle, "grade_assessments", ()))
+    intro = (
         "Risk-of-bias and certainty judgments are generated as structured "
         "sidecars from the accepted receipt set. The manuscript reports the "
         "study-level overall rating and outcome-level certainty label; the "
-        "full domain table is preserved in `quality_methods.md`.",
+        "full domain table is preserved in `quality_methods.md`."
+        if has_rob or has_grade
+        else "No populated public risk-of-bias or GRADE rows were available "
+        "for this run. Interpretation therefore remains bounded by source "
+        "tier, directness, and receipt traceability rather than formal "
+        "RoB/GRADE appraisal."
+    )
+    lines = [
+        "## Risk of Bias and GRADE",
+        "",
+        intro,
         "",
         "### Risk-of-Bias Summary",
         "",

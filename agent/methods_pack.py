@@ -119,9 +119,12 @@ def build_methods_pack(
             counts.get("admitted_receipts") or counts.get("accepted_high_confidence") or 0
         )
     rob = rob_method or (
-        "Per-source risk-of-bias was rated using design-appropriate "
-        "Cochrane RoB-2 (RCTs), ROBINS-I (non-randomised studies), and "
-        "AMSTAR-2 (systematic reviews / meta-analyses)."
+        "Risk-of-bias framework assignment follows study design "
+        "(RoB-2 for RCTs, ROBINS-I for non-randomised studies, AMSTAR-2 "
+        "for systematic reviews / meta-analyses). Public appraisal claims "
+        "are limited to populated `risk_of_bias.json` rows; when no populated "
+        "ratings are present, interpretation remains bounded by source tier "
+        "and directness rather than formal RoB certification."
     )
     return MethodsPack(
         review_type=review_type,
@@ -266,7 +269,7 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "",
         "### Data items",
         "The following fields were extracted from each included source: " +
-        ", ".join(pack.data_extraction_fields) + ". Under the calibration rule, source verification in the public bundle is limited to reference-level metadata; exact statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias appraisal, and claim registry) rather than from re-parsed full text.",  # noqa: E501
+        ", ".join(pack.data_extraction_fields) + ". Under the calibration rule, source verification in the public bundle is limited to reference-level metadata; exact statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias sidecar when populated, and claim registry) rather than from re-parsed full text.",  # noqa: E501
         "",
         "### Risk-of-bias appraisal",
         pack.risk_of_bias_approach,
