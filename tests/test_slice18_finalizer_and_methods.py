@@ -133,6 +133,23 @@ def test_methods_data_items_carries_source_grounding_disclosure() -> None:
     assert "claim registry" in md
 
 
+def test_methods_default_rob_wording_does_not_overclaim_populated_appraisal() -> None:
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="example_topic",
+        corpus_search_queries=("example query",),
+        n_retrieved=10,
+        n_screened=10,
+        n_included=8,
+        n_rejected=2,
+        outcome_classes=("primary_outcome",),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "Per-source risk-of-bias was rated" not in md
+    assert "limited to populated `risk_of_bias.json` rows" in md
+    assert "risk-of-bias sidecar when populated" in md
+
+
 def test_methods_pack_renders_receipt_admission_funnel() -> None:
     pack = build_methods_pack(
         review_type="evidence_brief",

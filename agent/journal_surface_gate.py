@@ -146,6 +146,8 @@ _GRAMMAR_ARTIFACT_RE = re.compile(
     r"|does\s+not\s+automatically\s+(?:is|are|was|were))\b",
     re.IGNORECASE,
 )
+_DANGLING_ABBREV_RE = re.compile(r"(?<=[A-Za-z])\.g\.,")
+_DUPLICATE_ANY_HEADING_RE = re.compile(r"^(#{2,6})\s+(.+?)\s*\n+(?=\1\s+\2\s*$)", re.M)
 _CITATION_ONLY_STUB_RE = re.compile(
     r"^(?:[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
     r"(?:\s+et\s+al\.)?\s+(?:19|20)\d{2}[a-z]?\s+"
@@ -193,6 +195,7 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("hedge_fragment", msg) for msg in _hedge_fragment_issue_messages(body_md))
     issues.extend(SurfaceIssue("malformed_numeric", f"malformed numeric artifact: {m.group(0).strip()}") for m in _MALFORMED_NUMERIC_RE.finditer(body_md))
     issues.extend(SurfaceIssue("grammar_artifact", msg) for msg in _grammar_artifact_issue_messages(body_md))
+    issues.extend(SurfaceIssue("grammar_artifact", f"dangling abbreviation artifact: {m.group(0)}") for m in _DANGLING_ABBREV_RE.finditer(body_md))
     issues.extend(SurfaceIssue("public_artifact", msg) for msg in _classification_metadata_row_issue_messages(body_md))
     # Backtick-fenced spans (`like_this`) are code/file references —
     # exempt from the slug check (real-world conventional in Methods +
@@ -200,6 +203,7 @@ def evaluate_journal_surface(
     _body_for_slug_check = re.sub(r"`[^`]*`", "", body_md)
     issues.extend(SurfaceIssue("topic_slug_artifact", f"public topic-slug artifact: {m.group(0)}") for m in _PUBLIC_SLUG_RE.finditer(_body_for_slug_check))
     issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
+    issues.extend(SurfaceIssue("duplicate_heading", f"duplicate consecutive heading: {m.group(2)}") for m in _DUPLICATE_ANY_HEADING_RE.finditer(body_md))
     if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_reference_issue_messages(paper_md))

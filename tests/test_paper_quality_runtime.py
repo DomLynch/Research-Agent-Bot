@@ -60,6 +60,13 @@ def test_quality_methods_payloads_cover_receipts_and_outcomes(tmp_path: Path) ->
     assert "Final certainty" in paper_md
 
 
+def test_quality_section_empty_sidecars_do_not_claim_appraisal() -> None:
+    bundle = SimpleNamespace(rob_assessments=(), grade_assessments=())
+    paper_md = pqr.render_quality_section_for_paper(bundle)
+    assert "No populated public risk-of-bias or GRADE rows" in paper_md
+    assert "judgments are generated" not in paper_md
+
+
 def _claim(text: str) -> dict:
     return {
         "claim_type": "confidence_interval",

@@ -121,6 +121,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_numeric_significance_correction(t, out_dir),
         _phase_d_reference_closure,
         lambda t: _phase_b_lane_qualifier(t, out_dir),
+        lambda t: _phase_b_corpus_strength_label(t, out_dir),
         _phase_i_split_concatenated_headings,
         lambda t: _phase_e_structural_fallback(t, out_dir),
         lambda t: _phase_f_reconcile_results_table(t, out_dir),
@@ -211,19 +212,25 @@ def _phase_m_strip_surface_duplicate_paragraphs(
 
 def _phase_m_repair_surface_artifacts(text: str) -> tuple[str, list[FinalizerLogEntry]]:
     out, n_grammar = _repair_known_grammar_artifacts(text)
+    out, n_abbrev = _repair_dangling_abbrev_artifacts(out)
     out, n_headings = _remove_empty_subheadings(out)
+    out, n_duplicate = _remove_consecutive_duplicate_headings(out)
     if out == text:
         return text, []
     changes = []
     if n_grammar:
         changes.append(f"grammar_artifact={n_grammar}")
+    if n_abbrev:
+        changes.append(f"dangling_abbrev={n_abbrev}")
     if n_headings:
         changes.append(f"empty_subheading={n_headings}")
+    if n_duplicate:
+        changes.append(f"duplicate_heading={n_duplicate}")
     return out, [
         FinalizerLogEntry(
             phase="M_surface_artifact_cleanup",
             rule="repair_known_surface_artifacts",
-            n_changes=n_grammar + n_headings,
+            n_changes=n_grammar + n_abbrev + n_headings + n_duplicate,
             detail="; ".join(changes),
         )
     ]
@@ -247,6 +254,10 @@ def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
     return out, n + n_transfer
 
 
+def _repair_dangling_abbrev_artifacts(text: str) -> tuple[str, int]:
+    return re.subn(r"(?<=[A-Za-z])\.g\.,", ". For example,", text)
+
+
 def _remove_empty_subheadings(text: str) -> tuple[str, int]:
     matches = list(re.finditer(r"^(#{3,6})\s+(.+?)\s*$", text, flags=re.M))
     remove: list[tuple[int, int]] = []
@@ -263,6 +274,48 @@ def _remove_empty_subheadings(text: str) -> tuple[str, int]:
     for start, end in reversed(remove):
         out = out[:start].rstrip() + "\n\n" + out[end:].lstrip()
     return out, len(remove)
+
+
+def _remove_consecutive_duplicate_headings(text: str) -> tuple[str, int]:
+    pat = re.compile(r"^(#{2,6})\s+(.+?)\s*\n+(?=\1\s+\2\s*$)", re.M)
+    return pat.subn("", text)
+
+
+def _phase_b_corpus_strength_label(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    rows = manifest.get("receipts") if isinstance(manifest, dict) else None
+    receipts = [r for r in rows if isinstance(r, dict)] if isinstance(rows, list) else []
+    label = _corpus_strength_label(receipts)
+    if not label:
+        return text, []
+    pattern = re.compile(r"^#\s+Research Synthesis:\s+(.+?)\s*$", re.M)
+    out, n = pattern.subn(rf"# {label}: \1", text, count=1)
+    if not n:
+        return text, []
+    return out, [FinalizerLogEntry(
+        phase="B_corpus_strength_label",
+        rule="label_weak_corpus_from_directness_profile",
+        n_changes=1,
+        detail=f"title label={label!r}",
+    )]
+
+
+def _corpus_strength_label(receipts: list[dict[str, Any]]) -> str:
+    if not receipts:
+        return ""
+    total = len(receipts)
+    direct = sum(1 for r in receipts if str(r.get("directness") or "").lower() == "direct")
+    weak = sum(
+        1 for r in receipts
+        if str(r.get("directness") or "").lower() in {"mechanistic", "adjacent", "indirect", "review"}
+    )
+    if direct == 0 and weak * 2 >= total:
+        return "Mechanistic Evidence Map"
+    if direct < 2 or direct * 5 < total:
+        return "Hypothesis-Generating Evidence Map"
+    return ""
 
 
 _PUBLIC_METADATA_HEADER_LABELS = {
@@ -468,7 +521,8 @@ def _phase_h_topic_slug_normalise(
         )
         display = pack.aliases_display[0] if pack.aliases_display else ""
     except (OSError, ValueError, ImportError, IndexError):
-        return text, []
+        from agent.topic_display import humanize_topic
+        display = humanize_topic(slug, root=Path(__file__).resolve().parent.parent)
     if not display or display == slug:
         return text, []
     pattern = re.compile(rf"\b{re.escape(slug)}\b", re.IGNORECASE)
