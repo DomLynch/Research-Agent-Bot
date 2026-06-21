@@ -1202,6 +1202,29 @@ def test_populated_appraisal_artifact_is_summarized(tmp_path: Path) -> None:
     assert logs[0].rule == "summarize_populated_appraisal_artifact"
 
 
+def test_existing_appraisal_summary_labels_are_normalized(tmp_path: Path) -> None:
+    ask = "Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources."
+    paper = (
+        "## Methods\n\n"
+        "Risk-of-bias appraisal summary: The public appraisal artifact reports "
+        "65 source-level rating row(s) using robins_i, syrcle; overall ratings "
+        "are some_concerns=65.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "risk_of_bias.json").write_text(json.dumps([
+        {"study_id": "Smith 2025", "tool": "robins_i", "overall_rating": "some_concerns"},
+    ]))
+
+    fixed, logs = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
+
+    assert "ROBINS-I" in fixed
+    assert "SYRCLE" in fixed
+    assert "some concerns=65" in fixed
+    assert "robins_i" not in fixed
+    assert "some_concerns" not in fixed
+    assert logs[0].rule == "normalize_public_appraisal_labels"
+
+
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

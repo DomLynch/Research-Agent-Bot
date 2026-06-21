@@ -5,6 +5,7 @@ import os
 import sys
 import time
 import urllib.request
+from types import SimpleNamespace
 from pathlib import Path
 from typing import Any
 from urllib.request import Request
@@ -1314,6 +1315,32 @@ def test_stale_audit_refresh_skips_all_green_run(tmp_path: Path, monkeypatch) ->
     monkeypatch.setattr(finalizer, "_phase_g_refresh_sidecars", _recording_refresh(called))
     assert daily._refresh_stale_audit_sidecar(run) is False
     assert called == []
+
+
+def test_selection_repairs_recent_surface_sidecar_before_skip(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "full_paper.journal_surface.json", {
+        "passed": False,
+        "issues": [{"code": "topic_slug_artifact"}],
+    })
+
+    def fake_finalize(path: Path) -> object:
+        _write_json(path / "full_paper.journal_surface.json", {"passed": True, "issues": []})
+        return SimpleNamespace(paper_changed=True)
+
+    import agent.journal_finalizer as finalizer
+    monkeypatch.setattr(finalizer, "finalize_run", fake_finalize)
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=set(),
+    )
+
+    assert selected == run
+    assert considered[0]["status"] == "eligible"
 
 
 def test_submit_holds_when_remote_dedupe_fails(tmp_path: Path) -> None:
