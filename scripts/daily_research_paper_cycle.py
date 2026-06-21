@@ -1049,10 +1049,10 @@ def select_topic(
     fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
     candidates = fresh_candidates or candidates
     pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
-    # Frontier-advance: a never-attempted topic outranks any already-attempted
-    # one, so the cycle works through the untried publish-ready backlog instead
-    # of orbiting a handful of already-worked topics (whose prior pass-rate +
-    # large corpus otherwise let them win every cycle, then dedup at submit).
+    # Prefer topics with a local corpus first; empty generated frontier topics
+    # belong behind publishable corpora so the publish lane does not spend the
+    # whole window seeding. Within that ready pool, frontier-advance still holds:
+    # a never-attempted topic outranks any already-attempted one.
     # Within each group the existing order still applies — publication score,
     # then fact support, then least-recently attempted. Revisiting proven
     # topics is the revise cycle's job, not the fresh cycle's.
