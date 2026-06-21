@@ -2839,6 +2839,59 @@ def test_remote_revision_requests_are_newest_first(monkeypatch) -> None:
     assert [row["artifactId"] for row in out] == ["new", "old"]
 
 
+def test_pending_revision_skips_request_when_matching_run_is_published(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    _seed_submitted_run(runs, "sirtuin_intervention_aging_effects", "# Hypothesis-Generating Brief: Sirtuin Intervention Aging Effects")
+    request = {
+        "artifactId": "revise-1",
+        "title": "Research Synthesis: Sirtuin Intervention Aging Effects",
+        "topic": "sirtuin_intervention_aging_effects",
+        "feedback": "Add evidence examples.",
+    }
+
+    pending, err = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+        published_loader=lambda: ({"sha256:x"}, None),
+    )
+    topics, topic_err = cycle._pending_remote_revision_topics(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+        published_loader=lambda: ({"sha256:x"}, None),
+    )
+
+    assert err is None
+    assert pending is None
+    assert topic_err is None
+    assert topics == set()
+
+
+def test_pending_revision_keeps_unpublished_matching_request(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    _seed_submitted_run(runs, "sirtuin_intervention_aging_effects", "# Hypothesis-Generating Brief: Sirtuin Intervention Aging Effects")
+    request = {
+        "artifactId": "revise-1",
+        "title": "Research Synthesis: Sirtuin Intervention Aging Effects",
+        "topic": "sirtuin_intervention_aging_effects",
+        "feedback": "Add evidence examples.",
+    }
+
+    pending, err = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+        published_loader=lambda: (set(), None),
+    )
+
+    assert err is None
+    assert pending is not None
+    assert pending["source_run"] == "synthesis-sirtuin_intervention_aging_effects-v06-DAILY-2026-05-29T00-00-00Z"
+
+
 def test_remote_revision_suppressed_when_latest_decision_is_reject(monkeypatch) -> None:
     title = "Research Synthesis: Brain Age MRI — full paper"
     base = {"artifactType": "research_paper", "agentId": "agent-v3-full-paper", "title": title}

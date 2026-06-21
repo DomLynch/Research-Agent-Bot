@@ -91,6 +91,7 @@ RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
 CorpusBuilder = Callable[..., dict[str, Any]]
 RevisionLoader = Callable[[], tuple[list[dict[str, Any]], str | None]]
+PublishedLoader = Callable[[], tuple[set[str], str | None]]
 Sleeper = Callable[[float], None]
 
 
@@ -927,11 +928,15 @@ def _pending_remote_revision(
     ledger_dir: Path,
     *,
     loader: RevisionLoader | None = None,
+    published_loader: PublishedLoader | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
     rows, error = (loader or _remote_revision_requests)()
     if error:
         return None, error
     handled = _handled_revision_ids(ledger_dir, rows)
+    remote_seen: set[str] = set()
+    if published_loader is not None:
+        remote_seen, _remote_error = published_loader()
     submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
     records: list[Any] = raw_records if isinstance(raw_records, list) else []
@@ -940,6 +945,7 @@ def _pending_remote_revision(
             continue
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
         request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
+        matches: list[tuple[dict[str, Any], Path, str]] = []
         for record in records if isinstance(records, list) else []:
             if not isinstance(record, dict):
                 continue
@@ -953,9 +959,14 @@ def _pending_remote_revision(
                 submit_bridge._title_marker(submit_bridge._paper_title(paper)),
             }
             if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
-                request["topic"] = record_topic
-                request["source_run"] = run.name
-                return request, None
+                matches.append((record, run, record_topic))
+        if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
+            continue
+        if matches:
+            record, run, record_topic = matches[-1]
+            request["topic"] = record_topic
+            request["source_run"] = run.name
+            return request, None
     return None, None
 
 
@@ -964,11 +975,15 @@ def _pending_remote_revision_topics(
     ledger_dir: Path,
     *,
     loader: RevisionLoader | None = None,
+    published_loader: PublishedLoader | None = None,
 ) -> tuple[set[str], str | None]:
     rows, error = (loader or _remote_revision_requests)()
     if error:
         return set(), error
     handled = _handled_revision_ids(ledger_dir, rows)
+    remote_seen: set[str] = set()
+    if published_loader is not None:
+        remote_seen, _remote_error = published_loader()
     submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
     records: list[Any] = raw_records if isinstance(raw_records, list) else []
@@ -978,6 +993,8 @@ def _pending_remote_revision_topics(
             continue
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
         request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
+        matched_topics: set[str] = set()
+        matched_published = False
         for record in records:
             if not isinstance(record, dict):
                 continue
@@ -989,8 +1006,30 @@ def _pending_remote_revision_topics(
             if title_marker == submit_bridge._title_marker(submit_bridge._paper_title(paper)) or (
                 request_topic and request_topic == submit_bridge._normalized_key(record_topic)
             ):
-                out.add(record_topic)
+                matched_topics.add(record_topic)
+                matched_published = matched_published or _submitted_record_is_published(record, paper, remote_seen)
+        if not matched_published:
+            out.update(matched_topics)
     return out, None
+
+
+def _submitted_record_is_published(record: dict[str, Any], paper: Path, remote_seen: set[str]) -> bool:
+    markers = {
+        str(record.get("fingerprint") or ""),
+        str(record.get("paper_sha256") or ""),
+        str(record.get("content_hash") or ""),
+        str(record.get("submission_payload_hash") or ""),
+        str(record.get("submission_identity_key") or ""),
+    }
+    submission_id = record.get("submission_id")
+    if isinstance(submission_id, str) and submission_id.strip():
+        markers.add(submit_bridge._submission_marker(submission_id))
+    if paper.exists():
+        markers.add(submit_bridge._sha256(paper))
+        title = submit_bridge._paper_title(paper)
+        if title:
+            markers.add(submit_bridge._title_marker(title))
+    return bool({marker for marker in markers if marker} & remote_seen)
 
 
 def _terminal_topics(
@@ -1035,6 +1074,7 @@ def _poll_remote_revision(
     ledger_dir: Path,
     *,
     loader: RevisionLoader | None = None,
+    published_loader: PublishedLoader | None = None,
     seconds: int = DECISION_POLL_SECONDS,
     interval_seconds: int = DECISION_POLL_INTERVAL_SECONDS,
     sleeper: Sleeper = time.sleep,
@@ -1051,7 +1091,12 @@ def _poll_remote_revision(
     last_error = None
     while True:
         meta["attempts"] = int(meta["attempts"]) + 1
-        revision, error = _pending_remote_revision(runs_root, ledger_dir, loader=loader)
+        revision, error = _pending_remote_revision(
+            runs_root,
+            ledger_dir,
+            loader=loader,
+            published_loader=published_loader,
+        )
         if revision:
             meta.update({"matched": True})
             return revision, meta
@@ -2142,14 +2187,22 @@ def run_cycle(
         remote_revision: dict[str, Any] | None = None
         terminal_excluded: set[str] = set()
         if submit and topic is None and mode != "fresh" and (revision_loader is not None or submit_cycle is None):
-            remote_revision, revision_error = _pending_remote_revision(runs_root, ledger_dir, loader=revision_loader)
+            remote_revision, revision_error = _pending_remote_revision(
+                runs_root,
+                ledger_dir,
+                loader=revision_loader,
+                published_loader=lambda: (remote_seen, None),
+            )
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
                 ledger["remote_revisions"]["error"] = revision_error
         pending_revision_excluded: set[str] = set()
         if submit and topic is None and mode == "fresh" and revision_loader is None and submit_cycle is None:
             pending_revision_excluded, revision_error = _pending_remote_revision_topics(
-                runs_root, ledger_dir, loader=revision_loader,
+                runs_root,
+                ledger_dir,
+                loader=revision_loader,
+                published_loader=lambda: (remote_seen, None),
             )
             ledger["pending_revision_exclusions"] = {"checked": True, "topics": sorted(pending_revision_excluded)}
             if revision_error:
@@ -2746,6 +2799,7 @@ def run_cycle(
                             runs_root,
                             ledger_dir,
                             loader=revision_loader,
+                            published_loader=lambda: (remote_seen, None),
                             seconds=decision_poll_seconds,
                             interval_seconds=decision_poll_interval_seconds,
                             sleeper=decision_sleep,
