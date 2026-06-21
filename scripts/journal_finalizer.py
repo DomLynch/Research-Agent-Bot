@@ -1876,8 +1876,7 @@ def _phase_d_source_outcome_class_map(
         title = str(row.get("source_title") or "").strip()
         fallback = str(row.get("receipt_id") or "source").strip()
         citation = f"{token}: {title}" if token and title and token not in title else (token or title or fallback)
-        outcome_slug = str(row.get("outcome_class") or "contextual_other")
-        outcome = "Contextual Other" if outcome_slug == "contextual_other" else _outcome_display(outcome_slug)
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         examples.append(f"- {citation}: outcome={outcome}; directness={directness}; tier={tier}.")
@@ -1901,9 +1900,8 @@ def _phase_d_source_outcome_class_map(
     missing = sorted(named - present_tokens)
     if missing:
         notes.append(
-            "Reviewer-named sources not retained in this source map: "
-            + ", ".join(missing[:12])
-            + ". They are not counted in clinical outcome-class tallies unless listed below."
+            f"{len(missing)} reviewer-named source(s) are not retained in this source map "
+            "and are not counted in clinical outcome-class tallies unless listed below."
         )
     note = "### Source Outcome-Class Map\n\n" + "\n\n".join((*notes, *examples))
     existing = re.search(

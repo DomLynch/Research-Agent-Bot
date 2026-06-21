@@ -1155,10 +1155,11 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "Old row" not in fixed
-    assert "Holmes 2026: Menopause pilot trial: outcome=Contextual Other" in fixed
+    assert "Holmes 2026: Menopause pilot trial: outcome=Contextual Adjacent Evidence" in fixed
     assert "Signal-accounting note: biomarker-positive source-level findings" in fixed
     assert "Tension-accounting note: disagreement counts are claim-level" in fixed
-    assert "Reviewer-named sources not retained in this source map: Gao 2026" in fixed
+    assert "1 reviewer-named source(s) are not retained in this source map" in fixed
+    assert "Gao 2026" not in fixed
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
