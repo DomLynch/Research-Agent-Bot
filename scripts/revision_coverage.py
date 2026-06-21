@@ -27,6 +27,23 @@ _USER = (
 )
 
 
+def revision_asks(feedback: str) -> list[str]:
+    """Split Researka's joined reviewer feedback into material revision asks."""
+    starts = (
+        "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
+        "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
+        "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
+        "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair",
+        "Replace", "Rewrite", "Separate", "Update", "Verify",
+    )
+    pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
+    asks = [a.strip() for a in re.split(pattern, feedback) if a.strip()]
+    return [
+        re.sub(r"^PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS\b.*?\bEACH:\s*", "", ask).strip()
+        for ask in asks
+    ]
+
+
 def _excerpt(paper_md: str, head: int = 16000, tail: int = 8000) -> str:
     """Head + tail of the paper so the judge sees both the abstract/intro and
     the conclusion/limitations — where reviewer asks concentrate — without
@@ -66,6 +83,17 @@ def unmet_asks(
     if not isinstance(flags, list) or len(flags) != len(clean):
         return []  # malformed verdict — fail-open
     return [a for a, ok in zip(clean, flags, strict=True) if not ok]
+
+
+def material_unmet_asks(paper_md: str, feedback: str) -> list[str]:
+    """Coverage result after deterministic structural checks and LLM judge."""
+    asks = revision_asks(feedback)
+    unmet = deterministic_unmet_asks(paper_md, asks)
+    deterministic_met = set(deterministic_satisfied_asks(paper_md, asks))
+    for ask in unmet_asks(paper_md, asks):
+        if ask not in unmet and ask not in deterministic_met:
+            unmet.append(ask)
+    return unmet
 
 
 def deterministic_unmet_asks(paper_md: str, asks: Sequence[str]) -> list[str]:

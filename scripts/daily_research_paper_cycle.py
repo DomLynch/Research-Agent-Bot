@@ -1220,19 +1220,8 @@ def _failure_class(status: str) -> str:
 
 def _revision_asks(feedback: str) -> list[str]:
     """The enumerated reviewer asks recovered from the '; '-joined feedback."""
-    starts = (
-        "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
-        "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
-        "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
-        "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair",
-        "Replace", "Rewrite", "Separate", "Update", "Verify",
-    )
-    pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
-    asks = [a.strip() for a in re.split(pattern, feedback) if a.strip()]
-    return [
-        re.sub(r"^PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS\b.*?\bEACH:\s*", "", ask).strip()
-        for ask in asks
-    ]
+    import revision_coverage
+    return revision_coverage.revision_asks(feedback)
 
 
 def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
@@ -1243,12 +1232,7 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
         return []
     import revision_coverage
     text = paper.read_text(encoding="utf-8")
-    asks = _revision_asks(feedback)
-    unmet = revision_coverage.deterministic_unmet_asks(text, asks)
-    deterministic_met = set(revision_coverage.deterministic_satisfied_asks(text, asks))
-    for ask in revision_coverage.unmet_asks(text, asks):
-        if ask not in unmet and ask not in deterministic_met:
-            unmet.append(ask)
+    unmet = revision_coverage.material_unmet_asks(text, feedback)
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
 
 
