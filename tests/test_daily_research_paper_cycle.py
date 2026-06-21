@@ -2735,6 +2735,38 @@ def test_submitted_revision_waits_for_newer_review_before_reprocessing(tmp_path:
     assert pending and pending["artifactId"] == "r2"
 
 
+def test_pending_remote_revision_matches_topic_when_paper_title_is_malformed(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    source_run = runs / "synthesis-sirtuin_intervention_aging_effects-v06-DAILY-2026-06-21T20-04-33Z"
+    source_run.mkdir(parents=True)
+    paper = source_run / "full_paper.md"
+    paper.write_text(
+        "Additional corpus sources included animal/preclinical evidence.\n\n## Abstract\n",
+        encoding="utf-8",
+    )
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source_run.name,
+        "topic": "sirtuin_intervention_aging_effects",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        runs / cycle.LEDGER_DIR,
+        loader=lambda: ([{
+            "artifactId": "sirtuin-review",
+            "title": "Research Synthesis: Sirtuin Intervention Aging Effects",
+            "topic": "sirtuin_intervention_aging_effects",
+            "feedback": "Revise directional coding.",
+            "reviewedAt": "2026-06-22T00:11:11+04:00",
+        }], None),
+    )
+
+    assert error is None
+    assert pending and pending["artifactId"] == "sirtuin-review"
+    assert pending["source_run"] == source_run.name
+
+
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", target_journal=True)
     _topic(tmp_path, "telomere_biomarker_effects", target_journal=True)
@@ -2790,6 +2822,21 @@ def test_remote_revision_keeps_only_latest_review_per_title(monkeypatch) -> None
     out, err = cycle._remote_revision_requests("http://reviews.test")
     assert err is None
     assert [r["feedback"] for r in out] == ["fresh"]  # only the latest revise, not the stale one
+
+
+def test_remote_revision_requests_are_newest_first(monkeypatch) -> None:
+    old_title = "Adjacent Evidence Brief: Alpha-klotho — full paper"
+    new_title = "Research Synthesis: Sirtuin Intervention Aging Effects"
+    base = {"artifactType": "research_paper", "agentId": "agent-v3-full-paper", "decision": "revise"}
+    _patch_reviews(monkeypatch, [
+        {**base, "artifactId": "old", "title": old_title, "reviewedAt": "2026-06-21T22:19:58+04:00", "requiredRevisions": ["older"]},
+        {**base, "artifactId": "new", "title": new_title, "reviewedAt": "2026-06-22T00:11:11+04:00", "requiredRevisions": ["newer"]},
+    ])
+
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+
+    assert err is None
+    assert [row["artifactId"] for row in out] == ["new", "old"]
 
 
 def test_remote_revision_suppressed_when_latest_decision_is_reject(monkeypatch) -> None:

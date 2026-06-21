@@ -809,7 +809,7 @@ def _revise_reason_bucket(text: str) -> str:
 
 
 def _required_revision_items(row: dict[str, Any]) -> list[str]:
-    raw = row.get("requiredRevisions")
+    raw = row.get("requiredRevisions") or row.get("required_revisions")
     return [str(item).strip() for item in raw if str(item).strip()] if isinstance(raw, list) else []
 
 
@@ -843,9 +843,10 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
         if str(row.get("decision") or "").lower() != "revise" or not required:
             continue  # only route revises that carry concrete, actionable required revisions
         out.append({
-            "artifactId": row.get("artifactId"),
-            "submissionId": row.get("submissionId"),
+            "artifactId": row.get("artifactId") or row.get("artifact_id"),
+            "submissionId": row.get("submissionId") or row.get("submission_id"),
             "title": row.get("title"),
+            "topic": row.get("topic"),
             "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
             "feedback": " ".join("; ".join(required).split())[:4000],
         })
@@ -938,6 +939,7 @@ def _pending_remote_revision(
         if _revision_key(request) in handled:
             continue
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
+        request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
         for record in records if isinstance(records, list) else []:
             if not isinstance(record, dict):
                 continue
@@ -945,12 +947,13 @@ def _pending_remote_revision(
             paper = run / "full_paper.md"
             if not paper.exists():
                 continue
+            record_topic = str(record.get("topic") or submit_bridge._run_topic(run))
             markers = {
                 str(record.get("fingerprint") or ""),
                 submit_bridge._title_marker(submit_bridge._paper_title(paper)),
             }
-            if title_marker in markers:
-                request["topic"] = record.get("topic") or submit_bridge._run_topic(run)
+            if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
+                request["topic"] = record_topic
                 request["source_run"] = run.name
                 return request, None
     return None, None
@@ -974,13 +977,19 @@ def _pending_remote_revision_topics(
         if _revision_key(request) in handled:
             continue
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
+        request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
         for record in records:
             if not isinstance(record, dict):
                 continue
             run = runs_root / str(record.get("run") or "")
             paper = run / "full_paper.md"
-            if paper.exists() and title_marker == submit_bridge._title_marker(submit_bridge._paper_title(paper)):
-                out.add(str(record.get("topic") or submit_bridge._run_topic(run)))
+            if not paper.exists():
+                continue
+            record_topic = str(record.get("topic") or submit_bridge._run_topic(run))
+            if title_marker == submit_bridge._title_marker(submit_bridge._paper_title(paper)) or (
+                request_topic and request_topic == submit_bridge._normalized_key(record_topic)
+            ):
+                out.add(record_topic)
     return out, None
 
 
