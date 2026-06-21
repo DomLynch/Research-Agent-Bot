@@ -803,18 +803,30 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
 
 def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
     """Revision keys (paper-title markers) that have hit the per-paper round
-    cap. A paper may be re-processed up to MAX_REVISE_ROUNDS times across cycles
-    (one row appended per round); once the count reaches the cap the paper is
-    treated as permanently handled so it stops monopolising the cycle and the
-    bot rotates to fresh topics. Counting is by title — Researka mints a new
-    artifactId per submission, so artifactId counts never accumulate."""
+    cap for the active reviewer request. A paper may be re-processed up to
+    MAX_REVISE_ROUNDS times per request; older handled rows do not exhaust a
+    newer reviewedAt for the same title. Counting is by title — Researka mints
+    a new artifactId per submission, so artifactId counts never accumulate."""
     data = _read_json(ledger_dir / HANDLED_REVISIONS)
     rows = data.get("handled")
     if not isinstance(rows, list):
         return set()
+    active_reviewed = {
+        _revision_key(row): _parse_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
+        for row in (active_requests or [])
+    }
+
+    def _row_applies_to_active_request(row: dict[str, Any]) -> bool:
+        reviewed_at = active_reviewed.get(_revision_key(row))
+        if reviewed_at is None:
+            return True
+        handled_at = _parse_time(str(row.get("handled_at") or ""))
+        return bool(handled_at and handled_at >= reviewed_at)
+
     counts = Counter(
         submit_bridge._title_marker(str(row.get("title") or ""))
-        for row in rows if isinstance(row, dict) and row.get("title")
+        for row in rows
+        if isinstance(row, dict) and row.get("title") and _row_applies_to_active_request(row)
     )
     terminal = {
         submit_bridge._title_marker(str(row.get("title") or ""))
@@ -826,10 +838,6 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         )
     }
     handled = terminal | {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
-    active_reviewed = {
-        _revision_key(row): _parse_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
-        for row in (active_requests or [])
-    }
     for row in rows:
         if not isinstance(row, dict) or row.get("status") != "submitted_to_researka":
             continue

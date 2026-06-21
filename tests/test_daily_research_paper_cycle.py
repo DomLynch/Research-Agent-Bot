@@ -2360,6 +2360,82 @@ def test_handled_revision_ids_caps_after_max_rounds(tmp_path: Path) -> None:
     assert marker in cycle._handled_revision_ids(ledger_dir)  # at cap -> permanently handled
 
 
+def test_handled_revision_ids_round_cap_resets_for_newer_review(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    marker = cycle.submit_bridge._title_marker(title)
+    old_rows = [
+        {
+            "key": marker,
+            "title": title,
+            "status": "revision_coverage_unmet",
+            "handled_at": f"2026-06-01T0{i}:00:00+00:00",
+        }
+        for i in range(cycle.MAX_REVISE_ROUNDS)
+    ]
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": old_rows})
+
+    active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
+
+    assert marker not in cycle._handled_revision_ids(ledger_dir, active)
+
+
+def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    marker = cycle.submit_bridge._title_marker(title)
+    current_rows = [
+        {
+            "key": marker,
+            "title": title,
+            "status": "revision_coverage_unmet",
+            "handled_at": f"2026-06-01T1{i}:00:00+00:00",
+        }
+        for i in range(cycle.MAX_REVISE_ROUNDS)
+    ]
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": current_rows})
+
+    active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
+
+    assert marker in cycle._handled_revision_ids(ledger_dir, active)
+
+
+def test_terminal_revision_row_before_newer_review_does_not_block(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": title,
+        "status": "terminal_source_precision_repair_incomplete",
+        "handled_at": "2026-06-01T09:00:00+00:00",
+    }]})
+
+    active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
+
+    assert marker not in cycle._handled_revision_ids(ledger_dir, active)
+
+
+def test_terminal_revision_row_after_active_review_still_blocks(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": title,
+        "status": "terminal_source_precision_repair_incomplete",
+        "handled_at": "2026-06-01T11:00:00+00:00",
+    }]})
+
+    active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
+
+    assert marker in cycle._handled_revision_ids(ledger_dir, active)
+
+
 def test_terminal_source_precision_handled_row_bypasses_round_cap(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
