@@ -73,6 +73,7 @@ REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
+SYNTHESIS_TIMEOUT_RETURN_CODE = 124
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
 FRAME_MIN_FULL_SCORE = 0.65
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
@@ -439,7 +440,7 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
 # domain-specific knowledge).
 _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "cycle_budget_exhausted", "current_run_not_submitted",
-                                  "synthesis_failed", "terminal_surface_repeat",
+                                  "synthesis_failed", "synthesis_timeout", "terminal_surface_repeat",
                                   "final_status_not_ready"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus",
@@ -1302,6 +1303,7 @@ def _failure_class(status: str) -> str:
         "abstract_overclaim": "C_writer_fixable",
         "retracted_source_cited": "D_no_action",
         "synthesis_failed": "C_writer_fixable",
+        "synthesis_timeout": "D_no_action",
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
         "strategy_evidence_insufficient": "B_corpus_fixable",
@@ -1643,7 +1645,16 @@ def _run_synthesis(
             env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
         if review_type_override:
             env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
-    result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
+    try:
+        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
+    except subprocess.TimeoutExpired as exc:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(out_dir / "synthesis_timeout.json", {
+            "topic": topic,
+            "timeout_seconds": timeout,
+            "error": f"{type(exc).__name__}: {exc}",
+        })
+        return SYNTHESIS_TIMEOUT_RETURN_CODE
     return int(result.returncode)
 
 
@@ -2691,7 +2702,8 @@ def run_cycle(
                                 remote_loader=(lambda: (remote_seen, None)) if submit else None,
                             )
                 gate_status = (
-                    "synthesis_failed" if return_code != 0
+                    "synthesis_timeout" if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE
+                    else "synthesis_failed" if return_code != 0
                     else "retracted_source_cited" if retracted
                     else "numeric_effect_mismatch" if numeric_issues
                     else "abstract_overclaim" if overclaims
@@ -2783,7 +2795,10 @@ def run_cycle(
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 elif revision_source and gate_status == "revision_coverage_unmet":
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                if return_code != 0:
+                if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE:
+                    ledger["status"] = "synthesis_timeout_no_submission"
+                    ledger["no_submission_reason"] = gate_status
+                elif return_code != 0:
                     ledger["status"] = "synthesis_failed"
                 elif bridge.get("status") == "submitted_to_researka":
                     ledger["status"] = "submitted_to_researka"
