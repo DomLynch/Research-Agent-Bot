@@ -1492,6 +1492,7 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     payload = {
         "publications": [{
             "title": title,
+            "submission_id": "sub-accepted",
             "topic": "vitamin_d_supplementation",
             "metadata": {"content_hash": "sha256:abc", "submission_identity_key": "sha256:identity"},
             "decision": "accept",
@@ -1516,6 +1517,7 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     assert markers == {
         "sha256:abc",
         "sha256:identity",
+        daily._submission_marker("sub-accepted"),
         daily._title_marker(title),
         daily._topic_marker("vitamin_d_supplementation"),
     }

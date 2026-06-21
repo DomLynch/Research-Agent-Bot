@@ -280,6 +280,10 @@ def _topic_marker(topic: str) -> str:
     return "topic:" + _normalized_key(topic)
 
 
+def _submission_marker(submission_id: str) -> str:
+    return "submission:" + submission_id.strip()
+
+
 def _paper_title(paper: Path) -> str:
     try:
         first = paper.read_text(encoding="utf-8").splitlines()[0]
@@ -1491,6 +1495,9 @@ def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], st
             title = row.get("title")
             if isinstance(title, str) and title.strip():
                 out.add(_title_marker(title))
+            submission_id = row.get("submission_id")
+            if isinstance(submission_id, str) and submission_id.strip():
+                out.add(_submission_marker(submission_id))
             for source in (row, metadata):
                 topic = source.get("topic") if isinstance(source, dict) else None
                 if isinstance(topic, str) and topic.strip():
