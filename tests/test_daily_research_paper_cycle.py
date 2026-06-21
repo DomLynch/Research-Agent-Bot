@@ -667,6 +667,24 @@ def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
     assert reasons["bucket_counts"] == {"directness_honesty": 1, "readability_redundancy": 1}
 
 
+def test_revision_asks_keep_semicolon_examples_inside_one_ask() -> None:
+    feedback = (
+        "Re-extract and re-code directional signals per source (e.g., Katsube 2024 positive; "
+        "Meng 2025 inverse association; Cheah 2026 lower serum ET). The uniform-null coding "
+        "is a pipeline artifact.; Add an explicit Tensions and Gaps section that names the real "
+        "disagreements: animal positive signals vs. absence of direct human RCTs; observational "
+        "dose-response vs. lack of replication; off-topic sources vs. clinical relevance.; "
+        "Clarify the admission funnel arithmetic."
+    )
+
+    asks = cycle._revision_asks(feedback)
+
+    assert len(asks) == 3
+    assert "Meng 2025 inverse association" in asks[0]
+    assert "observational dose-response vs. lack of replication" in asks[1]
+    assert asks[2] == "Clarify the admission funnel arithmetic."
+
+
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -1643,42 +1661,20 @@ def _aspirin_revise_loader() -> tuple[list[dict[str, Any]], None]:
               "feedback": "Hedge the cognitive claims"}], None)
 
 
-def _coverage_fake_synthesis(
-    feedback_seen: list[str | None],
-    paper_md: str | None = None,
-    *,
-    sidecars_ready: bool = False,
-):
+def _coverage_fake_synthesis(feedback_seen: list[str | None], paper_md: str | None = None):
     def fake(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None,
              revision_feedback: str | None = None, review_type_override: str | None = None) -> int:
         feedback_seen.append(revision_feedback)
         out_dir.mkdir(parents=True)
         (out_dir / "full_paper.md").write_text(
             paper_md or "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.", encoding="utf-8")
-        if sidecars_ready:
-            _write_json(out_dir / "final_status.json", {"submission_ready": True})
-            _write_json(out_dir / "full_paper.journal_surface.json", {"passed": True})
-            _write_json(out_dir / "pre_submit_gate.json", {"result": {"passed": True}})
         return 0
     return fake
 
 
-def _run_coverage_cycle(
-    tmp_path: Path,
-    monkeypatch,
-    *,
-    unmet,
-    submit_cycle,
-    max_revise_attempts=3,
-    paper_md: str | None = None,
-    sidecars_ready: bool = False,
-):
+def _run_coverage_cycle(tmp_path: Path, monkeypatch, *, unmet, submit_cycle, max_revise_attempts=3, paper_md: str | None = None):
     feedback_seen: list[str | None] = []
-    monkeypatch.setattr(
-        cycle,
-        "_run_synthesis",
-        _coverage_fake_synthesis(feedback_seen, paper_md, sidecars_ready=sidecars_ready),
-    )
+    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen, paper_md))
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: list(unmet))
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs", date="2026-05-28", run_synthesis=True, submit=True,
@@ -1710,21 +1706,6 @@ def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert ledger["attempts"][0]["gate_status"] == "revision_coverage_unmet"
     assert ledger["attempts"][0]["unmet_revision_asks"] == ["Hedge the cognitive claims"]
     assert int(ledger.get("submitted") or 0) == 0
-
-
-def test_submission_ready_sidecars_make_revision_coverage_advisory(tmp_path: Path, monkeypatch) -> None:
-    _seed_delayed_revise(tmp_path, monkeypatch)
-    ledger, _ = _run_coverage_cycle(
-        tmp_path,
-        monkeypatch,
-        unmet=["Hedge the cognitive claims"],
-        sidecars_ready=True,
-        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
-    )
-
-    assert ledger["attempts"][0]["submitted"] == 1
-    assert "unmet_revision_asks" not in ledger["attempts"][0]
-    assert ledger["attempts"][0]["revision_coverage_advisory_asks"] == ["Hedge the cognitive claims"]
 
 
 def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:

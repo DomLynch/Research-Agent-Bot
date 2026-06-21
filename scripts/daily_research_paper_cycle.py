@@ -1207,7 +1207,14 @@ def _failure_class(status: str) -> str:
 
 def _revision_asks(feedback: str) -> list[str]:
     """The enumerated reviewer asks recovered from the '; '-joined feedback."""
-    return [a.strip() for a in feedback.split(";") if a.strip()]
+    starts = (
+        "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
+        "Document", "Ensure", "Explain", "Fix", "Hedge", "Include",
+        "Provide", "Re-extract", "Reclassify", "Reconcile", "Regenerate",
+        "Remove", "Replace", "Rewrite", "Separate", "Update",
+    )
+    pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
+    return [a.strip() for a in re.split(pattern, feedback) if a.strip()]
 
 
 def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
