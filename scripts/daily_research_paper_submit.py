@@ -1585,7 +1585,7 @@ def run_cycle(
     raw_metadata = payload.get("metadata")
     metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
     ledger["candidate"] = {"run": run.name, "topic": metadata.get("topic"), "fingerprint": fp}
-    preflight_status = _researka_preflight_status(payload)
+    preflight_status = _researka_preflight_status(payload, enforce_recency=purpose != "revision")
     ledger["researka_preflight"] = preflight_status
     if preflight_status != "eligible":
         ledger.update({"status": "no_eligible_research_paper", "reason": preflight_status})

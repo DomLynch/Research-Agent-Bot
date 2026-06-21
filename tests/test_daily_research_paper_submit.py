@@ -1112,7 +1112,7 @@ def test_remote_publication_dedupe_blocks_same_title_rerun(tmp_path: Path) -> No
     assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
 
 
-def test_remote_publication_dedupe_allows_revision_of_existing_title(tmp_path: Path) -> None:
+def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {
         "artifactId": "art-1",
@@ -1128,8 +1128,74 @@ def test_remote_publication_dedupe_allows_revision_of_existing_title(tmp_path: P
         submit=True,
         submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
         remote_loader=lambda: ({marker}, None),
+        candidate_run=run,
     )
 
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["submitted"] == 1
+    assert ledger["considered"][0]["status"] == "submitted_to_researka"
+
+
+def test_remote_publication_dedupe_blocks_stale_revision_in_generic_sweep(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {
+        "artifactId": "art-1",
+        "submissionId": "sub-1",
+        "feedback": "Already handled.",
+    })
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    marker = daily._title_marker(daily.build_payload(run)["title"])
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-22",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("stale public revision must not submit")),
+        remote_loader=lambda: ({marker}, None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["submitted"] == 0
+    assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
+
+
+def test_explicit_revision_candidate_bypasses_recency_floor_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {
+        "artifactId": "art-1",
+        "submissionId": "sub-1",
+        "feedback": "Revise this already-reviewed artifact.",
+    })
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
+    for row in registry.values():
+        row["source_year"] = 2001
+    _write_json(run / "citation_registry.json", registry)
+    monkeypatch.setenv("RESEARKA_API_KEY_V3", "secret")
+
+    class Response:
+        status = 201
+
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b'{"id":"revision-submission"}'
+
+    monkeypatch.setattr(urllib.request, "urlopen", lambda _req, timeout: Response())
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-22",
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        candidate_run=run,
+    )
+
+    assert daily._researka_preflight_status(daily.build_payload(run)) == "recency_ratio_low:0/12<0.50"
     assert ledger["status"] == "submitted_to_researka"
     assert ledger["submitted"] == 1
     assert ledger["considered"][0]["status"] == "submitted_to_researka"
