@@ -1508,6 +1508,22 @@ def _lock(ledger_dir: Path, name: str = ".lock", *, block: bool = False) -> Iter
         yield True
 
 
+def _remaining_timeout(
+    timeout: int | None,
+    *,
+    started_mono: float,
+    cycle_budget_seconds: int,
+    clock: Callable[[], float],
+) -> int | None:
+    limits: list[int] = []
+    if timeout and timeout > 0:
+        limits.append(timeout)
+    if cycle_budget_seconds > 0:
+        remaining = int(cycle_budget_seconds - (clock() - started_mono))
+        limits.append(max(1, remaining))
+    return min(limits) if limits else None
+
+
 def _run_synthesis(
     topic: str,
     out_dir: Path,
@@ -2012,6 +2028,15 @@ def run_cycle(
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
     started_mono = clock()
+
+    def child_timeout() -> int | None:
+        return _remaining_timeout(
+            timeout,
+            started_mono=started_mono,
+            cycle_budget_seconds=cycle_budget_seconds,
+            clock=clock,
+        )
+
     mode = mode if mode in {"fresh", "revise", "mixed"} else "mixed"
     ledger_dir = runs_root / LEDGER_DIR
     ledger_path = _cycle_ledger_path(ledger_dir, date, mode)
@@ -2222,7 +2247,7 @@ def run_cycle(
                 attempted.add(selected)
                 remote_revision = None
                 continue
-            corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
+            corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=child_timeout())
             ledger["corpus"] = corpus
             if corpus.get("status") not in {"corpus_ready", "corpus_seeded"}:
                 attempt = {
@@ -2258,10 +2283,17 @@ def run_cycle(
             )
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:
                 source_repair = _repair_low_source_precision_corpus(
-                    selected, dry_run=synthesis_dry_run, timeout=timeout, force=revision_source_repair or source_precision_has_misses,
+                    selected,
+                    dry_run=synthesis_dry_run,
+                    timeout=child_timeout(),
+                    force=revision_source_repair or source_precision_has_misses,
                 )
                 ledger["source_precision_repair"] = {"topic": selected, **source_repair}
-                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                corpus = (ensure_corpus or _ensure_topic_corpus)(
+                    selected,
+                    dry_run=synthesis_dry_run,
+                    timeout=child_timeout(),
+                )
                 ledger["corpus"] = corpus
                 if source_repair.get("status") == "source_precision_repair_incomplete":
                     gate_status = (
@@ -2299,14 +2331,16 @@ def run_cycle(
                     corpus_repair = _repair_topic_corpus(
                         selected,
                         dry_run=False,
-                        timeout=timeout,
+                        timeout=child_timeout(),
                         seed_limit=_auto_seed_limit() * (round_idx + 2),
                     )
                     quant_corpus_repairs.append(corpus_repair)
                     if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
                         break
                     refreshed = (ensure_corpus or _ensure_topic_corpus)(
-                        selected, dry_run=synthesis_dry_run, timeout=timeout,
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=child_timeout(),
                     )
                     if int(refreshed.get("n_quant_claims") or 0) >= int(corpus_repair.get("n_quant_claims") or 0):
                         corpus = refreshed
@@ -2434,7 +2468,7 @@ def run_cycle(
                     )
                 synthesis_kwargs: dict[str, Any] = {
                     "dry_run": synthesis_dry_run,
-                    "timeout": timeout,
+                    "timeout": child_timeout(),
                     "revision_feedback": revision_feedback or None,
                 }
                 if review_type_override:
@@ -2445,7 +2479,7 @@ def run_cycle(
                     else _receipt_preflight(
                         selected,
                         out_dir,
-                        timeout=timeout,
+                        timeout=child_timeout(),
                         repair=True,
                         dry_run=synthesis_dry_run,
                     )
