@@ -1021,13 +1021,16 @@ def _external_references_are_marked_illustrative(paper_md: str, ask: str) -> boo
     boundary_terms = (
         "illustrative", "methodological", "benchmark", "general problem",
         "general caution", "external", "not a bundle source",
+        "surrogate-endpoint", "hard-outcome validity",
     )
     for name in external_names:
-        idx = text.find(name.lower())
-        if idx == -1:
+        indices = [m.start() for m in re.finditer(re.escape(name.lower()), text)]
+        if not indices:
             continue
-        window = text[max(0, idx - 240): idx + 360]
-        if not any(term in window for term in boundary_terms):
+        if not any(
+            any(term in text[max(0, idx - 240): idx + 360] for term in boundary_terms)
+            for idx in indices
+        ):
             return False
     return True
 
