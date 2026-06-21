@@ -1331,3 +1331,28 @@ def test_deterministic_unmet_accepts_unclear_table_reconciled_with_narrative() -
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_null_coded_directional_reconciliation() -> None:
+    ask = (
+        "Resolve the disconnect between the '47/48 null-coded' framing and the clearly directional "
+        "findings visible in the source bundle excerpts."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Directional coding note: Null or no extracted directional signal means no coded positive, "
+        "negative, or mixed effect was extracted for that specific outcome class. Positive and mixed "
+        "signals in other outcome classes are separately reported.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_removed_unbundled_citations() -> None:
+    ask = (
+        "Remove or add to the source bundle the citations Ioannidis 2005, Studenski 2011, "
+        "and Perera 2006, which appear in the prose but are not in the source_bundle list."
+    )
+    paper = "## References\n\n- **Huang 2025.** Registry-backed source.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
