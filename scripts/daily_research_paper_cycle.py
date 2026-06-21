@@ -201,23 +201,34 @@ def _publication_markers_for_run(runs_root: Path, run_name: str) -> set[str]:
 
 
 def _ledger_submission_markers(ledger: dict[str, Any]) -> set[str]:
+    markers: set[str] = set()
     response = ledger.get("submission")
     response = response.get("response") if isinstance(response, dict) else {}
-    if not isinstance(response, dict):
-        return set()
-    submission = response.get("submission")
-    job = response.get("job")
-    ids = [
-        response.get("id"),
-        response.get("submission_id"),
-        submission.get("id") if isinstance(submission, dict) else None,
-        job.get("target_object_id") if isinstance(job, dict) else None,
-    ]
-    return {
-        submit_bridge._submission_marker(value)
-        for value in ids
-        if isinstance(value, str) and value.strip()
-    }
+    if isinstance(response, dict):
+        submission = response.get("submission")
+        job = response.get("job")
+        ids = [
+            response.get("id"),
+            response.get("submission_id"),
+            submission.get("id") if isinstance(submission, dict) else None,
+            job.get("target_object_id") if isinstance(job, dict) else None,
+        ]
+        markers.update(
+            submit_bridge._submission_marker(value)
+            for value in ids
+            if isinstance(value, str) and value.strip()
+        )
+    attempts = ledger.get("attempts")
+    for attempt in attempts if isinstance(attempts, list) else []:
+        if not isinstance(attempt, dict):
+            continue
+        values = attempt.get("submission_markers")
+        if isinstance(values, list):
+            markers.update(
+                value for value in values
+                if isinstance(value, str) and value.startswith("submission:")
+            )
+    return markers
 
 
 def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_seen: set[str]) -> bool:
@@ -2668,6 +2679,9 @@ def run_cycle(
                     attempt["review_type_override"] = review_type_override
                 if submitted_any:
                     attempt.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
+                    submission_markers = sorted(_ledger_submission_markers(bridge))
+                    if submission_markers:
+                        attempt["submission_markers"] = submission_markers
                     ledger.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                 ledger["attempts"].append(attempt)
                 same_gate_failures = 0 if (revision_source and revision_feedback) else _same_gate_failure_count(ledger["attempts"], selected, gate_status)
