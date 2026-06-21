@@ -1894,10 +1894,21 @@ def _phase_d_source_outcome_class_map(
             "records that are not retained in the source map are excluded from clinical outcome-class tallies."
         )
     if any(token in feedback.lower() for token in ("tensions and gaps", "0 cross-study disagreements")):
+        contexts = [
+            label
+            for token, label in (
+                ("cognition", "cognition"),
+                ("menopause", "menopause"),
+                ("acute-care", "acute-care"),
+                ("acute care", "acute-care"),
+            )
+            if token in feedback.lower()
+        ]
+        context_note = f" across {', '.join(dict.fromkeys(contexts))}" if contexts else ""
         notes.append(
             "Tension-accounting note: disagreement counts are claim-level. Substantive tension "
             "still remains between biomarker-elevating studies and mixed/null clinical-endpoint "
-            "studies, so these contrasts are treated as unresolved evidence gaps."
+            f"studies{context_note}, so these contrasts are treated as unresolved evidence gaps."
         )
     named = {
         m.group(0)
