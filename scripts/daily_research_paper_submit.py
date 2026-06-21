@@ -688,6 +688,23 @@ def _refresh_stale_surface_sidecar(run: Path) -> bool:
         return False
 
 
+def _refresh_stale_revision_coverage_sidecar(run: Path) -> bool:
+    request = _read_json(run / "researka_revision_request.json")
+    if not request:
+        return False
+    gate = _read_json(run / REVISION_COVERAGE_GATE)
+    if gate.get("passed") is True:
+        return False
+    try:
+        if dt.datetime.now(dt.UTC).timestamp() - run.stat().st_mtime > STALE_AUDIT_REFRESH_WINDOW_S:
+            return False
+        from agent.journal_finalizer import finalize_run
+        report = finalize_run(run)
+        return bool(report.paper_changed or _refresh_revision_coverage_gate(run, request))
+    except (ImportError, OSError, RuntimeError, TypeError, ValueError):
+        return False
+
+
 def _eligible(run: Path) -> tuple[bool, str]:
     # Phase G refreshes all sidecars (audit + gate + accountability); run it at
     # most once — prefer the accountability path, else the stale-audit path.
@@ -717,6 +734,7 @@ def _eligible(run: Path) -> tuple[bool, str]:
     pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
     if pre_submit_status != "eligible":
         return False, pre_submit_status
+    _refresh_stale_revision_coverage_sidecar(run)
     revision_status = _revision_coverage_status(run)
     if revision_status != "eligible":
         return False, revision_status

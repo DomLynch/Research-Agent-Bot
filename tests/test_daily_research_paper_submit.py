@@ -1174,11 +1174,16 @@ def test_missing_revision_coverage_gate_is_refreshed_before_selection(
     assert gate["refreshed_by"] == "daily_submit"
 
 
-def test_unmet_refreshed_revision_coverage_still_blocks_selection(tmp_path: Path) -> None:
+def test_unmet_refreshed_revision_coverage_still_blocks_selection(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {
         "feedback": "Define the classification criteria used to assign studies to outcome classes and to code directness.",
     })
+
+    import agent.journal_finalizer as finalizer
+    monkeypatch.setattr(finalizer, "finalize_run", lambda _path: SimpleNamespace(paper_changed=False))
 
     selected, considered = daily.select_candidate(
         tmp_path,
@@ -1341,6 +1346,46 @@ def test_selection_repairs_recent_surface_sidecar_before_skip(
 
     assert selected == run
     assert considered[0]["status"] == "eligible"
+
+
+def test_selection_repairs_recent_revision_coverage_sidecar_before_skip(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    ask = (
+        "Resolve the disconnect between the '47/48 null-coded' framing and the clearly "
+        "directional findings visible in the source bundle excerpts."
+    )
+    _write_json(run / "researka_revision_request.json", {"feedback": ask})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
+
+    def fake_finalize(path: Path) -> object:
+        paper = path / "full_paper.md"
+        paper.write_text(
+            paper.read_text(encoding="utf-8").replace(
+                "## Results\n\n",
+                "## Results\n\n"
+                "Directional coding note: Null or no extracted directional signal means no coded "
+                "positive, negative, or mixed effect was extracted for that specific outcome class. "
+                "Positive and mixed signals in other outcome classes are separately reported.\n\n",
+            ),
+            encoding="utf-8",
+        )
+        return SimpleNamespace(paper_changed=True)
+
+    import agent.journal_finalizer as finalizer
+    monkeypatch.setattr(finalizer, "finalize_run", fake_finalize)
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=set(),
+    )
+
+    assert selected == run
+    assert considered[0]["status"] == "eligible"
+    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
+    assert gate["passed"] is True
 
 
 def test_submit_holds_when_remote_dedupe_fails(tmp_path: Path) -> None:
