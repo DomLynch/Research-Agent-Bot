@@ -1697,10 +1697,18 @@ def _phase_d_unbacked_appraisal_names(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     if not _revision_asks_unbacked_appraisal_names(feedback):
         return text, []
+    normalized = _normalize_public_appraisal_labels(text)
     if summary := _appraisal_artifact_summary(out_dir):
-        if "risk-of-bias appraisal summary:" in text.lower():
-            return text, []
-        patched, n = _prepend_or_create_section_paragraph(text, "Methods", summary)
+        if "risk-of-bias appraisal summary:" in normalized.lower():
+            if normalized == text:
+                return text, []
+            return normalized, [FinalizerLogEntry(
+                phase="D_unbacked_appraisal_names",
+                rule="normalize_public_appraisal_labels",
+                n_changes=1,
+                detail="normalized public risk-of-bias appraisal labels",
+            )]
+        patched, n = _prepend_or_create_section_paragraph(normalized, "Methods", summary)
         if not n:
             return text, []
         return patched, [FinalizerLogEntry(
@@ -1709,7 +1717,7 @@ def _phase_d_unbacked_appraisal_names(
             n_changes=1,
             detail="reported risk-of-bias appraisal summary from populated artifact",
         )]
-    patched = text
+    patched = normalized
     patched = re.sub(r"\bRoB-2\b", "risk-of-bias appraisal", patched)
     patched = re.sub(r"\bROBINS-I\b", "non-randomized-study appraisal", patched)
     patched = re.sub(r"\bAMSTAR-2\b", "review-quality appraisal", patched)
@@ -1779,6 +1787,13 @@ def _public_appraisal_label(value: str) -> str:
     }
     normalized = value.strip().lower().replace("-", "_").replace(" ", "_")
     return labels.get(normalized, value.replace("_", " "))
+
+
+def _normalize_public_appraisal_labels(text: str) -> str:
+    patched = text
+    for raw in ("amstar_2", "not_rated", "rob2", "robins_i", "some_concerns", "syrcle"):
+        patched = re.sub(rf"\b{re.escape(raw)}\b", _public_appraisal_label(raw), patched)
+    return patched
 
 
 def _phase_d_source_inclusion_rationale(

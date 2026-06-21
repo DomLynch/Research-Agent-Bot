@@ -674,6 +674,20 @@ def _refresh_stale_audit_sidecar(run: Path) -> bool:
         return False
 
 
+def _refresh_stale_surface_sidecar(run: Path) -> bool:
+    surface = _read_json(run / "full_paper.journal_surface.json")
+    if surface.get("passed") is not False:
+        return False
+    try:
+        if dt.datetime.now(dt.UTC).timestamp() - run.stat().st_mtime > STALE_AUDIT_REFRESH_WINDOW_S:
+            return False
+        from agent.journal_finalizer import finalize_run
+        report = finalize_run(run)
+        return bool(report.paper_changed)
+    except (ImportError, OSError, RuntimeError, TypeError, ValueError):
+        return False
+
+
 def _eligible(run: Path) -> tuple[bool, str]:
     # Phase G refreshes all sidecars (audit + gate + accountability); run it at
     # most once — prefer the accountability path, else the stale-audit path.
@@ -693,6 +707,8 @@ def _eligible(run: Path) -> tuple[bool, str]:
         return False, "missing:" + ",".join(missing)
     audit = _read_json(run / "full_paper.audit.json")
     surface = _read_json(run / "full_paper.journal_surface.json")
+    if surface.get("passed") is not True and _refresh_stale_surface_sidecar(run):
+        surface = _read_json(run / "full_paper.journal_surface.json")
     verdict = _read_json(run / "full_paper.final_verdict.json")
     if audit.get("p1_pass") is not True:
         return False, "audit_p1_failed"
