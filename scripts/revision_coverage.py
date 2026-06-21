@@ -153,6 +153,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_null_signal_reconciliation,
             _asks_internal_duplication,
             _asks_long_term_safety_scope,
+            _asks_unbundled_citation_cleanup,
             _asks_reference_traceability,
             _asks_prior_publication_differentiation,
             _asks_numeric_effect_audit,
@@ -234,6 +235,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _internal_duplication_is_low(paper_md, lower)
     if _asks_long_term_safety_scope(lower):
         return _long_term_safety_scope_is_stated(paper_md)
+    if _asks_unbundled_citation_cleanup(lower):
+        return _unbundled_citations_are_resolved(paper_md, ask)
     if _asks_reference_traceability(lower):
         return _references_are_traceable(paper_md)
     if _asks_prior_publication_differentiation(lower):
@@ -414,6 +417,8 @@ def _asks_directional_coding(text: str) -> bool:
         "no extracted directional signal" in text and "reconcile" in text
     ) or (
         "no extracted directional signal" in text and "proportion" in text
+    ) or (
+        "null-coded" in text and "directional findings" in text
     )
 
 
@@ -454,6 +459,14 @@ def _asks_reference_traceability(text: str) -> bool:
         "reference list" in text
         and any(token in text for token in ("doi", "pmid", "bibliographic identifier", "source bundle", "traceable"))
     ) or "traceable to the source bundle" in text
+
+
+def _asks_unbundled_citation_cleanup(text: str) -> bool:
+    return (
+        "source_bundle" in text
+        and "citation" in text
+        and any(token in text for token in ("not in the source_bundle", "not in source_bundle", "not in the source bundle"))
+    )
 
 
 def _asks_prior_publication_differentiation(text: str) -> bool:
@@ -909,6 +922,11 @@ def _references_are_traceable(paper_md: str) -> bool:
         re.I,
     )
     return all(identifier.search(line) or explicit_caveat.search(line) for line in lines)
+
+
+def _unbundled_citations_are_resolved(paper_md: str, ask: str) -> bool:
+    tokens = re.findall(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", ask)
+    return bool(tokens) and all(token not in paper_md for token in tokens)
 
 
 def _numeric_effect_audit_is_stated(paper_md: str) -> bool:
