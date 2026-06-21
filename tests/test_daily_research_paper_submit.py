@@ -953,6 +953,7 @@ def test_already_submitted_topic_still_allows_revision(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json",
                 {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
     _write_json(
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         [{"topic": "topic", "fingerprint": "sha256:earlier-different-content"}],
@@ -967,6 +968,39 @@ def test_already_submitted_topic_still_allows_revision(tmp_path: Path) -> None:
     )
 
     assert ledger["status"] == "submitted_to_researka"
+
+
+def test_revision_without_coverage_gate_is_not_submitted(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-21",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("unverified revision must not submit")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "revision_coverage_unverified"
+
+
+def test_failed_revision_coverage_gate_is_not_submitted(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": ["Hedge claims"]})
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-21",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("failed revision must not submit")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "revision_coverage_unmet"
 
 
 def test_researka_rejection_records_and_skips_same_paper(tmp_path: Path) -> None:
@@ -1063,6 +1097,7 @@ def test_remote_publication_dedupe_allows_revision_of_existing_title(tmp_path: P
         "submissionId": "sub-1",
         "feedback": "Differentiate the revised version.",
     })
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
     marker = daily._title_marker(daily.build_payload(run)["title"])
 
     ledger = daily.run_cycle(
@@ -1087,6 +1122,7 @@ def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(tmp_pat
     _write_json(run / "researka_revision_request.json", {
         "artifactId": "a", "submissionId": "s", "feedback": "stale",
     })
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
     content_markers = daily._metadata_markers(daily.build_payload(run)["metadata"])
     assert content_markers  # identity/content hashes, not the title marker
 
