@@ -295,6 +295,49 @@ def test_reconcile_publication_ledgers_updates_submit_bridge_ledger(tmp_path: Pa
     assert ledger["publication_reconciliation"]["source"] == "remote_publications"
 
 
+def test_reconcile_publication_ledgers_prefers_submission_id_over_same_title(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    title = "Adjacent Evidence Brief: Alpha-klotho — full paper"
+    old_run = runs_root / "synthesis-klotho-v06-R1"
+    new_run = runs_root / "synthesis-klotho-v06-R2"
+    for run in (old_run, new_run):
+        run.mkdir(parents=True)
+        (run / "full_paper.md").write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
+    submit_ledger_dir = runs_root / cycle.submit_bridge.LEDGER_DIR
+    base = {
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+    }
+    _write_json(submit_ledger_dir / "2026-06-05-old.json", {
+        **base,
+        "candidate": {"run": old_run.name, "topic": "klotho"},
+        "submission": {"response": {"submission": {"id": "old-submission"}}},
+    })
+    _write_json(submit_ledger_dir / "2026-06-05-new.json", {
+        **base,
+        "candidate": {"run": new_run.name, "topic": "klotho"},
+        "submission": {"response": {"submission": {"id": "new-submission"}}},
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        remote_loader=lambda: ({
+            cycle.submit_bridge._title_marker(title),
+            cycle.submit_bridge._submission_marker("new-submission"),
+        }, None),
+    )
+
+    old_ledger = json.loads((submit_ledger_dir / "2026-06-05-old.json").read_text(encoding="utf-8"))
+    new_ledger = json.loads((submit_ledger_dir / "2026-06-05-new.json").read_text(encoding="utf-8"))
+    assert result["updated_ledgers"] == ["_daily_research_paper_ledger/2026-06-05-new.json"]
+    assert old_ledger["status"] == "submitted_to_researka"
+    assert old_ledger["published"] == 0
+    assert new_ledger["status"] == "published"
+    assert new_ledger["published"] == 1
+    assert new_ledger["publication_reconciliation"]["matched"] == ["submission:new-submission"]
+
+
 def test_reconcile_publication_ledgers_cleans_stale_published_reason(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     ledger_dir = runs_root / cycle.LEDGER_DIR
