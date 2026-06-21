@@ -597,6 +597,39 @@ def test_directional_coding_note_repairs_no_signal_proportion_ask(tmp_path: Path
     ]
 
 
+def test_directional_coding_note_repairs_null_coded_source_bundle_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Resolve the disconnect between the '47/48 null-coded' framing and the clearly directional "
+        "findings visible in the source bundle excerpts."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome class | Strongest signal |\n"
+        "|---|---|\n"
+        "| Brain age | no extracted directional signal in 47/48 sources |\n\n"
+        "## Key Findings\n\n"
+        "Some source bundle excerpts report positive and mixed findings.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_directional_coding_note(paper, tmp_path)
+
+    assert "Directional coding note:" in fixed
+    assert "specific outcome class" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_directional_coding_note",
+            rule="define_directional_coding_schema",
+            n_changes=1,
+            detail="added directional coding schema note to Evidence Landscape",
+        )
+    ]
+
+
 def test_directional_coding_note_upgrades_existing_contextual_claims_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

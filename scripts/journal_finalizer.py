@@ -1044,6 +1044,7 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
         or ("contextual claim" in lower and "directional signal" in lower)
         or ("null" in lower and "absence of support" in lower)
         or ("no extracted directional signal" in lower and "proportion" in lower)
+        or ("null-coded" in lower and "directional findings" in lower)
     )
 
 
