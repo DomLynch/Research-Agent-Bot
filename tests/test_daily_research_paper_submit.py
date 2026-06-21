@@ -908,6 +908,44 @@ def test_already_submitted_pending_topic_is_not_resubmitted(tmp_path: Path) -> N
     assert ledger["considered"][0]["status"] == "topic_already_submitted_pending"
 
 
+def test_duplicate_submission_response_seeds_pending_topic_skip(tmp_path: Path) -> None:
+    """Researka's duplicate_submission means the journal already has this topic
+    pending. Record it in the submitted ledger too; otherwise a regenerated run
+    with a fresh content fingerprint can keep hitting the same duplicate."""
+    _run(tmp_path)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-21",
+        submit=True,
+        submitter=lambda _payload: {
+            "ok": False,
+            "status": 409,
+            "response": {"detail": {"error": "duplicate_submission", "submission_id": "sub-1"}},
+        },
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submission_rejected_by_researka"
+    submitted = json.loads((tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json").read_text(encoding="utf-8"))
+    assert submitted[0]["topic"] == "topic"
+    assert submitted[0]["duplicate_submission_id"] == "sub-1"
+
+    regenerated = _run(tmp_path, name="synthesis-topic-v06-regenerated")
+    with (regenerated / "full_paper.md").open("a", encoding="utf-8") as handle:
+        handle.write("\n\nAdditional regenerated sentence.")
+    retry = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-22",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("duplicate topic must not submit again")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert retry["status"] == "no_eligible_research_paper"
+    assert retry["considered"][0]["status"] == "topic_already_submitted_pending"
+
+
 def test_already_submitted_topic_still_allows_revision(tmp_path: Path) -> None:
     """The pending-topic skip must NOT block a genuine revision: a run carrying
     a researka_revision_request is still submitted even though its topic is in
