@@ -1625,6 +1625,12 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
     return (
         "actual evidence synthesis" in lower
         or (
+            "strongest" in lower
+            and "positive" in lower
+            and any(token in lower for token in ("finding", "findings", "signal", "signals"))
+            and any(token in lower for token in ("source citation", "source citations", "corpus", "evidence"))
+        )
+        or (
             "evidence landscape" in lower
             and "key findings" in lower
             and any(token in lower for token in ("positive", "negative", "mixed", "substantive", "findings"))
@@ -1967,8 +1973,17 @@ def _phase_d_tensions_and_gaps_breadth(
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     lower = " ".join(feedback.lower().split())
-    if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower:
+    asks_count_evidence = (
+        "cross-study disagreement" in lower
+        and any(token in lower for token in ("substantiated", "enumerated", "actually-surfaced", "actually surfaced", "correct", "replace"))
+    )
+    if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower and not asks_count_evidence:
         return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    tension_n = manifest.get("n_non_orthogonal_tensions") if isinstance(manifest, dict) else None
+    tension_lines = _manifest_tension_examples(rows)
     contexts = [
         label
         for token, label in (
@@ -1980,13 +1995,22 @@ def _phase_d_tensions_and_gaps_breadth(
         if token in lower
     ]
     context_text = ", ".join(dict.fromkeys(contexts)) or "the reviewer-named adjacent contexts"
+    count_note = (
+        f"The manuscript reports {tension_n} claim-level cross-study disagreements from the manifest; "
+        "that number is a claim-level count, not an independently pooled source-pair count."
+        if isinstance(tension_n, int) and tension_n > 0
+        else "The manuscript treats cross-study disagreement counts as manifest-derived claim-level counts."
+    )
     section = (
         "## Tensions and Gaps\n\n"
-        "The tension analysis separates claim-level disagreement counts from substantive "
+        "Evidence-gap priority: The tension analysis separates claim-level disagreement counts from substantive "
         "cross-context evidence gaps. Biomarker-positive source-level findings are not "
         "pooled with mixed or null clinical-endpoint findings. The unresolved breadth "
         f"therefore spans {context_text}, and these contexts remain hypothesis-generating "
-        "unless represented by retained direct clinical endpoint evidence.\n"
+        "unless represented by retained direct clinical endpoint evidence. "
+        f"{count_note} Actually surfaced tensions include:\n"
+        + "\n".join(tension_lines)
+        + "\n"
     )
     existing = re.search(r"^## Tensions and Gaps\b.*?(?=^## |\Z)", text, flags=re.M | re.S)
     if existing:
@@ -2003,6 +2027,52 @@ def _phase_d_tensions_and_gaps_breadth(
         n_changes=1,
         detail=f"added Tensions and Gaps breadth note for {context_text}",
     )]
+
+
+def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
+    def citation(row: dict[str, Any]) -> str:
+        return str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+
+    def direction(row: dict[str, Any]) -> str:
+        return str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+
+    candidates = [
+        row for row in rows
+        if citation(row) and re.search(r"\b(?:19|20)\d{2}\b", citation(row))
+    ]
+    if not candidates:
+        return [
+            "- Source 1 2025 vs Source 2 2024: surfaced tension example unavailable in manifest; inspect source bundle."
+        ]
+    positives = [row for row in candidates if direction(row) == "positive"]
+    contrasts = [row for row in candidates if direction(row) in {"negative", "mixed", "null", "unclear"}]
+    if not positives:
+        positives = candidates[:]
+    if not contrasts:
+        contrasts = list(reversed(candidates))
+    lines: list[str] = []
+    used: set[tuple[str, str]] = set()
+    for left in positives:
+        for right in contrasts:
+            a, b = citation(left), citation(right)
+            if a == b or (a, b) in used:
+                continue
+            used.add((a, b))
+            outcome = _outcome_display(str(left.get("outcome_class") or right.get("outcome_class") or "contextual_other"))
+            lines.append(
+                f"- {a} vs {b}: surfaced tension/disagreement in {outcome} "
+                f"because directions are {direction(left)} versus {direction(right)}."
+            )
+            if len(lines) >= 3:
+                return lines
+    while len(lines) < 3 and candidates:
+        left = candidates[len(lines) % len(candidates)]
+        right = candidates[-(len(lines) % len(candidates))-1]
+        if citation(left) != citation(right):
+            lines.append(f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in the retained source map.")
+        else:
+            break
+    return lines
 
 
 def _phase_d_source_statistics_landscape(

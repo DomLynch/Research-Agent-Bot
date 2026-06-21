@@ -352,6 +352,12 @@ def _asks_substantive_evidence_synthesis(text: str) -> bool:
     return (
         "actual evidence synthesis" in text
         or (
+            "strongest" in text
+            and "positive" in text
+            and any(token in text for token in ("finding", "findings", "signal", "signals"))
+            and any(token in text for token in ("source citation", "source citations", "corpus", "evidence"))
+        )
+        or (
             "evidence landscape" in text
             and "key findings" in text
             and any(token in text for token in ("positive", "negative", "mixed", "substantive", "findings"))
@@ -464,9 +470,15 @@ def _asks_null_signal_reconciliation(text: str) -> bool:
 
 def _asks_concrete_tensions_gaps(text: str) -> bool:
     return (
-        "tension" in text
-        and "gap" in text
-        and any(token in text for token in ("3-5", "3–5", "concrete", "specific sources", "tie each"))
+        (
+            "tension" in text
+            and "gap" in text
+            and any(token in text for token in ("3-5", "3–5", "concrete", "specific sources", "tie each"))
+        )
+        or (
+            "cross-study disagreement" in text
+            and any(token in text for token in ("substantiated", "enumerated", "actually-surfaced", "actually surfaced", "correct", "replace"))
+        )
     )
 
 
