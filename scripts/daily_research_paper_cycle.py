@@ -1566,9 +1566,12 @@ def _receipt_preflight(
             shutil.rmtree(probe_dir, ignore_errors=True)
         counts = report.get("counts") if isinstance(report, dict) else {}
         n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+        previous_best = best_receipts
         best_receipts = max(best_receipts, n_receipts)
         probes.append({"return_code": rc, "n_receipts": n_receipts, "min_receipts": min_receipts})
         if rc == 0 and n_receipts >= min_receipts:
+            break
+        if round_idx > 0 and rc == 0 and best_receipts <= previous_best:
             break
         if round_idx >= rounds:
             break

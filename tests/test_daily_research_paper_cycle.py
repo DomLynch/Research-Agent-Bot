@@ -1178,6 +1178,31 @@ def test_fresh_cycle_keeps_searching_after_failed_quant_repair_by_default(tmp_pa
     assert synthesized == ["zzz_solid_topic"]
 
 
+def test_receipt_preflight_stops_when_repair_does_not_improve_receipts(tmp_path: Path, monkeypatch) -> None:
+    calls: list[str] = []
+    monkeypatch.setenv("RESEARCH_AGENT_RECEIPT_PREFLIGHT_REPAIR_ROUNDS", "3")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: 13)
+
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        calls.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": 1}})
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda *_args, **_kwargs: {
+        "status": "corpus_repaired",
+        "n_quant_claims": 13,
+    })
+
+    result = cycle._receipt_preflight("thin_topic", tmp_path / "runs" / "synthesis-thin_topic-v06-test")
+
+    assert result["passed"] is False
+    assert result["n_receipts"] == 1
+    assert len(result["probes"]) == 2
+    assert len(calls) == 2
+
+
 def test_paper_strategy_skips_terminal_sparse_researka_feedback() -> None:
     strategy = cycle._paper_strategy(
         {"status": "corpus_ready", "n_quant_claims": 37},
