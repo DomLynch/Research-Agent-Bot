@@ -122,7 +122,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
         lambda t: _phase_d_numeric_significance_correction(t, out_dir),
-        _phase_d_reference_closure,
+        lambda t: _phase_d_reference_closure(t, out_dir),
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         lambda t: _phase_b_corpus_strength_label(t, out_dir),
         _phase_i_split_concatenated_headings,
@@ -158,7 +158,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     # the gate still sees the references as uncited. Running it last (after
     # every section mutation) guarantees the cluster survives to disk. It is
     # idempotent: a no-op when no orphans remain.
-    text, log = _phase_d_reference_closure(text)
+    text, log = _phase_d_reference_closure(text, out_dir)
     entries.extend(log)
     return text, entries
 
@@ -2336,15 +2336,30 @@ def _phase_d_reference_identifier_enrichment(
     )
 
 
-def _phase_d_reference_closure(text: str) -> tuple[str, list[FinalizerLogEntry]]:
+def _phase_d_reference_closure(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     from agent.journal_surface_gate import orphan_reference_tokens
     orphans = orphan_reference_tokens(text)
     if not orphans:
         return text, []
+    registry_tokens = _registry_reference_tokens(out_dir)
+    supported = [token for token in orphans if token in registry_tokens]
+    unsupported = [token for token in orphans if token not in registry_tokens]
+    if unsupported:
+        text, removed = _remove_reference_entries(text, unsupported)
+        text = _remove_orphan_ref_cluster(text, unsupported)
+        if removed:
+            return text, [FinalizerLogEntry(
+                phase="D_reference_closure",
+                rule="remove_registry_unsupported_orphan_references",
+                n_changes=removed,
+                detail=f"removed {removed} registry-unsupported orphan reference(s)",
+            )]
+    if not supported:
+        return text, []
     # Insert the cluster just before the References heading
     cluster = (
         "\n\n" + _ORPHAN_REF_PARAGRAPH_LEAD
-        + ", ".join(orphans) + ".\n"
+        + ", ".join(supported) + ".\n"
     )
     new_text, n = re.subn(
         r"(^## References\b)", cluster + r"\1", text,
@@ -2355,9 +2370,43 @@ def _phase_d_reference_closure(text: str) -> tuple[str, list[FinalizerLogEntry]]
     return new_text, [FinalizerLogEntry(
         phase="D_reference_closure",
         rule="supporting_corpus_cluster",
-        n_changes=len(orphans),
-        detail=f"appended cluster citing {len(orphans)} orphan reference(s)",
+        n_changes=len(supported),
+        detail=f"appended cluster citing {len(supported)} orphan reference(s)",
     )]
+
+
+def _registry_reference_tokens(out_dir: Path) -> set[str]:
+    registry = _load_sidecar(out_dir / "citation_registry.json")
+    rows = registry.values() if isinstance(registry, dict) else []
+    tokens: set[str] = set()
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        citation = str(row.get("body_citation") or row.get("citation_token") or "").strip()
+        if citation:
+            tokens.add(citation)
+    return tokens
+
+
+def _remove_reference_entries(text: str, tokens: list[str]) -> tuple[str, int]:
+    removed = 0
+    lines: list[str] = []
+    for line in text.splitlines():
+        if line.lstrip().startswith(("-", "*")) and any(token in line for token in tokens):
+            removed += 1
+            continue
+        lines.append(line)
+    return "\n".join(lines), removed
+
+
+def _remove_orphan_ref_cluster(text: str, tokens: list[str]) -> str:
+    pattern = re.compile(rf"\n\n{re.escape(_ORPHAN_REF_PARAGRAPH_LEAD)}(?P<body>[^.\n]*(?:\.[^\n]*)?)\n")
+
+    def repl(match: re.Match[str]) -> str:
+        body = match.group("body")
+        return "\n" if any(token in body for token in tokens) else match.group(0)
+
+    return pattern.sub(repl, text)
 
 
 # --- Phase E: Structural fallback -------------------------------------

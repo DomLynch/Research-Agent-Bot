@@ -1225,6 +1225,24 @@ def test_existing_appraisal_summary_labels_are_normalized(tmp_path: Path) -> Non
     assert logs[0].rule == "normalize_public_appraisal_labels"
 
 
+def test_reference_closure_removes_registry_unsupported_orphan_reference(tmp_path: Path) -> None:
+    paper = (
+        "## Conclusion\n\nBounded conclusion.\n\n"
+        "## References\n\n"
+        "- **Huang 2025.** Registry-backed source.\n"
+        "- **Ioannidis 2005.** Unsupported context source.\n"
+    )
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "huang": {"body_citation": "Huang 2025"},
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_reference_closure(paper, tmp_path)
+
+    assert "Huang 2025" in fixed
+    assert "Ioannidis 2005" not in fixed
+    assert logs[0].rule == "remove_registry_unsupported_orphan_references"
+
+
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
