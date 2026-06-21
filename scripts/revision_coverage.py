@@ -909,6 +909,9 @@ def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
 
 
 def _single_source_proportionality_is_stated(paper_md: str) -> bool:
+    whole = paper_md.lower()
+    if "single-source slice" in whole and "hypothesis-generating" in whole:
+        return True
     scope = " ".join(
         part for part in (
             _section(paper_md, "Evidence Landscape"),

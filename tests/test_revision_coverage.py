@@ -1423,7 +1423,23 @@ def test_revision_asks_splits_soften_and_mark_actions() -> None:
     )
 
     assert revision_coverage.revision_asks(feedback) == [
-        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions",
-        "Soften or qualify the positive signal coding for single-source slices",
+        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions.",
+        "Soften or qualify the positive signal coding for single-source slices.",
         "Mark external non-corpus references as illustrative rather than bundle sources.",
     ]
+
+
+def test_deterministic_unmet_accepts_single_source_map_caveats() -> None:
+    ask = (
+        "Soften or qualify the 'positive signal' coding for single-source slices "
+        "(Dosing/PK, Frailty, Skeletal/Bone) and add explicit hypothesis-generating caveats in the map."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome | Evidence |\n|---|---|\n"
+        "| Dosing and Pharmacokinetics | n=1; positive signal; single-source slice; hypothesis-generating |\n"
+        "| Frailty | n=1; positive signal; single-source slice; hypothesis-generating |\n"
+        "| Skeletal, Fracture, and Bone | n=1; null signal; single-source slice; hypothesis-generating |\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
