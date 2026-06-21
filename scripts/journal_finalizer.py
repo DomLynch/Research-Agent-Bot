@@ -2453,9 +2453,10 @@ def _phase_d_reference_closure(text: str, out_dir: Path) -> tuple[str, list[Fina
     orphans = orphan_reference_tokens(text)
     if not orphans:
         return text, []
-    registry_tokens = _registry_reference_tokens(out_dir)
+    has_registry = (out_dir / "citation_registry.json").is_file()
+    registry_tokens = _registry_reference_tokens(out_dir) if has_registry else set(orphans)
     supported = [token for token in orphans if token in registry_tokens]
-    unsupported = [token for token in orphans if token not in registry_tokens]
+    unsupported = [token for token in orphans if has_registry and token not in registry_tokens]
     if unsupported:
         text, removed = _remove_reference_entries(text, unsupported)
         text = _remove_orphan_ref_cluster(text, unsupported)
