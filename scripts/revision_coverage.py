@@ -81,6 +81,54 @@ def deterministic_unmet_asks(paper_md: str, asks: Sequence[str]) -> list[str]:
     return [ask for ask in clean if not _deterministic_ask_satisfied(paper_md, ask)]
 
 
+def deterministic_satisfied_asks(paper_md: str, asks: Sequence[str]) -> list[str]:
+    """Reviewer asks whose structural predicate is known and satisfied."""
+    clean = [a.strip() for a in asks if a and a.strip()]
+    return [ask for ask in clean if _deterministic_ask_known(ask) and _deterministic_ask_satisfied(paper_md, ask)]
+
+
+def _deterministic_ask_known(ask: str) -> bool:
+    lower = " ".join(ask.lower().split())
+    return any(
+        predicate(lower)
+        for predicate in (
+            _asks_classification_criteria,
+            _asks_conflict_severity_criteria,
+            _asks_source_outcome_class_map,
+            _asks_source_classification_map,
+            _asks_evidence_type_metadata,
+            _asks_source_inclusion_rationale,
+            _asks_source_directness_breakdown,
+            _asks_source_statistics_landscape,
+            _asks_source_verification_transparency,
+            _asks_section_source_grounding,
+            _asks_substantive_evidence_synthesis,
+            _asks_rct_count_reconciliation,
+            _asks_unbacked_appraisal_names,
+            _asks_evidence_tier_directness_bounds,
+            _asks_admission_funnel_numeric_consistency,
+            _asks_prisma_all_included_rationale,
+            _asks_single_source_proportionality,
+            _asks_direct_evidence_definition,
+            _asks_evidence_boundary,
+            _asks_conclusion_unproven_humans,
+            _asks_directional_coding,
+            _asks_directional_table_narrative_consistency,
+            _asks_contextual_without_directional_signal,
+            _asks_actionable_gaps,
+            _asks_null_signal_reconciliation,
+            _asks_internal_duplication,
+            _asks_long_term_safety_scope,
+            _asks_reference_traceability,
+            _asks_prior_publication_differentiation,
+            _asks_numeric_effect_audit,
+            _asks_named_numeric_correction,
+            _asks_numeric_effect_accuracy,
+            _asks_grammar_correction,
+        )
+    )
+
+
 def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     lower = " ".join(ask.lower().split())
     if _asks_classification_criteria(lower):

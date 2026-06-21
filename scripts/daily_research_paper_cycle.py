@@ -1245,8 +1245,9 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
     text = paper.read_text(encoding="utf-8")
     asks = _revision_asks(feedback)
     unmet = revision_coverage.deterministic_unmet_asks(text, asks)
+    deterministic_met = set(revision_coverage.deterministic_satisfied_asks(text, asks))
     for ask in revision_coverage.unmet_asks(text, asks):
-        if ask not in unmet:
+        if ask not in unmet and ask not in deterministic_met:
             unmet.append(ask)
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
 
