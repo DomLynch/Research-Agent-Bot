@@ -40,6 +40,7 @@ LEDGER_DIR = "_daily_research_paper_ledger"
 STALE_AUDIT_REFRESH_WINDOW_S = 48 * 3600
 REJECTED_FINGERPRINTS = "_rejected_fingerprints.json"
 REVISION_FINGERPRINTS = "_revision_fingerprints.json"
+REVISION_COVERAGE_GATE = "revision_coverage_gate.json"
 TOKEN_ENVS = (
     "RESEARKA_API_KEY_V3",
     "RESEARKA_API_TOKEN_V3",
@@ -445,6 +446,17 @@ def _final_status_ready(data: dict[str, Any]) -> bool:
     return bool(data.get("submission_ready") is True)
 
 
+def _revision_coverage_status(run: Path) -> str:
+    if not _read_json(run / "researka_revision_request.json"):
+        return "eligible"
+    gate = _read_json(run / REVISION_COVERAGE_GATE)
+    if gate.get("passed") is True:
+        return "eligible"
+    if gate.get("passed") is False:
+        return "revision_coverage_unmet"
+    return "revision_coverage_unverified"
+
+
 def _topic_tokens(topic: str) -> list[str]:
     return topic_tokens(topic)
 
@@ -661,6 +673,9 @@ def _eligible(run: Path) -> tuple[bool, str]:
     pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
     if pre_submit_status != "eligible":
         return False, pre_submit_status
+    revision_status = _revision_coverage_status(run)
+    if revision_status != "eligible":
+        return False, revision_status
     source_floor_status = _source_floor_status(run)
     if source_floor_status != "eligible":
         return False, source_floor_status

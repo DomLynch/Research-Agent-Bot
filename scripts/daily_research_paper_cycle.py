@@ -45,6 +45,7 @@ CORPORA = ROOT / "docs" / "quality-reference"
 LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
+REVISION_COVERAGE_GATE = "revision_coverage_gate.json"
 DAILY_THROUGHPUT_SUMMARY = "_daily_throughput_summary.json"
 DECISIONS_BY_DAY = "_decisions_by_day.json"
 REVISE_REASONS = "_revise_reasons.json"
@@ -2515,6 +2516,12 @@ def run_cycle(
                 # Coverage gate: a content revise must materially address every
                 # enumerated reviewer ask before it may be submitted.
                 unmet = _unmet_revision_asks(out_dir, revision_feedback) if (return_code == 0 and revision_feedback) else []
+                if return_code == 0 and revision_feedback:
+                    _write_json(out_dir / REVISION_COVERAGE_GATE, {
+                        "passed": not unmet,
+                        "ask_count": len(_revision_asks(revision_feedback)),
+                        "unmet_asks": unmet,
+                    })
                 # Retraction gate: never submit a paper that cites retracted science.
                 retracted = _retracted_cited_sources(out_dir) if return_code == 0 else []
                 # Claim-support gate: never submit an abstract whose claims the

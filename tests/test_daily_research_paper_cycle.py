@@ -1798,6 +1798,8 @@ def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> Non
         submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
     assert ledger["attempts"][0]["submitted"] == 1                    # all asks met -> submitted
     assert "unmet_revision_asks" not in ledger["attempts"][0]
+    gate = json.loads((tmp_path / "runs" / ledger["attempts"][0]["out_dir"] / cycle.REVISION_COVERAGE_GATE).read_text())
+    assert gate["passed"] is True
 
 
 def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
@@ -1813,6 +1815,9 @@ def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert submitted == []                                            # one ask unmet -> never submitted
     assert ledger["attempts"][0]["gate_status"] == "revision_coverage_unmet"
     assert ledger["attempts"][0]["unmet_revision_asks"] == ["Hedge the cognitive claims"]
+    gate = json.loads((tmp_path / "runs" / ledger["attempts"][0]["out_dir"] / cycle.REVISION_COVERAGE_GATE).read_text())
+    assert gate["passed"] is False
+    assert gate["unmet_asks"] == ["Hedge the cognitive claims"]
     assert int(ledger.get("submitted") or 0) == 0
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text())
     assert handled["handled"][0]["status"] == "revision_coverage_unmet"
