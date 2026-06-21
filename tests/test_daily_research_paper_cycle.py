@@ -2402,7 +2402,7 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
     assert marker in cycle._handled_revision_ids(ledger_dir, active)
 
 
-def test_terminal_revision_row_before_newer_review_does_not_block(tmp_path: Path) -> None:
+def test_terminal_revision_row_before_newer_review_still_blocks(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     title = "Research Synthesis: Brain Age MRI — full paper"
@@ -2416,7 +2416,7 @@ def test_terminal_revision_row_before_newer_review_does_not_block(tmp_path: Path
 
     active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
 
-    assert marker not in cycle._handled_revision_ids(ledger_dir, active)
+    assert marker in cycle._handled_revision_ids(ledger_dir, active)
 
 
 def test_terminal_revision_row_after_active_review_still_blocks(tmp_path: Path) -> None:
