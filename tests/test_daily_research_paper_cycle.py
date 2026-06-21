@@ -372,6 +372,44 @@ def test_reconcile_publication_ledgers_uses_cycle_attempt_submission_markers(tmp
     assert ledger["published"] == 0
 
 
+def test_reconcile_publication_ledgers_uses_submit_bridge_ids_for_legacy_cycle_ledgers(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    title = "Adjacent Evidence Brief: Alpha-klotho — full paper"
+    old_run = runs_root / "synthesis-klotho-v06-R1"
+    old_run.mkdir(parents=True)
+    (old_run / "full_paper.md").write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
+    cycle_ledger_dir = runs_root / cycle.LEDGER_DIR
+    submit_ledger_dir = runs_root / cycle.submit_bridge.LEDGER_DIR
+    _write_json(cycle_ledger_dir / "2026-06-05-fresh.json", {
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "submitted_run": old_run.name,
+    })
+    _write_json(submit_ledger_dir / "2026-06-05.json", {
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "candidate": {"run": old_run.name, "topic": "klotho"},
+        "submission": {"response": {"submission": {"id": "old-submission"}}},
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-05",
+        mode="fresh",
+        remote_loader=lambda: ({
+            cycle.submit_bridge._title_marker(title),
+            cycle.submit_bridge._submission_marker("new-submission"),
+        }, None),
+    )
+
+    ledger = json.loads((cycle_ledger_dir / "2026-06-05-fresh.json").read_text(encoding="utf-8"))
+    assert result["updated_ledgers"] == []
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["published"] == 0
+
+
 def test_reconcile_publication_ledgers_cleans_stale_published_reason(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     ledger_dir = runs_root / cycle.LEDGER_DIR
