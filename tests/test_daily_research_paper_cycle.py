@@ -730,6 +730,15 @@ def test_revision_asks_strip_retry_escalation_prefix() -> None:
     assert asks == ["Repair the sentence fragment.", "Verify the source counts."]
 
 
+def test_escalated_revision_feedback_does_not_duplicate_original_feedback() -> None:
+    feedback = "Repair the sentence fragment.; Verify the source counts."
+    escalated = cycle._escalate_feedback(feedback, cycle._revision_asks(feedback))
+
+    asks = cycle._revision_asks(escalated)
+
+    assert asks == ["Repair the sentence fragment.", "Verify the source counts."]
+
+
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

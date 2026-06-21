@@ -1434,7 +1434,7 @@ def _escalate_feedback(feedback: str, unmet: list[str]) -> str:
     bounded re-render, not skimmed again."""
     return (
         "PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS — you MUST make a "
-        f"substantive change to satisfy EACH: {'; '.join(unmet)}. {feedback}"
+        f"substantive change to satisfy EACH: {'; '.join(unmet)}"
     )
 
 
