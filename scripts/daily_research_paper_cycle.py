@@ -84,7 +84,6 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "retracted_source_cited",
     "terminal_surface_repeat",
     "terminal_source_precision_repair_incomplete",
-    "terminal_receipt_preflight_insufficient",
 })
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
@@ -2431,16 +2430,12 @@ def run_cycle(
                         selected,
                         out_dir,
                         timeout=timeout,
-                        repair=not revision_source,
+                        repair=True,
                         dry_run=synthesis_dry_run,
                     )
                 )
                 if not receipt_preflight.get("passed"):
-                    gate_status = (
-                        "terminal_receipt_preflight_insufficient"
-                        if revision_source
-                        else str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
-                    )
+                    gate_status = str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
                     attempt = {
                         "topic": selected,
                         "out_dir": out_dir.name,
@@ -2454,7 +2449,7 @@ def run_cycle(
                     }
                     ledger["attempts"].append(attempt)
                     ledger["status"] = (
-                        "revise_terminal_receipt_preflight_insufficient"
+                        "revise_receipt_preflight_skipped_no_submission"
                         if revision_source
                         else "receipt_preflight_skipped_no_submission"
                     )
