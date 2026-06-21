@@ -1356,3 +1356,74 @@ def test_deterministic_unmet_accepts_removed_unbundled_citations() -> None:
     paper = "## References\n\n- **Huang 2025.** Registry-backed source.\n"
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_replaced_structured_table_stubs() -> None:
+    ask = (
+        "Replace the 'See the structured evidence table' stubs with one or two short prose "
+        "paragraphs per outcome class that name the specific sources driving the dominant signal."
+    )
+    paper = (
+        "## Results\n\n"
+        "The frailty slice is driven by Sanz 2021, with no second same-outcome source to "
+        "create a direct disagreement. The muscle-function slice is driven by Correa 2022 "
+        "and Oliveira 2026, while the broader clinical bridge remains uncertain.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_requires_consistent_source_count_bundle_reconciliation() -> None:
+    ask = (
+        "Reconcile the in-text source count (52) with the actual source bundle and either "
+        "restore missing bundle entries or correct the count; for every named author-year "
+        "citation in the prose, verify a plausible bundle counterpart exists."
+    )
+    reconciled = (
+        "## Methods\n\n"
+        "Of 172 records in the receipt-candidate union, 52 were classified as source "
+        "candidates and 52 were admitted as traceable synthesis sources. The source bundle "
+        "therefore contains 52 references with DOI/PMID traceability where available; "
+        "author-year citations in the prose are matched to the reference list.\n"
+    )
+    inconsistent = reconciled + "\n## Results\n\nThis paper synthesizes 49 included sources.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(reconciled, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(inconsistent, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_concrete_tensions_and_gap_priority() -> None:
+    ask = (
+        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions "
+        "(e.g. source A vs source B) and tie each to specific sources."
+    )
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        "### Load-Bearing Tensions\n\n"
+        "- Severity 5 disagreement: Paradoxical 2026 vs Nong 2025; the sources report opposing longevity directions.\n"
+        "- Severity 5 disagreement: Pei 2023 vs Gan 2026; the sources disagree on safety comorbidity direction.\n"
+        "- Severity 5 disagreement: Zhuang 2025 vs Zeng 2025; the sources conflict on deficiency prevalence.\n\n"
+        "### Evidence-Gap Priority\n\n"
+        "| Priority | Gap | Rationale |\n|---|---|---|\n| P1 | longevity conflict-resolution gap | opposing source directions |\n"
+    )
+    weak = (
+        "## Cross-Domain Synthesis\n\n"
+        "There are several tensions. Future research should resolve the gaps.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+
+
+def test_revision_asks_splits_soften_and_mark_actions() -> None:
+    feedback = (
+        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions; "
+        "Soften or qualify the positive signal coding for single-source slices; "
+        "Mark external non-corpus references as illustrative rather than bundle sources."
+    )
+
+    assert revision_coverage.revision_asks(feedback) == [
+        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions",
+        "Soften or qualify the positive signal coding for single-source slices",
+        "Mark external non-corpus references as illustrative rather than bundle sources.",
+    ]

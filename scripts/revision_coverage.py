@@ -33,15 +33,19 @@ def revision_asks(feedback: str) -> list[str]:
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
         "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
-        "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair",
-        "Replace", "Rewrite", "Separate", "Update", "Verify",
+        "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair",
+        "Replace", "Rewrite", "Separate", "Soften", "Update", "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
-    asks = [a.strip() for a in re.split(pattern, feedback) if a.strip()]
+    asks = [_with_terminal_punctuation(a.strip()) for a in re.split(pattern, feedback) if a.strip()]
     return [
         re.sub(r"^PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS\b.*?\bEACH:\s*", "", ask).strip()
         for ask in asks
     ]
+
+
+def _with_terminal_punctuation(text: str) -> str:
+    return text if not text or text[-1] in ".!?)'\"" else f"{text}."
 
 
 def _excerpt(paper_md: str, head: int = 16000, tail: int = 8000) -> str:
@@ -151,6 +155,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_contextual_without_directional_signal,
             _asks_actionable_gaps,
             _asks_null_signal_reconciliation,
+            _asks_concrete_tensions_gaps,
             _asks_internal_duplication,
             _asks_long_term_safety_scope,
             _asks_unbundled_citation_cleanup,
@@ -233,6 +238,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
         return _null_signal_conclusion_is_bounded(paper_md)
+    if _asks_concrete_tensions_gaps(lower):
+        return _concrete_tensions_gaps_are_stated(paper_md)
     if _asks_internal_duplication(lower):
         return _internal_duplication_is_low(paper_md, lower)
     if _asks_long_term_safety_scope(lower):
@@ -452,6 +459,14 @@ def _asks_null_signal_reconciliation(text: str) -> bool:
     return "null directional" in text and any(token in text for token in ("concluding", "conclusion", "rationale"))
 
 
+def _asks_concrete_tensions_gaps(text: str) -> bool:
+    return (
+        "tension" in text
+        and "gap" in text
+        and any(token in text for token in ("3-5", "3–5", "concrete", "specific sources", "tie each"))
+    )
+
+
 def _asks_internal_duplication(text: str) -> bool:
     return any(token in text for token in ("internal duplication", "repetitive narrative", "verbatim repetition", "non-repetitive"))
 
@@ -559,6 +574,18 @@ def _null_signal_conclusion_is_bounded(paper_md: str) -> bool:
         any(token in scope for token in ("null", "mixed", "no extracted directional signal"))
         and any(token in scope for token in ("hypothesis-generating", "does not support", "non-supportive", "not definitive"))
     )
+
+
+def _concrete_tensions_gaps_are_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    if "evidence-gap priority" not in text and "gaps identified" not in text:
+        return False
+    tension_lines = [
+        line for line in paper_md.splitlines()
+        if re.search(r"\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b.*\b(?:vs\.?|versus)\b.*\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b", line)
+        and re.search(r"\b(?:tension|disagreement|conflict)\b", line, re.I)
+    ]
+    return len(tension_lines) >= 3
 
 
 def _internal_duplication_scope(paper_md: str, ask: str) -> str:
@@ -952,13 +979,22 @@ def _structured_table_stubs_are_replaced(paper_md: str) -> bool:
 
 def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:
     text = paper_md.lower()
-    counts = [int(value.replace(",", "")) for value in re.findall(r"\b(\d[\d,]*)\s+(?:accepted|admitted|included|curated|retained)\s+source", text)]
+    count_patterns = (
+        r"\b(\d[\d,]*)\s+(?:accepted|admitted|included|curated|retained)\s+source",
+        r"\b(\d[\d,]*)\s+references?\b",
+        r"\b(\d[\d,]*)\s+were\s+(?:classified|admitted).*?\bsources?\b",
+    )
+    counts = [
+        int(value.replace(",", ""))
+        for pattern in count_patterns
+        for value in re.findall(pattern, text)
+    ]
     if counts and len(set(counts)) > 1:
         return False
     if "source bundle" not in text and "traceable synthesis sources" not in text:
         return False
     return bool(
-        re.search(r"\b(\d[\d,]*)\s+(?:accepted|admitted|included|curated|retained)\s+source", text)
+        counts
         and any(token in text for token in ("author-year", "references", "doi", "pmid", "bundle counterpart", "traceable"))
     )
 
