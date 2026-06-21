@@ -2468,7 +2468,6 @@ def run_cycle(
                     )
                 synthesis_kwargs: dict[str, Any] = {
                     "dry_run": synthesis_dry_run,
-                    "timeout": child_timeout(),
                     "revision_feedback": revision_feedback or None,
                 }
                 if review_type_override:
@@ -2509,6 +2508,7 @@ def run_cycle(
                         remote_revision = None
                     attempted.add(selected)
                     break
+                synthesis_kwargs["timeout"] = child_timeout()
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 if revision_source and out_dir.exists():
                     _write_json(out_dir / "researka_revision_request.json", revision_source)

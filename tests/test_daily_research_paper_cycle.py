@@ -933,6 +933,60 @@ def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path,
     assert ledger["corpus"]["status"] == "corpus_seeded"
 
 
+def test_cycle_passes_remaining_budget_to_child_work(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "budget_topic", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    calls: dict[str, int | None] = {}
+    now = 995.0
+
+    def fake_clock() -> float:
+        nonlocal now
+        now += 5.0
+        return now
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        calls["corpus_timeout"] = timeout
+        return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_receipt(topic: str, out_dir: Path, *, timeout: int | None = None, **_kwargs: Any) -> dict[str, Any]:
+        calls["receipt_timeout"] = timeout
+        return {"passed": True}
+
+    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, **_kwargs: Any) -> int:
+        calls["synthesis_timeout"] = timeout
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-21",
+        run_synthesis=True,
+        submit=True,
+        topic="budget_topic",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=fake_corpus,
+        cycle_budget_seconds=40,
+        clock=fake_clock,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert calls["corpus_timeout"] is not None
+    assert calls["receipt_timeout"] is not None
+    assert calls["synthesis_timeout"] is not None
+    assert calls["corpus_timeout"] <= 40
+    assert calls["receipt_timeout"] < calls["corpus_timeout"]
+    assert calls["synthesis_timeout"] < calls["receipt_timeout"]
+
+
 def test_cycle_skips_empty_seed_and_tries_next_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_empty", corpus=False, target_journal=True)
     _topic(tmp_path, "zzz_seeded", corpus=False, target_journal=True)
@@ -4057,7 +4111,13 @@ def test_cycle_quarantines_source_precision_misses_before_synthesis(tmp_path: Pa
         max_attempts=1,
     )
 
-    assert repaired == [{"topic": "hydrogen_water", "dry_run": False, "timeout": None, "force": True}]
+    assert len(repaired) == 1
+    assert repaired[0]["timeout"] is not None
+    assert {k: v for k, v in repaired[0].items() if k != "timeout"} == {
+        "topic": "hydrogen_water",
+        "dry_run": False,
+        "force": True,
+    }
     assert synthesized == ["hydrogen_water"]
     assert ledger["source_precision_repair"]["source_topic_precision_after"] == "source_topic_precision_ok:24/24"
     assert ledger["status"] == "submitted_to_researka"
