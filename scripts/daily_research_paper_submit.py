@@ -785,6 +785,18 @@ def _seen_topics(path: Path) -> set[str]:
     }
 
 
+def _seen_runs(path: Path) -> set[str]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return set()
+    return {
+        str(row["run"])
+        for row in (data if isinstance(data, list) else [])
+        if isinstance(row, dict) and isinstance(row.get("run"), str) and row["run"]
+    }
+
+
 def _append_record(path: Path, row: dict[str, Any]) -> None:
     records = []
     try:
@@ -844,6 +856,7 @@ def select_candidate(
     revision_seen = _seen(submitted_path.with_name(REVISION_FINGERPRINTS))
     submitted_topics = _seen_topics(submitted_path)
     revision_topics = _seen_topics(submitted_path.with_name(REVISION_FINGERPRINTS))
+    submitted_runs = _seen_runs(submitted_path)
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
@@ -870,6 +883,8 @@ def select_candidate(
             markers.update(_metadata_markers(metadata))
         if topic in seen_topics:
             ok, status = False, "superseded_topic_run"
+        elif ok and run.name in submitted_runs:
+            ok, status = False, "duplicate_submission_run"
         elif ok and fp in rejected_seen:
             ok, status = False, "researka_rejected_fingerprint"
         elif ok and fp in revision_seen:

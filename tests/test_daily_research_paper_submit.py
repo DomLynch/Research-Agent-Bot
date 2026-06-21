@@ -1056,6 +1056,27 @@ def test_researka_revise_records_feedback_and_skips_same_paper(tmp_path: Path) -
     assert retry["considered"][0]["status"] == "researka_revision_fingerprint"
 
 
+def test_selection_skips_exact_run_already_submitted_even_if_revision(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {"feedback": "tighten"})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    ledger_dir = tmp_path / daily.LEDGER_DIR
+    _write_json(ledger_dir / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "fingerprint": "sha256:old-preflight-payload",
+        "topic": "topic",
+    }])
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        ledger_dir / "_submitted_fingerprints.json",
+        remote_seen=set(),
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "duplicate_submission_run"
+
+
 def test_remote_publication_dedupe_blocks_resubmission_without_local_seed(tmp_path: Path) -> None:
     run = _run(tmp_path)
     fp = daily.build_payload(run)["metadata"]["content_hash"]
