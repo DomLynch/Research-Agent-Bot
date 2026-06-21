@@ -1578,7 +1578,7 @@ def _receipt_preflight(
         if round_idx >= rounds:
             break
         current_quant_claims = _quant_claim_count(topic)
-        if rc != 0 and not (best_receipts or current_quant_claims):
+        if not best_receipts or (rc != 0 and not current_quant_claims):
             break
         corpus_repair = _repair_topic_corpus(
             topic,
