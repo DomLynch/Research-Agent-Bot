@@ -406,7 +406,7 @@ def _word_count(text: object) -> int:
     return len(str(text or "").split())
 
 
-def _researka_preflight_status(payload: dict[str, Any]) -> str:
+def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     sections_raw = payload.get("sections")
     sections: dict[str, Any] = sections_raw if isinstance(sections_raw, dict) else {}
@@ -441,7 +441,7 @@ def _researka_preflight_status(payload: dict[str, Any]) -> str:
             body_words = _word_count(payload.get("body_markdown"))
         if body_words < min_body_words:
             return f"researka_preflight_body_words:{body_words} < {min_body_words}"
-    if (recency_status := _recency_ratio_status(payload)) != "eligible":
+    if enforce_recency and (recency_status := _recency_ratio_status(payload)) != "eligible":
         return recency_status
     return "eligible"
 
@@ -854,6 +854,7 @@ def select_candidate(
     *,
     remote_seen: set[str] | None = None,
     candidate_run: Path | None = None,
+    purpose: str = "resubmit",
 ) -> tuple[Path | None, list[dict[str, Any]]]:
     local_seen = _seen(submitted_path)
     rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
@@ -864,6 +865,7 @@ def select_candidate(
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
+    explicit_candidate = candidate_run is not None
     for run in ([candidate_run] if candidate_run else _runs(root)):
         topic = _run_topic(run)
         paper = run / "full_paper.md"
@@ -880,7 +882,10 @@ def select_candidate(
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
             if null_status != "eligible":
                 ok, status = False, null_status
-            elif (recency_status := _recency_ratio_status(payload)) != "eligible":
+            elif (
+                not (purpose == "revision" and revision)
+                and (recency_status := _recency_ratio_status(payload)) != "eligible"
+            ):
                 ok, status = False, recency_status
         fp = _payload_fingerprint(payload) if locally_eligible else paper_sha
         if locally_eligible:
@@ -900,10 +905,12 @@ def select_candidate(
             # run carrying a stale revision_request — re-submitting identical
             # content is the "exact-content duplicate" reject Researka returns.
             ok, status = False, "duplicate_remote_publication"
-        elif ok and title_mark in published_seen and not revision:
+        elif ok and title_mark in published_seen and not (revision and explicit_candidate):
             # Same title already published and this is NOT a revision: a
             # re-submit of an already-published topic. A genuine revision
-            # (changed content, same title) falls through and is allowed.
+            # (changed content, same title) falls through only when the revise
+            # lane explicitly hands us that candidate. The generic submit sweep
+            # must not resurrect stale revision_request files for public papers.
             ok, status = False, "duplicate_remote_publication"
         elif (
             ok
@@ -1410,9 +1417,9 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     return payload
 
 
-def _submitter(url: str, token: str, agent_slug: str) -> Submitter:
+def _submitter(url: str, token: str, agent_slug: str, *, purpose: str = "resubmit") -> Submitter:
     def submit(payload: dict[str, Any]) -> dict[str, Any]:
-        preflight_status = _researka_preflight_status(payload)
+        preflight_status = _researka_preflight_status(payload, enforce_recency=purpose != "revision")
         if preflight_status != "eligible":
             return {"ok": False, "status": 0, "response": preflight_status, "preflight": True}
         metadata = payload.get("metadata")
@@ -1535,7 +1542,18 @@ def run_cycle(
             ledger.update({"status": "remote_dedupe_failed", "reason": remote_error})
             _write_json(ledger_path, ledger)
             return ledger
-    run, considered = select_candidate(runs_root, submitted_path, remote_seen=remote_seen, candidate_run=candidate_run)
+    purpose = (
+        "revision"
+        if candidate_run is not None and _read_json(candidate_run / "researka_revision_request.json")
+        else "resubmit"
+    )
+    run, considered = select_candidate(
+        runs_root,
+        submitted_path,
+        remote_seen=remote_seen,
+        candidate_run=candidate_run,
+        purpose=purpose,
+    )
     ledger["considered"] = considered
     if run is None:
         ledger.update({"status": "no_eligible_research_paper"})
@@ -1552,7 +1570,7 @@ def run_cycle(
         return ledger
     if submitter is None:
         ledger["submit_token_env"] = token_env
-        submitter = _submitter(_submit_url(), token, str(payload["author_agent_id"]))
+        submitter = _submitter(_submit_url(), token, str(payload["author_agent_id"]), purpose=purpose)
     checked_payload, preflight_report = _run_preflight_qa(payload, run)
     if preflight_report:
         ledger["preflight_qa"] = _preflight_summary(preflight_report)
