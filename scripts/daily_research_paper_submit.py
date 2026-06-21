@@ -275,6 +275,10 @@ def _title_marker(title: str) -> str:
     return "title:" + _normalized_key(title)
 
 
+def _topic_marker(topic: str) -> str:
+    return "topic:" + _normalized_key(topic)
+
+
 def _paper_title(paper: Path) -> str:
     try:
         first = paper.read_text(encoding="utf-8").splitlines()[0]
@@ -1395,6 +1399,10 @@ def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], st
             title = row.get("title")
             if isinstance(title, str) and title.strip():
                 out.add(_title_marker(title))
+            for source in (row, metadata):
+                topic = source.get("topic") if isinstance(source, dict) else None
+                if isinstance(topic, str) and topic.strip():
+                    out.add(_topic_marker(topic))
             body = row.get("body_markdown")
             if isinstance(body, str) and body.strip():
                 out.add("sha256:" + hashlib.sha256(body.encode("utf-8")).hexdigest())

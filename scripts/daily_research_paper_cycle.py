@@ -609,8 +609,12 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
     topics. Universal — keys on the run's own deterministic topic->title, no
     topic terms. Re-publishing an updated paper is the revise cycle's job."""
     out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
+    topic_markers = {m.removeprefix("topic:") for m in markers if m.startswith("topic:")}
     title_markers = [m.removeprefix("title:") for m in markers if m.startswith("title:")]
     for topic in topics:
+        if submit_bridge._normalized_key(topic) in topic_markers:
+            out.add(topic)
+            continue
         display = submit_bridge._normalized_key(submit_bridge._display_topic(topic))
         if display and any(display in marker for marker in title_markers):
             out.add(topic)
