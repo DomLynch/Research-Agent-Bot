@@ -1865,6 +1865,11 @@ def _phase_d_source_outcome_class_map(
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
+    present_tokens = {
+        str(row.get("citation_token") or "").strip()
+        for row in rows
+        if str(row.get("citation_token") or "").strip()
+    }
     examples = []
     for row in rows[:40]:
         token = str(row.get("citation_token") or "").strip()
@@ -1876,7 +1881,44 @@ def _phase_d_source_outcome_class_map(
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         examples.append(f"- {citation}: outcome={outcome}; directness={directness}; tier={tier}.")
-    note = "### Source Outcome-Class Map\n\n" + "\n".join(examples)
+    notes = []
+    if "biomarker-positive" in feedback.lower() and "clinical-endpoint" in feedback.lower():
+        notes.append(
+            "Signal-accounting note: biomarker-positive source-level findings "
+            "are separated from clinical-endpoint mixed/null rows; biomarker elevation is not "
+            "counted as clinical efficacy unless the mapped outcome class and endpoint support it."
+        )
+    if any(token in feedback.lower() for token in ("tensions and gaps", "0 cross-study disagreements")):
+        notes.append(
+            "Tension-accounting note: disagreement counts are claim-level. Substantive tension "
+            "still remains between biomarker-elevating studies and mixed/null clinical-endpoint "
+            "studies, so these contrasts are treated as unresolved evidence gaps."
+        )
+    named = {
+        m.group(0)
+        for m in re.finditer(r"\b[A-Z][A-Za-z'’\-]+ 20\d{2}\b", feedback)
+    }
+    missing = sorted(named - present_tokens)
+    if missing:
+        notes.append(
+            "Reviewer-named sources not retained in this source map: "
+            + ", ".join(missing[:12])
+            + ". They are not counted in clinical outcome-class tallies unless listed below."
+        )
+    note = "### Source Outcome-Class Map\n\n" + "\n\n".join((*notes, *examples))
+    existing = re.search(
+        r"^### Source (?:Outcome-Class|Classification) Map\b.*?(?=^### |^## |\Z)",
+        text,
+        flags=re.M | re.S,
+    )
+    if existing:
+        patched = text[:existing.start()] + note + "\n\n" + text[existing.end():]
+        return patched, [FinalizerLogEntry(
+            phase="D_source_outcome_class_map",
+            rule="map_sources_to_outcome_classes",
+            n_changes=1,
+            detail=f"replaced source outcome-class map from {len(rows)} manifest receipt(s)",
+        )]
     patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
     if not n:
         return text, []

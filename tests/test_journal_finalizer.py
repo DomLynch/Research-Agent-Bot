@@ -1131,9 +1131,16 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
 def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: Path) -> None:
     ask = (
         "Attribute every admitted source to at least one mapped outcome class or contextual role; "
-        "Holmes 2026 currently appears in the bundle but is unaccounted for in the Findings Map."
+        "Holmes 2026 currently appears in the bundle but is unaccounted for in the Findings Map. "
+        "Reconcile the 0 cross-study disagreements claim with the divergence between biomarker-positive "
+        "studies and clinical-endpoint null studies. Expand Tensions and Gaps to include Gao 2026."
     )
-    paper = "## Results\n\nThe corpus includes several sources.\n"
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "### Source Classification Map\n\n"
+        "- Old row.\n\n"
+        "## Results\n\nThe corpus includes several sources.\n"
+    )
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
         {
@@ -1147,7 +1154,11 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
 
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
+    assert "Old row" not in fixed
     assert "Holmes 2026: Menopause pilot trial: outcome=Contextual Other" in fixed
+    assert "Signal-accounting note: biomarker-positive source-level findings" in fixed
+    assert "Tension-accounting note: disagreement counts are claim-level" in fixed
+    assert "Reviewer-named sources not retained in this source map: Gao 2026" in fixed
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
