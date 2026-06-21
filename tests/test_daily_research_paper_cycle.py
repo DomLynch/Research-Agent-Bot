@@ -697,6 +697,39 @@ def test_revision_asks_keep_semicolon_examples_inside_one_ask() -> None:
     assert asks[2] == "Clarify the admission funnel arithmetic."
 
 
+def test_revision_asks_split_independent_review_actions_not_examples() -> None:
+    feedback = (
+        "Repair the Limitations sentence fragment ('a different outcome (e.'); "
+        "Replace the 'Contextual Adjacent Evidence' outcome class with informative "
+        "sub-classes (e.g., methodological/algorithmic, AD/dementia, sleep); "
+        "For each non-null or mixed signal, name the specific cited source(s) "
+        "(e.g., Selitser 2025; Wang 2025 and Kou 2024); "
+        "Operationalize and enumerate the '56 cross-study disagreements'; "
+        "Expand Tensions and Gaps into a substantive section; "
+        "Verify the '894 high-confidence extracted claims' figure."
+    )
+
+    asks = cycle._revision_asks(feedback)
+
+    assert len(asks) == 6
+    assert "Selitser 2025; Wang 2025" in asks[2]
+    assert asks[3].startswith("Operationalize")
+    assert asks[4].startswith("Expand")
+    assert asks[5].startswith("Verify")
+
+
+def test_revision_asks_strip_retry_escalation_prefix() -> None:
+    feedback = (
+        "PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS — you MUST make a "
+        "substantive change to satisfy EACH: Repair the sentence fragment.; "
+        "Verify the source counts."
+    )
+
+    asks = cycle._revision_asks(feedback)
+
+    assert asks == ["Repair the sentence fragment.", "Verify the source counts."]
+
+
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

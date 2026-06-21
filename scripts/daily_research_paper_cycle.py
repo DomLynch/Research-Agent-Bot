@@ -1213,12 +1213,17 @@ def _revision_asks(feedback: str) -> list[str]:
     """The enumerated reviewer asks recovered from the '; '-joined feedback."""
     starts = (
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
-        "Document", "Ensure", "Explain", "Fix", "Hedge", "Include",
-        "Provide", "Re-extract", "Reclassify", "Reconcile", "Regenerate",
-        "Remove", "Replace", "Rewrite", "Separate", "Update",
+        "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
+        "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
+        "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair",
+        "Replace", "Rewrite", "Separate", "Update", "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
-    return [a.strip() for a in re.split(pattern, feedback) if a.strip()]
+    asks = [a.strip() for a in re.split(pattern, feedback) if a.strip()]
+    return [
+        re.sub(r"^PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS\b.*?\bEACH:\s*", "", ask).strip()
+        for ask in asks
+    ]
 
 
 def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
