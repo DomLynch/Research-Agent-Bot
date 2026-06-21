@@ -1867,8 +1867,12 @@ def _phase_d_source_outcome_class_map(
         return text, []
     examples = []
     for row in rows[:40]:
-        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
-        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        token = str(row.get("citation_token") or "").strip()
+        title = str(row.get("source_title") or "").strip()
+        fallback = str(row.get("receipt_id") or "source").strip()
+        citation = f"{token}: {title}" if token and title and token not in title else (token or title or fallback)
+        outcome_slug = str(row.get("outcome_class") or "contextual_other")
+        outcome = "Contextual Other" if outcome_slug == "contextual_other" else _outcome_display(outcome_slug)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         examples.append(f"- {citation}: outcome={outcome}; directness={directness}; tier={tier}.")
@@ -1891,6 +1895,9 @@ def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
         and "outcome class" in lower
         and any(token in lower for token in ("mapping table", "mapping list", "assigned to which", "which outcome"))
         and any(token in lower for token in ("external verification", "evidence landscape", "bundle sources", "source bundle"))
+    ) or (
+        "source" in lower
+        and any(token in lower for token in ("findings map", "unaccounted", "attribute every admitted source"))
     )
 
 

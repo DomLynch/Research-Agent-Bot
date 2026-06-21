@@ -1105,6 +1105,7 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
         {
             "citation_token": "Smith 2024",
+            "source_title": "Clinical source one",
             "outcome_class": "cardiometabolic",
             "directness": "direct",
             "evidence_tier": "A1",
@@ -1121,9 +1122,32 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "### Source Outcome-Class Map" in fixed
-    assert "- Smith 2024: outcome=Cardiometabolic; directness=direct; tier=A1." in fixed
+    assert "- Smith 2024: Clinical source one: outcome=Cardiometabolic; directness=direct; tier=A1." in fixed
     assert "- Jones 2025: outcome=Immune and Inflammation; directness=review; tier=B1." in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_source_outcome_class_map"
+
+
+def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: Path) -> None:
+    ask = (
+        "Attribute every admitted source to at least one mapped outcome class or contextual role; "
+        "Holmes 2026 currently appears in the bundle but is unaccounted for in the Findings Map."
+    )
+    paper = "## Results\n\nThe corpus includes several sources.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Holmes 2026",
+            "source_title": "Menopause pilot trial",
+            "outcome_class": "contextual_other",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+        },
+    ]}))
+
+    fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
+
+    assert "Holmes 2026: Menopause pilot trial: outcome=Contextual Other" in fixed
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
