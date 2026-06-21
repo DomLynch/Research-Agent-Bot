@@ -2294,11 +2294,16 @@ def _phase_d_source_verification_transparency(
         return text, []
     insertion = "\n\n" + "\n\n".join(insertions) + "\n"
     patched = text[:methods.end(1)] + insertion + text[methods.end(1):]
+    detail = (
+        "added source-bundle verification transparency sentence to Methods"
+        if insertions == [_SOURCE_VERIFICATION_SENTENCE]
+        else "added source-bundle/citation traceability sentence(s) to Methods"
+    )
     return patched, [FinalizerLogEntry(
         phase="D_source_verification_transparency",
         rule="state_source_bundle_verification_boundary",
         n_changes=len(insertions),
-        detail="added source-bundle/citation traceability sentence(s) to Methods",
+        detail=detail,
     )]
 
 

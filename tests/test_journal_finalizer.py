@@ -1890,6 +1890,33 @@ def test_reference_identifier_enrichment_adds_missing_id_caveat(tmp_path: Path) 
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Provide a complete, auditable in-text citation list mapping every author-year "
+        "prose reference to a specific source bundle entry; add a methods_pack.json-style "
+        "table or appendix in the manuscript itself so the reader can verify grounding "
+        "without external artifacts."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}), encoding="utf-8")
+    paper = (
+        "## Methods\n\n"
+        "Sources were extracted under a reproducible protocol.\n\n"
+        "## Evidence Snapshot\n\n"
+        "### Source Classification Map\n\n"
+        "- Smith 2024: outcome=frailty; directness=direct; tier=A1.\n\n"
+        "## References\n\n"
+        "- **Smith 2024.** Example source.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_source_verification_transparency(paper, tmp_path)
+
+    assert "Citation traceability map:" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs and logs[0].phase == "D_source_verification_transparency"
+
+
 def test_reference_identifier_enrichment_preserves_existing_ids(tmp_path: Path) -> None:
     paper = (
         "## References\n\n"
