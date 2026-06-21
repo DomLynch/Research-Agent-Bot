@@ -154,6 +154,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_internal_duplication,
             _asks_long_term_safety_scope,
             _asks_unbundled_citation_cleanup,
+            _asks_structured_table_stub_replacement,
+            _asks_source_count_bundle_reconciliation,
             _asks_reference_traceability,
             _asks_prior_publication_differentiation,
             _asks_numeric_effect_audit,
@@ -237,6 +239,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _long_term_safety_scope_is_stated(paper_md)
     if _asks_unbundled_citation_cleanup(lower):
         return _unbundled_citations_are_resolved(paper_md, ask)
+    if _asks_structured_table_stub_replacement(lower):
+        return _structured_table_stubs_are_replaced(paper_md)
+    if _asks_source_count_bundle_reconciliation(lower):
+        return _source_count_bundle_reconciliation_is_stated(paper_md)
     if _asks_reference_traceability(lower):
         return _references_are_traceable(paper_md)
     if _asks_prior_publication_differentiation(lower):
@@ -466,6 +472,22 @@ def _asks_unbundled_citation_cleanup(text: str) -> bool:
         "source_bundle" in text
         and "citation" in text
         and any(token in text for token in ("not in the source_bundle", "not in source_bundle", "not in the source bundle"))
+    )
+
+
+def _asks_structured_table_stub_replacement(text: str) -> bool:
+    return (
+        "see the structured evidence table" in text
+        and any(token in text for token in ("replace", "stubs", "prose paragraph", "prose paragraphs"))
+    )
+
+
+def _asks_source_count_bundle_reconciliation(text: str) -> bool:
+    return (
+        "reconcile" in text
+        and "source count" in text
+        and "source bundle" in text
+        and any(token in text for token in ("author-year", "citation", "bundle counterpart", "restore missing"))
     )
 
 
@@ -922,6 +944,23 @@ def _references_are_traceable(paper_md: str) -> bool:
         re.I,
     )
     return all(identifier.search(line) or explicit_caveat.search(line) for line in lines)
+
+
+def _structured_table_stubs_are_replaced(paper_md: str) -> bool:
+    return "see the structured evidence table" not in paper_md.lower()
+
+
+def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    counts = [int(value.replace(",", "")) for value in re.findall(r"\b(\d[\d,]*)\s+(?:accepted|admitted|included|curated|retained)\s+source", text)]
+    if counts and len(set(counts)) > 1:
+        return False
+    if "source bundle" not in text and "traceable synthesis sources" not in text:
+        return False
+    return bool(
+        re.search(r"\b(\d[\d,]*)\s+(?:accepted|admitted|included|curated|retained)\s+source", text)
+        and any(token in text for token in ("author-year", "references", "doi", "pmid", "bundle counterpart", "traceable"))
+    )
 
 
 def _unbundled_citations_are_resolved(paper_md: str, ask: str) -> bool:
