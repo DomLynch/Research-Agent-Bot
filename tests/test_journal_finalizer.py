@@ -1132,6 +1132,7 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
     ask = (
         "Attribute every admitted source to at least one mapped outcome class or contextual role; "
         "Holmes 2026 currently appears in the bundle but is unaccounted for in the Findings Map. "
+        "Reclassify Membrez 2024 as translational/mechanistic with human correlational component. "
         "Reconcile the 0 cross-study disagreements claim with the divergence between biomarker-positive "
         "studies and clinical-endpoint null studies. Expand Tensions and Gaps to include Gao 2026."
     )
@@ -1157,8 +1158,10 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
     assert "Old row" not in fixed
     assert "Holmes 2026: Menopause pilot trial: outcome=Contextual Adjacent Evidence" in fixed
     assert "Signal-accounting note: biomarker-positive source-level findings" in fixed
+    assert "Role-accounting note: retained translational or mechanistic-with-human-correlational evidence" in fixed
     assert "Tension-accounting note: disagreement counts are claim-level" in fixed
-    assert "1 reviewer-named source(s) are not retained in this source map" in fixed
+    assert "2 reviewer-named sources are not retained in this source map" in fixed
+    assert "source(s)" not in fixed
     assert "Gao 2026" not in fixed
     assert logs[0].phase == "D_source_outcome_class_map"
 

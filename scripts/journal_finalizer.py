@@ -1887,6 +1887,12 @@ def _phase_d_source_outcome_class_map(
             "are separated from clinical-endpoint mixed/null rows; biomarker elevation is not "
             "counted as clinical efficacy unless the mapped outcome class and endpoint support it."
         )
+    if "reclassify" in feedback.lower() and "mechanistic" in feedback.lower():
+        notes.append(
+            "Role-accounting note: retained translational or mechanistic-with-human-correlational "
+            "evidence is mapped by its public outcome and directness row; preclinical or mechanistic "
+            "records that are not retained in the source map are excluded from clinical outcome-class tallies."
+        )
     if any(token in feedback.lower() for token in ("tensions and gaps", "0 cross-study disagreements")):
         notes.append(
             "Tension-accounting note: disagreement counts are claim-level. Substantive tension "
@@ -1900,7 +1906,7 @@ def _phase_d_source_outcome_class_map(
     missing = sorted(named - present_tokens)
     if missing:
         notes.append(
-            f"{len(missing)} reviewer-named source(s) are not retained in this source map "
+            f"{len(missing)} reviewer-named sources are not retained in this source map "
             "and are not counted in clinical outcome-class tallies unless listed below."
         )
     note = "### Source Outcome-Class Map\n\n" + "\n\n".join((*notes, *examples))
@@ -1910,6 +1916,8 @@ def _phase_d_source_outcome_class_map(
         flags=re.M | re.S,
     )
     if existing:
+        if existing.group(0).strip() == note.strip():
+            return text, []
         patched = text[:existing.start()] + note + "\n\n" + text[existing.end():]
         return patched, [FinalizerLogEntry(
             phase="D_source_outcome_class_map",
