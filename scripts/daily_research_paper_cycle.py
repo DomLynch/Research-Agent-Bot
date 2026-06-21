@@ -849,7 +849,7 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
             "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
             "feedback": " ".join("; ".join(required).split())[:4000],
         })
-    return out, None
+    return sorted(out, key=_review_ts, reverse=True), None
 
 
 def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
