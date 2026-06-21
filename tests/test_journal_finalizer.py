@@ -1109,6 +1109,72 @@ def test_source_outcome_class_map_no_receipts_does_not_crash(tmp_path: Path) -> 
     assert logs == []
 
 
+def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Provide an actual evidence synthesis in the Evidence Landscape and Key Findings sections. "
+        "At minimum, surface the key positive, negative, and mixed findings from the bundle and "
+        "explain how they inform the bounded conclusion."
+    )
+    paper = "## Results\n\nThe corpus includes several sources.\n\n## Conclusion\n\nThe conclusion is bounded.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"citation_token": "Smith 2025", "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "indirect", "evidence_tier": "B2", "n_claims": 12},
+        {"citation_token": "Jones 2024", "outcome_class": "immune", "effect_direction": "negative", "directness": "review", "evidence_tier": "B1", "n_claims": 8},
+        {"citation_token": "Patel 2023", "outcome_class": "cognitive", "effect_direction": "mixed", "directness": "direct", "evidence_tier": "A1", "n_claims": 6},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+
+    assert "## Evidence Landscape" in fixed
+    assert "## Key Findings" in fixed
+    assert "Smith 2025: outcome=Cardiometabolic; direction=positive" in fixed
+    assert "Key findings from source synthesis" in fixed
+    assert "bounded conclusion" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_substantive_evidence_synthesis"
+
+
+def test_rct_count_reconciliation_removes_single_rct_claim(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Verify and correct the single RCT claim because one included source aggregates data from two RCTs."
+    paper = "## Evidence Landscape\n\nThe synthesis compares a single direct RCT with indirect evidence.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_rct_count_reconciliation(paper, tmp_path)
+
+    assert "single direct RCT" not in fixed
+    assert "single direct-source coding row" in fixed
+    assert "RCT-count reconciliation" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_rct_count_reconciliation"
+
+
+def test_unbacked_appraisal_names_are_removed_without_ratings(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources, or remove the framework name if no appraisal was performed."
+    paper = (
+        "## Methods\n\nRisk-of-bias framework assignment follows study design "
+        "(RoB-2 for RCTs, ROBINS-I for non-randomised studies, AMSTAR-2 for systematic reviews).\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
+
+    assert "RoB-2" not in fixed
+    assert "ROBINS-I" not in fixed
+    assert "AMSTAR-2" not in fixed
+    assert "Risk-of-bias honesty note" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_unbacked_appraisal_names"
+
+
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

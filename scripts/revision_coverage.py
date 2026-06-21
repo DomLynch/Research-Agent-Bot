@@ -114,6 +114,12 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
         return _section_source_grounding_is_stated(paper_md)
+    if _asks_substantive_evidence_synthesis(lower):
+        return _substantive_evidence_synthesis_is_stated(paper_md)
+    if _asks_rct_count_reconciliation(lower):
+        return _rct_count_reconciliation_is_stated(paper_md)
+    if _asks_unbacked_appraisal_names(lower):
+        return _unbacked_appraisal_names_are_resolved(paper_md)
     if _asks_evidence_tier_directness_bounds(lower):
         return _evidence_tier_directness_bounds_are_stated(paper_md)
     if _asks_admission_funnel_numeric_consistency(lower):
@@ -239,6 +245,25 @@ def _asks_section_source_grounding(text: str) -> bool:
         "every claim" in text
         and all(token in text for token in ("key findings", "limitations", "conclusion"))
     )
+
+
+def _asks_substantive_evidence_synthesis(text: str) -> bool:
+    return (
+        "actual evidence synthesis" in text
+        or (
+            "evidence landscape" in text
+            and "key findings" in text
+            and any(token in text for token in ("positive", "negative", "mixed", "substantive", "findings"))
+        )
+    )
+
+
+def _asks_rct_count_reconciliation(text: str) -> bool:
+    return "rct" in text and any(token in text for token in ("single rct", "single direct rct", "two rcts", "more than one rct"))
+
+
+def _asks_unbacked_appraisal_names(text: str) -> bool:
+    return any(token in text for token in ("rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias", "appraisal"))
 
 
 def _asks_evidence_tier_directness_bounds(text: str) -> bool:
@@ -590,6 +615,36 @@ def _contextual_without_directional_signal_is_explained(paper_md: str) -> bool:
 def _section_source_grounding_is_stated(paper_md: str) -> bool:
     sections = [_section(paper_md, name) for name in ("Key Findings", "Limitations", "Conclusion")]
     return all(section and _has_source_trace_marker(section) for section in sections)
+
+
+def _substantive_evidence_synthesis_is_stated(paper_md: str) -> bool:
+    landscape = _section(paper_md, "Evidence Landscape")
+    findings = _section(paper_md, "Key Findings")
+    if not landscape or not findings:
+        return False
+    scope = f"{landscape}\n{findings}"
+    return bool(
+        "substantive evidence synthesis" in landscape.lower()
+        and "key findings from source synthesis" in findings.lower()
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
+        and re.search(r"\bpositive|negative|mixed|unclear|null|no extracted directional signal\b", scope, re.I)
+        and "bounded conclusion" in scope.lower()
+    )
+
+
+def _rct_count_reconciliation_is_stated(paper_md: str) -> bool:
+    lower = paper_md.lower()
+    if "single direct rct" in lower or "single rct" in lower:
+        return False
+    return "rct-count reconciliation" in lower and "source-coding count" in lower
+
+
+def _unbacked_appraisal_names_are_resolved(paper_md: str) -> bool:
+    formal = re.search(r"\b(?:RoB-2|RoB 2|ROBINS-I|AMSTAR-2|AMSTAR 2)\b", paper_md)
+    if formal:
+        return False
+    lower = paper_md.lower()
+    return "risk-of-bias honesty note" in lower or "per-source public appraisal ratings" in lower
 
 
 def _has_source_trace_marker(text: str) -> bool:

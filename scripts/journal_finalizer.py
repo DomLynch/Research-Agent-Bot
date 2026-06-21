@@ -109,6 +109,9 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
+        lambda t: _phase_d_substantive_evidence_synthesis(t, out_dir),
+        lambda t: _phase_d_rct_count_reconciliation(t, out_dir),
+        lambda t: _phase_d_unbacked_appraisal_names(t, out_dir),
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
         lambda t: _phase_d_source_outcome_class_map(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
@@ -1562,6 +1565,175 @@ def _revision_asks_section_source_grounding(feedback: str) -> bool:
         "every claim" in lower
         and all(token in lower for token in ("key findings", "limitations", "conclusion"))
     )
+
+
+def _phase_d_substantive_evidence_synthesis(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_substantive_evidence_synthesis(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    examples = _manifest_signal_examples(rows)
+    if not examples:
+        return text, []
+    counts: dict[str, int] = {}
+    for row in rows:
+        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        counts[direction] = counts.get(direction, 0) + 1
+    direct = sum(1 for row in rows if str(row.get("directness") or "").lower().startswith("direct"))
+    landscape = (
+        "Substantive evidence synthesis: The manifest includes "
+        f"{len(rows)} retained sources, {direct} direct-source row(s), and "
+        f"directional coding across {', '.join(f'{k}={v}' for k, v in sorted(counts.items()))}. "
+        "Representative source-level signals are: "
+        + "; ".join(examples[:8])
+        + ". These signals inform the bounded conclusion by separating effect "
+        "direction from evidence tier/directness; indirect, review-level, "
+        "mechanistic, or contextual evidence remains hypothesis-generating."
+    )
+    key_findings = (
+        "Key findings from source synthesis: First, the strongest positive or "
+        "favorable signals are treated as narrow source-level signals, not broad "
+        f"clinical proof ({'; '.join(examples[:3])}). Second, negative, mixed, "
+        "unclear, or no-directional-signal rows are given equal interpretive "
+        f"weight ({'; '.join(examples[3:6] or examples[:3])}). Third, the "
+        "bounded conclusion follows from the balance of source direction, outcome "
+        "class, evidence tier, and directness rather than from source count alone."
+    )
+    patched, n1 = _prepend_or_create_section_paragraph(text, "Evidence Landscape", landscape)
+    patched, n2 = _prepend_or_create_section_paragraph(patched, "Key Findings", key_findings)
+    if not (n1 or n2):
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_substantive_evidence_synthesis",
+        rule="add_manifest_grounded_evidence_landscape_and_key_findings",
+        n_changes=n1 + n2,
+        detail=f"added manifest-grounded synthesis notes from {len(rows)} receipt(s)",
+    )]
+
+
+def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "actual evidence synthesis" in lower
+        or (
+            "evidence landscape" in lower
+            and "key findings" in lower
+            and any(token in lower for token in ("positive", "negative", "mixed", "substantive", "findings"))
+        )
+    )
+
+
+def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
+    def score(row: dict[str, Any]) -> tuple[int, int]:
+        direction = str(row.get("effect_direction") or "").lower()
+        priority = 0 if direction in {"positive", "negative", "mixed", "unclear"} else 1
+        try:
+            claims = int(row.get("n_claims") or 0)
+        except (TypeError, ValueError):
+            claims = 0
+        return priority, -claims
+
+    examples = []
+    for row in sorted(rows, key=score)[:12]:
+        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+        directness = str(row.get("directness") or "unknown").strip() or "unknown"
+        tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
+        try:
+            claims = int(row.get("n_claims") or 0)
+        except (TypeError, ValueError):
+            claims = 0
+        examples.append(
+            f"{citation}: outcome={outcome}; direction={direction}; "
+            f"directness={directness}; tier={tier}; claims={claims}"
+        )
+    return examples
+
+
+def _phase_d_rct_count_reconciliation(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_rct_count_reconciliation(feedback):
+        return text, []
+    patched = re.sub(r"\bsingle direct RCT\b", "single direct-source coding row", text, flags=re.I)
+    patched = re.sub(r"\bsingle RCT\b", "single source-level RCT coding row", patched, flags=re.I)
+    note = (
+        "RCT-count reconciliation: Reviewer feedback indicates that at least one "
+        "included source aggregates more than one randomized trial, so this "
+        "manuscript treats any prior single-RCT wording as a source-coding count, "
+        "not as a claim that the underlying trial evidence contains only one RCT."
+    )
+    patched, n = _prepend_or_create_section_paragraph(patched, "Evidence Landscape", note)
+    changed = int(patched != text)
+    if not changed and not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_rct_count_reconciliation",
+        rule="clarify_source_row_vs_underlying_rct_count",
+        n_changes=max(1, changed),
+        detail="reconciled reviewer challenge to single-RCT wording",
+    )]
+
+
+def _revision_asks_rct_count_reconciliation(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return "rct" in lower and any(token in lower for token in ("single rct", "single direct rct", "two rcts", "more than one rct"))
+
+
+def _phase_d_unbacked_appraisal_names(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_unbacked_appraisal_names(feedback) or _has_populated_appraisal_artifact(out_dir):
+        return text, []
+    patched = text
+    patched = re.sub(r"\bRoB-2\b", "risk-of-bias appraisal", patched)
+    patched = re.sub(r"\bROBINS-I\b", "non-randomized-study appraisal", patched)
+    patched = re.sub(r"\bAMSTAR-2\b", "review-quality appraisal", patched)
+    note = (
+        "Risk-of-bias honesty note: No populated per-source public appraisal "
+        "ratings are reported in this artifact. Risk-of-bias language is "
+        "therefore descriptive of source design and directness, not a claim that "
+        "formal framework-specific scoring was completed."
+    )
+    patched, n = _prepend_or_create_section_paragraph(patched, "Methods", note)
+    if patched == text and not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_unbacked_appraisal_names",
+        rule="remove_formal_appraisal_framework_claim_without_ratings",
+        n_changes=1,
+        detail="removed unbacked formal risk-of-bias framework names",
+    )]
+
+
+def _revision_asks_unbacked_appraisal_names(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return any(token in lower for token in ("rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias", "appraisal"))
+
+
+def _has_populated_appraisal_artifact(out_dir: Path) -> bool:
+    for path in out_dir.rglob("*.json"):
+        if not re.search(r"risk[_-]?of[_-]?bias|appraisal", path.name, re.I):
+            continue
+        try:
+            data = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        if data:
+            return True
+    return False
 
 
 def _phase_d_source_inclusion_rationale(
