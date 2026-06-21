@@ -1443,3 +1443,20 @@ def test_deterministic_unmet_accepts_single_source_map_caveats() -> None:
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_external_references_marked_illustrative() -> None:
+    ask = (
+        "Mark external non-corpus references (e.g. Ioannidis 2005) as illustrative "
+        "rather than bundle sources, or remove them."
+    )
+    paper = (
+        "## Discussion\n\n"
+        "The surrogate-endpoint caution that Ioannidis 2005 frames as a general "
+        "methodological problem is used here only as an illustrative benchmark, "
+        "not as a source-bundle claim.\n"
+    )
+    unmarked = "## Discussion\n\nIoannidis 2005 shows the central result.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(unmarked, [ask]) == [ask]

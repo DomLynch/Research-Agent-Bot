@@ -161,6 +161,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_unbundled_citation_cleanup,
             _asks_structured_table_stub_replacement,
             _asks_source_count_bundle_reconciliation,
+            _asks_external_reference_boundary,
             _asks_reference_traceability,
             _asks_prior_publication_differentiation,
             _asks_numeric_effect_audit,
@@ -250,6 +251,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _structured_table_stubs_are_replaced(paper_md)
     if _asks_source_count_bundle_reconciliation(lower):
         return _source_count_bundle_reconciliation_is_stated(paper_md)
+    if _asks_external_reference_boundary(lower):
+        return _external_references_are_marked_illustrative(paper_md, lower)
     if _asks_reference_traceability(lower):
         return _references_are_traceable(paper_md)
     if _asks_prior_publication_differentiation(lower):
@@ -503,6 +506,14 @@ def _asks_source_count_bundle_reconciliation(text: str) -> bool:
         and "source count" in text
         and "source bundle" in text
         and any(token in text for token in ("author-year", "citation", "bundle counterpart", "restore missing"))
+    )
+
+
+def _asks_external_reference_boundary(text: str) -> bool:
+    return (
+        "external" in text
+        and any(token in text for token in ("non-corpus", "non corpus", "not in the source bundle"))
+        and any(token in text for token in ("illustrative", "bundle source", "bundle sources", "remove"))
     )
 
 
@@ -1000,6 +1011,25 @@ def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:
         counts
         and any(token in text for token in ("author-year", "references", "doi", "pmid", "bundle counterpart", "traceable"))
     )
+
+
+def _external_references_are_marked_illustrative(paper_md: str, ask: str) -> bool:
+    external_names = re.findall(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", ask, flags=re.I)
+    if not external_names:
+        return True
+    text = paper_md.lower()
+    boundary_terms = (
+        "illustrative", "methodological", "benchmark", "general problem",
+        "general caution", "external", "not a bundle source",
+    )
+    for name in external_names:
+        idx = text.find(name.lower())
+        if idx == -1:
+            continue
+        window = text[max(0, idx - 240): idx + 360]
+        if not any(term in window for term in boundary_terms):
+            return False
+    return True
 
 
 def _unbundled_citations_are_resolved(paper_md: str, ask: str) -> bool:
