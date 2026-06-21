@@ -1643,20 +1643,42 @@ def _aspirin_revise_loader() -> tuple[list[dict[str, Any]], None]:
               "feedback": "Hedge the cognitive claims"}], None)
 
 
-def _coverage_fake_synthesis(feedback_seen: list[str | None], paper_md: str | None = None):
+def _coverage_fake_synthesis(
+    feedback_seen: list[str | None],
+    paper_md: str | None = None,
+    *,
+    sidecars_ready: bool = False,
+):
     def fake(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None,
              revision_feedback: str | None = None, review_type_override: str | None = None) -> int:
         feedback_seen.append(revision_feedback)
         out_dir.mkdir(parents=True)
         (out_dir / "full_paper.md").write_text(
             paper_md or "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.", encoding="utf-8")
+        if sidecars_ready:
+            _write_json(out_dir / "final_status.json", {"submission_ready": True})
+            _write_json(out_dir / "full_paper.journal_surface.json", {"passed": True})
+            _write_json(out_dir / "pre_submit_gate.json", {"result": {"passed": True}})
         return 0
     return fake
 
 
-def _run_coverage_cycle(tmp_path: Path, monkeypatch, *, unmet, submit_cycle, max_revise_attempts=3, paper_md: str | None = None):
+def _run_coverage_cycle(
+    tmp_path: Path,
+    monkeypatch,
+    *,
+    unmet,
+    submit_cycle,
+    max_revise_attempts=3,
+    paper_md: str | None = None,
+    sidecars_ready: bool = False,
+):
     feedback_seen: list[str | None] = []
-    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen, paper_md))
+    monkeypatch.setattr(
+        cycle,
+        "_run_synthesis",
+        _coverage_fake_synthesis(feedback_seen, paper_md, sidecars_ready=sidecars_ready),
+    )
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: list(unmet))
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs", date="2026-05-28", run_synthesis=True, submit=True,
@@ -1688,6 +1710,21 @@ def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert ledger["attempts"][0]["gate_status"] == "revision_coverage_unmet"
     assert ledger["attempts"][0]["unmet_revision_asks"] == ["Hedge the cognitive claims"]
     assert int(ledger.get("submitted") or 0) == 0
+
+
+def test_submission_ready_sidecars_make_revision_coverage_advisory(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    ledger, _ = _run_coverage_cycle(
+        tmp_path,
+        monkeypatch,
+        unmet=["Hedge the cognitive claims"],
+        sidecars_ready=True,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["attempts"][0]["submitted"] == 1
+    assert "unmet_revision_asks" not in ledger["attempts"][0]
+    assert ledger["attempts"][0]["revision_coverage_advisory_asks"] == ["Hedge the cognitive claims"]
 
 
 def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:
