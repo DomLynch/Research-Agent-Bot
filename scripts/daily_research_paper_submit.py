@@ -729,6 +729,21 @@ def _is_revision_feedback(text: str) -> bool:
     return any(marker in lowered for marker in ("revise", "revision", "resubmit", "needs revision"))
 
 
+def _is_duplicate_submission_feedback(text: str) -> bool:
+    return "duplicate_submission" in text.lower()
+
+
+def _duplicate_submission_id(text: str) -> str | None:
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return None
+    detail = data.get("detail") if isinstance(data, dict) else None
+    row = detail if isinstance(detail, dict) else data
+    value = row.get("submission_id") if isinstance(row, dict) else None
+    return str(value) if value else None
+
+
 def _mark_considered_status(rows: list[dict[str, Any]], run_name: str, status: str) -> None:
     for row in rows:
         if row.get("run") == run_name:
@@ -1470,8 +1485,18 @@ def run_cycle(
         _mark_considered_status(considered, run.name, "submitted_to_researka")
     elif 400 <= int(result.get("status") or 0) < 500:
         feedback = _feedback_text(result.get("response"))
-        is_revision = _is_revision_feedback(feedback)
+        is_duplicate = _is_duplicate_submission_feedback(feedback)
+        is_revision = False if is_duplicate else _is_revision_feedback(feedback)
         status = "submission_revise_requested" if is_revision else "submission_rejected_by_researka"
+        if is_duplicate:
+            _append_record(submitted_path, {
+                "date": date,
+                "run": run.name,
+                "topic": metadata.get("topic"),
+                "fingerprint": fp,
+                "duplicate_submission_id": _duplicate_submission_id(feedback),
+                **{key: metadata.get(key) for key in PUBLICATION_IDENTITY_KEYS if metadata.get(key)},
+            })
         _append_record(submitted_path.with_name(REVISION_FINGERPRINTS if is_revision else REJECTED_FINGERPRINTS), {
             "date": date,
             "run": run.name,

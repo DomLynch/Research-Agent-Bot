@@ -1734,11 +1734,41 @@ _TITLE_NO_BENEFIT_RE = re.compile(
     r"effect|mass|strength|function)",
     re.IGNORECASE,
 )
+_TITLE_POSITIVE_EFFECT_RE = re.compile(
+    r"\b(?:improves?|enhances?|extends?|rescues?|protects?|prevents?)\b"
+    r".{0,80}\b(?:longevity|lifespan|healthspan|survival|function|"
+    r"phenotype|outcome|response|recovery|performance)\b"
+    r"|\bpromotes?\b.{0,80}\b(?:longevity|lifespan|healthspan|healthy\s+aging)\b"
+    r"|\b(?:ameliorates?|attenuates?|mitigates?|reduces?)\b"
+    r".{0,80}\b(?:disease|damage|injury|inflammation|dysfunction|risk|decline)\b"
+    r"|\binverse(?:ly)?\s+associated\b.{0,80}\b(?:risk|incidence|mortality|dementia)\b",
+    re.IGNORECASE,
+)
+_TITLE_NEGATIVE_EFFECT_RE = re.compile(
+    r"\b(?:increases?|elevates?|raises?|worsens?|exacerbates?|impairs?|"
+    r"accelerates?|induces?)\b.{0,80}\b(?:risk|mortality|decline|dysfunction|"
+    r"damage|disease|senescence|aging|inflammation)\b"
+    r"|\bassociated\s+with\b.{0,80}\b(?:higher|increased|elevated)\b"
+    r".{0,40}\b(?:risk|incidence|mortality|dementia)\b",
+    re.IGNORECASE,
+)
 
 
 def _title_guarded_effect_direction(title: str, current: str) -> str:
-    if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title or ""):
+    title = title or ""
+    current = current or "unclear"
+    if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title):
         return "null"
+    if current not in {"null", "unclear"} or _TITLE_NO_BENEFIT_RE.search(title):
+        return current
+    positive = bool(_TITLE_POSITIVE_EFFECT_RE.search(title))
+    negative = bool(_TITLE_NEGATIVE_EFFECT_RE.search(title))
+    if positive and negative:
+        return "mixed"
+    if positive:
+        return "positive"
+    if negative:
+        return "negative"
     return current
 
 
