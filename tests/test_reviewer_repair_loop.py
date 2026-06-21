@@ -18,6 +18,39 @@ import final_reviewer as gr  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 
 
+def test_post_pipeline_passes_configured_final_reviewer_model(tmp_path: Path, monkeypatch) -> None:
+    class _StopAfterReviewer(Exception):
+        pass
+
+    captured: dict[str, str | None] = {}
+    paper_path = tmp_path / "full_paper.md"
+    paper_path.write_text("## Abstract\n\nBounded paper.\n")
+    monkeypatch.setenv("FINAL_LAYER_REVIEWER_MODEL", "google/gemma-4-31b-it")
+    monkeypatch.setattr(orch._audit_v06, "audit", lambda *_a, **_k: {"checks": []})
+    monkeypatch.setattr(orch._audit_v06, "_format_summary", lambda *_a, **_k: "audit")
+    monkeypatch.setattr(orch._paper_quality, "apply_template_repairs", lambda paper: (paper, []))
+
+    async def _review(*_args, **kwargs):
+        captured["model"] = kwargs.get("model")
+        raise _StopAfterReviewer
+
+    monkeypatch.setattr(orch._final_reviewer, "review_paper", _review)
+
+    async def _go() -> None:
+        await orch._run_post_paper_pipeline(
+            paper_path=paper_path,
+            manifest={"review_type": "thin_corpus_brief"},
+            out_dir=tmp_path,
+        )
+
+    try:
+        asyncio.run(_go())
+    except _StopAfterReviewer:
+        pass
+
+    assert captured["model"] == "google/gemma-4-31b-it"
+
+
 def test_revision_feedback_env_writes_sidecar_before_finalizer(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", "  Add severity-level explanation.   ")
 

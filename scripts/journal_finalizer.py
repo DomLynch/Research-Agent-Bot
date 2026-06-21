@@ -2223,6 +2223,14 @@ _EVIDENCE_TYPE_METADATA_NOTE = (
 )
 
 
+_CITATION_TRACEABILITY_NOTE = (
+    "Citation traceability map: author-year prose citations are reconciled to "
+    "specific source-bundle entries in the in-manuscript Source Classification "
+    "Map and References section; `manifest.json`, `citation_registry.json`, "
+    "and `methods_pack.json` provide the complete machine-readable mapping."
+)
+
+
 def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
@@ -2240,6 +2248,16 @@ def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
     )
 
 
+def _revision_asks_citation_traceability_map(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "author-year" in lower
+        and "citation" in lower
+        and any(token in lower for token in ("source bundle entry", "source-bundle entry", "bundle entry"))
+        and any(token in lower for token in ("methods_pack", "citation list", "mapping"))
+    )
+
+
 _SOURCE_VERIFICATION_SENTENCE = (
     "The source bundle and supplementary artifacts (manifest.json and "
     "methods_pack.json when present) define the evidence state; detailed "
@@ -2253,25 +2271,34 @@ def _phase_d_source_verification_transparency(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
-    if not _revision_asks_source_verification_transparency(feedback):
+    wants_verification = _revision_asks_source_verification_transparency(feedback)
+    wants_citation_map = _revision_asks_citation_traceability_map(feedback)
+    if not (wants_verification or wants_citation_map):
         return text, []
     methods = re.search(r"^## Methods\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not methods:
         return text, []
     scope = methods.group(1).lower()
-    if (
+    has_verification = (
         "source bundle" in scope
         and "external" in scope
         and ("manifest" in scope or "methods_pack" in scope)
-    ):
+    )
+    has_citation_map = "citation traceability map:" in scope
+    insertions = []
+    if wants_verification and not has_verification:
+        insertions.append(_SOURCE_VERIFICATION_SENTENCE)
+    if wants_citation_map and not has_citation_map:
+        insertions.append(_CITATION_TRACEABILITY_NOTE)
+    if not insertions:
         return text, []
-    insertion = "\n\n" + _SOURCE_VERIFICATION_SENTENCE + "\n"
+    insertion = "\n\n" + "\n\n".join(insertions) + "\n"
     patched = text[:methods.end(1)] + insertion + text[methods.end(1):]
     return patched, [FinalizerLogEntry(
         phase="D_source_verification_transparency",
         rule="state_source_bundle_verification_boundary",
-        n_changes=1,
-        detail="added source-bundle verification transparency sentence to Methods",
+        n_changes=len(insertions),
+        detail="added source-bundle/citation traceability sentence(s) to Methods",
     )]
 
 

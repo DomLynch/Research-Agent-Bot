@@ -138,6 +138,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_source_inclusion_rationale,
             _asks_source_directness_breakdown,
             _asks_source_statistics_landscape,
+            _asks_citation_traceability_map,
             _asks_source_verification_transparency,
             _asks_section_source_grounding,
             _asks_substantive_evidence_synthesis,
@@ -201,6 +202,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_directness_breakdown_is_stated(paper_md)
     if _asks_source_statistics_landscape(lower):
         return _source_statistics_landscape_is_stated(paper_md)
+    if _asks_citation_traceability_map(lower):
+        return _citation_traceability_map_is_stated(paper_md)
     if _asks_source_verification_transparency(lower):
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
@@ -495,6 +498,15 @@ def _asks_reference_traceability(text: str) -> bool:
         "reference list" in text
         and any(token in text for token in ("doi", "pmid", "bibliographic identifier", "source bundle", "traceable"))
     ) or "traceable to the source bundle" in text
+
+
+def _asks_citation_traceability_map(text: str) -> bool:
+    return (
+        "author-year" in text
+        and "citation" in text
+        and any(token in text for token in ("source bundle entry", "source-bundle entry", "bundle entry"))
+        and any(token in text for token in ("methods_pack", "citation list", "mapping"))
+    )
 
 
 def _asks_unbundled_citation_cleanup(text: str) -> bool:
@@ -1023,6 +1035,21 @@ def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:
         counts
         and any(token in text for token in ("author-year", "references", "doi", "pmid", "bundle counterpart", "traceable"))
     )
+
+
+def _citation_traceability_map_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    return all(
+        token in text
+        for token in (
+            "citation traceability map",
+            "author-year",
+            "source-bundle entries",
+            "source classification map",
+            "references section",
+            "methods_pack.json",
+        )
+    ) and ("manifest.json" in text or "citation_registry.json" in text)
 
 
 def _external_references_are_marked_illustrative(paper_md: str, ask: str) -> bool:

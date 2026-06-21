@@ -1392,6 +1392,28 @@ def test_deterministic_unmet_requires_consistent_source_count_bundle_reconciliat
     assert revision_coverage.deterministic_unmet_asks(inconsistent, [ask]) == [ask]
 
 
+def test_deterministic_unmet_accepts_citation_traceability_map_note() -> None:
+    ask = (
+        "Provide a complete, auditable in-text citation list mapping every author-year "
+        "prose reference to a specific source bundle entry; add a methods_pack.json-style "
+        "table or appendix in the manuscript itself so the reader can verify grounding "
+        "without external artifacts."
+    )
+    missing = "## Evidence Snapshot\n\n### Source Classification Map\n\n- Smith 2024: outcome=frailty.\n"
+    repaired = (
+        "## Evidence Snapshot\n\n"
+        "Citation traceability map: author-year prose citations are reconciled to specific "
+        "source-bundle entries in the in-manuscript Source Classification Map and References "
+        "section; `manifest.json`, `citation_registry.json`, and `methods_pack.json` provide "
+        "the complete machine-readable mapping.\n\n"
+        "### Source Classification Map\n\n- Smith 2024: outcome=frailty.\n\n"
+        "## References\n\n- **Smith 2024.** Example source.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(missing, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_concrete_tensions_and_gap_priority() -> None:
     ask = (
         "Expand the Tensions and Gaps section with at least 3–5 concrete tensions "
