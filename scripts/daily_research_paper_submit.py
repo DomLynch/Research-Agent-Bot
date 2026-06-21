@@ -447,14 +447,42 @@ def _final_status_ready(data: dict[str, Any]) -> bool:
 
 
 def _revision_coverage_status(run: Path) -> str:
-    if not _read_json(run / "researka_revision_request.json"):
+    request = _read_json(run / "researka_revision_request.json")
+    if not request:
         return "eligible"
+    _refresh_revision_coverage_gate(run, request)
     gate = _read_json(run / REVISION_COVERAGE_GATE)
     if gate.get("passed") is True:
         return "eligible"
     if gate.get("passed") is False:
         return "revision_coverage_unmet"
     return "revision_coverage_unverified"
+
+
+def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
+    gate = _read_json(run / REVISION_COVERAGE_GATE)
+    if gate.get("passed") is True:
+        return False
+    paper = run / "full_paper.md"
+    feedback = str(request.get("feedback") or "")
+    if not feedback or not paper.is_file():
+        return False
+    try:
+        import revision_coverage
+        text = paper.read_text(encoding="utf-8")
+        asks = revision_coverage.revision_asks(feedback)
+        if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
+            return False
+        unmet = revision_coverage.material_unmet_asks(text, feedback)
+    except (ImportError, OSError, RuntimeError, TypeError, ValueError):
+        return False
+    _write_json(run / REVISION_COVERAGE_GATE, {
+        "passed": not unmet,
+        "ask_count": len(asks),
+        "unmet_asks": unmet,
+        "refreshed_by": "daily_submit",
+    })
+    return True
 
 
 def _topic_tokens(topic: str) -> list[str]:

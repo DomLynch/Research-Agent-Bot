@@ -1138,6 +1138,59 @@ def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(tmp_pat
     assert ledger["submitted"] == 0
 
 
+def test_missing_revision_coverage_gate_is_refreshed_before_selection(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import revision_coverage  # type: ignore[import-not-found]
+
+    run = _run(tmp_path)
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8").replace(
+            "## Methods\n\n",
+            "## Methods\n\n"
+            "### Classification Criteria\n\n"
+            "- **Outcome class** is assigned from endpoint and claim text.\n"
+            "- **Directness** is coded from source design and endpoint match.\n"
+            "- **Evidence tier** follows the deterministic taxonomy.\n\n",
+        ),
+        encoding="utf-8",
+    )
+    ask = "Define the classification criteria used to assign studies to outcome classes and to code directness."
+    _write_json(run / "researka_revision_request.json", {"feedback": ask})
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda _paper, _asks: [ask])
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=set(),
+    )
+
+    assert selected == run
+    assert considered[0]["status"] == "eligible"
+    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
+    assert gate["passed"] is True
+    assert gate["refreshed_by"] == "daily_submit"
+
+
+def test_unmet_refreshed_revision_coverage_still_blocks_selection(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {
+        "feedback": "Define the classification criteria used to assign studies to outcome classes and to code directness.",
+    })
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=set(),
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "revision_coverage_unmet"
+    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
+    assert gate["passed"] is False
+
+
 def test_selection_skips_stale_older_runs_for_same_topic(tmp_path: Path) -> None:
     older = _run(tmp_path, name="synthesis-topic-v06-older")
     newer = _run(tmp_path, name="synthesis-topic-v06-newer")

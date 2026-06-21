@@ -115,6 +115,12 @@ def deterministic_satisfied_asks(paper_md: str, asks: Sequence[str]) -> list[str
     return [ask for ask in clean if _deterministic_ask_known(ask) and _deterministic_ask_satisfied(paper_md, ask)]
 
 
+def deterministic_known_asks(asks: Sequence[str]) -> list[str]:
+    """Reviewer asks covered by deterministic structural predicates."""
+    clean = [a.strip() for a in asks if a and a.strip()]
+    return [ask for ask in clean if _deterministic_ask_known(ask)]
+
+
 def _deterministic_ask_known(ask: str) -> bool:
     lower = " ".join(ask.lower().split())
     return any(
