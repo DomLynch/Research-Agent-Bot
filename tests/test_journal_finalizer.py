@@ -1169,6 +1169,29 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
+def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
+    ask = (
+        "Expand Tensions and Gaps to cover the full outcome breadth of the corpus, "
+        "including cognition, menopause, and acute-care contexts."
+    )
+    paper = "## Results\n\nThe corpus has unresolved heterogeneity.\n\n## References\n\nR01.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_tensions_and_gaps_breadth(paper, tmp_path)
+
+    assert "## Tensions and Gaps" in fixed
+    assert "spans cognition, menopause, acute-care" in fixed
+    assert "Biomarker-positive source-level findings are not pooled" in fixed
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_tensions_and_gaps_breadth",
+            rule="state_revision_tension_breadth",
+            n_changes=1,
+            detail="added Tensions and Gaps breadth note for cognition, menopause, acute-care",
+        )
+    ]
+
+
 def test_source_outcome_class_map_no_receipts_does_not_crash(tmp_path: Path) -> None:
     ask = (
         "Provide a mapping table or list showing which of the 28 bundle sources were "

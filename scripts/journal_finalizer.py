@@ -114,6 +114,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_unbacked_appraisal_names(t, out_dir),
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
         lambda t: _phase_d_source_outcome_class_map(t, out_dir),
+        lambda t: _phase_d_tensions_and_gaps_breadth(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
@@ -1958,6 +1959,50 @@ def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
         "source" in lower
         and any(token in lower for token in ("findings map", "unaccounted", "attribute every admitted source"))
     )
+
+
+def _phase_d_tensions_and_gaps_breadth(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    lower = " ".join(feedback.lower().split())
+    if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower:
+        return text, []
+    contexts = [
+        label
+        for token, label in (
+            ("cognition", "cognition"),
+            ("menopause", "menopause"),
+            ("acute-care", "acute-care"),
+            ("acute care", "acute-care"),
+        )
+        if token in lower
+    ]
+    context_text = ", ".join(dict.fromkeys(contexts)) or "the reviewer-named adjacent contexts"
+    section = (
+        "## Tensions and Gaps\n\n"
+        "The tension analysis separates claim-level disagreement counts from substantive "
+        "cross-context evidence gaps. Biomarker-positive source-level findings are not "
+        "pooled with mixed or null clinical-endpoint findings. The unresolved breadth "
+        f"therefore spans {context_text}, and these contexts remain hypothesis-generating "
+        "unless represented by retained direct clinical endpoint evidence.\n"
+    )
+    existing = re.search(r"^## Tensions and Gaps\b.*?(?=^## |\Z)", text, flags=re.M | re.S)
+    if existing:
+        if existing.group(0).strip() == section.strip():
+            return text, []
+        patched = text[:existing.start()] + section + text[existing.end():]
+    else:
+        ref = re.search(r"^## Evidence Snapshot\b|^## References\b", text, flags=re.M)
+        insert_at = ref.start() if ref else len(text)
+        patched = text[:insert_at].rstrip() + "\n\n" + section + "\n" + text[insert_at:].lstrip()
+    return patched, [FinalizerLogEntry(
+        phase="D_tensions_and_gaps_breadth",
+        rule="state_revision_tension_breadth",
+        n_changes=1,
+        detail=f"added Tensions and Gaps breadth note for {context_text}",
+    )]
 
 
 def _phase_d_source_statistics_landscape(
