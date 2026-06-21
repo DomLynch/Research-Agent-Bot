@@ -1058,6 +1058,7 @@ def select_topic(
     # topics is the revise cycle's job, not the fresh cycle's.
     untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
     return min(pool, key=lambda topic: (
+        0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
         -_publication_score(topic, ledger_dir, runs_root),
         -_topic_support_score(topic),

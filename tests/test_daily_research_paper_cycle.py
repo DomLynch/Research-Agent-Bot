@@ -535,6 +535,22 @@ def test_select_topic_prefers_untried_over_prior_l4_to_advance_frontier(tmp_path
     assert selected == "caloric_restriction"  # untried beats the re-run
 
 
+def test_select_topic_prefers_local_corpus_over_empty_frontier_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "empty_frontier", corpus=False, target_journal=True)
+    _topic(tmp_path, "solid_ready", target_journal=True)
+    _prior_run(tmp_path, "solid_ready", receipts=40, tensions=5, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    selected = cycle.select_topic(
+        ["empty_frontier", "solid_ready"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "solid_ready"
+
+
 def test_select_topic_falls_back_to_score_when_all_attempted(tmp_path: Path, monkeypatch) -> None:
     """Steady state (NOT the orbit bug): once every publish-ready candidate has
     been attempted, the untried-first flag is uniform, so selection falls back
