@@ -1571,6 +1571,8 @@ def _receipt_preflight(
         probes.append({"return_code": rc, "n_receipts": n_receipts, "min_receipts": min_receipts})
         if rc == 0 and n_receipts >= min_receipts:
             break
+        if rc == 0 and n_receipts == 0:
+            break
         if round_idx > 0 and rc == 0 and best_receipts <= previous_best:
             break
         if round_idx >= rounds:
