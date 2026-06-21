@@ -1195,7 +1195,9 @@ def test_populated_appraisal_artifact_is_summarized(tmp_path: Path) -> None:
     assert "Risk-of-bias appraisal summary" in fixed
     assert "2 source-level rating row(s)" in fixed
     assert "low=1" in fixed
-    assert "some_concerns=1" in fixed
+    assert "some concerns=1" in fixed
+    assert "robins_i" not in fixed
+    assert "some_concerns" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].rule == "summarize_populated_appraisal_artifact"
 

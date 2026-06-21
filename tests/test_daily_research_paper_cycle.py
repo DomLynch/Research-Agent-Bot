@@ -1946,6 +1946,42 @@ def test_unmet_revision_asks_accepts_material_directional_explanation(tmp_path: 
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
 
 
+def test_deterministic_revision_satisfaction_overrides_stale_judge_block(tmp_path: Path, monkeypatch) -> None:
+    import revision_coverage  # type: ignore[import-not-found]
+
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Brain age MRI\n\n"
+        "## Evidence Landscape\n\n"
+        "RCT-count reconciliation: this manuscript treats any prior single-RCT wording as a "
+        "source-coding count, not as a claim that the underlying trial evidence contains only one RCT. "
+        "Substantive evidence synthesis: Huang 2025 showed an immune-dementia null signal, "
+        "Kou 2024 reported mixed proteomic brain-age associations, and Jawinski 2025 reported "
+        "positive MR signals; these source-level findings inform the bounded conclusion.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis: positive, mixed, and null findings are separated by "
+        "source type and directness. Huang 2025 and Kou 2024 do not prove a broad intervention "
+        "effect, but they bound the conclusion.\n\n"
+        "## Methods\n\n"
+        "Risk-of-bias appraisal summary: The public appraisal artifact reports 65 source-level "
+        "rating rows using RoB-2, ROBINS-I, and SYRCLE; overall ratings are some_concerns=65.\n",
+        encoding="utf-8",
+    )
+    asks = [
+        "Provide an actual evidence synthesis in the Evidence Landscape and Key Findings sections. "
+        "At minimum, surface the key positive, negative, and mixed findings from the bundle and explain "
+        "how they inform the bounded conclusion.",
+        "Differentiate Key Findings from Conclusion — the two sections currently contain nearly identical "
+        "text and Key Findings should present the substantive evidence-based observations, not a restatement "
+        "of the conclusion's caveats.; Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources, "
+        "or remove the framework name if no appraisal was performed.",
+    ]
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda _paper, _asks: list(asks))
+
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, "; ".join(asks)) == []
+
+
 def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: Path) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()

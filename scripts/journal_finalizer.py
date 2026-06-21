@@ -1751,10 +1751,11 @@ def _appraisal_artifact_summary(out_dir: Path) -> str:
         tools: set[str] = set()
         for row in rows:
             rating = str(row.get("overall_rating") or row.get("rating") or "not_rated").strip() or "not_rated"
+            rating = _public_appraisal_label(rating)
             ratings[rating] = ratings.get(rating, 0) + 1
             tool = str(row.get("tool") or "").strip()
             if tool:
-                tools.add(tool)
+                tools.add(_public_appraisal_label(tool))
         rating_text = ", ".join(f"{key}={ratings[key]}" for key in sorted(ratings))
         tool_text = ", ".join(sorted(tools)) or "design-appropriate appraisal tools"
         return (
@@ -1765,6 +1766,19 @@ def _appraisal_artifact_summary(out_dir: Path) -> str:
             "into direct clinical proof."
         )
     return ""
+
+
+def _public_appraisal_label(value: str) -> str:
+    labels = {
+        "amstar_2": "AMSTAR-2",
+        "not_rated": "not rated",
+        "rob2": "RoB-2",
+        "robins_i": "ROBINS-I",
+        "some_concerns": "some concerns",
+        "syrcle": "SYRCLE",
+    }
+    normalized = value.strip().lower().replace("-", "_").replace(" ", "_")
+    return labels.get(normalized, value.replace("_", " "))
 
 
 def _phase_d_source_inclusion_rationale(
