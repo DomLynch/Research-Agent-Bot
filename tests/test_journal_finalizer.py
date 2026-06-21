@@ -1175,6 +1175,31 @@ def test_unbacked_appraisal_names_are_removed_without_ratings(tmp_path: Path) ->
     assert logs[0].phase == "D_unbacked_appraisal_names"
 
 
+def test_populated_appraisal_artifact_is_summarized(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources, or remove the framework name if no appraisal was performed."
+    paper = (
+        "## Methods\n\nRisk-of-bias framework assignment follows study design "
+        "(RoB-2 for RCTs, ROBINS-I for non-randomised studies, AMSTAR-2 for systematic reviews).\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "risk_of_bias.json").write_text(json.dumps([
+        {"study_id": "Smith 2025", "tool": "robins_i", "overall_rating": "some_concerns"},
+        {"study_id": "Jones 2024", "tool": "amstar_2", "overall_rating": "low"},
+    ]))
+
+    fixed, logs = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
+
+    assert "RoB-2" in fixed
+    assert "Risk-of-bias appraisal summary" in fixed
+    assert "2 source-level rating row(s)" in fixed
+    assert "low=1" in fixed
+    assert "some_concerns=1" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "summarize_populated_appraisal_artifact"
+
+
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

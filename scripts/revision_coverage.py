@@ -640,10 +640,12 @@ def _rct_count_reconciliation_is_stated(paper_md: str) -> bool:
 
 
 def _unbacked_appraisal_names_are_resolved(paper_md: str) -> bool:
+    lower = paper_md.lower()
+    if "risk-of-bias appraisal summary:" in lower and "overall ratings" in lower:
+        return True
     formal = re.search(r"\b(?:RoB-2|RoB 2|ROBINS-I|AMSTAR-2|AMSTAR 2)\b", paper_md)
     if formal:
         return False
-    lower = paper_md.lower()
     return "risk-of-bias honesty note" in lower or "per-source public appraisal ratings" in lower
 
 

@@ -1695,8 +1695,20 @@ def _phase_d_unbacked_appraisal_names(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
-    if not _revision_asks_unbacked_appraisal_names(feedback) or _has_populated_appraisal_artifact(out_dir):
+    if not _revision_asks_unbacked_appraisal_names(feedback):
         return text, []
+    if summary := _appraisal_artifact_summary(out_dir):
+        if "risk-of-bias appraisal summary:" in text.lower():
+            return text, []
+        patched, n = _prepend_or_create_section_paragraph(text, "Methods", summary)
+        if not n:
+            return text, []
+        return patched, [FinalizerLogEntry(
+            phase="D_unbacked_appraisal_names",
+            rule="summarize_populated_appraisal_artifact",
+            n_changes=1,
+            detail="reported risk-of-bias appraisal summary from populated artifact",
+        )]
     patched = text
     patched = re.sub(r"\bRoB-2\b", "risk-of-bias appraisal", patched)
     patched = re.sub(r"\bROBINS-I\b", "non-randomized-study appraisal", patched)
@@ -1723,7 +1735,7 @@ def _revision_asks_unbacked_appraisal_names(feedback: str) -> bool:
     return any(token in lower for token in ("rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias", "appraisal"))
 
 
-def _has_populated_appraisal_artifact(out_dir: Path) -> bool:
+def _appraisal_artifact_summary(out_dir: Path) -> str:
     for path in out_dir.rglob("*.json"):
         if not re.search(r"risk[_-]?of[_-]?bias|appraisal", path.name, re.I):
             continue
@@ -1731,9 +1743,28 @@ def _has_populated_appraisal_artifact(out_dir: Path) -> bool:
             data = json.loads(path.read_text())
         except (OSError, ValueError):
             continue
-        if data:
-            return True
-    return False
+        rows = data if isinstance(data, list) else data.get("rows", []) if isinstance(data, dict) else []
+        rows = [row for row in rows if isinstance(row, dict)]
+        if not rows:
+            continue
+        ratings: dict[str, int] = {}
+        tools: set[str] = set()
+        for row in rows:
+            rating = str(row.get("overall_rating") or row.get("rating") or "not_rated").strip() or "not_rated"
+            ratings[rating] = ratings.get(rating, 0) + 1
+            tool = str(row.get("tool") or "").strip()
+            if tool:
+                tools.add(tool)
+        rating_text = ", ".join(f"{key}={ratings[key]}" for key in sorted(ratings))
+        tool_text = ", ".join(sorted(tools)) or "design-appropriate appraisal tools"
+        return (
+            "Risk-of-bias appraisal summary: The public appraisal artifact reports "
+            f"{len(rows)} source-level rating row(s) using {tool_text}; overall "
+            f"ratings are {rating_text}. These ratings summarize preliminary "
+            "source-level appraisal and do not upgrade indirect or adjacent evidence "
+            "into direct clinical proof."
+        )
+    return ""
 
 
 def _phase_d_source_inclusion_rationale(
