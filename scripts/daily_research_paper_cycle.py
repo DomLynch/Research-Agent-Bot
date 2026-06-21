@@ -2620,6 +2620,8 @@ def run_cycle(
                     ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 if revision_source and gate_status.split(":", 1)[0] in _TERMINAL_REVISION_STATUSES:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                elif revision_source and gate_status == "revision_coverage_unmet":
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 if return_code != 0:
                     ledger["status"] = "synthesis_failed"
                 elif bridge.get("status") == "submitted_to_researka":

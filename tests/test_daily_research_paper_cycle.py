@@ -1718,6 +1718,8 @@ def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert ledger["attempts"][0]["gate_status"] == "revision_coverage_unmet"
     assert ledger["attempts"][0]["unmet_revision_asks"] == ["Hedge the cognitive claims"]
     assert int(ledger.get("submitted") or 0) == 0
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text())
+    assert handled["handled"][0]["status"] == "revision_coverage_unmet"
 
 
 def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:
