@@ -1235,6 +1235,40 @@ def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_p
     assert logs[0].phase == "D_substantive_evidence_synthesis"
 
 
+def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    asks = [
+        "Remove or correct the '116 cross-study disagreements' figure if it cannot be substantiated with enumerated examples; or replace it with a count of actually-surfaced tensions.",
+        "Add a brief enumeration of the strongest 3-5 positive findings in the corpus (with source citations) even if the overall conclusion is null, so the map honors the evidence that does exist rather than collapsing everything to a null verdict.",
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "The evidence profile contains 116 cross-study disagreements across the evidence base.\n\n"
+        "## Results\n\n"
+        "The corpus is mostly null.\n\n"
+        "## Conclusion\n\n"
+        "The bounded conclusion does not support clinical claims.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": "; ".join(asks)}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"n_non_orthogonal_tensions": 116, "receipts": [
+        {"citation_token": "Smith 2025", "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "direct", "evidence_tier": "A1", "n_claims": 12},
+        {"citation_token": "Jones 2024", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "review", "evidence_tier": "B1", "n_claims": 8},
+        {"citation_token": "Patel 2023", "outcome_class": "immune", "effect_direction": "mixed", "directness": "indirect", "evidence_tier": "B2", "n_claims": 6},
+        {"citation_token": "Chen 2022", "outcome_class": "muscle_function", "effect_direction": "negative", "directness": "indirect", "evidence_tier": "B2", "n_claims": 5},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == asks
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Actually surfaced tensions include:" in fixed
+    assert "Smith 2025 vs Jones 2024" in fixed
+    assert "Key findings from source synthesis" in fixed
+    assert "Smith 2025: outcome=Cardiometabolic; direction=positive" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert {entry.phase for entry in logs} >= {"D_substantive_evidence_synthesis", "D_tensions_and_gaps_breadth"}
+
+
 def test_rct_count_reconciliation_removes_single_rct_claim(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

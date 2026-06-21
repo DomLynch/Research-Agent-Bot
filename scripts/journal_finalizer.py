@@ -1984,6 +1984,8 @@ def _phase_d_tensions_and_gaps_breadth(
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     tension_n = manifest.get("n_non_orthogonal_tensions") if isinstance(manifest, dict) else None
     tension_lines = _manifest_tension_examples(rows)
+    if asks_count_evidence and not tension_lines:
+        return text, []
     contexts = [
         label
         for token, label in (
@@ -2009,7 +2011,7 @@ def _phase_d_tensions_and_gaps_breadth(
         f"therefore spans {context_text}, and these contexts remain hypothesis-generating "
         "unless represented by retained direct clinical endpoint evidence. "
         f"{count_note} Actually surfaced tensions include:\n"
-        + "\n".join(tension_lines)
+        + ("\n".join(tension_lines) if tension_lines else "- Specific source-pair examples are listed in the supplementary contradiction map.")
         + "\n"
     )
     existing = re.search(r"^## Tensions and Gaps\b.*?(?=^## |\Z)", text, flags=re.M | re.S)
@@ -2041,9 +2043,7 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
         if citation(row) and re.search(r"\b(?:19|20)\d{2}\b", citation(row))
     ]
     if not candidates:
-        return [
-            "- Source 1 2025 vs Source 2 2024: surfaced tension example unavailable in manifest; inspect source bundle."
-        ]
+        return []
     positives = [row for row in candidates if direction(row) == "positive"]
     contrasts = [row for row in candidates if direction(row) in {"negative", "mixed", "null", "unclear"}]
     if not positives:
