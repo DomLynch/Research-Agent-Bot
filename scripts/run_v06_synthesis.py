@@ -3404,6 +3404,8 @@ async def _run_post_paper_pipeline(
         file=sys.stderr,
     )
     try:
+        from agent.settings import load_settings as _load_settings
+
         # Fix #11: pass citation_registry so the reviewer sees clean Author-Year
         # tokens in the "allowed body citations" list, not internal
         # receipt_id handles. Pre-fix reviewer behavior reverted clean citations
@@ -3411,6 +3413,7 @@ async def _run_post_paper_pipeline(
         # consistency" — exactly the bug the third reviewer warned about.
         patches, _raw, model_used, cost = await _final_reviewer.review_paper(
             paper_md, manifest, audit_report,
+            model=_load_settings().final_layer_reviewer_model,
             citation_registry=citation_registry,
         )
     except RuntimeError as exc:
