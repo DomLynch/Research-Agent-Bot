@@ -2240,16 +2240,19 @@ def test_terminal_source_precision_handled_row_bypasses_round_cap(tmp_path: Path
     assert marker in cycle._handled_revision_ids(ledger_dir)
 
 
-def test_terminal_receipt_preflight_handled_row_bypasses_round_cap(tmp_path: Path) -> None:
+def test_receipt_preflight_handled_rows_obey_round_cap(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     marker = cycle.submit_bridge._title_marker("Research Synthesis: HRV Autonomic Aging — full paper")
-    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+    row = {
         "key": marker,
         "title": "Research Synthesis: HRV Autonomic Aging — full paper",
-        "status": "terminal_receipt_preflight_insufficient",
-    }]})
+        "status": "receipt_preflight_insufficient",
+    }
 
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [row] * (cycle.MAX_REVISE_ROUNDS - 1)})
+    assert marker not in cycle._handled_revision_ids(ledger_dir)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [row] * cycle.MAX_REVISE_ROUNDS})
     assert marker in cycle._handled_revision_ids(ledger_dir)
 
 
@@ -3728,7 +3731,7 @@ def test_fresh_cycle_repairs_sparse_receipt_preflight_before_submit(tmp_path: Pa
     assert ledger["attempts"][0]["receipt_preflight"]["repairs"][0]["status"] == "corpus_repaired"
 
 
-def test_revise_lane_terminalizes_sparse_receipt_preflight(tmp_path: Path, monkeypatch) -> None:
+def test_revise_lane_sparse_receipt_preflight_stays_retryable_below_round_cap(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hrv_autonomic_aging", target_journal=True)
     source = _prior_run(tmp_path, "hrv_autonomic_aging", receipts=12, tensions=2, primary=1, level=5)
     paper = source / "full_paper.md"
@@ -3743,12 +3746,18 @@ def test_revise_lane_terminalizes_sparse_receipt_preflight(tmp_path: Path, monke
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
-    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {
+    receipt_kwargs = []
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, **kwargs: Any) -> dict[str, Any]:
+        receipt_kwargs.append(kwargs)
+        return {
         "passed": False,
         "status": "receipt_preflight_insufficient",
         "n_receipts": 2,
         "min_receipts": 12,
-    })
+        }
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
     monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("sparse receipt revise must not synthesize")))
     request = {
         "artifactId": "hrv-review",
@@ -3767,10 +3776,20 @@ def test_revise_lane_terminalizes_sparse_receipt_preflight(tmp_path: Path, monke
         submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
     )
 
-    assert ledger["status"] == "revise_terminal_receipt_preflight_insufficient"
-    assert ledger["attempts"][0]["gate_status"] == "terminal_receipt_preflight_insufficient"
+    assert ledger["status"] == "revise_receipt_preflight_skipped_no_submission"
+    assert ledger["attempts"][0]["gate_status"] == "receipt_preflight_insufficient"
+    assert receipt_kwargs[0]["repair"] is True
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
-    assert handled["handled"][0]["status"] == "terminal_receipt_preflight_insufficient"
+    assert handled["handled"][0]["status"] == "receipt_preflight_insufficient"
+    assert cycle.submit_bridge._title_marker(request["title"]) not in cycle._handled_revision_ids(tmp_path / "runs" / cycle.LEDGER_DIR)
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([request], None),
+    )
+    assert error is None
+    assert pending is not None
+    assert pending["topic"] == "hrv_autonomic_aging"
 
 
 def test_fresh_lane_tries_next_after_sparse_receipt_preflight(tmp_path: Path, monkeypatch) -> None:
