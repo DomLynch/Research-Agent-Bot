@@ -1028,6 +1028,50 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] == "thin_corpus_brief"
 
 
+def test_run_synthesis_timeout_returns_status_code_and_sidecar(tmp_path: Path, monkeypatch) -> None:
+    def fake_run(*args: Any, **kwargs: Any) -> object:
+        raise cycle.subprocess.TimeoutExpired(args[0], kwargs["timeout"])
+
+    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+    out_dir = tmp_path / "timeout-run"
+
+    rc = cycle._run_synthesis("rapamycin_cancer_effects", out_dir, dry_run=False, timeout=7)
+
+    assert rc == cycle.SYNTHESIS_TIMEOUT_RETURN_CODE
+    timeout = json.loads((out_dir / "synthesis_timeout.json").read_text(encoding="utf-8"))
+    assert timeout["topic"] == "rapamycin_cancer_effects"
+    assert timeout["timeout_seconds"] == 7
+    assert "TimeoutExpired" in timeout["error"]
+
+
+def test_cycle_records_synthesis_timeout_without_service_failure_status(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "rapamycin_cancer_effects", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda _topic, **_k: (True, "source_topic_precision_ok:12/12", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_args, **_kwargs: {"passed": True})
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_args, **_kwargs: cycle.SYNTHESIS_TIMEOUT_RETURN_CODE)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-22",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        topic="rapamycin_cancer_effects",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: (_ for _ in ()).throw(AssertionError("timeout must not submit")),
+        max_attempts=0,
+    )
+
+    assert ledger["status"] == "synthesis_timeout_no_submission"
+    assert ledger["no_submission_reason"] == "synthesis_timeout"
+    assert ledger["attempts"][0]["gate_status"] == "synthesis_timeout"
+    assert ledger["attempts"][0]["failure_class"] == "D_no_action"
+
+
 def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "new_topic", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
