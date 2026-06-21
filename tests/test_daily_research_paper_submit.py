@@ -1310,6 +1310,7 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     payload = {
         "publications": [{
             "title": title,
+            "topic": "vitamin_d_supplementation",
             "metadata": {"content_hash": "sha256:abc", "submission_identity_key": "sha256:identity"},
             "decision": "accept",
         }],
@@ -1330,7 +1331,12 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     markers, error = daily._remote_published_fingerprints("https://api.example/publications")
 
     assert error is None
-    assert markers == {"sha256:abc", "sha256:identity", daily._title_marker(title)}
+    assert markers == {
+        "sha256:abc",
+        "sha256:identity",
+        daily._title_marker(title),
+        daily._topic_marker("vitamin_d_supplementation"),
+    }
 
 
 def test_http_submitter_sends_runtime_key_headers_and_idempotency(tmp_path: Path, monkeypatch) -> None:

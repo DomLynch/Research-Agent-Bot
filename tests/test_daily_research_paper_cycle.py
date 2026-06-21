@@ -200,6 +200,18 @@ def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_pat
     assert selected == "metformin"
 
 
+def test_select_topic_skips_remote_published_topic_marker_when_title_changed(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+
+    selected = cycle.select_topic(
+        ["ergothioneine", "metformin"],
+        ledger_dir,
+        remote_seen={cycle.submit_bridge._topic_marker("ergothioneine")},
+    )
+
+    assert selected == "metformin"
+
+
 def test_reconcile_publication_ledgers_updates_submitted_public_ledger(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     run = runs_root / "synthesis-mitochondrial_health-v06-TEST"
