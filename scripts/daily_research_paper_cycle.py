@@ -2753,10 +2753,17 @@ def run_cycle(
                     attempt["abstract_overclaim_advisory"] = True
                     attempt["abstract_overclaim_advisory_claims"] = advisory_overclaims
                 source_precision_retry = False
+                prospective_same_gate_failures = (
+                    0 if (revision_source and revision_feedback)
+                    else _same_gate_failure_count([*ledger["attempts"], attempt], selected, gate_status)
+                )
                 if gate_status.split(":", 1)[0] == _SOURCE_PRECISION_STATUS:
-                    source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
-                    attempt["source_precision_repair"] = source_repair
-                    source_precision_retry = source_repair.get("status") == "source_precision_repaired"
+                    if prospective_same_gate_failures >= 2:
+                        attempt["source_precision_repair_skipped"] = "repeat_gate"
+                    else:
+                        source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                        attempt["source_precision_repair"] = source_repair
+                        source_precision_retry = source_repair.get("status") == "source_precision_repaired"
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:
@@ -2772,7 +2779,7 @@ def run_cycle(
                         attempt["submission_markers"] = submission_markers
                     ledger.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                 ledger["attempts"].append(attempt)
-                same_gate_failures = 0 if (revision_source and revision_feedback) else _same_gate_failure_count(ledger["attempts"], selected, gate_status)
+                same_gate_failures = prospective_same_gate_failures
                 if same_gate_failures >= 2:
                     attempt["same_gate_repeat_count"] = same_gate_failures
                     attempt["same_gate_repeat_stop"] = True

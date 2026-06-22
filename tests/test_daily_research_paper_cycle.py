@@ -4103,6 +4103,68 @@ def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Pa
     assert ledger["attempts"][0]["source_precision_repair"]["status"] == "source_precision_repaired"
 
 
+def test_cycle_stops_repeated_source_precision_retry_and_advances(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_hrv", target_journal=True)
+    _topic(tmp_path, "zzz_ready", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    synthesized: list[str] = []
+    runs: list[str] = []
+    repair_calls = 0
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        runs.append(out_dir.name)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "final_status.json", {"submission_ready": True})
+        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    def fake_submit(**_kwargs: Any) -> dict[str, Any]:
+        if len(synthesized) < 3:
+            return {
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+                "considered": [{"run": runs[-1], "status": "source_topic_precision_low:1/16<0.50"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
+
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        nonlocal repair_calls
+        repair_calls += 1
+        return {
+            "status": "source_precision_repaired",
+            "source_topic_precision_after": "source_topic_precision_ok:16/16",
+            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+        }
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-22",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=fake_submit,
+        max_attempts=2,
+        max_revise_attempts=3,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert synthesized == ["aaa_hrv", "aaa_hrv", "zzz_ready"]
+    assert repair_calls == 1
+    assert ledger["attempts"][1]["same_gate_repeat_stop"] is True
+    assert ledger["attempts"][1]["source_precision_repair_skipped"] == "repeat_gate"
+    assert ledger["attempts"][2]["submit_status"] == "submitted_to_researka"
+
+
 def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "epigenome_editing_longevity", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
