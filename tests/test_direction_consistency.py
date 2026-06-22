@@ -56,6 +56,18 @@ def test_uniform_positive_class_not_flagged() -> None:
     assert dc.outcome_prose_direction_mismatches(paper, manifest) == ()
 
 
+def test_abstract_direction_summary_dedupes_public_outcome_aliases() -> None:
+    manifest = {"receipts": [
+        {"outcome_class": "immune", "effect_direction": "mixed"},
+        {"outcome_class": "immune_inflammation", "effect_direction": "mixed"},
+        {"outcome_class": "muscle_function", "effect_direction": "mixed"},
+    ]}
+    sentence = dc.abstract_direction_sentence(manifest)
+    assert "immune and inflammation, immune and inflammation" not in sentence
+    assert sentence.count("immune and inflammation") == 1
+    assert "muscle function" in sentence
+
+
 def test_metadata_prose_excludes_references_block() -> None:
     """A source's title verb in the References list ('... improves ...') must
     not be read as a directional claim about its result (splitter guard)."""

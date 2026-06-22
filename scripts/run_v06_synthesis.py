@@ -3191,9 +3191,11 @@ async def _run(
     # eligibility / screening flow / extraction fields / RoB approach
     # / synthesis approach / AI-use disclosure / human accountability.
     from agent.methods_pack import build_methods_pack, write_methods_pack
+    from agent.outcome_class_remap import outcome_key
     _funnel = manifest.get("receipt_funnel") or {}
     _outcome_classes = sorted({
-        r.get("outcome_class") for r in manifest.get("receipts", ())
+        outcome_key(str(r.get("outcome_class") or ""))
+        for r in manifest.get("receipts", ())
         if r.get("outcome_class")
     })
     _search_queries = (

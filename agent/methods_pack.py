@@ -6,7 +6,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Sequence
 
-from agent.outcome_class_remap import outcome_display
+from agent.outcome_class_remap import unique_outcome_displays
 from agent.selection_flow import receipt_admission_rows
 
 
@@ -142,7 +142,7 @@ def build_methods_pack(
         risk_of_bias_approach=rob,
         synthesis_approach=(
             "Evidence-tension synthesis: claims grouped by outcome class "
-            f"({', '.join(outcome_display(c).lower() for c in sorted(outcome_classes))}); "
+            f"({', '.join(unique_outcome_displays(sorted(outcome_classes), lower=True))}); "
             "within-class agreement, disagreement, and directness gaps "
             "surfaced explicitly. Quantitative pooling applied only where "
             "≥3 sources reported a comparable endpoint with extractable "

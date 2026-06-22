@@ -6,7 +6,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
 
-from agent.outcome_class_remap import outcome_display
+from agent.outcome_class_remap import outcome_display, outcome_key
 
 
 @dataclass(frozen=True, slots=True)
@@ -45,7 +45,7 @@ def outcome_direction_profile(manifest: Mapping[str, Any]) -> tuple[OutcomeDirec
     for receipt in manifest.get("receipts", ()):
         if not isinstance(receipt, dict):
             continue
-        outcome = str(receipt.get("outcome_class") or "").strip()
+        outcome = outcome_key(str(receipt.get("outcome_class") or "").strip())
         if outcome:
             by_outcome[outcome].append(receipt)
 
@@ -74,7 +74,8 @@ def abstract_direction_sentence(manifest: Mapping[str, Any]) -> str:
         return ""
     groups: dict[str, list[str]] = {"positive": [], "null": [], "negative": [], "mixed": []}
     for row in profile:
-        groups[row.direction].append(row.outcome_label)
+        if row.outcome_label not in groups[row.direction]:
+            groups[row.direction].append(row.outcome_label)
 
     def phrase(direction: str, noun: str) -> str:
         labels = groups[direction]

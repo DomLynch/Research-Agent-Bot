@@ -113,6 +113,23 @@ def test_methods_pack_render_matches_required_markers() -> None:
         assert marker in md, f"renderer missing required H3: {marker!r}"
 
 
+def test_methods_pack_dedupes_public_outcome_aliases() -> None:
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="example_topic",
+        corpus_search_queries=("example query",),
+        n_retrieved=3,
+        n_screened=3,
+        n_included=3,
+        n_rejected=0,
+        outcome_classes=("immune", "immune_inflammation", "muscle_function"),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "immune and inflammation, immune and inflammation" not in md
+    assert md.count("immune and inflammation") == 1
+    assert "muscle function" in md
+
+
 def test_methods_data_items_carries_source_grounding_disclosure() -> None:
     # Researka repeatedly revised papers (CoQ10, brain_age_mri) asking them to
     # disclose that the public bundle is reference-level and that stats rest on
