@@ -146,16 +146,6 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, noise_changes = apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
     text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
-    text, log = _phase_k_route_outcome_paragraphs(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_d_numeric_significance_correction(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_d_unproven_human_longevity(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
-    entries.extend(log)
-    text, log = _phase_m_repair_surface_artifacts(text)
-    entries.extend(log)
     # Orphan-reference closure MUST be terminal. The earlier in-loop pass
     # (above) inserts the inline supporting-corpus cluster, but section
     # rebuilds that follow it — structural fallback, surface-floor backstop,
@@ -163,8 +153,16 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     # the gate still sees the references as uncited. Running it last (after
     # every section mutation) guarantees the cluster survives to disk. It is
     # idempotent: a no-op when no orphans remain.
-    text, log = _phase_d_reference_closure(text, out_dir)
-    entries.extend(log)
+    for phase in (
+        lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
+        lambda t: _phase_d_numeric_significance_correction(t, out_dir),
+        lambda t: _phase_d_unproven_human_longevity(t, out_dir),
+        _phase_m_strip_surface_duplicate_paragraphs,
+        _phase_m_repair_surface_artifacts,
+        lambda t: _phase_d_reference_closure(t, out_dir),
+    ):
+        text, log = phase(text)
+        entries.extend(log)
     return text, entries
 
 
