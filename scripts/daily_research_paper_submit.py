@@ -78,8 +78,6 @@ PUBLICATION_IDENTITY_KEYS = (
     "source_citation_hash",
     "author_signature",
 )
-DOI_RE = re.compile(r"\b10\.\d{4,9}/[^\s\])}>,;]+", re.I)
-PMID_RE = re.compile(r"\bPMID[:\s#-]*(\d{4,12})\b", re.I)
 RESEARKA_REQUIRED_SECTIONS = {
     "rapid_evidence_synthesis": (
         "Research Question",
@@ -1053,10 +1051,6 @@ def _evidence_map_sections(topic: str, manifest: dict[str, Any], parts: dict[str
     }
 
 
-def _demote_headings(markdown: str) -> str:
-    return re.sub(r"^(#{1,5})(\s+)", r"#\1\2", markdown.strip(), flags=re.M)
-
-
 def _display_topic(slug: str) -> str:
     return humanize_topic(slug, title_case=True, root=ROOT)
 
@@ -1156,74 +1150,6 @@ def _structured_source_excerpt(topic: str, row: dict[str, Any], receipt: dict[st
         f"evidence_tier={receipt.get('evidence_tier') or 'unspecified'}; "
         f"extracted_claims={receipt.get('n_claims') or 0}. {ids}."
     )
-
-
-def _clean_doi(value: str) -> str:
-    return value.strip().rstrip(".,;:)]}>").lower()
-
-
-def _cited_reference_ids(text: str) -> tuple[set[str], set[str]]:
-    return (
-        {_clean_doi(value) for value in DOI_RE.findall(text) if _clean_doi(value)},
-        {value.strip() for value in PMID_RE.findall(text) if value.strip()},
-    )
-
-
-def _bib_reference_stubs(run: Path) -> dict[str, dict[str, Any]]:
-    try:
-        bib = (run / "references.bib").read_text(encoding="utf-8")
-    except OSError:
-        return {}
-    stubs: dict[str, dict[str, Any]] = {}
-    for block in re.split(r"\n\s*\n(?=@)", bib):
-        doi_match = DOI_RE.search(block)
-        pmid_match = PMID_RE.search(block)
-        if not doi_match and not pmid_match:
-            continue
-        title_match = re.search(r"title\s*=\s*\{(?P<title>.*?)\}\s*,?\n", block, re.S | re.I)
-        year_match = re.search(r"year\s*=\s*\{(?P<year>\d{4})\}", block, re.I)
-        title = _clip_text(" ".join((title_match.group("title") if title_match else "Reference citation").split()), limit=300)
-        doi = _clean_doi(doi_match.group(0)) if doi_match else ""
-        pmid = pmid_match.group(1).strip() if pmid_match else ""
-        row: dict[str, Any] = {
-            "source_type": "reference",
-            "id": pmid or doi,
-            "pmid": pmid or None,
-            "title": title,
-            "url": f"https://doi.org/{doi}" if doi else None,
-            "doi": doi or None,
-            "excerpt": _clip_text(f"Reference-list provenance stub. {title}", limit=1200),
-            "year": int(year_match.group("year")) if year_match else None,
-            # Researka's SourceBundleEntry contract is Literal["primary","review"];
-            # a reference-list citation is a secondary/contextual source, so the
-            # schema-valid + conservative label is "review" (was "reference",
-            # which failed intake with source_bundle_entry_invalid:literal_error
-            # and tripped the agent_backoff_intake_rejections lockout on
-            # 2026-06-10/11 for every paper that needed citation-floor padding).
-            "evidence_type": "review",
-        }
-        if doi:
-            stubs[f"doi:{doi}"] = row
-        if pmid:
-            stubs[f"pmid:{pmid}"] = row
-    return stubs
-
-
-def _augment_source_bundle_with_cited_references(
-    run: Path, paper: str, bundle: list[dict[str, Any]], *, limit: int,
-) -> list[dict[str, Any]]:
-    cited_dois, cited_pmids = _cited_reference_ids(paper)
-    existing_dois = {_clean_doi(str(row.get("doi") or "")) for row in bundle}
-    existing_pmids = {str(row.get("pmid") or row.get("id") or "").strip() for row in bundle}
-    stubs = _bib_reference_stubs(run)
-    out = list(bundle)
-    for key in [*(f"doi:{doi}" for doi in sorted(cited_dois - existing_dois)), *(f"pmid:{pmid}" for pmid in sorted(cited_pmids - existing_pmids))]:
-        if len(out) >= limit:
-            break
-        row = stubs.get(key)
-        if row is not None:
-            out.append(dict(row))
-    return out
 
 
 def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
