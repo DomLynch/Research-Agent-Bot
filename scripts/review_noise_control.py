@@ -39,6 +39,9 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     text, n = _repair_unreferenced_citation_years(text)
     if n:
         changes.append(("repair_unreferenced_citation_year", n, f"aligned {n} inline citation year(s) with References"))
+    text, n = _strip_unsupported_inline_citations(text)
+    if n:
+        changes.append(("strip_unsupported_inline_citation", n, f"removed {n} unsupported inline citation marker(s)"))
     text, n = _dedupe_repeated_blocks(text)
     if n:
         changes.append(("dedupe_repeated_blocks", n, f"removed {n} repeated prose/table block(s)"))
@@ -89,6 +92,38 @@ def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
             continue
         out, changed = re.subn(rf"\b{re.escape(token)}\b", candidates[0], out, count=1)
         n += changed
+    return out, n
+
+
+def _strip_unsupported_inline_citations(text: str) -> tuple[str, int]:
+    from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _fold, _reference_entries, unreferenced_citation_tokens
+
+    ref_authors = {
+        _fold(match.group(1))
+        for raw, _folded in _reference_entries(text)
+        if (match := _AUTHOR_YEAR_RE.search(raw))
+    }
+    out = text
+    n = 0
+    for token in unreferenced_citation_tokens(text):
+        match = _AUTHOR_YEAR_RE.fullmatch(token)
+        if not match or _fold(match.group(1)) in ref_authors:
+            continue
+        author, year = match.groups()
+        marker = rf"{re.escape(author)}(?:\s+et\s+al\.)?\s+{re.escape(year)}"
+        out, changed = re.subn(
+            rf"{marker},?\s+as cited across the corpus;?\s*",
+            "",
+            out,
+            count=1,
+        )
+        if not changed:
+            out, changed = re.subn(marker, "", out, count=1)
+        n += changed
+    if n:
+        out = re.sub(r"\(\s*[;,]\s*", "(", out)
+        out = re.sub(r"\(\s*\)", "", out)
+        out = re.sub(r"\s+([,;.])", r"\1", out)
     return out, n
 
 

@@ -2053,6 +2053,27 @@ def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
     assert ("repair_unreferenced_citation_year", 1, "aligned 1 inline citation year(s) with References") in changes
 
 
+def test_review_noise_strips_unsupported_inline_citation_marker() -> None:
+    from agent.journal_surface_gate import unreferenced_citation_tokens
+    from scripts.review_noise_control import apply_review_noise_control
+
+    paper = (
+        "## Discussion\n\n"
+        "The hallmarks frame is discussed (López-Otín et al. 2013, as cited across the corpus; "
+        "canonical threshold anchors include Studenski 2011 and Cruz-Jentoft 2019).\n\n"
+        "## References\n\n"
+        "- **Studenski 2011.** Gait speed and survival.\n"
+        "- **Cruz-Jentoft 2019.** Sarcopenia consensus thresholds.\n"
+    )
+
+    fixed, changes = apply_review_noise_control(paper, Path("/tmp/no-run"))
+
+    assert "López-Otín" not in fixed
+    assert "canonical threshold anchors include Studenski 2011 and Cruz-Jentoft 2019" in fixed
+    assert unreferenced_citation_tokens(fixed) == ()
+    assert ("strip_unsupported_inline_citation", 1, "removed 1 unsupported inline citation marker(s)") in changes
+
+
 def test_review_noise_repairs_public_artifact_phrase() -> None:
     from scripts.review_noise_control import apply_review_noise_control
 
