@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import importlib
 from pathlib import Path
+from typing import Any
 
 from agent import journal_finalizer
 
@@ -91,6 +93,50 @@ def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> N
     ]
     limitations = fixed.split("## Limitations", 1)[1].split("## Conclusion", 1)[0]
     assert len(limitations.split()) >= 250
+
+
+def test_public_surface_backstop_reuses_shared_prose_with_section_scope() -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    orch: Any = importlib.import_module("scripts.run_v06_synthesis")
+
+    orch._ACTIVE_TOPIC = "glp_1_longevity"
+    orch._ACTIVE_MANIFEST = {
+        "topic": "glp_1_longevity",
+        "total_words": 4000,
+        "n_receipts": 52,
+        "n_high_confidence_claims_total": 2000,
+        "n_non_orthogonal_tensions": 136,
+        "receipts": [
+            {
+                "outcome_class": "longevity",
+                "effect_direction": "positive",
+                "directness": "direct",
+                "evidence_tier": "A1",
+                "citation_token": "Impact of GLP Receptor 2026",
+            },
+            {
+                "outcome_class": "cardiometabolic",
+                "effect_direction": "null",
+                "directness": "mechanistic",
+                "evidence_tier": "C1",
+                "citation_token": "Effect of Oral Semaglutide 2026",
+            },
+            {
+                "outcome_class": "safety_comorbidity",
+                "effect_direction": "negative",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "citation_token": "Safety Trial 2025",
+            },
+        ],
+    }
+
+    discussion = orch._compile_public_section_backstop("Discussion", 800, "")
+    cross_domain = orch._compile_public_section_backstop("Cross-Domain Synthesis", 850, discussion)
+
+    assert len(cross_domain.split()) >= 850
+    assert not _duplicate_paragraph_issue_messages(discussion + "\n\n" + cross_domain)
 
 
 def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp_path: Path) -> None:

@@ -975,7 +975,10 @@ def _section_scoped_backstop_paragraph(title: str, paragraph: str) -> str:
         f"{paragraph} In the {scoped} section, this principle is applied to the "
         "specific evidence-role, endpoint-distance, population-fit, direction-"
         "of-effect, and safety-tradeoff pattern in the retained corpus rather "
-        "than repeated as a generic caution."
+        "than repeated as a generic caution. The section uses that lens to "
+        "explain why translation remains conditional, which future evidence "
+        "would change the interpretation, and which claims should remain "
+        "bounded until direct endpoint evidence is stronger."
     )
 
 
