@@ -2,9 +2,9 @@
 from __future__ import annotations
 
 import re
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 
-__all__ = ["ENDPOINT_REMAP", "ENDPOINT_PATTERNS", "BIOMEDICAL_OTHER_OUTCOME_RULES", "OUTCOME_VOCAB", "outcome_display", "outcome_key", "remap_outcome_class", "refine_other_outcome_class", "is_known_misclassification"]
+__all__ = ["ENDPOINT_REMAP", "ENDPOINT_PATTERNS", "BIOMEDICAL_OTHER_OUTCOME_RULES", "OUTCOME_VOCAB", "outcome_display", "outcome_key", "unique_outcome_displays", "remap_outcome_class", "refine_other_outcome_class", "is_known_misclassification"]
 
 # PEARL trial QoL endpoints belong under healthspan_qol.
 ENDPOINT_REMAP: Mapping[str, str] = dict.fromkeys((
@@ -81,6 +81,20 @@ def outcome_display(label: str) -> str:
     """Public display label for an outcome id or label."""
     canon = outcome_key(label)
     return OUTCOME_VOCAB.get(canon, (str(label).replace("_", " ").strip().title() or "Other", (), ()))[0]
+
+
+def unique_outcome_displays(labels: Iterable[str], *, lower: bool = False) -> tuple[str, ...]:
+    """Public labels, deduped after canonical alias resolution."""
+    seen: set[str] = set()
+    out: list[str] = []
+    for label in labels:
+        display = outcome_display(str(label))
+        key = display.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(display.lower() if lower else display)
+    return tuple(out)
 
 
 def is_known_misclassification(endpoint: str, current_class: str) -> bool:
