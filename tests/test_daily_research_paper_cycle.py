@@ -3732,6 +3732,25 @@ def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Pat
     assert cycle._surface_repeat_topics(ledger_dir, now=now) == {"epigenetic_clocks", "coenzyme_q10_ubiquinol"}
 
 
+def test_surface_repeat_topics_ignores_repaired_ready_topic(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    topic = "colchicine_inflammaging"
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {"repeats": {
+        f"{topic}\x1fjournal_surface_not_passed": [
+            (now - dt.timedelta(minutes=10)).isoformat(),
+            (now - dt.timedelta(minutes=5)).isoformat(),
+        ],
+    }})
+    run = tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-22T12-00-00Z"
+    _write_json(run / "final_status.json", {"submission_ready": True})
+    _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
+    (run / "full_paper.md").write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+
+    assert cycle._surface_repeat_topics(ledger_dir, now=now, runs_root=tmp_path / "runs") == set()
+
+
 def test_writer_gate_repeat_policy_downshifts_then_skips_after_brief_failure(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
@@ -4935,6 +4954,73 @@ def test_revise_lane_marks_repeat_failing_revise_terminal(tmp_path: Path, monkey
     assert ledger["status"] == "revise_terminal_surface_repeat"
     assert ledger["attempts"][0]["gate_status"] == "terminal_surface_repeat"
     assert (ledger_dir / cycle.HANDLED_REVISIONS).exists()
+
+
+def test_revise_lane_allows_surface_repeat_after_new_ready_run(tmp_path: Path, monkeypatch) -> None:
+    """A repaired same-topic run supersedes stale surface-repeat history."""
+    topic = "colchicine_inflammaging"
+    _topic(tmp_path, topic, target_journal=True)
+    source = _prior_run(tmp_path, topic, receipts=37, tensions=113, primary=1, level=5)
+    (source / "full_paper.md").write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": topic,
+        "fingerprint": cycle.submit_bridge._sha256(source / "full_paper.md"),
+    }])
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True, exist_ok=True)
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {"repeats": {
+        f"{topic}\x1fjournal_surface_not_passed": [
+            (now - dt.timedelta(minutes=10)).isoformat(),
+            (now - dt.timedelta(minutes=5)).isoformat(),
+        ],
+    }})
+    ready = tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-22T12-00-00Z"
+    _write_json(ready / "final_status.json", {"submission_ready": True})
+    _write_json(ready / "full_paper.journal_surface.json", {"passed": True, "issues": []})
+    (ready / "full_paper.md").write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+    synthesized: list[str] = []
+
+    def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(selected)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(out_dir / "final_status.json", {"submission_ready": True})
+        _write_json(out_dir / "full_paper.journal_surface.json", {"passed": True, "issues": []})
+        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_ensure_topic_corpus", lambda *_a, **_k: {
+        "status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    })
+    monkeypatch.setattr(cycle, "_preflight", lambda *_a, **_k: {
+        "passed": True, "has_manifest": True, "n_receipts": 37, "n_tensions": 113, "n_primary_tier": 1,
+    })
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    request = {
+        "artifactId": "colchicine-review",
+        "title": "Research Synthesis: Colchicine Inflammaging",
+        "feedback": "Please add a subgroup analysis for the 65+ cohort and report absolute risk reduction.",
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-29",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert synthesized == [topic]
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["attempts"][0]["gate_status"] == "submitted_to_researka"
 
 
 def test_revise_lane_marks_unrepairable_source_precision_terminal(tmp_path: Path, monkeypatch) -> None:
