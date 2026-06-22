@@ -1777,6 +1777,47 @@ def _current_gate_status(bridge: dict[str, Any], run_name: str) -> str:
     return str(bridge.get("status") or "")
 
 
+def _submit_current_candidate(
+    *,
+    runs_root: Path,
+    date: str,
+    submit: bool,
+    remote_seen: set[str],
+    candidate_run: Path,
+) -> dict[str, Any]:
+    bridge = submit_bridge.run_cycle(
+        runs_root=runs_root,
+        date=date,
+        submit=submit,
+        remote_loader=(lambda: (remote_seen, None)) if submit else None,
+        candidate_run=candidate_run,
+    )
+    if bridge.get("status") != "no_eligible_research_paper":
+        return bridge
+    candidate_path, considered = submit_bridge.select_candidate(
+        runs_root,
+        runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=remote_seen,
+        candidate_run=candidate_run,
+    )
+    if candidate_path is None:
+        return bridge
+    first_bridge = bridge
+    bridge = submit_bridge.run_cycle(
+        runs_root=runs_root,
+        date=date,
+        submit=submit,
+        remote_loader=(lambda: (remote_seen, None)) if submit else None,
+        candidate_run=candidate_run,
+    )
+    bridge["retry_after_no_eligible"] = {
+        "first_status": first_bridge.get("status"),
+        "first_considered": first_bridge.get("considered"),
+        "eligibility_recheck": considered,
+    }
+    return bridge
+
+
 def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
     if int(attempt.get("submitted") or 0):
         return False
