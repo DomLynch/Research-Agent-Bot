@@ -449,7 +449,28 @@ _SOURCE_PRECISION_STATUS = "source_topic_precision_low"
 _CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited", _SOURCE_PRECISION_STATUS}
 
 
-def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+def _surface_ready_after(topic: str, runs_root: Path | None, failure_at: dt.datetime) -> bool:
+    """A newer ready artifact proves a prior deterministic surface failure is stale."""
+    if runs_root is None:
+        return False
+    run = _latest_topic_run(topic, runs_root)
+    if not run or not _final_status_submission_ready(run):
+        return False
+    surface = _read_json(run / "full_paper.journal_surface.json")
+    if surface.get("passed") is not True:
+        return False
+    updated_at = max(
+        (dt.datetime.fromtimestamp(p.stat().st_mtime, dt.UTC)
+         for p in (run, run / "final_status.json", run / "full_paper.journal_surface.json", run / "full_paper.md")
+         if p.exists()),
+        default=None,
+    )
+    return bool(updated_at and updated_at >= failure_at)
+
+
+def _surface_repeat_topics(
+    ledger_dir: Path, *, now: dt.datetime | None = None, runs_root: Path | None = None,
+) -> set[str]:
     """Topics where the SAME deterministic gate failed >= SURFACE_REPEAT_THRESHOLD
     times within the failure-cooldown window. Re-rendering from scratch cannot
     change a deterministic gate's outcome, so skip the topic until the failure
@@ -459,7 +480,8 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
 
     Reads the CUMULATIVE per-(topic, gate) timestamp log in the blocker
     histogram — the daily ledger is rewritten each run, so it cannot hold a
-    cross-run count. Windowed so a topic auto-recovers once its corpus is fixed.
+    cross-run count. Windowed so a topic auto-recovers once its corpus is fixed
+    or a newer same-topic artifact passes the same readiness/surface checks.
     Universal — keyed on the gate code itself, not on any specific gate."""
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
@@ -473,8 +495,11 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
             or not isinstance(stamps, list)
         ):
             continue
-        recent = sum(1 for s in stamps if (t := _parse_time(str(s))) and t >= cutoff)
-        if recent >= SURFACE_REPEAT_THRESHOLD:
+        recent_stamps = [(t, str(s)) for s in stamps if (t := _parse_time(str(s))) and t >= cutoff]
+        if recent_stamps and len(recent_stamps) >= SURFACE_REPEAT_THRESHOLD:
+            latest_failure = max(t for t, _ in recent_stamps)
+            if _surface_ready_after(topic, runs_root, latest_failure):
+                continue
             out.add(topic)
     return out
 
@@ -2278,7 +2303,7 @@ def run_cycle(
         # them only burns a slot (plan F). Excluded from fresh auto-selection
         # below, and pending revises for such topics are marked terminal in the
         # loop (a forced --topic is left untouched on purpose).
-        surface_repeat = _surface_repeat_topics(ledger_dir)
+        surface_repeat = _surface_repeat_topics(ledger_dir, runs_root=runs_root)
         if surface_repeat:
             ledger["surface_repeat_excluded_topics"] = sorted(surface_repeat)
         preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
