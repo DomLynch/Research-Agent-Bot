@@ -152,6 +152,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_d_unproven_human_longevity(text, out_dir)
     entries.extend(log)
+    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
+    entries.extend(log)
     # Orphan-reference closure MUST be terminal. The earlier in-loop pass
     # (above) inserts the inline supporting-corpus cluster, but section
     # rebuilds that follow it — structural fallback, surface-floor backstop,
