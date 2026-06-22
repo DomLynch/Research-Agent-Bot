@@ -2707,34 +2707,13 @@ def run_cycle(
                     # lock so they never race the fingerprint-dedupe / double-submit.
                     with _lock(ledger_dir, ".submit.lock", block=True):
                         if submit_cycle is None:
-                            bridge = submit_bridge.run_cycle(
+                            bridge = _submit_current_candidate(
                                 runs_root=runs_root,
                                 date=date,
                                 submit=submit,
-                                remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                                remote_seen=remote_seen,
                                 candidate_run=out_dir,
                             )
-                            if bridge.get("status") == "no_eligible_research_paper":
-                                candidate_path, considered = submit_bridge.select_candidate(
-                                    runs_root,
-                                    runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
-                                    remote_seen=remote_seen,
-                                    candidate_run=out_dir,
-                                )
-                                if candidate_path is not None:
-                                    first_bridge = bridge
-                                    bridge = submit_bridge.run_cycle(
-                                        runs_root=runs_root,
-                                        date=date,
-                                        submit=submit,
-                                        remote_loader=(lambda: (remote_seen, None)) if submit else None,
-                                        candidate_run=out_dir,
-                                    )
-                                    bridge["retry_after_no_eligible"] = {
-                                        "first_status": first_bridge.get("status"),
-                                        "first_considered": first_bridge.get("considered"),
-                                        "eligibility_recheck": considered,
-                                    }
                         else:
                             bridge = submit_cycle(
                                 runs_root=runs_root,
