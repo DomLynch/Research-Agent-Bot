@@ -798,6 +798,42 @@ def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> No
     ]
 
 
+def test_run_text_phases_strips_late_outcome_route_duplicates(tmp_path, monkeypatch) -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    duplicate = (
+        "Evidence for this outcome class is represented in the structured results table, "
+        "but the retained narrative paragraphs were more strongly assigned to adjacent "
+        "outcome classes. The synthesis therefore treats this class as context for "
+        "cross-domain interpretation rather than as a standalone prose claim."
+    )
+    calls = 0
+
+    def route(text: str, _out_dir):
+        nonlocal calls
+        calls += 1
+        if calls < 2:
+            return text, []
+        return (
+            text + "\n\n### Contextual Outcomes\n\n" + duplicate
+            + "\n\n### Frailty Outcomes\n\n" + duplicate,
+            [],
+        )
+
+    monkeypatch.setattr(journal_finalizer, "_phase_k_route_outcome_paragraphs", route)
+
+    fixed, logs = journal_finalizer._run_text_phases(
+        "## Results\n\n"
+        "The structured evidence table separates direct, adjacent, and contextual "
+        "evidence before narrative interpretation.",
+        tmp_path,
+    )
+
+    assert _duplicate_paragraph_issue_messages(fixed) == ()
+    assert fixed.count(duplicate) == 1
+    assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
+
+
 def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None:
     from agent.journal_surface_gate import evaluate_journal_surface
 
