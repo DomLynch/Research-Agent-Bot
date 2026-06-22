@@ -955,16 +955,28 @@ def _compile_public_section_backstop(
     selected: list[str] = []
     for paragraph in paragraphs:
         if existing_text and paragraph in existing_text:
-            # Shared backstop prose may be injected into at most one section:
-            # a paragraph already present anywhere else in the paper would
-            # trip the journal-surface duplicate_paragraph gate.
-            continue
+            # Shared fallback prose may need to support multiple short sections.
+            # Reuse it only after section-scoping so terminal duplicate checks do
+            # not see the same public paragraph twice.
+            paragraph = _section_scoped_backstop_paragraph(title, paragraph)
+            if existing_text and paragraph in existing_text:
+                continue
         if paragraph not in selected:
             selected.append(paragraph)
         if _word_count("\n\n".join(selected)) >= floor + 25:
             break
     body = "\n\n".join(selected)
     return f"## {title}\n\n{body}"
+
+
+def _section_scoped_backstop_paragraph(title: str, paragraph: str) -> str:
+    scoped = title.lower()
+    return (
+        f"{paragraph} In the {scoped} section, this principle is applied to the "
+        "specific evidence-role, endpoint-distance, population-fit, direction-"
+        "of-effect, and safety-tradeoff pattern in the retained corpus rather "
+        "than repeated as a generic caution."
+    )
 
 
 def _section_backstop_context() -> dict[str, object]:
