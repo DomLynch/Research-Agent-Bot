@@ -831,7 +831,9 @@ def test_run_text_phases_strips_late_outcome_route_duplicates(tmp_path, monkeypa
 
     assert _duplicate_paragraph_issue_messages(fixed) == ()
     assert fixed.count(duplicate) == 1
+    assert "### Frailty Outcomes" not in fixed
     assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
+    assert any(log.detail == "empty_subheading=1" for log in logs)
 
 
 def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None:
@@ -866,6 +868,26 @@ def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None
             detail="grammar_artifact=2; empty_subheading=1",
         )
     ]
+
+
+def test_surface_artifact_cleanup_removes_empty_subheading_before_h2() -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    paper = (
+        "## Results\n\n"
+        "### Immune Inflammation Outcomes\n\n"
+        "\n\n"
+        "## Limitations\n\n"
+        "Boundary text.\n"
+    )
+
+    assert any("empty heading: Immune Inflammation Outcomes" in i.detail for i in evaluate_journal_surface(paper).issues)
+
+    fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
+
+    assert "### Immune Inflammation Outcomes" not in fixed
+    assert not any("empty heading: Immune Inflammation Outcomes" in i.detail for i in evaluate_journal_surface(fixed).issues)
+    assert any(log.detail == "empty_subheading=1" for log in logs)
 
 
 def test_lane_qualifier_preserves_bullet_marker(tmp_path: Path) -> None:

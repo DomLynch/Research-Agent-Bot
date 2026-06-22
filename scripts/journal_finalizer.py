@@ -267,11 +267,14 @@ def _repair_dangling_abbrev_artifacts(text: str) -> tuple[str, int]:
 
 
 def _remove_empty_subheadings(text: str) -> tuple[str, int]:
-    matches = list(re.finditer(r"^(#{3,6})\s+(.+?)\s*$", text, flags=re.M))
+    matches = list(re.finditer(r"^(#{2,6})\s+(.+?)\s*$", text, flags=re.M))
     remove: list[tuple[int, int]] = []
     for idx, match in enumerate(matches):
+        level = len(match.group(1))
+        if level < 3:
+            continue
         next_match = matches[idx + 1] if idx + 1 < len(matches) else None
-        if next_match is not None and len(next_match.group(1)) > len(match.group(1)):
+        if next_match is not None and len(next_match.group(1)) > level:
             continue
         end = next_match.start() if next_match else len(text)
         if not text[match.end():end].strip():
