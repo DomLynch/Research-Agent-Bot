@@ -3747,6 +3747,9 @@ def test_surface_repeat_topics_ignores_repaired_ready_topic(tmp_path: Path) -> N
     _write_json(run / "final_status.json", {"submission_ready": True})
     _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
     (run / "full_paper.md").write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+    # Later dry-run/probe folders are incomplete; they must not hide the latest
+    # real ready artifact.
+    (tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-22T13-00-00Z").mkdir()
 
     assert cycle._surface_repeat_topics(ledger_dir, now=now, runs_root=tmp_path / "runs") == set()
 
@@ -4980,6 +4983,7 @@ def test_revise_lane_allows_surface_repeat_after_new_ready_run(tmp_path: Path, m
     _write_json(ready / "final_status.json", {"submission_ready": True})
     _write_json(ready / "full_paper.journal_surface.json", {"passed": True, "issues": []})
     (ready / "full_paper.md").write_text("# Research Synthesis: Colchicine Inflammaging\n", encoding="utf-8")
+    (tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-22T13-00-00Z").mkdir()
     synthesized: list[str] = []
 
     def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:

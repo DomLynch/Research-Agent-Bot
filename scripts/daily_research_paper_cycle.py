@@ -453,19 +453,22 @@ def _surface_ready_after(topic: str, runs_root: Path | None, failure_at: dt.date
     """A newer ready artifact proves a prior deterministic surface failure is stale."""
     if runs_root is None:
         return False
-    run = _latest_topic_run(topic, runs_root)
-    if not run or not _final_status_submission_ready(run):
-        return False
-    surface = _read_json(run / "full_paper.journal_surface.json")
-    if surface.get("passed") is not True:
-        return False
-    updated_at = max(
-        (dt.datetime.fromtimestamp(p.stat().st_mtime, dt.UTC)
-         for p in (run, run / "final_status.json", run / "full_paper.journal_surface.json", run / "full_paper.md")
-         if p.exists()),
-        default=None,
-    )
-    return bool(updated_at and updated_at >= failure_at)
+    runs = sorted(runs_root.glob(f"synthesis-{topic}-v*-*"), key=lambda p: p.stat().st_mtime, reverse=True)
+    for run in (p for p in runs if p.is_dir()):
+        if not _final_status_submission_ready(run):
+            continue
+        surface = _read_json(run / "full_paper.journal_surface.json")
+        if surface.get("passed") is not True:
+            continue
+        updated_at = max(
+            (dt.datetime.fromtimestamp(p.stat().st_mtime, dt.UTC)
+             for p in (run, run / "final_status.json", run / "full_paper.journal_surface.json", run / "full_paper.md")
+             if p.exists()),
+            default=None,
+        )
+        if updated_at and updated_at >= failure_at:
+            return True
+    return False
 
 
 def _surface_repeat_topics(
