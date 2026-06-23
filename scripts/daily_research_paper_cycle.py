@@ -20,7 +20,7 @@ import tomllib
 import urllib.error
 import urllib.request
 from collections import Counter
-from collections.abc import Callable, Collection, Iterator, Sequence
+from collections.abc import Callable, Collection, Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
@@ -2231,6 +2231,29 @@ def _repair_low_source_precision_corpus(
     }
 
 
+def _source_precision_attempt(
+    topic: str,
+    out_dir: Path,
+    gate_status: str,
+    *,
+    corpus: Mapping[str, Any],
+    source_repair: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
+    attempt: dict[str, Any] = {
+        "topic": topic,
+        "out_dir": out_dir.name,
+        "synthesis_return_code": None,
+        "submit_status": gate_status,
+        "gate_status": gate_status,
+        "failure_class": _failure_class(gate_status),
+        "submitted": 0,
+        "corpus": dict(corpus),
+    }
+    if source_repair is not None:
+        attempt["source_precision_repair"] = dict(source_repair)
+    return attempt
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -2579,33 +2602,20 @@ def run_cycle(
                         source_precision_misses = []
                         source_precision_repaired_ok.add(selected)
                     else:
-                        attempt = {
-                            "topic": selected,
-                            "out_dir": out_dir.name,
-                            "synthesis_return_code": None,
-                            "submit_status": _SOURCE_PRECISION_STATUS,
-                            "gate_status": _SOURCE_PRECISION_STATUS,
-                            "failure_class": _failure_class(_SOURCE_PRECISION_STATUS),
-                            "submitted": 0,
-                            "corpus": corpus,
-                            "source_precision_repair": source_repair,
-                        }
+                        attempt = _source_precision_attempt(
+                            selected,
+                            out_dir,
+                            _SOURCE_PRECISION_STATUS,
+                            corpus=corpus,
+                            source_repair=source_repair,
+                        )
                         ledger["attempts"].append(attempt)
                         ledger["status"] = "source_precision_repair_incomplete_no_submission"
                         ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                         attempted.add(selected)
                         continue
                 else:
-                    attempt = {
-                        "topic": selected,
-                        "out_dir": out_dir.name,
-                        "synthesis_return_code": None,
-                        "submit_status": source_precision_status,
-                        "gate_status": source_precision_status,
-                        "failure_class": _failure_class(source_precision_status),
-                        "submitted": 0,
-                        "corpus": corpus,
-                    }
+                    attempt = _source_precision_attempt(selected, out_dir, source_precision_status, corpus=corpus)
                     ledger["attempts"].append(attempt)
                     ledger["status"] = "source_precision_repair_deferred_no_submission"
                     ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
@@ -2645,17 +2655,13 @@ def run_cycle(
                         if revision_source
                         else _SOURCE_PRECISION_STATUS
                     )
-                    attempt = {
-                        "topic": selected,
-                        "out_dir": out_dir.name,
-                        "synthesis_return_code": None,
-                        "submit_status": gate_status,
-                        "gate_status": gate_status,
-                        "failure_class": _failure_class(gate_status),
-                        "submitted": 0,
-                        "corpus": corpus,
-                        "source_precision_repair": source_repair,
-                    }
+                    attempt = _source_precision_attempt(
+                        selected,
+                        out_dir,
+                        gate_status,
+                        corpus=corpus,
+                        source_repair=source_repair,
+                    )
                     ledger["attempts"].append(attempt)
                     ledger["status"] = (
                         "revise_terminal_source_precision_repair_incomplete"
