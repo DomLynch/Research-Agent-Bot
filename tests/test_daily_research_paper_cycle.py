@@ -34,7 +34,7 @@ def test_fresh_lane_keeps_8h_cadence_with_larger_search_budget() -> None:
     timer = (REPO / "deploy" / "research-agent-paper-fresh.timer").read_text(encoding="utf-8")
 
     assert "OnCalendar=*-*-* 00/8:00:00" in timer
-    assert "--max-attempts 3" in service
+    assert "--max-attempts 6" in service
     assert "--cycle-budget-sec 10800" in service
     assert "RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300" in service
     assert "TimeoutStartSec=14400" in service
