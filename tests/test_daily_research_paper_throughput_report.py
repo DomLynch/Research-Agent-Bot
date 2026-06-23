@@ -51,7 +51,7 @@ def test_local_counts_reports_top_blockers_and_repeats(tmp_path: Path) -> None:
     ledger.mkdir()
     submit.mkdir()
     (ledger / "2026-05-30.json").write_text(json.dumps({
-        "started_at": "2026-05-30T20:00:00+00:00",
+        "started_at": "2026-05-30T12:00:00+00:00",
         "mode": "fresh",
         "status": "preflight_skipped_no_submission",
         "attempted_topic": "epigenetic_clocks",
@@ -78,14 +78,14 @@ def test_local_counts_reports_mode_ledgers_and_daily_sidecars(tmp_path: Path) ->
     ledger.mkdir()
     submit.mkdir()
     (ledger / "2026-06-01-fresh.json").write_text(json.dumps({
-        "started_at": "2026-06-01T22:00:00+00:00",
+        "started_at": "2026-06-01T12:00:00+00:00",
         "mode": "fresh",
         "status": "submitted_to_researka",
         "submitted": 1,
         "attempted_topic": "pcsk9_inhibitors_longevity",
     }))
     (ledger / "2026-06-01-revise.json").write_text(json.dumps({
-        "started_at": "2026-06-01T23:15:00+00:00",
+        "started_at": "2026-06-01T13:15:00+00:00",
         "mode": "revise",
         "status": "no_revise_pending",
         "submitted": 0,
@@ -103,6 +103,47 @@ def test_local_counts_reports_mode_ledgers_and_daily_sidecars(tmp_path: Path) ->
     assert counts["cycle_modes"]["fresh"]["submitted"] == 1
     assert counts["throughput"]["submitted"] == 14
     assert counts["decisions"]["counts"] == {"accept": 6, "revise": 3}
+
+
+def test_local_counts_maps_late_utc_runs_to_dubai_report_day(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARCH_AGENT_REPORT_TZ", "Asia/Dubai")
+    ledger = tmp_path / "_daily_research_paper_cycle_ledger"
+    submit = tmp_path / "_daily_research_paper_ledger"
+    ledger.mkdir()
+    submit.mkdir()
+    (ledger / "2026-06-23-fresh.json").write_text(json.dumps({
+        "started_at": "2026-06-23T22:38:06.233172+00:00",
+        "mode": "fresh",
+        "status": "published",
+        "submitted": 1,
+        "published": 1,
+        "attempted_topic": "spermidine",
+    }))
+    (ledger / "_daily_throughput_summary.json").write_text(json.dumps({
+        "days": {"2026-06-23": {"runs": [{
+            "started_at": "2026-06-23T22:38:06.233172+00:00",
+            "mode": "fresh",
+            "status": "published",
+            "submitted": 1,
+            "published": 1,
+            "topic": "spermidine",
+        }]}}
+    }))
+    (submit / "2026-06-23.json").write_text(json.dumps({
+        "date": "2026-06-23",
+        "status": "published",
+        "submitted": 2,
+        "published": 1,
+        "candidate": {"run": "synthesis-spermidine-v06-DAILY-2026-06-23T23-09-55Z-R2"},
+    }))
+
+    counts = report._local_counts(tmp_path, "2026-06-24")
+
+    assert counts["cycle_modes"]["fresh"]["attempted_topic"] == "spermidine"
+    assert counts["throughput"]["submitted"] == 1
+    assert counts["throughput"]["published"] == 1
+    assert counts["submit"]["submitted"] == 2
+    assert counts["submit"]["published"] == 1
 
 
 def test_capacity_snapshot_reports_one_and_two_year_plans(monkeypatch) -> None:
