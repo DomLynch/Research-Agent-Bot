@@ -1168,6 +1168,20 @@ def _topic_support_score(topic: str) -> int:
     return _quant_claim_count(topic)
 
 
+def _has_clean_ready_topic(
+    topics: list[str],
+    *,
+    exclude: set[str],
+    source_precision_blocked: set[str],
+) -> bool:
+    return any(
+        candidate not in exclude
+        and candidate not in source_precision_blocked
+        and _quant_claim_count(candidate) >= PREFLIGHT_MIN_QUANT_CLAIMS
+        for candidate in topics
+    )
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -2382,18 +2396,14 @@ def run_cycle(
                     source_precision_repaired_ok.add(repair_topic)
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
-            clean_ready_available = any(
-                candidate not in current_source_precision
-                and candidate not in terminal_excluded
-                and candidate not in submitted_topics
-                and candidate not in published_topics
-                and candidate not in pending_revision_excluded
-                and candidate not in surface_repeat
-                and candidate not in preflight_blocked
-                and candidate not in writer_gate_skip
-                and candidate not in source_precision_auto_excluded
-                and _quant_claim_count(candidate) >= PREFLIGHT_MIN_QUANT_CLAIMS
-                for candidate in topics
+            clean_ready_available = _has_clean_ready_topic(
+                topics,
+                exclude=(
+                    terminal_excluded | submitted_topics | published_topics
+                    | pending_revision_excluded | surface_repeat | preflight_blocked
+                    | writer_gate_skip | source_precision_auto_excluded
+                ),
+                source_precision_blocked=current_source_precision,
             )
             source_precision_auto_excluded |= unrepaired_attempted
             if clean_ready_available:
@@ -2440,14 +2450,10 @@ def run_cycle(
             selection_excluded = set(excluded)
             if topic is None and mode != "revise" and current_source_precision:
                 recent_blocked = _recent_blocked_topics(ledger_dir)
-                clean_ready_now = any(
-                    candidate not in selection_excluded
-                    and candidate not in current_source_precision
-                    and candidate not in submitted_topics
-                    and candidate not in published_topics
-                    and candidate not in recent_blocked
-                    and _quant_claim_count(candidate) >= PREFLIGHT_MIN_QUANT_CLAIMS
-                    for candidate in topics
+                clean_ready_now = _has_clean_ready_topic(
+                    topics,
+                    exclude=selection_excluded | submitted_topics | published_topics | recent_blocked,
+                    source_precision_blocked=current_source_precision,
                 )
                 if clean_ready_now:
                     selection_excluded |= current_source_precision - source_precision_repaired_ok
