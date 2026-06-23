@@ -754,16 +754,17 @@ def _eligible(run: Path) -> tuple[bool, str]:
     return True, "eligible"
 
 
-def _seen(path: Path) -> set[str]:
-    data = []
+def _ledger_rows(path: Path) -> list[dict[str, Any]]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
-        pass
+        return []
+    return [row for row in (data if isinstance(data, list) else []) if isinstance(row, dict)]
+
+
+def _seen(path: Path) -> set[str]:
     out: set[str] = set()
-    for row in data if isinstance(data, list) else []:
-        if not isinstance(row, dict):
-            continue
+    for row in _ledger_rows(path):
         for key in ("fingerprint", *PUBLICATION_IDENTITY_KEYS):
             value = row.get(key)
             if isinstance(value, str) and value:
@@ -771,31 +772,11 @@ def _seen(path: Path) -> set[str]:
     return out
 
 
-def _seen_topics(path: Path) -> set[str]:
-    """Topics recorded in a ledger file (submitted/revision). Complements
-    `_seen`, which keys on content/identity fingerprints: a re-synthesized run
-    of an already-submitted topic carries a fresh fingerprint, so topic-level
-    dedup is needed to avoid re-sending a paper Researka already has pending."""
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return set()
+def _seen_field(path: Path, key: str) -> set[str]:
     return {
-        str(row["topic"])
-        for row in (data if isinstance(data, list) else [])
-        if isinstance(row, dict) and isinstance(row.get("topic"), str) and row["topic"]
-    }
-
-
-def _seen_runs(path: Path) -> set[str]:
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return set()
-    return {
-        str(row["run"])
-        for row in (data if isinstance(data, list) else [])
-        if isinstance(row, dict) and isinstance(row.get("run"), str) and row["run"]
+        str(row[key])
+        for row in _ledger_rows(path)
+        if isinstance(row.get(key), str) and row[key]
     }
 
 
@@ -857,9 +838,9 @@ def select_candidate(
     local_seen = _seen(submitted_path)
     rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
     revision_seen = _seen(submitted_path.with_name(REVISION_FINGERPRINTS))
-    submitted_topics = _seen_topics(submitted_path)
-    revision_topics = _seen_topics(submitted_path.with_name(REVISION_FINGERPRINTS))
-    submitted_runs = _seen_runs(submitted_path)
+    submitted_topics = _seen_field(submitted_path, "topic")
+    revision_topics = _seen_field(submitted_path.with_name(REVISION_FINGERPRINTS), "topic")
+    submitted_runs = _seen_field(submitted_path, "run")
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
