@@ -1521,6 +1521,30 @@ def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypa
     assert result["seed_limit"] == cycle.AUTO_SEED_LIMIT
 
 
+def test_seed_topic_timeout_with_claims_stays_gate_checkable(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setenv("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", "17")
+    seen: dict[str, Any] = {}
+
+    def slow_run(cmd: list[str], **kwargs: Any) -> Any:
+        seen["timeout"] = kwargs["timeout"]
+        qdir = cycle.CORPORA / "new_topic" / "quant_claims"
+        qdir.mkdir(parents=True)
+        _write_json(qdir / "seed.quant_claims.json", {"paper_id": "seed", "claims": []})
+        raise cycle.subprocess.TimeoutExpired(cmd=cmd, timeout=kwargs["timeout"], stderr="report written")
+
+    monkeypatch.setattr(cycle.subprocess, "run", slow_run)
+
+    result = cycle._ensure_topic_corpus("new_topic", dry_run=False, timeout=999)
+
+    assert result["status"] == "corpus_seeded"
+    assert result["return_code"] == cycle.SYNTHESIS_TIMEOUT_RETURN_CODE
+    assert result["seed_timeout_expired"] is True
+    assert result["n_quant_claims"] == 1
+    assert result["stderr_tail"] == "report written"
+    assert seen["timeout"] == 17
+
+
 def test_cycle_separates_attempted_topic_from_submitted_bridge_candidate(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

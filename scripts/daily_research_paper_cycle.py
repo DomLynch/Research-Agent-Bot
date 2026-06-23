@@ -66,6 +66,7 @@ SURFACE_REPEAT_THRESHOLD = 2
 WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
+SEED_TOPIC_TIMEOUT_SECONDS = 600
 CORPUS_REPAIR_LIMIT = 1
 RECEIPT_PREFLIGHT_REPAIR_ROUNDS = 2
 SOURCE_TOPIC_REPAIR_FLOOR = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
@@ -1893,6 +1894,14 @@ def _auto_seed_limit() -> int:
         return AUTO_SEED_LIMIT
 
 
+def _seed_topic_timeout(timeout: int | None) -> int:
+    try:
+        cap = max(1, int(os.environ.get("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", str(SEED_TOPIC_TIMEOUT_SECONDS))))
+    except ValueError:
+        cap = SEED_TOPIC_TIMEOUT_SECONDS
+    return min(timeout, cap) if timeout and timeout > 0 else cap
+
+
 def _corpus_repair_limit() -> int:
     try:
         return max(0, int(os.environ.get("RESEARCH_AGENT_CORPUS_REPAIR_LIMIT", str(CORPUS_REPAIR_LIMIT))))
@@ -1932,9 +1941,25 @@ def _seed_topic(
     ]
     if force_extract:
         cmd.append("--force-extract")
+    seed_timeout = _seed_topic_timeout(timeout)
     try:
-        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, capture_output=True, text=True)
-    except (OSError, subprocess.TimeoutExpired) as exc:
+        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=seed_timeout, capture_output=True, text=True)
+    except subprocess.TimeoutExpired as exc:
+        after = _quant_claim_count(topic)
+        status = "corpus_seeded" if after else "corpus_seed_failed"
+        stderr = exc.stderr.decode("utf-8", errors="replace") if isinstance(exc.stderr, bytes) else str(exc.stderr or "")
+        return {
+            "status": status,
+            "return_code": SYNTHESIS_TIMEOUT_RETURN_CODE,
+            "n_quant_claims_before": before,
+            "n_quant_claims": after,
+            "seed_limit": seed_limit,
+            "seed_timeout_seconds": seed_timeout,
+            "seed_timeout_expired": True,
+            "error": f"{type(exc).__name__}: {exc}",
+            "stderr_tail": stderr[-1200:],
+        }
+    except OSError as exc:
         return {
             "status": "corpus_seed_failed",
             "return_code": None,
