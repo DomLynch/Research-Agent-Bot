@@ -994,6 +994,48 @@ def test_fresh_lane_does_not_auto_exclude_unattempted_source_precision_backlog(t
     assert calls["topic"] == "ready_cached"
 
 
+def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_low_source", target_journal=True)
+    _topic(tmp_path, "zzz_clean_ready", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 0)
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: {"aaa_low_source"})
+    blocked_snapshots = iter([{"zzz_clean_ready"}, set()])
+    monkeypatch.setattr(cycle, "_recent_preflight_blocked_topics", lambda *_a, **_k: next(blocked_snapshots, set()))
+    monkeypatch.setattr(cycle, "_recent_blocked_topics", lambda *_a, **_k: set())
+
+    def fake_precision(topic: str, **_kwargs: Any) -> tuple[bool, str, list[Path]]:
+        if topic == "aaa_low_source":
+            return False, "source_topic_precision_low:1/10<0.80", [Path("bad.json")]
+        return True, "source_topic_precision_ok:10/10", []
+
+    synthesized: list[str] = []
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-23",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert synthesized == ["zzz_clean_ready"]
+
+
 def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

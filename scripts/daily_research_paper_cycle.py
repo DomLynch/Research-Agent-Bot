@@ -2351,6 +2351,7 @@ def run_cycle(
         published_topics = _published_topics(topics, remote_seen, ledger_dir)
         corpus_repaired_ok: set[str] = set()
         source_precision_repaired_ok: set[str] = set()
+        current_source_precision: set[str] = set()
         source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
         if source_precision_auto_excluded:
             ledger["source_precision_unrepairable_topics"] = sorted(source_precision_auto_excluded)
@@ -2430,15 +2431,34 @@ def run_cycle(
                 if not ledger["attempts"]:
                     ledger["status"] = "no_revise_pending"
                 break
+            dynamic_preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
+            dynamic_preflight_blocked -= corpus_repaired_ok | source_precision_repaired_ok
+            if dynamic_preflight_blocked != preflight_blocked:
+                preflight_blocked = dynamic_preflight_blocked
+                ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
             excluded = attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip | source_precision_auto_excluded
+            selection_excluded = set(excluded)
+            if topic is None and mode != "revise" and current_source_precision:
+                recent_blocked = _recent_blocked_topics(ledger_dir)
+                clean_ready_now = any(
+                    candidate not in selection_excluded
+                    and candidate not in current_source_precision
+                    and candidate not in submitted_topics
+                    and candidate not in published_topics
+                    and candidate not in recent_blocked
+                    and _quant_claim_count(candidate) >= PREFLIGHT_MIN_QUANT_CLAIMS
+                    for candidate in topics
+                )
+                if clean_ready_now:
+                    selection_excluded |= current_source_precision - source_precision_repaired_ok
             repaired_candidates = sorted(
-                topic for topic in (corpus_repaired_ok | source_precision_repaired_ok) - excluded
+                topic for topic in (corpus_repaired_ok | source_precision_repaired_ok) - selection_excluded
                 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
             )
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(repaired_candidates or topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=excluded)
+                else topic or select_topic(repaired_candidates or topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=selection_excluded)
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
