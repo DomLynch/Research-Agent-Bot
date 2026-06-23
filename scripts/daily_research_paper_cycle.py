@@ -2376,7 +2376,7 @@ def run_cycle(
                 _corpus_repair_topics(ledger_dir) | current_source_precision
             ) - terminal_excluded - submitted_topics - pending_revision_excluded
             source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
-            clean_ready_before_source_repair = _has_clean_ready_topic(
+            clean_ready_before_repair = _has_clean_ready_topic(
                 topics,
                 exclude=(
                     terminal_excluded | submitted_topics | published_topics
@@ -2385,8 +2385,8 @@ def run_cycle(
                 ),
                 source_precision_blocked=current_source_precision,
             )
-            if clean_ready_before_source_repair:
-                repairable -= source_precision_repairable
+            if clean_ready_before_repair:
+                repairable = set()
                 source_precision_auto_excluded |= current_source_precision
             source_precision_repair_attempted: set[str] = set()
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
@@ -2405,7 +2405,7 @@ def run_cycle(
                     source_precision_repaired_ok.add(repair_topic)
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
-            clean_ready_available = clean_ready_before_source_repair or _has_clean_ready_topic(
+            clean_ready_available = clean_ready_before_repair or _has_clean_ready_topic(
                 topics,
                 exclude=(
                     terminal_excluded | submitted_topics | published_topics
