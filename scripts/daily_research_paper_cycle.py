@@ -20,7 +20,7 @@ import tomllib
 import urllib.error
 import urllib.request
 from collections import Counter
-from collections.abc import Callable, Iterator, Sequence
+from collections.abc import Callable, Collection, Iterator, Sequence
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
@@ -508,30 +508,26 @@ def _surface_repeat_topics(
     return out
 
 
-def _recent_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
-    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
-    out: set[str] = set()
-    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
-        topic, _, code = str(key).partition("\x1f")
-        if topic and code not in _NON_REPEAT_STATUSES and isinstance(stamps, list):
-            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
-                out.add(topic)
-    return out
-
-
 def _recent_blocked_topics_by_status(
-    ledger_dir: Path, statuses: set[str] | frozenset[str], *, now: dt.datetime | None = None,
+    ledger_dir: Path,
+    statuses: Collection[str] | None = None,
+    *,
+    now: dt.datetime | None = None,
 ) -> set[str]:
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
     out: set[str] = set()
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
-        if topic and code in statuses and isinstance(stamps, list):
+        allowed = code in statuses if statuses is not None else code not in _NON_REPEAT_STATUSES
+        if topic and allowed and isinstance(stamps, list):
             if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
                 out.add(topic)
     return out
+
+
+def _recent_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    return _recent_blocked_topics_by_status(ledger_dir, now=now)
 
 
 def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
