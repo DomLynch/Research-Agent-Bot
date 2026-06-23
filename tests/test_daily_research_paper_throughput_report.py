@@ -175,6 +175,23 @@ def test_rolling_pace_snapshot_reports_window_gap(tmp_path: Path) -> None:
     assert pace["gap_to_required_for_observed_window"]["two_year_by_local_submissions"] == 0.0
 
 
+def test_rolling_pace_snapshot_ignores_probe_day_keys(tmp_path: Path) -> None:
+    ledger = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger.mkdir()
+    (ledger / "_daily_throughput_summary.json").write_text(json.dumps({
+        "days": {
+            "2026-06-01": {"submitted": 2, "published": 1, "cycles": 1},
+            "2026-06-01-revise-probe": {"submitted": 99, "published": 99, "cycles": 99},
+        },
+    }))
+
+    pace = report._rolling_pace_snapshot(tmp_path, {"two_year": {"target": 5000, "days": 730}})
+
+    assert pace["dates"] == ["2026-06-01"]
+    assert pace["local_submitted"] == 2
+    assert pace["local_published"] == 1
+
+
 def test_rolling_pace_snapshot_reports_missing_source(tmp_path: Path) -> None:
     pace = report._rolling_pace_snapshot(tmp_path, {"two_year": {"target": 5000, "days": 730}})
 
