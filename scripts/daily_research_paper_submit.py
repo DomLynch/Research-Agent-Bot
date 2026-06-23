@@ -472,10 +472,15 @@ def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
     try:
         import revision_coverage
         text = paper.read_text(encoding="utf-8")
-        asks = revision_coverage.revision_asks(feedback)
+        stale_unmet = gate.get("unmet_asks")
+        asks = (
+            [str(ask) for ask in stale_unmet if isinstance(ask, str) and ask.strip()]
+            if isinstance(stale_unmet, list)
+            else revision_coverage.revision_asks(feedback)
+        )
         if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
             return False
-        unmet = revision_coverage.material_unmet_asks(text, feedback)
+        unmet = revision_coverage.deterministic_unmet_asks(text, asks)
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
     _write_json(run / REVISION_COVERAGE_GATE, {

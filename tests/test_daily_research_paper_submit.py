@@ -1276,6 +1276,45 @@ def test_missing_revision_coverage_gate_is_refreshed_before_selection(
     assert gate["refreshed_by"] == "daily_submit"
 
 
+def test_stale_unmet_revision_gate_refreshes_only_prior_unmet_asks(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    ask = (
+        "Reclassify or re-label the 'immune and inflammation positive signal' as a "
+        "combination-product signal, not a spermidine-monotherapy signal; add a single "
+        "sentence in the Findings Map table and Results Summary flagging that the 2/3 "
+        "positive sources include one combination-product RCT and one preclinical GWI "
+        "mouse model."
+    )
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8")
+        + "\n\n## Results Summary\n\n"
+        "The Felix 2024 RCT used a combination product containing spermidine and "
+        "hesperidin, so its positive immune/inflammation findings cannot be attributed "
+        "to spermidine monotherapy. Trivedi 2026 is a Gulf War Illness mouse model and "
+        "is therefore not a human clinical confirmation.\n",
+        encoding="utf-8",
+    )
+    _write_json(run / "researka_revision_request.json", {
+        "feedback": f"{ask}; Verify and align author-year prose citations against bundle entries.",
+    })
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=set(),
+        purpose="revision",
+    )
+
+    assert selected == run
+    assert considered[0]["status"] == "eligible"
+    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
+    assert gate["passed"] is True
+    assert gate["unmet_asks"] == []
+    assert gate["ask_count"] == 1
+
+
 def test_unmet_refreshed_revision_coverage_still_blocks_selection(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
