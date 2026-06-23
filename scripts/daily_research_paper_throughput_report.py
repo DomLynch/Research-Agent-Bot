@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import urllib.request
@@ -236,6 +237,12 @@ def _emit_json(payload: dict[str, Any], *, stream: TextIO | None = None) -> int:
         out.write(json.dumps(payload, indent=2, sort_keys=True))
         out.write("\n")
     except BrokenPipeError:
+        if stream is None:
+            try:
+                devnull = os.open(os.devnull, os.O_WRONLY)
+                os.dup2(devnull, sys.stdout.fileno())
+            except OSError:
+                pass
         return 0
     return 0
 
