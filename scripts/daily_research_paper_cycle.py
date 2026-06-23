@@ -2544,7 +2544,29 @@ def run_cycle(
                 continue
             revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
             revision_source_repair = _revision_requests_source_precision(revision_feedback)
-            source_precision_ok, _, source_precision_misses = _quant_claim_source_precision(selected, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+            source_precision_ok, source_precision_status, source_precision_misses = _quant_claim_source_precision(
+                selected, floor=SOURCE_TOPIC_REPAIR_FLOOR,
+            )
+            seeded_new_corpus = (
+                corpus.get("status") == "corpus_seeded"
+                and int(corpus.get("n_quant_claims_before") or 0) == 0
+            )
+            if seeded_new_corpus and not revision_source and not source_precision_ok:
+                attempt = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": source_precision_status,
+                    "gate_status": source_precision_status,
+                    "failure_class": _failure_class(source_precision_status),
+                    "submitted": 0,
+                    "corpus": corpus,
+                }
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "source_precision_repair_deferred_no_submission"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                attempted.add(selected)
+                continue
             source_precision_has_misses = (
                 source_precision_ok
                 and bool(source_precision_misses)
