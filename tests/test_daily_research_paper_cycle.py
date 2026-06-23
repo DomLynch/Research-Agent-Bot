@@ -4994,6 +4994,54 @@ def test_cycle_skips_backlog_repair_when_new_candidate_selectable(tmp_path: Path
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_defers_source_repair_for_new_frontier_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_frontier_bad", corpus=False, target_journal=True)
+    _topic(tmp_path, "zzz_frontier_good", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: pytest.fail(f"unexpected repair: {topic}"))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+
+    def fake_precision(topic: str, **_kwargs: Any) -> tuple[bool, str, list[Path]]:
+        if topic == "aaa_frontier_bad":
+            return False, "source_topic_precision_low:0/12<0.50", [Path("bad.json")]
+        return True, "source_topic_precision_ok:12/12", []
+
+    synthesized: list[str] = []
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    selections = iter([None, "aaa_frontier_bad", "zzz_frontier_good"])
+    monkeypatch.setattr(cycle, "select_topic", lambda *_a, **_k: next(selections, None))
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-31",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=lambda topic, **_k: {
+            "status": "corpus_seeded",
+            "n_quant_claims_before": 0,
+            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+        },
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=2,
+    )
+
+    assert ledger["attempts"][0]["topic"] == "aaa_frontier_bad"
+    assert ledger["attempts"][0]["gate_status"] == "source_topic_precision_low:0/12<0.50"
+    assert synthesized == ["zzz_frontier_good"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_skips_receipt_preflight_repair_when_clean_topic_ready(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_sparse_receipts", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
