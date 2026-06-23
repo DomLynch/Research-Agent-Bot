@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from typing import Any
 
 import httpx
 import pytest
@@ -38,7 +39,7 @@ async def test_fullraw_disabled_without_url_or_token(monkeypatch: pytest.MonkeyP
 
 @pytest.mark.asyncio
 async def test_fullraw_posts_query_and_maps_receipt(fullraw_env: None) -> None:
-    received: dict[str, object] = {}
+    received: dict[str, Any] = {}
 
     def responder(request: httpx.Request) -> httpx.Response:
         received["url"] = str(request.url)
@@ -87,6 +88,23 @@ async def test_fullraw_posts_query_and_maps_receipt(fullraw_env: None) -> None:
     assert hit.raw["fullraw_source"] == "openalex"
     assert hit.raw["shard_receipt"]["shards_searched"] == 50
     assert "openalex" in hit.raw["shard_receipt"]["sources_searched"]
+
+
+@pytest.mark.asyncio
+async def test_fullraw_caps_publish_lane_timeout(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://fullraw.test/search")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "test-token")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "300")
+    received: dict[str, Any] = {}
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        received["body"] = json.loads(request.content)
+        return httpx.Response(200, json={"meta": {"shard_receipt": {}}, "results": []})
+
+    async with _mock_client(responder) as client:
+        await V5FullRawClient().search(client, "metformin longevity", limit=3)
+
+    assert received["body"]["timeout_seconds"] == 60.0
 
 
 @pytest.mark.asyncio

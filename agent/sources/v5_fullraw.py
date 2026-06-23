@@ -14,7 +14,8 @@ import httpx
 from agent.sources._base import USER_AGENT, clean_text, normalize_doi
 from agent.types import RawHit
 
-DEFAULT_TIMEOUT_SECONDS = 180.0
+DEFAULT_TIMEOUT_SECONDS = 60.0
+MAX_TIMEOUT_SECONDS = 60.0
 
 
 def _fullraw_url() -> str:
@@ -28,9 +29,10 @@ def _fullraw_token() -> str:
 def _timeout_seconds() -> float:
     raw = os.environ.get("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "").strip()
     try:
-        return max(1.0, float(raw)) if raw else DEFAULT_TIMEOUT_SECONDS
+        requested = max(1.0, float(raw)) if raw else DEFAULT_TIMEOUT_SECONDS
     except ValueError:
-        return DEFAULT_TIMEOUT_SECONDS
+        requested = DEFAULT_TIMEOUT_SECONDS
+    return min(requested, MAX_TIMEOUT_SECONDS)
 
 
 def _build_url(doi: str | None, pmid: str | None, url: object) -> str:
