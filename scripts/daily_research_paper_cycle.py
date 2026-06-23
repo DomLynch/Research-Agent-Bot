@@ -2411,7 +2411,10 @@ def run_cycle(
                     ledger["status"] = "no_revise_pending"
                 break
             excluded = attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip | source_precision_auto_excluded
-            repaired_candidates = sorted((corpus_repaired_ok | source_precision_repaired_ok) - excluded)
+            repaired_candidates = sorted(
+                topic for topic in (corpus_repaired_ok | source_precision_repaired_ok) - excluded
+                if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
+            )
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
