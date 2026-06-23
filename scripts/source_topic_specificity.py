@@ -45,7 +45,7 @@ NON_BIOMED_DRIFT = {
 
 def topic_tokens(topic: str) -> list[str]:
     return [
-        token for token in re.findall(r"[a-z0-9]+", topic.replace("_", " ").lower())
+        token for token in _words(topic)
         if len(token) >= 3 and token not in TOPIC_STOPWORDS
     ]
 
@@ -98,7 +98,7 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
     raw_aliases = [str(alias or "").strip() for alias in aliases]
     acronym_aliases: set[str] = set()
     for phrase in (topic_text, *raw_aliases):
-        phrase_tokens = list(_gate_tokens(phrase))
+        phrase_tokens = _gate_token_list(phrase)
         if len(phrase_tokens) >= 2:
             acronym_aliases.add("".join(token[0] for token in phrase_tokens))
     out: list[str] = []
@@ -134,12 +134,20 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
 
 
 def _gate_tokens(text: str) -> set[str]:
-    return {
-        norm
-        for token in re.findall(r"[a-z0-9]+", str(text).replace("_", " ").replace("-", " ").lower())
-        for norm in [_specificity_token(token)]
-        if len(norm) > 2 and norm not in TOPIC_STOPWORDS
-    }
+    return set(_gate_token_list(text))
+
+
+def _gate_token_list(text: str) -> list[str]:
+    out: list[str] = []
+    for raw in _words(text):
+        token = _specificity_token(raw)
+        if len(token) > 2 and token not in TOPIC_STOPWORDS:
+            out.append(token)
+    return out
+
+
+def _words(text: object) -> list[str]:
+    return re.findall(r"[a-z0-9]+", str(text).replace("_", " ").replace("-", " ").lower())
 
 
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
@@ -150,7 +158,7 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     normalized_tokens = [_specificity_token(token) for token in tokens]
     haystack_tokens = {
         _specificity_token(token)
-        for token in re.findall(r"[a-z0-9]+", haystack)
+        for token in _words(haystack)
         if len(token) > 2
     }
     token_hits = sum(1 for token in normalized_tokens if token in haystack_tokens)
@@ -224,7 +232,7 @@ def _generic_fallback_topic(topic: str) -> bool:
 
 def _fragment_topic(topic: str) -> bool:
     text = " ".join(str(topic or "").replace("_", " ").replace("-", " ").lower().split())
-    words = re.findall(r"[a-z0-9]+", text)
+    words = _words(text)
     if not words:
         return True
     if "na" in words or any(a == "n" and b == "a" for a, b in zip(words, words[1:])):
@@ -244,7 +252,7 @@ def _pack_tokens(raw_terms: Iterable[object]) -> set[str]:
     return {
         _normalize_pack_token(token)
         for term in raw_terms
-        for token in re.findall(r"[a-z0-9]+", str(term).lower())
+        for token in _words(term)
         if len(token) > 2 and token not in TOPIC_STOPWORDS
     }
 
