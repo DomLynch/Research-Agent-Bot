@@ -818,7 +818,7 @@ def _included_study_fill_rate(receipts: list) -> float:
 
 
 def _source_list_label(receipt: Any, idx: int) -> str:
-    for field in ("source_title", "title", "receipt_id"):
+    for field in ("receipt_id", "source_title", "title"):
         value = getattr(receipt, field, None)
         if not _is_missing_public_value(value):
             return _inline_cell(value)
