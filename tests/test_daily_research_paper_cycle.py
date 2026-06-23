@@ -4952,6 +4952,48 @@ def test_cycle_repairs_preflight_blocked_topic_when_no_clean_topic_ready(tmp_pat
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_skips_backlog_repair_when_new_candidate_selectable(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_thin_topic", target_journal=True)
+    _topic(tmp_path, "mmm_new_topic", corpus=False, target_journal=True)
+    _prior_run(tmp_path, "aaa_thin_topic", receipts=6, tensions=0, primary=0)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-05-31",
+        [{"topic": "aaa_thin_topic", "submit_status": "preflight_insufficient_corpus", "submitted": 0}],
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: pytest.fail(f"unexpected repair: {topic}"))
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-31",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=lambda topic, **_k: {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS},
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert "corpus_repairs" not in ledger
+    assert ledger["topic_status"]["aaa_thin_topic"] == "preflight_blocked"
+    assert synthesized == ["mmm_new_topic"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_skips_receipt_preflight_repair_when_clean_topic_ready(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_sparse_receipts", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
