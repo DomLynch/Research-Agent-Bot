@@ -1036,6 +1036,24 @@ def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_
     assert synthesized == ["zzz_clean_ready"]
 
 
+def test_clean_ready_helper_excludes_published_and_source_low(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "published_clean")
+    _topic(tmp_path, "source_low")
+    _topic(tmp_path, "clean_ready")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    assert cycle._has_clean_ready_topic(
+        ["published_clean", "source_low", "clean_ready"],
+        exclude={"published_clean"},
+        source_precision_blocked={"source_low"},
+    )
+    assert not cycle._has_clean_ready_topic(
+        ["published_clean", "source_low"],
+        exclude={"published_clean"},
+        source_precision_blocked={"source_low"},
+    )
+
+
 def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
