@@ -39,6 +39,7 @@ def _build_registry() -> dict:
     from agent.sources.arxiv import ArxivClient
     from agent.sources.medrxiv import MedRxivClient
     from agent.sources.researka import ResearkaClient
+    from agent.sources.v5_fullraw import V5FullRawClient
     return {
         # Tier 1: free, no auth, in default discovery set
         "pubmed": (PubMedClient(), True, None),
@@ -67,6 +68,11 @@ def _build_registry() -> dict:
         # the env var is unset, so default-enabled is safe.
         "researka": (
             ResearkaClient(), True, "RESEARKA_DATABASE_TOKEN",
+        ),
+        # V5 5TB fullraw corpus. Auth-gated; fail-soft adapter keeps
+        # existing source fan-out working if the shard service is cold/slow.
+        "v5_fullraw": (
+            V5FullRawClient(), True, "V5_MEMO_FULL_RAW_CORPUS_TOKEN",
         ),
         # Tier 3: supporting (drug pharmacology, opt-in)
         "chembl": (ChemblClient(), False, None),
