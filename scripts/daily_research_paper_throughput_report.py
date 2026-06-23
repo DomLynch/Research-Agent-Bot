@@ -4,9 +4,10 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import urllib.request
 from pathlib import Path
-from typing import Any
+from typing import Any, TextIO
 
 from publishing_capacity_plan import live_plan
 
@@ -229,13 +230,22 @@ def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://r
     }
 
 
+def _emit_json(payload: dict[str, Any], *, stream: TextIO | None = None) -> int:
+    out = stream or sys.stdout
+    try:
+        out.write(json.dumps(payload, indent=2, sort_keys=True))
+        out.write("\n")
+    except BrokenPipeError:
+        return 0
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("date")
     parser.add_argument("--runs-root", type=Path, default=RUNS)
     args = parser.parse_args(argv)
-    print(json.dumps(summarize(args.date, runs_root=args.runs_root), indent=2, sort_keys=True))
-    return 0
+    return _emit_json(summarize(args.date, runs_root=args.runs_root))
 
 
 if __name__ == "__main__":

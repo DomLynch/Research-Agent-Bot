@@ -207,3 +207,11 @@ def test_summarize_includes_pace(monkeypatch, tmp_path: Path) -> None:
     }
     assert summary["pace"]["today_gap_to_two_year_daily_average"]["by_public_accepts"] == 0.0
     assert summary["pace"]["rolling"]["local_submitted"] == 8
+
+
+def test_emit_json_treats_closed_pipe_as_clean_exit() -> None:
+    class ClosedPipe:
+        def write(self, _text: str) -> int:
+            raise BrokenPipeError
+
+    assert report._emit_json({"ok": True}, stream=ClosedPipe()) == 0  # type: ignore[arg-type]
