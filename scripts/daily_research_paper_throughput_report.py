@@ -236,6 +236,7 @@ def _emit_json(payload: dict[str, Any], *, stream: TextIO | None = None) -> int:
     try:
         out.write(json.dumps(payload, indent=2, sort_keys=True))
         out.write("\n")
+        out.flush()
     except BrokenPipeError:
         if stream is None:
             try:
