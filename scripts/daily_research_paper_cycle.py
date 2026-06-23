@@ -2170,6 +2170,7 @@ def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> 
 
 def _repair_low_source_precision_corpus(
     topic: str, *, dry_run: bool, timeout: int | None = None, force: bool = False,
+    reseed: bool = True,
 ) -> dict[str, Any]:
     ok, before_status, misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
     if ok and not (force and misses):
@@ -2198,10 +2199,14 @@ def _repair_low_source_precision_corpus(
         quarantine.mkdir(parents=True, exist_ok=True)
         shutil.move(str(path), str(quarantine / path.name))
         moved += 1
-    seed = _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
+    seed = (
+        _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
+        if reseed
+        else {"status": "source_precision_pruned", "n_quant_claims": _quant_claim_count(topic)}
+    )
     ok_after, after_status, misses_after = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
     post_seed_moved = 0
-    if not ok_after:
+    if not ok_after and reseed:
         post_seed_dir = quarantine / "post_seed"
         for path in misses_after:
             if not path.exists():
@@ -2221,6 +2226,7 @@ def _repair_low_source_precision_corpus(
         "post_seed_quarantined": post_seed_moved,
         "n_quant_claims_before": before,
         "n_quant_claims": n_quant_claims,
+        "reseed": reseed,
         "seed": seed,
     }
 
@@ -2552,21 +2558,59 @@ def run_cycle(
                 and int(corpus.get("n_quant_claims_before") or 0) == 0
             )
             if seeded_new_corpus and not revision_source and not source_precision_ok:
-                attempt = {
-                    "topic": selected,
-                    "out_dir": out_dir.name,
-                    "synthesis_return_code": None,
-                    "submit_status": source_precision_status,
-                    "gate_status": source_precision_status,
-                    "failure_class": _failure_class(source_precision_status),
-                    "submitted": 0,
-                    "corpus": corpus,
-                }
-                ledger["attempts"].append(attempt)
-                ledger["status"] = "source_precision_repair_deferred_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
-                attempted.add(selected)
-                continue
+                retained = max(0, _quant_claim_count(selected) - len(source_precision_misses))
+                if retained >= PREFLIGHT_MIN_QUANT_CLAIMS:
+                    source_repair = _repair_low_source_precision_corpus(
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=child_timeout(),
+                        force=True,
+                        reseed=False,
+                    )
+                    ledger["source_precision_repair"] = {"topic": selected, **source_repair}
+                    corpus = (ensure_corpus or _ensure_topic_corpus)(
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=child_timeout(),
+                    )
+                    ledger["corpus"] = corpus
+                    if source_repair.get("status") == "source_precision_repaired":
+                        source_precision_ok = True
+                        source_precision_misses = []
+                        source_precision_repaired_ok.add(selected)
+                    else:
+                        attempt = {
+                            "topic": selected,
+                            "out_dir": out_dir.name,
+                            "synthesis_return_code": None,
+                            "submit_status": _SOURCE_PRECISION_STATUS,
+                            "gate_status": _SOURCE_PRECISION_STATUS,
+                            "failure_class": _failure_class(_SOURCE_PRECISION_STATUS),
+                            "submitted": 0,
+                            "corpus": corpus,
+                            "source_precision_repair": source_repair,
+                        }
+                        ledger["attempts"].append(attempt)
+                        ledger["status"] = "source_precision_repair_incomplete_no_submission"
+                        ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                        attempted.add(selected)
+                        continue
+                else:
+                    attempt = {
+                        "topic": selected,
+                        "out_dir": out_dir.name,
+                        "synthesis_return_code": None,
+                        "submit_status": source_precision_status,
+                        "gate_status": source_precision_status,
+                        "failure_class": _failure_class(source_precision_status),
+                        "submitted": 0,
+                        "corpus": corpus,
+                    }
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = "source_precision_repair_deferred_no_submission"
+                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    attempted.add(selected)
+                    continue
             source_precision_has_misses = (
                 source_precision_ok
                 and bool(source_precision_misses)

@@ -5043,6 +5043,68 @@ def test_cycle_defers_source_repair_for_new_frontier_topic(tmp_path: Path, monke
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_prunes_seeded_frontier_overflow_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    topic = "frontier_overflow"
+    _topic(tmp_path, topic, corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda _topic, _out_dir, **_k: {"passed": True})
+    qdir = cycle.CORPORA / topic / "quant_claims"
+    qdir.mkdir(parents=True)
+    for i in range(24):
+        _write_json(qdir / f"claim_{i}.quant_claims.json", {"paper_id": f"claim_{i}"})
+
+    misses = [qdir / f"claim_{i}.quant_claims.json" for i in range(12)]
+    monkeypatch.setattr(
+        cycle,
+        "_quant_claim_source_precision",
+        lambda *_a, **_k: (False, "source_topic_precision_low:12/24<0.50", misses),
+    )
+    repaired: list[dict[str, Any]] = []
+
+    def fake_repair(selected: str, **kwargs: Any) -> dict[str, Any]:
+        repaired.append({"topic": selected, **kwargs})
+        return {
+            "status": "source_precision_repaired",
+            "source_topic_precision_before": "source_topic_precision_low:12/24<0.50",
+            "source_topic_precision_after": "source_topic_precision_ok:12/12",
+            "n_quant_claims": 12,
+            "reseed": kwargs.get("reseed"),
+        }
+
+    synthesized: list[str] = []
+
+    def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(selected)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-31",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=lambda _topic, **_k: {
+            "status": "corpus_seeded",
+            "n_quant_claims_before": 0,
+            "n_quant_claims": 24,
+        },
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert repaired and repaired[0]["reseed"] is False
+    assert synthesized == [topic]
+    assert ledger["source_precision_repair"]["source_topic_precision_after"] == "source_topic_precision_ok:12/12"
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_skips_receipt_preflight_repair_when_clean_topic_ready(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_sparse_receipts", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)
