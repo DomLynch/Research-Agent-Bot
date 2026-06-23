@@ -775,6 +775,21 @@ def test_daily_throughput_summary_survives_later_zero_submit_cycle(tmp_path: Pat
     assert day["latest_status"] == "no_revise_pending"
 
 
+def test_daily_throughput_summary_skips_probe_date_keys(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+
+    cycle._record_daily_throughput(ledger_dir, {
+        "date": "2026-06-01-revise-probe",
+        "started_at": "2026-06-01T10:00:00+00:00",
+        "mode": "revise",
+        "status": "dry_run_selected_topic",
+        "submitted": 0,
+        "published": 0,
+    })
+
+    assert not (ledger_dir / cycle.DAILY_THROUGHPUT_SUMMARY).exists()
+
+
 def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     latest: dict[str, dict[str, Any]] = {

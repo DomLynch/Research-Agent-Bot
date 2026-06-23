@@ -17,6 +17,7 @@ AGENT_ID = "agent-v3-full-paper"
 AGENT_IDS = frozenset((AGENT_ID, f"{AGENT_ID}-live"))
 RUNS = Path(__file__).resolve().parent.parent / "runs"
 NEXT_RE = re.compile(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S)
+DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def _rows_from_next_html(html: str) -> list[dict[str, Any]]:
@@ -151,7 +152,14 @@ def _rolling_pace_snapshot(runs_root: Path, capacity: dict[str, Any], *, window_
             "source": "_daily_throughput_summary.json",
             "status": "missing_throughput_summary",
         }
-    selected_dates = sorted(str(date) for date in days)[-window_days:]
+    selected_dates = sorted(str(date) for date in days if DAY_KEY_RE.fullmatch(str(date)))[-window_days:]
+    if not selected_dates:
+        return {
+            "window_days": window_days,
+            "observed_days": 0,
+            "source": "_daily_throughput_summary.json",
+            "status": "missing_throughput_summary",
+        }
     selected = [days[date] for date in selected_dates if isinstance(days.get(date), dict)]
     submitted = sum(_int_value(day.get("submitted")) for day in selected)
     published = sum(_int_value(day.get("published")) for day in selected)

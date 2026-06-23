@@ -49,6 +49,7 @@ REVISION_COVERAGE_GATE = "revision_coverage_gate.json"
 DAILY_THROUGHPUT_SUMMARY = "_daily_throughput_summary.json"
 DECISIONS_BY_DAY = "_decisions_by_day.json"
 REVISE_REASONS = "_revise_reasons.json"
+DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # A Researka revise may be re-processed up to this many rounds per artifact
 # before it is treated as permanently handled. Single-round handling left
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
@@ -110,7 +111,7 @@ def _cycle_ledger_path(ledger_dir: Path, date: str, mode: str) -> Path:
 def _record_daily_throughput(ledger_dir: Path, ledger: dict[str, Any]) -> None:
     date = str(ledger.get("date") or "")
     started_at = str(ledger.get("started_at") or "")
-    if not date or not started_at:
+    if not DAY_KEY_RE.fullmatch(date) or not started_at:
         return
     path = ledger_dir / DAILY_THROUGHPUT_SUMMARY
     data = _read_json(path)
@@ -2375,6 +2376,18 @@ def run_cycle(
                 _corpus_repair_topics(ledger_dir) | current_source_precision
             ) - terminal_excluded - submitted_topics - pending_revision_excluded
             source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
+            clean_ready_before_source_repair = _has_clean_ready_topic(
+                topics,
+                exclude=(
+                    terminal_excluded | submitted_topics | published_topics
+                    | pending_revision_excluded | surface_repeat | preflight_blocked
+                    | writer_gate_skip | source_precision_auto_excluded
+                ),
+                source_precision_blocked=current_source_precision,
+            )
+            if clean_ready_before_source_repair:
+                repairable -= source_precision_repairable
+                source_precision_auto_excluded |= current_source_precision
             source_precision_repair_attempted: set[str] = set()
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
@@ -2392,7 +2405,7 @@ def run_cycle(
                     source_precision_repaired_ok.add(repair_topic)
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
-            clean_ready_available = _has_clean_ready_topic(
+            clean_ready_available = clean_ready_before_source_repair or _has_clean_ready_topic(
                 topics,
                 exclude=(
                     terminal_excluded | submitted_topics | published_topics
