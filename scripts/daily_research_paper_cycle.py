@@ -2363,8 +2363,10 @@ def run_cycle(
                 _corpus_repair_topics(ledger_dir) | current_source_precision
             ) - terminal_excluded - submitted_topics - pending_revision_excluded
             source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
+            source_precision_repair_attempted: set[str] = set()
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
+                    source_precision_repair_attempted.add(repair_topic)
                     repair = _repair_low_source_precision_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
                 else:
                     repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
@@ -2376,7 +2378,19 @@ def run_cycle(
                         corpus_repaired_ok.add(repair_topic)
                 if repair.get("status") == "source_precision_repaired":
                     source_precision_repaired_ok.add(repair_topic)
-            source_precision_auto_excluded |= current_source_precision - source_precision_repaired_ok
+            unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
+            unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
+            clean_ready_available = any(
+                candidate not in current_source_precision
+                and candidate not in terminal_excluded
+                and candidate not in submitted_topics
+                and candidate not in pending_revision_excluded
+                and _quant_claim_count(candidate) >= PREFLIGHT_MIN_QUANT_CLAIMS
+                for candidate in topics
+            )
+            source_precision_auto_excluded |= unrepaired_attempted
+            if clean_ready_available:
+                source_precision_auto_excluded |= unattempted_source_precision
             if source_precision_auto_excluded:
                 ledger["source_precision_auto_excluded_topics"] = sorted(source_precision_auto_excluded)
             if repairs:

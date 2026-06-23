@@ -944,6 +944,54 @@ def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path
     assert calls["topic"] == "ready_cached"
 
 
+def test_fresh_lane_does_not_auto_exclude_unattempted_source_precision_backlog(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_failed_repair", corpus=False)
+    _topic(tmp_path, "ready_cached")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: {
+        "aaa_failed_repair",
+        "ready_cached",
+    })
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        False, "source_topic_precision_low:0/10<0.80", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    calls: dict[str, Any] = {}
+
+    def fake_source_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        if topic == "aaa_failed_repair":
+            return {"status": "source_precision_repair_incomplete", "n_quant_claims": 0}
+        return {"status": "source_precision_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_corpus(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        calls["topic"] = topic
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_source_repair)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-23",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=fake_corpus,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_failed_repair"]
+    assert calls["topic"] == "ready_cached"
+
+
 def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
