@@ -54,7 +54,7 @@ from agent.corpus_pipeline import (  # noqa: E402
     topic_aliases_for_classification,
 )
 import v3_optional_adapters as _optional_adapters  # noqa: E402
-from source_topic_specificity import is_source_topic_specific  # noqa: E402
+from source_topic_specificity import is_source_topic_specific, source_gate_aliases  # noqa: E402
 
 
 def _manifest_entry_to_dict(entry) -> dict[str, Any]:
@@ -124,7 +124,7 @@ def _paper_id_from_hit(hit) -> str:
 
 def _hit_specific_to_topic(topic: str, pack: TopicPack, hit) -> bool:
     text = " ".join(str(getattr(hit, attr, "") or "") for attr in ("title", "abstract", "venue"))
-    return is_source_topic_specific(topic, text, aliases=pack.aliases)
+    return is_source_topic_specific(topic, text, aliases=source_gate_aliases(topic, pack.aliases))
 
 
 def _parsed_paths_for_pmcid(parsed_dir: Path, pmcid: str) -> list[Path]:

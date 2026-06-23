@@ -123,6 +123,31 @@ def test_age_clock_topics_reject_broad_omics_without_age_clock_context() -> None
     )
 
 
+def test_age_clock_source_gate_drops_broad_platform_aliases() -> None:
+    aliases = source_gate_aliases(
+        "plasma_proteomic_age_clocks",
+        (
+            "plasma proteomic age clocks",
+            "plasma proteomics",
+            "proteomic aging clock",
+            "blood protein age",
+        ),
+    )
+
+    assert "plasma proteomics" not in aliases
+    assert "proteomic aging clock" in aliases
+    assert not is_source_topic_specific(
+        "plasma_proteomic_age_clocks",
+        "Plasma Proteomics Identifies Potential Pancreatic Cancer Risk Indicators in Type 2 Diabetes",
+        aliases=aliases,
+    )
+    assert is_source_topic_specific(
+        "plasma_proteomic_age_clocks",
+        "A plasma proteomic age clock for multimorbidity risk in older adults",
+        aliases=aliases,
+    )
+
+
 def test_generated_pack_publishable_uses_structural_specificity() -> None:
     assert generated_pack_publishable({
         "candidate_count": 12,

@@ -5,6 +5,7 @@ import json
 import sys
 from pathlib import Path
 from types import SimpleNamespace
+from typing import Any, cast
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import seed_topic_corpus as seed  # type: ignore[import-not-found]  # noqa: E402
@@ -107,6 +108,29 @@ def test_abstract_fallback_skips_hits_without_abstract(tmp_path):
     )
     assert seed._write_abstract_fallback(hit, tmp_path, reason="x") is None
     assert list(tmp_path.iterdir()) == []
+
+
+def test_hit_specific_to_topic_uses_source_gate_aliases() -> None:
+    pack = cast(Any, SimpleNamespace(
+        aliases=(
+            "plasma proteomic age clocks",
+            "plasma proteomics",
+            "proteomic aging clock",
+        ),
+    ))
+    drift_hit = SimpleNamespace(
+        title="Plasma Proteomics Identifies Potential Pancreatic Cancer Risk Indicators in Type 2 Diabetes",
+        abstract="",
+        venue="",
+    )
+    direct_hit = SimpleNamespace(
+        title="A plasma proteomic age clock for multimorbidity risk in older adults",
+        abstract="",
+        venue="",
+    )
+
+    assert not seed._hit_specific_to_topic("plasma_proteomic_age_clocks", pack, drift_hit)
+    assert seed._hit_specific_to_topic("plasma_proteomic_age_clocks", pack, direct_hit)
 
 
 def test_docling_fallback_can_replace_abstract_fallback(tmp_path, monkeypatch):

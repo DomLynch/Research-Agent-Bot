@@ -94,18 +94,11 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
     admission. A source-gate alias must overlap the topic text itself.
     """
     topic_text = " ".join(topic.replace("_", " ").replace("-", " ").lower().split())
-    topic_raw_tokens = {
-        _specificity_token(token) for token in re.findall(r"[a-z0-9]+", topic_text)
-        if len(token) > 2 and token not in TOPIC_STOPWORDS
-    }
+    topic_raw_tokens = _gate_tokens(topic_text)
     raw_aliases = [str(alias or "").strip() for alias in aliases]
     acronym_aliases: set[str] = set()
     for phrase in (topic_text, *raw_aliases):
-        phrase_tokens = [
-            _specificity_token(token)
-            for token in re.findall(r"[a-z0-9]+", phrase.replace("_", " ").replace("-", " ").lower())
-            if len(token) > 2 and token not in TOPIC_STOPWORDS
-        ]
+        phrase_tokens = list(_gate_tokens(phrase))
         if len(phrase_tokens) >= 2:
             acronym_aliases.add("".join(token[0] for token in phrase_tokens))
     out: list[str] = []
@@ -114,10 +107,7 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
         norm = " ".join(raw.replace("_", " ").replace("-", " ").lower().split())
         if not norm:
             continue
-        alias_tokens = {
-            _specificity_token(token) for token in re.findall(r"[a-z0-9]+", norm)
-            if len(token) > 2 and token not in TOPIC_STOPWORDS
-        }
+        alias_tokens = _gate_tokens(norm)
         acronym_alias = norm in acronym_aliases or bool(re.fullmatch(r"[A-Z0-9]{2,8}", raw))
         if (
             len(topic_raw_tokens) > 1
@@ -125,17 +115,31 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
             and not acronym_alias
         ):
             continue
+        overlap = len(topic_raw_tokens & alias_tokens)
         min_overlap = 2 if len(topic_raw_tokens) >= 3 else 1
+        enough_topic_coverage = (
+            len(topic_raw_tokens) < 4
+            or overlap / max(1, len(topic_raw_tokens)) >= 0.75
+        )
         if (
             acronym_alias
             or norm in topic_text
             or topic_text in norm
-            or len(topic_raw_tokens & alias_tokens) >= min_overlap
+            or (overlap >= min_overlap and enough_topic_coverage)
         ):
             if norm not in seen:
                 seen.add(norm)
                 out.append(raw)
     return tuple(out)
+
+
+def _gate_tokens(text: str) -> set[str]:
+    return {
+        norm
+        for token in re.findall(r"[a-z0-9]+", str(text).replace("_", " ").replace("-", " ").lower())
+        for norm in [_specificity_token(token)]
+        if len(norm) > 2 and norm not in TOPIC_STOPWORDS
+    }
 
 
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
