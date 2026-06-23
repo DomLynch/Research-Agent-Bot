@@ -442,8 +442,7 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
 # domain-specific knowledge).
 _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "cycle_budget_exhausted", "current_run_not_submitted",
-                                  "synthesis_failed", "synthesis_timeout", "terminal_surface_repeat",
-                                  "final_status_not_ready"})
+                                  "synthesis_failed", "synthesis_timeout", "terminal_surface_repeat"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus",
                                         "receipt_preflight_insufficient"})
@@ -1335,6 +1334,7 @@ def _failure_class(status: str) -> str:
     return {
         "journal_surface_not_passed": "A_compiler_fixable",
         "journal_surface_failed": "A_compiler_fixable",
+        "final_status_not_ready": "A_compiler_fixable",
         "final_verdict_not_aaa": "A_compiler_fixable",
         "pre_submit_not_passed": "A_compiler_fixable",
         "audit_not_all_green": "C_writer_fixable",

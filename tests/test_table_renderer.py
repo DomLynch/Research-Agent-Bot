@@ -652,6 +652,17 @@ def test_public_evidence_snapshot_exposes_classification_criteria_and_mapping() 
     assert "\n|" not in md
 
 
+def test_source_classification_map_uses_body_citation_label() -> None:
+    receipt = _FakeReceipt(receipt_id="Uhlig-Reche 2025")
+    setattr(receipt, "source_title", "The Effect of Eight Weeks of Passive Heat Therapy")
+
+    md = tr.render_public_evidence_snapshot([receipt])
+    source_map = md.split("### Source Classification Map", 1)[1]
+
+    assert "Uhlig-Reche 2025: outcome=longevity" in source_map
+    assert "The Effect of Eight Weeks" not in source_map
+
+
 def test_public_evidence_snapshot_hides_low_fill_included_studies_preview() -> None:
     receipts = [
         _FakeReceipt(
