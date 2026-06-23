@@ -1467,6 +1467,30 @@ def test_deterministic_unmet_accepts_single_source_map_caveats() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_combination_product_positive_signal_boundary() -> None:
+    ask = (
+        "Reclassify or re-label the 'immune and inflammation positive signal' as a "
+        "combination-product signal, not a spermidine-monotherapy signal; add a single "
+        "sentence in the Findings Map table and Results Summary flagging that the 2/3 "
+        "positive sources include one combination-product RCT and one preclinical GWI "
+        "mouse model."
+    )
+    paper = (
+        "## Results Summary\n\n"
+        "The Felix 2024 RCT used a combination product containing spermidine and "
+        "hesperidin, so its positive immune/inflammation findings cannot be attributed "
+        "to spermidine monotherapy. Trivedi 2026 is a Gulf War Illness mouse model and "
+        "is therefore not a human clinical confirmation.\n"
+    )
+    weak = (
+        "## Results Summary\n\n"
+        "The immune and inflammation outcome class contains positive spermidine signals.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+
+
 def test_deterministic_unmet_accepts_external_references_marked_illustrative() -> None:
     ask = (
         "Mark external non-corpus references (e.g. Ioannidis 2005) as illustrative "

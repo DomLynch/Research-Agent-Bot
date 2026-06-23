@@ -141,6 +141,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_citation_traceability_map,
             _asks_source_verification_transparency,
             _asks_section_source_grounding,
+            _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
             _asks_rct_count_reconciliation,
             _asks_unbacked_appraisal_names,
@@ -208,6 +209,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
         return _section_source_grounding_is_stated(paper_md)
+    if _asks_combination_product_signal_boundary(lower):
+        return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
         return _substantive_evidence_synthesis_is_stated(paper_md)
     if _asks_rct_count_reconciliation(lower):
@@ -366,6 +369,38 @@ def _asks_substantive_evidence_synthesis(text: str) -> bool:
             and any(token in text for token in ("positive", "negative", "mixed", "substantive", "findings"))
         )
     )
+
+
+def _asks_combination_product_signal_boundary(text: str) -> bool:
+    return (
+        any(token in text for token in ("combination-product", "combination product", "monotherapy"))
+        and any(token in text for token in ("positive signal", "positive sources", "positive findings"))
+        and any(token in text for token in ("mouse model", "preclinical", "not human", "not a human"))
+    )
+
+
+def _combination_product_signal_boundary_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    combination = "combination product" in text or "combination-product" in text
+    no_monotherapy_attribution = any(
+        token in text for token in (
+            "cannot be attributed to spermidine monotherapy",
+            "not be attributed to spermidine monotherapy",
+            "not a spermidine-monotherapy signal",
+            "not a spermidine monotherapy signal",
+            "not spermidine-specific",
+        )
+    )
+    preclinical_boundary = any(
+        token in text for token in (
+            "mouse model",
+            "preclinical",
+            "not a human clinical confirmation",
+            "not human clinical confirmation",
+            "non-human",
+        )
+    )
+    return combination and no_monotherapy_attribution and preclinical_boundary
 
 
 def _asks_rct_count_reconciliation(text: str) -> bool:
