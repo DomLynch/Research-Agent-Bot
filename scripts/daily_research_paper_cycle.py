@@ -2348,6 +2348,7 @@ def run_cycle(
         if writer_gate_policy:
             ledger["writer_gate_repeat_policy"] = writer_gate_policy
         submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+        published_topics = _published_topics(topics, remote_seen, ledger_dir)
         corpus_repaired_ok: set[str] = set()
         source_precision_repaired_ok: set[str] = set()
         source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
@@ -2384,6 +2385,7 @@ def run_cycle(
                 candidate not in current_source_precision
                 and candidate not in terminal_excluded
                 and candidate not in submitted_topics
+                and candidate not in published_topics
                 and candidate not in pending_revision_excluded
                 and candidate not in surface_repeat
                 and candidate not in preflight_blocked

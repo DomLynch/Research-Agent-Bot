@@ -946,6 +946,7 @@ def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path
 
 def test_fresh_lane_does_not_auto_exclude_unattempted_source_precision_backlog(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_failed_repair", corpus=False)
+    _topic(tmp_path, "clean_published")
     _topic(tmp_path, "ready_cached")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
@@ -954,6 +955,7 @@ def test_fresh_lane_does_not_auto_exclude_unattempted_source_precision_backlog(t
         "aaa_failed_repair",
         "ready_cached",
     })
+    monkeypatch.setattr(cycle, "_published_topics", lambda *_a, **_k: {"clean_published"})
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
         False, "source_topic_precision_low:0/10<0.80", [],
