@@ -2385,6 +2385,10 @@ def run_cycle(
                 and candidate not in terminal_excluded
                 and candidate not in submitted_topics
                 and candidate not in pending_revision_excluded
+                and candidate not in surface_repeat
+                and candidate not in preflight_blocked
+                and candidate not in writer_gate_skip
+                and candidate not in source_precision_auto_excluded
                 and _quant_claim_count(candidate) >= PREFLIGHT_MIN_QUANT_CLAIMS
                 for candidate in topics
             )
