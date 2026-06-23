@@ -32,6 +32,21 @@ def _words(token: str, count: int) -> str:
     return " ".join([token] * count)
 
 
+def test_seen_field_reads_valid_string_fields_only(tmp_path: Path) -> None:
+    ledger = tmp_path / "ledger.json"
+    _write_json(ledger, [
+        {"topic": "alpha", "run": "run-a"},
+        {"topic": "", "run": "run-b"},
+        {"topic": 123, "run": None},
+        ["not", "a", "record"],
+        {"other": "ignored"},
+    ])
+
+    assert daily._seen_field(ledger, "topic") == {"alpha"}
+    assert daily._seen_field(ledger, "run") == {"run-a", "run-b"}
+    assert daily._seen_field(tmp_path / "missing.json", "topic") == set()
+
+
 def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 5) -> Path:
     run = root / name
     run.mkdir(parents=True)
