@@ -3976,7 +3976,7 @@ async def _run_post_paper_pipeline(
             citation_registry
             and all(rid in citation_registry for rid in receipt_ids if rid)
         )
-        reviewer_patches = {"unresolved_p1_count": grok_unresolved_p1}
+        reviewer_patches = _reviewer_patches_for_gate(out_dir, grok_unresolved_p1)
         if quality_bundle is None:
             raise RuntimeError("quality_methods_bundle_missing")
         gate_artifacts = _paper_quality.write_final_quality_gates(
@@ -4312,6 +4312,18 @@ def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
     flagged = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "flagged")
     stripped = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "auto_stripped")
     return unresolved, flagged, stripped
+
+
+def _reviewer_patches_for_gate(out_dir: Path, fallback_unresolved_p1: int) -> dict[str, int]:
+    _resolve_absent_reviewer_p1s(out_dir)
+    unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
+    if not (out_dir / "debug" / "full_paper.review_patch_log.json").exists():
+        unresolved = max(0, int(fallback_unresolved_p1))
+    return {
+        "unresolved_p1_count": unresolved,
+        "flagged_p1_count": flagged,
+        "auto_stripped_count": stripped,
+    }
 
 
 def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
