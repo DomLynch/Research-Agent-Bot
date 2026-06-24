@@ -2573,6 +2573,8 @@ def run_cycle(
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
             current_source_precision = _current_low_source_precision_topics(topics)
+            if remote_revision:
+                current_source_precision.discard(str(remote_revision.get("topic") or ""))
             if current_source_precision:
                 ledger["source_precision_backlog_topics"] = sorted(current_source_precision)
                 ledger["source_precision_backlog_count"] = len(current_source_precision)
@@ -2724,6 +2726,27 @@ def run_cycle(
             else:
                 corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=child_timeout())
             ledger["corpus"] = corpus
+            source_manifest_availability = (
+                _source_manifest_availability(selected, revision_source_run)
+                if existing_source_preflight
+                else None
+            )
+            if source_manifest_availability and not source_manifest_availability.get("passed"):
+                gate_status = "terminal_revision_source_manifest_unavailable"
+                attempt = _gate_attempt(
+                    selected,
+                    out_dir,
+                    gate_status,
+                    source_manifest_availability=source_manifest_availability,
+                )
+                ledger["attempts"].append(attempt)
+                ledger["status"] = gate_status
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                if revision_source:
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    remote_revision = None
+                attempted.add(selected)
+                continue
             if corpus.get("status") not in {"corpus_ready", "corpus_seeded"}:
                 attempt = {
                     "topic": selected,
@@ -2802,6 +2825,8 @@ def run_cycle(
                     and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
                 )
             )
+            if revision_source and existing_source_preflight and not revision_source_repair:
+                source_precision_needs_repair = False
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:
                 source_repair = _repair_low_source_precision_corpus(
                     selected,

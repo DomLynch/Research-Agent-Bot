@@ -112,6 +112,11 @@ def _prior_run(root: Path, topic: str, *, receipts: int, tensions: int, primary:
         "receipts": receipts_payload,
     })
     _write_json(run / "final_status.json", {"maturity_level": level})
+    qdir = root / "docs" / "quality-reference" / topic / "quant_claims"
+    qdir.mkdir(parents=True, exist_ok=True)
+    for row in receipts_payload:
+        rid = str(row["receipt_id"])
+        _write_json(qdir / f"{rid}.quant_claims.json", {"paper_id": rid, "claims": [{"binding_confidence": "high"}]})
     return run
 
 
@@ -1508,6 +1513,8 @@ def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path,
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:57/57", []))
     calls: dict[str, Any] = {}
 
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
@@ -2483,14 +2490,23 @@ def _coverage_fake_synthesis(feedback_seen: list[str | None], paper_md: str | No
     return fake
 
 
-def _run_coverage_cycle(tmp_path: Path, monkeypatch, *, unmet, submit_cycle, max_revise_attempts=3, paper_md: str | None = None):
+def _run_coverage_cycle(
+    tmp_path: Path,
+    monkeypatch,
+    *,
+    unmet,
+    submit_cycle,
+    max_revise_attempts=3,
+    paper_md: str | None = None,
+    mode: str = "mixed",
+):
     feedback_seen: list[str | None] = []
     monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen, paper_md))
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: list(unmet))
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs", date="2026-05-28", run_synthesis=True, submit=True,
         remote_loader=lambda: (set(), None), revision_loader=_aspirin_revise_loader,
-        submit_cycle=submit_cycle, max_revise_attempts=max_revise_attempts)
+        submit_cycle=submit_cycle, max_revise_attempts=max_revise_attempts, mode=mode)
     return ledger, feedback_seen
 
 
@@ -2498,7 +2514,9 @@ def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> Non
     _seed_delayed_revise(tmp_path, monkeypatch)
     ledger, _ = _run_coverage_cycle(
         tmp_path, monkeypatch, unmet=[],
-        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        mode="revise",
+    )
     assert ledger["attempts"][0]["submitted"] == 1                    # all asks met -> submitted
     assert "unmet_revision_asks" not in ledger["attempts"][0]
     gate = json.loads((tmp_path / "runs" / ledger["attempts"][0]["out_dir"] / cycle.REVISION_COVERAGE_GATE).read_text())
@@ -2520,11 +2538,44 @@ def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch
 
     ledger, _ = _run_coverage_cycle(
         tmp_path, monkeypatch, unmet=[],
-        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        mode="revise",
+    )
 
     assert ledger["attempts"][0]["receipt_preflight"]["status"] == "receipt_preflight_existing_ok"
     assert ledger["corpus"]["source"] == "existing_source_manifest"
     assert ledger["attempts"][0]["submitted"] == 1
+
+
+def test_revise_source_manifest_drift_fails_fast_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    qdir = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims"
+    for idx in range(cycle.PREFLIGHT_MIN_RECEIPTS - 1, 57):
+        (qdir / f"r{idx}.quant_claims.json").unlink()
+    monkeypatch.setattr(
+        cycle,
+        "_run_synthesis",
+        lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("unavailable source manifest must not synthesize")),
+    )
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=_aspirin_revise_loader,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    attempt = ledger["attempts"][0]
+    assert ledger["status"] == "terminal_revision_source_manifest_unavailable"
+    assert attempt["gate_status"] == "terminal_revision_source_manifest_unavailable"
+    assert attempt["source_manifest_availability"]["n_source_receipts"] == 57
+    assert attempt["source_manifest_availability"]["n_available_quant_claim_files"] == cycle.PREFLIGHT_MIN_RECEIPTS - 1
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][0]["status"] == "terminal_revision_source_manifest_unavailable"
 
 
 def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Path, monkeypatch) -> None:
@@ -2564,6 +2615,7 @@ def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Pa
         date="2026-05-28",
         run_synthesis=True,
         submit=True,
+        mode="revise",
         remote_loader=lambda: (set(), None),
         revision_loader=_aspirin_revise_loader,
         submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
@@ -3651,6 +3703,8 @@ def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path
     _prior_run(tmp_path, "zzz_solid_topic", receipts=40, tensions=5, primary=3)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:40/40", []))
     topics: list[str] = []
 
     def fake_synthesis(
@@ -4395,6 +4449,8 @@ def test_cycle_skips_topic_after_brief_fails_same_writer_gate(tmp_path: Path, mo
     }])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:40/40", []))
     topics: list[str] = []
 
     def fake_synthesis(
