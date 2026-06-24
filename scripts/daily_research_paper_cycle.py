@@ -1848,13 +1848,21 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
         return None
     counts = _manifest_counts(source_run)
     n_receipts = int(counts.get("n_receipts") or 0)
+    n_tensions = int(counts.get("n_tensions") or 0)
+    n_primary = int(counts.get("n_primary_tier") or 0)
     min_receipts = DEFAULT_THRESHOLDS.min_receipts
-    if n_receipts < min_receipts:
+    if (
+        n_receipts < min_receipts
+        or n_tensions < PREFLIGHT_MIN_TENSIONS
+        or n_primary < PREFLIGHT_MIN_PRIMARY_TIER
+    ):
         return None
     return {
         "passed": True,
         "status": "receipt_preflight_existing_ok",
         "n_receipts": n_receipts,
+        "n_tensions": n_tensions,
+        "n_primary_tier": n_primary,
         "min_receipts": min_receipts,
     }
 
@@ -2963,14 +2971,18 @@ def run_cycle(
                 receipt_preflight = (
                     {"passed": True}
                     if existing_repair
-                    else _receipt_preflight(
+                    else _existing_receipt_preflight(revision_base_dir)
+                    if revision_source
+                    else None
+                )
+                if receipt_preflight is None:
+                    receipt_preflight = _receipt_preflight(
                         selected,
                         out_dir,
                         timeout=child_timeout(),
                         repair=True,
                         dry_run=synthesis_dry_run,
                     )
-                )
                 if not receipt_preflight.get("passed"):
                     gate_status = str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
                     if revision_source and _terminal_revision_receipt_preflight(receipt_preflight):

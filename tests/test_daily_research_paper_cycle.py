@@ -2505,6 +2505,22 @@ def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> Non
     assert gate["passed"] is True
 
 
+def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(
+        cycle,
+        "_receipt_preflight",
+        lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("revise source already passed receipt floor")),
+    )
+
+    ledger, _ = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=[],
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
+
+    assert ledger["attempts"][0]["receipt_preflight"]["status"] == "receipt_preflight_existing_ok"
+    assert ledger["attempts"][0]["submitted"] == 1
+
+
 def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     submitted: list[int] = []
