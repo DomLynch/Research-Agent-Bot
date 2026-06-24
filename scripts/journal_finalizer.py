@@ -114,6 +114,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_rct_count_reconciliation(t, out_dir),
         lambda t: _phase_d_unbacked_appraisal_names(t, out_dir),
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
+        lambda t: _phase_d_species_study_design_summary(t, out_dir),
         lambda t: _phase_d_source_outcome_class_map(t, out_dir),
         lambda t: _phase_d_tensions_and_gaps_breadth(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
@@ -1866,6 +1867,82 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
             "operationalize", "directly study", "directly addresses",
         ))
     )
+
+
+def _phase_d_species_study_design_summary(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_species_study_design_summary(feedback):
+        return text, []
+    if "species and study-design summary" in text.lower() or "species and study design summary" in text.lower():
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else []
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    buckets: dict[tuple[str, str, str], list[str]] = {}
+    for row in rows:
+        label, signal, boundary = _species_study_design_bucket(row)
+        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        title = _table_cell(str(row.get("source_title") or "").strip())
+        example = citation if not title else f"{citation}: {title[:80]}"
+        buckets.setdefault((label, signal, boundary), []).append(example)
+    table_rows = [
+        "### Species and Study-Design Summary",
+        "",
+        "| Evidence group | Study-design signal | n | Example source(s) | Interpretation boundary |",
+        "|---|---|---:|---|---|",
+    ]
+    for (label, signal, boundary), examples in sorted(buckets.items(), key=lambda item: (-len(item[1]), item[0][0])):
+        n = len(examples)
+        table_rows.append(
+            f"| {label} n={n} | {signal} | {n} | "
+            f"{_table_cell('; '.join(examples[:3]))} | {boundary} |"
+        )
+    paragraph = "\n".join(table_rows)
+    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", paragraph)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_species_study_design_summary",
+        rule="insert_species_study_design_summary_table",
+        n_changes=1,
+        detail=f"added species/study-design summary for {len(rows)} manifest receipt(s)",
+    )]
+
+
+def _revision_asks_species_study_design_summary(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "species" in lower
+        and ("study design" in lower or "study-design" in lower)
+        and "summary table" in lower
+    )
+
+
+def _species_study_design_bucket(row: dict[str, Any]) -> tuple[str, str, str]:
+    title = str(row.get("source_title") or "").lower()
+    directness = str(row.get("directness") or "").lower()
+    if any(token in title for token in ("systematic review", "meta-analysis", "review")):
+        return ("Review/mixed-source", "evidence synthesis", "Review-level rows bound context and cannot be counted as primary direct evidence.")
+    if re.search(r"\b(rat|rats|mouse|mice|murine|rodent)\b", title):
+        return ("Preclinical rodent", "animal/preclinical experiment", "Preclinical rows support mechanism only; they do not establish human efficacy.")
+    if any(token in title for token in ("human", "patient", "patients", "participant", "participants", "donor", "clinical", "parkinson")):
+        if any(token in title for token in ("randomized", "trial", "placebo", "intervention", "safety", "tolerability")):
+            return ("Human", "clinical trial/intervention or safety cohort", "Human rows bound clinical interpretation but do not prove broad geroprotection without hard-endpoint follow-up.")
+        return ("Human", "observational/donor or cohort evidence", "Human observational rows are interpreted as association or feasibility evidence.")
+    if any(token in title for token in ("cell", "cells", "in vitro", "organoid")):
+        return ("Cell/in vitro", "cell or ex vivo model", "Cell-model rows are mechanistic context, not organism-level efficacy evidence.")
+    if "mechanistic" in directness or "model" in directness:
+        return ("Mechanistic/model-system", "mechanistic model", "Mechanistic rows explain plausibility but do not establish outcome efficacy.")
+    return ("Other/unclear species", "unclear or mixed design", "Unclear rows are retained only as bounded contextual evidence.")
+
+
+def _table_cell(value: str) -> str:
+    return re.sub(r"\s+", " ", value).replace("|", "/").strip()
 
 
 def _phase_d_source_outcome_class_map(
