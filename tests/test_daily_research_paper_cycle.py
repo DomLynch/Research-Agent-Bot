@@ -1304,6 +1304,74 @@ def test_revise_timeout_on_final_attempt_skips_active_review_only(tmp_path: Path
     assert pending and pending["artifactId"] == "taurine-review-2"
 
 
+def test_revise_lane_does_not_start_full_retry_without_budget(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "taurine", target_journal=True)
+    source = _prior_run(tmp_path, "taurine", receipts=67, tensions=727, primary=1, level=5)
+    title = "Hypothesis-Generating Brief: Taurine supplementation — full paper"
+    paper = source / "full_paper.md"
+    paper.write_text(f"# {title}\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": "taurine",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "source_topic_precision_ok:67/67", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_preflight", lambda *_a, **_k: {
+        "passed": True,
+        "has_manifest": True,
+        "n_receipts": 67,
+        "n_tensions": 727,
+        "n_primary_tier": 1,
+    })
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda *_a, **_k: ["define the non-orthogonal tension count"])
+    now = [0.0]
+    calls = 0
+
+    def fake_synthesis(_topic_name: str, out_dir: Path, **_kwargs: Any) -> int:
+        nonlocal calls
+        calls += 1
+        assert calls == 1, "second full rerender should be skipped when budget is too low"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / "full_paper.md").write_text("# revised\n", encoding="utf-8")
+        now[0] = 1301.0
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    request = {
+        "artifactId": "taurine-review",
+        "title": title,
+        "feedback": "Define and operationalize the dense evidence-map tension figure.",
+        "reviewedAt": (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat(),
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-24",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([dict(request)], None),
+        submit_cycle=lambda **_kwargs: (_ for _ in ()).throw(AssertionError("unmet revise must not submit")),
+        ensure_corpus=lambda *_a, **_k: {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS},
+        max_revise_attempts=2,
+        cycle_budget_seconds=2400,
+        clock=lambda: now[0],
+    )
+
+    assert calls == 1
+    assert ledger["status"] == "terminal_revise_retry_budget_insufficient"
+    assert ledger["attempts"][0]["gate_status"] == "revision_coverage_unmet"
+    assert ledger["attempts"][1]["gate_status"] == "terminal_revise_retry_budget_insufficient"
+    assert ledger["attempts"][1]["remaining_budget_seconds"] == 1099
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][-1]["status"] == "terminal_revise_retry_budget_insufficient"
+
+
 def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "new_topic", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

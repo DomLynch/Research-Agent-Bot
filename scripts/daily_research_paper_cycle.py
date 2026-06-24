@@ -75,6 +75,7 @@ REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
+MIN_REVISE_RETRY_BUDGET_SECONDS = 1200
 SYNTHESIS_TIMEOUT_RETURN_CODE = 124
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
 FRAME_MIN_FULL_SCORE = 0.65
@@ -91,6 +92,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_source_precision_repair_incomplete",
 })
 _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
+    "terminal_revise_retry_budget_insufficient",
     "terminal_synthesis_timeout",
 })
 
@@ -1364,6 +1366,7 @@ def _failure_class(status: str) -> str:
         "terminal_surface_repeat": "D_no_action",
         "terminal_source_precision_repair_incomplete": "D_no_action",
         "terminal_receipt_preflight_insufficient": "D_no_action",
+        "terminal_revise_retry_budget_insufficient": "D_no_action",
         "terminal_synthesis_timeout": "D_no_action",
     }.get(code, "unknown")
 
@@ -1666,6 +1669,13 @@ def _remaining_timeout(
         remaining = int(cycle_budget_seconds - (clock() - started_mono))
         limits.append(max(1, remaining))
     return min(limits) if limits else None
+
+
+def _insufficient_revise_retry_budget(remaining: int | None, cycle_budget_seconds: int) -> bool:
+    if remaining is None or cycle_budget_seconds <= 0:
+        return False
+    floor = min(MIN_REVISE_RETRY_BUDGET_SECONDS, max(1, cycle_budget_seconds // 2))
+    return remaining < floor
 
 
 def _run_synthesis(
@@ -2823,6 +2833,29 @@ def run_cycle(
                 repair_reason = ""
                 if revise_attempt > 1 and last_attempt and revision_base_dir:
                     repair_reason = _repair_reason_for_retry(revision_base_dir, last_attempt)
+                retry_budget = child_timeout()
+                if (
+                    revision_source
+                    and revise_attempt > 1
+                    and revision_feedback
+                    and not repair_reason
+                    and _insufficient_revise_retry_budget(retry_budget, cycle_budget_seconds)
+                ):
+                    gate_status = "terminal_revise_retry_budget_insufficient"
+                    attempt = _gate_attempt(
+                        selected,
+                        out_dir,
+                        gate_status,
+                        revise_attempt=revise_attempt,
+                        remaining_budget_seconds=retry_budget,
+                    )
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = gate_status
+                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    remote_revision = None
+                    attempted.add(selected)
+                    break
                 feedback_applied = bool(revision_feedback)
                 # Researka content revises carry reviewer feedback that must reach the
                 # feedback-aware writer (_run_synthesis injects RESEARKA_REVISION_FEEDBACK);
