@@ -2273,6 +2273,24 @@ def _source_precision_attempt(
     return attempt
 
 
+def _gate_attempt(
+    topic: str,
+    out_dir: Path,
+    gate_status: str,
+    **extra: Any,
+) -> dict[str, Any]:
+    return {
+        "topic": topic,
+        "out_dir": out_dir.name,
+        "synthesis_return_code": None,
+        "submit_status": gate_status,
+        "gate_status": gate_status,
+        "failure_class": _failure_class(gate_status),
+        "submitted": 0,
+        **extra,
+    }
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -2539,15 +2557,7 @@ def run_cycle(
             # cannot be fixed by re-rendering — mark it terminal so it stops
             # monopolising revise slots instead of re-synthesising every cycle.
             if revision_source and selected in surface_repeat:
-                attempt: dict[str, Any] = {
-                    "topic": selected,
-                    "out_dir": out_dir.name,
-                    "synthesis_return_code": None,
-                    "submit_status": "terminal_surface_repeat",
-                    "gate_status": "terminal_surface_repeat",
-                    "failure_class": _failure_class("terminal_surface_repeat"),
-                    "submitted": 0,
-                }
+                attempt = _gate_attempt(selected, out_dir, "terminal_surface_repeat")
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "revise_terminal_surface_repeat"
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
@@ -2557,15 +2567,7 @@ def run_cycle(
                 continue
             if revision_source and selected in _unrepairable_source_precision_topics(ledger_dir):
                 gate_status = "terminal_source_precision_repair_incomplete"
-                attempt = {
-                    "topic": selected,
-                    "out_dir": out_dir.name,
-                    "synthesis_return_code": None,
-                    "submit_status": gate_status,
-                    "gate_status": gate_status,
-                    "failure_class": _failure_class(gate_status),
-                    "submitted": 0,
-                }
+                attempt = _gate_attempt(selected, out_dir, gate_status)
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "revise_terminal_source_precision_repair_incomplete"
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
@@ -2856,17 +2858,13 @@ def run_cycle(
                     gate_status = str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
                     if revision_source and _terminal_revision_receipt_preflight(receipt_preflight):
                         gate_status = "terminal_receipt_preflight_insufficient"
-                    attempt = {
-                        "topic": selected,
-                        "out_dir": out_dir.name,
-                        "revise_attempt": revise_attempt,
-                        "synthesis_return_code": None,
-                        "submit_status": gate_status,
-                        "gate_status": gate_status,
-                        "failure_class": _failure_class(gate_status),
-                        "submitted": 0,
-                        "receipt_preflight": receipt_preflight,
-                    }
+                    attempt = _gate_attempt(
+                        selected,
+                        out_dir,
+                        gate_status,
+                        revise_attempt=revise_attempt,
+                        receipt_preflight=receipt_preflight,
+                    )
                     ledger["attempts"].append(attempt)
                     ledger["status"] = (
                         "revise_terminal_receipt_preflight_insufficient"
