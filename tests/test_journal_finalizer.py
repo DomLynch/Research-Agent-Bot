@@ -2567,7 +2567,10 @@ def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: 
     before = verify_run_artifacts(tmp_path)
     assert any(c.name == "citation_registry_coverage" and not c.passed for c in before.checks)
 
-    assert journal_finalizer._restore_registry_references(tmp_path) is True
+    log = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
+    rules = [entry.rule for entry in log]
+    assert "restore_registry_references_post_finalizer" in rules
+    assert "close_restored_registry_references" in rules
 
     paper = (tmp_path / "full_paper.md").read_text(encoding="utf-8")
     assert "**Passive Heat Therapy 2023.**" in paper
@@ -2575,5 +2578,8 @@ def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: 
     assert "**Uhlig-Reche 2025.**" in paper
     assert "DOI: 10.3390/jcm14103566." in paper
     assert "PMID: 40429561." in paper
+    assert "Additional corpus sources informed the synthesis" in paper
+    from agent.journal_surface_gate import evaluate_journal_surface
+    assert not any(i.code == "citation_artifact" for i in evaluate_journal_surface(paper).issues)
     after = verify_run_artifacts(tmp_path)
     assert after.passed is True
