@@ -462,6 +462,7 @@ _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_em
                                         "receipt_preflight_insufficient"})
 _SOURCE_PRECISION_STATUS = "source_topic_precision_low"
 _CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited", _SOURCE_PRECISION_STATUS}
+_NO_AUTO_RETRY_STATUSES = frozenset({"journal_surface_failed", "journal_surface_not_passed"})
 
 
 def _surface_ready_after(topic: str, runs_root: Path | None, failure_at: dt.datetime) -> bool:
@@ -1957,8 +1958,11 @@ def _submit_current_candidate(
     return bridge
 
 
-def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
+def _should_retry_same_topic(attempt: dict[str, Any], *, auto_selected: bool = True) -> bool:
     if int(attempt.get("submitted") or 0):
+        return False
+    status = str(attempt.get("gate_status") or attempt.get("submit_status") or "").split(":", 1)[0]
+    if auto_selected and status in _NO_AUTO_RETRY_STATUSES:
         return False
     if str(attempt.get("failure_class") or "").startswith(("B_", "D_")):
         return False
@@ -3184,7 +3188,7 @@ def run_cycle(
                     same_topic_retries >= 2
                     or same_gate_failures >= 2
                     or revise_attempt >= max(1, max_revise_attempts)
-                    or not _should_retry_same_topic(attempt)
+                    or not _should_retry_same_topic(attempt, auto_selected=topic is None and not revision_source)
                 ):
                     break
             if ledger["status"] == "cycle_budget_exhausted":
