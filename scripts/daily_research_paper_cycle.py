@@ -502,7 +502,8 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
 # domain-specific knowledge).
 _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "cycle_budget_exhausted", "current_run_not_submitted",
-                                  "synthesis_failed", "synthesis_timeout", "terminal_surface_repeat"})
+                                  "synthesis_failed", "synthesis_timeout", "terminal_synthesis_timeout",
+                                  "terminal_surface_repeat"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus",
                                         "receipt_preflight_insufficient"})
@@ -1471,6 +1472,8 @@ def _paper_strategy(corpus: dict[str, Any], preflight: dict[str, Any], revision_
 
 def _failure_class(status: str) -> str:
     code = status.split(":", 1)[0]
+    if code in _TERMINAL_REVISION_STATUSES or code in _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES:
+        return "D_no_action"
     return {
         "journal_surface_not_passed": "A_compiler_fixable",
         "journal_surface_failed": "A_compiler_fixable",
@@ -1495,18 +1498,7 @@ def _failure_class(status: str) -> str:
         "corpus_seed_failed": "B_corpus_fixable",
         "receipt_preflight_insufficient": "B_corpus_fixable",
         "missing": "C_writer_fixable",
-        "duplicate_submission_fingerprint": "D_no_action",
-        "duplicate_remote_publication": "D_no_action",
-        "researka_revision_fingerprint": "D_no_action",
-        "research_revision_fingerprint": "D_no_action",
         "superseded_topic_run": "D_no_action",
-        "terminal_surface_repeat": "D_no_action",
-        "terminal_source_precision_repair_incomplete": "D_no_action",
-        "terminal_receipt_preflight_insufficient": "D_no_action",
-        "terminal_domain_scope_mismatch": "D_no_action",
-        "terminal_latest_run_missing_manifest": "D_no_action",
-        "terminal_revise_retry_budget_insufficient": "D_no_action",
-        "terminal_revision_source_manifest_unavailable": "D_no_action",
         "terminal_synthesis_timeout": "D_no_action",
     }.get(code, "unknown")
 
