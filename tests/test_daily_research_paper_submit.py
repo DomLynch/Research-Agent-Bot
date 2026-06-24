@@ -108,6 +108,55 @@ def test_dry_run_selects_eligible_research_paper(tmp_path: Path) -> None:
     assert (tmp_path / daily.LEDGER_DIR / "2026-05-23.json").exists()
 
 
+def test_select_candidate_skips_submitted_run_before_expensive_eligibility(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "topic",
+        "fingerprint": "sha256:previous",
+    }])
+    monkeypatch.setattr(
+        daily,
+        "_eligible",
+        lambda _run: (_ for _ in ()).throw(AssertionError("duplicate run should skip eligibility")),
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "duplicate_submission_run"
+
+
+def test_select_candidate_skips_pending_topic_before_expensive_eligibility(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _run(tmp_path)
+    _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "topic": "topic",
+        "fingerprint": "sha256:previous",
+    }])
+    monkeypatch.setattr(
+        daily,
+        "_eligible",
+        lambda _run: (_ for _ in ()).throw(AssertionError("pending topic should skip eligibility")),
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "topic_already_submitted_pending"
+
+
 def test_pre_submit_corpus_floor_returns_specific_blocker(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(run / "pre_submit_gate.json", {

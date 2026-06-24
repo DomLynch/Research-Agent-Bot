@@ -880,6 +880,19 @@ def select_candidate(
         title_mark = _title_marker(_paper_title(paper))
         markers = {paper_sha, f"sha256:{paper_sha}", title_mark} if paper_sha else set()
         revision = bool(_read_json(run / "researka_revision_request.json"))
+        if topic in seen_topics:
+            considered.append({"run": run.name, "fingerprint": paper_sha, "status": "superseded_topic_run"})
+            continue
+        if run.name in submitted_runs:
+            considered.append({"run": run.name, "fingerprint": paper_sha, "status": "duplicate_submission_run"})
+            continue
+        if (
+            topic in submitted_topics
+            and topic not in revision_topics
+            and not revision
+        ):
+            considered.append({"run": run.name, "fingerprint": paper_sha, "status": "topic_already_submitted_pending"})
+            continue
         locally_eligible, status = _eligible(run)
         ok = locally_eligible
         payload = build_payload(run) if locally_eligible else {}
@@ -897,11 +910,7 @@ def select_candidate(
         fp = _payload_fingerprint(payload) if locally_eligible else paper_sha
         if locally_eligible:
             markers.update(_metadata_markers(metadata))
-        if topic in seen_topics:
-            ok, status = False, "superseded_topic_run"
-        elif ok and run.name in submitted_runs:
-            ok, status = False, "duplicate_submission_run"
-        elif ok and fp in rejected_seen:
+        if ok and fp in rejected_seen:
             ok, status = False, "researka_rejected_fingerprint"
         elif ok and fp in revision_seen:
             ok, status = False, "researka_revision_fingerprint"
@@ -919,18 +928,6 @@ def select_candidate(
             # lane explicitly hands us that candidate. The generic submit sweep
             # must not resurrect stale revision_request files for public papers.
             ok, status = False, "duplicate_remote_publication"
-        elif (
-            ok
-            and topic in submitted_topics
-            and topic not in revision_topics
-            and not revision
-        ):
-            # Already submitted to Researka and still pending (not published,
-            # not revise-requested): a re-synthesized run carries a fresh
-            # fingerprint so the content checks above miss it, but Researka
-            # dedups on the pending submission and returns duplicate_submission.
-            # Skip it so the cycle spends the window on a genuinely new topic.
-            ok, status = False, "topic_already_submitted_pending"
         if locally_eligible:
             seen_topics.add(topic)
         row = {"run": run.name, "fingerprint": fp, "status": status}
