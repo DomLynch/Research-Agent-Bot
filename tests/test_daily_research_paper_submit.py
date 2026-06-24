@@ -248,6 +248,55 @@ def test_select_candidate_skips_old_revision_coverage_failure_before_expensive_e
     assert considered[0]["status"] == "revision_coverage_unmet"
 
 
+def test_select_candidate_refreshes_old_satisfied_revision_coverage_before_skip(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    ask = (
+        "Expand the Tensions and Gaps section to enumerate the cross-study contradictions "
+        "actually discussed in the body rather than restating a generic call for future trials."
+    )
+    (run / "full_paper.md").write_text(
+        "# Research Synthesis: Topic\n\n"
+        "## Evidence Landscape\n\n"
+        "The source map bounds the synthesis.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
+        "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in Cardiometabolic because directions are positive versus null.\n"
+        "- Patel 2023 vs Chen 2022: surfaced tension/disagreement in Immune because directions are mixed versus negative.\n"
+        "- Lee 2021 vs Rao 2020: surfaced tension/disagreement in Safety because directions are unclear versus null.\n",
+        encoding="utf-8",
+    )
+    _write_json(run / "researka_revision_request.json", {"feedback": ask})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
+    old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
+    os.utime(run, (old, old))
+
+    calls: list[Path] = []
+
+    def fake_eligible(path: Path) -> tuple[bool, str]:
+        calls.append(path)
+        return True, "eligible"
+
+    monkeypatch.setattr(daily, "_eligible", fake_eligible)
+    monkeypatch.setattr(daily, "build_payload", lambda _run: {"metadata": {}, "source_bundle": []})
+    monkeypatch.setattr(daily, "_null_coding_audit_status", lambda _payload, _manifest: "eligible")
+    monkeypatch.setattr(daily, "_recency_ratio_status", lambda _payload: "eligible")
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected == run
+    assert considered[0]["status"] == "eligible"
+    assert calls == [run]
+    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
+    assert gate["passed"] is True
+    assert gate["unmet_asks"] == []
+
+
 def test_select_candidate_caps_recent_self_heal_attempts(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
