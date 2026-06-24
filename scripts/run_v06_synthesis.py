@@ -4315,7 +4315,8 @@ def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
 
 
 def _reviewer_patches_for_gate(out_dir: Path, fallback_unresolved_p1: int) -> dict[str, int]:
-    _resolve_absent_reviewer_p1s(out_dir)
+    if _resolve_absent_reviewer_p1s(out_dir):
+        _refresh_post_finalizer_verdict(out_dir)
     unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
     if not (out_dir / "debug" / "full_paper.review_patch_log.json").exists():
         unresolved = max(0, int(fallback_unresolved_p1))
