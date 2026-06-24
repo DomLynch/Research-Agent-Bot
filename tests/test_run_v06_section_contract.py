@@ -724,6 +724,17 @@ def test_stage_5c_repairs_abstract_before_surface_gate() -> None:
     )
 
 
+def test_stage_5_runs_finalizer_before_surface_gate() -> None:
+    source = Path(orch.__file__).read_text(encoding="utf-8")
+    stage = source.split("# Stage 5: Final audit + UNIFIED verdict", 1)[1]
+    stage = stage.split("# Stage 5b:", 1)[0]
+    assert (
+        stage.index("_apply_abstract_claim_strength_repair")
+        < stage.index("finalize_run")
+        < stage.index("evaluate_journal_surface")
+    )
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (

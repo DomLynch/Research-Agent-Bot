@@ -3720,6 +3720,17 @@ async def _run_post_paper_pipeline(
             json.dumps(_refix_log, indent=2)
         )
         paper_path.write_text(paper_md)
+
+    # Stage 5a: final-layer reviewer patches can reintroduce journal-surface
+    # issues after the first deterministic finalizer pass. Run the same
+    # compiler-owned finalizer again before the surface/pre-submit gate, then
+    # audit the post-finalizer manuscript.
+    from agent.journal_finalizer import finalize_run
+    paper_path.write_text(paper_md)
+    _stage5_finalizer_report = finalize_run(paper_path.parent)
+    if _stage5_finalizer_report.paper_changed:
+        paper_md = paper_path.read_text()
+
     audit_report = _audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)
