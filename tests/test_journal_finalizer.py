@@ -2570,7 +2570,7 @@ def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: 
     log = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
     rules = [entry.rule for entry in log]
     assert "restore_registry_references_post_finalizer" in rules
-    assert "close_restored_registry_references" in rules
+    assert "close_registry_orphan_references_post_finalizer" in rules
 
     paper = (tmp_path / "full_paper.md").read_text(encoding="utf-8")
     assert "**Passive Heat Therapy 2023.**" in paper
