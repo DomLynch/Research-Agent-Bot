@@ -1761,6 +1761,24 @@ def _receipt_preflight(
     }
 
 
+def _terminal_revision_receipt_preflight(report: Mapping[str, Any]) -> bool:
+    """A repaired revise corpus that stays severely sparse should not monopolise
+    later revise windows for the same reviewer request."""
+    if report.get("passed") or str(report.get("status") or "") != "receipt_preflight_insufficient":
+        return False
+    repairs = report.get("repairs")
+    probes = report.get("probes")
+    if not isinstance(repairs, list) or not repairs or not isinstance(probes, list) or not probes:
+        return False
+    try:
+        n_receipts = int(report.get("n_receipts") or 0)
+        min_receipts = int(report.get("min_receipts") or 0)
+        first_probe = int(probes[0].get("n_receipts") or 0) if isinstance(probes[0], dict) else 0
+    except (TypeError, ValueError):
+        return False
+    return min_receipts > 0 and n_receipts < max(1, min_receipts // 2) and n_receipts <= first_probe
+
+
 def _repair_existing_run(
     source_dir: Path,
     out_dir: Path,
