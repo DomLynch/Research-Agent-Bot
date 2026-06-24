@@ -1892,9 +1892,10 @@ def _phase_d_source_outcome_class_map(
         fallback = str(row.get("receipt_id") or "source").strip()
         citation = f"{token}: {title}" if token and title and token not in title else (token or title or fallback)
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
-        examples.append(f"- {citation}: outcome={outcome}; directness={directness}; tier={tier}.")
+        examples.append(f"- {citation}: outcome={outcome}; direction={direction}; directness={directness}; tier={tier}.")
     notes = []
     if "biomarker-positive" in feedback.lower() and "clinical-endpoint" in feedback.lower():
         notes.append(
@@ -2251,9 +2252,10 @@ def _phase_d_source_directness_breakdown(
     for row in rows[:8]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
-        examples.append(f"- {citation}: outcome={outcome}; directness={directness}; tier={tier}.")
+        examples.append(f"- {citation}: outcome={outcome}; direction={direction}; directness={directness}; tier={tier}.")
     note = (
         "Source directness breakdown: "
         f"{direct_n}/{len(rows)} retained sources directly address the stated topic and aging-relevant "

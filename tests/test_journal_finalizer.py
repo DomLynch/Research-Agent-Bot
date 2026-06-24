@@ -1226,8 +1226,8 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "### Source Outcome-Class Map" in fixed
-    assert "- Smith 2024: Clinical source one: outcome=Cardiometabolic; directness=direct; tier=A1." in fixed
-    assert "- Jones 2025: outcome=Immune and Inflammation; directness=review; tier=B1." in fixed
+    assert "- Smith 2024: Clinical source one: outcome=Cardiometabolic; direction=unclear; directness=direct; tier=A1." in fixed
+    assert "- Jones 2025: outcome=Immune and Inflammation; direction=unclear; directness=review; tier=B1." in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 
@@ -1725,8 +1725,8 @@ def test_evidence_type_note_added_when_directness_breakdown_already_exists(tmp_p
         "Source directness breakdown: 0/2 retained sources directly address the stated topic; "
         "2/2 are adjacent or review-level.\n\n"
         "### Source Classification Map\n\n"
-        "- Marco 2024: outcome=sleep; directness=review; tier=B2.\n"
-        "- Yagi 2026: outcome=contextual; directness=indirect; tier=B2.\n"
+        "- Marco 2024: outcome=sleep; direction=unclear; directness=review; tier=B2.\n"
+        "- Yagi 2026: outcome=contextual; direction=unclear; directness=indirect; tier=B2.\n"
     )
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [

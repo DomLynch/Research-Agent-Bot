@@ -523,9 +523,14 @@ def _static_ineligible_status(run: Path, *, allow_recent_repair: bool = True) ->
     pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
     if pre_submit_status != "eligible":
         return pre_submit_status
-    if _read_json(run / "researka_revision_request.json"):
+    request = _read_json(run / "researka_revision_request.json")
+    if request:
         gate = _read_json(run / REVISION_COVERAGE_GATE)
         if gate.get("passed") is False:
+            if _refresh_revision_coverage_gate(run, request):
+                gate = _read_json(run / REVISION_COVERAGE_GATE)
+            if gate.get("passed") is not False:
+                return None
             if repairable:
                 return None
             return "revision_coverage_unmet"

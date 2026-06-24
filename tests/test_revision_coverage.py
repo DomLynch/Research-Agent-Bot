@@ -1462,6 +1462,30 @@ def test_deterministic_unmet_requires_replaced_surface_tensions() -> None:
     assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
 
 
+def test_deterministic_known_accepts_auditable_tension_and_source_verdict_asks() -> None:
+    asks = [
+        "Define and operationalize the '727 non-orthogonal tensions' figure: show the calculation, restrict to verifiable within-class disagreement pairs, or remove the claim if it cannot be auditable.",
+        "Expand the Tensions and Gaps section to enumerate the cross-study contradictions actually discussed in the body rather than restating a generic call for future trials.",
+        "Provide a one-line directness/direction verdict per cited source in the Findings Map rather than collapsing to 'no extracted directional signal in X/N sources,' so readers can trace each mapped claim to its coded outcome.",
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Source directness breakdown: 1/3 retained sources directly address the stated topic and hard endpoints; "
+        "2/3 are adjacent, contextual, review-level, or mechanistic.\n\n"
+        "### Source Classification Map\n\n"
+        "- Smith 2024: outcome=cardiometabolic; direction=positive; directness=direct; tier=A1.\n"
+        "- Jones 2025: outcome=cardiometabolic; direction=null; directness=review; tier=B1.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
+        "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in Cardiometabolic because directions are positive versus null.\n"
+        "- Patel 2023 vs Chen 2022: surfaced tension/disagreement in Immune because directions are mixed versus negative.\n"
+        "- Lee 2021 vs Rao 2020: surfaced tension/disagreement in Safety because directions are unclear versus null.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
 def test_revision_asks_splits_soften_and_mark_actions() -> None:
     feedback = (
         "Expand the Tensions and Gaps section with at least 3–5 concrete tensions; "

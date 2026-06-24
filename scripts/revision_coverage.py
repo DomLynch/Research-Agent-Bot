@@ -304,6 +304,7 @@ def _asks_evidence_type_metadata(text: str) -> bool:
 def _asks_source_directness_breakdown(text: str) -> bool:
     return (
         "source directness" in text
+        or "directness/direction verdict" in text
         or (
             "source" in text
             and any(token in text for token in (
@@ -328,8 +329,11 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
 def _asks_source_outcome_class_map(text: str) -> bool:
     return (
         "source" in text
-        and "outcome class" in text
-        and any(token in text for token in ("mapping table", "mapping list", "assigned to which", "which outcome"))
+        and any(token in text for token in ("outcome class", "coded outcome", "mapped claim"))
+        and any(token in text for token in (
+            "mapping table", "mapping list", "assigned to which", "which outcome",
+            "per cited source", "trace each mapped claim",
+        ))
         and any(token in text for token in ("external verification", "evidence landscape", "bundle sources", "source bundle"))
     )
 
@@ -515,6 +519,14 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
             "tension" in text
             and "gap" in text
             and any(token in text for token in ("3-5", "3–5", "concrete", "specific sources", "tie each"))
+        )
+        or (
+            "non-orthogonal tensions" in text
+            and any(token in text for token in ("operationalize", "calculation", "verifiable", "auditable"))
+        )
+        or (
+            "cross-study contradictions" in text
+            and any(token in text for token in ("enumerate", "actually discussed", "body"))
         )
         or (
             "cross-study disagreement" in text
