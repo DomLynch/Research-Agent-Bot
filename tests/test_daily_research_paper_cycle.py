@@ -48,7 +48,17 @@ def test_fresh_lane_keeps_8h_cadence_with_larger_search_budget() -> None:
     assert "--max-attempts 6" in service
     assert "--cycle-budget-sec 10800" in service
     assert "RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300" in service
+    assert "Restart=on-failure" in service
+    assert "RestartSec=60" in service
     assert "TimeoutStartSec=14400" in service
+
+
+def test_long_running_paper_units_restart_after_signal_failures() -> None:
+    for name in ("research-agent-paper-fresh.service", "research-agent-paper-revise.service"):
+        service = (REPO / "deploy" / name).read_text(encoding="utf-8")
+        assert "Type=oneshot" in service
+        assert "Restart=on-failure" in service
+        assert "RestartSec=60" in service
 
 
 @pytest.fixture(autouse=True)

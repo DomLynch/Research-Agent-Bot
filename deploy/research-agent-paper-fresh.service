@@ -11,4 +11,6 @@ ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARCH_AGENT_CORPUS_REPAIR_LIMIT=1
 Environment=RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300
+Restart=on-failure
+RestartSec=60
 TimeoutStartSec=14400
