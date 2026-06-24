@@ -136,6 +136,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_source_classification_map,
             _asks_evidence_type_metadata,
             _asks_source_inclusion_rationale,
+            _asks_species_study_design_summary,
             _asks_source_directness_breakdown,
             _asks_source_statistics_landscape,
             _asks_citation_traceability_map,
@@ -200,6 +201,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _evidence_type_metadata_is_resolved(paper_md)
     if _asks_source_inclusion_rationale(lower):
         return _source_inclusion_rationale_is_stated(paper_md)
+    if _asks_species_study_design_summary(lower):
+        return _species_study_design_summary_is_stated(paper_md)
     if _asks_source_directness_breakdown(lower):
         return _source_directness_breakdown_is_stated(paper_md)
     if _asks_source_statistics_landscape(lower):
@@ -323,6 +326,14 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
         "source" in text
         and any(token in text for token in ("included under", "inclusion criteria", "included", "umbrella", "operationalize", "classified as addressing"))
         and any(token in text for token in ("unrelated", "general", "other digital", "non-digital", "why sources"))
+    )
+
+
+def _asks_species_study_design_summary(text: str) -> bool:
+    return (
+        "species" in text
+        and ("study design" in text or "study-design" in text)
+        and "summary table" in text
     )
 
 
@@ -776,6 +787,18 @@ def _source_inclusion_rationale_is_stated(paper_md: str) -> bool:
     return (
         any(token in scope for token in ("inclusion rationale", "topic-fit rationale", "source directness breakdown", "source classification map"))
         and any(token in scope for token in ("operationalize", "directly addresses", "adjacent", "contextual", "excluded", "reclassified"))
+    )
+
+
+def _species_study_design_summary_is_stated(paper_md: str) -> bool:
+    landscape = _section(paper_md, "Evidence Landscape")
+    lower = landscape.lower()
+    return (
+        ("species and study-design summary" in lower or "species and study design summary" in lower)
+        and "preclinical rodent n=" in lower
+        and "human n=" in lower
+        and "| evidence group |" in lower
+        and "| study-design signal |" in lower
     )
 
 

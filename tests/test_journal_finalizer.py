@@ -1638,6 +1638,45 @@ def test_tier_directness_boundary_inserts_missing_key_findings(tmp_path: Path) -
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_species_study_design_summary_repairs_revision_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the bounded geroscience claim."
+    )
+    paper = "## Evidence Landscape\n\nThe bundle is mixed.\n\n## Results\n\nEvidence remains bounded.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Parker 2020",
+            "source_title": "Human plasma transfusion safety and tolerability in Parkinson disease",
+            "directness": "direct",
+        },
+        {
+            "citation_token": "Zhao 2020",
+            "source_title": "Young plasma improves pathology in 3xTg-AD mice",
+            "directness": "mechanistic",
+        },
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_species_study_design_summary(paper, tmp_path)
+
+    assert "### Species and Study-Design Summary" in fixed
+    assert "| Human n=1 | clinical trial/intervention or safety cohort | 1 | Parker 2020" in fixed
+    assert "| Preclinical rodent n=1 | animal/preclinical experiment | 1 | Zhao 2020" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_species_study_design_summary",
+            rule="insert_species_study_design_summary_table",
+            n_changes=1,
+            detail="added species/study-design summary for 2 manifest receipt(s)",
+        )
+    ]
+
+
 def test_directional_coding_note_is_revision_scoped(tmp_path: Path) -> None:
     paper = "## Evidence Landscape\n\nNo extracted directional signal dominates.\n"
 

@@ -1514,6 +1514,30 @@ def test_revision_asks_splits_resolve_action_after_example_semicolon() -> None:
     ]
 
 
+def test_deterministic_unmet_requires_species_study_design_summary_table() -> None:
+    ask = (
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim."
+    )
+    prose_only = (
+        "## Evidence Landscape\n\n"
+        "The bundle includes preclinical rodent studies and human cohort evidence, "
+        "so species and study design are mixed.\n"
+    )
+    tabled = (
+        "## Evidence Landscape\n\n"
+        "### Species and Study-Design Summary\n\n"
+        "| Evidence group | Study-design signal | n | Example source(s) | Interpretation boundary |\n"
+        "|---|---|---:|---|---|\n"
+        "| Preclinical rodent n=12 | animal/preclinical experiment | 12 | Smith 2024 | Mechanistic only. |\n"
+        "| Human n=2 | observational/donor or cohort evidence | 2 | Parker 2020 | Association only. |\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(prose_only, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(tabled, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_single_source_map_caveats() -> None:
     ask = (
         "Soften or qualify the 'positive signal' coding for single-source slices "
