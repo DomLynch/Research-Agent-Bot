@@ -93,6 +93,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_source_precision_repair_incomplete",
 })
 _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
+    "terminal_latest_run_missing_manifest",
     "terminal_revise_retry_budget_insufficient",
 })
 _RETRYABLE_REVISION_STATUSES = frozenset({
@@ -1486,6 +1487,7 @@ def _failure_class(status: str) -> str:
         "terminal_surface_repeat": "D_no_action",
         "terminal_source_precision_repair_incomplete": "D_no_action",
         "terminal_receipt_preflight_insufficient": "D_no_action",
+        "terminal_latest_run_missing_manifest": "D_no_action",
         "terminal_revise_retry_budget_insufficient": "D_no_action",
         "terminal_revision_source_manifest_unavailable": "D_no_action",
         "terminal_synthesis_timeout": "D_no_action",
@@ -3007,18 +3009,35 @@ def run_cycle(
                 current_quant_claims=int(corpus.get("n_quant_claims") or 0),
             )
             if not preflight["passed"]:
+                terminal_missing_manifest = (
+                    revision_source is not None
+                    and "latest_run_missing_manifest" in preflight.get("reasons", [])
+                )
+                gate_status = (
+                    "terminal_latest_run_missing_manifest"
+                    if terminal_missing_manifest
+                    else "preflight_insufficient_corpus"
+                )
                 attempt = {
                     "topic": selected,
                     "out_dir": out_dir.name,
                     "synthesis_return_code": None,
-                    "submit_status": "preflight_insufficient_corpus",
-                    "failure_class": "B_corpus_fixable",
+                    "submit_status": gate_status,
+                    "gate_status": gate_status,
+                    "failure_class": _failure_class(gate_status),
                     "submitted": 0,
                     "preflight": preflight,
                 }
                 ledger["attempts"].append(attempt)
-                ledger["status"] = "preflight_skipped_no_submission"
+                ledger["status"] = (
+                    "revise_terminal_latest_run_missing_manifest"
+                    if terminal_missing_manifest
+                    else "preflight_skipped_no_submission"
+                )
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                if terminal_missing_manifest and revision_source is not None:
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    remote_revision = None
                 attempted.add(selected)
                 continue
             strategy = _paper_strategy(corpus, preflight, revision_feedback)
