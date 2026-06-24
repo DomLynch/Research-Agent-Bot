@@ -87,6 +87,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "researka_revision_fingerprint",
     "research_revision_fingerprint",
     "retracted_source_cited",
+    "terminal_revision_source_manifest_unavailable",
     "terminal_receipt_preflight_insufficient",
     "terminal_surface_repeat",
     "terminal_source_precision_repair_incomplete",
@@ -1438,6 +1439,7 @@ def _failure_class(status: str) -> str:
         "terminal_source_precision_repair_incomplete": "D_no_action",
         "terminal_receipt_preflight_insufficient": "D_no_action",
         "terminal_revise_retry_budget_insufficient": "D_no_action",
+        "terminal_revision_source_manifest_unavailable": "D_no_action",
         "terminal_synthesis_timeout": "D_no_action",
     }.get(code, "unknown")
 
@@ -1865,6 +1867,33 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
         "n_tensions": n_tensions,
         "n_primary_tier": n_primary,
         "min_receipts": min_receipts,
+    }
+
+
+def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[str, Any] | None:
+    manifest = _read_json(source_run / "manifest.json") if source_run else {}
+    receipts = manifest.get("receipts")
+    if not isinstance(receipts, list):
+        return None
+    receipt_ids = [
+        str(row.get("receipt_id") or "")
+        for row in receipts
+        if isinstance(row, dict) and str(row.get("receipt_id") or "")
+    ]
+    if not receipt_ids:
+        return None
+    qdir = CORPORA / topic / "quant_claims"
+    available_ids = {rid for rid in receipt_ids if (qdir / f"{rid}.quant_claims.json").is_file()}
+    min_receipts = DEFAULT_THRESHOLDS.min_receipts
+    missing = [rid for rid in receipt_ids if rid not in available_ids]
+    return {
+        "passed": len(available_ids) >= min_receipts,
+        "status": "source_manifest_available" if len(available_ids) >= min_receipts else "source_manifest_unavailable",
+        "source_run": source_run.name if source_run else "",
+        "n_source_receipts": len(receipt_ids),
+        "n_available_quant_claim_files": len(available_ids),
+        "min_receipts": min_receipts,
+        "missing_receipt_ids": missing[:20],
     }
 
 
