@@ -110,7 +110,8 @@ RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = int(os.environ.get(
     "RESEARCH_AGENT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS",
     str(DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS),
 ))
-SUBMISSION_DECISION_LOOKBACK = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_LOOKBACK", "40"))
+SUBMISSION_DECISION_LOOKBACK = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_LOOKBACK", "20"))
+SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -839,7 +840,7 @@ def _fetch_submission_decision(submission_id: str) -> tuple[dict[str, Any] | Non
         headers.update({"Authorization": f"Bearer {token}", "x-api-key": token})
     try:
         req = urllib.request.Request(_submission_decision_url(submission_id), headers=headers)
-        with urllib.request.urlopen(req, timeout=20) as response:
+        with urllib.request.urlopen(req, timeout=SUBMISSION_DECISION_TIMEOUT_SECONDS) as response:
             payload = json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         if exc.code == 404:
@@ -1030,12 +1031,12 @@ def _revision_requests_domain_scope_reset(feedback: str) -> bool:
     )
 
 
-def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
+def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS) -> tuple[list[dict[str, Any]], str | None]:
     latest, err = _latest_reviews_by_title(url)
     if err:
         return [], err
     if url is None:
-        direct, direct_err = _submitted_submission_decisions_by_title()
+        direct, direct_err = _submitted_submission_decisions_by_title(runs_root)
         latest = _merge_latest_by_title(latest, direct)
         err = direct_err if not latest else None
     out: list[dict[str, Any]] = []
@@ -1052,6 +1053,15 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
             "feedback": " ".join("; ".join(required).split())[:4000],
         })
     return sorted(out, key=_review_ts, reverse=True), None
+
+
+def _load_remote_revision_requests(runs_root: Path) -> tuple[list[dict[str, Any]], str | None]:
+    try:
+        return _remote_revision_requests(runs_root=runs_root)
+    except TypeError as exc:
+        if "unexpected keyword argument 'runs_root'" not in str(exc):
+            raise
+        return _remote_revision_requests()
 
 
 def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
@@ -1151,7 +1161,7 @@ def _pending_remote_revision(
     loader: RevisionLoader | None = None,
     published_loader: PublishedLoader | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
-    rows, error = (loader or _remote_revision_requests)()
+    rows, error = loader() if loader else _load_remote_revision_requests(runs_root)
     if error:
         return None, error
     handled = _handled_revision_ids(ledger_dir, rows)
@@ -1198,7 +1208,7 @@ def _pending_remote_revision_topics(
     loader: RevisionLoader | None = None,
     published_loader: PublishedLoader | None = None,
 ) -> tuple[set[str], str | None]:
-    rows, error = (loader or _remote_revision_requests)()
+    rows, error = loader() if loader else _load_remote_revision_requests(runs_root)
     if error:
         return set(), error
     handled = _handled_revision_ids(ledger_dir, rows)
@@ -2740,7 +2750,7 @@ def run_cycle(
                 ledger["source_precision_backlog_count"] = len(current_source_precision)
             repairable = (
                 _corpus_repair_topics(ledger_dir) | current_source_precision
-            ) - terminal_excluded - submitted_topics - published_topics - pending_revision_excluded - surface_repeat - preflight_blocked - writer_gate_skip
+            ) - terminal_excluded - submitted_topics - published_topics - pending_revision_excluded - surface_repeat - writer_gate_skip
             source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
             selectable_before_repair = select_topic(
                 topics,

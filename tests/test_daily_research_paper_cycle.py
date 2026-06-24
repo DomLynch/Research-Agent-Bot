@@ -3856,6 +3856,64 @@ def _seed_submitted_run(runs: Path, topic: str, title_line: str) -> Path:
     return run
 
 
+def test_pending_revision_uses_submission_decision_when_reviews_feed_empty(tmp_path: Path, monkeypatch) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    run = _seed_submitted_run(runs, "senolytics", "# Hypothesis-Generating Brief: ABT-263 — full paper")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "senolytics",
+        "fingerprint": "sha256:x",
+        "submission_id": "submission-1",
+        "date": "2026-06-25",
+    }])
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url=None: ({}, None))
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _submission_id: ({
+        "decision": "revise",
+        "decision_object_id": "decision-1",
+        "required_revisions": ["Clarify direct ABT-263 evidence."],
+        "review_summary": "Clarify direct ABT-263 evidence.",
+        "publication": None,
+    }, None))
+
+    pending, err = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        published_loader=lambda: (set(), None),
+    )
+
+    assert err is None
+    assert pending is not None
+    assert pending["submissionId"] == "submission-1"
+    assert pending["topic"] == "senolytics"
+    assert pending["source_run"] == run.name
+    assert pending["feedback"] == "Clarify direct ABT-263 evidence."
+
+
+def test_submission_decision_fallback_does_not_route_accepted_publication(tmp_path: Path, monkeypatch) -> None:
+    runs = tmp_path / "runs"
+    run = _seed_submitted_run(runs, "senolytics", "# Hypothesis-Generating Brief: ABT-263 — full paper")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "senolytics",
+        "fingerprint": "sha256:x",
+        "submission_id": "submission-1",
+        "date": "2026-06-25",
+    }])
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url=None: ({}, None))
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _submission_id: ({
+        "decision": "accept",
+        "decision_object_id": "decision-1",
+        "required_revisions": [],
+        "publication": {"url": "https://researka.org/papers/accepted"},
+    }, None))
+
+    rows, err = cycle._remote_revision_requests(runs_root=runs)
+
+    assert err is None
+    assert rows == []
+
+
 def test_terminal_topics_excludes_topic_with_latest_reject(tmp_path: Path) -> None:
     runs = tmp_path / "runs"
     _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
