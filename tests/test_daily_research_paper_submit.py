@@ -686,6 +686,29 @@ def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None
     assert records[0]["submission_payload_hash"].startswith("sha256:")
 
 
+def test_successful_post_records_nested_submission_target_id(tmp_path: Path) -> None:
+    _run(tmp_path)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-24",
+        submit=True,
+        submitter=lambda _payload: {
+            "ok": True,
+            "status": 201,
+            "response": {
+                "submission": {"title": "Nested"},
+                "job": {"target_object_id": "sub-nested-1"},
+            },
+        },
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    records = json.loads((tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json").read_text(encoding="utf-8"))
+    assert records[0]["submission_id"] == "sub-nested-1"
+
+
 def test_submit_uses_final_status_ready_over_all_green_verdict(tmp_path: Path, monkeypatch) -> None:
     run = _run(tmp_path)
     _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 13, "n_total": 14})
