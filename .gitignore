@@ -12,11 +12,10 @@ logs/
 .cache/
 # Claude Code session state — local IDE artifacts, never commit.
 .claude/
+.codex-worktrees/
 # Ignore generated run artifacts. Keep proof runs outside git; regenerate or
 # recover from the external archive when needed.
 runs/*
-tests_legacy/golden/fixture_runs/
-tests_legacy/golden/fixture_runs_debug/
 *.egg-info/
 .env*
 !.env.example

@@ -39,6 +39,5 @@ asyncio_mode = "strict"
 mypy_path = "scripts"
 
 [tool.setuptools.packages.find]
-# Only ship the V1 runtime. agent_legacy/ stays on disk for git archaeology
-# and is reachable via pythonpath = ["."], but must never be installed.
+# Only ship the current runtime package.
 include = ["agent", "agent.*"]

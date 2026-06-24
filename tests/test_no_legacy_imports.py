@@ -1,8 +1,8 @@
-"""CI guard: agent/ must never import from agent_legacy/ or agent_archived/.
+"""CI guard: agent/ must never import from legacy/archive packages.
 
-Both packages are preserved for git archaeology only. Importing from either
-in the new system would defeat the rebuild and reintroduce coupling to dead
-or known-broken architectures (drafter-monolith bug class for agent_legacy;
+Those packages were removed from the worktree; importing either name would
+defeat the rebuild and reintroduce coupling to dead or known-broken
+architectures (drafter-monolith bug class for agent_legacy;
 LLM-in-the-spine bug class for agent_archived/proof001).
 
 If a refactor genuinely needs to consult an archived module, copy the
