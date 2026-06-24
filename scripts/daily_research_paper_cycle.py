@@ -510,6 +510,7 @@ def _surface_repeat_topics(
         if (
             not topic
             or code in _NON_REPEAT_STATUSES
+            or code in _PREFLIGHT_BLOCK_STATUSES
             or _failure_class(code).startswith("C_")
             or not isinstance(stamps, list)
         ):

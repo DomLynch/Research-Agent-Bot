@@ -4201,6 +4201,7 @@ def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Pat
         f"epigenetic_clocks{s}journal_surface_not_passed": [older, recent],     # 2 in-window -> skip
         f"coenzyme_q10_ubiquinol{s}retracted_source_cited": [older, recent],    # D_no_action counts -> skip
         f"gdf11{s}abstract_overclaim": [older, recent],                         # writer-fixable -> no
+        f"young_plasma{s}receipt_preflight_insufficient": [older, recent],       # preflight -> no
         f"ergothioneine{s}journal_surface_not_passed": [recent],                # single -> no
         f"creatine{s}cycle_budget_exhausted": [older, recent],                  # transient code -> no
         f"glynac{s}final_status_not_ready": [older, recent],                    # repeated artifact not-ready -> skip
