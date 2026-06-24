@@ -164,6 +164,17 @@ def _outcome_class_set(receipts: Sequence[ReceiptSummary]) -> set[str]:
     }
 
 
+def _public_disagreement_clause(n_pairs: int, n_sources: int) -> str:
+    if n_pairs <= 0:
+        return "with no cross-study disagreements surfaced"
+    if n_sources >= 25 and n_pairs >= n_sources * 4:
+        return "and a high-density pairwise disagreement map"
+    return (
+        f"and {n_pairs} cross-study disagreement"
+        + ("" if n_pairs == 1 else "s")
+    )
+
+
 def _named_review_citations(
     receipts: Sequence[ReceiptSummary],
 ) -> list[str]:
@@ -348,10 +359,7 @@ def build_what_this_adds_section(
 
     lines: list[str] = ["## What This Synthesis Adds", ""]
 
-    pair_clause = (
-        f"and {n_pairs} cross-study disagreement"
-        + ("" if n_pairs == 1 else "s")
-    ) if n_pairs else "with no cross-study disagreements surfaced"
+    pair_clause = _public_disagreement_clause(n_pairs, n_acc)
     lines.append(
         f"This synthesis maps {n_acc_s} on {cap} across "
         f"{n_outcomes} outcome class"

@@ -75,6 +75,31 @@ def test_section_includes_corpus_size_and_outcome_count() -> None:
     assert "metformin" in md
 
 
+def test_section_uses_reader_safe_dense_tension_wording() -> None:
+    receipts = [
+        _r(f"Source {i} 2026", outcome="cardiometabolic")
+        for i in range(67)
+    ]
+    pairs = tuple(
+        Tension(
+            receipt_a_id=receipts[i % len(receipts)].receipt_id,
+            receipt_b_id=receipts[(i + 1) % len(receipts)].receipt_id,
+            kind="disagreement",
+            outcome_class="cardiometabolic",
+            summary="dense disagreement map",
+            severity=2,
+        )
+        for i in range(727)
+    )
+
+    md = build_what_this_adds_section(
+        receipts, _matrix(receipts, pairs), _thesis(), topic="taurine",
+    )
+
+    assert "727 cross-study disagreement" not in md
+    assert "high-density pairwise disagreement map" in md
+
+
 def test_section_quotes_picked_thesis_verbatim() -> None:
     """The selected thesis remains visible without internal selector labels."""
     thesis_text = (

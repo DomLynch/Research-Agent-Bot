@@ -1519,6 +1519,8 @@ def test_reference_closure_removes_registry_unsupported_orphan_reference(tmp_pat
 
 
 def test_reference_closure_preserves_title_derived_registry_reference(tmp_path: Path) -> None:
+    from agent.journal_surface_gate import orphan_reference_tokens
+
     paper = (
         "## Conclusion\n\nBounded conclusion.\n\n"
         "## References\n\n"
@@ -1535,7 +1537,9 @@ def test_reference_closure_preserves_title_derived_registry_reference(tmp_path: 
     assert "Effects of Daily Taurine 2025" in fixed
     assert "Ioannidis 2005" not in fixed
     assert "Taurine 2025" in fixed
+    assert orphan_reference_tokens(fixed) == ()
     assert logs[0].rule == "remove_registry_unsupported_orphan_references"
+    assert logs[1].rule == "supporting_corpus_cluster"
 
 
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
