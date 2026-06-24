@@ -1232,6 +1232,10 @@ def _topic_support_score(topic: str) -> int:
     return _quant_claim_count(topic)
 
 
+def _topic_has_quant_floor(topic: str) -> bool:
+    return _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
+
+
 def _has_clean_ready_topic(
     topics: list[str],
     *,
@@ -1241,7 +1245,7 @@ def _has_clean_ready_topic(
     return any(
         candidate not in exclude
         and candidate not in source_precision_blocked
-        and _quant_claim_count(candidate) >= PREFLIGHT_MIN_QUANT_CLAIMS
+        and _topic_has_quant_floor(candidate)
         for candidate in topics
     )
 
@@ -2531,7 +2535,7 @@ def run_cycle(
             )
             ready_before_repair = (
                 bool(selectable_before_repair)
-                and _quant_claim_count(str(selectable_before_repair)) >= PREFLIGHT_MIN_QUANT_CLAIMS
+                and _topic_has_quant_floor(str(selectable_before_repair))
             )
             if selectable_before_repair:
                 repairable = set() if ready_before_repair else repairable & current_source_precision
