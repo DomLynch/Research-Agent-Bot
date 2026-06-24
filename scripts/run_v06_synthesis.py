@@ -4339,9 +4339,20 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
     changed = 0
     for row in log.get("patches") or []:
         target = before.get(str(row.get("patch_id"))) if isinstance(row, dict) else None
-        if isinstance(row, dict) and _is_unresolved_reviewer_p1(row) and target and target not in text:
+        if not (isinstance(row, dict) and _is_unresolved_reviewer_p1(row)):
+            continue
+        reason = str(row.get("reason_for_decision") or "")
+        duplicate_heading = _duplicate_heading_target(reason)
+        if duplicate_heading and _heading_occurrences(duplicate_heading, text) > 1:
+            continue
+        if (duplicate_heading and _heading_occurrences(duplicate_heading, text) <= 1) or (not duplicate_heading and target and target not in text):
             row["decision"] = "applied"
-            row["reason_for_decision"] = "FINALIZER-RESOLVED: flagged BEFORE region is absent after deterministic finalization. " + str(row.get("reason_for_decision") or "")
+            detail = (
+                f"duplicate heading {duplicate_heading!r} absent after deterministic finalization"
+                if duplicate_heading
+                else "flagged BEFORE region is absent after deterministic finalization"
+            )
+            row["reason_for_decision"] = "FINALIZER-RESOLVED: " + detail + ". " + reason
             changed += 1
     if changed:
         rows = [r for r in log.get("patches", []) if isinstance(r, dict)]
@@ -4350,6 +4361,18 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
         log["n_flagged"] = sum(1 for r in rows if r.get("decision") == "flagged")
         log_path.write_text(json.dumps(log, indent=2))
     return changed
+
+
+def _duplicate_heading_target(reason: str) -> str:
+    match = re.search(r"duplicate\s+(?:header|heading)\s+['\"](#{2,6}\s+[^'\"]+)['\"]", reason, flags=re.I)
+    return " ".join(match.group(1).split()) if match else ""
+
+
+def _heading_occurrences(heading: str, paper_md: str) -> int:
+    if not heading:
+        return 0
+    normalized = " ".join(heading.split())
+    return sum(1 for line in paper_md.splitlines() if " ".join(line.strip().split()) == normalized)
 
 
 def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:

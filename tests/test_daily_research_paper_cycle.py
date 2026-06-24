@@ -503,7 +503,10 @@ def test_reconcile_cli_without_date_checks_all_dates(monkeypatch: pytest.MonkeyP
     assert seen["date"] is None
 
 
-def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path) -> None:
+def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_recent_failure", target_journal=True)
+    _topic(tmp_path, "zzz_clean", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     cycle._record_blockers(
         ledger_dir,
@@ -660,6 +663,27 @@ def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatc
     assert selected == "caloric_restriction"
 
 
+def test_select_topic_returns_none_when_no_publication_track_topics(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "acarbose")
+    _topic(tmp_path, "berberine")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(["acarbose", "berberine"], tmp_path / cycle.LEDGER_DIR)
+
+    assert selected is None
+
+
+def test_preflight_requires_declared_target_journal(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "berberine")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    status = cycle._preflight("berberine", tmp_path / "runs", tmp_path / cycle.LEDGER_DIR)
+
+    assert status["passed"] is False
+    assert "target_journal_not_declared" in status["reasons"]
+
+
 def test_select_topic_prefers_untried_over_prior_l4_to_advance_frontier(tmp_path: Path, monkeypatch) -> None:
     """Frontier-advance: a never-attempted publish-ready topic outranks a
     re-run of an already-worked one, so the cycle works through the untried
@@ -733,7 +757,7 @@ def test_select_topic_prefers_more_fact_supported_publication_track_topic(tmp_pa
 
 
 def test_cycle_dry_run_selects_topic_without_synthesis(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "creatine")
+    _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 
@@ -915,7 +939,7 @@ def test_escalated_revision_feedback_does_not_duplicate_original_feedback() -> N
 
 
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "creatine")
+    _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
@@ -952,8 +976,8 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
 
 
 def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "ready_cached")
-    _topic(tmp_path, "cold_repaired", corpus=False)
+    _topic(tmp_path, "ready_cached", target_journal=True)
+    _topic(tmp_path, "cold_repaired", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
@@ -989,10 +1013,10 @@ def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path
 
 
 def test_fresh_lane_excludes_unrepaired_source_precision_backlog(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "aaa_failed_repair", corpus=False)
-    _topic(tmp_path, "clean_published")
-    _topic(tmp_path, "ready_cached")
-    _topic(tmp_path, "zzz_seed_candidate", corpus=False)
+    _topic(tmp_path, "aaa_failed_repair", corpus=False, target_journal=True)
+    _topic(tmp_path, "clean_published", target_journal=True)
+    _topic(tmp_path, "ready_cached", target_journal=True)
+    _topic(tmp_path, "zzz_seed_candidate", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
@@ -1132,9 +1156,10 @@ def test_zero_claim_candidate_does_not_skip_source_precision_repair(tmp_path: Pa
 
 
 def test_clean_ready_helper_excludes_published_and_source_low(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "published_clean")
-    _topic(tmp_path, "source_low")
-    _topic(tmp_path, "clean_ready")
+    _topic(tmp_path, "published_clean", target_journal=True)
+    _topic(tmp_path, "source_low", target_journal=True)
+    _topic(tmp_path, "clean_ready", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 
     assert not cycle._topic_has_quant_floor("missing_topic")
@@ -3810,7 +3835,8 @@ def test_preflight_recent_failure_still_blocks_exploration_track(tmp_path: Path,
     assert preflight["passed"] is False
     assert preflight["publication_track"] is False
     assert preflight["recent_failed_attempts"] == 1
-    assert "recent_failed_attempts=1" in preflight["reasons"][0]
+    assert "target_journal_not_declared" in preflight["reasons"]
+    assert any("recent_failed_attempts=1" in reason for reason in preflight["reasons"])
 
 
 def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatch) -> None:
@@ -4182,7 +4208,7 @@ def test_cycle_holds_before_synthesis_when_submit_token_missing(tmp_path: Path, 
 def test_fresh_mode_ignores_revise_backlog(tmp_path: Path, monkeypatch) -> None:
     """Fresh lane never polls the revise backlog — it always attempts new output,
     so a revision backlog can no longer starve fresh papers (the May-30 regression)."""
-    _topic(tmp_path, "creatine")
+    _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_args, **_kwargs: {"passed": True})
@@ -4216,8 +4242,8 @@ def test_fresh_mode_ignores_revise_backlog(tmp_path: Path, monkeypatch) -> None:
 
 
 def test_fresh_mode_excludes_terminal_review_topics(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "aaa_terminal")
-    _topic(tmp_path, "zzz_fresh")
+    _topic(tmp_path, "aaa_terminal", target_journal=True)
+    _topic(tmp_path, "zzz_fresh", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_terminal_topics", lambda _runs_root: {"aaa_terminal"})

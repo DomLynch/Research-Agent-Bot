@@ -1248,6 +1248,7 @@ def _has_clean_ready_topic(
     return any(
         candidate not in exclude
         and candidate not in source_precision_blocked
+        and _publication_track_topic(candidate)
         and _topic_has_quant_floor(candidate)
         for candidate in topics
     )
@@ -1268,7 +1269,9 @@ def select_topic(
     recent_blocked = _recent_blocked_topics(ledger_dir)
     fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
     candidates = fresh_candidates or candidates
-    pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
+    pool = [topic for topic in candidates if _publication_track_topic(topic)]
+    if not pool:
+        return None
     # Prefer topics with a local corpus first; empty generated frontier topics
     # belong behind publishable corpora so the publish lane does not spend the
     # whole window seeding. Within that ready pool, frontier-advance still holds:
@@ -1329,6 +1332,8 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_c
     counts = _manifest_counts(latest)
     publication_track = _publication_track_topic(topic)
     reasons = []
+    if not publication_track:
+        reasons.append("target_journal_not_declared")
     if latest and not counts["has_manifest"]:
         reasons.append("latest_run_missing_manifest")
     if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:

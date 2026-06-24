@@ -123,6 +123,53 @@ def test_pre_submit_gate_uses_resolved_reviewer_p1_count(tmp_path: Path) -> None
     assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, 0)
 
 
+def test_rejected_duplicate_heading_p1_resolves_when_heading_is_not_duplicate(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.md").write_text("## Results\n\n### Immune and Inflammation Outcomes\n\nClean text.")
+    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+        "patches": [{"id": "P01", "severity": "P1", "before": "clipped duplicate-heading patch"}],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{
+            "patch_id": "P01",
+            "severity": "P1",
+            "decision": "rejected",
+            "reason_for_decision": (
+                "truncated patch contract. final-layer reviewer rationale: "
+                "\"Remove duplicate header '### Immune and Inflammation Outcomes'.\""
+            ),
+        }],
+    }))
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 1
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, 0)
+
+
+def test_rejected_duplicate_heading_p1_stays_blocking_when_heading_is_still_duplicate(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.md").write_text(
+        "## Results\n\n### Immune and Inflammation Outcomes\n\nA.\n\n"
+        "### Immune and Inflammation Outcomes\n\nB."
+    )
+    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+        "patches": [{"id": "P01", "severity": "P1", "before": "clipped duplicate-heading patch"}],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{
+            "patch_id": "P01",
+            "severity": "P1",
+            "decision": "rejected",
+            "reason_for_decision": (
+                "truncated patch contract. final-layer reviewer rationale: "
+                "\"Remove duplicate header '### Immune and Inflammation Outcomes'.\""
+            ),
+        }],
+    }))
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 0, 0)
+
+
 def test_stage1_p2_only_returns_trust_spine_pass() -> None:
     """P1 clean in both stages, but stage-1 has P2 fails → Trust-Spine
     Pass (not AAA — AAA is reserved for all-green)."""
