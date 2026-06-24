@@ -1678,6 +1678,35 @@ def test_species_study_design_summary_repairs_revision_ask(tmp_path: Path) -> No
     ]
 
 
+def test_species_study_design_summary_normalizes_existing_header(tmp_path: Path) -> None:
+    ask = (
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the bounded geroscience claim."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Species and Study-Design Summary\n\n"
+        "| Evidence group | Study-design signal | n | Example source(s) | Interpretation boundary |\n"
+        "|---|---|---:|---|---|\n"
+        "| Preclinical rodent n=1 | animal/preclinical experiment | 1 | Zhao 2020 | Mechanistic only. |\n"
+        "| Human n=1 | observational/donor or cohort evidence | 1 | Parker 2020 | Association only. |\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_species_study_design_summary(paper, tmp_path)
+
+    assert "Example sources" in fixed
+    assert "source(s)" not in fixed
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_species_study_design_summary",
+            rule="normalize_species_study_design_summary_header",
+            n_changes=1,
+            detail="removed public template token from species/study-design summary",
+        )
+    ]
+
+
 def test_directional_coding_note_is_revision_scoped(tmp_path: Path) -> None:
     paper = "## Evidence Landscape\n\nNo extracted directional signal dominates.\n"
 

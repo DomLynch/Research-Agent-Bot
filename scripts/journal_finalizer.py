@@ -1876,8 +1876,16 @@ def _phase_d_species_study_design_summary(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     if not _revision_asks_species_study_design_summary(feedback):
         return text, []
+    normalised = text.replace("Example source(s)", "Example sources")
     if "species and study-design summary" in text.lower() or "species and study design summary" in text.lower():
-        return text, []
+        if normalised == text:
+            return text, []
+        return normalised, [FinalizerLogEntry(
+            phase="D_species_study_design_summary",
+            rule="normalize_species_study_design_summary_header",
+            n_changes=1,
+            detail="removed public template token from species/study-design summary",
+        )]
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts") if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
