@@ -2678,7 +2678,7 @@ def run_cycle(
                 ledger["source_precision_backlog_count"] = len(current_source_precision)
             repairable = (
                 _corpus_repair_topics(ledger_dir) | current_source_precision
-            ) - terminal_excluded - submitted_topics - pending_revision_excluded
+            ) - terminal_excluded - submitted_topics - published_topics - pending_revision_excluded - surface_repeat - preflight_blocked - writer_gate_skip
             source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
             selectable_before_repair = select_topic(
                 topics,
@@ -2701,7 +2701,11 @@ def run_cycle(
                     source_precision_auto_excluded |= current_source_precision
             source_precision_repair_attempted: set[str] = set()
             repair_timeout = _publish_seed_timeout(timeout)
-            for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
+            repair_order = sorted(
+                repairable,
+                key=lambda t: (-_quant_claim_count(t), -_topic_support_score(t), _attempted_at(t, ledger_dir), t),
+            )
+            for repair_topic in repair_order[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
                     source_precision_repair_attempted.add(repair_topic)
                     repair = _repair_low_source_precision_corpus(
@@ -2780,6 +2784,13 @@ def run_cycle(
             )
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
+                break
+            if not revision_source and submit and mode == "fresh" and not _topic_has_quant_floor(selected):
+                ledger.update({
+                    "status": "no_ready_corpus_available",
+                    "attempted_topic": selected,
+                    "selected_without_quant_floor": selected,
+                })
                 break
             numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")

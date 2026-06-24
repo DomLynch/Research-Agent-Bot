@@ -61,12 +61,11 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         assert "RestartSec=60" in service
 
 
-def test_fresh_publish_corpus_seed_uses_short_timeout(tmp_path: Path, monkeypatch) -> None:
+def test_fresh_publish_skips_empty_frontier_without_seeding(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "empty_frontier", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", "17")
     seen: list[int | None] = []
 
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
@@ -86,8 +85,44 @@ def test_fresh_publish_corpus_seed_uses_short_timeout(tmp_path: Path, monkeypatc
         max_attempts=1,
     )
 
-    assert seen == [17]
-    assert ledger["status"] == "corpus_unavailable_no_submission"
+    assert seen == []
+    assert ledger["status"] == "no_ready_corpus_available"
+
+
+def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path: Path, monkeypatch) -> None:
+    for name in ("aaa_low_support", "published_high_support", "zzz_high_support"):
+        _topic(tmp_path, name, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: {
+        "aaa_low_support", "published_high_support", "zzz_high_support",
+    })
+    monkeypatch.setattr(cycle, "_published_topics", lambda *_a, **_k: {"published_high_support"})
+    monkeypatch.setattr(cycle, "_topic_support_score", lambda topic: 100 if topic.endswith("high_support") else 1)
+    monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", "17")
+    repairs: list[tuple[str, int | None]] = []
+
+    def fake_repair(topic: str, *, timeout: int | None = None, **_kwargs: Any) -> dict[str, Any]:
+        repairs.append((topic, timeout))
+        return {"status": "source_precision_repair_incomplete", "n_quant_claims": 0}
+
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+        cycle_budget_seconds=1000,
+    )
+
+    assert repairs == [("zzz_high_support", 17)]
+    assert ledger["status"] == "no_unpublished_topic_available"
 
 
 @pytest.fixture(autouse=True)
@@ -1190,8 +1225,8 @@ def test_fresh_lane_excludes_unrepaired_source_precision_backlog(tmp_path: Path,
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_failed_repair", "ready_cached"]
-    assert calls["topic"] == "zzz_seed_candidate"
+    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_failed_repair"]
+    assert calls["topic"] == "ready_cached"
 
 
 def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_path: Path, monkeypatch) -> None:
