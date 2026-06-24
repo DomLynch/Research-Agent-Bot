@@ -24,6 +24,17 @@ def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
     assert cycle._failure_class("research_revision_fingerprint") == "D_no_action"
 
 
+def test_terminal_statuses_and_retryable_timeouts_do_not_drift() -> None:
+    terminal = cycle._TERMINAL_REVISION_STATUSES | cycle._ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES
+    assert all(cycle._failure_class(status) == "D_no_action" for status in terminal)
+
+    retryable_timeouts = {
+        status for status in cycle._RETRYABLE_REVISION_STATUSES
+        if "timeout" in status
+    }
+    assert retryable_timeouts <= cycle._NON_REPEAT_STATUSES
+
+
 def test_daily_paper_policy_uses_12_receipts_and_shared_source_precision() -> None:
     assert cycle.PREFLIGHT_MIN_RECEIPTS == 12
     assert cycle.SOURCE_TOPIC_REPAIR_FLOOR == cycle.submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
