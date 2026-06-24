@@ -1870,16 +1870,20 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
     }
 
 
-def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[str, Any] | None:
+def _source_manifest_receipt_ids(source_run: Path | None) -> list[str]:
     manifest = _read_json(source_run / "manifest.json") if source_run else {}
     receipts = manifest.get("receipts")
     if not isinstance(receipts, list):
-        return None
-    receipt_ids = [
+        return []
+    return [
         str(row.get("receipt_id") or "")
         for row in receipts
         if isinstance(row, dict) and str(row.get("receipt_id") or "")
     ]
+
+
+def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[str, Any] | None:
+    receipt_ids = _source_manifest_receipt_ids(source_run)
     if not receipt_ids:
         return None
     qdir = CORPORA / topic / "quant_claims"
@@ -1894,6 +1898,32 @@ def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[s
         "n_available_quant_claim_files": len(available_ids),
         "min_receipts": min_receipts,
         "missing_receipt_ids": missing[:20],
+    }
+
+
+def _restore_source_manifest_quant_claims(topic: str, source_run: Path | None) -> dict[str, Any]:
+    receipt_ids = _source_manifest_receipt_ids(source_run)
+    qdir = CORPORA / topic / "quant_claims"
+    quarantine = CORPORA / topic / "quant_claims_quarantine"
+    restored: list[str] = []
+    missing = [rid for rid in receipt_ids if not (qdir / f"{rid}.quant_claims.json").is_file()]
+    for rid in missing:
+        candidates = sorted(
+            quarantine.glob(f"*/{rid}.quant_claims.json"),
+            key=lambda p: p.stat().st_mtime,
+            reverse=True,
+        )
+        if not candidates:
+            continue
+        qdir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(candidates[0], qdir / f"{rid}.quant_claims.json")
+        restored.append(rid)
+    return {
+        "status": "source_manifest_quant_claims_restored" if restored else "source_manifest_quant_claims_missing",
+        "source_run": source_run.name if source_run else "",
+        "n_missing_before": len(missing),
+        "n_restored": len(restored),
+        "restored_receipt_ids": restored[:20],
     }
 
 
