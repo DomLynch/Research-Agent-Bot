@@ -90,6 +90,9 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_surface_repeat",
     "terminal_source_precision_repair_incomplete",
 })
+_ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
+    "terminal_synthesis_timeout",
+})
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -905,7 +908,13 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         if (
             isinstance(row, dict)
             and row.get("title")
-            and str(row.get("status") or "") in _TERMINAL_REVISION_STATUSES
+            and (
+                str(row.get("status") or "") in _TERMINAL_REVISION_STATUSES
+                or (
+                    str(row.get("status") or "") in _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES
+                    and _row_applies_to_active_request(row)
+                )
+            )
         )
     }
     handled = terminal | {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
@@ -1355,6 +1364,7 @@ def _failure_class(status: str) -> str:
         "terminal_surface_repeat": "D_no_action",
         "terminal_source_precision_repair_incomplete": "D_no_action",
         "terminal_receipt_preflight_insufficient": "D_no_action",
+        "terminal_synthesis_timeout": "D_no_action",
     }.get(code, "unknown")
 
 
@@ -3021,6 +3031,14 @@ def run_cycle(
                 elif revision_source and gate_status == "revision_coverage_unmet":
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE:
+                    if revision_source:
+                        timeout_status = (
+                            "terminal_synthesis_timeout"
+                            if revise_attempt >= max(1, max_revise_attempts)
+                            else "synthesis_timeout"
+                        )
+                        attempt["revision_timeout_status"] = timeout_status
+                        _mark_revision_handled(ledger_dir, revision_source, status=timeout_status)
                     ledger["status"] = "synthesis_timeout_no_submission"
                     ledger["no_submission_reason"] = gate_status
                 elif return_code != 0:

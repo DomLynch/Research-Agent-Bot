@@ -1235,6 +1235,75 @@ def test_cycle_records_synthesis_timeout_without_service_failure_status(tmp_path
     assert ledger["attempts"][0]["failure_class"] == "D_no_action"
 
 
+def test_revise_timeout_on_final_attempt_skips_active_review_only(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "taurine", target_journal=True)
+    source = _prior_run(tmp_path, "taurine", receipts=67, tensions=727, primary=1, level=5)
+    title = "Research Synthesis: Taurine — full paper"
+    paper = source / "full_paper.md"
+    paper.write_text(f"# {title}\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": "taurine",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "source_topic_precision_ok:67/67", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_preflight", lambda *_a, **_k: {
+        "passed": True,
+        "has_manifest": True,
+        "n_receipts": 67,
+        "n_tensions": 727,
+        "n_primary_tier": 1,
+    })
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: cycle.SYNTHESIS_TIMEOUT_RETURN_CODE)
+
+    reviewed_at = (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat()
+    request = {
+        "artifactId": "taurine-review",
+        "title": title,
+        "feedback": "Revise the dense evidence-map language and resubmit.",
+        "reviewedAt": reviewed_at,
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-24",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([dict(request)], None),
+        submit_cycle=lambda **_kwargs: (_ for _ in ()).throw(AssertionError("timeout must not submit")),
+        ensure_corpus=lambda *_a, **_k: {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS},
+        max_revise_attempts=1,
+    )
+
+    assert ledger["status"] == "synthesis_timeout_no_submission"
+    assert ledger["attempts"][0]["revision_timeout_status"] == "terminal_synthesis_timeout"
+    handled_path = tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS
+    handled = json.loads(handled_path.read_text(encoding="utf-8"))
+    assert handled["handled"][0]["status"] == "terminal_synthesis_timeout"
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([dict(request)], None),
+    )
+    assert error is None
+    assert pending is None
+
+    newer = {**request, "artifactId": "taurine-review-2", "reviewedAt": (dt.datetime.now(dt.UTC) + dt.timedelta(hours=1)).isoformat()}
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([newer], None),
+    )
+    assert error is None
+    assert pending and pending["artifactId"] == "taurine-review-2"
+
+
 def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "new_topic", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
