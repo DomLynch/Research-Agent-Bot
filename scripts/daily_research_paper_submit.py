@@ -282,6 +282,28 @@ def _submission_marker(submission_id: str) -> str:
     return "submission:" + submission_id.strip()
 
 
+def _submission_ids_from_response(response: object) -> list[str]:
+    if not isinstance(response, dict):
+        return []
+    submission = response.get("submission")
+    job = response.get("job")
+    values = [
+        response.get("id"),
+        response.get("submission_id"),
+        submission.get("id") if isinstance(submission, dict) else None,
+        job.get("target_object_id") if isinstance(job, dict) else None,
+    ]
+    return list(dict.fromkeys(
+        value.strip() for value in values
+        if isinstance(value, str) and value.strip()
+    ))
+
+
+def _submission_id_from_response(response: object) -> str | None:
+    ids = _submission_ids_from_response(response)
+    return ids[0] if ids else None
+
+
 def _paper_title(paper: Path) -> str:
     try:
         first = paper.read_text(encoding="utf-8").splitlines()[0]
@@ -1508,7 +1530,7 @@ def run_cycle(
     ledger["submission"] = result
     if result.get("ok"):
         response = result.get("response")
-        submission_id = response.get("id") if isinstance(response, dict) else None
+        submission_id = _submission_id_from_response(response)
         _append_record(submitted_path, {
             "date": date,
             "run": run.name,

@@ -210,18 +210,9 @@ def _ledger_submission_markers(ledger: dict[str, Any]) -> set[str]:
     response = ledger.get("submission")
     response = response.get("response") if isinstance(response, dict) else {}
     if isinstance(response, dict):
-        submission = response.get("submission")
-        job = response.get("job")
-        ids = [
-            response.get("id"),
-            response.get("submission_id"),
-            submission.get("id") if isinstance(submission, dict) else None,
-            job.get("target_object_id") if isinstance(job, dict) else None,
-        ]
         markers.update(
             submit_bridge._submission_marker(value)
-            for value in ids
-            if isinstance(value, str) and value.strip()
+            for value in submit_bridge._submission_ids_from_response(response)
         )
     attempts = ledger.get("attempts")
     for attempt in attempts if isinstance(attempts, list) else []:
