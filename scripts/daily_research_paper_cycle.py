@@ -2529,9 +2529,14 @@ def run_cycle(
                     | writer_gate_skip | source_precision_auto_excluded | current_source_precision
                 ),
             )
+            ready_before_repair = (
+                bool(selectable_before_repair)
+                and _quant_claim_count(str(selectable_before_repair)) >= PREFLIGHT_MIN_QUANT_CLAIMS
+            )
             if selectable_before_repair:
-                repairable = set()
-                source_precision_auto_excluded |= current_source_precision
+                repairable = set() if ready_before_repair else repairable & current_source_precision
+                if ready_before_repair:
+                    source_precision_auto_excluded |= current_source_precision
             source_precision_repair_attempted: set[str] = set()
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
@@ -2549,7 +2554,7 @@ def run_cycle(
                     source_precision_repaired_ok.add(repair_topic)
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
-            clean_ready_available = bool(selectable_before_repair) or _has_clean_ready_topic(
+            clean_ready_available = ready_before_repair or _has_clean_ready_topic(
                 topics,
                 exclude=(
                     terminal_excluded | submitted_topics | published_topics

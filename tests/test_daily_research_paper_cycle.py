@@ -1075,6 +1075,56 @@ def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_
     assert synthesized == ["zzz_clean_ready"]
 
 
+def test_zero_claim_candidate_does_not_skip_source_precision_repair(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_source_low", target_journal=True)
+    _topic(tmp_path, "zzz_zero_claim", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: {"aaa_source_low"})
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    repaired: set[str] = set()
+    synthesized: list[str] = []
+
+    def fake_precision(topic: str, **_kwargs: Any) -> tuple[bool, str, list[Path]]:
+        if topic == "aaa_source_low" and topic not in repaired:
+            return False, "source_topic_precision_low:0/10<0.50", [Path("off-topic.json")]
+        return True, "source_topic_precision_ok:10/10", []
+
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        repaired.add(topic)
+        return {"status": "source_precision_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_corpus(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        if topic == "zzz_zero_claim":
+            raise AssertionError("zero-claim fallback must not skip repairable source-low corpus")
+        return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-24",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=fake_corpus,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert repaired == {"aaa_source_low"}
+    assert synthesized == ["aaa_source_low"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_clean_ready_helper_excludes_published_and_source_low(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "published_clean")
     _topic(tmp_path, "source_low")
