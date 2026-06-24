@@ -18,6 +18,7 @@ import sys
 import time
 import tomllib
 import urllib.error
+import urllib.parse
 import urllib.request
 from collections import Counter
 from collections.abc import Callable, Collection, Iterator, Mapping, Sequence
@@ -109,6 +110,7 @@ RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = int(os.environ.get(
     "RESEARCH_AGENT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS",
     str(DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS),
 ))
+SUBMISSION_DECISION_LOOKBACK = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_LOOKBACK", "40"))
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -825,6 +827,63 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
     return latest, None
 
 
+def _submission_decision_url(submission_id: str) -> str:
+    base = os.getenv("RESEARKA_URL", "https://api.researka.org").rstrip("/")
+    return f"{base}/submissions/{urllib.parse.quote(submission_id.strip())}/decision"
+
+
+def _fetch_submission_decision(submission_id: str) -> tuple[dict[str, Any] | None, str | None]:
+    token, _token_env = submit_bridge._token()
+    headers = {"Accept": "application/json"}
+    if token:
+        headers.update({"Authorization": f"Bearer {token}", "x-api-key": token})
+    try:
+        req = urllib.request.Request(_submission_decision_url(submission_id), headers=headers)
+        with urllib.request.urlopen(req, timeout=20) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            return None, None
+        return None, f"HTTPError:{exc.code}"
+    except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return None, f"{type(exc).__name__}: {exc}"
+    return payload if isinstance(payload, dict) else None, None
+
+
+def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[dict[str, dict[str, Any]], str | None]:
+    rows = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    latest: dict[str, dict[str, Any]] = {}
+    first_error: str | None = None
+    for record in reversed(rows[-SUBMISSION_DECISION_LOOKBACK:]):
+        submission_id = str(record.get("submission_id") or "").strip()
+        run = runs_root / str(record.get("run") or "")
+        paper = run / "full_paper.md"
+        if not submission_id or not paper.exists():
+            continue
+        payload, err = _fetch_submission_decision(submission_id)
+        first_error = first_error or err
+        if not payload:
+            continue
+        title = submit_bridge._paper_title(paper)
+        row = {
+            "artifactType": "research_paper",
+            "agentId": submit_bridge._agent_slug(),
+            "artifactId": payload.get("decision_object_id") or payload.get("decision_id"),
+            "submissionId": submission_id,
+            "title": title,
+            "topic": record.get("topic") or submit_bridge._run_topic(run),
+            "decision": payload.get("decision"),
+            "reviewedAt": record.get("submitted_at") or record.get("date"),
+            "required_revisions": payload.get("required_revisions") or [],
+            "review_summary": payload.get("review_summary"),
+            "publication": payload.get("publication"),
+        }
+        key = submit_bridge._title_marker(title)
+        if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+            latest[key] = row
+    return latest, None if latest else first_error
+
+
 def _merge_latest_by_title(*sources: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
     latest: dict[str, dict[str, Any]] = {}
     for source in sources:
@@ -975,6 +1034,10 @@ def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, An
     latest, err = _latest_reviews_by_title(url)
     if err:
         return [], err
+    if url is None:
+        direct, direct_err = _submitted_submission_decisions_by_title()
+        latest = _merge_latest_by_title(latest, direct)
+        err = direct_err if not latest else None
     out: list[dict[str, Any]] = []
     for row in latest.values():
         required = _actionable_revisions(row)
