@@ -30,6 +30,7 @@ from source_topic_specificity import (  # noqa: E402
     topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.outcome_class_remap import unique_outcome_displays  # noqa: E402
 from agent.topic_display import humanize_topic  # noqa: E402
 
 RUNS = ROOT / "runs"
@@ -995,12 +996,29 @@ def _actionable_gaps(topic: str, manifest: dict[str, Any], explicit: str, discus
     n_receipts = int(manifest.get("n_receipts") or len(receipts) or 0)
     n_tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
     label = _display_topic(topic).lower()
+    tension_work = (
+        "resolving the pairwise disagreement map"
+        if _dense_tension_map(n_tensions, n_receipts)
+        else f"resolving {n_tensions} disagreement(s) narratively"
+    )
     gaps = [
         f"Run adequately powered human studies that test {label} against prespecified endpoints in {top_outcomes}.",
-        f"Standardize exposure, comparator, follow-up duration, and endpoint definitions so future syntheses can pool effects instead of resolving {n_tensions} disagreement(s) narratively.",
+        f"Standardize exposure, comparator, follow-up duration, and endpoint definitions so future syntheses can pool effects instead of {tension_work}.",
         f"Separate direct source rows from adjacent context before submission; current direct evidence is {direct}/{n_receipts} admitted source(s).",
     ]
     return _clip_text(" ".join(gaps))
+
+
+def _dense_tension_map(n_tensions: int, n_receipts: int) -> bool:
+    return n_tensions > max(50, n_receipts * 3)
+
+
+def _public_tension_summary(n_tensions: int, n_receipts: int) -> str:
+    if n_tensions <= 0:
+        return "no load-bearing cross-source disagreements"
+    if _dense_tension_map(n_tensions, n_receipts):
+        return "a high-density pairwise disagreement map"
+    return f"{n_tensions} load-bearing cross-source disagreement(s)"
 
 
 def _evidence_landscape(manifest: dict[str, Any], detail: str) -> str:
@@ -1011,15 +1029,15 @@ def _evidence_landscape(manifest: dict[str, Any], detail: str) -> str:
     n_receipts = int(manifest.get("n_receipts") or len(receipts) or 0)
     n_tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
     direct = sum(str(row.get("directness") or "").lower() == "direct" for row in receipts)
-    outcomes = list(dict.fromkeys(
-        str(row.get("outcome_class") or "").replace("_", " ").strip()
+    outcomes = list(unique_outcome_displays(
+        str(row.get("outcome_class") or "").strip()
         for row in receipts if str(row.get("outcome_class") or "").strip()
     ))
     outcome_label = ", ".join(outcomes[:5]) or "the mapped outcomes"
     shape = (
         f"This landscape maps {n_receipts} retained source(s) spanning {outcome_label}, "
-        f"of which {direct} provide direct human evidence, surfacing {n_tensions} "
-        f"non-orthogonal tension(s) across the corpus."
+        f"of which {direct} provide direct human evidence, surfacing "
+        f"{_public_tension_summary(n_tensions, n_receipts)} across the corpus."
     )
     return _clip_text(f"{shape} {detail}".strip())
 

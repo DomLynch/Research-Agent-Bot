@@ -70,7 +70,7 @@ def _write_revision_feedback_sidecar(out_dir: Path) -> None:
 from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
-from agent.outcome_class_remap import outcome_display, remap_outcome_class  # noqa: E402
+from agent.outcome_class_remap import outcome_display, outcome_key, remap_outcome_class  # noqa: E402
 from agent.outcome_class_remap import refine_other_outcome_class  # noqa: E402
 from agent.synthesis_schemas import (  # noqa: E402
     EffectDirection, ReceiptSummary, SynthesisSection, SynthesisThesis,
@@ -534,7 +534,8 @@ def _compile_public_section_backstop(
     ctx = _section_backstop_context()
     receipt_n = cast(int, ctx["receipt_n"])
     claim_n = cast(int, ctx["claim_n"])
-    tension_n = cast(int, ctx["tension_n"])
+    tension_phrase = cast(str, ctx["tension_phrase"])
+    tension_subject = cast(str, ctx["tension_subject"])
     direct = cast(int, ctx["direct"])
     indirect = cast(int, ctx["indirect"])
     mechanistic = cast(int, ctx["mechanistic"])
@@ -577,7 +578,7 @@ def _compile_public_section_backstop(
                 f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
                 f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
                 f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, "
-                f"with {_count_phrase(tension_n, 'cross-study disagreement')} "
+                f"with {tension_phrase} "
                 "across the evidence base."
             ),
             (
@@ -663,8 +664,7 @@ def _compile_public_section_backstop(
                 "tier, and study context."
             ),
             (
-                f"The synthesis identifies {tension_n} non-orthogonal "
-                "disagreements. These disagreements are load-bearing because they show "
+                f"The synthesis identifies {tension_phrase}. These disagreements are load-bearing because they show "
                 "where sources do not simply accumulate in the same direction. "
                 "The synthesis therefore treats disagreement and null findings "
                 "as evidence, not as noise to be smoothed away."
@@ -687,7 +687,7 @@ def _compile_public_section_backstop(
                 "clinical signal."
             ),
             (
-                f"{_count_phrase(tension_n, 'non-orthogonal tension').capitalize()} prevent the evidence "
+                f"{tension_subject.capitalize()} prevent the evidence "
                 "from being reduced to a simple positive or negative verdict. "
                 "They instead point to a research agenda: define the population "
                 "most likely to benefit, select endpoints that map onto the "
@@ -1068,6 +1068,14 @@ def _section_backstop_context() -> dict[str, object]:
         "receipt_n": int(manifest.get("n_receipts") or len(receipts)),
         "claim_n": int(manifest.get("n_high_confidence_claims_total") or 0),
         "tension_n": int(manifest.get("n_non_orthogonal_tensions") or 0),
+        "tension_phrase": _public_tension_phrase(
+            int(manifest.get("n_non_orthogonal_tensions") or 0),
+            int(manifest.get("n_receipts") or len(receipts)),
+        ),
+        "tension_subject": _public_tension_subject(
+            int(manifest.get("n_non_orthogonal_tensions") or 0),
+            int(manifest.get("n_receipts") or len(receipts)),
+        ),
         "direct": direct,
         "indirect": indirect,
         "mechanistic": mechanistic,
@@ -1090,7 +1098,7 @@ def _section_backstop_outcome_rows(
 ) -> list[dict[str, object]]:
     by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for receipt in receipts:
-        by_outcome[str(receipt.get("outcome_class") or "other")].append(receipt)
+        by_outcome[outcome_key(str(receipt.get("outcome_class") or "other"))].append(receipt)
     rows: list[dict[str, object]] = []
     for outcome, group in sorted(by_outcome.items(), key=lambda x: (-len(x[1]), x[0]))[:6]:
         directions = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
@@ -1187,6 +1195,26 @@ def _count_phrase(n: int, singular: str, plural: str | None = None) -> str:
     return f"{value} {singular if value == 1 else (plural or singular + 's')}"
 
 
+def _dense_tension_map(n_tensions: int, n_receipts: int) -> bool:
+    return n_tensions > max(50, n_receipts * 3)
+
+
+def _public_tension_phrase(n_tensions: int, n_receipts: int) -> str:
+    if n_tensions <= 0:
+        return "no load-bearing cross-study disagreements"
+    if _dense_tension_map(n_tensions, n_receipts):
+        return "a high-density pairwise disagreement map"
+    return _count_phrase(n_tensions, "cross-study disagreement")
+
+
+def _public_tension_subject(n_tensions: int, n_receipts: int) -> str:
+    if n_tensions <= 0:
+        return "No load-bearing cross-study disagreements"
+    if _dense_tension_map(n_tensions, n_receipts):
+        return "These pairwise disagreements"
+    return _count_phrase(n_tensions, "non-orthogonal tension").capitalize()
+
+
 def _evidence_tier_phrase(n: int, label: str) -> str:
     value = n
     if value == 0:
@@ -1211,7 +1239,7 @@ def _ensure_results_summary_table(
         return markdown, False
     by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for receipt in receipts:
-        by_outcome[str(receipt.get("outcome_class") or "other")].append(receipt)
+        by_outcome[outcome_key(str(receipt.get("outcome_class") or "other"))].append(receipt)
     rows: list[str] = []
     for outcome, group in sorted(
         by_outcome.items(), key=lambda item: (-len(item[1]), item[0]),
