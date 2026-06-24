@@ -68,6 +68,7 @@ WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 SEED_TOPIC_TIMEOUT_SECONDS = 600
+PUBLISH_SEED_TIMEOUT_SECONDS = 120
 CORPUS_REPAIR_LIMIT = 1
 RECEIPT_PREFLIGHT_REPAIR_ROUNDS = 2
 SOURCE_TOPIC_REPAIR_FLOOR = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
@@ -2156,6 +2157,14 @@ def _seed_topic_timeout(timeout: int | None) -> int:
         cap = max(1, int(os.environ.get("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", str(SEED_TOPIC_TIMEOUT_SECONDS))))
     except ValueError:
         cap = SEED_TOPIC_TIMEOUT_SECONDS
+    return min(timeout, cap) if timeout and timeout > 0 else cap
+
+
+def _publish_seed_timeout(timeout: int | None) -> int:
+    try:
+        cap = max(1, int(os.environ.get("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", str(PUBLISH_SEED_TIMEOUT_SECONDS))))
+    except ValueError:
+        cap = PUBLISH_SEED_TIMEOUT_SECONDS
     return min(timeout, cap) if timeout and timeout > 0 else cap
 
 
