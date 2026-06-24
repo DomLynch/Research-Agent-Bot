@@ -259,6 +259,18 @@ def _submit_bridge_submission_markers_by_run(runs_root: Path, run_names: set[str
             markers = _ledger_submission_markers(ledger)
             for run_name in matched_runs:
                 markers_by_run.setdefault(run_name, set()).update(markers)
+    for row in submit_bridge._ledger_rows(ledger_dir / "_submitted_fingerprints.json"):
+        raw_run = row.get("run")
+        if not isinstance(raw_run, str) or raw_run not in run_names:
+            continue
+        markers = markers_by_run.setdefault(raw_run, set())
+        submission_id = row.get("submission_id")
+        if isinstance(submission_id, str) and submission_id:
+            markers.add(submit_bridge._submission_marker(submission_id))
+        for key in ("fingerprint", "paper_sha256", *submit_bridge.PUBLICATION_IDENTITY_KEYS):
+            value = row.get(key)
+            if isinstance(value, str) and value:
+                markers.add(value if value.startswith("sha256:") else f"sha256:{value}")
     return markers_by_run
 
 
