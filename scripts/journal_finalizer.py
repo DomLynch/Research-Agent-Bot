@@ -7,6 +7,7 @@ import sys
 from itertools import combinations
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 
 _SCRIPTS_DIR = Path(__file__).resolve().parent
@@ -3008,6 +3009,71 @@ def _load_sidecar(p: Path) -> Any:
         return None
 
 
+def _restore_registry_references(out_dir: Path) -> bool:
+    paper_path = out_dir / "full_paper.md"
+    if not paper_path.is_file():
+        return False
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    registry = _load_sidecar(out_dir / "citation_registry.json")
+    receipts_raw = manifest.get("receipts") if isinstance(manifest, dict) else None
+    if not isinstance(receipts_raw, list) or not isinstance(registry, dict):
+        return False
+    text = paper_path.read_text()
+    refs = _section_body(text, "References")
+    refs_norm = refs.replace("é", "e")
+    missing = [
+        str(row.get("body_citation") or "").strip()
+        for row in registry.values()
+        if isinstance(row, dict)
+        and str(row.get("body_citation") or "").strip()
+        and str(row.get("body_citation") or "").strip() not in refs
+        and str(row.get("body_citation") or "").strip().replace("é", "e") not in refs_norm
+    ]
+    if not missing:
+        return False
+    try:
+        appender = importlib.import_module("scripts.run_v06_synthesis")._append_references_block
+    except (AttributeError, ImportError):
+        return False
+
+    registry_by_id: dict[str, SimpleNamespace] = {}
+    for key, row in registry.items():
+        if not isinstance(row, dict):
+            continue
+        token = str(row.get("body_citation") or "").strip()
+        rid = str(row.get("receipt_id") or key).strip()
+        if token and rid:
+            registry_by_id[rid] = SimpleNamespace(body_citation=token)
+
+    def receipt_obj(row: dict[str, Any]) -> SimpleNamespace:
+        rid = str(row.get("receipt_id") or row.get("paper_id") or "").strip()
+        registry_row = registry.get(rid)
+        reg: dict[str, Any] = registry_row if isinstance(registry_row, dict) else {}
+        return SimpleNamespace(
+            receipt_id=rid,
+            source_title=str(row.get("source_title") or reg.get("title") or "").strip(),
+            source_venue=str(row.get("source_venue") or row.get("source_journal") or reg.get("source_journal") or "").strip(),
+            source_year=row.get("source_year") or reg.get("source_year") or "",
+            source_doi=str(row.get("source_doi") or reg.get("source_doi") or "").strip(),
+            source_pmid=str(row.get("source_pmid") or reg.get("source_pmid") or "").strip(),
+        )
+
+    receipts: list[SimpleNamespace] = []
+    for row in receipts_raw:
+        if not isinstance(row, dict) or not (row.get("receipt_id") or row.get("paper_id")):
+            continue
+        receipts.append(receipt_obj(row))
+    if not receipts:
+        return False
+    ref_match = re.search(r"^##\s+References\b.*\Z", text, flags=re.M | re.S)
+    body = (text[: ref_match.start()] if ref_match else text).rstrip() + "\n\n"
+    restored = appender(body, receipts, registry=registry_by_id)
+    if restored == text:
+        return False
+    paper_path.write_text(restored)
+    return True
+
+
 def _reevaluate_journal_surface(out_dir: Path) -> int:
     paper_path = out_dir / "full_paper.md"
     if not paper_path.is_file():
@@ -3118,6 +3184,8 @@ def _refresh_audit_sidecar(out_dir: Path) -> bool:
 def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     log: list[FinalizerLogEntry] = []
     _g = lambda rule, n, detail: log.append(FinalizerLogEntry(phase="G_refresh_sidecars", rule=rule, n_changes=n, detail=detail))  # noqa: E731
+    if _restore_registry_references(out_dir):
+        _g("restore_registry_references_post_finalizer", 1, "rebuilt References from manifest/citation registry before sidecar refresh")
     if _refresh_audit_sidecar(out_dir):
         _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
     n_resolved = 0
