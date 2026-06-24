@@ -874,6 +874,17 @@ def _seen_field(path: Path, key: str) -> set[str]:
     }
 
 
+def _submitted_count_for_date(path: Path, date: str) -> int:
+    keys: set[str] = set()
+    for row in _ledger_rows(path):
+        if row.get("date") != date:
+            continue
+        value = row.get("run") or row.get("fingerprint")
+        if isinstance(value, str) and value:
+            keys.add(value)
+    return len(keys)
+
+
 def _append_record(path: Path, row: dict[str, Any]) -> None:
     records = []
     try:
@@ -1725,7 +1736,16 @@ def run_cycle_capped(
     agg["status"] = "submitted_to_researka" if total else last.get("status")
     if first_candidate is not None:
         agg["candidate"] = first_candidate
-    _write_json(runs_root / LEDGER_DIR / f"{date}.json", agg)
+    ledger_path = runs_root / LEDGER_DIR / f"{date}.json"
+    previous = _read_json(ledger_path)
+    durable_submitted = _submitted_count_for_date(runs_root / LEDGER_DIR / "_submitted_fingerprints.json", date)
+    prior_published = int(previous.get("published") or 0)
+    agg["latest_status"] = last.get("status")
+    agg["submitted"] = max(int(agg.get("submitted") or 0), durable_submitted, int(previous.get("submitted") or 0))
+    agg["published"] = max(int(agg.get("published") or 0), prior_published)
+    if int(agg.get("submitted") or 0) and agg.get("status") == "no_eligible_research_paper":
+        agg["status"] = "submitted_to_researka"
+    _write_json(ledger_path, agg)
     return agg
 
 

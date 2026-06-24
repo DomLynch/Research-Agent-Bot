@@ -2012,6 +2012,35 @@ def test_run_cycle_capped_stops_on_no_eligible(tmp_path: Path, monkeypatch) -> N
     assert len(calls) == 2
 
 
+def test_run_cycle_capped_preserves_same_day_submitted_summary(tmp_path: Path, monkeypatch) -> None:
+    _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": "2026-06-24",
+        "run": "synthesis-berberine-v06-DAILY-2026-06-24T12-58-39Z-R2",
+        "fingerprint": "sha256:berberine",
+    }])
+    _write_json(tmp_path / daily.LEDGER_DIR / "2026-06-24.json", {
+        "status": "published",
+        "submitted": 1,
+        "published": 1,
+    })
+    monkeypatch.setattr(daily, "run_cycle", lambda **kw: {
+        "status": "no_eligible_research_paper",
+        "submitted": 0,
+        "published": 0,
+        "considered": [{"run": "synthesis-berberine-v06-DAILY-2026-06-24T12-58-39Z-R2"}],
+    })
+
+    out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-24", submit=True, max_submissions=3)
+
+    written = json.loads((tmp_path / daily.LEDGER_DIR / "2026-06-24.json").read_text(encoding="utf-8"))
+    assert out["status"] == "submitted_to_researka"
+    assert out["latest_status"] == "no_eligible_research_paper"
+    assert out["submitted"] == 1
+    assert out["published"] == 1
+    assert written["submitted"] == 1
+    assert written["published"] == 1
+
+
 def test_run_cycle_capped_continues_past_rejection(tmp_path: Path, monkeypatch) -> None:
     """A duplicate/rejection consumes a candidate but must NOT stall the cycle:
     the loop proceeds to the next ready candidate within the cap and still
