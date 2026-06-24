@@ -201,6 +201,53 @@ def test_select_candidate_skips_old_failed_surface_before_expensive_eligibility(
     assert considered[0]["status"] == "journal_surface_not_passed"
 
 
+def test_select_candidate_skips_old_audit_p1_failure_before_expensive_eligibility(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "full_paper.audit.json", {"p1_pass": False, "n_pass": 13, "n_total": 14})
+    old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
+    os.utime(run, (old, old))
+    monkeypatch.setattr(
+        daily,
+        "_eligible",
+        lambda _run: (_ for _ in ()).throw(AssertionError("old audit failure should skip eligibility")),
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "audit_p1_failed"
+
+
+def test_select_candidate_skips_old_revision_coverage_failure_before_expensive_eligibility(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {"feedback": "Add the missing reviewer-requested caveat."})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": ["Add the missing reviewer-requested caveat."]})
+    old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
+    os.utime(run, (old, old))
+    monkeypatch.setattr(
+        daily,
+        "_eligible",
+        lambda _run: (_ for _ in ()).throw(AssertionError("old revision failure should skip eligibility")),
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "revision_coverage_unmet"
+
+
 def test_select_candidate_caps_recent_self_heal_attempts(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
