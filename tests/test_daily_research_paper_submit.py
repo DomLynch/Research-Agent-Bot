@@ -157,14 +157,12 @@ def test_select_candidate_skips_pending_topic_before_expensive_eligibility(
     assert considered[0]["status"] == "topic_already_submitted_pending"
 
 
-def test_select_candidate_skips_old_missing_sidecar_before_expensive_eligibility(
+def test_select_candidate_skips_missing_sidecar_before_expensive_eligibility(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     run = _run(tmp_path)
     (run / "pre_submit_gate.json").unlink()
-    old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
-    os.utime(run, (old, old))
     monkeypatch.setattr(
         daily,
         "_eligible",
@@ -201,6 +199,38 @@ def test_select_candidate_skips_old_failed_surface_before_expensive_eligibility(
 
     assert selected is None
     assert considered[0]["status"] == "journal_surface_not_passed"
+
+
+def test_select_candidate_caps_recent_self_heal_attempts(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    first = _run(tmp_path, name="synthesis-topic-v06-newer")
+    second = _run(tmp_path, name="synthesis-topic-v06-older")
+    for run in (first, second):
+        _write_json(run / "full_paper.journal_surface.json", {"passed": False, "issues": ["x"]})
+    now = time.time()
+    os.utime(first, (now, now))
+    os.utime(second, (now - 10, now - 10))
+    called: list[str] = []
+
+    def fake_eligible(run: Path) -> tuple[bool, str]:
+        called.append(run.name)
+        return False, "journal_surface_not_passed"
+
+    monkeypatch.setattr(daily, "_eligible", fake_eligible)
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert called == [first.name]
+    assert [row["status"] for row in considered] == [
+        "journal_surface_not_passed",
+        "journal_surface_not_passed",
+    ]
 
 
 def test_pre_submit_corpus_floor_returns_specific_blocker(tmp_path: Path) -> None:

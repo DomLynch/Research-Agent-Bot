@@ -39,6 +39,7 @@ LEDGER_DIR = "_daily_research_paper_ledger"
 # re-audited at submit time so a now-fixed audit check propagates without a
 # re-synthesis. Bounds cost — historical runs are not re-audited every cycle.
 STALE_AUDIT_REFRESH_WINDOW_S = 48 * 3600
+MAX_SUBMIT_SELF_HEAL_CANDIDATES = 1
 REJECTED_FINGERPRINTS = "_rejected_fingerprints.json"
 REVISION_FINGERPRINTS = "_revision_fingerprints.json"
 REVISION_COVERAGE_GATE = "revision_coverage_gate.json"
@@ -488,17 +489,36 @@ def _inside_refresh_window(run: Path) -> bool:
     return age <= STALE_AUDIT_REFRESH_WINDOW_S
 
 
-def _static_ineligible_status(run: Path) -> str | None:
-    if _inside_refresh_window(run):
-        return None
+def _needs_submit_self_heal(run: Path) -> bool:
+    if not _inside_refresh_window(run):
+        return False
+    audit = _read_json(run / "full_paper.audit.json")
+    if audit and audit.get("p1_pass") is not True:
+        return True
+    surface = _read_json(run / "full_paper.journal_surface.json")
+    if surface and surface.get("passed") is not True:
+        return True
+    if _read_json(run / "researka_revision_request.json"):
+        gate = _read_json(run / REVISION_COVERAGE_GATE)
+        if gate.get("passed") is False:
+            return True
+    return False
+
+
+def _static_ineligible_status(run: Path, *, allow_recent_repair: bool = True) -> str | None:
     missing = [name for name in SUBMISSION_REQUIRED_FILES if not (run / name).exists()]
     if missing:
         return "missing:" + ",".join(missing)
+    repairable = allow_recent_repair and _needs_submit_self_heal(run)
     audit = _read_json(run / "full_paper.audit.json")
     if audit and audit.get("p1_pass") is not True:
+        if repairable:
+            return None
         return "audit_p1_failed"
     surface = _read_json(run / "full_paper.journal_surface.json")
     if surface and surface.get("passed") is not True:
+        if repairable:
+            return None
         return "journal_surface_not_passed"
     pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
     if pre_submit_status != "eligible":
@@ -506,6 +526,8 @@ def _static_ineligible_status(run: Path) -> str | None:
     if _read_json(run / "researka_revision_request.json"):
         gate = _read_json(run / REVISION_COVERAGE_GATE)
         if gate.get("passed") is False:
+            if repairable:
+                return None
             return "revision_coverage_unmet"
     source_floor_status = _source_floor_status(run)
     if source_floor_status != "eligible":
@@ -911,6 +933,7 @@ def select_candidate(
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
+    repair_attempts = 0
     explicit_candidate = candidate_run is not None
     for run in ([candidate_run] if candidate_run else _runs(root)):
         topic = _run_topic(run)
@@ -932,9 +955,13 @@ def select_candidate(
         ):
             considered.append({"run": run.name, "fingerprint": paper_sha, "status": "topic_already_submitted_pending"})
             continue
-        if static_status := _static_ineligible_status(run):
+        needs_repair = _needs_submit_self_heal(run)
+        allow_repair = repair_attempts < MAX_SUBMIT_SELF_HEAL_CANDIDATES
+        if static_status := _static_ineligible_status(run, allow_recent_repair=allow_repair):
             considered.append({"run": run.name, "fingerprint": paper_sha, "status": static_status})
             continue
+        if needs_repair:
+            repair_attempts += 1
         locally_eligible, status = _eligible(run)
         ok = locally_eligible
         payload = build_payload(run) if locally_eligible else {}
