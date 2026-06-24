@@ -121,6 +121,15 @@ RESEARKA_QUESTION_SECTION = {
     "research_synthesis": "Abstract",
     "evidence_map": "Scope",
 }
+SUBMISSION_REQUIRED_FILES = (
+    "full_paper.md",
+    "manifest.json",
+    "citation_registry.json",
+    "full_paper.audit.json",
+    "full_paper.journal_surface.json",
+    "full_paper.final_verdict.json",
+    "pre_submit_gate.json",
+)
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 PREFLIGHT_MODE_ENV = "RESEARKA_PREFLIGHT_QA"
@@ -471,6 +480,45 @@ def _final_status_ready(data: dict[str, Any]) -> bool:
     return bool(data.get("submission_ready") is True)
 
 
+def _inside_refresh_window(run: Path) -> bool:
+    try:
+        age = dt.datetime.now(dt.UTC).timestamp() - run.stat().st_mtime
+    except OSError:
+        return False
+    return age <= STALE_AUDIT_REFRESH_WINDOW_S
+
+
+def _static_ineligible_status(run: Path) -> str | None:
+    if _inside_refresh_window(run):
+        return None
+    missing = [name for name in SUBMISSION_REQUIRED_FILES if not (run / name).exists()]
+    if missing:
+        return "missing:" + ",".join(missing)
+    audit = _read_json(run / "full_paper.audit.json")
+    if audit and audit.get("p1_pass") is not True:
+        return "audit_p1_failed"
+    surface = _read_json(run / "full_paper.journal_surface.json")
+    if surface and surface.get("passed") is not True:
+        return "journal_surface_not_passed"
+    pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
+    if pre_submit_status != "eligible":
+        return pre_submit_status
+    if _read_json(run / "researka_revision_request.json"):
+        gate = _read_json(run / REVISION_COVERAGE_GATE)
+        if gate.get("passed") is False:
+            return "revision_coverage_unmet"
+    source_floor_status = _source_floor_status(run)
+    if source_floor_status != "eligible":
+        return source_floor_status
+    final_status = _read_json(run / "final_status.json")
+    if final_status and not _final_status_ready(final_status):
+        return "final_status_not_ready"
+    verdict = _read_json(run / "full_paper.final_verdict.json")
+    if not final_status and str(verdict.get("verdict", "")).upper() != "AAA":
+        return "final_verdict_not_aaa"
+    return None
+
+
 def _revision_coverage_status(run: Path) -> str:
     request = _read_json(run / "researka_revision_request.json")
     if not request:
@@ -740,16 +788,7 @@ def _eligible(run: Path) -> tuple[bool, str]:
     # most once — prefer the accountability path, else the stale-audit path.
     if not _refresh_stale_accountability_sidecar(run):
         _refresh_stale_audit_sidecar(run)
-    required = (
-        "full_paper.md",
-        "manifest.json",
-        "citation_registry.json",
-        "full_paper.audit.json",
-        "full_paper.journal_surface.json",
-        "full_paper.final_verdict.json",
-        "pre_submit_gate.json",
-    )
-    missing = [name for name in required if not (run / name).exists()]
+    missing = [name for name in SUBMISSION_REQUIRED_FILES if not (run / name).exists()]
     if missing:
         return False, "missing:" + ",".join(missing)
     audit = _read_json(run / "full_paper.audit.json")
@@ -892,6 +931,9 @@ def select_candidate(
             and not revision
         ):
             considered.append({"run": run.name, "fingerprint": paper_sha, "status": "topic_already_submitted_pending"})
+            continue
+        if static_status := _static_ineligible_status(run):
+            considered.append({"run": run.name, "fingerprint": paper_sha, "status": static_status})
             continue
         locally_eligible, status = _eligible(run)
         ok = locally_eligible
