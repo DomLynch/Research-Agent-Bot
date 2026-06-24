@@ -1843,6 +1843,22 @@ def _receipt_preflight(
     }
 
 
+def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | None:
+    if source_run is None or not source_run.is_dir():
+        return None
+    counts = _manifest_counts(source_run)
+    n_receipts = int(counts.get("n_receipts") or 0)
+    min_receipts = DEFAULT_THRESHOLDS.min_receipts
+    if n_receipts < min_receipts:
+        return None
+    return {
+        "passed": True,
+        "status": "receipt_preflight_existing_ok",
+        "n_receipts": n_receipts,
+        "min_receipts": min_receipts,
+    }
+
+
 def _terminal_revision_receipt_preflight(report: Mapping[str, Any]) -> bool:
     """A repaired revise corpus that stays severely sparse should not monopolise
     later revise windows for the same reviewer request."""
