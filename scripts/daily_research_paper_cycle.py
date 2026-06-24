@@ -2700,12 +2700,15 @@ def run_cycle(
                 if ready_before_repair:
                     source_precision_auto_excluded |= current_source_precision
             source_precision_repair_attempted: set[str] = set()
+            repair_timeout = _publish_seed_timeout(timeout)
             for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
                     source_precision_repair_attempted.add(repair_topic)
-                    repair = _repair_low_source_precision_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
+                    repair = _repair_low_source_precision_corpus(
+                        repair_topic, dry_run=synthesis_dry_run, timeout=repair_timeout,
+                    )
                 else:
-                    repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
+                    repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=repair_timeout)
                 repairs.append({"topic": repair_topic, **repair})
                 if int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS:
                     if repair_topic not in receipt_preflight_blocked:
@@ -2820,6 +2823,7 @@ def run_cycle(
                 continue
             revision_source_run = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
             existing_source_preflight = _existing_receipt_preflight(revision_source_run) if revision_source else None
+            corpus_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
             corpus: dict[str, Any]
             if existing_source_preflight:
                 corpus = {
@@ -2832,7 +2836,7 @@ def run_cycle(
                     ),
                 }
             else:
-                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=child_timeout())
+                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=corpus_timeout)
             ledger["corpus"] = corpus
             revision_source_repair = _revision_requests_source_precision(revision_feedback)
             source_manifest_availability = (
@@ -2896,7 +2900,7 @@ def run_cycle(
                     source_repair = _repair_low_source_precision_corpus(
                         selected,
                         dry_run=synthesis_dry_run,
-                        timeout=child_timeout(),
+                        timeout=corpus_timeout,
                         force=True,
                         reseed=False,
                     )
@@ -2904,7 +2908,7 @@ def run_cycle(
                     corpus = (ensure_corpus or _ensure_topic_corpus)(
                         selected,
                         dry_run=synthesis_dry_run,
-                        timeout=child_timeout(),
+                        timeout=corpus_timeout,
                     )
                     ledger["corpus"] = corpus
                     if source_repair.get("status") == "source_precision_repaired":
@@ -2951,14 +2955,14 @@ def run_cycle(
                 source_repair = _repair_low_source_precision_corpus(
                     selected,
                     dry_run=synthesis_dry_run,
-                    timeout=child_timeout(),
+                    timeout=corpus_timeout,
                     force=revision_source_repair or source_precision_has_misses,
                 )
                 ledger["source_precision_repair"] = {"topic": selected, **source_repair}
                 corpus = (ensure_corpus or _ensure_topic_corpus)(
                     selected,
                     dry_run=synthesis_dry_run,
-                    timeout=child_timeout(),
+                    timeout=corpus_timeout,
                 )
                 ledger["corpus"] = corpus
                 if source_repair.get("status") == "source_precision_repair_incomplete":
@@ -2993,7 +2997,7 @@ def run_cycle(
                     corpus_repair = _repair_topic_corpus(
                         selected,
                         dry_run=False,
-                        timeout=child_timeout(),
+                        timeout=corpus_timeout,
                         seed_limit=_auto_seed_limit() * (round_idx + 2),
                     )
                     quant_corpus_repairs.append(corpus_repair)
@@ -3002,7 +3006,7 @@ def run_cycle(
                     refreshed = (ensure_corpus or _ensure_topic_corpus)(
                         selected,
                         dry_run=synthesis_dry_run,
-                        timeout=child_timeout(),
+                        timeout=corpus_timeout,
                     )
                     if int(refreshed.get("n_quant_claims") or 0) >= int(corpus_repair.get("n_quant_claims") or 0):
                         corpus = refreshed

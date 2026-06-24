@@ -61,6 +61,35 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         assert "RestartSec=60" in service
 
 
+def test_fresh_publish_corpus_seed_uses_short_timeout(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "empty_frontier", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", "17")
+    seen: list[int | None] = []
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        seen.append(timeout)
+        return {"status": "corpus_seed_failed", "n_quant_claims": 0}
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=fake_corpus,
+        cycle_budget_seconds=1000,
+        max_attempts=1,
+    )
+
+    assert seen == [17]
+    assert ledger["status"] == "corpus_unavailable_no_submission"
+
+
 @pytest.fixture(autouse=True)
 def _offline_coverage_judge(monkeypatch):
     """The revision coverage judge calls a live model; default every test to
