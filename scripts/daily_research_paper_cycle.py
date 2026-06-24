@@ -188,7 +188,7 @@ def _submit_ledger_paths_for_reconciliation(runs_root: Path, date: str | None) -
     return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
 
 
-def _ledger_run_names(ledger: dict[str, Any]) -> list[str]:
+def _ledger_run_names(ledger: dict[str, Any], *, submitted_only: bool = True) -> list[str]:
     names: list[str] = []
     for key in ("submitted_run", "attempted_run", "out_dir"):
         value = ledger.get(key)
@@ -201,7 +201,9 @@ def _ledger_run_names(ledger: dict[str, Any]) -> list[str]:
             names.append(value)
     attempts = ledger.get("attempts")
     for attempt in attempts if isinstance(attempts, list) else []:
-        if not isinstance(attempt, dict) or not int(attempt.get("submitted") or 0):
+        if not isinstance(attempt, dict):
+            continue
+        if submitted_only and not int(attempt.get("submitted") or 0):
             continue
         for key in ("submitted_run", "out_dir"):
             value = attempt.get(key)
@@ -243,23 +245,31 @@ def _ledger_submission_markers(ledger: dict[str, Any]) -> set[str]:
     return markers
 
 
-def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[str]) -> set[str]:
+def _submit_bridge_submission_markers_by_run(runs_root: Path, run_names: set[str]) -> dict[str, set[str]]:
     if not run_names:
-        return set()
-    markers: set[str] = set()
+        return {}
+    markers_by_run: dict[str, set[str]] = {}
     ledger_dir = runs_root / submit_bridge.LEDGER_DIR
     for path in ledger_dir.glob("*.json"):
         if path.name.startswith("_"):
             continue
         ledger = _read_json(path)
-        if set(_ledger_run_names(ledger)) & run_names:
-            markers.update(_ledger_submission_markers(ledger))
+        matched_runs = set(_ledger_run_names(ledger)) & run_names
+        if matched_runs:
+            markers = _ledger_submission_markers(ledger)
+            for run_name in matched_runs:
+                markers_by_run.setdefault(run_name, set()).update(markers)
+    return markers_by_run
+
+
+def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[str]) -> set[str]:
+    markers: set[str] = set()
+    for values in _submit_bridge_submission_markers_by_run(runs_root, run_names).values():
+        markers.update(values)
     return markers
 
 
 def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_seen: set[str]) -> bool:
-    if not int(ledger.get("submitted") or 0):
-        return False
     if int(ledger.get("published") or 0):
         changed = False
         if str(ledger.get("status") or "") == "submitted_to_researka":
@@ -269,19 +279,39 @@ def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_
         ledger.pop("no_submission_reason", None)
         return changed or len(ledger) != before
     matches: set[str] = set()
+    matched_runs: set[str] = set()
     submitted_runs = set(_ledger_run_names(ledger))
-    exact_markers = _ledger_submission_markers(ledger) or _submit_bridge_submission_markers_for_runs(runs_root, submitted_runs)
-    if exact_markers:
-        matches.update(exact_markers & remote_seen)
+    if int(ledger.get("submitted") or 0):
+        exact_markers = _ledger_submission_markers(ledger) or _submit_bridge_submission_markers_for_runs(runs_root, submitted_runs)
+        if exact_markers:
+            matches.update(exact_markers & remote_seen)
+            if not matches:
+                return False
+        if not matches:
+            for run_name in submitted_runs:
+                run_matches = _publication_markers_for_run(runs_root, run_name) & remote_seen
+                if run_matches:
+                    matched_runs.add(run_name)
+                    matches.update(run_matches)
+    else:
+        marker_map = _submit_bridge_submission_markers_by_run(
+            runs_root,
+            set(_ledger_run_names(ledger, submitted_only=False)),
+        )
+        for run_name, markers in marker_map.items():
+            run_matches = markers & remote_seen
+            if run_matches:
+                matched_runs.add(run_name)
+                matches.update(run_matches)
         if not matches:
             return False
     if not matches:
-        for run_name in submitted_runs:
-            matches.update(_publication_markers_for_run(runs_root, run_name) & remote_seen)
-    if not matches:
         return False
+    if not submitted_runs:
+        submitted_runs = matched_runs
+    ledger["submitted"] = 1
     ledger["published"] = 1
-    if str(ledger.get("status") or "") == "submitted_to_researka":
+    if str(ledger.get("status") or "") in {"submitted_to_researka", "synthesis_completed_no_submission", "no_eligible_research_paper"}:
         ledger["status"] = "published"
     ledger.pop("no_submission_reason", None)
     ledger["publication_reconciliation"] = {
@@ -291,10 +321,11 @@ def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_
     }
     attempts = ledger.get("attempts")
     for attempt in attempts if isinstance(attempts, list) else []:
-        if not isinstance(attempt, dict) or not int(attempt.get("submitted") or 0):
+        if not isinstance(attempt, dict):
             continue
         attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
         if not attempt_run or attempt_run in submitted_runs:
+            attempt["submitted"] = 1
             attempt["published"] = 1
     return True
 

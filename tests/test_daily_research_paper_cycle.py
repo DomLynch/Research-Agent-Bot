@@ -416,6 +416,85 @@ def test_reconcile_publication_ledgers_uses_submit_bridge_ids_for_legacy_cycle_l
     assert ledger["published"] == 0
 
 
+def test_reconcile_publication_ledgers_updates_cycle_after_later_submit_bridge_publish(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    title = "Hypothesis-Generating Brief: Berberine hydrochloride"
+    run = runs_root / "synthesis-berberine-v06-DAILY-2026-06-24T12-58-39Z-R2"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
+    cycle_ledger_dir = runs_root / cycle.LEDGER_DIR
+    submit_ledger_dir = runs_root / cycle.submit_bridge.LEDGER_DIR
+    _write_json(cycle_ledger_dir / "2026-06-24-fresh.json", {
+        "date": "2026-06-24",
+        "mode": "fresh",
+        "started_at": "2026-06-24T08:00:00+00:00",
+        "status": "synthesis_completed_no_submission",
+        "submitted": 0,
+        "published": 0,
+        "attempts": [{"topic": "berberine", "out_dir": run.name, "submitted": 0}],
+    })
+    _write_json(submit_ledger_dir / "2026-06-24.json", {
+        "date": "2026-06-24",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "candidate": {"run": run.name, "topic": "berberine"},
+        "submission": {"response": {"submission": {"id": "berberine-submission"}}},
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-24",
+        mode="fresh",
+        remote_loader=lambda: ({cycle.submit_bridge._submission_marker("berberine-submission")}, None),
+    )
+
+    cycle_ledger = json.loads((cycle_ledger_dir / "2026-06-24-fresh.json").read_text(encoding="utf-8"))
+    submit_ledger = json.loads((submit_ledger_dir / "2026-06-24.json").read_text(encoding="utf-8"))
+    throughput = json.loads((cycle_ledger_dir / cycle.DAILY_THROUGHPUT_SUMMARY).read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == [
+        "2026-06-24-fresh.json",
+        "_daily_research_paper_ledger/2026-06-24.json",
+    ]
+    assert cycle_ledger["status"] == "published"
+    assert cycle_ledger["submitted"] == 1
+    assert cycle_ledger["published"] == 1
+    assert cycle_ledger["attempts"][0]["submitted"] == 1
+    assert cycle_ledger["attempts"][0]["published"] == 1
+    assert cycle_ledger["publication_reconciliation"]["matched"] == ["submission:berberine-submission"]
+    assert submit_ledger["status"] == "published"
+    assert submit_ledger["published"] == 1
+    assert throughput["days"]["2026-06-24"]["published"] == 1
+
+
+def test_reconcile_publication_ledgers_does_not_title_match_unsubmitted_cycle(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    title = "Hypothesis-Generating Brief: Berberine hydrochloride"
+    run = runs_root / "synthesis-berberine-v06-DAILY-2026-06-24T12-58-39Z-R2"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
+    cycle_ledger_dir = runs_root / cycle.LEDGER_DIR
+    _write_json(cycle_ledger_dir / "2026-06-24-fresh.json", {
+        "status": "synthesis_completed_no_submission",
+        "submitted": 0,
+        "published": 0,
+        "attempts": [{"topic": "berberine", "out_dir": run.name, "submitted": 0}],
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-24",
+        mode="fresh",
+        remote_loader=lambda: ({cycle.submit_bridge._title_marker(title)}, None),
+    )
+
+    ledger = json.loads((cycle_ledger_dir / "2026-06-24-fresh.json").read_text(encoding="utf-8"))
+    assert result["updated_ledgers"] == []
+    assert ledger["status"] == "synthesis_completed_no_submission"
+    assert ledger["published"] == 0
+
+
 def test_reconcile_publication_ledgers_cleans_stale_published_reason(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     ledger_dir = runs_root / cycle.LEDGER_DIR
