@@ -267,6 +267,15 @@ def test_summarize_includes_pace(monkeypatch, tmp_path: Path) -> None:
     assert summary["pace"]["rolling"]["local_submitted"] == 8
 
 
+def test_main_accepts_date_flag(monkeypatch, tmp_path: Path, capsys) -> None:
+    monkeypatch.setattr(report, "summarize", lambda date, *, runs_root: {"date": date, "runs_root": str(runs_root)})
+
+    assert report.main(["--date", "2026-06-24", "--runs-root", str(tmp_path)]) == 0
+
+    payload = json.loads(capsys.readouterr().out)
+    assert payload == {"date": "2026-06-24", "runs_root": str(tmp_path)}
+
+
 def test_emit_json_treats_closed_pipe_as_clean_exit() -> None:
     class ClosedPipe:
         def write(self, _text: str) -> int:

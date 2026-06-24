@@ -439,6 +439,29 @@ def test_reconcile_publication_ledgers_cleans_stale_published_reason(tmp_path: P
     assert "no_submission_reason" not in ledger
 
 
+def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path: Path, monkeypatch) -> None:
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    monkeypatch.setattr(cycle.submit_bridge, "_remote_published_fingerprints", lambda: (set(), None))
+    monkeypatch.setattr(cycle, "_latest_public_decisions_by_title", lambda: ({
+        cycle.submit_bridge._title_marker("Hypothesis-Generating Brief: Taurine supplementation — full paper"): {
+            "artifactId": "paper-1",
+            "title": "Hypothesis-Generating Brief: Taurine supplementation — full paper",
+            "decision": "accept",
+            "status": "published",
+            "createdAt": "2026-06-24T12:22:51+04:00",
+        },
+    }, None))
+
+    result = cycle.reconcile_publication_ledgers(runs_root=runs_root, date="2026-06-24")
+
+    decisions = json.loads((ledger_dir / cycle.DECISIONS_BY_DAY).read_text(encoding="utf-8"))
+    assert result["decision_records"] == 1
+    assert decisions["days"]["2026-06-24"]["counts"] == {"accept": 1}
+    assert decisions["days"]["2026-06-24"]["records"][0]["reviewed_at"] == "2026-06-24T12:22:51+04:00"
+
+
 def test_reconcile_cli_without_mode_checks_all_lanes(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     seen: dict[str, Any] = {}
 

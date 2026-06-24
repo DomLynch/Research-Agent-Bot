@@ -362,10 +362,14 @@ def _emit_json(payload: dict[str, Any], *, stream: TextIO | None = None) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("date")
+    parser.add_argument("date", nargs="?")
+    parser.add_argument("--date", dest="date_flag")
     parser.add_argument("--runs-root", type=Path, default=RUNS)
     args = parser.parse_args(argv)
-    return _emit_json(summarize(args.date, runs_root=args.runs_root))
+    date = args.date_flag or args.date
+    if not date:
+        parser.error("date is required")
+    return _emit_json(summarize(date, runs_root=args.runs_root))
 
 
 if __name__ == "__main__":
