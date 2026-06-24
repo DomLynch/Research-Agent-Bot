@@ -2086,10 +2086,26 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
         rank = directness_rank(left) + directness_rank(right)
         pair_candidates.append((rank, outcome_key(left), left, right))
     pair_candidates.sort(key=lambda item: (item[0], item[1], citation(item[2]), citation(item[3])))
+    selected_pairs: list[tuple[int, str, dict[str, Any], dict[str, Any]]] = []
+    selected_outcomes: set[str] = set()
+    for item in pair_candidates:
+        if item[1] in selected_outcomes:
+            continue
+        selected_pairs.append(item)
+        selected_outcomes.add(item[1])
+        if len(selected_pairs) >= 3:
+            break
+    if len(selected_pairs) < 3:
+        for item in pair_candidates:
+            if item in selected_pairs:
+                continue
+            selected_pairs.append(item)
+            if len(selected_pairs) >= 3:
+                break
     lines = [
         f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in "
         f"{_outcome_display(outcome_key(left))} because directions are {direction(left)} versus {direction(right)}."
-        for _, _, left, right in pair_candidates[:3]
+        for _, _, left, right in selected_pairs
     ]
     if len(lines) >= 3:
         return lines
