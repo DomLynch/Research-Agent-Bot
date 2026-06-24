@@ -513,7 +513,7 @@ def test_reconcile_publication_ledgers_updates_cycle_after_later_submit_bridge_p
         "date": "2026-06-24",
         "mode": "fresh",
         "started_at": "2026-06-24T08:00:00+00:00",
-        "status": "synthesis_completed_no_submission",
+        "status": "no_ready_corpus_available",
         "submitted": 0,
         "published": 0,
         "attempts": [{"topic": "berberine", "out_dir": run.name, "submitted": 0}],

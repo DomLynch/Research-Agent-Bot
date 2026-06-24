@@ -326,8 +326,7 @@ def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_
         submitted_runs = matched_runs
     ledger["submitted"] = 1
     ledger["published"] = 1
-    if str(ledger.get("status") or "") in {"submitted_to_researka", "synthesis_completed_no_submission", "no_eligible_research_paper"}:
-        ledger["status"] = "published"
+    ledger["status"] = "published"
     ledger.pop("no_submission_reason", None)
     ledger["publication_reconciliation"] = {
         "source": "remote_publications",
