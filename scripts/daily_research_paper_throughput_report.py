@@ -308,6 +308,7 @@ def _pace_snapshot(local: dict[str, Any], public: dict[str, Any], capacity: dict
     submitted = _int_value(throughput.get("submitted"))
     local_published = _int_value(throughput.get("published"))
     public_accepts = _int_value(decisions.get("accept"))
+    observed_published = max(local_published, public_accepts)
     return {
         "required_daily_average": {
             "one_year": _required_daily(one_year),
@@ -317,11 +318,13 @@ def _pace_snapshot(local: dict[str, Any], public: dict[str, Any], capacity: dict
             "local_submitted": submitted,
             "local_published": local_published,
             "public_accepts": public_accepts,
+            "observed_published": observed_published,
         },
         "today_gap_to_two_year_daily_average": {
             "by_local_submissions": max(0.0, round(two_year_daily - submitted, 2)),
             "by_local_published": max(0.0, round(two_year_daily - local_published, 2)),
             "by_public_accepts": max(0.0, round(two_year_daily - public_accepts, 2)),
+            "by_observed_published": max(0.0, round(two_year_daily - observed_published, 2)),
         },
     }
 

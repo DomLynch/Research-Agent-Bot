@@ -186,11 +186,13 @@ def test_pace_snapshot_reports_daily_target_and_observed_gap() -> None:
         "local_submitted": 3,
         "local_published": 1,
         "public_accepts": 2,
+        "observed_published": 2,
     }
     assert pace["today_gap_to_two_year_daily_average"] == {
         "by_local_submissions": 3.85,
         "by_local_published": 5.85,
         "by_public_accepts": 4.85,
+        "by_observed_published": 4.85,
     }
 
 
@@ -262,8 +264,10 @@ def test_summarize_includes_pace(monkeypatch, tmp_path: Path) -> None:
         "local_submitted": 8,
         "local_published": 6,
         "public_accepts": 7,
+        "observed_published": 7,
     }
     assert summary["pace"]["today_gap_to_two_year_daily_average"]["by_public_accepts"] == 0.0
+    assert summary["pace"]["today_gap_to_two_year_daily_average"]["by_observed_published"] == 0.0
     assert summary["pace"]["rolling"]["local_submitted"] == 8
 
 
