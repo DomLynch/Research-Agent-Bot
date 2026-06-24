@@ -1866,6 +1866,7 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
         and any(token in lower for token in (
             "included under", "inclusion criteria", "why sources", "umbrella",
             "operationalize", "directly study", "directly addresses",
+            "justify", "adjacent context",
         ))
     )
 
@@ -2335,7 +2336,8 @@ def _phase_d_source_directness_breakdown(
     direct_n = sum(n for key, n in counts.items() if key.startswith("direct"))
     adjacent_n = len(rows) - direct_n
     examples = []
-    for row in rows[:8]:
+    full_inventory = any(token in lower for token in ("each", "which included", "which sources", "scope statement"))
+    for row in rows if full_inventory else rows[:8]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
@@ -2389,6 +2391,12 @@ def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
         "source directness" in lower
         or "evidence_type" in lower
         or "evidence type" in lower
+        or (
+            "source" in lower
+            and "direct" in lower
+            and "adjacent" in lower
+            and any(token in lower for token in ("versus", "vs.", "which included", "scope statement"))
+        )
         or (
             "source" in lower
             and any(token in lower for token in (

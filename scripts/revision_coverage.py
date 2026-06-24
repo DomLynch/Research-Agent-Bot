@@ -310,6 +310,12 @@ def _asks_source_directness_breakdown(text: str) -> bool:
         or "directness/direction verdict" in text
         or (
             "source" in text
+            and "direct" in text
+            and "adjacent" in text
+            and any(token in text for token in ("versus", "vs.", "which included", "scope statement"))
+        )
+        or (
+            "source" in text
             and any(token in text for token in (
                 "directly address", "directly addresses", "hard endpoint", "hard endpoints",
                 "general digital biomarker", "broader", "off-topic", "off topic",
@@ -325,7 +331,7 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
     return (
         "source" in text
         and any(token in text for token in ("included under", "inclusion criteria", "included", "umbrella", "operationalize", "classified as addressing"))
-        and any(token in text for token in ("unrelated", "general", "other digital", "non-digital", "why sources"))
+        and any(token in text for token in ("unrelated", "general", "other digital", "non-digital", "why sources", "justify", "adjacent context"))
     )
 
 

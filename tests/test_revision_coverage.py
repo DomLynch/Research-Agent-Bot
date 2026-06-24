@@ -102,6 +102,36 @@ def test_deterministic_unmet_accepts_source_directness_breakdown() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_direct_vs_adjacent_scope_statement() -> None:
+    ask = (
+        "Clarify the scope statement: explicitly state which included sources are direct "
+        "ABT-263 (navitoclax) studies versus other senolytics used as adjacent context, "
+        "and justify why each non-ABT-263 source is included in an ABT-263 evidence map."
+    )
+    paper = "## Evidence Landscape\n\nThe source set is mixed.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_direct_vs_adjacent_scope_statement() -> None:
+    ask = (
+        "Clarify the scope statement: explicitly state which included sources are direct "
+        "ABT-263 (navitoclax) studies versus other senolytics used as adjacent context, "
+        "and justify why each non-ABT-263 source is included in an ABT-263 evidence map."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Source directness breakdown: 1/3 retained sources directly address the stated topic "
+        "and aging-relevant hard endpoints; 2/3 are adjacent contextual sources.\n\n"
+        "### Source Classification Map\n\n"
+        "- Smith 2024: outcome=longevity; direction=positive; directness=direct; tier=A1.\n"
+        "- Jones 2025: outcome=contextual adjacent evidence; direction=null; directness=adjacent; tier=B2.\n"
+        "- Lee 2026: outcome=mechanism; direction=unclear; directness=mechanistic; tier=C1.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_general_vs_direct_source_breakdown() -> None:
     ask = (
         "Clarify which of the 52 sources directly address a composite digital "

@@ -1757,6 +1757,38 @@ def test_source_directness_breakdown_repairs_source_bundle_ask(tmp_path: Path) -
     ]
 
 
+def test_source_directness_breakdown_repairs_direct_vs_adjacent_scope_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify the scope statement: explicitly state which included sources are direct "
+        "ABT-263 (navitoclax) studies versus other senolytics used as adjacent context, "
+        "and justify why each non-ABT-263 source is included in an ABT-263 evidence map."
+    )
+    paper = "## Evidence Landscape\n\nThe corpus is summarized.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"citation_token": "Smith 2024", "outcome_class": "longevity", "directness": "direct", "evidence_tier": "A1"},
+        {"citation_token": "Jones 2025", "outcome_class": "contextual_other", "directness": "indirect", "evidence_tier": "B2"},
+        {"citation_token": "Lee 2026", "outcome_class": "mechanism", "directness": "mechanistic", "evidence_tier": "C1"},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
+
+    assert "Source directness breakdown:" in fixed
+    assert fixed.count("directness=") == 3
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_source_directness_breakdown",
+            rule="insert_manifest_source_directness_map",
+            n_changes=1,
+            detail="added source directness breakdown from 3 manifest receipt(s)",
+        )
+    ]
+
+
 def test_source_directness_breakdown_repairs_evidence_type_metadata_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
