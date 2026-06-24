@@ -202,10 +202,14 @@ def find_unsourced_background_uses(
     paper LEGITIMATELY surfaces."""
     if not registry:
         return []
+    # References may contain DOI fragments or source-title numerics that look
+    # like background values; they are bibliography metadata, not manuscript
+    # prose claims. Surface/reference gates own that section.
+    body_md = re.split(r"^##\s+References\b", paper_md, maxsplit=1, flags=re.M)[0]
     # Split paper into sentences (rough — period followed by whitespace
     # + capital, OR newline). Same heuristic as final_consistency_audit.
     sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])|\n\n+")
-    sentences = sent_split.split(paper_md)
+    sentences = sent_split.split(body_md)
     unsourced: list[tuple[str, str, str]] = []
     # Build a digit-boundary-aware regex per entry. The numeric string
     # may contain non-word chars ('%', '/', '.') so `\b` doesn't always

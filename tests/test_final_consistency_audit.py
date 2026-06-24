@@ -944,6 +944,18 @@ def test_background_lit_sourced_passes_stage2() -> None:
     assert bg_issues == []
 
 
+def test_background_lit_ignores_references_section_numerics() -> None:
+    paper = (
+        "## Discussion\n\n"
+        "The manuscript body makes no background threshold claim.\n\n"
+        "## References\n\n"
+        "- **Example 2024.** Bibliography title mentions 0.8 m/s without being prose evidence.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    bg_issues = [i for i in issues if i.issue_type == "background_lit_unsourced"]
+    assert bg_issues == []
+
+
 # ----- Fix #18b: auto-fix strips unsourced background sentences --------
 
 
