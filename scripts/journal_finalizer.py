@@ -4,6 +4,7 @@ import json
 import re
 import importlib
 import sys
+from itertools import combinations
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -1981,7 +1982,7 @@ def _phase_d_tensions_and_gaps_breadth(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     lower = " ".join(feedback.lower().split())
     asks_count_evidence = (
-        "cross-study disagreement" in lower
+        ("cross-study disagreement" in lower or "surfaced tension" in lower)
         and any(token in lower for token in ("substantiated", "enumerated", "actually-surfaced", "actually surfaced", "correct", "replace"))
     )
     if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower and not asks_count_evidence:
@@ -2024,12 +2025,24 @@ def _phase_d_tensions_and_gaps_breadth(
     existing = re.search(r"^## Tensions and Gaps\b.*?(?=^## |\Z)", text, flags=re.M | re.S)
     if existing:
         if existing.group(0).strip() == section.strip():
-            return text, []
-        patched = text[:existing.start()] + section + text[existing.end():]
+            patched = text
+        else:
+            patched = text[:existing.start()] + section + text[existing.end():]
     else:
         ref = re.search(r"^## Evidence Snapshot\b|^## References\b", text, flags=re.M)
         insert_at = ref.start() if ref else len(text)
         patched = text[:insert_at].rstrip() + "\n\n" + section + "\n" + text[insert_at:].lstrip()
+    if asks_count_evidence:
+        load_bearing = "### Load-Bearing Tensions\n\n" + "\n".join(tension_lines) + "\n\n"
+        patched = re.sub(
+            r"^### Load-Bearing Tensions\b.*?(?=^### |^## |\Z)",
+            load_bearing,
+            patched,
+            count=1,
+            flags=re.M | re.S,
+        )
+    if patched == text:
+        return text, []
     return patched, [FinalizerLogEntry(
         phase="D_tensions_and_gaps_breadth",
         rule="state_revision_tension_breadth",
@@ -2045,19 +2058,47 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
     def direction(row: dict[str, Any]) -> str:
         return str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
 
+    def outcome_key(row: dict[str, Any]) -> str:
+        return str(row.get("outcome_class") or "contextual_other").strip().lower() or "contextual_other"
+
+    def directness_rank(row: dict[str, Any]) -> int:
+        value = str(row.get("directness") or "").strip().lower()
+        if value.startswith("direct"):
+            return 0
+        if value in {"indirect", "adjacent"}:
+            return 1
+        if "review" in value:
+            return 2
+        if "mechanistic" in value or "model" in value or "preclinical" in value:
+            return 3
+        return 2
+
     candidates = [
         row for row in rows
         if citation(row) and re.search(r"\b(?:19|20)\d{2}\b", citation(row))
     ]
     if not candidates:
         return []
+    pair_candidates: list[tuple[int, str, dict[str, Any], dict[str, Any]]] = []
+    for left, right in combinations(candidates, 2):
+        if outcome_key(left) != outcome_key(right) or direction(left) == direction(right):
+            continue
+        rank = directness_rank(left) + directness_rank(right)
+        pair_candidates.append((rank, outcome_key(left), left, right))
+    pair_candidates.sort(key=lambda item: (item[0], item[1], citation(item[2]), citation(item[3])))
+    lines = [
+        f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in "
+        f"{_outcome_display(outcome_key(left))} because directions are {direction(left)} versus {direction(right)}."
+        for _, _, left, right in pair_candidates[:3]
+    ]
+    if len(lines) >= 3:
+        return lines
     positives = [row for row in candidates if direction(row) == "positive"]
     contrasts = [row for row in candidates if direction(row) in {"negative", "mixed", "null", "unclear"}]
     if not positives:
         positives = candidates[:]
     if not contrasts:
         contrasts = list(reversed(candidates))
-    lines: list[str] = []
     used: set[tuple[str, str]] = set()
     for left in positives:
         for right in contrasts:

@@ -1296,6 +1296,45 @@ def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
     ]
 
 
+def test_tensions_and_gaps_replaces_stale_cross_outcome_surface_tensions(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Replace the three Curran 2025-based 'surfaced tensions' with genuinely "
+        "comparable within-outcome tensions (e.g., Martens 2018 vs Connell 2021; "
+        "Yi 2022 vs Katayoshi 2023; Baichuan 2023 meta-analysis vs individual null RCTs)."
+    )
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        "### Load-Bearing Tensions\n\n"
+        "- Zhao 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
+        "- Pei 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
+        "- Zhao 2024 vs Ministrini 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus null.\n\n"
+        "## References\n\nR01.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"n_non_orthogonal_tensions": 146, "receipts": [
+        {"citation_token": "Curran 2025", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "positive", "directness": "review"},
+        {"citation_token": "Zhao 2024", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "negative", "directness": "review"},
+        {"citation_token": "Katayoshi 2023", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect"},
+        {"citation_token": "Martens 2018", "outcome_class": "cardiometabolic", "effect_direction": "unclear", "directness": "indirect"},
+        {"citation_token": "Yi 2022", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "unclear", "directness": "direct"},
+        {"citation_token": "Simic 2020", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "null", "directness": "review"},
+        {"citation_token": "Gao 2025", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "null", "directness": "direct"},
+        {"citation_token": "Simon 2024", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "unclear", "directness": "direct"},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_tensions_and_gaps_breadth(paper, tmp_path)
+
+    assert "Curran 2025: surfaced tension" not in fixed
+    assert "Katayoshi 2023 vs Martens 2018" in fixed
+    assert "Yi 2022 vs Simic 2020" in fixed
+    assert "Gao 2025 vs Simon 2024" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_tensions_and_gaps_breadth"
+
+
 def test_source_outcome_class_map_no_receipts_does_not_crash(tmp_path: Path) -> None:
     ask = (
         "Provide a mapping table or list showing which of the 28 bundle sources were "

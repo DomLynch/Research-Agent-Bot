@@ -1437,6 +1437,31 @@ def test_deterministic_unmet_accepts_concrete_tensions_and_gap_priority() -> Non
     assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
 
 
+def test_deterministic_unmet_requires_replaced_surface_tensions() -> None:
+    ask = (
+        "Replace the three Curran 2025-based 'surfaced tensions' with genuinely "
+        "comparable within-outcome tensions. A cross-species, cross-population, "
+        "cross-endpoint disagreement is not a meaningful tension to surface."
+    )
+    stale = (
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: unresolved.\n"
+        "- Zhao 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
+        "- Pei 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
+        "- Zhao 2024 vs Ministrini 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus null.\n"
+    )
+    repaired = (
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: within-outcome contrasts remain.\n"
+        "- Katayoshi 2023 vs Martens 2018: surfaced tension/disagreement in Cardiometabolic because directions are null versus unclear.\n"
+        "- Yi 2022 vs Simic 2020: surfaced tension/disagreement in Dosing Pharmacokinetics because directions are unclear versus null.\n"
+        "- Gao 2025 vs Simon 2024: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are null versus unclear.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(stale, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
 def test_revision_asks_splits_soften_and_mark_actions() -> None:
     feedback = (
         "Expand the Tensions and Gaps section with at least 3–5 concrete tensions; "

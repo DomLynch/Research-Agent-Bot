@@ -157,6 +157,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_contextual_without_directional_signal,
             _asks_actionable_gaps,
             _asks_null_signal_reconciliation,
+            _asks_replaced_surface_tensions,
             _asks_concrete_tensions_gaps,
             _asks_internal_duplication,
             _asks_long_term_safety_scope,
@@ -245,6 +246,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
         return _null_signal_conclusion_is_bounded(paper_md)
+    if _asks_replaced_surface_tensions(lower):
+        return _replaced_surface_tensions_are_stated(paper_md, lower)
     if _asks_concrete_tensions_gaps(lower):
         return _concrete_tensions_gaps_are_stated(paper_md)
     if _asks_internal_duplication(lower):
@@ -520,6 +523,14 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
     )
 
 
+def _asks_replaced_surface_tensions(text: str) -> bool:
+    return (
+        "replace" in text
+        and "surfaced tension" in text
+        and any(token in text for token in ("within-outcome", "within outcome", "comparable"))
+    )
+
+
 def _asks_internal_duplication(text: str) -> bool:
     return any(token in text for token in ("internal duplication", "repetitive narrative", "verbatim repetition", "non-repetitive"))
 
@@ -656,6 +667,31 @@ def _concrete_tensions_gaps_are_stated(paper_md: str) -> bool:
         and re.search(r"\b(?:tension|disagreement|conflict)\b", line, re.I)
     ]
     return len(tension_lines) >= 3
+
+
+def _replaced_surface_tensions_are_stated(paper_md: str, ask: str) -> bool:
+    scope = _section(paper_md, "Tensions and Gaps") or _section(paper_md, "Cross-Domain Synthesis")
+    if not scope:
+        return False
+    blocked = {
+        match.group(1).lower()
+        for match in re.finditer(r"\b([a-z][a-z'’\-]+ 20\d{2})(?:-based|\s+based)\b", ask)
+    }
+    tension_lines = [
+        line.strip()
+        for line in scope.splitlines()
+        if re.search(r"\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b.*\b(?:vs\.?|versus)\b.*\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b", line)
+        and re.search(r"\b(?:tension|disagreement|conflict)\b", line, re.I)
+    ]
+    if len(tension_lines) < 3:
+        return False
+    if blocked and any(any(name in line.lower() for name in blocked) for line in tension_lines):
+        return False
+    comparable = [
+        line for line in tension_lines
+        if "same outcome" in line.lower() or re.search(r"\bin [A-Za-z][A-Za-z /-]+ because directions\b", line)
+    ]
+    return len(comparable) >= 3
 
 
 def _internal_duplication_scope(paper_md: str, ask: str) -> str:
