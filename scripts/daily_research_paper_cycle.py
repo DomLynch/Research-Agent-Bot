@@ -2930,9 +2930,12 @@ def run_cycle(
                     ledger["attempts"].append(attempt)
                     ledger["status"] = "cycle_budget_exhausted"
                     break
-                revision_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
+                source_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
+                revision_base_dir = source_base_dir
                 if revise_attempt > 1:
-                    revision_base_dir = out_dir
+                    previous_out_dir = out_dir
+                    if not revision_source or _existing_receipt_preflight(previous_out_dir):
+                        revision_base_dir = previous_out_dir
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
                     ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})

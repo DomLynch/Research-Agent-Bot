@@ -2527,6 +2527,55 @@ def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch
     assert ledger["attempts"][0]["submitted"] == 1
 
 
+def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    calls = 0
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            return 1
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text(
+            "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.",
+            encoding="utf-8",
+        )
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: [])
+    monkeypatch.setattr(
+        cycle,
+        "_receipt_preflight",
+        lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("retry must keep source manifest")),
+    )
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=_aspirin_revise_loader,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_revise_attempts=2,
+    )
+
+    assert calls == 2
+    assert ledger["attempts"][0]["gate_status"] == "synthesis_failed"
+    assert ledger["attempts"][1]["receipt_preflight"]["status"] == "receipt_preflight_existing_ok"
+    assert ledger["attempts"][1]["submitted"] == 1
+
+
 def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     submitted: list[int] = []
