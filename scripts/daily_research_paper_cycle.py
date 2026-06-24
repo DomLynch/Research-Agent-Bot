@@ -2756,11 +2756,24 @@ def run_cycle(
             else:
                 corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=child_timeout())
             ledger["corpus"] = corpus
+            revision_source_repair = _revision_requests_source_precision(revision_feedback)
             source_manifest_availability = (
                 _source_manifest_availability(selected, revision_source_run)
                 if existing_source_preflight
                 else None
             )
+            if (
+                source_manifest_availability
+                and not source_manifest_availability.get("passed")
+                and revision_source
+                and not revision_source_repair
+            ):
+                restore = _restore_source_manifest_quant_claims(selected, revision_source_run)
+                source_manifest_availability = _source_manifest_availability(selected, revision_source_run)
+                ledger["source_manifest_restore"] = {
+                    **restore,
+                    "availability_after": source_manifest_availability,
+                }
             if source_manifest_availability and not source_manifest_availability.get("passed"):
                 gate_status = "terminal_revision_source_manifest_unavailable"
                 attempt = _gate_attempt(
@@ -2792,7 +2805,6 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
-            revision_source_repair = _revision_requests_source_precision(revision_feedback)
             source_precision_ok, source_precision_status, source_precision_misses = _quant_claim_source_precision(
                 selected, floor=SOURCE_TOPIC_REPAIR_FLOOR,
             )

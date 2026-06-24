@@ -2578,6 +2578,47 @@ def test_revise_source_manifest_drift_fails_fast_before_synthesis(tmp_path: Path
     assert handled["handled"][0]["status"] == "terminal_revision_source_manifest_unavailable"
 
 
+def test_revise_restores_source_manifest_files_from_quarantine(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    qdir = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims"
+    quarantine = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims_quarantine" / "old"
+    quarantine.mkdir(parents=True)
+    for idx in range(cycle.PREFLIGHT_MIN_RECEIPTS - 1, 57):
+        (qdir / f"r{idx}.quant_claims.json").rename(quarantine / f"r{idx}.quant_claims.json")
+    calls: list[str] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        calls.append(topic)
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text("# Research Synthesis: Aspirin Geroprotection\n", encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=_aspirin_revise_loader,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert calls == ["aspirin_geroprotection"]
+    assert ledger["source_manifest_restore"]["n_restored"] == 57 - (cycle.PREFLIGHT_MIN_RECEIPTS - 1)
+    assert ledger["source_manifest_restore"]["availability_after"]["passed"] is True
+    assert ledger["attempts"][0]["submitted"] == 1
+
+
 def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     calls = 0
