@@ -435,12 +435,17 @@ def test_reconcile_publication_ledgers_updates_cycle_after_later_submit_bridge_p
     })
     _write_json(submit_ledger_dir / "2026-06-24.json", {
         "date": "2026-06-24",
-        "status": "submitted_to_researka",
-        "submitted": 1,
+        "status": "no_eligible_research_paper",
+        "submitted": 0,
         "published": 0,
-        "candidate": {"run": run.name, "topic": "berberine"},
-        "submission": {"response": {"submission": {"id": "berberine-submission"}}},
+        "considered": [{"run": run.name, "status": "duplicate_submission_run"}],
     })
+    _write_json(submit_ledger_dir / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "berberine",
+        "submission_id": "berberine-submission",
+        "content_hash": "sha256:berberine-content",
+    }])
 
     result = cycle.reconcile_publication_ledgers(
         runs_root=runs_root,
@@ -453,18 +458,15 @@ def test_reconcile_publication_ledgers_updates_cycle_after_later_submit_bridge_p
     submit_ledger = json.loads((submit_ledger_dir / "2026-06-24.json").read_text(encoding="utf-8"))
     throughput = json.loads((cycle_ledger_dir / cycle.DAILY_THROUGHPUT_SUMMARY).read_text(encoding="utf-8"))
     assert result["status"] == "publication_reconciled"
-    assert result["updated_ledgers"] == [
-        "2026-06-24-fresh.json",
-        "_daily_research_paper_ledger/2026-06-24.json",
-    ]
+    assert result["updated_ledgers"] == ["2026-06-24-fresh.json"]
     assert cycle_ledger["status"] == "published"
     assert cycle_ledger["submitted"] == 1
     assert cycle_ledger["published"] == 1
     assert cycle_ledger["attempts"][0]["submitted"] == 1
     assert cycle_ledger["attempts"][0]["published"] == 1
     assert cycle_ledger["publication_reconciliation"]["matched"] == ["submission:berberine-submission"]
-    assert submit_ledger["status"] == "published"
-    assert submit_ledger["published"] == 1
+    assert submit_ledger["status"] == "no_eligible_research_paper"
+    assert submit_ledger["published"] == 0
     assert throughput["days"]["2026-06-24"]["published"] == 1
 
 
