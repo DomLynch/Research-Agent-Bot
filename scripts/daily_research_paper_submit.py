@@ -939,6 +939,7 @@ def select_candidate(
     remote_seen: set[str] | None = None,
     candidate_run: Path | None = None,
     purpose: str = "resubmit",
+    skip_topics: set[str] | None = None,
 ) -> tuple[Path | None, list[dict[str, Any]]]:
     local_seen = _seen(submitted_path)
     rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
@@ -949,6 +950,7 @@ def select_candidate(
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
+    blocked_topics = skip_topics or set()
     repair_attempts = 0
     explicit_candidate = candidate_run is not None
     for run in ([candidate_run] if candidate_run else _runs(root)):
@@ -958,6 +960,9 @@ def select_candidate(
         title_mark = _title_marker(_paper_title(paper))
         markers = {paper_sha, f"sha256:{paper_sha}", title_mark} if paper_sha else set()
         revision = bool(_read_json(run / "researka_revision_request.json"))
+        if topic in blocked_topics:
+            considered.append({"run": run.name, "fingerprint": paper_sha, "status": "topic_already_consumed_this_window"})
+            continue
         if topic in seen_topics:
             considered.append({"run": run.name, "fingerprint": paper_sha, "status": "superseded_topic_run"})
             continue
@@ -1559,6 +1564,7 @@ def run_cycle(
     submitter: Submitter | None = None,
     remote_loader: RemoteLoader | None = None,
     candidate_run: Path | None = None,
+    skip_topics: set[str] | None = None,
 ) -> dict[str, Any]:
     ledger_path = runs_root / LEDGER_DIR / f"{date}.json"
     submitted_path = runs_root / LEDGER_DIR / "_submitted_fingerprints.json"
@@ -1587,6 +1593,7 @@ def run_cycle(
         remote_seen=remote_seen,
         candidate_run=candidate_run,
         purpose=purpose,
+        skip_topics=skip_topics,
     )
     ledger["considered"] = considered
     if run is None:
@@ -1704,6 +1711,7 @@ def run_cycle_capped(
             submitter=submitter, remote_loader=remote_loader,
         )
     submissions: list[dict[str, Any]] = []
+    consumed_topics: set[str] = set()
     total = 0
     first_candidate: dict[str, Any] | None = None
     last: dict[str, Any] = {}
@@ -1711,6 +1719,7 @@ def run_cycle_capped(
         last = run_cycle(
             runs_root=runs_root, date=date, submit=submit,
             submitter=submitter, remote_loader=remote_loader,
+            skip_topics=consumed_topics,
         )
         n = int(last.get("submitted") or 0)
         total += n
@@ -1721,6 +1730,14 @@ def run_cycle_capped(
         })
         if n and first_candidate is None:
             first_candidate = last.get("candidate")
+        candidate = last.get("candidate")
+        topic = candidate.get("topic") if isinstance(candidate, dict) else None
+        if topic and last.get("status") in {
+            "submitted_to_researka",
+            "submission_rejected_by_researka",
+            "submission_revise_requested",
+        }:
+            consumed_topics.add(str(topic))
         # Continue past a consumed candidate (published, or recorded as
         # rejected/revise-requested so the next pass skips it); stop only when
         # there is no further progress to make this window.

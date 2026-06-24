@@ -1991,6 +1991,37 @@ def test_run_cycle_capped_submits_up_to_cap(tmp_path: Path, monkeypatch) -> None
     assert (tmp_path / daily.LEDGER_DIR / "2026-06-14.json").exists()
 
 
+def test_select_candidate_skips_topics_consumed_this_window(tmp_path: Path) -> None:
+    _run(tmp_path, "synthesis-topic-v06-new")
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        skip_topics={"topic"},
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "topic_already_consumed_this_window"
+
+
+def test_run_cycle_capped_tracks_consumed_topics(tmp_path: Path, monkeypatch) -> None:
+    seq = iter([
+        {"status": "submitted_to_researka", "submitted": 1, "published": 0, "candidate": {"run": "r1", "topic": "same"}},
+        {"status": "submitted_to_researka", "submitted": 1, "published": 0, "candidate": {"run": "r2", "topic": "other"}},
+        {"status": "no_eligible_research_paper", "submitted": 0, "published": 0},
+    ])
+    seen_skip_topics: list[set[str]] = []
+
+    def _fake(**kw: Any) -> dict:
+        seen_skip_topics.append(set(kw.get("skip_topics") or ()))
+        return next(seq)
+
+    monkeypatch.setattr(daily, "run_cycle", _fake)
+    out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-14", submit=True, max_submissions=3)
+
+    assert out["submitted"] == 2
+    assert seen_skip_topics == [set(), {"same"}, {"other", "same"}]
+
+
 def test_run_cycle_capped_stops_on_no_eligible(tmp_path: Path, monkeypatch) -> None:
     """When the ready backlog drains, the cycle stops at the first non-submit
     terminal status and does not burn the remaining cap."""
