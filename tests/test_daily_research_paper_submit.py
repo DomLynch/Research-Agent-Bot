@@ -2033,12 +2033,14 @@ def test_run_cycle_capped_preserves_same_day_submitted_summary(tmp_path: Path, m
     out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-24", submit=True, max_submissions=3)
 
     written = json.loads((tmp_path / daily.LEDGER_DIR / "2026-06-24.json").read_text(encoding="utf-8"))
-    assert out["status"] == "submitted_to_researka"
+    assert out["status"] == "no_eligible_research_paper"
     assert out["latest_status"] == "no_eligible_research_paper"
-    assert out["submitted"] == 1
-    assert out["published"] == 1
-    assert written["submitted"] == 1
-    assert written["published"] == 1
+    assert out["submitted"] == 0
+    assert out["published"] == 0
+    assert out["day_summary"] == {"submitted": 1, "published": 1}
+    assert written["submitted"] == 0
+    assert written["published"] == 0
+    assert written["day_summary"] == {"submitted": 1, "published": 1}
 
 
 def test_run_cycle_capped_continues_past_rejection(tmp_path: Path, monkeypatch) -> None:

@@ -1739,12 +1739,13 @@ def run_cycle_capped(
     ledger_path = runs_root / LEDGER_DIR / f"{date}.json"
     previous = _read_json(ledger_path)
     durable_submitted = _submitted_count_for_date(runs_root / LEDGER_DIR / "_submitted_fingerprints.json", date)
-    prior_published = int(previous.get("published") or 0)
     agg["latest_status"] = last.get("status")
-    agg["submitted"] = max(int(agg.get("submitted") or 0), durable_submitted, int(previous.get("submitted") or 0))
-    agg["published"] = max(int(agg.get("published") or 0), prior_published)
-    if int(agg.get("submitted") or 0) and agg.get("status") == "no_eligible_research_paper":
-        agg["status"] = "submitted_to_researka"
+    day_summary = {
+        "submitted": max(durable_submitted, int(previous.get("submitted") or 0)),
+        "published": max(int(agg.get("published") or 0), int(previous.get("published") or 0)),
+    }
+    if day_summary["submitted"] or day_summary["published"]:
+        agg["day_summary"] = day_summary
     _write_json(ledger_path, agg)
     return agg
 
