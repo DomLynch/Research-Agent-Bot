@@ -157,6 +157,52 @@ def test_select_candidate_skips_pending_topic_before_expensive_eligibility(
     assert considered[0]["status"] == "topic_already_submitted_pending"
 
 
+def test_select_candidate_skips_old_missing_sidecar_before_expensive_eligibility(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    (run / "pre_submit_gate.json").unlink()
+    old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
+    os.utime(run, (old, old))
+    monkeypatch.setattr(
+        daily,
+        "_eligible",
+        lambda _run: (_ for _ in ()).throw(AssertionError("old missing run should skip eligibility")),
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "missing:pre_submit_gate.json"
+
+
+def test_select_candidate_skips_old_failed_surface_before_expensive_eligibility(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "full_paper.journal_surface.json", {"passed": False, "issues": ["x"]})
+    old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
+    os.utime(run, (old, old))
+    monkeypatch.setattr(
+        daily,
+        "_eligible",
+        lambda _run: (_ for _ in ()).throw(AssertionError("old failed run should skip eligibility")),
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "journal_surface_not_passed"
+
+
 def test_pre_submit_corpus_floor_returns_specific_blocker(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(run / "pre_submit_gate.json", {
