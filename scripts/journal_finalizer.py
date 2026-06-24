@@ -2623,18 +2623,19 @@ def _phase_d_reference_closure(text: str, out_dir: Path) -> tuple[str, list[Fina
     registry_tokens = _registry_reference_tokens(out_dir) if has_registry else set(orphans)
     supported = [token for token in orphans if token in registry_tokens]
     unsupported = [token for token in orphans if has_registry and token not in registry_tokens]
+    logs: list[FinalizerLogEntry] = []
     if unsupported:
         text, removed = _remove_reference_entries(text, unsupported)
         text = _remove_orphan_ref_cluster(text, unsupported)
         if removed:
-            return text, [FinalizerLogEntry(
+            logs.append(FinalizerLogEntry(
                 phase="D_reference_closure",
                 rule="remove_registry_unsupported_orphan_references",
                 n_changes=removed,
                 detail=f"removed {removed} registry-unsupported orphan reference(s)",
-            )]
+            ))
     if not supported:
-        return text, []
+        return text, logs
     # Insert the cluster just before the References heading
     cluster = (
         "\n\n" + _ORPHAN_REF_PARAGRAPH_LEAD
@@ -2645,8 +2646,8 @@ def _phase_d_reference_closure(text: str, out_dir: Path) -> tuple[str, list[Fina
         count=1, flags=re.M,
     )
     if n == 0:
-        return text, []
-    return new_text, [FinalizerLogEntry(
+        return text, logs
+    return new_text, [*logs, FinalizerLogEntry(
         phase="D_reference_closure",
         rule="supporting_corpus_cluster",
         n_changes=len(supported),
@@ -2664,7 +2665,31 @@ def _registry_reference_tokens(out_dir: Path) -> set[str]:
         citation = str(row.get("body_citation") or row.get("citation_token") or "").strip()
         if citation:
             tokens.add(citation)
+            tokens.update(_surface_reference_tokens(citation))
     return tokens
+
+
+def _surface_reference_tokens(citation: str) -> set[str]:
+    """Return the bibliography tokens the surface gate derives for a label.
+
+    Title-derived registry labels such as "Effects of Daily Taurine 2025"
+    are rendered correctly in References, but the journal surface parser
+    treats their canonical bibliography token as "Taurine 2025". The
+    finalizer's reference-closure support set must mirror that parser;
+    otherwise it removes valid registry-backed rows before artifact
+    consistency checks run.
+    """
+    if not citation:
+        return set()
+    try:
+        from agent.journal_surface_gate import orphan_reference_tokens
+    except ImportError:
+        return set()
+    synthetic = (
+        "## Abstract\n\nNo inline citations.\n\n"
+        f"## References\n\n- **{citation.rstrip('.')}.** Registry-backed source.\n"
+    )
+    return set(orphan_reference_tokens(synthetic))
 
 
 def _remove_reference_entries(text: str, tokens: list[str]) -> tuple[str, int]:

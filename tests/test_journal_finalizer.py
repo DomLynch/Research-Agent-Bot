@@ -1518,6 +1518,26 @@ def test_reference_closure_removes_registry_unsupported_orphan_reference(tmp_pat
     assert logs[0].rule == "remove_registry_unsupported_orphan_references"
 
 
+def test_reference_closure_preserves_title_derived_registry_reference(tmp_path: Path) -> None:
+    paper = (
+        "## Conclusion\n\nBounded conclusion.\n\n"
+        "## References\n\n"
+        "- **Effects of Daily Taurine 2025.** "
+        "_Effects Of Daily Taurine Intake For 6 Months On Biological Age._\n"
+        "- **Ioannidis 2005.** Unsupported context source.\n"
+    )
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "taurine": {"body_citation": "Effects of Daily Taurine 2025"},
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_reference_closure(paper, tmp_path)
+
+    assert "Effects of Daily Taurine 2025" in fixed
+    assert "Ioannidis 2005" not in fixed
+    assert "Taurine 2025" in fixed
+    assert logs[0].rule == "remove_registry_unsupported_orphan_references"
+
+
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
