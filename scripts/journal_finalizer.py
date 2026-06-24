@@ -1893,7 +1893,7 @@ def _phase_d_species_study_design_summary(
     table_rows = [
         "### Species and Study-Design Summary",
         "",
-        "| Evidence group | Study-design signal | n | Example source(s) | Interpretation boundary |",
+        "| Evidence group | Study-design signal | n | Example sources | Interpretation boundary |",
         "|---|---|---:|---|---|",
     ]
     for (label, signal, boundary), examples in sorted(buckets.items(), key=lambda item: (-len(item[1]), item[0][0])):

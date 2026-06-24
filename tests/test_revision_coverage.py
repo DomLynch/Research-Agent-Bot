@@ -1527,7 +1527,7 @@ def test_deterministic_unmet_requires_species_study_design_summary_table() -> No
     tabled = (
         "## Evidence Landscape\n\n"
         "### Species and Study-Design Summary\n\n"
-        "| Evidence group | Study-design signal | n | Example source(s) | Interpretation boundary |\n"
+        "| Evidence group | Study-design signal | n | Example sources | Interpretation boundary |\n"
         "|---|---|---:|---|---|\n"
         "| Preclinical rodent n=12 | animal/preclinical experiment | 12 | Smith 2024 | Mechanistic only. |\n"
         "| Human n=2 | observational/donor or cohort evidence | 2 | Parker 2020 | Association only. |\n"
