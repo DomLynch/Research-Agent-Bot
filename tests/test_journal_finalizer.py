@@ -2138,15 +2138,31 @@ def test_review_noise_strips_unsupported_inline_citation_marker() -> None:
 
 
 def test_review_noise_repairs_public_artifact_phrase() -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
     from scripts.review_noise_control import apply_review_noise_control
 
-    paper = "## Results\n\nThe p-values should be read as descriptive only.\n"
+    paper = (
+        "## Results\n\n"
+        "The p-values should be read as descriptive only. The accepted receipt "
+        "bundle contains one mapped source, and missing duration was not extracted "
+        "from the receipt set.\n"
+    )
 
     fixed, changes = apply_review_noise_control(paper, Path("/tmp/no-run"))
 
     assert "should be read as" not in fixed
+    assert "accepted receipt" not in fixed
+    assert "receipt set" not in fixed
+    assert "bundle contains" not in fixed
+    assert "not extracted" not in fixed
     assert "p-values can be interpreted as descriptive only" in fixed
-    assert ("repair_public_artifact_phrase", 1, "rewrote 1 public artifact phrase(s)") in changes
+    assert "included-source bundle" in fixed
+    assert "source bundle includes" in fixed
+    assert "not available" in fixed
+    assert ("repair_public_artifact_phrase", 4, "rewrote 4 public artifact phrase(s)") in changes
+    issue_codes = {issue.code for issue in evaluate_journal_surface(fixed).issues}
+    assert "public_artifact" not in issue_codes
+    assert "template_meta" not in issue_codes
 
 
 def test_dedupe_keeps_methods_search_query_list_with_subset_vocab() -> None:

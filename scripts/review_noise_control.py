@@ -70,7 +70,22 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
 
 
 def _repair_public_artifact_phrases(text: str) -> tuple[str, int]:
-    return re.subn(r"\bshould be read as\b", "can be interpreted as", text, flags=re.I)
+    replacements = (
+        (r"\bshould be read as\b", "can be interpreted as"),
+        (r"\baccepted receipt bundle contains\b", "included-source bundle includes"),
+        (r"\baccepted receipt bundle\b", "included-source bundle"),
+        (r"\baccepted receipt set\b", "included source set"),
+        (r"\baccepted receipts\b", "included sources"),
+        (r"\baccepted receipt\b", "included source"),
+        (r"\breceipt set\b", "source set"),
+        (r"\bbundle contains\b", "source bundle includes"),
+        (r"\bnot extracted\b", "not available"),
+    )
+    total = 0
+    for pattern, repl in replacements:
+        text, n = re.subn(pattern, repl, text, flags=re.I)
+        total += n
+    return text, total
 
 
 def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
