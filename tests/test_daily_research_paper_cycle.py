@@ -4657,6 +4657,68 @@ def test_revise_lane_sparse_receipt_preflight_stays_retryable_below_round_cap(tm
     assert pending["topic"] == "hrv_autonomic_aging"
 
 
+def test_revise_lane_marks_repaired_severely_sparse_receipt_preflight_terminal(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "plasma_proteomic_age_clocks", target_journal=True)
+    source = _prior_run(tmp_path, "plasma_proteomic_age_clocks", receipts=3, tensions=0, primary=0, level=5)
+    paper = source / "full_paper.md"
+    title = "Hypothesis-Generating Brief: Plasma proteomic age clocks — full paper"
+    paper.write_text(f"# {title}\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": "plasma_proteomic_age_clocks",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, **_kwargs: Any) -> dict[str, Any]:
+        return {
+            "passed": False,
+            "status": "receipt_preflight_insufficient",
+            "n_receipts": 3,
+            "min_receipts": 12,
+            "probes": [
+                {"return_code": 0, "n_receipts": 3, "min_receipts": 12},
+                {"return_code": 0, "n_receipts": 3, "min_receipts": 12},
+            ],
+            "repairs": [{"status": "corpus_repaired", "n_quant_claims": 15}],
+        }
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("terminal sparse revise must not synthesize")))
+    request = {
+        "artifactId": "plasma-review",
+        "title": title,
+        "feedback": "Reset the source bundle to include only studies that actually develop, validate, or apply a plasma proteomic age clock.",
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-24",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["status"] == "revise_terminal_receipt_preflight_insufficient"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_receipt_preflight_insufficient"
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][0]["status"] == "terminal_receipt_preflight_insufficient"
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([request], None),
+    )
+    assert error is None
+    assert pending is None
+
+
 def test_fresh_lane_tries_next_after_sparse_receipt_preflight(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_sparse_receipts", target_journal=True)
     _topic(tmp_path, "zzz_ready", target_journal=True)

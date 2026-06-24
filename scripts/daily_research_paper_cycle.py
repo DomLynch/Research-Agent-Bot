@@ -86,6 +86,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "researka_revision_fingerprint",
     "research_revision_fingerprint",
     "retracted_source_cited",
+    "terminal_receipt_preflight_insufficient",
     "terminal_surface_repeat",
     "terminal_source_precision_repair_incomplete",
 })
@@ -2853,6 +2854,8 @@ def run_cycle(
                 )
                 if not receipt_preflight.get("passed"):
                     gate_status = str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
+                    if revision_source and _terminal_revision_receipt_preflight(receipt_preflight):
+                        gate_status = "terminal_receipt_preflight_insufficient"
                     attempt = {
                         "topic": selected,
                         "out_dir": out_dir.name,
@@ -2866,6 +2869,9 @@ def run_cycle(
                     }
                     ledger["attempts"].append(attempt)
                     ledger["status"] = (
+                        "revise_terminal_receipt_preflight_insufficient"
+                        if gate_status == "terminal_receipt_preflight_insufficient"
+                        else
                         "revise_receipt_preflight_skipped_no_submission"
                         if revision_source
                         else "receipt_preflight_skipped_no_submission"
