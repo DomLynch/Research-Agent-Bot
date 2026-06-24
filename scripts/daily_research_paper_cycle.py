@@ -287,7 +287,7 @@ def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[s
 def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_seen: set[str]) -> bool:
     if int(ledger.get("published") or 0):
         changed = False
-        if str(ledger.get("status") or "") == "submitted_to_researka":
+        if str(ledger.get("status") or "") != "published":
             ledger["status"] = "published"
             changed = True
         before = len(ledger)

@@ -589,7 +589,7 @@ def test_reconcile_publication_ledgers_cleans_stale_published_reason(tmp_path: P
         "date": "2026-06-05",
         "mode": "fresh",
         "started_at": "2026-06-05T08:00:00+00:00",
-        "status": "submitted_to_researka",
+        "status": "no_ready_corpus_available",
         "submitted": 1,
         "published": 1,
         "no_submission_reason": "journal_surface_not_passed",
