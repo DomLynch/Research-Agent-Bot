@@ -1664,6 +1664,7 @@ def test_species_study_design_summary_repairs_revision_ask(tmp_path: Path) -> No
     fixed, logs = journal_finalizer._phase_d_species_study_design_summary(paper, tmp_path)
 
     assert "### Species and Study-Design Summary" in fixed
+    assert "source(s)" not in fixed
     assert "| Human n=1 | clinical trial/intervention or safety cohort | 1 | Parker 2020" in fixed
     assert "| Preclinical rodent n=1 | animal/preclinical experiment | 1 | Zhao 2020" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
