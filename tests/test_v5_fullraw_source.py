@@ -94,7 +94,7 @@ async def test_fullraw_posts_query_and_maps_receipt(fullraw_env: None) -> None:
 async def test_fullraw_caps_publish_lane_timeout(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://fullraw.test/search")
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "test-token")
-    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "300")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "900")
     received: dict[str, Any] = {}
 
     def responder(request: httpx.Request) -> httpx.Response:
@@ -104,7 +104,7 @@ async def test_fullraw_caps_publish_lane_timeout(monkeypatch: pytest.MonkeyPatch
     async with _mock_client(responder) as client:
         await V5FullRawClient().search(client, "metformin longevity", limit=3)
 
-    assert received["body"]["timeout_seconds"] == 60.0
+    assert received["body"]["timeout_seconds"] == 300.0
 
 
 @pytest.mark.asyncio

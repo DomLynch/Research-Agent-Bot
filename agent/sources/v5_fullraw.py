@@ -15,7 +15,7 @@ from agent.sources._base import USER_AGENT, clean_text, normalize_doi
 from agent.types import RawHit
 
 DEFAULT_TIMEOUT_SECONDS = 60.0
-MAX_TIMEOUT_SECONDS = 60.0
+MAX_TIMEOUT_SECONDS = 300.0
 
 
 def _fullraw_url() -> str:
