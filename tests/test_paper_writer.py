@@ -155,6 +155,27 @@ def test_build_user_prompt_single_revision_ask_renders_one_checklist_item(monkey
     assert "2." not in prompt.split("REVISION FEEDBACK", 1)[1][:200]  # one ask → no second item
 
 
+def test_build_user_prompt_keeps_semicolon_examples_inside_revision_ask(monkeypatch) -> None:
+    monkeypatch.setenv(
+        "RESEARKA_REVISION_FEEDBACK",
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim; "
+        "Resolve the coding note.",
+    )
+    accepted = [_summary("r-A")]
+
+    prompt = _build_user_prompt(
+        accepted, [], _matrix(accepted), _thesis(),
+        topic="young_plasma_parabiosis",
+    )
+    revision = prompt.split("REVISION FEEDBACK", 1)[1]
+
+    assert "1. Differentiate the 17-source bundle" in revision
+    assert "preclinical rodent n=, human n=) so readers can audit the claim" in revision
+    assert "2. Resolve the coding note." in revision
+    assert "render a clearly labelled markdown table" in revision
+
+
 def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> None:
     receipts = [
         _summary("r-immune", outcome="immune"),

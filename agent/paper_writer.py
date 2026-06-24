@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import re
 from collections.abc import Mapping, Sequence
 from typing import Any
 
@@ -80,10 +81,19 @@ def _revision_feedback_block() -> str:
     feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
     if not feedback:
         return ""
-    # Researka joins requiredRevisions with "; "; enumerate so the writer addresses each distinct ask, not a run-on blob. Topic-agnostic.
-    asks = [a.strip() for a in feedback.split(";") if a.strip()]
+    # Researka joins requiredRevisions with "; ". Split only at independent
+    # revision-action starts so semicolon examples stay inside the ask.
+    starts = (
+        "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
+        "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
+        "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
+        "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair",
+        "Resolve", "Replace", "Rewrite", "Separate", "Soften", "Update", "Verify",
+    )
+    pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
+    asks = [a.strip() for a in re.split(pattern, feedback, flags=re.IGNORECASE) if a.strip()]
     body = "\n".join(f"  {i}. {ask}" for i, ask in enumerate(asks, 1))
-    return f"REVISION FEEDBACK — address EACH point below if source-supported:\n{body}\nTreat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics; do not fabricate to satisfy a point you cannot support."
+    return f"REVISION FEEDBACK — address EACH point below if source-supported:\n{body}\nTreat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics; do not fabricate to satisfy a point you cannot support. If an ask requests a table, render a clearly labelled markdown table; prose alone does not satisfy table-shaped feedback."
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
