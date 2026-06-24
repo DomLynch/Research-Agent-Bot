@@ -983,10 +983,11 @@ def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path
     assert calls["topic"] == "ready_cached"
 
 
-def test_fresh_lane_does_not_auto_exclude_unattempted_source_precision_backlog(tmp_path: Path, monkeypatch) -> None:
+def test_fresh_lane_excludes_unrepaired_source_precision_backlog(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_failed_repair", corpus=False)
     _topic(tmp_path, "clean_published")
     _topic(tmp_path, "ready_cached")
+    _topic(tmp_path, "zzz_seed_candidate", corpus=False)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
@@ -1029,8 +1030,8 @@ def test_fresh_lane_does_not_auto_exclude_unattempted_source_precision_backlog(t
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_failed_repair"]
-    assert calls["topic"] == "ready_cached"
+    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_failed_repair", "ready_cached"]
+    assert calls["topic"] == "zzz_seed_candidate"
 
 
 def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_path: Path, monkeypatch) -> None:

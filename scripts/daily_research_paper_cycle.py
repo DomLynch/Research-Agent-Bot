@@ -2562,18 +2562,7 @@ def run_cycle(
                     source_precision_repaired_ok.add(repair_topic)
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
-            clean_ready_available = ready_before_repair or _has_clean_ready_topic(
-                topics,
-                exclude=(
-                    terminal_excluded | submitted_topics | published_topics
-                    | pending_revision_excluded | surface_repeat | preflight_blocked
-                    | writer_gate_skip | source_precision_auto_excluded
-                ),
-                source_precision_blocked=current_source_precision,
-            )
-            source_precision_auto_excluded |= unrepaired_attempted
-            if clean_ready_available:
-                source_precision_auto_excluded |= unattempted_source_precision
+            source_precision_auto_excluded |= unrepaired_attempted | unattempted_source_precision
             if source_precision_auto_excluded:
                 ledger["source_precision_auto_excluded_topics"] = sorted(source_precision_auto_excluded)
             if repairs:
