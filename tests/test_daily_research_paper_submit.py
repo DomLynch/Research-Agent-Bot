@@ -271,6 +271,27 @@ def test_evidence_map_auto_selected_for_high_tension_corpus(tmp_path: Path) -> N
     assert daily._researka_preflight_status(payload) == "eligible"
 
 
+def test_evidence_map_landscape_uses_reader_safe_dense_tension_wording(tmp_path: Path) -> None:
+    run = _run(tmp_path, tensions=727)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["n_receipts"] = 67
+    manifest["receipts"] = [
+        {"outcome_class": "immune", "directness": "direct"},
+        {"outcome_class": "immune_inflammation", "directness": "review"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+
+    payload = daily.build_payload(run)
+    landscape = payload["sections"]["Evidence Landscape"]
+    gaps = payload["sections"]["Tensions and Gaps"]
+
+    assert "727 non-orthogonal tension(s)" not in landscape
+    assert "727 disagreement(s)" not in gaps
+    assert "high-density pairwise disagreement map" in landscape
+    assert "resolving the pairwise disagreement map" in gaps
+    assert landscape.count("Immune and Inflammation") == 1
+
+
 def test_low_tension_corpus_stays_default_thesis_lane(tmp_path: Path) -> None:
     # Tension density 5/12 = 0.42 < 1.0: coherent enough for a single thesis.
     payload = daily.build_payload(_run(tmp_path, tensions=5))

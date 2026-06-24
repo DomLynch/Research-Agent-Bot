@@ -930,6 +930,32 @@ def test_results_summary_treats_null_as_unadjudicated_not_negative() -> None:
     assert "null signal in 2/2 sources" not in out
 
 
+def test_results_summary_merges_alias_outcome_labels() -> None:
+    paper = "## Results\n\nBody.\n"
+    manifest = {"receipts": [
+        {"outcome_class": "immune", "effect_direction": "null", "directness": "direct", "n_claims": 54},
+        {"outcome_class": "immune_inflammation", "effect_direction": "null", "directness": "review", "n_claims": 69},
+    ]}
+    out, inserted = orch._ensure_results_summary_table(paper, manifest)
+
+    assert inserted is True
+    assert out.count("- Immune and Inflammation:") == 1
+    assert "- Immune and Inflammation: n=2; claims=123; no extracted directional signal in 2/2 sources" in out
+    assert "directness: 1 direct; 1 review" in out
+
+
+def test_section_backstop_rows_merge_alias_outcome_labels() -> None:
+    rows = orch._section_backstop_outcome_rows([
+        {"outcome_class": "immune", "effect_direction": "null", "directness": "direct", "n_claims": 54},
+        {"outcome_class": "immune_inflammation", "effect_direction": "null", "directness": "review", "n_claims": 69},
+    ])
+
+    assert len(rows) == 1
+    assert rows[0]["label"] == "Immune and Inflammation"
+    assert rows[0]["n"] == 2
+    assert rows[0]["claims"] == 123
+
+
 def test_canonical_rct_topic_pack_override_wins_before_abstract_inference() -> None:
     old_pack = orch._TOPIC_PACK
     try:
