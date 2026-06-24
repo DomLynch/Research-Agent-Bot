@@ -163,6 +163,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     ):
         text, log = phase(text)
         entries.extend(log)
+    text, log = _phase_b_lane_qualifier(text, out_dir)
+    entries.extend(log)
     return text, entries
 
 

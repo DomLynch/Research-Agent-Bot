@@ -819,9 +819,16 @@ def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
         "# Paper\n\n"
         "Some context. Smith 2022 reported a finding; Wilson 2023 confirmed it.\n"
     )
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    assert _unlabeled_animal_citation_issue_messages(
+        paper, ["Smith 2022"],
+    )
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text != paper
     assert "Additional corpus sources included animal/preclinical evidence;" in new_text
+    assert _unlabeled_animal_citation_issue_messages(
+        new_text, ["Smith 2022"],
+    ) == ()
     assert len(log) == 1
     assert log[0].rule == "animal_preclinical_lead_in"
 
@@ -848,6 +855,43 @@ def test_phase_b_still_skips_paragraphs_with_existing_qualifier(
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text == paper  # already qualified — no change
     assert log == []
+
+
+def test_run_text_phases_repairs_late_animal_lane_drift(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """Later finalizer phases may reintroduce animal-lane citations; the
+    terminal Phase B pass must clean those before the surface gate reads the
+    manuscript."""
+    import agent.journal_finalizer as finalizer
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2022", "paper_id": "p1"}],
+        "lanes": {"Smith 2022": "animal_preclinical"},
+    }))
+
+    def late_drift(text: str):
+        return (
+            text
+            + "\n\nLate reviewer drift cites Smith 2022 without a lane label.\n",
+            [finalizer.FinalizerLogEntry(
+                phase="test",
+                rule="late_animal_lane_drift",
+                n_changes=1,
+                detail="inserted synthetic drift",
+            )],
+        )
+
+    monkeypatch.setattr(finalizer, "_phase_n_declare_discussion_thesis", late_drift)
+    fixed, log = finalizer._run_text_phases("# Paper\n\nClean paragraph.\n", run)
+
+    assert _unlabeled_animal_citation_issue_messages(fixed, ["Smith 2022"]) == ()
+    assert any(e.rule == "late_animal_lane_drift" for e in log)
+    assert any(e.rule == "animal_preclinical_lead_in" for e in log)
 
 
 def test_phase_b_fires_on_exclusively_animal_lane_paragraph(
