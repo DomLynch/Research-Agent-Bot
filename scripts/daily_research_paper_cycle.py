@@ -100,7 +100,11 @@ _RETRYABLE_REVISION_STATUSES = frozenset({
     # Back-compat for rows written before synthesis timeouts became retryable.
     "terminal_synthesis_timeout",
 })
-RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = 3600
+DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = 3600
+RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = int(os.environ.get(
+    "RESEARCH_AGENT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS",
+    str(DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS),
+))
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]

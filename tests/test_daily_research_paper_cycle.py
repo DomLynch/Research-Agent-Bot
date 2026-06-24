@@ -1324,8 +1324,12 @@ def test_retryable_revision_statuses_expire_before_round_cap(tmp_path: Path) -> 
     ledger_dir.mkdir(parents=True)
     title = "Hypothesis-Generating Brief: Taurine supplementation — full paper"
     _seed_submitted_run(runs, "taurine", f"# {title}")
-    reviewed_at = dt.datetime.now(dt.UTC) - dt.timedelta(hours=3)
-    handled_at = reviewed_at + dt.timedelta(minutes=30)
+    statuses = tuple(sorted(cycle._RETRYABLE_REVISION_STATUSES))
+    assert statuses == ("revision_coverage_unmet", "synthesis_timeout", "terminal_synthesis_timeout")
+    handled_at = dt.datetime.now(dt.UTC) - dt.timedelta(
+        seconds=cycle.RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS + 60,
+    )
+    reviewed_at = handled_at - dt.timedelta(minutes=1)
     _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
         {
             "key": cycle.submit_bridge._title_marker(title),
@@ -1333,7 +1337,7 @@ def test_retryable_revision_statuses_expire_before_round_cap(tmp_path: Path) -> 
             "status": status,
             "handled_at": handled_at.isoformat(),
         }
-        for status in ("revision_coverage_unmet", "revision_coverage_unmet", "terminal_synthesis_timeout")
+        for status in statuses
     ]})
     request = {
         "artifactId": "taurine-review",
