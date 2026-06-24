@@ -2025,6 +2025,64 @@ def test_cycle_skips_terminal_sparse_revision_before_resynthesis(tmp_path: Path,
     assert (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).exists()
 
 
+def test_revision_domain_scope_reset_matches_imported_longevity_frame() -> None:
+    feedback = (
+        "Align the scope and abstract with the actual research question and "
+        "remove the imported geroscience / anti-aging / longevity framing "
+        "that does not match the cited corpus."
+    )
+
+    assert cycle._revision_requests_domain_scope_reset(feedback)
+    assert not cycle._revision_requests_domain_scope_reset(
+        "Tighten the limitations and cite the relevant subgroup evidence.",
+    )
+
+
+def test_revise_lane_marks_domain_scope_mismatch_terminal(tmp_path: Path, monkeypatch) -> None:
+    topic = "influenza_vaccination_rates"
+    _topic(tmp_path, topic, target_journal=True)
+    source = _prior_run(tmp_path, topic, receipts=26, tensions=153, primary=9, level=5)
+    title = "Research Synthesis: Influenza Vaccination Rates — full paper"
+    paper = source / "full_paper.md"
+    paper.write_text(f"# {title}\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": topic,
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    request = {
+        "artifactId": "flu-review",
+        "title": title,
+        "topic": topic,
+        "feedback": (
+            "Remove the geroscience / anti-aging / longevity framing throughout, "
+            "as the source bundle does not support this thematic overlay."
+        ),
+        "reviewedAt": (dt.datetime.now(dt.UTC) - dt.timedelta(minutes=5)).isoformat(),
+    }
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("scope-mismatch revise must not synthesize")))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-24",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([dict(request)], None),
+        submit_cycle=lambda **_kwargs: (_ for _ in ()).throw(AssertionError("scope-mismatch revise must not submit")),
+    )
+
+    assert ledger["status"] == "revise_terminal_domain_scope_mismatch"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_domain_scope_mismatch"
+    assert ledger["attempts"][0]["failure_class"] == "D_no_action"
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
+    assert handled["handled"][0]["status"] == "terminal_domain_scope_mismatch"
+
+
 def test_corpus_seed_failure_is_corpus_fixable(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 

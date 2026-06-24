@@ -93,6 +93,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_source_precision_repair_incomplete",
 })
 _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
+    "terminal_domain_scope_mismatch",
     "terminal_latest_run_missing_manifest",
     "terminal_revise_retry_budget_insufficient",
 })
@@ -954,6 +955,21 @@ def _calibration_only_revision(text: str) -> bool:
     )
 
 
+def _revision_requests_domain_scope_reset(feedback: str) -> bool:
+    lower = " ".join(str(feedback or "").lower().split())
+    has_domain_frame = any(
+        term in lower
+        for term in ("geroscience", "anti-aging", "anti aging", "longevity", "healthspan")
+    )
+    if not has_domain_frame:
+        return False
+    return (
+        ("does not support" in lower and ("framing" in lower or "overlay" in lower))
+        or ("does not match" in lower and ("actual question" in lower or "actual research question" in lower))
+        or ("remove" in lower and ("framing" in lower or "overlay" in lower))
+    )
+
+
 def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
     latest, err = _latest_reviews_by_title(url)
     if err:
@@ -1487,6 +1503,7 @@ def _failure_class(status: str) -> str:
         "terminal_surface_repeat": "D_no_action",
         "terminal_source_precision_repair_incomplete": "D_no_action",
         "terminal_receipt_preflight_insufficient": "D_no_action",
+        "terminal_domain_scope_mismatch": "D_no_action",
         "terminal_latest_run_missing_manifest": "D_no_action",
         "terminal_revise_retry_budget_insufficient": "D_no_action",
         "terminal_revision_source_manifest_unavailable": "D_no_action",
@@ -2767,6 +2784,17 @@ def run_cycle(
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"
                 break
+            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
+            if revision_source and _revision_requests_domain_scope_reset(revision_feedback):
+                gate_status = "terminal_domain_scope_mismatch"
+                attempt = _gate_attempt(selected, out_dir, gate_status)
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "revise_terminal_domain_scope_mismatch"
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                attempted.add(selected)
+                remote_revision = None
+                continue
             # A pending revise whose topic keeps failing the SAME deterministic gate
             # cannot be fixed by re-rendering — mark it terminal so it stops
             # monopolising revise slots instead of re-synthesising every cycle.
@@ -2789,7 +2817,6 @@ def run_cycle(
                 attempted.add(selected)
                 remote_revision = None
                 continue
-            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
             revision_source_run = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
             existing_source_preflight = _existing_receipt_preflight(revision_source_run) if revision_source else None
             corpus: dict[str, Any]
