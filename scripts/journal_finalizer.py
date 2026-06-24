@@ -3186,15 +3186,16 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     _g = lambda rule, n, detail: log.append(FinalizerLogEntry(phase="G_refresh_sidecars", rule=rule, n_changes=n, detail=detail))  # noqa: E731
     if _restore_registry_references(out_dir):
         _g("restore_registry_references_post_finalizer", 1, "rebuilt References from manifest/citation registry before sidecar refresh")
-        paper_path = out_dir / "full_paper.md"
+    paper_path = out_dir / "full_paper.md"
+    if paper_path.is_file():
         text = paper_path.read_text()
         fixed, closure_log = _phase_d_reference_closure(text, out_dir)
         if fixed != text:
             paper_path.write_text(fixed)
             _g(
-                "close_restored_registry_references",
+                "close_registry_orphan_references_post_finalizer",
                 sum(entry.n_changes for entry in closure_log),
-                "cited restored registry-backed reference entries before surface refresh",
+                "cited registry-backed reference entries before surface refresh",
             )
     if _refresh_audit_sidecar(out_dir):
         _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
