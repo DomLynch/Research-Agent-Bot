@@ -93,8 +93,14 @@ _TERMINAL_REVISION_STATUSES = frozenset({
 })
 _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_revise_retry_budget_insufficient",
+})
+_RETRYABLE_REVISION_STATUSES = frozenset({
+    "revision_coverage_unmet",
+    "synthesis_timeout",
+    # Back-compat for rows written before synthesis timeouts became retryable.
     "terminal_synthesis_timeout",
 })
+RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = 3600
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -899,10 +905,25 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         handled_at = _parse_time(str(row.get("handled_at") or ""))
         return bool(handled_at and handled_at >= reviewed_at)
 
+    def _retryable_status_in_cooldown(row: dict[str, Any]) -> bool:
+        if str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES:
+            return False
+        handled_at = _parse_time(str(row.get("handled_at") or ""))
+        if handled_at is None:
+            return True
+        return dt.datetime.now(dt.UTC) - handled_at < dt.timedelta(
+            seconds=RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS,
+        )
+
     counts = Counter(
         submit_bridge._title_marker(str(row.get("title") or ""))
         for row in rows
-        if isinstance(row, dict) and row.get("title") and _row_applies_to_active_request(row)
+        if (
+            isinstance(row, dict)
+            and row.get("title")
+            and _row_applies_to_active_request(row)
+            and (str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES or _retryable_status_in_cooldown(row))
+        )
     )
     terminal = {
         submit_bridge._title_marker(str(row.get("title") or ""))
@@ -3065,11 +3086,7 @@ def run_cycle(
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE:
                     if revision_source:
-                        timeout_status = (
-                            "terminal_synthesis_timeout"
-                            if revise_attempt >= max(1, max_revise_attempts)
-                            else "synthesis_timeout"
-                        )
+                        timeout_status = "synthesis_timeout"
                         attempt["revision_timeout_status"] = timeout_status
                         _mark_revision_handled(ledger_dir, revision_source, status=timeout_status)
                     ledger["status"] = "synthesis_timeout_no_submission"

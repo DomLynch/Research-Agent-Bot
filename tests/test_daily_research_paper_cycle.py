@@ -1235,7 +1235,7 @@ def test_cycle_records_synthesis_timeout_without_service_failure_status(tmp_path
     assert ledger["attempts"][0]["failure_class"] == "D_no_action"
 
 
-def test_revise_timeout_on_final_attempt_skips_active_review_only(tmp_path: Path, monkeypatch) -> None:
+def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "taurine", target_journal=True)
     source = _prior_run(tmp_path, "taurine", receipts=67, tensions=727, primary=1, level=5)
     title = "Research Synthesis: Taurine — full paper"
@@ -1282,10 +1282,24 @@ def test_revise_timeout_on_final_attempt_skips_active_review_only(tmp_path: Path
     )
 
     assert ledger["status"] == "synthesis_timeout_no_submission"
-    assert ledger["attempts"][0]["revision_timeout_status"] == "terminal_synthesis_timeout"
+    assert ledger["attempts"][0]["revision_timeout_status"] == "synthesis_timeout"
     handled_path = tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS
     handled = json.loads(handled_path.read_text(encoding="utf-8"))
-    assert handled["handled"][0]["status"] == "terminal_synthesis_timeout"
+    assert handled["handled"][0]["status"] == "synthesis_timeout"
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([dict(request)], None),
+    )
+    assert error is None
+    assert pending is not None
+
+    after_review = (dt.datetime.fromisoformat(reviewed_at) + dt.timedelta(minutes=1)).isoformat()
+    handled["handled"].extend(
+        {**handled["handled"][0], "handled_at": after_review}
+        for i in range(1, cycle.MAX_REVISE_ROUNDS)
+    )
+    _write_json(handled_path, handled)
     pending, error = cycle._pending_remote_revision(
         tmp_path / "runs",
         tmp_path / "runs" / cycle.LEDGER_DIR,
@@ -1302,6 +1316,42 @@ def test_revise_timeout_on_final_attempt_skips_active_review_only(tmp_path: Path
     )
     assert error is None
     assert pending and pending["artifactId"] == "taurine-review-2"
+
+
+def test_retryable_revision_statuses_expire_before_round_cap(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    title = "Hypothesis-Generating Brief: Taurine supplementation — full paper"
+    _seed_submitted_run(runs, "taurine", f"# {title}")
+    reviewed_at = dt.datetime.now(dt.UTC) - dt.timedelta(hours=3)
+    handled_at = reviewed_at + dt.timedelta(minutes=30)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+        {
+            "key": cycle.submit_bridge._title_marker(title),
+            "title": title,
+            "status": status,
+            "handled_at": handled_at.isoformat(),
+        }
+        for status in ("revision_coverage_unmet", "revision_coverage_unmet", "terminal_synthesis_timeout")
+    ]})
+    request = {
+        "artifactId": "taurine-review",
+        "title": title,
+        "topic": "taurine",
+        "feedback": "Revise the manuscript.",
+        "reviewedAt": reviewed_at.isoformat(),
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["topic"] == "taurine"
 
 
 def test_revise_lane_does_not_start_full_retry_without_budget(tmp_path: Path, monkeypatch) -> None:
@@ -2995,18 +3045,20 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
     ledger_dir.mkdir()
     title = "Research Synthesis: Brain Age MRI — full paper"
     marker = cycle.submit_bridge._title_marker(title)
+    reviewed_at = dt.datetime.now(dt.UTC) - dt.timedelta(minutes=15)
+    handled_at = reviewed_at + dt.timedelta(minutes=5)
     current_rows = [
         {
             "key": marker,
             "title": title,
             "status": "revision_coverage_unmet",
-            "handled_at": f"2026-06-01T1{i}:00:00+00:00",
+            "handled_at": handled_at.isoformat(),
         }
         for i in range(cycle.MAX_REVISE_ROUNDS)
     ]
     _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": current_rows})
 
-    active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
+    active = [{"title": title, "reviewedAt": reviewed_at.isoformat()}]
 
     assert marker in cycle._handled_revision_ids(ledger_dir, active)
 
