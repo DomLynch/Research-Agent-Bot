@@ -2520,3 +2520,60 @@ def test_phase_k_no_duplicate_fallback_for_multiple_thin_outcome_classes(tmp_pat
     _sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
     from journal_surface_batch_audit import scan_duplicate_paragraphs  # type: ignore[import-not-found]
     assert not any("duplicate_paragraph" in str(i) for i in scan_duplicate_paragraphs(out))
+
+
+def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: Path) -> None:
+    """A finalizer pass may rewrite prose after the deterministic reference
+    append. Before Phase G recomputes artifact consistency, References must be
+    rebuilt from manifest + citation_registry so registry coverage cannot drift.
+    """
+    (tmp_path / "full_paper.md").write_text(
+        "## Results\n\nSauna evidence remains bounded.\n\n"
+        "## References\n\n"
+        "- **Passive Heat Therapy 2023.** _Passive heat therapy improves cognitive and cerebrovascular function in healthy midlife and older adults._ DOI: 10.3390/jcm14103566. PMID: 40429561.\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {
+                "receipt_id": "r14",
+                "source_title": "Passive heat therapy improves cognitive and cerebrovascular function in healthy midlife and older adults",
+                "source_doi": "10.1152/physiol.2023.38.s1.5731414",
+            },
+            {
+                "receipt_id": "r15",
+                "source_title": "The Effect of Eight Weeks of Passive Heat Therapy on Mental Health, Sleep, and Chronic Pain in Persons with Spinal Cord Injury: A Pilot Study",
+                "source_doi": "10.3390/jcm14103566",
+                "source_pmid": "40429561",
+            },
+        ],
+    }), encoding="utf-8")
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r14": {
+            "receipt_id": "r14",
+            "body_citation": "Passive Heat Therapy 2023",
+            "source_year": 2023,
+            "source_doi": "10.1152/physiol.2023.38.s1.5731414",
+        },
+        "r15": {
+            "receipt_id": "r15",
+            "body_citation": "Uhlig-Reche 2025",
+            "source_year": 2025,
+            "source_doi": "10.3390/jcm14103566",
+            "source_pmid": "40429561",
+        },
+    }), encoding="utf-8")
+    from agent.artifact_consistency import verify_run_artifacts
+    before = verify_run_artifacts(tmp_path)
+    assert any(c.name == "citation_registry_coverage" and not c.passed for c in before.checks)
+
+    assert journal_finalizer._restore_registry_references(tmp_path) is True
+
+    paper = (tmp_path / "full_paper.md").read_text(encoding="utf-8")
+    assert "**Passive Heat Therapy 2023.**" in paper
+    assert "DOI: 10.1152/physiol.2023.38.s1.5731414." in paper
+    assert "**Uhlig-Reche 2025.**" in paper
+    assert "DOI: 10.3390/jcm14103566." in paper
+    assert "PMID: 40429561." in paper
+    after = verify_run_artifacts(tmp_path)
+    assert after.passed is True
