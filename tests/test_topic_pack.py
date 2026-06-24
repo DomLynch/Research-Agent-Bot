@@ -343,10 +343,17 @@ def test_clinical_brief_topic_packs_disable_inference() -> None:
 # --- Slice 21 (target_journal) --------------------------------------------
 
 
-def test_target_journal_defaults_to_none_when_not_declared() -> None:
-    """Existing topic packs without `target_journal` must load with the
-    field defaulting to None — universality preserved across the fleet."""
-    pack = load_topic_pack(METFORMIN_PATH.parent / "vitamin_d.toml")
+def test_target_journal_defaults_to_none_when_not_declared(tmp_path: Path) -> None:
+    """Topic-pack data without `target_journal` still loads with the
+    field defaulting to None — generated/legacy compatibility preserved."""
+    base = "\n".join(
+        line for line in METFORMIN_PATH.read_text().splitlines()
+        if not line.startswith("target_journal = ")
+    )
+    pack_path = tmp_path / "no_target.toml"
+    pack_path.write_text(base)
+
+    pack = load_topic_pack(pack_path)
     assert pack.target_journal is None
 
 
