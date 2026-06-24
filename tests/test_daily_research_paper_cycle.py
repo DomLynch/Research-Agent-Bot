@@ -61,16 +61,31 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         assert "RestartSec=60" in service
 
 
-def test_fresh_publish_skips_empty_frontier_without_seeding(tmp_path: Path, monkeypatch) -> None:
+def test_fresh_publish_seeds_empty_frontier_with_bounded_timeout(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "empty_frontier", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", "17")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     seen: list[int | None] = []
 
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
         seen.append(timeout)
-        return {"status": "corpus_seed_failed", "n_quant_claims": 0}
+        qdir = cycle.CORPORA / topic / "quant_claims"
+        qdir.mkdir(parents=True)
+        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"seed {i}", "claims": []})
+        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs",
@@ -85,8 +100,9 @@ def test_fresh_publish_skips_empty_frontier_without_seeding(tmp_path: Path, monk
         max_attempts=1,
     )
 
-    assert seen == []
-    assert ledger["status"] == "no_ready_corpus_available"
+    assert seen == [17]
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["frontier_corpus_seed"]["topic"] == "empty_frontier"
 
 
 def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path: Path, monkeypatch) -> None:

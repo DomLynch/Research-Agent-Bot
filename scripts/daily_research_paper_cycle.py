@@ -2784,7 +2784,18 @@ def run_cycle(
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
                 break
+            seeded_frontier_corpus: dict[str, Any] | None = None
             if not revision_source and submit and mode == "fresh" and not _topic_has_quant_floor(selected):
+                seeded_frontier_corpus = (ensure_corpus or _ensure_topic_corpus)(
+                    selected, dry_run=synthesis_dry_run, timeout=_publish_seed_timeout(child_timeout()),
+                )
+                ledger["frontier_corpus_seed"] = {"topic": selected, **seeded_frontier_corpus}
+            if (
+                not revision_source
+                and submit
+                and mode == "fresh"
+                and not _topic_has_quant_floor(selected)
+            ):
                 ledger.update({
                     "status": "no_ready_corpus_available",
                     "attempted_topic": selected,
@@ -2845,6 +2856,8 @@ def run_cycle(
                         int(existing_source_preflight.get("n_receipts") or 0),
                     ),
                 }
+            elif seeded_frontier_corpus is not None:
+                corpus = seeded_frontier_corpus
             else:
                 corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=corpus_timeout)
             ledger["corpus"] = corpus
