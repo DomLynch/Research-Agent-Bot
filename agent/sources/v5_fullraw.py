@@ -16,6 +16,8 @@ from agent.types import RawHit
 
 DEFAULT_TIMEOUT_SECONDS = 60.0
 MAX_TIMEOUT_SECONDS = 300.0
+YEAR_MIN = 1900
+YEAR_MAX = 2100
 
 
 def _fullraw_url() -> str:
@@ -101,6 +103,10 @@ class V5FullRawClient:
             "query": clean_text(query, limit=1024),
             "limit": max(1, min(limit, 50)),
             "top_k": max(1, min(limit, 50)),
+            "year_min": YEAR_MIN,
+            "year_max": YEAR_MAX,
+            "corpus": "full_raw_450m_plus",
+            "search_pass": "focused",
             "rank_mode": "relevance",
             "timeout_seconds": _timeout_seconds(),
         }

@@ -79,6 +79,10 @@ async def test_fullraw_posts_query_and_maps_receipt(fullraw_env: None) -> None:
         "query": "metformin longevity",
         "limit": 3,
         "top_k": 3,
+        "year_min": 1900,
+        "year_max": 2100,
+        "corpus": "full_raw_450m_plus",
+        "search_pass": "focused",
         "rank_mode": "relevance",
         "timeout_seconds": 12.0,
     }
