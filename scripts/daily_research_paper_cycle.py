@@ -309,6 +309,12 @@ def reconcile_publication_ledgers(
     if remote_error:
         return {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
     ledger_dir = runs_root / LEDGER_DIR
+    decision_records = 0
+    if remote_loader is None:
+        latest_decisions, decision_error = _latest_public_decisions_by_title()
+        if not decision_error:
+            _record_review_decisions(ledger_dir, latest_decisions)
+            decision_records = len(latest_decisions)
     checked = 0
     updated: list[str] = []
     for ledger_path in _ledger_paths_for_reconciliation(ledger_dir, date, mode):
@@ -334,6 +340,7 @@ def reconcile_publication_ledgers(
         "updated": len(updated),
         "updated_ledgers": updated,
         "known_fingerprints": len(remote_seen),
+        "decision_records": decision_records,
     }
 
 
@@ -719,7 +726,15 @@ def _review_rows(payload: Any) -> list[dict[str, Any]]:
 def _review_ts(row: dict[str, Any]) -> dt.datetime:
     """Parse a review row's decision timestamp for latest-wins comparison.
     Unparseable timestamps sort oldest so they never mask a dated decision."""
-    raw = str(row.get("reviewedAt") or row.get("reviewed_at") or "")
+    raw = str(
+        row.get("reviewedAt")
+        or row.get("reviewed_at")
+        or row.get("createdAt")
+        or row.get("created_at")
+        or row.get("publishedAt")
+        or row.get("published_at")
+        or ""
+    )
     try:
         parsed = dt.datetime.fromisoformat(raw)
     except ValueError:
@@ -761,6 +776,24 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
     return latest, None
 
 
+def _merge_latest_by_title(*sources: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    latest: dict[str, dict[str, Any]] = {}
+    for source in sources:
+        for key, row in source.items():
+            if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+                latest[key] = row
+    return latest
+
+
+def _latest_public_decisions_by_title() -> tuple[dict[str, dict[str, Any]], str | None]:
+    reviews, review_error = _latest_reviews_by_title()
+    papers, paper_error = _latest_reviews_by_title(os.getenv("RESEARKA_PAPERS_URL", "https://researka.org/papers"))
+    latest = _merge_latest_by_title({} if review_error else reviews, {} if paper_error else papers)
+    if latest:
+        return latest, None
+    return {}, review_error or paper_error
+
+
 def _record_review_decisions(ledger_dir: Path, latest: dict[str, dict[str, Any]]) -> None:
     if not latest:
         return
@@ -784,7 +817,14 @@ def _record_review_decisions(ledger_dir: Path, latest: dict[str, dict[str, Any]]
             "title": title,
             "decision": row.get("decision"),
             "status": row.get("status"),
-            "reviewed_at": row.get("reviewedAt") or row.get("reviewed_at"),
+            "reviewed_at": (
+                row.get("reviewedAt")
+                or row.get("reviewed_at")
+                or row.get("createdAt")
+                or row.get("created_at")
+                or row.get("publishedAt")
+                or row.get("published_at")
+            ),
         }
         records = [
             existing for existing in records
