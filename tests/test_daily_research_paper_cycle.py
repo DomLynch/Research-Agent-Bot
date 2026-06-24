@@ -2509,6 +2509,11 @@ def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch
     _seed_delayed_revise(tmp_path, monkeypatch)
     monkeypatch.setattr(
         cycle,
+        "_ensure_topic_corpus",
+        lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("revise source manifest should skip corpus seeding")),
+    )
+    monkeypatch.setattr(
+        cycle,
         "_receipt_preflight",
         lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("revise source already passed receipt floor")),
     )
@@ -2518,6 +2523,7 @@ def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch
         submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
 
     assert ledger["attempts"][0]["receipt_preflight"]["status"] == "receipt_preflight_existing_ok"
+    assert ledger["corpus"]["source"] == "existing_source_manifest"
     assert ledger["attempts"][0]["submitted"] == 1
 
 

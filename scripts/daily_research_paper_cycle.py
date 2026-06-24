@@ -2677,7 +2677,22 @@ def run_cycle(
                 attempted.add(selected)
                 remote_revision = None
                 continue
-            corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=child_timeout())
+            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
+            revision_source_run = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
+            existing_source_preflight = _existing_receipt_preflight(revision_source_run) if revision_source else None
+            corpus: dict[str, Any]
+            if existing_source_preflight:
+                corpus = {
+                    "status": "corpus_ready",
+                    "source": "existing_source_manifest",
+                    "source_run": revision_source_run.name if revision_source_run else "",
+                    "n_quant_claims": max(
+                        PREFLIGHT_MIN_QUANT_CLAIMS,
+                        int(existing_source_preflight.get("n_receipts") or 0),
+                    ),
+                }
+            else:
+                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=child_timeout())
             ledger["corpus"] = corpus
             if corpus.get("status") not in {"corpus_ready", "corpus_seeded"}:
                 attempt = {
@@ -2694,7 +2709,6 @@ def run_cycle(
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 attempted.add(selected)
                 continue
-            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
             revision_source_repair = _revision_requests_source_precision(revision_feedback)
             source_precision_ok, source_precision_status, source_precision_misses = _quant_claim_source_precision(
                 selected, floor=SOURCE_TOPIC_REPAIR_FLOOR,
