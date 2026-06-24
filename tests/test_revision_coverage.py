@@ -1500,6 +1500,20 @@ def test_revision_asks_splits_soften_and_mark_actions() -> None:
     ]
 
 
+def test_revision_asks_splits_resolve_action_after_example_semicolon() -> None:
+    feedback = (
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim; "
+        "Resolve the source coding by stating the exact sample sizes."
+    )
+
+    assert revision_coverage.revision_asks(feedback) == [
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim.",
+        "Resolve the source coding by stating the exact sample sizes.",
+    ]
+
+
 def test_deterministic_unmet_accepts_single_source_map_caveats() -> None:
     ask = (
         "Soften or qualify the 'positive signal' coding for single-source slices "
