@@ -1226,8 +1226,14 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "### Source Outcome-Class Map" in fixed
-    assert "- Smith 2024: Clinical source one: outcome=Cardiometabolic; direction=unclear; directness=direct; tier=A1." in fixed
-    assert "- Jones 2025: outcome=Immune and Inflammation; direction=unclear; directness=review; tier=B1." in fixed
+    assert (
+        "- Smith 2024: Clinical source one: outcome=Cardiometabolic; direction=unclear; "
+        "directness=direct; tier=A1; finding=qualitative receipt-level finding recorded in the manifest."
+    ) in fixed
+    assert (
+        "- Jones 2025: outcome=Immune and Inflammation; direction=unclear; "
+        "directness=review; tier=B1; finding=qualitative receipt-level finding recorded in the manifest."
+    ) in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 
@@ -1270,6 +1276,35 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
     assert "source(s)" not in fixed
     assert "Gao 2026" not in fixed
     assert "Qader 2025" not in fixed
+    assert logs[0].phase == "D_source_outcome_class_map"
+
+
+def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Reconstruct the Findings Map so that each retained source has an explicit "
+        "per-source direction on its primary outcome, with the specific effect "
+        "estimate or qualitative finding attached."
+    )
+    paper = "## Evidence Snapshot\n\nThe source map needs repair.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{
+        "citation_token": "Smith 2024",
+        "source_title": "Clinical source one",
+        "outcome_class": "cardiometabolic",
+        "effect_direction": "null",
+        "directness": "indirect",
+        "evidence_tier": "B2",
+        "p_values": ["p = 0.04"],
+        "n_claims": 7,
+    }]}))
+
+    fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
+
+    assert "### Findings Map" in fixed
+    assert "direction=null; directness=indirect; tier=B2; finding=representative statistic p = 0.04" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 
 

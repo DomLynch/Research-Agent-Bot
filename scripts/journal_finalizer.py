@@ -1983,11 +1983,10 @@ def _phase_d_source_outcome_class_map(
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
-        finding = _manifest_row_finding(row)
-        examples.append(
-            f"- {citation}: outcome={outcome}; direction={direction}; "
-            f"directness={directness}; tier={tier}; finding={finding}."
-        )
+        row_text = f"- {citation}: outcome={outcome}; direction={direction}; directness={directness}; tier={tier}"
+        if wants_findings_map:
+            row_text += f"; finding={_manifest_row_finding(row)}"
+        examples.append(f"{row_text}.")
     notes = []
     if "biomarker-positive" in feedback.lower() and "clinical-endpoint" in feedback.lower():
         notes.append(

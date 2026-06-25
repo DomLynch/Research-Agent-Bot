@@ -33,7 +33,7 @@ def revision_asks(feedback: str) -> list[str]:
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
         "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
-        "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair", "Resolve",
+        "Either", "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair", "Resolve",
         "Replace", "Rewrite", "Separate", "Soften", "Update", "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
@@ -133,6 +133,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_classification_criteria,
             _asks_conflict_severity_criteria,
             _asks_source_outcome_class_map,
+            _asks_findings_map_source_verdict,
+            _asks_adjacent_indirect_reconciliation,
             _asks_source_classification_map,
             _asks_evidence_type_metadata,
             _asks_source_inclusion_rationale,
@@ -194,6 +196,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         )
     if _asks_source_outcome_class_map(lower):
         return _source_outcome_class_map_is_stated(paper_md)
+    if _asks_findings_map_source_verdict(lower):
+        return _findings_map_source_verdict_is_stated(paper_md)
+    if _asks_adjacent_indirect_reconciliation(lower):
+        return _adjacent_indirect_reconciliation_is_stated(paper_md)
     if _asks_source_classification_map(lower):
         text = paper_md.lower()
         return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
@@ -355,6 +361,23 @@ def _asks_source_outcome_class_map(text: str) -> bool:
     )
 
 
+def _asks_findings_map_source_verdict(text: str) -> bool:
+    return (
+        "findings map" in text
+        and "source" in text
+        and any(token in text for token in ("direction", "directness", "effect estimate", "qualitative finding"))
+    )
+
+
+def _asks_adjacent_indirect_reconciliation(text: str) -> bool:
+    return (
+        "findings map" in text
+        and "adjacent" in text
+        and "indirect" in text
+        and any(token in text for token in ("reconcile", "define", "consistently"))
+    )
+
+
 def _asks_source_statistics_landscape(text: str) -> bool:
     return (
         "specific statistics" in text
@@ -432,7 +455,10 @@ def _asks_rct_count_reconciliation(text: str) -> bool:
 
 
 def _asks_unbacked_appraisal_names(text: str) -> bool:
-    return any(token in text for token in ("rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias", "appraisal"))
+    return any(token in text for token in (
+        "rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias",
+        "appraisal", "rob judgment", "rob judgments",
+    ))
 
 
 def _asks_evidence_tier_directness_bounds(text: str) -> bool:
@@ -547,7 +573,10 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
         )
         or (
             "cross-study disagreement" in text
-            and any(token in text for token in ("substantiated", "enumerated", "actually-surfaced", "actually surfaced", "correct", "replace"))
+            and any(token in text for token in (
+                "substantiated", "enumerate", "enumerated",
+                "actually-surfaced", "actually surfaced", "correct", "replace",
+            ))
         )
     )
 
@@ -824,6 +853,40 @@ def _source_outcome_class_map_is_stated(paper_md: str) -> bool:
         "source outcome-class map" in scope
         and "outcome=" in scope
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope, flags=re.I) is not None
+    )
+
+
+def _findings_map_source_verdict_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Evidence Landscape"), _section(paper_md, "Evidence Snapshot")) if part)
+    lower = scope.lower()
+    return bool(
+        "findings map" in lower
+        and "outcome=" in lower
+        and "direction=" in lower
+        and "directness=" in lower
+        and "finding=" in lower
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
+    )
+
+
+def _adjacent_indirect_reconciliation_is_stated(paper_md: str) -> bool:
+    scope = " ".join(
+        part for part in (
+            _abstract(paper_md),
+            _section(paper_md, "Evidence Snapshot"),
+            _section(paper_md, "Evidence Landscape"),
+        ) if part
+    )
+    lower = scope.lower()
+    return (
+        "adjacent" in lower
+        and "indirect" in lower
+        and "directness=" in lower
+        and any(token in lower for token in (
+            "reclassified as contextual",
+            "used only to bound interpretation",
+            "source directness breakdown",
+        ))
     )
 
 
