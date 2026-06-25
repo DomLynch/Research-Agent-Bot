@@ -42,6 +42,28 @@ def test_daily_paper_policy_uses_12_receipts_and_shared_source_precision() -> No
     assert cycle.SOURCE_TOPIC_REPAIR_FLOOR == cycle.submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
 
 
+def test_preflight_thin_quant_blocker_is_classified_and_backfills_unknown(tmp_path: Path) -> None:
+    assert cycle._failure_class("preflight_thin_quant_corpus") == "B_corpus_fixable"
+    assert cycle._failure_class("audit_p1_failed") == "C_writer_fixable"
+
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    cycle._write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {
+        "blockers": {
+            "preflight_thin_quant_corpus": {"count": 1, "class": "unknown", "samples": []},
+        },
+    })
+
+    cycle._record_blockers(ledger_dir, "2026-06-25", [{
+        "topic": "thin_topic",
+        "submit_status": "preflight_thin_quant_corpus",
+        "submitted": 0,
+    }])
+
+    blocker = cycle._read_json(ledger_dir / cycle.BLOCKER_HISTOGRAM)["blockers"]["preflight_thin_quant_corpus"]
+    assert blocker["class"] == "B_corpus_fixable"
+
+
 def test_fresh_lane_keeps_8h_cadence_with_larger_search_budget() -> None:
     service = (REPO / "deploy" / "research-agent-paper-fresh.service").read_text(encoding="utf-8")
     timer = (REPO / "deploy" / "research-agent-paper-fresh.timer").read_text(encoding="utf-8")

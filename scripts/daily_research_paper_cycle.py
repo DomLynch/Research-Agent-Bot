@@ -1722,10 +1722,14 @@ def _failure_class(status: str) -> str:
         "source_topic_precision_low": "B_corpus_fixable",
         "recency_ratio_low": "B_corpus_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
+        "preflight_thin_quant_corpus": "B_corpus_fixable",
         "corpus_missing_dry_run": "B_corpus_fixable",
         "corpus_seed_empty": "B_corpus_fixable",
         "corpus_seed_failed": "B_corpus_fixable",
         "receipt_preflight_insufficient": "B_corpus_fixable",
+        # Back-compat for blocker rows written before audit failures were
+        # routed through audit_not_all_green.
+        "audit_p1_failed": "C_writer_fixable",
         "missing": "C_writer_fixable",
         "superseded_topic_run": "D_no_action",
         "terminal_synthesis_timeout": "D_no_action",
@@ -1963,7 +1967,10 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
         if not status or status in {"eligible", "submitted_to_researka"}:
             continue
         code = status.split(":", 1)[0]
-        item = blockers.setdefault(code, {"count": 0, "class": _failure_class(status), "samples": []})
+        klass = _failure_class(status)
+        item = blockers.setdefault(code, {"count": 0, "class": klass, "samples": []})
+        if item.get("class") in {None, "", "unknown"} and klass != "unknown":
+            item["class"] = klass
         item["count"] = int(item.get("count") or 0) + 1
         item["last_seen"] = date
         sample = {k: row.get(k) for k in ("topic", "run", "out_dir", "status", "gate_status", "submit_status") if row.get(k) is not None}
