@@ -1998,6 +1998,15 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
     return {"path": path.name, "issue_candidates": sorted(set(issue_candidates))}
 
 
+def _record_attempt_blocker(
+    ledger_dir: Path,
+    date: str,
+    ledger: dict[str, Any],
+    attempt: dict[str, Any],
+) -> None:
+    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+
+
 @contextmanager
 def _lock(ledger_dir: Path, name: str = ".lock", *, block: bool = False) -> Iterator[bool]:
     """Advisory file lock. Distinct `name`s are independent locks, so the fresh
