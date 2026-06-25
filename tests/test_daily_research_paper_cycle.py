@@ -2338,6 +2338,7 @@ def test_seed_topic_defaults_to_v5_fullraw_when_configured(tmp_path: Path, monke
 
     def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
         seen["cmd"] = cmd
+        seen["env"] = _kwargs["env"]
         return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
 
     monkeypatch.setattr(cycle.subprocess, "run", fake_run)
@@ -2346,17 +2347,20 @@ def test_seed_topic_defaults_to_v5_fullraw_when_configured(tmp_path: Path, monke
 
     assert result["status"] == "corpus_seed_empty"
     assert seen["cmd"][-2:] == ["--sources", "v5_fullraw"]
+    assert seen["env"]["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] == "30.0"
 
 
 def test_seed_topic_source_env_override_wins(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setenv("RESEARCH_AGENT_SEED_SOURCES", "pubmed,europepmc openalex")
+    monkeypatch.setenv("RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS", "17")
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://127.0.0.1:9903/search")
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "token")
     seen: dict[str, Any] = {}
 
     def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
         seen["cmd"] = cmd
+        seen["env"] = _kwargs["env"]
         return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
 
     monkeypatch.setattr(cycle.subprocess, "run", fake_run)
@@ -2365,6 +2369,7 @@ def test_seed_topic_source_env_override_wins(tmp_path: Path, monkeypatch) -> Non
 
     assert result["status"] == "corpus_seed_empty"
     assert seen["cmd"][-4:] == ["--sources", "pubmed", "europepmc", "openalex"]
+    assert "V5_MEMO_FULL_RAW_QUERY_TIMEOUT" not in seen["env"]
 
 
 def test_seed_topic_timeout_with_claims_stays_gate_checkable(tmp_path: Path, monkeypatch) -> None:

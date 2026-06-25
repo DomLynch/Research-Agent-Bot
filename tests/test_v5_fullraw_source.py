@@ -112,6 +112,24 @@ async def test_fullraw_caps_publish_lane_timeout(monkeypatch: pytest.MonkeyPatch
 
 
 @pytest.mark.asyncio
+async def test_fullraw_query_timeout_overrides_long_corpus_timeout(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://fullraw.test/search")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "test-token")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "300")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_QUERY_TIMEOUT", "17")
+    received: dict[str, Any] = {}
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        received["body"] = json.loads(request.content)
+        return httpx.Response(200, json={"meta": {"shard_receipt": {}}, "results": []})
+
+    async with _mock_client(responder) as client:
+        await V5FullRawClient().search(client, "metformin longevity", limit=3)
+
+    assert received["body"]["timeout_seconds"] == 17.0
+
+
+@pytest.mark.asyncio
 async def test_fullraw_fail_soft_on_http_error(fullraw_env: None) -> None:
     async with _mock_client(lambda request: httpx.Response(503, content=b"down")) as client:
         assert await V5FullRawClient().search(client, "metformin", limit=3) == []

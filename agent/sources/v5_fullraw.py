@@ -29,7 +29,10 @@ def _fullraw_token() -> str:
 
 
 def _timeout_seconds() -> float:
-    raw = os.environ.get("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "").strip()
+    raw = (
+        os.environ.get("V5_MEMO_FULL_RAW_QUERY_TIMEOUT", "").strip()
+        or os.environ.get("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "").strip()
+    )
     try:
         requested = max(1.0, float(raw)) if raw else DEFAULT_TIMEOUT_SECONDS
     except ValueError:

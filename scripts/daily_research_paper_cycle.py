@@ -2318,6 +2318,14 @@ def _publish_seed_timeout(timeout: int | None) -> int:
     return min(timeout, cap) if timeout and timeout > 0 else cap
 
 
+def _seed_discovery_timeout() -> float:
+    raw = os.environ.get("RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS", "30")
+    try:
+        return min(120.0, max(1.0, float(raw)))
+    except ValueError:
+        return 30.0
+
+
 def _seed_sources() -> list[str]:
     raw = os.environ.get("RESEARCH_AGENT_SEED_SOURCES", "").strip()
     if raw:
@@ -2372,9 +2380,12 @@ def _seed_topic(
         cmd.extend(["--sources", *sources])
     if force_extract:
         cmd.append("--force-extract")
+    env = os.environ.copy()
+    if "v5_fullraw" in sources and "V5_MEMO_FULL_RAW_QUERY_TIMEOUT" not in env:
+        env["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] = str(_seed_discovery_timeout())
     seed_timeout = _seed_topic_timeout(timeout)
     try:
-        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=seed_timeout, capture_output=True, text=True)
+        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=seed_timeout, capture_output=True, text=True, env=env)
     except subprocess.TimeoutExpired as exc:
         after = _quant_claim_count(topic)
         status = "corpus_seeded" if after else "corpus_seed_failed"
