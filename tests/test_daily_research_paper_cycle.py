@@ -2304,6 +2304,9 @@ def test_corpus_seed_failure_is_corpus_fixable(tmp_path: Path, monkeypatch) -> N
 
 def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.delenv("RESEARCH_AGENT_SEED_SOURCES", raising=False)
+    monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", raising=False)
+    monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", raising=False)
     seen: dict[str, Any] = {}
 
     def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
@@ -2324,6 +2327,44 @@ def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypa
     assert seen["cmd"][-4:] == ["--limit", str(cycle.AUTO_SEED_LIMIT), "--max-per-source", str(cycle.AUTO_SEED_LIMIT)]
     assert "seed_topic_corpus.py" in seen["cmd"][1]
     assert result["seed_limit"] == cycle.AUTO_SEED_LIMIT
+
+
+def test_seed_topic_defaults_to_v5_fullraw_when_configured(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.delenv("RESEARCH_AGENT_SEED_SOURCES", raising=False)
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://127.0.0.1:9903/search")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "token")
+    seen: dict[str, Any] = {}
+
+    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
+        seen["cmd"] = cmd
+        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
+
+    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+
+    result = cycle._seed_topic("new_topic", seed_limit=7)
+
+    assert result["status"] == "corpus_seed_empty"
+    assert seen["cmd"][-2:] == ["--sources", "v5_fullraw"]
+
+
+def test_seed_topic_source_env_override_wins(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setenv("RESEARCH_AGENT_SEED_SOURCES", "pubmed,europepmc openalex")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://127.0.0.1:9903/search")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "token")
+    seen: dict[str, Any] = {}
+
+    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
+        seen["cmd"] = cmd
+        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
+
+    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+
+    result = cycle._seed_topic("new_topic", seed_limit=7)
+
+    assert result["status"] == "corpus_seed_empty"
+    assert seen["cmd"][-4:] == ["--sources", "pubmed", "europepmc", "openalex"]
 
 
 def test_seed_topic_timeout_with_claims_stays_gate_checkable(tmp_path: Path, monkeypatch) -> None:

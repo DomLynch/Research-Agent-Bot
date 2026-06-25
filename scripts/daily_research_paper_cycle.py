@@ -2318,6 +2318,18 @@ def _publish_seed_timeout(timeout: int | None) -> int:
     return min(timeout, cap) if timeout and timeout > 0 else cap
 
 
+def _seed_sources() -> list[str]:
+    raw = os.environ.get("RESEARCH_AGENT_SEED_SOURCES", "").strip()
+    if raw:
+        return [part for part in re.split(r"[,\s]+", raw) if part]
+    if (
+        os.environ.get("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL")
+        and os.environ.get("V5_MEMO_FULL_RAW_CORPUS_TOKEN")
+    ):
+        return ["v5_fullraw"]
+    return []
+
+
 def _corpus_repair_limit() -> int:
     try:
         return max(0, int(os.environ.get("RESEARCH_AGENT_CORPUS_REPAIR_LIMIT", str(CORPUS_REPAIR_LIMIT))))
@@ -2355,6 +2367,9 @@ def _seed_topic(
         sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic,
         "--limit", str(seed_limit), "--max-per-source", str(seed_limit),
     ]
+    sources = _seed_sources()
+    if sources:
+        cmd.extend(["--sources", *sources])
     if force_extract:
         cmd.append("--force-extract")
     seed_timeout = _seed_topic_timeout(timeout)
