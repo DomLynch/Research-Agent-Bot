@@ -3032,9 +3032,13 @@ def run_cycle(
                 break
             dynamic_preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
             dynamic_preflight_blocked -= corpus_repaired_ok | source_precision_repaired_ok
+            dynamic_receipt_preflight_blocked = set() if topic else _recent_receipt_preflight_blocked_topics(ledger_dir)
+            dynamic_receipt_preflight_blocked -= corpus_repaired_ok | source_precision_repaired_ok
             if dynamic_preflight_blocked != preflight_blocked:
                 preflight_blocked = dynamic_preflight_blocked
                 ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
+            if dynamic_receipt_preflight_blocked != receipt_preflight_blocked:
+                receipt_preflight_blocked = dynamic_receipt_preflight_blocked
             excluded = attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip | source_precision_auto_excluded
             selection_excluded = set(excluded)
             if topic is None and mode != "revise" and current_source_precision:
@@ -3063,7 +3067,10 @@ def run_cycle(
                 )
             )
             if not selected and not revision_source and topic is None and mode != "revise":
-                retryable_preflight = {t for t in preflight_blocked if _topic_has_quant_floor(t)}
+                retryable_preflight = {
+                    t for t in preflight_blocked - receipt_preflight_blocked
+                    if _topic_has_quant_floor(t)
+                }
                 if retryable_preflight:
                     selected = select_topic(
                         topics,
