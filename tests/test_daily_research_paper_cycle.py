@@ -51,17 +51,19 @@ def test_preflight_thin_quant_blocker_is_classified_and_backfills_unknown(tmp_pa
     cycle._write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {
         "blockers": {
             "preflight_thin_quant_corpus": {"count": 1, "class": "unknown", "samples": []},
+            "audit_p1_failed": {"count": 1, "class": "unknown", "samples": []},
         },
     })
 
     cycle._record_blockers(ledger_dir, "2026-06-25", [{
         "topic": "thin_topic",
-        "submit_status": "preflight_thin_quant_corpus",
+        "submit_status": "receipt_preflight_insufficient",
         "submitted": 0,
     }])
 
-    blocker = cycle._read_json(ledger_dir / cycle.BLOCKER_HISTOGRAM)["blockers"]["preflight_thin_quant_corpus"]
-    assert blocker["class"] == "B_corpus_fixable"
+    blockers = cycle._read_json(ledger_dir / cycle.BLOCKER_HISTOGRAM)["blockers"]
+    assert blockers["preflight_thin_quant_corpus"]["class"] == "B_corpus_fixable"
+    assert blockers["audit_p1_failed"]["class"] == "C_writer_fixable"
 
 
 def test_fresh_lane_keeps_8h_cadence_with_larger_search_budget() -> None:

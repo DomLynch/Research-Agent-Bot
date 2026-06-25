@@ -1954,6 +1954,12 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
     path = ledger_dir / BLOCKER_HISTOGRAM
     data = _read_json(path)
     blockers = data.setdefault("blockers", {})
+    if isinstance(blockers, dict):
+        for code, row in blockers.items():
+            if isinstance(row, dict) and row.get("class") in {None, "", "unknown"}:
+                klass = _failure_class(str(code))
+                if klass != "unknown":
+                    row["class"] = klass
     # Cumulative per-(topic, gate) failure timestamps — the daily ledger is
     # rewritten each run and cannot hold a cross-run count, so the repeat-skip
     # heuristic reads this instead. Windowed to the failure cooldown.
