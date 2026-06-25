@@ -15,9 +15,9 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import tomllib
-import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -522,18 +522,18 @@ def _surface_ready_after(topic: str, runs_root: Path | None, failure_at: dt.date
         return False
     runs = sorted(runs_root.glob(f"synthesis-{topic}-v*-*"), key=lambda p: p.stat().st_mtime, reverse=True)
     for run in (p for p in runs if p.is_dir()):
-        if not _final_status_submission_ready(run):
-            continue
-        surface = _read_json(run / "full_paper.journal_surface.json")
-        if surface.get("passed") is not True:
-            continue
         updated_at = max(
             (dt.datetime.fromtimestamp(p.stat().st_mtime, dt.UTC)
              for p in (run, run / "final_status.json", run / "full_paper.journal_surface.json", run / "full_paper.md")
              if p.exists()),
             default=None,
         )
-        if updated_at and updated_at >= failure_at:
+        if (
+            updated_at
+            and updated_at >= failure_at
+            and _final_status_submission_ready(run)
+            and _read_json(run / "full_paper.journal_surface.json").get("passed") is True
+        ):
             return True
         if _surface_passes_current_finalizer(run):
             return True
@@ -2135,7 +2135,7 @@ def _repair_existing_run(
                 return False, "repair_noop"
             if repair_reason == "journal_surface_not_passed":
                 from agent.journal_surface_gate import evaluate_journal_surface
-                surface = evaluate_journal_surface(after)
+                surface = evaluate_journal_surface(after, declared_review_type=_declared_review_type(out_dir))
                 if not surface.passed:
                     codes = ",".join(sorted({issue.code for issue in surface.issues}))
                     shutil.rmtree(out_dir, ignore_errors=True)

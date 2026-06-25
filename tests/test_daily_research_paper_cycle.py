@@ -7,6 +7,7 @@ import urllib.request
 
 import pytest
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 
 REPO = Path(__file__).resolve().parent.parent
@@ -4406,6 +4407,38 @@ def test_internal_repair_clears_surface_novelty_without_resynthesis(tmp_path: Pa
     assert sidecar == {"source_run": "source", "reason": "journal_surface_not_passed"}
 
 
+def test_internal_surface_repair_uses_declared_review_type(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    import agent.journal_finalizer as finalizer
+    import agent.journal_surface_gate as surface_gate
+
+    source = tmp_path / "source"
+    out = tmp_path / "out"
+    source.mkdir()
+    _write_json(source / "manifest.json", {"review_type": "thin_corpus_brief"})
+    (source / "full_paper.md").write_text("bad public artifact\n", encoding="utf-8")
+
+    def fake_finalize(out_dir: Path) -> None:
+        (out_dir / "full_paper.md").write_text("fixed public prose\n", encoding="utf-8")
+
+    seen_review_types: list[str | None] = []
+
+    def fake_surface(_paper: str, **kwargs: Any) -> Any:
+        seen_review_types.append(kwargs.get("declared_review_type"))
+        return SimpleNamespace(passed=True, issues=())
+
+    monkeypatch.setattr(finalizer, "finalize_run", fake_finalize)
+    monkeypatch.setattr(surface_gate, "evaluate_journal_surface", fake_surface)
+
+    ok, error = cycle._repair_existing_run(source, out, repair_reason="journal_surface_not_passed")
+
+    assert ok is True
+    assert error == ""
+    assert seen_review_types == ["thin_corpus_brief"]
+
+
 def test_internal_repair_noop_cleans_output_for_synthesis_fallback(
     tmp_path: Path,
     monkeypatch,
@@ -4761,6 +4794,48 @@ def test_surface_repeat_topics_ignores_repaired_ready_topic(tmp_path: Path) -> N
     (tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-22T13-00-00Z").mkdir()
 
     assert cycle._surface_repeat_topics(ledger_dir, now=now, runs_root=tmp_path / "runs") == set()
+
+
+def test_surface_repeat_topics_ignores_current_finalizer_repairable_topic(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    import agent.journal_finalizer as finalizer
+    import agent.journal_surface_gate as surface_gate
+
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    topic = "senolytics"
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {"repeats": {
+        f"{topic}\x1fjournal_surface_not_passed": [
+            (now - dt.timedelta(minutes=10)).isoformat(),
+            (now - dt.timedelta(minutes=5)).isoformat(),
+        ],
+    }})
+    run = tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-22T12-00-00Z-R2"
+    _write_json(run / "final_status.json", {"submission_ready": False})
+    _write_json(run / "full_paper.journal_surface.json", {
+        "passed": False,
+        "issues": [{"code": "topic_slug_artifact", "detail": "public topic-slug artifact: evidence_type"}],
+    })
+    _write_json(run / "manifest.json", {"review_type": "thin_corpus_brief"})
+    (run / "full_paper.md").write_text("Evidence_type metadata note: evidence_type labels.\n", encoding="utf-8")
+
+    def fake_finalize(out_dir: Path) -> None:
+        (out_dir / "full_paper.md").write_text("Evidence type metadata note: evidence-type labels.\n", encoding="utf-8")
+
+    seen_review_types: list[str | None] = []
+
+    def fake_surface(paper: str, **kwargs: Any) -> Any:
+        seen_review_types.append(kwargs.get("declared_review_type"))
+        return SimpleNamespace(passed="evidence_type" not in paper, issues=())
+
+    monkeypatch.setattr(finalizer, "finalize_run", fake_finalize)
+    monkeypatch.setattr(surface_gate, "evaluate_journal_surface", fake_surface)
+
+    assert cycle._surface_repeat_topics(ledger_dir, now=now, runs_root=tmp_path / "runs") == set()
+    assert seen_review_types == ["thin_corpus_brief"]
 
 
 def test_writer_gate_repeat_policy_downshifts_then_skips_after_brief_failure(tmp_path: Path) -> None:
