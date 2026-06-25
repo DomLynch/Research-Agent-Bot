@@ -306,6 +306,22 @@ def test_deterministic_unmet_accepts_primary_content_reclassification_rationale(
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_operational_subgroup_definition() -> None:
+    ask = (
+        "Define 'cardiovascular subgroup' operationally at the start "
+        "(which subgrouping axes, which population strata, which outcomes)."
+    )
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "Topic-fit rationale: Sources are retained only when they operationalize "
+        "cardiovascular subgroups directly or provide adjacent/contextual boundary "
+        "evidence for the same construct. Adjacent sources are reclassified as "
+        "boundary evidence rather than used for broad efficacy claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_weak_gaps_section() -> None:
     ask = "Rewrite the 'Gaps Identified' section to provide specific, actionable research gaps."
     paper = "## Gaps Identified\n\nMore research is needed because the current corpus is limited.\n"
@@ -1516,6 +1532,22 @@ def test_deterministic_unmet_accepts_concrete_tensions_and_gap_priority() -> Non
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
     assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_specific_cross_source_disagreements() -> None:
+    ask = (
+        "Expand the Tensions and Gaps section to enumerate at least three specific "
+        "cross-source disagreements with named sources on each side."
+    )
+    paper = (
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-source disagreement counts are manifest-derived.\n"
+        "- Grazuleviciene 2026 vs Durstenfeld 2026: surfaced tension/disagreement in Cardiometabolic because directions are null versus unclear.\n"
+        "- Salerno 2026 vs Riquelme-Hernandez 2026: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are unclear versus null.\n"
+        "- Liu 2025 vs Garcia 2026: surfaced tension/disagreement in Frailty because directions are unclear versus null.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
 def test_deterministic_unmet_requires_replaced_surface_tensions() -> None:

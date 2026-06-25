@@ -1874,8 +1874,13 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
             "included under", "inclusion criteria", "why sources", "umbrella",
             "operationalize", "directly study", "directly addresses",
             "justify", "adjacent context", "primary content", "prune",
-            "reclassify",
+            "reclassify", "define", "operationally", "population strata",
+            "subgrouping axes",
         ))
+    ) or (
+        "define" in lower
+        and any(token in lower for token in ("operationally", "operationalize"))
+        and any(token in lower for token in ("subgrouping axes", "population strata", "outcomes"))
     )
 
 
@@ -2103,8 +2108,16 @@ def _phase_d_tensions_and_gaps_breadth(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     lower = " ".join(feedback.lower().split())
     asks_count_evidence = (
-        ("cross-study disagreement" in lower or "surfaced tension" in lower)
-        and any(token in lower for token in ("substantiated", "enumerated", "actually-surfaced", "actually surfaced", "correct", "replace"))
+        (
+            "cross-study disagreement" in lower
+            or "cross-source disagreement" in lower
+            or "surfaced tension" in lower
+        )
+        and any(token in lower for token in (
+            "substantiated", "enumerated", "actually-surfaced",
+            "actually surfaced", "correct", "replace", "specific",
+            "named sources",
+        ))
     )
     if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower and not asks_count_evidence:
         return text, []

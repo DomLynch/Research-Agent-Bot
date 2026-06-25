@@ -1382,6 +1382,32 @@ def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
     ]
 
 
+def test_tensions_and_gaps_breadth_repairs_cross_source_disagreement_ask(tmp_path: Path) -> None:
+    ask = (
+        "Expand the Tensions and Gaps section to enumerate at least three specific "
+        "cross-source disagreements with named sources on each side."
+    )
+    rows = [
+        {"citation_token": "Grazuleviciene 2026", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "direct"},
+        {"citation_token": "Durstenfeld 2026", "outcome_class": "cardiometabolic", "effect_direction": "unclear", "directness": "review"},
+        {"citation_token": "Salerno 2026", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "indirect"},
+        {"citation_token": "Riquelme-Hernandez 2026", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review"},
+        {"citation_token": "Liu 2025", "outcome_class": "frailty", "effect_direction": "unclear", "directness": "indirect"},
+        {"citation_token": "Garcia 2026", "outcome_class": "frailty", "effect_direction": "null", "directness": "direct"},
+    ]
+    paper = "## Results\n\nThe corpus has unresolved heterogeneity.\n\n## References\n\nR01.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"n_non_orthogonal_tensions": 367, "receipts": rows}))
+
+    fixed, logs = journal_finalizer._phase_d_tensions_and_gaps_breadth(paper, tmp_path)
+
+    assert "## Tensions and Gaps" in fixed
+    assert "Grazuleviciene 2026 vs Durstenfeld 2026" in fixed
+    assert "Salerno 2026 vs Riquelme-Hernandez 2026" in fixed
+    assert "Liu 2025 vs Garcia 2026" in fixed
+    assert logs[0].phase == "D_tensions_and_gaps_breadth"
+
+
 def test_tensions_and_gaps_replaces_stale_cross_outcome_surface_tensions(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
@@ -2085,6 +2111,28 @@ def test_source_inclusion_rationale_repairs_umbrella_source_ask(tmp_path: Path) 
             detail="added source inclusion rationale from 2 manifest receipt(s)",
         )
     ]
+
+
+def test_source_inclusion_rationale_repairs_operational_subgroup_definition(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Define 'cardiovascular subgroup' operationally at the start "
+        "(which subgrouping axes, which population strata, which outcomes)."
+    )
+    paper = "## Evidence Snapshot\n\nThe corpus is summarized.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "cardiovascular_subgroups", "receipts": [
+        {"citation_token": "Smith 2024", "outcome_class": "cardiometabolic", "directness": "direct"},
+        {"citation_token": "Jones 2025", "outcome_class": "frailty", "directness": "indirect"},
+    ]}))
+
+    fixed, logs = journal_finalizer._phase_d_source_inclusion_rationale(paper, tmp_path)
+
+    assert "Topic-fit rationale:" in fixed
+    assert "operationalize cardiovascular subgroups directly" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_source_inclusion_rationale"
 
 
 def test_source_inclusion_rationale_is_revision_scoped(tmp_path: Path) -> None:

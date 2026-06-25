@@ -349,6 +349,10 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
             "why sources", "justify", "adjacent context", "not about",
             "operationally", "population strata", "subgrouping axes",
         ))
+    ) or (
+        "define" in text
+        and any(token in text for token in ("operationally", "operationalize"))
+        and any(token in text for token in ("subgrouping axes", "population strata", "outcomes"))
     )
 
 
