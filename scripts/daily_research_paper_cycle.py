@@ -1161,6 +1161,16 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
     return handled
 
 
+def _latest_handled_revision_status(ledger_dir: Path, key: str) -> str:
+    rows = _read_json(ledger_dir / HANDLED_REVISIONS).get("handled")
+    if not isinstance(rows, list):
+        return ""
+    for row in reversed(rows):
+        if isinstance(row, dict) and _revision_key(row) == key:
+            return str(row.get("status") or "")
+    return ""
+
+
 def _revision_key(row: dict[str, Any]) -> str:
     # Title-first so the round cap is per-paper, not per-submission: Researka
     # assigns a new artifactId per submission, which would otherwise reset the
@@ -1200,8 +1210,7 @@ def _pending_remote_revision(
     raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
     records: list[Any] = raw_records if isinstance(raw_records, list) else []
     for request in rows:
-        if _revision_key(request) in handled:
-            continue
+        request_key = _revision_key(request)
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
         request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
         matches: list[tuple[dict[str, Any], Path, str]] = []
@@ -1221,6 +1230,15 @@ def _pending_remote_revision(
                 matches.append((record, run, record_topic))
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
+        if request_key in handled:
+            latest_status = _latest_handled_revision_status(ledger_dir, request_key)
+            current_code_repairs_surface = (
+                latest_status == "terminal_surface_repeat"
+                and bool(matches)
+                and _surface_passes_current_finalizer(matches[-1][1])
+            )
+            if not current_code_repairs_surface:
+                continue
         if matches:
             record, run, record_topic = matches[-1]
             request["topic"] = record_topic
