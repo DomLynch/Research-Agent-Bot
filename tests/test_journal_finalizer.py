@@ -1506,6 +1506,27 @@ def test_populated_appraisal_artifact_is_summarized(tmp_path: Path) -> None:
     assert logs[0].rule == "summarize_populated_appraisal_artifact"
 
 
+def test_populated_appraisal_artifact_is_summarized_for_rob_judgment_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Relabel review-level rows and report RoB judgments for the admitted RCT and cohort sources."
+    paper = "## Methods\n\nRisk-of-bias judgments are source-level where reported.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "risk_of_bias.json").write_text(json.dumps([
+        {"study_id": "Smith 2025", "tool": "rob2", "overall_rating": "some_concerns"},
+        {"study_id": "Jones 2024", "tool": "robins_i", "overall_rating": "low"},
+    ]))
+
+    fixed, logs = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
+
+    assert "Risk-of-bias appraisal summary" in fixed
+    assert "2 source-level rating row(s)" in fixed
+    assert "RoB-2" in fixed
+    assert "ROBINS-I" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "summarize_populated_appraisal_artifact"
+
+
 def test_existing_appraisal_summary_labels_are_normalized(tmp_path: Path) -> None:
     ask = "Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources."
     paper = (

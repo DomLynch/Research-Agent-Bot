@@ -1758,7 +1758,10 @@ def _phase_d_unbacked_appraisal_names(
 
 def _revision_asks_unbacked_appraisal_names(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
-    return any(token in lower for token in ("rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias", "appraisal"))
+    return any(token in lower for token in (
+        "rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias",
+        "appraisal", "rob judgment", "rob judgments",
+    ))
 
 
 def _appraisal_artifact_summary(out_dir: Path) -> str:
