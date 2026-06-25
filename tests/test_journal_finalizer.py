@@ -2640,6 +2640,36 @@ def test_phase_n_labels_discussion_thesis_and_resolution_markers() -> None:
     assert journal_finalizer._phase_n_declare_discussion_thesis(out)[1] == []
 
 
+def test_run_text_phases_restores_discussion_markers_after_surface_floors(
+    tmp_path: Path, monkeypatch: Any,
+) -> None:
+    import scripts.review_noise_control as review_noise_control
+
+    def strip_discussion_markers(
+        text: str, _out_dir: Path, entries: list[journal_finalizer.FinalizerLogEntry],
+        _entry_cls: type[journal_finalizer.FinalizerLogEntry],
+    ) -> tuple[str, list[journal_finalizer.FinalizerLogEntry]]:
+        return (
+            text.replace("**Thesis:** ", "").replace("**Resolution criteria:** ", ""),
+            entries,
+        )
+
+    monkeypatch.setattr(
+        review_noise_control, "restore_surface_floors", strip_discussion_markers,
+    )
+    paper = (
+        "# T\n\n## Discussion\n\n"
+        "The corpus supports a bounded cardiometabolic interpretation.\n\n"
+        "Future trials with clinical endpoints would settle the open threats.\n\n"
+        "## Limitations\n\nstub.\n"
+    )
+
+    fixed, _log = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "**Thesis:**" in fixed
+    assert "**Resolution criteria:**" in fixed
+
+
 def test_smoke_combo_paper_finalizes_to_clean_surface() -> None:
     # End-to-end smoke (#10): a combo-topic paper with a legitimate cross-outcome
     # reference and a Discussion missing the thesis markers must finalize to a
