@@ -93,7 +93,7 @@ def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> Non
         "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
         "|---|---|---|---|---|\n"
         "| Contextual Other | n=1; claims=28 | no extracted directional signal in 1/1 sources | 1 indirect | limited |\n\n"
-        "### Contextual Adjacent Evidence Outcomes\n\n"
+        "### Contextual Other Outcomes\n\n"
         "1 included source was assigned to this outcome class. Directional coding: null=1. Directness coding: indirect=1.\n\n"
         "## References\n\n- Smith 2024.\n"
     )
