@@ -6892,6 +6892,10 @@ def test_cycle_skips_source_precision_repair_when_clean_topic_ready(tmp_path: Pa
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_unrepairable_source_precision_topics", lambda *_a, **_k: {
+        "aaa_low_source",
+        "bbb_low_source",
+    })
 
     def fake_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
         if topic in {"aaa_low_source", "bbb_low_source"}:
@@ -6986,6 +6990,7 @@ def test_cycle_repairs_source_precision_when_no_clean_topic_ready(tmp_path: Path
     assert repairs == ["aaa_low_source"]
     assert synthesized == ["aaa_low_source"]
     assert ledger["corpus_repairs"][0]["topic"] == "aaa_low_source"
+    assert ledger["source_precision_auto_excluded_topics"] == ["bbb_low_source"]
     assert ledger["status"] == "submitted_to_researka"
 
 
