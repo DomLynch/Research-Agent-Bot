@@ -359,6 +359,7 @@ def test_lightweight_polish_preserves_source_statistic_signal_in_thin_results() 
     ]}
     out, log = fixes.apply_lightweight_public_polish(paper, manifest=manifest)
     assert "significant source statistic in 1/1 sources; receipt-level direction coded null" in out
+    assert "Signal summary: significant source statistic in 1/1 sources; receipt-level direction coded null" in out
     assert "no extracted directional signal" not in out
     assert "Source-context map" in out
     assert "Oncology and cancer context" in out

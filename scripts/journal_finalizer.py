@@ -3051,9 +3051,19 @@ def _phase_f_reconcile_results_table(
     for slug, display, n, n_claims, signal, directness, limitation in stubs:
         scope = f" for {topic_anchor}" if topic_anchor else ""
         block = f"### {display} Outcomes\n\n{display} remains a separate Results slice{scope} (n={n}; claims={n_claims}; {signal}; {directness}; {limitation}) and is not pooled into adjacent endpoint classes.\n"
-        empty = re.search(rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\s*(?=^###\s+|\Z)", new_results)
+        empty = re.search(rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\s*(?=^###\s+|^##\s+|\Z)", new_results)
         if empty:
             new_results = new_results[:empty.start()] + block + new_results[empty.end():]
+            continue
+        auto_generated = re.search(
+            rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\n"
+            rf"(?:{re.escape(display)} remains a separate Results slice.*?|"
+            rf"\d+ included sources? (?:was|were) assigned to this outcome class\..*?)"
+            rf"(?=^###\s+|^##\s+|\Z)",
+            new_results,
+        )
+        if auto_generated:
+            new_results = new_results[:auto_generated.start()] + block + new_results[auto_generated.end():]
             continue
         if slug in existing:
             continue

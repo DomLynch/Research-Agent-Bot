@@ -87,6 +87,38 @@ def test_phase_f_distinguishes_source_statistics_from_null_receipt_summary(tmp_p
     assert "| Infectious-disease and immunology context | 1 | significant source statistic in 1/1 sources; receipt-level direction coded null |" in fixed
 
 
+def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> None:
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Contextual Other | n=1; claims=28 | no extracted directional signal in 1/1 sources | 1 indirect | limited |\n\n"
+        "### Contextual Adjacent Evidence Outcomes\n\n"
+        "1 included source was assigned to this outcome class. Directional coding: null=1. Directness coding: indirect=1.\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "everolimus",
+        "receipts": [{
+            "outcome_class": "contextual_other",
+            "n_claims": 28,
+            "effect_direction": "null",
+            "directness": "indirect",
+            "p_values": ["p < 0.001"],
+            "source_title": "STAT3 Polymorphism Associates With mTOR Inhibitor-Induced Interstitial Lung Disease in Patients With Renal Cell Carcinoma",
+        }],
+    }), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert logs
+    assert "Directional coding: null=1" not in fixed
+    assert (
+        "Contextual Adjacent Evidence remains a separate Results slice for TORC1 inhibitor "
+        "(n=1; claims=28; significant source statistic in 1/1 sources; receipt-level direction coded null"
+    ) in fixed
+
+
 def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> None:
     from scripts.review_noise_control import restore_surface_floors
 
