@@ -2311,6 +2311,7 @@ def _phase_d_source_directness_breakdown(
         return text, []
     lower = " ".join(feedback.lower().split())
     evidence_type_requested = "evidence_type" in lower or "evidence type" in lower
+    text = _normalize_evidence_type_public_note(text)
     if "source directness breakdown:" in text.lower():
         if evidence_type_requested and "evidence type metadata note:" not in text.lower():
             for heading in ("Evidence Landscape", "Evidence Snapshot", "Methods", "Results"):
@@ -2375,6 +2376,14 @@ _EVIDENCE_TYPE_METADATA_NOTE = (
     "source excerpts; review, RCT/trial, and excerpt evidence are reclassified "
     "under the source classification map before claims are interpreted."
 )
+
+
+def _normalize_evidence_type_public_note(text: str) -> str:
+    return (
+        text.replace("Evidence_type metadata note:", "Evidence type metadata note:")
+        .replace("Evidence_type labels", "Evidence type labels")
+        .replace("evidence_type labels", "evidence-type labels")
+    )
 
 
 _CITATION_TRACEABILITY_NOTE = (

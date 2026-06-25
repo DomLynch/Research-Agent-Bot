@@ -1852,6 +1852,24 @@ def test_evidence_type_note_added_when_directness_breakdown_already_exists(tmp_p
     ]
 
 
+def test_existing_evidence_type_note_is_public_prose_normalized(tmp_path: Path) -> None:
+    ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Source directness breakdown: 0/1 retained sources directly address the stated topic; "
+        "1/1 are adjacent or review-level.\n\n"
+        "Evidence_type metadata note: evidence_type labels are resolved against source excerpts.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
+
+    assert logs == []
+    assert "Evidence type metadata note:" in fixed
+    assert "evidence-type labels" in fixed
+    assert "evidence_type" not in fixed
+
+
 def test_section_source_grounding_repairs_section_trace_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
