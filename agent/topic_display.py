@@ -91,7 +91,11 @@ def _topic_pack_alias(topic: str, root: Path) -> str:
 
 def _looks_public_alias(alias: str) -> bool:
     clean = alias.strip()
-    return bool(clean) and ("-" in clean or " " in clean)
+    if not clean:
+        return False
+    if "-" in clean or " " in clean:
+        return True
+    return bool(re.search(r"[A-Za-z0-9]", clean))
 
 
 def _display_token(token: str, *, title_case: bool) -> str:

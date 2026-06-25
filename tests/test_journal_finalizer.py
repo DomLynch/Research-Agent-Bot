@@ -23,8 +23,8 @@ def test_phase_f_fills_existing_empty_results_outcome_heading(tmp_path: Path) ->
     ]}), encoding="utf-8")
     fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
     assert logs
-    assert "| TORC1 inhibitor / Cardiometabolic | n=2; claims=9 |" in fixed
-    assert "### Cardiometabolic Outcomes\n\nCardiometabolic remains a separate Results slice for TORC1 inhibitor" in fixed
+    assert "| Everolimus / Cardiometabolic | n=2; claims=9 |" in fixed
+    assert "### Cardiometabolic Outcomes\n\nCardiometabolic remains a separate Results slice for Everolimus" in fixed
 
 
 def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path) -> None:
@@ -114,7 +114,7 @@ def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> Non
     assert logs
     assert "Directional coding: null=1" not in fixed
     assert (
-        "Contextual Adjacent Evidence remains a separate Results slice for TORC1 inhibitor "
+        "Contextual Adjacent Evidence remains a separate Results slice for Everolimus "
         "(n=1; claims=28; significant source statistic in 1/1 sources; receipt-level direction coded null"
     ) in fixed
 

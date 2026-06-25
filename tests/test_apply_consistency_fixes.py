@@ -332,7 +332,7 @@ def test_lightweight_polish_rebuilds_thin_results_from_manifest() -> None:
         {"outcome_class": "longevity", "effect_direction": "positive", "directness": "review", "n_claims": 2},
     ]}
     out, log = fixes.apply_lightweight_public_polish(paper, manifest=manifest)
-    assert "| TORC1 inhibitor / Cardiometabolic | n=1; claims=3 | no extracted directional signal in 1/1 sources" in out
+    assert "| Everolimus / Cardiometabolic | n=1; claims=3 | no extracted directional signal in 1/1 sources" in out
     assert "Broken duplicate paragraph" not in out
     assert any(i["fix_type"] == "thin_results_rebuild" for i in log)
 

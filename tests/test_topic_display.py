@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from agent.topic_display import humanize_topic, intervention_label
 
 
@@ -7,6 +9,10 @@ def test_humanize_topic_preserves_biomedical_acronyms() -> None:
     assert humanize_topic("nad_biomarker_effects") == "NAD+ biomarker effects"
     assert humanize_topic("glp1_weight_effects") == "GLP-1 weight effects"
     assert humanize_topic("hrv_autonomic_aging", title_case=True) == "HRV Autonomic Aging"
+
+
+def test_humanize_topic_prefers_exact_public_alias_before_class_alias() -> None:
+    assert humanize_topic("everolimus", title_case=True, root=Path.cwd()) == "Everolimus"
 
 
 def test_intervention_label_is_the_entity_not_the_topic_phrase() -> None:
