@@ -2329,7 +2329,7 @@ def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypa
     assert result["seed_limit"] == cycle.AUTO_SEED_LIMIT
 
 
-def test_seed_topic_defaults_to_v5_fullraw_when_configured(tmp_path: Path, monkeypatch) -> None:
+def test_seed_topic_bounds_v5_timeout_without_forcing_v5_only(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.delenv("RESEARCH_AGENT_SEED_SOURCES", raising=False)
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://127.0.0.1:9903/search")
@@ -2349,7 +2349,7 @@ def test_seed_topic_defaults_to_v5_fullraw_when_configured(tmp_path: Path, monke
     result = cycle._seed_topic("new_topic", seed_limit=7)
 
     assert result["status"] == "corpus_seed_empty"
-    assert seen["cmd"][-2:] == ["--sources", "v5_fullraw"]
+    assert "--sources" not in seen["cmd"]
     assert seen["env"]["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] == "17.0"
     assert seen["timeout"] == 91
 

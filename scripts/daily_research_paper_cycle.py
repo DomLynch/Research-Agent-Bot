@@ -2330,11 +2330,6 @@ def _seed_sources() -> list[str]:
     raw = os.environ.get("RESEARCH_AGENT_SEED_SOURCES", "").strip()
     if raw:
         return [part for part in re.split(r"[,\s]+", raw) if part]
-    if (
-        os.environ.get("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL")
-        and os.environ.get("V5_MEMO_FULL_RAW_CORPUS_TOKEN")
-    ):
-        return ["v5_fullraw"]
     return []
 
 
@@ -2381,7 +2376,12 @@ def _seed_topic(
     if force_extract:
         cmd.append("--force-extract")
     env = os.environ.copy()
-    if "v5_fullraw" in sources and "V5_MEMO_FULL_RAW_QUERY_TIMEOUT" not in env:
+    v5_configured = (
+        env.get("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL")
+        and env.get("V5_MEMO_FULL_RAW_CORPUS_TOKEN")
+    )
+    uses_v5 = not sources or "v5_fullraw" in sources
+    if v5_configured and uses_v5 and "V5_MEMO_FULL_RAW_QUERY_TIMEOUT" not in env:
         env["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] = str(_seed_discovery_timeout())
     seed_timeout = _seed_topic_timeout(timeout)
     try:
