@@ -1042,6 +1042,27 @@ def test_source_topic_precision_counts_static_hrt_aliases(tmp_path: Path, monkey
     assert status == "source_topic_precision_ok:2/3"
 
 
+def test_source_topic_precision_does_not_require_generated_subgroup_axis(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    run = _run(tmp_path / "runs", name="synthesis-cardiovascular_subgroups-v06-test")
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "cardiovascular_subgroups"
+    manifest["receipts"] = [
+        {"receipt_id": "r1", "source_title": "Cardiovascular risk factors in older adults"},
+        {"receipt_id": "r2", "source_title": "Frailty and cardiovascular mortality in older people"},
+        {"receipt_id": "r3", "source_title": "SGLT2 inhibitors in older adults with cardiovascular disease"},
+        {"receipt_id": "r4", "source_title": "Baduanjin exercise and cardiovascular function"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ok, status = daily._source_topic_precision(run)
+
+    assert ok
+    assert status == "source_topic_precision_ok:4/4"
+
+
 def test_source_topic_precision_entity_rescue_compound_topic(tmp_path: Path, monkeypatch) -> None:
     """Compound-topic blocker fix: the per-source gate requires EVERY
     specificity token, so a corpus whose titles name the entity but rarely a
