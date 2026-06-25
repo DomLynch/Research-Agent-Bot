@@ -3169,7 +3169,7 @@ def run_cycle(
                         ledger["source_precision_fallback_repairs"] = fallback_repairs
                     if selected:
                         ledger["source_precision_fallback_selected"] = selected
-                if mode == "fresh" and topic is None and not topic_supply_refreshed:
+                if not selected and mode == "fresh" and topic is None and not topic_supply_refreshed:
                     topic_supply_refreshed = True
                     skip_slugs = selection_excluded | submitted_topics | published_topics
                     refresh = _refresh_topic_supply(TOPIC_PACKS_DB, skip_slugs=skip_slugs)
@@ -3185,9 +3185,9 @@ def run_cycle(
                             exclude=selection_excluded,
                             allow_recent_blocked_fallback=False,
                         )
-                if selected:
-                    ledger["topic_supply_selected_after_refresh"] = selected
-                else:
+                    if selected:
+                        ledger["topic_supply_selected_after_refresh"] = selected
+                if not selected:
                     ledger["status"] = "no_unpublished_topic_available"
                     break
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")

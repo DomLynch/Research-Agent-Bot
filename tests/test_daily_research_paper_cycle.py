@@ -7278,6 +7278,76 @@ def test_cycle_auto_excludes_unrepaired_low_source_precision_topics(tmp_path: Pa
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_fresh_cycle_repairs_source_precision_fallback_after_clean_topic_receipt_failure(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "aaa_clean_sparse", target_journal=True)
+    _topic(tmp_path, "bbb_low_source", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: {"bbb_low_source"})
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:24/24", [],
+    ))
+    repairs: list[str] = []
+
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        repairs.append(topic)
+        return {
+            "status": "source_precision_repaired",
+            "source_topic_precision_after": "source_topic_precision_ok:24/24",
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+        }
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, **_k: Any) -> dict[str, Any]:
+        if topic == "aaa_clean_sparse":
+            return {
+                "passed": False,
+                "status": "receipt_preflight_insufficient",
+                "n_receipts": 1,
+                "min_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+            }
+        return {
+            "passed": True,
+            "status": "receipt_preflight_ok",
+            "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+            "min_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+        }
+
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", lambda *_a, **_k: pytest.fail("unexpected refresh"))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-26",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=0,
+    )
+
+    assert repairs == ["bbb_low_source"]
+    assert synthesized == ["bbb_low_source"]
+    assert ledger["source_precision_fallback_selected"] == "bbb_low_source"
+    assert "topic_supply_selected_after_refresh" not in ledger
+    assert [attempt["topic"] for attempt in ledger["attempts"]] == ["aaa_clean_sparse", "bbb_low_source"]
+    assert ledger["attempts"][0]["gate_status"] == "receipt_preflight_insufficient"
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_auto_excludes_recent_unrepairable_zero_source_precision_topic(
     tmp_path: Path, monkeypatch,
 ) -> None:
