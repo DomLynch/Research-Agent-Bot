@@ -864,7 +864,11 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
         any(token in lower for token in ("admission funnel", "source admission", "receipt admission"))
-        and any(token in lower for token in ("numerical inconsistency", "numeric inconsistency", "contradictory", "contradiction", "both equal", "clarify"))
+        and any(token in lower for token in (
+            "numerical inconsistency", "numeric inconsistency", "contradictory",
+            "contradiction", "both equal", "clarify", "reconcile",
+            "coherent accounting", "derived",
+        ))
     ) or ("no extractable claims" in lower and "admitted final" in lower) or (
         "partial/none-only" in lower and "partial-only" in lower
     )
@@ -1869,7 +1873,8 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
         and any(token in lower for token in (
             "included under", "inclusion criteria", "why sources", "umbrella",
             "operationalize", "directly study", "directly addresses",
-            "justify", "adjacent context",
+            "justify", "adjacent context", "primary content", "prune",
+            "reclassify",
         ))
     )
 
@@ -1970,14 +1975,18 @@ def _phase_d_source_outcome_class_map(
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
-    wants_findings_map = "findings map" in feedback.lower()
+    lower_feedback = feedback.lower()
+    wants_findings_map = "findings map" in lower_feedback or (
+        "specific findings" in lower_feedback
+        and any(token in lower_feedback for token in ("cited source", "individual cited", "each retained source"))
+    )
     present_tokens = {
         str(row.get("citation_token") or "").strip()
         for row in rows
         if str(row.get("citation_token") or "").strip()
     }
     examples = []
-    for row in rows[:40]:
+    for row in rows if wants_findings_map else rows[:40]:
         token = str(row.get("citation_token") or "").strip()
         title = str(row.get("source_title") or "").strip()
         fallback = str(row.get("receipt_id") or "source").strip()
@@ -2080,6 +2089,10 @@ def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
     ) or (
         "source" in lower
         and any(token in lower for token in ("findings map", "unaccounted", "attribute every admitted source"))
+    ) or (
+        "outcome class" in lower
+        and any(token in lower for token in ("specific findings", "effect size", "directional statement"))
+        and any(token in lower for token in ("cited source", "individual cited", "each retained source"))
     )
 
 
@@ -2550,6 +2563,10 @@ def _revision_asks_single_source_proportionality(feedback: str) -> bool:
     return (
         ("single-source" in lower or "single source" in lower)
         and any(token in lower for token in ("hypothesis-generating", "proportionality", "reduce narrative depth"))
+    ) or (
+        "outcome class" in lower
+        and ("n=1" in lower or "one-source" in lower or "one source" in lower)
+        and any(token in lower for token in ("context-only", "parallel evidence", "merge them"))
     )
 
 

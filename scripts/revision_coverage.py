@@ -339,8 +339,15 @@ def _asks_source_directness_breakdown(text: str) -> bool:
 def _asks_source_inclusion_rationale(text: str) -> bool:
     return (
         "source" in text
-        and any(token in text for token in ("included under", "inclusion criteria", "included", "umbrella", "operationalize", "classified as addressing"))
-        and any(token in text for token in ("unrelated", "general", "other digital", "non-digital", "why sources", "justify", "adjacent context"))
+        and any(token in text for token in (
+            "included under", "inclusion criteria", "included", "umbrella",
+            "operationalize", "classified as addressing", "primary content",
+            "prune", "reclassify",
+        ))
+        and any(token in text for token in (
+            "unrelated", "general", "other digital", "non-digital",
+            "why sources", "justify", "adjacent context", "not about",
+        ))
     )
 
 
@@ -484,7 +491,11 @@ def _asks_evidence_tier_directness_bounds(text: str) -> bool:
 def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
     return (
         any(token in text for token in ("admission funnel", "source admission", "receipt admission"))
-        and any(token in text for token in ("numerical inconsistency", "numeric inconsistency", "inconsistently", "both equal", "contradictory", "contradiction", "clarify"))
+        and any(token in text for token in (
+            "numerical inconsistency", "numeric inconsistency", "inconsistently",
+            "both equal", "contradictory", "contradiction", "clarify",
+            "reconcile", "coherent accounting", "derived",
+        ))
     ) or ("no extractable claims" in text and "admitted final" in text) or (
         "partial/none-only" in text and "partial-only" in text
     )
@@ -502,6 +513,10 @@ def _asks_single_source_proportionality(text: str) -> bool:
     return (
         ("single-source" in text or "single source" in text)
         and any(token in text for token in ("hypothesis-generating", "proportionality", "reduce narrative depth"))
+    ) or (
+        "outcome class" in text
+        and ("n=1" in text or "one-source" in text or "one source" in text)
+        and any(token in text for token in ("context-only", "parallel evidence", "merge them"))
     )
 
 

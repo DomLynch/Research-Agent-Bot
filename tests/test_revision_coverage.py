@@ -290,6 +290,22 @@ def test_deterministic_unmet_accepts_umbrella_source_inclusion_rationale() -> No
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_primary_content_reclassification_rationale() -> None:
+    ask = (
+        "Prune or reclassify cited sources whose primary content is not about "
+        "cardiovascular subgroups."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Topic-fit rationale: Sources are retained only when they operationalize "
+        "cardiovascular subgroups directly or provide adjacent/contextual boundary "
+        "evidence for the same construct. Adjacent sources are reclassified as "
+        "boundary evidence rather than used for broad efficacy claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_weak_gaps_section() -> None:
     ask = "Rewrite the 'Gaps Identified' section to provide specific, actionable research gaps."
     paper = "## Gaps Identified\n\nMore research is needed because the current corpus is limited.\n"
@@ -969,6 +985,26 @@ def test_deterministic_unmet_accepts_admission_funnel_distinct_opposite_counts()
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_coherent_admission_funnel_note() -> None:
+    ask = (
+        "Reconcile the admission funnel numbers to a single coherent accounting, "
+        "and explain how '63 admitted sources' is derived."
+    )
+    paper = (
+        "## Source Admission Funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Mixed partial-or-none claim-binding candidates | 70 |\n"
+        "| Admitted final sources | 63 |\n\n"
+        "Admission-bucket note: The funnel rows are audit categories, not an "
+        "additive conservation table. No-extractable-claim, mixed partial-or-none, "
+        "partial-only, and admitted-final-source counts can be equal or overlap "
+        "because they describe different screening and claim-binding states.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_missing_single_source_proportionality() -> None:
     ask = (
         "For single-source outcome classes (frailty, immune/inflammation, muscle function), "
@@ -1514,6 +1550,23 @@ def test_deterministic_known_accepts_auditable_tension_and_source_verdict_asks()
 
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_unmet_accepts_specific_findings_by_source_map() -> None:
+    ask = (
+        "For each outcome class, extract at least 2-3 specific findings from "
+        "individual cited sources (study design, population, effect direction, "
+        "effect size where available) and present them in prose, not just in the "
+        "coding tally."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2024: outcome=Cardiometabolic; direction=mixed; directness=indirect; "
+        "tier=B2; finding=12 extracted claim(s); receipt-level direction is the coded finding.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
 def test_key_findings_source_verdict_ask_accepts_structured_source_synthesis() -> None:

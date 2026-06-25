@@ -327,6 +327,31 @@ def test_admission_funnel_clarification_covers_partial_binding_ask(tmp_path: Pat
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_admission_funnel_clarification_covers_coherent_accounting_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Reconcile the admission funnel numbers to a single coherent accounting, "
+        "and explain how '63 admitted sources' is derived."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### Source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Mixed partial-or-none claim-binding candidates | 70 |\n"
+        "| Admitted final sources | 63 |\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, _ = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert "Admission-bucket note:" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
 def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> None:
     paper = (
         "## Methods\n\n"
@@ -1302,6 +1327,38 @@ def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
+def test_source_outcome_class_map_includes_all_rows_for_each_retained_source_ask(tmp_path: Path) -> None:
+    ask = (
+        "For each outcome class, extract at least 2-3 specific findings from "
+        "individual cited sources (study design, population, effect direction, "
+        "effect size where available) and present them in prose, not just in the "
+        "coding tally."
+    )
+    rows = [
+        {
+            "citation_token": f"Smith {2000 + idx}",
+            "source_title": f"Clinical source {idx}",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "mixed",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": idx,
+        }
+        for idx in range(1, 46)
+    ]
+    paper = "## Evidence Landscape\n\nThe source map needs repair.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+
+    fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
+
+    assert "### Findings Map" in fixed
+    assert "Smith 2001" in fixed
+    assert "Smith 2045" in fixed
+    assert "finding=45 extracted claim(s); receipt-level direction is the coded finding" in fixed
+    assert logs[0].phase == "D_source_outcome_class_map"
+
+
 def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
     ask = (
         "Expand Tensions and Gaps to cover the full outcome breadth of the corpus, "
@@ -2073,6 +2130,29 @@ def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> 
             detail="added single-source proportionality statement for 2 outcome class(es)",
         )
     ]
+
+
+def test_single_source_proportionality_covers_n_equals_one_context_only_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "For outcome classes with n=1 sources, either merge them into adjacent "
+        "classes or explicitly flag them as context-only and do not present them "
+        "as parallel evidence domains."
+    )
+    paper = "## Evidence Landscape\n\nEvidence summary.\n\n## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"outcome_class": "safety"},
+        {"outcome_class": "cardiometabolic"},
+        {"outcome_class": "cardiometabolic"},
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, _ = journal_finalizer._phase_d_single_source_proportionality(paper, tmp_path)
+
+    assert "Single-source outcome classes" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
 def test_single_source_proportionality_statement_is_revision_scoped(tmp_path: Path) -> None:
