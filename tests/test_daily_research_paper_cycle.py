@@ -994,6 +994,60 @@ def test_select_topic_prefers_local_corpus_over_empty_frontier_topic(tmp_path: P
     assert selected == "solid_ready"
 
 
+def test_select_topic_skips_weak_generated_frontier_topic(tmp_path: Path, monkeypatch) -> None:
+    _write_json(tmp_path / "topic_packs_db" / "weak_generated_marker" / "latest.json", {
+        "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT - 1,
+        "pack_data": {
+            "topic": "weak_generated_marker",
+            "aliases": ["weak generated marker", "marker-17"],
+            "target_journal": "GeroScience",
+        },
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    selected = cycle.select_topic(["weak_generated_marker"], tmp_path / cycle.LEDGER_DIR)
+
+    assert selected is None
+
+
+def test_select_topic_allows_supported_generated_frontier_topic(tmp_path: Path, monkeypatch) -> None:
+    for topic, count in {
+        "weak_generated_marker": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT - 1,
+        "supported_generated_marker": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+    }.items():
+        _write_json(tmp_path / "topic_packs_db" / topic / "latest.json", {
+            "candidate_count": count,
+            "pack_data": {
+                "topic": topic,
+                "aliases": [topic.replace("_", " "), "marker-17"],
+                "target_journal": "GeroScience",
+            },
+        })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    selected = cycle.select_topic(
+        ["weak_generated_marker", "supported_generated_marker"],
+        tmp_path / cycle.LEDGER_DIR,
+    )
+
+    assert selected == "supported_generated_marker"
+
+
+def test_select_topic_keeps_static_frontier_seedable(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "static_frontier", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    selected = cycle.select_topic(["static_frontier"], tmp_path / cycle.LEDGER_DIR)
+
+    assert selected == "static_frontier"
+
+
 def test_select_topic_falls_back_to_score_when_all_attempted(tmp_path: Path, monkeypatch) -> None:
     """Steady state (NOT the orbit bug): once every publish-ready candidate has
     been attempted, the untried-first flag is uniform, so selection falls back
@@ -1263,7 +1317,7 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     def fake_refresh(db_dir: Path) -> dict[str, Any]:
         latest = db_dir / "sglt2_inhibitors_effects" / "latest.json"
         _write_json(latest, {
-            "candidate_count": 20,
+            "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
             "pack_data": {
                 "topic": "sglt2_inhibitors_effects",
                 "aliases": ["SGLT2 inhibitors effects", "SGLT2 inhibitors"],
