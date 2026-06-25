@@ -2942,6 +2942,8 @@ def run_cycle(
             if not selected:
                 ledger["status"] = "no_unpublished_topic_available"
                 break
+            stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
+            out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
             seeded_frontier_corpus: dict[str, Any] | None = None
             if not revision_source and submit and mode == "fresh" and not _topic_has_quant_floor(selected):
                 seeded_frontier_corpus = (ensure_corpus or _ensure_topic_corpus)(
@@ -2954,15 +2956,26 @@ def run_cycle(
                 and mode == "fresh"
                 and not _topic_has_quant_floor(selected)
             ):
+                attempt: dict[str, Any] = {
+                    "topic": selected,
+                    "out_dir": out_dir.name,
+                    "synthesis_return_code": None,
+                    "submit_status": str((seeded_frontier_corpus or {}).get("status") or "no_ready_corpus_available"),
+                    "failure_class": "B_corpus_fixable",
+                    "submitted": 0,
+                    "corpus": seeded_frontier_corpus or {},
+                }
+                ledger["attempts"].append(attempt)
+                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 ledger.update({
                     "status": "no_ready_corpus_available",
                     "attempted_topic": selected,
+                    "attempted_run": out_dir.name,
                     "selected_without_quant_floor": selected,
                 })
-                break
+                attempted.add(selected)
+                continue
             numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
-            stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
-            out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
             ledger.update({"topic": selected, "out_dir": out_dir.name, "attempted_topic": selected, "attempted_run": out_dir.name})
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"

@@ -106,6 +106,57 @@ def test_fresh_publish_seeds_empty_frontier_with_bounded_timeout(tmp_path: Path,
     assert ledger["frontier_corpus_seed"]["topic"] == "empty_frontier"
 
 
+def test_fresh_publish_continues_after_frontier_seed_stays_thin(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_empty_frontier", corpus=False, target_journal=True)
+    _topic(tmp_path, "bbb_ready", corpus=True, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:12/12", [],
+    ))
+    monkeypatch.setattr(cycle, "_preflight", lambda *_a, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+
+    def fake_select(topics, _ledger_dir, **kwargs):
+        excluded = kwargs.get("exclude", set())
+        for candidate in ("aaa_empty_frontier", "bbb_ready"):
+            if candidate in topics and candidate not in excluded:
+                return candidate
+        return None
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        if topic == "aaa_empty_frontier":
+            return {"status": "corpus_seed_failed", "n_quant_claims": 0}
+        return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "select_topic", fake_select)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        ensure_corpus=fake_corpus,
+        cycle_budget_seconds=1000,
+        max_attempts=2,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert [attempt["topic"] for attempt in ledger["attempts"]] == ["aaa_empty_frontier", "bbb_ready"]
+    assert ledger["attempts"][0]["submit_status"] == "corpus_seed_failed"
+    assert ledger["submitted_topic"] == "bbb_ready"
+
+
 def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path: Path, monkeypatch) -> None:
     for name in ("aaa_low_support", "published_high_support", "zzz_high_support"):
         _topic(tmp_path, name, target_journal=True)
