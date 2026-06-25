@@ -2956,7 +2956,7 @@ def run_cycle(
             source_precision_repair_attempted: set[str] = set()
             repair_timeout = _publish_seed_timeout(timeout)
             repair_order = sorted(
-                repairable,
+                (repair_topic for repair_topic in repairable if _fresh_seed_candidate(repair_topic)),
                 key=lambda t: (-_quant_claim_count(t), -_topic_support_score(t), _attempted_at(t, ledger_dir), t),
             )
             for repair_topic in repair_order[:_corpus_repair_limit()]:

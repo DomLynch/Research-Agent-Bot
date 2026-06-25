@@ -1048,6 +1048,50 @@ def test_select_topic_keeps_static_frontier_seedable(tmp_path: Path, monkeypatch
     assert selected == "static_frontier"
 
 
+def test_cycle_skips_weak_generated_corpus_repair_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "ready_cached", target_journal=True)
+    _write_json(tmp_path / "topic_packs_db" / "weak_generated_marker" / "latest.json", {
+        "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT - 1,
+        "pack_data": {
+            "topic": "weak_generated_marker",
+            "aliases": ["weak generated marker", "marker-17"],
+            "target_journal": "GeroScience",
+        },
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_topics", lambda *_a, **_k: {"weak_generated_marker"})
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: pytest.fail(f"unexpected repair: {topic}"))
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert synthesized == ["ready_cached"]
+    assert ledger["status"] == "submitted_to_researka"
+    assert "corpus_repairs" not in ledger
+
+
 def test_select_topic_falls_back_to_score_when_all_attempted(tmp_path: Path, monkeypatch) -> None:
     """Steady state (NOT the orbit bug): once every publish-ready candidate has
     been attempted, the untried-first flag is uniform, so selection falls back
