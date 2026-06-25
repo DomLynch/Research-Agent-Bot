@@ -565,6 +565,23 @@ def _surface_passes_current_finalizer(run: Path) -> bool:
         return False
 
 
+def _revision_coverage_passes_current_finalizer(run: Path, feedback: str) -> bool:
+    """True when current code can clear a stale revision-coverage failure."""
+    if not feedback or not (run / "full_paper.md").is_file():
+        return False
+    try:
+        with tempfile.TemporaryDirectory(prefix="v3-revision-coverage-probe-") as tmp:
+            probe = Path(tmp) / run.name
+            shutil.copytree(run, probe)
+            _write_json(probe / "researka_revision_request.json", {"feedback": feedback})
+            from agent.journal_finalizer import finalize_run
+
+            finalize_run(probe)
+            return not _unmet_revision_asks(probe, feedback)
+    except (OSError, RuntimeError, ValueError, ImportError):
+        return False
+
+
 def _surface_repeat_topics(
     ledger_dir: Path, *, now: dt.datetime | None = None, runs_root: Path | None = None,
 ) -> set[str]:
@@ -1250,7 +1267,16 @@ def _pending_remote_revision(
                 latest_status == "terminal_domain_scope_mismatch"
                 and not _revision_requests_domain_scope_reset(str(request.get("feedback") or ""))
             )
-            if not (current_code_repairs_surface or current_code_clears_domain_scope):
+            current_code_clears_revision_coverage = (
+                latest_status == "revision_coverage_unmet"
+                and bool(matches)
+                and _revision_coverage_passes_current_finalizer(matches[-1][1], str(request.get("feedback") or ""))
+            )
+            if not (
+                current_code_repairs_surface
+                or current_code_clears_domain_scope
+                or current_code_clears_revision_coverage
+            ):
                 continue
         if matches:
             record, run, record_topic = matches[-1]

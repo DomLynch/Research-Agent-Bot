@@ -3783,6 +3783,61 @@ def test_pending_remote_revision_reopens_false_domain_scope_terminal(
     assert pending["source_run"] == source_run.name
 
 
+def test_pending_remote_revision_reopens_stale_revision_coverage_unmet(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    title = "Hypothesis-Generating Brief: Metabolism Biomarker Effects — full paper"
+    source_run = _seed_submitted_run(runs, "metabolism_biomarker_effects", f"# {title}")
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+        {
+            "key": marker,
+            "title": title,
+            "status": "revision_coverage_unmet",
+            "handled_at": "2026-06-25T00:50:36+00:00",
+        },
+        {
+            "key": marker,
+            "title": title,
+            "status": "revision_coverage_unmet",
+            "handled_at": "2026-06-25T00:52:47+00:00",
+        },
+        {
+            "key": marker,
+            "title": title,
+            "status": "revision_coverage_unmet",
+            "handled_at": "2026-06-25T00:54:47+00:00",
+        },
+    ]})
+    monkeypatch.setattr(
+        cycle,
+        "_revision_coverage_passes_current_finalizer",
+        lambda run, feedback: run == source_run and "Findings Map" in feedback,
+    )
+    request = {
+        "artifactId": "metabolism-review",
+        "title": title,
+        "topic": "metabolism_biomarker_effects",
+        "feedback": "Reconstruct the Findings Map.",
+        "reviewedAt": "2026-06-25T00:49:00+00:00",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["artifactId"] == "metabolism-review"
+    assert pending["source_run"] == source_run.name
+
+
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", target_journal=True)
     _topic(tmp_path, "telomere_biomarker_effects", target_journal=True)
