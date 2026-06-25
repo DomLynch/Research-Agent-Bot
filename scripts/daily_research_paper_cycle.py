@@ -1532,6 +1532,7 @@ def select_topic(
     runs_root: Path = RUNS,
     remote_seen: set[str] | None = None,
     exclude: set[str] | None = None,
+    allow_recent_blocked_fallback: bool = True,
 ) -> str | None:
     blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
@@ -1539,7 +1540,10 @@ def select_topic(
         return None
     recent_blocked = _recent_blocked_topics(ledger_dir)
     fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
-    candidates = fresh_candidates or candidates
+    if fresh_candidates:
+        candidates = fresh_candidates
+    elif not allow_recent_blocked_fallback:
+        return None
     pool = [topic for topic in candidates if _publication_track_topic(topic)]
     if not pool:
         return None
