@@ -689,13 +689,16 @@ def _rebuild_thin_results_from_manifest(paper_md: str, manifest: dict | None) ->
     by_outcome: dict[str, list[dict]] = defaultdict(list)
     for r in receipts:
         by_outcome[str(r.get("outcome_class") or "other")].append(r)
+    topic = str(manifest.get("topic") or "")
+    topic_anchor = _topic_display_name(topic) if topic else ""
     lines = ["## Results", "", "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |", "|---|---|---|---|---|"]
     for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
         dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
         direct = Counter(str(r.get("directness") or "indirect").lower() for r in group)
         dominant, dominant_n = dirs.most_common(1)[0]
         label = outcome.replace("_", " ").title()
-        lines.append(f"| {label} | n={len(group)}; claims={sum(int(r.get('n_claims') or 0) for r in group)} | {dominant} signal in {dominant_n}/{len(group)} sources | {direct.most_common(1)[0][1]} {direct.most_common(1)[0][0]} | {'single-source support' if len(group) == 1 else 'primary-tier limited'} |")
+        row_label = f"{topic_anchor} / {label}" if topic_anchor else label
+        lines.append(f"| {row_label} | n={len(group)}; claims={sum(int(r.get('n_claims') or 0) for r in group)} | {dominant} signal in {dominant_n}/{len(group)} sources | {direct.most_common(1)[0][1]} {direct.most_common(1)[0][0]} | {'single-source support' if len(group) == 1 else 'primary-tier limited'} |")
     lines += ["", "This evidence brief reports outcome packets as a map of retained evidence rather than as a full journal Results narrative or pooled effect estimate."]
     for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
         dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)

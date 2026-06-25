@@ -17,13 +17,14 @@ def test_phase_f_fills_existing_empty_results_outcome_heading(tmp_path: Path) ->
         "### Cardiometabolic Outcomes\n\n"
         "## References\n\n- Smith 2024.\n"
     )
-    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "everolimus", "receipts": [
         {"outcome_class": "cardiometabolic", "n_claims": 4, "effect_direction": "mixed", "directness": "indirect"},
         {"outcome_class": "cardiometabolic", "n_claims": 5, "effect_direction": "null", "directness": "indirect"},
     ]}), encoding="utf-8")
     fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
     assert logs
-    assert "### Cardiometabolic Outcomes\n\nCardiometabolic remains a separate Results slice" in fixed
+    assert "| TORC1 inhibitor / Cardiometabolic | n=2; claims=9 |" in fixed
+    assert "### Cardiometabolic Outcomes\n\nCardiometabolic remains a separate Results slice for TORC1 inhibitor" in fixed
 
 
 def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path) -> None:

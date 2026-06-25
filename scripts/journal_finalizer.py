@@ -610,6 +610,16 @@ def _outcome_display(slug: str) -> str:
     return outcome_display(re.sub(r"\s+outcomes?$", "", slug, flags=re.I))
 
 
+def _topic_display_anchor(manifest: dict[str, Any]) -> str:
+    topic = str(manifest.get("topic") or "").strip()
+    if not topic:
+        return ""
+    from agent.topic_display import humanize_topic
+    return humanize_topic(
+        topic, title_case=True, root=Path(__file__).resolve().parent.parent,
+    )
+
+
 def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     from agent.journal_surface_gate import _outcome_key
     from collections import Counter
@@ -2985,6 +2995,7 @@ def _phase_f_reconcile_results_table(
             groups.setdefault(_outcome_key(str(r["outcome_class"])), []).append(r)
     if not groups:
         return text, []
+    topic_anchor = _topic_display_anchor(manifest)
     rows = [
         "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |",
         "|---|---|---|---|---|",
@@ -3020,12 +3031,14 @@ def _phase_f_reconcile_results_table(
             "single-source slice; hypothesis-generating"
             if n <= 1 else "limited corpus depth in this outcome class"
         )
+        display = _outcome_display(slug)
+        row_display = f"{topic_anchor} / {display}" if topic_anchor else display
         rows.append(
-            f"| {_outcome_display(slug)} | n={n}; claims={n_claims} | {signal_cell} "
+            f"| {row_display} | n={n}; claims={n_claims} | {signal_cell} "
             f"| {directness_cell} | {limitation_cell} |"
         )
         stubs.append((
-            slug, _outcome_display(slug), n, n_claims, signal_cell,
+            slug, display, n, n_claims, signal_cell,
             directness_cell, limitation_cell,
         ))
     table = "\n".join(rows) + "\n"
@@ -3045,7 +3058,8 @@ def _phase_f_reconcile_results_table(
     }
     missing_blocks = []
     for slug, display, n, n_claims, signal, directness, limitation in stubs:
-        block = f"### {display} Outcomes\n\n{display} remains a separate Results slice (n={n}; claims={n_claims}; {signal}; {directness}; {limitation}) and is not pooled into adjacent endpoint classes.\n"
+        scope = f" for {topic_anchor}" if topic_anchor else ""
+        block = f"### {display} Outcomes\n\n{display} remains a separate Results slice{scope} (n={n}; claims={n_claims}; {signal}; {directness}; {limitation}) and is not pooled into adjacent endpoint classes.\n"
         empty = re.search(rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\s*(?=^###\s+|\Z)", new_results)
         if empty:
             new_results = new_results[:empty.start()] + block + new_results[empty.end():]
