@@ -799,6 +799,15 @@ def _current_low_source_precision_topics(topics: list[str]) -> set[str]:
     return out
 
 
+def _source_precision_retained_claim_count(topic: str) -> int:
+    _ok, _status, misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+    return max(0, _quant_claim_count(topic) - len(misses))
+
+
+def _source_precision_repair_candidate(topic: str) -> bool:
+    return _topic_has_quant_floor(topic)
+
+
 def _revision_requests_source_precision(feedback: str) -> bool:
     text = str(feedback or "").lower()
     return "source" in text and any(token in text for token in (
@@ -3017,11 +3026,17 @@ def run_cycle(
                     repair_topic for repair_topic in repairable
                     if (
                         repair_topic in source_precision_repairable
-                        and _topic_has_quant_floor(repair_topic)
+                        and _source_precision_repair_candidate(repair_topic)
                     )
                     or _fresh_corpus_repair_candidate(repair_topic)
                 ),
-                key=lambda t: (-_quant_claim_count(t), -_topic_support_score(t), _attempted_at(t, ledger_dir), t),
+                key=lambda t: (
+                    -_source_precision_retained_claim_count(t) if t in source_precision_repairable else -_quant_claim_count(t),
+                    -_quant_claim_count(t),
+                    -_topic_support_score(t),
+                    _attempted_at(t, ledger_dir),
+                    t,
+                ),
             )
             for repair_topic in repair_order[:_corpus_repair_limit()]:
                 if repair_topic in source_precision_repairable:
@@ -3150,9 +3165,15 @@ def run_cycle(
                                 | pending_revision_excluded | surface_repeat | writer_gate_skip
                                 | attempted | recent_source_precision_failed
                             )
-                            and _topic_has_quant_floor(repair_topic)
+                            and _source_precision_repair_candidate(repair_topic)
                         ),
-                        key=lambda t: (-_quant_claim_count(t), -_topic_support_score(t), _attempted_at(t, ledger_dir), t),
+                        key=lambda t: (
+                            -_source_precision_retained_claim_count(t),
+                            -_quant_claim_count(t),
+                            -_topic_support_score(t),
+                            _attempted_at(t, ledger_dir),
+                            t,
+                        ),
                     )
                     fallback_repairs: list[dict[str, Any]] = []
                     for repair_topic in fallback_order[:_corpus_repair_limit()]:

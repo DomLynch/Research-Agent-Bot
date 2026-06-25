@@ -7184,6 +7184,56 @@ def test_cycle_repairs_source_precision_when_no_clean_topic_ready(tmp_path: Path
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_source_precision_repair_prefers_retained_claims_over_raw_file_count(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "aaa_noisy_low_source", target_journal=True)
+    _topic(tmp_path, "bbb_retained_low_source", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: {
+        "aaa_noisy_low_source": 120,
+        "bbb_retained_low_source": 50,
+    }[topic])
+
+    def fake_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
+        if topic == "aaa_noisy_low_source":
+            return False, "source_topic_precision_low:0/120<0.50", [Path(f"noisy-{i}.json") for i in range(120)]
+        return False, "source_topic_precision_low:30/50<0.75", [Path(f"miss-{i}.json") for i in range(20)]
+
+    repairs: list[str] = []
+
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        repairs.append(topic)
+        return {
+            "status": "source_precision_repaired",
+            "source_topic_precision_after": "source_topic_precision_ok:30/30",
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+        }
+
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda topic, out_dir, **_k: out_dir.mkdir(parents=True) or 0)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-26",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert repairs == ["bbb_retained_low_source"]
+    assert ledger["corpus_repairs"][0]["topic"] == "bbb_retained_low_source"
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_skips_recent_source_precision_failure_before_repairing_next_topic(
     tmp_path: Path, monkeypatch,
 ) -> None:
