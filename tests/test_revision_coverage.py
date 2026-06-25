@@ -1516,6 +1516,28 @@ def test_deterministic_known_accepts_auditable_tension_and_source_verdict_asks()
     assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
 
 
+def test_key_findings_source_verdict_ask_accepts_structured_source_synthesis() -> None:
+    ask = (
+        "Replace the Key Findings section with distinct, evidence-tied findings: "
+        "for each outcome class, state what the retained sources show (with at "
+        "least one effect size or directional statement per source), rather than "
+        "restating the conclusion."
+    )
+    paper = (
+        "## Key Findings\n\n"
+        "Key findings from source synthesis: First, the strongest source-level "
+        "signals are bounded rather than broad clinical proof "
+        "(Sun 2026: outcome=Cardiometabolic; direction=unclear; directness=review; "
+        "tier=B1; claims=249; Shen 2026: outcome=Contextual Adjacent Evidence; "
+        "direction=mixed; directness=review; tier=B1; claims=234). Second, negative "
+        "and null rows are given equal interpretive weight.\n\n"
+        "## Conclusion\n\n"
+        "The conclusion stays bounded.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_revision_asks_splits_soften_and_mark_actions() -> None:
     feedback = (
         "Expand the Tensions and Gaps section with at least 3–5 concrete tensions; "

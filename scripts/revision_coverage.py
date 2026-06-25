@@ -134,6 +134,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_conflict_severity_criteria,
             _asks_source_outcome_class_map,
             _asks_findings_map_source_verdict,
+            _asks_key_findings_source_verdict,
             _asks_adjacent_indirect_reconciliation,
             _asks_source_classification_map,
             _asks_evidence_type_metadata,
@@ -198,6 +199,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_outcome_class_map_is_stated(paper_md)
     if _asks_findings_map_source_verdict(lower):
         return _findings_map_source_verdict_is_stated(paper_md)
+    if _asks_key_findings_source_verdict(lower):
+        return _key_findings_source_verdict_is_stated(paper_md)
     if _asks_adjacent_indirect_reconciliation(lower):
         return _adjacent_indirect_reconciliation_is_stated(paper_md)
     if _asks_source_classification_map(lower):
@@ -366,6 +369,14 @@ def _asks_findings_map_source_verdict(text: str) -> bool:
         "findings map" in text
         and "source" in text
         and any(token in text for token in ("direction", "directness", "effect estimate", "qualitative finding"))
+    )
+
+
+def _asks_key_findings_source_verdict(text: str) -> bool:
+    return (
+        "key findings" in text
+        and "source" in text
+        and any(token in text for token in ("outcome class", "retained sources", "effect size", "directional statement"))
     )
 
 
@@ -865,6 +876,19 @@ def _findings_map_source_verdict_is_stated(paper_md: str) -> bool:
         and "direction=" in lower
         and "directness=" in lower
         and "finding=" in lower
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
+    )
+
+
+def _key_findings_source_verdict_is_stated(paper_md: str) -> bool:
+    scope = _section(paper_md, "Key Findings")
+    lower = scope.lower()
+    return bool(
+        "key findings from source synthesis" in lower
+        and "outcome=" in lower
+        and "direction=" in lower
+        and "directness=" in lower
+        and "tier=" in lower
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
     )
 
