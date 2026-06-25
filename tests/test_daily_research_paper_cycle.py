@@ -7314,6 +7314,73 @@ def test_revise_lane_allows_surface_repeat_after_new_ready_run(tmp_path: Path, m
     assert ledger["attempts"][0]["gate_status"] == "submitted_to_researka"
 
 
+def test_revise_source_precision_repair_clears_recent_failure_cooldown(tmp_path: Path, monkeypatch) -> None:
+    topic = "cardiovascular_subgroups"
+    _topic(tmp_path, topic, target_journal=False)
+    source = _prior_run(tmp_path, topic, receipts=12, tensions=5, primary=2, level=5)
+    paper = source / "full_paper.md"
+    paper.write_text("# Research Synthesis: Cardiovascular Subgroups\n", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": topic,
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-06-25",
+        [{"topic": topic, "submit_status": "preflight_insufficient_corpus", "submitted": 0}],
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        False, "source_topic_precision_low:0/12<0.50", [Path("bad.json")]
+    ))
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda *_a, **_k: {
+        "status": "source_precision_repaired",
+        "source_topic_precision_after": "source_topic_precision_scoped_floor:60>=10",
+        "n_quant_claims": 139,
+    })
+    monkeypatch.setattr(cycle, "_ensure_topic_corpus", lambda *_a, **_k: {
+        "status": "corpus_ready",
+        "n_quant_claims": 139,
+    })
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    synthesized: list[str] = []
+
+    def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(selected)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "final_status.json", {"submission_ready": True})
+        _write_json(out_dir / "full_paper.journal_surface.json", {"passed": True, "issues": []})
+        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    request = {
+        "artifactId": "cardio-review",
+        "title": "Research Synthesis: Cardiovascular Subgroups",
+        "feedback": "Revise the source bundle and remove off-topic subgroup records.",
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert synthesized == [topic]
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["attempts"][0]["gate_status"] == "submitted_to_researka"
+
+
 def test_revise_lane_marks_unrepairable_source_precision_terminal(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "digital_frailty_index", target_journal=True)
     source = _prior_run(tmp_path, "digital_frailty_index", receipts=37, tensions=113, primary=1, level=5)

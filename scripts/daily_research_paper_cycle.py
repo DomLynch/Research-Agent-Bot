@@ -1617,7 +1617,14 @@ def _preflight_reason_survives_corpus_refresh(reason: str) -> bool:
     return reason.startswith(("n_receipts=", "n_tensions=", "n_outcome_classes=")) and reason.endswith("(split topic)")
 
 
-def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_claims: int | None = None) -> dict[str, Any]:
+def _preflight(
+    topic: str,
+    runs_root: Path,
+    ledger_dir: Path,
+    *,
+    current_quant_claims: int | None = None,
+    ignore_recent_failures: bool = False,
+) -> dict[str, Any]:
     latest = _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
     publication_track = _publication_track_topic(topic)
@@ -1639,7 +1646,7 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_c
     if counts["has_manifest"] and counts["n_outcome_classes"] > PREFLIGHT_MAX_OUTCOMES:
         reasons.append(f"n_outcome_classes={counts['n_outcome_classes']} > {PREFLIGHT_MAX_OUTCOMES} (split topic)")
     recent_failures = _recent_failed_attempts(topic, ledger_dir)
-    if recent_failures and not publication_track:
+    if recent_failures and not publication_track and not ignore_recent_failures:
         reasons.append(f"recent_failed_attempts={recent_failures} within {RECENT_FAILURE_COOLDOWN_HOURS}h")
     if current_quant_claims is not None and current_quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS:
         # A prior failed run's manifest can be stale after corpus repair/backfill.
@@ -3354,6 +3361,7 @@ def run_cycle(
             )
             if revision_source and existing_source_preflight and not revision_source_repair:
                 source_precision_needs_repair = False
+            source_precision_repair_cleared = False
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:
                 source_repair = _repair_low_source_precision_corpus(
                     selected,
@@ -3393,6 +3401,10 @@ def run_cycle(
                         remote_revision = None
                     attempted.add(selected)
                     continue
+                source_precision_repair_cleared = source_repair.get("status") in {
+                    "source_precision_ready",
+                    "source_precision_repaired",
+                }
             quant_preflight = _quant_claim_preflight(corpus)
             quant_corpus_repairs: list[dict[str, Any]] = []
             if not quant_preflight["passed"] and not synthesis_dry_run:
@@ -3442,6 +3454,7 @@ def run_cycle(
                 runs_root,
                 ledger_dir,
                 current_quant_claims=int(corpus.get("n_quant_claims") or 0),
+                ignore_recent_failures=bool(revision_source and source_precision_repair_cleared),
             )
             if not preflight["passed"]:
                 terminal_missing_manifest = (
