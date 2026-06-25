@@ -4,7 +4,9 @@ import json
 import os
 import sys
 import time
+import urllib.error
 import urllib.request
+from email.message import Message
 from types import SimpleNamespace
 from pathlib import Path
 from typing import Any
@@ -1146,6 +1148,48 @@ def test_preflight_and_submitter_block_low_recency_before_http(tmp_path: Path, m
         "response": "recency_ratio_low:0/12<0.50",
         "preflight": True,
     }
+
+
+def test_preflight_and_submitter_block_missing_doi_before_http(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["source_bundle"][0]["doi"] = "10.9999/ghost"
+    monkeypatch.setenv("RESEARKA_DOI_PREFLIGHT_ENABLED", "1")
+    submit_calls = 0
+
+    class OkResponse:
+        status = 200
+
+        def __enter__(self) -> "OkResponse":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self, *_args: object) -> bytes:
+            return b"{}"
+
+    def fake_urlopen(req: Request | str, timeout: int | float) -> OkResponse:
+        nonlocal submit_calls
+        url = req.full_url if isinstance(req, Request) else str(req)
+        if "doi.org/api/handles" in url:
+            if "10.9999/ghost" in url:
+                raise urllib.error.HTTPError(url, 404, "missing", Message(), None)
+            return OkResponse()
+        submit_calls += 1
+        raise AssertionError("missing-DOI payload must not reach submission HTTP")
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+
+    assert daily._researka_preflight_status(payload) == "doi_exists_missing:10.9999/ghost"
+    result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(payload)
+
+    assert result == {
+        "ok": False,
+        "status": 0,
+        "response": "doi_exists_missing:10.9999/ghost",
+        "preflight": True,
+    }
+    assert submit_calls == 0
 
 
 def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path: Path) -> None:

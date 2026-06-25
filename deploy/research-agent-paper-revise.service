@@ -9,6 +9,7 @@ WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
 ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode revise --run-synthesis --submit --max-revise-attempts 2 --cycle-budget-sec 2400
 Environment=PYTHONUNBUFFERED=1
+Environment=RESEARKA_DOI_PREFLIGHT_ENABLED=1
 Restart=on-failure
 RestartSec=60
 TimeoutStartSec=3000
