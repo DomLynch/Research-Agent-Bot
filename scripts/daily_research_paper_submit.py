@@ -1102,11 +1102,24 @@ def _sections(markdown: str) -> dict[str, str]:
     }
 
 
-def _key_findings(abstract: str, discussion: str, limitations: str, conclusion: str) -> str:
-    """Short synthetic payload field, not a duplicate of Evidence Landscape."""
-    source = "\n\n".join(part for part in (conclusion, discussion, limitations, abstract) if part).strip()
-    sentences = re.findall(r"[^.!?]+[.!?]", source)
-    text = " ".join(s.strip() for s in sentences[:3]).strip() or source[:900]
+def _key_findings(abstract: str, results: str, discussion: str, limitations: str, conclusion: str) -> str:
+    """Short synthetic payload field, distinct from Conclusion."""
+    conclusion_norm = " ".join(conclusion.lower().split())
+    findings: list[str] = []
+    for source in (results, discussion, limitations, abstract, conclusion):
+        prose = "\n".join(line for line in source.splitlines() if "|" not in line)
+        for sentence in re.findall(r"[^.!?]+[.!?]", prose):
+            sentence = " ".join(sentence.split())
+            if not sentence:
+                continue
+            if findings or sentence.lower() not in conclusion_norm:
+                findings.append(sentence)
+            if len(findings) >= 3:
+                break
+        if len(findings) >= 3:
+            break
+    source = "\n\n".join(part for part in (results, discussion, limitations, abstract, conclusion) if part).strip()
+    text = " ".join(findings).strip() or source[:900]
     return _clip_text(text)
 
 
@@ -1189,7 +1202,7 @@ def _evidence_map_sections(topic: str, manifest: dict[str, Any], parts: dict[str
     # Bird's-eye digest for Evidence Landscape; the full cited detail lives in
     # Findings Map, so the two sections stay distinct rather than both echoing
     # the Results prose.
-    digest = _key_findings(abstract, discussion, limitations, conclusion)
+    digest = _key_findings(abstract, results, discussion, limitations, conclusion)
     return {
         "Scope": _clip_text(
             f"This evidence map surveys what current research establishes about "
@@ -1434,12 +1447,12 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     category = _env_or_default("RESEARKA_CATEGORY_V3", domain_slug).removesuffix("_research")
     rapid_sections = {
         "Research Question": _clip_text(
-            f"What does the current evidence establish about {_display_topic(topic)} and human geroscience? "
+            f"What does the retained source corpus establish about {_display_topic(topic)}? "
             f"{_clip_text(abstract, limit=650)}",
         ),
         "Search Summary": methods or abstract,
         "Evidence Landscape": results or abstract,
-        "Key Findings": _key_findings(abstract, discussion, limitations, conclusion),
+        "Key Findings": _key_findings(abstract, results, discussion, limitations, conclusion),
         "Limitations": limitations or discussion or abstract,
         "Gaps Identified": _actionable_gaps(
             topic, manifest, parts.get("Gaps Identified", ""), discussion, limitations, abstract,
