@@ -15,9 +15,8 @@ MIN_SPECIFIC_GENERATED_PACK_CANDIDATES = 3
 MIN_GENERATED_PACK_TOKENS = 2
 
 TOPIC_STOPWORDS = {
-    "aging", "ageing", "longevity", "research", "synthesis", "paper",
-    "effect", "effects", "therapy", "treatment", "evidence",
-    "optimization",
+    "research", "synthesis", "paper", "effect", "effects", "therapy",
+    "treatment", "evidence", "optimization",
 }
 PHRASE_FRAGMENT_WORDS = {
     "and", "as", "at", "by", "for", "from", "in", "of", "on", "respectively",
