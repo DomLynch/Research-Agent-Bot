@@ -1495,6 +1495,45 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeypatch) -> None:
+    calls: dict[str, Any] = {}
+
+    class FakeMaterializer:
+        @staticmethod
+        def dsn_from_env() -> str:
+            return "postgresql://example"
+
+        @staticmethod
+        def http_credentials_from_env() -> tuple[str, str]:
+            return "", ""
+
+        @staticmethod
+        def fetch_rows(**kwargs: Any) -> list[dict[str, Any]]:
+            calls["limit"] = kwargs["limit"]
+            calls["strategy"] = kwargs["strategy"]
+            return []
+
+        @staticmethod
+        def materialize_rows(rows: list[dict[str, Any]], **kwargs: Any) -> dict[str, Any]:
+            calls["quality_mode"] = kwargs["quality_mode"]
+            calls["max_created"] = kwargs["max_created"]
+            return {"created": [], "skipped": []}
+
+    monkeypatch.setitem(sys.modules, "materialize_fact_topic_packs", FakeMaterializer)
+    monkeypatch.delenv("RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT", raising=False)
+    monkeypatch.delenv("RESEARCH_AGENT_TOPIC_SUPPLY_QUALITY_MODE", raising=False)
+
+    result = cycle._refresh_topic_supply(tmp_path / "topic_packs_db")
+
+    assert calls == {
+        "limit": 500,
+        "strategy": "fact-intervention-cross",
+        "quality_mode": "high-precision",
+        "max_created": cycle.TOPIC_SUPPLY_REFRESH_MAX_CREATED,
+    }
+    assert result["status"] == "topic_supply_no_new_packs"
+
+
 def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "old_blocked", target_journal=True)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
