@@ -428,7 +428,15 @@ def test_low_information_generated_pack_is_not_publication_track(tmp_path: Path,
 
 
 
-def test_select_topic_skips_remote_published_titles_and_rotates_attempts(tmp_path: Path) -> None:
+def test_select_topic_skips_remote_published_titles_and_rotates_attempts(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "aerobic_exercise", corpus=True, target_journal=True)
+    _topic(tmp_path, "creatine", corpus=False, target_journal=True)
+    _topic(tmp_path, "metformin", corpus=True, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     _write_json(ledger_dir / "2026-05-23.json", {"topic": "creatine", "started_at": "2026-05-23T00:00:00Z"})
     _write_json(tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
