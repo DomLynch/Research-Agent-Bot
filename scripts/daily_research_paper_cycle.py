@@ -17,6 +17,7 @@ import subprocess
 import sys
 import time
 import tomllib
+import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -534,7 +535,34 @@ def _surface_ready_after(topic: str, runs_root: Path | None, failure_at: dt.date
         )
         if updated_at and updated_at >= failure_at:
             return True
+        if _surface_passes_current_finalizer(run):
+            return True
     return False
+
+
+def _declared_review_type(run: Path) -> str:
+    return str(_read_json(run / "manifest.json").get("review_type") or "")
+
+
+def _surface_passes_current_finalizer(run: Path) -> bool:
+    """True when current finalizer code can clear a stale surface sidecar."""
+    if not (run / "full_paper.md").is_file():
+        return False
+    try:
+        with tempfile.TemporaryDirectory(prefix="v3-surface-probe-") as tmp:
+            probe = Path(tmp) / run.name
+            shutil.copytree(run, probe)
+            from agent.journal_finalizer import finalize_run
+            from agent.journal_surface_gate import evaluate_journal_surface
+
+            finalize_run(probe)
+            paper = (probe / "full_paper.md").read_text(encoding="utf-8")
+            return evaluate_journal_surface(
+                paper,
+                declared_review_type=_declared_review_type(probe),
+            ).passed
+    except (OSError, RuntimeError, ValueError, ImportError):
+        return False
 
 
 def _surface_repeat_topics(
