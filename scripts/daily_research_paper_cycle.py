@@ -3025,7 +3025,14 @@ def run_cycle(
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(repaired_candidates or topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=selection_excluded)
+                else topic or select_topic(
+                    repaired_candidates or topics,
+                    ledger_dir,
+                    runs_root=runs_root,
+                    remote_seen=remote_seen,
+                    exclude=selection_excluded,
+                    allow_recent_blocked_fallback=not (mode == "fresh" and submit and topic is None),
+                )
             )
             if not selected:
                 if mode == "fresh" and topic is None and not topic_supply_refreshed:
@@ -3041,6 +3048,7 @@ def run_cycle(
                             runs_root=runs_root,
                             remote_seen=remote_seen,
                             exclude=selection_excluded,
+                            allow_recent_blocked_fallback=False,
                         )
                 if selected:
                     ledger["topic_supply_selected_after_refresh"] = selected

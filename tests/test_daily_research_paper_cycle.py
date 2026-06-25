@@ -1308,6 +1308,70 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "old_blocked", target_journal=True)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {
+        "repeats": {
+            "old_blocked\x1fsource_topic_precision_low": [dt.datetime.now(dt.UTC).isoformat()],
+        },
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    calls: dict[str, Any] = {}
+
+    def fake_refresh(db_dir: Path) -> dict[str, Any]:
+        latest = db_dir / "nr_precursor_effects" / "latest.json"
+        _write_json(latest, {
+            "candidate_count": 24,
+            "pack_data": {
+                "topic": "nr_precursor_effects",
+                "aliases": ["NR precursor effects", "nicotinamide riboside"],
+                "target_journal": "GeroScience",
+                "retrieval": {
+                    "topic_terms": ["NR precursor effects", "nicotinamide riboside"],
+                    "scope_terms": [],
+                },
+            },
+        })
+        return {"status": "topic_supply_refreshed", "created": [{"slug": "nr_precursor_effects"}]}
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        qdir = cycle.CORPORA / topic / "quant_claims"
+        qdir.mkdir(parents=True)
+        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic}-{i}"})
+        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        calls["topic"] = topic
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", fake_refresh)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=fake_corpus,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["topic_supply_selected_after_refresh"] == "nr_precursor_effects"
+    assert calls["topic"] == "nr_precursor_effects"
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "ready_cached", target_journal=True)
     _topic(tmp_path, "cold_repaired", corpus=False, target_journal=True)
