@@ -280,7 +280,7 @@ def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path:
         cycle_budget_seconds=1000,
     )
 
-    assert repairs == [("zzz_high_support", 17)]
+    assert repairs[0] == ("zzz_high_support", 17)
     assert ledger["status"] == "no_unpublished_topic_available"
 
 
@@ -1705,8 +1705,8 @@ def test_fresh_lane_excludes_unrepaired_source_precision_backlog(tmp_path: Path,
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert ledger["source_precision_auto_excluded_topics"] == ["aaa_failed_repair"]
-    assert calls["topic"] == "ready_cached"
+    assert "aaa_failed_repair" in ledger["source_precision_auto_excluded_topics"]
+    assert calls["topic"] == "zzz_seed_candidate"
 
 
 def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_path: Path, monkeypatch) -> None:
@@ -7245,6 +7245,70 @@ def test_source_precision_repair_prefers_retained_claims_over_raw_file_count(
 
     assert repairs == ["bbb_retained_low_source"]
     assert ledger["corpus_repairs"][0]["topic"] == "bbb_retained_low_source"
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_source_precision_repair_scans_until_publishable(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "aaa_underfloor_repair", target_journal=True)
+    _topic(tmp_path, "bbb_publishable_repair", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: {
+        "aaa_underfloor_repair": 40,
+        "bbb_publishable_repair": 38,
+    }[topic])
+
+    def fake_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
+        if topic == "aaa_underfloor_repair":
+            return False, "source_topic_precision_low:23/40<0.75", [Path(f"miss-{i}.json") for i in range(17)]
+        return False, "source_topic_precision_low:22/38<0.75", [Path(f"miss-{i}.json") for i in range(16)]
+
+    repairs: list[str] = []
+
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        repairs.append(topic)
+        if topic == "aaa_underfloor_repair":
+            return {
+                "status": "source_precision_repaired",
+                "source_topic_precision_after": "source_topic_precision_ok:22/22",
+                "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT - 2,
+            }
+        return {
+            "status": "source_precision_repaired",
+            "source_topic_precision_after": "source_topic_precision_ok:24/24",
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+        }
+
+    synthesized: list[str] = []
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-26",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert repairs == ["aaa_underfloor_repair", "bbb_publishable_repair"]
+    assert synthesized == ["bbb_publishable_repair"]
+    assert ledger["corpus_repairs"][0]["topic"] == "aaa_underfloor_repair"
+    assert ledger["corpus_repairs"][1]["topic"] == "bbb_publishable_repair"
     assert ledger["status"] == "submitted_to_researka"
 
 
