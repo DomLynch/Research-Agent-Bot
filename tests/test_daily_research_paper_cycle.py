@@ -6614,6 +6614,38 @@ def test_cycle_reseeds_preflight_blocked_topic_when_no_clean_topic_ready(tmp_pat
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_does_not_reseed_recent_receipt_preflight_blocked_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_sparse_receipts", target_journal=True)
+    _prior_run(tmp_path, "aaa_sparse_receipts", receipts=4, tensions=0, primary=0)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-06-25",
+        [{"topic": "aaa_sparse_receipts", "gate_status": "receipt_preflight_insufficient", "submitted": 0}],
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", lambda *_a, **_k: {"created": 0})
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: pytest.fail("unexpected receipt preflight"))
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda *_a, **_k: pytest.fail("unexpected repair"))
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: pytest.fail("unexpected synthesis"))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert ledger["topic_status"]["aaa_sparse_receipts"] == "preflight_blocked"
+    assert "preflight_reseed_selected" not in ledger
+    assert ledger["status"] == "no_unpublished_topic_available"
+
+
 def test_cycle_skips_backlog_repair_when_new_candidate_selectable(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "mmm_new_topic", corpus=False, target_journal=True)
