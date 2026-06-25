@@ -610,6 +610,56 @@ def test_evidence_map_preflight_allows_title_anchored_findings_rows(tmp_path: Pa
     assert daily._researka_preflight_status(payload) == "eligible"
 
 
+def test_selector_skips_unanchored_evidence_map_candidate(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    good = _run(tmp_path, name="synthesis-good-v06-test", tensions=20)
+    bad = _run(tmp_path, name="synthesis-bad-v06-test", tensions=20)
+    for run, topic in ((good, "good_topic"), (bad, "bad_topic")):
+        manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+        manifest["topic"] = topic
+        _write_json(run / "manifest.json", manifest)
+    now = time.time()
+    os.utime(good, (now - 10, now - 10))
+    os.utime(bad, (now, now))
+
+    def evidence_map_payload(title: str, row_prefix: str) -> dict[str, Any]:
+        sections = {
+            name: _words(name.replace(" ", "_"), 60)
+            for name in daily.RESEARKA_REQUIRED_SECTIONS["evidence_map"]
+        }
+        sections["Findings Map"] = (
+            "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+            "|---|---|---|---|---|\n"
+            f"| {row_prefix}Contextual Adjacent Evidence | n=5 | bounded signal | indirect | limited |\n"
+            f"| {row_prefix}Immune and Inflammation | n=5 | bounded signal | review | limited |\n"
+        )
+        return {
+            "title": title,
+            "article_type": "evidence_map",
+            "sections": sections,
+            "body_markdown": "# Paper\n\n" + "\n\n".join(f"## {k}\n\n{v}" for k, v in sections.items()),
+            "source_bundle": [{"title": f"Source {i}", "year": 2026} for i in range(12)],
+        }
+
+    def fake_build_payload(run: Path) -> dict[str, Any]:
+        if run == bad:
+            return evidence_map_payload("Hypothesis-Generating Brief: ABT-263 — full paper", "")
+        return evidence_map_payload("Hypothesis-Generating Brief: ABT-263 — full paper", "ABT-263 / ")
+
+    monkeypatch.setattr(daily, "build_payload", fake_build_payload)
+    monkeypatch.setattr(daily, "_eligible", lambda _run: (True, "eligible"))
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=set(),
+    )
+
+    assert selected == good
+    assert considered[0]["run"] == bad.name
+    assert considered[0]["status"] == "evidence_map_topic_anchor_low:2/2"
+    assert considered[1]["status"] == "eligible"
+
+
 def test_evidence_map_tension_density_boundary_is_inclusive(tmp_path: Path) -> None:
     # 12 receipts: density == 1.0 (exactly the floor) routes to the landscape
     # lane; one fewer tension (density 11/12 < 1.0) stays on the thesis lane.

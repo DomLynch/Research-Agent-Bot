@@ -1089,6 +1089,8 @@ def select_candidate(
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
             if null_status != "eligible":
                 ok, status = False, null_status
+            elif (anchor_status := _findings_map_topic_anchor_status(payload)) != "eligible":
+                ok, status = False, anchor_status
             elif (
                 not (purpose == "revision" and revision)
                 and (recency_status := _recency_ratio_status(payload)) != "eligible"
