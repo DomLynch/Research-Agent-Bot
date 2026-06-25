@@ -2485,12 +2485,18 @@ def _seed_topic(
     }
 
 
-def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+def _ensure_topic_corpus(
+    topic: str,
+    *,
+    dry_run: bool,
+    timeout: int | None = None,
+    min_quant_claims: int = 1,
+) -> dict[str, Any]:
     before = _quant_claim_count(topic)
-    if before:
+    if before >= min_quant_claims:
         return {"status": "corpus_ready", "n_quant_claims": before}
     if dry_run:
-        return {"status": "corpus_missing_dry_run", "n_quant_claims": 0}
+        return {"status": "corpus_missing_dry_run", "n_quant_claims": before}
     return _seed_topic(topic, timeout=timeout)
 
 
@@ -3059,8 +3065,16 @@ def run_cycle(
             out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
             seeded_frontier_corpus: dict[str, Any] | None = None
             if not revision_source and submit and mode == "fresh" and not _topic_has_quant_floor(selected):
-                seeded_frontier_corpus = (ensure_corpus or _ensure_topic_corpus)(
-                    selected, dry_run=synthesis_dry_run, timeout=_publish_seed_timeout(child_timeout()),
+                frontier_timeout = _publish_seed_timeout(child_timeout())
+                seeded_frontier_corpus = (
+                    ensure_corpus(selected, dry_run=synthesis_dry_run, timeout=frontier_timeout)
+                    if ensure_corpus
+                    else _ensure_topic_corpus(
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=frontier_timeout,
+                        min_quant_claims=PREFLIGHT_MIN_QUANT_CLAIMS,
+                    )
                 )
                 ledger["frontier_corpus_seed"] = {"topic": selected, **seeded_frontier_corpus}
             if (
@@ -3069,15 +3083,21 @@ def run_cycle(
                 and mode == "fresh"
                 and not _topic_has_quant_floor(selected)
             ):
+                frontier_preflight = _quant_claim_preflight(seeded_frontier_corpus or {})
+                frontier_status = str((seeded_frontier_corpus or {}).get("status") or "no_ready_corpus_available")
+                if not frontier_preflight["passed"] and frontier_status in {"corpus_ready", "corpus_seeded"}:
+                    frontier_status = "preflight_thin_quant_corpus"
                 attempt: dict[str, Any] = {
                     "topic": selected,
                     "out_dir": out_dir.name,
                     "synthesis_return_code": None,
-                    "submit_status": str((seeded_frontier_corpus or {}).get("status") or "no_ready_corpus_available"),
+                    "submit_status": frontier_status,
                     "failure_class": "B_corpus_fixable",
                     "submitted": 0,
                     "corpus": seeded_frontier_corpus or {},
                 }
+                if not frontier_preflight["passed"]:
+                    attempt["preflight"] = frontier_preflight
                 ledger["attempts"].append(attempt)
                 ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
                 ledger.update({

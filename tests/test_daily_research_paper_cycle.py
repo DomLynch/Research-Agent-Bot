@@ -1967,6 +1967,60 @@ def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path,
     assert ledger["corpus"]["status"] == "corpus_seeded"
 
 
+def test_fresh_publish_tops_up_partial_quant_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    topic = "partial_frontier"
+    _topic(tmp_path, topic, corpus=False, target_journal=True)
+    qdir = tmp_path / "docs" / "quality-reference" / topic / "quant_claims"
+    qdir.mkdir(parents=True)
+    for i in range(4):
+        _write_json(qdir / f"partial-{i}.quant_claims.json", {"paper_id": f"partial {i}"})
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    seeded: list[str] = []
+    synthesized: list[str] = []
+
+    def fake_seed(selected: str, **_kwargs: Any) -> dict[str, Any]:
+        seeded.append(selected)
+        before = cycle._quant_claim_count(selected)
+        for i in range(before, cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"seed {i}"})
+        return {
+            "status": "corpus_seeded",
+            "n_quant_claims_before": before,
+            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+        }
+
+    def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(selected)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_seed_topic", fake_seed)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert seeded == [topic]
+    assert synthesized == [topic]
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["frontier_corpus_seed"]["n_quant_claims_before"] == 4
+
+
 def test_cycle_passes_remaining_budget_to_child_work(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "budget_topic", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
