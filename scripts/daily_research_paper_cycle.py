@@ -3266,7 +3266,11 @@ def run_cycle(
                     **restore,
                     "availability_after": source_manifest_availability,
                 }
-            if source_manifest_availability and not source_manifest_availability.get("passed"):
+            if (
+                source_manifest_availability
+                and not source_manifest_availability.get("passed")
+                and not revision_source_repair
+            ):
                 gate_status = "terminal_revision_source_manifest_unavailable"
                 attempt = _gate_attempt(
                     selected,

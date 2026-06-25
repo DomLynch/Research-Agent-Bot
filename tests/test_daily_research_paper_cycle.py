@@ -7320,6 +7320,9 @@ def test_revise_source_precision_repair_clears_recent_failure_cooldown(tmp_path:
     source = _prior_run(tmp_path, topic, receipts=12, tensions=5, primary=2, level=5)
     paper = source / "full_paper.md"
     paper.write_text("# Research Synthesis: Cardiovascular Subgroups\n", encoding="utf-8")
+    qdir = tmp_path / "docs" / "quality-reference" / topic / "quant_claims"
+    for idx in range(5):
+        (qdir / f"r{idx}.quant_claims.json").unlink()
     _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "run": source.name,
         "topic": topic,
