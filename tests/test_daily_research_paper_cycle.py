@@ -34,6 +34,7 @@ def test_terminal_statuses_and_retryable_timeouts_do_not_drift() -> None:
         if "timeout" in status
     }
     assert retryable_timeouts <= cycle._NON_REPEAT_STATUSES
+    assert "corpus_seed_failed" in cycle._NON_REPEAT_STATUSES
 
 
 def test_daily_paper_policy_uses_12_receipts_and_shared_source_precision() -> None:
@@ -5250,6 +5251,19 @@ def test_corpus_repair_topic_helpers_use_exact_recent_histogram_statuses(tmp_pat
 
     assert cycle._corpus_repair_topics(ledger_dir, now=now) == {"fresh_enough", "source_low"}
     assert cycle._source_precision_repair_topics(ledger_dir, now=now) == {"source_low"}
+
+
+def test_recent_blocked_topics_ignore_transient_seed_failures(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    now = dt.datetime(2026, 6, 25, tzinfo=dt.UTC)
+    _write_json(ledger_dir / cycle.BLOCKER_HISTOGRAM, {
+        "repeats": {
+            "repaired_later\x1fcorpus_seed_failed": [now.isoformat()],
+            "surface_fail\x1fjournal_surface_failed": [now.isoformat()],
+        },
+    })
+
+    assert cycle._recent_blocked_topics(ledger_dir, now=now) == {"surface_fail"}
 
 
 def test_low_source_precision_repair_quarantines_and_reseeds(tmp_path: Path, monkeypatch) -> None:
