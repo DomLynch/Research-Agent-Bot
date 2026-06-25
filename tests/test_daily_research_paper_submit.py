@@ -819,7 +819,17 @@ def test_payload_key_findings_distill_not_duplicate_evidence_landscape(tmp_path:
 
     assert payload["sections"]["Evidence Landscape"] != payload["sections"]["Key Findings"]
     assert "|" not in payload["sections"]["Key Findings"]
-    assert "few direct clinical trials" in payload["sections"]["Key Findings"]
+    assert "Results repeat table detail" in payload["sections"]["Key Findings"]
+    assert "few direct clinical trials" not in payload["sections"]["Key Findings"]
+
+
+def test_payload_research_question_uses_source_corpus_scope(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    payload = daily.build_payload(run)
+
+    question = payload["sections"]["Research Question"]
+    assert "retained source corpus" in question
+    assert "human geroscience" not in question
 
 
 def test_payload_gaps_identified_is_actionable_not_limitations_duplicate(tmp_path: Path) -> None:
