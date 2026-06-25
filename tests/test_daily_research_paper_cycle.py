@@ -5868,6 +5868,7 @@ def test_fresh_lane_moves_on_after_same_topic_gate_retry_exhausted(
     assert [a["topic"] for a in ledger["attempts"]] == ["aaa_bad_surface", "aaa_bad_surface", "zzz_ready"]
     assert ledger["attempts"][1]["same_topic_retry_stop"] is True
     assert ledger["attempts"][2]["submit_status"] == "submitted_to_researka"
+    assert "no_submission_reason" not in ledger
 
 
 def test_fresh_lane_rotates_after_one_surface_failure(tmp_path: Path, monkeypatch) -> None:

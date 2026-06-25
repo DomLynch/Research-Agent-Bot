@@ -3563,6 +3563,7 @@ def run_cycle(
                     ledger["status"] = "synthesis_failed"
                 elif bridge.get("status") == "submitted_to_researka":
                     ledger["status"] = "submitted_to_researka"
+                    ledger.pop("no_submission_reason", None)
                     if (
                         submit
                         and mode != "fresh"  # fresh lane ships and exits; the revise lane handles decisions
