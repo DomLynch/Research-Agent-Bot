@@ -3055,13 +3055,19 @@ def _phase_f_reconcile_results_table(
         if empty:
             new_results = new_results[:empty.start()] + block + new_results[empty.end():]
             continue
-        auto_generated = re.search(
-            rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\n"
-            rf"(?:{re.escape(display)} remains a separate Results slice.*?|"
-            rf"\d+ included sources? (?:was|were) assigned to this outcome class\..*?)"
-            rf"(?=^###\s+|^##\s+|\Z)",
-            new_results,
-        )
+        auto_generated = next((
+            match for match in re.finditer(
+                r"(?ms)^###\s+(.+?)\s+Outcomes\s*\n\n(.*?)(?=^###\s+|^##\s+|\Z)",
+                new_results,
+            )
+            if _outcome_key(match.group(1)) == slug and (
+                match.group(2).strip().startswith(f"{display} remains a separate Results slice")
+                or re.match(
+                    r"\d+ included sources? (?:was|were) assigned to this outcome class\.",
+                    match.group(2).strip(),
+                )
+            )
+        ), None)
         if auto_generated:
             new_results = new_results[:auto_generated.start()] + block + new_results[auto_generated.end():]
             continue
