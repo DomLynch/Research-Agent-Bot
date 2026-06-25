@@ -1310,7 +1310,7 @@ def test_fresh_lane_excludes_unrepaired_source_precision_backlog(tmp_path: Path,
     def fake_source_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
         if topic == "aaa_failed_repair":
             return {"status": "source_precision_repair_incomplete", "n_quant_claims": 0}
-        return {"status": "source_precision_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+        return {"status": "source_precision_repaired", "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}
 
     def fake_corpus(topic: str, **_kwargs: Any) -> dict[str, Any]:
         return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
@@ -1399,7 +1399,7 @@ def test_zero_claim_candidate_does_not_skip_source_precision_repair(tmp_path: Pa
 
     def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
         repaired.add(topic)
-        return {"status": "source_precision_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+        return {"status": "source_precision_repaired", "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}
 
     def fake_corpus(topic: str, **_kwargs: Any) -> dict[str, Any]:
         if topic == "zzz_zero_claim":
@@ -4747,6 +4747,10 @@ def test_cycle_downshifts_after_recent_numeric_density_failure(tmp_path: Path, m
     _write_json(prior / "full_paper.audit.json", {"checks": [{"name": "Q9_numeric_density", "passed": False}]})
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (
+        True, "source_topic_precision_ok:40/40", [],
+    ))
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_args, **_kwargs: {"passed": True})
     overrides: list[str | None] = []
 
@@ -5136,6 +5140,10 @@ def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, mon
     cycle._record_blockers(ledger_dir, "2026-05-31", [row])
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (
+        True, "source_topic_precision_ok:40/40", [],
+    ))
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_args, **_kwargs: {"passed": True})
     overrides: list[str | None] = []
 
@@ -5455,7 +5463,7 @@ def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Pa
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
         "status": "source_precision_repaired",
         "source_topic_precision_after": "source_topic_precision_ok:12/12",
-        "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+        "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
     })
 
     ledger = cycle.run_cycle(
@@ -5510,7 +5518,7 @@ def test_cycle_stops_repeated_source_precision_retry_and_advances(tmp_path: Path
         return {
             "status": "source_precision_repaired",
             "source_topic_precision_after": "source_topic_precision_ok:16/16",
-            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
         }
 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
@@ -5553,8 +5561,8 @@ def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tm
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
         "status": "source_precision_repaired",
         "source_topic_precision_before": "source_topic_precision_low:4/19<0.50",
-        "source_topic_precision_after": "source_topic_precision_ok:19/19",
-        "n_quant_claims": 19,
+        "source_topic_precision_after": "source_topic_precision_ok:24/24",
+        "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
     })
 
     def fake_synthesis(
@@ -5584,6 +5592,17 @@ def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tm
     assert synthesized == ["epigenome_editing_longevity"]
     assert ledger["corpus_repairs"][0]["source_topic_precision_before"] == "source_topic_precision_low:4/19<0.50"
     assert ledger["status"] == "submitted_to_researka"
+
+
+def test_source_precision_repair_publishable_requires_receipt_buffer() -> None:
+    assert not cycle._source_precision_repair_publishable({
+        "status": "source_precision_repaired",
+        "n_quant_claims": cycle.PREFLIGHT_MIN_RECEIPTS + 1,
+    })
+    assert cycle._source_precision_repair_publishable({
+        "status": "source_precision_repaired",
+        "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+    })
 
 
 def test_cycle_skips_sparse_receipt_topic_before_synthesis(tmp_path: Path, monkeypatch) -> None:
@@ -6307,7 +6326,7 @@ def test_cycle_defers_source_repair_for_new_frontier_topic(tmp_path: Path, monke
         ensure_corpus=lambda topic, **_k: {
             "status": "corpus_seeded",
             "n_quant_claims_before": 0,
-            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
         },
         submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
         max_attempts=2,
@@ -6329,14 +6348,25 @@ def test_cycle_prunes_seeded_frontier_overflow_before_synthesis(tmp_path: Path, 
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda _topic, _out_dir, **_k: {"passed": True})
     qdir = cycle.CORPORA / topic / "quant_claims"
     qdir.mkdir(parents=True)
-    for i in range(24):
+    for i in range(cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT * 2):
         _write_json(qdir / f"claim_{i}.quant_claims.json", {"paper_id": f"claim_{i}"})
 
-    misses = [qdir / f"claim_{i}.quant_claims.json" for i in range(12)]
+    misses = [
+        qdir / f"claim_{i}.quant_claims.json"
+        for i in range(cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT)
+    ]
     monkeypatch.setattr(
         cycle,
         "_quant_claim_source_precision",
-        lambda *_a, **_k: (False, "source_topic_precision_low:12/24<0.50", misses),
+        lambda *_a, **_k: (
+            False,
+            (
+                "source_topic_precision_low:"
+                f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}/"
+                f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT * 2}<0.50"
+            ),
+            misses,
+        ),
     )
     repaired: list[dict[str, Any]] = []
 
@@ -6344,9 +6374,17 @@ def test_cycle_prunes_seeded_frontier_overflow_before_synthesis(tmp_path: Path, 
         repaired.append({"topic": selected, **kwargs})
         return {
             "status": "source_precision_repaired",
-            "source_topic_precision_before": "source_topic_precision_low:12/24<0.50",
-            "source_topic_precision_after": "source_topic_precision_ok:12/12",
-            "n_quant_claims": 12,
+            "source_topic_precision_before": (
+                "source_topic_precision_low:"
+                f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}/"
+                f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT * 2}<0.50"
+            ),
+            "source_topic_precision_after": (
+                "source_topic_precision_ok:"
+                f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}/"
+                f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}"
+            ),
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
             "reseed": kwargs.get("reseed"),
         }
 
@@ -6377,7 +6415,11 @@ def test_cycle_prunes_seeded_frontier_overflow_before_synthesis(tmp_path: Path, 
 
     assert repaired and repaired[0]["reseed"] is False
     assert synthesized == [topic]
-    assert ledger["source_precision_repair"]["source_topic_precision_after"] == "source_topic_precision_ok:12/12"
+    assert ledger["source_precision_repair"]["source_topic_precision_after"] == (
+        "source_topic_precision_ok:"
+        f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}/"
+        f"{cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT}"
+    )
     assert ledger["status"] == "submitted_to_researka"
 
 
@@ -6455,8 +6497,8 @@ def test_cycle_skips_source_precision_repair_when_clean_topic_ready(tmp_path: Pa
         repairs.append(topic)
         return {
             "status": "source_precision_repaired",
-            "source_topic_precision_after": "source_topic_precision_ok:4/4",
-            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "source_topic_precision_after": "source_topic_precision_ok:24/24",
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
         }
 
     def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
@@ -6509,7 +6551,7 @@ def test_cycle_repairs_source_precision_when_no_clean_topic_ready(tmp_path: Path
         return {
             "status": "source_precision_repaired",
             "source_topic_precision_after": "source_topic_precision_ok:4/4",
-            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
         }
 
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
