@@ -1071,7 +1071,6 @@ def select_candidate(
     revision_seen = _seen(submitted_path.with_name(REVISION_FINGERPRINTS))
     submitted_topics = _seen_field(submitted_path, "topic")
     revision_topics = _seen_field(submitted_path.with_name(REVISION_FINGERPRINTS), "topic")
-    submitted_runs = _seen_field(submitted_path, "run")
     published_seen = remote_seen or set()
     considered = []
     seen_topics: set[str] = set()
@@ -1090,16 +1089,6 @@ def select_candidate(
             continue
         if topic in seen_topics:
             considered.append({"run": run.name, "fingerprint": paper_sha, "status": "superseded_topic_run"})
-            continue
-        if run.name in submitted_runs:
-            considered.append({"run": run.name, "fingerprint": paper_sha, "status": "duplicate_submission_run"})
-            continue
-        if (
-            topic in submitted_topics
-            and topic not in revision_topics
-            and not revision
-        ):
-            considered.append({"run": run.name, "fingerprint": paper_sha, "status": "topic_already_submitted_pending"})
             continue
         needs_repair = _needs_submit_self_heal(run)
         allow_repair = repair_attempts < MAX_SUBMIT_SELF_HEAL_CANDIDATES
@@ -1133,6 +1122,22 @@ def select_candidate(
             ok, status = False, "researka_revision_fingerprint"
         elif ok and fp in local_seen:
             ok, status = False, "duplicate_submission_fingerprint"
+        elif ok and topic in submitted_topics and topic not in revision_topics and not revision:
+            topic_rows = [
+                row for row in _ledger_rows(submitted_path)
+                if row.get("topic") == topic
+            ]
+            same_run_rows = [
+                row for row in topic_rows
+                if row.get("run") == run.name and not row.get("duplicate_submission_id")
+            ]
+            if same_run_rows and not any(
+                fp in {row.get("fingerprint"), row.get("submission_payload_hash")}
+                for row in same_run_rows
+            ):
+                status = "eligible_resubmission_after_payload_change"
+            else:
+                ok, status = False, "topic_already_submitted_pending"
         elif ok and (markers & published_seen) - {title_mark}:
             # Content/identity already has a live publication. Applies even to a
             # run carrying a stale revision_request — re-submitting identical

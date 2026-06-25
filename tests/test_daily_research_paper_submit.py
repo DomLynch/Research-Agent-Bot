@@ -147,21 +147,14 @@ def test_dry_run_selects_eligible_research_paper(tmp_path: Path) -> None:
     assert (tmp_path / daily.LEDGER_DIR / "2026-05-23.json").exists()
 
 
-def test_select_candidate_skips_submitted_run_before_expensive_eligibility(
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+def test_select_candidate_skips_exact_submitted_payload(tmp_path: Path) -> None:
     run = _run(tmp_path)
+    fp = daily._payload_fingerprint(daily.build_payload(run))
     _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "run": run.name,
         "topic": "topic",
-        "fingerprint": "sha256:previous",
+        "fingerprint": fp,
     }])
-    monkeypatch.setattr(
-        daily,
-        "_eligible",
-        lambda _run: (_ for _ in ()).throw(AssertionError("duplicate run should skip eligibility")),
-    )
 
     selected, considered = daily.select_candidate(
         tmp_path,
@@ -169,31 +162,24 @@ def test_select_candidate_skips_submitted_run_before_expensive_eligibility(
     )
 
     assert selected is None
-    assert considered[0]["status"] == "duplicate_submission_run"
+    assert considered[0]["status"] == "duplicate_submission_fingerprint"
 
 
-def test_select_candidate_skips_pending_topic_before_expensive_eligibility(
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    _run(tmp_path)
+def test_select_candidate_allows_changed_payload_for_submitted_topic(tmp_path: Path) -> None:
+    run = _run(tmp_path)
     _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "topic": "topic",
+        "run": run.name,
         "fingerprint": "sha256:previous",
     }])
-    monkeypatch.setattr(
-        daily,
-        "_eligible",
-        lambda _run: (_ for _ in ()).throw(AssertionError("pending topic should skip eligibility")),
-    )
 
     selected, considered = daily.select_candidate(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
     )
 
-    assert selected is None
-    assert considered[0]["status"] == "topic_already_submitted_pending"
+    assert selected == run
+    assert considered[0]["status"] == "eligible_resubmission_after_payload_change"
 
 
 def test_select_candidate_skips_missing_sidecar_before_expensive_eligibility(
@@ -1570,14 +1556,15 @@ def test_researka_revise_records_feedback_and_skips_same_paper(tmp_path: Path) -
     assert retry["considered"][0]["status"] == "researka_revision_fingerprint"
 
 
-def test_selection_skips_exact_run_already_submitted_even_if_revision(tmp_path: Path) -> None:
+def test_selection_skips_exact_payload_already_submitted_even_if_revision(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {"feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    fp = daily._payload_fingerprint(daily.build_payload(run))
     ledger_dir = tmp_path / daily.LEDGER_DIR
     _write_json(ledger_dir / "_submitted_fingerprints.json", [{
         "run": run.name,
-        "fingerprint": "sha256:old-preflight-payload",
+        "fingerprint": fp,
         "topic": "topic",
     }])
 
@@ -1588,7 +1575,7 @@ def test_selection_skips_exact_run_already_submitted_even_if_revision(tmp_path: 
     )
 
     assert selected is None
-    assert considered[0]["status"] == "duplicate_submission_run"
+    assert considered[0]["status"] == "duplicate_submission_fingerprint"
 
 
 def test_remote_publication_dedupe_blocks_resubmission_without_local_seed(tmp_path: Path) -> None:
