@@ -437,7 +437,11 @@ def _topic_supply_refresh_enabled() -> bool:
     }
 
 
-def _refresh_topic_supply(topic_pack_db: Path | None = None) -> dict[str, Any]:
+def _refresh_topic_supply(
+    topic_pack_db: Path | None = None,
+    *,
+    skip_slugs: set[str] | None = None,
+) -> dict[str, Any]:
     """Materialize fact-backed generated packs when the fresh topic pool is empty."""
     if not _topic_supply_refresh_enabled():
         return {"status": "topic_supply_refresh_disabled", "created": []}
@@ -469,6 +473,7 @@ def _refresh_topic_supply(topic_pack_db: Path | None = None) -> dict[str, Any]:
             persist=True,
             quality_mode=quality_mode,
             max_created=max_created,
+            skip_slugs=skip_slugs,
         )
     except Exception as exc:
         return {"status": "topic_supply_refresh_failed", "error": str(exc), "created": []}
@@ -3131,7 +3136,8 @@ def run_cycle(
             if not selected:
                 if mode == "fresh" and topic is None and not topic_supply_refreshed:
                     topic_supply_refreshed = True
-                    refresh = _refresh_topic_supply(TOPIC_PACKS_DB)
+                    skip_slugs = selection_excluded | submitted_topics | published_topics
+                    refresh = _refresh_topic_supply(TOPIC_PACKS_DB, skip_slugs=skip_slugs)
                     ledger["topic_supply_refresh"] = refresh
                     if refresh.get("created"):
                         topics = discover_topics()

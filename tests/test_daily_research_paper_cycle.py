@@ -1447,7 +1447,8 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     calls: dict[str, Any] = {}
 
-    def fake_refresh(db_dir: Path) -> dict[str, Any]:
+    def fake_refresh(db_dir: Path, *, skip_slugs: set[str] | None = None) -> dict[str, Any]:
+        calls["skip_slugs"] = skip_slugs
         latest = db_dir / "sglt2_inhibitors_effects" / "latest.json"
         _write_json(latest, {
             "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
@@ -1492,6 +1493,7 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     assert ledger["topic_supply_refresh"]["status"] == "topic_supply_refreshed"
     assert ledger["topic_supply_selected_after_refresh"] == "sglt2_inhibitors_effects"
     assert calls["topic"] == "sglt2_inhibitors_effects"
+    assert isinstance(calls["skip_slugs"], set)
     assert ledger["status"] == "submitted_to_researka"
 
 
@@ -1517,6 +1519,7 @@ def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeyp
         def materialize_rows(rows: list[dict[str, Any]], **kwargs: Any) -> dict[str, Any]:
             calls["quality_mode"] = kwargs["quality_mode"]
             calls["max_created"] = kwargs["max_created"]
+            calls["skip_slugs"] = kwargs["skip_slugs"]
             return {"created": [], "skipped": []}
 
     monkeypatch.setitem(sys.modules, "materialize_fact_topic_packs", FakeMaterializer)
@@ -1530,6 +1533,7 @@ def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeyp
         "strategy": "fact-intervention-cross",
         "quality_mode": "high-precision",
         "max_created": cycle.TOPIC_SUPPLY_REFRESH_MAX_CREATED,
+        "skip_slugs": None,
     }
     assert result["status"] == "topic_supply_no_new_packs"
 
@@ -1551,7 +1555,8 @@ def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Pa
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     calls: dict[str, Any] = {}
 
-    def fake_refresh(db_dir: Path) -> dict[str, Any]:
+    def fake_refresh(db_dir: Path, *, skip_slugs: set[str] | None = None) -> dict[str, Any]:
+        calls["skip_slugs"] = skip_slugs
         latest = db_dir / "nr_precursor_effects" / "latest.json"
         _write_json(latest, {
             "candidate_count": 24,
@@ -1595,6 +1600,7 @@ def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Pa
 
     assert ledger["topic_supply_selected_after_refresh"] == "nr_precursor_effects"
     assert calls["topic"] == "nr_precursor_effects"
+    assert "old_blocked" in (calls["skip_slugs"] or set())
     assert ledger["status"] == "submitted_to_researka"
 
 
