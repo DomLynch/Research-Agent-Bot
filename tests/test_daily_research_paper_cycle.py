@@ -3744,6 +3744,45 @@ def test_pending_remote_revision_reopens_repairable_terminal_surface_repeat(
     assert pending["source_run"] == source_run.name
 
 
+def test_pending_remote_revision_reopens_false_domain_scope_terminal(
+    tmp_path: Path,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    title = "Research Synthesis: Metabolism Biomarker Effects"
+    source_run = _seed_submitted_run(runs, "metabolism_biomarker_effects", f"# {title}")
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": title,
+        "status": "terminal_domain_scope_mismatch",
+        "handled_at": "2026-06-25T00:38:21+00:00",
+    }]})
+    request = {
+        "artifactId": "metabolism-review",
+        "title": title,
+        "topic": "metabolism_biomarker_effects",
+        "feedback": (
+            "Reconcile the abstract's direct / adjacent framing with the Findings Map. "
+            "Expand the 26 cross-study disagreements including the null longevity class. "
+            "Either remove review sources from direct-evidence counting, or relabel them."
+        ),
+        "reviewedAt": "2026-06-25T00:37:00+00:00",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["artifactId"] == "metabolism-review"
+    assert pending["source_run"] == source_run.name
+
+
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", target_journal=True)
     _topic(tmp_path, "telomere_biomarker_effects", target_journal=True)

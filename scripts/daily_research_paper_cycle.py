@@ -1053,16 +1053,18 @@ def _revision_requests_domain_scope_reset(feedback: str) -> bool:
     if not has_domain_frame:
         return False
     frame = r"(?:framing|overlay)"
+    patterns = (
+        rf"does not support\b.{{0,120}}\b{frame}\b",
+        rf"\b{frame}\b.{{0,120}}\bdoes not support\b",
+        r"does not match\b.{0,120}\bactual (?:research )?question\b",
+        r"actual (?:research )?question\b.{0,120}\bdoes not match\b",
+        rf"\bremove\b.{{0,120}}\b{frame}\b",
+        rf"\b{frame}\b.{{0,120}}\bremove\b",
+    )
     return any(
-        re.search(pattern, lower)
-        for pattern in (
-            rf"does not support\b.{{0,120}}\b{frame}\b",
-            rf"\b{frame}\b.{{0,120}}\bdoes not support\b",
-            r"does not match\b.{0,120}\bactual (?:research )?question\b",
-            r"actual (?:research )?question\b.{0,120}\bdoes not match\b",
-            rf"\bremove\b.{{0,120}}\b{frame}\b",
-            rf"\b{frame}\b.{{0,120}}\bremove\b",
-        )
+        re.search(pattern, segment)
+        for segment in re.split(r"(?:;|\.)\s+", lower)
+        for pattern in patterns
     )
 
 
@@ -1244,7 +1246,11 @@ def _pending_remote_revision(
                 and bool(matches)
                 and _surface_passes_current_finalizer(matches[-1][1])
             )
-            if not current_code_repairs_surface:
+            current_code_clears_domain_scope = (
+                latest_status == "terminal_domain_scope_mismatch"
+                and not _revision_requests_domain_scope_reset(str(request.get("feedback") or ""))
+            )
+            if not (current_code_repairs_surface or current_code_clears_domain_scope):
                 continue
         if matches:
             record, run, record_topic = matches[-1]
