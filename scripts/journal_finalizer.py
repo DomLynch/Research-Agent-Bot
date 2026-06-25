@@ -163,6 +163,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_m_strip_surface_duplicate_paragraphs,
         _phase_m_repair_surface_artifacts,
         lambda t: _phase_d_reference_closure(t, out_dir),
+        _phase_n_declare_discussion_thesis,
     ):
         text, log = phase(text)
         entries.extend(log)
