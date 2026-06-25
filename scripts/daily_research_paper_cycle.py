@@ -61,6 +61,7 @@ PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = 1
+SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT = max(PREFLIGHT_MIN_RECEIPTS * 2, PREFLIGHT_MIN_QUANT_CLAIMS)
 PREFLIGHT_MAX_RECEIPTS = 500
 PREFLIGHT_MAX_TENSIONS = 50_000
 PREFLIGHT_MAX_OUTCOMES = 12
@@ -692,6 +693,13 @@ def _corpus_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -
 
 def _source_precision_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
     return _recent_blocked_topics_by_status(ledger_dir, {_SOURCE_PRECISION_STATUS}, now=now)
+
+
+def _source_precision_repair_publishable(repair: Mapping[str, Any]) -> bool:
+    return (
+        repair.get("status") == "source_precision_repaired"
+        and int(repair.get("n_quant_claims") or 0) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+    )
 
 
 def _unrepairable_source_precision_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -2856,12 +2864,17 @@ def run_cycle(
                 else:
                     repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=repair_timeout)
                 repairs.append({"topic": repair_topic, **repair})
-                if int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS:
+                repair_publishable = (
+                    _source_precision_repair_publishable(repair)
+                    if repair_topic in source_precision_repairable
+                    else int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
+                )
+                if repair_publishable:
                     if repair_topic not in receipt_preflight_blocked:
                         preflight_blocked.discard(repair_topic)
                         surface_repeat.discard(repair_topic)
                         corpus_repaired_ok.add(repair_topic)
-                if repair.get("status") == "source_precision_repaired":
+                if _source_precision_repair_publishable(repair):
                     source_precision_repaired_ok.add(repair_topic)
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
@@ -3075,7 +3088,7 @@ def run_cycle(
             )
             if seeded_new_corpus and not revision_source and not source_precision_ok:
                 retained = max(0, _quant_claim_count(selected) - len(source_precision_misses))
-                if retained >= PREFLIGHT_MIN_QUANT_CLAIMS:
+                if retained >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT:
                     source_repair = _repair_low_source_precision_corpus(
                         selected,
                         dry_run=synthesis_dry_run,
@@ -3090,7 +3103,7 @@ def run_cycle(
                         timeout=corpus_timeout,
                     )
                     ledger["corpus"] = corpus
-                    if source_repair.get("status") == "source_precision_repaired":
+                    if _source_precision_repair_publishable(source_repair):
                         source_precision_ok = True
                         source_precision_misses = []
                         source_precision_repaired_ok.add(selected)
@@ -3512,7 +3525,7 @@ def run_cycle(
                     else:
                         source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
                         attempt["source_precision_repair"] = source_repair
-                        source_precision_retry = source_repair.get("status") == "source_precision_repaired"
+                        source_precision_retry = _source_precision_repair_publishable(source_repair)
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:
