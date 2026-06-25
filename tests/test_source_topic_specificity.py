@@ -79,6 +79,22 @@ def test_source_gate_aliases_drop_broad_one_token_aliases_for_composite_topics()
     assert aliases == ("digital frailty index",)
 
 
+def test_longevity_topic_rejects_generic_entity_disease_source() -> None:
+    assert not is_source_topic_specific(
+        "microbiome_longevity",
+        "Microbiome and response to therapy in triple negative breast cancer: a systematic review",
+        aliases=source_gate_aliases("microbiome_longevity", ("microbiome longevity", "microbiome")),
+    )
+
+
+def test_longevity_topic_accepts_entity_with_longevity_scope() -> None:
+    assert is_source_topic_specific(
+        "microbiome_longevity",
+        "Gut microbiome signatures of longevity and healthy aging in older adults",
+        aliases=source_gate_aliases("microbiome_longevity", ("microbiome longevity", "microbiome")),
+    )
+
+
 def test_composite_topic_rejects_broad_alias_only_source() -> None:
     aliases = source_gate_aliases(
         "digital_frailty_index",

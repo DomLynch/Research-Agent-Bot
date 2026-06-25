@@ -991,7 +991,7 @@ def test_low_source_topic_precision_blocks_submit(tmp_path: Path, monkeypatch) -
     )
 
     assert ledger["status"] == "no_eligible_research_paper"
-    assert ledger["considered"][0]["status"] == "source_topic_precision_low:1/4<0.50"
+    assert ledger["considered"][0]["status"] == "source_topic_precision_low:0/4<0.50"
 
 
 def test_source_topic_precision_uses_topic_aliases(tmp_path: Path, monkeypatch) -> None:
@@ -1087,6 +1087,25 @@ def test_source_topic_precision_entity_rescue_skips_drifted_corpus(tmp_path: Pat
 
     assert not ok
     assert status == "source_topic_precision_low:1/4<0.50"
+
+
+def test_source_topic_precision_entity_rescue_requires_axis_evidence(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path / "runs", name="synthesis-microbiome_longevity-v06-test")
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "microbiome_longevity"
+    manifest["receipts"] = [
+        {"receipt_id": "r1", "source_title": "Microbiome and response to therapy in triple negative breast cancer"},
+        {"receipt_id": "r2", "source_title": "Oral microbiome composition in children with autism"},
+        {"receipt_id": "r3", "source_title": "Gut microbiome therapies for liver cirrhosis"},
+        {"receipt_id": "r4", "source_title": "Household air pollution and the gut microbiome"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ok, status = daily._source_topic_precision(run)
+
+    assert not ok
+    assert status == "source_topic_precision_low:0/4<0.50"
 
 
 def test_recency_ratio_blocks_old_source_bundle() -> None:

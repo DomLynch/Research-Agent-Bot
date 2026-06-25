@@ -3323,10 +3323,10 @@ def test_payload_source_bundle_topicality_revision_ask_accepts_all_specific_rows
     monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
         "metadata": {"topic": "melatonin_aging"},
         "source_bundle": [
-            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
-            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
-            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on sleep and biomarkers."},
-            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human trial outcomes."},
+            {"title": "Trial A", "excerpt": "Melatonin changed an aging-related endpoint in randomized adults."},
+            {"title": "Trial B", "excerpt": "Melatonin was tested in aging patients with inflammatory biomarkers."},
+            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on aging biomarkers."},
+            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human aging-trial outcomes."},
             {"title": "Mechanistic E", "excerpt": "Melatonin signaling was evaluated in aging-relevant inflammatory pathways."},
         ],
     })
@@ -3346,11 +3346,11 @@ def test_payload_source_bundle_topicality_revision_ask_accepts_labeled_adjacent_
     monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
         "metadata": {"topic": "melatonin_aging"},
         "source_bundle": [
-            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
-            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
-            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on sleep and biomarkers."},
-            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human trial outcomes."},
-            {"title": "Context E", "excerpt": "Contextual adjacent evidence: a broader clinical cohort measured cardiovascular endpoints."},
+            {"title": "Trial A", "excerpt": "Melatonin changed an aging-related endpoint in randomized adults."},
+            {"title": "Trial B", "excerpt": "Melatonin was tested in aging patients with inflammatory biomarkers."},
+            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on aging biomarkers."},
+            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human aging-trial outcomes."},
+            {"title": "Context E", "excerpt": "Contextual adjacent evidence: a broader aging cohort measured cardiovascular endpoints."},
         ],
     })
 

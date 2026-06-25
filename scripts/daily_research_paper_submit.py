@@ -635,6 +635,10 @@ def _entity_rescue(tokens: list[str], haystacks: list[str]) -> tuple[int, str | 
     ]
     coverage = {token: sum(token in tt for tt in title_tokens) for token in specific}
     entity = max(specific, key=lambda token: coverage[token])
+    if len(specific) > 1 and not any(
+        count > 0 for token, count in coverage.items() if token != entity
+    ):
+        return 0, None
     rescued = 0
     for haystack, present in zip(haystacks, title_tokens):
         if entity not in present:
