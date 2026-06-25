@@ -63,12 +63,23 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         assert "RestartSec=60" in service
 
 
-def test_fresh_publish_seeds_empty_frontier_with_bounded_timeout(tmp_path: Path, monkeypatch) -> None:
+@pytest.mark.parametrize(
+    ("publish_timeout", "seed_timeout", "expected_timeout"),
+    [("17", None, 17), (None, "300", 300)],
+)
+def test_fresh_publish_seeds_empty_frontier_with_bounded_timeout(
+    tmp_path: Path, monkeypatch, publish_timeout: str | None, seed_timeout: str | None, expected_timeout: int,
+) -> None:
     _topic(tmp_path, "empty_frontier", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", "17")
+    monkeypatch.delenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", raising=False)
+    monkeypatch.delenv("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", raising=False)
+    if publish_timeout is not None:
+        monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", publish_timeout)
+    if seed_timeout is not None:
+        monkeypatch.setenv("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", seed_timeout)
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
         True, "source_topic_precision_ok:10/10", [],
     ))
@@ -102,7 +113,7 @@ def test_fresh_publish_seeds_empty_frontier_with_bounded_timeout(tmp_path: Path,
         max_attempts=1,
     )
 
-    assert seen == [17]
+    assert seen == [expected_timeout]
     assert ledger["status"] == "submitted_to_researka"
     assert ledger["frontier_corpus_seed"]["topic"] == "empty_frontier"
 

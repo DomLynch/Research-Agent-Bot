@@ -2390,7 +2390,10 @@ def _seed_topic_timeout(timeout: int | None) -> int:
 
 def _publish_seed_timeout(timeout: int | None) -> int:
     try:
-        cap = max(1, int(os.environ.get("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", str(PUBLISH_SEED_TIMEOUT_SECONDS))))
+        cap = max(1, int(os.environ.get(
+            "RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS",
+            os.environ.get("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", str(PUBLISH_SEED_TIMEOUT_SECONDS)),
+        )))
     except ValueError:
         cap = PUBLISH_SEED_TIMEOUT_SECONDS
     return min(timeout, cap) if timeout and timeout > 0 else cap
