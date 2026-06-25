@@ -342,11 +342,12 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
         and any(token in text for token in (
             "included under", "inclusion criteria", "included", "umbrella",
             "operationalize", "classified as addressing", "primary content",
-            "prune", "reclassify",
+            "prune", "reclassify", "define",
         ))
         and any(token in text for token in (
             "unrelated", "general", "other digital", "non-digital",
             "why sources", "justify", "adjacent context", "not about",
+            "operationally", "population strata", "subgrouping axes",
         ))
     )
 
@@ -598,10 +599,11 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
             and any(token in text for token in ("enumerate", "actually discussed", "body"))
         )
         or (
-            "cross-study disagreement" in text
+            ("cross-study disagreement" in text or "cross-source disagreement" in text)
             and any(token in text for token in (
                 "substantiated", "enumerate", "enumerated",
                 "actually-surfaced", "actually surfaced", "correct", "replace",
+                "specific", "named sources",
             ))
         )
     )
