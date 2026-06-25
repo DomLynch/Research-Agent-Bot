@@ -39,6 +39,7 @@ from typing import Any
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
+DISCOVERY_TIMEOUT_SECONDS = 30.0
 
 from agent.sources.aggregator import (  # noqa: E402
     discover, list_available_sources,
@@ -92,6 +93,17 @@ def _load_topic_pack(topic: str) -> TopicPack:
     if pack_path.exists():
         return load_topic_pack(pack_path)
     return load_generated_topic_pack(topic, REPO / "topic_packs_db")
+
+
+def _discovery_timeout_seconds() -> float:
+    raw = os.environ.get(
+        "RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS",
+        str(DISCOVERY_TIMEOUT_SECONDS),
+    )
+    try:
+        return min(120.0, max(1.0, float(raw)))
+    except ValueError:
+        return DISCOVERY_TIMEOUT_SECONDS
 
 
 def _corpus_paths(topic: str) -> tuple[Path, Path]:
@@ -296,7 +308,12 @@ async def _do_seed(
             file=sys.stderr,
         )
         params = resolve_params("calibrated")
-        wave_report = await run_waves(pack.retrieval, params=params)
+        wave_report = await run_waves(
+            pack.retrieval,
+            params=params,
+            enabled_sources=sources,
+            timeout=_discovery_timeout_seconds(),
+        )
         manifest = classify_and_filter(
             wave_report, topic=topic,
             topic_aliases=topic_aliases_for_classification(pack),
