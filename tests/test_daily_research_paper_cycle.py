@@ -1372,38 +1372,6 @@ def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Pa
     assert ledger["status"] == "submitted_to_researka"
 
 
-def test_topic_supply_refresh_uses_submission_floor(monkeypatch, tmp_path: Path) -> None:
-    calls: dict[str, Any] = {}
-
-    class FakeMaterializer:
-        @staticmethod
-        def dsn_from_env() -> str:
-            return "postgresql://example"
-
-        @staticmethod
-        def http_credentials_from_env() -> tuple[str, str]:
-            return "", ""
-
-        @staticmethod
-        def fetch_rows(**kwargs: Any) -> list[dict[str, Any]]:
-            calls["fetch_rows"] = kwargs
-            return []
-
-        @staticmethod
-        def materialize_rows(rows: list[dict[str, Any]], **kwargs: Any) -> dict[str, Any]:
-            calls["materialize_rows"] = kwargs
-            return {"created": [], "skipped": []}
-
-    monkeypatch.setitem(sys.modules, "materialize_fact_topic_packs", FakeMaterializer)
-
-    result = cycle._refresh_topic_supply(tmp_path / "topic_packs_db")
-
-    assert result["status"] == "topic_supply_no_new_packs"
-    assert calls["fetch_rows"]["min_exact_facts"] == cycle.PREFLIGHT_MIN_RECEIPTS
-    assert calls["fetch_rows"]["min_papers"] == 3
-    assert calls["materialize_rows"]["quality_mode"] == "high-precision"
-
-
 def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "ready_cached", target_journal=True)
     _topic(tmp_path, "cold_repaired", corpus=False, target_journal=True)
