@@ -2998,6 +2998,7 @@ def run_cycle(
                     source_precision_repaired_ok.add(repair_topic)
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
+            source_precision_auto_excluded -= source_precision_repaired_ok
             source_precision_auto_excluded |= unrepaired_attempted | unattempted_source_precision
             if source_precision_auto_excluded:
                 ledger["source_precision_auto_excluded_topics"] = sorted(source_precision_auto_excluded)
