@@ -1519,6 +1519,12 @@ def _fresh_seed_candidate(topic: str) -> bool:
     return not record or _topic_support_score(topic) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
 
 
+def _fresh_corpus_repair_candidate(topic: str) -> bool:
+    record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
+    count = record.get("candidate_count")
+    return not isinstance(count, int) and not _fresh_seed_candidate(topic)
+
+
 def _has_clean_ready_topic(
     topics: list[str],
     *,
@@ -2956,7 +2962,14 @@ def run_cycle(
             source_precision_repair_attempted: set[str] = set()
             repair_timeout = _publish_seed_timeout(timeout)
             repair_order = sorted(
-                (repair_topic for repair_topic in repairable if _fresh_seed_candidate(repair_topic)),
+                (
+                    repair_topic for repair_topic in repairable
+                    if (
+                        repair_topic in source_precision_repairable
+                        and _topic_has_quant_floor(repair_topic)
+                    )
+                    or _fresh_corpus_repair_candidate(repair_topic)
+                ),
                 key=lambda t: (-_quant_claim_count(t), -_topic_support_score(t), _attempted_at(t, ledger_dir), t),
             )
             for repair_topic in repair_order[:_corpus_repair_limit()]:
