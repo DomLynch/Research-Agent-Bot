@@ -15,6 +15,7 @@ import re
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from collections.abc import Callable
@@ -474,6 +475,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
             return f"researka_preflight_body_words:{body_words} < {min_body_words}"
     if enforce_recency and (recency_status := _recency_ratio_status(payload)) != "eligible":
         return recency_status
+    if (doi_status := _doi_existence_status(payload)) != "eligible":
+        return doi_status
     return "eligible"
 
 
@@ -698,6 +701,45 @@ def _recency_ratio_status(payload: dict[str, Any]) -> str:
     recent = sum(1 for year in years if year >= RECENT_PUBLICATION_YEAR_FLOOR)
     if recent / len(years) < floor:
         return f"recency_ratio_low:{recent}/{len(years)}<{floor:.2f}"
+    return "eligible"
+
+
+def _doi_existence_status(payload: dict[str, Any]) -> str:
+    if os.getenv("RESEARKA_DOI_PREFLIGHT_ENABLED", "0").strip() != "1":
+        return "eligible"
+    bundle = payload.get("source_bundle")
+    dois = sorted({
+        str(row.get("doi") or "").strip().rstrip(".,;").lower()
+        for row in (bundle if isinstance(bundle, list) else [])
+        if isinstance(row, dict) and str(row.get("doi") or "").strip()
+    })
+    if not dois:
+        return "eligible"
+    try:
+        limit = max(1, int(os.getenv("RESEARKA_DOI_CHECK_MAX", "25")))
+    except ValueError:
+        limit = 25
+    try:
+        timeout = float(os.getenv("RESEARKA_DOI_CHECK_TIMEOUT_S", "3"))
+    except ValueError:
+        timeout = 3.0
+    base_url = os.getenv("RESEARKA_DOI_RESOLVER_URL", "https://doi.org/api/handles").rstrip("/")
+    missing: list[str] = []
+    try:
+        for doi in dois[:limit]:
+            url = f"{base_url}/{urllib.parse.quote(doi, safe='/')}"
+            try:
+                with urllib.request.urlopen(url, timeout=timeout) as response:
+                    response.read(1)
+            except urllib.error.HTTPError as exc:
+                if exc.code == 404:
+                    missing.append(doi)
+                else:
+                    return "eligible"
+    except (OSError, urllib.error.URLError, TimeoutError):
+        return "eligible"
+    if missing:
+        return "doi_exists_missing:" + ",".join(missing[:10])
     return "eligible"
 
 
