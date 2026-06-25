@@ -1021,6 +1021,21 @@ def test_deterministic_unmet_flags_missing_single_source_proportionality() -> No
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_deterministic_unmet_accepts_n_equals_one_context_only_statement() -> None:
+    ask = (
+        "For outcome classes with n=1 sources, either merge them into adjacent "
+        "classes or explicitly flag them as context-only and do not present them "
+        "as parallel evidence domains."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Single-source outcome classes are treated as hypothesis-generating and "
+        "receive proportional narrative depth rather than standalone evidentiary weight.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_single_source_proportionality_statement() -> None:
     ask = (
         "For single-source outcome classes (frailty, immune/inflammation, muscle function), "
