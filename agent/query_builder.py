@@ -159,6 +159,24 @@ def build_keyword_query(spec: RetrievalSpec) -> str:
     return main
 
 
+def build_fullraw_query(spec: RetrievalSpec) -> str:
+    """Fullraw search is ranked free text, not a Boolean query parser.
+
+    Keep discriminating topic/scope words, but leave Boolean operators and NOT
+    clauses to source-specific APIs. The downstream corpus classifier remains
+    the authority for exclusions.
+    """
+    seen: set[str] = set()
+    terms: list[str] = []
+    for term in (*spec.topic_terms, *spec.scope_terms):
+        clean = " ".join(term.split())
+        key = clean.casefold()
+        if clean and key not in seen:
+            seen.add(key)
+            terms.append(clean)
+    return " ".join(terms)
+
+
 # ---------- Dispatcher -----------------------------------------------
 
 _BUILDERS = {
@@ -177,6 +195,7 @@ _BUILDERS = {
     "clinicaltrials": build_keyword_query,
     "unpaywall": build_keyword_query,
     "chembl": build_keyword_query,
+    "v5_fullraw": build_fullraw_query,
 }
 
 
@@ -194,5 +213,6 @@ __all__ = [
     "build_pubmed_query",
     "build_europepmc_query",
     "build_keyword_query",
+    "build_fullraw_query",
     "build_query_for_source",
 ]

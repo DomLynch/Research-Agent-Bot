@@ -6,8 +6,11 @@ RetrievalSpecs to keep tests independent of any specific topic pack.
 """
 from __future__ import annotations
 
+from typing import Any
+
 from agent.query_builder import (
     build_europepmc_query,
+    build_fullraw_query,
     build_keyword_query,
     build_pubmed_query,
     build_query_for_source,
@@ -17,7 +20,7 @@ from agent.topic_pack import RetrievalSpec
 
 def _spec(**kw) -> RetrievalSpec:
     """Build a RetrievalSpec with sensible defaults for tests."""
-    base = dict(
+    base: dict[str, Any] = dict(
         topic_terms=("alpha", "beta"),
         scope_terms=("aging", "longevity"),
         evidence_types=("clinical trial", "cohort study"),
@@ -158,6 +161,18 @@ def test_keyword_query_drops_date_and_pub_type():
     assert "[pt]" not in q
 
 
+def test_fullraw_query_is_ranked_text_not_boolean():
+    q = build_fullraw_query(_spec(
+        topic_terms=("low dose lithium", "low dose lithium"),
+        scope_terms=("aging", "older adults"),
+        exclude_terms=("animal only",),
+    ))
+    assert q == "low dose lithium aging older adults"
+    assert " OR " not in q
+    assert " AND " not in q
+    assert " NOT " not in q
+
+
 # ---------- Dispatcher ----------------------------------------------
 
 def test_dispatcher_routes_pubmed_to_pubmed_builder():
@@ -169,6 +184,11 @@ def test_dispatcher_routes_europepmc_to_europepmc_builder():
     spec = _spec()
     out = build_query_for_source("europepmc", spec)
     assert out == build_europepmc_query(spec)
+
+
+def test_dispatcher_routes_v5_fullraw_to_ranked_text_builder():
+    spec = _spec()
+    assert build_query_for_source("v5_fullraw", spec) == build_fullraw_query(spec)
 
 
 def test_dispatcher_routes_unknown_to_keyword():
