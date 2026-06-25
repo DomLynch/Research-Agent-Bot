@@ -195,6 +195,11 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     report_path = run / "researka_preflight_report.json"
     clean_path = run / "researka_preflight_cleaned_payload.json"
     _write_json(input_path, payload)
+    for stale_path in (report_path, clean_path):
+        try:
+            stale_path.unlink()
+        except OSError:
+            pass
     if not tool_root.is_dir():
         report = {
             "status": "pass",
@@ -219,7 +224,8 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     if os.getenv("RESEARKA_PREFLIGHT_USE_M3", "").strip().lower() in {"1", "true", "yes", "on"}:
         cmd.append("--use-m3")
     proc = subprocess.run(cmd, cwd=tool_root, text=True, capture_output=True, timeout=90, check=False)
-    if proc.returncode not in {0, 2}:
+    runtime_error = proc.returncode not in {0, 2}
+    if runtime_error:
         report = {
             "status": "pass",
             "qa_version": "preflight-v2",
@@ -238,7 +244,7 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
         payload["metadata"] = metadata
     if isinstance(metadata, dict):
         metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
-    if mode == "shadow":
+    if mode == "shadow" or runtime_error:
         return payload, report
     if report.get("status") != "pass":
         return payload, report

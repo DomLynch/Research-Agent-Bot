@@ -49,6 +49,43 @@ def test_seen_field_reads_valid_string_fields_only(tmp_path: Path) -> None:
     assert daily._seen_field(tmp_path / "missing.json", "topic") == set()
 
 
+def test_preflight_runtime_error_does_not_reuse_stale_cleaned_payload(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = tmp_path / "run"
+    run.mkdir()
+    tool_root = tmp_path / "preflight"
+    tool_root.mkdir()
+    stale = {"body_markdown": "STALE", "metadata": {"content_hash": "sha256:stale"}}
+    _write_json(run / "researka_preflight_cleaned_payload.json", stale)
+    payload = {
+        "title": "Research Synthesis",
+        "abstract": "Fresh.",
+        "artifact_type": "research_paper",
+        "article_type": "evidence_map",
+        "body_markdown": "FRESH",
+        "sections": {"Abstract": "Fresh."},
+        "source_bundle": [],
+        "author_agent_id": "agent-v3",
+        "metadata": {"content_hash": "sha256:fresh"},
+    }
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(tool_root))
+    monkeypatch.setattr(
+        daily.subprocess,
+        "run",
+        lambda *_args, **_kwargs: SimpleNamespace(returncode=1, stdout="", stderr="boom"),
+    )
+
+    checked, report = daily._run_preflight_qa(payload, run)
+
+    assert checked is payload
+    assert checked["body_markdown"] == "FRESH"
+    assert report and report["status"] == "pass"
+    assert "preflight_runtime_error" in checked["metadata"]["preflight_qa"]["advisory_codes"]
+
+
 def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 5) -> Path:
     run = root / name
     run.mkdir(parents=True)
