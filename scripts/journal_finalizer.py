@@ -1967,6 +1967,7 @@ def _phase_d_source_outcome_class_map(
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
+    wants_findings_map = "findings map" in feedback.lower()
     present_tokens = {
         str(row.get("citation_token") or "").strip()
         for row in rows
@@ -1982,7 +1983,11 @@ def _phase_d_source_outcome_class_map(
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
-        examples.append(f"- {citation}: outcome={outcome}; direction={direction}; directness={directness}; tier={tier}.")
+        finding = _manifest_row_finding(row)
+        examples.append(
+            f"- {citation}: outcome={outcome}; direction={direction}; "
+            f"directness={directness}; tier={tier}; finding={finding}."
+        )
     notes = []
     if "biomarker-positive" in feedback.lower() and "clinical-endpoint" in feedback.lower():
         notes.append(
@@ -2023,9 +2028,10 @@ def _phase_d_source_outcome_class_map(
             f"{len(missing)} reviewer-named sources are not retained in this source map "
             "and are not counted in clinical outcome-class tallies unless listed below."
         )
-    note = "### Source Outcome-Class Map\n\n" + "\n\n".join((*notes, *examples))
+    heading = "### Findings Map" if wants_findings_map else "### Source Outcome-Class Map"
+    note = heading + "\n\n" + "\n\n".join((*notes, *examples))
     existing = re.search(
-        r"^### Source (?:Outcome-Class|Classification) Map\b.*?(?=^### |^## |\Z)",
+        r"^### (?:Findings Map|Source (?:Outcome-Class|Classification) Map)\b.*?(?=^### |^## |\Z)",
         text,
         flags=re.M | re.S,
     )
@@ -2048,6 +2054,18 @@ def _phase_d_source_outcome_class_map(
         n_changes=1,
         detail=f"added source outcome-class map from {len(rows)} manifest receipt(s)",
     )]
+
+
+def _manifest_row_finding(row: dict[str, Any]) -> str:
+    p_values = row.get("p_values")
+    if isinstance(p_values, list):
+        stat = next((str(value).strip() for value in p_values if str(value).strip()), "")
+        if stat:
+            return f"representative statistic {stat}"
+    n_claims = row.get("n_claims")
+    if isinstance(n_claims, int) and n_claims > 0:
+        return f"{n_claims} extracted claim(s); receipt-level direction is the coded finding"
+    return "qualitative receipt-level finding recorded in the manifest"
 
 
 def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
