@@ -3154,7 +3154,7 @@ def run_cycle(
                 if not frontier_preflight["passed"]:
                     attempt["preflight"] = frontier_preflight
                 ledger["attempts"].append(attempt)
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 ledger.update({
                     "status": "no_ready_corpus_available",
                     "attempted_topic": selected,
@@ -3174,7 +3174,7 @@ def run_cycle(
                 attempt = _gate_attempt(selected, out_dir, gate_status)
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "revise_terminal_domain_scope_mismatch"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 attempted.add(selected)
                 remote_revision = None
@@ -3186,7 +3186,7 @@ def run_cycle(
                 attempt = _gate_attempt(selected, out_dir, "terminal_surface_repeat")
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "revise_terminal_surface_repeat"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status="terminal_surface_repeat")
                 attempted.add(selected)
                 remote_revision = None
@@ -3196,7 +3196,7 @@ def run_cycle(
                 attempt = _gate_attempt(selected, out_dir, gate_status)
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "revise_terminal_source_precision_repair_incomplete"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 attempted.add(selected)
                 remote_revision = None
@@ -3248,7 +3248,7 @@ def run_cycle(
                 )
                 ledger["attempts"].append(attempt)
                 ledger["status"] = gate_status
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                     remote_revision = None
@@ -3266,7 +3266,7 @@ def run_cycle(
                 }
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "corpus_unavailable_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 attempted.add(selected)
                 continue
             source_precision_ok, source_precision_status, source_precision_misses = _quant_claim_source_precision(
@@ -3307,14 +3307,14 @@ def run_cycle(
                         )
                         ledger["attempts"].append(attempt)
                         ledger["status"] = "source_precision_repair_incomplete_no_submission"
-                        ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                        _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                         attempted.add(selected)
                         continue
                 else:
                     attempt = _source_precision_attempt(selected, out_dir, source_precision_status, corpus=corpus)
                     ledger["attempts"].append(attempt)
                     ledger["status"] = "source_precision_repair_deferred_no_submission"
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     attempted.add(selected)
                     continue
             source_precision_has_misses = (
@@ -3366,7 +3366,7 @@ def run_cycle(
                         if revision_source
                         else "source_precision_repair_incomplete_no_submission"
                     )
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
                         _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                         remote_revision = None
@@ -3413,7 +3413,7 @@ def run_cycle(
                     attempt["quant_corpus_repairs"] = quant_corpus_repairs
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "preflight_skipped_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 attempted.add(selected)
                 continue
             preflight = _preflight(
@@ -3448,7 +3448,7 @@ def run_cycle(
                     if terminal_missing_manifest
                     else "preflight_skipped_no_submission"
                 )
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if terminal_missing_manifest and revision_source is not None:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                     remote_revision = None
@@ -3468,7 +3468,7 @@ def run_cycle(
                 }
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "strategy_skipped_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source:
                     _mark_revision_handled(ledger_dir, revision_source, status="strategy_evidence_insufficient")
                 attempted.add(selected)
@@ -3537,7 +3537,7 @@ def run_cycle(
                     )
                     ledger["attempts"].append(attempt)
                     ledger["status"] = gate_status
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                     remote_revision = None
                     attempted.add(selected)
@@ -3599,7 +3599,7 @@ def run_cycle(
                         if revision_source
                         else "receipt_preflight_skipped_no_submission"
                     )
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
                         _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                         remote_revision = None
@@ -3749,7 +3749,7 @@ def run_cycle(
                     revision_feedback = str(bridge["revision_feedback"])
                     attempt["revision_feedback_received"] = bool(revision_feedback)
                 if gate_status and gate_status != "eligible":
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source and gate_status.split(":", 1)[0] in _TERMINAL_REVISION_STATUSES:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 elif revision_source and gate_status == "revision_coverage_unmet":
