@@ -2312,7 +2312,7 @@ def _phase_d_source_directness_breakdown(
     lower = " ".join(feedback.lower().split())
     evidence_type_requested = "evidence_type" in lower or "evidence type" in lower
     if "source directness breakdown:" in text.lower():
-        if evidence_type_requested and "evidence_type metadata note:" not in text.lower():
+        if evidence_type_requested and "evidence type metadata note:" not in text.lower():
             for heading in ("Evidence Landscape", "Evidence Snapshot", "Methods", "Results"):
                 match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
                 if match:
@@ -2371,7 +2371,7 @@ def _phase_d_source_directness_breakdown(
 
 
 _EVIDENCE_TYPE_METADATA_NOTE = (
-    "Evidence_type metadata note: evidence_type labels are resolved against "
+    "Evidence type metadata note: evidence-type labels are resolved against "
     "source excerpts; review, RCT/trial, and excerpt evidence are reclassified "
     "under the source classification map before claims are interpreted."
 )

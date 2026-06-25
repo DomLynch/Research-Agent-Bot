@@ -218,7 +218,7 @@ def test_deterministic_unmet_accepts_evidence_type_metadata_resolution() -> None
     paper = (
         "## Methods\n\n"
         "### Source Classification Map\n\n"
-        "Evidence_type labels were resolved against excerpts: review records with RCT excerpt data "
+        "Evidence type labels were resolved against excerpts: review records with RCT excerpt data "
         "were reclassified under classification criteria that separate review, RCT, and trial evidence.\n"
     )
 
@@ -230,7 +230,7 @@ def test_deterministic_unmet_accepts_evidence_type_metadata_in_evidence_snapshot
     paper = (
         "## Evidence Snapshot\n\n"
         "### Source Classification Map\n\n"
-        "Evidence_type metadata note: evidence_type labels are resolved against source excerpts; "
+        "Evidence type metadata note: evidence-type labels are resolved against source excerpts; "
         "review, RCT/trial, and excerpt evidence are reclassified under the source classification map.\n"
     )
 
@@ -383,7 +383,7 @@ def test_deterministic_unmet_live_top_bucket_matrix() -> None:
         "### Source Classification Map\n\n"
         "- Smith 2024: outcome=cardiometabolic; directness=direct; tier=A1.\n"
         "- Jones 2025: outcome=contextual adjacent evidence; directness=adjacent; tier=B2.\n\n"
-        "Evidence_type metadata note: evidence_type labels are resolved against source excerpts; "
+        "Evidence type metadata note: evidence-type labels are resolved against source excerpts; "
         "review, RCT/trial, and excerpt evidence are reclassified under the source classification map.\n\n"
         "## Gaps Identified\n\n"
         "1. Run a powered prospective trial in the priority population with a prespecified "

@@ -1813,7 +1813,8 @@ def test_source_directness_breakdown_repairs_evidence_type_metadata_ask(tmp_path
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, _ = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
 
-    assert "Evidence_type metadata note:" in fixed
+    assert "Evidence type metadata note:" in fixed
+    assert "evidence_type" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
@@ -1838,7 +1839,8 @@ def test_evidence_type_note_added_when_directness_breakdown_already_exists(tmp_p
     fixed, logs = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
 
     assert fixed.count("Source directness breakdown:") == 1
-    assert "Evidence_type metadata note:" in fixed
+    assert "Evidence type metadata note:" in fixed
+    assert "evidence_type" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
