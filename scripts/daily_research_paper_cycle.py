@@ -2974,6 +2974,7 @@ def run_cycle(
             submitted=submitted_topics,
         )
         attempted: set[str] = set()
+        topic_supply_refreshed = False
         submitted_total = 0
         attempt_count = 0
         while True:
@@ -3023,8 +3024,25 @@ def run_cycle(
                 else topic or select_topic(repaired_candidates or topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=selection_excluded)
             )
             if not selected:
-                ledger["status"] = "no_unpublished_topic_available"
-                break
+                if mode == "fresh" and topic is None and not topic_supply_refreshed:
+                    topic_supply_refreshed = True
+                    refresh = _refresh_topic_supply(TOPIC_PACKS_DB)
+                    ledger["topic_supply_refresh"] = refresh
+                    if refresh.get("created"):
+                        topics = discover_topics()
+                        ledger["topic_supply_topic_count_after_refresh"] = len(topics)
+                        selected = select_topic(
+                            topics,
+                            ledger_dir,
+                            runs_root=runs_root,
+                            remote_seen=remote_seen,
+                            exclude=selection_excluded,
+                        )
+                if selected:
+                    ledger["topic_supply_selected_after_refresh"] = selected
+                else:
+                    ledger["status"] = "no_unpublished_topic_available"
+                    break
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
             out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
             seeded_frontier_corpus: dict[str, Any] | None = None

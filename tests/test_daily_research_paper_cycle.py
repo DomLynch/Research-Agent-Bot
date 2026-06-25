@@ -1250,6 +1250,64 @@ def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, mo
     assert ledger["published"] == 0
 
 
+def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    calls: dict[str, Any] = {}
+
+    def fake_refresh(db_dir: Path) -> dict[str, Any]:
+        latest = db_dir / "sglt2_inhibitors_effects" / "latest.json"
+        _write_json(latest, {
+            "candidate_count": 20,
+            "pack_data": {
+                "topic": "sglt2_inhibitors_effects",
+                "aliases": ["SGLT2 inhibitors effects", "SGLT2 inhibitors"],
+                "target_journal": "GeroScience",
+                "retrieval": {
+                    "topic_terms": ["SGLT2 inhibitors effects", "SGLT2 inhibitors"],
+                    "scope_terms": [],
+                },
+            },
+        })
+        return {"status": "topic_supply_refreshed", "created": [{"slug": "sglt2_inhibitors_effects"}]}
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        qdir = cycle.CORPORA / topic / "quant_claims"
+        qdir.mkdir(parents=True)
+        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic}-{i}"})
+        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        calls["topic"] = topic
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", fake_refresh)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=fake_corpus,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["topic_supply_refresh"]["status"] == "topic_supply_refreshed"
+    assert ledger["topic_supply_selected_after_refresh"] == "sglt2_inhibitors_effects"
+    assert calls["topic"] == "sglt2_inhibitors_effects"
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_fresh_lane_prefers_ready_cached_topic_over_repaired_cold_topic(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "ready_cached", target_journal=True)
     _topic(tmp_path, "cold_repaired", corpus=False, target_journal=True)
