@@ -1950,16 +1950,21 @@ def _escalate_feedback(feedback: str, unmet: list[str]) -> str:
     )
 
 
+def _set_known_blocker_class(row: dict[str, Any], status: str) -> str:
+    klass = _failure_class(status)
+    if row.get("class") in {None, "", "unknown"} and klass != "unknown":
+        row["class"] = klass
+    return klass
+
+
 def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
     path = ledger_dir / BLOCKER_HISTOGRAM
     data = _read_json(path)
     blockers = data.setdefault("blockers", {})
     if isinstance(blockers, dict):
         for code, row in blockers.items():
-            if isinstance(row, dict) and row.get("class") in {None, "", "unknown"}:
-                klass = _failure_class(str(code))
-                if klass != "unknown":
-                    row["class"] = klass
+            if isinstance(row, dict):
+                _set_known_blocker_class(row, str(code))
     # Cumulative per-(topic, gate) failure timestamps — the daily ledger is
     # rewritten each run and cannot hold a cross-run count, so the repeat-skip
     # heuristic reads this instead. Windowed to the failure cooldown.
@@ -1975,8 +1980,7 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
         code = status.split(":", 1)[0]
         klass = _failure_class(status)
         item = blockers.setdefault(code, {"count": 0, "class": klass, "samples": []})
-        if item.get("class") in {None, "", "unknown"} and klass != "unknown":
-            item["class"] = klass
+        _set_known_blocker_class(item, status)
         item["count"] = int(item.get("count") or 0) + 1
         item["last_seen"] = date
         sample = {k: row.get(k) for k in ("topic", "run", "out_dir", "status", "gate_status", "submit_status") if row.get(k) is not None}
@@ -1987,7 +1991,7 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
             kept = [s for s in repeats.get(key, []) if (t := _parse_time(str(s))) and t >= cutoff]
             kept.append(now_dt.isoformat())
             repeats[key] = kept[-12:]
-            if _failure_class(code).startswith("C_"):
+            if klass.startswith("C_"):
                 prior = writer_runs.get(key, [])
                 kept_rows = [
                     r for r in prior
