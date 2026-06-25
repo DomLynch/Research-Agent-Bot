@@ -444,6 +444,49 @@ def _word_count(text: object) -> int:
     return len(str(text or "").split())
 
 
+def _title_anchor_terms(title: object) -> tuple[str, ...]:
+    subject = str(title or "").strip()
+    if ":" in subject:
+        subject = subject.split(":", 1)[1]
+    subject = re.split(r"\s+[—–-]\s+|\s+--\s+", subject, maxsplit=1)[0]
+    words = re.findall(r"[a-z0-9]+", subject.lower())
+    words = [
+        word for word in words
+        if word not in {"full", "paper", "brief", "research", "synthesis", "hypothesis", "generating", "evidence", "adjacent"}
+    ]
+    terms = [" ".join(words)] if words else []
+    terms.extend(word for word in words if len(word) >= 4 or any(ch.isdigit() for ch in word))
+    return tuple(dict.fromkeys(term for term in terms if term))
+
+
+def _findings_map_topic_anchor_status(payload: dict[str, Any]) -> str:
+    if str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE) != "evidence_map":
+        return "eligible"
+    sections_raw = payload.get("sections")
+    sections = sections_raw if isinstance(sections_raw, dict) else {}
+    findings = str(sections.get("Findings Map") or "")
+    terms = _title_anchor_terms(payload.get("title"))
+    if not findings.strip() or not terms:
+        return "eligible"
+    rows: list[str] = []
+    for line in findings.splitlines():
+        if not line.strip().startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if not cells or not cells[0] or set(cells[0]) <= {"-", ":"}:
+            continue
+        first = _normalized_key(cells[0])
+        if first in {"evidence domain", "outcome class", "source context"}:
+            continue
+        rows.append(first)
+    if not rows:
+        return "eligible"
+    weak = [row for row in rows if not any(term in row for term in terms)]
+    if weak and len(weak) / len(rows) >= 0.5:
+        return f"evidence_map_topic_anchor_low:{len(weak)}/{len(rows)}"
+    return "eligible"
+
+
 def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     sections_raw = payload.get("sections")
@@ -483,6 +526,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
         return recency_status
     if (doi_status := _doi_existence_status(payload)) != "eligible":
         return doi_status
+    if (anchor_status := _findings_map_topic_anchor_status(payload)) != "eligible":
+        return anchor_status
     return "eligible"
 
 

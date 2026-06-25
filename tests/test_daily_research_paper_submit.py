@@ -583,6 +583,33 @@ def test_evidence_map_scope_meets_live_question_word_floor(tmp_path: Path) -> No
     assert payload["sections"]["Scope"].startswith("This evidence map surveys")
 
 
+def test_evidence_map_preflight_blocks_unanchored_findings_rows(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path, tensions=20))
+    payload["title"] = "Hypothesis-Generating Brief: ABT-263 — full paper"
+    payload["sections"]["Findings Map"] = (
+        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Contextual Adjacent Evidence | n=14 | no extracted directional signal | indirect | limited |\n"
+        "| Immune and Inflammation | n=7 | no extracted directional signal | review | limited |\n"
+        "| Mechanism | n=4 | no extracted directional signal | mechanistic | limited |\n"
+    )
+
+    assert daily._researka_preflight_status(payload).startswith("evidence_map_topic_anchor_low:3/3")
+
+
+def test_evidence_map_preflight_allows_title_anchored_findings_rows(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path, tensions=20))
+    payload["title"] = "Adjacent Evidence Brief: TORC1 inhibitor — full paper"
+    payload["sections"]["Findings Map"] = (
+        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| TORC1 inhibitor / Contextual Adjacent Evidence | n=5 | significant source statistic | indirect | limited |\n"
+        "| TORC1 inhibitor / Immune and Inflammation | n=2 | significant source statistic | review | limited |\n"
+    )
+
+    assert daily._researka_preflight_status(payload) == "eligible"
+
+
 def test_evidence_map_tension_density_boundary_is_inclusive(tmp_path: Path) -> None:
     # 12 receipts: density == 1.0 (exactly the floor) routes to the landscape
     # lane; one fewer tension (density 11/12 < 1.0) stays on the thesis lane.
