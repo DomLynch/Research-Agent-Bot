@@ -487,6 +487,34 @@ def _findings_map_topic_anchor_status(payload: dict[str, Any]) -> str:
     return "eligible"
 
 
+def _topic_anchored_title(title: str, topic: str) -> str:
+    display = _display_topic(topic)
+    match = re.match(r"(?P<prefix>.*?:\s*)(?P<subject>.*?)(?P<suffix>\s+[—–-]\s+.*)?$", title)
+    if match:
+        return f"{match.group('prefix')}{display}{match.group('suffix') or ''}"
+    return f"Research Synthesis: {display}"
+
+
+def _anchor_findings_map_rows(findings: str, topic: str) -> str:
+    anchor = _display_topic(topic)
+    anchor_norm = _normalized_key(anchor)
+    out: list[str] = []
+    for line in findings.splitlines():
+        if not line.strip().startswith("|"):
+            out.append(line)
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        first = _normalized_key(cells[0]) if cells else ""
+        if not cells or first in {"evidence domain", "outcome class", "source context"} or set(cells[0]) <= {"-", ":"}:
+            out.append(line)
+            continue
+        if not first.startswith(anchor_norm):
+            cells[0] = f"{anchor} / {cells[0].split('/', 1)[-1].strip()}"
+            line = "| " + " | ".join(cells) + " |"
+        out.append(line)
+    return "\n".join(out)
+
+
 def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     sections_raw = payload.get("sections")
@@ -1496,6 +1524,8 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     source_hash = _source_citation_hash(source_bundle)
     agent_slug = _agent_slug()
     article_type = _select_article_type(manifest)
+    if article_type == "evidence_map":
+        title = _topic_anchored_title(title, topic)
     domain_slug = _env_or_default("RESEARKA_DOMAIN_SLUG_V3", "longevity")
     category = _env_or_default("RESEARKA_CATEGORY_V3", domain_slug).removesuffix("_research")
     rapid_sections = {
@@ -1543,6 +1573,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         metadata["revision_feedback"] = revision.get("feedback")
     if article_type == "evidence_map":
         sections: dict[str, str] = _evidence_map_sections(topic, manifest, parts, abstract)
+        sections["Findings Map"] = _anchor_findings_map_rows(sections.get("Findings Map", ""), topic)
     elif article_type == "research_synthesis":
         sections = {**rapid_sections, **parts}
     else:

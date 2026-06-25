@@ -610,6 +610,32 @@ def test_evidence_map_preflight_allows_title_anchored_findings_rows(tmp_path: Pa
     assert daily._researka_preflight_status(payload) == "eligible"
 
 
+def test_evidence_map_payload_reanchors_generic_class_title_and_rows(tmp_path: Path) -> None:
+    run = _run(tmp_path, tensions=20)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "everolimus"
+    _write_json(run / "manifest.json", manifest)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    paper = paper.replace(
+        "# Research Synthesis: Topic",
+        "# Adjacent Evidence Brief: TORC1 inhibitor — full paper",
+    ).replace(
+        "## Results\n\nresults",
+        "## Results\n\n"
+        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| TORC1 inhibitor / Cardiometabolic | n=2 | bounded signal | indirect | limited |\n\n"
+        "results",
+    )
+    (run / "full_paper.md").write_text(paper, encoding="utf-8")
+
+    payload = daily.build_payload(run)
+
+    assert payload["title"] == "Adjacent Evidence Brief: Everolimus — full paper"
+    assert "| Everolimus / Cardiometabolic | n=2 | bounded signal | indirect | limited |" in payload["sections"]["Findings Map"]
+    assert daily._researka_preflight_status(payload) == "eligible"
+
+
 def test_selector_skips_unanchored_evidence_map_candidate(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     good = _run(tmp_path, name="synthesis-good-v06-test", tensions=20)
     bad = _run(tmp_path, name="synthesis-bad-v06-test", tensions=20)
