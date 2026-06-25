@@ -3382,11 +3382,12 @@ def run_cycle(
                     if revision_source
                     else None
                 )
+                receipt_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
                 if receipt_preflight is None:
                     receipt_preflight = _receipt_preflight(
                         selected,
                         out_dir,
-                        timeout=child_timeout(),
+                        timeout=receipt_timeout,
                         repair=True,
                         dry_run=synthesis_dry_run,
                     )

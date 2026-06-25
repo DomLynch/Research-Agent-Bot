@@ -157,6 +157,46 @@ def test_fresh_publish_continues_after_frontier_seed_stays_thin(tmp_path: Path, 
     assert ledger["submitted_topic"] == "bbb_ready"
 
 
+def test_fresh_receipt_preflight_uses_publish_seed_timeout(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "ready_topic", corpus=True, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", "17")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:12/12", [],
+    ))
+    monkeypatch.setattr(cycle, "_preflight", lambda *_a, **_k: {"passed": True})
+    seen: list[int | None] = []
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, *, timeout: int | None = None, **_kwargs: Any) -> dict[str, Any]:
+        seen.append(timeout)
+        return {"passed": True}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        cycle_budget_seconds=1000,
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert seen == [17]
+
+
 def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path: Path, monkeypatch) -> None:
     for name in ("aaa_low_support", "published_high_support", "zzz_high_support"):
         _topic(tmp_path, name, target_journal=True)
