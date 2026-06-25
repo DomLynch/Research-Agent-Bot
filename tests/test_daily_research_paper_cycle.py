@@ -2334,11 +2334,14 @@ def test_seed_topic_defaults_to_v5_fullraw_when_configured(tmp_path: Path, monke
     monkeypatch.delenv("RESEARCH_AGENT_SEED_SOURCES", raising=False)
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://127.0.0.1:9903/search")
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "token")
+    monkeypatch.setenv("RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS", "17")
+    monkeypatch.setenv("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", "91")
     seen: dict[str, Any] = {}
 
     def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
         seen["cmd"] = cmd
         seen["env"] = _kwargs["env"]
+        seen["timeout"] = _kwargs["timeout"]
         return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
 
     monkeypatch.setattr(cycle.subprocess, "run", fake_run)
@@ -2347,7 +2350,8 @@ def test_seed_topic_defaults_to_v5_fullraw_when_configured(tmp_path: Path, monke
 
     assert result["status"] == "corpus_seed_empty"
     assert seen["cmd"][-2:] == ["--sources", "v5_fullraw"]
-    assert seen["env"]["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] == "30.0"
+    assert seen["env"]["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] == "17.0"
+    assert seen["timeout"] == 91
 
 
 def test_seed_topic_source_env_override_wins(tmp_path: Path, monkeypatch) -> None:
