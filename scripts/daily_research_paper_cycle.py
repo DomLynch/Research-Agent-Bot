@@ -1166,7 +1166,7 @@ def _latest_handled_revision_status(ledger_dir: Path, key: str) -> str:
     if not isinstance(rows, list):
         return ""
     for row in reversed(rows):
-        if isinstance(row, dict) and _revision_key(row) == key:
+        if isinstance(row, dict) and str(row.get("key") or _revision_key(row)) == key:
             return str(row.get("status") or "")
     return ""
 

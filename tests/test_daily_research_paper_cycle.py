@@ -3697,6 +3697,43 @@ def test_pending_remote_revision_matches_topic_when_paper_title_is_malformed(tmp
     assert pending["source_run"] == source_run.name
 
 
+def test_pending_remote_revision_reopens_repairable_terminal_surface_repeat(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    title = "Hypothesis-Generating Brief: ABT-263 — full paper"
+    source_run = _seed_submitted_run(runs, "senolytics", f"# {title}")
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": title,
+        "status": "terminal_surface_repeat",
+        "handled_at": "2026-06-25T00:05:28+00:00",
+    }]})
+    monkeypatch.setattr(cycle, "_surface_passes_current_finalizer", lambda run: run == source_run)
+    request = {
+        "artifactId": "abt263-review",
+        "title": title,
+        "topic": "senolytics",
+        "feedback": "Clarify direct ABT-263 studies versus adjacent senolytics.",
+        "reviewedAt": "2026-06-24T23:00:00+00:00",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["artifactId"] == "abt263-review"
+    assert pending["source_run"] == source_run.name
+
+
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", target_journal=True)
     _topic(tmp_path, "telomere_biomarker_effects", target_journal=True)
