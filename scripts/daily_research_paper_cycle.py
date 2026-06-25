@@ -686,27 +686,11 @@ def _writer_gate_repeat_policy(
 
 
 def _corpus_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
-    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
-    out: set[str] = set()
-    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
-        topic, _, code = str(key).partition("\x1f")
-        if topic and code in _CORPUS_REPAIR_STATUSES and isinstance(stamps, list):
-            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
-                out.add(topic)
-    return out
+    return _recent_blocked_topics_by_status(ledger_dir, _CORPUS_REPAIR_STATUSES, now=now)
 
 
 def _source_precision_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
-    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
-    out: set[str] = set()
-    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
-        topic, _, code = str(key).partition("\x1f")
-        if topic and code == _SOURCE_PRECISION_STATUS and isinstance(stamps, list):
-            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
-                out.add(topic)
-    return out
+    return _recent_blocked_topics_by_status(ledger_dir, {_SOURCE_PRECISION_STATUS}, now=now)
 
 
 def _unrepairable_source_precision_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
