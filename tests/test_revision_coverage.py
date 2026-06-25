@@ -1502,9 +1502,9 @@ def test_deterministic_known_accepts_auditable_tension_and_source_verdict_asks()
         "## Evidence Landscape\n\n"
         "Source directness breakdown: 1/3 retained sources directly address the stated topic and hard endpoints; "
         "2/3 are adjacent, contextual, review-level, or mechanistic.\n\n"
-        "### Source Classification Map\n\n"
-        "- Smith 2024: outcome=cardiometabolic; direction=positive; directness=direct; tier=A1.\n"
-        "- Jones 2025: outcome=cardiometabolic; direction=null; directness=review; tier=B1.\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2024: outcome=cardiometabolic; direction=positive; directness=direct; tier=A1; finding=representative statistic p = 0.04.\n"
+        "- Jones 2025: outcome=cardiometabolic; direction=null; directness=review; tier=B1; finding=12 extracted claim(s).\n\n"
         "## Tensions and Gaps\n\n"
         "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
         "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in Cardiometabolic because directions are positive versus null.\n"
@@ -1542,6 +1542,51 @@ def test_revision_asks_splits_resolve_action_after_example_semicolon() -> None:
         "(e.g., preclinical rodent n=, human n=) so readers can audit the claim.",
         "Resolve the source coding by stating the exact sample sizes.",
     ]
+
+
+def test_revision_asks_splits_either_and_accepts_findings_map_revise_shape() -> None:
+    feedback = (
+        "Reconstruct the Findings Map so that each retained source has an explicit "
+        "per-source direction on its primary outcome, with the specific effect "
+        "estimate or qualitative finding attached.; "
+        "Reconcile the abstract's '2 direct / 12 adjacent / 1 mechanistic' framing "
+        "with the Findings Map's 'direct / indirect / mechanistic' framing, or "
+        "define 'adjacent' and 'indirect' consistently across all sections.; "
+        "Expand the Tensions and Gaps section to enumerate the specific 26 "
+        "cross-study disagreements by pairing source A vs source B.; "
+        "Either remove sources whose design is review/perspective/bioinformatics "
+        "from the admitted direct-evidence counting, or relabel them and report "
+        "RoB judgments for the admitted RCT and cohort sources."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "The evidence profile contains 2 direct clinical sources, 12 adjacent "
+        "clinical sources, and 1 mechanistic source.\n\n"
+        "## Evidence Snapshot\n\n"
+        "Source directness breakdown: 2/15 retained sources directly address the "
+        "stated topic and aging-relevant hard endpoints; 13/15 are adjacent, "
+        "contextual, review-level, or mechanistic and are used only to bound "
+        "interpretation. Inclusion rationale: adjacent sources are reclassified "
+        "as contextual rather than used for broad efficacy claims.\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2024: outcome=Longevity; direction=positive; directness=direct; "
+        "tier=A1; finding=representative statistic p = 0.04.\n"
+        "- Jones 2025: outcome=Longevity; direction=null; directness=indirect; "
+        "tier=B2; finding=12 extracted claim(s).\n\n"
+        "Risk-of-bias appraisal summary: The public appraisal artifact reports "
+        "2 source-level rating rows; overall ratings are low=1, some concerns=1.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived.\n"
+        "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in Longevity because directions are positive versus null.\n"
+        "- Patel 2023 vs Chen 2022: surfaced tension/disagreement in Immune because directions are mixed versus negative.\n"
+        "- Lee 2021 vs Rao 2020: surfaced tension/disagreement in Safety because directions are unclear versus null.\n"
+    )
+
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert len(asks) == 4
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
 
 
 def test_deterministic_unmet_requires_species_study_design_summary_table() -> None:

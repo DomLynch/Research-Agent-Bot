@@ -1226,14 +1226,8 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "### Source Outcome-Class Map" in fixed
-    assert (
-        "- Smith 2024: Clinical source one: outcome=Cardiometabolic; direction=unclear; "
-        "directness=direct; tier=A1; finding=qualitative receipt-level finding recorded in the manifest."
-    ) in fixed
-    assert (
-        "- Jones 2025: outcome=Immune and Inflammation; direction=unclear; "
-        "directness=review; tier=B1; finding=qualitative receipt-level finding recorded in the manifest."
-    ) in fixed
+    assert "- Smith 2024: Clinical source one: outcome=Cardiometabolic; direction=unclear; directness=direct; tier=A1." in fixed
+    assert "- Jones 2025: outcome=Immune and Inflammation; direction=unclear; directness=review; tier=B1." in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 
