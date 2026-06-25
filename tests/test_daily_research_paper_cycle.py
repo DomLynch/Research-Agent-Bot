@@ -3367,6 +3367,68 @@ def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch
     assert ledger["attempts"][0]["submitted"] == 1
 
 
+def test_revise_with_existing_source_manifest_ignores_stale_topic_cooldown(tmp_path: Path, monkeypatch) -> None:
+    topic = "cardiovascular_subgroups"
+    _topic(tmp_path, topic)
+    source = _prior_run(tmp_path, topic, receipts=63, tensions=367, primary=21, level=5)
+    paper = source / "full_paper.md"
+    title = "Research Synthesis: Cardiovascular Subgroups — full paper"
+    paper.write_text(f"# {title}\n\n## Abstract\n\nA.", encoding="utf-8")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": "2026-06-25",
+        "run": source.name,
+        "topic": topic,
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+    }])
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-25-old.json", {
+        "started_at": _recent_start(),
+        "attempts": [
+            {"topic": topic, "submitted": 0},
+            {"topic": topic, "submitted": 0},
+        ],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda *_a, **_k: [])
+    feedback_seen: list[str | None] = []
+    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen))
+    preflights: list[dict[str, Any]] = []
+    original_preflight = cycle._preflight
+
+    def spy_preflight(*args: Any, **kwargs: Any) -> dict[str, Any]:
+        result = original_preflight(*args, **kwargs)
+        preflights.append(result)
+        return result
+
+    monkeypatch.setattr(cycle, "_preflight", spy_preflight)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([{
+            "artifactId": "cardio-review",
+            "submissionId": "sub-cardio",
+            "title": title,
+            "feedback": "Revise with a clearer Findings Map.",
+        }], None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    attempt = ledger["attempts"][0]
+    assert ledger["status"] == "submitted_to_researka"
+    assert preflights[-1]["recent_failed_attempts"] == 2
+    assert not any("recent_failed_attempts=" in reason for reason in preflights[-1]["reasons"])
+    assert attempt["receipt_preflight"]["status"] == "receipt_preflight_existing_ok"
+    assert attempt["submitted"] == 1
+    assert feedback_seen == ["Revise with a clearer Findings Map."]
+
+
 def test_revise_source_manifest_drift_fails_fast_before_synthesis(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     qdir = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims"

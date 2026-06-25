@@ -3463,7 +3463,9 @@ def run_cycle(
                 runs_root,
                 ledger_dir,
                 current_quant_claims=int(corpus.get("n_quant_claims") or 0),
-                ignore_recent_failures=bool(revision_source and source_precision_repair_cleared),
+                ignore_recent_failures=bool(
+                    revision_source and (existing_source_preflight or source_precision_repair_cleared)
+                ),
             )
             if not preflight["passed"]:
                 terminal_missing_manifest = (
