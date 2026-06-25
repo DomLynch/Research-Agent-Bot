@@ -2971,6 +2971,7 @@ def run_cycle(
         corpus_repaired_ok: set[str] = set()
         source_precision_repaired_ok: set[str] = set()
         current_source_precision: set[str] = set()
+        recent_source_precision_failed: set[str] = set()
         source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
         if source_precision_auto_excluded:
             ledger["source_precision_unrepairable_topics"] = sorted(source_precision_auto_excluded)
@@ -3134,6 +3135,40 @@ def run_cycle(
                     if selected:
                         ledger["preflight_reseed_selected"] = selected
             if not selected:
+                if (
+                    ledger["attempts"]
+                    and submit
+                    and mode == "fresh"
+                    and topic is None
+                    and current_source_precision
+                ):
+                    fallback_order = sorted(
+                        (
+                            repair_topic for repair_topic in current_source_precision
+                            if repair_topic not in (
+                                terminal_excluded | submitted_topics | published_topics
+                                | pending_revision_excluded | surface_repeat | writer_gate_skip
+                                | attempted | recent_source_precision_failed
+                            )
+                            and _topic_has_quant_floor(repair_topic)
+                        ),
+                        key=lambda t: (-_quant_claim_count(t), -_topic_support_score(t), _attempted_at(t, ledger_dir), t),
+                    )
+                    fallback_repairs: list[dict[str, Any]] = []
+                    for repair_topic in fallback_order[:_corpus_repair_limit()]:
+                        repair = _repair_low_source_precision_corpus(
+                            repair_topic, dry_run=synthesis_dry_run, timeout=_publish_seed_timeout(child_timeout()),
+                        )
+                        fallback_repairs.append({"topic": repair_topic, **repair})
+                        if _source_precision_repair_publishable(repair):
+                            source_precision_repaired_ok.add(repair_topic)
+                            source_precision_auto_excluded.discard(repair_topic)
+                            selected = repair_topic
+                            break
+                    if fallback_repairs:
+                        ledger["source_precision_fallback_repairs"] = fallback_repairs
+                    if selected:
+                        ledger["source_precision_fallback_selected"] = selected
                 if mode == "fresh" and topic is None and not topic_supply_refreshed:
                     topic_supply_refreshed = True
                     skip_slugs = selection_excluded | submitted_topics | published_topics
