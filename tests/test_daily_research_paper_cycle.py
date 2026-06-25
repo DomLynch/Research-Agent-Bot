@@ -4576,6 +4576,46 @@ def test_pending_revision_uses_submission_decision_when_reviews_feed_empty(tmp_p
     assert pending["feedback"] == "Clarify direct ABT-263 evidence."
 
 
+def test_pending_revision_retries_source_manifest_terminal_after_source_repair_request(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    title = "# Adjacent Evidence Brief: Cardiovascular Subgroups — full paper"
+    run = _seed_submitted_run(runs, "cardiovascular_subgroups", title)
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "cardiovascular_subgroups",
+        "fingerprint": "sha256:x",
+        "submission_id": "submission-1",
+        "date": "2026-06-25",
+    }])
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "title": title.removeprefix("# "),
+        "status": "terminal_revision_source_manifest_unavailable",
+        "handled_at": "2026-06-25T17:55:00+00:00",
+    }]})
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url=None: ({}, None))
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _submission_id: ({
+        "decision": "revise",
+        "decision_object_id": "decision-1",
+        "required_revisions": ["Reset the source bundle to directly address cardiovascular subgroups."],
+        "publication": None,
+    }, None))
+
+    pending, err = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        published_loader=lambda: (set(), None),
+    )
+
+    assert err is None
+    assert pending is not None
+    assert pending["topic"] == "cardiovascular_subgroups"
+    assert pending["source_run"] == run.name
+
+
 def test_submission_decision_fallback_does_not_route_accepted_publication(tmp_path: Path, monkeypatch) -> None:
     runs = tmp_path / "runs"
     run = _seed_submitted_run(runs, "senolytics", "# Hypothesis-Generating Brief: ABT-263 — full paper")

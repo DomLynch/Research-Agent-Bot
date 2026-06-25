@@ -1324,10 +1324,15 @@ def _pending_remote_revision(
                 and bool(matches)
                 and _revision_coverage_passes_current_finalizer(matches[-1][1], str(request.get("feedback") or ""))
             )
+            current_code_clears_source_manifest = (
+                latest_status == "terminal_revision_source_manifest_unavailable"
+                and _revision_requests_source_precision(str(request.get("feedback") or ""))
+            )
             if not (
                 current_code_repairs_surface
                 or current_code_clears_domain_scope
                 or current_code_clears_revision_coverage
+                or current_code_clears_source_manifest
             ):
                 continue
         if matches:
