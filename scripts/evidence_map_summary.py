@@ -88,10 +88,7 @@ def source_context_map(rows: Iterable[Mapping[str, Any]]) -> str:
         return ""
     lines = [
         "**Source-context map:** Source-title contexts are separated for interpretation and are not pooled as one clinical effect.",
-        "",
-        "| Source context | Sources | Signal summary |",
-        "|---|---:|---|",
     ]
     for label, group in sorted(by_context.items(), key=lambda item: (-len(item[1]), item[0])):
-        lines.append(f"| {label} | {len(group)} | {signal_summary_cell(group)} |")
+        lines.append(f"- {label}: {len(group)} sources; {signal_summary_cell(group)}.")
     return "\n".join(lines) + "\n"

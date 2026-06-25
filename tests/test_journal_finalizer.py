@@ -83,8 +83,8 @@ def test_phase_f_distinguishes_source_statistics_from_null_receipt_summary(tmp_p
     assert "significant source statistic in 1/1 sources; receipt-level direction coded null" in fixed
     assert "no extracted directional signal in 2/2 sources" not in fixed
     assert "Source-context map" in fixed
-    assert "| Oncology and cancer context | 2 | significant source statistic in 2/2 sources; receipt-level direction coded null |" in fixed
-    assert "| Infectious-disease and immunology context | 1 | significant source statistic in 1/1 sources; receipt-level direction coded null |" in fixed
+    assert "- Oncology and cancer context: 2 sources; significant source statistic in 2/2 sources; receipt-level direction coded null." in fixed
+    assert "- Infectious-disease and immunology context: 1 sources; significant source statistic in 1/1 sources; receipt-level direction coded null." in fixed
 
 
 def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> None:
