@@ -133,3 +133,12 @@ async def test_fullraw_query_timeout_overrides_long_corpus_timeout(monkeypatch: 
 async def test_fullraw_fail_soft_on_http_error(fullraw_env: None) -> None:
     async with _mock_client(lambda request: httpx.Response(503, content=b"down")) as client:
         assert await V5FullRawClient().search(client, "metformin", limit=3) == []
+
+
+@pytest.mark.asyncio
+async def test_fullraw_fail_soft_on_timeout(fullraw_env: None) -> None:
+    def responder(request: httpx.Request) -> httpx.Response:
+        raise httpx.ReadTimeout("slow fullraw shard sweep", request=request)
+
+    async with _mock_client(responder) as client:
+        assert await V5FullRawClient().search(client, "low dose lithium aging", limit=3) == []
