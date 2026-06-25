@@ -1052,10 +1052,17 @@ def _revision_requests_domain_scope_reset(feedback: str) -> bool:
     )
     if not has_domain_frame:
         return False
-    return (
-        ("does not support" in lower and ("framing" in lower or "overlay" in lower))
-        or ("does not match" in lower and ("actual question" in lower or "actual research question" in lower))
-        or ("remove" in lower and ("framing" in lower or "overlay" in lower))
+    frame = r"(?:framing|overlay)"
+    return any(
+        re.search(pattern, lower)
+        for pattern in (
+            rf"does not support\b.{{0,120}}\b{frame}\b",
+            rf"\b{frame}\b.{{0,120}}\bdoes not support\b",
+            r"does not match\b.{0,120}\bactual (?:research )?question\b",
+            r"actual (?:research )?question\b.{0,120}\bdoes not match\b",
+            rf"\bremove\b.{{0,120}}\b{frame}\b",
+            rf"\b{frame}\b.{{0,120}}\bremove\b",
+        )
     )
 
 

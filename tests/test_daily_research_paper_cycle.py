@@ -2138,6 +2138,16 @@ def test_revision_domain_scope_reset_matches_imported_longevity_frame() -> None:
     assert not cycle._revision_requests_domain_scope_reset(
         "Tighten the limitations and cite the relevant subgroup evidence.",
     )
+    assert not cycle._revision_requests_domain_scope_reset(
+        "Reconcile the abstract's '2 direct / 12 adjacent / 1 mechanistic' "
+        "framing with the Findings Map's 'direct / indirect / mechanistic' "
+        "framing, or define 'adjacent' and 'indirect' consistently across all "
+        "sections.; Expand the Tensions and Gaps section to enumerate the "
+        "specific 26 cross-study disagreements by pairing Kemna 2025 positive "
+        "AD-biomarker signal vs. the null longevity class.; Either remove "
+        "sources whose design is review/perspective/bioinformatics from the "
+        "admitted direct-evidence counting, or relabel them."
+    )
 
 
 def test_revise_lane_marks_domain_scope_mismatch_terminal(tmp_path: Path, monkeypatch) -> None:
