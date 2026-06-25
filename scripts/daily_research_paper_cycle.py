@@ -1510,6 +1510,15 @@ def _topic_has_quant_floor(topic: str) -> bool:
     return _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
 
 
+def _fresh_seed_candidate(topic: str) -> bool:
+    if _topic_has_quant_floor(topic):
+        return True
+    if (TOPIC_PACKS / f"{topic}.toml").exists():
+        return True
+    record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
+    return not record or _topic_support_score(topic) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+
+
 def _has_clean_ready_topic(
     topics: list[str],
     *,
@@ -1544,7 +1553,7 @@ def select_topic(
         candidates = fresh_candidates
     elif not allow_recent_blocked_fallback:
         return None
-    pool = [topic for topic in candidates if _publication_track_topic(topic)]
+    pool = [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
     if not pool:
         return None
     # Prefer topics with a local corpus first; empty generated frontier topics
