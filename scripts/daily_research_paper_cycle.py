@@ -75,6 +75,7 @@ TOPIC_SUPPLY_REFRESH_MAX_CREATED = 20
 SEED_TOPIC_TIMEOUT_SECONDS = 600
 PUBLISH_SEED_TIMEOUT_SECONDS = 120
 CORPUS_REPAIR_LIMIT = 1
+SOURCE_PRECISION_REPAIR_SCAN_LIMIT = 3
 RECEIPT_PREFLIGHT_REPAIR_ROUNDS = 2
 SOURCE_TOPIC_REPAIR_FLOOR = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
 REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
@@ -3038,7 +3039,9 @@ def run_cycle(
                     t,
                 ),
             )
-            for repair_topic in repair_order[:_corpus_repair_limit()]:
+            repair_successes = 0
+            repair_scan_limit = max(_corpus_repair_limit(), SOURCE_PRECISION_REPAIR_SCAN_LIMIT)
+            for repair_topic in repair_order[:repair_scan_limit]:
                 if repair_topic in source_precision_repairable:
                     source_precision_repair_attempted.add(repair_topic)
                     repair = _repair_low_source_precision_corpus(
@@ -3059,6 +3062,10 @@ def run_cycle(
                         corpus_repaired_ok.add(repair_topic)
                 if _source_precision_repair_publishable(repair):
                     source_precision_repaired_ok.add(repair_topic)
+                if repair_publishable:
+                    repair_successes += 1
+                    if repair_successes >= _corpus_repair_limit():
+                        break
             unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
             unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
             source_precision_auto_excluded -= source_precision_repaired_ok
@@ -3176,7 +3183,7 @@ def run_cycle(
                         ),
                     )
                     fallback_repairs: list[dict[str, Any]] = []
-                    for repair_topic in fallback_order[:_corpus_repair_limit()]:
+                    for repair_topic in fallback_order[:max(_corpus_repair_limit(), SOURCE_PRECISION_REPAIR_SCAN_LIMIT)]:
                         repair = _repair_low_source_precision_corpus(
                             repair_topic, dry_run=synthesis_dry_run, timeout=_publish_seed_timeout(child_timeout()),
                         )

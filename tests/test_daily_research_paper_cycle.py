@@ -255,6 +255,10 @@ def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path:
     })
     monkeypatch.setattr(cycle, "_published_topics", lambda *_a, **_k: {"published_high_support"})
     monkeypatch.setattr(cycle, "_topic_support_score", lambda topic: 100 if topic.endswith("high_support") else 1)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT)
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        False, "source_topic_precision_low:24/48<0.80", [],
+    ))
     monkeypatch.setenv("RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS", "17")
     repairs: list[tuple[str, int | None]] = []
 
@@ -1663,8 +1667,13 @@ def test_fresh_lane_excludes_unrepaired_source_precision_backlog(tmp_path: Path,
     })
     monkeypatch.setattr(cycle, "_published_topics", lambda *_a, **_k: {"clean_published"})
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
-    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
-        False, "source_topic_precision_low:0/10<0.80", [],
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: (
+        10 if topic == "aaa_failed_repair" else cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+    ))
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (
+        (False, "source_topic_precision_low:0/10<0.80", [Path(f"miss-{i}.json") for i in range(10)])
+        if topic == "aaa_failed_repair"
+        else (False, "source_topic_precision_low:24/48<0.80", [])
     ))
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     calls: dict[str, Any] = {}
@@ -1756,7 +1765,7 @@ def test_zero_claim_candidate_does_not_skip_source_precision_repair(tmp_path: Pa
 
     def fake_precision(topic: str, **_kwargs: Any) -> tuple[bool, str, list[Path]]:
         if topic == "aaa_source_low" and topic not in repaired:
-            return False, "source_topic_precision_low:0/10<0.50", [Path("off-topic.json")]
+            return False, "source_topic_precision_low:24/25<0.50", [Path("off-topic.json")]
         return True, "source_topic_precision_ok:10/10", []
 
     def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
@@ -1774,6 +1783,9 @@ def test_zero_claim_candidate_does_not_skip_source_precision_repair(tmp_path: Pa
         return 0
 
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: (
+        cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT + 1 if topic == "aaa_source_low" else 0
+    ))
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
@@ -6120,15 +6132,15 @@ def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tm
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     qdir = cycle.CORPORA / "epigenome_editing_longevity" / "quant_claims"
     qdir.mkdir(parents=True)
-    for i in range(4):
+    for i in range(cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT):
         _write_json(qdir / f"epigenome_editing_{i}.quant_claims.json", {"paper_id": f"epigenome_editing_{i}"})
-    for i in range(15):
+    for i in range(cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT):
         _write_json(qdir / f"supercapacitor_{i}.quant_claims.json", {"paper_id": f"supercapacitor_{i}"})
     synthesized: list[str] = []
 
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
         "status": "source_precision_repaired",
-        "source_topic_precision_before": "source_topic_precision_low:4/19<0.50",
+        "source_topic_precision_before": "source_topic_precision_low:24/48<0.50",
         "source_topic_precision_after": "source_topic_precision_ok:24/24",
         "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
     })
@@ -6158,7 +6170,7 @@ def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tm
     )
 
     assert synthesized == ["epigenome_editing_longevity"]
-    assert ledger["corpus_repairs"][0]["source_topic_precision_before"] == "source_topic_precision_low:4/19<0.50"
+    assert ledger["corpus_repairs"][0]["source_topic_precision_before"] == "source_topic_precision_low:24/48<0.50"
     assert ledger["status"] == "submitted_to_researka"
 
 
@@ -7089,12 +7101,14 @@ def test_cycle_skips_source_precision_repair_when_clean_topic_ready(tmp_path: Pa
 
     def fake_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
         if topic in {"aaa_low_source", "bbb_low_source"}:
-            return False, "source_topic_precision_low:1/4<0.50", [Path(f"{topic}.json")]
+            return False, "source_topic_precision_low:24/25<0.50", [Path(f"{topic}.json")]
         return True, "source_topic_precision_ok:4/4", []
 
     repairs: list[str] = []
     synthesized: list[str] = []
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", fake_precision)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT + 1)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT + 1)
 
     def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
         repairs.append(topic)
@@ -7250,8 +7264,9 @@ def test_cycle_skips_recent_source_precision_failure_before_repairing_next_topic
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (
-        False, "source_topic_precision_low:1/4<0.50", [Path(f"{topic}.json")],
+        False, "source_topic_precision_low:24/25<0.50", [Path(f"{topic}.json")],
     ))
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT + 1)
     repairs: list[str] = []
 
     def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
@@ -7338,6 +7353,7 @@ def test_fresh_cycle_repairs_source_precision_fallback_after_clean_topic_receipt
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
     monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: {"bbb_low_source"})
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT)
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
         True, "source_topic_precision_ok:24/24", [],
     ))
