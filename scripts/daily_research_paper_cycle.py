@@ -1182,7 +1182,7 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         key = _revision_key(row)
         handled_at = _parse_time(str(row.get("handled_at") or ""))
         reviewed_at = active_reviewed.get(key)
-        if reviewed_at is None or (handled_at and (reviewed_at is None or handled_at >= reviewed_at)):
+        if reviewed_at is None or (handled_at and handled_at >= reviewed_at):
             handled.add(key)
     return handled
 
