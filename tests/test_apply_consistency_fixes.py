@@ -332,8 +332,37 @@ def test_lightweight_polish_rebuilds_thin_results_from_manifest() -> None:
         {"outcome_class": "longevity", "effect_direction": "positive", "directness": "review", "n_claims": 2},
     ]}
     out, log = fixes.apply_lightweight_public_polish(paper, manifest=manifest)
-    assert "| TORC1 inhibitor / Cardiometabolic | n=1; claims=3 | null signal" in out
+    assert "| TORC1 inhibitor / Cardiometabolic | n=1; claims=3 | no extracted directional signal in 1/1 sources" in out
     assert "Broken duplicate paragraph" not in out
+    assert any(i["fix_type"] == "thin_results_rebuild" for i in log)
+
+
+def test_lightweight_polish_preserves_source_statistic_signal_in_thin_results() -> None:
+    paper = "## Results\n\nBroken.\n\n## References\n\n- Smith 2024.\n"
+    manifest = {"review_type": "thin_corpus_brief", "topic": "everolimus", "receipts": [
+        {
+            "outcome_class": "contextual_other",
+            "effect_direction": "null",
+            "directness": "indirect",
+            "n_claims": 28,
+            "p_values": ["p < 0.001"],
+            "source_title": "STAT3 Polymorphism Associates With mTOR Inhibitor-Induced Interstitial Lung Disease in Patients With Renal Cell Carcinoma",
+        },
+        {
+            "outcome_class": "immune_inflammation",
+            "effect_direction": "null",
+            "directness": "review",
+            "n_claims": 17,
+            "p_values": ["P = 0.025"],
+            "source_title": "TORC1 Inhibition with RTB101 to Decrease Respiratory Tract Infections in Older Adults",
+        },
+    ]}
+    out, log = fixes.apply_lightweight_public_polish(paper, manifest=manifest)
+    assert "significant source statistic in 1/1 sources; receipt-level direction coded null" in out
+    assert "no extracted directional signal" not in out
+    assert "Source-context map" in out
+    assert "Oncology and cancer context" in out
+    assert "Infectious-disease and immunology context" in out
     assert any(i["fix_type"] == "thin_results_rebuild" for i in log)
 
 

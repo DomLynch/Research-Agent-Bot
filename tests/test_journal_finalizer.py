@@ -44,6 +44,49 @@ def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path)
     assert "null signal in 2/2 sources" not in fixed
 
 
+def test_phase_f_distinguishes_source_statistics_from_null_receipt_summary(tmp_path: Path) -> None:
+    paper = "## Results\n\nShort.\n\n## References\n\n- Smith 2024.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "everolimus",
+        "receipts": [
+            {
+                "outcome_class": "contextual_other",
+                "n_claims": 28,
+                "effect_direction": "null",
+                "directness": "indirect",
+                "p_values": ["p < 0.001"],
+                "source_title": "STAT3 Polymorphism Associates With mTOR Inhibitor-Induced Interstitial Lung Disease in Patients With Renal Cell Carcinoma",
+            },
+            {
+                "outcome_class": "contextual_other",
+                "n_claims": 24,
+                "effect_direction": "null",
+                "directness": "indirect",
+                "p_values": ["p = 0.034"],
+                "source_title": "Vitamin D Reverts Cancer Resistance to the mTOR Inhibitor Everolimus in Hepatocellular Carcinoma",
+            },
+            {
+                "outcome_class": "immune_inflammation",
+                "n_claims": 17,
+                "effect_direction": "null",
+                "directness": "review",
+                "p_values": ["P = 0.025"],
+                "source_title": "TORC1 Inhibition with RTB101 to Decrease Respiratory Tract Infections in Older Adults",
+            },
+        ],
+    }), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert logs
+    assert "significant source statistic in 2/2 sources; receipt-level direction coded null" in fixed
+    assert "significant source statistic in 1/1 sources; receipt-level direction coded null" in fixed
+    assert "no extracted directional signal in 2/2 sources" not in fixed
+    assert "Source-context map" in fixed
+    assert "| Oncology and cancer context | 2 | significant source statistic in 2/2 sources; receipt-level direction coded null |" in fixed
+    assert "| Infectious-disease and immunology context | 1 | significant source statistic in 1/1 sources; receipt-level direction coded null |" in fixed
+
+
 def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> None:
     from scripts.review_noise_control import restore_surface_floors
 

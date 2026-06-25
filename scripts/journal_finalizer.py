@@ -2972,6 +2972,8 @@ def _phase_e_structural_fallback(
 def _phase_f_reconcile_results_table(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
+    from evidence_map_summary import signal_summary_cell, source_context_map, strip_source_context_map
+
     manifest_path = out_dir / "manifest.json"
     if not manifest_path.is_file():
         return text, []
@@ -2987,7 +2989,7 @@ def _phase_f_reconcile_results_table(
     )
     if not results_match:
         return text, []
-    results = results_match.group(1)
+    results = strip_source_context_map(results_match.group(1))
     from agent.journal_surface_gate import _outcome_key
     groups: dict[str, list[dict[str, Any]]] = {}
     for r in receipts:
@@ -3014,19 +3016,7 @@ def _phase_f_reconcile_results_table(
         directness_cell = "; ".join(
             f"{count} {kind}" for kind, count in sorted(directness_counts.items())
         ) or "—"
-        effect_counts: dict[str, int] = {}
-        for r in matching:
-            e = str(r.get("effect_direction") or "").strip().lower()
-            if e:
-                effect_counts[e] = effect_counts.get(e, 0) + 1
-        top_effect = (
-            max(effect_counts.items(), key=lambda kv: (kv[1], kv[0]))[0]
-            if effect_counts else "unclear"
-        )
-        signal_cell = (
-            f"no extracted directional signal in {effect_counts.get(top_effect, 0)}/{n} sources"
-            if top_effect == "null" else f"{top_effect} signal in {effect_counts.get(top_effect, 0)}/{n} sources"
-        ) if n else "no sources"
+        signal_cell = signal_summary_cell(matching)
         limitation_cell = (
             "single-source slice; hypothesis-generating"
             if n <= 1 else "limited corpus depth in this outcome class"
@@ -3041,7 +3031,8 @@ def _phase_f_reconcile_results_table(
             slug, display, n, n_claims, signal_cell,
             directness_cell, limitation_cell,
         ))
-    table = "\n".join(rows) + "\n"
+    context_table = source_context_map(receipts)
+    table = "\n".join(rows) + "\n" + (f"\n{context_table}" if context_table else "")
     lines = results.splitlines(keepends=True)
     try:
         start = next(i for i, line in enumerate(lines) if line.strip() == rows[0])

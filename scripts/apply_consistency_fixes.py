@@ -31,6 +31,7 @@ from pathlib import Path
 from agent.topic_display import humanize_topic, intervention_label
 from agent.outcome_class_remap import outcome_key
 from direction_consistency import repair_abstract_direction_summary
+from evidence_map_summary import signal_summary_cell, source_context_map
 
 __all__ = ["apply_fixes", "main"]
 
@@ -693,18 +694,18 @@ def _rebuild_thin_results_from_manifest(paper_md: str, manifest: dict | None) ->
     topic_anchor = _topic_display_name(topic) if topic else ""
     lines = ["## Results", "", "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |", "|---|---|---|---|---|"]
     for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
-        dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
         direct = Counter(str(r.get("directness") or "indirect").lower() for r in group)
-        dominant, dominant_n = dirs.most_common(1)[0]
         label = outcome.replace("_", " ").title()
         row_label = f"{topic_anchor} / {label}" if topic_anchor else label
-        lines.append(f"| {row_label} | n={len(group)}; claims={sum(int(r.get('n_claims') or 0) for r in group)} | {dominant} signal in {dominant_n}/{len(group)} sources | {direct.most_common(1)[0][1]} {direct.most_common(1)[0][0]} | {'single-source support' if len(group) == 1 else 'primary-tier limited'} |")
+        lines.append(f"| {row_label} | n={len(group)}; claims={sum(int(r.get('n_claims') or 0) for r in group)} | {signal_summary_cell(group)} | {direct.most_common(1)[0][1]} {direct.most_common(1)[0][0]} | {'single-source support' if len(group) == 1 else 'primary-tier limited'} |")
+    context_table = source_context_map(receipts)
+    if context_table:
+        lines += ["", context_table.rstrip()]
     lines += ["", "This evidence brief reports outcome packets as a map of retained evidence rather than as a full journal Results narrative or pooled effect estimate."]
     for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
-        dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
         direct = Counter(str(r.get("directness") or "indirect").lower() for r in group)
         label = outcome.replace("_", " ").title()
-        lines += ["", f"### {label} Outcomes", "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Directional coding: {', '.join(f'{k}={v}' for k, v in sorted(dirs.items()))}. Directness coding: {', '.join(f'{k}={v}' for k, v in sorted(direct.items()))}."]
+        lines += ["", f"### {label} Outcomes", "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Signal summary: {signal_summary_cell(group)}. Directness coding: {', '.join(f'{k}={v}' for k, v in sorted(direct.items()))}."]
     rebuilt = "\n".join(lines).rstrip() + "\n"
     patched = re.sub(r"^##\s+Results\b.*?(?=^##\s+|\Z)", rebuilt + "\n", paper_md, count=1, flags=re.M | re.S)
     return patched, int(patched != paper_md)
