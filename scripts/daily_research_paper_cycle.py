@@ -3062,6 +3062,19 @@ def run_cycle(
                     allow_recent_blocked_fallback=not (mode == "fresh" and submit and topic is None),
                 )
             )
+            if not selected and not revision_source and topic is None and mode != "revise":
+                retryable_preflight = {t for t in preflight_blocked if _topic_has_quant_floor(t)}
+                if retryable_preflight:
+                    selected = select_topic(
+                        topics,
+                        ledger_dir,
+                        runs_root=runs_root,
+                        remote_seen=remote_seen,
+                        exclude=selection_excluded - retryable_preflight,
+                        allow_recent_blocked_fallback=not (mode == "fresh" and submit),
+                    )
+                    if selected:
+                        ledger["preflight_reseed_selected"] = selected
             if not selected:
                 if mode == "fresh" and topic is None and not topic_supply_refreshed:
                     topic_supply_refreshed = True

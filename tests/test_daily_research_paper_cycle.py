@@ -1092,6 +1092,49 @@ def test_cycle_skips_weak_generated_corpus_repair_topic(tmp_path: Path, monkeypa
     assert "corpus_repairs" not in ledger
 
 
+def test_cycle_reseeds_seedable_backlog_after_selection(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "ready_cached", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_topics", lambda *_a, **_k: {"ready_cached"})
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: pytest.fail(f"unexpected repair: {topic}"))
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    ensured: list[str] = []
+    synthesized: list[str] = []
+
+    def fake_corpus(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        ensured.append(topic)
+        return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=fake_corpus,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ensured == ["ready_cached"]
+    assert synthesized == ["ready_cached"]
+    assert ledger["status"] == "submitted_to_researka"
+    assert "corpus_repairs" not in ledger
+
+
 def test_select_topic_falls_back_to_score_when_all_attempted(tmp_path: Path, monkeypatch) -> None:
     """Steady state (NOT the orbit bug): once every publish-ready candidate has
     been attempted, the untried-first flag is uniform, so selection falls back
@@ -6530,7 +6573,7 @@ def test_cycle_skips_preflight_repair_when_clean_topic_ready(tmp_path: Path, mon
     assert ledger["status"] == "submitted_to_researka"
 
 
-def test_cycle_repairs_preflight_blocked_topic_when_no_clean_topic_ready(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_reseeds_preflight_blocked_topic_when_no_clean_topic_ready(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _prior_run(tmp_path, "aaa_thin_topic", receipts=6, tensions=0, primary=0)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
@@ -6544,9 +6587,7 @@ def test_cycle_repairs_preflight_blocked_topic_when_no_clean_topic_ready(tmp_pat
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
-    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: {
-        "status": "corpus_repaired", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
-    })
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_k: pytest.fail(f"unexpected repair: {topic}"))
     topics: list[str] = []
 
     def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
@@ -6566,8 +6607,9 @@ def test_cycle_repairs_preflight_blocked_topic_when_no_clean_topic_ready(tmp_pat
         max_attempts=1,
     )
 
-    assert ledger["corpus_repairs"][0]["topic"] == "aaa_thin_topic"
-    assert ledger["topic_status"]["aaa_thin_topic"] == "ready"
+    assert "corpus_repairs" not in ledger
+    assert ledger["topic_status"]["aaa_thin_topic"] == "preflight_blocked"
+    assert ledger["preflight_reseed_selected"] == "aaa_thin_topic"
     assert topics == ["aaa_thin_topic"]
     assert ledger["status"] == "submitted_to_researka"
 
