@@ -309,6 +309,20 @@ def test_abstract_language_gate_blocks_duplicate_phrases_and_templates():
     assert "unresolved public template: source(s)" in details
 
 
+def test_abstract_language_gate_allows_category_list_conjunction_repeat():
+    paper = _paper("| Smith 2024 | safety | older adults | unclear | n/a | B1 |")
+    paper = paper.replace(
+        "## Abstract\n\n" + _words(150, "abstract"),
+        "## Abstract\n\n"
+        "Mixed signals are summarized in cardiometabolic, mortality and survival, "
+        "safety, and safety and comorbidity outcome classes. "
+        + _words(130, "abstract"),
+    )
+    report = evaluate_journal_surface(paper)
+    details = " ".join(i.detail for i in report.issues)
+    assert "duplicate adjacent phrase: safety and" not in details
+
+
 def test_abstract_zero_count_profile_cannot_contradict_body():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(
