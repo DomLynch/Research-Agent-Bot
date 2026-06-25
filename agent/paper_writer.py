@@ -686,8 +686,6 @@ async def render_full_paper(
             background_lit_entries=background_lit_entries,
         )
         _log_section_done("discussion", sections["discussion"])
-        from agent.paper_writer_backstop import apply_section_backstop
-        sections = await apply_section_backstop(sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix, chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries, write_anchored_fn=_write_anchored_section, write_scoped_fn=_write_scoped_section)
     sections["limitations_full"] = await _write_anchored_section(
         name="limitations_full", heading="## Limitations",
         system_prompt=_prompts["limitations_full"], user_prompt=user,
@@ -715,6 +713,7 @@ async def render_full_paper(
     # audit-gated section that came in below floor. Single-shot to
     # bound wall time.
     if not _thin:
+        from agent.paper_writer_backstop import apply_section_backstop
         sections = await apply_section_backstop(sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix, chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries, write_anchored_fn=_write_anchored_section, write_scoped_fn=_write_scoped_section)
         from agent.paper_writer_backstop import repair_discussion_minimum_quality
         sections["discussion"] = repair_discussion_minimum_quality(

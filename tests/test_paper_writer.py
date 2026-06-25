@@ -325,7 +325,8 @@ def test_full_render_repairs_abstract_and_discussion_before_assembly(monkeypatch
     assert "**Thesis:**" in md
     assert "**Resolution criteria:**" in md
     assert "substantive discussion" in md
-    assert order.index("backstop") < order.index("conclusion")
+    assert order.count("backstop") == 1
+    assert order.index("conclusion") < order.index("backstop")
 
 
 def test_strip_rendered_citation_markers_removes_body_metadata() -> None:

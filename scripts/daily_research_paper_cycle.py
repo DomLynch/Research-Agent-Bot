@@ -2960,14 +2960,18 @@ def run_cycle(
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
             current_source_precision = _current_low_source_precision_topics(topics)
+            recent_source_precision_failed = _source_precision_repair_topics(ledger_dir)
             if remote_revision:
                 current_source_precision.discard(str(remote_revision.get("topic") or ""))
             if current_source_precision:
                 ledger["source_precision_backlog_topics"] = sorted(current_source_precision)
                 ledger["source_precision_backlog_count"] = len(current_source_precision)
+            if recent_source_precision_failed:
+                ledger["source_precision_recent_blocked_topics"] = sorted(recent_source_precision_failed)
+                source_precision_auto_excluded |= recent_source_precision_failed
             repairable = (
                 _corpus_repair_topics(ledger_dir) | current_source_precision
-            ) - terminal_excluded - submitted_topics - published_topics - pending_revision_excluded - surface_repeat - writer_gate_skip
+            ) - terminal_excluded - submitted_topics - published_topics - pending_revision_excluded - surface_repeat - writer_gate_skip - recent_source_precision_failed
             source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
             selectable_before_repair = select_topic(
                 topics,
