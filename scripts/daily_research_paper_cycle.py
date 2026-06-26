@@ -207,12 +207,13 @@ def _submit_ledger_paths_for_reconciliation(runs_root: Path, date: str | None) -
     return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
 
 
-def _refresh_submit_day_summary(ledger: dict[str, Any], runs_root: Path) -> None:
+def _refresh_submit_day_summary(ledger: dict[str, Any], runs_root: Path) -> bool:
     date = str(ledger.get("date") or "")
     if not DAY_KEY_RE.fullmatch(date):
-        return
+        return False
     summary = ledger.get("day_summary")
     summary = summary if isinstance(summary, dict) else {}
+    before = dict(summary)
     durable_submitted = submit_bridge._submitted_count_for_date(
         runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
         date,
@@ -230,6 +231,7 @@ def _refresh_submit_day_summary(ledger: dict[str, Any], runs_root: Path) -> None
     }
     if day_summary["submitted"] or day_summary["published"]:
         ledger["day_summary"] = day_summary
+    return ledger.get("day_summary") != before
 
 
 def _ledger_run_names(ledger: dict[str, Any], *, submitted_only: bool = True) -> list[str]:
@@ -418,8 +420,9 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        if _reconcile_published_ledger(ledger, runs_root, remote_seen):
-            _refresh_submit_day_summary(ledger, runs_root)
+        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen)
+        changed = _refresh_submit_day_summary(ledger, runs_root) or changed
+        if changed:
             _write_json(ledger_path, ledger)
             updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}")
     return {
