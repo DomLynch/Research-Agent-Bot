@@ -1973,6 +1973,16 @@ def _receipt_topic_identity(paper_id: str, paper_meta: dict, claims: list[dict])
     return " ".join(str(field or "") for field in fields)
 
 
+def _receipt_source_identity(paper_id: str, paper_meta: dict) -> str:
+    fields = [
+        paper_id,
+        paper_meta.get("title"),
+        paper_meta.get("abstract"),
+        paper_meta.get("journal"),
+    ]
+    return " ".join(str(field or "") for field in fields)
+
+
 def _is_retracted_source(paper_meta: dict) -> bool:
     title = str(paper_meta.get("title") or "")
     return bool(re.search(r"\b(?:retracted\s+article|retraction\s+notice)\b", title, re.I))
@@ -2330,6 +2340,13 @@ def build_receipts_from_quant_claims(
             continue
         agg = _aggregate_paper(paper_id, claims)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
+        if (
+            directness == "direct"
+            and not is_source_topic_specific(
+                topic, _receipt_source_identity(paper_id, meta), aliases=aliases,
+            )
+        ):
+            continue
         # Slice 37: partial-only papers downgrade tier so the audit
         # spine reflects that the receipt is review-tier evidence, not
         # a primary endpoint paper. Universal — no topic-specific logic.
