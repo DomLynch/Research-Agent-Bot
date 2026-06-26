@@ -1350,7 +1350,10 @@ def _pending_remote_revision(
                 and not _revision_requests_domain_scope_reset(str(request.get("feedback") or ""))
             )
             current_code_clears_revision_coverage = (
-                latest_status == "revision_coverage_unmet"
+                latest_status in {
+                    "revision_coverage_unmet",
+                    "terminal_revise_retry_budget_insufficient",
+                }
                 and bool(matches)
                 and _revision_coverage_passes_current_finalizer(matches[-1][1], str(request.get("feedback") or ""))
             )

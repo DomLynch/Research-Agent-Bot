@@ -4476,6 +4476,47 @@ def test_pending_remote_revision_reopens_stale_revision_coverage_unmet(
     assert pending["source_run"] == source_run.name
 
 
+def test_pending_remote_revision_reopens_retry_budget_terminal_when_current_code_covers_asks(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    title = "Hypothesis-Generating Brief: Cardiovascular Subgroups — full paper"
+    source_run = _seed_submitted_run(runs, "cardiovascular_subgroups", f"# {title}")
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": title,
+        "status": "terminal_revise_retry_budget_insufficient",
+        "handled_at": "2026-06-26T01:36:54+00:00",
+    }]})
+    monkeypatch.setattr(
+        cycle,
+        "_revision_coverage_passes_current_finalizer",
+        lambda run, feedback: run == source_run and "source attribution" in feedback,
+    )
+    request = {
+        "artifactId": "cardio-review",
+        "title": title,
+        "topic": "cardiovascular_subgroups",
+        "feedback": "Tighten source attribution.",
+        "reviewedAt": "2026-06-26T00:49:00+00:00",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["artifactId"] == "cardio-review"
+    assert pending["source_run"] == source_run.name
+
+
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", target_journal=True)
     _topic(tmp_path, "telomere_biomarker_effects", target_journal=True)
