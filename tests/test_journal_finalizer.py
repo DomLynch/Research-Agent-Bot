@@ -2495,8 +2495,11 @@ def test_revision_audit_notes_answer_claim_count_and_doi_gap_asks(tmp_path: Path
     fixed, logs = journal_finalizer._phase_d_revision_audit_notes(paper, tmp_path)
 
     assert "Claim-count audit note: The Dosing and Pharmacokinetics slice count" in fixed
-    assert "1 retained source(s) contribute 79 extracted claim(s)" in fixed
-    assert "Source-context verification gap: 1 source-bundle record(s) have no DOI" in fixed
+    assert "1 retained source contribute 79 extracted claims" in fixed
+    assert "source(s)" not in fixed
+    assert "claim(s)" not in fixed
+    assert "Source-context verification gap: 1 source-bundle record have no DOI" in fixed
+    assert "record(s)" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, revision_coverage.revision_asks(feedback)) == []
     assert logs == [
         journal_finalizer.FinalizerLogEntry(

@@ -2617,10 +2617,12 @@ def _claim_count_audit_note(feedback: str, out_dir: Path) -> str:
         key=lambda item: (_feedback_mentions(lower, item[0]), sum(int(r.get("n_claims") or 0) for r in item[1])),
     )
     claims = sum(int(row.get("n_claims") or 0) for row in selected_rows)
+    source_word = "source" if len(selected_rows) == 1 else "sources"
+    claim_word = "claim" if claims == 1 else "claims"
     return (
         f"Claim-count audit note: The {selected} slice count is derived from the claim registry. "
         f"The claim-derivation protocol counts extracted claim records, not independent studies: "
-        f"{len(selected_rows)} retained source(s) contribute {claims} extracted claim(s) in this slice. "
+        f"{len(selected_rows)} retained {source_word} contribute {claims} extracted {claim_word} in this slice. "
         "A high count from one source is therefore interpreted as source-bounded density, "
         "not independent studies or pooled effect certainty."
     )
@@ -2644,8 +2646,9 @@ def _source_identifier_gap_note(feedback: str, out_dir: Path) -> str:
     missing = [row for row in rows if isinstance(row, dict) and not _row_has_public_identifier(row)]
     if not missing:
         return ""
+    record_word = "record" if len(missing) == 1 else "records"
     return (
-        f"Source-context verification gap: {len(missing)} source-bundle record(s) have no DOI, "
+        f"Source-context verification gap: {len(missing)} source-bundle {record_word} have no DOI, "
         "PMID, PMCID, or trial identifier in the available metadata. They remain traceable "
         "source-bundle records, but are distinguished from externally identifier-verified "
         "peer-reviewed sources in the source-context map and do not independently upgrade "
