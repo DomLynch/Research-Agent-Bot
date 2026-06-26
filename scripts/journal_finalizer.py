@@ -1227,7 +1227,23 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
     match = re.search(r"^## Conclusion\b(?P<body>.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not match or replacement.lower() in match.group("body").lower():
         return text, 0
-    body, n = pattern.subn(replacement, match.group("body"), count=1)
+    body = match.group("body")
+    n = 0
+    rationale_replacement = (
+        "the retained evidence profile defines contextual associations and "
+        "candidate endpoints for follow-up, not proof that this is a viable "
+        "geroscience intervention target"
+    )
+    body, rationale_n = re.subn(
+        r"the retained clinical and mechanistic evidence profile defines a bounded geroscience rationale",
+        rationale_replacement,
+        body,
+        count=1,
+        flags=re.I,
+    )
+    n += rationale_n
+    body, pattern_n = pattern.subn(replacement, body, count=1)
+    n += pattern_n
     if not n:
         return text, 0
     return text[:match.start("body")] + body + text[match.end("body"):], n
@@ -1643,14 +1659,10 @@ def _phase_d_substantive_evidence_synthesis(
     examples = _manifest_signal_examples(rows)
     if not examples:
         return text, []
-    result_highlights = _manifest_result_highlights(rows)
-    result_sentence = ""
-    if result_highlights:
-        result_sentence = (
-            "Concrete source-result highlights include: "
-            + "; ".join(result_highlights[:6])
-            + ". "
-        )
+    key_finding_lines = _manifest_key_finding_lines(rows)
+    result_sentence = "\n".join(f"- {line}" for line in key_finding_lines[:5])
+    if result_sentence:
+        result_sentence += "\n\n"
     counts: dict[str, int] = {}
     for row in rows:
         direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
@@ -1669,15 +1681,19 @@ def _phase_d_substantive_evidence_synthesis(
         "mechanistic, or contextual evidence remains hypothesis-generating."
     )
     key_findings = (
-        "Key findings from source synthesis: "
+        "Key findings from source synthesis:\n\n"
         f"{result_sentence}"
-        "First, the strongest positive or "
-        "favorable signals are treated as narrow source-level signals, not broad "
-        f"clinical proof ({'; '.join(examples[:3])}). Second, negative, mixed, "
-        "unclear, or no-directional-signal rows are given equal interpretive "
-        f"weight ({'; '.join(examples[3:6] or examples[:3])}). Third, the "
-        "bounded conclusion follows from the balance of source direction, outcome "
-        "class, evidence tier, and directness rather than from source count alone."
+        "Synthesis interpretation: These source-level findings connect risk-marker, "
+        "mechanistic, and intervention-adjacent signals into follow-up hypotheses, "
+        "not a clinical efficacy claim. Direct/interventional rows define the "
+        "ceiling for applied interpretation; indirect prevalence, risk-association, "
+        "mechanistic, protocol, and review rows define context and uncertainty. "
+        f"Representative coded source verdicts remain: {'; '.join(examples[:4])}. "
+        "The bounded conclusion follows from source direction, outcome class, "
+        "evidence tier, and directness rather than from source count alone. "
+        "Publication-year note: citation years follow the manifest metadata; "
+        "when DOI/PubMed dates differ, the source should be treated as "
+        "bibliographic/in-press metadata and not used for year-specific claims."
     )
     patched, n1 = _prepend_or_create_section_paragraph(text, "Evidence Landscape", landscape)
     patched, n2 = _prepend_or_create_section_paragraph(patched, "Key Findings", key_findings)
@@ -1746,6 +1762,39 @@ def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
             f"finding={_manifest_row_finding(row)}; claims={claims}"
         )
     return examples
+
+
+def _manifest_key_finding_lines(rows: list[dict[str, Any]]) -> list[str]:
+    lines = []
+    for row in sorted(rows, key=_manifest_key_finding_score):
+        title = str(row.get("source_title") or "").strip()
+        if not title:
+            continue
+        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+        directness = str(row.get("directness") or "unknown").strip() or "unknown"
+        tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
+        lines.append(
+            f"{citation}: {_source_result_label(title)}; {_manifest_row_finding(row)}; "
+            f"outcome={outcome}; direction={direction}; directness={directness}; tier={tier}."
+        )
+        if len(lines) >= 8:
+            break
+    return lines
+
+
+def _manifest_key_finding_score(row: dict[str, Any]) -> tuple[int, int, int]:
+    title = str(row.get("source_title") or "").strip()
+    values = row.get("p_values")
+    has_stat = isinstance(values, list) and any(str(value).strip() for value in values)
+    try:
+        claims = int(row.get("n_claims") or 0)
+    except (TypeError, ValueError):
+        claims = 0
+    directness = str(row.get("directness") or "").lower()
+    direct_bonus = 0 if directness.startswith("direct") else 1
+    return (0 if title and has_stat else 1 if title else 2, direct_bonus, -claims)
 
 
 def _manifest_result_highlights(rows: list[dict[str, Any]]) -> list[str]:
