@@ -152,6 +152,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_concrete_research_question,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
+            _asks_forward_dated_ai_disclosure_note,
             _asks_publication_year_note,
             _asks_intervention_target_boundary,
             _asks_rct_count_reconciliation,
@@ -245,6 +246,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
         return _substantive_evidence_synthesis_is_stated(paper_md)
+    if _asks_forward_dated_ai_disclosure_note(lower):
+        return _forward_dated_ai_disclosure_note_is_stated(paper_md)
     if _asks_publication_year_note(lower):
         return _publication_year_note_is_stated(paper_md)
     if _asks_intervention_target_boundary(lower):
@@ -1285,6 +1288,32 @@ def _asks_publication_year_note(text: str) -> bool:
         or "doi/pubmed dates" in text
         or ("in press" in text and "citation" in text)
     )
+
+
+def _asks_forward_dated_ai_disclosure_note(text: str) -> bool:
+    return (
+        "forward-dated" in text
+        and "citation" in text
+        and "ai-use disclosure" in text
+        and any(token in text for token in ("limitations", "reproducibility", "remove or relocate"))
+    )
+
+
+def _forward_dated_ai_disclosure_note_is_stated(paper_md: str) -> bool:
+    limitations = _section(paper_md, "Limitations").lower()
+    has_forward_date_note = (
+        any(token in limitations for token in ("forward-dated", "2026 citation", "publication-year note"))
+        and any(token in limitations for token in ("reproducibility", "bibliographic", "in-press"))
+    )
+    substantive_sections = (
+        "Key Findings", "Evidence Landscape", "Results", "Discussion",
+        "Limitations", "Conclusion",
+    )
+    ai_crowds_substance = any(
+        "ai-use disclosure" in _section(paper_md, section).lower()
+        for section in substantive_sections
+    )
+    return has_forward_date_note and not ai_crowds_substance
 
 
 def _publication_year_note_is_stated(paper_md: str) -> bool:

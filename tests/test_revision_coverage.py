@@ -1812,6 +1812,48 @@ def test_revision_asks_splits_latest_vascular_feedback_starts() -> None:
     assert revision_coverage.deterministic_known_asks(asks[:3]) == asks[:3]
 
 
+def test_forward_dated_ai_disclosure_ask_accepts_methods_relocation() -> None:
+    ask = (
+        "In Limitations, add a specific statement about forward-dated (2026) "
+        "citations and the implications for reproducibility, and remove or "
+        "relocate the AI-use disclosure so it does not crowd the substantive sections."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### AI-use disclosure\n\n"
+        "Source retrieval and prose drafting were assisted by large language models "
+        "under a deterministic audit-trail protocol.\n\n"
+        "## Results\n\n"
+        "The evidence map is summarized.\n\n"
+        "## Limitations\n\n"
+        "Forward-dated 2026 citations are retained only as bibliographic/in-press "
+        "metadata; their reproducibility implications are bounded by the dated "
+        "source records and they are not used for year-specific claims.\n\n"
+        "## Conclusion\n\n"
+        "The synthesis remains hypothesis-generating.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_forward_dated_ai_disclosure_ask_flags_crowded_limitations() -> None:
+    ask = (
+        "In Limitations, add a specific statement about forward-dated (2026) "
+        "citations and the implications for reproducibility, and remove or "
+        "relocate the AI-use disclosure so it does not crowd the substantive sections."
+    )
+    paper = (
+        "## Limitations\n\n"
+        "Forward-dated 2026 citations are retained only as bibliographic/in-press "
+        "metadata; their reproducibility implications are bounded by the source records.\n\n"
+        "### AI-use disclosure\n\n"
+        "Source retrieval and prose drafting were assisted by large language models.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
 def test_deterministic_unmet_accepts_specific_findings_by_source_map() -> None:
     ask = (
         "For each outcome class, extract at least 2-3 specific findings from "
