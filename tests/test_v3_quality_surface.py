@@ -113,6 +113,8 @@ def test_apply_quality_surface_markdown_normalizes_sidecar_headings_and_is_idemp
     assert twice.count("## Meta-Analysis Results") == 1
     assert twice.count("## Cross-Paper Tensions") == 1
     assert "## Cross-Paper Tension Plans" not in twice
+    assert "### Risk-of-Bias Summary" in twice
+    assert "\n# Risk-of-Bias Summary" not in twice
 
 
 def test_apply_quality_surface_to_run_patches_existing_folder(tmp_path: Path) -> None:
@@ -146,6 +148,7 @@ def test_apply_quality_surface_to_run_patches_existing_folder(tmp_path: Path) ->
     }
     assert "## Risk of Bias and GRADE" in patched
     assert "## Cross-Paper Tensions" in patched
+    assert "### Risk-of-Bias Summary" in patched
     assert patched.index("## Risk of Bias and GRADE") < patched.index("## Discussion")
 
 
