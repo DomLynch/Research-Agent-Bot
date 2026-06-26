@@ -180,6 +180,35 @@ async def test_backstop_accepts_longer_section() -> None:
 
 
 @pytest.mark.asyncio
+async def test_backstop_uses_discussion_anchor_before_llm_rerender() -> None:
+    async def write_scoped(**_kwargs):
+        raise AssertionError("LLM rerender should not run after anchor clears floor")
+
+    sections: dict[SectionName, SynthesisSection] = {
+        "discussion": _section("discussion", 10),
+    }
+    receipts = (_receipt("r1"), _receipt("r2"))
+    out = await backstop.apply_section_backstop(
+        sections,
+        user_prompt="u",
+        section_prompts={"discussion": "s"},
+        topic="glycation_ages",
+        accepted=receipts,
+        matrix=TensionMatrix(receipts=receipts, pairs=()),
+        chain=(),
+        client=None,
+        ledger=None,
+        seed=None,
+        background_lit_entries=None,
+        write_anchored_fn=None,
+        write_scoped_fn=write_scoped,
+    )
+
+    assert "### Evidence Summary" in out["discussion"].body_md
+    assert backstop._section_word_count(out["discussion"]) >= backstop.AUDIT_GATED_FLOORS["discussion"]
+
+
+@pytest.mark.asyncio
 async def test_backstop_appends_conclusion_anchor_when_rerender_does_not_improve() -> None:
     async def write_scoped(**kwargs):
         return _section(kwargs["name"], 10)

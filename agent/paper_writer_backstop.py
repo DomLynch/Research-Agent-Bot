@@ -116,6 +116,45 @@ def build_backstop_prompt(
     )
 
 
+def _append_deterministic_anchor(
+    sections: dict[SectionName, SynthesisSection],
+    *,
+    sec_name: str,
+    accepted: Sequence[ReceiptSummary],
+    matrix: TensionMatrix,
+) -> bool:
+    section_name = cast(SectionName, sec_name)
+    cur = sections.get(section_name)
+    if cur is None:
+        return False
+    anchor_fn = {
+        "cross_domain_synthesis": build_cross_domain_anchor,
+        "discussion": build_discussion_anchor,
+        "conclusion": build_conclusion_anchor,
+    }.get(sec_name)
+    if anchor_fn is None:
+        return False
+    existing_text = "\n\n".join(
+        s.body_md for s in sections.values() if s is not None
+    )
+    anchor_md = anchor_fn(accepted, matrix, existing_text=existing_text)
+    if not anchor_md:
+        return False
+    words = _section_word_count(cur)
+    new_body = cur.body_md.rstrip() + "\n\n" + anchor_md + "\n"
+    sections[section_name] = SynthesisSection(
+        name=section_name, body_md=new_body, anchors=cur.anchors,
+    )
+    new_words = _section_word_count(sections[section_name])
+    print(
+        f"[paper_writer] BACKSTOP: {sec_name} appended "
+        f"deterministic anchor ({words} → {new_words} "
+        "words); structural Q11/Q12 backstop",
+        flush=True,
+    )
+    return True
+
+
 async def apply_section_backstop(
     sections: dict[SectionName, SynthesisSection],
     *,
@@ -141,6 +180,16 @@ async def apply_section_backstop(
         words = _section_word_count(cur)
         if words >= floor:
             continue
+        if matrix is not None and sec_name in {"discussion", "conclusion"}:
+            if _append_deterministic_anchor(
+                sections, sec_name=sec_name, accepted=accepted, matrix=matrix,
+            ):
+                cur = sections.get(section_name)
+                if cur is None:
+                    continue
+                words = _section_word_count(cur)
+                if words >= floor:
+                    continue
         print(
             f"[paper_writer] BACKSTOP: {sec_name} at {words} "
             f"words (floor {floor}); attempting final "
@@ -239,26 +288,8 @@ async def apply_section_backstop(
             floor = AUDIT_GATED_FLOORS.get(sec_name, 800)
             if words >= floor:
                 continue
-            # Assemble the whole paper so the anchor can drop its generic
-            # hedge when that framing is already present (cross-section +
-            # re-run dedup); recomputed each iteration so a later section
-            # sees an earlier section's just-appended anchor.
-            existing_text = "\n\n".join(
-                s.body_md for s in sections.values() if s is not None
-            )
-            anchor_md = anchor_fn(accepted, matrix, existing_text=existing_text)
-            if not anchor_md:
-                continue
-            new_body = cur.body_md.rstrip() + "\n\n" + anchor_md + "\n"
-            sections[section_name] = SynthesisSection(
-                name=section_name, body_md=new_body, anchors=cur.anchors,
-            )
-            new_words = _section_word_count(sections[section_name])
-            print(
-                f"[paper_writer] BACKSTOP: {sec_name} appended "
-                f"deterministic anchor ({words} → {new_words} "
-                "words); structural Q11/Q12 backstop",
-                flush=True,
+            _append_deterministic_anchor(
+                sections, sec_name=sec_name, accepted=accepted, matrix=matrix,
             )
 
     return sections
@@ -272,4 +303,5 @@ __all__ = [
     "build_backstop_prompt",
     "repair_discussion_minimum_quality",
     "apply_section_backstop",
+    "_append_deterministic_anchor",
 ]

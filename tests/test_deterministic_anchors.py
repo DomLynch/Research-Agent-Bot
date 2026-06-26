@@ -210,6 +210,9 @@ def test_conclusion_anchor_drops_hedge_once_discussion_added_it():
     assert CONSERVATIVE_FRAMING_MARKER not in concl   # hedge skipped
     # Across both sections the marker appears exactly once.
     assert (disc + "\n" + concl).count(CONSERVATIVE_FRAMING_MARKER) == 1
+    # The conclusion still has to satisfy its own downstream floor when
+    # the shared hedge was already emitted by Discussion.
+    assert len(concl.split()) >= 250
 
 
 def test_anchor_hedge_is_idempotent_on_rerun():
