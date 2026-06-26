@@ -698,6 +698,27 @@ def test_untraceable_numeric_guard_allows_manifest_brief_counts(tmp_path):
     assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
 
 
+def test_untraceable_numeric_guard_allows_source_context_counts(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    paper = (
+        "Oncology and cancer context: 17 sources; significant source "
+        "statistic in 8/17 sources; receipt-level direction coded null."
+    )
+    receipts = [
+        {
+            "source_title": f"Everolimus oncology cancer study {i}",
+            "effect_direction": "null",
+            "p_values": ["p < 0.05"] if i < 8 else [],
+        }
+        for i in range(17)
+    ]
+    issues = scan_paper(
+        paper, manifest={"receipts": receipts}, quant_claims_dir=qc_dir,
+    )
+    assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
+
+
 def test_scan_paper_back_compat_no_kwargs_works():
     """Existing callers passing only paper_md (no manifest /
     bg_lit) keep working — drift check is silently disabled."""
