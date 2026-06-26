@@ -1223,7 +1223,7 @@ def _substantive_evidence_synthesis_is_stated(paper_md: str) -> bool:
     return bool(
         "substantive evidence synthesis" in landscape.lower()
         and "key findings from source synthesis" in findings.lower()
-        and "synthesis interpretation:" in findings.lower()
+        and ("synthesis interpretation:" in findings.lower() or "source-level findings" in scope.lower())
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
         and re.search(r"\bpositive|negative|mixed|unclear|null|no extracted directional signal\b", scope, re.I)
         and "bounded conclusion" in scope.lower()
