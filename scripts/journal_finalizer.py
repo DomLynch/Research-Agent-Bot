@@ -124,6 +124,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_revision_audit_notes(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
+        lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
         lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
@@ -167,6 +168,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_m_repair_surface_artifacts,
         lambda t: _phase_d_reference_closure(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
+        lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
         _phase_n_declare_discussion_thesis,
     ):
         text, log = phase(text)
@@ -2824,6 +2826,50 @@ def _phase_d_revision_surface_notes(
         rule="insert_manifest_backed_revision_surface_notes",
         n_changes=n,
         detail=", ".join(details),
+    )]
+
+
+def _revision_asks_forward_dated_ai_disclosure(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "forward-dated" in lower
+        and "citation" in lower
+        and "ai-use disclosure" in lower
+        and any(token in lower for token in ("limitations", "reproducibility", "remove or relocate"))
+    )
+
+
+def _phase_d_forward_dated_ai_disclosure_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_forward_dated_ai_disclosure(feedback):
+        return text, []
+    limitations = _section_body(text, "Limitations").lower()
+    already_in_limitations = (
+        any(token in limitations for token in ("forward-dated", "2026 citation", "publication-year note"))
+        and "reproduc" in limitations
+    )
+    if already_in_limitations:
+        return text, []
+    note = (
+        "Forward-dated citation note: Forward-dated 2026 citations are treated "
+        "as bibliographic/in-press metadata for reproducibility; they are not "
+        "used for year-specific claims, and readers should verify them against "
+        "the public source records before relying on chronology-sensitive "
+        "interpretations."
+    )
+    patched, changed = _prepend_section_paragraph(text, "Limitations", note)
+    if not changed:
+        patched, changed = _insert_section_before(text, "Limitations", note, before=("Conclusion", "References"))
+    if not changed:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_forward_dated_ai_disclosure_note",
+        rule="move_forward_dated_note_to_limitations",
+        n_changes=1,
+        detail="added Limitations note for forward-dated citations while AI-use disclosure remains methods/supplemental",
     )]
 
 

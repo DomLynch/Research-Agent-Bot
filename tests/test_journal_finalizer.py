@@ -2597,6 +2597,57 @@ def test_actionable_gaps_section_is_not_duplicated(tmp_path: Path) -> None:
     assert logs == []
 
 
+def test_forward_dated_ai_disclosure_note_moves_to_limitations(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "In Limitations, add a specific statement about forward-dated (2026) "
+        "citations and the implications for reproducibility, and remove or "
+        "relocate the AI-use disclosure so it does not crowd the substantive sections."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### AI-use disclosure\n\n"
+        "Source retrieval and prose drafting were assisted by large language models.\n\n"
+        "## Limitations\n\n"
+        "The retained corpus remains observational and mechanistic.\n\n"
+        "## Conclusion\n\n"
+        "Several limitations bound this synthesis: the inclusion of forward-dated "
+        "2026 citations means that the reproducibility of their reported numbers "
+        "requires source-record verification.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}), encoding="utf-8")
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_forward_dated_ai_disclosure_note(paper, tmp_path)
+
+    assert "Forward-dated citation note:" in fixed
+    assert fixed.index("Forward-dated citation note:") < fixed.index("## Conclusion")
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_forward_dated_ai_disclosure_note",
+            rule="move_forward_dated_note_to_limitations",
+            n_changes=1,
+            detail="added Limitations note for forward-dated citations while AI-use disclosure remains methods/supplemental",
+        )
+    ]
+
+
+def test_forward_dated_ai_disclosure_note_is_revision_scoped(tmp_path: Path) -> None:
+    paper = (
+        "## Limitations\n\n"
+        "The retained corpus remains observational and mechanistic.\n\n"
+        "## Conclusion\n\n"
+        "Forward-dated 2026 citations require reproducibility checks.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_forward_dated_ai_disclosure_note(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_reference_identifier_enrichment_uses_registry_ids(tmp_path: Path) -> None:
     paper = (
         "## Abstract\n\nSmith 2024 and Jones 2025 reported.\n\n"
