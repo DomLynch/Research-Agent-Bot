@@ -1101,6 +1101,10 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
         or ("null" in lower and "absence of support" in lower)
         or ("no extracted directional signal" in lower and "proportion" in lower)
         or ("null-coded" in lower and "directional findings" in lower)
+        or (
+            "directional findings" in lower
+            and any(token in lower for token in ("source abstract", "source abstracts", "receipt-level", "source-level", "null framing"))
+        )
     )
 
 

@@ -1690,6 +1690,58 @@ def test_deterministic_known_accepts_auditable_tension_and_source_verdict_asks()
     assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
 
 
+def test_deterministic_coverage_accepts_vascular_source_level_revision_bundle() -> None:
+    feedback = (
+        "Recode directional findings to match source abstracts; remove/qualify 11/13 null framing as receipt-level not source-level; "
+        "Include all 13 admitted sources in Evidence Landscape tables; remove repetitive boilerplate and replace with findings; "
+        "Enumerate the 12 cross-study disagreements or replace the count with a qualitative description of where the disagreements lie; "
+        "Expand Key Findings with concrete bounded findings per outcome class from source abstracts; "
+        "Strengthen Gaps with at least 3 concrete actionable studies."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Directional coding note: Null or no extracted directional signal means no coded positive, "
+        "negative, or mixed effect was extracted for that specific outcome class. Positive and mixed "
+        "signals in other outcome classes are separately reported.\n\n"
+        "Substantive evidence synthesis: The manifest includes 13 retained sources, 1 direct-source "
+        "row, and receipt-level directional coding across null=8, positive=1, unclear=4. "
+        "Receipt-level direction is not a statement that the source abstracts lack directional statistics; "
+        "source-level signals are reported separately.\n\n"
+        "### Findings Map\n\n"
+        "- Sheng 2025: outcome=Contextual Adjacent Evidence; direction=null; directness=indirect; "
+        "tier=B2; finding=representative statistic p < 0.001; source-level statistic reported.\n"
+        "- Wang 2024: outcome=Cardiometabolic; direction=positive; directness=direct; "
+        "tier=A1; finding=representative statistic p < 0.05; source-level statistic reported.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis: First, the strongest source-level signals are bounded "
+        "rather than broad clinical proof (Wang 2024: outcome=Cardiometabolic; direction=positive; "
+        "directness=direct; tier=A1; finding=representative statistic p < 0.05; source-level statistic reported). "
+        "Second, null and unclear receipt-level rows are given equal interpretive weight. "
+        "The bounded conclusion follows from the balance of source direction, outcome class, "
+        "evidence tier, and directness rather than from source count alone.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
+        "- Wang 2024 vs Rodilla 2026: surfaced tension/disagreement in Cardiometabolic because directions are positive versus null.\n"
+        "- Luo 2025 vs Lu 2026: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are null versus unclear.\n"
+        "- Sheng 2025 vs Vicente-Gabriel 2024: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are null versus unclear.\n\n"
+        "## Gaps Identified\n\n"
+        "1. Run adequately powered prospective trials in the priority population with prespecified clinical endpoints and at least 2-year follow-up.\n"
+        "2. Standardize exposure, comparator, dose, measurement timing, and endpoint definitions before attempting pooled effects.\n"
+        "3. Add safety endpoints in direct human studies with patient-relevant function measures.\n"
+    )
+
+    assert asks == [
+        "Recode directional findings to match source abstracts; remove/qualify 11/13 null framing as receipt-level not source-level.",
+        "Include all 13 admitted sources in Evidence Landscape tables; remove repetitive boilerplate and replace with findings.",
+        "Enumerate the 12 cross-study disagreements or replace the count with a qualitative description of where the disagreements lie.",
+        "Expand Key Findings with concrete bounded findings per outcome class from source abstracts.",
+        "Strengthen Gaps with at least 3 concrete actionable studies.",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
 def test_deterministic_unmet_accepts_specific_findings_by_source_map() -> None:
     ask = (
         "For each outcome class, extract at least 2-3 specific findings from "

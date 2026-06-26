@@ -32,7 +32,7 @@ def revision_asks(feedback: str) -> list[str]:
     starts = (
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
-        "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
+        "Enumerate", "Hedge", "Include", "Operationalize", "Provide", "Recode", "Re-extract",
         "Either", "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair", "Resolve",
         "Replace", "Rewrite", "Separate", "Soften", "Strengthen", "Update", "Verify",
     )
@@ -618,6 +618,9 @@ def _asks_directional_coding(text: str) -> bool:
         "no extracted directional signal" in text and "proportion" in text
     ) or (
         "null-coded" in text and "directional findings" in text
+    ) or (
+        "directional findings" in text
+        and any(token in text for token in ("source abstract", "source abstracts", "receipt-level", "source-level", "null framing"))
     )
 
 
@@ -1050,7 +1053,7 @@ def _source_statistics_landscape_is_stated(paper_md: str) -> bool:
 def _source_outcome_class_map_is_stated(paper_md: str) -> bool:
     scope = " ".join(part for part in (_section(paper_md, "Evidence Landscape"), _section(paper_md, "Evidence Snapshot")) if part).lower()
     return (
-        "source outcome-class map" in scope
+        ("source outcome-class map" in scope or "findings map" in scope)
         and "outcome=" in scope
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope, flags=re.I) is not None
     )

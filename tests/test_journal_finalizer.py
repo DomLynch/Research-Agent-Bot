@@ -1637,6 +1637,68 @@ def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_
     assert {entry.phase for entry in logs} >= {"D_substantive_evidence_synthesis", "D_tensions_and_gaps_breadth"}
 
 
+def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    asks = [
+        "Recode directional findings to match source abstracts; remove/qualify 11/13 null framing as receipt-level not source-level.",
+        "Include all 13 admitted sources in Evidence Landscape tables; remove repetitive boilerplate and replace with findings.",
+        "Enumerate the 12 cross-study disagreements or replace the count with a qualitative description of where the disagreements lie.",
+        "Expand Key Findings with concrete bounded findings per outcome class from source abstracts.",
+        "Strengthen Gaps with at least 3 concrete actionable studies.",
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "The source table needs repair.\n\n"
+        "## Key Findings\n\n"
+        "The conclusion is bounded.\n\n"
+        "## Discussion\n\n"
+        "Evidence remains incomplete.\n\n"
+        "## References\n\n"
+        "- Sheng 2025.\n"
+    )
+    rows = [
+        {"citation_token": "Sheng 2025", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p < 0.001"], "n_claims": 102},
+        {"citation_token": "Nguyen 2026", "outcome_class": "deficiency_prevalence", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p = 0.032"], "n_claims": 64},
+        {"citation_token": "Wang 2024", "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "direct", "evidence_tier": "A1", "p_values": ["p < 0.05"], "n_claims": 54},
+        {"citation_token": "Rodilla 2026", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 28},
+        {"citation_token": "Alanis 2025", "outcome_class": "mechanism", "effect_direction": "mixed", "directness": "mechanistic", "evidence_tier": "C1", "n_claims": 27},
+        {"citation_token": "Luo 2025", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "p_values": ["p = 0.0007"], "n_claims": 22},
+        {"citation_token": "Vicente-Gabriel 2024", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "protocol", "evidence_tier": "D1", "n_claims": 20},
+        {"citation_token": "Azizzadeh 2026", "outcome_class": "cardiometabolic", "effect_direction": "unclear", "directness": "indirect", "evidence_tier": "B2", "n_claims": 16},
+        {"citation_token": "Lu 2026", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "indirect", "evidence_tier": "B2", "n_claims": 14},
+        {"citation_token": "Kozlik 2026", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 14},
+        {"citation_token": "Joshi 2025", "outcome_class": "safety_comorbidity", "effect_direction": "null", "directness": "protocol", "evidence_tier": "D1", "n_claims": 10},
+        {"citation_token": "Carmo 2025", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "n_claims": 5},
+        {"citation_token": "Kakaletsis 2024", "outcome_class": "longevity", "effect_direction": "unclear", "directness": "review", "evidence_tier": "B1", "n_claims": 4},
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": "; ".join(asks)}))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "vascular_age",
+        "n_non_orthogonal_tensions": 12,
+        "receipts": rows,
+    }))
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Receipt-level direction is not a statement that the source abstracts lack directional statistics" in fixed
+    assert "### Findings Map" in fixed
+    assert "Sheng 2025" in fixed
+    assert "Kakaletsis 2024" in fixed
+    assert "finding=representative statistic p < 0.001; source-level statistic reported" in fixed
+    assert "Actually surfaced tensions include:" in fixed
+    assert "## Gaps Identified" in fixed
+    assert "1. Run adequately powered prospective trials" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert {entry.phase for entry in logs} >= {
+        "D_directional_coding_note",
+        "D_substantive_evidence_synthesis",
+        "D_source_outcome_class_map",
+        "D_tensions_and_gaps_breadth",
+        "D_actionable_gaps",
+    }
+
+
 def test_rct_count_reconciliation_removes_single_rct_claim(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
