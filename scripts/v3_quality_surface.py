@@ -148,7 +148,7 @@ def _normalize_quality_markdown(markdown: str) -> str:
         return ""
     if _first_heading(text) == "## Risk of Bias and GRADE":
         return text
-    text = _drop_h1(text)
+    text = _demote_h1_to_h3(_drop_h1(text))
     return (
         "## Risk of Bias and GRADE\n\n"
         "The following study-level risk-of-bias and outcome-level certainty "
@@ -164,7 +164,7 @@ def _normalize_meta_markdown(markdown: str) -> str:
         return ""
     if _first_heading(text) == "## Meta-Analysis Results":
         return text
-    text = _drop_h1(text)
+    text = _demote_h1_to_h3(_drop_h1(text))
     return "## Meta-Analysis Results\n\n" + text.lstrip()
 
 
@@ -175,7 +175,7 @@ def _normalize_tension_markdown(markdown: str) -> str:
     text = text.replace("## Cross-Paper Tension Plans", "## Cross-Paper Tensions", 1)
     if _first_heading(text) == "## Cross-Paper Tensions":
         return text
-    text = _drop_h1(text)
+    text = _demote_h1_to_h3(_drop_h1(text))
     return "## Cross-Paper Tensions\n\n" + text.lstrip()
 
 
@@ -227,6 +227,16 @@ def _drop_h1(markdown: str) -> str:
         lines = lines[1:]
         while lines and not lines[0].strip():
             lines.pop(0)
+    return "\n".join(lines).strip()
+
+
+def _demote_h1_to_h3(markdown: str) -> str:
+    lines: list[str] = []
+    for line in markdown.splitlines():
+        if line.startswith("# ") and not line.startswith("## "):
+            lines.append("### " + line.removeprefix("# ").strip())
+        else:
+            lines.append(line)
     return "\n".join(lines).strip()
 
 
