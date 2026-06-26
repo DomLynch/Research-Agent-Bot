@@ -26,6 +26,7 @@ from collections.abc import Callable, Collection, Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import daily_research_paper_submit as submit_bridge
 
@@ -78,6 +79,7 @@ CORPUS_REPAIR_LIMIT = 1
 SOURCE_PRECISION_REPAIR_SCAN_LIMIT = 3
 RECEIPT_PREFLIGHT_REPAIR_ROUNDS = 2
 SOURCE_TOPIC_REPAIR_FLOOR = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
+DEFAULT_CYCLE_TIMEZONE = "Asia/Dubai"
 REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
@@ -517,6 +519,19 @@ def _parse_time(value: str) -> dt.datetime | None:
     except ValueError:
         return None
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
+
+
+def _default_cycle_date(now: dt.datetime | None = None) -> str:
+    timezone_name = os.getenv("RESEARCH_AGENT_CYCLE_TIMEZONE", DEFAULT_CYCLE_TIMEZONE)
+    timezone: dt.tzinfo
+    try:
+        timezone = ZoneInfo(timezone_name)
+    except ZoneInfoNotFoundError:
+        timezone = dt.UTC
+    current = now or dt.datetime.now(dt.UTC)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=dt.UTC)
+    return current.astimezone(timezone).date().isoformat()
 
 
 def _latest_topic_run(topic: str, runs_root: Path) -> Path | None:
@@ -3972,7 +3987,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if result["status"] != "remote_dedupe_failed" else 2
     ledger = run_cycle(
         runs_root=args.runs_root,
-        date=args.date or dt.datetime.now(dt.UTC).date().isoformat(),
+        date=args.date or _default_cycle_date(),
         run_synthesis=args.run_synthesis,
         synthesis_dry_run=args.synthesis_dry_run,
         submit=args.submit,
