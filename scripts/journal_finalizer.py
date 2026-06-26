@@ -833,6 +833,14 @@ _ADMISSION_FUNNEL_NOTE = (
     "eligibility, not the complement of any one exclusion row."
 )
 
+_ADMISSION_EXCLUSION_NOTE = (
+    "- Exclusion accounting is captured in the source-admission funnel above: "
+    "retrieval, deduplication, claim-binding, and strict high-confidence "
+    "admission reduce source candidates to the retained source set. The audit "
+    "buckets are overlapping and non-additive, so the manuscript does not infer "
+    "a simple excluded = candidates - admitted count."
+)
+
 
 def _phase_d_admission_funnel_clarification(
     text: str, out_dir: Path,
@@ -842,7 +850,8 @@ def _phase_d_admission_funnel_clarification(
     if not _revision_asks_admission_funnel_clarification(feedback):
         return text, []
     replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
-    if "admission-bucket note:" in text.lower() and not replace_table:
+    has_placeholder_exclusion = _has_no_exclusion_placeholder(text)
+    if "admission-bucket note:" in text.lower() and not replace_table and not has_placeholder_exclusion:
         return text, []
     heading = re.search(
         r"^#{2,4}\s+.*(?:admission funnel|selection flow).*$",
@@ -858,10 +867,11 @@ def _phase_d_admission_funnel_clarification(
         if "|" not in body:
             return text, []
         patched = text[:heading.end()].rstrip() + "\n\n" + _ADMISSION_FUNNEL_NOTE + "\n\n" + text[section_end_pos:].lstrip()
+        patched, n_exclusions = _replace_no_exclusion_placeholder(patched)
         return patched, [FinalizerLogEntry(
             phase="D_admission_funnel_clarification",
             rule="replace_non_additive_admission_table",
-            n_changes=1,
+            n_changes=1 + n_exclusions,
             detail="replaced non-additive admission-funnel table with textual clarification",
         )]
     lines = text[heading.end():].splitlines(keepends=True)
@@ -879,12 +889,23 @@ def _phase_d_admission_funnel_clarification(
         elif in_table and stripped:
             break
     if not in_table:
-        return text, []
+        if not has_placeholder_exclusion:
+            return text, []
+        patched, n_exclusions = _replace_no_exclusion_placeholder(text)
+        if not n_exclusions:
+            return text, []
+        return patched, [FinalizerLogEntry(
+            phase="D_admission_funnel_clarification",
+            rule="replace_no_exclusion_placeholder",
+            n_changes=n_exclusions,
+            detail="replaced misleading no-exclusion placeholder with non-additive admission accounting",
+        )]
     patched = text[:insert_at].rstrip() + "\n\n" + _ADMISSION_FUNNEL_NOTE + "\n" + text[insert_at:]
+    patched, n_exclusions = _replace_no_exclusion_placeholder(patched)
     return patched, [FinalizerLogEntry(
         phase="D_admission_funnel_clarification",
         rule="state_non_additive_admission_buckets",
-        n_changes=1,
+        n_changes=1 + n_exclusions,
         detail="added admission-funnel non-additive bucket clarification",
     )]
 
@@ -901,7 +922,28 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
         ))
     ) or ("no extractable claims" in lower and "admitted final" in lower) or (
         "partial/none-only" in lower and "partial-only" in lower
+    ) or (
+        "search summary" in lower
+        and any(token in lower for token in ("selection logic", "source candidates", "admitted sources"))
+        and any(token in lower for token in ("non additive", "non-additive", "overlapping categories", "single transparent exclusion"))
     )
+
+
+def _has_no_exclusion_placeholder(text: str) -> bool:
+    return bool(re.search(
+        r"(?ims)^###\s+Exclusion reasons\s*\n\s*-?\s*No records were excluded\b",
+        text,
+    ))
+
+
+def _replace_no_exclusion_placeholder(text: str) -> tuple[str, int]:
+    patched, n = re.subn(
+        r"(?ims)(^###\s+Exclusion reasons\s*\n)\s*-?\s*No records were excluded[^\n]*",
+        r"\1" + _ADMISSION_EXCLUSION_NOTE,
+        text,
+        count=1,
+    )
+    return patched, n
 
 
 def _revision_asks_admission_funnel_textual_replacement(feedback: str) -> bool:
@@ -1664,6 +1706,10 @@ def _phase_d_substantive_evidence_synthesis(
     result_sentence = "\n".join(f"- {line}" for line in key_finding_lines[:5])
     if result_sentence:
         result_sentence += "\n\n"
+    outcome_lines = _manifest_outcome_summary_lines(rows)
+    outcome_sentence = "\n".join(f"- {line}" for line in outcome_lines[:8])
+    if outcome_sentence:
+        outcome_sentence = "Source-level findings by outcome class:\n\n" + outcome_sentence + "\n\n"
     counts: dict[str, int] = {}
     for row in rows:
         direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
@@ -1684,6 +1730,7 @@ def _phase_d_substantive_evidence_synthesis(
     key_findings = (
         "Key findings from source synthesis:\n\n"
         f"{result_sentence}"
+        f"{outcome_sentence}"
         "Synthesis interpretation: These source-level findings connect risk-marker, "
         "mechanistic, and intervention-adjacent signals into follow-up hypotheses, "
         "not a clinical efficacy claim. Direct/interventional rows define the "
@@ -1850,6 +1897,67 @@ def _manifest_key_finding_score(row: dict[str, Any]) -> tuple[int, int, int]:
     directness = str(row.get("directness") or "").lower()
     direct_bonus = 0 if directness.startswith("direct") else 1
     return (0 if title and has_stat else 1 if title else 2, direct_bonus, -claims)
+
+
+def _manifest_outcome_summary_lines(rows: list[dict[str, Any]]) -> list[str]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        outcome = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
+        grouped.setdefault(outcome, []).append(row)
+    lines: list[str] = []
+    for slug, matching in sorted(grouped.items(), key=lambda item: _outcome_display(item[0])):
+        selected = sorted(matching, key=_manifest_key_finding_score)[:3]
+        examples = "; ".join(_manifest_source_finding_line(row) for row in selected)
+        lines.append(f"{_outcome_display(slug)}: {examples}.")
+    return lines
+
+
+def _manifest_source_finding_line(row: dict[str, Any]) -> str:
+    title = str(row.get("source_title") or "").strip()
+    direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+    directness = str(row.get("directness") or "unknown").strip() or "unknown"
+    tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
+    return (
+        f"{_row_citation(row)} ({_source_result_label(title)}; "
+        f"{_manifest_row_finding(row)}; direction={direction}; "
+        f"directness={directness}; tier={tier})"
+    )
+
+
+def _outcome_slice_narrative(
+    *,
+    display: str,
+    topic_anchor: str,
+    matching: list[dict[str, Any]],
+    n: int,
+    n_claims: int,
+    signal: str,
+    directness: str,
+    limitation: str,
+) -> str:
+    scope = f" for {topic_anchor}" if topic_anchor else ""
+    intro = (
+        f"{display} remains a separate Results slice{scope} "
+        f"(n={n}; claims={n_claims}; {signal}; {directness}; {limitation}) "
+        "and is not pooled into adjacent endpoint classes. Source-level findings are:"
+    )
+    bullets = [
+        "- " + _manifest_source_finding_line(row) + "."
+        for row in sorted(matching, key=_manifest_key_finding_score)[:4]
+    ] or ["- No named source-level finding is available in the manifest for this outcome class."]
+    has_conservative_direction = any(
+        str(row.get("effect_direction") or "").strip().lower() in {"null", "unclear"}
+        and isinstance(row.get("p_values"), list)
+        and any(str(value).strip() for value in row.get("p_values") or [])
+        for row in matching
+    )
+    direction_note = (
+        "\n\nDirection reconciliation: receipt-level null or unclear coding is conservative "
+        "claim-level coding. Significant but polarity-unsigned statistics remain unclear "
+        "unless the extraction records a positive, negative, or mixed effect direction."
+        if has_conservative_direction else ""
+    )
+    return intro + "\n" + "\n".join(bullets) + direction_note
 
 
 def _manifest_result_highlights(rows: list[dict[str, Any]]) -> list[str]:
@@ -3537,8 +3645,17 @@ def _phase_f_reconcile_results_table(
     }
     missing_blocks = []
     for slug, display, n, n_claims, signal, directness, limitation in stubs:
-        scope = f" for {topic_anchor}" if topic_anchor else ""
-        block = f"### {display} Outcomes\n\n{display} remains a separate Results slice{scope} (n={n}; claims={n_claims}; {signal}; {directness}; {limitation}) and is not pooled into adjacent endpoint classes.\n"
+        matching = groups.get(slug, [])
+        block = "### " + display + " Outcomes\n\n" + _outcome_slice_narrative(
+            display=display,
+            topic_anchor=topic_anchor,
+            matching=matching,
+            n=n,
+            n_claims=n_claims,
+            signal=signal,
+            directness=directness,
+            limitation=limitation,
+        ) + "\n"
         empty = re.search(rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\s*(?=^###\s+|^##\s+|\Z)", new_results)
         if empty:
             new_results = new_results[:empty.start()] + block + new_results[empty.end():]
