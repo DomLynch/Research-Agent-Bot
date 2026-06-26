@@ -2588,11 +2588,16 @@ def _phase_d_revision_audit_notes(
     patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", "\n\n".join(notes))
     if not n:
         return text, []
+    detail = (
+        "added structural revision audit note(s)"
+        if any(note.startswith("Source-label disambiguation note:") for note in notes)
+        else "added claim-count/source-identifier revision audit note(s)"
+    )
     return patched, [FinalizerLogEntry(
         phase="D_revision_audit_notes",
         rule="answer_structural_reviewer_audit_asks",
         n_changes=len(notes),
-        detail="added structural revision audit note(s)",
+        detail=detail,
     )]
 
 

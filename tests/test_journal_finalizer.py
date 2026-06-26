@@ -2541,6 +2541,51 @@ def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Pat
     assert logs and logs[0].phase == "D_source_verification_transparency"
 
 
+def test_revision_audit_notes_add_source_label_disambiguation(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify the apparent Ward 2026 / Filev 2026 duplication and ensure "
+        "each cited_as label maps to exactly one bundle entry."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": ask}),
+        encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Ward 2026",
+            "outcome_class": "immune_inflammation",
+            "effect_direction": "null",
+            "directness": "indirect",
+            "source_title": "Icosapent ethyl modulates macrophages",
+        },
+        {
+            "citation_token": "Filev 2026",
+            "outcome_class": "immune",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "source_title": "Acute-phase IL-6 and SAA after COVID-19",
+        },
+    ]}), encoding="utf-8")
+    paper = "## Evidence Landscape\n\nExisting evidence text.\n\n## References\n\n- **Ward 2026.** X.\n"
+
+    fixed, logs = journal_finalizer._phase_d_revision_audit_notes(paper, tmp_path)
+
+    assert "Source-label disambiguation note:" in fixed
+    assert "Ward 2026 maps to one retained manifest receipt" in fixed
+    assert "Filev 2026 maps to one retained manifest receipt" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_revision_audit_notes",
+            rule="answer_structural_reviewer_audit_asks",
+            n_changes=1,
+            detail="added structural revision audit note(s)",
+        )
+    ]
+
+
 def test_reference_identifier_enrichment_preserves_existing_ids(tmp_path: Path) -> None:
     paper = (
         "## References\n\n"
