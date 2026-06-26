@@ -42,6 +42,12 @@ def test_daily_paper_policy_uses_12_receipts_and_shared_source_precision() -> No
     assert cycle.SOURCE_TOPIC_REPAIR_FLOOR == cycle.submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
 
 
+def test_default_cycle_date_uses_production_timezone(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("RESEARCH_AGENT_CYCLE_TIMEZONE", "Asia/Dubai")
+
+    assert cycle._default_cycle_date(dt.datetime(2026, 6, 25, 23, 30, tzinfo=dt.UTC)) == "2026-06-26"
+
+
 def test_preflight_thin_quant_blocker_is_classified_and_backfills_unknown(tmp_path: Path) -> None:
     assert cycle._failure_class("preflight_thin_quant_corpus") == "B_corpus_fixable"
     assert cycle._failure_class("audit_p1_failed") == "C_writer_fixable"
