@@ -1516,7 +1516,7 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
 
 
 def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeypatch) -> None:
-    calls: dict[str, Any] = {}
+    calls: list[dict[str, Any]] = []
 
     class FakeMaterializer:
         @staticmethod
@@ -1529,15 +1529,16 @@ def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeyp
 
         @staticmethod
         def fetch_rows(**kwargs: Any) -> list[dict[str, Any]]:
-            calls["limit"] = kwargs["limit"]
-            calls["strategy"] = kwargs["strategy"]
+            calls.append({"limit": kwargs["limit"], "strategy": kwargs["strategy"]})
             return []
 
         @staticmethod
         def materialize_rows(rows: list[dict[str, Any]], **kwargs: Any) -> dict[str, Any]:
-            calls["quality_mode"] = kwargs["quality_mode"]
-            calls["max_created"] = kwargs["max_created"]
-            calls["skip_slugs"] = kwargs["skip_slugs"]
+            calls[-1].update({
+                "quality_mode": kwargs["quality_mode"],
+                "max_created": kwargs["max_created"],
+                "skip_slugs": kwargs["skip_slugs"],
+            })
             return {"created": [], "skipped": []}
 
     monkeypatch.setitem(sys.modules, "materialize_fact_topic_packs", FakeMaterializer)
@@ -1546,14 +1547,61 @@ def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeyp
 
     result = cycle._refresh_topic_supply(tmp_path / "topic_packs_db")
 
-    assert calls == {
+    assert calls[0] == {
         "limit": 500,
         "strategy": "fact-intervention-cross",
         "quality_mode": "high-precision",
         "max_created": cycle.TOPIC_SUPPLY_REFRESH_MAX_CREATED,
         "skip_slugs": None,
     }
+    assert [call["strategy"] for call in calls] == list(cycle.TOPIC_SUPPLY_STRATEGIES)
     assert result["status"] == "topic_supply_no_new_packs"
+    assert result["strategies_attempted"] == [
+        {"strategy": strategy, "rows": 0, "created": 0, "skipped": 0}
+        for strategy in cycle.TOPIC_SUPPLY_STRATEGIES
+    ]
+
+
+def test_topic_supply_refresh_falls_back_to_next_strategy(tmp_path: Path, monkeypatch) -> None:
+    calls: list[dict[str, Any]] = []
+
+    class FakeMaterializer:
+        @staticmethod
+        def dsn_from_env() -> str:
+            return "postgresql://example"
+
+        @staticmethod
+        def http_credentials_from_env() -> tuple[str, str]:
+            return "", ""
+
+        @staticmethod
+        def fetch_rows(**kwargs: Any) -> list[dict[str, Any]]:
+            calls.append({"strategy": kwargs["strategy"]})
+            return [{"topic": "metformin", "sub_topic": kwargs["strategy"], "claim_type": "effect_size"}]
+
+        @staticmethod
+        def materialize_rows(rows: list[dict[str, Any]], **kwargs: Any) -> dict[str, Any]:
+            strategy = calls[-1]["strategy"]
+            calls[-1].update({
+                "quality_mode": kwargs["quality_mode"],
+                "skip_slugs": kwargs["skip_slugs"],
+            })
+            if strategy == "fact-field-cross":
+                return {"created": [{"slug": "metformin_field_effects"}], "skipped": []}
+            return {"created": [], "skipped": [{"slug": f"skip-{strategy}", "reason": "quality_filter_failed"}]}
+
+    monkeypatch.setitem(sys.modules, "materialize_fact_topic_packs", FakeMaterializer)
+    monkeypatch.delenv("RESEARCH_AGENT_TOPIC_SUPPLY_STRATEGY", raising=False)
+
+    result = cycle._refresh_topic_supply(tmp_path / "topic_packs_db", skip_slugs={"old_topic"})
+
+    assert [call["strategy"] for call in calls] == ["fact-intervention-cross", "fact-field-cross"]
+    assert all(call["quality_mode"] == "high-precision" for call in calls)
+    assert all(call["skip_slugs"] == {"old_topic"} for call in calls)
+    assert result["status"] == "topic_supply_refreshed"
+    assert result["strategy"] == "fact-field-cross"
+    assert result["created"] == [{"slug": "metformin_field_effects"}]
+    assert result["skipped"] == [{"slug": "skip-fact-intervention-cross", "reason": "quality_filter_failed"}]
 
 
 def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Path, monkeypatch) -> None:

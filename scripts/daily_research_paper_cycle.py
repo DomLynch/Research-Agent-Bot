@@ -73,6 +73,12 @@ HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 TOPIC_SUPPLY_REFRESH_LIMIT = 500
 TOPIC_SUPPLY_REFRESH_MAX_CREATED = 20
+TOPIC_SUPPLY_STRATEGIES = (
+    "fact-intervention-cross",
+    "fact-field-cross",
+    "fact-pair-cross",
+    "grouped",
+)
 SEED_TOPIC_TIMEOUT_SECONDS = 600
 PUBLISH_SEED_TIMEOUT_SECONDS = 120
 CORPUS_REPAIR_LIMIT = 1
@@ -440,6 +446,13 @@ def _topic_supply_refresh_enabled() -> bool:
     }
 
 
+def _topic_supply_strategies() -> list[str]:
+    first = os.getenv("RESEARCH_AGENT_TOPIC_SUPPLY_STRATEGY", TOPIC_SUPPLY_STRATEGIES[0]).strip()
+    if first not in TOPIC_SUPPLY_STRATEGIES:
+        first = TOPIC_SUPPLY_STRATEGIES[0]
+    return [first, *(strategy for strategy in TOPIC_SUPPLY_STRATEGIES if strategy != first)]
+
+
 def _refresh_topic_supply(
     topic_pack_db: Path | None = None,
     *,
@@ -456,37 +469,62 @@ def _refresh_topic_supply(
     base_url, token = materializer.http_credentials_from_env()
     if not dsn and not (base_url and token):
         return {"status": "topic_supply_refresh_not_configured", "created": []}
-    strategy = os.getenv("RESEARCH_AGENT_TOPIC_SUPPLY_STRATEGY", "fact-intervention-cross")
     quality_mode = os.getenv("RESEARCH_AGENT_TOPIC_SUPPLY_QUALITY_MODE", "high-precision")
     limit = _env_int("RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT", TOPIC_SUPPLY_REFRESH_LIMIT)
     max_created = _env_int("RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED", TOPIC_SUPPLY_REFRESH_MAX_CREATED)
-    try:
-        if dsn:
-            rows = materializer.fetch_rows(
-                dsn=dsn, min_exact_facts=2, min_papers=2, limit=limit, strategy=strategy,
+    attempts: list[dict[str, Any]] = []
+    errors: dict[str, str] = {}
+    skipped: list[dict[str, Any]] = []
+    for strategy in _topic_supply_strategies():
+        try:
+            if dsn:
+                rows = materializer.fetch_rows(
+                    dsn=dsn, min_exact_facts=2, min_papers=2, limit=limit, strategy=strategy,
+                )
+            else:
+                rows = materializer.fetch_rows_http(
+                    base_url=base_url, token=token, min_exact_facts=2,
+                    min_papers=2, limit=limit, strategy=strategy,
+                )
+            result = materializer.materialize_rows(
+                rows,
+                db_dir=topic_pack_db or TOPIC_PACKS_DB,
+                persist=True,
+                quality_mode=quality_mode,
+                max_created=max_created,
+                skip_slugs=skip_slugs,
             )
-        else:
-            rows = materializer.fetch_rows_http(
-                base_url=base_url, token=token, min_exact_facts=2,
-                min_papers=2, limit=limit, strategy=strategy,
-            )
-        result = materializer.materialize_rows(
-            rows,
-            db_dir=topic_pack_db or TOPIC_PACKS_DB,
-            persist=True,
-            quality_mode=quality_mode,
-            max_created=max_created,
-            skip_slugs=skip_slugs,
-        )
-    except Exception as exc:
-        return {"status": "topic_supply_refresh_failed", "error": str(exc), "created": []}
-    created = result.get("created", [])
-    return {
-        **result,
-        "status": "topic_supply_refreshed" if created else "topic_supply_no_new_packs",
-        "strategy": strategy,
-        "quality_mode": quality_mode,
-    }
+        except Exception as exc:
+            errors[strategy] = str(exc)
+            continue
+        created = result.get("created", [])
+        skipped.extend(result.get("skipped", []) or [])
+        attempts.append({
+            "strategy": strategy,
+            "rows": len(rows),
+            "created": len(created),
+            "skipped": len(result.get("skipped", []) or []),
+        })
+        if created:
+            return {
+                **result,
+                "skipped": skipped,
+                "status": "topic_supply_refreshed",
+                "strategy": strategy,
+                "strategies_attempted": attempts,
+                "quality_mode": quality_mode,
+            }
+    if attempts:
+        return {
+            "created": [],
+            "skipped": skipped,
+            "status": "topic_supply_no_new_packs",
+            "strategy": attempts[-1]["strategy"],
+            "strategies_attempted": attempts,
+            "quality_mode": quality_mode,
+            **({"strategy_errors": errors} if errors else {}),
+        }
+    return {"status": "topic_supply_refresh_failed", "errors": errors, "created": []}
 
 
 def _generated_pack_records(topic_pack_db: Path | None = None) -> list[dict[str, Any]]:
