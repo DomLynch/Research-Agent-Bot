@@ -2580,6 +2580,7 @@ def _phase_d_revision_audit_notes(
         note for note, sentinel in (
             (_claim_count_audit_note(feedback, out_dir), "claim-count audit note"),
             (_source_identifier_gap_note(feedback, out_dir), "source-context verification gap"),
+            (_source_label_disambiguation_note(feedback, out_dir), "source-label disambiguation note"),
         ) if note and sentinel not in lower_text
     ]
     if not notes:
@@ -2591,7 +2592,7 @@ def _phase_d_revision_audit_notes(
         phase="D_revision_audit_notes",
         rule="answer_structural_reviewer_audit_asks",
         n_changes=len(notes),
-        detail="added claim-count/source-identifier revision audit note(s)",
+        detail="added structural revision audit note(s)",
     )]
 
 
@@ -2654,6 +2655,55 @@ def _source_identifier_gap_note(feedback: str, out_dir: Path) -> str:
         "peer-reviewed sources in the source-context map and do not independently upgrade "
         "evidence certainty."
     )
+
+
+def _source_label_disambiguation_note(feedback: str, out_dir: Path) -> str:
+    lower = " ".join(feedback.lower().split())
+    wants = (
+        ("maps to exactly one" in lower or "duplication" in lower)
+        and ("bundle entry" in lower or "cited_as" in lower or "label" in lower)
+    )
+    if not wants:
+        return ""
+    wanted = _feedback_label_tokens(feedback)
+    if not wanted:
+        return ""
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    by_token = {
+        str(row.get("citation_token") or "").strip().lower(): row
+        for row in rows
+        if str(row.get("citation_token") or "").strip()
+    }
+    parts = []
+    for token in wanted:
+        row = by_token.get(token.lower())
+        if not row:
+            continue
+        title = str(row.get("source_title") or row.get("receipt_id") or "source record").strip()
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        direction = str(row.get("effect_direction") or "unclear").strip()
+        directness = str(row.get("directness") or "unclear").strip()
+        parts.append(f"{token} maps to one retained manifest receipt ({outcome}; direction={direction}; directness={directness}; title: {title})")
+    if not parts:
+        return ""
+    return "Source-label disambiguation note: " + "; ".join(parts) + "."
+
+
+def _feedback_label_tokens(feedback: str) -> list[str]:
+    segments = [
+        part for part in re.split(r"(?:;|\.)\s+", feedback)
+        if any(token in part.lower() for token in ("duplication", "cited_as", "maps to exactly one", "distinct cited"))
+    ]
+    seen: set[str] = set()
+    out: list[str] = []
+    for segment in segments:
+        for token in re.findall(r"\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}[a-z]?\b", segment):
+            if token not in seen:
+                seen.add(token)
+                out.append(token)
+    return out
 
 
 def _row_has_public_identifier(row: dict[str, Any]) -> bool:

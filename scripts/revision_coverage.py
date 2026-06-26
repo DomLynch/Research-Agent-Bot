@@ -143,6 +143,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_source_directness_breakdown,
             _asks_source_statistics_landscape,
             _asks_citation_traceability_map,
+            _asks_source_label_disambiguation,
             _asks_source_verification_transparency,
             _asks_source_identifier_gap_note,
             _asks_section_source_grounding,
@@ -222,6 +223,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_statistics_landscape_is_stated(paper_md)
     if _asks_citation_traceability_map(lower):
         return _citation_traceability_map_is_stated(paper_md)
+    if _asks_source_label_disambiguation(lower):
+        return _source_label_disambiguation_is_stated(paper_md, ask)
     if _asks_source_verification_transparency(lower):
         return _source_verification_transparency_is_stated(paper_md)
     if _asks_source_identifier_gap_note(lower):
@@ -697,6 +700,13 @@ def _asks_citation_traceability_map(text: str) -> bool:
         and "citation" in text
         and any(token in text for token in ("source bundle entry", "source-bundle entry", "bundle entry"))
         and any(token in text for token in ("methods_pack", "citation list", "mapping"))
+    )
+
+
+def _asks_source_label_disambiguation(text: str) -> bool:
+    return (
+        ("maps to exactly one" in text or "duplication" in text)
+        and ("bundle entry" in text or "cited_as" in text or "label" in text)
     )
 
 
@@ -1407,6 +1417,14 @@ def _citation_traceability_map_is_stated(paper_md: str) -> bool:
             "methods_pack.json",
         )
     ) and ("manifest.json" in text or "citation_registry.json" in text)
+
+
+def _source_label_disambiguation_is_stated(paper_md: str, ask: str) -> bool:
+    text = paper_md.lower()
+    if "source-label disambiguation note:" not in text:
+        return False
+    labels = re.findall(r"\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}[a-z]?\b", ask)
+    return all(label.lower() in text for label in labels)
 
 
 def _external_references_are_marked_illustrative(paper_md: str, ask: str) -> bool:
