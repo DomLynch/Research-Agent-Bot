@@ -838,7 +838,8 @@ def _phase_d_admission_funnel_clarification(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     if not _revision_asks_admission_funnel_clarification(feedback):
         return text, []
-    if "admission-bucket note:" in text.lower():
+    replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
+    if "admission-bucket note:" in text.lower() and not replace_table:
         return text, []
     heading = re.search(
         r"^#{2,4}\s+.*(?:admission funnel|selection flow).*$",
@@ -847,6 +848,19 @@ def _phase_d_admission_funnel_clarification(
     )
     if not heading:
         return text, []
+    section_end = re.search(r"^#{2,4}\s+", text[heading.end():], flags=re.M)
+    section_end_pos = heading.end() + section_end.start() if section_end else len(text)
+    if replace_table:
+        body = text[heading.end():section_end_pos]
+        if "|" not in body:
+            return text, []
+        patched = text[:heading.end()].rstrip() + "\n\n" + _ADMISSION_FUNNEL_NOTE + "\n\n" + text[section_end_pos:].lstrip()
+        return patched, [FinalizerLogEntry(
+            phase="D_admission_funnel_clarification",
+            rule="replace_non_additive_admission_table",
+            n_changes=1,
+            detail="replaced non-additive admission-funnel table with textual clarification",
+        )]
     lines = text[heading.end():].splitlines(keepends=True)
     offset = heading.end()
     in_table = False
@@ -873,17 +887,30 @@ def _phase_d_admission_funnel_clarification(
 
 
 def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
+    lower = _normalised_feedback(feedback)
     return (
-        any(token in lower for token in ("admission funnel", "source admission", "receipt admission"))
+        any(token in lower for token in ("admission funnel", "admissions funnel", "source admission", "receipt admission"))
         and any(token in lower for token in (
             "numerical inconsistency", "numeric inconsistency", "contradictory",
             "contradiction", "both equal", "clarify", "reconcile",
-            "coherent accounting", "derived",
+            "coherent accounting", "derived", "prisma style", "arithmetic scrutiny",
+            "mutually exclusive", "additive rows", "remove the table",
         ))
     ) or ("no extractable claims" in lower and "admitted final" in lower) or (
         "partial/none-only" in lower and "partial-only" in lower
     )
+
+
+def _revision_asks_admission_funnel_textual_replacement(feedback: str) -> bool:
+    lower = _normalised_feedback(feedback)
+    return (
+        any(token in lower for token in ("admission funnel", "admissions funnel"))
+        and any(token in lower for token in ("prisma style", "arithmetic scrutiny", "mutually exclusive", "additive rows", "remove the table"))
+    )
+
+
+def _normalised_feedback(feedback: str) -> str:
+    return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", feedback.lower()).split())
 
 
 _DIRECTIONAL_CODING_NOTE = (

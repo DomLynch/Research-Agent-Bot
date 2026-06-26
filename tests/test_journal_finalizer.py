@@ -428,6 +428,43 @@ def test_admission_funnel_clarification_covers_coherent_accounting_ask(tmp_path:
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_admission_funnel_clarification_replaces_non_additive_table_when_requested(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Fix the admissions-funnel presentation: either provide a true PRISMA-style "
+        "exclusion cascade with mutually exclusive and additive rows, or remove the table "
+        "and replace with a textual description that does not invite arithmetic scrutiny."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Receipt candidate union | 187 |\n"
+        "| Mixed partial-or-none claim-binding candidates | 70 |\n"
+        "| Admitted final sources | 64 |\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert "| Admission bucket |" not in fixed
+    assert "Admission-bucket note:" in fixed
+    assert "not an additive conservation table" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_admission_funnel_clarification",
+            rule="replace_non_additive_admission_table",
+            n_changes=1,
+            detail="replaced non-additive admission-funnel table with textual clarification",
+        )
+    ]
+
+
 def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> None:
     paper = (
         "## Methods\n\n"

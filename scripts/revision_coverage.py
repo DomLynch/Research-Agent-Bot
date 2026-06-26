@@ -307,6 +307,10 @@ def _asks_classification_criteria(text: str) -> bool:
     )
 
 
+def _normalised_feedback(text: str) -> str:
+    return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
+
+
 def _asks_conflict_severity_criteria(text: str) -> bool:
     return (
         any(token in text for token in ("severity-level", "severity level"))
@@ -514,12 +518,15 @@ def _asks_evidence_tier_directness_bounds(text: str) -> bool:
 
 
 def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
+    text = _normalised_feedback(text)
     return (
-        any(token in text for token in ("admission funnel", "source admission", "receipt admission"))
+        any(token in text for token in ("admission funnel", "admissions funnel", "source admission", "receipt admission"))
         and any(token in text for token in (
             "numerical inconsistency", "numeric inconsistency", "inconsistently",
             "both equal", "contradictory", "contradiction", "clarify",
-            "reconcile", "coherent accounting", "derived",
+            "reconcile", "coherent accounting", "derived", "prisma style",
+            "arithmetic scrutiny", "mutually exclusive", "additive rows",
+            "remove the table",
         ))
     ) or ("no extractable claims" in text and "admitted final" in text) or (
         "partial/none-only" in text and "partial-only" in text
