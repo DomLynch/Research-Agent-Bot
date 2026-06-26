@@ -505,8 +505,19 @@ def test_metadata_derived_collision_disambiguator() -> None:
     }
     registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
     citations = sorted(e.body_citation for e in registry.values())
-    # Smith 2024 (first) + Smith 2024b (collision suffix)
-    assert citations == ["Smith 2024", "Smith 2024b"]
+    assert citations == ["Smith 2024a", "Smith 2024b"]
+
+
+def test_first_collision_member_gets_a_suffix() -> None:
+    """Regression for Chen 2026a: every distinct source in a collision group
+    must be suffixed, including the first one, so prose and references agree."""
+    receipts = [
+        _FakeReceipt(receipt_id="Chen_2026_sarcopenia_ckm", source_year=2026),
+        _FakeReceipt(receipt_id="Chen_2026_resting_heart_rate", source_year=2026),
+    ]
+    registry = cr.build_registry(receipts)
+    assert registry[receipts[0].receipt_id].body_citation == "Chen 2026a"
+    assert registry[receipts[1].receipt_id].body_citation == "Chen 2026b"
 
 
 def test_same_source_author_year_receipts_share_canonical_token() -> None:
