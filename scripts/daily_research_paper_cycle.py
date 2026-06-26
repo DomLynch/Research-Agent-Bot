@@ -927,10 +927,11 @@ def _source_precision_repair_candidate(topic: str) -> bool:
 
 def _revision_requests_source_precision(feedback: str) -> bool:
     text = str(feedback or "").lower()
+    if any(token in text for token in ("off-topic", "off topic", "unrelated topic", "unrelated topics")):
+        return True
     return "source" in text and any(token in text for token in (
-        "off-topic", "off topic", "source bundle", "directly address",
-        "directly addresses", "narrow the source", "remove or reclassify",
-        "unrelated topic", "unrelated topics", "operationalize",
+        "directly address", "directly addresses", "narrow the source",
+        "remove or reclassify", "operationalize",
     ))
 
 
@@ -3526,7 +3527,6 @@ def run_cycle(
                 source_manifest_availability
                 and not source_manifest_availability.get("passed")
                 and revision_source
-                and not revision_source_repair
             ):
                 restore = _restore_source_manifest_quant_claims(selected, revision_source_run)
                 source_manifest_availability = _source_manifest_availability(selected, revision_source_run)

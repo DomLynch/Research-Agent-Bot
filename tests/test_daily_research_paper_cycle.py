@@ -3656,6 +3656,43 @@ def test_revise_restores_source_manifest_files_from_quarantine(tmp_path: Path, m
     assert ledger["attempts"][0]["submitted"] == 1
 
 
+def test_revise_restores_source_manifest_when_feedback_mentions_source_bundle(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    qdir = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims"
+    quarantine = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims_quarantine" / "old"
+    quarantine.mkdir(parents=True)
+    for idx in range(cycle.PREFLIGHT_MIN_RECEIPTS - 1, 57):
+        (qdir / f"r{idx}.quant_claims.json").rename(quarantine / f"r{idx}.quant_claims.json")
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda *_a, **_k: (
+        (_ for _ in ()).throw(AssertionError("source-bundle explanation must not prune corpus"))
+    ))
+    feedback_seen: list[str | None] = []
+    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([{
+            "artifactId": "rev-1",
+            "submissionId": "sub-1",
+            "title": "Research Synthesis: Aspirin Geroprotection — full paper",
+            "feedback": "Reconcile the outcome-class coding with the actual source bundle.",
+        }], None),
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert cycle._revision_requests_source_precision("actual source bundle") is False
+    assert cycle._revision_requests_source_precision("remove off-topic sources") is True
+    assert ledger["source_manifest_restore"]["n_restored"] == 57 - (cycle.PREFLIGHT_MIN_RECEIPTS - 1)
+    assert ledger["source_manifest_restore"]["availability_after"]["passed"] is True
+    assert feedback_seen == ["Reconcile the outcome-class coding with the actual source bundle."]
+    assert ledger["attempts"][0]["submitted"] == 1
+
+
 def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     calls = 0
