@@ -3867,6 +3867,13 @@ def test_deterministic_revision_satisfaction_overrides_stale_judge_block(tmp_pat
         "Key findings from source synthesis: positive, mixed, and null findings are separated by "
         "source type and directness. Huang 2025 and Kou 2024 do not prove a broad intervention "
         "effect, but they bound the conclusion.\n\n"
+        "Source-level findings by outcome class:\n\n"
+        "- Cognitive Aging: Huang 2025 reported a null immune-dementia signal, "
+        "direction=null, directness=indirect, tier=B2.\n"
+        "- Brain Imaging: Kou 2024 reported mixed proteomic brain-age associations, "
+        "direction=mixed, directness=indirect, tier=B2.\n"
+        "- Genetics: Jawinski 2025 reported positive MR signals, "
+        "direction=positive, directness=mechanistic, tier=B2.\n\n"
         "## Methods\n\n"
         "Risk-of-bias appraisal summary: The public appraisal artifact reports 65 source-level "
         "rating rows using RoB-2, ROBINS-I, and SYRCLE; overall ratings are some_concerns=65.\n",

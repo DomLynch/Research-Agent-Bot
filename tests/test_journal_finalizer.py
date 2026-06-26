@@ -460,6 +460,28 @@ def test_admission_funnel_clarification_covers_coherent_accounting_ask(tmp_path:
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_admission_funnel_clarification_covers_search_summary_selection_logic(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Rewrite the Search Summary to describe the actual selection logic."
+    paper = (
+        "## Methods\n\n"
+        "### Source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Source candidates | 43 |\n"
+        "| Admitted final sources | 13 |\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, _ = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert "Admission-bucket note:" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
 def test_admission_funnel_clarification_replaces_non_additive_table_when_requested(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

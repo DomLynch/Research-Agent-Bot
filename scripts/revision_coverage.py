@@ -586,7 +586,10 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
         "partial/none-only" in text and "partial-only" in text
     ) or (
         "search summary" in text
-        and any(token in text for token in ("selection logic", "source candidates", "admitted sources"))
+        and "selection logic" in text
+    ) or (
+        "search summary" in text
+        and any(token in text for token in ("source candidates", "admitted sources"))
         and any(token in text for token in (
             "non additive", "non-additive", "overlapping categories",
             "single transparent exclusion",

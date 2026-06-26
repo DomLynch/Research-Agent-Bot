@@ -924,7 +924,10 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
         "partial/none-only" in lower and "partial-only" in lower
     ) or (
         "search summary" in lower
-        and any(token in lower for token in ("selection logic", "source candidates", "admitted sources"))
+        and "selection logic" in lower
+    ) or (
+        "search summary" in lower
+        and any(token in lower for token in ("source candidates", "admitted sources"))
         and any(token in lower for token in ("non additive", "non-additive", "overlapping categories", "single transparent exclusion"))
     )
 

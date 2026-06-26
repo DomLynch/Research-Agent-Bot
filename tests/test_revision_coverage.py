@@ -1794,6 +1794,24 @@ def test_deterministic_coverage_accepts_vascular_latest_reviewer_asks() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
 
 
+def test_revision_asks_splits_latest_vascular_feedback_starts() -> None:
+    feedback = (
+        "Populate Key Findings and each per-outcome-class subsection with concrete prose "
+        "that names individual cited sources.; Reconcile the outcome-class directional "
+        "coding with the actual source bundle.; Rewrite the Search Summary to describe "
+        "the actual selection logic.; In Limitations, add a specific statement about "
+        "forward-dated citations.; Tighten the Conclusion so that the tiered reading is "
+        "grounded in named source-level findings."
+    )
+
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == [
+        "Populate", "Reconcile", "Rewrite", "In", "Tighten",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks[:3]) == asks[:3]
+
+
 def test_deterministic_unmet_accepts_specific_findings_by_source_map() -> None:
     ask = (
         "For each outcome class, extract at least 2-3 specific findings from "
