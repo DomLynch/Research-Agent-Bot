@@ -1922,3 +1922,42 @@ def test_deterministic_unmet_accepts_external_references_marked_illustrative() -
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
     assert revision_coverage.deterministic_unmet_asks(unmarked, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_thin_brief_revision_surface_notes() -> None:
+    asks = [
+        "Add substantive narrative under each outcome subsection (Contextual Adjacent Evidence, Cardiometabolic, Deficiency Prevalence, Longevity, Mechanism, Safety and Comorbidity) that links at least one specific quantitative or qualitative finding to its source, or explicitly state null/mechanistic-only status; In the Conclusion, tie the tiered interpretation to the specific bundle: name which 1 direct source carries the most interpretive weight and explain why the remaining 12 sources do not change that weight.",
+        "Expand the Limitations to specifically note that several admitted sources are protocols or cross-sectional observational designs that cannot support causal claims even individually.",
+    ]
+    weak = (
+        "## Results\n\n"
+        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Vascular age / Cardiometabolic | n=1 | null | 1 direct | thin |\n\n"
+        "### Source Classification Map\n\n"
+        "- Wang 2024: outcome=cardiometabolic; directness=direct; tier=A1; direction=null.\n\n"
+        "## Limitations\n\nThin corpus.\n\n"
+        "## Conclusion\n\nThe conclusion is bounded.\n"
+    )
+    repaired = weak.replace(
+        "## Results\n\n",
+        "## Results\n\n"
+        "Source examples: Cardiometabolic: Wang 2024 (tier=A1; directness=direct; direction=null).\n\n",
+    ).replace(
+        "## Limitations\n\nThin corpus.\n",
+        "## Limitations\n\n"
+        "**Design-limit note:** Protocol, mechanistic, observational, or cross-sectional sources "
+        "are retained for context but cannot support causal claims individually.\n\n"
+        "Thin corpus.\n",
+    ).replace(
+        "## Conclusion\n\nThe conclusion is bounded.\n",
+        "## Conclusion\n\n"
+        "**Direct-source ceiling:** The direct clinical source set is Wang 2024. "
+        "The remaining accepted sources are indirect, review, protocol, mechanistic, "
+        "or contextual evidence and do not outweigh the direct-source interpretation.\n\n"
+        "The conclusion is bounded.\n",
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(weak, asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []

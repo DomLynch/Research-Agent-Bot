@@ -3059,3 +3059,52 @@ def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: 
     assert not any(i.code == "citation_artifact" for i in evaluate_journal_surface(paper).issues)
     after = verify_run_artifacts(tmp_path)
     assert after.passed is True
+
+
+def test_revision_surface_notes_insert_manifest_backed_thin_brief_notes(tmp_path: Path) -> None:
+    feedback = (
+        "Add substantive narrative under each outcome subsection that links at least one "
+        "specific quantitative or qualitative finding to its source; In the Conclusion, "
+        "tie the tiered interpretation to the specific bundle: name which 1 direct source "
+        "carries the most interpretive weight and explain why the remaining sources do not "
+        "change that weight; Expand the Limitations to specifically note that several "
+        "admitted sources are protocols or cross-sectional observational designs that cannot "
+        "support causal claims even individually."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": feedback}), encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {
+                "citation_token": "Wang 2024",
+                "outcome_class": "cardiometabolic",
+                "directness": "direct",
+                "evidence_tier": "A1",
+                "effect_direction": "null",
+            },
+            {
+                "citation_token": "Vicente-Gabriel 2024",
+                "source_title": "Vascular aging protocol cross-sectional study",
+                "outcome_class": "contextual_other",
+                "directness": "protocol",
+                "evidence_tier": "D1",
+                "effect_direction": "null",
+            },
+        ],
+    }), encoding="utf-8")
+    paper = (
+        "## Results\n\n"
+        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n\n"
+        "## Limitations\n\nThin corpus.\n\n"
+        "## Conclusion\n\nBounded conclusion.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_revision_surface_notes(paper, tmp_path)
+
+    assert [entry.rule for entry in logs] == ["insert_manifest_backed_revision_surface_notes"]
+    assert "Source examples: Cardiometabolic: Wang 2024" in fixed
+    assert "**Direct-source ceiling:** The direct clinical source set is Wang 2024." in fixed
+    assert "**Design-limit note:** Protocol, mechanistic, observational, or cross-sectional sources" in fixed
+    assert "Vicente-Gabriel 2024" in fixed

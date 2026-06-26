@@ -173,6 +173,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_unbundled_citation_cleanup,
             _asks_structured_table_stub_replacement,
             _asks_source_count_bundle_reconciliation,
+            _asks_named_direct_clinical_source,
             _asks_outcome_subsection_source_narrative,
             _asks_protocol_design_limitations,
             _asks_external_reference_boundary,
@@ -289,6 +290,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _structured_table_stubs_are_replaced(paper_md)
     if _asks_source_count_bundle_reconciliation(lower):
         return _source_count_bundle_reconciliation_is_stated(paper_md)
+    if _asks_named_direct_clinical_source(lower):
+        return _named_direct_clinical_source_is_stated(paper_md)
     if _asks_outcome_subsection_source_narrative(lower):
         return _outcome_subsection_source_narrative_is_stated(paper_md)
     if _asks_protocol_design_limitations(lower):
@@ -413,7 +416,7 @@ def _asks_key_findings_source_verdict(text: str) -> bool:
     return (
         "key findings" in text
         and "source" in text
-        and any(token in text for token in ("outcome class", "retained sources", "effect size", "directional statement"))
+        and any(token in text for token in ("outcome class", "outcome slice", "retained sources", "effect size", "directional statement"))
     )
 
 
@@ -691,6 +694,10 @@ def _asks_internal_duplication(text: str) -> bool:
 
 def _asks_long_term_safety_scope(text: str) -> bool:
     return "long-term safety" in text or ("safety data" in text and "older adult" in text)
+
+
+def _asks_named_direct_clinical_source(text: str) -> bool:
+    return "direct clinical source" in text and any(token in text for token in ("which source", "clarify", "state this explicitly"))
 
 
 def _asks_outcome_subsection_source_narrative(text: str) -> bool:
@@ -1049,15 +1056,33 @@ def _findings_map_source_verdict_is_stated(paper_md: str) -> bool:
 
 
 def _key_findings_source_verdict_is_stated(paper_md: str) -> bool:
-    scope = _section(paper_md, "Key Findings")
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Results"),
+        _section(paper_md, "Evidence Snapshot"),
+    ) if part)
     lower = scope.lower()
-    return bool(
-        "key findings from source synthesis" in lower
-        and "outcome=" in lower
-        and "direction=" in lower
-        and "directness=" in lower
-        and "tier=" in lower
-        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
+    return bool(re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)) and (
+        (
+            "key findings from source synthesis" in lower
+            and "outcome=" in lower
+            and "direction=" in lower
+            and "directness=" in lower
+            and "tier=" in lower
+        )
+        or (
+            "source examples:" in lower
+            and "tier=" in lower
+            and "directness=" in lower
+            and "direction=" in lower
+        )
+        or (
+            "evidence domain" in lower
+            and "source classification map" in paper_md.lower()
+            and "outcome=" in paper_md.lower()
+            and "directness=" in paper_md.lower()
+            and "tier=" in paper_md.lower()
+        )
     )
 
 
@@ -1340,6 +1365,19 @@ def _source_identifier_gap_note_is_stated(paper_md: str) -> bool:
             "peer-reviewed",
         )
     ) and any(token in text for token in ("do not independently upgrade", "cannot independently upgrade"))
+
+
+def _named_direct_clinical_source_is_stated(paper_md: str) -> bool:
+    conclusion = _section(paper_md, "Conclusion").lower()
+    whole = paper_md.lower()
+    return bool(
+        "direct-source ceiling:" in conclusion
+        and "direct clinical source set" in conclusion
+        and (
+            "directness=direct" in whole
+            or re.search(r"\b[A-Z][A-Za-z-]+\s+20\d{2}\b", _section(paper_md, "Conclusion")) is not None
+        )
+    )
 
 
 def _outcome_subsection_source_narrative_is_stated(paper_md: str) -> bool:
