@@ -3758,6 +3758,15 @@ async def _run_post_paper_pipeline(
     _stage5_finalizer_report = finalize_run(paper_path.parent)
     if _stage5_finalizer_report.paper_changed:
         paper_md = paper_path.read_text()
+    paper_md, _post_finalizer_fix_log = _repair_post_finalizer_auto_fixables(
+        paper_md, manifest, paper_path, _audit, quant_claims_dir=QUANT_DIR,
+    )
+    if _post_finalizer_fix_log:
+        print(
+            "[pipeline] Stage 5a* — post-finalizer consistency auto-fix "
+            f"applied={sum(int(i.get('n_changes') or 0) for i in _post_finalizer_fix_log)}",
+            file=sys.stderr,
+        )
 
     audit_report = _audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
@@ -4373,6 +4382,38 @@ def _heading_occurrences(heading: str, paper_md: str) -> int:
         return 0
     normalized = " ".join(heading.split())
     return sum(1 for line in paper_md.splitlines() if " ".join(line.strip().split()) == normalized)
+
+
+def _repair_post_finalizer_auto_fixables(
+    paper_md: str,
+    manifest: dict[str, Any],
+    paper_path: Path,
+    audit_fn,
+    *,
+    quant_claims_dir: Path,
+) -> tuple[str, list[dict[str, Any]]]:
+    audit = audit_fn(paper_md)
+    audit_md = _audit_v06._format_summary(audit)
+    issues = _consistency_audit.run_audit(
+        paper_md, manifest, audit, audit_md, run_dir=paper_path.parent,
+    )
+    if not any(getattr(i, "auto_fixable", False) for i in issues):
+        return paper_md, []
+    fixed_md, log = _consistency_fixer.apply_fixes(
+        paper_md, issues, manifest=manifest,
+        quant_claims_dir=quant_claims_dir,
+        numeric_quarantine_path=paper_path.with_name(
+            "numeric_claim_quarantine.json",
+        ),
+    )
+    fixed_md = _strip_rendered_citation_markers(fixed_md)
+    if fixed_md == paper_md and not log:
+        return paper_md, []
+    paper_path.write_text(fixed_md)
+    paper_path.with_suffix(".post_finalizer_fixed_log.json").write_text(
+        json.dumps(log, indent=2),
+    )
+    return fixed_md, log
 
 
 def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:

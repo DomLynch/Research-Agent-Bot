@@ -10,6 +10,7 @@ import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
+from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import run_v06_synthesis as orch  # noqa: E402
@@ -78,6 +79,47 @@ def test_build_claims_skips_paper_with_no_high_conf_claims(
     registry = cr.build_registry(receipts)
     out = orch._build_claims_by_citation(receipts, registry)
     assert out["Walton 2019"] == []
+
+
+def test_post_finalizer_auto_fixable_issues_are_repaired(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    """Finalizer-side mutations get one last deterministic fix pass
+    before final verdict sidecars are computed."""
+    paper_path = tmp_path / "full_paper.md"
+    paper_path.write_text("Bad finalizer numeric 123.")
+    issue = SimpleNamespace(auto_fixable=True)
+
+    monkeypatch.setattr(orch, "_strip_rendered_citation_markers", lambda md: md)
+    monkeypatch.setattr(
+        orch._audit_v06, "_format_summary", lambda _audit: "audit-md",
+    )
+    monkeypatch.setattr(
+        orch._consistency_audit,
+        "run_audit",
+        lambda *args, **kwargs: [issue],
+    )
+    monkeypatch.setattr(
+        orch._consistency_fixer,
+        "apply_fixes",
+        lambda *args, **kwargs: (
+            "Clean finalizer paper.",
+            [{"fix_type": "numeric_role_guard_strip", "n_changes": 1}],
+        ),
+    )
+
+    fixed, log = orch._repair_post_finalizer_auto_fixables(
+        paper_path.read_text(),
+        {"topic": "cardio"},
+        paper_path,
+        lambda _md: {"checks": []},
+        quant_claims_dir=tmp_path / "quant_claims",
+    )
+
+    assert fixed == "Clean finalizer paper."
+    assert paper_path.read_text() == "Clean finalizer paper."
+    assert log[0]["fix_type"] == "numeric_role_guard_strip"
+    assert (tmp_path / "full_paper.post_finalizer_fixed_log.json").is_file()
 
 
 def test_build_claims_handles_missing_quant_file(
