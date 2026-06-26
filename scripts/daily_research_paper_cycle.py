@@ -1315,6 +1315,11 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         _revision_key(row): _parse_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
         for row in (active_requests or [])
     }
+    active_submission_ids: dict[str, set[str]] = {}
+    for row in active_requests or []:
+        submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
+        if submission_id:
+            active_submission_ids.setdefault(_revision_key(row), set()).add(submission_id)
 
     def _row_applies_to_active_request(row: dict[str, Any]) -> bool:
         reviewed_at = active_reviewed.get(_revision_key(row))
@@ -1322,6 +1327,15 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
             return True
         handled_at = _parse_time(str(row.get("handled_at") or ""))
         return bool(handled_at and handled_at >= reviewed_at)
+
+    def _submitted_row_is_superseded_by_active_decision(row: dict[str, Any]) -> bool:
+        if str(row.get("status") or "") != "submitted_to_researka":
+            return False
+        active_ids = active_submission_ids.get(_revision_key(row))
+        if not active_ids:
+            return False
+        row_submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
+        return not row_submission_id or row_submission_id in active_ids
 
     def _retryable_status_in_cooldown(row: dict[str, Any]) -> bool:
         if str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES:
@@ -1340,6 +1354,7 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
             isinstance(row, dict)
             and row.get("title")
             and _row_applies_to_active_request(row)
+            and not _submitted_row_is_superseded_by_active_decision(row)
             and (str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES or _retryable_status_in_cooldown(row))
         )
     )
@@ -1361,6 +1376,8 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
     handled = terminal | {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
     for row in rows:
         if not isinstance(row, dict) or row.get("status") != "submitted_to_researka":
+            continue
+        if _submitted_row_is_superseded_by_active_decision(row):
             continue
         key = _revision_key(row)
         handled_at = _parse_time(str(row.get("handled_at") or ""))
@@ -1404,6 +1421,9 @@ def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str
         "key": _revision_key(row),
         "status": status,
         "title": row.get("title"),
+        "artifactId": row.get("artifactId") or row.get("artifact_id"),
+        "submissionId": row.get("submissionId") or row.get("submission_id"),
+        "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
         "handled_at": dt.datetime.now(dt.UTC).isoformat(),
     })
     _write_json(path, {"handled": rows[-100:]})

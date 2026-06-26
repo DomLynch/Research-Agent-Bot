@@ -4509,6 +4509,48 @@ def test_submitted_revision_waits_for_newer_review_before_reprocessing(tmp_path:
     assert pending and pending["artifactId"] == "r2"
 
 
+def test_submitted_revision_direct_decision_reopens_same_submission(tmp_path: Path) -> None:
+    source_run = _prior_run(tmp_path, "vascular_age", receipts=57, tensions=274, level=5)
+    paper = source_run / "full_paper.md"
+    title = "Hypothesis-Generating Brief: Vascular age — full paper"
+    paper.write_text(f"# {title}\n", encoding="utf-8")
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    submission_id = "sub-vascular-2"
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source_run.name,
+        "topic": "vascular_age",
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+        "submission_id": submission_id,
+    }])
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": cycle.submit_bridge._title_marker(title),
+        "title": title,
+        "status": "submitted_to_researka",
+        "handled_at": "2026-06-26T18:10:42+00:00",
+    }]})
+    request = {
+        "artifactId": "decision-2",
+        "submissionId": submission_id,
+        "title": title,
+        "topic": "vascular_age",
+        "feedback": "Populate Key Findings with source-level results.",
+        "reviewedAt": "2026-06-26T18:09:45+00:00",
+    }
+
+    assert cycle.submit_bridge._title_marker(title) not in cycle._handled_revision_ids(ledger_dir, [request])
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["submissionId"] == submission_id
+    assert pending["topic"] == "vascular_age"
+    assert pending["source_run"] == source_run.name
+
+
 def test_pending_remote_revision_matches_topic_when_paper_title_is_malformed(tmp_path: Path) -> None:
     runs = tmp_path / "runs"
     source_run = runs / "synthesis-sirtuin_intervention_aging_effects-v06-DAILY-2026-06-21T20-04-33Z"
