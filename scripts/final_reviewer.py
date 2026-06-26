@@ -378,7 +378,29 @@ def _is_retryable_error(exc: BaseException) -> bool:
             ),
         ):
             return True
-    return isinstance(exc, (ValueError, KeyError, json.JSONDecodeError))
+    return isinstance(
+        exc, (TimeoutError, ValueError, KeyError, json.JSONDecodeError),
+    )
+
+
+def _review_call_timeout_sec() -> float:
+    raw = os.environ.get("FINAL_LAYER_REVIEW_TIMEOUT_SEC", "120")
+    try:
+        value = float(raw)
+    except ValueError:
+        return 120.0
+    return max(5.0, value)
+
+
+async def _call_one_bounded(
+    system: str, user: str, model: str, api_key: str,
+    base_url: str, client: Any,
+) -> tuple[dict[str, Any], int, int]:
+    timeout = _review_call_timeout_sec()
+    return await asyncio.wait_for(
+        _call_one(system, user, model, api_key, base_url, client),
+        timeout=timeout,
+    )
 
 
 async def _call_with_fallback(
@@ -394,14 +416,14 @@ async def _call_with_fallback(
     except ModuleNotFoundError:
         transport_errors = ()
     retry_errors = transport_errors + (
-        ValueError, KeyError, json.JSONDecodeError,
+        TimeoutError, ValueError, KeyError, json.JSONDecodeError,
     )
     attempts: list[dict[str, Any]] = []
     for model in (primary_model, fallback_model):
         max_attempts = _attempt_count(model, primary_model)
         for attempt in range(1, max_attempts + 1):
             try:
-                parsed, in_tok, out_tok = await _call_one(
+                parsed, in_tok, out_tok = await _call_one_bounded(
                     system, user, model, api_key, base_url, client,
                 )
                 cost = _estimate_cost(model, in_tok, out_tok)
@@ -559,7 +581,7 @@ async def repair_flagged_patches(
     own_client = client is None
     if own_client:
         import httpx
-        c: Any = httpx.AsyncClient(timeout=300.0)
+        c: Any = httpx.AsyncClient(timeout=_review_call_timeout_sec())
     else:
         c = client
     try:
@@ -604,7 +626,7 @@ async def review_paper(
     own_client = client is None
     if own_client:
         import httpx
-        c: Any = httpx.AsyncClient(timeout=300.0)
+        c: Any = httpx.AsyncClient(timeout=_review_call_timeout_sec())
     else:
         c = client
     try:
