@@ -147,6 +147,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_source_verification_transparency,
             _asks_source_identifier_gap_note,
             _asks_section_source_grounding,
+            _asks_concrete_research_question,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
             _asks_publication_year_note,
@@ -236,6 +237,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_identifier_gap_note_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
         return _section_source_grounding_is_stated(paper_md)
+    if _asks_concrete_research_question(lower):
+        return _concrete_research_question_is_stated(paper_md)
     if _asks_combination_product_signal_boundary(lower):
         return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
@@ -474,10 +477,22 @@ def _asks_section_source_grounding(text: str) -> bool:
     )
 
 
+def _asks_concrete_research_question(text: str) -> bool:
+    return (
+        "research question" in text
+        and any(token in text for token in ("concrete", "answerable", "fix", "framing"))
+    )
+
+
 def _asks_substantive_evidence_synthesis(text: str) -> bool:
     return (
         "actual evidence synthesis" in text
         or "synthesis paragraph" in text
+        or (
+            "within-class" in text
+            and "synthesis narrative" in text
+            and ("source" in text or "studies found" in text)
+        )
         or ("integrate" in text and "evidence" in text)
         or (
             "strongest" in text
@@ -1227,6 +1242,19 @@ def _substantive_evidence_synthesis_is_stated(paper_md: str) -> bool:
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
         and re.search(r"\bpositive|negative|mixed|unclear|null|no extracted directional signal\b", scope, re.I)
         and "bounded conclusion" in scope.lower()
+    )
+
+
+def _concrete_research_question_is_stated(paper_md: str) -> bool:
+    question = _section(paper_md, "Research Question").lower()
+    if not question:
+        return False
+    return (
+        "?" in question
+        and "source" in question
+        and "outcome class" in question
+        and any(token in question for token in ("direct", "indirect", "mechanistic", "review"))
+        and any(token in question for token in ("hypothesis-generating", "clinically actionable", "clinical"))
     )
 
 

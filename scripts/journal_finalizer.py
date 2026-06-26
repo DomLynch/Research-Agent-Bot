@@ -111,6 +111,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
+        lambda t: _phase_d_research_question_scope(t, out_dir),
         lambda t: _phase_d_substantive_evidence_synthesis(t, out_dir),
         lambda t: _phase_d_rct_count_reconciliation(t, out_dir),
         lambda t: _phase_d_unbacked_appraisal_names(t, out_dir),
@@ -1712,6 +1713,11 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
     return (
         "actual evidence synthesis" in lower
         or (
+            "within-class" in lower
+            and "synthesis narrative" in lower
+            and ("source" in lower or "studies found" in lower)
+        )
+        or (
             "strongest" in lower
             and "positive" in lower
             and any(token in lower for token in ("finding", "findings", "signal", "signals"))
@@ -1732,6 +1738,55 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             and any(token in lower for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
         )
     )
+
+
+def _revision_asks_concrete_research_question(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "research question" in lower
+        and any(token in lower for token in ("concrete", "answerable", "fix", "framing"))
+    )
+
+
+def _insert_section_before(text: str, section: str, body: str, before: tuple[str, ...]) -> tuple[str, int]:
+    if re.search(rf"^##\s+{re.escape(section)}\b", text, flags=re.M):
+        return text, 0
+    block = f"## {section}\n\n{body.strip()}\n\n"
+    for target in before:
+        match = re.search(rf"^##\s+{re.escape(target)}\b", text, flags=re.M)
+        if match:
+            prefix = text[:match.start()].rstrip()
+            sep = "\n\n" if prefix else ""
+            return prefix + sep + block + text[match.start():].lstrip(), 1
+    return text.rstrip() + "\n\n" + block.rstrip() + "\n", 1
+
+
+def _phase_d_research_question_scope(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_concrete_research_question(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    topic = _topic_display_anchor(manifest) if isinstance(manifest, dict) else ""
+    topic = topic or "the target topic"
+    question = (
+        f"For {topic}, which retained source classes provide direct clinical, "
+        "indirect clinical, review-level, protocol, or mechanistic evidence; "
+        "what do the source-level findings show within each outcome class; "
+        "and where do significant but polarity-uncertain signals remain "
+        "hypothesis-generating rather than clinically actionable?"
+    )
+    patched, n = _insert_section_before(text, "Research Question", question, ("Methods", "Results"))
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_research_question_scope",
+        rule="add_concrete_answerable_research_question",
+        n_changes=n,
+        detail="added reviewer-requested concrete research question",
+    )]
 
 
 def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:

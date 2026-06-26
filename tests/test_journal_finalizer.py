@@ -1603,6 +1603,62 @@ def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_p
     assert logs[0].phase == "D_substantive_evidence_synthesis"
 
 
+def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    feedback = (
+        "Provide actual within-class synthesis narrative for each outcome class "
+        "describing what the cited studies found, not just metadata counts. "
+        "Fix the Research Question to state a concrete, answerable question "
+        "rather than 'what does the corpus establish.'"
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    paper = (
+        "# Hypothesis-Generating Brief: Vascular age\n\n"
+        "## Abstract\n\nEvidence remains bounded.\n\n"
+        "## Methods\n\nDeterministic methods.\n\n"
+        "## Results\n\nThe corpus includes several sources.\n\n"
+        "## Conclusion\n\nThe conclusion is bounded.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "vascular_age",
+        "receipts": [
+            {
+                "citation_token": "Wang 2024",
+                "outcome_class": "cardiometabolic",
+                "effect_direction": "unclear",
+                "directness": "direct",
+                "evidence_tier": "A1",
+                "p_values": ["p < 0.05"],
+                "n_claims": 54,
+            },
+            {
+                "citation_token": "Sheng 2025",
+                "outcome_class": "contextual_adjacent_evidence",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "p_values": ["p < 0.001"],
+                "n_claims": 102,
+            },
+        ],
+    }))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == asks
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "## Research Question" in fixed
+    assert "which retained source classes provide direct clinical" in fixed
+    assert "## Evidence Landscape" in fixed
+    assert "## Key Findings" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert {entry.phase for entry in logs} >= {
+        "D_research_question_scope",
+        "D_substantive_evidence_synthesis",
+    }
+
+
 def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
