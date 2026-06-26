@@ -2581,14 +2581,14 @@ def test_revision_audit_notes_add_source_label_disambiguation(tmp_path: Path) ->
     fixed, logs = journal_finalizer._phase_d_revision_audit_notes(paper, tmp_path)
 
     assert "Source-label disambiguation note:" in fixed
-    assert "cited_as Ward (2026) maps to one retained manifest receipt" in fixed
-    assert "cited_as Filev (2026) maps to one retained manifest receipt" in fixed
-    assert "cited_as Chen (2026) maps to one retained manifest receipt" in fixed
+    assert "citation label Ward (2026) maps to one retained manifest receipt" in fixed
+    assert "citation label Filev (2026) maps to one retained manifest receipt" in fixed
+    assert "citation label Chen (2026) maps to one retained manifest receipt" in fixed
+    assert "cited_as" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
-    assert not any(
-        "unreferenced citation: Chen 2026" in issue.detail
-        for issue in evaluate_journal_surface(fixed).issues
-    )
+    surface_issues = evaluate_journal_surface(fixed).issues
+    assert not any("unreferenced citation: Chen 2026" in issue.detail for issue in surface_issues)
+    assert not any(issue.code == "topic_slug_artifact" for issue in surface_issues)
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
             phase="D_revision_audit_notes",

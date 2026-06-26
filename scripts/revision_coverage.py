@@ -706,7 +706,7 @@ def _asks_citation_traceability_map(text: str) -> bool:
 def _asks_source_label_disambiguation(text: str) -> bool:
     return (
         ("maps to exactly one" in text or "duplication" in text)
-        and ("bundle entry" in text or "cited_as" in text or "label" in text)
+        and ("bundle entry" in text or "cited_as" in text or "cited as" in text or "label" in text)
     )
 
 

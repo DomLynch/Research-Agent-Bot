@@ -2666,7 +2666,7 @@ def _source_label_disambiguation_note(feedback: str, out_dir: Path) -> str:
     lower = " ".join(feedback.lower().split())
     wants = (
         ("maps to exactly one" in lower or "duplication" in lower)
-        and ("bundle entry" in lower or "cited_as" in lower or "label" in lower)
+        and ("bundle entry" in lower or "cited_as" in lower or "cited as" in lower or "label" in lower)
     )
     if not wants:
         return ""
@@ -2691,7 +2691,7 @@ def _source_label_disambiguation_note(feedback: str, out_dir: Path) -> str:
         direction = str(row.get("effect_direction") or "unclear").strip()
         directness = str(row.get("directness") or "unclear").strip()
         label = _noncitation_label(token)
-        parts.append(f"cited_as {label} maps to one retained manifest receipt ({outcome}; direction={direction}; directness={directness}; title: {title})")
+        parts.append(f"citation label {label} maps to one retained manifest receipt ({outcome}; direction={direction}; directness={directness}; title: {title})")
     if not parts:
         return ""
     return "Source-label disambiguation note: " + "; ".join(parts) + "."
@@ -2704,7 +2704,7 @@ def _noncitation_label(token: str) -> str:
 def _feedback_label_tokens(feedback: str) -> list[str]:
     segments = [
         part for part in re.split(r"(?:;|\.)\s+", feedback)
-        if any(token in part.lower() for token in ("duplication", "cited_as", "maps to exactly one", "distinct cited"))
+        if any(token in part.lower() for token in ("duplication", "cited_as", "cited as", "maps to exactly one", "distinct cited"))
     ]
     seen: set[str] = set()
     out: list[str] = []
