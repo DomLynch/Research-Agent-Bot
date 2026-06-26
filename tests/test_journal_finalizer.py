@@ -1658,14 +1658,14 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
         "- Sheng 2025.\n"
     )
     rows = [
-        {"citation_token": "Sheng 2025", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p < 0.001"], "n_claims": 102},
+        {"citation_token": "Sheng 2025", "source_title": "Integrating Vascular Aging and Genetic Risk: The Combined Impact of Estimated Pulse Wave Velocity and Genetic Predisposition on Coronary Artery Disease", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p < 0.001"], "n_claims": 102},
         {"citation_token": "Nguyen 2026", "outcome_class": "deficiency_prevalence", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p = 0.032"], "n_claims": 64},
-        {"citation_token": "Wang 2024", "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "direct", "evidence_tier": "A1", "p_values": ["p < 0.05"], "n_claims": 54},
+        {"citation_token": "Wang 2024", "source_title": "Impact of a Precision Intervention for Vascular Health in Middle-Aged and Older Postmenopausal Women Using Polar Heart Rate Sensors", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "direct", "evidence_tier": "A1", "p_values": ["p < 0.05"], "n_claims": 54},
         {"citation_token": "Rodilla 2026", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 28},
-        {"citation_token": "Alanis 2025", "outcome_class": "mechanism", "effect_direction": "mixed", "directness": "mechanistic", "evidence_tier": "C1", "n_claims": 27},
-        {"citation_token": "Luo 2025", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "p_values": ["p = 0.0007"], "n_claims": 22},
+        {"citation_token": "Alanis 2025", "outcome_class": "mechanism", "effect_direction": "null", "directness": "mechanistic", "evidence_tier": "C1", "n_claims": 27},
+        {"citation_token": "Luo 2025", "source_title": "Effects of L-citrulline supplementation and watermelon intake on arterial stiffness and endothelial function in middle-aged and older adults", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "p_values": ["p = 0.0007"], "n_claims": 22},
         {"citation_token": "Vicente-Gabriel 2024", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "protocol", "evidence_tier": "D1", "n_claims": 20},
-        {"citation_token": "Azizzadeh 2026", "outcome_class": "cardiometabolic", "effect_direction": "unclear", "directness": "indirect", "evidence_tier": "B2", "n_claims": 16},
+        {"citation_token": "Azizzadeh 2026", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 16},
         {"citation_token": "Lu 2026", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "indirect", "evidence_tier": "B2", "n_claims": 14},
         {"citation_token": "Kozlik 2026", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 14},
         {"citation_token": "Joshi 2025", "outcome_class": "safety_comorbidity", "effect_direction": "null", "directness": "protocol", "evidence_tier": "D1", "n_claims": 10},
@@ -1685,6 +1685,9 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
     assert "### Findings Map" in fixed
     assert "Sheng 2025" in fixed
     assert "Kakaletsis 2024" in fixed
+    assert "result=Integrating Vascular Aging and Genetic Risk" in fixed
+    assert "result=Impact of a Precision Intervention for Vascular Health" in fixed
+    assert "result=Effects of L-citrulline supplementation" in fixed
     assert "finding=representative statistic p < 0.001; source-level statistic reported" in fixed
     assert "Actually surfaced tensions include:" in fixed
     assert "## Gaps Identified" in fixed

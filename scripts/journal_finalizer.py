@@ -1643,6 +1643,14 @@ def _phase_d_substantive_evidence_synthesis(
     examples = _manifest_signal_examples(rows)
     if not examples:
         return text, []
+    result_highlights = _manifest_result_highlights(rows)
+    result_sentence = ""
+    if result_highlights:
+        result_sentence = (
+            "Concrete source-result highlights include: "
+            + "; ".join(result_highlights[:6])
+            + ". "
+        )
     counts: dict[str, int] = {}
     for row in rows:
         direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
@@ -1661,7 +1669,9 @@ def _phase_d_substantive_evidence_synthesis(
         "mechanistic, or contextual evidence remains hypothesis-generating."
     )
     key_findings = (
-        "Key findings from source synthesis: First, the strongest positive or "
+        "Key findings from source synthesis: "
+        f"{result_sentence}"
+        "First, the strongest positive or "
         "favorable signals are treated as narrow source-level signals, not broad "
         f"clinical proof ({'; '.join(examples[:3])}). Second, negative, mixed, "
         "unclear, or no-directional-signal rows are given equal interpretive "
@@ -1721,6 +1731,7 @@ def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
     examples = []
     for row in sorted(rows, key=score)[:12]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        title = str(row.get("source_title") or "").strip()
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
@@ -1731,10 +1742,53 @@ def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
             claims = 0
         examples.append(
             f"{citation}: outcome={outcome}; direction={direction}; "
-            f"directness={directness}; tier={tier}; "
+            f"directness={directness}; tier={tier}; result={_source_result_label(title)}; "
             f"finding={_manifest_row_finding(row)}; claims={claims}"
         )
     return examples
+
+
+def _manifest_result_highlights(rows: list[dict[str, Any]]) -> list[str]:
+    def has_stat(row: dict[str, Any]) -> bool:
+        values = row.get("p_values")
+        return isinstance(values, list) and any(str(value).strip() for value in values)
+
+    def score(row: dict[str, Any]) -> tuple[int, int]:
+        title = str(row.get("source_title") or "").strip()
+        try:
+            claims = int(row.get("n_claims") or 0)
+        except (TypeError, ValueError):
+            claims = 0
+        return (0 if title and has_stat(row) else 1 if title else 2, -claims)
+
+    highlights = []
+    for row in sorted(rows, key=score):
+        title = str(row.get("source_title") or "").strip()
+        if not title:
+            continue
+        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+        directness = str(row.get("directness") or "unknown").strip() or "unknown"
+        tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
+        highlights.append(
+            f"{citation}: result={_source_result_label(title)}; outcome={outcome}; "
+            f"receipt-level direction={direction}; directness={directness}; tier={tier}; "
+            f"finding={_manifest_row_finding(row)}"
+        )
+        if len(highlights) >= 8:
+            break
+    return highlights
+
+
+def _source_result_label(title: str) -> str:
+    clean = _table_cell(title)
+    if not clean:
+        return "result descriptor unavailable in source title"
+    if len(clean) <= 120:
+        return clean
+    cut = clean[:120].rsplit(" ", 1)[0].strip(" ,;:")
+    return cut or clean[:120].strip(" ,;:")
 
 
 def _phase_d_rct_count_reconciliation(
