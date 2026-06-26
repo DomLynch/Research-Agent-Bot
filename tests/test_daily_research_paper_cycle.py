@@ -4029,6 +4029,44 @@ def test_payload_source_bundle_topicality_revision_ask_accepts_labeled_adjacent_
     )
 
 
+def test_source_reclassification_ask_accepts_public_classification_map(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "\n".join([
+            "# Paper",
+            "### Source Classification Map",
+            "- Trial A: outcome=Immune and Inflammation; direction=null; directness=direct; tier=A1.",
+            "- Case B: outcome=Contextual Adjacent Evidence; direction=null; directness=indirect; tier=B2.",
+            "Case-report and small-series evidence is coded as low-directness rather than clinical-grade evidence.",
+        ]),
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Reconcile and correct the source bundle: remove off-topic patient education sources; reclassify case reports to a clearly labeled low-directness / case-report tier rather than pooling them with clinical evidence.",
+    )
+
+
+def test_outcome_attribution_gap_ask_accepts_mapped_outcome_row(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "\n".join([
+            "# Paper",
+            "### Source Classification Map",
+            "- Study A: outcome=Mortality and Survival; direction=null; directness=indirect; tier=B2.",
+        ]),
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Resolve the Mortality and Survival attribution gap: either re-attribute the orphaned narrative rows to their correct outcome class or state explicitly that Mortality and Survival is unsourced in the retained corpus.",
+    )
+
+
 def test_payload_source_bundle_topicality_revision_ask_rejects_polluted_bundle(tmp_path: Path, monkeypatch) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()

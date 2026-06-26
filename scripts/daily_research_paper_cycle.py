@@ -1928,6 +1928,26 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
     ):
         return True
+    if (
+        "source bundle" in ask_lower
+        and "reclassif" in ask_lower
+        and any(token in ask_lower for token in ("directness", "case report", "case-report", "evidence tier", "mechanistic", "model-system"))
+        and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
+        and ("low-directness" not in ask_lower or "low-directness" in paper_text)
+        and ("case report" not in ask_lower or ("case report" in paper_text or "case-report" in paper_text))
+        and ("patient education" not in ask_lower or "patient education" not in paper_text)
+    ):
+        return True
+    if (
+        "attribution gap" in ask_lower
+        and "mortality" in ask_lower
+        and "survival" in ask_lower
+        and (
+            "outcome=mortality and survival" in paper_text
+            or "mortality and survival is unsourced" in paper_text
+        )
+    ):
+        return True
     if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
         return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
     if _asks_conflict_severity_criteria(ask_lower):
