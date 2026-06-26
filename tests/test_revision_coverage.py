@@ -160,6 +160,97 @@ def test_deterministic_unmet_accepts_general_vs_direct_source_breakdown() -> Non
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_revision_asks_splits_strengthen_followup() -> None:
+    feedback = (
+        "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function).; "
+        "Strengthen the Tensions and Gaps section by naming specific disagreements."
+    )
+
+    assert revision_coverage.revision_asks(feedback) == [
+        "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function).",
+        "Strengthen the Tensions and Gaps section by naming specific disagreements.",
+    ]
+
+
+def test_deterministic_unmet_accepts_subgroup_lens_narrative() -> None:
+    ask = (
+        "Add a narrative synthesis section that explicitly maps findings to the five subgroup "
+        "lenses (frailty, sarcopenic obesity, CKM stage, diabetes comorbidity, intervention type) "
+        "using the admitted sources, rather than only listing source counts."
+    )
+    paper = (
+        "## Results\n\n"
+        "Narrative subgroup synthesis maps source findings across the five subgroup lenses. "
+        "Frailty is represented by Nguyen 2025 and Garcia 2026, while sarcopenic obesity is "
+        "represented by Zhang 2025. CKM stage is represented by Chen 2026 and An 2026. "
+        "Diabetes comorbidity is represented by Nielsen 2026, and intervention type separates "
+        "exercise, vaccination, pharmacologic, and invasive-procedure records. These source-linked "
+        "lenses define boundary conditions rather than simple counts, and the narrative explains "
+        "why each source supports only bounded subgroup inference across the admitted evidence set."
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_keeps_subgroup_lens_ask_without_sources() -> None:
+    ask = (
+        "Add a narrative synthesis section that explicitly maps findings to the five subgroup "
+        "lenses (frailty, sarcopenic obesity, CKM stage, diabetes comorbidity, intervention type) "
+        "using the admitted sources, rather than only listing source counts."
+    )
+    paper = (
+        "## Results\n\n"
+        "Narrative subgroup synthesis maps frailty, sarcopenic obesity, CKM stage, diabetes "
+        "comorbidity, and intervention type across the admitted evidence set, but only as "
+        "unattributed category labels without source-linked findings."
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_underpopulated_outcome_attribution_and_tensions() -> None:
+    asks = [
+        (
+            "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function, "
+            "Immune Inflammation, Safety, Safety and Comorbidity) with at least one or two "
+            "attributed findings each, drawn from the source bundle, or remove the headers if no "
+            "findings are retained."
+        ),
+        "Strengthen the Tensions and Gaps section by naming specific disagreements among the retained sources.",
+    ]
+    paper = (
+        "## Results\n\n"
+        "### Longevity Outcomes\n\nZhao 2025 reports cardiovascular mortality risk in frailty cohorts.\n\n"
+        "### Muscle Function Outcomes\n\nChu 2026 reports exercise-related functional contrasts.\n\n"
+        "### Immune and Inflammation Outcomes\n\nWard 2026 reports inflammatory-marker associations.\n\n"
+        "### Safety Outcomes\n\nLong 2026 reports dose-stratified safety signals.\n\n"
+        "### Safety and Comorbidity Outcomes\n\nFu 2026 reports CKM-related diagnostic value.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-Gap Priority: the named disagreements below identify unresolved gaps.\n\n"
+        "- Severity 5 disagreement: You 2026 vs Delaney 2025; tension in cardiometabolic direction.\n"
+        "- Severity 5 disagreement: Liu 2026 vs Delaney 2025; tension in cardiometabolic direction.\n"
+        "- Severity 4 disagreement: Wolfe 2025 vs You 2026; conflict between null and negative findings.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_unmet_keeps_underpopulated_outcome_ask_without_attribution() -> None:
+    ask = (
+        "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function, "
+        "Immune Inflammation) with at least one or two attributed findings each, drawn from "
+        "the source bundle, or remove the headers if no findings are retained."
+    )
+    paper = (
+        "## Results\n\n"
+        "### Longevity Outcomes\n\nThis subsection has no source attribution.\n\n"
+        "### Muscle Function Outcomes\n\nThis subsection has no source attribution.\n\n"
+        "### Immune and Inflammation Outcomes\n\nThis subsection has no source attribution.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
 def test_deterministic_unmet_accepts_topic_fit_rationale_for_umbrella_source_ask() -> None:
     ask = (
         "Add a note explaining why sources on opioid monitoring, sports workload, "

@@ -34,7 +34,7 @@ def revision_asks(feedback: str) -> list[str]:
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
         "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
         "Either", "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair", "Resolve",
-        "Replace", "Rewrite", "Separate", "Soften", "Update", "Verify",
+        "Replace", "Rewrite", "Separate", "Soften", "Strengthen", "Update", "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
     asks = [_with_terminal_punctuation(a.strip()) for a in re.split(pattern, feedback) if a.strip()]
@@ -161,6 +161,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_contextual_without_directional_signal,
             _asks_actionable_gaps,
             _asks_null_signal_reconciliation,
+            _asks_subgroup_lens_narrative,
+            _asks_underpopulated_outcome_subsections,
             _asks_replaced_surface_tensions,
             _asks_concrete_tensions_gaps,
             _asks_internal_duplication,
@@ -258,6 +260,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
         return _null_signal_conclusion_is_bounded(paper_md)
+    if _asks_subgroup_lens_narrative(lower):
+        return _subgroup_lens_narrative_is_stated(paper_md, lower)
+    if _asks_underpopulated_outcome_subsections(lower):
+        return _underpopulated_outcome_subsections_are_stated(paper_md, lower)
     if _asks_replaced_surface_tensions(lower):
         return _replaced_surface_tensions_are_stated(paper_md, lower)
     if _asks_concrete_tensions_gaps(lower):
@@ -610,6 +616,26 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
                 "specific", "named sources",
             ))
         )
+        or (
+            "tensions and gaps" in text
+            and any(token in text for token in ("specific disagreement", "specific disagreements", "naming specific"))
+        )
+    )
+
+
+def _asks_subgroup_lens_narrative(text: str) -> bool:
+    return (
+        "subgroup lens" in text
+        or "subgroup lenses" in text
+        or ("subgroup" in text and "narrative synthesis" in text and "map" in text)
+    )
+
+
+def _asks_underpopulated_outcome_subsections(text: str) -> bool:
+    return (
+        "underpopulated outcome-class subsection" in text
+        or "underpopulated outcome class subsection" in text
+        or ("outcome-class subsection" in text and any(token in text for token in ("expand", "remove the headers", "remove headers")))
     )
 
 
@@ -745,6 +771,65 @@ def _null_signal_conclusion_is_bounded(paper_md: str) -> bool:
         any(token in scope for token in ("null", "mixed", "no extracted directional signal"))
         and any(token in scope for token in ("hypothesis-generating", "does not support", "non-supportive", "not definitive"))
     )
+
+
+def _parenthetical_terms(text: str) -> list[str]:
+    match = re.search(r"\(([^)]{3,240})\)", text)
+    if not match:
+        return []
+    terms = []
+    for piece in match.group(1).split(","):
+        term = re.sub(r"^\s*and\s+", "", piece.strip(" .;:"), flags=re.I)
+        if term:
+            terms.append(" ".join(term.split()))
+    return terms
+
+
+def _term_pattern(term: str) -> re.Pattern[str]:
+    tokens = [re.escape(token) for token in re.findall(r"[a-z0-9]+", term.lower())]
+    return re.compile(r"\b" + r"(?:\s+and\s+|\s+)".join(tokens) + r"\b", re.I)
+
+
+def _subgroup_lens_narrative_is_stated(paper_md: str, ask: str) -> bool:
+    scope = " ".join(
+        part for part in (
+            _abstract(paper_md),
+            _section(paper_md, "Results"),
+            _section(paper_md, "Cross-Domain Synthesis"),
+            _section(paper_md, "Discussion"),
+            _section(paper_md, "Conclusion"),
+        ) if part
+    )
+    if len(scope.split()) < 80:
+        return False
+    terms = _parenthetical_terms(ask)
+    required = max(1, min(len(terms), 4))
+    hits = sum(1 for term in terms if _term_pattern(term).search(scope))
+    lower = scope.lower()
+    return (
+        hits >= required
+        and "subgroup" in lower
+        and re.search(r"\b[A-Z][A-Za-z-]+\s+20\d{2}\b", scope) is not None
+    )
+
+
+def _underpopulated_outcome_subsections_are_stated(paper_md: str, ask: str) -> bool:
+    scope = _section(paper_md, "Results") + "\n\n" + _section(paper_md, "Evidence Snapshot")
+    if not scope.strip():
+        return False
+    terms = _parenthetical_terms(ask)
+    if not terms:
+        return False
+    paragraphs = re.split(r"\n\s*\n", scope)
+    satisfied = 0
+    for term in terms:
+        pattern = _term_pattern(term)
+        for idx, paragraph in enumerate(paragraphs):
+            sectionlet = "\n\n".join(paragraphs[idx:idx + 2])
+            if pattern.search(paragraph) and re.search(r"\b[A-Z][A-Za-z-]+\s+20\d{2}\b", sectionlet):
+                satisfied += 1
+                break
+    return satisfied >= max(1, min(len(terms), 3))
 
 
 def _concrete_tensions_gaps_are_stated(paper_md: str) -> bool:
