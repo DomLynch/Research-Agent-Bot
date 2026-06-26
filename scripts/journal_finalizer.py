@@ -1647,7 +1647,9 @@ def _phase_d_substantive_evidence_synthesis(
     landscape = (
         "Substantive evidence synthesis: The manifest includes "
         f"{len(rows)} retained sources, {direct} direct-source row(s), and "
-        f"directional coding across {', '.join(f'{k}={v}' for k, v in sorted(counts.items()))}. "
+        f"receipt-level directional coding across {', '.join(f'{k}={v}' for k, v in sorted(counts.items()))}. "
+        "Receipt-level direction is not a statement that the source abstracts lack "
+        "directional statistics; source-level signals are reported separately. "
         "Representative source-level signals are: "
         + "; ".join(examples[:8])
         + ". These signals inform the bounded conclusion by separating effect "
@@ -1690,6 +1692,15 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             and "key findings" in lower
             and any(token in lower for token in ("positive", "negative", "mixed", "substantive", "findings"))
         )
+        or (
+            "key findings" in lower
+            and any(token in lower for token in ("concrete", "bounded", "source", "outcome class"))
+            and any(token in lower for token in ("abstract", "finding", "findings", "effect size", "directional"))
+        )
+        or (
+            "directional findings" in lower
+            and any(token in lower for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
+        )
     )
 
 
@@ -1716,7 +1727,8 @@ def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
             claims = 0
         examples.append(
             f"{citation}: outcome={outcome}; direction={direction}; "
-            f"directness={directness}; tier={tier}; claims={claims}"
+            f"directness={directness}; tier={tier}; "
+            f"finding={_manifest_row_finding(row)}; claims={claims}"
         )
     return examples
 
@@ -2025,6 +2037,9 @@ def _phase_d_source_outcome_class_map(
     wants_findings_map = "findings map" in lower_feedback or (
         "specific findings" in lower_feedback
         and any(token in lower_feedback for token in ("cited source", "individual cited", "each retained source"))
+    ) or (
+        "admitted source" in lower_feedback
+        and any(token in lower_feedback for token in ("include all", "reconcile", "all 13", "all admitted", "replace with findings"))
     )
     present_tokens = {
         str(row.get("citation_token") or "").strip()
@@ -2118,7 +2133,7 @@ def _manifest_row_finding(row: dict[str, Any]) -> str:
     if isinstance(p_values, list):
         stat = next((str(value).strip() for value in p_values if str(value).strip()), "")
         if stat:
-            return f"representative statistic {stat}"
+            return f"representative statistic {stat}; source-level statistic reported"
     n_claims = row.get("n_claims")
     if isinstance(n_claims, int) and n_claims > 0:
         return f"{n_claims} extracted claim(s); receipt-level direction is the coded finding"
@@ -2139,6 +2154,10 @@ def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
         "outcome class" in lower
         and any(token in lower for token in ("specific findings", "effect size", "directional statement"))
         and any(token in lower for token in ("cited source", "individual cited", "each retained source"))
+    ) or (
+        "evidence landscape" in lower
+        and "admitted source" in lower
+        and any(token in lower for token in ("include all", "reconcile", "all 13", "all admitted", "replace with findings"))
     )
 
 
@@ -2157,7 +2176,7 @@ def _phase_d_tensions_and_gaps_breadth(
         and any(token in lower for token in (
             "substantiated", "enumerated", "actually-surfaced",
             "actually surfaced", "correct", "replace", "specific",
-            "named sources",
+            "named sources", "enumerate", "where the disagreements lie",
         ))
     )
     if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower and not asks_count_evidence:
@@ -2937,7 +2956,10 @@ def _phase_d_actionable_gaps(
 
 def _revision_asks_actionable_gaps(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
-    return "gaps identified" in lower and any(token in lower for token in ("actionable", "future research", "next steps"))
+    return (
+        ("gaps identified" in lower or "strengthen gaps" in lower or "gaps with" in lower)
+        and any(token in lower for token in ("actionable", "future research", "next steps", "concrete studies", "concrete actionable"))
+    )
 
 
 def _actionable_gaps_are_present(text: str) -> bool:

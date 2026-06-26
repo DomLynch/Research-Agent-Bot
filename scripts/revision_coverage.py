@@ -401,6 +401,10 @@ def _asks_source_outcome_class_map(text: str) -> bool:
             "per cited source", "trace each mapped claim",
         ))
         and any(token in text for token in ("external verification", "evidence landscape", "bundle sources", "source bundle"))
+    ) or (
+        "evidence landscape" in text
+        and "admitted source" in text
+        and any(token in text for token in ("include all", "reconcile", "all 13", "all admitted", "replace with findings"))
     )
 
 
@@ -416,7 +420,10 @@ def _asks_key_findings_source_verdict(text: str) -> bool:
     return (
         "key findings" in text
         and "source" in text
-        and any(token in text for token in ("outcome class", "outcome slice", "retained sources", "effect size", "directional statement"))
+        and any(token in text for token in (
+            "outcome class", "outcome slice", "retained sources", "effect size",
+            "directional statement", "source abstracts", "abstracts", "concrete bounded findings",
+        ))
     )
 
 
@@ -473,6 +480,10 @@ def _asks_substantive_evidence_synthesis(text: str) -> bool:
             "evidence landscape" in text
             and "key findings" in text
             and any(token in text for token in ("positive", "negative", "mixed", "substantive", "findings"))
+        )
+        or (
+            "directional findings" in text
+            and any(token in text for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
         )
     )
 
@@ -627,7 +638,10 @@ def _asks_contextual_without_directional_signal(text: str) -> bool:
 
 
 def _asks_actionable_gaps(text: str) -> bool:
-    return "gaps identified" in text and any(token in text for token in ("actionable", "future research", "next steps"))
+    return (
+        ("gaps identified" in text or "strengthen gaps" in text or "gaps with" in text)
+        and any(token in text for token in ("actionable", "future research", "next steps", "concrete studies", "concrete actionable"))
+    )
 
 
 def _asks_null_signal_reconciliation(text: str) -> bool:
