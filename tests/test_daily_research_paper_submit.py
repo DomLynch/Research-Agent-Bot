@@ -1613,7 +1613,7 @@ def test_remote_publication_dedupe_blocks_same_title_rerun(tmp_path: Path) -> No
     assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
 
 
-def test_remote_publication_dedupe_uses_payload_title_when_heading_drifted(tmp_path: Path) -> None:
+def _heading_drifted_cancer_run(tmp_path: Path) -> tuple[Path, str]:
     run = _run(tmp_path, name="synthesis-cancer_biomarker_effects-v06-test")
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     manifest["topic"] = "cancer_biomarker_effects"
@@ -1629,7 +1629,11 @@ def test_remote_publication_dedupe_uses_payload_title_when_heading_drifted(tmp_p
         ),
         encoding="utf-8",
     )
-    marker = daily._title_marker("Research Synthesis: Cancer Biomarker Effects")
+    return run, daily._title_marker("Research Synthesis: Cancer Biomarker Effects")
+
+
+def test_remote_publication_dedupe_uses_payload_title_when_heading_drifted(tmp_path: Path) -> None:
+    _run, marker = _heading_drifted_cancer_run(tmp_path)
 
     ledger = daily.run_cycle(
         runs_root=tmp_path,
@@ -1642,6 +1646,20 @@ def test_remote_publication_dedupe_uses_payload_title_when_heading_drifted(tmp_p
     assert ledger["status"] == "no_eligible_research_paper"
     assert ledger["submitted"] == 0
     assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
+
+
+def test_select_candidate_blocks_public_payload_title_when_heading_drifted(tmp_path: Path) -> None:
+    run, marker = _heading_drifted_cancer_run(tmp_path)
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen={marker},
+        candidate_run=run,
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "duplicate_remote_publication"
 
 
 def test_remote_publication_dedupe_normalizes_public_title_variants(tmp_path: Path) -> None:
