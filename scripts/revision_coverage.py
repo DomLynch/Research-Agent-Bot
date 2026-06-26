@@ -1424,7 +1424,11 @@ def _source_label_disambiguation_is_stated(paper_md: str, ask: str) -> bool:
     if "source-label disambiguation note:" not in text:
         return False
     labels = re.findall(r"\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}[a-z]?\b", ask)
-    return all(label.lower() in text for label in labels)
+    return all(
+        label.lower() in text
+        or re.sub(r"\s+((?:19|20)\d{2}[a-z]?)\b", r" (\1)", label).lower() in text
+        for label in labels
+    )
 
 
 def _external_references_are_marked_illustrative(paper_md: str, ask: str) -> bool:

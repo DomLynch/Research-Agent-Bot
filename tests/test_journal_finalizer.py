@@ -2542,10 +2542,11 @@ def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Pat
 
 
 def test_revision_audit_notes_add_source_label_disambiguation(tmp_path: Path) -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
     from scripts import revision_coverage
 
     ask = (
-        "Clarify the apparent Ward 2026 / Filev 2026 duplication and ensure "
+        "Clarify the apparent Ward 2026 / Filev 2026 / Chen 2026 duplication and ensure "
         "each cited_as label maps to exactly one bundle entry."
     )
     (tmp_path / "researka_revision_request.json").write_text(
@@ -2567,15 +2568,27 @@ def test_revision_audit_notes_add_source_label_disambiguation(tmp_path: Path) ->
             "directness": "indirect",
             "source_title": "Acute-phase IL-6 and SAA after COVID-19",
         },
+        {
+            "citation_token": "Chen 2026",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "mixed",
+            "directness": "review",
+            "source_title": "Cardiovascular subgroup signals",
+        },
     ]}), encoding="utf-8")
     paper = "## Evidence Landscape\n\nExisting evidence text.\n\n## References\n\n- **Ward 2026.** X.\n"
 
     fixed, logs = journal_finalizer._phase_d_revision_audit_notes(paper, tmp_path)
 
     assert "Source-label disambiguation note:" in fixed
-    assert "Ward 2026 maps to one retained manifest receipt" in fixed
-    assert "Filev 2026 maps to one retained manifest receipt" in fixed
+    assert "cited_as Ward (2026) maps to one retained manifest receipt" in fixed
+    assert "cited_as Filev (2026) maps to one retained manifest receipt" in fixed
+    assert "cited_as Chen (2026) maps to one retained manifest receipt" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert not any(
+        "unreferenced citation: Chen 2026" in issue.detail
+        for issue in evaluate_journal_surface(fixed).issues
+    )
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
             phase="D_revision_audit_notes",
