@@ -1073,6 +1073,29 @@ def _mark_considered_status(rows: list[dict[str, Any]], run_name: str, status: s
             return
 
 
+def _remote_publication_duplicate_status(
+    *,
+    markers: set[str],
+    title_marks: set[str],
+    published_seen: set[str],
+    revision: bool,
+    explicit_candidate: bool,
+) -> str | None:
+    if (markers & published_seen) - title_marks:
+        # Content/identity already has a live publication. Applies even to a run
+        # carrying a stale revision_request — re-submitting identical content is
+        # the "exact-content duplicate" reject Researka returns.
+        return "duplicate_remote_publication"
+    if title_marks & published_seen and not (revision and explicit_candidate):
+        # Same title already published and this is NOT a revision: a re-submit of
+        # an already-published topic. A genuine revision (changed content, same
+        # title) falls through only when the revise lane explicitly hands us that
+        # candidate. The generic submit sweep must not resurrect stale
+        # revision_request files for public papers.
+        return "duplicate_remote_publication"
+    return None
+
+
 def select_candidate(
     root: Path,
     submitted_path: Path,
@@ -1141,6 +1164,16 @@ def select_candidate(
             ok, status = False, "researka_revision_fingerprint"
         elif ok and fp in local_seen:
             ok, status = False, "duplicate_submission_fingerprint"
+        elif ok and (
+            remote_status := _remote_publication_duplicate_status(
+                markers=markers,
+                title_marks=title_marks,
+                published_seen=published_seen,
+                revision=revision,
+                explicit_candidate=explicit_candidate,
+            )
+        ):
+            ok, status = False, remote_status
         elif ok and topic in submitted_topics and topic not in revision_topics and not revision:
             topic_rows = [
                 row for row in _ledger_rows(submitted_path)
@@ -1157,18 +1190,6 @@ def select_candidate(
                 status = "eligible_resubmission_after_payload_change"
             else:
                 ok, status = False, "topic_already_submitted_pending"
-        elif ok and (markers & published_seen) - title_marks:
-            # Content/identity already has a live publication. Applies even to a
-            # run carrying a stale revision_request — re-submitting identical
-            # content is the "exact-content duplicate" reject Researka returns.
-            ok, status = False, "duplicate_remote_publication"
-        elif ok and title_marks & published_seen and not (revision and explicit_candidate):
-            # Same title already published and this is NOT a revision: a
-            # re-submit of an already-published topic. A genuine revision
-            # (changed content, same title) falls through only when the revise
-            # lane explicitly hands us that candidate. The generic submit sweep
-            # must not resurrect stale revision_request files for public papers.
-            ok, status = False, "duplicate_remote_publication"
         if locally_eligible:
             seen_topics.add(topic)
         row = {"run": run.name, "fingerprint": fp, "status": status}
