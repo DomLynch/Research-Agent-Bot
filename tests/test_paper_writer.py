@@ -30,6 +30,8 @@ def _summary(
     tier: str = "A1",
     directness: str = "direct",
     spar_verdict: str = "accept_clean",
+    source_title: str | None = None,
+    source_year: int | None = None,
 ) -> ReceiptSummary:
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
@@ -40,6 +42,8 @@ def _summary(
         evidence_tier=tier, directness=directness,
         outcome_class=outcome, effect_direction=direction,
         p_values=("p=0.003",), population_summary="older adults",
+        source_title=source_title,
+        source_year=source_year,
     )
 
 
