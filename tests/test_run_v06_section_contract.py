@@ -799,6 +799,21 @@ def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
     assert "the retained clinical and adjacent evidence profile defines the scope" in md
 
 
+def test_aggregate_paper_keeps_significant_unsigned_statistics_unclear() -> None:
+    agg = orch._aggregate_paper("vascular-unsigned", [
+        {
+            "claim_type": "p_value",
+            "endpoint": "estimated pulse wave velocity",
+            "raw_text": "p < 0.001",
+            "numeric_values": [0.001],
+        },
+        {"claim_type": "endpoint", "endpoint": "estimated pulse wave velocity"},
+    ])
+
+    assert agg["effect_direction"] == "unclear"
+    assert agg["p_values"] == ["p < 0.001"]
+
+
 def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     try:

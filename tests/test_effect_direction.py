@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import effect_direction as ed  # noqa: E402
@@ -30,11 +31,27 @@ def _per_claim(signs: list[int]):
 def test_no_signed_claims_no_p_values_returns_null() -> None:
     """A paper with no signed claims and no p-values reports nothing
     measurable → null (no movement reported anywhere)."""
-    claims = [
+    claims: list[dict[str, Any]] = [
         {"claim_type": "endpoint", "endpoint": "VO2max"},
     ]
     result = ed.infer_effect_direction(claims, metformin_effect_fn=_const(0))
     assert result == "null"
+
+
+def test_significant_unsigned_claim_returns_unclear_not_null() -> None:
+    """A significant source statistic without a signed effect claim is
+    ambiguous, not null. This prevents papers from saying "11/13 null"
+    while source excerpts show significant associations."""
+    claims = [
+        {
+            "claim_type": "p_value",
+            "endpoint": "estimated pulse wave velocity",
+            "raw_text": "p < 0.001",
+            "numeric_values": [0.001],
+        },
+    ]
+    result = ed.infer_effect_direction(claims, metformin_effect_fn=_const(0))
+    assert result == "unclear"
 
 
 def test_witham_met_prevent_null_walk_speed_returns_null() -> None:
@@ -68,7 +85,7 @@ def test_witham_met_prevent_null_walk_speed_returns_null() -> None:
 
 def test_significant_positive_only_returns_positive() -> None:
     """A paper with significant positive claims only → positive."""
-    claims = [
+    claims: list[dict[str, Any]] = [
         {"claim_type": "effect", "endpoint": "HbA1c", "direction": "decrease",
          "arm": "metformin"},
         {"claim_type": "p_value", "raw_text": "p < 0.001",
@@ -80,7 +97,7 @@ def test_significant_positive_only_returns_positive() -> None:
 
 def test_significant_negative_only_returns_negative() -> None:
     """All significant negative → negative."""
-    claims = [
+    claims: list[dict[str, Any]] = [
         {"claim_type": "effect", "endpoint": "lean body mass",
          "direction": "decrease", "arm": "metformin"},
         {"claim_type": "p_value", "raw_text": "p < 0.01",
@@ -95,7 +112,7 @@ def test_mixed_directions_significant_returns_mixed() -> None:
     significant negative (lean mass blunted) findings — both backed
     by their own significant p-values per endpoint — must classify
     as 'mixed'."""
-    claims = [
+    claims: list[dict[str, Any]] = [
         # HbA1c significant positive
         {"claim_type": "effect", "idx": 0, "endpoint": "HbA1c",
          "direction": "decrease", "arm": "metformin"},
@@ -119,7 +136,7 @@ def test_mixed_directions_significant_returns_mixed() -> None:
 def test_signed_but_no_significance_signal_returns_unclear() -> None:
     """Signs exist but no p-values and effect magnitude not negligible
     → unclear (legacy fallback)."""
-    claims = [
+    claims: list[dict[str, Any]] = [
         {
             "claim_type": "effect",
             "endpoint": "VO2max",
@@ -261,7 +278,7 @@ def test_only_significant_negative_endpoint_returns_negative_not_mixed() -> None
     not-significant positive must return 'negative' (only the
     significant one counts), NOT 'mixed' (which would require BOTH to
     be significant)."""
-    claims = [
+    claims: list[dict[str, Any]] = [
         # Significant negative (lean mass blunting)
         {
             "claim_type": "effect", "idx": 0, "endpoint": "lean body mass",
