@@ -263,10 +263,13 @@ def build_registry(
     if any body_citation matches a blocked pattern."""
     registry: dict[str, CitationEntry] = {}
     paper_meta_by_id = paper_meta_by_id or {}
-    # Track (surname, year) collisions across the whole registry so
-    # we can apply a/b/c disambiguator suffixes deterministically.
-    body_citation_counts: dict[str, int] = {}
-    canonical_by_source: dict[tuple[str, str], str] = {}
+    # Track distinct source-level citation bases before assigning suffixes.
+    # Standard citation convention is Smith 2024a / Smith 2024b, not
+    # Smith 2024 / Smith 2024b. Duplicate receipts for the same DOI/PMID/PMCID
+    # still share one token.
+    prepared: list[tuple[int, object, str, int | None, tuple[str, str]]] = []
+    citation_base_by_source: dict[tuple[str, str], str] = {}
+    source_order: list[tuple[str, str]] = []
     for idx, r in enumerate(receipts, start=1):
         receipt_id = getattr(r, "receipt_id", "") or ""
         if not receipt_id.strip():
@@ -280,30 +283,37 @@ def build_registry(
         # Normalize once: every citation-derivation path and the stored
         # source_year use the clamped year, so a future date never renders.
         source_year = _normalize_pub_year(getattr(r, "source_year", None))
-        body_citation = (
-            _author_year_citation_from_id(receipt_id, source_year)
-            or _body_citation_from_metadata(meta)
-            or _body_citation_for(receipt_id, source_year=source_year)
-        )
-        leaks = validate_body_citation(body_citation)
-        if leaks:
-            raise ValueError(
-                f"Generated body_citation for {receipt_id!r} matches "
-                f"blocked pattern(s) {leaks}: {body_citation!r}"
-            )
         source_key = _source_key(r)
-        if source_key and source_key in canonical_by_source:
-            body_citation = canonical_by_source[source_key]
-        else:
-            # Disambiguate collisions: Smith 2024 → Smith 2024a, Smith 2024b
-            body_citation_counts[body_citation] = (
-                body_citation_counts.get(body_citation, 0) + 1
+        group_key = source_key or ("receipt_id", receipt_id)
+        if group_key not in citation_base_by_source:
+            body_citation = (
+                _author_year_citation_from_id(receipt_id, source_year)
+                or _body_citation_from_metadata(meta)
+                or _body_citation_for(receipt_id, source_year=source_year)
             )
-            if body_citation_counts[body_citation] > 1:
-                suffix = chr(ord("a") + body_citation_counts[body_citation] - 1)
-                body_citation = f"{body_citation}{suffix}"
-            if source_key:
-                canonical_by_source[source_key] = body_citation
+            leaks = validate_body_citation(body_citation)
+            if leaks:
+                raise ValueError(
+                    f"Generated body_citation for {receipt_id!r} matches "
+                    f"blocked pattern(s) {leaks}: {body_citation!r}"
+                )
+            citation_base_by_source[group_key] = body_citation
+            source_order.append(group_key)
+        prepared.append((idx, r, receipt_id, source_year, group_key))
+
+    groups_by_base: dict[str, list[tuple[str, str]]] = {}
+    for group_key in source_order:
+        groups_by_base.setdefault(citation_base_by_source[group_key], []).append(group_key)
+    citation_by_source: dict[tuple[str, str], str] = {}
+    for base, group_keys in groups_by_base.items():
+        if len(group_keys) == 1:
+            citation_by_source[group_keys[0]] = base
+            continue
+        for suffix_index, group_key in enumerate(group_keys):
+            citation_by_source[group_key] = f"{base}{_alpha_suffix(suffix_index)}"
+
+    for idx, r, receipt_id, source_year, group_key in prepared:
+        body_citation = citation_by_source[group_key]
         reference_id = f"R{idx:02d}"
         entry = CitationEntry(
             receipt_id=receipt_id,
@@ -318,6 +328,17 @@ def build_registry(
         )
         registry[receipt_id] = entry
     return registry
+
+
+def _alpha_suffix(index: int) -> str:
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    out = ""
+    i = index
+    while True:
+        out = letters[i % len(letters)] + out
+        i = i // len(letters) - 1
+        if i < 0:
+            return out
 
 
 def _source_key(receipt) -> tuple[str, str] | None:
