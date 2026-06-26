@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import importlib
 import subprocess
 import sys
 from pathlib import Path
@@ -14,16 +13,13 @@ from scripts.quality_evidence_map import (
     render_top_tensions_section,
     tensions_from_json,
 )
+from scripts.evidence_map_summary import source_context_map
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = REPO_ROOT / "scripts" / "quality_evidence_map.py"
 
 
 def test_source_context_map_accepts_generators() -> None:
-    source_context_map = getattr(
-        importlib.import_module("scripts.evidence_map_summary"),
-        "source_context_map",
-    )
     rows = (
         row
         for row in (
