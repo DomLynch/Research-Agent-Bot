@@ -1915,6 +1915,14 @@ def run_cycle_capped(
             "status": last.get("status"),
             "candidate": last.get("candidate"),
             "submitted": n,
+            "published": int(last.get("published") or 0),
+            "submission_markers": sorted(
+                _submission_marker(value)
+                for value in _submission_ids_from_response(
+                    last.get("submission", {}).get("response")
+                    if isinstance(last.get("submission"), dict) else {},
+                )
+            ),
         })
         if n and first_candidate is None:
             first_candidate = last.get("candidate")

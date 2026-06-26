@@ -255,6 +255,17 @@ def _ledger_run_names(ledger: dict[str, Any], *, submitted_only: bool = True) ->
             value = attempt.get(key)
             if isinstance(value, str) and value:
                 names.append(value)
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        if submitted_only and not int(submission.get("submitted") or 0):
+            continue
+        candidate = submission.get("candidate")
+        if isinstance(candidate, dict):
+            value = candidate.get("run")
+            if isinstance(value, str) and value:
+                names.append(value)
     return list(dict.fromkeys(names))
 
 
@@ -288,6 +299,16 @@ def _ledger_submission_markers(ledger: dict[str, Any]) -> set[str]:
                 value for value in values
                 if isinstance(value, str) and value.startswith("submission:")
             )
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        values = submission.get("submission_markers")
+        if isinstance(values, list):
+            markers.update(
+                value for value in values
+                if isinstance(value, str) and value.startswith("submission:")
+            )
     return markers
 
 
@@ -300,6 +321,18 @@ def _submit_bridge_submission_markers_by_run(runs_root: Path, run_names: set[str
         if path.name.startswith("_"):
             continue
         ledger = _read_json(path)
+        submissions = ledger.get("submissions")
+        if isinstance(submissions, list):
+            for submission in submissions:
+                if not isinstance(submission, dict):
+                    continue
+                candidate = submission.get("candidate")
+                run_name = candidate.get("run") if isinstance(candidate, dict) else None
+                if isinstance(run_name, str) and run_name in run_names:
+                    markers_by_run.setdefault(run_name, set()).update(
+                        _ledger_submission_markers(submission),
+                    )
+            continue
         matched_runs = set(_ledger_run_names(ledger)) & run_names
         if matched_runs:
             markers = _ledger_submission_markers(ledger)
