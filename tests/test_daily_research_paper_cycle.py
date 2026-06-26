@@ -539,6 +539,7 @@ def test_reconcile_publication_ledgers_updates_submit_bridge_ledger(tmp_path: Pa
         "status": "submitted_to_researka",
         "submitted": 1,
         "published": 0,
+        "day_summary": {"submitted": 3, "published": 0},
         "no_submission_reason": "journal_surface_not_passed",
         "candidate": {"run": run.name, "topic": "longevity_lifespan_effects"},
     })
@@ -555,6 +556,7 @@ def test_reconcile_publication_ledgers_updates_submit_bridge_ledger(tmp_path: Pa
     assert result["updated_ledgers"] == ["_daily_research_paper_ledger/2026-06-05.json"]
     assert ledger["status"] == "published"
     assert ledger["published"] == 1
+    assert ledger["day_summary"] == {"submitted": 3, "published": 1}
     assert "no_submission_reason" not in ledger
     assert ledger["publication_reconciliation"]["source"] == "remote_publications"
 
