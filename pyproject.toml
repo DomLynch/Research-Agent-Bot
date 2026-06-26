@@ -28,7 +28,7 @@ dev = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = [".", "scripts"]
 # Auto-mode: pytest-asyncio treats `async def test_*` as async tests
 # without requiring per-test @pytest.mark.asyncio. Existing tests use
 # the marker explicitly; this keeps "strict" semantics consistent with
@@ -37,7 +37,6 @@ asyncio_mode = "strict"
 
 [tool.mypy]
 mypy_path = "scripts"
-explicit_package_bases = true
 
 [tool.setuptools.packages.find]
 # Only ship the current runtime package.

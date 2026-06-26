@@ -13,7 +13,7 @@ from scripts.quality_evidence_map import (
     render_top_tensions_section,
     tensions_from_json,
 )
-from scripts.evidence_map_summary import source_context_map
+from evidence_map_summary import source_context_map
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = REPO_ROOT / "scripts" / "quality_evidence_map.py"
