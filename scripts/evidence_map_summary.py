@@ -68,6 +68,15 @@ def source_context_label(row: Mapping[str, Any]) -> str:
     return ""
 
 
+def source_context_counts(rows: Iterable[Mapping[str, Any]]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for row in rows:
+        label = source_context_label(row)
+        if label:
+            counts[label] = counts.get(label, 0) + 1
+    return counts
+
+
 _SOURCE_CONTEXT_MAP_RE = re.compile(
     r"\n+\*\*Source-context map:\*\*.*?(?=\n###\s+|\n##\s+|\Z)",
     re.S,
@@ -79,11 +88,14 @@ def strip_source_context_map(markdown: str) -> str:
 
 
 def source_context_map(rows: Iterable[Mapping[str, Any]]) -> str:
-    by_context: dict[str, list[Mapping[str, Any]]] = {}
-    for row in rows:
+    items = list(rows)
+    by_context: dict[str, list[Mapping[str, Any]]] = {
+        label: [] for label in source_context_counts(items)
+    }
+    for row in items:
         label = source_context_label(row)
         if label:
-            by_context.setdefault(label, []).append(row)
+            by_context[label].append(row)
     if len(by_context) < 2:
         return ""
     lines = [

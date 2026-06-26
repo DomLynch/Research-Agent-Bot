@@ -187,16 +187,15 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
         )
     receipts = manifest.get("receipts") or ()
     classes: dict[str, int] = {}
-    source_contexts: dict[str, int] = {}
     try:
-        source_context_label = getattr(
+        source_context_counts = getattr(
             importlib.import_module("scripts.evidence_map_summary"),
-            "source_context_label",
+            "source_context_counts",
         )
     except ModuleNotFoundError:  # pragma: no cover - script execution path
-        source_context_label = getattr(
+        source_context_counts = getattr(
             importlib.import_module("evidence_map_summary"),
-            "source_context_label",
+            "source_context_counts",
         )
     for r in receipts if isinstance(receipts, list) else ():
         if not isinstance(r, dict):
@@ -206,11 +205,9 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
         if r.get("outcome_class"):
             key = str(r["outcome_class"])
             classes[key] = classes.get(key, 0) + 1
-        context = source_context_label(r)
-        if context:
-            source_contexts[context] = source_contexts.get(context, 0) + 1
     out.update(canonical_numeric(str(v)) for v in classes.values())
-    out.update(canonical_numeric(str(v)) for v in source_contexts.values())
+    if isinstance(receipts, list):
+        out.update(canonical_numeric(str(v)) for v in source_context_counts(receipts).values())
     plans = manifest.get("_tension_plans")
     if not isinstance(plans, list):
         raw = (manifest.get("tension_elaboration") or {}).get("plans")

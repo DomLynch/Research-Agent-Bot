@@ -37,6 +37,7 @@ asyncio_mode = "strict"
 
 [tool.mypy]
 mypy_path = "scripts"
+explicit_package_bases = true
 
 [tool.setuptools.packages.find]
 # Only ship the current runtime package.

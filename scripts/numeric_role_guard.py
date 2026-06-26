@@ -557,23 +557,16 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
     receipts = manifest.get("receipts") or ()
     if isinstance(receipts, list):
         try:
-            source_context_label = getattr(
+            source_context_counts = getattr(
                 importlib.import_module("scripts.evidence_map_summary"),
-                "source_context_label",
+                "source_context_counts",
             )
         except ModuleNotFoundError:  # pragma: no cover - script execution path
-            source_context_label = getattr(
+            source_context_counts = getattr(
                 importlib.import_module("evidence_map_summary"),
-                "source_context_label",
+                "source_context_counts",
             )
-        source_contexts: dict[str, int] = {}
-        for receipt in receipts:
-            if not isinstance(receipt, dict):
-                continue
-            context = source_context_label(receipt)
-            if context:
-                source_contexts[context] = source_contexts.get(context, 0) + 1
-        out.update(canonical_numeric(str(v)) for v in source_contexts.values())
+        out.update(canonical_numeric(str(v)) for v in source_context_counts(receipts).values())
     return out
 
 

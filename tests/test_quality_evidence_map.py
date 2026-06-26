@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import importlib
 import subprocess
 import sys
 from pathlib import Path
@@ -16,6 +17,31 @@ from scripts.quality_evidence_map import (
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = REPO_ROOT / "scripts" / "quality_evidence_map.py"
+
+
+def test_source_context_map_accepts_generators() -> None:
+    source_context_map = getattr(
+        importlib.import_module("scripts.evidence_map_summary"),
+        "source_context_map",
+    )
+    rows = (
+        row
+        for row in (
+            {
+                "source_title": "Everolimus metastatic cancer trial",
+                "effect_direction": "null",
+                "p_values": ["p < 0.05"],
+            },
+            {
+                "source_title": "Everolimus bone muscle protocol",
+                "effect_direction": "null",
+                "p_values": [],
+            },
+        )
+    )
+    out = source_context_map(rows)
+    assert "Oncology and cancer context: 1 sources" in out
+    assert "Skeletal and muscle context: 1 sources" in out
 
 
 def _sample_manifest() -> dict:
