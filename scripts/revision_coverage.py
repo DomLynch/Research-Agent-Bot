@@ -32,9 +32,11 @@ def revision_asks(feedback: str) -> list[str]:
     starts = (
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
-        "Enumerate", "Hedge", "Include", "Operationalize", "Provide", "Recode", "Re-extract",
-        "Either", "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair", "Resolve",
-        "Replace", "Rewrite", "Separate", "Soften", "Strengthen", "Update", "Verify",
+        "Enumerate", "Hedge", "In", "Include", "Operationalize", "Populate",
+        "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify",
+        "Reconcile", "Regenerate", "Remove", "Repair", "Resolve", "Replace",
+        "Rewrite", "Separate", "Soften", "Strengthen", "Tighten", "Update",
+        "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
     asks = [_with_terminal_punctuation(a.strip()) for a in re.split(pattern, feedback) if a.strip()]
@@ -489,6 +491,11 @@ def _asks_substantive_evidence_synthesis(text: str) -> bool:
         "actual evidence synthesis" in text
         or "synthesis paragraph" in text
         or (
+            "key findings" in text
+            and "per-outcome-class" in text
+            and ("source" in text or "finding" in text)
+        )
+        or (
             "within-class" in text
             and "synthesis narrative" in text
             and ("source" in text or "studies found" in text)
@@ -577,6 +584,13 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
         ))
     ) or ("no extractable claims" in text and "admitted final" in text) or (
         "partial/none-only" in text and "partial-only" in text
+    ) or (
+        "search summary" in text
+        and any(token in text for token in ("selection logic", "source candidates", "admitted sources"))
+        and any(token in text for token in (
+            "non additive", "non-additive", "overlapping categories",
+            "single transparent exclusion",
+        ))
     )
 
 
@@ -717,6 +731,7 @@ def _asks_underpopulated_outcome_subsections(text: str) -> bool:
     return (
         "underpopulated outcome-class subsection" in text
         or "underpopulated outcome class subsection" in text
+        or "per-outcome-class subsection" in text
         or ("outcome-class subsection" in text and any(token in text for token in ("expand", "remove the headers", "remove headers")))
     )
 
@@ -1238,6 +1253,7 @@ def _substantive_evidence_synthesis_is_stated(paper_md: str) -> bool:
     return bool(
         "substantive evidence synthesis" in landscape.lower()
         and "key findings from source synthesis" in findings.lower()
+        and "source-level findings by outcome class" in findings.lower()
         and ("synthesis interpretation:" in findings.lower() or "source-level findings" in scope.lower())
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
         and re.search(r"\bpositive|negative|mixed|unclear|null|no extracted directional signal\b", scope, re.I)

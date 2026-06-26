@@ -1777,6 +1777,11 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
         )
         or (
             "key findings" in lower
+            and "per-outcome-class" in lower
+            and ("source" in lower or "finding" in lower)
+        )
+        or (
+            "key findings" in lower
             and any(token in lower for token in ("concrete", "bounded", "source", "outcome class"))
             and any(token in lower for token in ("abstract", "finding", "findings", "effect size", "directional"))
         )

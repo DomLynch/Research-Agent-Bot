@@ -27,6 +27,38 @@ def test_phase_f_fills_existing_empty_results_outcome_heading(tmp_path: Path) ->
     assert "### Cardiometabolic Outcomes\n\nCardiometabolic remains a separate Results slice for Everolimus" in fixed
 
 
+def test_phase_f_fills_outcome_heading_with_source_level_findings(tmp_path: Path) -> None:
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Cardiometabolic | n=1; claims=54 | unclear | 1 direct | limited |\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "## References\n\n- Wang 2024.\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "vascular_age", "receipts": [
+        {
+            "citation_token": "Wang 2024",
+            "source_title": "Impact of a Precision Intervention for Vascular Health",
+            "outcome_class": "cardiometabolic",
+            "n_claims": 54,
+            "effect_direction": "unclear",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "p_values": ["p < 0.05"],
+        },
+    ]}), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert logs
+    section = fixed.split("### Cardiometabolic Outcomes", 1)[1].split("## References", 1)[0]
+    assert "Wang 2024 (Impact of a Precision Intervention for Vascular Health" in section
+    assert "representative statistic p < 0.05" in section
+    assert "direction=unclear; directness=direct; tier=A1" in section
+    assert "Direction reconciliation:" in section
+
+
 def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path) -> None:
     paper = (
         "## Results\n\n"
