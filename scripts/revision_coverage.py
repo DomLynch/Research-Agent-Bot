@@ -149,6 +149,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_section_source_grounding,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
+            _asks_publication_year_note,
+            _asks_intervention_target_boundary,
             _asks_rct_count_reconciliation,
             _asks_unbacked_appraisal_names,
             _asks_evidence_tier_directness_bounds,
@@ -238,6 +240,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
         return _substantive_evidence_synthesis_is_stated(paper_md)
+    if _asks_publication_year_note(lower):
+        return _publication_year_note_is_stated(paper_md)
+    if _asks_intervention_target_boundary(lower):
+        return _intervention_target_boundary_is_stated(paper_md)
     if _asks_rct_count_reconciliation(lower):
         return _rct_count_reconciliation_is_stated(paper_md)
     if _asks_unbacked_appraisal_names(lower):
@@ -423,6 +429,7 @@ def _asks_key_findings_source_verdict(text: str) -> bool:
         and any(token in text for token in (
             "outcome class", "outcome slice", "retained sources", "effect size",
             "directional statement", "source abstracts", "abstracts", "concrete bounded findings",
+            "source-anchored", "actual key findings",
         ))
     )
 
@@ -470,6 +477,8 @@ def _asks_section_source_grounding(text: str) -> bool:
 def _asks_substantive_evidence_synthesis(text: str) -> bool:
     return (
         "actual evidence synthesis" in text
+        or "synthesis paragraph" in text
+        or ("integrate" in text and "evidence" in text)
         or (
             "strongest" in text
             and "positive" in text
@@ -671,7 +680,7 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
             and any(token in text for token in (
                 "substantiated", "enumerate", "enumerated",
                 "actually-surfaced", "actually surfaced", "correct", "replace",
-                "specific", "named sources",
+                "specific", "named sources", "where the disagreements lie", "what kinds",
             ))
         )
         or (
@@ -1214,9 +1223,46 @@ def _substantive_evidence_synthesis_is_stated(paper_md: str) -> bool:
     return bool(
         "substantive evidence synthesis" in landscape.lower()
         and "key findings from source synthesis" in findings.lower()
+        and "synthesis interpretation:" in findings.lower()
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
         and re.search(r"\bpositive|negative|mixed|unclear|null|no extracted directional signal\b", scope, re.I)
         and "bounded conclusion" in scope.lower()
+    )
+
+
+def _asks_publication_year_note(text: str) -> bool:
+    return (
+        "publication-year" in text
+        or "publication year" in text
+        or "doi/pubmed date" in text
+        or "doi/pubmed dates" in text
+        or ("in press" in text and "citation" in text)
+    )
+
+
+def _publication_year_note_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Key Findings"), _section(paper_md, "Methods"), _section(paper_md, "References")) if part).lower()
+    return (
+        "publication-year note:" in scope
+        and "doi/pubmed" in scope
+        and ("bibliographic/in-press" in scope or "bibliographic" in scope)
+    )
+
+
+def _asks_intervention_target_boundary(text: str) -> bool:
+    return (
+        "viable geroscience" in text
+        or ("contextual evidence" in text and "intervention target" in text)
+        or ("tighten the conclusion" in text and "supported" in text and "not supported" in text)
+    )
+
+
+def _intervention_target_boundary_is_stated(paper_md: str) -> bool:
+    conclusion = _section(paper_md, "Conclusion").lower()
+    return (
+        ("not proof" in conclusion or "does not support" in conclusion or "non-supportive" in conclusion)
+        and "intervention target" in conclusion
+        and ("hypothesis" in conclusion or "follow-up" in conclusion)
     )
 
 

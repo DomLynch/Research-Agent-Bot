@@ -1685,9 +1685,11 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
     assert "### Findings Map" in fixed
     assert "Sheng 2025" in fixed
     assert "Kakaletsis 2024" in fixed
-    assert "result=Integrating Vascular Aging and Genetic Risk" in fixed
-    assert "result=Impact of a Precision Intervention for Vascular Health" in fixed
-    assert "result=Effects of L-citrulline supplementation" in fixed
+    assert "- Sheng 2025: Integrating Vascular Aging and Genetic Risk" in fixed
+    assert "- Wang 2024: Impact of a Precision Intervention for Vascular Health" in fixed
+    assert "- Luo 2025: Effects of L-citrulline supplementation" in fixed
+    assert "Synthesis interpretation: These source-level findings connect" in fixed
+    assert "Publication-year note: citation years follow the manifest metadata" in fixed
     assert "finding=representative statistic p < 0.001; source-level statistic reported" in fixed
     assert "Actually surfaced tensions include:" in fixed
     assert "## Gaps Identified" in fixed

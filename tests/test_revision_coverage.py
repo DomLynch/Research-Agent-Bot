@@ -1718,6 +1718,8 @@ def test_deterministic_coverage_accepts_vascular_source_level_revision_bundle() 
         "rather than broad clinical proof (Wang 2024: outcome=Cardiometabolic; direction=positive; "
         "directness=direct; tier=A1; finding=representative statistic p < 0.05; source-level statistic reported). "
         "Second, null and unclear receipt-level rows are given equal interpretive weight. "
+        "Synthesis interpretation: source-level findings connect risk-marker, mechanistic, and intervention-adjacent "
+        "signals into follow-up hypotheses. "
         "The bounded conclusion follows from the balance of source direction, outcome class, "
         "evidence tier, and directness rather than from source count alone.\n\n"
         "## Tensions and Gaps\n\n"
@@ -1738,6 +1740,48 @@ def test_deterministic_coverage_accepts_vascular_source_level_revision_bundle() 
         "Expand Key Findings with concrete bounded findings per outcome class from source abstracts.",
         "Strengthen Gaps with at least 3 concrete actionable studies.",
     ]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_coverage_accepts_vascular_latest_reviewer_asks() -> None:
+    asks = [
+        "Write an actual Key Findings section that names 3-5 specific, source-anchored findings and then interpret them as hypotheses worth follow-up.",
+        "Add a synthesis paragraph that connects across outcome classes.",
+        "Reconcile or flag the 2026 publication-year citations with their 2025 DOI/PubMed dates, or move them to in press status with a note.",
+        "Specify what kinds of cross-study disagreement the 12 disagreements represent.",
+        "Tighten the conclusion to distinguish contextual evidence from a viable geroscience intervention target.",
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Substantive evidence synthesis: The manifest includes 13 retained sources. "
+        "Receipt-level direction is not a statement that the source abstracts lack directional statistics.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis:\n\n"
+        "- Sheng 2025: estimated pulse wave velocity and coronary artery disease; "
+        "finding=representative statistic p < 0.001; outcome=Contextual Adjacent Evidence; "
+        "direction=null; directness=indirect; tier=B2.\n"
+        "- Luo 2025: L-citrulline supplementation and arterial stiffness; "
+        "finding=representative statistic p = 0.0007; outcome=Contextual Adjacent Evidence; "
+        "direction=null; directness=review; tier=B2.\n\n"
+        "Synthesis interpretation: source-level findings connect risk-marker, mechanistic, and "
+        "intervention-adjacent signals into follow-up hypotheses. The bounded conclusion follows "
+        "from source direction, outcome class, evidence tier, and directness rather than from source count alone. "
+        "Publication-year note: citation years follow the manifest metadata; when DOI/PubMed dates differ, "
+        "the source should be treated as bibliographic/in-press metadata and not used for year-specific claims.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
+        "- Sheng 2025 vs Luo 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because "
+        "directions are null versus unclear; this reflects endpoint, population, directness, or study-design heterogeneity.\n"
+        "- Wang 2024 vs Azizzadeh 2026: surfaced tension/disagreement in Cardiometabolic because "
+        "directions are null versus null; this reflects endpoint, population, directness, or study-design heterogeneity.\n"
+        "- Nguyen 2026 vs Alanis 2025: surfaced tension/disagreement in Mechanism because "
+        "directions are null versus null; this reflects endpoint, population, directness, or study-design heterogeneity.\n\n"
+        "## Conclusion\n\n"
+        "The current corpus is non-supportive for clinical efficacy claims. It is not proof of a viable "
+        "geroscience intervention target; it supports only hypothesis generation and structured follow-up.\n"
+    )
+
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
 

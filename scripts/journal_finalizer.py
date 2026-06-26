@@ -2405,7 +2405,8 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
                 break
     lines = [
         f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in "
-        f"{_outcome_display(outcome_key(left))} because directions are {direction(left)} versus {direction(right)}."
+        f"{_outcome_display(outcome_key(left))} because directions are {direction(left)} versus {direction(right)}; "
+        "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
         for _, _, left, right in selected_pairs
     ]
     if len(lines) >= 3:
@@ -2426,7 +2427,8 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
             outcome = _outcome_display(str(left.get("outcome_class") or right.get("outcome_class") or "contextual_other"))
             lines.append(
                 f"- {a} vs {b}: surfaced tension/disagreement in {outcome} "
-                f"because directions are {direction(left)} versus {direction(right)}."
+                f"because directions are {direction(left)} versus {direction(right)}; "
+                "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
             )
             if len(lines) >= 3:
                 return lines
@@ -2434,7 +2436,10 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
         left = candidates[len(lines) % len(candidates)]
         right = candidates[-(len(lines) % len(candidates))-1]
         if citation(left) != citation(right):
-            lines.append(f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in the retained source map.")
+            lines.append(
+                f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in the retained source map; "
+                "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
+            )
         else:
             break
     return lines
