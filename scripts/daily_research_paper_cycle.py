@@ -1672,8 +1672,9 @@ def _preflight(
     *,
     current_quant_claims: int | None = None,
     ignore_recent_failures: bool = False,
+    source_run: Path | None = None,
 ) -> dict[str, Any]:
-    latest = _latest_topic_run(topic, runs_root)
+    latest = source_run if source_run and source_run.is_dir() else _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
     publication_track = _publication_track_topic(topic)
     reasons = []
@@ -3563,6 +3564,7 @@ def run_cycle(
                 ignore_recent_failures=bool(
                     revision_source and (existing_source_preflight or source_precision_repair_cleared)
                 ),
+                source_run=revision_source_run if revision_source else None,
             )
             if not preflight["passed"]:
                 terminal_missing_manifest = (

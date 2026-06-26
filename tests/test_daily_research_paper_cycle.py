@@ -5021,66 +5021,45 @@ def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatc
     assert preflight["reasons"] == ["latest_run_missing_manifest"]
 
 
-def test_revise_lane_marks_latest_run_missing_manifest_terminal_for_active_review(tmp_path: Path, monkeypatch) -> None:
+def test_preflight_uses_revise_source_run_over_newer_manifestless_run(tmp_path: Path, monkeypatch) -> None:
+    topic = "cardiovascular_subgroups"
+    _topic(tmp_path, topic, target_journal=True)
+    source = _prior_run(tmp_path, topic, receipts=37, tensions=113, primary=1, level=5)
+    (tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-26T03-32-00Z-R2").mkdir(parents=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight(
+        topic,
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        current_quant_claims=39,
+        source_run=source,
+    )
+
+    assert preflight["passed"] is True
+    assert preflight["latest_run"] == source.name
+    assert "latest_run_missing_manifest" not in preflight["reasons"]
+
+
+def test_preflight_blocks_revise_source_run_without_manifest(tmp_path: Path, monkeypatch) -> None:
     topic = "therapeutic_plasma_exchange"
     _topic(tmp_path, topic, target_journal=True)
     source = _prior_run(tmp_path, topic, receipts=37, tensions=113, primary=1, level=5)
-    title = "Hypothesis-Generating Brief: Therapeutic plasma exchange — full paper"
-    paper = source / "full_paper.md"
-    paper.write_text(f"# {title}\n", encoding="utf-8")
-    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
-        "run": source.name,
-        "topic": topic,
-        "fingerprint": cycle.submit_bridge._sha256(paper),
-    }])
+    (source / "manifest.json").unlink()
     (tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-24T16-15-05Z").mkdir(parents=True)
-    reviewed_at = (dt.datetime.now(dt.UTC) - dt.timedelta(minutes=10)).isoformat()
-    request = {
-        "artifactId": "tpe-review",
-        "title": title,
-        "topic": topic,
-        "feedback": "Revise with clearer species and study-design support.",
-        "reviewedAt": reviewed_at,
-    }
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
-    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
-    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("manifestless revise must not synthesize")))
 
-    ledger = cycle.run_cycle(
-        runs_root=tmp_path / "runs",
-        date="2026-06-24",
-        run_synthesis=True,
-        submit=True,
-        mode="revise",
-        remote_loader=lambda: (set(), None),
-        revision_loader=lambda: ([dict(request)], None),
-        submit_cycle=lambda **_kwargs: (_ for _ in ()).throw(AssertionError("manifestless revise must not submit")),
-        ensure_corpus=lambda *_a, **_k: {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS},
-    )
-
-    assert ledger["status"] == "revise_terminal_latest_run_missing_manifest"
-    assert ledger["attempts"][0]["gate_status"] == "terminal_latest_run_missing_manifest"
-    assert ledger["attempts"][0]["failure_class"] == "D_no_action"
-    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
-    assert handled["handled"][0]["status"] == "terminal_latest_run_missing_manifest"
-
-    pending, error = cycle._pending_remote_revision(
+    preflight = cycle._preflight(
+        topic,
         tmp_path / "runs",
         tmp_path / "runs" / cycle.LEDGER_DIR,
-        loader=lambda: ([dict(request)], None),
+        current_quant_claims=39,
+        source_run=source,
     )
-    assert error is None
-    assert pending is None
 
-    newer = {**request, "artifactId": "tpe-review-2", "reviewedAt": (dt.datetime.now(dt.UTC) + dt.timedelta(hours=1)).isoformat()}
-    pending, error = cycle._pending_remote_revision(
-        tmp_path / "runs",
-        tmp_path / "runs" / cycle.LEDGER_DIR,
-        loader=lambda: ([newer], None),
-    )
-    assert error is None
-    assert pending and pending["artifactId"] == "tpe-review-2"
+    assert preflight["passed"] is False
+    assert preflight["latest_run"] == source.name
+    assert preflight["reasons"] == ["latest_run_missing_manifest"]
 
 
 def test_preflight_allows_latest_run_with_manifest(tmp_path: Path, monkeypatch) -> None:
