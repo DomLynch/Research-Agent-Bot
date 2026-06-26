@@ -2548,11 +2548,12 @@ def _phase_d_revision_audit_notes(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    lower_text = text.lower()
     notes = [
-        note for note in (
-            _claim_count_audit_note(feedback, out_dir),
-            _source_identifier_gap_note(feedback, out_dir),
-        ) if note and note.lower() not in text.lower()
+        note for note, sentinel in (
+            (_claim_count_audit_note(feedback, out_dir), "claim-count audit note"),
+            (_source_identifier_gap_note(feedback, out_dir), "source-context verification gap"),
+        ) if note and sentinel not in lower_text
     ]
     if not notes:
         return text, []
