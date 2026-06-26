@@ -59,3 +59,13 @@ def test_classify_paper_tier_keeps_meta_analysis_out_of_direct() -> None:
                             "meta-analysis of randomized controlled trials"},
     )
     assert directness != "direct"
+
+
+def test_off_topic_rct_is_not_admitted_as_direct_receipt() -> None:
+    v06._set_topic("therapeutic_plasma_exchange")
+
+    receipts = v06.build_receipts_from_quant_claims("therapeutic_plasma_exchange")
+    titles = {r.source_title or "": (r.evidence_tier, r.directness) for r in receipts}
+
+    assert "Cost-utility analysis of a web-based interactive patient education platform" not in " ".join(titles)
+    assert any("therapeutic plasma exchange" in title.lower() for title in titles)
