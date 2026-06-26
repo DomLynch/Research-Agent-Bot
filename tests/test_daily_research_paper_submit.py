@@ -1613,6 +1613,63 @@ def test_remote_publication_dedupe_blocks_same_title_rerun(tmp_path: Path) -> No
     assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
 
 
+def test_remote_publication_dedupe_uses_payload_title_when_heading_drifted(tmp_path: Path) -> None:
+    run = _run(tmp_path, name="synthesis-cancer_biomarker_effects-v06-test")
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "cancer_biomarker_effects"
+    for row in manifest["receipts"]:
+        row["source_title"] = "Cancer biomarker effects in longevity cohorts"
+    _write_json(run / "manifest.json", manifest)
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8").replace(
+            "# Research Synthesis: Topic",
+            "The evidence profile indicates that the Cancer evidence base remains incomplete.",
+            1,
+        ),
+        encoding="utf-8",
+    )
+    marker = daily._title_marker("Research Synthesis: Cancer Biomarker Effects")
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-26",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("public duplicate must not submit")),
+        remote_loader=lambda: ({marker}, None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["submitted"] == 0
+    assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
+
+
+def test_remote_publication_dedupe_normalizes_public_title_variants(tmp_path: Path) -> None:
+    run = _run(tmp_path, name="synthesis-plant_based_diet_biological_age-v06-test")
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8").replace(
+            "# Research Synthesis: Topic",
+            "# Adjacent Evidence Brief: Plant based diet biological age — full paper",
+            1,
+        ),
+        encoding="utf-8",
+    )
+    marker = daily._title_marker("Adjacent Evidence Brief: Plant based diet biological age")
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-26",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("public duplicate must not submit")),
+        remote_loader=lambda: ({marker}, None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["submitted"] == 0
+    assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
+
+
 def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {
@@ -2120,13 +2177,15 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     markers, error = daily._remote_published_fingerprints("https://api.example/publications")
 
     assert error is None
-    assert markers == {
+    assert {
         "sha256:abc",
         "sha256:identity",
         daily._submission_marker("sub-accepted"),
         daily._title_marker(title),
         daily._topic_marker("vitamin_d_supplementation"),
-    }
+    } <= markers
+    assert daily._title_marker("Research Synthesis: Vitamin D Supplementation Effects") in markers
+    assert daily._title_marker("Vitamin D Supplementation Effects") in markers
 
 
 def test_http_submitter_sends_runtime_key_headers_and_idempotency(tmp_path: Path, monkeypatch) -> None:

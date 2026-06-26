@@ -292,6 +292,22 @@ def _title_marker(title: str) -> str:
     return "title:" + _normalized_key(title)
 
 
+def _title_markers(title: str) -> set[str]:
+    raw = str(title or "").strip()
+    if not raw:
+        return set()
+    variants = {raw}
+    no_suffix = re.sub(r"\s+[—-]\s+full paper\s*$", "", raw, flags=re.I).strip()
+    if no_suffix:
+        variants.add(no_suffix)
+    for value in list(variants):
+        if ":" in value:
+            tail = value.split(":", 1)[1].strip()
+            if tail:
+                variants.add(tail)
+    return {_title_marker(value) for value in variants if value}
+
+
 def _topic_marker(topic: str) -> str:
     return "topic:" + _normalized_key(topic)
 
@@ -1081,8 +1097,8 @@ def select_candidate(
         topic = _run_topic(run)
         paper = run / "full_paper.md"
         paper_sha = _sha256(paper) if paper.exists() else ""
-        title_mark = _title_marker(_paper_title(paper))
-        markers = {paper_sha, f"sha256:{paper_sha}", title_mark} if paper_sha else set()
+        title_marks = _title_markers(_paper_title(paper))
+        markers = {paper_sha, f"sha256:{paper_sha}", *title_marks} if paper_sha else set(title_marks)
         revision = bool(_read_json(run / "researka_revision_request.json"))
         if topic in blocked_topics:
             considered.append({"run": run.name, "fingerprint": paper_sha, "status": "topic_already_consumed_this_window"})
@@ -1102,6 +1118,9 @@ def select_candidate(
         payload = build_payload(run) if locally_eligible else {}
         metadata = payload.get("metadata") if isinstance(payload, dict) else {}
         metadata = metadata if isinstance(metadata, dict) else {}
+        if locally_eligible:
+            title_marks.update(_title_markers(str(payload.get("title") or "")))
+            markers.update(title_marks)
         if locally_eligible:
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
             if null_status != "eligible":
@@ -1138,12 +1157,12 @@ def select_candidate(
                 status = "eligible_resubmission_after_payload_change"
             else:
                 ok, status = False, "topic_already_submitted_pending"
-        elif ok and (markers & published_seen) - {title_mark}:
+        elif ok and (markers & published_seen) - title_marks:
             # Content/identity already has a live publication. Applies even to a
             # run carrying a stale revision_request — re-submitting identical
             # content is the "exact-content duplicate" reject Researka returns.
             ok, status = False, "duplicate_remote_publication"
-        elif ok and title_mark in published_seen and not (revision and explicit_candidate):
+        elif ok and title_marks & published_seen and not (revision and explicit_candidate):
             # Same title already published and this is NOT a revision: a
             # re-submit of an already-published topic. A genuine revision
             # (changed content, same title) falls through only when the revise
@@ -1688,7 +1707,7 @@ def _remote_published_fingerprints(url: str | None = None) -> tuple[set[str], st
                     out.add(content_hash if content_hash.startswith("sha256:") else f"sha256:{content_hash}")
             title = row.get("title")
             if isinstance(title, str) and title.strip():
-                out.add(_title_marker(title))
+                out.update(_title_markers(title))
             submission_id = row.get("submission_id")
             if isinstance(submission_id, str) and submission_id.strip():
                 out.add(_submission_marker(submission_id))
