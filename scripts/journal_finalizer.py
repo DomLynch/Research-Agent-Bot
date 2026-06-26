@@ -2690,10 +2690,15 @@ def _source_label_disambiguation_note(feedback: str, out_dir: Path) -> str:
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
         direction = str(row.get("effect_direction") or "unclear").strip()
         directness = str(row.get("directness") or "unclear").strip()
-        parts.append(f"{token} maps to one retained manifest receipt ({outcome}; direction={direction}; directness={directness}; title: {title})")
+        label = _noncitation_label(token)
+        parts.append(f"cited_as {label} maps to one retained manifest receipt ({outcome}; direction={direction}; directness={directness}; title: {title})")
     if not parts:
         return ""
     return "Source-label disambiguation note: " + "; ".join(parts) + "."
+
+
+def _noncitation_label(token: str) -> str:
+    return re.sub(r"\s+((?:19|20)\d{2}[a-z]?)\b", r" (\1)", token.strip())
 
 
 def _feedback_label_tokens(feedback: str) -> list[str]:
