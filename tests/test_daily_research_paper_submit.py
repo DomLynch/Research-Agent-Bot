@@ -2289,6 +2289,26 @@ def test_run_cycle_capped_submits_up_to_cap(tmp_path: Path, monkeypatch) -> None
     assert (tmp_path / daily.LEDGER_DIR / "2026-06-14.json").exists()
 
 
+def test_run_cycle_capped_records_compact_submission_markers(tmp_path: Path, monkeypatch) -> None:
+    seq = iter([
+        {
+            "status": "submitted_to_researka",
+            "submitted": 1,
+            "published": 0,
+            "candidate": {"run": "r1", "topic": "a"},
+            "submission": {"response": {"submission": {"id": "submission-a"}}},
+        },
+        {"status": "no_eligible_research_paper", "submitted": 0, "published": 0},
+    ])
+    monkeypatch.setattr(daily, "run_cycle", lambda **kw: next(seq))
+
+    out = daily.run_cycle_capped(runs_root=tmp_path, date="2026-06-14", submit=True, max_submissions=3)
+
+    assert out["submitted"] == 1
+    assert out["submissions"][0]["submission_markers"] == ["submission:submission-a"]
+    assert "submission" not in out["submissions"][0]
+
+
 def test_select_candidate_skips_topics_consumed_this_window(tmp_path: Path) -> None:
     _run(tmp_path, "synthesis-topic-v06-new")
     selected, considered = daily.select_candidate(
