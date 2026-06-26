@@ -122,6 +122,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_revision_audit_notes(t, out_dir),
+        lambda t: _phase_d_revision_surface_notes(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
         lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
@@ -164,6 +165,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_m_strip_surface_duplicate_paragraphs,
         _phase_m_repair_surface_artifacts,
         lambda t: _phase_d_reference_closure(t, out_dir),
+        lambda t: _phase_d_revision_surface_notes(t, out_dir),
         _phase_n_declare_discussion_thesis,
     ):
         text, log = phase(text)
@@ -2461,6 +2463,119 @@ _EVIDENCE_TYPE_METADATA_NOTE = (
     "source excerpts; review, RCT/trial, and excerpt evidence are reclassified "
     "under the source classification map before claims are interpreted."
 )
+
+
+def _phase_d_revision_surface_notes(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    lower = " ".join(feedback.lower().split())
+    if not lower:
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts_raw = manifest.get("receipts") if isinstance(manifest, dict) else None
+    receipts = [r for r in receipts_raw if isinstance(r, dict)] if isinstance(receipts_raw, list) else []
+    if not receipts:
+        return text, []
+    patched = text
+    n = 0
+    details: list[str] = []
+    wants_source_examples = (
+        "outcome subsection" in lower
+        and "source" in lower
+        and ("conclusion" in lower or "direct source" in lower)
+    )
+    if wants_source_examples and "source examples:" not in patched.lower():
+        examples = _revision_surface_examples(receipts)
+        if examples:
+            note = "Source examples: " + "; ".join(examples[:6]) + "."
+            patched, changed = _prepend_section_paragraph(patched, "Results", note)
+            n += changed
+            if changed:
+                details.append("source_examples")
+    wants_direct_ceiling = "direct clinical source" in lower or (
+        "direct source" in lower and "conclusion" in lower
+    )
+    if wants_direct_ceiling and "direct-source ceiling:" not in patched.lower():
+        note = _revision_direct_source_ceiling(receipts)
+        patched, changed = _prepend_section_paragraph(patched, "Conclusion", note)
+        n += changed
+        if changed:
+            details.append("direct_source_ceiling")
+    wants_design_limit = (
+        "limitations" in lower
+        and "protocol" in lower
+        and ("cross-sectional" in lower or "observational" in lower)
+    )
+    if wants_design_limit and "design-limit note:" not in patched.lower():
+        note = _revision_design_limit_note(receipts)
+        if note:
+            patched, changed = _prepend_section_paragraph(patched, "Limitations", note)
+            n += changed
+            if changed:
+                details.append("design_limit")
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_revision_surface_notes",
+        rule="insert_manifest_backed_revision_surface_notes",
+        n_changes=n,
+        detail=", ".join(details),
+    )]
+
+
+def _revision_surface_examples(receipts: list[dict[str, Any]]) -> list[str]:
+    by_outcome: dict[str, dict[str, Any]] = {}
+    for row in receipts:
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        if outcome not in by_outcome or str(row.get("directness") or "") == "direct":
+            by_outcome[outcome] = row
+    examples: list[str] = []
+    for outcome, row in sorted(by_outcome.items()):
+        examples.append(
+            f"{outcome}: {_row_citation(row)} "
+            f"(tier={row.get('evidence_tier') or 'unknown'}; "
+            f"directness={row.get('directness') or 'unknown'}; "
+            f"direction={row.get('effect_direction') or 'unclear'})"
+        )
+    return examples
+
+
+def _revision_direct_source_ceiling(receipts: list[dict[str, Any]]) -> str:
+    direct = [row for row in receipts if str(row.get("directness") or "").lower() == "direct"]
+    direct_text = "; ".join(_row_citation(row) for row in direct[:5]) or "no accepted direct source"
+    return (
+        "**Direct-source ceiling:** The direct clinical source set is "
+        f"{direct_text}. The remaining {max(0, len(receipts) - len(direct))} "
+        "accepted sources are indirect, review, protocol, mechanistic, or "
+        "contextual evidence, so they refine scope and uncertainty but do not "
+        "outweigh the direct-source interpretation."
+    )
+
+
+def _revision_design_limit_note(receipts: list[dict[str, Any]]) -> str:
+    limited = [
+        _row_citation(row) for row in receipts
+        if str(row.get("directness") or "").lower() in {"protocol", "mechanistic"}
+        or re.search(r"\b(protocol|cross-sectional|observational)\b", str(row.get("source_title") or ""), re.I)
+    ]
+    if not limited:
+        return ""
+    return (
+        "**Design-limit note:** Protocol, mechanistic, observational, or "
+        f"cross-sectional sources ({'; '.join(limited[:6])}) are retained for "
+        "context but cannot support causal claims individually."
+    )
+
+
+def _row_citation(row: dict[str, Any]) -> str:
+    token = str(row.get("citation_token") or "").strip()
+    if token:
+        return token
+    title = str(row.get("source_title") or row.get("receipt_id") or "source").strip()
+    year = str(row.get("source_year") or "").strip()
+    return f"{title} {year}".strip()
 
 
 def _normalize_evidence_type_public_note(text: str) -> str:

@@ -173,6 +173,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_unbundled_citation_cleanup,
             _asks_structured_table_stub_replacement,
             _asks_source_count_bundle_reconciliation,
+            _asks_outcome_subsection_source_narrative,
+            _asks_protocol_design_limitations,
             _asks_external_reference_boundary,
             _asks_reference_traceability,
             _asks_prior_publication_differentiation,
@@ -287,6 +289,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _structured_table_stubs_are_replaced(paper_md)
     if _asks_source_count_bundle_reconciliation(lower):
         return _source_count_bundle_reconciliation_is_stated(paper_md)
+    if _asks_outcome_subsection_source_narrative(lower):
+        return _outcome_subsection_source_narrative_is_stated(paper_md)
+    if _asks_protocol_design_limitations(lower):
+        return _protocol_design_limitations_are_stated(paper_md)
     if _asks_external_reference_boundary(lower):
         return _external_references_are_marked_illustrative(paper_md, lower)
     if _asks_reference_traceability(lower):
@@ -685,6 +691,23 @@ def _asks_internal_duplication(text: str) -> bool:
 
 def _asks_long_term_safety_scope(text: str) -> bool:
     return "long-term safety" in text or ("safety data" in text and "older adult" in text)
+
+
+def _asks_outcome_subsection_source_narrative(text: str) -> bool:
+    return (
+        "outcome subsection" in text
+        and "source" in text
+        and ("conclusion" in text or "direct source" in text)
+    )
+
+
+def _asks_protocol_design_limitations(text: str) -> bool:
+    return (
+        "limitations" in text
+        and "protocol" in text
+        and ("cross-sectional" in text or "observational" in text)
+        and "causal claims" in text
+    )
 
 
 def _asks_reference_traceability(text: str) -> bool:
@@ -1317,6 +1340,43 @@ def _source_identifier_gap_note_is_stated(paper_md: str) -> bool:
             "peer-reviewed",
         )
     ) and any(token in text for token in ("do not independently upgrade", "cannot independently upgrade"))
+
+
+def _outcome_subsection_source_narrative_is_stated(paper_md: str) -> bool:
+    results = _section(paper_md, "Results").lower()
+    conclusion = _section(paper_md, "Conclusion").lower()
+    whole = paper_md.lower()
+    if not results or not conclusion:
+        return False
+    source_grounded = (
+        "source examples:" in results
+        or (
+            "evidence domain" in results
+            and "source classification map" in whole
+            and "outcome=" in whole
+            and "directness=" in whole
+            and "tier=" in whole
+        )
+    )
+    direct_ceiling = (
+        "direct-source ceiling:" in conclusion
+        or (
+            "direct" in conclusion
+            and "interpretive weight" in conclusion
+            and any(token in conclusion for token in ("remaining", "indirect", "mechanistic", "contextual"))
+        )
+    )
+    return source_grounded and direct_ceiling
+
+
+def _protocol_design_limitations_are_stated(paper_md: str) -> bool:
+    limitations = _section(paper_md, "Limitations").lower()
+    return bool(
+        limitations
+        and "protocol" in limitations
+        and ("cross-sectional" in limitations or "observational" in limitations)
+        and "causal claims" in limitations
+    )
 
 
 def _claim_count_audit_is_stated(paper_md: str) -> bool:
