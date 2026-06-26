@@ -2469,6 +2469,9 @@ def test_revision_audit_notes_answer_claim_count_and_doi_gap_asks(tmp_path: Path
             detail="added claim-count/source-identifier revision audit note(s)",
         )
     ]
+    again, second_logs = journal_finalizer._phase_d_revision_audit_notes(fixed, tmp_path)
+    assert again == fixed
+    assert second_logs == []
 
 
 def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Path) -> None:
