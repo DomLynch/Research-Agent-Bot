@@ -1269,14 +1269,22 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
     return handled
 
 
-def _latest_handled_revision_status(ledger_dir: Path, key: str) -> str:
+def _handled_revision_statuses(ledger_dir: Path, key: str, reviewed_at: str = "") -> tuple[str, ...]:
     rows = _read_json(ledger_dir / HANDLED_REVISIONS).get("handled")
     if not isinstance(rows, list):
-        return ""
-    for row in reversed(rows):
-        if isinstance(row, dict) and str(row.get("key") or _revision_key(row)) == key:
-            return str(row.get("status") or "")
-    return ""
+        return ()
+    reviewed = _parse_time(reviewed_at)
+    statuses: list[str] = []
+    for row in rows:
+        if not isinstance(row, dict) or str(row.get("key") or _revision_key(row)) != key:
+            continue
+        handled_at = _parse_time(str(row.get("handled_at") or ""))
+        if reviewed and handled_at and handled_at < reviewed:
+            continue
+        status = str(row.get("status") or "")
+        if status:
+            statuses.append(status)
+    return tuple(statuses)
 
 
 def _revision_key(row: dict[str, Any]) -> str:
@@ -1339,26 +1347,28 @@ def _pending_remote_revision(
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
         if request_key in handled:
-            latest_status = _latest_handled_revision_status(ledger_dir, request_key)
+            handled_statuses = set(_handled_revision_statuses(
+                ledger_dir, request_key, str(request.get("reviewedAt") or request.get("reviewed_at") or ""),
+            ))
             current_code_repairs_surface = (
-                latest_status == "terminal_surface_repeat"
+                "terminal_surface_repeat" in handled_statuses
                 and bool(matches)
                 and _surface_passes_current_finalizer(matches[-1][1])
             )
             current_code_clears_domain_scope = (
-                latest_status == "terminal_domain_scope_mismatch"
+                "terminal_domain_scope_mismatch" in handled_statuses
                 and not _revision_requests_domain_scope_reset(str(request.get("feedback") or ""))
             )
             current_code_clears_revision_coverage = (
-                latest_status in {
+                bool(handled_statuses & {
                     "revision_coverage_unmet",
                     "terminal_revise_retry_budget_insufficient",
-                }
+                })
                 and bool(matches)
                 and _revision_coverage_passes_current_finalizer(matches[-1][1], str(request.get("feedback") or ""))
             )
             current_code_clears_source_manifest = (
-                latest_status == "terminal_revision_source_manifest_unavailable"
+                "terminal_revision_source_manifest_unavailable" in handled_statuses
                 and _revision_requests_source_precision(str(request.get("feedback") or ""))
             )
             if not (

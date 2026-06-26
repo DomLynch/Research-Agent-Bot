@@ -4491,6 +4491,11 @@ def test_pending_remote_revision_reopens_retry_budget_terminal_when_current_code
         "title": title,
         "status": "terminal_revise_retry_budget_insufficient",
         "handled_at": "2026-06-26T01:36:54+00:00",
+    }, {
+        "key": marker,
+        "title": title,
+        "status": "synthesis_timeout",
+        "handled_at": "2026-06-26T03:41:46+00:00",
     }]})
     monkeypatch.setattr(
         cycle,
