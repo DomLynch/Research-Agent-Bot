@@ -561,6 +561,29 @@ def test_reconcile_publication_ledgers_updates_submit_bridge_ledger(tmp_path: Pa
     assert ledger["publication_reconciliation"]["source"] == "remote_publications"
 
 
+def test_reconcile_publication_ledgers_refreshes_published_submit_day_summary(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    submit_ledger_dir = runs_root / cycle.submit_bridge.LEDGER_DIR
+    _write_json(submit_ledger_dir / "2026-06-05.json", {
+        "date": "2026-06-05",
+        "status": "published",
+        "submitted": 1,
+        "published": 1,
+        "day_summary": {"submitted": 3, "published": 0},
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-05",
+        remote_loader=lambda: (set(), None),
+    )
+
+    ledger = json.loads((submit_ledger_dir / "2026-06-05.json").read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["_daily_research_paper_ledger/2026-06-05.json"]
+    assert ledger["day_summary"] == {"submitted": 3, "published": 1}
+
+
 def test_reconcile_publication_ledgers_prefers_submission_id_over_same_title(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     title = "Adjacent Evidence Brief: Alpha-klotho — full paper"

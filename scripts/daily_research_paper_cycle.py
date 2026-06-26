@@ -421,7 +421,8 @@ def reconcile_publication_ledgers(
             continue
         checked += 1
         changed = _reconcile_published_ledger(ledger, runs_root, remote_seen)
-        changed = _refresh_submit_day_summary(ledger, runs_root) or changed
+        if int(ledger.get("published") or 0):
+            changed = _refresh_submit_day_summary(ledger, runs_root) or changed
         if changed:
             _write_json(ledger_path, ledger)
             updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}")
