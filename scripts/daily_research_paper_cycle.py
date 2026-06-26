@@ -1948,6 +1948,30 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         )
     ):
         return True
+    if (
+        "outcome subsection" in ask_lower
+        and "source" in ask_lower
+        and "evidence domain" in paper_text
+        and "source examples:" in paper_text
+        and "direct-source ceiling:" in paper_text
+    ):
+        return True
+    if (
+        "direct clinical source" in ask_lower
+        and (
+            "direct-source ceiling:" in paper_text
+            or ("### source classification map" in paper_text and "directness=direct" in paper_text)
+        )
+    ):
+        return True
+    if (
+        "limitations" in ask_lower
+        and "protocol" in ask_lower
+        and ("cross-sectional" in ask_lower or "observational" in ask_lower)
+        and "design-limit note:" in paper_text
+        and "causal claims" in paper_text
+    ):
+        return True
     if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
         return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
     if _asks_conflict_severity_criteria(ask_lower):

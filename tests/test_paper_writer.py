@@ -235,7 +235,16 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
 
 
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
-    receipts = [_summary("r-immune", outcome="immune"), _summary("r-longevity", outcome="longevity")]
+    receipts = [
+        _summary(
+            "r-immune", outcome="immune", directness="direct",
+            source_title="Direct vascular-age cohort", source_year=2025,
+        ),
+        _summary(
+            "r-longevity", outcome="longevity", directness="protocol",
+            source_title="Vascular aging trial protocol", source_year=2026,
+        ),
+    ]
 
     async def fake_anchored(**kwargs):
         return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
@@ -254,6 +263,9 @@ def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
         submission_id="thin-test", chain=(), review_type="thin_corpus_brief",
     ))
     assert "### Immune and Inflammation Outcomes" in md and "### Longevity Outcomes" in md
+    assert "Source examples: Direct vascular-age cohort 2025" in md
+    assert "**Design-limit note:**" in md and "Vascular aging trial protocol 2026" in md
+    assert "**Direct-source ceiling:**" in md and "Direct vascular-age cohort 2025" in md
     assert "## Introduction" not in md and all(s.name != "inferential_bridge" for s in sections)
 
 

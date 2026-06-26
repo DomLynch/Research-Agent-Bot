@@ -4067,6 +4067,41 @@ def test_outcome_attribution_gap_ask_accepts_mapped_outcome_row(tmp_path: Path) 
     )
 
 
+def test_thin_brief_revision_asks_accept_deterministic_source_surfaces(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "\n".join([
+            "# Paper",
+            "## Results",
+            "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |",
+            "|---|---|---|---|---|",
+            "| Vascular age / Cardiometabolic | n=1 | null | 1 direct | thin |",
+            "Source examples: Direct vascular-age cohort 2025 (tier=A1; directness=direct; direction=null).",
+            "## Limitations",
+            "**Design-limit note:** Protocol, mechanistic, observational, or cross-sectional sources are retained for context but cannot support causal claims individually.",
+            "## Conclusion",
+            "**Direct-source ceiling:** The direct clinical source set is Direct vascular-age cohort 2025 (tier=A1; directness=direct; direction=null).",
+            "### Source Classification Map",
+            "- Direct vascular-age cohort 2025: outcome=Cardiometabolic; direction=null; directness=direct; tier=A1.",
+        ]),
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Add substantive narrative under each outcome subsection that links at least one specific quantitative or qualitative finding to its source; In the Conclusion, tie the tiered interpretation to the specific bundle.",
+    )
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Clarify which source is the '1 direct clinical source' and state this explicitly so readers can audit the evidence hierarchy.",
+    )
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Expand the Limitations to specifically note that several admitted sources are protocols or cross-sectional observational designs that cannot support causal claims even individually.",
+    )
+
+
 def test_payload_source_bundle_topicality_revision_ask_rejects_polluted_bundle(tmp_path: Path, monkeypatch) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()
