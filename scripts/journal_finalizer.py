@@ -121,6 +121,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
+        lambda t: _phase_d_revision_audit_notes(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
         lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
@@ -2539,6 +2540,98 @@ def _revision_asks_source_verification_transparency(feedback: str) -> bool:
         ("source bundle" in lower or "reference-only" in lower)
         and any(token in lower for token in ("external verification", "independently verified", "exact statistics", "detailed quantitative"))
         and any(token in lower for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
+    )
+
+
+def _phase_d_revision_audit_notes(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    notes = [
+        note for note in (
+            _claim_count_audit_note(feedback, out_dir),
+            _source_identifier_gap_note(feedback, out_dir),
+        ) if note and note.lower() not in text.lower()
+    ]
+    if not notes:
+        return text, []
+    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", "\n\n".join(notes))
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_revision_audit_notes",
+        rule="answer_structural_reviewer_audit_asks",
+        n_changes=len(notes),
+        detail="added claim-count/source-identifier revision audit note(s)",
+    )]
+
+
+def _claim_count_audit_note(feedback: str, out_dir: Path) -> str:
+    lower = " ".join(feedback.lower().split())
+    wants = (
+        "claim count" in lower
+        and any(token in lower for token in ("audit", "claim registry", "claim-derivation", "claim derivation"))
+    )
+    if not wants:
+        return ""
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        outcome = str(row.get("outcome_class") or "contextual_other")
+        groups.setdefault(_outcome_display(outcome), []).append(row)
+    if not groups:
+        return ""
+    selected, selected_rows = max(
+        groups.items(),
+        key=lambda item: (_feedback_mentions(lower, item[0]), sum(int(r.get("n_claims") or 0) for r in item[1])),
+    )
+    claims = sum(int(row.get("n_claims") or 0) for row in selected_rows)
+    return (
+        f"Claim-count audit note: The {selected} slice count is derived from the claim registry. "
+        f"The claim-derivation protocol counts extracted claim records, not independent studies: "
+        f"{len(selected_rows)} retained source(s) contribute {claims} extracted claim(s) in this slice. "
+        "A high count from one source is therefore interpreted as source-bounded density, "
+        "not independent studies or pooled effect certainty."
+    )
+
+
+def _feedback_mentions(lower_feedback: str, label: str) -> bool:
+    tokens = [token for token in re.split(r"[^a-z0-9]+", label.lower()) if len(token) > 2]
+    return bool(tokens) and all(token in lower_feedback for token in tokens)
+
+
+def _source_identifier_gap_note(feedback: str, out_dir: Path) -> str:
+    lower = " ".join(feedback.lower().split())
+    wants = (
+        any(token in lower for token in ("without doi", "without dois", "missing doi", "no doi"))
+        and any(token in lower for token in ("verification-gap", "verification gap", "source-context", "source context"))
+    )
+    if not wants:
+        return ""
+    registry = _load_sidecar(out_dir / "citation_registry.json") or {}
+    rows = registry.values() if isinstance(registry, dict) else []
+    missing = [row for row in rows if isinstance(row, dict) and not _row_has_public_identifier(row)]
+    if not missing:
+        return ""
+    return (
+        f"Source-context verification gap: {len(missing)} source-bundle record(s) have no DOI, "
+        "PMID, PMCID, or trial identifier in the available metadata. They remain traceable "
+        "source-bundle records, but are distinguished from externally identifier-verified "
+        "peer-reviewed sources in the source-context map and do not independently upgrade "
+        "evidence certainty."
+    )
+
+
+def _row_has_public_identifier(row: dict[str, Any]) -> bool:
+    return any(
+        str(row.get(key) or "").strip()
+        for key in (
+            "source_doi", "doi", "source_pmid", "pmid",
+            "source_pmcid", "pmcid", "canonical_trial_id", "trial_id",
+        )
     )
 
 

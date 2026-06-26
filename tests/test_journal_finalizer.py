@@ -2432,6 +2432,45 @@ def test_reference_identifier_enrichment_adds_missing_id_caveat(tmp_path: Path) 
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_revision_audit_notes_answer_claim_count_and_doi_gap_asks(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    feedback = (
+        "Audit the claim count for the Dosing and Pharmacokinetics slice "
+        "(79 claims attributed to one mouse PK study) against the claim registry "
+        "and report the corrected number, or explain the claim-derivation protocol if 79 is accurate. "
+        "Add an explicit verification-gap note for sources without DOIs, distinguishing them "
+        "from peer-reviewed sources in the source-context map."
+    )
+    paper = "## Evidence Landscape\n\nThe source-context map is summarized.\n\n## References\n\n- Smith 2024.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"outcome_class": "dosing_pharmacokinetics", "n_claims": 79},
+            {"outcome_class": "contextual_other", "n_claims": 2},
+        ],
+    }), encoding="utf-8")
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Smith 2024"},
+        "r2": {"body_citation": "Jones 2025", "source_doi": "10.1000/example"},
+    }), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_d_revision_audit_notes(paper, tmp_path)
+
+    assert "Claim-count audit note: The Dosing and Pharmacokinetics slice count" in fixed
+    assert "1 retained source(s) contribute 79 extracted claim(s)" in fixed
+    assert "Source-context verification gap: 1 source-bundle record(s) have no DOI" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, revision_coverage.revision_asks(feedback)) == []
+    assert logs == [
+        journal_finalizer.FinalizerLogEntry(
+            phase="D_revision_audit_notes",
+            rule="answer_structural_reviewer_audit_asks",
+            n_changes=2,
+            detail="added claim-count/source-identifier revision audit note(s)",
+        )
+    ]
+
+
 def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

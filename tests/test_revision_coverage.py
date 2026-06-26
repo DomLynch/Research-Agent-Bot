@@ -1842,6 +1842,47 @@ def test_deterministic_unmet_accepts_single_source_map_caveats() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_claim_count_audit_note() -> None:
+    ask = (
+        "Audit the claim count for the Dosing and Pharmacokinetics slice "
+        "(79 claims attributed to one mouse PK study) against the claim registry "
+        "and report the corrected number, or explain the claim-derivation protocol if 79 is accurate."
+    )
+    weak = "## Evidence Landscape\n\nDosing and Pharmacokinetics contains 79 claims.\n"
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "Claim-count audit note: The Dosing and Pharmacokinetics slice count is derived "
+        "from the claim registry. The claim-derivation protocol counts extracted claim "
+        "records, not independent studies: 1 retained source contributes 79 extracted "
+        "claim(s) in this slice. A high count from one source is therefore interpreted "
+        "as source-bounded density, not independent studies or pooled effect certainty.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_source_identifier_gap_note() -> None:
+    ask = (
+        "Add an explicit verification-gap note for sources without DOIs, distinguishing "
+        "them from peer-reviewed sources in the source-context map."
+    )
+    weak = "## Evidence Landscape\n\nThe source-context map lists all retained rows.\n"
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "Source-context verification gap: 2 source-bundle records have no DOI, PMID, "
+        "PMCID, or trial identifier in the available metadata. They remain traceable "
+        "source-bundle records, but are distinguished from externally identifier-verified "
+        "peer-reviewed sources in the source-context map and do not independently upgrade "
+        "evidence certainty.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
 def test_deterministic_unmet_accepts_combination_product_positive_signal_boundary() -> None:
     ask = (
         "Reclassify or re-label the 'immune and inflammation positive signal' as a "

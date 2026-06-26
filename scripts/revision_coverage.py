@@ -144,6 +144,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_source_statistics_landscape,
             _asks_citation_traceability_map,
             _asks_source_verification_transparency,
+            _asks_source_identifier_gap_note,
             _asks_section_source_grounding,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
@@ -153,6 +154,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_admission_funnel_numeric_consistency,
             _asks_prisma_all_included_rationale,
             _asks_single_source_proportionality,
+            _asks_claim_count_audit,
             _asks_direct_evidence_definition,
             _asks_evidence_boundary,
             _asks_conclusion_unproven_humans,
@@ -222,6 +224,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _citation_traceability_map_is_stated(paper_md)
     if _asks_source_verification_transparency(lower):
         return _source_verification_transparency_is_stated(paper_md)
+    if _asks_source_identifier_gap_note(lower):
+        return _source_identifier_gap_note_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
         return _section_source_grounding_is_stated(paper_md)
     if _asks_combination_product_signal_boundary(lower):
@@ -240,6 +244,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _prisma_all_included_rationale_is_stated(paper_md)
     if _asks_single_source_proportionality(lower):
         return _single_source_proportionality_is_stated(paper_md)
+    if _asks_claim_count_audit(lower):
+        return _claim_count_audit_is_stated(paper_md)
     if _asks_direct_evidence_definition(lower):
         text = paper_md.lower()
         return (
@@ -423,6 +429,14 @@ def _asks_source_verification_transparency(text: str) -> bool:
     )
 
 
+def _asks_source_identifier_gap_note(text: str) -> bool:
+    return (
+        any(token in text for token in ("without doi", "without dois", "missing doi", "no doi"))
+        and any(token in text for token in ("verification-gap", "verification gap", "source-context", "source context"))
+        and "source" in text
+    )
+
+
 def _asks_section_source_grounding(text: str) -> bool:
     return "source_grounding" in text or "directly supports that specific claim" in text or (
         "every claim" in text
@@ -528,6 +542,14 @@ def _asks_single_source_proportionality(text: str) -> bool:
         "outcome class" in text
         and ("n=1" in text or "one-source" in text or "one source" in text)
         and any(token in text for token in ("context-only", "parallel evidence", "merge them"))
+    )
+
+
+def _asks_claim_count_audit(text: str) -> bool:
+    return (
+        "claim count" in text
+        and any(token in text for token in ("audit", "claim registry", "claim-derivation", "claim derivation"))
+        and any(token in text for token in ("slice", "outcome", "source"))
     )
 
 
@@ -1265,6 +1287,29 @@ def _single_source_proportionality_is_stated(paper_md: str) -> bool:
     single_source = any(token in scope for token in ("single-source", "single source", "one-source", "one source"))
     bounded = "hypothesis-generating" in scope or "proportional" in scope or "proportionality" in scope
     return single_source and bounded
+
+
+def _source_identifier_gap_note_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    return all(
+        token in text
+        for token in (
+            "source-context verification gap",
+            "no doi",
+            "source-bundle",
+            "peer-reviewed",
+        )
+    ) and any(token in text for token in ("do not independently upgrade", "cannot independently upgrade"))
+
+
+def _claim_count_audit_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    return (
+        "claim-count audit note" in text
+        and "claim registry" in text
+        and any(token in text for token in ("claim-derivation protocol", "claim derivation protocol"))
+        and any(token in text for token in ("not independent studies", "not independent source count"))
+    )
 
 
 def _funnel_counts(paper_md: str) -> dict[str, int]:
