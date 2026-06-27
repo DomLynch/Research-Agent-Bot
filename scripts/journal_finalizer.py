@@ -1806,7 +1806,9 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
         sources = list(re.finditer(source_pattern, feedback))
     if not sources:
         return text, 0
-    source = sources[-1] if sources[-1].start() < local.find(p_value.group(0)) or local.find(p_value.group(0)) < 0 else sources[0]
+    p_local = local.lower().find(p_value.group(0).lower())
+    before_p = [candidate for candidate in sources if p_local < 0 or candidate.start() <= p_local]
+    source = before_p[-1] if before_p else sources[0]
     source_label = f"{source.group(1)} {source.group(2)}"
     p_text = f"p = {p_value.group(1)}"
     normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
@@ -2174,6 +2176,9 @@ def _phase_d_substantive_evidence_synthesis(
         direction_audit += "\n\n"
     needs_taxonomy_note = revision_coverage.asks_outcome_taxonomy_separation(feedback)
     needs_conclusion_weight = revision_coverage.asks_conclusion_weight_boundary(feedback)
+    text, conclusion_cleanup_n = (
+        _remove_equal_weight_conclusion_claim(text) if needs_conclusion_weight else (text, 0)
+    )
     taxonomy_note = _manifest_outcome_taxonomy_note(rows) if needs_taxonomy_note else ""
     if taxonomy_note:
         taxonomy_note += "\n\n"
@@ -2238,12 +2243,12 @@ def _phase_d_substantive_evidence_synthesis(
         if pattern_summary else ""
     )
     patched, n3 = _prepend_section_paragraph(patched, "Conclusion", conclusion_note) if conclusion_note else (patched, 0)
-    if not (n1 or n2 or n3 or legacy_n):
+    if not (n1 or n2 or n3 or legacy_n or conclusion_cleanup_n):
         return text, []
     return patched, [FinalizerLogEntry(
         phase="D_substantive_evidence_synthesis",
         rule="add_manifest_grounded_evidence_landscape_and_key_findings",
-        n_changes=n1 + n2 + n3 + legacy_n,
+        n_changes=n1 + n2 + n3 + legacy_n + conclusion_cleanup_n,
         detail=f"added manifest-grounded synthesis notes from {len(rows)} receipt(s); removed legacy source-pattern paragraphs={legacy_n}",
     )]
 
@@ -2254,6 +2259,17 @@ def _remove_legacy_source_pattern_summary(text: str) -> tuple[str, int]:
         "",
         text,
         flags=re.S | re.M,
+    )
+
+
+def _remove_equal_weight_conclusion_claim(text: str) -> tuple[str, int]:
+    return re.subn(
+        r"\s*These source patterns support bounded risk-marker, causal, mechanistic,\s+"
+        r"or treatment-response hypotheses according to source directness"
+        r"(?:;\s+they do\s+not establish standalone clinical actionability)?\.",
+        "",
+        text,
+        flags=re.I,
     )
 
 
