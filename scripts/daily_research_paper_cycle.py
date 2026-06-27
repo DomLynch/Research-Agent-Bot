@@ -489,6 +489,7 @@ def reconcile_publication_ledgers(
         latest_decisions, decision_error = _latest_public_decisions_by_title()
         if not decision_error:
             _record_review_decisions(ledger_dir, latest_decisions)
+            remote_seen.update(_public_decision_markers(latest_decisions))
             decision_records = len(latest_decisions)
     checked = 0
     updated: list[str] = []
@@ -1191,6 +1192,25 @@ def _latest_public_decisions_by_title() -> tuple[dict[str, dict[str, Any]], str 
     if latest:
         return latest, None
     return {}, review_error or paper_error
+
+
+def _public_decision_markers(rows: dict[str, dict[str, Any]]) -> set[str]:
+    markers: set[str] = set()
+    for row in rows.values():
+        decision = str(row.get("decision") or "").strip().lower()
+        status = str(row.get("status") or "").strip().lower()
+        if decision not in {"accept", "accepted"} and status not in {"accepted", "public", "published"}:
+            continue
+        title = str(row.get("title") or "")
+        if title:
+            markers.update(submit_bridge._title_markers(title))
+        topic = row.get("topic")
+        if isinstance(topic, str) and topic.strip():
+            markers.add(submit_bridge._topic_marker(topic))
+        submission_id = row.get("submissionId") or row.get("submission_id")
+        if isinstance(submission_id, str) and submission_id.strip():
+            markers.add(submit_bridge._submission_marker(submission_id))
+    return markers
 
 
 def _record_review_decisions(ledger_dir: Path, latest: dict[str, dict[str, Any]]) -> None:

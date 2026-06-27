@@ -900,13 +900,24 @@ def test_reconcile_publication_ledgers_cleans_stale_published_reason(tmp_path: P
 
 def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path: Path, monkeypatch) -> None:
     runs_root = tmp_path / "runs"
+    title = "Hypothesis-Generating Brief: Taurine supplementation — full paper"
+    run = runs_root / "synthesis-taurine-v06-DAILY-2026-06-24T08-00-00Z"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
     ledger_dir = runs_root / cycle.LEDGER_DIR
-    ledger_dir.mkdir(parents=True)
+    _write_json(ledger_dir / "2026-06-24-fresh.json", {
+        "date": "2026-06-24",
+        "mode": "fresh",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "submitted_run": run.name,
+    })
     monkeypatch.setattr(cycle.submit_bridge, "_remote_published_fingerprints", lambda: (set(), None))
     monkeypatch.setattr(cycle, "_latest_public_decisions_by_title", lambda: ({
-        cycle.submit_bridge._title_marker("Hypothesis-Generating Brief: Taurine supplementation — full paper"): {
+        cycle.submit_bridge._title_marker(title): {
             "artifactId": "paper-1",
-            "title": "Hypothesis-Generating Brief: Taurine supplementation — full paper",
+            "title": title,
             "decision": "accept",
             "status": "published",
             "createdAt": "2026-06-24T12:22:51+04:00",
@@ -916,7 +927,12 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
     result = cycle.reconcile_publication_ledgers(runs_root=runs_root, date="2026-06-24")
 
     decisions = json.loads((ledger_dir / cycle.DECISIONS_BY_DAY).read_text(encoding="utf-8"))
+    ledger = json.loads((ledger_dir / "2026-06-24-fresh.json").read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["2026-06-24-fresh.json"]
     assert result["decision_records"] == 1
+    assert ledger["status"] == "published"
+    assert ledger["published"] == 1
     assert decisions["days"]["2026-06-24"]["counts"] == {"accept": 1}
     assert decisions["days"]["2026-06-24"]["records"][0]["reviewed_at"] == "2026-06-24T12:22:51+04:00"
 
