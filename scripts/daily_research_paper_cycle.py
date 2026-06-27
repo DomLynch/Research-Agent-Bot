@@ -2004,7 +2004,7 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         return True
     if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
         return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
-    if _asks_source_attribution_map(ask_lower):
+    if revision_coverage.asks_source_attribution_map(ask_lower):
         return _paper_has_source_attribution_map(paper_text)
     if _asks_narrow_conclusion(ask_lower):
         return _paper_has_bounded_conclusion(paper_text)
@@ -2088,10 +2088,6 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     landscape = str(sections.get("Evidence Landscape") or "")
     findings = str(sections.get("Key Findings") or "")
     return bool(findings and landscape and findings != landscape and "|" not in findings)
-
-
-def _asks_source_attribution_map(ask_lower: str) -> bool:
-    return revision_coverage.asks_source_attribution_map(ask_lower)
 
 
 def _paper_has_source_attribution_map(paper_text: str) -> bool:

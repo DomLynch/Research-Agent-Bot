@@ -2308,7 +2308,7 @@ def _phase_d_source_outcome_class_map(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
-    if not _revision_asks_source_outcome_class_map(feedback):
+    if not revision_coverage.asks_source_outcome_class_map(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
@@ -2414,10 +2414,6 @@ def _manifest_row_finding(row: dict[str, Any]) -> str:
     if isinstance(n_claims, int) and n_claims > 0:
         return f"{n_claims} extracted claim(s); receipt-level direction is the coded finding"
     return "qualitative receipt-level finding recorded in the manifest"
-
-
-def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
-    return revision_coverage.asks_source_outcome_class_map(feedback)
 
 
 def _phase_d_tensions_and_gaps_breadth(
@@ -2677,7 +2673,11 @@ def _phase_d_source_directness_breakdown(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
-    if not _revision_asks_source_directness_breakdown(feedback):
+    if not (
+        revision_coverage.asks_source_directness_breakdown(feedback)
+        or revision_coverage.asks_evidence_type_metadata(feedback)
+        or revision_coverage.asks_source_classification_map(feedback)
+    ):
         return text, []
     lower = " ".join(feedback.lower().split())
     evidence_type_requested = "evidence_type" in lower or "evidence type" in lower
@@ -2919,14 +2919,6 @@ _CITATION_TRACEABILITY_NOTE = (
     "Map and References section; `manifest.json`, `citation_registry.json`, "
     "and `methods_pack.json` provide the complete machine-readable mapping."
 )
-
-
-def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
-    return (
-        revision_coverage.asks_source_directness_breakdown(feedback)
-        or revision_coverage.asks_evidence_type_metadata(feedback)
-        or revision_coverage.asks_source_classification_map(feedback)
-    )
 
 
 def _revision_asks_citation_traceability_map(feedback: str) -> bool:
