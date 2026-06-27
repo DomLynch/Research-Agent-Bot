@@ -1437,6 +1437,9 @@ def _revision_asks_evidence_boundary_note(feedback: str) -> bool:
         any(token in lower for token in ("mixed and indirect", "indirect nature", "indirect evidence"))
         and any(token in lower for token in ("abstract and conclusion", "abstract", "conclusion"))
         and any(token in lower for token in ("overclaim", "proportionality", "mechanistic plausibility"))
+    ) or (
+        any(token in lower for token in ("anti-aging framing", "anti aging framing", "geroscience case"))
+        and any(token in lower for token in ("remove", "temper", "restrict"))
     )
 
 
@@ -3456,6 +3459,10 @@ def _claim_count_audit_note(feedback: str, out_dir: Path) -> str:
     wants = (
         "claim count" in lower
         and any(token in lower for token in ("audit", "claim registry", "claim-derivation", "claim derivation"))
+    ) or (
+        any(token in lower for token in ("claim-counting methodology", "claim counting methodology"))
+        and "high-confidence" in lower
+        and any(token in lower for token in ("source", "sources", "claims"))
     )
     if not wants:
         return ""
@@ -3643,7 +3650,7 @@ def _phase_d_actionable_gaps(
         outcome = str(row.get("outcome_class") or "").strip()
         if outcome and outcome not in outcomes:
             outcomes.append(outcome)
-    outcome_text = ", ".join(_outcome_display(outcome) for outcome in outcomes[:4]) or "the main outcome classes"
+    outcome_text = ", ".join(_outcome_display(outcome) for outcome in outcomes) or "the main outcome classes"
     topic = str(manifest.get("topic") or "").replace("_", " ").strip() if isinstance(manifest, dict) else ""
     label = topic or "this intervention"
     section = (
@@ -3675,6 +3682,10 @@ def _revision_asks_actionable_gaps(feedback: str) -> bool:
     return (
         ("gaps identified" in lower or "strengthen gaps" in lower or "gaps with" in lower)
         and any(token in lower for token in ("actionable", "future research", "next steps", "concrete studies", "concrete actionable"))
+    ) or (
+        "gaps section" in lower
+        and any(token in lower for token in ("cover all", "all five", "full outcome"))
+        and any(token in lower for token in ("outcome class", "outcome classes"))
     )
 
 

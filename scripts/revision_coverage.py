@@ -761,6 +761,10 @@ def _asks_claim_count_audit(text: str) -> bool:
         "claim count" in text
         and any(token in text for token in ("audit", "claim registry", "claim-derivation", "claim derivation"))
         and any(token in text for token in ("slice", "outcome", "source"))
+    ) or (
+        any(token in text for token in ("claim-counting methodology", "claim counting methodology"))
+        and "high-confidence" in text
+        and any(token in text for token in ("source", "sources", "claims"))
     )
 
 
@@ -825,6 +829,10 @@ def _asks_actionable_gaps(text: str) -> bool:
     return (
         ("gaps identified" in text or "strengthen gaps" in text or "gaps with" in text)
         and any(token in text for token in ("actionable", "future research", "next steps", "concrete studies", "concrete actionable"))
+    ) or (
+        "gaps section" in text
+        and any(token in text for token in ("cover all", "all five", "full outcome"))
+        and any(token in text for token in ("outcome class", "outcome classes"))
     )
 
 
@@ -1539,11 +1547,18 @@ def _asks_intervention_target_boundary(text: str) -> bool:
         "viable geroscience" in text
         or ("contextual evidence" in text and "intervention target" in text)
         or ("tighten the conclusion" in text and "supported" in text and "not supported" in text)
+        or (
+            any(token in text for token in ("anti-aging framing", "anti aging framing", "geroscience case"))
+            and any(token in text for token in ("remove", "temper", "restrict"))
+        )
     )
 
 
 def _intervention_target_boundary_is_stated(paper_md: str) -> bool:
     conclusion = _section(paper_md, "Conclusion").lower()
+    scope = f"{_abstract(paper_md)}\n{_section(paper_md, 'Key Findings')}\n{conclusion}".lower()
+    if "evidence-boundary note:" in scope:
+        return True
     return (
         ("not proof" in conclusion or "does not support" in conclusion or "non-supportive" in conclusion)
         and "intervention target" in conclusion

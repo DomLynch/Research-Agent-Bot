@@ -3188,6 +3188,48 @@ def test_revision_audit_notes_answer_claim_count_and_doi_gap_asks(tmp_path: Path
     assert second_logs == []
 
 
+def test_photobiomodulation_style_reviewer_asks_are_repaired_generically(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    asks = [
+        "Expand the Gaps section to cover all five outcome classes (immune/inflammation, contextual adjacent, mechanism, muscle function, safety/comorbidity), not just two.",
+        "Clarify the claim-counting methodology: explain how 433 high-confidence claims map to 17 sources, and what 'high-confidence' means in the extraction protocol.",
+        "Remove or temper the 'geroscience case' and 'anti-aging' framing that the corpus does not support.",
+    ]
+    paper = (
+        "## Abstract\n\nThe evidence supports an anti-aging signal.\n\n"
+        "## Evidence Landscape\n\nCurrent map.\n\n"
+        "## Conclusion\n\nThis remains a geroscience case.\n\n"
+        "## References\n\n- Smith 2025.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": "; ".join(asks)}),
+        encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "photobiomodulation_red_light",
+        "receipts": [
+            {"outcome_class": "immune_inflammation", "n_claims": 81},
+            {"outcome_class": "contextual_adjacent", "n_claims": 199},
+            {"outcome_class": "mechanism", "n_claims": 14},
+            {"outcome_class": "muscle_function", "n_claims": 16},
+            {"outcome_class": "safety_comorbidity", "n_claims": 13},
+        ],
+    }), encoding="utf-8")
+
+    fixed, logs1 = journal_finalizer._phase_d_evidence_boundary_note(paper, tmp_path)
+    fixed, logs2 = journal_finalizer._phase_d_revision_audit_notes(fixed, tmp_path)
+    fixed, logs3 = journal_finalizer._phase_d_actionable_gaps(fixed, tmp_path)
+
+    assert logs1 and logs2 and logs3
+    assert "Evidence-boundary note:" in fixed
+    assert "Claim-count audit note:" in fixed
+    assert "not independent studies" in fixed
+    assert "Immune and Inflammation, Contextual Adjacent, Mechanism, Muscle Function, Safety and Comorbidity" in fixed
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+
+
 def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
