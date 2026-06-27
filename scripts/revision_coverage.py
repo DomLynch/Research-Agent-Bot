@@ -35,9 +35,9 @@ def revision_asks(feedback: str) -> list[str]:
         "Enumerate", "Hedge", "In", "Include", "Integrate", "Make", "Narrow",
         "Move", "Operationalize", "Populate",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify",
-        "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",
+        "Recompute", "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",
         "Replace", "Restate", "Restructure", "Rewrite", "Separate", "Soften", "Strengthen",
-        "Tighten", "Update", "Verify",
+        "Surface", "Tighten", "Update", "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
     asks = [_with_terminal_punctuation(a.strip()) for a in re.split(pattern, feedback) if a.strip()]
@@ -138,6 +138,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_source_outcome_class_map,
             _asks_findings_map_source_verdict,
             _asks_key_findings_source_verdict,
+            _asks_most_supported_key_findings,
             _asks_adjacent_indirect_reconciliation,
             _asks_source_classification_map,
             _asks_evidence_type_metadata,
@@ -155,8 +156,11 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_concrete_research_question,
             _asks_scope_framing,
             _asks_outcome_taxonomy_separation,
+            _asks_source_stratification_reconciliation,
+            _asks_mr_causal_count,
             _asks_direction_tally_audit,
             _asks_source_scope_annex,
+            _asks_direct_interventional_reclassification,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
             _asks_forward_dated_ai_disclosure_note,
@@ -178,6 +182,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_directional_table_narrative_consistency,
             _asks_contextual_without_directional_signal,
             _asks_direction_coding_visibility,
+            _asks_direction_coded_source_highlights,
             _asks_actionable_gaps,
             _asks_null_signal_reconciliation,
             _asks_subgroup_lens_narrative,
@@ -236,6 +241,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _findings_map_source_verdict_is_stated(paper_md)
     if _asks_key_findings_source_verdict(lower):
         return _key_findings_source_verdict_is_stated(paper_md)
+    if _asks_most_supported_key_findings(lower):
+        return _most_supported_key_findings_are_stated(paper_md)
     if _asks_adjacent_indirect_reconciliation(lower):
         return _adjacent_indirect_reconciliation_is_stated(paper_md)
     if _asks_source_classification_map(lower):
@@ -273,10 +280,16 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         )
     if _asks_outcome_taxonomy_separation(lower):
         return _outcome_taxonomy_separation_is_stated(paper_md)
+    if _asks_source_stratification_reconciliation(lower):
+        return _source_stratification_reconciliation_is_stated(paper_md)
+    if _asks_mr_causal_count(lower):
+        return _mr_causal_count_is_stated(paper_md, ask)
     if _asks_direction_tally_audit(lower):
         return _direction_tally_audit_is_stated(paper_md)
     if _asks_source_scope_annex(lower):
         return _source_scope_annex_is_stated(paper_md, ask)
+    if _asks_direct_interventional_reclassification(lower):
+        return _direct_interventional_reclassification_is_stated(paper_md, ask)
     if _asks_combination_product_signal_boundary(lower):
         return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
@@ -323,6 +336,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _contextual_without_directional_signal_is_explained(paper_md)
     if _asks_direction_coding_visibility(lower):
         return _direction_coding_visibility_is_stated(paper_md)
+    if _asks_direction_coded_source_highlights(lower):
+        return _direction_coded_source_highlights_are_stated(paper_md)
     if _asks_actionable_gaps(lower):
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
@@ -903,6 +918,14 @@ def _asks_direction_coding_visibility(text: str) -> bool:
         any(token in text for token in ("direction-coding", "direction coding", "directional coding"))
         and "unclear" in text
         and any(token in text for token in ("visible", "move", "prominent", "readers know", "narrative"))
+    )
+
+
+def _asks_direction_coded_source_highlights(text: str) -> bool:
+    return (
+        any(token in text for token in ("direction-coded", "direction coded", "direction-coded findings"))
+        and any(token in text for token in ("top-cited", "top cited", "source statistic", "significant source statistic"))
+        and any(token in text for token in ("outcome class", "each outcome", "interpretable"))
     )
 
 
@@ -1499,6 +1522,17 @@ def _direction_coding_visibility_is_stated(paper_md: str) -> bool:
     )
 
 
+def _direction_coded_source_highlights_are_stated(paper_md: str) -> bool:
+    findings = _section(paper_md, "Key Findings")
+    lower = findings.lower()
+    return bool(
+        "direction-coded source highlights:" in lower
+        and "direction=" in lower
+        and any(token in lower for token in ("representative statistic", "source-level statistic", "p ="))
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", findings)
+    )
+
+
 def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
     table_scope = " ".join(
         part for part in (_section(paper_md, "Evidence Snapshot"), _section(paper_md, "Evidence Landscape")) if part
@@ -1607,6 +1641,14 @@ def _asks_scope_framing(text: str) -> bool:
     )
 
 
+def _asks_most_supported_key_findings(text: str) -> bool:
+    return (
+        "key findings" in text
+        and any(token in text for token in ("most-supported", "most supported", "outcome-specific signal"))
+        and any(token in text for token in ("source citation", "source citations", "methodological header"))
+    )
+
+
 def _asks_outcome_taxonomy_separation(text: str) -> bool:
     return (
         "taxonomy" in text
@@ -1629,6 +1671,29 @@ def _asks_source_scope_annex(text: str) -> bool:
             "not appropriate as direct", "off-topic", "off topic",
             "non-topic", "not pooled",
         )
+    )
+
+
+def _asks_source_stratification_reconciliation(text: str) -> bool:
+    return (
+        any(token in text for token in ("five-domain", "five domain", "seven-slice", "seven slice"))
+        and any(token in text for token in ("source stratification", "outcome domains", "abstract"))
+        and any(token in text for token in ("reconcile", "correct", "consolidate"))
+    )
+
+
+def _asks_mr_causal_count(text: str) -> bool:
+    return (
+        any(token in text for token in ("mr/", "mr ", "mendelian", "causal-risk", "causal risk"))
+        and any(token in text for token in ("source count", "recompute", "actual", "unsupported"))
+    )
+
+
+def _asks_direct_interventional_reclassification(text: str) -> bool:
+    return (
+        "reclassify" in text
+        and any(token in text for token in ("direct interventional", "direct evidence", "direct-evidence"))
+        and any(token in text for token in ("rct", "randomized", "endpoint"))
     )
 
 
@@ -1668,6 +1733,46 @@ def _outcome_taxonomy_separation_is_stated(paper_md: str) -> bool:
     )
 
 
+def _most_supported_key_findings_are_stated(paper_md: str) -> bool:
+    findings = _section(paper_md, "Key Findings")
+    lower = findings.lower()
+    return bool(
+        "most-supported outcome-specific signals:" in lower
+        and "source" in lower
+        and any(token in lower for token in ("direction=", "p =", "representative statistic"))
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", findings)
+    )
+
+
+def _source_stratification_reconciliation_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _abstract(paper_md),
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+    ) if part).lower()
+    return (
+        "stratification reconciliation note:" in scope
+        and any(token in scope for token in ("five-domain", "five domain"))
+        and any(token in scope for token in ("seven-slice", "seven slice", "outcome-class slice"))
+        and "n=" in scope
+    )
+
+
+def _mr_causal_count_is_stated(paper_md: str, ask: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Conclusion"),
+    ) if part)
+    lower = scope.lower()
+    labels = _source_labels_from_ask(ask)
+    return bool(
+        "mr/causal-risk source count:" in lower
+        and re.search(r"\b\d+\s*/\s*\d+\b", scope)
+        and all(label.lower() in lower for label in labels)
+    )
+
+
 def _source_scope_annex_is_stated(paper_md: str, ask: str) -> bool:
     scope = "\n\n".join(part for part in (
         _section(paper_md, "Evidence Landscape"),
@@ -1680,6 +1785,23 @@ def _source_scope_annex_is_stated(paper_md: str, ask: str) -> bool:
         "source-scope annex note:" in lower
         and "not pooled" in lower
         and any(token in lower for token in ("annex", "non-topic", "non topic", "contextual"))
+        and all(label.lower() in lower for label in labels)
+    )
+
+
+def _direct_interventional_reclassification_is_stated(paper_md: str, ask: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Gaps Identified"),
+        _section(paper_md, "Limitations"),
+    ) if part)
+    lower = scope.lower()
+    labels = _source_labels_from_ask(ask)
+    return (
+        "direct-interventional endpoint correction:" in lower
+        and "direct evidence count" in lower
+        and any(token in lower for token in ("rct", "randomized", "interventional"))
         and all(label.lower() in lower for label in labels)
     )
 
