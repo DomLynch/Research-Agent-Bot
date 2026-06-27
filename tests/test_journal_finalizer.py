@@ -602,6 +602,36 @@ def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> No
     assert logs == []
 
 
+def test_terminal_terminology_scrubs_late_admission_funnel_note(tmp_path: Path) -> None:
+    ask = "Fix receipt funnel arithmetic and explain why 25 admitted sources came from 73 candidates."
+    paper = (
+        "## Methods\n\n"
+        "### Source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Source candidates | 73 |\n"
+        "| Admitted final sources | 25 |\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 25,
+        "receipt_funnel": {
+            "classified_receipt_candidates": 73,
+            "counts": {"admitted_receipts": 25},
+        },
+    }))
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Receipt-funnel interpretation:" not in fixed
+    assert "receipt-funnel buckets" not in fixed.lower()
+    assert "classified receipt candidates" not in fixed.lower()
+    assert "Source-selection interpretation:" in fixed
+    assert "73 classified source candidates" in fixed
+    assert any(log.phase == "D_admission_funnel_clarification" for log in logs)
+
+
 def test_prior_publication_differentiation_repairs_overlap_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
@@ -2070,7 +2100,8 @@ def test_latest_telomere_reviewer_asks_are_repaired_generically(tmp_path: Path) 
     fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
 
     assert "Majority-direction note: 17/25" in fixed
-    assert "Receipt-funnel interpretation: 25 admitted sources came from 73" in fixed
+    assert "Receipt-funnel interpretation:" not in fixed
+    assert "Source-selection interpretation: 25 admitted sources came from 73" in fixed
     assert "outcome-class source-level signals directionally consistent enough" in fixed
     assert "source-title subdomain labels" in fixed
     assert "Liu 2026: outcome=Dosing and Pharmacokinetics" not in fixed

@@ -124,7 +124,7 @@ _PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
     ("claim atom", "extracted finding"),
     ("endpoint proximity", "clinical directness"),
     ("accepted receipt graph", "included source set"), ("accepted corpus", "included studies"), ("accepted receipts", "included sources"), ("accepted receipt", "included source"),
-    ("mechanistic receipts", "mechanistic sources"), ("direct clinical receipts", "direct clinical sources"), ("indirect clinical receipts", "indirect clinical sources"), ("final receipt admission", "final source admission"), ("receipt admission funnel", "source admission funnel"), ("receipt candidates", "source candidates"),
+    ("mechanistic receipts", "mechanistic sources"), ("direct clinical receipts", "direct clinical sources"), ("indirect clinical receipts", "indirect clinical sources"), ("final receipt admission", "final source admission"), ("receipt admission funnel", "source admission funnel"), ("receipt-funnel", "source-selection"), ("receipt candidates", "source candidates"), ("receipt candidate", "source candidate"),
     ("receipt set", "source set"), ("receipt graph", "source set"), ("receipts", "sources"),
     # Word-count-neutral replacement: "structured corpus synthesis"
     # (3 words) → "AI-assisted evidence synthesis" (3 words) so the

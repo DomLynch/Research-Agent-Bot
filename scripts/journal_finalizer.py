@@ -179,6 +179,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         entries.extend(log)
     text, log = _phase_b_lane_qualifier(text, out_dir)
     entries.extend(log)
+    text, log = _phase_c_terminology(text)
+    entries.extend(log)
     return text, entries
 
 
@@ -879,7 +881,7 @@ def _phase_d_admission_funnel_clarification(
     note = _admission_funnel_note(out_dir)
     if (
         "admission-bucket note:" in text.lower()
-        and "receipt-funnel interpretation:" in text.lower()
+        and "source-selection interpretation:" in text.lower()
         and not replace_table
         and not wants_additive_flow
         and not has_placeholder_exclusion
@@ -906,7 +908,7 @@ def _phase_d_admission_funnel_clarification(
                 phase="D_admission_funnel_clarification",
                 rule="state_receipt_funnel_arithmetic",
                 n_changes=1,
-                detail="added receipt-funnel arithmetic note from manifest",
+                detail="added source-selection arithmetic note from manifest",
             )]
         return text, []
     section_end = re.search(r"^#{2,4}\s+", text[heading.end():], flags=re.M)
@@ -995,10 +997,10 @@ def _admission_funnel_note(out_dir: Path) -> str:
     if not isinstance(candidates, int) or not isinstance(admitted, int):
         return _ADMISSION_FUNNEL_NOTE
     return (
-        f"{_ADMISSION_FUNNEL_NOTE} Receipt-funnel interpretation: {admitted} "
-        f"admitted sources came from {candidates} classified receipt candidates "
+        f"{_ADMISSION_FUNNEL_NOTE} Source-selection interpretation: {admitted} "
+        f"admitted sources came from {candidates} classified source candidates "
         "after deduplication, active-scope filtering, claim-binding confidence, "
-        "and eligibility checks. The other receipt-funnel buckets are overlapping "
+        "and eligibility checks. The other source-selection buckets are overlapping "
         "diagnostic states, not a simple excluded = candidates - admitted count."
     )
 
