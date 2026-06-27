@@ -158,6 +158,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_rct_count_reconciliation,
             _asks_unbacked_appraisal_names,
             _asks_evidence_tier_directness_bounds,
+            _asks_search_summary_scope_note,
             _asks_additive_screening_flow,
             _asks_admission_funnel_numeric_consistency,
             _asks_prisma_all_included_rationale,
@@ -179,6 +180,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_long_term_safety_scope,
             _asks_unbundled_citation_cleanup,
             _asks_structured_table_stub_replacement,
+            _asks_outcome_label_cleanup,
             _asks_source_count_bundle_reconciliation,
             _asks_named_direct_clinical_source,
             _asks_outcome_subsection_source_narrative,
@@ -265,6 +267,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _unbacked_appraisal_names_are_resolved(paper_md)
     if _asks_evidence_tier_directness_bounds(lower):
         return _evidence_tier_directness_bounds_are_stated(paper_md)
+    if _asks_search_summary_scope_note(lower):
+        return _search_summary_scope_note_is_stated(paper_md)
     if _asks_additive_screening_flow(lower):
         return _additive_screening_flow_is_stated(paper_md)
     if _asks_admission_funnel_numeric_consistency(lower):
@@ -311,6 +315,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _unbundled_citations_are_resolved(paper_md, ask)
     if _asks_structured_table_stub_replacement(lower):
         return _structured_table_stubs_are_replaced(paper_md)
+    if _asks_outcome_label_cleanup(lower):
+        return _outcome_label_cleanup_is_stated(paper_md)
     if _asks_source_count_bundle_reconciliation(lower):
         return _source_count_bundle_reconciliation_is_stated(paper_md)
     if _asks_named_direct_clinical_source(lower):
@@ -706,6 +712,16 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
     )
 
 
+def _asks_search_summary_scope_note(text: str) -> bool:
+    return (
+        "search summary" in text
+        and any(token in text for token in (
+            "date range", "date ranges", "topic-operationalization",
+            "operationalization", "narrowing", "selection logic",
+        ))
+    )
+
+
 def _asks_prisma_all_included_rationale(text: str) -> bool:
     return (
         "100%" in text
@@ -920,6 +936,16 @@ def _asks_structured_table_stub_replacement(text: str) -> bool:
     return (
         "see the structured evidence table" in text
         and any(token in text for token in ("replace", "stubs", "prose paragraph", "prose paragraphs"))
+    )
+
+
+def _asks_outcome_label_cleanup(text: str) -> bool:
+    return (
+        "dosing and pharmacokinetics" in text
+        and any(token in text for token in (
+            "re-label", "relabel", "remove", "not contain",
+            "not a dosing", "not dosing", "not pk",
+        ))
     )
 
 
@@ -1625,6 +1651,16 @@ def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
     return no_extractable != admitted
 
 
+def _search_summary_scope_note_is_stated(paper_md: str) -> bool:
+    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape")) if part).lower()
+    return (
+        "search-summary scope note:" in scope
+        and "date range" in scope
+        and "operationalized" in scope
+        and "candidate-to-admitted" in scope
+    )
+
+
 def _single_source_proportionality_is_stated(paper_md: str) -> bool:
     whole = paper_md.lower()
     if "single-source slice" in whole and "hypothesis-generating" in whole:
@@ -1768,6 +1804,11 @@ def _references_are_traceable(paper_md: str) -> bool:
 
 def _structured_table_stubs_are_replaced(paper_md: str) -> bool:
     return "see the structured evidence table" not in paper_md.lower()
+
+
+def _outcome_label_cleanup_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    return "dosing and pharmacokinetics" not in text and "exposure and dose-adjacent evidence" in text
 
 
 def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:

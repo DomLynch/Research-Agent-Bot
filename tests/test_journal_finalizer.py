@@ -1459,7 +1459,7 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
     assert "direction=null" in fixed
     assert "direction=positive" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
-    assert logs[0].n_changes == 5
+    assert logs[0].n_changes == 6
 
 
 def test_numeric_significance_correction_moves_inline_markup_to_evidence_landscape(tmp_path: Path) -> None:
@@ -1917,6 +1917,51 @@ def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: 
         "D_substantive_evidence_synthesis",
         "D_evidence_honesty_guard",
     }
+
+
+def test_search_summary_scope_note_repairs_date_operationalization_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Tighten Search Summary to specify date ranges, topic-operationalization criteria, "
+        "and the rationale for the 73→25 narrowing."
+    )
+    paper = "## Methods\n\nRetrieval was deterministic.\n\n## Evidence Landscape\n\nThin summary.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "vascular_age"}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_search_summary_scope_note(paper, tmp_path)
+
+    assert "Search-summary scope note:" in fixed
+    assert "date ranges" in fixed
+    assert "operationalized" in fixed
+    assert "candidate-to-admitted narrowing" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_search_summary_scope"
+
+
+def test_outcome_label_cleanup_repairs_non_pk_slice_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Re-label or remove the Dosing and Pharmacokinetics outcome class, which does "
+        "not contain any actual dosing/PK studies."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Dosing and Pharmacokinetics\n\n"
+        "This slice contains exposure-adjacent evidence.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_outcome_label_cleanup(paper, tmp_path)
+
+    assert "Dosing and Pharmacokinetics" not in fixed
+    assert "Exposure and Dose-Adjacent Evidence" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_outcome_label_cleanup"
 
 
 def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path: Path) -> None:

@@ -105,6 +105,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_c_terminology,
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_prisma_all_included_rationale(t, out_dir),
+        lambda t: _phase_d_search_summary_scope_note(t, out_dir),
         lambda t: _phase_d_classification_criteria_note(t, out_dir),
         lambda t: _phase_d_conflict_severity_note(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
@@ -120,6 +121,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
         lambda t: _phase_d_species_study_design_summary(t, out_dir),
         lambda t: _phase_d_source_outcome_class_map(t, out_dir),
+        lambda t: _phase_d_outcome_label_cleanup(t, out_dir),
         lambda t: _phase_d_tensions_and_gaps_breadth(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
@@ -1064,6 +1066,45 @@ def _revision_asks_prisma_all_included_rationale(feedback: str) -> bool:
     )
 
 
+def _phase_d_search_summary_scope_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_search_summary_scope_note(feedback):
+        return text, []
+    if "search-summary scope note:" in text.lower():
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    topic = _topic_display_anchor(manifest if isinstance(manifest, dict) else {}) or "the target topic"
+    note = (
+        "Search-summary scope note: Retrieval date ranges are reported in the Information Sources "
+        "section. The topic was operationalized by requiring traceable title, abstract, or claim-record "
+        f"evidence for {topic}; the candidate-to-admitted narrowing reflects claim-binding confidence, "
+        "source traceability, and topic fit rather than a second unlogged manual exclusion step."
+    )
+    patched, n = _prepend_or_create_section_paragraph(text, "Methods", note)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_search_summary_scope",
+        rule="state_search_operationalization_and_narrowing",
+        n_changes=1,
+        detail="added search-summary date/topic/narrowing scope note",
+    )]
+
+
+def _revision_asks_search_summary_scope_note(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "search summary" in lower
+        and any(token in lower for token in (
+            "date range", "date ranges", "topic-operationalization",
+            "operationalization", "narrowing",
+        ))
+    )
+
+
 _CLASSIFICATION_CRITERIA_NOTE = (
     "Classification criteria: Outcome class assignment follows the primary "
     "endpoint or claim role recorded in the manifest, with contextual adjacent "
@@ -1923,6 +1964,9 @@ def _phase_d_substantive_evidence_synthesis(
     outcome_sentence = "\n".join(f"- {line}" for line in outcome_lines[:outcome_limit])
     if outcome_sentence:
         outcome_sentence = "Source-level findings by outcome class:\n\n" + outcome_sentence + "\n\n"
+    pattern_summary = _manifest_source_pattern_summary(rows)
+    if pattern_summary:
+        pattern_summary += "\n\n"
     subdomain_lines = _manifest_contextual_subdomain_lines(rows) if (
         full_source_surface or "disaggregate" in feedback.lower()
     ) else []
@@ -1954,6 +1998,7 @@ def _phase_d_substantive_evidence_synthesis(
     )
     key_findings = (
         "Key findings from source synthesis:\n\n"
+        f"{pattern_summary}"
         f"{result_sentence}"
         f"{outcome_sentence}"
         f"{subdomain_sentence}"
@@ -1971,12 +2016,20 @@ def _phase_d_substantive_evidence_synthesis(
     )
     patched, n1 = _prepend_or_create_section_paragraph(text, "Evidence Landscape", landscape)
     patched, n2 = _prepend_or_create_section_paragraph(patched, "Key Findings", key_findings)
-    if not (n1 or n2):
+    conclusion_note = (
+        f"Substantive conclusion: {pattern_summary.strip()} "
+        "These source-patterns support bounded risk-marker, causal, mechanistic, "
+        "or treatment-response hypotheses according to source directness; they do "
+        "not establish standalone clinical actionability."
+        if pattern_summary else ""
+    )
+    patched, n3 = _prepend_section_paragraph(patched, "Conclusion", conclusion_note) if conclusion_note else (patched, 0)
+    if not (n1 or n2 or n3):
         return text, []
     return patched, [FinalizerLogEntry(
         phase="D_substantive_evidence_synthesis",
         rule="add_manifest_grounded_evidence_landscape_and_key_findings",
-        n_changes=n1 + n2,
+        n_changes=n1 + n2 + n3,
         detail=f"added manifest-grounded synthesis notes from {len(rows)} receipt(s)",
     )]
 
@@ -2119,20 +2172,9 @@ def _manifest_contextual_subdomain_lines(rows: list[dict[str, Any]]) -> list[str
     buckets: dict[str, list[str]] = {}
     for row in rows:
         outcome = str(row.get("outcome_class") or "").lower()
-        title = str(row.get("source_title") or row.get("citation_token") or row.get("receipt_id") or "")
-        scope = f"{title} {outcome}".lower()
         if "contextual" not in outcome and "adjacent" not in outcome:
             continue
-        if any(token in scope for token in ("prognostic", "survival", "recurrence", "mortality")):
-            bucket = "prognostic and survival-marker evidence"
-        elif any(token in scope for token in ("mendelian", "genetic", "genetically", "causal", "risk")):
-            bucket = "causal-risk and Mendelian-randomization evidence"
-        elif any(token in scope for token in ("treatment", "therapy", "radio", "chemo", "intervention", "supplement")):
-            bucket = "treatment or intervention-response evidence"
-        elif any(token in scope for token in ("mechanism", "gene", "expression", "telomerase", "mitochondrial", "lnc")):
-            bucket = "biology-mechanism and molecular-context evidence"
-        else:
-            bucket = "adjacent clinical-context evidence"
+        bucket = _manifest_subdomain_bucket(row)
         label = str(row.get("citation_token") or row.get("source_title") or row.get("receipt_id") or "source").strip()
         if label:
             buckets.setdefault(bucket, []).append(label)
@@ -2141,6 +2183,39 @@ def _manifest_contextual_subdomain_lines(rows: list[dict[str, Any]]) -> list[str
         unique = list(dict.fromkeys(labels))
         lines.append(f"{bucket}: {', '.join(unique[:8])}" + ("; additional sources retained in manifest" if len(unique) > 8 else ""))
     return lines
+
+
+def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
+    outcome = str(row.get("outcome_class") or "").lower()
+    title = str(row.get("source_title") or row.get("citation_token") or row.get("receipt_id") or "")
+    scope = f"{title} {outcome}".lower()
+    if any(token in scope for token in ("prognostic", "survival", "recurrence", "mortality")):
+        return "prognostic and survival-marker evidence"
+    if any(token in scope for token in ("mendelian", "genetic", "genetically", "causal", "risk")):
+        return "causal-risk and Mendelian-randomization evidence"
+    if any(token in scope for token in ("treatment", "therapy", "radio", "chemo", "intervention", "supplement")):
+        return "treatment or intervention-response evidence"
+    if any(token in scope for token in ("mechanism", "gene", "expression", "telomerase", "mitochondrial", "lnc")):
+        return "biology-mechanism and molecular-context evidence"
+    return "adjacent clinical-context evidence"
+
+
+def _manifest_source_pattern_summary(rows: list[dict[str, Any]]) -> str:
+    buckets: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        buckets.setdefault(_manifest_subdomain_bucket(row), []).append(row)
+    parts: list[str] = []
+    for bucket, matching in sorted(buckets.items(), key=lambda item: (-len(item[1]), item[0])):
+        counts: dict[str, int] = {}
+        for row in matching:
+            direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+            counts[direction] = counts.get(direction, 0) + 1
+        examples = ", ".join(_row_citation(row) for row in sorted(matching, key=_manifest_key_finding_score)[:3])
+        direction_text = ", ".join(f"{key}={counts[key]}" for key in sorted(counts))
+        parts.append(f"{bucket}: n={len(matching)} ({direction_text}); leading sources: {examples}")
+        if len(parts) >= 5:
+            break
+    return "Substantive source-pattern summary: " + "; ".join(parts) + "." if parts else ""
 
 
 def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -> list[str]:
@@ -2915,6 +2990,40 @@ def _outcome_class_from_statistic_descriptor(descriptor: str) -> str:
     if any(token in lower for token in ("inflamm", "immune", "cytokine")):
         return "immune"
     return "contextual_other"
+
+
+def _phase_d_outcome_label_cleanup(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not _revision_asks_outcome_label_cleanup(feedback):
+        return text, []
+    patched, n = re.subn(
+        r"\bDosing and Pharmacokinetics\b",
+        "Exposure and Dose-Adjacent Evidence",
+        text,
+        flags=re.I,
+    )
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_outcome_label_cleanup",
+        rule="relabel_unsupported_dosing_pk_outcome",
+        n_changes=n,
+        detail="relabeled dosing/PK wording when reviewer says the slice is not PK evidence",
+    )]
+
+
+def _revision_asks_outcome_label_cleanup(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "dosing and pharmacokinetics" in lower
+        and any(token in lower for token in (
+            "re-label", "relabel", "remove", "not contain",
+            "not a dosing", "not dosing", "not pk",
+        ))
+    )
 
 
 def _prepend_or_create_section_paragraph(text: str, section: str, paragraph: str) -> tuple[str, int]:
