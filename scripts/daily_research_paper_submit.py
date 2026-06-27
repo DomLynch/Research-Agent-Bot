@@ -1371,6 +1371,21 @@ def _evidence_type_for_source(receipt: dict[str, Any]) -> str:
     return "primary"
 
 
+SOURCE_CONTEXTS = frozenset({"direct", "adjacent", "mechanistic", "context"})
+
+
+def _source_context_for_receipt(receipt: dict[str, Any]) -> str:
+    directness = str(receipt.get("directness") or "").lower()
+    outcome = str(receipt.get("outcome_class") or "").lower()
+    if directness == "direct":
+        return "direct"
+    if directness == "mechanistic":
+        return "mechanistic"
+    if "context" in outcome or directness in {"protocol", "review"}:
+        return "context"
+    return "adjacent"
+
+
 def _claim_excerpt(topic: str, receipt_id: str, *, limit: int = 2) -> str:
     path = ROOT / "docs" / "quality-reference" / topic / "quant_claims" / f"{receipt_id}.quant_claims.json"
     data = _read_json(path)
@@ -1496,6 +1511,11 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             "excerpt": excerpt,
             "year": row.get("source_year") if isinstance(row.get("source_year"), int) else None,
             "evidence_type": _evidence_type_for_source(receipt),
+            "evidence_context": _source_context_for_receipt(receipt),
+            "outcome_class": receipt.get("outcome_class") or None,
+            "effect_direction": receipt.get("effect_direction") or None,
+            "directness": receipt.get("directness") or None,
+            "evidence_tier": receipt.get("evidence_tier") or None,
             # Author-year citation token (registry body_citation, e.g. "Zufry
             # 2025") as a first-class SourceBundleEntry field so the Researka
             # reviewer can ground author-year prose citations to a bundle
@@ -1503,6 +1523,76 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             "cited_as": str(row.get("body_citation") or "") or None,
         })
     return bundle
+
+
+def _row_context(row: dict[str, Any]) -> str:
+    context = str(row.get("evidence_context") or row.get("directness") or "").lower()
+    if context in SOURCE_CONTEXTS:
+        return context
+    evidence_type = str(row.get("evidence_type") or "").lower()
+    if evidence_type == "review":
+        return "context"
+    return "adjacent" if evidence_type == "primary" else ""
+
+
+def _has_source_citation(row: dict[str, Any]) -> bool:
+    cited_as = str(row.get("cited_as") or "")
+    if re.search(r"\b(?:19|20)\d{2}\b", cited_as):
+        return True
+    return bool(str(row.get("title") or "").strip() and isinstance(row.get("year"), int))
+
+
+def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
+    bundle = [row for row in payload.get("source_bundle", []) if isinstance(row, dict)]
+    if not bundle:
+        return "eligible"
+    missing_context = sum(_row_context(row) not in SOURCE_CONTEXTS for row in bundle)
+    if missing_context:
+        return f"source_bundle_missing_context:{missing_context}/{len(bundle)}"
+    missing_outcome = sum(not str(row.get("outcome_class") or "").strip() for row in bundle)
+    missing_citation = sum(not _has_source_citation(row) for row in bundle)
+    if missing_outcome or missing_citation:
+        return f"source_bundle_unmapped_sources:outcome={missing_outcome},citation={missing_citation}"
+    return "eligible"
+
+
+def _weak_direct_evidence(payload: dict[str, Any]) -> bool:
+    bundle = [row for row in payload.get("source_bundle", []) if isinstance(row, dict)]
+    if not bundle:
+        return False
+    return sum(_row_context(row) == "direct" for row in bundle) <= 1
+
+
+def _bounded_title(title: str, topic: str, payload: dict[str, Any]) -> str:
+    if not _weak_direct_evidence(payload):
+        return title
+    if re.match(r"^(Adjacent Evidence Brief|Hypothesis-Generating Brief|Mechanistic Evidence Brief):", title):
+        return title
+    prefix = "Hypothesis-Generating Brief" if any(_row_context(row) == "direct" for row in payload.get("source_bundle", [])) else "Adjacent Evidence Brief"
+    suffix = " — full paper" if "full paper" in title.lower() else ""
+    return f"{prefix}: {_display_topic(topic)}{suffix}"
+
+
+def _conclusion_breadth_status(payload: dict[str, Any]) -> str:
+    if not _weak_direct_evidence(payload):
+        return "eligible"
+    title = str(payload.get("title") or "").lower()
+    body = str(payload.get("body_markdown") or "")
+    sections = payload.get("sections")
+    section_map = sections if isinstance(sections, dict) else {}
+    conclusion = str(section_map.get("Conclusion") or _section(body, "Conclusion") or "")
+    text = f"{title} {conclusion}".lower()
+    bounded = any(token in text for token in (
+        "adjacent", "hypothesis-generating", "mechanistic", "bounded",
+        "does not support", "cannot support", "insufficient", "limited",
+    ))
+    overbroad = any(token in text for token in (
+        "establishes", "demonstrates", "proves", "supports clinical",
+        "supports causal", "clinical efficacy",
+    ))
+    if overbroad and not bounded:
+        return "conclusion_breadth_unbounded_low_direct_evidence"
+    return "eligible"
 
 
 def _source_citation_hash(source_bundle: list[dict[str, Any]]) -> str:
