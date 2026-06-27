@@ -4303,8 +4303,16 @@ def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
         return False
     try:
         text = paper.read_text()
-        asks = revision_coverage.revision_asks(feedback)
-        if not asks:
+        gate = _load_sidecar(out_dir / "revision_coverage_gate.json")
+        if not isinstance(gate, dict) or gate.get("passed") is True:
+            return False
+        stale_unmet = gate.get("unmet_asks") if isinstance(gate, dict) else None
+        asks = (
+            [str(ask) for ask in stale_unmet if isinstance(ask, str) and ask.strip()]
+            if isinstance(stale_unmet, list)
+            else revision_coverage.revision_asks(feedback)
+        )
+        if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
             return False
         unmet = revision_coverage.deterministic_unmet_asks(text, asks)
     except (OSError, RuntimeError, TypeError, ValueError):

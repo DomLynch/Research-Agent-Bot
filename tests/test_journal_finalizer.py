@@ -320,6 +320,38 @@ def test_finalize_run_preserves_unproven_human_longevity_after_surface_restore(t
     assert any(entry.phase == "D_unproven_human_longevity" for entry in report.entries)
 
 
+def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path: Path) -> None:
+    ask = (
+        "Resolve the Brouwers 2016 direction coding inconsistency: either confirm the "
+        "positive frailty coding with the supporting statistic, or correct to unclear/null "
+        "to match the p=0.88 numeric correction."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Numeric reconciliation note: Brouwers 2016 reported a non-significant mapped "
+        "comparison (p = 0.88); this synthesis treats that mapped comparison, not every "
+        "within-source contrast, as non-significant.\n\n"
+        "- Brouwers 2016: outcome=Frailty; direction=null; finding=representative statistic p=0.88.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}), encoding="utf-8")
+    (tmp_path / "revision_coverage_gate.json").write_text(
+        json.dumps({"passed": False, "ask_count": 1, "unmet_asks": [ask]}),
+        encoding="utf-8",
+    )
+
+    logs = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
+
+    gate = json.loads((tmp_path / "revision_coverage_gate.json").read_text(encoding="utf-8"))
+    assert gate == {
+        "passed": True,
+        "ask_count": 1,
+        "unmet_asks": [],
+        "refreshed_by": "journal_finalizer",
+    }
+    assert any(entry.rule == "refresh_revision_coverage_gate_post_finalizer" for entry in logs)
+
+
 def test_source_verification_transparency_is_inserted_into_methods(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

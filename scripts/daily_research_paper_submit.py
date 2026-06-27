@@ -950,7 +950,8 @@ def _refresh_stale_revision_coverage_sidecar(run: Path) -> bool:
             return False
         from agent.journal_finalizer import finalize_run
         report = finalize_run(run)
-        return bool(report.paper_changed or _refresh_revision_coverage_gate(run, request))
+        refreshed = _refresh_revision_coverage_gate(run, request)
+        return bool(report.paper_changed or refreshed)
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
 
