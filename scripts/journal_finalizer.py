@@ -1314,13 +1314,30 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
         "health-intervention claims; it supports only hypothesis generation and "
         "structured follow-up within the limits of indirect evidence."
     )
+    bounded_replacement = (
+        "The conclusion is narrower: the retained evidence maps associations, "
+        "mechanisms, and candidate endpoints for follow-up; it does not establish "
+        "clinical benefit, therapeutic actionability, or anti-aging efficacy."
+    )
     pattern = re.compile(
         r"(?P<sentence>[^.\n]*\bmay\s+support\b[^.\n]*\b(?:general\s+health|lifestyle\s+intervention)\b[^.\n]*\.)",
         flags=re.I,
     )
+    patched, case_n = re.subn(
+        r"[^.\n]*\bremains a bounded geroscience case:\s*[^.\n]*\.",
+        bounded_replacement,
+        text,
+        flags=re.I,
+    )
+    patched, tiered_n = re.subn(
+        r"\bThe paper therefore interprets the corpus as a tiered evidence profile rather than as a single pooled effect\.",
+        "The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.",
+        patched,
+        flags=re.I,
+    )
     match = re.search(r"^## Conclusion\b(?P<body>.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not match or replacement.lower() in match.group("body").lower():
-        return text, 0
+        return patched, case_n + tiered_n
     body = match.group("body")
     n = 0
     rationale_replacement = (
@@ -1339,8 +1356,8 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
     body, pattern_n = pattern.subn(replacement, body, count=1)
     n += pattern_n
     if not n:
-        return text, 0
-    return text[:match.start("body")] + body + text[match.end("body"):], n
+        return patched, case_n + tiered_n
+    return patched[:match.start("body")] + body + patched[match.end("body"):], n + case_n + tiered_n
 
 
 def _receipt_has_null_or_no_signal(row: dict[str, Any]) -> bool:
@@ -1575,14 +1592,42 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
             _section_body(text, "Conclusion"),
         ) if part
     )
+    normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
+    if n_existing:
+        text = normalized
+        scope = " ".join(
+            part for part in (
+                _section_body(text, "Abstract"),
+                _section_body(text, "Evidence Landscape"),
+                _section_body(text, "Conclusion"),
+            ) if part
+        )
     if source_label.lower() in scope.lower() and p_text.lower() in scope.lower() and _FINALIZER_NONSIGNIFICANT_RE.search(scope):
-        return text, 0
+        return text, n_existing
     outcome = _numeric_correction_outcome(feedback)
     statement = (
-        f"Numeric correction: {source_label} reported a non-significant result"
-        f" ({p_text}){outcome}; this synthesis treats that finding as non-significant."
+        f"Numeric correction: {source_label} reported a non-significant mapped comparison"
+        f" ({p_text}){outcome}; this synthesis treats that mapped comparison, "
+        "not every within-source contrast, as non-significant."
     )
-    return _prepend_section_paragraph(text, "Abstract", statement)
+    patched, n = _prepend_section_paragraph(text, "Abstract", statement)
+    return patched, n + n_existing
+
+
+def _clarify_mapped_non_significant_comparison(text: str) -> tuple[str, int]:
+    patched, n1 = re.subn(
+        r"reported a non-significant result\s*(\([^)]+\))",
+        r"reported a non-significant mapped comparison \1",
+        text,
+        flags=re.I,
+    )
+    patched, n2 = re.subn(
+        r"this synthesis treats that finding as non-significant",
+        "this synthesis treats that mapped comparison, not every within-source contrast, as non-significant",
+        patched,
+        flags=re.I,
+    )
+    return patched, n1 + n2
 
 
 def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> tuple[str, int]:
@@ -1832,6 +1877,16 @@ def _phase_d_substantive_evidence_synthesis(
     outcome_sentence = "\n".join(f"- {line}" for line in outcome_lines[:outcome_limit])
     if outcome_sentence:
         outcome_sentence = "Source-level findings by outcome class:\n\n" + outcome_sentence + "\n\n"
+    subdomain_lines = _manifest_contextual_subdomain_lines(rows) if (
+        full_source_surface or "disaggregate" in feedback.lower()
+    ) else []
+    subdomain_sentence = ""
+    if subdomain_lines:
+        subdomain_sentence = (
+            "Contextual-adjacent subdomain map:\n\n"
+            + "\n".join(f"- {line}" for line in subdomain_lines)
+            + "\n\n"
+        )
     counts: dict[str, int] = {}
     for row in rows:
         direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
@@ -1843,9 +1898,11 @@ def _phase_d_substantive_evidence_synthesis(
         f"receipt-level directional coding across {', '.join(f'{k}={v}' for k, v in sorted(counts.items()))}. "
         "Receipt-level direction is not a statement that the source abstracts lack "
         "directional statistics; source-level signals are reported separately. "
-        "Representative source-level signals are: "
+        + ("Full source-level signals are: " if full_source_surface else "Representative source-level signals are: ")
         + "; ".join(examples if full_source_surface else examples[:8])
-        + ". These signals inform the bounded conclusion by separating effect "
+        + ". "
+        + subdomain_sentence.replace("\n", " ")
+        + "These signals inform the bounded conclusion by separating effect "
         "direction from evidence tier/directness; indirect, review-level, "
         "mechanistic, or contextual evidence remains hypothesis-generating."
     )
@@ -1853,6 +1910,7 @@ def _phase_d_substantive_evidence_synthesis(
         "Key findings from source synthesis:\n\n"
         f"{result_sentence}"
         f"{outcome_sentence}"
+        f"{subdomain_sentence}"
         "Synthesis interpretation: These source-level findings connect risk-marker, "
         "mechanistic, and intervention-adjacent signals into follow-up hypotheses, "
         "not a clinical efficacy claim. Direct/interventional rows define the "
@@ -1912,6 +1970,10 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             "directional findings" in lower
             and any(token in lower for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
         )
+        or (
+            "disaggregate" in lower
+            and any(token in lower for token in ("contextual adjacent", "heterogeneous", "sub-domain", "subdomain"))
+        )
     )
 
 
@@ -1931,7 +1993,7 @@ def _revision_asks_concrete_research_question(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
         "research question" in lower
-        and any(token in lower for token in ("concrete", "answerable", "fix", "framing"))
+        and any(token in lower for token in ("concrete", "answerable", "fix", "framing", "substantive", "self-referential"))
     )
 
 
@@ -1959,11 +2021,10 @@ def _phase_d_research_question_scope(
     topic = _topic_display_anchor(manifest) if isinstance(manifest, dict) else ""
     topic = topic or "the target topic"
     question = (
-        f"For {topic}, which retained source classes provide direct clinical, "
-        "indirect clinical, review-level, protocol, or mechanistic evidence; "
-        "what do the source-level findings show within each outcome class; "
-        "and where do significant but polarity-uncertain signals remain "
-        "hypothesis-generating rather than clinically actionable?"
+        f"For {topic}, what does the retained evidence show about prognostic "
+        "or risk-marker associations, causal or mechanistic evidence, treatment "
+        "or intervention relevance, and the limits imposed by source design, "
+        "directness, and outcome class?"
     )
     patched, n = _insert_section_before(text, "Research Question", question, ("Methods", "Results"))
     if not n:
@@ -2004,6 +2065,34 @@ def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) ->
             f"finding={_manifest_row_finding(row)}; claims={claims}"
         )
     return examples
+
+
+def _manifest_contextual_subdomain_lines(rows: list[dict[str, Any]]) -> list[str]:
+    buckets: dict[str, list[str]] = {}
+    for row in rows:
+        outcome = str(row.get("outcome_class") or "").lower()
+        title = str(row.get("source_title") or row.get("citation_token") or row.get("receipt_id") or "")
+        scope = f"{title} {outcome}".lower()
+        if "contextual" not in outcome and "adjacent" not in outcome:
+            continue
+        if any(token in scope for token in ("prognostic", "survival", "recurrence", "mortality")):
+            bucket = "prognostic and survival-marker evidence"
+        elif any(token in scope for token in ("mendelian", "genetic", "genetically", "causal", "risk")):
+            bucket = "causal-risk and Mendelian-randomization evidence"
+        elif any(token in scope for token in ("treatment", "therapy", "radio", "chemo", "intervention", "supplement")):
+            bucket = "treatment or intervention-response evidence"
+        elif any(token in scope for token in ("mechanism", "gene", "expression", "telomerase", "mitochondrial", "lnc")):
+            bucket = "biology-mechanism and molecular-context evidence"
+        else:
+            bucket = "adjacent clinical-context evidence"
+        label = str(row.get("citation_token") or row.get("source_title") or row.get("receipt_id") or "source").strip()
+        if label:
+            buckets.setdefault(bucket, []).append(label)
+    lines = []
+    for bucket, labels in sorted(buckets.items()):
+        unique = list(dict.fromkeys(labels))
+        lines.append(f"{bucket}: {', '.join(unique[:8])}" + ("; additional sources retained in manifest" if len(unique) > 8 else ""))
+    return lines
 
 
 def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -> list[str]:
