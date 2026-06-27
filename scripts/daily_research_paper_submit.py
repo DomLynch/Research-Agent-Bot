@@ -540,6 +540,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
     min_citations = int(_threshold(article_type, "min_citations"))
     if len(source_bundle) < min_citations:
         return f"researka_preflight_insufficient_sources:{len(source_bundle)} < {min_citations}"
+    if (bundle_status := _source_bundle_reconciliation_status(payload)) != "eligible":
+        return bundle_status
 
     required_sections = RESEARKA_REQUIRED_SECTIONS.get(article_type, RESEARKA_REQUIRED_SECTIONS[DEFAULT_ARTICLE_TYPE])
     missing = [name for name in required_sections if not str(sections.get(name) or "").strip()]
@@ -572,6 +574,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
         return doi_status
     if (anchor_status := _findings_map_topic_anchor_status(payload)) != "eligible":
         return anchor_status
+    if (breadth_status := _conclusion_breadth_status(payload)) != "eligible":
+        return breadth_status
     return "eligible"
 
 
@@ -1581,16 +1585,17 @@ def _conclusion_breadth_status(payload: dict[str, Any]) -> str:
     sections = payload.get("sections")
     section_map = sections if isinstance(sections, dict) else {}
     conclusion = str(section_map.get("Conclusion") or _section(body, "Conclusion") or "")
-    text = f"{title} {conclusion}".lower()
-    bounded = any(token in text for token in (
+    title_bounded = any(token in title for token in ("adjacent", "hypothesis-generating", "mechanistic"))
+    conclusion_lower = conclusion.lower()
+    conclusion_bounded = any(token in conclusion_lower for token in (
         "adjacent", "hypothesis-generating", "mechanistic", "bounded",
         "does not support", "cannot support", "insufficient", "limited",
     ))
-    overbroad = any(token in text for token in (
+    overbroad = any(token in conclusion_lower for token in (
         "establishes", "demonstrates", "proves", "supports clinical",
-        "supports causal", "clinical efficacy",
+        "supports causal",
     ))
-    if overbroad and not bounded:
+    if overbroad and not (title_bounded and conclusion_bounded):
         return "conclusion_breadth_unbounded_low_direct_evidence"
     return "eligible"
 
@@ -1661,6 +1666,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     article_type = _select_article_type(manifest)
     if article_type == "evidence_map":
         title = _topic_anchored_title(title, topic)
+    title = _bounded_title(title, topic, {"source_bundle": source_bundle})
     domain_slug = _env_or_default("RESEARKA_DOMAIN_SLUG_V3", "longevity")
     category = _env_or_default("RESEARKA_CATEGORY_V3", domain_slug).removesuffix("_research")
     rapid_sections = {

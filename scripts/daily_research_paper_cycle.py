@@ -2003,6 +2003,10 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         return True
     if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
         return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
+    if _asks_source_attribution_map(ask_lower):
+        return _paper_has_source_attribution_map(paper_text)
+    if _asks_narrow_conclusion(ask_lower):
+        return _paper_has_bounded_conclusion(paper_text)
     if _asks_conflict_severity_criteria(ask_lower):
         return all(
             token in paper_text
@@ -2083,6 +2087,45 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     landscape = str(sections.get("Evidence Landscape") or "")
     findings = str(sections.get("Key Findings") or "")
     return bool(findings and landscape and findings != landscape and "|" not in findings)
+
+
+def _asks_source_attribution_map(ask_lower: str) -> bool:
+    return (
+        any(token in ask_lower for token in ("attribute each", "finding level", "mapped claims", "outcome-class", "outcome class"))
+        and any(token in ask_lower for token in ("source", "cited", "name and year", "by name", "by year"))
+    )
+
+
+def _paper_has_source_attribution_map(paper_text: str) -> bool:
+    has_map = (
+        "### source classification map" in paper_text
+        or "source-level findings by outcome class" in paper_text
+        or "source examples:" in paper_text
+    )
+    has_fields = all(token in paper_text for token in ("outcome=", "directness=", "tier="))
+    has_author_year = bool(re.search(r"\b[a-z][a-z-]{2,}\s+(?:19|20)\d{2}\b", paper_text, re.I))
+    return has_map and has_fields and has_author_year
+
+
+def _asks_narrow_conclusion(ask_lower: str) -> bool:
+    return (
+        "conclusion" in ask_lower
+        and any(token in ask_lower for token in ("breadth", "narrow", "bounded", "translation", "overclaim"))
+    )
+
+
+def _paper_has_bounded_conclusion(paper_text: str) -> bool:
+    match = re.search(r"^##\s+conclusion\b(?P<body>.*?)(?=^##\s+|\Z)", paper_text, re.M | re.S)
+    conclusion = match.group("body") if match else paper_text[-1200:]
+    bounded = any(token in conclusion for token in (
+        "bounded", "hypothesis-generating", "adjacent", "mechanistic",
+        "does not support", "cannot support", "insufficient", "limited",
+    ))
+    overbroad = any(token in conclusion for token in (
+        "establishes", "demonstrates", "proves", "supports clinical",
+        "supports causal", "clinical efficacy",
+    ))
+    return bounded and not overbroad
 
 
 def _abstract_has_complete_sentence(paper_text: str) -> bool:
@@ -2472,21 +2515,11 @@ def _restore_source_manifest_quant_claims(topic: str, source_run: Path | None) -
 
 
 def _terminal_revision_receipt_preflight(report: Mapping[str, Any]) -> bool:
-    """A repaired revise corpus that stays severely sparse should not monopolise
+    """A revise corpus that cannot pass receipt preflight should not monopolise
     later revise windows for the same reviewer request."""
     if report.get("passed") or str(report.get("status") or "") != "receipt_preflight_insufficient":
         return False
-    repairs = report.get("repairs")
-    probes = report.get("probes")
-    if not isinstance(repairs, list) or not repairs or not isinstance(probes, list) or not probes:
-        return False
-    try:
-        n_receipts = int(report.get("n_receipts") or 0)
-        min_receipts = int(report.get("min_receipts") or 0)
-        first_probe = int(probes[0].get("n_receipts") or 0) if isinstance(probes[0], dict) else 0
-    except (TypeError, ValueError):
-        return False
-    return min_receipts > 0 and n_receipts < max(1, min_receipts // 2) and n_receipts <= first_probe
+    return True
 
 
 def _repair_existing_run(

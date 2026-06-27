@@ -717,8 +717,56 @@ def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, mo
     payload = daily.build_payload(run)
 
     assert payload["source_bundle"][0]["evidence_type"] == "primary"
+    assert payload["source_bundle"][0]["evidence_context"] == "adjacent"
+    assert payload["source_bundle"][0]["outcome_class"] == "longevity"
+    assert payload["source_bundle"][0]["directness"] == "indirect"
     assert payload["source_bundle"][0]["excerpt"] == "GDF11 changed a measured endpoint in the retained source."
     assert payload["source_bundle"][0]["cited_as"] == "Smith 2026"
+
+
+def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["source_bundle"][0].pop("outcome_class")
+    payload["source_bundle"][1].pop("cited_as")
+    payload["source_bundle"][1].pop("year")
+
+    assert daily._researka_preflight_status(payload) == "source_bundle_unmapped_sources:outcome=1,citation=1"
+
+
+def test_weak_direct_corpus_forces_bounded_title_and_conclusion(tmp_path: Path) -> None:
+    run = _run(tmp_path, tensions=20)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    for row in manifest["receipts"]:
+        row["directness"] = "indirect"
+    _write_json(run / "manifest.json", manifest)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    (run / "full_paper.md").write_text(
+        paper.replace("## Conclusion\n\n" + _words("conclusion", 120) + ".", "## Conclusion\n\nThis establishes clinical efficacy."),
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+
+    assert payload["title"].startswith("Adjacent Evidence Brief:")
+    assert daily._researka_preflight_status(payload) == "conclusion_breadth_unbounded_low_direct_evidence"
+
+
+def test_weak_direct_corpus_allows_bounded_conclusion(tmp_path: Path) -> None:
+    run = _run(tmp_path, tensions=20)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    for row in manifest["receipts"]:
+        row["directness"] = "indirect"
+    _write_json(run / "manifest.json", manifest)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    (run / "full_paper.md").write_text(
+        paper.replace("## Conclusion\n\n" + _words("conclusion", 120) + ".", "## Conclusion\n\nThe conclusion is bounded and hypothesis-generating; it does not support clinical efficacy."),
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+
+    assert payload["title"].startswith("Adjacent Evidence Brief:")
+    assert daily._researka_preflight_status(payload) == "eligible"
 
 
 def test_source_bundle_prefers_pubmed_abstract_over_registry_summary(tmp_path: Path, monkeypatch) -> None:
@@ -849,12 +897,25 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     manifest["n_receipts"] = 16
     manifest["receipts"] = [
-        {"receipt_id": f"topic_r{i}", "paper_id": f"topic_r{i}", "source_pmid": str(1000 + i), "effect_direction": "null", "directness": "indirect"}
+        {
+            "receipt_id": f"topic_r{i}",
+            "paper_id": f"topic_r{i}",
+            "source_pmid": str(1000 + i),
+            "effect_direction": "null",
+            "directness": "indirect",
+            "outcome_class": "contextual_other",
+        }
         for i in range(16)
     ]
     _write_json(run / "manifest.json", manifest)
     _write_json(run / "citation_registry.json", {
-        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "reference_id": f"R{i:02d}"}
+        f"topic_r{i}": {
+            "receipt_id": f"topic_r{i}",
+            "source_pmid": str(1000 + i),
+            "reference_id": f"R{i:02d}",
+            "source_year": 2026,
+            "body_citation": f"Source {i} 2026",
+        }
         for i in range(16)
     })
     monkeypatch.setattr(

@@ -4167,6 +4167,68 @@ def test_payload_source_bundle_topicality_revision_ask_rejects_polluted_bundle(t
     )
 
 
+def test_revision_ask_requires_outcome_findings_mapped_to_source_names(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "\n".join([
+            "# Paper",
+            "## Results",
+            "Source-level findings by outcome class:",
+            "- Smith 2026: outcome=Immune and Inflammation; direction=null; directness=adjacent; tier=B2.",
+            "- Jones 2025: outcome=Mechanistic Signaling; direction=mixed; directness=mechanistic; tier=C1.",
+        ]),
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Attribute each outcome-class finding to specific cited sources by name and year at the finding level.",
+    )
+
+
+def test_revision_ask_rejects_unmapped_outcome_findings(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Paper\n\n## Results\n\nThe immune outcome was mixed, with no source-level map.\n",
+        encoding="utf-8",
+    )
+
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Attribute each outcome-class finding to specific cited sources by name and year at the finding level.",
+    )
+
+
+def test_revision_ask_requires_bounded_conclusion_for_breadth_feedback(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Paper\n\n## Conclusion\n\nThe conclusion is bounded and hypothesis-generating; it does not support clinical efficacy.\n",
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Reconcile the conclusion's breadth with the actual evidence slice; narrow the conclusion.",
+    )
+
+
+def test_revision_ask_rejects_overbroad_conclusion(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Paper\n\n## Conclusion\n\nThis demonstrates clinical efficacy across the retained evidence.\n",
+        encoding="utf-8",
+    )
+
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Reconcile the conclusion's breadth with the actual evidence slice; narrow the conclusion.",
+    )
+
+
 def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     _, feedback_seen = _run_coverage_cycle(
