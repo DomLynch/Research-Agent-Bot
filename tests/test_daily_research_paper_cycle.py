@@ -2854,6 +2854,11 @@ def test_revision_domain_scope_reset_matches_imported_longevity_frame() -> None:
         "sources whose design is review/perspective/bioinformatics from the "
         "admitted direct-evidence counting, or relabel them."
     )
+    assert not cycle._revision_requests_domain_scope_reset(
+        "Reframe the conclusion away from anti-aging endorsement; add the "
+        "missing bundle sources to the Results outcome slices; recode direction "
+        "values and report excluded-with-reasons in the screening flow."
+    )
 
 
 def test_revise_lane_marks_domain_scope_mismatch_terminal(tmp_path: Path, monkeypatch) -> None:

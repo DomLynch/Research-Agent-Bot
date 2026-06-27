@@ -1337,6 +1337,21 @@ def _revision_requests_domain_scope_reset(feedback: str) -> bool:
     )
     if not has_domain_frame:
         return False
+    fixable_content_markers = (
+        "add the missing",
+        "admitted source",
+        "bundle source",
+        "direction value",
+        "evidence landscape",
+        "excluded-with-reasons",
+        "key findings",
+        "outcome slice",
+        "recode",
+        "screening flow",
+        "surface every",
+    )
+    if any(marker in lower for marker in fixable_content_markers):
+        return False
     frame = r"(?:framing|overlay)"
     patterns = (
         rf"does not support\b.{{0,120}}\b{frame}\b",
