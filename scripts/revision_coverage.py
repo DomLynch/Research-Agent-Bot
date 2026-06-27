@@ -469,6 +469,8 @@ def _asks_species_study_design_summary(text: str) -> bool:
 
 
 def _asks_source_outcome_class_map(text: str) -> bool:
+    if "combination-product" in text or "combination product" in text:
+        return False
     return (
         "source" in text
         and any(token in text for token in ("outcome class", "coded outcome", "mapped claim"))
@@ -477,6 +479,16 @@ def _asks_source_outcome_class_map(text: str) -> bool:
             "per cited source", "trace each mapped claim",
         ))
         and any(token in text for token in ("external verification", "evidence landscape", "bundle sources", "source bundle"))
+    ) or (
+        "source" in text
+        and any(token in text for token in ("findings map", "unaccounted", "attribute every admitted source"))
+    ) or (
+        "outcome class" in text
+        and any(token in text for token in (
+            "specific findings", "effect size", "directional statement",
+            "study design", "population", "effect direction",
+        ))
+        and any(token in text for token in ("cited source", "individual cited", "each retained source"))
     ) or (
         "evidence landscape" in text
         and "admitted source" in text

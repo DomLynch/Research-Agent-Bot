@@ -38,6 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # ModuleNotFoundError for scripts.review_noise_control and falls back to a
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
+import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 
@@ -1924,7 +1925,6 @@ def _failure_class(status: str) -> str:
 
 def _revision_asks(feedback: str) -> list[str]:
     """The enumerated reviewer asks recovered from the '; '-joined feedback."""
-    import revision_coverage
     return revision_coverage.revision_asks(feedback)
 
 
@@ -1934,7 +1934,6 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return []
-    import revision_coverage
     text = paper.read_text(encoding="utf-8")
     unmet = revision_coverage.material_unmet_asks(text, feedback)
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
@@ -1958,22 +1957,15 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     ):
         return True
     if (
-        "source bundle" in ask_lower
-        and any(token in ask_lower for token in ("reclassif", "re-tier", "retier", "misclassified"))
-        and any(token in ask_lower for token in (
-            "directness", "case report", "case-report", "evidence tier",
-            "mechanistic", "model-system", "context", "indirect", "review",
-        ))
+        (
+            revision_coverage.asks_source_directness_breakdown(ask_lower)
+            or revision_coverage.asks_evidence_type_metadata(ask_lower)
+            or revision_coverage.asks_source_classification_map(ask_lower)
+        )
         and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
         and ("low-directness" not in ask_lower or "low-directness" in paper_text)
         and ("case report" not in ask_lower or ("case report" in paper_text or "case-report" in paper_text))
         and ("patient education" not in ask_lower or "patient education" not in paper_text)
-    ):
-        return True
-    if (
-        any(token in ask_lower for token in ("reclassif", "re-tier", "retier", "misclassified"))
-        and any(token in ask_lower for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
-        and all(token in paper_text for token in ("source classification map", "outcome=", "directness=", "tier="))
     ):
         return True
     if (
@@ -2099,17 +2091,7 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
 
 
 def _asks_source_attribution_map(ask_lower: str) -> bool:
-    return (
-        any(token in ask_lower for token in ("attribute each", "finding level", "mapped claims", "outcome-class", "outcome class"))
-        and any(token in ask_lower for token in ("source", "cited", "name and year", "by name", "by year"))
-    ) or (
-        "admitted source" in ask_lower
-        and any(token in ask_lower for token in ("surface", "surfaced", "missing", "not surfaced"))
-    ) or (
-        "source" in ask_lower
-        and any(token in ask_lower for token in ("outcome summaries", "outcome summary"))
-        and any(token in ask_lower for token in ("missing", "not surfaced", "several"))
-    )
+    return revision_coverage.asks_source_attribution_map(ask_lower)
 
 
 def _paper_has_source_attribution_map(paper_text: str) -> bool:
@@ -2186,7 +2168,6 @@ def _abstract_overclaims(out_dir: Path) -> list[str]:
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return []
-    import revision_coverage
     return revision_coverage.unsupported_abstract_claims(paper.read_text(encoding="utf-8"))
 
 
@@ -2194,7 +2175,6 @@ def _numeric_effect_direction_issues(out_dir: Path) -> list[str]:
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return []
-    import revision_coverage
     return revision_coverage.numeric_effect_direction_issues(paper.read_text(encoding="utf-8"))
 
 

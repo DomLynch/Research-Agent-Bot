@@ -14,6 +14,8 @@ _SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(_SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS_DIR))
 
+import revision_coverage  # noqa: E402
+
 
 @dataclass(frozen=True, slots=True)
 class FinalizerLogEntry:
@@ -2314,20 +2316,7 @@ def _phase_d_source_outcome_class_map(
     if not rows:
         return text, []
     lower_feedback = feedback.lower()
-    wants_findings_map = "findings map" in lower_feedback or (
-        "specific findings" in lower_feedback
-        and any(token in lower_feedback for token in ("cited source", "individual cited", "each retained source"))
-    ) or (
-        "admitted source" in lower_feedback
-        and any(token in lower_feedback for token in (
-            "include all", "reconcile", "all 13", "all admitted",
-            "replace with findings", "surface", "surfaced", "not surfaced",
-        ))
-    ) or (
-        "source" in lower_feedback
-        and any(token in lower_feedback for token in ("outcome summaries", "outcome summary"))
-        and any(token in lower_feedback for token in ("missing", "not surfaced", "several"))
-    )
+    wants_findings_map = revision_coverage.asks_findings_map_detail(lower_feedback)
     present_tokens = {
         str(row.get("citation_token") or "").strip()
         for row in rows
@@ -2428,34 +2417,7 @@ def _manifest_row_finding(row: dict[str, Any]) -> str:
 
 
 def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "source" in lower
-        and "outcome class" in lower
-        and any(token in lower for token in ("mapping table", "mapping list", "assigned to which", "which outcome"))
-        and any(token in lower for token in ("external verification", "evidence landscape", "bundle sources", "source bundle"))
-    ) or (
-        "source" in lower
-        and any(token in lower for token in ("findings map", "unaccounted", "attribute every admitted source"))
-    ) or (
-        "outcome class" in lower
-        and any(token in lower for token in ("specific findings", "effect size", "directional statement"))
-        and any(token in lower for token in ("cited source", "individual cited", "each retained source"))
-    ) or (
-        "evidence landscape" in lower
-        and "admitted source" in lower
-        and any(token in lower for token in (
-            "include all", "reconcile", "all 13", "all admitted",
-            "replace with findings", "surface", "surfaced", "not surfaced",
-        ))
-    ) or (
-        "admitted source" in lower
-        and any(token in lower for token in ("surface", "surfaced", "missing", "not surfaced"))
-    ) or (
-        "source" in lower
-        and any(token in lower for token in ("outcome summaries", "outcome summary"))
-        and any(token in lower for token in ("missing", "not surfaced", "several"))
-    )
+    return revision_coverage.asks_source_outcome_class_map(feedback)
 
 
 def _phase_d_tensions_and_gaps_breadth(
@@ -2960,34 +2922,10 @@ _CITATION_TRACEABILITY_NOTE = (
 
 
 def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
     return (
-        "source directness" in lower
-        or "evidence_type" in lower
-        or "evidence type" in lower
-        or (
-            "misclassified" in lower
-            and any(token in lower for token in ("human intervention", "intervention studies", "clinical intervention"))
-            and any(token in lower for token in ("indirect", "review", "evidence"))
-        )
-        or (
-            "source" in lower
-            and "direct" in lower
-            and "adjacent" in lower
-            and any(token in lower for token in ("versus", "vs.", "which included", "scope statement"))
-        )
-        or (
-            "source" in lower
-            and any(token in lower for token in (
-                "directly address", "directly addresses", "specific", "off-topic", "off topic",
-                "remove or reclassify", "remove or justify", "inclusion criteria", "included under",
-                "operationalize", "classification", "mapping table", "mapping list",
-            ))
-        )
-        or (
-            any(token in lower for token in ("re-tier", "retier", "misclassified"))
-            and any(token in lower for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
-        )
+        revision_coverage.asks_source_directness_breakdown(feedback)
+        or revision_coverage.asks_evidence_type_metadata(feedback)
+        or revision_coverage.asks_source_classification_map(feedback)
     )
 
 
