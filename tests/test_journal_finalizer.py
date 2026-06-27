@@ -4181,3 +4181,122 @@ def test_revision_surface_notes_insert_manifest_backed_thin_brief_notes(tmp_path
     assert "**Direct-source ceiling:** The direct clinical source set is Wang 2024." in fixed
     assert "**Design-limit note:** Protocol, mechanistic, observational, or cross-sectional sources" in fixed
     assert "Vicente-Gabriel 2024" in fixed
+
+
+def test_second_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None:
+    feedback = (
+        "Restructure outcome-class taxonomy to separate: (a) telomere length as cancer "
+        "prognostic biomarker, (b) telomere length as incident cancer risk factor/MR/causal, "
+        "(c) telomere biology mechanisms in tumor cells ALT/TERT, (d) treatment-induced "
+        "telomere change, (e) telomere-targeted or supplement interventions. Current seven-class "
+        "taxonomy mixes these.; Reconcile directional map with coded extraction: either "
+        "re-extract/code directions for all sources, or remove per-class directional summary and "
+        "state corpus is predominantly unclear-coded and does not support directional map.; Remove "
+        "Jaeger 2024 from cancer-effects bundle or move to clearly labeled non-cancer evidence "
+        "annex; healthy-volunteer supplement RCT not appropriate as direct contextual evidence for "
+        "telomere-cancer effects.; Recode Ha 2023 in Mortality and Survival: EFS P=.903 no "
+        "significant difference; classify null, not \"significant source statistic in 3/3 sources\", "
+        "or define significant as \"source reports p-value.\"; Clarify admission funnel arithmetic: "
+        "whether 41/8/48/20/3 buckets are mutually exclusive/overlapping/sequential; reconcile "
+        "strict high-confidence=3 vs admitted final=25; explain why 25 not 3 source base.; Tighten "
+        "conclusion so it does not present bounded risk-marker, causal, mechanistic, or "
+        "treatment-response hypotheses as equally supported when corpus is skewed toward prognostic "
+        "biomarker studies, MR risk and mechanistic ALT minority slices."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "telomere_cancer_effects",
+        "n_receipts": 25,
+        "receipt_funnel": {
+            "classified_receipt_candidates": 73,
+            "counts": {
+                "admitted_receipts": 25,
+                "original_strict_high_confidence_receipts": 3,
+                "partial_only": 41,
+                "none_only": 8,
+                "partial_or_none": 48,
+                "unmapped": 20,
+            },
+        },
+        "receipts": [
+            {
+                "citation_token": "Sasmita 2025",
+                "source_title": "Telomere length as a cancer prognostic biomarker",
+                "outcome_class": "mortality_survival",
+                "effect_direction": "unclear",
+                "directness": "review",
+                "evidence_tier": "B2",
+                "n_claims": 113,
+            },
+            {
+                "citation_token": "Markozannes 2022",
+                "source_title": "Mendelian randomization of telomere length and cancer risk",
+                "outcome_class": "cancer_risk",
+                "effect_direction": "null",
+                "directness": "review",
+                "evidence_tier": "B2",
+            },
+            {
+                "citation_token": "Chen 2023",
+                "source_title": "Genetically predicted telomere length and incident cancer risk",
+                "outcome_class": "cancer_risk",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+            },
+            {
+                "citation_token": "Jaeger 2024",
+                "source_title": "Healthy-volunteer supplement intervention and telomere change",
+                "outcome_class": "contextual_other",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "p_values": ["P = .041"],
+            },
+            {
+                "citation_token": "Ha 2023",
+                "source_title": "Telomere length and survival outcomes in cancer cohorts",
+                "outcome_class": "mortality_survival",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "p_values": ["P = .903", "P = .019", "P = .026"],
+            },
+            {
+                "citation_token": "Afolabi 2026",
+                "source_title": "ALT and TERT telomere biology mechanisms in tumor cells",
+                "outcome_class": "mechanism",
+                "effect_direction": "null",
+                "directness": "mechanistic",
+                "evidence_tier": "C1",
+            },
+        ],
+    }), encoding="utf-8")
+    paper = (
+        "## Methods\n\nScreening summary.\n\n"
+        "## Evidence Landscape\n\nThe seven-class taxonomy mixes signals.\n\n"
+        "## Key Findings\n\nSignals are summarized broadly.\n\n"
+        "## Conclusion\n\n"
+        "These source patterns support bounded risk-marker, causal, mechanistic, "
+        "or treatment-response hypotheses according to source directness.\n"
+    )
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+
+    assert any(entry.rule == "mark_reviewer_named_scope_mismatch_sources_contextual" for entry in logs)
+    assert "Outcome-taxonomy separation note:" in fixed
+    assert "Directional-map boundary:" in fixed
+    assert "predominantly unclear-coded" in fixed
+    assert "Source-scope annex note:" in fixed
+    assert "Jaeger 2024" in fixed
+    assert "not pooled as direct evidence" in fixed
+    assert "Numeric reconciliation note: Ha 2023" in fixed
+    assert "p = .903" in fixed
+    assert "Strict high-confidence subset note: 3 strict high-confidence receipt(s)" in fixed
+    assert "admitted source base remains 25" in fixed
+    assert "Dominant source pattern:" in fixed
+    assert "not weighed equally" in fixed
+    assert "minority slices" in fixed.lower()
+    assert "risk-marker, causal, mechanistic, or treatment-response hypotheses according to source directness" not in fixed
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []

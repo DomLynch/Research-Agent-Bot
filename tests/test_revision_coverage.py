@@ -2343,3 +2343,68 @@ def test_scope_framing_and_direction_tally_audit_are_structural_asks() -> None:
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
     assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_second_revise_feedback_splits_and_requires_markers() -> None:
+    feedback = (
+        "Restructure outcome-class taxonomy to separate: (a) telomere length as cancer "
+        "prognostic biomarker, (b) telomere length as incident cancer risk factor/MR/causal, "
+        "(c) telomere biology mechanisms in tumor cells ALT/TERT, (d) treatment-induced "
+        "telomere change, (e) telomere-targeted or supplement interventions. Current "
+        "seven-class taxonomy mixes these.; Reconcile directional map with coded extraction: "
+        "either re-extract/code directions for all sources, or remove per-class directional "
+        "summary and state corpus is predominantly unclear-coded and does not support "
+        "directional map.; Remove Jaeger 2024 from cancer-effects bundle or move to clearly "
+        "labeled non-cancer evidence annex; healthy-volunteer supplement RCT not appropriate "
+        "as direct contextual evidence for telomere-cancer effects.; Recode Ha 2023 in "
+        "Mortality and Survival: EFS P=.903 no significant difference; classify null, not "
+        "\"significant source statistic in 3/3 sources\", or define significant as \"source "
+        "reports p-value.\"; Clarify admission funnel arithmetic: whether 41/8/48/20/3 buckets "
+        "are mutually exclusive/overlapping/sequential; reconcile strict high-confidence=3 vs "
+        "admitted final=25; explain why 25 not 3 source base.; Tighten conclusion so it does "
+        "not present bounded risk-marker, causal, mechanistic, or treatment-response hypotheses "
+        "as equally supported when corpus is skewed toward prognostic biomarker studies, MR risk "
+        "and mechanistic ALT minority slices."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = (
+        "## Evidence Landscape\n\nThe corpus is heterogeneous.\n\n"
+        "## Key Findings\n\nThe directional map is broad.\n\n"
+        "## Conclusion\n\nThe evidence supports bounded risk-marker, causal, mechanistic, "
+        "and treatment-response hypotheses equally.\n"
+    )
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "Outcome-taxonomy separation note: this separates prognostic and survival-marker evidence, "
+        "causal-risk and Mendelian-randomization evidence, biology-mechanism and molecular-context "
+        "evidence, and treatment or intervention-response supplement evidence.\n\n"
+        "Directional-map boundary: Because 17/25 retained sources are predominantly unclear-coded "
+        "at receipt level, the corpus does not support a standalone directional map.\n\n"
+        "Source-scope annex note: Jaeger 2024 is retained only as non-topic/contextual annex evidence "
+        "and is not pooled as direct evidence for the target outcome.\n\n"
+        "Numeric reconciliation note: Ha 2023 reported a non-significant mapped comparison "
+        "(p = .903); this synthesis treats that mapped comparison as non-significant.\n\n"
+        "Admission-bucket note: the source-selection buckets are not an additive conservation "
+        "table and are claim-binding states. Strict high-confidence subset note: 3 strict "
+        "high-confidence receipts are a quality subset, not the synthesis denominator; the "
+        "admitted source base remains 25.\n\n"
+        "## Key Findings\n\nKey findings remain source-linked.\n\n"
+        "## Conclusion\n\n"
+        "Dominant source pattern: prognostic and survival-marker evidence represents 17/25 "
+        "retained sources. Minority slices are causal-risk and Mendelian-randomization evidence "
+        "n=4, biology-mechanism and molecular-context evidence n=3, treatment or intervention-response "
+        "evidence n=1. These source-role strata are not weighed equally and the paper does not "
+        "establish standalone clinical actionability.\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == [
+        "Restructure",
+        "Reconcile",
+        "Remove",
+        "Recode",
+        "Clarify",
+        "Tighten",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []

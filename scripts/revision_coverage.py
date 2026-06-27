@@ -154,7 +154,9 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_two_part_research_question,
             _asks_concrete_research_question,
             _asks_scope_framing,
+            _asks_outcome_taxonomy_separation,
             _asks_direction_tally_audit,
+            _asks_source_scope_annex,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
             _asks_forward_dated_ai_disclosure_note,
@@ -188,6 +190,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_structured_table_stub_replacement,
             _asks_outcome_label_cleanup,
             _asks_substantive_conclusion,
+            _asks_conclusion_weight_boundary,
             _asks_source_count_bundle_reconciliation,
             _asks_corpus_count_reconciliation,
             _asks_evidence_honesty_repetition,
@@ -268,8 +271,12 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _scope_framing_is_stated(paper_md) and (
             not _asks_direction_tally_audit(lower) or _direction_tally_audit_is_stated(paper_md)
         )
+    if _asks_outcome_taxonomy_separation(lower):
+        return _outcome_taxonomy_separation_is_stated(paper_md)
     if _asks_direction_tally_audit(lower):
         return _direction_tally_audit_is_stated(paper_md)
+    if _asks_source_scope_annex(lower):
+        return _source_scope_annex_is_stated(paper_md, ask)
     if _asks_combination_product_signal_boundary(lower):
         return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
@@ -340,6 +347,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _outcome_label_cleanup_is_stated(paper_md)
     if _asks_substantive_conclusion(lower):
         return _substantive_conclusion_is_stated(paper_md)
+    if _asks_conclusion_weight_boundary(lower):
+        return _conclusion_weight_boundary_is_stated(paper_md)
     if _asks_source_count_bundle_reconciliation(lower):
         return _source_count_bundle_reconciliation_is_stated(paper_md)
     if _asks_corpus_count_reconciliation(lower):
@@ -405,8 +414,20 @@ def asks_scope_framing(text: str) -> bool:
     return _asks_scope_framing(_normalised_feedback(text))
 
 
+def asks_outcome_taxonomy_separation(text: str) -> bool:
+    return _asks_outcome_taxonomy_separation(_normalised_feedback(text))
+
+
 def asks_direction_tally_audit(text: str) -> bool:
     return _asks_direction_tally_audit(_normalised_feedback(text))
+
+
+def asks_source_scope_annex(text: str) -> bool:
+    return _asks_source_scope_annex(_normalised_feedback(text))
+
+
+def asks_conclusion_weight_boundary(text: str) -> bool:
+    return _asks_conclusion_weight_boundary(_normalised_feedback(text))
 
 
 def asks_findings_map_detail(text: str) -> bool:
@@ -871,6 +892,9 @@ def _asks_directional_coding(text: str) -> bool:
     ) or (
         "directional findings" in text
         and any(token in text for token in ("source abstract", "source abstracts", "receipt-level", "source-level", "null framing"))
+    ) or (
+        "directional map" in text
+        and any(token in text for token in ("coded extraction", "predominantly unclear", "unclear-coded", "reconcile"))
     )
 
 
@@ -1091,7 +1115,7 @@ def _asks_named_numeric_correction(text: str) -> bool:
         any(token in text for token in ("correct", "verify", "resolve", "reconcile", "recode", "recoded", "remove"))
         and any(token in text for token in ("p=", "p =", "p-value", "p value", "confidence interval"))
         and any(token in text for token in (
-            "non-significant", "not significant", "significant reduction", "factual error",
+            "non-significant", "not significant", "no significant", "significant reduction", "factual error",
             "representative statistic", "miscoded", "direction/statistic", "direction statistic",
             "positive signal", "positive coding", "numeric correction", "unclear/null", "null/mixed",
         ))
@@ -1446,6 +1470,14 @@ def _directional_coding_explanation_is_material(paper_md: str) -> bool:
         and any(token in scope for token in ("other outcome", "elsewhere", "separately reported", "different outcome"))
     )
     proportion_scope = "proportion" in scope and "source" in scope and any(token in scope for token in ("x/y", "/"))
+    directional_map_boundary = (
+        "directional-map boundary:" in scope
+        and "predominantly unclear" in scope
+        and "does not support" in scope
+        and "directional map" in scope
+    )
+    if directional_map_boundary:
+        return True
     return directional and null_scope and (cross_context or proportion_scope)
 
 
@@ -1575,6 +1607,38 @@ def _asks_scope_framing(text: str) -> bool:
     )
 
 
+def _asks_outcome_taxonomy_separation(text: str) -> bool:
+    return (
+        "taxonomy" in text
+        and any(token in text for token in ("restructure", "separate", "segregate", "mixes"))
+        and any(token in text for token in (
+            "prognostic", "risk factor", "incident cancer", "mechanism",
+            "treatment", "intervention", "outcome class",
+        ))
+    ) or (
+        "outcome class" in text
+        and "mixes" in text
+        and any(token in text for token in ("separate", "taxonomy", "bounded interpretation"))
+    )
+
+
+def _asks_source_scope_annex(text: str) -> bool:
+    return any(token in text for token in ("remove", "move", "segregate", "relabel", "re-label")) and any(
+        token in text for token in (
+            "annex", "non-cancer evidence", "non cancer evidence",
+            "not appropriate as direct", "off-topic", "off topic",
+            "non-topic", "not pooled",
+        )
+    )
+
+
+def _asks_conclusion_weight_boundary(text: str) -> bool:
+    return "conclusion" in text and any(token in text for token in (
+        "equally supported", "heavily skewed", "source mix",
+        "minority slice", "minority slices", "over-broad", "over broad",
+    ))
+
+
 def _scope_framing_is_stated(paper_md: str) -> bool:
     scope = "\n\n".join(part for part in (
         _abstract(paper_md),
@@ -1586,6 +1650,52 @@ def _scope_framing_is_stated(paper_md: str) -> bool:
         "scope-framing note:" in scope
         and any(token in scope for token in ("heterogeneous indication", "clinical application"))
         and any(token in scope for token in ("anti-aging", "longevity", "aging-relevant"))
+    )
+
+
+def _outcome_taxonomy_separation_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Results"),
+    ) if part).lower()
+    return (
+        "outcome-taxonomy separation note:" in scope
+        and any(token in scope for token in ("prognostic", "survival-marker"))
+        and any(token in scope for token in ("causal-risk", "risk factor", "mendelian"))
+        and any(token in scope for token in ("biology-mechanism", "mechanism", "molecular-context"))
+        and any(token in scope for token in ("treatment", "intervention-response", "supplement"))
+    )
+
+
+def _source_scope_annex_is_stated(paper_md: str, ask: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Limitations"),
+        _section(paper_md, "Results"),
+    ) if part)
+    lower = scope.lower()
+    labels = _source_labels_from_ask(ask)
+    return (
+        "source-scope annex note:" in lower
+        and "not pooled" in lower
+        and any(token in lower for token in ("annex", "non-topic", "non topic", "contextual"))
+        and all(label.lower() in lower for label in labels)
+    )
+
+
+def _source_labels_from_ask(ask: str) -> list[str]:
+    labels = re.findall(r"\b[A-Z][A-Za-z'’.-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", ask)
+    return list(dict.fromkeys(label.strip() for label in labels if label.strip()))
+
+
+def _conclusion_weight_boundary_is_stated(paper_md: str) -> bool:
+    conclusion = _section(paper_md, "Conclusion").lower()
+    return (
+        "dominant source pattern:" in conclusion
+        and any(token in conclusion for token in ("not weighed equally", "not weighted equally"))
+        and "minority slice" in conclusion
+        and any(token in conclusion for token in ("does not establish", "not establish"))
     )
 
 

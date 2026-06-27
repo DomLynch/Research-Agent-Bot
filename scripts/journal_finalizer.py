@@ -109,6 +109,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_classification_criteria_note(t, out_dir),
         lambda t: _phase_d_conflict_severity_note(t, out_dir),
         lambda t: _phase_d_directional_coding_note(t, out_dir),
+        lambda t: _phase_d_source_scope_annex_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_evidence_honesty_guard(t, out_dir),
         lambda t: _phase_d_evidence_honesty_deduplicate(t, out_dir),
@@ -1004,6 +1005,14 @@ def _admission_funnel_note(out_dir: Path) -> str:
         "after deduplication, active-scope filtering, claim-binding confidence, "
         "and eligibility checks. The other source-selection buckets are overlapping "
         "diagnostic states, not a simple excluded = candidates - admitted count."
+        + (
+            " Strict high-confidence subset note: "
+            f"{counts.get('original_strict_high_confidence_receipts')} strict "
+            "high-confidence receipt(s) are a quality subset, not the synthesis "
+            f"denominator; the admitted source base remains {admitted}."
+            if counts.get("original_strict_high_confidence_receipts") is not None
+            else ""
+        )
     )
 
 
@@ -1290,6 +1299,10 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
         or ("no extracted directional signal" in lower and "proportion" in lower)
         or ("null-coded" in lower and "directional findings" in lower)
         or (
+            "directional map" in lower
+            and any(token in lower for token in ("coded extraction", "predominantly unclear", "unclear-coded", "reconcile"))
+        )
+        or (
             "directional findings" in lower
             and any(token in lower for token in ("source abstract", "source abstracts", "receipt-level", "source-level", "null framing"))
         )
@@ -1314,8 +1327,62 @@ def _directional_coding_note(out_dir: Path) -> str:
         "retained sources are coded unclear at the receipt level. Unless the extraction "
         "records a positive, negative, mixed, or null polarity for the mapped outcome, "
         "the manuscript states that direction cannot be determined for that source and "
-        "narrows the conclusion instead of treating source count as directional support."
+        "narrows the conclusion instead of treating source count as directional support. "
+        f"Directional-map boundary: Because {unclear}/{len(receipts)} retained sources "
+        "are predominantly unclear-coded at receipt level, the corpus does not support "
+        "a standalone per-class directional map; source-level p-values and polarity "
+        "are reported as audit facts rather than efficacy directions unless extraction "
+        "records polarity."
     )
+
+
+def _phase_d_source_scope_annex_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not revision_coverage.asks_source_scope_annex(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    note = _source_scope_annex_note(feedback, rows)
+    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
+    if not n:
+        patched, n = _prepend_or_create_section_paragraph(text, "Limitations", note)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_source_scope_annex_note",
+        rule="mark_reviewer_named_scope_mismatch_sources_contextual",
+        n_changes=n,
+        detail="added source-scope annex note for reviewer-flagged non-topic sources",
+    )]
+
+
+def _source_scope_annex_note(feedback: str, rows: list[dict[str, Any]]) -> str:
+    labels = _reviewer_named_source_labels(feedback)
+    if not labels and rows:
+        labels = [_row_citation(row) for row in rows[:3]]
+    parts = []
+    for label in labels[:5]:
+        row = next((r for r in rows if label.lower() in _row_citation(r).lower()), None)
+        title = str(row.get("source_title") or "").strip() if row else ""
+        suffix = f" ({title})" if title and title.lower() not in label.lower() else ""
+        parts.append(f"{label}{suffix}")
+    source_text = ", ".join(parts) if parts else "reviewer-flagged source(s)"
+    return (
+        "Source-scope annex note: "
+        f"{source_text} are retained only as non-topic/contextual annex evidence "
+        "when the manifest keeps them for boundary context, and are not pooled as "
+        "direct evidence for the target outcome or as support for the primary "
+        "directional conclusion."
+    )
+
+
+def _reviewer_named_source_labels(feedback: str) -> list[str]:
+    labels = re.findall(r"\b[A-Z][A-Za-z'’.-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", feedback)
+    return list(dict.fromkeys(label.strip() for label in labels if label.strip()))
 
 
 _EVIDENCE_BOUNDARY_NOTE = (
@@ -1727,13 +1794,19 @@ def _ensure_numeric_effect_audit_statement(text: str) -> tuple[str, int]:
 
 
 def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tuple[str, int]:
-    source = (
-        re.search(r"regarding\s+([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
-        or re.search(r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
-    )
     p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
-    if not source or not p_value:
+    if not p_value:
         return text, 0
+    source_pattern = r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)"
+    local = feedback[max(0, p_value.start() - 180):min(len(feedback), p_value.end() + 180)]
+    sources = list(re.finditer(source_pattern, local))
+    if not sources:
+        sources = list(re.finditer(r"regarding\s+" + source_pattern, feedback))
+    if not sources:
+        sources = list(re.finditer(source_pattern, feedback))
+    if not sources:
+        return text, 0
+    source = sources[-1] if sources[-1].start() < local.find(p_value.group(0)) or local.find(p_value.group(0)) < 0 else sources[0]
     source_label = f"{source.group(1)} {source.group(2)}"
     p_text = f"p = {p_value.group(1)}"
     normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
@@ -2099,8 +2172,13 @@ def _phase_d_substantive_evidence_synthesis(
     )
     if direction_audit:
         direction_audit += "\n\n"
+    needs_taxonomy_note = revision_coverage.asks_outcome_taxonomy_separation(feedback)
+    needs_conclusion_weight = revision_coverage.asks_conclusion_weight_boundary(feedback)
+    taxonomy_note = _manifest_outcome_taxonomy_note(rows) if needs_taxonomy_note else ""
+    if taxonomy_note:
+        taxonomy_note += "\n\n"
     subdomain_lines = _manifest_contextual_subdomain_lines(rows) if (
-        full_source_surface or "disaggregate" in feedback.lower()
+        full_source_surface or "disaggregate" in feedback.lower() or needs_taxonomy_note
     ) else []
     subdomain_sentence = ""
     if subdomain_lines:
@@ -2130,6 +2208,7 @@ def _phase_d_substantive_evidence_synthesis(
     )
     key_findings = (
         "Key findings from source synthesis:\n\n"
+        f"{taxonomy_note}"
         f"{direction_visibility}"
         f"{count_reconciliation}"
         f"{direction_audit}"
@@ -2154,10 +2233,8 @@ def _phase_d_substantive_evidence_synthesis(
     patched, n2 = _prepend_or_create_section_paragraph(patched, "Key Findings", key_findings)
     conclusion_note = (
         f"Substantive conclusion for {_topic_display_anchor(manifest) or 'the target topic'}: "
-        f"the retained source set shows {_manifest_conclusion_summary(rows)}. "
-        "These source patterns support bounded risk-marker, causal, mechanistic, "
-        "or treatment-response hypotheses according to source directness; they do "
-        "not establish standalone clinical actionability."
+        f"{_manifest_conclusion_weight_note(rows) if needs_conclusion_weight else 'the retained source set shows ' + _manifest_conclusion_summary(rows) + '. '}"
+        "The paper does not establish standalone clinical actionability."
         if pattern_summary else ""
     )
     patched, n3 = _prepend_section_paragraph(patched, "Conclusion", conclusion_note) if conclusion_note else (patched, 0)
@@ -2234,6 +2311,8 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             "disaggregate" in lower
             and any(token in lower for token in ("contextual adjacent", "heterogeneous", "sub-domain", "subdomain"))
         )
+        or revision_coverage.asks_outcome_taxonomy_separation(feedback)
+        or revision_coverage.asks_conclusion_weight_boundary(feedback)
         or revision_coverage.asks_direction_tally_audit(feedback)
     )
 
@@ -2446,6 +2525,23 @@ def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
     return "adjacent clinical-context evidence"
 
 
+def _manifest_outcome_taxonomy_note(rows: list[dict[str, Any]]) -> str:
+    buckets: dict[str, list[str]] = {}
+    for row in rows:
+        bucket = _manifest_subdomain_bucket(row)
+        buckets.setdefault(bucket, []).append(_row_citation(row))
+    parts = []
+    for bucket, labels in sorted(buckets.items(), key=lambda item: (-len(item[1]), item[0])):
+        unique = list(dict.fromkeys(labels))
+        parts.append(f"{bucket} n={len(unique)} ({', '.join(unique[:4])})")
+    return (
+        "Outcome-taxonomy separation note: This synthesis separates source-role "
+        "strata rather than treating one pooled outcome taxonomy as an efficacy "
+        "map: " + "; ".join(parts) + ". These strata are interpreted separately "
+        "before any bounded conclusion is drawn."
+    )
+
+
 def _manifest_source_pattern_summary(rows: list[dict[str, Any]]) -> str:
     buckets: dict[str, list[dict[str, Any]]] = {}
     for row in rows:
@@ -2477,6 +2573,23 @@ def _manifest_conclusion_summary(rows: list[dict[str, Any]]) -> str:
     direction_text = ", ".join(f"{key}={directions[key]}" for key in sorted(directions))
     examples = ", ".join(_row_citation(row) for row in sorted(rows, key=_manifest_key_finding_score)[:3])
     return f"{len(rows)} sources across {bucket_text}; receipt-level directions {direction_text}; leading source labels {examples}"
+
+
+def _manifest_conclusion_weight_note(rows: list[dict[str, Any]]) -> str:
+    buckets: dict[str, list[str]] = {}
+    for row in rows:
+        buckets.setdefault(_manifest_subdomain_bucket(row), []).append(_row_citation(row))
+    ordered = sorted(buckets.items(), key=lambda item: (-len(item[1]), item[0]))
+    if not ordered:
+        return "the retained source set is insufficiently typed for a weighted source-role conclusion. "
+    dominant, dominant_labels = ordered[0]
+    minority = ", ".join(f"{bucket} n={len(labels)}" for bucket, labels in ordered[1:4]) or "none"
+    return (
+        f"Dominant source pattern: {dominant} represents {len(dominant_labels)}/{len(rows)} retained sources. "
+        f"Minority slices are {minority}. These source-role strata are not weighed equally; "
+        "the dominant direct/prognostic/risk-marker rows define the interpretive center while "
+        "mechanistic, treatment-adjacent, and contextual rows provide boundary context only. "
+    )
 
 
 def _manifest_count_reconciliation_note(rows: list[dict[str, Any]], feedback: str) -> str:
