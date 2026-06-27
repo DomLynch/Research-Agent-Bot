@@ -3511,7 +3511,8 @@ def _strip_change_value_anaphor_sentences(
         if not _audit.QUANT_DIR.exists():
             return paper_md, 0
         from final_consistency_audit import (
-            _CHANGE_WORDS, _ANAPHOR_RE, _THRESHOLD_KEYWORD_RE,
+            _CHANGE_SPEED_VALUE_RE, _CHANGE_WORDS, _ANAPHOR_RE,
+            _THRESHOLD_KEYWORD_RE,
         )
         change_value_map: dict[str, set[str]] = {}
         for qf in _audit.QUANT_DIR.glob("*.quant_claims.json"):
@@ -3552,9 +3553,15 @@ def _strip_change_value_anaphor_sentences(
         # Map: numeric → first sentence index containing it
         change_sent_indices: dict[str, int] = {}
         for i, sent in enumerate(sentences):
+            sent_lc = sent.lower()
             for numeric in change_value_map:
                 if numeric in sent and numeric not in change_sent_indices:
                     change_sent_indices[numeric] = i
+            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+            if change_hits:
+                for numeric in _CHANGE_SPEED_VALUE_RE.findall(sent):
+                    change_sent_indices.setdefault(numeric, i)
+                    change_value_map.setdefault(numeric, set()).update(change_hits)
         if not change_sent_indices:
             out_paragraphs.append(para)
             continue

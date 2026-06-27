@@ -28,6 +28,7 @@ BIOMED_ANCHORS = {
     "disease", "health", "human", "inflammation", "intervention", "mice",
     "mouse", "patient", "randomized", "rat", "review", "trial",
 }
+SCOPE_TOKENS = {"age", "aging", "healthspan", "lifespan", "longevity"}
 
 DRIFT_RESCUE_ANCHORS = {
     "adult", "aged", "animal", "clinical", "cohort", "human", "intervention",
@@ -174,7 +175,7 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
         return True
     specific_hits = [token for token in normalized_tokens if token in haystack_tokens and token not in BIOMED_ANCHORS]
     missing_tokens = [token for token in normalized_tokens if token not in haystack_tokens]
-    if specific_hits and all(token in BIOMED_ANCHORS for token in missing_tokens):
+    if specific_hits and all(token in BIOMED_ANCHORS | SCOPE_TOKENS for token in missing_tokens):
         return True
     # Single-token topics can be specific with a biomedical anchor. Multi-token
     # topics need more than one generic biomedical word; otherwise broad source

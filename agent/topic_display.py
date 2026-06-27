@@ -82,6 +82,9 @@ def _topic_pack_alias(topic: str, root: Path) -> str:
         pack = tomllib.loads(pack_path.read_text(encoding="utf-8"))
     except (OSError, tomllib.TOMLDecodeError):
         return ""
+    display_alias = pack.get("display_alias")
+    if isinstance(display_alias, str) and _looks_public_alias(display_alias):
+        return _humanize_alias(display_alias)
     aliases = pack.get("aliases")
     for alias in aliases if isinstance(aliases, list) else ():
         if isinstance(alias, str) and _looks_public_alias(alias):
