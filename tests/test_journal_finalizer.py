@@ -482,6 +482,41 @@ def test_admission_funnel_clarification_covers_search_summary_selection_logic(tm
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_admission_funnel_clarification_adds_additive_screening_flow(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Replace or supplement the non-additive claim-binding funnel with a clearly "
+        "additive screening flow (records screened -> excluded with reasons -> "
+        "eligible -> admitted) so the funnel is auditable."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### Source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Receipt candidate union | 50 |\n"
+        "| Admitted final sources | 12 |\n\n"
+        "## References\n\n- Smith 2024. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "methods_pack.json").write_text(json.dumps({
+        "screening_flow": {
+            "n_screened": 50,
+            "n_excluded_at_full_text": 10,
+            "admitted_receipts": 12,
+        }
+    }))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert "Additive screening flow: records screened (50)" in fixed
+    assert "excluded with reasons (10) -> eligible (40) -> admitted (12)" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "insert_additive_screening_flow"
+
+
 def test_admission_funnel_clarification_replaces_non_additive_table_when_requested(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
@@ -1361,6 +1396,30 @@ def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Pat
     assert "Numeric correction: Waghmare 2024 reported a non-significant result (p = 0.08)" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].n_changes == 1
+
+
+def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Verify the Brouwers 2016 direction/statistic mapping (p=0.88 vs. reported "
+        "comparable decrease) and correct the representative statistic if miscoded."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "The corpus remains mixed.\n\n"
+        "## Evidence Landscape\n\n"
+        "Brouwers 2016 contributed a mapped outcome row.\n\n"
+        "## Conclusion\n\nThe interpretation remains bounded.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "Numeric correction: Brouwers 2016 reported a non-significant result (p = 0.88)" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "repair_non_significant_numeric_effect_claims"
 
 
 def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Path) -> None:
@@ -2705,6 +2764,46 @@ def test_forward_dated_ai_disclosure_note_moves_to_limitations(tmp_path: Path) -
             detail="added Limitations note for forward-dated citations while AI-use disclosure remains methods/supplemental",
         )
     ]
+
+
+def test_publication_year_note_handles_prepublication_sources(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Add a brief note flagging 2026-dated sources as in-press or "
+        "pre-publication where applicable, consistent with the eligibility "
+        "criterion that preprints are accepted only when source-traceable."
+    )
+    paper = (
+        "## Methods\n\nSources were screened.\n\n"
+        "## Limitations\n\nThe corpus is bounded.\n\n"
+        "## References\n\n- Smith 2026. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_forward_dated_ai_disclosure_note(paper, tmp_path)
+
+    assert "Publication-year note:" in fixed
+    assert "DOI/PubMed metadata" in fixed
+    assert "bibliographic/in-press metadata" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "move_forward_dated_note_to_limitations"
+
+
+def test_publication_year_note_ignores_unrelated_revision_feedback(tmp_path: Path) -> None:
+    paper = (
+        "## Limitations\n\nThe corpus is bounded.\n\n"
+        "## References\n\n- Smith 2026. DOI: 10.1/x.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Add clearer source attribution in the Evidence Landscape.",
+    }))
+
+    fixed, logs = journal_finalizer._phase_d_forward_dated_ai_disclosure_note(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
 
 
 def test_forward_dated_ai_disclosure_note_is_revision_scoped(tmp_path: Path) -> None:

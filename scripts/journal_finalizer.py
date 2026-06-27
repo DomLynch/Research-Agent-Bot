@@ -1493,7 +1493,7 @@ def _phase_d_numeric_significance_correction(
 def _revision_asks_numeric_significance_correction(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
-        any(token in lower for token in ("p =", "p-value", "p value", "p-values", "confidence interval", "effect direction"))
+        any(token in lower for token in ("p=", "p =", "p-value", "p value", "p-values", "confidence interval", "effect direction"))
         and any(token in lower for token in (
             "significant", "non-significant", "factual error", "correct", "audit",
             "verify", "representative statistic", "miscoded", "direction/statistic",
@@ -2898,13 +2898,21 @@ def _phase_d_forward_dated_ai_disclosure_note(
     )
     if already_in_limitations:
         return text, []
-    note = (
-        "Publication-year note: 2026-dated citations and sources whose DOI/PubMed "
-        "metadata lag or differ from the citation year are treated as "
-        "bibliographic/in-press metadata for reproducibility; they are not used "
-        "for year-specific claims, and readers should verify them against the "
-        "public source records before relying on chronology-sensitive interpretations."
-    )
+    if _revision_asks_forward_dated_ai_disclosure(feedback):
+        note = (
+            "Forward-dated citation note: 2026 citations are treated as "
+            "bibliographic metadata for reproducibility; they are not used for "
+            "year-specific claims, and readers should verify them against the "
+            "public source records before relying on chronology-sensitive interpretations."
+        )
+    else:
+        note = (
+            "Publication-year note: 2026-dated citations and sources whose DOI/PubMed "
+            "metadata lag or differ from the citation year are treated as "
+            "bibliographic/in-press metadata for reproducibility; they are not used "
+            "for year-specific claims, and readers should verify them against the "
+            "public source records before relying on chronology-sensitive interpretations."
+        )
     patched, changed = _prepend_section_paragraph(text, "Limitations", note)
     if not changed:
         patched, changed = _insert_section_before(text, "Limitations", note, before=("Conclusion", "References"))

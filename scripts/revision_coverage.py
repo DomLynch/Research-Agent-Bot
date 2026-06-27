@@ -930,6 +930,8 @@ def _asks_prior_publication_differentiation(text: str) -> bool:
 
 
 def _asks_numeric_effect_accuracy(text: str) -> bool:
+    if _asks_named_numeric_correction(text):
+        return False
     return (
         any(token in text for token in ("p-value", "p value", "p-values", "reported p", "confidence interval", "effect direction"))
         and any(token in text for token in ("significant", "non-significant", "factual error", "correct", "audit", "direction"))
@@ -946,7 +948,7 @@ def _asks_numeric_effect_audit(text: str) -> bool:
 def _asks_named_numeric_correction(text: str) -> bool:
     return (
         any(token in text for token in ("correct", "verify"))
-        and any(token in text for token in ("p =", "p-value", "p value", "confidence interval"))
+        and any(token in text for token in ("p=", "p =", "p-value", "p value", "confidence interval"))
         and any(token in text for token in (
             "non-significant", "not significant", "significant reduction", "factual error",
             "representative statistic", "miscoded", "direction/statistic", "direction statistic",
