@@ -337,6 +337,53 @@ def _normalised_feedback(text: str) -> str:
     return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
 
 
+def asks_source_classification_map(text: str) -> bool:
+    return _asks_source_classification_map(_normalised_feedback(text))
+
+
+def asks_evidence_type_metadata(text: str) -> bool:
+    return _asks_evidence_type_metadata(_normalised_feedback(text))
+
+
+def asks_source_directness_breakdown(text: str) -> bool:
+    return _asks_source_directness_breakdown(_normalised_feedback(text))
+
+
+def asks_source_outcome_class_map(text: str) -> bool:
+    return _asks_source_outcome_class_map(_normalised_feedback(text))
+
+
+def asks_findings_map_detail(text: str) -> bool:
+    lower = _normalised_feedback(text)
+    return (
+        "findings map" in lower
+        or (
+            "specific findings" in lower
+            and any(token in lower for token in ("cited source", "individual cited", "each retained source"))
+        )
+        or (
+            "admitted source" in lower
+            and any(token in lower for token in (
+                "include all", "reconcile", "all 13", "all admitted",
+                "replace with findings", "surface", "surfaced", "not surfaced",
+            ))
+        )
+        or (
+            "source" in lower
+            and any(token in lower for token in ("outcome summaries", "outcome summary"))
+            and any(token in lower for token in ("missing", "not surfaced", "several"))
+        )
+    )
+
+
+def asks_source_attribution_map(text: str) -> bool:
+    lower = _normalised_feedback(text)
+    return (
+        any(token in lower for token in ("attribute each", "finding level", "mapped claims", "outcome class"))
+        and any(token in lower for token in ("source", "cited", "name and year", "by name", "by year"))
+    ) or asks_source_outcome_class_map(lower)
+
+
 def _asks_conflict_severity_criteria(text: str) -> bool:
     return (
         any(token in text for token in ("severity-level", "severity level"))
@@ -349,7 +396,7 @@ def _asks_source_classification_map(text: str) -> bool:
     return "mapping table" in text or "mapping list" in text or (
         "which of the" in text and "source" in text and "outcome class" in text
     ) or (
-        any(token in text for token in ("re-tier", "retier", "misclassified"))
+        any(token in text for token in ("re-tier", "re tier", "retier", "misclassified"))
         and any(token in text for token in ("source", "human intervention", "mechanistic", "context", "directness"))
     )
 
@@ -387,7 +434,7 @@ def _asks_source_directness_breakdown(text: str) -> bool:
             and any(token in text for token in ("adjacent", "general", "broader", "contextual", "off-topic", "off topic", "unrelated", "versus", "vs."))
         )
         or (
-            any(token in text for token in ("re-tier", "retier", "misclassified"))
+            any(token in text for token in ("re-tier", "re tier", "retier", "misclassified"))
             and any(token in text for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
         )
     )
