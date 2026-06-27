@@ -1747,6 +1747,32 @@ def test_deterministic_coverage_accepts_vascular_source_level_revision_bundle() 
     assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
 
 
+def test_deterministic_coverage_accepts_surface_every_admitted_source_feedback() -> None:
+    ask = "Surface every admitted source; redesign outcome taxonomy; recode direction values."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2026: outcome=Immune and Inflammation; direction=null; directness=adjacent; tier=B2.\n"
+        "- Jones 2025: outcome=Mechanistic Signaling; direction=mixed; directness=mechanistic; tier=C1.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_coverage_accepts_human_intervention_reclassification_feedback() -> None:
+    ask = "Human intervention studies were misclassified as indirect/review evidence."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Source Classification Map\n\n"
+        "- Trialists 2026: outcome=Clinical Intervention; direction=mixed; directness=direct; tier=A1.\n"
+        "- Reviewers 2025: outcome=Contextual Adjacent Evidence; direction=unclear; directness=review; tier=B2.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_coverage_accepts_vascular_latest_reviewer_asks() -> None:
     asks = [
         "Write an actual Key Findings section that names 3-5 specific, source-anchored findings and then interpret them as hypotheses worth follow-up.",

@@ -1526,6 +1526,46 @@ def test_source_outcome_class_map_includes_all_rows_for_each_retained_source_ask
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
+def test_source_outcome_class_map_repairs_surface_every_admitted_source_feedback(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Claims n=26 admitted sources, but many are not surfaced in Evidence Landscape. "
+        "Surface every admitted source; redesign outcome taxonomy; recode direction values."
+    )
+    paper = "## Evidence Landscape\n\nThe source table needs repair.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Smith 2026",
+            "source_title": "Clinical intervention source",
+            "outcome_class": "clinical_intervention",
+            "effect_direction": "mixed",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 3,
+        },
+        {
+            "citation_token": "Jones 2025",
+            "source_title": "Mechanistic source",
+            "outcome_class": "mechanism",
+            "effect_direction": "unclear",
+            "directness": "mechanistic",
+            "evidence_tier": "C1",
+            "n_claims": 2,
+        },
+    ]}))
+
+    fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
+
+    assert "### Findings Map" in fixed
+    assert "Smith 2026: Clinical intervention source" in fixed
+    assert "Jones 2025: Mechanistic source" in fixed
+    assert "finding=3 extracted claim(s); receipt-level direction is the coded finding" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_source_outcome_class_map"
+
+
 def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
     ask = (
         "Expand Tensions and Gaps to cover the full outcome breadth of the corpus, "
@@ -2239,6 +2279,39 @@ def test_source_directness_breakdown_repairs_evidence_type_metadata_ask(tmp_path
     assert "Evidence type metadata note:" in fixed
     assert "evidence_type" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_source_directness_breakdown_repairs_human_intervention_misclassification(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = "Human intervention studies were misclassified as indirect/review evidence."
+    paper = "## Evidence Landscape\n\nThe corpus is summarized.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Trialists 2026",
+            "outcome_class": "clinical_intervention",
+            "effect_direction": "mixed",
+            "directness": "direct",
+            "evidence_tier": "A1",
+        },
+        {
+            "citation_token": "Reviewers 2025",
+            "outcome_class": "contextual_other",
+            "effect_direction": "unclear",
+            "directness": "review",
+            "evidence_tier": "B2",
+        },
+    ]}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_source_directness_breakdown(paper, tmp_path)
+
+    assert "Source directness breakdown:" in fixed
+    assert "Trialists 2026: outcome=Clinical Intervention; direction=mixed; directness=direct; tier=A1." in fixed
+    assert "Reviewers 2025: outcome=Contextual Adjacent Evidence; direction=unclear; directness=review; tier=B2." in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_source_directness_breakdown"
 
 
 def test_evidence_type_note_added_when_directness_breakdown_already_exists(tmp_path: Path) -> None:
