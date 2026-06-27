@@ -211,6 +211,11 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
             )
         )
     if _asks_source_outcome_class_map(lower):
+        if _asks_full_source_surface_request(lower):
+            return _full_surface_sources_are_visible(paper_md, ask) and (
+                _substantive_evidence_synthesis_is_stated(paper_md)
+                or _source_outcome_class_map_is_stated(paper_md)
+            )
         return _source_outcome_class_map_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
     if _asks_findings_map_source_verdict(lower):
         return _findings_map_source_verdict_is_stated(paper_md)
@@ -502,6 +507,13 @@ def _asks_source_outcome_class_map(text: str) -> bool:
     ) or (
         "admitted source" in text
         and any(token in text for token in ("surface", "surfaced", "missing", "not surfaced"))
+    ) or (
+        "full admitted corpus" in text
+        and "source" in text
+        and any(token in text for token in ("outcome", "results", "evidence map"))
+    ) or (
+        "missing bundle source" in text
+        and any(token in text for token in ("outcome", "results", "full admitted corpus"))
     ) or (
         "source" in text
         and any(token in text for token in ("outcome summaries", "outcome summary"))
@@ -1877,16 +1889,7 @@ def _named_numeric_positive_contradiction(paper_md: str, ask: str) -> bool:
 
 
 def _full_surface_sources_are_visible(paper_md: str, ask: str) -> bool:
-    lower = ask.lower()
-    full_surface = any(
-        token in lower
-        for token in (
-            "full admitted corpus", "all admitted source", "all retained source",
-            "every admitted source", "missing bundle source", "missing source",
-            "must appear in at least one outcome-class packet",
-        )
-    )
-    if not full_surface:
+    if not _asks_full_source_surface_request(ask.lower()):
         return True
     labels = _author_year_labels(ask)
     if not labels:
@@ -1898,6 +1901,17 @@ def _full_surface_sources_are_visible(paper_md: str, ask: str) -> bool:
     if not scope:
         return False
     return all(_label_in_text(label, scope) for label in labels)
+
+
+def _asks_full_source_surface_request(text: str) -> bool:
+    return any(
+        token in text
+        for token in (
+            "full admitted corpus", "all admitted source", "all retained source",
+            "every admitted source", "missing bundle source", "missing source",
+            "must appear in at least one outcome-class packet",
+        )
+    )
 
 
 def _author_year_labels(text: str) -> list[str]:

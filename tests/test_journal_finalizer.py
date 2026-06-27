@@ -1422,6 +1422,39 @@ def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: 
     assert logs[0].rule == "repair_non_significant_numeric_effect_claims"
 
 
+def test_numeric_significance_correction_removes_positive_label_for_non_significant_source(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Reconcile the Brouwers 2016 frailty coding: if p=0.88 is the headline statistic, "
+        "the source should be recoded as null/mixed in the frailty outcome class, or the "
+        "'positive signal' label should be removed and the non-significant result stated explicitly."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Numeric correction: Brouwers 2016 reported a non-significant result (p = 0.88); "
+        "this synthesis treats that finding as non-significant. Positive study-level signals "
+        "are summarized in the frailty outcome class.\n\n"
+        "## Evidence Landscape\n\n"
+        "### Frailty\n\n"
+        "positive signal in 1/1 sources.\n"
+        "- Brouwers 2016: outcome=Frailty; direction=positive; directness=indirect; "
+        "tier=B2; finding=representative statistic p = 0.88.\n\n"
+        "## Conclusion\n\nThe interpretation remains bounded.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "Non-significant or mixed study-level signals are summarized in the frailty outcome class" in fixed
+    assert "non-significant or mixed signal in 1/1 sources" in fixed
+    assert "direction=null" in fixed
+    assert "direction=positive" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].n_changes == 3
+
+
 def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
@@ -1752,6 +1785,53 @@ def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_p
     assert "Smith 2025: outcome=Cardiometabolic; direction=positive" in fixed
     assert "Key findings from source synthesis" in fixed
     assert "bounded conclusion" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_substantive_evidence_synthesis"
+
+
+def test_substantive_evidence_synthesis_surfaces_all_named_missing_sources(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Add the missing bundle sources to the Results outcome slices (Andreikos 2024, "
+        "Chen 2023, Wan 2023) so the evidence map covers the full admitted corpus."
+    )
+    paper = "## Evidence Landscape\n\nExisting summary.\n\n## Key Findings\n\nThin summary.\n"
+    rows = [
+        {
+            "citation_token": "Andreikos 2024",
+            "outcome_class": "frailty",
+            "effect_direction": "null",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 9,
+        },
+        {
+            "citation_token": "Chen 2023",
+            "outcome_class": "cancer_risk",
+            "effect_direction": "mixed",
+            "directness": "review",
+            "evidence_tier": "B1",
+            "n_claims": 7,
+        },
+        {
+            "citation_token": "Wan 2023",
+            "outcome_class": "mechanism",
+            "effect_direction": "unclear",
+            "directness": "mechanistic",
+            "evidence_tier": "C1",
+            "n_claims": 5,
+        },
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+    key_findings = fixed.split("## Key Findings", 1)[1]
+
+    assert all(row["citation_token"] in key_findings for row in rows)
+    assert "Source-level findings by outcome class" in key_findings
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_substantive_evidence_synthesis"
 

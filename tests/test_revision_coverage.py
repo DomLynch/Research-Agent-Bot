@@ -1492,6 +1492,57 @@ def test_deterministic_unmet_accepts_named_numeric_correction_without_audit_ask(
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_rejects_non_significant_source_still_positive() -> None:
+    ask = (
+        "Reconcile the Brouwers 2016 frailty coding: if p=0.88 is the headline statistic, "
+        "the source should be recoded as null/mixed in the frailty outcome class, or the "
+        "'positive signal' label should be removed and the non-significant result stated explicitly."
+    )
+    weak = (
+        "## Abstract\n\n"
+        "Numeric correction: Brouwers 2016 reported a non-significant result (p = 0.88); "
+        "this synthesis treats that finding as non-significant. Positive study-level signals "
+        "are summarized in the frailty outcome class.\n\n"
+        "## Evidence Landscape\n\n"
+        "### Frailty\n\n"
+        "positive signal in 1/1 sources.\n"
+        "- Brouwers 2016: outcome=Frailty; direction=positive; directness=indirect; "
+        "tier=B2; finding=representative statistic p = 0.88.\n"
+    )
+    repaired = weak.replace("Positive study-level signals", "Non-significant or mixed study-level signals").replace(
+        "positive signal in 1/1 sources", "non-significant or mixed signal in 1/1 sources",
+    ).replace("direction=positive", "direction=null")
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_deterministic_unmet_requires_full_corpus_sources_in_result_sections() -> None:
+    ask = (
+        "Add the missing bundle sources to the Results outcome slices (Andreikos 2024, "
+        "Chen 2023, Wan 2023) so the evidence map covers the full admitted corpus."
+    )
+    weak = (
+        "## Evidence Landscape\n\n"
+        "### Findings Map\n\n"
+        "- Andreikos 2024: outcome=Frailty; direction=null; directness=indirect; tier=B2.\n"
+        "- Chen 2023: outcome=Cancer Risk; direction=mixed; directness=review; tier=B1.\n"
+        "- Wan 2023: outcome=Mechanism; direction=unclear; directness=mechanistic; tier=C1.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis:\n\n"
+        "- Andreikos 2024: outcome=Frailty; direction=null; directness=indirect; tier=B2.\n"
+    )
+    repaired = weak + (
+        "- Chen 2023: outcome=Cancer Risk; direction=mixed; directness=review; tier=B1.\n"
+        "- Wan 2023: outcome=Mechanism; direction=unclear; directness=mechanistic; tier=C1.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
 def test_deterministic_unmet_flags_unclear_table_vs_positive_negative_narrative() -> None:
     ask = (
         "Reconcile the Evidence Landscape table signals (predominantly 'unclear') with the "

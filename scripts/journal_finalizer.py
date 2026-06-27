@@ -1621,7 +1621,21 @@ def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> t
         if changed != line:
             n += 1
         lines.append(changed)
-    return "".join(lines), n
+    patched = "".join(lines)
+
+    def repair_source_block(match: re.Match[str]) -> str:
+        nonlocal n
+        block = match.group(0)
+        if not any(label in block.lower() for label in labels):
+            return block
+        changed = re.sub(r"\bpositive signals\b", "non-significant or mixed signals", block, flags=re.I)
+        changed = re.sub(r"\bpositive signal\b", "non-significant or mixed signal", changed, flags=re.I)
+        if changed != block:
+            n += 1
+        return changed
+
+    patched = re.sub(r"^#{2,4}\s+.*?(?=^#{2,4}\s+|\Z)", repair_source_block, patched, flags=re.M | re.S)
+    return patched, n
 
 
 def _numeric_coding_outcome(feedback: str) -> str:
@@ -1893,6 +1907,7 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             and any(token in lower for token in ("concrete", "bounded", "source", "outcome class"))
             and any(token in lower for token in ("abstract", "finding", "findings", "effect size", "directional"))
         )
+        or _revision_asks_full_source_surface(feedback)
         or (
             "directional findings" in lower
             and any(token in lower for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
