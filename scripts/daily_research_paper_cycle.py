@@ -622,6 +622,18 @@ def _parse_time(value: str) -> dt.datetime | None:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
 
 
+def _parse_review_time(value: str) -> dt.datetime | None:
+    value = str(value or "").strip()
+    if DAY_KEY_RE.fullmatch(value):
+        timezone: dt.tzinfo
+        try:
+            timezone = ZoneInfo(os.getenv("RESEARCH_AGENT_CYCLE_TIMEZONE", DEFAULT_CYCLE_TIMEZONE))
+        except ZoneInfoNotFoundError:
+            timezone = dt.UTC
+        return dt.datetime.fromisoformat(value).replace(tzinfo=timezone).astimezone(dt.UTC)
+    return _parse_time(value)
+
+
 def _default_cycle_date(now: dt.datetime | None = None) -> str:
     timezone_name = os.getenv("RESEARCH_AGENT_CYCLE_TIMEZONE", DEFAULT_CYCLE_TIMEZONE)
     timezone: dt.tzinfo
@@ -1016,11 +1028,7 @@ def _review_ts(row: dict[str, Any]) -> dt.datetime:
         or row.get("published_at")
         or ""
     )
-    try:
-        parsed = dt.datetime.fromisoformat(raw)
-    except ValueError:
-        return dt.datetime.min.replace(tzinfo=dt.UTC)
-    return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
+    return _parse_review_time(raw) or dt.datetime.min.replace(tzinfo=dt.UTC)
 
 
 def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
@@ -1313,7 +1321,7 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
     if not isinstance(rows, list):
         return set()
     active_reviewed = {
-        _revision_key(row): _parse_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
+        _revision_key(row): _parse_review_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
         for row in (active_requests or [])
     }
     active_submission_ids: dict[str, set[str]] = {}
@@ -1392,7 +1400,7 @@ def _handled_revision_statuses(ledger_dir: Path, key: str, reviewed_at: str = ""
     rows = _read_json(ledger_dir / HANDLED_REVISIONS).get("handled")
     if not isinstance(rows, list):
         return ()
-    reviewed = _parse_time(reviewed_at)
+    reviewed = _parse_review_time(reviewed_at)
     statuses: list[str] = []
     for row in rows:
         if not isinstance(row, dict) or str(row.get("key") or _revision_key(row)) != key:

@@ -4524,6 +4524,79 @@ def test_receipt_preflight_handled_rows_obey_round_cap(tmp_path: Path) -> None:
     assert marker in cycle._handled_revision_ids(ledger_dir)
 
 
+def test_date_only_reviewed_at_counts_same_cycle_day_revise_attempts(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("RESEARCH_AGENT_CYCLE_TIMEZONE", "Asia/Dubai")
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    sasp_title = "Adjacent Evidence Brief: SASP secretome — full paper"
+    telomere_title = "Research Synthesis: Telomere Cancer Effects — full paper"
+    sasp_run = _prior_run(tmp_path, "sasp_secretome", receipts=9, tensions=0, primary=0, level=5)
+    telomere_run = _prior_run(tmp_path, "telomere_cancer_effects", receipts=20, tensions=5, primary=1, level=5)
+    (sasp_run / "full_paper.md").write_text(f"# {sasp_title}\n", encoding="utf-8")
+    (telomere_run / "full_paper.md").write_text(f"# {telomere_title}\n", encoding="utf-8")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [
+        {
+            "run": sasp_run.name,
+            "topic": "sasp_secretome",
+            "fingerprint": cycle.submit_bridge._sha256(sasp_run / "full_paper.md"),
+        },
+        {
+            "run": telomere_run.name,
+            "topic": "telomere_cancer_effects",
+            "fingerprint": cycle.submit_bridge._sha256(telomere_run / "full_paper.md"),
+        },
+    ])
+    sasp_marker = cycle.submit_bridge._title_marker(sasp_title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+        {
+            "key": sasp_marker,
+            "title": sasp_title,
+            "status": "receipt_preflight_insufficient",
+            "handled_at": "2026-06-26T20:19:51+00:00",
+        },
+        {
+            "key": sasp_marker,
+            "title": sasp_title,
+            "status": "receipt_preflight_insufficient",
+            "handled_at": "2026-06-27T00:19:51+00:00",
+        },
+        {
+            "key": sasp_marker,
+            "title": sasp_title,
+            "status": "receipt_preflight_insufficient",
+            "handled_at": "2026-06-27T04:19:51+00:00",
+        },
+    ]})
+    requests = [
+        {
+            "artifactId": "sasp-review",
+            "title": sasp_title,
+            "topic": "sasp_secretome",
+            "feedback": "Revise the source bundle and directness wording.",
+            "reviewedAt": "2026-06-27",
+        },
+        {
+            "artifactId": "telomere-review",
+            "title": telomere_title,
+            "topic": "telomere_cancer_effects",
+            "feedback": "Revise the mortality and survival attribution.",
+            "reviewedAt": "2026-06-26",
+        },
+    ]
+
+    assert sasp_marker in cycle._handled_revision_ids(ledger_dir, requests)
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: (requests, None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["topic"] == "telomere_cancer_effects"
+
+
 def test_submitted_revision_waits_for_newer_review_before_reprocessing(tmp_path: Path) -> None:
     source_run = _prior_run(tmp_path, "aspirin_geroprotection", receipts=57, tensions=274, level=5)
     paper = source_run / "full_paper.md"
