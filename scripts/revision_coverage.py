@@ -158,6 +158,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_rct_count_reconciliation,
             _asks_unbacked_appraisal_names,
             _asks_evidence_tier_directness_bounds,
+            _asks_additive_screening_flow,
             _asks_admission_funnel_numeric_consistency,
             _asks_prisma_all_included_rationale,
             _asks_single_source_proportionality,
@@ -258,6 +259,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _unbacked_appraisal_names_are_resolved(paper_md)
     if _asks_evidence_tier_directness_bounds(lower):
         return _evidence_tier_directness_bounds_are_stated(paper_md)
+    if _asks_additive_screening_flow(lower):
+        return _additive_screening_flow_is_stated(paper_md)
     if _asks_admission_funnel_numeric_consistency(lower):
         return _admission_funnel_numeric_consistency_is_stated(paper_md)
     if _asks_prisma_all_included_rationale(lower):
@@ -942,9 +945,12 @@ def _asks_numeric_effect_audit(text: str) -> bool:
 
 def _asks_named_numeric_correction(text: str) -> bool:
     return (
-        "correct" in text
+        any(token in text for token in ("correct", "verify"))
         and any(token in text for token in ("p =", "p-value", "p value", "confidence interval"))
-        and any(token in text for token in ("non-significant", "not significant", "significant reduction", "factual error"))
+        and any(token in text for token in (
+            "non-significant", "not significant", "significant reduction", "factual error",
+            "representative statistic", "miscoded", "direction/statistic", "direction statistic",
+        ))
     )
 
 
@@ -1371,6 +1377,8 @@ def _asks_publication_year_note(text: str) -> bool:
         or "doi/pubmed date" in text
         or "doi/pubmed dates" in text
         or ("in press" in text and "citation" in text)
+        or ("pre-publication" in text and "source-traceable" in text)
+        or ("2026-dated" in text and "source" in text)
     )
 
 
@@ -1401,11 +1409,41 @@ def _forward_dated_ai_disclosure_note_is_stated(paper_md: str) -> bool:
 
 
 def _publication_year_note_is_stated(paper_md: str) -> bool:
-    scope = " ".join(part for part in (_section(paper_md, "Key Findings"), _section(paper_md, "Methods"), _section(paper_md, "References")) if part).lower()
+    scope = " ".join(
+        part
+        for part in (
+            _section(paper_md, "Key Findings"),
+            _section(paper_md, "Methods"),
+            _section(paper_md, "Limitations"),
+            _section(paper_md, "References"),
+        )
+        if part
+    ).lower()
     return (
         "publication-year note:" in scope
         and "doi/pubmed" in scope
         and ("bibliographic/in-press" in scope or "bibliographic" in scope)
+    )
+
+
+def _asks_additive_screening_flow(text: str) -> bool:
+    return (
+        "additive screening flow" in text
+        or (
+            "claim-binding funnel" in text
+            and any(token in text for token in ("additive", "records screened", "eligible", "admitted"))
+        )
+    )
+
+
+def _additive_screening_flow_is_stated(paper_md: str) -> bool:
+    methods = _section(paper_md, "Methods").lower()
+    return (
+        "additive screening flow:" in methods
+        and "records screened" in methods
+        and "excluded with reasons" in methods
+        and "eligible" in methods
+        and "admitted" in methods
     )
 
 
@@ -1788,7 +1826,10 @@ def _numeric_effect_audit_is_stated(paper_md: str) -> bool:
 
 
 def _named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
-    source = re.search(r"regarding\s+([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
+    source = (
+        re.search(r"regarding\s+([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
+        or re.search(r"\b([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
+    )
     p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", ask, flags=re.I)
     scope = " ".join(part for part in (_abstract(paper_md), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Conclusion")) if part).lower()
     if source and f"{source.group(1).lower()} {source.group(2).lower()}" not in scope:

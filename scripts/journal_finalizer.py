@@ -846,6 +846,24 @@ _ADMISSION_EXCLUSION_NOTE = (
 )
 
 
+def _additive_screening_flow_note(out_dir: Path) -> str:
+    pack = _load_sidecar(out_dir / "methods_pack.json") or {}
+    flow = pack.get("screening_flow") if isinstance(pack, dict) else {}
+    if not isinstance(flow, dict):
+        flow = {}
+    screened = int(flow.get("n_screened") or flow.get("n_retrieved") or 0)
+    admitted = int(flow.get("admitted_receipts") or flow.get("n_included") or 0)
+    excluded = int(flow.get("n_excluded_at_full_text") or 0)
+    eligible = max(admitted, screened - excluded)
+    return (
+        "Additive screening flow: records screened "
+        f"({screened}) -> excluded with reasons ({excluded}) -> eligible "
+        f"({eligible}) -> admitted ({admitted}). Claim-binding audit buckets "
+        "remain reported separately because they are overlapping diagnostic "
+        "states, not additive exclusion rows."
+    )
+
+
 def _phase_d_admission_funnel_clarification(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
@@ -854,9 +872,24 @@ def _phase_d_admission_funnel_clarification(
     if not _revision_asks_admission_funnel_clarification(feedback):
         return text, []
     replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
+    wants_additive_flow = _revision_asks_additive_screening_flow(feedback)
     has_placeholder_exclusion = _has_no_exclusion_placeholder(text)
-    if "admission-bucket note:" in text.lower() and not replace_table and not has_placeholder_exclusion:
+    if (
+        "admission-bucket note:" in text.lower()
+        and not replace_table
+        and not wants_additive_flow
+        and not has_placeholder_exclusion
+    ):
         return text, []
+    if wants_additive_flow and "additive screening flow:" not in text.lower():
+        patched, changed = _prepend_section_paragraph(text, "Methods", _additive_screening_flow_note(out_dir))
+        if changed:
+            return patched, [FinalizerLogEntry(
+                phase="D_admission_funnel_clarification",
+                rule="insert_additive_screening_flow",
+                n_changes=1,
+                detail="added additive records-screened to admitted flow from methods_pack",
+            )]
     heading = re.search(
         r"^#{2,4}\s+.*(?:admission funnel|selection flow).*$",
         text,
@@ -933,6 +966,17 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
         "search summary" in lower
         and any(token in lower for token in ("source candidates", "admitted sources"))
         and any(token in lower for token in ("non additive", "non-additive", "overlapping categories", "single transparent exclusion"))
+    ) or _revision_asks_additive_screening_flow(feedback)
+
+
+def _revision_asks_additive_screening_flow(feedback: str) -> bool:
+    lower = _normalised_feedback(feedback)
+    return (
+        "additive screening flow" in lower
+        or (
+            "claim-binding funnel" in lower
+            and any(token in lower for token in ("additive", "records screened", "eligible", "admitted"))
+        )
     )
 
 
@@ -1450,7 +1494,10 @@ def _revision_asks_numeric_significance_correction(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
         any(token in lower for token in ("p =", "p-value", "p value", "p-values", "confidence interval", "effect direction"))
-        and any(token in lower for token in ("significant", "non-significant", "factual error", "correct", "audit"))
+        and any(token in lower for token in (
+            "significant", "non-significant", "factual error", "correct", "audit",
+            "verify", "representative statistic", "miscoded", "direction/statistic",
+        ))
     )
 
 
@@ -1510,7 +1557,10 @@ def _ensure_numeric_effect_audit_statement(text: str) -> tuple[str, int]:
 
 
 def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tuple[str, int]:
-    source = re.search(r"regarding\s+([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
+    source = (
+        re.search(r"regarding\s+([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
+        or re.search(r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
+    )
     p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
     if not source or not p_value:
         return text, 0
@@ -2818,26 +2868,42 @@ def _revision_asks_forward_dated_ai_disclosure(feedback: str) -> bool:
     )
 
 
+def _revision_asks_publication_year_note(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return (
+        "publication-year" in lower
+        or "publication year" in lower
+        or "doi/pubmed date" in lower
+        or "doi/pubmed dates" in lower
+        or ("in press" in lower and "citation" in lower)
+        or ("pre-publication" in lower and "source-traceable" in lower)
+        or ("2026-dated" in lower and "source" in lower)
+    )
+
+
 def _phase_d_forward_dated_ai_disclosure_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
-    if not _revision_asks_forward_dated_ai_disclosure(feedback):
+    if not (
+        _revision_asks_forward_dated_ai_disclosure(feedback)
+        or _revision_asks_publication_year_note(feedback)
+    ):
         return text, []
     limitations = _section_body(text, "Limitations").lower()
     already_in_limitations = (
         any(token in limitations for token in ("forward-dated", "2026 citation", "publication-year note"))
-        and "reproduc" in limitations
+        and ("reproduc" in limitations or "doi/pubmed" in limitations)
     )
     if already_in_limitations:
         return text, []
     note = (
-        "Forward-dated citation note: Forward-dated 2026 citations are treated "
-        "as bibliographic/in-press metadata for reproducibility; they are not "
-        "used for year-specific claims, and readers should verify them against "
-        "the public source records before relying on chronology-sensitive "
-        "interpretations."
+        "Publication-year note: 2026-dated citations and sources whose DOI/PubMed "
+        "metadata lag or differ from the citation year are treated as "
+        "bibliographic/in-press metadata for reproducibility; they are not used "
+        "for year-specific claims, and readers should verify them against the "
+        "public source records before relying on chronology-sensitive interpretations."
     )
     patched, changed = _prepend_section_paragraph(text, "Limitations", note)
     if not changed:
