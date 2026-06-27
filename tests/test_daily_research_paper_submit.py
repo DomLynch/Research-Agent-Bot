@@ -1940,6 +1940,30 @@ def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
     assert called["refresh"] is True
 
 
+def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from agent import journal_finalizer
+
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {"feedback": "tighten"})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": ["tighten"]})
+    called = {"refresh": False}
+
+    monkeypatch.setattr(journal_finalizer, "finalize_run", lambda _run: SimpleNamespace(paper_changed=True))
+
+    def refresh(run_arg: Path, request: dict[str, Any]) -> bool:
+        called["refresh"] = True
+        assert run_arg == run
+        assert request["feedback"] == "tighten"
+        return True
+
+    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", refresh)
+
+    assert daily._refresh_stale_revision_coverage_sidecar(run) is True
+    assert called["refresh"] is True
+
+
 def test_stale_unmet_revision_gate_refreshes_only_prior_unmet_asks(tmp_path: Path) -> None:
     run = _run(tmp_path)
     ask = (
