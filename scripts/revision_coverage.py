@@ -36,7 +36,7 @@ def revision_asks(feedback: str) -> list[str]:
         "Move", "Operationalize", "Populate",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify",
         "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",
-        "Replace", "Restate", "Rewrite", "Separate", "Soften", "Strengthen",
+        "Replace", "Restate", "Restructure", "Rewrite", "Separate", "Soften", "Strengthen",
         "Tighten", "Update", "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
