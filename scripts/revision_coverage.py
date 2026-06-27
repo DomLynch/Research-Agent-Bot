@@ -348,11 +348,22 @@ def _asks_conflict_severity_criteria(text: str) -> bool:
 def _asks_source_classification_map(text: str) -> bool:
     return "mapping table" in text or "mapping list" in text or (
         "which of the" in text and "source" in text and "outcome class" in text
+    ) or (
+        any(token in text for token in ("re-tier", "retier", "misclassified"))
+        and any(token in text for token in ("source", "human intervention", "mechanistic", "context", "directness"))
     )
 
 
 def _asks_evidence_type_metadata(text: str) -> bool:
-    return "evidence_type" in text or ("evidence type" in text and "metadata" in text)
+    return (
+        "evidence_type" in text
+        or ("evidence type" in text and "metadata" in text)
+        or (
+            "misclassified" in text
+            and any(token in text for token in ("human intervention", "intervention studies", "clinical intervention"))
+            and any(token in text for token in ("indirect", "review", "evidence"))
+        )
+    )
 
 
 def _asks_source_directness_breakdown(text: str) -> bool:
@@ -374,6 +385,10 @@ def _asks_source_directness_breakdown(text: str) -> bool:
                 "actually address",
             ))
             and any(token in text for token in ("adjacent", "general", "broader", "contextual", "off-topic", "off topic", "unrelated", "versus", "vs."))
+        )
+        or (
+            any(token in text for token in ("re-tier", "retier", "misclassified"))
+            and any(token in text for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
         )
     )
 
@@ -418,7 +433,17 @@ def _asks_source_outcome_class_map(text: str) -> bool:
     ) or (
         "evidence landscape" in text
         and "admitted source" in text
-        and any(token in text for token in ("include all", "reconcile", "all 13", "all admitted", "replace with findings"))
+        and any(token in text for token in (
+            "include all", "reconcile", "all 13", "all admitted",
+            "replace with findings", "surface", "surfaced", "not surfaced",
+        ))
+    ) or (
+        "admitted source" in text
+        and any(token in text for token in ("surface", "surfaced", "missing", "not surfaced"))
+    ) or (
+        "source" in text
+        and any(token in text for token in ("outcome summaries", "outcome summary"))
+        and any(token in text for token in ("missing", "not surfaced", "several"))
     )
 
 

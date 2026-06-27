@@ -2319,7 +2319,14 @@ def _phase_d_source_outcome_class_map(
         and any(token in lower_feedback for token in ("cited source", "individual cited", "each retained source"))
     ) or (
         "admitted source" in lower_feedback
-        and any(token in lower_feedback for token in ("include all", "reconcile", "all 13", "all admitted", "replace with findings"))
+        and any(token in lower_feedback for token in (
+            "include all", "reconcile", "all 13", "all admitted",
+            "replace with findings", "surface", "surfaced", "not surfaced",
+        ))
+    ) or (
+        "source" in lower_feedback
+        and any(token in lower_feedback for token in ("outcome summaries", "outcome summary"))
+        and any(token in lower_feedback for token in ("missing", "not surfaced", "several"))
     )
     present_tokens = {
         str(row.get("citation_token") or "").strip()
@@ -2437,7 +2444,17 @@ def _revision_asks_source_outcome_class_map(feedback: str) -> bool:
     ) or (
         "evidence landscape" in lower
         and "admitted source" in lower
-        and any(token in lower for token in ("include all", "reconcile", "all 13", "all admitted", "replace with findings"))
+        and any(token in lower for token in (
+            "include all", "reconcile", "all 13", "all admitted",
+            "replace with findings", "surface", "surfaced", "not surfaced",
+        ))
+    ) or (
+        "admitted source" in lower
+        and any(token in lower for token in ("surface", "surfaced", "missing", "not surfaced"))
+    ) or (
+        "source" in lower
+        and any(token in lower for token in ("outcome summaries", "outcome summary"))
+        and any(token in lower for token in ("missing", "not surfaced", "several"))
     )
 
 
@@ -2949,6 +2966,11 @@ def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
         or "evidence_type" in lower
         or "evidence type" in lower
         or (
+            "misclassified" in lower
+            and any(token in lower for token in ("human intervention", "intervention studies", "clinical intervention"))
+            and any(token in lower for token in ("indirect", "review", "evidence"))
+        )
+        or (
             "source" in lower
             and "direct" in lower
             and "adjacent" in lower
@@ -2961,6 +2983,10 @@ def _revision_asks_source_directness_breakdown(feedback: str) -> bool:
                 "remove or reclassify", "remove or justify", "inclusion criteria", "included under",
                 "operationalize", "classification", "mapping table", "mapping list",
             ))
+        )
+        or (
+            any(token in lower for token in ("re-tier", "retier", "misclassified"))
+            and any(token in lower for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
         )
     )
 

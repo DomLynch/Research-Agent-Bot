@@ -4187,6 +4187,50 @@ def test_revision_ask_requires_outcome_findings_mapped_to_source_names(tmp_path:
     )
 
 
+def test_revision_ask_accepts_surface_every_admitted_source_map(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "\n".join([
+            "# Paper",
+            "## Evidence Landscape",
+            "### Findings Map",
+            "- Smith 2026: outcome=Immune and Inflammation; direction=null; directness=adjacent; tier=B2.",
+            "- Jones 2025: outcome=Mechanistic Signaling; direction=mixed; directness=mechanistic; tier=C1.",
+        ]),
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Surface every admitted source; redesign outcome taxonomy; recode direction values.",
+    )
+
+
+def test_revision_ask_accepts_source_reclassification_map(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "\n".join([
+            "# Paper",
+            "## Evidence Landscape",
+            "### Source Classification Map",
+            "- Trialists 2026: outcome=Clinical Intervention; direction=mixed; directness=direct; tier=A1.",
+            "- Reviewers 2025: outcome=Contextual Adjacent Evidence; direction=unclear; directness=review; tier=B2.",
+        ]),
+        encoding="utf-8",
+    )
+
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Human intervention studies were misclassified as indirect/review evidence.",
+    )
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir,
+        "Re-tier mechanistic/context sources and reconcile bundle vs manuscript citations.",
+    )
+
+
 def test_revision_ask_rejects_unmapped_outcome_findings(tmp_path: Path) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()

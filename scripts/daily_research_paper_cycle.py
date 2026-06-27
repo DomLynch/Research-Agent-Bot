@@ -1959,12 +1959,21 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         return True
     if (
         "source bundle" in ask_lower
-        and "reclassif" in ask_lower
-        and any(token in ask_lower for token in ("directness", "case report", "case-report", "evidence tier", "mechanistic", "model-system"))
+        and any(token in ask_lower for token in ("reclassif", "re-tier", "retier", "misclassified"))
+        and any(token in ask_lower for token in (
+            "directness", "case report", "case-report", "evidence tier",
+            "mechanistic", "model-system", "context", "indirect", "review",
+        ))
         and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
         and ("low-directness" not in ask_lower or "low-directness" in paper_text)
         and ("case report" not in ask_lower or ("case report" in paper_text or "case-report" in paper_text))
         and ("patient education" not in ask_lower or "patient education" not in paper_text)
+    ):
+        return True
+    if (
+        any(token in ask_lower for token in ("reclassif", "re-tier", "retier", "misclassified"))
+        and any(token in ask_lower for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
+        and all(token in paper_text for token in ("source classification map", "outcome=", "directness=", "tier="))
     ):
         return True
     if (
@@ -2093,12 +2102,20 @@ def _asks_source_attribution_map(ask_lower: str) -> bool:
     return (
         any(token in ask_lower for token in ("attribute each", "finding level", "mapped claims", "outcome-class", "outcome class"))
         and any(token in ask_lower for token in ("source", "cited", "name and year", "by name", "by year"))
+    ) or (
+        "admitted source" in ask_lower
+        and any(token in ask_lower for token in ("surface", "surfaced", "missing", "not surfaced"))
+    ) or (
+        "source" in ask_lower
+        and any(token in ask_lower for token in ("outcome summaries", "outcome summary"))
+        and any(token in ask_lower for token in ("missing", "not surfaced", "several"))
     )
 
 
 def _paper_has_source_attribution_map(paper_text: str) -> bool:
     has_map = (
         "### source classification map" in paper_text
+        or "### findings map" in paper_text
         or "source-level findings by outcome class" in paper_text
         or "source examples:" in paper_text
     )
