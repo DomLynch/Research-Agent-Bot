@@ -2685,7 +2685,7 @@ def apply_fixes(
         if n_anaphor_stripped:
             nrg_issues = [
                 issue for issue in nrg_issues
-                if not _looks_like_change_speed_sentence(getattr(issue, "evidence", ""))
+                if not _looks_like_change_speed_sentence(getattr(issue, "sentence", ""))
             ]
         if nrg_issues and _repair is not None:
             new_md, n_repaired = _repair(
