@@ -1335,7 +1335,7 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
         patched,
         flags=re.I,
     )
-    match = re.search(r"^## Conclusion\b(?P<body>.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    match = re.search(r"^## Conclusion\b(?P<body>.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
     if not match or replacement.lower() in match.group("body").lower():
         return patched, case_n + tiered_n
     body = match.group("body")
@@ -1515,7 +1515,7 @@ def _revision_asks_numeric_significance_correction(feedback: str) -> bool:
         any(token in lower for token in ("p=", "p =", "p-value", "p value", "p-values", "confidence interval", "effect direction"))
         and any(token in lower for token in (
             "significant", "non-significant", "factual error", "correct", "audit",
-            "verify", "representative statistic", "miscoded", "direction/statistic",
+            "verify", "representative statistic", "miscoded", "direction/statistic", "inconsistency",
         ))
     )
 
@@ -1979,11 +1979,12 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
 
 def _revision_asks_full_source_surface(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
-    return any(
+    return bool(re.search(r"\b(?:all|every)\s+\d+\s+admitted sources?\b", lower)) or any(
         token in lower
         for token in (
             "full admitted corpus", "all admitted source", "all retained source",
             "every admitted source", "missing bundle source", "missing source",
+            "cover all", "covers all",
             "must appear in at least one outcome-class packet",
         )
     )
@@ -2023,8 +2024,9 @@ def _phase_d_research_question_scope(
     question = (
         f"For {topic}, what does the retained evidence show about prognostic "
         "or risk-marker associations, causal or mechanistic evidence, treatment "
-        "or intervention relevance, and the limits imposed by source design, "
-        "directness, and outcome class?"
+        "or intervention relevance, and the limits that direct, indirect, "
+        "review-level, and mechanistic source designs impose on clinical "
+        "actionability across outcome classes?"
     )
     patched, n = _insert_section_before(text, "Research Question", question, ("Methods", "Results"))
     if not n:

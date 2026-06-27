@@ -1904,11 +1904,12 @@ def _full_surface_sources_are_visible(paper_md: str, ask: str) -> bool:
 
 
 def _asks_full_source_surface_request(text: str) -> bool:
-    return any(
+    return bool(re.search(r"\b(?:all|every)\s+\d+\s+admitted sources?\b", text)) or any(
         token in text
         for token in (
             "full admitted corpus", "all admitted source", "all retained source",
             "every admitted source", "missing bundle source", "missing source",
+            "cover all", "covers all",
             "must appear in at least one outcome-class packet",
         )
     )

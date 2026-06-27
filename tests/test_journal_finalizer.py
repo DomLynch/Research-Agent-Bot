@@ -1393,7 +1393,8 @@ def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Pat
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
-    assert "Numeric correction: Waghmare 2024 reported a non-significant result (p = 0.08)" in fixed
+    assert "Numeric correction: Waghmare 2024 reported a non-significant mapped comparison (p = 0.08)" in fixed
+    assert "not every within-source contrast" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].n_changes == 1
 
@@ -1417,7 +1418,8 @@ def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
-    assert "Numeric correction: Brouwers 2016 reported a non-significant result (p = 0.88)" in fixed
+    assert "Numeric correction: Brouwers 2016 reported a non-significant mapped comparison (p = 0.88)" in fixed
+    assert "not every within-source contrast" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].rule == "repair_non_significant_numeric_effect_claims"
 
@@ -1447,12 +1449,14 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
+    assert "non-significant mapped comparison (p = 0.88)" in fixed
+    assert "not every within-source contrast" in fixed
     assert "Non-significant or mixed study-level signals are summarized in the frailty outcome class" in fixed
     assert "non-significant or mixed signal in 1/1 sources" in fixed
     assert "direction=null" in fixed
     assert "direction=positive" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
-    assert logs[0].n_changes == 3
+    assert logs[0].n_changes == 5
 
 
 def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Path) -> None:
@@ -1836,6 +1840,52 @@ def test_substantive_evidence_synthesis_surfaces_all_named_missing_sources(tmp_p
     assert logs[0].phase == "D_substantive_evidence_synthesis"
 
 
+def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: Path) -> None:
+    feedback = (
+        "Reframe the research question to ask a substantive scientific question rather than "
+        "a self-referential description of the corpus.; Expand the Evidence Landscape to "
+        "cover all admitted sources.; Disaggregate the Contextual Adjacent Evidence class "
+        "into clinically meaningful sub-domains.; Tighten the conclusion to remove "
+        "geroscience rationale framing."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "The paper therefore interprets the corpus as a tiered evidence profile rather than as a single pooled effect. "
+        "The conclusion is that telomere cancer effects remains a bounded geroscience case: the retained clinical "
+        "and adjacent evidence profile defines the scope for targeted testing, while mixed and null findings limit "
+        "any unqualified anti-aging claim.\n\n"
+        "## Methods\n\nDeterministic methods.\n\n"
+        "## Evidence Landscape\n\nThin summary.\n\n"
+        "## Key Findings\n\nThin summary.\n\n"
+        "## Conclusion\n\n"
+        "The conclusion is that telomere cancer effects remains a bounded geroscience case: indirect evidence is mixed.\n"
+    )
+    rows = [
+        {"citation_token": "Sasmita 2025", "source_title": "Shorter telomere length as a prognostic marker for survival and recurrence in breast cancer", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "review", "evidence_tier": "B2", "n_claims": 113},
+        {"citation_token": "Markozannes 2022", "source_title": "Systematic review of Mendelian randomization studies on risk of cancer", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "n_claims": 61},
+        {"citation_token": "Jaeger 2024", "source_title": "A nutritional supplement lengthens telomeres in a randomized population", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "indirect", "evidence_tier": "B2", "n_claims": 90},
+        {"citation_token": "Afolabi 2026", "source_title": "Telomere-driven dysfunctional changes in gynecological cancers: mechanistic insights", "outcome_class": "mechanism", "effect_direction": "null", "directness": "mechanistic", "evidence_tier": "C1", "n_claims": 3},
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "telomere_cancer_effects", "receipts": rows}))
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "## Research Question" in fixed
+    assert "prognostic or risk-marker associations" in fixed
+    assert "bounded geroscience case" not in fixed
+    assert "source-directness and outcome-class map" in fixed
+    assert "Contextual-adjacent subdomain map" in fixed
+    assert "prognostic and survival-marker evidence" in fixed
+    assert "causal-risk and Mendelian-randomization evidence" in fixed
+    assert "Full source-level signals are" in fixed
+    assert {entry.phase for entry in logs} >= {
+        "D_research_question_scope",
+        "D_substantive_evidence_synthesis",
+        "D_evidence_honesty_guard",
+    }
+
+
 def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
@@ -1882,7 +1932,7 @@ def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path
     fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
 
     assert "## Research Question" in fixed
-    assert "which retained source classes provide direct clinical" in fixed
+    assert "prognostic or risk-marker associations" in fixed
     assert "## Evidence Landscape" in fixed
     assert "## Key Findings" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
