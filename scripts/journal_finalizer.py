@@ -4293,6 +4293,35 @@ def _refresh_audit_sidecar(out_dir: Path) -> bool:
     return True
 
 
+def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
+    request = _load_sidecar(out_dir / "researka_revision_request.json")
+    paper = out_dir / "full_paper.md"
+    if not isinstance(request, dict) or not paper.is_file():
+        return False
+    feedback = str(request.get("feedback") or "").strip()
+    if not feedback:
+        return False
+    try:
+        text = paper.read_text()
+        asks = revision_coverage.revision_asks(feedback)
+        if not asks:
+            return False
+        unmet = revision_coverage.deterministic_unmet_asks(text, asks)
+    except (OSError, RuntimeError, TypeError, ValueError):
+        return False
+    fresh = {
+        "passed": not unmet,
+        "ask_count": len(asks),
+        "unmet_asks": unmet,
+        "refreshed_by": "journal_finalizer",
+    }
+    path = out_dir / "revision_coverage_gate.json"
+    if _load_sidecar(path) == fresh:
+        return False
+    path.write_text(json.dumps(fresh, indent=2))
+    return True
+
+
 def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     log: list[FinalizerLogEntry] = []
     _g = lambda rule, n, detail: log.append(FinalizerLogEntry(phase="G_refresh_sidecars", rule=rule, n_changes=n, detail=detail))  # noqa: E731
@@ -4323,6 +4352,8 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
         _g("reevaluate_journal_surface_post_finalizer", 1, f"surface issues delta vs pre-finalizer gate: {delta:+d}")
     if _refresh_pre_submit_gate(out_dir):
         _g("refresh_pre_submit_gate_with_fresh_surface", 1, "pre_submit_gate.inputs.journal_surface_passed + result recomputed")
+    if _refresh_revision_coverage_gate(out_dir):
+        _g("refresh_revision_coverage_gate_post_finalizer", 1, "revision_coverage_gate refreshed against post-finalizer manuscript")
     if _refresh_final_consistency_sidecar(out_dir):
         _g("refresh_final_consistency_post_finalizer", 1, "full_paper.consistency refreshed against post-finalizer manuscript")
     if _refresh_artifact_consistency_sidecar(out_dir):
