@@ -717,7 +717,7 @@ def _asks_search_summary_scope_note(text: str) -> bool:
         "search summary" in text
         and any(token in text for token in (
             "date range", "date ranges", "topic-operationalization",
-            "operationalization", "narrowing", "selection logic",
+            "operationalization", "narrowing",
         ))
     )
 

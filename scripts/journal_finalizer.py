@@ -1365,7 +1365,7 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
         flags=re.I,
     )
     patched, case_n = re.subn(
-        r"[^.\n]*\bbounded geroscience (?:case|hypothesis|rationale)\b(?::\s*[^.\n]*)?\.",
+        r"[^.\n]*\bbounded geroscience (?:case|hypothesis|rationale)\b[^.\n]*\.",
         bounded_replacement,
         text,
         flags=re.I,
@@ -1678,10 +1678,10 @@ def _remove_inline_numeric_correction_markup(text: str) -> tuple[str, int]:
         if not match:
             continue
         body, n = re.subn(
-            r"(?:(?<=\n)|^)\s*Numeric correction:[^.]*\.\s*",
+            r"(?:(?<=\n)|^)\s*Numeric correction:.*?(?:non-significant|not significant)\.\s*",
             "",
             match.group("body"),
-            flags=re.I,
+            flags=re.I | re.S,
         )
         if not n:
             continue
@@ -1735,7 +1735,7 @@ def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> t
         if any(label in line_lower for label in labels):
             changed = re.sub(r"\bdirection=positive\b", "direction=null", changed, flags=re.I)
             changed = re.sub(r"\beffect_direction=positive\b", "effect_direction=null", changed, flags=re.I)
-        if outcome and f"{outcome} outcome class" in line_lower and "positive" in line_lower:
+        if outcome and outcome in line_lower and "positive" in line_lower:
             changed = re.sub(
                 r"\bPositive study-level signals\b",
                 "Non-significant or mixed study-level signals",

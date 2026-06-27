@@ -1511,7 +1511,7 @@ def test_deterministic_unmet_rejects_non_significant_source_still_positive() -> 
     )
     repaired = weak.replace("Positive study-level signals", "Non-significant or mixed study-level signals").replace(
         "positive signal in 1/1 sources", "non-significant or mixed signal in 1/1 sources",
-    ).replace("direction=positive", "direction=null")
+    ).replace("direction=positive", "direction=null").replace("Numeric correction:", "Numeric reconciliation note:")
 
     assert revision_coverage.deterministic_known_asks([ask]) == [ask]
     assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]

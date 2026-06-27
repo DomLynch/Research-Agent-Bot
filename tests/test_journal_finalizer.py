@@ -1440,6 +1440,7 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
         "this synthesis treats that finding as non-significant. Positive study-level signals "
         "are summarized in the frailty outcome class.\n\n"
         "## Evidence Landscape\n\n"
+        "| Telomere / Frailty | n=1 | positive signal in 1/1 sources |\n\n"
         "### Frailty\n\n"
         "positive signal in 1/1 sources.\n"
         "- Brouwers 2016: outcome=Frailty; direction=positive; directness=indirect; "
@@ -1456,10 +1457,11 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
     assert "not every within-source contrast" in fixed
     assert "Non-significant or mixed study-level signals are summarized in the frailty outcome class" in fixed
     assert "non-significant or mixed signal in 1/1 sources" in fixed
+    assert "positive signal in 1/1 sources" not in fixed
     assert "direction=null" in fixed
     assert "direction=positive" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
-    assert logs[0].n_changes == 6
+    assert logs[0].n_changes == 7
 
 
 def test_numeric_significance_correction_moves_inline_markup_to_evidence_landscape(tmp_path: Path) -> None:
