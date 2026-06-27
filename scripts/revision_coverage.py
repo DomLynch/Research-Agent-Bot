@@ -1466,7 +1466,7 @@ def _concrete_research_question_is_stated(paper_md: str) -> bool:
     return (
         "?" in question
         and "source" in question
-        and "outcome class" in question
+        and ("outcome class" in question or "outcome-class" in question)
         and any(token in question for token in ("direct", "indirect", "mechanistic", "review"))
         and any(token in question for token in ("hypothesis-generating", "clinically actionable", "clinical"))
     )

@@ -1953,6 +1953,136 @@ def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: 
     }
 
 
+def test_latest_telomere_reviewer_asks_are_repaired_generically(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    feedback = (
+        "Add clear specific research question directly answerable by evidence, e.g. "
+        "“In cancer populations, does shorter LTL predict survival, and does genetically "
+        "predicted longer LTL increase cancer risk across tumor types?”; "
+        "Reclassify misclassified sources: Liu 2026 out of dosing/pharmacokinetics "
+        "(epigenetic age acceleration), Markozannes 2022 out of immune/inflammation "
+        "(cancer MR systematic review), re-examine Brouwers 2016 direction coding.; "
+        "Resolve/disclose 17/25 unclear effect_direction codes, re-extract direction "
+        "or state cannot determine direction for majority and narrow conclusion.; "
+        "Integrate evidence across outcome classes: contrast MR risk findings versus "
+        "prognostic biomarker findings versus mechanistic ALT findings.; "
+        "Remove/segregate off-topic sources or add adjacent context label/non-pooling rationale.; "
+        "Reconcile receipt funnel arithmetic and add one-sentence interpretation why "
+        "25 sources from 73 candidates.; Narrow Conclusion: current structural claims go beyond body."
+    )
+    paper = (
+        "## Abstract\n\nThin.\n\n"
+        "## Research Question\n\nWhat does this corpus show?\n\n"
+        "## Methods\n\nRetrieval was deterministic.\n\n"
+        "## Evidence Landscape\n\nThin summary.\n\n"
+        "### Source Classification Map\n\n"
+        "- Liu 2026: outcome=Dosing and Pharmacokinetics; direction=negative; directness=indirect; tier=B2.\n"
+        "- Markozannes 2022: outcome=Immune and Inflammation; direction=null; directness=review; tier=B2.\n\n"
+        "## Key Findings\n\nThin summary.\n\n"
+        "## Results\n\n"
+        "### Dosing and Pharmacokinetics Outcomes\n\n"
+        "Dosing and Pharmacokinetics remains a separate Results slice.\n\n"
+        "## Conclusion\n\nBroad structural claims.\n"
+    )
+    rows = [
+        {
+            "citation_token": "Sasmita 2025",
+            "source_title": "Shorter telomere length as a prognostic marker for survival and recurrence in breast cancer",
+            "outcome_class": "mortality_survival",
+            "effect_direction": "unclear",
+            "directness": "review",
+            "evidence_tier": "B2",
+            "n_claims": 113,
+        },
+        {
+            "citation_token": "Liu 2026",
+            "source_title": "The association of epigenetic age acceleration with cancer survival",
+            "outcome_class": "dosing_pharmacokinetics",
+            "effect_direction": "negative",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 74,
+        },
+        {
+            "citation_token": "Markozannes 2022",
+            "source_title": "Systematic review of Mendelian randomization studies on risk of cancer",
+            "outcome_class": "immune_inflammation",
+            "effect_direction": "null",
+            "directness": "review",
+            "evidence_tier": "B2",
+            "n_claims": 61,
+        },
+        {
+            "citation_token": "Jaeger 2024",
+            "source_title": "A Natural Astragalus-Based Nutritional Supplement Lengthens Telomeres in a Middle-Aged Population",
+            "outcome_class": "contextual_other",
+            "effect_direction": "positive",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 90,
+        },
+        {
+            "citation_token": "Brouwers 2016",
+            "source_title": "Frailty-adjacent telomere endpoint study",
+            "outcome_class": "frailty",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 30,
+        },
+        {
+            "citation_token": "Afolabi 2026",
+            "source_title": "Alternative lengthening of telomeres mechanistic insights in cancer",
+            "outcome_class": "mechanism",
+            "effect_direction": "null",
+            "directness": "mechanistic",
+            "evidence_tier": "C1",
+            "n_claims": 3,
+        },
+    ]
+    rows.extend(
+        {
+            "citation_token": f"Context {i} 2026",
+            "source_title": "Cancer telomere contextual evidence",
+            "outcome_class": "contextual_other",
+            "effect_direction": "unclear" if i <= 15 else "null",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 1,
+        }
+        for i in range(1, 20)
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "telomere_cancer_effects",
+        "n_receipts": 25,
+        "receipt_funnel": {
+            "classified_receipt_candidates": 73,
+            "counts": {"admitted_receipts": 25},
+        },
+        "receipts": rows,
+    }), encoding="utf-8")
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert len(asks) == 7
+    assert revision_coverage.deterministic_unmet_asks(paper, asks)
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Majority-direction note: 17/25" in fixed
+    assert "Receipt-funnel interpretation: 25 admitted sources came from 73" in fixed
+    assert "outcome-class source-level signals directionally consistent enough" in fixed
+    assert "source-title subdomain labels" in fixed
+    assert "Liu 2026: outcome=Dosing and Pharmacokinetics" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert {entry.phase for entry in logs} >= {
+        "D_admission_funnel_clarification",
+        "D_directional_coding_note",
+        "D_research_question_scope",
+        "D_source_directness_breakdown",
+    }
+
+
 def test_substantive_evidence_synthesis_repairs_meta_only_conclusion(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

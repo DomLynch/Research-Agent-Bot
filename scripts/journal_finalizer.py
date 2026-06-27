@@ -1228,7 +1228,7 @@ def _phase_d_directional_coding_note(
         return text, []
     note = _directional_coding_note(out_dir)
     if "directional coding note:" in text.lower():
-        if "majority-direction note:" not in text.lower():
+        if "Majority-direction note:" in note and "majority-direction note:" not in text.lower():
             for heading in ("Evidence Landscape", "Evidence Snapshot", "Results", "Key Findings"):
                 match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
                 if match:
@@ -2149,6 +2149,7 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             and any(token in lower for token in ("concrete", "bounded", "source", "outcome class"))
             and any(token in lower for token in ("abstract", "finding", "findings", "effect size", "directional"))
         )
+        or ("integrate" in lower and "evidence" in lower)
         or _revision_asks_full_source_surface(feedback)
         or (
             "directional findings" in lower
@@ -2246,8 +2247,10 @@ def _research_question_from_manifest(manifest: dict[str, Any]) -> str:
             buckets.append(bucket)
     bucket_text = ", ".join(buckets[:3]) or "the retained outcome classes"
     return (
-        f"For {topic}, what do the retained sources show across {bucket_text}, "
-        "and are those outcome-class source-level signals directionally consistent enough for "
+        f"For {topic}, what does the retained evidence show about prognostic "
+        "or risk-marker associations, causal or mechanistic evidence, treatment "
+        f"or intervention relevance across {bucket_text}, and are those "
+        "outcome-class source-level signals directionally consistent enough for "
         "clinical actionability once unclear direction coding, adjacent/contextual "
         "source roles, and directness limits are considered?"
     )
@@ -2689,12 +2692,27 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
 
 def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
     lower = feedback.lower()
+    original = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+    directness = str(row.get("directness") or "").strip().lower()
+    if directness.startswith("direct"):
+        return original
+    citation = str(row.get("citation_token") or row.get("receipt_id") or "").strip().lower()
+    local_reclassification = bool(citation) and any(
+        re.search(rf"{token}.{{0,220}}{re.escape(citation)}", lower)
+        for token in (
+            "misclassified", "reclassify", "re examine", "re-examine",
+            "off topic", "off-topic", "segregate", "non pooling", "non-pooling",
+            "out of",
+        )
+    )
+    if not local_reclassification:
+        return original
     if any(token in lower for token in (
         "misclassified", "reclassify", "re-examine", "re examine",
         "off-topic", "off topic", "segregate", "non-pooling", "non pooling",
     )):
         return _manifest_subdomain_bucket(row)
-    return _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+    return original
 
 
 def _phase_d_species_study_design_summary(
