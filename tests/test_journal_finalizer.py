@@ -1393,7 +1393,8 @@ def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Pat
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
-    assert "Numeric correction: Waghmare 2024 reported a non-significant mapped comparison (p = 0.08)" in fixed
+    assert "Numeric reconciliation note: Waghmare 2024 reported a non-significant mapped comparison (p = 0.08)" in fixed
+    assert "Numeric correction:" not in fixed.split("## Abstract", 1)[1].split("## Evidence Landscape", 1)[0]
     assert "not every within-source contrast" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].n_changes == 1
@@ -1418,7 +1419,8 @@ def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
-    assert "Numeric correction: Brouwers 2016 reported a non-significant mapped comparison (p = 0.88)" in fixed
+    assert "Numeric reconciliation note: Brouwers 2016 reported a non-significant mapped comparison (p = 0.88)" in fixed
+    assert "Numeric correction:" not in fixed.split("## Abstract", 1)[1].split("## Evidence Landscape", 1)[0]
     assert "not every within-source contrast" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].rule == "repair_non_significant_numeric_effect_claims"
@@ -1450,6 +1452,7 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
     assert "non-significant mapped comparison (p = 0.88)" in fixed
+    assert "Numeric correction:" not in fixed.split("## Abstract", 1)[1].split("## Evidence Landscape", 1)[0]
     assert "not every within-source contrast" in fixed
     assert "Non-significant or mixed study-level signals are summarized in the frailty outcome class" in fixed
     assert "non-significant or mixed signal in 1/1 sources" in fixed
@@ -1457,6 +1460,35 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
     assert "direction=positive" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].n_changes == 5
+
+
+def test_numeric_significance_correction_moves_inline_markup_to_evidence_landscape(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Remove or properly contextualize the in-text 'Numeric correction' sentence — it reads "
+        "as leftover editing markup and does not belong in the Abstract or Research Question."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "Numeric correction: Brouwers 2016 reported a non-significant mapped comparison (p = 0.88); "
+        "this synthesis treats that mapped comparison as non-significant.\n\n"
+        "The corpus is mixed.\n\n"
+        "## Research Question\n\n"
+        "Numeric correction: Brouwers 2016 reported a non-significant mapped comparison (p = 0.88).\n\n"
+        "What does the evidence show?\n\n"
+        "## Evidence Landscape\n\n"
+        "Brouwers 2016 contributed a mapped outcome row.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    reader_facing = fixed.split("## Evidence Landscape", 1)[0]
+    assert "Numeric correction:" not in reader_facing
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_numeric_significance_correction"
 
 
 def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Path) -> None:
@@ -1874,6 +1906,7 @@ def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: 
     assert "## Research Question" in fixed
     assert "prognostic or risk-marker associations" in fixed
     assert "bounded geroscience case" not in fixed
+    assert "bounded geroscience hypothesis" not in fixed
     assert "source-directness and outcome-class map" in fixed
     assert "Contextual-adjacent subdomain map" in fixed
     assert "prognostic and survival-marker evidence" in fixed

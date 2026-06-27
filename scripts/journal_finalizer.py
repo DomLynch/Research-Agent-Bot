@@ -1587,6 +1587,29 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
         return text, 0
     source_label = f"{source.group(1)} {source.group(2)}"
     p_text = f"p = {p_value.group(1)}"
+    normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
+    if n_existing:
+        text = normalized
+    visible_scope = " ".join(
+        part for part in (
+            _section_body(text, "Abstract"),
+            _section_body(text, "Methods"),
+            _section_body(text, "Evidence Landscape"),
+            _section_body(text, "Conclusion"),
+        ) if part
+    )
+    if (
+        source_label.lower() in visible_scope.lower()
+        and p_text.lower() in visible_scope.lower()
+        and _FINALIZER_NONSIGNIFICANT_RE.search(visible_scope)
+        and "numeric correction:" not in " ".join(
+            part for part in (
+                _section_body(text, "Abstract"),
+                _section_body(text, "Research Question"),
+            ) if part
+        ).lower()
+    ):
+        return text, n_existing
     scope = " ".join(
         part for part in (
             _section_body(text, "Methods"),
@@ -1594,16 +1617,6 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
             _section_body(text, "Conclusion"),
         ) if part
     )
-    normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
-    if n_existing:
-        text = normalized
-        scope = " ".join(
-            part for part in (
-                _section_body(text, "Methods"),
-                _section_body(text, "Evidence Landscape"),
-                _section_body(text, "Conclusion"),
-            ) if part
-        )
     if source_label.lower() in scope.lower() and p_text.lower() in scope.lower() and _FINALIZER_NONSIGNIFICANT_RE.search(scope):
         return text, n_existing
     outcome = _numeric_correction_outcome(feedback)
@@ -1624,8 +1637,8 @@ def _remove_inline_numeric_correction_markup(text: str) -> tuple[str, int]:
         if not match:
             continue
         body, n = re.subn(
-            r"(?:^|\n)\s*Numeric correction:[^\n]*(?:\n|$)",
-            "\n",
+            r"(?:(?<=\n)|^)\s*Numeric correction:[^.]*\.\s*",
+            "",
             match.group("body"),
             flags=re.I,
         )

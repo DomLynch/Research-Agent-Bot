@@ -186,6 +186,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_external_reference_boundary,
             _asks_reference_traceability,
             _asks_prior_publication_differentiation,
+            _asks_numeric_correction_markup_cleanup,
             _asks_numeric_effect_audit,
             _asks_named_numeric_correction,
             _asks_numeric_effect_accuracy,
@@ -324,10 +325,16 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _references_are_traceable(paper_md)
     if _asks_prior_publication_differentiation(lower):
         return _prior_publication_differentiation_is_stated(paper_md)
+    if _asks_numeric_correction_markup_cleanup(lower):
+        return _numeric_correction_markup_is_resolved(paper_md)
     if _asks_numeric_effect_audit(lower):
         return _numeric_effect_audit_is_stated(paper_md) and not numeric_effect_direction_issues(paper_md)
     if _asks_named_numeric_correction(lower):
-        return _named_numeric_correction_is_stated(paper_md, lower) and not numeric_effect_direction_issues(paper_md)
+        return (
+            _named_numeric_correction_is_stated(paper_md, lower)
+            and _numeric_correction_markup_is_resolved(paper_md)
+            and not numeric_effect_direction_issues(paper_md)
+        )
     if _asks_numeric_effect_accuracy(lower):
         return not numeric_effect_direction_issues(paper_md)
     if _asks_grammar_correction(lower):
@@ -959,13 +966,20 @@ def _asks_numeric_effect_audit(text: str) -> bool:
 
 def _asks_named_numeric_correction(text: str) -> bool:
     return (
-        any(token in text for token in ("correct", "verify", "reconcile", "recode", "recoded", "remove"))
+        any(token in text for token in ("correct", "verify", "resolve", "reconcile", "recode", "recoded", "remove"))
         and any(token in text for token in ("p=", "p =", "p-value", "p value", "confidence interval"))
         and any(token in text for token in (
             "non-significant", "not significant", "significant reduction", "factual error",
             "representative statistic", "miscoded", "direction/statistic", "direction statistic",
-            "positive signal", "null/mixed",
+            "positive signal", "positive coding", "numeric correction", "unclear/null", "null/mixed",
         ))
+    )
+
+
+def _asks_numeric_correction_markup_cleanup(text: str) -> bool:
+    return (
+        "numeric correction" in text
+        and any(token in text for token in ("leftover", "editing markup", "remove", "contextualize", "abstract", "research question"))
     )
 
 
@@ -1846,7 +1860,12 @@ def _named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
         or re.search(r"\b([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
     )
     p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", ask, flags=re.I)
-    scope = " ".join(part for part in (_abstract(paper_md), _section(paper_md, "Evidence Landscape"), _section(paper_md, "Conclusion")) if part).lower()
+    scope = " ".join(part for part in (
+        _abstract(paper_md),
+        _section(paper_md, "Methods"),
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Conclusion"),
+    ) if part).lower()
     if source and f"{source.group(1).lower()} {source.group(2).lower()}" not in scope:
         return False
     if p_value and f"p = {p_value.group(1)}" not in scope and f"p={p_value.group(1)}" not in scope:
@@ -1855,6 +1874,20 @@ def _named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
         any(token in scope for token in ("non-significant", "not significant", "did not reach significance"))
         and not _named_numeric_positive_contradiction(paper_md, ask)
     )
+
+
+def _numeric_correction_markup_is_resolved(paper_md: str) -> bool:
+    reader_facing = " ".join(part for part in (_abstract(paper_md), _section(paper_md, "Research Question")) if part).lower()
+    if "numeric correction:" in reader_facing:
+        return False
+    if "numeric correction:" not in paper_md.lower():
+        return True
+    technical_scope = " ".join(part for part in (
+        _section(paper_md, "Methods"),
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Limitations"),
+    ) if part).lower()
+    return "numeric reconciliation note:" in technical_scope or "non-significant mapped comparison" in technical_scope
 
 
 _POSITIVE_NUMERIC_CONTRADICTION_RE = re.compile(
