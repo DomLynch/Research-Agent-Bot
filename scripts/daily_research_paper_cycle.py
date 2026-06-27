@@ -281,6 +281,51 @@ def _publication_markers_for_run(runs_root: Path, run_name: str) -> set[str]:
     return markers
 
 
+def _submitted_title_marker_counts(runs_root: Path) -> Counter[str]:
+    run_names: set[str] = set()
+    for ledger_dir in (runs_root / LEDGER_DIR, runs_root / submit_bridge.LEDGER_DIR):
+        for path in ledger_dir.glob("*.json"):
+            if path.name.startswith("_"):
+                continue
+            ledger = _read_json(path)
+            if int(ledger.get("submitted") or 0):
+                run_names.update(_ledger_run_names(ledger))
+    for row in submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"):
+        raw_run = row.get("run")
+        if isinstance(raw_run, str) and raw_run:
+            run_names.add(raw_run)
+    counts: Counter[str] = Counter()
+    for run_name in run_names:
+        paper = runs_root / run_name / "full_paper.md"
+        if paper.exists():
+            marker = submit_bridge._title_marker(submit_bridge._paper_title(paper))
+            if marker:
+                counts[marker] += 1
+    return counts
+
+
+def _remote_has_submission_marker(remote_seen: set[str]) -> bool:
+    return any(marker.startswith("submission:") for marker in remote_seen)
+
+
+def _publication_matches_for_run(
+    runs_root: Path,
+    run_name: str,
+    remote_seen: set[str],
+    title_marker_counts: Counter[str],
+) -> set[str]:
+    matches = _publication_markers_for_run(runs_root, run_name) & remote_seen
+    if not matches:
+        return set()
+    paper = runs_root / run_name / "full_paper.md"
+    if not paper.exists():
+        return matches
+    title_marker = submit_bridge._title_marker(submit_bridge._paper_title(paper))
+    if title_marker in matches and title_marker_counts.get(title_marker, 0) > 1:
+        matches.remove(title_marker)
+    return matches
+
+
 def _ledger_submission_markers(ledger: dict[str, Any]) -> set[str]:
     markers: set[str] = set()
     response = ledger.get("submission")
@@ -361,7 +406,12 @@ def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[s
     return markers
 
 
-def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_seen: set[str]) -> bool:
+def _reconcile_published_ledger(
+    ledger: dict[str, Any],
+    runs_root: Path,
+    remote_seen: set[str],
+    title_marker_counts: Counter[str] | None = None,
+) -> bool:
     if int(ledger.get("published") or 0):
         changed = False
         if str(ledger.get("status") or "") != "published":
@@ -373,15 +423,16 @@ def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_
     matches: set[str] = set()
     matched_runs: set[str] = set()
     submitted_runs = set(_ledger_run_names(ledger))
+    title_marker_counts = title_marker_counts or _submitted_title_marker_counts(runs_root)
     if int(ledger.get("submitted") or 0):
         exact_markers = _ledger_submission_markers(ledger) or _submit_bridge_submission_markers_for_runs(runs_root, submitted_runs)
         if exact_markers:
             matches.update(exact_markers & remote_seen)
-            if not matches:
+            if not matches and _remote_has_submission_marker(remote_seen):
                 return False
         if not matches:
             for run_name in submitted_runs:
-                run_matches = _publication_markers_for_run(runs_root, run_name) & remote_seen
+                run_matches = _publication_matches_for_run(runs_root, run_name, remote_seen, title_marker_counts)
                 if run_matches:
                     matched_runs.add(run_name)
                     matches.update(run_matches)
@@ -432,6 +483,7 @@ def reconcile_publication_ledgers(
     if remote_error:
         return {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
     ledger_dir = runs_root / LEDGER_DIR
+    title_marker_counts = _submitted_title_marker_counts(runs_root)
     decision_records = 0
     if remote_loader is None:
         latest_decisions, decision_error = _latest_public_decisions_by_title()
@@ -445,7 +497,7 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        if _reconcile_published_ledger(ledger, runs_root, remote_seen):
+        if _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts):
             _write_json(ledger_path, ledger)
             _record_daily_throughput(ledger_dir, ledger)
             updated.append(ledger_path.name)
@@ -454,7 +506,7 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen)
+        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts)
         if int(ledger.get("published") or 0):
             changed = _refresh_submit_day_summary(ledger, runs_root) or changed
         if changed:
