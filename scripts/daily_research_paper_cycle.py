@@ -1213,9 +1213,6 @@ def _public_decision_markers(rows: dict[str, dict[str, Any]]) -> set[str]:
         topic = row.get("topic")
         if isinstance(topic, str) and topic.strip():
             markers.add(submit_bridge._topic_marker(topic))
-        submission_id = row.get("submissionId") or row.get("submission_id")
-        if isinstance(submission_id, str) and submission_id.strip():
-            markers.add(submit_bridge._submission_marker(submission_id))
     return markers
 
 

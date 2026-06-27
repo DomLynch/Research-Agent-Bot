@@ -920,6 +920,7 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
             "title": title,
             "decision": "accept",
             "status": "published",
+            "submissionId": "public-decision-submission-id",
             "createdAt": "2026-06-24T12:22:51+04:00",
         },
     }, None))
