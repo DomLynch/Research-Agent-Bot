@@ -1677,18 +1677,28 @@ def _remove_inline_numeric_correction_markup(text: str) -> tuple[str, int]:
         match = re.search(rf"^## {re.escape(section)}\b(?P<body>.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
         if not match:
             continue
-        body, n = re.subn(
-            r"(?:(?<=\n)|^)\s*Numeric correction:.*?(?:non-significant|not significant)\.\s*",
-            "",
-            match.group("body"),
-            flags=re.I | re.S,
-        )
+        body, n = _strip_numeric_correction_sentences(match.group("body"))
         if not n:
             continue
         body = re.sub(r"\n{3,}", "\n\n", body)
         patched = patched[:match.start("body")] + body + patched[match.end("body"):]
         n_total += n
     return patched, n_total
+
+
+def _strip_numeric_correction_sentences(body: str) -> tuple[str, int]:
+    chunks = re.split(r"(\n\s*\n)", body)
+    n = 0
+    for idx, chunk in enumerate(chunks):
+        if not chunk.strip() or chunk.startswith("\n") or "numeric correction:" not in chunk.lower():
+            continue
+        sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z])", chunk.strip())
+        kept = [sentence for sentence in sentences if not sentence.strip().lower().startswith("numeric correction:")]
+        if len(kept) == len(sentences):
+            continue
+        chunks[idx] = " ".join(kept)
+        n += len(sentences) - len(kept)
+    return "".join(chunks), n
 
 
 def _clarify_mapped_non_significant_comparison(text: str) -> tuple[str, int]:

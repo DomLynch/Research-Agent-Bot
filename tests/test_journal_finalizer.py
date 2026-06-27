@@ -1461,7 +1461,7 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
     assert "direction=null" in fixed
     assert "direction=positive" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
-    assert logs[0].n_changes == 7
+    assert logs[0].n_changes == 6
 
 
 def test_numeric_significance_correction_moves_inline_markup_to_evidence_landscape(tmp_path: Path) -> None:

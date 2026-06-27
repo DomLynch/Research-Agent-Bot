@@ -1518,6 +1518,27 @@ def test_deterministic_unmet_rejects_non_significant_source_still_positive() -> 
     assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
 
 
+def test_named_numeric_correction_ignores_unrelated_positive_sources() -> None:
+    ask = (
+        "Resolve the Brouwers 2016 direction coding inconsistency: either confirm the "
+        "positive frailty coding with the supporting statistic, or correct to unclear/null "
+        "to match the p=0.88 numeric correction."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Numeric reconciliation note: Brouwers 2016 reported a non-significant mapped "
+        "comparison (p = 0.88); this synthesis treats that mapped comparison, not every "
+        "within-source contrast, as non-significant.\n\n"
+        "| Outcome | Summary |\n"
+        "|---|---|\n"
+        "| Treatment response | positive signal in 1/1 sources from Liu 2026 |\n"
+        "| Frailty | non-significant or mixed signal in 1/1 sources from Brouwers 2016 |\n\n"
+        "- Brouwers 2016: outcome=Frailty; direction=null; finding=representative statistic p=0.88.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_requires_full_corpus_sources_in_result_sections() -> None:
     ask = (
         "Add the missing bundle sources to the Results outcome slices (Andreikos 2024, "

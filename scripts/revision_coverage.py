@@ -1955,11 +1955,20 @@ def _named_numeric_positive_contradiction(paper_md: str, ask: str) -> bool:
         lower = line.lower()
         if any(label in lower for label in labels) and _POSITIVE_NUMERIC_CONTRADICTION_RE.search(line):
             return True
-    for block in re.split(r"(?=^#{2,4}\s+)", paper_md, flags=re.M):
-        lower = block.lower()
-        if any(label in lower for label in labels) and _POSITIVE_NUMERIC_CONTRADICTION_RE.search(block):
+    for chunk in _source_local_chunks(paper_md):
+        lower = chunk.lower()
+        if any(label in lower for label in labels) and _POSITIVE_NUMERIC_CONTRADICTION_RE.search(chunk):
             return True
     return False
+
+
+def _source_local_chunks(paper_md: str) -> list[str]:
+    chunks: list[str] = []
+    for paragraph in re.split(r"\n\s*\n", paper_md):
+        for line in paragraph.splitlines():
+            chunks.append(line)
+            chunks.extend(re.split(r"(?<=[.!?])\s+(?=[A-Z])", line.strip()))
+    return [chunk for chunk in chunks if chunk.strip()]
 
 
 def _full_surface_sources_are_visible(paper_md: str, ask: str) -> bool:
