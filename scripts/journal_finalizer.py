@@ -2027,8 +2027,9 @@ def _phase_d_substantive_evidence_synthesis(
     patched, n1 = _prepend_or_create_section_paragraph(text, "Evidence Landscape", landscape)
     patched, n2 = _prepend_or_create_section_paragraph(patched, "Key Findings", key_findings)
     conclusion_note = (
-        f"Substantive conclusion: {pattern_summary.strip()} "
-        "These source-patterns support bounded risk-marker, causal, mechanistic, "
+        f"Substantive conclusion for {_topic_display_anchor(manifest) or 'the target topic'}: "
+        f"the retained source set shows {_manifest_conclusion_summary(rows)}. "
+        "These source patterns support bounded risk-marker, causal, mechanistic, "
         "or treatment-response hypotheses according to source directness; they do "
         "not establish standalone clinical actionability."
         if pattern_summary else ""
@@ -2078,6 +2079,15 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
         or (
             "directional findings" in lower
             and any(token in lower for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
+        )
+        or (
+            "conclusion" in lower
+            and any(token in lower for token in (
+                "what the evidence actually shows",
+                "epistemic status",
+                "not informative",
+                "substantive conclusion",
+            ))
         )
         or (
             "disaggregate" in lower
@@ -2226,6 +2236,19 @@ def _manifest_source_pattern_summary(rows: list[dict[str, Any]]) -> str:
         if len(parts) >= 5:
             break
     return "Substantive source-pattern summary: " + "; ".join(parts) + "." if parts else ""
+
+
+def _manifest_conclusion_summary(rows: list[dict[str, Any]]) -> str:
+    buckets: dict[str, int] = {}
+    directions: dict[str, int] = {}
+    for row in rows:
+        buckets[_manifest_subdomain_bucket(row)] = buckets.get(_manifest_subdomain_bucket(row), 0) + 1
+        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        directions[direction] = directions.get(direction, 0) + 1
+    bucket_text = ", ".join(f"{key} n={value}" for key, value in sorted(buckets.items(), key=lambda item: (-item[1], item[0]))[:4])
+    direction_text = ", ".join(f"{key}={directions[key]}" for key in sorted(directions))
+    examples = ", ".join(_row_citation(row) for row in sorted(rows, key=_manifest_key_finding_score)[:3])
+    return f"{len(rows)} sources across {bucket_text}; receipt-level directions {direction_text}; leading source labels {examples}"
 
 
 def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -> list[str]:

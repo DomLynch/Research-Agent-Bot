@@ -1539,6 +1539,28 @@ def test_named_numeric_correction_ignores_unrelated_positive_sources() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_substantive_conclusion_ask_requires_source_pattern_conclusion() -> None:
+    ask = (
+        "Clarify in the Conclusion what the evidence actually shows about telomere cancer effects, "
+        "not just what kind of evidence it is. A conclusion that only describes its own epistemic "
+        "status is not informative."
+    )
+    weak = "## Conclusion\n\nThe conclusion is bounded and hypothesis-generating.\n"
+    repaired = (
+        "## Conclusion\n\n"
+        "Substantive conclusion for Telomere Cancer Effects: the retained source set shows "
+        "prognostic and survival-marker evidence n=3, causal-risk and Mendelian-randomization "
+        "evidence n=2, and treatment/intervention-response evidence n=1; receipt-level "
+        "directions positive=2, null=1, unclear=3. These source patterns support bounded "
+        "risk-marker, causal, mechanistic, or treatment-response hypotheses and do not "
+        "establish standalone clinical actionability.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
 def test_deterministic_unmet_requires_full_corpus_sources_in_result_sections() -> None:
     ask = (
         "Add the missing bundle sources to the Results outcome slices (Andreikos 2024, "

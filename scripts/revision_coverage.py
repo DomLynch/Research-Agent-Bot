@@ -181,6 +181,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_unbundled_citation_cleanup,
             _asks_structured_table_stub_replacement,
             _asks_outcome_label_cleanup,
+            _asks_substantive_conclusion,
             _asks_source_count_bundle_reconciliation,
             _asks_named_direct_clinical_source,
             _asks_outcome_subsection_source_narrative,
@@ -317,6 +318,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _structured_table_stubs_are_replaced(paper_md)
     if _asks_outcome_label_cleanup(lower):
         return _outcome_label_cleanup_is_stated(paper_md)
+    if _asks_substantive_conclusion(lower):
+        return _substantive_conclusion_is_stated(paper_md)
     if _asks_source_count_bundle_reconciliation(lower):
         return _source_count_bundle_reconciliation_is_stated(paper_md)
     if _asks_named_direct_clinical_source(lower):
@@ -631,6 +634,18 @@ def _asks_substantive_evidence_synthesis(text: str) -> bool:
             "directional findings" in text
             and any(token in text for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
         )
+    )
+
+
+def _asks_substantive_conclusion(text: str) -> bool:
+    return (
+        "conclusion" in text
+        and any(token in text for token in (
+            "what the evidence actually shows",
+            "epistemic status",
+            "not informative",
+            "substantive conclusion",
+        ))
     )
 
 
@@ -1409,6 +1424,23 @@ def _substantive_evidence_synthesis_is_stated(paper_md: str) -> bool:
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
         and re.search(r"\bpositive|negative|mixed|unclear|null|no extracted directional signal\b", scope, re.I)
         and "bounded conclusion" in scope.lower()
+    )
+
+
+def _substantive_conclusion_is_stated(paper_md: str) -> bool:
+    conclusion = _section(paper_md, "Conclusion").lower()
+    return (
+        "substantive conclusion" in conclusion
+        and "source" in conclusion
+        and any(token in conclusion for token in (
+            "prognostic", "survival", "causal", "mendelian",
+            "mechanistic", "treatment", "intervention",
+            "positive", "negative", "mixed", "null", "unclear",
+        ))
+        and any(token in conclusion for token in (
+            "bounded", "not establish", "does not establish",
+            "not standalone", "not clinical actionability",
+        ))
     )
 
 
