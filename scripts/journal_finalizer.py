@@ -876,8 +876,10 @@ def _phase_d_admission_funnel_clarification(
     replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
     wants_additive_flow = _revision_asks_additive_screening_flow(feedback)
     has_placeholder_exclusion = _has_no_exclusion_placeholder(text)
+    note = _admission_funnel_note(out_dir)
     if (
         "admission-bucket note:" in text.lower()
+        and "receipt-funnel interpretation:" in text.lower()
         and not replace_table
         and not wants_additive_flow
         and not has_placeholder_exclusion
@@ -898,6 +900,14 @@ def _phase_d_admission_funnel_clarification(
         flags=re.M | re.I,
     )
     if not heading:
+        patched, changed = _prepend_section_paragraph(text, "Methods", note)
+        if changed:
+            return patched, [FinalizerLogEntry(
+                phase="D_admission_funnel_clarification",
+                rule="state_receipt_funnel_arithmetic",
+                n_changes=1,
+                detail="added receipt-funnel arithmetic note from manifest",
+            )]
         return text, []
     section_end = re.search(r"^#{2,4}\s+", text[heading.end():], flags=re.M)
     section_end_pos = heading.end() + section_end.start() if section_end else len(text)
@@ -905,7 +915,7 @@ def _phase_d_admission_funnel_clarification(
         body = text[heading.end():section_end_pos]
         if "|" not in body:
             return text, []
-        patched = text[:heading.end()].rstrip() + "\n\n" + _ADMISSION_FUNNEL_NOTE + "\n\n" + text[section_end_pos:].lstrip()
+        patched = text[:heading.end()].rstrip() + "\n\n" + note + "\n\n" + text[section_end_pos:].lstrip()
         patched, n_exclusions = _replace_no_exclusion_placeholder(patched)
         return patched, [FinalizerLogEntry(
             phase="D_admission_funnel_clarification",
@@ -939,7 +949,7 @@ def _phase_d_admission_funnel_clarification(
             n_changes=n_exclusions,
             detail="replaced misleading no-exclusion placeholder with non-additive admission accounting",
         )]
-    patched = text[:insert_at].rstrip() + "\n\n" + _ADMISSION_FUNNEL_NOTE + "\n" + text[insert_at:]
+    patched = text[:insert_at].rstrip() + "\n\n" + note + "\n" + text[insert_at:]
     patched, n_exclusions = _replace_no_exclusion_placeholder(patched)
     return patched, [FinalizerLogEntry(
         phase="D_admission_funnel_clarification",
@@ -952,12 +962,15 @@ def _phase_d_admission_funnel_clarification(
 def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
     lower = _normalised_feedback(feedback)
     return (
-        any(token in lower for token in ("admission funnel", "admissions funnel", "source admission", "receipt admission"))
+        any(token in lower for token in (
+            "admission funnel", "admissions funnel", "source admission",
+            "receipt admission", "receipt funnel",
+        ))
         and any(token in lower for token in (
             "numerical inconsistency", "numeric inconsistency", "contradictory",
             "contradiction", "both equal", "clarify", "reconcile",
             "coherent accounting", "derived", "prisma style", "arithmetic scrutiny",
-            "mutually exclusive", "additive rows", "remove the table",
+            "mutually exclusive", "additive rows", "remove the table", "arithmetic", "why",
         ))
     ) or ("no extractable claims" in lower and "admitted final" in lower) or (
         "partial/none-only" in lower and "partial-only" in lower
@@ -969,6 +982,25 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
         and any(token in lower for token in ("source candidates", "admitted sources"))
         and any(token in lower for token in ("non additive", "non-additive", "overlapping categories", "single transparent exclusion"))
     ) or _revision_asks_additive_screening_flow(feedback)
+
+
+def _admission_funnel_note(out_dir: Path) -> str:
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    funnel = manifest.get("receipt_funnel") if isinstance(manifest, dict) else None
+    counts = funnel.get("counts") if isinstance(funnel, dict) else None
+    if not isinstance(funnel, dict) or not isinstance(counts, dict):
+        return _ADMISSION_FUNNEL_NOTE
+    candidates = funnel.get("classified_receipt_candidates")
+    admitted = counts.get("admitted_receipts") or manifest.get("n_receipts")
+    if not isinstance(candidates, int) or not isinstance(admitted, int):
+        return _ADMISSION_FUNNEL_NOTE
+    return (
+        f"{_ADMISSION_FUNNEL_NOTE} Receipt-funnel interpretation: {admitted} "
+        f"admitted sources came from {candidates} classified receipt candidates "
+        "after deduplication, active-scope filtering, claim-binding confidence, "
+        "and eligibility checks. The other receipt-funnel buckets are overlapping "
+        "diagnostic states, not a simple excluded = candidates - admitted count."
+    )
 
 
 def _revision_asks_additive_screening_flow(feedback: str) -> bool:
@@ -1194,7 +1226,19 @@ def _phase_d_directional_coding_note(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     if not _revision_asks_directional_coding_note(feedback):
         return text, []
+    note = _directional_coding_note(out_dir)
     if "directional coding note:" in text.lower():
+        if "majority-direction note:" not in text.lower():
+            for heading in ("Evidence Landscape", "Evidence Snapshot", "Results", "Key Findings"):
+                match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
+                if match:
+                    patched = text[:match.end()] + "\n\n" + note + text[match.end():]
+                    return patched, [FinalizerLogEntry(
+                        phase="D_directional_coding_note",
+                        rule="add_majority_unclear_direction_note",
+                        n_changes=1,
+                        detail=f"added majority-direction note to {heading}",
+                    )]
         if "contextual claims contain" not in text.lower():
             patched = text.replace(
                 "another outcome remains null or unclear.",
@@ -1216,7 +1260,7 @@ def _phase_d_directional_coding_note(
     for heading in ("Evidence Landscape", "Evidence Snapshot", "Results", "Key Findings"):
         match = re.search(rf"^## {re.escape(heading)}\b", text, flags=re.M)
         if match:
-            patched = text[:match.end()] + "\n\n" + _DIRECTIONAL_CODING_NOTE + text[match.end():]
+            patched = text[:match.end()] + "\n\n" + note + text[match.end():]
             return patched, [FinalizerLogEntry(
                 phase="D_directional_coding_note",
                 rule="define_directional_coding_schema",
@@ -1230,6 +1274,11 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
         "directional coding" in lower
+        or "effect_direction" in lower
+        or (
+            any(token in lower for token in ("re-extract direction", "re extract direction", "cannot determine direction"))
+            and any(token in lower for token in ("majority", "unclear", "direction"))
+        )
         or ("no extracted directional signal" in lower and "clarify" in lower)
         or ("evidence landscape" in lower and "strongest signal" in lower and "directional signal" in lower)
         or ("contextual claim" in lower and "directional signal" in lower)
@@ -1240,6 +1289,28 @@ def _revision_asks_directional_coding_note(feedback: str) -> bool:
             "directional findings" in lower
             and any(token in lower for token in ("source abstract", "source abstracts", "receipt-level", "source-level", "null framing"))
         )
+    )
+
+
+def _directional_coding_note(out_dir: Path) -> str:
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    rows = manifest.get("receipts") if isinstance(manifest, dict) else None
+    receipts = [row for row in rows if isinstance(row, dict)] if isinstance(rows, list) else []
+    if not receipts:
+        return _DIRECTIONAL_CODING_NOTE
+    counts: dict[str, int] = {}
+    for row in receipts:
+        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        counts[direction] = counts.get(direction, 0) + 1
+    unclear = counts.get("unclear", 0)
+    if not unclear:
+        return _DIRECTIONAL_CODING_NOTE
+    return (
+        f"{_DIRECTIONAL_CODING_NOTE} Majority-direction note: {unclear}/{len(receipts)} "
+        "retained sources are coded unclear at the receipt level. Unless the extraction "
+        "records a positive, negative, mixed, or null polarity for the mapped outcome, "
+        "the manuscript states that direction cannot be determined for that source and "
+        "narrows the conclusion instead of treating source count as directional support."
     )
 
 
@@ -2116,7 +2187,10 @@ def _revision_asks_concrete_research_question(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
         "research question" in lower
-        and any(token in lower for token in ("concrete", "answerable", "fix", "framing", "substantive", "self-referential"))
+        and any(token in lower for token in (
+            "clear", "specific", "concrete", "answerable", "directly answerable",
+            "fix", "framing", "substantive", "self-referential",
+        ))
     )
 
 
@@ -2141,16 +2215,16 @@ def _phase_d_research_question_scope(
     if not _revision_asks_concrete_research_question(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    topic = _topic_display_anchor(manifest) if isinstance(manifest, dict) else ""
-    topic = topic or "the target topic"
-    question = (
-        f"For {topic}, what does the retained evidence show about prognostic "
-        "or risk-marker associations, causal or mechanistic evidence, treatment "
-        "or intervention relevance, and the limits that direct, indirect, "
-        "review-level, and mechanistic source designs impose on clinical "
-        "actionability across outcome classes?"
-    )
-    patched, n = _insert_section_before(text, "Research Question", question, ("Methods", "Results"))
+    question = _research_question_from_manifest(manifest if isinstance(manifest, dict) else {})
+    if "## Research Question" in text:
+        patched, n = re.subn(
+            r"(?ms)^## Research Question\s*\n\n.*?(?=^## )",
+            f"## Research Question\n\n{question}\n\n",
+            text,
+            count=1,
+        )
+    else:
+        patched, n = _insert_section_before(text, "Research Question", question, ("Methods", "Results"))
     if not n:
         return text, []
     return patched, [FinalizerLogEntry(
@@ -2159,6 +2233,24 @@ def _phase_d_research_question_scope(
         n_changes=n,
         detail="added reviewer-requested concrete research question",
     )]
+
+
+def _research_question_from_manifest(manifest: dict[str, Any]) -> str:
+    topic = _topic_display_anchor(manifest) or "the target topic"
+    receipts = manifest.get("receipts")
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    buckets = []
+    for row in rows:
+        bucket = _manifest_subdomain_bucket(row)
+        if bucket not in buckets:
+            buckets.append(bucket)
+    bucket_text = ", ".join(buckets[:3]) or "the retained outcome classes"
+    return (
+        f"For {topic}, what do the retained sources show across {bucket_text}, "
+        "and are those outcome-class source-level signals directionally consistent enough for "
+        "clinical actionability once unclear direction coding, adjacent/contextual "
+        "source roles, and directness limits are considered?"
+    )
 
 
 def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) -> list[str]:
@@ -2595,6 +2687,16 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
     )
 
 
+def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
+    lower = feedback.lower()
+    if any(token in lower for token in (
+        "misclassified", "reclassify", "re-examine", "re examine",
+        "off-topic", "off topic", "segregate", "non-pooling", "non pooling",
+    )):
+        return _manifest_subdomain_bucket(row)
+    return _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+
+
 def _phase_d_species_study_design_summary(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
@@ -2704,7 +2806,7 @@ def _phase_d_source_outcome_class_map(
         title = str(row.get("source_title") or "").strip()
         fallback = str(row.get("receipt_id") or "source").strip()
         citation = f"{token}: {title}" if token and title and token not in title else (token or title or fallback)
-        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        outcome = _reviewer_adjusted_outcome(row, feedback)
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
@@ -3054,10 +3156,10 @@ def _phase_d_outcome_label_cleanup(
 def _revision_asks_outcome_label_cleanup(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
-        "dosing and pharmacokinetics" in lower
+        any(token in lower for token in ("dosing and pharmacokinetics", "dosing/pharmacokinetics", "dosing pharmacokinetics"))
         and any(token in lower for token in (
             "re-label", "relabel", "remove", "not contain",
-            "not a dosing", "not dosing", "not pk",
+            "not a dosing", "not dosing", "not pk", "out of",
         ))
     )
 
@@ -3120,7 +3222,7 @@ def _phase_d_source_directness_breakdown(
     full_inventory = any(token in lower for token in ("each", "which included", "which sources", "scope statement"))
     for row in rows if full_inventory else rows[:8]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
-        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        outcome = _reviewer_adjusted_outcome(row, feedback)
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
@@ -3132,7 +3234,11 @@ def _phase_d_source_directness_breakdown(
         "or mechanistic and are used only to bound interpretation. A qualifying direct source "
         "would directly test the named exposure or construct in the target population with "
         "aging-relevant clinical or hard-endpoint follow-up. Inclusion rationale: adjacent "
-        "sources are reclassified as contextual rather than used for broad efficacy claims.\n\n"
+        "sources are reclassified as contextual rather than used for broad efficacy claims. "
+        "Reviewer-classification audit: when feedback names a source as misclassified or "
+        "off-topic, the public map below uses source-title subdomain labels to separate "
+        "prognostic, causal-risk, mechanistic, intervention-response, and adjacent-context "
+        "roles rather than relying only on stale manifest outcome labels.\n\n"
         "### Source Classification Map\n\n"
         + "\n".join(examples)
     )
