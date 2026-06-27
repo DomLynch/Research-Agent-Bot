@@ -115,6 +115,53 @@ def test_low_patch_short_paper_does_not_escalate() -> None:
     assert client.post.call_count == 1
 
 
+def test_review_paper_tolerates_non_list_patches() -> None:
+    client = MagicMock()
+    client.post = AsyncMock(return_value=_mock_chat_response(
+        "google/gemini-3.1-flash-lite:exacto", {"patches": 0},
+    ))
+
+    patches, raw, _model_used, _cost = asyncio.run(
+        final_reviewer.review_paper(
+            "short clean paper",
+            {"receipts": []},
+            {"p1_pass": True, "score_out_of_10": 10},
+            model="google/gemini-3.1-flash-lite:exacto",
+            fallback_model="mistralai/mistral-small-2603",
+            api_key="test-key",
+            client=client,
+        )
+    )
+
+    assert patches == []
+    assert raw["patches_parse_warning"] == "int"
+
+
+def test_low_patch_escalation_tolerates_non_list_patches() -> None:
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": []}),
+        _mock_chat_response("x-ai/grok-4.3", {"patches": 0}),
+    ])
+
+    patches, raw, model_used, _cost = asyncio.run(
+        final_reviewer.review_paper(
+            "word " * 10_001,
+            {"receipts": []},
+            {"p1_pass": True, "score_out_of_10": 10},
+            model="google/gemini-3.1-flash-lite:exacto",
+            fallback_model="mistralai/mistral-small-2603",
+            escalation_model="x-ai/grok-4.3",
+            api_key="test-key",
+            client=client,
+        )
+    )
+
+    assert patches == []
+    assert raw["patches_parse_warning"] == "int"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto→x-ai/grok-4.3"
+
+
 def test_primary_retry_recovers_before_mistral() -> None:
     """A transient primary parse miss should retry the primary before fallback."""
     client = MagicMock()

@@ -501,6 +501,27 @@ def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
     )
 
 
+def _patch_dicts(raw: dict) -> list[dict]:
+    patches = raw.get("patches", [])
+    if isinstance(patches, list):
+        return [p for p in patches if isinstance(p, dict)]
+    if isinstance(patches, dict):
+        return [patches]
+    raw["patches_parse_warning"] = type(patches).__name__
+    return []
+
+
+def _typed_patches(raw: dict) -> list[TypedPatch]:
+    out: list[TypedPatch] = []
+    for idx, patch in enumerate(_patch_dicts(raw), start=1):
+        if str(patch.get("patch_type") or "").lower() == "unfixable":
+            continue
+        normalised = _normalize_patch(patch, idx)
+        if normalised is not None:
+            out.append(normalised)
+    return out
+
+
 def _build_repair_prompt(
     flagged: list[tuple[Any, str]],
     paper_md: str,
@@ -591,14 +612,7 @@ async def repair_flagged_patches(
     finally:
         if own_client:
             await c.aclose()
-    out: list[TypedPatch] = []
-    for idx, p_raw in enumerate(raw.get("patches") or []):
-        if (p_raw.get("patch_type") or "").lower() == "unfixable":
-            continue  # Reviewer admits no safe fix; caller may auto-strip
-        np = _normalize_patch(p_raw, idx)
-        if np is not None:
-            out.append(np)
-    return out
+    return _typed_patches(raw)
 
 
 async def review_paper(
@@ -633,11 +647,7 @@ async def review_paper(
         raw, model_used, cost = await _call_with_fallback(
             system, user, model, fallback_model, api_key, base_url, c,
         )
-        patches: list[TypedPatch] = []
-        for i, p in enumerate(raw.get("patches", []), start=1):
-            norm = _normalize_patch(p, i)
-            if norm is not None:
-                patches.append(norm)
+        patches = _typed_patches(raw)
         escalation_model = (
             escalation_model
             or os.environ.get("FINAL_LAYER_LOW_PATCH_FALLBACK_MODEL", "").strip()
@@ -648,11 +658,7 @@ async def review_paper(
                 esc_raw, in_tok, out_tok = await _call_one(
                     system, user, escalation_model, api_key, base_url, c,
                 )
-                esc_patches: list[TypedPatch] = []
-                for i, p in enumerate(esc_raw.get("patches", []), start=1):
-                    norm = _normalize_patch(p, i)
-                    if norm is not None:
-                        esc_patches.append(norm)
+                esc_patches = _typed_patches(esc_raw)
                 raw = esc_raw
                 patches = esc_patches
                 model_used = f"{model_used}→{escalation_model}"
