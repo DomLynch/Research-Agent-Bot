@@ -1324,7 +1324,7 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
         flags=re.I,
     )
     patched, case_n = re.subn(
-        r"[^.\n]*\bremains a bounded geroscience case:\s*[^.\n]*\.",
+        r"[^.\n]*\bbounded geroscience (?:case|hypothesis|rationale)\b(?::\s*[^.\n]*)?\.",
         bounded_replacement,
         text,
         flags=re.I,
@@ -1487,8 +1487,7 @@ def _phase_d_numeric_significance_correction(
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     if not _revision_asks_numeric_significance_correction(feedback):
         return text, []
-    patched = text
-    n = 0
+    patched, n = _remove_inline_numeric_correction_markup(text)
     for section in ("Abstract", "Conclusion"):
         patched, changed = _repair_non_significant_effect_claims_in_section(patched, section)
         n += changed
@@ -1517,6 +1516,9 @@ def _revision_asks_numeric_significance_correction(feedback: str) -> bool:
             "significant", "non-significant", "factual error", "correct", "audit",
             "verify", "representative statistic", "miscoded", "direction/statistic", "inconsistency",
         ))
+    ) or (
+        "numeric correction" in lower
+        and any(token in lower for token in ("leftover", "editing markup", "remove", "contextualize", "abstract", "research question"))
     )
 
 
@@ -1587,7 +1589,7 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
     p_text = f"p = {p_value.group(1)}"
     scope = " ".join(
         part for part in (
-            _section_body(text, "Abstract"),
+            _section_body(text, "Methods"),
             _section_body(text, "Evidence Landscape"),
             _section_body(text, "Conclusion"),
         ) if part
@@ -1597,7 +1599,7 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
         text = normalized
         scope = " ".join(
             part for part in (
-                _section_body(text, "Abstract"),
+                _section_body(text, "Methods"),
                 _section_body(text, "Evidence Landscape"),
                 _section_body(text, "Conclusion"),
             ) if part
@@ -1606,12 +1608,33 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
         return text, n_existing
     outcome = _numeric_correction_outcome(feedback)
     statement = (
-        f"Numeric correction: {source_label} reported a non-significant mapped comparison"
+        f"Numeric reconciliation note: {source_label} reported a non-significant mapped comparison"
         f" ({p_text}){outcome}; this synthesis treats that mapped comparison, "
         "not every within-source contrast, as non-significant."
     )
-    patched, n = _prepend_section_paragraph(text, "Abstract", statement)
+    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", statement)
     return patched, n + n_existing
+
+
+def _remove_inline_numeric_correction_markup(text: str) -> tuple[str, int]:
+    n_total = 0
+    patched = text
+    for section in ("Abstract", "Research Question"):
+        match = re.search(rf"^## {re.escape(section)}\b(?P<body>.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
+        if not match:
+            continue
+        body, n = re.subn(
+            r"(?:^|\n)\s*Numeric correction:[^\n]*(?:\n|$)",
+            "\n",
+            match.group("body"),
+            flags=re.I,
+        )
+        if not n:
+            continue
+        body = re.sub(r"\n{3,}", "\n\n", body)
+        patched = patched[:match.start("body")] + body + patched[match.end("body"):]
+        n_total += n
+    return patched, n_total
 
 
 def _clarify_mapped_non_significant_comparison(text: str) -> tuple[str, int]:
@@ -1639,7 +1662,11 @@ def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> t
     if not source or not p_value or float(p_value.group(1)) < 0.05:
         return text, 0
     lower = feedback.lower()
-    if not any(token in lower for token in ("positive signal", "direction/statistic", "direction statistic", "null/mixed", "recoded")):
+    if not any(token in lower for token in (
+        "positive signal", "positive coding", "direction/statistic",
+        "direction statistic", "direction coding inconsistency",
+        "unclear/null", "null/mixed", "recoded", "recode",
+    )):
         return text, 0
     labels = (
         f"{source.group(1)} {source.group(2)}".lower(),
@@ -1684,10 +1711,16 @@ def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> t
 
 
 def _numeric_coding_outcome(feedback: str) -> str:
-    match = re.search(r"\b([A-Za-z][A-Za-z /-]{2,60}?)\s+(?:coding|outcome class|outcome-class)\b", feedback)
+    match = (
+        re.search(r"\bpositive\s+([A-Za-z][A-Za-z /-]{2,60}?)\s+coding\b", feedback, flags=re.I)
+        or re.search(r"\b(?:in|as)\s+the\s+([A-Za-z][A-Za-z /-]{2,60}?)\s+outcome class\b", feedback, flags=re.I)
+        or re.search(r"\b([A-Za-z][A-Za-z /-]{2,60}?)\s+(?:coding|outcome class|outcome-class)\b", feedback, flags=re.I)
+    )
     if not match:
         return ""
-    return re.sub(r"\s+", " ", match.group(1)).strip().lower()
+    phrase = re.sub(r"\s+", " ", match.group(1)).strip().lower()
+    phrase = re.sub(r"^(?:the|positive|negative|null|mixed|unclear)\s+", "", phrase).strip()
+    return phrase
 
 
 def _numeric_correction_outcome(feedback: str) -> str:
