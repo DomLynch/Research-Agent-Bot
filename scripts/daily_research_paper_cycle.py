@@ -485,11 +485,12 @@ def reconcile_publication_ledgers(
     ledger_dir = runs_root / LEDGER_DIR
     title_marker_counts = _submitted_title_marker_counts(runs_root)
     decision_records = 0
+    decision_seen: set[str] = set()
     if remote_loader is None:
         latest_decisions, decision_error = _latest_public_decisions_by_title()
         if not decision_error:
             _record_review_decisions(ledger_dir, latest_decisions)
-            remote_seen.update(_public_decision_markers(latest_decisions))
+            decision_seen = _public_decision_markers(latest_decisions)
             decision_records = len(latest_decisions)
     checked = 0
     updated: list[str] = []
@@ -498,7 +499,10 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        if _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts):
+        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts)
+        if not changed and decision_seen:
+            changed = _reconcile_published_ledger(ledger, runs_root, decision_seen, title_marker_counts)
+        if changed:
             _write_json(ledger_path, ledger)
             _record_daily_throughput(ledger_dir, ledger)
             updated.append(ledger_path.name)
@@ -508,6 +512,8 @@ def reconcile_publication_ledgers(
             continue
         checked += 1
         changed = _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts)
+        if not changed and decision_seen:
+            changed = _reconcile_published_ledger(ledger, runs_root, decision_seen, title_marker_counts)
         if int(ledger.get("published") or 0):
             changed = _refresh_submit_day_summary(ledger, runs_root) or changed
         if changed:
