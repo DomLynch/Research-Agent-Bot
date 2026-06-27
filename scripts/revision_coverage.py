@@ -211,7 +211,7 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
             )
         )
     if _asks_source_outcome_class_map(lower):
-        return _source_outcome_class_map_is_stated(paper_md)
+        return _source_outcome_class_map_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
     if _asks_findings_map_source_verdict(lower):
         return _findings_map_source_verdict_is_stated(paper_md)
     if _asks_key_findings_source_verdict(lower):
@@ -246,7 +246,7 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     if _asks_combination_product_signal_boundary(lower):
         return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
-        return _substantive_evidence_synthesis_is_stated(paper_md)
+        return _substantive_evidence_synthesis_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
     if _asks_forward_dated_ai_disclosure_note(lower):
         return _forward_dated_ai_disclosure_note_is_stated(paper_md)
     if _asks_publication_year_note(lower):
@@ -947,11 +947,12 @@ def _asks_numeric_effect_audit(text: str) -> bool:
 
 def _asks_named_numeric_correction(text: str) -> bool:
     return (
-        any(token in text for token in ("correct", "verify"))
+        any(token in text for token in ("correct", "verify", "reconcile", "recode", "recoded", "remove"))
         and any(token in text for token in ("p=", "p =", "p-value", "p value", "confidence interval"))
         and any(token in text for token in (
             "non-significant", "not significant", "significant reduction", "factual error",
             "representative statistic", "miscoded", "direction/statistic", "direction statistic",
+            "positive signal", "null/mixed",
         ))
     )
 
@@ -1838,7 +1839,76 @@ def _named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
         return False
     if p_value and f"p = {p_value.group(1)}" not in scope and f"p={p_value.group(1)}" not in scope:
         return False
-    return any(token in scope for token in ("non-significant", "not significant", "did not reach significance"))
+    return (
+        any(token in scope for token in ("non-significant", "not significant", "did not reach significance"))
+        and not _named_numeric_positive_contradiction(paper_md, ask)
+    )
+
+
+_POSITIVE_NUMERIC_CONTRADICTION_RE = re.compile(
+    r"\b(?:effect_)?direction\s*=\s*positive\b|"
+    r"\bpositive (?:study-level )?signals?\s+(?:in|are|were|cluster|concentrate|represented|summarized)\b|"
+    r"\bpositive signal\s*;",
+    re.I,
+)
+
+
+def _named_numeric_positive_contradiction(paper_md: str, ask: str) -> bool:
+    source = (
+        re.search(r"regarding\s+([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
+        or re.search(r"\b([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
+    )
+    p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", ask, flags=re.I)
+    if not source or not p_value or float(p_value.group(1)) < 0.05:
+        return False
+    labels = {
+        f"{source.group(1)} {source.group(2)}".lower(),
+        f"{source.group(1)} ({source.group(2)})".lower(),
+    }
+    for line in paper_md.splitlines():
+        lower = line.lower()
+        if any(label in lower for label in labels) and _POSITIVE_NUMERIC_CONTRADICTION_RE.search(line):
+            return True
+    for block in re.split(r"(?=^#{2,4}\s+)", paper_md, flags=re.M):
+        lower = block.lower()
+        if any(label in lower for label in labels) and _POSITIVE_NUMERIC_CONTRADICTION_RE.search(block):
+            return True
+    return False
+
+
+def _full_surface_sources_are_visible(paper_md: str, ask: str) -> bool:
+    lower = ask.lower()
+    full_surface = any(
+        token in lower
+        for token in (
+            "full admitted corpus", "all admitted source", "all retained source",
+            "every admitted source", "missing bundle source", "missing source",
+            "must appear in at least one outcome-class packet",
+        )
+    )
+    if not full_surface:
+        return True
+    labels = _author_year_labels(ask)
+    if not labels:
+        return True
+    scope = "\n".join(
+        part for part in (_section(paper_md, "Key Findings"), _section(paper_md, "Results"))
+        if part
+    ).lower()
+    if not scope:
+        return False
+    return all(_label_in_text(label, scope) for label in labels)
+
+
+def _author_year_labels(text: str) -> list[str]:
+    return list(dict.fromkeys(
+        re.findall(r"\b[A-Z][A-Za-z'’.\-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", text)
+    ))
+
+
+def _label_in_text(label: str, text: str) -> bool:
+    lower = label.lower()
+    return lower in text or re.sub(r"\s+((?:19|20)\d{2}[a-z]?)\b", r" (\1)", lower) in text
 
 
 def _grammar_artifacts_are_absent(paper_md: str) -> bool:

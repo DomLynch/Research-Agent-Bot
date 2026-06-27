@@ -1477,6 +1477,8 @@ def _phase_d_numeric_significance_correction(
         n += changed
     patched, changed = _ensure_named_numeric_correction_statement(patched, feedback)
     n += changed
+    patched, changed = _repair_named_non_significant_positive_labels(patched, feedback)
+    n += changed
     if _revision_asks_numeric_effect_audit(feedback):
         patched, changed = _ensure_numeric_effect_audit_statement(patched)
         n += changed
@@ -1581,6 +1583,52 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
         f" ({p_text}){outcome}; this synthesis treats that finding as non-significant."
     )
     return _prepend_section_paragraph(text, "Abstract", statement)
+
+
+def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> tuple[str, int]:
+    source = (
+        re.search(r"regarding\s+([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
+        or re.search(r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
+    )
+    p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
+    if not source or not p_value or float(p_value.group(1)) < 0.05:
+        return text, 0
+    lower = feedback.lower()
+    if not any(token in lower for token in ("positive signal", "direction/statistic", "direction statistic", "null/mixed", "recoded")):
+        return text, 0
+    labels = (
+        f"{source.group(1)} {source.group(2)}".lower(),
+        f"{source.group(1)} ({source.group(2)})".lower(),
+    )
+    outcome = _numeric_coding_outcome(feedback)
+    lines: list[str] = []
+    n = 0
+    for line in text.splitlines(keepends=True):
+        changed = line
+        line_lower = line.lower()
+        if any(label in line_lower for label in labels):
+            changed = re.sub(r"\bdirection=positive\b", "direction=null", changed, flags=re.I)
+            changed = re.sub(r"\beffect_direction=positive\b", "effect_direction=null", changed, flags=re.I)
+        if outcome and f"{outcome} outcome class" in line_lower and "positive" in line_lower:
+            changed = re.sub(
+                r"\bPositive study-level signals\b",
+                "Non-significant or mixed study-level signals",
+                changed,
+                flags=re.I,
+            )
+            changed = re.sub(r"\bpositive signals\b", "non-significant or mixed signals", changed, flags=re.I)
+            changed = re.sub(r"\bpositive signal\b", "non-significant or mixed signal", changed, flags=re.I)
+        if changed != line:
+            n += 1
+        lines.append(changed)
+    return "".join(lines), n
+
+
+def _numeric_coding_outcome(feedback: str) -> str:
+    match = re.search(r"\b([A-Za-z][A-Za-z /-]{2,60}?)\s+(?:coding|outcome class|outcome-class)\b", feedback)
+    if not match:
+        return ""
+    return re.sub(r"\s+", " ", match.group(1)).strip().lower()
 
 
 def _numeric_correction_outcome(feedback: str) -> str:
@@ -1756,15 +1804,18 @@ def _phase_d_substantive_evidence_synthesis(
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
-    examples = _manifest_signal_examples(rows)
+    full_source_surface = _revision_asks_full_source_surface(feedback)
+    examples = _manifest_signal_examples(rows, limit=len(rows) if full_source_surface else 12)
     if not examples:
         return text, []
-    key_finding_lines = _manifest_key_finding_lines(rows)
-    result_sentence = "\n".join(f"- {line}" for line in key_finding_lines[:5])
+    key_finding_lines = _manifest_key_finding_lines(rows, limit=len(rows) if full_source_surface else 8)
+    result_limit = len(key_finding_lines) if full_source_surface else 5
+    result_sentence = "\n".join(f"- {line}" for line in key_finding_lines[:result_limit])
     if result_sentence:
         result_sentence += "\n\n"
-    outcome_lines = _manifest_outcome_summary_lines(rows)
-    outcome_sentence = "\n".join(f"- {line}" for line in outcome_lines[:8])
+    outcome_lines = _manifest_outcome_summary_lines(rows, per_outcome_limit=None if full_source_surface else 3)
+    outcome_limit = len(outcome_lines) if full_source_surface else 8
+    outcome_sentence = "\n".join(f"- {line}" for line in outcome_lines[:outcome_limit])
     if outcome_sentence:
         outcome_sentence = "Source-level findings by outcome class:\n\n" + outcome_sentence + "\n\n"
     counts: dict[str, int] = {}
@@ -1779,7 +1830,7 @@ def _phase_d_substantive_evidence_synthesis(
         "Receipt-level direction is not a statement that the source abstracts lack "
         "directional statistics; source-level signals are reported separately. "
         "Representative source-level signals are: "
-        + "; ".join(examples[:8])
+        + "; ".join(examples if full_source_surface else examples[:8])
         + ". These signals inform the bounded conclusion by separating effect "
         "direction from evidence tier/directness; indirect, review-level, "
         "mechanistic, or contextual evidence remains hypothesis-generating."
@@ -1849,6 +1900,18 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
     )
 
 
+def _revision_asks_full_source_surface(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return any(
+        token in lower
+        for token in (
+            "full admitted corpus", "all admitted source", "all retained source",
+            "every admitted source", "missing bundle source", "missing source",
+            "must appear in at least one outcome-class packet",
+        )
+    )
+
+
 def _revision_asks_concrete_research_question(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
@@ -1898,7 +1961,7 @@ def _phase_d_research_question_scope(
     )]
 
 
-def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
+def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) -> list[str]:
     def score(row: dict[str, Any]) -> tuple[int, int]:
         direction = str(row.get("effect_direction") or "").lower()
         priority = 0 if direction in {"positive", "negative", "mixed", "unclear"} else 1
@@ -1909,7 +1972,7 @@ def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
         return priority, -claims
 
     examples = []
-    for row in sorted(rows, key=score)[:12]:
+    for row in sorted(rows, key=score)[:limit]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         title = str(row.get("source_title") or "").strip()
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
@@ -1928,12 +1991,10 @@ def _manifest_signal_examples(rows: list[dict[str, Any]]) -> list[str]:
     return examples
 
 
-def _manifest_key_finding_lines(rows: list[dict[str, Any]]) -> list[str]:
+def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -> list[str]:
     lines = []
     for row in sorted(rows, key=_manifest_key_finding_score):
         title = str(row.get("source_title") or "").strip()
-        if not title:
-            continue
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
@@ -1943,7 +2004,7 @@ def _manifest_key_finding_lines(rows: list[dict[str, Any]]) -> list[str]:
             f"{citation}: {_source_result_label(title)}; {_manifest_row_finding(row)}; "
             f"outcome={outcome}; direction={direction}; directness={directness}; tier={tier}."
         )
-        if len(lines) >= 8:
+        if len(lines) >= limit:
             break
     return lines
 
@@ -1961,14 +2022,16 @@ def _manifest_key_finding_score(row: dict[str, Any]) -> tuple[int, int, int]:
     return (0 if title and has_stat else 1 if title else 2, direct_bonus, -claims)
 
 
-def _manifest_outcome_summary_lines(rows: list[dict[str, Any]]) -> list[str]:
+def _manifest_outcome_summary_lines(rows: list[dict[str, Any]], *, per_outcome_limit: int | None = 3) -> list[str]:
     grouped: dict[str, list[dict[str, Any]]] = {}
     for row in rows:
         outcome = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
         grouped.setdefault(outcome, []).append(row)
     lines: list[str] = []
     for slug, matching in sorted(grouped.items(), key=lambda item: _outcome_display(item[0])):
-        selected = sorted(matching, key=_manifest_key_finding_score)[:3]
+        selected = sorted(matching, key=_manifest_key_finding_score)
+        if per_outcome_limit is not None:
+            selected = selected[:per_outcome_limit]
         examples = "; ".join(_manifest_source_finding_line(row) for row in selected)
         lines.append(f"{_outcome_display(slug)}: {examples}.")
     return lines
