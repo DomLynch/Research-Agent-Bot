@@ -2313,3 +2313,33 @@ def test_latest_telomere_post_submit_feedback_requires_strict_markers() -> None:
 
     assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
     assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_scope_framing_and_direction_tally_audit_are_structural_asks() -> None:
+    feedback = (
+        "Resolve the scope framing. Either retitle and reframe the evidence map as "
+        "'Clinical applications across heterogeneous indications' and drop the anti-aging "
+        "framing, or restrict the map to aging-relevant evidence; Make the directional "
+        "tallies auditable. Provide, in the supplement or inline, the per-source "
+        "direction/directness/tier table so counts in the prose can be verified against "
+        "the retained sources."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = "## Research Question\n\nWhat does this evidence map show?\n\n## Key Findings\n\n"
+    repaired = (
+        "## Research Question\n\n"
+        "Scope-framing note: This evidence map frames the target intervention as clinical "
+        "applications across heterogeneous indications rather than as standalone anti-aging "
+        "or longevity proof. Aging-relevant interpretation is restricted to source rows whose "
+        "metadata directly support it.\n\n"
+        "## Key Findings\n\n"
+        "Per-source direction/directness/tier audit table:\n\n"
+        "| Source | Outcome class | Direction | Directness | Tier |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| Boada 2020 | Contextual Adjacent Evidence | direction=mixed | directness=direct | tier=A1 |\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == ["Resolve", "Make"]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []

@@ -115,6 +115,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
+        lambda t: _phase_d_scope_framing_note(t, out_dir),
         lambda t: _phase_d_research_question_scope(t, out_dir),
         lambda t: _phase_d_substantive_evidence_synthesis(t, out_dir),
         lambda t: _phase_d_rct_count_reconciliation(t, out_dir),
@@ -2091,6 +2092,13 @@ def _phase_d_substantive_evidence_synthesis(
     direction_visibility = _manifest_direction_visibility_note(rows, feedback)
     if direction_visibility:
         direction_visibility += "\n\n"
+    direction_audit = (
+        _manifest_direction_audit_table(rows)
+        if revision_coverage.asks_direction_tally_audit(feedback)
+        else ""
+    )
+    if direction_audit:
+        direction_audit += "\n\n"
     subdomain_lines = _manifest_contextual_subdomain_lines(rows) if (
         full_source_surface or "disaggregate" in feedback.lower()
     ) else []
@@ -2124,6 +2132,7 @@ def _phase_d_substantive_evidence_synthesis(
         "Key findings from source synthesis:\n\n"
         f"{direction_visibility}"
         f"{count_reconciliation}"
+        f"{direction_audit}"
         f"{pattern_summary}"
         "Outcome-class key findings:\n\n"
         f"{result_sentence}"
@@ -2225,6 +2234,7 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             "disaggregate" in lower
             and any(token in lower for token in ("contextual adjacent", "heterogeneous", "sub-domain", "subdomain"))
         )
+        or revision_coverage.asks_direction_tally_audit(feedback)
     )
 
 
@@ -2251,6 +2261,34 @@ def _revision_asks_concrete_research_question(feedback: str) -> bool:
             "two part", "both halves",
         ))
     )
+
+
+def _phase_d_scope_framing_note(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    if not revision_coverage.asks_scope_framing(feedback):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    topic = _topic_display_anchor(manifest if isinstance(manifest, dict) else {}) or "the target intervention"
+    note = (
+        "Scope-framing note: This evidence map frames "
+        f"{topic} as clinical applications across heterogeneous indications rather "
+        "than as standalone anti-aging or longevity proof. Aging-relevant "
+        "interpretation is restricted to source rows whose endpoint, population, "
+        "and outcome-class metadata directly support it; otherwise the retained "
+        "evidence is contextual and hypothesis-generating."
+    )
+    patched, n = _prepend_or_create_section_paragraph(text, "Research Question", note)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_scope_framing_note",
+        rule="add_reviewer_requested_scope_framing_note",
+        n_changes=n,
+        detail="added scope-framing note for mixed-indication reviewer ask",
+    )]
 
 
 def _insert_section_before(text: str, section: str, body: str, before: tuple[str, ...]) -> tuple[str, int]:
@@ -2532,6 +2570,30 @@ def _manifest_source_finding_line(row: dict[str, Any]) -> str:
         f"{_manifest_row_finding(row)}; direction={direction}; "
         f"directness={directness}; tier={tier})"
     )
+
+
+def _manifest_direction_audit_table(rows: list[dict[str, Any]]) -> str:
+    if not rows:
+        return ""
+    lines = [
+        "Per-source direction/directness/tier audit table:",
+        "",
+        "| Source | Outcome class | Direction | Directness | Tier |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for row in sorted(rows, key=lambda r: (_outcome_display(str(r.get("outcome_class") or "")), _row_citation(r))):
+        lines.append(
+            "| "
+            + " | ".join((
+                _table_cell(_row_citation(row)),
+                _table_cell(_outcome_display(str(row.get("outcome_class") or "contextual_other"))),
+                f"direction={_table_cell(str(row.get('effect_direction') or 'unclear'))}",
+                f"directness={_table_cell(str(row.get('directness') or 'unknown'))}",
+                f"tier={_table_cell(str(row.get('evidence_tier') or 'unknown'))}",
+            ))
+            + " |"
+        )
+    return "\n".join(lines)
 
 
 def _outcome_slice_narrative(

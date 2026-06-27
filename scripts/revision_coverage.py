@@ -32,7 +32,7 @@ def revision_asks(feedback: str) -> list[str]:
     starts = (
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
-        "Enumerate", "Hedge", "In", "Include", "Integrate", "Narrow",
+        "Enumerate", "Hedge", "In", "Include", "Integrate", "Make", "Narrow",
         "Move", "Operationalize", "Populate",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify",
         "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",

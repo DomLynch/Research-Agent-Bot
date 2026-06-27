@@ -2280,6 +2280,68 @@ def test_revision_gate_refresh_recomputes_empty_stale_unmet_list(tmp_path: Path)
     }
 
 
+def test_scope_framing_and_direction_tally_audit_repaired_generically(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    feedback = (
+        "Resolve the scope framing. Either retitle and reframe the evidence map as "
+        "'Clinical applications of therapeutic plasma exchange across heterogeneous indications' "
+        "and drop the anti-aging framing, or restrict the map to aging-relevant evidence; "
+        "Make the directional tallies auditable. Provide, in the supplement or inline, the "
+        "per-source direction/directness/tier table so the counts in the prose can be verified "
+        "against the retained sources."
+    )
+    paper = (
+        "## Abstract\n\nThis anti-aging evidence map is mixed.\n\n"
+        "## Research Question\n\nWhat does this corpus show?\n\n"
+        "## Evidence Landscape\n\nThin summary.\n\n"
+        "## Key Findings\n\n"
+        "## Conclusion\n\nThe conclusion is bounded.\n"
+    )
+    rows = [
+        {
+            "citation_token": "Boada 2020",
+            "source_title": "AMBAR plasma exchange trial",
+            "outcome_class": "contextual_other",
+            "effect_direction": "mixed",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 10,
+        },
+        {
+            "citation_token": "Ipe 2021",
+            "source_title": "Therapeutic plasma exchange response rate",
+            "outcome_class": "immune_inflammation",
+            "effect_direction": "positive",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 8,
+        },
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "therapeutic_plasma_exchange",
+        "n_receipts": 2,
+        "receipts": rows,
+    }), encoding="utf-8")
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == asks
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Scope-framing note:" in fixed
+    assert "heterogeneous indications" in fixed
+    assert "Per-source direction/directness/tier audit table:" in fixed
+    assert "direction=mixed" in fixed
+    assert "directness=direct" in fixed
+    assert "tier=A1" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert {entry.phase for entry in logs} >= {
+        "D_scope_framing_note",
+        "D_substantive_evidence_synthesis",
+    }
+
+
 def test_search_summary_scope_note_repairs_date_operationalization_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
