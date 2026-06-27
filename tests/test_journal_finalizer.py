@@ -1973,8 +1973,8 @@ def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: 
     assert "bounded geroscience hypothesis" not in fixed
     assert "source-directness and outcome-class map" in fixed
     assert "Contextual-adjacent subdomain map" in fixed
-    assert "prognostic and survival-marker evidence" in fixed
-    assert "causal-risk and Mendelian-randomization evidence" in fixed
+    assert "Manifest outcome-class count summary" in fixed
+    assert "Contextual Adjacent Evidence: admitted n=3" in fixed
     assert "Full source-level signals are" in fixed
     assert {entry.phase for entry in logs} >= {
         "D_research_question_scope",
@@ -2139,8 +2139,8 @@ def test_substantive_evidence_synthesis_repairs_meta_only_conclusion(tmp_path: P
     fixed, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
 
     assert "Substantive conclusion for Telomere Cancer Effects" in fixed
-    assert "prognostic and survival-marker evidence" in fixed
-    assert "causal-risk and Mendelian-randomization evidence" in fixed
+    assert "Manifest outcome-class count summary" in fixed
+    assert "Contextual Adjacent Evidence: admitted n=3" in fixed
     assert "not establish standalone clinical actionability" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_substantive_evidence_synthesis"

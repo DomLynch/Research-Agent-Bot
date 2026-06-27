@@ -111,6 +111,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_directional_coding_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_evidence_honesty_guard(t, out_dir),
+        lambda t: _phase_d_evidence_honesty_deduplicate(t, out_dir),
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
         lambda t: _phase_d_section_source_grounding(t, out_dir),
@@ -1422,6 +1423,36 @@ def _phase_d_evidence_honesty_guard(
     )]
 
 
+def _phase_d_evidence_honesty_deduplicate(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    lower = " ".join(feedback.lower().split())
+    if "evidence-honesty" not in lower or not any(token in lower for token in ("repetition", "repetitive", "redundant", "reduce")):
+        return text, []
+    seen = False
+    removed = 0
+    out: list[str] = []
+    for para in re.split(r"(\n\s*\n)", text):
+        if "evidence-honesty note:" not in para.lower():
+            out.append(para)
+            continue
+        if not seen:
+            seen = True
+            out.append(para)
+            continue
+        removed += 1
+    if not removed:
+        return text, []
+    return "".join(out), [FinalizerLogEntry(
+        phase="D_evidence_honesty_deduplicate",
+        rule="remove_repeated_evidence_honesty_notes",
+        n_changes=removed,
+        detail=f"removed {removed} repeated evidence-honesty note(s) after reviewer repetition ask",
+    )]
+
+
 def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
     replacement = (
         "The current corpus is non-supportive for clinical efficacy or general "
@@ -2053,6 +2084,12 @@ def _phase_d_substantive_evidence_synthesis(
     pattern_summary = _manifest_source_pattern_summary(rows)
     if pattern_summary:
         pattern_summary += "\n\n"
+    count_reconciliation = _manifest_count_reconciliation_note(rows, feedback)
+    if count_reconciliation:
+        count_reconciliation += "\n\n"
+    direction_visibility = _manifest_direction_visibility_note(rows, feedback)
+    if direction_visibility:
+        direction_visibility += "\n\n"
     subdomain_lines = _manifest_contextual_subdomain_lines(rows) if (
         full_source_surface or "disaggregate" in feedback.lower()
     ) else []
@@ -2084,7 +2121,10 @@ def _phase_d_substantive_evidence_synthesis(
     )
     key_findings = (
         "Key findings from source synthesis:\n\n"
+        f"{direction_visibility}"
+        f"{count_reconciliation}"
         f"{pattern_summary}"
+        "Outcome-class key findings:\n\n"
         f"{result_sentence}"
         f"{outcome_sentence}"
         f"{subdomain_sentence}"
@@ -2151,6 +2191,11 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             and any(token in lower for token in ("concrete", "bounded", "source", "outcome class"))
             and any(token in lower for token in ("abstract", "finding", "findings", "effect size", "directional"))
         )
+        or (
+            "key findings" in lower
+            and any(token in lower for token in ("outcome-class", "outcome class"))
+            and any(token in lower for token in ("bullet", "source", "sources support"))
+        )
         or ("integrate" in lower and "evidence" in lower)
         or _revision_asks_full_source_surface(feedback)
         or (
@@ -2192,7 +2237,8 @@ def _revision_asks_concrete_research_question(feedback: str) -> bool:
         "research question" in lower
         and any(token in lower for token in (
             "clear", "specific", "concrete", "answerable", "directly answerable",
-            "fix", "framing", "substantive", "self-referential",
+            "fix", "framing", "substantive", "self-referential", "two-part",
+            "two part", "both halves",
         ))
     )
 
@@ -2218,7 +2264,8 @@ def _phase_d_research_question_scope(
     if not _revision_asks_concrete_research_question(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    question = _research_question_from_manifest(manifest if isinstance(manifest, dict) else {})
+    manifest_dict = manifest if isinstance(manifest, dict) else {}
+    question = _research_question_from_feedback(feedback, manifest_dict) or _research_question_from_manifest(manifest_dict)
     if "## Research Question" in text:
         patched, n = re.subn(
             r"(?ms)^## Research Question\s*\n\n.*?(?=^## )",
@@ -2256,6 +2303,37 @@ def _research_question_from_manifest(manifest: dict[str, Any]) -> str:
         "clinical actionability once unclear direction coding, adjacent/contextual "
         "source roles, and directness limits are considered?"
     )
+
+
+def _research_question_from_feedback(feedback: str, manifest: dict[str, Any]) -> str:
+    lower = " ".join(feedback.lower().split())
+    if not any(token in lower for token in ("two-part", "two part", "both halves")):
+        return ""
+    topic = _topic_display_anchor(manifest) or "the target topic"
+    parts = _two_part_claim_fragments(feedback)
+    if len(parts) < 2:
+        parts = [
+            "the first reviewer-named claim",
+            "the second reviewer-named claim",
+        ]
+    return (
+        f"Two-part research question: (1) For {topic}, does the retained evidence address "
+        f"{parts[0].rstrip('?')}? (2) For {topic}, does the retained evidence address "
+        f"{parts[1].rstrip('?')}? The synthesis answers both halves using admitted "
+        "source counts, manifest outcome-class slices, receipt-level direction coding, "
+        "evidence tier, and directness limits."
+    )
+
+
+def _two_part_claim_fragments(feedback: str) -> list[str]:
+    match = re.search(r"\(([^()]+;[^()]+)\)", feedback)
+    scope = match.group(1) if match else feedback
+    pieces = re.split(r"\s*;\s+|,\s+and\s+|\s+and\s+", scope)
+    return [
+        re.sub(r"^(?:causal-risk direction of|prognostic value of)\s+", "", piece.strip(" .;:"))
+        for piece in pieces
+        if piece.strip(" .;:")
+    ][:2]
 
 
 def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) -> list[str]:
@@ -2323,7 +2401,8 @@ def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
 def _manifest_source_pattern_summary(rows: list[dict[str, Any]]) -> str:
     buckets: dict[str, list[dict[str, Any]]] = {}
     for row in rows:
-        buckets.setdefault(_manifest_subdomain_bucket(row), []).append(row)
+        outcome = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
+        buckets.setdefault(outcome, []).append(row)
     parts: list[str] = []
     for bucket, matching in sorted(buckets.items(), key=lambda item: (-len(item[1]), item[0])):
         counts: dict[str, int] = {}
@@ -2332,23 +2411,59 @@ def _manifest_source_pattern_summary(rows: list[dict[str, Any]]) -> str:
             counts[direction] = counts.get(direction, 0) + 1
         examples = ", ".join(_row_citation(row) for row in sorted(matching, key=_manifest_key_finding_score)[:3])
         direction_text = ", ".join(f"{key}={counts[key]}" for key in sorted(counts))
-        parts.append(f"{bucket}: n={len(matching)} ({direction_text}); leading sources: {examples}")
+        parts.append(f"{_outcome_display(bucket)}: admitted n={len(matching)} ({direction_text}); leading sources: {examples}")
         if len(parts) >= 5:
             break
-    return "Substantive source-pattern summary: " + "; ".join(parts) + "." if parts else ""
+    return "Manifest outcome-class count summary: " + "; ".join(parts) + "." if parts else ""
 
 
 def _manifest_conclusion_summary(rows: list[dict[str, Any]]) -> str:
     buckets: dict[str, int] = {}
     directions: dict[str, int] = {}
     for row in rows:
-        buckets[_manifest_subdomain_bucket(row)] = buckets.get(_manifest_subdomain_bucket(row), 0) + 1
+        outcome = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
+        buckets[_outcome_display(outcome)] = buckets.get(_outcome_display(outcome), 0) + 1
         direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
         directions[direction] = directions.get(direction, 0) + 1
-    bucket_text = ", ".join(f"{key} n={value}" for key, value in sorted(buckets.items(), key=lambda item: (-item[1], item[0]))[:4])
+    bucket_text = ", ".join(f"{key} admitted n={value}" for key, value in sorted(buckets.items(), key=lambda item: (-item[1], item[0]))[:4])
     direction_text = ", ".join(f"{key}={directions[key]}" for key in sorted(directions))
     examples = ", ".join(_row_citation(row) for row in sorted(rows, key=_manifest_key_finding_score)[:3])
     return f"{len(rows)} sources across {bucket_text}; receipt-level directions {direction_text}; leading source labels {examples}"
+
+
+def _manifest_count_reconciliation_note(rows: list[dict[str, Any]], feedback: str) -> str:
+    lower = " ".join(feedback.lower().split())
+    if not (
+        any(token in lower for token in ("corpus-size", "corpus size", "overcount", "overcounts", "funnel counts"))
+        or ("classified" in lower and "admitted" in lower and "source" in lower)
+    ):
+        return ""
+    classified = len(rows)
+    return (
+        "Corpus-count reconciliation: count-bearing slices in this manuscript use "
+        f"manifest outcome classes from the {classified} admitted sources. Source-title "
+        "subdomain labels, when used, are qualitative interpretation aids rather than "
+        "separate admitted-source counts; classified source candidates and admitted "
+        "source counts are not interchangeable."
+    )
+
+
+def _manifest_direction_visibility_note(rows: list[dict[str, Any]], feedback: str) -> str:
+    lower = " ".join(feedback.lower().split())
+    unclear = sum(1 for row in rows if str(row.get("effect_direction") or "").strip().lower() == "unclear")
+    if not unclear:
+        return ""
+    if not (
+        "unclear" in lower
+        and any(token in lower for token in ("direction-coding", "direction coding", "directional coding", "visible", "readers know"))
+    ):
+        return ""
+    return (
+        f"Direction-coding visibility note: {unclear}/{len(rows)} admitted sources are coded "
+        "unclear at receipt level, so significant statistics without extracted polarity are "
+        "not treated as positive or negative efficacy signals unless the manifest records "
+        "that direction explicitly."
+    )
 
 
 def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -> list[str]:

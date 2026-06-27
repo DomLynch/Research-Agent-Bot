@@ -33,11 +33,11 @@ def revision_asks(feedback: str) -> list[str]:
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
         "Enumerate", "Hedge", "In", "Include", "Integrate", "Narrow",
-        "Operationalize", "Populate",
+        "Move", "Operationalize", "Populate",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify",
-        "Reconcile", "Regenerate", "Remove", "Repair", "Resolve", "Replace",
-        "Rewrite", "Separate", "Soften", "Strengthen", "Tighten", "Update",
-        "Verify",
+        "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",
+        "Replace", "Restate", "Rewrite", "Separate", "Soften", "Strengthen",
+        "Tighten", "Update", "Verify",
     )
     pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
     asks = [_with_terminal_punctuation(a.strip()) for a in re.split(pattern, feedback) if a.strip()]
@@ -150,6 +150,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_source_verification_transparency,
             _asks_source_identifier_gap_note,
             _asks_section_source_grounding,
+            _asks_outcome_class_key_findings,
+            _asks_two_part_research_question,
             _asks_concrete_research_question,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
@@ -171,6 +173,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_directional_coding,
             _asks_directional_table_narrative_consistency,
             _asks_contextual_without_directional_signal,
+            _asks_direction_coding_visibility,
             _asks_actionable_gaps,
             _asks_null_signal_reconciliation,
             _asks_subgroup_lens_narrative,
@@ -184,6 +187,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_outcome_label_cleanup,
             _asks_substantive_conclusion,
             _asks_source_count_bundle_reconciliation,
+            _asks_corpus_count_reconciliation,
+            _asks_evidence_honesty_repetition,
             _asks_named_direct_clinical_source,
             _asks_outcome_subsection_source_narrative,
             _asks_protocol_design_limitations,
@@ -251,6 +256,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_identifier_gap_note_is_stated(paper_md)
     if _asks_section_source_grounding(lower):
         return _section_source_grounding_is_stated(paper_md)
+    if _asks_outcome_class_key_findings(lower):
+        return _outcome_class_key_findings_are_stated(paper_md)
+    if _asks_two_part_research_question(lower):
+        return _two_part_research_question_is_stated(paper_md)
     if _asks_concrete_research_question(lower):
         return _concrete_research_question_is_stated(paper_md)
     if _asks_combination_product_signal_boundary(lower):
@@ -297,6 +306,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _directional_table_narrative_is_consistent(paper_md)
     if _asks_contextual_without_directional_signal(lower):
         return _contextual_without_directional_signal_is_explained(paper_md)
+    if _asks_direction_coding_visibility(lower):
+        return _direction_coding_visibility_is_stated(paper_md)
     if _asks_actionable_gaps(lower):
         return _gaps_section_is_actionable(paper_md)
     if _asks_null_signal_reconciliation(lower):
@@ -323,6 +334,10 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _substantive_conclusion_is_stated(paper_md)
     if _asks_source_count_bundle_reconciliation(lower):
         return _source_count_bundle_reconciliation_is_stated(paper_md)
+    if _asks_corpus_count_reconciliation(lower):
+        return _corpus_count_reconciliation_is_stated(paper_md)
+    if _asks_evidence_honesty_repetition(lower):
+        return _evidence_honesty_repetition_is_low(paper_md)
     if _asks_named_direct_clinical_source(lower):
         return _named_direct_clinical_source_is_stated(paper_md)
     if _asks_outcome_subsection_source_narrative(lower):
@@ -598,6 +613,21 @@ def _asks_section_source_grounding(text: str) -> bool:
     )
 
 
+def _asks_outcome_class_key_findings(text: str) -> bool:
+    return (
+        "key findings" in text
+        and any(token in text for token in ("outcome-class", "outcome class", "outcome-class slices"))
+        and any(token in text for token in ("bullet", "source", "sources support", "concrete"))
+    )
+
+
+def _asks_two_part_research_question(text: str) -> bool:
+    return (
+        "research question" in text
+        and any(token in text for token in ("two-part", "two part", "both halves", "both claims"))
+    )
+
+
 def _asks_concrete_research_question(text: str) -> bool:
     return (
         "research question" in text
@@ -813,6 +843,14 @@ def _asks_directional_coding(text: str) -> bool:
     ) or (
         "directional findings" in text
         and any(token in text for token in ("source abstract", "source abstracts", "receipt-level", "source-level", "null framing"))
+    )
+
+
+def _asks_direction_coding_visibility(text: str) -> bool:
+    return (
+        any(token in text for token in ("direction-coding", "direction coding", "directional coding"))
+        and "unclear" in text
+        and any(token in text for token in ("visible", "move", "prominent", "readers know", "narrative"))
     )
 
 
@@ -1383,6 +1421,24 @@ def _directional_coding_explanation_is_material(paper_md: str) -> bool:
     return directional and null_scope and (cross_context or proportion_scope)
 
 
+def _direction_coding_visibility_is_stated(paper_md: str) -> bool:
+    scope = " ".join(
+        part
+        for part in (
+            _abstract(paper_md),
+            _section(paper_md, "Key Findings"),
+            _section(paper_md, "Evidence Landscape"),
+            _section(paper_md, "Results"),
+        )
+        if part
+    ).lower()
+    return bool(
+        "direction-coding visibility note:" in scope
+        and "unclear" in scope
+        and re.search(r"\b\d+\s*/\s*\d+\b", scope)
+    )
+
+
 def _directional_table_narrative_is_consistent(paper_md: str) -> bool:
     table_scope = " ".join(
         part for part in (_section(paper_md, "Evidence Snapshot"), _section(paper_md, "Evidence Landscape")) if part
@@ -1469,6 +1525,28 @@ def _concrete_research_question_is_stated(paper_md: str) -> bool:
         and ("outcome class" in question or "outcome-class" in question)
         and any(token in question for token in ("direct", "indirect", "mechanistic", "review"))
         and any(token in question for token in ("hypothesis-generating", "clinically actionable", "clinical"))
+    )
+
+
+def _two_part_research_question_is_stated(paper_md: str) -> bool:
+    question = _section(paper_md, "Research Question").lower()
+    return bool(
+        "two-part research question:" in question
+        and ("(1)" in question or "first" in question)
+        and ("(2)" in question or "second" in question)
+        and question.count("?") >= 2
+    )
+
+
+def _outcome_class_key_findings_are_stated(paper_md: str) -> bool:
+    findings = _section(paper_md, "Key Findings")
+    lower = findings.lower()
+    return bool(
+        "outcome-class key findings:" in lower
+        and "admitted n=" in lower
+        and "direction" in lower
+        and "directness" in lower
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", findings)
     )
 
 
@@ -1885,6 +1963,36 @@ def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:
         counts
         and any(token in text for token in ("author-year", "references", "doi", "pmid", "bundle counterpart", "traceable"))
     )
+
+
+def _asks_corpus_count_reconciliation(text: str) -> bool:
+    return (
+        any(token in text for token in ("corpus-size", "corpus size", "overcount", "overcounts", "funnel counts"))
+        and any(token in text for token in ("reconcile", "correct", "classified", "admitted", "source bundle"))
+    )
+
+
+def _corpus_count_reconciliation_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    if re.search(r"\b(?:prognostic|causal-risk|mendelian|intervention-response|molecular-context)[^.\n]{0,120}\bn\s*=\s*\d+", text):
+        return False
+    return (
+        "corpus-count reconciliation:" in text
+        and "classified" in text
+        and "admitted" in text
+        and any(token in text for token in ("manifest outcome class", "outcome-class", "count-bearing"))
+    )
+
+
+def _asks_evidence_honesty_repetition(text: str) -> bool:
+    return (
+        "evidence-honesty" in text
+        and any(token in text for token in ("repetition", "repetitive", "redundant", "reduce"))
+    )
+
+
+def _evidence_honesty_repetition_is_low(paper_md: str) -> bool:
+    return paper_md.lower().count("evidence-honesty note:") <= 1
 
 
 def _citation_traceability_map_is_stated(paper_md: str) -> bool:

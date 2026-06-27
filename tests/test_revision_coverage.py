@@ -2245,3 +2245,71 @@ def test_deterministic_unmet_accepts_thin_brief_revision_surface_notes() -> None
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert revision_coverage.deterministic_unmet_asks(weak, asks) == asks
     assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_post_submit_feedback_splits_into_material_asks() -> None:
+    feedback = (
+        "Populate the Key Findings section with a concrete bullet list tied to the explicit "
+        "outcome-class slices, naming which sources support each bullet; Restate the research "
+        "question to match the two-part claim in the abstract (prognostic value of shorter LTL "
+        "for survival; causal-risk direction of genetically predicted longer LTL) and explicitly "
+        "answer both halves in the body; Reconcile the corpus-size claims (e.g., 'n=7 causal-risk/MR', "
+        "'25 sources', 'n=17 contextual') with the actual supplied bundle and the funnel counts; "
+        "correct any overcounts or label them as 'classified' vs 'admitted' consistently; Move "
+        "direction-coding 'unclear' status to a more visible position in the narrative so readers "
+        "know that the bulk of significant statistics in this corpus are polarity-unsigned at extraction; "
+        "Reduce redundant repetition of the evidence-honesty note across Abstract, Research Question, "
+        "and Conclusion."
+    )
+
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert len(asks) == 5
+    assert [ask.split(" ", 1)[0] for ask in asks] == ["Populate", "Restate", "Reconcile", "Move", "Reduce"]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+
+
+def test_latest_telomere_post_submit_feedback_requires_strict_markers() -> None:
+    asks = revision_coverage.revision_asks(
+        "Populate the Key Findings section with a concrete bullet list tied to the explicit "
+        "outcome-class slices, naming which sources support each bullet; Restate the research "
+        "question to match the two-part claim in the abstract (prognostic value of shorter LTL "
+        "for survival; causal-risk direction of genetically predicted longer LTL) and explicitly "
+        "answer both halves in the body; Reconcile the corpus-size claims with the actual supplied "
+        "bundle and the funnel counts; Move direction-coding 'unclear' status to a more visible "
+        "position in the narrative; Reduce redundant repetition of the evidence-honesty note."
+    )
+    weak = (
+        "## Research Question\n\n"
+        "For Telomere Cancer Effects, what does retained evidence show about prognostic or "
+        "risk-marker associations across outcome classes?\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis: Sasmita 2025: outcome=Contextual Adjacent Evidence; "
+        "direction=unclear; directness=review.\n\n"
+        "## Conclusion\n\n"
+        "Substantive conclusion: the retained source set shows causal-risk and Mendelian-randomization "
+        "evidence n=7. Evidence-honesty note: bounded.\n\n"
+        "## Abstract\n\nEvidence-honesty note: bounded.\n"
+    )
+    repaired = (
+        "## Abstract\n\nEvidence-honesty note: bounded.\n\n"
+        "## Research Question\n\n"
+        "Two-part research question: (1) Does the retained evidence address prognostic value of shorter "
+        "LTL for survival? (2) Does the retained evidence address genetically predicted longer LTL and "
+        "cancer risk? The synthesis answers both halves using admitted source counts, manifest "
+        "outcome-class slices, direction coding, tier, and directness limits.\n\n"
+        "## Key Findings\n\n"
+        "Direction-coding visibility note: 17/25 admitted sources are coded unclear at receipt level.\n\n"
+        "Corpus-count reconciliation: count-bearing slices use manifest outcome classes from admitted "
+        "sources; classified source candidates and admitted source counts are not interchangeable.\n\n"
+        "Outcome-class key findings:\n\n"
+        "- Contextual Adjacent Evidence: admitted n=17; direction coding unclear=15/null=2; "
+        "directness review=5/indirect=12; supported by Sasmita 2025 and Markozannes 2022.\n\n"
+        "## Conclusion\n\n"
+        "Substantive conclusion: the retained source set shows 25 sources across Contextual Adjacent "
+        "Evidence admitted n=17 and Mortality Survival admitted n=3; receipt-level directions "
+        "unclear=17, null=5, positive=2, negative=1.\n"
+    )
+
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
