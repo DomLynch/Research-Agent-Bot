@@ -2146,6 +2146,140 @@ def test_substantive_evidence_synthesis_repairs_meta_only_conclusion(tmp_path: P
     assert logs[0].phase == "D_substantive_evidence_synthesis"
 
 
+def test_latest_telomere_post_submit_reviewer_asks_are_repaired_generically(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    feedback = (
+        "Populate the Key Findings section with a concrete bullet list tied to the explicit "
+        "outcome-class slices, naming which sources support each bullet; Restate the research "
+        "question to match the two-part claim in the abstract (prognostic value of shorter LTL "
+        "for survival; causal-risk direction of genetically predicted longer LTL) and explicitly "
+        "answer both halves in the body; Reconcile the corpus-size claims (e.g., 'n=7 causal-risk/MR', "
+        "'25 sources', 'n=17 contextual') with the actual supplied bundle and the funnel counts; "
+        "correct any overcounts or label them as 'classified' vs 'admitted' consistently; Move "
+        "direction-coding 'unclear' status to a more visible position in the narrative so readers "
+        "know that the bulk of significant statistics in this corpus are polarity-unsigned at extraction; "
+        "Reduce redundant repetition of the evidence-honesty note across Abstract, Research Question, "
+        "and Conclusion."
+    )
+    paper = (
+        "## Abstract\n\nEvidence-honesty note: bounded.\n\n"
+        "## Research Question\n\nEvidence-honesty note: bounded. What does this corpus show?\n\n"
+        "## Evidence Landscape\n\nThin summary.\n\n"
+        "## Key Findings\n\nThin summary.\n\n"
+        "## Conclusion\n\n"
+        "Evidence-honesty note: bounded. Substantive conclusion: the retained source set shows "
+        "causal-risk and Mendelian-randomization evidence n=7.\n"
+    )
+    rows = [
+        {
+            "citation_token": "Sasmita 2025",
+            "source_title": "Shorter telomere length as a prognostic marker for survival and recurrence in breast cancer",
+            "outcome_class": "mortality_survival",
+            "effect_direction": "unclear",
+            "directness": "review",
+            "evidence_tier": "B2",
+            "n_claims": 113,
+        },
+        {
+            "citation_token": "Markozannes 2022",
+            "source_title": "Systematic review of Mendelian randomization studies on risk of cancer",
+            "outcome_class": "contextual_other",
+            "effect_direction": "null",
+            "directness": "review",
+            "evidence_tier": "B2",
+            "n_claims": 61,
+        },
+        {
+            "citation_token": "Jaeger 2024",
+            "source_title": "A nutritional supplement lengthens telomeres in a randomized population",
+            "outcome_class": "contextual_other",
+            "effect_direction": "positive",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 90,
+        },
+    ]
+    rows.extend(
+        {
+            "citation_token": f"Context {i} 2026",
+            "source_title": "Cancer telomere contextual evidence",
+            "outcome_class": "contextual_other",
+            "effect_direction": "unclear" if i <= 16 else "null",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 1,
+        }
+        for i in range(1, 23)
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "telomere_cancer_effects",
+        "n_receipts": 25,
+        "receipt_funnel": {"classified_receipt_candidates": 73, "counts": {"admitted_receipts": 25}},
+        "receipts": rows,
+    }), encoding="utf-8")
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert len(asks) == 5
+    assert set(revision_coverage.deterministic_unmet_asks(paper, asks)) == set(asks)
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Outcome-class key findings:" in fixed
+    assert "Two-part research question:" in fixed
+    assert "Corpus-count reconciliation:" in fixed
+    assert "Direction-coding visibility note: 17/25" in fixed
+    assert fixed.count("Evidence-honesty note:") == 1
+    assert "causal-risk and Mendelian-randomization evidence n=7" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert {entry.phase for entry in logs} >= {
+        "D_evidence_honesty_deduplicate",
+        "D_research_question_scope",
+        "D_substantive_evidence_synthesis",
+    }
+
+
+def test_revision_gate_refresh_recomputes_empty_stale_unmet_list(tmp_path: Path) -> None:
+    feedback = (
+        "Populate the Key Findings section with a concrete bullet list tied to the explicit "
+        "outcome-class slices, naming which sources support each bullet; Restate the research "
+        "question to match the two-part claim in the abstract (prognostic value of shorter LTL "
+        "for survival; causal-risk direction of genetically predicted longer LTL) and explicitly "
+        "answer both halves in the body; Reconcile the corpus-size claims with the actual supplied "
+        "bundle and the funnel counts; Move direction-coding 'unclear' status to a more visible "
+        "position in the narrative; Reduce redundant repetition of the evidence-honesty note."
+    )
+    paper = (
+        "## Abstract\n\nEvidence-honesty note: bounded.\n\n"
+        "## Research Question\n\n"
+        "Two-part research question: (1) Does the retained evidence address shorter LTL for survival? "
+        "(2) Does the retained evidence address genetically predicted longer LTL and cancer risk?\n\n"
+        "## Key Findings\n\n"
+        "Direction-coding visibility note: 17/25 admitted sources are coded unclear at receipt level.\n\n"
+        "Corpus-count reconciliation: count-bearing slices use manifest outcome classes from admitted "
+        "sources; classified source candidates and admitted source counts are not interchangeable.\n\n"
+        "Outcome-class key findings:\n\n"
+        "- Contextual Adjacent Evidence: admitted n=17; direction coding unclear=15/null=2; "
+        "directness review=5/indirect=12; supported by Sasmita 2025 and Markozannes 2022.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps({
+        "passed": True,
+        "ask_count": 7,
+        "unmet_asks": [],
+    }), encoding="utf-8")
+
+    assert journal_finalizer._refresh_revision_coverage_gate(tmp_path) is True
+    refreshed = json.loads((tmp_path / "revision_coverage_gate.json").read_text(encoding="utf-8"))
+    assert refreshed == {
+        "passed": True,
+        "ask_count": 5,
+        "unmet_asks": [],
+        "refreshed_by": "journal_finalizer",
+    }
+
+
 def test_search_summary_scope_note_repairs_date_operationalization_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

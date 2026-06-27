@@ -2071,6 +2071,7 @@ def _phase_d_substantive_evidence_synthesis(
     examples = _manifest_signal_examples(rows, limit=len(rows) if full_source_surface else 12)
     if not examples:
         return text, []
+    text, legacy_n = _remove_legacy_source_pattern_summary(text)
     key_finding_lines = _manifest_key_finding_lines(rows, limit=len(rows) if full_source_surface else 8)
     result_limit = len(key_finding_lines) if full_source_surface else 5
     result_sentence = "\n".join(f"- {line}" for line in key_finding_lines[:result_limit])
@@ -2151,14 +2152,23 @@ def _phase_d_substantive_evidence_synthesis(
         if pattern_summary else ""
     )
     patched, n3 = _prepend_section_paragraph(patched, "Conclusion", conclusion_note) if conclusion_note else (patched, 0)
-    if not (n1 or n2 or n3):
+    if not (n1 or n2 or n3 or legacy_n):
         return text, []
     return patched, [FinalizerLogEntry(
         phase="D_substantive_evidence_synthesis",
         rule="add_manifest_grounded_evidence_landscape_and_key_findings",
-        n_changes=n1 + n2 + n3,
-        detail=f"added manifest-grounded synthesis notes from {len(rows)} receipt(s)",
+        n_changes=n1 + n2 + n3 + legacy_n,
+        detail=f"added manifest-grounded synthesis notes from {len(rows)} receipt(s); removed legacy source-pattern paragraphs={legacy_n}",
     )]
+
+
+def _remove_legacy_source_pattern_summary(text: str) -> tuple[str, int]:
+    return re.subn(
+        r"\n*Substantive source-pattern summary:\s*.*?(?=\n\s*\n|^## |\Z)",
+        "",
+        text,
+        flags=re.S | re.M,
+    )
 
 
 def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
@@ -4579,12 +4589,12 @@ def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
     try:
         text = paper.read_text()
         gate = _load_sidecar(out_dir / "revision_coverage_gate.json")
-        if not isinstance(gate, dict) or gate.get("passed") is True:
+        if not isinstance(gate, dict):
             return False
         stale_unmet = gate.get("unmet_asks") if isinstance(gate, dict) else None
         asks = (
             [str(ask) for ask in stale_unmet if isinstance(ask, str) and ask.strip()]
-            if isinstance(stale_unmet, list)
+            if isinstance(stale_unmet, list) and stale_unmet
             else revision_coverage.revision_asks(feedback)
         )
         if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
