@@ -16,8 +16,8 @@ from agent.types import RawHit
 
 DEFAULT_TIMEOUT_SECONDS = 60.0
 MAX_TIMEOUT_SECONDS = 300.0
-YEAR_MIN = 1900
-YEAR_MAX = 2100
+DEFAULT_MIN_SHARDS_SEARCHED = 1525
+DEFAULT_MIN_SOURCES_SEARCHED = 5
 
 
 def _fullraw_url() -> str:
@@ -40,6 +40,20 @@ def _timeout_seconds() -> float:
     return min(requested, MAX_TIMEOUT_SECONDS)
 
 
+def _int_env(name: str, default: int) -> int:
+    try:
+        return int(os.environ.get(name, "").strip() or default)
+    except ValueError:
+        return default
+
+
+def _truthy_env(name: str, default: bool) -> bool:
+    raw = os.environ.get(name, "").strip().lower()
+    if not raw:
+        return default
+    return raw not in {"0", "false", "no", "off"}
+
+
 def _build_url(doi: str | None, pmid: str | None, url: object) -> str:
     if doi:
         return f"https://doi.org/{doi}"
@@ -53,9 +67,54 @@ def _year(value: object) -> int | None:
 
 
 def _shard_receipt(data: Any) -> dict[str, object]:
+    if not isinstance(data, dict):
+        return {}
+    for key in ("receipt", "shard_receipt"):
+        receipt = data.get(key)
+        if isinstance(receipt, dict):
+            return dict(receipt)
     meta = data.get("meta") if isinstance(data, dict) else None
     receipt = meta.get("shard_receipt") if isinstance(meta, dict) else None
     return dict(receipt) if isinstance(receipt, dict) else {}
+
+
+def _source_count(value: object) -> int:
+    if isinstance(value, dict):
+        return len([key for key in value if str(key).strip()])
+    if isinstance(value, list | tuple | set):
+        return len([item for item in value if str(item).strip()])
+    if isinstance(value, str):
+        return len([part for part in value.split(",") if part.strip()])
+    return 0
+
+
+def _receipt_complete(receipt: dict[str, object]) -> bool:
+    if not _truthy_env("V5_MEMO_FULL_RAW_REQUIRE_COMPLETE_SEARCH", True):
+        return True
+    shards = _int_value(receipt.get("shards_searched"))
+    min_shards = _int_env("V5_MEMO_FULL_RAW_MIN_SHARDS_SEARCHED", DEFAULT_MIN_SHARDS_SEARCHED)
+    min_sources = _int_env("V5_MEMO_FULL_RAW_MIN_SOURCES_SEARCHED", DEFAULT_MIN_SOURCES_SEARCHED)
+    partial = receipt.get("partial_shard_search")
+    if partial is None:
+        partial = receipt.get("partial")
+    failed = _int_value(receipt.get("sweep_failed_shards") or receipt.get("failed_shards"))
+    return (
+        shards >= min_shards
+        and partial is not True
+        and failed == 0
+        and _source_count(receipt.get("sources_searched")) >= min_sources
+    )
+
+
+def _int_value(value: object) -> int:
+    try:
+        if isinstance(value, int):
+            return value
+        if isinstance(value, str) and value.strip():
+            return int(value)
+    except (TypeError, ValueError):
+        return 0
+    return 0
 
 
 def _parse_hit(item: dict[str, Any], query: str, receipt: dict[str, object]) -> RawHit | None:
@@ -105,13 +164,9 @@ class V5FullRawClient:
         payload = {
             "query": clean_text(query, limit=1024),
             "limit": max(1, min(limit, 50)),
-            "top_k": max(1, min(limit, 50)),
-            "year_min": YEAR_MIN,
-            "year_max": YEAR_MAX,
-            "corpus": "full_raw_450m_plus",
-            "search_pass": "focused",
             "rank_mode": "relevance",
-            "timeout_seconds": _timeout_seconds(),
+            "cache_only": True,
+            "queue_if_missing": True,
         }
         headers = {
             "Authorization": f"Bearer {token}",
@@ -132,6 +187,8 @@ class V5FullRawClient:
         if not isinstance(results, list):
             return []
         receipt = _shard_receipt(data)
+        if not _receipt_complete(receipt):
+            return []
         return [
             hit
             for item in results

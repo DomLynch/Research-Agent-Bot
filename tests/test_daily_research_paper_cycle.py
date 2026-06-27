@@ -803,6 +803,46 @@ def test_reconcile_publication_ledgers_updates_cycle_after_later_submit_bridge_p
     assert throughput["days"]["2026-06-24"]["published"] == 1
 
 
+def test_reconcile_publication_ledgers_uses_unique_title_when_public_api_omits_submission_id(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    title = "Hypothesis-Generating Brief: Sulforaphane Nrf2"
+    run = runs_root / "synthesis-sulforaphane_nrf2-v06-DAILY-2026-06-27T12-00-00Z"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
+    cycle_ledger_dir = runs_root / cycle.LEDGER_DIR
+    submit_ledger_dir = runs_root / cycle.submit_bridge.LEDGER_DIR
+    _write_json(cycle_ledger_dir / "2026-06-27-fresh.json", {
+        "date": "2026-06-27",
+        "mode": "fresh",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "submitted_topic": "sulforaphane_nrf2",
+        "submitted_run": run.name,
+    })
+    _write_json(submit_ledger_dir / "_submitted_fingerprints.json", [{
+        "date": "2026-06-27",
+        "run": run.name,
+        "topic": "sulforaphane_nrf2",
+        "submission_id": "submission-not-exposed-on-public-page",
+    }])
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-27",
+        mode="fresh",
+        remote_loader=lambda: ({cycle.submit_bridge._title_marker(title)}, None),
+    )
+
+    ledger = json.loads((cycle_ledger_dir / "2026-06-27-fresh.json").read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["2026-06-27-fresh.json"]
+    assert ledger["status"] == "published"
+    assert ledger["submitted"] == 1
+    assert ledger["published"] == 1
+    assert ledger["publication_reconciliation"]["matched"] == [cycle.submit_bridge._title_marker(title)]
+
+
 def test_reconcile_publication_ledgers_does_not_title_match_unsubmitted_cycle(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     title = "Hypothesis-Generating Brief: Berberine hydrochloride"

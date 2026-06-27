@@ -18,6 +18,9 @@ def fullraw_env(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "http://fullraw.test/search")
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "test-token")
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "12")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_MIN_SHARDS_SEARCHED", "1525")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_MIN_SOURCES_SEARCHED", "5")
+    monkeypatch.setenv("V5_MEMO_FULL_RAW_REQUIRE_COMPLETE_SEARCH", "1")
 
 
 @pytest.mark.asyncio
@@ -48,12 +51,18 @@ async def test_fullraw_posts_query_and_maps_receipt(fullraw_env: None) -> None:
         return httpx.Response(
             200,
             json={
-                "meta": {
-                    "shard_receipt": {
-                        "shards_searched": 50,
-                        "sources_searched": {"openalex": 16, "pubmed": 17},
-                        "papers_searched": 46768695,
+                "receipt": {
+                    "shards_searched": 1525,
+                    "partial_shard_search": False,
+                    "sweep_failed_shards": 0,
+                    "sources_searched": {
+                        "openalex": 16,
+                        "pubmed": 17,
+                        "semantic_scholar": 18,
+                        "crossref": 19,
+                        "pmc": 20,
                     },
+                    "papers_searched": 46768695,
                 },
                 "results": [
                     {
@@ -78,19 +87,15 @@ async def test_fullraw_posts_query_and_maps_receipt(fullraw_env: None) -> None:
     assert received["body"] == {
         "query": "metformin longevity",
         "limit": 3,
-        "top_k": 3,
-        "year_min": 1900,
-        "year_max": 2100,
-        "corpus": "full_raw_450m_plus",
-        "search_pass": "focused",
         "rank_mode": "relevance",
-        "timeout_seconds": 12.0,
+        "cache_only": True,
+        "queue_if_missing": True,
     }
     assert len(hits) == 1
     hit = hits[0]
     assert hit.source == "v5_fullraw"
     assert hit.raw["fullraw_source"] == "openalex"
-    assert hit.raw["shard_receipt"]["shards_searched"] == 50
+    assert hit.raw["shard_receipt"]["shards_searched"] == 1525
     assert "openalex" in hit.raw["shard_receipt"]["sources_searched"]
 
 
@@ -103,12 +108,14 @@ async def test_fullraw_caps_publish_lane_timeout(monkeypatch: pytest.MonkeyPatch
 
     def responder(request: httpx.Request) -> httpx.Response:
         received["body"] = json.loads(request.content)
+        received["timeout"] = request.extensions.get("timeout")
         return httpx.Response(200, json={"meta": {"shard_receipt": {}}, "results": []})
 
     async with _mock_client(responder) as client:
         await V5FullRawClient().search(client, "metformin longevity", limit=3)
 
-    assert received["body"]["timeout_seconds"] == 300.0
+    assert "timeout_seconds" not in received["body"]
+    assert received["timeout"]["read"] == 300.0
 
 
 @pytest.mark.asyncio
@@ -121,12 +128,36 @@ async def test_fullraw_query_timeout_overrides_long_corpus_timeout(monkeypatch: 
 
     def responder(request: httpx.Request) -> httpx.Response:
         received["body"] = json.loads(request.content)
+        received["timeout"] = request.extensions.get("timeout")
         return httpx.Response(200, json={"meta": {"shard_receipt": {}}, "results": []})
 
     async with _mock_client(responder) as client:
         await V5FullRawClient().search(client, "metformin longevity", limit=3)
 
-    assert received["body"]["timeout_seconds"] == 17.0
+    assert "timeout_seconds" not in received["body"]
+    assert received["timeout"]["read"] == 17.0
+
+
+@pytest.mark.asyncio
+async def test_fullraw_returns_no_hits_until_complete_receipt(fullraw_env: None) -> None:
+    def responder(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "receipt": {
+                    "shards_searched": 128,
+                    "partial_shard_search": True,
+                    "sweep_failed_shards": 0,
+                    "sources_searched": ["openalex", "pubmed", "semantic_scholar", "crossref", "pmc"],
+                },
+                "results": [{"title": "Queued but partial", "abstract": "Do not trust yet."}],
+            },
+        )
+
+    async with _mock_client(responder) as client:
+        hits = await V5FullRawClient().search(client, "metformin longevity", limit=3)
+
+    assert hits == []
 
 
 @pytest.mark.asyncio
