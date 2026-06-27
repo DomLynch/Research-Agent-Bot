@@ -130,6 +130,15 @@ _ET_AL_PAREN_CITE_RE = re.compile(
 _PVALUE_DISPLAY_RE = re.compile(
     r"\b[Pp]\s*([<>=])\s*(0?\.\d+|\.\d+|\d+(?:\.\d+)?)"
 )
+_CHANGE_SPEED_SENTENCE_RE = re.compile(
+    r"\b(?:change|improvement|increase|decrease|difference|delta|"
+    r"reduction|rise|decline|gain)\b[^.!?\n]{0,120}"
+    r"\b\d+(?:\.\d+)?\s*m/s\b|"
+    r"\b\d+(?:\.\d+)?\s*m/s\b[^.!?\n]{0,120}"
+    r"\b(?:change|improvement|increase|decrease|difference|delta|"
+    r"reduction|rise|decline|gain)\b",
+    re.IGNORECASE,
+)
 
 
 _DEPTH_PROTECTED_SECTIONS = {
@@ -184,6 +193,10 @@ def _normalize_ordinal_gaps(paper_md: str) -> tuple[str, int]:
 
 def _strip_empty_parenthetical_citations(paper_md: str) -> tuple[str, int]:
     return re.subn(r"\s+\(\s*(?:;\s*)?\)", "", paper_md)
+
+
+def _looks_like_change_speed_sentence(text: str) -> bool:
+    return bool(_CHANGE_SPEED_SENTENCE_RE.search(str(text or "")))
 
 
 def _topic_display_name(topic: str) -> str:
@@ -2669,6 +2682,11 @@ def apply_fixes(
             bg_lit_registry=bg_lit_registry,
             quant_claims_dir=qcd,
         )
+        if n_anaphor_stripped:
+            nrg_issues = [
+                issue for issue in nrg_issues
+                if not _looks_like_change_speed_sentence(getattr(issue, "evidence", ""))
+            ]
         if nrg_issues and _repair is not None:
             new_md, n_repaired = _repair(
                 new_md,
@@ -3466,7 +3484,7 @@ def _strip_change_value_misread_sentences(
                 # endpoint, and value Y was 0.13") falsely
                 # cleared the numeric.
                 from final_consistency_audit import (
-                    _CHANGE_WORD_PROXIMITY_CHARS,
+                    _CHANGE_WORD_PROXIMITY_CHARS, _CHANGE_WORDS,
                 )
                 num_idx = sent_lc.find(numeric.lower())
                 window_start = max(
@@ -3478,7 +3496,7 @@ def _strip_change_value_misread_sentences(
                     + _CHANGE_WORD_PROXIMITY_CHARS,
                 )
                 window = sent_lc[window_start:window_end]
-                has_change = any(w in window for w in change_words)
+                has_change = any(w in window for w in set(change_words) | set(_CHANGE_WORDS))
                 if has_absolute and not has_change:
                     should_drop = True
                     n_stripped += 1

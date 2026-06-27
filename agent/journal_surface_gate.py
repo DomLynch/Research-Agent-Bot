@@ -325,8 +325,7 @@ def _section_issue_messages(paper_md: str, declared_review_type: str | None = No
         n = len(re.findall(r"\b\w+\b", body))
         if n < floor:
             issues.append(f"section too short: {heading} {n}/{floor} words")
-        ceiling = _SECTION_CEILINGS.get(heading)
-        if ceiling is not None and n > ceiling:
+        if (ceiling := _SECTION_CEILINGS.get(heading)) is not None and n > ceiling:
             issues.append(f"section too long: {heading} {n}/{ceiling} words")
     return tuple(issues)
 
