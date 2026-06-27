@@ -153,6 +153,8 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_outcome_class_key_findings,
             _asks_two_part_research_question,
             _asks_concrete_research_question,
+            _asks_scope_framing,
+            _asks_direction_tally_audit,
             _asks_combination_product_signal_boundary,
             _asks_substantive_evidence_synthesis,
             _asks_forward_dated_ai_disclosure_note,
@@ -262,6 +264,12 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _two_part_research_question_is_stated(paper_md)
     if _asks_concrete_research_question(lower):
         return _concrete_research_question_is_stated(paper_md)
+    if _asks_scope_framing(lower):
+        return _scope_framing_is_stated(paper_md) and (
+            not _asks_direction_tally_audit(lower) or _direction_tally_audit_is_stated(paper_md)
+        )
+    if _asks_direction_tally_audit(lower):
+        return _direction_tally_audit_is_stated(paper_md)
     if _asks_combination_product_signal_boundary(lower):
         return _combination_product_signal_boundary_is_stated(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
@@ -393,6 +401,14 @@ def asks_source_outcome_class_map(text: str) -> bool:
     return _asks_source_outcome_class_map(_normalised_feedback(text))
 
 
+def asks_scope_framing(text: str) -> bool:
+    return _asks_scope_framing(_normalised_feedback(text))
+
+
+def asks_direction_tally_audit(text: str) -> bool:
+    return _asks_direction_tally_audit(_normalised_feedback(text))
+
+
 def asks_findings_map_detail(text: str) -> bool:
     lower = _normalised_feedback(text)
     return (
@@ -477,6 +493,18 @@ def _asks_source_directness_breakdown(text: str) -> bool:
             any(token in text for token in ("re-tier", "re tier", "retier", "misclassified"))
             and any(token in text for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
         )
+    )
+
+
+def _asks_direction_tally_audit(text: str) -> bool:
+    return (
+        any(token in text for token in ("directional tally", "directional tallies", "per-source direction", "per source direction"))
+        and "directness" in text
+        and "tier" in text
+    ) or (
+        "counts in the prose" in text
+        and "verified against" in text
+        and "retained sources" in text
     )
 
 
@@ -1535,6 +1563,45 @@ def _two_part_research_question_is_stated(paper_md: str) -> bool:
         and ("(1)" in question or "first" in question)
         and ("(2)" in question or "second" in question)
         and question.count("?") >= 2
+    )
+
+
+def _asks_scope_framing(text: str) -> bool:
+    return (
+        "scope framing" in text
+        or "retitle and reframe" in text
+        or ("drop" in text and "anti-aging framing" in text)
+        or ("mixed framing" in text and "internally inconsistent" in text)
+    )
+
+
+def _scope_framing_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _abstract(paper_md),
+        _section(paper_md, "Research Question"),
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Limitations"),
+    ) if part).lower()
+    return (
+        "scope-framing note:" in scope
+        and any(token in scope for token in ("heterogeneous indication", "clinical application"))
+        and any(token in scope for token in ("anti-aging", "longevity", "aging-relevant"))
+    )
+
+
+def _direction_tally_audit_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Results"),
+    ) if part)
+    lower = scope.lower()
+    return bool(
+        "per-source direction/directness/tier audit table:" in lower
+        and "direction=" in lower
+        and "directness=" in lower
+        and "tier=" in lower
+        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope)
     )
 
 
