@@ -32,7 +32,8 @@ def revision_asks(feedback: str) -> list[str]:
     starts = (
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
-        "Enumerate", "Hedge", "In", "Include", "Operationalize", "Populate",
+        "Enumerate", "Hedge", "In", "Include", "Integrate", "Narrow",
+        "Operationalize", "Populate",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify",
         "Reconcile", "Regenerate", "Remove", "Repair", "Resolve", "Replace",
         "Rewrite", "Separate", "Soften", "Strengthen", "Tighten", "Update",
@@ -600,7 +601,7 @@ def _asks_section_source_grounding(text: str) -> bool:
 def _asks_concrete_research_question(text: str) -> bool:
     return (
         "research question" in text
-        and any(token in text for token in ("concrete", "answerable", "fix", "framing"))
+        and any(token in text for token in ("clear", "specific", "concrete", "answerable", "fix", "framing"))
     )
 
 
@@ -704,13 +705,16 @@ def _asks_evidence_tier_directness_bounds(text: str) -> bool:
 def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
     text = _normalised_feedback(text)
     return (
-        any(token in text for token in ("admission funnel", "admissions funnel", "source admission", "receipt admission"))
+        any(token in text for token in (
+            "admission funnel", "admissions funnel", "source admission",
+            "receipt admission", "receipt funnel",
+        ))
         and any(token in text for token in (
             "numerical inconsistency", "numeric inconsistency", "inconsistently",
             "both equal", "contradictory", "contradiction", "clarify",
             "reconcile", "coherent accounting", "derived", "prisma style",
             "arithmetic scrutiny", "mutually exclusive", "additive rows",
-            "remove the table",
+            "remove the table", "arithmetic", "why",
         ))
     ) or ("no extractable claims" in text and "admitted final" in text) or (
         "partial/none-only" in text and "partial-only" in text
@@ -795,7 +799,10 @@ def _asks_conclusion_unproven_humans(text: str) -> bool:
 
 
 def _asks_directional_coding(text: str) -> bool:
-    return "directional coding" in text or (
+    return "directional coding" in text or "effect_direction" in text or (
+        any(token in text for token in ("re-extract direction", "re extract direction", "cannot determine direction"))
+        and any(token in text for token in ("majority", "unclear", "direction"))
+    ) or (
         "no extracted directional signal" in text and "clarify" in text
     ) or (
         "no extracted directional signal" in text and "reconcile" in text
