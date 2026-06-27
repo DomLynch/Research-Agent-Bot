@@ -1354,6 +1354,7 @@ _CHANGE_WORDS = (
     "change", "improvement", "increase", "decrease", "difference",
     "delta", "reduction", "rise", "decline", "gain",
 )
+_CHANGE_SPEED_VALUE_RE = re.compile(r"\b\d+(?:\.\d+)?\s*m/s\b", re.IGNORECASE)
 _ABSOLUTE_VALUE_PHRASES = (
     # Threshold-comparison patterns
     "falls below", "below the", "above the", "below clinically",
@@ -1782,9 +1783,15 @@ def _check_change_value_anaphor_misread(
         # Find sentences that contain change-value numerics
         change_sent_indices: dict[str, int] = {}
         for i, sent in enumerate(sentences):
+            sent_lc = sent.lower()
             for numeric in change_value_map:
                 if numeric in sent and numeric not in change_sent_indices:
                     change_sent_indices[numeric] = i
+            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+            if change_hits:
+                for numeric in _CHANGE_SPEED_VALUE_RE.findall(sent):
+                    change_sent_indices.setdefault(numeric, i)
+                    change_value_map.setdefault(numeric, set()).update(change_hits)
         if not change_sent_indices:
             continue
         # Now look at subsequent sentences for anaphor + threshold

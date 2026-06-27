@@ -751,6 +751,24 @@ def test_weak_direct_corpus_forces_bounded_title_and_conclusion(tmp_path: Path) 
     assert daily._researka_preflight_status(payload) == "conclusion_breadth_unbounded_low_direct_evidence"
 
 
+def test_weak_direct_corpus_rejects_vague_unbounded_conclusion(tmp_path: Path) -> None:
+    run = _run(tmp_path, tensions=20)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    for row in manifest["receipts"]:
+        row["directness"] = "indirect"
+    _write_json(run / "manifest.json", manifest)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    (run / "full_paper.md").write_text(
+        paper.replace("## Conclusion\n\n" + _words("conclusion", 120) + ".", "## Conclusion\n\nFurther research is warranted."),
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+
+    assert payload["title"].startswith("Adjacent Evidence Brief:")
+    assert daily._researka_preflight_status(payload) == "conclusion_breadth_unbounded_low_direct_evidence"
+
+
 def test_weak_direct_corpus_allows_bounded_conclusion(tmp_path: Path) -> None:
     run = _run(tmp_path, tensions=20)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))

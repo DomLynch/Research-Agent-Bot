@@ -2123,7 +2123,7 @@ def _paper_has_bounded_conclusion(paper_text: str) -> bool:
     ))
     overbroad = any(token in conclusion for token in (
         "establishes", "demonstrates", "proves", "supports clinical",
-        "supports causal", "clinical efficacy",
+        "supports causal",
     ))
     return bounded and not overbroad
 

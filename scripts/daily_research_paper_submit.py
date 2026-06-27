@@ -1595,7 +1595,7 @@ def _conclusion_breadth_status(payload: dict[str, Any]) -> str:
         "establishes", "demonstrates", "proves", "supports clinical",
         "supports causal",
     ))
-    if overbroad and not (title_bounded and conclusion_bounded):
+    if not title_bounded or not conclusion_bounded or overbroad:
         return "conclusion_breadth_unbounded_low_direct_evidence"
     return "eligible"
 

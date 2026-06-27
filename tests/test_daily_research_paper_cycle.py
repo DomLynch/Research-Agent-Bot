@@ -6805,7 +6805,7 @@ def test_fresh_cycle_repairs_sparse_receipt_preflight_before_submit(tmp_path: Pa
     assert ledger["attempts"][0]["receipt_preflight"]["repairs"][0]["status"] == "corpus_repaired"
 
 
-def test_revise_lane_sparse_receipt_preflight_stays_retryable_below_round_cap(tmp_path: Path, monkeypatch) -> None:
+def test_revise_lane_sparse_receipt_preflight_is_terminal(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hrv_autonomic_aging", target_journal=True)
     source = _prior_run(tmp_path, "hrv_autonomic_aging", receipts=12, tensions=2, primary=1, level=5)
     paper = source / "full_paper.md"
@@ -6850,20 +6850,19 @@ def test_revise_lane_sparse_receipt_preflight_stays_retryable_below_round_cap(tm
         submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
     )
 
-    assert ledger["status"] == "revise_receipt_preflight_skipped_no_submission"
-    assert ledger["attempts"][0]["gate_status"] == "receipt_preflight_insufficient"
+    assert ledger["status"] == "revise_terminal_receipt_preflight_insufficient"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_receipt_preflight_insufficient"
     assert receipt_kwargs[0]["repair"] is True
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
-    assert handled["handled"][0]["status"] == "receipt_preflight_insufficient"
-    assert cycle.submit_bridge._title_marker(request["title"]) not in cycle._handled_revision_ids(tmp_path / "runs" / cycle.LEDGER_DIR)
+    assert handled["handled"][0]["status"] == "terminal_receipt_preflight_insufficient"
+    assert cycle.submit_bridge._title_marker(request["title"]) in cycle._handled_revision_ids(tmp_path / "runs" / cycle.LEDGER_DIR)
     pending, error = cycle._pending_remote_revision(
         tmp_path / "runs",
         tmp_path / "runs" / cycle.LEDGER_DIR,
         loader=lambda: ([request], None),
     )
     assert error is None
-    assert pending is not None
-    assert pending["topic"] == "hrv_autonomic_aging"
+    assert pending is None
 
 
 def test_revise_lane_marks_repaired_severely_sparse_receipt_preflight_terminal(tmp_path: Path, monkeypatch) -> None:
