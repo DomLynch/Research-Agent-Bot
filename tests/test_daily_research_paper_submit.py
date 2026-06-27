@@ -1913,31 +1913,7 @@ def test_missing_revision_coverage_gate_is_refreshed_before_selection(
     assert considered[0]["status"] == "eligible"
     gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
     assert gate["passed"] is True
-    assert gate["refreshed_by"] in {"daily_submit", "journal_finalizer"}
-
-
-def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    from agent import journal_finalizer
-
-    run = _run(tmp_path)
-    _write_json(run / "researka_revision_request.json", {"feedback": "tighten"})
-    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": ["tighten"]})
-    called = {"refresh": False}
-
-    monkeypatch.setattr(journal_finalizer, "finalize_run", lambda _run: SimpleNamespace(paper_changed=True))
-
-    def refresh(run_arg: Path, request: dict[str, Any]) -> bool:
-        called["refresh"] = True
-        assert run_arg == run
-        assert request["feedback"] == "tighten"
-        return True
-
-    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", refresh)
-
-    assert daily._refresh_stale_revision_coverage_sidecar(run) is True
-    assert called["refresh"] is True
+    assert gate["refreshed_by"] == "daily_submit"
 
 
 def test_stale_revision_coverage_refresh_runs_after_finalizer_change(

@@ -1953,6 +1953,38 @@ def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: 
     }
 
 
+def test_substantive_evidence_synthesis_repairs_meta_only_conclusion(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Clarify in the Conclusion what the evidence actually shows about telomere cancer effects, "
+        "not just what kind of evidence it is. A conclusion that only describes its own epistemic "
+        "status is not informative."
+    )
+    paper = (
+        "## Evidence Landscape\n\nThin summary.\n\n"
+        "## Key Findings\n\nThin summary.\n\n"
+        "## Conclusion\n\nThe conclusion is bounded and hypothesis-generating.\n"
+    )
+    rows = [
+        {"citation_token": "Sasmita 2025", "source_title": "Shorter telomere length as a prognostic marker for survival and recurrence in breast cancer", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "review", "evidence_tier": "B2", "n_claims": 113},
+        {"citation_token": "Markozannes 2022", "source_title": "Systematic review of Mendelian randomization studies on risk of cancer", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "n_claims": 61},
+        {"citation_token": "Jaeger 2024", "source_title": "A nutritional supplement lengthens telomeres in a randomized population", "outcome_class": "contextual_other", "effect_direction": "positive", "directness": "indirect", "evidence_tier": "B2", "n_claims": 90},
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "telomere_cancer_effects", "receipts": rows}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+
+    assert "Substantive conclusion for Telomere Cancer Effects" in fixed
+    assert "prognostic and survival-marker evidence" in fixed
+    assert "causal-risk and Mendelian-randomization evidence" in fixed
+    assert "not establish standalone clinical actionability" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].phase == "D_substantive_evidence_synthesis"
+
+
 def test_search_summary_scope_note_repairs_date_operationalization_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 
