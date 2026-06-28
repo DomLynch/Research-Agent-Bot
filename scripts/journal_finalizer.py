@@ -841,7 +841,13 @@ _ADMISSION_FUNNEL_NOTE = (
     "partial-only, and admitted-final-source counts can be equal or overlap "
     "because they describe different screening and claim-binding states; final "
     "source admission is the retained-source count after deduplication and "
-    "eligibility, not the complement of any one exclusion row."
+    "eligibility, not the complement of any one exclusion row. Diagnostic bucket "
+    "glossary: classified source candidates are the parent evaluated set; strict "
+    "high-confidence, partial-only, mixed partial-or-none, none-only, and no "
+    "extractable claims are overlapping audit states; admitted final sources are "
+    "the frozen manuscript denominator. Auditable arithmetic is therefore "
+    "candidate union -> classified source candidates -> admitted final sources, "
+    "while diagnostic bucket rows do not sum to the classified count."
 )
 
 _ADMISSION_EXCLUSION_NOTE = (
@@ -1826,6 +1832,7 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
         source_label.lower() in visible_scope.lower()
         and p_text.lower() in visible_scope.lower()
         and _FINALIZER_NONSIGNIFICANT_RE.search(visible_scope)
+        and "representative non-significant statistic" not in visible_scope.lower()
         and "numeric correction:" not in " ".join(
             part for part in (
                 _section_body(text, "Abstract"),
@@ -1842,7 +1849,8 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
         ) if part
     )
     if source_label.lower() in scope.lower() and p_text.lower() in scope.lower() and _FINALIZER_NONSIGNIFICANT_RE.search(scope):
-        return text, n_existing
+        if "representative non-significant statistic" not in scope.lower():
+            return text, n_existing
     outcome = _numeric_correction_outcome(feedback)
     statement = (
         f"Numeric reconciliation note: {source_label} reported a non-significant mapped comparison"
@@ -2550,7 +2558,7 @@ def _two_part_claim_fragments(feedback: str) -> list[str]:
 
 def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) -> list[str]:
     def score(row: dict[str, Any]) -> tuple[int, int]:
-        direction = str(row.get("effect_direction") or "").lower()
+        direction = _normalised_direction(row)
         priority = 0 if direction in {"positive", "negative", "mixed", "unclear"} else 1
         try:
             claims = int(row.get("n_claims") or 0)
@@ -2563,7 +2571,7 @@ def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) ->
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         title = str(row.get("source_title") or "").strip()
         outcome = _evidence_role_outcome_display(row)
-        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+        direction = _normalised_direction(row)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         try:
@@ -2751,7 +2759,7 @@ def _manifest_effect_direction_reconciliation_note(
 def _normalised_direction(row: dict[str, Any]) -> str:
     raw = str(row.get("effect_direction") or "unclear").strip().lower()
     if raw in {"positive", "negative", "mixed", "null", "unclear"}:
-        return raw
+        return _title_cued_direction(row) if raw == "unclear" else raw
     if "positive" in raw:
         return "positive"
     if "negative" in raw:
@@ -2760,7 +2768,48 @@ def _normalised_direction(row: dict[str, Any]) -> str:
         return "null"
     if "mixed" in raw:
         return "mixed"
+    return _title_cued_direction(row)
+
+
+def _title_cued_direction(row: dict[str, Any]) -> str:
+    title = str(row.get("source_title") or "").lower()
+    if not title:
+        return "unclear"
+    if any(token in title for token in (
+        "does not", "not determine", "not associated", "no association",
+        "no effect", "failed to", "fails to", "null",
+    )):
+        return "null"
+    harm = (
+        "damage", "injury", "dysfunction", "inflammation", "oxidative stress",
+        "fibrosis", "mortality", "risk", "decline", "pathology", "symptom",
+        "defect", "toxicity",
+    )
+    if any(token in title for token in ("abrogate", "reverse", "restore", "rescue", "protect")):
+        return "positive" if any(term in title for term in harm) else "unclear"
+    if any(token in title for token in ("reduce", "decrease", "lower", "attenuate", "suppress")):
+        return "positive" if any(term in title for term in harm) else "negative"
+    if any(token in title for token in ("increase", "induce", "accelerate", "worsen", "promote")):
+        return "negative" if any(term in title for term in harm) else "positive"
+    if "mixed" in title or "context-dependent" in title or "context dependent" in title:
+        return "mixed"
     return "unclear"
+
+
+def _p_value_is_non_significant(value: str) -> bool:
+    match = re.search(r"\bp\s*(=|>|<|<=|>=)\s*([0-9]*\.?[0-9]+)", value, flags=re.I)
+    if not match:
+        return False
+    try:
+        parsed = float(match.group(2))
+    except ValueError:
+        return False
+    operator = match.group(1)
+    if operator in {"<", "<="}:
+        return False
+    if operator == ">":
+        return parsed >= 0.05
+    return parsed > 0.05
 
 
 def _manifest_admission_direction_tally_note(rows: list[dict[str, Any]]) -> str:
@@ -2924,7 +2973,7 @@ def _manifest_source_pattern_summary(rows: list[dict[str, Any]]) -> str:
     for bucket, matching in sorted(buckets.items(), key=lambda item: (-len(item[1]), item[0])):
         counts: dict[str, int] = {}
         for row in matching:
-            direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+            direction = _normalised_direction(row)
             counts[direction] = counts.get(direction, 0) + 1
         examples = ", ".join(_row_citation(row) for row in sorted(matching, key=_manifest_key_finding_score)[:3])
         direction_text = ", ".join(f"{key}={counts[key]}" for key in sorted(counts))
@@ -2940,7 +2989,7 @@ def _manifest_conclusion_summary(rows: list[dict[str, Any]]) -> str:
     for row in rows:
         outcome = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
         buckets[_outcome_display(outcome)] = buckets.get(_outcome_display(outcome), 0) + 1
-        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        direction = _normalised_direction(row)
         directions[direction] = directions.get(direction, 0) + 1
     bucket_text = ", ".join(f"{key} admitted n={value}" for key, value in sorted(buckets.items(), key=lambda item: (-item[1], item[0]))[:4])
     direction_text = ", ".join(f"{key}={directions[key]}" for key in sorted(directions))
@@ -2984,7 +3033,7 @@ def _manifest_count_reconciliation_note(rows: list[dict[str, Any]], feedback: st
 
 def _manifest_direction_visibility_note(rows: list[dict[str, Any]], feedback: str) -> str:
     lower = " ".join(feedback.lower().split())
-    unclear = sum(1 for row in rows if str(row.get("effect_direction") or "").strip().lower() == "unclear")
+    unclear = sum(1 for row in rows if _normalised_direction(row) == "unclear")
     if not unclear:
         return ""
     if not (
@@ -3004,7 +3053,7 @@ def _manifest_direction_heterogeneity_note(rows: list[dict[str, Any]]) -> str:
     grouped: dict[str, dict[str, list[str]]] = {}
     for row in rows:
         outcome = re.sub(r"\s+\([^)]*\)$", "", _evidence_role_outcome_display(row))
-        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        direction = _normalised_direction(row)
         grouped.setdefault(outcome, {}).setdefault(direction, []).append(_row_citation(row))
     parts = []
     for outcome, directions in sorted(grouped.items()):
@@ -3026,7 +3075,7 @@ def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -
         title = str(row.get("source_title") or "").strip()
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         outcome = _evidence_role_outcome_display(row)
-        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+        direction = _normalised_direction(row)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         lines.append(
@@ -3068,7 +3117,7 @@ def _manifest_outcome_summary_lines(rows: list[dict[str, Any]], *, per_outcome_l
 
 def _manifest_source_finding_line(row: dict[str, Any]) -> str:
     title = str(row.get("source_title") or "").strip()
-    direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+    direction = _normalised_direction(row)
     directness = str(row.get("directness") or "unknown").strip() or "unknown"
     tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
     return (
@@ -3093,7 +3142,7 @@ def _manifest_direction_audit_table(rows: list[dict[str, Any]]) -> str:
             + " | ".join((
                 _table_cell(_row_citation(row)),
                 _table_cell(_outcome_display(str(row.get("outcome_class") or "contextual_other"))),
-                f"direction={_table_cell(str(row.get('effect_direction') or 'unclear'))}",
+                f"direction={_table_cell(_normalised_direction(row))}",
                 f"directness={_table_cell(str(row.get('directness') or 'unknown'))}",
                 f"tier={_table_cell(str(row.get('evidence_tier') or 'unknown'))}",
             ))
@@ -3158,7 +3207,7 @@ def _manifest_result_highlights(rows: list[dict[str, Any]]) -> list[str]:
             continue
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
-        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+        direction = _normalised_direction(row)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         highlights.append(
@@ -3520,7 +3569,7 @@ def _phase_d_source_outcome_class_map(
         fallback = str(row.get("receipt_id") or "source").strip()
         citation = f"{token}: {title}" if token and title and token not in title else (token or title or fallback)
         outcome = _reviewer_adjusted_outcome(row, feedback)
-        direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
+        direction = _normalised_direction(row)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         row_text = f"- {citation}: outcome={outcome}; direction={direction}; directness={directness}; tier={tier}"
@@ -3604,6 +3653,12 @@ def _manifest_row_finding(row: dict[str, Any]) -> str:
     if isinstance(p_values, list):
         stat = next((str(value).strip() for value in p_values if str(value).strip()), "")
         if stat:
+            if _p_value_is_non_significant(stat):
+                return (
+                    f"representative non-significant statistic {stat}; not treated "
+                    "as positive or negative directional support unless source "
+                    "direction is coded"
+                )
             return f"representative statistic {stat}; source-level statistic reported"
     n_claims = row.get("n_claims")
     if isinstance(n_claims, int) and n_claims > 0:
@@ -3676,7 +3731,7 @@ def _phase_d_tensions_and_gaps_breadth(
         ref = re.search(r"^## Evidence Snapshot\b|^## References\b", text, flags=re.M)
         insert_at = ref.start() if ref else len(text)
         patched = text[:insert_at].rstrip() + "\n\n" + section + "\n" + text[insert_at:].lstrip()
-    if asks_count_evidence:
+    if asks_count_evidence or "no load-bearing cross-study disagreements" in patched.lower():
         load_bearing = "### Load-Bearing Tensions\n\n" + "\n".join(tension_lines) + "\n\n"
         patched = re.sub(
             r"^### Load-Bearing Tensions\b.*?(?=^### |^## |\Z)",
@@ -3700,7 +3755,7 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
         return str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
 
     def direction(row: dict[str, Any]) -> str:
-        return str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        return _normalised_direction(row)
 
     def outcome_key(row: dict[str, Any]) -> str:
         return str(row.get("outcome_class") or "contextual_other").strip().lower() or "contextual_other"

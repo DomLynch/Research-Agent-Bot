@@ -1805,6 +1805,98 @@ def test_findings_map_separates_mechanistic_and_biomarker_roles(tmp_path: Path) 
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
+def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: Path) -> None:
+    feedback = (
+        "Reconcile source-admission funnel with explicit auditable arithmetic or "
+        "tabulate non-additive diagnostic states/glossary.; Map every admitted "
+        "bundle source to Findings Map appearance.; Recode effect_direction values "
+        "against the actual reported finding in source title/excerpt; correct unclear "
+        "where titles state reversal, no relationship, or increased damage.; Add "
+        "explicit Tensions and Gaps subsection enumerating at least three specific "
+        "cross-source disagreements with named sources."
+    )
+    rows = [
+        {
+            "citation_token": "Pena 2024",
+            "source_title": "G2019S inhibitor abrogates mitochondrial DNA damage",
+            "outcome_class": "contextual_other",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "p_values": ["p = 0.92"],
+            "n_claims": 2,
+        },
+        {
+            "citation_token": "Ng 2019",
+            "source_title": "Mitochondrial DNA Damage Does Not Determine C. elegans Lifespan",
+            "outcome_class": "longevity",
+            "effect_direction": "unclear",
+            "directness": "mechanistic",
+            "n_claims": 1,
+        },
+        {
+            "citation_token": "Shimizu 2026",
+            "source_title": "A PUFA-rich diet increases age-related mitochondrial DNA damage",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "unclear",
+            "directness": "mechanistic",
+            "n_claims": 1,
+        },
+        {
+            "citation_token": "Chakraborty 2026",
+            "source_title": "F2,6BP restores mitochondrial genome integrity",
+            "outcome_class": "contextual_other",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "n_claims": 1,
+        },
+        {
+            "citation_token": "Reid 2023",
+            "source_title": "Blood-based mtDNA deletion biomarker study in cognitive aging",
+            "outcome_class": "cognitive",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "n_claims": 1,
+        },
+    ]
+    paper = (
+        "## Methods\n\n### Source admission funnel\n\n"
+        "| Row | Count |\n| --- | --- |\n| Classified source candidates | 18 |\n"
+        "| Admitted final sources | 15 |\n\n"
+        "## Evidence Landscape\n\n### Findings Map\n\nExisting map.\n\n"
+        "## Cross-Domain Synthesis\n\n### Load-Bearing Tensions\n\n"
+        "- No load-bearing cross-study disagreements were detected.\n\n"
+        "## References\n\nR01.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipt_funnel": {
+            "classified_receipt_candidates": 18,
+            "counts": {
+                "admitted_receipts": 15,
+                "original_strict_high_confidence_receipts": 2,
+            },
+        },
+        "n_receipts": 15,
+        "receipts": rows,
+    }), encoding="utf-8")
+
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(paper, asks) == asks
+    fixed, _logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Auditable arithmetic is therefore candidate union -> classified source candidates -> admitted final sources" in fixed
+    assert "diagnostic bucket rows do not sum to the classified count" in fixed
+    assert "Pena 2024: G2019S inhibitor abrogates mitochondrial DNA damage" in fixed
+    assert "Pena 2024" in fixed and "direction=positive" in fixed
+    assert "representative non-significant statistic p = 0.92" in fixed
+    assert "Ng 2019" in fixed and "direction=null" in fixed
+    assert "Shimizu 2026" in fixed and "direction=negative" in fixed
+    assert "Chakraborty 2026" in fixed and "direction=positive" in fixed
+    assert "No load-bearing cross-study disagreements were detected" not in fixed
+    assert fixed.count("surfaced tension/disagreement") >= 3
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+
+
 def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
     ask = (
         "Expand Tensions and Gaps to cover the full outcome breadth of the corpus, "
