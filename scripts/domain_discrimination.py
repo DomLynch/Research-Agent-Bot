@@ -90,13 +90,26 @@ SCHEMAS: tuple[DomainSchema, ...] = (
 
 
 def select_domain_schema(topic: str, receipts: list[dict[str, Any]]) -> DomainSchema:
-    haystack = " ".join([topic, *(_receipt_text(r) for r in receipts[:50])]).lower()
+    topic_text = topic.lower()
+    receipt_text = " ".join(_receipt_text(r) for r in receipts[:50]).lower()
     ranked = sorted(
-        ((sum(1 for term in schema.terms if term in haystack), schema) for schema in SCHEMAS),
-        key=lambda item: item[0],
+        (
+            (
+                sum(1 for term in schema.terms if _term_hit(term, topic_text)),
+                sum(1 for term in schema.terms if _term_hit(term, receipt_text)),
+                schema,
+            )
+            for schema in SCHEMAS
+        ),
+        key=lambda item: (item[0] * 3 + item[1], item[0], item[1]),
         reverse=True,
     )
-    return ranked[0][1] if ranked and ranked[0][0] else SCHEMAS[-1]
+    if not ranked:
+        return SCHEMAS[-1]
+    topic_hits, receipt_hits, schema = ranked[0]
+    if topic_hits == 0 and receipt_hits < 2:
+        return SCHEMAS[-1]
+    return schema if topic_hits or receipt_hits else SCHEMAS[-1]
 
 
 def build_domain_discrimination(
@@ -214,6 +227,10 @@ def _receipt_text(receipt: dict[str, Any]) -> str:
         "exposure", "effect", "finding", "effect_direction", "directness",
     )
     return " ".join(str(receipt.get(key) or "") for key in keys)
+
+
+def _term_hit(term: str, haystack: str) -> bool:
+    return re.search(rf"\b{re.escape(term)}\b", haystack) is not None if len(term) <= 3 else term in haystack
 
 
 def _source_name(receipt: dict[str, Any]) -> str:

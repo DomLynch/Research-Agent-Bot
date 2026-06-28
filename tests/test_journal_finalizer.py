@@ -3782,6 +3782,30 @@ def test_dedupe_keeps_methods_search_query_list_with_subset_vocab() -> None:
     assert "fasting aging older adults randomized trial" in out
 
 
+def test_dedupe_keeps_domain_public_extraction_table_with_subset_vocab() -> None:
+    from scripts.review_noise_control import _dedupe_repeated_blocks
+
+    paper = (
+        "## Results\n\n"
+        "The source design population intervention exposure comparator endpoint "
+        "follow-up effect direction directness risk bias map reports Smith 2024 "
+        "randomized trial older adults exercise control cognition null direct "
+        "some concerns as domain-specific evidence.\n\n"
+        "## Domain Interpretation Framework\n\n"
+        "### Public Study Extraction Table\n\n"
+        "| Source | Design | Population | Intervention/exposure | Comparator | Endpoint | Follow-up | Effect | Direction | Directness | Risk of bias | Why it matters |\n"
+        "|---|---|---|---|---|---|---|---|---|---|---|---|\n"
+        "| Smith 2024 | randomized trial | older adults | exercise | control | cognition | 24 weeks | null | null | direct | some concerns | direct evidence for cognition |\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+    out, removed = _dedupe_repeated_blocks(paper)
+
+    assert removed == 0
+    assert "### Public Study Extraction Table" in out
+    assert "| Smith 2024 | randomized trial | older adults |" in out
+
+
 def test_unreferenced_citation_ignores_reference_title_fragment() -> None:
     from agent.journal_surface_gate import unreferenced_citation_tokens
 

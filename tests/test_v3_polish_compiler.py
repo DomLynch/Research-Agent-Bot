@@ -8,6 +8,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import v3_polish_compiler as polish  # type: ignore[import-not-found]  # noqa: E402
+import domain_discrimination as dd  # type: ignore[import-not-found]  # noqa: E402
 
 
 def _run_dir(tmp_path: Path, *, table: bool = False) -> Path:
@@ -61,6 +62,20 @@ def test_compile_run_writes_sidecars_with_optional_tools_skipped(tmp_path, monke
     assert (tmp_path / "run" / "paper_ir.json").exists()
     assert (tmp_path / "run" / "public_export_manifest.json").exists()
     assert report["paper_ir"]["paper_ir"]["schema"] == "researka.paper_ir.v1"
+
+
+def test_domain_schema_defaults_generic_on_weak_incidental_receipt_hits() -> None:
+    payload = dd.build_domain_discrimination(
+        "mitochondrial_dna_damage",
+        [{
+            "receipt_id": "Liang 2022",
+            "title": "Effects of treadmill exercise on mitochondrial DNA damage",
+            "outcome_class": "mechanism",
+            "directness": "mechanistic",
+        }],
+    )
+
+    assert payload["domain_schema"]["key"] == "geroscience"
 
 
 def test_canonical_pipe_table_is_advisory_and_rendered_to_typst(tmp_path, monkeypatch) -> None:
