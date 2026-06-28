@@ -1915,13 +1915,19 @@ def _clarify_mapped_non_significant_comparison(text: str) -> tuple[str, int]:
 
 
 def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> tuple[str, int]:
-    source = (
-        re.search(r"regarding\s+([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
-        or re.search(r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", feedback)
-    )
     p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
-    if not source or not p_value or float(p_value.group(1)) < 0.05:
+    if not p_value or float(p_value.group(1)) < 0.05:
         return text, 0
+    source_pattern = r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)"
+    local = feedback[max(0, p_value.start() - 180):min(len(feedback), p_value.end() + 180)]
+    sources = list(re.finditer(source_pattern, local))
+    if not sources:
+        sources = list(re.finditer(r"regarding\s+" + source_pattern, feedback))
+    if not sources:
+        return text, 0
+    p_local = local.lower().find(p_value.group(0).lower())
+    before_p = [candidate for candidate in sources if p_local < 0 or candidate.start() <= p_local]
+    source = before_p[-1] if before_p else sources[0]
     lower = feedback.lower()
     if not any(token in lower for token in (
         "positive signal", "positive coding", "direction/statistic",
@@ -2798,8 +2804,8 @@ def _title_cued_direction(row: dict[str, Any]) -> str:
         "fibrosis", "mortality", "risk", "decline", "pathology", "symptom",
         "defect", "toxicity",
     )
-    if any(token in title for token in ("abrogate", "reverse", "restore", "rescue", "protect")):
-        return "positive" if any(term in title for term in harm) else "unclear"
+    if any(token in title for token in ("abrogate", "reverse", "restore", "restores", "rescue", "protect")):
+        return "positive" if any(term in title for term in (*harm, "integrity", "repair")) else "unclear"
     if any(token in title for token in ("reduce", "decrease", "lower", "attenuate", "suppress")):
         return "positive" if any(term in title for term in harm) else "negative"
     if any(token in title for token in ("increase", "induce", "accelerate", "worsen", "promote")):
@@ -2931,11 +2937,48 @@ def _manifest_no_direct_hard_endpoint_note(rows: list[dict[str, Any]]) -> str:
             "These rows require explicit bounded interpretation before the reviewer "
             "ask for no direct hard-endpoint evidence can be treated as satisfied."
         )
+    adjacent_note = _adjacent_human_evidence_note(rows)
+    adjacent_suffix = f" {adjacent_note}" if adjacent_note else ""
     return (
         "No direct interventional hard-endpoint sources were admitted: "
         f"manifest hard-endpoint rows={len(hard_endpoint_rows)} ({labels}). "
         "The conclusion is bounded to association, mechanism, and "
         "hypothesis-generation rather than clinical actionability."
+        f"{adjacent_suffix}"
+    )
+
+
+def _adjacent_human_evidence_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    human_terms = (
+        "human", "patient", "patients", "infant", "infants", "adult", "adults",
+        "older", "cohort", "biopsy", "blood", "plasma", "serum", "clinical",
+        "hiv", "brain aging", "skeletal muscle",
+    )
+    biomarker_terms = (
+        "biomarker", "mtdna", "mitochondrial dna", "deletion", "damage",
+        "cohort", "biopsy", "blood-based", "observational", "cross-sectional",
+    )
+    selected = []
+    for row in rows:
+        if str(row.get("directness") or "").lower().startswith("direct"):
+            continue
+        scope = " ".join(str(row.get(key) or "") for key in (
+            "citation_token", "source_title", "outcome_class", "evidence_tier", "directness",
+        )).lower()
+        if any(token in scope for token in human_terms) and any(token in scope for token in biomarker_terms):
+            selected.append(row)
+    return selected
+
+
+def _adjacent_human_evidence_note(rows: list[dict[str, Any]]) -> str:
+    adjacent = _adjacent_human_evidence_rows(rows)
+    if not adjacent:
+        return ""
+    labels = ", ".join(_row_citation(row) for row in adjacent[:8])
+    return (
+        f"Adjacent human evidence rows={len(adjacent)}/{len(rows)} ({labels}); "
+        "these rows are human cohort, biopsy, or biomarker-adjacent evidence "
+        "rather than direct interventional hard-endpoint proof."
     )
 
 
@@ -3662,6 +3705,19 @@ def _phase_d_source_outcome_class_map(
         heterogeneity_note = _manifest_direction_heterogeneity_note(rows)
         if heterogeneity_note:
             notes.append(heterogeneity_note)
+    if any(token in lower_feedback for token in (
+        "human cohort", "biopsy", "adjacent human", "0 direct", "zero direct",
+        "direct framing", "directness framing",
+    )):
+        adjacent_note = _adjacent_human_evidence_note(rows)
+        if adjacent_note:
+            notes.append(adjacent_note)
+    if wants_findings_map:
+        labels = ", ".join(_row_citation(row) for row in rows)
+        notes.append(
+            f"Findings Map completeness note: all {len(rows)} admitted manifest rows "
+            f"are surfaced below ({labels})."
+        )
     named = {
         m.group(0)
         for m in re.finditer(r"\b[A-Z][A-Za-z'’\-]+ 20\d{2}\b", feedback)

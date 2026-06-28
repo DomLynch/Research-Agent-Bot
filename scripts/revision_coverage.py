@@ -591,6 +591,10 @@ def _asks_source_directness_breakdown(text: str) -> bool:
             any(token in text for token in ("re-tier", "re tier", "retier", "misclassified"))
             and any(token in text for token in ("source", "human intervention", "mechanistic", "context", "indirect", "review"))
         )
+        or (
+            any(token in text for token in ("human cohort", "biopsy", "adjacent human", "human evidence"))
+            and any(token in text for token in ("direct framing", "directness framing", "0 direct", "zero direct", "direct clinical"))
+        )
     )
 
 
@@ -874,7 +878,8 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
             "both equal", "contradictory", "contradiction", "clarify",
             "reconcile", "coherent accounting", "derived", "prisma style",
             "arithmetic scrutiny", "mutually exclusive", "additive rows",
-            "remove the table", "arithmetic", "why",
+            "remove the table", "arithmetic", "why", "non-overlapping",
+            "non overlapping", "step-by-step", "step by step", "candidate union",
         ))
     ) or ("no extractable claims" in text and "admitted final" in text) or (
         "partial/none-only" in text and "partial-only" in text
@@ -1052,6 +1057,11 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
         or (
             "tensions and gaps" in text
             and any(token in text for token in ("specific disagreement", "specific disagreements", "naming specific"))
+        )
+        or (
+            "tensions and gaps" in text
+            and any(token in text for token in ("contradiction", "contradictions", "enumerate"))
+            and any(token in text for token in ("0 disagreement", "zero disagreement", "do not say", "don't say"))
         )
     )
 
@@ -1797,6 +1807,10 @@ def _asks_no_direct_hard_endpoint_statement(text: str) -> bool:
             and any(token in text for token in ("hard-endpoint", "hard endpoint"))
             and any(token in text for token in ("clinical actionability", "hypothesis-generation", "association"))
         )
+        or (
+            any(token in text for token in ("human cohort", "biopsy", "adjacent human", "human evidence"))
+            and any(token in text for token in ("0 direct", "zero direct", "no direct", "direct framing"))
+        )
     )
 
 
@@ -2276,6 +2290,12 @@ def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
         "admission-bucket note:" in lower
         and "not an additive conservation table" in lower
         and "claim-binding states" in lower
+    ):
+        return True
+    if (
+        "stepwise reconciliation:" in lower
+        and "classified source candidates" in lower
+        and "admitted final sources" in lower
     ):
         return True
     rows = _funnel_counts(paper_md)

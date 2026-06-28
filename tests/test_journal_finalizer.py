@@ -1813,7 +1813,17 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
         "against the actual reported finding in source title/excerpt; correct unclear "
         "where titles state reversal, no relationship, or increased damage.; Add "
         "explicit Tensions and Gaps subsection enumerating at least three specific "
-        "cross-source disagreements with named sources."
+        "cross-source disagreements with named sources.; Reconcile source bundle to "
+        "15 admitted sources; add missing source-level finding for Chakraborty 2026 "
+        "and/or Chan 2012 in Findings Map or explicitly exclude.; Recode effect "
+        "directions: Hsiao 2026 reports significantly higher mtDNA damage, Ng 2019 "
+        "null lifespan should be tension with mechanistic plausibility, and Pena "
+        "2024 p=0.92 should be a non-significant contrast, not positive direction "
+        "evidence.; Redo Tensions and Gaps: enumerate contradictions and do not say "
+        "0 disagreements.; Reclassify human cohort/biopsy sources as adjacent human "
+        "evidence and update 0/15 direct framing.; Provide auditable admission "
+        "funnel with non-overlapping buckets or step-by-step candidate union to "
+        "admitted sources."
     )
     rows = [
         {
@@ -1842,6 +1852,23 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
             "n_claims": 1,
         },
         {
+            "citation_token": "Hsiao 2026",
+            "source_title": "Airway microbial dysbiosis and oxidative mitochondrial DNA damage in bronchopulmonary dysplasia",
+            "outcome_class": "respiratory",
+            "effect_direction": "null",
+            "directness": "adjacent",
+            "p_values": ["p < 0.05"],
+            "n_claims": 1,
+        },
+        {
+            "citation_token": "Chan 2012",
+            "source_title": "Mitochondrial DNA damage biomarker profile in human patient cohort",
+            "outcome_class": "biomarker",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "n_claims": 1,
+        },
+        {
             "citation_token": "Chakraborty 2026",
             "source_title": "F2,6BP restores mitochondrial genome integrity",
             "outcome_class": "contextual_other",
@@ -1853,6 +1880,22 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
             "citation_token": "Reid 2023",
             "source_title": "Blood-based mtDNA deletion biomarker study in cognitive aging",
             "outcome_class": "cognitive",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "n_claims": 1,
+        },
+        {
+            "citation_token": "Roca-Bayerri 2020",
+            "source_title": "Human skeletal muscle biopsy mitochondrial DNA damage cohort",
+            "outcome_class": "biomarker",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "n_claims": 1,
+        },
+        {
+            "citation_token": "Picca 2019",
+            "source_title": "Plasma mitochondrial DNA biomarker in older adult cohort",
+            "outcome_class": "biomarker",
             "effect_direction": "unclear",
             "directness": "indirect",
             "n_claims": 1,
@@ -1886,12 +1929,19 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
 
     assert "Auditable arithmetic is therefore candidate union -> classified source candidates -> admitted final sources" in fixed
     assert "diagnostic bucket rows do not sum to the classified count" in fixed
+    assert "Stepwise reconciliation: classified source candidates (18) -> admitted final sources (15)" in fixed
+    assert "Findings Map completeness note: all 9 admitted manifest source(s) are surfaced below" in fixed
     assert "Pena 2024: G2019S inhibitor abrogates mitochondrial DNA damage" in fixed
-    assert "Pena 2024" in fixed and "direction=positive" in fixed
+    assert "Pena 2024" in fixed and "direction=mixed" in fixed
     assert "representative non-significant statistic p = 0.92" in fixed
+    assert "Hsiao 2026" in fixed and "direction=negative" in fixed
     assert "Ng 2019" in fixed and "direction=null" in fixed
     assert "Shimizu 2026" in fixed and "direction=negative" in fixed
     assert "Chakraborty 2026" in fixed and "direction=positive" in fixed
+    assert "Chan 2012" in fixed
+    assert "Adjacent human evidence rows=" in fixed
+    assert "Roca-Bayerri 2020" in fixed and "Picca 2019" in fixed
+    assert "No direct interventional hard-endpoint sources were admitted" in fixed
     assert "No load-bearing cross-study disagreements were detected" not in fixed
     assert fixed.count("surfaced tension/disagreement") >= 3
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
