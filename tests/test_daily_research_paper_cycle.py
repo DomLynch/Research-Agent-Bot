@@ -1062,6 +1062,24 @@ def test_select_topic_does_not_substring_block_sibling_published_title(
     assert selected == "sglt2_inhibitors"
 
 
+def test_select_topic_skips_published_title_when_topic_key_is_plural(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "epigenetic_clocks", target_journal=True)
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["epigenetic_clocks"],
+        ledger_dir,
+        runs_root=runs_root,
+        remote_seen={cycle.submit_bridge._title_marker("Research Synthesis: Epigenetic Clocks")},
+    )
+
+    assert selected is None
+
+
 def test_topic_family_groups_sibling_slugs_by_lead_entity() -> None:
     fam = cycle._topic_family
     # sibling slugs of the same entity collapse to one family key…

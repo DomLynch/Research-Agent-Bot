@@ -1063,13 +1063,21 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
     job."""
     out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
     topic_markers = {m.removeprefix("topic:") for m in markers if m.startswith("topic:")}
-    title_markers = [m.removeprefix("title:") for m in markers if m.startswith("title:")]
+    title_markers = {m.removeprefix("title:") for m in markers if m.startswith("title:")}
+    title_markers |= {
+        marker.removeprefix("title:")
+        for title in list(title_markers)
+        for marker in submit_bridge._title_markers(title)
+    }
     for topic in topics:
         if submit_bridge._normalized_key(topic) in topic_markers:
             out.add(topic)
             continue
-        display = submit_bridge._normalized_key(submit_bridge._display_topic(topic))
-        if display and display in title_markers:
+        title_keys = {
+            submit_bridge._normalized_key(topic.replace("_", " ")),
+            submit_bridge._normalized_key(submit_bridge._display_topic(topic)),
+        }
+        if title_keys & title_markers:
             out.add(topic)
     return out
 
