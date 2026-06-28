@@ -5068,8 +5068,9 @@ def _phase_f_reconcile_results_table(
     context_table = source_context_map(receipts)
     table = "\n".join(rows) + "\n" + (f"\n{context_table}" if context_table else "")
     lines = results.splitlines(keepends=True)
+    header_candidates = {rows[0], rows[0].replace("Outcome class", "Evidence domain")}
     try:
-        start = next(i for i, line in enumerate(lines) if line.strip() == rows[0])
+        start = next(i for i, line in enumerate(lines) if line.strip() in header_candidates)
     except StopIteration:
         new_results = "\n" + table + "\n" + results.lstrip()
     else:
