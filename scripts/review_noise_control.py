@@ -234,7 +234,7 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
         # near-duplicate test below. Prune lists only on EXACT duplication.
         list_like = bool(re.match(r"\s*(?:[-*]|\d+[.)])\s", block))
         tokens = set(re.findall(r"[a-z0-9]+", norm.lower()))
-        near_seen = not list_like and len(words) >= 18 and any(
+        near_seen = not (list_like or table_like) and len(words) >= 18 and any(
             _token_overlap(tokens, prior) >= 0.85 for prior in seen_tokens
         )
         if (norm in seen and (table_like or len(words) >= 18)) or near_seen:
