@@ -1801,6 +1801,7 @@ def test_findings_map_separates_mechanistic_and_biomarker_roles(tmp_path: Path) 
     assert "Reid 2023: Blood-based mtDNA deletion biomarker study" in fixed
     assert "outcome=Biomarker/Adjacent Cognitive; direction=unclear" in fixed
     assert "Direction heterogeneity note: Mechanism/Longevity" in fixed
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 
 

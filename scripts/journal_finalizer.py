@@ -3003,7 +3003,7 @@ def _manifest_direction_visibility_note(rows: list[dict[str, Any]], feedback: st
 def _manifest_direction_heterogeneity_note(rows: list[dict[str, Any]]) -> str:
     grouped: dict[str, dict[str, list[str]]] = {}
     for row in rows:
-        outcome = _evidence_role_outcome_display(row)
+        outcome = re.sub(r"\s+\([^)]*\)$", "", _evidence_role_outcome_display(row))
         direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
         grouped.setdefault(outcome, {}).setdefault(direction, []).append(_row_citation(row))
     parts = []
