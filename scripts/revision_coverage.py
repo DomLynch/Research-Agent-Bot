@@ -34,7 +34,7 @@ def revision_asks(feedback: str) -> list[str]:
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
         "Enumerate", "Hedge", "In", "Include", "Integrate", "Make", "Narrow",
         "Move", "Operationalize", "Populate",
-        "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify",
+        "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify", "Reframe",
         "Recompute", "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",
         "Replace", "Restate", "Restructure", "Rewrite", "Separate", "Soften", "Strengthen",
         "Surface", "Tighten", "Update", "Verify",
@@ -158,6 +158,12 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_outcome_taxonomy_separation,
             _asks_source_stratification_reconciliation,
             _asks_mr_causal_count,
+            _asks_effect_direction_reconciliation,
+            _asks_admission_direction_tally_reconciliation,
+            _asks_bounded_research_question_conclusion,
+            _asks_mr_mechanism_disagreement_separation,
+            _asks_no_direct_hard_endpoint_statement,
+            _asks_publication_status_preprint_flags,
             _asks_direction_tally_audit,
             _asks_source_scope_annex,
             _asks_direct_interventional_reclassification,
@@ -284,6 +290,18 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _source_stratification_reconciliation_is_stated(paper_md)
     if _asks_mr_causal_count(lower):
         return _mr_causal_count_is_stated(paper_md, ask)
+    if _asks_effect_direction_reconciliation(lower):
+        return _effect_direction_reconciliation_is_stated(paper_md, ask)
+    if _asks_admission_direction_tally_reconciliation(lower):
+        return _admission_direction_tally_reconciliation_is_stated(paper_md)
+    if _asks_bounded_research_question_conclusion(lower):
+        return _bounded_research_question_conclusion_is_stated(paper_md)
+    if _asks_mr_mechanism_disagreement_separation(lower):
+        return _mr_mechanism_disagreement_separation_is_stated(paper_md)
+    if _asks_no_direct_hard_endpoint_statement(lower):
+        return _no_direct_hard_endpoint_statement_is_stated(paper_md)
+    if _asks_publication_status_preprint_flags(lower):
+        return _publication_status_preprint_flags_are_stated(paper_md)
     if _asks_direction_tally_audit(lower):
         return _direction_tally_audit_is_stated(paper_md)
     if _asks_source_scope_annex(lower):
@@ -443,6 +461,30 @@ def asks_source_stratification_reconciliation(text: str) -> bool:
 
 def asks_mr_causal_count(text: str) -> bool:
     return _asks_mr_causal_count(_normalised_feedback(text))
+
+
+def asks_effect_direction_reconciliation(text: str) -> bool:
+    return _asks_effect_direction_reconciliation(_normalised_feedback(text))
+
+
+def asks_admission_direction_tally_reconciliation(text: str) -> bool:
+    return _asks_admission_direction_tally_reconciliation(_normalised_feedback(text))
+
+
+def asks_bounded_research_question_conclusion(text: str) -> bool:
+    return _asks_bounded_research_question_conclusion(_normalised_feedback(text))
+
+
+def asks_mr_mechanism_disagreement_separation(text: str) -> bool:
+    return _asks_mr_mechanism_disagreement_separation(_normalised_feedback(text))
+
+
+def asks_no_direct_hard_endpoint_statement(text: str) -> bool:
+    return _asks_no_direct_hard_endpoint_statement(_normalised_feedback(text))
+
+
+def asks_publication_status_preprint_flags(text: str) -> bool:
+    return _asks_publication_status_preprint_flags(_normalised_feedback(text))
 
 
 def asks_direction_tally_audit(text: str) -> bool:
@@ -1709,6 +1751,58 @@ def _asks_mr_causal_count(text: str) -> bool:
     )
 
 
+def _asks_effect_direction_reconciliation(text: str) -> bool:
+    return (
+        any(token in text for token in ("effect_direction", "effect direction", "directionality"))
+        and any(token in text for token in ("actual reported finding", "reported finding", "excerpt", "contradicted"))
+        and any(token in text for token in ("reconcile", "correct", "remove", "verify"))
+    )
+
+
+def _asks_admission_direction_tally_reconciliation(text: str) -> bool:
+    return (
+        any(token in text for token in ("admission count", "admission counts", "admitted count", "admitted sources"))
+        and any(token in text for token in ("receipt-level direction", "receipt level direction", "direction tally", "direction tallies"))
+        and any(token in text for token in ("reconcile", "verify", "against", "actual"))
+    )
+
+
+def _asks_bounded_research_question_conclusion(text: str) -> bool:
+    return (
+        "research question" in text
+        and "conclusion" in text
+        and any(token in text for token in ("bounded", "bound", "reframe"))
+        and any(token in text for token in ("clinical efficacy", "direct interventional", "adjacent biomarkers", "prognostic associations"))
+    )
+
+
+def _asks_mr_mechanism_disagreement_separation(text: str) -> bool:
+    return (
+        any(token in text for token in ("separate", "do not pool", "don't pool", "not pool"))
+        and any(token in text for token in ("mr", "mendelian"))
+        and any(token in text for token in ("mechanistic", "mechanism", "alt"))
+        and any(token in text for token in ("disagreement", "disagreements", "describing"))
+    )
+
+
+def _asks_no_direct_hard_endpoint_statement(text: str) -> bool:
+    return (
+        ("no direct interventional hard-endpoint" in text or "no direct interventional hard endpoint" in text)
+        or (
+            "direct interventional" in text
+            and any(token in text for token in ("hard-endpoint", "hard endpoint"))
+            and any(token in text for token in ("clinical actionability", "hypothesis-generation", "association"))
+        )
+    )
+
+
+def _asks_publication_status_preprint_flags(text: str) -> bool:
+    return (
+        any(token in text for token in ("2026-dated", "2026 dated", "publication status", "actual publication"))
+        and "preprint" in text
+    )
+
+
 def _asks_direct_interventional_reclassification(text: str) -> bool:
     return (
         "reclassify" in text
@@ -1791,6 +1885,89 @@ def _mr_causal_count_is_stated(paper_md: str, ask: str) -> bool:
         and re.search(r"\b\d+\s*/\s*\d+\b", scope)
         and all(label.lower() in lower for label in labels)
     )
+
+
+def _effect_direction_reconciliation_is_stated(paper_md: str, ask: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Results"),
+    ) if part)
+    lower = scope.lower()
+    labels = _source_labels_from_ask(ask)
+    return (
+        "effect-direction reconciliation note:" in lower
+        and "actual reported finding" in lower
+        and "direction=" in lower
+        and all(label.lower() in lower for label in labels)
+    )
+
+
+def _admission_direction_tally_reconciliation_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Results"),
+    ) if part).lower()
+    return bool(
+        "admission and direction-tally reconciliation:" in scope
+        and re.search(r"\bn\s*=\s*\d+\b", scope)
+        and "negative=" in scope
+        and "null=" in scope
+        and "positive=" in scope
+        and "unclear=" in scope
+    )
+
+
+def _bounded_research_question_conclusion_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Research Question"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Conclusion"),
+        _section(paper_md, "Limitations"),
+    ) if part).lower()
+    return (
+        "scope-bounded research question note:" in scope
+        and any(token in scope for token in ("not direct interventional", "not clinical efficacy"))
+        and any(token in scope for token in ("adjacent biomarker", "prognostic association", "mechanism"))
+    )
+
+
+def _mr_mechanism_disagreement_separation_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Results"),
+    ) if part).lower()
+    return (
+        "mr/mechanism disagreement separation note:" in scope
+        and any(token in scope for token in ("mr", "mendelian"))
+        and any(token in scope for token in ("mechanistic", "mechanism", "alt"))
+        and any(token in scope for token in ("not pooled", "not pool"))
+    )
+
+
+def _no_direct_hard_endpoint_statement_is_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Gaps Identified"),
+        _section(paper_md, "Limitations"),
+        _section(paper_md, "Conclusion"),
+    ) if part).lower()
+    return (
+        "no direct interventional hard-endpoint sources were admitted" in scope
+        and any(token in scope for token in ("hypothesis-generation", "hypothesis-generating", "association"))
+    )
+
+
+def _publication_status_preprint_flags_are_stated(paper_md: str) -> bool:
+    scope = "\n\n".join(part for part in (
+        _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Key Findings"),
+        _section(paper_md, "Methods"),
+        _section(paper_md, "Limitations"),
+    ) if part).lower()
+    return "publication-status/preprint note:" in scope and "2026" in scope and "preprint" in scope
 
 
 def _source_scope_annex_is_stated(paper_md: str, ask: str) -> bool:
