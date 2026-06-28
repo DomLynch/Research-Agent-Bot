@@ -1468,7 +1468,7 @@ def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
 
 
 def _structured_source_excerpt(topic: str, row: dict[str, Any], receipt: dict[str, Any], title: str) -> str:
-    ids = ", ".join(
+    ids = " | ".join(
         part for part in (
             f"DOI {_clean_doi(row.get('source_doi'))}" if _clean_doi(row.get("source_doi")) else "",
             f"PMID {row.get('source_pmid')}" if row.get("source_pmid") else "",
@@ -1476,13 +1476,14 @@ def _structured_source_excerpt(topic: str, row: dict[str, Any], receipt: dict[st
         )
         if part
     )
+    identifiers = f" Identifiers: {ids}" if ids else ""
     return _clip_text(
         f"{title}. Source-bundle audit for {_display_topic(topic)}: "
         f"outcome={receipt.get('outcome_class') or 'unspecified'}; "
         f"effect_direction={receipt.get('effect_direction') or 'unclear'}; "
         f"directness={receipt.get('directness') or 'unspecified'}; "
         f"evidence_tier={receipt.get('evidence_tier') or 'unspecified'}; "
-        f"extracted_claims={receipt.get('n_claims') or 0}. {ids}."
+        f"extracted_claims={receipt.get('n_claims') or 0}.{identifiers}"
     )
 
 

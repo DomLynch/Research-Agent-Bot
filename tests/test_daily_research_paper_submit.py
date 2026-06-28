@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -218,6 +219,7 @@ def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     assert row["doi"] == "10.3344/kjp.24202"
     assert row["url"] == "https://doi.org/10.3344/kjp.24202"
     assert "10.3344/kjp.24202." not in json.dumps(payload)
+    assert not re.search(r"10\.3344/kjp\.24202[.,;]", json.dumps(payload))
 
 
 def test_run_cycle_capped_continues_past_researka_preflight_block(tmp_path: Path) -> None:
