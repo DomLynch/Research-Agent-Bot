@@ -1015,7 +1015,7 @@ def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monk
     assert selected == "aerobic_exercise"
 
 
-def test_select_topic_skips_published_topic_even_after_cooldown(tmp_path: Path, monkeypatch) -> None:
+def test_select_topic_skips_published_topic_marker_even_after_cooldown(tmp_path: Path, monkeypatch) -> None:
     """A topic whose paper is ALREADY PUBLISHED (its title is in the remote
     published set) must NOT be re-selected by the fresh cycle even once the
     submission cooldown lapses: a fresh non-revision re-run of a published title
@@ -1038,10 +1038,28 @@ def test_select_topic_skips_published_topic_even_after_cooldown(tmp_path: Path, 
         ["aerobic_exercise"],
         ledger_dir,
         runs_root=runs_root,
-        remote_seen={"title:researka agent-certified evidence brief: aerobic exercise and human geroscience"},
+        remote_seen={cycle.submit_bridge._topic_marker("aerobic_exercise")},
     )
 
     assert selected is None  # published → permanently excluded from the fresh cycle
+
+
+def test_select_topic_does_not_substring_block_sibling_published_title(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "sglt2_inhibitors", target_journal=True)
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["sglt2_inhibitors"],
+        ledger_dir,
+        runs_root=runs_root,
+        remote_seen={cycle.submit_bridge._title_marker("Research Synthesis: SGLT2 inhibitors effects")},
+    )
+
+    assert selected == "sglt2_inhibitors"
 
 
 def test_topic_family_groups_sibling_slugs_by_lead_entity() -> None:
