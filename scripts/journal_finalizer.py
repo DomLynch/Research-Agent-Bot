@@ -15,6 +15,7 @@ if str(_SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS_DIR))
 
 import revision_coverage  # noqa: E402
+import domain_discrimination  # noqa: E402
 
 
 @dataclass(frozen=True, slots=True)
@@ -128,6 +129,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_tensions_and_gaps_breadth(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
+        lambda t: _phase_d_domain_discrimination_surface(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_revision_audit_notes(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
@@ -3907,6 +3909,31 @@ def _phase_d_source_directness_breakdown(
                 detail=f"added source directness breakdown from {len(rows)} manifest receipt(s)",
             )]
     return text, []
+
+
+def _phase_d_domain_discrimination_surface(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    if not isinstance(manifest, dict):
+        return text, []
+    raw_receipts = manifest.get("receipts") or []
+    receipts = [row for row in raw_receipts if isinstance(row, dict)] if isinstance(raw_receipts, list) else []
+    if not receipts:
+        return text, []
+    topic = str(manifest.get("topic") or out_dir.name.removeprefix("synthesis-").split("-v", 1)[0])
+    patched, payload, changed = domain_discrimination.apply_domain_surface(text, topic, receipts)
+    (out_dir / "domain_discrimination.json").write_text(json.dumps(payload, indent=2) + "\n")
+    if not changed:
+        return text, []
+    schema = payload.get("domain_schema", {})
+    name = schema.get("name", "domain schema") if isinstance(schema, dict) else "domain schema"
+    return patched, [FinalizerLogEntry(
+        phase="D_domain_discrimination",
+        rule="insert_domain_schema_and_extraction_table",
+        n_changes=1,
+        detail=f"inserted {name} plus public study extraction table",
+    )]
 
 
 _EVIDENCE_TYPE_METADATA_NOTE = (

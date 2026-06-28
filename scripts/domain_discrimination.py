@@ -92,7 +92,7 @@ SCHEMAS: tuple[DomainSchema, ...] = (
 def select_domain_schema(topic: str, receipts: list[dict[str, Any]]) -> DomainSchema:
     haystack = " ".join([topic, *(_receipt_text(r) for r in receipts[:50])]).lower()
     ranked = sorted(
-        ((sum(1 for term in schema.terms if term in haystack), schema) for schema in SCHEMAS),
+        ((sum(1 for term in schema.terms if _term_hit(term, haystack)), schema) for schema in SCHEMAS),
         key=lambda item: item[0],
         reverse=True,
     )
@@ -214,6 +214,12 @@ def _receipt_text(receipt: dict[str, Any]) -> str:
         "exposure", "effect", "finding", "effect_direction", "directness",
     )
     return " ".join(str(receipt.get(key) or "") for key in keys)
+
+
+def _term_hit(term: str, haystack: str) -> bool:
+    if len(term) <= 3:
+        return re.search(rf"\b{re.escape(term)}\b", haystack) is not None
+    return term in haystack
 
 
 def _source_name(receipt: dict[str, Any]) -> str:

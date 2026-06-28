@@ -16,6 +16,8 @@ from html import escape
 from pathlib import Path
 from typing import Any
 
+import domain_discrimination
+
 REPO = Path(__file__).resolve().parent.parent
 
 
@@ -25,6 +27,7 @@ class PaperThesis:
     framework_name: str
     axes: list[str]
     falsifier: str
+    novel_contribution: str
     support_claim_ids: list[str]
     contradiction_ids: list[str]
 
@@ -98,9 +101,10 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
     topic = str(manifest.get("topic") or _topic_from_run(run_dir))
     receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
     tensions = _load_tensions(run_dir)
+    domain = domain_discrimination.build_domain_discrimination(topic, receipts)
     framework = select_domain_framework(topic, _topic_class(topic), receipts, _topic_framework(topic))
-    thesis = _build_thesis(paper, topic, framework, receipts, tensions)
-    exports = _write_exports(run_dir, paper, manifest, receipts, tensions)
+    thesis = _build_thesis(paper, topic, framework, receipts, tensions, domain)
+    exports = _write_exports(run_dir, paper, manifest, receipts, tensions, domain)
     ir = PaperIR(
         schema="researka.paper_ir.v1",
         title=_title(paper, topic),
@@ -125,6 +129,9 @@ def select_domain_framework(
 ) -> DomainFramework:
     if configured:
         return configured
+    schema = domain_discrimination.select_domain_schema(topic, receipts)
+    if schema.key != "geroscience":
+        return DomainFramework(schema.name, schema.terms, schema.axes, schema.falsifier)
     haystack = " ".join(
         [topic, topic_class]
         + [str(r.get("outcome_class") or "") for r in receipts[:40]]
@@ -193,6 +200,7 @@ def _load_tensions(run_dir: Path) -> list[dict[str, Any]]:
 def _build_thesis(
     paper: str, topic: str, framework: DomainFramework,
     receipts: list[dict[str, Any]], tensions: list[dict[str, Any]],
+    domain: dict[str, Any],
 ) -> PaperThesis:
     claim = _first_sentence(_section_text(paper, "Discussion")) or _first_sentence(_section_text(paper, "Abstract"))
     support = [
@@ -204,10 +212,11 @@ def _build_thesis(
         for i, t in enumerate(tensions[:8], 1)
     ]
     return PaperThesis(
-        claim=claim or f"{topic.replace('_', ' ')} evidence requires bounded interpretation.",
+        claim=str(domain.get("thesis") or claim or f"{topic.replace('_', ' ')} evidence requires bounded interpretation."),
         framework_name=framework.name,
         axes=list(framework.axes),
         falsifier=framework.falsifier,
+        novel_contribution=str(domain.get("novel_contribution") or ""),
         support_claim_ids=[s for s in support if s],
         contradiction_ids=contradiction_ids,
     )
@@ -271,8 +280,10 @@ def _references(paper: str) -> list[str]:
 def _write_exports(
     run_dir: Path, paper: str, manifest: dict[str, Any],
     receipts: list[dict[str, Any]], tensions: list[dict[str, Any]],
+    domain: dict[str, Any],
 ) -> dict[str, str | None]:
     _write_evidence_csv(run_dir / "evidence_table.csv", receipts)
+    (run_dir / "domain_discrimination.json").write_text(json.dumps(domain, indent=2) + "\n", encoding="utf-8")
     _write_bib(run_dir / "references.bib", _references(paper), manifest)
     (run_dir / "contradiction_map.json").write_text(json.dumps({"tensions": tensions}, indent=2) + "\n", encoding="utf-8")
     _write_docx(run_dir / "full_paper.docx", paper)
@@ -284,6 +295,7 @@ def _write_exports(
         "paper_audit": "paper_audit.json" if (run_dir / "paper_audit.json").exists() else None,
         "claim_cards": "claim_graph.json" if (run_dir / "claim_graph.json").exists() else None,
         "evidence_table_csv": "evidence_table.csv",
+        "domain_discrimination": "domain_discrimination.json",
         "contradiction_map": "contradiction_map.json",
         "supplement": "structured_evidence_tables.md" if (run_dir / "structured_evidence_tables.md").exists() else None,
     }
