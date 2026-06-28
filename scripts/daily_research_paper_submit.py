@@ -362,6 +362,10 @@ def _env_or_default(name: str, default: str) -> str:
     return os.getenv(name, "").strip() or default
 
 
+def _clean_doi(value: object) -> str:
+    return str(value or "").strip().rstrip(".,;")
+
+
 def _agent_slug() -> str:
     return os.getenv("RESEARKA_AGENT_SLUG_V3", "").strip() or os.getenv("AGENT_ID", "").strip() or DEFAULT_AGENT_SLUG
 
@@ -820,9 +824,9 @@ def _doi_existence_status(payload: dict[str, Any]) -> str:
         return "eligible"
     bundle = payload.get("source_bundle")
     dois = sorted({
-        str(row.get("doi") or "").strip().rstrip(".,;").lower()
+        _clean_doi(row.get("doi")).lower()
         for row in (bundle if isinstance(bundle, list) else [])
-        if isinstance(row, dict) and str(row.get("doi") or "").strip()
+        if isinstance(row, dict) and _clean_doi(row.get("doi"))
     })
     if not dois:
         return "eligible"
@@ -1371,7 +1375,7 @@ def _display_topic(slug: str) -> str:
 
 
 def _citation_url(row: dict[str, Any]) -> str | None:
-    doi = str(row.get("source_doi") or "").strip()
+    doi = _clean_doi(row.get("source_doi"))
     if doi:
         return f"https://doi.org/{doi}"
     pmid = str(row.get("source_pmid") or "").strip()
@@ -1466,7 +1470,7 @@ def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
 def _structured_source_excerpt(topic: str, row: dict[str, Any], receipt: dict[str, Any], title: str) -> str:
     ids = ", ".join(
         part for part in (
-            f"DOI {row.get('source_doi')}" if row.get("source_doi") else "",
+            f"DOI {_clean_doi(row.get('source_doi'))}" if _clean_doi(row.get("source_doi")) else "",
             f"PMID {row.get('source_pmid')}" if row.get("source_pmid") else "",
             f"reference {row.get('reference_id')}" if row.get("reference_id") else "",
         )
@@ -1524,7 +1528,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             "id": str(row.get("source_pmid") or row.get("source_pmcid") or row.get("reference_id") or row.get("receipt_id") or ""),
             "title": title,
             "url": _citation_url(row),
-            "doi": row.get("source_doi") or None,
+            "doi": _clean_doi(row.get("source_doi")) or None,
             "excerpt": excerpt,
             "year": row.get("source_year") if isinstance(row.get("source_year"), int) else None,
             "evidence_type": _evidence_type_for_source(receipt),

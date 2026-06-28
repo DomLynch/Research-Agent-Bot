@@ -205,6 +205,21 @@ def test_select_candidate_allows_changed_payload_for_submitted_topic(tmp_path: P
     assert considered[0]["status"] == "eligible_resubmission_after_payload_change"
 
 
+def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
+    first_key = sorted(registry)[0]
+    registry[first_key]["source_doi"] = "10.3344/kjp.24202."
+    _write_json(run / "citation_registry.json", registry)
+
+    payload = daily.build_payload(run)
+    row = next(row for row in payload["source_bundle"] if row["doi"] == "10.3344/kjp.24202")
+
+    assert row["doi"] == "10.3344/kjp.24202"
+    assert row["url"] == "https://doi.org/10.3344/kjp.24202"
+    assert "10.3344/kjp.24202." not in json.dumps(payload)
+
+
 def test_run_cycle_capped_continues_past_researka_preflight_block(tmp_path: Path) -> None:
     blocked = _run(tmp_path, "synthesis-protein-v06-new")
     ready = _run(tmp_path, "synthesis-aspirin-v06-old")
