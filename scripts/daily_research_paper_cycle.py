@@ -3428,6 +3428,7 @@ def run_cycle(
         topic_supply_refreshed = False
         submitted_total = 0
         attempt_count = 0
+        receipt_preflight_repairs_used = 0
         while True:
             if topic and attempt_count:
                 break
@@ -4034,13 +4035,16 @@ def run_cycle(
                 )
                 receipt_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
                 if receipt_preflight is None:
+                    receipt_repair = bool(revision_source) or receipt_preflight_repairs_used < _corpus_repair_limit()
                     receipt_preflight = _receipt_preflight(
                         selected,
                         out_dir,
                         timeout=receipt_timeout,
-                        repair=True,
+                        repair=receipt_repair,
                         dry_run=synthesis_dry_run,
                     )
+                    if not revision_source and receipt_preflight.get("repairs"):
+                        receipt_preflight_repairs_used += 1
                 if not receipt_preflight.get("passed"):
                     gate_status = str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
                     if revision_source and _terminal_revision_receipt_preflight(receipt_preflight):
