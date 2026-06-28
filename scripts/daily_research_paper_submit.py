@@ -366,6 +366,13 @@ def _clean_doi(value: object) -> str:
     return str(value or "").strip().rstrip(".,;")
 
 
+_DOI_TEXT_RE = re.compile(r"(?i)(\bDOI:\s*)(10\.\d{4,9}/\S+)")
+
+
+def _clean_doi_text(text: str) -> str:
+    return _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), text)
+
+
 def _agent_slug() -> str:
     return os.getenv("RESEARKA_AGENT_SLUG_V3", "").strip() or os.getenv("AGENT_ID", "").strip() or DEFAULT_AGENT_SLUG
 
@@ -1648,7 +1655,7 @@ def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
 
 
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
-    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    paper = _clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8"))
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
     title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"

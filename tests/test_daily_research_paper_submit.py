@@ -208,6 +208,11 @@ def test_select_candidate_allows_changed_payload_for_submitted_topic(tmp_path: P
 
 def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     run = _run(tmp_path)
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8") + "\n\nReference DOI: 10.3344/kjp.24202.. PMID: 39344363.",
+        encoding="utf-8",
+    )
     registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
     first_key = sorted(registry)[0]
     registry[first_key]["source_doi"] = "10.3344/kjp.24202."
