@@ -36,6 +36,7 @@ from agent.topic_display import humanize_topic  # noqa: E402
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
+CYCLE_LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 # Re-audit window for stale-audit self-heal: only recently produced runs are
 # re-audited at submit time so a now-fixed audit check propagates without a
 # re-synthesis. Bounds cost — historical runs are not re-audited every cycle.
@@ -148,6 +149,13 @@ def _read_json(path: Path) -> dict[str, Any]:
 def _write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def _write_daily_submit_cycle_ledger(runs_root: Path, date: str, ledger: dict[str, Any]) -> None:
+    payload = dict(ledger)
+    payload["lane"] = "daily-submit"
+    payload["updated_at"] = dt.datetime.now(dt.UTC).isoformat()
+    _write_json(runs_root / CYCLE_LEDGER_DIR / f"{date}-daily-submit.json", payload)
 
 
 def _sha256(path: Path) -> str:
@@ -2074,6 +2082,7 @@ def main(argv: list[str] | None = None) -> int:
         runs_root=args.runs_root, date=args.date, submit=args.submit,
         max_submissions=max(1, args.max_submissions),
     )
+    _write_daily_submit_cycle_ledger(args.runs_root, args.date, ledger)
     print(
         f"[daily-v3] status={ledger['status']} submitted={ledger['submitted']} "
         f"published={ledger['published']} run={ledger.get('candidate', {}).get('run', '-')}"
