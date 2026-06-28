@@ -2859,6 +2859,14 @@ def test_revision_domain_scope_reset_matches_imported_longevity_frame() -> None:
         "missing bundle sources to the Results outcome slices; recode direction "
         "values and report excluded-with-reasons in the screening flow."
     )
+    assert not cycle._revision_requests_domain_scope_reset(
+        "Reframe research question and conclusion so the retained set is not "
+        "direct interventional/clinical efficacy.; Reconcile each cited source's "
+        "effect_direction with the actual reported finding in excerpt.; Add explicit "
+        "statement no direct interventional hard-endpoint sources admitted; remove "
+        "clinical actionability/anti-aging framing.; Verify 2026-dated sources for "
+        "actual publication status and preprint distinction."
+    )
 
 
 def test_revise_lane_marks_domain_scope_mismatch_terminal(tmp_path: Path, monkeypatch) -> None:
