@@ -578,6 +578,11 @@ def _asks_source_directness_breakdown(text: str) -> bool:
             and any(token in text for token in ("versus", "vs.", "which included", "scope statement"))
         )
         or (
+            "human" in text
+            and any(token in text for token in ("cohort", "biopsy", "adjacent human", "0/", "direct framing"))
+            and any(token in text for token in ("reclassify", "update", "separate", "rather than"))
+        )
+        or (
             "source" in text
             and any(token in text for token in (
                 "directly address", "directly addresses", "hard endpoint", "hard endpoints",
@@ -1051,7 +1056,11 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
         )
         or (
             "tensions and gaps" in text
-            and any(token in text for token in ("specific disagreement", "specific disagreements", "naming specific"))
+            and any(token in text for token in (
+                "specific disagreement", "specific disagreements", "naming specific",
+                "contradiction", "contradictions", "0 disagreement",
+                "zero disagreement", "enumerate",
+            ))
         )
     )
 
@@ -1796,6 +1805,11 @@ def _asks_no_direct_hard_endpoint_statement(text: str) -> bool:
             "direct interventional" in text
             and any(token in text for token in ("hard-endpoint", "hard endpoint"))
             and any(token in text for token in ("clinical actionability", "hypothesis-generation", "association"))
+        )
+        or (
+            "human" in text
+            and any(token in text for token in ("cohort", "biopsy", "adjacent human", "0/"))
+            and any(token in text for token in ("direct framing", "zero direct", "not zero human"))
         )
     )
 
