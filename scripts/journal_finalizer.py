@@ -2176,12 +2176,32 @@ def _phase_d_substantive_evidence_synthesis(
         direction_audit += "\n\n"
     needs_taxonomy_note = revision_coverage.asks_outcome_taxonomy_separation(feedback)
     needs_conclusion_weight = revision_coverage.asks_conclusion_weight_boundary(feedback)
+    needs_signal_note = revision_coverage.asks_most_supported_key_findings(feedback)
+    needs_stratification = revision_coverage.asks_source_stratification_reconciliation(feedback)
+    needs_mr_count = revision_coverage.asks_mr_causal_count(feedback)
+    needs_direct_reclass = revision_coverage.asks_direct_interventional_reclassification(feedback)
+    needs_direction_highlights = revision_coverage.asks_direction_coded_source_highlights(feedback)
     text, conclusion_cleanup_n = (
         _remove_equal_weight_conclusion_claim(text) if needs_conclusion_weight else (text, 0)
     )
     taxonomy_note = _manifest_outcome_taxonomy_note(rows) if needs_taxonomy_note else ""
     if taxonomy_note:
         taxonomy_note += "\n\n"
+    signal_note = _manifest_most_supported_signal_note(feedback, rows) if needs_signal_note else ""
+    if signal_note:
+        signal_note += "\n\n"
+    stratification_note = _manifest_stratification_reconciliation_note(rows) if needs_stratification else ""
+    if stratification_note:
+        stratification_note += "\n\n"
+    mr_count_note = _manifest_mr_causal_count_note(rows) if needs_mr_count else ""
+    if mr_count_note:
+        mr_count_note += "\n\n"
+    direct_reclass_note = _manifest_direct_interventional_note(feedback, rows) if needs_direct_reclass else ""
+    if direct_reclass_note:
+        direct_reclass_note += "\n\n"
+    direction_highlights = _manifest_direction_coded_highlights(rows) if needs_direction_highlights else ""
+    if direction_highlights:
+        direction_highlights += "\n\n"
     subdomain_lines = _manifest_contextual_subdomain_lines(rows) if (
         full_source_surface or "disaggregate" in feedback.lower() or needs_taxonomy_note
     ) else []
@@ -2196,7 +2216,7 @@ def _phase_d_substantive_evidence_synthesis(
     for row in rows:
         direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
         counts[direction] = counts.get(direction, 0) + 1
-    direct = sum(1 for row in rows if str(row.get("directness") or "").lower().startswith("direct"))
+    direct = _manifest_effective_direct_count(feedback, rows)
     landscape = (
         "Substantive evidence synthesis: The manifest includes "
         f"{len(rows)} retained sources, {direct} direct-source row(s), and "
@@ -2213,6 +2233,11 @@ def _phase_d_substantive_evidence_synthesis(
     )
     key_findings = (
         "Key findings from source synthesis:\n\n"
+        f"{signal_note}"
+        f"{stratification_note}"
+        f"{mr_count_note}"
+        f"{direct_reclass_note}"
+        f"{direction_highlights}"
         f"{taxonomy_note}"
         f"{direction_visibility}"
         f"{count_reconciliation}"
@@ -2308,6 +2333,11 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             and any(token in lower for token in ("outcome-class", "outcome class"))
             and any(token in lower for token in ("bullet", "source", "sources support"))
         )
+        or revision_coverage.asks_most_supported_key_findings(feedback)
+        or revision_coverage.asks_source_stratification_reconciliation(feedback)
+        or revision_coverage.asks_mr_causal_count(feedback)
+        or revision_coverage.asks_direct_interventional_reclassification(feedback)
+        or revision_coverage.asks_direction_coded_source_highlights(feedback)
         or ("integrate" in lower and "evidence" in lower)
         or _revision_asks_full_source_surface(feedback)
         or (
@@ -2532,7 +2562,10 @@ def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
     scope = f"{title} {outcome}".lower()
     if any(token in scope for token in ("prognostic", "survival", "recurrence", "mortality")):
         return "prognostic and survival-marker evidence"
-    if any(token in scope for token in ("mendelian", "genetic", "genetically", "causal", "risk")):
+    if any(token in scope for token in (
+        "mendelian", "genetic", "genetically", "causal",
+        "risk factor", "incident cancer risk",
+    )):
         return "causal-risk and Mendelian-randomization evidence"
     if any(token in scope for token in ("treatment", "therapy", "radio", "chemo", "intervention", "supplement")):
         return "treatment or intervention-response evidence"
@@ -2556,6 +2589,104 @@ def _manifest_outcome_taxonomy_note(rows: list[dict[str, Any]]) -> str:
         "map: " + "; ".join(parts) + ". These strata are interpreted separately "
         "before any bounded conclusion is drawn."
     )
+
+
+def _manifest_most_supported_signal_note(feedback: str, rows: list[dict[str, Any]]) -> str:
+    selected: list[dict[str, Any]] = []
+    for label in _reviewer_key_finding_labels(feedback):
+        row = next((r for r in rows if label.lower() in _row_citation(r).lower()), None)
+        if row and _row_citation(row) not in {_row_citation(existing) for existing in selected}:
+            selected.append(row)
+    for row in sorted(rows, key=_manifest_key_finding_score):
+        if len(selected) >= 3:
+            break
+        if _row_citation(row) not in {_row_citation(existing) for existing in selected}:
+            selected.append(row)
+    lines = [_manifest_source_finding_line(row) for row in selected[:3]]
+    return "Most-supported outcome-specific signals:\n\n" + "\n".join(f"- {line}" for line in lines)
+
+
+def _manifest_direction_coded_highlights(rows: list[dict[str, Any]]) -> str:
+    by_outcome: dict[str, dict[str, Any]] = {}
+    for row in sorted(rows, key=_manifest_key_finding_score):
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        by_outcome.setdefault(outcome, row)
+    lines = [_manifest_source_finding_line(row) for row in list(by_outcome.values())[:8]]
+    return "Direction-coded source highlights:\n\n" + "\n".join(f"- {line}" for line in lines)
+
+
+def _manifest_stratification_reconciliation_note(rows: list[dict[str, Any]]) -> str:
+    outcome_counts: dict[str, int] = {}
+    domain_counts: dict[str, int] = {}
+    for row in rows:
+        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        outcome_counts[outcome] = outcome_counts.get(outcome, 0) + 1
+        domain = _manifest_subdomain_bucket(row)
+        domain_counts[domain] = domain_counts.get(domain, 0) + 1
+    outcomes = ", ".join(f"{name} n={count}" for name, count in sorted(outcome_counts.items(), key=lambda item: (-item[1], item[0])))
+    domains = ", ".join(f"{name} n={count}" for name, count in sorted(domain_counts.items(), key=lambda item: (-item[1], item[0])))
+    return (
+        "Stratification reconciliation note: The five-domain source-role summary "
+        f"({domains}) is separate from the seven-slice outcome-class table "
+        f"({outcomes}); both reconcile to the same retained source denominator."
+    )
+
+
+def _is_mr_causal_row(row: dict[str, Any]) -> bool:
+    scope = f"{row.get('source_title') or ''} {row.get('outcome_class') or ''}".lower()
+    return any(token in scope for token in ("mendelian", "genetic", "genetically", "causal"))
+
+
+def _manifest_mr_causal_count_note(rows: list[dict[str, Any]]) -> str:
+    matches = [row for row in rows if _is_mr_causal_row(row)]
+    labels = ", ".join(_row_citation(row) for row in matches) or "none"
+    return f"MR/causal-risk source count: {len(matches)}/{len(rows)} retained sources ({labels})."
+
+
+def _manifest_direct_interventional_note(feedback: str, rows: list[dict[str, Any]]) -> str:
+    labels = _reviewer_direct_reclassification_labels(feedback)
+    direct_labels = []
+    for label in labels:
+        row = next((r for r in rows if label.lower() in _row_citation(r).lower()), None)
+        if row:
+            direct_labels.append(label)
+    count = _manifest_effective_direct_count(feedback, rows)
+    listed = ", ".join(direct_labels) if direct_labels else "reviewer-named RCT endpoint source(s)"
+    verb = "is" if len(direct_labels) == 1 else "are"
+    return (
+        "Direct-interventional endpoint correction: "
+        f"{listed} {verb} counted as direct interventional endpoint evidence for their "
+        f"measured endpoint. Direct evidence count is {count}/{len(rows)}; this does "
+        "not convert endpoint evidence into hard clinical-outcome proof."
+    )
+
+
+def _manifest_effective_direct_count(feedback: str, rows: list[dict[str, Any]]) -> int:
+    direct = sum(1 for row in rows if str(row.get("directness") or "").lower().startswith("direct"))
+    if not revision_coverage.asks_direct_interventional_reclassification(feedback):
+        return direct
+    labels = set(_reviewer_direct_reclassification_labels(feedback))
+    for label in labels:
+        row = next((r for r in rows if label.lower() in _row_citation(r).lower()), None)
+        if row and not str(row.get("directness") or "").lower().startswith("direct"):
+            direct += 1
+    return direct
+
+
+def _reviewer_direct_reclassification_labels(feedback: str) -> list[str]:
+    labels: list[str] = []
+    for ask in revision_coverage.revision_asks(feedback):
+        if revision_coverage.asks_direct_interventional_reclassification(ask):
+            labels.extend(_reviewer_named_source_labels(ask))
+    return list(dict.fromkeys(labels))
+
+
+def _reviewer_key_finding_labels(feedback: str) -> list[str]:
+    labels: list[str] = []
+    for ask in revision_coverage.revision_asks(feedback):
+        if revision_coverage.asks_most_supported_key_findings(ask):
+            labels.extend(_reviewer_named_source_labels(ask))
+    return list(dict.fromkeys(labels))
 
 
 def _manifest_source_pattern_summary(rows: list[dict[str, Any]]) -> str:

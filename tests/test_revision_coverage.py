@@ -2408,3 +2408,44 @@ def test_latest_telomere_second_revise_feedback_splits_and_requires_markers() ->
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
     assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_third_revise_feedback_splits_and_requires_markers() -> None:
+    feedback = (
+        "Add a clearly scoped Key Findings section that names the 2-3 most-supported "
+        "outcome-specific signals with their source citations, rather than only a "
+        "methodological header.; Reconcile the five-domain vs. seven-slice source "
+        "stratification: either consolidate to five outcome domains matching the abstract, "
+        "or correct the abstract to state seven slices with their n counts.; Recompute "
+        "and report the actual MR/ causal-risk source count from the bundle (Wan 2023, "
+        "Song 2022, Chen 2023, Markozannes 2022, plus any others) rather than asserting "
+        "an unsupported 7/25 figure.; Reclassify Jaeger 2024 as direct interventional "
+        "evidence (RCT with TL endpoint) and adjust the direct-evidence count and the "
+        "'0/25 direct sources' statement in Gaps Identified accordingly.; Surface the "
+        "direction-coded findings for at least the top-cited sources in each outcome "
+        "class so that significant source statistic rows are interpretable."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = "## Key Findings\n\nKey findings from source synthesis.\n\n## Conclusion\n\nBounded.\n"
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "MR/causal-risk source count: 4/25 retained sources (Wan 2023, Song 2022, "
+        "Chen 2023, Markozannes 2022).\n\n"
+        "Direct-interventional endpoint correction: Jaeger 2024 is counted as direct "
+        "interventional endpoint evidence. Direct evidence count is 1/25; RCT endpoint "
+        "evidence is separated from hard clinical-outcome proof.\n\n"
+        "## Key Findings\n\n"
+        "Most-supported outcome-specific signals:\n\n"
+        "- Sarkar 2026 (representative statistic p = 0.0005; direction=unclear; source-level statistic reported).\n\n"
+        "Stratification reconciliation note: The five-domain source-role summary "
+        "(causal-risk and Mendelian-randomization evidence n=4) is separate from "
+        "the seven-slice outcome-class table (Mortality and Survival n=3); both "
+        "reconcile to the same retained source denominator.\n\n"
+        "Direction-coded source highlights:\n\n"
+        "- Chen 2023 (representative statistic p = 0.04; direction=null; source-level statistic reported).\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == ["Add", "Reconcile", "Recompute", "Reclassify", "Surface"]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []

@@ -4300,3 +4300,108 @@ def test_second_telomere_revise_asks_repaired_generically(tmp_path: Path) -> Non
     assert "minority slices" in fixed.lower()
     assert "risk-marker, causal, mechanistic, or treatment-response hypotheses according to source directness" not in fixed
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+
+
+def test_third_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None:
+    feedback = (
+        "Add a clearly scoped Key Findings section that names the 2-3 most-supported outcome-specific "
+        "signals with their source citations, rather than only a methodological header.; Reconcile the "
+        "five-domain vs. seven-slice source stratification: either consolidate to five outcome domains "
+        "matching the abstract, or correct the abstract to state seven slices with their n counts.; "
+        "Recompute and report the actual MR/ causal-risk source count from the bundle (Wan 2023, "
+        "Song 2022, Chen 2023, Markozannes 2022, plus any others) rather than asserting an unsupported "
+        "7/25 figure.; Reclassify Jaeger 2024 as direct interventional evidence (RCT with TL endpoint) "
+        "and adjust the direct-evidence count and the '0/25 direct sources' statement in Gaps Identified "
+        "accordingly.; Surface the direction-coded findings for at least the top-cited sources in each "
+        "outcome class so that significant source statistic rows are interpretable."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "telomere_cancer_effects",
+        "receipts": [
+            {
+                "citation_token": "Sarkar 2026",
+                "source_title": "Leukocyte Telomere Length Variants Are Independently Associated with Survival of Patients with Colorectal Cancer",
+                "outcome_class": "mortality_survival",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "p_values": ["p = 0.0005"],
+                "n_claims": 20,
+            },
+            {
+                "citation_token": "Chen 2023",
+                "source_title": "Association between genetically determined telomere length and health-related outcomes: Mendelian randomization studies",
+                "outcome_class": "contextual_other",
+                "effect_direction": "null",
+                "directness": "review",
+                "evidence_tier": "B2",
+                "n_claims": 14,
+            },
+            {
+                "citation_token": "Markozannes 2022",
+                "source_title": "Systematic review of Mendelian randomization studies on risk of cancer",
+                "outcome_class": "immune",
+                "effect_direction": "null",
+                "directness": "review",
+                "evidence_tier": "B2",
+                "n_claims": 61,
+            },
+            {
+                "citation_token": "Wan 2023",
+                "source_title": "Mendelian randomization study on leukocyte telomere length and prostate cancer",
+                "outcome_class": "contextual_other",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "n_claims": 12,
+            },
+            {
+                "citation_token": "Song 2022",
+                "source_title": "Association Between Telomere Length and Skin Cancer and Aging: A Mendelian Randomization Analysis",
+                "outcome_class": "contextual_other",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "n_claims": 8,
+            },
+            {
+                "citation_token": "Jaeger 2024",
+                "source_title": "Randomized placebo-controlled supplement trial with telomere length endpoint",
+                "outcome_class": "contextual_other",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "p_values": ["p = 0.01"],
+                "n_claims": 90,
+            },
+            {
+                "citation_token": "Afolabi 2026",
+                "source_title": "ALT and TERT telomere biology mechanisms in tumor cells",
+                "outcome_class": "mechanism",
+                "effect_direction": "null",
+                "directness": "mechanistic",
+                "evidence_tier": "C1",
+                "n_claims": 3,
+            },
+        ],
+    }), encoding="utf-8")
+    paper = (
+        "## Abstract\n\nThis synthesis uses a five-domain summary.\n\n"
+        "## Evidence Landscape\n\n0/25 direct sources.\n\n"
+        "## Key Findings\n\nKey findings from source synthesis.\n\n"
+        "## Conclusion\n\nThe conclusion is bounded.\n"
+    )
+
+    fixed, _logs = journal_finalizer._run_text_phases(paper, tmp_path)
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+
+    assert "Most-supported outcome-specific signals:" in fixed
+    assert "Stratification reconciliation note:" in fixed
+    assert "MR/causal-risk source count:" in fixed
+    assert "Wan 2023" in fixed and "Song 2022" in fixed and "Chen 2023" in fixed and "Markozannes 2022" in fixed
+    assert "Direct-interventional endpoint correction:" in fixed
+    assert "Jaeger 2024" in fixed
+    assert "Direct evidence count is 1/7" in fixed
+    assert "Direction-coded source highlights:" in fixed
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []

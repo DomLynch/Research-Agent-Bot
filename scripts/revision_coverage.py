@@ -429,8 +429,20 @@ def asks_scope_framing(text: str) -> bool:
     return _asks_scope_framing(_normalised_feedback(text))
 
 
+def asks_most_supported_key_findings(text: str) -> bool:
+    return _asks_most_supported_key_findings(_normalised_feedback(text))
+
+
 def asks_outcome_taxonomy_separation(text: str) -> bool:
     return _asks_outcome_taxonomy_separation(_normalised_feedback(text))
+
+
+def asks_source_stratification_reconciliation(text: str) -> bool:
+    return _asks_source_stratification_reconciliation(_normalised_feedback(text))
+
+
+def asks_mr_causal_count(text: str) -> bool:
+    return _asks_mr_causal_count(_normalised_feedback(text))
 
 
 def asks_direction_tally_audit(text: str) -> bool:
@@ -441,8 +453,16 @@ def asks_source_scope_annex(text: str) -> bool:
     return _asks_source_scope_annex(_normalised_feedback(text))
 
 
+def asks_direct_interventional_reclassification(text: str) -> bool:
+    return _asks_direct_interventional_reclassification(_normalised_feedback(text))
+
+
 def asks_conclusion_weight_boundary(text: str) -> bool:
     return _asks_conclusion_weight_boundary(_normalised_feedback(text))
+
+
+def asks_direction_coded_source_highlights(text: str) -> bool:
+    return _asks_direction_coded_source_highlights(_normalised_feedback(text))
 
 
 def asks_findings_map_detail(text: str) -> bool:
