@@ -1158,11 +1158,8 @@ def select_candidate(
             title_marks.update(_title_markers(str(payload.get("title") or "")))
             markers.update(title_marks)
         if locally_eligible:
-            preflight_status = _researka_preflight_status(payload, enforce_recency=purpose != "revision")
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
-            if preflight_status != "eligible":
-                ok, status = False, preflight_status
-            elif null_status != "eligible":
+            if null_status != "eligible":
                 ok, status = False, null_status
             elif (anchor_status := _findings_map_topic_anchor_status(payload)) != "eligible":
                 ok, status = False, anchor_status
@@ -1989,12 +1986,10 @@ def run_cycle_capped(
 
     Each underlying `run_cycle` re-selects via the submitted-fingerprints
     file, so successive calls return the next distinct topic (a submitted
-    fingerprint is excluded on the following pass). A candidate that was
-    consumed — submitted, or recorded as rejected/revise-requested so the
-    next pass skips it — does NOT stop the cycle; the loop moves on to the
-    next ready candidate so one duplicate rejection cannot stall the window.
-    It stops only on a no-progress terminal status (no_eligible /
-    remote_dedupe_failed / submit_not_configured / submission_failed).
+    fingerprint is excluded on the following pass). A candidate-specific
+    blocker — submitted, rejected/revise-requested, or selected then blocked by
+    preflight — does NOT stop the cycle; the loop moves on to the next ready
+    candidate. It stops only on a no-candidate/no-progress terminal status.
 
     `max_submissions <= 1` is an exact passthrough to `run_cycle` — same
     ledger shape, same behaviour, no extra remote-dedupe fetches — so the
@@ -2021,6 +2016,7 @@ def run_cycle_capped(
         total += n
         submissions.append({
             "status": last.get("status"),
+            "reason": last.get("reason"),
             "candidate": last.get("candidate"),
             "submitted": n,
             "published": int(last.get("published") or 0),
@@ -2036,16 +2032,18 @@ def run_cycle_capped(
             first_candidate = last.get("candidate")
         candidate = last.get("candidate")
         topic = candidate.get("topic") if isinstance(candidate, dict) else None
-        if topic and last.get("status") in {
+        status = last.get("status")
+        candidate_blocked = bool(topic and status == "no_eligible_research_paper" and last.get("reason"))
+        if topic and (candidate_blocked or status in {
             "submitted_to_researka",
             "submission_rejected_by_researka",
             "submission_revise_requested",
-        }:
+        }):
             consumed_topics.add(str(topic))
         # Continue past a consumed candidate (published, or recorded as
         # rejected/revise-requested so the next pass skips it); stop only when
         # there is no further progress to make this window.
-        if last.get("status") not in {
+        if not candidate_blocked and status not in {
             "submitted_to_researka",
             "submission_rejected_by_researka",
             "submission_revise_requested",

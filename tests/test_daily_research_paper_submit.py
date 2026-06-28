@@ -136,6 +136,29 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
     return run
 
 
+def _retopic(run: Path, topic: str) -> None:
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    receipts = []
+    for idx, row in enumerate(manifest["receipts"], start=1):
+        item = dict(row)
+        item["receipt_id"] = f"{topic}_effect_{idx}"
+        receipts.append(item)
+    manifest["topic"] = topic
+    manifest["receipts"] = receipts
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        row["receipt_id"]: {
+            "receipt_id": row["receipt_id"],
+            "body_citation": f"Smith {idx} 2026",
+            "reference_id": f"R{idx:02d}",
+            "source_year": 2026,
+            "source_doi": f"10.1/{topic}.{idx}",
+            "source_pmid": str(123 + idx),
+        }
+        for idx, row in enumerate(receipts, start=1)
+    })
+
+
 def test_dry_run_selects_eligible_research_paper(tmp_path: Path) -> None:
     _run(tmp_path)
 
@@ -180,6 +203,40 @@ def test_select_candidate_allows_changed_payload_for_submitted_topic(tmp_path: P
 
     assert selected == run
     assert considered[0]["status"] == "eligible_resubmission_after_payload_change"
+
+
+def test_run_cycle_capped_continues_past_researka_preflight_block(tmp_path: Path) -> None:
+    blocked = _run(tmp_path, "synthesis-protein-v06-new")
+    ready = _run(tmp_path, "synthesis-aspirin-v06-old")
+    _retopic(blocked, "protein")
+    _retopic(ready, "aspirin")
+    registry = json.loads((blocked / "citation_registry.json").read_text(encoding="utf-8"))
+    first_key = sorted(registry)[0]
+    registry[first_key].pop("body_citation", None)
+    registry[first_key].pop("source_year", None)
+    _write_json(blocked / "citation_registry.json", registry)
+    now = time.time()
+    os.utime(ready, (now - 10, now - 10))
+    os.utime(blocked, (now, now))
+    assert (
+        daily._researka_preflight_status(daily.build_payload(blocked))
+        == "source_bundle_unmapped_sources:outcome=0,citation=1"
+    )
+
+    out = daily.run_cycle_capped(
+        runs_root=tmp_path,
+        date="2026-06-29",
+        submit=True,
+        submitter=lambda _payload: {"ok": True, "status": 200, "response": {"id": "sub-aspirin"}},
+        remote_loader=lambda: (set(), None),
+        max_submissions=2,
+    )
+
+    assert out["submitted"] == 1
+    assert out["status"] == "submitted_to_researka"
+    assert out["submissions"][0]["status"] == "no_eligible_research_paper"
+    assert out["submissions"][0]["reason"] == "source_bundle_unmapped_sources:outcome=0,citation=1"
+    assert out["submissions"][1]["candidate"]["topic"] == "aspirin"
 
 
 def test_select_candidate_skips_missing_sidecar_before_expensive_eligibility(
