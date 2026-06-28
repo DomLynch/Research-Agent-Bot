@@ -1930,7 +1930,7 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
     assert "Auditable arithmetic is therefore candidate union -> classified source candidates -> admitted final sources" in fixed
     assert "diagnostic bucket rows do not sum to the classified count" in fixed
     assert "Stepwise reconciliation: classified source candidates (18) -> admitted final sources (15)" in fixed
-    assert "Findings Map completeness note: all 9 admitted manifest source(s) are surfaced below" in fixed
+    assert "Findings Map completeness note: all 9 admitted manifest rows are surfaced below" in fixed
     assert "Pena 2024: G2019S inhibitor abrogates mitochondrial DNA damage" in fixed
     assert "Pena 2024" in fixed and "direction=mixed" in fixed
     assert "representative non-significant statistic p = 0.92" in fixed
@@ -1941,7 +1941,7 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
     assert "Chan 2012" in fixed
     assert "Adjacent human evidence rows=" in fixed
     assert "Roca-Bayerri 2020" in fixed and "Picca 2019" in fixed
-    assert "No direct interventional hard-endpoint sources were admitted" in fixed
+    assert "Source directness breakdown: 0/9 retained sources directly address" in fixed
     assert "No load-bearing cross-study disagreements were detected" not in fixed
     assert fixed.count("surfaced tension/disagreement") >= 3
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
