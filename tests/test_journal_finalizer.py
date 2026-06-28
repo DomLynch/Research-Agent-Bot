@@ -1758,6 +1758,52 @@ def test_source_outcome_class_map_repairs_surface_every_admitted_source_feedback
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
+def test_findings_map_separates_mechanistic_and_biomarker_roles(tmp_path: Path) -> None:
+    ask = (
+        "Recode outcome classes so mechanistic/animal evidence is not silently treated as "
+        "clinical outcome classes, e.g. Ng 2019 should be Mechanism/Longevity (C. elegans), "
+        "Reid 2023 biomarker/adjacent not clinical cognitive outcome. Surface direction "
+        "heterogeneity in Findings Map itself, not only direction profile row."
+    )
+    paper = "## Evidence Landscape\n\nThe source map needs repair.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Ng 2019",
+            "source_title": "C. elegans mitochondrial free radical theory of aging lifespan model",
+            "outcome_class": "longevity",
+            "effect_direction": "unclear",
+            "directness": "mechanistic",
+            "evidence_tier": "C1",
+        },
+        {
+            "citation_token": "Liang 2021",
+            "source_title": "Cell model of mitochondrial DNA damage and aging mechanism",
+            "outcome_class": "longevity",
+            "effect_direction": "null",
+            "directness": "mechanistic",
+            "evidence_tier": "C1",
+        },
+        {
+            "citation_token": "Reid 2023",
+            "source_title": "Blood-based mtDNA deletion biomarker study in cognitive aging",
+            "outcome_class": "cognitive",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+        },
+    ]}))
+
+    fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
+
+    assert "Ng 2019: C. elegans mitochondrial free radical theory" in fixed
+    assert "outcome=Mechanism/Longevity (C. elegans); direction=unclear" in fixed
+    assert "Reid 2023: Blood-based mtDNA deletion biomarker study" in fixed
+    assert "outcome=Biomarker/Adjacent Cognitive; direction=unclear" in fixed
+    assert "Direction heterogeneity note: Mechanism/Longevity" in fixed
+    assert logs[0].phase == "D_source_outcome_class_map"
+
+
 def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
     ask = (
         "Expand Tensions and Gaps to cover the full outcome breadth of the corpus, "

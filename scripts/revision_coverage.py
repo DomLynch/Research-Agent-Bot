@@ -676,6 +676,10 @@ def _asks_source_outcome_class_map(text: str) -> bool:
         "source" in text
         and any(token in text for token in ("outcome summaries", "outcome summary"))
         and any(token in text for token in ("missing", "not surfaced", "several"))
+    ) or (
+        "outcome class" in text
+        and "mechanistic" in text
+        and any(token in text for token in ("animal", "biomarker/adjacent", "clinical outcome"))
     )
 
 

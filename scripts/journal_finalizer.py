@@ -2562,7 +2562,7 @@ def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) ->
     for row in sorted(rows, key=score)[:limit]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         title = str(row.get("source_title") or "").strip()
-        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        outcome = _evidence_role_outcome_display(row)
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
@@ -3387,7 +3387,7 @@ def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
 
 def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
     lower = feedback.lower()
-    original = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+    original = _evidence_role_outcome_display(row)
     directness = str(row.get("directness") or "").strip().lower()
     if directness.startswith("direct"):
         return original
@@ -3557,6 +3557,10 @@ def _phase_d_source_outcome_class_map(
             "still remains between biomarker-elevating studies and mixed/null clinical-endpoint "
             f"studies{context_note}, so these contrasts are treated as unresolved evidence gaps."
         )
+    if any(token in lower_feedback for token in ("direction heterogeneity", "direction divergence", "directions are")):
+        heterogeneity_note = _manifest_direction_heterogeneity_note(rows)
+        if heterogeneity_note:
+            notes.append(heterogeneity_note)
     named = {
         m.group(0)
         for m in re.finditer(r"\b[A-Z][A-Za-z'’\-]+ 20\d{2}\b", feedback)
@@ -3744,7 +3748,7 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
                 break
     lines = [
         f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in "
-        f"{_outcome_display(outcome_key(left))} because directions are {direction(left)} versus {direction(right)}; "
+        f"{_evidence_role_outcome_display(left)} because directions are {direction(left)} versus {direction(right)}; "
         "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
         for _, _, left, right in selected_pairs
     ]
@@ -3763,7 +3767,7 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
             if a == b or (a, b) in used:
                 continue
             used.add((a, b))
-            outcome = _outcome_display(str(left.get("outcome_class") or right.get("outcome_class") or "contextual_other"))
+            outcome = _evidence_role_outcome_display(left)
             lines.append(
                 f"- {a} vs {b}: surfaced tension/disagreement in {outcome} "
                 f"because directions are {direction(left)} versus {direction(right)}; "
