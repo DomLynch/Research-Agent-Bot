@@ -1057,10 +1057,10 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
     never ran: published topics were excluded only while their submission
     cooldown held, then became re-selectable, re-synthesized, and dedup'd at
     submit (a fresh non-revision re-run of a published title always returns
-    duplicate_remote_publication). Applying the remote-published exclusion
-    unconditionally stops the cycle burning synthesis on already-published
-    topics. Universal — keys on the run's own deterministic topic->title, no
-    topic terms. Re-publishing an updated paper is the revise cycle's job."""
+    duplicate_remote_publication). Exact remote-published markers stop the cycle
+    burning synthesis on already-published topics without substring-blocking
+    adjacent sibling topics. Re-publishing an updated paper is the revise cycle's
+    job."""
     out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
     topic_markers = {m.removeprefix("topic:") for m in markers if m.startswith("topic:")}
     title_markers = [m.removeprefix("title:") for m in markers if m.startswith("title:")]
@@ -1069,7 +1069,7 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
             out.add(topic)
             continue
         display = submit_bridge._normalized_key(submit_bridge._display_topic(topic))
-        if display and any(display in marker for marker in title_markers):
+        if display and display in title_markers:
             out.add(topic)
     return out
 
