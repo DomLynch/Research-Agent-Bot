@@ -3463,7 +3463,8 @@ def run_cycle(
                     runs_root=runs_root,
                     remote_seen=remote_seen,
                     exclude=selection_excluded,
-                    allow_recent_blocked_fallback=not (mode == "fresh" and submit and topic is None),
+                    allow_recent_blocked_fallback=bool(repaired_candidates)
+                    or not (mode == "fresh" and submit and topic is None),
                 )
             )
             if not selected and not revision_source and topic is None and mode != "revise":
