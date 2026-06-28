@@ -2613,6 +2613,47 @@ def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
     return "adjacent clinical-context evidence"
 
 
+def _evidence_role_outcome_display(row: dict[str, Any]) -> str:
+    original = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+    directness = str(row.get("directness") or "").strip().lower()
+    if directness.startswith("direct"):
+        return original
+    scope = " ".join(str(row.get(key) or "") for key in (
+        "source_title", "outcome_class", "endpoint", "population_summary", "evidence_type",
+    )).lower()
+    model = _model_context_label(scope)
+    if "mechanistic" in directness or "mechanism" in scope or model:
+        label = original if original == "Mechanism" else f"Mechanism/{original}"
+        return f"{label} ({model})" if model and model.lower() not in label.lower() else label
+    if any(token in scope for token in (
+        "biomarker", "marker", "blood-based", "serum", "plasma", "8-ohdg",
+        "8ohdg", "8-hydroxy", "mtdna", "mitochondrial dna", "deletion",
+        "heteroplasmy", "telomere length", "dna methylation",
+    )):
+        if original in {"Contextual Adjacent Evidence", "Other"}:
+            return "Biomarker/Adjacent Evidence"
+        return f"Biomarker/Adjacent {original}"
+    return original
+
+
+def _model_context_label(scope: str) -> str:
+    if "c. elegans" in scope or "caenorhabditis" in scope:
+        return "C. elegans"
+    if "drosophila" in scope or re.search(r"\bfruit fl(?:y|ies)\b", scope):
+        return "Drosophila"
+    if "zebrafish" in scope:
+        return "zebrafish"
+    if re.search(r"\b(mouse|mice|murine)\b", scope):
+        return "mouse"
+    if re.search(r"\b(rat|rats|rodent)\b", scope):
+        return "rodent"
+    if any(token in scope for token in ("cell", "cells", "in vitro", "organoid", "ex vivo")):
+        return "cell/in vitro"
+    if any(token in scope for token in ("animal", "preclinical", "model organism", "model-system", "model system")):
+        return "animal/preclinical"
+    return ""
+
+
 def _manifest_outcome_taxonomy_note(rows: list[dict[str, Any]]) -> str:
     buckets: dict[str, list[str]] = {}
     for row in rows:
@@ -2648,7 +2689,7 @@ def _manifest_most_supported_signal_note(feedback: str, rows: list[dict[str, Any
 def _manifest_direction_coded_highlights(rows: list[dict[str, Any]]) -> str:
     by_outcome: dict[str, dict[str, Any]] = {}
     for row in sorted(rows, key=_manifest_key_finding_score):
-        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        outcome = _evidence_role_outcome_display(row)
         by_outcome.setdefault(outcome, row)
     lines = [_manifest_source_finding_line(row) for row in list(by_outcome.values())[:8]]
     return "Direction-coded source highlights:\n\n" + "\n".join(f"- {line}" for line in lines)
@@ -2959,12 +3000,32 @@ def _manifest_direction_visibility_note(rows: list[dict[str, Any]], feedback: st
     )
 
 
+def _manifest_direction_heterogeneity_note(rows: list[dict[str, Any]]) -> str:
+    grouped: dict[str, dict[str, list[str]]] = {}
+    for row in rows:
+        outcome = _evidence_role_outcome_display(row)
+        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        grouped.setdefault(outcome, {}).setdefault(direction, []).append(_row_citation(row))
+    parts = []
+    for outcome, directions in sorted(grouped.items()):
+        if len(directions) < 2:
+            continue
+        cells = [
+            f"{direction}={len(labels)} ({', '.join(list(dict.fromkeys(labels))[:3])})"
+            for direction, labels in sorted(directions.items())
+        ]
+        parts.append(f"{outcome}: " + "; ".join(cells))
+    if not parts:
+        return ""
+    return "Direction heterogeneity note: " + ". ".join(parts[:6]) + "."
+
+
 def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -> list[str]:
     lines = []
     for row in sorted(rows, key=_manifest_key_finding_score):
         title = str(row.get("source_title") or "").strip()
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
-        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+        outcome = _evidence_role_outcome_display(row)
         direction = str(row.get("effect_direction") or "unclear").strip() or "unclear"
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
@@ -2993,7 +3054,7 @@ def _manifest_key_finding_score(row: dict[str, Any]) -> tuple[int, int, int]:
 def _manifest_outcome_summary_lines(rows: list[dict[str, Any]], *, per_outcome_limit: int | None = 3) -> list[str]:
     grouped: dict[str, list[dict[str, Any]]] = {}
     for row in rows:
-        outcome = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
+        outcome = _evidence_role_outcome_display(row)
         grouped.setdefault(outcome, []).append(row)
     lines: list[str] = []
     for slug, matching in sorted(grouped.items(), key=lambda item: _outcome_display(item[0])):
@@ -3001,7 +3062,7 @@ def _manifest_outcome_summary_lines(rows: list[dict[str, Any]], *, per_outcome_l
         if per_outcome_limit is not None:
             selected = selected[:per_outcome_limit]
         examples = "; ".join(_manifest_source_finding_line(row) for row in selected)
-        lines.append(f"{_outcome_display(slug)}: {examples}.")
+        lines.append(f"{slug}: {examples}.")
     return lines
 
 
@@ -3012,7 +3073,7 @@ def _manifest_source_finding_line(row: dict[str, Any]) -> str:
     tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
     return (
         f"{_row_citation(row)} ({_source_result_label(title)}; "
-        f"{_manifest_row_finding(row)}; direction={direction}; "
+        f"{_manifest_row_finding(row)}; outcome={_evidence_role_outcome_display(row)}; direction={direction}; "
         f"directness={directness}; tier={tier})"
     )
 
