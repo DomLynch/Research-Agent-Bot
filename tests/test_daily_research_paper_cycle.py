@@ -7183,6 +7183,66 @@ def test_fresh_lane_unbounded_attempts_reach_ready_after_sparse_receipts(
     ]
 
 
+def test_fresh_lane_receipt_preflight_repair_respects_corpus_repair_limit(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    for topic in ("aaa_sparse_receipts", "bbb_sparse_receipts", "zzz_ready"):
+        _topic(tmp_path, topic, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
+    preflights: list[tuple[str, bool]] = []
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, **kwargs: Any) -> dict[str, Any]:
+        repair = bool(kwargs.get("repair"))
+        preflights.append((topic, repair))
+        if topic.startswith(("aaa_", "bbb_")):
+            result: dict[str, Any] = {
+                "passed": False,
+                "status": "receipt_preflight_insufficient",
+                "n_receipts": 9,
+                "min_receipts": 12,
+            }
+            if repair:
+                result["repairs"] = [{"status": "corpus_repaired", "n_quant_claims": 18}]
+            return result
+        return {"passed": True, "status": "receipt_preflight_ok", "n_receipts": 18, "min_receipts": 12}
+
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "final_status.json", {"submission_ready": True})
+        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-02",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=0,
+    )
+
+    assert preflights == [
+        ("aaa_sparse_receipts", True),
+        ("bbb_sparse_receipts", False),
+        ("zzz_ready", False),
+    ]
+    assert synthesized == ["zzz_ready"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
 @pytest.mark.parametrize(
     ("first_gate", "second_gate"),
     [
