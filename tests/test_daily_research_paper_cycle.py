@@ -7186,6 +7186,7 @@ def test_fresh_lane_unbounded_attempts_reach_ready_after_sparse_receipts(
 @pytest.mark.parametrize(
     ("first_gate", "second_gate"),
     [
+        ("abstract_overclaim", "audit_not_all_green"),
         ("pre_submit_not_passed", "audit_not_all_green"),
     ],
 )
