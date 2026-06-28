@@ -88,6 +88,18 @@ SCHEMAS: tuple[DomainSchema, ...] = (
     ),
 )
 
+BOILERPLATE_PATTERNS: tuple[re.Pattern[str], ...] = tuple(
+    re.compile(pattern, re.I) for pattern in (
+        r"\bbounded interpretation\b",
+        r"\bhypothesis[- ]generating\b",
+        r"\bmore direct (?:human )?(?:trials|studies) (?:are|is )?needed\b",
+        r"\bused only to bound interpretation\b",
+        r"\bdoes not support broad (?:causal|clinical|policy)\b",
+        r"\bclosing claim should therefore\b",
+        r"\bevidence map\b",
+    )
+)
+
 
 def select_domain_schema(topic: str, receipts: list[dict[str, Any]]) -> DomainSchema:
     haystack = " ".join([topic, *(_receipt_text(r) for r in receipts[:50])]).lower()
@@ -111,7 +123,7 @@ def build_domain_discrimination(
         "thesis": schema.thesis,
         "novel_contribution": schema.contribution,
         "classification_sanity": {
-            "status": "review" if issues else "passed",
+            "status": "failed" if issues else "passed",
             "issues": issues,
         },
     }
@@ -176,6 +188,31 @@ def render_domain_surface(payload: dict[str, Any], receipts: list[dict[str, Any]
         lines.append("- No deterministic source-label mismatch was detected.")
     lines.extend(["", "### Public Study Extraction Table", "", *_table_rows(receipts)])
     return "\n".join(lines).rstrip() + "\n"
+
+
+def boilerplate_report(paper_md: str) -> dict[str, Any]:
+    hits: list[dict[str, int | str]] = []
+    count = 0
+    for pattern in BOILERPLATE_PATTERNS:
+        n = len(pattern.findall(paper_md))
+        count += n
+        if n:
+            hits.append({"pattern": pattern.pattern, "count": n})
+    has_domain_surface = (
+        "## Domain Interpretation Framework" in paper_md
+        and "**Synthesis contribution:**" in paper_md
+        and "### Public Study Extraction Table" in paper_md
+    )
+    # One or two safety-boundary phrases are acceptable. Repetition without
+    # a domain-specific surface is the machine-template failure mode.
+    limit = 2 if not has_domain_surface else 5
+    return {
+        "status": "failed" if count > limit else "passed",
+        "template_phrase_count": count,
+        "max_allowed": limit,
+        "has_domain_surface": has_domain_surface,
+        "hits": hits,
+    }
 
 
 def _table_rows(receipts: list[dict[str, Any]]) -> list[str]:

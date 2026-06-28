@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 import v3_optional_adapters as _optional
+import domain_discrimination
 import v3_paper_ir as _paper_ir
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -254,6 +255,21 @@ def _claim_graph_gate(claim_graph: Any) -> dict[str, Any]:
     return {"status": "passed" if not missing else "failed", "missing_source_ids": missing}
 
 
+def _domain_discrimination_gate(paper: str, manifest: dict[str, Any] | None) -> dict[str, Any]:
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    topic = str(manifest.get("topic") or "") if isinstance(manifest, dict) else ""
+    payload = domain_discrimination.build_domain_discrimination(topic, rows)
+    sanity = payload["classification_sanity"]
+    boilerplate = domain_discrimination.boilerplate_report(paper)
+    status = "failed" if sanity["status"] == "failed" or boilerplate["status"] == "failed" else "passed"
+    return {
+        "status": status,
+        "classification_sanity": sanity,
+        "boilerplate": boilerplate,
+    }
+
+
 def compile_run(run_dir: Path) -> dict[str, Any]:
     paper_path = run_dir / "full_paper.md"
     paper = paper_path.read_text(encoding="utf-8")
@@ -276,6 +292,7 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
         "falsifier_or_next_study": {
             "status": "passed" if re.search(r"\b(falsif|next[- ]study|future work|targeted research|registered trial)\b", paper, re.I) else "failed",
         },
+        "domain_discrimination": _domain_discrimination_gate(paper, manifest),
     }
     passed = all(g["status"] in {"passed", "skipped", "advisory"} for g in gates.values())
     report = {

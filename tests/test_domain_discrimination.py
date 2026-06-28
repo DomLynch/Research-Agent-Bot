@@ -58,8 +58,33 @@ def test_domain_surface_inserts_public_extraction_table_before_discussion() -> N
     assert fixed.index("## Domain Interpretation Framework") < fixed.index("## Discussion")
     assert "### Public Study Extraction Table" in fixed
     assert "| Source | Design | Population | Intervention/exposure |" in fixed
-    assert payload["classification_sanity"]["status"] == "review"
+    assert payload["classification_sanity"]["status"] == "failed"
     assert dd.apply_domain_surface(fixed, "zone2_training", _receipts())[2] is False
+
+
+def test_boilerplate_report_fails_repeated_template_language_without_domain_surface() -> None:
+    paper = (
+        "This is a bounded interpretation. The synthesis is hypothesis-generating. "
+        "More direct human trials are needed. These sources are used only to bound interpretation. "
+        "The evidence map does not support broad clinical claims."
+    )
+
+    report = dd.boilerplate_report(paper)
+
+    assert report["status"] == "failed"
+    assert report["template_phrase_count"] > report["max_allowed"]
+
+
+def test_boilerplate_report_allows_domain_specific_surface() -> None:
+    paper = (
+        "## Domain Interpretation Framework\n\n"
+        "**Synthesis contribution:** Comparator choice explains the signal.\n\n"
+        "### Public Study Extraction Table\n\n"
+        "This is a bounded interpretation. The synthesis is hypothesis-generating. "
+        "More direct human trials are needed."
+    )
+
+    assert dd.boilerplate_report(paper)["status"] == "passed"
 
 
 def test_v3_paper_ir_writes_domain_discrimination_export(tmp_path: Path) -> None:

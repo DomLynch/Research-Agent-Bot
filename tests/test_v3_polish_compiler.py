@@ -93,6 +93,57 @@ def test_malformed_pipe_table_still_blocks(tmp_path, monkeypatch) -> None:
     assert report["gates"]["raw_pipe_tables"]["status"] == "failed"
 
 
+def test_domain_discrimination_gate_blocks_bad_classification(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
+    monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
+    monkeypatch.setattr(polish, "_run_sciwrite", lambda _paper: {"status": "skipped"})
+    run = _run_dir(tmp_path)
+    (run / "manifest.json").write_text(
+        json.dumps({
+            "topic": "zone2_training",
+            "receipts": [
+                {
+                    "receipt_id": "Review 2024",
+                    "title": "Systematic review and meta-analysis of exercise cognition",
+                    "outcome_class": "dosing and pharmacokinetics",
+                    "effect_direction": "positive",
+                    "directness": "direct",
+                },
+            ],
+        }),
+        encoding="utf-8",
+    )
+
+    report = polish.compile_run(run)
+
+    assert report["passed"] is False
+    gate = report["gates"]["domain_discrimination"]
+    assert gate["status"] == "failed"
+    assert gate["classification_sanity"]["status"] == "failed"
+
+
+def test_domain_discrimination_gate_blocks_repeated_boilerplate(tmp_path, monkeypatch) -> None:
+    monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
+    monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
+    monkeypatch.setattr(polish, "_run_sciwrite", lambda _paper: {"status": "skipped"})
+    run = _run_dir(tmp_path)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    (run / "full_paper.md").write_text(
+        paper.replace(
+            "The result is described in prose.",
+            "This is a bounded interpretation. The synthesis is hypothesis-generating. "
+            "More direct human trials are needed. Sources are used only to bound interpretation. "
+            "The evidence map does not support broad clinical claims.",
+        ),
+        encoding="utf-8",
+    )
+
+    report = polish.compile_run(run)
+
+    assert report["passed"] is False
+    assert report["gates"]["domain_discrimination"]["boilerplate"]["status"] == "failed"
+
+
 def test_compile_run_writes_optional_adapter_sidecars(tmp_path, monkeypatch) -> None:
     monkeypatch.setattr(polish, "_embedding_vectors", lambda _texts: None)
     monkeypatch.setattr(polish, "_run_typst", lambda _typ, _pdf: {"status": "skipped"})
