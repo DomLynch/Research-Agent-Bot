@@ -982,6 +982,8 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
             "contradiction", "both equal", "clarify", "reconcile",
             "coherent accounting", "derived", "prisma style", "arithmetic scrutiny",
             "mutually exclusive", "additive rows", "remove the table", "arithmetic", "why",
+            "non-overlapping", "non overlapping", "step-by-step", "step by step",
+            "candidate union",
         ))
     ) or ("no extractable claims" in lower and "admitted final" in lower) or (
         "partial/none-only" in lower and "partial-only" in lower
@@ -1011,6 +1013,10 @@ def _admission_funnel_note(out_dir: Path) -> str:
         "after deduplication, active-scope filtering, claim-binding confidence, "
         "and eligibility checks. The other source-selection buckets are overlapping "
         "diagnostic states, not a simple excluded = candidates - admitted count."
+        f" Stepwise reconciliation: classified source candidates ({candidates}) -> "
+        f"admitted final sources ({admitted}); not admitted after deduplication, "
+        "active-scope filtering, claim-binding confidence, and eligibility checks = "
+        f"{max(candidates - admitted, 0)}."
         + (
             " Strict high-confidence subset note: "
             f"{counts.get('original_strict_high_confidence_receipts')} strict "
@@ -2758,17 +2764,24 @@ def _manifest_effect_direction_reconciliation_note(
 
 def _normalised_direction(row: dict[str, Any]) -> str:
     raw = str(row.get("effect_direction") or "unclear").strip().lower()
+    cue = _title_cued_direction(row)
     if raw in {"positive", "negative", "mixed", "null", "unclear"}:
-        return _title_cued_direction(row) if raw == "unclear" else raw
+        if raw == "unclear":
+            return _direction_with_stat_guard(row, cue)
+        if raw == "null" and cue in {"positive", "negative"} and _row_has_significant_p_value(row):
+            return cue
+        return _direction_with_stat_guard(row, raw)
     if "positive" in raw:
-        return "positive"
+        return _direction_with_stat_guard(row, "positive")
     if "negative" in raw:
-        return "negative"
+        return _direction_with_stat_guard(row, "negative")
     if "null" in raw or "no signal" in raw or "no_extracted" in raw:
+        if cue in {"positive", "negative"} and _row_has_significant_p_value(row):
+            return cue
         return "null"
     if "mixed" in raw:
         return "mixed"
-    return _title_cued_direction(row)
+    return _direction_with_stat_guard(row, cue)
 
 
 def _title_cued_direction(row: dict[str, Any]) -> str:
@@ -2791,9 +2804,48 @@ def _title_cued_direction(row: dict[str, Any]) -> str:
         return "positive" if any(term in title for term in harm) else "negative"
     if any(token in title for token in ("increase", "induce", "accelerate", "worsen", "promote")):
         return "negative" if any(term in title for term in harm) else "positive"
+    adverse_context = (
+        "disease", "dysplasia", "impairment", "cancer", "infection",
+        "pathogenesis", "syndrome", "disorder", "bronchopulmonary",
+        "hiv", "alzheimer", "parkinson",
+    )
+    if any(term in title for term in harm) and any(term in title for term in adverse_context):
+        return "negative"
     if "mixed" in title or "context-dependent" in title or "context dependent" in title:
         return "mixed"
     return "unclear"
+
+
+def _direction_with_stat_guard(row: dict[str, Any], direction: str) -> str:
+    if direction in {"positive", "negative"} and _first_p_value_is_non_significant(row):
+        return "mixed"
+    return direction
+
+
+def _first_p_value_is_non_significant(row: dict[str, Any]) -> bool:
+    p_values = row.get("p_values")
+    if not isinstance(p_values, list):
+        return False
+    first = next((str(value).strip() for value in p_values if str(value).strip()), "")
+    return bool(first and _p_value_is_non_significant(first))
+
+
+def _row_has_significant_p_value(row: dict[str, Any]) -> bool:
+    p_values = row.get("p_values")
+    if not isinstance(p_values, list):
+        return False
+    first = next((str(value).strip() for value in p_values if str(value).strip()), "")
+    if not first:
+        return False
+    match = re.search(r"\bp\s*(=|>|<|<=|>=)\s*([0-9]*\.?[0-9]+)", first, flags=re.I)
+    if not match:
+        return False
+    try:
+        parsed = float(match.group(2))
+    except ValueError:
+        return False
+    operator = match.group(1)
+    return operator in {"<", "<="} or (operator == "=" and parsed < 0.05)
 
 
 def _p_value_is_non_significant(value: str) -> bool:
