@@ -2653,10 +2653,11 @@ def _manifest_direct_interventional_note(feedback: str, rows: list[dict[str, Any
     count = _manifest_effective_direct_count(feedback, rows)
     listed = ", ".join(direct_labels) if direct_labels else "reviewer-named RCT endpoint source(s)"
     verb = "is" if len(direct_labels) == 1 else "are"
+    pronoun = "its" if len(direct_labels) == 1 else "their"
     return (
         "Direct-interventional endpoint correction: "
-        f"{listed} {verb} counted as direct interventional endpoint evidence for their "
-        f"measured endpoint. Direct evidence count is {count}/{len(rows)}; this does "
+        f"{listed} {verb} counted as direct interventional endpoint evidence for "
+        f"{pronoun} measured endpoint. Direct evidence count is {count}/{len(rows)}; this does "
         "not convert endpoint evidence into hard clinical-outcome proof."
     )
 

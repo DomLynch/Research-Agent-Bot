@@ -4397,11 +4397,14 @@ def test_third_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None
     asks = journal_finalizer.revision_coverage.revision_asks(feedback)
 
     assert "Most-supported outcome-specific signals:" in fixed
+    assert "Sarkar 2026" in fixed and "Chen 2023" in fixed
     assert "Stratification reconciliation note:" in fixed
     assert "MR/causal-risk source count:" in fixed
     assert "Wan 2023" in fixed and "Song 2022" in fixed and "Chen 2023" in fixed and "Markozannes 2022" in fixed
     assert "Direct-interventional endpoint correction:" in fixed
     assert "Jaeger 2024" in fixed
+    assert "Jaeger 2024 is counted as direct interventional endpoint evidence" in fixed
+    assert "for its measured endpoint" in fixed
     assert "Direct evidence count is 1/7" in fixed
     assert "Direction-coded source highlights:" in fixed
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
