@@ -1753,7 +1753,7 @@ def _asks_mr_causal_count(text: str) -> bool:
 
 def _asks_effect_direction_reconciliation(text: str) -> bool:
     return (
-        any(token in text for token in ("effect_direction", "effect direction", "directionality"))
+        any(token in text for token in ("effect_direction", "directionality"))
         and any(token in text for token in ("actual reported finding", "reported finding", "excerpt", "contradicted"))
         and any(token in text for token in ("reconcile", "correct", "remove", "verify"))
     )
@@ -1798,8 +1798,15 @@ def _asks_no_direct_hard_endpoint_statement(text: str) -> bool:
 
 def _asks_publication_status_preprint_flags(text: str) -> bool:
     return (
-        any(token in text for token in ("2026-dated", "2026 dated", "publication status", "actual publication"))
-        and "preprint" in text
+        "preprint" in text
+        and (
+            "actual publication status" in text
+            or ("publication status" in text and any(token in text for token in ("peer-reviewed", "peer reviewed")))
+            or (
+                "verify" in text
+                and any(token in text for token in ("2026-dated", "2026 dated"))
+            )
+        )
     )
 
 

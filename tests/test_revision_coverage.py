@@ -2449,3 +2449,65 @@ def test_latest_telomere_third_revise_feedback_splits_and_requires_markers() -> 
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
     assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_fourth_revise_feedback_splits_and_requires_markers() -> None:
+    feedback = (
+        "Reconcile each cited source's effect_direction with the actual reported finding "
+        "in excerpt; remove or correct contradicted directionality (Brouwers 2016, "
+        "Alhareeri 2020, Sasmita 2025, Ha 2023).; Verify/reconcile admission counts "
+        "and receipt-level direction tallies (n=24, negative=1, null=5, positive=2, "
+        "unclear=16) against source bundle.; Reframe research question and conclusion "
+        "so Telomere Cancer Effects is bounded to retained set: adjacent biomarkers, "
+        "prognostic associations, MR causal signals; not direct interventional/clinical "
+        "efficacy.; Separate MR cancer-risk sources (Li 2026, Chen 2023, Wan 2023, "
+        "Song 2022) from mechanistic/ALT sources (Brown 2026, Genetta 2026, Aierken "
+        "2026, Xu 2024, Afolabi 2026) when describing disagreements; don't pool.; "
+        "Add explicit statement no direct interventional hard-endpoint sources admitted; "
+        "conclusion bounded to association/mechanism/hypothesis-generation; remove "
+        "clinical actionability/anti-aging framing.; Verify 2026-dated sources for "
+        "actual publication status and preprint vs peer-reviewed distinction; flag preprints."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = (
+        "## Key Findings\n\n"
+        "Telomere evidence is mixed and clinically actionable.\n\n"
+        "## Conclusion\n\n"
+        "This supports an anti-aging framing.\n"
+    )
+    repaired = (
+        "## Research Question\n\n"
+        "Scope-bounded research question note: This paper asks what the admitted source "
+        "set shows across adjacent biomarkers, prognostic associations, MR causal signals, "
+        "and mechanism; it is not direct interventional or clinical efficacy evidence.\n\n"
+        "## Key Findings\n\n"
+        "Effect-direction reconciliation note:\n\n"
+        "- Brouwers 2016: direction=null; actual reported finding=manifest-coded source finding.\n"
+        "- Alhareeri 2020: direction=positive; actual reported finding=manifest-coded source finding.\n"
+        "- Sasmita 2025: direction=unclear; actual reported finding=manifest-coded source finding.\n"
+        "- Ha 2023: direction=null; actual reported finding=manifest-coded source finding.\n\n"
+        "Admission and direction-tally reconciliation: n=24; negative=1; null=5; "
+        "positive=2; unclear=16. These counts use admitted manifest receipts.\n\n"
+        "MR/mechanism disagreement separation note: MR/Mendelian rows (Li 2026, Chen 2023, "
+        "Wan 2023, Song 2022) are interpreted separately from mechanistic/ALT rows "
+        "(Brown 2026, Genetta 2026, Aierken 2026, Xu 2024, Afolabi 2026) and are not pooled.\n\n"
+        "No direct interventional hard-endpoint sources were admitted: manifest hard-endpoint "
+        "rows=0 (none). The conclusion is bounded to association, mechanism, and "
+        "hypothesis-generation rather than clinical actionability.\n\n"
+        "Publication-status/preprint note: 2026-dated manifest sources are Li 2026, "
+        "Brown 2026, Genetta 2026; preprint candidates flagged by manifest metadata: none.\n\n"
+        "## Conclusion\n\n"
+        "Scope-bounded research question note: not direct interventional or clinical efficacy.\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == [
+        "Reconcile",
+        "Verify/reconcile",
+        "Reframe",
+        "Separate",
+        "Add",
+        "Verify",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []

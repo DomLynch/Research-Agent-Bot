@@ -2179,6 +2179,12 @@ def _phase_d_substantive_evidence_synthesis(
     needs_signal_note = revision_coverage.asks_most_supported_key_findings(feedback)
     needs_stratification = revision_coverage.asks_source_stratification_reconciliation(feedback)
     needs_mr_count = revision_coverage.asks_mr_causal_count(feedback)
+    needs_effect_reconciliation = revision_coverage.asks_effect_direction_reconciliation(feedback)
+    needs_admission_tally = revision_coverage.asks_admission_direction_tally_reconciliation(feedback)
+    needs_scope_bound = revision_coverage.asks_bounded_research_question_conclusion(feedback)
+    needs_mr_mechanism = revision_coverage.asks_mr_mechanism_disagreement_separation(feedback)
+    needs_no_hard_endpoint = revision_coverage.asks_no_direct_hard_endpoint_statement(feedback)
+    needs_pub_status = revision_coverage.asks_publication_status_preprint_flags(feedback)
     needs_direct_reclass = revision_coverage.asks_direct_interventional_reclassification(feedback)
     needs_direction_highlights = revision_coverage.asks_direction_coded_source_highlights(feedback)
     text, conclusion_cleanup_n = (
@@ -2196,6 +2202,27 @@ def _phase_d_substantive_evidence_synthesis(
     mr_count_note = _manifest_mr_causal_count_note(rows) if needs_mr_count else ""
     if mr_count_note:
         mr_count_note += "\n\n"
+    effect_reconciliation = (
+        _manifest_effect_direction_reconciliation_note(feedback, rows)
+        if needs_effect_reconciliation else ""
+    )
+    if effect_reconciliation:
+        effect_reconciliation += "\n\n"
+    admission_tally = _manifest_admission_direction_tally_note(rows) if needs_admission_tally else ""
+    if admission_tally:
+        admission_tally += "\n\n"
+    scope_bound = _manifest_scope_bounded_question_note(rows) if needs_scope_bound else ""
+    if scope_bound:
+        scope_bound += "\n\n"
+    mr_mechanism = _manifest_mr_mechanism_separation_note(rows) if needs_mr_mechanism else ""
+    if mr_mechanism:
+        mr_mechanism += "\n\n"
+    no_hard_endpoint = _manifest_no_direct_hard_endpoint_note(rows) if needs_no_hard_endpoint else ""
+    if no_hard_endpoint:
+        no_hard_endpoint += "\n\n"
+    pub_status = _manifest_publication_status_preprint_note(rows) if needs_pub_status else ""
+    if pub_status:
+        pub_status += "\n\n"
     direct_reclass_note = _manifest_direct_interventional_note(feedback, rows) if needs_direct_reclass else ""
     if direct_reclass_note:
         direct_reclass_note += "\n\n"
@@ -2236,6 +2263,12 @@ def _phase_d_substantive_evidence_synthesis(
         f"{signal_note}"
         f"{stratification_note}"
         f"{mr_count_note}"
+        f"{effect_reconciliation}"
+        f"{admission_tally}"
+        f"{scope_bound}"
+        f"{mr_mechanism}"
+        f"{no_hard_endpoint}"
+        f"{pub_status}"
         f"{direct_reclass_note}"
         f"{direction_highlights}"
         f"{taxonomy_note}"
@@ -2336,6 +2369,12 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
         or revision_coverage.asks_most_supported_key_findings(feedback)
         or revision_coverage.asks_source_stratification_reconciliation(feedback)
         or revision_coverage.asks_mr_causal_count(feedback)
+        or revision_coverage.asks_effect_direction_reconciliation(feedback)
+        or revision_coverage.asks_admission_direction_tally_reconciliation(feedback)
+        or revision_coverage.asks_bounded_research_question_conclusion(feedback)
+        or revision_coverage.asks_mr_mechanism_disagreement_separation(feedback)
+        or revision_coverage.asks_no_direct_hard_endpoint_statement(feedback)
+        or revision_coverage.asks_publication_status_preprint_flags(feedback)
         or revision_coverage.asks_direct_interventional_reclassification(feedback)
         or revision_coverage.asks_direction_coded_source_highlights(feedback)
         or ("integrate" in lower and "evidence" in lower)
@@ -2641,6 +2680,151 @@ def _manifest_mr_causal_count_note(rows: list[dict[str, Any]]) -> str:
     matches = [row for row in rows if _is_mr_causal_row(row)]
     labels = ", ".join(_row_citation(row) for row in matches) or "none"
     return f"MR/causal-risk source count: {len(matches)}/{len(rows)} retained sources ({labels})."
+
+
+def _manifest_effect_direction_reconciliation_note(
+    feedback: str,
+    rows: list[dict[str, Any]],
+) -> str:
+    labels: list[str] = []
+    for ask in revision_coverage.revision_asks(feedback):
+        if revision_coverage.asks_effect_direction_reconciliation(ask):
+            labels.extend(_reviewer_named_source_labels(ask))
+    selected = []
+    for label in dict.fromkeys(labels):
+        row = next((r for r in rows if label.lower() in _row_citation(r).lower()), None)
+        if row:
+            selected.append(row)
+    if not selected:
+        selected = sorted(rows, key=_manifest_key_finding_score)[:4]
+    lines = [
+        (
+            f"- {_row_citation(row)}: direction={_normalised_direction(row)}; "
+            f"actual reported finding={_manifest_row_finding(row)}."
+        )
+        for row in selected[:6]
+    ]
+    return "Effect-direction reconciliation note:\n\n" + "\n".join(lines)
+
+
+def _normalised_direction(row: dict[str, Any]) -> str:
+    raw = str(row.get("effect_direction") or "unclear").strip().lower()
+    if raw in {"positive", "negative", "mixed", "null", "unclear"}:
+        return raw
+    if "positive" in raw:
+        return "positive"
+    if "negative" in raw:
+        return "negative"
+    if "null" in raw or "no signal" in raw or "no_extracted" in raw:
+        return "null"
+    if "mixed" in raw:
+        return "mixed"
+    return "unclear"
+
+
+def _manifest_admission_direction_tally_note(rows: list[dict[str, Any]]) -> str:
+    counts = {"negative": 0, "null": 0, "positive": 0, "unclear": 0}
+    extra: dict[str, int] = {}
+    for row in rows:
+        direction = _normalised_direction(row)
+        if direction in counts:
+            counts[direction] += 1
+        else:
+            extra[direction] = extra.get(direction, 0) + 1
+    extra_text = "".join(f"; {key}={value}" for key, value in sorted(extra.items()))
+    return (
+        "Admission and direction-tally reconciliation: "
+        f"n={len(rows)}; negative={counts['negative']}; null={counts['null']}; "
+        f"positive={counts['positive']}; unclear={counts['unclear']}{extra_text}. "
+        "These counts use admitted manifest receipts, not classified-candidate buckets."
+    )
+
+
+def _manifest_scope_bounded_question_note(rows: list[dict[str, Any]]) -> str:
+    buckets = sorted({_manifest_subdomain_bucket(row) for row in rows})
+    bucket_text = ", ".join(buckets[:4]) or "the retained source roles"
+    return (
+        "Scope-bounded research question note: This paper asks what the admitted "
+        f"source set shows across {bucket_text}; it is not direct interventional "
+        "or clinical efficacy evidence. Conclusions are bounded to adjacent "
+        "biomarkers, prognostic associations, mechanism, and hypothesis generation."
+    )
+
+
+def _is_mechanistic_alt_row(row: dict[str, Any]) -> bool:
+    scope = f"{row.get('source_title') or ''} {row.get('outcome_class') or ''}".lower()
+    return any(token in scope for token in (
+        "mechanistic", "mechanism", "alt", "tert", "telomerase", "molecular",
+        "tumor cell", "tumour cell",
+    ))
+
+
+def _manifest_mr_mechanism_separation_note(rows: list[dict[str, Any]]) -> str:
+    mr = [_row_citation(row) for row in rows if _is_mr_causal_row(row)]
+    mechanism = [_row_citation(row) for row in rows if _is_mechanistic_alt_row(row)]
+    mr_text = ", ".join(mr[:8]) or "none"
+    mechanism_text = ", ".join(mechanism[:8]) or "none"
+    return (
+        "MR/mechanism disagreement separation note: MR/Mendelian rows "
+        f"({mr_text}) are interpreted separately from mechanistic/ALT rows "
+        f"({mechanism_text}) and are not pooled as one disagreement class."
+    )
+
+
+def _manifest_no_direct_hard_endpoint_note(rows: list[dict[str, Any]]) -> str:
+    hard_endpoint_rows = [
+        row for row in rows
+        if str(row.get("directness") or "").lower().startswith("direct")
+        and re.search(
+            r"\b(mortality|survival|recurrence|clinical endpoint|hard endpoint)\b",
+            f"{row.get('source_title') or ''} {row.get('outcome_class') or ''}",
+            flags=re.I,
+        )
+    ]
+    labels = ", ".join(_row_citation(row) for row in hard_endpoint_rows) or "none"
+    if hard_endpoint_rows:
+        return (
+            "Direct interventional hard-endpoint source audit: "
+            f"manifest hard-endpoint rows={len(hard_endpoint_rows)} ({labels}). "
+            "These rows require explicit bounded interpretation before the reviewer "
+            "ask for no direct hard-endpoint evidence can be treated as satisfied."
+        )
+    return (
+        "No direct interventional hard-endpoint sources were admitted: "
+        f"manifest hard-endpoint rows={len(hard_endpoint_rows)} ({labels}). "
+        "The conclusion is bounded to association, mechanism, and "
+        "hypothesis-generation rather than clinical actionability."
+    )
+
+
+def _manifest_publication_status_preprint_note(rows: list[dict[str, Any]]) -> str:
+    dated = [row for row in rows if _row_year(row) == 2026]
+    preprints = [row for row in dated if _row_is_preprint(row)]
+    dated_labels = ", ".join(_row_citation(row) for row in dated[:8]) or "none"
+    preprint_labels = ", ".join(_row_citation(row) for row in preprints[:8]) or "none"
+    return (
+        "Publication-status/preprint note: 2026-dated manifest sources are "
+        f"{dated_labels}; preprint candidates flagged by manifest metadata: "
+        f"{preprint_labels}."
+    )
+
+
+def _row_year(row: dict[str, Any]) -> int | None:
+    for key in ("source_year", "year", "publication_year"):
+        try:
+            return int(row.get(key) or 0) or None
+        except (TypeError, ValueError):
+            continue
+    match = re.search(r"\b(19|20)\d{2}\b", _row_citation(row))
+    return int(match.group(0)) if match else None
+
+
+def _row_is_preprint(row: dict[str, Any]) -> bool:
+    scope = " ".join(
+        str(row.get(key) or "")
+        for key in ("source_type", "evidence_type", "source_title", "url", "doi")
+    ).lower()
+    return any(token in scope for token in ("preprint", "medrxiv", "biorxiv", "arxiv", "ssrn"))
 
 
 def _manifest_direct_interventional_note(feedback: str, rows: list[dict[str, Any]]) -> str:

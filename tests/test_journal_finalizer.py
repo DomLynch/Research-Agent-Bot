@@ -4408,3 +4408,75 @@ def test_third_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None
     assert "Direct evidence count is 1/7" in fixed
     assert "Direction-coded source highlights:" in fixed
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+
+
+def test_fourth_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None:
+    feedback = (
+        "Reconcile each cited source's effect_direction with the actual reported finding "
+        "in excerpt; remove or correct contradicted directionality (Brouwers 2016, "
+        "Alhareeri 2020, Sasmita 2025, Ha 2023).; Verify/reconcile admission counts "
+        "and receipt-level direction tallies (n=24, negative=1, null=5, positive=2, "
+        "unclear=16) against source bundle.; Reframe research question and conclusion "
+        "so Telomere Cancer Effects is bounded to retained set: adjacent biomarkers, "
+        "prognostic associations, MR causal signals; not direct interventional/clinical "
+        "efficacy.; Separate MR cancer-risk sources (Li 2026, Chen 2023, Wan 2023, "
+        "Song 2022) from mechanistic/ALT sources (Brown 2026, Genetta 2026, Aierken "
+        "2026, Xu 2024, Afolabi 2026) when describing disagreements; don't pool.; "
+        "Add explicit statement no direct interventional hard-endpoint sources admitted; "
+        "conclusion bounded to association/mechanism/hypothesis-generation; remove "
+        "clinical actionability/anti-aging framing.; Verify 2026-dated sources for "
+        "actual publication status and preprint vs peer-reviewed distinction; flag preprints."
+    )
+    rows = [
+        {"citation_token": "Brouwers 2016", "source_title": "Telomere association reported in cohort excerpt", "outcome_class": "prognostic_survival", "effect_direction": "negative", "directness": "indirect", "source_year": 2016},
+        {"citation_token": "Alhareeri 2020", "source_title": "Telomere clinical association excerpt", "outcome_class": "adjacent_biomarker", "effect_direction": "positive", "directness": "indirect", "source_year": 2020},
+        {"citation_token": "Sasmita 2025", "source_title": "Shorter telomere length as prognostic marker for recurrence", "outcome_class": "prognostic_survival", "effect_direction": "unclear", "directness": "review", "source_year": 2025},
+        {"citation_token": "Ha 2023", "source_title": "Telomere survival endpoint report", "outcome_class": "mortality_survival", "effect_direction": "null", "directness": "indirect", "source_year": 2023},
+        {"citation_token": "Li 2026", "source_title": "Mendelian randomization of telomere length and cancer risk", "outcome_class": "cancer_risk_mr", "effect_direction": "null", "directness": "indirect", "source_year": 2026},
+        {"citation_token": "Chen 2023", "source_title": "Genetically predicted telomere length and cancer risk", "outcome_class": "cancer_risk_mr", "effect_direction": "positive", "directness": "review", "source_year": 2023},
+        {"citation_token": "Wan 2023", "source_title": "Mendelian randomization study on leukocyte telomere length", "outcome_class": "cancer_risk_mr", "effect_direction": "unclear", "directness": "indirect", "source_year": 2023},
+        {"citation_token": "Song 2022", "source_title": "Mendelian randomization analysis of telomere length and skin cancer", "outcome_class": "cancer_risk_mr", "effect_direction": "unclear", "directness": "indirect", "source_year": 2022},
+        {"citation_token": "Brown 2026", "source_title": "ALT telomere mechanism in tumor cells", "outcome_class": "mechanism_alt", "effect_direction": "null", "directness": "mechanistic", "source_year": 2026, "source_type": "preprint"},
+        {"citation_token": "Genetta 2026", "source_title": "TERT mechanistic telomere biology in cancer", "outcome_class": "mechanism", "effect_direction": "unclear", "directness": "mechanistic", "source_year": 2026},
+        {"citation_token": "Aierken 2026", "source_title": "ALT and tumor-cell telomere mechanism", "outcome_class": "mechanism_alt", "effect_direction": "unclear", "directness": "mechanistic", "source_year": 2026},
+        {"citation_token": "Xu 2024", "source_title": "Telomerase mechanistic study in cancer", "outcome_class": "mechanism", "effect_direction": "null", "directness": "mechanistic", "source_year": 2024},
+        {"citation_token": "Afolabi 2026", "source_title": "Telomere-driven dysfunctional mechanism in gynecological cancers", "outcome_class": "mechanism", "effect_direction": "null", "directness": "mechanistic", "source_year": 2026},
+    ]
+    rows.extend(
+        {
+            "citation_token": f"Context {idx} 2021",
+            "source_title": "Contextual telomere biomarker source",
+            "outcome_class": "adjacent_biomarker",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "source_year": 2021,
+        }
+        for idx in range(1, 12)
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "telomere_cancer_effects",
+        "receipts": rows,
+    }), encoding="utf-8")
+    paper = (
+        "## Research Question\n\nIs Telomere Cancer Effects clinically actionable?\n\n"
+        "## Evidence Landscape\n\nThe source bundle is summarized.\n\n"
+        "## Key Findings\n\nKey findings from source synthesis.\n\n"
+        "## Conclusion\n\nThis is an anti-aging clinical actionability signal.\n"
+    )
+
+    fixed, _logs = journal_finalizer._run_text_phases(paper, tmp_path)
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+
+    assert "Effect-direction reconciliation note:" in fixed
+    assert all(label in fixed for label in ("Brouwers 2016", "Alhareeri 2020", "Sasmita 2025", "Ha 2023"))
+    assert "Admission and direction-tally reconciliation: n=24; negative=1; null=5; positive=2; unclear=16" in fixed
+    assert "Scope-bounded research question note:" in fixed
+    assert "not direct interventional or clinical efficacy" in fixed
+    assert "MR/mechanism disagreement separation note:" in fixed
+    assert all(label in fixed for label in ("Li 2026", "Chen 2023", "Wan 2023", "Song 2022"))
+    assert all(label in fixed for label in ("Brown 2026", "Genetta 2026", "Aierken 2026", "Xu 2024", "Afolabi 2026"))
+    assert "No direct interventional hard-endpoint sources were admitted" in fixed
+    assert "Publication-status/preprint note:" in fixed
+    assert "Brown 2026" in fixed and "preprint" in fixed.lower()
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
