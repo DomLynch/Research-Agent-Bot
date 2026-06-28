@@ -7922,6 +7922,70 @@ def test_cycle_skips_recent_source_precision_failure_before_repairing_next_topic
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_fresh_cycle_selects_currently_repaired_topic_despite_recent_preflight_block(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    assert cycle.PREFLIGHT_MIN_QUANT_CLAIMS < cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+    _topic(tmp_path, "aaa_repaired_source", target_journal=True)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-27-fresh.json", {
+        "started_at": dt.datetime.now(dt.UTC).isoformat(),
+        "attempts": [{
+            "topic": "aaa_repaired_source",
+            "gate_status": "preflight_thin_quant_corpus",
+            "submitted": 0,
+        }],
+    })
+    cycle._record_blockers(ledger_dir, "2026-06-27", [{
+        "topic": "aaa_repaired_source",
+        "gate_status": "preflight_thin_quant_corpus",
+        "submitted": 0,
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: {"aaa_repaired_source"})
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:24/24", [],
+    ))
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda topic, **_k: {
+        "status": "source_precision_repaired",
+        "source_topic_precision_after": "source_topic_precision_ok:24/24",
+        "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    })
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", lambda *_a, **_k: pytest.fail("unexpected refresh"))
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-28",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=lambda topic, **_k: {
+            "status": "corpus_ready",
+            "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+        },
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=1,
+    )
+
+    assert synthesized == ["aaa_repaired_source"]
+    assert ledger["corpus_repairs"][0]["topic"] == "aaa_repaired_source"
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_auto_excludes_unrepaired_low_source_precision_topics(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_low_source", target_journal=True)
     _topic(tmp_path, "bbb_low_source", target_journal=True)

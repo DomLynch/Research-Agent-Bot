@@ -955,6 +955,13 @@ def _source_precision_repair_publishable(repair: Mapping[str, Any]) -> bool:
     )
 
 
+def _source_precision_repair_checkable(repair: Mapping[str, Any]) -> bool:
+    return (
+        repair.get("status") == "source_precision_repaired"
+        and int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
+    )
+
+
 def _unrepairable_source_precision_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     out: set[str] = set()
@@ -3306,6 +3313,7 @@ def run_cycle(
         published_topics = _published_topics(topics, remote_seen, ledger_dir)
         corpus_repaired_ok: set[str] = set()
         source_precision_repaired_ok: set[str] = set()
+        source_precision_repaired_checkable: set[str] = set()
         current_source_precision: set[str] = set()
         recent_source_precision_failed: set[str] = set()
         source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
@@ -3388,13 +3396,16 @@ def run_cycle(
                         corpus_repaired_ok.add(repair_topic)
                 if _source_precision_repair_publishable(repair):
                     source_precision_repaired_ok.add(repair_topic)
+                elif _source_precision_repair_checkable(repair):
+                    source_precision_repaired_checkable.add(repair_topic)
                 if repair_publishable:
                     repair_successes += 1
                     if repair_successes >= _corpus_repair_limit():
                         break
-            unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
-            unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
-            source_precision_auto_excluded -= source_precision_repaired_ok
+            source_precision_selectable = source_precision_repaired_ok or source_precision_repaired_checkable
+            unrepaired_attempted = source_precision_repair_attempted - source_precision_selectable
+            unattempted_source_precision = current_source_precision - source_precision_selectable - source_precision_repair_attempted
+            source_precision_auto_excluded -= source_precision_selectable
             source_precision_auto_excluded |= unrepaired_attempted | unattempted_source_precision
             if source_precision_auto_excluded:
                 ledger["source_precision_auto_excluded_topics"] = sorted(source_precision_auto_excluded)
@@ -3431,9 +3442,10 @@ def run_cycle(
                     ledger["status"] = "no_revise_pending"
                 break
             dynamic_preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
-            dynamic_preflight_blocked -= corpus_repaired_ok | source_precision_repaired_ok
+            source_precision_selectable = source_precision_repaired_ok or source_precision_repaired_checkable
+            dynamic_preflight_blocked -= corpus_repaired_ok | source_precision_selectable
             dynamic_receipt_preflight_blocked = set() if topic else _recent_receipt_preflight_blocked_topics(ledger_dir)
-            dynamic_receipt_preflight_blocked -= corpus_repaired_ok | source_precision_repaired_ok
+            dynamic_receipt_preflight_blocked -= corpus_repaired_ok | source_precision_selectable
             if dynamic_preflight_blocked != preflight_blocked:
                 preflight_blocked = dynamic_preflight_blocked
                 ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
@@ -3450,8 +3462,9 @@ def run_cycle(
                 )
                 if clean_ready_now:
                     selection_excluded |= current_source_precision - source_precision_repaired_ok
+            source_precision_selectable = source_precision_repaired_ok or source_precision_repaired_checkable
             repaired_candidates = sorted(
-                topic for topic in (corpus_repaired_ok | source_precision_repaired_ok) - selection_excluded
+                topic for topic in (corpus_repaired_ok | source_precision_selectable) - selection_excluded
                 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
             )
             selected = (
