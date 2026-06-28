@@ -158,6 +158,10 @@ def _write_daily_submit_cycle_ledger(runs_root: Path, date: str, ledger: dict[st
     _write_json(runs_root / CYCLE_LEDGER_DIR / f"{date}-daily-submit.json", payload)
 
 
+def _default_cycle_date() -> str:
+    return dt.datetime.now().astimezone().date().isoformat()
+
+
 def _sha256(path: Path) -> str:
     return "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -2071,7 +2075,7 @@ def run_cycle_capped(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date", default=dt.datetime.now(dt.UTC).date().isoformat())
+    parser.add_argument("--date", default=_default_cycle_date())
     parser.add_argument("--runs-root", type=Path, default=RUNS)
     parser.add_argument("--submit", action="store_true")
     parser.add_argument(
