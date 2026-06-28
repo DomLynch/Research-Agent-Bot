@@ -2575,6 +2575,22 @@ def test_main_writes_daily_submit_cycle_receipt_for_no_eligible(tmp_path: Path, 
     assert "status=no_eligible_research_paper submitted=0 published=0" in capsys.readouterr().out
 
 
+def test_main_defaults_to_local_cycle_date(tmp_path: Path, monkeypatch, capsys) -> None:
+    def _fake(**kw: Any) -> dict:
+        assert kw["runs_root"] == tmp_path
+        assert kw["date"] == "2026-06-29"
+        return {"status": "no_eligible_research_paper", "submitted": 0, "published": 0}
+
+    monkeypatch.setattr(daily, "_default_cycle_date", lambda: "2026-06-29")
+    monkeypatch.setattr(daily, "run_cycle_capped", _fake)
+
+    rc = daily.main(["--runs-root", str(tmp_path), "--submit"])
+
+    assert rc == 0
+    assert (tmp_path / daily.CYCLE_LEDGER_DIR / "2026-06-29-daily-submit.json").exists()
+    assert "status=no_eligible_research_paper submitted=0 published=0" in capsys.readouterr().out
+
+
 def test_run_cycle_capped_continues_past_rejection(tmp_path: Path, monkeypatch) -> None:
     """A duplicate/rejection consumes a candidate but must NOT stall the cycle:
     the loop proceeds to the next ready candidate within the cap and still
