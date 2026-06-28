@@ -1158,8 +1158,11 @@ def select_candidate(
             title_marks.update(_title_markers(str(payload.get("title") or "")))
             markers.update(title_marks)
         if locally_eligible:
+            preflight_status = _researka_preflight_status(payload, enforce_recency=purpose != "revision")
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
-            if null_status != "eligible":
+            if preflight_status != "eligible":
+                ok, status = False, preflight_status
+            elif null_status != "eligible":
                 ok, status = False, null_status
             elif (anchor_status := _findings_map_topic_anchor_status(payload)) != "eligible":
                 ok, status = False, anchor_status
