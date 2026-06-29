@@ -2419,6 +2419,11 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
         or revision_coverage.asks_outcome_taxonomy_separation(feedback)
         or revision_coverage.asks_conclusion_weight_boundary(feedback)
         or revision_coverage.asks_direction_tally_audit(feedback)
+        or (
+            "denominator" in lower
+            and "source" in lower
+            and any(token in lower for token in ("reconcile", "consistent", "accounting"))
+        )
     )
 
 
@@ -3563,7 +3568,7 @@ def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
     original = _evidence_role_outcome_display(row)
     directness = str(row.get("directness") or "").strip().lower()
     if directness.startswith("direct"):
-        return original
+        return _reviewer_adjusted_outcome_label(original, feedback)
     citation = str(row.get("citation_token") or row.get("receipt_id") or "").strip().lower()
     local_reclassification = bool(citation) and any(
         re.search(rf"{token}.{{0,220}}{re.escape(citation)}", lower)
@@ -3574,7 +3579,7 @@ def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
         )
     )
     if not local_reclassification:
-        return original
+        return _reviewer_adjusted_outcome_label(original, feedback)
     local = _feedback_window_for_label(feedback, citation)
     if any(token in local for token in ("mechanistic/pilot", "mechanistic pilot")):
         return "mechanistic/pilot evidence"
@@ -3583,7 +3588,13 @@ def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
         "off-topic", "off topic", "segregate", "non-pooling", "non pooling",
     )):
         return _manifest_subdomain_bucket(row)
-    return original
+    return _reviewer_adjusted_outcome_label(original, feedback)
+
+
+def _reviewer_adjusted_outcome_label(label: str, feedback: str) -> str:
+    if _revision_asks_outcome_label_cleanup(feedback) and re.search(r"\bdosing and pharmacokinetics\b", label, flags=re.I):
+        return re.sub(r"\bDosing and Pharmacokinetics\b", "Exposure and Dose-Adjacent Evidence", label, flags=re.I)
+    return label
 
 
 def _phase_d_species_study_design_summary(
@@ -3830,7 +3841,12 @@ def _phase_d_tensions_and_gaps_breadth(
     receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     tension_n = manifest.get("n_non_orthogonal_tensions") if isinstance(manifest, dict) else None
-    tension_lines = list(dict.fromkeys(_reviewer_named_tension_lines(feedback) + _manifest_tension_examples(rows)))
+    blocked_labels = _reviewer_blocked_tension_labels(feedback)
+    tension_lines = [
+        line for line in dict.fromkeys(_reviewer_named_tension_lines(feedback) + _manifest_tension_examples(rows))
+        if not any(label in line.lower() for label in blocked_labels)
+    ]
+    tension_lines = [_reviewer_adjusted_outcome_label(line, feedback) for line in tension_lines]
     if asks_count_evidence and not tension_lines:
         return text, []
     contexts = [
@@ -3955,7 +3971,10 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
         positives = candidates[:]
     if not contrasts:
         contrasts = list(reversed(candidates))
-    used: set[tuple[str, str]] = set()
+    used: set[tuple[str, str]] = {
+        (citation(left), citation(right))
+        for _, _, left, right in selected_pairs
+    }
     for left in positives:
         for right in contrasts:
             a, b = citation(left), citation(right)
@@ -3985,6 +4004,7 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
 
 def _reviewer_named_tension_lines(feedback: str) -> list[str]:
     lines: list[str] = []
+    feedback = re.sub(r"\bvs\.", "vs", feedback, flags=re.I)
     for sentence in re.split(r"(?<=[.!?;])\s+", feedback):
         if not re.search(r"\b(?:vs\.?|versus)\b", sentence, flags=re.I):
             continue
@@ -4005,6 +4025,13 @@ def _reviewer_named_tension_lines(feedback: str) -> list[str]:
                 if len(lines) >= 5:
                     return lines
     return lines
+
+
+def _reviewer_blocked_tension_labels(feedback: str) -> set[str]:
+    return {
+        match.group(1).lower()
+        for match in re.finditer(r"\b([A-Z][A-Za-z'’-]+\s+20\d{2})(?:-based|\s+based)\b", feedback)
+    }
 
 
 def _phase_d_source_statistics_landscape(
@@ -4261,6 +4288,13 @@ def _phase_d_revision_surface_notes(
             n += changed
             if changed:
                 details.append("source_examples")
+    if wants_source_examples and "outcome-class synthesis note:" not in patched.lower():
+        note = _reviewer_adjusted_outcome_label(_outcome_class_synthesis_note(receipts), feedback)
+        if note:
+            patched, changed = _prepend_section_paragraph(patched, "Results", note)
+            n += changed
+            if changed:
+                details.append("outcome_class_synthesis")
     wants_direct_ceiling = "direct clinical source" in lower or (
         "direct source" in lower and "conclusion" in lower
     ) or (
@@ -5113,6 +5147,8 @@ def _phase_f_reconcile_results_table(
     receipts = manifest.get("receipts") or ()
     if not receipts:
         return text, []
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
     results_match = re.search(
         r"^## Results\b(.*?)(?=^## (?!#))", text, flags=re.M | re.S,
     )
@@ -5216,6 +5252,7 @@ def _phase_f_reconcile_results_table(
     if missing_blocks:
         new_results = new_results.rstrip() + "\n\n" + "\n".join(missing_blocks)
     new_results = re.sub(r"\bnull signal in (\d+/\d+ sources)", r"no extracted directional signal in \1", new_results)
+    new_results = _reviewer_adjusted_outcome_label(new_results, feedback)
     if new_results == results:
         return text, []
     new_text = text[:results_match.start(1)] + new_results + text[results_match.end(1):]

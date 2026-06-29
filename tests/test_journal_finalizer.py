@@ -4737,3 +4737,74 @@ def test_fourth_telomere_revise_asks_repaired_generically(tmp_path: Path) -> Non
     assert "Publication-status/preprint note:" in fixed
     assert "Brown 2026" in fixed and "preprint" in fixed.lower()
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+
+
+def test_revise_feedback_repairs_denominators_tensions_and_findings_map(tmp_path: Path) -> None:
+    feedback = (
+        "Reconcile all source-count denominators (35 vs 36 vs 39; 12/35 vs 13/36) across "
+        "the Evidence Landscape, Findings Map, Source-context map, and Search Summary admission funnel "
+        "so the corpus accounting is internally consistent.; "
+        "Expand the Tensions and Gaps section to explicitly enumerate the major cross-source disagreements "
+        "(fibromyalgia meta-analytic pain reduction vs. null primary RCTs; IBD dispensing reductions in "
+        "Raknes 2018 vs. null Raknes 2020 hypothyroidism signal; Moloney 2026 null hsCRP vs. mechanistic "
+        "anti-inflammatory claims; Vatvani 2024 positive pooled effect vs. Bruun 2021/Bested 2023 null "
+        "or weak primary signals) rather than collapsing them into a single prescriptive sentence.; "
+        "Provide source-level attribution rows in the Findings Map for every prose-cited finding, not only "
+        "the four currently listed.; "
+        "Rewrite the Exposure and Dose-Adjacent Evidence Outcomes section as a real outcome-class synthesis "
+        "with its own tensions, directness summary, and representative findings.; "
+        "Tighten the scope statement so that Dosing and Pharmacokinetics is not functioning as a proxy for "
+        "the entire clinical evidence base."
+    )
+    rows = [
+        {"citation_token": "Vatvani 2024", "source_title": "Meta-analysis of low-dose naltrexone pain response", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "positive", "directness": "review", "evidence_tier": "B1", "n_claims": 41, "p_values": ["p < 0.05"]},
+        {"citation_token": "Nazir 2025", "source_title": "Fibromyalgia pain response synthesis", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "positive", "directness": "review", "evidence_tier": "B1", "n_claims": 33},
+        {"citation_token": "Tsui 2024", "source_title": "Randomized trial of low-dose naltrexone in fibromyalgia", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "null", "directness": "direct", "evidence_tier": "A1", "n_claims": 29},
+        {"citation_token": "Moloney 2026", "source_title": "Low-dose naltrexone trial with null hsCRP endpoint", "outcome_class": "immune", "effect_direction": "null", "directness": "direct", "evidence_tier": "A1", "n_claims": 24},
+        {"citation_token": "Raknes 2018", "source_title": "IBD dispensing reductions after low-dose naltrexone", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "positive", "directness": "indirect", "evidence_tier": "B2", "n_claims": 18},
+        {"citation_token": "Raknes 2020", "source_title": "Null hypothyroidism dispensing signal", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 16},
+        {"citation_token": "Bruun 2021", "source_title": "Weak primary signal in low-dose naltrexone trial", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "unclear", "directness": "direct", "evidence_tier": "A1", "n_claims": 12},
+        {"citation_token": "Bested 2023", "source_title": "Weak primary fatigue signal", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "unclear", "directness": "direct", "evidence_tier": "A1", "n_claims": 10},
+        {"citation_token": "Parkitny 2017", "source_title": "Reduced inflammatory cytokines after low-dose naltrexone", "outcome_class": "immune", "effect_direction": "positive", "directness": "indirect", "evidence_tier": "B2", "n_claims": 8},
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}), encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "low_dose_naltrexone_inflammation",
+        "n_non_orthogonal_tensions": 108,
+        "receipts": rows,
+    }), encoding="utf-8")
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Current source counts are inconsistent.\n\n"
+        "### Findings Map\n\n"
+        "- Parkitny 2017: outcome=Dosing and Pharmacokinetics; direction=null; directness=indirect; tier=B2.\n\n"
+        "## Results\n\n"
+        "### Dosing and Pharmacokinetics Outcomes\n\n"
+        "The retained narrative paragraphs were more strongly assigned to adjacent outcome classes.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Fix the tension section.\n\n"
+        "## Conclusion\n\n"
+        "The clinical evidence base is broad.\n"
+    )
+
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+    assert any(ask in journal_finalizer.revision_coverage.deterministic_unmet_asks(paper, asks) for ask in asks)
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Corpus-count reconciliation:" in fixed
+    assert "Findings Map completeness note: all 9 admitted manifest rows" in fixed
+    assert "Vatvani 2024 vs Bruun 2021" in fixed
+    assert "Outcome-class synthesis note: Exposure and Dose-Adjacent Evidence is treated as a real outcome-class synthesis" in fixed
+    assert "Directness summary:" in fixed
+    assert "Source examples:" in fixed
+    assert "direct-source ceiling:" in fixed.lower()
+    assert "Dosing and Pharmacokinetics" not in fixed
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert {entry.phase for entry in logs} >= {
+        "D_substantive_evidence_synthesis",
+        "D_source_outcome_class_map",
+        "D_tensions_and_gaps_breadth",
+        "D_outcome_label_cleanup",
+        "D_revision_surface_notes",
+    }
