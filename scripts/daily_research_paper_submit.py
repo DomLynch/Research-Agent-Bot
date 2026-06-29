@@ -1217,7 +1217,10 @@ def select_candidate(
                 fp in {row.get("fingerprint"), row.get("submission_payload_hash")}
                 for row in same_run_rows
             ):
-                status = "eligible_resubmission_after_payload_change"
+                if explicit_candidate:
+                    status = "eligible_resubmission_after_payload_change"
+                else:
+                    ok, status = False, "topic_already_submitted_pending"
             else:
                 ok, status = False, "topic_already_submitted_pending"
         if locally_eligible:

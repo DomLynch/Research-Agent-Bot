@@ -189,7 +189,7 @@ def test_select_candidate_skips_exact_submitted_payload(tmp_path: Path) -> None:
     assert considered[0]["status"] == "duplicate_submission_fingerprint"
 
 
-def test_select_candidate_allows_changed_payload_for_submitted_topic(tmp_path: Path) -> None:
+def test_select_candidate_blocks_changed_payload_for_pending_submitted_topic(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "topic": "topic",
@@ -200,6 +200,24 @@ def test_select_candidate_allows_changed_payload_for_submitted_topic(tmp_path: P
     selected, considered = daily.select_candidate(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "topic_already_submitted_pending"
+
+
+def test_select_candidate_allows_explicit_changed_payload_for_submitted_topic(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "topic": "topic",
+        "run": run.name,
+        "fingerprint": "sha256:previous",
+    }])
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        candidate_run=run,
     )
 
     assert selected == run
