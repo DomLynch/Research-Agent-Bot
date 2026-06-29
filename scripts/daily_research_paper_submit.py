@@ -565,6 +565,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
         return f"researka_preflight_insufficient_sources:{len(source_bundle)} < {min_citations}"
     if (bundle_status := _source_bundle_reconciliation_status(payload)) != "eligible":
         return bundle_status
+    if (topic_status := _source_bundle_topic_status(payload)) != "eligible":
+        return topic_status
 
     required_sections = RESEARKA_REQUIRED_SECTIONS.get(article_type, RESEARKA_REQUIRED_SECTIONS[DEFAULT_ARTICLE_TYPE])
     missing = [name for name in required_sections if not str(sections.get(name) or "").strip()]
@@ -1582,6 +1584,27 @@ def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
     missing_citation = sum(not _has_source_citation(row) for row in bundle)
     if missing_outcome or missing_citation:
         return f"source_bundle_unmapped_sources:outcome={missing_outcome},citation={missing_citation}"
+    return "eligible"
+
+
+def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
+    metadata_raw = payload.get("metadata")
+    metadata: dict[str, Any] = metadata_raw if isinstance(metadata_raw, dict) else {}
+    topic = str(metadata.get("topic") or payload.get("topic") or "").strip()
+    bundle = [row for row in payload.get("source_bundle", []) if isinstance(row, dict)]
+    if not topic or not bundle:
+        return "eligible"
+    aliases = source_gate_aliases(topic, topic_aliases(topic, root=ROOT, include_generated_terms=False))
+    misses: list[str] = []
+    for idx, row in enumerate(bundle, start=1):
+        haystack = " ".join(
+            str(row.get(key) or "")
+            for key in ("title", "excerpt", "outcome_class", "evidence_context", "evidence_type", "directness")
+        )
+        if not is_source_topic_specific(topic, haystack, aliases=aliases):
+            misses.append(str(idx))
+    if misses:
+        return f"source_bundle_topic_mismatch:{len(misses)}/{len(bundle)}:rows={','.join(misses[:5])}"
     return "eligible"
 
 

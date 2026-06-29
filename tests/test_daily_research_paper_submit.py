@@ -812,6 +812,20 @@ def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(
     assert daily._researka_preflight_status(payload) == "source_bundle_unmapped_sources:outcome=1,citation=1"
 
 
+def test_researka_preflight_blocks_off_topic_source_bundle_row(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"
+    for row in payload["source_bundle"]:
+        row["title"] = "Low-dose naltrexone trial in chronic pain"
+        row["excerpt"] = "Low-dose naltrexone was evaluated in adults with chronic pain."
+        row["outcome_class"] = "dosing_pharmacokinetics"
+        row["evidence_context"] = "adjacent"
+    payload["source_bundle"][1]["title"] = "LDN laparoscopic donor nephrectomy cohort"
+    payload["source_bundle"][1]["excerpt"] = "Laparoscopic donor nephrectomy perioperative outcomes."
+
+    assert daily._researka_preflight_status(payload) == "source_bundle_topic_mismatch:1/12:rows=2"
+
+
 def test_weak_direct_corpus_forces_bounded_title_and_conclusion(tmp_path: Path) -> None:
     run = _run(tmp_path, tensions=20)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
@@ -958,7 +972,7 @@ def test_high_null_no_direct_abstract_bundle_blocks_without_generation_reconcili
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",
-        lambda pmids: {pmid: f"BACKGROUND: Source {pmid} reports extractable outcome direction." for pmid in pmids},
+        lambda pmids: {pmid: f"BACKGROUND: Topic source {pmid} reports extractable outcome direction." for pmid in pmids},
     )
     ledger = daily.run_cycle(
         runs_root=tmp_path,
@@ -1018,7 +1032,7 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",
-        lambda pmids: {pmid: f"BACKGROUND: Source {pmid} reports extractable outcome direction." for pmid in pmids},
+        lambda pmids: {pmid: f"BACKGROUND: Topic source {pmid} reports extractable outcome direction." for pmid in pmids},
     )
     submitted: list[dict[str, Any]] = []
 
