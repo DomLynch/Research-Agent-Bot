@@ -370,6 +370,8 @@ def _consistency_gate(
         if min_dt and (not started or started < min_dt):
             blockers.append(f"{lane}:stale_before_min_started_at")
             continue
+        if lane == "revise" and str(view.get("status") or "") == "no_revise_pending":
+            continue
         if str(view.get("status") or "") != "published" or _int_value(view.get("published")) < 1:
             blockers.append(f"{lane}:not_published")
     decisions = public.get("decisions") if isinstance(public.get("decisions"), dict) else {}

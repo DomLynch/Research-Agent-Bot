@@ -387,6 +387,52 @@ def test_consistency_gate_reports_stale_lane_and_public_baseline_blocker() -> No
     ]
 
 
+def test_consistency_gate_treats_empty_revise_lane_as_clean_noop() -> None:
+    local = {
+        "cycle_modes": {
+            "fresh": {
+                "started_at": "2026-06-29T12:00:00+00:00",
+                "mode": "fresh",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+            "revise": {
+                "started_at": "2026-06-29T12:15:00+00:00",
+                "mode": "revise",
+                "status": "no_revise_pending",
+                "submitted": 0,
+                "published": 0,
+            },
+            "daily-submit": {
+                "updated_at": "2026-06-29T14:15:00+00:00",
+                "mode": "daily-submit",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+        },
+    }
+    public = {
+        "decisions": {"accept": 4},
+        "examples": [{
+            "time": "2026-06-29T14:20:00+00:00",
+            "decision": "accept",
+            "title": "Accepted paper",
+        }],
+    }
+
+    gate = report._consistency_gate(
+        local,
+        public,
+        public_accept_baseline=3,
+        min_started_at="2026-06-29T11:19:00+00:00",
+    )
+
+    assert gate["pass"] is True
+    assert gate["blockers"] == []
+
+
 def test_main_accepts_date_flag(monkeypatch, tmp_path: Path, capsys) -> None:
     monkeypatch.setattr(
         report,
