@@ -553,7 +553,7 @@ def _compile_public_section_backstop(
     if direct > 0 and mechanistic > 0:
         evidence_basis = "the retained clinical and mechanistic evidence profile"
     elif direct + indirect > 0:
-        evidence_basis = "the retained clinical and adjacent evidence profile"
+        evidence_basis = "the retained direct, adjacent, and context evidence profile"
     elif mechanistic > 0:
         evidence_basis = "the retained mechanistic evidence profile"
     signal_profile = (
@@ -576,7 +576,7 @@ def _compile_public_section_backstop(
             (
                 "The evidence profile contains "
                 f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
-                f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
+                f"{_evidence_tier_phrase(indirect, 'adjacent, review, or context')}, "
                 f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, "
                 f"with {tension_phrase} "
                 "across the evidence base."
@@ -600,14 +600,14 @@ def _compile_public_section_backstop(
                 f"{receipt_n} accepted source papers and "
                 f"{claim_n} high-confidence extracted claims. The review is "
                 "organized around the distinction between direct clinical "
-                "evidence, indirect clinical evidence, and mechanistic evidence "
+                "evidence, adjacent/review/context evidence, and mechanistic evidence "
                 "so that biological plausibility is not confused with clinical "
                 "certainty."
             ),
             (
                 "The corpus contains "
                 f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
-                f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
+                f"{_evidence_tier_phrase(indirect, 'adjacent, review, or context')}, "
                 f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}. "
                 "That distribution "
                 "makes the synthesis appropriate for evaluating convergence, "
@@ -743,7 +743,7 @@ def _compile_public_section_backstop(
                 f"The principal limitation is evidence-role imbalance. The "
                 "retained corpus contains "
                 f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
-                f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
+                f"{_evidence_tier_phrase(indirect, 'adjacent, review, or context')}, "
                 f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, which means causal "
                 "interpretation depends on how much weight is assigned to each "
                 "evidence tier."
@@ -776,7 +776,7 @@ def _compile_public_section_backstop(
                 "mixed, or adverse signals identify the boundaries that future "
                 "work must test directly. The evidence hierarchy remains "
                 "load-bearing here: direct clinical records carry more "
-                "interpretive weight than adjacent clinical evidence, and both "
+                "interpretive weight than adjacent/context evidence, and both "
                 "carry more translational weight than mechanistic or model "
                 "systems. A stronger future conclusion would require larger "
                 "direct human samples, prespecified endpoints, longer follow-up, "
