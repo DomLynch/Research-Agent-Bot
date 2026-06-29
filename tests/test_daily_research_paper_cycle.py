@@ -1047,6 +1047,14 @@ def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_sub
     assert ledger["publication_reconciliation"]["matched"] == ["submission:accepted-submission"]
     assert ledger["submissions"][0].get("published", 0) == 0
     assert ledger["submissions"][1]["published"] == 1
+    ledger["submitted"] = 1
+    _write_json(ledger_dir / "2026-06-29-daily-submit.json", ledger)
+
+    refreshed = cycle.reconcile_publication_ledgers(runs_root=runs_root, date="2026-06-29")
+
+    ledger = json.loads((ledger_dir / "2026-06-29-daily-submit.json").read_text(encoding="utf-8"))
+    assert refreshed["status"] == "publication_reconciled"
+    assert ledger["submitted"] == 2
 
 
 def test_reconcile_cli_without_mode_checks_all_lanes(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:

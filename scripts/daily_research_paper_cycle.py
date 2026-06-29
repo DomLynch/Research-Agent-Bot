@@ -408,6 +408,18 @@ def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[s
     return markers
 
 
+def _child_submission_counts(ledger: dict[str, Any]) -> tuple[int, int]:
+    submitted = 0
+    published = 0
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        submitted += 1 if int(submission.get("submitted") or 0) else 0
+        published += 1 if int(submission.get("published") or 0) else 0
+    return submitted, published
+
+
 def _reconcile_published_ledger(
     ledger: dict[str, Any],
     runs_root: Path,
@@ -418,6 +430,13 @@ def _reconcile_published_ledger(
         changed = False
         if str(ledger.get("status") or "") != "published":
             ledger["status"] = "published"
+            changed = True
+        child_submitted, child_published = _child_submission_counts(ledger)
+        if child_submitted and int(ledger.get("submitted") or 0) < child_submitted:
+            ledger["submitted"] = child_submitted
+            changed = True
+        if child_published and int(ledger.get("published") or 0) < child_published:
+            ledger["published"] = child_published
             changed = True
         before = len(ledger)
         ledger.pop("no_submission_reason", None)
@@ -485,13 +504,7 @@ def _reconcile_published_ledger(
         if submission_markers & matches or (isinstance(submission_run, str) and submission_run in matched_runs):
             submission["submitted"] = 1
             submission["published"] = 1
-    child_submitted = 0
-    child_published = 0
-    for submission in submissions if isinstance(submissions, list) else []:
-        if not isinstance(submission, dict):
-            continue
-        child_submitted += 1 if int(submission.get("submitted") or 0) else 0
-        child_published += 1 if int(submission.get("published") or 0) else 0
+    child_submitted, child_published = _child_submission_counts(ledger)
     ledger["submitted"] = max(int(ledger.get("submitted") or 0), child_submitted, 1)
     ledger["published"] = max(int(ledger.get("published") or 0), child_published, 1)
     return True
