@@ -3138,7 +3138,10 @@ def _manifest_conclusion_weight_note(rows: list[dict[str, Any]]) -> str:
 def _manifest_count_reconciliation_note(rows: list[dict[str, Any]], feedback: str) -> str:
     lower = " ".join(feedback.lower().split())
     if not (
-        any(token in lower for token in ("corpus-size", "corpus size", "overcount", "overcounts", "funnel counts"))
+        any(token in lower for token in (
+            "corpus-size", "corpus size", "overcount", "overcounts", "funnel counts",
+            "source-count denominator", "source count denominator", "denominator",
+        ))
         or ("classified" in lower and "admitted" in lower and "source" in lower)
     ):
         return ""
@@ -3827,7 +3830,7 @@ def _phase_d_tensions_and_gaps_breadth(
     receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     tension_n = manifest.get("n_non_orthogonal_tensions") if isinstance(manifest, dict) else None
-    tension_lines = _manifest_tension_examples(rows)
+    tension_lines = list(dict.fromkeys(_reviewer_named_tension_lines(feedback) + _manifest_tension_examples(rows)))
     if asks_count_evidence and not tension_lines:
         return text, []
     contexts = [
@@ -3980,6 +3983,30 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
     return lines
 
 
+def _reviewer_named_tension_lines(feedback: str) -> list[str]:
+    lines: list[str] = []
+    for sentence in re.split(r"(?<=[.!?;])\s+", feedback):
+        if not re.search(r"\b(?:vs\.?|versus)\b", sentence, flags=re.I):
+            continue
+        parts = re.split(r"\b(?:vs\.?|versus)\b", sentence, maxsplit=1, flags=re.I)
+        if len(parts) != 2:
+            continue
+        left_labels = _reviewer_named_source_labels(parts[0])
+        right_labels = _reviewer_named_source_labels(parts[1])
+        for left in left_labels[:2]:
+            for right in right_labels[:3]:
+                if left == right:
+                    continue
+                lines.append(
+                    f"- {left} vs {right}: reviewer-named cross-source disagreement; "
+                    "interpret as endpoint, population, directness, or study-design "
+                    "heterogeneity rather than a pooled effect."
+                )
+                if len(lines) >= 5:
+                    return lines
+    return lines
+
+
 def _phase_d_source_statistics_landscape(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
@@ -4054,6 +4081,12 @@ def _phase_d_outcome_label_cleanup(
     )
     if not n:
         return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    rows = manifest.get("receipts", []) if isinstance(manifest, dict) else []
+    note = _outcome_class_synthesis_note([row for row in rows if isinstance(row, dict)])
+    if note:
+        patched, n_note = _prepend_or_create_section_paragraph(patched, "Results", note)
+        n += n_note
     return patched, [FinalizerLogEntry(
         phase="D_outcome_label_cleanup",
         rule="relabel_unsupported_dosing_pk_outcome",
@@ -4068,8 +4101,31 @@ def _revision_asks_outcome_label_cleanup(feedback: str) -> bool:
         any(token in lower for token in ("dosing and pharmacokinetics", "dosing/pharmacokinetics", "dosing pharmacokinetics"))
         and any(token in lower for token in (
             "re-label", "relabel", "remove", "not contain",
-            "not a dosing", "not dosing", "not pk", "out of",
+            "not a dosing", "not dosing", "not pk", "out of", "proxy", "catch-all",
         ))
+    ) or (
+        "exposure and dose-adjacent evidence outcomes" in lower
+        and "real outcome-class synthesis" in lower
+    )
+
+
+def _outcome_class_synthesis_note(rows: list[dict[str, Any]]) -> str:
+    if not rows:
+        return ""
+    directness_counts: dict[str, int] = {}
+    for row in rows:
+        key = str(row.get("directness") or "unknown").strip().lower() or "unknown"
+        directness_counts[key] = directness_counts.get(key, 0) + 1
+    directness = ", ".join(f"{k}={v}" for k, v in sorted(directness_counts.items()))
+    findings = "; ".join(_manifest_source_finding_line(row) for row in sorted(rows, key=_manifest_key_finding_score)[:5])
+    tensions = " ".join(_manifest_tension_examples(rows)[:3])
+    findings = findings.replace("Dosing and Pharmacokinetics", "Exposure and Dose-Adjacent Evidence")
+    tensions = tensions.replace("Dosing and Pharmacokinetics", "Exposure and Dose-Adjacent Evidence")
+    return (
+        "Outcome-class synthesis note: Exposure and Dose-Adjacent Evidence is treated as a real "
+        "outcome-class synthesis, not as a placeholder or proxy for the full clinical evidence base. "
+        f"Directness summary: {directness}. Representative findings: {findings}. "
+        f"Outcome-class tensions: {tensions or 'no source-pair tension cleared the manifest example threshold; interpret the slice as descriptive and hypothesis-generating.'}"
     )
 
 
@@ -4193,6 +4249,9 @@ def _phase_d_revision_surface_notes(
         "outcome subsection" in lower
         and "source" in lower
         and ("conclusion" in lower or "direct source" in lower)
+    ) or (
+        "outcome-class synthesis" in lower
+        and any(token in lower for token in ("representative finding", "directness summary", "real outcome"))
     )
     if wants_source_examples and "source examples:" not in patched.lower():
         examples = _revision_surface_examples(receipts)
@@ -4204,6 +4263,8 @@ def _phase_d_revision_surface_notes(
                 details.append("source_examples")
     wants_direct_ceiling = "direct clinical source" in lower or (
         "direct source" in lower and "conclusion" in lower
+    ) or (
+        "outcome-class synthesis" in lower and "directness summary" in lower
     )
     if wants_direct_ceiling and "direct-source ceiling:" not in patched.lower():
         note = _revision_direct_source_ceiling(receipts)
