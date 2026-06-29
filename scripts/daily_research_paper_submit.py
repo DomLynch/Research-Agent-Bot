@@ -1204,6 +1204,8 @@ def select_candidate(
             )
         ):
             ok, status = False, remote_status
+        elif ok and revision and not explicit_candidate and topic in submitted_topics:
+            ok, status = False, "revision_pending_for_revise_lane"
         elif ok and topic in submitted_topics and topic not in revision_topics and not revision:
             topic_rows = [
                 row for row in _ledger_rows(submitted_path)

@@ -1715,10 +1715,10 @@ def test_duplicate_submission_response_seeds_pending_topic_skip(tmp_path: Path) 
     assert retry["considered"][0]["status"] == "topic_already_submitted_pending"
 
 
-def test_already_submitted_topic_still_allows_revision(tmp_path: Path) -> None:
+def test_already_submitted_topic_still_allows_explicit_revision(tmp_path: Path) -> None:
     """The pending-topic skip must NOT block a genuine revision: a run carrying
-    a researka_revision_request is still submitted even though its topic is in
-    the submitted ledger."""
+    a researka_revision_request is still submitted when the revise lane passes
+    it explicitly, even though its topic is in the submitted ledger."""
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json",
                 {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
@@ -1734,9 +1734,32 @@ def test_already_submitted_topic_still_allows_revision(tmp_path: Path) -> None:
         submit=True,
         submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
         remote_loader=lambda: (set(), None),
+        candidate_run=run,
     )
 
     assert ledger["status"] == "submitted_to_researka"
+
+
+def test_generic_submit_leaves_revision_for_revise_lane(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json",
+                {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _write_json(
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        [{"topic": "topic", "fingerprint": "sha256:earlier-different-content"}],
+    )
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-15",
+        submit=True,
+        submitter=lambda _payload: (_ for _ in ()).throw(AssertionError("generic submit must not handle revisions")),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "revision_pending_for_revise_lane"
 
 
 def test_revision_without_coverage_gate_is_not_submitted(tmp_path: Path) -> None:
