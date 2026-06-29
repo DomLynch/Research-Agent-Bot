@@ -41,6 +41,7 @@ sys.path.insert(0, str(ROOT))
 import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.review_type import THIN_CORPUS_MIN_PRIMARY_TIER  # noqa: E402
 
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
@@ -62,7 +63,7 @@ MAX_REVISE_ROUNDS = 3
 PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
-PREFLIGHT_MIN_PRIMARY_TIER = 1
+PREFLIGHT_MIN_PRIMARY_TIER = THIN_CORPUS_MIN_PRIMARY_TIER
 SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT = max(PREFLIGHT_MIN_RECEIPTS * 2, PREFLIGHT_MIN_QUANT_CLAIMS)
 PREFLIGHT_MAX_RECEIPTS = 500
 PREFLIGHT_MAX_TENSIONS = 50_000
@@ -731,7 +732,7 @@ def _latest_topic_run(topic: str, runs_root: Path) -> Path | None:
 def _manifest_counts(run: Path | None) -> dict[str, Any]:
     manifest = _read_json(run / "manifest.json") if run else {}
     receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
-    primary = sum(1 for r in receipts if str(r.get("evidence_tier") or r.get("tier") or "").upper() in {"A1", "B1"})
+    primary = sum(1 for r in receipts if str(r.get("evidence_tier") or r.get("tier") or "").upper() in {"A1", "A2", "B1"})
     return {
         "has_manifest": bool(manifest),
         "n_receipts": int(manifest.get("n_receipts") or len(receipts) or 0),
@@ -1603,7 +1604,12 @@ def _pending_remote_revision(
             }
             if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
                 matches.append((record, run, record_topic))
-        if any(_submitted_record_has_pending_decision(record) for record, _run, _topic in matches):
+        request_submission_id = str(request.get("submissionId") or request.get("submission_id") or "").strip()
+        if any(
+            str(record.get("submission_id") or "").strip() != request_submission_id
+            and _submitted_record_has_pending_decision(record)
+            for record, _run, _topic in matches
+        ):
             continue
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
@@ -1999,6 +2005,15 @@ def _quant_claim_preflight(corpus: dict[str, Any]) -> dict[str, Any]:
         n_quant_claims = 0
     reasons = [] if n_quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS else [f"n_quant_claims={n_quant_claims} < {PREFLIGHT_MIN_QUANT_CLAIMS}"]
     return {"passed": not reasons, "reasons": reasons, "n_quant_claims": n_quant_claims}
+
+
+def _receipt_source_fit_reasons(n_primary_tier: int) -> list[str]:
+    if n_primary_tier < PREFLIGHT_MIN_PRIMARY_TIER:
+        return [
+            f"n_primary_tier={n_primary_tier} < {PREFLIGHT_MIN_PRIMARY_TIER} "
+            "(insufficient primary-tier anchors)"
+        ]
+    return []
 
 
 def _paper_strategy(corpus: dict[str, Any], preflight: dict[str, Any], revision_feedback: str = "") -> dict[str, Any]:
@@ -2526,7 +2541,9 @@ def _receipt_preflight(
     repairs: list[dict[str, Any]] = []
     rc = 1
     n_receipts = 0
+    n_primary_tier = 0
     best_receipts = 0
+    best_primary_tier = 0
     for round_idx in range(rounds + 1):
         suffix = "receipt-preflight" if round_idx == 0 else f"receipt-preflight-{round_idx + 1}"
         probe_dir = out_dir.with_name(f"{out_dir.name}-{suffix}")
@@ -2537,10 +2554,19 @@ def _receipt_preflight(
             shutil.rmtree(probe_dir, ignore_errors=True)
         counts = report.get("counts") if isinstance(report, dict) else {}
         n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+        n_primary_tier = int(counts.get("primary_tier_receipts") or 0) if isinstance(counts, dict) else 0
         previous_best = best_receipts
         best_receipts = max(best_receipts, n_receipts)
-        probes.append({"return_code": rc, "n_receipts": n_receipts, "min_receipts": min_receipts})
-        if rc == 0 and n_receipts >= min_receipts:
+        best_primary_tier = max(best_primary_tier, n_primary_tier)
+        source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier)
+        probes.append({
+            "return_code": rc,
+            "n_receipts": n_receipts,
+            "min_receipts": min_receipts,
+            "n_primary_tier": n_primary_tier,
+            "min_primary_tier": PREFLIGHT_MIN_PRIMARY_TIER,
+        })
+        if rc == 0 and n_receipts >= min_receipts and not source_fit_reasons:
             break
         if rc == 0 and n_receipts == 0:
             break
@@ -2563,13 +2589,17 @@ def _receipt_preflight(
         repairs.append(corpus_repair)
         if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
             break
-    passed = rc == 0 and n_receipts >= min_receipts
+    source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier)
+    passed = rc == 0 and n_receipts >= min_receipts and not source_fit_reasons
     return {
         "passed": passed,
         "status": "receipt_preflight_ok" if passed else "receipt_preflight_insufficient",
         "return_code": rc,
         "n_receipts": n_receipts if passed else best_receipts,
         "min_receipts": min_receipts,
+        "n_primary_tier": n_primary_tier if passed else best_primary_tier,
+        "min_primary_tier": PREFLIGHT_MIN_PRIMARY_TIER,
+        "reasons": [] if passed else source_fit_reasons,
         "probes": probes,
         **({"repairs": repairs} if repairs else {}),
     }
@@ -2583,10 +2613,11 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
     n_tensions = int(counts.get("n_tensions") or 0)
     n_primary = int(counts.get("n_primary_tier") or 0)
     min_receipts = DEFAULT_THRESHOLDS.min_receipts
+    source_fit_reasons = _receipt_source_fit_reasons(n_primary)
     if (
         n_receipts < min_receipts
         or n_tensions < PREFLIGHT_MIN_TENSIONS
-        or n_primary < PREFLIGHT_MIN_PRIMARY_TIER
+        or source_fit_reasons
     ):
         return None
     return {

@@ -352,7 +352,15 @@ def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool 
             _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic} seed {i}", "claims": []})
 
 
-def _prior_run(root: Path, topic: str, *, receipts: int, tensions: int, primary: int = 1, level: int = 2) -> Path:
+def _prior_run(
+    root: Path,
+    topic: str,
+    *,
+    receipts: int,
+    tensions: int,
+    primary: int = cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+    level: int = 2,
+) -> Path:
     run = root / "runs" / f"synthesis-{topic}-v06-OLD"
     receipts_payload = [
         {"receipt_id": f"r{i}", "evidence_tier": "A1" if i < primary else "B2"}
@@ -2933,6 +2941,46 @@ def test_receipt_preflight_does_not_repair_zero_receipt_failed_probe(tmp_path: P
     assert repairs == []
 
 
+def test_receipt_preflight_requires_primary_tier_floor(tmp_path: Path, monkeypatch) -> None:
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "primary_tier_receipts": cycle.PREFLIGHT_MIN_PRIMARY_TIER - 1,
+            },
+        })
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    result = cycle._receipt_preflight("broad_but_weak", tmp_path / "run", repair=False)
+
+    assert result["passed"] is False
+    assert result["status"] == "receipt_preflight_insufficient"
+    assert result["n_receipts"] == cycle.PREFLIGHT_MIN_RECEIPTS
+    assert result["n_primary_tier"] == cycle.PREFLIGHT_MIN_PRIMARY_TIER - 1
+    assert result["reasons"] == [
+        f"n_primary_tier={cycle.PREFLIGHT_MIN_PRIMARY_TIER - 1} < {cycle.PREFLIGHT_MIN_PRIMARY_TIER} "
+        "(insufficient primary-tier anchors)"
+    ]
+
+
+def test_manifest_counts_treat_a2_as_primary_tier(tmp_path: Path) -> None:
+    run = tmp_path / "run"
+    run.mkdir()
+    _write_json(run / "manifest.json", {
+        "receipts": [
+            {"evidence_tier": "A1"},
+            {"evidence_tier": "A2"},
+            {"tier": "B1"},
+            {"evidence_tier": "B2"},
+        ],
+    })
+
+    assert cycle._manifest_counts(run)["n_primary_tier"] == 3
+
+
 def test_paper_strategy_skips_terminal_sparse_researka_feedback() -> None:
     strategy = cycle._paper_strategy(
         {"status": "corpus_ready", "n_quant_claims": 37},
@@ -5333,6 +5381,36 @@ def test_pending_revision_keeps_unpublished_matching_request(tmp_path: Path) -> 
     assert pending["source_run"] == "synthesis-sirtuin_intervention_aging_effects-v06-DAILY-2026-05-29T00-00-00Z"
 
 
+def test_pending_revision_waits_for_inflight_same_topic_submission(tmp_path: Path, monkeypatch) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    run = _seed_submitted_run(runs, "shared_topic", "# Hypothesis-Generating Brief: Shared Topic")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "shared_topic",
+        "fingerprint": "sha256:x",
+        "submission_id": "fresh-submission",
+        "date": "2026-06-29",
+    }])
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _sid: ({"status": "queued", "decision": None}, None))
+
+    pending, err = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([{
+            "artifactId": "older-shared-topic-revise",
+            "title": "Hypothesis-Generating Brief: Shared Topic",
+            "topic": "shared_topic",
+            "feedback": "Surface every admitted source.",
+            "reviewedAt": "2026-06-28T20:00:00+00:00",
+        }], None),
+        published_loader=lambda: (set(), None),
+    )
+
+    assert err is None
+    assert pending is None
+
+
 def test_remote_revision_suppressed_when_latest_decision_is_reject(monkeypatch) -> None:
     title = "Research Synthesis: Brain Age MRI — full paper"
     base = {"artifactType": "research_paper", "agentId": "agent-v3-full-paper", "title": title}
@@ -5654,7 +5732,7 @@ def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path
 
 def test_preflight_recent_failure_does_not_block_publication_track(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "caloric_restriction", target_journal=True)
-    _prior_run(tmp_path, "caloric_restriction", receipts=40, tensions=10, primary=2)
+    _prior_run(tmp_path, "caloric_restriction", receipts=40, tensions=10)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     _write_json(ledger_dir / "2026-05-24.json", {
         "started_at": _recent_start(),
@@ -5710,7 +5788,7 @@ def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatc
 def test_preflight_uses_revise_source_run_over_newer_manifestless_run(tmp_path: Path, monkeypatch) -> None:
     topic = "cardiovascular_subgroups"
     _topic(tmp_path, topic, target_journal=True)
-    source = _prior_run(tmp_path, topic, receipts=37, tensions=113, primary=1, level=5)
+    source = _prior_run(tmp_path, topic, receipts=37, tensions=113, level=5)
     (tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-26T03-32-00Z-R2").mkdir(parents=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
 
@@ -6949,7 +7027,12 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
         assert timeout == 99
         n_receipts = counts.pop(0)
         out_dir.mkdir(parents=True)
-        _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": n_receipts}})
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": n_receipts,
+                "primary_tier_receipts": n_receipts,
+            },
+        })
         return 0
 
     def fake_repair(
@@ -6994,7 +7077,12 @@ def test_receipt_preflight_repair_keeps_best_probe_after_regression(tmp_path: Pa
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, **_kwargs: Any) -> int:
         rc, n_receipts = probes.pop(0)
         out_dir.mkdir(parents=True)
-        _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": n_receipts}})
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": n_receipts,
+                "primary_tier_receipts": n_receipts,
+            },
+        })
         return rc
 
     def fake_repair(topic: str, **kwargs: Any) -> dict[str, Any]:
@@ -7045,7 +7133,13 @@ def test_fresh_cycle_repairs_sparse_receipt_preflight_before_submit(tmp_path: Pa
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, **_kwargs: Any) -> int:
         out_dir.mkdir(parents=True)
         if dry_run:
-            _write_json(out_dir / "receipt_funnel.json", {"counts": {"admitted_receipts": receipt_counts.pop(0)}})
+            n_receipts = receipt_counts.pop(0)
+            _write_json(out_dir / "receipt_funnel.json", {
+                "counts": {
+                    "admitted_receipts": n_receipts,
+                    "primary_tier_receipts": n_receipts,
+                },
+            })
         else:
             synthesized.append(topic)
             _write_json(out_dir / "final_status.json", {"submission_ready": True})
