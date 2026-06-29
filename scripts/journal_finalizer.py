@@ -249,6 +249,7 @@ def _phase_m_repair_surface_artifacts(text: str) -> tuple[str, list[FinalizerLog
     out, n_abbrev = _repair_dangling_abbrev_artifacts(out)
     out, n_headings = _remove_empty_subheadings(out)
     out, n_duplicate = _remove_consecutive_duplicate_headings(out)
+    out, n_ref_dump = _remove_public_reference_dump_blocks(out)
     if out == text:
         return text, []
     changes = []
@@ -260,11 +261,13 @@ def _phase_m_repair_surface_artifacts(text: str) -> tuple[str, list[FinalizerLog
         changes.append(f"empty_subheading={n_headings}")
     if n_duplicate:
         changes.append(f"duplicate_heading={n_duplicate}")
+    if n_ref_dump:
+        changes.append(f"reference_dump={n_ref_dump}")
     return out, [
         FinalizerLogEntry(
             phase="M_surface_artifact_cleanup",
             rule="repair_known_surface_artifacts",
-            n_changes=n_grammar + n_abbrev + n_headings + n_duplicate,
+            n_changes=n_grammar + n_abbrev + n_headings + n_duplicate + n_ref_dump,
             detail="; ".join(changes),
         )
     ]
@@ -316,6 +319,28 @@ def _remove_empty_subheadings(text: str) -> tuple[str, int]:
 def _remove_consecutive_duplicate_headings(text: str) -> tuple[str, int]:
     pat = re.compile(r"^(#{2,6})\s+(.+?)\s*\n+(?=\1\s+\2\s*$)", re.M)
     return pat.subn("", text)
+
+
+def _remove_public_reference_dump_blocks(text: str) -> tuple[str, int]:
+    ref = re.search(r"^##\s+References\b", text, flags=re.M)
+    head, tail = (text[:ref.start()], text[ref.start():]) if ref else (text, "")
+    n = 0
+    head, n_blocks = re.subn(
+        r"\n*^#{3,6}\s+[^\n]*\breferences\b[^\n]*\n.*?(?=^#{2,6}\s+|\Z)",
+        "\n\n",
+        head,
+        flags=re.M | re.S | re.I,
+    )
+    n += n_blocks
+    head, n_lines = re.subn(
+        r"(?m)^\s*-\s+\*\*.+?\*\*.*\b(?:DOI|PMID):\s*\S+.*(?:\n|$)",
+        "",
+        head,
+    )
+    n += n_lines
+    if not n:
+        return text, 0
+    return re.sub(r"\n{3,}", "\n\n", head).rstrip() + ("\n\n" if tail else "") + tail, n
 
 
 def _phase_b_corpus_strength_label(
