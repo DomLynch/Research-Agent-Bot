@@ -81,6 +81,8 @@ def test_fresh_lane_keeps_8h_cadence_with_larger_search_budget() -> None:
     assert "--cycle-budget-sec 10800" in service
     assert "RESEARKA_DOI_PREFLIGHT_ENABLED=1" in service
     assert "RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300" in service
+    assert "RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT=200" in service
+    assert "RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED=5" in service
     assert "Restart=on-failure" in service
     assert "RestartSec=60" in service
     assert "TimeoutStartSec=14400" in service
