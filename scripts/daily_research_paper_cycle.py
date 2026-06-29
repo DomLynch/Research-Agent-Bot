@@ -1894,7 +1894,11 @@ def _fresh_seed_candidate(topic: str) -> bool:
     if (TOPIC_PACKS / f"{topic}.toml").exists():
         return True
     record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
-    return not record or _topic_support_score(topic) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+    if not record:
+        return True
+    if generated_pack_publishable(record, peer_records=_generated_pack_records()):
+        return True
+    return _topic_support_score(topic) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
 
 
 def _fresh_corpus_repair_candidate(topic: str) -> bool:
