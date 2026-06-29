@@ -71,10 +71,14 @@ def _public_counts(date: str, *, papers_url: str, reviews_url: str) -> dict[str,
     for row in rows:
         decision = str(row.get("decision") or "unknown")
         decisions[decision] = decisions.get(decision, 0) + 1
+        paper_id = row.get("id") or row.get("paperId") or row.get("artifactId")
+        public_url = row.get("url") or (f"https://researka.org/papers/{paper_id}" if paper_id else "")
         examples.append({
             "time": str(row.get("createdAt") or ""),
             "decision": decision,
             "title": str(row.get("title") or ""),
+            "url": str(public_url),
+            "doi": str(row.get("doi") or row.get("doiValue") or ""),
             "reason": str(row.get("reviewSummary") or "")[:240],
         })
     return {"decisions": decisions, "examples": examples[:12]}
@@ -109,9 +113,10 @@ def _run_timestamp(value: Any) -> dt.datetime | None:
 
 
 def _row_timestamp(row: dict[str, Any]) -> dt.datetime | None:
-    timestamp = _parse_iso(row.get("started_at"))
-    if timestamp:
-        return timestamp
+    for key in ("started_at", "updated_at", "completed_at", "createdAt", "created_at"):
+        timestamp = _parse_iso(row.get(key))
+        if timestamp:
+            return timestamp
     candidate = row.get("candidate")
     if isinstance(candidate, dict):
         timestamp = _run_timestamp(candidate.get("run"))
@@ -140,15 +145,24 @@ def _nearby_dates(date: str) -> list[str]:
 
 
 def _cycle_view(data: dict[str, Any]) -> dict[str, Any]:
-    return {k: data.get(k) for k in ("started_at", "mode", "status", "submitted", "published", "attempted_topic")}
+    return {
+        k: data.get(k)
+        for k in ("started_at", "mode", "status", "submitted", "published", "attempted_topic", "topic", "run_id")
+    }
 
 
 def _cycle_ledgers_for_report_date(ledger_dir: Path, date: str) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     for day in _nearby_dates(date):
-        for mode, suffix in (("mixed", ""), ("fresh", "-fresh"), ("revise", "-revise")):
+        for mode, suffix in (
+            ("mixed", ""),
+            ("fresh", "-fresh"),
+            ("revise", "-revise"),
+            ("daily-submit", "-daily-submit"),
+        ):
             row = _read_json(ledger_dir / f"{day}{suffix}.json")
-            if row and _row_report_date(row) == date:
+            row_date = _row_report_date(row)
+            if row and (row_date == date or not row_date and day == date):
                 current = out.get(mode)
                 if current is None or str(row.get("started_at") or "") > str(current.get("started_at") or ""):
                     out[mode] = row
@@ -329,8 +343,64 @@ def _pace_snapshot(local: dict[str, Any], public: dict[str, Any], capacity: dict
     }
 
 
+def _consistency_gate(
+    local: dict[str, Any],
+    public: dict[str, Any],
+    *,
+    required_lanes: tuple[str, ...] = ("fresh", "revise", "daily-submit"),
+    public_accept_baseline: int = 0,
+    min_started_at: str | None = None,
+) -> dict[str, Any]:
+    min_dt = _parse_iso(min_started_at)
+    raw_modes = local.get("cycle_modes")
+    modes = raw_modes if isinstance(raw_modes, dict) else {}
+    blockers: list[str] = []
+    lane_receipts: dict[str, dict[str, Any]] = {}
+    for lane in required_lanes:
+        row = modes.get(lane) if isinstance(modes, dict) else None
+        view = row if isinstance(row, dict) else {}
+        lane_receipts[lane] = _cycle_view(view)
+        if not view:
+            blockers.append(f"{lane}:missing_ledger")
+            continue
+        started = _parse_iso(view.get("started_at"))
+        if min_dt and (not started or started < min_dt):
+            blockers.append(f"{lane}:stale_before_min_started_at")
+            continue
+        if str(view.get("status") or "") != "published" or _int_value(view.get("published")) < 1:
+            blockers.append(f"{lane}:not_published")
+    decisions = public.get("decisions") if isinstance(public.get("decisions"), dict) else {}
+    public_accepts = _int_value(decisions.get("accept") if isinstance(decisions, dict) else 0)
+    raw_examples = public.get("examples")
+    examples = raw_examples if isinstance(raw_examples, list) else []
+    accepts_after_min = 0
+    for row in examples:
+        if not isinstance(row, dict) or row.get("decision") != "accept":
+            continue
+        when = _parse_iso(row.get("time"))
+        if min_dt is None or when and when >= min_dt:
+            accepts_after_min += 1
+    if public_accepts <= public_accept_baseline:
+        blockers.append("public:accept_count_not_above_baseline")
+    if min_dt and accepts_after_min < 1:
+        blockers.append("public:no_accept_after_min_started_at")
+    return {
+        "pass": not blockers,
+        "required_lanes": list(required_lanes),
+        "min_started_at": min_started_at,
+        "public_accept_baseline": public_accept_baseline,
+        "public_accepts": public_accepts,
+        "public_accepts_after_min_started_at": accepts_after_min if min_dt else None,
+        "lane_receipts": lane_receipts,
+        "blockers": blockers,
+    }
+
+
 def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://researka.org/papers",
-              reviews_url: str = "https://researka.org/reviews") -> dict[str, Any]:
+              reviews_url: str = "https://researka.org/reviews",
+              required_lanes: tuple[str, ...] = ("fresh", "revise", "daily-submit"),
+              public_accept_baseline: int = 0,
+              min_started_at: str | None = None) -> dict[str, Any]:
     capacity = _capacity_snapshot()
     public = _public_counts(date, papers_url=papers_url, reviews_url=reviews_url)
     local = _local_counts(runs_root, date)
@@ -343,6 +413,13 @@ def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://r
         },
         "public": public,
         "local": local,
+        "consistency_gate": _consistency_gate(
+            local,
+            public,
+            required_lanes=required_lanes,
+            public_accept_baseline=public_accept_baseline,
+            min_started_at=min_started_at,
+        ),
     }
 
 
@@ -368,11 +445,24 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("date", nargs="?")
     parser.add_argument("--date", dest="date_flag")
     parser.add_argument("--runs-root", type=Path, default=RUNS)
+    parser.add_argument("--consistency-min-started-at")
+    parser.add_argument("--consistency-public-accept-baseline", type=int, default=0)
+    parser.add_argument("--consistency-required-lanes", default="fresh,revise,daily-submit")
     args = parser.parse_args(argv)
     date = args.date_flag or args.date
     if not date:
         parser.error("date is required")
-    return _emit_json(summarize(date, runs_root=args.runs_root))
+    lanes = tuple(
+        lane.strip() for lane in args.consistency_required_lanes.split(",")
+        if lane.strip()
+    )
+    return _emit_json(summarize(
+        date,
+        runs_root=args.runs_root,
+        required_lanes=lanes,
+        public_accept_baseline=args.consistency_public_accept_baseline,
+        min_started_at=args.consistency_min_started_at,
+    ))
 
 
 if __name__ == "__main__":

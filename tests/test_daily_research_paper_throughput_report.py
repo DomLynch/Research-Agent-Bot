@@ -101,8 +101,35 @@ def test_local_counts_reports_mode_ledgers_and_daily_sidecars(tmp_path: Path) ->
 
     assert counts["cycle"]["mode"] == "revise"
     assert counts["cycle_modes"]["fresh"]["submitted"] == 1
+    assert "daily-submit" not in counts["cycle_modes"]
     assert counts["throughput"]["submitted"] == 14
     assert counts["decisions"]["counts"] == {"accept": 6, "revise": 3}
+
+
+def test_local_counts_reports_daily_submit_cycle_ledger(tmp_path: Path) -> None:
+    ledger = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger.mkdir()
+    (ledger / "2026-06-29-daily-submit.json").write_text(json.dumps({
+        "started_at": "2026-06-29T14:15:00+00:00",
+        "mode": "daily-submit",
+        "status": "published",
+        "submitted": 2,
+        "published": 1,
+        "run_id": "daily-submit:2026-06-29T14:15:00+00:00",
+    }))
+
+    counts = report._local_counts(tmp_path, "2026-06-29")
+
+    assert counts["cycle_modes"]["daily-submit"] == {
+        "started_at": "2026-06-29T14:15:00+00:00",
+        "mode": "daily-submit",
+        "status": "published",
+        "submitted": 2,
+        "published": 1,
+        "attempted_topic": None,
+        "topic": None,
+        "run_id": "daily-submit:2026-06-29T14:15:00+00:00",
+    }
 
 
 def test_local_counts_maps_late_utc_runs_to_dubai_report_day(tmp_path: Path, monkeypatch) -> None:
@@ -271,8 +298,99 @@ def test_summarize_includes_pace(monkeypatch, tmp_path: Path) -> None:
     assert summary["pace"]["rolling"]["local_submitted"] == 8
 
 
+def test_consistency_gate_requires_fresh_revise_submit_and_new_public_receipt() -> None:
+    local = {
+        "cycle_modes": {
+            "fresh": {
+                "started_at": "2026-06-29T12:00:00+00:00",
+                "mode": "fresh",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+            "revise": {
+                "started_at": "2026-06-29T12:15:00+00:00",
+                "mode": "revise",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+            "daily-submit": {
+                "started_at": "2026-06-29T14:15:00+00:00",
+                "mode": "daily-submit",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+        },
+    }
+    public = {
+        "decisions": {"accept": 4},
+        "examples": [{
+            "time": "2026-06-29T14:20:00+00:00",
+            "decision": "accept",
+            "title": "Accepted paper",
+            "url": "https://researka.org/papers/example",
+            "doi": "10.17605/OSF.IO/EXAMPLE",
+        }],
+    }
+
+    gate = report._consistency_gate(
+        local,
+        public,
+        public_accept_baseline=3,
+        min_started_at="2026-06-29T11:19:00+00:00",
+    )
+
+    assert gate["pass"] is True
+    assert gate["blockers"] == []
+    assert gate["public_accepts_after_min_started_at"] == 1
+
+
+def test_consistency_gate_reports_stale_lane_and_public_baseline_blocker() -> None:
+    local = {
+        "cycle_modes": {
+            "fresh": {
+                "started_at": "2026-06-29T08:00:00+00:00",
+                "mode": "fresh",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+            "revise": {
+                "started_at": "2026-06-29T12:15:00+00:00",
+                "mode": "revise",
+                "status": "submitted_to_researka",
+                "submitted": 1,
+                "published": 0,
+            },
+        },
+    }
+    public = {"decisions": {"accept": 3}, "examples": []}
+
+    gate = report._consistency_gate(
+        local,
+        public,
+        public_accept_baseline=3,
+        min_started_at="2026-06-29T11:19:00+00:00",
+    )
+
+    assert gate["pass"] is False
+    assert gate["blockers"] == [
+        "fresh:stale_before_min_started_at",
+        "revise:not_published",
+        "daily-submit:missing_ledger",
+        "public:accept_count_not_above_baseline",
+        "public:no_accept_after_min_started_at",
+    ]
+
+
 def test_main_accepts_date_flag(monkeypatch, tmp_path: Path, capsys) -> None:
-    monkeypatch.setattr(report, "summarize", lambda date, *, runs_root: {"date": date, "runs_root": str(runs_root)})
+    monkeypatch.setattr(
+        report,
+        "summarize",
+        lambda date, **kwargs: {"date": date, "runs_root": str(kwargs["runs_root"])},
+    )
 
     assert report.main(["--date", "2026-06-24", "--runs-root", str(tmp_path)]) == 0
 
