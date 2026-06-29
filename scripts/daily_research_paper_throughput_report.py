@@ -147,7 +147,10 @@ def _nearby_dates(date: str) -> list[str]:
 def _cycle_view(data: dict[str, Any]) -> dict[str, Any]:
     return {
         k: data.get(k)
-        for k in ("started_at", "mode", "status", "submitted", "published", "attempted_topic", "topic", "run_id")
+        for k in (
+            "started_at", "updated_at", "completed_at", "mode", "status",
+            "submitted", "published", "attempted_topic", "topic", "run_id",
+        )
     }
 
 
@@ -363,7 +366,7 @@ def _consistency_gate(
         if not view:
             blockers.append(f"{lane}:missing_ledger")
             continue
-        started = _parse_iso(view.get("started_at"))
+        started = _row_timestamp(view)
         if min_dt and (not started or started < min_dt):
             blockers.append(f"{lane}:stale_before_min_started_at")
             continue

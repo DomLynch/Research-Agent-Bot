@@ -110,7 +110,7 @@ def test_local_counts_reports_daily_submit_cycle_ledger(tmp_path: Path) -> None:
     ledger = tmp_path / "_daily_research_paper_cycle_ledger"
     ledger.mkdir()
     (ledger / "2026-06-29-daily-submit.json").write_text(json.dumps({
-        "started_at": "2026-06-29T14:15:00+00:00",
+        "updated_at": "2026-06-29T14:15:00+00:00",
         "mode": "daily-submit",
         "status": "published",
         "submitted": 2,
@@ -121,7 +121,9 @@ def test_local_counts_reports_daily_submit_cycle_ledger(tmp_path: Path) -> None:
     counts = report._local_counts(tmp_path, "2026-06-29")
 
     assert counts["cycle_modes"]["daily-submit"] == {
-        "started_at": "2026-06-29T14:15:00+00:00",
+        "started_at": None,
+        "updated_at": "2026-06-29T14:15:00+00:00",
+        "completed_at": None,
         "mode": "daily-submit",
         "status": "published",
         "submitted": 2,
