@@ -167,7 +167,9 @@ def _cycle_ledgers_for_report_date(ledger_dir: Path, date: str) -> dict[str, dic
             row_date = _row_report_date(row)
             if row and (row_date == date or not row_date and day == date):
                 current = out.get(mode)
-                if current is None or str(row.get("started_at") or "") > str(current.get("started_at") or ""):
+                row_ts = _row_timestamp(row)
+                current_ts = _row_timestamp(current) if current else None
+                if current is None or (row_ts and (not current_ts or row_ts > current_ts)):
                     out[mode] = row
     return out
 
@@ -370,9 +372,12 @@ def _consistency_gate(
         if min_dt and (not started or started < min_dt):
             blockers.append(f"{lane}:stale_before_min_started_at")
             continue
-        if lane == "revise" and str(view.get("status") or "") == "no_revise_pending":
+        status = str(view.get("status") or "")
+        if lane == "revise" and status == "no_revise_pending":
             continue
-        if str(view.get("status") or "") != "published" or _int_value(view.get("published")) < 1:
+        if lane == "daily-submit" and status == "no_eligible_research_paper":
+            continue
+        if status != "published" or _int_value(view.get("published")) < 1:
             blockers.append(f"{lane}:not_published")
     decisions = public.get("decisions") if isinstance(public.get("decisions"), dict) else {}
     public_accepts = _int_value(decisions.get("accept") if isinstance(decisions, dict) else 0)
