@@ -191,6 +191,11 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
     entries.extend(log)
+    text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
+    text, log = _phase_n_declare_discussion_thesis(text)
+    entries.extend(log)
+    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
+    entries.extend(log)
     return text, entries
 
 

@@ -1264,7 +1264,7 @@ def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: 
         "## Background\n\n" + ("background " * 310) + "\n\n"
         "## Methods\n\n" + ("methods " * 310) + "\n\n"
         "## Results\n\n" + ("results " * 510) + "\n\n"
-        "## Cross-Domain Synthesis\n\n" + ("synthesis " * 860) + "\n\n"
+        "## Cross-Domain Synthesis\n\n" + ("synthesis " * 810) + f"\n\n{duplicate}\n\n"
         "## Discussion\n\n**Thesis:** bounded.\n\n**Resolution criteria:** direct endpoints.\n\n"
         + ("discussion " * 810) + "\n\n"
         "## Limitations\n\n" + ("limits " * 260) + "\n\n"
@@ -1283,8 +1283,10 @@ def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: 
     fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
     report = evaluate_journal_surface(fixed)
     intro = fixed.split("## Introduction", 1)[1].split("## Background", 1)[0]
+    cross = fixed.split("## Cross-Domain Synthesis", 1)[1].split("## Discussion", 1)[0]
 
     assert len(intro.split()) >= 400
+    assert len(cross.split()) >= 850
     assert "ramadan_fasting_effects" not in fixed
     assert not any(issue.code == "duplicate_paragraph" for issue in report.issues)
     assert not any(
@@ -1292,6 +1294,29 @@ def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: 
         for issue in report.issues
     )
     assert any(log.phase == "N_surface_floor_backstop" for log in logs)
+
+
+def test_surface_artifact_cleanup_removes_pre_reference_bibliography_dump() -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    paper = (
+        "## Results\n\nThe corpus is summarized for public interpretation.\n\n"
+        "- **Smith 2024.** _Trial._ DOI: 10.1000/example. PMID: 123456.\n"
+        "### Background References\n\n"
+        "- **Jones 2023.** _Methods._ DOI: 10.2000/example. PMID: 78910.\n\n"
+        "## References\n\n"
+        "- **Smith 2024.** _Trial._ DOI: 10.1000/example. PMID: 123456.\n"
+    )
+
+    assert any(issue.code == "citation_artifact" for issue in evaluate_journal_surface(paper).issues)
+    fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
+
+    body = fixed.split("## References", 1)[0]
+    refs = fixed.split("## References", 1)[1]
+    assert "Background References" not in body
+    assert "DOI:" not in body and "PMID:" not in body
+    assert "DOI: 10.1000/example" in refs
+    assert logs[0].detail == "reference_dump=2"
 
 
 def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None:
