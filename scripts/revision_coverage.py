@@ -670,6 +670,9 @@ def _asks_source_outcome_class_map(text: str) -> bool:
         "admitted source" in text
         and any(token in text for token in ("surface", "surfaced", "missing", "not surfaced"))
     ) or (
+        "findings map" in text
+        and any(token in text for token in ("source-level attribution", "prose-cited", "prose cited"))
+    ) or (
         "full admitted corpus" in text
         and "source" in text
         and any(token in text for token in ("outcome", "results", "evidence map"))
@@ -1047,6 +1050,10 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
             and any(token in text for token in ("enumerate", "actually discussed", "body"))
         )
         or (
+            "tensions and gaps" in text
+            and "major cross-source disagreement" in text
+        )
+        or (
             ("cross-study disagreement" in text or "cross-source disagreement" in text)
             and any(token in text for token in (
                 "substantiated", "enumerate", "enumerated",
@@ -1108,6 +1115,9 @@ def _asks_outcome_subsection_source_narrative(text: str) -> bool:
         "outcome subsection" in text
         and "source" in text
         and ("conclusion" in text or "direct source" in text)
+    ) or (
+        "outcome-class synthesis" in text
+        and any(token in text for token in ("representative finding", "directness summary", "real outcome"))
     )
 
 
@@ -1168,7 +1178,7 @@ def _asks_outcome_label_cleanup(text: str) -> bool:
         "dosing and pharmacokinetics" in text
         and any(token in text for token in (
             "re-label", "relabel", "remove", "not contain",
-            "not a dosing", "not dosing", "not pk",
+            "not a dosing", "not dosing", "not pk", "proxy", "catch-all",
         ))
     )
 
@@ -2503,7 +2513,10 @@ def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:
 
 def _asks_corpus_count_reconciliation(text: str) -> bool:
     return (
-        any(token in text for token in ("corpus-size", "corpus size", "overcount", "overcounts", "funnel counts"))
+        any(token in text for token in (
+            "corpus-size", "corpus size", "overcount", "overcounts", "funnel counts",
+            "source-count denominator", "source count denominator", "denominator",
+        ))
         and any(token in text for token in ("reconcile", "correct", "classified", "admitted", "source bundle"))
     )
 
@@ -2692,6 +2705,7 @@ def _asks_full_source_surface_request(text: str) -> bool:
             "every admitted source", "missing bundle source", "missing source",
             "cover all", "covers all",
             "must appear in at least one outcome-class packet",
+            "every prose-cited finding", "every prose cited finding",
         )
     )
 
