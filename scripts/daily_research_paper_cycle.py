@@ -2968,12 +2968,14 @@ def _seed_topic(
         cmd.append("--force-extract")
     env = os.environ.copy()
     v5_configured = (
-        env.get("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL")
-        and env.get("V5_MEMO_FULL_RAW_CORPUS_TOKEN")
+        (env.get("RESEARKA_FULLRAW_SEARCH_URL") or env.get("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL"))
+        and (env.get("RESEARKA_FULLRAW_TOKEN") or env.get("V5_MEMO_FULL_RAW_CORPUS_TOKEN"))
     )
     uses_v5 = not sources or "v5_fullraw" in sources
-    if v5_configured and uses_v5 and "V5_MEMO_FULL_RAW_QUERY_TIMEOUT" not in env:
-        env["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] = str(_seed_discovery_timeout())
+    if v5_configured and uses_v5:
+        timeout_value = str(_seed_discovery_timeout())
+        env.setdefault("RESEARKA_FULLRAW_QUERY_TIMEOUT", timeout_value)
+        env.setdefault("V5_MEMO_FULL_RAW_QUERY_TIMEOUT", timeout_value)
     seed_timeout = _seed_topic_timeout(timeout)
     try:
         result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=seed_timeout, capture_output=True, text=True, env=env)

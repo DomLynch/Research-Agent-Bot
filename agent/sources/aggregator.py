@@ -19,6 +19,22 @@ from agent.types import RawHit
 # Map: name → (client_class, default_enabled, requires_auth_env_var)
 # Default-enabled set is the no-auth-required free APIs.
 
+AuthEnv = str | tuple[str, ...] | None
+
+
+def _auth_configured(auth_env: AuthEnv) -> bool:
+    if auth_env is None:
+        return True
+    if isinstance(auth_env, tuple):
+        return any(os.environ.get(name) is not None for name in auth_env)
+    return os.environ.get(auth_env) is not None
+
+
+def _auth_label(auth_env: AuthEnv) -> str | None:
+    if isinstance(auth_env, tuple):
+        return "|".join(auth_env)
+    return auth_env
+
 def _build_registry() -> dict:
     """Lazy import + register all source clients. Returns:
     {name: (client_instance, default_enabled, auth_env_var_or_None)}.
@@ -72,7 +88,7 @@ def _build_registry() -> dict:
         # V5 5TB fullraw corpus. Auth-gated; fail-soft adapter keeps
         # existing source fan-out working if the shard service is cold/slow.
         "v5_fullraw": (
-            V5FullRawClient(), True, "V5_MEMO_FULL_RAW_CORPUS_TOKEN",
+            V5FullRawClient(), True, ("RESEARKA_FULLRAW_TOKEN", "V5_MEMO_FULL_RAW_CORPUS_TOKEN"),
         ),
         # Tier 3: supporting (drug pharmacology, opt-in)
         "chembl": (ChemblClient(), False, None),
@@ -90,13 +106,11 @@ def list_available_sources() -> list[dict]:
     for name, (client, default_enabled, auth_env) in (
         _build_registry().items()
     ):
-        is_enabled = default_enabled and (
-            auth_env is None or os.environ.get(auth_env) is not None
-        )
+        is_enabled = default_enabled and _auth_configured(auth_env)
         out.append({
             "name": name,
             "default_enabled": default_enabled,
-            "auth_env_var": auth_env,
+            "auth_env_var": _auth_label(auth_env),
             "currently_enabled": is_enabled,
         })
     return out
@@ -145,9 +159,7 @@ async def discover_calibrated(
         enabled_sources = [
             name for name, (_, default_en, auth_env)
             in registry.items()
-            if default_en and (
-                auth_env is None or os.environ.get(auth_env)
-            )
+            if default_en and _auth_configured(auth_env)
         ]
     # Per-source limit: ample enough to pull real corpora but
     # bounded by source-API caps (most cap at ~100/call internally).

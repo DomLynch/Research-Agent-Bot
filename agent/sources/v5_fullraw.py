@@ -20,18 +20,28 @@ DEFAULT_MIN_SHARDS_SEARCHED = 1525
 DEFAULT_MIN_SOURCES_SEARCHED = 5
 
 
+def _env_first(*names: str) -> str:
+    for name in names:
+        value = os.environ.get(name, "").strip()
+        if value:
+            return value
+    return ""
+
+
 def _fullraw_url() -> str:
-    return os.environ.get("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", "").strip()
+    return _env_first("RESEARKA_FULLRAW_SEARCH_URL", "V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL")
 
 
 def _fullraw_token() -> str:
-    return os.environ.get("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "").strip()
+    return _env_first("RESEARKA_FULLRAW_TOKEN", "V5_MEMO_FULL_RAW_CORPUS_TOKEN")
 
 
 def _timeout_seconds() -> float:
-    raw = (
-        os.environ.get("V5_MEMO_FULL_RAW_QUERY_TIMEOUT", "").strip()
-        or os.environ.get("V5_MEMO_FULL_RAW_CORPUS_TIMEOUT", "").strip()
+    raw = _env_first(
+        "RESEARKA_FULLRAW_QUERY_TIMEOUT",
+        "V5_MEMO_FULL_RAW_QUERY_TIMEOUT",
+        "RESEARKA_FULLRAW_CORPUS_TIMEOUT",
+        "V5_MEMO_FULL_RAW_CORPUS_TIMEOUT",
     )
     try:
         requested = max(1.0, float(raw)) if raw else DEFAULT_TIMEOUT_SECONDS
@@ -40,15 +50,15 @@ def _timeout_seconds() -> float:
     return min(requested, MAX_TIMEOUT_SECONDS)
 
 
-def _int_env(name: str, default: int) -> int:
+def _int_env(default: int, *names: str) -> int:
     try:
-        return int(os.environ.get(name, "").strip() or default)
+        return int(_env_first(*names) or default)
     except ValueError:
         return default
 
 
-def _truthy_env(name: str, default: bool) -> bool:
-    raw = os.environ.get(name, "").strip().lower()
+def _truthy_env(default: bool, *names: str) -> bool:
+    raw = _env_first(*names).lower()
     if not raw:
         return default
     return raw not in {"0", "false", "no", "off"}
@@ -89,11 +99,19 @@ def _source_count(value: object) -> int:
 
 
 def _receipt_complete(receipt: dict[str, object]) -> bool:
-    if not _truthy_env("V5_MEMO_FULL_RAW_REQUIRE_COMPLETE_SEARCH", True):
+    if not _truthy_env(True, "RESEARKA_FULLRAW_REQUIRE_COMPLETE_SEARCH", "V5_MEMO_FULL_RAW_REQUIRE_COMPLETE_SEARCH"):
         return True
     shards = _int_value(receipt.get("shards_searched"))
-    min_shards = _int_env("V5_MEMO_FULL_RAW_MIN_SHARDS_SEARCHED", DEFAULT_MIN_SHARDS_SEARCHED)
-    min_sources = _int_env("V5_MEMO_FULL_RAW_MIN_SOURCES_SEARCHED", DEFAULT_MIN_SOURCES_SEARCHED)
+    min_shards = _int_env(
+        DEFAULT_MIN_SHARDS_SEARCHED,
+        "RESEARKA_FULLRAW_MIN_SHARDS_SEARCHED",
+        "V5_MEMO_FULL_RAW_MIN_SHARDS_SEARCHED",
+    )
+    min_sources = _int_env(
+        DEFAULT_MIN_SOURCES_SEARCHED,
+        "RESEARKA_FULLRAW_MIN_SOURCES_SEARCHED",
+        "V5_MEMO_FULL_RAW_MIN_SOURCES_SEARCHED",
+    )
     partial = receipt.get("partial_shard_search")
     if partial is None:
         partial = receipt.get("partial")
