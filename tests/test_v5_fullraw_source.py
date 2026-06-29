@@ -25,6 +25,8 @@ def fullraw_env(monkeypatch: pytest.MonkeyPatch) -> None:
 
 @pytest.mark.asyncio
 async def test_fullraw_disabled_without_url_or_token(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("RESEARKA_FULLRAW_SEARCH_URL", raising=False)
+    monkeypatch.delenv("RESEARKA_FULLRAW_TOKEN", raising=False)
     monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", raising=False)
     monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", raising=False)
     calls: list[httpx.Request] = []
@@ -38,6 +40,41 @@ async def test_fullraw_disabled_without_url_or_token(monkeypatch: pytest.MonkeyP
 
     assert hits == []
     assert calls == []
+
+
+@pytest.mark.asyncio
+async def test_fullraw_accepts_canonical_researka_env(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", raising=False)
+    monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", raising=False)
+    monkeypatch.setenv("RESEARKA_FULLRAW_SEARCH_URL", "http://canonical-fullraw.test/search")
+    monkeypatch.setenv("RESEARKA_FULLRAW_TOKEN", "canonical-token")
+    monkeypatch.setenv("RESEARKA_FULLRAW_QUERY_TIMEOUT", "13")
+    received: dict[str, Any] = {}
+
+    def responder(request: httpx.Request) -> httpx.Response:
+        received["url"] = str(request.url)
+        received["auth"] = request.headers.get("authorization")
+        received["timeout"] = request.extensions.get("timeout")
+        return httpx.Response(
+            200,
+            json={
+                "receipt": {
+                    "shards_searched": 1525,
+                    "partial_shard_search": False,
+                    "sweep_failed_shards": 0,
+                    "sources_searched": ["openalex", "pubmed", "semantic_scholar", "crossref", "pmc"],
+                },
+                "results": [{"title": "Canonical fullraw hit", "abstract": "Aging trial signal."}],
+            },
+        )
+
+    async with _mock_client(responder) as client:
+        hits = await V5FullRawClient().search(client, "aging trial", limit=3)
+
+    assert received["url"] == "http://canonical-fullraw.test/search"
+    assert received["auth"] == "Bearer canonical-token"
+    assert received["timeout"]["read"] == 13.0
+    assert [hit.title for hit in hits] == ["Canonical fullraw hit"]
 
 
 @pytest.mark.asyncio

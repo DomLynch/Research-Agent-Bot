@@ -18,7 +18,7 @@ import pytest
 from agent.enrichment.icite import ICiteClient
 from agent.enrichment.reporter import ReporterClient
 from agent.enrichment.rxnorm import DrugConcept
-from agent.sources.aggregator import _build_registry
+from agent.sources.aggregator import _build_registry, list_available_sources
 from agent.sources.arxiv import ArxivClient, _build_search_query
 from agent.sources.biorxiv import BioRxivClient
 from agent.sources.medrxiv import MedRxivClient
@@ -347,7 +347,7 @@ def test_aggregator_total_source_count_is_17():
     total in registry. (10 default Tier-1 + arXiv + medRxiv = 12 Tier-1;
     +CORE=13 default-on gated; +ChEMBL+Unpaywall=15 opt-in; +researka=16,
     default-on but auth-gated by RESEARKA_DATABASE_TOKEN; +v5_fullraw=17,
-    default-on but auth-gated by V5_MEMO_FULL_RAW_CORPUS_TOKEN.)"""
+    default-on but auth-gated by canonical or legacy fullraw token.)"""
     reg = _build_registry()
     assert len(reg) == 17, (
         f"Expected 17 registered sources, got {len(reg)}: {sorted(reg)}"
@@ -357,4 +357,14 @@ def test_aggregator_total_source_count_is_17():
     )
     _, default_en, auth = reg["v5_fullraw"]
     assert default_en is True
-    assert auth == "V5_MEMO_FULL_RAW_CORPUS_TOKEN"
+    assert auth == ("RESEARKA_FULLRAW_TOKEN", "V5_MEMO_FULL_RAW_CORPUS_TOKEN")
+
+
+def test_v5_fullraw_source_enables_with_canonical_researka_env(monkeypatch):
+    monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", raising=False)
+    monkeypatch.setenv("RESEARKA_FULLRAW_TOKEN", "token")
+
+    row = next(item for item in list_available_sources() if item["name"] == "v5_fullraw")
+
+    assert row["currently_enabled"] is True
+    assert row["auth_env_var"] == "RESEARKA_FULLRAW_TOKEN|V5_MEMO_FULL_RAW_CORPUS_TOKEN"

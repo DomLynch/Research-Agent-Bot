@@ -3313,6 +3313,29 @@ def test_seed_topic_bounds_v5_timeout_without_forcing_v5_only(tmp_path: Path, mo
     assert seen["timeout"] == 91
 
 
+def test_seed_topic_bounds_canonical_fullraw_timeout(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.delenv("RESEARCH_AGENT_SEED_SOURCES", raising=False)
+    monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL", raising=False)
+    monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", raising=False)
+    monkeypatch.setenv("RESEARKA_FULLRAW_SEARCH_URL", "http://127.0.0.1:9903/search")
+    monkeypatch.setenv("RESEARKA_FULLRAW_TOKEN", "token")
+    monkeypatch.setenv("RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS", "17")
+    seen: dict[str, Any] = {}
+
+    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
+        seen["env"] = _kwargs["env"]
+        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
+
+    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+
+    result = cycle._seed_topic("new_topic", seed_limit=7)
+
+    assert result["status"] == "corpus_seed_empty"
+    assert seen["env"]["RESEARKA_FULLRAW_QUERY_TIMEOUT"] == "17.0"
+    assert seen["env"]["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] == "17.0"
+
+
 def test_seed_topic_source_env_override_wins(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setenv("RESEARCH_AGENT_SEED_SOURCES", "pubmed,europepmc openalex")
