@@ -796,7 +796,33 @@ def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
     assert "Positive study-level signals concentrate in no dominant outcome class" not in md
     assert "mechanistic plausibility" not in md
     assert "No single positive outcome class dominates the retained corpus" in md
-    assert "the retained clinical and adjacent evidence profile defines the scope" in md
+    assert "the retained direct, adjacent, and context evidence profile defines the scope" in md
+
+
+def test_public_section_backstop_demarcates_context_rows_from_adjacent_clinical() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 4,
+            "n_high_confidence_claims_total": 24,
+            "n_non_orthogonal_tensions": 3,
+            "receipts": [
+                {"directness": "direct", "effect_direction": "mixed", "outcome_class": "immune"},
+                {"directness": "indirect", "effect_direction": "null", "outcome_class": "contextual_other"},
+                {"directness": "review", "effect_direction": "null", "outcome_class": "safety"},
+                {"directness": "protocol", "effect_direction": "unclear", "outcome_class": "contextual_other"},
+            ],
+        }
+        abstract = orch._compile_public_section_backstop("Abstract", 150)
+        intro = orch._compile_public_section_backstop("Introduction", 400)
+        limitations = orch._compile_public_section_backstop("Limitations", 250)
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+
+    combined = "\n".join((abstract, intro, limitations))
+    assert "adjacent clinical" not in combined
+    assert "3 adjacent, review, or context sources" in combined
+    assert "adjacent/review/context evidence" in intro
 
 
 def test_aggregate_paper_keeps_significant_unsigned_statistics_unclear() -> None:
