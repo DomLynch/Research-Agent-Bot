@@ -1345,12 +1345,12 @@ def test_select_topic_prefers_local_corpus_over_empty_frontier_topic(tmp_path: P
     assert selected == "solid_ready"
 
 
-def test_select_topic_skips_weak_generated_frontier_topic(tmp_path: Path, monkeypatch) -> None:
-    _write_json(tmp_path / "topic_packs_db" / "weak_generated_marker" / "latest.json", {
+def test_select_topic_skips_unpublishable_generated_frontier_topic(tmp_path: Path, monkeypatch) -> None:
+    _write_json(tmp_path / "topic_packs_db" / "weak_generated_marker_aging_evidence" / "latest.json", {
         "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT - 1,
         "pack_data": {
-            "topic": "weak_generated_marker",
-            "aliases": ["weak generated marker", "marker-17"],
+            "topic": "weak_generated_marker_aging_evidence",
+            "aliases": ["weak generated marker aging evidence", "marker"],
             "target_journal": "GeroScience",
         },
     })
@@ -1358,9 +1358,30 @@ def test_select_topic_skips_weak_generated_frontier_topic(tmp_path: Path, monkey
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 
-    selected = cycle.select_topic(["weak_generated_marker"], tmp_path / cycle.LEDGER_DIR)
+    selected = cycle.select_topic(["weak_generated_marker_aging_evidence"], tmp_path / cycle.LEDGER_DIR)
 
     assert selected is None
+
+
+def test_select_topic_allows_specific_generated_frontier_below_legacy_raw_floor(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _write_json(tmp_path / "topic_packs_db" / "specific_generated_marker" / "latest.json", {
+        "candidate_count": 4,
+        "pack_data": {
+            "topic": "specific_generated_marker",
+            "aliases": ["specific generated marker", "marker-17"],
+            "target_journal": "GeroScience",
+            "retrieval": {"topic_terms": ["specific generated marker", "marker-17"]},
+        },
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    selected = cycle.select_topic(["specific_generated_marker"], tmp_path / cycle.LEDGER_DIR)
+
+    assert selected == "specific_generated_marker"
 
 
 def test_select_topic_allows_supported_generated_frontier_topic(tmp_path: Path, monkeypatch) -> None:
@@ -1756,7 +1777,7 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
         calls["skip_slugs"] = skip_slugs
         latest = db_dir / "sglt2_inhibitors_effects" / "latest.json"
         _write_json(latest, {
-            "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+            "candidate_count": 4,
             "pack_data": {
                 "topic": "sglt2_inhibitors_effects",
                 "aliases": ["SGLT2 inhibitors effects", "SGLT2 inhibitors"],
