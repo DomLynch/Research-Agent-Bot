@@ -2676,6 +2676,45 @@ def test_run_cycle_capped_stops_on_no_eligible(tmp_path: Path, monkeypatch) -> N
     assert len(calls) == 2
 
 
+def test_run_cycle_capped_does_not_leak_later_blocker_to_aggregate(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    seq = iter([
+        {
+            "status": "submitted_to_researka",
+            "submitted": 1,
+            "published": 0,
+            "candidate": {"run": "r1", "topic": "submitted"},
+            "researka_preflight": "eligible",
+        },
+        {
+            "status": "no_eligible_research_paper",
+            "submitted": 0,
+            "published": 0,
+            "candidate": {"run": "r2", "topic": "blocked"},
+            "reason": "source_bundle_unmapped_sources:outcome=0,citation=1",
+            "researka_preflight": "source_bundle_unmapped_sources:outcome=0,citation=1",
+        },
+        {"status": "no_eligible_research_paper", "submitted": 0, "published": 0},
+    ])
+    monkeypatch.setattr(daily, "run_cycle", lambda **kw: next(seq))
+
+    out = daily.run_cycle_capped(
+        runs_root=tmp_path,
+        date="2026-06-14",
+        submit=True,
+        max_submissions=3,
+    )
+
+    assert out["status"] == "submitted_to_researka"
+    assert out["submitted"] == 1
+    assert out["candidate"]["run"] == "r1"
+    assert "reason" not in out
+    assert "researka_preflight" not in out
+    assert out["submissions"][1]["reason"] == "source_bundle_unmapped_sources:outcome=0,citation=1"
+
+
 def test_run_cycle_capped_preserves_same_day_submitted_summary(tmp_path: Path, monkeypatch) -> None:
     _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "date": "2026-06-24",
