@@ -2097,6 +2097,9 @@ def run_cycle_capped(
     agg["submitted"] = total
     agg["submissions"] = submissions
     agg["status"] = "submitted_to_researka" if total else last.get("status")
+    if total:
+        agg.pop("reason", None)
+        agg.pop("researka_preflight", None)
     if first_candidate is not None:
         agg["candidate"] = first_candidate
     ledger_path = runs_root / LEDGER_DIR / f"{date}.json"
