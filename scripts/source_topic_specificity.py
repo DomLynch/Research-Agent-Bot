@@ -100,11 +100,6 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
     topic_text = " ".join(topic.replace("_", " ").replace("-", " ").lower().split())
     topic_raw_tokens = _gate_tokens(topic_text)
     raw_aliases = [str(alias or "").strip() for alias in aliases]
-    acronym_aliases: set[str] = set()
-    for phrase in (topic_text, *raw_aliases):
-        phrase_tokens = _gate_token_list(phrase)
-        if len(phrase_tokens) >= 2:
-            acronym_aliases.add("".join(token[0] for token in phrase_tokens))
     out: list[str] = []
     seen: set[str] = set()
     for raw in raw_aliases:
@@ -112,11 +107,9 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
         if not norm:
             continue
         alias_tokens = _gate_tokens(norm)
-        acronym_alias = norm in acronym_aliases or bool(re.fullmatch(r"[A-Z0-9]{2,8}", raw))
         if (
             len(topic_raw_tokens) > 1
             and len(alias_tokens) == 1
-            and not acronym_alias
         ):
             continue
         overlap = len(topic_raw_tokens & alias_tokens)
@@ -126,8 +119,7 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
             or overlap / max(1, len(topic_raw_tokens)) >= 0.75
         )
         if (
-            acronym_alias
-            or norm in topic_text
+            norm in topic_text
             or topic_text in norm
             or (overlap >= min_overlap and enough_topic_coverage)
         ):
