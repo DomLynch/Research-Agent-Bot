@@ -260,7 +260,7 @@ def build_registry(
 
     Each entry's body_citation is computed once + validated + de-
     duplicated (collisions like Smith 2024a / Smith 2024b). Raises
-    if any body_citation matches a blocked pattern."""
+    only if every available citation candidate matches a blocked pattern."""
     registry: dict[str, CitationEntry] = {}
     paper_meta_by_id = paper_meta_by_id or {}
     # Track distinct source-level citation bases before assigning suffixes.
@@ -286,17 +286,7 @@ def build_registry(
         source_key = _source_key(r)
         group_key = source_key or ("receipt_id", receipt_id)
         if group_key not in citation_base_by_source:
-            body_citation = (
-                _author_year_citation_from_id(receipt_id, source_year)
-                or _body_citation_from_metadata(meta)
-                or _body_citation_for(receipt_id, source_year=source_year)
-            )
-            leaks = validate_body_citation(body_citation)
-            if leaks:
-                raise ValueError(
-                    f"Generated body_citation for {receipt_id!r} matches "
-                    f"blocked pattern(s) {leaks}: {body_citation!r}"
-                )
+            body_citation = _first_clean_body_citation(receipt_id, source_year, meta)
             citation_base_by_source[group_key] = body_citation
             source_order.append(group_key)
         prepared.append((idx, r, receipt_id, source_year, group_key))
@@ -328,6 +318,27 @@ def build_registry(
         )
         registry[receipt_id] = entry
     return registry
+
+
+def _first_clean_body_citation(receipt_id: str, source_year: int | None, meta: dict) -> str:
+    candidates = [
+        _author_year_citation_from_id(receipt_id, source_year),
+        _body_citation_from_metadata(meta),
+        _body_citation_for(receipt_id, source_year=source_year),
+    ]
+    blocked: list[tuple[str, list[str]]] = []
+    for candidate in candidates:
+        if not candidate:
+            continue
+        leaks = validate_body_citation(candidate)
+        if not leaks:
+            return candidate
+        blocked.append((candidate, leaks))
+    candidate, leaks = blocked[-1] if blocked else (receipt_id, validate_body_citation(receipt_id))
+    raise ValueError(
+        f"Generated body_citation for {receipt_id!r} matches "
+        f"blocked pattern(s) {leaks}: {candidate!r}"
+    )
 
 
 def _alpha_suffix(index: int) -> str:
