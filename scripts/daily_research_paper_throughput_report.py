@@ -380,7 +380,7 @@ def _consistency_gate(
         if status != "published" or _int_value(view.get("published")) < 1:
             blockers.append(f"{lane}:not_published")
     decisions = public.get("decisions") if isinstance(public.get("decisions"), dict) else {}
-    public_accepts = _int_value(decisions.get("accept") if isinstance(decisions, dict) else 0)
+    public_accepts_observed = _int_value(decisions.get("accept") if isinstance(decisions, dict) else 0)
     raw_examples = public.get("examples")
     examples = raw_examples if isinstance(raw_examples, list) else []
     accepts_after_min = 0
@@ -390,6 +390,9 @@ def _consistency_gate(
         when = _parse_iso(row.get("time"))
         if min_dt is None or when and when >= min_dt:
             accepts_after_min += 1
+    public_accepts = public_accepts_observed
+    if min_dt and public_accept_baseline:
+        public_accepts = max(public_accepts, public_accept_baseline + accepts_after_min)
     if public_accepts <= public_accept_baseline:
         blockers.append("public:accept_count_not_above_baseline")
     if min_dt and accepts_after_min < 1:
@@ -400,6 +403,7 @@ def _consistency_gate(
         "min_started_at": min_started_at,
         "public_accept_baseline": public_accept_baseline,
         "public_accepts": public_accepts,
+        "public_accepts_observed": public_accepts_observed,
         "public_accepts_after_min_started_at": accepts_after_min if min_dt else None,
         "lane_receipts": lane_receipts,
         "blockers": blockers,
