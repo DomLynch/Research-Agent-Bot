@@ -650,6 +650,10 @@ def _refresh_topic_supply(
     return {"status": "topic_supply_refresh_failed", "errors": errors, "created": []}
 
 
+def _created_topic_slugs(refresh: Mapping[str, Any]) -> set[str]:
+    return {str(row.get("slug") or "") for row in refresh.get("created", []) if isinstance(row, dict)}
+
+
 def _generated_pack_records(topic_pack_db: Path | None = None) -> list[dict[str, Any]]:
     db = topic_pack_db or TOPIC_PACKS_DB
     return [
@@ -3429,6 +3433,7 @@ def run_cycle(
         submitted_total = 0
         attempt_count = 0
         receipt_preflight_repairs_used = 0
+        topic_supply_created: set[str] = set()
         while True:
             if topic and attempt_count:
                 break
@@ -3476,6 +3481,31 @@ def run_cycle(
                 topic for topic in (corpus_repaired_ok | source_precision_selectable) - selection_excluded
                 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
             )
+            if (
+                not revision_source
+                and topic is None
+                and mode == "fresh"
+                and submit
+                and not topic_supply_refreshed
+                and not repaired_candidates
+                and not current_source_precision
+                and not any(_topic_has_quant_floor(t) for t in preflight_blocked - receipt_preflight_blocked)
+                and not _has_clean_ready_topic(
+                    topics,
+                    exclude=selection_excluded | submitted_topics | published_topics | _recent_blocked_topics(ledger_dir),
+                    source_precision_blocked=current_source_precision,
+                )
+            ):
+                topic_supply_refreshed = True
+                refresh = _refresh_topic_supply(
+                    TOPIC_PACKS_DB,
+                    skip_slugs=selection_excluded | submitted_topics | published_topics | set(topics),
+                )
+                ledger["topic_supply_refresh"] = refresh
+                if refresh.get("created"):
+                    topic_supply_created = _created_topic_slugs(refresh)
+                    topics = discover_topics()
+                    ledger["topic_supply_topic_count_after_refresh"] = len(topics)
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
@@ -3505,6 +3535,8 @@ def run_cycle(
                     )
                     if selected:
                         ledger["preflight_reseed_selected"] = selected
+            if selected and selected in topic_supply_created:
+                ledger["topic_supply_selected_after_refresh"] = selected
             if not selected:
                 if (
                     ledger["attempts"]
@@ -3548,10 +3580,11 @@ def run_cycle(
                         ledger["source_precision_fallback_selected"] = selected
                 if not selected and mode == "fresh" and topic is None and not topic_supply_refreshed:
                     topic_supply_refreshed = True
-                    skip_slugs = selection_excluded | submitted_topics | published_topics
+                    skip_slugs = selection_excluded | submitted_topics | published_topics | set(topics)
                     refresh = _refresh_topic_supply(TOPIC_PACKS_DB, skip_slugs=skip_slugs)
                     ledger["topic_supply_refresh"] = refresh
                     if refresh.get("created"):
+                        topic_supply_created = _created_topic_slugs(refresh)
                         topics = discover_topics()
                         ledger["topic_supply_topic_count_after_refresh"] = len(topics)
                         selected = select_topic(

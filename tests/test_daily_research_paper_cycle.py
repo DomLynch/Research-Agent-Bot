@@ -1683,6 +1683,69 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_fresh_lane_refreshes_topic_supply_before_thin_frontier_candidate(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "thin_frontier", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    calls: dict[str, Any] = {"preflights": []}
+
+    def fake_refresh(db_dir: Path, *, skip_slugs: set[str] | None = None) -> dict[str, Any]:
+        calls["skip_slugs"] = skip_slugs
+        latest = db_dir / "refreshed_candidate" / "latest.json"
+        _write_json(latest, {
+            "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+            "pack_data": {
+                "topic": "refreshed_candidate",
+                "aliases": ["refreshed candidate"],
+                "target_journal": "GeroScience",
+                "retrieval": {"topic_terms": ["refreshed candidate"], "scope_terms": []},
+            },
+        })
+        return {"status": "topic_supply_refreshed", "created": [{"slug": "refreshed_candidate"}]}
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        qdir = cycle.CORPORA / topic / "quant_claims"
+        qdir.mkdir(parents=True)
+        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic}-{i}"})
+        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, **_kwargs: Any) -> dict[str, Any]:
+        calls["preflights"].append(topic)
+        return {"passed": True, "status": "receipt_preflight_ok", "n_receipts": 12, "min_receipts": 12}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        calls["topic"] = topic
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", fake_refresh)
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=fake_corpus,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["topic_supply_refresh"]["status"] == "topic_supply_refreshed"
+    assert ledger["topic_supply_selected_after_refresh"] == "refreshed_candidate"
+    assert calls["topic"] == "refreshed_candidate"
+    assert calls["preflights"] == ["refreshed_candidate"]
+    assert "thin_frontier" in (calls["skip_slugs"] or set())
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeypatch) -> None:
     calls: list[dict[str, Any]] = []
 
