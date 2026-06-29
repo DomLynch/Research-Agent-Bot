@@ -548,7 +548,6 @@ def _compile_public_section_backstop(
     pos_refs = ctx["positive_refs"]
     null_refs = ctx["null_refs"]
     neg_refs = ctx["negative_refs"]
-    thesis = ctx["thesis"]
     evidence_basis = "the retained evidence profile"
     if direct > 0 and mechanistic > 0:
         evidence_basis = "the retained clinical and mechanistic evidence profile"
@@ -616,10 +615,12 @@ def _compile_public_section_backstop(
                 "direct human evidence."
             ),
             (
-                f"The thesis is: {thesis} This thesis is treated "
-                "as an organizing claim, not as a substitute for the study "
-                "table, because the source record includes supportive, null, "
-                "and adverse signals across different outcome classes."
+                "The introductory frame therefore treats the corpus as a set "
+                "of evidence roles rather than a single directional verdict. "
+                "Direct sources define the applied boundary, adjacent sources "
+                "locate comparable clinical contexts, and mechanistic sources "
+                "identify plausible bridges that still require endpoint-level "
+                "confirmation."
             ),
         ],
         "Background": [
