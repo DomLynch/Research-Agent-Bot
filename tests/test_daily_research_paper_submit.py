@@ -261,6 +261,60 @@ def test_run_cycle_capped_continues_past_researka_preflight_block(tmp_path: Path
     assert out["submissions"][1]["candidate"]["topic"] == "aspirin"
 
 
+def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    blocked = _run(tmp_path, "synthesis-low_dose_naltrexone_inflammation-v06-new")
+    ready = _run(tmp_path, "synthesis-aspirin-v06-old")
+    _retopic(blocked, "low_dose_naltrexone_inflammation")
+    _retopic(ready, "aspirin")
+    manifest = json.loads((blocked / "manifest.json").read_text(encoding="utf-8"))
+    for row in manifest["receipts"]:
+        row["source_title"] = "Low-dose naltrexone trial in chronic pain"
+    manifest["receipts"][0]["source_title"] = "LDN laparoscopic donor nephrectomy cohort"
+    _write_json(blocked / "manifest.json", manifest)
+    ready_registry = json.loads((ready / "citation_registry.json").read_text(encoding="utf-8"))
+    for idx, row in enumerate(ready_registry.values(), start=1):
+        row["source_pmid"] = str(9000 + idx)
+    _write_json(ready / "citation_registry.json", ready_registry)
+    monkeypatch.setattr(
+        daily,
+        "_pubmed_abstracts",
+        lambda pmids: {
+            pmid: (
+                "Laparoscopic donor nephrectomy perioperative outcomes."
+                if pmid == "124"
+                else "Aspirin trial reports cardiovascular prevention outcomes."
+                if int(pmid) >= 9000
+                else "Low-dose naltrexone was evaluated in adults with chronic pain."
+            )
+            for pmid in pmids
+        },
+    )
+    now = time.time()
+    os.utime(ready, (now - 10, now - 10))
+    os.utime(blocked, (now, now))
+    assert daily._researka_preflight_status(daily.build_payload(blocked)).startswith(
+        "source_bundle_topic_mismatch:1/12:"
+    )
+
+    out = daily.run_cycle_capped(
+        runs_root=tmp_path,
+        date="2026-06-29",
+        submit=True,
+        submitter=lambda _payload: {"ok": True, "status": 200, "response": {"id": "sub-aspirin"}},
+        remote_loader=lambda: (set(), None),
+        max_submissions=2,
+    )
+
+    assert out["submitted"] == 1
+    assert out["status"] == "submitted_to_researka"
+    assert out["submissions"][0]["status"] == "no_eligible_research_paper"
+    assert out["submissions"][0]["reason"].startswith("source_bundle_topic_mismatch:1/12:")
+    assert out["submissions"][1]["candidate"]["topic"] == "aspirin"
+
+
 def test_select_candidate_skips_missing_sidecar_before_expensive_eligibility(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
