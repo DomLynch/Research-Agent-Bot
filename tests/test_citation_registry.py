@@ -565,6 +565,19 @@ def test_metadata_missing_falls_back_to_pmc_handle() -> None:
     assert entry.body_citation == "PMC9999999 2026"
 
 
+def test_metadata_artifact_label_falls_back_to_pmc_handle() -> None:
+    """If parsed metadata yields a blocked artifact label, keep the paper
+    usable by falling back to the clean PMCID-year candidate."""
+    receipt_id = "PMC13213536_does_aerobic_exercise_affect_memory_attention_working_memory"
+    receipts = [_FakeReceipt(receipt_id=receipt_id, source_year=2026)]
+    paper_meta = {receipt_id: {"authors": ["INGOLFSDOTTIR"], "year": 2026}}
+
+    registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
+
+    assert registry[receipt_id].body_citation == "PMC13213536 2026"
+    assert cr.validate_body_citation(registry[receipt_id].body_citation) == []
+
+
 def test_metadata_overrides_receipt_id_derived_for_walton() -> None:
     """When metadata is present even for Walton-style receipt_ids,
     the metadata-derived citation wins (same shape, but consistent
