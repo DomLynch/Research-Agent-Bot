@@ -54,8 +54,18 @@ def test_source_gate_aliases_drop_generic_biomed_alias_for_composite_topic() -> 
         ("low dose naltrexone inflammation", "low-dose naltrexone", "ldn", "inflammation", "immune modulation"),
     )
 
-    assert aliases == ("low dose naltrexone inflammation", "low-dose naltrexone", "ldn")
-    assert is_source_topic_specific("low_dose_naltrexone_inflammation", "LDN chronic pain trial", aliases=aliases)
+    assert aliases == ("low dose naltrexone inflammation", "low-dose naltrexone")
+    assert not is_source_topic_specific("low_dose_naltrexone_inflammation", "LDN chronic pain trial", aliases=aliases)
+    assert not is_source_topic_specific(
+        "low_dose_naltrexone_inflammation",
+        "LDN laparoscopic donor nephrectomy cohort",
+        aliases=aliases,
+    )
+    assert is_source_topic_specific(
+        "low_dose_naltrexone_inflammation",
+        "Low-dose naltrexone chronic pain trial",
+        aliases=aliases,
+    )
     assert not is_source_topic_specific("low_dose_naltrexone_inflammation", "exercise inflammation cohort", aliases=aliases)
 
 

@@ -1313,6 +1313,30 @@ def test_source_topic_precision_uses_topic_aliases(tmp_path: Path, monkeypatch) 
     assert status == "source_topic_precision_ok:2/3"
 
 
+def test_source_topic_precision_rejects_acronym_only_drift(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path / "runs", name="synthesis-low_dose_naltrexone_inflammation-v06-test")
+    (tmp_path / "topic_packs").mkdir()
+    (tmp_path / "topic_packs" / "low_dose_naltrexone_inflammation.toml").write_text(
+        'aliases = ["low-dose naltrexone", "LDN", "inflammation", "immune modulation"]\n',
+        encoding="utf-8",
+    )
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["topic"] = "low_dose_naltrexone_inflammation"
+    manifest["receipts"] = [
+        {"receipt_id": "r1", "source_title": "Low-dose naltrexone trial in chronic pain"},
+        {"receipt_id": "r2", "source_title": "LDN laparoscopic donor nephrectomy cohort"},
+        {"receipt_id": "r3", "source_title": "LDN donor nephrectomy perioperative outcomes"},
+        {"receipt_id": "r4", "source_title": "LDN nephrectomy registry follow-up"},
+    ]
+    _write_json(run / "manifest.json", manifest)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ok, status = daily._source_topic_precision(run)
+
+    assert not ok
+    assert status == "source_topic_precision_low:1/4<0.50"
+
+
 def test_source_topic_precision_counts_static_hrt_aliases(tmp_path: Path, monkeypatch) -> None:
     run = _run(tmp_path / "runs", name="synthesis-hormone_optimization_hrt-v06-test")
     (tmp_path / "topic_packs").mkdir()
