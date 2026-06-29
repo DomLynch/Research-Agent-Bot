@@ -135,7 +135,10 @@ def test_fresh_publish_seeds_empty_frontier_with_bounded_timeout(
         qdir = cycle.CORPORA / topic / "quant_claims"
         qdir.mkdir(parents=True)
         for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
-            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"seed {i}", "claims": []})
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {
+                "paper_id": f"seed {i}",
+                "claims": [{"binding_confidence": "high"}],
+            })
         return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
 
     def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
@@ -211,6 +214,40 @@ def test_fresh_publish_continues_after_frontier_seed_stays_thin(tmp_path: Path, 
     assert [attempt["topic"] for attempt in ledger["attempts"]] == ["aaa_empty_frontier", "bbb_ready"]
     assert ledger["attempts"][0]["submit_status"] == "corpus_seed_failed"
     assert ledger["submitted_topic"] == "bbb_ready"
+
+
+def test_fresh_publish_blocks_empty_claim_sidecars_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "empty_claim_sidecars", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:26/26", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: pytest.fail("receipt preflight should not run"))
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: pytest.fail("synthesis should not run"))
+    qdir = cycle.CORPORA / "empty_claim_sidecars" / "quant_claims"
+    qdir.mkdir(parents=True)
+    for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS + 16):
+        claims = [{"binding_confidence": "partial"}] if i < 4 else []
+        _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"seed-{i}", "claims": claims})
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-29",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: pytest.fail("submit should not run"),
+        max_attempts=1,
+    )
+
+    assert ledger["status"] == "preflight_skipped_no_submission"
+    assert ledger["attempts"][0]["submit_status"] == "preflight_thin_quant_corpus"
+    assert ledger["attempts"][0]["preflight"]["n_claim_bearing_quant_files"] == 4
+    assert "n_claim_bearing_quant_files=4 < 10" in ledger["attempts"][0]["preflight"]["reasons"]
 
 
 def test_fresh_receipt_preflight_uses_publish_seed_timeout(tmp_path: Path, monkeypatch) -> None:
@@ -349,7 +386,10 @@ def _topic(root: Path, topic: str, *, corpus: bool = True, target_journal: bool 
         qdir = root / "docs" / "quality-reference" / topic / "quant_claims"
         qdir.mkdir(parents=True)
         for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
-            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic} seed {i}", "claims": []})
+            _write_json(qdir / f"seed-{i}.quant_claims.json", {
+                "paper_id": f"{topic} seed {i}",
+                "claims": [{"binding_confidence": "high"}],
+            })
 
 
 def _prior_run(

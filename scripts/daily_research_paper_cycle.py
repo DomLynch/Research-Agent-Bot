@@ -720,6 +720,29 @@ def _quant_claim_count(topic: str) -> int:
     return sum(1 for _ in (CORPORA / topic / "quant_claims").glob("*.quant_claims.json"))
 
 
+def _claim_bearing_quant_count(topic: str) -> tuple[int, int]:
+    """Files with explicit, usable claim payloads.
+
+    Legacy sidecars without a ``claims`` field count as usable; explicit empty
+    claim lists do not. This keeps old fixtures/data compatible while stopping
+    empty extraction artifacts from looking like a publishable corpus.
+    """
+    total = usable = 0
+    for path in (CORPORA / topic / "quant_claims").glob("*.quant_claims.json"):
+        total += 1
+        data = _read_json(path)
+        claims = data.get("claims")
+        if claims is None:
+            usable += 1
+        elif isinstance(claims, list) and any(
+            isinstance(claim, dict)
+            and str(claim.get("binding_confidence") or "high").lower() != "none"
+            for claim in claims
+        ):
+            usable += 1
+    return usable, total
+
+
 def _attempted_at(topic: str, ledger_dir: Path) -> str:
     latest = ""
     for path in ledger_dir.glob("*.json"):
@@ -2046,13 +2069,25 @@ def _preflight(
     }
 
 
-def _quant_claim_preflight(corpus: dict[str, Any]) -> dict[str, Any]:
+def _quant_claim_preflight(corpus: dict[str, Any], *, topic: str | None = None) -> dict[str, Any]:
     try:
         n_quant_claims = int(corpus.get("n_quant_claims") or 0)
     except (TypeError, ValueError):
         n_quant_claims = 0
-    reasons = [] if n_quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS else [f"n_quant_claims={n_quant_claims} < {PREFLIGHT_MIN_QUANT_CLAIMS}"]
-    return {"passed": not reasons, "reasons": reasons, "n_quant_claims": n_quant_claims}
+    reasons: list[str] = []
+    if n_quant_claims < PREFLIGHT_MIN_QUANT_CLAIMS:
+        reasons.append(f"n_quant_claims={n_quant_claims} < {PREFLIGHT_MIN_QUANT_CLAIMS}")
+    claim_bearing = total_files = None
+    if topic:
+        claim_bearing, total_files = _claim_bearing_quant_count(topic)
+        if total_files and claim_bearing < PREFLIGHT_MIN_QUANT_CLAIMS:
+            reasons.append(f"n_claim_bearing_quant_files={claim_bearing} < {PREFLIGHT_MIN_QUANT_CLAIMS}")
+    return {
+        "passed": not reasons,
+        "reasons": reasons,
+        "n_quant_claims": n_quant_claims,
+        **({"n_claim_bearing_quant_files": claim_bearing, "n_quant_claim_files": total_files} if topic else {}),
+    }
 
 
 def _receipt_source_fit_reasons(n_primary_tier: int) -> list[str]:
@@ -3736,7 +3771,7 @@ def run_cycle(
                 and mode == "fresh"
                 and not _topic_has_quant_floor(selected)
             ):
-                frontier_preflight = _quant_claim_preflight(seeded_frontier_corpus or {})
+                frontier_preflight = _quant_claim_preflight(seeded_frontier_corpus or {}, topic=selected)
                 frontier_status = str((seeded_frontier_corpus or {}).get("status") or "no_ready_corpus_available")
                 if not frontier_preflight["passed"] and frontier_status in {"corpus_ready", "corpus_seeded"}:
                     frontier_status = "preflight_thin_quant_corpus"
@@ -3978,7 +4013,7 @@ def run_cycle(
                     "source_precision_ready",
                     "source_precision_repaired",
                 }
-            quant_preflight = _quant_claim_preflight(corpus)
+            quant_preflight = _quant_claim_preflight(corpus, topic=selected)
             quant_corpus_repairs: list[dict[str, Any]] = []
             if not quant_preflight["passed"] and not synthesis_dry_run:
                 for round_idx in range(_receipt_preflight_repair_rounds()):
@@ -4001,7 +4036,7 @@ def run_cycle(
                     else:
                         corpus = corpus_repair
                     ledger["corpus"] = corpus
-                    quant_preflight = _quant_claim_preflight(corpus)
+                    quant_preflight = _quant_claim_preflight(corpus, topic=selected)
                     if quant_preflight["passed"]:
                         break
             if not quant_preflight["passed"]:
