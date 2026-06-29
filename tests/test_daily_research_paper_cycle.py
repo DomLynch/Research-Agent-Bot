@@ -1790,9 +1790,62 @@ def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeyp
     assert [call["strategy"] for call in calls] == list(cycle.TOPIC_SUPPLY_STRATEGIES)
     assert result["status"] == "topic_supply_no_new_packs"
     assert result["strategies_attempted"] == [
-        {"strategy": strategy, "rows": 0, "created": 0, "skipped": 0}
+        {"strategy": strategy, "limit": 500, "rows": 0, "created": 0, "skipped": 0}
         for strategy in cycle.TOPIC_SUPPLY_STRATEGIES
     ]
+
+
+def test_topic_supply_refresh_deepens_scan_after_empty_high_precision_pass(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    calls: list[dict[str, Any]] = []
+
+    class FakeMaterializer:
+        @staticmethod
+        def dsn_from_env() -> str:
+            return "postgresql://example"
+
+        @staticmethod
+        def http_credentials_from_env() -> tuple[str, str]:
+            return "", ""
+
+        @staticmethod
+        def fetch_rows(**kwargs: Any) -> list[dict[str, Any]]:
+            calls.append({"limit": kwargs["limit"], "strategy": kwargs["strategy"]})
+            return [{"topic": "exercise", "sub_topic": "mortality", "claim_type": "effect_size"}]
+
+        @staticmethod
+        def materialize_rows(rows: list[dict[str, Any]], **kwargs: Any) -> dict[str, Any]:
+            calls[-1].update({
+                "quality_mode": kwargs["quality_mode"],
+                "max_created": kwargs["max_created"],
+                "skip_slugs": kwargs["skip_slugs"],
+            })
+            if calls[-1]["limit"] >= cycle.TOPIC_SUPPLY_REFRESH_FALLBACK_LIMIT:
+                return {"created": [{"slug": "exercise_mortality_effects"}], "skipped": []}
+            return {"created": [], "skipped": [{"slug": "old", "reason": "excluded_topic"}]}
+
+    monkeypatch.setitem(sys.modules, "materialize_fact_topic_packs", FakeMaterializer)
+    monkeypatch.delenv("RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT", raising=False)
+    monkeypatch.delenv("RESEARCH_AGENT_TOPIC_SUPPLY_FALLBACK_LIMIT", raising=False)
+
+    result = cycle._refresh_topic_supply(tmp_path / "topic_packs_db", skip_slugs={"old"})
+
+    assert [call["limit"] for call in calls] == [500, 500, 500, 500, 1000]
+    assert [call["strategy"] for call in calls] == [*cycle.TOPIC_SUPPLY_STRATEGIES, cycle.TOPIC_SUPPLY_STRATEGIES[0]]
+    assert all(call["quality_mode"] == "high-precision" for call in calls)
+    assert all(call["max_created"] == cycle.TOPIC_SUPPLY_REFRESH_MAX_CREATED for call in calls)
+    assert all(call["skip_slugs"] == {"old"} for call in calls)
+    assert result["status"] == "topic_supply_refreshed"
+    assert result["created"] == [{"slug": "exercise_mortality_effects"}]
+    assert result["strategies_attempted"][-1] == {
+        "strategy": cycle.TOPIC_SUPPLY_STRATEGIES[0],
+        "limit": 1000,
+        "rows": 1,
+        "created": 1,
+        "skipped": 0,
+    }
 
 
 def test_topic_supply_refresh_falls_back_to_next_strategy(tmp_path: Path, monkeypatch) -> None:

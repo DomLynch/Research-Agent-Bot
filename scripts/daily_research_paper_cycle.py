@@ -73,6 +73,7 @@ WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
 TOPIC_SUPPLY_REFRESH_LIMIT = 500
+TOPIC_SUPPLY_REFRESH_FALLBACK_LIMIT = 1000
 TOPIC_SUPPLY_REFRESH_MAX_CREATED = 20
 TOPIC_SUPPLY_STRATEGIES = (
     "fact-intervention-cross",
@@ -594,49 +595,60 @@ def _refresh_topic_supply(
         return {"status": "topic_supply_refresh_not_configured", "created": []}
     quality_mode = os.getenv("RESEARCH_AGENT_TOPIC_SUPPLY_QUALITY_MODE", "high-precision")
     limit = _env_int("RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT", TOPIC_SUPPLY_REFRESH_LIMIT)
+    fallback_limit = _env_int(
+        "RESEARCH_AGENT_TOPIC_SUPPLY_FALLBACK_LIMIT",
+        max(limit, TOPIC_SUPPLY_REFRESH_FALLBACK_LIMIT),
+    )
+    scan_limits = [limit, *([fallback_limit] if fallback_limit > limit else [])]
     max_created = _env_int("RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED", TOPIC_SUPPLY_REFRESH_MAX_CREATED)
     attempts: list[dict[str, Any]] = []
     errors: dict[str, str] = {}
     skipped: list[dict[str, Any]] = []
-    for strategy in _topic_supply_strategies():
-        try:
-            if dsn:
-                rows = materializer.fetch_rows(
-                    dsn=dsn, min_exact_facts=2, min_papers=2, limit=limit, strategy=strategy,
+    for scan_limit in scan_limits:
+        pass_attempts = 0
+        for strategy in _topic_supply_strategies():
+            try:
+                if dsn:
+                    rows = materializer.fetch_rows(
+                        dsn=dsn, min_exact_facts=2, min_papers=2, limit=scan_limit, strategy=strategy,
+                    )
+                else:
+                    rows = materializer.fetch_rows_http(
+                        base_url=base_url, token=token, min_exact_facts=2,
+                        min_papers=2, limit=scan_limit, strategy=strategy,
+                    )
+                result = materializer.materialize_rows(
+                    rows,
+                    db_dir=topic_pack_db or TOPIC_PACKS_DB,
+                    persist=True,
+                    quality_mode=quality_mode,
+                    max_created=max_created,
+                    skip_slugs=skip_slugs,
                 )
-            else:
-                rows = materializer.fetch_rows_http(
-                    base_url=base_url, token=token, min_exact_facts=2,
-                    min_papers=2, limit=limit, strategy=strategy,
-                )
-            result = materializer.materialize_rows(
-                rows,
-                db_dir=topic_pack_db or TOPIC_PACKS_DB,
-                persist=True,
-                quality_mode=quality_mode,
-                max_created=max_created,
-                skip_slugs=skip_slugs,
-            )
-        except Exception as exc:
-            errors[strategy] = str(exc)
-            continue
-        created = result.get("created", [])
-        skipped.extend(result.get("skipped", []) or [])
-        attempts.append({
-            "strategy": strategy,
-            "rows": len(rows),
-            "created": len(created),
-            "skipped": len(result.get("skipped", []) or []),
-        })
-        if created:
-            return {
-                **result,
-                "skipped": skipped,
-                "status": "topic_supply_refreshed",
+            except Exception as exc:
+                errors[f"{strategy}:{scan_limit}"] = str(exc)
+                continue
+            created = result.get("created", [])
+            skipped.extend(result.get("skipped", []) or [])
+            pass_attempts += len(rows)
+            attempts.append({
                 "strategy": strategy,
-                "strategies_attempted": attempts,
-                "quality_mode": quality_mode,
-            }
+                "limit": scan_limit,
+                "rows": len(rows),
+                "created": len(created),
+                "skipped": len(result.get("skipped", []) or []),
+            })
+            if created:
+                return {
+                    **result,
+                    "skipped": skipped,
+                    "status": "topic_supply_refreshed",
+                    "strategy": strategy,
+                    "strategies_attempted": attempts,
+                    "quality_mode": quality_mode,
+                }
+        if pass_attempts == 0:
+            break
     if attempts:
         return {
             "created": [],
