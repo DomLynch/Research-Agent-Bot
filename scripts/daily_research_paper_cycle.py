@@ -471,6 +471,22 @@ def _reconcile_published_ledger(
         if not attempt_run or attempt_run in submitted_runs:
             attempt["submitted"] = 1
             attempt["published"] = 1
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        values = submission.get("submission_markers")
+        submission_markers = set()
+        if isinstance(values, list):
+            submission_markers = {
+                value for value in values
+                if isinstance(value, str) and value.startswith("submission:")
+            }
+        candidate = submission.get("candidate")
+        submission_run = candidate.get("run") if isinstance(candidate, dict) else None
+        if submission_markers & matches or (isinstance(submission_run, str) and submission_run in matched_runs):
+            submission["submitted"] = 1
+            submission["published"] = 1
     return True
 
 

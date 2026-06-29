@@ -949,6 +949,45 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
     assert decisions["days"]["2026-06-24"]["records"][0]["reviewed_at"] == "2026-06-24T12:22:51+04:00"
 
 
+def test_reconcile_publication_ledgers_date_scope_includes_daily_submit_cycle(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    title = "Adjacent Evidence Brief: Marker Matched Topic — full paper"
+    run = runs_root / "synthesis-marker_matched_topic-v06-DAILY-2026-06-24T17-12-56Z"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text(f"# {title}\n\nBody.\n", encoding="utf-8")
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-29-daily-submit.json", {
+        "date": "2026-06-29",
+        "lane": "daily-submit",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "submissions": [{
+            "candidate": {"run": run.name, "topic": "marker_matched_topic"},
+            "submitted": 1,
+            "submission_markers": ["submission:marker-matched-submission"],
+        }, {
+            "candidate": {"run": "synthesis-other-v06-DAILY", "topic": "other"},
+            "submitted": 1,
+            "submission_markers": ["submission:other-submission"],
+        }],
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-29",
+        remote_loader=lambda: ({cycle.submit_bridge._submission_marker("marker-matched-submission")}, None),
+    )
+
+    ledger = json.loads((ledger_dir / "2026-06-29-daily-submit.json").read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["2026-06-29-daily-submit.json"]
+    assert ledger["status"] == "published"
+    assert ledger["published"] == 1
+    assert ledger["submissions"][0]["published"] == 1
+    assert ledger["submissions"][1].get("published", 0) == 0
+
+
 def test_reconcile_cli_without_mode_checks_all_lanes(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     seen: dict[str, Any] = {}
 
