@@ -1133,6 +1133,11 @@ def _asks_citation_traceability_map(text: str) -> bool:
         and "citation" in text
         and any(token in text for token in ("source bundle entry", "source-bundle entry", "bundle entry"))
         and any(token in text for token in ("methods_pack", "citation list", "mapping"))
+    ) or (
+        "source bundle" in text
+        and "citation" in text
+        and "manifest" in text
+        and any(token in text for token in ("inline", "1:1", "audit trail", "reconcile"))
     )
 
 
