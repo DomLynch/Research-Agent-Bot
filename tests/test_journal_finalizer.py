@@ -1247,6 +1247,53 @@ def test_run_text_phases_strips_thesis_duplicates_added_at_terminal_phase(
     assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
 
 
+def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: Path) -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    duplicate = (
+        "The thesis is: Across curated reference papers, the evidence base shows a "
+        "context-dependent profile with supportive, null, and adverse signals across "
+        "different outcome classes. The synthesis surfaces cross-study disagreements "
+        "and treats the thesis as an organizing claim rather than a substitute for "
+        "the structured study table."
+    )
+    paper = (
+        "# Research Synthesis\n\n"
+        "## Abstract\n\n" + ("abstract " * 155) + f"\n\n{duplicate}\n\n"
+        "## Introduction\n\n" + ("intro " * 360) + f"\n\n{duplicate}\n\n"
+        "## Background\n\n" + ("background " * 310) + "\n\n"
+        "## Methods\n\n" + ("methods " * 310) + "\n\n"
+        "## Results\n\n" + ("results " * 510) + "\n\n"
+        "## Cross-Domain Synthesis\n\n" + ("synthesis " * 860) + "\n\n"
+        "## Discussion\n\n**Thesis:** bounded.\n\n**Resolution criteria:** direct endpoints.\n\n"
+        + ("discussion " * 810) + "\n\n"
+        "## Limitations\n\n" + ("limits " * 260) + "\n\n"
+        "## Conclusion\n\n" + ("conclusion " * 260) + "\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "ramadan_fasting_effects",
+        "total_words": 5000,
+        "section_words": {"introduction": 360},
+        "receipts": [{"receipt_id": "r1", "outcome_class": "cardiometabolic"}],
+        "n_receipts": 1,
+        "n_high_confidence_claims_total": 12,
+    }), encoding="utf-8")
+    (tmp_path / "full_paper.journal_surface.json").write_text("{}", encoding="utf-8")
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+    report = evaluate_journal_surface(fixed)
+    intro = fixed.split("## Introduction", 1)[1].split("## Background", 1)[0]
+
+    assert len(intro.split()) >= 400
+    assert "ramadan_fasting_effects" not in fixed
+    assert not any(issue.code == "duplicate_paragraph" for issue in report.issues)
+    assert not any(
+        issue.code == "structure_surface" and "Introduction" in issue.detail
+        for issue in report.issues
+    )
+    assert any(log.phase == "N_surface_floor_backstop" for log in logs)
+
+
 def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None:
     from agent.journal_surface_gate import evaluate_journal_surface
 
