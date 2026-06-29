@@ -601,6 +601,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
         return anchor_status
     if (breadth_status := _conclusion_breadth_status(payload)) != "eligible":
         return breadth_status
+    if (domain_frame_status := _domain_frame_status(payload)) != "eligible":
+        return domain_frame_status
     return "eligible"
 
 
@@ -1618,6 +1620,31 @@ def _weak_direct_evidence(payload: dict[str, Any]) -> bool:
     if not bundle:
         return False
     return sum(_row_context(row) == "direct" for row in bundle) <= 1
+
+
+_UNSUPPORTED_DOMAIN_FRAME_PATTERNS: tuple[tuple[str, str], ...] = (
+    ("bounded_geroscience", r"\bbounded\s+geroscience\s+(?:case|hypothesis|rationale)\b"),
+    ("geroscience_target", r"\bgeroscience\s+intervention\s+target\b"),
+    ("anti_aging_claim", r"\b(?:unqualified|generalized|global)\s+anti-aging\s+(?:claim|conclusion)\b"),
+    ("longevity_treatment", r"\bsettled\s+longevity\s+treatment\b"),
+    ("healthspan_benefit", r"\bdurable\s+healthspan\s+benefit\b"),
+    ("standalone_aging_proof", r"\bstandalone\s+anti-aging\s+or\s+longevity\s+proof\b"),
+    ("geroprotection", r"\bgeroprotection\b"),
+)
+
+
+def _domain_frame_status(payload: dict[str, Any]) -> str:
+    text = " ".join(
+        str(payload.get(key) or "")
+        for key in ("title", "abstract", "body_markdown")
+    )
+    sections = payload.get("sections")
+    if isinstance(sections, dict):
+        text += " " + " ".join(str(value or "") for value in sections.values())
+    for code, pattern in _UNSUPPORTED_DOMAIN_FRAME_PATTERNS:
+        if re.search(pattern, text, flags=re.I):
+            return f"domain_frame_template_leak:{code}"
+    return "eligible"
 
 
 def _bounded_title(title: str, topic: str, payload: dict[str, Any]) -> str:

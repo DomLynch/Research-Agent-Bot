@@ -898,6 +898,27 @@ def test_researka_preflight_blocks_off_topic_source_bundle_row(tmp_path: Path) -
     assert daily._researka_preflight_status(payload) == "source_bundle_topic_mismatch:1/12:rows=2"
 
 
+def test_researka_preflight_blocks_unsupported_domain_frame_template(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["body_markdown"] += (
+        "\n\nThe conclusion is that measles vaccination effects remains a "
+        "bounded geroscience case, while mixed findings limit any unqualified "
+        "anti-aging claim."
+    )
+
+    assert daily._researka_preflight_status(payload) == "domain_frame_template_leak:bounded_geroscience"
+
+
+def test_researka_preflight_allows_conservative_anti_aging_boundary_note(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["body_markdown"] += (
+        "\n\nThe retained evidence does not establish clinical benefit, "
+        "therapeutic actionability, or anti-aging efficacy."
+    )
+
+    assert daily._researka_preflight_status(payload) == "eligible"
+
+
 def test_weak_direct_corpus_forces_bounded_title_and_conclusion(tmp_path: Path) -> None:
     run = _run(tmp_path, tensions=20)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
