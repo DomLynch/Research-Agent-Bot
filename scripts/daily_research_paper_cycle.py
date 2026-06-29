@@ -199,7 +199,7 @@ def _ledger_paths_for_reconciliation(ledger_dir: Path, date: str | None, mode: s
     if date and mode:
         return [_cycle_ledger_path(ledger_dir, date, mode)]
     if date:
-        return [_cycle_ledger_path(ledger_dir, date, lane) for lane in ("mixed", "fresh", "revise")]
+        return [_cycle_ledger_path(ledger_dir, date, lane) for lane in ("mixed", "fresh", "revise", "daily-submit")]
     return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
 
 
