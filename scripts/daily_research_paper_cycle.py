@@ -1603,6 +1603,8 @@ def _pending_remote_revision(
             }
             if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
                 matches.append((record, run, record_topic))
+        if any(_submitted_record_has_pending_decision(record) for record, _run, _topic in matches):
+            continue
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
         if request_key in handled:
@@ -1643,6 +1645,25 @@ def _pending_remote_revision(
             request["source_run"] = run.name
             return request, None
     return None, None
+
+
+def _submitted_record_has_pending_decision(record: dict[str, Any]) -> bool:
+    submission_id = str(record.get("submission_id") or "").strip()
+    if not submission_id:
+        return False
+    payload, err = _fetch_submission_decision(submission_id)
+    if err or not payload:
+        return False
+    if str(payload.get("decision") or "").strip():
+        return False
+    return str(payload.get("status") or "").strip().lower() in {
+        "pending",
+        "queued",
+        "running",
+        "processing",
+        "reviewing",
+        "submitted",
+    }
 
 
 def _pending_remote_revision_topics(
