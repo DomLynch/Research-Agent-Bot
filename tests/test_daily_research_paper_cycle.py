@@ -988,6 +988,66 @@ def test_reconcile_publication_ledgers_date_scope_includes_daily_submit_cycle(tm
     assert ledger["submissions"][1].get("published", 0) == 0
 
 
+def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_submit_child(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    run = runs_root / "synthesis-direct_accept_topic-v06-DAILY"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text("# Adjacent Evidence Brief: Direct Accept Topic\n\nBody.\n", encoding="utf-8")
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-29-daily-submit.json", {
+        "date": "2026-06-29",
+        "lane": "daily-submit",
+        "status": "submitted_to_researka",
+        "submitted": 2,
+        "published": 0,
+        "submissions": [{
+            "candidate": {"run": "synthesis-revised-topic-v06-DAILY", "topic": "revised_topic"},
+            "submitted": 1,
+            "submission_markers": ["submission:revise-submission"],
+        }, {
+            "candidate": {"run": run.name, "topic": "direct_accept_topic"},
+            "submitted": 1,
+            "submission_markers": ["submission:accepted-submission"],
+        }],
+    })
+    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": "2026-06-29",
+        "run": run.name,
+        "topic": "direct_accept_topic",
+        "submission_id": "accepted-submission",
+    }])
+    monkeypatch.setattr(cycle.submit_bridge, "_remote_published_fingerprints", lambda: (set(), None))
+    monkeypatch.setattr(cycle, "_latest_public_decisions_by_title", lambda: ({}, None))
+    monkeypatch.setattr(cycle, "_submitted_submission_decisions_by_title", lambda _runs_root: ({
+        cycle.submit_bridge._title_marker("Adjacent Evidence Brief: Direct Accept Topic"): {
+            "title": "Adjacent Evidence Brief: Direct Accept Topic",
+            "topic": "direct_accept_topic",
+            "decision": "accept",
+            "submissionId": "accepted-submission",
+            "reviewedAt": "2026-06-29T10:16:20+04:00",
+            "publication": {
+                "url": "https://researka.org/papers/existing",
+                "deduped": True,
+                "doi": "10.17605/OSF.IO/EXIST",
+            },
+        },
+    }, None))
+
+    result = cycle.reconcile_publication_ledgers(runs_root=runs_root, date="2026-06-29")
+
+    ledger = json.loads((ledger_dir / "2026-06-29-daily-submit.json").read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["2026-06-29-daily-submit.json"]
+    assert ledger["status"] == "published"
+    assert ledger["published"] == 1
+    assert ledger["publication_reconciliation"]["matched"] == ["submission:accepted-submission"]
+    assert ledger["submissions"][0].get("published", 0) == 0
+    assert ledger["submissions"][1]["published"] == 1
+
+
 def test_reconcile_cli_without_mode_checks_all_lanes(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     seen: dict[str, Any] = {}
 
