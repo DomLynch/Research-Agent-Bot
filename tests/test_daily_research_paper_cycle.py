@@ -7183,15 +7183,44 @@ def test_fresh_lane_unbounded_attempts_reach_ready_after_sparse_receipts(
     ]
 
 
+@pytest.mark.parametrize(
+    ("repair_limit", "expected_preflights"),
+    [
+        (
+            0,
+            [
+                ("aaa_sparse_receipts", False),
+                ("bbb_sparse_receipts", False),
+                ("zzz_ready", False),
+            ],
+        ),
+        (
+            1,
+            [
+                ("aaa_sparse_receipts", True),
+                ("bbb_sparse_receipts", False),
+                ("zzz_ready", False),
+            ],
+        ),
+        (
+            2,
+            [
+                ("aaa_sparse_receipts", True),
+                ("bbb_sparse_receipts", True),
+                ("zzz_ready", False),
+            ],
+        ),
+    ],
+)
 def test_fresh_lane_receipt_preflight_repair_respects_corpus_repair_limit(
-    tmp_path: Path, monkeypatch,
+    tmp_path: Path, monkeypatch, repair_limit: int, expected_preflights: list[tuple[str, bool]],
 ) -> None:
     for topic in ("aaa_sparse_receipts", "bbb_sparse_receipts", "zzz_ready"):
         _topic(tmp_path, topic, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 1)
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: repair_limit)
     monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (True, "source_topic_precision_ok:10/10", []))
     preflights: list[tuple[str, bool]] = []
@@ -7234,11 +7263,7 @@ def test_fresh_lane_receipt_preflight_repair_respects_corpus_repair_limit(
         max_attempts=0,
     )
 
-    assert preflights == [
-        ("aaa_sparse_receipts", True),
-        ("bbb_sparse_receipts", False),
-        ("zzz_ready", False),
-    ]
+    assert preflights == expected_preflights
     assert synthesized == ["zzz_ready"]
     assert ledger["status"] == "submitted_to_researka"
 
