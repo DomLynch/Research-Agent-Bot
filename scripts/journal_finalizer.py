@@ -2761,6 +2761,7 @@ def _manifest_effect_direction_reconciliation_note(
     lines = [
         (
             f"- {_row_citation(row)}: direction={_reviewer_adjusted_direction(row, feedback)}; "
+            f"outcome={_reviewer_adjusted_outcome(row, feedback)}; "
             f"actual reported finding={_manifest_row_finding(row)}."
         )
         for row in selected[:6]
@@ -3571,6 +3572,9 @@ def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
     )
     if not local_reclassification:
         return original
+    local = _feedback_window_for_label(feedback, citation)
+    if any(token in local for token in ("mechanistic/pilot", "mechanistic pilot")):
+        return "mechanistic/pilot evidence"
     if any(token in lower for token in (
         "misclassified", "reclassify", "re-examine", "re examine",
         "off-topic", "off topic", "segregate", "non-pooling", "non pooling",

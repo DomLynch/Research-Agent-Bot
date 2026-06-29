@@ -1947,6 +1947,50 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
 
 
+def test_revise_feedback_reconciles_inline_citations_and_named_source_direction(tmp_path: Path) -> None:
+    feedback = (
+        "Reconcile the source bundle against all inline citations: either add bundle entries "
+        "for the missing author-year references or remove uncited citations. Maintain a 1:1 "
+        "audit trail between prose and manifest.json as the Search Summary promises.; "
+        "Reclassify Parkitny 2017 in the Findings Map to reflect the positive direction "
+        "reported in the bundle (15% pain reduction, cytokine reductions) rather than 'null' "
+        "or 'no extracted directional signal' in Dosing/Pharmacokinetics; flag it as "
+        "mechanistic/pilot rather than dosing evidence if appropriate."
+    )
+    paper = (
+        "## Methods\n\nSource retrieval used a manifest.\n\n"
+        "## Evidence Landscape\n\n### Findings Map\n\n"
+        "- Parkitny 2017: outcome=Dosing/Pharmacokinetics; direction=null; "
+        "directness=indirect; tier=B2.\n\n"
+        "## References\n\n- Parkitny 2017.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{
+        "citation_token": "Parkitny 2017",
+        "source_title": (
+            "Reduced Pro-Inflammatory Cytokines after Eight Weeks of "
+            "Low-Dose Naltrexone for Fibromyalgia"
+        ),
+        "outcome_class": "dosing_pharmacokinetics",
+        "effect_direction": "null",
+        "directness": "indirect",
+        "evidence_tier": "B2",
+        "n_claims": 5,
+    }]}))
+
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(paper, asks) == asks
+
+    fixed, _logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert "Citation traceability map:" in fixed
+    assert "source-bundle entries" in fixed
+    assert "Effect-direction reconciliation note:" in fixed
+    assert "Parkitny 2017: direction=positive" in fixed
+    assert "outcome=mechanistic/pilot evidence" in fixed
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+
+
 def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
     ask = (
         "Expand Tensions and Gaps to cover the full outcome breadth of the corpus, "
