@@ -2760,7 +2760,7 @@ def _manifest_effect_direction_reconciliation_note(
         selected = sorted(rows, key=_manifest_key_finding_score)[:4]
     lines = [
         (
-            f"- {_row_citation(row)}: direction={_normalised_direction(row)}; "
+            f"- {_row_citation(row)}: direction={_reviewer_adjusted_direction(row, feedback)}; "
             f"actual reported finding={_manifest_row_finding(row)}."
         )
         for row in selected[:6]
@@ -2788,6 +2788,31 @@ def _normalised_direction(row: dict[str, Any]) -> str:
     if "mixed" in raw:
         return "mixed"
     return _direction_with_stat_guard(row, cue)
+
+
+def _reviewer_adjusted_direction(row: dict[str, Any], feedback: str) -> str:
+    base = _normalised_direction(row)
+    citation = str(row.get("citation_token") or row.get("receipt_id") or "").strip()
+    if not citation:
+        return base
+    local = _feedback_window_for_label(feedback, citation)
+    if not local or not any(token in local for token in ("reclassify", "recod", "direction")):
+        return base
+    prior, _, _ = local.partition(" rather than ")
+    scope = prior or local
+    for direction in ("positive", "negative", "mixed", "null", "unclear"):
+        if re.search(rf"\b{direction}\b(?:\s+(?:direction|effect_direction|signal|finding))?", scope):
+            return direction
+    return base
+
+
+def _feedback_window_for_label(feedback: str, label: str, radius: int = 260) -> str:
+    lower = feedback.lower()
+    needle = label.lower()
+    pos = lower.find(needle)
+    if pos < 0:
+        return ""
+    return lower[max(0, pos - radius):pos + len(needle) + radius]
 
 
 def _title_cued_direction(row: dict[str, Any]) -> str:
@@ -3664,9 +3689,9 @@ def _phase_d_source_outcome_class_map(
         fallback = str(row.get("receipt_id") or "source").strip()
         citation = f"{token}: {title}" if token and title and token not in title else (token or title or fallback)
         outcome = _reviewer_adjusted_outcome(row, feedback)
-        direction = _normalised_direction(row)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
+        direction = _reviewer_adjusted_direction(row, feedback)
         row_text = f"- {citation}: outcome={outcome}; direction={direction}; directness={directness}; tier={tier}"
         if wants_findings_map:
             row_text += f"; finding={_manifest_row_finding(row)}"
@@ -4348,6 +4373,11 @@ def _revision_asks_citation_traceability_map(feedback: str) -> bool:
         and "citation" in lower
         and any(token in lower for token in ("source bundle entry", "source-bundle entry", "bundle entry"))
         and any(token in lower for token in ("methods_pack", "citation list", "mapping"))
+    ) or (
+        "source bundle" in lower
+        and "citation" in lower
+        and "manifest" in lower
+        and any(token in lower for token in ("inline", "1:1", "audit trail", "reconcile"))
     )
 
 

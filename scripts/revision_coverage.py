@@ -1775,6 +1775,10 @@ def _asks_effect_direction_reconciliation(text: str) -> bool:
         any(token in text for token in ("effect_direction", "directionality"))
         and any(token in text for token in ("actual reported finding", "reported finding", "excerpt", "contradicted"))
         and any(token in text for token in ("reconcile", "correct", "remove", "verify"))
+    ) or (
+        "reclassify" in text
+        and "direction" in text
+        and bool(re.search(r"\b[A-Z][A-Za-z'’.\-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", text, flags=re.I))
     )
 
 
