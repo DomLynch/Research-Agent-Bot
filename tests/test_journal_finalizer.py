@@ -1133,6 +1133,40 @@ def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> No
     ]
 
 
+def test_strip_surface_duplicate_paragraphs_cleans_abstract_intro_repeat() -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    duplicate = (
+        "The thesis is: Across curated reference papers, the evidence base shows a "
+        "context-dependent profile. Positive signals appear alongside null findings, "
+        "and the synthesis surfaces cross-study disagreements across outcome classes. "
+        "This thesis is treated as an organizing claim, not as a substitute for the "
+        "structured study table, because the source record includes supportive, null, "
+        "and adverse signals across different outcome classes."
+    )
+    intro = (
+        "The introduction frames the corpus, evidence hierarchy, and interpretation "
+        "boundary before the paper turns to methods and results."
+    )
+    paper = (
+        "## Abstract\n\n"
+        f"{duplicate}\n\n"
+        "## Introduction\n\n"
+        f"{intro}\n\n"
+        f"{duplicate}\n\n"
+        "## Results\n\n"
+        "The structured evidence table separates direct, adjacent, and contextual evidence.\n"
+    )
+
+    assert _duplicate_paragraph_issue_messages(paper)
+    fixed, logs = journal_finalizer._phase_m_strip_surface_duplicate_paragraphs(paper)
+
+    assert _duplicate_paragraph_issue_messages(fixed) == ()
+    assert fixed.count(duplicate) == 1
+    assert intro in fixed
+    assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
+
+
 def test_run_text_phases_strips_late_outcome_route_duplicates(tmp_path, monkeypatch) -> None:
     from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
 
@@ -1169,6 +1203,48 @@ def test_run_text_phases_strips_late_outcome_route_duplicates(tmp_path, monkeypa
     assert "### Frailty Outcomes" not in fixed
     assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
     assert any(log.detail == "empty_subheading=1" for log in logs)
+
+
+def test_run_text_phases_strips_thesis_duplicates_added_at_terminal_phase(
+    tmp_path: Path, monkeypatch: Any,
+) -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    duplicate = (
+        "The thesis is: Across curated reference papers, the evidence base shows a "
+        "context-dependent profile with supportive, null, and adverse signals across "
+        "different outcome classes. The synthesis surfaces cross-study disagreements "
+        "and treats the thesis as an organizing claim rather than a substitute for "
+        "the structured study table."
+    )
+
+    def late_thesis(text: str) -> tuple[str, list[journal_finalizer.FinalizerLogEntry]]:
+        return (
+            text
+            + "\n\n## Discussion\n\n"
+            + duplicate,
+            [journal_finalizer.FinalizerLogEntry(
+                phase="N_declare_thesis",
+                rule="inject_discussion_markers",
+                n_changes=1,
+                detail="test late thesis insertion",
+            )],
+        )
+
+    monkeypatch.setattr(journal_finalizer, "_phase_n_declare_discussion_thesis", late_thesis)
+    paper = (
+        "## Abstract\n\n"
+        f"{duplicate}\n\n"
+        "## Results\n\n"
+        "The structured evidence table separates direct, adjacent, and contextual "
+        "evidence before narrative interpretation.\n"
+    )
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert _duplicate_paragraph_issue_messages(fixed) == ()
+    assert fixed.count(duplicate) == 1
+    assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
 
 
 def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None:

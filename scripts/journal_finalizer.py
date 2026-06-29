@@ -208,7 +208,7 @@ def _phase_m_strip_surface_duplicate_paragraphs(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     boundary = re.search(r"^##\s+(?:References|Appendix|Supplement)\b", text, flags=re.M)
     head, tail = (text[:boundary.start()], text[boundary.start():]) if boundary else (text, "")
-    body_start = re.search(r"^##\s+(?:Background|Methods|Results)\b", head, flags=re.M)
+    body_start = re.search(r"^##\s+(?:Introduction|Background|Methods|Results)\b", head, flags=re.M)
     prefix, body = (head[:body_start.start()], head[body_start.start():]) if body_start else ("", head)
     seen = [_surface_duplicate_tokens(para) for para in re.split(r"\n\s*\n", prefix)]
     seen = [tokens for tokens in seen if tokens]
