@@ -479,6 +479,55 @@ def test_consistency_gate_treats_empty_daily_submit_lane_as_clean_noop() -> None
     assert gate["blockers"] == []
 
 
+def test_consistency_gate_uses_post_baseline_accept_delta_for_date_scoped_counts() -> None:
+    local = {
+        "cycle_modes": {
+            "fresh": {
+                "started_at": "2026-06-29T20:00:01+00:00",
+                "mode": "fresh",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+            "revise": {
+                "started_at": "2026-06-29T20:15:00+00:00",
+                "mode": "revise",
+                "status": "no_revise_pending",
+                "submitted": 0,
+                "published": 0,
+            },
+            "daily-submit": {
+                "updated_at": "2026-06-29T22:15:00+00:00",
+                "mode": "daily-submit",
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+            },
+        },
+    }
+    public = {
+        "decisions": {"accept": 1},
+        "examples": [{
+            "time": "2026-06-29T21:21:25+00:00",
+            "decision": "accept",
+            "title": "Physical Exercise Effects",
+        }],
+    }
+
+    gate = report._consistency_gate(
+        local,
+        public,
+        public_accept_baseline=4,
+        min_started_at="2026-06-29T16:30:00+00:00",
+    )
+
+    assert gate["pass"] is True
+    assert gate["blockers"] == []
+    assert gate["public_accepts"] == 5
+    assert gate["public_accepts_observed"] == 1
+    assert gate["public_accepts_after_min_started_at"] == 1
+
+
 def test_cycle_ledgers_for_report_date_prefers_updated_at_over_stale_started_at(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "_daily_research_paper_cycle_ledger"
     ledger_dir.mkdir()
