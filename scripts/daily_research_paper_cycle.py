@@ -506,7 +506,12 @@ def reconcile_publication_ledgers(
     decision_seen: set[str] = set()
     if remote_loader is None:
         latest_decisions, decision_error = _latest_public_decisions_by_title()
-        if not decision_error:
+        direct_decisions, direct_error = _submitted_submission_decisions_by_title(runs_root)
+        latest_decisions = _merge_latest_by_title(
+            {} if decision_error else latest_decisions,
+            {} if direct_error else direct_decisions,
+        )
+        if latest_decisions:
             _record_review_decisions(ledger_dir, latest_decisions)
             decision_seen = _public_decision_markers(latest_decisions)
             decision_records = len(latest_decisions)
@@ -1261,6 +1266,9 @@ def _public_decision_markers(rows: dict[str, dict[str, Any]]) -> set[str]:
         topic = row.get("topic")
         if isinstance(topic, str) and topic.strip():
             markers.add(submit_bridge._topic_marker(topic))
+        submission_id = row.get("submissionId") or row.get("submission_id")
+        if isinstance(submission_id, str) and submission_id.strip():
+            markers.add(submit_bridge._submission_marker(submission_id))
     return markers
 
 
