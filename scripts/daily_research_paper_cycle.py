@@ -454,8 +454,6 @@ def _reconcile_published_ledger(
         return False
     if not submitted_runs:
         submitted_runs = matched_runs
-    ledger["submitted"] = 1
-    ledger["published"] = 1
     ledger["status"] = "published"
     ledger.pop("no_submission_reason", None)
     ledger["publication_reconciliation"] = {
@@ -487,6 +485,15 @@ def _reconcile_published_ledger(
         if submission_markers & matches or (isinstance(submission_run, str) and submission_run in matched_runs):
             submission["submitted"] = 1
             submission["published"] = 1
+    child_submitted = 0
+    child_published = 0
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        child_submitted += 1 if int(submission.get("submitted") or 0) else 0
+        child_published += 1 if int(submission.get("published") or 0) else 0
+    ledger["submitted"] = max(int(ledger.get("submitted") or 0), child_submitted, 1)
+    ledger["published"] = max(int(ledger.get("published") or 0), child_published, 1)
     return True
 
 

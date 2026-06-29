@@ -1042,6 +1042,7 @@ def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_sub
     assert result["status"] == "publication_reconciled"
     assert result["updated_ledgers"] == ["2026-06-29-daily-submit.json"]
     assert ledger["status"] == "published"
+    assert ledger["submitted"] == 2
     assert ledger["published"] == 1
     assert ledger["publication_reconciliation"]["matched"] == ["submission:accepted-submission"]
     assert ledger["submissions"][0].get("published", 0) == 0
