@@ -1926,6 +1926,81 @@ def test_fresh_lane_refreshes_topic_supply_before_thin_frontier_candidate(tmp_pa
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_fresh_lane_last_chance_rescan_submits_late_ready_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "thin_frontier", corpus=False, target_journal=True)
+    _topic(tmp_path, "late_ready", corpus=True, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", lambda *_a, **_k: {"created": []})
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
+        True, "source_topic_precision_ok:10/10", [],
+    ))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    discover_calls = 0
+    synthesized: list[str] = []
+
+    def fake_discover() -> list[str]:
+        nonlocal discover_calls
+        discover_calls += 1
+        return ["thin_frontier"] if discover_calls == 1 else ["thin_frontier", "late_ready"]
+
+    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+        if topic == "thin_frontier":
+            return {"status": "corpus_seed_empty", "n_quant_claims": 0}
+        return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "discover_topics", fake_discover)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=fake_corpus,
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["fresh_last_chance_selected"] == "late_ready"
+    assert [attempt["topic"] for attempt in ledger["attempts"]] == ["thin_frontier", "late_ready"]
+    assert synthesized == ["late_ready"]
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_fresh_lane_true_no_supply_clears_stale_terminal_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "thin_frontier", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", lambda *_a, **_k: {"created": []})
+    monkeypatch.setattr(cycle, "discover_topics", lambda: ["thin_frontier"])
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: pytest.fail("unexpected synthesis"))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-25",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        ensure_corpus=lambda *_a, **_k: {"status": "corpus_seed_empty", "n_quant_claims": 0},
+        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["status"] == "no_unpublished_topic_available"
+    assert ledger["last_attempted_topic"] == "thin_frontier"
+    assert ledger["attempted_topic"] == "thin_frontier"
+    assert ledger["topic"] is None
+
+
 def test_topic_supply_refresh_uses_deeper_default_window(tmp_path: Path, monkeypatch) -> None:
     calls: list[dict[str, Any]] = []
 
