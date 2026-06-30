@@ -3746,7 +3746,37 @@ def run_cycle(
                         )
                     if selected:
                         ledger["topic_supply_selected_after_refresh"] = selected
+                if not selected and mode == "fresh" and topic is None:
+                    topics = discover_topics()
+                    submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+                    published_topics = _published_topics(topics, remote_seen, ledger_dir)
+                    source_precision_selectable = source_precision_repaired_ok | source_precision_repaired_checkable
+                    current_source_precision = _current_low_source_precision_topics(topics)
+                    source_precision_auto_excluded = (
+                        _unrepairable_source_precision_topics(ledger_dir)
+                        | _source_precision_repair_topics(ledger_dir)
+                        | (current_source_precision - source_precision_selectable)
+                    ) - source_precision_selectable
+                    selection_excluded = (
+                        attempted | terminal_excluded | pending_revision_excluded
+                        | _surface_repeat_topics(ledger_dir, runs_root=runs_root)
+                        | _recent_preflight_blocked_topics(ledger_dir)
+                        | writer_gate_skip | source_precision_auto_excluded
+                    )
+                    selected = select_topic(
+                        topics,
+                        ledger_dir,
+                        runs_root=runs_root,
+                        remote_seen=remote_seen,
+                        exclude=selection_excluded,
+                        allow_recent_blocked_fallback=False,
+                    )
+                    if selected:
+                        ledger["fresh_last_chance_selected"] = selected
                 if not selected:
+                    if mode == "fresh" and topic is None and ledger.get("attempted_topic"):
+                        ledger["last_attempted_topic"] = ledger["attempted_topic"]
+                        ledger["topic"] = None
                     ledger["status"] = "no_unpublished_topic_available"
                     break
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
