@@ -511,6 +511,104 @@ def test_consistency_gate_treats_empty_daily_submit_lane_as_clean_noop() -> None
     assert gate["blockers"] == []
 
 
+def test_consistency_gate_allows_fresh_submitted_when_same_topic_revise_published() -> None:
+    local = {
+        "cycle_modes": {
+            "fresh": {
+                "started_at": "2026-07-01T20:00:01+00:00",
+                "mode": "fresh",
+                "topic": "ramadan_fasting_effects",
+                "status": "submitted_to_researka",
+                "submitted": 1,
+                "published": 0,
+            },
+            "revise": {
+                "started_at": "2026-07-01T20:15:00+00:00",
+                "mode": "revise",
+                "topic": "ramadan_fasting_effects",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+            "daily-submit": {
+                "updated_at": "2026-07-01T22:15:00+00:00",
+                "mode": "daily-submit",
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+            },
+        },
+    }
+    public = {
+        "decisions": {"accept": 2},
+        "examples": [{
+            "time": "2026-07-01T22:13:46+00:00",
+            "decision": "accept",
+            "title": "Hypothesis-Generating Brief: Ramadan Fasting Effects",
+        }],
+    }
+
+    gate = report._consistency_gate(
+        local,
+        public,
+        public_accept_baseline=4,
+        min_started_at="2026-06-29T16:30:00+00:00",
+    )
+
+    assert gate["pass"] is True
+    assert gate["blockers"] == []
+    assert gate["public_accepts"] == 5
+    assert gate["public_accepts_after_min_started_at"] == 1
+
+
+def test_consistency_gate_keeps_fresh_blocker_when_downstream_topic_differs() -> None:
+    local = {
+        "cycle_modes": {
+            "fresh": {
+                "started_at": "2026-07-01T20:00:01+00:00",
+                "mode": "fresh",
+                "topic": "ramadan_fasting_effects",
+                "status": "submitted_to_researka",
+                "submitted": 1,
+                "published": 0,
+            },
+            "revise": {
+                "started_at": "2026-07-01T20:15:00+00:00",
+                "mode": "revise",
+                "topic": "calcium_supplementation_effects",
+                "status": "published",
+                "submitted": 1,
+                "published": 1,
+            },
+            "daily-submit": {
+                "updated_at": "2026-07-01T22:15:00+00:00",
+                "mode": "daily-submit",
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+            },
+        },
+    }
+    public = {
+        "decisions": {"accept": 2},
+        "examples": [{
+            "time": "2026-07-01T22:13:46+00:00",
+            "decision": "accept",
+            "title": "Hypothesis-Generating Brief: Ramadan Fasting Effects",
+        }],
+    }
+
+    gate = report._consistency_gate(
+        local,
+        public,
+        public_accept_baseline=4,
+        min_started_at="2026-06-29T16:30:00+00:00",
+    )
+
+    assert gate["pass"] is False
+    assert gate["blockers"] == ["fresh:not_published"]
+
+
 def test_consistency_gate_uses_post_baseline_accept_delta_for_date_scoped_counts() -> None:
     local = {
         "cycle_modes": {
