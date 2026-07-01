@@ -533,7 +533,14 @@ def _phase_b_lane_qualifier(
     n_patched = 0
     for i in range(0, len(paragraphs), 2):
         para = paragraphs[i]
-        if not para.strip() or para.lstrip().startswith(("##", "###")):
+        stripped = para.lstrip()
+        if not stripped or stripped.startswith(("##", "###")):
+            continue
+        if stripped.startswith((
+            "Findings Map completeness note:",
+            "Findings Map accounting note:",
+            "Direction heterogeneity note:",
+        )):
             continue
         if not any(tok in para for tok in animal_tokens):
             continue
@@ -542,7 +549,6 @@ def _phase_b_lane_qualifier(
         citation_pool = lane_map or {tok: "animal_preclinical" for tok in animal_tokens}
         cited = [tok for tok in citation_pool if tok in para]
         lead = _ANIMAL_QUALIFIER_LEAD if cited and sum(tok in animal_tokens for tok in cited) * 2 > len(cited) else "Additional corpus sources included animal/preclinical evidence; "
-        stripped = para.lstrip()
         bullet = re.match(r"^([-*]\s+)(.+)$", stripped, flags=re.S)
         if bullet:
             paragraphs[i] = para[: len(para) - len(stripped)] + bullet.group(1) + lead + _lowercase_first_letter(bullet.group(2))
@@ -3803,18 +3809,7 @@ def _phase_d_source_outcome_class_map(
         for row in rows
         if str(row.get("citation_token") or "").strip()
     }
-    wants_structured_findings_map = wants_findings_map and (
-        "directional-coding counts" in lower_feedback
-        or "directional coding counts" in lower_feedback
-        or "n, direction, and directness" in lower_feedback
-        or (
-            "for each outcome class" in lower_feedback
-            and "directness" in lower_feedback
-            and "effect direction" in lower_feedback
-            and "one-line finding" in lower_feedback
-        )
-    )
-    if wants_structured_findings_map:
+    if wants_findings_map:
         note = _findings_map_section(
             rows,
             extra_notes=_findings_map_feedback_notes(feedback, present_tokens),

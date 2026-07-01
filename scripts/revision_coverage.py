@@ -310,6 +310,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _direct_interventional_reclassification_is_stated(paper_md, ask)
     if _asks_combination_product_signal_boundary(lower):
         return _combination_product_signal_boundary_is_stated(paper_md)
+    if _asks_directional_coding(lower):
+        return _directional_coding_explanation_is_material(paper_md)
     if _asks_substantive_evidence_synthesis(lower):
         return _substantive_evidence_synthesis_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
     if _asks_forward_dated_ai_disclosure_note(lower):
@@ -346,8 +348,6 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         return _evidence_boundary_is_stated(paper_md, lower)
     if _asks_conclusion_unproven_humans(lower):
         return _conclusion_unproven_humans_is_stated(paper_md)
-    if _asks_directional_coding(lower):
-        return _directional_coding_explanation_is_material(paper_md)
     if _asks_directional_table_narrative_consistency(lower):
         return _directional_table_narrative_is_consistent(paper_md)
     if _asks_contextual_without_directional_signal(lower):
@@ -2082,11 +2082,14 @@ def _outcome_class_key_findings_are_stated(paper_md: str) -> bool:
     findings = _section(paper_md, "Key Findings")
     lower = findings.lower()
     return bool(
-        "outcome-class key findings:" in lower
-        and "admitted n=" in lower
-        and "direction" in lower
-        and "directness" in lower
-        and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", findings)
+        (
+            "outcome-class key findings:" in lower
+            and "admitted n=" in lower
+            and "direction" in lower
+            and "directness" in lower
+            and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", findings)
+        )
+        or _key_findings_source_verdict_is_stated(paper_md)
     )
 
 

@@ -2127,9 +2127,11 @@ def test_finalizer_phase_f_idempotent(tmp_path) -> None:
     first = (tmp_path / "full_paper.md").read_text()
     finalize_run(tmp_path)
     second = (tmp_path / "full_paper.md").read_text()
-    # The Mechanism row appears exactly once after re-runs
-    assert first.count("| Mechanism |") == 1
-    assert second.count("| Mechanism |") == 1
+    # The Phase F Mechanism row appears exactly once in the Results overview table after re-runs.
+    first_results_table = first.split("## Results", 1)[1].split("### Longevity Outcomes", 1)[0]
+    second_results_table = second.split("## Results", 1)[1].split("### Longevity Outcomes", 1)[0]
+    assert first_results_table.count("| Mechanism |") == 1
+    assert second_results_table.count("| Mechanism |") == 1
 
 
 def test_slice35_thin_corpus_brief_does_not_flag_missing_long_form_sections() -> None:
