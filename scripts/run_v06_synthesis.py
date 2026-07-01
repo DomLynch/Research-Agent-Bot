@@ -502,14 +502,14 @@ def _translation_boundary_statement(topic: str) -> str:
     if pharmacologic:
         return (
             "Pending further trials, the intervention should not be used "
-            "off-label for geroprotection or anti-aging purposes outside "
+            "off-label for broad aging-related prevention claims outside "
             "clinical-trial settings given current evidence."
         )
     return (
         f"The current corpus may support {topic} as a general health or "
         "lifestyle intervention where otherwise indicated, but does not "
-        "justify marketing it as a standalone geroprotective or anti-aging "
-        "intervention with proven hard-longevity effects."
+        "justify marketing it as a standalone longevity intervention with "
+        "proven hard clinical-outcome effects."
     )
 
 
@@ -587,9 +587,9 @@ def _compile_public_section_backstop(
             ),
             (
                 f"The conclusion is that {topic} remains a bounded "
-                f"geroscience case: {evidence_basis} defines the scope for targeted "
+                f"evidence case: {evidence_basis} defines the scope for targeted "
                 "testing, while "
-                "mixed and null findings limit any unqualified anti-aging "
+                "mixed and null findings limit any unqualified broad clinical "
                 "claim."
             ),
         ],
@@ -709,7 +709,7 @@ def _compile_public_section_backstop(
                 f"read alongside null sources ({null_refs}) and negative "
                 f"sources ({neg_refs}). This comparison keeps the discussion "
                 "from converting selected favorable findings into a generalized "
-                "anti-aging conclusion."
+                "clinical conclusion."
             ),
             (
                 "The practical implication is a calibrated research position. "
@@ -766,13 +766,13 @@ def _compile_public_section_backstop(
         "Conclusion": [
             (
                 f"For {topic}, the final interpretation is deliberately tiered: "
-                f"{evidence_basis} defines a bounded geroscience rationale, "
+                f"{evidence_basis} defines a bounded evidence rationale, "
                 "but the corpus does not support treating "
                 "mechanistic target engagement, intermediate biomarkers, and "
                 "patient-relevant outcomes as interchangeable evidence. "
                 "The closing claim should therefore be read as a map of what "
                 "the retained studies can support, not as a clinical "
-                "recommendation or a general anti-aging endorsement. Positive "
+                "recommendation or a general efficacy endorsement. Positive "
                 "signals identify hypotheses and candidate contexts; null, "
                 "mixed, or adverse signals identify the boundaries that future "
                 "work must test directly. The evidence hierarchy remains "
@@ -815,7 +815,7 @@ def _compile_public_section_backstop(
                 f"Future work should prioritize studies that connect "
                 f"mechanistic studies ({mech_refs}) to direct clinical outcomes "
                 f"represented by {direct_refs}. Until that bridge is stronger, "
-                f"{topic} remains a promising but bounded geroscience case whose "
+                f"{topic} remains a promising but bounded evidence case whose "
                 "most useful contribution is to define the next trial rather "
                 "than to justify current clinical adoption."
             ),
@@ -2481,7 +2481,7 @@ def build_thesis(
             "Cross-Domain Synthesis."
         )
     parts.append(
-        f"The {topic} anti-aging case as currently constituted is "
+        f"The {topic} broad aging-related case as currently constituted is "
         "incomplete: mechanistic plausibility coexists with mixed "
         "or sparse human-RCT evidence, and the boundary conditions "
         "remain to be established."

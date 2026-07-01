@@ -365,8 +365,8 @@ def build_what_this_adds_section(
         f"{n_outcomes} outcome class"
         + ("" if n_outcomes == 1 else "es")
         + f" {pair_clause}. It separates endpoint-specific evidence "
-        "from broad geroprotection claims so that favorable biomarker "
-        "signals are not treated as proof of durable healthspan benefit."
+        "from broad clinical-translation claims so that favorable biomarker "
+        "signals are not treated as proof of durable clinical benefit."
     )
     lines.append("")
 

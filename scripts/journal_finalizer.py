@@ -2517,7 +2517,7 @@ def _phase_d_scope_framing_note(
     note = (
         "Scope-framing note: This evidence map frames "
         f"{topic} as clinical applications across heterogeneous indications rather "
-        "than as standalone anti-aging or longevity proof. Aging-relevant "
+        "than as standalone proof of broad longevity benefit. Aging-relevant "
         "interpretation is restricted to source rows whose endpoint, population, "
         "and outcome-class metadata directly support it; otherwise the retained "
         "evidence is contextual and hypothesis-generating."
@@ -3721,7 +3721,7 @@ def _species_study_design_bucket(row: dict[str, Any]) -> tuple[str, str, str]:
         return ("Preclinical rodent", "animal/preclinical experiment", "Preclinical rows support mechanism only; they do not establish human efficacy.")
     if any(token in title for token in ("human", "patient", "patients", "participant", "participants", "donor", "clinical", "parkinson")):
         if any(token in title for token in ("randomized", "trial", "placebo", "intervention", "safety", "tolerability")):
-            return ("Human", "clinical trial/intervention or safety cohort", "Human rows bound clinical interpretation but do not prove broad geroprotection without hard-endpoint follow-up.")
+            return ("Human", "clinical trial/intervention or safety cohort", "Human rows bound clinical interpretation but do not prove broad clinical benefit without hard-endpoint follow-up.")
         return ("Human", "observational/donor or cohort evidence", "Human observational rows are interpreted as association or feasibility evidence.")
     if any(token in title for token in ("cell", "cells", "in vitro", "organoid")):
         return ("Cell/in vitro", "cell or ex vivo model", "Cell-model rows are mechanistic context, not organism-level efficacy evidence.")
