@@ -133,6 +133,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_revision_audit_notes(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
+        lambda t: _phase_d_revision_artifact_cleanup(t, out_dir),
         lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
@@ -177,6 +178,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_m_repair_surface_artifacts,
         lambda t: _phase_d_reference_closure(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
+        lambda t: _phase_d_revision_artifact_cleanup(t, out_dir),
         lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
         _phase_n_declare_discussion_thesis,
     ):
@@ -185,6 +187,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, log = _phase_b_lane_qualifier(text, out_dir)
     entries.extend(log)
     text, log = _phase_c_terminology(text)
+    entries.extend(log)
+    text, log = _phase_d_revision_artifact_cleanup(text, out_dir)
     entries.extend(log)
     text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
     entries.extend(log)
@@ -4908,6 +4912,67 @@ def _phase_d_revision_surface_notes(
         phase="D_revision_surface_notes",
         rule="insert_manifest_backed_revision_surface_notes",
         n_changes=n,
+        detail=", ".join(details),
+    )]
+
+
+def _phase_d_revision_artifact_cleanup(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    lower = " ".join(feedback.lower().split())
+    if not lower:
+        return text, []
+    patched = text
+    details: list[str] = []
+    if (
+        "ioannidis 2005" in lower
+        and any(token in lower for token in (
+            "not present in the source bundle",
+            "not in the source bundle",
+            "bundle-resident source",
+        ))
+    ):
+        before = patched
+        patched = re.sub(
+            r"\s*Reviewer guidance regarding[^.\n]*Ioannidis 2005[^.\n]*\.\s*",
+            " ",
+            patched,
+        )
+        patched = re.sub(
+            r"(?m)^-\s+\*\*Ioannidis 2005\.\*\*.*(?:\n|$)",
+            "",
+            patched,
+        )
+        patched = re.sub(
+            r"(?<!\w)[^.!\n]*\bIoannidis 2005\b[^.!\n]*[.!]\s*",
+            "",
+            patched,
+        )
+        if patched != before:
+            details.append("removed_non_bundle_ioannidis_2005")
+    if (
+        "metabolic-functional tradeoff" in lower
+        or "metabolic functional tradeoff" in lower
+        or "falsifying-test" in lower
+        or "falsifying test" in lower
+    ):
+        before = patched
+        patched = re.sub(
+            r"^## Metabolic-Functional Tradeoff Framework\b.*?(?=^## |\Z)",
+            "",
+            patched,
+            flags=re.M | re.S,
+        )
+        if patched != before:
+            details.append("removed_unsupported_tradeoff_framework")
+    if patched == text:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_revision_artifact_cleanup",
+        rule="remove_revision_prompt_artifacts",
+        n_changes=len(details),
         detail=", ".join(details),
     )]
 
