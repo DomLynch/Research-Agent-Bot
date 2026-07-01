@@ -481,7 +481,7 @@ def test_section_backstop_handles_plural_topic_names() -> None:
         orch._ACTIVE_TOPIC = old_topic
 
     assert "For NAD+ precursor, the final interpretation is deliberately tiered" in backstop
-    assert "off-label for geroprotection" in backstop
+    assert "off-label for broad aging-related prevention claims" in backstop
     assert "In conclusion, nad precursors has enough" not in backstop
 
 
@@ -509,5 +509,5 @@ def test_section_backstop_uses_lifestyle_boundary_for_exercise() -> None:
         orch._ACTIVE_TOPIC = old_topic
 
     assert "general health or lifestyle intervention" in backstop
-    assert "standalone geroprotective or anti-aging intervention" in backstop
+    assert "standalone longevity intervention with proven hard clinical-outcome effects" in backstop
     assert "should not be used off-label" not in backstop

@@ -105,7 +105,7 @@ def repair_abstract_claim_strength(body_md: str) -> tuple[str, int]:
         (r"\b[Rr]obust\s+(effects?|benefits?|signals?)\b", r"context-dependent \1"),
         (r"\bclinical signals justify\b", "clinical signals can motivate"),
         (r"\bjustify further targeted testing\b", "can motivate further targeted testing"),
-        (r"\bremains a bounded geroscience case\b", "should be treated as a bounded geroscience hypothesis"),
+        (r"\bremains a bounded geroscience case\b", "should be treated as a bounded evidence hypothesis"),
         (r"\battenuated\b", "was reported to attenuate"),
         (r"\bmodulated\b", "was reported to modulate"),
     )

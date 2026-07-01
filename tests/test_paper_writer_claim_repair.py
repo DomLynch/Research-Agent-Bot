@@ -73,7 +73,7 @@ def test_abstract_repair_softens_broad_claim_strength_phrases() -> None:
     assert "suggested by preclinical models" in repaired
     assert "is consistent with the thesis" in repaired
     assert "can motivate further targeted testing" in repaired
-    assert "bounded geroscience hypothesis" in repaired
+    assert "bounded evidence hypothesis" in repaired
 
 
 def test_abstract_repair_does_not_break_negative_establish_claims() -> None:

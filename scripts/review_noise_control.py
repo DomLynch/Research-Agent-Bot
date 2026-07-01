@@ -188,7 +188,7 @@ def _apply_clinical_policy_caveat(text: str, feedback: str) -> tuple[str, int]:
     ):
         return text, 0
     sentence = (
-        "Current evidence does not support clinical or policy use for geroprotection; "
+        "Current evidence does not support clinical or policy use for broad aging-related benefit; "
         "the synthesis is evidentiary, not medical guidance."
     )
     changed = 0

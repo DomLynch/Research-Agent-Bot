@@ -509,11 +509,11 @@ Required content:
 5. **Clinical-practice statement (peer-review fix 2026-05-09):** state
    explicitly what the current evidence does and does not support for
    clinical practice. For drugs, compounds, or supplements, use a
-   "Pending further trials" off-label geroprotective-use boundary.
+   "Pending further trials" off-label broad-aging-claim boundary.
    For lifestyle, dietary, or
    exercise interventions, do not imply the intervention should be
    avoided outside trials; instead state that general-health support is
-   separate from marketing a proven standalone anti-aging intervention.
+   separate from marketing proven broad longevity benefit.
    The conclusion that "evidence is mixed and incomplete" is correct
    but insufficient — the reader needs actionable practice guidance.
 
