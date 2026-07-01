@@ -6773,20 +6773,31 @@ def test_recent_preflight_blocked_topics_include_receipt_preflight(tmp_path: Pat
     assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"hrv_autonomic_aging"}
 
 
-def test_recent_preflight_blocked_topics_include_source_bundle_mismatch(tmp_path: Path) -> None:
+@pytest.mark.parametrize(
+    ("status", "topic"),
+    [
+        ("source_bundle_topic_mismatch:9/19:rows=4,5,6,8,12", "immune_checkpoint_inhibitors_rates"),
+        ("source_bundle_unmapped_sources:outcome=0,citation=1", "protein_nutrition"),
+    ],
+)
+def test_recent_preflight_blocked_topics_include_source_bundle_failures(
+    tmp_path: Path,
+    status: str,
+    topic: str,
+) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     cycle._record_blockers(
         ledger_dir,
         "2026-07-02",
         [{
-            "topic": "immune_checkpoint_inhibitors_rates",
-            "gate_status": "source_bundle_topic_mismatch:9/19:rows=4,5,6,8,12",
+            "topic": topic,
+            "gate_status": status,
             "submitted": 0,
         }],
     )
 
-    assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"immune_checkpoint_inhibitors_rates"}
+    assert cycle._recent_preflight_blocked_topics(ledger_dir) == {topic}
 
 
 def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, monkeypatch) -> None:
