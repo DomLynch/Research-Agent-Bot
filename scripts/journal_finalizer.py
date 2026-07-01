@@ -112,6 +112,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_scope_annex_note(t, out_dir),
         lambda t: _phase_d_evidence_boundary_note(t, out_dir),
         lambda t: _phase_d_evidence_honesty_guard(t, out_dir),
+        _phase_d_domain_frame_template_cleanup,
         lambda t: _phase_d_evidence_honesty_deduplicate(t, out_dir),
         lambda t: _phase_d_long_term_safety_scope(t, out_dir),
         lambda t: _phase_d_tier_directness_boundaries(t, out_dir),
@@ -1583,6 +1584,38 @@ def _phase_d_evidence_honesty_deduplicate(
         rule="remove_repeated_evidence_honesty_notes",
         n_changes=removed,
         detail=f"removed {removed} repeated evidence-honesty note(s) after reviewer repetition ask",
+    )]
+
+
+_DOMAIN_FRAME_TEMPLATE_REWRITES: tuple[tuple[str, str], ...] = (
+    (
+        r"[^.\n]*\bbounded geroscience (?:case|hypothesis|rationale)\b[^.\n]*\.",
+        "The conclusion is narrower: the retained evidence maps associations, mechanisms, and candidate endpoints for follow-up; it does not establish clinical benefit or therapeutic actionability.",
+    ),
+    (r"\bgeroscience intervention target\b", "clinical intervention target"),
+    (r"\bunqualified anti-aging (claim|conclusion)\b", r"unqualified broad clinical \1"),
+    (r"\bgeneralized anti-aging (claim|conclusion)\b", r"generalized broad clinical \1"),
+    (r"\bgeneral anti-aging endorsement\b", "general efficacy endorsement"),
+    (r"\bstandalone anti-aging or longevity proof\b", "standalone proof of broad longevity benefit"),
+    (r"\bproven standalone anti-aging intervention\b", "proven broad-longevity intervention"),
+    (r"\bgeroprotection\b", "clinical translation"),
+    (r"\bdurable healthspan benefit\b", "durable clinical benefit"),
+)
+
+
+def _phase_d_domain_frame_template_cleanup(text: str) -> tuple[str, list[FinalizerLogEntry]]:
+    patched = text
+    n_total = 0
+    for pattern, replacement in _DOMAIN_FRAME_TEMPLATE_REWRITES:
+        patched, n = re.subn(pattern, replacement, patched, flags=re.I)
+        n_total += n
+    if not n_total:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_domain_frame_template_cleanup",
+        rule="remove_unsupported_aging_domain_frames",
+        n_changes=n_total,
+        detail=f"rewrote {n_total} unsupported domain-frame template phrase(s)",
     )]
 
 

@@ -8,6 +8,28 @@ from typing import Any
 from agent import journal_finalizer
 
 
+def test_domain_frame_template_cleanup_removes_submit_blocked_aging_phrases() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "The intervention remains a bounded geroscience case. "
+        "Selected biomarkers should not be treated as proof of durable healthspan benefit.\n\n"
+        "## Conclusion\n\n"
+        "The retained clinical and mechanistic evidence profile defines a bounded geroscience rationale. "
+        "The discussion should avoid any unqualified anti-aging claim, broad geroprotection, "
+        "or standalone anti-aging or longevity proof."
+    )
+
+    fixed, logs = journal_finalizer._phase_d_domain_frame_template_cleanup(paper)
+
+    assert "bounded geroscience" not in fixed
+    assert "durable healthspan benefit" not in fixed
+    assert "unqualified anti-aging claim" not in fixed
+    assert "geroprotection" not in fixed
+    assert "standalone anti-aging or longevity proof" not in fixed
+    assert "bounded evidence" not in fixed
+    assert logs and logs[0].phase == "D_domain_frame_template_cleanup"
+
+
 def test_phase_f_fills_existing_empty_results_outcome_heading(tmp_path: Path) -> None:
     paper = (
         "## Results\n\n"
