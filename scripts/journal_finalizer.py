@@ -205,6 +205,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_n_declare_discussion_thesis(text)
     entries.extend(log)
+    text, log = _phase_b_lane_qualifier(text, out_dir)
+    entries.extend(log)
     text, log = _phase_m_strip_terminal_thesis_duplicates(text)
     entries.extend(log)
     return text, entries
@@ -446,13 +448,38 @@ def _scoped_backstop_replacement(section: str, prefix: str) -> str:
         section_label,
         "In this section, the paragraph is tied to the local interpretive task.",
     )
+    section_expansion = {
+        "introduction": (
+            "For the introduction, the practical consequence is a bounded "
+            "problem statement: the reader sees why the topic matters, what "
+            "kind of evidence can answer it, and why the paper will not treat "
+            "background plausibility as a finished result."
+        ),
+        "cross-domain synthesis": (
+            "For cross-domain synthesis, the practical consequence is a bridge "
+            "test: the section asks whether signals travel coherently from "
+            "mechanism to endpoint, where that bridge weakens, and which "
+            "population, dose, comparator, or follow-up choices would make the "
+            "next study more decisive."
+        ),
+        "limitations": (
+            "For limitations, the practical consequence is an explicit ceiling "
+            "on inference: the section names what the retained sources cannot "
+            "settle, what would be needed to settle it, and why the present "
+            "paper remains useful without claiming more than it has proven."
+        ),
+    }.get(
+        section_label,
+        "The practical consequence is a bounded local claim that remains tied "
+        "to the verified evidence roles in this run.",
+    )
     return (
         f"{section_frame} The {subject} is section-scoped: it explains how "
         "directness, population fit, direction of effect, and safety-tradeoff "
         f"uncertainty constrain this portion of the paper. {focus} The public "
         "word floor is preserved without hiding null or adverse signals, "
         "inflating certainty, or reusing the same generic caution as a "
-        "cross-section conclusion."
+        f"cross-section conclusion. {section_expansion}"
     )
 
 
