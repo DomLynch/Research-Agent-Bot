@@ -2329,8 +2329,8 @@ def test_scope_framing_and_direction_tally_audit_are_structural_asks() -> None:
     repaired = (
         "## Research Question\n\n"
         "Scope-framing note: This evidence map frames the target intervention as clinical "
-        "applications across heterogeneous indications rather than as standalone anti-aging "
-        "or longevity proof. Aging-relevant interpretation is restricted to source rows whose "
+        "applications across heterogeneous indications rather than as standalone proof of broad "
+        "longevity benefit. Aging-relevant interpretation is restricted to source rows whose "
         "metadata directly support it.\n\n"
         "## Key Findings\n\n"
         "Per-source direction/directness/tier audit table:\n\n"
