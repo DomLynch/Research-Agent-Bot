@@ -898,6 +898,37 @@ def test_researka_preflight_blocks_off_topic_source_bundle_row(tmp_path: Path) -
     assert daily._researka_preflight_status(payload) == "source_bundle_topic_mismatch:1/12:rows=2"
 
 
+def test_source_bundle_topic_gate_allows_large_bundle_with_one_off_topic_tail_row(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"
+    for row in payload["source_bundle"]:
+        row["title"] = "Low-dose naltrexone trial in chronic pain"
+        row["excerpt"] = "Low-dose naltrexone was evaluated in adults with chronic pain."
+        row["outcome_class"] = "dosing_pharmacokinetics"
+        row["evidence_context"] = "adjacent"
+    payload["source_bundle"] = [dict(row) for _ in range(3) for row in payload["source_bundle"]]
+    payload["source_bundle"][20]["title"] = "LDN laparoscopic donor nephrectomy cohort"
+    payload["source_bundle"][20]["excerpt"] = "Laparoscopic donor nephrectomy perioperative outcomes."
+
+    assert daily._source_bundle_topic_status(payload) == "eligible"
+
+
+def test_source_bundle_topic_gate_blocks_large_bundle_above_tail_tolerance(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"
+    for row in payload["source_bundle"]:
+        row["title"] = "Low-dose naltrexone trial in chronic pain"
+        row["excerpt"] = "Low-dose naltrexone was evaluated in adults with chronic pain."
+        row["outcome_class"] = "dosing_pharmacokinetics"
+        row["evidence_context"] = "adjacent"
+    payload["source_bundle"] = [dict(row) for _ in range(3) for row in payload["source_bundle"]]
+    for idx in (20, 21):
+        payload["source_bundle"][idx]["title"] = "LDN laparoscopic donor nephrectomy cohort"
+        payload["source_bundle"][idx]["excerpt"] = "Laparoscopic donor nephrectomy perioperative outcomes."
+
+    assert daily._source_bundle_topic_status(payload) == "source_bundle_topic_mismatch:2/36:rows=21,22"
+
+
 def test_researka_preflight_blocks_unsupported_domain_frame_template(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["body_markdown"] += (
