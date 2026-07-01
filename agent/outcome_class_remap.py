@@ -24,6 +24,27 @@ ENDPOINT_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bpatient[-\s]?reported\s+outcome\b", re.I), "healthspan_qol"),
 )
 
+SOURCE_TEXT_OUTCOME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
+    (
+        re.compile(
+            r"\b(?:pregnan\w*|pre[-\s]?eclampsia|gestational\s+hypertension|"
+            r"hypertensive\s+disorders?\s+of\s+pregnancy)\b",
+            re.I,
+        ),
+        "cardiometabolic",
+    ),
+    (
+        re.compile(
+            r"\b(?:cardiovascular|cvd|ischemic\s+stroke|stroke|blood\s+pressure|"
+            r"hypertension|hypertensive|type\s+2\s+diabetes|diabetes|insulin|"
+            r"glucose|body\s+weight|bmi|overweight|metabolic)\b",
+            re.I,
+        ),
+        "cardiometabolic",
+    ),
+    (re.compile(r"\b(?:creatinine|renal|kidney)\b", re.I), "safety_comorbidity"),
+)
+
 OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
     "cardiometabolic": ("Cardiometabolic", (), ()),
     "cognitive": ("Cognitive", (), ()),
@@ -117,9 +138,14 @@ def refine_other_outcome_class(receipt: object, current_class: str) -> str:
     available before manifest/results rendering. Domain packs can later
     replace the rule tuple without changing the receipt compiler.
     """
+    text = " ".join(str(getattr(receipt, name, "") or "") for name in ("receipt_id", "source_title", "population_summary")).lower()
+    source_override = _lookup_source_text(text)
+    if source_override is not None and current_class in {
+        "other", "contextual_other", "skeletal_fracture_bone", "dosing_pharmacokinetics",
+    }:
+        return source_override
     if current_class != "other":
         return current_class
-    text = " ".join(str(getattr(receipt, name, "") or "") for name in ("receipt_id", "source_title", "population_summary")).lower()
     for label, needles in BIOMEDICAL_OTHER_OUTCOME_RULES:
         if any(needle in text for needle in needles):
             return label
@@ -142,6 +168,16 @@ def _lookup(endpoint: str) -> str | None:
     if normalized in ENDPOINT_REMAP:
         return ENDPOINT_REMAP[normalized]
     for pattern, target in ENDPOINT_PATTERNS:
+        if pattern.search(normalized):
+            return target
+    return None
+
+
+def _lookup_source_text(text: str) -> str | None:
+    normalized = " ".join(str(text or "").lower().split())
+    if not normalized:
+        return None
+    for pattern, target in SOURCE_TEXT_OUTCOME_PATTERNS:
         if pattern.search(normalized):
             return target
     return None
