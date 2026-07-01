@@ -3786,7 +3786,11 @@ def _phase_d_source_outcome_class_map(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
-    if not revision_coverage.asks_source_outcome_class_map(feedback):
+    wants_findings_map = revision_coverage.asks_findings_map_detail(feedback)
+    if not (
+        revision_coverage.asks_source_outcome_class_map(feedback)
+        or wants_findings_map
+    ):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
@@ -3794,14 +3798,42 @@ def _phase_d_source_outcome_class_map(
     if not rows:
         return text, []
     lower_feedback = feedback.lower()
-    wants_findings_map = revision_coverage.asks_findings_map_detail(lower_feedback)
     present_tokens = {
         str(row.get("citation_token") or "").strip()
         for row in rows
         if str(row.get("citation_token") or "").strip()
     }
+    if wants_findings_map:
+        note = _findings_map_section(
+            rows,
+            extra_notes=_findings_map_feedback_notes(feedback, present_tokens),
+        )
+        existing = re.search(
+            r"^### (?:Findings Map|Source (?:Outcome-Class|Classification) Map)\b.*?(?=^### |^## |\Z)",
+            text,
+            flags=re.M | re.S,
+        )
+        if existing:
+            if existing.group(0).strip() == note.strip():
+                return text, []
+            patched = text[:existing.start()] + note + "\n\n" + text[existing.end():]
+            return patched, [FinalizerLogEntry(
+                phase="D_source_outcome_class_map",
+                rule="map_sources_to_outcome_classes",
+                n_changes=1,
+                detail=f"replaced Findings Map from {len(rows)} manifest receipt(s)",
+            )]
+        patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
+        if not n:
+            return text, []
+        return patched, [FinalizerLogEntry(
+            phase="D_source_outcome_class_map",
+            rule="map_sources_to_outcome_classes",
+            n_changes=1,
+            detail=f"added Findings Map from {len(rows)} manifest receipt(s)",
+        )]
     examples = []
-    for row in rows if wants_findings_map else rows[:40]:
+    for row in rows[:40]:
         token = str(row.get("citation_token") or "").strip()
         title = str(row.get("source_title") or "").strip()
         fallback = str(row.get("receipt_id") or "source").strip()
@@ -3811,8 +3843,6 @@ def _phase_d_source_outcome_class_map(
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
         direction = _reviewer_adjusted_direction(row, feedback)
         row_text = f"- {citation}: outcome={outcome}; direction={direction}; directness={directness}; tier={tier}"
-        if wants_findings_map:
-            row_text += f"; finding={_manifest_row_finding(row)}"
         examples.append(f"{row_text}.")
     notes = []
     if "biomarker-positive" in feedback.lower() and "clinical-endpoint" in feedback.lower():
@@ -3855,12 +3885,6 @@ def _phase_d_source_outcome_class_map(
         adjacent_note = _adjacent_human_evidence_note(rows)
         if adjacent_note:
             notes.append(adjacent_note)
-    if wants_findings_map:
-        labels = ", ".join(_row_citation(row) for row in rows)
-        notes.append(
-            f"Findings Map completeness note: all {len(rows)} admitted manifest rows "
-            f"are surfaced below ({labels})."
-        )
     named = {
         m.group(0)
         for m in re.finditer(r"\b[A-Z][A-Za-z'’\-]+ 20\d{2}\b", feedback)
@@ -3909,31 +3933,7 @@ def _phase_d_proactive_findings_map(
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
-    lines = [
-        "### Findings Map",
-        "",
-        (
-            f"Findings Map completeness note: all {len(rows)} admitted manifest rows "
-            "are surfaced below; outcome class follows endpoint/source context before topic keywords."
-        ),
-        "",
-        "| Source | Outcome class | Direction | Directness | Tier | Finding |",
-        "| --- | --- | --- | --- | --- | --- |",
-    ]
-    for row in sorted(rows, key=lambda r: (_row_outcome_class(r), _row_citation(r))):
-        lines.append(
-            "| "
-            + " | ".join((
-                _table_cell(_row_citation(row)),
-                _table_cell(_evidence_role_outcome_display(row)),
-                _table_cell(_normalised_direction(row)),
-                _table_cell(str(row.get("directness") or "unknown")),
-                _table_cell(str(row.get("evidence_tier") or "unknown")),
-                _table_cell(_manifest_row_finding(row)),
-            ))
-            + " |"
-        )
-    note = "\n".join(lines)
+    note = _findings_map_section(rows)
     patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
     if not n:
         return text, []
@@ -3943,6 +3943,139 @@ def _phase_d_proactive_findings_map(
         n_changes=1,
         detail=f"added source-level Findings Map from {len(rows)} manifest receipt(s)",
     )]
+
+
+def _findings_map_section(
+    rows: list[dict[str, Any]],
+    *,
+    extra_notes: list[str] | None = None,
+) -> str:
+    lines = [
+        "### Findings Map",
+        "",
+        (
+            f"Findings Map completeness note: all {len(rows)} admitted manifest rows "
+            "are surfaced below; outcome class follows endpoint/source context before topic keywords."
+        ),
+        "",
+        (
+            "Findings Map accounting note: each outcome-class n, direction count, "
+            "directness count, and source roster is computed from the same source-level "
+            "rows listed in the detailed table."
+        ),
+    ]
+    for note in extra_notes or []:
+        lines.extend(("", note))
+    heterogeneity_note = _manifest_direction_heterogeneity_note(rows)
+    if heterogeneity_note:
+        lines.extend(("", heterogeneity_note))
+    lines.extend([
+        "",
+        "Outcome-class accounting roster:",
+    ])
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        grouped.setdefault(_row_base_outcome_display(row), []).append(row)
+    for outcome, outcome_rows in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
+        ordered = sorted(outcome_rows, key=_row_citation)
+        lines.append(
+            f"- {outcome}: n={len(ordered)}; "
+            f"direction counts: {_findings_map_value_counts(ordered, _normalised_direction)}; "
+            f"directness counts: {_findings_map_value_counts(ordered, _row_directness_label)}; "
+            f"sources: {'; '.join(_row_citation(row) for row in ordered)}."
+        )
+    lines.extend((
+        "",
+        "| Outcome class | Source | Direction | Directness | Tier | Evidence role | Finding |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
+    ))
+    for row in sorted(rows, key=lambda r: (_row_base_outcome_display(r), _row_citation(r))):
+        lines.append(
+            "| "
+            + " | ".join((
+                _table_cell(_row_base_outcome_display(row)),
+                _table_cell(_row_source_label(row)),
+                _table_cell(f"direction={_normalised_direction(row)}"),
+                _table_cell(f"directness={_row_directness_label(row)}"),
+                _table_cell(str(row.get("evidence_tier") or "unknown")),
+                _table_cell(f"outcome={_evidence_role_outcome_display(row)}; direction={_normalised_direction(row)}"),
+                _table_cell(f"finding={_manifest_row_finding(row)}"),
+            ))
+            + " |"
+        )
+    return "\n".join(lines)
+
+
+def _findings_map_feedback_notes(feedback: str, present_tokens: set[str]) -> list[str]:
+    lower_feedback = feedback.lower()
+    notes: list[str] = []
+    if "biomarker-positive" in lower_feedback and "clinical-endpoint" in lower_feedback:
+        notes.append(
+            "Signal-accounting note: biomarker-positive source-level findings "
+            "are separated from clinical-endpoint mixed/null rows; biomarker elevation is not "
+            "counted as clinical efficacy unless the mapped outcome class and endpoint support it."
+        )
+    if "reclassify" in lower_feedback and "mechanistic" in lower_feedback:
+        notes.append(
+            "Role-accounting note: retained translational or mechanistic-with-human-correlational "
+            "evidence is mapped by its public outcome and directness row; preclinical or mechanistic "
+            "records that are not retained in the source map are excluded from clinical outcome-class tallies."
+        )
+    if any(token in lower_feedback for token in ("tensions and gaps", "0 cross-study disagreements")):
+        contexts = [
+            label
+            for token, label in (
+                ("cognition", "cognition"),
+                ("menopause", "menopause"),
+                ("acute-care", "acute-care"),
+                ("acute care", "acute-care"),
+            )
+            if token in lower_feedback
+        ]
+        context_note = f" across {', '.join(dict.fromkeys(contexts))}" if contexts else ""
+        notes.append(
+            "Tension-accounting note: disagreement counts are claim-level. Substantive tension "
+            "still remains between biomarker-elevating studies and mixed/null clinical-endpoint "
+            f"studies{context_note}, so these contrasts are treated as unresolved evidence gaps."
+        )
+    named = {
+        m.group(0)
+        for m in re.finditer(r"\b[A-Z][A-Za-z'’\-]+ 20\d{2}\b", feedback)
+    }
+    missing = sorted(named - present_tokens)
+    if missing:
+        notes.append(
+            f"{len(missing)} reviewer-named sources are not retained in this source map "
+            "and are not counted in clinical outcome-class tallies unless listed below."
+        )
+    return notes
+
+
+def _row_base_outcome_display(row: dict[str, Any]) -> str:
+    return _outcome_display(_row_outcome_class(row))
+
+
+def _row_directness_label(row: dict[str, Any]) -> str:
+    return str(row.get("directness") or "unknown").strip().lower() or "unknown"
+
+
+def _row_source_label(row: dict[str, Any]) -> str:
+    citation = _row_citation(row)
+    title = str(row.get("source_title") or "").strip()
+    if title and citation and citation not in title:
+        return f"{citation}: {title}"
+    return citation or title or str(row.get("receipt_id") or "source").strip()
+
+
+def _findings_map_value_counts(
+    rows: list[dict[str, Any]],
+    value_fn: Any,
+) -> str:
+    counts: dict[str, int] = {}
+    for row in rows:
+        value = str(value_fn(row) or "unknown").strip().lower() or "unknown"
+        counts[value] = counts.get(value, 0) + 1
+    return "; ".join(f"{key}={counts[key]}" for key in sorted(counts))
 
 
 def _manifest_row_finding(row: dict[str, Any]) -> str:

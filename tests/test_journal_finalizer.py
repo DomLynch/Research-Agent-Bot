@@ -169,8 +169,57 @@ def test_proactive_findings_map_uses_endpoint_context_before_topic_keyword(tmp_p
     assert logs
     assert "### Findings Map" in fixed
     assert "Findings Map completeness note: all 2 admitted manifest rows" in fixed
-    assert "| Zhang 2026 | Cardiometabolic | null | indirect | B2 |" in fixed
-    assert "| Bone 2024 | Skeletal, Fracture, and Bone | positive | direct | A1 |" in fixed
+    assert "| Cardiometabolic | 1 | null=1 | indirect=1 | Zhang 2026 |" in fixed
+    assert "| Skeletal, Fracture, and Bone | 1 | positive=1 | direct=1 | Bone 2024 |" in fixed
+    assert "| Cardiometabolic | Zhang 2026: Association Between Calcium Supplementation" in fixed
+    assert "| Skeletal, Fracture, and Bone | Bone 2024: Calcium supplementation and bone fracture risk | direction=positive | directness=direct | A1 |" in fixed
+
+
+def test_findings_map_reconciles_counts_for_exact_reviewer_wording(tmp_path: Path) -> None:
+    feedback = (
+        "Reconcile the directional-coding counts within each Findings Map subsection "
+        "so the n, direction, and directness totals are internally consistent and auditable.; "
+        "For each outcome class, explicitly list every admitted source (by cited_as) "
+        "with its directness, effect direction, and a one-line finding."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Findings Map\n\n"
+        "| Source | Outcome class | Direction | Directness | Tier | Finding |\n"
+        "| --- | --- | --- | --- | --- | --- |\n"
+        "| Old 2024 | Old | null | indirect | B2 | stale row |\n\n"
+        "## Results\n\nShort.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {
+            "citation_token": "Alwhaibi 2024",
+            "source_title": "Ramadan fasting cardiometabolic trial",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "positive",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 4,
+        },
+        {
+            "citation_token": "Khalil 2025",
+            "source_title": "Ramadan fasting diabetes safety cohort",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+            "n_claims": 2,
+        },
+    ]}))
+
+    fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
+
+    assert logs
+    assert "stale row" not in fixed
+    assert "Findings Map accounting note:" in fixed
+    assert "| Cardiometabolic | 2 | positive=1; unclear=1 | direct=1; indirect=1 | Alwhaibi 2024; Khalil 2025 |" in fixed
+    assert "| Cardiometabolic | Alwhaibi 2024: Ramadan fasting cardiometabolic trial | direction=positive | directness=direct | A1 |" in fixed
+    assert "| Cardiometabolic | Khalil 2025: Ramadan fasting diabetes safety cohort | direction=unclear | directness=indirect | B2 |" in fixed
 
 
 def test_phase_f_distinguishes_source_statistics_from_null_receipt_summary(tmp_path: Path) -> None:
@@ -1890,7 +1939,8 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "Old row" not in fixed
-    assert "Holmes 2026: Menopause pilot trial: outcome=Contextual Adjacent Evidence" in fixed
+    assert "| Contextual Adjacent Evidence | Holmes 2026: Menopause pilot trial |" in fixed
+    assert "outcome=Contextual Adjacent Evidence; direction=unclear" in fixed
     assert "Signal-accounting note: biomarker-positive source-level findings" in fixed
     assert "Role-accounting note: retained translational or mechanistic-with-human-correlational evidence" in fixed
     assert "Tension-accounting note: disagreement counts are claim-level" in fixed
@@ -1926,7 +1976,9 @@ def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "### Findings Map" in fixed
-    assert "direction=null; directness=indirect; tier=B2; finding=representative statistic p = 0.04" in fixed
+    assert "| Cardiometabolic | 1 | null=1 | indirect=1 | Smith 2024 |" in fixed
+    assert "| Cardiometabolic | Smith 2024: Clinical source one | direction=null | directness=indirect | B2 |" in fixed
+    assert "finding=representative statistic p = 0.04" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 
