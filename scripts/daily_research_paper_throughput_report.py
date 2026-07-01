@@ -59,29 +59,52 @@ def _fetch_rows(url: str) -> list[dict[str, Any]]:
         return _rows_from_next_html(response.read().decode("utf-8", errors="replace"))
 
 
-def _public_counts(date: str, *, papers_url: str, reviews_url: str) -> dict[str, Any]:
-    rows = [
-        row for row in _fetch_rows(papers_url) + _fetch_rows(reviews_url)
-        if str(row.get("createdAt") or "").startswith(date)
-        and row.get("agentId") in AGENT_IDS
-        and row.get("artifactType") == "research_paper"
-    ]
+def _public_row(row: dict[str, Any]) -> bool:
+    return row.get("agentId") in AGENT_IDS and row.get("artifactType") == "research_paper"
+
+
+def _public_example(row: dict[str, Any]) -> dict[str, str]:
+    paper_id = row.get("id") or row.get("paperId") or row.get("artifactId")
+    public_url = row.get("url") or (f"https://researka.org/papers/{paper_id}" if paper_id else "")
+    return {
+        "time": str(row.get("createdAt") or ""),
+        "decision": str(row.get("decision") or "unknown"),
+        "title": str(row.get("title") or ""),
+        "url": str(public_url),
+        "doi": str(row.get("doi") or row.get("doiValue") or ""),
+        "reason": str(row.get("reviewSummary") or "")[:240],
+    }
+
+
+def _public_counts(
+    date: str,
+    *,
+    papers_url: str,
+    reviews_url: str,
+    min_started_at: str | None = None,
+) -> dict[str, Any]:
+    all_rows = [row for row in _fetch_rows(papers_url) + _fetch_rows(reviews_url) if _public_row(row)]
+    rows = [row for row in all_rows if str(row.get("createdAt") or "").startswith(date)]
     decisions: dict[str, int] = {}
     examples: list[dict[str, str]] = []
     for row in rows:
         decision = str(row.get("decision") or "unknown")
         decisions[decision] = decisions.get(decision, 0) + 1
-        paper_id = row.get("id") or row.get("paperId") or row.get("artifactId")
-        public_url = row.get("url") or (f"https://researka.org/papers/{paper_id}" if paper_id else "")
-        examples.append({
-            "time": str(row.get("createdAt") or ""),
-            "decision": decision,
-            "title": str(row.get("title") or ""),
-            "url": str(public_url),
-            "doi": str(row.get("doi") or row.get("doiValue") or ""),
-            "reason": str(row.get("reviewSummary") or "")[:240],
-        })
-    return {"decisions": decisions, "examples": examples[:12]}
+        examples.append(_public_example(row))
+    min_dt = _parse_iso(min_started_at)
+    post_baseline_examples = []
+    if min_dt:
+        for row in all_rows:
+            if str(row.get("decision") or "") != "accept":
+                continue
+            when = _parse_iso(row.get("createdAt"))
+            if when and when >= min_dt:
+                post_baseline_examples.append(_public_example(row))
+    return {
+        "decisions": decisions,
+        "examples": examples[:12],
+        "post_baseline_examples": post_baseline_examples[:12],
+    }
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -384,9 +407,16 @@ def _consistency_gate(
     raw_examples = public.get("examples")
     examples = raw_examples if isinstance(raw_examples, list) else []
     accepts_after_min = 0
-    for row in examples:
+    post_baseline = public.get("post_baseline_examples")
+    gate_examples = examples + (post_baseline if isinstance(post_baseline, list) else [])
+    seen_accepts: set[tuple[str, str, str]] = set()
+    for row in gate_examples:
         if not isinstance(row, dict) or row.get("decision") != "accept":
             continue
+        key = (str(row.get("time") or ""), str(row.get("url") or ""), str(row.get("title") or ""))
+        if key in seen_accepts:
+            continue
+        seen_accepts.add(key)
         when = _parse_iso(row.get("time"))
         if min_dt is None or when and when >= min_dt:
             accepts_after_min += 1
@@ -416,7 +446,12 @@ def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://r
               public_accept_baseline: int = 0,
               min_started_at: str | None = None) -> dict[str, Any]:
     capacity = _capacity_snapshot()
-    public = _public_counts(date, papers_url=papers_url, reviews_url=reviews_url)
+    public = _public_counts(
+        date,
+        papers_url=papers_url,
+        reviews_url=reviews_url,
+        min_started_at=min_started_at,
+    )
     local = _local_counts(runs_root, date)
     return {
         "date": date,
