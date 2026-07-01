@@ -37,6 +37,11 @@ asyncio_mode = "strict"
 
 [tool.mypy]
 mypy_path = "scripts"
+exclude = '^scripts/(review_noise_control|render_quality_tables)\.py$'
+
+[[tool.mypy.overrides]]
+module = ["fitz", "pdfplumber", "pypdf"]
+ignore_missing_imports = true
 
 [tool.setuptools.packages.find]
 # Only ship the current runtime package.

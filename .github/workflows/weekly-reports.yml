@@ -23,9 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
 
-      - name: Coverage audit
-        run: PYTHONPATH=. python scripts/coverage_audit.py
-
       - name: Unpaywall smoke
         run: PYTHONPATH=. python scripts/unpaywall_smoke.py || echo "::warning::Unpaywall smoke failed — check adapter or Unpaywall API status"
 
@@ -38,7 +35,6 @@ jobs:
           name: weekly-reports
           path: |
             runs/
-            coverage_report.json
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:

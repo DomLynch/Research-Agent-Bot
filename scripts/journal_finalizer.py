@@ -196,6 +196,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
     entries.extend(log)
+    text, log = _phase_b_lane_qualifier(text, out_dir)
+    entries.extend(log)
     return text, entries
 
 
@@ -224,12 +226,24 @@ def _phase_m_strip_surface_duplicate_paragraphs(
     seen = [tokens for tokens in seen if tokens]
     chunks = re.split(r"(\n\s*\n)", body)
     out: list[str] = []
+    current_section: str | None = None
+    introduction_content_seen = False
     n = 0
     for i in range(0, len(chunks), 2):
         para = chunks[i]
         sep = chunks[i + 1] if i + 1 < len(chunks) else ""
+        stripped = para.strip()
+        if stripped.startswith("## ") and not stripped.startswith("### "):
+            current_section = stripped[3:].strip().lower()
         tokens = _surface_duplicate_tokens(para)
-        if tokens and any(len(tokens & prior) / max(1, len(tokens | prior)) >= 0.9 for prior in seen):
+        has_content = bool(stripped) and not stripped.startswith(("#", "|", "_Cited:"))
+        protect_intro_first = (
+            current_section == "introduction" and has_content and not introduction_content_seen
+        )
+        is_duplicate = tokens and any(
+            len(tokens & prior) / max(1, len(tokens | prior)) >= 0.9 for prior in seen
+        )
+        if is_duplicate and not protect_intro_first:
             n += 1
             continue
         if tokens:
@@ -237,6 +251,8 @@ def _phase_m_strip_surface_duplicate_paragraphs(
         out.append(para)
         if sep:
             out.append(sep)
+        if current_section == "introduction" and has_content:
+            introduction_content_seen = True
     if not n:
         return text, []
     return prefix + "".join(out).rstrip() + ("\n\n" if tail and not tail.startswith("\n") else "") + tail, [
