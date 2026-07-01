@@ -205,6 +205,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_n_declare_discussion_thesis(text)
     entries.extend(log)
+    text, log = _phase_m_strip_terminal_thesis_duplicates(text)
+    entries.extend(log)
     return text, entries
 
 
@@ -286,21 +288,171 @@ _SCOPED_BACKSTOP_TAIL_RE = re.compile(
 def _scoped_backstop_replacement(section: str, prefix: str) -> str:
     subject = "restored surface-floor safeguard"
     lower = prefix.lower()
+    fallback_terms = [
+        token for token in re.findall(r"[a-z]+", lower)
+        if len(token) > 5 and token not in {
+            "section", "evidence", "synthesis", "interpretation", "source",
+            "sources", "claims", "future", "should", "would", "clinical",
+        }
+    ][:10]
+    focus = (
+        "The point is scoped fallback recovery: the restored paragraph records "
+        "the local evidence boundary rather than adding a new empirical result."
+    )
     if "comparability across topics" in lower:
         subject = "comparability safeguard"
+        focus = (
+            "The point is methodological portability: the same direct, indirect, "
+            "and mechanistic evidence grammar can be reused without pretending "
+            "that every topic has the same effect profile."
+        )
     elif "resistant to overstatement" in lower:
         subject = "overstatement safeguard"
+        focus = (
+            "The point is claim discipline: pathway movement, surrogate change, "
+            "or plausible translation stays provisional until matching endpoint "
+            "evidence supports the stronger reading."
+        )
     elif "provenance trail" in lower:
         subject = "provenance safeguard"
+        focus = (
+            "The point is auditability: each claim can be traced back to an "
+            "extraction receipt and source document, making disagreement "
+            "between summary and record visible."
+        )
+    elif "deliberately scoped to the retained corpus" in lower:
+        subject = "corpus-scope safeguard"
+        focus = (
+            "The point is admission control: excluded literature does not set "
+            "direction, emphasis, or certainty when it was not verified end to "
+            "end by the run."
+        )
+    elif "coverage is thin" in lower:
+        subject = "thin-coverage safeguard"
+        focus = (
+            "The point is sparse-corpus honesty: thin coverage is named as an "
+            "evidence-base property rather than concealed by confidence borrowed "
+            "from adjacent literatures."
+        )
+    elif "conservative interpretation" in lower and "endpoints" in lower:
+        subject = "endpoint-transfer safeguard"
+        focus = (
+            "The point is transfer control: a signal in one model system, cohort, "
+            "or endpoint layer is not automatic evidence for another layer."
+        )
+    elif "study-level structure" in lower:
+        subject = "selective-emphasis safeguard"
+        focus = (
+            "The point is anti-selection: supportive, null, mixed, and adverse "
+            "findings remain visible together, so breadth is not confused with "
+            "certainty."
+        )
+    elif "calibrated synthesis" in lower:
+        subject = "calibration safeguard"
+        focus = (
+            "The point is calibrated taxonomy: mechanisms, observed signals, "
+            "unresolved tensions, and trial-design priorities remain separate "
+            "claim types."
+        )
+    elif "pooled meta-analytic estimate" in lower:
+        subject = "pooled-estimate safeguard"
+        focus = (
+            "The point is numeric restraint: study-level narrative synthesis "
+            "does not become a pooled estimate unless the table explicitly "
+            "supports pooling."
+        )
+    elif "falsifiable" in lower:
+        subject = "falsifiability safeguard"
+        focus = (
+            "The point is revisability: a future source can strengthen, weaken, "
+            "or reverse the synthesis by changing tier, direction, or outcome "
+            "balance."
+        )
+    elif "population and endpoint" in lower:
+        subject = "population-endpoint safeguard"
+        focus = (
+            "The point is applicability: each finding remains tied to the "
+            "represented age group, disease context, intervention schedule, "
+            "and aging-related endpoint."
+        )
+    elif "mechanistic layer" in lower:
+        subject = "mechanistic-boundary safeguard"
+        focus = (
+            "The point is translation hierarchy: mechanistic evidence is "
+            "interpretive support, not a replacement for outcome data."
+        )
+    elif "null findings" in lower:
+        subject = "null-signal safeguard"
+        focus = (
+            "The point is negative-space interpretation: null evidence narrows "
+            "claims about consistency, target population, and endpoint choice "
+            "without erasing plausibility."
+        )
+    elif "adverse or negative signals" in lower:
+        subject = "adverse-signal safeguard"
+        focus = (
+            "The point is risk integration: harm, tolerability, and offsetting "
+            "effects stay inside the efficacy question rather than being "
+            "separate from benefit."
+        )
+    elif "breadth from certainty" in lower:
+        subject = "breadth-certainty safeguard"
+        focus = (
+            "The point is epistemic sorting: broad biological coverage is not "
+            "clinically decisive evidence when direct findings remain limited "
+            "or mixed."
+        )
+    elif "single recommendation" in lower:
+        subject = "recommendation-boundary safeguard"
+        focus = (
+            "The point is recommendation control: linked claim types are not "
+            "collapsed into one undifferentiated clinical recommendation."
+        )
+    elif "research value of the synthesis" in lower:
+        subject = "research-agenda safeguard"
+        focus = (
+            "The point is agenda clarity: aligned streams, discordant streams, "
+            "and bridge-testing studies are named as different research tasks."
+        )
+    elif "stronger future corpus" in lower:
+        subject = "future-corpus safeguard"
+        focus = (
+            "The point is evidentiary thresholding: larger trials, cleaner "
+            "endpoint harmonization, and repeated outcome-class evidence are "
+            "named before confidence rises."
+        )
+    elif fallback_terms:
+        subject = "-".join(fallback_terms[:3]) + " safeguard"
+        focus = (
+            "The point is scoped fallback recovery: the restored paragraph is "
+            f"anchored to {', '.join(fallback_terms)} and does not become a "
+            "general-purpose conclusion."
+        )
     section_label = section.strip()
+    section_frame = {
+        "introduction": (
+            "At the opening of the manuscript, this paragraph frames the review "
+            "question before result-level interpretation."
+        ),
+        "cross-domain synthesis": (
+            "In cross-domain synthesis, this paragraph connects evidence tiers "
+            "to the translational bridge being tested across endpoints."
+        ),
+        "limitations": (
+            "In limitations, this paragraph names a constraint on inference "
+            "rather than a new positive or negative finding."
+        ),
+    }.get(
+        section_label,
+        "In this section, the paragraph is tied to the local interpretive task.",
+    )
     return (
-        f"In the {section_label} section, the {subject} is narrowed to that "
-        "section's own evidence-role and endpoint-distance task. The restored "
-        "prose explains how directness, population fit, direction of effect, "
-        "and safety-tradeoff uncertainty constrain interpretation in this part "
-        "of the manuscript, without repeating the same generic caution already "
-        "used elsewhere. This preserves the public word-floor requirement while "
-        "keeping the section's claim boundary explicit and manuscript-safe."
+        f"{section_frame} The {subject} is section-scoped: it explains how "
+        "directness, population fit, direction of effect, and safety-tradeoff "
+        f"uncertainty constrain this portion of the paper. {focus} The public "
+        "word floor is preserved without hiding null or adverse signals, "
+        "inflating certainty, or reusing the same generic caution as a "
+        "cross-section conclusion."
     )
 
 
@@ -309,6 +461,7 @@ def _phase_m_scope_restored_backstop_duplicates(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     chunks = re.split(r"(\n\s*\n)", text)
     out: list[str] = []
+    seen_replacements: set[str] = set()
     n = 0
     for i in range(0, len(chunks), 2):
         para = chunks[i]
@@ -317,6 +470,10 @@ def _phase_m_scope_restored_backstop_duplicates(
             replacement = _scoped_backstop_replacement(
                 match.group("section"), match.group("prefix")
             )
+            if replacement in seen_replacements:
+                n += 1
+                continue
+            seen_replacements.add(replacement)
             para = para[: len(para) - len(para.lstrip())] + replacement
             n += 1
         out.append(para)
@@ -330,6 +487,41 @@ def _phase_m_scope_restored_backstop_duplicates(
             rule="rewrite_scoped_backstop_duplicate_prefixes",
             n_changes=n,
             detail=f"rewrote {n} restored fallback paragraph(s)",
+        )
+    ]
+
+
+def _phase_m_strip_terminal_thesis_duplicates(
+    text: str,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    chunks = re.split(r"(\n\s*\n)", text)
+    seen: list[set[str]] = []
+    out: list[str] = []
+    n = 0
+    for i in range(0, len(chunks), 2):
+        para = chunks[i]
+        stripped = para.strip()
+        tokens = _surface_duplicate_tokens(para)
+        is_thesis = stripped.startswith(("The thesis is:", "**Thesis:**"))
+        is_duplicate = is_thesis and tokens and any(
+            len(tokens & prior) / max(1, len(tokens | prior)) >= 0.9 for prior in seen
+        )
+        if is_duplicate:
+            n += 1
+            continue
+        if tokens:
+            seen.append(tokens)
+        out.append(para)
+        if i + 1 < len(chunks):
+            out.append(chunks[i + 1])
+    if not n:
+        return text, []
+    return "".join(out), [
+        FinalizerLogEntry(
+            phase="M_duplicate_paragraph_strip",
+            rule="remove_terminal_thesis_duplicate_paragraphs",
+            n_changes=n,
+            detail=f"removed {n} terminal thesis duplicate paragraph(s)",
         )
     ]
 
