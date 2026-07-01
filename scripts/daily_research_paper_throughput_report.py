@@ -30,14 +30,7 @@ def _report_tz() -> ZoneInfo:
         return ZoneInfo("UTC")
 
 
-def _rows_from_next_html(html: str) -> list[dict[str, Any]]:
-    match = NEXT_RE.search(html)
-    if not match:
-        return []
-    try:
-        payload = json.loads(match.group(1))
-    except json.JSONDecodeError:
-        return []
+def _rows_from_payload(payload: Any) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
 
     def walk(value: Any) -> None:
@@ -54,9 +47,24 @@ def _rows_from_next_html(html: str) -> list[dict[str, Any]]:
     return rows
 
 
+def _rows_from_next_html(html: str) -> list[dict[str, Any]]:
+    match = NEXT_RE.search(html)
+    if not match:
+        return []
+    try:
+        payload = json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return []
+    return _rows_from_payload(payload)
+
+
 def _fetch_rows(url: str) -> list[dict[str, Any]]:
     with urllib.request.urlopen(url, timeout=20) as response:
-        return _rows_from_next_html(response.read().decode("utf-8", errors="replace"))
+        text = response.read().decode("utf-8", errors="replace")
+    try:
+        return _rows_from_payload(json.loads(text))
+    except json.JSONDecodeError:
+        return _rows_from_next_html(text)
 
 
 def _public_row(row: dict[str, Any]) -> bool:
@@ -81,9 +89,23 @@ def _public_counts(
     *,
     papers_url: str,
     reviews_url: str,
+    publications_url: str = "https://researka.org/api/publications",
     min_started_at: str | None = None,
 ) -> dict[str, Any]:
-    all_rows = [row for row in _fetch_rows(papers_url) + _fetch_rows(reviews_url) if _public_row(row)]
+    seen: set[tuple[str, str, str]] = set()
+    all_rows: list[dict[str, Any]] = []
+    for row in _fetch_rows(papers_url) + _fetch_rows(reviews_url) + _fetch_rows(publications_url):
+        if not _public_row(row):
+            continue
+        key = (
+            str(row.get("id") or row.get("paperId") or row.get("artifactId") or ""),
+            str(row.get("createdAt") or ""),
+            str(row.get("title") or ""),
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        all_rows.append(row)
     rows = [row for row in all_rows if str(row.get("createdAt") or "").startswith(date)]
     decisions: dict[str, int] = {}
     examples: list[dict[str, str]] = []
@@ -442,6 +464,7 @@ def _consistency_gate(
 
 def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://researka.org/papers",
               reviews_url: str = "https://researka.org/reviews",
+              publications_url: str = "https://researka.org/api/publications",
               required_lanes: tuple[str, ...] = ("fresh", "revise", "daily-submit"),
               public_accept_baseline: int = 0,
               min_started_at: str | None = None) -> dict[str, Any]:
@@ -450,6 +473,7 @@ def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://r
         date,
         papers_url=papers_url,
         reviews_url=reviews_url,
+        publications_url=publications_url,
         min_started_at=min_started_at,
     )
     local = _local_counts(runs_root, date)

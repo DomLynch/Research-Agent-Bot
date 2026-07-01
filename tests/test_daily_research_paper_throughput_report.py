@@ -45,6 +45,38 @@ def test_public_counts_includes_live_agent_public_accepts(monkeypatch) -> None:
     assert counts["examples"][0]["title"] == "Research Synthesis: Sleep Architecture Deep Sleep"
 
 
+def test_public_counts_keeps_post_baseline_accepts_outside_report_date(monkeypatch) -> None:
+    monkeypatch.setattr(report, "_fetch_rows", lambda url: [{
+        "createdAt": "2026-06-30T01:21:25.951612+04:00",
+        "title": "Adjacent Evidence Brief: Physical Exercise Effects",
+        "decision": "accept",
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper-live",
+        "id": "paper-1",
+    }] if "api/publications" in url else [])
+
+    counts = report._public_counts(
+        "2026-07-01",
+        papers_url="https://researka.org/papers",
+        reviews_url="https://researka.org/reviews",
+        publications_url="https://researka.org/api/publications",
+        min_started_at="2026-06-29T16:30:00+00:00",
+    )
+    gate = report._consistency_gate(
+        {"cycle_modes": {}},
+        counts,
+        public_accept_baseline=4,
+        min_started_at="2026-06-29T16:30:00+00:00",
+    )
+
+    assert counts["decisions"] == {}
+    assert counts["examples"] == []
+    assert counts["post_baseline_examples"][0]["title"].endswith("Physical Exercise Effects")
+    assert gate["public_accepts"] == 5
+    assert gate["public_accepts_observed"] == 0
+    assert gate["public_accepts_after_min_started_at"] == 1
+
+
 def test_local_counts_reports_top_blockers_and_repeats(tmp_path: Path) -> None:
     ledger = tmp_path / "_daily_research_paper_cycle_ledger"
     submit = tmp_path / "_daily_research_paper_ledger"
