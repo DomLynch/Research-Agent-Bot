@@ -1867,6 +1867,39 @@ def test_deterministic_coverage_accepts_human_intervention_reclassification_feed
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_coverage_accepts_ramadan_revision_bundle() -> None:
+    asks = [
+        "Reconcile directional-coding counts within each Findings Map subsection so n/direction/directness totals are internally consistent.",
+        "For each outcome class, explicitly list every admitted source (by cited_as) with direction/directness, not just representatives.",
+        "Reclassify Mabrouk 2025 as a deficiency prevalence/context source rather than a hypothesis test; Tone down Metabolic-Functional Tradeoff/falsifying-test framing to an explicitly bounded interpretive note.",
+        "Remove/replace Ioannidis 2005 citation with a bundle-resident source because it is not present in the source bundle.",
+        "Verify/flag future-dated sources (Demirli 2026, Tasdemir 2026, Lamti 2026).",
+        "Ensure cited numbers in Findings Map descriptions appear in each cited source abstract rather than only receipt level.",
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Findings Map accounting note: Each Findings Map subsection uses internally consistent "
+        "n/direction/directness totals; cited numbers below are sourced to source abstracts "
+        "rather than receipt-level-only counts.\n\n"
+        "### Findings Map\n\n"
+        "| Evidence domain | Source | Direction | Directness | Tier | Evidence role | Finding |\n"
+        "| --- | --- | --- | --- | --- | --- | --- |\n"
+        "| Deficiency Prevalence | Mabrouk 2025 | direction=unclear | directness=indirect | B2 | outcome=Deficiency Prevalence | finding=representative statistic p = 0.017; source-level statistic reported. |\n"
+        "| Ramadan Safety | Demirli 2026 | direction=mixed | directness=adjacent | B2 | outcome=Safety | finding=representative statistic p = 0.041; source-level statistic reported. |\n"
+        "| Metabolic Context | Tasdemir 2026 | direction=null | directness=adjacent | B2 | outcome=Metabolic Context | finding=representative statistic p = 0.62; source-level statistic reported. |\n\n"
+        "Where reviewers might invoke an interpretive note such as a metabolic-functional trade-off "
+        "or falsifying-test, the bundle supplies no direct evidence supporting either as a "
+        "paper-level organizing claim; any such framing is bounded to context pending corroboration.\n\n"
+        "## Limitations\n\n"
+        "Publication-year note: citation years follow the manifest metadata; when DOI/PubMed dates "
+        "differ, the source should be treated as bibliographic/in-press metadata and not used for "
+        "year-specific claims.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
 def test_deterministic_coverage_accepts_vascular_latest_reviewer_asks() -> None:
     asks = [
         "Write an actual Key Findings section that names 3-5 specific, source-anchored findings and then interpret them as hypotheses worth follow-up.",

@@ -197,15 +197,29 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
             importlib.import_module("evidence_map_summary"),
             "source_context_counts",
         )
+    receipt_counts: dict[str, dict[str, int]] = {
+        "outcome_class": classes,
+        "evidence_tier": {},
+        "directness": {},
+        "effect_direction": {},
+    }
     for r in receipts if isinstance(receipts, list) else ():
         if not isinstance(r, dict):
             continue
         for p_value in r.get("p_values") or ():
             out.update(canonical_numeric(v) for v in re.findall(r"\d*\.?\d+", str(p_value)))
-        if r.get("outcome_class"):
-            key = str(r["outcome_class"])
-            classes[key] = classes.get(key, 0) + 1
-    out.update(canonical_numeric(str(v)) for v in classes.values())
+        for key in ("n_claims", "claim_count", "claims_count"):
+            if isinstance(r.get(key), (int, float)):
+                out.add(canonical_numeric(str(r[key])))
+        title = str(r.get("source_title") or "")
+        if title:
+            out.update(canonical_numeric(v) for v in re.findall(r"\d*\.?\d+", title))
+        for field, counts_for_field in receipt_counts.items():
+            if r.get(field):
+                value = str(r[field])
+                counts_for_field[value] = counts_for_field.get(value, 0) + 1
+    for counts_for_field in receipt_counts.values():
+        out.update(canonical_numeric(str(v)) for v in counts_for_field.values())
     if isinstance(receipts, list):
         out.update(canonical_numeric(str(v)) for v in source_context_counts(receipts).values())
     plans = manifest.get("_tension_plans")
@@ -689,7 +703,7 @@ def _strip_publication_appendix(paper: str) -> str:
 
 _ANALYTICAL_DENOMINATOR_EXCLUDE_RE = re.compile(
     r"^##\s+(?:Quantitative Evidence Index\b|Structured Evidence "
-    r"Tables\b|Table\s+\d+\b|Table\s+\d+\s*\(|References\b)",
+    r"Tables\b|Evidence Landscape\b|Table\s+\d+\b|Table\s+\d+\s*\(|References\b)",
     re.IGNORECASE,
 )
 

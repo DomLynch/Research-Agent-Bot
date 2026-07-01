@@ -134,6 +134,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_revision_audit_notes(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
         lambda t: _phase_d_revision_artifact_cleanup(t, out_dir),
+        _phase_d_untraceable_tension_count_cleanup,
         lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
@@ -179,6 +180,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_reference_closure(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
         lambda t: _phase_d_revision_artifact_cleanup(t, out_dir),
+        _phase_d_untraceable_tension_count_cleanup,
         lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
         _phase_n_declare_discussion_thesis,
     ):
@@ -189,6 +191,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, log = _phase_c_terminology(text)
     entries.extend(log)
     text, log = _phase_d_revision_artifact_cleanup(text, out_dir)
+    entries.extend(log)
+    text, log = _phase_d_untraceable_tension_count_cleanup(text)
     entries.extend(log)
     text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
     entries.extend(log)
@@ -4974,6 +4978,25 @@ def _phase_d_revision_artifact_cleanup(
         rule="remove_revision_prompt_artifacts",
         n_changes=len(details),
         detail=", ".join(details),
+    )]
+
+
+def _phase_d_untraceable_tension_count_cleanup(
+    text: str,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    patched = re.sub(
+        r"\b\d+\s+paired\s+((?:in)?directness-gap tensions)\b",
+        r"paired \1",
+        text,
+    )
+    patched = re.sub(r"\bThese\s+\d+\s+tensions\b", "These tensions", patched)
+    if patched == text:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_untraceable_tension_count_cleanup",
+        rule="qualify_unbacked_tension_count",
+        n_changes=1,
+        detail="removed unsupported exact paired-tension count",
     )]
 
 

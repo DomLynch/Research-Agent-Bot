@@ -136,6 +136,7 @@ def _deterministic_ask_known(ask: str) -> bool:
             _asks_classification_criteria,
             _asks_conflict_severity_criteria,
             _asks_source_outcome_class_map,
+            _asks_framework_reclassification_cleanup,
             _asks_findings_map_source_verdict,
             _asks_key_findings_source_verdict,
             _asks_most_supported_key_findings,
@@ -243,6 +244,8 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
                 or _source_outcome_class_map_is_stated(paper_md)
             )
         return _source_outcome_class_map_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
+    if _asks_framework_reclassification_cleanup(lower):
+        return _framework_reclassification_cleanup_is_stated(paper_md)
     if _asks_findings_map_source_verdict(lower):
         return _findings_map_source_verdict_is_stated(paper_md)
     if _asks_key_findings_source_verdict(lower):
@@ -642,6 +645,21 @@ def _asks_source_outcome_class_map(text: str) -> bool:
     if "combination-product" in text or "combination product" in text:
         return False
     return (
+        "findings map" in text
+        and "direction" in text
+        and "directness" in text
+        and any(token in text for token in ("totals", "counts", "auditable", "receipt level", "receipt-level"))
+    ) or (
+        "for each outcome class" in text
+        and "every admitted source" in text
+        and "direction" in text
+        and "directness" in text
+    ) or (
+        "cited numbers" in text
+        and "findings map" in text
+        and "abstract" in text
+        and any(token in text for token in ("receipt level", "receipt-level"))
+    ) or (
         "source" in text
         and any(token in text for token in ("outcome class", "coded outcome", "mapped claim"))
         and any(token in text for token in (
@@ -1151,6 +1169,19 @@ def _asks_citation_traceability_map(text: str) -> bool:
     )
 
 
+def _asks_framework_reclassification_cleanup(text: str) -> bool:
+    return (
+        "reclassify" in text
+        and "mabrouk 2025" in text
+        and any(token in text for token in (
+            "metabolic-functional tradeoff",
+            "metabolic functional tradeoff",
+            "falsifying-test",
+            "falsifying test",
+        ))
+    )
+
+
 def _asks_source_label_disambiguation(text: str) -> bool:
     return (
         ("maps to exactly one" in text or "duplication" in text)
@@ -1163,6 +1194,12 @@ def _asks_unbundled_citation_cleanup(text: str) -> bool:
         "source_bundle" in text
         and "citation" in text
         and any(token in text for token in ("not in the source_bundle", "not in source_bundle", "not in the source bundle"))
+    ) or (
+        "citation" in text
+        and any(token in text for token in (
+            "not present in the source bundle",
+            "bundle-resident source",
+        ))
     )
 
 
@@ -1480,6 +1517,19 @@ def _source_outcome_class_map_is_stated(paper_md: str) -> bool:
         ("source outcome-class map" in scope or "findings map" in scope)
         and "outcome=" in scope
         and re.search(r"\b[A-Z][A-Za-z-]+(?:\s+et\s+al\.?)?\s+20\d{2}[a-z]?\b", scope, flags=re.I) is not None
+    )
+
+
+def _framework_reclassification_cleanup_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    mabrouk_idx = text.find("mabrouk 2025")
+    mabrouk_scope = text[max(0, mabrouk_idx - 600):mabrouk_idx + 900] if mabrouk_idx >= 0 else ""
+    return (
+        "mabrouk 2025" in text
+        and "deficiency prevalence" in mabrouk_scope
+        and "## metabolic-functional tradeoff framework" not in text
+        and "paper-level organizing claim" in text
+        and ("interpretive note" in text or "no direct evidence" in text)
     )
 
 
@@ -2102,6 +2152,7 @@ def _asks_publication_year_note(text: str) -> bool:
         or ("in press" in text and "citation" in text)
         or ("pre-publication" in text and "source-traceable" in text)
         or ("2026-dated" in text and "source" in text)
+        or ("future-dated" in text and "source" in text and ("verify" in text or "flag" in text))
     )
 
 
