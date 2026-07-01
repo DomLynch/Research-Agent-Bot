@@ -6773,6 +6773,22 @@ def test_recent_preflight_blocked_topics_include_receipt_preflight(tmp_path: Pat
     assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"hrv_autonomic_aging"}
 
 
+def test_recent_preflight_blocked_topics_include_source_bundle_mismatch(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    cycle._record_blockers(
+        ledger_dir,
+        "2026-07-02",
+        [{
+            "topic": "immune_checkpoint_inhibitors_rates",
+            "gate_status": "source_bundle_topic_mismatch:9/19:rows=4,5,6,8,12",
+            "submitted": 0,
+        }],
+    )
+
+    assert cycle._recent_preflight_blocked_topics(ledger_dir) == {"immune_checkpoint_inhibitors_rates"}
+
+
 def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "gdf11", target_journal=True)
     _prior_run(tmp_path, "gdf11", receipts=40, tensions=8, primary=3)

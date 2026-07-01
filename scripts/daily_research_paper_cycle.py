@@ -846,7 +846,9 @@ _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "terminal_surface_repeat"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus",
-                                        "receipt_preflight_insufficient"})
+                                        "receipt_preflight_insufficient",
+                                        "source_bundle_topic_mismatch",
+                                        "source_bundle_unmapped_sources"})
 _SOURCE_PRECISION_STATUS = "source_topic_precision_low"
 _CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited", _SOURCE_PRECISION_STATUS}
 _NO_AUTO_RETRY_STATUSES = frozenset({"journal_surface_failed", "journal_surface_not_passed"})
