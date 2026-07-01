@@ -240,6 +240,39 @@ def test_refine_other_keeps_genuine_bone_as_bone() -> None:
     assert refine_other_outcome_class(receipt, "other") == "skeletal_fracture_bone"
 
 
+@pytest.mark.parametrize("title", [
+    "Effects of calcium supplementation on the prevention of preeclampsia",
+    "Calcium supplementation during pregnancy and long-term offspring outcome",
+    "Risk of ischemic stroke associated with calcium supplements",
+    "Association between calcium supplementation and recurrence of cardiovascular events",
+    "The joint effect of calcium supplementation on the risk factors of type 2 diabetes",
+])
+def test_endpoint_source_text_overrides_calcium_bone_fallback(title: str) -> None:
+    receipt = SimpleNamespace(receipt_id="r", source_title=title, population_summary="")
+
+    assert refine_other_outcome_class(receipt, "skeletal_fracture_bone") == "cardiometabolic"
+
+
+def test_endpoint_source_text_overrides_dosing_when_endpoint_is_pregnancy_hypertension() -> None:
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Different doses of calcium supplementation to prevent gestational hypertension and pre-eclampsia",
+        population_summary="",
+    )
+
+    assert refine_other_outcome_class(receipt, "dosing_pharmacokinetics") == "cardiometabolic"
+
+
+def test_endpoint_source_text_routes_creatinine_to_safety_before_calcium_bone() -> None:
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Calcium supplementation increases blood creatinine concentration in a randomized trial",
+        population_summary="",
+    )
+
+    assert refine_other_outcome_class(receipt, "skeletal_fracture_bone") == "safety_comorbidity"
+
+
 def test_immune_and_immune_inflammation_canonicalize_together() -> None:
     """The two near-duplicate immune classes collapse to one canonical key so a
     corpus does not fragment into two singleton sections."""

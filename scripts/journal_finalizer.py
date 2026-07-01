@@ -125,6 +125,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_source_inclusion_rationale(t, out_dir),
         lambda t: _phase_d_species_study_design_summary(t, out_dir),
         lambda t: _phase_d_source_outcome_class_map(t, out_dir),
+        lambda t: _phase_d_proactive_findings_map(t, out_dir),
         lambda t: _phase_d_outcome_label_cleanup(t, out_dir),
         lambda t: _phase_d_tensions_and_gaps_breadth(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
@@ -677,6 +678,19 @@ _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 def _outcome_display(slug: str) -> str:
     from agent.outcome_class_remap import outcome_display
     return outcome_display(re.sub(r"\s+outcomes?$", "", slug, flags=re.I))
+
+
+def _row_outcome_class(row: dict[str, Any]) -> str:
+    from agent.outcome_class_remap import refine_other_outcome_class
+
+    current = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
+    receipt = SimpleNamespace(
+        receipt_id=row.get("receipt_id"),
+        source_title=row.get("source_title"),
+        population_summary=row.get("population_summary"),
+        directness=row.get("directness"),
+    )
+    return refine_other_outcome_class(receipt, current)
 
 
 def _topic_display_anchor(manifest: dict[str, Any]) -> str:
@@ -2725,7 +2739,7 @@ def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
 
 
 def _evidence_role_outcome_display(row: dict[str, Any]) -> str:
-    original = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
+    original = _outcome_display(_row_outcome_class(row))
     directness = str(row.get("directness") or "").strip().lower()
     if directness.startswith("direct"):
         return original
@@ -3351,12 +3365,12 @@ def _manifest_direction_audit_table(rows: list[dict[str, Any]]) -> str:
         "| Source | Outcome class | Direction | Directness | Tier |",
         "| --- | --- | --- | --- | --- |",
     ]
-    for row in sorted(rows, key=lambda r: (_outcome_display(str(r.get("outcome_class") or "")), _row_citation(r))):
+    for row in sorted(rows, key=lambda r: (_outcome_display(_row_outcome_class(r)), _row_citation(r))):
         lines.append(
             "| "
             + " | ".join((
                 _table_cell(_row_citation(row)),
-                _table_cell(_outcome_display(str(row.get("outcome_class") or "contextual_other"))),
+                _table_cell(_outcome_display(_row_outcome_class(row))),
                 f"direction={_table_cell(_normalised_direction(row))}",
                 f"directness={_table_cell(str(row.get('directness') or 'unknown'))}",
                 f"tier={_table_cell(str(row.get('evidence_tier') or 'unknown'))}",
@@ -3882,6 +3896,52 @@ def _phase_d_source_outcome_class_map(
         rule="map_sources_to_outcome_classes",
         n_changes=1,
         detail=f"added source outcome-class map from {len(rows)} manifest receipt(s)",
+    )]
+
+
+def _phase_d_proactive_findings_map(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    if re.search(r"^### Findings Map\b", text, flags=re.M):
+        return text, []
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
+    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return text, []
+    lines = [
+        "### Findings Map",
+        "",
+        (
+            f"Findings Map completeness note: all {len(rows)} admitted manifest rows "
+            "are surfaced below; outcome class follows endpoint/source context before topic keywords."
+        ),
+        "",
+        "| Source | Outcome class | Direction | Directness | Tier | Finding |",
+        "| --- | --- | --- | --- | --- | --- |",
+    ]
+    for row in sorted(rows, key=lambda r: (_row_outcome_class(r), _row_citation(r))):
+        lines.append(
+            "| "
+            + " | ".join((
+                _table_cell(_row_citation(row)),
+                _table_cell(_evidence_role_outcome_display(row)),
+                _table_cell(_normalised_direction(row)),
+                _table_cell(str(row.get("directness") or "unknown")),
+                _table_cell(str(row.get("evidence_tier") or "unknown")),
+                _table_cell(_manifest_row_finding(row)),
+            ))
+            + " |"
+        )
+    note = "\n".join(lines)
+    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
+    if not n:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_proactive_findings_map",
+        rule="add_source_level_findings_map",
+        n_changes=1,
+        detail=f"added source-level Findings Map from {len(rows)} manifest receipt(s)",
     )]
 
 
@@ -5245,7 +5305,7 @@ def _phase_f_reconcile_results_table(
     groups: dict[str, list[dict[str, Any]]] = {}
     for r in receipts:
         if isinstance(r, dict) and r.get("outcome_class"):
-            groups.setdefault(_outcome_key(str(r["outcome_class"])), []).append(r)
+            groups.setdefault(_outcome_key(_row_outcome_class(r)), []).append(r)
     if not groups:
         return text, []
     topic_anchor = _topic_display_anchor(manifest)

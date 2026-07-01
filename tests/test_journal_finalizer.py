@@ -98,6 +98,81 @@ def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path)
     assert "null signal in 2/2 sources" not in fixed
 
 
+def test_phase_f_uses_endpoint_context_before_calcium_bone_fallback(tmp_path: Path) -> None:
+    paper = "## Results\n\nShort.\n\n## References\n\n- Smith 2024.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "calcium_supplementation_effects",
+        "receipts": [
+            {
+                "citation_token": "Kumsa 2025",
+                "source_title": "Effects of calcium supplementation on the prevention of preeclampsia",
+                "outcome_class": "skeletal_fracture_bone",
+                "effect_direction": "unclear",
+                "directness": "review",
+                "evidence_tier": "B1",
+                "n_claims": 12,
+            },
+            {
+                "citation_token": "Abajo 2017",
+                "source_title": "Risk of Ischemic Stroke Associated With Calcium Supplements",
+                "outcome_class": "skeletal_fracture_bone",
+                "effect_direction": "unclear",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+                "n_claims": 10,
+            },
+            {
+                "citation_token": "Bone 2024",
+                "source_title": "Calcium supplementation and bone fracture risk",
+                "outcome_class": "skeletal_fracture_bone",
+                "effect_direction": "positive",
+                "directness": "direct",
+                "evidence_tier": "A1",
+                "n_claims": 8,
+            },
+        ],
+    }), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert logs
+    assert "| Calcium Supplementation Effects / Cardiometabolic | n=2; claims=22 |" in fixed
+    assert "| Calcium Supplementation Effects / Skeletal, Fracture, and Bone | n=1; claims=8 |" in fixed
+
+
+def test_proactive_findings_map_uses_endpoint_context_before_topic_keyword(tmp_path: Path) -> None:
+    paper = "## Evidence Landscape\n\nBrief.\n\n## Results\n\nShort.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "calcium_supplementation_effects",
+        "receipts": [
+            {
+                "citation_token": "Zhang 2026",
+                "source_title": "Association Between Calcium Supplementation and Recurrence of Cardiovascular Events",
+                "outcome_class": "skeletal_fracture_bone",
+                "effect_direction": "null",
+                "directness": "indirect",
+                "evidence_tier": "B2",
+            },
+            {
+                "citation_token": "Bone 2024",
+                "source_title": "Calcium supplementation and bone fracture risk",
+                "outcome_class": "skeletal_fracture_bone",
+                "effect_direction": "positive",
+                "directness": "direct",
+                "evidence_tier": "A1",
+            },
+        ],
+    }), encoding="utf-8")
+
+    fixed, logs = journal_finalizer._phase_d_proactive_findings_map(paper, tmp_path)
+
+    assert logs
+    assert "### Findings Map" in fixed
+    assert "Findings Map completeness note: all 2 admitted manifest rows" in fixed
+    assert "| Zhang 2026 | Cardiometabolic | null | indirect | B2 |" in fixed
+    assert "| Bone 2024 | Skeletal, Fracture, and Bone | positive | direct | A1 |" in fixed
+
+
 def test_phase_f_distinguishes_source_statistics_from_null_receipt_summary(tmp_path: Path) -> None:
     paper = "## Results\n\nShort.\n\n## References\n\n- Smith 2024.\n"
     (tmp_path / "manifest.json").write_text(json.dumps({

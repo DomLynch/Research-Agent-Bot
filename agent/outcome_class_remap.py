@@ -42,7 +42,7 @@ SOURCE_TEXT_OUTCOME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
         ),
         "cardiometabolic",
     ),
-    (re.compile(r"\b(?:creatinine|renal|kidney)\b", re.I), "safety_comorbidity"),
+    (re.compile(r"\b(?:creatinine|kidney)\b", re.I), "safety_comorbidity"),
 )
 
 OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
