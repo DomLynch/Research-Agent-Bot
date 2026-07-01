@@ -423,6 +423,8 @@ def _consistency_gate(
         if lane == "daily-submit" and status == "no_eligible_research_paper":
             continue
         if status != "published" or _int_value(view.get("published")) < 1:
+            if lane == "fresh" and _same_topic_downstream_published(view, modes, min_dt):
+                continue
             blockers.append(f"{lane}:not_published")
     decisions = public.get("decisions") if isinstance(public.get("decisions"), dict) else {}
     public_accepts_observed = _int_value(decisions.get("accept") if isinstance(decisions, dict) else 0)
@@ -460,6 +462,30 @@ def _consistency_gate(
         "lane_receipts": lane_receipts,
         "blockers": blockers,
     }
+
+
+def _same_topic_downstream_published(
+    fresh_view: dict[str, Any],
+    modes: dict[str, Any],
+    min_dt: dt.datetime | None,
+) -> bool:
+    topic = str(fresh_view.get("topic") or "").strip().lower()
+    if not topic:
+        return False
+    for lane, row in modes.items():
+        if lane == "fresh" or not isinstance(row, dict):
+            continue
+        if str(row.get("topic") or "").strip().lower() != topic:
+            continue
+        if str(row.get("status") or "") != "published":
+            continue
+        if _int_value(row.get("published")) < 1:
+            continue
+        started = _row_timestamp(row)
+        if min_dt and (not started or started < min_dt):
+            continue
+        return True
+    return False
 
 
 def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://researka.org/papers",
