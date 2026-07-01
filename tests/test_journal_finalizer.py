@@ -5105,3 +5105,19 @@ def test_revise_feedback_repairs_denominators_tensions_and_findings_map(tmp_path
         "D_outcome_label_cleanup",
         "D_revision_surface_notes",
     }
+
+
+def test_untraceable_tension_count_cleanup_qualifies_exact_pair_count() -> None:
+    paper = (
+        "## Results\n\n"
+        "Direct and indirect sources generate 22 paired indirectness-gap tensions. "
+        "These 22 tensions each reflect directness disparity.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_untraceable_tension_count_cleanup(paper)
+
+    assert "22 paired" not in fixed
+    assert "These 22 tensions" not in fixed
+    assert "paired indirectness-gap tensions" in fixed
+    assert "These tensions each reflect" in fixed
+    assert logs and logs[0].rule == "qualify_unbacked_tension_count"

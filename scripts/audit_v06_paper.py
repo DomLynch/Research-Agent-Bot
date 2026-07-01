@@ -277,6 +277,11 @@ _PATTERNS_BY_CATEGORY: tuple[tuple[str, str], ...] = (
     (
         "brief_count",
         r"\b(\d+(?:[,\s]\d{3})*)\s+(?:included\s+)?"
+        r"(?:(?:paired|claim-level|cross-study|directness-gap|"
+        r"indirectness-gap|source-level|high-confidence|extracted|"
+        r"retained|admitted|accepted|direct|indirect|review|"
+        r"mechanistic|clinical|adjacent|contextual|curated|"
+        r"reference)\s+){0,5}"
         r"(?:source\s+papers?|sources?|receipts?|claims?|tensions?|"
         r"cross-study\s+disagreements|curated\s+reference\s+papers)\b",
     ),

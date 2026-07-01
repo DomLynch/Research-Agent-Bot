@@ -353,6 +353,70 @@ def test_q2_allows_manifest_outcome_counts_and_tension_anchors() -> None:
     assert ok is True, msg
 
 
+def test_q2_allows_manifest_receipt_counts_tiers_directness_and_title_dose() -> None:
+    paper = (
+        "The evidence-tier distribution is: B2 (n=2), A1 (n=1). "
+        "By directness, the breakdown is: review (n=2), direct (n=1). "
+        "Smith 2024: finding=18 extracted claim(s). "
+        "Uddin 2024: Real-world evidence on gliclazide MR 60 mg during fasting."
+    )
+    manifest = {
+        "receipts": [
+            {
+                "evidence_tier": "B2",
+                "directness": "review",
+                "effect_direction": "null",
+                "outcome_class": "cardiometabolic",
+                "n_claims": 18,
+                "source_title": "Review without dose",
+            },
+            {
+                "evidence_tier": "B2",
+                "directness": "review",
+                "effect_direction": "null",
+                "outcome_class": "cardiometabolic",
+                "n_claims": 3,
+                "source_title": "Real-world evidence on gliclazide MR 60 mg during fasting",
+            },
+            {
+                "evidence_tier": "A1",
+                "directness": "direct",
+                "effect_direction": "mixed",
+                "outcome_class": "safety",
+                "n_claims": 4,
+                "source_title": "Trial without dose",
+            },
+        ],
+    }
+
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums=set(), manifest=manifest)
+
+    assert ok is True, msg
+
+
+def test_q2_still_blocks_unmanifested_exact_tension_count() -> None:
+    paper = "The direct sources generate 22 paired directness-gap tensions."
+    manifest = {"n_non_orthogonal_tensions": 207, "receipts": []}
+
+    ok, msg = audit._check_numeric_integrity(paper, corpus_nums=set(), manifest=manifest)
+
+    assert ok is False
+    assert "22" in msg or "brief_count" in msg
+
+
+def test_q13_excludes_deterministic_evidence_landscape_bulk() -> None:
+    paper = (
+        "## Evidence Landscape\n\n" + ("maprow " * 4000) + "\n\n"
+        "## Cross-Domain Synthesis\n\n" + ("cross " * 850) + "\n\n"
+        "## Discussion\n\n" + ("discussion " * 850) + "\n\n"
+        "## Results\n\n" + ("result " * 800) + "\n"
+    )
+
+    ok, msg = audit._check_analytical_ratio(paper)
+
+    assert ok is True, msg
+
+
 def test_reference_title_grouped_number_not_audited() -> None:
     """A cited paper's title sample size lives in References and is
     bibliographic, not a synthesis claim — it must not fail Q2 tracing.
