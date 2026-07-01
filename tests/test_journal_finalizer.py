@@ -169,8 +169,8 @@ def test_proactive_findings_map_uses_endpoint_context_before_topic_keyword(tmp_p
     assert logs
     assert "### Findings Map" in fixed
     assert "Findings Map completeness note: all 2 admitted manifest rows" in fixed
-    assert "| Cardiometabolic | 1 | null=1 | indirect=1 | Zhang 2026 |" in fixed
-    assert "| Skeletal, Fracture, and Bone | 1 | positive=1 | direct=1 | Bone 2024 |" in fixed
+    assert "Cardiometabolic n=1 (direction: null=1; directness: indirect=1; sources: Zhang 2026)" in fixed
+    assert "Skeletal, Fracture, and Bone n=1 (direction: positive=1; directness: direct=1; sources: Bone 2024)" in fixed
     assert "| Cardiometabolic | Zhang 2026: Association Between Calcium Supplementation" in fixed
     assert "| Skeletal, Fracture, and Bone | Bone 2024: Calcium supplementation and bone fracture risk | direction=positive | directness=direct | A1 |" in fixed
 
@@ -217,7 +217,7 @@ def test_findings_map_reconciles_counts_for_exact_reviewer_wording(tmp_path: Pat
     assert logs
     assert "stale row" not in fixed
     assert "Findings Map accounting note:" in fixed
-    assert "| Cardiometabolic | 2 | positive=1; unclear=1 | direct=1; indirect=1 | Alwhaibi 2024; Khalil 2025 |" in fixed
+    assert "Cardiometabolic n=2 (direction: positive=1; unclear=1; directness: direct=1; indirect=1; sources: Alwhaibi 2024; Khalil 2025)" in fixed
     assert "| Cardiometabolic | Alwhaibi 2024: Ramadan fasting cardiometabolic trial | direction=positive | directness=direct | A1 |" in fixed
     assert "| Cardiometabolic | Khalil 2025: Ramadan fasting diabetes safety cohort | direction=unclear | directness=indirect | B2 |" in fixed
 
@@ -1976,7 +1976,7 @@ def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "### Findings Map" in fixed
-    assert "| Cardiometabolic | 1 | null=1 | indirect=1 | Smith 2024 |" in fixed
+    assert "Cardiometabolic n=1 (direction: null=1; directness: indirect=1; sources: Smith 2024)" in fixed
     assert "| Cardiometabolic | Smith 2024: Clinical source one | direction=null | directness=indirect | B2 |" in fixed
     assert "finding=representative statistic p = 0.04" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []

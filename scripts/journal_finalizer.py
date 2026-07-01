@@ -3803,7 +3803,18 @@ def _phase_d_source_outcome_class_map(
         for row in rows
         if str(row.get("citation_token") or "").strip()
     }
-    if wants_findings_map:
+    wants_structured_findings_map = wants_findings_map and (
+        "directional-coding counts" in lower_feedback
+        or "directional coding counts" in lower_feedback
+        or "n, direction, and directness" in lower_feedback
+        or (
+            "for each outcome class" in lower_feedback
+            and "directness" in lower_feedback
+            and "effect direction" in lower_feedback
+            and "one-line finding" in lower_feedback
+        )
+    )
+    if wants_structured_findings_map:
         note = _findings_map_section(
             rows,
             extra_notes=_findings_map_feedback_notes(feedback, present_tokens),
@@ -3961,7 +3972,10 @@ def _findings_map_section(
         (
             "Findings Map accounting note: each outcome-class n, direction count, "
             "directness count, and source roster is computed from the same source-level "
-            "rows listed in the detailed table."
+            "rows listed in the detailed table. Receipt-level direction is not a "
+            "statement that the source abstracts lack directional statistics; it is "
+            "the conservative coded polarity used for synthesis accounting. "
+            f"Outcome-class roster: {_findings_map_roster_sentence(rows)}"
         ),
     ]
     for note in extra_notes or []:
@@ -3969,21 +3983,6 @@ def _findings_map_section(
     heterogeneity_note = _manifest_direction_heterogeneity_note(rows)
     if heterogeneity_note:
         lines.extend(("", heterogeneity_note))
-    lines.extend([
-        "",
-        "Outcome-class accounting roster:",
-    ])
-    grouped: dict[str, list[dict[str, Any]]] = {}
-    for row in rows:
-        grouped.setdefault(_row_base_outcome_display(row), []).append(row)
-    for outcome, outcome_rows in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
-        ordered = sorted(outcome_rows, key=_row_citation)
-        lines.append(
-            f"- {outcome}: n={len(ordered)}; "
-            f"direction counts: {_findings_map_value_counts(ordered, _normalised_direction)}; "
-            f"directness counts: {_findings_map_value_counts(ordered, _row_directness_label)}; "
-            f"sources: {'; '.join(_row_citation(row) for row in ordered)}."
-        )
     lines.extend((
         "",
         "| Outcome class | Source | Direction | Directness | Tier | Evidence role | Finding |",
@@ -4004,6 +4003,31 @@ def _findings_map_section(
             + " |"
         )
     return "\n".join(lines)
+
+
+def _findings_map_roster_sentence(rows: list[dict[str, Any]]) -> str:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        grouped.setdefault(_row_base_outcome_display(row), []).append(row)
+    parts = []
+    for outcome, outcome_rows in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
+        ordered = sorted(outcome_rows, key=_row_citation)
+        parts.append(
+            f"{outcome} n={len(ordered)} "
+            f"(direction: {_findings_map_value_counts(ordered, _normalised_direction)}; "
+            f"directness: {_findings_map_value_counts(ordered, _row_directness_label)}; "
+            f"sources: {'; '.join(_row_cited_as(row) for row in ordered)})"
+        )
+    return "; ".join(parts) + "."
+
+
+def _row_cited_as(row: dict[str, Any]) -> str:
+    return (
+        str(row.get("citation_token") or "").strip()
+        or str(row.get("cited_as") or "").strip()
+        or str(row.get("receipt_id") or "").strip()
+        or str(row.get("source_title") or "source").strip()[:80]
+    )
 
 
 def _findings_map_feedback_notes(feedback: str, present_tokens: set[str]) -> list[str]:
