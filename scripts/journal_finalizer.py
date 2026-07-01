@@ -818,12 +818,11 @@ def _phase_b_lane_qualifier(
         stripped = para.lstrip()
         if not stripped or stripped.startswith(("##", "###", "|")):
             continue
-        if stripped.startswith((
+        structured_note = stripped.startswith((
             "Findings Map completeness note:",
             "Findings Map accounting note:",
             "Direction heterogeneity note:",
-        )):
-            continue
+        ))
         if not any(tok in para for tok in animal_tokens):
             continue
         lower_stripped = stripped.lower()
@@ -835,11 +834,12 @@ def _phase_b_lane_qualifier(
         citation_pool = lane_map or {tok: "animal_preclinical" for tok in animal_tokens}
         cited = [tok for tok in citation_pool if tok in para]
         lead = _ANIMAL_QUALIFIER_LEAD if cited and sum(tok in animal_tokens for tok in cited) * 2 > len(cited) else "Additional corpus sources included animal/preclinical evidence; "
+        body_text = stripped if structured_note else _lowercase_first_letter(stripped)
         bullet = re.match(r"^([-*]\s+)(.+)$", stripped, flags=re.S)
         if bullet:
             paragraphs[i] = para[: len(para) - len(stripped)] + bullet.group(1) + lead + _lowercase_first_letter(bullet.group(2))
         else:
-            paragraphs[i] = lead + _lowercase_first_letter(stripped)
+            paragraphs[i] = lead + body_text
         n_patched += 1
     if n_patched == 0:
         return text, []
