@@ -41,7 +41,7 @@ sys.path.insert(0, str(ROOT))
 import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
-from agent.review_type import THIN_CORPUS_MIN_PRIMARY_TIER  # noqa: E402
+from agent.review_type import COMPACT_REVIEW_TYPES, THIN_CORPUS_MIN_PRIMARY_TIER, parse_review_type  # noqa: E402
 
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
@@ -1945,6 +1945,22 @@ def _publication_track_topic(topic: str) -> bool:
     return bool(str(data.get("target_journal", "")).strip())
 
 
+def _compact_review_topic(topic: str) -> bool:
+    try:
+        data = tomllib.loads((TOPIC_PACKS / f"{topic}.toml").read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError):
+        record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
+        pack_data = record.get("pack_data")
+        data = pack_data if isinstance(pack_data, dict) else {}
+    raw = str(data.get("review_type") or "").strip()
+    if not raw:
+        return False
+    try:
+        return parse_review_type(raw) in COMPACT_REVIEW_TYPES
+    except ValueError:
+        return True
+
+
 def _publication_score(topic: str, ledger_dir: Path, runs_root: Path) -> int:
     total, l4plus = _topic_run_stats(topic, runs_root)
     pass_rate = (l4plus / total) if total else 0
@@ -2005,6 +2021,7 @@ def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
     n_direct = int(counts.get("n_direct_receipts") or 0)
     return (
         bool(counts.get("has_manifest"))
+        and not _compact_review_topic(topic)
         and _topic_has_quant_floor(topic)
         and int(counts.get("n_primary_tier") or 0) >= PREFLIGHT_MIN_PRIMARY_TIER
         and n_direct >= PREFLIGHT_MIN_DIRECT_RECEIPTS
