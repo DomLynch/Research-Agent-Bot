@@ -1444,6 +1444,31 @@ def test_select_topic_full_synthesis_priority_skips_compact_review_type(
     assert selected == "zzz_full_synthesis"
 
 
+def test_select_topic_full_synthesis_priority_skips_numeric_downshift(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "aaa_numeric_downshift", target_journal=True)
+    _topic(tmp_path, "zzz_full_synthesis", target_journal=True)
+    prior = _prior_run(tmp_path, "aaa_numeric_downshift", receipts=20, tensions=5, primary=6, direct=6, level=4)
+    _write_json(prior / "full_paper.audit.json", {"checks": [{"name": "Q9_numeric_density", "passed": False}]})
+    _prior_run(tmp_path, "zzz_full_synthesis", receipts=24, tensions=5, primary=5, direct=5, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(
+        cycle,
+        "_publication_score",
+        lambda topic, *_args: 100 if topic == "aaa_numeric_downshift" else 1,
+    )
+
+    selected = cycle.select_topic(
+        ["aaa_numeric_downshift", "zzz_full_synthesis"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_full_synthesis"
+
+
 def test_select_topic_returns_none_when_no_publication_track_topics(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "berberine")

@@ -2020,12 +2020,14 @@ def _has_clean_ready_topic(
 
 
 def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
-    counts = _manifest_counts(_latest_topic_run(topic, runs_root))
+    latest = _latest_topic_run(topic, runs_root)
+    counts = _manifest_counts(latest)
     n_receipts = int(counts.get("n_receipts") or 0)
     n_direct = int(counts.get("n_direct_receipts") or 0)
     return (
         bool(counts.get("has_manifest"))
         and not _compact_review_topic(topic)
+        and _numeric_density_downshift(latest) is None
         and _topic_has_quant_floor(topic)
         and int(counts.get("n_primary_tier") or 0) >= PREFLIGHT_MIN_PRIMARY_TIER
         and n_direct >= PREFLIGHT_MIN_DIRECT_RECEIPTS
