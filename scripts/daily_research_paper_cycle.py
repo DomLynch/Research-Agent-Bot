@@ -2311,6 +2311,8 @@ def _failure_class(status: str) -> str:
         "corpus_seed_empty": "B_corpus_fixable",
         "corpus_seed_failed": "B_corpus_fixable",
         "receipt_preflight_insufficient": "B_corpus_fixable",
+        "public_research_surface_compact_review": "B_corpus_fixable",
+        "public_research_surface_insufficient": "B_corpus_fixable",
         # Back-compat for blocker rows written before audit failures were
         # routed through audit_not_all_green.
         "audit_p1_failed": "C_writer_fixable",
@@ -4464,6 +4466,11 @@ def run_cycle(
                 # paper's own evidence does not support / overstates.
                 overclaims = _abstract_overclaims(out_dir) if return_code == 0 else []
                 numeric_issues = _numeric_effect_direction_issues(out_dir) if return_code == 0 else []
+                public_surface = (
+                    _public_research_surface_preflight(out_dir)
+                    if return_code == 0 and submit and not revision_source and submit_cycle is None
+                    else {"passed": True}
+                )
                 abstract_repaired = False
                 if overclaims and _repair_abstract_overclaim_phrasing(out_dir, overclaims):
                     abstract_repaired = True
@@ -4473,7 +4480,14 @@ def run_cycle(
                 if abstract_overclaim_advisory:
                     overclaims = []
                 bridge: dict[str, Any] = {}
-                if return_code == 0 and not unmet and not retracted and not numeric_issues and not overclaims:
+                if (
+                    return_code == 0
+                    and not unmet
+                    and not retracted
+                    and not numeric_issues
+                    and not overclaims
+                    and public_surface.get("passed")
+                ):
                     # Submission stays single-threaded across lanes: the fresh and
                     # revise lanes run concurrently but share one blocking submit
                     # lock so they never race the fingerprint-dedupe / double-submit.
@@ -4499,6 +4513,8 @@ def run_cycle(
                     else "retracted_source_cited" if retracted
                     else "numeric_effect_mismatch" if numeric_issues
                     else "abstract_overclaim" if overclaims
+                    else str(public_surface.get("status") or "public_research_surface_insufficient")
+                    if not public_surface.get("passed")
                     else "revision_coverage_unmet" if unmet
                     else _current_gate_status(bridge, out_dir.name)
                 )
@@ -4537,6 +4553,8 @@ def run_cycle(
                     attempt["retracted_cited_sources"] = retracted
                 if numeric_issues:
                     attempt["numeric_effect_direction_issues"] = numeric_issues
+                if return_code == 0 and submit and not revision_source and submit_cycle is None:
+                    attempt["public_research_surface_preflight"] = public_surface
                 if overclaims:
                     attempt["abstract_overclaims"] = overclaims
                 if abstract_repaired:

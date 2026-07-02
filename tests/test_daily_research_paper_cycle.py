@@ -2596,6 +2596,21 @@ def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monke
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:
         out_dir.mkdir(parents=True)
+        receipts = [
+            {
+                "receipt_id": f"r{i}",
+                "evidence_tier": "A1" if i < 11 else "B2",
+                "directness": "direct" if i < 11 else "review",
+            }
+            for i in range(20)
+        ]
+        _write_json(out_dir / "manifest.json", {
+            "topic": topic,
+            "review_type": "prisma_scr_scoping_synthesis",
+            "n_receipts": 20,
+            "n_non_orthogonal_tensions": 5,
+            "receipts": receipts,
+        })
         (out_dir / "full_paper.md").write_text("# Research Synthesis: Creatine — full paper\n", encoding="utf-8")
         return 0
 
@@ -2641,6 +2656,21 @@ def test_cycle_retries_real_submit_bridge_when_current_run_rechecks_eligible(tmp
         review_type_override: str | None = None,
     ) -> int:
         out_dir.mkdir(parents=True)
+        receipts = [
+            {
+                "receipt_id": f"r{i}",
+                "evidence_tier": "A1" if i < 11 else "B2",
+                "directness": "direct" if i < 11 else "review",
+            }
+            for i in range(20)
+        ]
+        _write_json(out_dir / "manifest.json", {
+            "topic": topic,
+            "review_type": "prisma_scr_scoping_synthesis",
+            "n_receipts": 20,
+            "n_non_orthogonal_tensions": 5,
+            "receipts": receipts,
+        })
         return 0
 
     def fake_submit_bridge(**kwargs: Any) -> dict[str, Any]:
@@ -7880,6 +7910,82 @@ def test_fresh_lane_unbounded_attempts_reach_ready_after_sparse_receipts(
         "receipt_preflight_insufficient",
         "receipt_preflight_insufficient",
     ]
+
+
+def test_fresh_lane_skips_public_brief_risk_before_submit(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    for topic in ("aaa_brief_risk", "zzz_research_surface"):
+        _topic(tmp_path, topic, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda topics: set())
+    monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TEST_TOKEN"))
+
+    def fake_receipt_preflight(topic: str, out_dir: Path, **_k: Any) -> dict[str, Any]:
+        return {
+            "passed": True,
+            "status": "receipt_preflight_ok",
+            "n_receipts": 20,
+            "min_receipts": 12,
+            "n_primary_tier": 10,
+            "min_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+            "n_direct_receipts": 5 if topic == "aaa_brief_risk" else 11,
+            "min_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+        }
+
+    synthesized: list[str] = []
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        direct = 5 if topic == "aaa_brief_risk" else 11
+        receipts = [
+            {
+                "receipt_id": f"r{i}",
+                "evidence_tier": "A1" if i < 10 else "B2",
+                "directness": "direct" if i < direct else "review",
+            }
+            for i in range(20)
+        ]
+        _write_json(out_dir / "manifest.json", {
+            "topic": topic,
+            "review_type": "prisma_scr_scoping_synthesis",
+            "n_receipts": 20,
+            "n_non_orthogonal_tensions": 5,
+            "receipts": receipts,
+        })
+        _write_json(out_dir / "final_status.json", {"maturity_level": 5, "submission_ready": True})
+        _write_json(out_dir / "full_paper.journal_surface.json", {"passed": True})
+        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(
+        cycle,
+        "_submit_current_candidate",
+        lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-06-02",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        max_attempts=0,
+    )
+
+    assert synthesized == ["aaa_brief_risk", "zzz_research_surface"]
+    assert ledger["status"] == "submitted_to_researka"
+    assert [a["gate_status"] for a in ledger["attempts"]] == [
+        "public_research_surface_insufficient",
+        "submitted_to_researka",
+    ]
+    assert ledger["attempts"][0]["submitted"] == 0
+    assert ledger["attempts"][1]["submitted"] == 1
 
 
 @pytest.mark.parametrize(
