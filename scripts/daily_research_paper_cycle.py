@@ -2024,9 +2024,16 @@ def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
     counts = _manifest_counts(latest)
     n_receipts = int(counts.get("n_receipts") or 0)
     n_direct = int(counts.get("n_direct_receipts") or 0)
+    manifest = _read_json(latest / "manifest.json") if latest else {}
+    review_type = str(manifest.get("review_type") or "").strip()
+    try:
+        compact_run = bool(review_type) and parse_review_type(review_type) in COMPACT_REVIEW_TYPES
+    except ValueError:
+        compact_run = True
     return (
         bool(counts.get("has_manifest"))
         and not _compact_review_topic(topic)
+        and not compact_run
         and _numeric_density_downshift(latest) is None
         and _topic_has_quant_floor(topic)
         and int(counts.get("n_primary_tier") or 0) >= PREFLIGHT_MIN_PRIMARY_TIER

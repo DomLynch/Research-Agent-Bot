@@ -1468,6 +1468,33 @@ def test_select_topic_full_synthesis_priority_skips_compact_review_type(
     assert selected == "zzz_full_synthesis"
 
 
+def test_select_topic_full_synthesis_priority_skips_compact_latest_manifest(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "aaa_compact_latest", target_journal=True)
+    _topic(tmp_path, "zzz_full_synthesis", target_journal=True)
+    latest = _prior_run(tmp_path, "aaa_compact_latest", receipts=20, tensions=5, primary=6, direct=6, level=4)
+    manifest = json.loads((latest / "manifest.json").read_text(encoding="utf-8"))
+    manifest["review_type"] = "thin_corpus_brief"
+    _write_json(latest / "manifest.json", manifest)
+    _prior_run(tmp_path, "zzz_full_synthesis", receipts=24, tensions=5, primary=5, direct=5, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(
+        cycle,
+        "_publication_score",
+        lambda topic, *_args: 100 if topic == "aaa_compact_latest" else 1,
+    )
+
+    selected = cycle.select_topic(
+        ["aaa_compact_latest", "zzz_full_synthesis"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_full_synthesis"
+
+
 def test_select_topic_full_synthesis_priority_skips_numeric_downshift(
     tmp_path: Path, monkeypatch,
 ) -> None:
