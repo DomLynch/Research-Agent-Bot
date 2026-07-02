@@ -1999,6 +1999,19 @@ def _has_clean_ready_topic(
     )
 
 
+def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
+    counts = _manifest_counts(_latest_topic_run(topic, runs_root))
+    n_receipts = int(counts.get("n_receipts") or 0)
+    n_direct = int(counts.get("n_direct_receipts") or 0)
+    return (
+        bool(counts.get("has_manifest"))
+        and _topic_has_quant_floor(topic)
+        and int(counts.get("n_primary_tier") or 0) >= PREFLIGHT_MIN_PRIMARY_TIER
+        and n_direct >= PREFLIGHT_MIN_DIRECT_RECEIPTS
+        and (not n_receipts or n_direct * 5 >= n_receipts)
+    )
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -2021,6 +2034,9 @@ def select_topic(
     pool = [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
     if not pool:
         return None
+    synthesis_pool = [topic for topic in pool if _full_synthesis_ready_topic(topic, runs_root)]
+    if synthesis_pool:
+        pool = synthesis_pool
     # Prefer topics with a local corpus first; empty generated frontier topics
     # belong behind publishable corpora so the publish lane does not spend the
     # whole window seeding. Within that ready pool, frontier-advance still holds:

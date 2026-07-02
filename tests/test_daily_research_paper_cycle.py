@@ -1394,6 +1394,28 @@ def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatc
     assert selected == "caloric_restriction"
 
 
+def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_brief_grade", target_journal=True)
+    _topic(tmp_path, "zzz_full_synthesis", target_journal=True)
+    _prior_run(tmp_path, "aaa_brief_grade", receipts=40, tensions=5, primary=8, direct=2, level=4)
+    _prior_run(tmp_path, "zzz_full_synthesis", receipts=20, tensions=5, primary=5, direct=5, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(
+        cycle,
+        "_publication_score",
+        lambda topic, *_args: 100 if topic == "aaa_brief_grade" else 1,
+    )
+
+    selected = cycle.select_topic(
+        ["aaa_brief_grade", "zzz_full_synthesis"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_full_synthesis"
+
+
 def test_select_topic_returns_none_when_no_publication_track_topics(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "berberine")
@@ -1422,7 +1444,7 @@ def test_select_topic_prefers_untried_over_prior_l4_to_advance_frontier(tmp_path
     preferred — that preference is what stalled the new-topic frontier.)"""
     _topic(tmp_path, "caloric_restriction", target_journal=True)
     _topic(tmp_path, "metformin", target_journal=True)
-    _prior_run(tmp_path, "metformin", receipts=40, tensions=5, level=4)
+    _prior_run(tmp_path, "metformin", receipts=40, tensions=5, direct=1, level=4)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
 
     selected = cycle.select_topic(
