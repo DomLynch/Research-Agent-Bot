@@ -41,7 +41,11 @@ sys.path.insert(0, str(ROOT))
 import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
-from agent.review_type import COMPACT_REVIEW_TYPES, THIN_CORPUS_MIN_PRIMARY_TIER, parse_review_type  # noqa: E402
+from agent.review_type import (  # noqa: E402
+    COMPACT_REVIEW_TYPES,
+    THIN_CORPUS_MIN_PRIMARY_TIER,
+    parse_review_type,
+)
 
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
