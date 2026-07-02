@@ -1421,7 +1421,10 @@ def test_select_topic_prefers_public_research_surface_over_brief_risk(
 ) -> None:
     _topic(tmp_path, "aaa_brief_risk", target_journal=True)
     _topic(tmp_path, "zzz_research_surface", target_journal=True)
-    _prior_run(tmp_path, "aaa_brief_risk", receipts=40, tensions=5, primary=16, direct=10, level=4)
+    latest = _prior_run(tmp_path, "aaa_brief_risk", receipts=40, tensions=5, primary=16, direct=10, level=4)
+    manifest = json.loads((latest / "manifest.json").read_text(encoding="utf-8"))
+    manifest["review_type"] = "thin_corpus_brief"
+    _write_json(latest / "manifest.json", manifest)
     _prior_run(tmp_path, "zzz_research_surface", receipts=20, tensions=5, primary=11, direct=11, level=4)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
@@ -7977,7 +7980,7 @@ def test_fresh_lane_skips_public_brief_risk_before_submit(
         ]
         _write_json(out_dir / "manifest.json", {
             "topic": topic,
-            "review_type": "prisma_scr_scoping_synthesis",
+            "review_type": "thin_corpus_brief" if topic == "aaa_brief_risk" else "prisma_scr_scoping_synthesis",
             "n_receipts": 20,
             "n_non_orthogonal_tensions": 5,
             "receipts": receipts,
@@ -8008,7 +8011,7 @@ def test_fresh_lane_skips_public_brief_risk_before_submit(
     assert synthesized == ["aaa_brief_risk", "zzz_research_surface"]
     assert ledger["status"] == "submitted_to_researka"
     assert [a["gate_status"] for a in ledger["attempts"]] == [
-        "public_research_surface_insufficient",
+        "public_research_surface_compact_review",
         "submitted_to_researka",
     ]
     assert ledger["attempts"][0]["submitted"] == 0

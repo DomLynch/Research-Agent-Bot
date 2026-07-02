@@ -2046,17 +2046,19 @@ def _public_research_surface_ready_topic(topic: str, runs_root: Path) -> bool:
     latest = _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
     n_receipts = int(counts.get("n_receipts") or 0)
+    n_primary = int(counts.get("n_primary_tier") or 0)
     n_direct = int(counts.get("n_direct_receipts") or 0)
     return (
         _full_synthesis_ready_topic(topic, runs_root)
         and n_receipts > 0
-        and n_direct * 2 >= n_receipts
+        and not _receipt_source_fit_reasons(n_primary, n_direct, n_receipts)
     )
 
 
 def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
     counts = _manifest_counts(run)
     n_receipts = int(counts.get("n_receipts") or 0)
+    n_primary = int(counts.get("n_primary_tier") or 0)
     n_direct = int(counts.get("n_direct_receipts") or 0)
     manifest = _read_json(run / "manifest.json")
     review_type = str(manifest.get("review_type") or "").strip()
@@ -2066,7 +2068,8 @@ def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
             compact = parse_review_type(review_type) in COMPACT_REVIEW_TYPES
         except ValueError:
             compact = True
-    passed = bool(n_receipts) and not compact and n_direct * 2 >= n_receipts
+    source_fit_reasons = _receipt_source_fit_reasons(n_primary, n_direct, n_receipts)
+    passed = bool(n_receipts) and not compact and not source_fit_reasons
     return {
         "passed": passed,
         "status": (
@@ -2076,8 +2079,11 @@ def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
         ),
         "review_type": review_type or None,
         "n_receipts": n_receipts,
+        "n_primary_tier": n_primary,
         "n_direct_receipts": n_direct,
-        "min_direct_share": "1/2",
+        "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
+        "min_direct_share": "1/5",
+        "reasons": [] if passed else source_fit_reasons,
     }
 
 
