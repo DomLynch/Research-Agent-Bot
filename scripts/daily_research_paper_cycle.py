@@ -2035,6 +2035,45 @@ def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
     )
 
 
+def _public_research_surface_ready_topic(topic: str, runs_root: Path) -> bool:
+    latest = _latest_topic_run(topic, runs_root)
+    counts = _manifest_counts(latest)
+    n_receipts = int(counts.get("n_receipts") or 0)
+    n_direct = int(counts.get("n_direct_receipts") or 0)
+    return (
+        _full_synthesis_ready_topic(topic, runs_root)
+        and n_receipts > 0
+        and n_direct * 2 >= n_receipts
+    )
+
+
+def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
+    counts = _manifest_counts(run)
+    n_receipts = int(counts.get("n_receipts") or 0)
+    n_direct = int(counts.get("n_direct_receipts") or 0)
+    manifest = _read_json(run / "manifest.json")
+    review_type = str(manifest.get("review_type") or "").strip()
+    compact = False
+    if review_type:
+        try:
+            compact = parse_review_type(review_type) in COMPACT_REVIEW_TYPES
+        except ValueError:
+            compact = True
+    passed = bool(n_receipts) and not compact and n_direct * 2 >= n_receipts
+    return {
+        "passed": passed,
+        "status": (
+            "public_research_surface_ok" if passed else
+            "public_research_surface_compact_review" if compact else
+            "public_research_surface_insufficient"
+        ),
+        "review_type": review_type or None,
+        "n_receipts": n_receipts,
+        "n_direct_receipts": n_direct,
+        "min_direct_share": "1/2",
+    }
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -2057,8 +2096,11 @@ def select_topic(
     pool = [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
     if not pool:
         return None
+    public_research_pool = [topic for topic in pool if _public_research_surface_ready_topic(topic, runs_root)]
+    if public_research_pool:
+        pool = public_research_pool
     synthesis_pool = [topic for topic in pool if _full_synthesis_ready_topic(topic, runs_root)]
-    if synthesis_pool:
+    if synthesis_pool and not public_research_pool:
         pool = synthesis_pool
     # Prefer topics with a local corpus first; empty generated frontier topics
     # belong behind publishable corpora so the publish lane does not spend the

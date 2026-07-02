@@ -1416,6 +1416,30 @@ def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkey
     assert selected == "zzz_full_synthesis"
 
 
+def test_select_topic_prefers_public_research_surface_over_brief_risk(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _topic(tmp_path, "aaa_brief_risk", target_journal=True)
+    _topic(tmp_path, "zzz_research_surface", target_journal=True)
+    _prior_run(tmp_path, "aaa_brief_risk", receipts=40, tensions=5, primary=16, direct=10, level=4)
+    _prior_run(tmp_path, "zzz_research_surface", receipts=20, tensions=5, primary=11, direct=11, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(
+        cycle,
+        "_publication_score",
+        lambda topic, *_args: 100 if topic == "aaa_brief_risk" else 1,
+    )
+
+    selected = cycle.select_topic(
+        ["aaa_brief_risk", "zzz_research_surface"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_research_surface"
+
+
 def test_select_topic_full_synthesis_priority_skips_compact_review_type(
     tmp_path: Path, monkeypatch,
 ) -> None:
