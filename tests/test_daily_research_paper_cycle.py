@@ -949,6 +949,59 @@ def test_reconcile_publication_ledgers_cleans_stale_published_reason(tmp_path: P
     assert "no_submission_reason" not in ledger
 
 
+def test_reconcile_publication_ledgers_writes_dated_noop_artifact(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-05-fresh.json", {
+        "date": "2026-06-05",
+        "mode": "fresh",
+        "started_at": "2026-06-05T08:00:00+00:00",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+    })
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-06-05",
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+    )
+
+    artifact = json.loads((ledger_dir / "2026-06-05-reconcile.json").read_text(encoding="utf-8"))
+    assert result["status"] == "no_publication_reconciliation_needed"
+    assert artifact["status"] == "no_publication_reconciliation_needed"
+    assert artifact["mode"] == "fresh"
+    assert artifact["checked"] == 1
+    assert artifact["updated"] == 0
+
+
+def test_reconcile_publication_ledgers_without_date_writes_today_artifact(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-06-05-fresh.json", {
+        "date": "2026-06-05",
+        "mode": "fresh",
+        "started_at": "2026-06-05T08:00:00+00:00",
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+    })
+    monkeypatch.setattr(cycle, "_default_cycle_date", lambda: "2026-06-06")
+
+    cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        remote_loader=lambda: (set(), None),
+    )
+
+    artifact = json.loads((ledger_dir / "2026-06-06-reconcile.json").read_text(encoding="utf-8"))
+    assert artifact["scope"] == "all_dates"
+    assert artifact["checked"] == 1
+
+
 def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path: Path, monkeypatch) -> None:
     runs_root = tmp_path / "runs"
     title = "Hypothesis-Generating Brief: Taurine supplementation — full paper"
@@ -987,6 +1040,11 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
     assert ledger["published"] == 1
     assert decisions["days"]["2026-06-24"]["counts"] == {"accept": 1}
     assert decisions["days"]["2026-06-24"]["records"][0]["reviewed_at"] == "2026-06-24T12:22:51+04:00"
+    assert result["decision_summary"]["counts"] == {"accept": 1}
+    assert result["decision_summary"]["records"][0]["submission_id"] == "public-decision-submission-id"
+    artifact = json.loads((ledger_dir / "2026-06-24-reconcile.json").read_text(encoding="utf-8"))
+    assert artifact["decision_summary"]["counts"] == {"accept": 1}
+    assert artifact["updated_ledgers"] == ["2026-06-24-fresh.json"]
 
 
 def test_reconcile_publication_ledgers_date_scope_includes_daily_submit_cycle(tmp_path: Path) -> None:

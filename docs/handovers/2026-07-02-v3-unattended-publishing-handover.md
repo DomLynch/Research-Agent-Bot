@@ -5,6 +5,25 @@ Audience: GPT Pro / external audit.
 Scope: Research Agent Bot v3 only. Do not use this packet as proof for v4, v5,
 or v6. Do not borrow proof from other agent lanes.
 
+## Codex Follow-Up - 2026-07-02
+
+This supersedes the earlier red-gate snapshot below. A later same-topic revise
+published `aerobic_exercise_training_effects`, so the live consistency gate can
+turn green while the original fresh lane remains `submitted=1, published=0`.
+
+Implemented follow-up:
+
+- dated reconcile artifacts are written for dated reconcile runs, including
+  no-op runs;
+- reconcile output now includes compact review decision counts/examples with
+  submission IDs where available;
+- throughput output now includes `public.surface_mix` so brief-vs-full-synthesis
+  drift is visible in the normal report.
+
+Remaining product issue: recent accepts are predominantly evidence briefs. That
+is an honest direct-evidence downgrade, not a ledger bug; restoring full
+Research Syntheses requires stronger direct, on-entity corpus supply.
+
 ## Executive State
 
 V3 is publicly publishing again, but full unattended consistency is not proven.

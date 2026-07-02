@@ -84,6 +84,39 @@ def _public_example(row: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def _surface_label(row: dict[str, Any]) -> str:
+    title = str(row.get("title") or "")
+    if title.startswith("Research Synthesis:"):
+        return "research_synthesis"
+    if title.startswith(("Adjacent Evidence Brief:", "Hypothesis-Generating Brief:")):
+        return "brief"
+    if title.startswith("Mechanistic Evidence Map:"):
+        return "evidence_map"
+    return "other"
+
+
+def _surface_counts(rows: list[dict[str, Any]]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for row in rows:
+        label = _surface_label(row)
+        counts[label] = counts.get(label, 0) + 1
+    return dict(sorted(counts.items()))
+
+
+def _surface_mix(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    accepts = [row for row in rows if str(row.get("decision") or "") == "accept"]
+    latest = sorted(
+        accepts,
+        key=lambda row: _parse_iso(row.get("createdAt")) or dt.datetime.min.replace(tzinfo=dt.UTC),
+        reverse=True,
+    )[:12]
+    return {
+        "accepts": len(accepts),
+        "all": _surface_counts(accepts),
+        "latest_12": _surface_counts(latest),
+    }
+
+
 def _public_counts(
     date: str,
     *,
@@ -126,6 +159,7 @@ def _public_counts(
         "decisions": decisions,
         "examples": examples[:12],
         "post_baseline_examples": post_baseline_examples[:12],
+        "surface_mix": _surface_mix(all_rows),
     }
 
 

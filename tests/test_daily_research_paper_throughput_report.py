@@ -43,6 +43,30 @@ def test_public_counts_includes_live_agent_public_accepts(monkeypatch) -> None:
 
     assert counts["decisions"] == {"accept": 1}
     assert counts["examples"][0]["title"] == "Research Synthesis: Sleep Architecture Deep Sleep"
+    assert counts["surface_mix"]["all"] == {"research_synthesis": 1}
+
+
+def test_public_counts_reports_recent_brief_surface_mix(monkeypatch) -> None:
+    rows = [{
+        "createdAt": f"2026-07-02T{hour:02d}:00:00+04:00",
+        "title": f"Adjacent Evidence Brief: Topic {hour}",
+        "decision": "accept",
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper-live",
+        "id": f"paper-{hour}",
+    } for hour in range(13)]
+    rows[0]["title"] = "Research Synthesis: Older Direct Topic"
+    monkeypatch.setattr(report, "_fetch_rows", lambda url: rows if "api/publications" in url else [])
+
+    counts = report._public_counts(
+        "2026-07-02",
+        papers_url="https://researka.org/papers",
+        reviews_url="https://researka.org/reviews",
+        publications_url="https://researka.org/api/publications",
+    )
+
+    assert counts["surface_mix"]["all"] == {"brief": 12, "research_synthesis": 1}
+    assert counts["surface_mix"]["latest_12"] == {"brief": 12}
 
 
 def test_public_counts_keeps_post_baseline_accepts_outside_report_date(monkeypatch) -> None:

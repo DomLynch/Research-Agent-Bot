@@ -420,6 +420,46 @@ def _child_submission_counts(ledger: dict[str, Any]) -> tuple[int, int]:
     return submitted, published
 
 
+def _review_decision_summary(rows: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    ordered = sorted(rows.values(), key=_review_ts, reverse=True)
+    counts = Counter(str(row.get("decision") or "unknown").lower() for row in ordered)
+    return {
+        "counts": dict(sorted(counts.items())),
+        "records": [{
+            "decision": row.get("decision"),
+            "status": row.get("status"),
+            "title": row.get("title"),
+            "topic": row.get("topic"),
+            "submission_id": row.get("submissionId") or row.get("submission_id"),
+            "reviewed_at": (
+                row.get("reviewedAt")
+                or row.get("reviewed_at")
+                or row.get("createdAt")
+                or row.get("created_at")
+                or row.get("publishedAt")
+                or row.get("published_at")
+            ),
+        } for row in ordered[:12]],
+    }
+
+
+def _write_reconcile_artifact(
+    ledger_dir: Path,
+    *,
+    date: str | None,
+    mode: str | None,
+    result: dict[str, Any],
+) -> None:
+    artifact_date = date or _default_cycle_date()
+    _write_json(ledger_dir / f"{artifact_date}-reconcile.json", {
+        "date": artifact_date,
+        "mode": mode or "all",
+        "scope": date or "all_dates",
+        "created_at": dt.datetime.now(dt.UTC).isoformat(),
+        **result,
+    })
+
+
 def _reconcile_published_ledger(
     ledger: dict[str, Any],
     runs_root: Path,
@@ -517,13 +557,16 @@ def reconcile_publication_ledgers(
     mode: str | None = None,
     remote_loader: RemoteLoader | None = None,
 ) -> dict[str, Any]:
+    ledger_dir = runs_root / LEDGER_DIR
     remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
     if remote_error:
-        return {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
-    ledger_dir = runs_root / LEDGER_DIR
+        result = {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
+        _write_reconcile_artifact(ledger_dir, date=date, mode=mode, result=result)
+        return result
     title_marker_counts = _submitted_title_marker_counts(runs_root)
     decision_records = 0
     decision_seen: set[str] = set()
+    decision_summary: dict[str, Any] = {"counts": {}, "records": []}
     if remote_loader is None:
         latest_decisions, decision_error = _latest_public_decisions_by_title()
         direct_decisions, direct_error = _submitted_submission_decisions_by_title(runs_root)
@@ -535,6 +578,7 @@ def reconcile_publication_ledgers(
             _record_review_decisions(ledger_dir, latest_decisions)
             decision_seen = _public_decision_markers(latest_decisions)
             decision_records = len(latest_decisions)
+            decision_summary = _review_decision_summary(latest_decisions)
     checked = 0
     updated: list[str] = []
     for ledger_path in _ledger_paths_for_reconciliation(ledger_dir, date, mode):
@@ -562,14 +606,17 @@ def reconcile_publication_ledgers(
         if changed:
             _write_json(ledger_path, ledger)
             updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}")
-    return {
+    result = {
         "status": "publication_reconciled" if updated else "no_publication_reconciliation_needed",
         "checked": checked,
         "updated": len(updated),
         "updated_ledgers": updated,
         "known_fingerprints": len(remote_seen),
         "decision_records": decision_records,
+        "decision_summary": decision_summary,
     }
+    _write_reconcile_artifact(ledger_dir, date=date, mode=mode, result=result)
+    return result
 
 
 def discover_topics(
