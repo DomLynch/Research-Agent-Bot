@@ -418,3 +418,15 @@ Every scheduled v3 lane has clean ledger/reconcile proof matching public receipt
 after baseline 2026-06-29T16:30:00Z.
 ```
 
+## Handover Publication Note
+
+This packet is intended to live on the canonical GitHub branch
+`codex/019e9ce8/main` and be deployed to both VPS mirrors:
+
+```text
+/opt/research-agent-bot
+/root/Research-Agent-Bot
+```
+
+After updating this document, verify MacBook, GitHub, VPS `/opt`, and VPS
+`/root` all report the same commit SHA and `dirty=0`.
