@@ -18,11 +18,13 @@ Implemented follow-up:
 - reconcile output now includes compact review decision counts/examples with
   submission IDs where available;
 - throughput output now includes `public.surface_mix` so brief-vs-full-synthesis
-  drift is visible in the normal report.
+  drift is visible in the normal report;
+- receipt preflight now records/enforces direct-source count/share before submit,
+  matching the finalizer's Brief downgrade floor instead of letting low-direct
+  bundles publish as the recent public mix did.
 
-Remaining product issue: recent accepts are predominantly evidence briefs. That
-is an honest direct-evidence downgrade, not a ledger bug; restoring full
-Research Syntheses requires stronger direct, on-entity corpus supply.
+Remaining live validation: deploy the V3 patch and run one fresh/revise cycle to
+prove the repaired lane selects or builds a full Research Synthesis bundle.
 
 ## Executive State
 

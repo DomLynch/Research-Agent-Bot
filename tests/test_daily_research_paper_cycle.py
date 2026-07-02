@@ -398,12 +398,19 @@ def _prior_run(
     *,
     receipts: int,
     tensions: int,
-    primary: int = cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+    primary: int | None = None,
+    direct: int | None = None,
     level: int = 2,
 ) -> Path:
     run = root / "runs" / f"synthesis-{topic}-v06-OLD"
+    primary_n = receipts if primary is None else primary
+    direct_n = direct if direct is not None else max(primary_n, (receipts + 4) // 5)
     receipts_payload = [
-        {"receipt_id": f"r{i}", "evidence_tier": "A1" if i < primary else "B2"}
+        {
+            "receipt_id": f"r{i}",
+            "evidence_tier": "A1" if i < primary_n else "B2",
+            "directness": "direct" if i < direct_n else "review",
+        }
         for i in range(receipts)
     ]
     _write_json(run / "manifest.json", {
@@ -3249,6 +3256,7 @@ def test_receipt_preflight_requires_primary_tier_floor(tmp_path: Path, monkeypat
         _write_json(out_dir / "receipt_funnel.json", {
             "counts": {
                 "admitted_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "direct_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
                 "primary_tier_receipts": cycle.PREFLIGHT_MIN_PRIMARY_TIER - 1,
             },
         })
@@ -3268,19 +3276,46 @@ def test_receipt_preflight_requires_primary_tier_floor(tmp_path: Path, monkeypat
     ]
 
 
+def test_receipt_preflight_requires_direct_source_share(tmp_path: Path, monkeypatch) -> None:
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+                "primary_tier_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+            },
+        })
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    result = cycle._receipt_preflight("brief_grade_bundle", tmp_path / "run", repair=False)
+
+    assert result["passed"] is False
+    assert result["status"] == "receipt_preflight_insufficient"
+    assert result["n_receipts"] == cycle.PREFLIGHT_MIN_RECEIPTS
+    assert result["n_direct_receipts"] == cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS
+    assert result["reasons"] == [
+        f"n_direct_receipts={cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS}/{cycle.PREFLIGHT_MIN_RECEIPTS} < 1/5 "
+        "(direct-source share below synthesis floor)"
+    ]
+
+
 def test_manifest_counts_treat_a2_as_primary_tier(tmp_path: Path) -> None:
     run = tmp_path / "run"
     run.mkdir()
     _write_json(run / "manifest.json", {
         "receipts": [
-            {"evidence_tier": "A1"},
-            {"evidence_tier": "A2"},
-            {"tier": "B1"},
-            {"evidence_tier": "B2"},
+            {"evidence_tier": "A1", "directness": "direct"},
+            {"evidence_tier": "A2", "directness": "indirect"},
+            {"tier": "B1", "directness": "direct"},
+            {"evidence_tier": "B2", "directness": "review"},
         ],
     })
 
     assert cycle._manifest_counts(run)["n_primary_tier"] == 3
+    assert cycle._manifest_counts(run)["n_direct_receipts"] == 2
 
 
 def test_paper_strategy_skips_terminal_sparse_researka_feedback() -> None:

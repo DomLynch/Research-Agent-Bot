@@ -288,11 +288,18 @@ def test_reconciled_receipt_funnel_renames_strict_high_confidence_count() -> Non
         "counts": {"accepted_high_confidence": 2, "candidate_partial_only": 6},
         "examples": {"accepted_high_confidence": ["paper_a"]},
     }
-    receipt = SimpleNamespace(evidence_tier="B2")
-    reconciled = orch.reconcile_receipt_funnel_report(report, cast(Any, [receipt] * 5))
+    receipts = [
+        SimpleNamespace(evidence_tier="A1", directness="direct"),
+        SimpleNamespace(evidence_tier="B2", directness="review"),
+        SimpleNamespace(evidence_tier="B2", directness="review"),
+        SimpleNamespace(evidence_tier="B2", directness="review"),
+        SimpleNamespace(evidence_tier="B2", directness="review"),
+    ]
+    reconciled = orch.reconcile_receipt_funnel_report(report, cast(Any, receipts))
     assert "accepted_high_confidence" not in reconciled["counts"]
     assert "accepted_high_confidence" not in reconciled["examples"]
     assert reconciled["counts"]["admitted_receipts"] == 5
+    assert reconciled["counts"]["direct_receipts"] == 1
     assert reconciled["counts"]["original_strict_high_confidence_receipts"] == 2
     assert reconciled["examples"]["original_strict_high_confidence_receipts"] == ["paper_a"]
 

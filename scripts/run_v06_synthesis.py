@@ -2219,6 +2219,7 @@ def reconcile_receipt_funnel_report(report: dict[str, Any], receipts: list[Recei
         examples["original_strict_high_confidence_receipts"] = strict_examples
     counts.update({
         "admitted_receipts": len(receipts),
+        "direct_receipts": sum(getattr(r, "directness", "") == "direct" for r in receipts),
         "original_strict_high_confidence_receipts": strict,
         "primary_tier_receipts": sum(r.evidence_tier in ("A1", "A2", "B1") for r in receipts),
     })

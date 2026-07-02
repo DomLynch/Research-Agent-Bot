@@ -64,6 +64,7 @@ PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = THIN_CORPUS_MIN_PRIMARY_TIER
+PREFLIGHT_MIN_DIRECT_RECEIPTS = 2
 SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT = max(PREFLIGHT_MIN_RECEIPTS * 2, PREFLIGHT_MIN_QUANT_CLAIMS)
 PREFLIGHT_MAX_RECEIPTS = 500
 PREFLIGHT_MAX_TENSIONS = 50_000
@@ -844,11 +845,15 @@ def _manifest_counts(run: Path | None) -> dict[str, Any]:
     manifest = _read_json(run / "manifest.json") if run else {}
     receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
     primary = sum(1 for r in receipts if str(r.get("evidence_tier") or r.get("tier") or "").upper() in {"A1", "A2", "B1"})
+    direct = sum(1 for r in receipts if str(r.get("directness") or "").lower() == "direct")
+    if receipts and not any("directness" in r for r in receipts):
+        direct = primary
     return {
         "has_manifest": bool(manifest),
         "n_receipts": int(manifest.get("n_receipts") or len(receipts) or 0),
         "n_tensions": int(manifest.get("n_non_orthogonal_tensions") or 0),
         "n_primary_tier": primary,
+        "n_direct_receipts": direct,
         "n_outcome_classes": len({str(r.get("outcome_class") or "").strip() for r in receipts if str(r.get("outcome_class") or "").strip()}),
     }
 
@@ -2139,13 +2144,28 @@ def _quant_claim_preflight(corpus: dict[str, Any], *, topic: str | None = None) 
     }
 
 
-def _receipt_source_fit_reasons(n_primary_tier: int) -> list[str]:
+def _receipt_source_fit_reasons(
+    n_primary_tier: int,
+    n_direct_receipts: int,
+    n_receipts: int,
+) -> list[str]:
+    reasons: list[str] = []
     if n_primary_tier < PREFLIGHT_MIN_PRIMARY_TIER:
-        return [
+        reasons.append(
             f"n_primary_tier={n_primary_tier} < {PREFLIGHT_MIN_PRIMARY_TIER} "
             "(insufficient primary-tier anchors)"
-        ]
-    return []
+        )
+    if n_direct_receipts < PREFLIGHT_MIN_DIRECT_RECEIPTS:
+        reasons.append(
+            f"n_direct_receipts={n_direct_receipts} < {PREFLIGHT_MIN_DIRECT_RECEIPTS} "
+            "(insufficient direct source anchors)"
+        )
+    if n_receipts and n_direct_receipts * 5 < n_receipts:
+        reasons.append(
+            f"n_direct_receipts={n_direct_receipts}/{n_receipts} < 1/5 "
+            "(direct-source share below synthesis floor)"
+        )
+    return reasons
 
 
 def _paper_strategy(corpus: dict[str, Any], preflight: dict[str, Any], revision_feedback: str = "") -> dict[str, Any]:
@@ -2674,8 +2694,10 @@ def _receipt_preflight(
     rc = 1
     n_receipts = 0
     n_primary_tier = 0
+    n_direct_receipts = 0
     best_receipts = 0
     best_primary_tier = 0
+    best_direct_receipts = 0
     for round_idx in range(rounds + 1):
         suffix = "receipt-preflight" if round_idx == 0 else f"receipt-preflight-{round_idx + 1}"
         probe_dir = out_dir.with_name(f"{out_dir.name}-{suffix}")
@@ -2687,16 +2709,21 @@ def _receipt_preflight(
         counts = report.get("counts") if isinstance(report, dict) else {}
         n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
         n_primary_tier = int(counts.get("primary_tier_receipts") or 0) if isinstance(counts, dict) else 0
+        direct_raw = counts.get("direct_receipts") if isinstance(counts, dict) else None
+        n_direct_receipts = int(direct_raw if direct_raw is not None else n_primary_tier)
         previous_best = best_receipts
         best_receipts = max(best_receipts, n_receipts)
         best_primary_tier = max(best_primary_tier, n_primary_tier)
-        source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier)
+        best_direct_receipts = max(best_direct_receipts, n_direct_receipts)
+        source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier, n_direct_receipts, n_receipts)
         probes.append({
             "return_code": rc,
             "n_receipts": n_receipts,
             "min_receipts": min_receipts,
             "n_primary_tier": n_primary_tier,
             "min_primary_tier": PREFLIGHT_MIN_PRIMARY_TIER,
+            "n_direct_receipts": n_direct_receipts,
+            "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
         })
         if rc == 0 and n_receipts >= min_receipts and not source_fit_reasons:
             break
@@ -2721,7 +2748,7 @@ def _receipt_preflight(
         repairs.append(corpus_repair)
         if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
             break
-    source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier)
+    source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier, n_direct_receipts, n_receipts)
     passed = rc == 0 and n_receipts >= min_receipts and not source_fit_reasons
     return {
         "passed": passed,
@@ -2731,6 +2758,8 @@ def _receipt_preflight(
         "min_receipts": min_receipts,
         "n_primary_tier": n_primary_tier if passed else best_primary_tier,
         "min_primary_tier": PREFLIGHT_MIN_PRIMARY_TIER,
+        "n_direct_receipts": n_direct_receipts if passed else best_direct_receipts,
+        "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
         "reasons": [] if passed else source_fit_reasons,
         "probes": probes,
         **({"repairs": repairs} if repairs else {}),
@@ -2744,8 +2773,9 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
     n_receipts = int(counts.get("n_receipts") or 0)
     n_tensions = int(counts.get("n_tensions") or 0)
     n_primary = int(counts.get("n_primary_tier") or 0)
+    n_direct = int(counts.get("n_direct_receipts") or 0)
     min_receipts = DEFAULT_THRESHOLDS.min_receipts
-    source_fit_reasons = _receipt_source_fit_reasons(n_primary)
+    source_fit_reasons = _receipt_source_fit_reasons(n_primary, n_direct, n_receipts)
     if (
         n_receipts < min_receipts
         or n_tensions < PREFLIGHT_MIN_TENSIONS
@@ -2758,7 +2788,9 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
         "n_receipts": n_receipts,
         "n_tensions": n_tensions,
         "n_primary_tier": n_primary,
+        "n_direct_receipts": n_direct,
         "min_receipts": min_receipts,
+        "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
     }
 
 
