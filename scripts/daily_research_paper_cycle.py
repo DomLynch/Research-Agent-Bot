@@ -413,6 +413,58 @@ def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[s
     return markers
 
 
+def _ledger_publication_markers_for_runs(
+    ledger: dict[str, Any],
+    runs_root: Path,
+    run_names: set[str],
+) -> set[str]:
+    markers = set(_ledger_submission_markers(ledger))
+    markers.update(_submit_bridge_submission_markers_for_runs(runs_root, run_names))
+    for run_name in run_names:
+        markers.update(_publication_markers_for_run(runs_root, run_name))
+    return markers
+
+
+def _reconciled_publication_matches_ledger(ledger: dict[str, Any], runs_root: Path) -> bool:
+    reconciliation = ledger.get("publication_reconciliation")
+    if not isinstance(reconciliation, dict):
+        return True
+    values = reconciliation.get("matched")
+    matched = {
+        value for value in values
+        if isinstance(value, str) and value
+    } if isinstance(values, list) else set()
+    if not matched:
+        return True
+    run_names = set(_ledger_run_names(ledger, submitted_only=False))
+    if matched & _ledger_publication_markers_for_runs(ledger, runs_root, run_names):
+        return True
+    return not any(value.startswith("submission:") for value in matched)
+
+
+def _clear_unattributed_publication_reconciliation(ledger: dict[str, Any]) -> bool:
+    changed = False
+    if int(ledger.get("published") or 0):
+        ledger["published"] = 0
+        changed = True
+    if int(ledger.get("submitted") or 0) and str(ledger.get("status") or "") == "published":
+        ledger["status"] = "submitted_to_researka"
+        changed = True
+    if ledger.pop("publication_reconciliation", None) is not None:
+        changed = True
+    attempts = ledger.get("attempts")
+    for attempt in attempts if isinstance(attempts, list) else []:
+        if isinstance(attempt, dict) and int(attempt.get("published") or 0):
+            attempt["published"] = 0
+            changed = True
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if isinstance(submission, dict) and int(submission.get("published") or 0):
+            submission["published"] = 0
+            changed = True
+    return changed
+
+
 def _child_submission_counts(ledger: dict[str, Any]) -> tuple[int, int]:
     submitted = 0
     published = 0
@@ -471,21 +523,24 @@ def _reconcile_published_ledger(
     remote_seen: set[str],
     title_marker_counts: Counter[str] | None = None,
 ) -> bool:
+    changed = False
     if int(ledger.get("published") or 0):
-        changed = False
-        if str(ledger.get("status") or "") != "published":
-            ledger["status"] = "published"
-            changed = True
-        child_submitted, child_published = _child_submission_counts(ledger)
-        if child_submitted and int(ledger.get("submitted") or 0) < child_submitted:
-            ledger["submitted"] = child_submitted
-            changed = True
-        if child_published and int(ledger.get("published") or 0) < child_published:
-            ledger["published"] = child_published
-            changed = True
-        before = len(ledger)
-        ledger.pop("no_submission_reason", None)
-        return changed or len(ledger) != before
+        if not _reconciled_publication_matches_ledger(ledger, runs_root):
+            changed = _clear_unattributed_publication_reconciliation(ledger)
+        else:
+            if str(ledger.get("status") or "") != "published":
+                ledger["status"] = "published"
+                changed = True
+            child_submitted, child_published = _child_submission_counts(ledger)
+            if child_submitted and int(ledger.get("submitted") or 0) < child_submitted:
+                ledger["submitted"] = child_submitted
+                changed = True
+            if child_published and int(ledger.get("published") or 0) < child_published:
+                ledger["published"] = child_published
+                changed = True
+            before = len(ledger)
+            ledger.pop("no_submission_reason", None)
+            return changed or len(ledger) != before
     matches: set[str] = set()
     matched_runs: set[str] = set()
     submitted_runs = set(_ledger_run_names(ledger))
@@ -495,7 +550,7 @@ def _reconcile_published_ledger(
         if exact_markers:
             matches.update(exact_markers & remote_seen)
             if not matches and _remote_has_submission_marker(remote_seen):
-                return False
+                return changed
         if not matches:
             for run_name in submitted_runs:
                 run_matches = _publication_matches_for_run(runs_root, run_name, remote_seen, title_marker_counts)
@@ -513,9 +568,9 @@ def _reconcile_published_ledger(
                 matched_runs.add(run_name)
                 matches.update(run_matches)
         if not matches:
-            return False
+            return changed
     if not matches:
-        return False
+        return changed
     if not submitted_runs:
         submitted_runs = matched_runs
     ledger["status"] = "published"
