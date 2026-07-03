@@ -1663,6 +1663,69 @@ _UNSUPPORTED_DOMAIN_FRAME_PATTERNS: tuple[tuple[str, str], ...] = (
 )
 
 
+_DOMAIN_FRAME_TEMPLATE_REPAIRS: tuple[tuple[str, str, str], ...] = (
+    (
+        "bounded_geroscience",
+        r"\bbounded\s+geroscience\s+(?:case|hypothesis|rationale)\b",
+        "bounded evidence hypothesis",
+    ),
+    (
+        "geroscience_target",
+        r"\bgeroscience\s+intervention\s+target\b",
+        "biomedical intervention hypothesis",
+    ),
+    (
+        "anti_aging_claim",
+        r"\b(?:unqualified|generalized|global)\s+anti-aging\s+claim\b",
+        "over-broad aging-related claim",
+    ),
+    (
+        "anti_aging_claim",
+        r"\b(?:unqualified|generalized|global)\s+anti-aging\s+conclusion\b",
+        "over-broad aging-related conclusion",
+    ),
+    (
+        "longevity_treatment",
+        r"\bsettled\s+longevity\s+treatment\b",
+        "settled clinical treatment",
+    ),
+    (
+        "healthspan_benefit",
+        r"\bdurable\s+healthspan\s+benefit\b",
+        "durable clinical benefit",
+    ),
+    (
+        "standalone_aging_proof",
+        r"\bstandalone\s+anti-aging\s+or\s+longevity\s+proof\b",
+        "standalone proof of durable clinical benefit",
+    ),
+    ("geroprotection", r"\bgeroprotection\b", "endpoint-specific protective effects"),
+)
+
+
+def _repair_domain_frame_template_text(text: str) -> tuple[str, list[str]]:
+    repaired = text
+    codes: list[str] = []
+    for code, pattern, replacement in _DOMAIN_FRAME_TEMPLATE_REPAIRS:
+        repaired_next, count = re.subn(pattern, replacement, repaired, flags=re.I)
+        if count:
+            codes.append(code)
+            repaired = repaired_next
+    return repaired, list(dict.fromkeys(codes))
+
+
+def _repair_domain_frame_template_file(run: Path) -> list[str]:
+    paper = run / "full_paper.md"
+    try:
+        text = paper.read_text(encoding="utf-8")
+    except OSError:
+        return []
+    repaired, codes = _repair_domain_frame_template_text(text)
+    if codes and repaired != text:
+        paper.write_text(repaired, encoding="utf-8")
+    return codes
+
+
 def _domain_frame_status(payload: dict[str, Any]) -> str:
     text = " ".join(
         str(payload.get(key) or "")
@@ -1994,6 +2057,9 @@ def run_cycle(
         ledger.update({"status": "no_eligible_research_paper"})
         _write_json(ledger_path, ledger)
         return ledger
+    domain_frame_repairs = _repair_domain_frame_template_file(run) if submit else []
+    if domain_frame_repairs:
+        ledger["domain_frame_repairs"] = {"run": run.name, "codes": domain_frame_repairs}
     payload = build_payload(run)
     fp = _payload_fingerprint(payload)
     raw_metadata = payload.get("metadata")

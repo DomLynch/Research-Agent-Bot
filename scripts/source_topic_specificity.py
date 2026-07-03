@@ -17,6 +17,7 @@ MIN_GENERATED_PACK_TOKENS = 2
 TOPIC_STOPWORDS = {
     "research", "synthesis", "paper", "effect", "effects", "therapy",
     "treatment", "evidence", "optimization", "subgroup", "subgroups",
+    "use", "uses", "usage", "rates",
 }
 PHRASE_FRAGMENT_WORDS = {
     "and", "as", "at", "by", "for", "from", "in", "of", "on", "respectively",

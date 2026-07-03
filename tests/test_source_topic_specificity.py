@@ -189,6 +189,27 @@ def test_generated_pack_publishable_uses_structural_specificity() -> None:
     })
 
 
+def test_generated_suffix_terms_are_not_required_for_entity_specificity() -> None:
+    assert is_source_topic_specific(
+        "aspirin_use_effects",
+        "Randomized trial of aspirin for cardiovascular prevention outcomes",
+        aliases=source_gate_aliases("aspirin_use_effects", ("aspirin use effects",)),
+    )
+    assert is_source_topic_specific(
+        "statin_therapy_rates",
+        "Statin therapy was associated with vascular event rates in adults",
+        aliases=source_gate_aliases("statin_therapy_rates", ("statin therapy rates",)),
+    )
+    assert not is_source_topic_specific(
+        "low_dose_naltrexone_inflammation",
+        "Exercise intervention reduced inflammatory markers in older adults",
+        aliases=source_gate_aliases(
+            "low_dose_naltrexone_inflammation",
+            ("low dose naltrexone inflammation", "low-dose naltrexone"),
+        ),
+    )
+
+
 def test_generated_pack_publishable_uses_peer_relative_specificity() -> None:
     broad = {
         "candidate_count": 5,

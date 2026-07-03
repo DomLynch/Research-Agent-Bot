@@ -971,6 +971,46 @@ def test_researka_preflight_blocks_unsupported_domain_frame_template(tmp_path: P
     assert daily._researka_preflight_status(payload) == "domain_frame_template_leak:bounded_geroscience"
 
 
+def test_run_cycle_repairs_domain_frame_template_before_preflight(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8")
+        + "\n\nThis remains a bounded geroscience case, not an unqualified anti-aging claim.\n"
+        + "The evidence also separates endpoint findings from broad geroprotection claims.\n",
+        encoding="utf-8",
+    )
+    assert daily._researka_preflight_status(daily.build_payload(run)).startswith(
+        "domain_frame_template_leak:"
+    )
+    submitted: list[dict[str, Any]] = []
+
+    def submitter(payload: dict[str, Any]) -> dict[str, Any]:
+        submitted.append(payload)
+        body = str(payload["body_markdown"]).lower()
+        assert daily._domain_frame_status(payload) == "eligible"
+        assert "bounded geroscience" not in body
+        assert "unqualified anti-aging claim" not in body
+        assert "geroprotection" not in body
+        return {"ok": True, "status": 201, "response": {"submission": {"id": "sub-clean"}}}
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-29",
+        submit=True,
+        submitter=submitter,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["domain_frame_repairs"] == {
+        "run": run.name,
+        "codes": ["bounded_geroscience", "anti_aging_claim", "geroprotection"],
+    }
+    assert len(submitted) == 1
+    assert daily._researka_preflight_status(daily.build_payload(run)) == "eligible"
+
+
 def test_researka_preflight_allows_conservative_anti_aging_boundary_note(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["body_markdown"] += (
