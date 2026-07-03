@@ -32,6 +32,7 @@ from source_topic_specificity import (  # noqa: E402
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.outcome_class_remap import unique_outcome_displays  # noqa: E402
+from agent.review_type import COMPACT_REVIEW_TYPES, THIN_CORPUS_MIN_PRIMARY_TIER, parse_review_type  # noqa: E402
 from agent.topic_display import humanize_topic  # noqa: E402
 
 RUNS = ROOT / "runs"
@@ -57,6 +58,7 @@ SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 24
 SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.05
 NULL_CODING_AUDIT_FLOOR = 0.90
+PUBLIC_SURFACE_MIN_DIRECT_RECEIPTS = 2
 # Mirror of Researka's intake recency floor year (contracts/submissions.py
 # RECENT_PUBLICATION_YEAR_FLOOR). The per-type recency *ratio* lives in
 # RESEARKA_TYPE_THRESHOLDS below. Checking recency pre-submit stops the bot
@@ -481,6 +483,39 @@ def _source_floor_status(run: Path) -> str:
     return "eligible"
 
 
+def _public_research_surface_status(run: Path) -> str:
+    manifest = _read_json(run / "manifest.json")
+    review_type = str(manifest.get("review_type") or "").strip()
+    if review_type:
+        try:
+            if parse_review_type(review_type) in COMPACT_REVIEW_TYPES:
+                return "public_research_surface_compact_review"
+        except ValueError:
+            return "public_research_surface_compact_review"
+    receipts = [row for row in manifest.get("receipts", []) if isinstance(row, dict)]
+    n_receipts = int(manifest.get("n_receipts") or len(receipts) or 0)
+    has_tier_data = any(
+        "evidence_tier" in row or "tier" in row
+        for row in receipts
+    )
+    n_primary = sum(
+        1 for row in receipts
+        if str(row.get("evidence_tier") or row.get("tier") or "").upper() in {"A1", "A2", "B1"}
+    )
+    n_direct = sum(1 for row in receipts if str(row.get("directness") or "").lower() == "direct")
+    if receipts and not any("directness" in row for row in receipts):
+        n_direct = n_primary
+    if n_receipts <= 0:
+        return "public_research_surface_insufficient:n_receipts=0"
+    if has_tier_data and n_primary < THIN_CORPUS_MIN_PRIMARY_TIER:
+        return f"public_research_surface_insufficient:n_primary_tier={n_primary} < {THIN_CORPUS_MIN_PRIMARY_TIER}"
+    if n_direct < PUBLIC_SURFACE_MIN_DIRECT_RECEIPTS:
+        return f"public_research_surface_insufficient:n_direct_receipts={n_direct} < {PUBLIC_SURFACE_MIN_DIRECT_RECEIPTS}"
+    if n_direct * 5 < n_receipts:
+        return f"public_research_surface_insufficient:n_direct_receipts={n_direct}/{n_receipts} < 1/5"
+    return "eligible"
+
+
 def _word_count(text: object) -> int:
     return len(str(text or "").split())
 
@@ -654,6 +689,9 @@ def _static_ineligible_status(run: Path, *, allow_recent_repair: bool = True) ->
     pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
     if pre_submit_status != "eligible":
         return pre_submit_status
+    public_surface_status = _public_research_surface_status(run)
+    if public_surface_status != "eligible":
+        return public_surface_status
     request = _read_json(run / "researka_revision_request.json")
     if request:
         gate = _read_json(run / REVISION_COVERAGE_GATE)
@@ -1005,6 +1043,9 @@ def _eligible(run: Path) -> tuple[bool, str]:
     pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
     if pre_submit_status != "eligible":
         return False, pre_submit_status
+    public_surface_status = _public_research_surface_status(run)
+    if public_surface_status != "eligible":
+        return False, public_surface_status
     _refresh_stale_revision_coverage_sidecar(run)
     revision_status = _revision_coverage_status(run)
     if revision_status != "eligible":
