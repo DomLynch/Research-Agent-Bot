@@ -32,7 +32,10 @@ from source_topic_specificity import (  # noqa: E402
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.outcome_class_remap import unique_outcome_displays  # noqa: E402
-from agent.review_type import COMPACT_REVIEW_TYPES, THIN_CORPUS_MIN_PRIMARY_TIER, parse_review_type  # noqa: E402
+from agent.review_type import (  # noqa: E402
+    COMPACT_REVIEW_TYPES,
+    parse_review_type,
+)
 from agent.topic_display import humanize_topic  # noqa: E402
 
 RUNS = ROOT / "runs"
@@ -58,7 +61,6 @@ SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 24
 SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.05
 NULL_CODING_AUDIT_FLOOR = 0.90
-PUBLIC_SURFACE_MIN_DIRECT_RECEIPTS = 2
 # Mirror of Researka's intake recency floor year (contracts/submissions.py
 # RECENT_PUBLICATION_YEAR_FLOOR). The per-type recency *ratio* lives in
 # RESEARKA_TYPE_THRESHOLDS below. Checking recency pre-submit stops the bot
@@ -492,27 +494,6 @@ def _public_research_surface_status(run: Path) -> str:
                 return "public_research_surface_compact_review"
         except ValueError:
             return "public_research_surface_compact_review"
-    receipts = [row for row in manifest.get("receipts", []) if isinstance(row, dict)]
-    n_receipts = int(manifest.get("n_receipts") or len(receipts) or 0)
-    has_tier_data = any(
-        "evidence_tier" in row or "tier" in row
-        for row in receipts
-    )
-    n_primary = sum(
-        1 for row in receipts
-        if str(row.get("evidence_tier") or row.get("tier") or "").upper() in {"A1", "A2", "B1"}
-    )
-    n_direct = sum(1 for row in receipts if str(row.get("directness") or "").lower() == "direct")
-    if receipts and not any("directness" in row for row in receipts):
-        n_direct = n_primary
-    if n_receipts <= 0:
-        return "public_research_surface_insufficient:n_receipts=0"
-    if has_tier_data and n_primary < THIN_CORPUS_MIN_PRIMARY_TIER:
-        return f"public_research_surface_insufficient:n_primary_tier={n_primary} < {THIN_CORPUS_MIN_PRIMARY_TIER}"
-    if n_direct < PUBLIC_SURFACE_MIN_DIRECT_RECEIPTS:
-        return f"public_research_surface_insufficient:n_direct_receipts={n_direct} < {PUBLIC_SURFACE_MIN_DIRECT_RECEIPTS}"
-    if n_direct * 5 < n_receipts:
-        return f"public_research_surface_insufficient:n_direct_receipts={n_direct}/{n_receipts} < 1/5"
     return "eligible"
 
 

@@ -333,6 +333,37 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
     assert out["submissions"][1]["candidate"]["topic"] == "aspirin"
 
 
+def test_daily_submit_skips_compact_review_run_before_http(tmp_path: Path) -> None:
+    compact = _run(tmp_path, "synthesis-intermittent_fasting-v06-new")
+    ready = _run(tmp_path, "synthesis-aspirin-v06-old")
+    _retopic(compact, "intermittent_fasting")
+    _retopic(ready, "aspirin")
+    manifest = json.loads((compact / "manifest.json").read_text(encoding="utf-8"))
+    manifest["review_type"] = "thin_corpus_brief"
+    _write_json(compact / "manifest.json", manifest)
+    now = time.time()
+    os.utime(ready, (now - 10, now - 10))
+    os.utime(compact, (now, now))
+    submitted_topics: list[str] = []
+
+    def submitter(payload: dict[str, Any]) -> dict[str, Any]:
+        submitted_topics.append(payload["metadata"]["topic"])
+        return {"ok": True, "status": 200, "response": {"id": "sub-aspirin"}}
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-07-03",
+        submit=True,
+        submitter=submitter,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["candidate"]["topic"] == "aspirin"
+    assert submitted_topics == ["aspirin"]
+    assert ledger["considered"][0]["status"] == "public_research_surface_compact_review"
+
+
 def test_select_candidate_skips_missing_sidecar_before_expensive_eligibility(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
