@@ -1835,6 +1835,29 @@ def test_select_topic_prefers_more_fact_supported_publication_track_topic(tmp_pa
     assert selected == "high_fact_topic"
 
 
+def test_select_topic_prefers_richer_thin_corpus_over_generated_support_score(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "thin_four_claims", corpus=False, target_journal=True)
+    _topic(tmp_path, "thin_nine_claims", corpus=False, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: {
+        "thin_four_claims": 4,
+        "thin_nine_claims": 9,
+    }.get(topic, 0))
+    _write_json(tmp_path / "topic_packs_db" / "thin_four_claims" / "latest.json", {"candidate_count": 500})
+    _write_json(tmp_path / "topic_packs_db" / "thin_nine_claims" / "latest.json", {"candidate_count": 1})
+
+    selected = cycle.select_topic(
+        ["thin_four_claims", "thin_nine_claims"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "thin_nine_claims"
+
+
 def test_cycle_dry_run_selects_topic_without_synthesis(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
