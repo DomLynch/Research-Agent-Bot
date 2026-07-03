@@ -426,20 +426,108 @@ def _ledger_publication_markers_for_runs(
 
 
 def _reconciled_publication_matches_ledger(ledger: dict[str, Any], runs_root: Path) -> bool:
-    reconciliation = ledger.get("publication_reconciliation")
-    if not isinstance(reconciliation, dict):
-        return True
-    values = reconciliation.get("matched")
-    matched = {
-        value for value in values
-        if isinstance(value, str) and value
-    } if isinstance(values, list) else set()
+    matched = _reconciled_publication_markers(ledger)
     if not matched:
         return True
     run_names = set(_ledger_run_names(ledger, submitted_only=False))
     if matched & _ledger_publication_markers_for_runs(ledger, runs_root, run_names):
         return True
     return not any(value.startswith("submission:") for value in matched)
+
+
+def _reconciled_publication_markers(ledger: dict[str, Any]) -> set[str]:
+    reconciliation = ledger.get("publication_reconciliation")
+    if not isinstance(reconciliation, dict):
+        return set()
+    values = reconciliation.get("matched")
+    return {
+        value for value in values
+        if isinstance(value, str) and value
+    } if isinstance(values, list) else set()
+
+
+def _row_submission_markers(row: dict[str, Any]) -> set[str]:
+    values = row.get("submission_markers")
+    return {
+        value for value in values
+        if isinstance(value, str) and value.startswith("submission:")
+    } if isinstance(values, list) else set()
+
+
+def _matched_ledger_runs_for_markers(
+    ledger: dict[str, Any],
+    runs_root: Path,
+    matched: set[str],
+) -> set[str]:
+    run_names = set(_ledger_run_names(ledger, submitted_only=False))
+    marker_map = _submit_bridge_submission_markers_by_run(runs_root, run_names)
+    matched_runs = {
+        run_name for run_name, markers in marker_map.items()
+        if markers & matched
+    }
+    for run_name in run_names:
+        if _publication_markers_for_run(runs_root, run_name) & matched:
+            matched_runs.add(run_name)
+    attempts = ledger.get("attempts")
+    for attempt in attempts if isinstance(attempts, list) else []:
+        if not isinstance(attempt, dict):
+            continue
+        attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
+        if attempt_run and _row_submission_markers(attempt) & matched:
+            matched_runs.add(attempt_run)
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        candidate = submission.get("candidate")
+        submission_run = candidate.get("run") if isinstance(candidate, dict) else None
+        if isinstance(submission_run, str) and _row_submission_markers(submission) & matched:
+            matched_runs.add(submission_run)
+    return matched_runs
+
+
+def _sync_reconciled_children(
+    ledger: dict[str, Any],
+    matched_runs: set[str],
+    matched: set[str],
+) -> bool:
+    changed = False
+    attempts = ledger.get("attempts")
+    for attempt in attempts if isinstance(attempts, list) else []:
+        if not isinstance(attempt, dict):
+            continue
+        attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
+        is_match = bool(
+            (attempt_run and attempt_run in matched_runs)
+            or (_row_submission_markers(attempt) & matched)
+        )
+        if is_match:
+            for key in ("submitted", "published"):
+                if int(attempt.get(key) or 0) != 1:
+                    attempt[key] = 1
+                    changed = True
+        elif int(attempt.get("published") or 0):
+            attempt["published"] = 0
+            changed = True
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        candidate = submission.get("candidate")
+        submission_run = candidate.get("run") if isinstance(candidate, dict) else None
+        is_match = bool(
+            (isinstance(submission_run, str) and submission_run in matched_runs)
+            or (_row_submission_markers(submission) & matched)
+        )
+        if is_match:
+            for key in ("submitted", "published"):
+                if int(submission.get(key) or 0) != 1:
+                    submission[key] = 1
+                    changed = True
+        elif int(submission.get("published") or 0):
+            submission["published"] = 0
+            changed = True
+    return changed
 
 
 def _clear_unattributed_publication_reconciliation(ledger: dict[str, Any]) -> bool:
@@ -528,6 +616,10 @@ def _reconcile_published_ledger(
         if not _reconciled_publication_matches_ledger(ledger, runs_root):
             changed = _clear_unattributed_publication_reconciliation(ledger)
         else:
+            matched = _reconciled_publication_markers(ledger)
+            if matched:
+                existing_matched_runs = _matched_ledger_runs_for_markers(ledger, runs_root, matched)
+                changed = _sync_reconciled_children(ledger, existing_matched_runs, matched) or changed
             if str(ledger.get("status") or "") != "published":
                 ledger["status"] = "published"
                 changed = True
@@ -573,6 +665,8 @@ def _reconcile_published_ledger(
         return changed
     if not submitted_runs:
         submitted_runs = matched_runs
+    if not matched_runs and matches:
+        matched_runs = _matched_ledger_runs_for_markers(ledger, runs_root, matches)
     ledger["status"] = "published"
     ledger.pop("no_submission_reason", None)
     ledger["publication_reconciliation"] = {
@@ -585,7 +679,7 @@ def _reconcile_published_ledger(
         if not isinstance(attempt, dict):
             continue
         attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
-        if not attempt_run or attempt_run in submitted_runs:
+        if not attempt_run or attempt_run in matched_runs or (not matched_runs and attempt_run in submitted_runs):
             attempt["submitted"] = 1
             attempt["published"] = 1
     submissions = ledger.get("submissions")

@@ -861,6 +861,63 @@ def test_reconcile_publication_ledgers_updates_cycle_after_later_submit_bridge_p
     assert throughput["days"]["2026-06-24"]["published"] == 1
 
 
+def test_reconcile_publication_ledgers_clears_unattributed_published_marker(tmp_path: Path) -> None:
+    runs_root = tmp_path / "runs"
+    fresh_run = "synthesis-hrv_autonomic_aging-v06-DAILY-2026-07-03T05-45-11Z"
+    other_run = "synthesis-intermittent_fasting-v06-DAILY-2026-07-03T04-07-41Z"
+    cycle_ledger_dir = runs_root / cycle.LEDGER_DIR
+    submit_ledger_dir = runs_root / cycle.submit_bridge.LEDGER_DIR
+    _write_json(cycle_ledger_dir / "2026-07-03-fresh.json", {
+        "date": "2026-07-03",
+        "mode": "fresh",
+        "started_at": "2026-07-03T05:45:11+00:00",
+        "status": "published",
+        "submitted": 1,
+        "published": 1,
+        "attempted_topic": "hrv_autonomic_aging",
+        "attempted_run": fresh_run,
+        "attempts": [
+            {
+                "topic": "intermittent_fasting",
+                "out_dir": other_run,
+                "submitted": 0,
+            },
+            {
+                "topic": "hrv_autonomic_aging",
+                "out_dir": fresh_run,
+                "submitted": 1,
+                "published": 1,
+            },
+        ],
+        "publication_reconciliation": {
+            "source": "remote_publications",
+            "matched": ["submission:intermittent-fasting-submission"],
+        },
+    })
+    _write_json(submit_ledger_dir / "_submitted_fingerprints.json", [{
+        "run": other_run,
+        "topic": "intermittent_fasting",
+        "submission_id": "intermittent-fasting-submission",
+    }])
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=runs_root,
+        date="2026-07-03",
+        mode="fresh",
+        remote_loader=lambda: ({cycle.submit_bridge._submission_marker("intermittent-fasting-submission")}, None),
+    )
+
+    ledger = json.loads((cycle_ledger_dir / "2026-07-03-fresh.json").read_text(encoding="utf-8"))
+    assert result["status"] == "publication_reconciled"
+    assert result["updated_ledgers"] == ["2026-07-03-fresh.json"]
+    assert ledger["status"] == "published"
+    assert ledger["published"] == 1
+    assert ledger["attempts"][0]["submitted"] == 1
+    assert ledger["attempts"][0]["published"] == 1
+    assert ledger["attempts"][1]["published"] == 0
+    assert ledger["publication_reconciliation"]["matched"] == ["submission:intermittent-fasting-submission"]
+
+
 def test_reconcile_publication_ledgers_uses_unique_title_when_public_api_omits_submission_id(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     title = "Hypothesis-Generating Brief: Sulforaphane Nrf2"
