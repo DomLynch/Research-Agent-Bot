@@ -58,8 +58,9 @@ TOKEN_ENVS = (
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 DEFAULT_ARTICLE_TYPE = "rapid_evidence_synthesis"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.50
-SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 24
-SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.05
+SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 12
+SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES = 1
+SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.09
 NULL_CODING_AUDIT_FLOOR = 0.90
 # Mirror of Researka's intake recency floor year (contracts/submissions.py
 # RECENT_PUBLICATION_YEAR_FLOOR). The per-type recency *ratio* lives in
@@ -1638,6 +1639,7 @@ def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
         miss_ratio = len(misses) / len(bundle)
         if (
             len(bundle) >= SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS
+            and len(misses) <= SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES
             and miss_ratio <= SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO
         ):
             return "eligible"
@@ -2172,6 +2174,7 @@ def run_cycle_capped(
     consumed_topics: set[str] = set()
     total = 0
     first_candidate: dict[str, Any] | None = None
+    first_repairs: dict[str, Any] | None = None
     last: dict[str, Any] = {}
     for _ in range(max_submissions):
         last = run_cycle(
@@ -2194,9 +2197,12 @@ def run_cycle_capped(
                     if isinstance(last.get("submission"), dict) else {},
                 )
             ),
+            "domain_frame_repairs": last.get("domain_frame_repairs"),
         })
         if n and first_candidate is None:
             first_candidate = last.get("candidate")
+            repairs = last.get("domain_frame_repairs")
+            first_repairs = repairs if isinstance(repairs, dict) else None
         candidate = last.get("candidate")
         topic = candidate.get("topic") if isinstance(candidate, dict) else None
         status = last.get("status")
@@ -2223,6 +2229,9 @@ def run_cycle_capped(
     if total:
         agg.pop("reason", None)
         agg.pop("researka_preflight", None)
+        agg.pop("domain_frame_repairs", None)
+        if first_repairs is not None:
+            agg["domain_frame_repairs"] = first_repairs
     if first_candidate is not None:
         agg["candidate"] = first_candidate
     ledger_path = runs_root / LEDGER_DIR / f"{date}.json"

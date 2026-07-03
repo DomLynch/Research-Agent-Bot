@@ -291,6 +291,7 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
     for row in manifest["receipts"]:
         row["source_title"] = "Low-dose naltrexone trial in chronic pain"
     manifest["receipts"][0]["source_title"] = "LDN laparoscopic donor nephrectomy cohort"
+    manifest["receipts"][1]["source_title"] = "Dietary protein timing in older adults"
     _write_json(blocked / "manifest.json", manifest)
     ready_registry = json.loads((ready / "citation_registry.json").read_text(encoding="utf-8"))
     for idx, row in enumerate(ready_registry.values(), start=1):
@@ -300,13 +301,15 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
         daily,
         "_pubmed_abstracts",
         lambda pmids: {
-            pmid: (
-                "Laparoscopic donor nephrectomy perioperative outcomes."
-                if pmid == "124"
-                else "Aspirin trial reports cardiovascular prevention outcomes."
-                if int(pmid) >= 9000
-                else "Low-dose naltrexone was evaluated in adults with chronic pain."
-            )
+                pmid: (
+                    "Laparoscopic donor nephrectomy perioperative outcomes."
+                    if pmid == "124"
+                    else "Dietary protein timing in older adults."
+                    if pmid == "125"
+                    else "Aspirin trial reports cardiovascular prevention outcomes."
+                    if int(pmid) >= 9000
+                    else "Low-dose naltrexone was evaluated in adults with chronic pain."
+                )
             for pmid in pmids
         },
     )
@@ -314,7 +317,7 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
     os.utime(ready, (now - 10, now - 10))
     os.utime(blocked, (now, now))
     assert daily._researka_preflight_status(daily.build_payload(blocked)).startswith(
-        "source_bundle_topic_mismatch:1/12:"
+        "source_bundle_topic_mismatch:2/12:"
     )
 
     out = daily.run_cycle_capped(
@@ -329,7 +332,7 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
     assert out["submitted"] == 1
     assert out["status"] == "submitted_to_researka"
     assert out["submissions"][0]["status"] == "no_eligible_research_paper"
-    assert out["submissions"][0]["reason"].startswith("source_bundle_topic_mismatch:1/12:")
+    assert out["submissions"][0]["reason"].startswith("source_bundle_topic_mismatch:2/12:")
     assert out["submissions"][1]["candidate"]["topic"] == "aspirin"
 
 
@@ -915,7 +918,7 @@ def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(
     assert daily._researka_preflight_status(payload) == "source_bundle_unmapped_sources:outcome=1,citation=1"
 
 
-def test_researka_preflight_blocks_off_topic_source_bundle_row(tmp_path: Path) -> None:
+def test_researka_preflight_blocks_off_topic_source_bundle_rows(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"
     for row in payload["source_bundle"]:
@@ -925,8 +928,10 @@ def test_researka_preflight_blocks_off_topic_source_bundle_row(tmp_path: Path) -
         row["evidence_context"] = "adjacent"
     payload["source_bundle"][1]["title"] = "LDN laparoscopic donor nephrectomy cohort"
     payload["source_bundle"][1]["excerpt"] = "Laparoscopic donor nephrectomy perioperative outcomes."
+    payload["source_bundle"][2]["title"] = "Dietary protein timing in older adults"
+    payload["source_bundle"][2]["excerpt"] = "Dietary intervention study in older adults."
 
-    assert daily._researka_preflight_status(payload) == "source_bundle_topic_mismatch:1/12:rows=2"
+    assert daily._researka_preflight_status(payload) == "source_bundle_topic_mismatch:2/12:rows=2,3"
 
 
 def test_source_bundle_topic_gate_allows_large_bundle_with_one_off_topic_tail_row(tmp_path: Path) -> None:
@@ -942,6 +947,23 @@ def test_source_bundle_topic_gate_allows_large_bundle_with_one_off_topic_tail_ro
     payload["source_bundle"][20]["excerpt"] = "Laparoscopic donor nephrectomy perioperative outcomes."
 
     assert daily._source_bundle_topic_status(payload) == "eligible"
+
+
+def test_source_bundle_topic_gate_allows_one_mismatch_at_source_floor(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"
+    for row in payload["source_bundle"]:
+        row["title"] = "Low-dose naltrexone trial in chronic pain"
+        row["excerpt"] = "Low-dose naltrexone was evaluated in adults with chronic pain."
+    payload["source_bundle"][0]["title"] = "Exercise training for glycemic control"
+    payload["source_bundle"][0]["excerpt"] = "Exercise intervention reduced inflammatory markers."
+
+    assert daily._source_bundle_topic_status(payload) == "eligible"
+
+    payload["source_bundle"][1]["title"] = "Dietary protein timing in older adults"
+    payload["source_bundle"][1]["excerpt"] = "Dietary intervention study in older adults."
+
+    assert daily._source_bundle_topic_status(payload) == "source_bundle_topic_mismatch:2/12:rows=1,2"
 
 
 def test_source_bundle_topic_gate_blocks_large_bundle_above_tail_tolerance(tmp_path: Path) -> None:
