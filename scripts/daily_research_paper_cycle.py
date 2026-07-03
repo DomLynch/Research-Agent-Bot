@@ -2268,13 +2268,14 @@ def select_topic(
     # belong behind publishable corpora so the publish lane does not spend the
     # whole window seeding. Within that ready pool, frontier-advance still holds:
     # a never-attempted topic outranks any already-attempted one.
-    # Within each group the existing order still applies — publication score,
-    # then fact support, then least-recently attempted. Revisiting proven
-    # topics is the revise cycle's job, not the fresh cycle's.
+    # Within each group prefer the richer corpus before generated-pack support
+    # scores; a 9-claim thin corpus is a better fresh seed than a 4-claim one.
+    # Revisiting proven topics is the revise cycle's job, not the fresh cycle's.
     untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
     return min(pool, key=lambda topic: (
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
+        -_quant_claim_count(topic),
         -_publication_score(topic, ledger_dir, runs_root),
         -_topic_support_score(topic),
         _attempted_at(topic, ledger_dir),
