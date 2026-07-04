@@ -1473,6 +1473,66 @@ def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkey
     assert selected == "zzz_full_synthesis"
 
 
+def test_select_topic_prefers_direct_fit_over_large_indirect_corpus(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_broad_indirect", target_journal=True)
+    _topic(tmp_path, "zzz_near_direct_fit", target_journal=True)
+    _prior_run(tmp_path, "aaa_broad_indirect", receipts=51, tensions=5, primary=12, direct=8, level=4)
+    _prior_run(tmp_path, "zzz_near_direct_fit", receipts=11, tensions=5, primary=5, direct=3, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_publication_score", lambda topic, *_args: 100 if topic == "aaa_broad_indirect" else 1)
+
+    selected = cycle.select_topic(
+        ["aaa_broad_indirect", "zzz_near_direct_fit"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_near_direct_fit"
+
+
+def test_select_topic_uses_recent_receipt_preflight_counts_for_fit_rank(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "aaa_preflight_broad", target_journal=True)
+    _topic(tmp_path, "zzz_preflight_near_direct", target_journal=True)
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-07-04-fresh.json", {
+        "started_at": dt.datetime.now(dt.UTC).isoformat(),
+        "attempts": [
+            {
+                "topic": "aaa_preflight_broad",
+                "submitted": 0,
+                "receipt_preflight": {
+                    "n_receipts": 51,
+                    "n_primary_tier": 12,
+                    "n_direct_receipts": 8,
+                },
+            },
+            {
+                "topic": "zzz_preflight_near_direct",
+                "submitted": 0,
+                "receipt_preflight": {
+                    "n_receipts": 11,
+                    "n_primary_tier": 5,
+                    "n_direct_receipts": 3,
+                },
+            },
+        ],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_publication_score", lambda topic, *_args: 100 if topic == "aaa_preflight_broad" else 1)
+
+    selected = cycle.select_topic(
+        ["aaa_preflight_broad", "zzz_preflight_near_direct"],
+        ledger_dir,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_preflight_near_direct"
+
+
 def test_select_topic_prefers_public_research_surface_over_brief_risk(
     tmp_path: Path, monkeypatch,
 ) -> None:

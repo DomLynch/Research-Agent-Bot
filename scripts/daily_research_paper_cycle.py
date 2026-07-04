@@ -2355,9 +2355,9 @@ def select_topic(
     return min(pool, key=lambda topic: (
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
-        source_fit_rank[topic],
         0 if topic in public_research_ready else 1,
         0 if topic in synthesis_ready else 1,
+        source_fit_rank[topic],
         -_quant_claim_count(topic),
         -_publication_score(topic, ledger_dir, runs_root),
         -_topic_support_score(topic),
