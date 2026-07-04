@@ -1500,6 +1500,34 @@ def test_select_topic_prefers_public_research_surface_over_brief_risk(
     assert selected == "zzz_research_surface"
 
 
+def test_select_topic_does_not_collapse_to_only_prior_public_research_surface(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "glynac", target_journal=True)
+    _topic(tmp_path, "endurance_exercise_effects", target_journal=True)
+    _prior_run(tmp_path, "glynac", receipts=24, tensions=5, primary=12, direct=12, level=4)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: {
+        "glynac": 37,
+        "endurance_exercise_effects": 129,
+    }.get(topic, 0))
+    monkeypatch.setattr(
+        cycle,
+        "_publication_score",
+        lambda topic, *_args: 100 if topic == "glynac" else 1,
+    )
+
+    selected = cycle.select_topic(
+        ["glynac", "endurance_exercise_effects"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+        remote_seen=set(),
+    )
+
+    assert selected == "endurance_exercise_effects"
+
+
 def test_select_topic_full_synthesis_priority_skips_compact_review_type(
     tmp_path: Path, monkeypatch,
 ) -> None:

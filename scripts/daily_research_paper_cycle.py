@@ -2258,12 +2258,12 @@ def select_topic(
     pool = [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
     if not pool:
         return None
-    public_research_pool = [topic for topic in pool if _public_research_surface_ready_topic(topic, runs_root)]
-    if public_research_pool:
-        pool = public_research_pool
-    synthesis_pool = [topic for topic in pool if _full_synthesis_ready_topic(topic, runs_root)]
-    if synthesis_pool and not public_research_pool:
-        pool = synthesis_pool
+    public_research_ready = {
+        topic for topic in pool if _public_research_surface_ready_topic(topic, runs_root)
+    }
+    synthesis_ready = {
+        topic for topic in pool if _full_synthesis_ready_topic(topic, runs_root)
+    }
     # Prefer topics with a local corpus first; empty generated frontier topics
     # belong behind publishable corpora so the publish lane does not spend the
     # whole window seeding. Within that ready pool, frontier-advance still holds:
@@ -2275,6 +2275,8 @@ def select_topic(
     return min(pool, key=lambda topic: (
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
+        0 if topic in public_research_ready else 1,
+        0 if topic in synthesis_ready else 1,
         -_quant_claim_count(topic),
         -_publication_score(topic, ledger_dir, runs_root),
         -_topic_support_score(topic),
