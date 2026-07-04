@@ -3070,7 +3070,12 @@ def _receipt_preflight(
             dry_run=False,
             timeout=timeout,
             seed_limit=_receipt_repair_seed_limit(
-                max(n_receipts, best_receipts), min_receipts, round_idx, current_quant_claims=current_quant_claims,
+                max(n_receipts, best_receipts),
+                min_receipts,
+                round_idx,
+                current_quant_claims=current_quant_claims,
+                n_primary_tier=max(n_primary_tier, best_primary_tier),
+                n_direct_receipts=max(n_direct_receipts, best_direct_receipts),
             ),
             force_extract=False,
         )
@@ -3384,9 +3389,23 @@ def _receipt_preflight_repair_rounds() -> int:
 
 
 def _receipt_repair_seed_limit(
-    n_receipts: int, min_receipts: int, round_idx: int, *, current_quant_claims: int = 0,
+    n_receipts: int,
+    min_receipts: int,
+    round_idx: int,
+    *,
+    current_quant_claims: int = 0,
+    n_primary_tier: int = 0,
+    n_direct_receipts: int = 0,
 ) -> int:
-    missing = max(1, min_receipts - max(0, n_receipts))
+    n_receipts = max(0, n_receipts)
+    n_primary_tier = max(0, n_primary_tier)
+    n_direct_receipts = max(0, n_direct_receipts)
+    missing_receipts = max(1, min_receipts - n_receipts)
+    missing_primary = max(0, PREFLIGHT_MIN_PRIMARY_TIER - n_primary_tier)
+    missing_direct = max(0, PREFLIGHT_MIN_DIRECT_RECEIPTS - n_direct_receipts)
+    direct_share_gap = max(0, n_receipts - n_direct_receipts * 5)
+    missing_direct_share = (direct_share_gap + 3) // 4
+    missing = max(missing_receipts, missing_primary, missing_direct, missing_direct_share)
     current_quant_claims = max(0, current_quant_claims)
     observed_receipts = max(1, n_receipts)
     claims_per_receipt = max(1, (max(current_quant_claims, observed_receipts) + observed_receipts - 1) // observed_receipts)
