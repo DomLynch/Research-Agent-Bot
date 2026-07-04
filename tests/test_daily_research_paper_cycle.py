@@ -3631,6 +3631,36 @@ def test_receipt_preflight_requires_direct_source_share(tmp_path: Path, monkeypa
     ]
 
 
+def test_receipt_preflight_repair_scales_seed_for_direct_share_deficit(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    probes = [
+        {"admitted_receipts": 51, "primary_tier_receipts": 12, "direct_receipts": 8},
+        {"admitted_receipts": 54, "primary_tier_receipts": 15, "direct_receipts": 11},
+    ]
+    repairs: list[dict[str, Any]] = []
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: 129)
+
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {"counts": probes.pop(0)})
+        return 0
+
+    def fake_repair(topic: str, **kwargs: Any) -> dict[str, Any]:
+        repair = {"topic": topic, "status": "corpus_repaired", **kwargs}
+        repairs.append(repair)
+        return repair
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
+
+    result = cycle._receipt_preflight("broad_direct_share_gap", tmp_path / "run")
+
+    assert result["passed"] is True
+    assert [repair["seed_limit"] for repair in repairs] == [138]
+    assert repairs[0]["force_extract"] is False
+
+
 def test_manifest_counts_treat_a2_as_primary_tier(tmp_path: Path) -> None:
     run = tmp_path / "run"
     run.mkdir()
