@@ -2185,6 +2185,7 @@ def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
         and not compact_run
         and _numeric_density_downshift(latest) is None
         and _topic_has_quant_floor(topic)
+        and n_receipts >= PREFLIGHT_MIN_RECEIPTS
         and int(counts.get("n_primary_tier") or 0) >= PREFLIGHT_MIN_PRIMARY_TIER
         and n_direct >= PREFLIGHT_MIN_DIRECT_RECEIPTS
         and (not n_receipts or n_direct * 5 >= n_receipts)
@@ -2199,8 +2200,85 @@ def _public_research_surface_ready_topic(topic: str, runs_root: Path) -> bool:
     n_direct = int(counts.get("n_direct_receipts") or 0)
     return (
         _full_synthesis_ready_topic(topic, runs_root)
-        and n_receipts > 0
+        and n_receipts >= PREFLIGHT_MIN_RECEIPTS
         and not _receipt_source_fit_reasons(n_primary, n_direct, n_receipts)
+    )
+
+
+def _receipt_source_fit_rank_from_counts(
+    n_receipts: int,
+    n_primary_tier: int,
+    n_direct_receipts: int,
+) -> tuple[int, int, int, int, int, int, int, int]:
+    if n_receipts <= 0:
+        return (
+            3,
+            PREFLIGHT_MIN_RECEIPTS,
+            PREFLIGHT_MIN_RECEIPTS,
+            PREFLIGHT_MIN_PRIMARY_TIER,
+            PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            0,
+            0,
+            0,
+        )
+    receipt_gap = max(0, PREFLIGHT_MIN_RECEIPTS - n_receipts)
+    primary_gap = max(0, PREFLIGHT_MIN_PRIMARY_TIER - n_primary_tier)
+    direct_gap = max(0, PREFLIGHT_MIN_DIRECT_RECEIPTS - n_direct_receipts)
+    direct_share_deficit = max(0, n_receipts - n_direct_receipts * 5)
+    source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier, n_direct_receipts, n_receipts)
+    status_rank = 0 if receipt_gap == 0 and not source_fit_reasons else 1 if not source_fit_reasons else 2
+    return (
+        status_rank,
+        receipt_gap,
+        direct_share_deficit,
+        primary_gap,
+        direct_gap,
+        -n_direct_receipts,
+        -n_primary_tier,
+        -n_receipts,
+    )
+
+
+def _recent_receipt_preflight_counts(
+    topic: str,
+    ledger_dir: Path,
+    *,
+    now: dt.datetime | None = None,
+) -> tuple[int, int, int] | None:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    latest_at: dt.datetime | None = None
+    latest_counts: tuple[int, int, int] | None = None
+    for path in ledger_dir.glob("*.json"):
+        row = _read_json(path)
+        started = _parse_time(str(row.get("started_at") or ""))
+        if started is None or started < cutoff:
+            continue
+        for attempt in row.get("attempts", []):
+            if not isinstance(attempt, dict) or attempt.get("topic") != topic:
+                continue
+            report = attempt.get("receipt_preflight")
+            if not isinstance(report, dict):
+                continue
+            latest_at = started
+            latest_counts = (
+                int(report.get("n_receipts") or 0),
+                int(report.get("n_primary_tier") or 0),
+                int(report.get("n_direct_receipts") or 0),
+            )
+    return latest_counts if latest_at else None
+
+
+def _receipt_source_fit_rank(topic: str, runs_root: Path, ledger_dir: Path) -> tuple[int, int, int, int, int, int, int, int]:
+    recent_counts = _recent_receipt_preflight_counts(topic, ledger_dir)
+    if recent_counts is not None:
+        return _receipt_source_fit_rank_from_counts(*recent_counts)
+    counts = _manifest_counts(_latest_topic_run(topic, runs_root))
+    if not counts.get("has_manifest"):
+        return _receipt_source_fit_rank_from_counts(0, 0, 0)
+    return _receipt_source_fit_rank_from_counts(
+        int(counts.get("n_receipts") or 0),
+        int(counts.get("n_primary_tier") or 0),
+        int(counts.get("n_direct_receipts") or 0),
     )
 
 
@@ -2218,7 +2296,7 @@ def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
         except ValueError:
             compact = True
     source_fit_reasons = _receipt_source_fit_reasons(n_primary, n_direct, n_receipts)
-    passed = bool(n_receipts) and not compact and not source_fit_reasons
+    passed = n_receipts >= PREFLIGHT_MIN_RECEIPTS and not compact and not source_fit_reasons
     return {
         "passed": passed,
         "status": (
@@ -2228,6 +2306,7 @@ def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
         ),
         "review_type": review_type or None,
         "n_receipts": n_receipts,
+        "min_receipts": PREFLIGHT_MIN_RECEIPTS,
         "n_primary_tier": n_primary,
         "n_direct_receipts": n_direct,
         "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
@@ -2264,17 +2343,19 @@ def select_topic(
     synthesis_ready = {
         topic for topic in pool if _full_synthesis_ready_topic(topic, runs_root)
     }
+    source_fit_rank = {topic: _receipt_source_fit_rank(topic, runs_root, ledger_dir) for topic in pool}
     # Prefer topics with a local corpus first; empty generated frontier topics
     # belong behind publishable corpora so the publish lane does not spend the
     # whole window seeding. Within that ready pool, frontier-advance still holds:
     # a never-attempted topic outranks any already-attempted one.
-    # Within each group prefer the richer corpus before generated-pack support
-    # scores; a 9-claim thin corpus is a better fresh seed than a 4-claim one.
+    # Within each group prefer direct-source fit before raw corpus size; broad
+    # indirect corpora waste fresh windows even when they have many claims.
     # Revisiting proven topics is the revise cycle's job, not the fresh cycle's.
     untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
     return min(pool, key=lambda topic: (
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
+        source_fit_rank[topic],
         0 if topic in public_research_ready else 1,
         0 if topic in synthesis_ready else 1,
         -_quant_claim_count(topic),
