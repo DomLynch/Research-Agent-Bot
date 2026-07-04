@@ -2297,7 +2297,9 @@ def test_fresh_lane_true_no_supply_clears_stale_terminal_topic(tmp_path: Path, m
         submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
     )
 
-    assert ledger["status"] == "no_unpublished_topic_available"
+    assert ledger["status"] == "no_publishable_topic_available"
+    assert ledger["no_submission_reason"] == "all_attempted_topics_gate_blocked"
+    assert ledger["fresh_terminal_gate_counts"] == {"corpus_seed_empty": 1}
     assert ledger["last_attempted_topic"] == "thin_frontier"
     assert ledger["attempted_topic"] == "thin_frontier"
     assert ledger["topic"] is None

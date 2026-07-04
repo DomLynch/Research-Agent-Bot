@@ -3666,6 +3666,15 @@ def _gate_attempt(
     }
 
 
+def _attempt_gate_counts(attempts: Sequence[Mapping[str, Any]]) -> dict[str, int]:
+    counts: Counter[str] = Counter()
+    for attempt in attempts:
+        status = str(attempt.get("gate_status") or attempt.get("submit_status") or "").split(":", 1)[0]
+        if status:
+            counts[status] += 1
+    return dict(sorted(counts.items()))
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -4106,7 +4115,13 @@ def run_cycle(
                     if mode == "fresh" and topic is None and ledger.get("attempted_topic"):
                         ledger["last_attempted_topic"] = ledger["attempted_topic"]
                         ledger["topic"] = None
-                    ledger["status"] = "no_unpublished_topic_available"
+                    gate_counts = _attempt_gate_counts(ledger["attempts"])
+                    if gate_counts:
+                        ledger["fresh_terminal_gate_counts"] = gate_counts
+                        ledger["no_submission_reason"] = "all_attempted_topics_gate_blocked"
+                        ledger["status"] = "no_publishable_topic_available"
+                    else:
+                        ledger["status"] = "no_unpublished_topic_available"
                     break
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
             out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
