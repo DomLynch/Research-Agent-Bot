@@ -1473,7 +1473,7 @@ def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkey
     assert selected == "zzz_full_synthesis"
 
 
-def test_select_topic_prefers_direct_fit_over_large_indirect_corpus(tmp_path: Path, monkeypatch) -> None:
+def test_select_topic_accepts_large_corpus_with_absolute_direct_floor(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_broad_indirect", target_journal=True)
     _topic(tmp_path, "zzz_near_direct_fit", target_journal=True)
     _prior_run(tmp_path, "aaa_broad_indirect", receipts=51, tensions=5, primary=12, direct=8, level=4)
@@ -1488,10 +1488,10 @@ def test_select_topic_prefers_direct_fit_over_large_indirect_corpus(tmp_path: Pa
         runs_root=tmp_path / "runs",
     )
 
-    assert selected == "zzz_near_direct_fit"
+    assert selected == "aaa_broad_indirect"
 
 
-def test_select_topic_uses_recent_receipt_preflight_counts_for_fit_rank(
+def test_select_topic_treats_rich_direct_corpus_as_source_fit(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     _topic(tmp_path, "aaa_preflight_broad", target_journal=True)
@@ -1530,7 +1530,7 @@ def test_select_topic_uses_recent_receipt_preflight_counts_for_fit_rank(
         runs_root=tmp_path / "runs",
     )
 
-    assert selected == "zzz_preflight_near_direct"
+    assert selected == "aaa_preflight_broad"
 
 
 def test_select_topic_prefers_public_research_surface_over_brief_risk(
@@ -3605,38 +3605,64 @@ def test_receipt_preflight_requires_primary_tier_floor(tmp_path: Path, monkeypat
     ]
 
 
-def test_receipt_preflight_requires_direct_source_share(tmp_path: Path, monkeypatch) -> None:
+def test_receipt_preflight_allows_rich_corpus_without_direct_share_ratio(
+    tmp_path: Path, monkeypatch,
+) -> None:
     def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
         out_dir.mkdir(parents=True)
         _write_json(out_dir / "receipt_funnel.json", {
             "counts": {
-                "admitted_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
-                "direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
-                "primary_tier_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "admitted_receipts": 51,
+                "direct_receipts": 10,
+                "primary_tier_receipts": 19,
             },
         })
         return 0
 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
-    result = cycle._receipt_preflight("brief_grade_bundle", tmp_path / "run", repair=False)
+    result = cycle._receipt_preflight("rich_direct_bundle", tmp_path / "run", repair=False)
+
+    assert result["passed"] is True
+    assert result["status"] == "receipt_preflight_ok"
+    assert result["n_receipts"] == 51
+    assert result["n_direct_receipts"] == 10
+    assert result["reasons"] == []
+
+
+def test_receipt_preflight_requires_absolute_direct_source_floor(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": 51,
+                "direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS - 1,
+                "primary_tier_receipts": 19,
+            },
+        })
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    result = cycle._receipt_preflight("weak_direct_bundle", tmp_path / "run", repair=False)
 
     assert result["passed"] is False
     assert result["status"] == "receipt_preflight_insufficient"
-    assert result["n_receipts"] == cycle.PREFLIGHT_MIN_RECEIPTS
-    assert result["n_direct_receipts"] == cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS
+    assert result["n_receipts"] == 51
+    assert result["n_direct_receipts"] == cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS - 1
     assert result["reasons"] == [
-        f"n_direct_receipts={cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS}/{cycle.PREFLIGHT_MIN_RECEIPTS} < 1/5 "
-        "(direct-source share below synthesis floor)"
+        f"n_direct_receipts={cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS - 1} < {cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS} "
+        "(insufficient direct source anchors)"
     ]
 
 
-def test_receipt_preflight_repair_scales_seed_for_direct_share_deficit(
+def test_receipt_preflight_does_not_repair_direct_share_dilution(
     tmp_path: Path, monkeypatch,
 ) -> None:
     probes = [
         {"admitted_receipts": 51, "primary_tier_receipts": 12, "direct_receipts": 8},
-        {"admitted_receipts": 54, "primary_tier_receipts": 15, "direct_receipts": 11},
     ]
     repairs: list[dict[str, Any]] = []
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: 129)
@@ -3657,8 +3683,7 @@ def test_receipt_preflight_repair_scales_seed_for_direct_share_deficit(
     result = cycle._receipt_preflight("broad_direct_share_gap", tmp_path / "run")
 
     assert result["passed"] is True
-    assert [repair["seed_limit"] for repair in repairs] == [138]
-    assert repairs[0]["force_extract"] is False
+    assert repairs == []
 
 
 def test_manifest_counts_treat_a2_as_primary_tier(tmp_path: Path) -> None:
