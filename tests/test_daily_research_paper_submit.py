@@ -974,6 +974,22 @@ def test_source_bundle_topic_gate_allows_large_bundle_with_one_off_topic_tail_ro
     assert daily._source_bundle_topic_status(payload) == "eligible"
 
 
+def test_source_bundle_topic_gate_allows_tiny_large_bundle_tail_noise(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"
+    for row in payload["source_bundle"]:
+        row["title"] = "Low-dose naltrexone trial in chronic pain"
+        row["excerpt"] = "Low-dose naltrexone was evaluated in adults with chronic pain."
+        row["outcome_class"] = "dosing_pharmacokinetics"
+        row["evidence_context"] = "adjacent"
+    payload["source_bundle"] = [dict(row) for _ in range(4) for row in payload["source_bundle"]]
+    for idx in (14, 21):
+        payload["source_bundle"][idx]["title"] = "Dietary protein timing in older adults"
+        payload["source_bundle"][idx]["excerpt"] = "Dietary intervention study in older adults."
+
+    assert daily._source_bundle_topic_status(payload) == "eligible"
+
+
 def test_source_bundle_topic_gate_allows_one_mismatch_at_source_floor(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"

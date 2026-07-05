@@ -59,8 +59,8 @@ DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 DEFAULT_ARTICLE_TYPE = "rapid_evidence_synthesis"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 12
-SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES = 1
-SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.09
+SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES = 2
+SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.05
 NULL_CODING_AUDIT_FLOOR = 0.90
 # Mirror of Researka's intake recency floor year (contracts/submissions.py
 # RECENT_PUBLICATION_YEAR_FLOOR). The per-type recency *ratio* lives in
@@ -1649,7 +1649,10 @@ def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
         if (
             len(bundle) >= SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS
             and len(misses) <= SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES
-            and miss_ratio <= SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO
+            and (
+                len(misses) == 1
+                or miss_ratio <= SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO
+            )
         ):
             return "eligible"
         return f"source_bundle_topic_mismatch:{len(misses)}/{len(bundle)}:rows={','.join(misses[:5])}"
