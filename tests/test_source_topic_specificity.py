@@ -210,6 +210,30 @@ def test_generated_suffix_terms_are_not_required_for_entity_specificity() -> Non
     )
 
 
+def test_compound_generated_topic_accepts_redundant_acronym_phrase() -> None:
+    assert is_source_topic_specific(
+        "immune_checkpoint_inhibitors_icis_rates",
+        "Patients treated with immune checkpoint inhibitors for advanced cancer",
+        aliases=source_gate_aliases("immune_checkpoint_inhibitors_icis_rates", ("immune checkpoint inhibitors icis rates",)),
+    )
+
+
+def test_compound_generated_topic_accepts_expanded_acronym() -> None:
+    assert is_source_topic_specific(
+        "hpv_vaccination_rates",
+        "Human papillomavirus vaccination uptake in adolescent cohorts",
+        aliases=source_gate_aliases("hpv_vaccination_rates", ("hpv vaccination rates",)),
+    )
+
+
+def test_post_acronym_axis_does_not_zero_entity_source() -> None:
+    assert is_source_topic_specific(
+        "nicotinamide_riboside_nr_nad_effects",
+        "Randomized trial of nicotinamide riboside supplementation in older adults",
+        aliases=source_gate_aliases("nicotinamide_riboside_nr_nad_effects", ("nicotinamide riboside nr nad effects",)),
+    )
+
+
 def test_generated_pack_publishable_uses_peer_relative_specificity() -> None:
     broad = {
         "candidate_count": 5,
