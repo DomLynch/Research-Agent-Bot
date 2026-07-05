@@ -147,18 +147,62 @@ def _words(text: object) -> list[str]:
     return re.findall(r"[a-z0-9]+", str(text).replace("_", " ").replace("-", " ").lower())
 
 
+def _acronym_match(token: str, words: Sequence[str]) -> bool:
+    probe = token[:-1] if token.endswith("s") and len(token) > 3 else token
+    if not (2 <= len(probe) <= 8):
+        return False
+    for idx in range(len(words)):
+        initials = ""
+        for word in words[idx: idx + len(probe)]:
+            if not word or word in TOPIC_STOPWORDS:
+                break
+            initials += word[0]
+            if initials == probe:
+                return True
+            if len(initials) >= len(probe):
+                break
+    return False
+
+
+def _topic_token_hit(token: str, haystack_tokens: set[str], haystack_words: Sequence[str]) -> bool:
+    return token in haystack_tokens or _acronym_match(token, haystack_words)
+
+
+def _post_acronym_axis_tokens(topic: str) -> set[str]:
+    core: list[str] = []
+    optional: set[str] = set()
+    after_redundant_acronym = False
+    for raw in _words(topic):
+        token = _specificity_token(raw)
+        if token in TOPIC_STOPWORDS:
+            continue
+        if len(token) < 3:
+            if _acronym_match(token, core):
+                after_redundant_acronym = True
+            continue
+        if after_redundant_acronym:
+            optional.add(token)
+            continue
+        if _acronym_match(token, core):
+            after_redundant_acronym = True
+            continue
+        core.append(token)
+    return optional
+
+
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
     haystack = " ".join(str(text or "").replace("_", " ").replace("-", " ").lower().split())
     tokens = topic_tokens(topic)
     if not haystack or not tokens:
         return True
+    haystack_words = _words(haystack)
     normalized_tokens = [_specificity_token(token) for token in tokens]
     haystack_tokens = {
         _specificity_token(token)
-        for token in _words(haystack)
+        for token in haystack_words
         if len(token) > 2
     }
-    token_hits = sum(1 for token in normalized_tokens if token in haystack_tokens)
+    token_hits = sum(1 for token in normalized_tokens if _topic_token_hit(token, haystack_tokens, haystack_words))
     alias_hit = any(
         " ".join(str(alias or "").replace("_", " ").replace("-", " ").lower().split()) in haystack
         for alias in aliases
@@ -170,9 +214,18 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
         return False
     if alias_hit or token_hits == len(tokens):
         return True
-    specific_hits = [token for token in normalized_tokens if token in haystack_tokens and token not in BIOMED_ANCHORS]
-    missing_tokens = [token for token in normalized_tokens if token not in haystack_tokens]
+    specific_hits = [
+        token for token in normalized_tokens
+        if _topic_token_hit(token, haystack_tokens, haystack_words) and token not in BIOMED_ANCHORS
+    ]
+    missing_tokens = [
+        token for token in normalized_tokens
+        if not _topic_token_hit(token, haystack_tokens, haystack_words)
+    ]
     if specific_hits and all(token in BIOMED_ANCHORS for token in missing_tokens):
+        return True
+    optional_axis = _post_acronym_axis_tokens(topic)
+    if specific_hits and all(token in BIOMED_ANCHORS | optional_axis for token in missing_tokens):
         return True
     if (
         specific_hits
