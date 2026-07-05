@@ -2188,7 +2188,6 @@ def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
         and n_receipts >= PREFLIGHT_MIN_RECEIPTS
         and int(counts.get("n_primary_tier") or 0) >= PREFLIGHT_MIN_PRIMARY_TIER
         and n_direct >= PREFLIGHT_MIN_DIRECT_RECEIPTS
-        and (not n_receipts or n_direct * 5 >= n_receipts)
     )
 
 
@@ -2224,13 +2223,13 @@ def _receipt_source_fit_rank_from_counts(
     receipt_gap = max(0, PREFLIGHT_MIN_RECEIPTS - n_receipts)
     primary_gap = max(0, PREFLIGHT_MIN_PRIMARY_TIER - n_primary_tier)
     direct_gap = max(0, PREFLIGHT_MIN_DIRECT_RECEIPTS - n_direct_receipts)
-    direct_share_deficit = max(0, n_receipts - n_direct_receipts * 5)
     source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier, n_direct_receipts, n_receipts)
     status_rank = 0 if receipt_gap == 0 and not source_fit_reasons else 1 if not source_fit_reasons else 2
+    source_fit_gap = primary_gap + direct_gap
     return (
         status_rank,
         receipt_gap,
-        direct_share_deficit,
+        source_fit_gap,
         primary_gap,
         direct_gap,
         -n_direct_receipts,
@@ -2310,7 +2309,6 @@ def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
         "n_primary_tier": n_primary,
         "n_direct_receipts": n_direct,
         "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
-        "min_direct_share": "1/5",
         "reasons": [] if passed else source_fit_reasons,
     }
 
@@ -2486,11 +2484,6 @@ def _receipt_source_fit_reasons(
         reasons.append(
             f"n_direct_receipts={n_direct_receipts} < {PREFLIGHT_MIN_DIRECT_RECEIPTS} "
             "(insufficient direct source anchors)"
-        )
-    if n_receipts and n_direct_receipts * 5 < n_receipts:
-        reasons.append(
-            f"n_direct_receipts={n_direct_receipts}/{n_receipts} < 1/5 "
-            "(direct-source share below synthesis floor)"
         )
     return reasons
 
@@ -3403,9 +3396,7 @@ def _receipt_repair_seed_limit(
     missing_receipts = max(1, min_receipts - n_receipts)
     missing_primary = max(0, PREFLIGHT_MIN_PRIMARY_TIER - n_primary_tier)
     missing_direct = max(0, PREFLIGHT_MIN_DIRECT_RECEIPTS - n_direct_receipts)
-    direct_share_gap = max(0, n_receipts - n_direct_receipts * 5)
-    missing_direct_share = (direct_share_gap + 3) // 4
-    missing = max(missing_receipts, missing_primary, missing_direct, missing_direct_share)
+    missing = max(missing_receipts, missing_primary, missing_direct)
     current_quant_claims = max(0, current_quant_claims)
     observed_receipts = max(1, n_receipts)
     claims_per_receipt = max(1, (max(current_quant_claims, observed_receipts) + observed_receipts - 1) // observed_receipts)
