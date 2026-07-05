@@ -781,7 +781,7 @@ def test_evidence_map_scope_meets_live_question_word_floor(tmp_path: Path) -> No
 
 def test_evidence_map_preflight_blocks_unanchored_findings_rows(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path, tensions=20))
-    payload["title"] = "Hypothesis-Generating Brief: ABT-263 — full paper"
+    payload["title"] = "Adjacent Evidence Brief: ABT-263 — full paper"
     payload["sections"]["Findings Map"] = (
         "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
         "|---|---|---|---|---|\n"
@@ -941,6 +941,22 @@ def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(
     payload["source_bundle"][1].pop("year")
 
     assert daily._researka_preflight_status(payload) == "source_bundle_unmapped_sources:outcome=1,citation=1"
+
+
+def test_researka_preflight_allows_one_missing_citation_in_large_bundle(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["source_bundle"] = [dict(row) for _ in range(4) for row in payload["source_bundle"]]
+    payload["source_bundle"][37].pop("cited_as")
+    payload["source_bundle"][37].pop("year")
+
+    assert daily._source_bundle_reconciliation_status(payload) == "eligible"
+
+
+def test_researka_preflight_blocks_hypothesis_generating_public_surface(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["title"] = "Hypothesis-Generating Brief: Endurance Exercise Effects — full paper"
+
+    assert daily._researka_preflight_status(payload) == "public_surface_hypothesis_generating_brief"
 
 
 def test_researka_preflight_blocks_off_topic_source_bundle_rows(tmp_path: Path) -> None:

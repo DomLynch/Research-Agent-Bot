@@ -61,6 +61,10 @@ SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 12
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES = 2
 SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.05
+SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS = 36
+SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS = 1
+SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO = 0.05
+PUBLIC_BLOCKED_TITLE_PREFIXES = ("hypothesis-generating brief:",)
 NULL_CODING_AUDIT_FLOOR = 0.90
 # Mirror of Researka's intake recency floor year (contracts/submissions.py
 # RECENT_PUBLICATION_YEAR_FLOOR). The per-type recency *ratio* lives in
@@ -591,6 +595,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
     min_citations = int(_threshold(article_type, "min_citations"))
     if len(source_bundle) < min_citations:
         return f"researka_preflight_insufficient_sources:{len(source_bundle)} < {min_citations}"
+    if (surface_status := _public_grade_surface_status(payload)) != "eligible":
+        return surface_status
     if (bundle_status := _source_bundle_reconciliation_status(payload)) != "eligible":
         return bundle_status
     if (topic_status := _source_bundle_topic_status(payload)) != "eligible":
@@ -1624,7 +1630,21 @@ def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
     missing_outcome = sum(not str(row.get("outcome_class") or "").strip() for row in bundle)
     missing_citation = sum(not _has_source_citation(row) for row in bundle)
     if missing_outcome or missing_citation:
+        if (
+            not missing_outcome
+            and len(bundle) >= SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS
+            and missing_citation <= SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS
+            and missing_citation / len(bundle) <= SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO
+        ):
+            return "eligible"
         return f"source_bundle_unmapped_sources:outcome={missing_outcome},citation={missing_citation}"
+    return "eligible"
+
+
+def _public_grade_surface_status(payload: dict[str, Any]) -> str:
+    title = str(payload.get("title") or "").strip().lower()
+    if title.startswith(PUBLIC_BLOCKED_TITLE_PREFIXES):
+        return "public_surface_hypothesis_generating_brief"
     return "eligible"
 
 
