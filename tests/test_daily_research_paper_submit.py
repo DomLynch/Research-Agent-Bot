@@ -1293,8 +1293,9 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
     assert ledger["status"] == "submitted_to_researka"
     assert daily._null_coding_audit_status(submitted[0], manifest) == "eligible"
     assert submitted[0]["body_markdown"] == (run / "full_paper.md").read_text(encoding="utf-8").strip()
-    assert submitted[0]["author_signature"] == daily._sha256(run / "full_paper.md")
-    assert submitted[0]["metadata"]["content_hash"] == daily._sha256(run / "full_paper.md")
+    body_hash = "sha256:" + daily.hashlib.sha256(submitted[0]["body_markdown"].encode("utf-8")).hexdigest()
+    assert submitted[0]["author_signature"] == body_hash
+    assert submitted[0]["metadata"]["content_hash"] == body_hash
     assert "pre_submit_repairs" not in submitted[0]["metadata"]
 
 
