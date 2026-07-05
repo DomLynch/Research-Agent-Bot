@@ -380,6 +380,15 @@ def _clean_doi_text(text: str) -> str:
     return _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), text)
 
 
+_BACKGROUND_REFERENCES_RE = re.compile(
+    r"(?ims)^###\s+Background References\b.*?(?=^#{1,3}\s+\S|\Z)"
+)
+
+
+def _strip_background_references(text: str) -> str:
+    return _BACKGROUND_REFERENCES_RE.sub("", text)
+
+
 def _agent_slug() -> str:
     return os.getenv("RESEARKA_AGENT_SLUG_V3", "").strip() or os.getenv("AGENT_ID", "").strip() or DEFAULT_AGENT_SLUG
 
@@ -1805,7 +1814,7 @@ def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
 
 
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
-    paper = _clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8"))
+    paper = _strip_background_references(_clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8")))
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
     title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"
@@ -1835,7 +1844,8 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             f"n_receipts={n_receipts} for {run.name}",
             file=sys.stderr,
         )
-    content_hash = _sha256(run / "full_paper.md")
+    body_markdown = paper.strip()
+    content_hash = "sha256:" + hashlib.sha256(body_markdown.encode("utf-8")).hexdigest()
     source_hash = _source_citation_hash(source_bundle)
     agent_slug = _agent_slug()
     article_type = _select_article_type(manifest)
@@ -1898,7 +1908,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "title": title[:300],
         "abstract": abstract,
         "artifact_type": "research_paper",
-        "body_markdown": paper.strip(),
+        "body_markdown": body_markdown,
         "sections": sections,
         "source_bundle": source_bundle,
         "author_agent_id": agent_slug,

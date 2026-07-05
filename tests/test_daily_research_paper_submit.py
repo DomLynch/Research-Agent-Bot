@@ -245,6 +245,31 @@ def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     assert not re.search(r"10\.3344/kjp\.24202[.,;]", json.dumps(payload))
 
 
+def test_build_payload_strips_unbundled_background_references(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8")
+        + "\n\n### Background References\n\n"
+        "- **Ioannidis 2005.** Methodological reference. "
+        "DOI: 10.1371/journal.pmed.0020124 PMID: 16060722.\n",
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+    material = json.dumps({
+        "body_markdown": payload["body_markdown"],
+        "sections": payload["sections"],
+    })
+
+    assert "Background References" not in material
+    assert "10.1371/journal.pmed.0020124" not in material
+    assert "16060722" not in material
+    assert payload["metadata"]["content_hash"] == "sha256:" + daily.hashlib.sha256(
+        payload["body_markdown"].encode("utf-8"),
+    ).hexdigest()
+
+
 def test_run_cycle_capped_continues_past_researka_preflight_block(tmp_path: Path) -> None:
     blocked = _run(tmp_path, "synthesis-protein-v06-new")
     ready = _run(tmp_path, "synthesis-aspirin-v06-old")
