@@ -1394,6 +1394,10 @@ def _review_ts(row: dict[str, Any]) -> dt.datetime:
     return _parse_review_time(raw) or dt.datetime.min.replace(tzinfo=dt.UTC)
 
 
+def _submitted_record_ts(record: dict[str, Any]) -> dt.datetime | None:
+    return _parse_time(str(record.get("submitted_at") or record.get("date") or ""))
+
+
 def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
     """Latest research_paper review per paper title for this agent. Researka
     assigns a new artifactId per submission, so latest-wins by reviewedAt drops
@@ -1469,14 +1473,29 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
         row = {
             "artifactType": "research_paper",
             "agentId": submit_bridge._agent_slug(),
-            "artifactId": payload.get("decision_object_id") or payload.get("decision_id"),
+            "artifactId": (
+                payload.get("decision_object_id")
+                or payload.get("decisionObjectId")
+                or payload.get("decision_id")
+                or payload.get("decisionId")
+                or payload.get("id")
+            ),
             "submissionId": submission_id,
             "title": title,
             "topic": record.get("topic") or submit_bridge._run_topic(run),
             "decision": payload.get("decision"),
-            "reviewedAt": record.get("submitted_at") or record.get("date"),
-            "required_revisions": payload.get("required_revisions") or [],
-            "review_summary": payload.get("review_summary"),
+            "reviewedAt": (
+                payload.get("reviewedAt")
+                or payload.get("reviewed_at")
+                or payload.get("createdAt")
+                or payload.get("created_at")
+                or payload.get("updatedAt")
+                or payload.get("updated_at")
+                or record.get("submitted_at")
+                or record.get("date")
+            ),
+            "required_revisions": payload.get("required_revisions") or payload.get("requiredRevisions") or [],
+            "review_summary": payload.get("review_summary") or payload.get("reviewSummary"),
             "publication": payload.get("publication"),
         }
         key = submit_bridge._title_marker(title)
@@ -1879,12 +1898,25 @@ def _pending_remote_revision(
             if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
                 matches.append((record, run, record_topic))
         request_submission_id = str(request.get("submissionId") or request.get("submission_id") or "").strip()
+        request_reviewed = _review_ts(request)
         if any(
             str(record.get("submission_id") or "").strip() != request_submission_id
             and _submitted_record_has_pending_decision(record)
+            and (
+                (record_ts := _submitted_record_ts(record)) is None
+                or request_reviewed == dt.datetime.min.replace(tzinfo=dt.UTC)
+                or record_ts >= request_reviewed
+            )
             for record, _run, _topic in matches
         ):
             continue
+        if request_submission_id:
+            exact_matches = [
+                match for match in matches
+                if str(match[0].get("submission_id") or "").strip() == request_submission_id
+            ]
+            if exact_matches:
+                matches = exact_matches
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
         if request_key in handled:
@@ -1920,7 +1952,10 @@ def _pending_remote_revision(
             ):
                 continue
         if matches:
-            record, run, record_topic = matches[-1]
+            record, run, record_topic = max(
+                matches,
+                key=lambda match: _submitted_record_ts(match[0]) or dt.datetime.min.replace(tzinfo=dt.UTC),
+            )
             request["topic"] = record_topic
             request["source_run"] = run.name
             return request, None

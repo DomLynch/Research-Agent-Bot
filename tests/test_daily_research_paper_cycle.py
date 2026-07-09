@@ -6224,6 +6224,92 @@ def test_pending_revision_uses_submission_decision_when_reviews_feed_empty(tmp_p
     assert pending["feedback"] == "Clarify direct ABT-263 evidence."
 
 
+def test_submission_decision_fallback_accepts_camel_case_payload(tmp_path: Path, monkeypatch) -> None:
+    runs = tmp_path / "runs"
+    run = _seed_submitted_run(runs, "semaglutide_rates", "# Research Synthesis: Semaglutide Rates — full paper")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "semaglutide_rates",
+        "fingerprint": "sha256:x",
+        "submission_id": "submission-1",
+        "submitted_at": "2026-07-09T15:10:00+00:00",
+    }])
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url=None: ({}, None))
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _submission_id: ({
+        "decision": "revise",
+        "decisionObjectId": "decision-1",
+        "requiredRevisions": ["Define rates operationally."],
+        "reviewSummary": "Define rates operationally.",
+        "createdAt": "2026-07-09T15:20:00+00:00",
+        "publication": None,
+    }, None))
+
+    rows, err = cycle._remote_revision_requests(runs_root=runs)
+
+    assert err is None
+    assert len(rows) == 1
+    assert rows[0]["artifactId"] == "decision-1"
+    assert rows[0]["submissionId"] == "submission-1"
+    assert rows[0]["reviewedAt"] == "2026-07-09T15:20:00+00:00"
+    assert rows[0]["feedback"] == "Define rates operationally."
+
+
+def test_direct_revision_routes_exact_submission_despite_older_pending_same_topic(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    old_run = runs / "synthesis-metformin_rates-v06-DAILY-2026-07-08T10-00-00Z"
+    new_run = runs / "synthesis-metformin_rates-v06-DAILY-2026-07-09T13-56-54Z"
+    old_run.mkdir(parents=True)
+    new_run.mkdir(parents=True)
+    title = "Research Synthesis: Metformin Rates — full paper"
+    (old_run / "full_paper.md").write_text(f"# {title}\n\nold\n", encoding="utf-8")
+    (new_run / "full_paper.md").write_text(f"# {title}\n\nnew\n", encoding="utf-8")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [
+        {
+            "run": old_run.name,
+            "topic": "metformin_rates",
+            "fingerprint": "sha256:old",
+            "submission_id": "older-pending",
+            "submitted_at": "2026-07-08T10:00:00+00:00",
+        },
+        {
+            "run": new_run.name,
+            "topic": "metformin_rates",
+            "fingerprint": "sha256:new",
+            "submission_id": "reviewed-new",
+            "submitted_at": "2026-07-09T13:56:54+00:00",
+        },
+    ])
+
+    def fake_decision(submission_id: str) -> tuple[dict[str, Any], None]:
+        if submission_id == "older-pending":
+            return {"status": "queued", "decision": None}, None
+        return {"status": "complete", "decision": "revise"}, None
+
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fake_decision)
+    pending, err = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([{
+            "artifactId": "decision-new",
+            "submissionId": "reviewed-new",
+            "title": title,
+            "topic": "metformin_rates",
+            "feedback": "Repair the dose framing.",
+            "reviewedAt": "2026-07-09T15:20:00+00:00",
+        }], None),
+        published_loader=lambda: (set(), None),
+    )
+
+    assert err is None
+    assert pending is not None
+    assert pending["submissionId"] == "reviewed-new"
+    assert pending["source_run"] == new_run.name
+
+
 def test_pending_revision_retries_source_manifest_terminal_after_source_repair_request(
     tmp_path: Path,
     monkeypatch,
