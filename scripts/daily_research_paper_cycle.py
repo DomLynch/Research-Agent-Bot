@@ -1504,11 +1504,55 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
     return latest, None if latest else first_error
 
 
+def _revision_detail_score(row: dict[str, Any]) -> tuple[int, int]:
+    has_submission = bool(str(row.get("submissionId") or row.get("submission_id") or "").strip())
+    return (int(has_submission), len(_required_revision_items(row)))
+
+
+def _review_day_key(row: dict[str, Any]) -> str:
+    raw = str(
+        row.get("reviewedAt")
+        or row.get("reviewed_at")
+        or row.get("createdAt")
+        or row.get("created_at")
+        or row.get("publishedAt")
+        or row.get("published_at")
+        or ""
+    ).strip()
+    if DAY_KEY_RE.fullmatch(raw):
+        return raw
+    ts = _review_ts(row)
+    if ts == dt.datetime.min.replace(tzinfo=dt.UTC):
+        return ""
+    timezone: dt.tzinfo
+    try:
+        timezone = ZoneInfo(os.getenv("RESEARCH_AGENT_CYCLE_TIMEZONE", DEFAULT_CYCLE_TIMEZONE))
+    except ZoneInfoNotFoundError:
+        timezone = dt.UTC
+    return ts.astimezone(timezone).date().isoformat()
+
+
+def _should_replace_review_row(existing: dict[str, Any], candidate: dict[str, Any]) -> bool:
+    existing_ts = _review_ts(existing)
+    candidate_ts = _review_ts(candidate)
+    if candidate_ts > existing_ts:
+        return True
+    if candidate_ts == existing_ts:
+        return _revision_detail_score(candidate) > _revision_detail_score(existing)
+    if (
+        _review_day_key(candidate) == _review_day_key(existing)
+        and str(candidate.get("decision") or "").lower() == str(existing.get("decision") or "").lower()
+        and _revision_detail_score(candidate) > _revision_detail_score(existing)
+    ):
+        return True
+    return False
+
+
 def _merge_latest_by_title(*sources: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
     latest: dict[str, dict[str, Any]] = {}
     for source in sources:
         for key, row in source.items():
-            if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+            if key and (key not in latest or _should_replace_review_row(latest[key], row)):
                 latest[key] = row
     return latest
 
@@ -1718,7 +1762,14 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
             "submissionId": row.get("submissionId") or row.get("submission_id"),
             "title": row.get("title"),
             "topic": row.get("topic"),
-            "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
+            "reviewedAt": (
+                row.get("reviewedAt")
+                or row.get("reviewed_at")
+                or row.get("createdAt")
+                or row.get("created_at")
+                or row.get("publishedAt")
+                or row.get("published_at")
+            ),
             "feedback": " ".join("; ".join(required).split())[:4000],
         })
     return sorted(out, key=_review_ts, reverse=True), None

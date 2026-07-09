@@ -6254,6 +6254,52 @@ def test_submission_decision_fallback_accepts_camel_case_payload(tmp_path: Path,
     assert rows[0]["feedback"] == "Define rates operationally."
 
 
+def test_direct_submission_decision_beats_same_day_feed_row_without_submission_id(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    runs = tmp_path / "runs"
+    title = "Research Synthesis: Semaglutide Rates — full paper"
+    run = _seed_submitted_run(runs, "semaglutide_rates", f"# {title}")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "semaglutide_rates",
+        "fingerprint": "sha256:x",
+        "submission_id": "submission-1",
+        "date": "2026-07-09",
+    }])
+    key = cycle.submit_bridge._title_marker(title)
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url=None: ({
+        key: {
+            "artifactType": "research_paper",
+            "agentId": "agent-v3-full-paper",
+            "artifactId": "feed-decision",
+            "title": title,
+            "decision": "revise",
+            "createdAt": "2026-07-09T16:00:00+00:00",
+            "requiredRevisions": ["Short feed ask."],
+        },
+    }, None))
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _submission_id: ({
+        "decision": "revise",
+        "decision_object_id": "direct-decision",
+        "required_revisions": [
+            "Define rates operationally.",
+            "Reconcile dose mismatch.",
+        ],
+        "publication": None,
+    }, None))
+
+    rows, err = cycle._remote_revision_requests(runs_root=runs)
+
+    assert err is None
+    assert len(rows) == 1
+    assert rows[0]["artifactId"] == "direct-decision"
+    assert rows[0]["submissionId"] == "submission-1"
+    assert rows[0]["reviewedAt"] == "2026-07-09"
+    assert rows[0]["feedback"] == "Define rates operationally.; Reconcile dose mismatch."
+
+
 def test_direct_revision_routes_exact_submission_despite_older_pending_same_topic(
     tmp_path: Path,
     monkeypatch,
