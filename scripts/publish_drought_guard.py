@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail fast when Researka has no recent public publication."""
+"""Report when Researka has no recent public publication."""
 from __future__ import annotations
 
 import argparse
@@ -13,6 +13,8 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_PUBLICATIONS_URL = "https://researka.org/api/publications"
+DEFAULT_RUNS_ROOT = Path("runs")
+DEFAULT_REPORT_PATH = Path("reports/publish_drought_guard.json")
 TIMESTAMP_KEYS = (
     "publishedAt",
     "published_at",
@@ -32,6 +34,7 @@ class DroughtStatus:
     latest_at: str | None
     age_hours: float | None
     max_age_hours: float
+    triage: dict[str, Any]
 
 
 def publication_rows(payload: Any) -> list[dict[str, Any]]:
@@ -77,6 +80,7 @@ def evaluate_drought(
     *,
     now: dt.datetime,
     max_age_hours: float,
+    triage: dict[str, Any] | None = None,
 ) -> DroughtStatus:
     now_utc = now.astimezone(dt.UTC) if now.tzinfo else now.replace(tzinfo=dt.UTC)
     latest = latest_publication_at(rows)
@@ -89,6 +93,7 @@ def evaluate_drought(
             latest_at=None,
             age_hours=None,
             max_age_hours=max_age_hours,
+            triage=triage or {},
         )
     age_hours = (now_utc - latest).total_seconds() / 3600
     passed = age_hours <= max_age_hours
@@ -100,7 +105,57 @@ def evaluate_drought(
         latest_at=latest.isoformat(),
         age_hours=round(age_hours, 2),
         max_age_hours=max_age_hours,
+        triage=triage or {},
     )
+
+
+def recent_lane_ledgers(runs_root: Path, *, limit: int = 12) -> list[dict[str, Any]]:
+    ledgers: list[dict[str, Any]] = []
+    for subdir in ("_daily_research_paper_cycle_ledger", "_daily_research_paper_ledger"):
+        for path in sorted((runs_root / subdir).glob("*.json"), reverse=True):
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            if not isinstance(data, dict):
+                continue
+            ledgers.append({
+                "ledger": str(path),
+                "mode": data.get("mode") or ("daily-submit" if subdir.endswith("_ledger") else None),
+                "status": data.get("status"),
+                "topic": data.get("attempted_topic") or data.get("topic_slug") or data.get("topic"),
+                "submitted": data.get("submitted"),
+                "published": data.get("published"),
+                "reason": (
+                    data.get("no_submission_reason")
+                    or data.get("reason")
+                    or data.get("gate_reason")
+                    or data.get("reviewer_decision")
+                ),
+                "submission_id": data.get("submission_id") or data.get("researka_submission_id"),
+            })
+    return sorted(ledgers, key=lambda row: str(row["ledger"]), reverse=True)[:limit]
+
+
+def build_triage(runs_root: Path) -> dict[str, Any]:
+    ledgers = recent_lane_ledgers(runs_root)
+    submitted_not_public = [
+        row for row in ledgers if row.get("submitted") and not row.get("published")
+    ][:5]
+    blockers: dict[str, int] = {}
+    for row in ledgers:
+        reason = str(row.get("reason") or row.get("status") or "unknown")
+        blockers[reason] = blockers.get(reason, 0) + 1
+    top_blocker_items = sorted(blockers.items(), key=lambda item: (-item[1], item[0]))
+    return {
+        "runs_root": str(runs_root),
+        "recent_ledgers": ledgers,
+        "submitted_not_public": submitted_not_public,
+        "top_blockers": [
+            {"reason": reason, "count": count}
+            for reason, count in top_blocker_items[:8]
+        ],
+    }
 
 
 def fetch_publications(url: str) -> Any:
@@ -124,12 +179,24 @@ def render_status(status: DroughtStatus, *, as_json: bool) -> str:
     return " ".join(fields)
 
 
+def write_report(path: Path, status: DroughtStatus) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(asdict(status), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", default=DEFAULT_PUBLICATIONS_URL)
     parser.add_argument("--input-json", type=Path)
     parser.add_argument("--max-age-hours", type=float, default=24.0)
     parser.add_argument("--now", help="ISO timestamp; defaults to current UTC time")
+    parser.add_argument("--runs-root", type=Path, default=DEFAULT_RUNS_ROOT)
+    parser.add_argument("--report-path", type=Path, default=DEFAULT_REPORT_PATH)
+    parser.add_argument(
+        "--enforce-exit-code",
+        action="store_true",
+        help="Return 1 on drought; default is report-only for systemd timer hygiene.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit machine-readable JSON")
     args = parser.parse_args(argv)
 
@@ -146,9 +213,11 @@ def main(argv: list[str] | None = None) -> int:
         publication_rows(payload),
         now=now,
         max_age_hours=args.max_age_hours,
+        triage=build_triage(args.runs_root),
     )
+    write_report(args.report_path, status)
     print(render_status(status, as_json=args.json))
-    return 0 if status.passed else 1
+    return 0 if status.passed or not args.enforce_exit_code else 1
 
 
 if __name__ == "__main__":
