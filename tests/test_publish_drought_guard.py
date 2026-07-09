@@ -112,5 +112,5 @@ def test_deploy_timer_runs_guard_hourly() -> None:
     timer = (REPO / "deploy" / "research-agent-paper-drought-guard.timer").read_text(encoding="utf-8")
 
     assert "scripts/publish_drought_guard.py --max-age-hours 24" in service
-    assert "--report-path /opt/research-agent-bot/reports/publish_drought_guard.json" in service
+    assert "--report-path /var/log/research-agent-bot/publish_drought_guard.json" in service
     assert "OnCalendar=hourly" in timer

@@ -6,6 +6,6 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 WorkingDirectory=/opt/research-agent-bot
-ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/publish_drought_guard.py --max-age-hours 24 --runs-root /opt/research-agent-bot/runs --report-path /opt/research-agent-bot/reports/publish_drought_guard.json
+ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/publish_drought_guard.py --max-age-hours 24 --runs-root /opt/research-agent-bot/runs --report-path /var/log/research-agent-bot/publish_drought_guard.json
 Environment=PYTHONUNBUFFERED=1
 TimeoutStartSec=60
