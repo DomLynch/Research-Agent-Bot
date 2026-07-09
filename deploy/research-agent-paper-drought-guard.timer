@@ -1,0 +1,10 @@
+[Unit]
+Description=Check Researka public publication freshness hourly
+
+[Timer]
+OnCalendar=hourly
+Persistent=false
+Unit=research-agent-paper-drought-guard.service
+
+[Install]
+WantedBy=timers.target
