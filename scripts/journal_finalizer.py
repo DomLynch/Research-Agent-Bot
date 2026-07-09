@@ -697,7 +697,7 @@ def _corpus_strength_label(receipts: list[dict[str, Any]]) -> str:
         return "Mechanistic Evidence Map"
     if direct == 0 and adjacent * 2 >= total:
         return "Adjacent Evidence Brief"
-    if direct < 2 or direct * 5 < total:
+    if direct < 2:
         return "Hypothesis-Generating Brief"
     return ""
 

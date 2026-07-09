@@ -4466,6 +4466,21 @@ def test_phase_b_keeps_research_synthesis_when_direct_corpus_is_sufficient(tmp_p
     assert logs == []
 
 
+def test_phase_b_keeps_research_synthesis_for_large_direct_corpus(tmp_path: Path) -> None:
+    receipts = [{"directness": "direct"} for _ in range(10)]
+    receipts.extend({"directness": "review"} for _ in range(41))
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"receipts": receipts}),
+        encoding="utf-8",
+    )
+    paper = "# Research Synthesis: Metformin Biomarker Effects\n\n## Results\n\nBody.\n"
+
+    fixed, logs = journal_finalizer._phase_b_corpus_strength_label(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+
+
 def test_phase_n_labels_discussion_thesis_and_resolution_markers() -> None:
     # Blocker #3: gate requires literal **Thesis:** / **Resolution criteria:**
     # markers in Discussion; the finalizer now labels the existing first/last
