@@ -1918,10 +1918,13 @@ def _pending_remote_revision(
     *,
     loader: RevisionLoader | None = None,
     published_loader: PublishedLoader | None = None,
+    exclude_keys: set[str] | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
     rows, error = loader() if loader else _load_remote_revision_requests(runs_root)
     if error:
         return None, error
+    if exclude_keys:
+        rows = [row for row in rows if _revision_key(row) not in exclude_keys]
     handled = _handled_revision_ids(ledger_dir, rows)
     remote_seen: set[str] = set()
     if published_loader is not None:
@@ -4093,6 +4096,7 @@ def run_cycle(
             submitted=submitted_topics,
         )
         attempted: set[str] = set()
+        revise_window_excluded: set[str] = set()
         topic_supply_refreshed = False
         submitted_total = 0
         attempt_count = 0
@@ -4112,9 +4116,34 @@ def run_cycle(
                 })
                 break
             revision_source = remote_revision if remote_revision and not attempted else None
+            if (
+                mode == "revise"
+                and revision_source is None
+                and submit
+                and topic is None
+                and submitted_total == 0
+                and ledger["attempts"]
+                and (revision_loader is not None or submit_cycle is None)
+            ):
+                previous_key = _revision_key(remote_revision) if remote_revision else ""
+                next_revision, revision_error = _pending_remote_revision(
+                    runs_root,
+                    ledger_dir,
+                    loader=revision_loader,
+                    published_loader=lambda: (remote_seen, None),
+                    exclude_keys=revise_window_excluded,
+                )
+                ledger.setdefault("remote_revisions", {"checked": True})["refreshed_after_attempt"] = True
+                if revision_error:
+                    ledger["remote_revisions"]["refresh_error"] = revision_error
+                elif next_revision and _revision_key(next_revision) != previous_key:
+                    remote_revision = next_revision
+                    revision_source = next_revision
+                    ledger["remote_revisions"]["matched"] = True
             # Revise lane: only process pending revises — never rotate to a fresh
-            # topic. Once the one revise is handled (revision_source drops to None
-            # on the next pass), stop. No pending revise at all -> nothing to do.
+            # topic. If one pending revise fails terminally, try the next pending
+            # revise in the same window; after the first successful submission,
+            # stop so a single timer fire cannot flood Researka.
             if mode == "revise" and revision_source is None:
                 if not ledger["attempts"]:
                     ledger["status"] = "no_revise_pending"
@@ -4960,6 +4989,8 @@ def run_cycle(
                 ledger["synthesis_return_code"] = return_code
                 ledger["submit_bridge"] = bridge
                 ledger["submitted"] = submitted_any
+                if revision_source and not submitted_current:
+                    revise_window_excluded.add(_revision_key(revision_source))
                 if isinstance(bridge.get("revision_feedback"), str):
                     revision_feedback = str(bridge["revision_feedback"])
                     attempt["revision_feedback_received"] = bool(revision_feedback)

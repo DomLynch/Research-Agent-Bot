@@ -5307,6 +5307,97 @@ def test_coverage_unmet_stops_after_max_rounds(tmp_path: Path, monkeypatch) -> N
     assert len(feedback_seen) == 3                                    # bounded: stops after max_revise_attempts
 
 
+def test_revise_lane_rotates_to_next_pending_revision_after_coverage_block(tmp_path: Path, monkeypatch) -> None:
+    topics = (
+        ("resistance_training_rt_effects", "Research Synthesis: Resistance Training (RT) Effects — full paper"),
+        (
+            "semaglutide_intervention_semaglutide_2_4_mg_rates",
+            "Research Synthesis: Semaglutide Intervention Semaglutide 2 4 Mg Rates — full paper",
+        ),
+    )
+    submitted: list[dict[str, Any]] = []
+    for idx, (topic, title) in enumerate(topics, start=1):
+        _topic(tmp_path, topic, target_journal=True)
+        source_run = _prior_run(tmp_path, topic, receipts=57, tensions=274, level=5)
+        paper = source_run / "full_paper.md"
+        paper.write_text(f"# {title}\n\n## Abstract\n\nA.", encoding="utf-8")
+        submitted.append({
+            "date": "2026-07-09",
+            "run": source_run.name,
+            "topic": topic,
+            "fingerprint": cycle.submit_bridge._sha256(paper),
+            "submission_id": f"sub-{idx}",
+        })
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", submitted)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda topic, out_dir, **_k: {"passed": True})
+    seen_topics: list[str] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+    ) -> int:
+        seen_topics.append(topic)
+        out_dir.mkdir(parents=True)
+        title = dict(topics)[topic]
+        (out_dir / "full_paper.md").write_text(f"# {title}\n\n## Abstract\n\nA.", encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(
+        cycle,
+        "_unmet_revision_asks",
+        lambda out_dir, _feedback: ["Still needs coverage"] if "resistance_training" in out_dir.name else [],
+    )
+    requests = [
+        {
+            "artifactId": "rev-1",
+            "submissionId": "sub-1",
+            "title": topics[0][1],
+            "topic": topics[0][0],
+            "reviewedAt": "2026-07-09T20:15:00+04:00",
+            "feedback": "Fix resistance coverage.",
+        },
+        {
+            "artifactId": "rev-2",
+            "submissionId": "sub-2",
+            "title": topics[1][1],
+            "topic": topics[1][0],
+            "reviewedAt": "2026-07-09T20:00:00+04:00",
+            "feedback": "Fix semaglutide wording.",
+        },
+    ]
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-07-09",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: (requests, None),
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_attempts=3,
+        max_revise_attempts=1,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert seen_topics == [topics[0][0], topics[1][0]]
+    assert ledger["attempts"][0]["gate_status"] == "revision_coverage_unmet"
+    assert ledger["attempts"][1]["submitted"] == 1
+    assert ledger["remote_revisions"]["refreshed_after_attempt"] is True
+    handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text())
+    statuses = [row["status"] for row in handled["handled"]]
+    assert statuses == ["revision_coverage_unmet", "submitted_to_researka"]
+
+
 def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     # A paper citing a retracted source must never reach Researka.
     _seed_delayed_revise(tmp_path, monkeypatch)
