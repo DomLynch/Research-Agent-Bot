@@ -943,13 +943,55 @@ def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(
     assert daily._researka_preflight_status(payload) == "source_bundle_unmapped_sources:outcome=1,citation=1"
 
 
-def test_researka_preflight_allows_one_missing_citation_in_large_bundle(tmp_path: Path) -> None:
+def test_researka_preflight_allows_one_missing_context_citation_in_large_bundle(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["source_bundle"] = [dict(row) for _ in range(4) for row in payload["source_bundle"]]
+    # Context rows can be omitted from citation mapping in a large bundle; direct rows cannot.
+    payload["source_bundle"][37]["evidence_context"] = "context"
+    payload["source_bundle"][37]["directness"] = "indirect"
     payload["source_bundle"][37].pop("cited_as")
     payload["source_bundle"][37].pop("year")
 
     assert daily._source_bundle_reconciliation_status(payload) == "eligible"
+
+
+def test_researka_preflight_allows_sparse_context_citation_gaps_in_large_bundle(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    base = dict(payload["source_bundle"][0])
+    base.update({
+        "cited_as": "Smith 2026",
+        "year": 2026,
+        "evidence_context": "context",
+        "directness": "indirect",
+        "outcome_class": "cardiometabolic",
+    })
+    payload["source_bundle"] = [dict(base) for _ in range(29)]
+    for idx in (27, 28):
+        payload["source_bundle"][idx].pop("cited_as")
+        payload["source_bundle"][idx].pop("year")
+
+    assert daily._source_bundle_reconciliation_status(payload) == "eligible"
+
+
+def test_researka_preflight_blocks_missing_direct_source_citation(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    base = dict(payload["source_bundle"][0])
+    base.update({
+        "cited_as": "Smith 2026",
+        "year": 2026,
+        "evidence_context": "context",
+        "directness": "indirect",
+        "outcome_class": "cardiometabolic",
+    })
+    payload["source_bundle"] = [dict(base) for _ in range(29)]
+    payload["source_bundle"][28].update({"evidence_context": "direct", "directness": "direct"})
+    payload["source_bundle"][28].pop("cited_as")
+    payload["source_bundle"][28].pop("year")
+
+    assert (
+        daily._source_bundle_reconciliation_status(payload)
+        == "source_bundle_unmapped_sources:outcome=0,citation=1"
+    )
 
 
 def test_researka_preflight_blocks_hypothesis_generating_public_surface(tmp_path: Path) -> None:
