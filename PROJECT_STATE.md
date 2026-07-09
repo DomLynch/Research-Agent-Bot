@@ -82,6 +82,17 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
    fasting run). Because evidence-map routing uses this density, reconcile the
    manifest writer before tuning that routing threshold.
 
+## Operational Decision - 2026-07-09
+- Do not reopen the Evidence Map / brief escape valve as the default drought
+  fix. That restores throughput by lowering the public-grade bar, which
+  conflicts with the current standardized A-grade publishing goal.
+- The direct-source preflight is an absolute floor
+  (`PREFLIGHT_MIN_DIRECT_RECEIPTS = 4`), not a direct-share ratio. Rich corpora
+  with enough direct receipts should pass source fit even when they include many
+  adjacent/context receipts.
+- Current publish recovery should prioritize source-bundle mapping failures and
+  reviewer-revision execution before relaxing public surface gates.
+
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 
