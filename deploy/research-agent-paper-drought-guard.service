@@ -1,0 +1,11 @@
+[Unit]
+Description=Research Agent v3 public publication drought guard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/research-agent-bot
+ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/publish_drought_guard.py --max-age-hours 24
+Environment=PYTHONUNBUFFERED=1
+TimeoutStartSec=60
