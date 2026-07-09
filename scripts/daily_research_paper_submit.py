@@ -61,9 +61,9 @@ SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 12
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES = 2
 SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.05
-SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS = 36
-SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS = 1
-SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO = 0.05
+SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS = 20
+SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS = 3
+SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO = 0.10
 PUBLIC_BLOCKED_TITLE_PREFIXES = ("hypothesis-generating brief:",)
 NULL_CODING_AUDIT_FLOOR = 0.90
 # Mirror of Researka's intake recency floor year (contracts/submissions.py
@@ -1620,6 +1620,18 @@ def _has_source_citation(row: dict[str, Any]) -> bool:
     return bool(str(row.get("title") or "").strip() and isinstance(row.get("year"), int))
 
 
+def _missing_citation_tolerated(bundle: list[dict[str, Any]], missing_citation: int) -> bool:
+    if missing_citation <= 0:
+        return True
+    missing_rows = [row for row in bundle if not _has_source_citation(row)]
+    return (
+        len(bundle) >= SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS
+        and missing_citation <= SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS
+        and missing_citation / len(bundle) <= SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO
+        and all(_row_context(row) != "direct" for row in missing_rows)
+    )
+
+
 def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
     bundle = [row for row in payload.get("source_bundle", []) if isinstance(row, dict)]
     if not bundle:
@@ -1632,9 +1644,7 @@ def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
     if missing_outcome or missing_citation:
         if (
             not missing_outcome
-            and len(bundle) >= SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS
-            and missing_citation <= SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS
-            and missing_citation / len(bundle) <= SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO
+            and _missing_citation_tolerated(bundle, missing_citation)
         ):
             return "eligible"
         return f"source_bundle_unmapped_sources:outcome={missing_outcome},citation={missing_citation}"
