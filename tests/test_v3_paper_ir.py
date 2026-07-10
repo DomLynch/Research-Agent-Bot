@@ -9,7 +9,6 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import v3_paper_ir as ir  # type: ignore[import-not-found]  # noqa: E402
-import export_public_bundle as bundle  # type: ignore[import-not-found]  # noqa: E402
 
 
 def _run(tmp_path: Path, *, topic: str = "akkermansia_muciniphila") -> Path:
@@ -139,33 +138,6 @@ def test_docx_handles_ragged_pipe_table_as_plain_text(tmp_path: Path) -> None:
         document = zf.read("word/document.xml").decode()
     assert "<w:tbl>" not in document
     assert "Depommier 2019" in document
-
-
-def test_public_bundle_copies_v3_export_sidecars_when_present(tmp_path: Path) -> None:
-    run = _run(tmp_path)
-    ir.compile_run(run)
-    for name in (
-        "full_paper.audit.json",
-        "full_paper.audit.md",
-        "full_paper.consistency.json",
-        "full_paper.consistency.md",
-        "full_paper.final_verdict.json",
-        "full_paper.final_verdict.md",
-        "full_paper.review_patches.json",
-        "full_paper.review_patch_log.json",
-        "full_paper.fixed_log.json",
-        "citation_registry.json",
-        "no_regression_report.json",
-        "no_regression_report.md",
-        "run_mode_contract.json",
-    ):
-        (run / name).write_text("{}", encoding="utf-8")
-    out = tmp_path / "bundle"
-    result = bundle.export_bundle(run, out)
-    assert result["missing_required"] == []
-    assert (out / "paper_ir.json").is_file()
-    assert (out / "paper.docx").is_file()
-    assert (out / "evidence_table.csv").is_file()
 
 
 def test_reresolve_export_manifest_repoints_sidecar_moved_to_audit(tmp_path) -> None:

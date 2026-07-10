@@ -557,7 +557,7 @@ def build_data_code_availability(
         "\n"
         "- Audit code: `scripts/audit_v06_paper.py` + "
         "`scripts/final_consistency_audit.py`\n"
-        f"- {code_label}: `scripts/certification_report.py`\n"
+        f"- {code_label}: `agent/final_status.py` + `agent/final_gate.py`\n"
         "- Patch-gate code: `scripts/apply_patches.py`\n"
         "- Repair-loop code: `scripts/run_v06_synthesis.py` "
         "(`_agent_repair_loop`)\n"

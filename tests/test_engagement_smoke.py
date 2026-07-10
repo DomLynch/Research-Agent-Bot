@@ -15,7 +15,6 @@ from pathlib import Path
 import pytest
 
 from agent.field_engagement import FIELD_FRAMEWORK_REGISTRY, evaluate_engagement
-from scripts.quality_evidence_map import render_quality_evidence_map
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 AAA4 = REPO_ROOT / "bundles" / "synthesis-rapamycin-v06-AAA4-2026-05-04T15-50-14Z"
@@ -118,25 +117,3 @@ def test_evaluate_engagement_lights_up_when_framework_anchor_added() -> None:
     by_name = {e.framework_name: e for e in results}
     assert by_name["Mannick"].status == "support"
     assert "PMC_PROJECTED_Mannick_2018_PIE" in by_name["Mannick"].matched_receipts
-
-
-# ---- quality_evidence_map on real corpus ---------------------------------
-
-
-def test_quality_evidence_map_renders_against_aaa4_manifest() -> None:
-    manifest, _ = _load_aaa4()
-    md = render_quality_evidence_map(manifest=manifest)
-    assert "Quality Evidence Map" in md
-    # Real receipts surface in the table
-    assert "PMC12074816" in md or "Moel" in md
-    assert "Corpus Summary" in md
-
-
-def test_quality_evidence_map_notes_missing_signals_on_aaa4() -> None:
-    """Without RoB/GRADE/tension JSON, the renderer surfaces explicit
-    placeholders rather than fabricating sections."""
-    manifest, _ = _load_aaa4()
-    md = render_quality_evidence_map(manifest=manifest)
-    assert "_No RoB data provided._" in md
-    assert "_No GRADE data provided._" in md
-    assert "_No tension records provided._" in md

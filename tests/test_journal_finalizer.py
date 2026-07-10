@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from agent import journal_finalizer
+from agent.journal_surface_gate import evaluate_journal_surface
 
 
 def test_domain_frame_template_cleanup_removes_submit_blocked_aging_phrases() -> None:
@@ -4633,11 +4634,9 @@ def test_phase_k_no_duplicate_fallback_for_multiple_thin_outcome_classes(tmp_pat
     out, _ = journal_finalizer._phase_k_route_outcome_paragraphs(text, tmp_path)
     # exactly one long fallback paragraph across both thin classes
     assert out.count("Evidence for this outcome class is represented") == 1
-    # and the duplicate_paragraph detector finds nothing
-    import sys as _sys
-    _sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-    from journal_surface_batch_audit import scan_duplicate_paragraphs  # type: ignore[import-not-found]
-    assert not any("duplicate_paragraph" in str(i) for i in scan_duplicate_paragraphs(out))
+    # and the production journal-surface gate finds no duplicate paragraph
+    report = evaluate_journal_surface(out)
+    assert not any(issue.code == "duplicate_paragraph" for issue in report.issues)
 
 
 def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: Path) -> None:

@@ -100,7 +100,7 @@ def build_prisma_bridge_appendix(
         f"**Exclusion criteria:**\n"
         f"  - Mechanistic-only papers without quantitative claims.\n"
         f"  - Off-topic preprints flagged by\n"
-        f"    `scripts/corpus_filter.py` (see source listing).\n"
+        f"    `agent/corpus_classifier.py` (see source listing).\n"
         f"  - Papers whose extracted claims failed receipt-level\n"
         f"    evidence-tier, directness, or binding-confidence checks.\n"
         "\n"

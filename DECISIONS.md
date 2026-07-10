@@ -1,14 +1,19 @@
 # DECISION JOURNAL
 
-## 2026-07-10 — Put publishing scripts under a deletion-first LOC gate
-**Decision:** Cap `scripts/` at 50,400 cloc and any script at 5,700 cloc. The
-first two behavior-preserving cleanups reduced tracked scripts from 50,819 to 50,311 cloc;
-future publishing work must delete or consolidate before growing this layer.
+## 2026-07-10 — Retire obsolete script families and enforce a 41k ceiling
+**Decision:** Cap `scripts/` at 41,000 cloc and any script at 5,700 cloc.
+Retire unreferenced campaign, report, reader-export, and superseded quality CLIs
+while retaining the publishing, reviewer, corpus, and reproducibility paths.
+The measured result is 40,545 cloc across 56 scripts, down 9,766 cloc (19.4%)
+from the 50,311 baseline; 43 obsolete CLIs were removed.
 
-**Why:** The existing 29,150-cloc gate covered only `agent/`. The live lane,
-reviewer-repair, and finalizer orchestration accumulated in unconstrained
-scripts, including three 4,000–5,700-cloc files. The new ceiling preserves the
-working pipeline while preventing another open-ended gate-and-retry expansion.
+**Why:** The existing 29,150-cloc gate covered only `agent/`, allowing one-off
+campaign and diagnostic tools to accumulate beside the live pipeline. Static
+reference, deploy/workflow, import-collection, and full-suite checks separate
+those retired surfaces from the publishing closure. Git history remains the
+archive for any one-off tool that must be recovered.
+Versioned campaign docs and dated handovers remain historical records; commands
+for retired CLIs in those records are not supported current entry points.
 
 **Revisit if:** A measured capability cannot fit after a deletion pass. Raising
 either ceiling requires a named behavior gain and a new regression test.

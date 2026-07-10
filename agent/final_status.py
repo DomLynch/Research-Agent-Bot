@@ -35,9 +35,8 @@ class FinalStatus:
     # Slice 17 (2026-05-14): 6th dimension renamed to accountability_pass.
     # The model (researka_agent_certified vs legacy_journal_submission)
     # is read from `manifest.accountability_model`. `human_signoff_pass`
-    # below remains as a backward-compat mirror so existing consumers
-    # (older render_methods_paper.py scripts, audit dashboards) keep
-    # working unchanged.
+    # below remains as a backward-compat mirror for existing serialized
+    # consumers.
     accountability_pass: bool
     accountability_model: str
     submission_ready: bool

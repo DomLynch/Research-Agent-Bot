@@ -1,6 +1,6 @@
 """Day 10.17 Phase 6.1 — wire v0.6.0 bound claims into agent/paper_writer.py.
 
-The user-audited v0.5.0/v0.6.0 diagnostic writer (scripts/diagnostic_paper_run.py)
+The user-audited v0.5.0/v0.6.0 synthesis writer
 hits 3.8k words. The OLD agent/paper_writer.py routinely produces
 5–7k word papers with section floors, deterministic Methods, and
 trust-spine validation. The end-game needs both — old writer volume +
