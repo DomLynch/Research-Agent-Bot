@@ -133,6 +133,25 @@ def test_hit_specific_to_topic_uses_source_gate_aliases() -> None:
     assert seed._hit_specific_to_topic("plasma_proteomic_age_clocks", pack, direct_hit)
 
 
+def test_extraction_rank_prioritizes_core_clinical_evidence() -> None:
+    def entry(pool: str, score: int, sources: int, year: int, title: str) -> Any:
+        return SimpleNamespace(
+            pool=pool,
+            classification=SimpleNamespace(score=score),
+            hit=SimpleNamespace(n_sources=sources, year=year, title=title),
+        )
+
+    rows = [
+        entry("background", 90, 8, 2026, "Background"),
+        entry("adjacent", 95, 7, 2026, "Adjacent"),
+        entry("core", 70, 1, 2020, "Core"),
+    ]
+
+    assert [row.pool for row in sorted(rows, key=seed._extraction_entry_rank)] == [
+        "core", "adjacent", "background",
+    ]
+
+
 def test_docling_fallback_can_replace_abstract_fallback(tmp_path, monkeypatch):
     hit = SimpleNamespace(
         title="Closed paper with source PDF",

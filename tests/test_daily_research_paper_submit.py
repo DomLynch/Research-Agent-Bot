@@ -1081,6 +1081,55 @@ def test_source_bundle_topic_gate_blocks_large_bundle_above_tail_tolerance(tmp_p
     assert daily._source_bundle_topic_status(payload) == "source_bundle_topic_mismatch:2/36:rows=21,22"
 
 
+def test_source_bundle_topic_gate_allows_bounded_indirect_tail_with_direct_core(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "semaglutide_population_patients_with_type_2_diabetes_effects"
+    for row in payload["source_bundle"]:
+        row["title"] = "Semaglutide population study in patients with type 2 diabetes"
+        row["excerpt"] = "Semaglutide effects were compared with placebo."
+        row["evidence_context"] = "direct"
+        row["directness"] = "direct"
+    payload["source_bundle"] = [dict(row) for row in payload["source_bundle"]] + [
+        dict(payload["source_bundle"][0]) for _ in range(4)
+    ]
+    payload["source_bundle"][8].update({
+        "title": "Semaglutide in cardiovascular outcomes",
+        "excerpt": "An adjacent semaglutide analysis.",
+        "evidence_context": "adjacent",
+        "directness": "indirect",
+    })
+    payload["source_bundle"][13].update({
+        "title": "GLP-1 receptor agonist class effects",
+        "excerpt": "A contextual review of GLP-1 receptor agonists.",
+        "evidence_context": "context",
+        "directness": "review",
+    })
+
+    assert daily._source_bundle_topic_status(payload) == "eligible"
+
+
+def test_source_bundle_topic_gate_allows_only_bounded_context_tail(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "liraglutide_biomarker_effects"
+    for row in payload["source_bundle"]:
+        row["title"] = "Liraglutide effects on metabolic biomarkers"
+        row["excerpt"] = "Liraglutide changed metabolic biomarkers in adults."
+    payload["source_bundle"] = [dict(row) for _ in range(5) for row in payload["source_bundle"]]
+    for idx in (14, 30, 33):
+        payload["source_bundle"][idx].update({
+            "title": "GLP-1 receptor agonist class effects",
+            "excerpt": "A contextual review of GLP-1 receptor agonists.",
+            "evidence_context": "context",
+            "directness": "review",
+        })
+
+    assert daily._source_bundle_topic_status(payload) == "eligible"
+
+    payload["source_bundle"][14]["evidence_context"] = "direct"
+    payload["source_bundle"][14]["directness"] = "direct"
+    assert daily._source_bundle_topic_status(payload) == "source_bundle_topic_mismatch:3/60:rows=15,31,34"
+
+
 def test_researka_preflight_blocks_unsupported_domain_frame_template(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["body_markdown"] += (

@@ -58,9 +58,13 @@ TOKEN_ENVS = (
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
 DEFAULT_ARTICLE_TYPE = "rapid_evidence_synthesis"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.50
+PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS = 4
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 12
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES = 2
 SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO = 0.05
+SOURCE_BUNDLE_INDIRECT_TOLERANCE_MIN_DIRECT = PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS
+SOURCE_BUNDLE_INDIRECT_TOLERANCE_MAX_MISSES = 3
+SOURCE_BUNDLE_INDIRECT_TOLERANCE_RATIO = 0.15
 SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS = 20
 SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS = 3
 SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO = 0.10
@@ -1666,14 +1670,22 @@ def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
     if not topic or not bundle:
         return "eligible"
     aliases = source_gate_aliases(topic, topic_aliases(topic, root=ROOT, include_generated_terms=False))
-    misses: list[str] = []
-    for idx, row in enumerate(bundle, start=1):
-        haystack = " ".join(
+    haystacks = [
+        " ".join(
             str(row.get(key) or "")
             for key in ("title", "excerpt", "outcome_class", "evidence_context", "evidence_type", "directness")
         )
-        if not is_source_topic_specific(topic, haystack, aliases=aliases):
-            misses.append(str(idx))
+        for row in bundle
+    ]
+    misses: list[tuple[str, str]] = []
+    direct_specific = 0
+    for idx, (row, haystack) in enumerate(zip(bundle, haystacks), start=1):
+        specific = is_source_topic_specific(topic, haystack, aliases=aliases)
+        context = _row_context(row)
+        if specific and context == "direct":
+            direct_specific += 1
+        if not specific:
+            misses.append((str(idx), context))
     if misses:
         miss_ratio = len(misses) / len(bundle)
         if (
@@ -1685,7 +1697,14 @@ def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
             )
         ):
             return "eligible"
-        return f"source_bundle_topic_mismatch:{len(misses)}/{len(bundle)}:rows={','.join(misses[:5])}"
+        if (
+            direct_specific >= SOURCE_BUNDLE_INDIRECT_TOLERANCE_MIN_DIRECT
+            and len(misses) <= SOURCE_BUNDLE_INDIRECT_TOLERANCE_MAX_MISSES
+            and miss_ratio <= SOURCE_BUNDLE_INDIRECT_TOLERANCE_RATIO
+            and all(context != "direct" for _, context in misses)
+        ):
+            return "eligible"
+        return f"source_bundle_topic_mismatch:{len(misses)}/{len(bundle)}:rows={','.join(idx for idx, _ in misses[:5])}"
     return "eligible"
 
 

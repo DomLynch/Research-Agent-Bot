@@ -68,7 +68,7 @@ PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = THIN_CORPUS_MIN_PRIMARY_TIER
-PREFLIGHT_MIN_DIRECT_RECEIPTS = 4
+PREFLIGHT_MIN_DIRECT_RECEIPTS = submit_bridge.PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS
 SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT = max(PREFLIGHT_MIN_RECEIPTS * 2, PREFLIGHT_MIN_QUANT_CLAIMS)
 PREFLIGHT_MAX_RECEIPTS = 500
 PREFLIGHT_MAX_TENSIONS = 50_000
@@ -3122,7 +3122,7 @@ def _receipt_preflight(
         n_primary_tier = int(counts.get("primary_tier_receipts") or 0) if isinstance(counts, dict) else 0
         direct_raw = counts.get("direct_receipts") if isinstance(counts, dict) else None
         n_direct_receipts = int(direct_raw if direct_raw is not None else n_primary_tier)
-        previous_best = best_receipts
+        previous_best = (best_receipts, best_primary_tier, best_direct_receipts)
         best_receipts = max(best_receipts, n_receipts)
         best_primary_tier = max(best_primary_tier, n_primary_tier)
         best_direct_receipts = max(best_direct_receipts, n_direct_receipts)
@@ -3140,7 +3140,9 @@ def _receipt_preflight(
             break
         if rc == 0 and n_receipts == 0:
             break
-        if round_idx > 0 and rc == 0 and best_receipts <= previous_best:
+        if round_idx > 0 and rc == 0 and (
+            best_receipts, best_primary_tier, best_direct_receipts
+        ) <= previous_best:
             break
         if round_idx >= rounds:
             break

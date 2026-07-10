@@ -39,6 +39,7 @@ def test_terminal_statuses_and_retryable_timeouts_do_not_drift() -> None:
 
 def test_daily_paper_policy_uses_12_receipts_and_shared_source_precision() -> None:
     assert cycle.PREFLIGHT_MIN_RECEIPTS == 12
+    assert cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS == cycle.submit_bridge.PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS
     assert cycle.SOURCE_TOPIC_REPAIR_FLOOR == cycle.submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
 
 
@@ -3528,6 +3529,34 @@ def test_receipt_preflight_stops_when_repair_does_not_improve_receipts(tmp_path:
     assert result["n_receipts"] == 1
     assert len(result["probes"]) == 2
     assert len(calls) == 2
+
+
+def test_receipt_preflight_continues_when_direct_core_improves(tmp_path: Path, monkeypatch) -> None:
+    probes = [(12, 1, 1), (12, 2, 3), (12, 3, 4)]
+    repairs: list[str] = []
+    monkeypatch.setenv("RESEARCH_AGENT_RECEIPT_PREFLIGHT_REPAIR_ROUNDS", "3")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: 30)
+
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        receipts, primary, direct = probes.pop(0)
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {"counts": {
+            "admitted_receipts": receipts,
+            "primary_tier_receipts": primary,
+            "direct_receipts": direct,
+        }})
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_kwargs: (
+        repairs.append(topic) or {"status": "corpus_repaired", "n_quant_claims": 30}
+    ))
+
+    result = cycle._receipt_preflight("direct_core_growth", tmp_path / "run")
+
+    assert result["passed"] is True
+    assert len(result["probes"]) == 3
+    assert repairs == ["direct_core_growth", "direct_core_growth"]
 
 
 def test_receipt_preflight_does_not_repair_zero_receipt_probe(tmp_path: Path, monkeypatch) -> None:

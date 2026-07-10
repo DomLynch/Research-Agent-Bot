@@ -139,6 +139,18 @@ def _hit_specific_to_topic(topic: str, pack: TopicPack, hit) -> bool:
     return is_source_topic_specific(topic, text, aliases=source_gate_aliases(topic, pack.aliases))
 
 
+def _extraction_entry_rank(entry: Any) -> tuple[int, int, int, int, str]:
+    pool_rank = {"core": 0, "adjacent": 1, "background": 2}.get(entry.pool, 3)
+    hit = entry.hit
+    return (
+        pool_rank,
+        -int(entry.classification.score),
+        -int(hit.n_sources or 0),
+        -int(hit.year or 0),
+        str(hit.title or "").lower(),
+    )
+
+
 def _parsed_paths_for_pmcid(parsed_dir: Path, pmcid: str) -> list[Path]:
     return sorted(parsed_dir.glob(f"{pmcid}_*.paper_sections.json"))
 
@@ -343,11 +355,12 @@ async def _do_seed(
             file=sys.stderr,
         )
         active_pools = extraction_pools_for_pack(pack)
-        selected = [
-            e.hit for e in manifest.entries
+        candidates = [
+            e for e in manifest.entries
             if e.keep_for_extraction and e.pool in active_pools
             and _hit_specific_to_topic(topic, pack, e.hit)
-        ][:limit]
+        ]
+        selected = [e.hit for e in sorted(candidates, key=_extraction_entry_rank)[:limit]]
         print(
             f"=== Selecting top {len(selected)} "
             f"{'/'.join(sorted(active_pools))} hits for fetch "
