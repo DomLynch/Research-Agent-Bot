@@ -630,7 +630,7 @@ def _check_thesis_present(paper: str) -> tuple[bool, str]:
 # Versioned metric contract — surfaced in audit output so a future
 # replay-on-old-paper run can't be mis-attributed to "paper improved"
 # when only the metric changed.
-_DENSITY_CONTRACT_VERSION = "2026-05-03-v2"
+_DENSITY_CONTRACT_VERSION = "2026-07-10-v3"
 
 # Ratios MUST have an explicit `=` or `:` separator + a digit.
 # Without that, `OR` matches the English word "or" in prose like
@@ -745,8 +745,9 @@ def _check_numeric_density(
         for pat in _DENSITY_PATTERNS
     )
     density = (total / max(1, wc)) * 1000
-    return density >= threshold, (
-        f"density {density:.1f} numerics/1000 words "
+    reported_density = round(density, 1)
+    return reported_density >= threshold, (
+        f"density {reported_density:.1f} numerics/1000 words "
         f"(threshold ≥{threshold}; contract={_DENSITY_CONTRACT_VERSION}; "
         f"appendix excluded)"
     )

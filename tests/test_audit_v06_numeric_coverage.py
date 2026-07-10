@@ -302,6 +302,15 @@ def test_q9_range_pattern_still_matches_real_ci() -> None:
     assert ok is True, msg
 
 
+def test_q9_density_compares_at_reported_precision() -> None:
+    paper = " ".join(["word"] * 249 + ["n=1", "n=2"])
+
+    ok, msg = audit._check_numeric_density(paper)
+
+    assert ok is True
+    assert "density 8.0" in msg
+
+
 def test_q9_contract_version_in_message() -> None:
     """Reviewer P2: metric output must surface the contract version
     so a future replay-on-old-paper can't misattribute score changes
@@ -309,7 +318,7 @@ def test_q9_contract_version_in_message() -> None:
     paper = "## Discussion\n\nQualitative text."
     _ok, msg = audit._check_numeric_density(paper)
     assert "contract=" in msg
-    assert "2026-05-03" in msg
+    assert "2026-07-10-v3" in msg
 
 
 def test_q2_or_does_not_match_english_word_or() -> None:
