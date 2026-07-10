@@ -1,14 +1,16 @@
 {
-  "candidate_count": 5,
-  "generated_by": "fact-topic-materializer-v1",
+  "candidate_count": 3,
+  "generated_by": "fact-topic-materializer-v1:high-precision",
   "pack_data": {
     "active_arm_synonyms": [
       "metformin subgroups",
-      "metformin"
+      "metformin",
+      "intervention metformin use"
     ],
     "aliases": [
       "metformin subgroups",
-      "metformin"
+      "metformin",
+      "intervention metformin use"
     ],
     "canonical_rct_paper_ids": [],
     "canonical_trials": [],
@@ -19,7 +21,10 @@
       "metformin subgroups randomized controlled trial",
       "metformin aging",
       "metformin older adults",
-      "metformin randomized controlled trial"
+      "metformin randomized controlled trial",
+      "intervention metformin use aging",
+      "intervention metformin use older adults",
+      "intervention metformin use randomized controlled trial"
     ],
     "endpoint_polarity": {
       "adherence": "higher_is_better",
@@ -131,7 +136,8 @@
       "species": [],
       "topic_terms": [
         "metformin subgroups",
-        "metformin"
+        "metformin",
+        "intervention metformin use"
       ]
     },
     "special_rules": [
@@ -142,13 +148,13 @@
     "target_journal": "GeroScience",
     "topic": "metformin_subgroups"
   },
-  "pack_hash": "56bbfcc8d35e7e6bde8d48899b985d789dc698d1bc84a12b58e43bfbfdb0b21c",
+  "pack_hash": "b4ed35e1cd0d195d325221d0a4e621bceb1dd7404d10e657960e1dd8984a4175",
   "parent_id": null,
   "slug": "metformin_subgroups",
   "status": "proceed",
   "tier": "mainstream",
   "topic_name": "metformin subgroups",
-  "topic_pack_id": "35b57db3-b270-5108-bc0e-2d38b8037e51",
-  "validated_at": "2026-06-01T18:08:04.010910+00:00",
-  "version": 1
+  "topic_pack_id": "49982f42-60e2-565e-8476-29f997856500",
+  "validated_at": "2026-07-10T06:16:12.476419+00:00",
+  "version": 4
 }
