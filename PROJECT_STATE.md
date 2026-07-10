@@ -93,6 +93,14 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 - Current publish recovery should prioritize source-bundle mapping failures and
   reviewer-revision execution before relaxing public surface gates.
 
+## Operational Decision - 2026-07-10
+- Corpus repair extracts `core` clinical candidates before adjacent/background
+  candidates; raw retrieval order must not consume the repair budget.
+- Receipt repair continues while total, primary-tier, or direct-core counts
+  improve. The shared direct-evidence floor remains 4.
+- A source bundle may carry at most 3 non-direct tail rows (15%) only when at
+  least 4 topic-specific direct rows remain; off-topic direct rows still block.
+
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 
