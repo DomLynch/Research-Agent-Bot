@@ -1,5 +1,18 @@
 # DECISION JOURNAL
 
+## 2026-07-10 — Put publishing scripts under a deletion-first LOC gate
+**Decision:** Cap `scripts/` at 50,750 cloc and any script at 5,700 cloc. The
+first behavior-preserving cleanup reduced tracked scripts from 50,819 to 50,639 cloc;
+future publishing work must delete or consolidate before growing this layer.
+
+**Why:** The existing 29,150-cloc gate covered only `agent/`. The live lane,
+reviewer-repair, and finalizer orchestration accumulated in unconstrained
+scripts, including three 4,000–5,700-cloc files. The new ceiling preserves the
+working pipeline while preventing another open-ended gate-and-retry expansion.
+
+**Revisit if:** A measured capability cannot fit after a deletion pass. Raising
+either ceiling requires a named behavior gain and a new regression test.
+
 ## 2026-06-10 — LOC budget headroom raise
 **Decision:** Raise `agent/` cloc ceiling from 24,150 to 29,150. Per-file hard
 cap remains 800.

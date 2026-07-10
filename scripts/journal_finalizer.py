@@ -3716,39 +3716,6 @@ def _outcome_slice_narrative(
     return intro + "\n" + "\n".join(bullets) + direction_note
 
 
-def _manifest_result_highlights(rows: list[dict[str, Any]]) -> list[str]:
-    def has_stat(row: dict[str, Any]) -> bool:
-        values = row.get("p_values")
-        return isinstance(values, list) and any(str(value).strip() for value in values)
-
-    def score(row: dict[str, Any]) -> tuple[int, int]:
-        title = str(row.get("source_title") or "").strip()
-        try:
-            claims = int(row.get("n_claims") or 0)
-        except (TypeError, ValueError):
-            claims = 0
-        return (0 if title and has_stat(row) else 1 if title else 2, -claims)
-
-    highlights = []
-    for row in sorted(rows, key=score):
-        title = str(row.get("source_title") or "").strip()
-        if not title:
-            continue
-        citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
-        outcome = _outcome_display(str(row.get("outcome_class") or "contextual_other"))
-        direction = _normalised_direction(row)
-        directness = str(row.get("directness") or "unknown").strip() or "unknown"
-        tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
-        highlights.append(
-            f"{citation}: result={_source_result_label(title)}; outcome={outcome}; "
-            f"receipt-level direction={direction}; directness={directness}; tier={tier}; "
-            f"finding={_manifest_row_finding(row)}"
-        )
-        if len(highlights) >= 8:
-            break
-    return highlights
-
-
 def _source_result_label(title: str) -> str:
     clean = _table_cell(title)
     if not clean:

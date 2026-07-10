@@ -4768,13 +4768,6 @@ class UnifiedVerdict:
     evidence_weight_mechanistic: float = 0.0
 
 
-def _is_blocking(severity: str) -> bool:
-    """Positive allowlist: known non-blocking severities pass; ANYTHING
-    ELSE blocks (fail-closed for unknown severities like 'P0' or
-    'CRITICAL' that future reviewer-prompts may introduce)."""
-    return severity not in _NONBLOCKING_SEVERITIES
-
-
 def _compute_unified_verdict(
     stage1_report: dict[str, Any] | None,
     stage2_issues: list[Any],

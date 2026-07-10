@@ -4,6 +4,7 @@ Hard rules:
 - agent/ runtime package must stay under TOTAL_LIMIT lines (excluding blanks
   and comment-only lines, mirroring `cloc` semantics).
 - No single file inside agent/ may exceed PER_FILE_LIMIT lines.
+- Live scripts must stay under SCRIPT_TOTAL_LIMIT and SCRIPT_PER_FILE_LIMIT.
 
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
@@ -226,11 +227,15 @@ not a broad license for paper-quality sprint bloat (2026-05-09).
 """
 from __future__ import annotations
 
+import subprocess
 from pathlib import Path
 
 TOTAL_LIMIT = 29150  # 2026-06-10 operator-approved +5,000 headroom over 24,150; per-file cap remains the anti-bloat guardrail.
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
+SCRIPTS_DIR = AGENT_DIR.parent / "scripts"
+SCRIPT_TOTAL_LIMIT = 50750
+SCRIPT_PER_FILE_LIMIT = 5700
 
 
 def _count_loc(path: Path) -> int:
@@ -246,6 +251,21 @@ def _count_loc(path: Path) -> int:
 
 def _python_files() -> list[Path]:
     return sorted(p for p in AGENT_DIR.rglob("*.py") if "__pycache__" not in p.parts)
+
+
+def _script_files() -> list[Path]:
+    tracked = subprocess.run(
+        ["git", "ls-files", "-z", "scripts"],
+        cwd=AGENT_DIR.parent,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.split("\0")
+    return sorted(
+        AGENT_DIR.parent / path
+        for path in tracked
+        if path.endswith(".py")
+    )
 
 
 def test_no_single_file_exceeds_per_file_limit():
@@ -269,4 +289,21 @@ def test_total_runtime_loc_under_budget():
     assert total <= TOTAL_LIMIT, (
         f"agent/ runtime LOC {total} exceeds budget {TOTAL_LIMIT}.\n"
         f"Breakdown:\n{breakdown}"
+    )
+
+
+def test_scripts_stay_under_bloat_limits():
+    files = _script_files()
+    total = sum(_count_loc(path) for path in files)
+    offenders = [
+        (path.relative_to(SCRIPTS_DIR), _count_loc(path))
+        for path in files
+        if _count_loc(path) > SCRIPT_PER_FILE_LIMIT
+    ]
+    assert total <= SCRIPT_TOTAL_LIMIT, (
+        f"scripts/ LOC {total} exceeds budget {SCRIPT_TOTAL_LIMIT}; delete or consolidate before adding code"
+    )
+    assert not offenders, (
+        f"Scripts exceeding {SCRIPT_PER_FILE_LIMIT} LOC:\n"
+        + "\n".join(f"  {path}: {loc}" for path, loc in offenders)
     )

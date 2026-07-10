@@ -130,293 +130,14 @@ def deterministic_known_asks(asks: Sequence[str]) -> list[str]:
 
 def _deterministic_ask_known(ask: str) -> bool:
     lower = " ".join(ask.lower().split())
-    return any(
-        predicate(lower)
-        for predicate in (
-            _asks_classification_criteria,
-            _asks_conflict_severity_criteria,
-            _asks_source_outcome_class_map,
-            _asks_framework_reclassification_cleanup,
-            _asks_findings_map_source_verdict,
-            _asks_key_findings_source_verdict,
-            _asks_most_supported_key_findings,
-            _asks_adjacent_indirect_reconciliation,
-            _asks_source_classification_map,
-            _asks_evidence_type_metadata,
-            _asks_source_inclusion_rationale,
-            _asks_species_study_design_summary,
-            _asks_source_directness_breakdown,
-            _asks_source_statistics_landscape,
-            _asks_citation_traceability_map,
-            _asks_source_label_disambiguation,
-            _asks_source_verification_transparency,
-            _asks_source_identifier_gap_note,
-            _asks_section_source_grounding,
-            _asks_outcome_class_key_findings,
-            _asks_two_part_research_question,
-            _asks_concrete_research_question,
-            _asks_scope_framing,
-            _asks_outcome_taxonomy_separation,
-            _asks_source_stratification_reconciliation,
-            _asks_mr_causal_count,
-            _asks_effect_direction_reconciliation,
-            _asks_admission_direction_tally_reconciliation,
-            _asks_bounded_research_question_conclusion,
-            _asks_mr_mechanism_disagreement_separation,
-            _asks_no_direct_hard_endpoint_statement,
-            _asks_publication_status_preprint_flags,
-            _asks_direction_tally_audit,
-            _asks_source_scope_annex,
-            _asks_direct_interventional_reclassification,
-            _asks_combination_product_signal_boundary,
-            _asks_substantive_evidence_synthesis,
-            _asks_forward_dated_ai_disclosure_note,
-            _asks_publication_year_note,
-            _asks_intervention_target_boundary,
-            _asks_rct_count_reconciliation,
-            _asks_unbacked_appraisal_names,
-            _asks_evidence_tier_directness_bounds,
-            _asks_search_summary_scope_note,
-            _asks_additive_screening_flow,
-            _asks_admission_funnel_numeric_consistency,
-            _asks_prisma_all_included_rationale,
-            _asks_single_source_proportionality,
-            _asks_claim_count_audit,
-            _asks_direct_evidence_definition,
-            _asks_evidence_boundary,
-            _asks_conclusion_unproven_humans,
-            _asks_directional_coding,
-            _asks_directional_table_narrative_consistency,
-            _asks_contextual_without_directional_signal,
-            _asks_direction_coding_visibility,
-            _asks_direction_coded_source_highlights,
-            _asks_actionable_gaps,
-            _asks_null_signal_reconciliation,
-            _asks_subgroup_lens_narrative,
-            _asks_underpopulated_outcome_subsections,
-            _asks_replaced_surface_tensions,
-            _asks_concrete_tensions_gaps,
-            _asks_internal_duplication,
-            _asks_long_term_safety_scope,
-            _asks_unbundled_citation_cleanup,
-            _asks_structured_table_stub_replacement,
-            _asks_outcome_label_cleanup,
-            _asks_substantive_conclusion,
-            _asks_conclusion_weight_boundary,
-            _asks_source_count_bundle_reconciliation,
-            _asks_corpus_count_reconciliation,
-            _asks_evidence_honesty_repetition,
-            _asks_named_direct_clinical_source,
-            _asks_outcome_subsection_source_narrative,
-            _asks_protocol_design_limitations,
-            _asks_external_reference_boundary,
-            _asks_reference_traceability,
-            _asks_prior_publication_differentiation,
-            _asks_numeric_correction_markup_cleanup,
-            _asks_numeric_effect_audit,
-            _asks_named_numeric_correction,
-            _asks_numeric_effect_accuracy,
-            _asks_grammar_correction,
-        )
-    )
+    return any(matches(lower) for matches, _ in _DETERMINISTIC_ASK_RULES)
 
 
 def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
     lower = " ".join(ask.lower().split())
-    if _asks_classification_criteria(lower):
-        text = paper_md.lower()
-        return all(token in text for token in ("classification criteria", "outcome class", "directness", "evidence tier"))
-    if _asks_conflict_severity_criteria(lower):
-        text = paper_md.lower()
-        return all(
-            token in text
-            for token in (
-                "conflict-map severity note",
-                "severity-level-3",
-                "severity-level-4",
-                "contradiction-map",
-            )
-        )
-    if _asks_source_outcome_class_map(lower):
-        if _asks_full_source_surface_request(lower):
-            return _full_surface_sources_are_visible(paper_md, ask) and (
-                _substantive_evidence_synthesis_is_stated(paper_md)
-                or _source_outcome_class_map_is_stated(paper_md)
-            )
-        return _source_outcome_class_map_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
-    if _asks_framework_reclassification_cleanup(lower):
-        return _framework_reclassification_cleanup_is_stated(paper_md)
-    if _asks_findings_map_source_verdict(lower):
-        return _findings_map_source_verdict_is_stated(paper_md)
-    if _asks_key_findings_source_verdict(lower):
-        return _key_findings_source_verdict_is_stated(paper_md)
-    if _asks_most_supported_key_findings(lower):
-        return _most_supported_key_findings_are_stated(paper_md)
-    if _asks_adjacent_indirect_reconciliation(lower):
-        return _adjacent_indirect_reconciliation_is_stated(paper_md)
-    if _asks_source_classification_map(lower):
-        text = paper_md.lower()
-        return all(token in text for token in ("source classification map", "outcome=", "directness=", "tier="))
-    if _asks_evidence_type_metadata(lower):
-        return _evidence_type_metadata_is_resolved(paper_md)
-    if _asks_source_inclusion_rationale(lower):
-        return _source_inclusion_rationale_is_stated(paper_md)
-    if _asks_species_study_design_summary(lower):
-        return _species_study_design_summary_is_stated(paper_md)
-    if _asks_source_directness_breakdown(lower):
-        return _source_directness_breakdown_is_stated(paper_md)
-    if _asks_source_statistics_landscape(lower):
-        return _source_statistics_landscape_is_stated(paper_md)
-    if _asks_citation_traceability_map(lower):
-        return _citation_traceability_map_is_stated(paper_md)
-    if _asks_source_label_disambiguation(lower):
-        return _source_label_disambiguation_is_stated(paper_md, ask)
-    if _asks_source_verification_transparency(lower):
-        return _source_verification_transparency_is_stated(paper_md)
-    if _asks_source_identifier_gap_note(lower):
-        return _source_identifier_gap_note_is_stated(paper_md)
-    if _asks_section_source_grounding(lower):
-        return _section_source_grounding_is_stated(paper_md)
-    if _asks_outcome_class_key_findings(lower):
-        return _outcome_class_key_findings_are_stated(paper_md)
-    if _asks_two_part_research_question(lower):
-        return _two_part_research_question_is_stated(paper_md)
-    if _asks_concrete_research_question(lower):
-        return _concrete_research_question_is_stated(paper_md)
-    if _asks_scope_framing(lower):
-        return _scope_framing_is_stated(paper_md) and (
-            not _asks_direction_tally_audit(lower) or _direction_tally_audit_is_stated(paper_md)
-        )
-    if _asks_outcome_taxonomy_separation(lower):
-        return _outcome_taxonomy_separation_is_stated(paper_md)
-    if _asks_source_stratification_reconciliation(lower):
-        return _source_stratification_reconciliation_is_stated(paper_md)
-    if _asks_mr_causal_count(lower):
-        return _mr_causal_count_is_stated(paper_md, ask)
-    if _asks_effect_direction_reconciliation(lower):
-        return _effect_direction_reconciliation_is_stated(paper_md, ask)
-    if _asks_admission_direction_tally_reconciliation(lower):
-        return _admission_direction_tally_reconciliation_is_stated(paper_md)
-    if _asks_bounded_research_question_conclusion(lower):
-        return _bounded_research_question_conclusion_is_stated(paper_md)
-    if _asks_mr_mechanism_disagreement_separation(lower):
-        return _mr_mechanism_disagreement_separation_is_stated(paper_md)
-    if _asks_no_direct_hard_endpoint_statement(lower):
-        return _no_direct_hard_endpoint_statement_is_stated(paper_md)
-    if _asks_publication_status_preprint_flags(lower):
-        return _publication_status_preprint_flags_are_stated(paper_md)
-    if _asks_direction_tally_audit(lower):
-        return _direction_tally_audit_is_stated(paper_md)
-    if _asks_source_scope_annex(lower):
-        return _source_scope_annex_is_stated(paper_md, ask)
-    if _asks_direct_interventional_reclassification(lower):
-        return _direct_interventional_reclassification_is_stated(paper_md, ask)
-    if _asks_combination_product_signal_boundary(lower):
-        return _combination_product_signal_boundary_is_stated(paper_md)
-    if _asks_directional_coding(lower):
-        return _directional_coding_explanation_is_material(paper_md)
-    if _asks_substantive_evidence_synthesis(lower):
-        return _substantive_evidence_synthesis_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
-    if _asks_forward_dated_ai_disclosure_note(lower):
-        return _forward_dated_ai_disclosure_note_is_stated(paper_md)
-    if _asks_publication_year_note(lower):
-        return _publication_year_note_is_stated(paper_md)
-    if _asks_intervention_target_boundary(lower):
-        return _intervention_target_boundary_is_stated(paper_md)
-    if _asks_rct_count_reconciliation(lower):
-        return _rct_count_reconciliation_is_stated(paper_md)
-    if _asks_unbacked_appraisal_names(lower):
-        return _unbacked_appraisal_names_are_resolved(paper_md)
-    if _asks_evidence_tier_directness_bounds(lower):
-        return _evidence_tier_directness_bounds_are_stated(paper_md)
-    if _asks_search_summary_scope_note(lower):
-        return _search_summary_scope_note_is_stated(paper_md)
-    if _asks_additive_screening_flow(lower):
-        return _additive_screening_flow_is_stated(paper_md)
-    if _asks_admission_funnel_numeric_consistency(lower):
-        return _admission_funnel_numeric_consistency_is_stated(paper_md)
-    if _asks_prisma_all_included_rationale(lower):
-        return _prisma_all_included_rationale_is_stated(paper_md)
-    if _asks_single_source_proportionality(lower):
-        return _single_source_proportionality_is_stated(paper_md)
-    if _asks_claim_count_audit(lower):
-        return _claim_count_audit_is_stated(paper_md)
-    if _asks_direct_evidence_definition(lower):
-        text = paper_md.lower()
-        return (
-            "qualifying direct source" in text
-            or "direct interventional hard-endpoint evidence" in text
-        )
-    if _asks_evidence_boundary(lower):
-        return _evidence_boundary_is_stated(paper_md, lower)
-    if _asks_conclusion_unproven_humans(lower):
-        return _conclusion_unproven_humans_is_stated(paper_md)
-    if _asks_directional_table_narrative_consistency(lower):
-        return _directional_table_narrative_is_consistent(paper_md)
-    if _asks_contextual_without_directional_signal(lower):
-        return _contextual_without_directional_signal_is_explained(paper_md)
-    if _asks_direction_coding_visibility(lower):
-        return _direction_coding_visibility_is_stated(paper_md)
-    if _asks_direction_coded_source_highlights(lower):
-        return _direction_coded_source_highlights_are_stated(paper_md)
-    if _asks_actionable_gaps(lower):
-        return _gaps_section_is_actionable(paper_md)
-    if _asks_null_signal_reconciliation(lower):
-        return _null_signal_conclusion_is_bounded(paper_md)
-    if _asks_subgroup_lens_narrative(lower):
-        return _subgroup_lens_narrative_is_stated(paper_md, lower)
-    if _asks_underpopulated_outcome_subsections(lower):
-        return _underpopulated_outcome_subsections_are_stated(paper_md, lower)
-    if _asks_replaced_surface_tensions(lower):
-        return _replaced_surface_tensions_are_stated(paper_md, lower)
-    if _asks_concrete_tensions_gaps(lower):
-        return _concrete_tensions_gaps_are_stated(paper_md)
-    if _asks_internal_duplication(lower):
-        return _internal_duplication_is_low(paper_md, lower)
-    if _asks_long_term_safety_scope(lower):
-        return _long_term_safety_scope_is_stated(paper_md)
-    if _asks_unbundled_citation_cleanup(lower):
-        return _unbundled_citations_are_resolved(paper_md, ask)
-    if _asks_structured_table_stub_replacement(lower):
-        return _structured_table_stubs_are_replaced(paper_md)
-    if _asks_outcome_label_cleanup(lower):
-        return _outcome_label_cleanup_is_stated(paper_md)
-    if _asks_substantive_conclusion(lower):
-        return _substantive_conclusion_is_stated(paper_md)
-    if _asks_conclusion_weight_boundary(lower):
-        return _conclusion_weight_boundary_is_stated(paper_md)
-    if _asks_source_count_bundle_reconciliation(lower):
-        return _source_count_bundle_reconciliation_is_stated(paper_md)
-    if _asks_corpus_count_reconciliation(lower):
-        return _corpus_count_reconciliation_is_stated(paper_md)
-    if _asks_evidence_honesty_repetition(lower):
-        return _evidence_honesty_repetition_is_low(paper_md)
-    if _asks_named_direct_clinical_source(lower):
-        return _named_direct_clinical_source_is_stated(paper_md)
-    if _asks_outcome_subsection_source_narrative(lower):
-        return _outcome_subsection_source_narrative_is_stated(paper_md)
-    if _asks_protocol_design_limitations(lower):
-        return _protocol_design_limitations_are_stated(paper_md)
-    if _asks_external_reference_boundary(lower):
-        return _external_references_are_marked_illustrative(paper_md, lower)
-    if _asks_reference_traceability(lower):
-        return _references_are_traceable(paper_md)
-    if _asks_prior_publication_differentiation(lower):
-        return _prior_publication_differentiation_is_stated(paper_md)
-    if _asks_numeric_correction_markup_cleanup(lower):
-        return _numeric_correction_markup_is_resolved(paper_md)
-    if _asks_numeric_effect_audit(lower):
-        return _numeric_effect_audit_is_stated(paper_md) and not numeric_effect_direction_issues(paper_md)
-    if _asks_named_numeric_correction(lower):
-        return (
-            _named_numeric_correction_is_stated(paper_md, lower)
-            and _numeric_correction_markup_is_resolved(paper_md)
-            and not numeric_effect_direction_issues(paper_md)
-        )
-    if _asks_numeric_effect_accuracy(lower):
-        return not numeric_effect_direction_issues(paper_md)
-    if _asks_grammar_correction(lower):
-        return _grammar_artifacts_are_absent(paper_md)
+    for matches, is_satisfied in _DETERMINISTIC_ASK_RULES:
+        if matches(lower):
+            return is_satisfied(paper_md, ask, lower)
     return True
 
 
@@ -2878,3 +2599,162 @@ def unsupported_abstract_claims(
         claim for c in claims
         if (claim := str(c).strip()) and not _PROFILE_SUMMARY_RE.search(claim)
     ]
+
+
+_AskMatcher = Callable[[str], bool]
+_AskCheck = Callable[[str, str, str], bool]
+
+
+def _paper_only(checker: Callable[[str], bool]) -> _AskCheck:
+    def check(paper_md: str, _ask: str, _lower: str) -> bool:
+        return checker(paper_md)
+    return check
+
+
+def _paper_ask(checker: Callable[[str, str], bool]) -> _AskCheck:
+    def check(paper_md: str, ask: str, _lower: str) -> bool:
+        return checker(paper_md, ask)
+    return check
+
+
+def _paper_lower(checker: Callable[[str, str], bool]) -> _AskCheck:
+    def check(paper_md: str, _ask: str, lower: str) -> bool:
+        return checker(paper_md, lower)
+    return check
+
+
+def _contains_all(*tokens: str) -> _AskCheck:
+    def check(paper_md: str, _ask: str, _lower: str) -> bool:
+        text = paper_md.lower()
+        return all(token in text for token in tokens)
+    return check
+
+
+def _contains_any(*tokens: str) -> _AskCheck:
+    def check(paper_md: str, _ask: str, _lower: str) -> bool:
+        text = paper_md.lower()
+        return any(token in text for token in tokens)
+    return check
+
+
+def _source_outcome_class_map_satisfied(paper_md: str, ask: str, lower: str) -> bool:
+    if _asks_full_source_surface_request(lower):
+        return _full_surface_sources_are_visible(paper_md, ask) and (
+            _substantive_evidence_synthesis_is_stated(paper_md)
+            or _source_outcome_class_map_is_stated(paper_md)
+        )
+    return _source_outcome_class_map_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
+
+
+def _scope_framing_satisfied(paper_md: str, _ask: str, lower: str) -> bool:
+    return _scope_framing_is_stated(paper_md) and (
+        not _asks_direction_tally_audit(lower) or _direction_tally_audit_is_stated(paper_md)
+    )
+
+
+def _substantive_evidence_satisfied(paper_md: str, ask: str, _lower: str) -> bool:
+    return _substantive_evidence_synthesis_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
+
+
+def _numeric_effect_audit_satisfied(paper_md: str, _ask: str, _lower: str) -> bool:
+    return _numeric_effect_audit_is_stated(paper_md) and not numeric_effect_direction_issues(paper_md)
+
+
+def _named_numeric_correction_satisfied(paper_md: str, _ask: str, lower: str) -> bool:
+    return (
+        _named_numeric_correction_is_stated(paper_md, lower)
+        and _numeric_correction_markup_is_resolved(paper_md)
+        and not numeric_effect_direction_issues(paper_md)
+    )
+
+
+def _numeric_effect_accuracy_satisfied(paper_md: str, _ask: str, _lower: str) -> bool:
+    return not numeric_effect_direction_issues(paper_md)
+
+
+_DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
+    (_asks_classification_criteria, _contains_all("classification criteria", "outcome class", "directness", "evidence tier")),
+    (_asks_conflict_severity_criteria, _contains_all("conflict-map severity note", "severity-level-3", "severity-level-4", "contradiction-map")),
+    (_asks_source_outcome_class_map, _source_outcome_class_map_satisfied),
+    (_asks_framework_reclassification_cleanup, _paper_only(_framework_reclassification_cleanup_is_stated)),
+    (_asks_findings_map_source_verdict, _paper_only(_findings_map_source_verdict_is_stated)),
+    (_asks_key_findings_source_verdict, _paper_only(_key_findings_source_verdict_is_stated)),
+    (_asks_most_supported_key_findings, _paper_only(_most_supported_key_findings_are_stated)),
+    (_asks_adjacent_indirect_reconciliation, _paper_only(_adjacent_indirect_reconciliation_is_stated)),
+    (_asks_source_classification_map, _contains_all("source classification map", "outcome=", "directness=", "tier=")),
+    (_asks_evidence_type_metadata, _paper_only(_evidence_type_metadata_is_resolved)),
+    (_asks_source_inclusion_rationale, _paper_only(_source_inclusion_rationale_is_stated)),
+    (_asks_species_study_design_summary, _paper_only(_species_study_design_summary_is_stated)),
+    (_asks_source_directness_breakdown, _paper_only(_source_directness_breakdown_is_stated)),
+    (_asks_source_statistics_landscape, _paper_only(_source_statistics_landscape_is_stated)),
+    (_asks_citation_traceability_map, _paper_only(_citation_traceability_map_is_stated)),
+    (_asks_source_label_disambiguation, _paper_ask(_source_label_disambiguation_is_stated)),
+    (_asks_source_verification_transparency, _paper_only(_source_verification_transparency_is_stated)),
+    (_asks_source_identifier_gap_note, _paper_only(_source_identifier_gap_note_is_stated)),
+    (_asks_section_source_grounding, _paper_only(_section_source_grounding_is_stated)),
+    (_asks_outcome_class_key_findings, _paper_only(_outcome_class_key_findings_are_stated)),
+    (_asks_two_part_research_question, _paper_only(_two_part_research_question_is_stated)),
+    (_asks_concrete_research_question, _paper_only(_concrete_research_question_is_stated)),
+    (_asks_scope_framing, _scope_framing_satisfied),
+    (_asks_outcome_taxonomy_separation, _paper_only(_outcome_taxonomy_separation_is_stated)),
+    (_asks_source_stratification_reconciliation, _paper_only(_source_stratification_reconciliation_is_stated)),
+    (_asks_mr_causal_count, _paper_ask(_mr_causal_count_is_stated)),
+    (_asks_effect_direction_reconciliation, _paper_ask(_effect_direction_reconciliation_is_stated)),
+    (_asks_admission_direction_tally_reconciliation, _paper_only(_admission_direction_tally_reconciliation_is_stated)),
+    (_asks_bounded_research_question_conclusion, _paper_only(_bounded_research_question_conclusion_is_stated)),
+    (_asks_mr_mechanism_disagreement_separation, _paper_only(_mr_mechanism_disagreement_separation_is_stated)),
+    (_asks_no_direct_hard_endpoint_statement, _paper_only(_no_direct_hard_endpoint_statement_is_stated)),
+    (_asks_publication_status_preprint_flags, _paper_only(_publication_status_preprint_flags_are_stated)),
+    (_asks_direction_tally_audit, _paper_only(_direction_tally_audit_is_stated)),
+    (_asks_source_scope_annex, _paper_ask(_source_scope_annex_is_stated)),
+    (_asks_direct_interventional_reclassification, _paper_ask(_direct_interventional_reclassification_is_stated)),
+    (_asks_combination_product_signal_boundary, _paper_only(_combination_product_signal_boundary_is_stated)),
+    (_asks_directional_coding, _paper_only(_directional_coding_explanation_is_material)),
+    (_asks_substantive_evidence_synthesis, _substantive_evidence_satisfied),
+    (_asks_forward_dated_ai_disclosure_note, _paper_only(_forward_dated_ai_disclosure_note_is_stated)),
+    (_asks_publication_year_note, _paper_only(_publication_year_note_is_stated)),
+    (_asks_intervention_target_boundary, _paper_only(_intervention_target_boundary_is_stated)),
+    (_asks_rct_count_reconciliation, _paper_only(_rct_count_reconciliation_is_stated)),
+    (_asks_unbacked_appraisal_names, _paper_only(_unbacked_appraisal_names_are_resolved)),
+    (_asks_evidence_tier_directness_bounds, _paper_only(_evidence_tier_directness_bounds_are_stated)),
+    (_asks_search_summary_scope_note, _paper_only(_search_summary_scope_note_is_stated)),
+    (_asks_additive_screening_flow, _paper_only(_additive_screening_flow_is_stated)),
+    (_asks_admission_funnel_numeric_consistency, _paper_only(_admission_funnel_numeric_consistency_is_stated)),
+    (_asks_prisma_all_included_rationale, _paper_only(_prisma_all_included_rationale_is_stated)),
+    (_asks_single_source_proportionality, _paper_only(_single_source_proportionality_is_stated)),
+    (_asks_claim_count_audit, _paper_only(_claim_count_audit_is_stated)),
+    (_asks_direct_evidence_definition, _contains_any("qualifying direct source", "direct interventional hard-endpoint evidence")),
+    (_asks_evidence_boundary, _paper_lower(_evidence_boundary_is_stated)),
+    (_asks_conclusion_unproven_humans, _paper_only(_conclusion_unproven_humans_is_stated)),
+    (_asks_directional_table_narrative_consistency, _paper_only(_directional_table_narrative_is_consistent)),
+    (_asks_contextual_without_directional_signal, _paper_only(_contextual_without_directional_signal_is_explained)),
+    (_asks_direction_coding_visibility, _paper_only(_direction_coding_visibility_is_stated)),
+    (_asks_direction_coded_source_highlights, _paper_only(_direction_coded_source_highlights_are_stated)),
+    (_asks_actionable_gaps, _paper_only(_gaps_section_is_actionable)),
+    (_asks_null_signal_reconciliation, _paper_only(_null_signal_conclusion_is_bounded)),
+    (_asks_subgroup_lens_narrative, _paper_lower(_subgroup_lens_narrative_is_stated)),
+    (_asks_underpopulated_outcome_subsections, _paper_lower(_underpopulated_outcome_subsections_are_stated)),
+    (_asks_replaced_surface_tensions, _paper_lower(_replaced_surface_tensions_are_stated)),
+    (_asks_concrete_tensions_gaps, _paper_only(_concrete_tensions_gaps_are_stated)),
+    (_asks_internal_duplication, _paper_lower(_internal_duplication_is_low)),
+    (_asks_long_term_safety_scope, _paper_only(_long_term_safety_scope_is_stated)),
+    (_asks_unbundled_citation_cleanup, _paper_ask(_unbundled_citations_are_resolved)),
+    (_asks_structured_table_stub_replacement, _paper_only(_structured_table_stubs_are_replaced)),
+    (_asks_outcome_label_cleanup, _paper_only(_outcome_label_cleanup_is_stated)),
+    (_asks_substantive_conclusion, _paper_only(_substantive_conclusion_is_stated)),
+    (_asks_conclusion_weight_boundary, _paper_only(_conclusion_weight_boundary_is_stated)),
+    (_asks_source_count_bundle_reconciliation, _paper_only(_source_count_bundle_reconciliation_is_stated)),
+    (_asks_corpus_count_reconciliation, _paper_only(_corpus_count_reconciliation_is_stated)),
+    (_asks_evidence_honesty_repetition, _paper_only(_evidence_honesty_repetition_is_low)),
+    (_asks_named_direct_clinical_source, _paper_only(_named_direct_clinical_source_is_stated)),
+    (_asks_outcome_subsection_source_narrative, _paper_only(_outcome_subsection_source_narrative_is_stated)),
+    (_asks_protocol_design_limitations, _paper_only(_protocol_design_limitations_are_stated)),
+    (_asks_external_reference_boundary, _paper_lower(_external_references_are_marked_illustrative)),
+    (_asks_reference_traceability, _paper_only(_references_are_traceable)),
+    (_asks_prior_publication_differentiation, _paper_only(_prior_publication_differentiation_is_stated)),
+    (_asks_numeric_correction_markup_cleanup, _paper_only(_numeric_correction_markup_is_resolved)),
+    (_asks_numeric_effect_audit, _numeric_effect_audit_satisfied),
+    (_asks_named_numeric_correction, _named_numeric_correction_satisfied),
+    (_asks_numeric_effect_accuracy, _numeric_effect_accuracy_satisfied),
+    (_asks_grammar_correction, _paper_only(_grammar_artifacts_are_absent)),
+)
