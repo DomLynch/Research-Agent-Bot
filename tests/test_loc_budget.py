@@ -234,7 +234,7 @@ TOTAL_LIMIT = 29150  # 2026-06-10 operator-approved +5,000 headroom over 24,150;
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 SCRIPTS_DIR = AGENT_DIR.parent / "scripts"
-SCRIPT_TOTAL_LIMIT = 50750
+SCRIPT_TOTAL_LIMIT = 50400
 SCRIPT_PER_FILE_LIMIT = 5700
 
 
@@ -261,11 +261,8 @@ def _script_files() -> list[Path]:
         capture_output=True,
         text=True,
     ).stdout.split("\0")
-    return sorted(
-        AGENT_DIR.parent / path
-        for path in tracked
-        if path.endswith(".py")
-    )
+    paths = [AGENT_DIR.parent / path for path in tracked if path.endswith(".py")]
+    return sorted(path for path in paths if path.is_file())
 
 
 def test_no_single_file_exceeds_per_file_limit():

@@ -1,8 +1,8 @@
 # DECISION JOURNAL
 
 ## 2026-07-10 — Put publishing scripts under a deletion-first LOC gate
-**Decision:** Cap `scripts/` at 50,750 cloc and any script at 5,700 cloc. The
-first behavior-preserving cleanup reduced tracked scripts from 50,819 to 50,639 cloc;
+**Decision:** Cap `scripts/` at 50,400 cloc and any script at 5,700 cloc. The
+first two behavior-preserving cleanups reduced tracked scripts from 50,819 to 50,311 cloc;
 future publishing work must delete or consolidate before growing this layer.
 
 **Why:** The existing 29,150-cloc gate covered only `agent/`. The live lane,
