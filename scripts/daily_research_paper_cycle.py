@@ -126,11 +126,6 @@ _RETRYABLE_REVISION_STATUSES = frozenset({
     # Back-compat for rows written before synthesis timeouts became retryable.
     "terminal_synthesis_timeout",
 })
-DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = 3600
-RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = int(os.environ.get(
-    "RESEARCH_AGENT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS",
-    str(DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS),
-))
 SUBMISSION_DECISION_LOOKBACK = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_LOOKBACK", "20"))
 SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
 
@@ -1108,23 +1103,6 @@ def _surface_passes_current_finalizer(run: Path) -> bool:
         return False
 
 
-def _revision_coverage_passes_current_finalizer(run: Path, feedback: str) -> bool:
-    """True when current code can clear a stale revision-coverage failure."""
-    if not feedback or not (run / "full_paper.md").is_file():
-        return False
-    try:
-        with tempfile.TemporaryDirectory(prefix="v3-revision-coverage-probe-") as tmp:
-            probe = Path(tmp) / run.name
-            shutil.copytree(run, probe)
-            _write_json(probe / "researka_revision_request.json", {"feedback": feedback})
-            from agent.journal_finalizer import finalize_run
-
-            finalize_run(probe)
-            return not _unmet_revision_asks(probe, feedback)
-    except (OSError, RuntimeError, ValueError, ImportError):
-        return False
-
-
 def _surface_repeat_topics(
     ledger_dir: Path, *, now: dt.datetime | None = None, runs_root: Path | None = None,
 ) -> set[str]:
@@ -1700,34 +1678,6 @@ def _calibration_only_revision(text: str) -> bool:
 
 def _revision_requests_domain_scope_reset(feedback: str) -> bool:
     lower = " ".join(str(feedback or "").lower().split())
-    has_domain_frame = any(
-        term in lower
-        for term in ("geroscience", "anti-aging", "anti aging", "longevity", "healthspan")
-    )
-    if not has_domain_frame:
-        return False
-    fixable_content_markers = (
-        "add the missing",
-        "admitted source",
-        "bundle source",
-        "actual reported finding",
-        "clinical actionability",
-        "direction value",
-        "evidence landscape",
-        "excluded-with-reasons",
-        "hard-endpoint",
-        "key findings",
-        "mechanistic/alt",
-        "preprint",
-        "publication status",
-        "receipt-level direction",
-        "outcome slice",
-        "recode",
-        "screening flow",
-        "surface every",
-    )
-    if any(marker in lower for marker in fixable_content_markers):
-        return False
     frame = r"(?:framing|overlay)"
     patterns = (
         rf"does not support\b.{{0,120}}\b{frame}\b",
@@ -1737,10 +1687,11 @@ def _revision_requests_domain_scope_reset(feedback: str) -> bool:
         rf"\bremove\b.{{0,120}}\b{frame}\b",
         rf"\b{frame}\b.{{0,120}}\bremove\b",
     )
-    return any(
-        re.search(pattern, segment)
-        for segment in re.split(r"(?:;|\.)\s+", lower)
-        for pattern in patterns
+    segments = [segment for segment in re.split(r"(?:;|\.)\s+", lower) if segment]
+    return bool(segments) and all(
+        any(term in segment for term in ("geroscience", "anti-aging", "anti aging", "longevity", "healthspan"))
+        and any(re.search(pattern, segment) for pattern in patterns)
+        for segment in segments
     )
 
 
@@ -1820,16 +1771,6 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         row_submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
         return not row_submission_id or row_submission_id in active_ids
 
-    def _retryable_status_in_cooldown(row: dict[str, Any]) -> bool:
-        if str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES:
-            return False
-        handled_at = _parse_time(str(row.get("handled_at") or ""))
-        if handled_at is None:
-            return True
-        return dt.datetime.now(dt.UTC) - handled_at < dt.timedelta(
-            seconds=RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS,
-        )
-
     counts = Counter(
         submit_bridge._title_marker(str(row.get("title") or ""))
         for row in rows
@@ -1838,7 +1779,6 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
             and row.get("title")
             and _row_applies_to_active_request(row)
             and not _submitted_row_is_superseded_by_active_decision(row)
-            and (str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES or _retryable_status_in_cooldown(row))
         )
     )
     terminal = {
@@ -1986,14 +1926,6 @@ def _pending_remote_revision(
                 "terminal_domain_scope_mismatch" in handled_statuses
                 and not _revision_requests_domain_scope_reset(str(request.get("feedback") or ""))
             )
-            current_code_clears_revision_coverage = (
-                bool(handled_statuses & {
-                    "revision_coverage_unmet",
-                    "terminal_revise_retry_budget_insufficient",
-                })
-                and bool(matches)
-                and _revision_coverage_passes_current_finalizer(matches[-1][1], str(request.get("feedback") or ""))
-            )
             current_code_clears_source_manifest = (
                 "terminal_revision_source_manifest_unavailable" in handled_statuses
                 and _revision_requests_source_precision(str(request.get("feedback") or ""))
@@ -2001,7 +1933,6 @@ def _pending_remote_revision(
             if not (
                 current_code_repairs_surface
                 or current_code_clears_domain_scope
-                or current_code_clears_revision_coverage
                 or current_code_clears_source_manifest
             ):
                 continue

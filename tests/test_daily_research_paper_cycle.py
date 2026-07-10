@@ -3061,7 +3061,7 @@ def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkey
     assert pending and pending["artifactId"] == "taurine-review-2"
 
 
-def test_retryable_revision_statuses_expire_before_round_cap(tmp_path: Path) -> None:
+def test_retryable_revision_statuses_obey_round_cap_across_windows(tmp_path: Path) -> None:
     runs = tmp_path / "runs"
     ledger_dir = runs / cycle.LEDGER_DIR
     ledger_dir.mkdir(parents=True)
@@ -3069,9 +3069,7 @@ def test_retryable_revision_statuses_expire_before_round_cap(tmp_path: Path) -> 
     _seed_submitted_run(runs, "taurine", f"# {title}")
     statuses = tuple(sorted(cycle._RETRYABLE_REVISION_STATUSES))
     assert statuses == ("revision_coverage_unmet", "synthesis_timeout", "terminal_synthesis_timeout")
-    handled_at = dt.datetime.now(dt.UTC) - dt.timedelta(
-        seconds=cycle.RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS + 60,
-    )
+    handled_at = dt.datetime.now(dt.UTC) - dt.timedelta(hours=2)
     reviewed_at = handled_at - dt.timedelta(minutes=1)
     _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
         {
@@ -3090,6 +3088,18 @@ def test_retryable_revision_statuses_expire_before_round_cap(tmp_path: Path) -> 
         "reviewedAt": reviewed_at.isoformat(),
     }
 
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is None
+
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+        row for row in cycle._read_json(ledger_dir / cycle.HANDLED_REVISIONS)["handled"][:-1]
+    ]})
     pending, error = cycle._pending_remote_revision(
         runs,
         ledger_dir,
@@ -3819,6 +3829,13 @@ def test_revision_domain_scope_reset_matches_imported_longevity_frame() -> None:
         "statement no direct interventional hard-endpoint sources admitted; remove "
         "clinical actionability/anti-aging framing.; Verify 2026-dated sources for "
         "actual publication status and preprint distinction."
+    )
+    assert not cycle._revision_requests_domain_scope_reset(
+        "Rewrite the Cross-Domain Synthesis section to remove repeated paragraph templates.; "
+        "Fix the contradictory direction coding in the Results Summary.; "
+        "Either remove the mechanistic framing from Background or correctly account for "
+        "mechanistic sources.; Fix the title to a grammatical research question.; "
+        "Tighten the Longevity subsection so its coding matches the Findings Map."
     )
 
 
@@ -6019,15 +6036,14 @@ def test_pending_remote_revision_reopens_false_domain_scope_terminal(
     assert pending["source_run"] == source_run.name
 
 
-def test_pending_remote_revision_reopens_stale_revision_coverage_unmet(
+def test_pending_remote_revision_round_cap_wins_over_finalizer_recheck(
     tmp_path: Path,
-    monkeypatch,
 ) -> None:
     runs = tmp_path / "runs"
     ledger_dir = runs / cycle.LEDGER_DIR
     ledger_dir.mkdir(parents=True)
     title = "Hypothesis-Generating Brief: Metabolism Biomarker Effects — full paper"
-    source_run = _seed_submitted_run(runs, "metabolism_biomarker_effects", f"# {title}")
+    _seed_submitted_run(runs, "metabolism_biomarker_effects", f"# {title}")
     marker = cycle.submit_bridge._title_marker(title)
     _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
         {
@@ -6049,11 +6065,6 @@ def test_pending_remote_revision_reopens_stale_revision_coverage_unmet(
             "handled_at": "2026-06-25T00:54:47+00:00",
         },
     ]})
-    monkeypatch.setattr(
-        cycle,
-        "_revision_coverage_passes_current_finalizer",
-        lambda run, feedback: run == source_run and "Findings Map" in feedback,
-    )
     request = {
         "artifactId": "metabolism-review",
         "title": title,
@@ -6069,20 +6080,17 @@ def test_pending_remote_revision_reopens_stale_revision_coverage_unmet(
     )
 
     assert error is None
-    assert pending is not None
-    assert pending["artifactId"] == "metabolism-review"
-    assert pending["source_run"] == source_run.name
+    assert pending is None
 
 
-def test_pending_remote_revision_reopens_retry_budget_terminal_when_current_code_covers_asks(
+def test_pending_remote_revision_retry_budget_terminal_requires_new_review(
     tmp_path: Path,
-    monkeypatch,
 ) -> None:
     runs = tmp_path / "runs"
     ledger_dir = runs / cycle.LEDGER_DIR
     ledger_dir.mkdir(parents=True)
     title = "Hypothesis-Generating Brief: Cardiovascular Subgroups — full paper"
-    source_run = _seed_submitted_run(runs, "cardiovascular_subgroups", f"# {title}")
+    _seed_submitted_run(runs, "cardiovascular_subgroups", f"# {title}")
     marker = cycle.submit_bridge._title_marker(title)
     _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
         "key": marker,
@@ -6095,11 +6103,6 @@ def test_pending_remote_revision_reopens_retry_budget_terminal_when_current_code
         "status": "synthesis_timeout",
         "handled_at": "2026-06-26T03:41:46+00:00",
     }]})
-    monkeypatch.setattr(
-        cycle,
-        "_revision_coverage_passes_current_finalizer",
-        lambda run, feedback: run == source_run and "source attribution" in feedback,
-    )
     request = {
         "artifactId": "cardio-review",
         "title": title,
@@ -6115,9 +6118,7 @@ def test_pending_remote_revision_reopens_retry_budget_terminal_when_current_code
     )
 
     assert error is None
-    assert pending is not None
-    assert pending["artifactId"] == "cardio-review"
-    assert pending["source_run"] == source_run.name
+    assert pending is None
 
 
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:

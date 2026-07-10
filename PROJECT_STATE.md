@@ -100,6 +100,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   improve. The shared direct-evidence floor remains 4.
 - A source bundle may carry at most 3 non-direct tail rows (15%) only when at
   least 4 topic-specific direct rows remain; off-topic direct rows still block.
+- The same reviewer request is quarantined after 3 failed revise attempts
+  across timer windows. Mixed writer fixes are not terminal scope resets.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
