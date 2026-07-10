@@ -3040,6 +3040,7 @@ def _receipt_preflight(
     best_receipts = 0
     best_primary_tier = 0
     best_direct_receipts = 0
+    repair_skipped_reason: str | None = None
     for round_idx in range(rounds + 1):
         suffix = "receipt-preflight" if round_idx == 0 else f"receipt-preflight-{round_idx + 1}"
         probe_dir = out_dir.with_name(f"{out_dir.name}-{suffix}")
@@ -3078,6 +3079,13 @@ def _receipt_preflight(
         if round_idx >= rounds:
             break
         current_quant_claims = _quant_claim_count(topic)
+        if (
+            current_quant_claims >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+            and best_primary_tier == 0
+            and best_direct_receipts == 0
+        ):
+            repair_skipped_reason = "rich_corpus_without_primary_or_direct_anchors"
+            break
         if not best_receipts or (rc != 0 and not current_quant_claims):
             break
         corpus_repair = _repair_topic_corpus(
@@ -3112,6 +3120,7 @@ def _receipt_preflight(
         "reasons": [] if passed else source_fit_reasons,
         "probes": probes,
         **({"repairs": repairs} if repairs else {}),
+        **({"repair_skipped_reason": repair_skipped_reason} if repair_skipped_reason else {}),
     }
 
 

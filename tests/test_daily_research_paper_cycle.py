@@ -98,6 +98,14 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         assert "RestartSec=60" in service
 
 
+def test_revise_lane_allows_all_three_bounded_review_rounds() -> None:
+    service = (REPO / "deploy" / "research-agent-paper-revise.service").read_text(encoding="utf-8")
+
+    assert "--max-revise-attempts 3" in service
+    assert "--cycle-budget-sec 3600" in service
+    assert "TimeoutStartSec=4200" in service
+
+
 def test_submit_units_enable_doi_preflight() -> None:
     for name in (
         "research-agent-paper-daily-submit.service",
@@ -3557,10 +3565,12 @@ def test_receipt_preflight_continues_when_direct_core_improves(tmp_path: Path, m
         }})
         return 0
 
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        repairs.append(topic)
+        return {"status": "corpus_repaired", "n_quant_claims": 30}
+
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
-    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda topic, **_kwargs: (
-        repairs.append(topic) or {"status": "corpus_repaired", "n_quant_claims": 30}
-    ))
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
 
     result = cycle._receipt_preflight("direct_core_growth", tmp_path / "run")
 
@@ -3616,6 +3626,37 @@ def test_receipt_preflight_does_not_repair_zero_receipt_failed_probe(tmp_path: P
     assert result["n_receipts"] == 0
     assert len(result["probes"]) == 1
     assert repairs == []
+
+
+def test_receipt_preflight_rotates_past_rich_corpus_without_anchor_signal(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    monkeypatch.setenv("RESEARCH_AGENT_RECEIPT_PREFLIGHT_REPAIR_ROUNDS", "3")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: 119)
+
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": 7,
+                "primary_tier_receipts": 0,
+                "direct_receipts": 0,
+            },
+        })
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(
+        cycle,
+        "_repair_topic_corpus",
+        lambda *_a, **_k: pytest.fail("rich zero-anchor corpus must rotate, not reseed"),
+    )
+
+    result = cycle._receipt_preflight("zero_anchor_topic", tmp_path / "run")
+
+    assert result["passed"] is False
+    assert len(result["probes"]) == 1
+    assert result["repair_skipped_reason"] == "rich_corpus_without_primary_or_direct_anchors"
 
 
 def test_receipt_preflight_requires_primary_tier_floor(tmp_path: Path, monkeypatch) -> None:
