@@ -2462,17 +2462,19 @@ def _fresh_topic_pool(
     remote_seen: set[str] | None = None,
     exclude: set[str] | None = None,
     allow_recent_blocked_fallback: bool = True,
+    prefer_without_recent_failures: bool = True,
 ) -> list[str]:
     blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
     if not candidates:
         return []
-    recent_blocked = _recent_blocked_topics(ledger_dir)
-    fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
-    if fresh_candidates:
-        candidates = fresh_candidates
-    elif not allow_recent_blocked_fallback:
-        return []
+    if prefer_without_recent_failures:
+        recent_blocked = _recent_blocked_topics(ledger_dir)
+        fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
+        if fresh_candidates:
+            candidates = fresh_candidates
+        elif not allow_recent_blocked_fallback:
+            return []
     return [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
 
 
@@ -2484,6 +2486,7 @@ def select_topic(
     remote_seen: set[str] | None = None,
     exclude: set[str] | None = None,
     allow_recent_blocked_fallback: bool = True,
+    prefer_without_recent_failures: bool = True,
 ) -> str | None:
     pool = _fresh_topic_pool(
         topics,
@@ -2491,6 +2494,7 @@ def select_topic(
         remote_seen=remote_seen,
         exclude=exclude,
         allow_recent_blocked_fallback=allow_recent_blocked_fallback,
+        prefer_without_recent_failures=prefer_without_recent_failures,
     )
     if not pool:
         return None
@@ -3705,11 +3709,14 @@ def prepare_candidate_buffer(
         _write_json(ledger_dir / CANDIDATE_BUFFER, report)
         return report
 
+    terminal = _terminal_topics(runs_root)
     pool = _fresh_topic_pool(
         topics,
         ledger_dir,
         remote_seen=remote_seen,
+        exclude=terminal,
         allow_recent_blocked_fallback=False,
+        prefer_without_recent_failures=False,
     )
     report["candidate_pool_count"] = len(pool)
     previous = _read_json(ledger_dir / CANDIDATE_BUFFER)
@@ -3721,7 +3728,7 @@ def prepare_candidate_buffer(
         if isinstance(row, dict) and row.get("topic") in still_prepared
     ]
     report["attempts"] = _recent_candidate_buffer_attempts(previous, now=now)
-    attempted = still_prepared | {
+    attempted = terminal | still_prepared | {
         str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")
     }
     while len(report["ready"]) < target_ready and report["attempted_count"] < max_repairs:
@@ -3732,6 +3739,7 @@ def prepare_candidate_buffer(
             remote_seen=remote_seen,
             exclude=attempted,
             allow_recent_blocked_fallback=False,
+            prefer_without_recent_failures=False,
         )
         if not topic:
             break

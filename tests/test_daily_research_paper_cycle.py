@@ -1301,6 +1301,30 @@ def test_select_topic_prefers_no_recent_failure_when_available(tmp_path: Path, m
     assert selected == "zzz_clean"
 
 
+def test_preparation_pool_can_repair_recently_failed_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_recent_failure", target_journal=True)
+    _topic(tmp_path, "bbb_untried", target_journal=True)
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    _write_json(ledger_dir / "2026-07-14-fresh.json", {
+        "started_at": dt.datetime.now(dt.UTC).isoformat(),
+        "attempts": [{"topic": "aaa_recent_failure", "submitted": 0}],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    publishing_pool = cycle._fresh_topic_pool(
+        ["aaa_recent_failure", "bbb_untried"],
+        ledger_dir,
+    )
+    preparation_pool = cycle._fresh_topic_pool(
+        ["aaa_recent_failure", "bbb_untried"],
+        ledger_dir,
+        prefer_without_recent_failures=False,
+    )
+
+    assert publishing_pool == ["bbb_untried"]
+    assert preparation_pool == ["aaa_recent_failure", "bbb_untried"]
+
+
 def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monkeypatch) -> None:
     """The 21-day cooldown rate-limits re-submission of a topic that was
     submitted but is NOT published (pending/rejected): after the window it is
