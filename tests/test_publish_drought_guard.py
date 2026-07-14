@@ -107,6 +107,26 @@ def test_triage_surfaces_submitted_not_public_ledgers(tmp_path: Path) -> None:
     assert triage["top_blockers"][0] == {"reason": "reviewer_revise", "count": 1}
 
 
+def test_triage_surfaces_candidate_buffer_supply(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger_dir.mkdir()
+    (ledger_dir / guard.CANDIDATE_BUFFER).write_text(json.dumps({
+        "status": "candidate_buffer_partial",
+        "ready_count": 1,
+        "target_ready": 3,
+        "generated_at": "2026-07-14T18:00:00+00:00",
+    }), encoding="utf-8")
+
+    triage = guard.build_triage(tmp_path)
+
+    assert triage["candidate_buffer"] == {
+        "status": "candidate_buffer_partial",
+        "ready_count": 1,
+        "target_ready": 3,
+        "generated_at": "2026-07-14T18:00:00+00:00",
+    }
+
+
 def test_deploy_timer_runs_guard_hourly() -> None:
     service = (REPO / "deploy" / "research-agent-paper-drought-guard.service").read_text(encoding="utf-8")
     timer = (REPO / "deploy" / "research-agent-paper-drought-guard.timer").read_text(encoding="utf-8")

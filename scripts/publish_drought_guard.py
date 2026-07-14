@@ -15,6 +15,7 @@ from typing import Any
 DEFAULT_PUBLICATIONS_URL = "https://researka.org/api/publications"
 DEFAULT_RUNS_ROOT = Path("runs")
 DEFAULT_REPORT_PATH = Path("reports/publish_drought_guard.json")
+CANDIDATE_BUFFER = "_candidate_buffer.json"
 TIMESTAMP_KEYS = (
     "publishedAt",
     "published_at",
@@ -147,8 +148,19 @@ def build_triage(runs_root: Path) -> dict[str, Any]:
         reason = str(row.get("reason") or row.get("status") or "unknown")
         blockers[reason] = blockers.get(reason, 0) + 1
     top_blocker_items = sorted(blockers.items(), key=lambda item: (-item[1], item[0]))
+    buffer_path = runs_root / "_daily_research_paper_cycle_ledger" / CANDIDATE_BUFFER
+    try:
+        buffer = json.loads(buffer_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        buffer = {}
     return {
         "runs_root": str(runs_root),
+        "candidate_buffer": {
+            "status": buffer.get("status", "missing"),
+            "ready_count": int(buffer.get("ready_count") or 0),
+            "target_ready": int(buffer.get("target_ready") or 0),
+            "generated_at": buffer.get("generated_at"),
+        },
         "recent_ledgers": ledgers,
         "submitted_not_public": submitted_not_public,
         "top_blockers": [

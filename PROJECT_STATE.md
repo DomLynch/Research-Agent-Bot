@@ -103,6 +103,14 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 - The same reviewer request is quarantined after 3 failed revise attempts
   across timer windows. Mixed writer fixes are not terminal scope resets.
 
+## Operational Decision - 2026-07-14
+- Candidate preparation is separate from publishing: the prepare timer repairs
+  and receipt-validates up to 3 topics between fresh windows.
+- Prepared status expires after 24 hours and is invalidated by threshold changes.
+  Fresh still reruns every synthesis, surface, reviewer, and submission gate.
+- The drought report exposes prepared supply so an empty frontier is visible
+  before it becomes another multi-day public-output gap.
+
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 

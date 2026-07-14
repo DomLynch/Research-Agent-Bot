@@ -1481,6 +1481,140 @@ def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatc
     assert selected == "caloric_restriction"
 
 
+def test_select_topic_prefers_recent_prepared_candidate(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "aaa_unprepared", target_journal=True)
+    _topic(tmp_path, "zzz_prepared", target_journal=True)
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [{
+            "topic": "zzz_prepared",
+            "validated_at": dt.datetime.now(dt.UTC).isoformat(),
+        }],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+
+    selected = cycle.select_topic(
+        ["aaa_unprepared", "zzz_prepared"],
+        ledger_dir,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_prepared"
+
+
+def test_prepared_candidates_expire_and_invalidate_on_threshold_change(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [{
+            "topic": "stale_topic",
+            "validated_at": (now - dt.timedelta(hours=cycle.CANDIDATE_BUFFER_MAX_AGE_HOURS + 1)).isoformat(),
+        }],
+    })
+    assert cycle._prepared_candidate_topics(ledger_dir, now=now) == set()
+
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": {**cycle._candidate_buffer_thresholds(), "direct_receipts": 999},
+        "ready": [{"topic": "wrong_threshold", "validated_at": now.isoformat()}],
+    })
+    assert cycle._prepared_candidate_topics(ledger_dir, now=now) == set()
+
+
+def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, monkeypatch) -> None:
+    topics = ["aaa_sparse", "bbb_still_sparse", "ccc_ready"]
+    quant_claims = dict.fromkeys(topics, 0)
+    repairs: list[str] = []
+
+    monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
+    monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda *_a, **_k: topics)
+    monkeypatch.setattr(
+        cycle,
+        "select_topic",
+        lambda _topics, _ledger, **kwargs: next(
+            (topic for topic in topics if topic not in (kwargs.get("exclude") or set())),
+            None,
+        ),
+    )
+
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        repairs.append(topic)
+        quant_claims[topic] = cycle.PREFLIGHT_MIN_QUANT_CLAIMS
+        return {"status": "corpus_repaired"}
+
+    def fake_preflight(topic: str, _out_dir: Path, **_kwargs: Any) -> dict[str, Any]:
+        passed = topic != "bbb_still_sparse"
+        return {
+            "passed": passed,
+            "n_receipts": 18 if passed else 8,
+            "n_primary_tier": 6 if passed else 1,
+            "n_direct_receipts": 5 if passed else 0,
+        }
+
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_receipt_preflight", fake_preflight)
+    monkeypatch.setattr(cycle, "_quant_claim_count", quant_claims.__getitem__)
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=tmp_path / "runs",
+        target_ready=2,
+        max_repairs=3,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert repairs == topics
+    assert report["status"] == "candidate_buffer_ready"
+    assert [row["topic"] for row in report["ready"]] == ["aaa_sparse", "ccc_ready"]
+    assert report["ready_count"] == 2
+    persisted = json.loads(
+        (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.CANDIDATE_BUFFER).read_text(encoding="utf-8")
+    )
+    assert persisted["thresholds"] == cycle._candidate_buffer_thresholds()
+
+
+def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, capsys) -> None:
+    calls: list[dict[str, Any]] = []
+
+    def fake_prepare(**kwargs: Any) -> dict[str, Any]:
+        calls.append(kwargs)
+        return {
+            "status": "candidate_buffer_partial",
+            "ready_count": 1,
+            "target_ready": 3,
+            "attempts": [{"topic": "one"}],
+        }
+
+    monkeypatch.setattr(cycle, "prepare_candidate_buffer", fake_prepare)
+
+    assert cycle.main([
+        "--prepare-only",
+        "--runs-root", str(tmp_path / "runs"),
+        "--prepare-target", "3",
+        "--prepare-max-repairs", "2",
+        "--timeout-sec", "90",
+    ]) == 0
+    assert calls == [{
+        "runs_root": tmp_path / "runs",
+        "target_ready": 3,
+        "max_repairs": 2,
+        "timeout": 90,
+        "dry_run": False,
+    }]
+    assert "status=candidate_buffer_partial ready=1/3 attempted=1" in capsys.readouterr().out
+
+
+def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
+    service = (REPO / "deploy" / "research-agent-paper-prepare.service").read_text(encoding="utf-8")
+    timer = (REPO / "deploy" / "research-agent-paper-prepare.timer").read_text(encoding="utf-8")
+
+    assert "--prepare-only --prepare-target 3 --prepare-max-repairs 3" in service
+    assert "TimeoutStartSec=5400" in service
+    assert "OnCalendar=*-*-* 06/8:00:00" in timer
+
+
 def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_brief_grade", target_journal=True)
     _topic(tmp_path, "zzz_full_synthesis", target_journal=True)

@@ -56,6 +56,7 @@ BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
 REVISION_COVERAGE_GATE = "revision_coverage_gate.json"
 DAILY_THROUGHPUT_SUMMARY = "_daily_throughput_summary.json"
+CANDIDATE_BUFFER = "_candidate_buffer.json"
 DECISIONS_BY_DAY = "_decisions_by_day.json"
 REVISE_REASONS = "_revise_reasons.json"
 DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -74,6 +75,7 @@ PREFLIGHT_MAX_RECEIPTS = 500
 PREFLIGHT_MAX_TENSIONS = 50_000
 PREFLIGHT_MAX_OUTCOMES = 12
 RECENT_FAILURE_COOLDOWN_HOURS = 24
+CANDIDATE_BUFFER_MAX_AGE_HOURS = 24
 SURFACE_REPEAT_THRESHOLD = 2
 WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
@@ -2405,6 +2407,57 @@ def _public_research_surface_preflight(run: Path) -> dict[str, Any]:
     }
 
 
+def _candidate_buffer_thresholds() -> dict[str, int]:
+    return {
+        "quant_claims": PREFLIGHT_MIN_QUANT_CLAIMS,
+        "receipts": PREFLIGHT_MIN_RECEIPTS,
+        "primary_tier": PREFLIGHT_MIN_PRIMARY_TIER,
+        "direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
+    }
+
+
+def _prepared_candidate_topics(
+    ledger_dir: Path,
+    *,
+    now: dt.datetime | None = None,
+) -> set[str]:
+    report = _read_json(ledger_dir / CANDIDATE_BUFFER)
+    if report.get("thresholds") != _candidate_buffer_thresholds():
+        return set()
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=CANDIDATE_BUFFER_MAX_AGE_HOURS)
+    ready: set[str] = set()
+    rows = report.get("ready")
+    for row in rows if isinstance(rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        validated_at = _parse_time(str(row.get("validated_at") or ""))
+        topic = str(row.get("topic") or "")
+        if topic and validated_at and validated_at >= cutoff:
+            ready.add(topic)
+    return ready
+
+
+def _fresh_topic_pool(
+    topics: list[str],
+    ledger_dir: Path,
+    *,
+    remote_seen: set[str] | None = None,
+    exclude: set[str] | None = None,
+    allow_recent_blocked_fallback: bool = True,
+) -> list[str]:
+    blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
+    candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
+    if not candidates:
+        return []
+    recent_blocked = _recent_blocked_topics(ledger_dir)
+    fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
+    if fresh_candidates:
+        candidates = fresh_candidates
+    elif not allow_recent_blocked_fallback:
+        return []
+    return [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -2414,19 +2467,16 @@ def select_topic(
     exclude: set[str] | None = None,
     allow_recent_blocked_fallback: bool = True,
 ) -> str | None:
-    blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
-    candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
-    if not candidates:
-        return None
-    recent_blocked = _recent_blocked_topics(ledger_dir)
-    fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
-    if fresh_candidates:
-        candidates = fresh_candidates
-    elif not allow_recent_blocked_fallback:
-        return None
-    pool = [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
+    pool = _fresh_topic_pool(
+        topics,
+        ledger_dir,
+        remote_seen=remote_seen,
+        exclude=exclude,
+        allow_recent_blocked_fallback=allow_recent_blocked_fallback,
+    )
     if not pool:
         return None
+    prepared = _prepared_candidate_topics(ledger_dir)
     public_research_ready = {
         topic for topic in pool if _public_research_surface_ready_topic(topic, runs_root)
     }
@@ -2443,6 +2493,7 @@ def select_topic(
     # Revisiting proven topics is the revise cycle's job, not the fresh cycle's.
     untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
     return min(pool, key=lambda topic: (
+        0 if topic in prepared else 1,
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
         0 if topic in public_research_ready else 1,
@@ -3604,6 +3655,100 @@ def _repair_topic_corpus(
         **result,
         "status": "corpus_repaired" if result.get("status") in {"corpus_ready", "corpus_seeded"} else result.get("status"),
     }
+
+
+def prepare_candidate_buffer(
+    *,
+    runs_root: Path = RUNS,
+    target_ready: int = 3,
+    max_repairs: int = 3,
+    timeout: int | None = None,
+    dry_run: bool = False,
+    remote_loader: Callable[[], tuple[set[str], str | None]] | None = None,
+) -> dict[str, Any]:
+    """Build a short-lived reserve of receipt-validated fresh topics."""
+    target_ready = max(1, target_ready)
+    max_repairs = max(0, max_repairs)
+    ledger_dir = runs_root / LEDGER_DIR
+    now = dt.datetime.now(dt.UTC)
+    topics = discover_topics()
+    remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
+    report: dict[str, Any] = {
+        "generated_at": now.isoformat(),
+        "target_ready": target_ready,
+        "max_repairs": max_repairs,
+        "thresholds": _candidate_buffer_thresholds(),
+        "ready": [],
+        "attempts": [],
+    }
+    if remote_error:
+        report.update({"status": "remote_dedupe_failed", "error": remote_error, "ready_count": 0})
+        _write_json(ledger_dir / CANDIDATE_BUFFER, report)
+        return report
+
+    pool = _fresh_topic_pool(
+        topics,
+        ledger_dir,
+        remote_seen=remote_seen,
+        allow_recent_blocked_fallback=False,
+    )
+    report["candidate_pool_count"] = len(pool)
+    previous = _read_json(ledger_dir / CANDIDATE_BUFFER)
+    still_prepared = _prepared_candidate_topics(ledger_dir, now=now) & set(pool)
+    previous_ready = previous.get("ready")
+    previous_rows = previous_ready if isinstance(previous_ready, list) else []
+    report["ready"] = [
+        row for row in previous_rows
+        if isinstance(row, dict) and row.get("topic") in still_prepared
+    ]
+    attempted = set(still_prepared)
+    while len(report["ready"]) < target_ready and len(report["attempts"]) < max_repairs:
+        topic = select_topic(
+            topics,
+            ledger_dir,
+            runs_root=runs_root,
+            remote_seen=remote_seen,
+            exclude=attempted,
+            allow_recent_blocked_fallback=False,
+        )
+        if not topic:
+            break
+        attempted.add(topic)
+        repair = _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
+        preflight = _receipt_preflight(
+            topic,
+            runs_root / "_candidate_prepare" / topic,
+            timeout=timeout,
+            repair=False,
+            dry_run=dry_run,
+        )
+        quant_claims = _quant_claim_count(topic)
+        row = {
+            "topic": topic,
+            "quant_claims": quant_claims,
+            "repair_status": repair.get("status"),
+            "receipt_preflight": preflight,
+        }
+        report["attempts"].append(row)
+        if quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS and preflight.get("passed"):
+            report["ready"].append({
+                "topic": topic,
+                "validated_at": now.isoformat(),
+                "n_quant_claims": quant_claims,
+                "n_receipts": int(preflight.get("n_receipts") or 0),
+                "n_primary_tier": int(preflight.get("n_primary_tier") or 0),
+                "n_direct_receipts": int(preflight.get("n_direct_receipts") or 0),
+            })
+
+    ready_count = len(report["ready"])
+    report["ready_count"] = ready_count
+    report["status"] = (
+        "candidate_buffer_ready" if ready_count >= target_ready
+        else "candidate_buffer_partial" if ready_count
+        else "candidate_buffer_depleted"
+    )
+    _write_json(ledger_dir / CANDIDATE_BUFFER, report)
+    return report
 
 
 def _quant_claim_identity(path: Path) -> str:
@@ -5108,12 +5253,29 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--cycle-budget-sec", type=int, default=CYCLE_BUDGET_SECONDS)
     parser.add_argument("--reconcile-publications", action="store_true",
                         help="Reconcile submitted ledgers against Researka public publications and exit")
+    parser.add_argument("--prepare-only", action="store_true",
+                        help="repair and receipt-validate a reserve of fresh candidates, then exit")
+    parser.add_argument("--prepare-target", type=int, default=3)
+    parser.add_argument("--prepare-max-repairs", type=int, default=3)
     args = parser.parse_args(argv)
     if args.reconcile_publications:
         result = reconcile_publication_ledgers(runs_root=args.runs_root, date=args.date, mode=args.mode)
         print(
             f"[daily-v3-cycle] status={result['status']} checked={result['checked']} "
             f"updated={result['updated']} ledgers={','.join(result.get('updated_ledgers', [])) or '-'}"
+        )
+        return 0 if result["status"] != "remote_dedupe_failed" else 2
+    if args.prepare_only:
+        result = prepare_candidate_buffer(
+            runs_root=args.runs_root,
+            target_ready=args.prepare_target,
+            max_repairs=args.prepare_max_repairs,
+            timeout=args.timeout_sec or None,
+            dry_run=args.synthesis_dry_run,
+        )
+        print(
+            f"[daily-v3-prepare] status={result['status']} ready={result['ready_count']}/"
+            f"{result['target_ready']} attempted={len(result['attempts'])}"
         )
         return 0 if result["status"] != "remote_dedupe_failed" else 2
     ledger = run_cycle(
