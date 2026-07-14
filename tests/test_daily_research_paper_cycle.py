@@ -1516,6 +1516,10 @@ def test_select_topic_prefers_recent_prepared_candidate(tmp_path: Path, monkeypa
             "validated_at": dt.datetime.now(dt.UTC).isoformat(),
         }],
     })
+    _write_json(ledger_dir / "2026-07-14-fresh.json", {
+        "started_at": dt.datetime.now(dt.UTC).isoformat(),
+        "attempts": [{"topic": "zzz_prepared", "gate_status": "receipt_preflight_insufficient"}],
+    })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)

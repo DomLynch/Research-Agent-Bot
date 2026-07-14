@@ -2463,6 +2463,7 @@ def _fresh_topic_pool(
     exclude: set[str] | None = None,
     allow_recent_blocked_fallback: bool = True,
     prefer_without_recent_failures: bool = True,
+    recent_failure_exempt: set[str] | None = None,
 ) -> list[str]:
     blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
@@ -2470,7 +2471,11 @@ def _fresh_topic_pool(
         return []
     if prefer_without_recent_failures:
         recent_blocked = _recent_blocked_topics(ledger_dir)
-        fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
+        fresh_candidates = [
+            topic for topic in candidates
+            if topic in (recent_failure_exempt or set())
+            or (topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0)
+        ]
         if fresh_candidates:
             candidates = fresh_candidates
         elif not allow_recent_blocked_fallback:
@@ -2489,6 +2494,7 @@ def select_topic(
     prefer_without_recent_failures: bool = True,
     prefer_source_fit: bool = False,
 ) -> str | None:
+    prepared = _prepared_candidate_topics(ledger_dir)
     pool = _fresh_topic_pool(
         topics,
         ledger_dir,
@@ -2496,10 +2502,10 @@ def select_topic(
         exclude=exclude,
         allow_recent_blocked_fallback=allow_recent_blocked_fallback,
         prefer_without_recent_failures=prefer_without_recent_failures,
+        recent_failure_exempt=prepared,
     )
     if not pool:
         return None
-    prepared = _prepared_candidate_topics(ledger_dir)
     public_research_ready = {
         topic for topic in pool if _public_research_surface_ready_topic(topic, runs_root)
     }
