@@ -1575,6 +1575,53 @@ def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, mon
     assert persisted["thresholds"] == cycle._candidate_buffer_thresholds()
 
 
+def test_prepare_candidate_buffer_rotates_recent_failures(tmp_path: Path, monkeypatch) -> None:
+    topics = ["aaa_recent_failure", "bbb_next_candidate"]
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "generated_at": now.isoformat(),
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [],
+        "attempts": [{"topic": "aaa_recent_failure", "receipt_preflight": {"passed": False}}],
+    })
+    repaired: list[str] = []
+    monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
+    monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda *_a, **_k: topics)
+    monkeypatch.setattr(
+        cycle,
+        "select_topic",
+        lambda _topics, _ledger, **kwargs: next(
+            (topic for topic in topics if topic not in (kwargs.get("exclude") or set())),
+            None,
+        ),
+    )
+    monkeypatch.setattr(
+        cycle,
+        "_repair_topic_corpus",
+        lambda topic, **_kwargs: repaired.append(topic) or {"status": "corpus_repaired"},
+    )
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {
+        "passed": True,
+        "n_receipts": 18,
+        "n_primary_tier": 6,
+        "n_direct_receipts": 5,
+    })
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=tmp_path / "runs",
+        target_ready=1,
+        max_repairs=1,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert repaired == ["bbb_next_candidate"]
+    assert report["attempted_count"] == 1
+    assert [row["topic"] for row in report["ready"]] == ["bbb_next_candidate"]
+    assert {row["topic"] for row in report["attempts"]} == set(topics)
+
+
 def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, capsys) -> None:
     calls: list[dict[str, Any]] = []
 
@@ -1584,6 +1631,7 @@ def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, cap
             "status": "candidate_buffer_partial",
             "ready_count": 1,
             "target_ready": 3,
+            "attempted_count": 1,
             "attempts": [{"topic": "one"}],
         }
 

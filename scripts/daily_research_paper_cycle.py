@@ -2437,6 +2437,24 @@ def _prepared_candidate_topics(
     return ready
 
 
+def _recent_candidate_buffer_attempts(
+    report: dict[str, Any],
+    *,
+    now: dt.datetime,
+) -> list[dict[str, Any]]:
+    cutoff = now - dt.timedelta(hours=CANDIDATE_BUFFER_MAX_AGE_HOURS)
+    fallback = _parse_time(str(report.get("generated_at") or ""))
+    rows = report.get("attempts")
+    recent: list[dict[str, Any]] = []
+    for row in rows if isinstance(rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        attempted_at = _parse_time(str(row.get("attempted_at") or "")) or fallback
+        if attempted_at and attempted_at >= cutoff:
+            recent.append({**row, "attempted_at": attempted_at.isoformat()})
+    return recent
+
+
 def _fresh_topic_pool(
     topics: list[str],
     ledger_dir: Path,
@@ -3680,6 +3698,7 @@ def prepare_candidate_buffer(
         "thresholds": _candidate_buffer_thresholds(),
         "ready": [],
         "attempts": [],
+        "attempted_count": 0,
     }
     if remote_error:
         report.update({"status": "remote_dedupe_failed", "error": remote_error, "ready_count": 0})
@@ -3701,8 +3720,11 @@ def prepare_candidate_buffer(
         row for row in previous_rows
         if isinstance(row, dict) and row.get("topic") in still_prepared
     ]
-    attempted = set(still_prepared)
-    while len(report["ready"]) < target_ready and len(report["attempts"]) < max_repairs:
+    report["attempts"] = _recent_candidate_buffer_attempts(previous, now=now)
+    attempted = still_prepared | {
+        str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")
+    }
+    while len(report["ready"]) < target_ready and report["attempted_count"] < max_repairs:
         topic = select_topic(
             topics,
             ledger_dir,
@@ -3725,11 +3747,13 @@ def prepare_candidate_buffer(
         quant_claims = _quant_claim_count(topic)
         row = {
             "topic": topic,
+            "attempted_at": now.isoformat(),
             "quant_claims": quant_claims,
             "repair_status": repair.get("status"),
             "receipt_preflight": preflight,
         }
         report["attempts"].append(row)
+        report["attempted_count"] += 1
         if quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS and preflight.get("passed"):
             report["ready"].append({
                 "topic": topic,
@@ -3739,6 +3763,8 @@ def prepare_candidate_buffer(
                 "n_primary_tier": int(preflight.get("n_primary_tier") or 0),
                 "n_direct_receipts": int(preflight.get("n_direct_receipts") or 0),
             })
+        report.update({"status": "candidate_buffer_building", "ready_count": len(report["ready"])})
+        _write_json(ledger_dir / CANDIDATE_BUFFER, report)
 
     ready_count = len(report["ready"])
     report["ready_count"] = ready_count
@@ -5275,7 +5301,7 @@ def main(argv: list[str] | None = None) -> int:
         )
         print(
             f"[daily-v3-prepare] status={result['status']} ready={result['ready_count']}/"
-            f"{result['target_ready']} attempted={len(result['attempts'])}"
+            f"{result['target_ready']} attempted={result['attempted_count']}"
         )
         return 0 if result["status"] != "remote_dedupe_failed" else 2
     ledger = run_cycle(
