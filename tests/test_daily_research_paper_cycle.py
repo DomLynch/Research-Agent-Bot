@@ -1099,6 +1099,11 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
             "status": "published",
             "submissionId": "public-decision-submission-id",
             "createdAt": "2026-06-24T12:22:51+04:00",
+            "publication": {
+                "publication_id": "publication-1",
+                "url": "https://researka.org/papers/publication-1",
+                "doi": "10.17605/OSF.IO/TEST1",
+            },
         },
     }, None))
 
@@ -1111,6 +1116,12 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
     assert result["decision_records"] == 1
     assert ledger["status"] == "published"
     assert ledger["published"] == 1
+    assert ledger["reconciled"] is True
+    assert ledger["public_url"] == "https://researka.org/papers/publication-1"
+    assert ledger["doi"] == "10.17605/OSF.IO/TEST1"
+    assert ledger["decision"] == "accept"
+    assert ledger["publication_id"] == "publication-1"
+    assert ledger["publication_reconciliation"]["public_url"] == ledger["public_url"]
     assert decisions["days"]["2026-06-24"]["counts"] == {"accept": 1}
     assert decisions["days"]["2026-06-24"]["records"][0]["reviewed_at"] == "2026-06-24T12:22:51+04:00"
     assert result["decision_summary"]["counts"] == {"accept": 1}
@@ -1118,6 +1129,16 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
     artifact = json.loads((ledger_dir / "2026-06-24-reconcile.json").read_text(encoding="utf-8"))
     assert artifact["decision_summary"]["counts"] == {"accept": 1}
     assert artifact["updated_ledgers"] == ["2026-06-24-fresh.json"]
+
+    for key in ("reconciled", "reconciled_at", "public_url", "doi", "decision", "publication_id"):
+        ledger.pop(key, None)
+    _write_json(ledger_dir / "2026-06-24-fresh.json", ledger)
+    rerun = cycle.reconcile_publication_ledgers(runs_root=runs_root, date="2026-06-24")
+    ledger = json.loads((ledger_dir / "2026-06-24-fresh.json").read_text(encoding="utf-8"))
+    assert rerun["status"] == "publication_reconciled"
+    assert ledger["reconciled"] is True
+    assert ledger["public_url"] == "https://researka.org/papers/publication-1"
+    assert ledger["doi"] == "10.17605/OSF.IO/TEST1"
 
 
 def test_reconcile_publication_ledgers_date_scope_includes_daily_submit_cycle(tmp_path: Path) -> None:

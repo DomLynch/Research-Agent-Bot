@@ -583,6 +583,59 @@ def _review_decision_summary(rows: dict[str, dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _publication_receipts_by_marker(
+    rows: dict[str, dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    receipts: dict[str, dict[str, Any]] = {}
+    for row in rows.values():
+        publication = row.get("publication")
+        publication = publication if isinstance(publication, dict) else {}
+        receipt = {
+            "decision": row.get("decision"),
+            "public_url": publication.get("url") or row.get("public_url") or row.get("url"),
+            "doi": publication.get("doi") or row.get("doi"),
+            "publication_id": (
+                publication.get("publication_id")
+                or publication.get("publicationId")
+                or row.get("publication_id")
+                or row.get("publicationId")
+            ),
+        }
+        receipt = {key: value for key, value in receipt.items() if value not in (None, "")}
+        for marker in _public_decision_markers({"row": row}):
+            receipts[marker] = receipt
+    return receipts
+
+
+def _apply_publication_receipt(
+    ledger: dict[str, Any],
+    matched: set[str],
+    receipts_by_marker: dict[str, dict[str, Any]] | None,
+) -> bool:
+    if not receipts_by_marker:
+        return False
+    receipt = next(
+        (receipts_by_marker[marker] for marker in sorted(matched) if marker in receipts_by_marker),
+        None,
+    )
+    if not receipt:
+        return False
+    reconciliation = ledger.get("publication_reconciliation")
+    reconciliation = reconciliation if isinstance(reconciliation, dict) else {}
+    reconciled_at = str(reconciliation.get("reconciled_at") or dt.datetime.now(dt.UTC).isoformat())
+    changed = False
+    for key, value in {**receipt, "reconciled": True, "reconciled_at": reconciled_at}.items():
+        if ledger.get(key) != value:
+            ledger[key] = value
+            changed = True
+    for key, value in receipt.items():
+        if reconciliation.get(key) != value:
+            reconciliation[key] = value
+            changed = True
+    ledger["publication_reconciliation"] = reconciliation
+    return changed
+
+
 def _write_reconcile_artifact(
     ledger_dir: Path,
     *,
@@ -605,6 +658,7 @@ def _reconcile_published_ledger(
     runs_root: Path,
     remote_seen: set[str],
     title_marker_counts: Counter[str] | None = None,
+    receipts_by_marker: dict[str, dict[str, Any]] | None = None,
 ) -> bool:
     changed = False
     if int(ledger.get("published") or 0):
@@ -615,6 +669,7 @@ def _reconcile_published_ledger(
             if matched:
                 existing_matched_runs = _matched_ledger_runs_for_markers(ledger, runs_root, matched)
                 changed = _sync_reconciled_children(ledger, existing_matched_runs, matched) or changed
+                changed = _apply_publication_receipt(ledger, matched, receipts_by_marker) or changed
             if str(ledger.get("status") or "") != "published":
                 ledger["status"] = "published"
                 changed = True
@@ -669,6 +724,7 @@ def _reconcile_published_ledger(
         "matched": sorted(matches)[:5],
         "reconciled_at": dt.datetime.now(dt.UTC).isoformat(),
     }
+    _apply_publication_receipt(ledger, matches, receipts_by_marker)
     attempts = ledger.get("attempts")
     for attempt in attempts if isinstance(attempts, list) else []:
         if not isinstance(attempt, dict):
@@ -716,6 +772,7 @@ def reconcile_publication_ledgers(
     decision_records = 0
     decision_seen: set[str] = set()
     decision_summary: dict[str, Any] = {"counts": {}, "records": []}
+    receipts_by_marker: dict[str, dict[str, Any]] = {}
     if remote_loader is None:
         latest_decisions, decision_error = _latest_public_decisions_by_title()
         direct_decisions, direct_error = _submitted_submission_decisions_by_title(runs_root)
@@ -726,6 +783,7 @@ def reconcile_publication_ledgers(
         if latest_decisions:
             _record_review_decisions(ledger_dir, latest_decisions)
             decision_seen = _public_decision_markers(latest_decisions)
+            receipts_by_marker = _publication_receipts_by_marker(latest_decisions)
             decision_records = len(latest_decisions)
             decision_summary = _review_decision_summary(latest_decisions)
     checked = 0
@@ -735,9 +793,13 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts)
+        changed = _reconcile_published_ledger(
+            ledger, runs_root, remote_seen, title_marker_counts, receipts_by_marker,
+        )
         if not changed and decision_seen:
-            changed = _reconcile_published_ledger(ledger, runs_root, decision_seen, title_marker_counts)
+            changed = _reconcile_published_ledger(
+                ledger, runs_root, decision_seen, title_marker_counts, receipts_by_marker,
+            )
         if changed:
             _write_json(ledger_path, ledger)
             _record_daily_throughput(ledger_dir, ledger)
@@ -747,9 +809,13 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts)
+        changed = _reconcile_published_ledger(
+            ledger, runs_root, remote_seen, title_marker_counts, receipts_by_marker,
+        )
         if not changed and decision_seen:
-            changed = _reconcile_published_ledger(ledger, runs_root, decision_seen, title_marker_counts)
+            changed = _reconcile_published_ledger(
+                ledger, runs_root, decision_seen, title_marker_counts, receipts_by_marker,
+            )
         if int(ledger.get("published") or 0):
             changed = _refresh_submit_day_summary(ledger, runs_root) or changed
         if changed:
