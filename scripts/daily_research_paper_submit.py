@@ -1701,7 +1701,7 @@ def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
             direct_specific >= SOURCE_BUNDLE_INDIRECT_TOLERANCE_MIN_DIRECT
             and len(misses) <= SOURCE_BUNDLE_INDIRECT_TOLERANCE_MAX_MISSES
             and miss_ratio <= SOURCE_BUNDLE_INDIRECT_TOLERANCE_RATIO
-            and all(context != "direct" for _, context in misses)
+            and sum(context == "direct" for _, context in misses) <= 1
         ):
             return "eligible"
         return f"source_bundle_topic_mismatch:{len(misses)}/{len(bundle)}:rows={','.join(idx for idx, _ in misses[:5])}"

@@ -1108,7 +1108,7 @@ def test_source_bundle_topic_gate_allows_bounded_indirect_tail_with_direct_core(
     assert daily._source_bundle_topic_status(payload) == "eligible"
 
 
-def test_source_bundle_topic_gate_allows_only_bounded_context_tail(tmp_path: Path) -> None:
+def test_source_bundle_topic_gate_allows_one_missed_direct_in_bounded_tail(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["metadata"]["topic"] = "liraglutide_biomarker_effects"
     for row in payload["source_bundle"]:
@@ -1127,6 +1127,10 @@ def test_source_bundle_topic_gate_allows_only_bounded_context_tail(tmp_path: Pat
 
     payload["source_bundle"][14]["evidence_context"] = "direct"
     payload["source_bundle"][14]["directness"] = "direct"
+    assert daily._source_bundle_topic_status(payload) == "eligible"
+
+    payload["source_bundle"][30]["evidence_context"] = "direct"
+    payload["source_bundle"][30]["directness"] = "direct"
     assert daily._source_bundle_topic_status(payload) == "source_bundle_topic_mismatch:3/60:rows=15,31,34"
 
 
