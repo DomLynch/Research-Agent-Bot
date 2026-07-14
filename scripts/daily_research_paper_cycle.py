@@ -2487,6 +2487,7 @@ def select_topic(
     exclude: set[str] | None = None,
     allow_recent_blocked_fallback: bool = True,
     prefer_without_recent_failures: bool = True,
+    prefer_source_fit: bool = False,
 ) -> str | None:
     pool = _fresh_topic_pool(
         topics,
@@ -2516,11 +2517,12 @@ def select_topic(
     untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
     return min(pool, key=lambda topic: (
         0 if topic in prepared else 1,
+        source_fit_rank[topic] if prefer_source_fit else (),
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
         0 if topic in public_research_ready else 1,
         0 if topic in synthesis_ready else 1,
-        source_fit_rank[topic],
+        source_fit_rank[topic] if not prefer_source_fit else (),
         -_quant_claim_count(topic),
         -_publication_score(topic, ledger_dir, runs_root),
         -_topic_support_score(topic),
@@ -3740,6 +3742,7 @@ def prepare_candidate_buffer(
             exclude=attempted,
             allow_recent_blocked_fallback=False,
             prefer_without_recent_failures=False,
+            prefer_source_fit=True,
         )
         if not topic:
             break

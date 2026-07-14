@@ -1552,17 +1552,18 @@ def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, mon
     topics = ["aaa_sparse", "bbb_still_sparse", "ccc_ready"]
     quant_claims = dict.fromkeys(topics, 0)
     repairs: list[str] = []
+    selection_options: list[bool] = []
+
+    def fake_select(_topics: list[str], _ledger: Path, **kwargs: Any) -> str | None:
+        selection_options.append(kwargs.get("prefer_source_fit") is True)
+        return next(
+            (topic for topic in topics if topic not in (kwargs.get("exclude") or set())),
+            None,
+        )
 
     monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
     monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda *_a, **_k: topics)
-    monkeypatch.setattr(
-        cycle,
-        "select_topic",
-        lambda _topics, _ledger, **kwargs: next(
-            (topic for topic in topics if topic not in (kwargs.get("exclude") or set())),
-            None,
-        ),
-    )
+    monkeypatch.setattr(cycle, "select_topic", fake_select)
 
     def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
         repairs.append(topic)
@@ -1590,6 +1591,7 @@ def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, mon
     )
 
     assert repairs == topics
+    assert selection_options == [True, True, True]
     assert report["status"] == "candidate_buffer_ready"
     assert [row["topic"] for row in report["ready"]] == ["aaa_sparse", "ccc_ready"]
     assert report["ready_count"] == 2
@@ -1644,6 +1646,35 @@ def test_prepare_candidate_buffer_rotates_recent_failures(tmp_path: Path, monkey
     assert report["attempted_count"] == 1
     assert [row["topic"] for row in report["ready"]] == ["bbb_next_candidate"]
     assert {row["topic"] for row in report["attempts"]} == set(topics)
+
+
+def test_preparation_prefers_proven_source_fit_over_raw_corpus_size(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    topics = ["aaa_untried_indirect", "zzz_proven_direct"]
+    for topic in topics:
+        _topic(tmp_path, topic, target_journal=True)
+    runs_root = tmp_path / "runs"
+    _prior_run(
+        tmp_path, "zzz_proven_direct",
+        receipts=20, tensions=4, primary=6, direct=5, level=4,
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(
+        cycle,
+        "_quant_claim_count",
+        lambda topic: 120 if topic == "aaa_untried_indirect" else 1,
+    )
+
+    selected = cycle.select_topic(
+        topics,
+        runs_root / cycle.LEDGER_DIR,
+        runs_root=runs_root,
+        prefer_source_fit=True,
+    )
+
+    assert selected == "zzz_proven_direct"
 
 
 def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, capsys) -> None:
