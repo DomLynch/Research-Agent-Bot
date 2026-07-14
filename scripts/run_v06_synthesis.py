@@ -535,7 +535,6 @@ def _compile_public_section_backstop(
     receipt_n = cast(int, ctx["receipt_n"])
     claim_n = cast(int, ctx["claim_n"])
     tension_phrase = cast(str, ctx["tension_phrase"])
-    tension_subject = cast(str, ctx["tension_subject"])
     direct = cast(int, ctx["direct"])
     indirect = cast(int, ctx["indirect"])
     mechanistic = cast(int, ctx["mechanistic"])
@@ -564,6 +563,8 @@ def _compile_public_section_backstop(
         results_backstop = _compile_results_outcome_backstop(topic, ctx, floor)
         if results_backstop:
             return results_backstop
+    if title == "Cross-Domain Synthesis":
+        return _compile_cross_domain_backstop(topic, ctx, floor)
 
     paragraphs_by_title = {
         "Abstract": [
@@ -669,31 +670,6 @@ def _compile_public_section_backstop(
                 "where sources do not simply accumulate in the same direction. "
                 "The synthesis therefore treats disagreement and null findings "
                 "as evidence, not as noise to be smoothed away."
-            ),
-        ],
-        "Cross-Domain Synthesis": [
-            (
-                    f"Cross-domain interpretation of {topic} is constrained by the "
-                    f"relationship between clinical sources ({direct_refs}) and "
-                    f"mechanistic studies ({mech_refs}). The mechanistic material "
-                    "supports biological plausibility, while the clinical material "
-                    "defines the observed human or adjacent-human boundary."
-                ),
-            (
-                f"The main cross-domain pattern is the coexistence of positive "
-                f"signals in {pos} with null signals in {null} and negative "
-                f"signals in {neg}. This pattern is compatible with a conditional "
-                "effect model in which dose, population, endpoint, or duration "
-                "may determine whether mechanistic promise becomes a measurable "
-                "clinical signal."
-            ),
-            (
-                f"{tension_subject.capitalize()} prevent the evidence "
-                "from being reduced to a simple positive or negative verdict. "
-                "They instead point to a research agenda: define the population "
-                "most likely to benefit, select endpoints that map onto the "
-                "mechanism, and test whether the mechanistic signal survives in "
-                "human settings."
             ),
         ],
         "Discussion": [
@@ -1152,6 +1128,39 @@ def _compile_results_outcome_backstop(
             break
         lines.extend([paragraph, ""])
     return "\n".join(lines).rstrip()
+
+
+def _compile_cross_domain_backstop(
+    topic: str, ctx: dict[str, object], floor: int,
+) -> str:
+    """Evidence-role synthesis without generic section-padding templates."""
+    raw_rows = ctx.get("outcome_rows")
+    rows = [row for row in raw_rows if isinstance(row, dict)] if isinstance(raw_rows, list) else []
+    row_map = "; ".join(
+        f"{row.get('label')} ({row.get('directions')}; {row.get('directness')}; sources {row.get('refs')})"
+        for row in rows[:4]
+    ) or "the retained outcome packets"
+    paragraphs = (
+        f"Agreement between mechanism and clinical signal is strongest where the biological rationale and the directly observed outcome point in the same bounded direction. For {topic}, direct sources such as {ctx['direct_refs']} define the human evidence perimeter, while mechanistic sources such as {ctx['mech_refs']} explain why an effect could occur. Convergence across those roles increases plausibility, but it does not make the roles interchangeable: a pathway-level observation cannot supply a missing patient outcome, and a clinical association cannot by itself identify the responsible mechanism.",
+        f"Divergence is equally informative. Positive signals represented by {ctx['positive_refs']} occur alongside null signals represented by {ctx['null_refs']} and negative or adverse signals represented by {ctx['negative_refs']}. Their outcome distribution spans {ctx['positive']}, {ctx['null']}, and {ctx['negative']}. This pattern rejects a single global verdict. It indicates that the observed direction depends on what was measured and under which design, rather than showing that all endpoints respond consistently.",
+        f"The outcome-class map makes that heterogeneity auditable: {row_map}. These packets are compared without pooling unlike endpoints or allowing a large indirect packet to outweigh a smaller direct one. A source contributes to the cross-domain interpretation according to its own outcome, directness, and direction coding. Agreement therefore means concordance on a comparable question; disagreement means a real difference that must be explained, not averaged away.",
+        "Population is the first boundary on transfer. Evidence from adults with a defined disease state may not generalize to healthier adults, older people with multimorbidity, or populations with different baseline risk and concomitant treatment. Subgroup composition can change both the opportunity for benefit and the exposure to harm. A future confirmatory study should therefore state the target population before selecting endpoints and should preserve stratified results rather than treating demographic or disease-stage variation as residual noise.",
+        "Dose and schedule form a separate boundary. Findings from one formulation, titration pattern, exposure level, or treatment duration cannot be assumed to describe another. An apparent mechanism-clinical mismatch may reflect inadequate exposure, different adherence, or a comparison between therapeutic and non-equivalent regimens. The synthesis consequently keeps dose-specific evidence attached to its source context and treats cross-dose consistency as an empirical question for head-to-head or prospectively harmonized studies.",
+        "Endpoint distance is the third boundary. Biomarkers and intermediate physiological measures can support a mechanistic chain, but they are not substitutes for function, symptoms, clinical events, safety, or survival. Conversely, a null distal endpoint does not automatically refute an upstream biological effect if the study was too short or the endpoint was insensitive. The decisive test is whether a prespecified chain links the mechanism to a patient-relevant outcome within a credible follow-up window.",
+        "Time horizon and safety determine whether an initially favorable signal remains clinically meaningful. Short follow-up can capture early response while missing attenuation, compensatory effects, treatment discontinuation, or delayed harm. Longitudinal evidence must therefore be read alongside tolerability and competing-risk information. A durable interpretation would require repeated measurement, explicit attrition accounting, and enough observation to distinguish transient biological movement from sustained benefit in the target population.",
+        "Comparator choice determines what a directional result can mean. Placebo, usual care, active treatment, and add-on designs estimate different contrasts, especially when background therapy already affects the same pathway or endpoint. Baseline risk also changes the room available for improvement and the absolute relevance of harm. Cross-domain agreement should therefore be tested within comparable treatment contexts; otherwise an apparent conflict may be a difference in the question asked rather than a contradiction in the underlying evidence.",
+        "Measurement and analysis complete the boundary map. Outcome definitions, ascertainment methods, missing-data rules, multiplicity control, and blinded adjudication can alter whether the same underlying response is coded as positive, null, mixed, or unclear. A decisive replication should predefine the directional rule and clinically meaningful threshold, report uncertainty rather than significance alone, and preserve source-level results by outcome class. Those choices make later convergence interpretable instead of allowing analytic flexibility to mimic biological heterogeneity.",
+        "Causal interpretation requires the full sequence to remain intact. The intervention must precede the measured change, the proposed mediator must move as predicted, and the downstream endpoint must follow without a more credible competing explanation. Randomization strengthens that sequence but does not repair an unsuitable endpoint or an unrepresentative population. Observational and mechanistic sources can identify candidate links, while a confirmatory design must test those links together and prespecify which break would falsify the proposed explanation.",
+        f"Across the retained evidence, {ctx['tension_phrase']} are treated as design information. Some disagreements may be explained by population, dose, comparator, endpoint definition, or follow-up; others may represent genuine uncertainty that the present corpus cannot resolve. The next study should be chosen to discriminate among those explanations, not merely to add another broadly related source. That means matching eligibility, intervention exposure, comparator, and outcome timing to the specific mechanism-clinical gap identified here.",
+        f"The resulting interpretation is conditional rather than indecisive. {ctx['thesis']} The strongest conclusion follows the direct clinical evidence, with mechanistic material used to explain convergence or divergence and adjacent evidence used to define external boundaries. Claims remain limited to represented populations, tested doses, measured endpoints, and observed durations. Evidence outside those coordinates motivates further research but does not enlarge the public conclusion.",
+    )
+    selected: list[str] = []
+    for paragraph in paragraphs[:-1]:
+        selected.append(paragraph)
+        if _word_count("\n\n".join(selected)) >= floor + 25:
+            break
+    selected.append(paragraphs[-1])
+    return "## Cross-Domain Synthesis\n\n" + "\n\n".join(selected)
 
 
 def _section_heading_from_body(section_md: str) -> str:

@@ -880,6 +880,41 @@ def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -
     assert len(paragraphs) == len(set(paragraphs))
 
 
+def test_cross_domain_backstop_materially_addresses_repetition_feedback() -> None:
+    import revision_coverage  # type: ignore[import-not-found]
+
+    old_manifest = orch._ACTIVE_MANIFEST
+    old_topic = orch._ACTIVE_TOPIC
+    try:
+        orch._ACTIVE_TOPIC = "intervention_outcomes"
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 4,
+            "n_high_confidence_claims_total": 40,
+            "n_non_orthogonal_tensions": 6,
+            "thesis": "The clinical signal is conditional on endpoint and exposure.",
+            "receipts": [
+                {"directness": "direct", "effect_direction": "positive", "outcome_class": "cardiometabolic", "citation_token": "Direct Trial 2025"},
+                {"directness": "mechanistic", "effect_direction": "positive", "outcome_class": "biomarker", "citation_token": "Mechanism Study 2024"},
+                {"directness": "direct", "effect_direction": "null", "outcome_class": "longevity", "citation_token": "Null Trial 2026"},
+                {"directness": "indirect", "effect_direction": "negative", "outcome_class": "safety", "citation_token": "Safety Cohort 2025"},
+            ],
+        }
+        paper = orch._compile_public_section_backstop("Cross-Domain Synthesis", 850)
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+        orch._ACTIVE_TOPIC = old_topic
+
+    ask = (
+        "Rewrite the Cross-Domain Synthesis section to remove the repeated paragraph template. "
+        "Replace with a substantive, non-repetitive integration that explicitly names where mechanism "
+        "and clinical signal agree, where they diverge, and what population/endpoint/dose boundary each "
+        "divergence implies. Do not reuse the same paragraph structure more than once."
+    )
+    assert orch._word_count(paper) >= 850
+    assert "this paragraph connects evidence tiers" not in paper.lower()
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_results_outcome_backstop_uses_compact_source_lines_to_avoid_surface_duplicates() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     try:

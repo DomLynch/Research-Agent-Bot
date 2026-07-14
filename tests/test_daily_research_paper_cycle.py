@@ -6090,6 +6090,12 @@ def test_pending_remote_revision_round_cap_wins_over_finalizer_recheck(
         {
             "key": marker,
             "title": title,
+            "status": "terminal_domain_scope_mismatch",
+            "handled_at": "2026-06-25T00:49:30+00:00",
+        },
+        {
+            "key": marker,
+            "title": title,
             "status": "revision_coverage_unmet",
             "handled_at": "2026-06-25T00:50:36+00:00",
         },

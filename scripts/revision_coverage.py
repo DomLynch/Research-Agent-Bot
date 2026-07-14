@@ -1140,7 +1140,7 @@ def _replaced_surface_tensions_are_stated(paper_md: str, ask: str) -> bool:
 def _internal_duplication_scope(paper_md: str, ask: str) -> str:
     names = (
         "Evidence Landscape", "Key Findings", "Results", "Full Manuscript",
-        "Gaps Identified", "Discussion", "Limitations", "Conclusion",
+        "Gaps Identified", "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
     )
     sections = []
     named = False

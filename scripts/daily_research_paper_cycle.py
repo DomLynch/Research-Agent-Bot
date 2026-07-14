@@ -1914,9 +1914,15 @@ def _pending_remote_revision(
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
         if request_key in handled:
-            handled_statuses = set(_handled_revision_statuses(
+            handled_status_rows = _handled_revision_statuses(
                 ledger_dir, request_key, str(request.get("reviewedAt") or request.get("reviewed_at") or ""),
-            ))
+            )
+            retryable_failures = sum(
+                status in _RETRYABLE_REVISION_STATUSES for status in handled_status_rows
+            )
+            if retryable_failures >= MAX_REVISE_ROUNDS:
+                continue
+            handled_statuses = set(handled_status_rows)
             current_code_repairs_surface = (
                 "terminal_surface_repeat" in handled_statuses
                 and bool(matches)
