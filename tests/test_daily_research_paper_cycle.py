@@ -14,6 +14,10 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # noqa: E402
+from agent.revision_evidence import (  # noqa: E402
+    create_revision_evidence_snapshot,
+    load_revision_evidence,
+)
 
 _REAL_UNMET_REVISION_ASKS = cycle._unmet_revision_asks
 
@@ -435,6 +439,53 @@ def _prior_run(
         rid = str(row["receipt_id"])
         _write_json(qdir / f"{rid}.quant_claims.json", {"paper_id": rid, "claims": [{"binding_confidence": "high"}]})
     return run
+
+
+def _seed_valid_revision_snapshot(
+    source: Path, *, quant_dir: Path | None = None, topic: str | None = None,
+) -> None:
+    manifest = json.loads((source / "manifest.json").read_text(encoding="utf-8"))
+    snapshot_topic = str(topic or manifest.get("topic") or "").strip()
+    assert snapshot_topic
+    receipt_ids = [str(row["receipt_id"]) for row in manifest["receipts"]]
+    quant_dir = quant_dir or source / "_snapshot_inputs" / "quant_claims"
+    parsed_dir = source / "_snapshot_inputs" / "parsed"
+    quant_dir.mkdir(parents=True, exist_ok=True)
+    parsed_dir.mkdir(parents=True, exist_ok=True)
+    for receipt_id in receipt_ids:
+        quant = quant_dir / f"{receipt_id}.quant_claims.json"
+        if not quant.is_file():
+            _write_json(quant, {"paper_id": receipt_id, "claims": []})
+        _write_json(
+            parsed_dir / f"{receipt_id}.paper_sections.json",
+            {"paper_id": receipt_id, "sections": []},
+        )
+    citation_registry = source / "citation_registry.json"
+    _write_json(citation_registry, {
+        receipt_id: {"body_citation": f"Source {receipt_id}"}
+        for receipt_id in receipt_ids
+    })
+    manifest["revision_evidence_snapshot"] = {
+        "required": True,
+        "manifest": "revision_evidence_snapshot/manifest.json",
+    }
+    _write_json(source / "manifest.json", manifest)
+    report = create_revision_evidence_snapshot(
+        source,
+        quant_dir=quant_dir,
+        parsed_dir=parsed_dir,
+        citation_registry=citation_registry,
+        receipt_ids=receipt_ids,
+        topic=snapshot_topic,
+    )
+    assert report["passed"] is True
+    lock = load_revision_evidence(
+        source,
+        quant_dir=quant_dir,
+        parsed_dir=parsed_dir,
+    )
+    assert lock.mode == "snapshot"
+    assert lock.errors == ()
 
 
 def test_discover_topics_includes_pack_before_corpus_exists(tmp_path: Path) -> None:
@@ -3171,6 +3222,7 @@ def test_cycle_retries_real_submit_bridge_when_current_run_rechecks_eligible(tmp
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         out_dir.mkdir(parents=True)
         receipts = [
@@ -3232,6 +3284,8 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
 
     monkeypatch.setattr(cycle.subprocess, "run", fake_run)
 
+    source_run = tmp_path / "source-run"
+    source_run.mkdir()
     rc = cycle._run_synthesis(
         "aspirin_geroprotection",
         tmp_path / "revised-run",
@@ -3239,6 +3293,7 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
         timeout=123,
         revision_feedback="Add clinical-use caveat.",
         review_type_override="thin_corpus_brief",
+        revision_source_run=source_run,
     )
 
     cmd = seen["args"][0]
@@ -3248,6 +3303,7 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
     assert seen["kwargs"]["timeout"] == 123
     assert seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"] == "Add clinical-use caveat."
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] == "thin_corpus_brief"
+    assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVISION_SOURCE_RUN"] == str(source_run.resolve())
 
 
 def test_run_synthesis_timeout_returns_status_code_and_sidecar(tmp_path: Path, monkeypatch) -> None:
@@ -4443,6 +4499,7 @@ def test_cycle_records_no_submission_reason_from_submit_bridge(tmp_path: Path, m
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
@@ -4494,6 +4551,7 @@ def test_cycle_salvages_daily_slot_with_next_topic(tmp_path: Path, monkeypatch) 
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
@@ -4651,6 +4709,7 @@ def test_cycle_applies_researka_revision_feedback_on_same_topic_retry(tmp_path: 
         dry_run: bool,
         timeout: int | None = None,
         revision_feedback: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         feedback_seen.append(revision_feedback)
         runs.append(out_dir.name)
@@ -4710,6 +4769,7 @@ def test_cycle_polls_revision_after_submit_and_resubmits(tmp_path: Path, monkeyp
         dry_run: bool,
         timeout: int | None = None,
         revision_feedback: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         assert topic == "ace_inhibitors_aging"
         feedback_seen.append(revision_feedback)
@@ -4799,6 +4859,7 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
         dry_run: bool,
         timeout: int | None = None,
         revision_feedback: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         synthesis_calls.append(topic)
         feedback_seen.append(revision_feedback)
@@ -4868,7 +4929,7 @@ def _aspirin_revise_loader() -> tuple[list[dict[str, Any]], None]:
 
 def _coverage_fake_synthesis(feedback_seen: list[str | None], paper_md: str | None = None):
     def fake(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None,
-             revision_feedback: str | None = None, review_type_override: str | None = None) -> int:
+             revision_feedback: str | None = None, review_type_override: str | None = None, revision_source_run: Path | None = None) -> int:
         feedback_seen.append(revision_feedback)
         out_dir.mkdir(parents=True)
         (out_dir / "full_paper.md").write_text(
@@ -4895,6 +4956,12 @@ def _run_coverage_cycle(
         remote_loader=lambda: (set(), None), revision_loader=_aspirin_revise_loader,
         submit_cycle=submit_cycle, max_revise_attempts=max_revise_attempts, mode=mode)
     return ledger, feedback_seen
+
+
+def test_revision_coverage_missing_paper_fails_closed(tmp_path: Path) -> None:
+    feedback = "Add a bounded clinical-use caveat."
+
+    assert _REAL_UNMET_REVISION_ASKS(tmp_path, feedback) == cycle._revision_asks(feedback)
 
 
 def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> None:
@@ -5044,6 +5111,7 @@ def test_revise_restores_source_manifest_files_from_quarantine(tmp_path: Path, m
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         calls.append(topic)
         out_dir.mkdir(parents=True)
@@ -5065,6 +5133,98 @@ def test_revise_restores_source_manifest_files_from_quarantine(tmp_path: Path, m
     assert calls == ["aspirin_geroprotection"]
     assert ledger["source_manifest_restore"]["n_restored"] == 57 - (cycle.PREFLIGHT_MIN_RECEIPTS - 1)
     assert ledger["source_manifest_restore"]["availability_after"]["passed"] is True
+    assert ledger["attempts"][0]["submitted"] == 1
+
+
+def test_revise_restores_single_missing_source_receipt_above_floor(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    qdir = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims"
+    quarantine = qdir.parent / "quant_claims_quarantine" / "old"
+    quarantine.mkdir(parents=True)
+    (qdir / "r56.quant_claims.json").rename(quarantine / "r56.quant_claims.json")
+    source_runs: list[Path | None] = []
+
+    def fake_synthesis(
+        topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
+    ) -> int:
+        source_runs.append(revision_source_run)
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text("# Research Synthesis: Aspirin\n", encoding="utf-8")
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=_aspirin_revise_loader,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["source_manifest_restore"]["n_restored"] == 1
+    assert ledger["source_manifest_restore"]["availability_after"]["passed"] is True
+    assert source_runs == [tmp_path / "runs" / ledger["revision_source"]["source_run"]]
+
+
+def test_required_source_snapshot_bypasses_mutable_live_corpus(tmp_path: Path, monkeypatch) -> None:
+    source = tmp_path / "source-run"
+    _write_json(source / "manifest.json", {
+        "receipts": [{"receipt_id": f"r{idx}"} for idx in range(12)],
+    })
+    _seed_valid_revision_snapshot(source, topic="topic")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "empty-corpora")
+
+    available = cycle._source_manifest_availability("topic", source)
+    assert available and available["passed"] is True
+    assert available["status"] == "source_snapshot_available"
+
+    snapshot_manifest = source / "revision_evidence_snapshot" / "manifest.json"
+    snapshot_manifest.unlink()
+    missing = cycle._source_manifest_availability("topic", source)
+    assert missing and missing["passed"] is False
+    assert missing["status"] == "source_snapshot_missing"
+
+
+def test_revise_cycle_uses_required_snapshot_when_live_corpus_is_empty(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    source = next((tmp_path / "runs").glob("synthesis-aspirin_geroprotection-*"))
+    qdir = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims"
+    manifest = json.loads((source / "manifest.json").read_text())
+    manifest["n_non_orthogonal_tensions"] = 0
+    _write_json(source / "manifest.json", manifest)
+    assert cycle._existing_receipt_preflight(source) is None
+    _seed_valid_revision_snapshot(source, quant_dir=qdir)
+    for path in qdir.glob("*.quant_claims.json"):
+        path.unlink()
+    _write_json(qdir / "unrelated.quant_claims.json", {"claims": []})
+    monkeypatch.setattr(
+        cycle,
+        "_repair_topic_corpus",
+        lambda *_a, **_k: pytest.fail("frozen revision must not repair mutable corpus"),
+    )
+
+    ledger, _ = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=[], mode="revise",
+        submit_cycle=lambda **_k: {
+            "status": "submitted_to_researka", "submitted": 1, "published": 0,
+        },
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert ledger["corpus"]["source"] == "existing_source_snapshot"
+    assert ledger["attempts"][0]["receipt_preflight"]["status"] == "receipt_preflight_snapshot_locked"
     assert ledger["attempts"][0]["submitted"] == 1
 
 
@@ -5117,6 +5277,7 @@ def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Pa
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         nonlocal calls
         calls += 1
@@ -5757,6 +5918,7 @@ def test_revise_lane_rotates_to_next_pending_revision_after_coverage_block(tmp_p
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         seen_topics.append(topic)
         out_dir.mkdir(parents=True)
@@ -5830,6 +5992,25 @@ def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert handled["handled"][0]["status"] == "retracted_source_cited"  # terminal revise: don't rerender next slot
 
 
+def test_unavailable_retraction_check_blocks_submit_without_terminalizing(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda _out_dir: None)
+    submitted: list[int] = []
+
+    ledger, _ = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=[],
+        submit_cycle=lambda **_k: submitted.append(1) or {
+            "status": "submitted_to_researka", "submitted": 1, "published": 0,
+        },
+    )
+
+    assert submitted == []
+    assert ledger["attempts"][0]["gate_status"] == "retraction_check_unavailable"
+    assert ledger["attempts"][0]["retraction_check_unavailable"] is True
+
+
 def test_numeric_effect_mismatch_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     monkeypatch.setattr(cycle, "_numeric_effect_direction_issues", lambda out_dir: [
@@ -5878,6 +6059,7 @@ def test_submission_ready_final_status_makes_duplicate_overclaim_advisory(tmp_pa
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         out_dir.mkdir(parents=True)
         (out_dir / "full_paper.md").write_text(
@@ -7036,6 +7218,7 @@ def test_cycle_does_not_let_stale_thin_manifest_block_healthy_corpus(tmp_path: P
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
@@ -7080,6 +7263,7 @@ def test_cycle_preflights_overbroad_prior_corpus_before_synthesis(tmp_path: Path
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
@@ -7508,6 +7692,7 @@ def test_cycle_downshifts_after_recent_numeric_density_failure(tmp_path: Path, m
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         overrides.append(review_type_override)
         out_dir.mkdir(parents=True)
@@ -7928,6 +8113,7 @@ def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, mon
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         overrides.append(review_type_override)
         out_dir.mkdir(parents=True)
@@ -7977,6 +8163,7 @@ def test_cycle_skips_topic_after_brief_fails_same_writer_gate(tmp_path: Path, mo
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
@@ -8215,6 +8402,7 @@ def test_cycle_repairs_low_source_precision_then_retries_same_topic(tmp_path: Pa
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
@@ -8346,6 +8534,7 @@ def test_cycle_repairs_low_precision_corpus_at_publish_floor_before_synthesis(tm
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         synthesized.append(topic)
         out_dir.mkdir(parents=True)
@@ -9190,6 +9379,7 @@ def test_cycle_skips_preflight_repair_when_clean_topic_ready(tmp_path: Path, mon
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         topics.append(topic)
         out_dir.mkdir(parents=True)
@@ -9534,6 +9724,7 @@ def test_cycle_skips_receipt_preflight_repair_when_clean_topic_ready(tmp_path: P
         timeout: int | None = None,
         revision_feedback: str | None = None,
         review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
     ) -> int:
         synthesized.append(topic)
         out_dir.mkdir(parents=True)
@@ -9583,11 +9774,25 @@ def test_cycle_retries_prepared_candidate_past_stale_source_bundle_block(
         cycle, "_quant_claim_source_precision",
         lambda *_a, **_k: (True, "source_topic_precision_ok:24/24", []),
     )
-    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    receipt_preflights: list[str] = []
+    preflight_sources: list[Path | None] = []
+
+    def fresh_receipt_preflight(*_args: Any, **_kwargs: Any) -> dict[str, Any]:
+        receipt_preflights.append("called")
+        return {"passed": True}
+
+    def fresh_preflight(*_args: Any, **kwargs: Any) -> dict[str, Any]:
+        preflight_sources.append(kwargs.get("source_run"))
+        return {"passed": True, "metrics": {"receipts": 12, "primary": 3, "direct": 4}}
+
+    monkeypatch.setattr(cycle, "_receipt_preflight", fresh_receipt_preflight)
+    monkeypatch.setattr(cycle, "_preflight", fresh_preflight)
     synthesized: list[str] = []
+    source_runs: list[Path | None] = []
 
     def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:
         synthesized.append(selected)
+        source_runs.append(_kwargs.get("revision_source_run"))
         out_dir.mkdir(parents=True)
         return 0
 
@@ -9607,6 +9812,9 @@ def test_cycle_retries_prepared_candidate_past_stale_source_bundle_block(
     )
 
     assert synthesized == [topic]
+    assert receipt_preflights == ["called"]
+    assert preflight_sources == [None]
+    assert source_runs == [None]
     assert "corpus_repairs" not in ledger
     assert ledger["status"] == "submitted_to_researka"
 
@@ -10319,10 +10527,38 @@ def test_revise_source_precision_repair_clears_recent_failure_cooldown(tmp_path:
     })
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
     synthesized: list[str] = []
+    source_locks: list[Path | None] = []
+    evidence_modes: list[str] = []
+    rendered_runs: list[str] = []
 
     def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:
         synthesized.append(selected)
+        revision_source_run = _kwargs.get("revision_source_run")
+        source_locks.append(revision_source_run)
+        if revision_source_run:
+            lock = load_revision_evidence(
+                revision_source_run,
+                quant_dir=tmp_path / "unused-quant",
+                parsed_dir=tmp_path / "unused-parsed",
+            )
+            assert lock.errors == ()
+            evidence_modes.append(lock.mode)
+        rendered_runs.append(out_dir.name)
         out_dir.mkdir(parents=True)
+        _write_json(out_dir / "manifest.json", {
+            "topic": selected,
+            "n_non_orthogonal_tensions": 5,
+            "receipts": [
+                {
+                    "receipt_id": f"r{idx}",
+                    "evidence_tier": "A1" if idx < 4 else "B2",
+                    "directness": "direct" if idx < 4 else "review",
+                    "outcome_class": "cardiometabolic",
+                }
+                for idx in range(12)
+            ],
+        })
+        _seed_valid_revision_snapshot(out_dir)
         _write_json(out_dir / "final_status.json", {"submission_ready": True})
         _write_json(out_dir / "full_paper.journal_surface.json", {"passed": True, "issues": []})
         (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
@@ -10334,6 +10570,19 @@ def test_revise_source_precision_repair_clears_recent_failure_cooldown(tmp_path:
         "title": "Research Synthesis: Cardiovascular Subgroups",
         "feedback": "Revise the source bundle and remove off-topic subgroup records.",
     }
+    submit_calls = 0
+
+    def submit_cycle(**_kwargs: Any) -> dict[str, Any]:
+        nonlocal submit_calls
+        submit_calls += 1
+        if submit_calls == 1:
+            return {
+                "status": "no_eligible_research_paper",
+                "submitted": 0,
+                "published": 0,
+                "considered": [{"run": rendered_runs[-1], "status": "audit_not_all_green"}],
+            }
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
 
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs",
@@ -10343,12 +10592,16 @@ def test_revise_source_precision_repair_clears_recent_failure_cooldown(tmp_path:
         mode="revise",
         remote_loader=lambda: (set(), None),
         revision_loader=lambda: ([request], None),
-        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        submit_cycle=submit_cycle,
+        max_revise_attempts=2,
     )
 
-    assert synthesized == [topic]
+    assert synthesized == [topic, topic]
+    assert source_locks == [None, tmp_path / "runs" / rendered_runs[0]]
+    assert evidence_modes == ["snapshot"]
     assert ledger["status"] == "submitted_to_researka"
-    assert ledger["attempts"][0]["gate_status"] == "submitted_to_researka"
+    assert ledger["attempts"][0]["gate_status"] == "audit_not_all_green"
+    assert ledger["attempts"][1]["gate_status"] == "submitted_to_researka"
 
 
 def test_revise_lane_marks_unrepairable_source_precision_terminal(tmp_path: Path, monkeypatch) -> None:
@@ -10402,6 +10655,70 @@ def test_revision_source_precision_request_matches_remove_or_reclassify_wording(
     )
 
     assert cycle._revision_requests_source_precision(feedback)
+
+
+@pytest.mark.parametrize("feedback", [
+    "Replace indirect sources with direct topic-specific trials.",
+    "Replace indirect evidence with direct topic-specific trials.",
+    "Rebuild the source bundle around direct evidence.",
+    "Reset the source bundle to include only studies that actually develop the target measure.",
+])
+def test_revision_source_precision_request_matches_universal_repair_wording(feedback: str) -> None:
+    assert cycle._revision_requests_source_precision(feedback)
+
+
+def test_revision_source_precision_ignores_methods_only_operationalize_wording() -> None:
+    feedback = "Operationalize the source-classification methods in the Methods section."
+
+    assert not cycle._revision_requests_source_precision(feedback)
+
+
+def test_revision_source_precision_is_clause_and_negation_aware() -> None:
+    assert not cycle._revision_requests_source_precision(
+        "Remove off-topic discussion prose; keep the source bundle unchanged."
+    )
+    assert cycle._revision_requests_source_precision(
+        "Replace adjacent studies with direct trials."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "Do not replace indirect evidence with direct trials; keep the source bundle unchanged."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "Don't replace indirect evidence with direct trials."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "There is no need to replace indirect evidence with direct trials."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "You shouldn't replace indirect evidence; keep the bundle unchanged."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "Remove discussion of off-topic evidence; keep the source bundle unchanged."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "You don't need to replace indirect evidence with direct trials."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "You do not need to replace indirect evidence with direct trials."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "You shouldn't simply replace indirect evidence with direct trials."
+    )
+    assert cycle._revision_requests_source_precision(
+        "Keep existing direct sources unchanged; replace indirect evidence with direct trials."
+    )
+    assert cycle._revision_requests_source_precision(
+        "Keep the source bundle unchanged except replace indirect evidence with direct trials."
+    )
+    assert cycle._revision_requests_source_precision(
+        "Preserve the corpus intact, but remove off-topic records."
+    )
+    assert cycle._revision_requests_source_precision(
+        "Keep the source bundle unchanged, then replace indirect evidence with direct trials."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "Replace indirect evidence with direct trials; do not replace indirect evidence with direct trials."
+    )
 
 
 def test_revise_lane_does_not_reseed_recent_unrepairable_source_precision(tmp_path: Path, monkeypatch) -> None:

@@ -2044,6 +2044,15 @@ def _submit_url() -> str:
     return base + "/submissions"
 
 
+def _retraction_gate_status(run: Path) -> tuple[str, list[str]]:
+    import retraction_check
+    try:
+        retracted = retraction_check.retracted_cited_sources(run, strict=True)
+    except retraction_check.RetractionCheckUnavailable:
+        return "retraction_check_unavailable", []
+    return ("retracted_source_cited", retracted) if retracted else ("eligible", [])
+
+
 def _publications_url() -> str:
     explicit = os.getenv("RESEARKA_PUBLICATIONS_URL", "").strip()
     if explicit:
@@ -2160,6 +2169,16 @@ def run_cycle(
     ledger["candidate"] = {"run": run.name, "topic": metadata.get("topic"), "fingerprint": fp}
     if not submit:
         ledger.update({"status": "dry_run_selected"})
+        _write_json(ledger_path, ledger)
+        return ledger
+    retraction_status, retracted = _retraction_gate_status(run)
+    ledger["retraction_check"] = {
+        "status": retraction_status,
+        "retracted_dois": retracted,
+    }
+    if retraction_status != "eligible":
+        ledger.update({"status": "no_eligible_research_paper", "reason": retraction_status})
+        _mark_considered_status(considered, run.name, retraction_status)
         _write_json(ledger_path, ledger)
         return ledger
     if submitter is None:

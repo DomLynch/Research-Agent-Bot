@@ -19,7 +19,6 @@ _VALID_TIERS = {"A1", "A2", "B", "B1", "B2", "C", "C1", "C2", "mixed"}
 _VALID_DIRECTNESS = {
     "direct", "indirect", "mechanistic", "preclinical", "review",
 }
-_VALID_RISK = {"low", "some_concerns", "high"}
 _LOW_HINTS = {"low", "low_risk", "low risk"}
 _HIGH_HINTS = {"high", "serious", "critical", "high_risk", "high risk"}
 _CONCERN_HINTS = {"some_concerns", "moderate", "unclear", "some concerns"}
@@ -59,7 +58,7 @@ def assess_risk_of_bias(receipt: Mapping[str, Any]) -> RiskOfBiasAssessment:
 
     if "rct" in design or "randomized" in design or tier == "A1":
         base: RiskLevel = "low"
-        basis = ("randomized_or_top_tier_default",)
+        basis: tuple[str, ...] = ("randomized_or_top_tier_default",)
     elif tier in {"A2", "B1", "B"} or directness == "review":
         base = "some_concerns"
         basis = ("nonrandomized_or_secondary_evidence_default",)

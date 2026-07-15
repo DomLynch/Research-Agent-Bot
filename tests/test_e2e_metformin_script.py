@@ -16,9 +16,13 @@ These tests pin both behaviors so future edits can't drift them back.
 """
 from __future__ import annotations
 
+import asyncio
+import json
+from argparse import Namespace
 from pathlib import Path
 
 import pytest
+from scripts import e2e_metformin_proof_001 as proof
 
 from agent.topic_pack import load_topic_pack
 from agent.types import EvidenceItem, Source
@@ -34,6 +38,46 @@ REPO = Path(__file__).resolve().parent.parent
 METFORMIN_PACK = load_topic_pack(REPO / "topic_packs" / "metformin.toml")
 
 
+def test_default_output_directories_are_exclusively_created(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    monkeypatch.setattr(proof, "RUNS_DIR", tmp_path)
+
+    first = proof._resolve_output_dir(None, topic="metformin", proof="001")
+    second = proof._resolve_output_dir(None, topic="metformin", proof="001")
+
+    assert first != second
+    assert first.is_dir()
+    assert second.is_dir()
+
+
+def test_retrieve_only_is_key_free_and_enforces_source_floor(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    sources = [Source(ref=1, title="Trial", year=2024, url="https://example.com", source="pubmed")]
+
+    async def fake_retrieve(**_kwargs):
+        return sources, {}, []
+
+    monkeypatch.setattr(proof, "_retrieve_live", fake_retrieve)
+    monkeypatch.setattr(proof, "bundle", lambda *_a, **_k: [])
+    monkeypatch.setattr(proof, "load_settings", lambda: pytest.fail("retrieve-only must not load LLM settings"))
+    monkeypatch.setattr(proof, "RUNS_DIR", tmp_path)
+    args = Namespace(
+        topic="metformin", canonical_corpus=False, live=True,
+        retrieve_only=True, min_sources=1,
+    )
+
+    assert asyncio.run(proof._run(args)) == 0
+    baseline = next((tmp_path / "e2e-baselines").glob("metformin-*.json"))
+    payload = json.loads(baseline.read_text())
+    assert payload["n_sources"] == 1
+    assert {"domain", "criteria", "perf_sec", "canonical_hits"} <= payload.keys()
+    args.min_sources = 2
+    assert asyncio.run(proof._run(args)) == 1
+    assert len(list((tmp_path / "e2e-baselines").glob("metformin-*.json"))) == 2
+
+
 def _mk(ref: int, *, nct: str | None = None, abstract: str = "") -> EvidenceItem:
     return EvidenceItem(
         source=Source(
@@ -42,7 +86,7 @@ def _mk(ref: int, *, nct: str | None = None, abstract: str = "") -> EvidenceItem
             source="openalex", nct=nct,
         ),
         abstract=abstract,
-        design="rct", role="published_results", tier=1,
+        design="rct", role="published_results", tier="A1",
         direct=True, strict=False,
     )
 
@@ -113,7 +157,7 @@ def test_canonical_via_isrctn_in_url_also_counts() -> None:
             source="europepmc", nct=None,
         ),
         abstract="No ID here.",
-        design="rct", role="published_results", tier=1,
+        design="rct", role="published_results", tier="A1",
         direct=True, strict=False,
     )
     # cap=1 with this single canonical item must succeed (1 canonical, cap=1).

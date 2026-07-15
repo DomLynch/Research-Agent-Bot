@@ -1,12 +1,4 @@
-"""LLM coverage judge: verify each enumerated Researka revision ask is
-MATERIALLY addressed in the rendered paper before submit.
-
-Uses the SPAR judge chain (Gemma primary — a different model family than the
-MiMo writer, per the judge!=writer rule). Fail-open: any judge/infra error or
-a malformed verdict returns no unmet asks, so an LLM outage can never block the
-whole submission pipeline. Topic-agnostic — the asks come verbatim from
-Researka; no per-topic knowledge.
-"""
+"""Fail-closed structural and judge coverage for reviewer revision asks."""
 from __future__ import annotations
 
 import asyncio
@@ -25,6 +17,29 @@ _USER = (
     '{{"addressed": [<one boolean per revision, in the same order>]}}.\n\n'
     "REQUIRED REVISIONS:\n{asks}\n\n=== MANUSCRIPT ===\n{paper}"
 )
+
+_AUTHOR_INFERENCE_BOUNDARY = (
+    "**Author-inference boundary:** Mechanism-level explanations in this section "
+    "are synthesis-author inferences unless directly attributed to an included "
+    "source; they are not independently established causal findings."
+)
+
+
+def place_author_inference_boundary(text: str, feedback: str) -> tuple[str, tuple[str, ...]]:
+    if not _asks_author_inference_boundary(feedback):
+        return text, ()
+    sections = _author_inference_sections(feedback)
+    patched = re.sub(
+        rf"\n*{re.escape(_AUTHOR_INFERENCE_BOUNDARY)}\s*", "\n\n", text, flags=re.I,
+    )
+    placed: list[str] = []
+    for section in sections:
+        match = re.search(rf"^## {re.escape(section)}\b", patched, flags=re.M)
+        if match:
+            at = match.end()
+            patched = patched[:at] + "\n\n" + _AUTHOR_INFERENCE_BOUNDARY + patched[at:]
+            placed.append(section)
+    return (patched, tuple(placed)) if placed else (text, ())
 
 
 def revision_asks(feedback: str) -> list[str]:
@@ -68,8 +83,7 @@ def unmet_asks(
     runner: Callable[..., Any] = asyncio.run,
     settings: Any | None = None,
 ) -> list[str]:
-    """Return the asks NOT materially addressed by the paper. Empty when every
-    ask is met — or fail-open ([]) on any error or malformed verdict."""
+    """Return asks not materially addressed, failing closed on judge errors."""
     clean = [a.strip() for a in asks if a and a.strip()]
     if not clean:
         return []
@@ -86,9 +100,13 @@ def unmet_asks(
         ))
         flags = resp.parsed.get("addressed", [])
     except (LLMError, ValueError, KeyError, TypeError, AttributeError, OSError, RuntimeError):
-        return []  # fail-open — never block submit on a judge/infra failure
-    if not isinstance(flags, list) or len(flags) != len(clean):
-        return []  # malformed verdict — fail-open
+        return clean
+    if (
+        not isinstance(flags, list)
+        or len(flags) != len(clean)
+        or any(type(flag) is not bool for flag in flags)
+    ):
+        return clean
     return [a for a, ok in zip(clean, flags, strict=True) if not ok]
 
 
@@ -556,9 +574,67 @@ def _asks_concrete_research_question(text: str) -> bool:
     )
 
 
-def _asks_author_inference_boundary(text: str) -> bool:
+def _author_inference_action_clause(text: str) -> str:
     text = _normalised_feedback(text)
-    return "author inference" in text and any(token in text for token in ("mechanism level", "mechanistic", "cross domain synthesis"))
+    for clause in re.split(r"[.;\n]+|\bbut\b", text):
+        subject = "author inference" in clause or (
+            "boundary" in clause and "mechanis" in clause
+        )
+        preserved = re.search(
+            r"\b(?:keep|leave|preserve)\b.{0,60}"
+            r"\b(?:author inference|boundary)\b.{0,60}"
+            r"\b(?:unchanged|intact|same)\b",
+            clause,
+        )
+        positive_action = re.search(
+            r"\b(?:add|insert|label(?:ed|led)?|mark|move|place|relocate|state)\b",
+            clause,
+        )
+        negated_action = re.search(
+            r"\b(?:(?:do|does|should|must|shall|can|could|would)(?:\s+not|n['’]?t)|"
+            r"don['’]?t|never|not\s+to|(?:there\s+is\s+)?no\s+need\s+to)\s+"
+            r"(?:need\s+to\s+)?(?:be\s+)?(?:[a-z-]+\s+){0,3}"
+            r"(?:add|insert|label(?:ed|led)?|mark|move|place|relocate|state)\b",
+            clause,
+        )
+        if subject and positive_action and not preserved and not negated_action:
+            return clause
+    return ""
+
+
+def _asks_author_inference_boundary(text: str) -> bool:
+    return bool(_author_inference_action_clause(text))
+
+
+def _author_inference_sections(feedback: str) -> tuple[str, ...]:
+    feedback = _author_inference_action_clause(feedback) or _normalised_feedback(feedback)
+    contrast = re.search(
+        r"\b(?:in|to|into|within) (?:the )?(cross domain synthesis|discussion)\b"
+        r".{0,120}\brather than\b\s*(?:(?:in|to|into|within) )?(?:the )?"
+        r"(cross domain synthesis|discussion)\b",
+        feedback,
+    )
+    if contrast:
+        return (
+            "Cross-Domain Synthesis"
+            if contrast.group(1) == "cross domain synthesis"
+            else "Discussion",
+        )
+    destinations = re.findall(
+        r"\b(?:in|to|into|within) (?:the )?(cross domain synthesis|discussion)\b",
+        feedback,
+    )
+    if destinations:
+        return (
+            "Cross-Domain Synthesis"
+            if destinations[-1] == "cross domain synthesis"
+            else "Discussion",
+        )
+    sections = tuple(name for phrase, name in (
+        ("cross domain synthesis", "Cross-Domain Synthesis"),
+        ("discussion", "Discussion"),
+    ) if phrase in feedback)
+    return sections or ("Cross-Domain Synthesis",)
 
 
 def _asks_quantitative_evidence_index(text: str) -> bool:
@@ -1550,13 +1626,11 @@ def _concrete_research_question_is_stated(paper_md: str) -> bool:
 
 
 def _author_inference_boundary_is_stated(paper_md: str, ask: str) -> bool:
-    feedback = _normalised_feedback(ask)
-    destination = re.search(r"\bto (?:the )?(cross domain synthesis|discussion)\b", feedback)
-    sections = (("Cross-Domain Synthesis" if destination.group(1) == "cross domain synthesis" else "Discussion"),) if destination else tuple(name for phrase, name in (
-        ("cross domain synthesis", "Cross-Domain Synthesis"), ("discussion", "Discussion"),
-    ) if phrase in feedback) or ("Cross-Domain Synthesis",)
     tokens = ("author-inference boundary", "synthesis-author inferences", "not independently established causal findings")
-    return all(all(token in _section(paper_md, section).lower() for token in tokens) for section in sections)
+    return all(
+        all(token in _section(paper_md, section).lower() for token in tokens)
+        for section in _author_inference_sections(ask)
+    )
 
 
 def _quantitative_evidence_rows(paper_md: str) -> list[tuple[str, ...]]:

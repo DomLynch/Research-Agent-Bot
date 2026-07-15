@@ -111,6 +111,15 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 - The drought report exposes prepared supply so an empty frontier is visible
   before it becomes another multi-day public-output gap.
 
+## Operational Decision - 2026-07-15
+- Reviewer revisions reuse an immutable, hash-verified evidence snapshot;
+  later corpus or threshold changes cannot silently change the submitted claim
+  set. A source-precision revision may rebuild once, then its next round locks.
+- Pre-snapshot legacy runs validate every contract field still present plus the
+  exact receipt and citation sets, then snapshot immediately. Contract fields
+  absent from an old manifest cannot be reconstructed and remain explicitly
+  identified as `legacy_contract` rather than treated as newly verified.
+
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 

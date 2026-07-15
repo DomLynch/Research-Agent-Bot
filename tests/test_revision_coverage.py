@@ -29,10 +29,10 @@ def test_unmet_asks_flags_unaddressed_in_order(monkeypatch) -> None:
     assert _unmet(["hedge claims", "clarify scope"], {"addressed": [True, False]}, monkeypatch) == ["clarify scope"]
 
 
-def test_unmet_asks_failopen_on_malformed_verdict(monkeypatch) -> None:
-    # Length mismatch / wrong shape must not block submit.
-    assert _unmet(["a", "b"], {"addressed": [True]}, monkeypatch) == []
-    assert _unmet(["a"], {"addressed": "nope"}, monkeypatch) == []
+def test_unmet_asks_fail_closed_on_malformed_verdict(monkeypatch) -> None:
+    assert _unmet(["a", "b"], {"addressed": [True]}, monkeypatch) == ["a", "b"]
+    assert _unmet(["a"], {"addressed": "nope"}, monkeypatch) == ["a"]
+    assert _unmet(["a"], {"addressed": ["false"]}, monkeypatch) == ["a"]
 
 
 def test_inferential_bridge_boundary_satisfies_dedicated_section_ask() -> None:
@@ -130,6 +130,76 @@ def test_author_inference_boundary_must_be_in_requested_section() -> None:
     assert revision_coverage.deterministic_unmet_asks(
         f"## Cross-Domain Synthesis\n\n{note}", [move_ask],
     ) == []
+    relocate_ask = "Author-inference boundary within Discussion should relocate to Cross-Domain Synthesis."
+    assert revision_coverage.deterministic_unmet_asks(
+        f"## Discussion\n\n{note}", [relocate_ask],
+    ) == [relocate_ask]
+    assert revision_coverage.deterministic_unmet_asks(
+        f"## Cross-Domain Synthesis\n\n{note}", [relocate_ask],
+    ) == []
+    contrast_ask = (
+        "Relocate the mechanistic author inference boundary to Cross-Domain "
+        "Synthesis rather than to Discussion."
+    )
+    assert revision_coverage._author_inference_sections(contrast_ask) == (
+        "Cross-Domain Synthesis",
+    )
+    assert revision_coverage.deterministic_unmet_asks(
+        f"## Cross-Domain Synthesis\n\n{note}", [contrast_ask],
+    ) == []
+    plain_contrast = (
+        "Place the author-inference boundary in Discussion rather than "
+        "Cross-Domain Synthesis."
+    )
+    assert revision_coverage._author_inference_sections(plain_contrast) == (
+        "Discussion",
+    )
+    generic = "Population boundary within Discussion should relocate to Cross-Domain Synthesis."
+    assert not revision_coverage._asks_author_inference_boundary(generic)
+    repetition = (
+        "Remove the repeated Cross-Domain Synthesis template and explain what "
+        "population, endpoint, or dose boundary each divergence implies."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(repetition)
+    assert not revision_coverage._asks_author_inference_boundary(
+        "Remove the repeated author-inference boundary from the Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "Do not move the mechanistic author-inference boundary from Discussion "
+        "into Cross-Domain Synthesis."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "Don't add an author-inference boundary to the Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "There is no need to place the mechanistic author-inference boundary "
+        "in the Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "You shouldn't move the author-inference boundary into Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "The author-inference boundary should not be labeled in Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "Keep the author-inference boundary unchanged; add a limitation in Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "You do not need to move the author-inference boundary into Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "You shouldn't automatically move the author-inference boundary into Discussion."
+    )
+    assert not revision_coverage._asks_author_inference_boundary(
+        "The author-inference boundary should not be explicitly labeled in Discussion."
+    )
+    clause_local = (
+        "Move the author-inference boundary from Discussion to Cross-Domain Synthesis. "
+        "Add limitations in Discussion."
+    )
+    assert revision_coverage._author_inference_sections(clause_local) == (
+        "Cross-Domain Synthesis",
+    )
 
 
 def test_directness_coding_criteria_require_explicit_methods_definition() -> None:
@@ -155,13 +225,13 @@ def test_unmet_asks_empty_for_no_asks(monkeypatch) -> None:
     assert _unmet([], {"addressed": []}, monkeypatch) == []
 
 
-def test_unmet_asks_failopen_on_judge_error(monkeypatch) -> None:
+def test_unmet_asks_fail_closed_on_judge_error(monkeypatch) -> None:
     monkeypatch.setattr(revision_coverage, "build_judge_chain", lambda _s: ())
 
     async def boom(**_kwargs: Any) -> Any:
         raise revision_coverage.LLMError("judge down")
 
-    assert revision_coverage.unmet_asks("M", ["a"], chat=boom, settings=object()) == []
+    assert revision_coverage.unmet_asks("M", ["a"], chat=boom, settings=object()) == ["a"]
 
 
 def test_deterministic_unmet_flags_missing_classification_criteria() -> None:
@@ -1627,7 +1697,7 @@ def test_deterministic_unmet_rejects_non_significant_source_still_positive() -> 
     )
     repaired = weak.replace("Positive study-level signals", "Non-significant or mixed study-level signals").replace(
         "positive signal in 1/1 sources", "non-significant or mixed signal in 1/1 sources",
-    ).replace("direction=positive", "direction=null").replace("Numeric correction:", "Numeric reconciliation note:")
+    ).replace("direction=positive", "direction=null").replace("Numeric correction:", "Numeric verification note:")
 
     assert revision_coverage.deterministic_known_asks([ask]) == [ask]
     assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
@@ -1642,7 +1712,7 @@ def test_named_numeric_correction_ignores_unrelated_positive_sources() -> None:
     )
     paper = (
         "## Evidence Landscape\n\n"
-        "Numeric reconciliation note: Brouwers 2016 reported a non-significant mapped "
+        "Numeric verification note: Brouwers 2016 reported a non-significant mapped "
         "comparison (p = 0.88); this synthesis treats that mapped comparison, not every "
         "within-source contrast, as non-significant.\n\n"
         "| Outcome | Summary |\n"
@@ -2531,7 +2601,7 @@ def test_latest_telomere_second_revise_feedback_splits_and_requires_markers() ->
         "at receipt level, the corpus does not support a standalone directional map.\n\n"
         "Source-scope annex note: Jaeger 2024 is retained only as non-topic/contextual annex evidence "
         "and is not pooled as direct evidence for the target outcome.\n\n"
-        "Numeric reconciliation note: Ha 2023 reported a non-significant mapped comparison "
+        "Numeric verification note: Ha 2023 reported a non-significant mapped comparison "
         "(p = .903); this synthesis treats that mapped comparison as non-significant.\n\n"
         "Admission-bucket note: the source-selection buckets are not an additive conservation "
         "table and are claim-binding states. Strict high-confidence subset note: 3 strict "

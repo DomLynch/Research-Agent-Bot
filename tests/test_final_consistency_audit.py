@@ -340,10 +340,17 @@ def test_apply_fixes_normalizes_public_p_value_display() -> None:
         "| --- | --- |\n"
         "| A | P >0.05 |\n"
         "| B | p<.001 |\n"
+        "| C | P < 0.000 |\n"
+        "| D | p=0.0000 |\n"
+        "| E | P > 0.000 |\n"
     )
     out, log = fixer.apply_fixes(paper, [])
     assert "P > 0.05" in out
     assert "P < 0.001" in out
+    assert "P < 0.0001" in out
+    assert "P > 0.000" in out
+    assert "| C | P < 0.000 |" not in out
+    assert "| D | P = 0.0000 |" not in out
     assert "P >0.05" not in out
     assert "p<.001" not in out
     assert any(

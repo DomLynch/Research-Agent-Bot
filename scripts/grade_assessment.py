@@ -6,7 +6,6 @@ from dataclasses import asdict, dataclass
 from typing import Any, Literal, Mapping, Sequence
 
 Certainty = Literal["high", "moderate", "low", "very_low"]
-Problem = Literal["not_serious", "serious", "very_serious"]
 RiskOfBias = Literal["low", "some_concerns", "high"]
 
 _SCORES: dict[Certainty, int] = {

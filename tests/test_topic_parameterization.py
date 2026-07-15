@@ -14,6 +14,7 @@ at docs/quality-reference/<topic>/, not just metformin. Key contract:
 from __future__ import annotations
 
 import asyncio
+import json
 import sys
 from types import SimpleNamespace
 from pathlib import Path
@@ -23,6 +24,24 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
 import daily_research_paper_submit as submit  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
+
+
+def test_manifest_receipt_preserves_full_revision_contract() -> None:
+    receipt = SimpleNamespace(
+        receipt_id="r1", topic="statins", spar_verdict="accept_clean",
+        n_failed_traces=0, outcome_class="cardiometabolic",
+        effect_direction="positive", evidence_tier="A1", directness="direct",
+        thesis_text="Bound claim.", population_summary="adults", n_claims=2,
+        p_values=("P < 0.05",), canonical_trial_id=None, source_title="Trial",
+        source_year=2024, source_venue="Journal", source_doi="10.1/example",
+        source_pmid="123",
+    )
+
+    row = orch._manifest_receipt_dict(receipt, {})
+
+    assert row["topic"] == "statins"
+    assert row["spar_verdict"] == "accept_clean"
+    assert row["n_failed_traces"] == 0
 
 
 def test_module_paths_set_via_set_topic_no_metformin_default() -> None:
@@ -81,6 +100,36 @@ def test_run_aborts_cleanly_on_missing_corpus(tmp_path) -> None:
     # Reset to metformin so other tests don't see the bad path
     orch._set_topic("metformin")
     assert rc == 4, f"expected exit 4 (corpus-missing), got {rc}"
+
+
+def test_run_fails_closed_on_corrupt_required_revision_snapshot(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    import json as _json
+
+    source = tmp_path / "source-run"
+    snapshot = source / "revision_evidence_snapshot"
+    snapshot.mkdir(parents=True)
+    (source / "manifest.json").write_text(_json.dumps({
+        "receipts": [{"receipt_id": "r1"}],
+        "revision_evidence_snapshot": {
+            "required": True,
+            "manifest": "revision_evidence_snapshot/manifest.json",
+        },
+    }))
+    (snapshot / "manifest.json").write_text(_json.dumps({
+        "receipts": [],
+        "citation_sha256": "invalid",
+    }))
+    monkeypatch.setenv("RESEARCH_AGENT_REVISION_SOURCE_RUN", str(source))
+    out_dir = tmp_path / "revised-run"
+
+    rc = asyncio.run(orch._run(out_dir, dry_run=True, topic="metformin"))
+    continuity = _json.loads((out_dir / "revision_evidence_continuity.json").read_text())
+
+    orch._set_topic("metformin")
+    assert rc == 5
+    assert "snapshot_receipt_set_mismatch" in continuity["errors"]
 
 
 def test_main_accepts_topic_cli_arg() -> None:
@@ -190,6 +239,89 @@ def test_build_receipts_filters_to_active_extract_report(
     monkeypatch.setattr(orch, "PARSED_DIR", pdir)
     receipts = orch.build_receipts_from_quant_claims(topic="test_topic")
     assert [r.receipt_id for r in receipts] == ["active_paper"]
+
+    monkeypatch.setattr(orch, "_classify_paper_tier", lambda *_a, **_k: ("A1", "direct"))
+    monkeypatch.setattr(orch, "is_source_topic_specific", lambda *_a, **_k: False)
+    locked = orch.build_receipts_from_quant_claims(
+        topic="test_topic", receipt_ids=frozenset({"stale_paper"}),
+    )
+    assert [r.receipt_id for r in locked] == ["stale_paper"]
+
+
+def test_locked_receipt_contract_preserves_original_claim_membership(
+    monkeypatch, tmp_path,
+) -> None:
+    qdir = tmp_path / "quant_claims"
+    pdir = tmp_path / "parsed"
+    qdir.mkdir()
+    pdir.mkdir()
+    (qdir / "mixed.quant_claims.json").write_text(json.dumps({
+        "paper_id": "mixed",
+        "claims": [
+            {
+                "binding_confidence": "high", "claim_type": "p_value",
+                "raw_text": "p < 0.05", "endpoint": "mortality",
+                "arm": "test topic", "direction": "positive",
+            },
+            {
+                "binding_confidence": "partial", "claim_type": "effect_size",
+                "raw_text": "HR 0.9", "endpoint": "mortality",
+                "arm": "test topic", "direction": "positive",
+            },
+        ],
+    }))
+    (pdir / "mixed.paper_sections.json").write_text(json.dumps({
+        "paper_id": "mixed", "year": 2024, "title": "Test topic trial",
+    }))
+    monkeypatch.setattr(orch, "QUANT_DIR", qdir)
+    monkeypatch.setattr(orch, "PARSED_DIR", pdir)
+    monkeypatch.setattr(orch, "is_source_topic_specific", lambda *_a, **_k: True)
+    monkeypatch.setattr(orch, "_receipt_mentions_active_topic", lambda *_a, **_k: True)
+    monkeypatch.setattr(orch, "_load_paper_class_map", lambda: {})
+
+    original = orch.build_receipts_from_quant_claims(topic="test_topic")
+    locked = orch.build_receipts_from_quant_claims(
+        topic="test_topic",
+        receipt_ids=frozenset({"mixed"}),
+        receipt_contracts={"mixed": {"n_claims": original[0].n_claims}},
+    )
+
+    assert original[0].n_claims == 1
+    assert locked[0].n_claims == original[0].n_claims
+    assert locked[0].thesis_text == original[0].thesis_text
+
+
+def test_restore_revision_citations_is_exact_and_fail_closed(tmp_path: Path) -> None:
+    import dataclasses as _dataclasses
+    import json as _json
+    source_run = tmp_path / "source-run"
+    source_run.mkdir()
+    registry = {
+        "r1": orch._citations.CitationEntry(
+            receipt_id="r1", body_citation="Changed 2026", reference_id="R99",
+        ),
+        "r2": orch._citations.CitationEntry(
+            receipt_id="r2", body_citation="Changed 2026", reference_id="R98",
+        ),
+        "r3": orch._citations.CitationEntry(
+            receipt_id="r3", body_citation="Changed 2026", reference_id="R97",
+        ),
+    }
+    valid = _dataclasses.asdict(registry["r1"])
+    valid.update(body_citation="Original 2024", reference_id="R01", source_year=2024)
+    source_run.joinpath("citation_registry.json").write_text(
+        _json.dumps({"r1": valid, "r3": {}}), encoding="utf-8",
+    )
+
+    restored, missing = orch._restore_revision_citations(
+        registry, source_run / "citation_registry.json",
+        frozenset({"r1", "r2", "r3"}),
+    )
+
+    assert restored == 1
+    assert missing == ["r2", "r3"]
+    assert registry["r1"].body_citation == "Original 2024"
+    assert registry["r1"].reference_id == "R01"
 
 
 def test_build_receipts_prunes_off_topic_high_claim_sources(

@@ -141,6 +141,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
         lambda t: _phase_d_numeric_significance_correction(t, out_dir),
+        lambda t: _phase_d_author_inference_boundary(t, out_dir),
         lambda t: _phase_d_reference_closure(t, out_dir),
         lambda t: _phase_b_lane_qualifier(t, out_dir),
         lambda t: _phase_b_corpus_strength_label(t, out_dir),
@@ -174,6 +175,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     for phase in (
         lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
         lambda t: _phase_d_numeric_significance_correction(t, out_dir),
+        lambda t: _phase_d_author_inference_boundary(t, out_dir),
         lambda t: _phase_d_unproven_human_longevity(t, out_dir),
         _phase_m_strip_surface_duplicate_paragraphs,
         _phase_m_repair_surface_artifacts,
@@ -2116,6 +2118,11 @@ def _phase_d_numeric_significance_correction(
     if not _revision_asks_numeric_significance_correction(feedback):
         return text, []
     patched, n = _remove_inline_numeric_correction_markup(text)
+    patched, renamed = re.subn(
+        r"Numeric reconciliation note:", "Numeric verification note:",
+        patched, flags=re.I,
+    )
+    n += renamed
     for section in ("Abstract", "Conclusion"):
         patched, changed = _repair_non_significant_effect_claims_in_section(patched, section)
         n += changed
@@ -2259,12 +2266,28 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
             return text, n_existing
     outcome = _numeric_correction_outcome(feedback)
     statement = (
-        f"Numeric reconciliation note: {source_label} reported a non-significant mapped comparison"
+        f"Numeric verification note: {source_label} reported a non-significant mapped comparison"
         f" ({p_text}){outcome}; this synthesis treats that mapped comparison, "
         "not every within-source contrast, as non-significant."
     )
     patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", statement)
     return patched, n + n_existing
+
+
+def _phase_d_author_inference_boundary(
+    text: str, out_dir: Path,
+) -> tuple[str, list[FinalizerLogEntry]]:
+    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    patched, sections = revision_coverage.place_author_inference_boundary(text, feedback)
+    if not sections or patched == text:
+        return text, []
+    return patched, [FinalizerLogEntry(
+        phase="D_author_inference_boundary",
+        rule="place_author_inference_boundary_in_requested_section",
+        n_changes=len(sections),
+        detail=f"placed author-inference boundary in {', '.join(sections)}",
+    )]
 
 
 def _remove_inline_numeric_correction_markup(text: str) -> tuple[str, int]:

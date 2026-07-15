@@ -41,6 +41,7 @@ sys.path.insert(0, str(ROOT))
 import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.revision_evidence import load_revision_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
     THIN_CORPUS_MIN_PRIMARY_TIER,
@@ -1347,12 +1348,46 @@ def _source_precision_repair_candidate(topic: str) -> bool:
 
 def _revision_requests_source_precision(feedback: str) -> bool:
     text = str(feedback or "").lower()
-    if any(token in text for token in ("off-topic", "off topic", "unrelated topic", "unrelated topics")):
-        return True
-    return "source" in text and any(token in text for token in (
-        "directly address", "directly addresses", "narrow the source",
-        "remove or reclassify", "operationalize",
-    ))
+    decision: bool | None = None
+    for clause in re.split(
+        r"[.;\n]+|\b(?:but|except|while|then)\b", text,
+    ):
+        if re.search(
+            r"\b(?:keep|leave|preserve)\b.{0,60}"
+            r"\b(?:source\s+bundle|bundle|corpus|all\s+(?:sources?|evidence))\b.{0,60}"
+            r"\b(?:unchanged|intact|same)\b",
+            clause,
+        ):
+            decision = False
+            continue
+        evidence = re.search(
+            r"\b(?:sources?|evidence|stud(?:y|ies)|trials?|papers?|records?|corpus|bundle)\b",
+            clause,
+        )
+        scope = re.search(
+            r"\b(?:off[ -]?topic|unrelated|direct(?:ly)?|indirect|adjacent|"
+            r"topic[ -]?specific|actually|only)\b",
+            clause,
+        )
+        action = re.search(
+            r"\b(?:clarify|exclude|fix|narrow|rebuild|reclassify|remove|replace|"
+            r"reset|revise|swap|verify)\b",
+            clause,
+        )
+        negated_action = re.search(
+            r"\b(?:(?:do|does|should|must|shall|can|could|would)(?:\s+not|n['’]?t)|"
+            r"don['’]?t|never|not\s+to|(?:there\s+is\s+)?no\s+need\s+to)\s+"
+            r"(?:need\s+to\s+)?(?:[a-z-]+\s+){0,3}"
+            r"(?:clarify|exclude|fix|narrow|rebuild|reclassify|"
+            r"remove|replace|reset|revise|swap|verify)\b",
+            clause,
+        )
+        if evidence and scope:
+            if negated_action:
+                decision = False
+            elif action or "off-topic" in clause:
+                decision = True
+    return bool(decision)
 
 
 def _topic_family(topic: str) -> str:
@@ -2753,15 +2788,21 @@ def _revision_asks(feedback: str) -> list[str]:
 
 
 def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
-    """Reviewer asks the rendered paper does NOT materially address, per the
-    coverage judge. Fail-open (empty on any error). Monkeypatched in tests."""
+    """Reviewer asks not addressed; unreadable revision artifacts fail closed."""
+    asks = _revision_asks(feedback)
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
-        return []
-    text = paper.read_text(encoding="utf-8")
+        return asks
+    try:
+        text = paper.read_text(encoding="utf-8")
+    except OSError:
+        return asks
     supplement = out_dir / "structured_evidence_tables.md"
     if supplement.is_file():
-        text += "\n\n" + supplement.read_text(encoding="utf-8")
+        try:
+            text += "\n\n" + supplement.read_text(encoding="utf-8")
+        except OSError:
+            return asks
     unmet = revision_coverage.material_unmet_asks(text, feedback)
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
 
@@ -2977,11 +3018,13 @@ def _strict_source_topic_revision_ask(ask_lower: str) -> bool:
     )
 
 
-def _retracted_cited_sources(out_dir: Path) -> list[str]:
-    """Retracted DOIs the paper cites (OpenAlex check). Fail-open (empty on any
-    error); monkeypatched in tests so they stay offline."""
+def _retracted_cited_sources(out_dir: Path) -> list[str] | None:
+    """Retracted DOIs, or None when the strict publication check is unavailable."""
     import retraction_check
-    return retraction_check.retracted_cited_sources(out_dir)
+    try:
+        return retraction_check.retracted_cited_sources(out_dir, strict=True)
+    except retraction_check.RetractionCheckUnavailable:
+        return None
 
 
 def _abstract_overclaims(out_dir: Path) -> list[str]:
@@ -3166,17 +3209,20 @@ def _run_synthesis(
     timeout: int | None = None,
     revision_feedback: str | None = None,
     review_type_override: str | None = None,
+    revision_source_run: Path | None = None,
 ) -> int:
     cmd = [sys.executable, "scripts/run_v06_synthesis.py", "--topic", topic, "--out-dir", str(out_dir)]
     if dry_run:
         cmd.append("--dry-run")
     env: dict[str, str] | None = None
-    if revision_feedback or review_type_override:
+    if revision_feedback or review_type_override or revision_source_run:
         env = os.environ.copy()
         if revision_feedback:
             env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
         if review_type_override:
             env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
+        if revision_source_run:
+            env["RESEARCH_AGENT_REVISION_SOURCE_RUN"] = str(revision_source_run.resolve())
     try:
         result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
     except subprocess.TimeoutExpired as exc:
@@ -3337,16 +3383,40 @@ def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[s
     receipt_ids = _source_manifest_receipt_ids(source_run)
     if not receipt_ids:
         return None
+    assert source_run is not None
+    source_manifest = _read_json(source_run / "manifest.json") if source_run else {}
+    snapshot_policy = source_manifest.get("revision_evidence_snapshot")
+    if isinstance(snapshot_policy, dict) and snapshot_policy.get("required") is True:
+        lock = load_revision_evidence(
+            source_run,
+            quant_dir=CORPORA / topic / "quant_claims",
+            parsed_dir=CORPORA / topic / "parsed",
+            expected_topic=topic,
+        )
+        available = lock.mode == "snapshot" and not lock.errors
+        return {
+            "passed": available,
+            "status": "source_snapshot_available" if available else "source_snapshot_missing",
+            "source_run": source_run.name if source_run else "",
+            "n_source_receipts": len(receipt_ids),
+            "n_available_quant_claim_files": len(receipt_ids) if available else 0,
+            "n_missing_quant_claim_files": 0,
+            "min_receipts": DEFAULT_THRESHOLDS.min_receipts,
+            "missing_receipt_ids": [],
+            "evidence_mode": "snapshot",
+            "snapshot_errors": list(lock.errors),
+        }
     qdir = CORPORA / topic / "quant_claims"
     available_ids = {rid for rid in receipt_ids if (qdir / f"{rid}.quant_claims.json").is_file()}
     min_receipts = DEFAULT_THRESHOLDS.min_receipts
     missing = [rid for rid in receipt_ids if rid not in available_ids]
     return {
-        "passed": len(available_ids) >= min_receipts,
-        "status": "source_manifest_available" if len(available_ids) >= min_receipts else "source_manifest_unavailable",
+        "passed": len(receipt_ids) >= min_receipts and not missing,
+        "status": "source_manifest_available" if len(receipt_ids) >= min_receipts and not missing else "source_manifest_unavailable",
         "source_run": source_run.name if source_run else "",
         "n_source_receipts": len(receipt_ids),
         "n_available_quant_claim_files": len(available_ids),
+        "n_missing_quant_claim_files": len(missing),
         "min_receipts": min_receipts,
         "missing_receipt_ids": missing[:20],
     }
@@ -4643,32 +4713,15 @@ def run_cycle(
                 continue
             revision_source_run = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
             existing_source_preflight = _existing_receipt_preflight(revision_source_run) if revision_source else None
-            corpus_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
-            corpus: dict[str, Any]
-            if existing_source_preflight:
-                corpus = {
-                    "status": "corpus_ready",
-                    "source": "existing_source_manifest",
-                    "source_run": revision_source_run.name if revision_source_run else "",
-                    "n_quant_claims": max(
-                        PREFLIGHT_MIN_QUANT_CLAIMS,
-                        int(existing_source_preflight.get("n_receipts") or 0),
-                    ),
-                }
-            elif seeded_frontier_corpus is not None:
-                corpus = seeded_frontier_corpus
-            else:
-                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=corpus_timeout)
-            ledger["corpus"] = corpus
             revision_source_repair = _revision_requests_source_precision(revision_feedback)
             source_manifest_availability = (
                 _source_manifest_availability(selected, revision_source_run)
-                if existing_source_preflight
+                if revision_source
                 else None
             )
             if (
                 source_manifest_availability
-                and not source_manifest_availability.get("passed")
+                and int(source_manifest_availability.get("n_missing_quant_claim_files") or 0) > 0
                 and revision_source
             ):
                 restore = _restore_source_manifest_quant_claims(selected, revision_source_run)
@@ -4697,6 +4750,37 @@ def run_cycle(
                     remote_revision = None
                 attempted.add(selected)
                 continue
+            snapshot_evidence_locked = bool(
+                source_manifest_availability
+                and source_manifest_availability.get("passed")
+                and source_manifest_availability.get("evidence_mode") == "snapshot"
+                and not revision_source_repair
+            )
+            corpus_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
+            corpus: dict[str, Any]
+            if existing_source_preflight or snapshot_evidence_locked:
+                corpus = {
+                    "status": "corpus_ready",
+                    "source": (
+                        "existing_source_snapshot"
+                        if snapshot_evidence_locked
+                        else "existing_source_manifest"
+                    ),
+                    "source_run": revision_source_run.name if revision_source_run else "",
+                    "n_quant_claims": max(
+                        PREFLIGHT_MIN_QUANT_CLAIMS,
+                        int(
+                            (source_manifest_availability or {}).get("n_source_receipts")
+                            or (existing_source_preflight or {}).get("n_receipts")
+                            or 0
+                        ),
+                    ),
+                }
+            elif seeded_frontier_corpus is not None:
+                corpus = seeded_frontier_corpus
+            else:
+                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=corpus_timeout)
+            ledger["corpus"] = corpus
             if corpus.get("status") not in {"corpus_ready", "corpus_seeded"}:
                 attempt = {
                     "topic": selected,
@@ -4774,7 +4858,11 @@ def run_cycle(
                     and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
                 )
             )
-            if revision_source and existing_source_preflight and not revision_source_repair:
+            if (
+                revision_source
+                and (existing_source_preflight or snapshot_evidence_locked)
+                and not revision_source_repair
+            ):
                 source_precision_needs_repair = False
             source_precision_repair_cleared = False
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:
@@ -4820,9 +4908,12 @@ def run_cycle(
                     "source_precision_ready",
                     "source_precision_repaired",
                 }
-            quant_preflight = _quant_claim_preflight(corpus, topic=selected)
+            quant_preflight = _quant_claim_preflight(
+                corpus,
+                topic=None if snapshot_evidence_locked else selected,
+            )
             quant_corpus_repairs: list[dict[str, Any]] = []
-            if not quant_preflight["passed"] and not synthesis_dry_run:
+            if not quant_preflight["passed"] and not synthesis_dry_run and not snapshot_evidence_locked:
                 for round_idx in range(_receipt_preflight_repair_rounds()):
                     corpus_repair = _repair_topic_corpus(
                         selected,
@@ -4870,9 +4961,18 @@ def run_cycle(
                 ledger_dir,
                 current_quant_claims=int(corpus.get("n_quant_claims") or 0),
                 ignore_recent_failures=bool(
-                    revision_source and (existing_source_preflight or source_precision_repair_cleared)
+                    revision_source
+                    and (
+                        existing_source_preflight
+                        or snapshot_evidence_locked
+                        or source_precision_repair_cleared
+                    )
                 ),
-                source_run=revision_source_run if revision_source else None,
+                source_run=(
+                    revision_source_run
+                    if revision_source and not revision_source_repair
+                    else None
+                ),
             )
             if not preflight["passed"]:
                 terminal_missing_manifest = (
@@ -5015,11 +5115,37 @@ def run_cycle(
                 }
                 if review_type_override:
                     synthesis_kwargs["review_type_override"] = review_type_override
-                receipt_preflight = (
-                    {"passed": True}
-                    if existing_repair
-                    else _existing_receipt_preflight(revision_base_dir)
+                revision_evidence_source = (
+                    revision_base_dir
                     if revision_source
+                    and revision_base_dir
+                    and (not revision_source_repair or revision_base_dir != source_base_dir)
+                    else None
+                )
+                if revision_evidence_source:
+                    synthesis_kwargs["revision_source_run"] = revision_evidence_source
+                revision_snapshot_availability = (
+                    _source_manifest_availability(selected, revision_evidence_source)
+                    if revision_evidence_source
+                    else None
+                )
+                revision_snapshot_locked = bool(
+                    revision_snapshot_availability
+                    and revision_snapshot_availability.get("passed")
+                    and revision_snapshot_availability.get("evidence_mode") == "snapshot"
+                )
+                receipt_preflight = (
+                    {
+                        "passed": True,
+                        "status": (
+                            "receipt_preflight_existing_repair"
+                            if existing_repair
+                            else "receipt_preflight_snapshot_locked"
+                        ),
+                    }
+                    if existing_repair or revision_snapshot_locked
+                    else _existing_receipt_preflight(revision_base_dir)
+                    if revision_evidence_source
                     else None
                 )
                 receipt_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
@@ -5074,7 +5200,9 @@ def run_cycle(
                         "unmet_asks": unmet,
                     })
                 # Retraction gate: never submit a paper that cites retracted science.
-                retracted = _retracted_cited_sources(out_dir) if return_code == 0 else []
+                retraction_result = _retracted_cited_sources(out_dir) if return_code == 0 else []
+                retraction_unverified = retraction_result is None
+                retracted = retraction_result or []
                 # Claim-support gate: never submit an abstract whose claims the
                 # paper's own evidence does not support / overstates.
                 overclaims = _abstract_overclaims(out_dir) if return_code == 0 else []
@@ -5096,6 +5224,7 @@ def run_cycle(
                 if (
                     return_code == 0
                     and not unmet
+                    and not retraction_unverified
                     and not retracted
                     and not numeric_issues
                     and not overclaims
@@ -5123,6 +5252,7 @@ def run_cycle(
                 gate_status = (
                     "synthesis_timeout" if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE
                     else "synthesis_failed" if return_code != 0
+                    else "retraction_check_unavailable" if retraction_unverified
                     else "retracted_source_cited" if retracted
                     else "numeric_effect_mismatch" if numeric_issues
                     else "abstract_overclaim" if overclaims
@@ -5164,6 +5294,8 @@ def run_cycle(
                     revision_feedback = _escalate_feedback(revision_feedback, unmet)
                 if retracted:
                     attempt["retracted_cited_sources"] = retracted
+                if retraction_unverified:
+                    attempt["retraction_check_unavailable"] = True
                 if numeric_issues:
                     attempt["numeric_effect_direction_issues"] = numeric_issues
                 if return_code == 0 and submit and not revision_source and submit_cycle is None:

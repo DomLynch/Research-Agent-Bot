@@ -20,7 +20,8 @@ Why fixture-replay rather than real APIs in pytest:
   produce, so the pipeline path is identical. The only difference is the
   transport.
 
-For a fresh real-API smoke, run `scripts/e2e_metformin_smoke.py` (Day 2.5
+For a fresh real-API smoke, run
+`scripts/e2e_metformin_proof_001.py --live --retrieve-only`
 deliverable; opt-in network call) which captures a new baseline and
 optionally refreshes the fixtures.
 """
@@ -241,8 +242,9 @@ def test_e2e_summary(metformin_e2e: dict, metformin_pack: TopicPack) -> None:
     print(f"tier distribution:       {dict(tier_counts)}")
     print(f"direct=True:             {direct_count}")
     print(f"strict=True:             {strict_count}")
-    print(f"topic_pack override hits: NCT02308228 (MASTERS) — pinned to "
-          f"{metformin_pack.lookup_role_override('NCT02308228').role}")
+    override = metformin_pack.lookup_role_override("NCT02308228")
+    assert override is not None
+    print(f"topic_pack override hits: NCT02308228 (MASTERS) — pinned to {override.role}")
     print("=" * 60)
 
     assert len(items) == len(metformin_e2e["sources"])

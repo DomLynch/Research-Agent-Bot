@@ -475,7 +475,7 @@ def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path:
     )
     paper = (
         "## Evidence Landscape\n\n"
-        "Numeric reconciliation note: Brouwers 2016 reported a non-significant mapped "
+        "Numeric verification note: Brouwers 2016 reported a non-significant mapped "
         "comparison (p = 0.88); this synthesis treats that mapped comparison, not every "
         "within-source contrast, as non-significant.\n\n"
         "- Brouwers 2016: outcome=Frailty; direction=null; finding=representative statistic p=0.88.\n"
@@ -1750,7 +1750,7 @@ def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Pat
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
-    assert "Numeric reconciliation note: Waghmare 2024 reported a non-significant mapped comparison (p = 0.08)" in fixed
+    assert "Numeric verification note: Waghmare 2024 reported a non-significant mapped comparison (p = 0.08)" in fixed
     assert "Numeric correction:" not in fixed.split("## Abstract", 1)[1].split("## Evidence Landscape", 1)[0]
     assert "not every within-source contrast" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
@@ -1776,7 +1776,7 @@ def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
 
-    assert "Numeric reconciliation note: Brouwers 2016 reported a non-significant mapped comparison (p = 0.88)" in fixed
+    assert "Numeric verification note: Brouwers 2016 reported a non-significant mapped comparison (p = 0.88)" in fixed
     assert "Numeric correction:" not in fixed.split("## Abstract", 1)[1].split("## Evidence Landscape", 1)[0]
     assert "not every within-source contrast" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
@@ -4859,7 +4859,7 @@ def test_second_telomere_revise_asks_repaired_generically(tmp_path: Path) -> Non
     assert "Source-scope annex note:" in fixed
     assert "Jaeger 2024" in fixed
     assert "not pooled as direct evidence" in fixed
-    assert "Numeric reconciliation note: Ha 2023" in fixed
+    assert "Numeric verification note: Ha 2023" in fixed
     assert "p = .903" in fixed
     assert "Strict high-confidence subset note: 3 strict high-confidence receipt(s)" in fixed
     assert "admitted source base remains 25" in fixed
@@ -5135,3 +5135,44 @@ def test_untraceable_tension_count_cleanup_qualifies_exact_pair_count() -> None:
     assert "paired indirectness-gap tensions" in fixed
     assert "These tensions each reflect" in fixed
     assert logs and logs[0].rule == "qualify_unbacked_tension_count"
+
+
+def test_author_inference_boundary_is_relocated_to_requested_section(tmp_path: Path) -> None:
+    feedback = (
+        "Mark mechanism-level explanations in the Cross-Domain Synthesis as "
+        "author inference where they go beyond cited sources."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": feedback}), encoding="utf-8",
+    )
+    note = journal_finalizer.revision_coverage._AUTHOR_INFERENCE_BOUNDARY
+    paper = (
+        f"## Results\n\nResults narrative.\n\n{note}\n\n"
+        "## Cross-Domain Synthesis\n\nMechanistic interpretation.\n\n"
+        "## Discussion\n\nBounded discussion.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_author_inference_boundary(paper, tmp_path)
+
+    assert note not in journal_finalizer._section_body(fixed, "Results")
+    assert note in journal_finalizer._section_body(fixed, "Cross-Domain Synthesis")
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, [feedback]) == []
+    assert logs[0].rule == "place_author_inference_boundary_in_requested_section"
+
+
+def test_author_inference_boundary_uses_explicit_move_destination(tmp_path: Path) -> None:
+    feedback = "Author-inference boundary within Discussion should relocate to Cross-Domain Synthesis."
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": feedback}), encoding="utf-8",
+    )
+    note = journal_finalizer.revision_coverage._AUTHOR_INFERENCE_BOUNDARY
+    paper = (
+        "## Cross-Domain Synthesis\n\nMechanistic interpretation.\n\n"
+        f"## Discussion\n\n{note}\n"
+    )
+
+    fixed, _logs = journal_finalizer._phase_d_author_inference_boundary(paper, tmp_path)
+
+    assert note in journal_finalizer._section_body(fixed, "Cross-Domain Synthesis")
+    assert note not in journal_finalizer._section_body(fixed, "Discussion")
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, [feedback]) == []

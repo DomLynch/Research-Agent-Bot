@@ -20,7 +20,7 @@ Done-when (DESIGN-001 §19 Day 3 close):
   through trace_alias_match
 - Performance baseline captured (deterministic stages < 1s)
 
-The LLM extraction stage is exercised separately by `scripts/e2e_day3_pipeline.py`
+The LLM extraction stage is exercised by `scripts/e2e_metformin_proof_001.py`
 (opt-in, requires MIMO_API_KEY or OPENROUTER_API_KEY) — keeping it out of
 pytest avoids both network dependence and CI cost.
 """
@@ -78,7 +78,7 @@ def _hand_curated_facts(items: list[EvidenceItem]) -> list[Fact]:
 
     These stand in for the Day 3.2c LLM extraction stage in this
     fixture-replay path — same shape, same downstream code path. The
-    LLM stage is exercised live by `scripts/e2e_day3_pipeline.py`
+    LLM stage is exercised live by `scripts/e2e_metformin_proof_001.py`
     (opt-in, requires API keys).
 
     MASTERS surfaces via the OpenAlex paper hit, NOT the CT.gov registry

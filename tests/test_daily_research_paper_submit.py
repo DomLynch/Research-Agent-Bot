@@ -24,6 +24,7 @@ import daily_research_paper_submit as daily  # type: ignore[import-not-found]  #
 @pytest.fixture(autouse=True)
 def _disable_live_pubmed_fetch(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("RESEARKA_SOURCE_ABSTRACT_LIMIT", "0")
+    monkeypatch.setattr(daily, "_retraction_gate_status", lambda _run: ("eligible", []))
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -169,6 +170,27 @@ def test_dry_run_selects_eligible_research_paper(tmp_path: Path) -> None:
     assert ledger["submitted"] == 0
     assert ledger["published"] == 0
     assert (tmp_path / daily.LEDGER_DIR / "2026-05-23.json").exists()
+
+
+@pytest.mark.parametrize("status", ["retraction_check_unavailable", "retracted_source_cited"])
+def test_submit_boundary_blocks_unverified_or_retracted_sources(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, status: str,
+) -> None:
+    _run(tmp_path)
+    dois = ["10.1/retracted"] if status == "retracted_source_cited" else []
+    monkeypatch.setattr(daily, "_retraction_gate_status", lambda _run: (status, dois))
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-23",
+        submit=True,
+        submitter=lambda _payload: pytest.fail("blocked candidate must not submit"),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["reason"] == status
+    assert ledger["retraction_check"]["retracted_dois"] == dois
 
 
 def test_select_candidate_skips_exact_submitted_payload(tmp_path: Path) -> None:

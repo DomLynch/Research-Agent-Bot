@@ -1,30 +1,4 @@
-"""Day 10.17 Phase 6.1 — wire v0.6.0 bound claims into agent/paper_writer.py.
-
-The user-audited v0.5.0/v0.6.0 synthesis writer
-hits 3.8k words. The OLD agent/paper_writer.py routinely produces
-5–7k word papers with section floors, deterministic Methods, and
-trust-spine validation. The end-game needs both — old writer volume +
-new bound-claim evidence.
-
-This script is the adapter:
-  1. Load v0.6.0 quant_claims (only effect-role + high-confidence
-     bindings — the strict 90/93 set)
-  2. Group by contributing paper → one ReceiptSummary per paper
-  3. Aggregate per-paper outcome_class + effect_direction from the
-     dominant bound claims
-  4. Build a TensionMatrix from cross-paper direction conflicts on
-     the same outcome class
-  5. Pick a SynthesisThesis that names the central pattern (most
-     metformin papers find muscle-suppression alongside metabolic
-     benefit — a real cross-domain tension)
-  6. Call render_full_paper() exactly as the existing e2e pipeline does
-  7. Optional: claim-strength repair pass (the Phase 2 hardening)
-  8. Write to runs/synthesis-metformin-{ISO}/full_paper.md
-
-This is "Path 1" per the audit: keep v0.6.0 extractor fixes; stop
-expanding the diagnostic writer; wire bound claims into the production
-writer instead.
-"""
+"""Build audited research papers from bound quantitative evidence."""
 from __future__ import annotations
 
 import argparse
@@ -59,6 +33,12 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
     repair_abstract_claim_strength,
     repair_claim_strength,
 )
+from agent.revision_evidence import (  # noqa: E402
+    SNAPSHOT_DIR,
+    create_revision_evidence_snapshot,
+    load_revision_evidence,
+    receipt_contract_mismatches,
+)
 
 
 def _write_revision_feedback_sidecar(out_dir: Path) -> None:
@@ -67,6 +47,40 @@ def _write_revision_feedback_sidecar(out_dir: Path) -> None:
     if not feedback or path.is_file():
         return
     path.write_text(json.dumps({"feedback": feedback}, indent=2))
+
+
+def _restore_revision_citations(
+    registry: dict[str, Any], source_registry: Path | None,
+    receipt_ids: frozenset[str],
+) -> tuple[int, list[str]]:
+    if source_registry is None:
+        return 0, []
+    try:
+        source = json.loads(source_registry.read_text())
+    except (OSError, json.JSONDecodeError):
+        return 0, sorted(receipt_ids)
+    restored = 0
+    missing: list[str] = []
+    for receipt_id in sorted(receipt_ids):
+        entry = registry.get(receipt_id)
+        row = source.get(receipt_id) if isinstance(source, dict) else None
+        fields = dataclasses.fields(entry) if entry is not None else ()
+        required = {field.name for field in fields}
+        if (
+            entry is None or not isinstance(row, dict)
+            or row.get("receipt_id") != receipt_id
+            or not required.issubset(row)
+            or not all(row.get(key) for key in ("body_citation", "reference_id"))
+        ):
+            missing.append(receipt_id)
+            continue
+        updates = {
+            field.name: row[field.name]
+            for field in fields
+        }
+        registry[receipt_id] = dataclasses.replace(entry, **updates)
+        restored += 1
+    return restored, missing
 from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
@@ -180,6 +194,7 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "biomed_normalization.json",
         "docling_fallback.json",
         "offline_eval_harness.json",
+        "revision_evidence_continuity.json",
         "full_paper.certification.json",
         "meta_analysis_results.json",
         "publication_score.json",
@@ -315,14 +330,7 @@ def _append_structured_tables_to_public_body(markdown: str, tables_md: str) -> s
 def _restore_rendered_section_headings(
     paper_md: str, sections: tuple[SynthesisSection, ...],
 ) -> str:
-    """Renderer-owned headings must survive all post-processing.
-
-    Large-corpus runs exposed a document-assembly failure where a
-    section's prose survived but its `## Heading` was lost, causing Q7
-    section coverage to fail. This restores missing headings from the
-    typed section objects returned by the writer. Universal contract:
-    LLM/review patches may edit prose, but section objects own headings.
-    """
+    """Restore renderer-owned headings lost during post-processing."""
     out = paper_md
     for section in sections:
         first_line = section.body_md.lstrip().splitlines()[0:1]
@@ -420,12 +428,7 @@ def _restore_required_section_bodies(
 def _restore_public_surface_floors(
     paper_md: str, review_type: str | None = None,
 ) -> tuple[str, list[dict[str, str]]]:
-    """Final section length guard over rendered public markdown.
-
-    Slice 36: review_type='thin_corpus_brief' uses the thin skeleton
-    so the gate doesn't re-inject Introduction/Background/Cross-Domain/
-    Discussion when the writer (Slice 35) intentionally skipped them.
-    Universal — works for any thin-corpus run, any domain."""
+    """Enforce the section floors for the selected review type."""
     try:
         from agent.journal_surface_gate import (
             _REQUIRED_SECTIONS, _REQUIRED_SECTIONS_THIN, _SECTION_CEILINGS,
@@ -516,14 +519,7 @@ def _translation_boundary_statement(topic: str) -> str:
 def _compile_public_section_backstop(
     title: str, floor: int, existing_text: str = "",
 ) -> str:
-    """Safe public-prose fallback compiled from manifest metadata.
-
-    The fallback must read like conservative manuscript prose. It may
-    use only corpus-level metadata already present in the run manifest:
-    receipt counts, outcome/effect buckets, directness tiers, citation
-    tokens, and tension counts. It must not restore source-level numeric
-    claims that were stripped for source-context safety.
-    """
+    """Compile conservative fallback prose from manifest-level facts."""
     allowed = {
         "Abstract", "Introduction", "Background", "Results",
         "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
@@ -1371,17 +1367,7 @@ def _insert_conclusion_heading(markdown: str, heading: str) -> tuple[str, bool]:
 
 
 def _set_topic(topic: str) -> None:
-    """Update module-level corpus paths + topic pack for the given
-    topic across the orchestrator, audit, and bg-lit modules.
-    Called once by _run() at the top of each pipeline invocation.
-
-    Refactor 2026-05-04: also loads the topic pack so generic
-    helpers (_claim_topic_effect, canonical RCT lists, etc.) can
-    read topic-specific data without hardcoded strings.
-
-    Also sets TOPIC_DOMAIN env var so vocab/__init__.py picks up
-    the correct vocab pack (auto-synthesizes from topic pack TOML
-    if no vocab/<topic>.py exists)."""
+    """Set corpus paths and topic data across synthesis modules."""
     global QUANT_DIR, PARSED_DIR, _TOPIC_PACK, _ACTIVE_TOPIC
     import os
     QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims"
@@ -1408,9 +1394,7 @@ def _set_topic(topic: str) -> None:
 
 
 def _get_topic_pack():
-    """Accessor for the active topic pack. Returns None if no
-    pack is loaded for the active topic (graceful fallback for
-    new/experimental topics)."""
+    """Return the active topic pack, if available."""
     return _TOPIC_PACK
 
 
@@ -1590,14 +1574,7 @@ def _active_vs_placebo_context(text: str) -> bool:
 
 
 def _author_year_token(receipt) -> str | None:
-    """Slice 7 P1b: resolve a receipt's 'Author YYYY' citation token
-    from its receipt_id (typically 'Author_YYYY_<slug>' or
-    'PMC<id>_<slug>'). Used to populate manifest['receipts'][i]
-    ['citation_token'] so the source-context drift check can map
-    prose citations to receipts' quant_claims.
-
-    Falls back to None when no Author/Year pair is parseable.
-    Universal — works for any topic + domain."""
+    """Resolve an ``Author YYYY`` token from a receipt identifier."""
     rid = (receipt.receipt_id or "").strip()
     if not rid:
         return None
@@ -1624,28 +1601,19 @@ def _author_year_token(receipt) -> str | None:
 
 
 def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
-    """Serialize a receipt into the manifest['receipts'] entry.
-
-    p_values MUST be carried through: ReceiptSummary.p_values is populated
-    from claim_type=="p_value" claims (real extracted source statistics),
-    and audit_v06_paper._manifest_structural_numerics() harvests
-    receipts[].p_values into the Q2 numeric pool. When this hand-built
-    dict dropped the field, Q2_numeric_integrity counted every cited
-    source p-value as untraceable and failed the 100% gate — the 2026-06
-    publish stall. A fabricated p-value (present in no source claim) is
-    still absent here, so the gate's anti-fabrication role is preserved.
-    Universal — no topic terms; p-values are domain-agnostic.
-
-    citation_token (Slice 7 P1b) lets the source-context drift check map
-    prose tokens (e.g. "Witham 2025") back to this receipt's quant_claims.
-    """
+    """Serialize receipt evidence and citation identity into the manifest."""
     entry = citation_registry.get(receipt.receipt_id)
     return {
         "receipt_id": receipt.receipt_id,
+        "topic": receipt.topic,
+        "spar_verdict": receipt.spar_verdict,
+        "n_failed_traces": receipt.n_failed_traces,
         "outcome_class": receipt.outcome_class,
         "effect_direction": receipt.effect_direction,
         "evidence_tier": receipt.evidence_tier,
         "directness": receipt.directness,
+        "thesis_text": receipt.thesis_text,
+        "population_summary": receipt.population_summary,
         "n_claims": receipt.n_claims,
         "p_values": list(receipt.p_values),
         "canonical_trial_id": receipt.canonical_trial_id,
@@ -1656,19 +1624,15 @@ def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
         # paper_id resolved from receipt_id so quant_claims are findable.
         "paper_id": receipt.receipt_id,
         "source_title": receipt.source_title,
+        "source_year": receipt.source_year,
+        "source_venue": receipt.source_venue,
         "source_doi": receipt.source_doi,
         "source_pmid": receipt.source_pmid,
     }
 
 
 def _claim_topic_effect(claim: dict) -> int:
-    """Returns +1 if the active topic's compound has a good effect
-    on this endpoint, -1 if bad, 0 if unclear/null.
-
-    Refactor 2026-05-04: was hardcoded to `arm == "metformin"`.
-    Now reads active_arm_synonyms from the topic pack so this works
-    for any drug (rapamycin, GLP-1, statins, etc.) without code
-    changes."""
+    """Return beneficial (+1), harmful (-1), or unclear (0) direction."""
     direction = claim.get("direction") or ""
     arm = (claim.get("arm") or "").strip().lower()
     endpoint = claim.get("endpoint") or ""
@@ -1748,9 +1712,7 @@ _claim_metformin_effect = _claim_topic_effect
 
 
 def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
-    """Per-paper rollup: dominant outcome_class, dominant
-    effect_direction (Fix #5: now significance-aware → null/mixed
-    states), p-values list, sample-size summary."""
+    """Roll claims into a significance-aware per-paper summary."""
     outcome_counter: Counter[str] = Counter()
     p_values: list[str] = []
     sample_sizes: list[float] = []
@@ -1846,29 +1808,13 @@ _REVIEW_RE = re.compile(
 
 
 def _is_randomized_trial(paper_meta: dict) -> bool:
-    """True if the source is a PRIMARY randomized controlled trial, read from
-    its title/study_design. A primary RCT is direct interventional evidence and
-    must never be coded directness='review' — the load-bearing Monda 2026
-    mis-code (a 12-month RCT labelled a review) falsely zeroed the paper's
-    'direct interventional' count and manufactured spurious Monda-vs-X
-    tensions. Meta-analyses / systematic reviews *of* randomized trials are
-    EXCLUDED — they are reviews, not primary trials. Universal — study-design
-    English only, no topic terms."""
+    """Detect primary randomized trials while excluding review articles."""
     text = f"{paper_meta.get('title') or ''} {paper_meta.get('study_design') or ''}"
     return bool(_RCT_RE.search(text)) and not _REVIEW_RE.search(text)
 
 
 def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tuple[str, str]:
-    """Return (evidence_tier, directness) — Fix #4: deterministic
-    classification from structured metadata via evidence_taxonomy.
-
-    First tries explicit metadata fields (`study_design`, `species`,
-    `endpoint_kind` if the parsed-paper JSON has them). Falls back to
-    a title/abstract keyword extractor for legacy papers without
-    explicit annotation. The pre-fix heuristic (PMC* → "mechanistic",
-    everything else → "B/indirect") incorrectly tagged human
-    observational mortality studies as "mechanistic" — a category
-    error that propagated into the synthesis."""
+    """Classify evidence tier and directness from structured metadata."""
     pack = _get_topic_pack()
     is_rct_papers = pack.canonical_rct_paper_ids if pack is not None else ()
     paper_id_l = paper_id.lower()
@@ -1951,13 +1897,7 @@ def _build_receipt_thesis_text(
     paper_title: str,
     claims: list[dict],
 ) -> str:
-    """Build a neutral receipt summary from source sentences.
-
-    Do not paraphrase extractor arm/direction fields here. Those fields
-    are useful for audit scoring, but at corpus scale they can be noisy;
-    receipt prose should preserve the source sentence so a bad arm label
-    cannot become a false synthesis claim.
-    """
+    """Build a neutral receipt summary from verbatim source sentences."""
     evidence_lines: list[str] = []
     seen: set[str] = set()
     for claim in claims:
@@ -2022,9 +1962,7 @@ def _receipt_mentions_active_topic(topic: str, paper_meta: dict, claims: list[di
 
 
 def _load_paper_meta_by_id() -> dict[str, dict]:
-    """Load all parsed-paper metadata (paper_id → dict). Used both
-    by the receipt builder AND by Fix #10's citation-registry call
-    (Author-Year extraction from authors+year fields)."""
+    """Load parsed-paper metadata by paper ID."""
     paper_meta_by_id: dict[str, dict] = {}
     for path in sorted(PARSED_DIR.glob("*.paper_sections.json")):
         d = json.loads(path.read_text())
@@ -2046,8 +1984,7 @@ def _load_active_paper_ids() -> set[str] | None:
 
 
 def _strict_clinical_receipt_scope() -> bool:
-    """Clinical-brief packs disable inferential bridge and should not
-    promote adjacent/mechanistic receipts from a reused broad corpus."""
+    """Whether the active pack permits only core clinical receipts."""
     pack = _get_topic_pack()
     inference = getattr(pack, "inference", None)
     return bool(pack and inference is not None and not inference.allow)
@@ -2060,14 +1997,7 @@ def _receipt_scope_classes() -> set[str]:
 
 
 def _load_paper_class_map() -> dict[str, str]:
-    """Slice 37 (2026-05-16): return PMC paper_id → classification dict.
-
-    Two-format reader: legacy `corpus_classification.json` (paper_id-keyed)
-    OR current `corpus_manifest.json` (entries listed by trial-id e.g. NCT
-    but with DOI/PMID for join). When using the manifest format, joins
-    DOIs to `_extract_report.papers_resolved` (PMC-keyed) so downstream
-    code can map PMC paper_ids back to their classifier label. Universal —
-    works for any topic, any pipeline version."""
+    """Load kept paper classes from legacy or current corpus metadata."""
     keep = _receipt_scope_classes()
     out: dict[str, str] = {}
     legacy = QUANT_DIR.parent / "corpus_classification.json"
@@ -2111,10 +2041,7 @@ def _load_paper_class_map() -> dict[str, str]:
 
 
 def _load_classified_receipt_candidate_ids() -> set[str]:
-    """Core, adjacent, and background-mechanism papers can carry
-    load-bearing evidence in CLIN/INF/MECH papers. Off-thesis and
-    rejected classes stay out. Slice 37: reads both legacy paper_id-keyed
-    and current DOI-keyed classification formats. Universal."""
+    """Return IDs admitted by the corpus classifier."""
     return set(_load_paper_class_map())
 
 
@@ -2126,22 +2053,20 @@ def _claim_confidence_counts(claims: list[Any]) -> Counter[str]:
     return counts
 
 
-def build_receipt_funnel_report(topic: str) -> dict[str, Any]:
-    """Diagnose why quant_claims files do or do not become receipts.
-
-    Receipt admission is intentionally strict: a paper must be in the
-    active/classified candidate set and carry at least one high-confidence
-    effect claim. This report makes that gate auditable so corpus expansion
-    work can target the real bottleneck instead of guessing.
-    """
+def build_receipt_funnel_report(
+    topic: str, *, receipt_ids: frozenset[str] = frozenset(),
+) -> dict[str, Any]:
+    """Report each stage of quant-claim receipt admission."""
     active = _load_active_paper_ids()
     classified = _load_classified_receipt_candidate_ids()
-    candidates = _load_receipt_candidate_paper_ids()
+    candidates = None if receipt_ids else _load_receipt_candidate_paper_ids()
     counts: Counter[str] = Counter()
     examples: dict[str, list[str]] = defaultdict(list)
     confidence_totals: Counter[str] = Counter()
 
     for path in sorted(QUANT_DIR.glob("*.quant_claims.json")):
+        if receipt_ids and path.stem.removesuffix(".quant_claims") not in receipt_ids:
+            continue
         try:
             data = json.loads(path.read_text())
         except (OSError, json.JSONDecodeError):
@@ -2262,9 +2187,7 @@ _POPULATION_GATE_FLOOR = 12
 
 
 def _interventional_grade(r: ReceiptSummary) -> bool:
-    """Human-interventional-grade by the canonical tier taxonomy
-    (A1=RCT, A2=human surrogate, directness=direct). Animal/model-system
-    sources never carry these, so this is a safe never-prune exemption."""
+    """Whether a receipt is human-interventional grade."""
     return r.directness == "direct" or r.evidence_tier in ("A1", "A2")
 
 
@@ -2272,17 +2195,7 @@ def _enforce_population_coherence(
     typed: list[tuple[ReceiptSummary, str]],
     high_papers: set[str],
 ) -> list[ReceiptSummary]:
-    """Relative, self-calibrating corpus population-coherence gate.
-
-    When a corpus's high-confidence / interventional core is clearly
-    human-dominant, drop off-population (animal) background receipts that
-    are not interventional-grade — so an arctic-fox PK study or a
-    broiler-chicken cohort cannot anchor an outcome class in a human-
-    aging synthesis. Self-calibrating: an animal-dominant corpus
-    (veterinary, model-organism, C. elegans) is not human-dominant, so
-    its animal sources are left untouched. Floor-guarded so it can never
-    starve a synthesis. Universal — population is read from species
-    vocabulary, never from topic words (no denylist, no per-domain rule)."""
+    """Prune animal background only from a clearly human-dominant corpus."""
     receipts = [r for r, _ in typed]
     if len(receipts) < _POPULATION_GATE_FLOOR:
         return receipts
@@ -2309,21 +2222,15 @@ def _enforce_population_coherence(
 
 def build_receipts_from_quant_claims(
     topic: str,
+    *,
+    receipt_ids: frozenset[str] = frozenset(),
+    receipt_contracts: dict[str, dict[str, Any]] | None = None,
 ) -> list[ReceiptSummary]:
-    """Adapter: v0.6.0 quant_claims → ReceiptSummary list. One receipt
-    per contributing paper.
-
-    Slice 37 (2026-05-16): role-aware admission. High-confidence claims
-    always admitted (primary path). Partial-confidence claims admitted
-    iff the paper is in the corpus_classifier's keep-set (core_on_thesis
-    / adjacent_clinical / background_mechanism) — these are review-tier
-    or mechanistic-tier papers whose evidence is valuable even without
-    per-paper primary numerics. Partial-only papers get tier downgraded
-    to B2 (review) so downstream code treats them appropriately. Closes
-    the vitamin_d 2-receipt starvation: 84 extracted → 65 receipts."""
+    """Build one role-aware receipt per contributing quant-claim paper."""
     paper_meta_by_id = _load_paper_meta_by_id()
-    active_paper_ids = _load_receipt_candidate_paper_ids()
+    active_paper_ids = None if receipt_ids else _load_receipt_candidate_paper_ids()
     paper_class_map = _load_paper_class_map()
+    receipt_contracts = receipt_contracts or {}
     aliases = source_gate_aliases(
         topic, topic_aliases(topic, root=REPO_ROOT, include_generated_terms=False),
     )
@@ -2332,19 +2239,32 @@ def build_receipts_from_quant_claims(
     by_paper: dict[str, list[dict]] = defaultdict(list)
     high_papers: set[str] = set()
     for path in sorted(QUANT_DIR.glob("*.quant_claims.json")):
+        if receipt_ids and path.stem.removesuffix(".quant_claims") not in receipt_ids:
+            continue
         d = json.loads(path.read_text())
         pid = d.get("paper_id") or path.stem.replace(".quant_claims", "")
         if active_paper_ids is not None and pid not in active_paper_ids:
             continue
         pmc_prefix = pid.split("_")[0]
         in_keep_class = pmc_prefix in paper_class_map or pid in paper_class_map
-        for c in d.get("claims", []):
+        claims = [claim for claim in d.get("claims", []) if isinstance(claim, dict)]
+        expected_n = receipt_contracts.get(pid, {}).get("n_claims")
+        expected_n = expected_n if type(expected_n) is int and expected_n >= 0 else None
+        high_count = sum(claim.get("binding_confidence") == "high" for claim in claims)
+        partial_limit = None if expected_n is None else max(0, expected_n - high_count)
+        partial_used = 0
+        for c in claims:
             conf = c.get("binding_confidence")
             if conf == "high":
                 by_paper[pid].append(c)
                 high_papers.add(pid)
-            elif conf == "partial" and in_keep_class:
+            elif (
+                conf == "partial"
+                and (in_keep_class or bool(receipt_ids))
+                and (partial_limit is None or partial_used < partial_limit)
+            ):
                 by_paper[pid].append(c)
+                partial_used += 1
 
     typed: list[tuple[ReceiptSummary, str]] = []
     for paper_id, claims in by_paper.items():
@@ -2352,13 +2272,17 @@ def build_receipts_from_quant_claims(
             continue
         meta = paper_meta_by_id.get(paper_id, {})
         identity = _receipt_topic_identity(paper_id, meta, claims)
-        if not is_source_topic_specific(topic, identity, aliases=aliases):
+        if not receipt_ids and not is_source_topic_specific(topic, identity, aliases=aliases):
             continue
-        if _is_retracted_source(meta) or not _receipt_mentions_active_topic(topic, meta, claims):
+        if _is_retracted_source(meta) or (
+            not receipt_ids and not _receipt_mentions_active_topic(topic, meta, claims)
+        ):
             continue
         agg = _aggregate_paper(paper_id, claims)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
         if (
+            not receipt_ids
+            and
             directness == "direct"
             and not is_source_topic_specific(
                 topic, _receipt_source_identity(paper_id, meta), aliases=aliases,
@@ -2421,6 +2345,8 @@ def build_receipts_from_quant_claims(
         )
         typed.append((receipt, _taxonomy.population_of(identity)))
     typed.sort(key=lambda rp: -rp[0].n_claims)
+    if receipt_ids:
+        return [receipt for receipt, _population in typed]
     return _enforce_population_coherence(typed, high_papers)
 
 
@@ -2428,19 +2354,7 @@ def build_thesis(
     receipts: list[ReceiptSummary], matrix: TensionMatrix,
     topic: str,
 ) -> SynthesisThesis:
-    """Build a topic-generic deterministic thesis.
-
-    Pre-Fix: hardcoded metformin-specific narrative ('MASTERS/
-    Konopka/MET-PREVENT', 'metformin's anti-aging case'). Caused
-    rapamycin synthesis to ship with metformin contamination in
-    its thesis text, which final-layer reviewer flagged as P1 but couldn't repair
-    safely (ambiguous BEFORE replacement).
-
-    Post-Fix: composes thesis from the receipts' own metadata —
-    positive vs negative outcome-class signals, the dominant
-    evidence tiers, and the cross-domain tensions surfaced by the
-    matrix. Topic-name appears only as the subject; everything
-    else derives from the actual corpus."""
+    """Build a topic-generic thesis from receipts and tensions."""
     from collections import Counter
     receipt_ids = tuple(r.receipt_id for r in receipts)
     non_orth = matrix.non_orthogonal()
@@ -2519,9 +2433,7 @@ def build_thesis(
 
 
 def _author_year_for_receipt(r: ReceiptSummary) -> str:
-    """Best-effort Author Year citation for a receipt. Pulls the first
-    surname from paper_id (e.g. 'Walton_2019_MASTERS_...' → 'Walton')
-    and the year. Falls back to receipt_id if structure unrecognized."""
+    """Resolve a best-effort Author Year token."""
     parts = (r.receipt_id or "").split("_")
     if len(parts) >= 2:
         author = parts[0]
@@ -2539,14 +2451,7 @@ def _replace_paper_ids_with_author_year(
     paper_md: str, receipts: list[ReceiptSummary],
     *, registry: dict | None = None,
 ) -> str:
-    """Substitute paper_id strings (and their truncated forms) in the
-    markdown with Author-Year citation. Audit Q3 ship-blocks otherwise.
-
-    Reviewer-fix Fix #6 P1 v2: when `registry` is provided, the
-    Author-Year substitution string comes from the registry's
-    body_citation — SAME source the Tables and References use, so the
-    body prose, tables, and references are guaranteed to use the same
-    citation token for each receipt."""
+    """Replace paper IDs with registry-backed Author Year citations."""
     out = paper_md
 
     def _citation_for(r: ReceiptSummary) -> str:
@@ -2615,24 +2520,7 @@ def _append_references_block(
     paper_md: str, receipts: list[ReceiptSummary],
     *, registry: dict | None = None,
 ) -> str:
-    """Append a deterministic References section at the end of the
-    paper (after Conclusion). Each entry: Author Year. Title. Journal,
-    Year. DOI/PMID. Replaces the writer's References section with one
-    grounded in paper_sections.json metadata.
-
-    Reviewer-fix Fix #6 P1: when `registry` is provided, the per-entry
-    Author-Year token is sourced from the registry's body_citation —
-    SAME source the Tables use, so prose / References / Tables can
-    never drift out of sync.
-
-    Fix #30: also append a "Background References" subsection listing
-    any background_literature entries whose citation_token appears in
-    the paper prose (e.g. 'Owen 2000', 'Anisimov 2008', 'ADA 2024').
-    Pre-fix these citations were used by MiMo but missing from
-    References — a public-review reader would flag that as missing
-    bibliography. Per Fix #16/#18 the registry already validates the
-    citation_token is in the same sentence as the numeric; here we
-    add the canonical reference to the bibliography."""
+    """Append registry-backed receipt and cited background references."""
     lines = ["", "## References", ""]
     for r in receipts:
         if registry is not None and r.receipt_id in registry:
@@ -2743,12 +2631,7 @@ def _ensure_references_section(
 
 
 def _clean_reference_title(title: str) -> str:
-    """Fix #35: collapse soft-broken hyphens in PDF-parsed titles.
-    'Anti- Aging' → 'Anti-Aging'. Pattern: word-char + hyphen + space
-    + word-char (the space is the artefact). Also collapses internal
-    runs of double-spaces to single space and strips leading/trailing
-    whitespace + trailing periods that would duplicate the closing
-    period the renderer adds."""
+    """Collapse soft-broken hyphens in parsed titles."""
     cleaned = re.sub(r"(\w)-\s+(\w)", r"\1-\2", title)
     cleaned = re.sub(r"\s{2,}", " ", cleaned)
     return cleaned.strip().rstrip(".")
@@ -2763,17 +2646,7 @@ _BG_BODY_CUTOFF_RE = re.compile(
 
 
 def _used_background_lit_entries(paper_md: str) -> list:
-    """Fix #30: load the background_literature registry, return the entries
-    whose citation_token appears in the AUTHORED BODY of `paper_md`.
-
-    Restricted to the body (everything before the first deterministic
-    section — Structured Evidence Tables / References / Evidence Snapshot /
-    appendix) so a token that only appears in the bibliography or a metadata
-    appendix — never cited in prose — is NOT listed. This keeps the Fix #16
-    'each entry's citation_token appears at least once in the body' guarantee
-    true: pre-fix a whole-document substring match listed static-pack entries
-    (Tinetti 1988, Tancredi 2015) that the body never cites. Returns an
-    ordered, de-duplicated list (registry insertion order)."""
+    """Return cited background registry entries in stable order."""
     try:
         registry = _bglit.load_registry()
     except (ImportError, FileNotFoundError, ValueError):
@@ -2792,17 +2665,7 @@ def _used_background_lit_entries(paper_md: str) -> list:
 
 
 def _build_call_chain() -> list[CallSpec]:
-    """Bulk paper writer chain — MiniMax M3 is PRIMARY.
-
-    Order: MiniMax M3 → Mistral Small (paid
-    fallback) → Gemma 4 31B (paid fallback). OpenRouter fires only if
-    MiniMax is unreachable; the user's MiniMax plan is primary while
-    OpenRouter is metered.
-
-    All identifiers come from agent/settings.py — never hardcode here.
-    Past drift put a vision model and Gemma 3 27B as primaries,
-    silently bypassing the intended writer entirely.
-    """
+    """Build the configured primary and fallback writer chain."""
     settings = load_settings()
     chain: list[CallSpec] = []
     if settings.minimax_api_key:
@@ -2833,7 +2696,7 @@ async def _run(
     topic: str,
     dry_run: bool = False,
 ) -> int:
-    global _ACTIVE_MANIFEST
+    global _ACTIVE_MANIFEST, QUANT_DIR, PARSED_DIR
     # Slice 21: capture wall-clock start so we can write
     # benchmark_runtime.json with a real duration at pipeline exit.
     _run_start_ts = dt.datetime.now(dt.timezone.utc)
@@ -2845,6 +2708,38 @@ async def _run(
     # Workstream A: lock the corpus dirs to the requested topic
     # before any downstream code reads them.
     _set_topic(topic)
+    raw_source = os.getenv("RESEARCH_AGENT_REVISION_SOURCE_RUN", "").strip()
+    requested_source = Path(raw_source).resolve() if raw_source else None
+    evidence_lock = load_revision_evidence(
+        requested_source, quant_dir=QUANT_DIR, parsed_dir=PARSED_DIR,
+        expected_topic=topic,
+    )
+    if evidence_lock.mode == "snapshot":
+        QUANT_DIR, PARSED_DIR = evidence_lock.quant_dir, evidence_lock.parsed_dir
+        _audit_v06.QUANT_DIR, _audit_v06.PARSED_DIR = QUANT_DIR, PARSED_DIR
+    source_run = evidence_lock.source_run
+    revision_receipt_ids = evidence_lock.receipt_ids
+    continuity: dict[str, Any] = {
+        "source_run": source_run.name if source_run else None,
+        "mode": evidence_lock.mode,
+        "requested_receipts": len(revision_receipt_ids),
+        "errors": list(evidence_lock.errors),
+        "missing_quant_claims": [],
+        "missing_parsed_metadata": [],
+        "missing_admitted_receipts": [],
+        "contract_mismatches": [],
+        "missing_citation_entries": [],
+        "snapshot_receipt_drift": [],
+        "citation_entries_restored": 0,
+        "passed": not bool(source_run),
+    }
+    if source_run is not None and (evidence_lock.errors or not revision_receipt_ids):
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / "revision_evidence_continuity.json").write_text(
+            json.dumps(continuity, indent=2),
+        )
+        print("Revision evidence lock failed: invalid source snapshot.", file=sys.stderr)
+        return 5
     if not QUANT_DIR.exists():
         print(
             f"corpus directory does not exist for topic={topic!r}: "
@@ -2853,13 +2748,38 @@ async def _run(
             f"with at least one *.quant_claims.json.",
             file=sys.stderr,
         )
-        return 4
+        return 5 if source_run else 4
+    if source_run is not None:
+        available = {
+            path.stem.removesuffix(".quant_claims")
+            for path in QUANT_DIR.glob("*.quant_claims.json")
+        }
+        missing = sorted(revision_receipt_ids - available)
+        missing_parsed = sorted(
+            receipt_id for receipt_id in revision_receipt_ids
+            if not (PARSED_DIR / f"{receipt_id}.paper_sections.json").is_file()
+        )
+        continuity["missing_quant_claims"] = missing
+        continuity["missing_parsed_metadata"] = missing_parsed
+        out_dir.mkdir(parents=True, exist_ok=True)
+        if missing or missing_parsed:
+            (out_dir / "revision_evidence_continuity.json").write_text(
+                json.dumps(continuity, indent=2),
+            )
+            print(
+                "Revision evidence lock failed: source manifest is empty or "
+                f"{len(missing)} quant / {len(missing_parsed)} parsed file(s) are missing.",
+                file=sys.stderr,
+            )
+            return 5
 
     print(
         f"Loading v0.6.0 quant_claims (topic={topic!r})...",
         file=sys.stderr,
     )
-    receipt_funnel = build_receipt_funnel_report(topic)
+    receipt_funnel = build_receipt_funnel_report(
+        topic, receipt_ids=revision_receipt_ids,
+    )
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "receipt_funnel.json").write_text(
         json.dumps(receipt_funnel, indent=2),
@@ -2867,7 +2787,35 @@ async def _run(
     (out_dir / "receipt_funnel.md").write_text(
         render_receipt_funnel_markdown(receipt_funnel),
     )
-    receipts = build_receipts_from_quant_claims(topic=topic)
+    receipts = build_receipts_from_quant_claims(
+        topic=topic,
+        receipt_ids=revision_receipt_ids,
+        receipt_contracts=evidence_lock.receipt_rows,
+    )
+    if revision_receipt_ids:
+        missing = sorted(revision_receipt_ids - {r.receipt_id for r in receipts})
+        continuity["missing_admitted_receipts"] = missing
+        if missing:
+            (out_dir / "revision_evidence_continuity.json").write_text(
+                json.dumps(continuity, indent=2),
+            )
+            print(
+                f"Revision evidence lock failed: {len(missing)} source receipt(s) "
+                "were not admitted.",
+                file=sys.stderr,
+            )
+            return 5
+        mismatches = receipt_contract_mismatches(receipts, evidence_lock.receipt_rows)
+        continuity["contract_mismatches"] = mismatches
+        if mismatches:
+            (out_dir / "revision_evidence_continuity.json").write_text(
+                json.dumps(continuity, indent=2),
+            )
+            print(
+                f"Revision evidence lock failed: {len(mismatches)} receipt contract mismatch(es).",
+                file=sys.stderr,
+            )
+            return 5
     receipt_funnel = reconcile_receipt_funnel_report(receipt_funnel, receipts)
     (out_dir / "receipt_funnel.json").write_text(json.dumps(receipt_funnel, indent=2))
     (out_dir / "receipt_funnel.md").write_text(render_receipt_funnel_markdown(receipt_funnel))
@@ -2910,18 +2858,6 @@ async def _run(
             file=sys.stderr,
         )
 
-    if dry_run:
-        return 0
-
-    chain = _build_call_chain()
-    if not chain:
-        print("No LLM keys configured.", file=sys.stderr)
-        return 3
-
-    out_dir.mkdir(parents=True, exist_ok=True)
-    submission_id = out_dir.name
-    ledger = CostLedger()
-
     # Fix #3: build the citation registry BEFORE the writer runs and
     # transform receipts AND matrix so the writer never sees raw
     # internal handles. PMCID body leaks become structurally
@@ -2935,16 +2871,95 @@ async def _run(
     citation_registry = _citations.build_registry(
         receipts, paper_meta_by_id=_load_paper_meta_by_id(),
     )
+    restored, missing_citations = _restore_revision_citations(
+        citation_registry, evidence_lock.citation_registry, revision_receipt_ids,
+    )
+    continuity["citation_entries_restored"] = restored
+    continuity["missing_citation_entries"] = missing_citations
+    if missing_citations:
+        (out_dir / "revision_evidence_continuity.json").write_text(
+            json.dumps(continuity, indent=2),
+        )
+        print(
+            f"Revision evidence lock failed: {len(missing_citations)} source "
+            "citation entrie(s) were not restored.",
+            file=sys.stderr,
+        )
+        return 5
+    citation_registry_path = out_dir / "citation_registry.json"
+    citation_registry_path.write_text(json.dumps({
+        rid: dataclasses.asdict(entry)
+        for rid, entry in citation_registry.items()
+    }, indent=2))
+    snapshot = create_revision_evidence_snapshot(
+        out_dir, quant_dir=QUANT_DIR, parsed_dir=PARSED_DIR,
+        citation_registry=citation_registry_path,
+        receipt_ids=(r.receipt_id for r in receipts),
+        receipt_contracts=(dataclasses.asdict(r) for r in receipts),
+        topic=topic,
+    )
+    continuity["snapshot_passed"] = snapshot["passed"]
+    if not snapshot["passed"]:
+        continuity["snapshot_missing_files"] = snapshot["missing_files"]
+        (out_dir / "revision_evidence_continuity.json").write_text(
+            json.dumps(continuity, indent=2),
+        )
+        print("Revision evidence snapshot failed: source files are incomplete.", file=sys.stderr)
+        return 5
+    snapshot_root = out_dir / SNAPSHOT_DIR
+    QUANT_DIR, PARSED_DIR = snapshot_root / "quant_claims", snapshot_root / "parsed"
+    _audit_v06.QUANT_DIR, _audit_v06.PARSED_DIR = QUANT_DIR, PARSED_DIR
+    snapshot_receipts = build_receipts_from_quant_claims(
+        topic=topic,
+        receipt_ids=frozenset(r.receipt_id for r in receipts),
+        receipt_contracts={r.receipt_id: dataclasses.asdict(r) for r in receipts},
+    )
+    original = {
+        r.receipt_id: {
+            key: value for key, value in dataclasses.asdict(r).items()
+            if key != "receipt_path"
+        }
+        for r in receipts
+    }
+    rebuilt = {
+        r.receipt_id: {
+            key: value for key, value in dataclasses.asdict(r).items()
+            if key != "receipt_path"
+        }
+        for r in snapshot_receipts
+    }
+    drift = sorted(receipt_id for receipt_id in original.keys() | rebuilt.keys()
+                   if original.get(receipt_id) != rebuilt.get(receipt_id))
+    continuity["snapshot_receipt_drift"] = drift
+    if drift:
+        (out_dir / "revision_evidence_continuity.json").write_text(
+            json.dumps(continuity, indent=2),
+        )
+        print("Revision evidence snapshot failed: copied evidence drifted.", file=sys.stderr)
+        return 5
+    receipts = snapshot_receipts
+    if revision_receipt_ids:
+        continuity["passed"] = True
+        (out_dir / "revision_evidence_continuity.json").write_text(
+            json.dumps(continuity, indent=2),
+        )
+    if dry_run:
+        return 0
+
+    chain = _build_call_chain()
+    if not chain:
+        print("No LLM keys configured.", file=sys.stderr)
+        return 3
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    submission_id = out_dir.name
+    ledger = CostLedger()
     writer_receipts = _citations.transform_receipts_for_writer(
         receipts, citation_registry,
     )
     writer_matrix = _citations.transform_matrix_for_writer(
         matrix, citation_registry,
     )
-    (out_dir / "citation_registry.json").write_text(json.dumps({
-        rid: dataclasses.asdict(entry)
-        for rid, entry in citation_registry.items()
-    }, indent=2))
     manifest_receipts = [
         _manifest_receipt_dict(r, citation_registry) for r in receipts
     ]
@@ -3181,6 +3196,10 @@ async def _run(
         "quality_methods_path": "quality_methods.json",
         "meta_analysis_path": "meta_analysis_results.json",
         "tension_elaboration_path": "tension_elaboration_plans.json",
+        "revision_evidence_snapshot": {
+            "required": True,
+            "manifest": "revision_evidence_snapshot/manifest.json",
+        },
         "quality_methods": quality_artifact["summary"],
         "meta_analysis": {
             "pools": len(meta_artifact.get("pools", ())),
@@ -3379,11 +3398,7 @@ async def _run_post_paper_pipeline(
     quality_bundle: Any | None = None,
     run_start_ts: dt.datetime | None = None,
 ) -> str:
-    """Layer 1 deterministic audit + auto-fix → final-layer LLM review
-    (primary → fallback) → auto-apply patches → final audit.
-
-    Each step's artifact is written to disk so a human can retroactively
-    review what changed and why. Returns the final paper text."""
+    """Run deterministic audit, repair, and final-layer review."""
     paper_md = paper_path.read_text()
     review_type = manifest.get("review_type")
 
@@ -4184,18 +4199,7 @@ async def _agent_repair_loop(
     manifest: dict,
     paper_path: Path | None = None,
 ) -> tuple[str, list[Any]]:
-    """Fix #49: agent-to-agent repair loop.
-
-    For each `decision == 'flagged'` result, re-prompt final-layer reviewer with the
-    rejection reason and ask for a safer alternative. The new
-    proposal goes through the same smart-gate as any other patch.
-    Up to _MAX_REPAIR_ROUNDS rounds. After all rounds, any still-
-    flagged P1 patch is auto-stripped (the offending sentence is
-    deleted) — pipeline never resigns to 'human review'.
-
-    Returns updated (paper_md, results). Successful repair patches
-    are tagged decision='applied_via_repair'; auto-strips are
-    tagged decision='auto_stripped'."""
+    """Apply bounded reviewer repairs, then strip unresolved unique P1 targets."""
     if not results:
         return paper_md, results
     flagged_p1 = [
@@ -4307,14 +4311,7 @@ async def _agent_repair_loop(
 
 
 def _resolve_absent_flagged_patches(results: list[Any], paper_md: str) -> list[Any]:
-    """Resolve reviewer P1s whose target disappeared in final cleanup.
-
-    Final cleanup can replace Methods, restore typed sections, or
-    strip unsafe numeric prose after final-layer reviewer proposed a P1 patch. If the
-    unapplied BEFORE region is no longer present in the manuscript, the
-    public paper no longer carries that issue, so the patch should not
-    count as unresolved.
-    """
+    """Mark reviewer P1 targets removed by finalization as applied."""
     out: list[Any] = []
     for r in results:
         if (
@@ -4484,22 +4481,7 @@ def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:
 def _build_claims_by_citation(
     receipts: list, registry: dict,
 ) -> dict[str, list[dict]]:
-    """Build {body_citation: [claim_dicts]} from the original receipt
-    list (pre-transform — receipt_ids are still raw paper-IDs that
-    map directly to docs/quality-reference/<topic>/quant_claims/
-    <receipt_id>.quant_claims.json).
-
-    Used by Table 5 (Per-Paper Numeric Index) to surface the corpus's
-    underlying quantitative claims. The map keys are body_citation
-    strings (e.g. 'Walton 2019') so Table 5 can look up a writer-side
-    receipt's claims using its already-transformed receipt_id.
-
-    Only high-confidence claims are surfaced — Q2 numeric integrity
-    trace uses the same high-confidence filter (see
-    audit_v06_paper._load_corpus_numerics), so a Table 5 numeric
-    that's NOT high-confidence would render to a paper cell that
-    Q2 then fails to trace. Pre-filter so Table 5 cells = Q2
-    corpus numerics by construction."""
+    """Map body citations to their high-confidence source claims."""
     out: dict[str, list[dict]] = {}
     for r in receipts:
         raw_id = getattr(r, "receipt_id", "")
@@ -4526,13 +4508,7 @@ def _build_claims_by_citation(
 
 
 def _maybe_run_no_regression_gate(new_run_dir: Path) -> None:
-    """Stage 6 (Fix #23): if docs/no_regression_baseline.txt names a
-    baseline run dir, compare the new run's quality dimensions
-    against it. Skip silently when no baseline configured.
-
-    Marker file is checked-in (under docs/) so the baseline name
-    travels with the repo across MacBook + GitHub + VPS — every
-    machine evaluates against the same anchor."""
+    """Compare a run with its configured same-topic baseline."""
     baseline_marker = (
         Path(__file__).resolve().parent.parent
         / "docs" / "no_regression_baseline.txt"
@@ -4597,10 +4573,7 @@ def _build_run_mode_contract(
     *, settings: Any, topic: str, submission_id: str,
     n_papers: int, n_claims: int,
 ) -> _run_mode.RunModeContract:
-    """Construct the contract from settings + run facts. The v0.6
-    quant-claim adapter never runs SPAR, never uses LLM fact
-    extraction, never builds multi-receipt clusters — those flags
-    are False because that's the literal pipeline behaviour."""
+    """Build the literal run-mode contract."""
     return _run_mode.RunModeContract(
         run_mode="v0.6 quant-claim adapter",
         topic=topic,
@@ -4646,13 +4619,7 @@ def _receipt_field(receipt: Any, field: str, default: Any = "") -> Any:
 
 
 def _evidence_certification_profile(manifest: dict[str, Any] | None) -> dict[str, float]:
-    """Tier-weighted evidence profile for CLIN/INF/MECH certification.
-
-    This does not weaken any safety gate. It only replaces the old
-    binary "direct clinical receipts or nothing" substance floor with
-    a calibrated evidence pyramid when the manifest carries receipt
-    tiers/directness.
-    """
+    """Return tier-weighted evidence certification totals."""
     profile = {
         "total": 0.0,
         "clinical": 0.0,
@@ -4691,13 +4658,7 @@ def _select_certification_track(
     min_claims: int,
     cert_floors: dict[str, Any],
 ) -> tuple[str, bool]:
-    """Return (track, floor_clean) from the evidence pyramid.
-
-    CLIN preserves the legacy direct-clinical floor. INF/MECH are
-    confidence-calibrated alternatives for fields where strong animal,
-    mechanism, adjacent-clinical, or sub-scale evidence is publishable
-    as inference, not direct clinical recommendation.
-    """
+    """Select the evidence-pyramid certification track and floor verdict."""
     if flat_floor_clean:
         if profile["mechanistic"] > profile["clinical"] and profile["direct"] < 1.0:
             return "AAA-MECH", True
@@ -4740,23 +4701,7 @@ def _d1_bridge_claim_count(stage1_report: dict[str, Any]) -> int:
 
 @dataclass(frozen=True, slots=True)
 class UnifiedVerdict:
-    """Worst-of(stage1, stage2, grok-unresolved). Cross-stage object →
-    frozen+slots per project rule. Serialized via dataclasses.asdict()
-    to JSON. Fix #31: tracks final-reviewer-unresolved P1 patches separately —
-    even when stage1 + stage2 are clean, an unresolved final-layer reviewer P1
-    flag downgrades the verdict to 'Trust-Spine Pass — Human Review
-    Required' rather than AAA (the harness can't autonomously verify
-    final-layer reviewer's flag was wrong).
-
-    Wave 7 (2026-05-05): adds corpus_gaps + expansion_targets so a
-    sub-AAA verdict carries the actionable to-do list for the next
-    run instead of being a dead-end signal. Empty tuples when corpus
-    meets all gates.
-
-    Slice 3 (Wave 7 cont.): adds maturity_level (L0-L5) and
-    journal_ready bool so dashboards / readers see the topic's
-    position on the certification ladder. L5 == Journal-Ready
-    (AAA + zero unresolved final-layer reviewer + zero auto-strip surgery)."""
+    """Cross-stage worst-case publication verdict."""
     verdict: str
     reason: str
     stage1_p1_pass: bool
@@ -4797,21 +4742,7 @@ def _compute_unified_verdict(
     journal_surface_pass: bool = True,
     journal_surface_issues: tuple[str, ...] = (),
 ) -> UnifiedVerdict:
-    """Worst-of(stage1, stage2, grok-unresolved). AAA reserved for
-    fully-green (P1+P2 + zero unresolved final-layer reviewer P1). SHIP-BLOCKED if
-    either deterministic stage flags a P1+ severity. Trust-Spine
-    Pass otherwise — and 'Trust-Spine Pass — Human Review Required'
-    when only final-reviewer-unresolved P1 prevents AAA.
-
-    Defensive on inputs: missing stage1 keys → treated as failure
-    (fail-closed). Empty stage1.checks → cannot return AAA (AAA
-    requires evidence, not vacuous success).
-
-    Fix #31: `grok_unresolved_p1` is the count of final-reviewer-flagged P1
-    patches that the auto-applier rejected (couldn't be safely
-    applied). The harness can't autonomously verify final-layer reviewer's flag was
-    wrong, so an unresolved P1 must surface as 'human review' even
-    when both deterministic stages are green."""
+    """Compute the cross-stage worst-case publication verdict."""
     stage1_report = stage1_report or {}
     s1_p1_pass = bool(stage1_report.get("p1_pass", False))
     s1_score = float(stage1_report.get("score_out_of_10", 0.0))

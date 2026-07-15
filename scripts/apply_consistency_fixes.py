@@ -1382,6 +1382,10 @@ def _normalize_public_p_values(paper_md: str) -> tuple[str, int]:
         value = match.group(2)
         if value.startswith("."):
             value = f"0{value}"
+        if op in {"<", "="} and re.fullmatch(r"0\.0+", value):
+            decimals = len(value.partition(".")[2])
+            op = "<"
+            value = f"0.{('0' * (decimals - 1))}1"
         return f"P {op} {value}"
 
     return _PVALUE_DISPLAY_RE.subn(repl, paper_md)

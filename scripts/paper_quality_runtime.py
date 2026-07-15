@@ -35,21 +35,6 @@ from agent.template_gate_adapter import evaluate_template_gate
 from agent.tension_elaboration import TensionRecord, select_top_tensions
 
 
-def insert_before_heading(markdown: str, heading: str, section: str) -> str:
-    if not section.strip() or section.splitlines()[0] in markdown:
-        return markdown
-    match = re.search(rf"^{re.escape(heading)}\b", markdown, re.MULTILINE)
-    if not match:
-        return markdown.rstrip() + "\n\n" + section.strip() + "\n"
-    return (
-        markdown[:match.start()].rstrip()
-        + "\n\n"
-        + section.strip()
-        + "\n\n"
-        + markdown[match.start():].lstrip()
-    )
-
-
 def _parsed_text(parsed_dir: Path, paper_id: str) -> str:
     matches = list(parsed_dir.glob(f"{paper_id}.paper_sections.json"))
     if not matches:

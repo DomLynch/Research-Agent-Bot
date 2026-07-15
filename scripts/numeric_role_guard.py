@@ -41,9 +41,6 @@ _CHANGE_WORDS = (
     "decline", "reverse", "shift", "increment",
 )
 # Words that signal an "absolute level" framing — absolute_value role
-_ABSOLUTE_WORDS = (
-    "level of", "absolute", "baseline value", "raw value",
-)
 # Threshold/cutoff words — these define a comparison reference
 _THRESHOLD_WORDS = (
     "threshold", "cutoff", "cut-off", "boundary",
@@ -450,9 +447,6 @@ _PAREN_NUMERIC_RE = re.compile(r"\([^)]*\d+(?:\.\d+)?\s*%?[^)]*\)")
 # Tolerance for numeric equality — "0.13" vs "0.130" or "5" vs "5.0"
 # count as the same number. Tighter than ±5% to keep this a fidelity
 # check, not a fuzzy match.
-_NUMERIC_EPSILON = 1e-6
-
-
 def _build_citation_role_index(
     *, manifest: dict | None,
     bg_lit_registry: dict | None,
@@ -518,21 +512,6 @@ def _build_citation_role_index(
                 for variant in _numeric_variants(vstr):
                     slot.setdefault(variant, set()).add(role)
     return out
-
-
-def _build_citation_allowed_numerics(
-    *, manifest: dict | None,
-    bg_lit_registry: dict | None,
-    quant_claims_dir,
-) -> dict[str, set[str]]:
-    """Slice 7 step 1 back-compat alias. Returns the value-set view
-    of the role index (collapses roles, keeps just the numerics)
-    so the existing membership-only fallback path keeps working."""
-    role_index = _build_citation_role_index(
-        manifest=manifest, bg_lit_registry=bg_lit_registry,
-        quant_claims_dir=quant_claims_dir,
-    )
-    return {tok: set(slot.keys()) for tok, slot in role_index.items()}
 
 
 def _manifest_structural_numerics(manifest: dict | None) -> set[str]:

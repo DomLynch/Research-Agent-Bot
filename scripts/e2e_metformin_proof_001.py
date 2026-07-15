@@ -1,55 +1,13 @@
 #!/usr/bin/env python3
-"""Proof 001 — first end-to-end metformin run.
-
-Drives the full Day 4-5 trust-spine pipeline against a real (or replayed)
-metformin corpus and emits the 8 mandatory receipts to
-`runs/metformin-001-<UTC>-<rand>/`. This is the live counterpart to
-`tests/test_e2e_proof_001_fixture.py`, which proves the same pipeline
-works under pure fixture replay.
-
-Modes:
-  --live              Hit real PubMed / OpenAlex / EuropePMC /
-                      ClinicalTrials.gov adapters. Default replays the
-                      captured fixture corpus from
-                      `tests/fixtures/metformin/`.
-  --max-items N       Cap items sent to the LLM (cost containment).
-                      Default: no cap. **Canonical trials (per the
-                      topic_pack) are PINNED to the top of the
-                      selection so MASTERS / TAME / etc. are never
-                      dropped by the cap.**
-  --output-dir PATH   Override the timestamped output directory. Used
-                      to retry a partial run after a crash; the
-                      orchestrator's force_overwrite flag is honored.
-
-LLM chains:
-  Fact extraction:  MiniMax M3 → Mistral Small (fallback)
-  SPAR judges:      Gemma 4 31B → MiniMax M3 → Mistral Small
-
-Trace clients: fixture by default; pass `TRACE_BACKEND=http` env var to
-hit live CT.gov / ChEMBL / Europe PMC.
-
-Cost: ~$0.005-0.01 per full run (1 fact-extract per item + 3 SPAR
-judges). Use `--max-items` to cap items if running on many.
-
-Exit codes:
-  0    accept_clean / accept_caveated
-  1    reject_majority / reject_critical (full audit still produced)
-  2    config error (missing keys, bad args, fixture load failure)
-  3    pipeline runtime error (orchestrator raised mid-run)
-
-Usage:
-    .venv/bin/python -m scripts.e2e_metformin_proof_001
-    .venv/bin/python -m scripts.e2e_metformin_proof_001 --live
-    .venv/bin/python -m scripts.e2e_metformin_proof_001 --max-items 5
-"""
+"""End-to-end fixture/live proof runner for configured research topics."""
 from __future__ import annotations
 
 import argparse
 import asyncio
 import json
 import os
-import secrets
 import sys
+import tempfile
 import time
 from collections import Counter
 from datetime import datetime, timezone
@@ -158,15 +116,7 @@ async def _retrieve_live(
     *,
     pack: TopicPack | None = None,
 ) -> tuple[list[Source], dict[int, str], dict[int, dict]]:
-    """Fan out to live PubMed / OpenAlex / EuropePMC / CT.gov.
-
-    Day 9.3: when `pack` is provided, also issue one focused query per
-    canonical_trials NCT id (e.g. `metformin NCT02308228`). This closes
-    the live-retrieval gap that left only 1 of 4 metformin canonicals
-    in the broad-query corpus — without this, --live runs are gated on
-    whether the broad query happens to surface the trial that drives
-    the topic's strongest evidence cluster.
-    """
+    """Retrieve broadly plus one focused query per canonical trial."""
     sources_clients: list[SourceClient] = [
         PubMedClient(),
         OpenAlexClient(),
@@ -190,10 +140,7 @@ async def _retrieve_live(
 
 
 class _CapTooSmallError(ValueError):
-    """Raised when `--max-items` is less than the number of canonical
-    trials in the topic pack. The pin-canonical-then-slice approach
-    cannot honor "canonical never dropped" if the cap itself is below
-    the canonical set's size — better to fail loud than silently drop."""
+    """The item cap cannot retain every canonical trial."""
 
 
 def _ranked_for_extraction(
@@ -202,17 +149,7 @@ def _ranked_for_extraction(
     *,
     pack: TopicPack,
 ) -> list[EvidenceItem]:
-    """Cap the corpus by canonical-pin → role → tier → ref priority.
-
-    Day 5.3-fix P1: canonical_trials from the topic_pack are PINNED to
-    the head so they're never dropped by `--max-items`.
-
-    Day 5.3-fix-2 P1: pinning isn't sufficient if `max_items <
-    len(canonical_trials)` — the slice would still drop some canonical
-    items. Now: raise `_CapTooSmallError` so the operator sees the
-    contradiction with the "never dropped" promise. The metformin pack
-    has 4 canonical trials; `--max-items 4` is the floor.
-    """
+    """Cap by canonical pin, role, tier, then source reference."""
     if max_items is None:
         return items
 
@@ -253,11 +190,7 @@ def _ranked_for_extraction(
 
 
 def _format_path(path: Path) -> str:
-    """Render a path for logging: relative to the repo if it's under
-    REPO_ROOT, otherwise absolute. The unconditional `relative_to`
-    in the previous version raised ValueError for any path outside
-    the repo (e.g., `--output-dir /tmp/run-001`), crashing before the
-    pipeline even started."""
+    """Render repo paths relatively and external paths absolutely."""
     try:
         return str(path.relative_to(REPO_ROOT))
     except ValueError:
@@ -285,15 +218,7 @@ _VERDICT_RANK: dict[str, int] = {
 
 
 def _attempt_sort_key(md: dict) -> tuple[int, int, int, int, str]:
-    """Rank an attempt's run_metadata.json. Lower tuple = better.
-
-    Order:
-      1. SPAR verdict (accept_clean > accept_caveated > rejects)
-      2. gate_override (False beats True — code-disposed reject is worse)
-      3. Failed traces count (fewer is better)
-      4. -n_claims (richer artifact wins)
-      5. submission_id (deterministic tiebreak)
-    """
+    """Rank attempts by verdict, gate status, trace failures, and depth."""
     return (
         _VERDICT_RANK.get(md.get("spar_verdict", ""), 9),
         1 if md.get("gate_override") else 0,
@@ -306,19 +231,12 @@ def _attempt_sort_key(md: dict) -> tuple[int, int, int, int, str]:
 def _resolve_output_dir(
     override: str | None, *, topic: str, proof: str,
 ) -> Path:
-    """Compute the output_dir for this run.
-
-    With no override, use `runs/<topic>-<proof>-<UTC>-<rand>` — the random
-    suffix eliminates same-second collisions when two invocations land
-    in the same UTC second (CI matrix, Up+Enter retries, etc.). The
-    operator can pass `--output-dir` to point at a stranded directory
-    for re-run after a partial-write crash.
-    """
+    """Resolve an override or create a collision-resistant run path."""
     if override is not None:
         return Path(override).expanduser().resolve()
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%SZ")
-    suffix = secrets.token_hex(2)
-    return RUNS_DIR / f"{topic}-{proof}-{ts}-{suffix}"
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    return Path(tempfile.mkdtemp(prefix=f"{topic}-{proof}-{ts}-", dir=RUNS_DIR))
 
 
 async def _run(args: argparse.Namespace) -> int:
@@ -350,39 +268,25 @@ async def _run(args: argparse.Namespace) -> int:
     print(f"Proof {proof} — end-to-end {args.topic} run")
     print("=" * 70)
 
-    settings = load_settings()
-    extract_chain = build_extract_chain(settings)
-    judge_chain = build_judge_chain(settings)
-
-    # Validate keys BEFORE the expensive retrieve+bundle phase.
-    if not any(spec.api_key for spec in extract_chain):
-        print(
-            "ERROR: no API keys for fact extraction. Set MINIMAX_API_KEY "
-            "(MiniMax primary) or OPENROUTER_API_KEY (Mistral fallback).",
-            file=sys.stderr,
-        )
-        return 2
-    if not settings.openrouter_api_key and not settings.minimax_api_key:
-        print(
-            "ERROR: no API keys for SPAR judges. Set OPENROUTER_API_KEY "
-            "(for Gemma judge + Mistral fallback) AND/OR MINIMAX_API_KEY.",
-            file=sys.stderr,
-        )
-        return 2
-    if not settings.openrouter_api_key:
-        print(
-            "WARN: OPENROUTER_API_KEY not set — Gemma judge AND Mistral "
-            "fallback will be skipped; only MiniMax will fire in the SPAR "
-            "chain. Set OPENROUTER_API_KEY for the full chain.",
-            file=sys.stderr,
-        )
-
     pack = load_topic_pack(topic_pack_path)
     print(f"Topic pack: {pack.topic} ({len(pack.aliases)} aliases, "
           f"{len(pack.canonical_trials)} canonical trials)")
     print(f"Mode: {'LIVE retrieve' if args.live else 'fixture replay'}")
     print(f"Trace backend: {os.environ.get('TRACE_BACKEND', 'fixture')}")
     print()
+
+    if not args.retrieve_only:
+        settings = load_settings()
+        extract_chain = build_extract_chain(settings)
+        judge_chain = build_judge_chain(settings)
+        if not any(spec.api_key for spec in extract_chain):
+            print("ERROR: no API keys for fact extraction.", file=sys.stderr)
+            return 2
+        if not settings.openrouter_api_key and not settings.minimax_api_key:
+            print("ERROR: no API keys for SPAR judges.", file=sys.stderr)
+            return 2
+        if not settings.openrouter_api_key:
+            print("WARN: only MiniMax will run in the SPAR chain.", file=sys.stderr)
 
     # Stage 1: corpus
     t0 = time.perf_counter()
@@ -409,14 +313,57 @@ async def _run(args: argparse.Namespace) -> int:
         print(f"  {adapter:18} {n}")
 
     # Stage 2: bundle
+    t1 = time.perf_counter()
     items = bundle(
         sources, abstracts,
         topic=args.topic, domain=domain,
         raw_signals=raw_signals,
         topic_pack=pack,
     )
+    t_bundle = time.perf_counter() - t1
     role_counts = Counter(it.role for it in items)
     print(f"Bundle: {len(items)} items {dict(sorted(role_counts.items()))}")
+    if args.retrieve_only:
+        canonical_hits = []
+        for trial in pack.canonical_trials:
+            match = next((item for item in items if trial.id.upper() in registry_ids_for(item)), None)
+            if match is not None:
+                canonical_hits.append({
+                    "id": trial.id, "name": trial.name,
+                    "role": match.role, "tier": match.tier,
+                })
+        baseline_dir = RUNS_DIR / "e2e-baselines"
+        baseline_dir.mkdir(parents=True, exist_ok=True)
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        payload = {
+            "topic": args.topic,
+            "domain": domain,
+            "criteria": criteria,
+            "captured_at_utc": stamp,
+            "n_sources": len(sources),
+            "by_adapter": dict(by_adapter),
+            "role_distribution": dict(role_counts),
+            "tier_distribution": dict(Counter(it.tier for it in items)),
+            "direct_count": sum(it.direct for it in items),
+            "strict_count": sum(it.strict for it in items),
+            "perf_sec": {"retrieve": t_retrieve, "bundle": t_bundle},
+            "canonical_hits": canonical_hits,
+            "sources": [dataclasses.asdict(source) for source in sources],
+        }
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", delete=False, dir=baseline_dir,
+            prefix=f"{args.topic}-{stamp}-", suffix=".json",
+        ) as handle:
+            json.dump(payload, handle, indent=2, default=str)
+            baseline_path = Path(handle.name)
+        print(f"Baseline: {_format_path(baseline_path)}")
+        if len(sources) < args.min_sources:
+            print(
+                f"ERROR: retrieved {len(sources)} sources; floor is {args.min_sources}.",
+                file=sys.stderr,
+            )
+            return 1
+        return 0
 
     # Cost containment with canonical-trial pinning (5.3-fix P1)
     try:
@@ -677,10 +624,7 @@ async def _run_multi_receipt(
 
 
 def _discover_receipt_dirs(root: Path) -> list[Path]:
-    """Find every subdirectory of `root` that looks like a saved
-    claim receipt — i.e. contains all 8 receipt JSON files.
-
-    Skips e2e-baselines and other non-receipt directories silently."""
+    """Find child directories containing the required receipt files."""
     if not root.exists() or not root.is_dir():
         return []
     found: list[Path] = []
@@ -694,15 +638,7 @@ def _discover_receipt_dirs(root: Path) -> list[Path]:
 
 
 async def _run_synthesize(args: argparse.Namespace) -> int:
-    """Day 10 synthesis layer: aggregate N claim receipts under a
-    directory into a single paper_synthesis.md + audit JSON.
-
-    Returns exit codes:
-      0 — synthesis paper rendered + audit ≥ DAY10_SCORE_FLOOR + load-bearing pass
-      1 — synthesis rendered but failed quality gate (paper still on disk)
-      2 — config error (no receipts found, missing keys, etc.)
-      3 — pipeline runtime crash
-    """
+    """Aggregate claim receipts into an audited synthesis paper."""
     print("=" * 70)
     print("Day 10 — Synthesis paper engine")
     print("=" * 70)
@@ -1032,6 +968,14 @@ def main() -> int:
              "(default: replay captured fixtures).",
     )
     parser.add_argument(
+        "--retrieve-only", action="store_true",
+        help="Run the live adapter+bundle smoke without LLM credentials.",
+    )
+    parser.add_argument(
+        "--min-sources", type=int, default=12,
+        help="Minimum deduplicated sources required by --retrieve-only.",
+    )
+    parser.add_argument(
         "--max-items", type=int, default=None,
         help="Cap items sent to the LLM extractor (cost containment). "
              "Canonical trials from the topic_pack are pinned to the "
@@ -1099,6 +1043,9 @@ def main() -> int:
              "--best-of are ignored.",
     )
     args = parser.parse_args()
+    if args.retrieve_only and not args.live:
+        print("ERROR: --retrieve-only requires --live.", file=sys.stderr)
+        return 2
     if args.canonical_corpus and args.live:
         print(
             "ERROR: --canonical-corpus and --live are mutually exclusive. "

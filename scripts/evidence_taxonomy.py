@@ -30,7 +30,6 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from enum import Enum
 from typing import Iterable
 
 
@@ -42,15 +41,6 @@ class EvidenceClassification:
     tier: str           # A1 | A2 | B1 | B2 | C1 | C2 | unknown
     directness: str     # direct | indirect | mechanistic | review | unknown
     rationale: str      # one-sentence why-this-tier (audit trail)
-
-
-class DirectnessSemantics(str, Enum):
-    HARD_ENDPOINT_RCT = "hard_endpoint_RCT"
-    HUMAN_INTERVENTIONAL_SURROGATE = "human_interventional_surrogate"
-    HUMAN_OBSERVATIONAL = "human_observational"
-    REVIEW_LEVEL = "review_level"
-    PRECLINICAL_MECHANISTIC = "preclinical_mechanistic"
-    UNKNOWN = "unknown"
 
 
 def public_directness_phrase(tiers: Iterable[str], directnesses: Iterable[str]) -> str:

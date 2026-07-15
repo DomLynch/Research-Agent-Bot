@@ -1698,13 +1698,6 @@ _ANAPHOR_RE = re.compile(
     r"\b",
     re.IGNORECASE,
 )
-_THRESHOLD_RE = re.compile(
-    r"\b(?:below|above|under|over)\s+(?:the\s+)?\d+\.?\d*\s*"
-    r"(?:m/s|kg|cm|mmol/l|mg/dl|%|years?|points?)?\s*"
-    r"(?:threshold|cutoff|cut-off|cut\s+off|limit|level|"
-    r"frailty\s+threshold|frailty)?",
-    re.IGNORECASE,
-)
 # Looser threshold pattern that catches "below the threshold" phrasing
 # even when the number doesn't immediately follow "below".
 _THRESHOLD_KEYWORD_RE = re.compile(
