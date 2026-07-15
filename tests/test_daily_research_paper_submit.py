@@ -934,6 +934,13 @@ def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, mo
     assert payload["source_bundle"][0]["cited_as"] == "Smith 2026"
 
 
+def test_source_bundle_does_not_promote_citation_token_to_source_title(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+
+    assert payload["source_bundle"][0]["title"] == "Evidence receipt"
+    assert payload["source_bundle"][0]["cited_as"] == "Smith 1 2026"
+
+
 def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["source_bundle"][0].pop("outcome_class")
@@ -941,6 +948,64 @@ def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(
     payload["source_bundle"][1].pop("year")
 
     assert daily._researka_preflight_status(payload) == "source_bundle_unmapped_sources:outcome=1,citation=1"
+
+
+def test_researka_preflight_accepts_named_source_without_publication_date(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["source_bundle"][0].update({
+        "cited_as": "TRIal of STatin Therapy n.d.",
+        "title": "TRIal of STatin Therapy Effect on Androgen Status and Erectile functioN in Men",
+        "year": None,
+    })
+
+    assert daily._researka_preflight_status(payload) == "eligible"
+
+
+def test_source_citation_accepts_undated_registry_disambiguator() -> None:
+    assert daily._has_source_citation({
+        "cited_as": "APICES n.d.a",
+        "title": "Atorvastatin Pretreatment in Cerebrovascular Events (APICES)",
+        "year": None,
+    }) is True
+
+
+def test_source_citation_accepts_undated_registry_author_with_locator() -> None:
+    assert daily._has_source_citation({
+        "cited_as": "Smith n.d.",
+        "title": "A registered intervention with an implausible completion year",
+        "doi": "10.1234/example",
+        "year": None,
+    }) is True
+
+
+@pytest.mark.parametrize(
+    "row",
+    [
+        {
+            "cited_as": "Trial n.d.",
+            "title": "Unrelated aspirin trial",
+            "doi": "10.1234/example",
+            "year": None,
+        },
+        {
+            "cited_as": "Statin Therapy n.d.",
+            "title": "Unrelated aspirin trial",
+            "doi": "10.1/example",
+            "year": None,
+        },
+        {"cited_as": "Evidence receipt n.d.", "title": "Evidence receipt", "year": None},
+        {"cited_as": "Unknown n.d.", "title": "Unrelated aspirin trial", "doi": "10.1234/x"},
+        {"cited_as": "Source n.d.", "title": "A registered intervention", "doi": "10.1234/x"},
+        {"cited_as": "Unknown n.d.", "title": "Unknown", "doi": "10.1234/x"},
+        {"cited_as": "Untitled n.d.", "title": "Untitled", "doi": "10.1234/x"},
+        {"cited_as": "N-A n.d.", "title": "N-A", "doi": "10.1234/x"},
+        {"cited_as": "Untitled n.d.", "title": "Untitled.", "doi": "10.1234/x"},
+        {"cited_as": "Evidence receipt n.d.", "title": "Evidence receipt.", "doi": "10.1234/x"},
+        {"cited_as": "Smith n.d.", "title": "Unrelated aspirin trial", "url": "   "},
+    ],
+)
+def test_source_citation_rejects_unmapped_undated_token(row: dict[str, Any]) -> None:
+    assert daily._has_source_citation(row) is False
 
 
 def test_researka_preflight_allows_one_missing_context_citation_in_large_bundle(tmp_path: Path) -> None:

@@ -393,7 +393,7 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     surname = re.sub(
         r"[^A-Za-z-]", "", _ascii_fold(first_author.split()[-1]),
     )
-    if not surname or surname.lower() in _GENERIC_AUTHOR_TOKENS:
+    if not surname or _citation_placeholder_key(surname) in _GENERIC_AUTHOR_TOKENS:
         return _title_citation_from_metadata(meta, year_str)
     # A citation key must never begin lowercase (defense-in-depth if any glyph
     # still slips through the fold above).
@@ -410,10 +410,19 @@ _TITLE_CONNECTORS: frozenset[str] = frozenset({
     "between", "during", "after", "before", "via",
 })
 
+_GENERIC_CITATION_PLACEHOLDERS: frozenset[str] = frozenset({
+    "article", "evidence", "evidence receipt", "missing", "n a", "none",
+    "receipt", "record", "reference", "report", "source", "unknown", "untitled",
+})
+
 _GENERIC_AUTHOR_TOKENS: frozenset[str] = frozenset({
     "trial", "study", "group", "committee", "collaborators",
     "collaboration", "investigators", "officers", "coordinators",
-})
+}) | _GENERIC_CITATION_PLACEHOLDERS
+
+
+def _citation_placeholder_key(value: object) -> str:
+    return " ".join(re.findall(r"[a-z0-9]+", str(value or "").casefold()))
 
 
 def _title_citation_from_metadata(meta: dict, year_str: str) -> str | None:
@@ -428,6 +437,8 @@ def _title_citation_from_metadata(meta: dict, year_str: str) -> str | None:
     word, connectors preserved. Universal across domains — no word list.
     """
     title = str(meta.get("title") or "").strip()
+    if _citation_placeholder_key(title) in _GENERIC_CITATION_PLACEHOLDERS:
+        return None
     # A parenthesised study/trial acronym is a recognised short name.
     for acronym in re.findall(r"\(([A-Z][A-Z0-9-]{2,})\)", title):
         return f"{acronym.split('-', 1)[0]} {year_str}"

@@ -1550,7 +1550,7 @@ def test_select_topic_prefers_recent_prepared_candidate(tmp_path: Path, monkeypa
         }],
     })
     _write_json(ledger_dir / "2026-07-14-fresh.json", {
-        "started_at": dt.datetime.now(dt.UTC).isoformat(),
+        "started_at": (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat(),
         "attempts": [{"topic": "zzz_prepared", "gate_status": "receipt_preflight_insufficient"}],
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -1581,6 +1581,19 @@ def test_prepared_candidates_expire_and_invalidate_on_threshold_change(tmp_path:
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "thresholds": {**cycle._candidate_buffer_thresholds(), "direct_receipts": 999},
         "ready": [{"topic": "wrong_threshold", "validated_at": now.isoformat()}],
+    })
+    assert cycle._prepared_candidate_topics(ledger_dir, now=now) == set()
+
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [{
+            "topic": "failed_after_validation",
+            "validated_at": (now - dt.timedelta(hours=1)).isoformat(),
+        }],
+    })
+    _write_json(ledger_dir / "2026-07-15-fresh.json", {
+        "started_at": now.isoformat(),
+        "attempts": [{"topic": "failed_after_validation", "gate_status": "synthesis_timeout"}],
     })
     assert cycle._prepared_candidate_topics(ledger_dir, now=now) == set()
 
@@ -9525,6 +9538,60 @@ def test_cycle_skips_receipt_preflight_repair_when_clean_topic_ready(tmp_path: P
     assert ledger["status"] == "submitted_to_researka"
 
 
+def test_cycle_retries_prepared_candidate_past_stale_source_bundle_block(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    topic = "statins"
+    _topic(tmp_path, topic, target_journal=True)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    cycle._record_blockers(ledger_dir, "2026-07-15", [{
+        "topic": topic,
+        "gate_status": "source_bundle_unmapped_sources:outcome=0,citation=8",
+        "submitted": 0,
+    }])
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [{
+            "topic": topic,
+            "validated_at": dt.datetime.now(dt.UTC).isoformat(),
+        }],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(
+        cycle, "_quant_claim_source_precision",
+        lambda *_a, **_k: (True, "source_topic_precision_ok:24/24", []),
+    )
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    synthesized: list[str] = []
+
+    def fake_synthesis(selected: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(selected)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-07-15",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {
+            "status": "submitted_to_researka", "submitted": 1, "published": 0,
+        },
+        max_attempts=1,
+    )
+
+    assert synthesized == [topic]
+    assert "corpus_repairs" not in ledger
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_cycle_skips_source_precision_repair_when_clean_topic_ready(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_low_source", target_journal=True)
     _topic(tmp_path, "bbb_low_source", target_journal=True)
@@ -9684,6 +9751,68 @@ def test_source_precision_repair_prefers_retained_claims_over_raw_file_count(
 
     assert repairs == ["bbb_retained_low_source"]
     assert ledger["corpus_repairs"][0]["topic"] == "bbb_retained_low_source"
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_source_precision_repair_prioritizes_prepared_candidate(tmp_path: Path, monkeypatch) -> None:
+    topics = ["aaa_richer_low_source", "zzz_prepared_low_source"]
+    for topic in topics:
+        _topic(tmp_path, topic, target_journal=True)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [{
+            "topic": "zzz_prepared_low_source",
+            "validated_at": dt.datetime.now(dt.UTC).isoformat(),
+        }],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 2)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: {
+        "aaa_richer_low_source": 120,
+        "zzz_prepared_low_source": 50,
+    }[topic])
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda topic, **_k: (
+        False,
+        "source_topic_precision_low:30/50<0.75",
+        [Path(f"{topic}.json")],
+    ))
+    repairs: list[str] = []
+    synthesized: list[str] = []
+
+    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:
+        repairs.append(topic)
+        return {
+            "status": "source_precision_repaired",
+            "n_quant_claims": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
+        }
+
+    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        synthesized.append(topic)
+        out_dir.mkdir(parents=True)
+        return 0
+
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-07-15",
+        run_synthesis=True,
+        submit=True,
+        mode="fresh",
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: {
+            "status": "submitted_to_researka", "submitted": 1, "published": 0,
+        },
+        max_attempts=1,
+    )
+
+    assert repairs == ["zzz_prepared_low_source"]
+    assert synthesized == ["zzz_prepared_low_source"]
     assert ledger["status"] == "submitted_to_researka"
 
 

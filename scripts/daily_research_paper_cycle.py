@@ -2439,7 +2439,13 @@ def _prepared_candidate_topics(
             continue
         validated_at = _parse_time(str(row.get("validated_at") or ""))
         topic = str(row.get("topic") or "")
-        if topic and validated_at and validated_at >= cutoff:
+        latest_attempt = _parse_time(_attempted_at(topic, ledger_dir)) if topic else None
+        if (
+            topic
+            and validated_at
+            and validated_at >= cutoff
+            and (latest_attempt is None or validated_at >= latest_attempt)
+        ):
             ready.add(topic)
     return ready
 
@@ -4184,10 +4190,15 @@ def run_cycle(
         surface_repeat = _surface_repeat_topics(ledger_dir, runs_root=runs_root)
         if surface_repeat:
             ledger["surface_repeat_excluded_topics"] = sorted(surface_repeat)
-        preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
+        prepared_candidates = _prepared_candidate_topics(ledger_dir)
+        preflight_blocked = (
+            set() if topic else _recent_preflight_blocked_topics(ledger_dir) - prepared_candidates
+        )
         if preflight_blocked:
             ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
-        receipt_preflight_blocked = set() if topic else _recent_receipt_preflight_blocked_topics(ledger_dir)
+        receipt_preflight_blocked = (
+            set() if topic else _recent_receipt_preflight_blocked_topics(ledger_dir) - prepared_candidates
+        )
         writer_gate_policy: dict[str, dict[str, Any]] = {} if topic else _writer_gate_repeat_policy(ledger_dir)
         writer_gate_skip = {
             t for t, p in writer_gate_policy.items()
@@ -4254,6 +4265,7 @@ def run_cycle(
                     or _fresh_corpus_repair_candidate(repair_topic)
                 ),
                 key=lambda t: (
+                    0 if t in prepared_candidates else 1,
                     -_source_precision_retained_claim_count(t) if t in source_precision_repairable else -_quant_claim_count(t),
                     -_quant_claim_count(t),
                     -_topic_support_score(t),
@@ -4288,7 +4300,10 @@ def run_cycle(
                     source_precision_repaired_checkable.add(repair_topic)
                 if repair_publishable:
                     repair_successes += 1
-                    if repair_successes >= _corpus_repair_limit():
+                    prepared_unblocked = (
+                        repair_topic in prepared_candidates and repair_topic in corpus_repaired_ok
+                    )
+                    if prepared_unblocked or repair_successes >= _corpus_repair_limit():
                         break
             source_precision_selectable = source_precision_repaired_ok or source_precision_repaired_checkable
             unrepaired_attempted = source_precision_repair_attempted - source_precision_selectable

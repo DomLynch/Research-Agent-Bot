@@ -325,6 +325,28 @@ def test_metadata_citation_renders_future_year_as_undated() -> None:
     assert cite is not None and cite.endswith("n.d.") and "2035" not in cite
 
 
+def test_unknown_author_falls_back_to_title_citation() -> None:
+    cite = cr._body_citation_from_metadata({
+        "title": "Pragmatic Trial of Metformin for Glucose Intolerance",
+        "authors": ["Unknown"],
+        "year": 2035,
+    })
+
+    assert cite == "Pragmatic Trial of Metformin n.d."
+
+
+@pytest.mark.parametrize(
+    "placeholder",
+    ["Source", "Evidence", "Reference", "Unknown", "Untitled", "N-A", "Untitled.", "Evidence receipt."],
+)
+def test_citation_placeholders_never_become_undated_citations(placeholder: str) -> None:
+    assert cr._body_citation_from_metadata({
+        "title": placeholder,
+        "authors": [placeholder],
+        "year": 2035,
+    }) is None
+
+
 def test_build_registry_clamps_future_source_year() -> None:
     """End-to-end: a receipt with a future source_year yields a registry
     entry with source_year=None (gate-safe) and no future year in the

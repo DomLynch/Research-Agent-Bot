@@ -37,6 +37,10 @@ from agent.review_type import (  # noqa: E402
     parse_review_type,
 )
 from agent.topic_display import humanize_topic  # noqa: E402
+from citation_registry import (  # noqa: E402
+    _body_citation_from_metadata,
+    _title_citation_from_metadata,
+)
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
@@ -1572,8 +1576,6 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         title = str(
             row.get("title")
             or receipt.get("source_title")
-            or row.get("body_citation")
-            or row.get("receipt_id")
             or "Evidence receipt"
         )[:300]
         claim_excerpt = _claim_excerpt(topic, str(row.get("receipt_id") or ""))
@@ -1620,6 +1622,33 @@ def _row_context(row: dict[str, Any]) -> str:
 def _has_source_citation(row: dict[str, Any]) -> bool:
     cited_as = str(row.get("cited_as") or "")
     if re.search(r"\b(?:19|20)\d{2}\b", cited_as):
+        return True
+    normalized = " ".join(cited_as.lower().split()).rstrip(".")
+    title = str(row.get("title") or "").strip()
+    title_expected = _title_citation_from_metadata(
+        {"title": title}, "n.d.",
+    )
+    expected = " ".join(str(title_expected or "").lower().split()).rstrip(".")
+    matches_expected = bool(expected) and bool(
+        normalized == expected or re.fullmatch(rf"{re.escape(expected)}\.[a-z]+", normalized)
+    )
+    if matches_expected:
+        return True
+    author = re.sub(r"\s+n\.d(?:\.[a-z]+)?\.?\s*$", "", cited_as, flags=re.I).strip()
+    doi = _clean_doi(row.get("doi"))
+    url = urllib.parse.urlparse(str(row.get("url") or "").strip())
+    stable_locator = bool(
+        re.fullmatch(r"10\.\d{4,9}/\S+", doi, flags=re.I)
+        or url.scheme in {"http", "https"} and url.netloc
+        or row.get("source_type") == "pubmed" and str(row.get("id") or "").strip().isdigit()
+    )
+    author_expected = _body_citation_from_metadata({
+        "title": title, "authors": [author], "year": 9999,
+    }) if author and stable_locator else None
+    expected = " ".join(str(author_expected or "").lower().split()).rstrip(".")
+    if expected and (
+        normalized == expected or re.fullmatch(rf"{re.escape(expected)}\.[a-z]+", normalized)
+    ):
         return True
     return bool(str(row.get("title") or "").strip() and isinstance(row.get("year"), int))
 
