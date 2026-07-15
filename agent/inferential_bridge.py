@@ -19,6 +19,7 @@ from agent.synthesis_schemas import ReceiptSummary, SynthesisSection
 _CONFIDENCE = frozenset({"low", "medium", "high"})
 _NUMERIC_RE = re.compile(r"(?<![A-Za-z])(?:\d+(?:\.\d+)?|\d+\s*%)")
 _BENEFIT_RE = re.compile(r"\b(benefit|improv|enhanc|extend|protect|rejuvenat|reduc|increas|lower|attenuat|ameliorat|prevent|decreas|mitigat|slow|delay)\w*", re.I)
+UNRESOLVED_BRIDGE_MARKER = "[inferential bridge status: not established]"
 
 
 @dataclass(frozen=True, slots=True)
@@ -122,8 +123,24 @@ def filter_valid_inferences(
 
 def render_inferential_bridge_section(
     claims: Sequence[InferenceClaim],
+    *,
+    unresolved_boundary: bool = False,
 ) -> SynthesisSection:
     if not claims:
+        if unresolved_boundary:
+            return SynthesisSection(
+                name="inferential_bridge",
+                body_md=(
+                    "## Inferential Bridge\n\n"
+                    f"{UNRESOLVED_BRIDGE_MARKER}\n\n"
+                    "No inferential bridge claim is made. Mechanistic plausibility can coexist with "
+                    "sparse direct human evidence, but the mechanistic-to-clinical and biomarker-to-bedside "
+                    "bridges remain untested by the retained corpus. Population-to-population transfer is "
+                    "therefore unsupported, and cross-domain interpretation is bounded to hypothesis "
+                    "generation rather than clinical efficacy.\n"
+                ),
+                anchors=(),
+            )
         return SynthesisSection(name="inferential_bridge", body_md="", anchors=())
     lines = ["## Inferential Bridge", ""]
     for i, c in enumerate(claims, 1):
@@ -156,6 +173,7 @@ async def build_inferential_bridge_section(
     client: httpx.AsyncClient | None = None,
     ledger: CostLedger | None = None,
     seed: int | None = None,
+    unresolved_boundary: bool = False,
 ) -> SynthesisSection:
     claims = await request_inference_claims(
         receipts,
@@ -166,7 +184,7 @@ async def build_inferential_bridge_section(
         ledger=ledger,
         seed=seed,
     )
-    return render_inferential_bridge_section(claims)
+    return render_inferential_bridge_section(claims, unresolved_boundary=unresolved_boundary)
 
 
 def _receipt_context(receipts: Sequence[ReceiptSummary]) -> str:

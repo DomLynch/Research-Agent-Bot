@@ -658,6 +658,7 @@ async def render_full_paper(
         _bridge_spec = pack.inference if pack and pack.inference.allow else None
         sections["inferential_bridge"] = await build_inferential_bridge_section(
             accepted, topic=topic, chain=chain, spec=_bridge_spec, client=client, ledger=ledger, seed=seed,
+            unresolved_boundary="inferential bridge" in os.getenv("RESEARKA_REVISION_FEEDBACK", "").lower(),
         )
         if sections["inferential_bridge"].body_md:
             _log_section_done("inferential_bridge", sections["inferential_bridge"])

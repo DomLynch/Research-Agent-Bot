@@ -917,6 +917,12 @@ def _check_inferential_bridge_contract(paper: str) -> tuple[bool, str]:
         for b in re.split(r"\n(?=\d+\.\s+|\-\s+)", body)
         if re.match(r"^(?:\d+\.|\-)\s+", b.strip())
     ]
+    if "[inferential bridge status: not established]" in body.lower():
+        if blocks:
+            return False, "unresolved Inferential Bridge also contains claims"
+        if _INLINE_NUMERIC_RE.search(body):
+            return False, "unresolved Inferential Bridge introduces a numeric"
+        return True, "Inferential Bridge explicitly records that no bridge claim is established"
     if not blocks:
         return False, "Inferential Bridge has no numbered D1 claims"
     for i, block in enumerate(blocks, 1):

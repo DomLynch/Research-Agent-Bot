@@ -35,6 +35,32 @@ def test_unmet_asks_failopen_on_malformed_verdict(monkeypatch) -> None:
     assert _unmet(["a"], {"addressed": "nope"}, monkeypatch) == []
 
 
+def test_inferential_bridge_boundary_satisfies_dedicated_section_ask() -> None:
+    ask = (
+        "Add a dedicated 'Inferential Bridge' section covering the mechanistic-to-clinical gap, "
+        "population-to-population transfer, and the biomarker-to-bedside boundary."
+    )
+    paper = """
+## Inferential Bridge
+
+[inferential bridge status: not established]
+
+The mechanistic-to-clinical and biomarker-to-bedside bridges remain untested.
+Population-to-population transfer is unsupported.
+"""
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+    tagged = """
+## Inferential Bridge
+
+1. [D1_inferential_bridge | confidence=low] Bounded bridge.
+   [mechanism anchor: r1] [conservation: Canon]
+   Testability: prospective validation. [testability: explicit]
+"""
+    assert revision_coverage.deterministic_unmet_asks(tagged, [ask]) == []
+
+
 def test_unmet_asks_empty_for_no_asks(monkeypatch) -> None:
     assert _unmet([], {"addressed": []}, monkeypatch) == []
 

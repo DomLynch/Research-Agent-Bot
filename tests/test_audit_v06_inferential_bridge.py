@@ -28,6 +28,32 @@ def test_q14_accepts_tagged_d1_claim() -> None:
     assert ok, msg
 
 
+def test_q14_accepts_explicit_unresolved_bridge_without_claims() -> None:
+    paper = """
+## Inferential Bridge
+
+[inferential bridge status: not established]
+
+No inferential bridge claim is made. The mechanistic-to-clinical and
+biomarker-to-bedside bridges remain untested by the retained corpus.
+"""
+    ok, msg = audit._check_inferential_bridge_contract(paper)
+    assert ok, msg
+
+
+def test_q14_rejects_claims_beside_unresolved_marker() -> None:
+    paper = """
+## Inferential Bridge
+
+[inferential bridge status: not established]
+
+1. Untagged bridge claim.
+"""
+    ok, msg = audit._check_inferential_bridge_contract(paper)
+    assert not ok
+    assert "also contains claims" in msg
+
+
 def test_q14_rejects_missing_conservation_tag() -> None:
     paper = """
 ## Inferential Bridge

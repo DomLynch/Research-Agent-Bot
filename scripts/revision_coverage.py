@@ -147,6 +147,28 @@ def _asks_classification_criteria(text: str) -> bool:
     )
 
 
+def _asks_inferential_bridge(text: str) -> bool:
+    return "inferential bridge" in text and "section" in text
+
+
+def _inferential_bridge_is_stated(paper_md: str) -> bool:
+    text = paper_md.lower()
+    if "## inferential bridge" not in text:
+        return False
+    if "[inferential bridge status: not established]" in text:
+        return all(token in text for token in (
+            "mechanistic-to-clinical",
+            "population-to-population transfer",
+            "biomarker-to-bedside",
+        ))
+    return all(token in text for token in (
+        "[d1_",
+        "[mechanism anchor:",
+        "[conservation:",
+        "[testability:",
+    ))
+
+
 def _normalised_feedback(text: str) -> str:
     return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
 
@@ -2673,6 +2695,7 @@ def _numeric_effect_accuracy_satisfied(paper_md: str, _ask: str, _lower: str) ->
 
 
 _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
+    (_asks_inferential_bridge, _paper_only(_inferential_bridge_is_stated)),
     (_asks_classification_criteria, _contains_all("classification criteria", "outcome class", "directness", "evidence tier")),
     (_asks_conflict_severity_criteria, _contains_all("conflict-map severity note", "severity-level-3", "severity-level-4", "contradiction-map")),
     (_asks_source_outcome_class_map, _source_outcome_class_map_satisfied),

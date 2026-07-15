@@ -30,6 +30,16 @@ def test_valid_d1_bridge_renders_machine_checkable_tags() -> None:
     assert ".. [testability:" not in md
 
 
+def test_unresolved_bridge_records_boundary_without_claim() -> None:
+    md = render_inferential_bridge_section((), unresolved_boundary=True).body_md
+    lower = md.lower()
+
+    assert "[inferential bridge status: not established]" in lower
+    assert "mechanistic-to-clinical" in lower
+    assert "population-to-population transfer" in lower
+    assert "biomarker-to-bedside" in lower
+
+
 def test_d1_bridge_rejects_unknown_anchor_and_new_numeric() -> None:
     claim = InferenceClaim(
         claim="The bridge predicts a 12 percent directional effect.",
