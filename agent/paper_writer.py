@@ -554,7 +554,7 @@ _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
 # Slice 35: Evidence-brief skeleton — skips LLM long-form generation
 # (introduction/background/cross_domain/discussion/novel_framework) when
 # review_type=thin_corpus_brief. Universal — any thin corpus, any domain.
-_THIN_BRIEF_SECTION_ORDER: tuple[SectionName, ...] = ("abstract", "quantitative_results_table", "methods", "results", "limitations_full", "conclusion", "references_full")
+_THIN_BRIEF_SECTION_ORDER: tuple[SectionName, ...] = ("abstract", "inferential_bridge", "quantitative_results_table", "methods", "results", "limitations_full", "conclusion", "references_full")
 
 
 async def render_full_paper(
@@ -576,6 +576,7 @@ async def render_full_paper(
     """Render full paper markdown plus per-section anchors. Slice 35:
     review_type=thin_corpus_brief skips long-form section generation."""
     _thin = review_type in COMPACT_REVIEW_TYPES
+    _bridge_requested = "inferential bridge" in os.getenv("RESEARKA_REVISION_FEEDBACK", "").lower()
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",
@@ -653,12 +654,12 @@ async def render_full_paper(
             background_lit_entries=background_lit_entries,
         )
         _log_section_done("background", sections["background"])
-    if not _thin:
+    if not _thin or _bridge_requested:
         from agent.inferential_bridge import build_inferential_bridge_section
         _bridge_spec = pack.inference if pack and pack.inference.allow else None
         sections["inferential_bridge"] = await build_inferential_bridge_section(
             accepted, topic=topic, chain=chain, spec=_bridge_spec, client=client, ledger=ledger, seed=seed,
-            unresolved_boundary="inferential bridge" in os.getenv("RESEARKA_REVISION_FEEDBACK", "").lower(),
+            unresolved_boundary=_bridge_requested,
         )
         if sections["inferential_bridge"].body_md:
             _log_section_done("inferential_bridge", sections["inferential_bridge"])

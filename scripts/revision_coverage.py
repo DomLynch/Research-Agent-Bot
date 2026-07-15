@@ -151,6 +151,24 @@ def _asks_inferential_bridge(text: str) -> bool:
     return "inferential bridge" in text and "section" in text
 
 
+def _asks_directness_coding_criteria(text: str) -> bool:
+    return (
+        "directness" in text
+        and any(token in text for token in ("criteria", "define", "definition"))
+        and any(token in text for token in ("indirect", "review"))
+    )
+
+
+def _directness_coding_criteria_are_stated(paper_md: str) -> bool:
+    methods = " ".join(_section(paper_md, "Methods").lower().split())
+    return all(token in methods for token in (
+        "directness coding criteria",
+        "coded as direct only when",
+        "coded as indirect",
+        "review-level evidence",
+    ))
+
+
 def _inferential_bridge_is_stated(paper_md: str) -> bool:
     text = paper_md.lower()
     if "## inferential bridge" not in text:
@@ -2696,6 +2714,7 @@ def _numeric_effect_accuracy_satisfied(paper_md: str, _ask: str, _lower: str) ->
 
 _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_inferential_bridge, _paper_only(_inferential_bridge_is_stated)),
+    (_asks_directness_coding_criteria, _paper_only(_directness_coding_criteria_are_stated)),
     (_asks_classification_criteria, _contains_all("classification criteria", "outcome class", "directness", "evidence tier")),
     (_asks_conflict_severity_criteria, _contains_all("conflict-map severity note", "severity-level-3", "severity-level-4", "contradiction-map")),
     (_asks_source_outcome_class_map, _source_outcome_class_map_satisfied),

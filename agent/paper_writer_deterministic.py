@@ -71,6 +71,12 @@ classifiers then assigned evidence tier, directness, outcome class, and
 effect direction. These fields, not the prose writer, determine which
 sources can enter each Results subsection.
 
+Directness coding criteria were fixed before rendering. A source was coded
+as direct only when it tested the topic itself against a clinically proximate
+outcome in the relevant population. Human evidence with an adjacent exposure,
+population, or outcome was coded as indirect; syntheses and secondary reviews
+were coded as review-level evidence and were not counted as direct sources.
+
 Cross-source interpretation used the frozen evidence records to identify
 agreement, disagreement, null-positive contrasts, and directness gaps within
 the same outcome class. The manuscript writer received only section-specific

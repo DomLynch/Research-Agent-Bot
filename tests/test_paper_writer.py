@@ -269,6 +269,34 @@ def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
     assert "## Introduction" not in md and all(s.name != "inferential_bridge" for s in sections)
 
 
+def test_thin_brief_renders_explicitly_requested_bridge(monkeypatch) -> None:
+    receipts = [_summary("r-direct", directness="direct")]
+
+    async def fake_anchored(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
+
+    async def fake_scoped(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
+
+    async def no_inference_claims(*_args, **_kwargs):
+        return ()
+
+    monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", "Add a dedicated Inferential Bridge section.")
+    monkeypatch.setattr(paper_writer, "_write_anchored_section", fake_anchored)
+    monkeypatch.setattr(paper_writer, "_write_scoped_section", fake_scoped)
+    monkeypatch.setattr("agent.inferential_bridge.request_inference_claims", no_inference_claims)
+
+    md, sections = asyncio.run(paper_writer.render_full_paper(
+        receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
+        submission_id="thin-revise", chain=(), review_type="thin_corpus_brief",
+    ))
+
+    assert "## Inferential Bridge" in md
+    assert "[inferential bridge status: not established]" in md
+    assert "Directness coding criteria" in md
+    assert any(section.name == "inferential_bridge" for section in sections)
+
+
 def test_evidence_map_uses_compact_writer_path(monkeypatch) -> None:
     receipts = [_summary("r-safety", outcome="safety_comorbidity")]
 

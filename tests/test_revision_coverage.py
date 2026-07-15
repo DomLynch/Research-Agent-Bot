@@ -61,6 +61,25 @@ Population-to-population transfer is unsupported.
     assert revision_coverage.deterministic_unmet_asks(tagged, [ask]) == []
 
 
+def test_directness_coding_criteria_require_explicit_methods_definition() -> None:
+    ask = (
+        "Clarify the 'directness' coding criteria in the Methods section to explicitly define "
+        "what constitutes a 'direct' source versus 'indirect' or 'review' sources."
+    )
+    weak = "## Methods\n\nSources were assigned directness labels.\n"
+    defined = """
+## Methods
+
+Directness coding criteria were fixed before rendering. A source was coded as
+direct only when it tested the topic itself against a clinically proximate
+outcome in the relevant population. Adjacent evidence was coded as indirect;
+syntheses were coded as review-level evidence.
+"""
+
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(defined, [ask]) == []
+
+
 def test_unmet_asks_empty_for_no_asks(monkeypatch) -> None:
     assert _unmet([], {"addressed": []}, monkeypatch) == []
 
