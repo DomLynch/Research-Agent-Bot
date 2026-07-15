@@ -48,6 +48,14 @@ from agent.review_type import (  # noqa: E402
     parse_review_type,
 )
 
+
+def _positive_env_int(name: str, default: int) -> int:
+    try:
+        value = int(os.environ.get(name, str(default)))
+    except ValueError:
+        return default
+    return value if value > 0 else default
+
 RUNS = ROOT / "runs"
 TOPIC_PACKS = ROOT / "topic_packs"
 TOPIC_PACKS_DB = ROOT / "topic_packs_db"
@@ -66,6 +74,7 @@ DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
 # while bounding resubmissions to the live platform.
 MAX_REVISE_ROUNDS = 3
+REVISION_REPAIR_EPOCH = _positive_env_int("RESEARCH_AGENT_REVISION_REPAIR_EPOCH", 1)
 PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
@@ -1881,6 +1890,13 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         row_submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
         return not row_submission_id or row_submission_id in active_ids
 
+    def _counts_toward_current_round_cap(row: dict[str, Any]) -> bool:
+        status = str(row.get("status") or "")
+        return (
+            status not in _RETRYABLE_REVISION_STATUSES
+            or str(row.get("repair_epoch") or "") == str(REVISION_REPAIR_EPOCH)
+        )
+
     counts = Counter(
         submit_bridge._title_marker(str(row.get("title") or ""))
         for row in rows
@@ -1889,6 +1905,7 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
             and row.get("title")
             and _row_applies_to_active_request(row)
             and not _submitted_row_is_superseded_by_active_decision(row)
+            and _counts_toward_current_round_cap(row)
         )
     )
     terminal = {
@@ -1933,6 +1950,11 @@ def _handled_revision_statuses(ledger_dir: Path, key: str, reviewed_at: str = ""
         if reviewed and handled_at and handled_at < reviewed:
             continue
         status = str(row.get("status") or "")
+        if (
+            status in _RETRYABLE_REVISION_STATUSES
+            and str(row.get("repair_epoch") or "") != str(REVISION_REPAIR_EPOCH)
+        ):
+            continue
         if status:
             statuses.append(status)
     return tuple(statuses)
@@ -1943,6 +1965,50 @@ def _revision_key(row: dict[str, Any]) -> str:
     # assigns a new artifactId per submission, which would otherwise reset the
     # count every round and let a never-converging paper loop forever.
     return submit_bridge._title_marker(str(row.get("title") or "")) or str(row.get("artifactId") or row.get("submissionId") or "")
+
+
+def _compact_handled_revision_rows(rows: list[Any]) -> list[dict[str, Any]]:
+    def _row_time(row: dict[str, Any]) -> dt.datetime:
+        return _parse_time(str(row.get("handled_at") or "")) or dt.datetime.min.replace(tzinfo=dt.UTC)
+
+    def _round_priority(row: dict[str, Any]) -> tuple[bool, dt.datetime]:
+        status = str(row.get("status") or "")
+        current = (
+            status not in _RETRYABLE_REVISION_STATUSES
+            or str(row.get("repair_epoch") or "") == str(REVISION_REPAIR_EPOCH)
+        )
+        return current, _row_time(row)
+
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        key = _revision_key(row) or str(row.get("key") or "")
+        if key:
+            grouped.setdefault(key, []).append({**row, "key": key})
+    compacted: list[dict[str, Any]] = []
+    durable_statuses = (
+        _TERMINAL_REVISION_STATUSES
+        | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES
+        | {"submitted_to_researka"}
+    )
+    for group in grouped.values():
+        durable: dict[str, dict[str, Any]] = {}
+        recent: list[dict[str, Any]] = []
+        for row in group:
+            status = str(row.get("status") or "")
+            if status in durable_statuses:
+                prior = durable.get(status)
+                if prior is None or _row_time(row) >= _row_time(prior):
+                    durable[status] = row
+            else:
+                recent.append(row)
+        selected = [
+            *sorted(recent, key=_round_priority)[-MAX_REVISE_ROUNDS:],
+            *durable.values(),
+        ]
+        compacted.extend(selected)
+    return sorted(compacted, key=_row_time)
 
 
 def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str) -> None:
@@ -1957,9 +2023,10 @@ def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str
         "artifactId": row.get("artifactId") or row.get("artifact_id"),
         "submissionId": row.get("submissionId") or row.get("submission_id"),
         "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
+        "repair_epoch": REVISION_REPAIR_EPOCH,
         "handled_at": dt.datetime.now(dt.UTC).isoformat(),
     })
-    _write_json(path, {"handled": rows[-100:]})
+    _write_json(path, {"handled": _compact_handled_revision_rows(rows)})
 
 
 def _pending_remote_revision(

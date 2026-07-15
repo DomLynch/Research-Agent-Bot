@@ -119,6 +119,9 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   exact receipt and citation sets, then snapshot immediately. Contract fields
   absent from an old manifest cannot be reconstructed and remain explicitly
   identified as `legacy_contract` rather than treated as newly verified.
+- Retryable revise failures carry `RESEARCH_AGENT_REVISION_REPAIR_EPOCH`.
+  Increment that epoch only after a material repair-engine upgrade to reopen
+  old retryable requests once; terminal safety decisions never reopen.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.

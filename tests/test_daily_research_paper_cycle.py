@@ -3448,6 +3448,7 @@ def test_retryable_revision_statuses_obey_round_cap_across_windows(tmp_path: Pat
             "key": cycle.submit_bridge._title_marker(title),
             "title": title,
             "status": status,
+            "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
             "handled_at": handled_at.isoformat(),
         }
         for status in statuses
@@ -6260,6 +6261,7 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
             "key": marker,
             "title": title,
             "status": "revision_coverage_unmet",
+            "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
             "handled_at": handled_at.isoformat(),
         }
         for i in range(cycle.MAX_REVISE_ROUNDS)
@@ -6269,6 +6271,168 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
     active = [{"title": title, "reviewedAt": reviewed_at.isoformat()}]
 
     assert marker in cycle._handled_revision_ids(ledger_dir, active)
+
+
+def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    title = "Research Synthesis: Statin — full paper"
+    marker = cycle.submit_bridge._title_marker(title)
+    rows = [
+        {
+            "key": marker,
+            "title": title,
+            "status": "revision_coverage_unmet",
+            "handled_at": f"2026-07-15T20:{minute:02d}:00+00:00",
+        }
+        for minute in range(cycle.MAX_REVISE_ROUNDS)
+    ]
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": rows})
+
+    assert marker not in cycle._handled_revision_ids(ledger_dir)
+    assert cycle._handled_revision_statuses(ledger_dir, marker) == ()
+    for row in rows:
+        row["repair_epoch"] = cycle.REVISION_REPAIR_EPOCH
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": rows})
+    assert marker in cycle._handled_revision_ids(ledger_dir)
+    assert cycle._handled_revision_statuses(ledger_dir, marker) == (
+        "revision_coverage_unmet",
+    ) * cycle.MAX_REVISE_ROUNDS
+
+
+def test_revision_repair_epoch_is_positive_and_fail_safe(monkeypatch) -> None:
+    for value in ("bad", "0", "-2"):
+        monkeypatch.setenv("TEST_REPAIR_EPOCH", value)
+        assert cycle._positive_env_int("TEST_REPAIR_EPOCH", 1) == 1
+    monkeypatch.setenv("TEST_REPAIR_EPOCH", "3")
+    assert cycle._positive_env_int("TEST_REPAIR_EPOCH", 1) == 3
+
+
+def test_handled_revision_compaction_preserves_each_keys_durable_state(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    capped = {"title": "Research Synthesis: Capped — full paper"}
+    terminal = {"title": "Research Synthesis: Terminal — full paper"}
+    submitted = {"title": "Research Synthesis: Submitted — full paper"}
+    for _ in range(cycle.MAX_REVISE_ROUNDS):
+        cycle._mark_revision_handled(ledger_dir, capped, status="revision_coverage_unmet")
+    cycle._mark_revision_handled(ledger_dir, terminal, status="retracted_source_cited")
+    cycle._mark_revision_handled(ledger_dir, submitted, status="submitted_to_researka")
+    for index in range(150):
+        cycle._mark_revision_handled(
+            ledger_dir,
+            {"title": f"Research Synthesis: Unrelated {index} — full paper"},
+            status="revision_coverage_unmet",
+        )
+
+    handled = cycle._handled_revision_ids(ledger_dir)
+    assert cycle._revision_key(capped) in handled
+    assert cycle._revision_key(terminal) in handled
+    assert cycle._revision_key(submitted) in handled
+    rows = cycle._read_json(ledger_dir / cycle.HANDLED_REVISIONS)["handled"]
+    assert cycle._compact_handled_revision_rows(rows) == rows
+
+
+def test_handled_revision_compaction_ignores_malformed_timestamp_poisoning() -> None:
+    poisoned = [
+        {
+            "key": f"poison-{index}",
+            "title": f"Poison {index}",
+            "status": "revision_coverage_unmet",
+            "handled_at": "zzzz",
+        }
+        for index in range(100)
+    ]
+    fresh = {
+        "key": "fresh", "title": "Fresh", "status": "revision_coverage_unmet",
+        "handled_at": "2026-07-16T00:00:00+00:00",
+    }
+    terminal = {
+        "key": "terminal", "title": "Terminal",
+        "status": "terminal_domain_scope_mismatch",
+        "handled_at": "2026-07-16T00:00:00+00:00",
+    }
+    malformed_terminal = {**terminal, "handled_at": "zzzz"}
+
+    compacted = cycle._compact_handled_revision_rows([
+        *poisoned, fresh, terminal, malformed_terminal,
+    ])
+
+    assert any(row.get("key") == cycle._revision_key(fresh) for row in compacted)
+    assert next(
+        row for row in compacted if row.get("key") == cycle._revision_key(terminal)
+    )["handled_at"] == "2026-07-16T00:00:00+00:00"
+
+
+def test_partial_retry_counts_survive_unrelated_revision_churn(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    request = {"title": "Research Synthesis: Persistent — full paper"}
+    for _ in range(cycle.MAX_REVISE_ROUNDS - 1):
+        cycle._mark_revision_handled(ledger_dir, request, status="revision_coverage_unmet")
+    for index in range(150):
+        cycle._mark_revision_handled(
+            ledger_dir, {"title": f"Unrelated {index}"}, status="revision_coverage_unmet",
+        )
+    cycle._mark_revision_handled(ledger_dir, request, status="revision_coverage_unmet")
+
+    assert cycle._revision_key(request) in cycle._handled_revision_ids(ledger_dir)
+
+
+def test_compaction_canonicalizes_legacy_artifact_keys_by_title() -> None:
+    title = "Research Synthesis: Shared — full paper"
+    rows = [
+        {
+            "key": f"artifact-{index}", "title": title,
+            "status": "terminal_domain_scope_mismatch",
+            "handled_at": f"2026-07-16T00:{index:02d}:00+00:00",
+        }
+        for index in range(50)
+    ]
+
+    compacted = cycle._compact_handled_revision_rows(rows)
+
+    assert len(compacted) == 1
+    assert compacted[0]["key"] == cycle.submit_bridge._title_marker(title)
+
+
+def test_compaction_prioritizes_current_repair_epoch_over_future_legacy_rows() -> None:
+    title = "Research Synthesis: Epoch — full paper"
+    legacy = [
+        {
+            "title": title, "status": "revision_coverage_unmet", "repair_epoch": 0,
+            "handled_at": f"2099-01-01T00:0{index}:00+00:00",
+        }
+        for index in range(cycle.MAX_REVISE_ROUNDS)
+    ]
+    current = [
+        {
+            "title": title, "status": "revision_coverage_unmet",
+            "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
+            "handled_at": f"2026-07-16T00:0{index}:00+00:00",
+        }
+        for index in range(cycle.MAX_REVISE_ROUNDS + 1)
+    ]
+
+    compacted = cycle._compact_handled_revision_rows([*legacy, *current])
+
+    assert len(compacted) == cycle.MAX_REVISE_ROUNDS
+    assert all(row["repair_epoch"] == cycle.REVISION_REPAIR_EPOCH for row in compacted)
+
+
+def test_compaction_uses_input_order_to_break_durable_timestamp_ties() -> None:
+    title = "Research Synthesis: Submitted Tie — full paper"
+    timestamp = "2026-07-16T00:00:00+00:00"
+    rows = [
+        {
+            "title": title, "status": "submitted_to_researka",
+            "submissionId": submission_id, "handled_at": timestamp,
+        }
+        for submission_id in ("old-sub", "new-sub")
+    ]
+
+    compacted = cycle._compact_handled_revision_rows(rows)
+
+    assert len(compacted) == 1
+    assert compacted[0]["submissionId"] == "new-sub"
 
 
 def test_terminal_revision_row_before_newer_review_still_blocks(tmp_path: Path) -> None:
@@ -6606,18 +6770,21 @@ def test_pending_remote_revision_round_cap_wins_over_finalizer_recheck(
             "key": marker,
             "title": title,
             "status": "revision_coverage_unmet",
+            "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
             "handled_at": "2026-06-25T00:50:36+00:00",
         },
         {
             "key": marker,
             "title": title,
             "status": "revision_coverage_unmet",
+            "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
             "handled_at": "2026-06-25T00:52:47+00:00",
         },
         {
             "key": marker,
             "title": title,
             "status": "revision_coverage_unmet",
+            "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
             "handled_at": "2026-06-25T00:54:47+00:00",
         },
     ]})
