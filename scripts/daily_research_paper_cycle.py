@@ -592,16 +592,23 @@ def _publication_receipts_by_marker(
     for row in rows.values():
         publication = row.get("publication")
         publication = publication if isinstance(publication, dict) else {}
+        public_visible = row.get("publicVisible") is True or row.get("public_visible") is True
+        publication_id = (
+            publication.get("publication_id")
+            or publication.get("publicationId")
+            or row.get("publication_id")
+            or row.get("publicationId")
+            or (row.get("artifactId") if public_visible else None)
+        )
+        public_url = publication.get("url") or row.get("public_url") or row.get("url")
+        if not public_url and public_visible and publication_id:
+            papers_url = os.getenv("RESEARKA_PAPERS_URL", "https://researka.org/papers").rstrip("/")
+            public_url = f"{papers_url}/{urllib.parse.quote(str(publication_id))}"
         receipt = {
             "decision": row.get("decision"),
-            "public_url": publication.get("url") or row.get("public_url") or row.get("url"),
+            "public_url": public_url,
             "doi": publication.get("doi") or row.get("doi"),
-            "publication_id": (
-                publication.get("publication_id")
-                or publication.get("publicationId")
-                or row.get("publication_id")
-                or row.get("publicationId")
-            ),
+            "publication_id": publication_id,
         }
         receipt = {key: value for key, value in receipt.items() if value not in (None, "")}
         for marker in _public_decision_markers({"row": row}):

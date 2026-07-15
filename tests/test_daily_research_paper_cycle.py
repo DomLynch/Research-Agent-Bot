@@ -1141,6 +1141,39 @@ def test_reconcile_publication_ledgers_records_public_accept_decisions(tmp_path:
     assert ledger["doi"] == "10.17605/OSF.IO/TEST1"
 
 
+def test_public_feed_receipt_derives_url_from_visible_artifact_id(monkeypatch) -> None:
+    monkeypatch.setenv("RESEARKA_PAPERS_URL", "https://papers.example.test/library/")
+    submission_id = "accepted-submission"
+    publication_id = "d6b9601d-c79a-4ef6-8e70-eb0ec62f9b11"
+    rows = {
+        "title:accepted paper": {
+            "artifactId": publication_id,
+            "submissionId": submission_id,
+            "title": "Accepted paper",
+            "decision": "accept",
+            "publicVisible": True,
+            "doi": "10.17605/OSF.IO/TEST2",
+        },
+        "title:review only": {
+            "artifactId": "review-object-1",
+            "submissionId": "review-only-submission",
+            "title": "Review only",
+            "decision": "accept",
+        },
+    }
+
+    receipts = cycle._publication_receipts_by_marker(rows)
+
+    assert receipts[f"submission:{submission_id}"] == {
+        "decision": "accept",
+        "public_url": f"https://papers.example.test/library/{publication_id}",
+        "doi": "10.17605/OSF.IO/TEST2",
+        "publication_id": publication_id,
+    }
+    assert "public_url" not in receipts["submission:review-only-submission"]
+    assert "publication_id" not in receipts["submission:review-only-submission"]
+
+
 def test_reconcile_publication_ledgers_date_scope_includes_daily_submit_cycle(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     title = "Adjacent Evidence Brief: Marker Matched Topic — full paper"
