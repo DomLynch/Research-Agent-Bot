@@ -1196,6 +1196,13 @@ def _pop_h2_section_by_prefix(
     return remaining + "\n", match.group(0).strip()
 
 
+def _route_inferential_bridge(markdown: str) -> tuple[str, str]:
+    feedback = os.getenv("RESEARKA_REVISION_FEEDBACK", "").lower()
+    if "inferential bridge" in feedback:
+        return markdown, ""
+    return _pop_h2_section_by_prefix(markdown, "Inferential Bridge")
+
+
 def _word_count(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
 
@@ -3034,9 +3041,7 @@ async def _run(
     )
     if qei_md:
         supplement_parts.append(qei_md)
-    full_paper_md, bridge_md = _pop_h2_section_by_prefix(
-        full_paper_md, "Inferential Bridge",
-    )
+    full_paper_md, bridge_md = _route_inferential_bridge(full_paper_md)
     if bridge_md:
         supplement_parts.append(bridge_md)
 

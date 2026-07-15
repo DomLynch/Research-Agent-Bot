@@ -431,20 +431,38 @@ def test_pop_h2_section_by_prefix_routes_qei_to_supplement() -> None:
     assert "## Quantitative Evidence Index — demo" in supplement
 
 
-def test_pop_h2_section_by_prefix_routes_inferential_bridge_to_supplement() -> None:
+def test_unrequested_inferential_bridge_routes_to_supplement(monkeypatch) -> None:
     paper = (
         "## Results\n\nResults body.\n\n"
         "## Inferential Bridge\n\n"
         "[D1_inferential_bridge | confidence=medium]\n\n"
         "## Discussion\n\nDiscussion body.\n"
     )
-    main, supplement = orch._pop_h2_section_by_prefix(
-        paper, "Inferential Bridge",
-    )
+    monkeypatch.delenv("RESEARKA_REVISION_FEEDBACK", raising=False)
+
+    main, supplement = orch._route_inferential_bridge(paper)
     assert "Inferential Bridge" not in main
     assert "[D1_inferential_bridge" not in main
     assert "## Discussion" in main
     assert "## Inferential Bridge" in supplement
+
+
+def test_requested_inferential_bridge_stays_in_main_manuscript(monkeypatch) -> None:
+    paper = (
+        "## Results\n\nResults body.\n\n"
+        "## Inferential Bridge\n\n"
+        "[inferential bridge status: not established]\n\n"
+        "## Discussion\n\nDiscussion body.\n"
+    )
+    monkeypatch.setenv(
+        "RESEARKA_REVISION_FEEDBACK",
+        "Add a dedicated Inferential Bridge section.",
+    )
+
+    main, supplement = orch._route_inferential_bridge(paper)
+
+    assert main == paper
+    assert supplement == ""
 
 
 def test_absent_flagged_patch_resolved_after_final_cleanup() -> None:

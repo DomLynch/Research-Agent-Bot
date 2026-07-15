@@ -271,6 +271,13 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "The following fields were extracted from each included source: " +
         ", ".join(pack.data_extraction_fields) + ". Under the calibration rule, source verification in the public bundle is limited to reference-level metadata; exact statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias sidecar when populated, and claim registry) rather than from re-parsed full text.",  # noqa: E501
         "",
+        "### Directness coding criteria",
+        "A source was coded as direct only when it tested the topic itself "
+        "against a clinically proximate outcome in the relevant population. "
+        "Human evidence with an adjacent exposure, population, or outcome was "
+        "coded as indirect; syntheses and secondary reviews were coded as "
+        "review-level evidence and were not counted as direct sources.",
+        "",
         "### Risk-of-bias appraisal",
         pack.risk_of_bias_approach,
         "",

@@ -154,7 +154,12 @@ def _asks_inferential_bridge(text: str) -> bool:
 def _asks_directness_coding_criteria(text: str) -> bool:
     return (
         "directness" in text
-        and any(token in text for token in ("criteria", "define", "definition"))
+        and any(token in text for token in (
+            "coding criteria",
+            "directness criteria",
+            "criteria for directness",
+            "what constitutes",
+        ))
         and any(token in text for token in ("indirect", "review"))
     )
 

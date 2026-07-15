@@ -34,7 +34,9 @@ from agent.methods_pack import (  # type: ignore[import-not-found]
     _accountability_text,
     build_methods_pack,
     render_methods_md,
+    write_methods_pack,
 )
+from scripts.journal_finalizer import _phase_a_methods_replace
 
 
 # ---- Fix 1: _lowercase_first_letter ---------------------------------------
@@ -111,6 +113,46 @@ def test_methods_pack_render_matches_required_markers() -> None:
     md = render_methods_md(pack, submission_id="run-0000")
     for marker in REQUIRED_METHODS_H3_MARKERS:
         assert marker in md, f"renderer missing required H3: {marker!r}"
+
+
+def test_methods_pack_defines_direct_indirect_and_review_evidence() -> None:
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="example_topic",
+        corpus_search_queries=("example query",),
+        n_retrieved=10, n_screened=10, n_included=8, n_rejected=2,
+        outcome_classes=("primary_outcome",),
+        accountability_model="researka_agent_certified",
+    )
+
+    md = render_methods_md(pack, submission_id="run-0000")
+
+    assert "### Directness coding criteria" in md
+    assert "coded as direct only when" in md
+    assert "coded as indirect" in md
+    assert "review-level evidence" in md
+
+
+def test_finalizer_methods_replacement_preserves_directness_criteria(
+    tmp_path: Path,
+) -> None:
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="example_topic",
+        corpus_search_queries=("example query",),
+        n_retrieved=10, n_screened=10, n_included=8, n_rejected=2,
+        outcome_classes=("primary_outcome",),
+        accountability_model="researka_agent_certified",
+    )
+    write_methods_pack(tmp_path, pack)
+
+    paper = "## Methods\n\nOld methods.\n\n## Results\n\nResults body.\n"
+    finalized, log = _phase_a_methods_replace(paper, tmp_path)
+
+    assert "### Directness coding criteria" in finalized
+    assert "coded as direct only when" in finalized
+    assert "## Results\n\nResults body." in finalized
+    assert log and log[0].phase == "A_methods_replace"
 
 
 def test_methods_pack_dedupes_public_outcome_aliases() -> None:
@@ -1140,14 +1182,24 @@ def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:
 
 
 def test_slice35_render_full_paper_thin_brief_skips_long_form_sections() -> None:
-    """Slice 35 supersedes Phase J: writer skips generating Introduction,
-    Background, Cross-Domain, Discussion, novel_framework when called with
-    review_type='thin_corpus_brief'. Verified by checking the section-order
-    constant — no LLM call needed. Universal — any thin-corpus run."""
+    """Thin briefs skip long-form sections but retain an optional bridge slot.
+
+    The writer only materializes that slot when reviewer feedback explicitly
+    requests an inferential bridge.
+    """
     from agent.paper_writer import _THIN_BRIEF_SECTION_ORDER, _FULL_PAPER_SECTION_ORDER
     skipped = set(_FULL_PAPER_SECTION_ORDER) - set(_THIN_BRIEF_SECTION_ORDER)
-    assert skipped == {"introduction", "background", "inferential_bridge", "cross_domain_synthesis", "novel_framework", "discussion"}
-    assert set(_THIN_BRIEF_SECTION_ORDER) == {"abstract", "quantitative_results_table", "methods", "results", "limitations_full", "conclusion", "references_full"}
+    assert skipped == {"introduction", "background", "cross_domain_synthesis", "novel_framework", "discussion"}
+    assert set(_THIN_BRIEF_SECTION_ORDER) == {
+        "abstract",
+        "inferential_bridge",
+        "quantitative_results_table",
+        "methods",
+        "results",
+        "limitations_full",
+        "conclusion",
+        "references_full",
+    }
 
 
 def test_phase_k_routes_immune_paragraph_to_immune_outcomes(tmp_path: Path) -> None:

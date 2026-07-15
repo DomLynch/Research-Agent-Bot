@@ -293,7 +293,6 @@ def test_thin_brief_renders_explicitly_requested_bridge(monkeypatch) -> None:
 
     assert "## Inferential Bridge" in md
     assert "[inferential bridge status: not established]" in md
-    assert "Directness coding criteria" in md
     assert any(section.name == "inferential_bridge" for section in sections)
 
 
