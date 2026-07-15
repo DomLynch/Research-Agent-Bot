@@ -78,7 +78,7 @@ SECTION_RETRY_BUDGET = 2
 
 
 def _revision_feedback_block() -> str:
-    feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
+    feedback = _revision_feedback_text()
     if not feedback:
         return ""
     # Researka joins requiredRevisions with "; ". Split only at independent
@@ -94,6 +94,10 @@ def _revision_feedback_block() -> str:
     asks = [a.strip() for a in re.split(pattern, feedback, flags=re.IGNORECASE) if a.strip()]
     body = "\n".join(f"  {i}. {ask}" for i, ask in enumerate(asks, 1))
     return f"REVISION FEEDBACK — address EACH point below if source-supported:\n{body}\nTreat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics; do not fabricate to satisfy a point you cannot support. If an ask requests a table, render a clearly labelled markdown table; prose alone does not satisfy table-shaped feedback."
+
+
+def _revision_feedback_text() -> str:
+    return " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
@@ -538,6 +542,7 @@ async def write_results_section(
 
 _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
     "abstract",
+    "research_question",
     "introduction",
     "background",
     "inferential_bridge",
@@ -554,7 +559,11 @@ _FULL_PAPER_SECTION_ORDER: tuple[SectionName, ...] = (
 # Slice 35: Evidence-brief skeleton — skips LLM long-form generation
 # (introduction/background/cross_domain/discussion/novel_framework) when
 # review_type=thin_corpus_brief. Universal — any thin corpus, any domain.
-_THIN_BRIEF_SECTION_ORDER: tuple[SectionName, ...] = ("abstract", "inferential_bridge", "quantitative_results_table", "methods", "results", "limitations_full", "conclusion", "references_full")
+_THIN_BRIEF_SECTION_ORDER: tuple[SectionName, ...] = (
+    "abstract", "research_question", "inferential_bridge",
+    "quantitative_results_table", "methods", "results", "limitations_full",
+    "conclusion", "references_full",
+)
 
 
 async def render_full_paper(
@@ -576,7 +585,25 @@ async def render_full_paper(
     """Render full paper markdown plus per-section anchors. Slice 35:
     review_type=thin_corpus_brief skips long-form section generation."""
     _thin = review_type in COMPACT_REVIEW_TYPES
-    _bridge_requested = "inferential bridge" in os.getenv("RESEARKA_REVISION_FEEDBACK", "").lower()
+    _revision_feedback = re.sub(
+        r"[-\u2010-\u2015]+", " ", _revision_feedback_text().lower(),
+    )
+    _author_feedback = " ".join(part for part in _revision_feedback.split(";") if (
+        "author inference" in part or ("mechanism level" in part and "inference" in part)
+    ))
+    _move_to_cross_domain = bool(re.search(r"\bto (?:the )?cross domain synthesis\b", _author_feedback))
+    _move_to_discussion = bool(re.search(r"\bto (?:the )?discussion\b", _author_feedback))
+    _author_inference_discussion = bool(_author_feedback) and (
+        _move_to_discussion or ("discussion" in _author_feedback and not _move_to_cross_domain)
+    )
+    _author_inference_cross_domain = bool(_author_feedback) and (
+        _move_to_cross_domain
+        or ("cross domain synthesis" in _author_feedback and not _move_to_discussion)
+        or not any(name in _author_feedback for name in ("discussion", "cross domain synthesis"))
+    )
+    _bridge_requested = "inferential bridge" in _revision_feedback
+    _cross_domain_requested = "cross domain synthesis" in _revision_feedback or _author_inference_cross_domain
+    _discussion_requested = bool(re.search(r"\bdiscussion(?: section)?\b", _revision_feedback))
     accepted = list(filter_accepted(receipts))
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",
@@ -635,6 +662,31 @@ async def render_full_paper(
     if abstract_md != sections["abstract"].body_md:
         sections["abstract"] = SynthesisSection(name="abstract", body_md=abstract_md, anchors=sections["abstract"].anchors)
     _log_section_done("abstract", sections["abstract"])
+    outcome_counts: dict[str, int] = {}
+    population_counts: dict[str, int] = {}
+    for receipt in accepted:
+        outcome_counts[receipt.outcome_class] = outcome_counts.get(receipt.outcome_class, 0) + 1
+        population = " ".join(receipt.population_summary.split())[:120].rstrip(" ,.;")
+        if population:
+            population_counts[population] = population_counts.get(population, 0) + 1
+    ranked_outcomes = sorted(outcome_counts, key=lambda name: (-outcome_counts[name], name))
+    outcome_scope = " and ".join(outcome_display(name).lower() for name in ranked_outcomes[:2])
+    outcome_scope = outcome_scope or "the primary retained outcomes"
+    populations = sorted(population_counts, key=lambda name: (-population_counts[name], name))
+    population_scope = populations[0] if populations else "the populations represented by admitted sources"
+    sections["research_question"] = SynthesisSection(
+        name="research_question",
+        body_md=(
+            "## Research Question\n\n"
+            f"Within the retained source corpus for {humanize_topic(topic, root=_repo)}, among {population_scope}, "
+            f"do findings for {outcome_scope} support a decision-grade conclusion "
+            "(clinically actionable where applicable), and which population, study-design, "
+            "and directness boundaries keep extrapolation to other outcome classes "
+            "hypothesis-generating?\n"
+        ),
+        anchors=(),
+    )
+    _log_section_done("research_question (deterministic)", sections["research_question"])
     if not _thin:
         sections["introduction"] = await _write_scoped_section(
             name="introduction", heading="## Introduction",
@@ -717,7 +769,7 @@ async def render_full_paper(
         accepted, rejected, matrix, thesis, topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
     )
     _log_section_done("results", sections["results"])
-    if not _thin:
+    if not _thin or _cross_domain_requested:
         sections["cross_domain_synthesis"] = await _write_anchored_section(
             name="cross_domain_synthesis",
             heading="## Cross-Domain Synthesis",
@@ -729,6 +781,7 @@ async def render_full_paper(
             background_lit_entries=background_lit_entries,
         )
         _log_section_done("cross_domain_synthesis", sections["cross_domain_synthesis"])
+    if not _thin:
         sections["novel_framework"] = build_novel_framework_section(accepted, matrix)
         _log_section_done("novel_framework (deterministic)", sections["novel_framework"])
         sections["framework_engagement"] = build_framework_engagement_section(
@@ -739,6 +792,7 @@ async def render_full_paper(
             "framework_engagement (deterministic)",
             sections["framework_engagement"],
         )
+    if not _thin or _discussion_requested:
         sections["discussion"] = await _write_scoped_section(
             name="discussion", heading="## Discussion",
             system_prompt=_prompts["discussion"], user_prompt=user,
@@ -785,12 +839,29 @@ async def render_full_paper(
     if not _thin:
         from agent.paper_writer_backstop import apply_section_backstop
         sections = await apply_section_backstop(sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix, chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries, write_anchored_fn=_write_anchored_section, write_scoped_fn=_write_scoped_section)
+    inference_note = (
+        "**Author-inference boundary:** Mechanism-level explanations in this section "
+        "are synthesis-author inferences unless directly attributed to an included "
+        "source; they are not independently established causal findings."
+    )
+    for section_name, requested in (
+        ("cross_domain_synthesis", _author_inference_cross_domain),
+        ("discussion", _author_inference_discussion),
+    ):
+        if requested and section_name in sections:
+            sections[section_name] = _append_section_note(sections[section_name], inference_note)
+    if "discussion" in sections:
         from agent.paper_writer_backstop import repair_discussion_minimum_quality
         sections["discussion"] = repair_discussion_minimum_quality(
             sections["discussion"], thesis,
         )
 
-    ordered = tuple(sections[n] for n in (_THIN_BRIEF_SECTION_ORDER if _thin else _FULL_PAPER_SECTION_ORDER) if n in sections)
+    section_order = _THIN_BRIEF_SECTION_ORDER if _thin else _FULL_PAPER_SECTION_ORDER
+    if _thin:
+        split = section_order.index("limitations_full")
+        optional = tuple(n for n in ("cross_domain_synthesis", "discussion") if n in sections)
+        section_order = section_order[:split] + optional + section_order[split:]
+    ordered = tuple(sections[n] for n in section_order if n in sections)
     body_md = title_md + "\n".join(s.body_md for s in ordered).rstrip() + "\n"
     body_md = _strip_rendered_citation_markers(body_md)
     return body_md, ordered

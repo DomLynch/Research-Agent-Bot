@@ -61,6 +61,77 @@ Population-to-population transfer is unsupported.
     assert revision_coverage.deterministic_unmet_asks(tagged, [ask]) == []
 
 
+def test_live_statins_revision_classes_have_deterministic_coverage() -> None:
+    asks = [
+        "Resolve the numeric discrepancies in reported p-values and add a verification note.",
+        "Mark mechanism-level explanations in the Cross-Domain Synthesis as author inference.",
+        "Provide a Quantitative Evidence Index or evidence-claim table with consistent p-values.",
+        "Tighten the Research Question to a specific and clinically bounded question.",
+    ]
+    paper = """
+## Research Question
+
+Within the retained source corpus for statins, among older adults, do findings for mortality support a decision-grade
+conclusion (clinically actionable where applicable), and which population, study-design, and directness
+boundaries keep extrapolation to other outcome classes hypothesis-generating?
+
+## Quantitative Evidence Index
+
+**Numeric verification note:** P-values use the implied decimal reporting floor.
+
+| Study | Endpoint | Arm | Value | Type | Statistic |
+|---|---|---|---|---|---|
+| Smith 2024 | mortality | treatment | P < 0.001 | p-value | — |
+
+## Cross-Domain Synthesis
+
+**Author-inference boundary:** Mechanism-level explanations are synthesis-author inferences and are
+not independently established causal findings.
+"""
+
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_numeric_revision_rejects_impossible_rounded_zero_p_value() -> None:
+    ask = "Resolve the numeric discrepancies in reported P < 0.000 values and add a verification note."
+    paper = "**Numeric verification note:** checked. P < 0.000"
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_qei_revision_requires_data_rows_and_normalized_p_values() -> None:
+    ask = "Provide a Quantitative Evidence Index with consistent rounding and notation for p-values."
+    header_only = """
+## Quantitative Evidence Index
+| Study | Endpoint | Arm | Value | Type | Statistic |
+|---|---|---|---|---|---|
+"""
+    invalid = header_only + "| Smith 2024 | mortality | treatment | p=.000 | p-value | — |\n"
+    blank = header_only + "| | | | | | |\n"
+    assert revision_coverage.deterministic_unmet_asks(header_only, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(invalid, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(blank, [ask]) == [ask]
+    numeric_ask = "Resolve the numeric discrepancies in p-values and add a verification note."
+    assert revision_coverage.deterministic_unmet_asks(
+        "**Numeric verification note:** checked.", [numeric_ask],
+    ) == [numeric_ask]
+
+
+def test_author_inference_boundary_must_be_in_requested_section() -> None:
+    ask = "Mark mechanistic explanations in the Discussion as author inference."
+    note = "**Author-inference boundary:** These are synthesis-author inferences, not independently established causal findings."
+    assert revision_coverage.deterministic_unmet_asks(
+        f"## Cross-Domain Synthesis\n\n{note}", [ask],
+    ) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(
+        f"## Discussion\n\n{note}", [ask],
+    ) == []
+
+    move_ask = "Move the mechanistic author inference boundary from Discussion to Cross-Domain Synthesis."
+    assert revision_coverage.deterministic_unmet_asks(
+        f"## Cross-Domain Synthesis\n\n{note}", [move_ask],
+    ) == []
+
+
 def test_directness_coding_criteria_require_explicit_methods_definition() -> None:
     ask = (
         "Clarify the 'directness' coding criteria in the Methods section to explicitly define "

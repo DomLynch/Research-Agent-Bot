@@ -296,6 +296,88 @@ def test_thin_brief_renders_explicitly_requested_bridge(monkeypatch) -> None:
     assert any(section.name == "inferential_bridge" for section in sections)
 
 
+def test_thin_revision_renders_only_requested_long_form_sections(monkeypatch) -> None:
+    receipts = [_summary("r-direct", directness="direct")]
+
+    async def fake_anchored(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nIntegrated evidence.\n", anchors=())
+
+    async def fake_scoped(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nCoherent discussion.\n", anchors=())
+
+    monkeypatch.setenv(
+        "RESEARKA_REVISION_FEEDBACK",
+        "Rewrite the Discussion section; Mark mechanism-level explanations in the Cross-Domain Synthesis as author inference.",
+    )
+    monkeypatch.setattr(paper_writer, "_write_anchored_section", fake_anchored)
+    monkeypatch.setattr(paper_writer, "_write_scoped_section", fake_scoped)
+
+    md, sections = asyncio.run(paper_writer.render_full_paper(
+        receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
+        submission_id="thin-revise", chain=(), review_type="thin_corpus_brief",
+    ))
+
+    assert "## Research Question" in md
+    assert "findings for muscle function" in md
+    assert "among older adults" in md
+    assert "population, study-design, and directness boundaries" in md
+    assert "## Cross-Domain Synthesis" in md
+    assert "**Author-inference boundary:**" in md
+    assert "## Discussion" in md
+    assert "## Introduction" not in md
+    assert {"research_question", "cross_domain_synthesis", "discussion"} <= {s.name for s in sections}
+    section_map = {section.name: section.body_md for section in sections}
+    assert "**Author-inference boundary:**" in section_map["cross_domain_synthesis"]
+    assert "**Author-inference boundary:**" not in section_map["discussion"]
+
+    monkeypatch.setenv(
+        "RESEARKA_REVISION_FEEDBACK",
+        "Mark mechanistic explanations as author inference.",
+    )
+    generic_md, _ = asyncio.run(paper_writer.render_full_paper(
+        receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
+        submission_id="thin-generic-revise", chain=(), review_type="thin_corpus_brief",
+    ))
+    assert "## Cross-Domain Synthesis" in generic_md
+    assert "**Author-inference boundary:**" in generic_md
+
+
+def test_full_revision_reapplies_author_boundary_after_backstop(monkeypatch) -> None:
+    receipts = [_summary("r-direct")]
+
+    async def fake_section(**kwargs):
+        return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nDraft.\n", anchors=())
+
+    async def fake_results(*_args, **_kwargs):
+        return SynthesisSection(name="results", body_md="## Results\n\nDraft.\n", anchors=())
+
+    async def replace_cross_domain(sections, **_kwargs):
+        updated = dict(sections)
+        updated["cross_domain_synthesis"] = SynthesisSection(
+            name="cross_domain_synthesis",
+            body_md="## Cross-Domain Synthesis\n\nBackstop replacement.\n",
+            anchors=(),
+        )
+        return updated
+
+    monkeypatch.setenv(
+        "RESEARKA_REVISION_FEEDBACK",
+        "Mark mechanistic explanations in the Cross-Domain Synthesis as author inference.",
+    )
+    monkeypatch.setattr(paper_writer, "_write_anchored_section", fake_section)
+    monkeypatch.setattr(paper_writer, "_write_scoped_section", fake_section)
+    monkeypatch.setattr(paper_writer, "write_results_section", fake_results)
+    monkeypatch.setattr(writer_backstop, "apply_section_backstop", replace_cross_domain)
+
+    md, _ = asyncio.run(paper_writer.render_full_paper(
+        receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
+        submission_id="full-revise", chain=(), review_type="research_synthesis",
+    ))
+
+    assert "Backstop replacement." in md
+    assert "**Author-inference boundary:**" in md
+
+
 def test_evidence_map_uses_compact_writer_path(monkeypatch) -> None:
     receipts = [_summary("r-safety", outcome="safety_comorbidity")]
 

@@ -556,6 +556,21 @@ def _asks_concrete_research_question(text: str) -> bool:
     )
 
 
+def _asks_author_inference_boundary(text: str) -> bool:
+    text = _normalised_feedback(text)
+    return "author inference" in text and any(token in text for token in ("mechanism level", "mechanistic", "cross domain synthesis"))
+
+
+def _asks_quantitative_evidence_index(text: str) -> bool:
+    text = _normalised_feedback(text)
+    return "quantitative evidence index" in text or ("evidence claim table" in text and "p value" in text)
+
+
+def _asks_numeric_discrepancy_resolution(text: str) -> bool:
+    text = _normalised_feedback(text)
+    return "numeric discrepanc" in text and any(token in text for token in ("p value", "p =", "p <", "statistic"))
+
+
 def _asks_substantive_evidence_synthesis(text: str) -> bool:
     return (
         "actual evidence synthesis" in text
@@ -1520,12 +1535,69 @@ def _concrete_research_question_is_stated(paper_md: str) -> bool:
     question = _section(paper_md, "Research Question").lower()
     if not question:
         return False
+    specific = (
+        all(token in question for token in ("findings for", "among", "study-design"))
+        or all(token in question for token in ("prognostic or risk-marker", "treatment or intervention", "directionally consistent"))
+    )
     return (
         "?" in question
         and "source" in question
+        and specific
         and ("outcome class" in question or "outcome-class" in question)
         and any(token in question for token in ("direct", "indirect", "mechanistic", "review"))
         and any(token in question for token in ("hypothesis-generating", "clinically actionable", "clinical"))
+    )
+
+
+def _author_inference_boundary_is_stated(paper_md: str, ask: str) -> bool:
+    feedback = _normalised_feedback(ask)
+    destination = re.search(r"\bto (?:the )?(cross domain synthesis|discussion)\b", feedback)
+    sections = (("Cross-Domain Synthesis" if destination.group(1) == "cross domain synthesis" else "Discussion"),) if destination else tuple(name for phrase, name in (
+        ("cross domain synthesis", "Cross-Domain Synthesis"), ("discussion", "Discussion"),
+    ) if phrase in feedback) or ("Cross-Domain Synthesis",)
+    tokens = ("author-inference boundary", "synthesis-author inferences", "not independently established causal findings")
+    return all(all(token in _section(paper_md, section).lower() for token in tokens) for section in sections)
+
+
+def _quantitative_evidence_rows(paper_md: str) -> list[tuple[str, ...]]:
+    rows: list[tuple[str, ...]] = []
+    for line in _section(paper_md, "Quantitative Evidence Index").splitlines():
+        cells = tuple(cell.strip() for cell in line.strip().strip("|").split("|"))
+        if len(cells) != 6 or not any(cells) or cells[0].lower() == "study" or all(
+            cell and set(cell) <= {"-", ":"} for cell in cells
+        ):
+            continue
+        rows.append(cells)
+    return rows
+
+
+_NORMALIZED_P_VALUE_RE = re.compile(r"P\s+(?:=|<|>|\u2264|\u2265)\s+(0(?:\.\d+)?|1(?:\.0+)?)\Z")
+
+
+def _p_value_rows_are_normalized(rows: list[tuple[str, ...]], *, required: bool) -> bool:
+    p_rows = [row for row in rows if row[4].lower() in {"p-value", "p value", "p_value"}]
+    return (not required or bool(p_rows)) and all(
+        (match := _NORMALIZED_P_VALUE_RE.fullmatch(row[3])) is not None
+        and float(match.group(1)) > 0 for row in p_rows
+    )
+
+
+def _quantitative_evidence_index_is_stated(paper_md: str, ask: str) -> bool:
+    rows = _quantitative_evidence_rows(paper_md)
+    feedback = _normalised_feedback(ask)
+    requires_p_values = any(token in feedback for token in ("p value", "rounding", "notation"))
+    return bool(rows) and _p_value_rows_are_normalized(rows, required=requires_p_values)
+
+
+_ROUNDED_ZERO_P_RE = re.compile(r"\bp\s*(?:=|<|\u2264)\s*(?:0(?![.\d])|0\.0+(?!\d)|\.0+(?!\d))", re.I)
+
+
+def _numeric_discrepancy_is_resolved(paper_md: str) -> bool:
+    rows = _quantitative_evidence_rows(paper_md)
+    return (
+        "numeric verification note:" in paper_md.lower()
+        and not _ROUNDED_ZERO_P_RE.search(paper_md)
+        and _p_value_rows_are_normalized(rows, required=True)
     )
 
 
@@ -2742,6 +2814,9 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_outcome_class_key_findings, _paper_only(_outcome_class_key_findings_are_stated)),
     (_asks_two_part_research_question, _paper_only(_two_part_research_question_is_stated)),
     (_asks_concrete_research_question, _paper_only(_concrete_research_question_is_stated)),
+    (_asks_author_inference_boundary, _paper_ask(_author_inference_boundary_is_stated)),
+    (_asks_quantitative_evidence_index, _paper_ask(_quantitative_evidence_index_is_stated)),
+    (_asks_numeric_discrepancy_resolution, _paper_only(_numeric_discrepancy_is_resolved)),
     (_asks_scope_framing, _scope_framing_satisfied),
     (_asks_outcome_taxonomy_separation, _paper_only(_outcome_taxonomy_separation_is_stated)),
     (_asks_source_stratification_reconciliation, _paper_only(_source_stratification_reconciliation_is_stated)),

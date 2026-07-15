@@ -1182,7 +1182,7 @@ def test_phase_g_missing_sidecars_is_safe(tmp_path: Path) -> None:
 
 
 def test_slice35_render_full_paper_thin_brief_skips_long_form_sections() -> None:
-    """Thin briefs skip long-form sections but retain an optional bridge slot.
+    """Thin briefs retain bounded questions and an optional bridge slot.
 
     The writer only materializes that slot when reviewer feedback explicitly
     requests an inferential bridge.
@@ -1192,6 +1192,7 @@ def test_slice35_render_full_paper_thin_brief_skips_long_form_sections() -> None
     assert skipped == {"introduction", "background", "cross_domain_synthesis", "novel_framework", "discussion"}
     assert set(_THIN_BRIEF_SECTION_ORDER) == {
         "abstract",
+        "research_question",
         "inferential_bridge",
         "quantitative_results_table",
         "methods",

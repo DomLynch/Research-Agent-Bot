@@ -5276,6 +5276,25 @@ def test_unmet_revision_asks_uses_deterministic_gate_when_judge_fails_open(tmp_p
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
 
 
+def test_unmet_revision_asks_reads_quantitative_supplement(tmp_path: Path, monkeypatch) -> None:
+    import revision_coverage  # type: ignore[import-not-found]
+
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text("# Research Synthesis: Topic\n", encoding="utf-8")
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda *_args, **_kwargs: [])
+    ask = "Provide a Quantitative Evidence Index with consistent p-value notation."
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
+    (out_dir / "structured_evidence_tables.md").write_text(
+        "## Quantitative Evidence Index\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Smith 2024 | mortality | treatment | P > 0.99 | p-value | — |\n",
+        encoding="utf-8",
+    )
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
+
+
 def test_unmet_revision_asks_accepts_material_directional_explanation(tmp_path: Path, monkeypatch) -> None:
     import revision_coverage  # type: ignore[import-not-found]
 

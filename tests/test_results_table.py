@@ -13,6 +13,7 @@ from agent.results_table import (
     _claim_to_row,
     _confidence_admissible,
     _format_value,
+    _format_p_value,
     _format_statistic,
     _load_topic_arm_terms,
     _quality_score,
@@ -80,6 +81,17 @@ def test_format_statistic_default_dash():
     """For HR/OR, the value column already shows the ratio; statistic
     column gets em-dash."""
     assert _format_statistic({"claim_type": "hazard_ratio"}, 0.85) == "—"
+
+
+def test_format_p_value_replaces_rounded_zero_with_implied_floor():
+    assert _format_p_value("P < 0.000", 0.0) == "P < 0.001"
+    assert _format_p_value("p=0.0000", 0.0) == "P < 0.0001"
+    assert _format_p_value("p=.000", 0.0) == "P < 0.001"
+    assert _format_p_value("p=0.044", 0.044) == "P = 0.044"
+    assert _format_p_value("effect=0.000; p=0.044", 0.044) == "P = 0.044"
+    assert _format_p_value("P > .99", 0.99) == "P > 0.99"
+    assert _format_p_value("p≥.95", 0.95) == "P ≥ 0.95"
+    assert _format_p_value("p=0", 0.0) == "—"
 
 
 # ---------- citation extraction ------------------------------------

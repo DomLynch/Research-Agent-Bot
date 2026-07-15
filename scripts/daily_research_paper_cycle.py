@@ -2759,6 +2759,9 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
     if not paper.is_file():
         return []
     text = paper.read_text(encoding="utf-8")
+    supplement = out_dir / "structured_evidence_tables.md"
+    if supplement.is_file():
+        text += "\n\n" + supplement.read_text(encoding="utf-8")
     unmet = revision_coverage.material_unmet_asks(text, feedback)
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
 

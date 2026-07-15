@@ -262,6 +262,7 @@ SectionName = Literal[
     # artifact. Each section has a designated validation tier
     # (anchored / scoped / deterministic) — see paper_writer.py.
     "abstract",             # ~300 words; ANCHORED — every claim cites receipt
+    "research_question",    # deterministic — bounded question for the retained corpus
     "introduction",         # ~1500-2500; SCOPED — topic-relevant + hedged
     "background",           # ~1000-2000; SCOPED — broader field synthesis
     "inferential_bridge",   # DETERMINISTIC-VALIDATED D1 bridge claims; never

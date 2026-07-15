@@ -338,6 +338,8 @@ def _claim_to_row(
     # public-table residue and unsafe reviewer patches.
     if claim_type == "confidence_interval" and statistic != "—":
         value_str = "—"
+    elif claim_type == "p_value":
+        value_str = _format_p_value(raw, primary_value)
     else:
         value_str = raw if (raw and len(raw) < 24) else _format_value(
             primary_value,
@@ -402,6 +404,29 @@ def _format_value(v: float) -> str:
     if v == int(v):
         return f"{int(v):,}"
     return f"{v:.3g}"
+
+
+def _format_p_value(raw: str, value: float) -> str:
+    """Normalize source p-values without confusing other zero-valued fields."""
+    match = re.search(
+        r"\bp\s*([=<>\u2264\u2265])\s*((?:0)?\.\d+|0|1(?:\.0+)?)\b",
+        raw,
+        flags=re.I,
+    )
+    if match:
+        operator, literal = match.groups()
+    else:
+        bare = re.fullmatch(r"\s*([=<>\u2264\u2265])?\s*((?:0)?\.\d+|0|1(?:\.0+)?)\s*", raw)
+        if not bare:
+            return "—" if raw or value == 0 else f"P = {_format_value(value)}"
+        operator, literal = bare.group(1) or "=", bare.group(2)
+    literal = f"0{literal}" if literal.startswith(".") else literal
+    if float(literal) == 0:
+        if "." not in literal:
+            return "—"
+        decimals = len(literal.partition(".")[2])
+        return f"P < {10 ** -decimals:.{decimals}f}"
+    return f"P {operator} {literal}"
 
 
 def _public_label(value: str) -> str:
@@ -622,8 +647,11 @@ def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
     rows_list = list(rows)
     title = (
         f"## Quantitative Evidence Index — {topic}\n\n"
-        f"_Top {len(rows_list)} high-confidence numeric claims from the "
+        f"_Quantitative Evidence Index: top {len(rows_list)} high-confidence numeric claims from the "
         f"corpus. Every row traces to a corpus-bound claim and a registered citation._\n\n"
+        "**Numeric verification note:** P-values are rendered from extracted "
+        "source statistics; rounded zero values are reported at their implied "
+        "decimal floor rather than as impossible zero probabilities.\n\n"
     )
     header = (
         "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
