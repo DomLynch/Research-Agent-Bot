@@ -128,7 +128,7 @@ _ET_AL_PAREN_CITE_RE = re.compile(
     r"((?:19|20)\d{2})\)"
 )
 _PVALUE_DISPLAY_RE = re.compile(
-    r"\b[Pp]\s*([<>=])\s*(0?\.\d+|\.\d+|\d+(?:\.\d+)?)"
+    r"\b[Pp]\s*(<=|>=|[<>=\u2264\u2265])\s*(0?\.\d+|\.\d+|\d+(?:\.\d+)?)"
 )
 _CHANGE_SPEED_SENTENCE_RE = re.compile(
     r"\b(?:change|improvement|increase|decrease|difference|delta|"
@@ -1393,17 +1393,26 @@ def _normalize_public_p_values(paper_md: str) -> tuple[str, int]:
         nonlocal changed
         op = match.group(1)
         value = match.group(2)
+        op = {"<=": "\u2264", ">=": "\u2265"}.get(op, op)
         if value.startswith("."):
             value = f"0{value}"
-        if op in {"<", "="} and re.fullmatch(r"0\.0+", value):
+        if (
+            op in {"<", "=", "\u2264"}
+            and re.fullmatch(r"0\.0+", value) is not None
+        ):
             decimals = len(value.partition(".")[2])
-            op = "<"
-            value = f"0.{('0' * (decimals - 1))}1"
-        replacement = f"P {op} {value}"
+            replacement = f"P < 0.{('0' * (decimals - 1))}1"
+        else:
+            replacement = f"P {op} {value}"
         changed += replacement != match.group(0)
         return replacement
 
     return _PVALUE_DISPLAY_RE.sub(repl, paper_md), changed
+
+
+def normalize_public_p_values(text: str) -> tuple[str, int]:
+    """Normalize public p-value notation without changing other prose."""
+    return _normalize_public_p_values(text)
 
 
 def _normalize_h3_residue_headings(paper_md: str) -> tuple[str, int]:

@@ -115,6 +115,17 @@ from source_topic_specificity import (  # noqa: E402
     is_source_topic_specific, source_gate_aliases, topic_aliases,
 )
 
+
+def _normalize_structured_evidence_p_values(out_dir: Path) -> int:
+    path = out_dir / "structured_evidence_tables.md"
+    if not path.is_file():
+        return 0
+    text = path.read_text(encoding="utf-8")
+    normalized, changed = _consistency_fixer.normalize_public_p_values(text)
+    if changed:
+        path.write_text(normalized, encoding="utf-8")
+    return changed
+
 # Workstream A (autonomous): topic-parameterized pipeline.
 # Module-level corpus paths + active topic — populated by
 # _set_topic() at the top of every pipeline invocation. The sentinel
@@ -3957,6 +3968,16 @@ async def _run_post_paper_pipeline(
     except Exception as _e:  # pragma: no cover — best-effort
         print(
             f"[pipeline] Stage 5b — appendix splice skipped: {_e}",
+            file=sys.stderr,
+        )
+
+    supplement_p_values = _normalize_structured_evidence_p_values(
+        paper_path.parent,
+    )
+    if supplement_p_values:
+        print(
+            "[pipeline] Stage 5b* — normalized "
+            f"{supplement_p_values} supplement p-value(s)",
             file=sys.stderr,
         )
 

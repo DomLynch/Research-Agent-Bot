@@ -37,6 +37,30 @@ def _receipt(rid: str, directness: str) -> ReceiptSummary:
     )
 
 
+def test_structured_evidence_p_values_are_normalized_idempotently(tmp_path: Path) -> None:
+    tiny_nonzero = f"0.{('0' * 400)}1"
+    supplement = tmp_path / "structured_evidence_tables.md"
+    supplement.write_text(
+        "## Quantitative Evidence Index\n\n"
+        "| A | P<0.000 |\n| B | p=.004 |\n| C | P > 0.000 |\n"
+        "| D | P\u22640.000 |\n| E | P=0 |\n"
+        "| F | P<=0.05 |\n| G | P>=0.05 |\n"
+        f"| H | P={tiny_nonzero} |\n",
+        encoding="utf-8",
+    )
+
+    assert orch._normalize_structured_evidence_p_values(tmp_path) == 7
+    normalized = supplement.read_text(encoding="utf-8")
+    assert "P < 0.001" in normalized
+    assert "P = 0.004" in normalized
+    assert "P > 0.000" in normalized
+    assert "P = 0" in normalized  # No decimal precision: preserve and fail closed.
+    assert "P \u2264 0.05" in normalized
+    assert "P \u2265 0.05" in normalized
+    assert f"P = {tiny_nonzero}" in normalized
+    assert orch._normalize_structured_evidence_p_values(tmp_path) == 0
+
+
 def test_restore_rendered_section_headings_from_typed_sections() -> None:
     paper = (
         "## Limitations\n\n"

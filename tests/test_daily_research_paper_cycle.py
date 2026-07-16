@@ -5457,6 +5457,47 @@ def test_unmet_revision_asks_reads_quantitative_supplement(tmp_path: Path, monke
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
 
 
+def test_numeric_supplement_normalization_clears_live_revision_ask(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    import revision_coverage  # type: ignore[import-not-found]
+    from apply_consistency_fixes import normalize_public_p_values
+
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "# Research Synthesis: Statins\n\n"
+        "**Numeric verification note:** P-values use their implied decimal floor.\n\n"
+        "Karkeet 2022 reported P = 0.009 and P = 0.004. "
+        "Rustamzadeh 2024 reported P < 0.001.\n",
+        encoding="utf-8",
+    )
+    supplement = out_dir / "structured_evidence_tables.md"
+    supplement.write_text(
+        "## Quantitative Evidence Index\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Rustamzadeh 2024 | biomarker | treatment | P<0.000 | p-value | - |\n"
+        "| Karkeet 2022 | mortality | treatment | P<=0.05 | p-value | - |\n",
+        encoding="utf-8",
+    )
+    ask = (
+        "Resolve the numeric discrepancies: Karkeet 2022 should report "
+        "P = 0.009 and P = 0.004; Rustamzadeh 2024 should report P < 0.001, "
+        "not P < 0.000. Add a verification note explaining the recalibration."
+    )
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda *_args, **_kwargs: [])
+
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
+    normalized, changed = normalize_public_p_values(
+        supplement.read_text(encoding="utf-8"),
+    )
+    supplement.write_text(normalized, encoding="utf-8")
+    assert changed == 2
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
+
+
 def test_unmet_revision_asks_accepts_material_directional_explanation(tmp_path: Path, monkeypatch) -> None:
     import revision_coverage  # type: ignore[import-not-found]
 
@@ -6274,7 +6315,7 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
 
 
 def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
-    assert cycle.REVISION_REPAIR_EPOCH == 2
+    assert cycle.REVISION_REPAIR_EPOCH == 3
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     title = "Research Synthesis: Statin — full paper"
@@ -6284,7 +6325,7 @@ def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
             "key": marker,
             "title": title,
             "status": "revision_coverage_unmet",
-            "repair_epoch": 1,
+            "repair_epoch": 2,
             "handled_at": f"2026-07-15T20:{minute:02d}:00+00:00",
         }
         for minute in range(cycle.MAX_REVISE_ROUNDS)
