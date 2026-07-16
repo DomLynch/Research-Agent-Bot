@@ -121,7 +121,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   identified as `legacy_contract` rather than treated as newly verified.
 - Retryable revise failures carry `RESEARCH_AGENT_REVISION_REPAIR_EPOCH`.
   Increment that epoch only after a material repair-engine upgrade to reopen
-  old retryable requests once; terminal safety decisions never reopen.
+  old retryable requests once; terminal safety decisions never reopen. Epoch 2
+  activates the post-finalizer numeric-normalization repair.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.

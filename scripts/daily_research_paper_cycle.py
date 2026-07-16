@@ -74,7 +74,7 @@ DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
 # while bounding resubmissions to the live platform.
 MAX_REVISE_ROUNDS = 3
-REVISION_REPAIR_EPOCH = _positive_env_int("RESEARCH_AGENT_REVISION_REPAIR_EPOCH", 1)
+REVISION_REPAIR_EPOCH = _positive_env_int("RESEARCH_AGENT_REVISION_REPAIR_EPOCH", 2)
 PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3

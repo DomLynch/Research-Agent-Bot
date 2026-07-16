@@ -359,6 +359,25 @@ def test_apply_fixes_normalizes_public_p_value_display() -> None:
     )
 
 
+def test_lightweight_public_polish_renormalizes_rounded_zero_p_values() -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    out, log = fixer.apply_lightweight_public_polish(
+        "## Evidence Landscape\n\nRustamzadeh 2024 reported P<0.000.\n",
+    )
+
+    assert "P < 0.001" in out
+    assert "P<0.000" not in out
+    assert any(item["fix_type"] == "public_p_value_normalization" for item in log)
+
+    second_out, second_log = fixer.apply_lightweight_public_polish(out)
+    assert second_out == out
+    assert not second_log
+
+
 def test_apply_fixes_strips_public_placeholder_paragraph() -> None:
     import sys as _sys
     from pathlib import Path as _Path

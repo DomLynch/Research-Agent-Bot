@@ -6274,6 +6274,7 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
 
 
 def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
+    assert cycle.REVISION_REPAIR_EPOCH == 2
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     title = "Research Synthesis: Statin — full paper"
@@ -6283,6 +6284,7 @@ def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
             "key": marker,
             "title": title,
             "status": "revision_coverage_unmet",
+            "repair_epoch": 1,
             "handled_at": f"2026-07-15T20:{minute:02d}:00+00:00",
         }
         for minute in range(cycle.MAX_REVISE_ROUNDS)

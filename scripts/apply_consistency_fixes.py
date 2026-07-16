@@ -868,6 +868,16 @@ def apply_lightweight_public_polish(
                 "phrases into journal-facing evidence language"
             ),
         })
+    new_md, n_pvalue_norm = _normalize_public_p_values(new_md)
+    if n_pvalue_norm:
+        log.append({
+            "fix_type": "public_p_value_normalization",
+            "n_changes": n_pvalue_norm,
+            "description": (
+                "normalized public p-value notation after finalizer and "
+                "template repairs"
+            ),
+        })
     new_md, n_connector_punctuation = _repair_connector_punctuation(new_md)
     if n_connector_punctuation:
         log.append({
@@ -1377,7 +1387,10 @@ def _strip_role_repair_artifacts(paper_md: str) -> tuple[str, int]:
 
 
 def _normalize_public_p_values(paper_md: str) -> tuple[str, int]:
+    changed = 0
+
     def repl(match: re.Match[str]) -> str:
+        nonlocal changed
         op = match.group(1)
         value = match.group(2)
         if value.startswith("."):
@@ -1386,9 +1399,11 @@ def _normalize_public_p_values(paper_md: str) -> tuple[str, int]:
             decimals = len(value.partition(".")[2])
             op = "<"
             value = f"0.{('0' * (decimals - 1))}1"
-        return f"P {op} {value}"
+        replacement = f"P {op} {value}"
+        changed += replacement != match.group(0)
+        return replacement
 
-    return _PVALUE_DISPLAY_RE.subn(repl, paper_md)
+    return _PVALUE_DISPLAY_RE.sub(repl, paper_md), changed
 
 
 def _normalize_h3_residue_headings(paper_md: str) -> tuple[str, int]:
