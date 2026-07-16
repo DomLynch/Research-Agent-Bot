@@ -33,6 +33,7 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
     repair_abstract_claim_strength,
     repair_claim_strength,
 )
+from agent.source_hygiene import is_notice_only_source_title  # noqa: E402
 from agent.revision_evidence import (  # noqa: E402
     SNAPSHOT_DIR,
     create_revision_evidence_snapshot,
@@ -1952,8 +1953,7 @@ def _receipt_source_identity(paper_id: str, paper_meta: dict) -> str:
 
 
 def _is_retracted_source(paper_meta: dict) -> bool:
-    title = str(paper_meta.get("title") or "")
-    return bool(re.search(r"\b(?:retracted\s+article|retraction\s+notice)\b", title, re.I))
+    return is_notice_only_source_title(paper_meta.get("title"))
 
 
 def _receipt_mentions_active_topic(topic: str, paper_meta: dict, claims: list[dict]) -> bool:

@@ -51,6 +51,7 @@ from direction_consistency import (
     metadata_prose_direction_mismatches,
     outcome_prose_direction_mismatches,
 )
+from agent.statistical_consistency import significance_wording_mismatch
 
 __all__ = ["ConsistencyIssue", "run_audit", "main"]
 
@@ -737,31 +738,11 @@ def _check_outcome_direction_overclaim(
     return issues
 
 
-_WEAK_SIG_RE = re.compile(
-    r"\b(?:marginal(?:ly)?|borderline"
-    r"|non\s*-?\s*significan\w*"          # non significant / non-significant / nonsignificant
-    r"|not(?:\s+\w+){0,2}\s+significan\w*"  # not significant / not (very|statistically) significant(ly)
-    r"|trend(?:ing|ed|s)?\s+to(?:ward|wards)?|a\s+trend)\b",
-    re.IGNORECASE,
-)
-
-
-def _has_strong_p_value(sentence: str) -> bool:
-    for m in re.finditer(r"\b[Pp]\s*([<=])\s*(0?\.\d+)", sentence):
-        try:
-            value = float(m.group(2))
-        except ValueError:
-            continue
-        if value < 0.01 or (m.group(1) == "<" and value <= 0.01):
-            return True
-    return False
-
-
 def _check_prose_data_coherence(paper: str) -> list[ConsistencyIssue]:
-    """Flag a significance-WEAKNESS qualifier (marginal / borderline /
-    non-significant / trend-toward) co-occurring with a STRONG p-value (p<0.01)
-    in one sentence — e.g. "a marginal adiponectin signal (P<0.001)". The two
-    contradict (one cannot be marginal/borderline AND strongly significant);
+    """Flag weak significance language with p<0.01, plus an unqualified
+    non-significant label with p<0.05. Explicit multiplicity thresholds are
+    exempt because a nominal p<0.05 can correctly miss an adjusted threshold.
+    For example, "a marginal adiponectin signal (P<0.001)" is contradictory;
     this is the prose-vs-data incoherence flagged on the null-coded Tavakoli
     receipt. Effect-SIZE words (modest/small) are intentionally excluded — a
     small effect can be highly significant. Flag-only (P2). Universal —
@@ -770,7 +751,7 @@ def _check_prose_data_coherence(paper: str) -> list[ConsistencyIssue]:
     out: list[ConsistencyIssue] = []
     seen: set[str] = set()
     for sentence in re.split(r"(?<=[.!?])\s+", body):
-        if not (_WEAK_SIG_RE.search(sentence) and _has_strong_p_value(sentence)):
+        if not significance_wording_mismatch(sentence):
             continue
         key = sentence.strip()[:80]
         if key in seen:
@@ -781,11 +762,10 @@ def _check_prose_data_coherence(paper: str) -> list[ConsistencyIssue]:
             severity="P2",
             issue_type="prose_data_incoherence",
             auto_fixable=False,
-            evidence=f"weak-significance qualifier with p<0.01 in one sentence: {key}",
+            evidence=f"significance qualifier contradicts its p-value in one sentence: {key}",
             suggested_fix=(
-                "A 'marginal/borderline/non-significant/trend' description "
-                "contradicts p<0.01 — align the qualifier with the statistic or "
-                "omit one."
+                "Align the significance label with the reported p-value, or state "
+                "the adjusted threshold that makes the comparison non-significant."
             ),
         ))
     return out

@@ -956,6 +956,86 @@ def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, mo
     assert payload["source_bundle"][0]["cited_as"] == "Smith 2026"
 
 
+def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(daily, "ROOT", tmp_path)
+    run = _run(tmp_path)
+    receipt_id = "topic_effect_0"
+    registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
+    registry[receipt_id].update({"source_doi": "", "source_pmid": "", "source_pmcid": ""})
+    _write_json(run / "citation_registry.json", registry)
+    parsed = tmp_path / "docs" / "quality-reference" / "topic" / "parsed"
+    _write_json(parsed / f"{receipt_id}.paper_sections.json", {
+        "source_pdf": "https://clinicaltrials.gov/study/NCT01234567",
+    })
+    claims = tmp_path / "docs" / "quality-reference" / "topic" / "quant_claims"
+    _write_json(claims / f"{receipt_id}.quant_claims.json", {
+        "claims": [{
+            "sentence": "The trial reported a source-linked quantitative result.",
+            "binding_confidence": "high",
+        }],
+    })
+    _write_json(run / "risk_of_bias.json", [{
+        "study_id": "Smith 1 2026",
+        "overall_rating": "some_concerns",
+    }])
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    paper = paper.replace(
+        "results results results results results results results results results results",
+        "The evidence supports a bounded quantitative finding reported by Smith 1 2026.",
+        1,
+    )
+    (run / "full_paper.md").write_text(paper, encoding="utf-8")
+
+    payload = daily.build_payload(run)
+    row = payload["source_bundle"][0]
+
+    assert row["url"] == "https://clinicaltrials.gov/study/NCT01234567"
+    assert row["quote"] == "The trial reported a source-linked quantitative result."
+    assert row["risk_of_bias"] == "some_concerns"
+    assert "[bundle:1]" in payload["body_markdown"]
+    assert row["evidence_span"] in payload["body_markdown"]
+
+
+def test_source_bundle_excludes_notice_only_record(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["receipts"][0]["source_title"] = "Correction: Topic trial"
+    _write_json(run / "manifest.json", manifest)
+
+    bundle = daily._source_bundle(run, limit=1000)
+
+    assert len(bundle) == 11
+    assert all(not row["title"].startswith("Correction:") for row in bundle)
+
+
+def test_bundle_reference_matching_respects_citation_suffixes() -> None:
+    paper = "The evidence from Smith 2026a supports a bounded finding."
+    bundle = [{"cited_as": "Smith 2026"}, {"cited_as": "Smith 2026a"}]
+
+    traced = daily._publication_evidence.attach_bundle_references(paper, bundle)
+
+    assert "[bundle:1]" not in traced
+    assert "[bundle:2]" in traced
+
+
+def test_bundle_references_trace_aggregate_claims_to_direct_sources() -> None:
+    paper = (
+        "## Abstract\n\nThe retained evidence supports a bounded conclusion across the direct source base, "
+        "while null findings limit any broad clinical claim."
+    )
+    bundle = [
+        {"cited_as": "Smith 2026", "directness": "direct"},
+        {"cited_as": "Jones 2025", "directness": "indirect"},
+    ]
+
+    traced = daily._publication_evidence.attach_bundle_references(paper, bundle)
+    daily._publication_evidence.attach_evidence_spans(traced, bundle)
+
+    assert "[bundle:" not in traced
+    assert bundle[0]["evidence_span"] in traced
+    assert "evidence_span" not in bundle[1]
+
+
 def test_source_bundle_does_not_promote_citation_token_to_source_title(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
 

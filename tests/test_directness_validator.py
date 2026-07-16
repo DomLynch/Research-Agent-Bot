@@ -11,8 +11,10 @@ downgrade. Meta-analyses *of* RCTs stay reviews. Universal — no topic terms.
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
@@ -61,10 +63,40 @@ def test_classify_paper_tier_keeps_meta_analysis_out_of_direct() -> None:
     assert directness != "direct"
 
 
-def test_off_topic_rct_is_not_admitted_as_direct_receipt() -> None:
+def test_off_topic_rct_is_not_admitted_as_direct_receipt(tmp_path: Path, monkeypatch) -> None:
+    topic = "therapeutic_plasma_exchange"
+    root = tmp_path / topic
+    parsed, claims = root / "parsed", root / "quant_claims"
+    parsed.mkdir(parents=True)
+    claims.mkdir()
+    records = {
+        "PMC1_tpe": "Therapeutic plasma exchange randomized controlled trial",
+        "PMC2_web": "Cost-utility analysis of a web-based interactive patient education platform",
+    }
+    (root / "_extract_report.json").write_text(json.dumps({"active_paper_ids": list(records)}))
+    for paper_id, title in records.items():
+        (parsed / f"{paper_id}.paper_sections.json").write_text(json.dumps({
+            "paper_id": paper_id, "title": title, "abstract": title,
+        }))
+        (claims / f"{paper_id}.quant_claims.json").write_text(json.dumps({
+            "paper_id": paper_id,
+            "claims": [{
+                "binding_confidence": "high", "claim_type": "effect_size",
+                "arm": "therapeutic plasma exchange" if paper_id == "PMC1_tpe" else "web platform",
+                "endpoint": "clinical response", "direction": "increase",
+            }],
+        }))
     v06._set_topic("therapeutic_plasma_exchange")
+    monkeypatch.setattr(v06, "QUANT_DIR", claims)
+    monkeypatch.setattr(v06, "PARSED_DIR", parsed)
+    monkeypatch.setattr(v06, "_TOPIC_PACK", SimpleNamespace(
+        active_arm_synonyms=frozenset({"therapeutic plasma exchange"}),
+        placebo_arm_synonyms=frozenset({"control"}),
+        canonical_rct_paper_ids=frozenset(),
+        endpoint_polarity={},
+    ))
 
-    receipts = v06.build_receipts_from_quant_claims("therapeutic_plasma_exchange")
+    receipts = v06.build_receipts_from_quant_claims(topic)
     titles = {r.source_title or "": (r.evidence_tier, r.directness) for r in receipts}
 
     assert "Cost-utility analysis of a web-based interactive patient education platform" not in " ".join(titles)

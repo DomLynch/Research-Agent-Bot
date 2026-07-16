@@ -15,6 +15,7 @@ if str(_SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS_DIR))
 
 import revision_coverage  # noqa: E402
+from agent import statistical_consistency as _stats  # noqa: E402
 
 
 @dataclass(frozen=True, slots=True)
@@ -2108,16 +2109,19 @@ _FINALIZER_NONSIGNIFICANT_RE = re.compile(
     r"\b(?:non[- ]?significant(?:ly)?|not\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
     re.I,
 )
-
-
 def _phase_d_numeric_significance_correction(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    patched, n = _stats.repair_for_feedback(text, feedback)
     if not _revision_asks_numeric_significance_correction(feedback):
-        return text, []
-    patched, n = _remove_inline_numeric_correction_markup(text)
+        if not n:
+            return text, []
+        entry = FinalizerLogEntry("D_numeric_significance_correction", "repair_unqualified_non_significant_p_value", n, "aligned nominal significance wording with explicit p-values")
+        return patched, [entry]
+    patched, removed = _remove_inline_numeric_correction_markup(patched)
+    n += removed
     patched, renamed = re.subn(
         r"Numeric reconciliation note:", "Numeric verification note:",
         patched, flags=re.I,
@@ -2230,6 +2234,9 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
     source = before_p[-1] if before_p else sources[0]
     source_label = f"{source.group(1)} {source.group(2)}"
     p_text = f"p = {p_value.group(1)}"
+    statement = _stats.nominal_verification_statement(source_label, p_text, feedback)
+    if statement:
+        return (text, 0) if statement in text else _prepend_or_create_section_paragraph(text, "Evidence Landscape", statement)
     normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
     if n_existing:
         text = normalized

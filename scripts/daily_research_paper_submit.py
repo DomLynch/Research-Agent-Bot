@@ -32,6 +32,7 @@ from source_topic_specificity import (  # noqa: E402
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.outcome_class_remap import unique_outcome_displays  # noqa: E402
+from agent import publication_evidence as _publication_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
     parse_review_type,
@@ -1560,7 +1561,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         for item in manifest.get("receipts", [])
         if isinstance(item, dict)
     }
-    rows = [row for row in registry.values() if isinstance(row, dict)]
+    rows = _publication_evidence.source_rows(registry, receipts)
     rows.sort(
         key=lambda row: (
             int(row.get("source_year") or 0) >= 2020,
@@ -1570,6 +1571,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         reverse=True,
     )
     pubmed_abstracts = _pubmed_abstracts([str(row.get("source_pmid") or "") for row in rows[:limit]])
+    rob_ratings = _publication_evidence.risk_of_bias_ratings(run)
     bundle = []
     for row in rows[:limit]:
         receipt = receipts.get(str(row.get("receipt_id")), {})
@@ -1586,13 +1588,18 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             or _parsed_source_excerpt(topic, str(row.get("receipt_id") or ""))
             or _structured_source_excerpt(topic, row, receipt, title)
         )
+        receipt_id = str(row.get("receipt_id") or "")
+        cited_as = str(row.get("body_citation") or "")
+        rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)
         bundle.append({
             "source_type": "pubmed" if row.get("source_pmid") else "corpus",
             "id": str(row.get("source_pmid") or row.get("source_pmcid") or row.get("reference_id") or row.get("receipt_id") or ""),
             "title": title,
-            "url": _citation_url(row),
+            "url": _citation_url(row) or _publication_evidence.parsed_source_url(ROOT, topic, receipt_id),
             "doi": _clean_doi(row.get("source_doi")) or None,
+            "pmid": str(row.get("source_pmid") or "") or None,
             "excerpt": excerpt,
+            "quote": claim_excerpt or None,
             "year": row.get("source_year") if isinstance(row.get("source_year"), int) else None,
             "evidence_type": _evidence_type_for_source(receipt),
             "evidence_context": _source_context_for_receipt(receipt),
@@ -1604,7 +1611,8 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             # 2025") as a first-class SourceBundleEntry field so the Researka
             # reviewer can ground author-year prose citations to a bundle
             # source (workflow.py matches cited_as / title / year). Universal.
-            "cited_as": str(row.get("body_citation") or "") or None,
+            "cited_as": cited_as or None,
+            "risk_of_bias": rob if _source_context_for_receipt(receipt) == "direct" else None,
         })
     return bundle
 
@@ -1899,6 +1907,11 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
     title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"
+    # Preserve the agent's existing source URLs, source-level appraisals, and
+    # exact body-to-bundle links instead of dropping them at the API boundary.
+    source_bundle = _source_bundle(run, limit=max_sources)
+    paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
+    _publication_evidence.attach_evidence_spans(paper, source_bundle)
     parts = _sections(paper)
     abstract = _section(paper, "Abstract", fallback=str(manifest.get("thesis") or ""))
     methods = parts.get("Methods", "")
@@ -1914,7 +1927,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     # body_markdown), not padded into this count. (Previously this was
     # augmented with cited references, inflating e.g. 13 receipts → 22 and
     # mismatching the body's 13.)
-    source_bundle = _source_bundle(run, limit=max_sources)
     n_receipts = int(manifest.get("n_receipts") or 0)
     if n_receipts and len(source_bundle) != n_receipts:
         # Reconciliation invariant: the retained-source count must equal the

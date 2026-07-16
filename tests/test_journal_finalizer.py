@@ -1757,6 +1757,58 @@ def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Pat
     assert logs[0].n_changes == 1
 
 
+def test_numeric_significance_correction_does_not_invent_non_significance(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Verify the Smith 2025 statistic: the mapped comparison reports p = 0.009 "
+        "and should be described accurately."
+    )
+    paper = (
+        "## Abstract\n\nThe evidence remains bounded.\n\n"
+        "## Evidence Landscape\n\nSmith 2025 contributed the mapped result.\n\n"
+        "## Conclusion\n\nThe interpretation remains bounded.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "p = 0.009" in fixed
+    assert "nominally statistically significant" in fixed
+    assert "non-significant mapped comparison" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs
+
+
+def test_numeric_significance_correction_preserves_stated_adjusted_threshold(tmp_path: Path) -> None:
+    ask = (
+        "Verify Smith 2025: p = 0.009 did not cross the stated Bonferroni-adjusted "
+        "significance threshold."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Smith 2025 reported a non-significant comparison (p = 0.009).\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, _logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "nominally statistically significant comparison" in fixed
+    assert "did not cross the stated adjusted significance threshold" in fixed
+
+
+def test_numeric_significance_repair_preserves_references_and_grammar(tmp_path: Path) -> None:
+    paper = (
+        "## Results\n\nThe comparison did not reach significance (p = 0.01).\n\n"
+        "## References\n\n- A title saying non-significant result (p = 0.01).\n"
+    )
+
+    fixed, _logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "was nominally statistically significant (p = 0.01)" in fixed
+    assert "title saying non-significant result (p = 0.01)" in fixed
+
+
 def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

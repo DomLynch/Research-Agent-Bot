@@ -2347,3 +2347,15 @@ def test_prose_data_coherence_flags_marginal_with_strong_p():
     assert not audit._check_prose_data_coherence(
         "A non-significant trend was observed (p = 0.08).",
     )
+    assert audit._check_prose_data_coherence(
+        "The mapped comparison was non-significant (p = 0.04).",
+    )
+    assert not audit._check_prose_data_coherence(
+        "The comparison was non-significant after Bonferroni adjustment (p = 0.04).",
+    )
+    assert not audit._check_prose_data_coherence(
+        "The comparison was non-significant under a Bonferroni threshold (p = 0.009).",
+    )
+    assert not audit._check_prose_data_coherence(
+        "Several contrasts reached p < 0.001, while one was non-significant at p = 0.43.",
+    )

@@ -8,6 +8,7 @@ from typing import Any
 
 from agent.llm_client import LLMError, LLMResponse, build_judge_chain, chat_json
 from agent.settings import load_settings
+from agent.statistical_consistency import has_adjusted_significance_threshold
 
 _SYS = "You are a strict manuscript reviewer. Reply with JSON only."
 _USER = (
@@ -2591,10 +2592,13 @@ def _named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
         return False
     if p_value and f"p = {p_value.group(1)}" not in scope and f"p={p_value.group(1)}" not in scope:
         return False
-    return (
-        any(token in scope for token in ("non-significant", "not significant", "did not reach significance"))
-        and not _named_numeric_positive_contradiction(paper_md, ask)
-    )
+    adjusted = has_adjusted_significance_threshold(ask)
+    nominally_significant = bool(p_value and float(p_value.group(1)) < 0.05 and not adjusted)
+    if nominally_significant:
+        return any(token in scope for token in ("nominally statistically significant", "statistically significant"))
+    return any(
+        token in scope for token in ("non-significant", "not significant", "did not reach significance")
+    ) and not _named_numeric_positive_contradiction(paper_md, ask)
 
 
 def _numeric_correction_markup_is_resolved(paper_md: str) -> bool:
