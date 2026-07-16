@@ -94,8 +94,10 @@ not independently established causal findings.
 
 def test_numeric_revision_rejects_impossible_rounded_zero_p_value() -> None:
     ask = "Resolve the numeric discrepancies in reported P < 0.000 values and add a verification note."
-    paper = "**Numeric verification note:** checked. P < 0.000"
-    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    for notation in ("P < 0.000", "P = 0", "P=0.", "P = 0."):
+        assert revision_coverage._ROUNDED_ZERO_P_RE.search(notation)
+        paper = f"**Numeric verification note:** checked. {notation}"
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
 def test_qei_revision_requires_data_rows_and_normalized_p_values() -> None:

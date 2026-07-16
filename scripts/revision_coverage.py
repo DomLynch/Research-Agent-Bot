@@ -1663,7 +1663,10 @@ def _quantitative_evidence_index_is_stated(paper_md: str, ask: str) -> bool:
     return bool(rows) and _p_value_rows_are_normalized(rows, required=requires_p_values)
 
 
-_ROUNDED_ZERO_P_RE = re.compile(r"\bp\s*(?:=|<|\u2264)\s*(?:0(?![.\d])|0\.0+(?!\d)|\.0+(?!\d))", re.I)
+_ROUNDED_ZERO_P_RE = re.compile(
+    r"\bp\s*(?:=|<|\u2264)\s*(?:0(?!\d|\.\d)|0\.0+(?!\d)|\.0+(?!\d))",
+    re.I,
+)
 
 
 def _numeric_discrepancy_is_resolved(paper_md: str) -> bool:

@@ -2866,6 +2866,17 @@ def apply_fixes(
             new_md, depth_log = _ensure_analytical_depth_floors(new_md)
             log.extend(depth_log)
 
+    new_md, n_final_pvalue_norm = _normalize_public_p_values(new_md)
+    if n_final_pvalue_norm:
+        log.append({
+            "fix_type": "public_p_value_normalization_final",
+            "n_changes": n_final_pvalue_norm,
+            "description": (
+                "re-normalized public p-values after all restoration and "
+                "numeric-role repair paths"
+            ),
+        })
+
     return new_md, log
 
 

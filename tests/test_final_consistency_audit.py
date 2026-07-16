@@ -378,6 +378,33 @@ def test_lightweight_public_polish_renormalizes_rounded_zero_p_values() -> None:
     assert not second_log
 
 
+def test_apply_fixes_renormalizes_after_last_restoration(monkeypatch) -> None:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+    import apply_consistency_fixes as fixer
+
+    original = fixer._strip_exact_duplicate_public_paragraphs
+
+    def restore_late_rounded_zero(paper_md: str) -> tuple[str, int]:
+        cleaned, changed = original(paper_md)
+        return cleaned + "\nLate restored source statistic P<0.000.\n", changed
+
+    monkeypatch.setattr(
+        fixer,
+        "_strip_exact_duplicate_public_paragraphs",
+        restore_late_rounded_zero,
+    )
+    out, log = fixer.apply_fixes("## Results\n\nBounded result.\n", [])
+
+    assert "P < 0.001" in out
+    assert "P<0.000" not in out
+    assert any(
+        item["fix_type"] == "public_p_value_normalization_final"
+        for item in log
+    )
+
+
 def test_apply_fixes_strips_public_placeholder_paragraph() -> None:
     import sys as _sys
     from pathlib import Path as _Path
