@@ -9,6 +9,7 @@ from __future__ import annotations
 from typing import Any
 
 from agent.query_builder import (
+    build_doi_lookup_query,
     build_europepmc_query,
     build_fullraw_query,
     build_keyword_query,
@@ -189,6 +190,12 @@ def test_dispatcher_routes_europepmc_to_europepmc_builder():
 def test_dispatcher_routes_v5_fullraw_to_ranked_text_builder():
     spec = _spec()
     assert build_query_for_source("v5_fullraw", spec) == build_fullraw_query(spec)
+
+
+def test_unpaywall_never_receives_keyword_queries():
+    spec = _spec(topic_terms=("metformin",), scope_terms=("aging",))
+    assert build_doi_lookup_query(spec) == ""
+    assert build_query_for_source("unpaywall", spec) == ""
 
 
 def test_dispatcher_routes_unknown_to_keyword():

@@ -841,8 +841,7 @@ def test_slice26_word_boundary_avoids_false_positive_substring_matches() -> None
 def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
     tmp_path: Path,
 ) -> None:
-    """Mixed-lane paragraphs get a generic corpus-source qualifier,
-    not an all-animal lead-in."""
+    """Mixed-lane paragraphs name their animal context exactly once."""
     from agent.journal_finalizer import _phase_b_lane_qualifier
     run = tmp_path / "run"
     run.mkdir()
@@ -867,12 +866,17 @@ def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
     )
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text != paper
-    assert "Additional corpus sources included animal/preclinical evidence;" in new_text
+    assert "Animal/preclinical context (Smith 2022):" in new_text
     assert _unlabeled_animal_citation_issue_messages(
         new_text, ["Smith 2022"],
     ) == ()
     assert len(log) == 1
     assert log[0].rule == "animal_preclinical_lead_in"
+
+    rerendered, second_log = _phase_b_lane_qualifier(new_text, run)
+    assert rerendered == new_text
+    assert second_log == []
+    assert rerendered.count("Animal/preclinical context (Smith 2022):") == 1
 
 
 def test_phase_b_still_skips_paragraphs_with_existing_qualifier(
@@ -897,6 +901,59 @@ def test_phase_b_still_skips_paragraphs_with_existing_qualifier(
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text == paper  # already qualified — no change
     assert log == []
+
+
+def test_phase_b_preserves_natural_preclinical_qualifier(tmp_path: Path) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2022", "paper_id": "p1"}],
+        "lanes": {"Smith 2022": "animal_preclinical"},
+    }))
+    paper = "# Paper\n\nPreclinical evidence from Smith 2022 showed a bounded signal.\n"
+    assert _phase_b_lane_qualifier(paper, tmp_path) == (paper, [])
+
+
+def test_phase_b_replaces_repeated_generic_mixed_qualifiers(tmp_path: Path) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2022", "paper_id": "p1"}],
+        "lanes": {
+            "Smith 2022": "animal_preclinical",
+            "Wilson 2023": "human_observational",
+        },
+    }))
+    paper = (
+        "# Paper\n\n- Additional corpus sources included animal/preclinical evidence; "
+        "Additional corpus sources included animal/preclinical evidence; "
+        "Smith 2022 reported context while Wilson 2023 reported human data.\n"
+    )
+
+    fixed, _log = _phase_b_lane_qualifier(paper, run)
+    assert "Additional corpus sources included" not in fixed
+    assert fixed.count("Animal/preclinical context (Smith 2022):") == 1
+    assert _phase_b_lane_qualifier(fixed, run) == (fixed, [])
+
+
+def test_phase_b_removes_stale_generic_qualifier_without_animal_citation(tmp_path: Path) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2022", "paper_id": "p1"}],
+        "lanes": {"Smith 2022": "animal_preclinical"},
+    }))
+    paper = (
+        "# Paper\n\nAdditional corpus sources included animal/preclinical evidence; "
+        "human trials reported a bounded null result.\n"
+    )
+
+    fixed, log = _phase_b_lane_qualifier(paper, tmp_path)
+    assert fixed == "# Paper\n\nHuman trials reported a bounded null result.\n"
+    assert len(log) == 1
+    assert _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])
 
 
 def test_run_text_phases_repairs_late_animal_lane_drift(
@@ -1113,6 +1170,15 @@ def test_phase_i_splits_body_concatenated_h2_heading() -> None:
     before structural phases look for required sections."""
     from agent.journal_finalizer import _phase_i_split_concatenated_headings
     text = "# Paper\n\nPrior paragraph.## Discussion\n\nBody.\n"
+    new_text, log = _phase_i_split_concatenated_headings(text)
+    assert "Prior paragraph.\n\n## Discussion\n\nBody." in new_text
+    assert log and log[0].n_changes == 1
+
+
+def test_phase_i_adds_blank_boundary_before_h2_heading() -> None:
+    from agent.journal_finalizer import _phase_i_split_concatenated_headings
+
+    text = "# Paper\n\nPrior paragraph.\n## Discussion\n\nBody.\n"
     new_text, log = _phase_i_split_concatenated_headings(text)
     assert "Prior paragraph.\n\n## Discussion\n\nBody." in new_text
     assert log and log[0].n_changes == 1

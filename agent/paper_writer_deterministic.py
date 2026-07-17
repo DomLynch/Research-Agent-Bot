@@ -15,7 +15,7 @@ from agent.synthesis_schemas import (
     ReceiptSummary, SynthesisSection, SynthesisThesis, TensionMatrix,
 )
 from agent.synthesis_writer import filter_accepted
-from agent.outcome_class_remap import outcome_display
+from agent.outcome_class_remap import outcome_display, outcome_key
 
 __all__ = [
     "build_methods_section",
@@ -159,7 +159,7 @@ def build_references_full_section(
 def _outcome_class_set(receipts: Sequence[ReceiptSummary]) -> set[str]:
     """Distinct non-empty outcome_class values across the corpus."""
     return {
-        (r.outcome_class or "").strip() for r in receipts
+        outcome_key((r.outcome_class or "").strip()) for r in receipts
         if (r.outcome_class or "").strip()
     }
 
@@ -205,7 +205,7 @@ def _load_bearing_tension(matrix: TensionMatrix) -> Any | None:
 _OUTCOME_IMPORTANCE = {
     "longevity": 5, "frailty": 4, "muscle_function": 4,
     "cardiometabolic": 4, "cognitive": 4, "safety": 4,
-    "immune": 3, "oncology": 3, "ophthalmologic": 3,
+    "immune": 3, "immune_inflammation": 3, "oncology": 3, "ophthalmologic": 3,
     "mechanism": 2, "other": 1,
 }
 
@@ -230,7 +230,7 @@ def _outcome_rows(
     pairs = list(getattr(matrix, "non_orthogonal", lambda: [])()) if matrix else []
     rows: list[tuple[int, str, int, int, str, str]] = []
     for oc in sorted(_outcome_class_set(receipts)):
-        rs = [r for r in receipts if r.outcome_class == oc]
+        rs = [r for r in receipts if outcome_key(r.outcome_class) == oc]
         direct = sum(1 for r in rs if (r.directness or "").lower() == "direct")
         indirect = len(rs) - direct
         directions = ", ".join(sorted({
@@ -238,7 +238,7 @@ def _outcome_rows(
         }))
         conflict = max(
             (getattr(t, "severity", 0) or 0 for t in pairs
-             if getattr(t, "outcome_class", "") == oc),
+             if outcome_key(getattr(t, "outcome_class", "")) == oc),
             default=0,
         )
         gap = "direct clinical gap" if direct == 0 else "replication gap"

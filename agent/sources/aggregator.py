@@ -20,14 +20,14 @@ from agent.types import RawHit
 # Default-enabled set is the no-auth-required free APIs.
 
 AuthEnv = str | tuple[str, ...] | None
+UNPAYWALL_LOOKUP_LIMIT = 25
 
 
 def _auth_configured(auth_env: AuthEnv) -> bool:
     if auth_env is None:
         return True
-    if isinstance(auth_env, tuple):
-        return any(os.environ.get(name) is not None for name in auth_env)
-    return os.environ.get(auth_env) is not None
+    names = auth_env if isinstance(auth_env, tuple) else (auth_env,)
+    return any(os.environ.get(name, "").strip() for name in names)
 
 
 def _auth_label(auth_env: AuthEnv) -> str | None:
@@ -94,7 +94,7 @@ def _build_registry() -> dict:
         "chembl": (ChemblClient(), False, None),
         # Tier 4: lookup-only (DOI → OA URL, used post-hoc)
         "unpaywall": (
-            UnpaywallClient(), False, None,
+            UnpaywallClient(), True, "UNPAYWALL_EMAIL",
         ),
     }
 
@@ -143,6 +143,11 @@ def _dedupe_key(hit: RawHit) -> str:
     return f"title:{hit.title.lower()[:80]}"
 
 
+def _doi_lookup_query(results: Iterable[Iterable[RawHit]], limit: int) -> str:
+    dois = dict.fromkeys(hit.doi for rows in results for hit in rows if hit.doi)
+    return ",".join(list(dois)[:min(limit, UNPAYWALL_LOOKUP_LIMIT)])
+
+
 async def discover_calibrated(
     spec: RetrievalSpec,
     *,
@@ -161,6 +166,7 @@ async def discover_calibrated(
             in registry.items()
             if default_en and _auth_configured(auth_env)
         ]
+    enabled_sources = tuple(enabled_sources)
     # Per-source limit: ample enough to pull real corpora but
     # bounded by source-API caps (most cap at ~100/call internally).
     per_source_limit = max(100, p.page_size * 10)
@@ -198,15 +204,23 @@ async def discover_calibrated(
         for name in enabled_sources:
             if name not in registry:
                 continue
+            if name == "unpaywall":
+                continue
             client, _, _ = registry[name]
             query_for_source = build_query_for_source(name, spec)
             if not query_for_source:
                 stats[f"empty_{name}"] = 1
                 continue
             tasks.append(_safe_search(name, client, query_for_source))
-        results = await asyncio.gather(
-            *tasks, return_exceptions=False,
-        )
+        results = list(await asyncio.gather(*tasks, return_exceptions=False))
+        if "unpaywall" in enabled_sources and "unpaywall" in registry:
+            doi_query = _doi_lookup_query(results, per_source_limit)
+            if doi_query:
+                results.append(await _safe_search(
+                    "unpaywall", registry["unpaywall"][0], doi_query,
+                ))
+            else:
+                stats["empty_unpaywall"] = 1
 
     out = _merge_and_dedupe(results, stats)
     # Honor universal safety cap (200K default).
@@ -232,11 +246,12 @@ def _merge_and_dedupe(
     stats["unique_keys_post_dedupe"] = len(grouped)
     out: list[AggregatedHit] = []
     for _key, hits in grouped.items():
+        content_hits = [hit for hit in hits if hit.source != "unpaywall"] or hits
         best_abstract = max(
-            (h.abstract for h in hits), key=len, default="",
+            (h.abstract for h in content_hits), key=len, default="",
         )
         best_title = max(
-            (h.title for h in hits), key=len, default="",
+            (h.title for h in content_hits), key=len, default="",
         )
         doi = next((h.doi for h in hits if h.doi), None)
         pmid = next((h.pmid for h in hits if h.pmid), None)
@@ -244,14 +259,15 @@ def _merge_and_dedupe(
         year = next(
             (h.year for h in hits if h.year is not None), None,
         )
-        url = next(
+        canonical_url = next(
             (h.url for h in hits if h.url and "doi.org" in h.url),
             hits[0].url,
         )
+        url = next((h.url for h in hits if h.source == "unpaywall" and h.url), canonical_url)
         venue = next(
             (h.venue for h in hits if h.venue), None,
         )
-        source_names = tuple(sorted({h.source for h in hits}))
+        source_names = tuple(sorted({h.source for h in hits if h.source != "unpaywall"}))
         out.append(AggregatedHit(
             title=best_title, abstract=best_abstract,
             doi=doi, pmid=pmid, nct=nct, year=year,
@@ -276,16 +292,15 @@ async def discover(
         enabled_sources = [
             name for name, (_, default_en, auth_env)
             in registry.items()
-            if default_en and (
-                auth_env is None or os.environ.get(auth_env)
-            )
+            if default_en and _auth_configured(auth_env)
         ]
+    enabled_sources = tuple(enabled_sources)
 
-    async def _safe_search(name: str, client) -> list[RawHit]:
+    async def _safe_search(name: str, client, query: str = topic_keywords) -> list[RawHit]:
         try:
             if hasattr(client, "search_result"):
-                return (await client.search_result(http, topic_keywords, limit=limit_per_source)).hits
-            return await client.search(http, topic_keywords, limit=limit_per_source)
+                return (await client.search_result(http, query, limit=limit_per_source)).hits
+            return await client.search(http, query, limit=limit_per_source)
         except (httpx.HTTPError, ValueError, OSError) as e:
             print(
                 f"  ! source {name} failed: "
@@ -303,11 +318,17 @@ async def discover(
         for name in enabled_sources:
             if name not in registry:
                 continue
+            if name == "unpaywall":
+                continue
             client, _, _ = registry[name]
             tasks.append(_safe_search(name, client))
-        results = await asyncio.gather(
+        results = list(await asyncio.gather(
             *tasks, return_exceptions=False,
-        )
+        ))
+        if "unpaywall" in enabled_sources and "unpaywall" in registry:
+            doi_query = _doi_lookup_query(results, limit_per_source)
+            if doi_query:
+                results.append(await _safe_search("unpaywall", registry["unpaywall"][0], doi_query))
 
     # Flatten + dedupe via shared helper (Slice 6 step 4 refactor).
-    return _merge_and_dedupe(list(results), stats={})
+    return _merge_and_dedupe(results, stats={})

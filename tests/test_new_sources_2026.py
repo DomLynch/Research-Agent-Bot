@@ -23,6 +23,7 @@ from agent.sources.arxiv import ArxivClient, _build_search_query
 from agent.sources.biorxiv import BioRxivClient
 from agent.sources.medrxiv import MedRxivClient
 from agent.sources.openalex import OpenAlexClient
+from agent.sources.unpaywall import UnpaywallClient
 import agent.sources.semantic_scholar as semantic_scholar
 from agent.sources.semantic_scholar import SemanticScholarClient
 
@@ -171,6 +172,67 @@ def test_openalex_anonymous_when_neither_set():
            if k not in ("OPENALEX_API_KEY", "CROSSREF_POLITE_EMAIL")}
     with patch.dict(os.environ, env, clear=True):
         assert cli._auth_params() == {}
+
+
+def test_unpaywall_requires_a_real_contact_email(monkeypatch) -> None:
+    monkeypatch.delenv("UNPAYWALL_EMAIL", raising=False)
+    with pytest.raises(ValueError, match="valid contact email"):
+        UnpaywallClient()._email()
+
+    monkeypatch.setenv("UNPAYWALL_EMAIL", "researka@example.com")
+    with pytest.raises(ValueError, match="valid contact email"):
+        UnpaywallClient()._email()
+
+    monkeypatch.setenv("UNPAYWALL_EMAIL", "research@researka.org")
+    assert UnpaywallClient()._email() == "research@researka.org"
+
+    monkeypatch.setenv("UNPAYWALL_EMAIL", "research+v3@researka.org")
+    assert UnpaywallClient()._email() == "research+v3@researka.org"
+
+
+def test_unpaywall_lookups_are_concurrent_and_bounded(monkeypatch) -> None:
+    class Response:
+        status_code = 200
+
+        def __init__(self, url: str) -> None:
+            self.url = url
+
+        def json(self) -> dict[str, Any]:
+            return {
+                "title": self.url,
+                "is_oa": True,
+                "best_oa_location": {"url_for_pdf": self.url},
+            }
+
+    class Client:
+        active = 0
+        peak = 0
+
+        async def get(self, url: str, *, timeout: float) -> Response:
+            assert timeout == 10.0
+            self.active += 1
+            self.peak = max(self.peak, self.active)
+            await asyncio.sleep(0)
+            self.active -= 1
+            return Response(url)
+
+    monkeypatch.setenv("UNPAYWALL_EMAIL", "research+v3@researka.org")
+    client = Client()
+    hits = asyncio.run(UnpaywallClient().search(
+        client,  # type: ignore[arg-type]
+        ",".join(f"10.1000/{index}" for index in range(20)), limit=20,
+    ))
+
+    assert len(hits) == 20
+    assert 1 < client.peak <= UnpaywallClient.max_concurrent_lookups
+    assert all("email=research%2Bv3%40researka.org" in hit.title for hit in hits)
+
+
+def test_unpaywall_does_not_emit_closed_or_locatorless_records(monkeypatch) -> None:
+    monkeypatch.setenv("UNPAYWALL_EMAIL", "research@researka.org")
+    client = UnpaywallClient()
+    assert client._parse({"title": "Closed", "is_oa": False}, doi="10.1/closed") is None
+    assert client._parse({"title": "No URL", "is_oa": True}, doi="10.1/missing") is None
 
 
 # ---------- Semantic Scholar ---------------------------------------
@@ -345,7 +407,7 @@ def test_aggregator_core_auto_enables_with_key():
 def test_aggregator_total_source_count_is_17():
     """Sanity check: 13 corpus sources + 2 new + researka + v5 fullraw = 17
     total in registry. (10 default Tier-1 + arXiv + medRxiv = 12 Tier-1;
-    +CORE=13 default-on gated; +ChEMBL+Unpaywall=15 opt-in; +researka=16,
+    +CORE=13 default-on gated; +ChEMBL plus gated Unpaywall=15; +researka=16,
     default-on but auth-gated by RESEARKA_DATABASE_TOKEN; +v5_fullraw=17,
     default-on but auth-gated by canonical or legacy fullraw token.)"""
     reg = _build_registry()

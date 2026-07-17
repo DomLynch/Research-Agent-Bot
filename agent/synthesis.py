@@ -51,6 +51,7 @@ import re
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 
+from agent.endpoint_evidence import directional_kind, endpoint_direction_map, endpoint_key
 from agent.synthesis_schemas import (
     EffectDirection,
     OutcomeClass,
@@ -449,6 +450,33 @@ def _extract_p_values(thesis_text: str) -> tuple[str, ...]:
     return tuple(out)
 
 
+def _claim_endpoint_evidence(
+    claims: Sequence[dict],
+) -> tuple[tuple[str, ...], tuple[tuple[str, EffectDirection], ...]]:
+    """Derive endpoint directions only from claims explicitly bound to that endpoint."""
+    grouped: dict[str, list[str]] = {}
+    labels: dict[str, str] = {}
+    for claim in claims:
+        endpoint = " ".join(str(claim.get("endpoint") or claim.get("outcome") or "").split())
+        key = endpoint_key(endpoint)
+        if not key:
+            continue
+        labels.setdefault(key, endpoint)
+        grouped.setdefault(key, []).append(str(claim.get("text") or ""))
+    directions = tuple(
+        (
+            labels[key],
+            detect_effect_direction(
+                text := " ".join(parts),
+                outcome_class=detect_outcome_class(f"{labels[key]} {text}"),
+                p_values=_extract_p_values(text),
+            ),
+        )
+        for key, parts in grouped.items()
+    )
+    return tuple(labels.values()), directions
+
+
 # --- build_receipt_summary -----------------------------------------------
 
 
@@ -503,6 +531,7 @@ def build_receipt_summary(
     effect_direction = detect_effect_direction(
         thesis_text, outcome_class=outcome_class, p_values=p_values,
     )
+    endpoints, endpoint_directions = _claim_endpoint_evidence(claims)
 
     # Pick the strongest evidence_tier and directness across the
     # claims supporting the thesis.
@@ -548,6 +577,8 @@ def build_receipt_summary(
         outcome_class=outcome_class,
         effect_direction=effect_direction,
         p_values=p_values,
+        endpoints=endpoints,
+        endpoint_directions=endpoint_directions,
         population_summary=_detect_population_summary(
             thesis_text, items_by_ref, directness=directness,
         ),
@@ -604,10 +635,24 @@ _SEVERITY: Mapping[TensionKind, int] = {
 }
 
 
-def _tension_summary(kind: TensionKind, a: ReceiptSummary, b: ReceiptSummary) -> str:
+def _tension_summary(
+    kind: TensionKind,
+    a: ReceiptSummary,
+    b: ReceiptSummary,
+    *,
+    endpoint: str | None = None,
+    direction_a: EffectDirection | None = None,
+    direction_b: EffectDirection | None = None,
+) -> str:
     """One-line deterministic description of the tension. The synthesis
     writer can cite this verbatim in the Tensions section."""
     if kind == "orthogonal":
+        if a.outcome_class == b.outcome_class:
+            return (
+                f"{a.receipt_id} and {b.receipt_id} share the broad "
+                f"{a.outcome_class} class but no comparable endpoint-level "
+                "direction — no logical conflict"
+            )
         return (
             f"{a.receipt_id} ({a.outcome_class}) and {b.receipt_id} "
             f"({b.outcome_class}) cover different outcome classes — no logical conflict"
@@ -615,21 +660,21 @@ def _tension_summary(kind: TensionKind, a: ReceiptSummary, b: ReceiptSummary) ->
     if kind == "agreement":
         return (
             f"{a.receipt_id} and {b.receipt_id} both report "
-            f"{a.effect_direction} effect on {a.outcome_class}"
+            f"{direction_a} effect on {endpoint}"
         )
     if kind == "disagreement":
         return (
-            f"{a.receipt_id} reports {a.effect_direction} effect on "
-            f"{a.outcome_class}; {b.receipt_id} reports {b.effect_direction} "
-            f"on the same outcome — direct conflict"
+            f"{a.receipt_id} reports {direction_a} effect on {endpoint}; "
+            f"{b.receipt_id} reports {direction_b} on the same endpoint "
+            "— direct conflict"
         )
     if kind in ("null_vs_positive", "null_vs_negative"):
-        signed = a if a.effect_direction != "null" else b
-        nullish = b if a.effect_direction != "null" else a
+        signed = a if direction_a != "null" else b
+        nullish = b if direction_a != "null" else a
+        signed_direction = direction_a if direction_a != "null" else direction_b
         return (
-            f"{signed.receipt_id} ({signed.effect_direction} on "
-            f"{a.outcome_class}) vs {nullish.receipt_id} (null on "
-            f"{a.outcome_class}) — partial conflict"
+            f"{signed.receipt_id} ({signed_direction} on {endpoint}) vs "
+            f"{nullish.receipt_id} (null on {endpoint}) — partial conflict"
         )
     if kind == "indirectness_gap":
         direct_one = a if a.directness == "direct" else b
@@ -664,15 +709,19 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
          b. otherwise → orthogonal
       2. one is direct, the other is mechanistic, same outcome class
          → indirectness_gap
-      3. one effect is null, other is positive/negative → null_vs_positive
-      4. effect_directions are opposite (positive vs negative) → disagreement
-      5. effect_directions same and signed → agreement
+      3. on an exact shared endpoint, one effect is null and the other signed
+         → null_vs_positive / null_vs_negative
+      4. on an exact shared endpoint, directions oppose → disagreement
+      5. on an exact shared endpoint, signed directions agree → agreement
       6. otherwise → orthogonal (both unclear / both null)
 
     Severity is read from `_SEVERITY` table, applied uniformly per
     kind so ranking is deterministic.
     """
     same_outcome = a.outcome_class == b.outcome_class
+    endpoint: str | None = None
+    direction_a: EffectDirection | None = None
+    direction_b: EffectDirection | None = None
 
     a_direct = a.directness == "direct"
     b_direct = b.directness == "direct"
@@ -707,28 +756,46 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
         comparable = (a.directness == "mechanistic") == (b.directness == "mechanistic")
         if (a_direct and b_non_direct) or (b_direct and a_non_direct):
             kind = "indirectness_gap"
-        elif comparable and a.effect_direction == "null" and b.effect_direction in {"positive", "negative"}:
-            kind = "null_vs_positive" if b.effect_direction == "positive" else "null_vs_negative"
-        elif comparable and b.effect_direction == "null" and a.effect_direction in {"positive", "negative"}:
-            kind = "null_vs_positive" if a.effect_direction == "positive" else "null_vs_negative"
-        elif {a.effect_direction, b.effect_direction} == {"positive", "negative"}:
-            kind = "disagreement"
-        elif (
-            a.effect_direction == b.effect_direction
-            and a.effect_direction in {"positive", "negative"}
-        ):
-            kind = "agreement"
         else:
-            # Both unclear / both null / mixed unclear+something → orthogonal.
-            kind = "orthogonal"
+            map_a = endpoint_direction_map(
+                a.endpoint_directions, a.endpoints, a.effect_direction,
+            )
+            map_b = endpoint_direction_map(
+                b.endpoint_directions, b.endpoints, b.effect_direction,
+            )
+            candidates: list[
+                tuple[int, str, TensionKind, EffectDirection, EffectDirection]
+            ] = []
+            for shared_endpoint in sorted(map_a.keys() & map_b.keys()):
+                candidate_a = map_a[shared_endpoint]
+                candidate_b = map_b[shared_endpoint]
+                candidate_kind = directional_kind(candidate_a, candidate_b)
+                if (
+                    candidate_kind in {"null_vs_positive", "null_vs_negative"}
+                    and not comparable
+                ):
+                    continue
+                if candidate_kind != "orthogonal":
+                    candidates.append((
+                        -_SEVERITY[candidate_kind], shared_endpoint,
+                        candidate_kind, candidate_a, candidate_b,
+                    ))
+            if candidates:
+                _, endpoint, kind, direction_a, direction_b = min(candidates)
+            else:
+                kind = "orthogonal"
 
     return Tension(
         receipt_a_id=a.receipt_id,
         receipt_b_id=b.receipt_id,
         kind=kind,
         outcome_class=a.outcome_class if same_outcome else a.outcome_class,
-        summary=_tension_summary(kind, a, b),
+        summary=_tension_summary(
+            kind, a, b, endpoint=endpoint,
+            direction_a=direction_a, direction_b=direction_b,
+        ),
         severity=_SEVERITY[kind],
+        endpoint=endpoint,
     )
 
 

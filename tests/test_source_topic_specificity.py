@@ -105,6 +105,168 @@ def test_longevity_topic_accepts_entity_with_longevity_scope() -> None:
     )
 
 
+def test_scope_only_topic_requires_its_full_scope_not_generic_longevity() -> None:
+    assert not is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Longevity of dental restorations in clinical practice",
+    )
+    assert is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Lifespan and longevity among older adult subgroups",
+    )
+    assert not is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Lifespan and longevity of dental restorations",
+    )
+    assert not is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Lifespan and longevity of dental restorations in human patients",
+    )
+    assert is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Exceptional longevity in centenarian subgroups",
+    )
+    assert is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "C. elegans lifespan varies across genetic subgroups",
+    )
+    assert is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Longevity among older adults",
+    )
+    assert is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Saccharomyces cerevisiae lifespan",
+    )
+    assert not is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Dental implant longevity among older adults",
+    )
+    for title in (
+        "Machine learning model lifespan",
+        "Battery cell lifespan in human patients",
+        "Computer mouse lifespan under heavy use",
+        "Human battery lifespan under rapid charging",
+        "Router lifespan study",
+        "Software lifespan study",
+        "Turbine lifespan study",
+        "Concrete lifespan study",
+        "Router lifespan under dietary restriction",
+        "Software longevity in aging populations",
+        "Turbine lifespan after protein treatment",
+        "Concrete lifespan under metabolic stress",
+        "Engine lifespan in a mortality model",
+        "Router lifespan compared with Saccharomyces cerevisiae",
+        "Lifespan of routers among Saccharomyces cerevisiae samples",
+        "Human evaluation of router lifespan under load",
+        "An analysis of router lifespan compared with Saccharomyces cerevisiae",
+        "Human software lifespan",
+        "Biological model router lifespan",
+        "Digital accessory lifespan in mice",
+        "Library lifespan in mice",
+        "Directory lifespan in mice",
+        "Factory lifespan in mice",
+        "Lifespan study of wearable sensors in mice",
+        "Lifespan analysis of laboratory equipment in mice",
+    ):
+        assert not is_source_topic_specific("longevity_lifespan_subgroups", title)
+    for title in (
+        "Zebrafish lifespan under dietary restriction",
+        "Killifish lifespan after intervention",
+        "Coral lifespan under thermal stress",
+        "Bacteria longevity under nutrient restriction",
+        "Octopuses lifespan across environments",
+        "Fruit fly lifespan under dietary restriction",
+        "Neural network control of C. elegans lifespan",
+        "Macaque lifespan across populations",
+        "Rabbit lifespan under dietary restriction",
+        "Hamster longevity after protein restriction",
+        "Guppy lifespan across reproductive conditions",
+        "Study reports lifespan in mice",
+        "Trial measures lifespan in mice",
+        "A lifespan study in mice",
+        "Longitudinal lifespan analysis in mice",
+        "Comparative lifespan study in Drosophila",
+        "Lifespan study of mice",
+    ):
+        assert is_source_topic_specific("longevity_lifespan_subgroups", title)
+
+    assert not is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "Lifespan mortality forecasting models for insurance portfolios",
+    )
+    assert not is_source_topic_specific("longevity_lifespan_subgroups", "Contract lifespan")
+    assert not is_source_topic_specific("longevity_lifespan_subgroups", "Brand longevity")
+    assert is_source_topic_specific(
+        "longevity_lifespan_subgroups",
+        "A lifespan study of yeast evaluates longevity.",
+    )
+
+
+def test_generated_scope_only_pack_is_not_structurally_specific() -> None:
+    assert not generated_pack_publishable({
+        "candidate_count": 20,
+        "pack_data": {
+            "topic": "longevity_lifespan_subgroups",
+            "aliases": ["longevity lifespan", "longevity", "lifespan"],
+            "retrieval": {"topic_terms": ["longevity", "lifespan"]},
+        },
+    })
+    assert not generated_pack_publishable({
+        "candidate_count": 20,
+        "pack_data": {
+            "topic": "generic_aging",
+            "aliases": ["anti-aging", "healthy aging"],
+            "retrieval": {"topic_terms": ["anti-aging", "healthy aging"]},
+        },
+    })
+    assert not generated_pack_publishable({
+        "candidate_count": 20,
+        "pack_data": {
+            "topic": "healthy_aging",
+            "aliases": ["Healthy Aging"],
+            "retrieval": {"topic_terms": ["Healthy Aging"]},
+        },
+    })
+    assert not generated_pack_publishable({
+        "candidate_count": 20,
+        "pack_data": {
+            "topic": "anti_aging",
+            "aliases": ["anti-aging"],
+            "retrieval": {"topic_terms": ["anti-aging"]},
+        },
+    })
+    assert not generated_pack_publishable({
+        "candidate_count": 30,
+        "pack_data": {
+            "topic": "normal_aging",
+            "aliases": ["normal aging", "typical aging"],
+            "retrieval": {"topic_terms": ["normal aging", "typical aging"]},
+        },
+    }, peer_records=[
+        {"candidate_count": 20, "pack_data": {"topic": "healthy_aging", "aliases": ["healthy aging"]}},
+        {"candidate_count": 20, "pack_data": {"topic": "exceptional_longevity", "aliases": ["exceptional longevity"]}},
+    ])
+    assert not generated_pack_publishable({
+        "candidate_count": 30,
+        "pack_data": {
+            "topic": "normal_aging",
+            "aliases": ["normal", "typical", "aging"],
+            "retrieval": {"topic_terms": ["normal", "typical", "aging"]},
+        },
+    }, peer_records=[
+        {"candidate_count": 20, "pack_data": {"topic": "healthy_aging", "aliases": ["healthy aging"]}},
+        {"candidate_count": 20, "pack_data": {"topic": "exceptional_longevity", "aliases": ["exceptional longevity"]}},
+    ])
+    assert generated_pack_publishable({
+        "candidate_count": 30,
+        "pack_data": {"topic": "metformin_aging", "aliases": ["metformin aging"]},
+    }, peer_records=[
+        {"candidate_count": 20, "pack_data": {"topic": "healthy_aging", "aliases": ["healthy aging"]}},
+        {"candidate_count": 20, "pack_data": {"topic": "exceptional_longevity", "aliases": ["exceptional longevity"]}},
+    ])
+
+
 def test_composite_topic_rejects_broad_alias_only_source() -> None:
     aliases = source_gate_aliases(
         "digital_frailty_index",

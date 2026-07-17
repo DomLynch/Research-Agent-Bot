@@ -14,14 +14,9 @@ from __future__ import annotations
 
 import importlib
 import sys
-from pathlib import Path
 from typing import Any
 
-_SCRIPTS_DIR = Path(__file__).resolve().parent.parent / "scripts"
-if str(_SCRIPTS_DIR) not in sys.path:
-    sys.path.insert(0, str(_SCRIPTS_DIR))
-
-_impl = importlib.import_module("journal_finalizer")
+_impl = importlib.import_module("scripts.journal_finalizer")
 sys.modules[__name__] = _impl
 
 

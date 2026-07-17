@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import asyncio
 import re
-from collections.abc import Awaitable, Callable, Sequence
+from collections.abc import Awaitable, Callable, Iterable, Sequence
 from typing import Any
 
 from agent.llm_client import LLMError, LLMResponse, build_judge_chain, chat_json
@@ -111,45 +111,41 @@ def unmet_asks(
     return [a for a, ok in zip(clean, flags, strict=True) if not ok]
 
 
-def material_unmet_asks(paper_md: str, feedback: str) -> list[str]:
+def material_unmet_asks(
+    paper_md: str, feedback: str, *, retained_citations: Iterable[str] | None = None,
+) -> list[str]:
     """Coverage result after deterministic structural checks and LLM judge."""
     asks = revision_asks(feedback)
-    unmet = deterministic_unmet_asks(paper_md, asks)
-    deterministic_met = set(deterministic_satisfied_asks(paper_md, asks))
+    unmet = deterministic_unmet_asks(paper_md, asks, retained_citations=retained_citations)
+    deterministic_met = set(deterministic_known_asks(asks)) - set(unmet)
     for ask in unmet_asks(paper_md, asks):
         if ask not in unmet and ask not in deterministic_met:
             unmet.append(ask)
     return unmet
 
 
-def deterministic_unmet_asks(paper_md: str, asks: Sequence[str]) -> list[str]:
+def deterministic_unmet_asks(
+    paper_md: str, asks: Sequence[str], *, retained_citations: Iterable[str] | None = None,
+) -> list[str]:
     """Reviewer asks with deterministic manuscript evidence.
 
     The LLM coverage judge stays useful for semantic asks, but these recurring
     Researka revise classes are structural enough to verify directly. This
     makes the gate resilient when the judge fails open.
     """
-    clean = [a.strip() for a in asks if a and a.strip()]
-    if not clean:
-        return []
-    return [ask for ask in clean if not _deterministic_ask_satisfied(paper_md, ask)]
-
-
-def deterministic_satisfied_asks(paper_md: str, asks: Sequence[str]) -> list[str]:
-    """Reviewer asks whose structural predicate is known and satisfied."""
-    clean = [a.strip() for a in asks if a and a.strip()]
-    return [ask for ask in clean if _deterministic_ask_known(ask) and _deterministic_ask_satisfied(paper_md, ask)]
+    return [ask for ask in (a.strip() for a in asks if a and a.strip())
+            if not _deterministic_ask_satisfied(paper_md, ask)
+            or retained_citations is not None
+            and not _retained_tension_ask_satisfied(paper_md, ask, retained_citations)]
 
 
 def deterministic_known_asks(asks: Sequence[str]) -> list[str]:
     """Reviewer asks covered by deterministic structural predicates."""
-    clean = [a.strip() for a in asks if a and a.strip()]
-    return [ask for ask in clean if _deterministic_ask_known(ask)]
+    return [ask for ask in (a.strip() for a in asks if a and a.strip()) if _deterministic_ask_known(ask)]
 
 
 def _deterministic_ask_known(ask: str) -> bool:
-    lower = " ".join(ask.lower().split())
-    return any(matches(lower) for matches, _ in _DETERMINISTIC_ASK_RULES)
+    return any(matches(" ".join(ask.lower().split())) for matches, _ in _DETERMINISTIC_ASK_RULES)
 
 
 def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
@@ -158,6 +154,31 @@ def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
         if matches(lower):
             return is_satisfied(paper_md, ask, lower)
     return True
+
+
+def _retained_tension_ask_satisfied(
+    paper_md: str, ask: str, retained_citations: Iterable[str],
+) -> bool:
+    lower = " ".join(ask.lower().split())
+    checker = (
+        _replaced_surface_tensions_are_stated
+        if _asks_replaced_surface_tensions(lower) else _concrete_tensions_gaps_are_stated
+    )
+    return not (_asks_replaced_surface_tensions(lower) or _asks_concrete_tensions_gaps(lower)) or checker(
+        paper_md, ask, retained_citations=retained_citations)
+
+
+def retained_citation_labels(
+    manifest: dict[str, Any], registry: dict[str, Any] | None = None,
+) -> frozenset[str]:
+    rows = manifest.get("receipts") or manifest.get("source_bundle") or ()
+    records = [row for row in rows if isinstance(row, dict)]
+    if isinstance(registry, dict):
+        records.extend(row for row in registry.values() if isinstance(row, dict))
+    fields = "body_citation", "citation_token", "citation", "source_label", "receipt_id", "source_title", "source_pmcid", "pmcid"
+    return frozenset(
+        " ".join(str(row.get(field) or "").casefold().split())
+        for row in records for field in fields if str(row.get(field) or "").strip())
 
 
 def _asks_classification_criteria(text: str) -> bool:
@@ -911,41 +932,32 @@ def _asks_null_signal_reconciliation(text: str) -> bool:
 
 
 def _asks_concrete_tensions_gaps(text: str) -> bool:
-    return (
-        (
-            "tension" in text
-            and "gap" in text
-            and any(token in text for token in ("3-5", "3–5", "concrete", "specific sources", "tie each"))
-        )
-        or (
-            "non-orthogonal tensions" in text
-            and any(token in text for token in ("operationalize", "calculation", "verifiable", "auditable"))
-        )
-        or (
-            "cross-study contradictions" in text
-            and any(token in text for token in ("enumerate", "actually discussed", "body"))
-        )
-        or (
-            "tensions and gaps" in text
-            and "major cross-source disagreement" in text
-        )
-        or (
-            ("cross-study disagreement" in text or "cross-source disagreement" in text)
-            and any(token in text for token in (
-                "substantiated", "enumerate", "enumerated",
-                "actually-surfaced", "actually surfaced", "correct", "replace",
-                "specific", "named sources", "where the disagreements lie", "what kinds",
-            ))
-        )
-        or (
-            "tensions and gaps" in text
-            and any(token in text for token in ("specific disagreement", "specific disagreements", "naming specific"))
-        )
-        or (
-            "tensions and gaps" in text
-            and any(token in text for token in ("contradiction", "contradictions", "enumerate"))
-            and any(token in text for token in ("0 disagreement", "zero disagreement", "do not say", "don't say"))
-        )
+    if re.search(
+        r"\b(?:there\s+(?:is|are)\s+)?no\s+(?:(?:cross[- ]study|cross[- ]source|source|study)\s+)?"
+        r"(?:disagreement|conflict|tension)s?\b|"
+        r"\b(?:studies|sources?)\s+(?:do|does|did)\s+not\s+(?:disagree|conflict)|"
+        r"\b(?:studies|sources?)\s+agree\s+rather\s+than\s+(?:disagree|conflict)|"
+        r"\b(?:do|does|did|should|must)\s+not\s+(?:fabricate|invent|manufacture|add|claim)\s+"
+        r"(?:any\s+)?(?:source|study)?\s*(?:disagreement|conflict|tension)s?|"
+        r"\b(?:source|study)?\s*(?:disagreement|conflict|tension)s?\s+"
+        r"(?:(?:is|are|was|were)\s+not\s+(?:found|observed|present|substantiated|supported)|"
+        r"(?:should|must)\s+not\s+be\s+(?:fabricated|invented|manufactured|added|claimed))",
+        text,
+    ):
+        return False
+    disagreement = any(token in text for token in ("conflict", "contradiction", "disagree", "tension"))
+    source_identity = any(identity in text for identity in ("source", "study", "studies", "author-year", "author year"))
+    pair_tokens = ("cross-source", "cross-study", "source pair", "source-pair", "study pair", "study-pair",
+                   "pairs of sources", "pairs of retained sources", "author-year contrast", "author year contrast",
+                   "sources on each side", "studies on each side")
+    pair_language = any(token in text for token in pair_tokens) or source_identity and bool(re.search(r"\b(?:pairs?|contrasts?)\b", text))
+    numbered_pairs = pair_language and bool(re.search(r"\b(?:three(?!\s*[-–]?\s*year)|3)\b", text))
+    return source_identity and disagreement or numbered_pairs or (
+        "non-orthogonal tensions" in text
+        and any(token in text for token in ("operationalize", "calculation", "verifiable", "auditable"))
+    ) or (
+        "tensions and gaps" in text and disagreement
+        and any(token in text for token in ("0 disagreement", "zero disagreement", "do not say", "don't say"))
     )
 
 
@@ -1237,19 +1249,60 @@ def _underpopulated_outcome_subsections_are_stated(paper_md: str, ask: str) -> b
     return satisfied >= max(1, min(len(terms), 3))
 
 
-def _concrete_tensions_gaps_are_stated(paper_md: str) -> bool:
+def _concrete_tensions_gaps_are_stated(
+    paper_md: str, ask: str, *, retained_citations: Iterable[str] | None = None,
+) -> bool:
     text = paper_md.lower()
     if "evidence-gap priority" not in text and "gaps identified" not in text:
         return False
-    tension_lines = [
-        line for line in paper_md.splitlines()
-        if re.search(r"\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b.*\b(?:vs\.?|versus)\b.*\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b", line)
-        and re.search(r"\b(?:tension|disagreement|conflict)\b", line, re.I)
-    ]
-    return len(tension_lines) >= 3
+    scope = _section(paper_md, "Tensions and Gaps") or _section(paper_md, "Cross-Domain Synthesis")
+    if not scope:
+        return False
+    pairs, _ = _tension_pairs(paper_md, scope, retained_citations)
+    count = r"(?:at\s+least\s+)?(?:three(?!\s*[-–]?\s*year)|3(?:\s*[-–]\s*5)?)"
+    pair = r"(?:tensions?|disagreements?|conflicts?|contrasts?|pairs?)"
+    asks_for_three = bool(re.search(
+        rf"\b(?:{count}\b[^.;:\n]{{0,120}}\b{pair}|{pair}\b[^.;:\n]{{0,120}}\b{count})\b",
+        ask, flags=re.I,
+    ))
+    qualitative_replacement = (
+        "no semantically comparable source-pair disagreements" in text
+        and "qualitative description" in ask.lower()
+    )
+    return qualitative_replacement or len(pairs) >= (3 if asks_for_three else 1)
 
 
-def _replaced_surface_tensions_are_stated(paper_md: str, ask: str) -> bool:
+_TENSION_PAIR_RE = re.compile(
+    r"^\s*(?:[-*]\s*)?(?:(?:(?!\b(?:vs\.?|versus)\b)[^:\n]){2,100}:\s*)?"
+    r"(?P<left>[^:\n]{2,180}?)\s+(?:vs\.?|versus)\s+(?P<right>[^:\n]{2,180}?)(?=\s*:|\s*;|$)", re.I)
+
+
+def _tension_pairs(
+    paper_md: str, scope: str, retained_citations: Iterable[str] | None,
+) -> tuple[set[tuple[str, str]], list[str]]:
+    lines = [line.strip() for line in scope.splitlines()
+             if _TENSION_PAIR_RE.search(line) and re.search(r"\b(?:tension|disagreement|conflict)\b", line, re.I)]
+    excluded = {line.casefold() for line in lines}
+    support = "\n".join(line for line in paper_md.splitlines()
+                        if line.strip().casefold() not in excluded).casefold()
+    retained = None if retained_citations is None else {
+        " ".join(label.casefold().split()) for label in retained_citations
+    }
+    pairs: set[tuple[str, str]] = set()
+    for line in lines:
+        match = _TENSION_PAIR_RE.search(line)
+        assert match is not None
+        left, right = match.group("left").lower(), match.group("right").lower()
+        unretained = retained is not None and (left not in retained or right not in retained)
+        if left == right or left not in support or right not in support or unretained:
+            continue
+        pairs.add((left, right) if left <= right else (right, left))
+    return pairs, lines
+
+
+def _replaced_surface_tensions_are_stated(
+    paper_md: str, ask: str, *, retained_citations: Iterable[str] | None = None,
+) -> bool:
     scope = _section(paper_md, "Tensions and Gaps") or _section(paper_md, "Cross-Domain Synthesis")
     if not scope:
         return False
@@ -1257,21 +1310,18 @@ def _replaced_surface_tensions_are_stated(paper_md: str, ask: str) -> bool:
         match.group(1).lower()
         for match in re.finditer(r"\b([a-z][a-z'’\-]+ 20\d{2})(?:-based|\s+based)\b", ask)
     }
-    tension_lines = [
-        line.strip()
-        for line in scope.splitlines()
-        if re.search(r"\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b.*\b(?:vs\.?|versus)\b.*\b[A-Z][A-Za-z-]+\s+(?:19|20)\d{2}\b", line)
-        and re.search(r"\b(?:tension|disagreement|conflict)\b", line, re.I)
-    ]
-    if len(tension_lines) < 3:
+    pairs, tension_lines = _tension_pairs(paper_md, scope, retained_citations)
+    if len(pairs) < 3:
         return False
     if blocked and any(any(name in line.lower() for name in blocked) for line in tension_lines):
         return False
-    comparable = [
-        line for line in tension_lines
-        if "same outcome" in line.lower() or re.search(r"\bin [A-Za-z][A-Za-z /-]+ because directions\b", line)
-    ]
-    return len(comparable) >= 3
+    comparable = [line for line in tension_lines if "same outcome" in line.lower()
+                  or re.search(r"\bin [A-Za-z][A-Za-z /-]+ because directions\b", line)]
+    comparable_pairs = {
+        tuple(sorted((match.group("left").lower(), match.group("right").lower())))
+        for line in comparable if (match := _TENSION_PAIR_RE.search(line))
+    }
+    return len(comparable_pairs & pairs) >= 3
 
 
 def _internal_duplication_scope(paper_md: str, ask: str) -> str:
@@ -2938,7 +2988,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_subgroup_lens_narrative, _paper_lower(_subgroup_lens_narrative_is_stated)),
     (_asks_underpopulated_outcome_subsections, _paper_lower(_underpopulated_outcome_subsections_are_stated)),
     (_asks_replaced_surface_tensions, _paper_lower(_replaced_surface_tensions_are_stated)),
-    (_asks_concrete_tensions_gaps, _paper_only(_concrete_tensions_gaps_are_stated)),
+    (_asks_concrete_tensions_gaps, _paper_ask(_concrete_tensions_gaps_are_stated)),
     (_asks_internal_duplication, _paper_lower(_internal_duplication_is_low)),
     (_asks_long_term_safety_scope, _paper_only(_long_term_safety_scope_is_stated)),
     (_asks_unbundled_citation_cleanup, _paper_ask(_unbundled_citations_are_resolved)),

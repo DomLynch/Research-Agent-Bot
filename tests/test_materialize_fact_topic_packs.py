@@ -184,7 +184,7 @@ def test_high_precision_quality_mode_filters_demographic_exposure(tmp_path: Path
         "quality_filter_failed",
         "quality_filter_failed",
         "quality_filter_failed",
-        "quality_filter_failed",
+        "low_information_topic",
     ]
 
 

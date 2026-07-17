@@ -55,7 +55,15 @@ def _summary(
     tier: str = "A1",
     n_claims: int = 4,
     p_values: tuple[str, ...] = (),
+    endpoints: tuple[str, ...] | None = None,
+    endpoint_directions: tuple[tuple[str, EffectDirection], ...] | None = None,
 ) -> ReceiptSummary:
+    endpoints = endpoints if endpoints is not None else (outcome.replace("_", " "),)
+    endpoint_directions = (
+        endpoint_directions
+        if endpoint_directions is not None
+        else ((endpoints[0], direction),) if endpoints else ()
+    )
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}",
         topic="metformin",
@@ -68,6 +76,8 @@ def _summary(
         effect_direction=direction,
         p_values=p_values,
         population_summary="older adults",
+        endpoints=endpoints,
+        endpoint_directions=endpoint_directions,
     )
 
 
@@ -336,6 +346,73 @@ def test_tension_null_vs_negative_when_signed_arm_negative() -> None:
     assert matrix.pairs[0].kind == "null_vs_negative"
     assert matrix.pairs[0].severity == 4
     assert "negative" in matrix.pairs[0].summary
+
+
+def test_directional_tension_requires_an_exact_shared_endpoint() -> None:
+    null_t = _summary(
+        "null-trial", outcome="cardiometabolic", direction="null",
+        endpoints=("blood pressure",),
+        endpoint_directions=(("blood pressure", "null"),),
+    )
+    pos_t = _summary(
+        "positive-trial", outcome="cardiometabolic", direction="positive",
+        endpoints=("ldl cholesterol",),
+        endpoint_directions=(("ldl cholesterol", "positive"),),
+    )
+    empty_t = _summary(
+        "empty-trial", outcome="cardiometabolic", direction="positive",
+        endpoints=(), endpoint_directions=(),
+    )
+
+    assert build_tension_matrix([null_t, pos_t]).pairs[0].kind == "orthogonal"
+    assert build_tension_matrix([null_t, empty_t]).pairs[0].kind == "orthogonal"
+
+
+def test_multi_endpoint_rollups_cannot_manufacture_a_conflict() -> None:
+    aggregate_positive = _summary(
+        "aggregate-positive", outcome="cardiometabolic", direction="positive",
+        endpoints=("ldl cholesterol", "blood pressure"),
+        endpoint_directions=(
+            ("ldl cholesterol", "positive"),
+            ("blood pressure", "positive"),
+        ),
+    )
+    aggregate_negative = _summary(
+        "aggregate-negative", outcome="cardiometabolic", direction="negative",
+        endpoints=("ldl cholesterol", "heart rate"),
+        endpoint_directions=(
+            ("ldl cholesterol", "positive"),
+            ("heart rate", "negative"),
+        ),
+    )
+
+    pair = build_tension_matrix([aggregate_positive, aggregate_negative]).pairs[0]
+    assert pair.kind == "agreement"
+    assert pair.endpoint == "ldl cholesterol"
+    assert "ldl cholesterol" in pair.summary
+
+
+def test_shared_endpoint_direction_drives_the_tension_kind() -> None:
+    null_t = _summary(
+        "null-trial", outcome="cardiometabolic", direction="mixed",
+        endpoints=("ldl cholesterol", "blood pressure"),
+        endpoint_directions=(
+            ("ldl cholesterol", "null"),
+            ("blood pressure", "positive"),
+        ),
+    )
+    pos_t = _summary(
+        "positive-trial", outcome="cardiometabolic", direction="mixed",
+        endpoints=("ldl cholesterol", "heart rate"),
+        endpoint_directions=(
+            ("ldl cholesterol", "positive"),
+            ("heart rate", "negative"),
+        ),
+    )
+
+    pair = build_tension_matrix([null_t, pos_t]).pairs[0]
+    assert pair.kind == "null_vs_positive"
+    assert pair.endpoint == "ldl cholesterol"
 
 
 def test_tension_orthogonal_for_non_opposable_directions() -> None:
@@ -689,6 +766,7 @@ def test_build_receipt_summary_extracts_thesis_and_outcome_class() -> None:
                 "claim_id": "C001",
                 "text": "Metformin blunts muscle hypertrophy in older adults",
                 "claim_type": "efficacy",
+                "endpoint": "muscle hypertrophy",
                 "supporting_refs": [1],
                 "directness": "direct",
                 "evidence_tier": "A1",
@@ -721,6 +799,38 @@ def test_build_receipt_summary_extracts_thesis_and_outcome_class() -> None:
     assert summary.spar_verdict == "accept_clean"
     assert summary.canonical_trial_id == "NCT02308228"
     assert summary.n_claims == 1
+    assert summary.endpoints == ("muscle hypertrophy",)
+    assert summary.endpoint_directions == (("muscle hypertrophy", "negative"),)
+
+
+def test_real_receipt_builder_drives_same_endpoint_tension() -> None:
+    def built(receipt_id: str, text: str) -> ReceiptSummary:
+        return build_receipt_summary(
+            receipt_id=receipt_id,
+            receipt_path=f"runs/{receipt_id}",
+            topic="intervention",
+            claim_graph={
+                "claims": [{
+                    "claim_id": "C001", "text": text,
+                    "endpoint": "systolic blood pressure",
+                    "supporting_refs": [1], "directness": "direct",
+                    "evidence_tier": "A1",
+                }],
+                "thesis_claim_id": "C001",
+            },
+            items_by_ref={1: {"source": {"ref": 1}, "abstract": ""}},
+            spar_review={"verdict": "accept_clean"},
+        )
+
+    null_receipt = built(
+        "null-trial", "No significant difference in systolic blood pressure.",
+    )
+    positive_receipt = built(
+        "positive-trial", "The intervention improved systolic blood pressure.",
+    )
+    pair = build_tension_matrix([null_receipt, positive_receipt]).pairs[0]
+    assert pair.kind == "null_vs_positive"
+    assert pair.endpoint == "systolic blood pressure"
 
 
 # ============================================================

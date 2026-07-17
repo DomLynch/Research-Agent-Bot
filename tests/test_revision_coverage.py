@@ -408,7 +408,8 @@ def test_deterministic_unmet_accepts_underpopulated_outcome_attribution_and_tens
     ]
     paper = (
         "## Results\n\n"
-        "### Longevity Outcomes\n\nZhao 2025 reports cardiovascular mortality risk in frailty cohorts.\n\n"
+        "Retained sources include You 2026, Delaney 2025, Liu 2026, and Wolfe 2025.\n\n"
+            "### Longevity Outcomes\n\nZhao 2025 reports cardiovascular mortality risk in frailty cohorts.\n\n"
         "### Muscle Function Outcomes\n\nChu 2026 reports exercise-related functional contrasts.\n\n"
         "### Immune and Inflammation Outcomes\n\nWard 2026 reports inflammatory-marker associations.\n\n"
         "### Safety Outcomes\n\nLong 2026 reports dose-stratified safety signals.\n\n"
@@ -1896,7 +1897,8 @@ def test_deterministic_unmet_accepts_concrete_tensions_and_gap_priority() -> Non
         "- Severity 5 disagreement: Pei 2023 vs Gan 2026; the sources disagree on safety comorbidity direction.\n"
         "- Severity 5 disagreement: Zhuang 2025 vs Zeng 2025; the sources conflict on deficiency prevalence.\n\n"
         "### Evidence-Gap Priority\n\n"
-        "| Priority | Gap | Rationale |\n|---|---|---|\n| P1 | longevity conflict-resolution gap | opposing source directions |\n"
+        "| Priority | Gap | Rationale |\n|---|---|---|\n| P1 | longevity conflict-resolution gap | opposing source directions |\n\n"
+        "## References\n\nParadoxical 2026. Nong 2025. Pei 2023. Gan 2026. Zhuang 2025. Zeng 2025.\n"
     )
     weak = (
         "## Cross-Domain Synthesis\n\n"
@@ -1913,6 +1915,8 @@ def test_deterministic_unmet_accepts_specific_cross_source_disagreements() -> No
         "cross-source disagreements with named sources on each side."
     )
     paper = (
+        "## Evidence Landscape\n\nGrazuleviciene 2026, Durstenfeld 2026, Salerno 2026, "
+        "Riquelme-Hernandez 2026, Liu 2025, and Garcia 2026 are retained.\n\n"
         "## Tensions and Gaps\n\n"
         "Evidence-gap priority: cross-source disagreement counts are manifest-derived.\n"
         "- Grazuleviciene 2026 vs Durstenfeld 2026: surfaced tension/disagreement in Cardiometabolic because directions are null versus unclear.\n"
@@ -1921,6 +1925,126 @@ def test_deterministic_unmet_accepts_specific_cross_source_disagreements() -> No
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_tension_count_does_not_treat_three_year_followup_as_three_pairs() -> None:
+    ask = "Use three-year follow-up and describe a concrete cross-source tension."
+    paper = (
+        "## Evidence Landscape\n\nSmith 2024 and Jones 2025 are retained.\n\n"
+        "## Tensions and Gaps\n\nEvidence-gap priority: direct replication.\n"
+        "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in function.\n"
+    )
+    assert revision_coverage._concrete_tensions_gaps_are_stated(paper, ask)
+
+    three_pair_ask = "Enumerate at least three specific, named cross-source disagreements."
+    assert not revision_coverage._concrete_tensions_gaps_are_stated(paper, three_pair_ask)
+
+    long_ask = (
+        "Enumerate three specific, named, semantically comparable, within-outcome "
+        "source pairs."
+    )
+    assert not revision_coverage._concrete_tensions_gaps_are_stated(paper, long_ask)
+
+    duplicates = paper + paper + paper
+    assert not revision_coverage._concrete_tensions_gaps_are_stated(duplicates, three_pair_ask)
+
+
+def test_tension_count_rejects_self_pairs_and_untraced_citations() -> None:
+    ask = "Enumerate at least three named source pairs."
+    paper = (
+        "## Evidence Landscape\n\nSmith 2024 and Jones 2025 are retained.\n\n"
+        "## Tensions and Gaps\n\nEvidence-gap priority: direct replication.\n"
+        "- Smith 2024 vs Smith 2024: surfaced tension/disagreement in function.\n"
+        "- Fake 2023 vs Invented 2022: surfaced tension/disagreement in function.\n"
+        "- Jones 2025 vs Imaginary 2021: surfaced tension/disagreement in function.\n"
+    )
+    assert not revision_coverage._concrete_tensions_gaps_are_stated(paper, ask)
+
+
+def test_negated_disagreement_feedback_is_not_a_tension_request() -> None:
+    for ask in (
+        "The studies do not disagree.",
+        "There is no disagreement among retained sources.",
+        "No source disagreement was found.",
+        "No cross-study tension exists.",
+        "Source disagreement is not present and should not be invented.",
+        "Studies agree rather than disagree.",
+        "Source disagreement should not be fabricated.",
+        "Do not fabricate source disagreement.",
+    ):
+        assert not revision_coverage._asks_concrete_tensions_gaps(ask.lower())
+
+
+def test_tension_pairs_accept_particle_apostrophe_and_year_suffix_labels() -> None:
+    ask = "Enumerate at least three named cross-source disagreements."
+    labels = {"O'Connor 2024", "van der Meer 2025", "Smith 2024a", "Lee 2023"}
+    paper = (
+        "## Evidence Landscape\n\n" + ", ".join(sorted(labels)) + ".\n\n"
+        "## Tensions and Gaps\n\nEvidence-gap priority: direct replication.\n"
+        "- O'Connor 2024 vs van der Meer 2025: endpoint disagreement.\n"
+        "- Smith 2024a vs Lee 2023: endpoint disagreement.\n"
+        "- O'Connor 2024 vs Smith 2024a: endpoint disagreement.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(
+        paper, [ask], retained_citations=labels,
+    ) == []
+
+
+def test_tension_pairs_accept_title_and_pmcid_labels() -> None:
+    ask = "Enumerate at least three named cross-source disagreements."
+    labels = {
+        "Impact of Fasting 2025", "Response to Intervention 2024",
+        "PMC1234567 2023", "Smith 2024",
+    }
+    paper = (
+        "## Evidence Landscape\n\n" + ", ".join(sorted(labels)) + ".\n\n"
+        "## Tensions and Gaps\n\nEvidence-gap priority: direct replication.\n"
+        "- Impact of Fasting 2025 vs Response to Intervention 2024: endpoint disagreement.\n"
+        "- PMC1234567 2023 vs Smith 2024: endpoint disagreement.\n"
+        "- Impact of Fasting 2025 vs PMC1234567 2023: endpoint disagreement.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(
+        paper, [ask], retained_citations=labels,
+    ) == []
+
+
+def test_retained_citation_labels_include_title_and_pmcid_fields() -> None:
+    manifest = {"receipts": [{
+        "source_title": "Impact of Fasting 2025",
+        "source_pmcid": "PMC1234567 2023",
+    }]}
+    assert revision_coverage.retained_citation_labels(manifest) == {
+        "impact of fasting 2025", "pmc1234567 2023",
+    }
+
+
+def test_tension_coverage_rejects_labels_absent_from_retained_receipts() -> None:
+    ask = "Enumerate at least three named cross-source disagreements."
+    paper = (
+        "## Evidence Landscape\n\nFake 2024, Invented 2023, Jones 2025, Smith 2024 are discussed.\n\n"
+        "## Tensions and Gaps\n\nEvidence-gap priority: direct replication.\n"
+        "- Fake 2024 vs Invented 2023: surfaced tension/disagreement in function.\n"
+        "- Jones 2025 vs Smith 2024: surfaced tension/disagreement in function.\n"
+        "- Fake 2024 vs Jones 2025: surfaced tension/disagreement in function.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(
+        paper, [ask], retained_citations={"Jones 2025", "Smith 2024"},
+    ) == [ask]
+    for wording in (
+        "Enumerate at least three named source-pair disagreements.",
+        "List three concrete conflicting source pairs.",
+        "Identify study pairs that disagree, at least three.",
+        "Provide conflicting study pairs, at least three.",
+        "Provide three author-year contrasts showing disagreement.",
+        "Name three pairs of retained sources that disagree.",
+        "Show three conflicting source pairs.",
+        "Give three study pairs that disagree.",
+        "Describe three pairs among retained sources.",
+        "Provide three contrasts between retained sources.",
+    ):
+        assert revision_coverage.deterministic_unmet_asks(
+            paper, [wording], retained_citations=set(),
+        ) == [wording]
 
 
 def test_deterministic_unmet_requires_replaced_surface_tensions() -> None:
@@ -1937,6 +2061,8 @@ def test_deterministic_unmet_requires_replaced_surface_tensions() -> None:
         "- Zhao 2024 vs Ministrini 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus null.\n"
     )
     repaired = (
+        "## Evidence Landscape\n\nKatayoshi 2023, Martens 2018, Yi 2022, Simic 2020, "
+        "Gao 2025, and Simon 2024 are retained.\n\n"
         "## Tensions and Gaps\n\n"
         "Evidence-gap priority: within-outcome contrasts remain.\n"
         "- Katayoshi 2023 vs Martens 2018: surfaced tension/disagreement in Cardiometabolic because directions are null versus unclear.\n"
@@ -1990,7 +2116,8 @@ def test_deterministic_coverage_accepts_vascular_source_level_revision_bundle() 
         "row, and receipt-level directional coding across null=8, positive=1, unclear=4. "
         "Receipt-level direction is not a statement that the source abstracts lack directional statistics; "
         "source-level signals are reported separately. No extracted directional signal is a receipt-level "
-        "code proportion (8/13), not absence of source-level support.\n\n"
+        "code proportion (8/13), not absence of source-level support. Retained sources also include "
+        "Rodilla 2026, Luo 2025, Lu 2026, and Vicente-Gabriel 2024.\n\n"
         "### Findings Map\n\n"
         "- Sheng 2025: outcome=Contextual Adjacent Evidence; direction=null; directness=indirect; "
         "tier=B2; finding=representative statistic p < 0.001; source-level statistic reported.\n"

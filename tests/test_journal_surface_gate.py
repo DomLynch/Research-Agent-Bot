@@ -384,6 +384,43 @@ def test_truncated_sentence_blocks_surface():
     assert any("truncated sentence" in i.detail for i in report.issues)
 
 
+def test_unbalanced_parenthetical_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Results\n\n",
+        "## Results\n\nThe retained trials reported several outcomes (e.\n\n",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("unbalanced parenthetical" in i.detail for i in report.issues)
+
+
+def test_short_dangling_parenthetical_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("## Results\n\n", "## Results\n\nEffects remained unclear (e.\n\n", 1)
+    report = evaluate_journal_surface(paper)
+    assert any("unbalanced parenthetical" in i.detail for i in report.issues)
+
+
+def test_short_general_unbalanced_parenthetical_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("## Results\n\n", "## Results\n\nResults were null (n=3.\n\n", 1)
+    report = evaluate_journal_surface(paper)
+    assert any("unbalanced parenthetical" in i.detail for i in report.issues)
+
+
+def test_half_open_numeric_interval_is_not_an_unbalanced_parenthetical():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "## Results\n\n",
+        "## Results\n\nThe prespecified normalized interval was (0, 1].\n\n",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not any("unbalanced parenthetical" in i.detail for i in report.issues)
+
+
 def test_citation_only_reported_stub_blocks_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("## Cross-Domain Synthesis\n\n", "## Cross-Domain Synthesis\n\nWu 2025 reported.\n\n", 1)
@@ -1790,7 +1827,7 @@ def test_finalizer_iterates_until_deterministic_surface_repairs_converge(tmp_pat
     report = finalizer.finalize_run(tmp_path)
     new_text = (tmp_path / "full_paper.md").read_text()
 
-    assert calls == 2
+    assert calls == 3
     assert report.paper_changed
     assert "novel approach" not in new_text.lower()
     assert "structured approach" in new_text.lower()
@@ -1809,9 +1846,57 @@ def test_finalizer_idempotent(tmp_path) -> None:
     (tmp_path / "full_paper.md").write_text(paper)
     finalize_run(tmp_path)
     first_text = (tmp_path / "full_paper.md").read_text()
-    finalize_run(tmp_path)
+    first_report = (tmp_path / "journal_finalizer.json").read_text()
+    second_report = finalize_run(tmp_path)
     second_text = (tmp_path / "full_paper.md").read_text()
     assert first_text == second_text
+    assert second_report.entries == ()
+    assert (tmp_path / "journal_finalizer.json").read_text() == first_report
+
+
+def test_finalizer_reaches_text_fixed_point_before_return(tmp_path, monkeypatch) -> None:
+    from agent import journal_finalizer as finalizer
+
+    calls = 0
+
+    def staged(text: str, _out_dir):
+        nonlocal calls
+        calls += 1
+        return {"A": "B", "B": "C"}.get(text, text), []
+
+    (tmp_path / "full_paper.md").write_text("A")
+    monkeypatch.setattr(finalizer, "_run_text_phases", staged)
+    report = finalizer.finalize_run(tmp_path)
+
+    assert calls == 3
+    assert report.paper_changed
+    assert (tmp_path / "full_paper.md").read_text() == "C"
+
+
+def test_finalizer_reprocesses_phase_g_paper_mutation(tmp_path, monkeypatch) -> None:
+    from agent import journal_finalizer as finalizer
+
+    (tmp_path / "full_paper.md").write_text("A")
+    phase_g_calls = 0
+
+    def text_phases(text: str, _out_dir):
+        return text.replace("G", "FINAL"), []
+
+    def phase_g(out_dir):
+        nonlocal phase_g_calls
+        phase_g_calls += 1
+        if phase_g_calls == 1:
+            (out_dir / "full_paper.md").write_text("G")
+        return []
+
+    monkeypatch.setattr(finalizer, "_run_text_phases", text_phases)
+    monkeypatch.setattr(finalizer, "_phase_g_refresh_sidecars", phase_g)
+    report = finalizer.finalize_run(tmp_path)
+
+    assert report.paper_changed
+    assert report.final_word_count == 1
+    assert phase_g_calls == 3
+    assert (tmp_path / "full_paper.md").read_text() == "FINAL"
 
 
 def test_finalizer_writes_repair_log_sidecar(tmp_path) -> None:

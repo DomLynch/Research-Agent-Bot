@@ -1,8 +1,8 @@
 """Shared source-topic specificity checks for v3 corpus repair/seeding."""
 from __future__ import annotations
 
-import re
 import json
+import re
 import tomllib
 from collections import Counter
 from collections.abc import Iterable, Sequence
@@ -12,7 +12,6 @@ ROOT = Path(__file__).resolve().parent.parent
 
 MIN_GENERATED_PACK_CANDIDATES = 10
 MIN_SPECIFIC_GENERATED_PACK_CANDIDATES = 3
-MIN_GENERATED_PACK_TOKENS = 2
 
 TOPIC_STOPWORDS = {
     "research", "synthesis", "paper", "effect", "effects", "therapy",
@@ -34,18 +33,23 @@ SCOPE_ANCHORS = {
     "aged", "aging", "anti-aging", "elderly", "geriatric", "healthspan",
     "lifespan", "longevity", "older adult", "older people",
 }
+_SCOPE_MODIFIERS = {"a", "an", "average", "baseline", "comparative", "conventional", "exceptional", "experimental", "extended", "extreme", "general", "greater", "healthy", "increased", "longitudinal", "maximum", "maximal", "natural", "normal", "observational", "ordinary", "prospective", "randomized", "reduced", "retrospective", "routine", "shortened", "standard", "typical", "usual"}
+_GENERIC_QUALIFIER_RE = re.compile(r"(?:al|ary|ful|ic|ical|ible|ive|less|ory|ous)$")
+_SCOPE_PREDICATE_RE = re.compile(r"(?:affect|alter|assess|characterize|compare|estimate|evaluate|examine|extend|increase|investigate|lengthen|measure|modulate|predict|prolong|reduce|report|shorten|test|track)(?:s|ed|ing)?$|^(?:and|of|on|or|to)$")
+_SCOPE_OBJECT_RE = re.compile(
+    r"\b(?:lifespan|longevity)(?:(?:\s+(?:and|or)\s+(?:lifespan|longevity))*|"
+    r"\s+(?:study|analysis|evaluation|assessment|research|report|trial))\s+of\s+"
+    r"(?P<subject>[^,;:.]+?)(?=\s+(?:in|among|for|with|within|across|under|after|during)\b|[,;:.!?]\s*$|$)", re.I)
+_SCOPE_CONTEXT_SUBJECT_RE = re.compile(
+    r"\b(?:in|among)\s+(?P<subject>[^,;:.]+?)(?=\s+(?:for|with|within|across|under|after|during)\b|[,;:.!?]\s*$|$)", re.I)
 
 DRIFT_RESCUE_ANCHORS = {
     "adult", "aged", "animal", "clinical", "cohort", "human", "intervention",
     "mice", "mouse", "patient", "randomized", "rat", "trial",
 }
 
-NON_BIOMED_DRIFT = {
-    "alloy", "adsorption", "astrophys", "battery", "catalyst", "cheminform",
-    "crop", "electrode", "fuel cell", "fruit", "geolog", "ionomer", "metal",
-    "oxide", "photocatal", "plant", "semiconductor", "silicon",
-    "supercapacitor", "trapping",
-}
+NON_BIOMED_DRIFT = set("alloy|adsorption|astrophys|battery|catalyst|cheminform|crop|electrode|fuel cell|fruit|geolog|ionomer|metal|oxide|photocatal|plant|semiconductor|silicon|supercapacitor|trapping".split("|"))
+SCOPE_NON_BIOMED_DRIFT = NON_BIOMED_DRIFT | set("accessory|battery cell|brand|bridge|building|computer|computer mouse|concrete|contract|dental|device|directory|engine|equipment|factory|forecast|forecasting|implant|infrastructure|insurance|library|machine|material|model|network|restoration|router|sensor|software|turbine|wearable".split("|"))
 
 
 def topic_tokens(topic: str) -> list[str]:
@@ -190,6 +194,37 @@ def _post_acronym_axis_tokens(topic: str) -> set[str]:
     return optional
 
 
+def _biological_scope_subject(text: str) -> bool:
+    words = _words(text)
+    if not words:
+        return False
+    head = words[-1]
+    singular = f"{head[:-3]}y" if head.endswith("ies") else head[:-2] if head.endswith("es") else head[:-1] if head.endswith("s") else head
+    head_forms = {head, singular}
+    phrases = {term for term in SCOPE_NON_BIOMED_DRIFT if " " in term}
+    drift_words = SCOPE_NON_BIOMED_DRIFT - phrases
+    normalized = " ".join(words)
+    animal_model = "model" in head_forms and any(word in DRIFT_RESCUE_ANCHORS for word in words)
+    return animal_model or not (
+        head_forms & drift_words or any(term in normalized for term in phrases)
+    )
+
+
+def _scope_subject_supported(text: str) -> bool:
+    prefix = re.search(r"(?P<subject>[a-z0-9'-]+(?:\s+[a-z0-9'-]+){0,2})\s+(?:lifespan|longevity)\b", text)
+    if prefix and not _SCOPE_PREDICATE_RE.search(prefix.group("subject").split()[-1]):
+        subject = prefix.group("subject")
+        subject_words = set(_words(subject))
+        if subject_words and not subject_words <= _SCOPE_MODIFIERS:
+            return _biological_scope_subject(subject)
+
+    object_of = _SCOPE_OBJECT_RE.search(text)
+    if object_of:
+        return _biological_scope_subject(object_of.group("subject"))
+    context = _SCOPE_CONTEXT_SUBJECT_RE.search(text)
+    return bool(context and _biological_scope_subject(context.group("subject")))
+
+
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
     haystack = " ".join(str(text or "").replace("_", " ").replace("-", " ").lower().split())
     tokens = topic_tokens(topic)
@@ -208,15 +243,21 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
         for alias in aliases
         if str(alias or "").strip()
     )
+    full_match = alias_hit or token_hits == len(tokens)
+    scope_only = set(normalized_tokens) <= SCOPE_TOKENS
+    scope_subject = _scope_subject_supported(haystack)
+    if scope_only:
+        return token_hits > 0 and scope_subject
     biomed = any(anchor in haystack for anchor in BIOMED_ANCHORS)
     drift = any(term in haystack for term in NON_BIOMED_DRIFT)
     if drift and not any(anchor in haystack for anchor in DRIFT_RESCUE_ANCHORS):
         return False
-    if alias_hit or token_hits == len(tokens):
+    if full_match:
         return True
     specific_hits = [
         token for token in normalized_tokens
-        if _topic_token_hit(token, haystack_tokens, haystack_words) and token not in BIOMED_ANCHORS
+        if _topic_token_hit(token, haystack_tokens, haystack_words)
+        and token not in BIOMED_ANCHORS | SCOPE_TOKENS
     ]
     missing_tokens = [
         token for token in normalized_tokens
@@ -259,24 +300,22 @@ def generated_pack_publishable(
         return False
     terms = _pack_tokens(raw_terms)
     scope_terms = _pack_tokens(retrieval.get("scope_terms", ())) if isinstance(retrieval, dict) else set()
-    entity_like = any(
-        any(ch.isdigit() for ch in str(term))
-        or any(ch.isupper() for ch in str(term)[1:])
-        or "-" in str(term)
-        for term in raw_terms
-    )
-    rare_terms = _peer_rare_tokens(terms, peer_records) - scope_terms - BIOMED_ANCHORS
+    entity_like = any(any(ch.isdigit() for ch in str(term)) or any(
+        any(ch.isupper() for ch in word[1:])
+        for word in re.findall(r"[A-Za-z0-9-]+", str(term))
+    ) for term in raw_terms)
+    specificity_exclusions = scope_terms | BIOMED_ANCHORS | SCOPE_TOKENS | SCOPE_ANCHORS | _SCOPE_MODIFIERS | {"anti"}
+    specific_terms = {term for term in terms - specificity_exclusions if not _GENERIC_QUALIFIER_RE.search(term)}
+    rare_terms = _peer_rare_tokens(specific_terms, peer_records) - specificity_exclusions
     structurally_specific = bool(
-        entity_like
-        or rare_terms
-        or (not peer_records and len(terms - scope_terms) >= MIN_GENERATED_PACK_TOKENS)
+        entity_like or specific_terms and (rare_terms or not peer_records)
     )
     floor = (
         MIN_SPECIFIC_GENERATED_PACK_CANDIDATES
         if structurally_specific
         else MIN_GENERATED_PACK_CANDIDATES
     )
-    enough_terms = len(terms) >= MIN_GENERATED_PACK_TOKENS or (
+    enough_terms = len(terms) >= 2 or (
         structurally_specific and candidate_count >= MIN_GENERATED_PACK_CANDIDATES
     )
     return candidate_count >= floor and enough_terms and structurally_specific

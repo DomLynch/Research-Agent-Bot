@@ -1628,6 +1628,8 @@ def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
         "population_summary": receipt.population_summary,
         "n_claims": receipt.n_claims,
         "p_values": list(receipt.p_values),
+        "endpoints": list(getattr(receipt, "endpoints", ())),
+        "endpoint_directions": dict(getattr(receipt, "endpoint_directions", ())),
         "canonical_trial_id": receipt.canonical_trial_id,
         "citation_token": (
             entry.body_citation if entry is not None
@@ -1723,13 +1725,20 @@ def _claim_topic_effect(claim: dict) -> int:
 _claim_metformin_effect = _claim_topic_effect
 
 
-def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
+def _aggregate_paper(claims: list[dict]) -> dict[str, Any]:
     """Roll claims into a significance-aware per-paper summary."""
     outcome_counter: Counter[str] = Counter()
     p_values: list[str] = []
     sample_sizes: list[float] = []
+    claims_by_endpoint: dict[str, list[dict]] = defaultdict(list)
+    endpoint_labels: dict[str, str] = {}
     for c in claims:
-        if oc := _outcome_class_for_endpoint(c.get("endpoint") or ""):
+        endpoint = " ".join(str(c.get("endpoint") or "").split())
+        if endpoint:
+            key = _endpoint_key(endpoint)
+            claims_by_endpoint[key].append(c)
+            endpoint_labels.setdefault(key, endpoint)
+        if oc := _outcome_class_for_endpoint(endpoint):
             outcome_counter[oc] += 1
         if c.get("claim_type") == "p_value":
             raw = c.get("raw_text") or ""
@@ -1748,8 +1757,13 @@ def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
     # positive/negative/null/mixed/unclear. The MET-PREVENT case
     # (Witham 2025: 0.001 m/s walk speed, p=0.96) now correctly
     # produces "null" instead of "positive".
-    effect_direction = _direction.infer_effect_direction(
-        claims, metformin_effect_fn=_claim_metformin_effect,
+    def infer_direction(rows: list[dict]) -> EffectDirection:
+        return cast(EffectDirection, _direction.infer_effect_direction(rows, metformin_effect_fn=_claim_metformin_effect))
+
+    effect_direction = infer_direction(claims)
+    endpoint_directions = tuple(
+        (endpoint_labels[key], infer_direction(endpoint_claims))
+        for key, endpoint_claims in list(claims_by_endpoint.items())[:20]
     )
 
     return {
@@ -1757,25 +1771,28 @@ def _aggregate_paper(paper_id: str, claims: list[dict]) -> dict[str, Any]:
         "effect_direction": effect_direction,
         "p_values": p_values,
         "sample_sizes": sample_sizes,
+        "endpoints": tuple(endpoint_labels.values())[:20],
+        "endpoint_directions": endpoint_directions,
         "n_claims": len(claims),
     }
 
 
 _TITLE_NO_BENEFIT_RE = re.compile(
     r"\b(?:does\s+not|did\s+not|fails?\s+to|failed\s+to|"
-    r"no\s+(?:significant\s+)?(?:effect|benefit|improvement))\b"
+    r"(?:without|no)\s+(?:(?:statistically\s+)?significant\s+)?(?:effects?|benefits?|improvements?))\b"
     r".{0,80}\b(?:preserve|improve|augment|increase|enhance|benefit|"
     r"effect|mass|strength|function)",
     re.IGNORECASE,
 )
 _TITLE_POSITIVE_EFFECT_RE = re.compile(
-    r"\b(?:improves?|enhances?|extends?|rescues?|protects?|prevents?)\b"
+    r"\b(?:improves?|improvements?|enhances?|augments?|extends?|rescues?|protects?|prevents?)\b"
     r".{0,80}\b(?:longevity|lifespan|healthspan|survival|function|"
-    r"phenotype|outcome|response|recovery|performance)\b"
+    r"phenotype|outcome|response|recovery|performance|strength|glucose\s+uptake)\b"
     r"|\bpromotes?\b.{0,80}\b(?:longevity|lifespan|healthspan|healthy\s+aging)\b"
     r"|\b(?:ameliorates?|attenuates?|mitigates?|reduces?)\b"
     r".{0,80}\b(?:disease|damage|injury|inflammation|dysfunction|risk|decline)\b"
-    r"|\binverse(?:ly)?\s+associated\b.{0,80}\b(?:risk|incidence|mortality|dementia)\b",
+    r"|\binverse(?:ly)?\s+associated\b.{0,80}\b(?:risk|incidence|mortality|dementia)\b"
+    r"|\b(?:lower|reduced)\b.{0,80}\b(?:risk|incidence|mortality)\b",
     re.IGNORECASE,
 )
 _TITLE_NEGATIVE_EFFECT_RE = re.compile(
@@ -1788,15 +1805,22 @@ _TITLE_NEGATIVE_EFFECT_RE = re.compile(
 )
 
 
-def _title_guarded_effect_direction(title: str, current: str) -> str:
+def _title_guarded_effect_direction(
+    title: str, current: str, evidence_text: str = "",
+) -> str:
     title = title or ""
     current = current or "unclear"
-    if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title):
+    if current != "unclear":
+        return "null" if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title) else current
+    scope = f"{title} {evidence_text}".strip()
+    no_benefit = bool(_TITLE_NO_BENEFIT_RE.search(scope))
+    directional_scope = _TITLE_NO_BENEFIT_RE.sub("", scope)
+    positive = bool(_TITLE_POSITIVE_EFFECT_RE.search(directional_scope))
+    negative = bool(_TITLE_NEGATIVE_EFFECT_RE.search(directional_scope))
+    if no_benefit and not (positive or negative):
         return "null"
-    if current not in {"null", "unclear"} or _TITLE_NO_BENEFIT_RE.search(title):
-        return current
-    positive = bool(_TITLE_POSITIVE_EFFECT_RE.search(title))
-    negative = bool(_TITLE_NEGATIVE_EFFECT_RE.search(title))
+    if no_benefit and (positive or negative):
+        return "mixed"
     if positive and negative:
         return "mixed"
     if positive:
@@ -2289,7 +2313,7 @@ def build_receipts_from_quant_claims(
             not receipt_ids and not _receipt_mentions_active_topic(topic, meta, claims)
         ):
             continue
-        agg = _aggregate_paper(paper_id, claims)
+        agg = _aggregate_paper(claims)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
         if (
             not receipt_ids
@@ -2332,7 +2356,9 @@ def build_receipts_from_quant_claims(
             effect_direction=cast(
                 EffectDirection,
                 _title_guarded_effect_direction(
-                    meta.get("title") or "", agg["effect_direction"],
+                    meta.get("title") or "",
+                    agg["effect_direction"],
+                    thesis_text,
                 ),
             ),
             # Dedup + a generous bound (was [:6], which dropped cited
@@ -2342,6 +2368,8 @@ def build_receipts_from_quant_claims(
             # pick a representative, so a longer list does not bloat output.
             p_values=tuple(dict.fromkeys(agg["p_values"]))[:40],
             population_summary=_build_population_summary(meta, agg["sample_sizes"]),
+            endpoints=agg["endpoints"],
+            endpoint_directions=agg["endpoint_directions"],
             source_title=meta.get("title"),
             source_year=meta.get("year"),
             source_doi=meta.get("doi"),

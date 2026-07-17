@@ -868,7 +868,7 @@ def test_public_section_backstop_demarcates_context_rows_from_adjacent_clinical(
 
 
 def test_aggregate_paper_keeps_significant_unsigned_statistics_unclear() -> None:
-    agg = orch._aggregate_paper("vascular-unsigned", [
+    agg = orch._aggregate_paper([
         {
             "claim_type": "p_value",
             "endpoint": "estimated pulse wave velocity",
@@ -880,6 +880,8 @@ def test_aggregate_paper_keeps_significant_unsigned_statistics_unclear() -> None
 
     assert agg["effect_direction"] == "unclear"
     assert agg["p_values"] == ["p < 0.001"]
+    assert agg["endpoints"] == ("estimated pulse wave velocity",)
+    assert agg["endpoint_directions"] == (("estimated pulse wave velocity", "unclear"),)
 
 
 def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() -> None:

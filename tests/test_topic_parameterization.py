@@ -495,6 +495,24 @@ def test_no_benefit_title_guards_positive_effect_direction() -> None:
     assert orch._title_guarded_effect_direction(title, "negative") == "negative"
 
 
+def test_negated_evidence_does_not_become_positive() -> None:
+    for evidence in (
+        "No improvement in muscle strength was observed.",
+        "No improvements in muscle strength were observed.",
+        "No statistically significant improvement in muscle strength was observed.",
+        "Without improvement in muscle strength, the intervention remained unsupported.",
+    ):
+        assert orch._title_guarded_effect_direction("Muscle trial", "null", evidence) == "null"
+        assert orch._title_guarded_effect_direction("Muscle trial", "negative", evidence) == "negative"
+
+    assert orch._title_guarded_effect_direction(
+        "Trial without placebo control improves muscle strength", "positive",
+    ) == "positive"
+    assert orch._title_guarded_effect_direction(
+        "Without adverse events, the intervention improves function", "positive",
+    ) == "positive"
+
+
 def test_title_direction_guard_preserves_positive_when_no_null_cue() -> None:
     title = (
         "Creatine supplementation improves muscle strength in older "
@@ -503,10 +521,10 @@ def test_title_direction_guard_preserves_positive_when_no_null_cue() -> None:
     assert orch._title_guarded_effect_direction(title, "positive") == "positive"
 
 
-def test_explicit_directional_title_rescues_null_extraction_signal() -> None:
+def test_explicit_directional_title_does_not_override_null_extraction_signal() -> None:
     title = "Ergothioneine promotes longevity and healthy aging in male mice"
 
-    assert orch._title_guarded_effect_direction(title, "null") == "positive"
+    assert orch._title_guarded_effect_direction(title, "null") == "null"
 
 
 def test_harm_reduction_title_rescues_unclear_extraction_signal() -> None:
@@ -521,10 +539,32 @@ def test_review_title_without_directional_signal_stays_null() -> None:
     assert orch._title_guarded_effect_direction(title, "null") == "null"
 
 
-def test_adverse_directional_title_rescues_null_extraction_signal() -> None:
+def test_adverse_directional_title_does_not_override_null_extraction_signal() -> None:
     title = "Exposure increases mortality risk and accelerates biological aging"
 
-    assert orch._title_guarded_effect_direction(title, "null") == "negative"
+    assert orch._title_guarded_effect_direction(title, "null") == "null"
+
+
+def test_explicit_evidence_text_repairs_unambiguous_direction_miscoding() -> None:
+    assert orch._title_guarded_effect_direction(
+        "Urolithin A effects in human skeletal muscle cells",
+        "unclear",
+        "Urolithin A augments glucose uptake in human skeletal muscle cells.",
+    ) == "positive"
+    assert orch._title_guarded_effect_direction(
+        "Healthy lifestyle and all-cause mortality among older adults",
+        "negative",
+        "A favorable lifestyle was associated with a lower risk of all-cause mortality.",
+    ) == "negative"
+
+
+def test_secondary_positive_prose_cannot_override_a_structured_null_primary() -> None:
+    evidence = (
+        "The primary endpoint was null. A secondary subgroup improved muscle strength."
+    )
+    assert orch._title_guarded_effect_direction(
+        "Primary endpoint trial", "null", evidence,
+    ) == "null"
 
 
 def test_topic_pack_endpoint_polarity_drives_effect_sign() -> None:

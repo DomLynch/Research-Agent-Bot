@@ -12,7 +12,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from agent.sources.aggregator import (
-    _merge_and_dedupe, discover_calibrated,
+    UNPAYWALL_LOOKUP_LIMIT, _auth_configured, _build_registry,
+    _merge_and_dedupe, discover, discover_calibrated,
 )
 from agent.retrieval_modes import resolve_params
 from agent.topic_pack import RetrievalSpec
@@ -22,13 +23,13 @@ from agent.types import RawHit
 def _hit(
     *, source: str, doi: str | None = None,
     pmid: str | None = None, title: str = "T", abstract: str = "A",
-    year: int = 2020,
+    year: int = 2020, url: str | None = None,
 ) -> RawHit:
     """Build a synthetic RawHit. RawHit's constructor signature is
     enforced by agent/types.py — keep this in sync if it changes."""
     return RawHit(
         title=title, abstract=abstract, doi=doi, pmid=pmid,
-        nct=None, year=year, url=f"https://example/{source}",
+        nct=None, year=year, url=url or f"https://example/{source}",
         venue=None, source=source, raw={},
     )
 
@@ -77,11 +78,13 @@ class _FakeClient:
     def __init__(self, name: str, hits: list[RawHit]):
         self.name = name
         self._hits = hits
+        self.queries: list[str] = []
 
     async def search(self, http, query, *, limit):
         # Verify that calibrated query syntax flows through (i.e.
         # it's NOT the raw topic_terms with no operator).
         assert "AND" in query or "OR" in query or query
+        self.queries.append(query)
         return self._hits[:limit]
 
 
@@ -97,6 +100,7 @@ def _patch_registry(monkeypatch, sources: dict[str, list[RawHit]]):
     monkeypatch.setattr(
         "agent.sources.aggregator._build_registry", lambda: fake,
     )
+    return fake
 
 
 def test_calibrated_discovery_runs_per_source_query(monkeypatch):
@@ -178,3 +182,65 @@ def test_calibrated_discovery_with_multiple_sources_dedupes(monkeypatch):
     assert hits[0].n_sources == 3
     assert stats["raw_total_pre_dedupe"] == 3
     assert stats["unique_keys_post_dedupe"] == 1
+
+
+def test_unpaywall_enriches_discovered_dois_post_hoc(monkeypatch):
+    primary = _hit(
+        source="pubmed", doi="10.1/x", title="Primary title",
+        abstract="Substantive primary abstract", url="https://doi.org/10.1/x",
+    )
+    oa = _hit(
+        source="unpaywall", doi="10.1/x", title="Lookup title",
+        abstract="OA lookup placeholder", url="https://oa.example/x.pdf",
+    )
+    registry = _patch_registry(monkeypatch, {"pubmed": [primary], "unpaywall": [oa]})
+
+    async def _run():
+        return await discover_calibrated(
+            RetrievalSpec(topic_terms=("metformin",)),
+            enabled_sources=("pubmed", "unpaywall"),
+        )
+
+    hits, stats = asyncio.run(_run())
+    assert registry["unpaywall"][0].queries == ["10.1/x"]
+    assert stats["raw_unpaywall"] == 1
+    assert len(hits) == 1
+    assert hits[0].sources == ("pubmed",)
+    assert hits[0].n_sources == 1
+    assert hits[0].url == "https://oa.example/x.pdf"
+    assert hits[0].abstract == "Substantive primary abstract"
+
+
+def test_unpaywall_enrichment_is_bounded(monkeypatch):
+    primary = [
+        _hit(source="pubmed", doi=f"10.1000/{index}")
+        for index in range(UNPAYWALL_LOOKUP_LIMIT + 20)
+    ]
+    registry = _patch_registry(monkeypatch, {"pubmed": primary, "unpaywall": []})
+
+    asyncio.run(discover_calibrated(
+        RetrievalSpec(topic_terms=("metformin",)),
+        enabled_sources=("pubmed", "unpaywall"),
+    ))
+
+    queried = registry["unpaywall"][0].queries[0].split(",")
+    assert len(queried) == UNPAYWALL_LOOKUP_LIMIT
+
+
+def test_unpaywall_enriches_legacy_discovery_dois_post_hoc(monkeypatch):
+    primary = _hit(source="pubmed", doi="10.1/x", abstract="Primary abstract")
+    oa = _hit(source="unpaywall", doi="10.1/x", url="https://oa.example/x.pdf")
+    registry = _patch_registry(monkeypatch, {"pubmed": [primary], "unpaywall": [oa]})
+
+    hits = asyncio.run(discover("metformin AND aging", enabled_sources=("pubmed", "unpaywall")))
+
+    assert registry["unpaywall"][0].queries == ["10.1/x"]
+    assert hits[0].url == "https://oa.example/x.pdf"
+
+
+def test_unpaywall_is_default_enabled_only_with_contact_email(monkeypatch):
+    monkeypatch.setenv("UNPAYWALL_EMAIL", "  ")
+    assert not _auth_configured("UNPAYWALL_EMAIL")
+    monkeypatch.setenv("UNPAYWALL_EMAIL", "research@researka.org")
+    assert _auth_configured("UNPAYWALL_EMAIL")
+    assert _build_registry()["unpaywall"][1:] == (True, "UNPAYWALL_EMAIL")

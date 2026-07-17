@@ -9,6 +9,7 @@ failed the 100% gate -> nothing published. These tests pin the seam.
 """
 from __future__ import annotations
 
+import dataclasses
 import sys
 from pathlib import Path
 
@@ -31,9 +32,15 @@ def _receipt(p_values: tuple[str, ...]) -> ReceiptSummary:
 
 
 def test_manifest_receipt_dict_carries_p_values() -> None:
-    r = _receipt(("P = 0.0165", "P = 0.0229"))
+    r = dataclasses.replace(
+        _receipt(("P = 0.0165", "P = 0.0229")),
+        endpoints=("walk speed",),
+        endpoint_directions=(("walk speed", "positive"),),
+    )
     row = v06._manifest_receipt_dict(r, citation_registry={})
     assert row["p_values"] == ["P = 0.0165", "P = 0.0229"]
+    assert row["endpoints"] == ["walk speed"]
+    assert row["endpoint_directions"] == {"walk speed": "positive"}
     # citation_token falls back to the author-year token when no registry entry
     assert row["citation_token"] == "Janic 2019"
 

@@ -753,7 +753,11 @@ def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
         )
         if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
             return False
-        unmet = revision_coverage.deterministic_unmet_asks(text, asks)
+        unmet = revision_coverage.deterministic_unmet_asks(
+            text, asks, retained_citations=revision_coverage.retained_citation_labels(
+                _read_json(run / "manifest.json"), _read_json(run / "citation_registry.json"),
+            ),
+        )
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
     _write_json(run / REVISION_COVERAGE_GATE, {

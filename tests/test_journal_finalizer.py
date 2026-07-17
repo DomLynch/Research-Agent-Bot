@@ -1548,6 +1548,18 @@ def test_lane_qualifier_preserves_bullet_marker(tmp_path: Path) -> None:
     ]
 
 
+def test_lane_qualifier_recognizes_natural_preclinical_leads(tmp_path: Path) -> None:
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Curran 2025"}],
+        "lanes": {"Curran 2025": "animal_preclinical"},
+    }))
+    for lead in ("In preclinical studies", "In mouse models"):
+        paper = f"## Results\n\n{lead}, Curran 2025 reported a bounded result.\n"
+        fixed, logs = journal_finalizer._phase_b_lane_qualifier(paper, tmp_path)
+        assert fixed == paper
+        assert logs == []
+
+
 def test_surface_artifact_cleanup_keeps_parent_heading_with_child_content() -> None:
     paper = (
         "## Results\n\n"
@@ -2293,8 +2305,11 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
     assert "Roca-Bayerri 2020" in fixed and "Picca 2019" in fixed
     assert "Source directness breakdown: 0/9 retained sources directly address" in fixed
     assert "No load-bearing cross-study disagreements were detected" not in fixed
-    assert fixed.count("surfaced tension/disagreement") >= 3
-    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert "No semantically comparable source-pair disagreements" in fixed
+    assert "Pena 2024 vs Chakraborty 2026" not in fixed
+    assert "surfaced tension/disagreement" not in fixed
+    unmet = journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks)
+    assert any("at least three" in ask.lower() for ask in unmet)
 
 
 def test_revise_feedback_reconciles_inline_citations_and_named_source_direction(tmp_path: Path) -> None:
@@ -2370,12 +2385,12 @@ def test_tensions_and_gaps_breadth_repairs_cross_source_disagreement_ask(tmp_pat
         "cross-source disagreements with named sources on each side."
     )
     rows = [
-        {"citation_token": "Grazuleviciene 2026", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "direct"},
-        {"citation_token": "Durstenfeld 2026", "outcome_class": "cardiometabolic", "effect_direction": "unclear", "directness": "review"},
-        {"citation_token": "Salerno 2026", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "indirect"},
-        {"citation_token": "Riquelme-Hernandez 2026", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review"},
-        {"citation_token": "Liu 2025", "outcome_class": "frailty", "effect_direction": "unclear", "directness": "indirect"},
-        {"citation_token": "Garcia 2026", "outcome_class": "frailty", "effect_direction": "null", "directness": "direct"},
+        {"citation_token": "Grazuleviciene 2026", "source_title": "Intervention effects on glucose uptake", "endpoints": ["glucose uptake"], "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "direct"},
+        {"citation_token": "Durstenfeld 2026", "source_title": "Review of glucose uptake endpoints", "endpoints": ["glucose uptake"], "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "review"},
+        {"citation_token": "Salerno 2026", "source_title": "Intervention effects on sleep duration", "endpoints": ["sleep duration"], "outcome_class": "contextual_other", "effect_direction": "negative", "directness": "indirect"},
+        {"citation_token": "Riquelme-Hernandez 2026", "source_title": "Review of sleep duration endpoints", "endpoints": ["sleep duration"], "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review"},
+        {"citation_token": "Liu 2025", "source_title": "Intervention effects on frailty index score", "endpoints": ["frailty index score"], "outcome_class": "frailty", "effect_direction": "positive", "directness": "indirect"},
+        {"citation_token": "Garcia 2026", "source_title": "Trial reporting frailty index score", "endpoints": ["frailty index score"], "outcome_class": "frailty", "effect_direction": "null", "directness": "direct"},
     ]
     paper = "## Results\n\nThe corpus has unresolved heterogeneity.\n\n## References\n\nR01.\n"
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
@@ -2388,6 +2403,116 @@ def test_tensions_and_gaps_breadth_repairs_cross_source_disagreement_ask(tmp_pat
     assert "Salerno 2026 vs Riquelme-Hernandez 2026" in fixed
     assert "Liu 2025 vs Garcia 2026" in fixed
     assert logs[0].phase == "D_tensions_and_gaps_breadth"
+
+
+def test_contextual_tensions_require_semantic_title_overlap() -> None:
+    unrelated = [
+        {"citation_token": "Canine 2024", "source_title": "Urolithin A and canine sperm motility", "outcome_class": "contextual_other", "effect_direction": "positive"},
+        {"citation_token": "Assay 2025", "source_title": "Urolithin A chromatographic assay validation", "outcome_class": "contextual_other", "effect_direction": "null"},
+    ]
+    assert journal_finalizer._manifest_tension_examples(
+        unrelated,
+    ) == []
+
+    comparable = [
+        {"citation_token": "Cells 2024", "source_title": "Urolithin A increases glucose uptake in skeletal muscle", "endpoints": ["glucose uptake"], "outcome_class": "contextual_other", "effect_direction": "positive"},
+        {"citation_token": "Null 2025", "source_title": "Urolithin A leaves glucose uptake unchanged in muscle", "endpoints": ["glucose uptake"], "outcome_class": "contextual_other", "effect_direction": "null"},
+    ]
+    lines = journal_finalizer._manifest_tension_examples(
+        comparable,
+    )
+    assert len(lines) == 1
+    assert "Cells 2024 vs Null 2025" in lines[0]
+
+    broad_class_only = [
+        {"citation_token": "Lipids 2024", "source_title": "LDL cholesterol reduction in older adults", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+        {"citation_token": "Pressure 2025", "source_title": "Blood pressure unchanged in older adults", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+    ]
+    assert journal_finalizer._manifest_tension_examples(broad_class_only) == []
+    assert journal_finalizer._manifest_tension_examples([
+        {"citation_token": "Lipids 2024", "source_title": "Placebo-controlled LDL outcome", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+        {"citation_token": "Pressure 2025", "source_title": "Placebo-controlled blood pressure outcome", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+    ]) == []
+    multi_endpoint_rollups = [
+        {
+            "citation_token": "Mixed A 2024",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "positive",
+            "endpoints": ["ldl cholesterol", "blood pressure"],
+            "endpoint_directions": {
+                "ldl cholesterol": "null", "blood pressure": "positive",
+            },
+        },
+        {
+            "citation_token": "Mixed B 2025",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "negative",
+            "endpoints": ["ldl cholesterol", "heart rate"],
+            "endpoint_directions": {
+                "ldl cholesterol": "null", "heart rate": "negative",
+            },
+        },
+    ]
+    assert journal_finalizer._manifest_tension_examples(multi_endpoint_rollups) == []
+    conflicting_endpoint_rollups = [
+        multi_endpoint_rollups[0],
+        {
+            "citation_token": "Mixed B 2025",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "negative",
+            "endpoints": ["ldl cholesterol", "heart rate"],
+            "endpoint_directions": {
+                "ldl cholesterol": "positive", "heart rate": "negative",
+            },
+        },
+    ]
+    lines = journal_finalizer._manifest_tension_examples(conflicting_endpoint_rollups)
+    assert len(lines) == 1
+    assert "on ldl cholesterol" in lines[0]
+    assert journal_finalizer._manifest_tension_examples([
+        {"citation_token": "Untitled 2024", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+        {"citation_token": "Untitled 2025", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+    ]) == []
+    assert journal_finalizer._manifest_tension_examples([
+        {"citation_token": "Duplicate 2024", "source_title": "Glucose uptake trial", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+        {"citation_token": "Duplicate 2024", "source_title": "Glucose uptake trial", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+    ]) == []
+    assert journal_finalizer._manifest_tension_examples([
+        {"citation_token": "Lipids 2024", "source_title": "Prospective multicenter intervention for LDL cholesterol", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+        {"citation_token": "Pressure 2025", "source_title": "Prospective multicenter intervention for blood pressure", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+    ]) == []
+    for design in (
+        "Multisite", "Interventional", "Randomised", "Parallel group", "Pragmatic",
+        "Crossover", "Nationwide", "Registry based", "Single center",
+        "Open label phase", "Adaptive cluster",
+        "Matched blinded", "Pilot feasibility",
+        "Double masked allocation", "Intention to treat", "Propensity score",
+        "Repeated measures",
+    ):
+        assert journal_finalizer._manifest_tension_examples([
+            {"citation_token": "Lipids 2024", "source_title": f"{design} LDL cholesterol outcome", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+            {"citation_token": "Pressure 2025", "source_title": f"{design} blood pressure outcome", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+        ]) == []
+
+
+def test_tension_repair_does_not_promote_reviewer_named_sources(tmp_path: Path) -> None:
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "test_topic", "receipts": []}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": (
+            "Replace the surfaced tension with a specific cross-source disagreement: "
+            "Fake 2024 vs Imaginary 2025."
+        ),
+    }))
+    paper = (
+        "# Paper\n\n## Tensions and Gaps\n\n"
+        "- Fake 2024 vs Imaginary 2025: surfaced tension/disagreement in function.\n\n"
+        "## Discussion\n\nBounded interpretation.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_tensions_and_gaps_breadth(paper, tmp_path)
+    assert "Fake 2024" not in fixed and "Imaginary 2025" not in fixed
+    assert "No semantically comparable source-pair disagreements" in fixed
+    assert logs and logs[0].rule == "state_revision_tension_breadth"
 
 
 def test_tensions_and_gaps_replaces_stale_cross_outcome_surface_tensions(tmp_path: Path) -> None:
@@ -2404,18 +2529,19 @@ def test_tensions_and_gaps_replaces_stale_cross_outcome_surface_tensions(tmp_pat
         "- Zhao 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
         "- Pei 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
         "- Zhao 2024 vs Ministrini 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus null.\n\n"
-        "## References\n\nR01.\n"
+        "## References\n\n"
+        "Katayoshi 2023. Martens 2018. Yi 2022. Simic 2020. Gao 2025. Simon 2024.\n"
     )
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
     (tmp_path / "manifest.json").write_text(json.dumps({"n_non_orthogonal_tensions": 146, "receipts": [
-        {"citation_token": "Curran 2025", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "positive", "directness": "review"},
-        {"citation_token": "Zhao 2024", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "negative", "directness": "review"},
-        {"citation_token": "Katayoshi 2023", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect"},
-        {"citation_token": "Martens 2018", "outcome_class": "cardiometabolic", "effect_direction": "unclear", "directness": "indirect"},
-        {"citation_token": "Yi 2022", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "unclear", "directness": "direct"},
-        {"citation_token": "Simic 2020", "outcome_class": "dosing_pharmacokinetics", "effect_direction": "null", "directness": "review"},
-        {"citation_token": "Gao 2025", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "null", "directness": "direct"},
-        {"citation_token": "Simon 2024", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "unclear", "directness": "direct"},
+        {"citation_token": "Curran 2025", "source_title": "Canine sperm motility", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "positive", "directness": "review"},
+        {"citation_token": "Zhao 2024", "source_title": "Human sleep duration", "outcome_class": "contextual_adjacent_evidence", "effect_direction": "negative", "directness": "review"},
+        {"citation_token": "Katayoshi 2023", "source_title": "Trial of arterial stiffness", "endpoints": ["arterial stiffness"], "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect"},
+        {"citation_token": "Martens 2018", "source_title": "Study of arterial stiffness", "endpoints": ["arterial stiffness"], "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "indirect"},
+        {"citation_token": "Yi 2022", "source_title": "Dose exposure response trial", "endpoints": ["dose exposure response"], "outcome_class": "dosing_pharmacokinetics", "effect_direction": "positive", "directness": "direct"},
+        {"citation_token": "Simic 2020", "source_title": "Review of dose exposure response", "endpoints": ["dose exposure response"], "outcome_class": "dosing_pharmacokinetics", "effect_direction": "null", "directness": "review"},
+        {"citation_token": "Gao 2025", "source_title": "Trial of glucose uptake", "endpoints": ["glucose uptake"], "outcome_class": "contextual_adjacent_evidence", "effect_direction": "null", "directness": "direct"},
+        {"citation_token": "Simon 2024", "source_title": "Study of glucose uptake", "endpoints": ["glucose uptake"], "outcome_class": "contextual_adjacent_evidence", "effect_direction": "positive", "directness": "direct"},
     ]}))
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
@@ -3043,8 +3169,8 @@ def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_
     )
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": "; ".join(asks)}))
     (tmp_path / "manifest.json").write_text(json.dumps({"n_non_orthogonal_tensions": 116, "receipts": [
-        {"citation_token": "Smith 2025", "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "direct", "evidence_tier": "A1", "n_claims": 12},
-        {"citation_token": "Jones 2024", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "review", "evidence_tier": "B1", "n_claims": 8},
+        {"citation_token": "Smith 2025", "source_title": "Sirtuin intervention improves arterial stiffness", "endpoints": ["arterial stiffness"], "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "direct", "evidence_tier": "A1", "n_claims": 12},
+        {"citation_token": "Jones 2024", "source_title": "Sirtuin review finds null arterial stiffness effects", "endpoints": ["arterial stiffness"], "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "review", "evidence_tier": "B1", "n_claims": 8},
         {"citation_token": "Patel 2023", "outcome_class": "immune", "effect_direction": "mixed", "directness": "indirect", "evidence_tier": "B2", "n_claims": 6},
         {"citation_token": "Chen 2022", "outcome_class": "muscle_function", "effect_direction": "negative", "directness": "indirect", "evidence_tier": "B2", "n_claims": 5},
     ]}))
@@ -3114,7 +3240,7 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
     assert "Synthesis interpretation: These source-level findings connect" in fixed
     assert "Publication-year note: citation years follow the manifest metadata" in fixed
     assert "finding=representative statistic p < 0.001; source-level statistic reported" in fixed
-    assert "Actually surfaced tensions include:" in fixed
+    assert "No semantically comparable source-pair disagreements" in fixed
     assert "## Gaps Identified" in fixed
     assert "1. Run adequately powered prospective trials" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
@@ -4427,6 +4553,7 @@ def test_surface_artifact_cleanup_repairs_abbrev_and_duplicate_heading() -> None
     paper = (
         "## Results\n\n"
         "The direction remained uncertain.g., the corpus stayed indirect.\n\n"
+        "The retained endpoints were mostly non-significant (e.\n\n"
         "### Immune and Inflammation Outcomes\n\n"
         "### Immune and Inflammation Outcomes\n\n"
         "The immune slice was retained.\n\n"
@@ -4440,6 +4567,8 @@ def test_surface_artifact_cleanup_repairs_abbrev_and_duplicate_heading() -> None
     fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
     after = evaluate_journal_surface(fixed)
     assert "uncertain.g.," not in fixed
+    assert "(e." not in fixed
+    assert "The retained endpoints were mostly non-significant" in fixed
     assert fixed.count("### Immune and Inflammation Outcomes") == 1
     assert not any(i.code == "grammar_artifact" for i in after.issues)
     assert not any(i.code == "duplicate_heading" for i in after.issues)
@@ -5157,13 +5286,18 @@ def test_revise_feedback_repairs_denominators_tensions_and_findings_map(tmp_path
 
     assert "Corpus-count reconciliation:" in fixed
     assert "Findings Map completeness note: all 9 admitted manifest rows" in fixed
-    assert "Vatvani 2024 vs Bruun 2021" in fixed
+    assert "No semantically comparable source-pair disagreements" in fixed
+    assert "Nazir 2025 vs Tsui 2024" not in fixed
     assert "Outcome-class synthesis note: Exposure and Dose-Adjacent Evidence is treated as a real outcome-class synthesis" in fixed
     assert "Directness summary:" in fixed
     assert "Source examples:" in fixed
     assert "direct-source ceiling:" in fixed.lower()
     assert "Dosing and Pharmacokinetics" not in fixed
-    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    unmet = journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        fixed, asks, retained_citations={row["citation_token"] for row in rows},
+    )
+    assert len(unmet) == 1
+    assert "cross-source disagreements" in unmet[0].lower()
     assert {entry.phase for entry in logs} >= {
         "D_substantive_evidence_synthesis",
         "D_source_outcome_class_map",

@@ -2,20 +2,23 @@ from __future__ import annotations
 
 import json
 import re
-import importlib
-import sys
-from itertools import combinations
+from collections import Counter
 from dataclasses import asdict, dataclass, field
+import importlib
+from itertools import combinations
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
 
-_SCRIPTS_DIR = Path(__file__).resolve().parent
-if str(_SCRIPTS_DIR) not in sys.path:
-    sys.path.insert(0, str(_SCRIPTS_DIR))
+from agent import statistical_consistency as _stats
+from agent.endpoint_evidence import directional_kind, endpoint_direction_map
 
-import revision_coverage  # noqa: E402
-from agent import statistical_consistency as _stats  # noqa: E402
+
+def _script_module(name: str) -> Any:
+    return importlib.import_module(f"{__package__}.{name}" if __package__ else name)
+
+
+revision_coverage: Any = _script_module("revision_coverage")
 
 
 @dataclass(frozen=True, slots=True)
@@ -33,7 +36,14 @@ class FinalizerReport:
     entries: tuple[FinalizerLogEntry, ...] = field(default=())
 
 
-_ANIMAL_QUALIFIER_LEAD = "In animal/preclinical evidence, "
+_EXISTING_ANIMAL_QUALIFIER_RE = re.compile(
+    r"^(?:in\s+)?(?:"
+    r"(?:animal(?:/preclinical)?|preclinical)\s+(?:evidence|context|stud(?:y|ies)|models?)|"
+    r"(?:mouse|mice|murine|rats?|rodents?|canine|primates?|cell(?:ular)?|organisms?|species|"
+    r"in[- ]vitro|ex[- ]vivo)\s+(?:evidence|context|stud(?:y|ies)|models?)"
+    r")\b",
+    re.I,
+)
 
 
 def _lowercase_first_letter(text: str) -> str:
@@ -63,38 +73,34 @@ _ORPHAN_REF_PARAGRAPH_LEAD = (
     "anchoring a foregrounded quantitative claim and are catalogued "
     "for completeness: "
 )
-MAX_INNER_FINALIZER_PASSES = 3
 
 
 def finalize_run(out_dir: Path) -> FinalizerReport:
     paper_path = out_dir / "full_paper.md"
     if not paper_path.is_file():
         return FinalizerReport(paper_changed=False, final_word_count=0)
-    text = paper_path.read_text()
-    original = text
+    original = paper_path.read_text()
+    text = original
     entries: list[FinalizerLogEntry] = []
 
-    for _ in range(MAX_INNER_FINALIZER_PASSES):
+    for _ in range(6):
+        before = text
         new_text, log = _run_text_phases(text, out_dir)
         entries.extend(log)
-        if new_text == text:
-            break
+        if new_text != text:
+            paper_path.write_text(new_text)
         text = new_text
-        if (report := _surface_report(text, out_dir)) and report.passed:
+        entries.extend(_phase_g_refresh_sidecars(out_dir))
+        text = paper_path.read_text()
+        if new_text == before and text == new_text:
             break
-    # CRITICAL ORDERING: write the post-finalizer text to disk BEFORE
-    # Phase G reads it. Phase G's surface re-evaluation reads from disk
-    # via `evaluate_journal_surface(paper_path.read_text(), ...)`, so
-    # the disk write must happen first or Phase G sees stale text.
+    else:
+        raise RuntimeError("journal finalizer did not reach a fixed point")
     changed = text != original
-    if changed:
-        paper_path.write_text(text)
-    # Phase G refreshes sidecars whose state drifted (verdict + readiness
-    # contract) and re-evaluates the surface gate against the now-on-disk
-    # post-finalizer paper. Universal.
-    entries.extend(_phase_g_refresh_sidecars(out_dir))
     report = FinalizerReport(paper_changed=changed, final_word_count=len(text.split()), entries=tuple(entries))  # noqa: E501
-    (out_dir / "journal_finalizer.json").write_text(json.dumps(asdict(report), indent=2))
+    report_path = out_dir / "journal_finalizer.json"
+    if changed or entries or not report_path.exists():
+        report_path.write_text(json.dumps(asdict(report), indent=2))
     return report
 
 
@@ -219,6 +225,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, log = _phase_b_lane_qualifier(text, out_dir)
     entries.extend(log)
     text, log = _phase_m_strip_terminal_thesis_duplicates(text)
+    entries.extend(log)
+    text, log = _phase_i_split_concatenated_headings(text)
     entries.extend(log)
     return text, entries
 
@@ -612,7 +620,11 @@ def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
 
 
 def _repair_dangling_abbrev_artifacts(text: str) -> tuple[str, int]:
-    return re.subn(r"(?<=[A-Za-z])\.g\.,", ". For example,", text)
+    out, malformed_n = re.subn(r"(?<=[A-Za-z])\.g\.,", ". For example,", text)
+    out, truncated_n = re.subn(
+        r"\s+\((?:e|i)\.\s*(?=\n\s*\n|\Z)", "", out, flags=re.I,
+    )
+    return out, malformed_n + truncated_n
 
 
 def _remove_empty_subheadings(text: str) -> tuple[str, int]:
@@ -813,8 +825,6 @@ def _phase_b_lane_qualifier(
         lane_map = lanes.get("lanes") or {}
     except (OSError, json.JSONDecodeError):
         return text, []
-    if not animal_tokens:
-        return text, []
     # Only explicit lead-ins mark a paragraph as already lane-labelled.
     # Source titles may contain words like "animal" without qualifying the prose.
     # Operate only on the body (above References). Splitting on the
@@ -829,26 +839,33 @@ def _phase_b_lane_qualifier(
         stripped = para.lstrip()
         if not stripped or stripped.startswith(("##", "###", "|")):
             continue
-        structured_note = stripped.startswith((
-            "Findings Map completeness note:",
-            "Findings Map accounting note:",
-            "Direction heterogeneity note:",
-        ))
+        structured_note = stripped.startswith(("Findings Map completeness note:", "Findings Map accounting note:", "Direction heterogeneity note:"))
+        bullet = re.match(r"^([-*]\s+)(.+)$", stripped, flags=re.S)
+        content = bullet.group(2) if bullet else stripped
+        content, generic_n = re.subn(r"^(?:additional corpus sources included animal/preclinical evidence;\s*)+", "", content, flags=re.I)
+        prefix = para[: len(para) - len(stripped)]
         if not any(tok in para for tok in animal_tokens):
+            if not generic_n:
+                continue
+            clean = content[:1].upper() + content[1:]
+            paragraphs[i] = prefix + (bullet.group(1) if bullet else "") + clean
+            n_patched += 1
             continue
-        lower_stripped = stripped.lower()
-        if lower_stripped.startswith((
-            _ANIMAL_QUALIFIER_LEAD.lower(),
-            "additional corpus sources included animal/preclinical evidence;",
-        )):
+        lower_content = content.lower()
+        if _EXISTING_ANIMAL_QUALIFIER_RE.match(lower_content):
             continue
         citation_pool = lane_map or {tok: "animal_preclinical" for tok in animal_tokens}
         cited = [tok for tok in citation_pool if tok in para]
-        lead = _ANIMAL_QUALIFIER_LEAD if cited and sum(tok in animal_tokens for tok in cited) * 2 > len(cited) else "Additional corpus sources included animal/preclinical evidence; "
-        body_text = stripped if structured_note else _lowercase_first_letter(stripped)
-        bullet = re.match(r"^([-*]\s+)(.+)$", stripped, flags=re.S)
+        animal_cited = [tok for tok in animal_tokens if tok in para]
+        all_animal = cited and len(animal_cited) == len(cited)
+        lead = (
+            "In animal/preclinical evidence, "
+            if all_animal
+            else f"Animal/preclinical context ({', '.join(animal_cited[:3])}): "
+        )
+        body_text = content if structured_note else _lowercase_first_letter(content)
         if bullet:
-            paragraphs[i] = para[: len(para) - len(stripped)] + bullet.group(1) + lead + _lowercase_first_letter(bullet.group(2))
+            paragraphs[i] = prefix + bullet.group(1) + lead + body_text
         else:
             paragraphs[i] = lead + body_text
         n_patched += 1
@@ -942,14 +959,15 @@ def _phase_h_topic_slug_normalise(
 # reader. The pattern: any H2-H6 heading text immediately followed by
 # another `##`+ heading marker with no intervening newline. Insert
 # `\n\n` between them. Universal — no per-topic logic.
-_CONCAT_HEADING_RE = re.compile(r"^(#{2,6}\s+[^#\n]*?)(#{2,6}\s+)", re.M)
 _INLINE_HEADING_RE = re.compile(r"([^#\n])(?=#{2,6}\s+[A-Z][^#\n]*(?:\n|$))")
 
 
 def _phase_i_split_concatenated_headings(text: str) -> tuple[str, list[FinalizerLogEntry]]:
-    new_text, n = _CONCAT_HEADING_RE.subn(r"\1\n\n\2", text)
+    new_text, n = re.subn(r"^(#{2,6}\s+[^#\n]*?)(#{2,6}\s+)", r"\1\n\n\2", text, flags=re.M)
     new_text, inline_n = _INLINE_HEADING_RE.subn(r"\1\n\n", new_text)
-    n += inline_n
+    new_text, boundary_n = re.subn(r"(?<!\n)\n(?=##\s+[A-Z])", "\n\n", new_text)
+    new_text, excess_n = re.subn(r"\n{3,}", "\n\n", new_text)
+    n += inline_n + boundary_n + excess_n
     if not n:
         return text, []
     return new_text, [FinalizerLogEntry(phase="I_split_concatenated_headings", rule="insert_blank_line_between_headings", n_changes=n, detail=f"split {n} concatenated heading line(s)")]
@@ -1008,7 +1026,6 @@ def _topic_display_anchor(manifest: dict[str, Any]) -> str:
 
 def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     from agent.journal_surface_gate import _outcome_key
-    from collections import Counter
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     registry = _load_sidecar(out_dir / "citation_registry.json") or {}
     rs = re.search(r"^## Results\b.*?(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
@@ -1151,7 +1168,6 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
 
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts") or [] if isinstance(manifest, dict) else []
-    from collections import Counter
     classes = (str(r.get("outcome_class")) for r in receipts if isinstance(r, dict) and r.get("outcome_class"))
     top = ", ".join(
         f"{k.replace('_', ' ')} (n={v})"
@@ -4429,15 +4445,14 @@ def _phase_d_tensions_and_gaps_breadth(
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
-    tension_n = manifest.get("n_non_orthogonal_tensions") if isinstance(manifest, dict) else None
     blocked_labels = _reviewer_blocked_tension_labels(feedback)
     tension_lines = [
-        line for line in dict.fromkeys(_reviewer_named_tension_lines(feedback) + _manifest_tension_examples(rows))
+        line for line in _manifest_tension_examples(
+            rows,
+        )
         if not any(label in line.lower() for label in blocked_labels)
     ]
     tension_lines = [_reviewer_adjusted_outcome_label(line, feedback) for line in tension_lines]
-    if asks_count_evidence and not tension_lines:
-        return text, []
     contexts = [
         label
         for token, label in (
@@ -4449,23 +4464,31 @@ def _phase_d_tensions_and_gaps_breadth(
         if token in lower
     ]
     context_text = ", ".join(dict.fromkeys(contexts)) or "the reviewer-named adjacent contexts"
-    count_note = (
-        f"The manuscript reports {tension_n} claim-level cross-study disagreements from the manifest; "
-        "that number is a claim-level count, not an independently pooled source-pair count."
-        if isinstance(tension_n, int) and tension_n > 0
-        else "The manuscript treats cross-study disagreement counts as manifest-derived claim-level counts."
-    )
-    section = (
-        "## Tensions and Gaps\n\n"
-        "Evidence-gap priority: The tension analysis separates claim-level disagreement counts from substantive "
-        "cross-context evidence gaps. Biomarker-positive source-level findings are not "
-        "pooled with mixed or null clinical-endpoint findings. The unresolved breadth "
-        f"therefore spans {context_text}, and these contexts remain hypothesis-generating "
-        "unless represented by retained direct clinical endpoint evidence. "
-        f"{count_note} Actually surfaced tensions include:\n"
-        + ("\n".join(tension_lines) if tension_lines else "- Specific source-pair examples are listed in the supplementary contradiction map.")
-        + "\n"
-    )
+    if tension_lines:
+        pair_count = len(tension_lines)
+        section = (
+            "## Tensions and Gaps\n\n"
+            "Evidence-gap priority: The tension analysis separates claim-level disagreement counts from substantive "
+            "cross-context evidence gaps. Biomarker-positive source-level findings are not "
+            "pooled with mixed or null clinical-endpoint findings. The unresolved breadth "
+            f"therefore spans {context_text}, and these contexts remain hypothesis-generating "
+            "unless represented by retained direct clinical endpoint evidence. "
+            f"The manuscript surfaces {pair_count} semantically comparable source-pair "
+            f"disagreement{'s' if pair_count != 1 else ''}; manifest claim-level counts "
+            "are not presented as source-pair counts. Actually surfaced tensions include:\n"
+            + "\n".join(tension_lines) + "\n"
+        )
+    else:
+        section = (
+            "## Tensions and Gaps\n\n"
+            "No semantically comparable source-pair disagreements could be substantiated "
+            "from the retained receipts. Biomarker-positive source-level findings are not "
+            "pooled with mixed or null clinical-endpoint findings. The unresolved breadth "
+            f"spans {context_text}, but those contexts remain hypothesis-generating. "
+            "Evidence-gap priority: collect direct studies "
+            "measuring the same endpoint in comparable populations and designs before "
+            "claiming cross-study disagreement.\n"
+        )
     existing = re.search(r"^## Tensions and Gaps\b.*?(?=^## |\Z)", text, flags=re.M | re.S)
     if existing:
         if existing.group(0).strip() == section.strip():
@@ -4476,11 +4499,10 @@ def _phase_d_tensions_and_gaps_breadth(
         ref = re.search(r"^## Evidence Snapshot\b|^## References\b", text, flags=re.M)
         insert_at = ref.start() if ref else len(text)
         patched = text[:insert_at].rstrip() + "\n\n" + section + "\n" + text[insert_at:].lstrip()
-    if asks_count_evidence or "no load-bearing cross-study disagreements" in patched.lower():
-        load_bearing = "### Load-Bearing Tensions\n\n" + "\n".join(tension_lines) + "\n\n"
+    if asks_count_evidence:
         patched = re.sub(
             r"^### Load-Bearing Tensions\b.*?(?=^### |^## |\Z)",
-            load_bearing,
+            "",
             patched,
             count=1,
             flags=re.M | re.S,
@@ -4496,123 +4518,62 @@ def _phase_d_tensions_and_gaps_breadth(
 
 
 def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
+    from agent.outcome_class_remap import outcome_key as canonical_outcome_key
+
     def citation(row: dict[str, Any]) -> str:
         return str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
 
-    def direction(row: dict[str, Any]) -> str:
-        return _normalised_direction(row)
-
-    def outcome_key(row: dict[str, Any]) -> str:
-        return str(row.get("outcome_class") or "contextual_other").strip().lower() or "contextual_other"
-
     def directness_rank(row: dict[str, Any]) -> int:
         value = str(row.get("directness") or "").strip().lower()
-        if value.startswith("direct"):
-            return 0
-        if value in {"indirect", "adjacent"}:
-            return 1
-        if "review" in value:
-            return 2
-        if "mechanistic" in value or "model" in value or "preclinical" in value:
-            return 3
-        return 2
+        if value.startswith("direct") or value in {"indirect", "adjacent"}:
+            return 0 if value.startswith("direct") else 1
+        return 3 if any(token in value for token in ("mechanistic", "model", "preclinical")) else 2
 
-    candidates = [
-        row for row in rows
-        if citation(row) and re.search(r"\b(?:19|20)\d{2}\b", citation(row))
-    ]
-    if not candidates:
-        return []
-    pair_candidates: list[tuple[int, str, dict[str, Any], dict[str, Any]]] = []
+    candidates = [row for row in rows
+                  if citation(row) and re.search(r"\b(?:19|20)\d{2}\b", citation(row))]
+    pair_candidates: list[tuple[int, int, str, str, str, str,
+                                dict[str, Any], dict[str, Any]]] = []
     for left, right in combinations(candidates, 2):
-        if outcome_key(left) != outcome_key(right) or direction(left) == direction(right):
+        left_outcome = canonical_outcome_key(str(left.get("outcome_class") or "contextual_other"))
+        right_outcome = canonical_outcome_key(str(right.get("outcome_class") or "contextual_other"))
+        if citation(left).casefold() == citation(right).casefold() or left_outcome != right_outcome:
             continue
-        rank = directness_rank(left) + directness_rank(right)
-        pair_candidates.append((rank, outcome_key(left), left, right))
-    pair_candidates.sort(key=lambda item: (item[0], item[1], citation(item[2]), citation(item[3])))
-    selected_pairs: list[tuple[int, str, dict[str, Any], dict[str, Any]]] = []
-    selected_outcomes: set[str] = set()
-    for item in pair_candidates:
-        if item[1] in selected_outcomes:
-            continue
-        selected_pairs.append(item)
-        selected_outcomes.add(item[1])
-        if len(selected_pairs) >= 3:
-            break
-    if len(selected_pairs) < 3:
-        for item in pair_candidates:
-            if item in selected_pairs:
+        left_directions = endpoint_direction_map(
+            left.get("endpoint_directions"), left.get("endpoints") or left.get("endpoint"),
+            left.get("effect_direction"))
+        right_directions = endpoint_direction_map(
+            right.get("endpoint_directions"), right.get("endpoints") or right.get("endpoint"),
+            right.get("effect_direction"))
+        endpoint_conflicts: list[tuple[int, str, str, str]] = []
+        for endpoint in sorted(left_directions.keys() & right_directions.keys()):
+            left_direction = left_directions[endpoint]
+            right_direction = right_directions[endpoint]
+            kind = directional_kind(left_direction, right_direction)
+            if kind not in {"disagreement", "null_vs_positive", "null_vs_negative"}:
                 continue
-            selected_pairs.append(item)
-            if len(selected_pairs) >= 3:
-                break
+            endpoint_conflicts.append((0 if kind == "disagreement" else 1,
+                                       endpoint, left_direction, right_direction))
+        if not endpoint_conflicts:
+            continue
+        conflict_rank, endpoint, best_left_direction, best_right_direction = min(endpoint_conflicts)
+        rank = directness_rank(left) + directness_rank(right)
+        pair_candidates.append((conflict_rank, rank, left_outcome, endpoint,
+                                best_left_direction, best_right_direction, left, right))
+    pair_candidates.sort(key=lambda item: (item[0], item[1], item[2], item[3],
+                                            citation(item[6]), citation(item[7])))
+    by_outcome: dict[str, tuple[int, int, str, str, str, str, dict[str, Any], dict[str, Any]]] = {}
+    for item in pair_candidates:
+        by_outcome.setdefault(item[2], item)
+    selected_pairs = list(by_outcome.values())[:3]
+    selected_pairs.extend(item for item in pair_candidates if item not in selected_pairs)
+    selected_pairs = selected_pairs[:3]
     lines = [
         f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in "
-        f"{_evidence_role_outcome_display(left)} because directions are {direction(left)} versus {direction(right)}; "
+        f"{_evidence_role_outcome_display(left)} on {endpoint} because directions are "
+        f"{left_direction} versus {right_direction}; "
         "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
-        for _, _, left, right in selected_pairs
+        for _, _, _, endpoint, left_direction, right_direction, left, right in selected_pairs
     ]
-    if len(lines) >= 3:
-        return lines
-    positives = [row for row in candidates if direction(row) == "positive"]
-    contrasts = [row for row in candidates if direction(row) in {"negative", "mixed", "null", "unclear"}]
-    if not positives:
-        positives = candidates[:]
-    if not contrasts:
-        contrasts = list(reversed(candidates))
-    used: set[tuple[str, str]] = {
-        (citation(left), citation(right))
-        for _, _, left, right in selected_pairs
-    }
-    for left in positives:
-        for right in contrasts:
-            a, b = citation(left), citation(right)
-            if a == b or (a, b) in used:
-                continue
-            used.add((a, b))
-            outcome = _evidence_role_outcome_display(left)
-            lines.append(
-                f"- {a} vs {b}: surfaced tension/disagreement in {outcome} "
-                f"because directions are {direction(left)} versus {direction(right)}; "
-                "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
-            )
-            if len(lines) >= 3:
-                return lines
-    while len(lines) < 3 and candidates:
-        left = candidates[len(lines) % len(candidates)]
-        right = candidates[-(len(lines) % len(candidates))-1]
-        if citation(left) != citation(right):
-            lines.append(
-                f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in the retained source map; "
-                "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
-            )
-        else:
-            break
-    return lines
-
-
-def _reviewer_named_tension_lines(feedback: str) -> list[str]:
-    lines: list[str] = []
-    feedback = re.sub(r"\bvs\.", "vs", feedback, flags=re.I)
-    for sentence in re.split(r"(?<=[.!?;])\s+", feedback):
-        if not re.search(r"\b(?:vs\.?|versus)\b", sentence, flags=re.I):
-            continue
-        parts = re.split(r"\b(?:vs\.?|versus)\b", sentence, maxsplit=1, flags=re.I)
-        if len(parts) != 2:
-            continue
-        left_labels = _reviewer_named_source_labels(parts[0])
-        right_labels = _reviewer_named_source_labels(parts[1])
-        for left in left_labels[:2]:
-            for right in right_labels[:3]:
-                if left == right:
-                    continue
-                lines.append(
-                    f"- {left} vs {right}: reviewer-named cross-source disagreement; "
-                    "interpret as endpoint, population, directness, or study-design "
-                    "heterogeneity rather than a pooled effect."
-                )
-                if len(lines) >= 5:
-                    return lines
     return lines
 
 
@@ -5804,7 +5765,8 @@ def _phase_e_structural_fallback(
 def _phase_f_reconcile_results_table(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
-    from evidence_map_summary import signal_summary_cell, source_context_map, strip_source_context_map
+    evidence_map_summary = _script_module("evidence_map_summary")
+    signal_summary_cell, source_context_map, strip_source_context_map = (evidence_map_summary.signal_summary_cell, evidence_map_summary.source_context_map, evidence_map_summary.strip_source_context_map)
 
     manifest_path = out_dir / "manifest.json"
     if not manifest_path.is_file():
@@ -6136,7 +6098,12 @@ def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
         )
         if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
             return False
-        unmet = revision_coverage.deterministic_unmet_asks(text, asks)
+        manifest = _load_sidecar(out_dir / "manifest.json")
+        registry = _load_sidecar(out_dir / "citation_registry.json")
+        retained = revision_coverage.retained_citation_labels(
+            manifest if isinstance(manifest, dict) else {}, registry if isinstance(registry, dict) else {},
+        )
+        unmet = revision_coverage.deterministic_unmet_asks(text, asks, retained_citations=retained)
     except (OSError, RuntimeError, TypeError, ValueError):
         return False
     fresh = {
@@ -6327,7 +6294,8 @@ def _write_pre_submit_gate_markdown(out_dir: Path, gate: dict[str, object]) -> i
     if not isinstance(contract, list) or not isinstance(result, dict):
         return 0
     try:
-        from paper_quality_runtime import _format_readiness_contract
+        paper_quality_runtime = _script_module("paper_quality_runtime")
+        _format_readiness_contract = paper_quality_runtime._format_readiness_contract
     except ImportError:
         return 0
     summary = str(result.get("summary") or "")

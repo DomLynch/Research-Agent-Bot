@@ -6,6 +6,7 @@ template behaviour."""
 from __future__ import annotations
 
 from agent.paper_writer_deterministic import (
+    _outcome_rows,
     build_what_this_adds_section,
 )
 from agent.synthesis_schemas import (
@@ -237,6 +238,20 @@ def test_research_contribution_layer_humanizes_public_labels() -> None:
     )
     assert "muscle function" in md
     assert "muscle_function" not in md
+
+
+def test_boundary_matrix_merges_canonical_outcome_aliases() -> None:
+    receipts = [
+        _r("Direct 2024", outcome="immune", directness="direct"),
+        _r("Indirect 2023", outcome="immune_inflammation", directness="indirect"),
+    ]
+    md = build_what_this_adds_section(
+        receipts, _matrix(receipts), _thesis(), topic="urolithin A",
+    )
+    assert md.count("| immune and inflammation |") == 1
+    assert "| immune and inflammation | 1 | 1 |" in md
+    rows = _outcome_rows(receipts, _matrix(receipts))
+    assert rows[0][:2] == (3, "immune_inflammation")
 
 
 def test_next_study_design_targets_highest_priority_gap() -> None:

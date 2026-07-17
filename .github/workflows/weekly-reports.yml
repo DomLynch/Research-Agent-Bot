@@ -24,7 +24,9 @@ jobs:
           pip install -e ".[dev]"
 
       - name: Unpaywall smoke
-        run: PYTHONPATH=. python scripts/unpaywall_smoke.py || echo "::warning::Unpaywall smoke failed — check adapter or Unpaywall API status"
+        env:
+          UNPAYWALL_EMAIL: ${{ vars.UNPAYWALL_EMAIL }}
+        run: PYTHONPATH=. python scripts/unpaywall_smoke.py
 
       - name: Weekly report
         run: PYTHONPATH=. python scripts/weekly_report.py

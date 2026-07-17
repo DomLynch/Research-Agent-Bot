@@ -116,9 +116,9 @@ class ReceiptSummary:
     summaries, not the raw receipt dirs — keeps the multi-receipt
     surface small and predictable.
 
-    `outcome_class` and `effect_direction` are the load-bearing fields
-    for tension detection. They're derived from claim text + supporting
-    evidence_cards, not LLM-inferred.
+    `outcome_class` and `endpoint_directions` are the load-bearing fields
+    for tension detection; `effect_direction` is the descriptive paper rollup.
+    They're derived from claim text + supporting evidence_cards, not LLM-inferred.
     """
 
     receipt_id: str                # output_dir leaf (e.g. metformin-001-...-abcd)
@@ -146,6 +146,8 @@ class ReceiptSummary:
     source_doi: str | None = None
     source_pmid: str | None = None
     source_venue: str | None = None
+    endpoints: tuple[str, ...] = ()
+    endpoint_directions: tuple[tuple[str, EffectDirection], ...] = ()
 
 
 # --- TensionMatrix --------------------------------------------------------
@@ -165,6 +167,7 @@ class Tension:
     outcome_class: OutcomeClass
     summary: str                   # one-line deterministic description
     severity: int                  # 0 (orthogonal) → 5 (direct disagreement on same outcome)
+    endpoint: str | None = None    # exact shared endpoint supporting a directional tension
 
 
 @dataclass(frozen=True, slots=True)

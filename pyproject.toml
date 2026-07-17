@@ -37,6 +37,7 @@ asyncio_mode = "strict"
 
 [tool.mypy]
 mypy_path = "scripts"
+explicit_package_bases = true
 exclude = '^scripts/(review_noise_control|render_quality_tables)\.py$'
 
 [[tool.mypy.overrides]]

@@ -177,6 +177,11 @@ def build_fullraw_query(spec: RetrievalSpec) -> str:
     return " ".join(terms)
 
 
+def build_doi_lookup_query(_spec: RetrievalSpec) -> str:
+    """DOI lookup sources run after discovery and never accept keywords."""
+    return ""
+
+
 # ---------- Dispatcher -----------------------------------------------
 
 _BUILDERS = {
@@ -193,7 +198,7 @@ _BUILDERS = {
     "pmc_oai": build_keyword_query,
     "arxiv": build_keyword_query,
     "clinicaltrials": build_keyword_query,
-    "unpaywall": build_keyword_query,
+    "unpaywall": build_doi_lookup_query,
     "chembl": build_keyword_query,
     "v5_fullraw": build_fullraw_query,
 }
@@ -214,5 +219,6 @@ __all__ = [
     "build_europepmc_query",
     "build_keyword_query",
     "build_fullraw_query",
+    "build_doi_lookup_query",
     "build_query_for_source",
 ]

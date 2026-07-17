@@ -23,7 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import httpx  # noqa: E402
 
-from agent.sources._base import USER_AGENT  # noqa: E402
+from agent.sources._base import SourceClient, USER_AGENT  # noqa: E402
 from agent.sources.clinicaltrials import ClinicalTrialsClient  # noqa: E402
 from agent.sources.europepmc import EuropePMCClient  # noqa: E402
 from agent.sources.openalex import OpenAlexClient  # noqa: E402
@@ -47,7 +47,7 @@ TOPICS: list[tuple[str, str]] = [
     ("everolimus", "everolimus older adults immune"),
 ]
 
-CLIENTS = [
+CLIENTS: list[SourceClient] = [
     PubMedClient(),
     OpenAlexClient(),
     EuropePMCClient(),

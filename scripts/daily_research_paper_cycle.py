@@ -2882,7 +2882,11 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
             text += "\n\n" + supplement.read_text(encoding="utf-8")
         except OSError:
             return asks
-    unmet = revision_coverage.material_unmet_asks(text, feedback)
+    unmet = revision_coverage.material_unmet_asks(
+        text, feedback, retained_citations=revision_coverage.retained_citation_labels(
+            _read_json(out_dir / "manifest.json"), _read_json(out_dir / "citation_registry.json"),
+        ),
+    )
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
 
 

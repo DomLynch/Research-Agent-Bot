@@ -510,14 +510,21 @@ def test_select_candidate_refreshes_old_satisfied_revision_coverage_before_skip(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     run = _run(tmp_path)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    for row, label in zip(manifest["receipts"], (
+        "Smith 2024", "Jones 2025", "Patel 2023", "Chen 2022", "Lee 2021", "Rao 2020",
+    ), strict=False):
+        row["citation_token"] = label
+    _write_json(run / "manifest.json", manifest)
     ask = (
         "Expand the Tensions and Gaps section to enumerate the cross-study contradictions "
         "actually discussed in the body rather than restating a generic call for future trials."
     )
     (run / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Evidence Landscape\n\n"
-        "The source map bounds the synthesis.\n\n"
+            "# Research Synthesis: Topic\n\n"
+            "## Evidence Landscape\n\n"
+            "The source map includes Smith 2024, Jones 2025, Patel 2023, Chen 2022, "
+            "Lee 2021, and Rao 2020 and bounds the synthesis.\n\n"
         "## Tensions and Gaps\n\n"
         "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
         "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in Cardiometabolic because directions are positive versus null.\n"

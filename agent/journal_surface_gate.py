@@ -481,17 +481,17 @@ def _duplicate_adjacent_phrase_issue_messages(text: str) -> tuple[str, ...]:
 
 def _thin_analytic_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
     issues: list[str] = []
-    for idx, paragraph in enumerate(re.split(r"\n\s*\n", paper_md), start=1):
+    for idx, paragraph in enumerate(re.split(r"\n\s*\n", re.split(r"^## References\b", paper_md, maxsplit=1, flags=re.M)[0]), start=1):
         text = re.sub(r"\s+", " ", paragraph.strip())
         if not text or text.startswith(("#", "|")):
             continue
-        n = len(re.findall(r"[a-z0-9]+", text.lower()))
-        if 5 <= n <= 14 and _ANALYTIC_STUB_RE.search(text) and not re.search(r"\d|;|:", text):
+        words = re.findall(r"[a-z0-9]+", text.lower())
+        if 5 <= len(words) <= 14 and _ANALYTIC_STUB_RE.search(text) and not re.search(r"\d|;|:", text):
             issues.append(f"thin analytical paragraph {idx}: {text}")
         elif _CITATION_ONLY_STUB_RE.match(text):
             issues.append(f"citation-only stub paragraph {idx}: {text}")
-        elif n >= 6 and re.search(r"(?:\.\.\.|…)$|\b(?:versus|vs|and|or|but|of|to|with|for|than|between|whereas|while)$", re.sub(r"""[\s)\]"'*_`]+$""", "", text), re.I):
-            issues.append(f"truncated sentence paragraph {idx}: …{text[-60:]}")
+        elif (truncated := bool(len(words) >= 6 and re.search(r"(?:\.\.\.|…)$|\b(?:versus|vs|and|or|but|of|to|with|for|than|between|whereas|while)$", re.sub(r"""[\s)\]"'*_`]+$""", "", text), re.I))) or re.search(r"\((?:e|i)\.\s*$", text, re.I) or ((paren_text := re.sub(r"[\[(]\s*[+-]?\d+(?:\.\d+)?\s*,\s*[+-]?\d+(?:\.\d+)?\s*[\])]", "", text)).count("(") != paren_text.count(")")):
+            issues.append(f"{'truncated sentence' if truncated else 'unbalanced parenthetical'} paragraph {idx}: …{text[-60:]}")
     return tuple(issues)
 
 
