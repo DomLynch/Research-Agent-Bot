@@ -82,6 +82,82 @@ def test_retracted_cited_sources_end_to_end(tmp_path: Path) -> None:
     assert rc.retracted_cited_sources(tmp_path, fetch=fetch) == ["10.2/bad"]
 
 
+def test_strict_check_falls_back_to_pubmed_when_openalex_is_unavailable(tmp_path: Path) -> None:
+    (tmp_path / "citation_registry.json").write_text(
+        json.dumps({"r1": {"source_doi": "10.1/good"}}), encoding="utf-8",
+    )
+    (tmp_path / "full_paper.md").write_text(
+        "## References\n\n- Good study. DOI: 10.1/good.\n", encoding="utf-8",
+    )
+
+    def unavailable(_dois: list[str]) -> list[dict[str, Any]]:
+        raise OSError("OpenAlex quota exhausted")
+
+    assert rc.retracted_cited_sources(
+        tmp_path,
+        fetch=unavailable,
+        pubmed_fetch=lambda dois: [] if dois == ["10.1/good"] else pytest.fail("wrong DOI set"),
+        strict=True,
+    ) == []
+
+
+def test_pubmed_fallback_requires_complete_doi_coverage() -> None:
+    responses = iter([
+        {"esearchresult": {"count": "1", "idlist": ["123"]}},
+    ])
+
+    class Response:
+        def __init__(self, payload: dict[str, Any]) -> None:
+            self.payload = payload
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(self.payload).encode("utf-8")
+
+    def open_url(_request: object, *, timeout: int) -> Response:
+        assert timeout == 30
+        return Response(next(responses))
+
+    with pytest.raises(rc.RetractionCheckUnavailable, match="incomplete PubMed DOI coverage"):
+        rc._fetch_pubmed_retractions(["10.1/a", "10.2/b"], open_url=open_url)
+
+
+def test_pubmed_fallback_maps_retracted_pmid_back_to_doi() -> None:
+    payloads = iter([
+        json.dumps({"esearchresult": {"count": "2", "idlist": ["123", "456"]}}).encode(),
+        json.dumps({"esearchresult": {"count": "1", "idlist": ["456"]}}).encode(),
+        b"<PubmedArticleSet><PubmedArticle><MedlineCitation><PMID>456</PMID></MedlineCitation>"
+        b"<PubmedData><ArticleIdList><ArticleId IdType='doi'>10.2/B</ArticleId>"
+        b"</ArticleIdList></PubmedData></PubmedArticle></PubmedArticleSet>",
+    ])
+
+    class Response:
+        def __init__(self, payload: bytes) -> None:
+            self.payload = payload
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return self.payload
+
+    def open_url(_request: object, *, timeout: int) -> Response:
+        assert timeout == 30
+        return Response(next(payloads))
+
+    assert rc._fetch_pubmed_retractions(
+        ["10.1/a", "10.2/b"], open_url=open_url,
+    ) == ["10.2/b"]
+
+
 def test_cited_dois_missing_registry_is_empty(tmp_path: Path) -> None:
     assert rc.cited_dois(tmp_path) == []
     with pytest.raises(rc.RetractionCheckUnavailable):

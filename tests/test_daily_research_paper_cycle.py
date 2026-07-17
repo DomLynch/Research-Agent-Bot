@@ -6016,6 +6016,76 @@ def test_revise_lane_rotates_to_next_pending_revision_after_coverage_block(tmp_p
     assert statuses == ["revision_coverage_unmet", "submitted_to_researka"]
 
 
+def test_manifestless_revision_is_attempted_once_and_stays_terminal(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    topic = "semaglutide_population_effects"
+    title = "Research Synthesis: Semaglutide Population Effects — full paper"
+    _topic(tmp_path, topic, target_journal=True)
+    source = _prior_run(tmp_path, topic, receipts=40, tensions=20, level=5)
+    paper = source / "full_paper.md"
+    paper.write_text(f"# {title}\n", encoding="utf-8")
+    (source / "manifest.json").unlink()
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": source.name,
+        "topic": topic,
+        "fingerprint": cycle.submit_bridge._sha256(paper),
+        "submission_id": "sub-1",
+    }])
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    request = {
+        "artifactId": "rev-1",
+        "submissionId": "sub-1",
+        "title": title,
+        "topic": topic,
+        "reviewedAt": "2026-07-10",
+        "feedback": "Rewrite the duplicated synthesis prose.",
+    }
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        **request,
+        "status": "terminal_domain_scope_mismatch",
+        "handled_at": "2026-07-11T00:00:00+00:00",
+    }]})
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_submitted_record_has_pending_decision", lambda _record: False)
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "ok", []))
+    monkeypatch.setattr(cycle, "_quant_claim_preflight", lambda *_a, **_k: {"passed": True})
+    monkeypatch.setattr(
+        cycle,
+        "_run_synthesis",
+        lambda *_a, **_k: pytest.fail("manifestless revision must not synthesize"),
+    )
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-07-17",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([dict(request)], None),
+        ensure_corpus=lambda *_a, **_k: {"status": "corpus_ready", "n_quant_claims": 40},
+        submit_cycle=lambda **_k: pytest.fail("manifestless revision must not submit"),
+        max_revise_attempts=3,
+    )
+
+    assert len(ledger["attempts"]) == 1
+    assert ledger["attempts"][0]["gate_status"] == "terminal_latest_run_missing_manifest"
+
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        ledger_dir,
+        loader=lambda: ([request], None),
+        published_loader=lambda: (set(), None),
+    )
+
+    assert error is None
+    assert pending is None
+
+
 def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     # A paper citing a retracted source must never reach Researka.
     _seed_delayed_revise(tmp_path, monkeypatch)

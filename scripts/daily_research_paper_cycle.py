@@ -2119,6 +2119,18 @@ def _pending_remote_revision(
                 or current_code_clears_source_manifest
             ):
                 continue
+            reopenable = {
+                "terminal_surface_repeat",
+                "terminal_domain_scope_mismatch",
+                "terminal_revision_source_manifest_unavailable",
+            }
+            hard_terminal = (
+                handled_statuses
+                & (_TERMINAL_REVISION_STATUSES | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES)
+                - reopenable
+            )
+            if hard_terminal:
+                continue
         if matches:
             record, run, record_topic = max(
                 matches,
@@ -4753,6 +4765,7 @@ def run_cycle(
                 ledger["status"] = "revise_terminal_domain_scope_mismatch"
                 _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                revise_window_excluded.add(_revision_key(revision_source))
                 attempted.add(selected)
                 remote_revision = None
                 continue
@@ -4765,6 +4778,7 @@ def run_cycle(
                 ledger["status"] = "revise_terminal_surface_repeat"
                 _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status="terminal_surface_repeat")
+                revise_window_excluded.add(_revision_key(revision_source))
                 attempted.add(selected)
                 remote_revision = None
                 continue
@@ -4775,6 +4789,7 @@ def run_cycle(
                 ledger["status"] = "revise_terminal_source_precision_repair_incomplete"
                 _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                revise_window_excluded.add(_revision_key(revision_source))
                 attempted.add(selected)
                 remote_revision = None
                 continue
@@ -4814,6 +4829,7 @@ def run_cycle(
                 _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    revise_window_excluded.add(_revision_key(revision_source))
                     remote_revision = None
                 attempted.add(selected)
                 continue
@@ -4968,6 +4984,7 @@ def run_cycle(
                     _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
                         _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                        revise_window_excluded.add(_revision_key(revision_source))
                         remote_revision = None
                     attempted.add(selected)
                     continue
@@ -5070,6 +5087,7 @@ def run_cycle(
                 _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if terminal_missing_manifest and revision_source is not None:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    revise_window_excluded.add(_revision_key(revision_source))
                     remote_revision = None
                 attempted.add(selected)
                 continue
@@ -5158,6 +5176,7 @@ def run_cycle(
                     ledger["status"] = gate_status
                     _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    revise_window_excluded.add(_revision_key(revision_source))
                     remote_revision = None
                     attempted.add(selected)
                     break
@@ -5250,6 +5269,7 @@ def run_cycle(
                     _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
                         _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                        revise_window_excluded.add(_revision_key(revision_source))
                         remote_revision = None
                     attempted.add(selected)
                     break

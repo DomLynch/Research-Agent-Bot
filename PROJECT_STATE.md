@@ -124,6 +124,12 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   old retryable requests once; terminal safety decisions never reopen. Epoch 4
   normalizes public p-values after every paper and supplement restoration path.
 
+## Operational Decision - 2026-07-17
+- Strict retraction checks use OpenAlex first, then PubMed only when PubMed
+  indexes every cited DOI; both providers unavailable remains fail-closed.
+- A newer hard-terminal revision status overrides stale repairable history, and
+  every terminal attempt is excluded for the rest of its timer window.
+
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 
