@@ -4440,6 +4440,41 @@ def test_finalizer_canonicalizes_surface_valid_cycle(tmp_path: Path, monkeypatch
     assert not second.paper_changed
 
 
+def test_finalizer_refreshes_cycle_before_rejecting_stale_surface_state(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    from types import SimpleNamespace
+
+    (tmp_path / "full_paper.md").write_text("A")
+    refreshes = 0
+
+    def phase_g(_out_dir: Path) -> list[Any]:
+        nonlocal refreshes
+        refreshes += 1
+        return []
+
+    monkeypatch.setattr(
+        journal_finalizer,
+        "_run_text_phases",
+        lambda text, _out: ({"A": "B", "B": "A"}[text], []),
+    )
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", phase_g)
+    monkeypatch.setattr(
+        journal_finalizer,
+        "_surface_report",
+        lambda _text, _out: SimpleNamespace(passed=refreshes >= 3),
+    )
+
+    report = journal_finalizer.finalize_run(tmp_path)
+
+    assert refreshes == 3
+    assert (tmp_path / "full_paper.md").read_text() == "A"
+    assert any(
+        entry.rule == "canonicalize_surface_valid_repair_cycle"
+        for entry in report.entries
+    )
+
+
 def test_finalizer_revalidates_cycle_after_sidecar_refresh(tmp_path: Path, monkeypatch) -> None:
     import pytest
     from types import SimpleNamespace
