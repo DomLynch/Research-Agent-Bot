@@ -137,6 +137,11 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 - Unpaywall enrichment is DOI-only, post-discovery, requires a valid contact
   email, and never counts as an independent source; its weekly smoke fails closed.
   No evidence threshold was lowered.
+- Treat repeated `journal_surface_failed` log entries as retries, not independent
+  candidates: count unique final artifacts, inspect exact issue codes, then replay
+  failures through the current finalizer before changing production logic.
+- Repair reproducible surface defects at their universal generator/finalizer source.
+  Never relax the journal-surface gate merely to increase publication volume.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.

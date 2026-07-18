@@ -4396,6 +4396,72 @@ def test_reference_identifier_enrichment_preserves_existing_ids(tmp_path: Path) 
     assert logs == []
 
 
+def test_finalizer_reaches_late_fixed_point(tmp_path: Path, monkeypatch) -> None:
+    calls = 0
+    (tmp_path / "full_paper.md").write_text("A")
+
+    def staged(text: str, _out: Path) -> tuple[str, list[Any]]:
+        nonlocal calls
+        calls += 1
+        return (text + "x", []) if calls < 8 else (text, [])
+
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", staged)
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _out: [])
+    report = journal_finalizer.finalize_run(tmp_path)
+
+    assert calls == 8
+    assert report.paper_changed
+
+
+def test_finalizer_iteration_cap_still_fails_closed(tmp_path: Path, monkeypatch) -> None:
+    import pytest
+
+    (tmp_path / "full_paper.md").write_text("A")
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda text, _out: (text + "x", []))
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _out: [])
+
+    with pytest.raises(RuntimeError, match="did not reach a fixed point"):
+        journal_finalizer.finalize_run(tmp_path)
+
+
+def test_finalizer_canonicalizes_surface_valid_cycle(tmp_path: Path, monkeypatch) -> None:
+    from types import SimpleNamespace
+
+    (tmp_path / "full_paper.md").write_text("A")
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda text, _out: ({"A": "B", "B": "A"}[text], []))
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _out: [])
+    monkeypatch.setattr(journal_finalizer, "_surface_report", lambda _text, _out: SimpleNamespace(passed=True))
+
+    first = journal_finalizer.finalize_run(tmp_path)
+    second = journal_finalizer.finalize_run(tmp_path)
+
+    assert (tmp_path / "full_paper.md").read_text() == "A"
+    assert any(entry.rule == "canonicalize_surface_valid_repair_cycle" for entry in first.entries)
+    assert not second.paper_changed
+
+
+def test_finalizer_revalidates_cycle_after_sidecar_refresh(tmp_path: Path, monkeypatch) -> None:
+    import pytest
+    from types import SimpleNamespace
+
+    (tmp_path / "full_paper.md").write_text("A")
+    calls = 0
+
+    def phase_g(out_dir: Path) -> list[Any]:
+        nonlocal calls
+        calls += 1
+        if calls == 3:
+            (out_dir / "full_paper.md").write_text("BROKEN")
+        return []
+
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda text, _out: ({"A": "B", "B": "A"}[text], []))
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", phase_g)
+    monkeypatch.setattr(journal_finalizer, "_surface_report", lambda text, _out: SimpleNamespace(passed=text in {"A", "B"}))
+
+    with pytest.raises(RuntimeError, match="did not reach a fixed point"):
+        journal_finalizer.finalize_run(tmp_path)
+
+
 def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
     from scripts.review_noise_control import apply_review_noise_control
 
@@ -4413,6 +4479,59 @@ def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
     assert ("repair_unreferenced_citation_year", 1, "aligned 1 inline citation year(s) with References") in changes
 
 
+def test_review_noise_expands_unambiguous_title_year_alias() -> None:
+    from scripts.review_noise_control import apply_review_noise_control
+
+    paper = (
+        "## Discussion\n\nAtorvastatin 2021 reported a bounded result.\n\n"
+        "## References\n\n"
+        "- **Atorvastatin for Reduction of Day 2021.** Mortality trial.\n"
+        "- **Effects of Atorvastatin in Graves' 2021.** Orbitopathy trial.\n"
+    )
+
+    fixed, _changes = apply_review_noise_control(paper, Path("/tmp/no-run"))
+
+    assert "Atorvastatin for Reduction of Day 2021 reported" in fixed
+
+
+def test_review_noise_aliases_only_from_references() -> None:
+    from scripts.review_noise_control import _repair_unreferenced_citation_years
+
+    paper = (
+        "## Discussion\n\nBogus 2021 reported a result.\n\n"
+        "- **Bogus Expanded 2021.** Bold body bullet, not a reference.\n\n"
+        "## References\n\n- **Smith 2020.** Retained source.\n"
+    )
+
+    fixed, changes = _repair_unreferenced_citation_years(paper)
+
+    assert fixed == paper
+    assert changes == 0
+
+
+def test_surface_repair_reframes_summary_language_inside_limitations() -> None:
+    paper = (
+        "## Results\n\nPositive signals appear in mortality survival as a result summary.\n\n"
+        "## Limitations\n\n"
+        "The headline statement that positive signals appear in mortality survival "
+        "is anchored entirely in observational designs. The direct set includes "
+        "Trial in the Elderly ( (tier=A1; directness=direct). The evidence differs "
+        "by population elderly), by design (trial vs cohort). The outcomes were "
+        "1) mortality, 2) function, a) safety, and ii) durability.\n\n"
+        "## Conclusion\n\nThe interpretation remains bounded.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
+
+    assert "Positive signals appear in mortality survival as a result summary" in fixed
+    assert "The reported positive-signal pattern for mortality survival is anchored" in fixed
+    assert "Elderly ( (tier" not in fixed
+    assert "elderly), by design" not in fixed
+    assert "1. mortality, 2. function, a. safety, and ii. durability" in fixed
+    assert not any(issue.code == "limitations_leak" for issue in evaluate_journal_surface(fixed).issues)
+    assert any(log.phase == "M_surface_artifact_cleanup" for log in logs)
+
+
 def test_review_noise_strips_unsupported_inline_citation_marker() -> None:
     from agent.journal_surface_gate import unreferenced_citation_tokens
     from scripts.review_noise_control import apply_review_noise_control
@@ -4420,7 +4539,8 @@ def test_review_noise_strips_unsupported_inline_citation_marker() -> None:
     paper = (
         "## Discussion\n\n"
         "The hallmarks frame is discussed (López-Otín et al. 2013, as cited across the corpus; "
-        "canonical threshold anchors include Studenski 2011 and Cruz-Jentoft 2019).\n\n"
+        "canonical threshold anchors include Studenski 2011 and Cruz-Jentoft 2019). "
+        "A second unsupported mention cites López-Otín 2013.\n\n"
         "## References\n\n"
         "- **Studenski 2011.** Gait speed and survival.\n"
         "- **Cruz-Jentoft 2019.** Sarcopenia consensus thresholds.\n"
@@ -4429,9 +4549,29 @@ def test_review_noise_strips_unsupported_inline_citation_marker() -> None:
     fixed, changes = apply_review_noise_control(paper, Path("/tmp/no-run"))
 
     assert "López-Otín" not in fixed
+    assert "unsupported mention" not in fixed
+    assert "cites." not in fixed
     assert "canonical threshold anchors include Studenski 2011 and Cruz-Jentoft 2019" in fixed
     assert unreferenced_citation_tokens(fixed) == ()
-    assert ("strip_unsupported_inline_citation", 1, "removed 1 unsupported inline citation marker(s)") in changes
+    assert ("strip_unsupported_inline_citation", 2, "removed 2 unsupported inline citation marker(s)") in changes
+
+
+def test_review_noise_preserves_decimal_before_unsupported_citation_sentence() -> None:
+    from scripts.review_noise_control import apply_review_noise_control
+
+    paper = (
+        "## Discussion\n\nThe retained estimate was p=0.05. "
+        "Bogus 2021 supplied an unsupported gloss. The bounded result remains.\n"
+        "    indented_code_block()\n\n"
+        "## References\n\n- **Smith 2020.** Retained source.\n"
+    )
+
+    fixed, _changes = apply_review_noise_control(paper, Path("/tmp/no-run"))
+
+    assert "p=0.05" in fixed
+    assert "Bogus 2021" not in fixed
+    assert "The bounded result remains" in fixed
+    assert "\n    indented_code_block()" in fixed
 
 
 def test_review_noise_repairs_public_artifact_phrase() -> None:

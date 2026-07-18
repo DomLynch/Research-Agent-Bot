@@ -89,8 +89,9 @@ def _repair_public_artifact_phrases(text: str) -> tuple[str, int]:
 
 
 def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
-    from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _fold, _reference_entries, unreferenced_citation_tokens
+    from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _fold, _reference_entries, _section_body, unreferenced_citation_tokens
     refs_by_author: dict[str, list[str]] = {}
+    labels = re.findall(r"(?m)^[-*]\s+\*\*([^*\n]+?)\.?\*\*", _section_body(text, "References") or "")
     for raw, _folded in _reference_entries(text):
         match = _AUTHOR_YEAR_RE.search(raw)
         if not match:
@@ -103,9 +104,10 @@ def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
         if not match:
             continue
         candidates = refs_by_author.get(_fold(match.group(1)), [])
+        candidates = candidates if len(candidates) == 1 else [label.rstrip(".") for label in labels if label.casefold().startswith(match.group(1).casefold() + " ") and label.rstrip(".").endswith(" " + match.group(2))]
         if len(candidates) != 1 or candidates[0] == token:
             continue
-        out, changed = re.subn(rf"\b{re.escape(token)}\b", candidates[0], out, count=1)
+        out, changed = re.subn(rf"\b{re.escape(token)}\b", candidates[0], out)
         n += changed
     return out, n
 
@@ -132,13 +134,9 @@ def _strip_unsupported_inline_citations(text: str) -> tuple[str, int]:
             out,
             count=1,
         )
-        if not changed:
-            out, changed = re.subn(marker, "", out, count=1)
-        n += changed
-    if n:
-        out = re.sub(r"\(\s*[;,]\s*", "(", out)
-        out = re.sub(r"\(\s*\)", "", out)
-        out = re.sub(r"\s+([,;.])", r"\1", out)
+        before = len(re.findall(marker, out))
+        out = "\n".join(line if line.lstrip().startswith(("|", "- ")) else re.sub(rf"(?:^|(?<=[.!?])\s+)(?:(?![!?]|\.(?!\d))[^\n])*{marker}(?:(?![!?]|\.(?!\d))[^\n])*(?:[!?]|\.(?!\d)|$)", "", line) for line in out.split("\n"))
+        n += changed + before - len(re.findall(marker, out))
     return out, n
 
 

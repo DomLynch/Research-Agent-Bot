@@ -82,8 +82,9 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     original = paper_path.read_text()
     text = original
     entries: list[FinalizerLogEntry] = []
+    states = [text]
 
-    for _ in range(6):
+    for _ in range(40):
         before = text
         new_text, log = _run_text_phases(text, out_dir)
         entries.extend(log)
@@ -94,6 +95,19 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
         text = paper_path.read_text()
         if new_text == before and text == new_text:
             break
+        if text in states:
+            valid = [state for state in states[states.index(text):] if getattr(_surface_report(state, out_dir), "passed", False)]
+            if not valid:
+                raise RuntimeError("journal finalizer did not reach a fixed point")
+            text = min(valid)
+            paper_path.write_text(text)
+            entries.append(FinalizerLogEntry("M_fixed_point_guard", "canonicalize_surface_valid_repair_cycle", 1, "selected deterministic journal-surface-valid state from repair cycle"))
+            entries.extend(_phase_g_refresh_sidecars(out_dir))
+            refreshed = paper_path.read_text()
+            if refreshed != text or not getattr(_surface_report(refreshed, out_dir), "passed", False):
+                raise RuntimeError("journal finalizer did not reach a fixed point")
+            break
+        states.append(text)
     else:
         raise RuntimeError("journal finalizer did not reach a fixed point")
     changed = text != original
@@ -185,9 +199,9 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_author_inference_boundary(t, out_dir),
         lambda t: _phase_d_unproven_human_longevity(t, out_dir),
         _phase_m_strip_surface_duplicate_paragraphs,
-        _phase_m_repair_surface_artifacts,
         lambda t: _phase_d_reference_closure(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
+        _phase_m_repair_surface_artifacts,
         lambda t: _phase_d_revision_artifact_cleanup(t, out_dir),
         _phase_d_untraceable_tension_count_cleanup,
         lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
@@ -195,39 +209,21 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     ):
         text, log = phase(text)
         entries.extend(log)
-    text, log = _phase_b_lane_qualifier(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_c_terminology(text)
-    entries.extend(log)
-    text, log = _phase_d_revision_artifact_cleanup(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_d_untraceable_tension_count_cleanup(text)
-    entries.extend(log)
-    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
-    entries.extend(log)
-    text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
-    text, log = _phase_n_declare_discussion_thesis(text)
-    entries.extend(log)
-    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
-    entries.extend(log)
-    text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
-    text, log = _phase_n_declare_discussion_thesis(text)
-    entries.extend(log)
-    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
-    entries.extend(log)
+    for phase in (lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_c_terminology, lambda t: _phase_d_revision_artifact_cleanup(t, out_dir), _phase_d_untraceable_tension_count_cleanup, _phase_m_strip_surface_duplicate_paragraphs):
+        text, log = phase(text)
+        entries.extend(log)
+    for _ in range(2):
+        text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
+        text, log = _phase_n_declare_discussion_thesis(text)
+        entries.extend(log)
+        text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
+        entries.extend(log)
     text, log = _phase_b_lane_qualifier(text, out_dir)
     entries.extend(log)
     text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
-    text, log = _phase_m_scope_restored_backstop_duplicates(text)
-    entries.extend(log)
-    text, log = _phase_n_declare_discussion_thesis(text)
-    entries.extend(log)
-    text, log = _phase_b_lane_qualifier(text, out_dir)
-    entries.extend(log)
-    text, log = _phase_m_strip_terminal_thesis_duplicates(text)
-    entries.extend(log)
-    text, log = _phase_i_split_concatenated_headings(text)
-    entries.extend(log)
+    for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings):
+        text, log = phase(text)
+        entries.extend(log)
     return text, entries
 
 
@@ -578,24 +574,18 @@ def _phase_m_repair_surface_artifacts(text: str) -> tuple[str, list[FinalizerLog
     out, n_headings = _remove_empty_subheadings(out)
     out, n_duplicate = _remove_consecutive_duplicate_headings(out)
     out, n_ref_dump = _remove_public_reference_dump_blocks(out)
+    out, n_limitations = re.subn(r"(?ims)(^## Limitations\b(?:(?!^## ).)*?)(?:the headline statement that\s+)?positive signals appear in\s+(.+?)\s+is anchored", r"\1The reported positive-signal pattern for \2 is anchored", out, count=1)
     if out == text:
         return text, []
-    changes = []
-    if n_grammar:
-        changes.append(f"grammar_artifact={n_grammar}")
-    if n_abbrev:
-        changes.append(f"dangling_abbrev={n_abbrev}")
-    if n_headings:
-        changes.append(f"empty_subheading={n_headings}")
-    if n_duplicate:
-        changes.append(f"duplicate_heading={n_duplicate}")
-    if n_ref_dump:
-        changes.append(f"reference_dump={n_ref_dump}")
+    changes = [f"limitations_summary_leak={n_limitations}"] if n_limitations else []
+    for count, label in ((n_grammar, "grammar_artifact"), (n_abbrev, "dangling_abbrev"), (n_headings, "empty_subheading"), (n_duplicate, "duplicate_heading"), (n_ref_dump, "reference_dump")):
+        if count:
+            changes.append(f"{label}={count}")
     return out, [
         FinalizerLogEntry(
             phase="M_surface_artifact_cleanup",
             rule="repair_known_surface_artifacts",
-            n_changes=n_grammar + n_abbrev + n_headings + n_duplicate + n_ref_dump,
+            n_changes=n_grammar + n_abbrev + n_headings + n_duplicate + n_ref_dump + n_limitations,
             detail="; ".join(changes),
         )
     ]
@@ -616,11 +606,27 @@ def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
         return f"{match.group(1)} not automatically"
 
     out, n_transfer = transfer_pattern.subn(transfer_repl, out)
-    return out, n + n_transfer
+    out, n_source = re.subn(r"\[\s*source:\s*([^]]+)\]", r"(\1)", out, flags=re.I)
+    out, n_parenthetical = re.subn(r"\(\s+\((?=[^()\n]*\))", "(", out)
+    return (balanced := "\n\n".join(_repair_unbalanced_parentheses(paragraph) for paragraph in out.split("\n\n"))), n + n_transfer + n_source + n_parenthetical + len(out) - len(balanced)
+
+
+def _repair_unbalanced_parentheses(text: str) -> str:
+    chars, stack = list(text), []
+    for idx, char in enumerate(chars):
+        if char == "(":
+            stack.append(idx)
+        elif char == ")" and stack:
+            stack.pop()
+        elif char == ")":
+            chars[idx] = "." if re.search(r"(?:^|\s)(?:\d+|[A-Za-z]|[ivxlcdm]+)$", "".join(chars[:idx]), re.I) else ""
+    for idx in stack:
+        chars[idx] = ""
+    return "".join(chars)
 
 
 def _repair_dangling_abbrev_artifacts(text: str) -> tuple[str, int]:
-    out, malformed_n = re.subn(r"(?<=[A-Za-z])\.g\.,", ". For example,", text)
+    out, malformed_n = re.subn(r"\be\.g\.,|(?<=[A-Za-z])\.g\.,", lambda m: "for example," if m.group(0).lower().startswith("e") else ". For example,", text, flags=re.I)
     out, truncated_n = re.subn(
         r"\s+\((?:e|i)\.\s*(?=\n\s*\n|\Z)", "", out, flags=re.I,
     )
@@ -2146,7 +2152,7 @@ def _phase_d_numeric_significance_correction(
     for section in ("Abstract", "Conclusion"):
         patched, changed = _repair_non_significant_effect_claims_in_section(patched, section)
         n += changed
-    patched, changed = _ensure_named_numeric_correction_statement(patched, feedback)
+    patched, changed = _ensure_named_numeric_correction_statement(patched, feedback, out_dir)
     n += changed
     patched, changed = _repair_named_non_significant_positive_labels(patched, feedback)
     n += changed
@@ -2232,7 +2238,7 @@ def _ensure_numeric_effect_audit_statement(text: str) -> tuple[str, int]:
     return text[:insert_at] + "\n\n" + statement + text[insert_at:], 1
 
 
-def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tuple[str, int]:
+def _ensure_named_numeric_correction_statement(text: str, feedback: str, out_dir: Path) -> tuple[str, int]:
     p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
     if not p_value:
         return text, 0
@@ -2249,6 +2255,9 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str) -> tupl
     before_p = [candidate for candidate in sources if p_local < 0 or candidate.start() <= p_local]
     source = before_p[-1] if before_p else sources[0]
     source_label = f"{source.group(1)} {source.group(2)}"
+    retained = revision_coverage.retained_citation_labels(manifest, _load_sidecar(out_dir / "citation_registry.json") or {}) if isinstance((manifest := _load_sidecar(out_dir / "manifest.json")), dict) else ()
+    if retained and " ".join(source_label.casefold().split()) not in retained:
+        return re.subn(rf"(?im)^Numeric verification note:\s*{re.escape(source_label)}\b[^\n]*(?:\n|$)", "", text)
     p_text = f"p = {p_value.group(1)}"
     statement = _stats.nominal_verification_statement(source_label, p_text, feedback)
     if statement:
@@ -5075,6 +5084,7 @@ def _row_citation(row: dict[str, Any]) -> str:
     if token:
         return token
     title = str(row.get("source_title") or row.get("receipt_id") or "source").strip()
+    title = re.sub(r"\s*[([{]+\s*$", "", title)
     year = str(row.get("source_year") or "").strip()
     return f"{title} {year}".strip()
 

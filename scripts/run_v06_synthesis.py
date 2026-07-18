@@ -572,7 +572,7 @@ def _compile_public_section_backstop(
         if results_backstop:
             return results_backstop
     if title == "Cross-Domain Synthesis":
-        return _compile_cross_domain_backstop(topic, ctx, floor)
+        return _compile_cross_domain_backstop(topic, ctx, floor, existing_text=existing_text)
 
     paragraphs_by_title = {
         "Abstract": [
@@ -1138,9 +1138,7 @@ def _compile_results_outcome_backstop(
     return "\n".join(lines).rstrip()
 
 
-def _compile_cross_domain_backstop(
-    topic: str, ctx: dict[str, object], floor: int,
-) -> str:
+def _compile_cross_domain_backstop(topic: str, ctx: dict[str, object], floor: int, existing_text: str = "") -> str:
     """Evidence-role synthesis without generic section-padding templates."""
     raw_rows = ctx.get("outcome_rows")
     rows = [row for row in raw_rows if isinstance(row, dict)] if isinstance(raw_rows, list) else []
@@ -1148,6 +1146,7 @@ def _compile_cross_domain_backstop(
         f"{row.get('label')} ({row.get('directions')}; {row.get('directness')}; sources {row.get('refs')})"
         for row in rows[:4]
     ) or "the retained outcome packets"
+    thesis = str(ctx["thesis"]).replace(_ACTIVE_TOPIC, topic) if _ACTIVE_TOPIC else str(ctx["thesis"])
     paragraphs = (
         f"Agreement between mechanism and clinical signal is strongest where the biological rationale and the directly observed outcome point in the same bounded direction. For {topic}, direct sources such as {ctx['direct_refs']} define the human evidence perimeter, while mechanistic sources such as {ctx['mech_refs']} explain why an effect could occur. Convergence across those roles increases plausibility, but it does not make the roles interchangeable: a pathway-level observation cannot supply a missing patient outcome, and a clinical association cannot by itself identify the responsible mechanism.",
         f"Divergence is equally informative. Positive signals represented by {ctx['positive_refs']} occur alongside null signals represented by {ctx['null_refs']} and negative or adverse signals represented by {ctx['negative_refs']}. Their outcome distribution spans {ctx['positive']}, {ctx['null']}, and {ctx['negative']}. This pattern rejects a single global verdict. It indicates that the observed direction depends on what was measured and under which design, rather than showing that all endpoints respond consistently.",
@@ -1160,10 +1159,12 @@ def _compile_cross_domain_backstop(
         "Measurement and analysis complete the boundary map. Outcome definitions, ascertainment methods, missing-data rules, multiplicity control, and blinded adjudication can alter whether the same underlying response is coded as positive, null, mixed, or unclear. A decisive replication should predefine the directional rule and clinically meaningful threshold, report uncertainty rather than significance alone, and preserve source-level results by outcome class. Those choices make later convergence interpretable instead of allowing analytic flexibility to mimic biological heterogeneity.",
         "Causal interpretation requires the full sequence to remain intact. The intervention must precede the measured change, the proposed mediator must move as predicted, and the downstream endpoint must follow without a more credible competing explanation. Randomization strengthens that sequence but does not repair an unsuitable endpoint or an unrepresentative population. Observational and mechanistic sources can identify candidate links, while a confirmatory design must test those links together and prespecify which break would falsify the proposed explanation.",
         f"Across the retained evidence, {ctx['tension_phrase']} are treated as design information. Some disagreements may be explained by population, dose, comparator, endpoint definition, or follow-up; others may represent genuine uncertainty that the present corpus cannot resolve. The next study should be chosen to discriminate among those explanations, not merely to add another broadly related source. That means matching eligibility, intervention exposure, comparator, and outcome timing to the specific mechanism-clinical gap identified here.",
-        f"The resulting interpretation is conditional rather than indecisive. {ctx['thesis']} The strongest conclusion follows the direct clinical evidence, with mechanistic material used to explain convergence or divergence and adjacent evidence used to define external boundaries. Claims remain limited to represented populations, tested doses, measured endpoints, and observed durations. Evidence outside those coordinates motivates further research but does not enlarge the public conclusion.",
+        f"The resulting interpretation is conditional rather than indecisive. {thesis} The strongest conclusion follows the direct clinical evidence, with mechanistic material used to explain convergence or divergence and adjacent evidence used to define external boundaries. Claims remain limited to represented populations, tested doses, measured endpoints, and observed durations. Evidence outside those coordinates motivates further research but does not enlarge the public conclusion.",
     )
     selected: list[str] = []
     for paragraph in paragraphs[:-1]:
+        if existing_text and paragraph in existing_text:
+            paragraph = _section_scoped_backstop_paragraph("Cross-Domain Synthesis", paragraph)
         selected.append(paragraph)
         if _word_count("\n\n".join(selected)) >= floor + 25:
             break

@@ -719,6 +719,37 @@ def test_restore_public_surface_floors_respects_thin_review_type() -> None:
     assert "## Discussion" not in out
 
 
+def test_cross_domain_backstop_scopes_existing_prose_and_humanizes_thesis(
+    monkeypatch,
+) -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    monkeypatch.setattr(orch, "_ACTIVE_TOPIC", "urolithin_a_effects")
+    ctx: dict[str, object] = {
+        "direct_refs": "Smith 2024",
+        "mech_refs": "Jones 2023",
+        "positive_refs": "Smith 2024",
+        "null_refs": "Jones 2023",
+        "negative_refs": "Brown 2022",
+        "positive": "muscle function",
+        "null": "cardiometabolic",
+        "negative": "immune inflammation",
+        "outcome_rows": [],
+        "tension_phrase": "several endpoint-specific disagreements",
+        "thesis": "The evidence base for urolithin_a_effects is mixed.",
+    }
+    baseline = orch._compile_cross_domain_backstop("Urolithin A effects", ctx, 900)
+    duplicate = next(p for p in baseline.split("\n\n") if p.startswith("Population is"))
+    existing = f"## Results\n\n{duplicate}"
+
+    fixed = orch._compile_cross_domain_backstop(
+        "Urolithin A effects", ctx, 900, existing_text=existing,
+    )
+
+    assert "urolithin_a_effects" not in fixed
+    assert _duplicate_paragraph_issue_messages(existing + "\n\n" + fixed) == ()
+
+
 def test_abstract_claim_strength_repair_runs_before_gate() -> None:
     paper = (
         "# Research Synthesis\n\n"
