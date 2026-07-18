@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import importlib
 import re
+from collections import Counter
 from dataclasses import dataclass
 from typing import Iterable
 
@@ -535,6 +536,7 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
         )
     receipts = manifest.get("receipts") or ()
     if isinstance(receipts, list):
+        rows = [row for row in receipts if isinstance(row, dict)]
         try:
             source_context_counts = getattr(
                 importlib.import_module("scripts.evidence_map_summary"),
@@ -545,7 +547,31 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
                 importlib.import_module("evidence_map_summary"),
                 "source_context_counts",
             )
-        out.update(canonical_numeric(str(v)) for v in source_context_counts(receipts).values())
+        out.update(canonical_numeric(str(v)) for v in source_context_counts(rows).values())
+
+        # Compiler-owned Results Summary / Findings Map counts are structural
+        # provenance, not study-effect numerics. Admit only counts that can be
+        # recomputed exactly from retained manifest rows.
+        outcome_groups: dict[str, list[dict]] = {}
+        for row in rows:
+            outcome = str(row.get("outcome_class") or "").strip().lower()
+            if outcome:
+                outcome_groups.setdefault(outcome, []).append(row)
+        for group in (rows, *outcome_groups.values()):
+            out.add(canonical_numeric(str(len(group))))
+            claim_total = sum(
+                int(row.get("n_claims") or 0)
+                for row in group
+                if isinstance(row.get("n_claims"), int)
+            )
+            out.add(canonical_numeric(str(claim_total)))
+            for field in ("outcome_class", "effect_direction", "directness"):
+                counts = Counter(
+                    str(row.get(field) or "").strip().lower()
+                    for row in group
+                    if str(row.get(field) or "").strip()
+                )
+                out.update(canonical_numeric(str(v)) for v in counts.values())
     return out
 
 
@@ -1130,6 +1156,30 @@ def _strip_markdown_table_lines(paper_md: str) -> str:
     )
 
 
+def _strip_compiler_source_finding_lines(paper_md: str) -> str:
+    """Drop finalizer-owned source-map bullets before prose scanning."""
+    out: list[str] = []
+    mode = ""
+    for line in paper_md.splitlines():
+        if line.startswith("### Source Classification Map"):
+            mode = "section"
+            continue
+        if "Source-level findings are:" in line:
+            mode = "bullets"
+            out.append(line)
+            continue
+        if mode == "section" and not line.startswith(("## ", "### ")):
+            continue
+        if mode == "section":
+            mode = ""
+        if mode == "bullets" and line.lstrip().startswith("- "):
+            continue
+        if mode == "bullets" and line.strip():
+            mode = ""
+        out.append(line)
+    return "\n".join(out)
+
+
 _NON_PROSE_GUARD_SECTION_RE = re.compile(
     r"^##\s+(?:Quantitative Evidence Index\b|Structured Evidence "
     r"Tables\b|What This Synthesis Adds\b|Evidence Snapshot\b|Table\s+\d+\b|"
@@ -1194,7 +1244,9 @@ def scan_paper(
         quant_claims_dir=quant_claims_dir,
     )
     prose_md = _strip_markdown_table_lines(_strip_citation_footer_lines(
-        _strip_non_prose_guard_sections(paper_md),
+        _strip_compiler_source_finding_lines(
+            _strip_non_prose_guard_sections(paper_md),
+        ),
     ))
     body_for_drift = _strip_references_section(prose_md)
     drift_sentences = set(_split_sentences(body_for_drift))

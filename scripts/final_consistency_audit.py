@@ -819,7 +819,7 @@ def run_audit(
     ))
     issues.extend(_check_abstract_over_grouping(paper_md, manifest))  # Fix #38
     issues.extend(_check_numeric_role_guard(  # 2026-05-05 universal
-        paper_md, manifest,
+        paper_md, manifest, run_dir=run_dir,
     ))
     return issues
 
@@ -833,7 +833,7 @@ def run_audit(
 #   - malformed_subject: 'the X group <verb> ... for the X group <was>'
 #     repair-artifact pattern
 def _check_numeric_role_guard(
-    paper_md: str, manifest: dict | None = None,
+    paper_md: str, manifest: dict | None = None, *, run_dir: Path | None = None,
 ) -> list[ConsistencyIssue]:
     import json as _json
     import sys
@@ -859,13 +859,17 @@ def _check_numeric_role_guard(
     # available, drift defers silently.
     manifest_obj: dict | None = manifest
     quant_claims_dir = None
+    if run_dir is not None:
+        snapshot_quant = run_dir / "revision_evidence_snapshot" / "quant_claims"
+        if snapshot_quant.is_dir():
+            quant_claims_dir = snapshot_quant
     # Topic resolution: prefer the explicit manifest topic so standalone
     # re-audits use the same quant_claims pool as the run. Fall back to
     # run_v06_synthesis's active topic during live orchestration.
     topic = None
     if isinstance(manifest_obj, dict):
         topic = manifest_obj.get("topic")
-    if topic:
+    if topic and quant_claims_dir is None:
         quant_claims_dir = (
             repo / "docs" / "quality-reference" / str(topic)
             / "quant_claims"

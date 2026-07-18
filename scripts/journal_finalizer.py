@@ -19,6 +19,7 @@ def _script_module(name: str) -> Any:
 
 
 revision_coverage: Any = _script_module("revision_coverage")
+review_noise_control: Any = _script_module("review_noise_control")
 
 
 @dataclass(frozen=True, slots=True)
@@ -185,10 +186,9 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     entries.extend(log)
     text, log = _phase_m_repair_surface_artifacts(text)
     entries.extend(log)
-    from scripts.review_noise_control import apply_review_noise_control, restore_surface_floors
-    text, noise_changes = apply_review_noise_control(text, out_dir)
+    text, noise_changes = review_noise_control.apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
-    text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
+    text, entries = review_noise_control.restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
     # Orphan-reference closure MUST be terminal. The earlier in-loop pass
     # (above) inserts the inline supporting-corpus cluster, but section
     # rebuilds that follow it — structural fallback, surface-floor backstop,
@@ -216,14 +216,18 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         text, log = phase(text)
         entries.extend(log)
     for _ in range(2):
-        text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
+        text, entries = review_noise_control.restore_surface_floors(
+            text, out_dir, entries, FinalizerLogEntry,
+        )
         text, log = _phase_n_declare_discussion_thesis(text)
         entries.extend(log)
         text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
         entries.extend(log)
     text, log = _phase_b_lane_qualifier(text, out_dir)
     entries.extend(log)
-    text, entries = restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
+    text, entries = review_noise_control.restore_surface_floors(
+        text, out_dir, entries, FinalizerLogEntry,
+    )
     for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings):
         text, log = phase(text)
         entries.extend(log)
@@ -4831,9 +4835,8 @@ def _phase_d_revision_surface_notes(
     receipts = [r for r in receipts_raw if isinstance(r, dict)] if isinstance(receipts_raw, list) else []
     if not receipts:
         return text, []
-    patched = text
-    n = 0
-    details: list[str] = []
+    patched, details = review_noise_control.repair_revision_surface(text, feedback, out_dir)
+    n = len(details)
     wants_source_examples = (
         "outcome subsection" in lower
         and "source" in lower
@@ -6075,6 +6078,13 @@ def _refresh_audit_sidecar(out_dir: Path) -> bool:
         topic = str(manifest.get("topic") or "").strip()
         if topic:
             audit_v06._set_topic(topic)
+        snapshot = out_dir / "revision_evidence_snapshot"
+        snapshot_quant = snapshot / "quant_claims"
+        snapshot_parsed = snapshot / "parsed"
+        if snapshot_quant.is_dir():
+            setattr(audit_v06, "QUANT_DIR", snapshot_quant)
+        if snapshot_parsed.is_dir():
+            setattr(audit_v06, "PARSED_DIR", snapshot_parsed)
         review_type = manifest.get("review_type")
         report = audit_v06.audit(
             paper_path.read_text(),

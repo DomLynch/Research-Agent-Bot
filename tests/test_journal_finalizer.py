@@ -299,7 +299,7 @@ def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> Non
 
 
 def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> None:
-    from scripts.review_noise_control import restore_surface_floors
+    restore_surface_floors = journal_finalizer.review_noise_control.restore_surface_floors
 
     paper = (
         "## Abstract\n\n" + ("alpha " * 160) + "\n\n"
@@ -4498,7 +4498,7 @@ def test_finalizer_revalidates_cycle_after_sidecar_refresh(tmp_path: Path, monke
 
 
 def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
-    from scripts.review_noise_control import apply_review_noise_control
+    apply_review_noise_control = journal_finalizer.review_noise_control.apply_review_noise_control
 
     paper = (
         "## Discussion\n\n"
@@ -4515,7 +4515,7 @@ def test_review_noise_repairs_unreferenced_inline_citation_year() -> None:
 
 
 def test_review_noise_expands_unambiguous_title_year_alias() -> None:
-    from scripts.review_noise_control import apply_review_noise_control
+    apply_review_noise_control = journal_finalizer.review_noise_control.apply_review_noise_control
 
     paper = (
         "## Discussion\n\nAtorvastatin 2021 reported a bounded result.\n\n"
@@ -4530,7 +4530,7 @@ def test_review_noise_expands_unambiguous_title_year_alias() -> None:
 
 
 def test_review_noise_aliases_only_from_references() -> None:
-    from scripts.review_noise_control import _repair_unreferenced_citation_years
+    _repair_unreferenced_citation_years = journal_finalizer.review_noise_control._repair_unreferenced_citation_years
 
     paper = (
         "## Discussion\n\nBogus 2021 reported a result.\n\n"
@@ -4569,7 +4569,7 @@ def test_surface_repair_reframes_summary_language_inside_limitations() -> None:
 
 def test_review_noise_strips_unsupported_inline_citation_marker() -> None:
     from agent.journal_surface_gate import unreferenced_citation_tokens
-    from scripts.review_noise_control import apply_review_noise_control
+    apply_review_noise_control = journal_finalizer.review_noise_control.apply_review_noise_control
 
     paper = (
         "## Discussion\n\n"
@@ -4592,7 +4592,7 @@ def test_review_noise_strips_unsupported_inline_citation_marker() -> None:
 
 
 def test_review_noise_preserves_decimal_before_unsupported_citation_sentence() -> None:
-    from scripts.review_noise_control import apply_review_noise_control
+    apply_review_noise_control = journal_finalizer.review_noise_control.apply_review_noise_control
 
     paper = (
         "## Discussion\n\nThe retained estimate was p=0.05. "
@@ -4611,7 +4611,7 @@ def test_review_noise_preserves_decimal_before_unsupported_citation_sentence() -
 
 def test_review_noise_repairs_public_artifact_phrase() -> None:
     from agent.journal_surface_gate import evaluate_journal_surface
-    from scripts.review_noise_control import apply_review_noise_control
+    apply_review_noise_control = journal_finalizer.review_noise_control.apply_review_noise_control
 
     paper = (
         "## Results\n\n"
@@ -4644,7 +4644,7 @@ def test_dedupe_keeps_methods_search_query_list_with_subset_vocab() -> None:
     Methods "Search strategy" body. A bulleted block is structured
     enumeration — pruned only on EXACT duplication, never fuzzy overlap.
     Universal across domains (no per-topic vocabulary)."""
-    from scripts.review_noise_control import _dedupe_repeated_blocks
+    _dedupe_repeated_blocks = journal_finalizer.review_noise_control._dedupe_repeated_blocks
 
     paper = (
         "## Results\n\n"
@@ -4667,7 +4667,7 @@ def test_dedupe_keeps_methods_search_query_list_with_subset_vocab() -> None:
 
 
 def test_dedupe_keeps_domain_public_extraction_table_with_subset_vocab() -> None:
-    from scripts.review_noise_control import _dedupe_repeated_blocks
+    _dedupe_repeated_blocks = journal_finalizer.review_noise_control._dedupe_repeated_blocks
 
     paper = (
         "## Results\n\n"
@@ -4858,7 +4858,7 @@ def test_phase_n_labels_discussion_thesis_and_resolution_markers() -> None:
 def test_run_text_phases_restores_discussion_markers_after_surface_floors(
     tmp_path: Path, monkeypatch: Any,
 ) -> None:
-    import scripts.review_noise_control as review_noise_control
+    review_noise_control = journal_finalizer.review_noise_control
 
     def strip_discussion_markers(
         text: str, _out_dir: Path, entries: list[journal_finalizer.FinalizerLogEntry],
@@ -5537,3 +5537,47 @@ def test_author_inference_boundary_uses_explicit_move_destination(tmp_path: Path
     assert note in journal_finalizer._section_body(fixed, "Cross-Domain Synthesis")
     assert note not in journal_finalizer._section_body(fixed, "Discussion")
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, [feedback]) == []
+
+
+def test_revision_surface_moves_named_tensions_and_reconciles_mechanistic_framing(tmp_path: Path) -> None:
+    feedback = (
+        "Fix the typographical artifact in the Abstract ('remains is consistent with before clinical use').; "
+        "Rewrite the Conclusion as a bounded, outcome-class-anchored statement that maps cleanly to the "
+        "Boundary-Condition Matrix and Quantitative Evidence Index; eliminate repetition with the Discussion.; "
+        "Surface the named internal cross-source tensions (Alotaibi 2026 vs Incalzi 2024/Luo 2026; "
+        "Wang 2024 vs Szilagyi 2025/Wang 2025b) directly in the Conclusion or Discussion, not only in the Evidence Snapshot.; "
+        "Resolve the 'no mechanistic sources' claim with the actual presence of biomarker content and either recode it or adjust the framing."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": feedback}), encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"receipts": [{"citation_token": "Alotaibi 2026"}]}), encoding="utf-8",
+    )
+    (tmp_path / "structured_evidence_tables.md").write_text(
+        "## Quantitative Evidence Index\n\n| Study | Outcome | Direction | Estimate | Type | Source |\n"
+        "|---|---|---|---|---|---|\n| Alotaibi 2026 | mortality | mixed | P = 0.004 | p-value | bundle |\n",
+        encoding="utf-8",
+    )
+    tension = (
+        "Adjudicating the named internal tension: Alotaibi 2026 versus Incalzi 2024 and Luo 2026; "
+        "Wang 2024 conflicts with Szilagyi 2025 and Wang 2025b."
+    )
+    paper = (
+        f"## Abstract\n\nThe corrected abstract is bounded.\n\n{tension}\n\n"
+        "## Discussion\n\nBounded discussion.\n\n"
+        "## Limitations\n\nThe corpus has no sources classified primarily as mechanistic or model-system evidence.\n\n"
+        "## Conclusion\n\nBounded conclusion.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_revision_surface_notes(paper, tmp_path)
+
+    assert tension not in journal_finalizer._section_body(fixed, "Abstract")
+    assert tension in journal_finalizer._section_body(fixed, "Discussion")
+    assert "not evidence that mechanistic content is absent" in fixed
+    assert "## Quantitative Evidence Index" in fixed
+    assert "maps to the Boundary-Condition Matrix" in fixed
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert logs and "tension_section_placement" in logs[0].detail
+    assert "mechanistic_content_framing" in logs[0].detail

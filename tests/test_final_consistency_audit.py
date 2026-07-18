@@ -27,6 +27,37 @@ def _empty_manifest() -> dict:
     }
 
 
+def test_numeric_role_guard_uses_revision_snapshot(tmp_path: Path) -> None:
+    quant_dir = tmp_path / "revision_evidence_snapshot" / "quant_claims"
+    quant_dir.mkdir(parents=True)
+    (quant_dir / "study.quant_claims.json").write_text(
+        '{"paper_id":"study","claims":[{'
+        '"numeric_values":[42.7],"binding_confidence":"high",'
+        '"claim_type":"percentage","claim_role":"effect"}]}'
+    )
+    manifest = {
+        "receipts": [{
+            "paper_id": "study",
+            "receipt_id": "study",
+            "citation_token": "Smith 2024",
+        }],
+    }
+    paper = "Smith 2024 reported a response rate of 42.7%."
+
+    without_snapshot = audit.run_audit(
+        paper, manifest, _empty_audit(), run_dir=None,
+    )
+    with_snapshot = audit.run_audit(
+        paper, manifest, _empty_audit(), run_dir=tmp_path,
+    )
+
+    assert [i for i in without_snapshot if i.issue_type == "source_context_drift"]
+    assert not [
+        i for i in with_snapshot
+        if i.issue_type in {"untraceable_numeric", "source_context_drift"}
+    ]
+
+
 def test_accepted_paper_called_rejected_is_p1() -> None:
     """If manifest lists Witham as accepted but body says
     'Witham was rejected by SPAR', flag P1."""

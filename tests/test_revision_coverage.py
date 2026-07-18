@@ -2859,3 +2859,40 @@ def test_latest_telomere_fourth_revise_feedback_splits_and_requires_markers() ->
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
     assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_influenza_revision_surface_repairs_are_verified_deterministically() -> None:
+    feedback = (
+        "Fix the typographical artifact in the Abstract ('remains is consistent with before clinical use').; "
+        "Surface the named internal cross-source tensions (Alotaibi 2026 vs Incalzi 2024/Luo 2026; "
+        "Wang 2024 vs Szilagyi 2025/Wang 2025b) directly in the Conclusion or Discussion, not only in the Evidence Snapshot.; "
+        "Resolve the 'no mechanistic sources' claim with the actual presence of biomarker content and either recode it or adjust the framing."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = (
+        "## Abstract\n\nThe result remains is consistent with before clinical use.\n\n"
+        "## Evidence Snapshot\n\nThe tension is Alotaibi 2026 versus Incalzi 2024 and Luo 2026; "
+        "Wang 2024 conflicts with Szilagyi 2025 and Wang 2025b.\n\n"
+        "## Discussion\n\nBounded interpretation.\n\n"
+        "## Limitations\n\nNo sources classified primarily as mechanistic.\n"
+    )
+    repaired = (
+        "## Abstract\n\nThe result is bounded before clinical use.\n\n"
+        "## Discussion\n\nThe named tension is Alotaibi 2026 versus Incalzi 2024 and Luo 2026; "
+        "Wang 2024 conflicts with Szilagyi 2025 and Wang 2025b.\n\n"
+        "## Limitations\n\nNo retained source is classified primarily as mechanistic under the schema; "
+        "however, mechanistic or biomarker content can occur within sources classified by their primary role, "
+        "so this is not evidence that mechanistic content is absent.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+    assert revision_coverage.deterministic_unmet_asks(
+        repaired,
+        asks,
+        retained_citations={
+            "Alotaibi 2026", "Incalzi 2024", "Luo 2026", "Wang 2024",
+            "Szilagyi 2025", "Wang 2025b",
+        },
+    ) == []

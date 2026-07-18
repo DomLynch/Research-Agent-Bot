@@ -268,6 +268,39 @@ def test_source_context_drift_passes_correct_attribution(tmp_path):
     )
 
 
+def test_source_context_drift_skips_compiler_source_map_bullets(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "study.quant_claims.json").write_text(
+        '{"paper_id":"study","claims":[{'
+        '"numeric_values":[5],"binding_confidence":"high",'
+        '"claim_type":"unit_value","claim_role":"effect"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "study",
+        "citation_token": "Smith 2024",
+        "outcome_class": "clinical",
+        "effect_direction": "positive",
+        "directness": "direct",
+        "n_claims": 1,
+    }]}
+    paper = (
+        "Clinical remains a separate Results slice. Source-level findings are:\n"
+        "- Smith 2024 (representative statistic 50 mg; source-level statistic reported).\n\n"
+        "Reviewer-classification audit uses the map below.\n\n"
+        "### Source Classification Map\n\n"
+        "- Smith 2024: outcome=clinical; direction=positive; directness=direct; tier=A1.\n\n"
+        "### Findings Map\n\nAll 53 rows remain visible.\n\n"
+        "## Limitations\n\nThe narrative remains source-bounded."
+    )
+
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+
+    assert not [i for i in issues if i.issue_type == "source_context_drift"]
+
+
 def test_source_context_drift_uses_bg_lit_registry():
     """Background literature registry numerics are also valid
     sources of context (Harrison 2009 lifespan increases are in
@@ -713,6 +746,28 @@ def test_untraceable_numeric_guard_allows_source_context_counts(tmp_path):
         }
         for i in range(17)
     ]
+    issues = scan_paper(
+        paper, manifest={"receipts": receipts}, quant_claims_dir=qc_dir,
+    )
+    assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
+
+
+def test_untraceable_numeric_guard_allows_compiler_owned_summary_counts(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    receipts = [
+        {
+            "outcome_class": "clinical",
+            "effect_direction": "positive" if i < 2 else "null",
+            "directness": "direct" if i < 2 else "indirect",
+            "n_claims": i + 4,
+        }
+        for i in range(3)
+    ]
+    paper = (
+        "Clinical: n=3; claims=15; benefit signal in 2/3 sources; "
+        "directness: 2 direct; 1 indirect."
+    )
     issues = scan_paper(
         paper, manifest={"receipts": receipts}, quant_claims_dir=qc_dir,
     )

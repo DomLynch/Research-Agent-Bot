@@ -316,6 +316,31 @@ def asks_direction_coded_source_highlights(text: str) -> bool:
     return _asks_direction_coded_source_highlights(_normalised_feedback(text))
 
 
+def _asks_tension_section_placement(text: str) -> bool:
+    return (
+        any(token in text for token in ("tension", "disagreement", "conflict"))
+        and any(token in text for token in ("conclusion", "discussion"))
+        and any(token in text for token in ("surface", "place", "state", "directly"))
+        and any(token in text for token in ("not only", "rather than only", "directly in"))
+    )
+
+
+def _asks_mechanistic_content_reconciliation(text: str) -> bool:
+    return (
+        "mechanistic" in text
+        and any(token in text for token in ("no mechanistic source", "absence of mechanistic", "mechanistic content"))
+        and any(token in text for token in ("recode", "adjust", "resolve", "reconcile", "framing"))
+    )
+
+
+def asks_tension_section_placement(text: str) -> bool:
+    return _asks_tension_section_placement(_normalised_feedback(text))
+
+
+def asks_mechanistic_content_reconciliation(text: str) -> bool:
+    return _asks_mechanistic_content_reconciliation(_normalised_feedback(text))
+
+
 def asks_findings_map_detail(text: str) -> bool:
     lower = _normalised_feedback(text)
     return (
@@ -366,6 +391,8 @@ def _asks_source_classification_map(text: str) -> bool:
 
 def _asks_evidence_type_metadata(text: str) -> bool:
     return (
+        _asks_mechanistic_content_reconciliation(text)
+        or
         "evidence_type" in text
         or ("evidence type" in text and "metadata" in text)
         or (
@@ -1151,7 +1178,10 @@ def _asks_numeric_correction_markup_cleanup(text: str) -> bool:
 
 
 def _asks_grammar_correction(text: str) -> bool:
-    return any(token in text for token in ("grammatical error", "grammar error", "correct the grammatical"))
+    return any(token in text for token in (
+        "grammatical error", "grammar error", "correct the grammatical",
+        "typographical artifact", "typographical error", "typo", "wording artifact",
+    ))
 
 
 def _gaps_section_is_actionable(paper_md: str) -> bool:
@@ -1254,10 +1284,21 @@ def _concrete_tensions_gaps_are_stated(
 ) -> bool:
     text = paper_md.lower()
     if "evidence-gap priority" not in text and "gaps identified" not in text:
-        return False
-    scope = _section(paper_md, "Tensions and Gaps") or _section(paper_md, "Cross-Domain Synthesis")
+        if not _asks_tension_section_placement(ask.lower()):
+            return False
+    placement = _asks_tension_section_placement(ask.lower())
+    scope = ("\n\n".join(filter(None, (
+        _section(paper_md, "Discussion"), _section(paper_md, "Conclusion"),
+    ))) if placement else
+             _section(paper_md, "Tensions and Gaps") or _section(paper_md, "Cross-Domain Synthesis"))
     if not scope:
         return False
+    if placement:
+        labels = _source_labels_from_ask(ask)
+        lower_scope = scope.lower()
+        return all(_label_in_text(label, lower_scope) for label in labels) and any(
+            token in lower_scope for token in ("tension", "disagreement", "conflict", "versus", " vs ")
+        )
     pairs, _ = _tension_pairs(paper_md, scope, retained_citations)
     count = r"(?:at\s+least\s+)?(?:three(?!\s*[-–]?\s*year)|3(?:\s*[-–]\s*5)?)"
     pair = r"(?:tensions?|disagreements?|conflicts?|contrasts?|pairs?)"
@@ -1365,7 +1406,13 @@ def _long_term_safety_scope_is_stated(paper_md: str) -> bool:
     return safety and population
 
 
-def _evidence_type_metadata_is_resolved(paper_md: str) -> bool:
+def _evidence_type_metadata_is_resolved(paper_md: str, ask: str) -> bool:
+    if _asks_mechanistic_content_reconciliation(ask.lower()):
+        lower = paper_md.lower()
+        return all(token in lower for token in (
+            "classified primarily as mechanistic", "mechanistic or biomarker content",
+            "not evidence that mechanistic content is absent",
+        ))
     scope = " ".join(
         part
         for part in (
@@ -2744,8 +2791,20 @@ def _label_in_text(label: str, text: str) -> bool:
     return lower in text or re.sub(r"\s+((?:19|20)\d{2}[a-z]?)\b", r" (\1)", lower) in text
 
 
-def _grammar_artifacts_are_absent(paper_md: str) -> bool:
-    return not re.search(r"\b(?:is|are|was|were)\s+insufficient\s+to\s+(?:is|are|was|were)\b", paper_md, flags=re.I)
+def _grammar_artifacts_are_absent(paper_md: str, ask: str) -> bool:
+    if re.search(r"\b(?:is|are|was|were)\s+insufficient\s+to\s+(?:is|are|was|were)\b", paper_md, flags=re.I):
+        return False
+    quoted = [next(value for value in match.groups() if value) for match in re.finditer(
+        r"'([^'\n]{8,})'|\"([^\"\n]{8,})\"|“([^”\n]{8,})”|‘([^’\n]{8,})’", ask)]
+    if not quoted:
+        return True
+    lower_ask = ask.lower()
+    scope = next((_abstract(paper_md) if name == "Abstract" else _section(paper_md, name)
+                  for marker, name in (("abstract", "Abstract"), ("discussion", "Discussion"),
+                                       ("conclusion", "Conclusion"), ("limitations", "Limitations"))
+                  if marker in lower_ask), paper_md)
+    normalised = " ".join(scope.lower().split())
+    return bool(scope) and all(" ".join(phrase.lower().split()) not in normalised for phrase in quoted)
 
 
 _CLAIM_SYS = "You are a strict manuscript reviewer. Reply with JSON only."
@@ -2932,7 +2991,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_most_supported_key_findings, _paper_only(_most_supported_key_findings_are_stated)),
     (_asks_adjacent_indirect_reconciliation, _paper_only(_adjacent_indirect_reconciliation_is_stated)),
     (_asks_source_classification_map, _contains_all("source classification map", "outcome=", "directness=", "tier=")),
-    (_asks_evidence_type_metadata, _paper_only(_evidence_type_metadata_is_resolved)),
+    (_asks_evidence_type_metadata, _paper_ask(_evidence_type_metadata_is_resolved)),
     (_asks_source_inclusion_rationale, _paper_only(_source_inclusion_rationale_is_stated)),
     (_asks_species_study_design_summary, _paper_only(_species_study_design_summary_is_stated)),
     (_asks_source_directness_breakdown, _paper_only(_source_directness_breakdown_is_stated)),
@@ -3009,5 +3068,5 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_numeric_effect_audit, _numeric_effect_audit_satisfied),
     (_asks_named_numeric_correction, _named_numeric_correction_satisfied),
     (_asks_numeric_effect_accuracy, _numeric_effect_accuracy_satisfied),
-    (_asks_grammar_correction, _paper_only(_grammar_artifacts_are_absent)),
+    (_asks_grammar_correction, _paper_ask(_grammar_artifacts_are_absent)),
 )

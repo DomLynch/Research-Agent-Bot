@@ -178,6 +178,73 @@ def _revision_feedback(out_dir: Path) -> str:
     return " ".join(str(data.get("feedback") or "").split())[:4000] if isinstance(data, dict) else ""
 
 
+def repair_revision_surface(
+    text: str, feedback: str, out_dir: Path | None = None,
+) -> tuple[str, list[str]]:
+    """Apply reviewer-requested placement and classification repairs."""
+    coverage = importlib.import_module(
+        f"{__package__}.revision_coverage" if __package__ else "revision_coverage",
+    )
+    changes: list[str] = []
+    asks = coverage.revision_asks(feedback)
+    tension_asks = [ask for ask in asks if coverage.asks_tension_section_placement(ask)]
+    if tension_asks:
+        request = " ".join(tension_asks)
+        target = "Discussion" if "discussion" in request.lower() and "## Discussion" in text else "Conclusion"
+        labels = re.findall(
+            r"\b[A-Z][A-Za-z'’.-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", request,
+        )
+        candidates = [part.strip() for part in re.split(r"\n\s*\n", text)
+                      if any(token in part.lower() for token in ("tension", "disagreement", "conflict", " versus ", " vs "))]
+        paragraph = next((part for part in candidates
+                          if all(label.lower() in part.lower() for label in labels)), "")
+        section = re.search(rf"^## {target}\b[^\n]*\n(?P<body>.*?)(?=^## |\Z)", text, re.M | re.S)
+        if paragraph and section and paragraph not in section.group("body"):
+            text = re.sub(r"\n{3,}", "\n\n", text.replace(paragraph, "", 1))
+            text, n = re.subn(rf"(^## {target}\b[^\n]*\n)",
+                              lambda match: match.group(1) + "\n" + paragraph + "\n", text, count=1, flags=re.M)
+            if n:
+                changes.append("tension_section_placement")
+    if coverage.asks_mechanistic_content_reconciliation(feedback):
+        replacement = (
+            "No retained source is classified primarily as mechanistic or model-system evidence under the "
+            "source-level directness schema; however, mechanistic or biomarker content can occur within "
+            "sources classified by their primary study role, so this is a classification statement and "
+            "not evidence that mechanistic content is absent."
+        )
+        text, n = re.subn(r"(?P<lead>[ \t]*)[^.\n]*\bno sources classified primarily as mechanistic\b[^.\n]*\.",
+                          lambda match: match.group("lead") + replacement, text, count=1, flags=re.I)
+        if n:
+            changes.append("mechanistic_content_framing")
+    lower = feedback.lower()
+    if out_dir and "quantitative evidence index" in lower and "## Quantitative Evidence Index" not in text:
+        supplement = _load_text(out_dir / "structured_evidence_tables.md")
+        index = re.search(r"^## Quantitative Evidence Index\b.*?(?=^## |\Z)", supplement, re.M | re.S)
+        if index:
+            text, n = re.subn(r"(?=^## References\b)", index.group(0).rstrip() + "\n\n", text, count=1, flags=re.M)
+            if not n:
+                text, n = text.rstrip() + "\n\n" + index.group(0).rstrip() + "\n", 1
+            if n:
+                changes.append("quantitative_evidence_index")
+    if "conclusion" in lower and "boundary-condition matrix" in lower and "quantitative evidence index" in lower:
+        note = (
+            "This bounded outcome-class conclusion maps to the Boundary-Condition Matrix and Quantitative "
+            "Evidence Index: direct human endpoints set the interpretive ceiling, while indirect or biomarker "
+            "evidence defines mechanism and transferability boundaries."
+        )
+        text, n = _append_section_sentence(text, "Conclusion", note)
+        if n:
+            changes.append("bounded_conclusion_evidence_map")
+    return text, changes
+
+
+def _load_text(path: Path) -> str:
+    try:
+        return path.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
+
 def _apply_clinical_policy_caveat(text: str, feedback: str) -> tuple[str, int]:
     lowered = feedback.lower()
     if not (
