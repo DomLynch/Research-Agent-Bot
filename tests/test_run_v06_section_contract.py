@@ -790,11 +790,76 @@ def test_abstract_claim_strength_repair_records_pre_gate_log() -> None:
 def test_stage_5c_repairs_abstract_before_surface_gate() -> None:
     source = Path(orch.__file__).read_text(encoding="utf-8")
     stage = source.split("# Stage 5c: paper-quality pre-submit gate.", 1)[1]
-    assert (
-        stage.index("_apply_abstract_claim_strength_repair")
-        < stage.index("evaluate_journal_surface")
-        < stage.index("write_final_quality_gates")
+    helper = source.split("def _write_stage5c_quality_gates", 1)[1].split(
+        "async def _run_post_paper_pipeline", 1,
+    )[0]
+    assert stage.index("_apply_abstract_claim_strength_repair") < stage.index(
+        "_write_stage5c_quality_gates"
     )
+    assert (
+        helper.index("finalize_run")
+        < helper.index("evaluate_journal_surface")
+        < helper.index("write_final_quality_gates")
+    )
+
+
+def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    from agent import journal_finalizer, journal_surface_gate
+
+    paper_path = tmp_path / "full_paper.md"
+    paper_path.write_text("stale disk")
+    captured: dict[str, Any] = {}
+    events: list[str] = []
+
+    def finalize(out_dir: Path) -> SimpleNamespace:
+        captured["finalizer_input"] = (out_dir / "full_paper.md").read_text()
+        events.append("finalize")
+        (out_dir / "full_paper.md").write_text("after finalizer")
+        return SimpleNamespace(paper_changed=True)
+
+    def audit(paper: str, **_kwargs: Any) -> dict[str, Any]:
+        events.append("audit")
+        captured["audit_text"] = paper
+        return {"checks": [], "audited_text": paper}
+
+    def evaluate(paper: str, **_kwargs: Any) -> SimpleNamespace:
+        events.append("surface")
+        captured["surface_text"] = paper
+        return SimpleNamespace(passed=True, issues=())
+
+    def write_gates(**kwargs: Any) -> dict[str, Any]:
+        events.append("gate")
+        captured["gate_text"] = kwargs["paper_text"]
+        captured["gate_audit"] = kwargs["audit"]
+        return {"final_gate": {"passed": True}}
+
+    monkeypatch.setattr(journal_finalizer, "finalize_run", finalize)
+    monkeypatch.setattr(orch._audit_v06, "audit", audit)
+    monkeypatch.setattr(orch._audit_v06, "_format_summary", lambda report: str(report))
+    monkeypatch.setattr(journal_surface_gate, "evaluate_journal_surface", evaluate)
+    monkeypatch.setattr(orch._paper_quality, "write_final_quality_gates", write_gates)
+
+    paper, report, gates = orch._write_stage5c_quality_gates(
+        paper_path=paper_path,
+        paper_md="before finalizer",
+        manifest={"review_type": "thin_corpus_brief", "receipts": []},
+        citation_registry=None,
+        reviewer_patches={"unresolved_p1_count": 0},
+        quality_bundle=SimpleNamespace(),
+        animal_citations=[],
+        citation_outcome_map={},
+    )
+
+    assert paper == "after finalizer"
+    assert captured["finalizer_input"] == "before finalizer"
+    assert events == ["finalize", "audit", "surface", "gate"]
+    assert captured["audit_text"] == "after finalizer"
+    assert captured["surface_text"] == "after finalizer"
+    assert captured["gate_text"] == "after finalizer"
+    assert captured["gate_audit"] == report
+    assert gates["final_gate"]["passed"] is True
 
 
 def test_stage_5_runs_finalizer_before_surface_gate() -> None:

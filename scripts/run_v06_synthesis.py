@@ -3430,6 +3430,38 @@ async def _run(
     return 0
 
 
+def _write_stage5c_quality_gates(
+    *, paper_path: Path, paper_md: str, manifest: dict[str, Any],
+    citation_registry: dict[str, Any] | None, reviewer_patches: dict[str, int],
+    quality_bundle: Any, animal_citations: list[str] | set[str], citation_outcome_map: dict[str, str],
+) -> tuple[str, dict[str, Any], dict[str, Any]]:
+    # Finalize and gate the exact Stage 5c manuscript snapshot.
+    from agent import journal_finalizer, journal_surface_gate
+
+    paper_path.write_text(paper_md)
+    journal_finalizer.finalize_run(paper_path.parent)
+    paper_md = paper_path.read_text()
+    audit_report = _audit_v06.audit(
+        paper_md, review_type=manifest.get("review_type"), manifest=manifest,
+    )
+    paper_path.with_suffix(".audit.json").write_text(json.dumps(audit_report, indent=2))
+    paper_path.with_suffix(".audit.md").write_text(_audit_v06._format_summary(audit_report))
+    surface_report = journal_surface_gate.evaluate_journal_surface(
+        paper_md, animal_citations=animal_citations, citation_outcome_map=citation_outcome_map,
+        declared_review_type=manifest.get("review_type"),
+    )
+    surface_payload = {"passed": surface_report.passed, "issues": [dataclasses.asdict(issue) for issue in surface_report.issues]}
+    paper_path.with_suffix(".journal_surface.json").write_text(json.dumps(surface_payload, indent=2))
+    receipt_ids = {str(row.get("paper_id") or row.get("receipt_id") or "") for row in manifest.get("receipts", [])}
+    citation_registry_complete = bool(citation_registry and all(rid in citation_registry for rid in receipt_ids if rid))
+    gate_artifacts = _paper_quality.write_final_quality_gates(
+        out_dir=paper_path.parent, paper_text=paper_md, manifest=manifest, audit=audit_report,
+        journal_surface=surface_payload, reviewer_patches=reviewer_patches, quality_bundle=quality_bundle,
+        citation_registry_complete=citation_registry_complete,
+    )
+    return paper_md, audit_report, gate_artifacts
+
+
 async def _run_post_paper_pipeline(
     *, paper_path: Path, manifest: dict, out_dir: Path,
     citation_registry: dict | None = None,
@@ -4061,40 +4093,13 @@ async def _run_post_paper_pipeline(
                 json.dumps(prior_log + _pre_gate_log, indent=2)
             )
             paper_path.write_text(paper_md)
-        from agent.journal_surface_gate import evaluate_journal_surface
-        surface_report = evaluate_journal_surface(
-            paper_md,
-            animal_citations=_animal_citations,
-            citation_outcome_map=_citation_outcome_map,
-            declared_review_type=manifest.get("review_type"),
-        )
-        surface_payload = {
-            "passed": surface_report.passed,
-            "issues": [dataclasses.asdict(i) for i in surface_report.issues],
-        }
-        paper_path.with_suffix(".journal_surface.json").write_text(
-            json.dumps(surface_payload, indent=2)
-        )
-        receipt_ids = {
-            str(r.get("paper_id") or r.get("receipt_id") or "")
-            for r in manifest.get("receipts", [])
-        }
-        citation_registry_complete = bool(
-            citation_registry
-            and all(rid in citation_registry for rid in receipt_ids if rid)
-        )
         reviewer_patches = _reviewer_patches_for_gate(out_dir, grok_unresolved_p1)
         if quality_bundle is None:
             raise RuntimeError("quality_methods_bundle_missing")
-        gate_artifacts = _paper_quality.write_final_quality_gates(
-            out_dir=out_dir,
-            paper_text=paper_md,
-            manifest=manifest,
-            audit=audit_report,
-            journal_surface=surface_payload,
-            reviewer_patches=reviewer_patches,
-            quality_bundle=quality_bundle,
-            citation_registry_complete=citation_registry_complete,
+        paper_md, audit_report, gate_artifacts = _write_stage5c_quality_gates(
+            paper_path=paper_path, paper_md=paper_md, manifest=manifest,
+            citation_registry=citation_registry, reviewer_patches=reviewer_patches,
+            quality_bundle=quality_bundle, animal_citations=_animal_citations, citation_outcome_map=_citation_outcome_map,
         )
         blocker_summary = _pre_submit_blocker_summary(gate_artifacts)
         if blocker_summary:
