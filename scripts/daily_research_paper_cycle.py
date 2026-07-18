@@ -3865,7 +3865,7 @@ def prepare_candidate_buffer(
     dry_run: bool = False,
     remote_loader: Callable[[], tuple[set[str], str | None]] | None = None,
 ) -> dict[str, Any]:
-    """Build a short-lived reserve of receipt-validated fresh topics."""
+    """Build a short-lived reserve of source-precise, receipt-valid fresh topics."""
     target_ready = max(1, target_ready)
     max_repairs = max(0, max_repairs)
     ledger_dir = runs_root / LEDGER_DIR
@@ -3897,7 +3897,12 @@ def prepare_candidate_buffer(
     )
     report["candidate_pool_count"] = len(pool)
     previous = _read_json(ledger_dir / CANDIDATE_BUFFER)
-    still_prepared = _prepared_candidate_topics(ledger_dir, now=now) & set(pool)
+    prepared = _prepared_candidate_topics(ledger_dir, now=now) & set(pool)
+    still_prepared = {
+        topic for topic in prepared
+        if _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)[0]
+    }
+    invalidated_prepared = prepared - still_prepared
     previous_ready = previous.get("ready")
     previous_rows = previous_ready if isinstance(previous_ready, list) else []
     report["ready"] = [
@@ -3905,9 +3910,10 @@ def prepare_candidate_buffer(
         if isinstance(row, dict) and row.get("topic") in still_prepared
     ]
     report["attempts"] = _recent_candidate_buffer_attempts(previous, now=now)
-    attempted = terminal | still_prepared | {
+    recent_attempted = {
         str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")
     }
+    attempted = terminal | still_prepared | (recent_attempted - invalidated_prepared)
     while len(report["ready"]) < target_ready and report["attempted_count"] < max_repairs:
         topic = select_topic(
             topics,
@@ -3922,7 +3928,14 @@ def prepare_candidate_buffer(
         if not topic:
             break
         attempted.add(topic)
-        repair = _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
+        source_precise_before, precision_before, _ = _quant_claim_source_precision(
+            topic, floor=SOURCE_TOPIC_REPAIR_FLOOR,
+        )
+        repair = (
+            _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
+            if source_precise_before
+            else _repair_low_source_precision_corpus(topic, dry_run=dry_run, timeout=timeout)
+        )
         preflight = _receipt_preflight(
             topic,
             runs_root / "_candidate_prepare" / topic,
@@ -3931,16 +3944,25 @@ def prepare_candidate_buffer(
             dry_run=dry_run,
         )
         quant_claims = _quant_claim_count(topic)
+        source_precise, precision_after, _ = _quant_claim_source_precision(
+            topic, floor=SOURCE_TOPIC_REPAIR_FLOOR,
+        )
         row = {
             "topic": topic,
             "attempted_at": now.isoformat(),
             "quant_claims": quant_claims,
             "repair_status": repair.get("status"),
             "receipt_preflight": preflight,
+            "source_topic_precision_before": precision_before,
+            "source_topic_precision_after": precision_after,
         }
         report["attempts"].append(row)
         report["attempted_count"] += 1
-        if quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS and preflight.get("passed"):
+        if (
+            quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS
+            and preflight.get("passed")
+            and source_precise
+        ):
             report["ready"].append({
                 "topic": topic,
                 "validated_at": now.isoformat(),
@@ -3948,6 +3970,7 @@ def prepare_candidate_buffer(
                 "n_receipts": int(preflight.get("n_receipts") or 0),
                 "n_primary_tier": int(preflight.get("n_primary_tier") or 0),
                 "n_direct_receipts": int(preflight.get("n_direct_receipts") or 0),
+                "source_topic_precision": precision_after,
             })
         report.update({"status": "candidate_buffer_building", "ready_count": len(report["ready"])})
         _write_json(ledger_dir / CANDIDATE_BUFFER, report)

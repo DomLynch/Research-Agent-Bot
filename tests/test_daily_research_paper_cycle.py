@@ -1650,6 +1650,35 @@ def test_prepared_candidates_expire_and_invalidate_on_threshold_change(tmp_path:
     assert cycle._prepared_candidate_topics(ledger_dir, now=now) == set()
 
 
+def test_candidate_buffer_invalidates_ready_count_when_source_precision_drifts(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [{"topic": "drifted_topic", "validated_at": now.isoformat()}],
+    })
+    monkeypatch.setattr(cycle, "discover_topics", lambda: ["drifted_topic"])
+    monkeypatch.setattr(cycle, "_terminal_topics", lambda *_a, **_k: set())
+    monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda *_a, **_k: ["drifted_topic"])
+    monkeypatch.setattr(
+        cycle, "_quant_claim_source_precision",
+        lambda *_a, **_k: (False, "source_topic_precision_low:0/25<0.50", []),
+    )
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=runs_root,
+        target_ready=1,
+        max_repairs=0,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert report["ready_count"] == 0
+    assert report["ready"] == []
+
+
 def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, monkeypatch) -> None:
     topics = ["aaa_sparse", "bbb_still_sparse", "ccc_ready"]
     quant_claims = dict.fromkeys(topics, 0)
@@ -1701,6 +1730,65 @@ def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, mon
         (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.CANDIDATE_BUFFER).read_text(encoding="utf-8")
     )
     assert persisted["thresholds"] == cycle._candidate_buffer_thresholds()
+
+
+def test_prepare_candidate_buffer_repairs_source_precision_before_ready(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    topic = "compound_topic"
+    precise = False
+    precision_repairs: list[str] = []
+    now = dt.datetime.now(dt.UTC)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "generated_at": now.isoformat(),
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [{"topic": topic, "validated_at": now.isoformat()}],
+        "attempts": [{
+            "topic": topic,
+            "attempted_at": now.isoformat(),
+            "receipt_preflight": {"passed": True},
+        }],
+    })
+    monkeypatch.setattr(cycle, "discover_topics", lambda: [topic])
+    monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda *_a, **_k: [topic])
+    monkeypatch.setattr(cycle, "select_topic", lambda *_a, **_k: topic)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {
+        "passed": True,
+        "n_receipts": 25,
+        "n_primary_tier": 5,
+        "n_direct_receipts": 4,
+    })
+
+    def source_precision(*_args: Any, **_kwargs: Any) -> tuple[bool, str, list[Path]]:
+        return precise, "source_topic_precision_ok:25/25" if precise else "source_topic_precision_low:0/25<0.50", []
+
+    def repair_precision(selected: str, **_kwargs: Any) -> dict[str, Any]:
+        nonlocal precise
+        precision_repairs.append(selected)
+        precise = True
+        return {"status": "source_precision_repaired"}
+
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", source_precision)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", repair_precision)
+    monkeypatch.setattr(
+        cycle, "_repair_topic_corpus",
+        lambda *_a, **_k: pytest.fail("generic repair must not handle low source precision"),
+    )
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=tmp_path / "runs",
+        target_ready=1,
+        max_repairs=1,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert precision_repairs == [topic]
+    assert report["ready_count"] == 1
+    assert report["ready"][0]["topic"] == topic
+    assert report["ready"][0]["source_topic_precision"] == "source_topic_precision_ok:25/25"
+    assert report["attempts"][-1]["source_topic_precision_after"] == "source_topic_precision_ok:25/25"
 
 
 def test_prepare_candidate_buffer_rotates_recent_failures(tmp_path: Path, monkeypatch) -> None:
