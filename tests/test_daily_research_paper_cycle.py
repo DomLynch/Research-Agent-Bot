@@ -99,6 +99,7 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         service = (REPO / "deploy" / name).read_text(encoding="utf-8")
         assert "Type=oneshot" in service
         assert "Restart=on-failure" in service
+        assert "RestartPreventExitStatus=2" in service
         assert "RestartSec=60" in service
 
 
