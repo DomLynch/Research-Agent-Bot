@@ -1158,6 +1158,15 @@ def _strip_markdown_table_lines(paper_md: str) -> str:
 
 def _strip_compiler_source_finding_lines(paper_md: str) -> str:
     """Drop finalizer-owned source-map bullets before prose scanning."""
+    paper_md = re.sub(
+        r"^Substantive evidence synthesis:.*?(?=\n\s*\n|^## |\Z)"
+        r"|^Key findings from source synthesis:.*?"
+        r"^Synthesis interpretation:.*?(?=\n\s*\n|^## |\Z)"
+        r"|^Substantive conclusion for .*?(?=\n\s*\n|^## |\Z)",
+        "",
+        paper_md,
+        flags=re.MULTILINE | re.DOTALL,
+    )
     out: list[str] = []
     mode = ""
     for line in paper_md.splitlines():

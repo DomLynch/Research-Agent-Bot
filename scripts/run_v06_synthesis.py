@@ -4458,15 +4458,27 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
 
 
 def _duplicate_heading_target(reason: str) -> str:
-    match = re.search(r"duplicate\s+(?:header|heading)\s+['\"](#{2,6}\s+[^'\"]+)['\"]", reason, flags=re.I)
-    return " ".join(match.group(1).split()) if match else ""
+    match = re.search(
+        r"(?:duplicate\s+(?:header|heading)\s+['\"](#{2,6}\s+[^'\"]+)['\"]"
+        r"|(?:section|heading)\s+['\"]([^'\"]+)['\"]\s+is\s+duplicated)",
+        reason,
+        flags=re.I,
+    )
+    if match:
+        return " ".join(next(group for group in match.groups() if group).split())
+    return ""
 
 
 def _heading_occurrences(heading: str, paper_md: str) -> int:
     if not heading:
         return 0
-    normalized = " ".join(heading.split())
-    return sum(1 for line in paper_md.splitlines() if " ".join(line.strip().split()) == normalized)
+    normalized = re.sub(r"^#{2,6}\s+", "", " ".join(heading.split()))
+    return sum(
+        1
+        for line in paper_md.splitlines()
+        if re.match(r"^#{2,6}\s+", line.strip())
+        and re.sub(r"^#{2,6}\s+", "", " ".join(line.strip().split())) == normalized
+    )
 
 
 def _repair_post_finalizer_auto_fixables(

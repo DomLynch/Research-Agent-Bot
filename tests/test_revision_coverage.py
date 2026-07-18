@@ -2864,6 +2864,9 @@ def test_latest_telomere_fourth_revise_feedback_splits_and_requires_markers() ->
 def test_influenza_revision_surface_repairs_are_verified_deterministically() -> None:
     feedback = (
         "Fix the typographical artifact in the Abstract ('remains is consistent with before clinical use').; "
+        "Reconcile manifest-level direction codes with bundle excerpts where discrepancies exist "
+        "(e.g., Bukhbinder 2026 AD risk finding, Wen 2025 seroprotection rates, Wei 2026 pooled ORs) "
+        "and flag any retained mismatch explicitly.; "
         "Surface the named internal cross-source tensions (Alotaibi 2026 vs Incalzi 2024/Luo 2026; "
         "Wang 2024 vs Szilagyi 2025/Wang 2025b) directly in the Conclusion or Discussion, not only in the Evidence Snapshot.; "
         "Resolve the 'no mechanistic sources' claim with the actual presence of biomarker content and either recode it or adjust the framing."
@@ -2878,6 +2881,10 @@ def test_influenza_revision_surface_repairs_are_verified_deterministically() -> 
     )
     repaired = (
         "## Abstract\n\nThe result is bounded before clinical use.\n\n"
+        "## Key Findings\n\nEffect-direction reconciliation note:\n\n"
+        "- Bukhbinder 2026: direction=positive; actual reported finding=lower AD risk.\n"
+        "- Wen 2025: direction=positive; actual reported finding=higher seroprotection.\n"
+        "- Wei 2026: direction=mixed; actual reported finding=pooled ORs differ by endpoint.\n\n"
         "## Discussion\n\nThe named tension is Alotaibi 2026 versus Incalzi 2024 and Luo 2026; "
         "Wang 2024 conflicts with Szilagyi 2025 and Wang 2025b.\n\n"
         "## Limitations\n\nNo retained source is classified primarily as mechanistic under the schema; "

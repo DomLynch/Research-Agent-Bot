@@ -2598,6 +2598,31 @@ def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_p
     assert logs[0].phase == "D_substantive_evidence_synthesis"
 
 
+def test_substantive_evidence_synthesis_is_idempotent_after_surface_rewrite(tmp_path: Path) -> None:
+    ask = (
+        "Provide an actual evidence synthesis in the Evidence Landscape and Key Findings sections. "
+        "Surface positive and mixed findings from the evidence."
+    )
+    paper = "## Results\n\nInitial result.\n\n## Conclusion\n\nBounded.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{
+        "citation_token": "Smith 2025",
+        "outcome_class": "cardiometabolic",
+        "effect_direction": "positive",
+        "directness": "direct",
+        "evidence_tier": "A1",
+        "n_claims": 12,
+    }]}))
+
+    fixed, _ = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+    rewritten = fixed.replace("not a clinical efficacy claim", "not a standalone clinical efficacy claim")
+    again, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(rewritten, tmp_path)
+
+    assert again == rewritten
+    assert logs == []
+    assert again.count("Key findings from source synthesis:") == 1
+
+
 def test_substantive_evidence_synthesis_surfaces_all_named_missing_sources(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

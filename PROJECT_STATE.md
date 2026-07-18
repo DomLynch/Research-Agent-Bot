@@ -130,9 +130,10 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   identified as `legacy_contract` rather than treated as newly verified.
 - Retryable revise failures carry `RESEARCH_AGENT_REVISION_REPAIR_EPOCH`.
   Increment that epoch only after a material repair-engine upgrade to reopen
-  old retryable requests once; terminal safety decisions never reopen. Epoch 5
+  old retryable requests once; terminal safety decisions never reopen. Epoch 6
   keeps revision audits on the immutable evidence snapshot and deterministically
-  repairs reviewer-requested section placement and mechanistic framing.
+  repairs reviewer-requested section placement, mechanistic framing, and
+  manifest-to-excerpt direction-code reconciliation.
 
 ## Operational Decision - 2026-07-17
 - Strict retraction checks use OpenAlex first, then Crossref Retraction Watch,

@@ -2774,15 +2774,15 @@ def _phase_d_substantive_evidence_synthesis(
         "when DOI/PubMed dates differ, the source should be treated as "
         "bibliographic/in-press metadata and not used for year-specific claims."
     )
-    patched, n1 = _prepend_or_create_section_paragraph(text, "Evidence Landscape", landscape)
-    patched, n2 = _prepend_or_create_section_paragraph(patched, "Key Findings", key_findings)
+    patched, n1 = _prepend_generated_section_paragraph(text, "Evidence Landscape", landscape, "substantive evidence synthesis:", create=True)
+    patched, n2 = _prepend_generated_section_paragraph(patched, "Key Findings", key_findings, "key findings from source synthesis:", create=True)
     conclusion_note = (
         f"Substantive conclusion for {_topic_display_anchor(manifest) or 'the target topic'}: "
         f"{_manifest_conclusion_weight_note(rows) if needs_conclusion_weight else 'the retained source set shows ' + _manifest_conclusion_summary(rows) + '. '}"
         "The paper does not establish standalone clinical actionability."
         if pattern_summary else ""
     )
-    patched, n3 = _prepend_section_paragraph(patched, "Conclusion", conclusion_note) if conclusion_note else (patched, 0)
+    patched, n3 = _prepend_generated_section_paragraph(patched, "Conclusion", conclusion_note, "substantive conclusion for ") if conclusion_note else (patched, 0)
     if not (n1 or n2 or n3 or legacy_n or conclusion_cleanup_n):
         return text, []
     return patched, [FinalizerLogEntry(
@@ -4736,6 +4736,12 @@ def _prepend_or_create_section_paragraph(text: str, section: str, paragraph: str
             sep = "\n\n" if prefix else ""
             return prefix + sep + insert + text[match.start():].lstrip(), 1
     return text.rstrip() + f"\n\n## {section}\n\n{paragraph}\n", 1
+
+
+def _prepend_generated_section_paragraph(text: str, section: str, paragraph: str, marker: str, *, create: bool = False) -> tuple[str, int]:
+    if marker in text.lower():
+        return text, 0
+    return (_prepend_or_create_section_paragraph if create else _prepend_section_paragraph)(text, section, paragraph)
 
 
 def _phase_d_source_directness_breakdown(

@@ -301,6 +301,40 @@ def test_source_context_drift_skips_compiler_source_map_bullets(tmp_path):
     assert not [i for i in issues if i.issue_type == "source_context_drift"]
 
 
+def test_source_context_drift_skips_compiler_manifest_synthesis_blocks(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "study.quant_claims.json").write_text(
+        '{"paper_id":"study","claims":[{'
+        '"numeric_values":[5],"binding_confidence":"high",'
+        '"claim_type":"unit_value","claim_role":"effect"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "study",
+        "citation_token": "Smith 2024",
+    }]}
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Substantive evidence synthesis: The manifest includes 53 retained sources. "
+        "Smith 2024 anchors the generated map.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis:\n\n"
+        "Outcome-class key findings:\n\n"
+        "- Smith 2024: generated claims=53.\n\n"
+        "Synthesis interpretation: The 53 manifest rows bound the conclusion.\n\n"
+        "## Limitations\n\nNo hard endpoint was available.\n\n"
+        "## Conclusion\n\n"
+        "Substantive conclusion for the topic: 53 sources were retained.\n\n"
+        "The conclusion remains bounded."
+    )
+
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+
+    assert not [i for i in issues if i.severity == "P1"]
+
+
 def test_source_context_drift_uses_bg_lit_registry():
     """Background literature registry numerics are also valid
     sources of context (Harrison 2009 lifespan increases are in
