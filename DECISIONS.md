@@ -656,3 +656,22 @@ would hide complexity rather than remove it; moving runtime primitives to
 `scripts/` would make ownership worse.
 **Revisit if:** These primitives are not wired into a successful rapamycin
 WORLDCLASS run; then delete or archive unused pieces.
+
+---
+
+## 2026-07-18 — Validate canonical repair-cycle state after sidecar refresh
+**Decision:** When the journal finalizer detects a repeated text-repair cycle,
+select the deterministic minimum state, refresh sidecars once, and accept it
+only if the paper remains unchanged and the journal-surface gate passes.
+
+**Why:** A production artifact reproduced a six-state repair cycle whose states
+were valid after refresh, but stale pre-refresh sidecars made every historical
+state appear invalid. Rejecting before the authoritative refresh caused the
+revise service to repeat the same expensive synthesis indefinitely.
+
+**Alternatives rejected:** Raising the iteration limit cannot terminate a
+cycle. Accepting without a final surface check weakens the trust spine. The
+chosen ordering preserves fail-closed behavior at the authoritative boundary.
+
+**Revisit if:** A refreshed canonical state changes on disk or fails the
+journal-surface gate; those cases must continue to raise.

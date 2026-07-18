@@ -32,6 +32,12 @@ tracks `claude/3809304f/main` and the VPS `/opt` + `/root` reset to
 or "sync" from it, and do not force-delete remote refs (another session may
 reference them) — consolidation is by convention, not by pruning.
 
+## Finalizer cycle stability (2026-07-18)
+The journal finalizer now canonicalizes a repeated repair cycle before its
+final sidecar refresh, then fails closed unless the refreshed paper is unchanged
+and journal-surface valid. This prevents stale pre-refresh sidecars from causing
+unbounded service retries while preserving the final publication gate.
+
 ## System Boundary
 ```text
 research-agent-bot = paper-producing synthesis engine
