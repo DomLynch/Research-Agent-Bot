@@ -8120,6 +8120,16 @@ def test_cycle_downshifts_after_recent_numeric_density_failure(tmp_path: Path, m
     assert ledger["attempts"][0]["review_type_override"] == "thin_corpus_brief"
 
 
+def test_numeric_density_failure_does_not_downshift_revision(tmp_path: Path) -> None:
+    prior = tmp_path / "prior"
+    _write_json(prior / "full_paper.audit.json", {
+        "checks": [{"name": "Q9_numeric_density", "passed": False}],
+    })
+
+    assert cycle._numeric_density_downshift(prior) == "thin_corpus_brief"
+    assert cycle._numeric_density_downshift(prior, revision=True) is None
+
+
 def test_blocker_histogram_marks_repeated_compiler_failure_as_auto_fix_candidate(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     row = {"topic": "rapamycin", "gate_status": "journal_surface_not_passed", "out_dir": "run"}

@@ -133,7 +133,8 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   old retryable requests once; terminal safety decisions never reopen. Epoch 6
   keeps revision audits on the immutable evidence snapshot and deterministically
   repairs reviewer-requested section placement, mechanistic framing, and
-  manifest-to-excerpt direction-code reconciliation.
+  manifest-to-excerpt direction-code reconciliation. Revision renders preserve
+  their corpus strategy instead of inheriting a prior numeric-density downshift.
 
 ## Operational Decision - 2026-07-17
 - Strict retraction checks use OpenAlex first, then Crossref Retraction Watch,

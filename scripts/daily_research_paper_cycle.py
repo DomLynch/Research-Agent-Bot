@@ -3582,7 +3582,9 @@ def _repair_existing_run(
     return True, ""
 
 
-def _numeric_density_downshift(run: Path | None) -> str | None:
+def _numeric_density_downshift(run: Path | None, *, revision: bool = False) -> str | None:
+    if revision:
+        return None
     audit = _read_json(run / "full_paper.audit.json") if run else {}
     for check in audit.get("checks", []):
         if isinstance(check, dict) and check.get("name") == "Q9_numeric_density" and check.get("passed") is False:
@@ -4748,7 +4750,10 @@ def run_cycle(
                 })
                 attempted.add(selected)
                 continue
-            numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
+            numeric_review_type = _numeric_density_downshift(
+                _latest_topic_run(selected, runs_root),
+                revision=revision_source is not None,
+            )
             ledger.update({"topic": selected, "out_dir": out_dir.name, "attempted_topic": selected, "attempted_run": out_dir.name})
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"
