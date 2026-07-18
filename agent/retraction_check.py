@@ -13,6 +13,7 @@ from collections.abc import Callable
 from pathlib import Path
 
 _OPENALEX = "https://api.openalex.org/works"
+_CROSSREF = "https://api.crossref.org/works"
 _PUBMED = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 _DOI_RE = re.compile(r"10\.\d{4,9}/[^\s\]|>]+", re.I)
 
@@ -52,7 +53,10 @@ def cited_dois(run_dir: Path, *, strict: bool = False) -> list[str]:
     return sorted(doi for doi in dois if doi)
 
 
-def _fetch_openalex(dois: list[str]) -> list[dict]:
+def _fetch_openalex(
+    dois: list[str], *, open_url: Callable[..., object] = urllib.request.urlopen,
+    sleeper: Callable[[float], object] = time.sleep,
+) -> list[dict]:
     params = {"filter": "doi:" + "|".join(dois), "select": "doi,is_retracted", "per-page": "200"}
     for env, param in (("OPENALEX_API_KEY", "api_key"), ("OPENALEX_MAILTO", "mailto")):
         if value := os.environ.get(env, "").strip():
@@ -61,11 +65,68 @@ def _fetch_openalex(dois: list[str]) -> list[dict]:
         f"{_OPENALEX}?{urllib.parse.urlencode(params, safe='|:./')}",
         headers={"Accept": "application/json"},
     )
-    with urllib.request.urlopen(request, timeout=30) as response:
-        payload = json.loads(response.read().decode("utf-8"))
+    payload: object = {}
+    for attempt in range(6):
+        try:
+            with open_url(request, timeout=30) as response:  # type: ignore[attr-defined]
+                payload = json.loads(response.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code not in {429, 500, 502, 503, 504} or attempt == 5:
+                raise
+            delay = 2**attempt
+            try:
+                delay = float((exc.headers.get("Retry-After") if exc.headers else None) or delay)
+            except (TypeError, ValueError):
+                pass
+            if delay > 30:
+                raise
+            sleeper(max(1.0, delay))
     if not isinstance(payload, dict) or not isinstance(payload.get("results"), list):
         raise ValueError("malformed OpenAlex response")
     return payload["results"]
+
+
+def _fetch_crossref_retractions(
+    dois: list[str], *, open_url: Callable[..., object] = urllib.request.urlopen,
+    sleeper: Callable[[float], object] = time.sleep,
+) -> tuple[list[str], list[str]]:
+    """Return retracted and uncovered DOIs from Crossref/Retraction Watch."""
+    clean = sorted({_bare_doi(doi) for doi in dois if doi.strip()})
+    retracted: list[str] = []
+    missing: list[str] = []
+    mailto = os.environ.get("CROSSREF_MAILTO", "").strip()
+    for index, doi in enumerate(clean):
+        url = f"{_CROSSREF}/{urllib.parse.quote(doi, safe='/')}"
+        if mailto:
+            url += "?" + urllib.parse.urlencode({"mailto": mailto})
+        request = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "Researka-V3/1.0"})
+        payload: object = {}
+        for attempt in range(3):
+            try:
+                with open_url(request, timeout=30) as response:  # type: ignore[attr-defined]
+                    payload = json.loads(response.read().decode("utf-8"))
+                break
+            except urllib.error.HTTPError as exc:
+                if exc.code == 404:
+                    missing.append(doi)
+                    break
+                if exc.code not in {429, 500, 502, 503, 504} or attempt == 2:
+                    raise
+                sleeper(min(10.0, max(1.0, 2**attempt)))
+        if index + 1 < len(clean):
+            sleeper(0.21)
+        if doi in missing:
+            continue
+        message = payload.get("message") if isinstance(payload, dict) else None
+        if not isinstance(message, dict):
+            raise ValueError("malformed Crossref response")
+        updates = message.get("updated-by")
+        if isinstance(updates, list) and any(
+            isinstance(row, dict) and str(row.get("type") or "").lower() == "retraction" for row in updates
+        ):
+            retracted.append(doi)
+    return retracted, missing
 
 
 def _fetch_pubmed_retractions(
@@ -158,6 +219,7 @@ def retracted_dois(
 
 def retracted_cited_sources(
     run_dir: Path, *, fetch: Callable[[list[str]], list[dict]] = _fetch_openalex,
+    crossref_fetch: Callable[[list[str]], tuple[list[str], list[str]]] = _fetch_crossref_retractions,
     pubmed_fetch: Callable[[list[str]], list[str]] = _fetch_pubmed_retractions,
     strict: bool = False,
 ) -> list[str]:
@@ -166,8 +228,13 @@ def retracted_cited_sources(
         return retracted_dois(dois, fetch=fetch, strict=strict)
     except RetractionCheckUnavailable as primary:
         try:
-            return pubmed_fetch(dois)
-        except (OSError, ValueError, KeyError, TypeError, RetractionCheckUnavailable) as fallback:
-            raise RetractionCheckUnavailable(
-                f"OpenAlex unavailable ({primary}); PubMed unavailable ({fallback})"
-            ) from fallback
+            crossref_retracted, missing = crossref_fetch(dois)
+            return sorted({*crossref_retracted, *(pubmed_fetch(missing) if missing else [])})
+        except (OSError, ValueError, KeyError, TypeError, RetractionCheckUnavailable) as secondary:
+            try:
+                return pubmed_fetch(dois)
+            except (OSError, ValueError, KeyError, TypeError, RetractionCheckUnavailable) as fallback:
+                raise RetractionCheckUnavailable(
+                    f"OpenAlex unavailable ({primary}); Crossref unavailable ({secondary}); "
+                    f"PubMed unavailable ({fallback})"
+                ) from fallback

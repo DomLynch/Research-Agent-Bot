@@ -3865,7 +3865,7 @@ def prepare_candidate_buffer(
     dry_run: bool = False,
     remote_loader: Callable[[], tuple[set[str], str | None]] | None = None,
 ) -> dict[str, Any]:
-    """Build a short-lived reserve of source-precise, receipt-valid fresh topics."""
+    """Build a short-lived reserve of receipt-validated fresh topics."""
     target_ready = max(1, target_ready)
     max_repairs = max(0, max_repairs)
     ledger_dir = runs_root / LEDGER_DIR
@@ -3873,13 +3873,9 @@ def prepare_candidate_buffer(
     topics = discover_topics()
     remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
     report: dict[str, Any] = {
-        "generated_at": now.isoformat(),
-        "target_ready": target_ready,
-        "max_repairs": max_repairs,
-        "thresholds": _candidate_buffer_thresholds(),
-        "ready": [],
-        "attempts": [],
-        "attempted_count": 0,
+        "generated_at": now.isoformat(), "target_ready": target_ready,
+        "max_repairs": max_repairs, "thresholds": _candidate_buffer_thresholds(),
+        "ready": [], "attempts": [], "attempted_count": 0,
     }
     if remote_error:
         report.update({"status": "remote_dedupe_failed", "error": remote_error, "ready_count": 0})
@@ -3899,21 +3895,14 @@ def prepare_candidate_buffer(
     previous = _read_json(ledger_dir / CANDIDATE_BUFFER)
     prepared = _prepared_candidate_topics(ledger_dir, now=now) & set(pool)
     still_prepared = {
-        topic for topic in prepared
-        if _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)[0]
+        topic for topic in prepared if _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)[0]
     }
-    invalidated_prepared = prepared - still_prepared
     previous_ready = previous.get("ready")
     previous_rows = previous_ready if isinstance(previous_ready, list) else []
-    report["ready"] = [
-        row for row in previous_rows
-        if isinstance(row, dict) and row.get("topic") in still_prepared
-    ]
+    report["ready"] = [row for row in previous_rows if isinstance(row, dict) and row.get("topic") in still_prepared]
     report["attempts"] = _recent_candidate_buffer_attempts(previous, now=now)
-    recent_attempted = {
-        str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")
-    }
-    attempted = terminal | still_prepared | (recent_attempted - invalidated_prepared)
+    recent_attempted = {str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")}
+    attempted = terminal | still_prepared | (recent_attempted - (prepared - still_prepared))
     while len(report["ready"]) < target_ready and report["attempted_count"] < max_repairs:
         topic = select_topic(
             topics,
@@ -3928,59 +3917,37 @@ def prepare_candidate_buffer(
         if not topic:
             break
         attempted.add(topic)
-        source_precise_before, precision_before, _ = _quant_claim_source_precision(
-            topic, floor=SOURCE_TOPIC_REPAIR_FLOOR,
-        )
-        repair = (
-            _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
-            if source_precise_before
-            else _repair_low_source_precision_corpus(topic, dry_run=dry_run, timeout=timeout)
-        )
+        if _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)[0]:
+            repair = _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
+        else:
+            repair = _repair_low_source_precision_corpus(topic, dry_run=dry_run, timeout=timeout)
         preflight = _receipt_preflight(
-            topic,
-            runs_root / "_candidate_prepare" / topic,
-            timeout=timeout,
-            repair=False,
-            dry_run=dry_run,
+            topic, runs_root / "_candidate_prepare" / topic, timeout=timeout, repair=False, dry_run=dry_run,
         )
         quant_claims = _quant_claim_count(topic)
-        source_precise, precision_after, _ = _quant_claim_source_precision(
-            topic, floor=SOURCE_TOPIC_REPAIR_FLOOR,
-        )
+        source_precise, source_precision, _ = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
         row = {
-            "topic": topic,
-            "attempted_at": now.isoformat(),
-            "quant_claims": quant_claims,
-            "repair_status": repair.get("status"),
-            "receipt_preflight": preflight,
-            "source_topic_precision_before": precision_before,
-            "source_topic_precision_after": precision_after,
+            "topic": topic, "attempted_at": now.isoformat(),
+            "quant_claims": quant_claims, "repair_status": repair.get("status"),
+            "receipt_preflight": preflight, "source_topic_precision_after": source_precision,
         }
         report["attempts"].append(row)
         report["attempted_count"] += 1
-        if (
-            quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS
-            and preflight.get("passed")
-            and source_precise
-        ):
+        if quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS and preflight.get("passed") and source_precise:
             report["ready"].append({
-                "topic": topic,
-                "validated_at": now.isoformat(),
-                "n_quant_claims": quant_claims,
-                "n_receipts": int(preflight.get("n_receipts") or 0),
+                "topic": topic, "validated_at": now.isoformat(),
+                "n_quant_claims": quant_claims, "n_receipts": int(preflight.get("n_receipts") or 0),
                 "n_primary_tier": int(preflight.get("n_primary_tier") or 0),
                 "n_direct_receipts": int(preflight.get("n_direct_receipts") or 0),
-                "source_topic_precision": precision_after,
+                "source_topic_precision": source_precision,
             })
         report.update({"status": "candidate_buffer_building", "ready_count": len(report["ready"])})
         _write_json(ledger_dir / CANDIDATE_BUFFER, report)
 
     ready_count = len(report["ready"])
     report["ready_count"] = ready_count
-    report["status"] = (
-        "candidate_buffer_ready" if ready_count >= target_ready
-        else "candidate_buffer_partial" if ready_count
-        else "candidate_buffer_depleted"
+    report["status"] = "candidate_buffer_ready" if ready_count >= target_ready else (
+        "candidate_buffer_partial" if ready_count else "candidate_buffer_depleted"
     )
     _write_json(ledger_dir / CANDIDATE_BUFFER, report)
     return report
@@ -5511,10 +5478,14 @@ def run_cycle(
                             attempt["revision_feedback_received"] = bool(revision_feedback)
                             continue
                     break
+                elif retraction_unverified:
+                    ledger.update({"status": "retraction_check_unavailable", "no_submission_reason": gate_status})
                 else:
                     ledger["status"] = "synthesis_completed_no_submission"
                     if gate_status and gate_status != "eligible":
                         ledger["no_submission_reason"] = gate_status
+                if retraction_unverified:
+                    break
                 if source_precision_retry and revise_attempt < max(1, max_revise_attempts):
                     continue
                 if (
@@ -5524,7 +5495,7 @@ def run_cycle(
                     or not _should_retry_same_topic(attempt, auto_selected=topic is None and not revision_source)
                 ):
                     break
-            if ledger["status"] == "cycle_budget_exhausted":
+            if ledger["status"] in {"cycle_budget_exhausted", "retraction_check_unavailable"}:
                 break
             if ledger["status"] == "submitted_to_researka":
                 submitted_total += int(ledger.get("submitted") or 0)

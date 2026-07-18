@@ -6198,6 +6198,10 @@ def test_unavailable_retraction_check_blocks_submit_without_terminalizing(
 ) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda _out_dir: None)
+    topic_selections: list[str] = []
+    monkeypatch.setattr(
+        cycle, "select_topic", lambda *_a, **_k: topic_selections.append("aspirin_geroprotection") or "aspirin_geroprotection",
+    )
     submitted: list[int] = []
 
     ledger, _ = _run_coverage_cycle(
@@ -6210,6 +6214,9 @@ def test_unavailable_retraction_check_blocks_submit_without_terminalizing(
     assert submitted == []
     assert ledger["attempts"][0]["gate_status"] == "retraction_check_unavailable"
     assert ledger["attempts"][0]["retraction_check_unavailable"] is True
+    assert ledger["status"] == "retraction_check_unavailable"
+    assert len(ledger["attempts"]) == 1
+    assert topic_selections == ["aspirin_geroprotection"]
 
 
 def test_numeric_effect_mismatch_blocks_submit(tmp_path: Path, monkeypatch) -> None:

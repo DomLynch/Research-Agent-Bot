@@ -2,10 +2,14 @@ from __future__ import annotations
 
 import json
 import sys
+import urllib.error
+from email.message import Message
 from pathlib import Path
 from typing import Any
 
 import pytest
+
+from agent import retraction_check as retraction_impl
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
@@ -31,6 +35,81 @@ def test_retracted_dois_empty_when_none_retracted() -> None:
     fetch = _fetch([{"doi": "https://doi.org/10.1/x", "is_retracted": False}])
     assert rc.retracted_dois(["10.1/x"], fetch=fetch) == []
     assert rc.retracted_dois(["10.1/x"], fetch=fetch, strict=True) == []
+
+
+def test_openalex_retries_rate_limit() -> None:
+    attempts = 0
+    sleeps: list[float] = []
+
+    class Response:
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps({"results": [{"doi": "https://doi.org/10.1/x", "is_retracted": False}]}).encode()
+
+    def open_url(_request: object, *, timeout: int) -> Response:
+        nonlocal attempts
+        assert timeout == 30
+        attempts += 1
+        if attempts < 3:
+            headers = Message()
+            headers["Retry-After"] = "0"
+            raise urllib.error.HTTPError("https://api.openalex.org", 429, "rate limited", headers, None)
+        return Response()
+
+    assert rc._fetch_openalex(["10.1/x"], open_url=open_url, sleeper=sleeps.append) == [
+        {"doi": "https://doi.org/10.1/x", "is_retracted": False},
+    ]
+    assert attempts == 3
+    assert sleeps == [1.0, 1.0]
+
+
+def test_openalex_does_not_wait_past_daily_budget_window() -> None:
+    headers = Message()
+    headers["Retry-After"] = "31734"
+
+    def open_url(_request: object, *, timeout: int) -> object:
+        raise urllib.error.HTTPError("https://api.openalex.org", 429, "budget exhausted", headers, None)
+
+    with pytest.raises(urllib.error.HTTPError):
+        rc._fetch_openalex(["10.1/x"], open_url=open_url, sleeper=lambda _delay: pytest.fail("must not sleep"))
+
+
+def test_crossref_retractions_are_complete_and_rate_limited() -> None:
+    payloads: list[dict[str, object] | None] = [
+        {"message": {"updated-by": []}},
+        {"message": {"updated-by": [{"type": "retraction", "source": "retraction-watch"}]}},
+        None,
+    ]
+    sleeps: list[float] = []
+
+    class Response:
+        def __init__(self, payload: dict[str, object]) -> None:
+            self.payload = payload
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(self.payload).encode()
+
+    def open_url(request: object, *, timeout: int) -> Response:
+        payload = payloads.pop(0)
+        if payload is None:
+            raise urllib.error.HTTPError(str(request), 404, "missing", Message(), None)
+        return Response(payload)
+
+    assert retraction_impl._fetch_crossref_retractions(
+        ["10.1/good", "10.2/bad", "10.3/missing"], open_url=open_url, sleeper=sleeps.append,
+    ) == (["10.2/bad"], ["10.3/missing"])
+    assert sleeps == [0.21, 0.21]
 
 
 def test_retracted_dois_strict_rejects_incomplete_results() -> None:
@@ -93,12 +172,31 @@ def test_strict_check_falls_back_to_pubmed_when_openalex_is_unavailable(tmp_path
     def unavailable(_dois: list[str]) -> list[dict[str, Any]]:
         raise OSError("OpenAlex quota exhausted")
 
+    def crossref_unavailable(_dois: list[str]) -> tuple[list[str], list[str]]:
+        raise OSError("Crossref unavailable")
+
     assert rc.retracted_cited_sources(
         tmp_path,
         fetch=unavailable,
+        crossref_fetch=crossref_unavailable,
         pubmed_fetch=lambda dois: [] if dois == ["10.1/good"] else pytest.fail("wrong DOI set"),
         strict=True,
     ) == []
+
+
+def test_strict_check_uses_crossref_before_pubmed(tmp_path: Path) -> None:
+    (tmp_path / "citation_registry.json").write_text(
+        json.dumps({"r1": {"source_doi": "10.1/bad"}}), encoding="utf-8",
+    )
+    (tmp_path / "full_paper.md").write_text("## References\n\n- Bad. DOI: 10.1/bad.\n", encoding="utf-8")
+
+    assert rc.retracted_cited_sources(
+        tmp_path,
+        fetch=lambda _dois: (_ for _ in ()).throw(OSError("OpenAlex unavailable")),
+        crossref_fetch=lambda dois: (["10.1/bad"], []) if dois == ["10.1/bad"] else pytest.fail("wrong DOI set"),
+        pubmed_fetch=lambda _dois: pytest.fail("complete Crossref coverage must not call PubMed"),
+        strict=True,
+    ) == ["10.1/bad"]
 
 
 def test_pubmed_fallback_requires_complete_doi_coverage() -> None:
