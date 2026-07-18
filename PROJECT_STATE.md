@@ -38,6 +38,13 @@ final sidecar refresh, then fails closed unless the refreshed paper is unchanged
 and journal-surface valid. This prevents stale pre-refresh sidecars from causing
 unbounded service retries while preserving the final publication gate.
 
+## External source-authority retry (2026-07-18)
+When Researka explicitly returns `source_authority_available`, permits
+resubmission, and requests no content revision, V3 reuses the unchanged
+gate-passed package once. The retry receives a parent-scoped idempotency key;
+all local audit, surface, source, and pre-submit gates still run. A repeated
+availability verdict on that unchanged retry is terminal until content changes.
+
 Revision discovery checks the newest submitted record for every topic instead
 of a fixed ledger tail, so older unresolved reviewer requests remain actionable.
 

@@ -138,6 +138,7 @@ _RETRYABLE_REVISION_STATUSES = frozenset({
     # Back-compat for rows written before synthesis timeouts became retryable.
     "terminal_synthesis_timeout",
 })
+_UNCHANGED_RETRY_FAILURE_CATEGORIES = frozenset({"source_authority_available"})
 SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
@@ -1596,6 +1597,8 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
             "required_revisions": payload.get("required_revisions") or payload.get("requiredRevisions") or [],
             "review_summary": payload.get("review_summary") or payload.get("reviewSummary"),
             "publication": payload.get("publication"),
+            "failure_category": payload.get("failure_category") or payload.get("failureCategory"),
+            "resubmission": payload.get("resubmission"),
         }
         key = submit_bridge._title_marker(title)
         if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
@@ -1827,9 +1830,16 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
     out: list[dict[str, Any]] = []
     for row in latest.values():
         required = _actionable_revisions(row)
-        if str(row.get("decision") or "").lower() != "revise" or not required:
-            continue  # only route revises that carry concrete, actionable required revisions
-        out.append({
+        resubmission = row.get("resubmission")
+        retry_unchanged = (
+            not required
+            and str(row.get("failure_category") or "") in _UNCHANGED_RETRY_FAILURE_CATEGORIES
+            and isinstance(resubmission, dict)
+            and resubmission.get("allowed") is True
+        )
+        if str(row.get("decision") or "").lower() != "revise" or (not required and not retry_unchanged):
+            continue
+        request = {
             "artifactId": row.get("artifactId") or row.get("artifact_id"),
             "submissionId": row.get("submissionId") or row.get("submission_id"),
             "title": row.get("title"),
@@ -1843,7 +1853,10 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
                 or row.get("published_at")
             ),
             "feedback": " ".join("; ".join(required).split())[:4000],
-        })
+        }
+        if retry_unchanged:
+            request.update({"retry_unchanged": True, "failure_category": row.get("failure_category")})
+        out.append(request)
     return sorted(out, key=_review_ts, reverse=True), None
 
 
@@ -2138,6 +2151,12 @@ def _pending_remote_revision(
                 matches,
                 key=lambda match: _submitted_record_ts(match[0]) or dt.datetime.min.replace(tzinfo=dt.UTC),
             )
+            # Retry an unchanged outage decision once; later content revisions
+            # still route through the normal feedback-aware path.
+            if request.get("retry_unchanged") and _read_json(
+                run / "researka_revision_request.json"
+            ).get("retry_unchanged"):
+                continue
             request["topic"] = record_topic
             request["source_run"] = run.name
             return request, None
@@ -3566,7 +3585,7 @@ def _repair_existing_run(
         finalize_run(out_dir)
         if repair_reason:
             after = paper_path.read_text(encoding="utf-8")
-            if after == before:
+            if after == before and repair_reason != "submission_authority_retry":
                 shutil.rmtree(out_dir, ignore_errors=True)
                 return False, "repair_noop"
             if repair_reason == "journal_surface_not_passed":
@@ -5154,7 +5173,13 @@ def run_cycle(
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
                     ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})
-                repair_reason = ""
+                # Only the explicit availability verdict can reuse a package;
+                # submit selection still re-runs every normal quality gate.
+                repair_reason = (
+                    "submission_authority_retry"
+                    if revision_source and revision_source.get("retry_unchanged")
+                    else ""
+                )
                 if revise_attempt > 1 and last_attempt and revision_base_dir:
                     repair_reason = _repair_reason_for_retry(revision_base_dir, last_attempt)
                 retry_budget = child_timeout()

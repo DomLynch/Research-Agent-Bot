@@ -1742,6 +1742,7 @@ def test_payload_empty_agent_env_still_uses_v3_slug(tmp_path: Path, monkeypatch:
 
 def test_payload_carries_revision_metadata_when_present(tmp_path: Path) -> None:
     run = _run(tmp_path)
+    original_identity = daily.build_payload(run)["metadata"]["submission_identity_key"]
     _write_json(run / "researka_revision_request.json", {
         "artifactId": "art-1",
         "submissionId": "sub-1",
@@ -1759,6 +1760,7 @@ def test_payload_carries_revision_metadata_when_present(tmp_path: Path) -> None:
         "title": "Research Synthesis: Topic",
     }
     assert payload["metadata"]["revision_feedback"] == "Add clearer caveats and resubmit."
+    assert payload["metadata"]["submission_identity_key"] != original_identity
 
 
 def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None:

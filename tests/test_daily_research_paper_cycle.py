@@ -7264,6 +7264,99 @@ def test_remote_revision_skips_revise_with_no_required_revisions(monkeypatch) ->
     assert out == []  # no concrete required revisions -> no-op revise skipped
 
 
+def test_remote_revision_retries_unchanged_after_source_authority_outage(monkeypatch) -> None:
+    title = "Research Synthesis: Influenza Vaccination Effects — full paper"
+    base = {"artifactType": "research_paper", "agentId": "agent-v3-full-paper", "title": title}
+    _patch_reviews(monkeypatch, [{
+        **base,
+        "artifactId": "decision-1",
+        "submissionId": "submission-1",
+        "decision": "revise",
+        "reviewedAt": "2026-07-18T19:27:45+00:00",
+        "requiredRevisions": [],
+        "failure_category": "source_authority_available",
+        "resubmission": {"allowed": True},
+    }])
+
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+
+    assert err is None
+    assert out == [{
+        "artifactId": "decision-1",
+        "submissionId": "submission-1",
+        "title": title,
+        "topic": None,
+        "reviewedAt": "2026-07-18T19:27:45+00:00",
+        "feedback": "",
+        "retry_unchanged": True,
+        "failure_category": "source_authority_available",
+    }]
+
+
+def test_external_authority_retry_reuses_unchanged_approved_run(tmp_path: Path, monkeypatch) -> None:
+    import agent.journal_finalizer as finalizer
+
+    source = tmp_path / "source"
+    out = tmp_path / "out"
+    source.mkdir()
+    (source / "full_paper.md").write_text("# Research Synthesis: Topic\n\nApproved.\n", encoding="utf-8")
+    monkeypatch.setattr(finalizer, "finalize_run", lambda _run: None)
+
+    ok, error = cycle._repair_existing_run(
+        source,
+        out,
+        revision_source={"submissionId": "submission-1", "retry_unchanged": True},
+        repair_reason="submission_authority_retry",
+    )
+
+    assert ok is True
+    assert error == ""
+    assert (out / "full_paper.md").read_text(encoding="utf-8") == (source / "full_paper.md").read_text(encoding="utf-8")
+    request = json.loads((out / "researka_revision_request.json").read_text(encoding="utf-8"))
+    assert request["submissionId"] == "submission-1"
+
+
+def test_external_authority_retry_runs_only_once_per_unchanged_package(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    run = _seed_submitted_run(
+        runs,
+        "influenza_vaccination_effects",
+        "# Research Synthesis: Influenza Vaccination Effects — full paper",
+    )
+    _write_json(run / "researka_revision_request.json", {
+        "submissionId": "older-submission",
+        "retry_unchanged": True,
+    })
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "influenza_vaccination_effects",
+        "fingerprint": "sha256:x",
+        "submission_id": "submission-1",
+        "submitted_at": "2026-07-18T19:27:45+00:00",
+    }])
+    request = {
+        "artifactId": "decision-1",
+        "submissionId": "submission-1",
+        "title": "Research Synthesis: Influenza Vaccination Effects — full paper",
+        "topic": "influenza_vaccination_effects",
+        "reviewedAt": "2026-07-18T19:28:00+00:00",
+        "feedback": "",
+        "retry_unchanged": True,
+        "failure_category": "source_authority_available",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+        published_loader=lambda: (set(), None),
+    )
+
+    assert error is None
+    assert pending is None
+
+
 def _seed_submitted_run(runs: Path, topic: str, title_line: str) -> Path:
     run = runs / f"synthesis-{topic}-v06-DAILY-2026-05-29T00-00-00Z"
     run.mkdir(parents=True)

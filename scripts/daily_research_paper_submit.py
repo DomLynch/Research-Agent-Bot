@@ -307,6 +307,11 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
             title=str(cleaned.get("title") or ""),
             content_hash=content_hash,
             source_citation_hash=str(cleaned_metadata.get("source_citation_hash") or ""),
+            revision_parent=str(
+                (cleaned_metadata.get("revision_of") or {}).get("submissionId")
+                or (cleaned_metadata.get("revision_of") or {}).get("artifactId")
+                or ""
+            ) if isinstance(cleaned_metadata.get("revision_of"), dict) else "",
         )
         cleaned_metadata["submission_payload_hash"] = _payload_fingerprint(cleaned)
     return cleaned, report
@@ -1889,13 +1894,23 @@ def _source_citation_hash(source_bundle: list[dict[str, Any]]) -> str:
     return _hash_json(material)
 
 
-def _submission_identity_key(*, agent_slug: str, title: str, content_hash: str, source_citation_hash: str) -> str:
-    return _hash_json({
+def _submission_identity_key(
+    *,
+    agent_slug: str,
+    title: str,
+    content_hash: str,
+    source_citation_hash: str,
+    revision_parent: str = "",
+) -> str:
+    material = {
         "agent_slug": agent_slug,
         "title": _normalized_key(title),
         "content_hash": content_hash,
         "source_citation_hash": source_citation_hash,
-    })
+    }
+    if revision_parent:
+        material["revision_parent"] = revision_parent
+    return _hash_json(material)
 
 
 def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
@@ -1945,6 +1960,8 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     content_hash = "sha256:" + hashlib.sha256(body_markdown.encode("utf-8")).hexdigest()
     source_hash = _source_citation_hash(source_bundle)
     agent_slug = _agent_slug()
+    revision = _read_json(run / "researka_revision_request.json")
+    revision_parent = str(revision.get("submissionId") or revision.get("artifactId") or "")
     article_type = _select_article_type(manifest)
     if article_type == "evidence_map":
         title = _topic_anchored_title(title, topic)
@@ -1979,6 +1996,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             title=title,
             content_hash=content_hash,
             source_citation_hash=source_hash,
+            revision_parent=revision_parent,
         ),
         "counts": {
             "n_receipts": manifest.get("n_receipts"),
@@ -1986,7 +2004,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             "n_tensions": manifest.get("n_non_orthogonal_tensions"),
         },
     }
-    revision = _read_json(run / "researka_revision_request.json")
     if revision:
         metadata["revision_of"] = {
             key: revision.get(key)
