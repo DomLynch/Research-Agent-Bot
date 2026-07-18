@@ -38,6 +38,9 @@ final sidecar refresh, then fails closed unless the refreshed paper is unchanged
 and journal-surface valid. This prevents stale pre-refresh sidecars from causing
 unbounded service retries while preserving the final publication gate.
 
+Revision discovery checks the newest submitted record for every topic instead
+of a fixed ledger tail, so older unresolved reviewer requests remain actionable.
+
 ## System Boundary
 ```text
 research-agent-bot = paper-producing synthesis engine
@@ -131,8 +134,9 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   normalizes public p-values after every paper and supplement restoration path.
 
 ## Operational Decision - 2026-07-17
-- Strict retraction checks use OpenAlex first, then PubMed only when PubMed
-  indexes every cited DOI; both providers unavailable remains fail-closed.
+- Strict retraction checks use OpenAlex first, then Crossref Retraction Watch,
+  then PubMed only when PubMed indexes every cited DOI; provider failure remains
+  fail-closed unless another provider covers every cited DOI.
 - A newer hard-terminal revision status overrides stale repairable history, and
   every terminal attempt is excluded for the rest of its timer window.
 - Scope-only topic terms no longer qualify generic sources or generated packs;

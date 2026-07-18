@@ -6219,6 +6219,36 @@ def test_unavailable_retraction_check_blocks_submit_without_terminalizing(
     assert topic_selections == ["aspirin_geroprotection"]
 
 
+def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    records: list[dict[str, str]] = []
+    for index, topic in enumerate(["old_unresolved_topic", *(["recent_noise_topic"] * 24)]):
+        run = runs_root / f"synthesis-{topic}-v06-{index:02d}"
+        run.mkdir(parents=True)
+        (run / "full_paper.md").write_text(f"# Research Synthesis: {topic} — full paper\n", encoding="utf-8")
+        records.append({
+            "topic": topic, "run": run.name, "submission_id": f"sub-{index}", "date": f"2026-06-{index + 1:02d}",
+        })
+    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", records)
+    fetched: list[str] = []
+
+    def decision(submission_id: str) -> tuple[dict[str, Any], None]:
+        fetched.append(submission_id)
+        return ({
+            "decision": "revise" if submission_id == "sub-0" else "accept",
+            "required_revisions": ["Repair the old topic evidence."],
+        }, None)
+
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", decision)
+    latest, error = cycle._submitted_submission_decisions_by_title(runs_root)
+
+    assert error is None
+    assert fetched == ["sub-24", "sub-0"]
+    assert any(row["submissionId"] == "sub-0" and row["decision"] == "revise" for row in latest.values())
+
+
 def test_numeric_effect_mismatch_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     monkeypatch.setattr(cycle, "_numeric_effect_direction_issues", lambda out_dir: [

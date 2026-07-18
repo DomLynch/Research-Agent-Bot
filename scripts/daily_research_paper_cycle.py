@@ -138,7 +138,6 @@ _RETRYABLE_REVISION_STATUSES = frozenset({
     # Back-compat for rows written before synthesis timeouts became retryable.
     "terminal_synthesis_timeout",
 })
-SUBMISSION_DECISION_LOOKBACK = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_LOOKBACK", "20"))
 SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
@@ -1556,7 +1555,10 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
     rows = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
     latest: dict[str, dict[str, Any]] = {}
     first_error: str | None = None
-    for record in reversed(rows[-SUBMISSION_DECISION_LOOKBACK:]):
+    latest_by_topic: dict[str, dict[str, Any]] = {}
+    for row in reversed(rows):
+        latest_by_topic.setdefault(str(row.get("topic") or row.get("submission_id") or row.get("run")), row)
+    for record in latest_by_topic.values():
         submission_id = str(record.get("submission_id") or "").strip()
         run = runs_root / str(record.get("run") or "")
         paper = run / "full_paper.md"
