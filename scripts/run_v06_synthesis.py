@@ -110,6 +110,7 @@ import effect_direction as _direction  # noqa: E402
 import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
 import paper_quality_runtime as _paper_quality  # noqa: E402
+import revision_coverage as _revision_coverage  # noqa: E402
 import v3_polish_compiler as _polish_compiler  # noqa: E402
 import v3_paper_ir as _paper_ir  # noqa: E402
 from source_topic_specificity import (  # noqa: E402
@@ -2845,8 +2846,9 @@ async def _run(
                 file=sys.stderr,
             )
             return 5
-        mismatches = receipt_contract_mismatches(receipts, evidence_lock.receipt_rows)
+        mismatches = receipt_contract_mismatches(receipts, evidence_lock.receipt_rows, allowed_fields=(allowed_fields := {"effect_direction"} if _revision_coverage.asks_effect_direction_reconciliation(os.getenv("RESEARKA_REVISION_FEEDBACK", "")) else set()))
         continuity["contract_mismatches"] = mismatches
+        continuity["authorized_contract_fields"] = sorted(allowed_fields)
         if mismatches:
             (out_dir / "revision_evidence_continuity.json").write_text(
                 json.dumps(continuity, indent=2),

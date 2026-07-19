@@ -138,7 +138,6 @@ _RETRYABLE_REVISION_STATUSES = frozenset({
     # Back-compat for rows written before synthesis timeouts became retryable.
     "terminal_synthesis_timeout",
 })
-_UNCHANGED_RETRY_FAILURE_CATEGORIES = frozenset({"source_authority_available"})
 SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
@@ -1598,6 +1597,7 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
             "review_summary": payload.get("review_summary") or payload.get("reviewSummary"),
             "publication": payload.get("publication"),
             "failure_category": payload.get("failure_category") or payload.get("failureCategory"),
+            "notes": payload.get("notes"),
             "resubmission": payload.get("resubmission"),
         }
         key = submit_bridge._title_marker(title)
@@ -1830,12 +1830,16 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
     out: list[dict[str, Any]] = []
     for row in latest.values():
         required = _actionable_revisions(row)
-        resubmission = row.get("resubmission")
+        notes = " ".join(map(str, raw_notes)) if isinstance(raw_notes := row.get("notes"), list) else str(raw_notes or "")
+        verifier_unavailable = all(token in notes.lower() for token in ("source", "verification", "unavailable"))
         retry_unchanged = (
             not required
-            and str(row.get("failure_category") or "") in _UNCHANGED_RETRY_FAILURE_CATEGORIES
-            and isinstance(resubmission, dict)
+            and isinstance(resubmission := row.get("resubmission"), dict)
             and resubmission.get("allowed") is True
+            and (
+                str(row.get("failure_category") or "") == "source_authority_available"
+                or verifier_unavailable
+            )
         )
         if str(row.get("decision") or "").lower() != "revise" or (not required and not retry_unchanged):
             continue
@@ -1858,15 +1862,6 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
             request.update({"retry_unchanged": True, "failure_category": row.get("failure_category")})
         out.append(request)
     return sorted(out, key=_review_ts, reverse=True), None
-
-
-def _load_remote_revision_requests(runs_root: Path) -> tuple[list[dict[str, Any]], str | None]:
-    try:
-        return _remote_revision_requests(runs_root=runs_root)
-    except TypeError as exc:
-        if "unexpected keyword argument 'runs_root'" not in str(exc):
-            raise
-        return _remote_revision_requests()
 
 
 def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
@@ -2052,7 +2047,7 @@ def _pending_remote_revision(
     published_loader: PublishedLoader | None = None,
     exclude_keys: set[str] | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
-    rows, error = loader() if loader else _load_remote_revision_requests(runs_root)
+    rows, error = loader() if loader else _remote_revision_requests(runs_root=runs_root)
     if error:
         return None, error
     if exclude_keys:
@@ -2151,12 +2146,15 @@ def _pending_remote_revision(
                 matches,
                 key=lambda match: _submitted_record_ts(match[0]) or dt.datetime.min.replace(tzinfo=dt.UTC),
             )
-            # Retry an unchanged outage decision once; later content revisions
-            # still route through the normal feedback-aware path.
-            if request.get("retry_unchanged") and _read_json(
-                run / "researka_revision_request.json"
-            ).get("retry_unchanged"):
-                continue
+            # Retry external verifier outages across timer windows, bounded by
+            # the normal revise-round cap. The count lives in the existing
+            # revision sidecar, so no separate queue or state file is needed.
+            if request.get("retry_unchanged"):
+                raw_count = (prior := _read_json(run / "researka_revision_request.json")).get("unchanged_retry_count")
+                prior_count = raw_count if type(raw_count) is int and raw_count >= 0 else int(bool(prior.get("retry_unchanged")))
+                if prior_count >= MAX_REVISE_ROUNDS:
+                    continue
+                request["unchanged_retry_count"] = prior_count + 1
             request["topic"] = record_topic
             request["source_run"] = run.name
             return request, None
@@ -2189,7 +2187,7 @@ def _pending_remote_revision_topics(
     loader: RevisionLoader | None = None,
     published_loader: PublishedLoader | None = None,
 ) -> tuple[set[str], str | None]:
-    rows, error = loader() if loader else _load_remote_revision_requests(runs_root)
+    rows, error = loader() if loader else _remote_revision_requests(runs_root=runs_root)
     if error:
         return set(), error
     handled = _handled_revision_ids(ledger_dir, rows)

@@ -35,6 +35,15 @@ def test_unmet_asks_fail_closed_on_malformed_verdict(monkeypatch) -> None:
     assert _unmet(["a"], {"addressed": ["false"]}, monkeypatch) == ["a"]
 
 
+def test_detects_reviewer_request_to_replace_unclear_direction_codes() -> None:
+    feedback = (
+        "Integrate the positive/null MACE signals from the named studies rather "
+        "than leaving direction coded 'unclear' without explanation."
+    )
+
+    assert revision_coverage.asks_effect_direction_reconciliation(feedback) is True
+
+
 def test_inferential_bridge_boundary_satisfies_dedicated_section_ask() -> None:
     ask = (
         "Add a dedicated 'Inferential Bridge' section covering the mechanistic-to-clinical gap, "

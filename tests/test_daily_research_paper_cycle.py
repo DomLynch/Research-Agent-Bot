@@ -6236,17 +6236,26 @@ def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
 
     def decision(submission_id: str) -> tuple[dict[str, Any], None]:
         fetched.append(submission_id)
-        return ({
+        payload: dict[str, Any] = {
             "decision": "revise" if submission_id == "sub-0" else "accept",
             "required_revisions": ["Repair the old topic evidence."],
-        }, None)
+        }
+        if submission_id == "sub-0":
+            payload.update({
+                "failure_stage": "editorial",
+                "failure_category": "source_evidence_match",
+                "notes": ["source metadata verification unavailable (fail-closed)"],
+            })
+        return payload, None
 
     monkeypatch.setattr(cycle, "_fetch_submission_decision", decision)
     latest, error = cycle._submitted_submission_decisions_by_title(runs_root)
 
     assert error is None
     assert fetched == ["sub-24", "sub-0"]
-    assert any(row["submissionId"] == "sub-0" and row["decision"] == "revise" for row in latest.values())
+    old = next(row for row in latest.values() if row["submissionId"] == "sub-0")
+    assert old["decision"] == "revise"
+    assert old["notes"] == ["source metadata verification unavailable (fail-closed)"]
 
 
 def test_numeric_effect_mismatch_blocks_submit(tmp_path: Path, monkeypatch) -> None:
@@ -7096,7 +7105,7 @@ def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypat
         "feedback": "Revise source specificity.",
         "reviewedAt": "2026-06-01T10:00:00+00:00",
     }
-    monkeypatch.setattr(cycle, "_remote_revision_requests", lambda: ([revision], None))
+    monkeypatch.setattr(cycle, "_remote_revision_requests", lambda **_kwargs: ([revision], None))
     monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TEST_TOKEN"))
 
     ledger = cycle.run_cycle(
@@ -7293,6 +7302,53 @@ def test_remote_revision_retries_unchanged_after_source_authority_outage(monkeyp
     }]
 
 
+def test_remote_revision_retries_semantic_source_verifier_outage(monkeypatch) -> None:
+    title = "Research Synthesis: Exercise Effects — full paper"
+    _patch_reviews(monkeypatch, [{
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper",
+        "artifactId": "decision-2",
+        "submissionId": "submission-2",
+        "title": title,
+        "decision": "revise",
+        "reviewedAt": "2026-07-19T08:45:00+00:00",
+        "requiredRevisions": [],
+        "failure_stage": "editorial",
+        "failure_category": "source_evidence_match",
+        "notes": ["source metadata verification unavailable (fail-closed)"],
+        "resubmission": {"allowed": True},
+    }])
+
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+
+    assert err is None
+    assert len(out) == 1
+    assert out[0]["retry_unchanged"] is True
+    assert out[0]["failure_category"] == "source_evidence_match"
+
+
+def test_remote_revision_does_not_retry_content_source_failure_unchanged(monkeypatch) -> None:
+    _patch_reviews(monkeypatch, [{
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper",
+        "artifactId": "decision-3",
+        "submissionId": "submission-3",
+        "title": "Research Synthesis: Exercise Effects — full paper",
+        "decision": "revise",
+        "reviewedAt": "2026-07-19T08:45:00+00:00",
+        "requiredRevisions": [],
+        "failure_stage": "editorial",
+        "failure_category": "source_evidence_match",
+        "notes": ["source evidence does not support the submitted claim"],
+        "resubmission": {"allowed": True},
+    }])
+
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+
+    assert err is None
+    assert out == []
+
+
 def test_external_authority_retry_reuses_unchanged_approved_run(tmp_path: Path, monkeypatch) -> None:
     import agent.journal_finalizer as finalizer
 
@@ -7316,7 +7372,7 @@ def test_external_authority_retry_reuses_unchanged_approved_run(tmp_path: Path, 
     assert request["submissionId"] == "submission-1"
 
 
-def test_external_authority_retry_runs_only_once_per_unchanged_package(tmp_path: Path) -> None:
+def test_external_authority_retry_advances_persisted_retry_count(tmp_path: Path) -> None:
     runs = tmp_path / "runs"
     ledger_dir = runs / cycle.LEDGER_DIR
     run = _seed_submitted_run(
@@ -7327,6 +7383,50 @@ def test_external_authority_retry_runs_only_once_per_unchanged_package(tmp_path:
     _write_json(run / "researka_revision_request.json", {
         "submissionId": "older-submission",
         "retry_unchanged": True,
+        "unchanged_retry_count": 1,
+    })
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name,
+        "topic": "influenza_vaccination_effects",
+        "fingerprint": "sha256:x",
+        "submission_id": "submission-1",
+        "submitted_at": "2026-07-18T19:27:45+00:00",
+    }])
+    request = {
+        "artifactId": "decision-1",
+        "submissionId": "submission-1",
+        "title": "Research Synthesis: Influenza Vaccination Effects — full paper",
+        "topic": "influenza_vaccination_effects",
+        "reviewedAt": "2026-07-18T19:28:00+00:00",
+        "feedback": "",
+        "retry_unchanged": True,
+        "failure_category": "source_authority_available",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+        published_loader=lambda: (set(), None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["unchanged_retry_count"] == 2
+
+
+def test_external_authority_retry_stops_at_revise_round_cap(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    run = _seed_submitted_run(
+        runs,
+        "influenza_vaccination_effects",
+        "# Research Synthesis: Influenza Vaccination Effects — full paper",
+    )
+    _write_json(run / "researka_revision_request.json", {
+        "submissionId": "older-submission",
+        "retry_unchanged": True,
+        "unchanged_retry_count": cycle.MAX_REVISE_ROUNDS,
     })
     _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "run": run.name,

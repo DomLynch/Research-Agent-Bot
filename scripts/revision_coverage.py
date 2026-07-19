@@ -1846,8 +1846,8 @@ def _asks_mr_causal_count(text: str) -> bool:
 def _asks_effect_direction_reconciliation(text: str) -> bool:
     return (
         any(token in text for token in ("effect_direction", "directionality", "direction code"))
-        and any(token in text for token in ("actual reported finding", "reported finding", "excerpt", "contradicted"))
-        and any(token in text for token in ("reconcile", "correct", "remove", "verify"))
+        and any(token in text for token in ("actual reported finding", "reported finding", "excerpt", "contradicted", "positive", "negative", "null", "mixed", "unclear"))
+        and any(token in text for token in ("align", "correct", "explain", "integrate", "justify", "reclassify", "recode", "reconcile", "remove", "verify"))
     ) or (
         "reclassify" in text
         and "direction" in text

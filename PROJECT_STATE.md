@@ -39,11 +39,15 @@ and journal-surface valid. This prevents stale pre-refresh sidecars from causing
 unbounded service retries while preserving the final publication gate.
 
 ## External source-authority retry (2026-07-18)
-When Researka explicitly returns `source_authority_available`, permits
-resubmission, and requests no content revision, V3 reuses the unchanged
-gate-passed package once. The retry receives a parent-scoped idempotency key;
-all local audit, surface, source, and pre-submit gates still run. A repeated
-availability verdict on that unchanged retry is terminal until content changes.
+When Researka reports an editorial source-verifier outage, permits resubmission,
+and requests no content revision, V3 reuses the unchanged gate-passed package
+for up to three timer windows. Retry state stays in the revision sidecar and the
+request receives a parent-scoped idempotency key; all local gates still run.
+
+An immutable revision receipt contract may change `effect_direction` only when
+the reviewer explicitly requests direction-code reconciliation. Source identity,
+receipt membership, and every other contract field remain frozen, and the
+authorized changes are recorded in `revision_evidence_continuity.json`.
 
 Revision discovery checks the newest submitted record for every topic instead
 of a fixed ledger tail, so older unresolved reviewer requests remain actionable.

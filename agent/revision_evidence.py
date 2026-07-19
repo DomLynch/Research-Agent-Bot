@@ -6,7 +6,7 @@ import json
 import shutil
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Collection, Iterable
 
 from agent.synthesis_schemas import ReceiptSummary
 
@@ -287,6 +287,7 @@ def create_revision_evidence_snapshot(
 
 def receipt_contract_mismatches(
     receipts: Iterable[ReceiptSummary], rows: dict[str, dict[str, Any]],
+    *, allowed_fields: Collection[str] = (),
 ) -> list[str]:
     mismatches: list[str] = []
     for receipt in receipts:
@@ -295,6 +296,8 @@ def receipt_contract_mismatches(
             mismatches.append(f"missing_contract:{receipt.receipt_id}")
             continue
         for field in _CONTRACT_FIELDS:
+            if field in allowed_fields:
+                continue
             if field not in expected:
                 continue
             actual = getattr(receipt, field)

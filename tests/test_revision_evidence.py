@@ -147,6 +147,10 @@ def test_legacy_contract_detects_same_id_content_drift() -> None:
         [dataclasses.replace(receipt, effect_direction="negative")], rows,
     ) == ["r1:effect_direction"]
     assert receipt_contract_mismatches(
+        [dataclasses.replace(receipt, effect_direction="negative")], rows,
+        allowed_fields={"effect_direction"},
+    ) == []
+    assert receipt_contract_mismatches(
         [dataclasses.replace(receipt, thesis_text="Drifted claim.")], rows,
     ) == ["r1:thesis_text"]
     assert receipt_contract_mismatches(
