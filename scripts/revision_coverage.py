@@ -49,7 +49,7 @@ def revision_asks(feedback: str) -> list[str]:
         "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
         "Enumerate", "Hedge", "In", "Include", "Integrate", "Make", "Narrow",
-        "Move", "Operationalize", "Populate",
+        "Move", "Operationalize", "Populate", "Rename",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify", "Reframe",
         "Recompute", "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",
         "Replace", "Restate", "Restructure", "Rewrite", "Separate", "Soften", "Strengthen",
@@ -1107,14 +1107,17 @@ def _asks_structured_table_stub_replacement(text: str) -> bool:
     )
 
 
-def _asks_outcome_label_cleanup(text: str) -> bool:
-    return (
-        "dosing and pharmacokinetics" in text
-        and any(token in text for token in (
-            "re-label", "relabel", "remove", "not contain",
-            "not a dosing", "not dosing", "not pk", "proxy", "catch-all",
-        ))
+def outcome_label_rename(text: str) -> tuple[str, str] | None:
+    lower = " ".join(text.lower().split())
+    labels = re.findall(r"['\"]([^'\"]{2,80})['\"]", text)
+    if "outcome class" in lower and any(token in lower for token in ("rename", "re-label", "relabel")) and len(labels) >= 2:
+        return labels[0].strip(), labels[1].strip()
+    dosing = any(label in lower for label in ("dosing and pharmacokinetics", "dosing/pharmacokinetics", "dosing pharmacokinetics")) and any(token in lower for token in (
+        "re-label", "relabel", "remove", "not contain", "not a dosing", "not dosing", "not pk", "out of", "proxy", "catch-all",
+    )) or (
+        "exposure and dose-adjacent evidence outcomes" in lower and "real outcome-class synthesis" in lower
     )
+    return ("Dosing and Pharmacokinetics", "Exposure and Dose-Adjacent Evidence") if dosing else None
 
 
 def _asks_source_count_bundle_reconciliation(text: str) -> bool:
@@ -2551,9 +2554,12 @@ def _structured_table_stubs_are_replaced(paper_md: str) -> bool:
     return "see the structured evidence table" not in paper_md.lower()
 
 
-def _outcome_label_cleanup_is_stated(paper_md: str) -> bool:
-    text = paper_md.lower()
-    return "dosing and pharmacokinetics" not in text and "exposure and dose-adjacent evidence" in text
+def _outcome_label_cleanup_is_stated(paper_md: str, ask: str) -> bool:
+    if not (rename := outcome_label_rename(ask)):
+        return True
+    old, new = re.escape(rename[0]), rename[1]
+    old_label = rf"(?:^#{{2,4}}\s*{old}(?:\s+Outcomes?)?\s*$|\|\s*{old}\s*\||\b(?:outcome(?:\s+class)?|evidence domain)\s*[:=]\s*{old}\b|\b{old}\s+outcome class\b)"
+    return new.lower() in paper_md.lower() and not re.search(old_label, paper_md, flags=re.I | re.M)
 
 
 def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:
@@ -3052,7 +3058,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_long_term_safety_scope, _paper_only(_long_term_safety_scope_is_stated)),
     (_asks_unbundled_citation_cleanup, _paper_ask(_unbundled_citations_are_resolved)),
     (_asks_structured_table_stub_replacement, _paper_only(_structured_table_stubs_are_replaced)),
-    (_asks_outcome_label_cleanup, _paper_only(_outcome_label_cleanup_is_stated)),
+    (lambda text: outcome_label_rename(text) is not None, _paper_ask(_outcome_label_cleanup_is_stated)),
     (_asks_substantive_conclusion, _paper_only(_substantive_conclusion_is_stated)),
     (_asks_conclusion_weight_boundary, _paper_only(_conclusion_weight_boundary_is_stated)),
     (_asks_source_count_bundle_reconciliation, _paper_only(_source_count_bundle_reconciliation_is_stated)),

@@ -3121,6 +3121,29 @@ def test_outcome_label_cleanup_repairs_non_pk_slice_ask(tmp_path: Path) -> None:
     assert logs[0].phase == "D_outcome_label_cleanup"
 
 
+def test_outcome_label_cleanup_applies_generic_reviewer_rename(tmp_path: Path) -> None:
+    from scripts import revision_coverage
+
+    ask = (
+        "Rename the 'Longevity' outcome class to reflect the actual endpoint "
+        "(e.g. 'Lipoprotein(a) / MACE in CHD') so map labels are not misleading."
+    )
+    paper = (
+        "## Results\n\n### Longevity Outcomes\n\n"
+        "| Evidence domain | Sources |\n|---|---|\n| Longevity | 2 |\n\n"
+        "- Smith 2024: outcome=Longevity; direction=positive.\n\n"
+        "Human longevity remains outside this endpoint.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_outcome_label_cleanup(paper, tmp_path)
+
+    assert fixed.count("Lipoprotein(a) / MACE in CHD") == 3
+    assert "Human longevity remains" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "apply_reviewer_outcome_label_rename"
+
+
 def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

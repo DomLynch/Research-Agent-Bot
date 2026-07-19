@@ -369,6 +369,15 @@ def test_revision_asks_splits_strengthen_followup() -> None:
     ]
 
 
+def test_revision_asks_splits_rename_followup() -> None:
+    feedback = "Clarify the endpoint.; Rename the 'Longevity' outcome class to 'MACE'."
+
+    assert revision_coverage.revision_asks(feedback) == [
+        "Clarify the endpoint.",
+        "Rename the 'Longevity' outcome class to 'MACE'.",
+    ]
+
+
 def test_deterministic_unmet_accepts_subgroup_lens_narrative() -> None:
     ask = (
         "Add a narrative synthesis section that explicitly maps findings to the five subgroup "

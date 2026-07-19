@@ -4021,9 +4021,14 @@ def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
 
 
 def _reviewer_adjusted_outcome_label(label: str, feedback: str) -> str:
-    if _revision_asks_outcome_label_cleanup(feedback) and re.search(r"\bdosing and pharmacokinetics\b", label, flags=re.I):
-        return re.sub(r"\bDosing and Pharmacokinetics\b", "Exposure and Dose-Adjacent Evidence", label, flags=re.I)
+    for old, new in _outcome_label_renames(feedback):
+        if re.search(rf"\b{re.escape(old)}\b", label, flags=re.I):
+            return re.sub(rf"\b{re.escape(old)}\b", new, label, flags=re.I)
     return label
+
+
+def _outcome_label_renames(feedback: str) -> list[tuple[str, str]]:
+    return [rename for ask in revision_coverage.revision_asks(feedback) if (rename := revision_coverage.outcome_label_rename(ask))]
 
 
 def _phase_d_species_study_design_summary(
@@ -4659,47 +4664,36 @@ def _outcome_class_from_statistic_descriptor(descriptor: str) -> str:
     return "contextual_other"
 
 
-def _phase_d_outcome_label_cleanup(
-    text: str, out_dir: Path,
-) -> tuple[str, list[FinalizerLogEntry]]:
+def _phase_d_outcome_label_cleanup(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
-    if not _revision_asks_outcome_label_cleanup(feedback):
+    if not (renames := _outcome_label_renames(feedback)):
         return text, []
-    patched, n = re.subn(
-        r"\bDosing and Pharmacokinetics\b",
-        "Exposure and Dose-Adjacent Evidence",
-        text,
-        flags=re.I,
-    )
+    patched, n = text, 0
+    for old, new in renames:
+        patterns = (rf"()\b{re.escape(old)}\b",) if old == "Dosing and Pharmacokinetics" else (
+            rf"(^#{{2,4}}\s*){re.escape(old)}(?=\s+Outcomes?\s*$)",
+            rf"(\|\s*){re.escape(old)}(?=\s*\|)",
+            rf"(\b(?:outcome(?:\s+class)?|evidence domain)\s*[:=]\s*){re.escape(old)}\b",
+            rf"()\b{re.escape(old)}(?=\s+outcome class\b)",
+        )
+        for pattern in patterns:
+            patched, changed = re.subn(pattern, lambda match: f"{match[1]}{new}", patched, flags=re.I | re.M)
+            n += changed
     if not n:
         return text, []
-    manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    rows = manifest.get("receipts", []) if isinstance(manifest, dict) else []
-    note = _outcome_class_synthesis_note([row for row in rows if isinstance(row, dict)])
-    if note:
-        patched, n_note = _prepend_or_create_section_paragraph(patched, "Results", note)
-        n += n_note
+    if any(new == "Exposure and Dose-Adjacent Evidence" for _, new in renames):
+        manifest = _load_sidecar(out_dir / "manifest.json") or {}
+        rows = manifest.get("receipts", []) if isinstance(manifest, dict) else []
+        if note := _outcome_class_synthesis_note([row for row in rows if isinstance(row, dict)]):
+            patched, changed = _prepend_or_create_section_paragraph(patched, "Results", note)
+            n += changed
     return patched, [FinalizerLogEntry(
         phase="D_outcome_label_cleanup",
-        rule="relabel_unsupported_dosing_pk_outcome",
+        rule="apply_reviewer_outcome_label_rename",
         n_changes=n,
-        detail="relabeled dosing/PK wording when reviewer says the slice is not PK evidence",
+        detail=f"applied {len(renames)} reviewer-requested outcome-label rename(s)",
     )]
-
-
-def _revision_asks_outcome_label_cleanup(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        any(token in lower for token in ("dosing and pharmacokinetics", "dosing/pharmacokinetics", "dosing pharmacokinetics"))
-        and any(token in lower for token in (
-            "re-label", "relabel", "remove", "not contain",
-            "not a dosing", "not dosing", "not pk", "out of", "proxy", "catch-all",
-        ))
-    ) or (
-        "exposure and dose-adjacent evidence outcomes" in lower
-        and "real outcome-class synthesis" in lower
-    )
 
 
 def _outcome_class_synthesis_note(rows: list[dict[str, Any]]) -> str:
