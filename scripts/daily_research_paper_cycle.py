@@ -3178,11 +3178,11 @@ def _repair_abstract_overclaim_phrasing(out_dir: Path, overclaims: list[str]) ->
 
 
 def _escalate_feedback(feedback: str, unmet: list[str]) -> str:
-    """Prepend an explicit escalation so an unmet ask is materially fixed on the
-    bounded re-render, not skimmed again."""
+    """Prioritize unmet asks without dropping the remaining reviewer contract."""
+    required = [*unmet, *(ask for ask in _revision_asks(feedback) if ask not in unmet)]
     return (
         "PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS — you MUST make a "
-        f"substantive change to satisfy EACH: {'; '.join(unmet)}"
+        f"substantive change to satisfy EACH: {'; '.join(required)}"
     )
 
 

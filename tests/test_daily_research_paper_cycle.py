@@ -2585,6 +2585,18 @@ def test_escalated_revision_feedback_does_not_duplicate_original_feedback() -> N
     assert asks == ["Repair the sentence fragment.", "Verify the source counts."]
 
 
+def test_escalated_feedback_preserves_non_unmet_evidence_authorization() -> None:
+    feedback = (
+        "Rename the Longevity outcome class.; "
+        "Integrate the positive and null signals rather than leaving the direction coded unclear."
+    )
+
+    escalated = cycle._escalate_feedback(feedback, ["Rename the Longevity outcome class."])
+
+    assert cycle._revision_asks(escalated) == cycle._revision_asks(feedback)
+    assert cycle.revision_coverage.asks_effect_direction_reconciliation(escalated)
+
+
 def test_cycle_runs_synthesis_then_delegates_to_submit_bridge(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "creatine", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
