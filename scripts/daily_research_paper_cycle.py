@@ -1831,14 +1831,13 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
     for row in latest.values():
         required = _actionable_revisions(row)
         notes = " ".join(map(str, raw_notes)) if isinstance(raw_notes := row.get("notes"), list) else str(raw_notes or "")
-        verifier_unavailable = all(token in notes.lower() for token in ("source", "verification", "unavailable"))
         retry_unchanged = (
             not required
             and isinstance(resubmission := row.get("resubmission"), dict)
             and resubmission.get("allowed") is True
             and (
                 str(row.get("failure_category") or "") == "source_authority_available"
-                or verifier_unavailable
+                or all(token in notes.lower() for token in ("source", "verification", "unavailable"))
             )
         )
         if str(row.get("decision") or "").lower() != "revise" or (not required and not retry_unchanged):
@@ -2155,8 +2154,7 @@ def _pending_remote_revision(
                 if prior_count >= MAX_REVISE_ROUNDS:
                     continue
                 request["unchanged_retry_count"] = prior_count + 1
-            request["topic"] = record_topic
-            request["source_run"] = run.name
+            request["topic"], request["source_run"] = record_topic, run.name
             return request, None
     return None, None
 
@@ -3577,6 +3575,8 @@ def _repair_existing_run(
             payload.setdefault("source_run", source_dir.name)
             payload["feedback"] = (revision_feedback or "")[:4000]
             _write_json(out_dir / "researka_revision_request.json", payload)
+            if payload.get("retry_unchanged"):
+                _write_json(out_dir / REVISION_COVERAGE_GATE, {"passed": True, "unmet": [], "mode": "unchanged_external_verifier_retry"})
         else:
             _write_json(out_dir / "internal_repair_request.json", {"source_run": source_dir.name, "reason": repair_reason})
         from agent.journal_finalizer import finalize_run

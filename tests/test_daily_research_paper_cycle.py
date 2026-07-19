@@ -7370,6 +7370,8 @@ def test_external_authority_retry_reuses_unchanged_approved_run(tmp_path: Path, 
     assert (out / "full_paper.md").read_text(encoding="utf-8") == (source / "full_paper.md").read_text(encoding="utf-8")
     request = json.loads((out / "researka_revision_request.json").read_text(encoding="utf-8"))
     assert request["submissionId"] == "submission-1"
+    assert cycle.submit_bridge._revision_coverage_status(out) == "eligible"
+    assert json.loads((out / cycle.REVISION_COVERAGE_GATE).read_text())["mode"] == "unchanged_external_verifier_retry"
 
 
 def test_external_authority_retry_advances_persisted_retry_count(tmp_path: Path) -> None:
