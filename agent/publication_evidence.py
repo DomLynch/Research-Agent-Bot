@@ -9,13 +9,6 @@ from typing import Any
 
 from agent.source_hygiene import is_notice_only_source_title
 
-_TRACE_SECTIONS = frozenset({
-    "abstract", "introduction", "research question", "evidence landscape",
-    "key findings", "results", "discussion", "limitations", "conclusion",
-})
-_CLAIM_RE = re.compile(r"\b(?:conclusion|evidence|increase|decrease|null|risk|source|support|suggest)\w*\b", re.I)
-
-
 def source_rows(registry: dict[str, Any], receipts: dict[str, Any]) -> list[dict[str, Any]]:
     return [
         row for row in registry.values() if isinstance(row, dict)
@@ -84,25 +77,6 @@ def attach_evidence_spans(paper: str, bundle: list[dict[str, Any]]) -> None:
         span = span or next(iter(candidates), "")
         if span:
             row["evidence_span"] = span
-    section = ""
-    aggregate_spans: list[str] = []
-    for raw_line in paper.splitlines():
-        if heading := re.match(r"^##\s+(.+?)\s*$", raw_line):
-            section = heading.group(1).strip().lower()
-        line = raw_line.strip(" -*")
-        aggregate_directness = bool(re.search(r"\b\d+\s*/\s*\d+\b.*\b(?:direct|source)", line, re.I))
-        if (
-            len(line) >= 80 and "[bundle:" not in line.lower() and _CLAIM_RE.search(line)
-            and (section in _TRACE_SECTIONS or aggregate_directness)
-        ):
-            aggregate_spans.append(line)
-    rows = sorted(
-        bundle,
-        key=lambda row: str(row.get("evidence_context") or row.get("directness") or "").lower() == "direct",
-        reverse=True,
-    )
-    for row, span in zip(rows, aggregate_spans, strict=False):
-        row["evidence_span"] = span
 
 
 def _key(value: object) -> str:

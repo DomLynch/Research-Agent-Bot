@@ -1025,22 +1025,35 @@ def test_bundle_reference_matching_respects_citation_suffixes() -> None:
     assert "[bundle:2]" in traced
 
 
-def test_bundle_references_trace_aggregate_claims_to_direct_sources() -> None:
+def test_evidence_spans_keep_source_specific_trace_over_aggregate_prose() -> None:
     paper = (
         "## Abstract\n\nThe retained evidence supports a bounded conclusion across the direct source base, "
-        "while null findings limit any broad clinical claim."
+        "while null findings limit any broad clinical claim.\n\n"
+        "## Results\n\n"
+        "Smith 2026 reported the direct result. [bundle:1]\n"
+        "Jones 2025 supplied indirect context. [bundle:2]"
     )
     bundle = [
         {"cited_as": "Smith 2026", "directness": "direct"},
         {"cited_as": "Jones 2025", "directness": "indirect"},
     ]
 
-    traced = daily._publication_evidence.attach_bundle_references(paper, bundle)
-    daily._publication_evidence.attach_evidence_spans(traced, bundle)
+    daily._publication_evidence.attach_evidence_spans(paper, bundle)
 
-    assert "[bundle:" not in traced
-    assert bundle[0]["evidence_span"] in traced
-    assert "evidence_span" not in bundle[1]
+    assert bundle[0]["evidence_span"] == "Smith 2026 reported the direct result. [bundle:1]"
+    assert bundle[1]["evidence_span"] == "Jones 2025 supplied indirect context. [bundle:2]"
+
+
+def test_evidence_spans_do_not_infer_source_from_bundle_order() -> None:
+    paper = (
+        "## Abstract\n\nThe retained evidence supports a bounded conclusion across the direct source base, "
+        "while null findings limit any broad clinical claim."
+    )
+    bundle = [{"cited_as": "Smith 2026", "directness": "direct"}]
+
+    daily._publication_evidence.attach_evidence_spans(paper, bundle)
+
+    assert "evidence_span" not in bundle[0]
 
 
 def test_source_bundle_does_not_promote_citation_token_to_source_title(tmp_path: Path) -> None:
