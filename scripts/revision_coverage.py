@@ -2553,7 +2553,7 @@ def _structured_table_stubs_are_replaced(paper_md: str) -> bool:
     return "see the structured evidence table" not in paper_md.lower()
 
 
-def _outcome_label_cleanup_is_stated(paper_md: str, ask: str) -> bool:
+def outcome_label_cleanup_is_stated(paper_md: str, ask: str) -> bool:
     if not (rename := outcome_label_rename(ask)):
         return True
     old_label = rf"(?:^#{{2,4}}\s*{re.escape(rename[0])}(?:\s+Outcomes?)?\s*$|\|\s*{re.escape(rename[0])}\s*\||\b(?:outcome(?:\s+class)?|evidence domain)\s*[:=]\s*{re.escape(rename[0])}\b|\b{re.escape(rename[0])}\s+outcome class\b)"
@@ -3056,7 +3056,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_long_term_safety_scope, _paper_only(_long_term_safety_scope_is_stated)),
     (_asks_unbundled_citation_cleanup, _paper_ask(_unbundled_citations_are_resolved)),
     (_asks_structured_table_stub_replacement, _paper_only(_structured_table_stubs_are_replaced)),
-    (lambda text: outcome_label_rename(text) is not None, _paper_ask(_outcome_label_cleanup_is_stated)),
+    (lambda text: outcome_label_rename(text) is not None, _paper_ask(outcome_label_cleanup_is_stated)),
     (_asks_substantive_conclusion, _paper_only(_substantive_conclusion_is_stated)),
     (_asks_conclusion_weight_boundary, _paper_only(_conclusion_weight_boundary_is_stated)),
     (_asks_source_count_bundle_reconciliation, _paper_only(_source_count_bundle_reconciliation_is_stated)),

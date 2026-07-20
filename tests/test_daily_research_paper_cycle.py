@@ -5558,6 +5558,21 @@ def test_unmet_revision_asks_reads_quantitative_supplement(tmp_path: Path, monke
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
 
 
+def test_unmet_revision_asks_scopes_outcome_rename_to_public_manuscript(tmp_path: Path) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    (out_dir / "full_paper.md").write_text(
+        "## Results\n\n### Lipoprotein(a) / MACE in CHD Outcomes\n\n"
+        "| Evidence domain | Sources |\n|---|---|\n| Lipoprotein(a) / MACE in CHD | Hu 2025 |\n",
+    )
+    (out_dir / "structured_evidence_tables.md").write_text("| Study | Outcome class |\n|---|---|\n| Hu 2025 | longevity |\n")
+    ask = "Rename the 'Longevity' outcome class to reflect the endpoint (e.g. 'Lipoprotein(a) / MACE in CHD')."
+
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
+    (out_dir / "full_paper.md").write_text("## Results\n\n### Longevity Outcomes\n")
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
+
+
 def test_numeric_supplement_normalization_clears_live_revision_ask(
     tmp_path: Path,
     monkeypatch,

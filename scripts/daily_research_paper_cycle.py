@@ -23,7 +23,7 @@ import urllib.parse
 import urllib.request
 from collections import Counter
 from collections.abc import Callable, Collection, Iterator, Mapping, Sequence
-from contextlib import contextmanager
+from contextlib import contextmanager, suppress
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -2910,10 +2910,10 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
 def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     ask_lower = ask.lower()
     paper_text = ""
-    try:
+    with suppress(OSError):
         paper_text = (out_dir / "full_paper.md").read_text(encoding="utf-8").lower()
-    except OSError:
-        paper_text = ""
+    if revision_coverage.outcome_label_rename(ask):
+        return revision_coverage.outcome_label_cleanup_is_stated(paper_text, ask)
     if "classification criteria" in ask_lower and all(
         token in paper_text
         for token in ("### classification criteria", "**outcome class**", "**directness**", "**evidence tier**")
@@ -5204,7 +5204,6 @@ def run_cycle(
                     remote_revision = None
                     attempted.add(selected)
                     break
-                feedback_applied = bool(revision_feedback)
                 # Researka content revises carry reviewer feedback that must reach the
                 # feedback-aware writer (_run_synthesis injects RESEARKA_REVISION_FEEDBACK);
                 # only mechanical internal repairs (a gate-failure repair_reason with no
@@ -5388,7 +5387,7 @@ def run_cycle(
                     "topic": selected,
                     "out_dir": out_dir.name,
                     "revise_attempt": revise_attempt,
-                    "revision_feedback_applied": feedback_applied,
+                    "revision_feedback_applied": bool(revision_feedback),
                     "synthesis_return_code": return_code,
                     "submit_status": submit_status,
                     "bridge_status": bridge_status,
