@@ -161,6 +161,10 @@ def _retopic(run: Path, topic: str) -> None:
     })
 
 
+def _trust_revision_gate(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", lambda *_args: True)
+
+
 def test_dry_run_selects_eligible_research_paper(tmp_path: Path) -> None:
     _run(tmp_path)
 
@@ -1023,6 +1027,50 @@ def test_bundle_reference_matching_respects_citation_suffixes() -> None:
 
     assert "[bundle:1]" not in traced
     assert "[bundle:2]" in traced
+
+
+def test_bundle_reference_marker_is_adjacent_and_idempotent() -> None:
+    paper = "## Results\n\nSmith 2026 reports HR = 0.72. Smith 2026 remains review-level."
+    bundle = [{"cited_as": "Smith 2026"}]
+
+    traced = daily._publication_evidence.attach_bundle_references(paper, bundle)
+
+    assert "Smith 2026 [bundle:1] reports HR = 0.72" in traced
+    assert "Smith 2026 [bundle:1] remains review-level" in traced
+    assert daily._publication_evidence.attach_bundle_references(traced, bundle) == traced
+
+
+def test_bundle_reference_marker_moves_legacy_suffix_and_preserves_markdown_links() -> None:
+    paper = (
+        "Smith 2026 reports a result. [bundle:1]\n"
+        "[Smith 2026](https://example.test/paper) reports another result."
+    )
+    bundle = [{"cited_as": "Smith 2026"}]
+
+    traced = daily._publication_evidence.attach_bundle_references(paper, bundle)
+
+    assert "Smith 2026 [bundle:1] reports a result." in traced
+    assert "result. [bundle:1]" not in traced
+    assert "[Smith 2026](https://example.test/paper) [bundle:1] reports" in traced
+    assert "[Smith 2026 [bundle:1]]" not in traced
+
+
+def test_bundle_reference_marker_rebinds_after_canonical_source_sort() -> None:
+    rows = [
+        {"receipt_id": "old", "cited_as": "Old 2019", "source_year": 2019, "n_claims": 2},
+        {"receipt_id": "new", "cited_as": "New 2026", "source_year": 2026, "n_claims": 8},
+    ]
+    paper = "New 2026 [bundle:2] reports HR = 0.72. Old 2019 [bundle:1] provides context."
+
+    ordered = daily._publication_evidence.ordered_source_rows(
+        rows, {str(row["receipt_id"]): row for row in rows},
+    )
+    traced = daily._publication_evidence.attach_bundle_references(paper, ordered)
+
+    assert "New 2026 [bundle:1] reports HR = 0.72" in traced
+    assert "Old 2019 [bundle:2] provides context" in traced
+    assert traced.count("[bundle:1]") == 1
+    assert traced.count("[bundle:2]") == 1
 
 
 def test_evidence_spans_keep_source_specific_trace_over_aggregate_prose() -> None:
@@ -2202,7 +2250,9 @@ def test_duplicate_submission_response_seeds_pending_topic_skip(tmp_path: Path) 
     assert retry["considered"][0]["status"] == "topic_already_submitted_pending"
 
 
-def test_already_submitted_topic_still_allows_explicit_revision(tmp_path: Path) -> None:
+def test_already_submitted_topic_still_allows_explicit_revision(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     """The pending-topic skip must NOT block a genuine revision: a run carrying
     a researka_revision_request is still submitted when the revise lane passes
     it explicitly, even though its topic is in the submitted ledger."""
@@ -2210,6 +2260,7 @@ def test_already_submitted_topic_still_allows_explicit_revision(tmp_path: Path) 
     _write_json(run / "researka_revision_request.json",
                 {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _trust_revision_gate(monkeypatch)
     _write_json(
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         [{"topic": "topic", "fingerprint": "sha256:earlier-different-content"}],
@@ -2227,11 +2278,14 @@ def test_already_submitted_topic_still_allows_explicit_revision(tmp_path: Path) 
     assert ledger["status"] == "submitted_to_researka"
 
 
-def test_generic_submit_leaves_revision_for_revise_lane(tmp_path: Path) -> None:
+def test_generic_submit_leaves_revision_for_revise_lane(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json",
                 {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _trust_revision_gate(monkeypatch)
     _write_json(
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         [{"topic": "topic", "fingerprint": "sha256:earlier-different-content"}],
@@ -2334,10 +2388,13 @@ def test_researka_revise_records_feedback_and_skips_same_paper(tmp_path: Path) -
     assert retry["considered"][0]["status"] == "researka_revision_fingerprint"
 
 
-def test_selection_skips_exact_payload_already_submitted_even_if_revision(tmp_path: Path) -> None:
+def test_selection_skips_exact_payload_already_submitted_even_if_revision(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {"feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _trust_revision_gate(monkeypatch)
     fp = daily._payload_fingerprint(daily.build_payload(run))
     ledger_dir = tmp_path / daily.LEDGER_DIR
     _write_json(ledger_dir / "_submitted_fingerprints.json", [{
@@ -2466,7 +2523,9 @@ def test_remote_publication_dedupe_normalizes_public_title_variants(tmp_path: Pa
     assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
 
 
-def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(tmp_path: Path) -> None:
+def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {
         "artifactId": "art-1",
@@ -2474,6 +2533,7 @@ def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(tm
         "feedback": "Differentiate the revised version.",
     })
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _trust_revision_gate(monkeypatch)
     marker = daily._title_marker(daily.build_payload(run)["title"])
 
     ledger = daily.run_cycle(
@@ -2490,7 +2550,9 @@ def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(tm
     assert ledger["considered"][0]["status"] == "submitted_to_researka"
 
 
-def test_remote_publication_dedupe_blocks_stale_revision_in_generic_sweep(tmp_path: Path) -> None:
+def test_remote_publication_dedupe_blocks_stale_revision_in_generic_sweep(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {
         "artifactId": "art-1",
@@ -2498,6 +2560,7 @@ def test_remote_publication_dedupe_blocks_stale_revision_in_generic_sweep(tmp_pa
         "feedback": "Already handled.",
     })
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _trust_revision_gate(monkeypatch)
     marker = daily._title_marker(daily.build_payload(run)["title"])
 
     ledger = daily.run_cycle(
@@ -2521,6 +2584,7 @@ def test_explicit_revision_candidate_bypasses_recency_floor_only(tmp_path: Path,
         "feedback": "Revise this already-reviewed artifact.",
     })
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _trust_revision_gate(monkeypatch)
     registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
     for row in registry.values():
         row["source_year"] = 2001
@@ -2555,7 +2619,9 @@ def test_explicit_revision_candidate_bypasses_recency_floor_only(tmp_path: Path,
     assert ledger["considered"][0]["status"] == "submitted_to_researka"
 
 
-def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(tmp_path: Path) -> None:
+def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     # Fasting-bug regression (2026-06-13): an already-published paper
     # re-submitted while carrying a stale revision_request is an exact-content
     # duplicate -> must block. The revision exemption is title-only; identity/
@@ -2565,6 +2631,7 @@ def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(tmp_pat
         "artifactId": "a", "submissionId": "s", "feedback": "stale",
     })
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
+    _trust_revision_gate(monkeypatch)
     content_markers = daily._metadata_markers(daily.build_payload(run)["metadata"])
     assert content_markers  # identity/content hashes, not the title marker
 
@@ -2630,6 +2697,17 @@ def test_passed_partial_revision_gate_is_fully_revalidated(tmp_path: Path) -> No
     assert gate["passed"] is False
     assert gate["ask_count"] == 2
     assert gate["unmet_asks"]
+
+
+def test_stale_passed_revision_gate_fails_closed_when_refresh_is_unverified(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", {"feedback": "Complete the requested repair."})
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True, "unmet_asks": []})
+    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", lambda *_args: False)
+
+    assert daily._static_ineligible_status(run) == "revision_coverage_unverified"
 
 
 def test_stale_revision_coverage_refresh_runs_after_finalizer_change(

@@ -14,6 +14,7 @@ from agent.revision_identity import (  # noqa: E402
     outcome_class_tally_note,
     repair_revision_identity,
 )
+from agent.revision_quality import repair_revision_quality, revision_quality_proof_is_stated  # noqa: E402
 
 
 def _chat(parsed: dict[str, Any]) -> Any:
@@ -39,6 +40,104 @@ def test_unmet_asks_fail_closed_on_malformed_verdict(monkeypatch) -> None:
     assert _unmet(["a", "b"], {"addressed": [True]}, monkeypatch) == ["a", "b"]
     assert _unmet(["a"], {"addressed": "nope"}, monkeypatch) == ["a"]
     assert _unmet(["a"], {"addressed": ["false"]}, monkeypatch) == ["a"]
+
+
+def test_exact_stat_trace_does_not_collapse_integer_values() -> None:
+    ask = "For every exact statistic, attach the bundle token or use directional language."
+    rows = [{"citation_token": "Smith 2025", "thesis_text": "The reported NNT was 10."}]
+
+    assert revision_quality_proof_is_stated("Smith 2025 [bundle:1] reported NNT = 10.", ask, rows) is True
+    assert revision_quality_proof_is_stated("Smith 2025 [bundle:1] reported NNT = 1.", ask, rows) is False
+    assert revision_quality_proof_is_stated("Smith 2025 reported NNT = 10.", ask, rows) is False
+
+
+def test_exact_stat_trace_cannot_borrow_a_different_source_value() -> None:
+    ask = "For every exact statistic, attach the bundle token or use directional language."
+    rows = [
+        {"citation_token": "Smith 2025", "thesis_text": "The reported NNT was 10."},
+        {"citation_token": "Jones 2024", "thesis_text": "The reported NNT was 1."},
+    ]
+    paper = "Smith 2025 [bundle:1] reported NNT = 1. Jones 2024 [bundle:2] provided context."
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+
+
+def test_exact_stat_trace_accepts_et_al_citation_in_same_sentence() -> None:
+    ask = "For every exact statistic, attach the bundle token or use directional language."
+    rows = [{
+        "receipt_id": "r1", "citation_token": "Smith et al. 2025",
+        "source_year": 2025, "n_claims": 1, "thesis_text": "The reported HR was 0.72.",
+    }]
+
+    assert revision_quality_proof_is_stated(
+        "Smith et al. 2025 [bundle:1] reported HR = 0.72.", ask, rows,
+    ) is True
+
+
+def test_exact_stat_trace_checks_bulleted_bold_prose() -> None:
+    ask = "For every exact statistic, attach the bundle token or use directional language."
+    rows = [{
+        "receipt_id": "r1", "citation_token": "Smith 2025",
+        "source_year": 2025, "n_claims": 1, "thesis_text": "The reported HR was 0.72.",
+    }]
+    paper = "- **Primary result:** Smith 2025 [bundle:2] reported HR = 999."
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert "Smith 2025 [bundle:1]" in fixed
+    assert "HR = 999" not in fixed
+    assert details == ["exact_stat_trace"]
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
+
+
+def test_exact_stat_trace_requires_matching_p_value_operator() -> None:
+    ask = "For every exact statistic, attach the bundle token or use directional language."
+    rows = [{"citation_token": "Smith 2025", "thesis_text": "The result was p < 0.05."}]
+
+    assert revision_quality_proof_is_stated(
+        "Smith 2025 [bundle:1] reported p < 0.05.", ask, rows,
+    ) is True
+    assert revision_quality_proof_is_stated(
+        "Smith 2025 [bundle:1] reported p > 0.05.", ask, rows,
+    ) is False
+
+
+def test_fragment_repair_preserves_valid_colon_lead_in() -> None:
+    ask = "Complete the fragmentary prose sections with an ending mid-sentence."
+    paper = "## Results\n\nThe retained evidence is summarized in the following table:\n\n| Source | Finding |"
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert fixed == paper
+    assert details == []
+    assert revision_quality_proof_is_stated(fixed, ask, []) is True
+
+
+def test_generic_fragment_request_repairs_unnamed_trailing_fragment() -> None:
+    ask = "Complete all prose sections ending mid-sentence."
+    paper = "## Results\n\nThis retained evidence paragraph ends without a completed boundary"
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert "This subsection remains bounded" in fixed
+    assert details == ["fragmentary_prose"]
+    assert revision_quality_proof_is_stated(fixed, ask, []) is True
+
+
+def test_generic_fragment_request_preserves_complete_markdown_link() -> None:
+    ask = "Complete all prose sections ending mid-sentence."
+    paper = (
+        "## Results\n\nThe complete retained source record remains available in the "
+        "[public registry](https://example.test/source)"
+    )
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert fixed.endswith("[public registry](https://example.test/source).")
+    assert "This subsection remains bounded" not in fixed
+    assert details == ["fragmentary_prose"]
+    assert revision_quality_proof_is_stated(fixed, ask, []) is True
 
 
 def test_detects_reviewer_request_to_replace_unclear_direction_codes() -> None:
@@ -2960,7 +3059,9 @@ def test_mixed_outcome_and_direction_tally_feedback_repairs_both() -> None:
     asks = revision_coverage.revision_asks(feedback)
 
     assert "Authoritative outcome-class tally: n=2" in fixed
+    assert "cardiometabolic=1; contextual other=1" in fixed
     assert "Admission and direction-tally reconciliation: n=2" in fixed
+    assert "null=1; positive=1" in fixed
     assert details == ["authoritative_outcome_tally", "authoritative_direction_tally"]
     assert revision_coverage.deterministic_unmet_asks(fixed, asks, evidence_rows=rows) == []
 
@@ -3029,3 +3130,19 @@ def test_influenza_revision_surface_repairs_are_verified_deterministically() -> 
             "Szilagyi 2025", "Wang 2025b",
         },
     ) == []
+
+
+def test_structured_required_revisions_preserve_every_reviewer_item() -> None:
+    required = [
+        "Reconcile the Findings Map counts.",
+        "For every exact statistic, attach its source token.",
+        "Expand Tensions and Gaps to three cross-source tensions.",
+        "Complete all fragmentary prose sections.",
+        "Either discuss every source or state a representative-subset rationale.",
+        "Reconcile a claimed clinical RCT with review-level metadata.",
+        "Ensure evidence-honesty limits are reflected throughout.",
+    ]
+    feedback = "; ".join(required)
+
+    assert revision_coverage.revision_asks(feedback, required) == required
+    assert revision_coverage.revision_asks(feedback) == required

@@ -8,6 +8,7 @@ from typing import Any
 
 from agent.llm_client import LLMError, LLMResponse, build_judge_chain, chat_json
 from agent import revision_identity as _revision
+from agent import revision_quality as _quality
 from agent.settings import load_settings
 from agent.statistical_consistency import has_adjusted_significance_threshold
 
@@ -44,11 +45,13 @@ def place_author_inference_boundary(text: str, feedback: str) -> tuple[str, tupl
     return (patched, tuple(placed)) if placed else (text, ())
 
 
-def revision_asks(feedback: str) -> list[str]:
+def revision_asks(feedback: str, required_revisions: Sequence[str] | None = None) -> list[str]:
     """Split Researka's joined reviewer feedback into material revision asks."""
+    if required_revisions:
+        return [_with_terminal_punctuation(str(ask).strip()) for ask in required_revisions if str(ask).strip()]
     starts = (
-        "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
-        "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
+        "Add", "Audit", "Clarify", "Complete", "Correct", "Define", "Differentiate",
+        "Document", "Ensure", "Explain", "Expand", "Fix", "For each", "For every",
         "Enumerate", "Hedge", "In", "Include", "Integrate", "Make", "Narrow",
         "Move", "Operationalize", "Populate", "Rename",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify", "Reframe",
@@ -116,9 +119,10 @@ def material_unmet_asks(
     paper_md: str, feedback: str, *, retained_citations: Iterable[str] | None = None,
     evidence_rows: list[dict[str, Any]] | None = None,
     source_identifier_audit: dict[str, Any] | None = None,
+    required_revisions: Sequence[str] | None = None,
 ) -> list[str]:
     """Coverage result after deterministic structural checks and LLM judge."""
-    asks = revision_asks(feedback)
+    asks = revision_asks(feedback, required_revisions)
     unmet = deterministic_unmet_asks(
         paper_md, asks, retained_citations=retained_citations,
         evidence_rows=evidence_rows, source_identifier_audit=source_identifier_audit,
@@ -146,6 +150,7 @@ def deterministic_unmet_asks(
             or not _revision.revision_identity_proof_is_stated(
                 paper_md, ask, evidence_rows, source_identifier_audit,
             )
+            or not _quality.revision_quality_proof_is_stated(paper_md, ask, evidence_rows)
             or retained_citations is not None
             and not _retained_tension_ask_satisfied(paper_md, ask, retained_citations)]
 
@@ -156,7 +161,9 @@ def deterministic_known_asks(asks: Sequence[str]) -> list[str]:
 
 
 def _deterministic_ask_known(ask: str) -> bool:
-    return any(matches(" ".join(ask.lower().split())) for matches, _ in _DETERMINISTIC_ASK_RULES)
+    return _quality.revision_quality_ask_known(ask) or any(
+        matches(" ".join(ask.lower().split())) for matches, _ in _DETERMINISTIC_ASK_RULES
+    )
 
 
 def _deterministic_ask_satisfied(paper_md: str, ask: str) -> bool:
@@ -1435,6 +1442,10 @@ def _evidence_type_metadata_is_resolved(paper_md: str, ask: str) -> bool:
             _section(paper_md, "Results"),
         ) if part
     ).lower()
+    if all(token in scope for token in (
+        "evidence-type reconciliation:", "directness=review", "direct clinical rct",
+    )):
+        return True
     return (
         any(token in scope for token in ("evidence_type", "evidence type"))
         and any(token in scope for token in ("review", "rct", "trial", "excerpt"))

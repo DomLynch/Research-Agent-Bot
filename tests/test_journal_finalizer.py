@@ -2057,7 +2057,7 @@ def test_source_outcome_class_map_includes_all_rows_for_each_retained_source_ask
         "effect size where available) and present them in prose, not just in the "
         "coding tally."
     )
-    rows = [
+    rows: list[dict[str, Any]] = [
         {
             "citation_token": f"Smith {2000 + idx}",
             "source_title": f"Clinical source {idx}",
@@ -5742,3 +5742,176 @@ def test_pmid_revision_retries_a_transient_provider_failure(
     assert "verified=1/1; unverifiable=0" in fixed
     assert json.loads(audit_path.read_text())["status"] == "verified"
     assert calls == 1
+
+
+def test_multi_issue_reviewer_revision_repairs_and_verifies_all_requirements(tmp_path: Path) -> None:
+    required = [
+        "Reconcile the Findings Map table counts with the actual source bundle and ensure it lists all sources.",
+        "For every exact statistic cited in prose, attach the bundle token and ensure the value matches the source excerpt, or use directional language only.",
+        "Expand the Tensions and Gaps section to enumerate at least 3-5 specific cross-source tensions "
+        "(e.g., review-level benefit vs direct null endpoints; observational benefit vs mixed uptake trials).",
+        "Complete the fragmentary prose sections with an ending mid-sentence and an opening comma.",
+        "Either discuss all contextual sources or explicitly state that the map selectively discusses a representative subset, with rationale.",
+        "Reconcile the claim that Reviewtrial 2025 'functions as a clinical RCT' with evidence_type='review' and directness='review'.",
+        "Ensure the evidence-honesty note is consistently reflected throughout: the Longevity prose presents pooled review estimates with directional confidence.",
+    ]
+    feedback = "; ".join(required)
+    rows: list[dict[str, Any]] = [
+        {"receipt_id": "r1", "citation_token": "Reviewa 2025", "outcome_class": "longevity", "effect_direction": "positive", "directness": "review", "evidence_tier": "B1", "thesis_text": "Mortality HR = 0.72 (95% CI: 0.63 to 0.82)."},
+        {"receipt_id": "r2", "citation_token": "Nulla 2025", "outcome_class": "longevity", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "endpoints": ["mortality"]},
+        {"receipt_id": "r3", "citation_token": "Reviewb 2024", "outcome_class": "longevity", "effect_direction": "positive", "directness": "review", "evidence_tier": "B1", "endpoints": ["mortality"]},
+        {"receipt_id": "r4", "citation_token": "Directa 2024", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "direct", "evidence_tier": "A1", "endpoints": ["uptake"]},
+        {"receipt_id": "r5", "citation_token": "Directb 2023", "outcome_class": "contextual_other", "effect_direction": "mixed", "directness": "direct", "evidence_tier": "A1", "endpoints": ["uptake"]},
+        {"receipt_id": "r6", "citation_token": "Reviewtrial 2025", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "review", "evidence_tier": "B2"},
+    ]
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": feedback, "required_revisions": required,
+    }))
+    paper = (
+        "## Evidence Landscape\n\n" + journal_finalizer._findings_map_section(rows) + "\n\n"
+        "## Results\n\n"
+        "The corpus contains one randomized placebo-controlled trial (Reviewtrial 2025). "
+        "Reviewtrial 2025 functions as a clinical RCT.\n\n"
+        "### Longevity Outcomes\n\n"
+        "Reviewa 2025 significantly reduced mortality (HR = 0.72; 95% CI: 0.63 to 0.82). "
+        "These two sources converge on the same directional finding and anchor the upper bound of the signal.\n\n"
+        "### Contextual Other Outcomes\n\n"
+        "Only Directa 2024 is discussed here.\n\n"
+        "### Frailty Outcomes\n\n"
+        ", with a missing opening clause. The retained finding remains bounded.\n\n"
+        "## Limitations\n\nEvidence-honesty note: review evidence does not establish causality.\n\n"
+        "## References\n\n" + "\n".join(f"- {row['citation_token']}." for row in rows) + "\n"
+    )
+
+    fixed, _ = journal_finalizer._phase_d_tensions_and_gaps_breadth(paper, tmp_path)
+    fixed, logs = journal_finalizer._phase_d_revision_surface_notes(fixed, tmp_path)
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback, required)
+
+    assert "Narrative coverage scope:" in fixed
+    assert "representative subset to avoid repetitive source-by-source narration" in fixed
+    assert "selected to show direct evidence" not in fixed
+    assert "Evidence-type reconciliation:" in fixed
+    assert "Outcome evidence-role boundary:" in fixed
+    assert "functions as a clinical RCT" not in fixed
+    assert fixed.count("surfaced cross-source tension") >= 1
+    assert "The manuscript surfaces 3 auditable cross-source tensions" in fixed
+    assert journal_finalizer.revision_coverage.deterministic_known_asks(asks) == asks
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows,
+    ) == []
+    assert logs and "fragmentary_prose" in logs[0].detail
+    repeated, repeat_logs = journal_finalizer._phase_d_revision_surface_notes(fixed, tmp_path)
+    assert repeated == fixed
+    assert repeat_logs == []
+
+    unsafe_scope = fixed.replace(
+        "Outcome prose discusses a representative subset to avoid repetitive source-by-source narration; "
+        "mapped rows omitted from prose remain in the auditable accounting and are not treated as excluded.",
+        "Outcome prose discusses a representative subset selected to show direct evidence, major outcome "
+        "classes, and contrasting or null signals; mapped rows omitted from prose remain in the auditable accounting.",
+    )
+    assert asks[4] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        unsafe_scope, asks, evidence_rows=rows,
+    )
+    repaired_scope, scope_details = journal_finalizer.repair_revision_quality(unsafe_scope, rows, feedback)
+    assert "selected to show direct evidence" not in repaired_scope
+    assert "representative_subset_scope" in scope_details
+
+    wrong_count = fixed.replace("Longevity n=3 (direction:", "Longevity n=99 (direction:")
+    assert asks[0] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        wrong_count, asks, evidence_rows=rows,
+    )
+    wrong_directions = fixed.replace(
+        "Longevity n=3 (direction: null=1; positive=2",
+        "Longevity n=3 (direction: null=2; positive=1",
+    )
+    assert asks[0] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        wrong_directions, asks, evidence_rows=rows,
+    )
+    wrong_row = fixed.replace(
+        "| Longevity | Reviewa 2025 | direction=positive |",
+        "| Longevity | Reviewa 2025 | direction=null |",
+    )
+    assert asks[0] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        wrong_row, asks, evidence_rows=rows,
+    )
+    wrong_roster = fixed.replace(
+        "sources: Nulla 2025; Reviewa 2025; Reviewb 2024",
+        "sources: Fake 2025; Reviewa 2025; Reviewb 2024",
+    )
+    assert asks[0] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        wrong_roster, asks, evidence_rows=rows,
+    )
+    for old, new in (
+        ("| B1 | outcome=Longevity;", "| C9 | outcome=Longevity;"),
+        ("outcome=Longevity; direction=positive |", "outcome=Cardiometabolic; direction=positive |"),
+        ("finding=qualitative receipt-level finding recorded in the manifest", "finding=unsupported replacement"),
+    ):
+        altered = fixed.replace(old, new, 1)
+        assert asks[0] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+            altered, asks, evidence_rows=rows,
+        )
+    duplicate_map = fixed.replace("## Results", journal_finalizer._findings_map_section(rows) + "\n\n## Results")
+    assert asks[0] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        duplicate_map, asks, evidence_rows=rows,
+    )
+    wrong_role = fixed.replace(
+        "## Limitations",
+        "Reviewtrial 2025 is a definitive clinical trial proving benefit.\n\n## Limitations",
+    )
+    assert asks[5] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        wrong_role, asks, evidence_rows=rows,
+    )
+    role_bypass = fixed.replace(
+        "## Limitations",
+        "Reviewtrial 2025 is review-level but remains a definitive clinical RCT proving benefit.\n\n## Limitations",
+    )
+    assert asks[5] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        role_bypass, asks, evidence_rows=rows,
+    )
+    clause_bypass = fixed.replace(
+        "## Limitations",
+        "Reviewtrial 2025 is not counted as a direct RCT, but remains a definitive clinical trial proving benefit.\n\n## Limitations",
+    )
+    assert asks[5] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        clause_bypass, asks, evidence_rows=rows,
+    )
+    overclaim = fixed.replace(
+        "### Longevity Outcomes",
+        "### Longevity Outcomes\n\nThe retained evidence proves longer life.",
+    )
+    assert asks[6] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        overclaim, asks, evidence_rows=rows,
+    )
+    causal_bypass = fixed.replace(
+        "### Longevity Outcomes",
+        "### Longevity Outcomes\n\nThe intervention caused longer life and improved survival.",
+    )
+    assert asks[6] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        causal_bypass, asks, evidence_rows=rows,
+    )
+    for claim in (
+        "The intervention caused patients to live longer.",
+        "The intervention extended lifespan.",
+    ):
+        variant = fixed.replace("### Longevity Outcomes", f"### Longevity Outcomes\n\n{claim}")
+        assert asks[6] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+            variant, asks, evidence_rows=rows,
+        )
+    bounded = fixed.replace(
+        "### Longevity Outcomes",
+        "### Longevity Outcomes\n\nNo definitive clinical benefit can be inferred; the synthesis reduced uncertainty.",
+    )
+    assert asks[6] not in journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        bounded, asks, evidence_rows=rows,
+    )
+
+
+def test_structured_revision_feedback_is_not_truncated() -> None:
+    required = ["A" * 4100, "Ensure the final requirement is repaired."]
+
+    feedback = journal_finalizer._revision_feedback({"feedback": "truncated", "required_revisions": required})
+
+    assert feedback.endswith(required[-1])
+    assert len(feedback) > 4000

@@ -1857,6 +1857,8 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
             ),
             "feedback": " ".join("; ".join(required).split())[:4000],
         }
+        if required:
+            request["required_revisions"] = required
         if retry_unchanged:
             request.update({"retry_unchanged": True, "failure_category": row.get("failure_category")})
         out.append(request)
@@ -2878,14 +2880,14 @@ def _failure_class(status: str) -> str:
     }.get(code, "unknown")
 
 
-def _revision_asks(feedback: str) -> list[str]:
-    """The enumerated reviewer asks recovered from the '; '-joined feedback."""
-    return revision_coverage.revision_asks(feedback)
+def _revision_asks(feedback: str, required_revisions: Sequence[str] | None = None) -> list[str]:
+    return revision_coverage.revision_asks(feedback, required_revisions)
 
 
 def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
-    """Reviewer asks not addressed; unreadable revision artifacts fail closed."""
-    asks = _revision_asks(feedback)
+    request = _read_json(out_dir / "researka_revision_request.json")
+    required_revisions = _required_revision_items(request)
+    asks = _revision_asks(feedback, required_revisions)
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return asks
@@ -2907,6 +2909,7 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
             manifest, _read_json(out_dir / "citation_registry.json"),
         ), evidence_rows=rows,
         source_identifier_audit=_read_json(out_dir / "source_identifier_verification.json"),
+        required_revisions=required_revisions,
     )
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
 
@@ -5310,7 +5313,7 @@ def run_cycle(
                 if return_code == 0 and revision_feedback:
                     _write_json(out_dir / REVISION_COVERAGE_GATE, {
                         "passed": not unmet,
-                        "ask_count": len(_revision_asks(revision_feedback)),
+                        "ask_count": len(_revision_asks(revision_feedback, _required_revision_items(revision_source or {}))),
                         "unmet_asks": unmet,
                     })
                 # Retraction gate: never submit a paper that cites retracted science.

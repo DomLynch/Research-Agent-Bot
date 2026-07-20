@@ -33,6 +33,7 @@ from source_topic_specificity import (  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.outcome_class_remap import unique_outcome_displays  # noqa: E402
 from agent import publication_evidence as _publication_evidence  # noqa: E402
+from agent.revision_contract import gate_report as _revision_gate_report, needs_coverage as _revision_needs_coverage  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
     parse_review_type,
@@ -704,13 +705,12 @@ def _static_ineligible_status(run: Path, *, allow_recent_repair: bool = True) ->
     if public_surface_status != "eligible":
         return public_surface_status
     request = _read_json(run / "researka_revision_request.json")
-    if request:
+    if request and _revision_needs_coverage(request):
+        refreshed = _refresh_revision_coverage_gate(run, request)
         gate = _read_json(run / REVISION_COVERAGE_GATE)
+        if not refreshed and gate.get("passed") is not False:
+            return "revision_coverage_unverified"
         if gate.get("passed") is False:
-            if _refresh_revision_coverage_gate(run, request):
-                gate = _read_json(run / REVISION_COVERAGE_GATE)
-            if gate.get("passed") is not False:
-                return None
             if repairable:
                 return None
             return "revision_coverage_unmet"
@@ -728,11 +728,11 @@ def _static_ineligible_status(run: Path, *, allow_recent_repair: bool = True) ->
 
 def _revision_coverage_status(run: Path) -> str:
     request = _read_json(run / "researka_revision_request.json")
-    if not request:
+    if not request or not _revision_needs_coverage(request):
         return "eligible"
-    _refresh_revision_coverage_gate(run, request)
+    refreshed = _refresh_revision_coverage_gate(run, request)
     gate = _read_json(run / REVISION_COVERAGE_GATE)
-    if gate.get("passed") is True:
+    if refreshed and gate.get("passed") is True:
         return "eligible"
     if gate.get("passed") is False:
         return "revision_coverage_unmet"
@@ -740,33 +740,14 @@ def _revision_coverage_status(run: Path) -> str:
 
 
 def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
-    paper = run / "full_paper.md"
-    feedback = str(request.get("feedback") or "")
-    if not feedback or not paper.is_file():
-        return False
     try:
         import revision_coverage
-        text = paper.read_text(encoding="utf-8")
-        asks = revision_coverage.revision_asks(feedback)
-        if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
-            return False
-        manifest = _read_json(run / "manifest.json")
-        rows_raw = manifest.get("receipts")
-        rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
-        unmet = revision_coverage.deterministic_unmet_asks(
-            text, asks, retained_citations=revision_coverage.retained_citation_labels(
-                manifest, _read_json(run / "citation_registry.json"),
-            ), evidence_rows=rows,
-            source_identifier_audit=_read_json(run / "source_identifier_verification.json"),
-        )
+        report = _revision_gate_report(run, revision_coverage, refreshed_by="daily_submit")
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
-    _write_json(run / REVISION_COVERAGE_GATE, {
-        "passed": not unmet,
-        "ask_count": len(asks),
-        "unmet_asks": unmet,
-        "refreshed_by": "daily_submit",
-    })
+    if report is None:
+        return False
+    _write_json(run / REVISION_COVERAGE_GATE, report)
     return True
 
 
@@ -1566,14 +1547,8 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         for item in manifest.get("receipts", [])
         if isinstance(item, dict)
     }
-    rows = _publication_evidence.source_rows(registry, receipts)
-    rows.sort(
-        key=lambda row: (
-            int(row.get("source_year") or 0) >= 2020,
-            int(receipts.get(str(row.get("receipt_id")), {}).get("n_claims") or 0),
-            int(row.get("source_year") or 0),
-        ),
-        reverse=True,
+    rows = _publication_evidence.ordered_source_rows(
+        _publication_evidence.source_rows(registry, receipts), receipts,
     )
     pubmed_abstracts = _pubmed_abstracts([str(row.get("source_pmid") or "") for row in rows[:limit]])
     rob_ratings = _publication_evidence.risk_of_bias_ratings(run)

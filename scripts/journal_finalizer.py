@@ -13,6 +13,12 @@ from typing import Any
 from agent import statistical_consistency as _stats
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
 from agent.revision_identity import direction_tally_note, repair_revision_identity
+from agent.revision_contract import feedback as _revision_feedback, gate_report as _revision_gate_report
+from agent.revision_quality import (
+    findings_map_row,
+    manifest_row_finding as _manifest_row_finding,
+    repair_revision_quality,
+)
 
 
 def _script_module(name: str) -> Any:
@@ -239,7 +245,7 @@ def _surface_report(text: str, out_dir: Path) -> Any | None:
     manifest = loaded if isinstance(loaded := _load_sidecar(out_dir / "manifest.json"), dict) else {}
     lanes, registry = _load_sidecar(out_dir / "evidence_lanes.json") or {}, _load_sidecar(out_dir / "citation_registry.json") or {}
     animal = [str(a.get("citation", "")) for a in (lanes.get("animal_citations") or []) if isinstance(a, dict) and a.get("citation")]
-    feedback = str(request.get("feedback") or "") if isinstance(request := _load_sidecar(out_dir / "researka_revision_request.json") or {}, dict) else ""
+    feedback = _revision_feedback(_load_sidecar(out_dir / "researka_revision_request.json") or {})
     oc = {r["receipt_id"]: _reviewer_adjusted_outcome_label(_outcome_display(r["outcome_class"]), feedback) for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
     cmap = {e["body_citation"]: oc[rid] for rid, e in (registry.items() if isinstance(registry, dict) else ()) if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     try:
@@ -1284,7 +1290,7 @@ def _phase_d_admission_funnel_clarification(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_admission_funnel_clarification(feedback):
         return text, []
     replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
@@ -1497,7 +1503,7 @@ def _phase_d_prisma_all_included_rationale(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_prisma_all_included_rationale(feedback):
         return text, []
     note = (
@@ -1530,7 +1536,7 @@ def _phase_d_search_summary_scope_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_search_summary_scope_note(feedback):
         return text, []
     if "search-summary scope note:" in text.lower():
@@ -1595,7 +1601,7 @@ def _phase_d_classification_criteria_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_classification_criteria(feedback):
         return text, []
     if "classification criteria:" in text.lower():
@@ -1615,7 +1621,7 @@ def _phase_d_conflict_severity_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_conflict_severity_note(feedback):
         return text, []
     if "conflict-map severity note:" in text.lower():
@@ -1651,7 +1657,7 @@ def _phase_d_directional_coding_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_directional_coding_note(feedback):
         return text, []
     note = _directional_coding_note(out_dir)
@@ -1755,7 +1761,7 @@ def _phase_d_source_scope_annex_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not revision_coverage.asks_source_scope_annex(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -1815,7 +1821,7 @@ def _phase_d_evidence_boundary_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_evidence_boundary_note(feedback):
         return text, []
     lower = " ".join(feedback.lower().split())
@@ -1910,7 +1916,7 @@ def _phase_d_evidence_honesty_deduplicate(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     lower = " ".join(feedback.lower().split())
     if "evidence-honesty" not in lower or not any(token in lower for token in ("repetition", "repetitive", "redundant", "reduce")):
         return text, []
@@ -2073,7 +2079,7 @@ def _phase_d_long_term_safety_scope(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_long_term_safety_scope(feedback):
         return text, []
     patched = text
@@ -2111,7 +2117,7 @@ def _phase_d_unproven_human_longevity(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_unproven_human_longevity(feedback):
         return text, []
     match = re.search(r"^## Conclusion\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
@@ -2145,7 +2151,7 @@ def _phase_d_numeric_significance_correction(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     patched, n = _stats.repair_for_feedback(text, feedback)
     if not _revision_asks_numeric_significance_correction(feedback):
         if not n:
@@ -2320,7 +2326,7 @@ def _phase_d_author_inference_boundary(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     patched, sections = revision_coverage.place_author_inference_boundary(text, feedback)
     if not sections or patched == text:
         return text, []
@@ -2484,7 +2490,7 @@ def _phase_d_tier_directness_boundaries(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_tier_directness_boundaries(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -2540,7 +2546,7 @@ def _phase_d_section_source_grounding(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_section_source_grounding(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -2620,7 +2626,7 @@ def _phase_d_substantive_evidence_synthesis(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_substantive_evidence_synthesis(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -2916,7 +2922,7 @@ def _phase_d_scope_framing_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not revision_coverage.asks_scope_framing(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -2957,7 +2963,7 @@ def _phase_d_research_question_scope(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_concrete_research_question(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -3776,7 +3782,7 @@ def _phase_d_rct_count_reconciliation(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_rct_count_reconciliation(feedback):
         return text, []
     patched = re.sub(r"\bsingle direct RCT\b", "single direct-source coding row", text, flags=re.I)
@@ -3808,7 +3814,7 @@ def _phase_d_unbacked_appraisal_names(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_unbacked_appraisal_names(feedback):
         return text, []
     normalized = _normalize_public_appraisal_labels(text)
@@ -3917,7 +3923,7 @@ def _phase_d_source_inclusion_rationale(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_source_inclusion_rationale(feedback):
         return text, []
     if "topic-fit rationale:" in text.lower():
@@ -4019,7 +4025,7 @@ def _phase_d_species_study_design_summary(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_species_study_design_summary(feedback):
         return text, []
     normalised = text.replace("Example source(s)", "Example sources")
@@ -4103,7 +4109,7 @@ def _phase_d_source_outcome_class_map(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     wants_findings_map = revision_coverage.asks_findings_map_detail(feedback)
     if not (
         revision_coverage.asks_source_outcome_class_map(feedback)
@@ -4295,35 +4301,32 @@ def _findings_map_section(
         "| Outcome class | Source | Direction | Directness | Tier | Evidence role | Finding |",
         "| --- | --- | --- | --- | --- | --- | --- |",
     ))
-    for row in sorted(rows, key=lambda r: (_row_base_outcome_display(r), _row_citation(r))):
+    projected = sorted((findings_map_row(row) for row in rows), key=lambda values: values[:2])
+    for values in projected:
         lines.append(
             "| "
-            + " | ".join((
-                _table_cell(_row_base_outcome_display(row)),
-                _table_cell(_row_source_label(row)),
-                _table_cell(f"direction={_normalised_direction(row)}"),
-                _table_cell(f"directness={_row_directness_label(row)}"),
-                _table_cell(str(row.get("evidence_tier") or "unknown")),
-                _table_cell(f"outcome={_evidence_role_outcome_display(row)}; direction={_normalised_direction(row)}"),
-                _table_cell(f"finding={_manifest_row_finding(row)}"),
-            ))
+            + " | ".join(_table_cell(value) for value in values)
             + " |"
         )
     return "\n".join(lines)
 
 
 def _findings_map_roster_sentence(rows: list[dict[str, Any]]) -> str:
-    grouped: dict[str, list[dict[str, Any]]] = {}
+    grouped: dict[str, list[tuple[dict[str, Any], tuple[str, ...]]]] = {}
     for row in rows:
-        grouped.setdefault(_row_base_outcome_display(row), []).append(row)
+        projection = findings_map_row(row)
+        grouped.setdefault(projection[0], []).append((row, projection))
     parts = []
-    for outcome, outcome_rows in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
-        ordered = sorted(outcome_rows, key=_row_citation)
+    for outcome, projected_rows in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
+        ordered = sorted(projected_rows, key=lambda item: _row_cited_as(item[0]))
+        directions = Counter(values[2].split("=", 1)[-1] for _, values in ordered)
+        directness = Counter(values[3].split("=", 1)[-1] for _, values in ordered)
+        direction_text = "; ".join(f"{key}={directions[key]}" for key in sorted(directions))
+        directness_text = "; ".join(f"{key}={directness[key]}" for key in sorted(directness))
         parts.append(
             f"{outcome} n={len(ordered)} "
-            f"(direction: {_findings_map_value_counts(ordered, _normalised_direction)}; "
-            f"directness: {_findings_map_value_counts(ordered, _row_directness_label)}; "
-            f"sources: {'; '.join(_row_cited_as(row) for row in ordered)})"
+            f"(direction: {direction_text}; directness: {directness_text}; "
+            f"sources: {'; '.join(_row_cited_as(row) for row, _ in ordered)})"
         )
     return "; ".join(parts) + "."
 
@@ -4390,48 +4393,11 @@ def _row_directness_label(row: dict[str, Any]) -> str:
     return str(row.get("directness") or "unknown").strip().lower() or "unknown"
 
 
-def _row_source_label(row: dict[str, Any]) -> str:
-    citation = _row_citation(row)
-    title = str(row.get("source_title") or "").strip()
-    if title and citation and citation not in title:
-        return f"{citation}: {title}"
-    return citation or title or str(row.get("receipt_id") or "source").strip()
-
-
-def _findings_map_value_counts(
-    rows: list[dict[str, Any]],
-    value_fn: Any,
-) -> str:
-    counts: dict[str, int] = {}
-    for row in rows:
-        value = str(value_fn(row) or "unknown").strip().lower() or "unknown"
-        counts[value] = counts.get(value, 0) + 1
-    return "; ".join(f"{key}={counts[key]}" for key in sorted(counts))
-
-
-def _manifest_row_finding(row: dict[str, Any]) -> str:
-    p_values = row.get("p_values")
-    if isinstance(p_values, list):
-        stat = next((str(value).strip() for value in p_values if str(value).strip()), "")
-        if stat:
-            if _p_value_is_non_significant(stat):
-                return (
-                    f"representative non-significant statistic {stat}; not treated "
-                    "as positive or negative directional support unless source "
-                    "direction is coded"
-                )
-            return f"representative statistic {stat}; source-level statistic reported"
-    n_claims = row.get("n_claims")
-    if isinstance(n_claims, int) and n_claims > 0:
-        return f"{n_claims} extracted claim(s); receipt-level direction is the coded finding"
-    return "qualitative receipt-level finding recorded in the manifest"
-
-
 def _phase_d_tensions_and_gaps_breadth(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     lower = " ".join(feedback.lower().split())
     asks_count_evidence = (
         (
@@ -4454,6 +4420,7 @@ def _phase_d_tensions_and_gaps_breadth(
     tension_lines = [
         line for line in _manifest_tension_examples(
             rows,
+            allow_role_contrasts="cross-source tension" in lower and any(token in lower for token in ("e.g.", "for example")),
         )
         if not any(label in line.lower() for label in blocked_labels)
     ]
@@ -4471,6 +4438,7 @@ def _phase_d_tensions_and_gaps_breadth(
     context_text = ", ".join(dict.fromkeys(contexts)) or "the reviewer-named adjacent contexts"
     if tension_lines:
         pair_count = len(tension_lines)
+        pair_description = "auditable cross-source tension" if any("cross-source tension in evidence role" in line for line in tension_lines) else "semantically comparable source-pair disagreement"
         section = (
             "## Tensions and Gaps\n\n"
             "Evidence-gap priority: The tension analysis separates claim-level disagreement counts from substantive "
@@ -4478,8 +4446,8 @@ def _phase_d_tensions_and_gaps_breadth(
             "pooled with mixed or null clinical-endpoint findings. The unresolved breadth "
             f"therefore spans {context_text}, and these contexts remain hypothesis-generating "
             "unless represented by retained direct clinical endpoint evidence. "
-            f"The manuscript surfaces {pair_count} semantically comparable source-pair "
-            f"disagreement{'s' if pair_count != 1 else ''}; manifest claim-level counts "
+            f"The manuscript surfaces {pair_count} {pair_description}"
+            f"{'s' if pair_count != 1 else ''}; manifest claim-level counts "
             "are not presented as source-pair counts. Actually surfaced tensions include:\n"
             + "\n".join(tension_lines) + "\n"
         )
@@ -4494,6 +4462,7 @@ def _phase_d_tensions_and_gaps_breadth(
             "measuring the same endpoint in comparable populations and designs before "
             "claiming cross-study disagreement.\n"
         )
+    section = section.rstrip() + "\n\n"
     existing = re.search(r"^## Tensions and Gaps\b.*?(?=^## |\Z)", text, flags=re.M | re.S)
     if existing:
         if existing.group(0).strip() == section.strip():
@@ -4522,7 +4491,9 @@ def _phase_d_tensions_and_gaps_breadth(
     )]
 
 
-def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
+def _manifest_tension_examples(
+    rows: list[dict[str, Any]], *, allow_role_contrasts: bool = False,
+) -> list[str]:
     from agent.outcome_class_remap import outcome_key as canonical_outcome_key
 
     def citation(row: dict[str, Any]) -> str:
@@ -4579,6 +4550,37 @@ def _manifest_tension_examples(rows: list[dict[str, Any]]) -> list[str]:
         "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
         for _, _, _, endpoint, left_direction, right_direction, left, right in selected_pairs
     ]
+    used = {
+        tuple(sorted((citation(left).casefold(), citation(right).casefold())))
+        for *_, left, right in selected_pairs
+    }
+    positive = [
+        row for row in candidates
+        if _normalised_direction(row) == "positive"
+        and _row_directness_label(row) in {"review", "indirect", "adjacent"}
+    ]
+    bounded = [
+        row for row in candidates
+        if _normalised_direction(row) in {"negative", "null", "mixed", "unclear"}
+        and _row_directness_label(row) in {"direct", "indirect", "adjacent"}
+    ]
+    for left, right in (() if not allow_role_contrasts else (
+        (left, right) for left in positive for right in bounded
+    )):
+        pair = tuple(sorted((citation(left).casefold(), citation(right).casefold())))
+        if pair in used or citation(left).casefold() == citation(right).casefold():
+            continue
+        lines.append(
+            f"- {citation(left)} vs {citation(right)}: surfaced cross-source tension in evidence role; "
+            f"{citation(left)} is {_row_directness_label(left)}/{_normalised_direction(left)} in "
+            f"{_evidence_role_outcome_display(left)}, whereas {citation(right)} is "
+            f"{_row_directness_label(right)}/{_normalised_direction(right)} in "
+            f"{_evidence_role_outcome_display(right)}. These are not same-endpoint estimates and are "
+            "not pooled; the contrast identifies a translation gap rather than a head-to-head effect disagreement."
+        )
+        used.add(pair)
+        if len(lines) == 3:
+            break
     return lines
 
 
@@ -4593,7 +4595,7 @@ def _phase_d_source_statistics_landscape(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_source_statistics_landscape(feedback):
         return text, []
     note = _source_statistics_landscape_note(feedback)
@@ -4650,7 +4652,7 @@ def _outcome_class_from_statistic_descriptor(descriptor: str) -> str:
 
 def _phase_d_outcome_label_cleanup(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not (renames := _outcome_label_renames(feedback)):
         return text, []
     patched, n = text, 0
@@ -4726,7 +4728,7 @@ def _phase_d_source_directness_breakdown(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not (
         revision_coverage.asks_source_directness_breakdown(feedback)
         or revision_coverage.asks_evidence_type_metadata(feedback)
@@ -4810,7 +4812,7 @@ def _phase_d_revision_surface_notes(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     lower = " ".join(feedback.lower().split())
     if not lower:
         return text, []
@@ -4864,6 +4866,9 @@ def _phase_d_revision_surface_notes(
         audit_path.write_text(json.dumps(audit, indent=2), encoding="utf-8")
     n += len(identity_details)
     details.extend(identity_details)
+    patched, quality_details = repair_revision_quality(patched, receipts, feedback)
+    n += len(quality_details)
+    details.extend(quality_details)
     wants_design_limit = (
         "limitations" in lower
         and "protocol" in lower
@@ -4890,7 +4895,7 @@ def _phase_d_revision_artifact_cleanup(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     lower = " ".join(feedback.lower().split())
     if not lower:
         return text, []
@@ -4993,7 +4998,7 @@ def _phase_d_forward_dated_ai_disclosure_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not (
         _revision_asks_forward_dated_ai_disclosure(feedback)
         or _revision_asks_publication_year_note(feedback)
@@ -5131,7 +5136,7 @@ def _phase_d_source_verification_transparency(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     wants_verification = _revision_asks_source_verification_transparency(feedback)
     wants_citation_map = _revision_asks_citation_traceability_map(feedback)
     if not (wants_verification or wants_citation_map):
@@ -5181,7 +5186,7 @@ def _phase_d_revision_audit_notes(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     lower_text = text.lower()
     notes = [
         note for note, sentinel in (
@@ -5341,7 +5346,7 @@ def _phase_d_single_source_proportionality(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_single_source_proportionality(feedback):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -5393,7 +5398,7 @@ def _phase_d_actionable_gaps(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_actionable_gaps(feedback) or _actionable_gaps_are_present(text):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
@@ -5462,7 +5467,7 @@ def _phase_d_prior_publication_differentiation(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     if not _revision_asks_prior_publication_differentiation(feedback):
         return text, []
     if "prior-brief differentiation:" in text.lower():
@@ -5788,7 +5793,7 @@ def _phase_f_reconcile_results_table(
     if not receipts:
         return text, []
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = str(request.get("feedback") or "") if isinstance(request, dict) else ""
+    feedback = _revision_feedback(request)
     results_match = re.search(
         r"^## Results\b(.*?)(?=^## (?!#))", text, flags=re.M | re.S,
     )
@@ -6094,40 +6099,12 @@ def _refresh_audit_sidecar(out_dir: Path) -> bool:
 
 
 def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
-    request = _load_sidecar(out_dir / "researka_revision_request.json")
-    paper = out_dir / "full_paper.md"
-    if not isinstance(request, dict) or not paper.is_file():
-        return False
-    feedback = str(request.get("feedback") or "").strip()
-    if not feedback:
-        return False
     try:
-        text = paper.read_text()
-        gate = _load_sidecar(out_dir / "revision_coverage_gate.json")
-        if not isinstance(gate, dict):
-            return False
-        asks = revision_coverage.revision_asks(feedback)
-        if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
-            return False
-        manifest = _load_sidecar(out_dir / "manifest.json")
-        registry = _load_sidecar(out_dir / "citation_registry.json")
-        rows_raw = manifest.get("receipts") if isinstance(manifest, dict) else None
-        rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
-        retained = revision_coverage.retained_citation_labels(
-            manifest if isinstance(manifest, dict) else {}, registry if isinstance(registry, dict) else {},
-        )
-        unmet = revision_coverage.deterministic_unmet_asks(
-            text, asks, retained_citations=retained, evidence_rows=rows,
-            source_identifier_audit=_load_sidecar(out_dir / "source_identifier_verification.json"),
-        )
+        fresh = _revision_gate_report(out_dir, revision_coverage, refreshed_by="journal_finalizer")
     except (OSError, RuntimeError, TypeError, ValueError):
         return False
-    fresh = {
-        "passed": not unmet,
-        "ask_count": len(asks),
-        "unmet_asks": unmet,
-        "refreshed_by": "journal_finalizer",
-    }
+    if fresh is None or not isinstance(_load_sidecar(out_dir / "revision_coverage_gate.json"), dict):
+        return False
     path = out_dir / "revision_coverage_gate.json"
     if _load_sidecar(path) == fresh:
         return False
