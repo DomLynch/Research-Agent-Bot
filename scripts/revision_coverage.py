@@ -1109,8 +1109,7 @@ def _asks_structured_table_stub_replacement(text: str) -> bool:
 
 def outcome_label_rename(text: str) -> tuple[str, str] | None:
     lower = " ".join(text.lower().split())
-    labels = re.findall(r"['\"]([^'\"]{2,80})['\"]", text)
-    if "outcome class" in lower and any(token in lower for token in ("rename", "re-label", "relabel")) and len(labels) >= 2:
+    if "outcome class" in lower and any(token in lower for token in ("rename", "re-label", "relabel")) and len(labels := re.findall(r"['\"]([^'\"]{2,80})['\"]", text)) >= 2:
         return labels[0].strip(), labels[1].strip()
     dosing = any(label in lower for label in ("dosing and pharmacokinetics", "dosing/pharmacokinetics", "dosing pharmacokinetics")) and any(token in lower for token in (
         "re-label", "relabel", "remove", "not contain", "not a dosing", "not dosing", "not pk", "out of", "proxy", "catch-all",
@@ -2557,9 +2556,8 @@ def _structured_table_stubs_are_replaced(paper_md: str) -> bool:
 def _outcome_label_cleanup_is_stated(paper_md: str, ask: str) -> bool:
     if not (rename := outcome_label_rename(ask)):
         return True
-    old, new = re.escape(rename[0]), rename[1]
-    old_label = rf"(?:^#{{2,4}}\s*{old}(?:\s+Outcomes?)?\s*$|\|\s*{old}\s*\||\b(?:outcome(?:\s+class)?|evidence domain)\s*[:=]\s*{old}\b|\b{old}\s+outcome class\b)"
-    return new.lower() in paper_md.lower() and not re.search(old_label, paper_md, flags=re.I | re.M)
+    old_label = rf"(?:^#{{2,4}}\s*{re.escape(rename[0])}(?:\s+Outcomes?)?\s*$|\|\s*{re.escape(rename[0])}\s*\||\b(?:outcome(?:\s+class)?|evidence domain)\s*[:=]\s*{re.escape(rename[0])}\b|\b{re.escape(rename[0])}\s+outcome class\b)"
+    return rename[1].lower() in paper_md.lower() and not re.search(old_label, paper_md, flags=re.I | re.M)
 
 
 def _source_count_bundle_reconciliation_is_stated(paper_md: str) -> bool:

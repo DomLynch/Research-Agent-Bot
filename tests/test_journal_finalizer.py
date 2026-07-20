@@ -3144,6 +3144,35 @@ def test_outcome_label_cleanup_applies_generic_reviewer_rename(tmp_path: Path) -
     assert logs[0].rule == "apply_reviewer_outcome_label_rename"
 
 
+def test_outcome_router_respects_reviewer_renamed_class(tmp_path: Path) -> None:
+    feedback = "Rename the 'Longevity' outcome class to 'Lipoprotein(a) / MACE in CHD'."
+    paper = (
+        "## Results\n\n### Cardiometabolic Outcomes\n\nSmith 2024 reports an effect.\n\n"
+        "### Lipoprotein(a) / MACE in CHD Outcomes\n\nJones 2024 reports an effect.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "r1", "outcome_class": "cardiometabolic"},
+        {"receipt_id": "r2", "outcome_class": "longevity"},
+    ]}))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Smith 2024"},
+        "r2": {"body_citation": "Jones 2024"},
+    }))
+
+    fixed, logs = journal_finalizer._phase_k_route_outcome_paragraphs(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+    report = journal_finalizer._surface_report(fixed, tmp_path)
+    assert report is not None
+    assert not any(issue.code == "outcome_routing" for issue in report.issues)
+    (tmp_path / "researka_revision_request.json").unlink()
+    report = journal_finalizer._surface_report(fixed, tmp_path)
+    assert report is not None
+    assert any(issue.code == "outcome_routing" for issue in report.issues)
+
+
 def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path: Path) -> None:
     from scripts import revision_coverage
 

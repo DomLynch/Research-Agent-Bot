@@ -235,11 +235,11 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
 
 
 def _surface_report(text: str, out_dir: Path) -> Any | None:
-    manifest = _load_sidecar(out_dir / "manifest.json")
-    manifest = manifest if isinstance(manifest, dict) else {}
+    manifest = loaded if isinstance(loaded := _load_sidecar(out_dir / "manifest.json"), dict) else {}
     lanes, registry = _load_sidecar(out_dir / "evidence_lanes.json") or {}, _load_sidecar(out_dir / "citation_registry.json") or {}
     animal = [str(a.get("citation", "")) for a in (lanes.get("animal_citations") or []) if isinstance(a, dict) and a.get("citation")]
-    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
+    feedback = str(request.get("feedback") or "") if isinstance(request := _load_sidecar(out_dir / "researka_revision_request.json") or {}, dict) else ""
+    oc = {r["receipt_id"]: _reviewer_adjusted_outcome_label(_outcome_display(r["outcome_class"]), feedback) for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
     cmap = {e["body_citation"]: oc[rid] for rid, e in (registry.items() if isinstance(registry, dict) else ()) if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     try:
         from agent.journal_surface_gate import evaluate_journal_surface
@@ -1041,6 +1041,7 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
     from agent.journal_surface_gate import _outcome_key
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     registry = _load_sidecar(out_dir / "citation_registry.json") or {}
+    feedback = str((_load_sidecar(out_dir / "researka_revision_request.json") or {}).get("feedback") or "")
     rs = re.search(r"^## Results\b.*?(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not (isinstance(manifest, dict) and isinstance(registry, dict) and rs):
         return text, []
@@ -1062,10 +1063,11 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
             for chunk in chunks:
                 ccls = Counter(cmap[x] for x in _CITE_AY_RE.findall(chunk) if x in cmap)
                 top_cls = ccls.most_common(1)[0][0] if ccls else ""
-                top_key = _outcome_key(top_cls) if top_cls else keys[i]
+                top_label = _reviewer_adjusted_outcome_label(_outcome_display(top_cls), feedback)
+                top_key = _outcome_key(top_label) if top_cls else keys[i]
                 if top_key not in keys and top_cls:
                     keys.append(top_key)
-                    headings.append(f"### {_outcome_display(top_cls)} Outcomes")
+                    headings.append(f"### {top_label} Outcomes")
                     bodies.append([])
                 j = keys.index(top_key) if top_key in keys else i
                 bodies[j].append(chunk)
