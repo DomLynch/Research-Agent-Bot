@@ -5598,6 +5598,17 @@ def main(argv: list[str] | None = None) -> int:
             f"[daily-v3-prepare] status={result['status']} ready={result['ready_count']}/"
             f"{result['target_ready']} attempted={result['attempted_count']}"
         )
+        attempted_count = int(result.get("attempted_count") or 0)
+        ready_topics = {str(row.get("topic") or "") for row in result.get("ready", [])}
+        attempts = result.get("attempts")
+        for attempt in (attempts[-attempted_count:] if isinstance(attempts, list) and attempted_count else []):
+            topic = str(attempt.get("topic") or "unknown")
+            if topic in ready_topics:
+                continue
+            preflight = attempt.get("receipt_preflight")
+            reasons = preflight.get("reasons") if isinstance(preflight, dict) else None
+            reason = " | ".join(str(item) for item in reasons) if isinstance(reasons, list) else ""
+            print(f"[daily-v3-prepare] rejected_topic={topic} reason={reason or 'readiness_checks_failed'}")
         return 0 if result["status"] != "remote_dedupe_failed" else 2
     ledger = run_cycle(
         runs_root=args.runs_root,

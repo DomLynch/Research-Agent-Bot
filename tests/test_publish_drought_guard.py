@@ -29,6 +29,22 @@ def test_evaluate_drought_passes_recent_public_publication() -> None:
     assert status.age_hours == 12
 
 
+def test_evaluate_drought_degrades_recent_publication_when_buffer_is_empty() -> None:
+    status = guard.evaluate_drought(
+        [{"createdAt": "2026-07-09T08:00:00+00:00"}],
+        now=datetime(2026, 7, 9, 20, 0, tzinfo=UTC),
+        max_age_hours=24,
+        triage={"candidate_buffer": {
+            "status": "candidate_buffer_depleted", "ready_count": 0, "target_ready": 3,
+        }},
+    )
+
+    assert status.passed is False
+    assert status.status == "degraded"
+    assert status.reason == "candidate_buffer_depleted"
+    assert status.age_hours == 12
+
+
 def test_evaluate_drought_fails_after_threshold() -> None:
     status = guard.evaluate_drought(
         [{"publishedAt": "2026-07-04T06:16:38Z"}],
@@ -86,6 +102,30 @@ def test_main_reports_drought_without_failing_systemd_by_default(tmp_path: Path)
     payload = json.loads(report.read_text(encoding="utf-8"))
     assert payload["passed"] is False
     assert payload["status"] == "fail"
+
+
+def test_main_reports_empty_buffer_degraded_without_failing_systemd(tmp_path: Path) -> None:
+    feed = tmp_path / "publications.json"
+    report = tmp_path / "report.json"
+    ledger_dir = tmp_path / "runs" / "_daily_research_paper_cycle_ledger"
+    ledger_dir.mkdir(parents=True)
+    feed.write_text(json.dumps({
+        "publications": [{"createdAt": "2026-07-09T08:00:00+00:00"}],
+    }), encoding="utf-8")
+    (ledger_dir / guard.CANDIDATE_BUFFER).write_text(json.dumps({
+        "status": "candidate_buffer_depleted", "ready_count": 0, "target_ready": 3,
+    }), encoding="utf-8")
+
+    code = guard.main([
+        "--input-json", str(feed), "--now", "2026-07-09T20:00:00+00:00",
+        "--runs-root", str(tmp_path / "runs"), "--report-path", str(report),
+    ])
+
+    assert code == 0
+    payload = json.loads(report.read_text(encoding="utf-8"))
+    assert payload["passed"] is False
+    assert payload["status"] == "degraded"
+    assert payload["reason"] == "candidate_buffer_depleted"
 
 
 def test_triage_surfaces_submitted_not_public_ledgers(tmp_path: Path) -> None:

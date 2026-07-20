@@ -84,6 +84,7 @@ def evaluate_drought(
     triage: dict[str, Any] | None = None,
 ) -> DroughtStatus:
     now_utc = now.astimezone(dt.UTC) if now.tzinfo else now.replace(tzinfo=dt.UTC)
+    triage = triage or {}
     latest = latest_publication_at(rows)
     if latest is None:
         return DroughtStatus(
@@ -94,19 +95,30 @@ def evaluate_drought(
             latest_at=None,
             age_hours=None,
             max_age_hours=max_age_hours,
-            triage=triage or {},
+            triage=triage,
         )
     age_hours = (now_utc - latest).total_seconds() / 3600
-    passed = age_hours <= max_age_hours
+    recent_publication = age_hours <= max_age_hours
+    buffer = triage.get("candidate_buffer")
+    buffer = buffer if isinstance(buffer, dict) else {}
+    ready_count = int(buffer.get("ready_count") or 0)
+    target_ready = int(buffer.get("target_ready") or 0)
+    buffer_underfilled = target_ready > 0 and ready_count < target_ready
+    passed = recent_publication and not buffer_underfilled
+    status = "pass" if passed else ("degraded" if recent_publication else "fail")
+    reason = "recent_publication" if passed else (
+        str(buffer.get("status") or "candidate_buffer_underfilled")
+        if recent_publication else "publish_drought"
+    )
     return DroughtStatus(
         passed=passed,
-        status="pass" if passed else "fail",
-        reason="recent_publication" if passed else "publish_drought",
+        status=status,
+        reason=reason,
         total=len(rows),
         latest_at=latest.isoformat(),
         age_hours=round(age_hours, 2),
         max_age_hours=max_age_hours,
-        triage=triage or {},
+        triage=triage,
     )
 
 

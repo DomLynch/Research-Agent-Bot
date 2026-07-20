@@ -1877,7 +1877,13 @@ def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, cap
             "ready_count": 1,
             "target_ready": 3,
             "attempted_count": 1,
-            "attempts": [{"topic": "one"}],
+            "attempts": [{
+                "topic": "one",
+                "receipt_preflight": {
+                    "passed": False,
+                    "reasons": ["n_direct_receipts=2 < 4 (insufficient direct source anchors)"],
+                },
+            }],
         }
 
     monkeypatch.setattr(cycle, "prepare_candidate_buffer", fake_prepare)
@@ -1896,7 +1902,12 @@ def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, cap
         "timeout": 90,
         "dry_run": False,
     }]
-    assert "status=candidate_buffer_partial ready=1/3 attempted=1" in capsys.readouterr().out
+    output = capsys.readouterr().out
+    assert "status=candidate_buffer_partial ready=1/3 attempted=1" in output
+    assert (
+        "rejected_topic=one reason=n_direct_receipts=2 < 4 "
+        "(insufficient direct source anchors)" in output
+    )
 
 
 def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
