@@ -141,9 +141,9 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   identified as `legacy_contract` rather than treated as newly verified.
 - Retryable revise failures carry `RESEARCH_AGENT_REVISION_REPAIR_EPOCH`.
   Increment that epoch only after a material repair-engine upgrade to reopen
-  old retryable requests once; terminal safety decisions never reopen. Epoch 7
-  keeps revision audits on the immutable evidence snapshot and reviewer-authorized
-  outcome renames stable across routing and surface validation. Revision renders preserve
+  old retryable requests once; terminal safety decisions never reopen. Epoch 8
+  scopes reviewer-authorized public outcome renames to the manuscript while
+  preserving raw supplement audit labels. Revision renders preserve
   their corpus strategy instead of inheriting a prior numeric-density downshift.
 
 ## Operational Decision - 2026-07-17
