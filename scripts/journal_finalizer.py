@@ -12,6 +12,7 @@ from typing import Any
 
 from agent import statistical_consistency as _stats
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
+from agent.revision_identity import direction_tally_note, repair_revision_identity
 
 
 def _script_module(name: str) -> Any:
@@ -2664,7 +2665,6 @@ def _phase_d_substantive_evidence_synthesis(
     needs_stratification = revision_coverage.asks_source_stratification_reconciliation(feedback)
     needs_mr_count = revision_coverage.asks_mr_causal_count(feedback)
     needs_effect_reconciliation = revision_coverage.asks_effect_direction_reconciliation(feedback)
-    needs_admission_tally = revision_coverage.asks_admission_direction_tally_reconciliation(feedback)
     needs_scope_bound = revision_coverage.asks_bounded_research_question_conclusion(feedback)
     needs_mr_mechanism = revision_coverage.asks_mr_mechanism_disagreement_separation(feedback)
     needs_no_hard_endpoint = revision_coverage.asks_no_direct_hard_endpoint_statement(feedback)
@@ -2692,9 +2692,6 @@ def _phase_d_substantive_evidence_synthesis(
     )
     if effect_reconciliation:
         effect_reconciliation += "\n\n"
-    admission_tally = _manifest_admission_direction_tally_note(rows) if needs_admission_tally else ""
-    if admission_tally:
-        admission_tally += "\n\n"
     scope_bound = _manifest_scope_bounded_question_note(rows) if needs_scope_bound else ""
     if scope_bound:
         scope_bound += "\n\n"
@@ -2748,7 +2745,6 @@ def _phase_d_substantive_evidence_synthesis(
         f"{stratification_note}"
         f"{mr_count_note}"
         f"{effect_reconciliation}"
-        f"{admission_tally}"
         f"{scope_bound}"
         f"{mr_mechanism}"
         f"{no_hard_endpoint}"
@@ -3366,21 +3362,7 @@ def _p_value_is_non_significant(value: str) -> bool:
 
 
 def _manifest_admission_direction_tally_note(rows: list[dict[str, Any]]) -> str:
-    counts = {"negative": 0, "null": 0, "positive": 0, "unclear": 0}
-    extra: dict[str, int] = {}
-    for row in rows:
-        direction = _normalised_direction(row)
-        if direction in counts:
-            counts[direction] += 1
-        else:
-            extra[direction] = extra.get(direction, 0) + 1
-    extra_text = "".join(f"; {key}={value}" for key, value in sorted(extra.items()))
-    return (
-        "Admission and direction-tally reconciliation: "
-        f"n={len(rows)}; negative={counts['negative']}; null={counts['null']}; "
-        f"positive={counts['positive']}; unclear={counts['unclear']}{extra_text}. "
-        "These counts use admitted manifest receipts, not classified-candidate buckets."
-    )
+    return direction_tally_note(rows)
 
 
 def _manifest_scope_bounded_question_note(rows: list[dict[str, Any]]) -> str:
@@ -4873,6 +4855,15 @@ def _phase_d_revision_surface_notes(
         n += changed
         if changed:
             details.append("direct_source_ceiling")
+    audit_path = out_dir / "source_identifier_verification.json"
+    stored_audit = _load_sidecar(audit_path)
+    patched, identity_details, audit = repair_revision_identity(
+        patched, receipts, feedback, audit=stored_audit,
+    )
+    if audit and audit != stored_audit:
+        audit_path.write_text(json.dumps(audit, indent=2), encoding="utf-8")
+    n += len(identity_details)
+    details.extend(identity_details)
     wants_design_limit = (
         "limitations" in lower
         and "protocol" in lower
@@ -6115,20 +6106,20 @@ def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
         gate = _load_sidecar(out_dir / "revision_coverage_gate.json")
         if not isinstance(gate, dict):
             return False
-        stale_unmet = gate.get("unmet_asks") if isinstance(gate, dict) else None
-        asks = (
-            [str(ask) for ask in stale_unmet if isinstance(ask, str) and ask.strip()]
-            if isinstance(stale_unmet, list) and stale_unmet
-            else revision_coverage.revision_asks(feedback)
-        )
+        asks = revision_coverage.revision_asks(feedback)
         if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
             return False
         manifest = _load_sidecar(out_dir / "manifest.json")
         registry = _load_sidecar(out_dir / "citation_registry.json")
+        rows_raw = manifest.get("receipts") if isinstance(manifest, dict) else None
+        rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
         retained = revision_coverage.retained_citation_labels(
             manifest if isinstance(manifest, dict) else {}, registry if isinstance(registry, dict) else {},
         )
-        unmet = revision_coverage.deterministic_unmet_asks(text, asks, retained_citations=retained)
+        unmet = revision_coverage.deterministic_unmet_asks(
+            text, asks, retained_citations=retained, evidence_rows=rows,
+            source_identifier_audit=_load_sidecar(out_dir / "source_identifier_verification.json"),
+        )
     except (OSError, RuntimeError, TypeError, ValueError):
         return False
     fresh = {

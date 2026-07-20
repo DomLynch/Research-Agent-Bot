@@ -8,6 +8,12 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import revision_coverage  # type: ignore[import-not-found]  # noqa: E402
+from agent.sources.pubmed import pmid_rows_fingerprint  # noqa: E402
+from agent.revision_identity import (  # noqa: E402
+    direction_tally_note,
+    outcome_class_tally_note,
+    repair_revision_identity,
+)
 
 
 def _chat(parsed: dict[str, Any]) -> Any:
@@ -2876,7 +2882,109 @@ def test_latest_telomere_fourth_revise_feedback_splits_and_requires_markers() ->
     ]
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
-    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == [asks[1]]
+
+
+def test_influenza_count_and_pmid_revision_asks_are_deterministic() -> None:
+    feedback = (
+        "Reconcile the internal count discrepancies in the Conclusion and report a single "
+        "authoritative outcome-class tally with explicit numerator definitions.; Resolve PMID "
+        "accuracy for every bundle entry; flag any PMID that cannot be verified and either correct it or remove the source."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    rows = [
+        {"source_pmid": "1", "source_title": "Trial A", "effect_direction": "positive", "outcome_class": "cardiometabolic"},
+        {"source_pmid": "2", "source_title": "Trial B", "effect_direction": "null", "outcome_class": "contextual_other"},
+    ]
+    paper = (
+        "## Methods\n\nPMID verification audit: retained bundle entries=2; declared PMIDs=2; "
+        "verified=2/2; unverifiable=0; entries without PMID=0. Each declared PMID was matched "
+        "to its NCBI PubMed title and every supplied DOI or PMCID.\n\n"
+        f"## Conclusion\n\n{outcome_class_tally_note(rows)}\n"
+    )
+    audit = {"provider": "ncbi_pubmed", "entries": 2, "declared": 2, "verified": 2,
+             "without_pmid": 0, "issues": [], "status": "verified", "passed": True,
+             "input_fingerprint": pmid_rows_fingerprint(rows)}
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(
+        paper, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == []
+    weak_pmid = paper.replace("verified=2/2", "verified=1/2")
+    assert revision_coverage.deterministic_unmet_asks(
+        weak_pmid, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == [asks[1]]
+    forged_pmid = paper.replace("declared PMIDs=2; verified=2/2", "declared PMIDs=1; verified=1/1")
+    assert revision_coverage.deterministic_unmet_asks(
+        forged_pmid, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == [asks[1]]
+    missing_outcome_tally = paper.replace("Authoritative outcome-class tally:", "Unlabelled tally:")
+    assert revision_coverage.deterministic_unmet_asks(
+        missing_outcome_tally, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == [asks[0]]
+    bad_outcome_total = paper.replace("contextual other=1", "contextual other=2")
+    assert revision_coverage.deterministic_unmet_asks(
+        bad_outcome_total, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == [asks[0]]
+    contradictory_tally = paper.replace(
+        "These counts use the admitted manifest row set",
+        "Authoritative outcome-class tally: n=99; wrong=99. "
+        "These counts use the admitted manifest row set",
+    )
+    assert revision_coverage.deterministic_unmet_asks(
+        contradictory_tally, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == [asks[0]]
+    contradictory_pmid = paper.replace(
+        "## Conclusion",
+        "PMID verification audit: declared PMIDs=2; verified=1/2; unverifiable=0.\n\n## Conclusion",
+    )
+    assert revision_coverage.deterministic_unmet_asks(
+        contradictory_pmid, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == [asks[1]]
+
+
+def test_mixed_outcome_and_direction_tally_feedback_repairs_both() -> None:
+    feedback = (
+        "Reconcile the internal count discrepancies and report an authoritative outcome-class tally.; "
+        "Verify admitted sources against the actual receipt-level direction tally."
+    )
+    rows = [
+        {"effect_direction": "positive", "outcome_class": "cardiometabolic"},
+        {"effect_direction": "null", "outcome_class": "contextual_other"},
+    ]
+
+    fixed, details, _audit = repair_revision_identity(
+        "## Conclusion\n\nBounded conclusion.\n", rows, feedback,
+    )
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert "Authoritative outcome-class tally: n=2" in fixed
+    assert "Admission and direction-tally reconciliation: n=2" in fixed
+    assert details == ["authoritative_outcome_tally", "authoritative_direction_tally"]
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks, evidence_rows=rows) == []
+
+
+def test_single_ask_requesting_both_tallies_requires_both() -> None:
+    feedback = (
+        "Reconcile the internal count discrepancies with an authoritative outcome-class tally and "
+        "verify admitted sources against the actual receipt-level direction tally."
+    )
+    rows = [
+        {"effect_direction": "positive", "outcome_class": "cardiometabolic"},
+        {"effect_direction": "null", "outcome_class": "contextual_other"},
+    ]
+    fixed, _details, _audit = repair_revision_identity(
+        "## Conclusion\n\nBounded conclusion.\n", rows, feedback,
+    )
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert len(asks) == 1
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks, evidence_rows=rows) == []
+    direction_missing = fixed.replace(direction_tally_note(rows), "")
+    assert revision_coverage.deterministic_unmet_asks(
+        direction_missing, asks, evidence_rows=rows,
+    ) == asks
 
 
 def test_influenza_revision_surface_repairs_are_verified_deterministically() -> None:

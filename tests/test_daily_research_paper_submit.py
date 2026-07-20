@@ -2615,6 +2615,23 @@ def test_missing_revision_coverage_gate_is_refreshed_before_selection(
     assert gate["refreshed_by"] == "daily_submit"
 
 
+def test_passed_partial_revision_gate_is_fully_revalidated(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    feedback = (
+        "Reconcile internal count discrepancies and report an authoritative outcome-class tally.; "
+        "Resolve PMID accuracy for every bundle entry."
+    )
+    request = {"feedback": feedback}
+    _write_json(run / "researka_revision_request.json", request)
+    _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True, "unmet_asks": [feedback.split(";")[0]]})
+
+    assert daily._refresh_revision_coverage_gate(run, request) is True
+    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
+    assert gate["passed"] is False
+    assert gate["ask_count"] == 2
+    assert gate["unmet_asks"]
+
+
 def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -2639,7 +2656,7 @@ def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
     assert called["refresh"] is True
 
 
-def test_stale_unmet_revision_gate_refreshes_only_prior_unmet_asks(tmp_path: Path) -> None:
+def test_stale_unmet_revision_gate_rechecks_all_asks(tmp_path: Path) -> None:
     run = _run(tmp_path)
     ask = (
         "Reclassify or re-label the 'immune and inflammation positive signal' as a "
@@ -2659,7 +2676,7 @@ def test_stale_unmet_revision_gate_refreshes_only_prior_unmet_asks(tmp_path: Pat
         encoding="utf-8",
     )
     _write_json(run / "researka_revision_request.json", {
-        "feedback": f"{ask}; Verify and align author-year prose citations against bundle entries.",
+        "feedback": f"{ask}; Define the classification criteria used to assign studies to outcome classes and to code directness.",
     })
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
 
@@ -2670,12 +2687,11 @@ def test_stale_unmet_revision_gate_refreshes_only_prior_unmet_asks(tmp_path: Pat
         purpose="revision",
     )
 
-    assert selected == run
-    assert considered[0]["status"] == "eligible"
+    assert selected is None
+    assert considered[0]["status"] == "revision_coverage_unmet"
     gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
-    assert gate["passed"] is True
-    assert gate["unmet_asks"] == []
-    assert gate["ask_count"] == 1
+    assert gate["passed"] is False
+    assert gate["ask_count"] == 2
 
 
 def test_unmet_refreshed_revision_coverage_still_blocks_selection(

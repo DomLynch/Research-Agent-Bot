@@ -740,9 +740,6 @@ def _revision_coverage_status(run: Path) -> str:
 
 
 def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
-    gate = _read_json(run / REVISION_COVERAGE_GATE)
-    if gate.get("passed") is True:
-        return False
     paper = run / "full_paper.md"
     feedback = str(request.get("feedback") or "")
     if not feedback or not paper.is_file():
@@ -750,18 +747,17 @@ def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
     try:
         import revision_coverage
         text = paper.read_text(encoding="utf-8")
-        stale_unmet = gate.get("unmet_asks")
-        asks = (
-            [str(ask) for ask in stale_unmet if isinstance(ask, str) and ask.strip()]
-            if isinstance(stale_unmet, list)
-            else revision_coverage.revision_asks(feedback)
-        )
+        asks = revision_coverage.revision_asks(feedback)
         if not asks or len(revision_coverage.deterministic_known_asks(asks)) != len(asks):
             return False
+        manifest = _read_json(run / "manifest.json")
+        rows_raw = manifest.get("receipts")
+        rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
         unmet = revision_coverage.deterministic_unmet_asks(
             text, asks, retained_citations=revision_coverage.retained_citation_labels(
-                _read_json(run / "manifest.json"), _read_json(run / "citation_registry.json"),
-            ),
+                manifest, _read_json(run / "citation_registry.json"),
+            ), evidence_rows=rows,
+            source_identifier_audit=_read_json(run / "source_identifier_verification.json"),
         )
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False

@@ -2,11 +2,13 @@ from __future__ import annotations
 
 import json
 import importlib
+import time
 from pathlib import Path
 from typing import Any
 
 from agent import journal_finalizer
 from agent.journal_surface_gate import evaluate_journal_surface
+from agent.sources.pubmed import pmid_rows_fingerprint
 
 
 def test_domain_frame_template_cleanup_removes_submit_blocked_aging_phrases() -> None:
@@ -5480,7 +5482,9 @@ def test_fourth_telomere_revise_asks_repaired_generically(tmp_path: Path) -> Non
     assert "No direct interventional hard-endpoint sources were admitted" in fixed
     assert "Publication-status/preprint note:" in fixed
     assert "Brown 2026" in fixed and "preprint" in fixed.lower()
-    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows,
+    ) == []
 
 
 def test_revise_feedback_repairs_denominators_tensions_and_findings_map(tmp_path: Path) -> None:
@@ -5658,3 +5662,83 @@ def test_revision_surface_moves_named_tensions_and_reconciles_mechanistic_framin
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
     assert logs and "tension_section_placement" in logs[0].detail
     assert "mechanistic_content_framing" in logs[0].detail
+
+
+def test_influenza_revision_adds_verified_pmid_and_authoritative_tally_notes(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    feedback = (
+        "Reconcile the internal count discrepancies in the Conclusion and report a single "
+        "authoritative outcome-class tally with explicit numerator definitions.; Resolve PMID "
+        "accuracy for every bundle entry; flag any PMID that cannot be verified and either correct it or remove the source."
+    )
+    rows = [
+        {"receipt_id": "PMC1_a", "source_pmid": "12345678", "source_title": "Trial A",
+         "source_doi": "10.1000/a", "effect_direction": "positive",
+         "outcome_class": "cardiometabolic"},
+        {"receipt_id": "PMC2_b", "source_pmid": "23456789", "source_title": "Trial B",
+         "source_doi": "10.1000/b", "effect_direction": "null",
+         "outcome_class": "contextual_other"},
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    monkeypatch.setattr("agent.revision_identity.verify_pmid_rows", lambda _rows: {
+        "provider": "ncbi_pubmed", "entries": 2, "declared": 2, "verified": 2,
+        "without_pmid": 0, "issues": [], "status": "verified", "passed": True,
+        "input_fingerprint": pmid_rows_fingerprint(_rows), "checked_at": time.time(),
+    })
+    paper = (
+        "## Methods\n\nSource methods.\n\n## Key Findings\n\nPrior synthesis.\n\n"
+        "## Conclusion\n\nEffect directions are positive (n=1) and null (n=1).\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_revision_surface_notes(paper, tmp_path)
+    asks = journal_finalizer.revision_coverage.revision_asks(feedback)
+
+    assert "verified=2/2; unverifiable=0" in journal_finalizer._section_body(fixed, "Methods")
+    conclusion = journal_finalizer._section_body(fixed, "Conclusion")
+    assert "Admission and direction-tally reconciliation:" not in conclusion
+    assert "Authoritative outcome-class tally: n=2" in conclusion
+    assert "cardiometabolic=1; contextual other=1" in conclusion
+    assert "numerator for each category in this tally" in conclusion
+    assert "effect_direction" not in fixed
+    audit = json.loads((tmp_path / "source_identifier_verification.json").read_text())
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows, source_identifier_audit=audit,
+    ) == []
+    assert logs and "pmid_identity_verification" in logs[0].detail
+
+
+def test_pmid_revision_retries_a_transient_provider_failure(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    feedback = "Resolve PMID accuracy for every bundle entry; flag any PMID that cannot be verified."
+    rows = [{"receipt_id": "PMC1_a", "source_pmid": "12345678", "source_title": "Trial A"}]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    audit_path = tmp_path / "source_identifier_verification.json"
+    audit_path.write_text(json.dumps({
+        "provider": "ncbi_pubmed", "entries": 1, "declared": 1, "verified": 0,
+        "passed": False, "status": "provider_unavailable",
+    }))
+    calls = 0
+
+    def verify(_rows: list[dict[str, Any]]) -> dict[str, Any]:
+        nonlocal calls
+        calls += 1
+        return {
+            "provider": "ncbi_pubmed", "entries": 1, "declared": 1, "verified": 1,
+            "without_pmid": 0, "issues": [], "status": "verified", "passed": True,
+            "input_fingerprint": pmid_rows_fingerprint(_rows), "checked_at": time.time(),
+        }
+
+    monkeypatch.setattr("agent.revision_identity.verify_pmid_rows", verify)
+
+    fixed, _logs = journal_finalizer._phase_d_revision_surface_notes(
+        "## Methods\n\nSource methods.\n\n## Conclusion\n\nBounded conclusion.\n", tmp_path,
+    )
+    journal_finalizer._phase_d_revision_surface_notes(fixed, tmp_path)
+
+    assert "verified=1/1; unverifiable=0" in fixed
+    assert json.loads(audit_path.read_text())["status"] == "verified"
+    assert calls == 1

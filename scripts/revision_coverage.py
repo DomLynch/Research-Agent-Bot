@@ -7,6 +7,7 @@ from collections.abc import Awaitable, Callable, Iterable, Sequence
 from typing import Any
 
 from agent.llm_client import LLMError, LLMResponse, build_judge_chain, chat_json
+from agent import revision_identity as _revision
 from agent.settings import load_settings
 from agent.statistical_consistency import has_adjusted_significance_threshold
 
@@ -113,10 +114,15 @@ def unmet_asks(
 
 def material_unmet_asks(
     paper_md: str, feedback: str, *, retained_citations: Iterable[str] | None = None,
+    evidence_rows: list[dict[str, Any]] | None = None,
+    source_identifier_audit: dict[str, Any] | None = None,
 ) -> list[str]:
     """Coverage result after deterministic structural checks and LLM judge."""
     asks = revision_asks(feedback)
-    unmet = deterministic_unmet_asks(paper_md, asks, retained_citations=retained_citations)
+    unmet = deterministic_unmet_asks(
+        paper_md, asks, retained_citations=retained_citations,
+        evidence_rows=evidence_rows, source_identifier_audit=source_identifier_audit,
+    )
     deterministic_met = set(deterministic_known_asks(asks)) - set(unmet)
     for ask in unmet_asks(paper_md, asks):
         if ask not in unmet and ask not in deterministic_met:
@@ -126,6 +132,8 @@ def material_unmet_asks(
 
 def deterministic_unmet_asks(
     paper_md: str, asks: Sequence[str], *, retained_citations: Iterable[str] | None = None,
+    evidence_rows: list[dict[str, Any]] | None = None,
+    source_identifier_audit: dict[str, Any] | None = None,
 ) -> list[str]:
     """Reviewer asks with deterministic manuscript evidence.
 
@@ -135,6 +143,9 @@ def deterministic_unmet_asks(
     """
     return [ask for ask in (a.strip() for a in asks if a and a.strip())
             if not _deterministic_ask_satisfied(paper_md, ask)
+            or not _revision.revision_identity_proof_is_stated(
+                paper_md, ask, evidence_rows, source_identifier_audit,
+            )
             or retained_citations is not None
             and not _retained_tension_ask_satisfied(paper_md, ask, retained_citations)]
 
@@ -1049,7 +1060,7 @@ def _asks_reference_traceability(text: str) -> bool:
     return (
         "reference list" in text
         and any(token in text for token in ("doi", "pmid", "bibliographic identifier", "source bundle", "traceable"))
-    ) or "traceable to the source bundle" in text
+    ) or "traceable to the source bundle" in text or _revision.asks_pmid_accuracy(text)
 
 
 def _asks_citation_traceability_map(text: str) -> bool:
@@ -1858,11 +1869,7 @@ def _asks_effect_direction_reconciliation(text: str) -> bool:
 
 
 def _asks_admission_direction_tally_reconciliation(text: str) -> bool:
-    return (
-        any(token in text for token in ("admission count", "admission counts", "admitted count", "admitted sources"))
-        and any(token in text for token in ("receipt-level direction", "receipt level direction", "direction tally", "direction tallies"))
-        and any(token in text for token in ("reconcile", "verify", "against", "actual"))
-    )
+    return _revision.asks_authoritative_tally(text)
 
 
 def _asks_bounded_research_question_conclusion(text: str) -> bool:
@@ -2012,20 +2019,8 @@ def _effect_direction_reconciliation_is_stated(paper_md: str, ask: str) -> bool:
     )
 
 
-def _admission_direction_tally_reconciliation_is_stated(paper_md: str) -> bool:
-    scope = "\n\n".join(part for part in (
-        _section(paper_md, "Evidence Landscape"),
-        _section(paper_md, "Key Findings"),
-        _section(paper_md, "Results"),
-    ) if part).lower()
-    return bool(
-        "admission and direction-tally reconciliation:" in scope
-        and re.search(r"\bn\s*=\s*\d+\b", scope)
-        and "negative=" in scope
-        and "null=" in scope
-        and "positive=" in scope
-        and "unclear=" in scope
-    )
+def _admission_direction_tally_reconciliation_is_stated(paper_md: str, ask: str = "") -> bool:
+    return _revision.tally_note_is_stated(paper_md, require_outcomes=_revision.asks_outcome_class_tally(ask))
 
 
 def _bounded_research_question_conclusion_is_stated(paper_md: str) -> bool:
@@ -2520,7 +2515,9 @@ def _funnel_counts(paper_md: str) -> dict[str, int]:
     return rows
 
 
-def _references_are_traceable(paper_md: str) -> bool:
+def _references_are_traceable(paper_md: str, ask: str = "") -> bool:
+    if _revision.asks_pmid_accuracy(ask):
+        return _revision.pmid_verification_is_stated(paper_md)
     refs = _section(paper_md, "References")
     if not refs:
         return False
@@ -3016,7 +3013,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_source_stratification_reconciliation, _paper_only(_source_stratification_reconciliation_is_stated)),
     (_asks_mr_causal_count, _paper_ask(_mr_causal_count_is_stated)),
     (_asks_effect_direction_reconciliation, _paper_ask(_effect_direction_reconciliation_is_stated)),
-    (_asks_admission_direction_tally_reconciliation, _paper_only(_admission_direction_tally_reconciliation_is_stated)),
+    (_asks_admission_direction_tally_reconciliation, _paper_ask(_admission_direction_tally_reconciliation_is_stated)),
     (_asks_bounded_research_question_conclusion, _paper_only(_bounded_research_question_conclusion_is_stated)),
     (_asks_mr_mechanism_disagreement_separation, _paper_only(_mr_mechanism_disagreement_separation_is_stated)),
     (_asks_no_direct_hard_endpoint_statement, _paper_only(_no_direct_hard_endpoint_statement_is_stated)),
@@ -3066,7 +3063,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_outcome_subsection_source_narrative, _paper_only(_outcome_subsection_source_narrative_is_stated)),
     (_asks_protocol_design_limitations, _paper_only(_protocol_design_limitations_are_stated)),
     (_asks_external_reference_boundary, _paper_lower(_external_references_are_marked_illustrative)),
-    (_asks_reference_traceability, _paper_only(_references_are_traceable)),
+    (_asks_reference_traceability, _paper_ask(_references_are_traceable)),
     (_asks_prior_publication_differentiation, _paper_only(_prior_publication_differentiation_is_stated)),
     (_asks_numeric_correction_markup_cleanup, _paper_only(_numeric_correction_markup_is_resolved)),
     (_asks_numeric_effect_audit, _numeric_effect_audit_satisfied),
