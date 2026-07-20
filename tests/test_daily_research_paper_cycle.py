@@ -6532,7 +6532,7 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
 
 
 def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
-    assert cycle.REVISION_REPAIR_EPOCH == 6
+    assert cycle.REVISION_REPAIR_EPOCH == 7
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     title = "Research Synthesis: Statin — full paper"
