@@ -38,6 +38,12 @@ def test_is_randomized_trial_excludes_meta_analyses_and_non_trials() -> None:
         {"title": "Intermittent fasting: a systematic review and meta-analysis "
                   "of randomized controlled trials"}
     ) is False
+    assert v06._is_randomized_trial(
+        {"title": "A meta‐analysis of randomized controlled trials"}
+    ) is False
+    assert v06._is_randomized_trial(
+        {"title": "A randomized controlled trial: study protocol"}
+    ) is False
     assert v06._is_randomized_trial({"title": "A prospective cohort study of fasting"}) is False
     assert v06._is_randomized_trial({"title": "Mechanisms of ketone bodies in mice"}) is False
 

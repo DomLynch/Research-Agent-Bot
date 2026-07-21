@@ -54,6 +54,7 @@ from agent.corpus_pipeline import (  # noqa: E402
     classify_and_filter, extraction_pools_for_pack, format_funnel_md,
     topic_aliases_for_classification,
 )
+from evidence_taxonomy import is_primary_randomized_study  # noqa: E402
 import v3_optional_adapters as _optional_adapters  # noqa: E402
 from source_topic_specificity import is_source_topic_specific, source_gate_aliases  # noqa: E402
 
@@ -139,10 +140,11 @@ def _hit_specific_to_topic(topic: str, pack: TopicPack, hit) -> bool:
     return is_source_topic_specific(topic, text, aliases=source_gate_aliases(topic, pack.aliases))
 
 
-def _extraction_entry_rank(entry: Any) -> tuple[int, int, int, int, str]:
+def _extraction_entry_rank(entry: Any) -> tuple[int, int, int, int, int, str]:
     pool_rank = {"core": 0, "adjacent": 1, "background": 2}.get(entry.pool, 3)
     hit = entry.hit
     return (
+        0 if is_primary_randomized_study(str(hit.title or ""), str(getattr(hit, "abstract", "") or "")) else 1,
         pool_rank,
         -int(entry.classification.score),
         -int(hit.n_sources or 0),

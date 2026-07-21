@@ -3889,6 +3889,7 @@ def prepare_candidate_buffer(
     runs_root: Path = RUNS,
     target_ready: int = 3,
     max_repairs: int = 3,
+    max_attempts: int | None = None,
     timeout: int | None = None,
     dry_run: bool = False,
     remote_loader: Callable[[], tuple[set[str], str | None]] | None = None,
@@ -3896,14 +3897,15 @@ def prepare_candidate_buffer(
     """Build a short-lived reserve of receipt-validated fresh topics."""
     target_ready = max(1, target_ready)
     max_repairs = max(0, max_repairs)
+    max_attempts = max(target_ready, max_repairs) if max_attempts is None else max(1, max_attempts)
     ledger_dir = runs_root / LEDGER_DIR
     now = dt.datetime.now(dt.UTC)
     topics = discover_topics()
     remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
     report: dict[str, Any] = {
         "generated_at": now.isoformat(), "target_ready": target_ready,
-        "max_repairs": max_repairs, "thresholds": _candidate_buffer_thresholds(),
-        "ready": [], "attempts": [], "attempted_count": 0,
+        "max_repairs": max_repairs, "max_attempts": max_attempts, "thresholds": _candidate_buffer_thresholds(),
+        "ready": [], "attempts": [], "attempted_count": 0, "repair_count": 0,
     }
     if remote_error:
         report.update({"status": "remote_dedupe_failed", "error": remote_error, "ready_count": 0})
@@ -3931,7 +3933,7 @@ def prepare_candidate_buffer(
     report["attempts"] = _recent_candidate_buffer_attempts(previous, now=now)
     recent_attempted = {str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")}
     attempted = terminal | still_prepared | (recent_attempted - (prepared - still_prepared))
-    while len(report["ready"]) < target_ready and report["attempted_count"] < max_repairs:
+    while len(report["ready"]) < target_ready and report["attempted_count"] < max_attempts:
         topic = select_topic(
             topics,
             ledger_dir,
@@ -3945,15 +3947,25 @@ def prepare_candidate_buffer(
         if not topic:
             break
         attempted.add(topic)
-        if _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)[0]:
-            repair = _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
-        else:
-            repair = _repair_low_source_precision_corpus(topic, dry_run=dry_run, timeout=timeout)
         preflight = _receipt_preflight(
             topic, runs_root / "_candidate_prepare" / topic, timeout=timeout, repair=False, dry_run=dry_run,
         )
         quant_claims = _quant_claim_count(topic)
         source_precise, source_precision, _ = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+        ready = quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS and preflight.get("passed") and source_precise
+        repair: dict[str, Any] = {"status": "not_needed"}
+        if not ready and report["repair_count"] < max_repairs:
+            if source_precise:
+                repair = _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
+            else:
+                repair = _repair_low_source_precision_corpus(topic, dry_run=dry_run, timeout=timeout)
+            report["repair_count"] += 1
+            preflight = _receipt_preflight(topic, runs_root / "_candidate_prepare" / topic, timeout=timeout, repair=False, dry_run=dry_run)
+            quant_claims = _quant_claim_count(topic)
+            source_precise, source_precision, _ = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+            ready = quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS and preflight.get("passed") and source_precise
+        elif not ready:
+            repair = {"status": "repair_budget_exhausted"}
         row = {
             "topic": topic, "attempted_at": now.isoformat(),
             "quant_claims": quant_claims, "repair_status": repair.get("status"),
@@ -3961,7 +3973,7 @@ def prepare_candidate_buffer(
         }
         report["attempts"].append(row)
         report["attempted_count"] += 1
-        if quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS and preflight.get("passed") and source_precise:
+        if ready:
             report["ready"].append({
                 "topic": topic, "validated_at": now.isoformat(),
                 "n_quant_claims": quant_claims, "n_receipts": int(preflight.get("n_receipts") or 0),
@@ -5591,6 +5603,7 @@ def main(argv: list[str] | None = None) -> int:
             runs_root=args.runs_root,
             target_ready=args.prepare_target,
             max_repairs=args.prepare_max_repairs,
+            max_attempts=args.max_attempts or None,
             timeout=args.timeout_sec or None,
             dry_run=args.synthesis_dry_run,
         )

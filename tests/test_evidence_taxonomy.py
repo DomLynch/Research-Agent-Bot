@@ -130,7 +130,7 @@ def test_classification_is_frozen() -> None:
         study_design="RCT", species="human", endpoint_kind="clinical",
     )
     with pytest.raises(Exception):  # FrozenInstanceError
-        cls.tier = "X"
+        setattr(cls, "tier", "X")
 
 
 # ----- infer_from_paper_meta best-effort extraction --------------------
@@ -281,6 +281,28 @@ def test_meta_analysis_of_rcts_classifies_as_b1_not_a1() -> None:
     }
     cls = et.infer_from_paper_meta(meta)
     assert cls.tier == "B1"
+
+
+def test_primary_randomized_study_detector_rejects_reviews_and_protocols() -> None:
+    assert et.is_primary_randomized_study(
+        "A randomized controlled trial of metformin in older adults",
+    )
+    assert not et.is_primary_randomized_study(
+        "A systematic review and meta‐analysis of randomized controlled trials",
+    )
+    assert not et.is_primary_randomized_study(
+        "A randomized controlled trial of metformin: study protocol",
+    )
+    assert not et.is_primary_randomized_study(
+        "Protocol of a randomized controlled trial of metformin",
+    )
+    assert not et.is_primary_randomized_study(
+        "Meta‐analyses of randomized controlled trials",
+    )
+    assert et.is_primary_randomized_study(
+        "A randomized controlled trial of metformin",
+        "A prior systematic review motivated this study.",
+    )
 
 
 def test_design_string_with_rct_substring_classifies_correctly() -> None:

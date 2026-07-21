@@ -348,7 +348,7 @@ def classify_evidence(
 # protocol" in its abstract must NOT be downgraded.
 _TITLE_PROTOCOL_RE = re.compile(
     r"\b(study protocol|trial protocol|research protocol|"
-    r"protocol for (?:a|an|the)|rationale and design|"
+    r"protocol (?:for|of)(?: (?:a|an|the))?|rationale and design|"
     r"design and rationale|statistical analysis plan)\b",
     re.IGNORECASE,
 )
@@ -365,9 +365,9 @@ _TITLE_OBSERVATIONAL_RE = re.compile(
 # "RCT methodology review", "Cohort design review", etc. Only multi-
 # word strong-review patterns count.
 _TITLE_REVIEW_RE = re.compile(
-    r"\b(systematic review|meta[\-\s]?analysis|narrative review|"
+    r"\b(systematic review|meta[\-\s]?analys(?:is|es)|narrative review|"
     r"scoping review|critical review|umbrella review|"
-    r"literature review)\b",
+    r"literature review|pooled analysis|review of)\b",
     re.IGNORECASE,
 )
 _TITLE_PRECLINICAL_RE = re.compile(
@@ -401,6 +401,24 @@ _TITLE_MECHANISTIC_RE = re.compile(
     r"protein|gene)\b",
     re.IGNORECASE,
 )
+_UNICODE_DASH_RE = re.compile(r"[\u00ad\u2010-\u2015\u2212]")
+
+
+def _normalize_study_text(value: object) -> str:
+    return _UNICODE_DASH_RE.sub("-", str(value or ""))
+
+
+def is_primary_randomized_study(title: str, abstract: str = "", *, study_design: str = "") -> bool:
+    title, abstract, study_design = map(_normalize_study_text, (title, abstract, study_design))
+    identity_text = f"{title} {study_design}"
+    return bool(
+        not _TITLE_PROTOCOL_RE.search(identity_text)
+        and not _TITLE_REVIEW_RE.search(identity_text)
+        and (
+            _TITLE_RCT_RE.search(identity_text)
+            or (_TITLE_RCT_RE.search(abstract) and not _TITLE_REVIEW_RE.search(abstract))
+        )
+    )
 
 
 def infer_from_paper_meta(paper_meta: dict) -> EvidenceClassification:
@@ -411,8 +429,8 @@ def infer_from_paper_meta(paper_meta: dict) -> EvidenceClassification:
     Order: protocol FIRST (a registered protocol has no results — never
     A1), then review ('Systematic review of RCTs' is B1, not A1), then
     RCT, observational, preclinical."""
-    title = paper_meta.get("title") or ""
-    abstract = paper_meta.get("abstract") or ""
+    title = _normalize_study_text(paper_meta.get("title"))
+    abstract = _normalize_study_text(paper_meta.get("abstract"))
     haystack = f"{title} {abstract}"
 
     # Protocol detection on TITLE ONLY for precision — a results paper

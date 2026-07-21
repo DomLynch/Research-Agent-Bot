@@ -1832,23 +1832,8 @@ def _title_guarded_effect_direction(
     return current
 
 
-_RCT_RE = re.compile(
-    r"\brandomi[sz]ed\b.{0,24}\btrials?\b"     # randomized [controlled/clinical] trial
-    r"|\brandomi[sz]ed[\s,\-]+controlled\b"    # randomized controlled (study/…)
-    r"|\bRCTs?\b",
-    re.IGNORECASE,
-)
-_REVIEW_RE = re.compile(
-    r"\b(?:systematic\s+review|meta[\s\-]?analys[ei]s|scoping\s+review"
-    r"|narrative\s+review|umbrella\s+review|pooled\s+analysis|review\s+of)\b",
-    re.IGNORECASE,
-)
-
-
 def _is_randomized_trial(paper_meta: dict) -> bool:
-    """Detect primary randomized trials while excluding review articles."""
-    text = f"{paper_meta.get('title') or ''} {paper_meta.get('study_design') or ''}"
-    return bool(_RCT_RE.search(text)) and not _REVIEW_RE.search(text)
+    return _taxonomy.is_primary_randomized_study(str(paper_meta.get("title") or ""), study_design=str(paper_meta.get("study_design") or ""))
 
 
 def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tuple[str, str]:

@@ -1732,6 +1732,55 @@ def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, mon
     assert persisted["thresholds"] == cycle._candidate_buffer_thresholds()
 
 
+def test_prepare_candidate_buffer_scans_past_repair_budget(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    topics = ["aaa_thin", "bbb_thin", "ccc_thin", "ddd_ready"]
+    repairs: list[str] = []
+
+    monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
+    monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda *_a, **_k: topics)
+    monkeypatch.setattr(
+        cycle,
+        "select_topic",
+        lambda _topics, _ledger, **kwargs: next(
+            (topic for topic in topics if topic not in (kwargs.get("exclude") or set())),
+            None,
+        ),
+    )
+    monkeypatch.setattr(
+        cycle,
+        "_repair_topic_corpus",
+        lambda topic, **_kwargs: repairs.append(topic) or {"status": "corpus_repaired"},
+    )
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "ok", []))
+    monkeypatch.setattr(
+        cycle,
+        "_receipt_preflight",
+        lambda topic, *_a, **_k: {
+            "passed": topic == "ddd_ready",
+            "n_receipts": 20,
+            "n_primary_tier": 5,
+            "n_direct_receipts": 5 if topic == "ddd_ready" else 2,
+        },
+    )
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=tmp_path / "runs",
+        target_ready=1,
+        max_repairs=2,
+        max_attempts=4,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert repairs == ["aaa_thin", "bbb_thin"]
+    assert report["attempted_count"] == 4
+    assert report["repair_count"] == 2
+    assert [row["topic"] for row in report["ready"]] == ["ddd_ready"]
+
+
 def test_prepare_candidate_buffer_repairs_source_precision_before_ready(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -1832,7 +1881,7 @@ def test_prepare_candidate_buffer_rotates_recent_failures(tmp_path: Path, monkey
         remote_loader=lambda: (set(), None),
     )
 
-    assert repaired == ["bbb_next_candidate"]
+    assert repaired == []
     assert report["attempted_count"] == 1
     assert [row["topic"] for row in report["ready"]] == ["bbb_next_candidate"]
     assert {row["topic"] for row in report["attempts"]} == set(topics)
@@ -1893,12 +1942,14 @@ def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, cap
         "--runs-root", str(tmp_path / "runs"),
         "--prepare-target", "3",
         "--prepare-max-repairs", "2",
+        "--max-attempts", "8",
         "--timeout-sec", "90",
     ]) == 0
     assert calls == [{
         "runs_root": tmp_path / "runs",
         "target_ready": 3,
         "max_repairs": 2,
+        "max_attempts": 8,
         "timeout": 90,
         "dry_run": False,
     }]
@@ -1914,7 +1965,10 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
     service = (REPO / "deploy" / "research-agent-paper-prepare.service").read_text(encoding="utf-8")
     timer = (REPO / "deploy" / "research-agent-paper-prepare.timer").read_text(encoding="utf-8")
 
-    assert "--prepare-only --prepare-target 3 --prepare-max-repairs 3" in service
+    assert (
+        "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
+        "--max-attempts 12" in service
+    )
     assert "TimeoutStartSec=5400" in service
     assert "OnCalendar=*-*-* 06/8:00:00" in timer
 

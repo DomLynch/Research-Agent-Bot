@@ -138,7 +138,9 @@ def test_extraction_rank_prioritizes_core_clinical_evidence() -> None:
         return SimpleNamespace(
             pool=pool,
             classification=SimpleNamespace(score=score),
-            hit=SimpleNamespace(n_sources=sources, year=year, title=title),
+            hit=SimpleNamespace(
+                n_sources=sources, year=year, title=title, abstract="",
+            ),
         )
 
     rows = [
@@ -150,6 +152,29 @@ def test_extraction_rank_prioritizes_core_clinical_evidence() -> None:
     assert [row.pool for row in sorted(rows, key=seed._extraction_entry_rank)] == [
         "core", "adjacent", "background",
     ]
+
+
+def test_extraction_rank_prioritizes_primary_trials_over_reviews() -> None:
+    def entry(title: str, score: int, sources: int) -> Any:
+        return SimpleNamespace(
+            pool="core",
+            classification=SimpleNamespace(score=score),
+            hit=SimpleNamespace(
+                n_sources=sources,
+                year=2026,
+                title=title,
+                abstract="",
+            ),
+        )
+
+    review = entry(
+        "Systematic review and meta‐analysis of randomized controlled trials",
+        99,
+        20,
+    )
+    trial = entry("A randomized controlled trial in older adults", 60, 1)
+
+    assert sorted([review, trial], key=seed._extraction_entry_rank)[0] is trial
 
 
 def test_docling_fallback_can_replace_abstract_fallback(tmp_path, monkeypatch):
