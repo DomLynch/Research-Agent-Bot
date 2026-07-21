@@ -4559,9 +4559,11 @@ def run_cycle(
                     ledger["status"] = "no_revise_pending"
                 break
             dynamic_preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
+            dynamic_preflight_blocked -= prepared_candidates
             source_precision_selectable = source_precision_repaired_ok or source_precision_repaired_checkable
             dynamic_preflight_blocked -= corpus_repaired_ok | source_precision_selectable
             dynamic_receipt_preflight_blocked = set() if topic else _recent_receipt_preflight_blocked_topics(ledger_dir)
+            dynamic_receipt_preflight_blocked -= prepared_candidates
             dynamic_receipt_preflight_blocked -= corpus_repaired_ok | source_precision_selectable
             if dynamic_preflight_blocked != preflight_blocked:
                 preflight_blocked = dynamic_preflight_blocked

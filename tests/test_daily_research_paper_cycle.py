@@ -10451,15 +10451,19 @@ def test_cycle_skips_receipt_preflight_repair_when_clean_topic_ready(tmp_path: P
     assert ledger["status"] == "submitted_to_researka"
 
 
-def test_cycle_retries_prepared_candidate_past_stale_source_bundle_block(
-    tmp_path: Path, monkeypatch,
+@pytest.mark.parametrize("gate_status", [
+    "source_bundle_unmapped_sources:outcome=0,citation=8",
+    "receipt_preflight_insufficient",
+])
+def test_cycle_retries_prepared_candidate_past_stale_block(
+    tmp_path: Path, monkeypatch, gate_status: str,
 ) -> None:
     topic = "statins"
     _topic(tmp_path, topic, target_journal=True)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     cycle._record_blockers(ledger_dir, "2026-07-15", [{
         "topic": topic,
-        "gate_status": "source_bundle_unmapped_sources:outcome=0,citation=8",
+        "gate_status": gate_status,
         "submitted": 0,
     }])
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
