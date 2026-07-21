@@ -1337,6 +1337,30 @@ def test_derive_lane_animal_overrides_tier() -> None:
     ) == "animal_preclinical"
 
 
+def test_derive_lane_human_rct_ignores_preclinical_background_excerpt() -> None:
+    """A human protocol does not become animal evidence because its background cites mice."""
+    from agent.evidence_lanes import derive_lane
+
+    assert derive_lane(
+        evidence_tier="A1",
+        directness="direct",
+        title="Randomized placebo-controlled trial in older adults",
+        population="older adults",
+        source_excerpt="Mouse studies motivated this human trial.",
+    ) == "human_rct"
+
+
+def test_derive_lane_generic_a1_with_animal_only_excerpt_is_preclinical() -> None:
+    from agent.evidence_lanes import derive_lane
+
+    assert derive_lane(
+        evidence_tier="A1",
+        directness="direct",
+        title="Randomized intervention study",
+        source_excerpt="Male arctic foxes were randomized between diets.",
+    ) == "animal_preclinical"
+
+
 def test_derive_lane_source_excerpt_flips_generic_title() -> None:
     """Species named only in the body text (not the title) still flips the
     lane — a generic-titled study whose claim excerpt says 'arctic foxes'

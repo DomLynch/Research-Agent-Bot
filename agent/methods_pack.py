@@ -94,10 +94,9 @@ def build_methods_pack(
         )
     if not exclusion_lines:
         exclusion_lines.append(
-            "No records were excluded at the gates instrumented for this "
-            "run: the eligibility criteria above were applied during "
-            "retrieval and claim-binding but produced no post-screening "
-            "exclusions with recorded counts for this corpus."
+            "No additional records were excluded after final receipt admission; "
+            "upstream non-admission buckets are reported separately in the "
+            "receipt funnel and are not post-admission exclusions."
         )
     exclusion_summary = tuple(exclusion_lines)
     screening_flow = {

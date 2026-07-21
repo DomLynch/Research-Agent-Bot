@@ -14,7 +14,7 @@ from agent.revision_identity import (  # noqa: E402
     outcome_class_tally_note,
     repair_revision_identity,
 )
-from agent.revision_quality import repair_revision_quality, revision_quality_proof_is_stated  # noqa: E402
+from agent.revision_quality import manifest_row_finding, repair_revision_quality, revision_quality_proof_is_stated  # noqa: E402
 
 
 def _chat(parsed: dict[str, Any]) -> Any:
@@ -101,6 +101,23 @@ def test_exact_stat_trace_requires_matching_p_value_operator() -> None:
     assert revision_quality_proof_is_stated(
         "Smith 2025 [bundle:1] reported p > 0.05.", ask, rows,
     ) is False
+
+
+def test_exact_p_value_in_array_is_not_traceable_without_source_excerpt() -> None:
+    ask = "Provide the exact bundle token supporting any exact p-value or effect estimate."
+    rows = [{
+        "citation_token": "Smith 2025", "p_values": ["p = 0.01"],
+        "thesis_text": "The source excerpt reports a bounded directional finding.",
+        "n_claims": 4,
+    }]
+    paper = "Smith 2025 [bundle:1] reported p = 0.01."
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert "p = 0.01" not in fixed
+    assert details == ["exact_stat_trace"]
+    assert manifest_row_finding(rows[0]).startswith("4 extracted claim")
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
 def test_fragment_repair_preserves_valid_colon_lead_in() -> None:

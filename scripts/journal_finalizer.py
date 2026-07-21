@@ -12,12 +12,16 @@ from typing import Any
 
 from agent import statistical_consistency as _stats
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
+from agent.evidence_lanes import LANE_TOKENS, build_lane_map
 from agent.revision_identity import direction_tally_note, repair_revision_identity
 from agent.revision_contract import feedback as _revision_feedback, gate_report as _revision_gate_report
 from agent.revision_quality import (
+    asks_exact_stat_trace as _asks_exact_stat_trace,
     findings_map_row,
     manifest_row_finding as _manifest_row_finding,
     repair_revision_quality,
+    resolved_effect_direction as _resolved_effect_direction,
+    traceable_p_values as _traceable_p_values,
 )
 
 
@@ -52,6 +56,11 @@ _EXISTING_ANIMAL_QUALIFIER_RE = re.compile(
     r")\b",
     re.I,
 )
+_GENERATED_ANIMAL_LEAD_RE = re.compile(
+    r"^(?:In\s+(?:animal/)?preclinical evidence,\s*|"
+    r"Animal/preclinical context(?:\s*\([^)]*\))?:\s*)",
+    re.I,
+)
 
 
 def _lowercase_first_letter(text: str) -> str:
@@ -83,6 +92,41 @@ _ORPHAN_REF_PARAGRAPH_LEAD = (
 )
 
 
+def _refresh_evidence_lanes(out_dir: Path) -> bool:
+    manifest = _load_sidecar(out_dir / "manifest.json") or {}
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    rows = [dict(row) for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    if not rows:
+        return False
+    registry = _load_sidecar(out_dir / "citation_registry.json") or {}
+    for row in rows:
+        if row.get("citation_token"):
+            continue
+        entry = registry.get(str(row.get("receipt_id") or "")) if isinstance(registry, dict) else None
+        if isinstance(entry, dict) and entry.get("body_citation"):
+            row["citation_token"] = entry["body_citation"]
+    lanes = build_lane_map(rows)
+    payload = {
+        "lanes": lanes,
+        "animal_citations": [
+            {"citation": citation, "paper_id": str(row.get("receipt_id") or "")}
+            for row in rows
+            if (citation := str(row.get("citation_token") or ""))
+            and lanes.get(citation) == "animal_preclinical"
+        ],
+        "canonical_lanes": list(LANE_TOKENS),
+        "method": (
+            "agent.evidence_lanes.derive_lane over (evidence_tier, "
+            "directness, source_title+venue+population_summary+thesis_text)"
+        ),
+    }
+    path = out_dir / "evidence_lanes.json"
+    if _load_sidecar(path) == payload:
+        return False
+    path.write_text(json.dumps(payload, indent=2))
+    return True
+
+
 def finalize_run(out_dir: Path) -> FinalizerReport:
     paper_path = out_dir / "full_paper.md"
     if not paper_path.is_file():
@@ -90,6 +134,13 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
     original = paper_path.read_text()
     text = original
     entries: list[FinalizerLogEntry] = []
+    if _refresh_evidence_lanes(out_dir):
+        entries.append(FinalizerLogEntry(
+            phase="G_refresh_sidecars",
+            rule="refresh_evidence_lanes_from_manifest",
+            n_changes=1,
+            detail="rebuilt evidence lanes from current manifest before text repair",
+        ))
     states = [text]
 
     for _ in range(40):
@@ -317,198 +368,10 @@ _SCOPED_BACKSTOP_TAIL_RE = re.compile(
 
 
 def _scoped_backstop_replacement(section: str, prefix: str) -> str:
-    subject = "restored surface-floor safeguard"
-    lower = prefix.lower()
-    fallback_terms = [
-        token for token in re.findall(r"[a-z]+", lower)
-        if len(token) > 5 and token not in {
-            "section", "evidence", "synthesis", "interpretation", "source",
-            "sources", "claims", "future", "should", "would", "clinical",
-        }
-    ][:10]
-    focus = (
-        "The point is scoped fallback recovery: the restored paragraph records "
-        "the local evidence boundary rather than adding a new empirical result."
-    )
-    if "comparability across topics" in lower:
-        subject = "comparability safeguard"
-        focus = (
-            "The point is methodological portability: the same direct, indirect, "
-            "and mechanistic evidence grammar can be reused without pretending "
-            "that every topic has the same effect profile."
-        )
-    elif "resistant to overstatement" in lower:
-        subject = "overstatement safeguard"
-        focus = (
-            "The point is claim discipline: pathway movement, surrogate change, "
-            "or plausible translation stays provisional until matching endpoint "
-            "evidence supports the stronger reading."
-        )
-    elif "provenance trail" in lower:
-        subject = "provenance safeguard"
-        focus = (
-            "The point is auditability: each claim can be traced back to an "
-            "extraction receipt and source document, making disagreement "
-            "between summary and record visible."
-        )
-    elif "deliberately scoped to the retained corpus" in lower:
-        subject = "corpus-scope safeguard"
-        focus = (
-            "The point is admission control: excluded literature does not set "
-            "direction, emphasis, or certainty when it was not verified end to "
-            "end by the run."
-        )
-    elif "coverage is thin" in lower:
-        subject = "thin-coverage safeguard"
-        focus = (
-            "The point is sparse-corpus honesty: thin coverage is named as an "
-            "evidence-base property rather than concealed by confidence borrowed "
-            "from adjacent literatures."
-        )
-    elif "conservative interpretation" in lower and "endpoints" in lower:
-        subject = "endpoint-transfer safeguard"
-        focus = (
-            "The point is transfer control: a signal in one model system, cohort, "
-            "or endpoint layer is not automatic evidence for another layer."
-        )
-    elif "study-level structure" in lower:
-        subject = "selective-emphasis safeguard"
-        focus = (
-            "The point is anti-selection: supportive, null, mixed, and adverse "
-            "findings remain visible together, so breadth is not confused with "
-            "certainty."
-        )
-    elif "calibrated synthesis" in lower:
-        subject = "calibration safeguard"
-        focus = (
-            "The point is calibrated taxonomy: mechanisms, observed signals, "
-            "unresolved tensions, and trial-design priorities remain separate "
-            "claim types."
-        )
-    elif "pooled meta-analytic estimate" in lower:
-        subject = "pooled-estimate safeguard"
-        focus = (
-            "The point is numeric restraint: study-level narrative synthesis "
-            "does not become a pooled estimate unless the table explicitly "
-            "supports pooling."
-        )
-    elif "falsifiable" in lower:
-        subject = "falsifiability safeguard"
-        focus = (
-            "The point is revisability: a future source can strengthen, weaken, "
-            "or reverse the synthesis by changing tier, direction, or outcome "
-            "balance."
-        )
-    elif "population and endpoint" in lower:
-        subject = "population-endpoint safeguard"
-        focus = (
-            "The point is applicability: each finding remains tied to the "
-            "represented age group, disease context, intervention schedule, "
-            "and aging-related endpoint."
-        )
-    elif "mechanistic layer" in lower:
-        subject = "mechanistic-boundary safeguard"
-        focus = (
-            "The point is translation hierarchy: mechanistic evidence is "
-            "interpretive support, not a replacement for outcome data."
-        )
-    elif "null findings" in lower:
-        subject = "null-signal safeguard"
-        focus = (
-            "The point is negative-space interpretation: null evidence narrows "
-            "claims about consistency, target population, and endpoint choice "
-            "without erasing plausibility."
-        )
-    elif "adverse or negative signals" in lower:
-        subject = "adverse-signal safeguard"
-        focus = (
-            "The point is risk integration: harm, tolerability, and offsetting "
-            "effects stay inside the efficacy question rather than being "
-            "separate from benefit."
-        )
-    elif "breadth from certainty" in lower:
-        subject = "breadth-certainty safeguard"
-        focus = (
-            "The point is epistemic sorting: broad biological coverage is not "
-            "clinically decisive evidence when direct findings remain limited "
-            "or mixed."
-        )
-    elif "single recommendation" in lower:
-        subject = "recommendation-boundary safeguard"
-        focus = (
-            "The point is recommendation control: linked claim types are not "
-            "collapsed into one undifferentiated clinical recommendation."
-        )
-    elif "research value of the synthesis" in lower:
-        subject = "research-agenda safeguard"
-        focus = (
-            "The point is agenda clarity: aligned streams, discordant streams, "
-            "and bridge-testing studies are named as different research tasks."
-        )
-    elif "stronger future corpus" in lower:
-        subject = "future-corpus safeguard"
-        focus = (
-            "The point is evidentiary thresholding: larger trials, cleaner "
-            "endpoint harmonization, and repeated outcome-class evidence are "
-            "named before confidence rises."
-        )
-    elif fallback_terms:
-        subject = "-".join(fallback_terms[:3]) + " safeguard"
-        focus = (
-            "The point is scoped fallback recovery: the restored paragraph is "
-            f"anchored to {', '.join(fallback_terms)} and does not become a "
-            "general-purpose conclusion."
-        )
-    section_label = section.strip()
-    section_frame = {
-        "introduction": (
-            "At the opening of the manuscript, this paragraph frames the review "
-            "question before result-level interpretation."
-        ),
-        "cross-domain synthesis": (
-            "In cross-domain synthesis, this paragraph connects evidence tiers "
-            "to the translational bridge being tested across endpoints."
-        ),
-        "limitations": (
-            "In limitations, this paragraph names a constraint on inference "
-            "rather than a new positive or negative finding."
-        ),
-    }.get(
-        section_label,
-        "In this section, the paragraph is tied to the local interpretive task.",
-    )
-    section_expansion = {
-        "introduction": (
-            "For the introduction, the practical consequence is a bounded "
-            "problem statement: the reader sees why the topic matters, what "
-            "kind of evidence can answer it, and why the paper will not treat "
-            "background plausibility as a finished result."
-        ),
-        "cross-domain synthesis": (
-            "For cross-domain synthesis, the practical consequence is a bridge "
-            "test: the section asks whether signals travel coherently from "
-            "mechanism to endpoint, where that bridge weakens, and which "
-            "population, dose, comparator, or follow-up choices would make the "
-            "next study more decisive."
-        ),
-        "limitations": (
-            "For limitations, the practical consequence is an explicit ceiling "
-            "on inference: the section names what the retained sources cannot "
-            "settle, what would be needed to settle it, and why the present "
-            "paper remains useful without claiming more than it has proven."
-        ),
-    }.get(
-        section_label,
-        "The practical consequence is a bounded local claim that remains tied "
-        "to the verified evidence roles in this run.",
-    )
     return (
-        f"{section_frame} The {subject} is section-scoped: it explains how "
-        "directness, population fit, direction of effect, and safety-tradeoff "
-        f"uncertainty constrain this portion of the paper. {focus} The public "
-        "word floor is preserved without hiding null or adverse signals, "
-        "inflating certainty, or reusing the same generic caution as a "
-        f"cross-section conclusion. {section_expansion}"
+        f"{prefix.strip()} In {section.strip()}, interpretation remains limited "
+        "to the retained endpoint-specific findings. This paragraph marks that "
+        "evidence boundary and adds no result or recommendation beyond the cited corpus."
     )
 
 
@@ -521,6 +384,12 @@ def _phase_m_scope_restored_backstop_duplicates(
     n = 0
     for i in range(0, len(chunks), 2):
         para = chunks[i]
+        lower = para.lower()
+        if "public word floor is preserved" in lower or (
+            "local interpretive task" in lower and "section-scoped" in lower
+        ):
+            n += 1
+            continue
         match = _SCOPED_BACKSTOP_TAIL_RE.fullmatch(para.strip())
         if match:
             replacement = _scoped_backstop_replacement(
@@ -845,6 +714,15 @@ def _phase_b_lane_qualifier(
         lane_map = lanes.get("lanes") or {}
     except (OSError, json.JSONDecodeError):
         return text, []
+    citation_pool = lane_map or {tok: "animal_preclinical" for tok in animal_tokens}
+    citation_pattern = "|".join(
+        re.escape(token) for token in sorted(citation_pool, key=len, reverse=True)
+    )
+    suffix_re = re.compile(
+        rf"\s+(?:{citation_pattern})(?:,\s*(?:{citation_pattern})){{0,2}}"
+        r"\s+provide(?:s)? animal/preclinical context only\.\s*$",
+        re.I,
+    ) if citation_pattern else None
     # Only explicit lead-ins mark a paragraph as already lane-labelled.
     # Source titles may contain words like "animal" without qualifying the prose.
     # Operate only on the body (above References). Splitting on the
@@ -862,37 +740,48 @@ def _phase_b_lane_qualifier(
         structured_note = stripped.startswith(("Findings Map completeness note:", "Findings Map accounting note:", "Direction heterogeneity note:"))
         bullet = re.match(r"^([-*]\s+)(.+)$", stripped, flags=re.S)
         content = bullet.group(2) if bullet else stripped
+        natural_qualified = bool(_EXISTING_ANIMAL_QUALIFIER_RE.match(content)) and not bool(
+            _GENERATED_ANIMAL_LEAD_RE.match(content)
+        )
+        trailing = "\n" if para.endswith("\n") else ""
         content, generic_n = re.subn(r"^(?:additional corpus sources included animal/preclinical evidence;\s*)+", "", content, flags=re.I)
+        content, lead_n = _GENERATED_ANIMAL_LEAD_RE.subn("", content, count=1)
+        content, suffix_n = suffix_re.subn("", content, count=1) if suffix_re else (content, 0)
+        content = content.strip()
         prefix = para[: len(para) - len(stripped)]
-        if not any(tok in para for tok in animal_tokens):
-            if not generic_n:
+        cited = [tok for tok in citation_pool if tok in content]
+        animal_cited = [tok for tok in cited if tok in animal_tokens]
+        if animal_cited and natural_qualified and not (generic_n or suffix_n):
+            continue
+        if not animal_cited:
+            if not (generic_n or lead_n or suffix_n):
                 continue
             clean = content[:1].upper() + content[1:]
-            paragraphs[i] = prefix + (bullet.group(1) if bullet else "") + clean
+            rendered_para = prefix + (bullet.group(1) if bullet else "") + clean + trailing
+            if rendered_para == para:
+                continue
+            paragraphs[i] = rendered_para
             n_patched += 1
             continue
-        lower_content = content.lower()
-        if _EXISTING_ANIMAL_QUALIFIER_RE.match(lower_content):
-            continue
-        citation_pool = lane_map or {tok: "animal_preclinical" for tok in animal_tokens}
-        cited = [tok for tok in citation_pool if tok in para]
-        animal_cited = [tok for tok in animal_tokens if tok in para]
         all_animal = cited and len(animal_cited) == len(cited)
-        lead = (
-            "In animal/preclinical evidence, "
-            if all_animal
-            else f"Animal/preclinical context ({', '.join(animal_cited[:3])}): "
-        )
-        body_text = content if structured_note else _lowercase_first_letter(content)
-        if bullet:
-            paragraphs[i] = prefix + bullet.group(1) + lead + body_text
+        if all_animal:
+            body_text = content if structured_note else _lowercase_first_letter(content)
+            rendered = "In animal/preclinical evidence, " + body_text
         else:
-            paragraphs[i] = lead + body_text
+            verb = "provides" if len(animal_cited) == 1 else "provide"
+            rendered = (
+                content.rstrip()
+                + f" {', '.join(animal_cited[:3])} {verb} animal/preclinical context only."
+            )
+        rendered_para = prefix + (bullet.group(1) if bullet else "") + rendered + trailing
+        if rendered_para == para:
+            continue
+        paragraphs[i] = rendered_para
         n_patched += 1
     if n_patched == 0:
         return text, []
     new_body = "".join(paragraphs)
-    return new_body + tail, [FinalizerLogEntry(phase="B_lane_qualifier", rule="animal_preclinical_lead_in", n_changes=n_patched, detail=f"prepended lane qualifier to {n_patched} paragraph(s)")]
+    return new_body + tail, [FinalizerLogEntry(phase="B_lane_qualifier", rule="animal_preclinical_lead_in", n_changes=n_patched, detail=f"added lane qualifier to {n_patched} paragraph(s)")]
 
 
 # --- Phase C: Terminology sanitizer -----------------------------------
@@ -1884,14 +1773,14 @@ def _phase_d_evidence_honesty_guard(
     if not pieces:
         return text, []
     note = (
-        "Evidence-honesty note: "
+        "Evidence scope: "
         + " ".join(pieces)
         + " The conclusion therefore does not support broad causal, clinical, or policy claims."
     )
     patched = text
     note_n = 0
     for heading in ("Abstract", "Conclusion"):
-        if "evidence-honesty note:" in _section_body(patched, heading).lower():
+        if any(label in _section_body(patched, heading).lower() for label in ("evidence scope:", "evidence-honesty note:")):
             continue
         match = re.search(rf"^## {re.escape(heading)}\b", patched, flags=re.M)
         if match:
@@ -1915,16 +1804,27 @@ def _phase_d_evidence_honesty_guard(
 def _phase_d_evidence_honesty_deduplicate(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
+    patched, normalized = re.subn(
+        r"evidence-honesty note:", "Evidence scope:", text, flags=re.I,
+    )
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
     lower = " ".join(feedback.lower().split())
     if "evidence-honesty" not in lower or not any(token in lower for token in ("repetition", "repetitive", "redundant", "reduce")):
-        return text, []
+        if not normalized:
+            return text, []
+        return patched, [FinalizerLogEntry(
+            phase="D_evidence_honesty_deduplicate",
+            rule="normalize_evidence_scope_label",
+            n_changes=normalized,
+            detail=f"normalized {normalized} internal evidence-honesty label(s)",
+        )]
     seen = False
     removed = 0
     out: list[str] = []
-    for para in re.split(r"(\n\s*\n)", text):
-        if "evidence-honesty note:" not in para.lower():
+    for para in re.split(r"(\n\s*\n)", patched):
+        lower_para = para.lower()
+        if "evidence-honesty note:" not in lower_para and "evidence scope:" not in lower_para:
             out.append(para)
             continue
         if not seen:
@@ -1932,13 +1832,13 @@ def _phase_d_evidence_honesty_deduplicate(
             out.append(para)
             continue
         removed += 1
-    if not removed:
+    if not removed and not normalized:
         return text, []
     return "".join(out), [FinalizerLogEntry(
         phase="D_evidence_honesty_deduplicate",
         rule="remove_repeated_evidence_honesty_notes",
-        n_changes=removed,
-        detail=f"removed {removed} repeated evidence-honesty note(s) after reviewer repetition ask",
+        n_changes=removed + normalized,
+        detail=f"normalized {normalized} label(s) and removed {removed} repeated evidence-scope note(s)",
     )]
 
 
@@ -3241,25 +3141,9 @@ def _manifest_effect_direction_reconciliation_note(
 
 
 def _normalised_direction(row: dict[str, Any]) -> str:
-    raw = str(row.get("effect_direction") or "unclear").strip().lower()
-    cue = _title_cued_direction(row)
-    if raw in {"positive", "negative", "mixed", "null", "unclear"}:
-        if raw == "unclear":
-            return _direction_with_stat_guard(row, cue)
-        if raw == "null" and cue in {"positive", "negative"} and _row_has_significant_p_value(row):
-            return cue
-        return _direction_with_stat_guard(row, raw)
-    if "positive" in raw:
-        return _direction_with_stat_guard(row, "positive")
-    if "negative" in raw:
-        return _direction_with_stat_guard(row, "negative")
-    if "null" in raw or "no signal" in raw or "no_extracted" in raw:
-        if cue in {"positive", "negative"} and _row_has_significant_p_value(row):
-            return cue
-        return "null"
-    if "mixed" in raw:
-        return "mixed"
-    return _direction_with_stat_guard(row, cue)
+    # Keep the manuscript aligned with the exact direction code submitted in
+    # the source bundle. Titles and isolated p-values cannot override it.
+    return _resolved_effect_direction(row)
 
 
 def _reviewer_adjusted_direction(row: dict[str, Any], feedback: str) -> str:
@@ -3285,86 +3169,6 @@ def _feedback_window_for_label(feedback: str, label: str, radius: int = 260) -> 
     if pos < 0:
         return ""
     return lower[max(0, pos - radius):pos + len(needle) + radius]
-
-
-def _title_cued_direction(row: dict[str, Any]) -> str:
-    title = str(row.get("source_title") or "").lower()
-    if not title:
-        return "unclear"
-    if any(token in title for token in (
-        "does not", "not determine", "not associated", "no association",
-        "no effect", "failed to", "fails to", "null",
-    )):
-        return "null"
-    harm = (
-        "damage", "injury", "dysfunction", "inflammation", "oxidative stress",
-        "fibrosis", "mortality", "risk", "decline", "pathology", "symptom",
-        "defect", "toxicity",
-    )
-    if any(token in title for token in ("abrogate", "reverse", "restore", "restores", "rescue", "protect")):
-        return "positive" if any(term in title for term in (*harm, "integrity", "repair")) else "unclear"
-    if any(token in title for token in ("reduce", "decrease", "lower", "attenuate", "suppress")):
-        return "positive" if any(term in title for term in harm) else "negative"
-    if any(token in title for token in ("increase", "induce", "accelerate", "worsen", "promote")):
-        return "negative" if any(term in title for term in harm) else "positive"
-    adverse_context = (
-        "disease", "dysplasia", "impairment", "cancer", "infection",
-        "pathogenesis", "syndrome", "disorder", "bronchopulmonary",
-        "hiv", "alzheimer", "parkinson",
-    )
-    if any(term in title for term in harm) and any(term in title for term in adverse_context):
-        return "negative"
-    if "mixed" in title or "context-dependent" in title or "context dependent" in title:
-        return "mixed"
-    return "unclear"
-
-
-def _direction_with_stat_guard(row: dict[str, Any], direction: str) -> str:
-    if direction in {"positive", "negative"} and _first_p_value_is_non_significant(row):
-        return "mixed"
-    return direction
-
-
-def _first_p_value_is_non_significant(row: dict[str, Any]) -> bool:
-    p_values = row.get("p_values")
-    if not isinstance(p_values, list):
-        return False
-    first = next((str(value).strip() for value in p_values if str(value).strip()), "")
-    return bool(first and _p_value_is_non_significant(first))
-
-
-def _row_has_significant_p_value(row: dict[str, Any]) -> bool:
-    p_values = row.get("p_values")
-    if not isinstance(p_values, list):
-        return False
-    first = next((str(value).strip() for value in p_values if str(value).strip()), "")
-    if not first:
-        return False
-    match = re.search(r"\bp\s*(=|>|<|<=|>=)\s*([0-9]*\.?[0-9]+)", first, flags=re.I)
-    if not match:
-        return False
-    try:
-        parsed = float(match.group(2))
-    except ValueError:
-        return False
-    operator = match.group(1)
-    return operator in {"<", "<="} or (operator == "=" and parsed < 0.05)
-
-
-def _p_value_is_non_significant(value: str) -> bool:
-    match = re.search(r"\bp\s*(=|>|<|<=|>=)\s*([0-9]*\.?[0-9]+)", value, flags=re.I)
-    if not match:
-        return False
-    try:
-        parsed = float(match.group(2))
-    except ValueError:
-        return False
-    operator = match.group(1)
-    if operator in {"<", "<="}:
-        return False
-    if operator == ">":
-        return parsed >= 0.05
-    return parsed > 0.05
 
 
 def _manifest_admission_direction_tally_note(rows: list[dict[str, Any]]) -> str:
@@ -3670,8 +3474,7 @@ def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -
 
 def _manifest_key_finding_score(row: dict[str, Any]) -> tuple[int, int, int]:
     title = str(row.get("source_title") or "").strip()
-    values = row.get("p_values")
-    has_stat = isinstance(values, list) and any(str(value).strip() for value in values)
+    has_stat = bool(_traceable_p_values(row))
     try:
         claims = int(row.get("n_claims") or 0)
     except (TypeError, ValueError):
@@ -3755,8 +3558,7 @@ def _outcome_slice_narrative(
     ] or ["- No named source-level finding is available in the manifest for this outcome class."]
     has_conservative_direction = any(
         str(row.get("effect_direction") or "").strip().lower() in {"null", "unclear"}
-        and isinstance(row.get("p_values"), list)
-        and any(str(value).strip() for value in row.get("p_values") or [])
+        and bool(_traceable_p_values(row))
         for row in matching
     )
     direction_note = (
@@ -4250,14 +4052,29 @@ def _phase_d_source_outcome_class_map(
 def _phase_d_proactive_findings_map(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
-    if re.search(r"^### Findings Map\b", text, flags=re.M):
-        return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
     note = _findings_map_section(rows)
+    existing = re.search(
+        r"^### Findings Map\b.*?(?=^### |^## |\Z)", text, flags=re.M | re.S,
+    )
+    if existing:
+        request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
+        if not _asks_exact_stat_trace(_revision_feedback(request)):
+            return text, []
+        if existing.group(0).strip() == note.strip():
+            return text, []
+        return text[:existing.start()] + note + "\n\n" + text[existing.end():], [
+            FinalizerLogEntry(
+                phase="D_proactive_findings_map",
+                rule="reconcile_source_level_findings_map",
+                n_changes=1,
+                detail=f"rebuilt source-level Findings Map from {len(rows)} manifest receipt(s)",
+            )
+        ]
     patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
     if not n:
         return text, []

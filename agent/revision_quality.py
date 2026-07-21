@@ -47,6 +47,10 @@ def revision_quality_ask_known(ask: str) -> bool:
     ))
 
 
+def asks_exact_stat_trace(feedback: str) -> bool:
+    return _asks_exact_stat_trace(_normalise(feedback))
+
+
 def revision_quality_proof_is_stated(
     paper_md: str,
     ask: str,
@@ -119,8 +123,7 @@ def receipt_direction(row: dict[str, Any]) -> str:
 
 
 def manifest_row_finding(row: dict[str, Any]) -> str:
-    p_values = row.get("p_values")
-    stat = next((str(value).strip() for value in p_values if str(value).strip()), "") if isinstance(p_values, list) else ""
+    stat = next(iter(traceable_p_values(row)), "")
     if stat:
         relation = next(iter(_p_relations(stat)), None)
         nonsignificant = bool(relation and (
@@ -141,7 +144,7 @@ def manifest_row_finding(row: dict[str, Any]) -> str:
 
 def findings_map_row(row: dict[str, Any]) -> tuple[str, str, str, str, str, str, str]:
     outcome = _findings_map_outcome(row)
-    direction = receipt_direction(row)
+    direction = resolved_effect_direction(row)
     citation = _label(row)
     title = str(row.get("source_title") or "").strip()
     source = f"{citation}: {title}" if citation and title and citation not in title else (citation or title)
@@ -210,8 +213,14 @@ def _asks_outcome_roster(text: str) -> bool:
 
 
 def _asks_exact_stat_trace(text: str) -> bool:
-    return "every exact statistic" in text and any(
-        token in text for token in ("bundle token", "source excerpt", "directional language")
+    return any(token in text for token in (
+        "every exact statistic", "every exact p value", "exact p value",
+        "exact bundle token", "effect estimate", "percentage cited",
+    )) and any(
+        token in text for token in (
+            "bundle", "source excerpt", "source number", "trace", "verif",
+            "extraction artifact",
+        )
     )
 
 
@@ -294,11 +303,34 @@ def _prose_paragraphs(text: str) -> list[str]:
 
 
 def _row_evidence(row: dict[str, Any]) -> str:
-    p_values = row.get("p_values")
     return " ".join((
         str(row.get("thesis_text") or ""), str(row.get("source_title") or ""),
-        " ".join(map(str, p_values)) if isinstance(p_values, list) else "",
     ))
+
+
+def traceable_p_values(row: dict[str, Any]) -> tuple[str, ...]:
+    values = row.get("p_values")
+    return tuple(
+        value for raw in values if (value := str(raw).strip()) and _stat_supported(value, row)
+    ) if isinstance(values, list) else ()
+
+
+def resolved_effect_direction(row: dict[str, Any]) -> str:
+    """Correct only a source-traceable harmful null-code contradiction."""
+    raw = receipt_direction(row)
+    if raw != "null":
+        return raw
+    scope = " ".join((str(row.get("source_title") or ""), str(row.get("thesis_text") or ""))).lower()
+    harmful_increase = re.search(
+        r"\b(?:higher|increas\w*|worsen\w*|accelerat\w*)\b.{0,50}"
+        r"\b(?:damage|injury|risk|mortality|inflammation|toxicity|dysfunction)\b",
+        scope,
+    )
+    significant = any(
+        operator in {"<", "<="} or operator == "=" and float(value) < 0.05
+        for stat in traceable_p_values(row) for operator, value in _p_relations(stat)
+    )
+    return "negative" if harmful_increase and significant else raw
 
 
 def _numbers(text: str) -> tuple[str, ...]:

@@ -71,6 +71,7 @@ def test_phase_f_fills_outcome_heading_with_source_level_findings(tmp_path: Path
             "directness": "direct",
             "evidence_tier": "A1",
             "p_values": ["p < 0.05"],
+            "thesis_text": "The primary outcome was reported at p < 0.05.",
         },
     ]}), encoding="utf-8")
 
@@ -1203,7 +1204,8 @@ def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Pa
     fixed, logs = journal_finalizer._phase_d_evidence_honesty_guard(paper, tmp_path)
     refixed, relogs = journal_finalizer._phase_d_evidence_honesty_guard(fixed, tmp_path)
 
-    assert fixed.count("Evidence-honesty note:") == 2
+    assert fixed.count("Evidence scope:") == 2
+    assert "Evidence-honesty note:" not in fixed
     assert "non-supportive for clinical efficacy claims" in fixed
     assert "hypothesis-generating only" in fixed
     assert "no direct interventional hard-endpoint evidence" in fixed
@@ -1545,7 +1547,7 @@ def test_lane_qualifier_preserves_bullet_marker(tmp_path: Path) -> None:
             phase="B_lane_qualifier",
             rule="animal_preclinical_lead_in",
             n_changes=1,
-            detail="prepended lane qualifier to 1 paragraph(s)",
+            detail="added lane qualifier to 1 paragraph(s)",
         )
     ]
 
@@ -2037,6 +2039,7 @@ def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path
         "directness": "indirect",
         "evidence_tier": "B2",
         "p_values": ["p = 0.04"],
+        "thesis_text": "The primary result was p = 0.04.",
         "n_claims": 7,
     }]}))
 
@@ -2197,6 +2200,7 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
             "effect_direction": "unclear",
             "directness": "indirect",
             "p_values": ["p = 0.92"],
+            "thesis_text": "The source reported p = 0.92.",
             "n_claims": 2,
         },
         {
@@ -2222,6 +2226,7 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
             "effect_direction": "null",
             "directness": "adjacent",
             "p_values": ["p < 0.05"],
+            "thesis_text": "The source reported significantly higher mitochondrial DNA damage (p < 0.05).",
             "n_claims": 1,
         },
         {
@@ -2296,7 +2301,7 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
     assert "Stepwise reconciliation: classified source candidates (18) -> admitted final sources (15)" in fixed
     assert "Findings Map completeness note: all 9 admitted manifest rows are surfaced below" in fixed
     assert "Pena 2024: G2019S inhibitor abrogates mitochondrial DNA damage" in fixed
-    assert "Pena 2024" in fixed and "direction=mixed" in fixed
+    assert "Pena 2024" in fixed and "direction=unclear" in fixed
     assert "representative non-significant statistic p = 0.92" in fixed
     assert "Hsiao 2026" in fixed and "direction=negative" in fixed
     assert "Ng 2019" in fixed and "direction=null" in fixed
@@ -2965,7 +2970,7 @@ def test_latest_telomere_post_submit_reviewer_asks_are_repaired_generically(tmp_
     assert "Two-part research question:" in fixed
     assert "Corpus-count reconciliation:" in fixed
     assert "Direction-coding visibility note: 17/25" in fixed
-    assert fixed.count("Evidence-honesty note:") == 1
+    assert fixed.count("Evidence scope:") == 1
     assert "causal-risk and Mendelian-randomization evidence n=7" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
     assert {entry.phase for entry in logs} >= {
@@ -3286,12 +3291,12 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
         "- Sheng 2025.\n"
     )
     rows = [
-        {"citation_token": "Sheng 2025", "source_title": "Integrating Vascular Aging and Genetic Risk: The Combined Impact of Estimated Pulse Wave Velocity and Genetic Predisposition on Coronary Artery Disease", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p < 0.001"], "n_claims": 102},
-        {"citation_token": "Nguyen 2026", "outcome_class": "deficiency_prevalence", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p = 0.032"], "n_claims": 64},
-        {"citation_token": "Wang 2024", "source_title": "Impact of a Precision Intervention for Vascular Health in Middle-Aged and Older Postmenopausal Women Using Polar Heart Rate Sensors", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "direct", "evidence_tier": "A1", "p_values": ["p < 0.05"], "n_claims": 54},
+        {"citation_token": "Sheng 2025", "source_title": "Integrating Vascular Aging and Genetic Risk: The Combined Impact of Estimated Pulse Wave Velocity and Genetic Predisposition on Coronary Artery Disease", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p < 0.001"], "thesis_text": "The source reported p < 0.001.", "n_claims": 102},
+        {"citation_token": "Nguyen 2026", "outcome_class": "deficiency_prevalence", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "p_values": ["p = 0.032"], "thesis_text": "The source reported p = 0.032.", "n_claims": 64},
+        {"citation_token": "Wang 2024", "source_title": "Impact of a Precision Intervention for Vascular Health in Middle-Aged and Older Postmenopausal Women Using Polar Heart Rate Sensors", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "direct", "evidence_tier": "A1", "p_values": ["p < 0.05"], "thesis_text": "The source reported p < 0.05.", "n_claims": 54},
         {"citation_token": "Rodilla 2026", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 28},
         {"citation_token": "Alanis 2025", "outcome_class": "mechanism", "effect_direction": "null", "directness": "mechanistic", "evidence_tier": "C1", "n_claims": 27},
-        {"citation_token": "Luo 2025", "source_title": "Effects of L-citrulline supplementation and watermelon intake on arterial stiffness and endothelial function in middle-aged and older adults", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "p_values": ["p = 0.0007"], "n_claims": 22},
+        {"citation_token": "Luo 2025", "source_title": "Effects of L-citrulline supplementation and watermelon intake on arterial stiffness and endothelial function in middle-aged and older adults", "outcome_class": "contextual_other", "effect_direction": "null", "directness": "review", "evidence_tier": "B2", "p_values": ["p = 0.0007"], "thesis_text": "The source reported p = 0.0007.", "n_claims": 22},
         {"citation_token": "Vicente-Gabriel 2024", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "protocol", "evidence_tier": "D1", "n_claims": 20},
         {"citation_token": "Azizzadeh 2026", "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect", "evidence_tier": "B2", "n_claims": 16},
         {"citation_token": "Lu 2026", "outcome_class": "contextual_other", "effect_direction": "unclear", "directness": "indirect", "evidence_tier": "B2", "n_claims": 14},
@@ -5330,6 +5335,7 @@ def test_third_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None
                 "directness": "indirect",
                 "evidence_tier": "B2",
                 "p_values": ["p = 0.0005"],
+                "thesis_text": "The source reported p = 0.0005.",
                 "n_claims": 20,
             },
             {
@@ -5376,6 +5382,7 @@ def test_third_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None
                 "directness": "indirect",
                 "evidence_tier": "B2",
                 "p_values": ["p = 0.01"],
+                "thesis_text": "The source reported p = 0.01.",
                 "n_claims": 90,
             },
             {
@@ -5915,3 +5922,33 @@ def test_structured_revision_feedback_is_not_truncated() -> None:
 
     assert feedback.endswith(required[-1])
     assert len(feedback) > 4000
+
+
+def test_exact_stat_revision_rebuilds_existing_findings_map(tmp_path: Path) -> None:
+    row = {
+        "receipt_id": "r1",
+        "citation_token": "Smith 2024",
+        "source_title": "Randomized trial",
+        "outcome_class": "cardiometabolic",
+        "effect_direction": "null",
+        "directness": "direct",
+        "evidence_tier": "A1",
+        "p_values": ["p = 0.01"],
+        "thesis_text": "The source excerpt reports no exact statistic.",
+        "n_claims": 5,
+    }
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [row]}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Provide the exact bundle token supporting every exact p-value or remove it when not verifiable in the source excerpt."
+    }))
+    paper = (
+        "## Evidence Landscape\n\n### Findings Map\n\n"
+        "| Source | Finding |\n| --- | --- |\n| Smith 2024 | p = 0.01 |\n\n"
+        "## Results\n\nBounded result.\n"
+    )
+
+    fixed, log = journal_finalizer._phase_d_proactive_findings_map(paper, tmp_path)
+
+    assert "p = 0.01" not in fixed
+    assert "5 extracted claim(s)" in fixed
+    assert log and log[0].rule == "reconcile_source_level_findings_map"

@@ -256,7 +256,7 @@ def test_methods_exclusion_reasons_do_not_contradict_zero_excluded() -> None:
     )
     md = render_methods_md(pack, submission_id="run-0000")
     assert "### Exclusion reasons" in md
-    assert "No records were excluded" in md
+    assert "No additional records were excluded after final receipt admission" in md
     assert "Wrong population" not in md
     assert "Duplicate records deduplicated" not in md
 
@@ -866,7 +866,8 @@ def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
     )
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text != paper
-    assert "Animal/preclinical context (Smith 2022):" in new_text
+    assert "Smith 2022 provides animal/preclinical context only." in new_text
+    assert not new_text.startswith("Animal/preclinical context")
     assert _unlabeled_animal_citation_issue_messages(
         new_text, ["Smith 2022"],
     ) == ()
@@ -876,7 +877,7 @@ def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
     rerendered, second_log = _phase_b_lane_qualifier(new_text, run)
     assert rerendered == new_text
     assert second_log == []
-    assert rerendered.count("Animal/preclinical context (Smith 2022):") == 1
+    assert rerendered.count("Smith 2022 provides animal/preclinical context only.") == 1
 
 
 def test_phase_b_still_skips_paragraphs_with_existing_qualifier(
@@ -934,7 +935,7 @@ def test_phase_b_replaces_repeated_generic_mixed_qualifiers(tmp_path: Path) -> N
 
     fixed, _log = _phase_b_lane_qualifier(paper, run)
     assert "Additional corpus sources included" not in fixed
-    assert fixed.count("Animal/preclinical context (Smith 2022):") == 1
+    assert fixed.count("Smith 2022 provides animal/preclinical context only.") == 1
     assert _phase_b_lane_qualifier(fixed, run) == (fixed, [])
 
 
@@ -954,6 +955,35 @@ def test_phase_b_removes_stale_generic_qualifier_without_animal_citation(tmp_pat
     assert fixed == "# Paper\n\nHuman trials reported a bounded null result.\n"
     assert len(log) == 1
     assert _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])
+
+
+def test_finalizer_refreshes_stale_human_rct_lane_from_manifest(tmp_path: Path) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier, _refresh_evidence_lanes
+
+    row = {
+        "receipt_id": "r1",
+        "citation_token": "Smith 2024",
+        "source_title": "Randomized placebo-controlled trial in older adults",
+        "source_venue": "Trials",
+        "population_summary": "older adults",
+        "thesis_text": "Human participants were randomized; mouse work was background context.",
+        "evidence_tier": "A1",
+        "directness": "direct",
+    }
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [row]}))
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "lanes": {"Smith 2024": "animal_preclinical"},
+        "animal_citations": [{"citation": "Smith 2024", "paper_id": "r1"}],
+    }))
+
+    assert _refresh_evidence_lanes(tmp_path)
+    lanes = json.loads((tmp_path / "evidence_lanes.json").read_text())
+    assert lanes["lanes"]["Smith 2024"] == "human_rct"
+    assert lanes["animal_citations"] == []
+    paper = "# Paper\n\nAnimal/preclinical context (Smith 2024): Smith 2024 reported human trial results.\n"
+    fixed, log = _phase_b_lane_qualifier(paper, tmp_path)
+    assert fixed == "# Paper\n\nSmith 2024 reported human trial results.\n"
+    assert log and _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])
 
 
 def test_run_text_phases_repairs_late_animal_lane_drift(

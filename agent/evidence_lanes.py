@@ -20,6 +20,7 @@ from __future__ import annotations
 from typing import Any, Final
 
 from agent.journal_surface_gate import is_animal_paper
+from agent.text_signals import HUMAN_TRIAL_SIGNAL_RE
 
 # Six canonical lanes, ordered by clinical / evidentiary strength.
 # Lower index = stronger direct-clinical claim weight.
@@ -57,9 +58,9 @@ def derive_lane(
     Decision rules (ordered, first-match wins). Universal — based on
     the canonical evidence-tier taxonomy used across project corpora
     (A1=RCT, A2=strong obs., B1=review/meta, B2=weaker obs., C=preclinical):
-      1. Source-text mentions animal/veterinary keywords → animal_preclinical
-      2. directness == "review" OR evidence_tier == "B1" → review_meta_analysis
-      3. evidence_tier == "A1" → human_rct (regardless of directness — A1 is the RCT tier)
+      1. directness == "review" OR evidence_tier == "B1" → review_meta_analysis
+      2. A1 with human source identity → human_rct
+      3. explicit non-human identity or animal-only excerpt → animal_preclinical
       4. directness == "mechanistic" → human_mechanistic
       5. evidence_tier in ("A2", "B2") → human_observational
       6. evidence_tier == "C" → animal_preclinical (preclinical tier code)
@@ -68,15 +69,22 @@ def derive_lane(
     # source_excerpt (the receipt's claim-sentence excerpts) is included so
     # species named only in the body text — "in male arctic foxes", "broiler
     # chickens" — flip the lane even when the title is generic.
-    blob = " ".join(s for s in (title, venue, population, source_excerpt) if s)
-    if is_animal_paper(blob):
-        return "animal_preclinical"
     tier = (evidence_tier or "").upper()
     direct = (directness or "").lower()
+    identity = " ".join(s for s in (title, venue, population) if s)
+    blob = " ".join(s for s in (identity, source_excerpt) if s)
+    animal_identity = is_animal_paper(identity)
+    animal_excerpt = is_animal_paper(source_excerpt)
+    human_signal = bool(HUMAN_TRIAL_SIGNAL_RE.search(blob))
     if direct == "review" or tier == "B1":
         return "review_meta_analysis"
-    if tier == "A1":
+    # Human trial papers routinely mention mouse work in their background.
+    # Strong human-study metadata wins unless the source identity itself is
+    # explicitly non-human; incidental excerpt text must not relabel the paper.
+    if tier == "A1" and not animal_identity and (not animal_excerpt or human_signal):
         return "human_rct"
+    if animal_identity or (animal_excerpt and not human_signal):
+        return "animal_preclinical"
     if direct == "mechanistic":
         return "human_mechanistic"
     if tier in ("A2", "B2"):

@@ -34,6 +34,7 @@ from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.outcome_class_remap import unique_outcome_displays  # noqa: E402
 from agent import publication_evidence as _publication_evidence  # noqa: E402
 from agent.revision_contract import gate_report as _revision_gate_report, needs_coverage as _revision_needs_coverage  # noqa: E402
+from agent.revision_quality import resolved_effect_direction  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
     parse_review_type,
@@ -1584,7 +1585,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             "evidence_type": _evidence_type_for_source(receipt),
             "evidence_context": _source_context_for_receipt(receipt),
             "outcome_class": receipt.get("outcome_class") or None,
-            "effect_direction": receipt.get("effect_direction") or None,
+            "effect_direction": resolved_effect_direction(receipt),
             "directness": receipt.get("directness") or None,
             "evidence_tier": receipt.get("evidence_tier") or None,
             # Author-year citation token (registry body_citation, e.g. "Zufry
