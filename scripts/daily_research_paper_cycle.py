@@ -41,6 +41,7 @@ sys.path.insert(0, str(ROOT))
 import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.revision_contract import ask_fingerprint  # noqa: E402
 from agent.revision_evidence import load_revision_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
@@ -5325,9 +5326,13 @@ def run_cycle(
                 # enumerated reviewer ask before it may be submitted.
                 unmet = _unmet_revision_asks(out_dir, revision_feedback) if (return_code == 0 and revision_feedback) else []
                 if return_code == 0 and revision_feedback:
+                    revision_asks = _revision_asks(
+                        revision_feedback, _required_revision_items(revision_source or {}),
+                    )
                     _write_json(out_dir / REVISION_COVERAGE_GATE, {
                         "passed": not unmet,
-                        "ask_count": len(_revision_asks(revision_feedback, _required_revision_items(revision_source or {}))),
+                        "ask_count": len(revision_asks),
+                        "ask_fingerprint": ask_fingerprint(revision_asks),
                         "unmet_asks": unmet,
                     })
                 # Retraction gate: never submit a paper that cites retracted science.
@@ -5624,7 +5629,9 @@ def main(argv: list[str] | None = None) -> int:
             reasons = preflight.get("reasons") if isinstance(preflight, dict) else None
             reason = " | ".join(str(item) for item in reasons) if isinstance(reasons, list) else ""
             print(f"[daily-v3-prepare] rejected_topic={topic} reason={reason or 'readiness_checks_failed'}")
-        return 0 if result["status"] != "remote_dedupe_failed" else 2
+        if result["status"] == "remote_dedupe_failed":
+            return 2
+        return 0 if result["ready_count"] >= result["target_ready"] else 3
     ledger = run_cycle(
         runs_root=args.runs_root,
         date=args.date or _default_cycle_date(),

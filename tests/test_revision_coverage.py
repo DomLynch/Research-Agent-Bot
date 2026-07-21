@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -8,6 +9,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import revision_coverage  # type: ignore[import-not-found]  # noqa: E402
+from agent.revision_contract import ask_fingerprint, gate_report  # noqa: E402
 from agent.sources.pubmed import pmid_rows_fingerprint  # noqa: E402
 from agent.revision_identity import (  # noqa: E402
     direction_tally_note,
@@ -49,6 +51,253 @@ def test_exact_stat_trace_does_not_collapse_integer_values() -> None:
     assert revision_quality_proof_is_stated("Smith 2025 [bundle:1] reported NNT = 10.", ask, rows) is True
     assert revision_quality_proof_is_stated("Smith 2025 [bundle:1] reported NNT = 1.", ask, rows) is False
     assert revision_quality_proof_is_stated("Smith 2025 reported NNT = 10.", ask, rows) is False
+
+
+def test_named_source_revisions_are_repaired_from_receipt_truth() -> None:
+    feedback = (
+        "Reconcile Mandrioli 2023 direction coding: either keep positive or null, but use "
+        "consistent wording in Abstract, Findings Map, Cross-Domain Synthesis, and Results; "
+        "Clarify or correct the Stanfield 2026 'P < 0.001' statistic if it is not present "
+        "in the bundle excerpt; "
+        "Justify inclusion of Wick 2025 under the paper topic or flag it as a structural "
+        "corpus limitation."
+    )
+    rows: list[dict[str, Any]] = [
+        {
+            "citation_token": "Mandrioli 2023",
+            "source_title": "Randomized trial of rapamycin",
+            "effect_direction": "positive",
+            "directness": "direct",
+        },
+        {
+            "citation_token": "Stanfield 2026",
+            "source_title": "Exercise and weekly sirolimus",
+            "effect_direction": "unclear",
+            "directness": "direct",
+            "p_values": ["p = 0.089", "p < 0.001"],
+            "thesis_text": "The retained source excerpt reports p = 0.089.",
+        },
+        {
+            "citation_token": "Wick 2025",
+            "source_title": "Molecularly matched therapies in glioblastoma",
+            "effect_direction": "unclear",
+            "directness": "indirect",
+        },
+    ]
+    paper = (
+        "# Paper\n\n## Abstract\n\nMandrioli 2023 was coded as null.\n\n"
+        "## Evidence Landscape\n\n### Findings Map\n\n"
+        "| Source | Finding |\n| --- | --- |\n| Mandrioli 2023 | direction=null |\n\n"
+        "## Results\n\nMandrioli 2023 (null on the measured endpoint) was retained.\n\n"
+        "## Cross-Domain Synthesis\n\nMandrioli 2023 direction=null.\n\n"
+        "## Limitations\n\nCorpus limitations.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, feedback)
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert details == [
+        "named_direction_reconciliation",
+        "named_statistic_reconciliation",
+        "named_topic_fit_boundary",
+    ]
+    assert fixed.count("Source-direction reconciliation (Mandrioli 2023):") == 1
+    assert fixed.count("Mandrioli 2023") == paper.count("Mandrioli 2023") + 1
+    assert "Mandrioli 2023 was coded as positive" in fixed
+    assert "Mandrioli 2023 (positive on the measured endpoint)" in fixed
+    assert "Mandrioli 2023 direction=positive" in fixed
+    assert "Stanfield 2026 [bundle:2] retains p = 0.089 as bundle-traceable" in fixed
+    assert "p < 0.001" not in fixed
+    assert "Source-scope boundary (Wick 2025):" in fixed
+    assert "structural corpus limitation" in fixed
+    assert revision_coverage.deterministic_known_asks(asks, evidence_rows=rows) == asks
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows,
+    ) == []
+    assert repair_revision_quality(fixed, rows, feedback) == (fixed, [])
+
+
+def test_gate_refresh_preserves_prior_verdict_for_unknown_asks(tmp_path: Path) -> None:
+    known = (
+        "Justify inclusion of Wick 2025 under the paper topic or flag it as a structural "
+        "corpus limitation."
+    )
+    unknown = "Improve the Discussion's clinical interpretation."
+    rows: list[dict[str, Any]] = [{
+        "citation_token": "Wick 2025", "directness": "indirect",
+        "effect_direction": "unclear",
+    }]
+    paper, _ = repair_revision_quality(
+        "## Evidence Landscape\n\nBounded evidence.\n", rows, known,
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": f"{known}; {unknown}", "required_revisions": [known, unknown],
+    }))
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps({
+        "passed": False, "ask_count": 2, "unmet_asks": [known],
+    }))
+
+    refreshed = gate_report(tmp_path, revision_coverage, refreshed_by="test")
+    fingerprint = ask_fingerprint([known, unknown])
+
+    assert refreshed == {
+        "passed": True, "ask_count": 2, "unmet_asks": [],
+        "ask_fingerprint": fingerprint, "refreshed_by": "test",
+    }
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps({
+        "passed": False, "ask_count": 2, "unmet_asks": [unknown],
+        "ask_fingerprint": fingerprint,
+    }))
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") == {
+        "passed": False, "ask_count": 2, "unmet_asks": [unknown],
+        "ask_fingerprint": fingerprint, "refreshed_by": "test",
+    }
+
+
+def test_gate_refresh_rejects_stale_unknown_ask_verdict(tmp_path: Path) -> None:
+    known = (
+        "Justify inclusion of Wick 2025 under the paper topic or flag it as a structural "
+        "corpus limitation."
+    )
+    first_unknown = "Improve the Discussion's clinical interpretation."
+    rows = [{"citation_token": "Wick 2025", "directness": "indirect"}]
+    paper, _ = repair_revision_quality("## Evidence Landscape\n\nEvidence.\n", rows, known)
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    request = tmp_path / "researka_revision_request.json"
+    request.write_text(json.dumps({"required_revisions": [known, first_unknown]}))
+
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") is None
+    legacy = tmp_path / "revision_coverage_gate.json"
+    legacy.write_text(json.dumps({
+        "passed": True, "ask_count": 2, "unmet_asks": [],
+    }))
+    current = gate_report(tmp_path, revision_coverage, refreshed_by="test")
+    assert current is not None and current["passed"] is True
+    legacy.write_text(json.dumps(current))
+    request.write_text(json.dumps({
+        "required_revisions": [known, "Explain the Discussion's clinical boundary."],
+    }))
+
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") is None
+
+
+def test_named_statistic_repair_covers_findings_map_tables() -> None:
+    ask = (
+        "Clarify or correct the Stanfield 2026 'P < 0.001' statistic if it is not present "
+        "in the bundle excerpt."
+    )
+    rows = [{
+        "citation_token": "Stanfield 2026", "directness": "direct",
+        "thesis_text": "The retained excerpt reports p = 0.089.",
+    }]
+    paper = (
+        "## Evidence Landscape\n\n### Findings Map\n\n"
+        "| Source | Finding |\n| --- | --- |\n"
+        "| Stanfield 2026 | P < 0.001 |\n\n"
+        "## Results\n\nBounded result.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["named_statistic_reconciliation"]
+    assert "P < 0.001" not in fixed
+    assert "Stanfield 2026 [bundle:1] retains p = 0.089" in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
+    assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_named_statistic_repair_retains_traceable_effect_estimate() -> None:
+    ask = (
+        "Correct Smith 2025's effect estimate if it is not present in the source trace."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "The retained source excerpt reports HR = 0.72.",
+    }]
+    paper = "## Results\n\nSmith 2025 reported HR = 9.99.\n"
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["exact_stat_trace", "named_statistic_reconciliation"]
+    assert "Smith 2025 [bundle:1] retains HR = 0.72" in fixed
+    assert "HR = 9.99" not in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
+
+
+def test_topic_fit_repair_does_not_fabricate_boundary_for_direct_source() -> None:
+    ask = (
+        "Justify inclusion of Smith 2025 under the paper topic or flag it as a structural "
+        "corpus limitation."
+    )
+    rows = [{"citation_token": "Smith 2025", "directness": "direct"}]
+    paper = "## Evidence Landscape\n\nSmith 2025 directly studies the paper topic.\n"
+
+    assert repair_revision_quality(paper, rows, ask) == (paper, [])
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == []
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_named_revision_matches_exact_citation_suffix() -> None:
+    ask = (
+        "Reconcile Phillips 2022b direction coding: keep negative and use consistent wording "
+        "in Results."
+    )
+    rows = [
+        {"citation_token": "Phillips 2022", "effect_direction": "positive"},
+        {"citation_token": "Phillips 2022b", "effect_direction": "negative"},
+    ]
+    paper = "## Results\n\nPhillips 2022b showed a positive direction.\n"
+
+    fixed, _ = repair_revision_quality(paper, rows, ask)
+
+    assert "Phillips 2022b showed a negative direction" in fixed
+    assert "Source-direction reconciliation (Phillips 2022b):" in fixed
+    assert "Source-direction reconciliation (Phillips 2022):" not in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
+
+
+def test_direction_repair_reconciles_claim_wording_not_just_codes() -> None:
+    ask = (
+        "Reconcile Mandrioli 2023 direction coding: keep positive and use consistent wording "
+        "in Results."
+    )
+    rows = [{"citation_token": "Mandrioli 2023", "effect_direction": "positive"}]
+    paper = (
+        "## Results\n\nMandrioli 2023 showed a null direction. "
+        "Mandrioli 2023 supports a null effect.\n"
+    )
+
+    fixed, _ = repair_revision_quality(paper, rows, ask)
+
+    assert "showed a positive direction" in fixed
+    assert "supports a positive effect" in fixed
+    assert "null direction" not in fixed and "null effect" not in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
+
+
+def test_p_value_and_effect_estimate_repairs_do_not_overwrite_each_other() -> None:
+    feedback = (
+        "Correct Smith 2025's P < 0.001 if it is not present in the source trace; "
+        "Correct Smith 2025's effect estimate if it is not present in the source trace."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "The source excerpt reports p = 0.089 and HR = 0.72.",
+    }]
+    paper = "## Results\n\nSmith 2025 reported P < 0.001 and HR = 9.99.\n"
+
+    fixed, _ = repair_revision_quality(paper, rows, feedback)
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert "Source-statistic reconciliation (Smith 2025; p-value):" in fixed
+    assert "Source-statistic reconciliation (Smith 2025; effect estimate):" in fixed
+    assert "retains p = 0.089" in fixed and "retains HR = 0.72" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks, evidence_rows=rows) == []
+    assert repair_revision_quality(fixed, rows, feedback) == (fixed, [])
 
 
 def test_exact_stat_trace_cannot_borrow_a_different_source_value() -> None:

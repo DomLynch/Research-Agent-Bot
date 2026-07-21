@@ -1,9 +1,14 @@
 """Shared structured revision request and deterministic gate contract."""
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
+
+
+def ask_fingerprint(asks: list[str]) -> str:
+    return hashlib.sha256(json.dumps(asks, separators=(",", ":")).encode()).hexdigest()
 
 
 def feedback(request: Any) -> str:
@@ -34,15 +39,42 @@ def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str) -> dict[str,
         return None
     required = request.get("required_revisions")
     asks = coverage.revision_asks(revision_feedback, required if isinstance(required, list) else None)
-    if not asks or len(coverage.deterministic_known_asks(asks)) != len(asks):
-        return None
     manifest = load("manifest.json")
     rows_raw = manifest.get("receipts")
     rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
+    known = coverage.deterministic_known_asks(asks, evidence_rows=rows)
+    if not asks or not known:
+        return None
+    known_set = set(known)
+    unknown = [ask for ask in asks if ask not in known_set]
+    previous = load("revision_coverage_gate.json")
+    previous_unmet = previous.get("unmet_asks")
+    fingerprint = ask_fingerprint(asks)
+    request_path = out_dir / "researka_revision_request.json"
+    gate_path = out_dir / "revision_coverage_gate.json"
+    legacy_current = (
+        not previous.get("ask_fingerprint")
+        and gate_path.is_file()
+        and gate_path.stat().st_mtime_ns >= request_path.stat().st_mtime_ns
+    )
+    if unknown and (
+        previous.get("ask_count") != len(asks)
+        or not isinstance(previous_unmet, list)
+        or (previous.get("ask_fingerprint") != fingerprint and not legacy_current)
+    ):
+        return None
     unmet = coverage.deterministic_unmet_asks(
-        paper.read_text(encoding="utf-8"), asks,
+        paper.read_text(encoding="utf-8"), known,
         retained_citations=coverage.retained_citation_labels(manifest, load("citation_registry.json")),
         evidence_rows=rows,
         source_identifier_audit=load("source_identifier_verification.json"),
     )
-    return {"passed": not unmet, "ask_count": len(asks), "unmet_asks": unmet, "refreshed_by": refreshed_by}
+    prior_unmet = {str(ask) for ask in previous_unmet or ()}
+    unmet.extend(ask for ask in unknown if ask in prior_unmet)
+    report = {
+        "passed": not unmet, "ask_count": len(asks), "unmet_asks": unmet,
+        "refreshed_by": refreshed_by,
+    }
+    if unknown:
+        report["ask_fingerprint"] = fingerprint
+    return report

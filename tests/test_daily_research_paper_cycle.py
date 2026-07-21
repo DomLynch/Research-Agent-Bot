@@ -1944,7 +1944,7 @@ def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, cap
         "--prepare-max-repairs", "2",
         "--max-attempts", "8",
         "--timeout-sec", "90",
-    ]) == 0
+    ]) == 3
     assert calls == [{
         "runs_root": tmp_path / "runs",
         "target_ready": 3,
@@ -1961,6 +1961,15 @@ def test_prepare_only_cli_reports_buffer_result(tmp_path: Path, monkeypatch, cap
     )
 
 
+def test_prepare_only_cli_succeeds_only_with_full_buffer(monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "prepare_candidate_buffer", lambda **_kwargs: {
+        "status": "candidate_buffer_ready", "ready_count": 3, "target_ready": 3,
+        "attempted_count": 3, "attempts": [], "ready": [],
+    })
+
+    assert cycle.main(["--prepare-only"]) == 0
+
+
 def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
     service = (REPO / "deploy" / "research-agent-paper-prepare.service").read_text(encoding="utf-8")
     timer = (REPO / "deploy" / "research-agent-paper-prepare.timer").read_text(encoding="utf-8")
@@ -1969,7 +1978,10 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
         "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
         "--max-attempts 12" in service
     )
-    assert "TimeoutStartSec=5400" in service
+    assert "SuccessExitStatus=3" in service
+    assert "Restart=on-failure" in service
+    assert "RestartPreventExitStatus=3" in service
+    assert "TimeoutStartSec=12600" in service
     assert "OnCalendar=*-*-* 06/8:00:00" in timer
 
 
@@ -5142,6 +5154,7 @@ def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> Non
     assert "unmet_revision_asks" not in ledger["attempts"][0]
     gate = json.loads((tmp_path / "runs" / ledger["attempts"][0]["out_dir"] / cycle.REVISION_COVERAGE_GATE).read_text())
     assert gate["passed"] is True
+    assert len(gate["ask_fingerprint"]) == 64
 
 
 def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch) -> None:

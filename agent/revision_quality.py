@@ -38,13 +38,18 @@ _SUBSET_NOTE = (
 )
 
 
-def revision_quality_ask_known(ask: str) -> bool:
+def revision_quality_ask_known(
+    ask: str, evidence_rows: Sequence[dict[str, Any]] | None = None,
+) -> bool:
     lower = _normalise(ask)
     return any(check(lower) for check in (
         _asks_outcome_roster, _asks_exact_stat_trace, _asks_fragment_cleanup,
         _asks_representative_subset, _asks_evidence_role_reconciliation,
-        _asks_evidence_honesty,
-    ))
+        _asks_evidence_honesty, _asks_named_direction_reconciliation,
+        _asks_named_statistic_reconciliation,
+    )) or _asks_named_topic_fit_boundary(lower) and _topic_fit_is_deterministic(
+        ask, _ordered_rows(evidence_rows or ()),
+    )
 
 
 def asks_exact_stat_trace(feedback: str) -> bool:
@@ -65,6 +70,10 @@ def revision_quality_proof_is_stated(
         (_asks_representative_subset, lambda: _subset_scope_is_stated(paper_md, rows)),
         (_asks_evidence_role_reconciliation, lambda: _evidence_roles_are_reconciled(paper_md, ask, rows)),
         (_asks_evidence_honesty, lambda: _evidence_honesty_is_stated(paper_md, ask, rows)),
+        (_asks_named_direction_reconciliation, lambda: _named_revision_is_stated(paper_md, ask, rows, "direction")),
+        (_asks_named_statistic_reconciliation, lambda: _named_revision_is_stated(paper_md, ask, rows, "statistic")),
+        (_asks_named_topic_fit_boundary, lambda: not _topic_fit_is_deterministic(ask, rows)
+         or _named_revision_is_stated(paper_md, ask, rows, "topic_fit")),
     )
     return all(not matches(lower) or satisfied() for matches, satisfied in checks)
 
@@ -82,6 +91,18 @@ def repair_revision_quality(
         patched, changed = _repair_untraceable_statistics(patched, rows)
         if changed:
             details.append("exact_stat_trace")
+    for predicate, kind, detail in (
+        (_asks_named_direction_reconciliation, "direction", "named_direction_reconciliation"),
+        (_asks_named_statistic_reconciliation, "statistic", "named_statistic_reconciliation"),
+        (_asks_named_topic_fit_boundary, "topic_fit", "named_topic_fit_boundary"),
+    ):
+        changed = 0
+        for ask in _feedback_parts(feedback):
+            if predicate(_normalise(ask)):
+                patched, n = _repair_named_revision(patched, ask, rows, kind)
+                changed += n
+        if changed:
+            details.append(detail)
     if _asks_fragment_cleanup(lower):
         patched, changed = _repair_fragmentary_prose(patched, feedback)
         if changed:
@@ -202,8 +223,12 @@ def _model_context(scope: str) -> str:
 
 def _matching_feedback(feedback: str, predicate: Any) -> str:
     return " ".join(
-        part for part in re.split(r";\s+(?=[A-Z])", feedback) if predicate(_normalise(part))
+        part for part in _feedback_parts(feedback) if predicate(_normalise(part))
     )
+
+
+def _feedback_parts(feedback: str) -> list[str]:
+    return [part.strip() for part in re.split(r";\s+(?=[A-Z])", feedback) if part.strip()]
 
 
 def _asks_outcome_roster(text: str) -> bool:
@@ -246,6 +271,36 @@ def _asks_evidence_honesty(text: str) -> bool:
         "evidence honesty" in text
         and any(token in text for token in ("consistently reflected", "throughout", "directional confidence"))
     ) or ("pooled review estimates" in text and "directional confidence" in text)
+
+
+def _asks_named_direction_reconciliation(text: str) -> bool:
+    return (
+        _has_named_source(text)
+        and "direction" in text
+        and "consistent wording" in text
+        and any(token in text for token in ("positive", "negative", "null", "mixed", "unclear"))
+    )
+
+
+def _asks_named_statistic_reconciliation(text: str) -> bool:
+    return (
+        _has_named_source(text)
+        and any(token in text for token in ("statistic", "p value", "p <", "p =", "effect estimate"))
+        and any(token in text for token in ("if it is not present", "if not present", "not present in"))
+        and any(token in text for token in ("bundle", "excerpt", "source", "trace"))
+    )
+
+
+def _asks_named_topic_fit_boundary(text: str) -> bool:
+    return (
+        _has_named_source(text)
+        and any(token in text for token in ("justify inclusion", "included under", "topic fit", "topic-fit"))
+        and "structural corpus limitation" in text
+    )
+
+
+def _has_named_source(text: str) -> bool:
+    return re.search(r"\b[A-Z][A-Za-z'’.\-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", text, re.I) is not None
 
 
 def _label(row: dict[str, Any]) -> str:
@@ -313,6 +368,13 @@ def traceable_p_values(row: dict[str, Any]) -> tuple[str, ...]:
     return tuple(
         value for raw in values if (value := str(raw).strip()) and _stat_supported(value, row)
     ) if isinstance(values, list) else ()
+
+
+def _traceable_effect_statistics(row: dict[str, Any]) -> tuple[str, ...]:
+    return tuple(dict.fromkeys(
+        match.group(0) for match in _EFFECT_STAT_RE.finditer(_row_evidence(row))
+        if _stat_supported(match.group(0), row)
+    ))
 
 
 def resolved_effect_direction(row: dict[str, Any]) -> str:
@@ -387,10 +449,43 @@ def _stat_is_source_bound(paragraph: str, match: re.Match[str], rows: Sequence[d
 
 
 def _statistics_are_source_bound(paper_md: str, rows: Sequence[dict[str, Any]]) -> bool:
-    return all(
+    prose_ok = all(
         _stat_is_source_bound(paragraph, match, rows)
         for paragraph in _prose_paragraphs(paper_md) for match in _EFFECT_STAT_RE.finditer(paragraph)
     )
+    table_ok = all(
+        (row := _table_source_row(line, rows)) is not None
+        and all(_stat_supported(match.group(0), row) for match in _EFFECT_STAT_RE.finditer(line))
+        for line in _findings_map(paper_md).splitlines()
+        if line.startswith("|") and _EFFECT_STAT_RE.search(line)
+    )
+    return prose_ok and table_ok
+
+
+def _table_source_row(line: str, rows: Sequence[dict[str, Any]]) -> dict[str, Any] | None:
+    found = _named_rows(line, rows)
+    return found[0] if len(found) == 1 else None
+
+
+def _repair_findings_map_statistics(
+    paper_md: str, rows: Sequence[dict[str, Any]],
+) -> tuple[str, int]:
+    scope = _findings_map(paper_md)
+    if not scope:
+        return paper_md, 0
+    lines = scope.splitlines(keepends=True)
+    for index, line in enumerate(lines):
+        if not line.startswith("|") or not _EFFECT_STAT_RE.search(line):
+            continue
+        row = _table_source_row(line, rows)
+        lines[index] = _EFFECT_STAT_RE.sub(
+            lambda match: match.group(0)
+            if row and _stat_supported(match.group(0), row)
+            else "a source-reported estimate",
+            line,
+        )
+    fixed = "".join(lines)
+    return (paper_md, 0) if fixed == scope else (paper_md.replace(scope, fixed, 1), 1)
 
 
 def _soften_statistics(paragraph: str) -> str:
@@ -406,11 +501,15 @@ def _soften_statistics(paragraph: str) -> str:
 def _repair_untraceable_statistics(
     paper_md: str, rows: Sequence[dict[str, Any]],
 ) -> tuple[str, int]:
+    paper_md, changed = _repair_findings_map_statistics(paper_md, rows)
     parts = re.split(r"(\n\s*\n)", paper_md)
-    changed = 0
     for index in range(0, len(parts), 2):
         original = parts[index]
-        if original.strip() not in _prose_paragraphs(original) or not _EFFECT_STAT_RE.search(original):
+        if (
+            original.lstrip().startswith("Source-statistic reconciliation (")
+            or original.strip() not in _prose_paragraphs(original)
+            or not _EFFECT_STAT_RE.search(original)
+        ):
             continue
         paragraph = attach_bundle_references(original, rows)
         matches = list(_EFFECT_STAT_RE.finditer(paragraph))
@@ -498,12 +597,210 @@ def _subset_scope_is_stated(paper_md: str, rows: Sequence[dict[str, Any]]) -> bo
     return _normalise(_SUBSET_NOTE) in _normalise(paper_md) and _findings_map_is_exact(paper_md, rows)
 
 
+def _mention_key(text: str) -> str:
+    return _normalise(re.sub(r"\bet\s+al\.?", "", text, flags=re.I))
+
+
 def _named_rows(ask: str, rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
-    lower = ask.casefold()
+    lower = _mention_key(ask)
     return [row for row in rows if any(
-        value and value.casefold() in lower
+        value and re.search(rf"(?<!\w){re.escape(_mention_key(value))}(?!\w)", lower)
         for value in (_label(row), str(row.get("source_title") or "").strip())
     )]
+
+
+def _topic_fit_is_deterministic(ask: str, rows: Sequence[dict[str, Any]]) -> bool:
+    named = _named_rows(ask, rows)
+    return bool(named) and all(
+        (directness := str(row.get("directness") or "").strip().lower())
+        and directness != "unknown" and not directness.startswith("direct")
+        for row in named
+    )
+
+
+def _section_span(paper_md: str, heading: str) -> tuple[int, int] | None:
+    match = re.search(rf"^(?P<marks>#{{2,3}})\s+{re.escape(heading)}[ \t]*$", paper_md, re.M | re.I)
+    if not match:
+        return None
+    tail = paper_md[match.end():]
+    next_heading = re.search(rf"^#{{1,{len(match.group('marks'))}}}\s+", tail, re.M)
+    return match.end(), match.end() + (next_heading.start() if next_heading else len(tail))
+
+
+def _requested_headings(paper_md: str, ask: str) -> list[str]:
+    lower = _normalise(ask)
+    return [
+        heading.strip()
+        for heading in re.findall(r"^#{2,3}\s+(.+?)[ \t]*$", paper_md, re.M)
+        if _normalise(heading) in lower
+    ]
+
+
+def _upsert_section_note(paper_md: str, heading: str, marker: str, note: str) -> tuple[str, int]:
+    span = _section_span(paper_md, heading)
+    if not span:
+        return paper_md, 0
+    start, end = span
+    section = paper_md[start:end]
+    existing = re.search(rf"^{re.escape(marker)}.*$", section, re.M)
+    if existing:
+        if existing.group(0) == note:
+            return paper_md, 0
+        left, right = start + existing.start(), start + existing.end()
+        return paper_md[:left] + note + paper_md[right:], 1
+    return paper_md[:start] + "\n\n" + note + paper_md[start:], 1
+
+
+def _section_has_note(paper_md: str, heading: str, note: str) -> bool:
+    span = _section_span(paper_md, heading)
+    return bool(span and note in paper_md[span[0]:span[1]])
+
+
+def _revision_headings(paper_md: str, ask: str, kind: str) -> list[str]:
+    requested = _requested_headings(paper_md, ask)
+    if kind == "direction" and requested:
+        return requested
+    defaults = {
+        "direction": ("Results",),
+        "statistic": ("Evidence Snapshot", "Evidence Landscape", "Results"),
+        "topic_fit": ("Evidence Landscape", "Limitations", "Results"),
+    }[kind]
+    heading = requested[0] if requested else next(
+        (name for name in defaults if _section_span(paper_md, name)), None,
+    )
+    return [heading] if heading else []
+
+
+def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tuple[str, str] | None:
+    label = _label(row)
+    if kind == "direction":
+        marker = f"Source-direction reconciliation ({label}):"
+        detail = (
+            f"source-level direction={resolved_effect_direction(row)} is used consistently; "
+            "endpoint-specific findings remain separately qualified."
+        )
+    elif kind == "statistic":
+        stats = _traceable_effect_statistics(row)
+        if re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
+            statistic_kind = "p-value"
+            stats = tuple(stat for stat in stats if stat.lower().startswith("p"))
+        elif "effect estimate" in ask.lower():
+            statistic_kind = "effect estimate"
+            stats = tuple(stat for stat in stats if not stat.lower().startswith("p"))
+        else:
+            statistic_kind = "exact statistic"
+        marker = f"Source-statistic reconciliation ({label}; {statistic_kind}):"
+        finding = (
+            f"{label} [bundle:{index}] retains {stats[0]} as bundle-traceable"
+            if stats
+            else f"{label} has no bundle-traceable exact statistic"
+        )
+        detail = f"{finding}; other exact values are excluded, and no direction is inferred from a statistic alone."
+    else:
+        marker = f"Source-scope boundary ({label}):"
+        directness = str(row.get("directness") or "unknown").strip().lower()
+        if not directness or directness == "unknown" or directness.startswith("direct"):
+            return None
+        detail = (
+            f"{label} is retained only as directness={directness} contextual evidence and a structural corpus "
+            "limitation; it is excluded from direct effect accounting for the paper topic."
+        )
+    return marker, f"{marker} {detail}"
+
+
+def _direction_patterns(label: str) -> tuple[str, ...]:
+    direction = r"(?P<direction>positive|negative|null|mixed|unclear)"
+    return (
+        rf"(?P<prefix>{re.escape(label)}[^\n]{{0,160}}?\bdirection\s*=\s*){direction}(?P<suffix>)",
+        rf"(?P<prefix>{re.escape(label)}\s*\(){direction}(?P<suffix>\s+on\b)",
+        rf"(?P<prefix>{re.escape(label)}[^\n.;]{{0,80}}?\b(?:is|was|coded(?:\s+as)?)\s+){direction}(?P<suffix>)",
+        rf"(?P<prefix>{re.escape(label)}[^\n.;]{{0,100}}?\b(?:show(?:s|ed)?|support(?:s|ed)?|"
+        rf"indicat(?:e|es|ed)|report(?:s|ed)?|ha(?:s|d))\s+(?:an?\s+)?){direction}"
+        rf"(?P<suffix>\s+(?:direction|effect|signal|finding)\b)",
+    )
+
+
+def _reconcile_direction_mentions(
+    paper_md: str, row: dict[str, Any], headings: Sequence[str],
+) -> tuple[str, int]:
+    label, resolved, changed = _label(row), resolved_effect_direction(row), 0
+    patched = paper_md
+    for heading in headings:
+        span = _section_span(patched, heading)
+        if not span:
+            continue
+        start, end = span
+        section = patched[start:end]
+        for pattern in _direction_patterns(label):
+            def replace(match: re.Match[str]) -> str:
+                nonlocal changed
+                if match.group("direction").lower() == resolved:
+                    return match.group(0)
+                changed += 1
+                return match.group("prefix") + resolved + match.group("suffix")
+            section = re.sub(pattern, replace, section, flags=re.I)
+        patched = patched[:start] + section + patched[end:]
+    return patched, changed
+
+
+def _direction_mentions_are_consistent(
+    paper_md: str, row: dict[str, Any], headings: Sequence[str],
+) -> bool:
+    resolved = resolved_effect_direction(row)
+    for heading in headings:
+        span = _section_span(paper_md, heading)
+        section = paper_md[span[0]:span[1]] if span else ""
+        if any(
+            match.group("direction").lower() != resolved
+            for pattern in _direction_patterns(_label(row))
+            for match in re.finditer(pattern, section, re.I)
+        ):
+            return False
+    return True
+
+
+def _repair_named_revision(
+    paper_md: str, ask: str, rows: Sequence[dict[str, Any]], kind: str,
+) -> tuple[str, int]:
+    patched, changed = (
+        _repair_untraceable_statistics(paper_md, rows) if kind == "statistic" else (paper_md, 0)
+    )
+    headings = _revision_headings(patched, ask, kind)
+    named = _named_rows(ask, rows)
+    if kind == "direction":
+        for row in named:
+            patched, n = _reconcile_direction_mentions(patched, row, headings)
+            changed += n
+    note_headings = ["Results"] if kind == "direction" and "Results" in headings else headings[:1]
+    for row in named:
+        note = _revision_note(kind, row, list(rows).index(row) + 1, ask)
+        if not note:
+            continue
+        marker, text = note
+        for heading in note_headings:
+            patched, n = _upsert_section_note(patched, heading, marker, text)
+            changed += n
+    return patched, changed
+
+
+def _named_revision_is_stated(
+    paper_md: str, ask: str, rows: Sequence[dict[str, Any]], kind: str,
+) -> bool:
+    named, headings = _named_rows(ask, rows), _revision_headings(paper_md, ask, kind)
+    notes = [(row, _revision_note(kind, row, list(rows).index(row) + 1, ask)) for row in named]
+    if not named or not headings or any(note is None for _, note in notes):
+        return False
+    note_headings = ["Results"] if kind == "direction" and "Results" in headings else headings[:1]
+    return (
+        (kind != "statistic" or _statistics_are_source_bound(paper_md, rows))
+        and (kind != "direction" or all(
+            _direction_mentions_are_consistent(paper_md, row, headings) for row in named
+        ))
+        and all(
+            _section_has_note(paper_md, heading, note[1])
+            for _, note in notes if note is not None for heading in note_headings
+        )
+    )
 
 
 def _review_level(row: dict[str, Any]) -> bool:

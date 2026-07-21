@@ -53,7 +53,7 @@ def revision_asks(feedback: str, required_revisions: Sequence[str] | None = None
         "Add", "Audit", "Clarify", "Complete", "Correct", "Define", "Differentiate",
         "Document", "Ensure", "Explain", "Expand", "Fix", "For each", "For every",
         "Enumerate", "Hedge", "In", "Include", "Integrate", "Make", "Narrow",
-        "Move", "Operationalize", "Populate", "Rename",
+        "Justify", "Move", "Operationalize", "Populate", "Rename",
         "Provide", "Recode", "Re-extract", "Either", "Mark", "Reclassify", "Reframe",
         "Recompute", "Reconcile", "Reduce", "Regenerate", "Remove", "Repair", "Resolve",
         "Replace", "Restate", "Restructure", "Rewrite", "Separate", "Soften", "Strengthen",
@@ -127,7 +127,7 @@ def material_unmet_asks(
         paper_md, asks, retained_citations=retained_citations,
         evidence_rows=evidence_rows, source_identifier_audit=source_identifier_audit,
     )
-    deterministic_met = set(deterministic_known_asks(asks)) - set(unmet)
+    deterministic_met = set(deterministic_known_asks(asks, evidence_rows=evidence_rows)) - set(unmet)
     for ask in unmet_asks(paper_md, asks):
         if ask not in unmet and ask not in deterministic_met:
             unmet.append(ask)
@@ -155,13 +155,18 @@ def deterministic_unmet_asks(
             and not _retained_tension_ask_satisfied(paper_md, ask, retained_citations)]
 
 
-def deterministic_known_asks(asks: Sequence[str]) -> list[str]:
+def deterministic_known_asks(
+    asks: Sequence[str], *, evidence_rows: Sequence[dict[str, Any]] | None = None,
+) -> list[str]:
     """Reviewer asks covered by deterministic structural predicates."""
-    return [ask for ask in (a.strip() for a in asks if a and a.strip()) if _deterministic_ask_known(ask)]
+    return [ask for ask in (a.strip() for a in asks if a and a.strip())
+            if _deterministic_ask_known(ask, evidence_rows)]
 
 
-def _deterministic_ask_known(ask: str) -> bool:
-    return _quality.revision_quality_ask_known(ask) or any(
+def _deterministic_ask_known(
+    ask: str, evidence_rows: Sequence[dict[str, Any]] | None = None,
+) -> bool:
+    return _quality.revision_quality_ask_known(ask, evidence_rows) or any(
         matches(" ".join(ask.lower().split())) for matches, _ in _DETERMINISTIC_ASK_RULES
     )
 

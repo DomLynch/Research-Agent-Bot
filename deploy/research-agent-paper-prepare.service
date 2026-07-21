@@ -5,6 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
+SuccessExitStatus=3
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
 ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --prepare-only --prepare-target 3 --prepare-max-repairs 3 --max-attempts 12 --timeout-sec 600
@@ -14,5 +15,6 @@ Environment=RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT=200
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_FALLBACK_LIMIT=1000
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED=5
 Restart=on-failure
+RestartPreventExitStatus=3
 RestartSec=60
-TimeoutStartSec=5400
+TimeoutStartSec=12600
