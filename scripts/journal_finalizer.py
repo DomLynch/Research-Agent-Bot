@@ -2044,7 +2044,7 @@ _FINALIZER_CI_RE = re.compile(
 )
 _FINALIZER_SIGNIFICANT_RE = re.compile(r"\b(?:statistically\s+)?significant(?:ly)?\b", re.I)
 _FINALIZER_NONSIGNIFICANT_RE = re.compile(
-    r"\b(?:non[- ]?significant(?:ly)?|not\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
+    r"\b(?:non[- ]?significant(?:ly)?|(?:no|not)\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
     re.I,
 )
 def _phase_d_numeric_significance_correction(
@@ -2052,8 +2052,9 @@ def _phase_d_numeric_significance_correction(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
+    significance_feedback = _numeric_significance_feedback(feedback)
     patched, n = _stats.repair_for_feedback(text, feedback)
-    if not _revision_asks_numeric_significance_correction(feedback):
+    if not significance_feedback:
         if not n:
             return text, []
         entry = FinalizerLogEntry("D_numeric_significance_correction", "repair_unqualified_non_significant_p_value", n, "aligned nominal significance wording with explicit p-values")
@@ -2068,11 +2069,15 @@ def _phase_d_numeric_significance_correction(
     for section in ("Abstract", "Conclusion"):
         patched, changed = _repair_non_significant_effect_claims_in_section(patched, section)
         n += changed
-    patched, changed = _ensure_named_numeric_correction_statement(patched, feedback, out_dir)
+    patched, changed = _ensure_named_numeric_correction_statement(
+        patched, significance_feedback, out_dir,
+    )
     n += changed
-    patched, changed = _repair_named_non_significant_positive_labels(patched, feedback)
+    patched, changed = _repair_named_non_significant_positive_labels(
+        patched, significance_feedback,
+    )
     n += changed
-    if _revision_asks_numeric_effect_audit(feedback):
+    if _revision_asks_numeric_effect_audit(significance_feedback):
         patched, changed = _ensure_numeric_effect_audit_statement(patched)
         n += changed
     if not n:
@@ -2085,10 +2090,29 @@ def _phase_d_numeric_significance_correction(
     )]
 
 
+def _numeric_significance_feedback(feedback: str) -> str:
+    selected: list[str] = []
+    for ask in revision_coverage.revision_asks(feedback):
+        explicit = _asks_explicit_significance_correction(ask)
+        clauses = (ask,) if explicit else re.split(r";\s*", ask)
+        selected.extend(
+            clause.strip()
+            for clause in clauses
+            if _revision_asks_numeric_significance_correction(clause)
+            and (explicit or not _asks_exact_stat_trace(clause))
+        )
+    return "; ".join(selected)
+
+
 def _revision_asks_numeric_significance_correction(feedback: str) -> bool:
     lower = " ".join(feedback.lower().split())
     return (
-        any(token in lower for token in ("p=", "p =", "p-value", "p value", "p-values", "confidence interval", "effect direction"))
+        (
+            bool(_FINALIZER_P_VALUE_RE.search(feedback) or _FINALIZER_CI_RE.search(feedback))
+            or any(token in lower for token in (
+                "p-value", "p value", "p-values", "confidence interval", "effect direction",
+            ))
+        )
         and any(token in lower for token in (
             "significant", "non-significant", "factual error", "correct", "audit",
             "verify", "representative statistic", "miscoded", "direction/statistic", "inconsistency",
@@ -2096,6 +2120,19 @@ def _revision_asks_numeric_significance_correction(feedback: str) -> bool:
     ) or (
         "numeric correction" in lower
         and any(token in lower for token in ("leftover", "editing markup", "remove", "contextualize", "abstract", "research question"))
+    )
+
+
+def _asks_explicit_significance_correction(feedback: str) -> bool:
+    lower = " ".join(feedback.lower().split())
+    return bool(
+        _FINALIZER_P_VALUE_RE.search(feedback) or _FINALIZER_CI_RE.search(feedback)
+    ) and bool(revision_coverage.named_significance_targets(feedback)) and any(
+        token in lower for token in (
+            "correct", "reclassif", "recode", "resolve", "revise",
+            "non-significant", "not significant", "not a significant",
+            "factual error", "significance threshold",
+        )
     )
 
 
@@ -2155,67 +2192,25 @@ def _ensure_numeric_effect_audit_statement(text: str) -> tuple[str, int]:
 
 
 def _ensure_named_numeric_correction_statement(text: str, feedback: str, out_dir: Path) -> tuple[str, int]:
-    p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
-    if not p_value:
+    source = revision_coverage.numeric_correction_target(feedback)
+    if source is None:
         return text, 0
-    source_pattern = r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)"
-    local = feedback[max(0, p_value.start() - 180):min(len(feedback), p_value.end() + 180)]
-    sources = list(re.finditer(source_pattern, local))
-    if not sources:
-        sources = list(re.finditer(r"regarding\s+" + source_pattern, feedback))
-    if not sources:
-        sources = list(re.finditer(source_pattern, feedback))
-    if not sources:
-        return text, 0
-    p_local = local.lower().find(p_value.group(0).lower())
-    before_p = [candidate for candidate in sources if p_local < 0 or candidate.start() <= p_local]
-    source = before_p[-1] if before_p else sources[0]
-    source_label = f"{source.group(1)} {source.group(2)}"
+    source_label, stat_text, is_p_value = source
     retained = revision_coverage.retained_citation_labels(manifest, _load_sidecar(out_dir / "citation_registry.json") or {}) if isinstance((manifest := _load_sidecar(out_dir / "manifest.json")), dict) else ()
     if retained and " ".join(source_label.casefold().split()) not in retained:
         return re.subn(rf"(?im)^Numeric verification note:\s*{re.escape(source_label)}\b[^\n]*(?:\n|$)", "", text)
-    p_text = f"p = {p_value.group(1)}"
-    statement = _stats.nominal_verification_statement(source_label, p_text, feedback)
+    statement = _stats.nominal_verification_statement(source_label, stat_text, feedback) if is_p_value else None
     if statement:
         return (text, 0) if statement in text else _prepend_or_create_section_paragraph(text, "Evidence Landscape", statement)
     normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
     if n_existing:
         text = normalized
-    visible_scope = " ".join(
-        part for part in (
-            _section_body(text, "Abstract"),
-            _section_body(text, "Methods"),
-            _section_body(text, "Evidence Landscape"),
-            _section_body(text, "Conclusion"),
-        ) if part
-    )
-    if (
-        source_label.lower() in visible_scope.lower()
-        and p_text.lower() in visible_scope.lower()
-        and _FINALIZER_NONSIGNIFICANT_RE.search(visible_scope)
-        and "representative non-significant statistic" not in visible_scope.lower()
-        and "numeric correction:" not in " ".join(
-            part for part in (
-                _section_body(text, "Abstract"),
-                _section_body(text, "Research Question"),
-            ) if part
-        ).lower()
-    ):
+    if revision_coverage.named_numeric_correction_is_stated(text, feedback):
         return text, n_existing
-    scope = " ".join(
-        part for part in (
-            _section_body(text, "Methods"),
-            _section_body(text, "Evidence Landscape"),
-            _section_body(text, "Conclusion"),
-        ) if part
-    )
-    if source_label.lower() in scope.lower() and p_text.lower() in scope.lower() and _FINALIZER_NONSIGNIFICANT_RE.search(scope):
-        if "representative non-significant statistic" not in scope.lower():
-            return text, n_existing
     outcome = _numeric_correction_outcome(feedback)
     statement = (
         f"Numeric verification note: {source_label} reported a non-significant mapped comparison"
-        f" ({p_text}){outcome}; this synthesis treats that mapped comparison, "
+        f" ({stat_text}){outcome}; this synthesis treats that mapped comparison, "
         "not every within-source contrast, as non-significant."
     )
     patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", statement)
@@ -2286,51 +2281,59 @@ def _clarify_mapped_non_significant_comparison(text: str) -> tuple[str, int]:
 
 
 def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> tuple[str, int]:
-    p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", feedback, flags=re.I)
-    if not p_value or float(p_value.group(1)) < 0.05:
+    source = revision_coverage.numeric_correction_target(feedback)
+    if source is None or revision_coverage.explicit_stat_is_non_significant(feedback) is not True:
         return text, 0
-    source_pattern = r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)"
-    local = feedback[max(0, p_value.start() - 180):min(len(feedback), p_value.end() + 180)]
-    sources = list(re.finditer(source_pattern, local))
-    if not sources:
-        sources = list(re.finditer(r"regarding\s+" + source_pattern, feedback))
-    if not sources:
-        return text, 0
-    p_local = local.lower().find(p_value.group(0).lower())
-    before_p = [candidate for candidate in sources if p_local < 0 or candidate.start() <= p_local]
-    source = before_p[-1] if before_p else sources[0]
+    source_label = source[0]
+    author, year = source_label.rsplit(" ", 1)
     lower = feedback.lower()
+    labels = (
+        source_label.lower(), f"{author} ({year})".lower(),
+    )
+    targets = revision_coverage.named_significance_targets(feedback)
+    patched, n = text, 0
+    if _asks_explicit_significance_correction(feedback) and targets:
+        for section in ("Abstract", "Research Question", "Results", "Conclusion"):
+            patched, changed = _repair_named_significance_claims_in_section(
+                patched, section, labels, targets,
+            )
+            n += changed
     if not any(token in lower for token in (
         "positive signal", "positive coding", "direction/statistic",
         "direction statistic", "direction coding inconsistency",
         "unclear/null", "null/mixed", "recoded", "recode",
     )):
-        return text, 0
-    labels = (
-        f"{source.group(1)} {source.group(2)}".lower(),
-        f"{source.group(1)} ({source.group(2)})".lower(),
-    )
+        return patched, n
     outcome = _numeric_coding_outcome(feedback)
     lines: list[str] = []
-    n = 0
-    for line in text.splitlines(keepends=True):
-        changed = line
+    for line in patched.splitlines(keepends=True):
+        fixed_line = line
         line_lower = line.lower()
         if any(label in line_lower for label in labels):
-            changed = re.sub(r"\bdirection=positive\b", "direction=null", changed, flags=re.I)
-            changed = re.sub(r"\beffect_direction=positive\b", "effect_direction=null", changed, flags=re.I)
+            fixed_line = re.sub(
+                r"\bdirection=positive\b", "direction=null", fixed_line, flags=re.I,
+            )
+            fixed_line = re.sub(
+                r"\beffect_direction=positive\b", "effect_direction=null", fixed_line, flags=re.I,
+            )
         if outcome and outcome in line_lower and "positive" in line_lower:
-            changed = re.sub(
+            fixed_line = re.sub(
                 r"\bPositive study-level signals\b",
                 "Non-significant or mixed study-level signals",
-                changed,
+                fixed_line,
                 flags=re.I,
             )
-            changed = re.sub(r"\bpositive signals\b", "non-significant or mixed signals", changed, flags=re.I)
-            changed = re.sub(r"\bpositive signal\b", "non-significant or mixed signal", changed, flags=re.I)
-        if changed != line:
+            fixed_line = re.sub(
+                r"\bpositive signals\b", "non-significant or mixed signals",
+                fixed_line, flags=re.I,
+            )
+            fixed_line = re.sub(
+                r"\bpositive signal\b", "non-significant or mixed signal",
+                fixed_line, flags=re.I,
+            )
+        if fixed_line != line:
             n += 1
-        lines.append(changed)
+        lines.append(fixed_line)
     patched = "".join(lines)
 
     def repair_source_block(match: re.Match[str]) -> str:
@@ -2346,6 +2349,46 @@ def _repair_named_non_significant_positive_labels(text: str, feedback: str) -> t
 
     patched = re.sub(r"^#{2,4}\s+.*?(?=^#{2,4}\s+|\Z)", repair_source_block, patched, flags=re.M | re.S)
     return patched, n
+
+
+def _repair_named_significance_claims_in_section(
+    text: str, section: str, labels: tuple[str, ...], targets: tuple[str, ...],
+) -> tuple[str, int]:
+    match = re.search(
+        rf"^## {re.escape(section)}\b(?P<body>.*?)(?=^## (?!#)|\Z)",
+        text, flags=re.M | re.S,
+    )
+    if not match:
+        return text, 0
+    body = match.group("body")
+    chunks = re.split(r"(?<=[.!?])(\s+)", body)
+    changed = 0
+    for index in range(0, len(chunks), 2):
+        sentence = chunks[index]
+        lower = sentence.lower()
+        if not any(label in lower for label in labels):
+            continue
+        for target in targets:
+            pattern = re.compile(
+                rf"(?P<significance>\b(?:statistically\s+)?significant(?:ly)?)"
+                rf"(?P<target>\s+{revision_coverage.significance_target_pattern(target)}\b)",
+                flags=re.I,
+            )
+
+            def replace(match: re.Match[str]) -> str:
+                nonlocal changed
+                prefix = sentence[max(0, match.start() - 48):match.start()]
+                if revision_coverage.significance_claim_is_negated(prefix):
+                    return match.group(0)
+                changed += 1
+                return "non-significant" + match.group("target")
+
+            sentence = pattern.sub(replace, sentence)
+        chunks[index] = sentence
+    if not changed:
+        return text, 0
+    body = "".join(chunks)
+    return text[:match.start("body")] + body + text[match.end("body"):], changed
 
 
 def _numeric_coding_outcome(feedback: str) -> str:

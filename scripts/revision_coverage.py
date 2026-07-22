@@ -1186,13 +1186,70 @@ def _asks_numeric_effect_audit(text: str) -> bool:
 def _asks_named_numeric_correction(text: str) -> bool:
     return (
         any(token in text for token in ("correct", "verify", "resolve", "reconcile", "recode", "recoded", "remove"))
-        and any(token in text for token in ("p=", "p =", "p-value", "p value", "confidence interval"))
-        and any(token in text for token in (
-            "non-significant", "not significant", "no significant", "significant reduction", "factual error",
-            "representative statistic", "miscoded", "direction/statistic", "direction statistic",
-            "positive signal", "positive coding", "numeric correction", "unclear/null", "null/mixed",
-        ))
+        and (
+            any(token in text for token in ("p=", "p =", "p-value", "p value", "confidence interval"))
+            or bool(re.search(r"\b(?:95%\s*)?ci\b", text, flags=re.I))
+        )
+        and (
+            any(token in text for token in (
+                "non-significant", "not significant", "no significant", "factual error",
+                "representative statistic", "miscoded", "direction/statistic", "direction statistic",
+                "positive signal", "positive coding", "numeric correction", "unclear/null", "null/mixed",
+            ))
+            or bool(named_significance_targets(text))
+        )
     )
+
+
+def named_significance_targets(text: str) -> tuple[str, ...]:
+    targets: list[str] = []
+    for match in re.finditer(
+        r"\b(?:(?:no|not(?:\s+a)?)\s+)?(?:statistically\s+)?"
+        r"significant(?:ly)?\s+([a-z][a-z0-9 /_-]{2,120}?)"
+        r"(?=\s+(?:while|whereas|but)\b|\s+and\s+(?:(?:a\s+)?"
+        r"(?:statistically\s+)?significant|keep|leave|preserv|retain)|[.;,:]|\Z)",
+        text,
+        flags=re.I,
+    ):
+        if re.search(
+            r"\b(?:keep|leave|preserv\w*|retain\w*|"
+            r"do\s+not\s+(?:change|alter|revise)|without\s+(?:changing|altering|revising))"
+            r"\s+(?:the\s+)?$",
+            text[max(0, match.start() - 80):match.start()], re.I,
+        ):
+            continue
+        target = re.sub(r"\b(?:claim|finding|result)\b", " ", match.group(1), flags=re.I)
+        target = " ".join(target.casefold().split())
+        if target:
+            targets.append(target)
+    return tuple(dict.fromkeys(targets))
+
+
+def significance_target_pattern(target: str) -> str:
+    return r"\s+".join(re.escape(part) for part in target.split())
+
+
+def significance_claim_is_negated(prefix: str) -> bool:
+    return bool(re.search(
+        r"(?:\b(?:no|not(?:\s+a)?|without(?:\s+a)?|no\s+evidence\s+of(?:\s+a)?|"
+        r"(?:did\s+)?not\s+(?:show|find|detect)(?:\s+a)?|"
+        r"failed\s+to\s+(?:show|find|detect)(?:\s+a)?)\s*|\bnon[- ])$",
+        prefix,
+        flags=re.I,
+    ))
+
+
+def _has_positive_named_significance_claim(text: str, targets: tuple[str, ...]) -> bool:
+    for target in targets:
+        pattern = re.compile(
+            rf"\b(?:statistically\s+)?significant(?:ly)?\s+"
+            rf"{significance_target_pattern(target)}\b",
+            flags=re.I,
+        )
+        if any(not significance_claim_is_negated(text[max(0, match.start() - 48):match.start()])
+               for match in pattern.finditer(text)):
+            return True
+    return False
 
 
 def _asks_numeric_correction_markup_cleanup(text: str) -> bool:
@@ -2691,28 +2748,43 @@ def _numeric_effect_audit_is_stated(paper_md: str) -> bool:
 
 
 def _named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
-    source = (
-        re.search(r"regarding\s+([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
-        or re.search(r"\b([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
-    )
+    target = numeric_correction_target(ask)
     p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", ask, flags=re.I)
+    interval = _CI_RE.search(ask)
     scope = " ".join(part for part in (
         _abstract(paper_md),
+        _section(paper_md, "Research Question"),
         _section(paper_md, "Methods"),
         _section(paper_md, "Evidence Landscape"),
+        _section(paper_md, "Results"),
         _section(paper_md, "Conclusion"),
     ) if part).lower()
-    if source and f"{source.group(1).lower()} {source.group(2).lower()}" not in scope:
+    if target and target[0].lower() not in scope:
         return False
     if p_value and f"p = {p_value.group(1)}" not in scope and f"p={p_value.group(1)}" not in scope:
         return False
+    if interval and not (
+        interval.group(1) in scope
+        and interval.group(2) in scope
+        and (" ci" in scope or "confidence interval" in scope)
+    ):
+        return False
     adjusted = has_adjusted_significance_threshold(ask)
-    nominally_significant = bool(p_value and float(p_value.group(1)) < 0.05 and not adjusted)
+    statistic_is_non_significant = explicit_stat_is_non_significant(ask)
+    nominally_significant = statistic_is_non_significant is False and not adjusted
     if nominally_significant:
         return any(token in scope for token in ("nominally statistically significant", "statistically significant"))
+    if statistic_is_non_significant is None:
+        return False
     return any(
-        token in scope for token in ("non-significant", "not significant", "did not reach significance")
+        token in scope for token in (
+            "non-significant", "not significant", "no significant", "did not reach significance",
+        )
     ) and not _named_numeric_positive_contradiction(paper_md, ask)
+
+
+def named_numeric_correction_is_stated(paper_md: str, ask: str) -> bool:
+    return _named_numeric_correction_is_stated(paper_md, ask)
 
 
 def _numeric_correction_markup_is_resolved(paper_md: str) -> bool:
@@ -2738,24 +2810,28 @@ _POSITIVE_NUMERIC_CONTRADICTION_RE = re.compile(
 
 
 def _named_numeric_positive_contradiction(paper_md: str, ask: str) -> bool:
-    source = (
-        re.search(r"regarding\s+([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
-        or re.search(r"\b([a-z][a-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)", ask, flags=re.I)
-    )
-    p_value = re.search(r"\bp\s*=\s*(0?\.\d+|1(?:\.0+)?)", ask, flags=re.I)
-    if not source or not p_value or float(p_value.group(1)) < 0.05:
+    target = numeric_correction_target(ask)
+    if target is None or explicit_stat_is_non_significant(ask) is not True:
         return False
+    source, _, _ = target
+    author, year = source.rsplit(" ", 1)
     labels = {
-        f"{source.group(1)} {source.group(2)}".lower(),
-        f"{source.group(1)} ({source.group(2)})".lower(),
+        source.lower(), f"{author} ({year})".lower(),
     }
+    targets = named_significance_targets(ask)
     for line in paper_md.splitlines():
         lower = line.lower()
-        if any(label in lower for label in labels) and _POSITIVE_NUMERIC_CONTRADICTION_RE.search(line):
+        if any(label in lower for label in labels) and (
+            _POSITIVE_NUMERIC_CONTRADICTION_RE.search(line)
+            or _has_positive_named_significance_claim(line, targets)
+        ):
             return True
     for chunk in _source_local_chunks(paper_md):
         lower = chunk.lower()
-        if any(label in lower for label in labels) and _POSITIVE_NUMERIC_CONTRADICTION_RE.search(chunk):
+        if any(label in lower for label in labels) and (
+            _POSITIVE_NUMERIC_CONTRADICTION_RE.search(chunk)
+            or _has_positive_named_significance_claim(chunk, targets)
+        ):
             return True
     return False
 
@@ -2850,9 +2926,39 @@ _P_VALUE_RE = re.compile(r"\bp\s*(?:=|>|≥|>=)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
 _CI_RE = re.compile(r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?(-?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(-?\d+(?:\.\d+)?)", re.I)
 _SIG_RE = re.compile(r"\b(?:statistically\s+)?significant(?:ly)?\b", re.I)
 _NONSIG_RE = re.compile(
-    r"\b(?:non[- ]?significant(?:ly)?|not\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
+    r"\b(?:non[- ]?significant(?:ly)?|(?:no|not)\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
     re.I,
 )
+
+
+def explicit_stat_is_non_significant(text: str) -> bool | None:
+    if p_value := _P_VALUE_RE.search(text):
+        return float(p_value.group(1)) >= 0.05
+    if interval := _CI_RE.search(text):
+        low, high = map(float, interval.groups())
+        return low <= 0 <= high or (
+            low <= 1 <= high and min(abs(low), abs(high)) > 0
+        )
+    return None
+
+
+def numeric_correction_target(text: str) -> tuple[str, str, bool] | None:
+    p_value = _P_VALUE_RE.search(text)
+    statistic = p_value or _CI_RE.search(text)
+    if statistic is None:
+        return None
+    source_re = re.compile(r"\b([A-Z][A-Za-z'’.\-]+)\s+((?:19|20)\d{2}[a-z]?)")
+    start, end = max(0, statistic.start() - 180), min(len(text), statistic.end() + 180)
+    scope, offset = text[start:end], start
+    sources = list(source_re.finditer(scope))
+    if not sources:
+        scope, offset, sources = text, 0, list(source_re.finditer(text))
+    if not sources:
+        return None
+    statistic_at = statistic.start() - offset
+    source = next((item for item in reversed(sources) if item.start() <= statistic_at), sources[0])
+    stat_text = f"p = {statistic.group(1)}" if p_value else f"95% CI {statistic.group(1)} to {statistic.group(2)}"
+    return f"{source.group(1)} {source.group(2)}", stat_text, p_value is not None
 
 
 def _abstract(paper_md: str) -> str:
@@ -2984,9 +3090,9 @@ def _numeric_effect_audit_satisfied(paper_md: str, _ask: str, _lower: str) -> bo
     return _numeric_effect_audit_is_stated(paper_md) and not numeric_effect_direction_issues(paper_md)
 
 
-def _named_numeric_correction_satisfied(paper_md: str, _ask: str, lower: str) -> bool:
+def _named_numeric_correction_satisfied(paper_md: str, ask: str, _lower: str) -> bool:
     return (
-        _named_numeric_correction_is_stated(paper_md, lower)
+        _named_numeric_correction_is_stated(paper_md, ask)
         and _numeric_correction_markup_is_resolved(paper_md)
         and not numeric_effect_direction_issues(paper_md)
     )

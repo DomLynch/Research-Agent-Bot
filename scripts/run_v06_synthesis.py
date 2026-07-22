@@ -2193,6 +2193,16 @@ def reconcile_receipt_funnel_report(report: dict[str, Any], receipts: list[Recei
     return out
 
 
+def _manifest_source_fit_counts(receipt_funnel: dict[str, Any]) -> dict[str, int]:
+    counts = receipt_funnel.get("counts")
+    if not isinstance(counts, dict):
+        raise ValueError("receipt funnel is missing source-fit counts")
+    primary, direct = counts.get("primary_tier_receipts"), counts.get("direct_receipts")
+    if any(type(value) is not int or value < 0 for value in (primary, direct)):
+        raise ValueError("receipt funnel is missing source-fit counts")
+    return {"n_primary_tier": cast(int, primary), "n_direct_receipts": cast(int, direct)}
+
+
 def _load_receipt_candidate_paper_ids() -> set[str] | None:
     active = _load_active_paper_ids()
     classified = _load_classified_receipt_candidate_ids()
@@ -2847,6 +2857,7 @@ async def _run(
     (out_dir / "receipt_funnel.json").write_text(json.dumps(receipt_funnel, indent=2))
     (out_dir / "receipt_funnel.md").write_text(render_receipt_funnel_markdown(receipt_funnel))
     funnel_counts = receipt_funnel.get("counts", {})
+    source_fit_counts = _manifest_source_fit_counts(receipt_funnel)
     print(
         "  Receipt funnel: "
         f"admitted={funnel_counts.get('admitted_receipts', 0)} "
@@ -3172,6 +3183,7 @@ async def _run(
     _ACTIVE_MANIFEST = {
         "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
+        **source_fit_counts,
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,
@@ -3214,6 +3226,7 @@ async def _run(
         # depending on module globals.
         "topic": _ACTIVE_TOPIC,
         "n_receipts": len(receipts),
+        **source_fit_counts,
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,

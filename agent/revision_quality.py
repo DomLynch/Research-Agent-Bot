@@ -36,6 +36,12 @@ _SUBSET_NOTE = (
     "Outcome prose discusses a representative subset to avoid repetitive source-by-source narration; "
     "mapped rows omitted from prose remain in the auditable accounting and are not treated as excluded."
 )
+_LEGACY_SOURCE_SIGNIFICANCE_NOTE_RE = re.compile(
+    r"^\s*(?:[*_]{1,3})?Numeric (?:verification|reconciliation) note:"
+    r"(?:[*_]{1,3})?\s*[A-Z][^\n]{0,400}"
+    r"\b(?:statistically significant|non-significant|not significant|significance threshold)\b",
+    re.I,
+)
 
 
 def revision_quality_ask_known(
@@ -240,7 +246,8 @@ def _asks_outcome_roster(text: str) -> bool:
 def _asks_exact_stat_trace(text: str) -> bool:
     return any(token in text for token in (
         "every exact statistic", "every exact p value", "exact p value",
-        "exact bundle token", "effect estimate", "percentage cited",
+        "every exact interval", "exact confidence interval", "exact bundle token",
+        "effect estimate", "percentage cited",
     )) and any(
         token in text for token in (
             "bundle", "source excerpt", "source number", "trace", "verif",
@@ -405,11 +412,12 @@ def _numbers(text: str) -> tuple[str, ...]:
 
 def _stat_supported(stat: str, row: dict[str, Any]) -> bool:
     evidence = _row_evidence(row).casefold().replace("–", "-")
+    evidence_numbers = set(_numbers(evidence))
     metric = next((token for token in ("nnt", "hr", "or", "rr", "ci", "p", "%") if token in stat.casefold()), "")
     metric_present = metric == "%" and "%" in evidence or bool(metric and re.search(rf"\b{re.escape(metric)}\b", evidence))
     p_relations = _p_relations(stat)
     return (not p_relations or set(p_relations) <= set(_p_relations(evidence))) and metric_present and all(
-        re.search(rf"(?<![\d.])0*{re.escape(number)}(?!\d|\.\d)", evidence) is not None
+        number in evidence_numbers
         for number in _numbers(stat) if number != "95" or metric != "ci"
     )
 
@@ -508,14 +516,21 @@ def _repair_untraceable_statistics(
         if (
             original.lstrip().startswith("Source-statistic reconciliation (")
             or original.strip() not in _prose_paragraphs(original)
-            or not _EFFECT_STAT_RE.search(original)
         ):
             continue
         paragraph = attach_bundle_references(original, rows)
         matches = list(_EFFECT_STAT_RE.finditer(paragraph))
-        fixed = _soften_statistics(paragraph) if any(
+        has_unbound = any(
             not _stat_is_source_bound(paragraph, match, rows) for match in matches
-        ) else paragraph
+        )
+        if _LEGACY_SOURCE_SIGNIFICANCE_NOTE_RE.search(original) and (
+            not matches or has_unbound
+        ):
+            fixed = ""
+        elif not matches:
+            continue
+        else:
+            fixed = _soften_statistics(paragraph) if has_unbound else paragraph
         if fixed != original:
             parts[index], changed = fixed, changed + 1
     return "".join(parts), changed

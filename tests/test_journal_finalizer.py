@@ -6,7 +6,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-from agent import journal_finalizer
+from agent import journal_finalizer, revision_quality
 from agent.journal_surface_gate import evaluate_journal_surface
 from agent.sources.pubmed import pmid_rows_fingerprint
 
@@ -431,7 +431,7 @@ def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp
 
 
 def test_finalize_run_preserves_unproven_human_longevity_after_surface_restore(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Strengthen the conclusion to explicitly state that longevity benefits "
@@ -503,7 +503,7 @@ def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path:
 
 
 def test_source_verification_transparency_is_inserted_into_methods(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Add a verification transparency statement acknowledging that the reference-only source bundle "
@@ -559,7 +559,7 @@ def test_source_verification_transparency_is_revision_scoped(tmp_path: Path) -> 
 
 
 def test_admission_funnel_clarification_repairs_numeric_inconsistency_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Resolve the numerical inconsistency in the admission funnel where "
@@ -593,7 +593,7 @@ def test_admission_funnel_clarification_repairs_numeric_inconsistency_ask(tmp_pa
 
 
 def test_admission_funnel_clarification_covers_partial_binding_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify the admission funnel numbers; 'Partial/none-only claim binding: 24' "
@@ -618,7 +618,7 @@ def test_admission_funnel_clarification_covers_partial_binding_ask(tmp_path: Pat
 
 
 def test_admission_funnel_clarification_covers_coherent_accounting_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Reconcile the admission funnel numbers to a single coherent accounting, "
@@ -643,7 +643,7 @@ def test_admission_funnel_clarification_covers_coherent_accounting_ask(tmp_path:
 
 
 def test_admission_funnel_clarification_covers_search_summary_selection_logic(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Rewrite the Search Summary to describe the actual selection logic."
     paper = (
@@ -665,7 +665,7 @@ def test_admission_funnel_clarification_covers_search_summary_selection_logic(tm
 
 
 def test_admission_funnel_clarification_adds_additive_screening_flow(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Replace or supplement the non-additive claim-binding funnel with a clearly "
@@ -700,7 +700,7 @@ def test_admission_funnel_clarification_adds_additive_screening_flow(tmp_path: P
 
 
 def test_admission_funnel_clarification_replaces_non_additive_table_when_requested(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Fix the admissions-funnel presentation: either provide a true PRISMA-style "
@@ -783,7 +783,7 @@ def test_terminal_terminology_scrubs_late_admission_funnel_note(tmp_path: Path) 
 
 
 def test_prior_publication_differentiation_repairs_overlap_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "High overlap with publication 5f852f5b. Differentiate angle, "
@@ -826,7 +826,7 @@ def test_prior_publication_differentiation_is_revision_scoped(tmp_path: Path) ->
 
 
 def test_directional_coding_note_repairs_schema_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Define the directional coding schema (null, unclear, positive, mixed) "
@@ -853,7 +853,7 @@ def test_directional_coding_note_repairs_schema_ask(tmp_path: Path) -> None:
 
 
 def test_classification_criteria_note_repairs_outcome_directness_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Define the classification criteria used to assign studies to outcome classes "
@@ -894,7 +894,7 @@ def test_classification_criteria_note_is_revision_scoped(tmp_path: Path) -> None
 
 
 def test_conflict_severity_note_repairs_disagreement_scoring_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Add a brief explanation in the main text of how 'severity-level-3' and "
@@ -935,7 +935,7 @@ def test_conflict_severity_note_is_revision_scoped(tmp_path: Path) -> None:
 
 
 def test_evidence_boundary_repairs_population_proof_calibration_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "The manuscript is technically sound and highly bounded, but per calibration rules, "
@@ -978,7 +978,7 @@ def test_evidence_boundary_population_note_is_revision_scoped(tmp_path: Path) ->
 
 
 def test_evidence_boundary_repairs_mixed_indirect_overclaim_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Add explicit language in the abstract and conclusion highlighting the mixed "
@@ -1004,7 +1004,7 @@ def test_evidence_boundary_repairs_mixed_indirect_overclaim_ask(tmp_path: Path) 
 
 
 def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify what the contextual claims contain if no directional signal was "
@@ -1022,7 +1022,7 @@ def test_directional_coding_note_repairs_contextual_claims_ask(tmp_path: Path) -
 
 
 def test_directional_coding_note_repairs_live_strongest_signal_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "In the Evidence Landscape table, the column 'Strongest signal' states "
@@ -1057,7 +1057,7 @@ def test_directional_coding_note_repairs_live_strongest_signal_ask(tmp_path: Pat
 
 
 def test_directional_coding_note_repairs_no_signal_proportion_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Ensure all outcome-class summaries in the 'Evidence Landscape' table explicitly "
@@ -1083,7 +1083,7 @@ def test_directional_coding_note_repairs_no_signal_proportion_ask(tmp_path: Path
 
 
 def test_directional_coding_note_repairs_null_coded_source_bundle_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Resolve the disconnect between the '47/48 null-coded' framing and the clearly directional "
@@ -1116,7 +1116,7 @@ def test_directional_coding_note_repairs_null_coded_source_bundle_ask(tmp_path: 
 
 
 def test_directional_coding_note_upgrades_existing_contextual_claims_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify what the contextual claims contain if no directional signal was "
@@ -1150,7 +1150,7 @@ def test_directional_coding_note_upgrades_existing_contextual_claims_ask(tmp_pat
 
 
 def test_evidence_boundary_note_repairs_broad_claim_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify in the abstract and key findings that the evidence is mixed and does not "
@@ -1617,7 +1617,7 @@ def test_relabel_public_metadata_table_headers_repairs_surface_gate(tmp_path: Pa
 
 
 def test_long_term_safety_scope_repairs_older_adult_safety_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Add a brief statement in the abstract and conclusion about the lack of "
@@ -1652,7 +1652,7 @@ def test_long_term_safety_scope_is_revision_scoped(tmp_path: Path) -> None:
 
 
 def test_unproven_human_longevity_repairs_conclusion_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Strengthen the conclusion to explicitly state that longevity benefits "
@@ -1677,7 +1677,7 @@ def test_unproven_human_longevity_repairs_conclusion_ask(tmp_path: Path) -> None
 
 
 def test_numeric_significance_correction_repairs_p_value_revision(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "
@@ -1724,7 +1724,7 @@ def test_numeric_significance_correction_keeps_existing_non_significant_wording(
 
 
 def test_numeric_significance_correction_adds_audit_statement_when_requested(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Correct factual error in abstract regarding Waghmare 2024: source excerpt reports "
@@ -1748,7 +1748,7 @@ def test_numeric_significance_correction_adds_audit_statement_when_requested(tmp
 
 
 def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Correct the factual error in the abstract regarding Waghmare 2024: the source excerpt "
@@ -1774,7 +1774,7 @@ def test_numeric_significance_correction_adds_missing_named_result(tmp_path: Pat
 
 
 def test_numeric_significance_correction_does_not_invent_non_significance(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Verify the Smith 2025 statistic: the mapped comparison reports p = 0.009 "
@@ -1794,6 +1794,266 @@ def test_numeric_significance_correction_does_not_invent_non_significance(tmp_pa
     assert "non-significant mapped comparison" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs
+
+
+def test_exact_stat_trace_request_does_not_trigger_legacy_numeric_note(tmp_path: Path) -> None:
+    import revision_coverage
+
+    ask = (
+        "For every exact p-value, effect size, or percentage cited (Shoji 2025 P=0.01), "
+        "either verify against the bundle or re-label it as an extraction-artifact value."
+    )
+    rows = [{
+        "receipt_id": "r1", "citation_token": "Shoji 2025",
+        "source_title": "Shoji report", "thesis_text": "No numeric result in excerpt",
+    }]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Numeric verification note: Shoji 2025 reported a mapped comparison "
+        "(p = 0.01) that was nominally statistically significant.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": ask}),
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+
+    after_trace, _ = journal_finalizer._phase_d_revision_surface_notes(
+        paper, tmp_path,
+    )
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(after_trace, tmp_path)
+    second_trace, _ = journal_finalizer._phase_d_revision_surface_notes(fixed, tmp_path)
+    stable, _ = journal_finalizer._phase_d_numeric_significance_correction(second_trace, tmp_path)
+
+    assert stable == fixed
+    assert "p = 0.01" not in stable
+    assert "nominally statistically significant" not in stable
+    assert revision_coverage.deterministic_unmet_asks(
+        stable, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_exact_stat_trace_removes_bold_legacy_numeric_note(tmp_path: Path) -> None:
+    ask = (
+        "For every exact p-value cited (Shoji 2025 P=0.01), verify against the "
+        "source bundle or re-label it as an extraction-artifact value."
+    )
+    rows = [{
+        "receipt_id": "r1", "citation_token": "Shoji 2025",
+        "source_title": "Shoji report", "thesis_text": "No numeric result in excerpt",
+    }]
+    paper = (
+        "## Evidence Landscape\n\n**Numeric verification note:** Shoji 2025 reported "
+        "a mapped comparison (p = 0.01) that was nominally statistically significant.\n"
+    )
+
+    fixed, _ = revision_quality.repair_revision_quality(
+        paper, rows, ask,
+    )
+
+    assert "p = 0.01" not in fixed
+    assert "nominally statistically significant" not in fixed
+
+
+def test_mixed_exact_trace_and_significance_request_repairs_both_clauses(tmp_path: Path) -> None:
+    import revision_coverage
+
+    ask = (
+        "For every exact p-value, verify it against the source bundle; the source excerpt "
+        "reports Shoji 2025 p = 0.08, not a significant reduction, so correct that factual error."
+    )
+    rows = [{
+        "receipt_id": "r1", "citation_token": "Shoji 2025",
+        "source_title": "Shoji report", "thesis_text": "The source excerpt reports p = 0.08.",
+    }]
+    paper = (
+        "## Abstract\n\nShoji 2025 showed a significant reduction.\n\n"
+        "## Evidence Landscape\n\nShoji 2025 is retained.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+
+    after_numeric, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+    fixed, _ = journal_finalizer._phase_d_revision_surface_notes(after_numeric, tmp_path)
+    second_numeric, _ = journal_finalizer._phase_d_numeric_significance_correction(fixed, tmp_path)
+    stable, _ = journal_finalizer._phase_d_revision_surface_notes(second_numeric, tmp_path)
+
+    assert stable == fixed
+    assert "Shoji 2025 showed a non-significant reduction" in stable
+    assert "Shoji 2025 [bundle:1]" in stable and "p = 0.08" in stable
+    assert revision_coverage.deterministic_unmet_asks(
+        stable, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_mixed_ci_trace_and_significance_request_repairs_positive_claim(tmp_path: Path) -> None:
+    import revision_coverage
+
+    ask = (
+        "Verify every exact interval against the source bundle; Shoji 2025 reports "
+        "95% CI 0.80 to 1.20, so correct the significant reduction claim."
+    )
+    rows = [{
+        "receipt_id": "r1", "citation_token": "Shoji 2025",
+        "source_title": "Shoji report", "thesis_text": "95% CI 0.80 to 1.20.",
+    }]
+    paper = (
+        "## Results\n\nShoji 2025 showed a significant reduction.\n\n"
+        "## Evidence Landscape\n\nShoji 2025 is retained.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+
+    after_numeric, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+    fixed, _ = journal_finalizer._phase_d_revision_surface_notes(after_numeric, tmp_path)
+
+    assert "Shoji 2025 showed a non-significant reduction" in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_named_significance_repair_changes_only_requested_outcome(tmp_path: Path) -> None:
+    ask = "Shoji 2025 reports p = 0.08; correct the significant reduction claim."
+    paper = (
+        "## Results\n\nShoji 2025 showed a significant reduction in endpoint A and "
+        "a significant increase in endpoint B.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "non-significant reduction in endpoint A" in fixed
+    assert "significant increase in endpoint B" in fixed
+
+
+def test_named_significance_repair_scopes_same_type_outcomes(tmp_path: Path) -> None:
+    import revision_coverage
+
+    ask = (
+        "Shoji 2025 reports p = 0.08 for endpoint A; correct the significant "
+        "reduction in endpoint A."
+    )
+    paper = (
+        "## Results\n\nShoji 2025 showed a significant reduction in endpoint A and "
+        "a significant reduction in endpoint B.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "non-significant reduction in endpoint A" in fixed
+    assert "significant reduction in endpoint B" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_named_significance_target_handles_claim_word_order_and_trailing_scope(
+    tmp_path: Path,
+) -> None:
+    import revision_coverage
+
+    asks = (
+        "Shoji 2025 reports p = 0.08 for endpoint A; correct the significant "
+        "reduction claim in endpoint A.",
+        "Shoji 2025 reports p = 0.08; correct the significant reduction in endpoint A "
+        "while preserving endpoint B.",
+    )
+    paper = (
+        "## Results\n\nShoji 2025 showed a significant reduction in endpoint A and "
+        "a significant reduction in endpoint B.\n"
+    )
+    for ask in asks:
+        (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+        fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+        assert revision_coverage.named_significance_targets(ask) == (
+            "reduction in endpoint a",
+        )
+        assert "non-significant reduction in endpoint A" in fixed
+        assert "significant reduction in endpoint B" in fixed
+        assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+    increase_ask = (
+        "Shoji 2025 reports p = 0.08 for endpoint A; correct the significant "
+        "increase in endpoint A."
+    )
+    increase_paper = paper.replace("reduction", "increase")
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": increase_ask}),
+    )
+
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(
+        increase_paper, tmp_path,
+    )
+
+    assert "non-significant increase in endpoint A" in fixed
+    assert "significant increase in endpoint B" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [increase_ask]) == []
+
+    preserve_ask = (
+        "Shoji 2025 reports p = 0.08; correct the significant increase in endpoint A "
+        "and preserve the significant increase in endpoint B."
+    )
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": preserve_ask}),
+    )
+
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(
+        increase_paper, tmp_path,
+    )
+
+    assert revision_coverage.named_significance_targets(preserve_ask) == (
+        "increase in endpoint a",
+    )
+    assert "non-significant increase in endpoint A" in fixed
+    assert "significant increase in endpoint B" in fixed
+
+
+def test_named_significance_repair_ignores_unrelated_negative_clause(tmp_path: Path) -> None:
+    ask = (
+        "Shoji 2025 reports 95% CI 0.80 to 1.20; correct the significant reduction claim."
+    )
+    paper = (
+        "## Results\n\nShoji 2025 showed a significant reduction, with no significant heterogeneity.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "non-significant reduction" in fixed
+    assert "no significant heterogeneity" in fixed
+
+
+def test_named_numeric_correction_uses_source_nearest_statistic(tmp_path: Path) -> None:
+    import revision_coverage
+
+    ask = (
+        "Jones 2024 provides contextual evidence. Correct Smith 2025 because "
+        "p = 0.08 is non-significant."
+    )
+    paper = "## Results\n\nJones 2024 reported a non-significant result (p = 0.08).\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    target = revision_coverage.numeric_correction_target(ask)
+    assert target is not None and target[0] == "Smith 2025"
+    assert "Numeric verification note: Smith 2025" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_named_significance_repair_preserves_no_significant_reduction(tmp_path: Path) -> None:
+    ask = (
+        "Shoji 2025 reports p = 0.08, so correct any significant reduction claim."
+    )
+    paper = "## Results\n\nShoji 2025 showed no significant reduction.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert "no significant reduction" in fixed
+    assert "no non-significant reduction" not in fixed
 
 
 def test_numeric_significance_correction_preserves_stated_adjusted_threshold(tmp_path: Path) -> None:
@@ -1826,7 +2086,7 @@ def test_numeric_significance_repair_preserves_references_and_grammar(tmp_path: 
 
 
 def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Verify the Brouwers 2016 direction/statistic mapping (p=0.88 vs. reported "
@@ -1852,7 +2112,7 @@ def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: 
 
 
 def test_numeric_significance_correction_removes_positive_label_for_non_significant_source(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Reconcile the Brouwers 2016 frailty coding: if p=0.88 is the headline statistic, "
@@ -1890,7 +2150,7 @@ def test_numeric_significance_correction_removes_positive_label_for_non_signific
 
 
 def test_numeric_significance_correction_moves_inline_markup_to_evidence_landscape(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Remove or properly contextualize the in-text 'Numeric correction' sentence — it reads "
@@ -1919,7 +2179,7 @@ def test_numeric_significance_correction_moves_inline_markup_to_evidence_landsca
 
 
 def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "For cited sources with specific statistics (e.g., Weiss 2026 33% lifespan increase), "
@@ -1945,7 +2205,7 @@ def test_source_statistics_landscape_maps_reviewer_named_statistic(tmp_path: Pat
 
 
 def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Provide a mapping table or list showing which of the 28 bundle sources were "
@@ -2022,7 +2282,7 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
 
 
 def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Reconstruct the Findings Map so that each retained source has an explicit "
@@ -2086,7 +2346,7 @@ def test_source_outcome_class_map_includes_all_rows_for_each_retained_source_ask
 
 
 def test_source_outcome_class_map_repairs_surface_every_admitted_source_feedback(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Claims n=26 admitted sources, but many are not surfaced in Evidence Landscape. "
@@ -2523,7 +2783,7 @@ def test_tension_repair_does_not_promote_reviewer_named_sources(tmp_path: Path) 
 
 
 def test_tensions_and_gaps_replaces_stale_cross_outcome_surface_tensions(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Replace the three Curran 2025-based 'surfaced tensions' with genuinely "
@@ -2578,7 +2838,7 @@ def test_source_outcome_class_map_no_receipts_does_not_crash(tmp_path: Path) -> 
 
 
 def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Provide an actual evidence synthesis in the Evidence Landscape and Key Findings sections. "
@@ -2631,7 +2891,7 @@ def test_substantive_evidence_synthesis_is_idempotent_after_surface_rewrite(tmp_
 
 
 def test_substantive_evidence_synthesis_surfaces_all_named_missing_sources(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Add the missing bundle sources to the Results outcome slices (Andreikos 2024, "
@@ -2725,7 +2985,7 @@ def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: 
 
 
 def test_latest_telomere_reviewer_asks_are_repaired_generically(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     feedback = (
         "Add clear specific research question directly answerable by evidence, e.g. "
@@ -2856,7 +3116,7 @@ def test_latest_telomere_reviewer_asks_are_repaired_generically(tmp_path: Path) 
 
 
 def test_substantive_evidence_synthesis_repairs_meta_only_conclusion(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify in the Conclusion what the evidence actually shows about telomere cancer effects, "
@@ -2888,7 +3148,7 @@ def test_substantive_evidence_synthesis_repairs_meta_only_conclusion(tmp_path: P
 
 
 def test_latest_telomere_post_submit_reviewer_asks_are_repaired_generically(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     feedback = (
         "Populate the Key Findings section with a concrete bullet list tied to the explicit "
@@ -3022,7 +3282,7 @@ def test_revision_gate_refresh_recomputes_empty_stale_unmet_list(tmp_path: Path)
 
 
 def test_scope_framing_and_direction_tally_audit_repaired_generically(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     feedback = (
         "Resolve the scope framing. Either retitle and reframe the evidence map as "
@@ -3084,7 +3344,7 @@ def test_scope_framing_and_direction_tally_audit_repaired_generically(tmp_path: 
 
 
 def test_search_summary_scope_note_repairs_date_operationalization_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Tighten Search Summary to specify date ranges, topic-operationalization criteria, "
@@ -3106,7 +3366,7 @@ def test_search_summary_scope_note_repairs_date_operationalization_ask(tmp_path:
 
 
 def test_outcome_label_cleanup_repairs_non_pk_slice_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Re-label or remove the Dosing and Pharmacokinetics outcome class, which does "
@@ -3129,7 +3389,7 @@ def test_outcome_label_cleanup_repairs_non_pk_slice_ask(tmp_path: Path) -> None:
 
 
 def test_outcome_label_cleanup_applies_generic_reviewer_rename(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Rename the 'Longevity' outcome class to reflect the actual endpoint "
@@ -3181,7 +3441,7 @@ def test_outcome_router_respects_reviewer_renamed_class(tmp_path: Path) -> None:
 
 
 def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     feedback = (
         "Provide actual within-class synthesis narrative for each outcome class "
@@ -3237,7 +3497,7 @@ def test_finalizer_answers_within_class_narrative_and_research_question(tmp_path
 
 
 def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     asks = [
         "Remove or correct the '116 cross-study disagreements' figure if it cannot be substantiated with enumerated examples; or replace it with a count of actually-surfaced tensions.",
@@ -3271,7 +3531,7 @@ def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_
 
 
 def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     asks = [
         "Recode directional findings to match source abstracts; remove/qualify 11/13 null framing as receipt-level not source-level.",
@@ -3338,7 +3598,7 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
 
 
 def test_rct_count_reconciliation_removes_single_rct_claim(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Verify and correct the single RCT claim because one included source aggregates data from two RCTs."
     paper = "## Evidence Landscape\n\nThe synthesis compares a single direct RCT with indirect evidence.\n"
@@ -3355,7 +3615,7 @@ def test_rct_count_reconciliation_removes_single_rct_claim(tmp_path: Path) -> No
 
 
 def test_unbacked_appraisal_names_are_removed_without_ratings(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources, or remove the framework name if no appraisal was performed."
     paper = (
@@ -3376,7 +3636,7 @@ def test_unbacked_appraisal_names_are_removed_without_ratings(tmp_path: Path) ->
 
 
 def test_populated_appraisal_artifact_is_summarized(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources, or remove the framework name if no appraisal was performed."
     paper = (
@@ -3403,7 +3663,7 @@ def test_populated_appraisal_artifact_is_summarized(tmp_path: Path) -> None:
 
 
 def test_populated_appraisal_artifact_is_summarized_for_rob_judgment_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Relabel review-level rows and report RoB judgments for the admitted RCT and cohort sources."
     paper = "## Methods\n\nRisk-of-bias judgments are source-level where reported.\n"
@@ -3489,7 +3749,7 @@ def test_reference_closure_preserves_title_derived_registry_reference(tmp_path: 
 
 
 def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "For cited sources with specific statistics (e.g., Weiss 2026 33% lifespan increase), "
@@ -3508,7 +3768,7 @@ def test_source_statistics_landscape_creates_missing_section(tmp_path: Path) -> 
 
 
 def test_prisma_all_included_rationale_repairs_revision_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Clarify why 100% of retrieved records were included, given the stated PRISMA-ScR methodology and eligibility criteria."
     paper = "## Methods\n\nThe PRISMA-ScR flow retained all records.\n"
@@ -3531,7 +3791,7 @@ def test_prisma_all_included_rationale_repairs_revision_ask(tmp_path: Path) -> N
 
 
 def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Ensure that all claims in the Key Findings and Conclusion sections are explicitly "
@@ -3565,7 +3825,7 @@ def test_tier_directness_boundary_repairs_key_findings_conclusion_ask(tmp_path: 
 
 
 def test_tier_directness_boundary_inserts_missing_key_findings(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Ensure that all claims in the Key Findings and Conclusion sections are explicitly "
@@ -3585,7 +3845,7 @@ def test_tier_directness_boundary_inserts_missing_key_findings(tmp_path: Path) -
 
 
 def test_species_study_design_summary_repairs_revision_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Differentiate the 17-source bundle by species and study design in one summary table "
@@ -3663,7 +3923,7 @@ def test_directional_coding_note_is_revision_scoped(tmp_path: Path) -> None:
 
 
 def test_source_directness_breakdown_repairs_source_bundle_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify source directness: explicitly note which sources directly address "
@@ -3704,7 +3964,7 @@ def test_source_directness_breakdown_repairs_source_bundle_ask(tmp_path: Path) -
 
 
 def test_source_directness_breakdown_repairs_direct_vs_adjacent_scope_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify the scope statement: explicitly state which included sources are direct "
@@ -3736,7 +3996,7 @@ def test_source_directness_breakdown_repairs_direct_vs_adjacent_scope_ask(tmp_pa
 
 
 def test_source_directness_breakdown_repairs_evidence_type_metadata_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
     paper = "## Evidence Landscape\n\nThe corpus is summarized.\n"
@@ -3765,7 +4025,7 @@ def test_source_directness_breakdown_repairs_evidence_type_metadata_ask(tmp_path
 
 
 def test_source_directness_breakdown_repairs_human_intervention_misclassification(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Human intervention studies were misclassified as indirect/review evidence."
     paper = "## Evidence Landscape\n\nThe corpus is summarized.\n"
@@ -3798,7 +4058,7 @@ def test_source_directness_breakdown_repairs_human_intervention_misclassificatio
 
 
 def test_evidence_type_note_added_when_directness_breakdown_already_exists(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Resolve the evidence_type metadata inconsistencies where a review label contains RCT excerpt data."
     paper = (
@@ -3850,7 +4110,7 @@ def test_existing_evidence_type_note_is_public_prose_normalized(tmp_path: Path) 
 
 
 def test_section_source_grounding_repairs_section_trace_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Strengthen source_grounding by ensuring every claim in Key Findings, "
@@ -3883,7 +4143,7 @@ def test_section_source_grounding_repairs_section_trace_ask(tmp_path: Path) -> N
 
 
 def test_section_source_grounding_inserts_missing_key_findings(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Strengthen source_grounding by ensuring every claim in Key Findings, "
@@ -3920,7 +4180,7 @@ def test_section_source_grounding_inserts_missing_key_findings(tmp_path: Path) -
 
 
 def test_source_inclusion_rationale_repairs_umbrella_source_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Add a note explaining why sources on adjacent biomarkers are included "
@@ -3960,7 +4220,7 @@ def test_source_inclusion_rationale_repairs_umbrella_source_ask(tmp_path: Path) 
 
 
 def test_source_inclusion_rationale_repairs_operational_subgroup_definition(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Define 'cardiovascular subgroup' operationally at the start "
@@ -3992,7 +4252,7 @@ def test_source_inclusion_rationale_is_revision_scoped(tmp_path: Path) -> None:
 
 
 def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "For single-source outcome classes (frailty, immune/inflammation), "
@@ -4027,7 +4287,7 @@ def test_single_source_proportionality_statement_is_inserted(tmp_path: Path) -> 
 
 
 def test_single_source_proportionality_covers_n_equals_one_context_only_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "For outcome classes with n=1 sources, either merge them into adjacent "
@@ -4077,7 +4337,7 @@ def test_single_source_proportionality_statement_is_not_duplicated(tmp_path: Pat
 
 
 def test_actionable_gaps_section_is_inserted_for_revision_ask(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "In the 'Gaps Identified' section, provide a numbered or prioritized list "
@@ -4154,7 +4414,7 @@ def test_actionable_gaps_section_is_not_duplicated(tmp_path: Path) -> None:
 
 
 def test_forward_dated_ai_disclosure_note_moves_to_limitations(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "In Limitations, add a specific statement about forward-dated (2026) "
@@ -4191,7 +4451,7 @@ def test_forward_dated_ai_disclosure_note_moves_to_limitations(tmp_path: Path) -
 
 
 def test_publication_year_note_handles_prepublication_sources(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Add a brief note flagging 2026-dated sources as in-press or "
@@ -4276,7 +4536,7 @@ def test_reference_identifier_enrichment_uses_registry_ids(tmp_path: Path) -> No
 
 
 def test_reference_identifier_enrichment_adds_missing_id_caveat(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = "Make every reference traceable to the source bundle and clarify missing DOI/PMID entries."
     paper = (
@@ -4294,7 +4554,7 @@ def test_reference_identifier_enrichment_adds_missing_id_caveat(tmp_path: Path) 
 
 
 def test_revision_audit_notes_answer_claim_count_and_doi_gap_asks(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     feedback = (
         "Audit the claim count for the Dosing and Pharmacokinetics slice "
@@ -4339,7 +4599,7 @@ def test_revision_audit_notes_answer_claim_count_and_doi_gap_asks(tmp_path: Path
 
 
 def test_photobiomodulation_style_reviewer_asks_are_repaired_generically(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     asks = [
         "Expand the Gaps section to cover all five outcome classes (immune/inflammation, contextual adjacent, mechanism, muscle function, safety/comorbidity), not just two.",
@@ -4381,7 +4641,7 @@ def test_photobiomodulation_style_reviewer_asks_are_repaired_generically(tmp_pat
 
 
 def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Path) -> None:
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Provide a complete, auditable in-text citation list mapping every author-year "
@@ -4409,7 +4669,7 @@ def test_source_verification_phase_adds_citation_traceability_note(tmp_path: Pat
 
 def test_revision_audit_notes_add_source_label_disambiguation(tmp_path: Path) -> None:
     from agent.journal_surface_gate import evaluate_journal_surface
-    from scripts import revision_coverage
+    import revision_coverage
 
     ask = (
         "Clarify the apparent Ward 2026 / Filev 2026 / Chen 2026 duplication and ensure "

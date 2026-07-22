@@ -20,6 +20,8 @@ from types import SimpleNamespace
 from pathlib import Path
 from typing import Any, cast
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
 import daily_research_paper_submit as submit  # type: ignore[import-not-found]  # noqa: E402
@@ -434,6 +436,19 @@ def test_reconciled_receipt_funnel_renames_strict_high_confidence_count() -> Non
     assert reconciled["counts"]["direct_receipts"] == 1
     assert reconciled["counts"]["original_strict_high_confidence_receipts"] == 2
     assert reconciled["examples"]["original_strict_high_confidence_receipts"] == ["paper_a"]
+    assert orch._manifest_source_fit_counts(reconciled) == {
+        "n_primary_tier": 1,
+        "n_direct_receipts": 1,
+    }
+
+
+def test_manifest_source_fit_counts_rejects_missing_counts() -> None:
+    with pytest.raises(ValueError, match="missing source-fit counts"):
+        orch._manifest_source_fit_counts({})
+    with pytest.raises(ValueError, match="missing source-fit counts"):
+        orch._manifest_source_fit_counts({
+            "counts": {"primary_tier_receipts": True, "direct_receipts": 4},
+        })
 
 
 def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
