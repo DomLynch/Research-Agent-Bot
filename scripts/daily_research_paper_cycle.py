@@ -75,7 +75,7 @@ DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
 # while bounding resubmissions to the live platform.
 MAX_REVISE_ROUNDS = 3
-REVISION_REPAIR_EPOCH = _positive_env_int("RESEARCH_AGENT_REVISION_REPAIR_EPOCH", 10)
+REVISION_REPAIR_EPOCH = _positive_env_int("RESEARCH_AGENT_REVISION_REPAIR_EPOCH", 11)
 PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
@@ -131,13 +131,15 @@ _TERMINAL_REVISION_STATUSES = frozenset({
 _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_domain_scope_mismatch",
     "terminal_latest_run_missing_manifest",
-    "terminal_revise_retry_budget_insufficient",
 })
 _RETRYABLE_REVISION_STATUSES = frozenset({
     "revision_coverage_unmet",
     "synthesis_timeout",
     # Back-compat for rows written before synthesis timeouts became retryable.
     "terminal_synthesis_timeout",
+    # A timer window can end before another full rewrite fits. That is a
+    # transient scheduling limit, not a permanent verdict on the revision.
+    "terminal_revise_retry_budget_insufficient",
 })
 SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
 
@@ -5168,6 +5170,7 @@ def run_cycle(
                 )
                 ledger["review_type_override"] = {"topic": selected, "value": review_type_override, "reason": reason}
             last_attempt: dict[str, Any] | None = None
+            revision_round_recorded = False
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
                 if cycle_budget_seconds > 0 and clock() - started_mono >= cycle_budget_seconds:
                     attempt = {
@@ -5222,6 +5225,7 @@ def run_cycle(
                     ledger["status"] = gate_status
                     _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    revision_round_recorded = True
                     revise_window_excluded.add(_revision_key(revision_source))
                     remote_revision = None
                     attempted.add(selected)
@@ -5316,6 +5320,7 @@ def run_cycle(
                         _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                         revise_window_excluded.add(_revision_key(revision_source))
                         remote_revision = None
+                    last_attempt = attempt
                     attempted.add(selected)
                     break
                 synthesis_kwargs["timeout"] = child_timeout()
@@ -5493,8 +5498,6 @@ def run_cycle(
                     _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source and gate_status.split(":", 1)[0] in _TERMINAL_REVISION_STATUSES:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                elif revision_source and gate_status == "revision_coverage_unmet":
-                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE:
                     if revision_source:
                         timeout_status = "synthesis_timeout"
@@ -5550,6 +5553,18 @@ def run_cycle(
                     or not _should_retry_same_topic(attempt, auto_selected=topic is None and not revision_source)
                 ):
                     break
+            if (
+                revision_source
+                and last_attempt
+                and last_attempt.get("gate_status") == "revision_coverage_unmet"
+                and not int(last_attempt.get("submitted") or 0)
+                and not revision_round_recorded
+            ):
+                # Internal rewrites are one revision round. Persist one result
+                # for the completed timer window, including budget-expiry exits.
+                _mark_revision_handled(
+                    ledger_dir, revision_source, status="revision_coverage_unmet",
+                )
             if ledger["status"] in {"cycle_budget_exhausted", "retraction_check_unavailable"}:
                 break
             if ledger["status"] == "submitted_to_researka":

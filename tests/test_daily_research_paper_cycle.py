@@ -3618,7 +3618,12 @@ def test_retryable_revision_statuses_obey_round_cap_across_windows(tmp_path: Pat
     title = "Hypothesis-Generating Brief: Taurine supplementation — full paper"
     _seed_submitted_run(runs, "taurine", f"# {title}")
     statuses = tuple(sorted(cycle._RETRYABLE_REVISION_STATUSES))
-    assert statuses == ("revision_coverage_unmet", "synthesis_timeout", "terminal_synthesis_timeout")
+    assert statuses == (
+        "revision_coverage_unmet",
+        "synthesis_timeout",
+        "terminal_revise_retry_budget_insufficient",
+        "terminal_synthesis_timeout",
+    )
     handled_at = dt.datetime.now(dt.UTC) - dt.timedelta(hours=2)
     reviewed_at = handled_at - dt.timedelta(minutes=1)
     _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
@@ -3629,7 +3634,7 @@ def test_retryable_revision_statuses_obey_round_cap_across_windows(tmp_path: Pat
             "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
             "handled_at": handled_at.isoformat(),
         }
-        for status in statuses
+        for status in statuses[:cycle.MAX_REVISE_ROUNDS]
     ]})
     request = {
         "artifactId": "taurine-review",
@@ -3728,6 +3733,13 @@ def test_revise_lane_does_not_start_full_retry_without_budget(tmp_path: Path, mo
     assert ledger["attempts"][1]["remaining_budget_seconds"] == 1099
     handled = json.loads((tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8"))
     assert handled["handled"][-1]["status"] == "terminal_revise_retry_budget_insufficient"
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([request], None),
+    )
+    assert error is None
+    assert pending and pending["artifactId"] == "taurine-review"
 
 
 def test_cycle_seeds_missing_quant_claim_corpus_before_synthesis(tmp_path: Path, monkeypatch) -> None:
@@ -6112,10 +6124,126 @@ def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkey
 
 def test_coverage_unmet_stops_after_max_rounds(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
-    _, feedback_seen = _run_coverage_cycle(
+    ledger, feedback_seen = _run_coverage_cycle(
         tmp_path, monkeypatch, unmet=["Hedge the cognitive claims"], max_revise_attempts=3,
         submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0})
     assert len(feedback_seen) == 3                                    # bounded: stops after max_revise_attempts
+    handled = json.loads(
+        (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8")
+    )
+    matching = [
+        row for row in handled["handled"]
+        if row["status"] == "revision_coverage_unmet"
+        and row["artifactId"] == "rev-1"
+    ]
+    assert len(matching) == 1  # three internal rewrites consume one cross-window round
+    assert ledger["attempts"][-1]["revise_attempt"] == 3
+
+
+def test_coverage_window_records_one_round_if_budget_expires_between_rewrites(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    now = [0.0]
+    calls = 0
+
+    def fake_synthesis(
+        _topic: str,
+        out_dir: Path,
+        *,
+        dry_run: bool,
+        timeout: int | None = None,
+        revision_feedback: str | None = None,
+        review_type_override: str | None = None,
+        revision_source_run: Path | None = None,
+    ) -> int:
+        nonlocal calls
+        calls += 1
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text("# revised\n", encoding="utf-8")
+        now[0] = 500.0 if calls == 1 else 2500.0
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda *_a, **_k: ["Still unmet"])
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-07-23",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=_aspirin_revise_loader,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_revise_attempts=3,
+        cycle_budget_seconds=2400,
+        clock=lambda: now[0],
+    )
+
+    assert calls == 2
+    assert ledger["status"] == "cycle_budget_exhausted"
+    assert [
+        row.get("gate_status") or row.get("submit_status")
+        for row in ledger["attempts"]
+    ] == [
+        "revision_coverage_unmet",
+        "revision_coverage_unmet",
+        "cycle_budget_exhausted",
+    ]
+    handled = json.loads(
+        (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8")
+    )
+    assert [row["status"] for row in handled["handled"]] == ["revision_coverage_unmet"]
+
+
+def test_revise_preflight_exit_replaces_prior_coverage_outcome(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    feedback_seen: list[str | None] = []
+    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen))
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda *_a, **_k: ["Still unmet"])
+    preflight_reads = 0
+
+    def existing_preflight(_run: Path | None) -> dict[str, Any] | None:
+        nonlocal preflight_reads
+        preflight_reads += 1
+        return (
+            {"passed": True, "status": "receipt_preflight_existing_ok"}
+            if preflight_reads <= 3
+            else None
+        )
+
+    monkeypatch.setattr(cycle, "_existing_receipt_preflight", existing_preflight)
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {
+        "passed": False,
+        "status": "receipt_preflight_insufficient",
+    })
+    monkeypatch.setattr(cycle, "_terminal_revision_receipt_preflight", lambda _result: True)
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-07-23",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=_aspirin_revise_loader,
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+        max_revise_attempts=2,
+    )
+
+    assert len(feedback_seen) == 1
+    assert [
+        row.get("gate_status") or row.get("submit_status")
+        for row in ledger["attempts"]
+    ] == ["revision_coverage_unmet", "terminal_receipt_preflight_insufficient"]
+    handled = json.loads(
+        (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text(encoding="utf-8")
+    )
+    assert [row["status"] for row in handled["handled"]] == [
+        "terminal_receipt_preflight_insufficient",
+    ]
 
 
 def test_revise_lane_rotates_to_next_pending_revision_after_coverage_block(tmp_path: Path, monkeypatch) -> None:
@@ -6625,7 +6753,7 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
 
 
 def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
-    assert cycle.REVISION_REPAIR_EPOCH == 10
+    assert cycle.REVISION_REPAIR_EPOCH == 11
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     title = "Research Synthesis: Statin — full paper"
@@ -7159,7 +7287,7 @@ def test_pending_remote_revision_round_cap_wins_over_finalizer_recheck(
     assert pending is None
 
 
-def test_pending_remote_revision_retry_budget_terminal_requires_new_review(
+def test_pending_remote_revision_retry_budget_resumes_same_review(
     tmp_path: Path,
 ) -> None:
     runs = tmp_path / "runs"
@@ -7194,7 +7322,7 @@ def test_pending_remote_revision_retry_budget_terminal_requires_new_review(
     )
 
     assert error is None
-    assert pending is None
+    assert pending and pending["artifactId"] == "cardio-review"
 
 
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
