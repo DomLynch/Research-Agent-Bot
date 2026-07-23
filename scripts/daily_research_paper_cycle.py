@@ -2559,31 +2559,80 @@ def _candidate_buffer_thresholds() -> dict[str, int]:
     }
 
 
-def _prepared_candidate_topics(
-    ledger_dir: Path,
-    *,
-    now: dt.datetime | None = None,
-) -> set[str]:
+def _candidate_precision_was_valid(status: str, quant_claims: int) -> bool:
+    pattern = (
+        rf"source_topic_precision_(?:ok:(\d+)/(\d+)|scoped_floor:(\d+)>=(\d+)"
+        rf"\(ratio=(\d+)/(\d+)<{re.escape(f'{SOURCE_TOPIC_REPAIR_FLOOR:.2f}')}\))"
+    )
+    match = re.fullmatch(pattern, status)
+    if not match:
+        return False
+    if match.group(1):
+        hits, total = map(int, match.groups()[:2])
+        return 0 < total == quant_claims and hits <= total and hits / total >= SOURCE_TOPIC_REPAIR_FLOOR
+    retained, minimum, hits, total = map(int, match.groups()[2:])
+    return (0 < total == quant_claims and hits <= total and retained <= total
+            and retained >= minimum >= PREFLIGHT_MIN_QUANT_CLAIMS
+            and hits / total < SOURCE_TOPIC_REPAIR_FLOOR)
+
+
+def _prepared_candidate_rows(
+    ledger_dir: Path, *, now: dt.datetime | None = None,
+) -> dict[str, dict[str, Any]]:
     report = _read_json(ledger_dir / CANDIDATE_BUFFER)
     if report.get("thresholds") != _candidate_buffer_thresholds():
-        return set()
+        return {}
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=CANDIDATE_BUFFER_MAX_AGE_HOURS)
-    ready: set[str] = set()
+    prepared: dict[str, dict[str, Any]] = {}
     rows = report.get("ready")
     for row in rows if isinstance(rows, list) else []:
         if not isinstance(row, dict):
             continue
         validated_at = _parse_time(str(row.get("validated_at") or ""))
         topic = str(row.get("topic") or "")
-        latest_attempt = _parse_time(_attempted_at(topic, ledger_dir)) if topic else None
-        if (
-            topic
-            and validated_at
-            and validated_at >= cutoff
-            and (latest_attempt is None or validated_at >= latest_attempt)
+        if topic and validated_at and validated_at >= cutoff:
+            prepared[topic] = row
+
+    attempts = report.get("attempts")
+    for row in attempts if isinstance(attempts, list) else []:
+        if not isinstance(row, dict):
+            continue
+        preflight = row.get("receipt_preflight")
+        try:
+            quant_claims = int(row.get("quant_claims") or 0)
+            counts = (
+                int(preflight.get("n_receipts") or 0),
+                int(preflight.get("n_primary_tier") or 0),
+                int(preflight.get("n_direct_receipts") or 0),
+            ) if isinstance(preflight, dict) else (0, 0, 0)
+        except (TypeError, ValueError):
+            continue
+        precision = str(row.get("source_topic_precision_after") or "")
+        topic = str(row.get("topic") or "")
+        if not (
+            isinstance(preflight, dict)
+            and preflight.get("passed") is True
+            and quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS
+            and counts[0] >= PREFLIGHT_MIN_RECEIPTS
+            and counts[1] >= PREFLIGHT_MIN_PRIMARY_TIER
+            and counts[2] >= PREFLIGHT_MIN_DIRECT_RECEIPTS
+            and topic
+            and _candidate_precision_was_valid(precision, quant_claims)
         ):
-            ready.add(topic)
-    return ready
+            continue
+        validated_at = _parse_time(str(row.get("attempted_at") or ""))
+        if topic and validated_at and validated_at >= cutoff:
+            prepared[topic] = {
+                "topic": topic, "validated_at": validated_at.isoformat(),
+                "n_quant_claims": quant_claims,
+                "n_receipts": counts[0], "n_primary_tier": counts[1],
+                "n_direct_receipts": counts[2], "source_topic_precision": precision,
+            }
+    return prepared
+
+
+def _prepared_candidate_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    return set(_prepared_candidate_rows(ledger_dir, now=now))
 
 
 def _recent_candidate_buffer_attempts(
@@ -3924,13 +3973,12 @@ def prepare_candidate_buffer(
     )
     report["candidate_pool_count"] = len(pool)
     previous = _read_json(ledger_dir / CANDIDATE_BUFFER)
-    prepared = _prepared_candidate_topics(ledger_dir, now=now) & set(pool)
+    prepared_rows = _prepared_candidate_rows(ledger_dir, now=now)
+    prepared = set(prepared_rows) & set(pool)
     still_prepared = {
         topic for topic in prepared if _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)[0]
     }
-    previous_ready = previous.get("ready")
-    previous_rows = previous_ready if isinstance(previous_ready, list) else []
-    report["ready"] = [row for row in previous_rows if isinstance(row, dict) and row.get("topic") in still_prepared]
+    report["ready"] = [row for topic, row in prepared_rows.items() if topic in still_prepared]
     report["attempts"] = _recent_candidate_buffer_attempts(previous, now=now)
     recent_attempted = {str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")}
     attempted = terminal | still_prepared | (recent_attempted - (prepared - still_prepared))

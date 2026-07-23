@@ -1636,6 +1636,12 @@ def test_prepared_candidates_expire_and_invalidate_on_threshold_change(tmp_path:
     })
     assert cycle._prepared_candidate_topics(ledger_dir, now=now) == set()
 
+
+def test_prepared_candidate_remains_valid_after_manuscript_attempt(
+    tmp_path: Path,
+) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    now = dt.datetime.now(dt.UTC)
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "thresholds": cycle._candidate_buffer_thresholds(),
         "ready": [{
@@ -1647,7 +1653,165 @@ def test_prepared_candidates_expire_and_invalidate_on_threshold_change(tmp_path:
         "started_at": now.isoformat(),
         "attempts": [{"topic": "failed_after_validation", "gate_status": "synthesis_timeout"}],
     })
-    assert cycle._prepared_candidate_topics(ledger_dir, now=now) == set()
+    assert cycle._prepared_candidate_topics(
+        ledger_dir, now=now,
+    ) == {"failed_after_validation"}
+
+
+def test_prepared_candidates_recover_from_successful_validation_attempt(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [],
+        "attempts": [{
+            "topic": "recovered_topic",
+            "attempted_at": now.isoformat(),
+            "quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "source_topic_precision_after": (
+                f"source_topic_precision_scoped_floor:"
+                f"{cycle.PREFLIGHT_MIN_QUANT_CLAIMS}>={cycle.PREFLIGHT_MIN_QUANT_CLAIMS}"
+                f"(ratio=0/{cycle.PREFLIGHT_MIN_QUANT_CLAIMS}<"
+                f"{cycle.SOURCE_TOPIC_REPAIR_FLOOR:.2f})"
+            ),
+            "receipt_preflight": {
+                "passed": True,
+                "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            },
+        }, {
+            "topic": "missing_preflight",
+            "attempted_at": now.isoformat(),
+            "quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+        }, {
+            "topic": "string_false",
+            "attempted_at": now.isoformat(),
+            "quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "source_topic_precision_after": "source_topic_precision_ok:20/20",
+            "receipt_preflight": {"passed": "false"},
+        }, {
+            "topic": "malformed_count",
+            "attempted_at": now.isoformat(),
+            "quant_claims": "not-a-number",
+            "source_topic_precision_after": "source_topic_precision_ok:20/20",
+            "receipt_preflight": {"passed": True},
+        }, {
+            "topic": "false_precision",
+            "attempted_at": now.isoformat(),
+            "quant_claims": 20,
+            "source_topic_precision_after": "source_topic_precision_ok:0/20",
+            "receipt_preflight": {
+                "passed": True,
+                "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            },
+        }, {
+            "topic": "malformed_precision",
+            "attempted_at": now.isoformat(),
+            "quant_claims": 20,
+            "source_topic_precision_after": "source_topic_precision_ok:garbage",
+            "receipt_preflight": {
+                "passed": True,
+                "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            },
+        }, {
+            "topic": "short_scoped_precision",
+            "attempted_at": now.isoformat(),
+            "quant_claims": 20,
+            "source_topic_precision_after": (
+                "source_topic_precision_scoped_floor:1>=10(ratio=1/20<0.50)"
+            ),
+            "receipt_preflight": {
+                "passed": True,
+                "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            },
+        }, {
+            "topic": "malformed_scoped_floor",
+            "attempted_at": now.isoformat(),
+            "quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "source_topic_precision_after": (
+                f"source_topic_precision_scoped_floor:"
+                f"{cycle.PREFLIGHT_MIN_QUANT_CLAIMS}>={cycle.PREFLIGHT_MIN_QUANT_CLAIMS}"
+                f"(ratio=0/{cycle.PREFLIGHT_MIN_QUANT_CLAIMS}<0x50)"
+            ),
+            "receipt_preflight": {
+                "passed": True,
+                "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            },
+        }],
+    })
+    monkeypatch.setattr(
+        cycle,
+        "_quant_claim_source_precision",
+        lambda topic, **_k: (
+            topic == "recovered_topic",
+            "source_topic_precision_ok:20/20",
+            [],
+        ),
+    )
+
+    assert cycle._prepared_candidate_topics(
+        ledger_dir, now=now,
+    ) == {"recovered_topic"}
+
+
+def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    now = dt.datetime.now(dt.UTC)
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "generated_at": now.isoformat(),
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [],
+        "attempts": [{
+            "topic": "recovered_topic",
+            "attempted_at": now.isoformat(),
+            "quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+            "source_topic_precision_after": (
+                f"source_topic_precision_ok:{cycle.PREFLIGHT_MIN_QUANT_CLAIMS}"
+                f"/{cycle.PREFLIGHT_MIN_QUANT_CLAIMS}"
+            ),
+            "receipt_preflight": {
+                "passed": True,
+                "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            },
+        }],
+    })
+    monkeypatch.setattr(cycle, "discover_topics", lambda: ["recovered_topic"])
+    monkeypatch.setattr(cycle, "_terminal_topics", lambda *_a, **_k: set())
+    monkeypatch.setattr(
+        cycle, "_fresh_topic_pool", lambda *_a, **_k: ["recovered_topic"],
+    )
+    monkeypatch.setattr(
+        cycle, "_quant_claim_source_precision",
+        lambda *_a, **_k: (True, "source_topic_precision_ok:20/20", []),
+    )
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=runs_root,
+        target_ready=1,
+        max_repairs=0,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert report["status"] == "candidate_buffer_ready"
+    assert report["ready_count"] == 1
+    assert report["ready"][0]["topic"] == "recovered_topic"
+    assert report["attempted_count"] == 0
 
 
 def test_candidate_buffer_invalidates_ready_count_when_source_precision_drifts(
