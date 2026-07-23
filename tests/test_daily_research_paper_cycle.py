@@ -8505,7 +8505,7 @@ def test_cycle_rewrites_for_writer_fixable_retry(tmp_path: Path, monkeypatch) ->
     assert ledger["attempts"][1]["existing_work_reused"] is False
 
 
-def test_cycle_downshifts_after_recent_numeric_density_failure(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_does_not_downshift_from_stale_numeric_density_failure(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "akkermansia_muciniphila", target_journal=True)
     prior = _prior_run(tmp_path, "akkermansia_muciniphila", receipts=40, tensions=8, primary=4)
     _write_json(prior / "full_paper.audit.json", {"checks": [{"name": "Q9_numeric_density", "passed": False}]})
@@ -8544,18 +8544,17 @@ def test_cycle_downshifts_after_recent_numeric_density_failure(tmp_path: Path, m
         topic="akkermansia_muciniphila",
     )
 
-    assert overrides == ["thin_corpus_brief"]
-    assert ledger["attempts"][0]["review_type_override"] == "thin_corpus_brief"
+    assert overrides == [None]
+    assert "review_type_override" not in ledger["attempts"][0]
 
 
-def test_numeric_density_failure_does_not_downshift_revision(tmp_path: Path) -> None:
+def test_prior_numeric_density_failure_only_affects_topic_priority(tmp_path: Path) -> None:
     prior = tmp_path / "prior"
     _write_json(prior / "full_paper.audit.json", {
         "checks": [{"name": "Q9_numeric_density", "passed": False}],
     })
 
-    assert cycle._numeric_density_downshift(prior) == "thin_corpus_brief"
-    assert cycle._numeric_density_downshift(prior, revision=True) is None
+    assert cycle._prior_numeric_density_failed(prior) is True
 
 
 def test_blocker_histogram_marks_repeated_compiler_failure_as_auto_fix_candidate(tmp_path: Path) -> None:

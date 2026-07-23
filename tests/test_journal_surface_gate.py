@@ -1350,6 +1350,52 @@ def test_derive_lane_human_rct_ignores_preclinical_background_excerpt() -> None:
     ) == "human_rct"
 
 
+def test_derive_lane_human_rct_ignores_uppercase_arm_acronym() -> None:
+    from agent.evidence_lanes import derive_lane
+
+    assert derive_lane(
+        evidence_tier="A1",
+        directness="direct",
+        title="Randomized controlled clinical trial study",
+        population="adults",
+        source_excerpt="The CAT intervention arm included 43 participants.",
+    ) == "human_rct"
+
+
+def test_derive_lane_uppercase_animal_identity_stays_preclinical() -> None:
+    from agent.evidence_lanes import derive_lane
+
+    assert derive_lane(
+        evidence_tier="A1",
+        directness="direct",
+        title="Randomized RAT intervention study",
+        source_excerpt="The intervention reduced the measured outcome.",
+    ) == "animal_preclinical"
+
+
+def test_derive_lane_animal_clinical_trial_excerpt_stays_preclinical() -> None:
+    from agent.evidence_lanes import derive_lane
+
+    assert derive_lane(
+        evidence_tier="A1",
+        directness="direct",
+        title="Randomized intervention study",
+        source_excerpt="A randomized controlled clinical trial in rats.",
+    ) == "animal_preclinical"
+
+
+def test_derive_lane_ambiguous_subject_population_does_not_override_animal() -> None:
+    from agent.evidence_lanes import derive_lane
+
+    assert derive_lane(
+        evidence_tier="A1",
+        directness="direct",
+        title="Randomized intervention study",
+        population="n=100 subjects",
+        source_excerpt="Rats were randomized between interventions.",
+    ) == "animal_preclinical"
+
+
 def test_derive_lane_generic_a1_with_animal_only_excerpt_is_preclinical() -> None:
     from agent.evidence_lanes import derive_lane
 

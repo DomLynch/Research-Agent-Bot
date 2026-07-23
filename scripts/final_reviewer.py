@@ -493,8 +493,8 @@ def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
         patch_type=pt,
         severity=severity,
         location=(p_raw.get("location") or "").strip(),
-        before=before[:300],   # cap to avoid runaway
-        after=after[:600],
+        before=before,
+        after=after,
         reason=(p_raw.get("reason") or "").strip()[:400],
         auto_applicable=auto,
         requires_trace=requires_trace,

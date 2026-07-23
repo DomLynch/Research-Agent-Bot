@@ -158,19 +158,6 @@ def _removes_bridge_contract_tags(location: str, before: str, after: str) -> boo
     return any(tag in before and tag not in after for tag in required)
 
 
-def _looks_truncated_patch_field(after: str) -> bool:
-    """Detect reviewer patch fields likely clipped by final_reviewer caps.
-
-    `final_reviewer` caps `after` at 600 chars to prevent runaway JSON.
-    A non-empty replacement near that cap that ends mid-token is unsafe:
-    applying it can splice a broken sentence into the manuscript.
-    """
-    stripped = after.rstrip()
-    if len(stripped) < 590:
-        return False
-    return bool(stripped and re.search(r"[A-Za-z0-9]$", stripped))
-
-
 def _is_word_char(ch: str) -> bool:
     return ch.isalnum() or ch == "_"
 
@@ -698,19 +685,6 @@ def apply_patches(
                 reason_for_decision=(
                     f"empty 'before' field. final-layer reviewer rationale: "
                     f"{proposer_reason!r}"
-                ),
-                before=before, after=after,
-            ))
-            continue
-
-        if after and _looks_truncated_patch_field(after):
-            results.append(PatchResult(
-                patch_id=pid, patch_type=ptype, severity=sev,
-                decision="rejected",
-                reason_for_decision=(
-                    "truncated patch contract: replacement appears "
-                    "clipped near the reviewer field cap and ends mid-token. "
-                    f"final-layer reviewer rationale: {proposer_reason!r}"
                 ),
                 before=before, after=after,
             ))

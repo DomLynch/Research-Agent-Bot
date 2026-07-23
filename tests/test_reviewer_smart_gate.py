@@ -164,6 +164,27 @@ def test_final_reviewer_prompt_documents_smart_gate_contract() -> None:
     assert "GOOD" in system and "BAD" in system
 
 
+def test_final_reviewer_preserves_complete_long_patch_fields() -> None:
+    import final_reviewer as gr
+
+    before = "before " * 80
+    after = "after " * 140
+    patch = gr._normalize_patch(
+        {
+            "id": "P-long",
+            "patch_type": "structure",
+            "severity": "P1",
+            "before": before,
+            "after": after,
+        },
+        1,
+    )
+
+    assert patch is not None
+    assert patch.before == before
+    assert patch.after == after
+
+
 def test_reviewer_real_consistency_claim_deletion_auto_applies() -> None:
     """End-to-end: The reviewer's deletion of the false 'consistent with 5%'
     claim auto-applies under Fix #39."""

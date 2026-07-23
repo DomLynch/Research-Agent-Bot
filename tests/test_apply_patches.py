@@ -239,9 +239,13 @@ def test_claim_patch_allows_background_literature_attribution() -> None:
     assert "citation attribution" in results[0].reason_for_decision
 
 
-def test_truncated_long_patch_is_rejected() -> None:
+def test_complete_long_patch_is_not_rejected_as_truncated() -> None:
     before = "No trial measured patient-reported outcomes."
-    after = "No trial measured patient-reported outcomes. " + ("word " * 115) + "funct"
+    after = (
+        "No trial measured patient-reported outcomes. "
+        + ("word " * 115)
+        + "function"
+    )
     assert len(after) >= 590
     p = {
         "id": "P-trunc", "patch_type": "formatting", "severity": "P3",
@@ -252,9 +256,8 @@ def test_truncated_long_patch_is_rejected() -> None:
     }
     paper = "## Limitations\n\n" + before + "\n"
     new_md, results = apply_patches.apply_patches(paper, [p], _manifest())
-    assert results[0].decision == "rejected"
-    assert "funct" not in new_md
-    assert "truncated patch contract" in results[0].reason_for_decision
+    assert results[0].decision == "applied"
+    assert after in new_md
     assert "can increase lifespan" not in new_md
 
 

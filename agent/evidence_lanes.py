@@ -17,6 +17,7 @@ here.
 """
 from __future__ import annotations
 
+import re
 from typing import Any, Final
 
 from agent.journal_surface_gate import is_animal_paper
@@ -41,6 +42,15 @@ LANE_DISPLAY: Final[dict[str, str]] = {
     "animal_preclinical": "Animal / preclinical evidence",
     "background_only": "Background / methodological reference",
 }
+
+_HUMAN_POPULATION_RE: Final[re.Pattern[str]] = re.compile(
+    r"\b(?:humans?|people|adults|men|women|human\s+(?:patients?|participants?|subjects?))\b",
+    re.IGNORECASE,
+)
+_CLINICAL_TRIAL_IDENTITY_RE: Final[re.Pattern[str]] = re.compile(
+    r"\brandomi[sz]ed(?:\s+controlled)?\s+clinical\s+trial\b",
+    re.IGNORECASE,
+)
 
 
 def derive_lane(
@@ -72,10 +82,13 @@ def derive_lane(
     tier = (evidence_tier or "").upper()
     direct = (directness or "").lower()
     identity = " ".join(s for s in (title, venue, population) if s)
-    blob = " ".join(s for s in (identity, source_excerpt) if s)
     animal_identity = is_animal_paper(identity)
     animal_excerpt = is_animal_paper(source_excerpt)
-    human_signal = bool(HUMAN_TRIAL_SIGNAL_RE.search(blob))
+    human_population = bool(_HUMAN_POPULATION_RE.search(identity))
+    human_signal = human_population and bool(
+        HUMAN_TRIAL_SIGNAL_RE.search(identity)
+        or _CLINICAL_TRIAL_IDENTITY_RE.search(identity)
+    )
     if direct == "review" or tier == "B1":
         return "review_meta_analysis"
     # Human trial papers routinely mention mouse work in their background.

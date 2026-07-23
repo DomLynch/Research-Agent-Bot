@@ -2420,7 +2420,7 @@ def _full_synthesis_ready_topic(topic: str, runs_root: Path) -> bool:
         bool(counts.get("has_manifest"))
         and not _compact_review_topic(topic)
         and not compact_run
-        and _numeric_density_downshift(latest) is None
+        and not _prior_numeric_density_failed(latest)
         and _topic_has_quant_floor(topic)
         and n_receipts >= PREFLIGHT_MIN_RECEIPTS
         and int(counts.get("n_primary_tier") or 0) >= PREFLIGHT_MIN_PRIMARY_TIER
@@ -3609,14 +3609,12 @@ def _repair_existing_run(
     return True, ""
 
 
-def _numeric_density_downshift(run: Path | None, *, revision: bool = False) -> str | None:
-    if revision:
-        return None
+def _prior_numeric_density_failed(run: Path | None) -> bool:
     audit = _read_json(run / "full_paper.audit.json") if run else {}
     for check in audit.get("checks", []):
         if isinstance(check, dict) and check.get("name") == "Q9_numeric_density" and check.get("passed") is False:
-            return "thin_corpus_brief"
-    return None
+            return True
+    return False
 
 
 def _current_gate_status(bridge: dict[str, Any], run_name: str) -> str:
@@ -4791,10 +4789,6 @@ def run_cycle(
                 })
                 attempted.add(selected)
                 continue
-            numeric_review_type = _numeric_density_downshift(
-                _latest_topic_run(selected, runs_root),
-                revision=revision_source is not None,
-            )
             ledger.update({"topic": selected, "out_dir": out_dir.name, "attempted_topic": selected, "attempted_run": out_dir.name})
             if not run_synthesis:
                 ledger["status"] = "dry_run_selected_topic"
@@ -5161,9 +5155,9 @@ def run_cycle(
             strategy_review_type = str(strategy.get("review_type_override") or "") or None
             repeat_policy = writer_gate_policy.get(selected, {})
             repeat_review_type = "thin_corpus_brief" if repeat_policy.get("action") == "thin_corpus_brief" else None
-            review_type_override = numeric_review_type or strategy_review_type or repeat_review_type
+            review_type_override = strategy_review_type or repeat_review_type
             if review_type_override:
-                reason = "Q9_numeric_density" if numeric_review_type else (
+                reason = (
                     str(strategy.get("reason") or "paper_strategy")
                     if strategy_review_type
                     else f"writer_gate_repeat:{repeat_policy.get('gate')}"
