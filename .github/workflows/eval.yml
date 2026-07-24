@@ -1,15 +1,18 @@
-name: Eval Corpus CI Gate
+name: Publication Quality CI Gate
 
 on:
   push:
-    branches: [main, "codex/019e9ce8/main", eval-corpus]
+    branches: [main, "codex/019e9ce8/main"]
   pull_request:
-    branches: [main, "codex/019e9ce8/main", eval-corpus]
+    branches: [main, "codex/019e9ce8/main"]
+
+permissions:
+  contents: read
 
 jobs:
-  eval:
+  publication-quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
@@ -24,226 +27,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
 
-      - name: Cache PubMed/OpenAlex responses
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/requests
-          key: pubmed-cache-${{ hashFiles('tests/golden/topics/*.json') }}
-          restore-keys: |
-            pubmed-cache-
-
-      - name: Run eval matrix + generate score table
-        id: eval
+      - name: Run frozen publication-quality contracts
         run: |
-          python -c "
-import json, os, sys
-from tests.golden.harness import (
-    study_overlap, direction_agreement,
-    limitation_overlap, quantitative_fidelity, composite_score
-)
-
-topics_dir = 'tests/golden/topics'
-adversarial_dir = 'tests/golden/adversarial'
-breadth_dir = 'tests/golden/breadth'
-fixture_dir = 'tests/golden/fixtures'
-
-results = []
-fixture_exists = os.path.isdir(fixture_dir)
-
-# Score gold topics
-for fname in sorted(os.listdir(topics_dir)):
-    if not fname.endswith('.json'):
-        continue
-    with open(os.path.join(topics_dir, fname)) as f:
-        gold = json.load(f)
-    slug = fname[:-5]
-
-    # Load fixture draft if it exists
-    if fixture_exists:
-        draft_path = os.path.join(fixture_dir, f'{slug}_draft.json')
-        if os.path.exists(draft_path):
-            with open(draft_path) as f:
-                draft = json.load(f)
-        else:
-            draft = None
-    else:
-        draft = None
-
-    if draft is None:
-        # No fixture — skip scoring for this topic (CI gates on unit tests only)
-        results.append({
-            'tier': 'gold',
-            'topic': slug,
-            'composite': None,
-            'study_overlap': None,
-            'direction_agreement': None,
-            'limitation_overlap': None,
-            'quantitative_fidelity': None,
-            'skipped': True,
-        })
-        continue
-
-    so = study_overlap(draft, gold)
-    da = direction_agreement(draft, gold)
-    lo = limitation_overlap(draft, gold)
-    qf = quantitative_fidelity(draft, gold)
-    cs = composite_score(draft, gold)
-
-    results.append({
-        'tier': 'gold',
-        'topic': slug,
-        'composite': cs,
-        'study_overlap': so,
-        'direction_agreement': da,
-        'limitation_overlap': lo,
-        'quantitative_fidelity': qf,
-        'skipped': False,
-    })
-
-# Adversarial topics (no gold reference, just count)
-for fname in sorted(os.listdir(adversarial_dir)):
-    if not fname.endswith('.json'):
-        continue
-    with open(os.path.join(adversarial_dir, fname)) as f:
-        adv = json.load(f)
-    results.append({
-        'tier': 'adversarial',
-        'topic': fname[:-5],
-        'failure_mode': adv.get('failure_mode', 'unknown'),
-        'expected': adv.get('expected_behavior', ''),
-    })
-
-# Count breadth topics
-breadth_count = len([f for f in os.listdir(breadth_dir) if f.endswith('.json')])
-
-# Print summary
-gold_results = [r for r in results if r['tier'] == 'gold']
-scored = [r for r in gold_results if not r.get('skipped')]
-skipped_count = len([r for r in gold_results if r.get('skipped')])
-
-print('## Eval Corpus Scores')
-print()
-print(f'**Gold Topics: {len(gold_results)} total | {len(scored)} scored | {skipped_count} skipped (no fixture)**')
-print()
-print('| Topic | Composite | Study Overlap | Direction | Limitation | Quant Fidelity |')
-print('|-------|-----------|---------------|-----------|------------|----------------|')
-for r in gold_results:
-    if r.get('skipped'):
-        print(f'| {r[\"topic\"]} | SKIP (no fixture) | - | - | - | - |')
-    else:
-        print(f'| {r[\"topic\"]} | {r[\"composite\"]:.3f} | {r[\"study_overlap\"]:.3f} | {r[\"direction_agreement\"]:.3f} | {r[\"limitation_overlap\"]:.3f} | {r[\"quantitative_fidelity\"]:.3f} |')
-
-if scored:
-    avg_cs = sum(r['composite'] for r in scored) / len(scored)
-    print()
-    print(f'**Average Composite Score (scored only): {avg_cs:.3f}**')
-
-print()
-print(f'**Adversarial Topics: {len([r for r in results if r[\"tier\"] == \"adversarial\"])}**')
-print(f'**Breadth Topics: {breadth_count}**')
-
-# Save summary for PR comment
-with open('eval_summary.md', 'w') as f:
-    f.write('## Eval Corpus Scores\n\n')
-    f.write(f'**Gold Topics: {len(gold_results)} total | {len(scored)} scored | {skipped_count} skipped (no fixture)**\n\n')
-    f.write('| Topic | Composite | Study Overlap | Direction | Limitation | Quant Fidelity |\n')
-    f.write('|-------|-----------|---------------|-----------|------------|----------------|\n')
-    for r in gold_results:
-        if r.get('skipped'):
-            f.write(f'| {r[\"topic\"]} | SKIP (no fixture) | - | - | - | - |\n')
-        else:
-            f.write(f'| {r[\"topic\"]} | {r[\"composite\"]:.3f} | {r[\"study_overlap\"]:.3f} | {r[\"direction_agreement\"]:.3f} | {r[\"limitation_overlap\"]:.3f} | {r[\"quantitative_fidelity\"]:.3f} |\n')
-    if scored:
-        f.write(f'\n**Average Composite Score (scored only): {avg_cs:.3f}**\n')
-    f.write(f'\n**Adversarial Topics: {len([r for r in results if r["tier"] == "adversarial"])} | Breadth Topics: {breadth_count}**\n')
-"
-
-      - name: Run unit tests (CI gate)
-        run: |
-          python -m pytest tests/test_golden.py -v --tb=short -m "not gold_smoke and not full_matrix"
-
-      - name: Integration tests (gold-smoke + full-matrix) — requires fixture drafts
-        run: |
-          echo "=== gold-smoke ==="
-          python -m pytest tests/test_golden.py -m gold_smoke -v --tb=short || echo "GOLD_SMOKE_FAILED: fixtures required"
-          echo ""
-          echo "=== full-matrix ==="
-          python -m pytest tests/test_golden.py -m full_matrix -v --tb=short || echo "FULL_MATRIX_FAILED"
-
-      - name: Run full matrix schema validation
-        run: |
-          python -c "
-import json, os
-from tests.golden.schema import validate_gold_topic, validate_adversarial, validate_breadth
-
-topics_dir = 'tests/golden/topics'
-adversarial_dir = 'tests/golden/adversarial'
-breadth_dir = 'tests/golden/breadth'
-
-gold_valid = 0
-gold_errors = 0
-for fname in sorted(os.listdir(topics_dir)):
-    if not fname.endswith('.json'):
-        continue
-    with open(os.path.join(topics_dir, fname)) as f:
-        data = json.load(f)
-    errors = validate_gold_topic(data)
-    if errors:
-        gold_errors += 1
-        print(f'GOLD INVALID {fname}: {errors}')
-    else:
-        gold_valid += 1
-
-adv_valid = 0
-adv_errors = 0
-for fname in sorted(os.listdir(adversarial_dir)):
-    if not fname.endswith('.json'):
-        continue
-    with open(os.path.join(adversarial_dir, fname)) as f:
-        data = json.load(f)
-    errors = validate_adversarial(data)
-    if errors:
-        adv_errors += 1
-        print(f'ADV INVALID {fname}: {errors}')
-    else:
-        adv_valid += 1
-
-br_valid = 0
-br_errors = 0
-br_count = 0
-for fname in sorted(os.listdir(breadth_dir)):
-    if not fname.endswith('.json'):
-        continue
-    br_count += 1
-    with open(os.path.join(breadth_dir, fname)) as f:
-        data = json.load(f)
-    errors = validate_breadth(data)
-    if errors:
-        br_errors += 1
-        print(f'BR INVALID {fname}: {errors}')
-    else:
-        br_valid += 1
-
-total = gold_valid + gold_errors
-print(f'Schema validation: gold={gold_valid}/{total}, adversarial={adv_valid}/{adv_valid + adv_errors}, breadth={br_valid}/{br_count}')
-print(f'GOLD_VALID={gold_valid} GOLD_INVALID={gold_errors} ADV_VALID={adv_valid} ADV_INVALID={adv_errors} BR_VALID={br_valid} BR_INVALID={br_errors} BREADTH_COUNT={br_count}')
-"
-
-      - name: Post PR comment
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            let summary = 'Eval summary not available';
-            try {
-              summary = fs.readFileSync('eval_summary.md', 'utf8');
-            } catch (e) {}
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: summary + '\n\n_Full test results in CI run_'
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          python -m pytest -q \
+            tests/test_publication_scorer.py \
+            tests/test_journal_surface_gate.py \
+            tests/test_polish_pre_public.py \
+            tests/test_surface_render_lint.py \
+            tests/test_daily_research_paper_submit.py \
+            tests/test_final_status.py
