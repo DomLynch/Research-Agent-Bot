@@ -12,6 +12,11 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from agent.publishing.event_log import conversion_funnel  # noqa: E402
+
 DEFAULT_PUBLICATIONS_URL = "https://researka.org/api/publications"
 DEFAULT_RUNS_ROOT = Path("runs")
 DEFAULT_REPORT_PATH = Path("reports/publish_drought_guard.json")
@@ -142,16 +147,23 @@ def evaluate_drought(
 
 
 def recent_lane_ledgers(runs_root: Path, *, limit: int = 12) -> list[dict[str, Any]]:
-    ledgers: list[dict[str, Any]] = []
+    ledgers: list[tuple[float, dict[str, Any]]] = []
     for subdir in ("_daily_research_paper_cycle_ledger", "_daily_research_paper_ledger"):
-        for path in sorted((runs_root / subdir).glob("*.json"), reverse=True):
+        for path in sorted(
+            (
+                path
+                for path in (runs_root / subdir).glob("*.json")
+                if not path.name.startswith("_")
+            ),
+            reverse=True,
+        ):
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
             except (OSError, json.JSONDecodeError):
                 continue
             if not isinstance(data, dict):
                 continue
-            ledgers.append({
+            ledgers.append((path.stat().st_mtime, {
                 "ledger": str(path),
                 "mode": data.get("mode") or ("daily-submit" if subdir.endswith("_ledger") else None),
                 "status": data.get("status"),
@@ -165,12 +177,27 @@ def recent_lane_ledgers(runs_root: Path, *, limit: int = 12) -> list[dict[str, A
                     or data.get("reviewer_decision")
                 ),
                 "submission_id": data.get("submission_id") or data.get("researka_submission_id"),
-            })
-    return sorted(ledgers, key=lambda row: str(row["ledger"]), reverse=True)[:limit]
+                "attempts": data.get("attempts") if isinstance(data.get("attempts"), list) else [],
+                "considered": data.get("considered") if isinstance(data.get("considered"), list) else [],
+                "submissions": data.get("submissions") if isinstance(data.get("submissions"), list) else [],
+                "candidate": data.get("candidate") if isinstance(data.get("candidate"), dict) else {},
+            }))
+    return [
+        row
+        for _mtime, row in sorted(ledgers, key=lambda item: item[0], reverse=True)[:limit]
+    ]
 
 
 def build_triage(runs_root: Path) -> dict[str, Any]:
-    ledgers = recent_lane_ledgers(runs_root)
+    raw_ledgers = recent_lane_ledgers(runs_root)
+    ledgers = [
+        {
+            key: value
+            for key, value in row.items()
+            if key not in {"attempts", "candidate", "considered", "submissions"}
+        }
+        for row in raw_ledgers
+    ]
     submitted_not_public = [
         row for row in ledgers if row.get("submitted") and not row.get("published")
     ][:5]
@@ -184,6 +211,13 @@ def build_triage(runs_root: Path) -> dict[str, Any]:
         buffer = json.loads(buffer_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         buffer = {}
+    funnel = conversion_funnel([
+        *raw_ledgers,
+        {
+            **(buffer if isinstance(buffer, dict) else {}),
+            "ledger": str(buffer_path),
+        },
+    ])
     return {
         "runs_root": str(runs_root),
         "candidate_buffer": {
@@ -194,6 +228,7 @@ def build_triage(runs_root: Path) -> dict[str, Any]:
         },
         "recent_ledgers": ledgers,
         "submitted_not_public": submitted_not_public,
+        "conversion_funnel": funnel,
         "top_blockers": [
             {"reason": reason, "count": count}
             for reason, count in top_blocker_items[:8]

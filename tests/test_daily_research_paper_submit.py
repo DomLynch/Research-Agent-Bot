@@ -85,7 +85,8 @@ def test_preflight_runtime_error_does_not_reuse_stale_cleaned_payload(
     assert checked is payload
     assert checked["body_markdown"] == "FRESH"
     assert report and report["status"] == "pass"
-    assert "preflight_runtime_error" in checked["metadata"]["preflight_qa"]["advisory_codes"]
+    metadata: Any = checked["metadata"]
+    assert "preflight_runtime_error" in metadata["preflight_qa"]["advisory_codes"]
 
 
 def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 5) -> Path:
@@ -1989,6 +1990,7 @@ def test_candidate_run_restriction_does_not_submit_other_eligible_runs(tmp_path:
     assert ledger["submitted"] == 0
     assert ledger["considered"] == [{
         "run": current.name,
+        "topic": "topic",
         "fingerprint": daily._sha256(current / "full_paper.md"),
         "status": "journal_surface_not_passed",
     }]

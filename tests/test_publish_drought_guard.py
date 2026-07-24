@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
@@ -175,6 +176,89 @@ def test_triage_surfaces_candidate_buffer_supply(tmp_path: Path) -> None:
         "target_ready": 3,
         "generated_at": "2026-07-14T18:00:00+00:00",
     }
+
+
+def test_triage_includes_unique_candidate_conversion_funnel(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger_dir.mkdir()
+    (ledger_dir / "2026-07-24-fresh.json").write_text(json.dumps({
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "attempts": [{
+            "topic": "statins",
+            "out_dir": "run-statins",
+            "receipt_preflight": {"passed": True},
+            "synthesis_return_code": 0,
+            "gate_status": "eligible",
+            "submitted": 1,
+        }],
+    }), encoding="utf-8")
+
+    triage = guard.build_triage(tmp_path)
+
+    assert triage["conversion_funnel"]["discovered"] == 1
+    assert triage["conversion_funnel"]["prepared"] == 1
+    assert triage["conversion_funnel"]["synthesized"] == 1
+    assert triage["conversion_funnel"]["submitted"] == 1
+    assert "attempts" not in triage["recent_ledgers"][0]
+
+
+def test_recent_lane_ledgers_ignore_helper_state_files(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger_dir.mkdir()
+    for index in range(15):
+        (ledger_dir / f"_helper-{index:02d}.json").write_text(
+            json.dumps({"status": "helper"}),
+            encoding="utf-8",
+        )
+    real = ledger_dir / "2026-07-24-fresh.json"
+    real.write_text(
+        json.dumps({"status": "published", "published": 1}),
+        encoding="utf-8",
+    )
+
+    ledgers = guard.recent_lane_ledgers(tmp_path, limit=1)
+
+    assert len(ledgers) == 1
+    assert ledgers[0]["ledger"] == str(real)
+
+
+def test_recent_lane_ledgers_sort_across_lanes_by_mtime(tmp_path: Path) -> None:
+    cycle_dir = tmp_path / "_daily_research_paper_cycle_ledger"
+    submit_dir = tmp_path / "_daily_research_paper_ledger"
+    cycle_dir.mkdir()
+    submit_dir.mkdir()
+    newer = cycle_dir / "2026-07-24-fresh.json"
+    older = submit_dir / "2026-07-24.json"
+    newer.write_text(json.dumps({"status": "newer"}), encoding="utf-8")
+    older.write_text(json.dumps({"status": "older"}), encoding="utf-8")
+    os.utime(older, (1, 1))
+    os.utime(newer, (2, 2))
+
+    ledgers = guard.recent_lane_ledgers(tmp_path, limit=1)
+
+    assert ledgers[0]["ledger"] == str(newer)
+
+
+def test_triage_funnel_includes_prepare_only_candidates(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "_daily_research_paper_cycle_ledger"
+    ledger_dir.mkdir()
+    (ledger_dir / guard.CANDIDATE_BUFFER).write_text(json.dumps({
+        "status": "candidate_buffer_partial",
+        "ready_count": 1,
+        "target_ready": 3,
+        "ready": [{"topic": "metformin"}],
+        "attempts": [{
+            "topic": "metformin",
+            "receipt_preflight": {"passed": True},
+        }],
+    }), encoding="utf-8")
+
+    funnel = guard.build_triage(tmp_path)["conversion_funnel"]
+
+    assert funnel["discovered"] == 1
+    assert funnel["prepared"] == 1
 
 
 def test_deploy_timer_runs_guard_hourly() -> None:

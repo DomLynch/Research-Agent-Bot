@@ -177,6 +177,19 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   is active. Recovery never lowers evidence or publication gates.
 - GitHub CI runs on both `main` and canonical `codex/019e9ce8/main` during the
   branch migration.
+- Publication policy is a typed shared contract in `agent/publishing/policy.py`.
+  Candidate preparation, fresh ranking, and daily-submit surface checks consume
+  that contract; compact/full and evidence-floor meanings must not be redefined
+  inside lane scripts.
+- Drought triage derives a unique-candidate conversion funnel from existing lane
+  ledgers. It does not write another independent truth source, and retries do
+  not inflate blocker or stage counts.
+- The P1 publication-control decomposition is live: the two operational CLIs
+  are compatibility wrappers over `publishing/fresh_lane.py` and
+  `publishing/submission.py`; topic supply, candidate preparation, revision,
+  reconciliation, event telemetry, and policy have dedicated modules.
+  Further extraction must reduce LOC, preserve public behavior, pass the full
+  suite, and deploy only between live cycles.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
