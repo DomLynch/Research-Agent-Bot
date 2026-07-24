@@ -10,4 +10,3 @@ EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
 ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_submit.py --submit
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARKA_DOI_PREFLIGHT_ENABLED=1
-Environment=RESEARKA_ARTICLE_TYPE_V3=research_synthesis

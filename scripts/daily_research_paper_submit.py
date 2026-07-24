@@ -31,7 +31,6 @@ from source_topic_specificity import (  # noqa: E402
     topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
-from agent.outcome_class_remap import unique_outcome_displays  # noqa: E402
 from agent import publication_evidence as _publication_evidence  # noqa: E402
 from agent.revision_contract import gate_report as _revision_gate_report, needs_coverage as _revision_needs_coverage  # noqa: E402
 from agent.revision_quality import resolved_effect_direction  # noqa: E402
@@ -63,7 +62,7 @@ TOKEN_ENVS = (
     "RESEARKA_V2_API_KEY",
 )
 DEFAULT_AGENT_SLUG = "agent-v3-full-paper"
-DEFAULT_ARTICLE_TYPE = "rapid_evidence_synthesis"
+DEFAULT_ARTICLE_TYPE = "research_synthesis"
 SOURCE_TOPIC_PRECISION_FLOOR = 0.50
 PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS = 4
 SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS = 12
@@ -75,7 +74,11 @@ SOURCE_BUNDLE_INDIRECT_TOLERANCE_RATIO = 0.15
 SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS = 20
 SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS = 3
 SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO = 0.10
-PUBLIC_BLOCKED_TITLE_PREFIXES = ("hypothesis-generating brief:",)
+PUBLIC_BLOCKED_TITLE_PREFIXES = (
+    "adjacent evidence brief:", "evidence brief:", "evidence map:",
+    "hypothesis-generating brief:", "mechanistic evidence brief:",
+    "mechanistic evidence map:", "thin-corpus evidence brief:",
+)
 NULL_CODING_AUDIT_FLOOR = 0.90
 # Mirror of Researka's intake recency floor year (contracts/submissions.py
 # RECENT_PUBLICATION_YEAR_FLOOR). The per-type recency *ratio* lives in
@@ -83,19 +86,9 @@ NULL_CODING_AUDIT_FLOOR = 0.90
 # wasting a synthesis cycle — and tripping the intake backoff — on a corpus
 # whose published source bundle is too old to clear the gate.
 RECENT_PUBLICATION_YEAR_FLOOR = 2020
-# Per-article-type pre-submit intake floors. Mirrors the live Researka core
-# (contracts/submissions.py `_TYPE_THRESHOLDS` + templates.py
-# `minimum_body_word_count`). Every floor is set >= the core's, so a payload
-# that clears preflight also clears intake — never the reverse — which is what
-# stops the bot wasting a synthesis cycle or tripping the 3-strike intake
-# backoff. `evidence_map` mirrors the core exactly (the landscape lane is
-# deliberately lighter: 10 sources, 30% recent, short Scope, no body floor);
-# the thesis lanes keep their historical floors. Universal: keyed only on
-# article_type, no topic/domain assumptions.
+# Pre-submit intake floors mirror Researka's full research-synthesis contract.
 RESEARKA_TYPE_THRESHOLDS: dict[str, dict[str, float]] = {
-    "rapid_evidence_synthesis": {"min_citations": 12, "recency_ratio": 0.50, "min_question_words": 50, "min_body_words": 2000},
     "research_synthesis": {"min_citations": 12, "recency_ratio": 0.50, "min_question_words": 75, "min_body_words": 2000},
-    "evidence_map": {"min_citations": 10, "recency_ratio": 0.30, "min_question_words": 30, "min_body_words": 0},
 }
 PUBLICATION_IDENTITY_KEYS = (
     "submission_identity_key",
@@ -105,15 +98,6 @@ PUBLICATION_IDENTITY_KEYS = (
     "author_signature",
 )
 RESEARKA_REQUIRED_SECTIONS = {
-    "rapid_evidence_synthesis": (
-        "Research Question",
-        "Search Summary",
-        "Evidence Landscape",
-        "Key Findings",
-        "Limitations",
-        "Gaps Identified",
-        "Conclusion",
-    ),
     "research_synthesis": (
         "Abstract",
         "Introduction",
@@ -122,14 +106,6 @@ RESEARKA_REQUIRED_SECTIONS = {
         "Discussion",
         "Limitations",
         "Conclusion",
-    ),
-    "evidence_map": (
-        "Scope",
-        "Search Summary",
-        "Evidence Landscape",
-        "Findings Map",
-        "Tensions and Gaps",
-        "Limitations",
     ),
 }
 RESEARKA_RECOMMENDED_SECTIONS = {
@@ -140,11 +116,6 @@ RESEARKA_RECOMMENDED_SECTIONS = {
         "Cross-Domain Synthesis",
         "References",
     ),
-}
-RESEARKA_QUESTION_SECTION = {
-    "rapid_evidence_synthesis": "Research Question",
-    "research_synthesis": "Abstract",
-    "evidence_map": "Scope",
 }
 SUBMISSION_REQUIRED_FILES = (
     "full_paper.md",
@@ -419,43 +390,6 @@ def _threshold(article_type: str, key: str) -> float:
     return table[key]
 
 
-# Auto-select doctrine: with no explicit override, route a corpus to
-# `evidence_map` when its tension density — n_non_orthogonal_tensions divided by
-# n_receipts — is >= the floor (default 1.0). The predicate is INCLUSIVE at the
-# boundary: density == floor routes to evidence_map, because a corpus carrying
-# at least as many cross-source tensions as it has receipts is already a
-# heterogeneous, non-convergent landscape. Forcing such a corpus into a
-# single-thesis synthesis is what makes the writer overclaim against its own
-# evidence table; the map instead reviews it on the right axis (landscape
-# fidelity, not convergence). Universal: density is topic-agnostic; the floor is
-# env-tunable via RESEARKA_EVIDENCE_MAP_TENSION_FLOOR.
-EVIDENCE_MAP_TENSION_DENSITY_FLOOR = 1.0
-
-
-def _evidence_map_tension_floor() -> float:
-    raw = os.getenv("RESEARKA_EVIDENCE_MAP_TENSION_FLOOR", "").strip()
-    try:
-        return float(raw) if raw else EVIDENCE_MAP_TENSION_DENSITY_FLOOR
-    except ValueError:
-        return EVIDENCE_MAP_TENSION_DENSITY_FLOOR
-
-
-def _select_article_type(manifest: dict[str, Any]) -> str:
-    """Explicit env override > landscape auto-select > default thesis lane."""
-    override = os.getenv("RESEARKA_ARTICLE_TYPE_V3", "").strip()
-    if override:
-        return override
-    receipts = int(manifest.get("n_receipts") or 0)
-    tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
-    # A zero-tension corpus is a landscape survey (nothing to adjudicate), not a
-    # failed thesis — route it to evidence_map (reviewed for fidelity, not
-    # convergence) rather than the thesis lane that requires >=1 tension. Pairs
-    # with final_gate.landscape_thresholds, which lifts only the tension floor.
-    if receipts and (tensions == 0 or tensions / receipts >= _evidence_map_tension_floor()):
-        return "evidence_map"
-    return DEFAULT_ARTICLE_TYPE
-
-
 def _token() -> tuple[str, str]:
     for name in TOKEN_ENVS:
         value = os.getenv(name, "").strip()
@@ -531,79 +465,10 @@ def _word_count(text: object) -> int:
     return len(str(text or "").split())
 
 
-def _title_anchor_terms(title: object) -> tuple[str, ...]:
-    subject = str(title or "").strip()
-    if ":" in subject:
-        subject = subject.split(":", 1)[1]
-    subject = re.split(r"\s+[—–-]\s+|\s+--\s+", subject, maxsplit=1)[0]
-    words = re.findall(r"[a-z0-9]+", subject.lower())
-    words = [
-        word for word in words
-        if word not in {"full", "paper", "brief", "research", "synthesis", "hypothesis", "generating", "evidence", "adjacent"}
-    ]
-    terms = [" ".join(words)] if words else []
-    terms.extend(word for word in words if len(word) >= 4 or any(ch.isdigit() for ch in word))
-    return tuple(dict.fromkeys(term for term in terms if term))
-
-
-def _findings_map_topic_anchor_status(payload: dict[str, Any]) -> str:
-    if str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE) != "evidence_map":
-        return "eligible"
-    sections_raw = payload.get("sections")
-    sections = sections_raw if isinstance(sections_raw, dict) else {}
-    findings = str(sections.get("Findings Map") or "")
-    terms = _title_anchor_terms(payload.get("title"))
-    if not findings.strip() or not terms:
-        return "eligible"
-    rows: list[str] = []
-    for line in findings.splitlines():
-        if not line.strip().startswith("|"):
-            continue
-        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-        if not cells or not cells[0] or set(cells[0]) <= {"-", ":"}:
-            continue
-        first = _normalized_key(cells[0])
-        if first in {"evidence domain", "outcome class", "source context"}:
-            continue
-        rows.append(first)
-    if not rows:
-        return "eligible"
-    weak = [row for row in rows if not any(term in row for term in terms)]
-    if weak and len(weak) / len(rows) >= 0.5:
-        return f"evidence_map_topic_anchor_low:{len(weak)}/{len(rows)}"
-    return "eligible"
-
-
-def _topic_anchored_title(title: str, topic: str) -> str:
-    display = _display_topic(topic)
-    match = re.match(r"(?P<prefix>.*?:\s*)(?P<subject>.*?)(?P<suffix>\s+[—–-]\s+.*)?$", title)
-    if match:
-        return f"{match.group('prefix')}{display}{match.group('suffix') or ''}"
-    return f"Research Synthesis: {display}"
-
-
-def _anchor_findings_map_rows(findings: str, topic: str) -> str:
-    anchor = _display_topic(topic)
-    anchor_norm = _normalized_key(anchor)
-    out: list[str] = []
-    for line in findings.splitlines():
-        if not line.strip().startswith("|"):
-            out.append(line)
-            continue
-        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-        first = _normalized_key(cells[0]) if cells else ""
-        if not cells or first in {"evidence domain", "outcome class", "source context"} or set(cells[0]) <= {"-", ":"}:
-            out.append(line)
-            continue
-        if not first.startswith(anchor_norm):
-            cells[0] = f"{anchor} / {cells[0].split('/', 1)[-1].strip()}"
-            line = "| " + " | ".join(cells) + " |"
-        out.append(line)
-    return "\n".join(out)
-
-
 def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
+    if article_type != DEFAULT_ARTICLE_TYPE:
+        return "public_surface_not_full_research"
     sections_raw = payload.get("sections")
     sections: dict[str, Any] = sections_raw if isinstance(sections_raw, dict) else {}
     source_bundle_raw = payload.get("source_bundle")
@@ -617,13 +482,16 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
         return bundle_status
     if (topic_status := _source_bundle_topic_status(payload)) != "eligible":
         return topic_status
+    direct = sum(_row_context(row) == "direct" for row in source_bundle)
+    if direct < PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS:
+        return f"public_surface_direct_receipts_below_floor:{direct} < {PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS}"
 
     required_sections = RESEARKA_REQUIRED_SECTIONS.get(article_type, RESEARKA_REQUIRED_SECTIONS[DEFAULT_ARTICLE_TYPE])
     missing = [name for name in required_sections if not str(sections.get(name) or "").strip()]
     if missing:
         return "researka_preflight_missing_sections:" + ",".join(missing)
 
-    question_section = RESEARKA_QUESTION_SECTION.get(article_type, "Research Question")
+    question_section = "Abstract"
     minimum_question_words = int(_threshold(article_type, "min_question_words"))
     question_words = _word_count(sections.get(question_section))
     if question_words < minimum_question_words:
@@ -634,29 +502,24 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
 
     min_body_words = int(_threshold(article_type, "min_body_words"))
     if min_body_words:
-        if article_type == "research_synthesis":
-            body_words = sum(
-                _word_count(sections.get(name))
-                for name in (*required_sections, *RESEARKA_RECOMMENDED_SECTIONS.get(article_type, ()))
-            )
-        else:
-            body_words = _word_count(payload.get("body_markdown"))
+        body_words = sum(
+            _word_count(sections.get(name))
+            for name in (*required_sections, *RESEARKA_RECOMMENDED_SECTIONS.get(article_type, ()))
+        )
         if body_words < min_body_words:
             return f"researka_preflight_body_words:{body_words} < {min_body_words}"
     if enforce_recency and (recency_status := _recency_ratio_status(payload)) != "eligible":
         return recency_status
     if (doi_status := _doi_existence_status(payload)) != "eligible":
         return doi_status
-    if (anchor_status := _findings_map_topic_anchor_status(payload)) != "eligible":
-        return anchor_status
-    if (breadth_status := _conclusion_breadth_status(payload)) != "eligible":
-        return breadth_status
     if (domain_frame_status := _domain_frame_status(payload)) != "eligible":
         return domain_frame_status
     return "eligible"
 
 
 def _final_status_ready(data: dict[str, Any]) -> bool:
+    if "researka_publish_ready" in data:
+        return bool(data.get("researka_publish_ready") is True)
     return bool(data.get("submission_ready") is True)
 
 
@@ -1216,8 +1079,6 @@ def select_candidate(
             null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
             if null_status != "eligible":
                 ok, status = False, null_status
-            elif (anchor_status := _findings_map_topic_anchor_status(payload)) != "eligible":
-                ok, status = False, anchor_status
             elif (
                 not (purpose == "revision" and revision)
                 and (recency_status := _recency_ratio_status(payload)) != "eligible"
@@ -1298,127 +1159,6 @@ def _sections(markdown: str) -> dict[str, str]:
         match.group("heading").strip(): match.group("body").strip()
         for match in pattern.finditer(markdown)
         if match.group("body").strip()
-    }
-
-
-def _key_findings(abstract: str, results: str, discussion: str, limitations: str, conclusion: str) -> str:
-    """Short synthetic payload field, distinct from Conclusion."""
-    conclusion_norm = " ".join(conclusion.lower().split())
-    findings: list[str] = []
-    for source in (results, discussion, limitations, abstract, conclusion):
-        prose = "\n".join(line for line in source.splitlines() if "|" not in line)
-        for sentence in re.findall(r"[^.!?]+[.!?]", prose):
-            sentence = " ".join(sentence.split())
-            if not sentence:
-                continue
-            if findings or sentence.lower() not in conclusion_norm:
-                findings.append(sentence)
-            if len(findings) >= 3:
-                break
-        if len(findings) >= 3:
-            break
-    source = "\n\n".join(part for part in (results, discussion, limitations, abstract, conclusion) if part).strip()
-    text = " ".join(findings).strip() or source[:900]
-    return _clip_text(text)
-
-
-def _same_text(left: str, right: str) -> bool:
-    return " ".join(left.lower().split()) == " ".join(right.lower().split())
-
-
-def _actionable_gaps(topic: str, manifest: dict[str, Any], explicit: str, discussion: str, limitations: str, abstract: str) -> str:
-    explicit = _clip_text(explicit)
-    if explicit and not any(_same_text(explicit, other) for other in (discussion, limitations, abstract)):
-        return explicit
-    receipts = [row for row in manifest.get("receipts", []) if isinstance(row, dict)]
-    outcomes = [
-        str(row.get("outcome_class") or "").replace("_", " ")
-        for row in receipts
-        if str(row.get("outcome_class") or "").strip()
-    ]
-    top_outcomes = ", ".join(dict.fromkeys(outcomes[:4])) or "the primary outcome classes"
-    direct = sum(str(row.get("directness") or "").lower() == "direct" for row in receipts)
-    n_receipts = int(manifest.get("n_receipts") or len(receipts) or 0)
-    n_tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
-    label = _display_topic(topic).lower()
-    tension_work = (
-        "resolving the pairwise disagreement map"
-        if _dense_tension_map(n_tensions, n_receipts)
-        else f"resolving {n_tensions} disagreement(s) narratively"
-    )
-    gaps = [
-        f"Run adequately powered human studies that test {label} against prespecified endpoints in {top_outcomes}.",
-        f"Standardize exposure, comparator, follow-up duration, and endpoint definitions so future syntheses can pool effects instead of {tension_work}.",
-        f"Separate direct source rows from adjacent context before submission; current direct evidence is {direct}/{n_receipts} admitted source(s).",
-    ]
-    return _clip_text(" ".join(gaps))
-
-
-def _dense_tension_map(n_tensions: int, n_receipts: int) -> bool:
-    return n_tensions > max(50, n_receipts * 3)
-
-
-def _public_tension_summary(n_tensions: int, n_receipts: int) -> str:
-    if n_tensions <= 0:
-        return "no load-bearing cross-source disagreements"
-    if _dense_tension_map(n_tensions, n_receipts):
-        return "a high-density pairwise disagreement map"
-    return f"{n_tensions} load-bearing cross-source disagreement(s)"
-
-
-def _evidence_landscape(manifest: dict[str, Any], detail: str) -> str:
-    """Corpus-shape summary for an evidence map's Evidence Landscape section:
-    how many sources, how direct, across which outcomes, with how much tension —
-    the map's boundaries, distinct from the per-finding detail of Findings Map."""
-    receipts = [row for row in manifest.get("receipts", []) if isinstance(row, dict)]
-    n_receipts = int(manifest.get("n_receipts") or len(receipts) or 0)
-    n_tensions = int(manifest.get("n_non_orthogonal_tensions") or 0)
-    direct = sum(str(row.get("directness") or "").lower() == "direct" for row in receipts)
-    outcomes = list(unique_outcome_displays(
-        str(row.get("outcome_class") or "").strip()
-        for row in receipts if str(row.get("outcome_class") or "").strip()
-    ))
-    outcome_label = ", ".join(outcomes[:5]) or "the mapped outcomes"
-    shape = (
-        f"This landscape maps {n_receipts} retained source(s) spanning {outcome_label}, "
-        f"of which {direct} provide direct human evidence, surfacing "
-        f"{_public_tension_summary(n_tensions, n_receipts)} across the corpus."
-    )
-    return _clip_text(f"{shape} {detail}".strip())
-
-
-def _evidence_map_sections(topic: str, manifest: dict[str, Any], parts: dict[str, str], abstract: str) -> dict[str, str]:
-    """Map an evidence_map payload onto the live Researka template
-    (contracts/templates.py EVIDENCE_MAP): Scope, Search Summary, Evidence
-    Landscape, Findings Map, Tensions and Gaps, Limitations. Reuses the parsed
-    paper with fallbacks so every section is non-empty when a heading is
-    absent. Universal: no topic-specific content."""
-    methods = parts.get("Methods", "")
-    results = parts.get("Results", "")
-    discussion = parts.get("Discussion", "")
-    limitations = parts.get("Limitations", "")
-    conclusion = parts.get("Conclusion", "")
-    # Bird's-eye digest for Evidence Landscape; the full cited detail lives in
-    # Findings Map, so the two sections stay distinct rather than both echoing
-    # the Results prose.
-    digest = _key_findings(abstract, results, discussion, limitations, conclusion)
-    return {
-        "Scope": _clip_text(
-            f"This evidence map surveys what current research establishes about "
-            f"{_display_topic(topic)}: the scope and boundaries of the available "
-            f"evidence, the range of findings reported across the retained sources, "
-            f"and the points where those findings diverge rather than converging on a "
-            f"single conclusion. {_clip_text(abstract, limit=650)}"
-        ),
-        "Search Summary": methods or abstract,
-        "Evidence Landscape": _evidence_landscape(manifest, digest),
-        "Findings Map": results or digest,
-        "Tensions and Gaps": _actionable_gaps(
-            topic, manifest,
-            parts.get("Tensions and Gaps", "") or parts.get("Gaps Identified", ""),
-            discussion, limitations, abstract,
-        ),
-        "Limitations": limitations or discussion or abstract,
     }
 
 
@@ -1676,7 +1416,7 @@ def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
 def _public_grade_surface_status(payload: dict[str, Any]) -> str:
     title = str(payload.get("title") or "").strip().lower()
     if title.startswith(PUBLIC_BLOCKED_TITLE_PREFIXES):
-        return "public_surface_hypothesis_generating_brief"
+        return "public_surface_compact_review"
     return "eligible"
 
 
@@ -1709,6 +1449,7 @@ def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
         if (
             len(bundle) >= SOURCE_BUNDLE_TOPIC_TOLERANCE_MIN_ROWS
             and len(misses) <= SOURCE_BUNDLE_TOPIC_TOLERANCE_MAX_MISSES
+            and all(context != "direct" for _, context in misses)
             and (
                 len(misses) == 1
                 or miss_ratio <= SOURCE_BUNDLE_TOPIC_TOLERANCE_RATIO
@@ -1719,18 +1460,11 @@ def _source_bundle_topic_status(payload: dict[str, Any]) -> str:
             direct_specific >= SOURCE_BUNDLE_INDIRECT_TOLERANCE_MIN_DIRECT
             and len(misses) <= SOURCE_BUNDLE_INDIRECT_TOLERANCE_MAX_MISSES
             and miss_ratio <= SOURCE_BUNDLE_INDIRECT_TOLERANCE_RATIO
-            and sum(context == "direct" for _, context in misses) <= 1
+            and all(context != "direct" for _, context in misses)
         ):
             return "eligible"
         return f"source_bundle_topic_mismatch:{len(misses)}/{len(bundle)}:rows={','.join(idx for idx, _ in misses[:5])}"
     return "eligible"
-
-
-def _weak_direct_evidence(payload: dict[str, Any]) -> bool:
-    bundle = [row for row in payload.get("source_bundle", []) if isinstance(row, dict)]
-    if not bundle:
-        return False
-    return sum(_row_context(row) == "direct" for row in bundle) <= 1
 
 
 _UNSUPPORTED_DOMAIN_FRAME_PATTERNS: tuple[tuple[str, str], ...] = (
@@ -1821,39 +1555,6 @@ def _domain_frame_status(payload: dict[str, Any]) -> str:
     return "eligible"
 
 
-def _bounded_title(title: str, topic: str, payload: dict[str, Any]) -> str:
-    if not _weak_direct_evidence(payload):
-        return title
-    if re.match(r"^(Adjacent Evidence Brief|Hypothesis-Generating Brief|Mechanistic Evidence Brief):", title):
-        return title
-    prefix = "Hypothesis-Generating Brief" if any(_row_context(row) == "direct" for row in payload.get("source_bundle", [])) else "Adjacent Evidence Brief"
-    suffix = " — full paper" if "full paper" in title.lower() else ""
-    return f"{prefix}: {_display_topic(topic)}{suffix}"
-
-
-def _conclusion_breadth_status(payload: dict[str, Any]) -> str:
-    if not _weak_direct_evidence(payload):
-        return "eligible"
-    title = str(payload.get("title") or "").lower()
-    body = str(payload.get("body_markdown") or "")
-    sections = payload.get("sections")
-    section_map = sections if isinstance(sections, dict) else {}
-    conclusion = str(section_map.get("Conclusion") or _section(body, "Conclusion") or "")
-    title_bounded = any(token in title for token in ("adjacent", "hypothesis-generating", "mechanistic"))
-    conclusion_lower = conclusion.lower()
-    conclusion_bounded = any(token in conclusion_lower for token in (
-        "adjacent", "hypothesis-generating", "mechanistic", "bounded",
-        "does not support", "cannot support", "insufficient", "limited",
-    ))
-    overbroad = any(token in conclusion_lower for token in (
-        "establishes", "demonstrates", "proves", "supports clinical",
-        "supports causal",
-    ))
-    if not title_bounded or not conclusion_bounded or overbroad:
-        return "conclusion_breadth_unbounded_low_direct_evidence"
-    return "eligible"
-
-
 def _source_citation_hash(source_bundle: list[dict[str, Any]]) -> str:
     material = [
         {
@@ -1905,11 +1606,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     _publication_evidence.attach_evidence_spans(paper, source_bundle)
     parts = _sections(paper)
     abstract = _section(paper, "Abstract", fallback=str(manifest.get("thesis") or ""))
-    methods = parts.get("Methods", "")
-    results = parts.get("Results", "")
-    discussion = parts.get("Discussion", "")
-    limitations = parts.get("Limitations", "")
-    conclusion = parts.get("Conclusion", "")
     # source_bundle is the RETAINED/ON-TOPIC source set (== the receipts the
     # paper body reports), so the public surface can never certify more
     # "sources on topic" than the evidence base actually has. Cited external
@@ -1934,26 +1630,9 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     agent_slug = _agent_slug()
     revision = _read_json(run / "researka_revision_request.json")
     revision_parent = str(revision.get("submissionId") or revision.get("artifactId") or "")
-    article_type = _select_article_type(manifest)
-    if article_type == "evidence_map":
-        title = _topic_anchored_title(title, topic)
-    title = _bounded_title(title, topic, {"source_bundle": source_bundle})
+    article_type = DEFAULT_ARTICLE_TYPE
     domain_slug = _env_or_default("RESEARKA_DOMAIN_SLUG_V3", "longevity")
     category = _env_or_default("RESEARKA_CATEGORY_V3", domain_slug).removesuffix("_research")
-    rapid_sections = {
-        "Research Question": _clip_text(
-            f"What does the retained source corpus establish about {_display_topic(topic)}? "
-            f"{_clip_text(abstract, limit=650)}",
-        ),
-        "Search Summary": methods or abstract,
-        "Evidence Landscape": results or abstract,
-        "Key Findings": _key_findings(abstract, results, discussion, limitations, conclusion),
-        "Limitations": limitations or discussion or abstract,
-        "Gaps Identified": _actionable_gaps(
-            topic, manifest, parts.get("Gaps Identified", ""), discussion, limitations, abstract,
-        ),
-        "Conclusion": conclusion or abstract,
-    }
     metadata: dict[str, Any] = {
         "artifact_type": "research_paper",
         "article_type": article_type,
@@ -1983,13 +1662,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             if revision.get(key)
         }
         metadata["revision_feedback"] = revision.get("feedback")
-    if article_type == "evidence_map":
-        sections: dict[str, str] = _evidence_map_sections(topic, manifest, parts, abstract)
-        sections["Findings Map"] = _anchor_findings_map_rows(sections.get("Findings Map", ""), topic)
-    elif article_type == "research_synthesis":
-        sections = {**rapid_sections, **parts}
-    else:
-        sections = rapid_sections
+    sections = parts
     payload = {
         "title": title[:300],
         "abstract": abstract,
@@ -2382,7 +2055,9 @@ def main(argv: list[str] | None = None) -> int:
         f"[daily-v3] status={ledger['status']} submitted={ledger['submitted']} "
         f"published={ledger['published']} run={ledger.get('candidate', {}).get('run', '-')}"
     )
-    return 0 if ledger["status"] != "submission_failed" else 2
+    if ledger["status"] == "submission_failed":
+        return 2
+    return 3 if args.submit and not int(ledger.get("submitted") or 0) else 0
 
 
 if __name__ == "__main__":

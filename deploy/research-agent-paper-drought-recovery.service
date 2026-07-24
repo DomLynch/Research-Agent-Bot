@@ -1,0 +1,11 @@
+[Unit]
+Description=Research Agent v3 bounded publication drought recovery
+After=network-online.target research-agent-paper-drought-guard.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/research-agent-bot
+ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/publish_drought_recovery.py --report-path /var/log/research-agent-bot/publish_drought_guard.json --state-path /var/lib/research-agent-bot/publish_drought_recovery.json --cooldown-hours 6
+Environment=PYTHONUNBUFFERED=1
+TimeoutStartSec=13200

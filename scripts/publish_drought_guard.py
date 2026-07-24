@@ -16,6 +16,7 @@ DEFAULT_PUBLICATIONS_URL = "https://researka.org/api/publications"
 DEFAULT_RUNS_ROOT = Path("runs")
 DEFAULT_REPORT_PATH = Path("reports/publish_drought_guard.json")
 CANDIDATE_BUFFER = "_candidate_buffer.json"
+V3_AGENT_IDS = frozenset({"agent-v3-full-paper", "agent-v3-full-paper-live"})
 TIMESTAMP_KEYS = (
     "publishedAt",
     "published_at",
@@ -53,6 +54,21 @@ def publication_rows(payload: Any) -> list[dict[str, Any]]:
             if rows:
                 return rows
     return []
+
+
+def v3_public_research_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Return accepted, publicly visible V3 research-paper records only."""
+    return [
+        row for row in rows
+        if str(row.get("agentId") or row.get("agent_id") or "") in V3_AGENT_IDS
+        and str(row.get("artifactType") or row.get("artifact_type") or "") == "research_paper"
+        and str(row.get("decision") or "").lower() in {"accept", "accepted"}
+        and (
+            row.get("publicVisible") is True
+            or row.get("public_visible") is True
+            or row.get("published") is True
+        )
+    ]
 
 
 def parse_timestamp(value: Any) -> dt.datetime | None:
@@ -104,11 +120,14 @@ def evaluate_drought(
     ready_count = int(buffer.get("ready_count") or 0)
     target_ready = int(buffer.get("target_ready") or 0)
     buffer_underfilled = target_ready > 0 and ready_count < target_ready
-    passed = recent_publication and not buffer_underfilled
-    status = "pass" if passed else ("degraded" if recent_publication else "fail")
-    reason = "recent_publication" if passed else (
+    passed = recent_publication
+    status = "degraded" if recent_publication and buffer_underfilled else "pass" if passed else "fail"
+    reason = (
         str(buffer.get("status") or "candidate_buffer_underfilled")
-        if recent_publication else "publish_drought"
+        if recent_publication and buffer_underfilled
+        else "recent_publication"
+        if recent_publication
+        else "publish_drought"
     )
     return DroughtStatus(
         passed=passed,
@@ -234,7 +253,7 @@ def main(argv: list[str] | None = None) -> int:
         print("status=fail reason=invalid_now")
         return 2
     status = evaluate_drought(
-        publication_rows(payload),
+        v3_public_research_rows(publication_rows(payload)),
         now=now,
         max_age_hours=args.max_age_hours,
         triage=build_triage(args.runs_root),

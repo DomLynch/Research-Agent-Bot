@@ -2,7 +2,7 @@ name: Karpathy PR
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, "codex/019e9ce8/main"]
 
 jobs:
   karpathy:
@@ -35,8 +35,8 @@ jobs:
       - name: Snapshot main scores
         run: |
           git stash --include-untracked
-          git fetch origin main
-          git checkout origin/main
+          git fetch origin "${{ github.base_ref }}"
+          git checkout "origin/${{ github.base_ref }}"
           PYTHONPATH=. python scripts/karpathy_loop.py snapshot --output-dir baseline_snapshots
 
       - name: Download PR snapshot

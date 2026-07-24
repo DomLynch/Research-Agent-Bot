@@ -2,9 +2,9 @@ name: Eval Corpus CI Gate
 
 on:
   push:
-    branches: [main, eval-corpus]
+    branches: [main, "codex/019e9ce8/main", eval-corpus]
   pull_request:
-    branches: [main, eval-corpus]
+    branches: [main, "codex/019e9ce8/main", eval-corpus]
 
 jobs:
   eval:

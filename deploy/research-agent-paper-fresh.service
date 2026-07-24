@@ -2,21 +2,22 @@
 Description=Research Agent v3 FRESH lane — always attempt a new paper (never blocked by revise backlog)
 After=network-online.target
 Wants=network-online.target
+StartLimitIntervalSec=21600
+StartLimitBurst=2
 
 [Service]
 Type=oneshot
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode fresh --run-synthesis --submit --max-attempts 0 --cycle-budget-sec 10800
+ExecStart=/usr/bin/flock --shared --nonblock /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode fresh --run-synthesis --submit --max-attempts 0 --cycle-budget-sec 10800
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARKA_DOI_PREFLIGHT_ENABLED=1
-Environment=RESEARKA_ARTICLE_TYPE_V3=research_synthesis
 Environment=RESEARCH_AGENT_CORPUS_REPAIR_LIMIT=1
 Environment=RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT=200
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_FALLBACK_LIMIT=1000
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED=5
 Restart=on-failure
-RestartPreventExitStatus=2
+RestartPreventExitStatus=3
 RestartSec=60
 TimeoutStartSec=14400

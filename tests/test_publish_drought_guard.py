@@ -11,6 +11,16 @@ sys.path.insert(0, str(REPO / "scripts"))
 import publish_drought_guard as guard  # type: ignore[import-not-found]  # noqa: E402
 
 
+def _public_row(timestamp: str) -> dict[str, object]:
+    return {
+        "publishedAt": timestamp,
+        "agentId": "agent-v3-full-paper-live",
+        "artifactType": "research_paper",
+        "decision": "accept",
+        "publicVisible": True,
+    }
+
+
 def test_publication_rows_accepts_publications_wrapper() -> None:
     payload = {"publications": [{"id": "paper-1"}, "bad", {"id": "paper-2"}]}
 
@@ -39,7 +49,7 @@ def test_evaluate_drought_degrades_recent_publication_when_buffer_is_empty() -> 
         }},
     )
 
-    assert status.passed is False
+    assert status.passed is True
     assert status.status == "degraded"
     assert status.reason == "candidate_buffer_depleted"
     assert status.age_hours == 12
@@ -60,7 +70,7 @@ def test_evaluate_drought_fails_after_threshold() -> None:
 def test_main_exits_nonzero_for_stale_public_feed(tmp_path: Path, capsys) -> None:
     feed = tmp_path / "publications.json"
     feed.write_text(json.dumps({
-        "publications": [{"createdAt": "2026-07-04T10:16:38+04:00"}],
+        "publications": [_public_row("2026-07-04T10:16:38+04:00")],
     }), encoding="utf-8")
 
     report = tmp_path / "report.json"
@@ -86,7 +96,7 @@ def test_main_reports_drought_without_failing_systemd_by_default(tmp_path: Path)
     feed = tmp_path / "publications.json"
     report = tmp_path / "report.json"
     feed.write_text(json.dumps({
-        "publications": [{"createdAt": "2026-07-04T10:16:38+04:00"}],
+        "publications": [_public_row("2026-07-04T10:16:38+04:00")],
     }), encoding="utf-8")
 
     code = guard.main([
@@ -110,7 +120,7 @@ def test_main_reports_empty_buffer_degraded_without_failing_systemd(tmp_path: Pa
     ledger_dir = tmp_path / "runs" / "_daily_research_paper_cycle_ledger"
     ledger_dir.mkdir(parents=True)
     feed.write_text(json.dumps({
-        "publications": [{"createdAt": "2026-07-09T08:00:00+00:00"}],
+        "publications": [_public_row("2026-07-09T08:00:00+00:00")],
     }), encoding="utf-8")
     (ledger_dir / guard.CANDIDATE_BUFFER).write_text(json.dumps({
         "status": "candidate_buffer_depleted", "ready_count": 0, "target_ready": 3,
@@ -123,7 +133,7 @@ def test_main_reports_empty_buffer_degraded_without_failing_systemd(tmp_path: Pa
 
     assert code == 0
     payload = json.loads(report.read_text(encoding="utf-8"))
-    assert payload["passed"] is False
+    assert payload["passed"] is True
     assert payload["status"] == "degraded"
     assert payload["reason"] == "candidate_buffer_depleted"
 
@@ -173,4 +183,29 @@ def test_deploy_timer_runs_guard_hourly() -> None:
 
     assert "scripts/publish_drought_guard.py --max-age-hours 24" in service
     assert "--report-path /var/log/research-agent-bot/publish_drought_guard.json" in service
+    assert "--enforce-exit-code" in service
+    assert "OnFailure=research-agent-paper-drought-recovery.service" in service
     assert "OnCalendar=hourly" in timer
+
+
+def test_guard_filters_other_agents_and_nonpublic_rows() -> None:
+    rows = [
+        _public_row("2026-07-24T08:00:00+00:00"),
+        {**_public_row("2026-07-24T09:00:00+00:00"), "agentId": "agent-v7"},
+        {**_public_row("2026-07-24T10:00:00+00:00"), "decision": "revise"},
+        {**_public_row("2026-07-24T11:00:00+00:00"), "publicVisible": False},
+        {**_public_row("2026-07-24T12:00:00+00:00"), "artifactType": "memo"},
+    ]
+
+    assert guard.v3_public_research_rows(rows) == [rows[0]]
+
+
+def test_guard_accepts_supported_public_field_variants() -> None:
+    row = {
+        **_public_row("2026-07-24T08:00:00+00:00"),
+        "decision": "accepted",
+        "publicVisible": False,
+        "published": True,
+    }
+
+    assert guard.v3_public_research_rows([row]) == [row]

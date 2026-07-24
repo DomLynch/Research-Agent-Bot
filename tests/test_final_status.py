@@ -241,6 +241,8 @@ def test_compute_and_write_emits_final_status_json(tmp_path: Path) -> None:
     out = tmp_path / "final_status.json"
     assert out.is_file()
     payload = json.loads(out.read_text())
+    assert payload["researka_publish_ready"] is True
+    assert payload["journal_submission_ready"] is True
     assert payload["submission_ready"] is True
     assert payload["maturity_level"] == 5
     assert payload["maturity_label"] == LABELS[5]
@@ -389,7 +391,7 @@ def test_human_signoff_pass_backward_compat_mirror(tmp_path: Path) -> None:
     assert s.human_signoff_pass == s.accountability_pass
 
 
-def test_slice36_undeclared_target_journal_blocks_submission_ready(tmp_path: Path) -> None:
+def test_undeclared_target_journal_blocks_journal_submission_not_researka(tmp_path: Path) -> None:
     """Slice 36: a target_journal_pack with declared_in_topic_pack=False
     (auto-generated fallback) must NOT count as a valid submission target.
     Previously this path quietly promoted runs to L5/submission_ready=True
@@ -407,6 +409,8 @@ def test_slice36_undeclared_target_journal_blocks_submission_ready(tmp_path: Pat
     _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
     s = compute(tmp_path)
     assert s.target_journal_pass is False
+    assert s.researka_publish_ready is True
+    assert s.journal_submission_ready is False
     assert s.submission_ready is False
     assert s.maturity_level == 4
     codes = {b.code for b in s.blocking_reasons}
@@ -428,5 +432,7 @@ def test_slice36_declared_target_journal_clears_l4_ceiling(tmp_path: Path) -> No
     _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
     s = compute(tmp_path)
     assert s.target_journal_pass is True
+    assert s.researka_publish_ready is True
+    assert s.journal_submission_ready is True
     assert s.submission_ready is True
     assert s.maturity_level == 5

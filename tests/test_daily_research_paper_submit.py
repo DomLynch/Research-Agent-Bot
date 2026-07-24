@@ -683,13 +683,13 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
 
     payload = daily.build_payload(run)
 
-    assert payload["article_type"] == "rapid_evidence_synthesis"
+    assert payload["article_type"] == "research_synthesis"
     assert payload["domain_slug"] == "longevity"
     assert payload["category"] == "longevity"
     assert payload["author_agent_id"] == "agent-v3-full-paper"
     assert payload["artifact_type"] == "research_paper"
     assert payload["metadata"]["artifact_type"] == "research_paper"
-    assert payload["metadata"]["article_type"] == "rapid_evidence_synthesis"
+    assert payload["metadata"]["article_type"] == "research_synthesis"
     assert payload["metadata"]["domain_slug"] == "longevity"
     assert payload["metadata"]["category"] == "longevity"
     assert payload["metadata"]["topic"] == "topic"
@@ -699,10 +699,10 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert payload["body_markdown"].startswith("# Research Synthesis")
     assert "\n## Abstract" in payload["body_markdown"]
     assert "Full Manuscript" not in payload["sections"]
-    assert "Abstract" not in payload["sections"]
-    assert "Methods" not in payload["sections"]
-    assert payload["sections"]["Research Question"]
-    assert payload["sections"]["Evidence Landscape"]
+    assert payload["sections"]["Abstract"]
+    assert payload["sections"]["Methods"]
+    assert "Research Question" not in payload["sections"]
+    assert "Evidence Landscape" not in payload["sections"]
     assert payload["author_signature"].startswith("sha256:")
     assert payload["source_bundle"][0]["doi"] == "10.1/x"
     assert payload["source_bundle"][0]["evidence_type"] == "primary"
@@ -737,7 +737,6 @@ def test_researka_preflight_blocks_thin_full_paper_before_submit(tmp_path: Path)
 
 
 def test_researka_preflight_uses_exact_research_synthesis_sections(tmp_path: Path, monkeypatch) -> None:
-    monkeypatch.setenv("RESEARKA_ARTICLE_TYPE_V3", "research_synthesis")
     payload = daily.build_payload(_run(tmp_path))
 
     assert daily._researka_preflight_status(payload) == "eligible"
@@ -746,183 +745,44 @@ def test_researka_preflight_uses_exact_research_synthesis_sections(tmp_path: Pat
     assert daily._researka_preflight_status(payload) == "researka_preflight_missing_sections:Methods"
 
 
-def test_evidence_map_auto_selected_for_high_tension_corpus(tmp_path: Path) -> None:
-    # Tension density 20/12 = 1.67 >= 1.0 floor: a non-convergent landscape.
+def test_v3_high_tension_corpus_stays_on_full_research_surface(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path, tensions=20))
 
-    assert payload["article_type"] == "evidence_map"
-    assert payload["metadata"]["article_type"] == "evidence_map"
-    for name in ("Scope", "Search Summary", "Evidence Landscape", "Findings Map", "Tensions and Gaps", "Limitations"):
+    assert payload["article_type"] == "research_synthesis"
+    assert payload["metadata"]["article_type"] == "research_synthesis"
+    for name in daily.RESEARKA_REQUIRED_SECTIONS["research_synthesis"]:
         assert payload["sections"][name].strip(), name
-    # Thesis-lane sections must not leak into a landscape payload.
-    assert "Research Question" not in payload["sections"]
-    assert "Key Findings" not in payload["sections"]
     assert daily._researka_preflight_status(payload) == "eligible"
-
-
-def test_evidence_map_landscape_uses_reader_safe_dense_tension_wording(tmp_path: Path) -> None:
-    run = _run(tmp_path, tensions=727)
-    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
-    manifest["n_receipts"] = 67
-    manifest["receipts"] = [
-        {"outcome_class": "immune", "directness": "direct"},
-        {"outcome_class": "immune_inflammation", "directness": "review"},
-    ]
-    _write_json(run / "manifest.json", manifest)
-
-    payload = daily.build_payload(run)
-    landscape = payload["sections"]["Evidence Landscape"]
-    gaps = payload["sections"]["Tensions and Gaps"]
-
-    assert "727 non-orthogonal tension(s)" not in landscape
-    assert "727 disagreement(s)" not in gaps
-    assert "high-density pairwise disagreement map" in landscape
-    assert "resolving the pairwise disagreement map" in gaps
-    assert landscape.count("Immune and Inflammation") == 1
 
 
 def test_low_tension_corpus_stays_default_thesis_lane(tmp_path: Path) -> None:
     # Tension density 5/12 = 0.42 < 1.0: coherent enough for a single thesis.
     payload = daily.build_payload(_run(tmp_path, tensions=5))
 
-    assert payload["article_type"] == "rapid_evidence_synthesis"
+    assert payload["article_type"] == "research_synthesis"
 
 
-def test_explicit_article_type_overrides_landscape_auto_select(tmp_path: Path, monkeypatch) -> None:
+def test_article_type_env_cannot_override_full_research_policy(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_ARTICLE_TYPE_V3", "rapid_evidence_synthesis")
-    # High tension would auto-select evidence_map, but the explicit override wins.
     payload = daily.build_payload(_run(tmp_path, tensions=40))
 
-    assert payload["article_type"] == "rapid_evidence_synthesis"
+    assert payload["article_type"] == "research_synthesis"
 
 
-def test_evidence_map_tension_floor_is_env_tunable(tmp_path: Path, monkeypatch) -> None:
+def test_evidence_map_tension_env_cannot_change_full_research_policy(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_EVIDENCE_MAP_TENSION_FLOOR", "5.0")
     # Density 20/12 = 1.67 now falls below the raised 5.0 floor.
     payload = daily.build_payload(_run(tmp_path, tensions=20))
 
-    assert payload["article_type"] == "rapid_evidence_synthesis"
+    assert payload["article_type"] == "research_synthesis"
 
 
-def test_evidence_map_scope_meets_live_question_word_floor(tmp_path: Path) -> None:
-    payload = daily.build_payload(_run(tmp_path, tensions=20))
-
-    # Scope is evidence_map's research-question section; the live core floor is 30.
-    assert daily._word_count(payload["sections"]["Scope"]) >= 30
-    assert payload["sections"]["Scope"].startswith("This evidence map surveys")
-
-
-def test_evidence_map_preflight_blocks_unanchored_findings_rows(tmp_path: Path) -> None:
-    payload = daily.build_payload(_run(tmp_path, tensions=20))
-    payload["title"] = "Adjacent Evidence Brief: ABT-263 — full paper"
-    payload["sections"]["Findings Map"] = (
-        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
-        "|---|---|---|---|---|\n"
-        "| Contextual Adjacent Evidence | n=14 | no extracted directional signal | indirect | limited |\n"
-        "| Immune and Inflammation | n=7 | no extracted directional signal | review | limited |\n"
-        "| Mechanism | n=4 | no extracted directional signal | mechanistic | limited |\n"
-    )
-
-    assert daily._researka_preflight_status(payload).startswith("evidence_map_topic_anchor_low:3/3")
-
-
-def test_evidence_map_preflight_allows_title_anchored_findings_rows(tmp_path: Path) -> None:
-    payload = daily.build_payload(_run(tmp_path, tensions=20))
-    payload["title"] = "Adjacent Evidence Brief: TORC1 inhibitor — full paper"
-    payload["sections"]["Findings Map"] = (
-        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
-        "|---|---|---|---|---|\n"
-        "| TORC1 inhibitor / Contextual Adjacent Evidence | n=5 | significant source statistic | indirect | limited |\n"
-        "| TORC1 inhibitor / Immune and Inflammation | n=2 | significant source statistic | review | limited |\n"
-    )
-
-    assert daily._researka_preflight_status(payload) == "eligible"
-
-
-def test_evidence_map_payload_reanchors_generic_class_title_and_rows(tmp_path: Path) -> None:
-    run = _run(tmp_path, tensions=20)
-    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
-    manifest["topic"] = "everolimus"
-    _write_json(run / "manifest.json", manifest)
-    paper = (run / "full_paper.md").read_text(encoding="utf-8")
-    paper = paper.replace(
-        "# Research Synthesis: Topic",
-        "# Adjacent Evidence Brief: TORC1 inhibitor — full paper",
-    ).replace(
-        "## Results\n\nresults",
-        "## Results\n\n"
-        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
-        "|---|---|---|---|---|\n"
-        "| TORC1 inhibitor / Cardiometabolic | n=2 | bounded signal | indirect | limited |\n\n"
-        "results",
-    )
-    (run / "full_paper.md").write_text(paper, encoding="utf-8")
-
-    payload = daily.build_payload(run)
-
-    assert payload["title"] == "Adjacent Evidence Brief: Everolimus — full paper"
-    assert "| Everolimus / Cardiometabolic | n=2 | bounded signal | indirect | limited |" in payload["sections"]["Findings Map"]
-    assert daily._researka_preflight_status(payload) == "eligible"
-
-
-def test_selector_skips_unanchored_evidence_map_candidate(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    good = _run(tmp_path, name="synthesis-good-v06-test", tensions=20)
-    bad = _run(tmp_path, name="synthesis-bad-v06-test", tensions=20)
-    for run, topic in ((good, "good_topic"), (bad, "bad_topic")):
-        manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
-        manifest["topic"] = topic
-        _write_json(run / "manifest.json", manifest)
-    now = time.time()
-    os.utime(good, (now - 10, now - 10))
-    os.utime(bad, (now, now))
-
-    def evidence_map_payload(title: str, row_prefix: str) -> dict[str, Any]:
-        sections = {
-            name: _words(name.replace(" ", "_"), 60)
-            for name in daily.RESEARKA_REQUIRED_SECTIONS["evidence_map"]
-        }
-        sections["Findings Map"] = (
-            "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
-            "|---|---|---|---|---|\n"
-            f"| {row_prefix}Contextual Adjacent Evidence | n=5 | bounded signal | indirect | limited |\n"
-            f"| {row_prefix}Immune and Inflammation | n=5 | bounded signal | review | limited |\n"
-        )
-        return {
-            "title": title,
-            "article_type": "evidence_map",
-            "sections": sections,
-            "body_markdown": "# Paper\n\n" + "\n\n".join(f"## {k}\n\n{v}" for k, v in sections.items()),
-            "source_bundle": [{"title": f"Source {i}", "year": 2026} for i in range(12)],
-        }
-
-    def fake_build_payload(run: Path) -> dict[str, Any]:
-        if run == bad:
-            return evidence_map_payload("Hypothesis-Generating Brief: ABT-263 — full paper", "")
-        return evidence_map_payload("Hypothesis-Generating Brief: ABT-263 — full paper", "ABT-263 / ")
-
-    monkeypatch.setattr(daily, "build_payload", fake_build_payload)
-    monkeypatch.setattr(daily, "_eligible", lambda _run: (True, "eligible"))
-
-    selected, considered = daily.select_candidate(
-        tmp_path,
-        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
-        remote_seen=set(),
-    )
-
-    assert selected == good
-    assert considered[0]["run"] == bad.name
-    assert considered[0]["status"] == "evidence_map_topic_anchor_low:2/2"
-    assert considered[1]["status"] == "eligible"
-
-
-def test_evidence_map_tension_density_boundary_is_inclusive(tmp_path: Path) -> None:
-    # 12 receipts: density == 1.0 (exactly the floor) routes to the landscape
-    # lane; one fewer tension (density 11/12 < 1.0) stays on the thesis lane.
+def test_tension_density_does_not_change_v3_public_surface(tmp_path: Path) -> None:
     at_floor = daily.build_payload(_run(tmp_path, name="synthesis-at-v06", tensions=12))
     below_floor = daily.build_payload(_run(tmp_path, name="synthesis-below-v06", tensions=11))
 
-    assert at_floor["article_type"] == "evidence_map"
-    assert below_floor["article_type"] == "rapid_evidence_synthesis"
+    assert at_floor["article_type"] == "research_synthesis"
+    assert below_floor["article_type"] == "research_synthesis"
 
 
 def test_researka_preflight_requires_twelve_sources(tmp_path: Path) -> None:
@@ -1229,11 +1089,21 @@ def test_researka_preflight_blocks_missing_direct_source_citation(tmp_path: Path
     )
 
 
-def test_researka_preflight_blocks_hypothesis_generating_public_surface(tmp_path: Path) -> None:
+@pytest.mark.parametrize(
+    "title",
+    [
+        "Hypothesis-Generating Brief: Endurance Exercise Effects — full paper",
+        "Mechanistic Evidence Map: Endurance Exercise Effects — full paper",
+        "Evidence Map: Endurance Exercise Effects — full paper",
+        "Evidence Brief: Endurance Exercise Effects — full paper",
+        "Thin-corpus evidence brief: Endurance Exercise Effects — full paper",
+    ],
+)
+def test_researka_preflight_blocks_compact_public_surface(tmp_path: Path, title: str) -> None:
     payload = daily.build_payload(_run(tmp_path))
-    payload["title"] = "Hypothesis-Generating Brief: Endurance Exercise Effects — full paper"
+    payload["title"] = title
 
-    assert daily._researka_preflight_status(payload) == "public_surface_hypothesis_generating_brief"
+    assert daily._researka_preflight_status(payload) == "public_surface_compact_review"
 
 
 def test_researka_preflight_blocks_off_topic_source_bundle_rows(tmp_path: Path) -> None:
@@ -1291,6 +1161,8 @@ def test_source_bundle_topic_gate_allows_one_mismatch_at_source_floor(tmp_path: 
         row["excerpt"] = "Low-dose naltrexone was evaluated in adults with chronic pain."
     payload["source_bundle"][0]["title"] = "Exercise training for glycemic control"
     payload["source_bundle"][0]["excerpt"] = "Exercise intervention reduced inflammatory markers."
+    payload["source_bundle"][0]["evidence_context"] = "adjacent"
+    payload["source_bundle"][0]["directness"] = "indirect"
 
     assert daily._source_bundle_topic_status(payload) == "eligible"
 
@@ -1314,6 +1186,26 @@ def test_source_bundle_topic_gate_blocks_large_bundle_above_tail_tolerance(tmp_p
         payload["source_bundle"][idx]["excerpt"] = "Laparoscopic donor nephrectomy perioperative outcomes."
 
     assert daily._source_bundle_topic_status(payload) == "source_bundle_topic_mismatch:2/36:rows=21,22"
+
+
+def test_off_topic_direct_row_cannot_complete_public_direct_floor(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    payload["metadata"]["topic"] = "low_dose_naltrexone_inflammation"
+    for idx, row in enumerate(payload["source_bundle"]):
+        row.update({
+            "title": "Low-dose naltrexone trial in chronic pain",
+            "excerpt": "Low-dose naltrexone was evaluated in adults with chronic pain.",
+            "evidence_context": "direct" if idx < 4 else "adjacent",
+            "directness": "direct" if idx < 4 else "indirect",
+        })
+    payload["source_bundle"][3].update({
+        "title": "Dietary protein timing in older adults",
+        "excerpt": "Dietary intervention study in older adults.",
+    })
+
+    assert daily._researka_preflight_status(
+        payload, enforce_recency=False,
+    ) == "source_bundle_topic_mismatch:1/12:rows=4"
 
 
 def test_source_bundle_topic_gate_allows_bounded_indirect_tail_with_direct_core(tmp_path: Path) -> None:
@@ -1343,7 +1235,7 @@ def test_source_bundle_topic_gate_allows_bounded_indirect_tail_with_direct_core(
     assert daily._source_bundle_topic_status(payload) == "eligible"
 
 
-def test_source_bundle_topic_gate_allows_one_missed_direct_in_bounded_tail(tmp_path: Path) -> None:
+def test_source_bundle_topic_gate_blocks_missed_direct_in_bounded_tail(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["metadata"]["topic"] = "liraglutide_biomarker_effects"
     for row in payload["source_bundle"]:
@@ -1362,7 +1254,7 @@ def test_source_bundle_topic_gate_allows_one_missed_direct_in_bounded_tail(tmp_p
 
     payload["source_bundle"][14]["evidence_context"] = "direct"
     payload["source_bundle"][14]["directness"] = "direct"
-    assert daily._source_bundle_topic_status(payload) == "eligible"
+    assert daily._source_bundle_topic_status(payload) == "source_bundle_topic_mismatch:3/60:rows=15,31,34"
 
     payload["source_bundle"][30]["evidence_context"] = "direct"
     payload["source_bundle"][30]["directness"] = "direct"
@@ -1430,43 +1322,7 @@ def test_researka_preflight_allows_conservative_anti_aging_boundary_note(tmp_pat
     assert daily._researka_preflight_status(payload) == "eligible"
 
 
-def test_weak_direct_corpus_forces_bounded_title_and_conclusion(tmp_path: Path) -> None:
-    run = _run(tmp_path, tensions=20)
-    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
-    for row in manifest["receipts"]:
-        row["directness"] = "indirect"
-    _write_json(run / "manifest.json", manifest)
-    paper = (run / "full_paper.md").read_text(encoding="utf-8")
-    (run / "full_paper.md").write_text(
-        paper.replace("## Conclusion\n\n" + _words("conclusion", 120) + ".", "## Conclusion\n\nThis establishes clinical efficacy."),
-        encoding="utf-8",
-    )
-
-    payload = daily.build_payload(run)
-
-    assert payload["title"].startswith("Adjacent Evidence Brief:")
-    assert daily._researka_preflight_status(payload) == "conclusion_breadth_unbounded_low_direct_evidence"
-
-
-def test_weak_direct_corpus_rejects_vague_unbounded_conclusion(tmp_path: Path) -> None:
-    run = _run(tmp_path, tensions=20)
-    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
-    for row in manifest["receipts"]:
-        row["directness"] = "indirect"
-    _write_json(run / "manifest.json", manifest)
-    paper = (run / "full_paper.md").read_text(encoding="utf-8")
-    (run / "full_paper.md").write_text(
-        paper.replace("## Conclusion\n\n" + _words("conclusion", 120) + ".", "## Conclusion\n\nFurther research is warranted."),
-        encoding="utf-8",
-    )
-
-    payload = daily.build_payload(run)
-
-    assert payload["title"].startswith("Adjacent Evidence Brief:")
-    assert daily._researka_preflight_status(payload) == "conclusion_breadth_unbounded_low_direct_evidence"
-
-
-def test_weak_direct_corpus_allows_bounded_conclusion(tmp_path: Path) -> None:
+def test_weak_direct_corpus_cannot_publish_as_full_research(tmp_path: Path) -> None:
     run = _run(tmp_path, tensions=20)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     for row in manifest["receipts"]:
@@ -1480,8 +1336,12 @@ def test_weak_direct_corpus_allows_bounded_conclusion(tmp_path: Path) -> None:
 
     payload = daily.build_payload(run)
 
-    assert payload["title"].startswith("Adjacent Evidence Brief:")
-    assert daily._researka_preflight_status(payload) == "eligible"
+    assert payload["article_type"] == "research_synthesis"
+    assert payload["title"].startswith("Research Synthesis:")
+    assert daily._researka_preflight_status(payload) == (
+        f"public_surface_direct_receipts_below_floor:"
+        f"0 < {daily.PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS}"
+    )
 
 
 def test_source_bundle_prefers_pubmed_abstract_over_registry_summary(tmp_path: Path, monkeypatch) -> None:
@@ -1617,7 +1477,9 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
             "paper_id": f"topic_r{i}",
             "source_pmid": str(1000 + i),
             "effect_direction": "null",
-            "directness": "indirect",
+            "directness": (
+                "direct" if i < daily.PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS else "indirect"
+            ),
             "outcome_class": "contextual_other",
         }
         for i in range(16)
@@ -1705,74 +1567,6 @@ def test_source_bundle_keeps_review_type_for_review_receipts(tmp_path: Path) -> 
     assert payload["source_bundle"][0]["evidence_type"] == "review"
 
 
-def test_payload_key_findings_distill_not_duplicate_evidence_landscape(tmp_path: Path) -> None:
-    run = _run(tmp_path)
-    (run / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\nAbstract overview.\n\n"
-        "## Results\n\n| Outcome | Signal |\n|---|---|\n| immune | mixed |\n\nResults repeat table detail.\n\n"
-        "## Limitations\n\nThe evidence base is dominated by preclinical and review evidence.\n\n"
-        "## Conclusion\n\nThe core finding is that human application remains bounded by few direct clinical trials. "
-        "Future work should test patient-relevant outcomes.\n\n"
-        "## References\n\nR01.",
-        encoding="utf-8",
-    )
-
-    payload = daily.build_payload(run)
-
-    assert payload["sections"]["Evidence Landscape"] != payload["sections"]["Key Findings"]
-    assert "|" not in payload["sections"]["Key Findings"]
-    assert "Results repeat table detail" in payload["sections"]["Key Findings"]
-    assert "few direct clinical trials" not in payload["sections"]["Key Findings"]
-
-
-def test_payload_research_question_uses_source_corpus_scope(tmp_path: Path) -> None:
-    run = _run(tmp_path)
-    payload = daily.build_payload(run)
-
-    question = payload["sections"]["Research Question"]
-    assert "retained source corpus" in question
-    assert "human geroscience" not in question
-
-
-def test_payload_gaps_identified_is_actionable_not_limitations_duplicate(tmp_path: Path) -> None:
-    run = _run(tmp_path)
-    (run / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\nAbstract overview.\n\n"
-        "## Results\n\nOutcome evidence is mixed.\n\n"
-        "## Discussion\n\nThe evidence base is sparse and mixed.\n\n"
-        "## Limitations\n\nThe evidence base is sparse and mixed.\n\n"
-        "## Conclusion\n\nConservative conclusion.\n\n",
-        encoding="utf-8",
-    )
-
-    payload = daily.build_payload(run)
-    gaps = payload["sections"]["Gaps Identified"]
-
-    assert gaps != payload["sections"]["Limitations"]
-    assert "Run adequately powered human studies" in gaps
-    assert "Standardize exposure, comparator, follow-up duration, and endpoint definitions" in gaps
-    assert "direct evidence is" in gaps
-
-
-def test_payload_gaps_identified_preserves_distinct_paper_section(tmp_path: Path) -> None:
-    run = _run(tmp_path)
-    (run / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\nAbstract overview.\n\n"
-        "## Gaps Identified\n\nRecruit older adult cohorts with prespecified endpoints and 12-month follow-up.\n\n"
-        "## Limitations\n\nThe evidence base is sparse and mixed.\n\n",
-        encoding="utf-8",
-    )
-
-    payload = daily.build_payload(run)
-
-    assert payload["sections"]["Gaps Identified"] == (
-        "Recruit older adult cohorts with prespecified endpoints and 12-month follow-up."
-    )
-
-
 def test_payload_text_fields_do_not_truncate_mid_sentence(tmp_path: Path) -> None:
     run = _run(tmp_path)
     long_abstract = " ".join(f"Sentence {i} supports a bounded evidence interpretation." for i in range(80))
@@ -1787,8 +1581,6 @@ def test_payload_text_fields_do_not_truncate_mid_sentence(tmp_path: Path) -> Non
     payload = daily.build_payload(run)
 
     assert payload["abstract"][-1] == "."
-    assert payload["sections"]["Research Question"][-1] == "."
-    assert len(payload["sections"]["Research Question"]) < 900
 
 
 def test_payload_empty_agent_env_still_uses_v3_slug(tmp_path: Path, monkeypatch: Any) -> None:
@@ -1880,6 +1672,31 @@ def test_submit_uses_final_status_ready_over_all_green_verdict(tmp_path: Path, m
         date="2026-05-23",
         submit=True,
         submitter=lambda payload: {"ok": True, "status": 201, "response": {"id": "obj-1", "title": payload["title"]}},
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_submit_prefers_researka_readiness_over_journal_readiness(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "final_status.json", {
+        "researka_publish_ready": True,
+        "journal_submission_ready": False,
+        "submission_ready": False,
+    })
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-07-24",
+        submit=True,
+        submitter=lambda payload: {
+            "ok": True, "status": 201,
+            "response": {"id": "obj-researka-ready", "title": payload["title"]},
+        },
         remote_loader=lambda: (set(), None),
     )
 
@@ -3134,19 +2951,10 @@ def test_http_submitter_sends_runtime_key_headers_and_idempotency(tmp_path: Path
     assert seen["headers"]["Idempotency-key"] == payload["metadata"]["submission_identity_key"]
 
 
-def test_select_article_type_routes_zero_tension_to_evidence_map() -> None:
-    # Zero-tension corpus = landscape survey -> evidence_map (reviewed for
-    # fidelity, not convergence), not the thesis lane that requires >=1 tension.
-    assert daily._select_article_type(
-        {"n_receipts": 12, "n_non_orthogonal_tensions": 0}
-    ) == "evidence_map"
-    # Mid-tension corpus keeps the default thesis lane; empty corpus too.
-    assert daily._select_article_type(
-        {"n_receipts": 12, "n_non_orthogonal_tensions": 3}
-    ) == daily.DEFAULT_ARTICLE_TYPE
-    assert daily._select_article_type(
-        {"n_receipts": 0, "n_non_orthogonal_tensions": 0}
-    ) == daily.DEFAULT_ARTICLE_TYPE
+def test_researka_preflight_rejects_non_full_public_surface() -> None:
+    assert daily._researka_preflight_status({
+        "article_type": "evidence_map",
+    }) == "public_surface_not_full_research"
 
 
 def test_run_cycle_capped_passthrough_at_cap_one(tmp_path: Path, monkeypatch) -> None:
@@ -3341,7 +3149,7 @@ def test_main_writes_daily_submit_cycle_receipt_for_no_eligible(tmp_path: Path, 
     receipt = json.loads(
         (tmp_path / daily.CYCLE_LEDGER_DIR / "2026-06-28-daily-submit.json").read_text(encoding="utf-8")
     )
-    assert rc == 0
+    assert rc == 3
     assert receipt["lane"] == "daily-submit"
     assert receipt["status"] == "no_eligible_research_paper"
     assert receipt["submitted"] == 0
@@ -3361,7 +3169,7 @@ def test_main_defaults_to_local_cycle_date(tmp_path: Path, monkeypatch, capsys) 
 
     rc = daily.main(["--runs-root", str(tmp_path), "--submit"])
 
-    assert rc == 0
+    assert rc == 3
     assert (tmp_path / daily.CYCLE_LEDGER_DIR / "2026-06-29-daily-submit.json").exists()
     assert "status=no_eligible_research_paper submitted=0 published=0" in capsys.readouterr().out
 

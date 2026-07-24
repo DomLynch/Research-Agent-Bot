@@ -39,6 +39,10 @@ class FinalStatus:
     # consumers.
     accountability_pass: bool
     accountability_model: str
+    researka_publish_ready: bool
+    journal_submission_ready: bool
+    # Backward-compatible external-journal readiness alias. Researka's
+    # publishing bridge must use researka_publish_ready explicitly.
     submission_ready: bool
     maturity_level: int
     maturity_label: str
@@ -262,6 +266,17 @@ def compute(run_dir: Path) -> FinalStatus:
         if isinstance(_manifest, dict) else None,
     )
     level = _compute_level(dims)
+    researka_publish_ready = all(
+        dims[name]
+        for name in (
+            "runtime_pass",
+            "audit_pass",
+            "journal_surface_pass",
+            "pre_submit_pass",
+            "accountability_pass",
+        )
+    )
+    journal_submission_ready = researka_publish_ready and dims["target_journal_pass"]
     return FinalStatus(
         runtime_pass=dims["runtime_pass"],
         audit_pass=dims["audit_pass"],
@@ -270,7 +285,9 @@ def compute(run_dir: Path) -> FinalStatus:
         target_journal_pass=dims["target_journal_pass"],
         accountability_pass=dims["accountability_pass"],
         accountability_model=model,
-        submission_ready=all(dims.values()),
+        researka_publish_ready=researka_publish_ready,
+        journal_submission_ready=journal_submission_ready,
+        submission_ready=journal_submission_ready,
         maturity_level=level,
         maturity_label=LABELS[level],
         blocking_reasons=blockers,
@@ -281,6 +298,8 @@ def compute(run_dir: Path) -> FinalStatus:
 def write_sidecar(run_dir: Path, status: FinalStatus) -> Path:
     out = run_dir / "final_status.json"
     payload = {
+        "researka_publish_ready": status.researka_publish_ready,
+        "journal_submission_ready": status.journal_submission_ready,
         "submission_ready": status.submission_ready,
         "maturity_level": status.maturity_level,
         "maturity_label": status.maturity_label,
@@ -319,6 +338,8 @@ def _main(argv: list[str] | None = None) -> int:
     print(json.dumps({
         "maturity_level": s.maturity_level,
         "maturity_label": s.maturity_label,
+        "researka_publish_ready": s.researka_publish_ready,
+        "journal_submission_ready": s.journal_submission_ready,
         "submission_ready": s.submission_ready,
         "dimensions": {
             "runtime_pass": s.runtime_pass,

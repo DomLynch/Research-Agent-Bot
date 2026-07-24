@@ -227,7 +227,6 @@ not a broad license for paper-quality sprint bloat (2026-05-09).
 """
 from __future__ import annotations
 
-import subprocess
 from pathlib import Path
 
 TOTAL_LIMIT = 29150  # 2026-06-10 operator-approved +5,000 headroom over 24,150; per-file cap remains the anti-bloat guardrail.
@@ -254,15 +253,10 @@ def _python_files() -> list[Path]:
 
 
 def _script_files() -> list[Path]:
-    tracked = subprocess.run(
-        ["git", "ls-files", "-z", "scripts"],
-        cwd=AGENT_DIR.parent,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.split("\0")
-    paths = [AGENT_DIR.parent / path for path in tracked if path.endswith(".py")]
-    return sorted(path for path in paths if path.is_file())
+    return sorted(
+        path for path in SCRIPTS_DIR.rglob("*.py")
+        if "__pycache__" not in path.parts
+    )
 
 
 def test_no_single_file_exceeds_per_file_limit():

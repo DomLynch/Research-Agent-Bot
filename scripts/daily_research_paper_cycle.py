@@ -45,7 +45,9 @@ from agent.revision_contract import ask_fingerprint  # noqa: E402
 from agent.revision_evidence import load_revision_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
+    DEFAULT_REVIEW_TYPE,
     THIN_CORPUS_MIN_PRIMARY_TIER,
+    downshift_review_type_for_thin_corpus,
     parse_review_type,
 )
 
@@ -113,8 +115,8 @@ DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
 MIN_REVISE_RETRY_BUDGET_SECONDS = 1200
 SYNTHESIS_TIMEOUT_RETURN_CODE = 124
+NEEDS_CORPUS_RETURN_CODE = 6
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
-FRAME_MIN_FULL_SCORE = 0.65
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
 _TERMINAL_SPARSE_RE = re.compile(r"\b(precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
 _TERMINAL_REVISION_STATUSES = frozenset({
@@ -1263,7 +1265,6 @@ def _writer_gate_repeat_policy(
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     data = _read_json(ledger_dir / BLOCKER_HISTOGRAM)
     repeats = data.get("repeats", {})
-    writer_runs = data.get("writer_gate_runs", {})
     out: dict[str, dict[str, Any]] = {}
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
@@ -1277,18 +1278,10 @@ def _writer_gate_repeat_policy(
         recent = [s for s in stamps if (t := _parse_time(str(s))) and t >= cutoff]
         if len(recent) < WRITER_GATE_REPEAT_THRESHOLD:
             continue
-        runs = writer_runs.get(key, []) if isinstance(writer_runs, dict) else []
-        brief_failed = any(
-            isinstance(row, dict)
-            and row.get("review_type_override") == "thin_corpus_brief"
-            and (t := _parse_time(str(row.get("at") or "")))
-            and t >= cutoff
-            for row in runs if isinstance(runs, list)
-        )
         out[topic] = {
             "gate": code,
             "count": len(recent),
-            "action": "skip_topic" if brief_failed else "thin_corpus_brief",
+            "action": "skip_topic",
         }
     return out
 
@@ -2332,23 +2325,29 @@ def _publication_track_topic(topic: str) -> bool:
         data = pack_data if isinstance(pack_data, dict) else {}
         if data and not generated_pack_publishable(record, peer_records=_generated_pack_records()):
             return False
-    return bool(str(data.get("target_journal", "")).strip())
+    if not data:
+        return False
+    try:
+        return parse_review_type(str(data.get("review_type") or "")) not in COMPACT_REVIEW_TYPES
+    except ValueError:
+        return False
 
 
 def _compact_review_topic(topic: str) -> bool:
+    return _topic_declared_review_type(topic) in COMPACT_REVIEW_TYPES
+
+
+def _topic_declared_review_type(topic: str) -> str:
     try:
         data = tomllib.loads((TOPIC_PACKS / f"{topic}.toml").read_text(encoding="utf-8"))
     except (OSError, tomllib.TOMLDecodeError):
         record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
         pack_data = record.get("pack_data")
         data = pack_data if isinstance(pack_data, dict) else {}
-    raw = str(data.get("review_type") or "").strip()
-    if not raw:
-        return False
     try:
-        return parse_review_type(raw) in COMPACT_REVIEW_TYPES
+        return parse_review_type(str(data.get("review_type") or ""))
     except ValueError:
-        return True
+        return "thin_corpus_brief"
 
 
 def _publication_score(topic: str, ledger_dir: Path, runs_root: Path) -> int:
@@ -2356,7 +2355,12 @@ def _publication_score(topic: str, ledger_dir: Path, runs_root: Path) -> int:
     pass_rate = (l4plus / total) if total else 0
     last = _parse_time(_attempted_at(topic, ledger_dir))
     freshness = 2 if last is None or dt.datetime.now(dt.UTC) - last > dt.timedelta(days=14) else 0
-    return round(pass_rate * 5) + int(_publication_track_topic(topic)) * 3 + freshness - _recent_failed_attempts(topic, ledger_dir) * 2
+    return (
+        round(pass_rate * 5)
+        + int(_publication_track_topic(topic)) * 3
+        + freshness
+        - _recent_failed_attempts(topic, ledger_dir) * 2
+    )
 
 
 def _topic_support_score(topic: str) -> int:
@@ -2767,7 +2771,7 @@ def _topic_status_map(
 
 
 def _preflight_reason_survives_corpus_refresh(reason: str) -> bool:
-    if reason == "latest_run_missing_manifest" or reason.startswith("recent_failed_attempts="):
+    if reason in {"latest_run_missing_manifest", "public_surface_not_full_research"} or reason.startswith("recent_failed_attempts="):
         return True
     return reason.startswith(("n_receipts=", "n_tensions=", "n_outcome_classes=")) and reason.endswith("(split topic)")
 
@@ -2786,7 +2790,7 @@ def _preflight(
     publication_track = _publication_track_topic(topic)
     reasons = []
     if not publication_track:
-        reasons.append("target_journal_not_declared")
+        reasons.append("public_surface_not_full_research")
     if latest and not counts["has_manifest"]:
         reasons.append("latest_run_missing_manifest")
     if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
@@ -2860,36 +2864,31 @@ def _receipt_source_fit_reasons(
 
 
 def _paper_strategy(corpus: dict[str, Any], preflight: dict[str, Any], revision_feedback: str = "") -> dict[str, Any]:
-    q = int(corpus.get("n_quant_claims") or 0)
-    receipts = int(preflight.get("n_receipts") or q)
-    tensions = int(preflight.get("n_tensions") or 0)
-    primary = int(preflight.get("n_primary_tier") or 0)
     sparse = bool(_SPARSE_REVIEW_RE.search(revision_feedback))
     terminal_sparse = bool(_TERMINAL_SPARSE_RE.search(revision_feedback))
-    if not preflight.get("has_manifest") and not sparse:
-        return {
-            "action": "write",
-            "review_type_override": None,
-            "reason": "no_prior_manifest",
-            "frames": [{"name": "full_paper", "score": 1.0}],
-            "selected": {"name": "full_paper", "score": 1.0},
-        }
-    full = min(1.0, q / 50) * 0.15 + min(1.0, receipts / 30) * 0.40 + min(1.0, tensions / 10) * 0.30 + min(1.0, primary / 3) * 0.15 - (0.45 if sparse else 0)
-    brief = min(1.0, q / 10) * 0.35 + min(1.0, receipts / 10) * 0.25 + min(1.0, primary) * 0.10 + (0.20 if sparse else 0)
-    skip = 1.1 if terminal_sparse and full < FRAME_MIN_FULL_SCORE else 0.05
-    scores = [
-        ("full_paper", round(max(0.0, full), 3)),
-        ("thin_corpus_brief", round(min(1.0, brief), 3)),
-        ("skip_topic", round(skip, 3)),
-    ]
-    selected_name, selected_score = max(scores, key=lambda row: (row[1], row[0] == "full_paper"))
-    frames = [{"name": name, "score": score} for name, score in scores]
+    predicted = parse_review_type(
+        str(preflight.get("predicted_review_type") or DEFAULT_REVIEW_TYPE),
+    )
+    selected_name = (
+        "skip_topic"
+        if terminal_sparse
+        else "needs_corpus"
+        if sparse or predicted in COMPACT_REVIEW_TYPES
+        else "full_paper"
+    )
+    score = 1.0 if selected_name == "full_paper" else 0.0
     return {
-        "action": "skip_topic" if selected_name == "skip_topic" else "write",
-        "review_type_override": "thin_corpus_brief" if selected_name == "thin_corpus_brief" else None,
-        "reason": "terminal_sparse_researka_feedback" if terminal_sparse else "sparse_researka_feedback" if sparse else "highest_frame_score",
-        "frames": frames,
-        "selected": {"name": selected_name, "score": selected_score},
+        "action": selected_name if selected_name != "full_paper" else "write",
+        "review_type_override": None,
+        "reason": (
+            "terminal_sparse_researka_feedback"
+            if selected_name == "skip_topic"
+            else "full_synthesis_evidence_floor"
+            if selected_name == "needs_corpus"
+            else "full_synthesis_ready"
+        ),
+        "frames": [{"name": "full_paper", "score": score}],
+        "selected": {"name": selected_name, "score": score},
     }
 
 
@@ -2903,6 +2902,7 @@ def _failure_class(status: str) -> str:
         "final_status_not_ready": "A_compiler_fixable",
         "final_verdict_not_aaa": "A_compiler_fixable",
         "pre_submit_not_passed": "A_compiler_fixable",
+        "needs_corpus_expansion": "B_corpus_fixable",
         "audit_not_all_green": "C_writer_fixable",
         "revision_coverage_unmet": "C_writer_fixable",
         "numeric_effect_mismatch": "C_writer_fixable",
@@ -3204,7 +3204,10 @@ def _numeric_effect_direction_issues(out_dir: Path) -> list[str]:
 
 
 def _final_status_submission_ready(out_dir: Path) -> bool:
-    return bool(_read_json(out_dir / "final_status.json").get("submission_ready"))
+    status = _read_json(out_dir / "final_status.json")
+    if "researka_publish_ready" in status:
+        return bool(status.get("researka_publish_ready"))
+    return bool(status.get("submission_ready"))
 
 
 def _repair_abstract_overclaim_phrasing(out_dir: Path, overclaims: list[str]) -> bool:
@@ -3374,8 +3377,10 @@ def _run_synthesis(
     if dry_run:
         cmd.append("--dry-run")
     env: dict[str, str] | None = None
-    if revision_feedback or review_type_override or revision_source_run:
+    if revision_feedback or review_type_override or revision_source_run or not dry_run:
         env = os.environ.copy()
+        if not dry_run:
+            env["RESEARCH_AGENT_PUBLIC_FULL_ONLY"] = "1"
         if revision_feedback:
             env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
         if review_type_override:
@@ -3404,6 +3409,7 @@ def _receipt_preflight(
     dry_run: bool = False,
 ) -> dict[str, Any]:
     min_receipts = DEFAULT_THRESHOLDS.min_receipts
+    declared_review_type = _topic_declared_review_type(topic)
     rounds = _receipt_preflight_repair_rounds() if repair and not dry_run else 0
     probes: list[dict[str, Any]] = []
     repairs: list[dict[str, Any]] = []
@@ -3411,9 +3417,15 @@ def _receipt_preflight(
     n_receipts = 0
     n_primary_tier = 0
     n_direct_receipts = 0
+    n_tensions = 0
+    n_outcome_classes = 0
     best_receipts = 0
     best_primary_tier = 0
     best_direct_receipts = 0
+    best_tensions = 0
+    best_outcome_classes = 0
+    predicted_review_type = declared_review_type
+    surface_reasons: list[str] = []
     repair_skipped_reason: str | None = None
     for round_idx in range(rounds + 1):
         suffix = "receipt-preflight" if round_idx == 0 else f"receipt-preflight-{round_idx + 1}"
@@ -3428,11 +3440,33 @@ def _receipt_preflight(
         n_primary_tier = int(counts.get("primary_tier_receipts") or 0) if isinstance(counts, dict) else 0
         direct_raw = counts.get("direct_receipts") if isinstance(counts, dict) else None
         n_direct_receipts = int(direct_raw if direct_raw is not None else n_primary_tier)
-        previous_best = (best_receipts, best_primary_tier, best_direct_receipts)
+        n_tensions = int(counts.get("non_orthogonal_tensions") or 0) if isinstance(counts, dict) else 0
+        n_outcome_classes = int(counts.get("outcome_classes") or 0) if isinstance(counts, dict) else 0
+        previous_best = (
+            best_receipts,
+            best_primary_tier,
+            best_direct_receipts,
+            best_tensions,
+            best_outcome_classes,
+        )
         best_receipts = max(best_receipts, n_receipts)
         best_primary_tier = max(best_primary_tier, n_primary_tier)
         best_direct_receipts = max(best_direct_receipts, n_direct_receipts)
+        best_tensions = max(best_tensions, n_tensions)
+        best_outcome_classes = max(best_outcome_classes, n_outcome_classes)
         source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier, n_direct_receipts, n_receipts)
+        predicted_review_type = downshift_review_type_for_thin_corpus(
+            declared_review_type,
+            n_receipts,
+            n_tensions,
+            n_primary_tier=n_primary_tier,
+            n_outcome_classes=n_outcome_classes,
+        )
+        surface_reasons = (
+            [f"predicted_public_surface={predicted_review_type}"]
+            if not source_fit_reasons and predicted_review_type in COMPACT_REVIEW_TYPES
+            else []
+        )
         probes.append({
             "return_code": rc,
             "n_receipts": n_receipts,
@@ -3441,13 +3475,20 @@ def _receipt_preflight(
             "min_primary_tier": PREFLIGHT_MIN_PRIMARY_TIER,
             "n_direct_receipts": n_direct_receipts,
             "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
+            "n_tensions": n_tensions,
+            "n_outcome_classes": n_outcome_classes,
+            "predicted_review_type": predicted_review_type,
         })
-        if rc == 0 and n_receipts >= min_receipts and not source_fit_reasons:
+        if rc == 0 and n_receipts >= min_receipts and not source_fit_reasons and not surface_reasons:
             break
         if rc == 0 and n_receipts == 0:
             break
         if round_idx > 0 and rc == 0 and (
-            best_receipts, best_primary_tier, best_direct_receipts
+            best_receipts,
+            best_primary_tier,
+            best_direct_receipts,
+            best_tensions,
+            best_outcome_classes,
         ) <= previous_best:
             break
         if round_idx >= rounds:
@@ -3480,7 +3521,7 @@ def _receipt_preflight(
         if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
             break
     source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier, n_direct_receipts, n_receipts)
-    passed = rc == 0 and n_receipts >= min_receipts and not source_fit_reasons
+    passed = rc == 0 and n_receipts >= min_receipts and not source_fit_reasons and not surface_reasons
     return {
         "passed": passed,
         "status": "receipt_preflight_ok" if passed else "receipt_preflight_insufficient",
@@ -3491,7 +3532,10 @@ def _receipt_preflight(
         "min_primary_tier": PREFLIGHT_MIN_PRIMARY_TIER,
         "n_direct_receipts": n_direct_receipts if passed else best_direct_receipts,
         "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
-        "reasons": [] if passed else source_fit_reasons,
+        "n_tensions": n_tensions if passed else best_tensions,
+        "n_outcome_classes": n_outcome_classes if passed else best_outcome_classes,
+        "predicted_review_type": predicted_review_type,
+        "reasons": [] if passed else [*source_fit_reasons, *surface_reasons],
         "probes": probes,
         **({"repairs": repairs} if repairs else {}),
         **({"repair_skipped_reason": repair_skipped_reason} if repair_skipped_reason else {}),
@@ -3508,6 +3552,17 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
     n_direct = int(counts.get("n_direct_receipts") or 0)
     min_receipts = DEFAULT_THRESHOLDS.min_receipts
     source_fit_reasons = _receipt_source_fit_reasons(n_primary, n_direct, n_receipts)
+    manifest = _read_json(source_run / "manifest.json")
+    predicted = parse_review_type(
+        str(manifest.get("review_type") or DEFAULT_REVIEW_TYPE),
+    )
+    if predicted in COMPACT_REVIEW_TYPES:
+        return {
+            "passed": False,
+            "status": "receipt_preflight_insufficient",
+            "predicted_review_type": predicted,
+            "reasons": [f"predicted_public_surface={predicted}"],
+        }
     if (
         n_receipts < min_receipts
         or n_tensions < PREFLIGHT_MIN_TENSIONS
@@ -3521,6 +3576,7 @@ def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | Non
         "n_tensions": n_tensions,
         "n_primary_tier": n_primary,
         "n_direct_receipts": n_direct,
+        "predicted_review_type": predicted,
         "min_receipts": min_receipts,
         "min_direct_receipts": PREFLIGHT_MIN_DIRECT_RECEIPTS,
     }
@@ -5175,23 +5231,26 @@ def run_cycle(
                     remote_revision = None
                 attempted.add(selected)
                 continue
-            strategy = _paper_strategy(corpus, preflight, revision_feedback)
-            ledger["paper_strategy"] = strategy
-            if strategy.get("action") == "skip_topic":
-                attempt = {
-                    "topic": selected,
-                    "out_dir": out_dir.name,
-                    "synthesis_return_code": None,
-                    "submit_status": "strategy_evidence_insufficient",
-                    "failure_class": _failure_class("strategy_evidence_insufficient"),
-                    "submitted": 0,
-                    "paper_strategy": strategy,
-                }
+            terminal_strategy = _paper_strategy(corpus, preflight, revision_feedback)
+            if terminal_strategy.get("action") == "skip_topic":
+                attempt = _gate_attempt(
+                    selected,
+                    out_dir,
+                    "strategy_evidence_insufficient",
+                    paper_strategy=terminal_strategy,
+                )
                 ledger["attempts"].append(attempt)
+                ledger["paper_strategy"] = terminal_strategy
                 ledger["status"] = "strategy_skipped_no_submission"
                 _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source:
-                    _mark_revision_handled(ledger_dir, revision_source, status="strategy_evidence_insufficient")
+                    _mark_revision_handled(
+                        ledger_dir,
+                        revision_source,
+                        status="strategy_evidence_insufficient",
+                    )
+                    revise_window_excluded.add(_revision_key(revision_source))
+                    remote_revision = None
                 attempted.add(selected)
                 continue
             if revision_source:
@@ -5200,17 +5259,7 @@ def run_cycle(
                     for key in ("artifactId", "submissionId", "source_run", "title")
                     if revision_source.get(key)
                 }
-            strategy_review_type = str(strategy.get("review_type_override") or "") or None
-            repeat_policy = writer_gate_policy.get(selected, {})
-            repeat_review_type = "thin_corpus_brief" if repeat_policy.get("action") == "thin_corpus_brief" else None
-            review_type_override = strategy_review_type or repeat_review_type
-            if review_type_override:
-                reason = (
-                    str(strategy.get("reason") or "paper_strategy")
-                    if strategy_review_type
-                    else f"writer_gate_repeat:{repeat_policy.get('gate')}"
-                )
-                ledger["review_type_override"] = {"topic": selected, "value": review_type_override, "reason": reason}
+            review_type_override: str | None = None
             last_attempt: dict[str, Any] | None = None
             revision_round_recorded = False
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
@@ -5311,7 +5360,16 @@ def run_cycle(
                     and revision_snapshot_availability.get("passed")
                     and revision_snapshot_availability.get("evidence_mode") == "snapshot"
                 )
+                existing_receipt_preflight = (
+                    _existing_receipt_preflight(revision_base_dir)
+                    if revision_evidence_source
+                    else None
+                )
                 receipt_preflight = (
+                    existing_receipt_preflight
+                    if existing_receipt_preflight is not None
+                    and not existing_receipt_preflight.get("passed")
+                    else
                     {
                         "passed": True,
                         "status": (
@@ -5321,9 +5379,7 @@ def run_cycle(
                         ),
                     }
                     if existing_repair or revision_snapshot_locked
-                    else _existing_receipt_preflight(revision_base_dir)
-                    if revision_evidence_source
-                    else None
+                    else existing_receipt_preflight
                 )
                 receipt_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
                 if receipt_preflight is None:
@@ -5356,6 +5412,44 @@ def run_cycle(
                         "revise_receipt_preflight_skipped_no_submission"
                         if revision_source
                         else "receipt_preflight_skipped_no_submission"
+                    )
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                    if revision_source:
+                        _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                        revise_window_excluded.add(_revision_key(revision_source))
+                        remote_revision = None
+                    last_attempt = attempt
+                    attempted.add(selected)
+                    break
+                strategy_preflight = {
+                    **preflight,
+                    **{
+                        key: receipt_preflight[key]
+                        for key in ("n_receipts", "n_primary_tier", "n_direct_receipts")
+                        if key in receipt_preflight
+                    },
+                }
+                strategy = _paper_strategy(corpus, strategy_preflight, revision_feedback)
+                ledger["paper_strategy"] = strategy
+                if strategy.get("action") != "write":
+                    gate_status = (
+                        "needs_corpus_expansion"
+                        if strategy.get("action") == "needs_corpus"
+                        else "strategy_evidence_insufficient"
+                    )
+                    attempt = _gate_attempt(
+                        selected,
+                        out_dir,
+                        gate_status,
+                        revise_attempt=revise_attempt,
+                        paper_strategy=strategy,
+                        receipt_preflight=receipt_preflight,
+                    )
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = (
+                        "needs_corpus_expansion_no_submission"
+                        if gate_status == "needs_corpus_expansion"
+                        else "strategy_skipped_no_submission"
                     )
                     _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
@@ -5434,6 +5528,7 @@ def run_cycle(
                             )
                 gate_status = (
                     "synthesis_timeout" if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE
+                    else "needs_corpus_expansion" if return_code == NEEDS_CORPUS_RETURN_CODE
                     else "synthesis_failed" if return_code != 0
                     else "retraction_check_unavailable" if retraction_unverified
                     else "retracted_source_cited" if retracted
@@ -5547,6 +5642,9 @@ def run_cycle(
                         _mark_revision_handled(ledger_dir, revision_source, status=timeout_status)
                     ledger["status"] = "synthesis_timeout_no_submission"
                     ledger["no_submission_reason"] = gate_status
+                elif return_code == NEEDS_CORPUS_RETURN_CODE:
+                    ledger["status"] = "needs_corpus_expansion_no_submission"
+                    ledger["no_submission_reason"] = gate_status
                 elif return_code != 0:
                     ledger["status"] = "synthesis_failed"
                 elif bridge.get("status") == "submitted_to_researka":
@@ -5578,6 +5676,8 @@ def run_cycle(
                             attempt["revision_feedback_received"] = bool(revision_feedback)
                             continue
                     break
+                elif bridge.get("status") == "submission_failed":
+                    ledger["status"] = "submission_failed"
                 elif retraction_unverified:
                     ledger.update({"status": "retraction_check_unavailable", "no_submission_reason": gate_status})
                 else:
@@ -5709,8 +5809,13 @@ def main(argv: list[str] | None = None) -> int:
         f"submitted_topic={ledger.get('submitted_topic', '-')} "
         f"submitted={ledger['submitted']} published={ledger['published']}"
     )
-    failures = {"synthesis_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
-    return 0 if ledger["status"] not in failures else 2
+    failures = {"submission_failed", "synthesis_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
+    if ledger["status"] in failures:
+        return 2
+    no_output = args.submit and not int(ledger.get("submitted") or 0)
+    if no_output and not (args.mode == "revise" and ledger["status"] == "no_revise_pending"):
+        return 3
+    return 0
 
 
 if __name__ == "__main__":

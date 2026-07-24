@@ -166,6 +166,18 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 - Repair reproducible surface defects at their universal generator/finalizer source.
   Never relax the journal-surface gate merely to increase publication volume.
 
+## Operational Decision - 2026-07-24
+- V3 has one public product: a full research synthesis. The receipt probe uses
+  the writer's canonical review-type classifier before the paid writer; compact
+  candidates become `needs_corpus_expansion` and never enter public synthesis.
+- `researka_publish_ready` excludes the optional external-journal declaration;
+  `journal_submission_ready` includes it. The V3 submit bridge uses the former.
+- A 24-hour V3 accepted-public-paper drought fails visibly, runs bounded
+  candidate preparation, and starts at most one fresh attempt when no V3 lane
+  is active. Recovery never lowers evidence or publication gates.
+- GitHub CI runs on both `main` and canonical `codex/019e9ce8/main` during the
+  branch migration.
+
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 

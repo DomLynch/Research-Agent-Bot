@@ -225,7 +225,7 @@ def _write_provenance_sidecar(
             ] or ["unknown"]
         except Exception:
             pass  # model names are best-effort; SHA + verdict still bind
-        # Verdict prefers the AUTHORITATIVE final_status.json (submission_ready),
+        # Verdict prefers the authoritative Researka readiness field.
         # which is written/reconciled AFTER finalize — so a paper promoted by the
         # post-finalize reconcile is reported correctly. Falls back to the
         # finalize-time gate's `passed` (GateResult has no status/level field)
@@ -235,8 +235,13 @@ def _write_provenance_sidecar(
         if fs_path.is_file():
             try:
                 fs = json.loads(fs_path.read_text(encoding="utf-8"))
-                if "submission_ready" in fs:
-                    verdict = "ready" if fs.get("submission_ready") else "blocked"
+                readiness = (
+                    fs.get("researka_publish_ready")
+                    if "researka_publish_ready" in fs
+                    else fs.get("submission_ready")
+                )
+                if readiness is not None:
+                    verdict = "ready" if readiness else "blocked"
             except (OSError, ValueError):
                 pass
         write_provenance_sidecar(

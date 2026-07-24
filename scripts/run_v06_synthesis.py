@@ -2726,6 +2726,11 @@ def _build_call_chain() -> list[CallSpec]:
     return chain
 
 
+def _public_surface_return_code(*review_types: str) -> int:
+    from agent.review_type import COMPACT_REVIEW_TYPES
+    return 6 if os.getenv("RESEARCH_AGENT_PUBLIC_FULL_ONLY", "").strip() == "1" and any(review_type in COMPACT_REVIEW_TYPES for review_type in review_types) else 0
+
+
 async def _run(
     out_dir: Path,
     *,
@@ -2879,6 +2884,14 @@ async def _run(
     # published n_non_orthogonal_tensions (~2.6x) vs the canonical replay.
     from agent.synthesis import build_tension_matrix
     matrix = build_tension_matrix(receipts)
+    funnel_counts = dict(receipt_funnel.get("counts") or {})
+    funnel_counts.update({
+        "non_orthogonal_tensions": len(matrix.non_orthogonal()),
+        "outcome_classes": len({r.outcome_class for r in receipts if r.outcome_class}),
+    })
+    receipt_funnel["counts"] = dict(sorted(funnel_counts.items()))
+    (out_dir / "receipt_funnel.json").write_text(json.dumps(receipt_funnel, indent=2))
+    (out_dir / "receipt_funnel.md").write_text(render_receipt_funnel_markdown(receipt_funnel))
     thesis = build_thesis(receipts, matrix, topic=topic)
 
     print(f"Thesis: {thesis.text[:160]}...", file=sys.stderr)
@@ -3021,16 +3034,26 @@ async def _run(
     # n_primary_tier so the sufficiency gate catches "65 review-tier
     # receipts but no primary endpoint anchor" — that case should still
     # downshift to brief, not pretend it's a structured synthesis.
-    from agent.review_type import downshift_review_type_for_thin_corpus, parse_review_type
+    from agent.review_type import (
+        downshift_review_type_for_thin_corpus,
+        parse_review_type,
+    )
     _n_primary = sum(1 for r in writer_receipts if r.evidence_tier in ("A1", "A2", "B1"))
     _n_outcomes = len({r.outcome_class for r in writer_receipts})
-    _review_type_effective = downshift_review_type_for_thin_corpus(
+    _review_type_canonical = downshift_review_type_for_thin_corpus(
         getattr(_TOPIC_PACK, "review_type", None),
         len(writer_receipts), len(writer_matrix.non_orthogonal()),
         n_primary_tier=_n_primary, n_outcome_classes=_n_outcomes,
     )
+    _review_type_effective = _review_type_canonical
     if override := os.environ.get("RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE", "").strip():
         _review_type_effective = parse_review_type(override)
+    if surface_code := _public_surface_return_code(_review_type_canonical, _review_type_effective):
+        print(
+            f"Public full-only policy blocked compact surface {_review_type_effective!r}.",
+            file=sys.stderr,
+        )
+        return surface_code
     print(
         f"\nCalling render_full_paper (review_type={_review_type_effective!r}, "
         "tiered validation)...",

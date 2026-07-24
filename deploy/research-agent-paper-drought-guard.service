@@ -2,10 +2,11 @@
 Description=Research Agent v3 public publication drought guard
 After=network-online.target
 Wants=network-online.target
+OnFailure=research-agent-paper-drought-recovery.service
 
 [Service]
 Type=oneshot
 WorkingDirectory=/opt/research-agent-bot
-ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/publish_drought_guard.py --max-age-hours 24 --runs-root /opt/research-agent-bot/runs --report-path /var/log/research-agent-bot/publish_drought_guard.json
+ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/publish_drought_guard.py --max-age-hours 24 --runs-root /opt/research-agent-bot/runs --report-path /var/log/research-agent-bot/publish_drought_guard.json --enforce-exit-code
 Environment=PYTHONUNBUFFERED=1
 TimeoutStartSec=60

@@ -99,8 +99,11 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         service = (REPO / "deploy" / name).read_text(encoding="utf-8")
         assert "Type=oneshot" in service
         assert "Restart=on-failure" in service
-        assert "RestartPreventExitStatus=2" in service
         assert "RestartSec=60" in service
+        assert "StartLimitIntervalSec=21600" in service
+        assert "StartLimitBurst=2" in service
+    fresh = (REPO / "deploy" / "research-agent-paper-fresh.service").read_text(encoding="utf-8")
+    assert "RestartPreventExitStatus=3" in fresh
 
 
 def test_revise_lane_allows_all_three_bounded_review_rounds() -> None:
@@ -119,6 +122,20 @@ def test_submit_units_enable_doi_preflight() -> None:
     ):
         service = (REPO / "deploy" / name).read_text(encoding="utf-8")
         assert "RESEARKA_DOI_PREFLIGHT_ENABLED=1" in service
+
+
+def test_v3_units_do_not_override_canonical_publication_surface() -> None:
+    for path in (REPO / "deploy").glob("research-agent-paper-*.service"):
+        assert "RESEARKA_ARTICLE_TYPE_V3" not in path.read_text(encoding="utf-8")
+
+
+def test_canonical_deploy_branch_runs_github_ci() -> None:
+    for name in ("ci.yml", "eval.yml", "karpathy-pr.yml"):
+        workflow = (REPO / ".github" / "workflows" / name).read_text(encoding="utf-8")
+        assert "codex/019e9ce8/main" in workflow
+    karpathy = (REPO / ".github" / "workflows" / "karpathy-pr.yml").read_text(encoding="utf-8")
+    assert 'git fetch origin "${{ github.base_ref }}"' in karpathy
+    assert 'git checkout "origin/${{ github.base_ref }}"' in karpathy
 
 
 @pytest.mark.parametrize(
@@ -1197,7 +1214,7 @@ def test_public_feed_receipt_derives_url_from_visible_artifact_id(monkeypatch) -
     monkeypatch.setenv("RESEARKA_PAPERS_URL", "https://papers.example.test/library/")
     submission_id = "accepted-submission"
     publication_id = "d6b9601d-c79a-4ef6-8e70-eb0ec62f9b11"
-    rows = {
+    rows: dict[str, dict[str, Any]] = {
         "title:accepted paper": {
             "artifactId": publication_id,
             "submissionId": submission_id,
@@ -1580,14 +1597,14 @@ def test_claim_scope_matches_modifier_word_family(tmp_path: Path) -> None:
     assert cycle._claim_text_has_scope(off, ["metabolism"]) is False
 
 
-def test_select_topic_prefers_publication_track_packs(tmp_path: Path, monkeypatch) -> None:
+def test_select_topic_does_not_require_external_target_journal(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "caloric_restriction", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
 
     selected = cycle.select_topic(["acarbose", "caloric_restriction"], tmp_path / cycle.LEDGER_DIR)
 
-    assert selected == "caloric_restriction"
+    assert selected == "acarbose"
 
 
 def test_select_topic_prefers_recent_prepared_candidate(tmp_path: Path, monkeypatch) -> None:
@@ -1913,10 +1930,15 @@ def test_prepare_candidate_buffer_scans_past_repair_budget(
             None,
         ),
     )
+
+    def repair_topic(topic: str, **_kwargs: Any) -> dict[str, str]:
+        repairs.append(topic)
+        return {"status": "corpus_repaired"}
+
     monkeypatch.setattr(
         cycle,
         "_repair_topic_corpus",
-        lambda topic, **_kwargs: repairs.append(topic) or {"status": "corpus_repaired"},
+        repair_topic,
     )
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
     monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "ok", []))
@@ -2025,10 +2047,15 @@ def test_prepare_candidate_buffer_rotates_recent_failures(tmp_path: Path, monkey
             None,
         ),
     )
+
+    def repair_topic(topic: str, **_kwargs: Any) -> dict[str, str]:
+        repaired.append(topic)
+        return {"status": "corpus_repaired"}
+
     monkeypatch.setattr(
         cycle,
         "_repair_topic_corpus",
-        lambda topic, **_kwargs: repaired.append(topic) or {"status": "corpus_repaired"},
+        repair_topic,
     )
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
     monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {
@@ -2134,6 +2161,50 @@ def test_prepare_only_cli_succeeds_only_with_full_buffer(monkeypatch) -> None:
     assert cycle.main(["--prepare-only"]) == 0
 
 
+@pytest.mark.parametrize(
+    ("status", "submitted", "expected"),
+    [
+        ("no_publishable_topic_available", 0, 3),
+        ("submitted_to_researka", 1, 0),
+        ("synthesis_failed", 0, 2),
+        ("submission_failed", 0, 2),
+    ],
+)
+def test_fresh_cli_exposes_no_output_and_hard_failures(
+    monkeypatch, status: str, submitted: int, expected: int,
+) -> None:
+    monkeypatch.setattr(cycle, "run_cycle", lambda **_kwargs: {
+        "status": status,
+        "submitted": submitted,
+        "published": 0,
+    })
+
+    assert cycle.main(["--mode", "fresh", "--submit"]) == expected
+
+
+@pytest.mark.parametrize(
+    ("mode", "status", "expected"),
+    [
+        ("mixed", "no_publishable_topic_available", 3),
+        ("revise", "revision_coverage_unmet", 3),
+        ("revise", "no_revise_pending", 0),
+    ],
+)
+def test_submit_clis_expose_no_output_except_empty_revise_queue(
+    monkeypatch: pytest.MonkeyPatch,
+    mode: str,
+    status: str,
+    expected: int,
+) -> None:
+    monkeypatch.setattr(cycle, "run_cycle", lambda **_kwargs: {
+        "status": status,
+        "submitted": 0,
+        "published": 0,
+    })
+
+    assert cycle.main(["--mode", mode, "--submit"]) == expected
+
+
 def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
     service = (REPO / "deploy" / "research-agent-paper-prepare.service").read_text(encoding="utf-8")
     timer = (REPO / "deploy" / "research-agent-paper-prepare.timer").read_text(encoding="utf-8")
@@ -2142,11 +2213,24 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
         "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
         "--max-attempts 12" in service
     )
-    assert "SuccessExitStatus=3" in service
+    assert "SuccessExitStatus=3" not in service
     assert "Restart=on-failure" in service
     assert "RestartPreventExitStatus=3" in service
+    assert "StartLimitIntervalSec=21600" in service
+    assert "StartLimitBurst=2" in service
+    assert "/usr/bin/flock --exclusive --nonblock /run/research-agent-paper-prepare.lock" in service
     assert "TimeoutStartSec=12600" in service
     assert "OnCalendar=*-*-* 06/8:00:00" in timer
+
+
+def test_synthesis_units_share_prepare_exclusion_lock() -> None:
+    for name in (
+        "research-agent-paper-daily-cycle.service",
+        "research-agent-paper-fresh.service",
+        "research-agent-paper-revise.service",
+    ):
+        service = (REPO / "deploy" / name).read_text(encoding="utf-8")
+        assert "/usr/bin/flock --shared --nonblock /run/research-agent-paper-prepare.lock" in service
 
 
 def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:
@@ -2366,25 +2450,51 @@ def test_select_topic_full_synthesis_priority_skips_numeric_downshift(
     assert selected == "zzz_full_synthesis"
 
 
-def test_select_topic_returns_none_when_no_publication_track_topics(tmp_path: Path, monkeypatch) -> None:
+def test_select_topic_allows_full_research_topic_without_target_journal(
+    tmp_path: Path, monkeypatch,
+) -> None:
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "berberine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
 
     selected = cycle.select_topic(["acarbose", "berberine"], tmp_path / cycle.LEDGER_DIR)
 
-    assert selected is None
+    assert selected == "acarbose"
 
 
-def test_preflight_requires_declared_target_journal(tmp_path: Path, monkeypatch) -> None:
+def test_preflight_does_not_require_external_target_journal(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "berberine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 
     status = cycle._preflight("berberine", tmp_path / "runs", tmp_path / cycle.LEDGER_DIR)
 
+    assert status["passed"] is True
+    assert status["publication_track"] is True
+
+
+def test_preflight_keeps_declared_compact_surface_block_after_corpus_refresh(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "compact_topic")
+    (tmp_path / "topic_packs" / "compact_topic.toml").write_text(
+        'name = "x"\nreview_type = "evidence_map"\n',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+
+    status = cycle._preflight(
+        "compact_topic",
+        tmp_path / "runs",
+        tmp_path / cycle.LEDGER_DIR,
+        current_quant_claims=cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    )
+
     assert status["passed"] is False
-    assert "target_journal_not_declared" in status["reasons"]
+    assert status["publication_track"] is False
+    assert status["reasons"] == ["public_surface_not_full_research"]
 
 
 def test_select_topic_prefers_untried_over_prior_l4_to_advance_frontier(tmp_path: Path, monkeypatch) -> None:
@@ -3492,7 +3602,19 @@ def test_clean_ready_helper_excludes_published_and_source_low(tmp_path: Path, mo
     )
 
 
-def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monkeypatch) -> None:
+@pytest.mark.parametrize(
+    ("bridge_status", "expected_status"),
+    [
+        ("no_eligible_research_paper", "synthesis_completed_no_submission"),
+        ("submission_failed", "submission_failed"),
+    ],
+)
+def test_cycle_restricts_real_submit_bridge_to_current_run(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    bridge_status: str,
+    expected_status: str,
+) -> None:
     _topic(tmp_path, "creatine")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
@@ -3526,7 +3648,7 @@ def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monke
 
     def fake_submit_bridge(**kwargs: Any) -> dict[str, Any]:
         calls.update(kwargs)
-        return {"status": "no_eligible_research_paper", "submitted": 0, "published": 0}
+        return {"status": bridge_status, "submitted": 0, "published": 0}
 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
     monkeypatch.setattr(cycle.submit_bridge, "run_cycle", fake_submit_bridge)
@@ -3540,7 +3662,7 @@ def test_cycle_restricts_real_submit_bridge_to_current_run(tmp_path: Path, monke
         remote_loader=lambda: (set(), None),
     )
 
-    assert ledger["status"] == "synthesis_completed_no_submission"
+    assert ledger["status"] == expected_status
     assert calls["candidate_run"] == tmp_path / "runs" / ledger["attempts"][-1]["out_dir"]
 
 
@@ -3646,6 +3768,22 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
     assert seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"] == "Add clinical-use caveat."
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] == "thin_corpus_brief"
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVISION_SOURCE_RUN"] == str(source_run.resolve())
+    assert seen["kwargs"]["env"]["RESEARCH_AGENT_PUBLIC_FULL_ONLY"] == "1"
+
+
+def test_runner_fails_closed_when_full_only_surface_is_compact(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import run_v06_synthesis as runner
+
+    monkeypatch.setenv("RESEARCH_AGENT_PUBLIC_FULL_ONLY", "1")
+
+    assert runner._public_surface_return_code("evidence_map") == cycle.NEEDS_CORPUS_RETURN_CODE
+    assert runner._public_surface_return_code("research_synthesis") == 0
+    assert (
+        runner._public_surface_return_code("thin_corpus_brief", "research_synthesis")
+        == cycle.NEEDS_CORPUS_RETURN_CODE
+    )
 
 
 def test_run_synthesis_timeout_returns_status_code_and_sidecar(tmp_path: Path, monkeypatch) -> None:
@@ -4281,6 +4419,8 @@ def test_receipt_preflight_continues_when_direct_core_improves(tmp_path: Path, m
             "admitted_receipts": receipts,
             "primary_tier_receipts": primary,
             "direct_receipts": direct,
+            "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+            "outcome_classes": 2,
         }})
         return 0
 
@@ -4386,6 +4526,8 @@ def test_receipt_preflight_requires_primary_tier_floor(tmp_path: Path, monkeypat
                 "admitted_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
                 "direct_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
                 "primary_tier_receipts": cycle.PREFLIGHT_MIN_PRIMARY_TIER - 1,
+                "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+                "outcome_classes": 2,
             },
         })
         return 0
@@ -4414,6 +4556,8 @@ def test_receipt_preflight_allows_rich_corpus_without_direct_share_ratio(
                 "admitted_receipts": 51,
                 "direct_receipts": 10,
                 "primary_tier_receipts": 19,
+                "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+                "outcome_classes": 2,
             },
         })
         return 0
@@ -4429,6 +4573,92 @@ def test_receipt_preflight_allows_rich_corpus_without_direct_share_ratio(
     assert result["reasons"] == []
 
 
+def test_receipt_preflight_blocks_compact_surface_before_writer(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+                "primary_tier_receipts": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "non_orthogonal_tensions": 0,
+                "outcome_classes": 2,
+            },
+        })
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    result = cycle._receipt_preflight("compact_risk", tmp_path / "run", repair=False)
+
+    assert result["passed"] is False
+    assert result["predicted_review_type"] == "thin_corpus_brief"
+    assert result["reasons"] == ["predicted_public_surface=thin_corpus_brief"]
+
+
+def test_receipt_preflight_preserves_declared_compact_surface_with_strong_counts(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "declared_compact")
+    (tmp_path / "topic_packs" / "declared_compact.toml").write_text(
+        'name = "x"\nreview_type = "evidence_map"\n',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {
+            "counts": {
+                "admitted_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+                "direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+                "primary_tier_receipts": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+                "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+                "outcome_classes": 2,
+            },
+        })
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    result = cycle._receipt_preflight(
+        "declared_compact",
+        tmp_path / "run",
+        repair=False,
+    )
+
+    assert result["passed"] is False
+    assert result["predicted_review_type"] == "evidence_map"
+    assert result["reasons"] == ["predicted_public_surface=evidence_map"]
+
+
+def test_existing_revision_preflight_preserves_declared_compact_surface(
+    tmp_path: Path,
+) -> None:
+    run = _prior_run(
+        tmp_path,
+        "compact_revision",
+        receipts=cycle.PREFLIGHT_MIN_RECEIPTS,
+        tensions=cycle.PREFLIGHT_MIN_TENSIONS,
+        primary=cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+        direct=cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+    )
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["review_type"] = "evidence_map"
+    _write_json(run / "manifest.json", manifest)
+
+    result = cycle._existing_receipt_preflight(run)
+
+    assert result is not None
+    assert result["passed"] is False
+    assert result["predicted_review_type"] == "evidence_map"
+    assert result["reasons"] == ["predicted_public_surface=evidence_map"]
+
+
 def test_receipt_preflight_requires_absolute_direct_source_floor(
     tmp_path: Path, monkeypatch,
 ) -> None:
@@ -4439,6 +4669,8 @@ def test_receipt_preflight_requires_absolute_direct_source_floor(
                 "admitted_receipts": 51,
                 "direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS - 1,
                 "primary_tier_receipts": 19,
+                "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+                "outcome_classes": 2,
             },
         })
         return 0
@@ -4460,9 +4692,13 @@ def test_receipt_preflight_requires_absolute_direct_source_floor(
 def test_receipt_preflight_does_not_repair_direct_share_dilution(
     tmp_path: Path, monkeypatch,
 ) -> None:
-    probes = [
-        {"admitted_receipts": 51, "primary_tier_receipts": 12, "direct_receipts": 8},
-    ]
+    probes = [{
+        "admitted_receipts": 51,
+        "primary_tier_receipts": 12,
+        "direct_receipts": 8,
+        "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+        "outcome_classes": 2,
+    }]
     repairs: list[dict[str, Any]] = []
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: 129)
 
@@ -5693,7 +5929,9 @@ def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert handled["handled"][0]["status"] == "revision_coverage_unmet"
 
 
-def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:
+def test_full_research_payload_does_not_claim_obsolete_brief_sections(
+    tmp_path: Path,
+) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()
     (out_dir / "full_paper.md").write_text(
@@ -5706,7 +5944,7 @@ def test_payload_section_revision_ask_can_be_satisfied_by_payload(tmp_path: Path
     _write_json(out_dir / "manifest.json", {"topic": "topic", "receipts": []})
     _write_json(out_dir / "citation_registry.json", {})
 
-    assert cycle._payload_revision_ask_satisfied(
+    assert not cycle._payload_revision_ask_satisfied(
         out_dir,
         "Remove duplication between Evidence Landscape and Key Findings",
     )
@@ -6596,16 +6834,21 @@ def test_unavailable_retraction_check_blocks_submit_without_terminalizing(
     _seed_delayed_revise(tmp_path, monkeypatch)
     monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda _out_dir: None)
     topic_selections: list[str] = []
-    monkeypatch.setattr(
-        cycle, "select_topic", lambda *_a, **_k: topic_selections.append("aspirin_geroprotection") or "aspirin_geroprotection",
-    )
+
+    def select_topic(*_args: Any, **_kwargs: Any) -> str:
+        topic_selections.append("aspirin_geroprotection")
+        return "aspirin_geroprotection"
+
+    monkeypatch.setattr(cycle, "select_topic", select_topic)
     submitted: list[int] = []
+
+    def submit_cycle(**_kwargs: Any) -> dict[str, Any]:
+        submitted.append(1)
+        return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
 
     ledger, _ = _run_coverage_cycle(
         tmp_path, monkeypatch, unmet=[],
-        submit_cycle=lambda **_k: submitted.append(1) or {
-            "status": "submitted_to_researka", "submitted": 1, "published": 0,
-        },
+        submit_cycle=submit_cycle,
     )
 
     assert submitted == []
@@ -8301,9 +8544,9 @@ def test_preflight_recent_failure_does_not_block_publication_track(tmp_path: Pat
     assert preflight["reasons"] == []
 
 
-def test_preflight_recent_failure_still_blocks_exploration_track(tmp_path: Path, monkeypatch) -> None:
+def test_preflight_recent_failure_does_not_block_full_research_track(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "acarbose")
-    _prior_run(tmp_path, "acarbose", receipts=40, tensions=10, primary=2)
+    _prior_run(tmp_path, "acarbose", receipts=40, tensions=10, primary=3)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     _write_json(ledger_dir / "2026-05-24.json", {
         "started_at": _recent_start(),
@@ -8313,11 +8556,10 @@ def test_preflight_recent_failure_still_blocks_exploration_track(tmp_path: Path,
 
     preflight = cycle._preflight("acarbose", tmp_path / "runs", ledger_dir)
 
-    assert preflight["passed"] is False
-    assert preflight["publication_track"] is False
+    assert preflight["passed"] is True
+    assert preflight["publication_track"] is True
     assert preflight["recent_failed_attempts"] == 1
-    assert "target_journal_not_declared" in preflight["reasons"]
-    assert any("recent_failed_attempts=1" in reason for reason in preflight["reasons"])
+    assert preflight["reasons"] == []
 
 
 def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatch) -> None:
@@ -9013,7 +9255,7 @@ def test_surface_repeat_topics_ignores_current_finalizer_repairable_topic(
     assert seen_review_types == ["thin_corpus_brief"]
 
 
-def test_writer_gate_repeat_policy_downshifts_then_skips_after_brief_failure(tmp_path: Path) -> None:
+def test_writer_gate_repeat_policy_skips_without_compact_downshift(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     row = {"topic": "gdf11", "gate_status": "abstract_overclaim", "submitted": 0}
@@ -9022,15 +9264,8 @@ def test_writer_gate_repeat_policy_downshifts_then_skips_after_brief_failure(tmp
 
     policy = cycle._writer_gate_repeat_policy(ledger_dir)
 
-    assert policy["gdf11"]["action"] == "thin_corpus_brief"
+    assert policy["gdf11"]["action"] == "skip_topic"
     assert policy["gdf11"]["gate"] == "abstract_overclaim"
-
-    cycle._record_blockers(ledger_dir, "2026-05-31", [{
-        **row,
-        "review_type_override": "thin_corpus_brief",
-    }])
-
-    assert cycle._writer_gate_repeat_policy(ledger_dir)["gdf11"]["action"] == "skip_topic"
 
 
 def test_record_blockers_accumulates_repeat_log_across_runs(tmp_path: Path) -> None:
@@ -9096,7 +9331,9 @@ def test_recent_preflight_blocked_topics_include_source_bundle_failures(
     assert cycle._recent_preflight_blocked_topics(ledger_dir) == {topic}
 
 
-def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_skips_topic_after_same_writer_gate_twice_without_writing_brief(
+    tmp_path: Path, monkeypatch,
+) -> None:
     _topic(tmp_path, "gdf11", target_journal=True)
     _prior_run(tmp_path, "gdf11", receipts=40, tensions=8, primary=3)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
@@ -9138,9 +9375,8 @@ def test_cycle_downshifts_topic_after_same_writer_gate_twice(tmp_path: Path, mon
         max_attempts=1,
     )
 
-    assert overrides == ["thin_corpus_brief"]
-    assert ledger["review_type_override"]["reason"] == "writer_gate_repeat:abstract_overclaim"
-    assert ledger["attempts"][0]["review_type_override"] == "thin_corpus_brief"
+    assert overrides == []
+    assert ledger["writer_gate_skip_topics"] == ["gdf11"]
 
 
 def test_cycle_skips_topic_after_brief_fails_same_writer_gate(tmp_path: Path, monkeypatch) -> None:
@@ -9625,6 +9861,8 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
             "counts": {
                 "admitted_receipts": n_receipts,
                 "primary_tier_receipts": n_receipts,
+                "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+                "outcome_classes": 2,
             },
         })
         return 0
@@ -9675,6 +9913,8 @@ def test_receipt_preflight_repair_keeps_best_probe_after_regression(tmp_path: Pa
             "counts": {
                 "admitted_receipts": n_receipts,
                 "primary_tier_receipts": n_receipts,
+                "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+                "outcome_classes": 2,
             },
         })
         return rc
@@ -9732,6 +9972,8 @@ def test_fresh_cycle_repairs_sparse_receipt_preflight_before_submit(tmp_path: Pa
                 "counts": {
                     "admitted_receipts": n_receipts,
                     "primary_tier_receipts": n_receipts,
+                    "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+                    "outcome_classes": 2,
                 },
             })
         else:
