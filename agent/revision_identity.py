@@ -11,6 +11,74 @@ def _normalise(text: str) -> str:
     return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
 
 
+_ENDPOINT_ASK_RE = re.compile(
+    r"\brefers to (.+?) or (.+?)(?:,\s*and\s+(?:align|reconcile)|[.;]|$)")
+_ENDPOINT_PROOF_RE = re.compile(
+    r"\brefers(?: specifically)? to (.+?)(?:,\s*)?(?:not to|rather than) (.+?)(?:[.;]|$)")
+_ENDPOINT_STOPWORDS = {"the", "and", "coding", "refers", "finding", "contrast"}
+
+
+def _endpoint_pair(text: str, pattern: re.Pattern[str]) -> tuple[set[str], set[str]] | None:
+    match = pattern.search(_normalise(text))
+    return tuple(
+        set(re.findall(r"\b[a-z0-9]{3,}\b", value)) - _ENDPOINT_STOPWORDS
+        for value in match.groups()
+    ) if match else None  # type: ignore[return-value]
+
+
+def direction_attribution_requested(ask: str) -> bool:
+    return _endpoint_pair(ask, _ENDPOINT_ASK_RE) is not None
+
+
+def direction_attribution_is_stated(
+    scopes: list[str], label: str, direction: str, ask: str,
+) -> bool:
+    requested = _endpoint_pair(ask, _ENDPOINT_ASK_RE)
+    if not requested or not all(len(endpoint) >= 2 for endpoint in requested):
+        return False
+    mappings: set[int] = set()
+    for scope in scopes:
+        for sentence in re.split(r"(?<=[.!?])\s+", _normalise(scope)):
+            stated = _endpoint_pair(sentence, _ENDPOINT_PROOF_RE)
+            if not stated or not all(token in sentence for token in (_normalise(label), direction, "coding")):
+                continue
+            if any(token in sentence for token in ("whether", "unresolved", "unclear", "uncertain", "may refer", "might refer", "could refer")):
+                return False
+            matches = lambda expected, actual: len(expected & actual) >= 2  # noqa: E731
+            if all(matches(expected, actual) for expected, actual in zip(requested, stated, strict=True)):
+                mappings.add(0)
+            if all(matches(expected, actual) for expected, actual in zip(requested, reversed(stated), strict=True)):
+                mappings.add(1)
+    return len(mappings) == 1
+
+
+def review_role_contradiction(sentence: str, label: str, context: str = "") -> bool:
+    lower, label = _normalise(sentence), _normalise(label)
+    pronoun = re.match(r"\s*(?:it|(?:this|the) (?:study|source|paper|review))\b", lower)
+    if label not in lower and (label not in _normalise(context) or not pronoun):
+        return False
+    clauses = re.split(r"\b(?:but|while|whereas)\b|;", lower)
+    identity = re.compile(
+        rf"(?:{re.escape(label)}\s*:\s*|\b"
+        r"(?:is|was|are|were|remains?|constitutes?|represents?|functions? as)\s+)"
+        r"(?P<role>[^.]{0,80}?\b(?:rct|trial)\b)")
+    containment = re.compile(
+        r"\b(?:review|meta analysis|synthesis)\b[^.]{0,50}\b"
+        r"(?:of|including|containing|comprising|summarizing|pooling)\b")
+    active = label in lower or bool(pronoun)
+    for clause in clauses:
+        if label in clause:
+            active = True
+        elif re.search(r"\b[a-z][a-z0-9']*(?:\s+et\s+al)?\s+(?:19|20)\d{2}[a-z]?\b", clause):
+            active = False
+        if not active:
+            continue
+        match = identity.search(clause)
+        if match and "not" not in match["role"].split() and not containment.search(match["role"]):
+            return True
+    return False
+
+
 def asks_pmid_accuracy(text: str) -> bool:
     lower = _normalise(text)
     return "pmid" in lower and any(token in lower for token in ("accuracy", "accurate", "cannot be verified"))

@@ -9,6 +9,11 @@ from typing import Any
 
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
+from agent.revision_identity import (
+    direction_attribution_is_stated,
+    direction_attribution_requested,
+    review_role_contradiction,
+)
 
 
 _EFFECT_STAT_RE = re.compile(
@@ -281,12 +286,9 @@ def _asks_evidence_honesty(text: str) -> bool:
 
 
 def _asks_named_direction_reconciliation(text: str) -> bool:
-    return (
-        _has_named_source(text)
-        and "direction" in text
-        and "consistent wording" in text
-        and any(token in text for token in ("positive", "negative", "null", "mixed", "unclear"))
-    )
+    request = ("direction" in text and "consistent wording" in text) or all(
+        token in text for token in ("coding", "align", "refers to"))
+    return _has_named_source(text) and request and any(token in text for token in ("positive", "negative", "null", "mixed", "unclear"))
 
 
 def _asks_named_statistic_reconciliation(text: str) -> bool:
@@ -806,37 +808,22 @@ def _named_revision_is_stated(
     if not named or not headings or any(note is None for _, note in notes):
         return False
     note_headings = ["Results"] if kind == "direction" and "Results" in headings else headings[:1]
-    return (
-        (kind != "statistic" or _statistics_are_source_bound(paper_md, rows))
-        and (kind != "direction" or all(
-            _direction_mentions_are_consistent(paper_md, row, headings) for row in named
-        ))
-        and all(
-            _section_has_note(paper_md, heading, note[1])
-            for _, note in notes if note is not None for heading in note_headings
-        )
-    )
+    endpoint_attribution = kind == "direction" and direction_attribution_requested(ask)
+    statistics_ok = kind != "statistic" or _statistics_are_source_bound(paper_md, rows)
+    directions_ok = kind != "direction" or all(_direction_mentions_are_consistent(paper_md, row, headings) for row in named)
+    proofs_ok = all((direction_attribution_is_stated(
+        _prose_paragraphs(paper_md), _label(row), resolved_effect_direction(row), ask) if endpoint_attribution else
+                     _section_has_note(paper_md, heading, note[1]))
+                    for row, note in notes if note is not None for heading in note_headings)
+    return statistics_ok and directions_ok and proofs_ok
 
 
 def _review_level(row: dict[str, Any]) -> bool:
     return any(str(row.get(key) or "").strip().lower() == "review" for key in ("evidence_type", "directness"))
 
 
-def _role_contradiction(sentence: str, row: dict[str, Any]) -> bool:
-    lower = sentence.lower()
-    if _label(row).lower() not in lower:
-        return False
-    trials = re.finditer(r"\b(?:clinical\s+)?(?:rct|randomi[sz]ed[^.]{0,35}trial|trial)\b", lower)
-    for trial in trials:
-        prefix = lower[max(0, trial.start() - 90):trial.start()]
-        bounded = re.search(
-            r"(?:(?:is|was|are|were)\s+not\s+(?:counted\s+as\s+)?(?:a\s+)?(?:direct\s+|clinical\s+)*"
-            r"|(?:does\s+not|cannot)\s+(?:make|constitute|represent|support)[^.]{0,35})$",
-            prefix,
-        )
-        if bounded is None:
-            return True
-    return False
+def _role_scope(heading: str, paragraph: str) -> bool:
+    return not heading.lower().startswith(("references", "bibliography")) and paragraph.strip() in _prose_paragraphs(paragraph)
 
 
 def _reconcile_evidence_roles(
@@ -847,11 +834,16 @@ def _reconcile_evidence_roles(
         return paper_md, 0
     changed = 0
     parts = re.split(r"(\n\s*\n)", paper_md)
+    heading = ""
     for index in range(0, len(parts), 2):
-        if parts[index].strip() not in _prose_paragraphs(parts[index]):
+        if match := re.match(r"^#{2,3}\s+(.+?)\s*$", parts[index].strip()):
+            heading = match.group(1)
+            continue
+        if not _role_scope(heading, parts[index]):
             continue
         sentences = re.split(r"(?<=[.!?])\s+", parts[index])
-        kept = [sentence for sentence in sentences if not any(_role_contradiction(sentence, row) for row in named)]
+        kept = [sentence for pos, sentence in enumerate(sentences) if not any(
+            review_role_contradiction(sentence, _label(row), sentences[pos - 1] if pos else "") for row in named)]
         if len(kept) != len(sentences):
             parts[index], changed = " ".join(kept), changed + 1
     patched = "".join(parts)
@@ -875,7 +867,11 @@ def _evidence_roles_are_reconciled(
     return bool(named) and all(
         _label(row).lower() in scope and "evidence-type reconciliation:" in scope
         and "directness=review" in scope
-        and not any(_role_contradiction(sentence, row) for sentence in _prose_paragraphs(paper_md))
+        and not any(review_role_contradiction(sentence, _label(row), sentences[pos - 1] if pos else "")
+            for heading, paragraph in _paragraphs_with_headings(paper_md)
+            if _role_scope(heading, paragraph)
+            for sentences in (re.split(r"(?<=[.!?])\s+", paragraph),)
+            for pos, sentence in enumerate(sentences))
         for row in named
     )
 

@@ -117,6 +117,318 @@ def test_named_source_revisions_are_repaired_from_receipt_truth() -> None:
     assert repair_revision_quality(fixed, rows, feedback) == (fixed, [])
 
 
+def test_named_direction_repair_accepts_coding_alignment_wording() -> None:
+    ask = (
+        "Reconcile the Opstad 2022 framing: explicitly state whether the 'positive' "
+        "coding refers to the within-trial LTL change contrast (p = 0.02) or the "
+        "secondary cardiovascular mortality finding, and align the Results, "
+        "Cross-Domain Synthesis, and Evidence Snapshot rows accordingly."
+    )
+    rows = [{
+        "citation_token": "Opstad 2022", "effect_direction": "positive",
+        "directness": "direct",
+    }]
+    paper = (
+        "## Results\n\nOpstad 2022 was coded as positive.\n\n"
+        "## Cross-Domain Synthesis\n\nOpstad 2022 direction=positive.\n\n"
+        "## Evidence Snapshot\n\nOpstad 2022 direction=positive.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["named_direction_reconciliation"]
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is False
+
+
+def test_named_direction_proof_accepts_explicit_endpoint_attribution() -> None:
+    ask = (
+        "Reconcile the Opstad 2022 framing: explicitly state whether the 'positive' "
+        "coding refers to the within-trial LTL change contrast (p = 0.02) or the "
+        "secondary cardiovascular mortality finding, and align the Results, "
+        "Cross-Domain Synthesis, and Evidence Snapshot rows accordingly."
+    )
+    rows = [{
+        "citation_token": "Opstad 2022", "effect_direction": "positive",
+        "directness": "direct",
+    }]
+    paper = (
+        "## Results\n\nThe 'positive' direction coding applied to Opstad 2022 refers "
+        "specifically to the within-trial LTL change contrast at P = 0.02, not to "
+        "the secondary cardiovascular mortality finding, which is a separate endpoint.\n\n"
+        "## Cross-Domain Synthesis\n\nOpstad 2022 direction=positive.\n\n"
+        "## Evidence Snapshot\n\nOpstad 2022 direction=positive.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_named_direction_proof_rejects_unrelated_attribution() -> None:
+    ask = (
+        "Reconcile the Opstad 2022 framing: explicitly state whether the 'positive' "
+        "coding refers to the within-trial LTL change contrast (p = 0.02) or the "
+        "secondary cardiovascular mortality finding, and align the Results, "
+        "Cross-Domain Synthesis, and Evidence Snapshot rows accordingly."
+    )
+    rows = [{"citation_token": "Opstad 2022", "effect_direction": "positive"}]
+    paper = (
+        "## Results\n\nOpstad 2022 positive coding refers to source-level direction, "
+        "not to table formatting.\n\n## Cross-Domain Synthesis\n\n"
+        "Opstad 2022 direction=positive.\n\n## Evidence Snapshot\n\n"
+        "Opstad 2022 direction=positive.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+
+
+def test_named_direction_proof_accepts_rather_than_wording() -> None:
+    ask = (
+        "Reconcile the Opstad 2022 framing: explicitly state whether the 'positive' "
+        "coding refers to the within-trial LTL change contrast or the secondary "
+        "cardiovascular mortality finding, and align the Results accordingly."
+    )
+    rows = [{"citation_token": "Opstad 2022", "effect_direction": "positive"}]
+    paper = (
+        "## Results\n\nOpstad 2022 positive coding refers to the within-trial LTL "
+        "change contrast rather than the secondary cardiovascular mortality finding.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_named_direction_proof_rejects_uncertain_or_opposing_attribution() -> None:
+    ask = (
+        "Reconcile the Opstad 2022 framing: explicitly state whether the 'positive' "
+        "coding refers to the within-trial LTL change contrast or the secondary "
+        "cardiovascular mortality finding, and align the Results accordingly."
+    )
+    rows = [{"citation_token": "Opstad 2022", "effect_direction": "positive"}]
+    uncertain = (
+        "## Results\n\nWhether Opstad 2022 positive coding refers to the within-trial "
+        "LTL change contrast rather than the secondary cardiovascular mortality "
+        "finding remains unresolved.\n"
+    )
+    opposing = (
+        "## Results\n\nOpstad 2022 positive coding refers to the within-trial LTL "
+        "change contrast rather than the secondary cardiovascular mortality finding.\n\n"
+        "## Discussion\n\nOpstad 2022 positive coding refers to the secondary "
+        "cardiovascular mortality finding rather than the within-trial LTL change contrast.\n"
+    )
+
+    assert revision_quality_proof_is_stated(uncertain, ask, rows) is False
+    assert revision_quality_proof_is_stated(opposing, ask, rows) is False
+
+
+def test_review_role_proof_ignores_other_reference_titles() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{
+        "citation_token": "Su 2025", "directness": "review",
+        "source_title": "A systematic review and meta-analysis",
+    }]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT.\n\n## References\n\n"
+        "- **Su 2025.** A systematic review and meta-analysis.\n"
+        "- **Opstad 2022.** Sub-study of a randomized clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_review_role_proof_rejects_following_pronoun_contradiction() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT. It is a primary randomized clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+
+
+def test_review_role_proof_rejects_results_bullet_contradiction() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT.\n\n- Su 2025 is a primary randomized clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+
+
+def test_review_role_proof_keeps_pronoun_with_immediate_other_source() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT. Opstad 2022 was evaluated separately. This study is a "
+        "randomized clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_review_role_proof_rejects_the_study_contradiction() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review). The study is a primary randomized "
+        "clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+
+
+def test_review_role_proof_accepts_review_containing_trial() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT. It includes a randomized clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_review_role_proof_rejects_containment_then_trial_assertion() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review). Su 2025 is a review of multiple "
+        "studies but remains a definitive clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+
+
+def test_review_role_proof_does_not_adopt_another_named_source() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT. Su 2025 remains review-level, but Opstad 2022 remains a "
+        "definitive clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_review_role_proof_splits_while_contrast_sources() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT. Su 2025 remains review-level while Opstad 2022 remains a "
+        "definitive clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_review_role_proof_handles_terse_hyphenated_and_negated_roles() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    base = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review). "
+    )
+
+    assert revision_quality_proof_is_stated(
+        base + "Su 2025: primary randomized clinical trial.\n", ask, rows,
+    ) is False
+    assert revision_quality_proof_is_stated(
+        base + "Su 2025 is a meta-analysis containing a randomized clinical trial.\n", ask, rows,
+    ) is True
+    assert revision_quality_proof_is_stated(
+        base + "Su 2025 is definitively not a clinical trial.\n", ask, rows,
+    ) is True
+
+
+def test_review_role_proof_ignores_same_source_reference_title() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    paper = (
+        "## Results\n\nEvidence-type reconciliation: Su 2025 is retained as "
+        "review-level evidence (directness=review) and is not counted as a direct "
+        "clinical RCT.\n\n## References\n\n"
+        "Su 2025. Systematic review of a randomized clinical trial.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is True
+
+
+def test_review_role_repair_changes_results_but_preserves_references() -> None:
+    ask = (
+        "Clarify Su 2025's role: directness=review and evidence_type=review are correct; "
+        "ensure the Results prose does not conflate this meta-analysis of randomized "
+        "trials with a primary clinical RCT."
+    )
+    rows = [{"citation_token": "Su 2025", "directness": "review"}]
+    reference = "Su 2025. Systematic review of a randomized clinical trial."
+    paper = f"## Results\n\n- Su 2025 is a primary randomized clinical trial.\n\n## References\n\n{reference}\n"
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["evidence_role_reconciliation"]
+    assert "- Su 2025 is a primary randomized clinical trial." not in fixed
+    assert reference in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
+
+
 def test_gate_refresh_preserves_prior_verdict_for_unknown_asks(tmp_path: Path) -> None:
     known = (
         "Justify inclusion of Wick 2025 under the paper topic or flag it as a structural "
