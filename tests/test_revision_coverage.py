@@ -9,6 +9,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import revision_coverage  # type: ignore[import-not-found]  # noqa: E402
+from agent import revision_claim_trace  # noqa: E402
 from agent.revision_contract import ask_fingerprint, gate_report  # noqa: E402
 from agent.sources.pubmed import pmid_rows_fingerprint  # noqa: E402
 from agent.revision_identity import (  # noqa: E402
@@ -789,6 +790,21 @@ def test_major_claim_trace_proof_rejects_fragments_of_one_claim() -> None:
     )
 
     assert revision_quality_proof_is_stated(forged, ask, rows) is False
+
+
+def test_major_claim_trace_span_drops_only_unmatched_parentheses() -> None:
+    row = {
+        "thesis_text": (
+            "Source excerpts: Balanced (n=20). "
+            + "x" * 290
+            + " (truncated detail"
+        ),
+    }
+
+    span = revision_claim_trace._evidence_span(row)
+
+    assert "(n=20)" in span
+    assert span.count("(") == span.count(")")
 
 
 def test_fragment_repair_preserves_valid_colon_lead_in() -> None:

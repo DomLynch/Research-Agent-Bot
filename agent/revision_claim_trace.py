@@ -171,7 +171,23 @@ def _evidence_span(row: dict[str, Any]) -> str:
     if "source excerpts:" in text.lower():
         text = re.split(r"source excerpts:\s*", text, maxsplit=1, flags=re.I)[1]
     text = text.split(" | ", 1)[0].replace("|", " ").strip()
-    return text if len(text) <= 320 else text[:317].rstrip() + "..."
+    text = text if len(text) <= 320 else text[:317].rstrip() + "..."
+    return _drop_unmatched_parentheses(text)
+
+
+def _drop_unmatched_parentheses(text: str) -> str:
+    open_positions: list[int] = []
+    remove: set[int] = set()
+    for index, character in enumerate(text):
+        if character == "(":
+            open_positions.append(index)
+        elif character == ")":
+            if open_positions:
+                open_positions.pop()
+            else:
+                remove.add(index)
+    remove.update(open_positions)
+    return "".join(character for index, character in enumerate(text) if index not in remove)
 
 
 def _stable_locator(row: dict[str, Any]) -> str:
