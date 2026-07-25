@@ -5595,6 +5595,51 @@ def test_revision_coverage_missing_paper_fails_closed(tmp_path: Path) -> None:
     assert _REAL_UNMET_REVISION_ASKS(tmp_path, feedback) == cycle._revision_asks(feedback)
 
 
+def test_revise_preflight_failure_is_terminal_for_active_request(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(cycle, "_preflight", lambda *_a, **_k: {
+        "passed": False,
+        "has_manifest": True,
+        "reasons": ["public_surface_not_full_research"],
+    })
+    monkeypatch.setattr(
+        cycle,
+        "_run_synthesis",
+        lambda *_a, **_k: (_ for _ in ()).throw(
+            AssertionError("terminal revise preflight must not synthesize")
+        ),
+    )
+    request = _aspirin_revise_loader()[0][0]
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-05-28",
+        run_synthesis=True,
+        submit=True,
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_k: {
+            "status": "submitted_to_researka",
+            "submitted": 1,
+            "published": 0,
+        },
+        mode="revise",
+    )
+
+    assert ledger["status"] == "revise_terminal_preflight_insufficient_corpus"
+    assert ledger["attempts"][0]["gate_status"] == "terminal_preflight_insufficient_corpus"
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([request], None),
+    )
+    assert error is None
+    assert pending is None
+
+
 def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     ledger, _ = _run_coverage_cycle(

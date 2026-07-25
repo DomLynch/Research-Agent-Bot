@@ -176,6 +176,7 @@ _TERMINAL_REVISION_STATUSES = frozenset({
 _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_domain_scope_mismatch",
     "terminal_latest_run_missing_manifest",
+    "terminal_preflight_insufficient_corpus",
 })
 _RETRYABLE_REVISION_STATUSES = frozenset({
     "revision_coverage_unmet",
@@ -4915,6 +4916,8 @@ def run_cycle(
                 gate_status = (
                     "terminal_latest_run_missing_manifest"
                     if terminal_missing_manifest
+                    else "terminal_preflight_insufficient_corpus"
+                    if revision_source is not None
                     else "preflight_insufficient_corpus"
                 )
                 attempt = {
@@ -4931,10 +4934,12 @@ def run_cycle(
                 ledger["status"] = (
                     "revise_terminal_latest_run_missing_manifest"
                     if terminal_missing_manifest
+                    else "revise_terminal_preflight_insufficient_corpus"
+                    if revision_source is not None
                     else "preflight_skipped_no_submission"
                 )
                 _record_attempt_blocker(ledger_dir, date, ledger, attempt)
-                if terminal_missing_manifest and revision_source is not None:
+                if revision_source is not None:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                     revise_window_excluded.add(_revision_key(revision_source))
                     remote_revision = None
