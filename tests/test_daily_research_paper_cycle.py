@@ -5654,6 +5654,39 @@ def test_coverage_all_asks_met_allows_submit(tmp_path: Path, monkeypatch) -> Non
     assert len(gate["ask_fingerprint"]) == 64
 
 
+def test_revise_submission_records_new_submission_id(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    response = {
+        "status": "submitted_to_researka",
+        "submitted": 1,
+        "published": 0,
+        "submission": {"response": {"id": "new-submission-id"}},
+    }
+
+    ledger, _ = _run_coverage_cycle(
+        tmp_path,
+        monkeypatch,
+        unmet=[],
+        submit_cycle=lambda **_k: response,
+        max_revise_attempts=1,
+        mode="revise",
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    handled = cycle._read_json(ledger_dir / cycle.HANDLED_REVISIONS)["handled"]
+    assert handled[-1]["submissionId"] == "new-submission-id"
+    active = [{
+        "title": handled[-1]["title"],
+        "submissionId": "new-submission-id",
+        "reviewedAt": dt.datetime.now(dt.UTC).isoformat(),
+    }]
+    assert cycle._revision_key(active[0]) not in cycle._handled_revision_ids(
+        ledger_dir,
+        active,
+    )
+
+
 def test_revise_reuses_existing_source_receipt_floor(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     monkeypatch.setattr(

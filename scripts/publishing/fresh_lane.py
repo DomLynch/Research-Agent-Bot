@@ -1811,6 +1811,18 @@ def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str
     _write_json(path, {"handled": _compact_handled_revision_rows(rows)})
 
 
+def _revision_submission_row(
+    row: dict[str, Any],
+    submission_markers: Collection[str],
+) -> dict[str, Any]:
+    submission_ids = sorted(
+        marker.removeprefix("submission:")
+        for marker in submission_markers
+        if marker.startswith("submission:")
+    )
+    return {**row, "submissionId": submission_ids[0]} if submission_ids else row
+
+
 def _pending_remote_revision(
     runs_root: Path,
     ledger_dir: Path,
@@ -5430,7 +5442,16 @@ def run_cycle(
                     # still produces a fresh paper. A backlog of revises otherwise
                     # monopolises the one-submit-per-cycle budget and starves new
                     # output (the May-30 throughput regression). Universal.
-                    _mark_revision_handled(ledger_dir, revision_source, status="submitted_to_researka")
+                    markers = (
+                        last_attempt.get("submission_markers", [])
+                        if last_attempt
+                        else []
+                    )
+                    _mark_revision_handled(
+                        ledger_dir,
+                        _revision_submission_row(revision_source, markers),
+                        status="submitted_to_researka",
+                    )
                     remote_revision = None
                     attempted.add(selected)
                     continue
