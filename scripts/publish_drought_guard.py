@@ -198,9 +198,6 @@ def build_triage(runs_root: Path) -> dict[str, Any]:
         }
         for row in raw_ledgers
     ]
-    submitted_not_public = [
-        row for row in ledgers if row.get("submitted") and not row.get("published")
-    ][:5]
     blockers: dict[str, int] = {}
     for row in ledgers:
         reason = str(row.get("reason") or row.get("status") or "unknown")
@@ -211,11 +208,61 @@ def build_triage(runs_root: Path) -> dict[str, Any]:
         buffer = json.loads(buffer_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         buffer = {}
+    submitted_path = runs_root / "_daily_research_paper_ledger" / "_submitted_fingerprints.json"
+    try:
+        submitted_rows = json.loads(submitted_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        submitted_rows = []
+    recent_dates = {
+        name[:10]
+        for row in raw_ledgers
+        if len(name := Path(str(row.get("ledger") or "")).name) >= 10
+    }
+    durable_submissions = [
+        {
+            **row,
+            "status": row.get("status") or "submitted_to_researka",
+            "submitted": 1,
+            "published": int(bool(
+                row.get("published")
+                or row.get("public_url")
+                or (
+                    isinstance(row.get("publication"), dict)
+                    and (
+                        row["publication"].get("url")
+                        or row["publication"].get("doi")
+                    )
+                )
+            )),
+            "remote_revision_requested": (
+                row.get("remote_revision_requested")
+                or str(row.get("decision") or "").lower() == "revise"
+            ),
+        }
+        for row in submitted_rows
+        if (
+            isinstance(row, dict)
+            and str(row.get("date") or "") in recent_dates
+            and (
+                row.get("status") == "submitted_to_researka"
+                or bool(row.get("submission_id"))
+            )
+        )
+    ] if isinstance(submitted_rows, list) else []
+    submitted_not_public = [
+        row for row in reversed(durable_submissions) if not row["published"]
+    ][:5] or [
+        row for row in ledgers if row.get("submitted") and not row.get("published")
+    ][:5]
     funnel = conversion_funnel([
         *raw_ledgers,
         {
             **(buffer if isinstance(buffer, dict) else {}),
             "ledger": str(buffer_path),
+        },
+        {
+            "ledger": str(submitted_path),
+            "submissions": durable_submissions,
         },
     ])
     return {

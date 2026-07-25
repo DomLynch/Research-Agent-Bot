@@ -6011,6 +6011,49 @@ def test_pmid_revision_retries_a_transient_provider_failure(
     assert calls == 1
 
 
+def test_revision_surface_notes_repair_major_claim_trace_request(tmp_path: Path) -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "10/20 claims are exactly traceable (required 16)."
+    )
+    rows = [
+        {
+            "receipt_id": f"r{i}",
+            "citation_token": f"Study{i} 2025",
+            "source_title": f"Study {i}",
+            "source_doi": f"10.1000/study.{i}",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 20 - i,
+            "thesis_text": f"Source excerpts: Retained evidence span {i}.",
+        }
+        for i in range(1, 21)
+    ]
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": ask,
+        "required_revisions": [ask],
+    }))
+    paper = (
+        "## Results\n\n"
+        + "\n\n".join(
+            f"Study{i} 2025 reported bounded manuscript finding {i}."
+            for i in range(1, 21)
+        )
+        + "\n\n"
+        "## References\n\n- Study1 2025.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_revision_surface_notes(paper, tmp_path)
+
+    assert logs and "major_claim_trace" in logs[0].detail
+    assert fixed.count("**Manuscript claim ") == 16
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+    assert journal_finalizer._phase_d_revision_surface_notes(fixed, tmp_path) == (fixed, [])
+
+
 def test_multi_issue_reviewer_revision_repairs_and_verifies_all_requirements(tmp_path: Path) -> None:
     required = [
         "Reconcile the Findings Map table counts with the actual source bundle and ensure it lists all sources.",

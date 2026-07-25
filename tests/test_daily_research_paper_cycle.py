@@ -612,6 +612,45 @@ def test_select_topic_skips_remote_published_topic_marker_when_title_changed(tmp
     assert selected == "metformin"
 
 
+def test_select_topic_skips_remote_published_sibling_topic_markers(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    for topic in ("aerobic_exercise_effects", "acute_exercise_effects", "aspirin"):
+        _topic(tmp_path, topic, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["aerobic_exercise_effects", "acute_exercise_effects", "aspirin"],
+        ledger_dir,
+        remote_seen={
+            cycle.submit_bridge._topic_marker("aerobic_exercise_training_effects"),
+            cycle.submit_bridge._topic_marker("aspirin_use_effects"),
+        },
+    )
+
+    assert selected == "acute_exercise_effects"
+
+
+def test_select_topic_does_not_dedupe_distinct_same_entity_outcome(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    assert cycle._publication_topic_key("heart_rate_effects") != cycle._publication_topic_key(
+        "heart_effects"
+    )
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    _topic(tmp_path, "metformin_cancer_effects", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["metformin_cancer_effects"],
+        ledger_dir,
+        remote_seen={cycle.submit_bridge._topic_marker("metformin_effects")},
+    )
+
+    assert selected == "metformin_cancer_effects"
+
+
 def test_reconcile_publication_ledgers_updates_submitted_public_ledger(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     run = runs_root / "synthesis-mitochondrial_health-v06-TEST"
@@ -6878,6 +6917,9 @@ def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
         fetched.append(submission_id)
         payload: dict[str, Any] = {
             "decision": "revise" if submission_id == "sub-0" else "accept",
+            "status": "complete",
+            "review_id": f"review-{submission_id}",
+            "reviewedAt": "2026-07-25T08:36:00+04:00",
             "required_revisions": ["Repair the old topic evidence."],
         }
         if submission_id == "sub-0":
@@ -6896,6 +6938,154 @@ def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
     old = next(row for row in latest.values() if row["submissionId"] == "sub-0")
     assert old["decision"] == "revise"
     assert old["notes"] == ["source metadata verification unavailable (fail-closed)"]
+    persisted = json.loads(
+        (runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+        .read_text(encoding="utf-8")
+    )
+    old_record = next(row for row in persisted if row["submission_id"] == "sub-0")
+    assert old_record["decision"] == "revise"
+    assert old_record["decision_status"] == "complete"
+    assert old_record["review_id"] == "review-sub-0"
+    assert old_record["reviewed_at"] == "2026-07-25T08:36:00+04:00"
+    assert old_record["remote_revision_requested"] is True
+    assert old_record["required_revisions"] == ["Repair the old topic evidence."]
+
+
+def test_submission_decision_writeback_preserves_concurrent_append(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    submitted_path = runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    run = runs_root / "synthesis-topic-v06-TEST"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text("# Research Synthesis: Topic\n")
+    cycle.submit_bridge._append_record(submitted_path, {
+        "date": "2026-07-25",
+        "run": run.name,
+        "topic": "topic",
+        "submission_id": "sub-1",
+    })
+
+    def fetch(_submission_id: str) -> tuple[dict[str, Any], None]:
+        cycle.submit_bridge._append_record(submitted_path, {
+            "date": "2026-07-25",
+            "run": "synthesis-other-v06-TEST",
+            "topic": "other",
+            "submission_id": "sub-2",
+        })
+        return {"status": "complete", "decision": "accept"}, None
+
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fetch)
+    cycle._submitted_submission_decisions_by_title(runs_root)
+
+    persisted = json.loads(submitted_path.read_text(encoding="utf-8"))
+    assert [row["submission_id"] for row in persisted] == ["sub-1", "sub-2"]
+    assert persisted[0]["decision"] == "accept"
+
+
+def test_pending_decision_does_not_clear_durable_revision(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    submitted_path = runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    run = runs_root / "synthesis-topic-v06-TEST"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text("# Research Synthesis: Topic\n")
+    cycle.submit_bridge._append_record(submitted_path, {
+        "date": "2026-07-25",
+        "run": run.name,
+        "topic": "topic",
+        "submission_id": "sub-1",
+        "decision": "revise",
+        "required_revisions": ["Keep exact source traces."],
+        "remote_revision_requested": True,
+    })
+    monkeypatch.setattr(
+        cycle,
+        "_fetch_submission_decision",
+        lambda _submission_id: ({"status": "pending"}, None),
+    )
+
+    cycle._submitted_submission_decisions_by_title(runs_root)
+
+    persisted = json.loads(submitted_path.read_text(encoding="utf-8"))[0]
+    assert persisted["decision"] == "revise"
+    assert persisted["required_revisions"] == ["Keep exact source traces."]
+    assert persisted["remote_revision_requested"] is True
+
+
+def test_stale_revise_decision_does_not_overwrite_newer_accept(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    submitted_path = runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    run = runs_root / "synthesis-topic-v06-TEST"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text("# Research Synthesis: Topic\n")
+    cycle.submit_bridge._append_record(submitted_path, {
+        "date": "2026-07-25",
+        "run": run.name,
+        "topic": "topic",
+        "submission_id": "sub-1",
+        "decision": "accept",
+        "reviewed_at": "2026-07-25T12:00:00+04:00",
+        "remote_revision_requested": False,
+    })
+    monkeypatch.setattr(
+        cycle,
+        "_fetch_submission_decision",
+        lambda _submission_id: ({
+            "status": "complete",
+            "decision": "revise",
+            "reviewedAt": "2026-07-25T10:00:00+04:00",
+            "required_revisions": ["Stale request."],
+        }, None),
+    )
+
+    decisions, _ = cycle._submitted_submission_decisions_by_title(runs_root)
+
+    persisted = json.loads(submitted_path.read_text(encoding="utf-8"))[0]
+    assert persisted["decision"] == "accept"
+    assert persisted["remote_revision_requested"] is False
+    assert next(iter(decisions.values()))["decision"] == "accept"
+
+
+def test_stale_revise_does_not_overwrite_newer_revise_details(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    submitted_path = runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    run = runs_root / "synthesis-topic-v06-TEST"
+    run.mkdir(parents=True)
+    (run / "full_paper.md").write_text("# Research Synthesis: Topic\n")
+    cycle.submit_bridge._append_record(submitted_path, {
+        "date": "2026-07-25",
+        "run": run.name,
+        "topic": "topic",
+        "submission_id": "sub-1",
+        "decision": "revise",
+        "reviewed_at": "2026-07-25T12:00:00+04:00",
+        "required_revisions": ["New requirement."],
+        "review_summary": "New summary.",
+        "remote_revision_requested": True,
+    })
+    monkeypatch.setattr(
+        cycle,
+        "_fetch_submission_decision",
+        lambda _submission_id: ({
+            "status": "complete",
+            "decision": "revise",
+            "reviewedAt": "2026-07-25T10:00:00+04:00",
+            "required_revisions": ["Old requirement."],
+            "review_summary": "Old summary.",
+        }, None),
+    )
+
+    cycle._submitted_submission_decisions_by_title(runs_root)
+
+    persisted = json.loads(submitted_path.read_text(encoding="utf-8"))[0]
+    assert persisted["required_revisions"] == ["New requirement."]
+    assert persisted["review_summary"] == "New summary."
 
 
 def test_numeric_effect_mismatch_blocks_submit(tmp_path: Path, monkeypatch) -> None:

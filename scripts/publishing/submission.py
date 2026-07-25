@@ -32,7 +32,11 @@ from source_topic_specificity import (  # noqa: E402
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent import publication_evidence as _publication_evidence  # noqa: E402
-from agent.publishing.io import read_json as _read_json, write_json as _write_json  # noqa: E402
+from agent.publishing.io import (  # noqa: E402
+    read_json as _read_json,
+    update_json_list as _update_json_list,
+    write_json as _write_json,
+)
 from agent.publishing.policy import (  # noqa: E402
     CandidateDecision,
     PublicationSurface,
@@ -960,15 +964,7 @@ def _submitted_count_for_date(path: Path, date: str) -> int:
 
 
 def _append_record(path: Path, row: dict[str, Any]) -> None:
-    records = []
-    try:
-        records = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        pass
-    if not isinstance(records, list):
-        records = []
-    records.append(row)
-    _write_json(path, records)
+    _update_json_list(path, lambda records: records.append(row))
 
 
 def _feedback_text(payload: Any) -> str:
@@ -1892,11 +1888,14 @@ def run_cycle(
         submission_id = _submission_id_from_response(response)
         _append_record(submitted_path, {
             "date": date,
+            "submitted_at": dt.datetime.now(dt.UTC).isoformat(),
             "run": run.name,
             "topic": metadata.get("topic"),
             "fingerprint": fp,
             "paper_sha256": metadata.get("content_hash"),
             "submission_id": submission_id,
+            "status": "submitted_to_researka",
+            "http_status": int(result.get("status") or 0),
             **{key: metadata.get(key) for key in PUBLICATION_IDENTITY_KEYS if metadata.get(key)},
         })
         ledger.update({"status": "submitted_to_researka", "submitted": 1})

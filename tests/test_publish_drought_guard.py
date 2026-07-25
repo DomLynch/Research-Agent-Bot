@@ -204,6 +204,55 @@ def test_triage_includes_unique_candidate_conversion_funnel(tmp_path: Path) -> N
     assert "attempts" not in triage["recent_ledgers"][0]
 
 
+def test_triage_funnel_reads_durable_submission_after_daily_ledger_overwrite(
+    tmp_path: Path,
+) -> None:
+    submit_dir = tmp_path / "_daily_research_paper_ledger"
+    submit_dir.mkdir()
+    (submit_dir / "2026-07-25.json").write_text(json.dumps({
+        "status": "no_eligible_research_paper",
+        "submitted": 0,
+        "published": 0,
+        "day_summary": {"submitted": 1, "published": 0},
+    }), encoding="utf-8")
+    (submit_dir / "_submitted_fingerprints.json").write_text(json.dumps([{
+        "date": "2026-07-25",
+        "run": "synthesis-caloric_restriction_effects-v06-DAILY",
+        "topic": "caloric_restriction_effects",
+        "submission_id": "sub-caloric",
+        "status": "submitted_to_researka",
+        "decision": "revise",
+        "remote_revision_requested": True,
+    }]), encoding="utf-8")
+
+    funnel = guard.build_triage(tmp_path)["conversion_funnel"]
+
+    assert funnel["local_gate_pass"] == 1
+    assert funnel["submitted"] == 1
+    assert funnel["revise"] == 1
+
+
+def test_triage_funnel_ignores_duplicate_only_fingerprint(tmp_path: Path) -> None:
+    submit_dir = tmp_path / "_daily_research_paper_ledger"
+    submit_dir.mkdir()
+    (submit_dir / "2026-07-25.json").write_text(json.dumps({
+        "status": "submission_rejected_by_researka",
+        "submitted": 0,
+        "published": 0,
+    }), encoding="utf-8")
+    (submit_dir / "_submitted_fingerprints.json").write_text(json.dumps([{
+        "date": "2026-07-25",
+        "run": "synthesis-duplicate-v06-DAILY",
+        "topic": "duplicate",
+        "duplicate_submission_id": "old-submission",
+    }]), encoding="utf-8")
+
+    triage = guard.build_triage(tmp_path)
+
+    assert triage["conversion_funnel"]["submitted"] == 0
+    assert triage["submitted_not_public"] == []
+
+
 def test_recent_lane_ledgers_ignore_helper_state_files(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "_daily_research_paper_cycle_ledger"
     ledger_dir.mkdir()

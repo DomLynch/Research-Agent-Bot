@@ -9,6 +9,7 @@ from typing import Any
 
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
+from agent.revision_claim_trace import asks_major_claim_trace, major_claim_trace_is_stated, repair_major_claim_trace
 from agent.revision_identity import (
     direction_attribution_is_stated,
     direction_attribution_requested,
@@ -49,12 +50,11 @@ _LEGACY_SOURCE_SIGNIFICANCE_NOTE_RE = re.compile(
 )
 
 
-def revision_quality_ask_known(
-    ask: str, evidence_rows: Sequence[dict[str, Any]] | None = None,
-) -> bool:
+def revision_quality_ask_known(ask: str, evidence_rows: Sequence[dict[str, Any]] | None = None) -> bool:
     lower = _normalise(ask)
     return any(check(lower) for check in (
-        _asks_outcome_roster, _asks_exact_stat_trace, _asks_fragment_cleanup,
+        _asks_outcome_roster, _asks_exact_stat_trace, asks_major_claim_trace,
+        _asks_fragment_cleanup,
         _asks_representative_subset, _asks_evidence_role_reconciliation,
         _asks_evidence_honesty, _asks_named_direction_reconciliation,
         _asks_named_statistic_reconciliation,
@@ -77,6 +77,7 @@ def revision_quality_proof_is_stated(
     checks = (
         (_asks_outcome_roster, lambda: _findings_map_is_exact(paper_md, rows)),
         (_asks_exact_stat_trace, lambda: _statistics_are_source_bound(paper_md, rows)),
+        (asks_major_claim_trace, lambda: major_claim_trace_is_stated(paper_md, ask, rows)),
         (_asks_fragment_cleanup, lambda: _reviewed_fragments_are_absent(paper_md, ask)),
         (_asks_representative_subset, lambda: _subset_scope_is_stated(paper_md, rows)),
         (_asks_evidence_role_reconciliation, lambda: _evidence_roles_are_reconciled(paper_md, ask, rows)),
@@ -102,6 +103,10 @@ def repair_revision_quality(
         patched, changed = _repair_untraceable_statistics(patched, rows)
         if changed:
             details.append("exact_stat_trace")
+    if asks_major_claim_trace(lower):
+        patched, changed = repair_major_claim_trace(patched, feedback, rows)
+        if changed:
+            details.append("major_claim_trace")
     for predicate, kind, detail in (
         (_asks_named_direction_reconciliation, "direction", "named_direction_reconciliation"),
         (_asks_named_statistic_reconciliation, "statistic", "named_statistic_reconciliation"),

@@ -44,6 +44,7 @@ from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
     parse_time as _parse_time,
     read_json as _read_json,
+    update_json_list as _update_json_list,
     write_json as _write_json,
 )
 from agent.publishing.candidate_prepare import (  # noqa: E402
@@ -1189,12 +1190,14 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
     never ran: published topics were excluded only while their submission
     cooldown held, then became re-selectable, re-synthesized, and dedup'd at
     submit (a fresh non-revision re-run of a published title always returns
-    duplicate_remote_publication). Exact remote-published markers stop the cycle
-    burning synthesis on already-published topics without substring-blocking
-    adjacent sibling topics. Re-publishing an updated paper is the revise cycle's
-    job."""
+    duplicate_remote_publication). Remote-published topic markers also cover
+    variants that differ only by generic publication-shape suffixes, without
+    broad substring matching. Re-publishing an updated paper is the revise cycle's job."""
     out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
     topic_markers = {m.removeprefix("topic:") for m in markers if m.startswith("topic:")}
+    remote_topic_keys = {
+        key for marker in topic_markers if (key := _publication_topic_key(marker))
+    }
     title_markers = {m.removeprefix("title:") for m in markers if m.startswith("title:")}
     title_markers |= {
         marker.removeprefix("title:")
@@ -1202,7 +1205,11 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
         for marker in submit_bridge._title_markers(title)
     }
     for topic in topics:
-        if submit_bridge._normalized_key(topic) in topic_markers:
+        normalized_topic = submit_bridge._normalized_key(topic)
+        publication_key = _publication_topic_key(normalized_topic)
+        if normalized_topic in topic_markers or (
+            publication_key and publication_key in remote_topic_keys
+        ):
             out.add(topic)
             continue
         title_keys = {
@@ -1212,6 +1219,18 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
         if title_keys & title_markers:
             out.add(topic)
     return out
+
+
+def _publication_topic_key(topic: str) -> tuple[str, ...]:
+    """Normalize only generic publication-shape suffixes, preserving entities."""
+    tokens = re.findall(r"[a-z0-9]+", topic.lower())
+    if tokens and tokens[-1] in {"effect", "effects"}:
+        tokens.pop()
+        if tokens and tokens[-1] in {"training", "use"}:
+            tokens.pop()
+    elif tokens and tokens[-1] in {"rate", "rates"}:
+        tokens.pop()
+    return tuple(tokens)
 
 
 def _review_rows(payload: Any) -> list[dict[str, Any]]:
@@ -1300,9 +1319,12 @@ def _fetch_submission_decision(submission_id: str) -> tuple[dict[str, Any] | Non
 
 
 def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[dict[str, dict[str, Any]], str | None]:
-    rows = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    submitted_path = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    rows = submit_bridge._ledger_rows(submitted_path)
     latest: dict[str, dict[str, Any]] = {}
     first_error: str | None = None
+    updates: dict[str, dict[str, Any]] = {}
+    missing = object()
     latest_by_topic: dict[str, dict[str, Any]] = {}
     for row in reversed(rows):
         latest_by_topic.setdefault(str(row.get("topic") or row.get("submission_id") or row.get("run")), row)
@@ -1316,41 +1338,106 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
         first_error = first_error or err
         if not payload:
             continue
+        decision_payload: dict[str, Any] = payload
+
+        def present(*names: str) -> Any:
+            return next(
+                (
+                    decision_payload[name]
+                    for name in names
+                    if name in decision_payload and decision_payload[name] is not None
+                ),
+                missing,
+            )
+
+        fields = {
+            "decision_status": ("status",),
+            "decision": ("decision",),
+            "decision_object_id": (
+                "decision_object_id", "decisionObjectId", "decision_id", "decisionId", "id",
+            ),
+            "review_id": ("review_id", "reviewId"),
+            "reviewed_at": (
+                "reviewedAt", "reviewed_at", "createdAt", "created_at", "updatedAt", "updated_at",
+            ),
+            "required_revisions": ("required_revisions", "requiredRevisions"),
+            "review_summary": ("review_summary", "reviewSummary"),
+            "failure_category": ("failure_category", "failureCategory"),
+            "publication_status": ("publication_status", "publicationStatus"),
+            "publication": ("publication",),
+        }
+        persisted = {
+            key: value
+            for key, names in fields.items()
+            if (value := present(*names)) is not missing
+        }
+        if (decision_value := persisted.get("decision")) is not None:
+            persisted["remote_revision_requested"] = (
+                str(decision_value).strip().lower() == "revise"
+            )
+        current_decision = str(record.get("decision") or "").strip()
+        incoming_decision = str(persisted.get("decision") or "").strip()
+        if (
+            current_decision
+            and incoming_decision
+            and _review_ts(record) > _review_ts(persisted)
+        ):
+            persisted = {}
+            decision_payload = {}
+        if persisted:
+            updates[submission_id] = persisted
+        effective = {**record, **persisted}
         title = submit_bridge._paper_title(paper)
         row = {
             "artifactType": "research_paper",
             "agentId": submit_bridge._agent_slug(),
             "artifactId": (
-                payload.get("decision_object_id")
-                or payload.get("decisionObjectId")
-                or payload.get("decision_id")
-                or payload.get("decisionId")
-                or payload.get("id")
+                effective.get("decision_object_id")
             ),
             "submissionId": submission_id,
             "title": title,
-            "topic": record.get("topic") or submit_bridge._run_topic(run),
-            "decision": payload.get("decision"),
+            "topic": effective.get("topic") or submit_bridge._run_topic(run),
+            "decision": effective.get("decision"),
             "reviewedAt": (
-                payload.get("reviewedAt")
-                or payload.get("reviewed_at")
-                or payload.get("createdAt")
-                or payload.get("created_at")
-                or payload.get("updatedAt")
-                or payload.get("updated_at")
-                or record.get("submitted_at")
-                or record.get("date")
+                effective.get("reviewed_at")
+                or effective.get("submitted_at")
+                or effective.get("date")
             ),
-            "required_revisions": payload.get("required_revisions") or payload.get("requiredRevisions") or [],
-            "review_summary": payload.get("review_summary") or payload.get("reviewSummary"),
-            "publication": payload.get("publication"),
-            "failure_category": payload.get("failure_category") or payload.get("failureCategory"),
-            "notes": payload.get("notes"),
-            "resubmission": payload.get("resubmission"),
+            "required_revisions": effective.get("required_revisions") or [],
+            "review_summary": effective.get("review_summary"),
+            "publication": effective.get("publication"),
+            "failure_category": effective.get("failure_category"),
+            "notes": decision_payload.get("notes") or effective.get("notes"),
+            "resubmission": (
+                decision_payload.get("resubmission") or effective.get("resubmission")
+            ),
         }
         key = submit_bridge._title_marker(title)
         if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
             latest[key] = row
+    if updates:
+        def merge(current: list[dict[str, Any]]) -> None:
+            for current_record in current:
+                submission_id = str(current_record.get("submission_id") or "").strip()
+                if submission_id in updates:
+                    update = dict(updates[submission_id])
+                    current_decision = str(current_record.get("decision") or "").strip()
+                    incoming_decision = str(update.get("decision") or "").strip()
+                    if (
+                        current_decision
+                        and incoming_decision
+                        and _review_ts(current_record) > _review_ts(update)
+                    ):
+                        continue
+                    if (
+                        current_decision
+                        and not incoming_decision
+                        and update.get("decision_status") != "complete"
+                    ):
+                        update.pop("decision_status", None)
+                    current_record.update(update)
+
+        _update_json_list(submitted_path, merge)
     return latest, None if latest else first_error
 
 
@@ -2316,7 +2403,7 @@ def select_topic(
     )
     if not pool:
         return None
-    publishable = {
+    synthesis_ready = {
         topic
         for topic in pool
         if _topic_candidate_decision(topic, runs_root).ready_for_synthesis
@@ -2335,7 +2422,7 @@ def select_topic(
         source_fit_rank[topic] if prefer_source_fit else (),
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
         0 if topic in untried else 1,
-        0 if topic in publishable else 1,
+        0 if topic in synthesis_ready else 1,
         source_fit_rank[topic] if not prefer_source_fit else (),
         -_quant_claim_count(topic),
         -_publication_score(topic, ledger_dir, runs_root),

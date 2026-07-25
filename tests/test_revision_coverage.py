@@ -681,6 +681,116 @@ def test_exact_p_value_in_array_is_not_traceable_without_source_excerpt() -> Non
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
+def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "10/20 claims are exactly traceable (required 16)."
+    )
+    rows = [
+        {
+            "citation_token": f"Study{i} 2025",
+            "source_title": f"Study {i}",
+            "source_doi": f"10.1000/study.{i}",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 20 - i,
+            "thesis_text": f"Study {i} — source excerpts: Retained evidence span {i}.",
+        }
+        for i in range(1, 21)
+    ]
+    paper = (
+        "## Results\n\n"
+        + "\n\n".join(
+            f"Study{i} 2025 reported bounded manuscript finding {i}."
+            for i in range(1, 21)
+        )
+        + "\n\n## References\n\n- Study1 2025.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["major_claim_trace"]
+    assert "Study1 2025 [bundle:" in fixed
+    assert fixed.count("**Manuscript claim ") == 16
+    assert "[DOI](https://doi.org/10.1000/study.1)" in fixed
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
+    assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_major_claim_trace_proof_rejects_unknown_bundle_and_wrong_span() -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "required 2."
+    )
+    rows = [
+        {
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/study.{i}",
+            "thesis_text": f"Source excerpts: Retained evidence span {i}.",
+        }
+        for i in range(1, 3)
+    ]
+    manuscript = (
+        "## Results\n\n"
+        "Study1 2025 [bundle:1] reported bounded manuscript finding 1.\n\n"
+        "Study2 2025 [bundle:2] reported bounded manuscript finding 2.\n\n"
+    )
+    forged = manuscript + (
+        "## Major Claim Trace\n\n"
+        "- **Manuscript claim 1.** Study1 2025 [bundle:101] reported bounded manuscript "
+        "finding 1. **Supporting source:** Study1 2025 [bundle:101] "
+        "[DOI](https://doi.org/10.1000/study.1) **Evidence span:** Retained evidence span 1.\n"
+        "- **Manuscript claim 2.** Study2 2025 [bundle:102] reported bounded manuscript "
+        "finding 2. **Supporting source:** Study2 2025 [bundle:102] "
+        "[DOI](https://doi.org/10.1000/study.2) **Evidence span:** Retained evidence span 2.\n"
+    )
+    mismatched = manuscript + (
+        "## Major Claim Trace\n\n"
+        "- **Manuscript claim 1.** Study1 2025 [bundle:1] reported bounded manuscript "
+        "finding 1. **Supporting source:** Study1 2025 [bundle:1] "
+        "[DOI](https://doi.org/10.1000/study.1) **Evidence span:** Wrong evidence.\n"
+        "- **Manuscript claim 2.** Study2 2025 [bundle:2] reported bounded manuscript "
+        "finding 2. **Supporting source:** Study2 2025 [bundle:2] "
+        "[DOI](https://doi.org/10.1000/study.2) **Evidence span:** Wrong evidence.\n"
+    )
+
+    assert revision_quality_proof_is_stated(forged, ask, rows) is False
+    assert revision_quality_proof_is_stated(mismatched, ask, rows) is False
+
+    short, _ = repair_revision_quality(manuscript, rows, ask.replace("required 2", "required 16"))
+    assert revision_quality_proof_is_stated(
+        short, ask.replace("required 2", "required 16"), rows,
+    ) is False
+
+
+def test_major_claim_trace_proof_rejects_fragments_of_one_claim() -> None:
+    ask = "Add exact source tokens to major claims; required 2."
+    rows = [{
+        "citation_token": "Study1 2025",
+        "source_doi": "10.1000/study.1",
+        "thesis_text": "Source excerpts: Retained evidence span 1.",
+    }]
+    manuscript = (
+        "## Results\n\nA bounded result from Study1 2025 [bundle:1] "
+        "showed improvement on the measured endpoint.\n\n"
+    )
+    support = (
+        "**Supporting source:** Study1 2025 [bundle:1] "
+        "[DOI](https://doi.org/10.1000/study.1) "
+        "**Evidence span:** Retained evidence span 1."
+    )
+    forged = manuscript + (
+        "## Major Claim Trace\n\n"
+        "- **Manuscript claim 1.** A bounded result from Study1 2025 [bundle:1] "
+        f"showed improvement on the measured endpoint. {support}\n"
+        "- **Manuscript claim 2.** Study1 2025 [bundle:1] "
+        f"showed improvement on the measured endpoint. {support}\n"
+    )
+
+    assert revision_quality_proof_is_stated(forged, ask, rows) is False
+
+
 def test_fragment_repair_preserves_valid_colon_lead_in() -> None:
     ask = "Complete the fragmentary prose sections with an ending mid-sentence."
     paper = "## Results\n\nThe retained evidence is summarized in the following table:\n\n| Source | Finding |"

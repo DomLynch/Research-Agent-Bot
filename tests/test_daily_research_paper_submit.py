@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime as dt
 import json
 import os
 import re
@@ -1634,6 +1635,10 @@ def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None
     records = json.loads((tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json").read_text(encoding="utf-8"))
     assert records[0]["topic"] == "topic"
     assert records[0]["submission_id"] == "obj-1"
+    assert records[0]["status"] == "submitted_to_researka"
+    assert records[0]["http_status"] == 201
+    assert "submission_response" not in records[0]
+    assert dt.datetime.fromisoformat(records[0]["submitted_at"]).tzinfo is not None
     assert records[0]["submission_identity_key"].startswith("sha256:")
     assert records[0]["submission_payload_hash"].startswith("sha256:")
 
