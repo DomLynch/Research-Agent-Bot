@@ -194,6 +194,192 @@ def test_rejected_duplicate_heading_p1_stays_blocking_when_heading_is_still_dupl
     assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 0, 0)
 
 
+def _write_animal_role_case(
+    tmp_path: Path,
+    *,
+    citation: str = "Smith 2026",
+    patch_type: str = "citation",
+    reason: str = "This veterinary cat study cannot count as human clinical evidence.",
+    extra_paper: str = "",
+) -> None:
+    from agent.journal_finalizer import _findings_map_section
+
+    row = {
+        "citation_token": citation,
+        "source_title": "Randomized trial in overweight cats with diabetes",
+        "evidence_tier": "A1",
+        "directness": "direct",
+        "outcome_class": "cardiometabolic",
+        "effect_direction": "positive",
+    }
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.md").write_text(
+        "## Evidence Landscape\n\n"
+        + _findings_map_section([row])
+        + extra_paper
+    )
+    patch = {
+        "id": "P01",
+        "severity": "P1",
+        "patch_type": patch_type,
+        "before": citation,
+        "after": citation,
+        "reason": reason,
+    }
+    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(
+        json.dumps({"patches": [patch]})
+    )
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(
+        json.dumps({"patches": [{
+            "patch_id": "P01",
+            "severity": "P1",
+            "decision": "flagged",
+            "reason_for_decision": "ambiguous replacement target",
+        }]})
+    )
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "lanes": {citation: "animal_preclinical"},
+    }))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [row]}))
+
+
+def test_animal_role_p1_resolves_only_after_findings_map_reclassification(
+    tmp_path: Path,
+) -> None:
+    _write_animal_role_case(tmp_path)
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 1
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, 0)
+
+
+def test_animal_role_p1_stays_blocking_while_findings_map_calls_it_direct(
+    tmp_path: Path,
+) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.md").write_text(
+        "### Findings Map\n\n"
+        "| Cardiometabolic | Smith 2026: cat trial | direction=positive "
+        "| directness=direct | A1 | outcome=Cardiometabolic | finding=x |\n"
+    )
+    patch = {
+        "id": "P01",
+        "severity": "P1",
+        "patch_type": "citation",
+        "before": "Smith 2026",
+        "after": "Smith 2026",
+        "reason": "This veterinary cat study cannot count as human clinical evidence.",
+    }
+    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(
+        json.dumps({"patches": [patch]})
+    )
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(
+        json.dumps({"patches": [{
+            "patch_id": "P01",
+            "severity": "P1",
+            "decision": "flagged",
+            "reason_for_decision": "ambiguous replacement target",
+        }]})
+    )
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "lanes": {"Smith 2026": "animal_preclinical"},
+    }))
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
+def test_animal_numeric_p1_is_not_cleared_by_role_reclassification(
+    tmp_path: Path,
+) -> None:
+    _write_animal_role_case(
+        tmp_path,
+        patch_type="numeric",
+        reason="The veterinary cat study reports p=0.04, not p=0.4.",
+    )
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
+def test_citation_typed_numeric_p1_is_not_cleared_as_role_only(
+    tmp_path: Path,
+) -> None:
+    _write_animal_role_case(
+        tmp_path,
+        patch_type="citation",
+        reason=(
+            "This veterinary study is not direct evidence; "
+            "it reports p=0.04, not p=0.4."
+        ),
+    )
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
+def test_four_digit_sample_size_is_not_exempted_as_a_citation_year(
+    tmp_path: Path,
+) -> None:
+    _write_animal_role_case(
+        tmp_path,
+        patch_type="citation",
+        reason=(
+            "Smith 2026 is not direct evidence; "
+            "the reported sample was n=2024."
+        ),
+    )
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
+def test_animal_role_p1_stays_blocking_when_results_use_is_unqualified(
+    tmp_path: Path,
+) -> None:
+    _write_animal_role_case(
+        tmp_path,
+        extra_paper=(
+            "\n\n## Results\n\n"
+            "Smith 2026 demonstrated a human cardiometabolic benefit.\n"
+        ),
+    )
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
+def test_animal_role_p1_with_et_al_stays_blocking_when_use_is_unqualified(
+    tmp_path: Path,
+) -> None:
+    _write_animal_role_case(
+        tmp_path,
+        citation="Smith et al. 2026",
+        extra_paper=(
+            "\n\n## Abstract\n\n"
+            "Smith et al. 2026 demonstrated a human cardiometabolic benefit.\n"
+        ),
+    )
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
+def test_animal_role_p1_stays_blocking_when_roster_still_calls_it_direct(
+    tmp_path: Path,
+) -> None:
+    _write_animal_role_case(tmp_path)
+    paper_path = tmp_path / "full_paper.md"
+    paper_path.write_text(
+        paper_path.read_text().replace(
+            "directness: animal/preclinical context=1",
+            "directness: direct=1",
+        )
+    )
+
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
 def test_stage1_p2_only_returns_trust_spine_pass() -> None:
     """P1 clean in both stages, but stage-1 has P2 fails → Trust-Spine
     Pass (not AAA — AAA is reserved for all-green)."""

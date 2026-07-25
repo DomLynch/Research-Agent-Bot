@@ -870,7 +870,7 @@ def _unlabeled_animal_citation_issue_messages(
     the same paragraph, emit an issue. Universal — `animal_citations`
     is a free list of author-year tokens the caller has identified as
     non-human; this gate adds no per-topic knowledge."""
-    animal_set = {_fold(c.strip()) for c in animal_citations if c and c.strip()}
+    animal_set = {_fold(re.sub(r"\s+et\s+al\.?", "", c, flags=re.I).strip()) for c in animal_citations if c and c.strip()}  # noqa: E501
     if not animal_set:
         return ()
     body = _journal_body(paper_md)

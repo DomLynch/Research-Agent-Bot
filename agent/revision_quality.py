@@ -7,6 +7,7 @@ from collections.abc import Sequence
 from types import SimpleNamespace
 from typing import Any
 
+from agent.evidence_lanes import derive_receipt_lane
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
 from agent.revision_claim_trace import asks_major_claim_trace, major_claim_trace_is_stated, repair_major_claim_trace
@@ -180,14 +181,16 @@ def manifest_row_finding(row: dict[str, Any]) -> str:
 
 
 def findings_map_row(row: dict[str, Any]) -> tuple[str, str, str, str, str, str, str]:
-    outcome = _findings_map_outcome(row)
-    direction = resolved_effect_direction(row)
+    outcome, direction = _findings_map_outcome(row), resolved_effect_direction(row)
+    directness = str(row.get("directness") or "unknown").strip().lower()
+    if directness.startswith("direct") and derive_receipt_lane(row) == "animal_preclinical":
+        outcome, directness = f"Animal/Preclinical Context ({outcome})", "animal/preclinical context"
     citation = _label(row)
     title = str(row.get("source_title") or "").strip()
     source = f"{citation}: {title}" if citation and title and citation not in title else (citation or title)
     return (
         outcome, source, f"direction={direction}",
-        f"directness={str(row.get('directness') or 'unknown').strip().lower()}",
+        f"directness={directness}",
         str(row.get("evidence_tier") or "unknown").strip(),
         f"outcome={_findings_map_role_outcome(row, outcome)}; direction={direction}",
         f"finding={manifest_row_finding(row)}",
@@ -196,10 +199,8 @@ def findings_map_row(row: dict[str, Any]) -> tuple[str, str, str, str, str, str,
 
 def _findings_map_outcome(row: dict[str, Any]) -> str:
     current = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
-    receipt = SimpleNamespace(
-        receipt_id=row.get("receipt_id"), source_title=row.get("source_title"),
-        population_summary=row.get("population_summary"), directness=row.get("directness"),
-    )
+    receipt = SimpleNamespace(receipt_id=row.get("receipt_id"), source_title=row.get("source_title"),
+                              population_summary=row.get("population_summary"), directness=row.get("directness"))
     return outcome_display(refine_other_outcome_class(receipt, current))
 
 
@@ -338,7 +339,7 @@ def _findings_map_is_exact(paper_md: str, rows: Sequence[dict[str, Any]]) -> boo
         grouped.setdefault(findings_map_row(row)[0], []).append(row)
     for display, outcome_rows in grouped.items():
         directions = _count_text(receipt_direction(row) for row in outcome_rows)
-        directness = _count_text(str(row.get("directness") or "unknown").strip().lower() for row in outcome_rows)
+        directness = _count_text(findings_map_row(row)[3].split("=", 1)[-1] for row in outcome_rows)
         labels = "; ".join(sorted((_label(row) for row in outcome_rows), key=str.casefold))
         roster = (
             f"{display} n={len(outcome_rows)} (direction: {directions}; "

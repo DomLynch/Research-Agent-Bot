@@ -4452,22 +4452,39 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
         log = json.loads(log_path.read_text())
     except (OSError, ValueError, json.JSONDecodeError):
         return 0
-    before = {str(p.get("id")): str(p.get("before") or "") for p in patches if isinstance(p, dict)}
+    patch_by_id = {
+        str(p.get("id")): p for p in patches if isinstance(p, dict)
+    }
     changed = 0
     for row in log.get("patches") or []:
-        target = before.get(str(row.get("patch_id"))) if isinstance(row, dict) else None
+        patch = patch_by_id.get(str(row.get("patch_id"))) if isinstance(row, dict) else None
+        target = str(patch.get("before") or "") if isinstance(patch, dict) else ""
         if not (isinstance(row, dict) and _is_unresolved_reviewer_p1(row)):
             continue
         reason = str(row.get("reason_for_decision") or "")
         duplicate_heading = _duplicate_heading_target(reason)
         if duplicate_heading and _heading_occurrences(duplicate_heading, text) > 1:
             continue
-        if (duplicate_heading and _heading_occurrences(duplicate_heading, text) <= 1) or (not duplicate_heading and target and target not in text):
+        animal_role_resolved = _animal_role_p1_resolved(
+            out_dir, text, patch if isinstance(patch, dict) else {},
+        )
+        if (
+            (
+                duplicate_heading
+                and _heading_occurrences(duplicate_heading, text) <= 1
+            )
+            or (not duplicate_heading and target and target not in text)
+            or animal_role_resolved
+        ):
             row["decision"] = "applied"
             detail = (
                 f"duplicate heading {duplicate_heading!r} absent after deterministic finalization"
                 if duplicate_heading
-                else "flagged BEFORE region is absent after deterministic finalization"
+                else (
+                    "animal/preclinical source is explicitly contextual in the final Findings Map"
+                    if animal_role_resolved
+                    else "flagged BEFORE region is absent after deterministic finalization"
+                )
             )
             row["reason_for_decision"] = "FINALIZER-RESOLVED: " + detail + ". " + reason
             changed += 1
@@ -4478,6 +4495,71 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
         log["n_flagged"] = sum(1 for r in rows if r.get("decision") == "flagged")
         log_path.write_text(json.dumps(log, indent=2))
     return changed
+
+
+def _animal_role_p1_resolved(
+    out_dir: Path,
+    paper_md: str,
+    patch: dict[str, Any],
+) -> bool:
+    reason = str(patch.get("reason") or "").lower()
+    target = str(patch.get("before") or "").strip()
+    role_issue = (
+        "direct evidence" in reason
+        or "evidence role" in reason
+        or "source role" in reason
+        or re.search(r"\bhuman\b.{0,40}\b(?:evidence|outcomes?)\b", reason)
+    )
+    numeric_reason = re.search(
+        r"\d",
+        reason.replace(target.lower(), ""),
+    )
+    if (
+        not target
+        or str(patch.get("patch_type") or "").lower() != "citation"
+        or not role_issue
+        or numeric_reason
+        or not any(token in reason for token in (
+            "animal", "preclinical", "non-human", "veterinary",
+        ))
+    ):
+        return False
+    try:
+        lanes = json.loads((out_dir / "evidence_lanes.json").read_text())
+    except (OSError, ValueError, json.JSONDecodeError):
+        return False
+    if (lanes.get("lanes") or {}).get(target) != "animal_preclinical":
+        return False
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    if _unlabeled_animal_citation_issue_messages(paper_md, [target]):
+        return False
+    findings = re.search(
+        r"^### Findings Map\b.*?(?=^### |^## |\Z)",
+        paper_md,
+        flags=re.M | re.S,
+    )
+    if not findings:
+        return False
+    roster = re.search(
+        r"Outcome-class roster:\s*(.*?)(?=\n\s*\n|\Z)",
+        findings.group(0),
+        flags=re.I | re.S,
+    )
+    if roster:
+        target_group = re.search(
+            rf"Animal/Preclinical Context.*?directness:\s*([^;]+);"
+            rf"\s*sources:[^)]*{re.escape(target)}[^)]*\)",
+            roster.group(1),
+            flags=re.I | re.S,
+        )
+        if not target_group or "animal/preclinical context" not in target_group.group(1).lower():
+            return False
+    return any(
+        target in line
+        and "animal/preclinical context" in line.lower()
+        and "directness=animal/preclinical context" in line.lower()
+        for line in findings.group(0).splitlines()
+    )
 
 
 def _duplicate_heading_target(reason: str) -> str:

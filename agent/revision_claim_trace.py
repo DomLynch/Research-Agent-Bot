@@ -5,7 +5,15 @@ import re
 from collections.abc import Sequence
 from typing import Any
 
-from agent.publication_evidence import attach_bundle_references
+from agent.publication_evidence import attach_bundle_references, ordered_source_rows
+
+_TRACE_LINE_RE = re.compile(
+    r"^- \*\*Manuscript claim (?P<number>\d+)\.\*\* (?P<claim>.*?) "
+    r"\*\*Supporting source:\*\* "
+    r"(?P<support>.*?\[bundle:(?P<bundle>\d+)\].*?) "
+    r"\*\*Evidence span:\*\* (?P<span>.+)$",
+    re.I,
+)
 
 
 def asks_major_claim_trace(text: str) -> bool:
@@ -23,6 +31,7 @@ def major_claim_trace_is_stated(
     ask: str,
     rows: Sequence[dict[str, Any]],
 ) -> bool:
+    rows = _ordered_rows(rows)
     required = _requested_count(ask, len(rows))
     manuscript = _without_trace(paper_md)
     source_bound_claims = {
@@ -31,33 +40,57 @@ def major_claim_trace_is_stated(
     }
     valid: set[str] = set()
     for line in _scope(paper_md).splitlines():
-        match = re.match(
-            r"^- \*\*Manuscript claim \d+\.\*\* (.*?) "
-            r"\*\*Supporting source:\*\* .*?\[bundle:(\d+)\] .*?"
-            r"\*\*Evidence span:\*\* (.+)$",
-            line,
-            re.I,
-        )
-        if not match:
-            continue
-        claim = match.group(1).strip()
-        bundle_number = int(match.group(2))
-        if not 1 <= bundle_number <= len(rows):
-            continue
-        row = rows[bundle_number - 1]
-        support = f"{_label(row)} [bundle:{bundle_number}]"
-        locator = _stable_locator(row)
-        if locator:
-            support += f" {locator}"
-        if (
-            _evidence_span(row)
-            and (claim, bundle_number) in source_bound_claims
-            and f"[bundle:{bundle_number}]" in claim
-            and f"**Supporting source:** {support}" in line
-            and match.group(3).strip() == _evidence_span(row)
-        ):
-            valid.add(claim)
+        match = _TRACE_LINE_RE.match(line)
+        if match and _trace_line_is_valid(match, source_bound_claims, rows):
+            valid.add(match.group("claim").strip())
     return bool(required and len(valid) >= required)
+
+
+def strip_validated_trace_support(
+    paper_md: str,
+    rows: Sequence[dict[str, Any]],
+) -> str:
+    """Hide only manifest-verified support metadata from numeric prose audit."""
+    rows = _ordered_rows(rows)
+    scope = _scope(paper_md)
+    if not scope:
+        return paper_md
+    source_bound_claims = {
+        (claim, bundle_number)
+        for claim, bundle_number, _row in _source_bound_claims(paper_md, rows)
+    }
+    lines = []
+    for line in scope.splitlines():
+        match = _TRACE_LINE_RE.match(line)
+        if match and _trace_line_is_valid(match, source_bound_claims, rows):
+            line = (
+                f"- **Manuscript claim {match.group('number')}.** "
+                f"{match.group('claim').strip()} "
+                "**Supporting source:** validated manifest source."
+            )
+        lines.append(line)
+    return paper_md.replace(scope, "\n".join(lines), 1)
+
+
+def _trace_line_is_valid(
+    match: re.Match[str],
+    source_bound_claims: set[tuple[str, int]],
+    rows: Sequence[dict[str, Any]],
+) -> bool:
+    claim, bundle_number = match.group("claim").strip(), int(match.group("bundle"))
+    if not 1 <= bundle_number <= len(rows):
+        return False
+    row = rows[bundle_number - 1]
+    support = f"{_label(row)} [bundle:{bundle_number}]"
+    if locator := _stable_locator(row):
+        support += f" {locator}"
+    return bool(
+        _evidence_span(row)
+        and (claim, bundle_number) in source_bound_claims
+        and f"[bundle:{bundle_number}]" in claim
+        and match.group("support").strip() == support
+        and match.group("span").strip() == _evidence_span(row)
+    )
 
 
 def repair_major_claim_trace(
@@ -65,6 +98,7 @@ def repair_major_claim_trace(
     ask: str,
     rows: Sequence[dict[str, Any]],
 ) -> tuple[str, int]:
+    rows = _ordered_rows(rows)
     if major_claim_trace_is_stated(paper_md, ask, rows):
         return paper_md, 0
     patched = attach_bundle_references(paper_md, rows)
@@ -159,6 +193,13 @@ def _source_bound_claims(
     ]
 
 
+def _ordered_rows(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
+    values = list(rows)
+    return ordered_source_rows(values, {
+        str(row.get("receipt_id") or ""): row for row in values
+    })
+
+
 def _label(row: dict[str, Any]) -> str:
     return str(
         row.get("citation_token") or row.get("cited_as") or row.get("body_citation")
@@ -194,6 +235,6 @@ def _stable_locator(row: dict[str, Any]) -> str:
     doi = str(row.get("source_doi") or row.get("doi") or "").strip()
     if doi:
         doi = re.sub(r"^(?:doi:\s*|https?://(?:dx\.)?doi\.org/)", "", doi, flags=re.I)
-        return f"[DOI](https://doi.org/{doi})"
+        return f"https://doi.org/{doi}"
     pmid = str(row.get("source_pmid") or row.get("pmid") or "").strip()
-    return f"[PMID](https://pubmed.ncbi.nlm.nih.gov/{pmid}/)" if pmid else ""
+    return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else ""

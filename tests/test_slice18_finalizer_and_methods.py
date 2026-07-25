@@ -967,6 +967,35 @@ def test_phase_b_collapses_bundle_annotated_generated_qualifiers(
     assert _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])
 
 
+def test_phase_b_reclassifies_animal_findings_map_row_as_context(
+    tmp_path: Path,
+) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2026", "paper_id": "p1"}],
+        "lanes": {"Smith 2026": "animal_preclinical"},
+    }))
+    paper = (
+        "### Findings Map\n\n"
+        "| Outcome class | Source | Direction | Directness | Tier | Evidence role |\n"
+        "| --- | --- | --- | --- | --- | --- |\n"
+        "| Cardiometabolic | Smith 2026: trial in cats | direction=positive "
+        "| directness=direct | A1 | outcome=Cardiometabolic; direction=positive |\n"
+    )
+
+    fixed, log = _phase_b_lane_qualifier(paper, tmp_path)
+
+    assert len(log) == 1
+    assert "| Animal/Preclinical Context (Cardiometabolic) |" in fixed
+    assert "directness=animal/preclinical context" in fixed
+    assert "outcome=animal/preclinical context (Cardiometabolic)" in fixed
+    assert _phase_b_lane_qualifier(fixed, tmp_path) == (
+        fixed,
+        [],
+    )
+
+
 def test_phase_b_removes_stale_generic_qualifier_without_animal_citation(tmp_path: Path) -> None:
     from agent.journal_finalizer import _phase_b_lane_qualifier
 

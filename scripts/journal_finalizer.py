@@ -735,8 +735,15 @@ def _phase_b_lane_qualifier(
     refs_split = re.split(r"^## References\b", text, maxsplit=1, flags=re.M)
     body = refs_split[0]
     tail = ("\n## References" + refs_split[1]) if len(refs_split) == 2 else ""
-    paragraphs = re.split(r"(\n\s*\n)", body)  # keep separators
     n_patched = 0
+    reconciled_lines = []
+    for line in body.splitlines(keepends=True):
+        reconciled = _reconcile_animal_role_line(line, animal_tokens)
+        if reconciled != line:
+            n_patched += 1
+        reconciled_lines.append(reconciled)
+    body = "".join(reconciled_lines)
+    paragraphs = re.split(r"(\n\s*\n)", body)  # keep separators
     for i in range(0, len(paragraphs), 2):
         para = paragraphs[i]
         stripped = para.lstrip()
@@ -787,6 +794,49 @@ def _phase_b_lane_qualifier(
         return text, []
     new_body = "".join(paragraphs)
     return new_body + tail, [FinalizerLogEntry(phase="B_lane_qualifier", rule="animal_preclinical_lead_in", n_changes=n_patched, detail=f"added lane qualifier to {n_patched} paragraph(s)")]
+
+
+def _reconcile_animal_role_line(
+    line: str,
+    animal_tokens: set[str],
+) -> str:
+    if (
+        not any(token in line for token in animal_tokens)
+        or not re.search(r"\bdirectness=direct\b", line, re.I)
+    ):
+        return line
+    newline = "\n" if line.endswith("\n") else ""
+    content = line[:-1] if newline else line
+    if (
+        content.lstrip().startswith("|")
+        and ("directness=" in content.lower() or "outcome=" in content.lower())
+    ):
+        cells = content.split("|")
+        if len(cells) > 2:
+            outcome = cells[1].strip()
+            if outcome and "animal/preclinical" not in outcome.lower():
+                cells[1] = f" Animal/Preclinical Context ({outcome}) "
+            content = "|".join(cells)
+    content = re.sub(
+        r"\bdirectness=direct\b",
+        "directness=animal/preclinical context",
+        content,
+        flags=re.I,
+    )
+
+    def contextualize(match: re.Match[str]) -> str:
+        label, value = match.group(1), match.group(2).strip()
+        if "animal/preclinical" in value.lower():
+            return match.group(0)
+        return f"{label}animal/preclinical context ({value})"
+
+    content = re.sub(
+        r"\b((?:outcome|endpoint)=)([^;|\n]+)",
+        contextualize,
+        content,
+        flags=re.I,
+    )
+    return content + newline
 
 
 # --- Phase C: Terminology sanitizer -----------------------------------

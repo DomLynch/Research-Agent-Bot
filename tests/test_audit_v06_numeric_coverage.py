@@ -443,6 +443,81 @@ def test_reference_title_grouped_number_not_audited() -> None:
     assert "435,046" not in msg
 
 
+def test_major_claim_trace_source_span_numerics_are_not_authored_claims() -> None:
+    claim = "The bounded result was source-linked (p < 0.05) [bundle:1]."
+    span = "Participants were 69.8% female and 79.2% white."
+    row = {
+        "citation_token": "Smith 2024",
+        "directness": "direct",
+        "evidence_tier": "A1",
+        "source_doi": "10.1/x",
+        "thesis_text": span,
+    }
+    paper = (
+        f"## Results\n\n{claim}\n\n"
+        "## Major Claim Trace\n\n"
+        f"- **Manuscript claim 1.** {claim} "
+        "**Supporting source:** Smith 2024 [bundle:1] https://doi.org/10.1/x "
+        f"**Evidence span:** {span}\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums={"0.05"}, manifest={"receipts": [row]},
+    )
+
+    assert ok is True, msg
+    assert "69.8" not in msg
+    assert "79.2" not in msg
+
+
+def test_forged_major_claim_trace_numeric_still_fails_q2() -> None:
+    paper = (
+        "## Results\n\nA bounded result was reported (p < 0.05) [bundle:1].\n\n"
+        "## Major Claim Trace\n\n"
+        "- **Manuscript claim 1.** Fabricated result [bundle:999]. "
+        "**Supporting source:** Unknown 2024 [bundle:999] "
+        "**Evidence span:** Fabricated response was 99.9%.\n"
+    )
+    manifest = {"receipts": [{
+        "citation_token": "Smith 2024",
+        "thesis_text": "Validated source span.",
+    }]}
+
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums={"0.05"}, manifest=manifest,
+    )
+
+    assert ok is False
+    assert "99.9" in msg
+
+
+def test_extra_numeric_appended_to_valid_trace_support_fails_q2() -> None:
+    claim = "A bounded result was reported (p < 0.05) [bundle:1]."
+    span = "Validated source span."
+    paper = (
+        f"## Results\n\n{claim}\n\n"
+        "## Major Claim Trace\n\n"
+        f"- **Manuscript claim 1.** {claim} "
+        "**Supporting source:** Smith 2024 [bundle:1] "
+        "https://doi.org/10.1/x fabricated=99.9% "
+        f"**Evidence span:** {span}\n"
+    )
+    manifest = {"receipts": [{
+        "citation_token": "Smith 2024",
+        "receipt_id": "smith",
+        "source_doi": "10.1/x",
+        "thesis_text": span,
+    }]}
+
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums={"0.05"}, manifest=manifest,
+    )
+
+    assert ok is False
+    assert "99.9" in msg
+
+
 def test_body_grouped_number_still_audited() -> None:
     """An untraceable grouped number in the body (not References) still
     trips the gate — the References exclusion must not weaken body tracing."""

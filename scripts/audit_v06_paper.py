@@ -21,6 +21,7 @@ import re
 import sys
 from pathlib import Path
 
+from agent.revision_claim_trace import strip_validated_trace_support
 from agent.review_type import COMPACT_REVIEW_TYPES
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -360,6 +361,9 @@ def _check_numeric_integrity(
     # Evidence Snapshot is deterministic appendix metadata (representative
     # study stats, tension previews), not authored synthesis prose.
     paper = re.sub(r"(?ms)^##\s+Evidence Snapshot\b.*?(?=^##\s+(?!#)|\Z)", "", paper)
+    receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
+    if isinstance(receipts, list):
+        paper = strip_validated_trace_support(paper, receipts)
     paper_clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "", paper, flags=re.IGNORECASE,
     )

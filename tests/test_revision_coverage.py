@@ -17,13 +17,40 @@ from agent.revision_identity import (  # noqa: E402
     outcome_class_tally_note,
     repair_revision_identity,
 )
-from agent.revision_quality import manifest_row_finding, repair_revision_quality, revision_quality_proof_is_stated  # noqa: E402
+from agent.revision_quality import (  # noqa: E402
+    _findings_map_is_exact,
+    findings_map_row,
+    manifest_row_finding,
+    repair_revision_quality,
+    revision_quality_proof_is_stated,
+)
 
 
 def _chat(parsed: dict[str, Any]) -> Any:
     async def fake(**_kwargs: Any) -> Any:
         return type("Resp", (), {"parsed": parsed})()
     return fake
+
+
+def test_findings_map_reclassifies_animal_trial_as_context() -> None:
+    row = {
+        "citation_token": "Smith 2026",
+        "source_title": "Randomized trial in overweight cats with diabetes",
+        "evidence_tier": "A1",
+        "directness": "direct",
+        "outcome_class": "cardiometabolic",
+        "effect_direction": "positive",
+    }
+
+    projected = findings_map_row(row)
+
+    assert projected[0] == "Animal/Preclinical Context (Cardiometabolic)"
+    assert projected[3] == "directness=animal/preclinical context"
+    assert projected[5].startswith(
+        "outcome=Animal/Preclinical Context (Cardiometabolic);"
+    )
+    from agent.journal_finalizer import _findings_map_section
+    assert _findings_map_is_exact(_findings_map_section([row]), [row])
 
 
 def _unmet(asks: list[str], parsed: dict[str, Any], monkeypatch) -> list[str]:
@@ -713,7 +740,7 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert details == ["major_claim_trace"]
     assert "Study1 2025 [bundle:" in fixed
     assert fixed.count("**Manuscript claim ") == 16
-    assert "[DOI](https://doi.org/10.1000/study.1)" in fixed
+    assert "https://doi.org/10.1000/study.1" in fixed
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
     assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
@@ -741,19 +768,19 @@ def test_major_claim_trace_proof_rejects_unknown_bundle_and_wrong_span() -> None
         "## Major Claim Trace\n\n"
         "- **Manuscript claim 1.** Study1 2025 [bundle:101] reported bounded manuscript "
         "finding 1. **Supporting source:** Study1 2025 [bundle:101] "
-        "[DOI](https://doi.org/10.1000/study.1) **Evidence span:** Retained evidence span 1.\n"
+        "https://doi.org/10.1000/study.1 **Evidence span:** Retained evidence span 1.\n"
         "- **Manuscript claim 2.** Study2 2025 [bundle:102] reported bounded manuscript "
         "finding 2. **Supporting source:** Study2 2025 [bundle:102] "
-        "[DOI](https://doi.org/10.1000/study.2) **Evidence span:** Retained evidence span 2.\n"
+        "https://doi.org/10.1000/study.2 **Evidence span:** Retained evidence span 2.\n"
     )
     mismatched = manuscript + (
         "## Major Claim Trace\n\n"
         "- **Manuscript claim 1.** Study1 2025 [bundle:1] reported bounded manuscript "
         "finding 1. **Supporting source:** Study1 2025 [bundle:1] "
-        "[DOI](https://doi.org/10.1000/study.1) **Evidence span:** Wrong evidence.\n"
+        "https://doi.org/10.1000/study.1 **Evidence span:** Wrong evidence.\n"
         "- **Manuscript claim 2.** Study2 2025 [bundle:2] reported bounded manuscript "
         "finding 2. **Supporting source:** Study2 2025 [bundle:2] "
-        "[DOI](https://doi.org/10.1000/study.2) **Evidence span:** Wrong evidence.\n"
+        "https://doi.org/10.1000/study.2 **Evidence span:** Wrong evidence.\n"
     )
 
     assert revision_quality_proof_is_stated(forged, ask, rows) is False
@@ -778,7 +805,7 @@ def test_major_claim_trace_proof_rejects_fragments_of_one_claim() -> None:
     )
     support = (
         "**Supporting source:** Study1 2025 [bundle:1] "
-        "[DOI](https://doi.org/10.1000/study.1) "
+        "https://doi.org/10.1000/study.1 "
         "**Evidence span:** Retained evidence span 1."
     )
     forged = manuscript + (

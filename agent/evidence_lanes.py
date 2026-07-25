@@ -153,16 +153,19 @@ def build_lane_map(receipts: Any) -> dict[str, str]:
         cite = _get(r, "citation_token") or _get(r, "body_citation")
         if not cite:
             continue
-        lane = derive_lane(
-            evidence_tier=_get(r, "evidence_tier"),
-            directness=_get(r, "directness"),
-            title=_get(r, "source_title"),
-            venue=_get(r, "source_venue"),
-            population=_get(r, "population_summary"),
-            source_excerpt=_get(r, "thesis_text"),
-        )
-        out[str(cite)] = lane
+        out[str(cite)] = derive_receipt_lane(r)
     return out
+
+
+def derive_receipt_lane(receipt: Any) -> str:
+    return derive_lane(
+        evidence_tier=_get(receipt, "evidence_tier"),
+        directness=_get(receipt, "directness"),
+        title=_get(receipt, "source_title"),
+        venue=_get(receipt, "source_venue"),
+        population=_get(receipt, "population_summary"),
+        source_excerpt=_get(receipt, "thesis_text"),
+    )
 
 
 def _get(receipt: Any, field: str) -> str | None:
