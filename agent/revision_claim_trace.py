@@ -34,17 +34,15 @@ def major_claim_trace_is_stated(
     rows: Sequence[dict[str, Any]],
 ) -> bool:
     rows = _ordered_rows(rows)
-    required = _requested_count(ask, len(rows))
     manuscript = _without_trace(paper_md)
-    source_bound_claims = {
-        (claim, bundle_number)
-        for claim, bundle_number, _row in _source_bound_claims(manuscript, rows)
+    claims = _source_bound_claims(manuscript, rows)
+    required = _requested_count(ask, len(claims))
+    valid = {
+        claim
+        for claim, bundle_number, row in claims
+        if _stable_locator(row) and _stable_locator(row) in claim
+        and f"[bundle:{bundle_number}]" in claim
     }
-    valid: set[str] = set()
-    for line in _scope(paper_md).splitlines():
-        match = _TRACE_LINE_RE.match(line)
-        if match and _trace_line_is_valid(match, source_bound_claims, rows):
-            valid.add(match.group("claim").strip())
     return bool(required and len(valid) >= required)
 
 
@@ -103,32 +101,24 @@ def repair_major_claim_trace(
     rows = _ordered_rows(rows)
     if major_claim_trace_is_stated(paper_md, ask, rows):
         return paper_md, 0
-    patched = attach_bundle_references(paper_md, rows)
+    patched = attach_bundle_references(_without_trace(paper_md), rows)
     claims = _source_bound_claims(patched, rows)
     if not claims:
         return patched, int(patched != paper_md)
-    lines = ["## Major Claim Trace", ""]
-    for claim_number, (claim, bundle_number, row) in enumerate(
-        claims[:_requested_count(ask, len(claims))],
-        start=1,
-    ):
-        support = f"{_label(row)} [bundle:{bundle_number}]"
-        if locator := _stable_locator(row):
-            support += f" {locator}"
-        lines.append(
-            f"- **Manuscript claim {claim_number}.** {claim} "
-            f"**Supporting source:** {support} "
-            f"**Evidence span:** {_evidence_span(row)}"
-        )
-    section = "\n".join(lines).rstrip() + "\n\n"
-    existing = _scope(patched)
-    if existing:
-        patched = patched.replace(existing, section, 1)
-    elif references := re.search(r"^## References\b", patched, re.M | re.I):
-        patched = patched[:references.start()] + section + patched[references.start():]
-    else:
-        patched = patched.rstrip() + "\n\n" + section
-    return patched, 1
+    for claim, _bundle_number, row in claims:
+        locator = _stable_locator(row)
+        if not locator or locator in claim:
+            continue
+        traced = _append_inline_locator(claim, locator)
+        patched = patched.replace(claim, traced, 1)
+    return patched, int(patched != paper_md)
+
+
+def _append_inline_locator(claim: str, locator: str) -> str:
+    suffix = ""
+    if claim.endswith((".", "!", "?")):
+        claim, suffix = claim[:-1], claim[-1]
+    return f"{claim} [exact source: {locator}]{suffix}"
 
 
 def _requested_count(ask: str, available: int) -> int:

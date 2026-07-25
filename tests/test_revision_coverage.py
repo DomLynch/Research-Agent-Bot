@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -818,14 +817,17 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
             f"Study{i} 2025 reported bounded manuscript finding {i}."
             for i in range(1, 21)
         )
-        + "\n\n## References\n\n- Study1 2025.\n"
+        + "\n\n## Major Claim Trace\n\n"
+        "- **Manuscript claim 1.** Stale duplicated claim.\n\n"
+        "## References\n\n- Study1 2025.\n"
     )
 
     fixed, details = repair_revision_quality(paper, rows, ask)
 
     assert details == ["major_claim_trace"]
     assert "Study1 2025 [bundle:" in fixed
-    assert fixed.count("**Manuscript claim ") == 16
+    assert "## Major Claim Trace" not in fixed
+    assert fixed.count("[exact source: https://doi.org/") == 20
     assert "https://doi.org/10.1000/study.1" in fixed
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
@@ -854,8 +856,10 @@ def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
     fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
 
     assert changed == 1
-    supports = re.findall(r"\*\*Supporting source:\*\* .*?\[bundle:(\d+)\]", fixed)
-    assert supports == ["1", "2", "3"]
+    assert "## Major Claim Trace" not in fixed
+    assert fixed.count("https://doi.org/10.1000/study.1") == 3
+    assert fixed.count("https://doi.org/10.1000/study.2") == 1
+    assert fixed.count("https://doi.org/10.1000/study.3") == 1
 
 
 def test_major_claim_trace_proof_rejects_unknown_bundle_and_wrong_span() -> None:
@@ -977,16 +981,12 @@ def test_major_claim_trace_does_not_split_at_vs_inside_parenthetical() -> None:
     )
 
     fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
-    trace = re.search(
-        r"^## Major Claim Trace\b.*?(?=^## |\Z)",
-        fixed,
-        re.M | re.S,
-    )
 
     assert changed == 1
-    assert trace is not None
-    assert "positive vs. Study2 2025" in trace.group(0)
-    assert trace.group(0).count("(") == trace.group(0).count(")")
+    assert "## Major Claim Trace" not in fixed
+    assert "positive vs. Study2 2025" in fixed
+    assert fixed.count("(") == fixed.count(")")
+    assert "[exact source: https://doi.org/10.1000/study.1]" in fixed
 
 
 def test_fragment_repair_preserves_valid_colon_lead_in() -> None:

@@ -6047,7 +6047,8 @@ def test_revision_surface_notes_repair_major_claim_trace_request(tmp_path: Path)
     fixed, logs = journal_finalizer._phase_d_revision_surface_notes(paper, tmp_path)
 
     assert logs and "major_claim_trace" in logs[0].detail
-    assert fixed.count("**Manuscript claim ") == 16
+    assert "## Major Claim Trace" not in fixed
+    assert fixed.count("[exact source: https://doi.org/") == 20
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
         fixed, [ask], evidence_rows=rows,
     ) == []
@@ -6085,12 +6086,11 @@ def test_run_text_phases_repairs_trace_after_terminal_text_mutation(
 
     def corrupt_trace(text: str) -> tuple[str, list[journal_finalizer.FinalizerLogEntry]]:
         fixed, logs = original_split(text)
-        if "## Major Claim Trace" in fixed:
-            fixed = fixed.replace(
-                "**Evidence span:** Retained evidence span 1.",
-                "**Evidence span:** Wrong evidence.",
-                1,
-            )
+        fixed = fixed.replace(
+            " [exact source: https://doi.org/10.1000/study.1]",
+            "",
+            1,
+        )
         return fixed, logs
 
     monkeypatch.setattr(
