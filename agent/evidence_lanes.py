@@ -168,6 +168,12 @@ def derive_receipt_lane(receipt: Any) -> str:
     )
 
 
+def effective_directness(receipt: Any) -> str:
+    """Prevent model-system evidence from counting as direct human evidence."""
+    directness = str(_get(receipt, "directness") or "indirect").lower()
+    return "indirect" if directness == "direct" and derive_receipt_lane(receipt) == "animal_preclinical" else directness
+
+
 def _get(receipt: Any, field: str) -> str | None:
     """Universal attr-or-key getter so this works for both
     ReceiptSummary dataclasses and dict receipts (manifest serialised

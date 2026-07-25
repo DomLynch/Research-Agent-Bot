@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Collection, Iterable
 
+from agent.evidence_lanes import effective_directness
 from agent.synthesis_schemas import ReceiptSummary
 
 SNAPSHOT_DIR = "revision_evidence_snapshot"
@@ -302,6 +303,8 @@ def receipt_contract_mismatches(
                 continue
             actual = getattr(receipt, field)
             wanted = expected.get(field)
+            if field == "directness":
+                actual, wanted = effective_directness(receipt), effective_directness(expected)
             if field == "n_claims" and (
                 not _valid_claim_count(wanted) or not _valid_claim_count(actual)
             ):

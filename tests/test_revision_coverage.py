@@ -11,6 +11,7 @@ sys.path.insert(0, str(REPO / "scripts"))
 
 import revision_coverage  # type: ignore[import-not-found]  # noqa: E402
 from agent import revision_claim_trace  # noqa: E402
+from agent.evidence_lanes import effective_directness  # noqa: E402
 from agent.revision_contract import ask_fingerprint, gate_report  # noqa: E402
 from agent.sources.pubmed import pmid_rows_fingerprint  # noqa: E402
 from agent.revision_identity import (  # noqa: E402
@@ -52,6 +53,90 @@ def test_findings_map_reclassifies_animal_trial_as_context() -> None:
     )
     from agent.journal_finalizer import _findings_map_section
     assert _findings_map_is_exact(_findings_map_section([row]), [row])
+
+
+def test_effective_directness_excludes_animal_trial_from_human_direct_core() -> None:
+    animal = {
+        "source_title": "Randomized veterinary trial in overweight cats",
+        "evidence_tier": "A1",
+        "directness": "direct",
+    }
+    human = {
+        "source_title": "Randomized trial in older human participants",
+        "population_summary": "older human participants",
+        "evidence_tier": "A1",
+        "directness": "direct",
+    }
+
+    assert effective_directness(animal) == "indirect"
+    assert effective_directness(human) == "direct"
+
+
+def test_latest_reviewer_source_and_disclosure_asks_are_deterministic() -> None:
+    asks = [
+        "Jorgensen 2026 is a veterinary cat RCT and must not be listed as direct human clinical; "
+        "downgrade its directness and move it out of the load-bearing clinical list.",
+        "Kitzman 2016 is itself a 2x2 factorial RCT but functions as a review-grade comparison "
+        "for this synthesis; make the framing consistent.",
+        "For each numeric statistic cited, verify it against the bundle excerpts or mark it unverifiable.",
+        "Methods must disclose non-PubMed source_type=corpus abstracts and add publisher venue where possible.",
+        "Cross-Domain Synthesis should explicitly state that the proposed long-duration RCT does not currently exist.",
+        "Abstract should note source-level direction is conservative coded polarity and may differ from claim-level direction.",
+    ]
+    rows = [
+        {
+            "citation_token": "Jorgensen 2026",
+            "source_title": "Veterinary randomized trial in overweight cats",
+            "source_venue": "Journal of Feline Medicine",
+            "evidence_tier": "A1",
+            "directness": "indirect",
+        },
+        {
+            "citation_token": "Kitzman 2016",
+            "source_title": "Two by two factorial randomized trial",
+            "source_pmid": "12345678",
+            "source_venue": "Clinical Trials",
+            "evidence_tier": "A1",
+            "directness": "direct",
+        },
+    ]
+    paper = (
+        "## Abstract\n\nThe evidence remains bounded.\n\n"
+        "## Methods\n\nSources were retained from the frozen corpus.\n\n"
+        "## Results\n\nJorgensen 2026 and Kitzman 2016 were retained. "
+        "A reported comparison had p = 0.009.\n\n"
+        "## Cross-Domain Synthesis\n\nThe proposed trial would resolve the design gap.\n"
+    )
+    feedback = "; ".join(asks)
+
+    fixed, details = repair_revision_quality(paper, rows, feedback)
+
+    assert details == [
+        "exact_stat_trace",
+        "evidence_role_reconciliation",
+        "source_indexing_disclosure",
+        "unrepresented_trial_boundary",
+        "abstract_coded_polarity",
+    ]
+    assert "directness=indirect" in fixed
+    assert "review-grade comparison" in fixed
+    assert "venue=Journal of Feline Medicine" in fixed
+    assert "future-study requirement, not evidence claimed to exist" in fixed
+    assert "may differ from claim-level direction" in fixed
+    assert revision_coverage.deterministic_known_asks(asks, evidence_rows=rows) == asks
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows,
+    ) == []
+    assert repair_revision_quality(fixed, rows, feedback) == (fixed, [])
+
+
+def test_non_pubmed_disclosure_fails_closed_without_corpus_rows() -> None:
+    ask = "Methods must disclose non-PubMed source_type=corpus abstracts and publisher venues."
+    rows = [{"citation_token": "Smith 2025", "source_pmid": "12345"}]
+    paper = "## Methods\n\nThe retained source is PubMed indexed.\n"
+
+    assert revision_quality_proof_is_stated(paper, ask, rows) is False
+    assert repair_revision_quality(paper, rows, ask) == (paper, [])
 
 
 def _unmet(asks: list[str], parsed: dict[str, Any], monkeypatch) -> list[str]:
@@ -869,6 +954,39 @@ def test_major_claim_trace_completes_upstream_truncated_span() -> None:
     })
 
     assert span == "Retained evidence ends mid-sentenc [excerpt truncated]."
+
+
+def test_major_claim_trace_does_not_split_at_vs_inside_parenthetical() -> None:
+    ask = "Add exact source tokens to major claims; required 1."
+    rows = [
+        {
+            "citation_token": "Study1 2025",
+            "source_doi": "10.1000/study.1",
+            "thesis_text": "Source excerpts: Direct evidence span one.",
+        },
+        {
+            "citation_token": "Study2 2025",
+            "source_doi": "10.1000/study.2",
+            "thesis_text": "Source excerpts: Direct evidence span two.",
+        },
+    ]
+    paper = (
+        "## Results\n\n"
+        "The direction differed (Study1 2025 positive vs. Study2 2025 null) "
+        "on the prespecified endpoint.\n"
+    )
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+    trace = re.search(
+        r"^## Major Claim Trace\b.*?(?=^## |\Z)",
+        fixed,
+        re.M | re.S,
+    )
+
+    assert changed == 1
+    assert trace is not None
+    assert "positive vs. Study2 2025" in trace.group(0)
+    assert trace.group(0).count("(") == trace.group(0).count(")")
 
 
 def test_fragment_repair_preserves_valid_colon_lead_in() -> None:

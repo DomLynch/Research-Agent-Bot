@@ -780,9 +780,7 @@ def _claim_bearing_quant_count(topic: str) -> tuple[int, int]:
         total += 1
         data = _read_json(path)
         claims = data.get("claims")
-        if claims is None:
-            usable += 1
-        elif isinstance(claims, list) and any(
+        if claims is None or isinstance(claims, list) and any(
             isinstance(claim, dict)
             and str(claim.get("binding_confidence") or "high").lower() != "none"
             for claim in claims
@@ -995,9 +993,8 @@ def _recent_blocked_topics_by_status(
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
         allowed = code in statuses if statuses is not None else code not in _NON_REPEAT_STATUSES
-        if topic and allowed and isinstance(stamps, list):
-            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
-                out.add(topic)
+        if topic and allowed and isinstance(stamps, list) and any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
+            out.add(topic)
     return out
 
 
@@ -1472,13 +1469,11 @@ def _should_replace_review_row(existing: dict[str, Any], candidate: dict[str, An
         return True
     if candidate_ts == existing_ts:
         return _revision_detail_score(candidate) > _revision_detail_score(existing)
-    if (
+    return (
         _review_day_key(candidate) == _review_day_key(existing)
         and str(candidate.get("decision") or "").lower() == str(existing.get("decision") or "").lower()
         and _revision_detail_score(candidate) > _revision_detail_score(existing)
-    ):
-        return True
-    return False
+    )
 
 
 def _merge_latest_by_title(*sources: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -2264,7 +2259,7 @@ def _recent_receipt_preflight_counts(
     for path in ledger_dir.glob("*.json"):
         row = _read_json(path)
         started = _parse_time(str(row.get("started_at") or ""))
-        if started is None or started < cutoff:
+        if started is None or started < cutoff or (latest_at is not None and started <= latest_at):
             continue
         for attempt in row.get("attempts", []):
             if not isinstance(attempt, dict) or attempt.get("topic") != topic:
@@ -2422,20 +2417,17 @@ def select_topic(
         if _topic_candidate_decision(topic, runs_root).ready_for_synthesis
     }
     source_fit_rank = {topic: _receipt_source_fit_rank(topic, runs_root, ledger_dir) for topic in pool}
-    # Prefer topics with a local corpus first; empty generated frontier topics
-    # belong behind publishable corpora so the publish lane does not spend the
-    # whole window seeding. Within that ready pool, frontier-advance still holds:
-    # a never-attempted topic outranks any already-attempted one.
+    # Prefer known synthesis-ready corpora before frontier exploration so the
+    # publication lane consumes its strongest available candidate first.
     # Within each group prefer direct-source fit before raw corpus size; broad
     # indirect corpora waste fresh windows even when they have many claims.
-    # Revisiting proven topics is the revise cycle's job, not the fresh cycle's.
     untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
     return min(pool, key=lambda topic: (
         0 if topic in prepared else 1,
         source_fit_rank[topic] if prefer_source_fit else (),
         0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
-        0 if topic in untried else 1,
         0 if topic in synthesis_ready else 1,
+        0 if topic in untried else 1,
         source_fit_rank[topic] if not prefer_source_fit else (),
         -_quant_claim_count(topic),
         -_publication_score(topic, ledger_dir, runs_root),
@@ -3139,7 +3131,7 @@ def _receipt_preflight(
         n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
         n_primary_tier = int(counts.get("primary_tier_receipts") or 0) if isinstance(counts, dict) else 0
         direct_raw = counts.get("direct_receipts") if isinstance(counts, dict) else None
-        n_direct_receipts = int(direct_raw if direct_raw is not None else n_primary_tier)
+        n_direct_receipts = int(direct_raw) if direct_raw is not None else 0
         n_tensions = int(counts.get("non_orthogonal_tensions") or 0) if isinstance(counts, dict) else 0
         n_outcome_classes = int(counts.get("outcome_classes") or 0) if isinstance(counts, dict) else 0
         previous_best = (
@@ -3366,9 +3358,7 @@ def _restore_source_manifest_quant_claims(topic: str, source_run: Path | None) -
 def _terminal_revision_receipt_preflight(report: Mapping[str, Any]) -> bool:
     """A revise corpus that cannot pass receipt preflight should not monopolise
     later revise windows for the same reviewer request."""
-    if report.get("passed") or str(report.get("status") or "") != "receipt_preflight_insufficient":
-        return False
-    return True
+    return not report.get("passed") and str(report.get("status") or "") == "receipt_preflight_insufficient"
 
 
 def _repair_existing_run(
@@ -3476,9 +3466,7 @@ def _should_retry_same_topic(attempt: dict[str, Any], *, auto_selected: bool = T
     status = str(attempt.get("gate_status") or attempt.get("submit_status") or "").split(":", 1)[0]
     if auto_selected and status in _NO_AUTO_RETRY_STATUSES:
         return False
-    if str(attempt.get("failure_class") or "").startswith(("B_", "D_")):
-        return False
-    return True
+    return not str(attempt.get("failure_class") or "").startswith(("B_", "D_"))
 
 
 def _same_gate_failure_count(attempts: list[dict[str, Any]], topic: str, status: str) -> int:
@@ -4302,11 +4290,10 @@ def run_cycle(
                     if repair_topic in source_precision_repairable
                     else int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
                 )
-                if repair_publishable:
-                    if repair_topic not in receipt_preflight_blocked:
-                        preflight_blocked.discard(repair_topic)
-                        surface_repeat.discard(repair_topic)
-                        corpus_repaired_ok.add(repair_topic)
+                if repair_publishable and repair_topic not in receipt_preflight_blocked:
+                    preflight_blocked.discard(repair_topic)
+                    surface_repeat.discard(repair_topic)
+                    corpus_repaired_ok.add(repair_topic)
                 if _source_precision_repair_publishable(repair):
                     source_precision_repaired_ok.add(repair_topic)
                 elif _source_precision_repair_checkable(repair):

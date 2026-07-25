@@ -7,6 +7,7 @@ from collections.abc import Sequence
 from types import SimpleNamespace
 from typing import Any
 
+from agent import revision_source_roles as _source_roles
 from agent.evidence_lanes import derive_receipt_lane
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
@@ -14,7 +15,6 @@ from agent.revision_claim_trace import asks_major_claim_trace, major_claim_trace
 from agent.revision_identity import (
     direction_attribution_is_stated,
     direction_attribution_requested,
-    review_role_contradiction,
 )
 
 
@@ -55,13 +55,13 @@ def revision_quality_ask_known(ask: str, evidence_rows: Sequence[dict[str, Any]]
     lower = _normalise(ask)
     return any(check(lower) for check in (
         _asks_outcome_roster, _asks_exact_stat_trace, asks_major_claim_trace,
-        _asks_fragment_cleanup,
-        _asks_representative_subset, _asks_evidence_role_reconciliation,
+        _asks_fragment_cleanup, _asks_representative_subset,
         _asks_evidence_honesty, _asks_named_direction_reconciliation,
         _asks_named_statistic_reconciliation,
-    )) or _asks_named_topic_fit_boundary(lower) and _topic_fit_is_deterministic(
+    )) or _source_roles.ask_known(ask, evidence_rows) or (
+        _asks_named_topic_fit_boundary(lower) and _topic_fit_is_deterministic(
         ask, _ordered_rows(evidence_rows or ()),
-    )
+    ))
 
 
 def asks_exact_stat_trace(feedback: str) -> bool:
@@ -81,14 +81,16 @@ def revision_quality_proof_is_stated(
         (asks_major_claim_trace, lambda: major_claim_trace_is_stated(paper_md, ask, rows)),
         (_asks_fragment_cleanup, lambda: _reviewed_fragments_are_absent(paper_md, ask)),
         (_asks_representative_subset, lambda: _subset_scope_is_stated(paper_md, rows)),
-        (_asks_evidence_role_reconciliation, lambda: _evidence_roles_are_reconciled(paper_md, ask, rows)),
         (_asks_evidence_honesty, lambda: _evidence_honesty_is_stated(paper_md, ask, rows)),
         (_asks_named_direction_reconciliation, lambda: _named_revision_is_stated(paper_md, ask, rows, "direction")),
         (_asks_named_statistic_reconciliation, lambda: _named_revision_is_stated(paper_md, ask, rows, "statistic")),
         (_asks_named_topic_fit_boundary, lambda: not _topic_fit_is_deterministic(ask, rows)
          or _named_revision_is_stated(paper_md, ask, rows, "topic_fit")),
     )
-    return all(not matches(lower) or satisfied() for matches, satisfied in checks)
+    return (
+        all(not matches(lower) or satisfied() for matches, satisfied in checks)
+        and _source_roles.proof_is_stated(paper_md, ask, rows)
+    )
 
 
 def repair_revision_quality(
@@ -128,11 +130,8 @@ def repair_revision_quality(
         patched, changed = _add_subset_scope(patched)
         if changed:
             details.append("representative_subset_scope")
-    role_ask = _matching_feedback(feedback, _asks_evidence_role_reconciliation)
-    if role_ask:
-        patched, changed = _reconcile_evidence_roles(patched, role_ask, rows)
-        if changed:
-            details.append("evidence_role_reconciliation")
+    patched, source_details = _source_roles.repair(patched, rows, feedback)
+    details.extend(source_details)
     honesty_ask = _matching_feedback(feedback, _asks_evidence_honesty)
     if honesty_ask:
         patched, changed = _bound_named_outcomes(patched, honesty_ask, rows)
@@ -258,7 +257,8 @@ def _asks_exact_stat_trace(text: str) -> bool:
     return any(token in text for token in (
         "every exact statistic", "every exact p value", "exact p value",
         "every exact interval", "exact confidence interval", "exact bundle token",
-        "effect estimate", "percentage cited",
+        "effect estimate", "percentage cited", "each numeric statistic",
+        "numeric statistic cited",
     )) and any(
         token in text for token in (
             "bundle", "source excerpt", "source number", "trace", "verif",
@@ -276,12 +276,6 @@ def _asks_fragment_cleanup(text: str) -> bool:
 
 def _asks_representative_subset(text: str) -> bool:
     return "representative subset" in text or ("discuss all" in text and "sources" in text and "scope" in text)
-
-
-def _asks_evidence_role_reconciliation(text: str) -> bool:
-    return any(token in text for token in ("evidence_type", "evidence type")) and "directness" in text and any(
-        token in text for token in ("clinical rct", "randomized", "randomised")
-    )
 
 
 def _asks_evidence_honesty(text: str) -> bool:
@@ -822,64 +816,6 @@ def _named_revision_is_stated(
                      _section_has_note(paper_md, heading, note[1]))
                     for row, note in notes if note is not None for heading in note_headings)
     return statistics_ok and directions_ok and proofs_ok
-
-
-def _review_level(row: dict[str, Any]) -> bool:
-    return any(str(row.get(key) or "").strip().lower() == "review" for key in ("evidence_type", "directness"))
-
-
-def _role_scope(heading: str, paragraph: str) -> bool:
-    return not heading.lower().startswith(("references", "bibliography")) and paragraph.strip() in _prose_paragraphs(paragraph)
-
-
-def _reconcile_evidence_roles(
-    paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
-) -> tuple[str, int]:
-    named = [row for row in _named_rows(ask, rows) if _review_level(row)]
-    if not named:
-        return paper_md, 0
-    changed = 0
-    parts = re.split(r"(\n\s*\n)", paper_md)
-    heading = ""
-    for index in range(0, len(parts), 2):
-        if match := re.match(r"^#{2,3}\s+(.+?)\s*$", parts[index].strip()):
-            heading = match.group(1)
-            continue
-        if not _role_scope(heading, parts[index]):
-            continue
-        sentences = re.split(r"(?<=[.!?])\s+", parts[index])
-        kept = [sentence for pos, sentence in enumerate(sentences) if not any(
-            review_role_contradiction(sentence, _label(row), sentences[pos - 1] if pos else "") for row in named)]
-        if len(kept) != len(sentences):
-            parts[index], changed = " ".join(kept), changed + 1
-    patched = "".join(parts)
-    notes = " ".join(
-        f"{_label(row)} is retained as review-level evidence (directness=review) and is not counted as a direct clinical RCT."
-        for row in named
-    )
-    if "evidence-type reconciliation:" not in patched.lower():
-        match = re.search(r"^## Results\b", patched, re.M | re.I)
-        if match:
-            patched = patched[:match.end()] + "\n\nEvidence-type reconciliation: " + notes + patched[match.end():]
-            changed += 1
-    return patched, changed
-
-
-def _evidence_roles_are_reconciled(
-    paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
-) -> bool:
-    named = [row for row in _named_rows(ask, rows) if _review_level(row)]
-    scope = paper_md.lower()
-    return bool(named) and all(
-        _label(row).lower() in scope and "evidence-type reconciliation:" in scope
-        and "directness=review" in scope
-        and not any(review_role_contradiction(sentence, _label(row), sentences[pos - 1] if pos else "")
-            for heading, paragraph in _paragraphs_with_headings(paper_md)
-            if _role_scope(heading, paragraph)
-            for sentences in (re.split(r"(?<=[.!?])\s+", paragraph),)
-            for pos, sentence in enumerate(sentences))
-        for row in named
-    )
 
 
 def _named_outcomes(ask: str, rows: Sequence[dict[str, Any]]) -> set[str]:

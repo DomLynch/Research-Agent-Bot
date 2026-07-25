@@ -158,6 +158,22 @@ def test_legacy_contract_detects_same_id_content_drift() -> None:
     ) == ["r1:population_summary"]
 
 
+def test_contract_allows_only_deterministic_animal_directness_normalization() -> None:
+    animal = dataclasses.replace(
+        _receipt(),
+        directness="indirect",
+        source_title="Randomized veterinary trial in overweight cats",
+        population_summary="overweight cats",
+    )
+    legacy_animal = _contract(dataclasses.replace(animal, directness="direct"))
+
+    assert receipt_contract_mismatches([animal], {"r1": legacy_animal}) == []
+    assert receipt_contract_mismatches(
+        [dataclasses.replace(_receipt(), directness="indirect")],
+        {"r1": _contract(_receipt())},
+    ) == ["r1:directness"]
+
+
 def test_legacy_contract_rejects_cross_topic_revision(tmp_path: Path) -> None:
     source = tmp_path / "legacy"
     source.mkdir()

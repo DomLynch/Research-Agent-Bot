@@ -982,6 +982,8 @@ def _asks_null_signal_reconciliation(text: str) -> bool:
 
 
 def _asks_concrete_tensions_gaps(text: str) -> bool:
+    if "tension descriptions" in text and any(token in text for token in ("source role", "review grade", "framing")):
+        return False
     if re.search(
         r"\b(?:there\s+(?:is|are)\s+)?no\s+(?:(?:cross[- ]study|cross[- ]source|source|study)\s+)?"
         r"(?:disagreement|conflict|tension)s?\b|"

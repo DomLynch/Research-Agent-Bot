@@ -7,6 +7,7 @@ submitted_to_researka, not published.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import datetime as dt
 import hashlib
 import json
@@ -31,6 +32,7 @@ from source_topic_specificity import (  # noqa: E402
     topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.evidence_lanes import derive_receipt_lane  # noqa: E402
 from agent import publication_evidence as _publication_evidence  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
     read_json as _read_json,
@@ -194,10 +196,8 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     clean_path = run / "researka_preflight_cleaned_payload.json"
     _write_json(input_path, payload)
     for stale_path in (report_path, clean_path):
-        try:
+        with contextlib.suppress(OSError):
             stale_path.unlink()
-        except OSError:
-            pass
     if not tool_root.is_dir():
         report = {
             "status": "pass",
@@ -968,10 +968,7 @@ def _append_record(path: Path, row: dict[str, Any]) -> None:
 
 
 def _feedback_text(payload: Any) -> str:
-    if isinstance(payload, str):
-        text = payload
-    else:
-        text = json.dumps(payload, sort_keys=True)
+    text = payload if isinstance(payload, str) else json.dumps(payload, sort_keys=True)
     return " ".join(text.split())[:2000]
 
 
@@ -1188,6 +1185,8 @@ SOURCE_CONTEXTS = frozenset({"direct", "adjacent", "mechanistic", "context"})
 def _source_context_for_receipt(receipt: dict[str, Any]) -> str:
     directness = str(receipt.get("directness") or "").lower()
     outcome = str(receipt.get("outcome_class") or "").lower()
+    if derive_receipt_lane(receipt) == "animal_preclinical":
+        return "context"
     if directness == "direct":
         return "direct"
     if directness == "mechanistic":

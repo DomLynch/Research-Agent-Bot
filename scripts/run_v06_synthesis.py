@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import contextlib
 import dataclasses
 import datetime as dt
 import json
@@ -25,6 +26,7 @@ from agent.llm_client import (  # noqa: E402
 from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
 )
+from agent.evidence_lanes import effective_directness  # noqa: E402
 from agent.paper_writer import render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -245,10 +247,8 @@ def _organize_run_artifacts(run_dir: Path) -> dict[str, str]:
     # The export manifest was written before this relocation; re-point any
     # appraisal sidecar that moved into audit/ so the public bundle ships the
     # populated file instead of a stale top-level path (reader "not appraised").
-    try:
+    with contextlib.suppress(Exception):
         _paper_ir.reresolve_export_manifest(run_dir)
-    except Exception:
-        pass
     return moved
 
 
@@ -294,7 +294,7 @@ def _first_section_paragraph(section_md: str) -> str:
     body = section_md.split("\n", 1)[1] if "\n" in section_md else ""
     for para in re.split(r"\n\s*\n", body):
         clean = para.strip()
-        if not clean or clean.startswith("###") or clean.startswith("_Cited:"):
+        if not clean or clean.startswith(("###", "_Cited:")):
             continue
         return clean
     return ""
@@ -1383,7 +1383,6 @@ def _insert_conclusion_heading(markdown: str, heading: str) -> tuple[str, bool]:
 def _set_topic(topic: str) -> None:
     """Set corpus paths and topic data across synthesis modules."""
     global QUANT_DIR, PARSED_DIR, _TOPIC_PACK, _ACTIVE_TOPIC
-    import os
     QUANT_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "quant_claims"
     PARSED_DIR = REPO_ROOT / "docs" / "quality-reference" / topic / "parsed"
     _ACTIVE_TOPIC = topic
@@ -2374,10 +2373,8 @@ def build_receipts_from_quant_claims(
             source_venue=meta.get("journal"),
         )
         receipt = dataclasses.replace(
-            receipt,
-            outcome_class=refine_other_outcome_class(
-                receipt, receipt.outcome_class,
-            ),
+            receipt, directness=effective_directness(receipt),
+            outcome_class=refine_other_outcome_class(receipt, receipt.outcome_class),
         )
         typed.append((receipt, _taxonomy.population_of(identity)))
     typed.sort(key=lambda rp: -rp[0].n_claims)
@@ -2391,7 +2388,6 @@ def build_thesis(
     topic: str,
 ) -> SynthesisThesis:
     """Build a topic-generic thesis from receipts and tensions."""
-    from collections import Counter
     receipt_ids = tuple(r.receipt_id for r in receipts)
     non_orth = matrix.non_orthogonal()
     addressed = tuple(t.summary for t in non_orth[:3])

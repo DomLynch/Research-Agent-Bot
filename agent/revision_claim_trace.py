@@ -14,6 +14,8 @@ _TRACE_LINE_RE = re.compile(
     r"\*\*Evidence span:\*\* (?P<span>.+)$",
     re.I,
 )
+_ABBREVIATION_RE = re.compile(r"\b(?:vs|e\.g|i\.e|et al)\.", re.I)
+_PROTECTED_PERIOD = "\ue000"
 
 
 def asks_major_claim_trace(text: str) -> bool:
@@ -167,7 +169,14 @@ def _source_bound_claims(
             or stripped.startswith(("#", "|", "```", "- "))
         ):
             continue
-        for claim in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9])", stripped):
+        protected = _ABBREVIATION_RE.sub(
+            lambda match: match.group(0)[:-1] + _PROTECTED_PERIOD,
+            stripped,
+        )
+        for claim in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9])", protected):
+            claim = _drop_unmatched_parentheses(
+                claim.replace(_PROTECTED_PERIOD, "."),
+            )
             bundle_numbers = [
                 int(value) for value in re.findall(r"\[bundle:(\d+)\]", claim, re.I)
             ]

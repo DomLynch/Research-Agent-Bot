@@ -52,6 +52,16 @@ def test_seen_field_reads_valid_string_fields_only(tmp_path: Path) -> None:
     assert daily._seen_field(tmp_path / "missing.json", "topic") == set()
 
 
+def test_animal_receipt_is_submitted_as_context_not_direct() -> None:
+    receipt = {
+        "source_title": "Randomized veterinary trial in overweight cats",
+        "evidence_tier": "A1",
+        "directness": "direct",
+    }
+
+    assert daily._source_context_for_receipt(receipt) == "context"
+
+
 def test_preflight_runtime_error_does_not_reuse_stale_cleaned_payload(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,

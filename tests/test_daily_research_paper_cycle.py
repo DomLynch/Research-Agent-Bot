@@ -2295,6 +2295,37 @@ def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkey
     assert selected == "zzz_full_synthesis"
 
 
+def test_select_topic_prefers_known_synthesis_ready_over_untried_frontier(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "aaa_untried", target_journal=True)
+    _topic(tmp_path, "zzz_synthesis_ready", target_journal=True)
+    _prior_run(
+        tmp_path,
+        "zzz_synthesis_ready",
+        receipts=20,
+        tensions=5,
+        primary=5,
+        direct=5,
+        level=4,
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(
+        cycle,
+        "_quant_claim_count",
+        lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
+    )
+
+    selected = cycle.select_topic(
+        ["aaa_untried", "zzz_synthesis_ready"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+    )
+
+    assert selected == "zzz_synthesis_ready"
+
+
 def test_select_topic_accepts_large_corpus_with_absolute_direct_floor(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_broad_indirect", target_journal=True)
     _topic(tmp_path, "zzz_near_direct_fit", target_journal=True)
@@ -2355,6 +2386,46 @@ def test_select_topic_treats_rich_direct_corpus_as_source_fit(
     assert selected == "aaa_preflight_broad"
 
 
+def test_recent_receipt_counts_use_latest_timestamp_not_file_order(tmp_path: Path) -> None:
+    older = tmp_path / "z-older.json"
+    newer = tmp_path / "a-newer.json"
+    topic = "caloric_restriction"
+    _write_json(older, {
+        "started_at": "2026-07-25T10:00:00+00:00",
+        "attempts": [{
+            "topic": topic,
+            "receipt_preflight": {
+                "n_receipts": 12,
+                "n_primary_tier": 3,
+                "n_direct_receipts": 4,
+            },
+        }],
+    })
+    _write_json(newer, {
+        "started_at": "2026-07-25T11:00:00+00:00",
+        "attempts": [{
+            "topic": topic,
+            "receipt_preflight": {
+                "n_receipts": 20,
+                "n_primary_tier": 8,
+                "n_direct_receipts": 6,
+            },
+        }],
+    })
+
+    class ReverseChronologicalLedger:
+        def glob(self, _pattern: str) -> list[Path]:
+            return [newer, older]
+
+    counts = cycle._recent_receipt_preflight_counts(
+        topic,
+        ReverseChronologicalLedger(),  # type: ignore[arg-type]
+        now=dt.datetime(2026, 7, 25, 12, tzinfo=dt.UTC),
+    )
+
+    assert counts == (20, 8, 6)
+
+
 def test_select_topic_prefers_public_research_surface_over_brief_risk(
     tmp_path: Path, monkeypatch,
 ) -> None:
@@ -2382,7 +2453,7 @@ def test_select_topic_prefers_public_research_surface_over_brief_risk(
     assert selected == "zzz_research_surface"
 
 
-def test_select_topic_does_not_collapse_to_only_prior_public_research_surface(
+def test_select_topic_prefers_ready_surface_until_remote_dedupe_excludes_it(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     _topic(tmp_path, "glynac", target_journal=True)
@@ -2407,7 +2478,13 @@ def test_select_topic_does_not_collapse_to_only_prior_public_research_surface(
         remote_seen=set(),
     )
 
-    assert selected == "endurance_exercise_effects"
+    assert selected == "glynac"
+    assert cycle.select_topic(
+        ["glynac", "endurance_exercise_effects"],
+        tmp_path / cycle.LEDGER_DIR,
+        runs_root=tmp_path / "runs",
+        remote_seen={cycle.submit_bridge._topic_marker("glynac")},
+    ) == "endurance_exercise_effects"
 
 
 def test_select_topic_full_synthesis_priority_skips_compact_review_type(
@@ -4444,6 +4521,34 @@ def test_receipt_preflight_stops_when_repair_does_not_improve_receipts(tmp_path:
     assert result["n_receipts"] == 1
     assert len(result["probes"]) == 2
     assert len(calls) == 2
+
+
+def test_receipt_preflight_fails_closed_when_direct_count_is_missing(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: 30)
+
+    def fake_synthesis(_topic: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        _write_json(out_dir / "receipt_funnel.json", {"counts": {
+            "admitted_receipts": 20,
+            "primary_tier_receipts": 8,
+            "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+            "outcome_classes": 2,
+        }})
+        return 0
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    result = cycle._receipt_preflight(
+        "missing_direct_count",
+        tmp_path / "run",
+        repair=False,
+    )
+
+    assert result["passed"] is False
+    assert result["n_direct_receipts"] == 0
+    assert any("insufficient direct source anchors" in reason for reason in result["reasons"])
 
 
 def test_receipt_preflight_continues_when_direct_core_improves(tmp_path: Path, monkeypatch) -> None:
@@ -10130,6 +10235,7 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
             "counts": {
                 "admitted_receipts": n_receipts,
                 "primary_tier_receipts": n_receipts,
+                "direct_receipts": n_receipts,
                 "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
                 "outcome_classes": 2,
             },
@@ -10182,6 +10288,7 @@ def test_receipt_preflight_repair_keeps_best_probe_after_regression(tmp_path: Pa
             "counts": {
                 "admitted_receipts": n_receipts,
                 "primary_tier_receipts": n_receipts,
+                "direct_receipts": n_receipts,
                 "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
                 "outcome_classes": 2,
             },
@@ -10241,6 +10348,7 @@ def test_fresh_cycle_repairs_sparse_receipt_preflight_before_submit(tmp_path: Pa
                 "counts": {
                     "admitted_receipts": n_receipts,
                     "primary_tier_receipts": n_receipts,
+                    "direct_receipts": n_receipts,
                     "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
                     "outcome_classes": 2,
                 },
