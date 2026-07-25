@@ -12,7 +12,7 @@ from typing import Any
 
 from agent import statistical_consistency as _stats
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
-from agent.evidence_lanes import LANE_TOKENS, build_lane_map
+from agent.evidence_lanes import LANE_TOKENS, build_lane_map, is_animal_context
 from agent.revision_identity import direction_tally_note, repair_revision_identity
 from agent.revision_contract import feedback as _revision_feedback, gate_report as _revision_gate_report
 from agent.revision_quality import (
@@ -720,6 +720,7 @@ def _phase_b_lane_qualifier(
     )
     citation_ref_pattern = (
         rf"(?:{citation_pattern})(?:\s*\[bundle:\d+\])?"
+        r"(?:\s*\[veterinary;\s*preclinical context only;\s*excluded from human aggregates\])?"
         if citation_pattern else ""
     )
     suffix_re = re.compile(
@@ -968,13 +969,10 @@ def _outcome_display(slug: str) -> str:
 def _row_outcome_class(row: dict[str, Any]) -> str:
     from agent.outcome_class_remap import refine_other_outcome_class
 
+    if is_animal_context(row):
+        return "animal_preclinical_context"
     current = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
-    receipt = SimpleNamespace(
-        receipt_id=row.get("receipt_id"),
-        source_title=row.get("source_title"),
-        population_summary=row.get("population_summary"),
-        directness=row.get("directness"),
-    )
+    receipt = SimpleNamespace(receipt_id=row.get("receipt_id"), source_title=row.get("source_title"), population_summary=row.get("population_summary"), directness=row.get("directness"))
     return refine_other_outcome_class(receipt, current)
 
 

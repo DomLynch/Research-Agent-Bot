@@ -168,6 +168,10 @@ def derive_receipt_lane(receipt: Any) -> str:
     )
 
 
+def is_animal_context(receipt: Any) -> bool:
+    return derive_receipt_lane(receipt) == "animal_preclinical"
+
+
 def effective_directness(receipt: Any) -> str:
     """Prevent model-system evidence from counting as direct human evidence."""
     directness = str(_get(receipt, "directness") or "indirect").lower()

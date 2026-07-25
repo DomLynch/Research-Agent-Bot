@@ -2,7 +2,20 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Collection, Sequence
 from typing import Any
+
+V3_AGENT_IDS = frozenset({"agent-v3-full-paper", "agent-v3-full-paper-live"})
+
+
+def review_agent_mismatch(rows: Sequence[dict[str, Any]], allowed: Collection[str]) -> str | None:
+    unknown = sorted({
+        str(row.get("agentId") or row.get("agent_id") or "")
+        for row in rows
+        if str(row.get("artifactType") or row.get("artifact_type") or "") == "research_paper"
+        and str(row.get("agentId") or row.get("agent_id") or "").startswith("agent-v3-")
+    } - set(allowed))
+    return f"review_agent_id_mismatch:{','.join(unknown)}" if unknown else None
 
 
 def required_revision_items(row: dict[str, Any]) -> list[str]:

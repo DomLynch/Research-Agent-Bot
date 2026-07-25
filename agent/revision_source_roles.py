@@ -16,6 +16,7 @@ _CODED_POLARITY_NOTE = (
     "Direction-coding boundary: Receipt-level direction is a conservative coded polarity for synthesis "
     "accounting and may differ from claim-level direction reported within a source."
 )
+_ANIMAL_FLAG = "[veterinary; preclinical context only; excluded from human aggregates]"
 
 
 def _normalise(text: str) -> str:
@@ -29,7 +30,10 @@ def _asks_role_reconciliation(text: str) -> bool:
         and any(token in text for token in ("clinical rct", "randomized", "randomised"))
     ) or (
         any(token in text for token in ("animal", "veterinary", "preclinical"))
-        and any(token in text for token in ("direct human", "human clinical", "directness"))
+        and not _negates_role_action(text)
+        and any(token in text for token in (
+            "direct human", "human clinical", "directness", "human aggregate", "aggregate human",
+        ))
         and any(token in text for token in ("downgrade", "reclass", "move out", "not list"))
     ) or (
         "review grade" in text and "comparison" in text
@@ -58,11 +62,28 @@ def _asks_coded_polarity(text: str) -> bool:
     )
 
 
+def _negates_role_action(text: str) -> bool:
+    return any(token in text for token in (
+        "needs no reclassification", "no reclassification", "do not reclassify",
+        "does not require reclassification", "not require reclassification",
+        "do not flag", "no need to flag", "needs no flag", "does not require a flag",
+    ))
+
+
+def _asks_consistent_animal_flag(text: str) -> bool:
+    return (
+        not _negates_role_action(text)
+        and any(token in text for token in ("animal", "veterinary", "preclinical"))
+        and any(token in text for token in ("flag", "reclass", "exclude", "do not count", "not count"))
+        and any(token in text for token in ("wherever", "consistent", "human aggregate", "aggregate human"))
+    )
+
+
 def ask_known(ask: str, _rows: Sequence[dict[str, Any]] | None = None) -> bool:
     text = _normalise(ask)
     return any(check(text) for check in (
         _asks_role_reconciliation, _asks_source_indexing,
-        _asks_unrepresented_trial, _asks_coded_polarity,
+        _asks_unrepresented_trial, _asks_coded_polarity, _asks_consistent_animal_flag,
     ))
 
 
@@ -200,6 +221,94 @@ def _roles_reconciled(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -
     )
 
 
+def _animal_rows(ask: str, rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
+    named = _named_rows(ask, rows)
+    candidates = named or list(rows)
+    return [row for row in candidates if derive_receipt_lane(row) == "animal_preclinical"]
+
+
+def _principal_animal_line(line: str, label: str) -> bool:
+    cells = line.rstrip("\n").split("|") if line.lstrip().startswith("|") else []
+    return bool(
+        re.match(rf"^\s*(?:[-*]\s+)?{re.escape(label)}\b", line)
+        or len(cells) > 2 and label in cells[2]
+    )
+
+
+def _flag_animal_mentions(
+    paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
+) -> tuple[str, int]:
+    body, separator, references = paper_md.partition("\n## References")
+    original_body = body
+    changed = 0
+    for row in _animal_rows(ask, rows):
+        label = _label(row)
+        body = re.sub(
+            rf"(?<!\w){re.escape(label)}(?!\w)\s*{re.escape(_ANIMAL_FLAG)}",
+            label,
+            body,
+        )
+        body, n = re.subn(
+            rf"(?<!\w){re.escape(label)}(?!\w)(?!\s*{re.escape(_ANIMAL_FLAG)})",
+            f"{label} {_ANIMAL_FLAG}",
+            body,
+        )
+        changed += n
+        lines = body.splitlines(keepends=True)
+        for index, line in enumerate(lines):
+            if f"{label} {_ANIMAL_FLAG}" not in line or not _principal_animal_line(line, label):
+                continue
+            table_cells = line.rstrip("\n").split("|") if line.lstrip().startswith("|") else []
+            fixed = re.sub(
+                r"\bdirectness=(?:direct|indirect|mechanistic|review|unknown)\b",
+                "directness=animal/preclinical context",
+                line,
+                flags=re.I,
+            )
+            fixed = re.sub(
+                r"\boutcome=[^;|\n]+",
+                "outcome=animal/preclinical context",
+                fixed,
+                flags=re.I,
+            )
+            if table_cells:
+                cells = fixed.rstrip("\n").split("|")
+                if len(cells) > 2 and "animal/preclinical" not in cells[1].lower():
+                    cells[1] = f" Animal/Preclinical Context ({cells[1].strip()}) "
+                    fixed = "|".join(cells) + ("\n" if line.endswith("\n") else "")
+            if fixed != line:
+                lines[index], changed = fixed, changed + 1
+        body = "".join(lines)
+    final = body + (separator + references if separator else "")
+    return final, 0 if body == original_body else max(1, changed)
+
+
+def _animal_accounting_is_stated(body: str, label: str) -> bool:
+    principal = [line for line in body.splitlines() if _principal_animal_line(line, label)]
+    return bool(principal) and all(
+        ("directness=" not in line.lower() or "directness=animal/preclinical context" in line.lower())
+        and ("outcome=" not in line.lower() or "outcome=animal/preclinical context" in line.lower())
+        and (
+            not line.lstrip().startswith("|")
+            or "animal/preclinical" in line.rstrip("\n").split("|")[1].lower()
+        )
+        for line in principal
+    )
+
+
+def _animal_flags_are_stated(
+    paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
+) -> bool:
+    body = paper_md.partition("\n## References")[0]
+    animal_rows = _animal_rows(ask, rows)
+    return bool(animal_rows) and all(
+        (mentions := len(re.findall(rf"(?<!\w){re.escape(_label(row))}(?!\w)", body))) > 0
+        and body.count(f"{_label(row)} {_ANIMAL_FLAG}") == mentions
+        and _animal_accounting_is_stated(body, _label(row))
+        for row in animal_rows
+    )
+
+
 def _source_indexing_note(rows: Sequence[dict[str, Any]]) -> str:
     corpus_rows = [row for row in rows if not str(row.get("source_pmid") or "").strip()]
     if not corpus_rows:
@@ -222,6 +331,7 @@ def proof_is_stated(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> 
         (_asks_source_indexing, bool(source_note) and _has_note(paper_md, "Methods", source_note)),
         (_asks_unrepresented_trial, _has_note(paper_md, "Cross-Domain Synthesis", _PROPOSED_TRIAL_NOTE)),
         (_asks_coded_polarity, _has_note(paper_md, "Abstract", _CODED_POLARITY_NOTE)),
+        (_asks_consistent_animal_flag, _animal_flags_are_stated(paper_md, ask, rows)),
     )
     return all(not matches(text) or passed for matches, passed in checks)
 
@@ -241,6 +351,13 @@ def repair(
         patched, changed = _reconcile_roles(patched, role_ask, rows)
         if changed:
             details.append("evidence_role_reconciliation")
+    animal_ask = " ".join(
+        part for part in _feedback_parts(feedback) if _asks_consistent_animal_flag(_normalise(part))
+    )
+    if animal_ask:
+        patched, changed = _flag_animal_mentions(patched, animal_ask, rows)
+        if changed:
+            details.append("consistent_animal_source_flags")
     for predicate, heading, marker, note, detail in (
         (_asks_source_indexing, "Methods", "Source-indexing disclosure:",
          _source_indexing_note(rows), "source_indexing_disclosure"),

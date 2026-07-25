@@ -2424,10 +2424,10 @@ def test_findings_map_separates_mechanistic_and_biomarker_roles(tmp_path: Path) 
     fixed, logs = journal_finalizer._phase_d_source_outcome_class_map(paper, tmp_path)
 
     assert "Ng 2019: C. elegans mitochondrial free radical theory" in fixed
-    assert "outcome=Mechanism/Longevity (C. elegans); direction=unclear" in fixed
+    assert "outcome=Mechanism/Animal/Preclinical Context (Longevity) (C. elegans); direction=unclear" in fixed
+    assert "directness=animal/preclinical context" in fixed
     assert "Reid 2023: Blood-based mtDNA deletion biomarker study" in fixed
     assert "outcome=Biomarker/Adjacent Cognitive; direction=unclear" in fixed
-    assert "Direction heterogeneity note: Mechanism/Longevity" in fixed
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 

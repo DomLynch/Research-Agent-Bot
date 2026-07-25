@@ -63,7 +63,9 @@ from agent.publishing.policy import (  # noqa: E402
 )
 from agent.publishing import topic_supply  # noqa: E402
 from agent.publishing.revision_lane import (  # noqa: E402
+    V3_AGENT_IDS,
     actionable_revisions as _actionable_revisions,
+    review_agent_mismatch as _review_agent_mismatch,
     required_revision_items as _required_revision_items,
     requests_domain_scope_reset as _revision_requests_domain_scope_reset,
     revise_reason_bucket as _revise_reason_bucket,
@@ -1265,11 +1267,7 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
     decisions a newer one supersedes. Shared by revise-routing and
     reject-tracking so both read the same authoritative current decision."""
     target = str(url or os.getenv("RESEARKA_REVIEWS_URL", "https://researka.org/reviews"))
-    agent_ids = {
-        "agent-v3-full-paper",
-        os.getenv("RESEARKA_AGENT_SLUG_V3", ""),
-        os.getenv("AGENT_ID", ""),
-    }
+    agent_ids = {*V3_AGENT_IDS, os.getenv("RESEARKA_AGENT_SLUG_V3", ""), os.getenv("AGENT_ID", "")}
     agent_ids.discard("")
     try:
         with urllib.request.urlopen(urllib.request.Request(target, headers={"Accept": "text/html,application/json"}), timeout=30) as response:
@@ -1281,8 +1279,9 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
             payload = json.loads(text)
     except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         return {}, f"{type(exc).__name__}: {exc}"
+    rows = _review_rows(payload)
     latest: dict[str, dict[str, Any]] = {}
-    for row in _review_rows(payload):
+    for row in rows:
         if str(row.get("artifactType") or row.get("artifact_type") or "") != "research_paper":
             continue
         if agent_ids and str(row.get("agentId") or row.get("agent_id") or "") not in agent_ids:
@@ -1290,6 +1289,8 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
         key = submit_bridge._title_marker(str(row.get("title") or ""))
         if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
             latest[key] = row
+    if mismatch := _review_agent_mismatch(rows, agent_ids):
+        return {}, mismatch
     return latest, None
 
 

@@ -982,6 +982,8 @@ def _asks_null_signal_reconciliation(text: str) -> bool:
 
 
 def _asks_concrete_tensions_gaps(text: str) -> bool:
+    if "severity 4" in text and re.search(r"(?:per[- ]endpoint|coding[- ]artifact)", text):
+        return False
     if "tension descriptions" in text and any(token in text for token in ("source role", "review grade", "framing")):
         return False
     if re.search(

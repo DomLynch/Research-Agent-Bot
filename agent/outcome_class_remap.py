@@ -46,6 +46,7 @@ SOURCE_TEXT_OUTCOME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
 )
 
 OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
+    "animal_preclinical_context": ("Animal/Preclinical Context", ("animal preclinical context",), ()),
     "cardiometabolic": ("Cardiometabolic", (), ()),
     "cognitive": ("Cognitive", (), ()),
     "contextual_other": ("Contextual Adjacent Evidence", ("contextual other", "adjacent evidence"), ()),

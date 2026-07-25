@@ -8811,6 +8811,99 @@ def test_remote_revision_requests_keeps_only_v3_research_paper_revisions(monkeyp
     assert rows[0]["feedback"] == "Add caveat.; Reduce repetition."
 
 
+def test_remote_revision_requests_accepts_live_v3_agent_without_env(monkeypatch) -> None:
+    payload = {"records": [{
+        "artifactId": "v3-live-1",
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper-live",
+        "decision": "revise",
+        "title": "Research Synthesis: Aspirin",
+        "requiredRevisions": ["Add caveat."],
+    }]}
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode()
+
+    monkeypatch.delenv("RESEARKA_AGENT_SLUG_V3", raising=False)
+    monkeypatch.delenv("AGENT_ID", raising=False)
+    monkeypatch.setattr(cycle.urllib.request, "urlopen", lambda *_args, **_kwargs: Response())
+
+    rows, error = cycle._remote_revision_requests("https://example.test/reviews")
+
+    assert error is None
+    assert [row["artifactId"] for row in rows] == ["v3-live-1"]
+
+
+def test_latest_reviews_reports_unknown_v3_agent_id(monkeypatch) -> None:
+    payload = {"records": [{
+        "artifactId": "v3-future-1",
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper-next",
+        "decision": "revise",
+        "title": "Research Synthesis: Aspirin",
+    }]}
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode()
+
+    monkeypatch.setattr(cycle.urllib.request, "urlopen", lambda *_args, **_kwargs: Response())
+
+    rows, error = cycle._latest_reviews_by_title("https://example.test/reviews")
+
+    assert rows == {}
+    assert error == "review_agent_id_mismatch:agent-v3-full-paper-next"
+
+
+def test_latest_reviews_reports_unknown_v3_agent_id_on_mixed_feed(monkeypatch) -> None:
+    payload = {"records": [
+        {
+            "artifactId": "v3-known",
+            "artifactType": "research_paper",
+            "agentId": "agent-v3-full-paper-live",
+            "decision": "revise",
+            "title": "Research Synthesis: Aspirin",
+        },
+        {
+            "artifactId": "v3-future",
+            "artifactType": "research_paper",
+            "agentId": "agent-v3-full-paper-next",
+            "decision": "revise",
+            "title": "Research Synthesis: Metformin",
+        },
+    ]}
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode()
+
+    monkeypatch.setattr(cycle.urllib.request, "urlopen", lambda *_args, **_kwargs: Response())
+
+    rows, error = cycle._latest_reviews_by_title("https://example.test/reviews")
+
+    assert rows == {}
+    assert error == "review_agent_id_mismatch:agent-v3-full-paper-next"
+
+
 def test_cycle_does_not_let_stale_thin_manifest_block_healthy_corpus(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "aaa_thin_topic", target_journal=True)
     _topic(tmp_path, "zzz_solid_topic", target_journal=True)

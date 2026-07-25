@@ -8,7 +8,8 @@ from types import SimpleNamespace
 from typing import Any
 
 from agent import revision_source_roles as _source_roles
-from agent.evidence_lanes import derive_receipt_lane
+from agent import revision_consistency as _consistency
+from agent.evidence_lanes import is_animal_context
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
 from agent.revision_claim_trace import asks_major_claim_trace, major_claim_trace_is_stated, repair_major_claim_trace
@@ -58,7 +59,7 @@ def revision_quality_ask_known(ask: str, evidence_rows: Sequence[dict[str, Any]]
         _asks_fragment_cleanup, _asks_representative_subset,
         _asks_evidence_honesty, _asks_named_direction_reconciliation,
         _asks_named_statistic_reconciliation,
-    )) or _source_roles.ask_known(ask, evidence_rows) or (
+    )) or _source_roles.ask_known(ask, evidence_rows) or _consistency.ask_known(ask, evidence_rows) or (
         _asks_named_topic_fit_boundary(lower) and _topic_fit_is_deterministic(
         ask, _ordered_rows(evidence_rows or ()),
     ))
@@ -90,6 +91,7 @@ def revision_quality_proof_is_stated(
     return (
         all(not matches(lower) or satisfied() for matches, satisfied in checks)
         and _source_roles.proof_is_stated(paper_md, ask, rows)
+        and _consistency.proof_is_stated(paper_md, ask, rows)
     )
 
 
@@ -102,6 +104,8 @@ def repair_revision_quality(
     rows = _ordered_rows(evidence_rows)
     patched = paper_md
     details: list[str] = []
+    patched, consistency_details = _consistency.repair(patched, rows, feedback)
+    details.extend(consistency_details)
     if _asks_exact_stat_trace(lower):
         patched, changed = _repair_untraceable_statistics(patched, rows)
         if changed:
@@ -182,7 +186,7 @@ def manifest_row_finding(row: dict[str, Any]) -> str:
 def findings_map_row(row: dict[str, Any]) -> tuple[str, str, str, str, str, str, str]:
     outcome, direction = _findings_map_outcome(row), resolved_effect_direction(row)
     directness = str(row.get("directness") or "unknown").strip().lower()
-    if directness.startswith("direct") and derive_receipt_lane(row) == "animal_preclinical":
+    if is_animal_context(row):
         outcome, directness = f"Animal/Preclinical Context ({outcome})", "animal/preclinical context"
     citation = _label(row)
     title = str(row.get("source_title") or "").strip()
@@ -286,8 +290,16 @@ def _asks_evidence_honesty(text: str) -> bool:
 
 
 def _asks_named_direction_reconciliation(text: str) -> bool:
-    request = ("direction" in text and "consistent wording" in text) or all(
-        token in text for token in ("coding", "align", "refers to"))
+    if any(token in text for token in ("p=", "p =", "p-value", "p value")) and any(
+        token in text for token in ("numeric correction", "unclear/null", "null/mixed", "non-significant")
+    ):
+        return False
+    request = (
+        "direction" in text
+        and any(token in text for token in (
+            "consistent wording", "recheck", "coded direction", "coding", "direction reflects",
+        ))
+    ) or all(token in text for token in ("coding", "align", "refers to"))
     return _has_named_source(text) and request and any(token in text for token in ("positive", "negative", "null", "mixed", "unclear"))
 
 
@@ -295,7 +307,10 @@ def _asks_named_statistic_reconciliation(text: str) -> bool:
     return (
         _has_named_source(text)
         and any(token in text for token in ("statistic", "p value", "p <", "p =", "effect estimate"))
-        and any(token in text for token in ("if it is not present", "if not present", "not present in"))
+        and any(token in text for token in (
+            "if it is not present", "if not present", "not present in",
+            "per endpoint", "which endpoint", "located in the source excerpt",
+        ))
         and any(token in text for token in ("bundle", "excerpt", "source", "trace"))
     )
 
@@ -678,22 +693,42 @@ def _revision_headings(paper_md: str, ask: str, kind: str) -> list[str]:
     if kind == "direction" and requested:
         return requested
     defaults = {
-        "direction": ("Results",),
+        "direction": ("Evidence Landscape", "Evidence Snapshot", "Results", "Cross-Domain Synthesis", "Conclusion"),
         "statistic": ("Evidence Snapshot", "Evidence Landscape", "Results"),
         "topic_fit": ("Evidence Landscape", "Limitations", "Results"),
     }[kind]
-    heading = requested[0] if requested else next(
-        (name for name in defaults if _section_span(paper_md, name)), None,
-    )
-    return [heading] if heading else []
+    if requested:
+        return requested[:1]
+    return [name for name in defaults if _section_span(paper_md, name)]
+
+
+def _requested_direction(ask: str) -> str:
+    for pattern in (
+        r"\b(?:should|must)\s+(?:be\s+(?:coded\s+as\s+)?|remain\s+)"
+        r"(positive|negative|null|mixed|unclear)\b",
+        r"\b(?:retain|keep)\s+(positive|negative|null|mixed|unclear)\b",
+        r"\b(?:correct(?:ed)?|recod(?:e|ed))\s+(?:it\s+)?(?:to|as)\s+"
+        r"(positive|negative|null|mixed|unclear)\b",
+        r"\bclearer\s+(positive|negative|null|mixed|unclear)\b",
+    ):
+        if match := re.search(pattern, ask, re.I):
+            return match.group(1).lower()
+    for match in re.finditer(
+        r"\b(?:supports?|reflects?)\b.{0,50}?\b(positive|negative|null|mixed|unclear)\b", ask, re.I,
+    ):
+        prefix = ask[max(0, match.start() - 20):match.start()]
+        if not re.search(r"\b(?:no|not|cannot|can't|fails?|failed)\b", prefix, re.I):
+            return match.group(1).lower()
+    return ""
 
 
 def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tuple[str, str] | None:
     label = _label(row)
     if kind == "direction":
+        direction = _requested_direction(ask) or resolved_effect_direction(row)
         marker = f"Source-direction reconciliation ({label}):"
         detail = (
-            f"source-level direction={resolved_effect_direction(row)} is used consistently; "
+            f"reviewer-reconciled direction={direction} is used consistently; "
             "endpoint-specific findings remain separately qualified."
         )
     elif kind == "statistic":
@@ -738,9 +773,11 @@ def _direction_patterns(label: str) -> tuple[str, ...]:
 
 
 def _reconcile_direction_mentions(
-    paper_md: str, row: dict[str, Any], headings: Sequence[str],
+    paper_md: str, row: dict[str, Any], headings: Sequence[str], ask: str,
 ) -> tuple[str, int]:
-    label, resolved, changed = _label(row), resolved_effect_direction(row), 0
+    label = _label(row)
+    resolved = _requested_direction(ask) or resolved_effect_direction(row)
+    changed = 0
     patched = paper_md
     for heading in headings:
         span = _section_span(patched, heading)
@@ -761,9 +798,9 @@ def _reconcile_direction_mentions(
 
 
 def _direction_mentions_are_consistent(
-    paper_md: str, row: dict[str, Any], headings: Sequence[str],
+    paper_md: str, row: dict[str, Any], headings: Sequence[str], ask: str,
 ) -> bool:
-    resolved = resolved_effect_direction(row)
+    resolved = _requested_direction(ask) or resolved_effect_direction(row)
     for heading in headings:
         span = _section_span(paper_md, heading)
         section = paper_md[span[0]:span[1]] if span else ""
@@ -786,7 +823,7 @@ def _repair_named_revision(
     named = _named_rows(ask, rows)
     if kind == "direction":
         for row in named:
-            patched, n = _reconcile_direction_mentions(patched, row, headings)
+            patched, n = _reconcile_direction_mentions(patched, row, headings, ask)
             changed += n
     note_headings = ["Results"] if kind == "direction" and "Results" in headings else headings[:1]
     for row in named:
@@ -809,13 +846,30 @@ def _named_revision_is_stated(
         return False
     note_headings = ["Results"] if kind == "direction" and "Results" in headings else headings[:1]
     endpoint_attribution = kind == "direction" and direction_attribution_requested(ask)
-    statistics_ok = kind != "statistic" or _statistics_are_source_bound(paper_md, rows)
-    directions_ok = kind != "direction" or all(_direction_mentions_are_consistent(paper_md, row, headings) for row in named)
+    statistics_ok = kind != "statistic" or _named_statistics_are_resolved(paper_md, ask, rows)
+    directions_ok = kind != "direction" or all(
+        _direction_mentions_are_consistent(paper_md, row, headings, ask) for row in named
+    )
     proofs_ok = all((direction_attribution_is_stated(
         _prose_paragraphs(paper_md), _label(row), resolved_effect_direction(row), ask) if endpoint_attribution else
                      _section_has_note(paper_md, heading, note[1]))
                     for row, note in notes if note is not None for heading in note_headings)
     return statistics_ok and directions_ok and proofs_ok
+
+
+def _named_statistics_are_resolved(
+    paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
+) -> bool:
+    named = _named_rows(ask, rows)
+    targets = tuple(match.group(0) for match in _EFFECT_STAT_RE.finditer(ask))
+    for paragraph in _prose_paragraphs(paper_md):
+        if not any(_label(row).lower() in paragraph.lower() for row in named):
+            continue
+        for target in targets:
+            for match in re.finditer(re.escape(target), paragraph, re.I):
+                if not _stat_is_source_bound(paragraph, match, rows):
+                    return False
+    return bool(named)
 
 
 def _named_outcomes(ask: str, rows: Sequence[dict[str, Any]]) -> set[str]:
