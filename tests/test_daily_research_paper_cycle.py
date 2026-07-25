@@ -111,6 +111,7 @@ def test_revise_lane_allows_all_three_bounded_review_rounds() -> None:
 
     assert "--max-revise-attempts 3" in service
     assert "--cycle-budget-sec 3600" in service
+    assert "RestartPreventExitStatus=3" in service
     assert "TimeoutStartSec=4200" in service
 
 
