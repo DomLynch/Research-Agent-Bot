@@ -212,7 +212,14 @@ def _evidence_span(row: dict[str, Any]) -> str:
     if "source excerpts:" in text.lower():
         text = re.split(r"source excerpts:\s*", text, maxsplit=1, flags=re.I)[1]
     text = text.split(" | ", 1)[0].replace("|", " ").strip()
-    text = text if len(text) <= 320 else text[:317].rstrip() + "..."
+    upstream_truncated = text.endswith(("...", "\u2026"))
+    if upstream_truncated:
+        text = text.removesuffix("\u2026").removesuffix("...").rstrip()
+    if upstream_truncated or len(text) > 320:
+        suffix = " [excerpt truncated]."
+        limit = 320 - len(suffix)
+        prefix = text if len(text) <= limit else text[:limit].rsplit(" ", 1)[0]
+        text = (prefix or text[:limit]).rstrip(" ,;:") + suffix
     return _drop_unmatched_parentheses(text)
 
 

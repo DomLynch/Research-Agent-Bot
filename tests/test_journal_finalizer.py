@@ -6054,6 +6054,58 @@ def test_revision_surface_notes_repair_major_claim_trace_request(tmp_path: Path)
     assert journal_finalizer._phase_d_revision_surface_notes(fixed, tmp_path) == (fixed, [])
 
 
+def test_run_text_phases_repairs_trace_after_terminal_text_mutation(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    ask = "Add exact source tokens or evidence spans to major claims; required 2."
+    rows = [
+        {
+            "receipt_id": f"r{i}",
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/study.{i}",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 3,
+            "thesis_text": f"Source excerpts: Retained evidence span {i}.",
+        }
+        for i in range(1, 3)
+    ]
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": ask,
+        "required_revisions": [ask],
+    }))
+    paper = (
+        "## Results\n\n"
+        "Study1 2025 [bundle:1] reported bounded manuscript finding 1.\n\n"
+        "Study2 2025 [bundle:2] reported bounded manuscript finding 2.\n\n"
+        "## References\n\n- Study1 2025.\n"
+    )
+    original_split = journal_finalizer._phase_i_split_concatenated_headings
+
+    def corrupt_trace(text: str) -> tuple[str, list[journal_finalizer.FinalizerLogEntry]]:
+        fixed, logs = original_split(text)
+        if "## Major Claim Trace" in fixed:
+            fixed = fixed.replace(
+                "**Evidence span:** Retained evidence span 1.",
+                "**Evidence span:** Wrong evidence.",
+                1,
+            )
+        return fixed, logs
+
+    monkeypatch.setattr(
+        journal_finalizer,
+        "_phase_i_split_concatenated_headings",
+        corrupt_trace,
+    )
+
+    fixed, _logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
 def test_multi_issue_reviewer_revision_repairs_and_verifies_all_requirements(tmp_path: Path) -> None:
     required = [
         "Reconcile the Findings Map table counts with the actual source bundle and ensure it lists all sources.",

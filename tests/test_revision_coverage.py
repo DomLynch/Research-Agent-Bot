@@ -832,6 +832,16 @@ def test_major_claim_trace_span_drops_only_unmatched_parentheses() -> None:
 
     assert "(n=20)" in span
     assert span.count("(") == span.count(")")
+    assert span.endswith("[excerpt truncated].")
+    assert len(span) <= 320
+
+
+def test_major_claim_trace_completes_upstream_truncated_span() -> None:
+    span = revision_claim_trace._evidence_span({
+        "thesis_text": "Source excerpts: Retained evidence ends mid-sentenc\u2026",
+    })
+
+    assert span == "Retained evidence ends mid-sentenc [excerpt truncated]."
 
 
 def test_fragment_repair_preserves_valid_colon_lead_in() -> None:
