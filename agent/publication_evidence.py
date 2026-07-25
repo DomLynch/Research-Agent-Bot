@@ -106,7 +106,20 @@ def attach_evidence_spans(paper: str, bundle: list[dict[str, Any]]) -> None:
         marker = f"[bundle:{index}]"
         candidates = [line for line in lines if marker in line.lower() and len(line) >= 8]
         cited_as = str(row.get("cited_as") or "").lower()
-        span = next((line for line in candidates if cited_as and cited_as in line.lower()), "")
+        cited = [line for line in candidates if cited_as and cited_as in line.lower()]
+        trace = next((
+            line for line in cited
+            if re.search(
+                rf"\*\*Supporting source:\*\*.*?{re.escape(marker)}",
+                line,
+                re.I,
+            )
+        ), "")
+        source_specific = next((
+            line for line in cited
+            if len(set(re.findall(r"\[bundle:\d+\]", line, re.I))) == 1
+        ), "")
+        span = trace or source_specific or next(iter(cited), "")
         span = span or next(iter(candidates), "")
         if span:
             row["evidence_span"] = span

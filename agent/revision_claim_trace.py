@@ -187,10 +187,18 @@ def _source_bound_claims(
                 "result", "outcome", "synthesis", "conclusion", "what this synthesis adds",
             )) else 1
             claims.append((priority, order, claim, bundle_number, rows[bundle_number - 1]))
-    return [
+    ordered = [
         (claim, bundle_number, row)
         for _priority, _order, claim, bundle_number, row in sorted(claims)
     ]
+    distinct: list[tuple[str, int, dict[str, Any]]] = []
+    repeated: list[tuple[str, int, dict[str, Any]]] = []
+    seen_bundles: set[int] = set()
+    for item in ordered:
+        target = repeated if item[1] in seen_bundles else distinct
+        target.append(item)
+        seen_bundles.add(item[1])
+    return distinct + repeated
 
 
 def _ordered_rows(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:

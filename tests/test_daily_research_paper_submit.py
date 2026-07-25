@@ -954,6 +954,30 @@ def test_evidence_spans_keep_source_specific_trace_over_aggregate_prose() -> Non
     assert bundle[1]["evidence_span"] == "Jones 2025 supplied indirect context. [bundle:2]"
 
 
+def test_evidence_spans_prefer_explicit_major_claim_trace() -> None:
+    aggregate = (
+        "Smith 2026 [bundle:1] and Jones 2025 [bundle:2] support a bounded "
+        "cross-source interpretation."
+    )
+    trace = (
+        "- **Manuscript claim 1.** Smith 2026 [bundle:1] reported the direct result. "
+        "**Supporting source:** Smith 2026 [bundle:1] https://doi.org/10.1000/smith "
+        "**Evidence span:** Exact retained source excerpt."
+    )
+    bundle = [
+        {"cited_as": "Smith 2026", "directness": "direct"},
+        {"cited_as": "Jones 2025", "directness": "indirect"},
+    ]
+
+    daily._publication_evidence.attach_evidence_spans(
+        f"## Results\n\n{aggregate}\n\n## Major Claim Trace\n\n{trace}",
+        bundle,
+    )
+
+    assert bundle[0]["evidence_span"].startswith("Manuscript claim 1.")
+    assert bundle[1]["evidence_span"] == aggregate
+
+
 def test_evidence_spans_do_not_infer_source_from_bundle_order() -> None:
     paper = (
         "## Abstract\n\nThe retained evidence supports a bounded conclusion across the direct source base, "

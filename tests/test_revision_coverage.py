@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -744,6 +745,32 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
     assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
+    ask = "Add exact source tokens to major claims; required 3."
+    rows = [
+        {
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/study.{i}",
+            "thesis_text": f"Source excerpts: Retained evidence span {i}.",
+        }
+        for i in range(1, 4)
+    ]
+    paper = (
+        "## Results\n\n"
+        "Study1 2025 reported bounded manuscript finding one.\n\n"
+        "Study1 2025 reported bounded manuscript finding two.\n\n"
+        "Study1 2025 reported bounded manuscript finding three.\n\n"
+        "Study2 2025 reported bounded manuscript finding four.\n\n"
+        "Study3 2025 reported bounded manuscript finding five.\n"
+    )
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    supports = re.findall(r"\*\*Supporting source:\*\* .*?\[bundle:(\d+)\]", fixed)
+    assert supports == ["1", "2", "3"]
 
 
 def test_major_claim_trace_proof_rejects_unknown_bundle_and_wrong_span() -> None:
