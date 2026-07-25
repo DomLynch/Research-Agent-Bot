@@ -939,6 +939,34 @@ def test_phase_b_replaces_repeated_generic_mixed_qualifiers(tmp_path: Path) -> N
     assert _phase_b_lane_qualifier(fixed, run) == (fixed, [])
 
 
+def test_phase_b_collapses_bundle_annotated_generated_qualifiers(
+    tmp_path: Path,
+) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2022", "paper_id": "p1"}],
+        "lanes": {
+            "Smith 2022": "animal_preclinical",
+            "Wilson 2023": "human_observational",
+        },
+    }))
+    paper = (
+        "# Paper\n\n"
+        "Smith 2022 [bundle:9] reported context while Wilson 2023 reported "
+        "human data. Smith 2022 [bundle:9] provides animal/preclinical "
+        "context only. Smith 2022 [bundle:9] provides animal/preclinical "
+        "context only.\n"
+    )
+
+    fixed, log = _phase_b_lane_qualifier(paper, tmp_path)
+
+    assert len(log) == 1
+    assert fixed.count("provides animal/preclinical context only.") == 1
+    assert "Smith 2022 provides animal/preclinical context only." in fixed
+    assert _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])
+
+
 def test_phase_b_removes_stale_generic_qualifier_without_animal_citation(tmp_path: Path) -> None:
     from agent.journal_finalizer import _phase_b_lane_qualifier
 

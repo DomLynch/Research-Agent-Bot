@@ -718,11 +718,16 @@ def _phase_b_lane_qualifier(
     citation_pattern = "|".join(
         re.escape(token) for token in sorted(citation_pool, key=len, reverse=True)
     )
+    citation_ref_pattern = (
+        rf"(?:{citation_pattern})(?:\s*\[bundle:\d+\])?"
+        if citation_pattern else ""
+    )
     suffix_re = re.compile(
-        rf"\s+(?:{citation_pattern})(?:,\s*(?:{citation_pattern})){{0,2}}"
-        r"\s+provide(?:s)? animal/preclinical context only\.\s*$",
+        rf"(?:\s+{citation_ref_pattern}"
+        rf"(?:,\s*{citation_ref_pattern}){{0,2}}"
+        r"\s+provide(?:s)? animal/preclinical context only\.)+\s*$",
         re.I,
-    ) if citation_pattern else None
+    ) if citation_ref_pattern else None
     # Only explicit lead-ins mark a paragraph as already lane-labelled.
     # Source titles may contain words like "animal" without qualifying the prose.
     # Operate only on the body (above References). Splitting on the
