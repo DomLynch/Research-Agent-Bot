@@ -1651,6 +1651,11 @@ def test_payload_carries_revision_metadata_when_present(tmp_path: Path) -> None:
     assert payload["metadata"]["revision_feedback"] == "Add clearer caveats and resubmit."
     assert payload["parent_submission_id"] == "sub-1"
     assert payload["metadata"]["submission_identity_key"] != original_identity
+    first_revision_fingerprint = daily._payload_fingerprint(payload)
+    request = json.loads((run / "researka_revision_request.json").read_text())
+    request["submissionId"] = "sub-2"
+    _write_json(run / "researka_revision_request.json", request)
+    assert daily._payload_fingerprint(daily.build_payload(run)) != first_revision_fingerprint
 
 
 def test_successful_post_records_submitted_not_published(tmp_path: Path) -> None:

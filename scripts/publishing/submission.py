@@ -157,7 +157,7 @@ def _sha256(path: Path) -> str:
 def _payload_fingerprint(payload: dict[str, Any]) -> str:
     material = {
         key: payload.get(key)
-        for key in ("title", "abstract", "artifact_type", "article_type", "author_agent_id", "body_markdown", "sections", "source_bundle")
+        for key in ("title", "abstract", "artifact_type", "article_type", "author_agent_id", "body_markdown", "sections", "source_bundle", "parent_submission_id")
     }
     return "sha256:" + hashlib.sha256(json.dumps(material, sort_keys=True).encode("utf-8")).hexdigest()
 
