@@ -17,6 +17,8 @@ _CODED_POLARITY_NOTE = (
     "accounting and may differ from claim-level direction reported within a source."
 )
 _ANIMAL_FLAG = "[veterinary; preclinical context only; excluded from human aggregates]"
+_INDIRECT_B2_FLAG = "[indirect B2; down-weighted for causal inference]"
+_NON_NARRATIVE_PREFIXES = ("#", "|", "```", "Evidence-type reconciliation:", "Source-direction reconciliation (", "Source-statistic reconciliation (", "Source-scope boundary (")
 
 
 def _normalise(text: str) -> str:
@@ -24,7 +26,7 @@ def _normalise(text: str) -> str:
 
 
 def _asks_role_reconciliation(text: str) -> bool:
-    return (
+    return _asks_indirect_b2_narrative(text) or (
         any(token in text for token in ("evidence_type", "evidence type"))
         and "directness" in text
         and any(token in text for token in ("clinical rct", "randomized", "randomised"))
@@ -38,6 +40,12 @@ def _asks_role_reconciliation(text: str) -> bool:
     ) or (
         "review grade" in text and "comparison" in text
         and any(token in text for token in ("consistent", "framing", "role"))
+    )
+
+
+def _asks_indirect_b2_narrative(text: str) -> bool:
+    return all(token in text for token in ("indirect", "b2", "narrative")) and any(
+        token in text for token in ("flag", "status", "weight", "down-weight")
     )
 
 
@@ -140,6 +148,12 @@ def _review_level(row: dict[str, Any]) -> bool:
 
 def _role_note(row: dict[str, Any], ask: str) -> str:
     label = _label(row)
+    if (
+        _asks_indirect_b2_narrative(_normalise(ask))
+        and str(row.get("directness") or "").strip().lower().startswith("indirect")
+        and str(row.get("evidence_tier") or "").strip().upper() == "B2"
+    ):
+        return f"{label} is indirect B2 evidence and is down-weighted for causal inference."
     if derive_receipt_lane(row) == "animal_preclinical":
         return (
             f"{label} is retained as animal/preclinical contextual evidence "
@@ -160,7 +174,12 @@ def _role_note(row: dict[str, Any], ask: str) -> str:
 
 
 def _role_rows(ask: str, rows: Sequence[dict[str, Any]]) -> list[tuple[dict[str, Any], str]]:
-    return [(row, note) for row in _named_rows(ask, rows) if (note := _role_note(row, ask))]
+    candidates = [
+        row for row in rows
+        if str(row.get("directness") or "").strip().lower().startswith("indirect")
+        and str(row.get("evidence_tier") or "").strip().upper() == "B2"
+    ] if _asks_indirect_b2_narrative(_normalise(ask)) else _named_rows(ask, rows)
+    return [(row, note) for row in candidates if (note := _role_note(row, ask))]
 
 
 def _paragraphs(paper_md: str) -> list[tuple[str, str]]:
@@ -171,6 +190,23 @@ def _paragraphs(paper_md: str) -> list[tuple[str, str]]:
         elif part.strip() and not part.lstrip().startswith(("#", "|", "```")):
             out.append((heading, part))
     return out
+
+
+def _flag_indirect_b2_mentions(
+    paper_md: str, rows: Sequence[dict[str, Any]],
+) -> tuple[str, int]:
+    heading = re.search(r"^#{2,3}\s+(?:references|bibliography)\s*$", paper_md, re.M | re.I)
+    body, references = (paper_md[:heading.start()], paper_md[heading.start():]) if heading else (paper_md, "")
+    parts, changed = re.split(r"(\n\s*\n)", body), 0
+    for index in range(0, len(parts), 2):
+        if parts[index].lstrip().startswith(_NON_NARRATIVE_PREFIXES):
+            continue
+        for row in rows:
+            label = re.escape(_label(row))
+            pattern = rf"(?P<citation>\[{label}\]\([^)]+\)|(?<!\w){label}(?!\w))(?!\s*{re.escape(_INDIRECT_B2_FLAG)})"
+            parts[index], n = re.subn(pattern, rf"\g<citation> {_INDIRECT_B2_FLAG}", parts[index])
+            changed += n
+    return "".join(parts) + references, changed
 
 
 def _reconcile_roles(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> tuple[str, int]:
@@ -200,11 +236,18 @@ def _reconcile_roles(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) ->
         "Tensions and Gaps" if _section_span(patched, "Tensions and Gaps") else "Cross-Domain Synthesis"
     ) if "tension" in _normalise(ask) else "Results"
     patched, n = _upsert_note(patched, heading, "Evidence-type reconciliation:", note)
+    if _asks_indirect_b2_narrative(_normalise(ask)):
+        patched, flagged = _flag_indirect_b2_mentions(patched, [row for row, _note in role_rows])
+        n += flagged
     return patched, changed + n
 
 
 def _roles_reconciled(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> bool:
     role_rows, scope = _role_rows(ask, rows), paper_md.lower()
+    if _asks_indirect_b2_narrative(_normalise(ask)):
+        return bool(role_rows) and _flag_indirect_b2_mentions(
+            paper_md, [row for row, _note in role_rows],
+        )[0] == paper_md
     review_grade = "review grade" in _normalise(ask)
     return bool(role_rows) and all(
         (note.lower() in scope or _review_level(row) and not review_grade

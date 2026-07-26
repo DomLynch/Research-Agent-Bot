@@ -2043,6 +2043,21 @@ def test_named_numeric_correction_uses_source_nearest_statistic(tmp_path: Path) 
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
+def test_disputed_representative_statistic_skips_significance_note(tmp_path: Path) -> None:
+    ask = (
+        "Verify or correct the representative statistic 'P = 0.001' for Han 2020 "
+        "[bundle:1]; the bundled excerpt shows P=0.002 and P=0.049."
+    )
+    paper = "## Evidence Landscape\n\nHan 2020 reported liver outcomes.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, logs = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+
+    assert fixed == paper
+    assert logs == []
+    assert "P = 0.001" not in fixed
+
+
 def test_named_significance_repair_preserves_no_significant_reduction(tmp_path: Path) -> None:
     ask = (
         "Shoji 2025 reports p = 0.08, so correct any significant reduction claim."

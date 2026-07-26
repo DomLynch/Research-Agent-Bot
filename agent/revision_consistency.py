@@ -40,6 +40,11 @@ _FRAMEWORK_PROPOSAL_RE = re.compile(
     rf"{re.escape(_FRAMEWORK_REPLACEMENT)}",
     re.I,
 )
+_P_VALUE_RE = re.compile(r"\bp\s*(<=|>=|<|>|=|≤|≥)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
+_REPLACEMENT_CUE_RE = re.compile(
+    r"\b(?:(?:bundled?|source(?:\s+bundle)?)\s+)?excerpt\s+(?:shows?|reports?|contains?|lists?|states?|gives?)\b",
+    re.I,
+)
 _FRAMEWORK_NOVELTY_RE = re.compile(
     rf"({re.escape(_FRAMEWORK_REPLACEMENT)})\s+as\s+(?:a\s+)?"
     r"(?:(?:novel|new|original)\s+)?(?:organizing\s+claim|model|framework|construct)",
@@ -49,6 +54,65 @@ _FRAMEWORK_NOVELTY_RE = re.compile(
 
 def _normalise(text: str) -> str:
     return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
+
+
+def _p_key(text: str) -> tuple[str, float] | None:
+    match = _P_VALUE_RE.search(text)
+    return ({"≤": "<=", "≥": ">="}.get(match.group(1), match.group(1)), float(match.group(2))) if match else None
+
+
+def _replacement_parts(ask: str) -> tuple[str, str]:
+    match = _REPLACEMENT_CUE_RE.search(ask)
+    return (ask[:match.start()], ask[match.end():]) if match else ("", "")
+
+
+def preferred_replacement_statistics(ask: str, supported: Sequence[str]) -> tuple[str, ...]:
+    before, after = _replacement_parts(ask)
+    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} if after else set()
+    by_key = {_p_key(stat): stat for stat in supported if _p_key(stat)}
+    preferred = [by_key[key] for match in _P_VALUE_RE.finditer(after)
+                 if (key := _p_key(match.group())) in by_key]
+    return tuple(dict.fromkeys(preferred + [
+        stat for stat in supported if _p_key(stat) not in disputed
+    ]))
+
+
+def _nearest_source(text: str, at: int, labels: Sequence[str]) -> str:
+    start = max(text.rfind(token, 0, at) for token in ("\n", ". ", "! ", "? ")) + 1
+    ends = [pos for token in ("\n", ". ", "! ", "? ") if (pos := text.find(token, at)) >= 0]
+    scope, local_at = text[start:min(ends, default=len(text))], at - start
+    found = [
+        (abs(match.start() - local_at), match.start() > local_at, label.lower())
+        for label in labels for match in re.finditer(rf"(?<!\w){re.escape(label)}(?!\w)", scope, re.I)
+    ]
+    return min(found)[2] if found else ""
+
+
+def disputed_p_value_near_sources(
+    ask: str, paper_md: str, labels: Sequence[str], all_labels: Sequence[str],
+) -> bool:
+    before, after = _replacement_parts(ask)
+    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} if after else set()
+    targets = {label.lower() for label in labels}
+    return bool(disputed) and any(
+        _p_key(match.group()) in disputed
+        and _nearest_source(paper_md, match.start(), all_labels) in targets
+        for match in _P_VALUE_RE.finditer(paper_md)
+    )
+
+
+def remove_disputed_p_values_near_sources(
+    ask: str, paper_md: str, labels: Sequence[str], all_labels: Sequence[str],
+) -> str:
+    before, after = _replacement_parts(ask)
+    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} if after else set()
+    targets = {label.lower() for label in labels}
+    return _P_VALUE_RE.sub(
+        lambda match: "a source-reported estimate"
+        if _p_key(match.group()) in disputed
+        and _nearest_source(paper_md, match.start(), all_labels) in targets else match.group(),
+        paper_md,
+    )
 
 
 def _asks_tension_series(text: str) -> bool:

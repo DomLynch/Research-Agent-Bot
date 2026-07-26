@@ -1188,6 +1188,8 @@ def _asks_numeric_effect_audit(text: str) -> bool:
 
 
 def _asks_named_numeric_correction(text: str) -> bool:
+    if _quality._asks_named_statistic_reconciliation(text):
+        return False
     return (
         any(token in text for token in ("correct", "verify", "resolve", "reconcile", "recode", "recoded", "remove"))
         and (

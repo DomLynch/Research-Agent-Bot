@@ -304,14 +304,13 @@ def _asks_named_direction_reconciliation(text: str) -> bool:
 
 
 def _asks_named_statistic_reconciliation(text: str) -> bool:
-    return (
-        _has_named_source(text)
-        and any(token in text for token in ("statistic", "p value", "p <", "p =", "effect estimate"))
-        and any(token in text for token in (
-            "if it is not present", "if not present", "not present in",
-            "per endpoint", "which endpoint", "located in the source excerpt",
-        ))
-        and any(token in text for token in ("bundle", "excerpt", "source", "trace"))
+    return _has_named_source(text) and any(
+        token in text for token in ("statistic", "p value", "p <", "p =", "effect estimate")
+    ) and any(token in text for token in (
+        "if it is not present", "if not present", "not present in", "per endpoint",
+        "which endpoint", "located in the source excerpt", "representative statistic",
+    )) and any(token in text for token in ("add", "clarify", "verify", "correct", "remove", "reconcile")) and any(
+        token in text for token in ("bundle", "excerpt", "source", "trace")
     )
 
 
@@ -736,7 +735,7 @@ def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tupl
             "endpoint-specific findings remain separately qualified."
         )
     elif kind == "statistic":
-        stats = _traceable_effect_statistics(row)
+        stats = _consistency.preferred_replacement_statistics(ask, _traceable_effect_statistics(row))
         if re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
             statistic_kind = "p-value"
             stats = tuple(stat for stat in stats if stat.lower().startswith("p"))
@@ -820,8 +819,9 @@ def _direction_mentions_are_consistent(
 def _repair_named_revision(
     paper_md: str, ask: str, rows: Sequence[dict[str, Any]], kind: str,
 ) -> tuple[str, int]:
+    source_clean = _consistency.remove_disputed_p_values_near_sources(ask, paper_md, tuple(_label(row) for row in _named_rows(ask, rows)), tuple(_label(row) for row in rows))
     patched, changed = (
-        _repair_untraceable_statistics(paper_md, rows) if kind == "statistic" else (paper_md, 0)
+        _repair_untraceable_statistics(source_clean, rows) if kind == "statistic" else (paper_md, 0)
     )
     headings = _revision_headings(patched, ask, kind)
     named = _named_rows(ask, rows)
@@ -873,7 +873,7 @@ def _named_statistics_are_resolved(
             for match in re.finditer(re.escape(target), paragraph, re.I):
                 if not _stat_is_source_bound(paragraph, match, rows):
                     return False
-    return bool(named)
+    return bool(named) and not _consistency.disputed_p_value_near_sources(ask, paper_md, tuple(_label(row) for row in named), tuple(_label(row) for row in rows))
 
 
 def _named_outcomes(ask: str, rows: Sequence[dict[str, Any]]) -> set[str]:

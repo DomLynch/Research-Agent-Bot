@@ -17,6 +17,7 @@ from agent.revision_identity import direction_tally_note, repair_revision_identi
 from agent.revision_contract import feedback as _revision_feedback, gate_report as _revision_gate_report
 from agent.revision_quality import (
     asks_exact_stat_trace as _asks_exact_stat_trace,
+    _asks_named_statistic_reconciliation,
     findings_map_row,
     manifest_row_finding as _manifest_row_finding,
     repair_revision_quality,
@@ -2146,6 +2147,8 @@ def _numeric_significance_feedback(feedback: str) -> str:
     selected: list[str] = []
     for ask in revision_coverage.revision_asks(feedback):
         explicit = _asks_explicit_significance_correction(ask)
+        if not explicit and _asks_named_statistic_reconciliation(" ".join(ask.lower().split())):
+            continue
         clauses = (ask,) if explicit else re.split(r";\s*", ask)
         selected.extend(
             clause.strip()

@@ -2710,6 +2710,105 @@ def test_deterministic_unmet_accepts_named_numeric_correction_without_audit_ask(
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_disputed_representative_statistic_uses_source_excerpt_values() -> None:
+    rows = [
+        {
+            "citation_token": "Han 2020",
+            "source_title": "Ipragliflozin add-on trial",
+            "thesis_text": "Unrelated endpoint p=0.001; fatty liver index p=0.002; NAFLD liver fat score p=0.049.",
+            "p_values": ["p=0.001", "p=0.002", "p=0.049"],
+        },
+        {
+            "citation_token": "Li 2025",
+            "source_title": "Separate cohort",
+            "thesis_text": "Separate source-supported result p=0.001.",
+            "p_values": ["p=0.001"],
+        },
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Han 2020 reported a representative statistic P = 0.001. "
+        "Li 2025 reported P = 0.001 in a separate source. "
+        "Han 2020 contextualized another comparison; P = 0.001 in Li 2025 was separately supported.\n\n"
+        "## Results\n\nThe trial reported liver outcomes.\n"
+    )
+
+    for verb in ("shows", "lists"):
+        ask = (
+            "Verify or correct the representative statistic 'P = 0.001' for Han 2020 "
+            f"[bundle:1]; the bundled excerpt {verb} P=0.002 for fatty liver index and "
+            "P=0.049 for NAFLD liver fat score."
+        )
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask], evidence_rows=rows) == [ask]
+        fixed, details = repair_revision_quality(paper, rows, ask)
+
+        assert "Han 2020 reported a representative statistic P = 0.001" not in fixed
+        assert "Li 2025 [bundle:2] reported P = 0.001" in fixed
+        assert "P = 0.001 in Li 2025 [bundle:2] was separately supported" in fixed
+        assert "Han 2020 [bundle:1] retains p=0.002 as bundle-traceable" in fixed
+        assert details == ["named_statistic_reconciliation"]
+        assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
+        assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
+
+
+def test_indirect_b2_narrative_ask_is_repaired_from_manifest_roles() -> None:
+    ask = (
+        "When invoking indirect (B2) sources in narrative arguments, explicitly flag "
+        "their indirectness status so readers can weight the inference appropriately."
+    )
+    rows = [
+        {"citation_token": "Li 2025", "directness": "indirect", "evidence_tier": "B2"},
+        {"citation_token": "Han 2020", "directness": "direct", "evidence_tier": "A1"},
+    ]
+    paper = (
+        "## Abstract\n\nLi 2025 was associated with the outcome.\n\n"
+        "## Results\n\nLi 2025 and Han 2020 reported different signals.\n\n"
+        "## References\n\nLi 2025. Source title.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask], evidence_rows=rows) == [ask]
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    flag = "[indirect B2; down-weighted for causal inference]"
+    assert fixed.count(flag) == 2
+    assert "Li 2025 is indirect B2 evidence and is down-weighted for causal inference." in fixed
+    assert "## References\n\nLi 2025. Source title." in fixed
+    assert "Han 2020 is indirect B2" not in fixed
+    assert details == ["evidence_role_reconciliation"]
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
+
+
+def test_indirect_b2_flags_preserve_reference_heading_variants() -> None:
+    ask = (
+        "When invoking indirect (B2) sources in narrative arguments, explicitly flag "
+        "their indirectness status so readers can weight the inference appropriately."
+    )
+    rows = [{"citation_token": "Li 2025", "directness": "indirect", "evidence_tier": "B2"}]
+    for heading in ("## REFERENCES", "## Bibliography", "### References"):
+        reference = f"{heading}\n\nLi 2025. Source title.\n"
+        paper = f"## Results\n\nLi 2025 reported an association.\n\n{reference}"
+
+        fixed, _details = repair_revision_quality(paper, rows, ask)
+
+        assert reference in fixed
+        assert fixed.count("[indirect B2; down-weighted for causal inference]") == 1
+
+
+def test_indirect_b2_flags_do_not_treat_narrative_reference_heading_as_bibliography() -> None:
+    ask = (
+        "When invoking indirect (B2) sources in narrative arguments, explicitly flag "
+        "their indirectness status so readers can weight the inference appropriately."
+    )
+    rows = [{"citation_token": "Li 2025", "directness": "indirect", "evidence_tier": "B2"}]
+    paper = "## References to Prior Work\n\nLi 2025 reported an association.\n"
+
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+
+    assert "Li 2025 [indirect B2; down-weighted for causal inference] reported" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
+
+
 def test_deterministic_unmet_rejects_non_significant_source_still_positive() -> None:
     ask = (
         "Reconcile the Brouwers 2016 frailty coding: if p=0.88 is the headline statistic, "
