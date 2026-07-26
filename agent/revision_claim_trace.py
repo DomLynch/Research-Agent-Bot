@@ -16,6 +16,12 @@ _TRACE_LINE_RE = re.compile(
 )
 _ABBREVIATION_RE = re.compile(r"\b(?:vs|e\.g|i\.e|et al)\.", re.I)
 _PROTECTED_PERIOD = "\ue000"
+_NON_CLAIM_PREFIXES = (
+    "Evidence-type reconciliation:",
+    "Source-direction reconciliation (",
+    "Source-statistic reconciliation (",
+    "Source-scope boundary (",
+)
 
 
 def asks_major_claim_trace(text: str) -> bool:
@@ -169,6 +175,7 @@ def _source_bound_claims(
             section == "references"
             or len(stripped) < 40
             or stripped.startswith(("#", "|", "```", "- "))
+            or stripped.startswith(_NON_CLAIM_PREFIXES)
         ):
             continue
         protected = _ABBREVIATION_RE.sub(

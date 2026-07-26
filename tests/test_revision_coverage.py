@@ -862,6 +862,42 @@ def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
     assert fixed.count("https://doi.org/10.1000/study.3") == 1
 
 
+def test_major_claim_trace_does_not_count_source_role_boilerplate() -> None:
+    ask = "Add exact source tokens to major claims; required 3."
+    rows = [
+        {
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/study.{i}",
+            "directness": "indirect",
+            "evidence_tier": "B2",
+        }
+        for i in range(1, 4)
+    ]
+    paper = (
+        "## Results\n\n"
+        "Evidence-type reconciliation: Study1 2025 [bundle:1] is indirect B2 evidence "
+        "and is down-weighted for causal inference "
+        "[exact source: https://doi.org/10.1000/study.1]. "
+        "Study2 2025 [bundle:2] is retained as animal/preclinical contextual evidence "
+        "[exact source: https://doi.org/10.1000/study.2]. "
+        "Study3 2025 [bundle:3] is retained as review-level evidence "
+        "[exact source: https://doi.org/10.1000/study.3].\n\n"
+        "Study1 2025 [bundle:1] reported the first bounded outcome.\n\n"
+        "Study2 2025 [bundle:2] reported the second bounded outcome.\n\n"
+        "Study3 2025 [bundle:3] reported the third bounded outcome.\n"
+    )
+
+    assert revision_claim_trace.major_claim_trace_is_stated(paper, ask, rows) is False
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert "first bounded outcome [exact source: https://doi.org/10.1000/study.1]" in fixed
+    assert "second bounded outcome [exact source: https://doi.org/10.1000/study.2]" in fixed
+    assert "third bounded outcome [exact source: https://doi.org/10.1000/study.3]" in fixed
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is True
+
+
 def test_major_claim_trace_proof_rejects_unknown_bundle_and_wrong_span() -> None:
     ask = (
         "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
