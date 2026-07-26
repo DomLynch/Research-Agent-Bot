@@ -7,6 +7,7 @@ keeps public artifacts separate from audit/provenance sidecars.
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 import tomllib
@@ -319,13 +320,14 @@ def _write_docx(path: Path, paper: str) -> None:
         zf.writestr("[Content_Types].xml", '<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>')
         zf.writestr("_rels/.rels", '<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>')
         zf.writestr("word/document.xml", f'<?xml version="1.0"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>{document}</w:body></w:document>')
+        zf.writestr("researka/source.sha256", hashlib.sha256(paper.encode("utf-8")).hexdigest())
 
 
 def _docx_body(paper: str) -> str:
     out: list[str] = []
     lines = paper.splitlines()
     idx = 0
-    while idx < len(lines) and len(out) < 700:
+    while idx < len(lines):
         table = _table_at(lines, idx)
         if table:
             rows, idx = table

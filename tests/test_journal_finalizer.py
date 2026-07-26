@@ -5470,6 +5470,29 @@ def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: 
     assert after.passed is True
 
 
+def test_phase_g_refreshes_public_exports_from_final_markdown(tmp_path: Path) -> None:
+    import hashlib
+    import zipfile
+
+    paper = "# Research Synthesis: Test\n\n## Results\n\nFinal revised evidence.\n"
+    (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "topic": "test_effects",
+        "receipts": [],
+    }), encoding="utf-8")
+    (tmp_path / "full_paper.docx").write_bytes(b"stale")
+    (tmp_path / "full_paper.typ").write_text("stale", encoding="utf-8")
+
+    from agent.artifact_consistency import refresh_public_exports
+    assert refresh_public_exports(tmp_path) is True
+    source_hash = hashlib.sha256(paper.encode("utf-8")).hexdigest()
+    with zipfile.ZipFile(tmp_path / "full_paper.docx") as archive:
+        assert archive.read("researka/source.sha256").decode() == source_hash
+        assert b"Final revised evidence" in archive.read("word/document.xml")
+    assert (tmp_path / "full_paper.typ").read_text().startswith(f"// source-sha256: {source_hash}\n")
+    assert refresh_public_exports(tmp_path) is False
+
+
 def test_revision_surface_notes_insert_manifest_backed_thin_brief_notes(tmp_path: Path) -> None:
     feedback = (
         "Add substantive narrative under each outcome subsection that links at least one "
@@ -5514,7 +5537,8 @@ def test_revision_surface_notes_insert_manifest_backed_thin_brief_notes(tmp_path
 
     assert [entry.rule for entry in logs] == ["insert_manifest_backed_revision_surface_notes"]
     assert "Source examples: Cardiometabolic: Wang 2024" in fixed
-    assert "**Direct-source ceiling:** The direct clinical source set is Wang 2024." in fixed
+    assert "**Direct-source ceiling:** The corpus contains 1 direct clinical source." in fixed
+    assert "Representative direct sources are Wang 2024." in fixed
     assert "**Design-limit note:** Protocol, mechanistic, observational, or cross-sectional sources" in fixed
     assert "Vicente-Gabriel 2024" in fixed
 

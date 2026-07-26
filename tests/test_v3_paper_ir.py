@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import sys
 import zipfile
@@ -80,6 +81,8 @@ def test_compile_run_writes_paper_ir_exports_and_quality_score(tmp_path: Path) -
     with zipfile.ZipFile(run / "full_paper.docx") as zf:
         assert "word/document.xml" in zf.namelist()
         document = zf.read("word/document.xml").decode()
+        source_hash = zf.read("researka/source.sha256").decode()
+    assert source_hash == hashlib.sha256((run / "full_paper.md").read_bytes()).hexdigest()
     assert "<w:b/>" in document
     assert "<w:tbl>" in document
     assert "Depommier 2019" in document
@@ -138,6 +141,21 @@ def test_docx_handles_ragged_pipe_table_as_plain_text(tmp_path: Path) -> None:
         document = zf.read("word/document.xml").decode()
     assert "<w:tbl>" not in document
     assert "Depommier 2019" in document
+
+
+def test_docx_export_does_not_truncate_long_manuscript(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    paper = "# Long paper\n\n" + "\n\n".join(
+        f"Source paragraph {index} remains visible." for index in range(705)
+    )
+    (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
+    ir._write_docx(tmp_path / "full_paper.docx", paper)
+
+    with zipfile.ZipFile(tmp_path / "full_paper.docx") as archive:
+        document = archive.read("word/document.xml").decode()
+    assert "Source paragraph 704 remains visible." in document
+    assert verify_run_artifacts(tmp_path).passed is True
 
 
 def test_reresolve_export_manifest_repoints_sidecar_moved_to_audit(tmp_path) -> None:

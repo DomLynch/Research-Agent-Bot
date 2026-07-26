@@ -4981,15 +4981,8 @@ def _revision_surface_examples(receipts: list[dict[str, Any]]) -> list[str]:
 
 
 def _revision_direct_source_ceiling(receipts: list[dict[str, Any]]) -> str:
-    direct = [row for row in receipts if str(row.get("directness") or "").lower() == "direct"]
-    direct_text = "; ".join(_row_citation(row) for row in direct[:5]) or "no accepted direct source"
-    return (
-        "**Direct-source ceiling:** The direct clinical source set is "
-        f"{direct_text}. The remaining {max(0, len(receipts) - len(direct))} "
-        "accepted sources are indirect, review, protocol, mechanistic, or "
-        "contextual evidence, so they refine scope and uncertainty but do not "
-        "outweigh the direct-source interpretation."
-    )
+    from agent.reviewer_consistency_repairs import direct_ceiling_note
+    return direct_ceiling_note(receipts)
 
 
 def _revision_design_limit_note(receipts: list[dict[str, Any]]) -> str:
@@ -6052,6 +6045,9 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
                 sum(entry.n_changes for entry in closure_log),
                 "cited registry-backed reference entries before surface refresh",
             )
+    from agent.artifact_consistency import refresh_public_exports
+    if refresh_public_exports(out_dir):
+        _g("refresh_public_exports_post_finalizer", 1, "DOCX, Typst, PaperIR, and export manifest rebuilt from final Markdown")
     if _refresh_audit_sidecar(out_dir):
         _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
     n_resolved = 0

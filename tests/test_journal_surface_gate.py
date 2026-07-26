@@ -1642,8 +1642,8 @@ def test_artifact_consistency_skips_missing_optional_docx_extractor(tmp_path, mo
     (tmp_path / "full_paper.docx").write_bytes(b"not parsed without optional dependency")
     monkeypatch.setattr(ac, "_extract_docx_text", lambda _p: (_ for _ in ()).throw(ImportError("No module named 'docx'")))
     report = ac.verify_run_artifacts(tmp_path)
-    assert report.passed
-    assert any(c.name == "docx_extraction_skipped" and c.passed for c in report.checks)
+    assert report.passed is False
+    assert any(c.name == "docx_extraction_skipped" and not c.passed for c in report.checks)
 
 
 # Slice 15 — writer-compliance scrubber. The deterministic post-render

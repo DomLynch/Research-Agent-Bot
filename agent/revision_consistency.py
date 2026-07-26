@@ -8,6 +8,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any, cast
 
+from agent import reviewer_consistency_repairs as _reviewer_repairs
 from agent.endpoint_evidence import endpoint_direction_map
 from agent.evidence_lanes import derive_receipt_lane, effective_directness
 from agent.outcome_class_remap import outcome_display
@@ -222,7 +223,7 @@ def ask_known(ask: str, _rows: Sequence[dict[str, Any]] | None = None) -> bool:
         _asks_tension_series, _asks_claim_total, _asks_endpoint_tensions,
         _asks_framework_cleanup, _asks_substantive_background, _asks_decision_grade_answer,
         _asks_exclusion_directness_reconciliation,
-    ))
+    )) or _reviewer_repairs.ask_known(ask, _rows)
 
 
 def _section_span(paper_md: str, heading: str, level: int = 2) -> tuple[int, int] | None:
@@ -561,7 +562,10 @@ def proof_is_stated(
         (_asks_decision_grade_answer, _decision_grade_note(ask, rows) in paper_md),
         (_asks_exclusion_directness_reconciliation, _directness_flow_note(paper_md, rows) in paper_md),
     )
-    return all(not matches(text) or passed for matches, passed in checks)
+    return (
+        all(not matches(text) or passed for matches, passed in checks)
+        and _reviewer_repairs.proof_is_stated(paper_md, ask, rows)
+    )
 
 
 def repair(
@@ -589,4 +593,6 @@ def repair(
         patched, changed = _repair_decision_grade_answer(patched, decision_ask, rows)
         if changed:
             details.append("decision_grade_answer")
+    patched, reviewer_details = _reviewer_repairs.repair(patched, rows, feedback)
+    details.extend(detail for detail in reviewer_details if detail not in details)
     return patched, details

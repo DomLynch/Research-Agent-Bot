@@ -196,14 +196,13 @@ def _thin_limitations_note(receipts: Sequence[ReceiptSummary]) -> str:
 
 def _thin_conclusion_note(receipts: Sequence[ReceiptSummary], matrix: TensionMatrix) -> str:
     direct = [r for r in receipts if r.directness == "direct"]
-    if direct:
-        direct_text = "; ".join(_receipt_role(r) for r in direct[:5])
-    else:
-        direct_text = "no accepted direct source"
+    noun = "source" if len(direct) == 1 else "sources"
+    direct_text = "; ".join(_receipt_role(r) for r in direct[:5]) or "none"
+    extra = f"; {len(direct) - 5} additional direct sources are listed in the Findings Map" if len(direct) > 5 else ""
     remainder = max(0, len(receipts) - len(direct))
     return (
-        "**Direct-source ceiling:** The direct clinical source set is "
-        f"{direct_text}. The remaining {remainder} accepted sources are "
+        f"**Direct-source ceiling:** The corpus contains {len(direct)} direct clinical {noun}. "
+        f"Representative direct sources are {direct_text}{extra}. The remaining {remainder} sources are "
         "indirect, review, protocol, or mechanistic/contextual evidence, so "
         "they can refine scope and uncertainty but do not outweigh the direct "
         f"source role. The conclusion remains bounded by {len(matrix.non_orthogonal())} "

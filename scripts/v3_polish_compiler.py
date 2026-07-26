@@ -7,6 +7,7 @@ JSON. Standalone CLI exits nonzero only for deterministic polish failures.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import re
@@ -140,7 +141,10 @@ def _markdown_to_typst(markdown: str) -> str:
 def write_typst_source(run_dir: Path, paper: str, manifest: dict[str, Any] | None) -> Path:
     template = DEFAULT_TEMPLATE.read_text(encoding="utf-8")
     body = _markdown_to_typst(paper)
-    typ = template.replace("{{TITLE}}", _typ_escape(_title(paper, manifest))).replace("{{BODY}}", body)
+    source_hash = hashlib.sha256(paper.encode("utf-8")).hexdigest()
+    typ = f"// source-sha256: {source_hash}\n" + template.replace(
+        "{{TITLE}}", _typ_escape(_title(paper, manifest)),
+    ).replace("{{BODY}}", body)
     out = run_dir / "full_paper.typ"
     out.write_text(typ, encoding="utf-8")
     return out

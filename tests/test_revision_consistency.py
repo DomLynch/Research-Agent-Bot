@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any
+
 from agent.revision_quality import (
     findings_map_row,
     repair_revision_quality,
@@ -172,7 +174,7 @@ def test_decision_grade_answer_is_scoped_to_receipt_evidence_and_idempotent() ->
         "adjacent evidence slice: state explicitly whether the direct evidence supports a "
         "decision-grade conclusion, and on what conditions."
     )
-    rows = [
+    rows: list[dict[str, Any]] = [
         {
             "citation_token": f"Direct {index}",
             "directness": "direct",
@@ -265,6 +267,348 @@ def test_exclusion_count_and_directness_classification_are_reconciled() -> None:
     assert revision_quality_proof_is_stated(fixed, ask, rows)
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
     assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_latest_metformin_consistency_feedback_is_repaired_generically() -> None:
+    asks = [
+        (
+            "Reconcile the immune outcome class internally: either describe Schiapaccassa 2019 as concordant "
+            "anti-inflammatory direction across endpoints (matching the Results paragraph) and remove 'mixed' "
+            "from the Findings Map direction, or describe the class as heterogeneous with mixed findings. "
+            "Do not both label it mixed in the table and concordant in the prose."
+        ),
+        (
+            "Either remove the external reference citations (Ioannidis 2005, Perera 2006, Studenski 2011, "
+            "Cesari 2009, Cruz-Jentoft 2019, Bohannon 1997) from manuscript text or add them to the source "
+            "bundle with verification tokens. Currently they appear as authoritative anchors without bundle provenance."
+        ),
+        (
+            "Reconcile the denominator in the Conclusion's direct-source count (2+2+1+6=11 of 26 vs 15 total "
+            "direct sources) and clearly state which outcome slice the count applies to."
+        ),
+        (
+            "Decide consistently on the mechanistic-evidence framing: either explicitly separate the "
+            "mechanistic/biomarker RCTs (Mueller 2021, Marcelo-Calvo 2026, Tavabi 2021, Effects of Metformin "
+            "on Biomarkers 2026, Bilusic 2026) into a separate evidence tier or correct the Introduction "
+            "claim that the corpus contains 'no sources classified primarily as mechanistic or model-system evidence'."
+        ),
+        (
+            "Tighten the Cross-Domain Synthesis so that load-bearing tensions match the direction-codes in "
+            "the Findings Map (e.g., the 'null vs negative' Qin 2025 vs Agarwal 2026 entry uses the same "
+            "generic 'endpoint-distance/population-stratified' explanation for every tension, which is "
+            "template prose, not synthesis)."
+        ),
+        (
+            "Correct the Methods section to remove the implication of quantitative pooling that does not occur, "
+            "or add the pooling artifact."
+        ),
+    ]
+    rows = [
+        {
+            "citation_token": "Schiapaccassa 2019",
+            "directness": "direct",
+            "outcome_class": "immune",
+            "effect_direction": "mixed",
+            "population_summary": "older adults",
+        },
+        {
+            "citation_token": "Qin 2025",
+            "directness": "direct",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "null",
+            "population_summary": "adults",
+        },
+        {
+            "citation_token": "Agarwal 2026",
+            "directness": "direct",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "negative",
+            "population_summary": "adults",
+        },
+        *[
+            {
+                "citation_token": f"Direct {index} 2024",
+                "directness": "direct",
+                "outcome_class": "cardiometabolic",
+                "effect_direction": "unclear",
+            }
+            for index in range(12)
+        ],
+        {"citation_token": "Context 2023", "directness": "indirect", "outcome_class": "contextual_other"},
+    ]
+    paper = """## Evidence Landscape
+
+The corpus contains no sources classified primarily as mechanistic evidence.
+Findings Map: Qin 2025 outcome=cardiometabolic, direction=null, directness=direct.
+Findings Map: Agarwal 2026 outcome=cardiometabolic, direction=negative, directness=direct.
+
+## Methods
+
+Quantitative pooling applied only where >=3 sources reported comparable endpoints.
+
+## Results
+
+Within-corpus tension is resolved as agreement rather than disagreement: both Schiapaccassa 2019 and
+another trial are coded as reporting a negative effect, and the profile is directionally concordant
+and anti-inflammatory.
+
+## Cross-Domain Synthesis
+
+- Qin 2025 versus Agarwal 2026: null vs negative. Leading explanations: Effect is endpoint-distance
+dependent; Effect is population-stratified.
+
+## Conclusion
+
+Decision-grade answer: No broad decision-grade conclusion is supported for the cardiometabolic evidence slice. The retained slice contains 11/26 direct sources.
+**Direct-source ceiling:** The direct clinical source set is Qin 2025; Agarwal 2026. The remaining 14 accepted sources are indirect.
+Ioannidis 2005 defines the surrogate boundary. Perera 2006 and Studenski 2011 define gait thresholds.
+Cesari 2009, Cruz-Jentoft 2019, and Bohannon 1997 provide external numeric anchors.
+
+## References
+
+- **Ioannidis 2005.** External reference.
+- **Perera 2006.** External reference.
+"""
+    feedback = "; ".join(asks)
+
+    fixed, details = repair_revision_quality(paper, rows, feedback)
+
+    assert set(details) == {
+        "named_direction_reconciliation",
+        "unbundled_citation_cleanup",
+        "decision_denominator_reconciliation",
+        "mechanistic_content_framing",
+        "cross_domain_tension_specificity",
+        "pooling_claim_cleanup",
+    }
+    assert all(revision_quality_ask_known(ask, rows) for ask in asks)
+    assert all(revision_quality_proof_is_stated(fixed, ask, rows) for ask in asks)
+    assert revision_coverage.deterministic_unmet_asks(fixed, asks, evidence_rows=rows) == []
+    assert "reviewer-reconciled direction=mixed" in fixed
+    assert "directionally concordant" not in fixed
+    assert "heterogeneous across inflammatory endpoints" in fixed
+    assert "14/14 direct sources" in fixed
+    assert "14/14 direct-source fraction applies only to the cardiometabolic evidence slice" in fixed
+    assert "all-corpus direct-source denominator is 15/16" in fixed
+    assert "The corpus contains 15 direct clinical sources" in fixed
+    assert "10 additional direct sources are listed in the Findings Map" in fixed
+    assert "direct clinical source set is" not in fixed
+    assert "No quantitative pooling was performed" in fixed
+    assert fixed.count("No quantitative pooling was performed") == 1
+    assert "Leading explanations:" not in fixed
+    assert "Qin 2025 versus Agarwal 2026" not in fixed
+    assert "Qin 2025: direction=null" in fixed
+    assert "Agarwal 2026: direction=negative" in fixed
+    assert "Ioannidis 2005" not in fixed
+    assert "Perera 2006" not in fixed
+    assert "Mechanistic-content clarification:" in fixed
+
+    stable, second_details = repair_revision_quality(fixed, rows, feedback)
+    assert stable == fixed
+    assert second_details == []
+
+
+def test_denominator_repair_fails_closed_without_a_named_scope() -> None:
+    ask = "Reconcile the direct-source denominator and state which outcome slice it applies to."
+    paper = "## Conclusion\n\nDecision-grade answer: The retained slice contains 2/9 direct sources.\n"
+    rows = [{"directness": "direct", "outcome_class": "immune"}]
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert fixed == paper
+    assert details == []
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is False
+
+
+def test_unbundled_cleanup_preserves_bundle_grounded_result_sentence() -> None:
+    ask = "Remove the external reference citation Ioannidis 2005 because it lacks bundle provenance."
+    rows = [{"citation_token": "Trial 2024", "directness": "direct", "outcome_class": "immune"}]
+    paper = (
+        "## Results\n\nTrial 2024 [bundle:1] reported a 20% reduction, consistent with Ioannidis 2005.\n\n"
+        "## References\n\n- **Ioannidis 2005.** External reference.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["unbundled_citation_cleanup"]
+    assert "Trial 2024 [bundle:1] reported a 20% reduction." in fixed
+    assert "Ioannidis 2005" not in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+
+
+def test_unbundled_cleanup_preserves_exact_source_doi() -> None:
+    ask = "Remove the external reference citation Ioannidis 2005 because it lacks bundle provenance."
+    rows = [{"citation_token": "Park 2024", "directness": "direct", "outcome_class": "cardiometabolic"}]
+    source_sentence = (
+        "Most cardiometabolic RCTs (Park 2024 [bundle:2]) report HbA1c as the primary endpoint, "
+        "which Ioannidis 2005 flags as a surrogate whose hard-outcome association is imperfect "
+        "[exact source: https://doi.org/10.4093/dmj.2023.0259]."
+    )
+    paper = f"## Limitations\n\n{source_sentence}\n"
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["unbundled_citation_cleanup"]
+    assert (
+        "Most cardiometabolic RCTs (Park 2024 [bundle:2]) report HbA1c as the primary endpoint "
+        "[exact source: https://doi.org/10.4093/dmj.2023.0259]."
+    ) in fixed
+    assert ".org/" not in fixed.replace("doi.org/", "")
+    assert "Ioannidis 2005" not in fixed
+
+
+def test_unbundled_cleanup_preserves_bundled_source_in_mixed_parenthetical() -> None:
+    ask = "Remove the external reference citation Ioannidis 2005 because it lacks bundle provenance."
+    rows = [{"citation_token": "Trial 2024", "directness": "direct", "outcome_class": "immune"}]
+    paper = "## Results\n\nTrial 2024 reported the endpoint (Ioannidis 2005; Trial 2024 [bundle:1]).\n"
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["unbundled_citation_cleanup"]
+    assert fixed == "## Results\n\nTrial 2024 reported the endpoint (Trial 2024 [bundle:1])."
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+
+
+def test_cross_domain_repair_uses_findings_map_resolved_direction() -> None:
+    ask = (
+        "Tighten the Cross-Domain Synthesis tension for Null 2025 versus Control 2026 so direction-codes "
+        "match the Findings Map and template prose is removed."
+    )
+    rows: list[dict[str, Any]] = [
+        {
+            "citation_token": "Null 2025",
+            "directness": "direct",
+            "outcome_class": "immune",
+            "effect_direction": "null",
+            "source_title": "Higher inflammation risk",
+            "thesis_text": "Higher inflammation risk was reported (p=0.01).",
+            "p_values": ["p=0.01"],
+        },
+        {
+            "citation_token": "Control 2026",
+            "directness": "direct",
+            "outcome_class": "immune",
+            "effect_direction": "positive",
+        },
+    ]
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        "- Null 2025 versus Control 2026: null versus positive. "
+        "Leading explanations: endpoint-distance/population-stratified.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["cross_domain_tension_specificity"]
+    assert "Null 2025 versus Control 2026" not in fixed
+    assert "direction=negative" in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+
+
+def test_cross_domain_repair_removes_stale_bundled_tension() -> None:
+    ask = (
+        "Tighten the Cross-Domain Synthesis so that load-bearing tensions match the direction-codes "
+        "in the Findings Map for Qin 2025 versus Agarwal 2026."
+    )
+    rows = [
+        {
+            "citation_token": "Qin 2025",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "unclear",
+            "source_title": "No clear primary-endpoint direction",
+        },
+        {
+            "citation_token": "Agarwal 2026",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "negative",
+        },
+    ]
+    paper = (
+        "## Cross-Domain Synthesis\n\n### Load-Bearing Tensions\n\n"
+        "- Qin 2025 [bundle:3] versus Agarwal 2026 [bundle:16]: "
+        "a Cardiometabolic null vs negative tension. Leading explanations: generic template.\n\n"
+        "## Evidence Snapshot\n\n### Load-Bearing Tensions\n\n"
+        "- Severity 4 null vs negative: Qin 2025 [bundle:3] vs Agarwal 2026 [bundle:16]: stale conflict.\n"
+        "- Severity 4 negative vs null: Agarwal 2026 [bundle:16] vs Qin 2025 [bundle:3]: reversed stale conflict.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["cross_domain_tension_specificity"]
+    assert "null vs negative tension" not in fixed
+    assert "Qin 2025 [bundle:3] versus Agarwal 2026 [bundle:16]" not in fixed
+    assert "Severity 4 null vs negative: Qin 2025 [bundle:3]" not in fixed
+    assert "Severity 4 negative vs null: Agarwal 2026 [bundle:16]" not in fixed
+    assert "Qin 2025: direction=unclear" in fixed
+    assert "Agarwal 2026: direction=negative" in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+
+
+def test_mixed_repair_preserves_source_specific_results() -> None:
+    ask = (
+        "Reconcile Schiapaccassa 2019 labelled mixed in the table but directionally concordant in prose; "
+        "do not both label it mixed and concordant."
+    )
+    rows = [{
+        "citation_token": "Schiapaccassa 2019",
+        "directness": "direct",
+        "outcome_class": "immune",
+        "effect_direction": "mixed",
+    }]
+    paper = (
+        "## Results\n\nSchiapaccassa 2019 randomized 120 participants and reported the CRP estimate. "
+        "The endpoints were directionally concordant and anti-inflammatory, meaning both Schiapaccassa 2019 "
+        "and Comparator 2020 trend in the direction of reduced inflammation against their respective controls. "
+        "The profile is directionally heterogeneous - anti-inflammatory - across panels.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["named_direction_reconciliation"]
+    assert "randomized 120 participants" in fixed
+    assert "reported the CRP estimate" in fixed
+    assert "heterogeneous across inflammatory endpoints" in fixed
+    assert "do not establish one shared source-level direction" in fixed
+    assert "trend in the direction of reduced inflammation" not in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+
+
+def test_mechanistic_note_is_derived_from_manifest_classification() -> None:
+    ask = (
+        "Correct the claim that there are no sources classified primarily as mechanistic and reconcile "
+        "the mechanistic content framing."
+    )
+    rows = [{
+        "citation_token": "Biomarker 2024",
+        "directness": "mechanistic",
+        "outcome_class": "immune",
+        "population_summary": "human adults",
+    }]
+    paper = "## Evidence Landscape\n\nThe corpus contains no sources classified primarily as mechanistic evidence.\n"
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["mechanistic_content_framing"]
+    assert "Biomarker 2024 (Human mechanistic / biomarker study)" in fixed
+    assert "No retained source is classified primarily as mechanistic" not in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+
+
+def test_pooling_repair_removes_generic_positive_meta_analysis_claim() -> None:
+    ask = "Remove the implication of quantitative pooling that does not occur, or add the pooling artifact."
+    rows: list[dict[str, Any]] = []
+    paper = (
+        "## Methods\n\nWe conducted a random-effects meta-analysis of all retained risk ratios. "
+        "Study eligibility was assessed independently.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["pooling_claim_cleanup"]
+    assert "random-effects meta-analysis" not in fixed
+    assert "Study eligibility was assessed independently." in fixed
+    assert "No quantitative pooling was performed" in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
 
 
 def test_tension_series_repairs_the_prefixed_out_of_sequence_ordinals() -> None:

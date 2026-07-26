@@ -22,9 +22,12 @@ Universal — no per-topic logic; works on any topic's run dir.
 from __future__ import annotations
 
 import hashlib
+import importlib
 import json
 import re
+import zipfile
 from dataclasses import asdict, dataclass
+from html import unescape
 from pathlib import Path
 
 
@@ -110,12 +113,25 @@ def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
         export_path = paper_path.with_suffix(f".{ext}")
         if not export_path.is_file():
             continue
+        if ext == "docx" and (source_hash := _docx_source_hash(export_path)):
+            expected = hashlib.sha256(paper_text.encode("utf-8")).hexdigest()
+            missing = _docx_missing_lines(export_path, paper_text)
+            ok = source_hash == expected and not missing
+            checks.append(ConsistencyCheck(
+                name="docx_source_match", passed=ok,
+                detail=(
+                    f"docx source-sha256 {source_hash[:12]} "
+                    f"{'==' if source_hash == expected else '!='} markdown source {expected[:12]}; "
+                    f"missing visible lines={len(missing)}"
+                ),
+            ))
+            continue
         try:
             export_text = exporter(export_path)
         except ImportError as e:
             checks.append(ConsistencyCheck(
-                name=f"{ext}_extraction_skipped", passed=True,
-                detail=f"{ext} present but optional text extractor unavailable: {e!r}",
+                name=f"{ext}_extraction_skipped", passed=ext != "docx",
+                detail=f"{ext} present without a source hash and optional text extractor unavailable: {e!r}",
             ))
             continue
         except (OSError, ValueError) as e:
@@ -233,3 +249,54 @@ def _extract_docx_text(path: Path) -> str:
     from docx import Document  # type: ignore[import-not-found]
     doc = Document(str(path))
     return "\n".join(p.text for p in doc.paragraphs)
+
+
+def _docx_source_hash(path: Path) -> str:
+    try:
+        with zipfile.ZipFile(path) as archive:
+            return archive.read("researka/source.sha256").decode("ascii").strip()
+    except (KeyError, OSError, UnicodeDecodeError, zipfile.BadZipFile):
+        return ""
+
+
+def _docx_missing_lines(path: Path, paper: str) -> list[str]:
+    try:
+        with zipfile.ZipFile(path) as archive:
+            xml = archive.read("word/document.xml").decode("utf-8")
+    except (KeyError, OSError, UnicodeDecodeError, zipfile.BadZipFile):
+        return ["word/document.xml"]
+    visible = _canonicalize(unescape(re.sub(r"<[^>]+>", " ", xml)).replace("|", " "))
+    missing = []
+    for raw in paper.splitlines():
+        line = raw.strip()
+        if not line or set(line) <= set("|-: "):
+            continue
+        line = re.sub(r"^#{1,6}\s+", "", line).replace("|", " ")
+        normalized = _canonicalize(line)
+        if normalized and normalized not in visible:
+            missing.append(normalized)
+    return missing
+
+
+def refresh_public_exports(run_dir: Path) -> bool:
+    paper_path = run_dir / "full_paper.md"
+    if not paper_path.is_file():
+        return False
+    paper = paper_path.read_text(encoding="utf-8")
+    source_hash = hashlib.sha256(paper.encode("utf-8")).hexdigest()
+    typ_path = run_dir / "full_paper.typ"
+    if (
+        _docx_source_hash(run_dir / "full_paper.docx") == source_hash
+        and typ_path.is_file()
+        and typ_path.read_text(encoding="utf-8").startswith(f"// source-sha256: {source_hash}\n")
+    ):
+        return False
+    polish = importlib.import_module("scripts.v3_polish_compiler")
+    manifest_path = run_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.is_file() else {}
+    typ_path = polish.write_typst_source(run_dir, paper, manifest)
+    pdf_path = run_dir / "full_paper.pdf"
+    if pdf_path.is_file() and polish._run_typst(typ_path, pdf_path).get("status") != "passed":
+        pdf_path.unlink()
+    importlib.import_module("scripts.v3_paper_ir").compile_run(run_dir)
+    return True
