@@ -55,6 +55,7 @@ _FRAMEWORK_NOVELTY_RE = re.compile(
     re.I,
 )
 _DECISION_GRADE_MARKER = "Decision-grade answer:"
+_DIRECTNESS_FLOW_MARKER = "Directness-flow clarification:"
 _GENERIC_OUTCOME_TOKENS = frozenset({"and", "evidence", "other", "outcome", "slice"})
 _DIRECTION_ORDER = ("positive", "negative", "null", "mixed", "unclear")
 
@@ -207,11 +208,20 @@ def _asks_decision_grade_answer(text: str) -> bool:
     )
 
 
+def _asks_exclusion_directness_reconciliation(text: str) -> bool:
+    return (
+        "exclusion" in text
+        and any(token in text for token in ("indirect", "adjacent", "directness"))
+        and any(token in text for token in ("reconcile", "classification", "rephrase", "down weighting"))
+    )
+
+
 def ask_known(ask: str, _rows: Sequence[dict[str, Any]] | None = None) -> bool:
     text = _normalise(ask)
     return any(check(text) for check in (
         _asks_tension_series, _asks_claim_total, _asks_endpoint_tensions,
         _asks_framework_cleanup, _asks_substantive_background, _asks_decision_grade_answer,
+        _asks_exclusion_directness_reconciliation,
     ))
 
 
@@ -513,6 +523,27 @@ def _repair_decision_grade_answer(
     )
 
 
+def _directness_flow_note(paper_md: str, rows: Sequence[dict[str, Any]]) -> str:
+    excluded = re.search(r"\b(\d+)\s+were excluded at full-text review\b", paper_md, re.I)
+    non_direct = sum(effective_directness(row) != "direct" for row in rows)
+    exclusion_text = f"{excluded.group(1)} full-text exclusions" if excluded else "the reported full-text exclusions"
+    return (
+        f"{_DIRECTNESS_FLOW_MARKER} All {len(rows)} retained sources remain in the descriptive "
+        f"map; {non_direct}/{len(rows)} are classified as indirect, review-level, adjacent, "
+        "mechanistic, or contextual and are down-weighted for causal interpretation, not excluded "
+        f"from source admission. {exclusion_text} and the {non_direct}/{len(rows)} non-direct "
+        "classification describe different stages and are not contradictory."
+    )
+
+
+def _repair_directness_flow(
+    paper_md: str, rows: Sequence[dict[str, Any]],
+) -> tuple[str, int]:
+    return _upsert_section_note(
+        paper_md, "Methods", _DIRECTNESS_FLOW_MARKER, _directness_flow_note(paper_md, rows),
+    )
+
+
 def proof_is_stated(
     paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
 ) -> bool:
@@ -528,6 +559,7 @@ def proof_is_stated(
          and _FRAMEWORK_NOTE in body),
         (_asks_substantive_background, _background_note(paper_md, rows) in paper_md),
         (_asks_decision_grade_answer, _decision_grade_note(ask, rows) in paper_md),
+        (_asks_exclusion_directness_reconciliation, _directness_flow_note(paper_md, rows) in paper_md),
     )
     return all(not matches(text) or passed for matches, passed in checks)
 
@@ -542,6 +574,8 @@ def repair(
         (_asks_endpoint_tensions, lambda text: _repair_endpoint_tensions(text, rows), "endpoint_tension_recompute"),
         (_asks_framework_cleanup, lambda text: _repair_framework(text), "framework_cleanup"),
         (_asks_substantive_background, lambda text: _repair_background(text, rows), "substantive_background"),
+        (_asks_exclusion_directness_reconciliation,
+         lambda text: _repair_directness_flow(text, rows), "directness_flow_reconciliation"),
     ):
         if predicate(lower):
             patched, changed = repairer(patched)

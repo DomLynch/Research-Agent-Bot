@@ -240,6 +240,33 @@ def test_decision_grade_answer_keeps_consistent_direct_slice_source_bounded() ->
     assert "4/4 direct sources" in fixed
 
 
+def test_exclusion_count_and_directness_classification_are_reconciled() -> None:
+    ask = (
+        "Reconcile the Methods' 0-exclusion claim with the Abstract's claim that 2/4 sources "
+        "are indirect/adjacent; present this as a directness classification, not an exclusion."
+    )
+    rows = [
+        {"directness": directness, "outcome_class": "cardiometabolic"}
+        for directness in ("direct", "direct", "indirect", "review")
+    ]
+    paper = (
+        "## Abstract\n\nEvidence scope: 2/4 sources are indirect or adjacent.\n\n"
+        "## Methods\n\nOf 4 records screened, 4 were included and 0 were excluded at full-text review.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["directness_flow_reconciliation"]
+    assert "All 4 retained sources remain in the descriptive map" in fixed
+    assert "2/4 are classified as indirect" in fixed
+    assert "0 full-text exclusions" in fixed
+    assert "different stages and are not contradictory" in fixed
+    assert revision_quality_ask_known(ask, rows)
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
+    assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
 def test_tension_series_repairs_the_prefixed_out_of_sequence_ordinals() -> None:
     paper = """## Results
 
