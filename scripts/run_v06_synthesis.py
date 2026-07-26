@@ -35,6 +35,7 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
     repair_abstract_claim_strength,
     repair_claim_strength,
 )
+from agent import revision_consistency as _revision_consistency  # noqa: E402
 from agent.source_hygiene import is_notice_only_source_title  # noqa: E402
 from agent.revision_evidence import (  # noqa: E402
     SNAPSHOT_DIR,
@@ -129,6 +130,7 @@ def _normalize_structured_evidence_p_values(out_dir: Path) -> int:
     if changed:
         path.write_text(normalized, encoding="utf-8")
     return changed
+
 
 # Workstream A (autonomous): topic-parameterized pipeline.
 # Module-level corpus paths + active topic — populated by
@@ -4058,6 +4060,16 @@ async def _run_post_paper_pipeline(
         print(
             "[pipeline] Stage 5b* — normalized "
             f"{supplement_p_values} supplement p-value(s)",
+            file=sys.stderr,
+        )
+    if supplement_revision_p_values := (
+        _revision_consistency.repair_structured_evidence_revision_p_values(
+            paper_path.parent, manifest,
+        )
+    ):
+        print(
+            "[pipeline] Stage 5b** — reconciled reviewer-disputed "
+            f"supplement p-value ask(s)={supplement_revision_p_values}",
             file=sys.stderr,
         )
 

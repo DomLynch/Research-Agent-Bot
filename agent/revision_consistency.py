@@ -1,8 +1,10 @@
 """Deterministic manuscript-consistency repairs requested by reviewers."""
 from __future__ import annotations
 
+import json
 import re
 from collections.abc import Sequence
+from pathlib import Path
 from typing import Any, cast
 
 from agent.endpoint_evidence import endpoint_direction_map
@@ -113,6 +115,52 @@ def remove_disputed_p_values_near_sources(
         and _nearest_source(paper_md, match.start(), all_labels) in targets else match.group(),
         paper_md,
     )
+
+
+def repair_structured_evidence_revision_p_values(
+    out_dir: Path, manifest: dict[str, Any],
+) -> int:
+    path = out_dir / "structured_evidence_tables.md"
+    request_path = out_dir / "researka_revision_request.json"
+    if not path.is_file() or not request_path.is_file():
+        return 0
+    try:
+        request = json.loads(request_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return 0
+    if not isinstance(request, dict):
+        return 0
+    required = request.get("required_revisions")
+    asks = (
+        [str(item) for item in required if str(item).strip()]
+        if isinstance(required, list)
+        else re.split(r";\s+(?=[A-Z])", str(request.get("feedback") or ""))
+    )
+    sources = tuple(
+        (row, label)
+        for row in manifest.get("receipts", ()) if isinstance(row, dict)
+        if (label := str(row.get("citation_token") or row.get("cited_as")
+            or row.get("body_citation") or row.get("receipt_id") or "").strip())
+    )
+    labels = tuple(label for _, label in sources)
+    text, changed = path.read_text(encoding="utf-8"), 0
+    for ask in asks:
+        ask_key = _normalise(re.sub(r"\bet\s+al\.?", "", ask, flags=re.I))
+        targets = tuple(
+            label for row, label in sources
+            if label and any(
+                value and _normalise(re.sub(r"\bet\s+al\.?", "", value, flags=re.I)) in ask_key
+                for value in (label, str(row.get("source_title") or "").strip())
+            )
+        )
+        repaired = remove_disputed_p_values_near_sources(
+            ask, text, targets, labels,
+        )
+        if repaired != text:
+            text, changed = repaired, changed + 1
+    if changed:
+        path.write_text(text, encoding="utf-8")
+    return changed
 
 
 def _asks_tension_series(text: str) -> bool:

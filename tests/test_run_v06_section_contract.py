@@ -11,6 +11,7 @@ sys.path.insert(0, str(REPO / "scripts"))
 
 import apply_patches as ap  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
+from agent import revision_consistency  # noqa: E402
 from agent.synthesis_schemas import ReceiptSummary, SynthesisSection  # noqa: E402
 
 
@@ -59,6 +60,41 @@ def test_structured_evidence_p_values_are_normalized_idempotently(tmp_path: Path
     assert "P \u2265 0.05" in normalized
     assert f"P = {tiny_nonzero}" in normalized
     assert orch._normalize_structured_evidence_p_values(tmp_path) == 0
+
+
+def test_structured_evidence_revision_p_values_are_source_scoped(
+    tmp_path: Path,
+) -> None:
+    supplement = tmp_path / "structured_evidence_tables.md"
+    supplement.write_text(
+        "| Source | Statistic |\n"
+        "|---|---|\n"
+        "| Han 2020 | P = 0.001 |\n"
+        "| Shen 2026 | P = 0.001 |\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "required_revisions": [
+            "Verify or correct the representative statistic 'P = 0.001' for "
+            "Han 2020 [bundle:7]; the bundled excerpt shows P=0.002 for fatty "
+            "liver index and P=0.049 for NAFLD liver fat score.",
+        ],
+    }), encoding="utf-8")
+    manifest = {"receipts": [
+        {"source_title": "Unlabelled context source"},
+        {"citation_token": "Han 2020"},
+        {"citation_token": "Shen 2026"},
+    ]}
+
+    assert revision_consistency.repair_structured_evidence_revision_p_values(
+        tmp_path, manifest,
+    ) == 1
+    repaired = supplement.read_text(encoding="utf-8")
+    assert "| Han 2020 | a source-reported estimate |" in repaired
+    assert "| Shen 2026 | P = 0.001 |" in repaired
+    assert revision_consistency.repair_structured_evidence_revision_p_values(
+        tmp_path, manifest,
+    ) == 0
 
 
 def test_restore_rendered_section_headings_from_typed_sections() -> None:
