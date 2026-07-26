@@ -13,7 +13,7 @@ from typing import Any
 from agent import statistical_consistency as _stats
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
 from agent.evidence_lanes import LANE_TOKENS, build_lane_map, is_animal_context
-from agent.revision_identity import direction_tally_note, repair_revision_identity
+from agent.revision_identity import direction_tally_note, outcome_direction_tally_note, repair_revision_identity
 from agent.revision_contract import feedback as _revision_feedback, gate_report as _revision_gate_report
 from agent.revision_quality import (
     asks_exact_stat_trace as _asks_exact_stat_trace,
@@ -1331,30 +1331,10 @@ def _phase_d_admission_funnel_clarification(
 
 
 def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
-    lower = _normalised_feedback(feedback)
     return (
-        any(token in lower for token in (
-            "admission funnel", "admissions funnel", "source admission",
-            "receipt admission", "receipt funnel",
-        ))
-        and any(token in lower for token in (
-            "numerical inconsistency", "numeric inconsistency", "contradictory",
-            "contradiction", "both equal", "clarify", "reconcile",
-            "coherent accounting", "derived", "prisma style", "arithmetic scrutiny",
-            "mutually exclusive", "additive rows", "remove the table", "arithmetic", "why",
-            "non-overlapping", "non overlapping", "step-by-step", "step by step",
-            "candidate union",
-        ))
-    ) or ("no extractable claims" in lower and "admitted final" in lower) or (
-        "partial/none-only" in lower and "partial-only" in lower
-    ) or (
-        "search summary" in lower
-        and "selection logic" in lower
-    ) or (
-        "search summary" in lower
-        and any(token in lower for token in ("source candidates", "admitted sources"))
-        and any(token in lower for token in ("non additive", "non-additive", "overlapping categories", "single transparent exclusion"))
-    ) or _revision_asks_additive_screening_flow(feedback)
+        revision_coverage._asks_admission_funnel_numeric_consistency(feedback)
+        or _revision_asks_additive_screening_flow(feedback)
+    )
 
 
 def _admission_funnel_note(out_dir: Path) -> str:
@@ -1421,6 +1401,9 @@ def _revision_asks_admission_funnel_textual_replacement(feedback: str) -> bool:
     return (
         any(token in lower for token in ("admission funnel", "admissions funnel"))
         and any(token in lower for token in ("prisma style", "arithmetic scrutiny", "mutually exclusive", "additive rows", "remove the table"))
+    ) or (
+        "funnel" in lower
+        and any(token in lower for token in ("remove funnel numbers", "state the corpus size directly"))
     )
 
 
@@ -3244,7 +3227,10 @@ def _manifest_effect_direction_reconciliation_note(
         )
         for row in selected[:6]
     ]
-    return "Effect-direction reconciliation note:\n\n" + "\n".join(lines)
+    return (
+        "Effect-direction reconciliation note:\n\n"
+        + outcome_direction_tally_note(rows) + "\n\n" + "\n".join(lines)
+    )
 
 
 def _normalised_direction(row: dict[str, Any]) -> str:

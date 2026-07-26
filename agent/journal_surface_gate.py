@@ -472,7 +472,7 @@ def _duplicate_adjacent_phrase_issue_messages(text: str) -> tuple[str, ...]:
     for size in range(2, 5):
         for idx in range(0, len(words) - (2 * size) + 1):
             phrase = words[idx:idx + size]
-            if phrase[-1] in {"and", "or"}:
+            if phrase[-1] in {"and", "or"} or phrase[0] == "p" and all(token.isdigit() for token in phrase[1:]):
                 continue
             if len(set(phrase)) > 1 and phrase == words[idx + size:idx + (2 * size)]:
                 return (f"duplicate adjacent phrase: {' '.join(phrase)}",)

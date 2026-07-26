@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import re
+from collections import Counter
 from typing import Any
 
+from agent.outcome_class_remap import outcome_display
 from agent.sources.pubmed import pmid_audit_is_current, pmid_audit_passed, verify_pmid_rows
 
 
@@ -184,10 +186,7 @@ def revision_identity_proof_is_stated(
 
 
 def direction_tally_note(rows: list[dict[str, Any]]) -> str:
-    counts: dict[str, int] = {"negative": 0, "null": 0, "positive": 0, "unclear": 0}
-    for row in rows:
-        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
-        counts[direction] = counts.get(direction, 0) + 1
+    counts = Counter(str(row.get("effect_direction") or "unclear").strip().lower() or "unclear" for row in rows)
     base = ("negative", "null", "positive", "unclear")
     values = "; ".join(f"{key}={counts[key]}" for key in base)
     values += "".join(f"; {key}={counts[key]}" for key in sorted(set(counts) - set(base)))
@@ -197,11 +196,22 @@ def direction_tally_note(rows: list[dict[str, Any]]) -> str:
     )
 
 
-def outcome_class_tally_note(rows: list[dict[str, Any]]) -> str:
-    outcomes: dict[str, int] = {}
+def outcome_direction_tally_note(rows: list[dict[str, Any]]) -> str:
+    grouped: dict[str, Counter[str]] = {}
     for row in rows:
-        outcome = str(row.get("outcome_class") or "unspecified").strip().lower().replace("_", " ")
-        outcomes[outcome] = outcomes.get(outcome, 0) + 1
+        outcome = outcome_display(str(row.get("outcome_class") or "unspecified"))
+        direction = str(row.get("effect_direction") or "unclear").strip().lower() or "unclear"
+        grouped.setdefault(outcome, Counter())[direction] += 1
+    parts = []
+    for outcome, counts in sorted(grouped.items()):
+        total = sum(counts.values())
+        direction = next(iter(counts)) if len(counts) == 1 else f"mixed ({', '.join(f'{key}={counts[key]}' for key in sorted(counts))})"
+        parts.append(f"{outcome} = {direction}" + (f" in {total}/{total}" if len(counts) == 1 else ""))
+    return "Outcome-class coded-direction reconciliation: " + "; ".join(parts) + "."
+
+
+def outcome_class_tally_note(rows: list[dict[str, Any]]) -> str:
+    outcomes = Counter(str(row.get("outcome_class") or "unspecified").strip().lower().replace("_", " ") for row in rows)
     outcome_values = "; ".join(f"{key}={outcomes[key]}" for key in sorted(outcomes))
     return (
         f"Authoritative outcome-class tally: n={len(rows)}; {outcome_values}. "

@@ -323,6 +323,32 @@ def test_abstract_language_gate_allows_category_list_conjunction_repeat():
     assert "duplicate adjacent phrase: safety and" not in details
 
 
+def test_abstract_language_gate_allows_repeated_statistical_notation():
+    paper = _paper("| Smith 2024 | safety | older adults | unclear | n/a | B1 |")
+    paper = paper.replace(
+        "## Abstract\n\n" + _words(150, "abstract"),
+        "## Abstract\n\n"
+        "One endpoint reached P < 0.001; another reached P = 0.001. "
+        + _words(140, "abstract"),
+    )
+
+    details = " ".join(i.detail for i in evaluate_journal_surface(paper).issues)
+
+    assert "duplicate adjacent phrase: p 0 001" not in details
+
+
+def test_abstract_language_gate_still_blocks_repeated_numbered_prose():
+    paper = _paper("| Smith 2024 | safety | older adults | unclear | n/a | B1 |")
+    paper = paper.replace(
+        "## Abstract\n\n" + _words(150, "abstract"),
+        "## Abstract\n\nThe Phase 2 Phase 2 trial was retained. " + _words(140, "abstract"),
+    )
+
+    details = " ".join(i.detail for i in evaluate_journal_surface(paper).issues)
+
+    assert "duplicate adjacent phrase: phase 2" in details
+
+
 def test_abstract_zero_count_profile_cannot_contradict_body():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(

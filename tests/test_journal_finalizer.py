@@ -737,6 +737,58 @@ def test_admission_funnel_clarification_replaces_non_additive_table_when_request
     ]
 
 
+def test_methods_funnel_arithmetic_uses_manifest_counts(tmp_path: Path) -> None:
+    import revision_coverage
+
+    ask = (
+        "Reconcile the Methods funnel arithmetic so the admitted-source count and "
+        "classified-candidate count are consistent; either report actual candidate "
+        "counts or remove the funnel numbers and state the corpus size directly."
+    )
+    paper = "## Methods\n\nThe retained corpus contains 33 sources.\n\n## Results\n\nResults.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 33,
+        "receipt_funnel": {
+            "classified_receipt_candidates": 61,
+            "counts": {"admitted_receipts": 33},
+        },
+    }))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
+
+    assert "33 admitted sources came from 61 classified source candidates" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "state_receipt_funnel_arithmetic"
+
+
+def test_outcome_direction_summary_uses_manifest_tallies() -> None:
+    import revision_coverage
+
+    ask = (
+        "Correct the Results outcome-class directional summaries to match the Findings Map "
+        "coded directions (Frailty = null in 2/2; Longevity = unclear in 2/2; "
+        "Safety/Comorbidity = unclear in 1/1)."
+    )
+    rows = [
+        {"citation_token": "A 2024", "outcome_class": "frailty", "effect_direction": "null"},
+        {"citation_token": "B 2024", "outcome_class": "frailty", "effect_direction": "null"},
+        {"citation_token": "C 2024", "outcome_class": "longevity", "effect_direction": "unclear"},
+        {"citation_token": "D 2024", "outcome_class": "longevity", "effect_direction": "unclear"},
+        {"citation_token": "E 2024", "outcome_class": "safety_comorbidity", "effect_direction": "unclear"},
+    ]
+
+    assert revision_coverage.asks_effect_direction_reconciliation(ask)
+    note = journal_finalizer._manifest_effect_direction_reconciliation_note(ask, rows)
+
+    assert "Frailty = null in 2/2" in note
+    assert "Longevity = unclear in 2/2" in note
+    assert "Safety and Comorbidity = unclear in 1/1" in note
+    paper = f"## Results\n\n{note}\n"
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> None:
     paper = (
         "## Methods\n\n"

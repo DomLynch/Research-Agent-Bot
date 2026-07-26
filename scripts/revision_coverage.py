@@ -840,6 +840,10 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
             "non additive", "non-additive", "overlapping categories",
             "single transparent exclusion",
         ))
+    ) or (
+        "funnel" in text
+        and any(token in text for token in ("arithmetic", "reconcile", "consistent", "remove funnel numbers"))
+        and any(token in text for token in ("admitted source", "classified candidate", "candidate count", "corpus size"))
     )
 
 
@@ -1938,6 +1942,10 @@ def _asks_effect_direction_reconciliation(text: str) -> bool:
         "reclassify" in text
         and "direction" in text
         and bool(re.search(r"\b[A-Z][A-Za-z'’.\-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", text, flags=re.I))
+    ) or (
+        "outcome class" in text
+        and any(token in text for token in ("directional summar", "coded direction"))
+        and any(token in text for token in ("correct", "reconcile", "match"))
     )
 
 
@@ -2085,6 +2093,8 @@ def _effect_direction_reconciliation_is_stated(paper_md: str, ask: str) -> bool:
     lower = scope.lower()
     labels = _source_labels_from_ask(ask)
     return (
+        ("outcome class" not in ask.lower() or "outcome-class coded-direction reconciliation:" in lower)
+        and
         "effect-direction reconciliation note:" in lower
         and "actual reported finding" in lower
         and "direction=" in lower
@@ -2442,6 +2452,8 @@ def _prior_publication_differentiation_is_stated(paper_md: str) -> bool:
 
 def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
     lower = paper_md.lower()
+    if all(token in lower for token in ("corpus-count reconciliation:", "classified source candidates", "admitted source counts are not interchangeable")):
+        return True
     if (
         "admission-bucket note:" in lower
         and "not an additive conservation table" in lower
