@@ -3,12 +3,14 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any, cast
 
 from agent.endpoint_evidence import endpoint_direction_map
 from agent.evidence_lanes import derive_receipt_lane, effective_directness
+from agent.outcome_class_remap import outcome_display
 from agent.synthesis import build_tension_matrix
 from agent.synthesis_schemas import EffectDirection, OutcomeClass, ReceiptSummary
 
@@ -52,6 +54,9 @@ _FRAMEWORK_NOVELTY_RE = re.compile(
     r"(?:(?:novel|new|original)\s+)?(?:organizing\s+claim|model|framework|construct)",
     re.I,
 )
+_DECISION_GRADE_MARKER = "Decision-grade answer:"
+_GENERIC_OUTCOME_TOKENS = frozenset({"and", "evidence", "other", "outcome", "slice"})
+_DIRECTION_ORDER = ("positive", "negative", "null", "mixed", "unclear")
 
 
 def _normalise(text: str) -> str:
@@ -193,11 +198,20 @@ def _asks_substantive_background(text: str) -> bool:
     )
 
 
+def _asks_decision_grade_answer(text: str) -> bool:
+    return (
+        "decision grade" in text
+        and "direct evidence" in text
+        and ("research question" in text or "direct answer" in text)
+        and any(token in text for token in ("condition", "state explicitly", "whether"))
+    )
+
+
 def ask_known(ask: str, _rows: Sequence[dict[str, Any]] | None = None) -> bool:
     text = _normalise(ask)
     return any(check(text) for check in (
         _asks_tension_series, _asks_claim_total, _asks_endpoint_tensions,
-        _asks_framework_cleanup, _asks_substantive_background,
+        _asks_framework_cleanup, _asks_substantive_background, _asks_decision_grade_answer,
     ))
 
 
@@ -431,6 +445,74 @@ def _repair_background(paper_md: str, rows: Sequence[dict[str, Any]]) -> tuple[s
     return _upsert_section_note(paper_md, "Background", "Substantive background rationale:", note)
 
 
+def _decision_grade_rows(
+    ask: str, rows: Sequence[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    ask_tokens = set(_normalise(ask).split())
+    scoped = [
+        row for row in rows
+        if (
+            set(_normalise(str(row.get("outcome_class") or "").replace("_", " ")).split())
+            - _GENERIC_OUTCOME_TOKENS
+        ) & ask_tokens
+    ]
+    return scoped or list(rows)
+
+
+def _decision_grade_note(ask: str, rows: Sequence[dict[str, Any]]) -> str:
+    scoped = _decision_grade_rows(ask, rows)
+    direct = [row for row in scoped if effective_directness(row) == "direct"]
+    directions = Counter(
+        value if value in _DIRECTION_ORDER else "unclear"
+        for row in direct
+        for value in (_normalise(str(row.get("effect_direction") or "unclear")),)
+    )
+    ordered_directions = [
+        f"{name}={directions[name]}"
+        for name in _DIRECTION_ORDER
+        if directions[name]
+    ]
+    outcomes = list(dict.fromkeys(
+        re.sub(
+            r"\s+evidence$", "",
+            outcome_display(str(row.get("outcome_class") or "contextual_other")),
+            flags=re.I,
+        )
+        for row in scoped
+    ))
+    populations = [
+        value for value, _count in Counter(
+            " ".join(str(row.get("population_summary") or "").split())[:100]
+            for row in direct if str(row.get("population_summary") or "").strip()
+        ).most_common(3)
+    ]
+    scope = " and ".join(outcomes[:3]).lower() or "reviewed"
+    clear_directions = [name for name in ("positive", "negative", "null") if directions[name]]
+    convergence = (
+        f"The direct sources converge on a source-bounded {clear_directions[0]} direction"
+        if len(clear_directions) == 1 and not directions["mixed"] and not directions["unclear"]
+        else "The direct sources do not converge on one decision-grade direction"
+    )
+    return (
+        f"{_DECISION_GRADE_MARKER} No broad decision-grade conclusion is supported for the "
+        f"{scope} evidence slice. The retained slice contains "
+        f"{len(direct)}/{len(scoped)} direct sources; direct-source direction codes are "
+        f"{', '.join(ordered_directions) or 'none'}. {convergence}. Interpretation is conditional on "
+        f"the represented populations ({', '.join(populations) or 'not consistently reported'}), "
+        "study designs, measured endpoints, and follow-up windows. Indirect, review-level, "
+        "mechanistic, and contextual sources bound interpretation and do not upgrade clinical actionability."
+    )
+
+
+def _repair_decision_grade_answer(
+    paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
+) -> tuple[str, int]:
+    heading = "Conclusion" if _section_span(paper_md, "Conclusion") else "Research Question"
+    return _upsert_section_note(
+        paper_md, heading, _DECISION_GRADE_MARKER, _decision_grade_note(ask, rows),
+    )
+
+
 def proof_is_stated(
     paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
 ) -> bool:
@@ -445,6 +527,7 @@ def proof_is_stated(
          and not _FRAMEWORK_NOVELTY_RE.search(body)
          and _FRAMEWORK_NOTE in body),
         (_asks_substantive_background, _background_note(paper_md, rows) in paper_md),
+        (_asks_decision_grade_answer, _decision_grade_note(ask, rows) in paper_md),
     )
     return all(not matches(text) or passed for matches, passed in checks)
 
@@ -464,4 +547,12 @@ def repair(
             patched, changed = repairer(patched)
             if changed:
                 details.append(detail)
+    decision_ask = next((
+        part.strip() for part in re.split(r";\s+", feedback)
+        if _asks_decision_grade_answer(_normalise(part))
+    ), "")
+    if decision_ask:
+        patched, changed = _repair_decision_grade_answer(patched, decision_ask, rows)
+        if changed:
+            details.append("decision_grade_answer")
     return patched, details

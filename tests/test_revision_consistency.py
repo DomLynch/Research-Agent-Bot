@@ -166,6 +166,80 @@ def test_latest_reviewer_consistency_bundle_is_repaired_and_proven() -> None:
     assert second_details == []
 
 
+def test_decision_grade_answer_is_scoped_to_receipt_evidence_and_idempotent() -> None:
+    ask = (
+        "Add a direct answer to the research question for the cardiometabolic and contextual "
+        "adjacent evidence slice: state explicitly whether the direct evidence supports a "
+        "decision-grade conclusion, and on what conditions."
+    )
+    rows = [
+        {
+            "citation_token": f"Direct {index}",
+            "directness": "direct",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": direction,
+            "population_summary": "adults with type 2 diabetes",
+        }
+        for index, direction in enumerate(
+            ("positive", "negative", "null", "unclear", "unclear"), start=1,
+        )
+    ] + [
+        {
+            "citation_token": "Context 1",
+            "directness": "indirect",
+            "outcome_class": "contextual_other",
+            "effect_direction": "unclear",
+            "population_summary": "adults",
+        },
+        {
+            "citation_token": "Immune 1",
+            "directness": "direct",
+            "outcome_class": "immune",
+            "effect_direction": "positive",
+            "population_summary": "older adults",
+        },
+    ]
+    paper = "## Research Question\n\nDoes the evidence support action?\n\n## Conclusion\n\nBounded conclusion.\n"
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["decision_grade_answer"]
+    assert "No broad decision-grade conclusion is supported" in fixed
+    assert "cardiometabolic and contextual adjacent evidence slice" in fixed
+    assert "5/6 direct sources" in fixed
+    assert "positive=1, negative=1, null=1, unclear=2" in fixed
+    assert "adults with type 2 diabetes" in fixed
+    assert "older adults" not in fixed
+    assert revision_quality_ask_known(ask, rows)
+    assert revision_quality_proof_is_stated(fixed, ask, rows)
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
+    assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_decision_grade_answer_keeps_consistent_direct_slice_source_bounded() -> None:
+    ask = (
+        "State explicitly whether the direct evidence gives a direct answer to the research "
+        "question and supports a decision-grade conclusion, including the conditions."
+    )
+    rows = [
+        {
+            "directness": "direct",
+            "outcome_class": "frailty",
+            "effect_direction": "null",
+            "population_summary": "older adults",
+        }
+        for _ in range(4)
+    ]
+
+    fixed, _details = repair_revision_quality(
+        "## Conclusion\n\nBounded conclusion.\n", rows, ask,
+    )
+
+    assert "No broad decision-grade conclusion is supported" in fixed
+    assert "direct sources converge on a source-bounded null direction" in fixed
+    assert "4/4 direct sources" in fixed
+
+
 def test_tension_series_repairs_the_prefixed_out_of_sequence_ordinals() -> None:
     paper = """## Results
 
