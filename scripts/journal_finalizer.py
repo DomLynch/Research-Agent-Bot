@@ -290,6 +290,15 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings, lambda t: _phase_d_revision_surface_notes(t, out_dir), _phase_c_terminology):
         text, log = phase(text)
         entries.extend(log)
+    text, entries = review_noise_control.restore_surface_floors(
+        text, out_dir, entries, FinalizerLogEntry,
+    )
+    text, log = _phase_n_declare_discussion_thesis(text)
+    entries.extend(log)
+    text, log = _phase_b_lane_qualifier(text, out_dir)
+    entries.extend(log)
+    text, log = _phase_m_strip_terminal_thesis_duplicates(text)
+    entries.extend(log)
     return text, entries
 
 

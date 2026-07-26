@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import importlib
+import re
 import time
 from pathlib import Path
 from typing import Any
@@ -5245,6 +5246,55 @@ def test_run_text_phases_restores_discussion_markers_after_surface_floors(
 
     assert "**Thesis:**" in fixed
     assert "**Resolution criteria:**" in fixed
+
+
+def test_run_text_phases_restores_surface_floor_after_terminal_cleanup(
+    tmp_path: Path, monkeypatch: Any,
+) -> None:
+    def restore_introduction(
+        text: str, _out_dir: Path, entries: list[journal_finalizer.FinalizerLogEntry],
+        _entry_cls: type[journal_finalizer.FinalizerLogEntry],
+    ) -> tuple[str, list[journal_finalizer.FinalizerLogEntry]]:
+        body = " ".join(["restored"] * 400)
+        fixed = re.sub(
+            r"(?ms)^## Introduction\b.*?(?=^## (?!#)|\Z)",
+            f"## Introduction\n\n{body}\n\n",
+            text,
+        )
+        return fixed, entries
+
+    def shrink_introduction(
+        text: str,
+    ) -> tuple[str, list[journal_finalizer.FinalizerLogEntry]]:
+        fixed = re.sub(
+            r"(?ms)^## Introduction\b.*?(?=^## (?!#)|\Z)",
+            "## Introduction\n\nshort\n\n",
+            text,
+        )
+        return fixed, []
+
+    monkeypatch.setattr(
+        journal_finalizer.review_noise_control,
+        "restore_surface_floors",
+        restore_introduction,
+    )
+    monkeypatch.setattr(
+        journal_finalizer,
+        "_phase_m_scope_restored_backstop_duplicates",
+        shrink_introduction,
+    )
+    paper = (
+        "# T\n\n## Introduction\n\nshort\n\n"
+        "## Discussion\n\n"
+        "The corpus supports a bounded interpretation.\n\n"
+        "Future trials would settle the open threats.\n\n"
+        "## Limitations\n\nstub.\n"
+    )
+
+    fixed, _log = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    introduction = fixed.split("## Introduction", 1)[1].split("## Discussion", 1)[0]
+    assert len(introduction.split()) >= 400
 
 
 def test_smoke_combo_paper_finalizes_to_clean_surface() -> None:
