@@ -967,6 +967,52 @@ def test_phase_b_collapses_bundle_annotated_generated_qualifiers(
     assert _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])
 
 
+def test_phase_b_collapses_role_flagged_bundle_qualifiers(tmp_path: Path) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+
+    marker = "[veterinary; preclinical context only; excluded from human aggregates]"
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2022", "paper_id": "p1"}],
+        "lanes": {
+            "Smith 2022": "animal_preclinical",
+            "Wilson 2023": "human_observational",
+        },
+    }))
+    paper = (
+        "# Paper\n\n"
+        f"Smith 2022 {marker} [bundle:9] reported context while Wilson 2023 "
+        f"reported human data. Smith 2022 {marker} [bundle:9] provides "
+        "animal/preclinical context only.\n"
+    )
+
+    fixed, _log = _phase_b_lane_qualifier(paper, tmp_path)
+
+    assert fixed.count("provides animal/preclinical context only.") == 1
+    assert _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])
+
+
+def test_phase_b_does_not_reclassify_human_segment_on_mixed_line(tmp_path: Path) -> None:
+    from agent.journal_finalizer import _phase_b_lane_qualifier
+
+    (tmp_path / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Jorgensen 2026", "paper_id": "p2"}],
+        "lanes": {
+            "Human 2025": "human_interventional",
+            "Jorgensen 2026": "animal_preclinical",
+        },
+    }))
+    paper = (
+        "# Paper\n\n"
+        "- Human 2025 [bundle:1] (outcome=Cardiometabolic; directness=direct); "
+        "Jorgensen 2026 [bundle:9] (outcome=Cardiometabolic; directness=indirect).\n"
+    )
+
+    fixed, _log = _phase_b_lane_qualifier(paper, tmp_path)
+
+    assert "Human 2025 [bundle:1] (outcome=Cardiometabolic; directness=direct)" in fixed
+    assert "Human 2025 [bundle:1] (outcome=animal/preclinical" not in fixed
+
+
 def test_phase_b_reclassifies_animal_findings_map_row_as_context(
     tmp_path: Path,
 ) -> None:

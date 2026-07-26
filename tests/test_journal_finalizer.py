@@ -2866,6 +2866,8 @@ def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_p
 
 
 def test_substantive_evidence_synthesis_is_idempotent_after_surface_rewrite(tmp_path: Path) -> None:
+    from agent.journal_surface_gate import apply_pipeline_jargon_replacements
+
     ask = (
         "Provide an actual evidence synthesis in the Evidence Landscape and Key Findings sections. "
         "Surface positive and mixed findings from the evidence."
@@ -2882,6 +2884,7 @@ def test_substantive_evidence_synthesis_is_idempotent_after_surface_rewrite(tmp_
     }]}))
 
     fixed, _ = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+    assert apply_pipeline_jargon_replacements(fixed) == fixed
     rewritten = fixed.replace("not a clinical efficacy claim", "not a standalone clinical efficacy claim")
     again, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(rewritten, tmp_path)
 
@@ -6104,6 +6107,32 @@ def test_run_text_phases_repairs_trace_after_terminal_text_mutation(
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
         fixed, [ask], evidence_rows=rows,
     ) == []
+
+
+def test_run_text_phases_scrubs_jargon_added_by_terminal_revision_phase(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    def inject_jargon(text: str, _out_dir: Path) -> tuple[str, list[Any]]:
+        return (
+            text + "\n\nThe sum of n_claims across 3 admitted manifest receipts was reconciled.",
+            [],
+        )
+
+    monkeypatch.setattr(
+        journal_finalizer,
+        "_phase_d_revision_surface_notes",
+        inject_jargon,
+    )
+
+    fixed, _logs = journal_finalizer._run_text_phases(
+        "## Results\n\nBounded result.\n",
+        tmp_path,
+    )
+
+    assert "n_claims" not in fixed
+    assert "receipts" not in fixed
+    assert "extracted-claim counts" in fixed
+    assert "sources" in fixed
 
 
 def test_multi_issue_reviewer_revision_repairs_and_verifies_all_requirements(tmp_path: Path) -> None:

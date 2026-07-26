@@ -243,14 +243,14 @@ def _flag_animal_mentions(
     changed = 0
     for row in _animal_rows(ask, rows):
         label = _label(row)
-        body = re.sub(
-            rf"(?<!\w){re.escape(label)}(?!\w)\s*{re.escape(_ANIMAL_FLAG)}",
-            label,
-            body,
-        )
+        def canonical_citation(match: re.Match[str]) -> str:
+            bundle = re.search(r"\[bundle:\d+\]", match.group("suffix"), re.I)
+            return f"{label} {_ANIMAL_FLAG}" + (f" {bundle.group(0)}" if bundle else "")
+
         body, n = re.subn(
-            rf"(?<!\w){re.escape(label)}(?!\w)(?!\s*{re.escape(_ANIMAL_FLAG)})",
-            f"{label} {_ANIMAL_FLAG}",
+            rf"(?<!\w){re.escape(label)}(?!\w)"
+            rf"(?P<suffix>(?:\s*(?:{re.escape(_ANIMAL_FLAG)}|\[bundle:\d+\]))*)",
+            canonical_citation,
             body,
         )
         changed += n

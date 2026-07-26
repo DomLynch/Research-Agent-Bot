@@ -286,7 +286,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, entries = review_noise_control.restore_surface_floors(
         text, out_dir, entries, FinalizerLogEntry,
     )
-    for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings, lambda t: _phase_d_revision_surface_notes(t, out_dir)):
+    for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings, lambda t: _phase_d_revision_surface_notes(t, out_dir), _phase_c_terminology):
         text, log = phase(text)
         entries.extend(log)
     return text, entries
@@ -719,8 +719,8 @@ def _phase_b_lane_qualifier(
         re.escape(token) for token in sorted(citation_pool, key=len, reverse=True)
     )
     citation_ref_pattern = (
-        rf"(?:{citation_pattern})(?:\s*\[bundle:\d+\])?"
-        r"(?:\s*\[veterinary;\s*preclinical context only;\s*excluded from human aggregates\])?"
+        rf"(?:{citation_pattern})(?:\s*(?:\[bundle:\d+\]|"
+        r"\[veterinary;\s*preclinical context only;\s*excluded from human aggregates\])){0,2}"
         if citation_pattern else ""
     )
     suffix_re = re.compile(
@@ -801,9 +801,8 @@ def _reconcile_animal_role_line(
     line: str,
     animal_tokens: set[str],
 ) -> str:
-    if (
-        not any(token in line for token in animal_tokens)
-        or not re.search(r"\bdirectness=direct\b", line, re.I)
+    if not any(token in line for token in animal_tokens) or not re.search(r"\bdirectness=direct\b", line, re.I) or not (
+        line.lstrip().startswith("|") or any(re.match(rf"^(?:[-*]\s+)?(?:Animal/Preclinical Context:\s*)?{re.escape(token)}\b", line.lstrip(), re.I) for token in animal_tokens)
     ):
         return line
     newline = "\n" if line.endswith("\n") else ""
@@ -2728,10 +2727,10 @@ def _phase_d_substantive_evidence_synthesis(
         counts[direction] = counts.get(direction, 0) + 1
     direct = _manifest_effective_direct_count(feedback, rows)
     landscape = (
-        "Substantive evidence synthesis: The manifest includes "
-        f"{len(rows)} retained sources, {direct} direct-source row(s), and "
-        f"receipt-level directional coding across {', '.join(f'{k}={v}' for k, v in sorted(counts.items()))}. "
-        "Receipt-level direction is not a statement that the source abstracts lack "
+        "Substantive evidence synthesis: The included evidence set comprises "
+        f"{len(rows)} retained sources, {direct} direct sources, and "
+        f"source-level directional coding across {', '.join(f'{k}={v}' for k, v in sorted(counts.items()))}. "
+        "Source-level direction is not a statement that the source abstracts lack "
         "directional statistics; source-level signals are reported separately. "
         + ("Full source-level signals are: " if full_source_surface else "Representative source-level signals are: ")
         + "; ".join(examples if full_source_surface else examples[:8])

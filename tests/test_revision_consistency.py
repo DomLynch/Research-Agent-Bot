@@ -150,6 +150,9 @@ def test_latest_reviewer_consistency_bundle_is_repaired_and_proven() -> None:
     assert revision_coverage.deterministic_unmet_asks(fixed, ASKS, evidence_rows=ROWS) == []
     assert "A fourth and overarching tension" in fixed
     assert "20 high-confidence extracted claims" in fixed
+    assert "extracted-claim counts across 4 included sources" in fixed
+    assert "n_claims" not in fixed
+    assert "manifest receipts" not in fixed
     assert "P = 0.003" not in fixed
     assert "reviewer-reconciled direction=positive" in fixed
     assert "## Metabolic-Functional Tradeoff Framework" not in fixed
@@ -270,6 +273,23 @@ def test_animal_proof_requires_source_accounting_not_only_marker() -> None:
     assert "outcome=animal/preclinical context" in fixed
     assert "directness=animal/preclinical context" in fixed
     assert revision_quality_proof_is_stated(fixed, ASKS[4], ROWS)
+
+
+def test_animal_flag_canonicalizes_bundle_order_and_duplicates() -> None:
+    marker = "[veterinary; preclinical context only; excluded from human aggregates]"
+    paper = (
+        "## Results\n\n"
+        f"- Jorgensen 2026 [bundle:9] {marker} {marker}: "
+        "outcome=cardiometabolic; directness=direct.\n"
+    )
+
+    fixed, _details = repair_revision_quality(paper, ROWS, ASKS[4])
+    stable, second_details = repair_revision_quality(fixed, ROWS, ASKS[4])
+
+    assert f"Jorgensen 2026 {marker} [bundle:9]" in fixed
+    assert fixed.count(marker) == 1
+    assert stable == fixed
+    assert second_details == []
 
 
 def test_targeted_animal_repair_preserves_other_animal_markers() -> None:
