@@ -114,11 +114,8 @@ def _upsert_section_note(paper_md: str, heading: str, marker: str, note: str) ->
 
 
 def _repair_tension_series(paper_md: str) -> tuple[str, int]:
-    span = _section_span(paper_md, "Cross-Domain Synthesis")
-    if not span:
-        return paper_md, 0
-    start, end = span
-    parts = re.split(r"(\n\s*\n)", paper_md[start:end])
+    body, separator, references = paper_md.partition("\n## References")
+    parts = re.split(r"(\n\s*\n)", body)
     index = changed = 0
     for pos in range(0, len(parts), 2):
         if not _TENSION_LEAD_RE.match(parts[pos].strip()) or index >= len(_ORDINALS):
@@ -128,16 +125,14 @@ def _repair_tension_series(paper_md: str) -> tuple[str, int]:
         if fixed != parts[pos].strip():
             parts[pos], changed = fixed, changed + 1
         index += 1
-    return paper_md[:start] + "".join(parts) + paper_md[end:], changed
+    return "".join(parts) + separator + references, changed
 
 
 def _tension_series_is_stated(paper_md: str) -> bool:
-    span = _section_span(paper_md, "Cross-Domain Synthesis")
-    if not span:
-        return False
+    body = paper_md.partition("\n## References")[0]
     leads = [
         match.group(0).lower().removeprefix("the ").removeprefix("a ")
-        for part in re.split(r"\n\s*\n", paper_md[span[0]:span[1]])
+        for part in re.split(r"\n\s*\n", body)
         if (match := _TENSION_LEAD_RE.match(part.strip()))
     ]
     return bool(leads) and leads == list(_ORDINALS[:len(leads)])

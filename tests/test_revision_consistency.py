@@ -167,11 +167,15 @@ def test_latest_reviewer_consistency_bundle_is_repaired_and_proven() -> None:
 
 
 def test_tension_series_repairs_the_prefixed_out_of_sequence_ordinals() -> None:
-    paper = """## Cross-Domain Synthesis
+    paper = """## Results
 
 The fourth tension compares proximal and distal outcomes.
 
 The fifth tension compares biomarker and functional evidence.
+
+## Cross-Domain Synthesis
+
+The evidence is interpreted across outcome classes.
 """
     ask = ASKS[0]
 
