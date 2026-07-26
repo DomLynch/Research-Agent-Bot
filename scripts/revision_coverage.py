@@ -983,7 +983,7 @@ def _asks_null_signal_reconciliation(text: str) -> bool:
 
 
 def _asks_concrete_tensions_gaps(text: str) -> bool:
-    if "cross-domain synthesis" in text and "template prose" in text or "severity 4" in text and re.search(r"(?:per[- ]endpoint|coding[- ]artifact)", text):
+    if _asks_mechanistic_content_reconciliation(text) or "cross-domain synthesis" in text and "template prose" in text or "severity 4" in text and re.search(r"(?:per[- ]endpoint|coding[- ]artifact)", text):
         return False
     if "tension descriptions" in text and any(token in text for token in ("source role", "review grade", "framing")):
         return False
@@ -1943,7 +1943,7 @@ def _asks_effect_direction_reconciliation(text: str) -> bool:
         and "direction" in text
         and bool(re.search(r"\b[A-Z][A-Za-z'’.\-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", text, flags=re.I))
     ) or (
-        "outcome class" in text
+        any(token in text for token in ("outcome class", "outcome-class"))
         and any(token in text for token in ("directional summar", "coded direction"))
         and any(token in text for token in ("correct", "reconcile", "match"))
     )
@@ -2093,9 +2093,9 @@ def _effect_direction_reconciliation_is_stated(paper_md: str, ask: str) -> bool:
     lower = scope.lower()
     labels = _source_labels_from_ask(ask)
     return (
-        ("outcome class" not in ask.lower() or "outcome-class coded-direction reconciliation:" in lower)
-        and
-        "effect-direction reconciliation note:" in lower
+        any(token in ask.lower() for token in ("outcome class", "outcome-class"))
+        and "outcome-class coded-direction reconciliation:" in lower
+        or "effect-direction reconciliation note:" in lower
         and "actual reported finding" in lower
         and "direction=" in lower
         and all(label.lower() in lower for label in labels)

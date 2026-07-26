@@ -4164,7 +4164,7 @@ def test_influenza_revision_surface_repairs_are_verified_deterministically() -> 
         "and flag any retained mismatch explicitly.; "
         "Surface the named internal cross-source tensions (Alotaibi 2026 vs Incalzi 2024/Luo 2026; "
         "Wang 2024 vs Szilagyi 2025/Wang 2025b) directly in the Conclusion or Discussion, not only in the Evidence Snapshot.; "
-        "Resolve the 'no mechanistic sources' claim with the actual presence of biomarker content and either recode it or adjust the framing."
+        "Resolve the contradiction between 'no mechanistic sources' and retained mechanistic content, pick one taxonomy, and define the mechanistic category operationally."
     )
     asks = revision_coverage.revision_asks(feedback)
     weak = (

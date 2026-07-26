@@ -344,7 +344,7 @@ def _phase_m_strip_surface_duplicate_paragraphs(
         is_duplicate = tokens and any(
             len(tokens & prior) / max(1, len(tokens | prior)) >= 0.9 for prior in seen
         )
-        if is_duplicate and not protect_intro_first:
+        if is_duplicate and not (protect_intro_first or stripped.startswith("Outcome-class coded-direction reconciliation:")):
             n += 1
             continue
         if tokens:
@@ -2771,7 +2771,7 @@ def _phase_d_substantive_evidence_synthesis(
     patched, n1 = _prepend_generated_section_paragraph(text, "Evidence Landscape", landscape, "substantive evidence synthesis:", create=True)
     patched, n2 = _prepend_generated_section_paragraph(patched, "Key Findings", key_findings, "key findings from source synthesis:", create=True)
     if effect_reconciliation and not n2:
-        patched, n2 = _prepend_generated_section_paragraph(patched, "Key Findings", outcome_direction_tally_note(rows), "outcome-class coded-direction reconciliation:", create=True)
+        patched, n2 = _prepend_generated_section_paragraph(patched, "Results", outcome_direction_tally_note(rows), "outcome-class coded-direction reconciliation:", create=True)
     conclusion_note = (
         f"Substantive conclusion for {_topic_display_anchor(manifest) or 'the target topic'}: "
         f"{_manifest_conclusion_weight_note(rows) if needs_conclusion_weight else 'the retained source set shows ' + _manifest_conclusion_summary(rows) + '. '}"

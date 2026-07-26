@@ -796,6 +796,10 @@ def test_outcome_direction_summary_uses_manifest_tallies(tmp_path: Path) -> None
     assert "Frailty = null in 2/2" in fixed
     assert "Longevity = unclear in 2/2" in fixed
     assert "Safety and Comorbidity = unclear in 1/1" in fixed
+    fixed, _ = journal_finalizer._phase_m_strip_surface_duplicate_paragraphs(fixed)
+    fixed, _ = journal_finalizer.review_noise_control.apply_review_noise_control(fixed, tmp_path)
+    assert "Outcome-class coded-direction reconciliation:" in fixed
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].rule == "add_manifest_grounded_evidence_landscape_and_key_findings"
 
