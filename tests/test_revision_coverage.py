@@ -827,7 +827,7 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert details == ["major_claim_trace"]
     assert "Study1 2025 [bundle:" in fixed
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("[exact source: https://doi.org/") == 16
+    assert fixed.count("[exact source: https://doi.org/") == 20
     assert "https://doi.org/10.1000/study.1" in fixed
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
@@ -857,9 +857,36 @@ def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
 
     assert changed == 1
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("https://doi.org/10.1000/study.1") == 1
+    assert fixed.count("https://doi.org/10.1000/study.1") == 3
     assert fixed.count("https://doi.org/10.1000/study.2") == 1
     assert fixed.count("https://doi.org/10.1000/study.3") == 1
+
+
+def test_major_claim_trace_completes_partially_traced_claims() -> None:
+    ask = "Add exact source tokens to major claims; required 2."
+    rows = [
+        {
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/study.{i}",
+        }
+        for i in range(1, 4)
+    ]
+    paper = (
+        "## Results\n\n"
+        "Study1 2025 [bundle:1] reported outcome one "
+        "[exact source: https://doi.org/10.1000/study.1].\n\n"
+        "Study2 2025 [bundle:2] reported outcome two "
+        "[exact source: https://doi.org/10.1000/study.2].\n\n"
+        "Study3 2025 [bundle:3] reported outcome three.\n"
+    )
+
+    assert revision_claim_trace.major_claim_trace_is_stated(paper, ask, rows) is True
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert "outcome three [exact source: https://doi.org/10.1000/study.3]" in fixed
+    assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
 
 
 def test_major_claim_trace_does_not_count_source_role_boilerplate() -> None:

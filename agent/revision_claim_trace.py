@@ -105,30 +105,15 @@ def repair_major_claim_trace(
     rows: Sequence[dict[str, Any]],
 ) -> tuple[str, int]:
     rows = _ordered_rows(rows)
-    if major_claim_trace_is_stated(paper_md, ask, rows):
-        return paper_md, 0
     patched = attach_bundle_references(_without_trace(paper_md), rows)
     claims = _source_bound_claims(patched, rows)
     if not claims:
         return patched, int(patched != paper_md)
-    required = _requested_count(ask, len(claims))
-    traced_count = sum(
-        bool(
-            (locator := _stable_locator(row))
-            and locator in claim
-            and f"[bundle:{bundle_number}]" in claim
-        )
-        for claim, bundle_number, row in claims
-    )
     for claim, _bundle_number, row in claims:
-        if traced_count >= required:
-            break
         locator = _stable_locator(row)
         if not locator or locator in claim:
             continue
-        traced_claim = _append_inline_locator(claim, locator)
-        patched = patched.replace(claim, traced_claim, 1)
-        traced_count += 1
+        patched = patched.replace(claim, _append_inline_locator(claim, locator), 1)
     return patched, int(patched != paper_md)
 
 
