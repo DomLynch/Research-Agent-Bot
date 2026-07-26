@@ -1676,7 +1676,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "core_claims_resolved": True,
         "author_signature": content_hash,
         "metadata": metadata,
-    }
+    } | ({"parent_submission_id": revision_parent} if revision.get("submissionId") else {})
     metadata["submission_payload_hash"] = _payload_fingerprint(payload)
     return payload
 
