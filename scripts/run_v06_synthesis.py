@@ -4605,6 +4605,10 @@ def _repair_post_finalizer_auto_fixables(
         ),
     )
     fixed_md = _strip_rendered_citation_markers(fixed_md)
+    fixed_md, surface_log = _restore_public_surface_floors(
+        fixed_md, review_type=manifest.get("review_type"),
+    )
+    log.extend(surface_log)
     if fixed_md == paper_md and not log:
         return paper_md, []
     paper_path.write_text(fixed_md)

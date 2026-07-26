@@ -1,4 +1,3 @@
-"""Deterministic repair and proof for recurring reviewer-quality revisions."""
 from __future__ import annotations
 
 import re
@@ -274,7 +273,8 @@ def _asks_exact_stat_trace(text: str) -> bool:
 def _asks_fragment_cleanup(text: str) -> bool:
     return any(token in text for token in (
         "fragmentary prose", "fragementary prose", "opening fragment", "opening comma",
-        "ending mid sentence", "orphaned prose",
+        "ending mid sentence", "broken mid sentence", "garbled section fragment",
+        "orphaned prose",
     ))
 
 
@@ -402,7 +402,6 @@ def _traceable_effect_statistics(row: dict[str, Any]) -> tuple[str, ...]:
 
 
 def resolved_effect_direction(row: dict[str, Any]) -> str:
-    """Correct only a source-traceable harmful null-code contradiction."""
     raw = receipt_direction(row)
     if raw != "null":
         return raw
@@ -582,6 +581,11 @@ def _paragraphs_with_headings(paper_md: str) -> list[tuple[str, str]]:
 
 
 def _reviewed_fragments_are_absent(paper_md: str, ask: str) -> bool:
+    if (match := re.search(r"garbled section fragments?\s*\(([^)]*)\)", ask, re.I)) and any(
+        _normalise(fragment) in _normalise(paper_md)
+        for fragment in re.findall(r"['\"]([^'\"]+)['\"]", match.group(1))
+    ):
+        return False
     targets = _target_headings(paper_md, ask)
     for heading, paragraph in _paragraphs_with_headings(paper_md):
         if _fragmentary(paragraph) and (re.match(r"^[,;]", paragraph.strip()) or not targets or heading in targets):

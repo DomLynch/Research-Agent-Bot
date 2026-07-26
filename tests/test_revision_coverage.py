@@ -1011,6 +1011,26 @@ def test_generic_fragment_request_repairs_unnamed_trailing_fragment() -> None:
     assert revision_quality_proof_is_stated(fixed, ask, []) is True
 
 
+def test_garbled_named_fragment_request_is_deterministically_satisfied() -> None:
+    ask = (
+        "Repair the two garbled section fragments (the 'He Longevity Outcomes' "
+        "and 'The Safety and Comorbidity Outcomes' headers/sentences) so the "
+        "Results flow without broken mid-sentence strings."
+    )
+    paper = (
+        "## Results\n\n"
+        "### Longevity Outcomes\n\nThe retained evidence is bounded and complete.\n\n"
+        "### Safety and Comorbidity Outcomes\n\nThe safety evidence is bounded and complete.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(
+        paper.replace("### Longevity Outcomes", "### He Longevity Outcomes"),
+        [ask],
+    ) == [ask]
+
+
 def test_generic_fragment_request_preserves_complete_markdown_link() -> None:
     ask = "Complete all prose sections ending mid-sentence."
     paper = (

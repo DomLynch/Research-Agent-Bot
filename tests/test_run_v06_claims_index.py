@@ -107,6 +107,14 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
             [{"fix_type": "numeric_role_guard_strip", "n_changes": 1}],
         ),
     )
+    monkeypatch.setattr(
+        orch,
+        "_restore_public_surface_floors",
+        lambda md, **_kwargs: (
+            md + " Restored surface floor.",
+            [{"fix_type": "surface_floor_backstop", "section": "Introduction"}],
+        ),
+    )
 
     fixed, log = orch._repair_post_finalizer_auto_fixables(
         paper_path.read_text(),
@@ -116,9 +124,10 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
         quant_claims_dir=tmp_path / "quant_claims",
     )
 
-    assert fixed == "Clean finalizer paper."
-    assert paper_path.read_text() == "Clean finalizer paper."
+    assert fixed == "Clean finalizer paper. Restored surface floor."
+    assert paper_path.read_text() == fixed
     assert log[0]["fix_type"] == "numeric_role_guard_strip"
+    assert log[1]["fix_type"] == "surface_floor_backstop"
     assert (tmp_path / "full_paper.post_finalizer_fixed_log.json").is_file()
 
 

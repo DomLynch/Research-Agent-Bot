@@ -340,6 +340,18 @@ def test_representative_p_value_coherent_reconciles_null_with_significant_stat()
     assert tr._representative_p_value_coherent(_RPos()) == "p < 0.001"
 
 
+def test_representative_p_value_coherent_uses_receipt_excerpt() -> None:
+    """A summary must not promote a statistic absent from its evidence excerpt."""
+    @dataclass
+    class _R:
+        effect_direction: str = "positive"
+        p_values: tuple[str, ...] = ("p = 0.002", "p = 0.001", "p = 0.049")
+        thesis_text: str = "Fatty liver index improved (p=0.002); liver fat score changed (p=.049)."
+
+    assert tr._representative_p_value_coherent(_R()) == "p = 0.002"
+    assert tr._representative_p_value_coherent(_R(thesis_text="No numeric excerpt.")) == "—"
+
+
 def test_table_1_null_direction_does_not_surface_bare_significant_p_value() -> None:
     """Integration: the incoherent 'direction=null; p<0.001' pairing from the
     resveratrol Chen-2015 row renders RESOLVED in Table 1 — the null row shows

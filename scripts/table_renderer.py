@@ -1,43 +1,4 @@
-"""Fix #6 + Fix #21: Deterministic per-paper evidence tables.
-
-Pre-fix: Q9 numeric density failed because the writer had to inject
-all numerics inline in prose (4.3/1k vs 8.0 target). PhD-style review
-papers solve this with structured tables: numbers live in tables, prose
-references them.
-
-Fix #21 reshape (per the asymmetric-fix reviewer guidance):
-
-  Table 1 — Included Studies
-    Citation | Design | Tier | N | Population | Endpoint | Direction
-    | Directness | Trial ID | Representative p-value | n claims
-
-  Table 2 — Per-Study Endpoint Evidence
-    One row per (study × p-value) → DENSE numerics carrier.
-    Endpoint | Study | p/CI | Direction | Directness | Tier
-    | Interpretation
-
-  Table 3 — Cross-Domain Tensions
-    One row per non-orthogonal pair from the TensionMatrix.
-    Tension kind | Severity | Receipt A | Receipt B | Outcome class
-    | Summary | Practical implication
-
-  Table 4 (supplemental) — Per-Domain Risk of Bias
-    Cochrane RoB-2 / ROBINS-I-style per-tier domain grades
-    (allocation, blinding, attrition, …). Kept from Fix #14 for
-    PhD-grade reviewer credibility.
-
-Architecture: pure deterministic, no LLM, no I/O. Operates on a list
-of ReceiptSummary objects (post-citation-substitution if Fix #3 ran)
-and (optionally) the TensionMatrix from build_tension_matrix.
-
-Reviewer-pass v2 hardening (preserved):
-  - N-extraction uses regex with range support (`n=120-150`) and
-    handles missing `n=` / reversed-order population strings.
-  - Markdown escaping covers pipe + newline + backtick + carriage
-    return so cell content can never break row parsing.
-  - Tables 1/2 use the `Citation` column header consistently; the
-    underlying citation strings are sourced from the same upstream
-    body_citation that the References block uses (no drift)."""
+"""Deterministic manuscript evidence tables and public evidence snapshots."""
 from __future__ import annotations
 
 import re
@@ -183,16 +144,28 @@ def _representative_p_value(r: object) -> str:
     return _smallest_p_string(list(getattr(r, "p_values", None) or ()))
 
 
+def _p_value_signatures(text: str) -> set[tuple[str, float]]:
+    operators = {"≤": "<=", "≥": ">="}
+    return {
+        (operators.get(operator, operator), float(value))
+        for operator, value in re.findall(
+            r"\bp\s*(<=|>=|<|>|=|≤|≥)\s*(\d*\.?\d+(?:[eE][-+]?\d+)?)",
+            text,
+            re.I,
+        )
+    }
+
+
 def _representative_p_value_coherent(r: object) -> str:
-    """Representative p-value reconciled with the coded direction, for the
-    summary surfaces (Table 1 + the public Evidence Snapshot). A receipt coded
-    direction=null must NOT surface a significant p — a bare "null; p<0.001"
-    reads as a contradiction. RESOLVE it (don't merely tag it "off-summary"):
-    keep only the receipt's non-significant p-values and show the smallest, or
-    "—" if it has none. Resolution selects only among the receipt's OWN values
-    — never invents or relabels — so the dense per-endpoint statistics in
-    Table 2 stay the source of truth. Universal."""
+    """Select an excerpt-grounded p-value coherent with the coded direction."""
     pvals = [p for p in (getattr(r, "p_values", None) or ()) if p and p.strip()]
+    thesis = str(getattr(r, "thesis_text", "") or "")
+    if thesis:
+        supported = _p_value_signatures(thesis)
+        pvals = [
+            p for p in pvals
+            if _p_value_signatures(p) & supported
+        ]
     if str(getattr(r, "effect_direction", "") or "").lower() == "null":
         pvals = [p for p in pvals if not _has_significant_p_value(p)]
     return _smallest_p_string(pvals)
@@ -233,16 +206,7 @@ def _design_from_tier(tier: str | None) -> str:
 
 
 def render_table_1_included_studies(receipts: list) -> str:
-    """Table 1 — one row per source paper.
-
-    Columns: Citation | Design | Tier | N | Population | Endpoint
-    | Direction | Directness | Trial ID | Representative p-value
-    | n claims
-
-    Fix #21 added: Design column (derived from evidence_tier) so the
-    reader sees study type at a glance. Trial ID is the canonical
-    NCT/ISRCTN. Representative p-value + n claims come from the
-    Fix #12 numeric-density boost."""
+    """Render one evidence-hierarchy row per included source."""
     header = (
         "## Table 1: Included Studies\n\n"
         + _row(
@@ -328,17 +292,7 @@ def _display_direction(direction: str, stat: str = "") -> str:
 
 
 def render_table_2_endpoint_evidence(receipts: list) -> str:
-    """Table 2 — one row per (study × p-value) tuple.
-
-    Columns: Endpoint | Study | p/CI | Direction | Directness | Tier
-    | Interpretation
-
-    Fix #21 reshape: previous layout aggregated by outcome_class
-    (one row per endpoint). The new dense layout produces one row per
-    (study, p-value) — for a corpus of 15 studies × ~3 p-values each
-    that is ~45 rows of structured numerics, materially raising Q9
-    density without prose bloat. Studies with no p-values still
-    contribute one row with `—` so the reader sees the gap."""
+    """Render source p-values, or an honest claim-count fallback, by endpoint."""
     header = (
         "## Table 2: Per-Study Endpoint Evidence\n\n"
         + _row(
