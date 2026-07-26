@@ -12,8 +12,8 @@ from agent.synthesis_schemas import EffectDirection, OutcomeClass, ReceiptSummar
 
 _ORDINALS = ("first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth")
 _TENSION_LEAD_RE = re.compile(
-    r"^(?:The clearest|The first|A first|Another|A second|A third|A fourth|A fifth|"
-    r"A sixth|A seventh|A eighth)(?=\s+(?:and\s+overarching\s+)?(?:cross-outcome\s+)?tension\b)",
+    rf"^(?:The clearest|Another|(?:The|A)\s+(?:{'|'.join(_ORDINALS)}))"
+    r"(?=\s+(?:and\s+overarching\s+)?(?:cross-outcome\s+)?tension\b)",
     re.I,
 )
 _FRAMEWORK_NOTE = (

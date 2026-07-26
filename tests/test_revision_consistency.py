@@ -166,6 +166,23 @@ def test_latest_reviewer_consistency_bundle_is_repaired_and_proven() -> None:
     assert second_details == []
 
 
+def test_tension_series_repairs_the_prefixed_out_of_sequence_ordinals() -> None:
+    paper = """## Cross-Domain Synthesis
+
+The fourth tension compares proximal and distal outcomes.
+
+The fifth tension compares biomarker and functional evidence.
+"""
+    ask = ASKS[0]
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert details == ["tension_series"]
+    assert "The first tension" in fixed
+    assert "A second tension" in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, [])
+
+
 def test_animal_receipt_is_never_rendered_as_human_outcome_evidence() -> None:
     outcome, _source, _direction, directness, _tier, role, _finding = findings_map_row(ROWS[2])
 
