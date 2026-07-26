@@ -927,9 +927,17 @@ def _declared_review_type(run: Path) -> str:
 
 def _surface_passes_current_finalizer(run: Path) -> bool:
     """True when current finalizer code can clear a stale surface sidecar."""
-    if not (run / "full_paper.md").is_file():
+    paper_path = run / "full_paper.md"
+    if not paper_path.is_file():
         return False
     try:
+        declared_words = _read_json(run / "manifest.json").get("total_words")
+        if (
+            isinstance(declared_words, int)
+            and declared_words > 0
+            and len(paper_path.read_text(encoding="utf-8").split()) > 2 * declared_words
+        ):
+            return False
         with tempfile.TemporaryDirectory(prefix="v3-surface-probe-") as tmp:
             probe = Path(tmp) / run.name
             shutil.copytree(run, probe)

@@ -9722,6 +9722,24 @@ def test_surface_repeat_topics_ignores_current_finalizer_repairable_topic(
     assert seen_review_types == ["thin_corpus_brief"]
 
 
+def test_surface_probe_skips_manuscript_inconsistent_with_its_manifest(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    import agent.journal_finalizer as finalizer
+
+    run = tmp_path / "synthesis-topic-v06-DAILY-corrupt"
+    _write_json(run / "manifest.json", {"total_words": 4})
+    (run / "full_paper.md").write_text("word " * 9, encoding="utf-8")
+    monkeypatch.setattr(
+        finalizer,
+        "finalize_run",
+        lambda _run: pytest.fail("corrupt manuscript must not enter the finalizer probe"),
+    )
+
+    assert cycle._surface_passes_current_finalizer(run) is False
+
+
 def test_writer_gate_repeat_policy_skips_without_compact_downshift(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
