@@ -1135,10 +1135,14 @@ def _revision_requests_source_precision(feedback: str) -> bool:
             clause,
         )
         action = re.search(
-            r"\b(?:clarify|exclude|fix|narrow|rebuild|reclassify|remove|replace|"
-            r"reset|revise|swap|verify)\b",
-            clause,
-        )
+            r"\b(?:clarify|exclude|fix|narrow|rebuild|reclassify|remove|replace|reset|revise|swap|verify)\b", clause)
+        non_source_surface_action = re.search(
+            r"\b(?:clarify|fix|remove|replace|revise)\b.{0,80}"
+            r"\b(?:arithmetic|boilerplate|counts?|framing|funnel|narrative|"
+            r"numbers?|numerics?|prose|sentences?|title|wording)\b", clause)
+        source_action = re.search(
+            r"\b(?:clarify|exclude|fix|narrow|rebuild|reclassify|remove|replace|reset|revise|swap|verify)\b"
+            r"(?:\s+\w+){0,4}\s+(?:sources?|evidence|stud(?:y|ies)|trials?|papers?|records?|corpus|bundle)\b", clause)
         negated_action = re.search(
             r"\b(?:(?:do|does|should|must|shall|can|could|would)(?:\s+not|n['’]?t)|"
             r"don['’]?t|never|not\s+to|(?:there\s+is\s+)?no\s+need\s+to)\s+"
@@ -1150,7 +1154,7 @@ def _revision_requests_source_precision(feedback: str) -> bool:
         if evidence and scope:
             if negated_action:
                 decision = False
-            elif action or "off-topic" in clause:
+            elif (action or "off-topic" in clause) and (not non_source_surface_action or source_action):
                 decision = True
     return bool(decision)
 

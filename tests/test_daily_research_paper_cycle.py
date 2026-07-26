@@ -6080,6 +6080,35 @@ def test_revise_restores_source_manifest_when_feedback_mentions_source_bundle(tm
     assert ledger["attempts"][0]["submitted"] == 1
 
 
+def test_revise_prose_consistency_feedback_keeps_source_manifest(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", lambda *_a, **_k: (
+        (_ for _ in ()).throw(AssertionError("prose feedback must not rebuild the reviewed corpus"))
+    ))
+    feedback_seen: list[str | None] = []
+    monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen))
+    feedback = (
+        "Reconcile the Methods funnel arithmetic; either remove the funnel numbers "
+        "and state the corpus size directly. Soften or remove the positive framing "
+        "because only 3/19 sources are coded positive."
+    )
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-07-27", run_synthesis=True, submit=True, mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([{
+            "artifactId": "rev-prose", "submissionId": "sub-prose",
+            "title": "Research Synthesis: Aspirin Geroprotection — full paper",
+            "feedback": feedback,
+        }], None),
+        submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
+    )
+
+    assert ledger["corpus"]["source"] == "existing_source_manifest"
+    assert feedback_seen == [feedback]
+    assert ledger["attempts"][0]["submitted"] == 1
+
+
 def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     calls = 0
@@ -12459,6 +12488,21 @@ def test_revision_source_precision_is_clause_and_negation_aware() -> None:
     )
     assert not cycle._revision_requests_source_precision(
         "Replace indirect evidence with direct trials; do not replace indirect evidence with direct trials."
+    )
+    assert cycle._revision_requests_source_precision(
+        "Remove generic framing and replace unrelated sources."
+    )
+
+
+def test_revision_source_precision_ignores_prose_only_consistency_requests() -> None:
+    assert not cycle._revision_requests_source_precision(
+        "Reconcile the Methods funnel arithmetic so the admitted-source count and "
+        "classified-candidate count are consistent; either report actual candidate "
+        "counts or remove the funnel numbers and state the corpus size directly."
+    )
+    assert not cycle._revision_requests_source_precision(
+        "Soften or remove the 'overwhelmingly positive' framing because the Findings "
+        "Map shows only 3/19 sources coded positive."
     )
 
 
