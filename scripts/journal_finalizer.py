@@ -499,7 +499,7 @@ def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
         return f"{match.group(1)} not automatically"
 
     out, n_transfer = transfer_pattern.subn(transfer_repl, out)
-    out, n_source = re.subn(r"\[\s*source:\s*([^]]+)\]", r"(\1)", out, flags=re.I)
+    out, n_source = re.subn(r"\[\s*sources?:\s*([^]]+)\]", r"(\1)", out, flags=re.I)
     out, n_parenthetical = re.subn(r"\(\s+\((?=[^()\n]*\))", "(", out)
     return (balanced := "\n\n".join(_repair_unbalanced_parentheses(paragraph) for paragraph in out.split("\n\n"))), n + n_transfer + n_source + n_parenthetical + len(out) - len(balanced)
 
@@ -2770,6 +2770,8 @@ def _phase_d_substantive_evidence_synthesis(
     )
     patched, n1 = _prepend_generated_section_paragraph(text, "Evidence Landscape", landscape, "substantive evidence synthesis:", create=True)
     patched, n2 = _prepend_generated_section_paragraph(patched, "Key Findings", key_findings, "key findings from source synthesis:", create=True)
+    if effect_reconciliation and not n2:
+        patched, n2 = _prepend_generated_section_paragraph(patched, "Key Findings", outcome_direction_tally_note(rows), "outcome-class coded-direction reconciliation:", create=True)
     conclusion_note = (
         f"Substantive conclusion for {_topic_display_anchor(manifest) or 'the target topic'}: "
         f"{_manifest_conclusion_weight_note(rows) if needs_conclusion_weight else 'the retained source set shows ' + _manifest_conclusion_summary(rows) + '. '}"

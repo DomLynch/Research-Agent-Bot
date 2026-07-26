@@ -763,7 +763,7 @@ def test_methods_funnel_arithmetic_uses_manifest_counts(tmp_path: Path) -> None:
     assert logs[0].rule == "state_receipt_funnel_arithmetic"
 
 
-def test_outcome_direction_summary_uses_manifest_tallies() -> None:
+def test_outcome_direction_summary_uses_manifest_tallies(tmp_path: Path) -> None:
     import revision_coverage
 
     ask = (
@@ -785,8 +785,19 @@ def test_outcome_direction_summary_uses_manifest_tallies() -> None:
     assert "Frailty = null in 2/2" in note
     assert "Longevity = unclear in 2/2" in note
     assert "Safety and Comorbidity = unclear in 1/1" in note
-    paper = f"## Results\n\n{note}\n"
-    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+    paper = (
+        "## Key Findings\n\nKey findings from source synthesis:\n\nExisting generated summary.\n\n"
+        "## Results\n\nExisting directional prose.\n"
+    )
+    fixed, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+
+    assert "Frailty = null in 2/2" in fixed
+    assert "Longevity = unclear in 2/2" in fixed
+    assert "Safety and Comorbidity = unclear in 1/1" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert logs[0].rule == "add_manifest_grounded_evidence_landscape_and_key_findings"
 
 
 def test_admission_funnel_clarification_is_revision_scoped(tmp_path: Path) -> None:
@@ -1532,10 +1543,12 @@ def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None
         "### Metabolic Outcomes\n\n"
         "The causal bridge to be rigorously is bounded by directness and follow-up limits.\n\n"
         "A signal in one domain does not automatically is consistent with the same signal in another.\n\n"
-        "## References\n\n- Smith 2024.\n"
+        "The comparison remained bounded [sources: Kumari 2026, Malin 2026a].\n\n"
+        "## References\n\n- Kumari 2026.\n- Malin 2026a.\n"
     )
 
     assert any(i.code == "grammar_artifact" for i in evaluate_journal_surface(paper).issues)
+    assert any(i.code == "citation_artifact" for i in evaluate_journal_surface(paper).issues)
     assert any("empty heading: Results Summary" in i.detail for i in evaluate_journal_surface(paper).issues)
 
     fixed, logs = journal_finalizer._phase_m_repair_surface_artifacts(paper)
@@ -1545,14 +1558,16 @@ def test_surface_artifact_cleanup_repairs_grammar_and_empty_subheading() -> None
     assert "is rigorously bounded" in fixed
     assert "does not automatically is" not in fixed
     assert "is not automatically consistent" in fixed
+    assert "(Kumari 2026, Malin 2026a)" in fixed
     assert not any(i.code == "grammar_artifact" for i in evaluate_journal_surface(fixed).issues)
+    assert not any(i.code == "citation_artifact" for i in evaluate_journal_surface(fixed).issues)
     assert not any("empty heading: Results Summary" in i.detail for i in evaluate_journal_surface(fixed).issues)
     assert logs == [
         journal_finalizer.FinalizerLogEntry(
             phase="M_surface_artifact_cleanup",
             rule="repair_known_surface_artifacts",
-            n_changes=3,
-            detail="grammar_artifact=2; empty_subheading=1",
+            n_changes=4,
+            detail="grammar_artifact=3; empty_subheading=1",
         )
     ]
 
