@@ -105,12 +105,24 @@ def repair_major_claim_trace(
     claims = _source_bound_claims(patched, rows)
     if not claims:
         return patched, int(patched != paper_md)
+    required = _requested_count(ask, len(claims))
+    traced_count = sum(
+        bool(
+            (locator := _stable_locator(row))
+            and locator in claim
+            and f"[bundle:{bundle_number}]" in claim
+        )
+        for claim, bundle_number, row in claims
+    )
     for claim, _bundle_number, row in claims:
+        if traced_count >= required:
+            break
         locator = _stable_locator(row)
         if not locator or locator in claim:
             continue
-        traced = _append_inline_locator(claim, locator)
-        patched = patched.replace(claim, traced, 1)
+        traced_claim = _append_inline_locator(claim, locator)
+        patched = patched.replace(claim, traced_claim, 1)
+        traced_count += 1
     return patched, int(patched != paper_md)
 
 

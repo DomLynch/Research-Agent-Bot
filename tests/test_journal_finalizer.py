@@ -6116,7 +6116,7 @@ def test_revision_surface_notes_repair_major_claim_trace_request(tmp_path: Path)
 
     assert logs and "major_claim_trace" in logs[0].detail
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("[exact source: https://doi.org/") == 20
+    assert fixed.count("[exact source: https://doi.org/") == 16
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
         fixed, [ask], evidence_rows=rows,
     ) == []

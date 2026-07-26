@@ -827,7 +827,7 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert details == ["major_claim_trace"]
     assert "Study1 2025 [bundle:" in fixed
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("[exact source: https://doi.org/") == 20
+    assert fixed.count("[exact source: https://doi.org/") == 16
     assert "https://doi.org/10.1000/study.1" in fixed
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
@@ -857,7 +857,7 @@ def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
 
     assert changed == 1
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("https://doi.org/10.1000/study.1") == 3
+    assert fixed.count("https://doi.org/10.1000/study.1") == 1
     assert fixed.count("https://doi.org/10.1000/study.2") == 1
     assert fixed.count("https://doi.org/10.1000/study.3") == 1
 
