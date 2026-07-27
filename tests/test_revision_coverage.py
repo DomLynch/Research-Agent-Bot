@@ -862,6 +862,48 @@ def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
     assert fixed.count("https://doi.org/10.1000/study.3") == 1
 
 
+def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "17/30 claims are exactly traceable (required 24)."
+    )
+    rows = [
+        {
+            "citation_token": "Study1 2025",
+            "source_doi": "10.1000/study.1",
+            "outcome_class": "frailty",
+            "directness": "direct",
+        },
+        {
+            "citation_token": "Study2 2025",
+            "source_doi": "10.1000/study.2",
+            "outcome_class": "longevity",
+            "directness": "indirect",
+        },
+    ]
+    paper = (
+        "## Abstract\n\n"
+        "Direct frailty evidence remains bounded and does not establish broad clinical "
+        "benefit.\n\n"
+        "The review workflow retained a complete audit trail for every included record.\n\n"
+        "Frailty guidance remains bounded pending stronger trials (Guideline 2024).\n\n"
+        "## Cross-Domain Synthesis\n\n"
+        "Study1 2025 and Study2 2025 produced different outcome signals.\n"
+    )
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert (
+        "Direct frailty evidence remains bounded and does not establish broad clinical "
+        "benefit (evidence anchor: Study1 2025 [bundle:1]) "
+        "[exact source: https://doi.org/10.1000/study.1]."
+    ) in fixed
+    assert fixed.count("(evidence anchor:") == 1
+    assert "pending stronger trials (Guideline 2024)." in fixed
+    assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
+
+
 def test_major_claim_trace_completes_partially_traced_claims() -> None:
     ask = "Add exact source tokens to major claims; required 2."
     rows = [

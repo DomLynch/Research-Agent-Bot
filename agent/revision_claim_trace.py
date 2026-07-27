@@ -22,8 +22,6 @@ _NON_CLAIM_PREFIXES = (
     "Source-statistic reconciliation (",
     "Source-scope boundary (",
 )
-
-
 def asks_major_claim_trace(text: str) -> bool:
     return "major claim" in text and any(token in text for token in (
         "exact source token",
@@ -106,14 +104,33 @@ def repair_major_claim_trace(
 ) -> tuple[str, int]:
     rows = _ordered_rows(rows)
     patched = attach_bundle_references(_without_trace(paper_md), rows)
+    eligible = [(number, row) for number, row in enumerate(rows, 1) if _stable_locator(row)]
+    section = ""
+    for line in patched.splitlines():
+        if heading := re.match(r"^##+\s+(.+?)\s*$", line):
+            section = heading.group(1).strip().lower()
+        text = line.strip()
+        words = set(re.findall(r"[a-z][a-z0-9-]{3,}", text.lower()))
+        matches = [item for item in eligible if words & set(re.findall(
+            r"[a-z][a-z0-9-]{3,}", str(item[1].get("outcome_class") or "").lower(),
+        ))]
+        if (
+            matches and re.search(r"(abstract|result|synthesis|conclusion)", section)
+            and len(text) >= 60 and text.endswith((".", "!", "?"))
+            and "[bundle:" not in text.lower()
+            and not re.search(r"\([A-Z][^)]*\b20\d{2}\)", text)
+            and not text.startswith(("#", "-", "|", "```", *_NON_CLAIM_PREFIXES))
+        ):
+            number, row = min(matches, key=lambda item: (
+                str(item[1].get("directness") or "").lower() != "direct", item[0],
+            ))
+            anchor = f"{text[:-1]} (evidence anchor: {_label(row)} [bundle:{number}]){text[-1]}"
+            patched = patched.replace(line, anchor, 1)
     claims = _source_bound_claims(patched, rows)
-    if not claims:
-        return patched, int(patched != paper_md)
     for claim, _bundle_number, row in claims:
         locator = _stable_locator(row)
-        if not locator or locator in claim:
-            continue
-        patched = patched.replace(claim, _append_inline_locator(claim, locator), 1)
+        if locator and locator not in claim:
+            patched = patched.replace(claim, _append_inline_locator(claim, locator), 1)
     return patched, int(patched != paper_md)
 
 
@@ -131,11 +148,7 @@ def _requested_count(ask: str, available: int) -> int:
 
 
 def _scope(paper_md: str) -> str:
-    match = re.search(
-        r"^## Major Claim Trace\b.*?(?=^## |\Z)",
-        paper_md,
-        re.M | re.S | re.I,
-    )
+    match = re.search(r"^## Major Claim Trace\b.*?(?=^## |\Z)", paper_md, re.M | re.S | re.I)
     return match.group(0) if match else ""
 
 
@@ -168,14 +181,10 @@ def _source_bound_claims(
             stripped,
         )
         for claim in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9])", protected):
-            claim = _drop_unmatched_parentheses(
-                claim.replace(_PROTECTED_PERIOD, "."),
-            )
-            bundle_numbers = [
-                int(value) for value in re.findall(r"\[bundle:(\d+)\]", claim, re.I)
-            ]
+            claim = _drop_unmatched_parentheses(claim.replace(_PROTECTED_PERIOD, "."))
             candidates = [
-                number for number in bundle_numbers if 1 <= number <= len(rows)
+                int(value) for value in re.findall(r"\[bundle:(\d+)\]", claim, re.I)
+                if 1 <= int(value) <= len(rows)
             ]
             key = " ".join(claim.casefold().split())
             if not candidates or key in seen:
@@ -190,32 +199,21 @@ def _source_bound_claims(
                 "result", "outcome", "synthesis", "conclusion", "what this synthesis adds",
             )) else 1
             claims.append((priority, order, claim, bundle_number, rows[bundle_number - 1]))
-    ordered = [
-        (claim, bundle_number, row)
-        for _priority, _order, claim, bundle_number, row in sorted(claims)
-    ]
-    distinct: list[tuple[str, int, dict[str, Any]]] = []
-    repeated: list[tuple[str, int, dict[str, Any]]] = []
-    seen_bundles: set[int] = set()
+    ordered = [(claim, number, row) for _, _, claim, number, row in sorted(claims)]
+    first: dict[int, tuple[str, int, dict[str, Any]]] = {}
     for item in ordered:
-        target = repeated if item[1] in seen_bundles else distinct
-        target.append(item)
-        seen_bundles.add(item[1])
-    return distinct + repeated
+        first.setdefault(item[1], item)
+    return list(first.values()) + [item for item in ordered if item is not first[item[1]]]
 
 
 def _ordered_rows(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
     values = list(rows)
-    return ordered_source_rows(values, {
-        str(row.get("receipt_id") or ""): row for row in values
-    })
+    return ordered_source_rows(values, {str(row.get("receipt_id") or ""): row for row in values})
 
 
 def _label(row: dict[str, Any]) -> str:
-    return str(
-        row.get("citation_token") or row.get("cited_as") or row.get("body_citation")
-        or row.get("receipt_id") or ""
-    ).strip()
+    value = row.get("citation_token") or row.get("cited_as") or row.get("body_citation")
+    return str(value or row.get("receipt_id") or "").strip()
 
 
 def _evidence_span(row: dict[str, Any]) -> str:
