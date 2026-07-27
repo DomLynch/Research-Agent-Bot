@@ -118,20 +118,19 @@ def repair_major_claim_trace(
             (matches or "conclusion" in section) and re.search(r"(abstract|result|synthesis|conclusion)", section)
             and len(text) >= 60 and text.endswith((".", "!", "?"))
             and "[bundle:" not in text.lower()
-            and not re.search(r"\([A-Z][^)]*\b20\d{2}\)", text)
             and not text.startswith(("#", "-", "|", "```", *_NON_CLAIM_PREFIXES))
         ):
             number, row = min(matches or eligible, key=lambda item: (
                 str(item[1].get("directness") or "").lower() != "direct", item[0],
             ))
-            anchor = f"{text[:-1]} (evidence anchor: {_label(row)} [bundle:{number}]){text[-1]}"
+            claim_text = re.sub(r"\s*\([A-Z][^)]*\b20\d{2}\)", "", text) if matches else text
+            anchor = f"{claim_text[:-1]} (evidence anchor: {_label(row)} [bundle:{number}]){claim_text[-1]}"
             patched = patched.replace(line, anchor, 1)
     claims = _source_bound_claims(patched, rows)
     for claim, _bundle_number, row in claims:
         locator = _stable_locator(row)
-        if locator and (locator not in claim or f"[bundle:{_bundle_number}]" not in claim):
-            traced = _append_inline_locator(claim, locator) if locator not in claim else claim
-            patched = patched.replace(claim, traced if f"[bundle:{_bundle_number}]" in traced else f"{traced[:-1]} [bundle:{_bundle_number}]{traced[-1]}", 1)
+        if locator and locator not in claim:
+            patched = patched.replace(claim, _append_inline_locator(claim, locator), 1)
     return patched, int(patched != paper_md)
 
 
@@ -182,9 +181,8 @@ def _source_bound_claims(
         )
         for claim in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9])", protected):
             claim = _drop_unmatched_parentheses(claim.replace(_PROTECTED_PERIOD, "."))
-            source = claim if "[bundle:" in claim or not re.search(r"(abstract|result|synthesis|conclusion)", section) else stripped
             candidates = [
-                int(value) for value in re.findall(r"\[bundle:(\d+)\]", source, re.I)
+                int(value) for value in re.findall(r"\[bundle:(\d+)\]", claim, re.I)
                 if 1 <= int(value) <= len(rows)
             ]
             key = " ".join(claim.casefold().split())
