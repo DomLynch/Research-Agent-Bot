@@ -8347,7 +8347,11 @@ def test_remote_revision_retries_unchanged_after_source_authority_outage(monkeyp
     }]
 
 
-def test_remote_revision_retries_semantic_source_verifier_outage(monkeypatch) -> None:
+@pytest.mark.parametrize("note", [
+    "source metadata verification unavailable (fail-closed)",
+    "doi resolver unavailable (fail-closed)",
+])
+def test_remote_revision_retries_semantic_source_verifier_outage(monkeypatch, note: str) -> None:
     title = "Research Synthesis: Exercise Effects — full paper"
     _patch_reviews(monkeypatch, [{
         "artifactType": "research_paper",
@@ -8360,7 +8364,7 @@ def test_remote_revision_retries_semantic_source_verifier_outage(monkeypatch) ->
         "requiredRevisions": [],
         "failure_stage": "editorial",
         "failure_category": "source_evidence_match",
-        "notes": ["source metadata verification unavailable (fail-closed)"],
+        "notes": [note],
         "resubmission": {"allowed": True},
     }])
 
