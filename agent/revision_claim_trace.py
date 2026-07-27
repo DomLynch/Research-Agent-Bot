@@ -22,6 +22,8 @@ _NON_CLAIM_PREFIXES = (
     "Source-statistic reconciliation (",
     "Source-scope boundary (",
 )
+
+
 def asks_major_claim_trace(text: str) -> bool:
     return "major claim" in text and any(token in text for token in (
         "exact source token",
@@ -43,9 +45,8 @@ def major_claim_trace_is_stated(
     required = _requested_count(ask, len(claims))
     valid = {
         claim
-        for claim, bundle_number, row in claims
-        if _stable_locator(row) and _stable_locator(row) in claim
-        and f"[bundle:{bundle_number}]" in claim
+        for claim, _bundle_number, _row in claims
+        if _claim_is_fully_traced(claim, rows)
     }
     return bool(required and len(valid) >= required)
 
@@ -103,44 +104,24 @@ def repair_major_claim_trace(
     rows: Sequence[dict[str, Any]],
 ) -> tuple[str, int]:
     rows = _ordered_rows(rows)
-    patched = attach_bundle_references(_without_trace(paper_md), rows)
-    eligible = [(number, row) for number, row in enumerate(rows, 1) if _stable_locator(row)]
-    section = ""
-    for line in patched.splitlines():
-        if heading := re.match(r"^##+\s+(.+?)\s*$", line):
-            section = heading.group(1).strip().lower()
-        text = line.strip()
-        words = set(re.findall(r"[a-z][a-z0-9-]{3,}", text.lower()))
-        matches = [item for item in eligible if words & set(re.findall(
-            r"[a-z][a-z0-9-]{3,}", str(item[1].get("outcome_class") or "").lower(),
-        ))]
-        if (
-            eligible and (matches or any(
-                token in section for token in ("synthesis", "discussion", "conclusion")
-            )) and re.search(r"(abstract|result|synthesis|discussion|conclusion)", section)
-            and len(text) >= 60 and text.endswith((".", "!", "?"))
-            and "[bundle:" not in text.lower()
-            and not text.startswith(("#", "-", "|", "```", *_NON_CLAIM_PREFIXES))
-        ):
-            number, row = min(matches or eligible, key=lambda item: (
-                str(item[1].get("directness") or "").lower() != "direct", item[0],
-            ))
-            claim_text = re.sub(r"\s*\([A-Z][^)]*\b20\d{2}\)", "", text) if matches else text
-            anchor = f"{claim_text[:-1]} (evidence anchor: {_label(row)} [bundle:{number}]){claim_text[-1]}"
-            patched = patched.replace(line, anchor, 1)
+    patched = attach_bundle_references(_without_generated_anchors(_without_trace(paper_md)), rows)
     claims = _source_bound_claims(patched, rows)
-    for claim, _bundle_number, row in claims:
-        locator = _stable_locator(row)
-        if locator and locator not in claim:
-            patched = patched.replace(claim, _append_inline_locator(claim, locator), 1)
+    for claim, _bundle_number, _row in claims:
+        traced = claim
+        for number in _bundle_numbers(claim, len(rows)):
+            locator = _stable_locator(rows[number - 1])
+            if locator and locator not in traced:
+                traced = _append_inline_locator(traced, locator)
+        if traced != claim:
+            patched = patched.replace(claim, traced, 1)
     return patched, int(patched != paper_md)
 
 
 def _append_inline_locator(claim: str, locator: str) -> str:
-    suffix = ""
-    if claim.endswith((".", "!", "?")):
-        claim, suffix = claim[:-1], claim[-1]
-    return f"{claim} [exact source: {locator}]{suffix}"
+    terminal = re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", claim)
+    if not terminal:
+        return f"{claim} [exact source: {locator}]"
+    return f"{claim[:terminal.start()]} [exact source: {locator}]{claim[terminal.start():]}"
 
 
 def _requested_count(ask: str, available: int) -> int:
@@ -156,6 +137,38 @@ def _scope(paper_md: str) -> str:
 def _without_trace(paper_md: str) -> str:
     scope = _scope(paper_md)
     return paper_md.replace(scope, "", 1) if scope else paper_md
+
+
+def _without_generated_anchors(paper_md: str) -> str:
+    label = r"(?:\[[^\]]+\]\(https?://[^)]+\)|[^()[\]]+)"
+    return re.sub(
+        rf"\s*\(evidence anchor:\s*{label}\s+\[bundle:\d+\]\)"
+        r"(?:\s*\[exact source:\s*https?://[^\]]+\])?",
+        "",
+        paper_md,
+        flags=re.I,
+    )
+
+
+def _sentences(text: str) -> list[str]:
+    protected = _ABBREVIATION_RE.sub(lambda match: match.group(0)[:-1] + _PROTECTED_PERIOD, text)
+    boundary = r"(?:(?<=[.!?])|(?<=[.!?][\"')\]]))\s+(?=(?:[\"'(\[]|\*{1,2}|_{1,2})?[A-Z0-9])"
+    return [claim.replace(_PROTECTED_PERIOD, ".") for claim in re.split(boundary, protected)]
+
+
+def _bundle_numbers(claim: str, row_count: int) -> list[int]:
+    return list(dict.fromkeys(
+        int(value) for value in re.findall(r"\[bundle:(\d+)\]", claim, re.I)
+        if 1 <= int(value) <= row_count
+    ))
+
+
+def _claim_is_fully_traced(claim: str, rows: Sequence[dict[str, Any]]) -> bool:
+    numbers = _bundle_numbers(claim, len(rows))
+    return bool(numbers and all(
+        (locator := _stable_locator(rows[number - 1])) and locator in claim
+        for number in numbers
+    ))
 
 
 def _source_bound_claims(
@@ -177,16 +190,9 @@ def _source_bound_claims(
             or stripped.startswith(_NON_CLAIM_PREFIXES)
         ):
             continue
-        protected = _ABBREVIATION_RE.sub(
-            lambda match: match.group(0)[:-1] + _PROTECTED_PERIOD,
-            stripped,
-        )
-        for claim in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9])", protected):
-            claim = _drop_unmatched_parentheses(claim.replace(_PROTECTED_PERIOD, "."))
-            candidates = [
-                int(value) for value in re.findall(r"\[bundle:(\d+)\]", claim, re.I)
-                if 1 <= int(value) <= len(rows)
-            ]
+        for claim in _sentences(stripped):
+            claim = _drop_unmatched_parentheses(claim)
+            candidates = _bundle_numbers(claim, len(rows))
             key = " ".join(claim.casefold().split())
             if not candidates or key in seen:
                 continue

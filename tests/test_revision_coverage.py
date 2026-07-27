@@ -893,7 +893,7 @@ def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
     assert fixed.count("https://doi.org/10.1000/study.3") == 1
 
 
-def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
+def test_major_claim_trace_traces_every_named_source_without_inventing_anchors() -> None:
     ask = (
         "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
         "17/30 claims are exactly traceable (required 24)."
@@ -914,14 +914,14 @@ def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
     ]
     paper = (
         "## Abstract\n\n"
-        "Direct frailty evidence remains bounded and does not establish broad clinical "
-        "benefit.\n\n"
+        "Direct frailty evidence remains bounded and does not establish broad clinical benefit.\n\n"
         "The review workflow retained a complete audit trail for every included record.\n\n"
         "Frailty guidance remains bounded pending stronger trials (Guideline 2024).\n\n"
-        "## Cross-Domain Synthesis\n\n"
+        "## Results\n\n"
         "Study1 2025 and Study2 2025 produced different outcome signals.\n\n"
         "## Discussion\n\n"
-        "The retained evidence supports only a bounded interpretation pending stronger trials.\n\n"
+        "The retained evidence supports only a bounded interpretation pending stronger trials. "
+        "Broader clinical claims remain unsupported by the current source record.\n\n"
         "## Conclusion\n\n"
         "The practical interpretation remains bounded by the available source record.\n"
     )
@@ -929,27 +929,35 @@ def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
     fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
 
     assert changed == 1
-    assert (
-        "Direct frailty evidence remains bounded and does not establish broad clinical "
-        "benefit (evidence anchor: Study1 2025 [bundle:1]) "
-        "[exact source: https://doi.org/10.1000/study.1]."
-    ) in fixed
-    assert (
-        "interpretation remains bounded by the available source record "
-        "(evidence anchor: Study1 2025 [bundle:1]) "
-        "[exact source: https://doi.org/10.1000/study.1]."
-    ) in fixed
-    assert (
-        "Frailty guidance remains bounded pending stronger trials "
-        "(evidence anchor: Study1 2025 [bundle:1]) "
-        "[exact source: https://doi.org/10.1000/study.1]."
-    ) in fixed
-    assert (
-        "The retained evidence supports only a bounded interpretation pending stronger trials "
-        "(evidence anchor: Study1 2025 [bundle:1]) "
-        "[exact source: https://doi.org/10.1000/study.1]."
-    ) in fixed
-    assert fixed.count("(evidence anchor:") == 4
+    result_claim = next(line for line in fixed.splitlines() if "different outcome signals" in line)
+    assert "Study1 2025 [bundle:1]" in result_claim
+    assert "Study2 2025 [bundle:2]" in result_claim
+    assert "https://doi.org/10.1000/study.1" in result_claim
+    assert "https://doi.org/10.1000/study.2" in result_claim
+    assert "(evidence anchor:" not in fixed
+    assert "Direct frailty evidence remains bounded" in fixed
+    assert "Direct frailty evidence remains bounded" not in result_claim
+    assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
+
+
+def test_major_claim_trace_handles_quoted_sentences_and_parenthesized_dois() -> None:
+    ask = "Add exact source tokens to major claims; required 2."
+    rows = [
+        {"citation_token": "Study1 2025", "source_doi": "10.1002/(SICI)123"},
+        {"citation_token": "Study2 2025", "source_doi": "10.1000/study.2"},
+    ]
+    paper = (
+        "## Results\n\n"
+        '"Study1 2025 reported the first bounded outcome." '
+        "**Study2 2025 reported the second bounded outcome.**\n"
+    )
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert "https://doi.org/10.1002/(SICI)123" in fixed
+    assert "https://doi.org/10.1000/study.2" in fixed
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is True
     assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
 
 
