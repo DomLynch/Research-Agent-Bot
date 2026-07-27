@@ -287,7 +287,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     text, entries = review_noise_control.restore_surface_floors(
         text, out_dir, entries, FinalizerLogEntry,
     )
-    for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings, lambda t: _phase_d_revision_surface_notes(t, out_dir), _phase_c_terminology):
+    for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings, lambda t: _phase_d_revision_surface_notes(t, out_dir, proactive=True), _phase_c_terminology):
         text, log = phase(text)
         entries.extend(log)
     text, entries = review_noise_control.restore_surface_floors(
@@ -4716,10 +4716,12 @@ _EVIDENCE_TYPE_METADATA_NOTE = (
 
 
 def _phase_d_revision_surface_notes(
-    text: str, out_dir: Path,
+    text: str, out_dir: Path, *, proactive: bool = False,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
+    if proactive and not feedback:
+        feedback = "Add exact source tokens to major claims."
     lower = " ".join(feedback.lower().split())
     if not lower:
         return text, []
@@ -4730,35 +4732,32 @@ def _phase_d_revision_surface_notes(
         return text, []
     patched, details = review_noise_control.repair_revision_surface(text, feedback, out_dir)
     n = len(details)
+    def record(changed: int, detail: str) -> None:
+        nonlocal n
+        n += changed
+        if changed:
+            details.append(detail)
     wants_source_examples = (
-        "outcome subsection" in lower
-        and "source" in lower
+        "outcome subsection" in lower and "source" in lower
         and ("conclusion" in lower or "direct source" in lower)
-    ) or (
-        "outcome-class synthesis" in lower
-        and any(token in lower for token in ("representative finding", "directness summary", "real outcome"))
-    )
+    ) or ("outcome-class synthesis" in lower and any(
+        token in lower for token in ("representative finding", "directness summary", "real outcome")
+    ))
     if wants_source_examples and "source examples:" not in patched.lower():
         examples = _revision_surface_examples(receipts)
         if examples:
             note = "Source examples: " + "; ".join(examples[:6]) + "."
             patched, changed = _prepend_section_paragraph(patched, "Results", note)
-            n += changed
-            if changed:
-                details.append("source_examples")
+            record(changed, "source_examples")
     if wants_source_examples and "outcome-class synthesis note:" not in patched.lower():
         note = _reviewer_adjusted_outcome_label(_outcome_class_synthesis_note(receipts), feedback)
         if note:
             patched, changed = _prepend_section_paragraph(patched, "Results", note)
-            n += changed
-            if changed:
-                details.append("outcome_class_synthesis")
+            record(changed, "outcome_class_synthesis")
     if revision_coverage.asks_publication_status_preprint_flags(feedback):
         note = _manifest_publication_status_preprint_note(receipts)
         patched, changed = _prepend_section_paragraph(patched, "Evidence Landscape", note)
-        n += changed
-        if changed:
-            details.append("publication_status_preprint")
+        record(changed, "publication_status_preprint")
     numeric_ask = next((ask.lower() for ask in revision_coverage.revision_asks(feedback)
                         if "no extractable efficacy numerics" in ask.lower() and "no quantitative" in ask.lower()), "")
     outcomes = sorted({
@@ -4769,9 +4768,7 @@ def _phase_d_revision_surface_notes(
         label = " and ".join(outcomes)
         note = f"No extractable efficacy numerics are available for {label} within the retained corpus; therefore no quantitative {label.lower()} claim is supported by the retained sources."
         patched, changed = _prepend_section_paragraph(patched, "Results", note)
-        n += changed
-        if changed:
-            details.append("no_extractable_outcome_numerics")
+        record(changed, "no_extractable_outcome_numerics")
     wants_direct_ceiling = "direct clinical source" in lower or (
         "direct source" in lower and "conclusion" in lower
     ) or (
@@ -4780,9 +4777,7 @@ def _phase_d_revision_surface_notes(
     if wants_direct_ceiling and "direct-source ceiling:" not in patched.lower():
         note = _revision_direct_source_ceiling(receipts)
         patched, changed = _prepend_section_paragraph(patched, "Conclusion", note)
-        n += changed
-        if changed:
-            details.append("direct_source_ceiling")
+        record(changed, "direct_source_ceiling")
     audit_path = out_dir / "source_identifier_verification.json"
     stored_audit = _load_sidecar(audit_path)
     patched, identity_details, audit = repair_revision_identity(
@@ -4804,9 +4799,7 @@ def _phase_d_revision_surface_notes(
         note = _revision_design_limit_note(receipts)
         if note:
             patched, changed = _prepend_section_paragraph(patched, "Limitations", note)
-            n += changed
-            if changed:
-                details.append("design_limit")
+            record(changed, "design_limit")
     if not n:
         return text, []
     return patched, [FinalizerLogEntry(

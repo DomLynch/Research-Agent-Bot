@@ -6174,7 +6174,7 @@ def test_pmid_revision_retries_a_transient_provider_failure(
     assert calls == 1
 
 
-def test_revision_surface_notes_repair_major_claim_trace_request(tmp_path: Path) -> None:
+def test_revision_surface_notes_proactively_repair_major_claim_trace(tmp_path: Path) -> None:
     ask = (
         "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
         "10/20 claims are exactly traceable (required 16)."
@@ -6193,10 +6193,6 @@ def test_revision_surface_notes_repair_major_claim_trace_request(tmp_path: Path)
         for i in range(1, 21)
     ]
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
-    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
-        "feedback": ask,
-        "required_revisions": [ask],
-    }))
     paper = (
         "## Results\n\n"
         + "\n\n".join(
@@ -6207,15 +6203,17 @@ def test_revision_surface_notes_repair_major_claim_trace_request(tmp_path: Path)
         "## References\n\n- Study1 2025.\n"
     )
 
-    fixed, logs = journal_finalizer._phase_d_revision_surface_notes(paper, tmp_path)
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
 
-    assert logs and "major_claim_trace" in logs[0].detail
+    assert any("major_claim_trace" in entry.detail for entry in logs)
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("[exact source: https://doi.org/") == 20
+    assert fixed.count("[exact source: https://doi.org/") >= len(rows)
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
         fixed, [ask], evidence_rows=rows,
     ) == []
-    assert journal_finalizer._phase_d_revision_surface_notes(fixed, tmp_path) == (fixed, [])
+    assert journal_finalizer._phase_d_revision_surface_notes(
+        fixed, tmp_path, proactive=True,
+    ) == (fixed, [])
 
 
 def test_run_text_phases_repairs_trace_after_terminal_text_mutation(
@@ -6272,7 +6270,9 @@ def test_run_text_phases_repairs_trace_after_terminal_text_mutation(
 def test_run_text_phases_scrubs_jargon_added_by_terminal_revision_phase(
     tmp_path: Path, monkeypatch,
 ) -> None:
-    def inject_jargon(text: str, _out_dir: Path) -> tuple[str, list[Any]]:
+    def inject_jargon(
+        text: str, _out_dir: Path, *, proactive: bool = False,
+    ) -> tuple[str, list[Any]]:
         return (
             text + "\n\nThe sum of n_claims across 3 admitted manifest receipts was reconciled.",
             [],
