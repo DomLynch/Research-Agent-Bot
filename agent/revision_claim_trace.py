@@ -171,10 +171,8 @@ def _claim_is_fully_traced(claim: str, rows: Sequence[dict[str, Any]]) -> bool:
 
 
 def _locator_is_stated(claim: str, locator: str) -> bool:
-    return (
-        f"[exact source: {locator}]" in claim
-        or f"]({locator})" in claim
-        or bool(re.search(rf"(?<!\S){re.escape(locator)}(?=\s|$)", claim))
+    return f"[exact source: {locator}]" in claim or f"]({locator})" in claim or bool(
+        re.search(rf"(?<!\S){re.escape(locator)}(?=\s|$)", claim)
     )
 
 
