@@ -115,7 +115,7 @@ def repair_major_claim_trace(
             r"[a-z][a-z0-9-]{3,}", str(item[1].get("outcome_class") or "").lower(),
         ))]
         if (
-            matches and re.search(r"(abstract|result|synthesis|conclusion)", section)
+            matches and re.search(r"(abstract|background|landscape|result|synthesis|discussion|limitation|conclusion)", section)
             and len(text) >= 60 and text.endswith((".", "!", "?"))
             and "[bundle:" not in text.lower()
             and not re.search(r"\([A-Z][^)]*\b20\d{2}\)", text)
