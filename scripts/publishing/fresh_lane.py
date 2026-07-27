@@ -2494,7 +2494,7 @@ def _preflight(
     *,
     current_quant_claims: int | None = None,
     ignore_recent_failures: bool = False,
-    source_run: Path | None = None,
+    source_run: Path | None = None, prepared_candidate: bool = False,
 ) -> dict[str, Any]:
     latest = source_run if source_run and source_run.is_dir() else _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
@@ -2502,7 +2502,7 @@ def _preflight(
     reasons = []
     if not publication_track:
         reasons.append("public_surface_not_full_research")
-    if latest and not counts["has_manifest"]:
+    if latest and not counts["has_manifest"] and not prepared_candidate:
         reasons.append("latest_run_missing_manifest")
     if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
         reasons.append(f"n_receipts={counts['n_receipts']} < {PREFLIGHT_MIN_RECEIPTS}")
@@ -4926,6 +4926,7 @@ def run_cycle(
                     if revision_source and not revision_source_repair
                     else None
                 ),
+                prepared_candidate=not revision_source and selected in _prepared_candidate_topics(ledger_dir),
             )
             if not preflight["passed"]:
                 terminal_missing_manifest = (

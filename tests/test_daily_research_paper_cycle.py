@@ -1641,6 +1641,7 @@ def test_select_topic_does_not_require_external_target_journal(tmp_path: Path, m
     _topic(tmp_path, "acarbose")
     _topic(tmp_path, "caloric_restriction", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 
     selected = cycle.select_topic(["acarbose", "caloric_restriction"], tmp_path / cycle.LEDGER_DIR)
 
@@ -9097,6 +9098,57 @@ def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatc
     assert preflight["reasons"] == ["latest_run_missing_manifest"]
 
 
+def test_preflight_allows_prepared_candidate_over_manifestless_old_run(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    topic = "acute_exercise_effects"
+    _topic(tmp_path, topic, target_journal=True)
+    run = tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-2026-06-01T16-04-43Z"
+    run.mkdir(parents=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight(
+        topic,
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        current_quant_claims=180,
+        prepared_candidate=True,
+    )
+
+    assert preflight["passed"] is True
+    assert preflight["has_manifest"] is False
+    assert preflight["latest_run"] == run.name
+    assert preflight["reasons"] == []
+
+
+def test_prepared_candidate_does_not_override_current_manifest_limits(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    topic = "acute_exercise_effects"
+    _topic(tmp_path, topic, target_journal=True)
+    _prior_run(
+        tmp_path,
+        topic,
+        receipts=cycle.PREFLIGHT_MAX_RECEIPTS + 1,
+        tensions=cycle.PREFLIGHT_MIN_TENSIONS,
+    )
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight(
+        topic,
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        current_quant_claims=180,
+        prepared_candidate=True,
+    )
+
+    assert preflight["passed"] is False
+    assert preflight["reasons"] == [
+        f"n_receipts={cycle.PREFLIGHT_MAX_RECEIPTS + 1} > "
+        f"{cycle.PREFLIGHT_MAX_RECEIPTS} (split topic)",
+    ]
+
+
 def test_preflight_uses_revise_source_run_over_newer_manifestless_run(tmp_path: Path, monkeypatch) -> None:
     topic = "cardiovascular_subgroups"
     _topic(tmp_path, topic, target_journal=True)
@@ -11567,6 +11619,7 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
     )
     receipt_preflights: list[str] = []
     preflight_sources: list[Path | None] = []
+    prepared_candidates: list[bool] = []
 
     def fresh_receipt_preflight(*_args: Any, **_kwargs: Any) -> dict[str, Any]:
         receipt_preflights.append("called")
@@ -11574,6 +11627,7 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
 
     def fresh_preflight(*_args: Any, **kwargs: Any) -> dict[str, Any]:
         preflight_sources.append(kwargs.get("source_run"))
+        prepared_candidates.append(bool(kwargs.get("prepared_candidate")))
         return {"passed": True, "metrics": {"receipts": 12, "primary": 3, "direct": 4}}
 
     monkeypatch.setattr(cycle, "_receipt_preflight", fresh_receipt_preflight)
@@ -11605,6 +11659,7 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
     assert synthesized == [topic]
     assert receipt_preflights == ["called"]
     assert preflight_sources == [None]
+    assert prepared_candidates == [True]
     assert source_runs == [None]
     assert "corpus_repairs" not in ledger
     assert ledger["status"] == "submitted_to_researka"
