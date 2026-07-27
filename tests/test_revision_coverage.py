@@ -887,11 +887,10 @@ def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
         "benefit.\n\n"
         "The review workflow retained a complete audit trail for every included record.\n\n"
         "Frailty guidance remains bounded pending stronger trials (Guideline 2024).\n\n"
-        "## Background\n\n"
-        "Longevity evidence remains indirect and cannot establish a durable clinical "
-        "benefit.\n\n"
         "## Cross-Domain Synthesis\n\n"
-        "Study1 2025 and Study2 2025 produced different outcome signals.\n"
+        "Study1 2025 and Study2 2025 produced different outcome signals.\n\n"
+        "## Key Findings\n\n"
+        "- Study2 2025 reports a bounded longevity signal without durable clinical benefit.\n"
     )
 
     fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
@@ -902,8 +901,11 @@ def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
         "benefit (evidence anchor: Study1 2025 [bundle:1]) "
         "[exact source: https://doi.org/10.1000/study.1]."
     ) in fixed
-    assert "benefit (evidence anchor: Study2 2025 [bundle:2])" in fixed
-    assert fixed.count("(evidence anchor:") == 2
+    assert (
+        "- Study2 2025 [bundle:2] reports a bounded longevity signal without durable "
+        "clinical benefit [exact source: https://doi.org/10.1000/study.2]."
+    ) in fixed
+    assert fixed.count("(evidence anchor:") == 1
     assert "pending stronger trials (Guideline 2024)." in fixed
     assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
 
