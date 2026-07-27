@@ -1687,8 +1687,17 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
             or str(row.get("repair_epoch") or "") == str(REVISION_REPAIR_EPOCH)
         )
 
+    # Round-cap counting only: collapse affix variants ("— full paper", the
+    # "Research Synthesis:" prefix) onto one canonical key, else the same paper
+    # gets a fresh MAX_REVISE_ROUNDS budget per spelling (observed: one topic
+    # resubmitted 20x across 3 variants). terminal/reopen keys stay raw so
+    # repairable-terminal reopening is unaffected.
+    def _cap_key(title: str) -> str:
+        markers = submit_bridge._title_markers(title)
+        return min(markers, key=lambda m: (len(m), m)) if markers else ""
+
     counts = Counter(
-        submit_bridge._title_marker(str(row.get("title") or ""))
+        _cap_key(str(row.get("title") or ""))
         for row in rows
         if (
             isinstance(row, dict)
@@ -1713,7 +1722,12 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
             )
         )
     }
-    handled = terminal | {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
+    # Callers look up by raw marker: re-expand each capped canonical key to the
+    # spellings seen for that paper. Only the capped set expands; terminal is
+    # untouched so repairable-terminal reopening still works.
+    capped = {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
+    titles = [str(r.get("title") or "") for r in rows if isinstance(r, dict) and r.get("title")]
+    handled = terminal | {submit_bridge._title_marker(t) for t in titles if _cap_key(t) in capped}
     for row in rows:
         if not isinstance(row, dict) or row.get("status") != "submitted_to_researka":
             continue
