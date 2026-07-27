@@ -1273,6 +1273,15 @@ def _submitted_record_ts(record: dict[str, Any]) -> dt.datetime | None:
     return _parse_time(str(record.get("submitted_at") or record.get("date") or ""))
 
 
+def _recent_capped_revision_topics(records: Sequence[dict[str, Any]], runs_root: Path) -> set[str]:
+    topics = (
+        submit_bridge._normalized_key(str(row.get("topic") or submit_bridge._run_topic(runs_root / str(row.get("run") or "")))) for row in records
+        if row.get("status") == "submitted_to_researka" and (submitted_at := _submitted_record_ts(row)) is not None
+        and submitted_at >= dt.datetime.now(dt.UTC) - dt.timedelta(days=1)
+    )
+    return {topic for topic, count in Counter(topics).items() if topic and count >= MAX_REVISE_ROUNDS}
+
+
 def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
     """Latest research_paper review per paper title for this agent. Researka
     assigns a new artifactId per submission, so latest-wins by reviewedAt drops
@@ -1862,17 +1871,14 @@ def _pending_remote_revision(
     remote_seen: set[str] = set()
     if published_loader is not None:
         remote_seen, _remote_error = published_loader()
-    submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
-    raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
-    records: list[Any] = raw_records if isinstance(raw_records, list) else []
+    records = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    capped_topics = _recent_capped_revision_topics(records, runs_root)
     for request in rows:
         request_key = _revision_key(request)
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
         request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
         matches: list[tuple[dict[str, Any], Path, str]] = []
-        for record in records if isinstance(records, list) else []:
-            if not isinstance(record, dict):
-                continue
+        for record in records:
             run = runs_root / str(record.get("run") or "")
             paper = run / "full_paper.md"
             if not paper.exists():
@@ -1884,6 +1890,8 @@ def _pending_remote_revision(
             }
             if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
                 matches.append((record, run, record_topic))
+        if not request.get("retry_unchanged") and any(submit_bridge._normalized_key(topic) in capped_topics for _, _, topic in matches):
+            continue
         request_submission_id = str(request.get("submissionId") or request.get("submission_id") or "").strip()
         request_reviewed = _review_ts(request)
         if any(
@@ -1999,9 +2007,7 @@ def _pending_remote_revision_topics(
     remote_seen: set[str] = set()
     if published_loader is not None:
         remote_seen, _remote_error = published_loader()
-    submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
-    raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
-    records: list[Any] = raw_records if isinstance(raw_records, list) else []
+    records = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
     out: set[str] = set()
     for request in rows:
         if _revision_key(request) in handled:
@@ -2011,8 +2017,6 @@ def _pending_remote_revision_topics(
         matched_topics: set[str] = set()
         matched_published = False
         for record in records:
-            if not isinstance(record, dict):
-                continue
             run = runs_root / str(record.get("run") or "")
             paper = run / "full_paper.md"
             if not paper.exists():

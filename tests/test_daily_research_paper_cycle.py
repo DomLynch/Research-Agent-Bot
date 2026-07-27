@@ -8137,6 +8137,107 @@ def test_pending_remote_revision_retry_budget_resumes_same_review(
     assert pending and pending["artifactId"] == "cardio-review"
 
 
+@pytest.mark.parametrize(("submission_count", "expected_pending"), [
+    (cycle.MAX_REVISE_ROUNDS - 1, True),
+    (cycle.MAX_REVISE_ROUNDS, False),
+])
+def test_pending_remote_revision_caps_same_topic_across_new_review_ids(
+    tmp_path: Path,
+    submission_count: int,
+    expected_pending: bool,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    title = "Research Synthesis: Metformin Treatment Effects — full paper"
+    source_run = _seed_submitted_run(runs, "metformin_treatment_effects", f"# {title}")
+    now = dt.datetime.now(dt.UTC)
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [
+        {
+            "run": source_run.name,
+            "status": "submitted_to_researka",
+            "submitted_at": (now - dt.timedelta(minutes=index)).isoformat(),
+        }
+        for index in range(submission_count)
+    ])
+    request = {
+        "artifactId": "new-review-id",
+        "title": title,
+        "feedback": "Reconcile the same unsupported claim.",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs, ledger_dir, loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert (pending is not None) is expected_pending
+
+
+def test_pending_remote_revision_topic_cap_exempts_external_retry(
+    tmp_path: Path,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    title = "Research Synthesis: Acute Exercise Effects — full paper"
+    source_run = _seed_submitted_run(runs, "acute_exercise_effects", f"# {title}")
+    now = dt.datetime.now(dt.UTC)
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [
+        {
+            "run": source_run.name,
+            "topic": "acute_exercise_effects",
+            "status": "submitted_to_researka",
+            "submitted_at": (now - dt.timedelta(minutes=index)).isoformat(),
+        }
+        for index in range(cycle.MAX_REVISE_ROUNDS)
+    ])
+    request = {
+        "artifactId": "resolver-retry",
+        "title": title,
+        "topic": "acute_exercise_effects",
+        "retry_unchanged": True,
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs, ledger_dir, loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["unchanged_retry_count"] == 1
+
+
+def test_pending_remote_revision_topic_cap_expires_after_one_day(
+    tmp_path: Path,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    title = "Research Synthesis: Caloric Restriction Effects — full paper"
+    source_run = _seed_submitted_run(runs, "caloric_restriction_effects", f"# {title}")
+    old = dt.datetime.now(dt.UTC) - dt.timedelta(days=2)
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [
+        {
+            "run": source_run.name,
+            "topic": "caloric_restriction_effects",
+            "status": "submitted_to_researka",
+            "submitted_at": (old - dt.timedelta(minutes=index)).isoformat(),
+        }
+        for index in range(cycle.MAX_REVISE_ROUNDS)
+    ])
+    request = {
+        "artifactId": "later-review",
+        "title": title,
+        "topic": "caloric_restriction_effects",
+        "feedback": "Clarify the direct evidence.",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs, ledger_dir, loader=lambda: ([request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+
+
 def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "hydrogen_water", target_journal=True)
     _topic(tmp_path, "telomere_biomarker_effects", target_journal=True)

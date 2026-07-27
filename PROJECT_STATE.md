@@ -44,6 +44,11 @@ and requests no content revision, V3 reuses the unchanged gate-passed package
 for up to three timer windows. Retry state stays in the revision sidecar and the
 request receives a parent-scoped idempotency key; all local gates still run.
 
+## Topic-wide revision blast fence (2026-07-27)
+V3 permits at most three successful submissions per normalized topic in a rolling
+24-hour window, across new review IDs and title variants. External verifier
+retries remain separately bounded, and legacy ledger topics derive from run names.
+
 An immutable revision receipt contract may change `effect_direction` only when
 the reviewer explicitly requests direction-code reconciliation. Source identity,
 receipt membership, and every other contract field remain frozen, and the
