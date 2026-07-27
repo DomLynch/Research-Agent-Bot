@@ -257,16 +257,20 @@ def _asks_outcome_roster(text: str) -> bool:
 
 
 def _asks_exact_stat_trace(text: str) -> bool:
-    return any(token in text for token in (
-        "every exact statistic", "every exact p value", "exact p value",
-        "every exact interval", "exact confidence interval", "exact bundle token",
-        "effect estimate", "percentage cited", "each numeric statistic",
-        "numeric statistic cited",
-    )) and any(
-        token in text for token in (
-            "bundle", "source excerpt", "source number", "trace", "verif",
-            "extraction artifact",
-        )
+    source_bound = any(token in text for token in (
+        "bundle", "source excerpt", "source number", "trace", "verif",
+        "extraction artifact",
+    ))
+    return source_bound and (
+        any(token in text for token in (
+            "every exact statistic", "every exact p value", "exact p value",
+            "every exact interval", "exact confidence interval", "exact bundle token",
+            "effect estimate", "percentage cited", "each numeric statistic",
+            "numeric statistic cited",
+        ))
+        or re.search(
+            r"\b(?:each|every|all)\s+representative statistic", text,
+        ) is not None
     )
 
 
@@ -325,10 +329,8 @@ def _has_named_source(text: str) -> bool:
 
 
 def _label(row: dict[str, Any]) -> str:
-    return str(
-        row.get("citation_token") or row.get("cited_as") or row.get("body_citation")
-        or row.get("receipt_id") or ""
-    ).strip()
+    return str(row.get("citation_token") or row.get("cited_as") or
+               row.get("body_citation") or row.get("receipt_id") or "").strip()
 
 
 def _findings_map(paper_md: str) -> str:
@@ -379,9 +381,7 @@ def _prose_paragraphs(text: str) -> list[str]:
 
 
 def _row_evidence(row: dict[str, Any]) -> str:
-    return " ".join((
-        str(row.get("thesis_text") or ""), str(row.get("source_title") or ""),
-    ))
+    return " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
 
 
 def traceable_p_values(row: dict[str, Any]) -> tuple[str, ...]:
@@ -502,7 +502,7 @@ def _repair_findings_map_statistics(
         lines[index] = _EFFECT_STAT_RE.sub(
             lambda match: match.group(0)
             if row and _stat_supported(match.group(0), row)
-            else "a source-reported estimate",
+            else "exact statistic unavailable in retained source excerpt",
             line,
         )
     fixed = "".join(lines)
@@ -515,7 +515,7 @@ def _soften_statistics(paragraph: str) -> str:
         lambda match: "" if _EFFECT_STAT_RE.search(match.group(0)) else match.group(0),
         paragraph,
     )
-    paragraph = _EFFECT_STAT_RE.sub("a source-reported estimate", paragraph)
+    paragraph = _EFFECT_STAT_RE.sub("exact statistic unavailable in retained source excerpt", paragraph)
     return re.sub(r"\s{2,}", " ", re.sub(r"\s+([,.;:])", r"\1", paragraph))
 
 

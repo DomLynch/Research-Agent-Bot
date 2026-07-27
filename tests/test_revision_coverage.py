@@ -794,6 +794,37 @@ def test_exact_p_value_in_array_is_not_traceable_without_source_excerpt() -> Non
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
+def test_generic_representative_statistic_request_removes_unverified_token() -> None:
+    ask = (
+        "Verify each representative-statistic token in the Findings Map against "
+        "the corresponding bundle excerpt; remove tokens that cannot be located "
+        "in the supplied abstract."
+    )
+    rows = [{
+        "citation_token": "Han 2020",
+        "thesis_text": "The retained excerpt reports fatty liver index p = 0.002.",
+    }]
+    paper = (
+        "### Findings Map\n\n"
+        "| Outcome class | Source | Direction | Directness | Tier | Role | Finding |\n"
+        "|---|---|---|---|---|---|---|\n"
+        "| Cardiometabolic | Han 2020 | direction=positive | directness=direct | "
+        "A1 | outcome=Cardiometabolic; direction=positive | "
+        "finding=representative statistic p = 0.001; source-level statistic reported |\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
+    assert "p = 0.001" not in fixed
+    assert "exact statistic unavailable in retained source excerpt" in fixed
+    assert "a source-reported estimate" not in fixed
+    assert details == ["exact_stat_trace"]
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
 def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None:
     ask = (
         "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
