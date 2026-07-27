@@ -1616,8 +1616,11 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
             and resubmission.get("allowed") is True
             and (
                 str(row.get("failure_category") or "") == "source_authority_available"
-                or all(token in notes.lower() for token in ("source", "verification", "unavailable"))
-                or all(token in notes.lower() for token in ("doi", "resolver", "unavailable"))
+                or bool(re.search(
+                    r"\b(?:source(?: metadata)? verification|doi resolver) unavailable\b",
+                    notes,
+                    re.I,
+                ))
             )
         )
         if str(row.get("decision") or "").lower() != "revise" or (not required and not retry_unchanged):

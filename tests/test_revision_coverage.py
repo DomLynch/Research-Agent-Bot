@@ -948,7 +948,8 @@ def test_major_claim_trace_handles_quoted_sentences_and_parenthesized_dois() -> 
     ]
     paper = (
         "## Results\n\n"
-        '"Study1 2025 reported the first bounded outcome." '
+        '"Study1 2025 reported the first bounded outcome '
+        "(evidence anchor: [Study1 2025](https://doi.org/10.1002/(SICI)123) [bundle:1]).\" "
         "**Study2 2025 reported the second bounded outcome.**\n"
     )
 
@@ -959,6 +960,13 @@ def test_major_claim_trace_handles_quoted_sentences_and_parenthesized_dois() -> 
     assert "https://doi.org/10.1000/study.2" in fixed
     assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is True
     assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
+
+    prefix_only = (
+        "## Results\n\n"
+        "Study1 2025 [bundle:1] reported an outcome "
+        "[exact source: https://doi.org/10.1002/(SICI)1234].\n"
+    )
+    assert revision_claim_trace.major_claim_trace_is_stated(prefix_only, ask, rows) is False
 
 
 def test_major_claim_trace_completes_partially_traced_claims() -> None:

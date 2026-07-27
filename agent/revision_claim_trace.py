@@ -110,7 +110,7 @@ def repair_major_claim_trace(
         traced = claim
         for number in _bundle_numbers(claim, len(rows)):
             locator = _stable_locator(rows[number - 1])
-            if locator and locator not in traced:
+            if locator and not _locator_is_stated(traced, locator):
                 traced = _append_inline_locator(traced, locator)
         if traced != claim:
             patched = patched.replace(claim, traced, 1)
@@ -140,9 +140,8 @@ def _without_trace(paper_md: str) -> str:
 
 
 def _without_generated_anchors(paper_md: str) -> str:
-    label = r"(?:\[[^\]]+\]\(https?://[^)]+\)|[^()[\]]+)"
     return re.sub(
-        rf"\s*\(evidence anchor:\s*{label}\s+\[bundle:\d+\]\)"
+        r"\s*\(evidence anchor:\s*.*?\s+\[bundle:\d+\]\)"
         r"(?:\s*\[exact source:\s*https?://[^\]]+\])?",
         "",
         paper_md,
@@ -166,9 +165,17 @@ def _bundle_numbers(claim: str, row_count: int) -> list[int]:
 def _claim_is_fully_traced(claim: str, rows: Sequence[dict[str, Any]]) -> bool:
     numbers = _bundle_numbers(claim, len(rows))
     return bool(numbers and all(
-        (locator := _stable_locator(rows[number - 1])) and locator in claim
+        (locator := _stable_locator(rows[number - 1])) and _locator_is_stated(claim, locator)
         for number in numbers
     ))
+
+
+def _locator_is_stated(claim: str, locator: str) -> bool:
+    return (
+        f"[exact source: {locator}]" in claim
+        or f"]({locator})" in claim
+        or bool(re.search(rf"(?<!\S){re.escape(locator)}(?=\s|$)", claim))
+    )
 
 
 def _source_bound_claims(

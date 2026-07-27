@@ -8376,7 +8376,11 @@ def test_remote_revision_retries_semantic_source_verifier_outage(monkeypatch, no
     assert out[0]["failure_category"] == "source_evidence_match"
 
 
-def test_remote_revision_does_not_retry_content_source_failure_unchanged(monkeypatch) -> None:
+@pytest.mark.parametrize("note", [
+    "source evidence does not support the submitted claim",
+    "DOI resolver was available; the source is unavailable because its DOI is invalid",
+])
+def test_remote_revision_does_not_retry_content_source_failure_unchanged(monkeypatch, note: str) -> None:
     _patch_reviews(monkeypatch, [{
         "artifactType": "research_paper",
         "agentId": "agent-v3-full-paper",
@@ -8388,7 +8392,7 @@ def test_remote_revision_does_not_retry_content_source_failure_unchanged(monkeyp
         "requiredRevisions": [],
         "failure_stage": "editorial",
         "failure_category": "source_evidence_match",
-        "notes": ["source evidence does not support the submitted claim"],
+        "notes": [note],
         "resubmission": {"allowed": True},
     }])
 
