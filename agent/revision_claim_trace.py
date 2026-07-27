@@ -115,13 +115,13 @@ def repair_major_claim_trace(
             r"[a-z][a-z0-9-]{3,}", str(item[1].get("outcome_class") or "").lower(),
         ))]
         if (
-            matches and re.search(r"(abstract|result|synthesis|conclusion)", section)
+            (matches or "conclusion" in section) and re.search(r"(abstract|result|synthesis|conclusion)", section)
             and len(text) >= 60 and text.endswith((".", "!", "?"))
             and "[bundle:" not in text.lower()
             and not re.search(r"\([A-Z][^)]*\b20\d{2}\)", text)
             and not text.startswith(("#", "-", "|", "```", *_NON_CLAIM_PREFIXES))
         ):
-            number, row = min(matches, key=lambda item: (
+            number, row = min(matches or eligible, key=lambda item: (
                 str(item[1].get("directness") or "").lower() != "direct", item[0],
             ))
             anchor = f"{text[:-1]} (evidence anchor: {_label(row)} [bundle:{number}]){text[-1]}"
@@ -172,7 +172,7 @@ def _source_bound_claims(
         if (
             section == "references"
             or len(stripped) < 40
-            or stripped.startswith(("#", "```")) or (stripped.startswith(("- ", "|")) and not any(token in section for token in ("finding", "outcome", "load-bearing")))
+            or stripped.startswith(("#", "|", "```", "- "))
             or stripped.startswith(_NON_CLAIM_PREFIXES)
         ):
             continue
