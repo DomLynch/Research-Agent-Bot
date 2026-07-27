@@ -224,7 +224,7 @@ def _asks_directness_coding_criteria(text: str) -> bool:
             "what constitutes",
         ))
         and any(token in text for token in ("indirect", "review"))
-    )
+    ) or all(token in text for token in ("direct", "bundle", "metadata")) and any(token in text for token in ("design", "protocol", "full text extractable"))
 
 
 def _directness_coding_criteria_are_stated(paper_md: str) -> bool:
@@ -1029,7 +1029,7 @@ def _asks_underpopulated_outcome_subsections(text: str) -> bool:
         "underpopulated outcome-class subsection" in text
         or "underpopulated outcome class subsection" in text
         or "per-outcome-class subsection" in text
-        or ("outcome-class subsection" in text and any(token in text for token in ("expand", "remove the headers", "remove headers")))
+        or ("outcome-class subsection" in text and any(token in text for token in ("expand", "remove the headers", "remove headers"))) or ("no extractable efficacy numerics" in text and "no quantitative" in text)
     )
 
 
@@ -1353,6 +1353,10 @@ def _underpopulated_outcome_subsections_are_stated(paper_md: str, ask: str) -> b
     scope = _section(paper_md, "Results") + "\n\n" + _section(paper_md, "Evidence Snapshot")
     if not scope.strip():
         return False
+    if "no extractable efficacy numerics" in ask:
+        target = re.search(r"\bthe\s+(.+?)\s+results\b", ask)
+        lower = scope.lower()
+        return all(token in lower for token in ("no extractable efficacy numerics are available", "no quantitative", "claim")) and (not target or target.group(1) in lower)
     terms = _parenthetical_terms(ask)
     if not terms:
         return False
@@ -1994,7 +1998,7 @@ def _asks_publication_status_preprint_flags(text: str) -> bool:
             or ("publication status" in text and any(token in text for token in ("peer-reviewed", "peer reviewed")))
             or (
                 "verify" in text
-                and any(token in text for token in ("2026-dated", "2026 dated"))
+                and any(token in text for token in ("2026-dated", "2026 dated", "2026"))
             )
         )
     )

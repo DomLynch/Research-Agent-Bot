@@ -6496,3 +6496,40 @@ def test_exact_stat_revision_rebuilds_existing_findings_map(tmp_path: Path) -> N
     assert "p = 0.01" not in fixed
     assert "5 extracted claim(s)" in fixed
     assert log and log[0].rule == "reconcile_source_level_findings_map"
+
+
+def test_live_reviewer_wording_repairs_existing_manuscript_without_regeneration(tmp_path: Path) -> None:
+    asks = [
+        "Realign the Longevity narrative with the bundle for Orchard 2021. Either revise the prose to reflect the mixed/subgroup-conditional pattern, or recode the source direction.",
+        "Verify and disclose the publication status of all '2026' entries; if these are preprints or in-press records, note that.",
+        "Add the missing in-text citations to the References list (Cruz-Jentoft 2019, Ioannidis 2005 if retained), or remove the specific claims that depend on them.",
+        "Tighten the Frailty Results to state explicitly that no extractable efficacy numerics are available within the corpus, and therefore no quantitative frailty-prevention claim can be supported.",
+    ]
+    rows = [
+        {"citation_token": "Orchard 2021", "source_title": "Cancer incidence and mortality", "outcome_class": "longevity", "effect_direction": "unclear", "directness": "indirect"},
+        {"citation_token": "Tavabi 2021", "source_title": "Frailty prevention trial design", "outcome_class": "frailty", "effect_direction": "null", "directness": "direct"},
+        {"citation_token": "Future 2026", "source_title": "Forward-dated trial report", "outcome_class": "frailty", "effect_direction": "unclear", "directness": "indirect", "source_year": 2026, "source_type": "preprint"},
+    ]
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"required_revisions": asks}))
+    paper = (
+        "## Evidence Landscape\n\nBounded landscape.\n\n"
+        "## Results\n\nThe corpus contains a strong-but-subgroup-conditional positive signal "
+        "(Orchard 2021 [bundle:1]).\n\n### Frailty Outcomes\n\nThe quantitative paragraph is intentionally light.\n\n"
+        "## Cross-Domain Synthesis\n\nIoannidis 2005 supplies a surrogate caution. "
+        "Cruz-Jentoft 2019 supplies a threshold.\n\n"
+        "## References\n\n- **Orchard 2021.** Bundled source.\n"
+        "- **Cruz-Jentoft 2019.** External source.\n- **Ioannidis 2005.** External source.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_d_revision_surface_notes(paper, tmp_path)
+
+    assert "strong-but-subgroup-conditional mixed signal" in fixed
+    assert "Publication-status/preprint note:" in fixed and "Future 2026" in fixed
+    assert "No extractable efficacy numerics are available for Frailty" in fixed
+    assert "no quantitative frailty claim is supported" in fixed
+    assert "Cruz-Jentoft 2019" not in fixed and "Ioannidis 2005" not in fixed
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows,
+    ) == []
+    assert logs and "no_extractable_outcome_numerics" in logs[0].detail

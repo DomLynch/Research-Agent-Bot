@@ -296,9 +296,7 @@ def _asks_named_direction_reconciliation(text: str) -> bool:
         return False
     request = (
         "direction" in text
-        and any(token in text for token in (
-            "consistent wording", "recheck", "coded direction", "coding", "direction reflects",
-        ))
+        and any(token in text for token in ("consistent wording", "recheck", "realign", "recode", "coded direction", "coding", "direction reflects", "source direction", "bundle records"))
     ) or all(token in text for token in ("coding", "align", "refers to"))
     return _has_named_source(text) and request and any(token in text for token in ("positive", "negative", "null", "mixed", "unclear"))
 
@@ -772,6 +770,8 @@ def _direction_patterns(label: str) -> tuple[str, ...]:
         rf"(?P<prefix>{re.escape(label)}[^\n.;]{{0,100}}?\b(?:show(?:s|ed)?|support(?:s|ed)?|"
         rf"indicat(?:e|es|ed)|report(?:s|ed)?|ha(?:s|d))\s+(?:an?\s+)?){direction}"
         rf"(?P<suffix>\s+(?:direction|effect|signal|finding)\b)",
+        rf"(?P<prefix>\b(?:strong-but-subgroup-conditional\s+)?){direction}"
+        rf"(?P<suffix>\s+(?:direction|effect|signal|finding)\b[^.\n]{{0,100}}?{re.escape(label)})",
     )
 
 

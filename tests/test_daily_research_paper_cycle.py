@@ -6105,7 +6105,8 @@ def test_revise_prose_consistency_feedback_keeps_source_manifest(tmp_path: Path,
     )
 
     assert ledger["corpus"]["source"] == "existing_source_manifest"
-    assert feedback_seen == [feedback]
+    assert feedback_seen == []
+    assert ledger["attempts"][0]["existing_work_reused"] is True
     assert ledger["attempts"][0]["submitted"] == 1
 
 
@@ -8415,6 +8416,26 @@ def test_external_authority_retry_reuses_unchanged_approved_run(tmp_path: Path, 
     assert request["submissionId"] == "submission-1"
     assert cycle.submit_bridge._revision_coverage_status(out) == "eligible"
     assert json.loads((out / cycle.REVISION_COVERAGE_GATE).read_text())["mode"] == "unchanged_external_verifier_retry"
+
+
+def test_content_revision_reuses_existing_run_when_finalizer_covers_asks(tmp_path: Path, monkeypatch) -> None:
+    import agent.journal_finalizer as finalizer
+
+    source = tmp_path / "source"
+    out = tmp_path / "out"
+    source.mkdir()
+    (source / "full_paper.md").write_text("# Research Synthesis: Topic\n\nOriginal.\n", encoding="utf-8")
+    monkeypatch.setattr(finalizer, "finalize_run", lambda run: (run / "full_paper.md").write_text("# Research Synthesis: Topic\n\nRepaired.\n", encoding="utf-8"))
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda *_args: [])
+
+    ok, error = cycle._repair_existing_run(
+        source, out, revision_source={"submissionId": "submission-1"},
+        revision_feedback="Add exact source tokens to major claims.",
+    )
+
+    assert ok is True
+    assert error == ""
+    assert "Repaired." in (out / "full_paper.md").read_text(encoding="utf-8")
 
 
 def test_external_authority_retry_advances_persisted_retry_count(tmp_path: Path) -> None:

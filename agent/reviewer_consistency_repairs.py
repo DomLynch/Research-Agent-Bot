@@ -71,11 +71,12 @@ def _asks_denominator(text: str) -> bool:
 
 
 def _asks_unbundled(text: str) -> bool:
-    return _has_any(
+    return (_has_any(
         text, "external reference citation", "external citations", "bundle provenance",
         "not present in the source bundle", "not in the source bundle",
-    ) and _has_any(
+    ) or "missing in text citations" in text and "references list" in text) and _has_any(
         text, "remove", "add them to the source bundle", "verification token", "bundle provenance",
+        "add the missing",
     )
 
 

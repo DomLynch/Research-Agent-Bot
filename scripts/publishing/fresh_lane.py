@@ -3384,6 +3384,11 @@ def _repair_existing_run(
 ) -> tuple[bool, str]:
     if not (revision_feedback or repair_reason) or not (source_dir / "full_paper.md").is_file() or out_dir.exists():
         return False, "repair_precondition_failed"
+    if revision_feedback:
+        rows = [row for row in _read_json(source_dir / "manifest.json").get("receipts", []) if isinstance(row, dict)]
+        asks = _revision_asks(revision_feedback, _required_revision_items(revision_source or {}))
+        if not asks or re.search(r"\b(?:rebuild|reset|revise|replace)\b.{0,50}\b(?:source bundle|corpus)\b|\b(?:remove|exclude)\b.{0,50}\b(?:off[ -]?topic|unrelated)\b", revision_feedback, re.I) or len(revision_coverage.deterministic_known_asks(asks, evidence_rows=rows)) != len(asks):
+            return False, "revision_repair_not_deterministic"
     try:
         shutil.copytree(source_dir, out_dir)
         paper_path = out_dir / "full_paper.md"
@@ -3399,6 +3404,8 @@ def _repair_existing_run(
             _write_json(out_dir / "internal_repair_request.json", {"source_run": source_dir.name, "reason": repair_reason})
         from agent.journal_finalizer import finalize_run
         finalize_run(out_dir)
+        if revision_feedback and _unmet_revision_asks(out_dir, revision_feedback):
+            raise ValueError("revision_repair_incomplete")
         if repair_reason:
             after = paper_path.read_text(encoding="utf-8")
             if after == before and repair_reason != "submission_authority_retry":
@@ -5047,18 +5054,15 @@ def run_cycle(
                     remote_revision = None
                     attempted.add(selected)
                     break
-                # Researka content revises carry reviewer feedback that must reach the
-                # feedback-aware writer (_run_synthesis injects RESEARKA_REVISION_FEEDBACK);
-                # only mechanical internal repairs (a gate-failure repair_reason with no
-                # external feedback) reuse the deterministic finalizer.
-                repair_attempted = bool(revision_base_dir and repair_reason and not revision_feedback)
+                # Reuse prior manuscripts only when deterministic repair covers every ask.
+                repair_attempted = bool(revision_base_dir and (repair_reason or revision_feedback))
                 existing_repair = False
                 repair_error = ""
                 if repair_attempted and revision_base_dir:
                     existing_repair, repair_error = _repair_existing_run(
                         revision_base_dir,
                         out_dir,
-                        revision_source=revision_source,
+                        revision_source=revision_source, revision_feedback=revision_feedback or None,
                         repair_reason=repair_reason or None,
                     )
                 synthesis_kwargs: dict[str, Any] = {

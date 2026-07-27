@@ -2664,7 +2664,6 @@ def _phase_d_substantive_evidence_synthesis(
     needs_scope_bound = revision_coverage.asks_bounded_research_question_conclusion(feedback)
     needs_mr_mechanism = revision_coverage.asks_mr_mechanism_disagreement_separation(feedback)
     needs_no_hard_endpoint = revision_coverage.asks_no_direct_hard_endpoint_statement(feedback)
-    needs_pub_status = revision_coverage.asks_publication_status_preprint_flags(feedback)
     needs_direct_reclass = revision_coverage.asks_direct_interventional_reclassification(feedback)
     needs_direction_highlights = revision_coverage.asks_direction_coded_source_highlights(feedback)
     text, conclusion_cleanup_n = (
@@ -2697,9 +2696,6 @@ def _phase_d_substantive_evidence_synthesis(
     no_hard_endpoint = _manifest_no_direct_hard_endpoint_note(rows) if needs_no_hard_endpoint else ""
     if no_hard_endpoint:
         no_hard_endpoint += "\n\n"
-    pub_status = _manifest_publication_status_preprint_note(rows) if needs_pub_status else ""
-    if pub_status:
-        pub_status += "\n\n"
     direct_reclass_note = _manifest_direct_interventional_note(feedback, rows) if needs_direct_reclass else ""
     if direct_reclass_note:
         direct_reclass_note += "\n\n"
@@ -2744,7 +2740,6 @@ def _phase_d_substantive_evidence_synthesis(
         f"{scope_bound}"
         f"{mr_mechanism}"
         f"{no_hard_endpoint}"
-        f"{pub_status}"
         f"{direct_reclass_note}"
         f"{direction_highlights}"
         f"{taxonomy_note}"
@@ -4758,6 +4753,25 @@ def _phase_d_revision_surface_notes(
             n += changed
             if changed:
                 details.append("outcome_class_synthesis")
+    if revision_coverage.asks_publication_status_preprint_flags(feedback):
+        note = _manifest_publication_status_preprint_note(receipts)
+        patched, changed = _prepend_section_paragraph(patched, "Evidence Landscape", note)
+        n += changed
+        if changed:
+            details.append("publication_status_preprint")
+    numeric_ask = next((ask.lower() for ask in revision_coverage.revision_asks(feedback)
+                        if "no extractable efficacy numerics" in ask.lower() and "no quantitative" in ask.lower()), "")
+    outcomes = sorted({
+        label for row in receipts
+        if numeric_ask and (label := _outcome_display(_row_outcome_class(row))).lower() in numeric_ask
+    })
+    if outcomes:
+        label = " and ".join(outcomes)
+        note = f"No extractable efficacy numerics are available for {label} within the retained corpus; therefore no quantitative {label.lower()} claim is supported by the retained sources."
+        patched, changed = _prepend_section_paragraph(patched, "Results", note)
+        n += changed
+        if changed:
+            details.append("no_extractable_outcome_numerics")
     wants_direct_ceiling = "direct clinical source" in lower or (
         "direct source" in lower and "conclusion" in lower
     ) or (
@@ -4813,32 +4827,6 @@ def _phase_d_revision_artifact_cleanup(
         return text, []
     patched = text
     details: list[str] = []
-    if (
-        "ioannidis 2005" in lower
-        and any(token in lower for token in (
-            "not present in the source bundle",
-            "not in the source bundle",
-            "bundle-resident source",
-        ))
-    ):
-        before = patched
-        patched = re.sub(
-            r"\s*Reviewer guidance regarding[^.\n]*Ioannidis 2005[^.\n]*\.\s*",
-            " ",
-            patched,
-        )
-        patched = re.sub(
-            r"(?m)^-\s+\*\*Ioannidis 2005\.\*\*.*(?:\n|$)",
-            "",
-            patched,
-        )
-        patched = re.sub(
-            r"(?<!\w)[^.!\n]*\bIoannidis 2005\b[^.!\n]*[.!]\s*",
-            "",
-            patched,
-        )
-        if patched != before:
-            details.append("removed_non_bundle_ioannidis_2005")
     if (
         "metabolic-functional tradeoff" in lower
         or "metabolic functional tradeoff" in lower
