@@ -115,7 +115,7 @@ def repair_major_claim_trace(
             r"[a-z][a-z0-9-]{3,}", str(item[1].get("outcome_class") or "").lower(),
         ))]
         if (
-            (matches or "conclusion" in section or ("abstract" in section and "boundary" in text.lower())) and re.search(r"(abstract|result|synthesis|conclusion)", section)
+            (matches or "conclusion" in section) and re.search(r"(abstract|result|synthesis|conclusion)", section)
             and len(text) >= 60 and text.endswith((".", "!", "?"))
             and "[bundle:" not in text.lower()
             and not re.search(r"\([A-Z][^)]*\b20\d{2}\)", text)
@@ -126,6 +126,11 @@ def repair_major_claim_trace(
             ))
             anchor = f"{text[:-1]} (evidence anchor: {_label(row)} [bundle:{number}]){text[-1]}"
             patched = patched.replace(line, anchor, 1)
+        elif "cross-domain synthesis" in section and (bundle := re.search(r"\[bundle:(\d+)\]", text, re.I)) and (claim := next((value for value in re.split(r"(?<=[.!?])\s+(?=[A-Z])", text) if "boundary condition" in value.lower() and "[bundle:" not in value), "")):
+            number = int(bundle.group(1))
+            row = rows[number - 1] if 1 <= number <= len(rows) else {}
+            if locator := _stable_locator(row):
+                patched = patched.replace(claim, _append_inline_locator(f"{claim[:-1]} (evidence anchor: {_label(row)} [bundle:{number}]){claim[-1]}", locator), 1)
     claims = _source_bound_claims(patched, rows)
     for claim, _bundle_number, row in claims:
         locator = _stable_locator(row)
@@ -142,19 +147,16 @@ def _append_inline_locator(claim: str, locator: str) -> str:
 
 
 def _requested_count(ask: str, available: int) -> int:
-    match = re.search(r"\brequired\s+(\d+)\b", ask, re.I)
-    requested = int(match.group(1)) if match else min(16, available)
+    requested = int(match.group(1)) if (match := re.search(r"\brequired\s+(\d+)\b", ask, re.I)) else min(16, available)
     return max(1, requested)
 
 
 def _scope(paper_md: str) -> str:
-    match = re.search(r"^## Major Claim Trace\b.*?(?=^## |\Z)", paper_md, re.M | re.S | re.I)
-    return match.group(0) if match else ""
+    return match.group(0) if (match := re.search(r"^## Major Claim Trace\b.*?(?=^## |\Z)", paper_md, re.M | re.S | re.I)) else ""
 
 
 def _without_trace(paper_md: str) -> str:
-    scope = _scope(paper_md)
-    return paper_md.replace(scope, "", 1) if scope else paper_md
+    return paper_md.replace(scope, "", 1) if (scope := _scope(paper_md)) else paper_md
 
 
 def _source_bound_claims(
@@ -212,8 +214,7 @@ def _ordered_rows(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _label(row: dict[str, Any]) -> str:
-    value = row.get("citation_token") or row.get("cited_as") or row.get("body_citation")
-    return str(value or row.get("receipt_id") or "").strip()
+    return str(row.get("citation_token") or row.get("cited_as") or row.get("body_citation") or row.get("receipt_id") or "").strip()
 
 
 def _evidence_span(row: dict[str, Any]) -> str:
