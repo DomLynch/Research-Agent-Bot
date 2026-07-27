@@ -920,6 +920,8 @@ def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
         "Frailty guidance remains bounded pending stronger trials (Guideline 2024).\n\n"
         "## Cross-Domain Synthesis\n\n"
         "Study1 2025 and Study2 2025 produced different outcome signals.\n\n"
+        "## Discussion\n\n"
+        "The retained evidence supports only a bounded interpretation pending stronger trials.\n\n"
         "## Conclusion\n\n"
         "The practical interpretation remains bounded by the available source record.\n"
     )
@@ -942,7 +944,12 @@ def test_major_claim_trace_anchors_unbound_evidence_claim_line() -> None:
         "(evidence anchor: Study1 2025 [bundle:1]) "
         "[exact source: https://doi.org/10.1000/study.1]."
     ) in fixed
-    assert fixed.count("(evidence anchor:") == 3
+    assert (
+        "The retained evidence supports only a bounded interpretation pending stronger trials "
+        "(evidence anchor: Study1 2025 [bundle:1]) "
+        "[exact source: https://doi.org/10.1000/study.1]."
+    ) in fixed
+    assert fixed.count("(evidence anchor:") == 4
     assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
 
 
