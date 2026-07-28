@@ -2337,6 +2337,306 @@ def test_deterministic_unmet_flags_internal_duplication() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
+def test_deterministic_unmet_flags_duplicate_discussion_sentences() -> None:
+    ask = (
+        "Resolve the duplicate sentences in the Discussion section and produce "
+        "a clean final render of the long-form manuscript."
+    )
+    sentence = "The retained evidence supports only a bounded interpretation of these effects."
+    paper = f"## Discussion\n\n{sentence} Additional context follows. {sentence}\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+    fixed = (
+        "## Discussion\n\nThe retained evidence supports only a bounded interpretation "
+        "of these effects. Additional context follows without repetition.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_conclusion_scope_rejects_positive_lifestyle_recommendation() -> None:
+    ask = (
+        "Tighten the Conclusion to match the bounded claim posture and do not "
+        "allow soft lifestyle recommendations."
+    )
+    paper = (
+        "## Conclusion\n\n"
+        "The conclusion does not support broad causal, clinical, or policy claims. "
+        "Fasting is recommended as a general health and lifestyle intervention.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_conclusion_scope_rejects_affirmative_recommendation_variants() -> None:
+    ask = (
+        "Tighten the Conclusion to match the bounded claim posture and do not "
+        "allow soft lifestyle recommendations."
+    )
+    variants = (
+        "The intervention can be used as a general health intervention.",
+        "The intervention may be used as a general health intervention.",
+        "The intervention is appropriate as a lifestyle intervention.",
+        "The intervention is suitable as a lifestyle intervention.",
+        "The evidence supports its use as a lifestyle intervention.",
+        "The evidence supports adoption as a lifestyle intervention.",
+        "The evidence not only supports its use as a lifestyle intervention.",
+    )
+
+    for sentence in variants:
+        paper = (
+            "## Conclusion\n\n"
+            "The conclusion does not support broad causal, clinical, or policy claims. "
+            f"{sentence}\n"
+        )
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+    bounded = (
+        "## Conclusion\n\n"
+        "The evidence does not support its use as a lifestyle intervention. "
+        "It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(bounded, [ask]) == []
+    uncertain = (
+        "## Conclusion\n\nThe evidence is insufficient to determine whether the "
+        "intervention is appropriate as a lifestyle intervention. It does not "
+        "support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(uncertain, [ask]) == []
+    contrastive = (
+        "## Conclusion\n\nThe intervention does not prevent cancer but is suitable "
+        "as a lifestyle intervention. It does not support broad causal, clinical, "
+        "or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(contrastive, [ask]) == [ask]
+    for sentence in (
+        "Although efficacy is unproven, it is suitable as a lifestyle intervention.",
+        "Efficacy is unproven and the intervention may be used for general health.",
+    ):
+        paper = (
+            f"## Conclusion\n\n{sentence} It does not support broad causal, "
+            "clinical, or policy claims.\n"
+        )
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    bounded = (
+        "## Conclusion\n\nThe evidence fails to support its use as a lifestyle "
+        "intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(bounded, [ask]) == []
+    past_bounded = (
+        "## Conclusion\n\nThe trial failed to support its use as a lifestyle "
+        "intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(past_bounded, [ask]) == []
+    cross_clause = (
+        "## Conclusion\n\nThe evidence supports further research but does not "
+        "support its use as a lifestyle intervention. It does not support broad "
+        "causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(cross_clause, [ask]) == []
+    because = (
+        "## Conclusion\n\nThe evidence supports further research because it does "
+        "not support its use as a lifestyle intervention. It does not support broad "
+        "causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(because, [ask]) == []
+    unlikely = (
+        "## Conclusion\n\nThe evidence is unlikely to support its use as a lifestyle "
+        "intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(unlikely, [ask]) == []
+    coordinated_safe = (
+        "## Conclusion\n\nThe evidence does not support or recommend its use as a "
+        "lifestyle intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(coordinated_safe, [ask]) == []
+    coordinated_unsafe = (
+        "## Conclusion\n\nThe evidence supports adoption and use as a lifestyle "
+        "intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(coordinated_unsafe, [ask]) == [ask]
+    not_merely = (
+        "## Conclusion\n\nThe evidence does not merely support its use as a lifestyle "
+        "intervention; it establishes it. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(not_merely, [ask]) == [ask]
+    for bounded in (
+        "The authors recommend against using it as a lifestyle intervention.",
+        "The evidence supports avoiding its use as a lifestyle intervention.",
+    ):
+        paper = (
+            f"## Conclusion\n\n{bounded} It does not support broad causal, "
+            "clinical, or policy claims.\n"
+        )
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    temporal = (
+        "## Conclusion\n\nThe intervention has been recommended since 2020 as a "
+        "lifestyle intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(temporal, [ask]) == [ask]
+    for bounded in (
+        "The authors recommend that the intervention not be used as a lifestyle intervention.",
+        "The evidence neither supports nor recommends its use as a lifestyle intervention.",
+    ):
+        paper = (
+            f"## Conclusion\n\n{bounded} It does not support broad causal, "
+            "clinical, or policy claims.\n"
+        )
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    temporal_subject = (
+        "## Conclusion\n\nThe intervention has been recommended since it was introduced "
+        "as a lifestyle intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(temporal_subject, [ask]) == [ask]
+    abbreviation_negation = (
+        "## Conclusion\n\nNo evidence from Smith et al. supports its use as a "
+        "lifestyle intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(abbreviation_negation, [ask]) == []
+    abbreviation_boundary = (
+        "## Conclusion\n\nNo evidence was reported by Smith et al. Participants report "
+        "that the intervention is suitable as a lifestyle intervention. It does not "
+        "support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(abbreviation_boundary, [ask]) == [ask]
+    for bounded in (
+        "No evidence from Dr. Smith supports its use as a lifestyle intervention.",
+        "No U.S. Food and Drug Administration evidence supports its use as a lifestyle intervention.",
+        "No evidence was reported by the U.S. Food and Drug Administration to support its use as a lifestyle intervention.",
+        "No evidence was found in the U.S. Food and Drug Administration report to support its use as a lifestyle intervention.",
+        "No credible evidence from the U.S. FDA supports its use as a lifestyle intervention.",
+        "Not any available evidence from the U.S. FDA supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. FDA currently supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. Food and Drug Administration currently supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. Centers for Disease Control and Prevention currently supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. Preventive Services Task Force supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. National Academy of Medicine supports its use as a lifestyle intervention.",
+        "No evidence from a U.S. FDA report supports its use as a lifestyle intervention.",
+        "No evidence from any U.S. FDA source supports its use as a lifestyle intervention.",
+        "No evidence from the U.S. FDA-supported trial supports its use as a lifestyle intervention.",
+    ):
+        paper = f"## Conclusion\n\n{bounded} It does not support broad causal, clinical, or policy claims.\n"
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    for boundary in ("U.S.", "p.o."):
+        paper = (
+            f"## Conclusion\n\nNo evidence was reported in the {boundary} Participants report "
+            "that the intervention is suitable as a lifestyle intervention. It does not "
+            "support broad causal, clinical, or policy claims.\n"
+        )
+        assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+    long_subject = (
+        "## Conclusion\n\nNo evidence was reported in the U.S. Independent clinical "
+        "experts now recommend its use as a lifestyle intervention. It does not "
+        "support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(long_subject, [ask]) == [ask]
+    from_boundary = (
+        "## Conclusion\n\nNo evidence was reported from the U.S. Independent clinical "
+        "experts now recommend its use as a lifestyle intervention. It does not "
+        "support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(from_boundary, [ask]) == [ask]
+    named_boundary = (
+        "## Conclusion\n\nNo evidence was reported from the U.S. Food and Drug "
+        "Administration recommends its use as a lifestyle intervention. It does not "
+        "support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(named_boundary, [ask]) == [ask]
+    for action in ("recommends", "endorses", "adopts", "adopted", "used"):
+        institutional_boundary = (
+            f"## Conclusion\n\nNo evidence from the U.S. FDA {action} its use as a "
+            "lifestyle intervention. It does not support broad causal, clinical, or policy claims.\n"
+        )
+        assert revision_coverage.deterministic_unmet_asks(institutional_boundary, [ask]) == [ask]
+    short_boundary = (
+        "## Conclusion\n\nThere was no effect in the U.S. Experts recommend its use "
+        "as a lifestyle intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(short_boundary, [ask]) == [ask]
+    adverb_boundary = (
+        "## Conclusion\n\nNo evidence from the U.S. Experts currently recommend its "
+        "use as a lifestyle intervention. It does not support broad causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(adverb_boundary, [ask]) == [ask]
+    titled_boundary = (
+        "## Conclusion\n\nNo evidence from the U.S. Public Health Experts currently "
+        "recommend its use as a lifestyle intervention. It does not support broad "
+        "causal, clinical, or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(titled_boundary, [ask]) == [ask]
+    trailing_qualifier = (
+        "## Conclusion\n\nThe intervention is suitable as a lifestyle intervention "
+        "despite no evidence of efficacy. It does not support broad causal, clinical, "
+        "or policy claims.\n"
+    )
+    assert revision_coverage.deterministic_unmet_asks(trailing_qualifier, [ask]) == [ask]
+
+
+def test_funnel_reconciliation_requires_reviewer_named_counts() -> None:
+    ask = (
+        "Reconcile the source-admission funnel counts and explain how the 73 "
+        "classified candidates resolve to 66 admitted final sources."
+    )
+    generic = (
+        "Admission-bucket note: The rows are not an additive conservation table "
+        "because claim-binding states overlap."
+    )
+    exact = (
+        f"{generic} Stepwise reconciliation: classified source candidates (73) "
+        "-> admitted final sources (66)."
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(generic, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(exact, [ask]) == []
+
+
+def test_funnel_reconciliation_does_not_borrow_unrelated_counts() -> None:
+    ask = (
+        "Reconcile the source-admission funnel counts and explain how the 73 "
+        "classified candidates resolve to 66 admitted final sources."
+    )
+    paper = (
+        "## Results\n\nThe cohort included 73 participants and reported 66 outcomes.\n\n"
+        "## Methods\n\nAdmission-bucket note: The rows are not an additive "
+        "conservation table because claim-binding states overlap.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_funnel_reconciliation_binds_counts_to_labels() -> None:
+    asks = (
+        "Reconcile how the 73 classified candidates resolve to 66 admitted final sources.",
+        "Reconcile classified candidates (73) with admitted final sources (66).",
+        "Reconcile Classified Candidates (73) with Admitted Final Sources (66).",
+    )
+    wrong = (
+        "## Methods\n\nAdmission-bucket note: The 73 participants produced 66 outcomes. "
+        "The rows are not an additive conservation table because claim-binding states overlap.\n"
+    )
+    exact = (
+        "## Methods\n\nAdmission-bucket note: The rows are not an additive conservation "
+        "table because claim-binding states overlap. Stepwise reconciliation: "
+        "classified source candidates (73) -> admitted final sources (66).\n"
+    )
+
+    for ask in asks:
+        assert revision_coverage.deterministic_unmet_asks(wrong, [ask]) == [ask]
+        assert revision_coverage.deterministic_unmet_asks(exact, [ask]) == []
+
+
+def test_funnel_reconciliation_accepts_exact_typed_rows() -> None:
+    ask = "Reconcile Classified Candidates (73) with Admitted Final Sources (66)."
+    paper = (
+        "## Methods\n\n### Source admission funnel\n\n"
+        "| Admission bucket | n |\n|---|---:|\n"
+        "| Classified source candidates | 73 |\n"
+        "| Admitted final sources | 66 |\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_near_duplicate_narrative() -> None:
     ask = "Remove repetitive narrative across the Evidence Landscape and Key Findings sections."
     paper = (

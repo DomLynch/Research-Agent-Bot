@@ -12,8 +12,8 @@ from typing import Any
 
 from agent import statistical_consistency as _stats
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
-from agent.evidence_lanes import LANE_TOKENS, build_lane_map, is_animal_context
-from agent.revision_identity import direction_tally_note, outcome_direction_tally_note, repair_revision_identity
+from agent.evidence_lanes import LANE_TOKENS, build_lane_map, derive_receipt_lane, effective_directness, is_animal_context
+from agent.revision_identity import outcome_direction_tally_note, repair_revision_identity
 from agent.revision_contract import feedback as _revision_feedback, gate_report as _revision_gate_report
 from agent.revision_quality import (
     asks_exact_stat_trace as _asks_exact_stat_trace,
@@ -24,6 +24,7 @@ from agent.revision_quality import (
     resolved_effect_direction as _resolved_effect_direction,
     traceable_p_values as _traceable_p_values,
 )
+from agent.reviewer_consistency_repairs import bound_unsupported_general_health_claims
 
 
 def _script_module(name: str) -> Any:
@@ -316,6 +317,27 @@ def _surface_report(text: str, out_dir: Path) -> Any | None:
         return None
 
 
+def _strip_repeated_discussion_sentences(
+    paragraph: str, seen: set[str],
+) -> tuple[str, int]:
+    stripped = paragraph.strip()
+    if not stripped or stripped.startswith(("#", "|", "-", "*")):
+        return paragraph, 0
+    sentences = re.split(r"(?<=[.!?])\s+", stripped)
+    kept: list[str] = []
+    removed = 0
+    for sentence in sentences:
+        tokens = re.findall(r"[a-z0-9]+", sentence.lower())
+        key = " ".join(tokens)
+        if len(tokens) >= 6 and key in seen:
+            removed += 1
+            continue
+        if len(tokens) >= 6:
+            seen.add(key)
+        kept.append(sentence)
+    return (paragraph, 0) if not removed else (" ".join(kept).strip(), removed)
+
+
 def _phase_m_strip_surface_duplicate_paragraphs(
     text: str,
 ) -> tuple[str, list[FinalizerLogEntry]]:
@@ -329,6 +351,7 @@ def _phase_m_strip_surface_duplicate_paragraphs(
     out: list[str] = []
     current_section: str | None = None
     introduction_content_seen = False
+    discussion_sentences: set[str] = set()
     n = 0
     for i in range(0, len(chunks), 2):
         para = chunks[i]
@@ -336,6 +359,14 @@ def _phase_m_strip_surface_duplicate_paragraphs(
         stripped = para.strip()
         if stripped.startswith("## ") and not stripped.startswith("### "):
             current_section = stripped[3:].strip().lower()
+        if current_section == "discussion":
+            para, removed = _strip_repeated_discussion_sentences(
+                para, discussion_sentences,
+            )
+            n += removed
+            stripped = para.strip()
+            if not stripped:
+                continue
         tokens = _surface_duplicate_tokens(para)
         has_content = bool(stripped) and not stripped.startswith(("#", "|", "_Cited:"))
         protect_intro_first = (
@@ -449,14 +480,16 @@ def _phase_m_strip_terminal_thesis_duplicates(
         out.append(para)
         if i + 1 < len(chunks):
             out.append(chunks[i + 1])
-    if not n:
+    patched = "".join(out) if n else text
+    patched, scope_n = _replace_unsupported_general_health_claim(patched)
+    if not n and not scope_n:
         return text, []
-    return "".join(out), [
+    return patched, [
         FinalizerLogEntry(
             phase="M_duplicate_paragraph_strip",
             rule="remove_terminal_thesis_duplicate_paragraphs",
-            n_changes=n,
-            detail=f"removed {n} terminal thesis duplicate paragraph(s)",
+            n_changes=n + scope_n,
+            detail=f"removed {n} terminal thesis duplicate paragraph(s); bounded conclusion claims={scope_n}",
         )
     ]
 
@@ -1930,10 +1963,6 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
         "mechanisms, and candidate endpoints for follow-up; it does not establish "
         "clinical benefit, therapeutic actionability, or anti-aging efficacy."
     )
-    pattern = re.compile(
-        r"(?P<sentence>[^.\n]*\bmay\s+support\b[^.\n]*\b(?:general\s+health|lifestyle\s+intervention)\b[^.\n]*\.)",
-        flags=re.I,
-    )
     patched, case_n = re.subn(
         r"[^.\n]*\bbounded geroscience (?:case|hypothesis|rationale)\b[^.\n]*\.",
         bounded_replacement,
@@ -1947,25 +1976,25 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
         flags=re.I,
     )
     match = re.search(r"^## Conclusion\b(?P<body>.*?)(?=^## (?!#)|\Z)", patched, flags=re.M | re.S)
-    if not match or replacement.lower() in match.group("body").lower():
+    if not match:
         return patched, case_n + tiered_n
     body = match.group("body")
-    n = 0
     rationale_replacement = (
         "the retained evidence profile defines contextual associations and "
         "candidate endpoints for follow-up, not proof that this is a viable "
         "geroscience intervention target"
     )
-    body, rationale_n = re.subn(
+    body, n = re.subn(
         r"the retained clinical and mechanistic evidence profile defines a bounded geroscience rationale",
         rationale_replacement,
         body,
         count=1,
         flags=re.I,
     )
-    n += rationale_n
-    body, pattern_n = pattern.subn(replacement, body, count=1)
-    n += pattern_n
+    body, recommendation_n = bound_unsupported_general_health_claims(body)
+    n += recommendation_n
+    if recommendation_n and replacement.lower() not in body.lower():
+        body = body.rstrip() + "\n\n" + replacement + ("\n" if match.group("body").endswith("\n") else "")
     if not n:
         return patched, case_n + tiered_n
     return patched[:match.start("body")] + body + patched[match.end("body"):], n + case_n + tiered_n
@@ -3261,10 +3290,6 @@ def _feedback_window_for_label(feedback: str, label: str, radius: int = 260) -> 
     return lower[max(0, pos - radius):pos + len(needle) + radius]
 
 
-def _manifest_admission_direction_tally_note(rows: list[dict[str, Any]]) -> str:
-    return direction_tally_note(rows)
-
-
 def _manifest_scope_bounded_question_note(rows: list[dict[str, Any]]) -> str:
     buckets = sorted({_manifest_subdomain_bucket(row) for row in rows})
     bucket_text = ", ".join(buckets[:4]) or "the retained source roles"
@@ -4290,10 +4315,6 @@ def _findings_map_feedback_notes(feedback: str, present_tokens: set[str]) -> lis
             "and are not counted in clinical outcome-class tallies unless listed below."
         )
     return notes
-
-
-def _row_base_outcome_display(row: dict[str, Any]) -> str:
-    return _outcome_display(_row_outcome_class(row))
 
 
 def _row_directness_label(row: dict[str, Any]) -> str:
@@ -5666,7 +5687,7 @@ def _phase_f_reconcile_results_table(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     evidence_map_summary = _script_module("evidence_map_summary")
-    signal_summary_cell, source_context_map, strip_source_context_map = (evidence_map_summary.signal_summary_cell, evidence_map_summary.source_context_map, evidence_map_summary.strip_source_context_map)
+    direction_profile_cell, source_context_map, strip_source_context_map = (evidence_map_summary.direction_profile_cell, evidence_map_summary.source_context_map, evidence_map_summary.strip_source_context_map)
 
     manifest_path = out_dir / "manifest.json"
     if not manifest_path.is_file():
@@ -5695,7 +5716,7 @@ def _phase_f_reconcile_results_table(
         return text, []
     topic_anchor = _topic_display_anchor(manifest)
     rows = [
-        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |",
+        "| Outcome class | Corpus slice | Direction profile | Directness | Main limitation |",
         "|---|---|---|---|---|",
     ]
     stubs: list[tuple[str, str, int, int, str, str, str]] = []
@@ -5704,15 +5725,16 @@ def _phase_f_reconcile_results_table(
     ):
         n = len(matching)
         n_claims = sum(int(r.get("n_claims") or 0) for r in matching)
-        directness_counts: dict[str, int] = {}
-        for r in matching:
-            d = str(r.get("directness") or "").strip().lower()
-            if d:
-                directness_counts[d] = directness_counts.get(d, 0) + 1
+        directness_counts = Counter(
+            "mechanistic"
+            if derive_receipt_lane(r) in {"human_mechanistic", "animal_preclinical"}
+            else effective_directness(r)
+            for r in matching
+        )
         directness_cell = "; ".join(
             f"{count} {kind}" for kind, count in sorted(directness_counts.items())
         ) or "—"
-        signal_cell = signal_summary_cell(matching)
+        signal_cell = direction_profile_cell(matching)
         limitation_cell = (
             "single-source slice; hypothesis-generating"
             if n <= 1 else "limited corpus depth in this outcome class"
@@ -5730,7 +5752,13 @@ def _phase_f_reconcile_results_table(
     context_table = source_context_map(receipts)
     table = "\n".join(rows) + "\n" + (f"\n{context_table}" if context_table else "")
     lines = results.splitlines(keepends=True)
-    header_candidates = {rows[0], rows[0].replace("Outcome class", "Evidence domain")}
+    legacy_header = rows[0].replace("Direction profile", "Strongest signal")
+    header_candidates = {
+        rows[0],
+        rows[0].replace("Outcome class", "Evidence domain"),
+        legacy_header,
+        legacy_header.replace("Outcome class", "Evidence domain"),
+    }
     try:
         start = next(i for i, line in enumerate(lines) if line.strip() in header_candidates)
     except StopIteration:
@@ -5740,6 +5768,13 @@ def _phase_f_reconcile_results_table(
         while end < len(lines) and lines[end].strip():
             end += 1
         new_results = "".join(lines[:start]) + table + "".join(lines[end:])
+    generated_summary = (
+        r"(?m)^### Results Summary[ \t]*\n(?:[ \t]*\n)*(?:[ \t]*- [^\n]+: n=\d+; claims=\d+; "
+        r"(?:benefit signal|adverse or limiting signal|no extracted directional signal|mixed signal) in \d+/\d+ sources "
+        r"\| directness: (?:not classified|\d+ (?:direct|indirect|mechanistic|review|protocol)(?:; \d+ (?:direct|indirect|mechanistic|review|protocol))*); "
+        r"main limitation: (?:no direct clinical anchor|directionally heterogeneous|single-source support|population and endpoint heterogeneity)\.[ \t]*(?:\n|\Z))+(?:[ \t]*\n)*(?=^###\s+|^##\s+|\Z)"
+    )
+    new_results = re.sub(generated_summary, "", new_results)
     existing = {
         _outcome_key(m.group(1))
         for m in re.finditer(r"^###\s+(.+?)\s*$", new_results, flags=re.M)
@@ -5747,6 +5782,7 @@ def _phase_f_reconcile_results_table(
     missing_blocks = []
     for slug, display, n, n_claims, signal, directness, limitation in stubs:
         matching = groups.get(slug, [])
+        aliases = {slug, *(_outcome_key(str(row.get("outcome_class") or "")) for row in matching)}
         block = "### " + display + " Outcomes\n\n" + _outcome_slice_narrative(
             display=display,
             topic_anchor=topic_anchor,
@@ -5763,10 +5799,10 @@ def _phase_f_reconcile_results_table(
             continue
         auto_generated = next((
             match for match in re.finditer(
-                r"(?ms)^###\s+(.+?)\s+Outcomes\s*\n\n(.*?)(?=^###\s+|^##\s+|\Z)",
+                r"(?ms)^###\s+([^\n]+?)\s+Outcomes\s*\n\n(.*?)(?=^###\s+|^##\s+|\Z)",
                 new_results,
             )
-            if _outcome_key(match.group(1)) == slug and (
+            if _outcome_key(match.group(1)) in aliases and (
                 match.group(2).strip().startswith(f"{display} remains a separate Results slice")
                 or re.match(
                     r"\d+ included sources? (?:was|were) assigned to this outcome class\.",

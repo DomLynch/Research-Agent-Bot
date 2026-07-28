@@ -5,8 +5,11 @@ from collections import Counter
 from collections.abc import Iterable, Mapping
 from typing import Any
 
+from agent.revision_quality import resolved_effect_direction
+
 
 _P_VALUE_RE = re.compile(r"\bp\s*([<≤=])\s*(0?\.\d+|\d+(?:\.\d+)?)", re.I)
+_DIRECTION_ORDER = ("positive", "negative", "null", "mixed", "unclear")
 
 _CONTEXT_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("Oncology and cancer context", ("cancer", "carcinoma", "tumor", "tumour", "oncology", "metastatic", "neuroendocrine")),
@@ -40,7 +43,7 @@ def signal_summary_cell(rows: Iterable[Mapping[str, Any]]) -> str:
     n = len(items)
     if not n:
         return "no sources"
-    effects = Counter(str(row.get("effect_direction") or "").strip().lower() for row in items)
+    effects = Counter(str(resolved_effect_direction(dict(row)) or "unclear").lower() for row in items)
     effects.pop("", None)
     top_effect = max(effects.items(), key=lambda kv: (kv[1], kv[0]))[0] if effects else "unclear"
     top_n = effects.get(top_effect, 0)
@@ -55,6 +58,12 @@ def signal_summary_cell(rows: Iterable[Mapping[str, Any]]) -> str:
     if top_effect == "null":
         return f"no extracted directional signal in {top_n}/{n} sources"
     return f"{top_effect} signal in {top_n}/{n} sources"
+
+
+def direction_profile_cell(rows: Iterable[Mapping[str, Any]]) -> str:
+    items = list(rows)
+    counts: Counter[str] = Counter(str(resolved_effect_direction(dict(row)) or "unclear").lower() for row in items)
+    return ", ".join(f"{direction}={counts[direction]}" for direction in _DIRECTION_ORDER) + f" (n={len(items)})"
 
 
 def source_context_label(row: Mapping[str, Any]) -> str:

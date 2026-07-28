@@ -9,6 +9,7 @@ from typing import Any
 from agent.llm_client import LLMError, LLMResponse, build_judge_chain, chat_json
 from agent import revision_identity as _revision
 from agent import revision_quality as _quality
+from agent.reviewer_consistency_repairs import unsupported_general_health_claim_spans
 from agent.settings import load_settings
 from agent.statistical_consistency import has_adjusted_significance_threshold
 
@@ -833,7 +834,7 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
     ) or (
         "search summary" in text
         and "selection logic" in text
-    ) or (
+    ) or ("classified candidate" in text and "admitted final" in text and any(token in text for token in ("reconcile", "resolve"))) or (
         "search summary" in text
         and any(token in text for token in ("source candidates", "admitted sources"))
         and any(token in text for token in (
@@ -843,7 +844,7 @@ def _asks_admission_funnel_numeric_consistency(text: str) -> bool:
     ) or (
         "funnel" in text
         and any(token in text for token in ("arithmetic", "reconcile", "consistent", "remove funnel numbers"))
-        and any(token in text for token in ("admitted source", "classified candidate", "candidate count", "corpus size"))
+        and any(token in text for token in ("admitted source", "classified candidate", "candidate count", "corpus size", "overlapping bucket", "partial-only", "partial only", "mixed partial-or-none"))
     )
 
 
@@ -1042,7 +1043,7 @@ def _asks_replaced_surface_tensions(text: str) -> bool:
 
 
 def _asks_internal_duplication(text: str) -> bool:
-    return any(token in text for token in ("internal duplication", "repetitive narrative", "verbatim repetition", "non-repetitive"))
+    return any(token in text for token in ("internal duplication", "repetitive narrative", "verbatim repetition", "non-repetitive", "duplicate sentence"))
 
 
 def _asks_long_term_safety_scope(text: str) -> bool:
@@ -1478,8 +1479,16 @@ def _internal_duplication_scope(paper_md: str, ask: str) -> str:
 
 def _internal_duplication_is_low(paper_md: str, ask: str = "") -> bool:
     seen: list[set[str]] = []
+    seen_sentences: set[str] = set()
     for paragraph in re.split(r"\n\s*\n", _internal_duplication_scope(paper_md, ask)):
         text = " ".join(line.strip() for line in paragraph.splitlines() if not line.lstrip().startswith(("|", "#", "- [")))
+        for sentence in re.split(r"(?<=[.!?])\s+", text):
+            normalised = " ".join(re.findall(r"[a-z0-9]+", sentence.lower()))
+            if len(normalised.split()) < 6:
+                continue
+            if normalised in seen_sentences:
+                return False
+            seen_sentences.add(normalised)
         words = re.findall(r"[a-z0-9]+", text.lower())
         if len(words) < 18:
             continue
@@ -2019,6 +2028,10 @@ def _asks_conclusion_weight_boundary(text: str) -> bool:
     ))
 
 
+def _asks_conclusion_recommendation_scope(text: str) -> bool:
+    return "conclusion" in text and any(token in text for token in ("general health", "lifestyle recommendation", "lifestyle intervention")) and any(token in text for token in ("tighten", "bounded", "remove", "do not allow"))
+
+
 def _scope_framing_is_stated(paper_md: str) -> bool:
     scope = "\n\n".join(part for part in (
         _abstract(paper_md),
@@ -2207,6 +2220,11 @@ def _conclusion_weight_boundary_is_stated(paper_md: str) -> bool:
         and "minority slice" in conclusion
         and any(token in conclusion for token in ("does not establish", "not establish"))
     )
+
+
+def _conclusion_recommendation_scope_is_stated(paper_md: str) -> bool:
+    conclusion = _section(paper_md, "Conclusion")
+    return not unsupported_general_health_claim_spans(conclusion) and any(token in conclusion.lower() for token in ("non-supportive for clinical efficacy or general health", "does not support broad causal, clinical, or policy claims"))
 
 
 def _direction_tally_audit_is_stated(paper_md: str) -> bool:
@@ -2454,23 +2472,27 @@ def _prior_publication_differentiation_is_stated(paper_md: str) -> bool:
     )
 
 
-def _admission_funnel_numeric_consistency_is_stated(paper_md: str) -> bool:
-    lower = paper_md.lower()
-    if all(token in lower for token in ("corpus-count reconciliation:", "classified source candidates", "admitted source counts are not interchangeable")):
-        return True
-    if (
-        "admission-bucket note:" in lower
-        and "not an additive conservation table" in lower
-        and "claim-binding states" in lower
-    ):
-        return True
-    if (
-        "stepwise reconciliation:" in lower
-        and "classified source candidates" in lower
-        and "admitted final sources" in lower
-    ):
-        return True
+def _admission_funnel_numeric_consistency_is_stated(paper_md: str, ask: str) -> bool:
+    labels = {"classified": r"classified(?: source)? candidates?", "admitted": r"admitted(?: final)?(?: sources?| receipts?| source base)?"}
+    requested: dict[str, int] = {}
+    for key, label in labels.items():
+        match = re.search(rf"\b(\d+)\s+{label}\b|\b{label}[^\d\n]{{0,12}}(\d+)\b", ask, re.I)
+        if match:
+            requested[key] = int(match.group(1) or match.group(2))
     rows = _funnel_counts(paper_md)
+    markers = ("corpus-count reconciliation:", "admission-bucket note:", "stepwise reconciliation:")
+    reconciliation = "\n".join(paragraph for paragraph in re.split(r"\n\s*\n", paper_md) if any(marker in paragraph.lower() for marker in markers))
+    exact_note = all(re.search(rf"(?:\b{count}\s+{labels[key]}\b|\b{labels[key]}[^\d\n]{{0,12}}{count}\b)", reconciliation, re.I) for key, count in requested.items())
+    row_counts = {"classified": rows.get("classified source candidates") or rows.get("classified candidates"), "admitted": rows.get("admitted final sources") or rows.get("admitted final receipts")}
+    exact_rows = all(row_counts[key] == count for key, count in requested.items())
+    if requested.keys() == labels.keys() and exact_rows:
+        return True
+    if requested and not (exact_note or exact_rows):
+        return False
+    reconciliation_lower = reconciliation.lower()
+    accepted_notes = (("corpus-count reconciliation:", "classified source candidates", "admitted source counts are not interchangeable"), ("admission-bucket note:", "not an additive conservation table", "claim-binding states"), ("stepwise reconciliation:", "classified source candidates", "admitted final sources"))
+    if any(all(token in reconciliation_lower for token in note) for note in accepted_notes):
+        return True
     if not rows:
         return False
     no_extractable = rows.get("no extractable claims")
@@ -3171,7 +3193,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_evidence_tier_directness_bounds, _paper_only(_evidence_tier_directness_bounds_are_stated)),
     (_asks_search_summary_scope_note, _paper_only(_search_summary_scope_note_is_stated)),
     (_asks_additive_screening_flow, _paper_only(_additive_screening_flow_is_stated)),
-    (_asks_admission_funnel_numeric_consistency, _paper_only(_admission_funnel_numeric_consistency_is_stated)),
+    (_asks_admission_funnel_numeric_consistency, _paper_ask(_admission_funnel_numeric_consistency_is_stated)),
     (_asks_prisma_all_included_rationale, _paper_only(_prisma_all_included_rationale_is_stated)),
     (_asks_single_source_proportionality, _paper_only(_single_source_proportionality_is_stated)),
     (_asks_claim_count_audit, _paper_only(_claim_count_audit_is_stated)),
@@ -3195,6 +3217,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (lambda text: outcome_label_rename(text) is not None, _paper_ask(outcome_label_cleanup_is_stated)),
     (_asks_substantive_conclusion, _paper_only(_substantive_conclusion_is_stated)),
     (_asks_conclusion_weight_boundary, _paper_only(_conclusion_weight_boundary_is_stated)),
+    (_asks_conclusion_recommendation_scope, _paper_only(_conclusion_recommendation_scope_is_stated)),
     (_asks_source_count_bundle_reconciliation, _paper_only(_source_count_bundle_reconciliation_is_stated)),
     (_asks_corpus_count_reconciliation, _paper_only(_corpus_count_reconciliation_is_stated)),
     (_asks_evidence_honesty_repetition, _paper_only(_evidence_honesty_repetition_is_low)),

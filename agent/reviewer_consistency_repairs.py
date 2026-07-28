@@ -36,6 +36,7 @@ _MECHANISTIC_ABSENCE_RE = re.compile(
     r"no mechanistic sources?|absence of mechanistic evidence)\b",
     re.I,
 )
+_EVIDENCE_PROFILE_COUNT_RE = re.compile(r"\b\d+\s+direct clinical sources?,\s+\d+\s+adjacent, review, or context sources?,\s+and\s+\d+\s+mechanistic or model-system sources?\b", re.I)
 _POOLING_POSITIVE_RES = (
     re.compile(r"\bquantitative pooling (?:was )?(?:applied|performed|conducted|used)\b", re.I),
     re.compile(
@@ -51,13 +52,41 @@ _POOLING_NEGATION_RE = re.compile(
     r"\b(?:pool|meta-analy)[^.!?]{0,40}\b(?:not|never)\b",
     re.I,
 )
-_GENERIC_SCOPE_TOKENS = frozenset({
-    "adjacent", "and", "evidence", "other", "outcome", "reviewed", "slice",
-})
+_GENERIC_SCOPE_TOKENS = frozenset({"adjacent", "and", "evidence", "other", "outcome", "reviewed", "slice"})
+_GENERAL_HEALTH_TARGET_RE, _CLAUSE_BREAK_RE = re.compile(r"\b(?:general\s+health|lifestyle\s+intervention)\b", re.I), re.compile(r"\n+|[;:!?]|(?<!\bdr)(?<!\bmr)(?<!\bmrs)(?<!\bms)(?<!\bprof)(?<![A-Za-z]\.[A-Za-z])\.(?=\s+(?-i:[A-Z]))|(?<!\bet al)(?<!\be\.g)(?<!\bi\.e)(?<!\bvs)(?<!\bdr)(?<!\bmr)(?<!\bmrs)(?<!\bms)(?<!\bprof)(?<!\bfig)(?<!\beq)(?<!\bno)(?<!\bapprox)(?<!\bdept)(?<!\binc)(?<!\bjr)(?<!\bsr)(?<!\bst)(?<![A-Za-z]\.[A-Za-z])\.(?=\s|\Z)|,\s*(?=(?:it\b|the\s+intervention\b|is\b|can\b|may\b|should\b|supports?\b|recommends?\b|endorses?\b|adopts?\b))|\b(?:but|however|yet|although|while|whereas|because)\b|\b(?:and|or)\b(?=\s+(?:it\b|the\s+(?:evidence|intervention)\b|evidence\b|results?\b|this\b|these\b|those\b|we\b|they\b|he\b|she\b|is\b|are\b|can\b|may\b|should\b))", re.I)
+_RECOMMENDATION_ACTION_RE = re.compile(r"(?<![\w-])(?:support(?:s|ed)?|recommend(?:s|ed)?|endorse(?:s|d)?|adopt(?:s|ed|ion)?|used|appropriate|suitable)\b", re.I)
+_NEGATED_CLAUSE_RE = re.compile(r"\b(?:not(?!\s+(?:only|merely|just|simply)\b)|never|cannot|can't|doesn't|didn't|won't|couldn't|shouldn't|wouldn't|isn't|aren't|neither|no|insufficient|unable|unlikely|unclear|uncertain|unknown)\b|\bfail(?:s|ed)?\s+to\b", re.I)
+_SENTENCE_RE = re.compile(r"(?<!\S)(?P<body>\S(?:(?:(?:\b(?:dr|mr|mrs|ms|prof)\.|(?:\b[A-Za-z]\.){2,})(?=\s+\S)|\b(?:et al|e\.g|i\.e|vs|fig|eq|no|approx|dept|inc|jr|sr|st)\.(?=\s+(?-i:[a-z0-9(\[]))|[.!?](?!\s|\Z)|[^.!?\n])*(?:[.!?](?=\s|\Z)|\Z)))", re.I)
+_BOUND_RECOMMENDATION_RE = re.compile(r"(?<![\w-])(?:(?P<modal_use>(?:can|may|should|could|would)\s+be\s+used)|(?P<modal_action>(?:can|may|should|could|would)\s+(?:support|recommend|endorse))|(?P<copula>(?:(?:is|are|was|were)|(?:has|have|had)\s+been)\s+(?:appropriate|suitable|recommended|endorsed|used))|(?P<verb>(?:to\s+)?(?:support(?:s|ed)?|recommend(?:s|ed)?|endorse(?:s|d)?)))(?![\w-])(?=[^.;!?\n]{0,120}\b(?:general\s+health|lifestyle\s+intervention)\b)", re.I)
+_NEGATIVE_ACTION_SUFFIX_RE = re.compile(r"^\s+(?:against\b|avoiding\b|avoidance\s+of\b|(?:that\s+)?(?:the\s+intervention|it)\s+not\s+be\s+used\b)", re.I)
+_AFFIRMATIVE_NOT_RE = re.compile(r"\bnot\s+(?:only|merely|just|simply)\s*$", re.I)
 
 
 def _normalise(text: str) -> str:
     return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
+
+
+def _action_is_negated(clause: str, start: int, end: int) -> bool:
+    prefix = clause[:start]
+    if boundaries := list(re.finditer(r"(?:\b[A-Za-z]\.){2,}(?=\s+[A-Z])", prefix)):
+        boundary, before = boundaries[-1], prefix[:boundaries[-1].start()]
+        after = prefix[boundary.end():]
+        if not (re.search(r"\bno(?:\s+(?!(?:in|from|by|of|at|on|for|with|to|the)\b)\w+){0,3}\s*$", before, re.I) or (re.search(r"\b(?:no|not\s+(?:a|any))(?:\s+\w+){0,3}\s+evidence\s+(?:by|from)\s+(?:(?:a|an|any|the)\s+)?$", before, re.I) or re.search(r"\b(?:no|not\s+(?:a|any))(?:\s+\w+){0,3}\s+evidence\b[^.!?]*\b(?:by|from)\s+(?:(?:a|an|any|the)\s+)?$", before, re.I) and (clause[start:start + 3].lower() == "to " or re.search(r"\bto\s*$", after, re.I))) and re.fullmatch(r"\s*(?:[A-Z]{2,}(?:-[a-z][\w-]+)?|[A-Z][\w-]+(?:\s+(?:(?:and|of|for|the)\s+)?[A-Z][\w-]+)+)(?:\s+(?:report|study|trial|guidance|evidence|data|source))?(?:\s+\w+ly){0,2}(?:\s+to)?\s*", after) and (not re.fullmatch(r"(?:support|recommend(?:s|ed)?|endorse(?:s|d)?|adopt(?:s|ed)?|used)", clause[start:end].strip(), re.I) or re.search(r"\bto\s*$", after, re.I)) or re.search(r"\b(?:no|not\s+(?:a|any))(?:\s+\w+){0,3}\s+evidence\b[^.!?]*\bin\s+(?:(?:a|an|any|the)\s+)?$", before, re.I) and re.fullmatch(r"\s*(?:[A-Z]{2,}(?:-[a-z][\w-]+)?|[A-Z][\w-]+(?:\s+(?:(?:and|of|for|the)\s+)?[A-Z][\w-]+)+)(?:\s+(?:report|study|trial|guidance|evidence|data|source))?(?:\s+\w+ly){0,2}(?:\s+to)?\s*", after) and (clause[start:start + 3].lower() == "to " or re.search(r"\bto\s*$", after, re.I))):
+            prefix = after
+    return not _AFFIRMATIVE_NOT_RE.search(prefix) and bool(_NEGATED_CLAUSE_RE.search(prefix + ("to" if clause[start:start + 3].lower() == "to " else "")) or _NEGATIVE_ACTION_SUFFIX_RE.match(clause[end:]))
+
+
+def unsupported_general_health_claim_spans(text: str) -> tuple[tuple[int, int], ...]:
+    return tuple(sentence.span("body") for sentence in _SENTENCE_RE.finditer(text) if any(_GENERAL_HEALTH_TARGET_RE.search(clause) and any(not _action_is_negated(clause, action.start(), action.end()) for action in _RECOMMENDATION_ACTION_RE.finditer(clause)) for clause in _CLAUSE_BREAK_RE.split(sentence.group("body"))))
+
+
+def bound_unsupported_general_health_claims(text: str) -> tuple[str, int]:
+    breaks, patched = list(_CLAUSE_BREAK_RE.finditer(text)), text
+    matches = [(start, match) for start, end in zip([0, *[item.end() for item in breaks]], [*[item.start() for item in breaks], len(text)], strict=True) for match in _BOUND_RECOMMENDATION_RE.finditer(text[start:end]) if not _action_is_negated(text[start:end], match.start(), match.end()) and not _AFFIRMATIVE_NOT_RE.search(text[start:start + match.start()])]
+    for start, match in reversed(matches):
+        replacement = (f"{match.group('copula').split()[0]} {'not been' if ' been ' in match.group('copula').lower() else 'not'} established{' for use' if match.group('copula').lower().endswith('used') else ''}" if match.group("copula") else "cannot be established for use" if match.group("modal_use") else "not to establish" if match.group("verb") and match.group("verb").lower().startswith("to ") else "cannot establish")
+        patched = patched[:start + match.start()] + replacement + patched[start + match.end():]
+    return patched, len(matches)
 
 
 def _has_any(text: str, *tokens: str) -> bool:
@@ -65,9 +94,7 @@ def _has_any(text: str, *tokens: str) -> bool:
 
 
 def _asks_denominator(text: str) -> bool:
-    return "denominator" in text and "direct source" in text and _has_any(
-        text, "all corpus", "total direct sources", "outcome slice", "reconcile", "applies",
-    )
+    return "denominator" in text and "direct source" in text and _has_any(text, "all corpus", "total direct sources", "outcome slice", "reconcile", "applies")
 
 
 def _asks_unbundled(text: str) -> bool:
@@ -77,36 +104,29 @@ def _asks_unbundled(text: str) -> bool:
     ) or "missing in text citations" in text and "references list" in text) and _has_any(
         text, "remove", "add them to the source bundle", "verification token", "bundle provenance",
         "add the missing",
-    )
+    ) or bool(re.search(_AUTHOR_YEAR_RE.pattern, text, re.I)) and all(token in text for token in ("reference", "remove")) and _has_any(text, "inline citation", "references section")
 
 
 def _asks_pooling(text: str) -> bool:
-    return "pooling" in text and _has_any(
-        text, "no quantitative pooling", "no pooling", "not presented", "does not occur",
-        "remove the implication", "remove implication", "pooling artifact",
-    )
+    return "pooling" in text and _has_any(text, "no quantitative pooling", "no pooling", "not presented", "does not occur", "remove the implication", "remove implication", "pooling artifact")
 
 
 def _asks_cross_domain(text: str) -> bool:
-    return "cross domain synthesis" in text and "tension" in text and _has_any(
-        text, "template prose", "generic", "source specific", "direction code", "load bearing",
-    )
+    return "cross domain synthesis" in text and "tension" in text and _has_any(text, "template prose", "generic", "source specific", "direction code", "load bearing")
 
 
 def _asks_mechanistic(text: str) -> bool:
-    return "mechanistic" in text and _has_any(
+    return "mechanistic" in text and (_has_any(
         text, "no mechanistic source", "no sources classified primarily as mechanistic",
         "absence of mechanistic", "mechanistic content",
     ) and _has_any(
         text, "clarify", "correct", "decide consistently", "recode", "adjust", "resolve",
         "reconcile", "framing",
-    )
+    ) or _has_any(text, "enumerate which source", "remove the mechanistic count"))
 
 
 def _asks_mixed(text: str) -> bool:
-    return "mixed" in text and "concordant" in text and _has_any(
-        text, "reconcile", "do not both label", "internally",
-    )
+    return "mixed" in text and "concordant" in text and _has_any(text, "reconcile", "do not both label", "internally")
 
 
 _ASK_CHECKS = (
@@ -457,18 +477,10 @@ def _cross_domain_is_stated(paper_md: str, ask: str, rows: Rows) -> bool:
 
 
 def _mechanistic_rows(rows: Rows) -> list[dict[str, Any]]:
-    fields = ("directness", "evidence_type", "source_type", "role", "study_design")
-    return [
-        row for row in rows
-        if derive_receipt_lane(row) in {"human_mechanistic", "animal_preclinical"}
-        or any(
-            re.search(r"\b(?:mechanistic|model[- ]system|preclinical)\b", str(row.get(field) or ""), re.I)
-            for field in fields
-        )
-    ]
+    return [row for row in rows if derive_receipt_lane(row) in {"human_mechanistic", "animal_preclinical"}]
 
 
-def _mechanistic_note(ask: str, rows: Rows) -> str:
+def _mechanistic_note(rows: Rows) -> str:
     classified = _mechanistic_rows(rows)
     if classified:
         roster = ", ".join(
@@ -479,21 +491,20 @@ def _mechanistic_note(ask: str, rows: Rows) -> str:
             f"{_MECHANISTIC_MARKER} Source-level classification separates {roster} as "
             "mechanistic or model-system evidence; these sources do not upgrade clinical effect evidence."
         )
-    named = _named_rows(ask, rows)
-    roles = ", ".join(
-        f"{_row_label(row)} ({LANE_DISPLAY.get(derive_receipt_lane(row), derive_receipt_lane(row))})"
-        for row in named
-    )
-    named_clause = f" The named retained sources are classified by primary study role as {roles}." if roles else ""
     return (
         f"{_MECHANISTIC_MARKER} No retained source is classified primarily as mechanistic or model-system "
-        f"evidence under the source-level schema.{named_clause} Mechanistic or biomarker content can still "
+        "evidence under the source-level schema. Mechanistic or biomarker content can still "
         "occur within those sources, so this is not evidence that mechanistic content is absent."
     )
 
 
+def _evidence_profile_count_phrase(rows: Rows) -> str:
+    direct, mechanistic = sum(effective_directness(row) == "direct" for row in rows), len(_mechanistic_rows(rows))
+    return f"{direct} direct clinical sources, {max(0, len(rows) - direct - mechanistic)} adjacent, review, or context sources, and {mechanistic} mechanistic or model-system sources"
+
+
 def _repair_mechanistic(paper_md: str, ask: str, rows: Rows) -> tuple[str, int]:
-    note = _mechanistic_note(ask, rows)
+    note = _mechanistic_note(rows)
     lines = []
     for line in paper_md.splitlines():
         sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9*_(])", line)
@@ -502,6 +513,7 @@ def _repair_mechanistic(paper_md: str, ask: str, rows: Rows) -> tuple[str, int]:
             if not _MECHANISTIC_ABSENCE_RE.search(sentence) or _has_bundle_anchor(sentence, rows)
         ))
     patched = "\n".join(lines)
+    patched = _EVIDENCE_PROFILE_COUNT_RE.sub(_evidence_profile_count_phrase(rows), patched)
     heading = "Evidence Landscape" if _section_span(patched, "Evidence Landscape") else "Limitations"
     patched, inserted = _upsert_note(patched, heading, _MECHANISTIC_MARKER, note)
     return patched, int(patched != paper_md or inserted)
@@ -510,14 +522,11 @@ def _repair_mechanistic(paper_md: str, ask: str, rows: Rows) -> tuple[str, int]:
 def _mechanistic_is_stated(paper_md: str, ask: str, rows: Rows) -> bool:
     if not rows:
         lower = paper_md.lower()
-        return all(token in lower for token in (
-            "classified primarily as mechanistic",
-            "mechanistic or biomarker content",
-            "not evidence that mechanistic content is absent",
-        ))
-    note = _mechanistic_note(ask, rows)
+        return all(token in lower for token in ("classified primarily as mechanistic", "mechanistic or biomarker content", "not evidence that mechanistic content is absent"))
+    note = _mechanistic_note(rows)
     remainder = paper_md.replace(note, "")
-    return note in paper_md and not _MECHANISTIC_ABSENCE_RE.search(remainder)
+    expected = _evidence_profile_count_phrase(rows).lower()
+    return note in paper_md and not _MECHANISTIC_ABSENCE_RE.search(remainder) and all(profile.lower() == expected for profile in _EVIDENCE_PROFILE_COUNT_RE.findall(remainder))
 
 
 def _mixed_note(row: dict[str, Any]) -> str:

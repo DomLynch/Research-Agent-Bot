@@ -1593,6 +1593,7 @@ def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
 
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = _strip_background_references(_clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8")))
+    paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
     title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"

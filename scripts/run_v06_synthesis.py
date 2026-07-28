@@ -26,7 +26,7 @@ from agent.llm_client import (  # noqa: E402
 from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
 )
-from agent.evidence_lanes import effective_directness  # noqa: E402
+from agent.evidence_lanes import derive_receipt_lane, effective_directness  # noqa: E402
 from agent.paper_writer import render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -35,7 +35,7 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
     repair_abstract_claim_strength,
     repair_claim_strength,
 )
-from agent import revision_consistency as _revision_consistency  # noqa: E402
+from agent import revision_consistency as _revision_consistency, revision_quality as _revision_quality  # noqa: E402
 from agent.source_hygiene import is_notice_only_source_title  # noqa: E402
 from agent.revision_evidence import (  # noqa: E402
     SNAPSHOT_DIR,
@@ -524,10 +524,10 @@ def _translation_boundary_statement(topic: str) -> str:
             "clinical-trial settings given current evidence."
         )
     return (
-        f"The current corpus may support {topic} as a general health or "
-        "lifestyle intervention where otherwise indicated, but does not "
-        "justify marketing it as a standalone longevity intervention with "
-        "proven hard clinical-outcome effects."
+        f"The current corpus maps evidence for {topic} but does not establish "
+        "a general health, lifestyle, clinical, or policy recommendation. Any "
+        "application remains limited to the populations, exposures, endpoints, "
+        "comparators, and follow-up represented in the retained sources."
     )
 
 
@@ -987,16 +987,8 @@ def _section_backstop_context() -> dict[str, object]:
             return f"the {', '.join(labels)} outcome classes"
         return f"the {', '.join(labels[:-1])} and {labels[-1]} outcome classes"
 
-    def _count(field: str, value: str) -> int:
-        return sum(1 for r in receipts if str(r.get(field, "")).lower() == value)
-
     def _is_mechanistic_or_model_system(r: dict[str, Any]) -> bool:
-        tier = str(r.get("evidence_tier") or "").upper()
-        if str(r.get("directness") or "").lower() == "mechanistic" or tier.startswith("C"):
-            return True
-        title = str(r.get("title") or r.get("paper_id") or "").replace("_", " ")
-        cls = _taxonomy.infer_from_paper_meta({"title": title, "abstract": ""})
-        return cls.directness == "mechanistic" or cls.tier.startswith("C")
+        return derive_receipt_lane(r) in {"human_mechanistic", "animal_preclinical"}
 
     def _labels(field: str, value: str, limit: int = 3) -> str:
         labels: list[str] = []
@@ -1032,7 +1024,7 @@ def _section_backstop_context() -> dict[str, object]:
         counts: Counter[str] = Counter(
             outcome_display(str(r.get("outcome_class") or "other")).lower()
             for r in receipts
-            if str(r.get("effect_direction", "")).lower() == effect
+            if _revision_quality.resolved_effect_direction(r) == effect
         )
         top = [k for k, _v in counts.most_common(3) if k]
         # Return a self-contained noun phrase so prose templates like
@@ -1041,7 +1033,7 @@ def _section_backstop_context() -> dict[str, object]:
         # complaints when slotted into those templates.
         return _outcome_list_phrase(top)
 
-    direct = _count("directness", "direct")
+    direct = sum(effective_directness(r) == "direct" for r in receipts)
     mechanistic = sum(1 for r in receipts if _is_mechanistic_or_model_system(r))
     # The 3-bucket abstract tally must PARTITION the corpus so the rendered
     # numbers sum to receipt_n: "adjacent" absorbs every non-direct,
@@ -1071,11 +1063,11 @@ def _section_backstop_context() -> dict[str, object]:
         "negative": _outcomes("negative"),
         "null": _outcomes("null"),
         "mixed": _outcomes("mixed"),
-        "direct_refs": _labels("directness", "direct"),
+        "direct_refs": _labels_for(lambda r: effective_directness(r) == "direct"),
         "mech_refs": _labels_for(_is_mechanistic_or_model_system),
-        "positive_refs": _labels("effect_direction", "positive"),
-        "negative_refs": _labels("effect_direction", "negative"),
-        "null_refs": _labels("effect_direction", "null"),
+        "positive_refs": _labels_for(lambda r: _revision_quality.resolved_effect_direction(r) == "positive"),
+        "negative_refs": _labels_for(lambda r: _revision_quality.resolved_effect_direction(r) == "negative"),
+        "null_refs": _labels_for(lambda r: _revision_quality.resolved_effect_direction(r) == "null"),
         "thesis": str(manifest.get("thesis") or "The evidence profile is mixed."),
         "outcome_rows": _section_backstop_outcome_rows(receipts),
     }
@@ -1089,8 +1081,8 @@ def _section_backstop_outcome_rows(
         by_outcome[outcome_key(str(receipt.get("outcome_class") or "other"))].append(receipt)
     rows: list[dict[str, object]] = []
     for outcome, group in sorted(by_outcome.items(), key=lambda x: (-len(x[1]), x[0]))[:6]:
-        directions = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
-        directness = Counter(str(r.get("directness") or "unclassified").lower() for r in group)
+        directions = Counter(_revision_quality.resolved_effect_direction(r) for r in group)
+        directness = Counter("mechanistic" if derive_receipt_lane(r) in {"human_mechanistic", "animal_preclinical"} else effective_directness(r) for r in group)
         claim_n = sum(int(r.get("n_claims") or 0) for r in group)
         refs = [
             str(r.get("citation_token") or r.get("body_citation") or r.get("paper_id") or r.get("receipt_id") or "").strip()
@@ -1249,75 +1241,6 @@ def _evidence_tier_phrase(n: int, label: str) -> str:
     if value == 0:
         return f"no sources classified primarily as {label} evidence"
     return f"{value} {label} {'source' if value == 1 else 'sources'}"
-
-
-def _ensure_results_summary_table(
-    markdown: str, manifest: dict[str, Any],
-) -> tuple[str, bool]:
-    heading = "### Results Summary"
-    if heading in markdown:
-        return markdown, False
-    match = re.search(r"^## Results\s*$", markdown, re.MULTILINE)
-    if match is None:
-        return markdown, False
-    receipts = [
-        r for r in manifest.get("receipts", [])
-        if isinstance(r, dict) and r.get("outcome_class")
-    ]
-    if not receipts:
-        return markdown, False
-    by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for receipt in receipts:
-        by_outcome[outcome_key(str(receipt.get("outcome_class") or "other"))].append(receipt)
-    rows: list[str] = []
-    for outcome, group in sorted(
-        by_outcome.items(), key=lambda item: (-len(item[1]), item[0]),
-    )[:6]:
-        directions = Counter(
-            str(r.get("effect_direction") or "mixed").lower() for r in group
-        )
-        directness = Counter(
-            str(r.get("directness") or "indirect").lower() for r in group
-        )
-        dominant, dominant_n = directions.most_common(1)[0]
-        signal_name = {
-            "positive": "benefit signal",
-            "negative": "adverse or limiting signal",
-            "null": "no extracted directional signal",
-            "mixed": "mixed signal",
-        }.get(dominant, "mixed signal")
-        direct_parts = [
-            f"{directness[k]} {k}"
-            for k in ("direct", "indirect", "mechanistic", "review", "protocol")
-            if directness.get(k)
-        ]
-        claim_n = sum(int(r.get("n_claims") or 0) for r in group)
-        corpus_slice = f"n={len(group)}; claims={claim_n}"
-        if directness.get("direct", 0) == 0:
-            limitation = "no direct clinical anchor"
-        elif len(directions) > 1:
-            limitation = "directionally heterogeneous"
-        elif len(group) < 2:
-            limitation = "single-source support"
-        else:
-            limitation = "population and endpoint heterogeneity"
-        label = outcome_display(outcome)
-        rows.append(
-            f"- {label}: {corpus_slice}; "
-            f"{signal_name} in {dominant_n}/{len(group)} sources | "
-            f"directness: {'; '.join(direct_parts) or 'not classified'}; "
-            f"main limitation: {limitation}."
-        )
-    summary = "\n".join([heading, "", *rows])
-    insert_at = match.end()
-    return (
-        markdown[:insert_at].rstrip()
-        + "\n\n"
-        + summary
-        + "\n\n"
-        + markdown[insert_at:].lstrip(),
-        True,
-    )
 
 
 def _heading_pos(markdown: str, heading: str, start: int = 0) -> int:
@@ -3865,9 +3788,6 @@ async def _run_post_paper_pipeline(
         )
     )
     _refix_log.extend(_final_polish_log)
-    paper_md, _inserted_results_summary = _ensure_results_summary_table(
-        paper_md, manifest,
-    )
     if methods_md:
         paper_md = _run_mode.replace_methods_in_paper(paper_md, methods_md)
     paper_md, _final_surface_floor_log = _restore_public_surface_floors(
@@ -3882,7 +3802,6 @@ async def _run_post_paper_pipeline(
         _refix_log
         or any(i.auto_fixable for i in pre_issues)
         or paper_md != pre_final_cleanup_md
-        or _inserted_results_summary
         or _references_restored
     ):
         paper_path.with_suffix(".final_fixed_log.json").write_text(

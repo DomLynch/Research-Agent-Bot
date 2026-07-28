@@ -546,10 +546,9 @@ def _pipeline_jargon_issue_messages(paper_md: str) -> tuple[str, ...]:
     Each match emits the offending token + the academic-language
     replacement so the auto-fixer or a human author can swap it in.
     Universal — no topic-specific tokens."""
-    low = paper_md.lower()
     out: list[str] = []
     for jargon, replacement in _PIPELINE_JARGON_PUBLIC:
-        if jargon in low:
+        if re.search(rf"(?<![\w-]){re.escape(jargon)}(?![\w-])", paper_md, re.I):
             out.append(f"pipeline jargon in public prose: {jargon!r} → use {replacement!r}")
     return tuple(out)
 
@@ -566,7 +565,7 @@ def apply_pipeline_jargon_replacements(paper_md: str) -> str:
     out = paper_md
     ordered = sorted(_PIPELINE_JARGON_PUBLIC, key=lambda kv: -len(kv[0]))
     for jargon, replacement in ordered:
-        out = re.sub(re.escape(jargon), replacement, out, flags=re.IGNORECASE)
+        out = re.sub(rf"(?<![\w-]){re.escape(jargon)}(?![\w-])", replacement, out, flags=re.I)
     return out
 
 

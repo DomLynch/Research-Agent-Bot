@@ -283,6 +283,25 @@ def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     assert not re.search(r"10\.3344/kjp\.24202[.,;]", json.dumps(payload))
 
 
+def test_build_payload_removes_internal_full_paper_title_suffix(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    paper = run / "full_paper.md"
+    paper.write_text(
+        paper.read_text(encoding="utf-8").replace(
+            "# Research Synthesis: Topic",
+            "# Research Synthesis: Topic — full paper",
+            1,
+        ),
+        encoding="utf-8",
+    )
+
+    payload = daily.build_payload(run)
+
+    assert payload["title"] == "Research Synthesis: Topic"
+    assert payload["body_markdown"].startswith("# Research Synthesis: Topic\n")
+    assert "full paper" not in payload["body_markdown"].splitlines()[0].lower()
+
+
 def test_build_payload_strips_unbundled_background_references(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = run / "full_paper.md"

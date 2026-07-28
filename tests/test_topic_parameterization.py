@@ -704,7 +704,8 @@ def test_section_backstop_uses_lifestyle_boundary_for_exercise() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
         orch._ACTIVE_TOPIC = old_topic
 
-    assert "general health or lifestyle intervention" in backstop
-    assert "standalone longevity intervention with proven hard clinical-outcome effects" in backstop
+    assert "general health or lifestyle intervention" not in backstop
+    assert "does not establish a general health, lifestyle, clinical, or policy recommendation" in backstop
+    assert "populations, exposures, endpoints, comparators, and follow-up" in backstop
     assert "should not be used off-label" not in backstop
     assert submit._domain_frame_status({"body_markdown": backstop}) == "eligible"

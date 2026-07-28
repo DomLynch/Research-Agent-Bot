@@ -934,3 +934,64 @@ def test_non_actionable_animal_statement_does_not_trigger_repair() -> None:
         fixed, details = repair_revision_quality(PAPER, ROWS, ask)
         assert fixed == PAPER
         assert details == []
+
+
+def test_live_fasting_revision_repairs_counts_and_external_citation() -> None:
+    rows = [
+        {
+            "citation_token": "Trial 2025",
+            "source_title": "Human fasting randomized trial",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "positive",
+        },
+        {
+            "citation_token": "Review 2024",
+            "source_title": "Clinical fasting evidence review",
+            "directness": "review",
+            "evidence_tier": "B1",
+            "outcome_class": "cardiometabolic",
+            "effect_direction": "unclear",
+        },
+    ]
+    asks = [
+        (
+            "Either explicitly enumerate which source counts as the '1 mechanistic "
+            "or model-system source' in the Findings Map or remove the mechanistic-count "
+            "claim from the Abstract and Methods."
+        ),
+        (
+            "Add the surrogate-endpoint citation (Ioannidis 2005) to the References "
+            "section or remove the inline citation."
+        ),
+    ]
+    paper = (
+        "## Abstract\n\n"
+        "The evidence profile contains 1 direct clinical sources, 0 adjacent, review, "
+        "or context sources, and 1 mechanistic or model-system source.\n\n"
+        "## Methods\n\n"
+        "The corpus contains 1 direct clinical sources, 0 adjacent, review, or context "
+        "sources, and 1 mechanistic or model-system source.\n\n"
+        "## Evidence Landscape\n\n### Findings Map\n\nRows are source coded.\n\n"
+        "## Discussion\n\n"
+        "Surrogate outcomes require caution (Ioannidis 2005).\n\n"
+        "## References\n\n"
+        "- **Ioannidis 2005.** Methodological reference.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, "; ".join(asks))
+
+    expected = (
+        "1 direct clinical sources, 1 adjacent, review, or context sources, "
+        "and 0 mechanistic or model-system sources"
+    )
+    assert fixed.count(expected) == 2
+    assert "1 mechanistic or model-system source" not in fixed
+    assert "Mechanistic-content clarification:" in fixed
+    assert "Ioannidis 2005" not in fixed
+    assert {
+        "mechanistic_content_framing",
+        "unbundled_citation_cleanup",
+    }.issubset(details)
+    assert all(revision_quality_proof_is_stated(fixed, ask, rows) for ask in asks)

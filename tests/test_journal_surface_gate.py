@@ -1741,6 +1741,12 @@ def test_apply_pipeline_jargon_replacements_preserves_plain_english_receipt() ->
     assert apply_pipeline_jargon_replacements(text) == text
 
 
+def test_apply_pipeline_jargon_replacements_respects_token_boundaries() -> None:
+    from agent.journal_surface_gate import apply_pipeline_jargon_replacements
+    text = "The source-bounded conclusion stays within the evidence."
+    assert apply_pipeline_jargon_replacements(text) == text
+
+
 # Slice 16 — agent/journal_finalizer.py. Single deterministic
 # compiler-owned post-render pass. Five phases (Methods replace /
 # lane qualifier / terminology / reference closure / structural

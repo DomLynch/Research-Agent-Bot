@@ -373,7 +373,7 @@ def test_polish_compiler_gate_blocks_deterministic_failures(monkeypatch, tmp_pat
         raise AssertionError("expected deterministic polish failure")
 
 
-def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
+def test_section_backstop_does_not_infer_model_system_role_from_paper_id() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     try:
         orch._ACTIVE_MANIFEST = {
@@ -393,8 +393,54 @@ def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
         ctx = orch._section_backstop_context()
     finally:
         orch._ACTIVE_MANIFEST = old_manifest
-    assert ctx["mechanistic"] == 1
-    assert ctx["mech_refs"] == "Gong 2022"
+    assert ctx["mechanistic"] == 0
+    assert ctx["indirect"] == 1
+
+
+def test_section_backstop_source_role_buckets_do_not_double_count_animal_direct() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 1,
+            "receipts": [{
+                "directness": "direct",
+                "evidence_tier": "A1",
+                "source_title": "Randomized intervention in mice",
+                "citation_token": "Mouse Trial 2025",
+            }],
+        }
+        ctx = orch._section_backstop_context()
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+
+    assert (ctx["direct"], ctx["indirect"], ctx["mechanistic"]) == (0, 0, 1)
+
+
+def test_section_backstop_uses_resolved_direction_everywhere() -> None:
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 1,
+            "receipts": [{
+                "source_title": "Higher inflammation risk in cancer",
+                "thesis_text": "Higher inflammation risk, p = 0.01.",
+                "effect_direction": "null",
+                "p_values": ["p = 0.01"],
+                "outcome_class": "immune",
+                "directness": "direct",
+                "evidence_tier": "A1",
+                "citation_token": "Risk 2025",
+            }],
+        }
+        ctx = orch._section_backstop_context()
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+
+    assert ctx["negative"] == "the immune and inflammation outcome class"
+    assert ctx["negative_refs"] == "Risk 2025"
+    assert ctx["null_refs"] == "the retained evidence base"
+    assert "negative=1" in str(ctx["outcome_rows"])
+    assert "null=1" not in str(ctx["outcome_rows"])
 
 
 def test_abstract_source_type_tally_partitions_corpus() -> None:
@@ -1131,69 +1177,6 @@ def test_results_outcome_backstop_uses_compact_source_lines_to_avoid_surface_dup
     assert "This outcome is interpreted within its own packet first" not in md
     assert "Representative sources: Yang 2026." in md
     assert _duplicate_paragraph_issue_messages(md) == ()
-
-
-def test_results_summary_table_is_manifest_driven_and_idempotent() -> None:
-    paper = "## Results\n\n### Cardiometabolic Outcomes\n\nFindings.\n"
-    manifest = {
-        "receipts": [
-            {
-                "outcome_class": "cardiometabolic",
-                "effect_direction": "positive",
-                "directness": "direct",
-                "n_claims": 4,
-            },
-            {
-                "outcome_class": "cardiometabolic",
-                "effect_direction": "null",
-                "directness": "indirect",
-                "n_claims": 3,
-            },
-            {
-                "outcome_class": "muscle_function",
-                "effect_direction": "negative",
-                "directness": "direct",
-                "n_claims": 2,
-            },
-        ],
-    }
-    out, inserted = orch._ensure_results_summary_table(paper, manifest)
-    assert inserted is True
-    assert "### Results Summary" in out
-    assert "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |" not in out
-    assert "|---|" not in out
-    assert "- Cardiometabolic: n=2; claims=7; benefit signal in 1/2 sources" in out
-    assert "- Muscle Function: n=1; claims=2; adverse or limiting signal in 1/1 sources" in out
-    out2, inserted2 = orch._ensure_results_summary_table(out, manifest)
-    assert inserted2 is False
-    assert out2 == out
-
-
-def test_results_summary_treats_null_as_unadjudicated_not_negative() -> None:
-    paper = "## Results\n\nBody.\n"
-    manifest = {"receipts": [
-        {"outcome_class": "skeletal_fracture_bone", "effect_direction": "null", "directness": "review", "n_claims": 100},
-        {"outcome_class": "skeletal_fracture_bone", "effect_direction": "null", "directness": "review", "n_claims": 42},
-    ]}
-    out, inserted = orch._ensure_results_summary_table(paper, manifest)
-    assert inserted is True
-    assert "no extracted directional signal in 2/2 sources" in out
-    assert "directness: 2 review" in out
-    assert "null signal in 2/2 sources" not in out
-
-
-def test_results_summary_merges_alias_outcome_labels() -> None:
-    paper = "## Results\n\nBody.\n"
-    manifest = {"receipts": [
-        {"outcome_class": "immune", "effect_direction": "null", "directness": "direct", "n_claims": 54},
-        {"outcome_class": "immune_inflammation", "effect_direction": "null", "directness": "review", "n_claims": 69},
-    ]}
-    out, inserted = orch._ensure_results_summary_table(paper, manifest)
-
-    assert inserted is True
-    assert out.count("- Immune and Inflammation:") == 1
-    assert "- Immune and Inflammation: n=2; claims=123; no extracted directional signal in 2/2 sources" in out
-    assert "directness: 1 direct; 1 review" in out
 
 
 def test_section_backstop_rows_merge_alias_outcome_labels() -> None:

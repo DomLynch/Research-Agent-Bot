@@ -99,7 +99,7 @@ def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path)
     ]}), encoding="utf-8")
     fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
     assert logs
-    assert "no extracted directional signal in 2/2 sources" in fixed
+    assert "positive=0, negative=0, null=2, mixed=0, unclear=0 (n=2)" in fixed
     assert "null signal in 2/2 sources" not in fixed
 
 
@@ -262,8 +262,8 @@ def test_phase_f_distinguishes_source_statistics_from_null_receipt_summary(tmp_p
     fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
 
     assert logs
-    assert "significant source statistic in 2/2 sources; receipt-level direction coded null" in fixed
-    assert "significant source statistic in 1/1 sources; receipt-level direction coded null" in fixed
+    assert "positive=0, negative=0, null=2, mixed=0, unclear=0 (n=2)" in fixed
+    assert "positive=0, negative=0, null=1, mixed=0, unclear=0 (n=1)" in fixed
     assert "no extracted directional signal in 2/2 sources" not in fixed
     assert "Source-context map" in fixed
     assert "- Oncology and cancer context: 2 sources; significant source statistic in 2/2 sources; receipt-level direction coded null." in fixed
@@ -298,8 +298,131 @@ def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> Non
     assert "Directional coding: null=1" not in fixed
     assert (
         "Contextual Adjacent Evidence remains a separate Results slice for Everolimus "
-        "(n=1; claims=28; significant source statistic in 1/1 sources; receipt-level direction coded null"
+        "(n=1; claims=28; positive=0, negative=0, null=1, mixed=0, unclear=0 (n=1)"
     ) in fixed
+
+
+def test_phase_f_replaces_stale_summary_with_one_canonical_direction_table(
+    tmp_path: Path,
+) -> None:
+    paper = (
+        "## Results\n\n"
+        "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Cardiometabolic | n=3 | unclear | 2 direct | limited |\n\n"
+        "### Results Summary\n\n"
+        "- Cardiometabolic: n=3; claims=9; mixed signal in 3/3 sources | "
+        "directness: 2 direct; 1 review; main limitation: directionally heterogeneous.\n\n"
+        "## Cross-Domain Synthesis\n\n"
+        "Cardiometabolic (positive=1, null=1, unclear=1).\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "direct"},
+            {"outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "direct"},
+            {"outcome_class": "cardiometabolic", "effect_direction": "unclear", "directness": "review"},
+        ],
+    }))
+
+    fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    profile = "positive=1, negative=0, null=1, mixed=0, unclear=1 (n=3)"
+    results = fixed.split("## Results", 1)[1].split("## Cross-Domain Synthesis", 1)[0]
+    assert logs
+    assert "| Outcome class | Corpus slice | Direction profile |" in results
+    assert results.count(profile) >= 1
+    assert "### Results Summary" not in results
+    assert "mixed signal in 3/3 sources" not in results
+
+
+def test_phase_f_removes_legacy_unclassified_results_summary(tmp_path: Path) -> None:
+    paper = (
+        "## Results\n\n### Results Summary\n\n"
+        "- Cardiometabolic: n=1; claims=2; benefit signal in 1/1 sources | "
+        "directness: not classified; main limitation: single-source support.\n\n"
+        "## Discussion\n\nBounded interpretation.\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"outcome_class": "cardiometabolic", "effect_direction": "positive"},
+        ],
+    }))
+
+    fixed, _logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert "### Results Summary" not in fixed
+
+
+def test_phase_f_preserves_author_written_results_summary(tmp_path: Path) -> None:
+    summary = (
+        "### Results Summary\n\n"
+        "Adjudication found that effect direction differed by endpoint and follow-up."
+    )
+    paper = f"## Results\n\n{summary}\n\n## Discussion\n\nBounded interpretation.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"outcome_class": "cardiometabolic", "effect_direction": "mixed", "directness": "direct"},
+        ],
+    }))
+
+    fixed, _logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert summary in fixed
+
+
+def test_phase_f_preserves_structured_author_results_summary(tmp_path: Path) -> None:
+    summary = (
+        "### Results Summary\n\n"
+        "- Cardiometabolic: n=3; claims=9; mixed signal in 3/3 sources.\n\n"
+        "This author-written interpretation explains why endpoint timing changes the result."
+    )
+    paper = f"## Results\n\n{summary}\n\n## Discussion\n\nBounded interpretation.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"outcome_class": "cardiometabolic", "effect_direction": "mixed", "directness": "direct"},
+        ],
+    }))
+
+    fixed, _logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert summary in fixed
+
+
+def test_phase_f_preserves_authored_single_line_summary(tmp_path: Path) -> None:
+    summary = (
+        "### Results Summary\n\n"
+        "- Cardiometabolic: n=3; claims=9; mixed signal in 3/3 sources | "
+        "directness: 2 direct; main limitation: endpoint timing altered interpretation."
+    )
+    paper = f"## Results\n\n{summary}\n\n## Discussion\n\nBounded interpretation.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [
+            {"outcome_class": "cardiometabolic", "effect_direction": "mixed", "directness": "direct"},
+        ],
+    }))
+
+    fixed, _logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert summary in fixed
+
+
+def test_phase_f_uses_canonical_role_for_direct_animal_source(tmp_path: Path) -> None:
+    paper = "## Results\n\nExisting bounded results.\n\n## Discussion\n\nInterpretation.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "receipts": [{
+            "outcome_class": "contextual_other",
+            "effect_direction": "null",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "source_title": "Randomized intervention in mice",
+        }],
+    }))
+
+    fixed, _logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+    results = fixed.split("## Results", 1)[1].split("## Discussion", 1)[0]
+
+    assert "| 1 mechanistic |" in results
+    assert "| 1 direct |" not in results
 
 
 def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> None:
@@ -640,6 +763,51 @@ def test_admission_funnel_clarification_covers_coherent_accounting_ask(tmp_path:
     fixed, _ = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
 
     assert "Admission-bucket note:" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_admission_funnel_clarification_covers_live_overlapping_bucket_ask(
+    tmp_path: Path,
+) -> None:
+    import revision_coverage
+
+    ask = (
+        "Reconcile the source-admission funnel counts and explain how the 73 "
+        "classified candidates resolve to 66 admitted final sources, including "
+        "how partial-only and mixed partial-or-none candidates are handled."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### Source admission funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Classified source candidates | 73 |\n"
+        "| Mixed partial-or-none claim-binding candidates | 51 |\n"
+        "| Partial-only claim-binding candidates | 16 |\n"
+        "| Admitted final sources | 66 |\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 66,
+        "receipt_funnel": {
+            "classified_receipt_candidates": 73,
+            "counts": {
+                "admitted_receipts": 66,
+                "original_strict_high_confidence_receipts": 29,
+            },
+        },
+    }))
+    (tmp_path / "researka_revision_request.json").write_text(
+        json.dumps({"feedback": ask}),
+    )
+
+    fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(
+        paper, tmp_path,
+    )
+
+    assert logs
+    assert "classified source candidates (73) -> admitted final sources (66)" in fixed
+    assert "overlapping diagnostic states" in fixed
+    assert "not admitted" in fixed and "= 7" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
@@ -1256,6 +1424,12 @@ def test_evidence_boundary_note_is_revision_scoped(tmp_path: Path) -> None:
 
 
 def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Path) -> None:
+    import revision_coverage
+
+    ask = (
+        "Tighten the Conclusion to match the bounded claim posture and do not "
+        "allow soft lifestyle recommendations."
+    )
     paper = (
         "## Abstract\n\nThis synthesis supports clinical translation.\n\n"
         "## Conclusion\n\nThe current corpus may support the topic as a general health or lifestyle intervention where otherwise indicated.\n"
@@ -1280,6 +1454,8 @@ def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Pa
     assert "does not support broad causal, clinical, or policy claims" in fixed
     assert "may support the topic as a general health or lifestyle intervention" not in fixed
     assert "non-supportive for clinical efficacy or general health-intervention claims" in fixed
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert refixed == fixed
     assert relogs == []
     assert logs == [
@@ -1290,6 +1466,262 @@ def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Pa
             detail="added evidence-honesty note to 2 section(s); replaced unsupported conclusion claims=1; null_or_no_signal=3/4; direct=0/4",
         )
     ]
+
+
+def test_general_health_claim_repair_covers_affirmative_variants() -> None:
+    variants = (
+        "The intervention can be used as a general health intervention.",
+        "The intervention may be used as a general health intervention.",
+        "The intervention is appropriate as a lifestyle intervention.",
+        "The intervention is suitable as a lifestyle intervention.",
+        "The evidence supports its use as a lifestyle intervention.",
+        "The evidence supports adoption as a lifestyle intervention.",
+    )
+
+    for sentence in variants:
+        fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(
+            f"## Conclusion\n\n{sentence}\n",
+        )
+        assert changed == 1
+        assert "can be used" not in fixed
+        assert "may be used" not in fixed
+        assert "is appropriate" not in fixed
+        assert "is suitable" not in fixed
+        assert "supports its use" not in fixed
+        assert "supports adoption" not in fixed
+        assert "non-supportive for clinical efficacy or general health-intervention claims" in fixed
+
+    bounded = (
+        "## Conclusion\n\n"
+        "The evidence does not support its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(bounded) == (bounded, 0)
+    uncertain = (
+        "## Conclusion\n\n"
+        "The evidence is insufficient to determine whether the intervention is "
+        "appropriate as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(uncertain) == (uncertain, 0)
+    contrastive = (
+        "## Conclusion\n\nThe intervention does not prevent cancer but is suitable "
+        "as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(contrastive)
+    assert changed == 1
+    assert "is suitable as a lifestyle intervention" not in fixed
+    bounded = (
+        "## Conclusion\n\nThe evidence fails to support its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(bounded) == (bounded, 0)
+    past_bounded = (
+        "## Conclusion\n\nThe trial failed to support its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(past_bounded) == (past_bounded, 0)
+    cross_clause = (
+        "## Conclusion\n\nThe evidence supports further research but does not "
+        "support its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(cross_clause) == (cross_clause, 0)
+    not_only = (
+        "## Conclusion\n\nThe evidence not only supports its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(not_only) == (not_only, 0)
+    coordinated = (
+        "## Conclusion\n\nThe evidence not only supports its use as a lifestyle "
+        "intervention but also recommends adoption.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(coordinated) == (coordinated, 0)
+    because = (
+        "## Conclusion\n\nThe evidence supports further research because it does "
+        "not support its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(because) == (because, 0)
+    unlikely = (
+        "## Conclusion\n\nThe evidence is unlikely to support its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(unlikely) == (unlikely, 0)
+    coordinated_safe = (
+        "## Conclusion\n\nThe evidence does not support or recommend its use as a lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(coordinated_safe) == (coordinated_safe, 0)
+    coordinated_unsafe = (
+        "## Conclusion\n\nThe evidence supports adoption and use as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(coordinated_unsafe)
+    assert changed == 1
+    assert "cannot establish adoption and use" in fixed
+    not_merely = (
+        "## Conclusion\n\nThe evidence does not merely support its use as a lifestyle intervention; it establishes it.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(not_merely) == (not_merely, 0)
+    for bounded in (
+        "The authors recommend against using it as a lifestyle intervention.",
+        "The evidence supports avoiding its use as a lifestyle intervention.",
+    ):
+        paper = f"## Conclusion\n\n{bounded}\n"
+        assert journal_finalizer._replace_unsupported_general_health_claim(paper) == (paper, 0)
+    temporal = (
+        "## Conclusion\n\nThe intervention has been recommended since 2020 as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(temporal)
+    assert changed == 1
+    assert "has not been established since 2020" in fixed
+    for bounded in (
+        "The authors recommend that the intervention not be used as a lifestyle intervention.",
+        "The evidence neither supports nor recommends its use as a lifestyle intervention.",
+    ):
+        paper = f"## Conclusion\n\n{bounded}\n"
+        assert journal_finalizer._replace_unsupported_general_health_claim(paper) == (paper, 0)
+    temporal_subject = (
+        "## Conclusion\n\nThe intervention has been recommended since it was introduced as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(temporal_subject)
+    assert changed == 1
+    assert "has not been established since it was introduced" in fixed
+    decimal = (
+        "## Conclusion\n\nBMI changed by 2.1 kg/m2 (Smith 2025), but the intervention "
+        "is suitable as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(decimal)
+    assert changed == 1
+    assert "BMI changed by 2.1 kg/m2 (Smith 2025)" in fixed
+    assert "is suitable" not in fixed
+    for prefix in (
+        "Smith et al. reported a null estimate, but ",
+        "The U.S. trial reported a null estimate, but ",
+        "The p.o. regimen had a null estimate, but ",
+    ):
+        fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(
+            f"## Conclusion\n\n{prefix}the intervention is suitable as a lifestyle intervention.\n",
+        )
+        assert changed == 1
+        assert prefix.strip() in fixed
+        assert "non-supportive for clinical efficacy or general health-intervention claims" in fixed
+    for prefix in (
+        "The null result was reported by Smith et al.",
+        "The null result was reported in the U.S.",
+        "The null result followed p.o.",
+    ):
+        fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(
+            f"## Conclusion\n\n{prefix} The intervention is suitable as a lifestyle intervention.\n",
+        )
+        assert changed == 1
+        assert prefix in fixed
+        assert "The intervention is suitable" not in fixed
+    abbreviation_negation = (
+        "## Conclusion\n\nNo evidence from Smith et al. supports its use as a "
+        "lifestyle intervention.\n"
+    )
+    assert journal_finalizer._replace_unsupported_general_health_claim(
+        abbreviation_negation,
+    ) == (abbreviation_negation, 0)
+    abbreviation_boundary = (
+        "## Conclusion\n\nNo evidence was reported by Smith et al. Participants report "
+        "that the intervention is suitable as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(
+        abbreviation_boundary,
+    )
+    assert changed == 1
+    assert "No evidence was reported by Smith et al." in fixed
+    assert "is suitable as a lifestyle intervention" not in fixed
+    for bounded in (
+        "No evidence from Dr. Smith supports its use as a lifestyle intervention.",
+        "No U.S. Food and Drug Administration evidence supports its use as a lifestyle intervention.",
+        "No evidence was reported by the U.S. Food and Drug Administration to support its use as a lifestyle intervention.",
+        "No evidence was found in the U.S. Food and Drug Administration report to support its use as a lifestyle intervention.",
+        "No credible evidence from the U.S. FDA supports its use as a lifestyle intervention.",
+        "Not any available evidence from the U.S. FDA supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. FDA currently supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. Food and Drug Administration currently supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. Centers for Disease Control and Prevention currently supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. Preventive Services Task Force supports its use as a lifestyle intervention.",
+        "No direct evidence from the U.S. National Academy of Medicine supports its use as a lifestyle intervention.",
+        "No evidence from a U.S. FDA report supports its use as a lifestyle intervention.",
+        "No evidence from any U.S. FDA source supports its use as a lifestyle intervention.",
+        "No evidence from the U.S. FDA-supported trial supports its use as a lifestyle intervention.",
+    ):
+        paper = f"## Conclusion\n\n{bounded}\n"
+        assert journal_finalizer._replace_unsupported_general_health_claim(paper) == (paper, 0)
+    for boundary in ("U.S.", "p.o."):
+        paper = (
+            f"## Conclusion\n\nNo evidence was reported in the {boundary} Participants report "
+            "that the intervention is suitable as a lifestyle intervention.\n"
+        )
+        fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(paper)
+        assert changed == 1
+        assert f"No evidence was reported in the {boundary}" in fixed
+        assert "is suitable as a lifestyle intervention" not in fixed
+    long_subject = (
+        "## Conclusion\n\nNo evidence was reported in the U.S. Independent clinical "
+        "experts now recommend its use as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(long_subject)
+    assert changed == 1
+    assert "experts now cannot establish its use" in fixed
+    from_boundary = (
+        "## Conclusion\n\nNo evidence was reported from the U.S. Independent clinical "
+        "experts now recommend its use as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(from_boundary)
+    assert changed == 1
+    assert "experts now cannot establish its use" in fixed
+    named_boundary = (
+        "## Conclusion\n\nNo evidence was reported from the U.S. Food and Drug "
+        "Administration recommends its use as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(named_boundary)
+    assert changed == 1
+    assert "Administration cannot establish its use" in fixed
+    institutional_boundary = (
+        "## Conclusion\n\nNo evidence from the U.S. FDA recommends its use as a "
+        "lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(institutional_boundary)
+    assert changed == 1
+    assert "FDA cannot establish its use" in fixed
+    short_boundary = (
+        "## Conclusion\n\nThere was no effect in the U.S. Experts recommend its use "
+        "as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(short_boundary)
+    assert changed == 1
+    assert "Experts cannot establish its use" in fixed
+    adverb_boundary = (
+        "## Conclusion\n\nNo evidence from the U.S. Experts currently recommend its "
+        "use as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(adverb_boundary)
+    assert changed == 1
+    assert "Experts currently cannot establish its use" in fixed
+    titled_boundary = (
+        "## Conclusion\n\nNo evidence from the U.S. Public Health Experts currently "
+        "recommend its use as a lifestyle intervention.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(titled_boundary)
+    assert changed == 1
+    assert "Experts currently cannot establish its use" in fixed
+    infinitive = "## Conclusion\n\nThe guidance asks readers to support its use as a lifestyle intervention.\n"
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(infinitive)
+    assert changed == 1
+    assert "asks readers not to establish its use" in fixed
+    trailing_qualifier = (
+        "## Conclusion\n\nThe intervention is suitable as a lifestyle intervention "
+        "despite no evidence of efficacy.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(
+        trailing_qualifier,
+    )
+    assert changed == 1
+    assert "is suitable as a lifestyle intervention" not in fixed
+    assert "despite no evidence of efficacy" in fixed
+    multiple = (
+        "## Conclusion\n\nAlthough efficacy is unproven, it is suitable as a lifestyle intervention. "
+        "Evidence is limited and the intervention may be used for general health.\n"
+    )
+    fixed, changed = journal_finalizer._replace_unsupported_general_health_claim(multiple)
+    assert changed == 2
+    assert fixed.count("non-supportive for clinical efficacy or general health-intervention claims") == 1
 
 
 def test_evidence_honesty_guard_preserves_count_and_reconciles_source_bundle(tmp_path: Path) -> None:
@@ -1350,6 +1782,26 @@ def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> No
             detail="removed 1 duplicate public prose paragraph(s)",
         )
     ]
+
+
+def test_strip_surface_duplicate_paragraphs_removes_short_discussion_sentences() -> None:
+    sentence_a = "Population specificity constrains external validity in three directions."
+    sentence_b = "The endpoint scope of the corpus is narrow."
+    paper = (
+        "## Discussion\n\n"
+        f"{sentence_a}\n\n"
+        f"{sentence_b} It does not establish disease incidence.\n\n"
+        "The next paragraph preserves distinct evidence.\n\n"
+        f"{sentence_a}\n\n"
+        f"{sentence_b}\n\n"
+        "## References\n\n- Smith 2024.\n"
+    )
+
+    fixed, logs = journal_finalizer._phase_m_strip_surface_duplicate_paragraphs(paper)
+
+    assert fixed.count(sentence_a) == 1
+    assert fixed.count(sentence_b) == 1
+    assert logs and logs[0].n_changes == 2
 
 
 def test_strip_surface_duplicate_paragraphs_cleans_abstract_intro_repeat() -> None:
