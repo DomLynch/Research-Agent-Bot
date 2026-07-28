@@ -865,6 +865,156 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
 
 
+def test_major_claim_trace_adds_only_source_owned_findings_when_prose_is_generic() -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "5/20 claims are exactly traceable (required 16)."
+    )
+    rows = [
+        {
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/study.{i}",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "n_claims": 21 - i,
+            "endpoints": [f"Outcome {i}"],
+            "thesis_text": (
+                f"Source excerpts: We aimed to evaluate intervention {i}. | "
+                f"Outcome {i} decreased by {i}% after treatment."
+            ),
+        }
+        for i in range(1, 21)
+    ]
+    paper = (
+        "## Results\n\n"
+        "The retained evidence remains mixed across outcomes and populations.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["major_claim_trace"]
+    assert fixed.count("[exact source: https://doi.org/") == 16
+    assert "Study1 2025 [bundle:1] reports: Outcome 1 decreased by 1%" in fixed
+    assert "Study1 2025 [bundle:1] reports: Outcome 2 decreased" not in fixed
+    assert "We aimed to evaluate" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+    assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_major_claim_trace_is_idempotent_with_duplicate_citation_tokens() -> None:
+    ask = "Add exact source tokens to major claims; required 2."
+    rows = [
+        {
+            "citation_token": "Smith 2025",
+            "source_doi": f"10.1000/smith.{i}",
+            "endpoints": [f"Outcome {i}"],
+            "thesis_text": f"Source excerpts: Outcome {i} decreased by {i}% after treatment.",
+        }
+        for i in range(1, 3)
+    ]
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert "Outcome 1 decreased" in fixed
+    assert "Outcome 2 decreased" in fixed
+    assert fixed.count("[bundle:1]") == 1
+    assert fixed.count("[bundle:2]") == 1
+    assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
+
+
+def test_major_claim_trace_rejects_unverifiable_or_procedural_spans() -> None:
+    ask = "Add exact source tokens to major claims; required 1."
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+    cases = [
+        ({}, ["body weight"], "Body weight decreased by 5%."),
+        ({"source_doi": "10.1000/method"}, ["body weight"], "Participants were assigned to higher-dose and lower-dose groups to examine the effect of treatment."),
+        ({"source_doi": "10.1000/baseline"}, ["body weight"], "Baseline characteristics showed 120 participants with a mean age of 52 years."),
+        ({"source_doi": "10.1000/search"}, ["sensitivity"], "The search increased sensitivity or specificity before screening."),
+        ({"source_doi": "10.1000/index"}, ["body mass index"], "Index selection procedure increased candidate coverage."),
+        ({"source_doi": "10.1000/sample"}, ["body mass index"], "Sample size increased significantly after recruitment."),
+        ({"source_doi": "10.1000/frequency"}, ["body mass index"], "Body mass index measurement frequency increased from monthly to weekly."),
+        ({"source_doi": "10.1000/clause"}, ["body mass index"], "Body mass index was measured, while visit frequency increased by 50%."),
+        ({"source_doi": "10.1000/imbalance"}, ["body mass index"], "At baseline, body mass index differed between groups (p = 0.03)."),
+    ]
+    for extra, endpoints, text in cases:
+        row = {
+            "citation_token": "Smith 2025",
+            "endpoints": endpoints,
+            "thesis_text": f"Source excerpts: {text}",
+            **extra,
+        }
+        fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, [row])
+        assert (fixed, changed) == (paper, 0), text
+        assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, [row]) is False
+
+
+def test_major_claim_trace_dedupes_substantive_findings_and_source_labels() -> None:
+    ask = "Add exact source tokens to major claims; required 2."
+    duplicate_rows = [
+        {
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/duplicate.{i}",
+            "endpoints": ["body weight"],
+            "thesis_text": "Source excerpts: Body weight decreased by 5% after treatment.",
+        }
+        for i in range(1, 3)
+    ]
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, duplicate_rows)
+    assert changed == 1
+    assert fixed.count("Body weight decreased by 5%") == 1
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, duplicate_rows) is False
+
+    cited_rows = [
+        {
+            "citation_token": "Smith 2025",
+            "source_doi": "10.1000/smith.duplicate",
+            "endpoints": ["body weight"],
+            "thesis_text": "Source excerpts: Body weight decreased by 5%.",
+        },
+        {
+            "citation_token": "Smith 2025a",
+            "source_doi": "10.1000/jones.duplicate",
+            "endpoints": ["body weight"],
+            "thesis_text": "Source excerpts: Body weight decreased by 5%.",
+        },
+    ]
+    cited = "## Results\n\nBody weight decreased by 5% (Smith 2025; Smith 2025a)."
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(cited, ask, cited_rows)
+    assert changed == 1
+    assert fixed.count("Body weight decreased by 5%") == 1
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, cited_rows) is False
+
+
+def test_major_claim_trace_accepts_quantified_endpoint_results() -> None:
+    ask = "Add exact source tokens to major claims; required 1."
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+    cases = [
+        ("body weight", "Body weight decreased by 5%. | The protocol dose increased from 1 mg to 2 mg at weeks 2, 4, and 8.", "Body weight decreased by 5%"),
+        ("body weight", "In the randomized trial, body weight decreased by 5%.", "randomized trial, body weight decreased by 5%"),
+        ("body mass index", "BMI decreased significantly (p < 0.05).", "BMI decreased significantly (p < 0.05)"),
+        ("mortality risk", "Mortality risk decreased (OR 0.72).", "Mortality risk decreased (OR 0.72)"),
+        ("mortality risk", "Mortality risk decreased (Odds ratio 0.72).", "Mortality risk decreased (Odds ratio 0.72)"),
+        ("low-density lipoprotein cholesterol", "LDL-C decreased by 12%.", "LDL-C decreased by 12%"),
+    ]
+    for index, (endpoint, text, expected) in enumerate(cases, 1):
+        rows = [{
+            "citation_token": f"Study{index} 2025",
+            "source_doi": f"10.1000/result.{index}",
+            "endpoints": [endpoint],
+            "thesis_text": f"Source excerpts: {text}",
+        }]
+        fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+        assert changed == 1
+        assert expected in fixed
+        assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is True
+        assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
+
+
 def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
     ask = "Add exact source tokens to major claims; required 3."
     rows = [

@@ -57,6 +57,12 @@ authorized changes are recorded in `revision_evidence_continuity.json`.
 Revision discovery checks the newest submitted record for every topic instead
 of a fixed ledger tail, so older unresolved reviewer requests remain actionable.
 
+## Source-owned revision trace repair (2026-07-28)
+Reviewer requests for more exact major-claim traces are repaired from each
+source row's own result-bearing excerpt plus its stable DOI/PMID. The repair
+does not infer source support from nearby prose, and repair epoch 12 reopens
+requests exhausted before this engine change exactly once.
+
 ## System Boundary
 ```text
 research-agent-bot = paper-producing synthesis engine

@@ -451,7 +451,7 @@ def test_major_claim_trace_source_span_numerics_are_not_authored_claims() -> Non
         "directness": "direct",
         "evidence_tier": "A1",
         "source_doi": "10.1/x",
-        "thesis_text": span,
+        "thesis_text": span + " | The outcome decreased by 5%.",
     }
     paper = (
         f"## Results\n\n{claim}\n\n"
