@@ -1170,32 +1170,31 @@ def _topic_family(topic: str) -> str:
     return tokens[0] if tokens else " ".join(str(topic).lower().split())
 
 
-def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
-    """Candidate topics in cooldown: those whose *family* (lead entity) was
-    submitted within PUBLISHED_TOPIC_COOLDOWN_DAYS. Family-level so distinct
-    sibling slugs of a just-covered entity are held too (and re-selectable once
-    the window lapses), not just the exact slug."""
+def _blocked_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    """Block exact submitted topics permanently and their sibling family during
+    cooldown. Updated papers belong to the revise lane."""
     path = ledger_dir.parent / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
-    try:
-        rows = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        rows = []
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(days=PUBLISHED_TOPIC_COOLDOWN_DAYS)
+    submitted: set[str] = set()
     recent_families: set[str] = set()
-    for row in rows if isinstance(rows, list) else []:
-        if not isinstance(row, dict):
-            continue
+    for row in submit_bridge._ledger_rows(path):
         topic = str(row.get("topic") or "")
+        if not topic and (run_name := str(row.get("run") or "")):
+            topic = submit_bridge._run_topic(ledger_dir.parent / run_name)
+        if not topic:
+            continue
+        submitted.add(submit_bridge._normalized_key(topic))
         when = _parse_time(str(row.get("date") or row.get("submitted_at") or ""))
-        if topic and when and when >= cutoff:
+        if when and when >= cutoff:
             recent_families.add(_topic_family(topic))
-    return {topic for topic in topics if _topic_family(topic) in recent_families}
+    return {topic for topic in topics if (
+        submit_bridge._normalized_key(topic) in submitted or _topic_family(topic) in recent_families
+    )}
 
 
 def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | None = None) -> set[str]:
-    """Topics the fresh cycle must skip: (1) recently-submitted families still in
-    cooldown (rate-limit, expires — covers sibling slugs of the same entity), and
-    (2) ALREADY-PUBLISHED ones (permanent).
+    """Topics fresh must skip: (1) exact submitted topics, (2) recently-submitted
+    sibling families still in cooldown, and (3) ALREADY-PUBLISHED topics.
 
     The remote-title exclusion was previously gated on `ledger_dir is None`, but
     select_topic — the only caller — always passes a ledger_dir, so that branch
@@ -1205,7 +1204,7 @@ def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | N
     duplicate_remote_publication). Remote-published topic markers also cover
     variants that differ only by generic publication-shape suffixes, without
     broad substring matching. Re-publishing an updated paper is the revise cycle's job."""
-    out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
+    out = _blocked_submitted_topics(topics, ledger_dir) if ledger_dir else set()
     topic_markers = {m.removeprefix("topic:") for m in markers if m.startswith("topic:")}
     remote_topic_keys = {
         key for marker in topic_markers if (key := _publication_topic_key(marker))
@@ -4247,7 +4246,7 @@ def run_cycle(
             ledger["writer_gate_skip_topics"] = sorted(writer_gate_skip)
         if writer_gate_policy:
             ledger["writer_gate_repeat_policy"] = writer_gate_policy
-        submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+        submitted_topics = _blocked_submitted_topics(topics, ledger_dir)
         published_topics = _published_topics(topics, remote_seen, ledger_dir)
         corpus_repaired_ok: set[str] = set()
         source_precision_repaired_ok: set[str] = set()
@@ -4556,7 +4555,7 @@ def run_cycle(
                         ledger["topic_supply_selected_after_refresh"] = selected
                 if not selected and mode == "fresh" and topic is None:
                     topics = discover_topics()
-                    submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+                    submitted_topics = _blocked_submitted_topics(topics, ledger_dir)
                     published_topics = _published_topics(topics, remote_seen, ledger_dir)
                     source_precision_selectable = source_precision_repaired_ok | source_precision_repaired_checkable
                     current_source_precision = _current_low_source_precision_topics(topics)

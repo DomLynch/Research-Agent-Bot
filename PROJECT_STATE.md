@@ -196,6 +196,12 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
   Further extraction must reduce LOC, preserve public behavior, pass the full
   suite, and deploy only between live cycles.
 
+## Operational Decision - 2026-07-27
+- Fresh permanently excludes an exact topic after any successful submission;
+  only sibling topic variants can return after the 21-day family cooldown.
+  Reviewer-requested updates belong to revise, and legacy submission rows derive
+  missing topics from their run names.
+
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
 

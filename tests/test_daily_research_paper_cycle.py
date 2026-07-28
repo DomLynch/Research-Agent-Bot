@@ -1467,10 +1467,8 @@ def test_preparation_pool_can_repair_recently_failed_topic(tmp_path: Path, monke
     assert preparation_pool == ["aaa_recent_failure", "bbb_untried"]
 
 
-def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monkeypatch) -> None:
-    """The 21-day cooldown rate-limits re-submission of a topic that was
-    submitted but is NOT published (pending/rejected): after the window it is
-    selectable again. remote_seen is empty here — the topic is not published."""
+def test_select_topic_skips_exact_submitted_topic_after_cooldown(tmp_path: Path, monkeypatch) -> None:
+    """Fresh never rebuilds an exact submitted topic; revise owns updates."""
     _topic(tmp_path, "aerobic_exercise", target_journal=True)
     runs_root = tmp_path / "runs"
     ledger_dir = runs_root / cycle.LEDGER_DIR
@@ -1486,10 +1484,32 @@ def test_select_topic_allows_submitted_topic_after_cooldown(tmp_path: Path, monk
         ["aerobic_exercise"],
         ledger_dir,
         runs_root=runs_root,
-        remote_seen=set(),  # not published → only the submission cooldown applies
+        remote_seen=set(),
     )
 
-    assert selected == "aerobic_exercise"
+    assert selected is None
+
+
+def test_select_topic_skips_legacy_submitted_row_without_topic(tmp_path: Path, monkeypatch) -> None:
+    _topic(tmp_path, "hpv_vaccination_rates", target_journal=True)
+    runs_root = tmp_path / "runs"
+    ledger_dir = runs_root / cycle.LEDGER_DIR
+    old = dt.datetime.now(dt.UTC) - dt.timedelta(days=cycle.PUBLISHED_TOPIC_COOLDOWN_DAYS + 1)
+    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "date": old.isoformat(),
+        "run": "synthesis-hpv_vaccination_rates-v06-DAILY-2026-07-05T20-22-59Z",
+        "fingerprint": "sha256:abc",
+    }])
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    selected = cycle.select_topic(
+        ["hpv_vaccination_rates"],
+        ledger_dir,
+        runs_root=runs_root,
+        remote_seen=set(),
+    )
+
+    assert selected is None
 
 
 def test_select_topic_skips_published_topic_marker_even_after_cooldown(tmp_path: Path, monkeypatch) -> None:
