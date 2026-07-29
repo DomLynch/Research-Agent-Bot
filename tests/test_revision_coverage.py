@@ -1138,6 +1138,185 @@ def test_major_claim_trace_uses_multiple_grounded_results_after_source_diversity
     assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
 
 
+def test_major_claim_trace_repairs_diverse_source_result_language() -> None:
+    ask = "Add exact source tokens to major claims; required 8."
+    findings = (
+        ("body mass index", "BMI reduction was -1.01 kg/m 2 without lean mass loss."),
+        ("body weight", "Body weight decreased from 86.65 kg to 82.94 kg."),
+        ("blood glucose", "The intervention achieved better glycemic control compared with metformin."),
+        ("body weight", "The diet showed a reduction in body weight (mean difference -1.69 kg)."),
+        ("blood pressure", "SBP significantly decreased by -0.31 mmHg."),
+        ("body mass index", "Participants showed significant decreases in BMI after 24 weeks."),
+        ("insulin sensitivity", "The intervention was associated with improved insulin sensitivity."),
+        ("inflammation", "C-reactive protein decreased by 15% (p = 0.01)."),
+    )
+    rows = [{
+        "citation_token": f"Study{i} 2025",
+        "source_doi": f"10.1000/diverse.{i}",
+        "outcome_class": "immune" if endpoint == "inflammation" else "cardiometabolic",
+        "endpoints": [endpoint],
+        "directness": "direct" if i % 2 else "review",
+        "evidence_tier": "A1" if i % 2 else "B1",
+        "thesis_text": f"Source excerpts: {finding}",
+    } for i, (endpoint, finding) in enumerate(findings, 1)]
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert fixed.count("[exact source: https://doi.org/") == 8
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is True
+    assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
+
+
+def test_major_claim_trace_allows_quantified_direct_primary_outcome_fallback() -> None:
+    ask = "Add exact source tokens to major claims; required 1."
+    row = {
+        "citation_token": "Study1 2025",
+        "source_doi": "10.1000/direct.1",
+        "outcome_class": "cardiometabolic",
+        "endpoints": ["body mass index"],
+        "directness": "direct",
+        "evidence_tier": "A1",
+        "thesis_text": "Source excerpts: Liver stiffness significantly decreased (p = 0.01).",
+    }
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, [row])
+
+    assert changed == 1
+    assert "Liver stiffness significantly decreased" in fixed
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, [row]) is True
+
+
+def test_major_claim_trace_rejects_protocol_recommendation_and_incomplete_comparison() -> None:
+    ask = "Add exact source tokens to major claims; required 1."
+    invalid: tuple[dict[str, object], ...] = (
+        {
+            "directness": "protocol",
+            "evidence_tier": "D1",
+            "thesis_text": "Source excerpts: Primary outcomes selected were differences in BMI after 8 weeks.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: A 5-10% weight loss is recommended for blood glucose regulation.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: Hepatic steatosis significantly decreased (29.6% vs.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: Mean age is increased by 20% under the weighting coefficients.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: We examined whether BMI was associated with treatment assignment.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: Baseline BMI increased from 24 to 26.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: Baseline body mass index increased from 24 to 26.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: Baseline BMI differed by 20%.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: The objective was to determine whether BMI was associated with treatment assignment.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "endpoints": ["liver stiffness"],
+            "thesis_text": "Source excerpts: Liver enzyme levels decreased by 20%.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: To determine whether BMI was associated with treatment assignment.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: The study was designed to determine whether BMI was associated with treatment assignment.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: We hypothesized that BMI was associated with treatment assignment.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "endpoints": ["body mass index"],
+            "thesis_text": "Source excerpts: Insulin assay sensitivity increased by 20% during validation.",
+        },
+        {
+            "directness": "review",
+            "evidence_tier": "B1",
+            "endpoints": [],
+            "thesis_text": "Source excerpts: Insulin was associated with improved outcomes.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: The hypothesis was that BMI was associated with treatment assignment.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "thesis_text": "Source excerpts: We tested the hypothesis that BMI was associated with treatment assignment.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "endpoints": ["body mass index"],
+            "thesis_text": "Source excerpts: Insulin calibration accuracy increased by 20%.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "endpoints": ["body mass index"],
+            "thesis_text": "Source excerpts: Participants with lower BMI were assigned to the 20% calorie-restriction arm.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "endpoints": ["body mass index"],
+            "thesis_text": "Source excerpts: Lower BMI was used to allocate 20% of participants to intervention.",
+        },
+        {
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "endpoints": ["body mass index"],
+            "thesis_text": "Source excerpts: Lower BMI was used to assign 20% of participants to intervention.",
+        },
+    )
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+
+    for i, row in enumerate(invalid, 1):
+        row.update({
+            "citation_token": f"Study{i} 2025",
+            "source_doi": f"10.1000/invalid.{i}",
+            "outcome_class": "cardiometabolic",
+            "endpoints": row.get("endpoints", ["body mass index", "blood glucose", "hepatic steatosis"]),
+        })
+        assert revision_claim_trace.repair_major_claim_trace(paper, ask, [row]) == (paper, 0)
+
+
 def test_major_claim_trace_uses_distinct_sources_before_repeats() -> None:
     ask = "Add exact source tokens to major claims; required 3."
     rows = [

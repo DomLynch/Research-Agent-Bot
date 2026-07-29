@@ -12,11 +12,14 @@ from agent.publication_evidence import attach_bundle_references, ordered_source_
 
 _TRACE_LINE_RE = re.compile(r"^- \*\*Manuscript claim (?P<number>\d+)\.\*\* (?P<claim>.*?) \*\*Supporting source:\*\* (?P<support>.*?\[bundle:(?P<bundle>\d+)\].*?) \*\*Evidence span:\*\* (?P<span>.+)$", re.I)
 _ABBREVIATION_RE = re.compile(r"\b(?:vs|e\.g|i\.e|et al)\.", re.I)
-_RESULT_SIGNAL_RE = re.compile(r"\b(?:lower(?:ed|ing)|decreas(?:e|ed|ing)|improv(?:e|ed|ement|ements)|increas(?:e|ed|ing)|reduc(?:e|ed|ing|tion|tions)|unchanged|differ(?:ed|ence|ences)|associated|association)\b|\b(?:no|not|statistically)\s+significant\b|\bdid not (?:change|decrease|improve|increase|reduce)\b|\b(?:better|worse)\b.{0,80}\b(?:than|compared (?:with|to))\b", re.I)
+_RESULT_SIGNAL_RE = re.compile(r"\b(?:lower(?:s|ed|ing)?|decreas(?:e[sd]?|ing)|improv(?:e[sd]?|ing|ement|ements)|increas(?:e[sd]?|ing)|reduc(?:e[sd]?|ing|tion|tions)|unchanged|differ(?:ed|ence|ences)|associated|association)\b|\b(?:no|not|statistically)\s+significant\b|\bdid not (?:change|decrease|improve|increase|reduce)\b|\b(?:better|worse)\b.{0,80}\b(?:than|compared (?:with|to))\b", re.I)
 _STATISTIC_RE = re.compile(r"(?i:\bp\s*[<=>]\s*\.?\d|\b(?:confidence interval|ci|md|smd|wmd|rr|hr)\s*(?::|=)?\s*-?\.?\d|\d+(?:\.\d+)?\s*%)|\b(?:OR|(?i:odds ratio))\s*(?::|=)?\s*-?\.?\d")
-_PROCEDURAL_RE = re.compile(r"\b(?:at baseline|baseline characteristics?|candidate (?:coverage|pool)|dos(?:e|es|ing)|dosages?|enrollment|index selection|literature search|records? (?:identified|screened)|regimens?|search (?:increased|strategy)|sample size|titrat(?:e|ed|ing|ions?)|(?:measurement|visit) frequency|aim(?:s|ed)? to|evaluate whether|quantitative analysis was performed|standardized mean differences?\b.{0,120}\bcompare outcomes)\b", re.I)
+_EFFECT_ESTIMATE_RE = re.compile(r"\b(?:beta|β)\s*[:=]?\s*-?\d+(?:\.\d+)?|(?<!\w)-?\d+(?:\.\d+)?\s*(?:kg(?:\s*/\s*m\s*2)?|mm\s*hg|mg\s*/\s*dL|mmol\s*/\s*L|mol\s*%)\b|\bfrom\s+-?\d+(?:\.\d+)?\s+to\s+-?\d+(?:\.\d+)?\b", re.I)
+_QUALITATIVE_RESULT_RE = re.compile(r"\b(?:achiev(?:e[ds]?|ing)\s+(?:a\s+)?better|associated with|significant(?:ly)?\s+(?:decreas|improv|increas|reduc)|show(?:s|ed)?\s+(?:a\s+)?(?:significant(?:ly)?\s+)?(?:benefit|decreas(?:e|es)|improvement|increase|reduction)|(?:no|not)\s+significant|did not (?:change|decrease|improve|increase|reduce))\b", re.I)
+_PROCEDURAL_RE = re.compile(r"\b(?:allocat(?:e[sd]?|ing|ions?)|assign(?:s|ed|ing|ments?)?|at baseline|baseline\b.{0,80}\b(?:is|are|was|were|differ(?:ed|ent)?|increas(?:e[sd]?|ing)|decreas(?:e[sd]?|ing))|calibrat(?:e[ds]?|ing|ion)|candidate (?:coverage|pool)|dos(?:e|es|ing)|dosages?|enrollment|index selection|literature search|primary outcomes? (?:chosen|selected)|recommend(?:ation|ations|ed)?|records? (?:identified|screened)|regimens?|search (?:increased|strategy)|secondary outcomes? (?:chosen|selected)|sample size|titrat(?:e|ed|ing|ions?)|(?:measurement|visit) frequency|aim(?:s|ed)? to|(?:aim|objective|purpose|sought)\b.{0,80}\b(?:whether|determine|examine|evaluate|assess|investigate|test)|(?:to|designed to)\s+(?:determine|examine|evaluate|assess|investigate|test)\s+whether|(?:hypothesis|hypothesi[sz]ed)\b.{0,50}\b(?:that|whether)|(?:examined|evaluated|assessed|investigated|tested) whether|evaluate whether|(?:assay|instrument|model)\b.{0,80}\b(?:sensitivity|specificity|performance|validat)|during validation|quantitative analysis was performed|standardized mean differences?\b.{0,120}\bcompare outcomes)\b", re.I)
 _AMBIGUOUS_TRACE_TERMS = frozenset({"chronic", "dose", "dosing", "prevalence", "safety", "serum", "status"})
-_TRACE_OUTCOME_ALIASES = {"cardiometabolic": ("glucose", "insulin", "hba1c", "blood pressure", "cholesterol", "lipid", "triglyceride", "body weight", "body mass index", "bmi"), "immune_inflammation": ("c-reactive protein", "crp", "interleukin", "tnf", "malondialdehyde", "mda", "glutathione peroxidase")}
+_TRACE_ENDPOINT_ALIASES = {"blood glucose": ("glucose", "glycemic", "glycaemic"), "blood pressure": ("bp", "sbp", "dbp", "systolic blood pressure", "diastolic blood pressure"), "body mass index": ("bmi",), "body weight": ("weight",), "inflammation": ("inflammatory", "c reactive protein", "crp"), "insulin sensitivity": ("homa ir",), "lean body mass": ("lean mass", "fat free mass", "ffm")}
+_TRACE_OUTCOME_ALIASES = {"cardiometabolic": ("bmi", "cholesterol", "glucose", "glycemic", "hba1c", "hepatic", "insulin", "lipid", "liver stiffness", "steatosis", "triglyceride", "waist", "weight"), "immune_inflammation": ("c-reactive protein", "crp", "interleukin", "tnf", "malondialdehyde", "mda", "glutathione peroxidase")}
 _PROTECTED_PERIOD = "\ue000"
 _NON_CLAIM_PREFIXES = ("Evidence-type reconciliation:", "Source-direction reconciliation (", "Source-statistic reconciliation (", "Source-scope boundary (")
 
@@ -42,11 +45,7 @@ def strip_validated_trace_support(paper_md: str, rows: Sequence[dict[str, Any]])
     for line in scope.splitlines():
         match = _TRACE_LINE_RE.match(line)
         if match and _trace_line_is_valid(match, source_bound_claims, rows):
-            line = (
-                f"- **Manuscript claim {match.group('number')}.** "
-                f"{match.group('claim').strip()} "
-                "**Supporting source:** validated manifest source."
-            )
+            line = f"- **Manuscript claim {match.group('number')}.** {match.group('claim').strip()} **Supporting source:** validated manifest source."
         lines.append(line)
     return paper_md.replace(scope, "\n".join(lines), 1)
 
@@ -57,11 +56,7 @@ def _trace_line_is_valid(match: re.Match[str], source_bound_claims: set[tuple[st
         return False
     row = rows[bundle_number - 1]
     support = f"{_label(row)} [bundle:{bundle_number}]" + (f" {_stable_locator(row)}" if _stable_locator(row) else "")
-    return bool(
-        _evidence_span(row) and (claim, bundle_number) in source_bound_claims
-        and f"[bundle:{bundle_number}]" in claim and match.group("support").strip() == support
-        and match.group("span").strip() == _evidence_span(row)
-    )
+    return bool(_evidence_span(row) and (claim, bundle_number) in source_bound_claims and f"[bundle:{bundle_number}]" in claim and match.group("support").strip() == support and match.group("span").strip() == _evidence_span(row))
 
 
 def repair_major_claim_trace(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> tuple[str, int]:
@@ -127,7 +122,11 @@ def _claim_key(claim: str, rows: Sequence[dict[str, Any]] = ()) -> str:
 
 
 def _result_spans(row: dict[str, Any]) -> list[str]:
-    endpoints = {(key, "".join(word[0] for word in key.split())) for value in row.get("endpoints") or () if (key := endpoint_key(value))}
+    if str(row.get("directness") or "").lower() == "protocol" or str(row.get("evidence_tier") or "").upper().startswith("D"):
+        return []
+    endpoints = {key for value in row.get("endpoints") or () if (key := endpoint_key(value))}
+    endpoint_terms = endpoints | {endpoint_key(alias) for endpoint in endpoints for alias in _TRACE_ENDPOINT_ALIASES.get(endpoint, ())}
+    endpoint_acronyms = {"".join(word[0] for word in value.split()).upper() for value in endpoints}
     outcome = outcome_key(str(row.get("outcome_class") or ""))
     outcome_terms = next((tuple(term for term in terms if endpoint_key(term) not in _AMBIGUOUS_TRACE_TERMS) for label, terms in BIOMEDICAL_OTHER_OUTCOME_RULES if label == outcome), ()) + _TRACE_OUTCOME_ALIASES.get(outcome, ())
     groups: tuple[list[str], list[str]] = ([], [])
@@ -136,18 +135,13 @@ def _result_spans(row: dict[str, Any]) -> list[str]:
         for sentence in _sentences(part.strip()):
             for clause in re.split(r";\s*|,\s*(?=(?:while|whereas|but)\b)", sentence, flags=re.I):
                 normalized = endpoint_key(clause)
-                if not (_RESULT_SIGNAL_RE.search(clause) and not _PROCEDURAL_RE.search(clause) and _STATISTIC_RE.search(clause)):
+                if not (_RESULT_SIGNAL_RE.search(clause) and not _PROCEDURAL_RE.search(clause) and (_STATISTIC_RE.search(clause) or _EFFECT_ESTIMATE_RE.search(clause) or _QUALITATIVE_RESULT_RE.search(clause))):
                     continue
                 span = _evidence_span({"thesis_text": clause}).strip().rstrip(" .!?")
-                if len(span) < 20 or (key := _claim_key(span, [row])) in seen:
+                if len(span) < 20 or re.search(r"\b(?:compared (?:to|with)|versus|vs)\.?\s*$", span, re.I) or (key := _claim_key(span, [row])) in seen:
                     continue
-                matched = any(
-                    re.search(rf"\b{re.escape(value)}\b", normalized)
-                    or len(initials) >= 3
-                    and re.search(rf"\b{'[^A-Za-z0-9]*'.join(initials)}\b", clause, re.I)
-                    for value, initials in endpoints
-                )
-                if not matched and not any(re.search(rf"\b{re.escape(endpoint_key(term))}\b", normalized) for term in outcome_terms):
+                matched = any(re.search(rf"\b{re.escape(value)}\b", normalized) for value in endpoint_terms) or any(len(initials) >= 2 and re.search(rf"\b(?:[SD])?{'[^A-Za-z0-9]*'.join(initials)}\b", clause) for initials in endpoint_acronyms)
+                if not matched and (not any(re.search(rf"\b{re.escape(endpoint_key(term))}\b", normalized) for term in outcome_terms) or str(row.get("directness") or "").lower() != "direct" or not str(row.get("evidence_tier") or "").upper().startswith("A") or not (_STATISTIC_RE.search(clause) or _EFFECT_ESTIMATE_RE.search(clause))):
                     continue
                 seen.add(key)
                 groups[int(not matched)].append(span)
