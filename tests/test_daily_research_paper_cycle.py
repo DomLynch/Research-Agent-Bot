@@ -9388,6 +9388,41 @@ def test_remote_revision_requests_keeps_only_v3_research_paper_revisions(monkeyp
     assert rows[0]["feedback"] == "Add caveat.; Reduce repetition."
 
 
+def test_remote_revision_feedback_is_not_truncated(monkeypatch) -> None:
+    late_issue = "Correct the named source classification at the end."
+    payload = {"records": [{
+        "artifactId": "v3-long",
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper",
+        "decision": "revise",
+        "title": "Research Synthesis: Long Review",
+        "requiredRevisions": ["A" * 4500],
+        "majorIssues": [late_issue],
+    }]}
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode()
+
+    monkeypatch.setattr(
+        cycle.urllib.request,
+        "urlopen",
+        lambda *_args, **_kwargs: Response(),
+    )
+
+    rows, error = cycle._remote_revision_requests("https://example.test/reviews")
+
+    assert error is None
+    assert len(rows[0]["feedback"]) > 4000
+    assert rows[0]["feedback"].endswith(late_issue)
+
+
 def test_remote_revision_requests_accepts_live_v3_agent_without_env(monkeypatch) -> None:
     payload = {"records": [{
         "artifactId": "v3-live-1",

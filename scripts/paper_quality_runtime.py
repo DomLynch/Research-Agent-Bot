@@ -14,7 +14,7 @@ import dataclasses
 import json
 import math
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -435,6 +435,7 @@ def _tension_directness(value: str) -> str:
 def write_tension_plans(out_dir: Path, matrix: Any) -> dict[str, Any]:
     by_id = {r.receipt_id: r for r in matrix.receipts}
     records = []
+    outcome_pairs: Counter[str] = Counter()
     for idx, tension in enumerate(matrix.non_orthogonal(), start=1):
         a = by_id.get(tension.receipt_a_id)
         b = by_id.get(tension.receipt_b_id)
@@ -454,8 +455,30 @@ def write_tension_plans(out_dir: Path, matrix: Any) -> dict[str, Any]:
             numeric_anchors_a=tuple(getattr(a, "p_values", ()) or ()),
             numeric_anchors_b=tuple(getattr(b, "p_values", ()) or ()),
         ))
+        outcome_pairs[
+            str(a.outcome_class)
+            if a.outcome_class == b.outcome_class
+            else " <-> ".join(sorted((str(a.outcome_class), str(b.outcome_class))))
+        ] += 1
     plans = select_top_tensions(records, top_n=5) if records else []
-    payload = {"plans": [dataclasses.asdict(p) for p in plans], "candidate_tensions": len(records)}
+    n_receipts = len(by_id)
+    payload = {
+        "plans": [dataclasses.asdict(p) for p in plans],
+        "candidate_tensions": len(records),
+        "calculation": {
+            "unit": "unordered receipt dyad",
+            "rule": (
+                "Each unordered receipt pair is counted once. A dyad is "
+                "non-orthogonal only when the deterministic classifier finds "
+                "a directness gap, a mechanism-clinical boundary, or differing "
+                "directions on a shared endpoint."
+            ),
+            "all_dyads": n_receipts * (n_receipts - 1) // 2,
+            "non_orthogonal_dyads": len(records),
+            "by_outcome": dict(sorted(outcome_pairs.items())),
+            "by_conflict_type": dict(sorted(Counter(r.conflict_type for r in records).items())),
+        },
+    }
     (out_dir / "tension_elaboration_plans.json").write_text(json.dumps(payload, indent=2))
     (out_dir / "tension_elaboration_plans.md").write_text(render_tension_section(payload))
     return payload
@@ -463,6 +486,22 @@ def write_tension_plans(out_dir: Path, matrix: Any) -> dict[str, Any]:
 
 def render_tension_section(payload: dict[str, Any]) -> str:
     lines = ["## Cross-Paper Tension Plans", ""]
+    calculation = payload.get("calculation") or {}
+    if calculation:
+        outcomes = ", ".join(
+            f"{outcome}={count}"
+            for outcome, count in (calculation.get("by_outcome") or {}).items()
+        ) or "none"
+        lines.extend([
+            "### Pairwise Audit",
+            str(calculation.get("rule") or ""),
+            (
+                f"Audited dyads: {calculation.get('all_dyads', 0)} total; "
+                f"{calculation.get('non_orthogonal_dyads', 0)} non-orthogonal. "
+                f"Per-outcome tally: {outcomes}."
+            ),
+            "",
+        ])
     plans = payload.get("plans") or []
     if not plans:
         lines.append("No non-orthogonal cross-paper tension met the planning threshold.")

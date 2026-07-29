@@ -35,6 +35,10 @@ revision_coverage: Any = _script_module("revision_coverage")
 review_noise_control: Any = _script_module("review_noise_control")
 
 
+def _feedback_asks(feedback: str, matcher: Any) -> bool:
+    return bool(matcher(" ".join(feedback.lower().split())))
+
+
 @dataclass(frozen=True, slots=True)
 class FinalizerLogEntry:
     phase: str
@@ -1282,7 +1286,7 @@ def _phase_d_admission_funnel_clarification(
     if not _revision_asks_admission_funnel_clarification(feedback):
         return text, []
     replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
-    wants_additive_flow = _revision_asks_additive_screening_flow(feedback)
+    wants_additive_flow = revision_coverage._asks_additive_screening_flow(_normalised_feedback(feedback))
     has_placeholder_exclusion = _has_no_exclusion_placeholder(text)
     note = _admission_funnel_note(out_dir)
     if (
@@ -1370,7 +1374,7 @@ def _phase_d_admission_funnel_clarification(
 def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
     return (
         revision_coverage._asks_admission_funnel_numeric_consistency(feedback)
-        or _revision_asks_additive_screening_flow(feedback)
+        or revision_coverage._asks_additive_screening_flow(_normalised_feedback(feedback))
     )
 
 
@@ -1401,17 +1405,6 @@ def _admission_funnel_note(out_dir: Path) -> str:
             f"denominator; the admitted source base remains {admitted}."
             if counts.get("original_strict_high_confidence_receipts") is not None
             else ""
-        )
-    )
-
-
-def _revision_asks_additive_screening_flow(feedback: str) -> bool:
-    lower = _normalised_feedback(feedback)
-    return (
-        "additive screening flow" in lower
-        or (
-            "claim-binding funnel" in lower
-            and any(token in lower for token in ("additive", "records screened", "eligible", "admitted"))
         )
     )
 
@@ -1475,7 +1468,7 @@ def _phase_d_prisma_all_included_rationale(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_prisma_all_included_rationale(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_prisma_all_included_rationale):
         return text, []
     note = (
         "PRISMA-ScR inclusion rationale: 100% of retrieved records were included "
@@ -1494,21 +1487,12 @@ def _phase_d_prisma_all_included_rationale(
     )]
 
 
-def _revision_asks_prisma_all_included_rationale(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "100%" in lower
-        and any(token in lower for token in ("retrieved records", "records were included", "included"))
-        and any(token in lower for token in ("prisma", "eligibility criteria", "eligibility"))
-    )
-
-
 def _phase_d_search_summary_scope_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_search_summary_scope_note(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_search_summary_scope_note):
         return text, []
     if "search-summary scope note:" in text.lower():
         return text, []
@@ -1529,17 +1513,6 @@ def _phase_d_search_summary_scope_note(
         n_changes=1,
         detail="added search-summary date/topic/narrowing scope note",
     )]
-
-
-def _revision_asks_search_summary_scope_note(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "search summary" in lower
-        and any(token in lower for token in (
-            "date range", "date ranges", "topic-operationalization",
-            "operationalization", "narrowing",
-        ))
-    )
 
 
 _CLASSIFICATION_CRITERIA_NOTE = (
@@ -1573,7 +1546,7 @@ def _phase_d_classification_criteria_note(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_classification_criteria(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_classification_criteria):
         return text, []
     if "classification criteria:" in text.lower():
         return text, []
@@ -1593,7 +1566,7 @@ def _phase_d_conflict_severity_note(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_conflict_severity_note(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_conflict_severity_criteria):
         return text, []
     if "conflict-map severity note:" in text.lower():
         return text, []
@@ -1608,28 +1581,12 @@ def _phase_d_conflict_severity_note(
     )]
 
 
-def _revision_asks_classification_criteria(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return "classification criteria" in lower or (
-        "assign" in lower and "outcome class" in lower and "directness" in lower
-    )
-
-
-def _revision_asks_conflict_severity_note(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        any(token in lower for token in ("severity-level", "severity level"))
-        and any(token in lower for token in ("disagreement", "disagreements", "conflict", "conflict map"))
-        and any(token in lower for token in ("defined", "scored", "scoring", "supplementary", "supplemental"))
-    )
-
-
 def _phase_d_directional_coding_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_directional_coding_note(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_directional_coding_note):
         return text, []
     note = _directional_coding_note(out_dir)
     if "directional coding note:" in text.lower():
@@ -1673,32 +1630,6 @@ def _phase_d_directional_coding_note(
                 detail=f"added directional coding schema note to {heading}",
             )]
     return text, []
-
-
-def _revision_asks_directional_coding_note(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "directional coding" in lower
-        or "effect_direction" in lower
-        or (
-            any(token in lower for token in ("re-extract direction", "re extract direction", "cannot determine direction"))
-            and any(token in lower for token in ("majority", "unclear", "direction"))
-        )
-        or ("no extracted directional signal" in lower and "clarify" in lower)
-        or ("evidence landscape" in lower and "strongest signal" in lower and "directional signal" in lower)
-        or ("contextual claim" in lower and "directional signal" in lower)
-        or ("null" in lower and "absence of support" in lower)
-        or ("no extracted directional signal" in lower and "proportion" in lower)
-        or ("null-coded" in lower and "directional findings" in lower)
-        or (
-            "directional map" in lower
-            and any(token in lower for token in ("coded extraction", "predominantly unclear", "unclear-coded", "reconcile"))
-        )
-        or (
-            "directional findings" in lower
-            and any(token in lower for token in ("source abstract", "source abstracts", "receipt-level", "source-level", "null framing"))
-        )
-    )
 
 
 def _directional_coding_note(out_dir: Path) -> str:
@@ -2058,7 +1989,7 @@ def _phase_d_long_term_safety_scope(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_long_term_safety_scope(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_long_term_safety_scope):
         return text, []
     patched = text
     n = 0
@@ -2076,11 +2007,6 @@ def _phase_d_long_term_safety_scope(
         n_changes=n,
         detail=f"added long-term safety scope note to {n} section(s)",
     )]
-
-
-def _revision_asks_long_term_safety_scope(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return "long-term safety" in lower or ("safety data" in lower and "older adult" in lower)
 
 
 _UNPROVEN_HUMAN_LONGEVITY_NOTE = (
@@ -2155,7 +2081,7 @@ def _phase_d_numeric_significance_correction(
         patched, significance_feedback,
     )
     n += changed
-    if _revision_asks_numeric_effect_audit(significance_feedback):
+    if _feedback_asks(significance_feedback, revision_coverage._asks_numeric_effect_audit_note):
         patched, changed = _ensure_numeric_effect_audit_statement(patched)
         n += changed
     if not n:
@@ -2214,11 +2140,6 @@ def _asks_explicit_significance_correction(feedback: str) -> bool:
             "factual error", "significance threshold",
         )
     )
-
-
-def _revision_asks_numeric_effect_audit(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return any(token in lower for token in ("audit all reported p-values", "audit all reported p values", "reported p-values", "reported p values"))
 
 
 def _repair_non_significant_effect_claims_in_section(text: str, section: str) -> tuple[str, int]:
@@ -2570,7 +2491,7 @@ def _phase_d_section_source_grounding(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_section_source_grounding(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_section_source_grounding):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
@@ -2637,14 +2558,6 @@ def _source_grounding_section_insert_at(text: str, heading: str) -> int:
     return ref.start() if ref else len(text)
 
 
-def _revision_asks_section_source_grounding(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return "source_grounding" in lower or (
-        "every claim" in lower
-        and all(token in lower for token in ("key findings", "limitations", "conclusion"))
-    )
-
-
 def _phase_d_substantive_evidence_synthesis(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
@@ -2657,7 +2570,7 @@ def _phase_d_substantive_evidence_synthesis(
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
         return text, []
-    full_source_surface = _revision_asks_full_source_surface(feedback)
+    full_source_surface = _feedback_asks(feedback, revision_coverage._asks_full_source_surface_request)
     examples = _manifest_signal_examples(rows, limit=len(rows) if full_source_surface else 12)
     if not examples:
         return text, []
@@ -2884,7 +2797,7 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
         or revision_coverage.asks_direct_interventional_reclassification(feedback)
         or revision_coverage.asks_direction_coded_source_highlights(feedback)
         or ("integrate" in lower and "evidence" in lower)
-        or _revision_asks_full_source_surface(feedback)
+        or _feedback_asks(feedback, revision_coverage._asks_full_source_surface_request)
         or (
             "directional findings" in lower
             and any(token in lower for token in ("source abstract", "source abstracts", "source-level", "receipt-level", "null framing"))
@@ -2910,31 +2823,6 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
             and "source" in lower
             and any(token in lower for token in ("reconcile", "consistent", "accounting"))
         )
-    )
-
-
-def _revision_asks_full_source_surface(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return bool(re.search(r"\b(?:all|every)\s+\d+\s+admitted sources?\b", lower)) or any(
-        token in lower
-        for token in (
-            "full admitted corpus", "all admitted source", "all retained source",
-            "every admitted source", "missing bundle source", "missing source",
-            "cover all", "covers all",
-            "must appear in at least one outcome-class packet",
-        )
-    )
-
-
-def _revision_asks_concrete_research_question(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "research question" in lower
-        and any(token in lower for token in (
-            "clear", "specific", "concrete", "answerable", "directly answerable",
-            "fix", "framing", "substantive", "self-referential", "two-part",
-            "two part", "both halves",
-        ))
     )
 
 
@@ -2984,7 +2872,7 @@ def _phase_d_research_question_scope(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_concrete_research_question(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_concrete_research_question_note):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     manifest_dict = manifest if isinstance(manifest, dict) else {}
@@ -3704,7 +3592,7 @@ def _phase_d_rct_count_reconciliation(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_rct_count_reconciliation(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_rct_count_reconciliation):
         return text, []
     patched = re.sub(r"\bsingle direct RCT\b", "single direct-source coding row", text, flags=re.I)
     patched = re.sub(r"\bsingle RCT\b", "single source-level RCT coding row", patched, flags=re.I)
@@ -3726,17 +3614,12 @@ def _phase_d_rct_count_reconciliation(
     )]
 
 
-def _revision_asks_rct_count_reconciliation(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return "rct" in lower and any(token in lower for token in ("single rct", "single direct rct", "two rcts", "more than one rct"))
-
-
 def _phase_d_unbacked_appraisal_names(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_unbacked_appraisal_names(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_unbacked_appraisal_names):
         return text, []
     normalized = _normalize_public_appraisal_labels(text)
     if summary := _appraisal_artifact_summary(out_dir):
@@ -3777,14 +3660,6 @@ def _phase_d_unbacked_appraisal_names(
         n_changes=1,
         detail="removed unbacked formal risk-of-bias framework names",
     )]
-
-
-def _revision_asks_unbacked_appraisal_names(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return any(token in lower for token in (
-        "rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias",
-        "appraisal", "rob judgment", "rob judgments",
-    ))
 
 
 def _appraisal_artifact_summary(out_dir: Path) -> str:
@@ -3845,7 +3720,7 @@ def _phase_d_source_inclusion_rationale(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_source_inclusion_rationale(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_source_inclusion_rationale_note):
         return text, []
     if "topic-fit rationale:" in text.lower():
         return text, []
@@ -3883,24 +3758,6 @@ def _phase_d_source_inclusion_rationale(
                 detail=f"added source inclusion rationale from {len(rows)} manifest receipt(s)",
             )]
     return text, []
-
-
-def _revision_asks_source_inclusion_rationale(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "source" in lower
-        and any(token in lower for token in (
-            "included under", "inclusion criteria", "why sources", "umbrella",
-            "operationalize", "directly study", "directly addresses",
-            "justify", "adjacent context", "primary content", "prune",
-            "reclassify", "define", "operationally", "population strata",
-            "subgrouping axes",
-        ))
-    ) or (
-        "define" in lower
-        and any(token in lower for token in ("operationally", "operationalize"))
-        and any(token in lower for token in ("subgrouping axes", "population strata", "outcomes"))
-    )
 
 
 def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
@@ -3947,7 +3804,7 @@ def _phase_d_species_study_design_summary(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_species_study_design_summary(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_species_study_design_summary):
         return text, []
     normalised = text.replace("Example source(s)", "Example sources")
     if "species and study-design summary" in text.lower() or "species and study design summary" in text.lower():
@@ -3993,15 +3850,6 @@ def _phase_d_species_study_design_summary(
         n_changes=1,
         detail=f"added species/study-design summary for {len(rows)} manifest receipt(s)",
     )]
-
-
-def _revision_asks_species_study_design_summary(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "species" in lower
-        and ("study design" in lower or "study-design" in lower)
-        and "summary table" in lower
-    )
 
 
 def _species_study_design_bucket(row: dict[str, Any]) -> tuple[str, str, str]:
@@ -4336,11 +4184,14 @@ def _phase_d_tensions_and_gaps_breadth(
             "cross-study disagreement" in lower
             or "cross-source disagreement" in lower
             or "surfaced tension" in lower
+            or "pairwise disagreement" in lower
+            or "tension count" in lower
         )
         and any(token in lower for token in (
             "substantiated", "enumerated", "actually-surfaced",
             "actually surfaced", "correct", "replace", "specific",
             "named sources", "enumerate", "where the disagreements lie",
+            "audit", "define", "tally",
         ))
     )
     if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower and not asks_count_evidence:
@@ -4368,6 +4219,21 @@ def _phase_d_tensions_and_gaps_breadth(
         if token in lower
     ]
     context_text = ", ".join(dict.fromkeys(contexts)) or "the reviewer-named adjacent contexts"
+    tension_artifact = _load_sidecar(
+        out_dir / "audit" / "tension_elaboration_plans.json",
+    ) or {}
+    calculation = tension_artifact.get("calculation") if isinstance(tension_artifact, dict) else {}
+    outcome_tally = ", ".join(
+        f"{_outcome_display(str(key))}={value}"
+        for key, value in (calculation.get("by_outcome") or {}).items()
+    ) if isinstance(calculation, dict) else ""
+    audit_note = (
+        f"\n\nPairwise tension audit: {calculation.get('rule')} "
+        f"The matrix contains {calculation.get('all_dyads')} unordered dyads; "
+        f"{calculation.get('non_orthogonal_dyads')} are non-orthogonal. "
+        f"Per-outcome tally: {outcome_tally or 'none'}."
+        if asks_count_evidence and calculation else ""
+    )
     if tension_lines:
         pair_count = len(tension_lines)
         pair_description = "auditable cross-source tension" if any("cross-source tension in evidence role" in line for line in tension_lines) else "semantically comparable source-pair disagreement"
@@ -4381,7 +4247,7 @@ def _phase_d_tensions_and_gaps_breadth(
             f"The manuscript surfaces {pair_count} {pair_description}"
             f"{'s' if pair_count != 1 else ''}; manifest claim-level counts "
             "are not presented as source-pair counts. Actually surfaced tensions include:\n"
-            + "\n".join(tension_lines) + "\n"
+            + "\n".join(tension_lines) + audit_note + "\n"
         )
     else:
         section = (
@@ -4392,7 +4258,7 @@ def _phase_d_tensions_and_gaps_breadth(
             f"spans {context_text}, but those contexts remain hypothesis-generating. "
             "Evidence-gap priority: collect direct studies "
             "measuring the same endpoint in comparable populations and designs before "
-            "claiming cross-study disagreement.\n"
+            f"claiming cross-study disagreement.{audit_note}\n"
         )
     section = section.rstrip() + "\n\n"
     existing = re.search(r"^## Tensions and Gaps\b.*?(?=^## |\Z)", text, flags=re.M | re.S)
@@ -4528,7 +4394,7 @@ def _phase_d_source_statistics_landscape(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_source_statistics_landscape(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_source_statistics_landscape):
         return text, []
     note = _source_statistics_landscape_note(feedback)
     if not note:
@@ -4542,15 +4408,6 @@ def _phase_d_source_statistics_landscape(
         n_changes=1,
         detail="added reviewer-named source statistic to Evidence Landscape",
     )]
-
-
-def _revision_asks_source_statistics_landscape(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "specific statistics" in lower
-        and "evidence landscape" in lower
-        and any(token in lower for token in ("source bundle", "outcome class", "buried"))
-    )
 
 
 def _source_statistics_landscape_note(feedback: str) -> str:
@@ -4899,19 +4756,6 @@ def _revision_asks_forward_dated_ai_disclosure(feedback: str) -> bool:
     )
 
 
-def _revision_asks_publication_year_note(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "publication-year" in lower
-        or "publication year" in lower
-        or "doi/pubmed date" in lower
-        or "doi/pubmed dates" in lower
-        or ("in press" in lower and "citation" in lower)
-        or ("pre-publication" in lower and "source-traceable" in lower)
-        or ("2026-dated" in lower and "source" in lower)
-    )
-
-
 def _phase_d_forward_dated_ai_disclosure_note(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
@@ -4919,7 +4763,7 @@ def _phase_d_forward_dated_ai_disclosure_note(
     feedback = _revision_feedback(request)
     if not (
         _revision_asks_forward_dated_ai_disclosure(feedback)
-        or _revision_asks_publication_year_note(feedback)
+        or _feedback_asks(feedback, revision_coverage._asks_publication_year_note)
     ):
         return text, []
     limitations = _section_body(text, "Limitations").lower()
@@ -5020,21 +4864,6 @@ _CITATION_TRACEABILITY_NOTE = (
 )
 
 
-def _revision_asks_citation_traceability_map(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        "author-year" in lower
-        and "citation" in lower
-        and any(token in lower for token in ("source bundle entry", "source-bundle entry", "bundle entry"))
-        and any(token in lower for token in ("methods_pack", "citation list", "mapping"))
-    ) or (
-        "source bundle" in lower
-        and "citation" in lower
-        and "manifest" in lower
-        and any(token in lower for token in ("inline", "1:1", "audit trail", "reconcile"))
-    )
-
-
 _SOURCE_VERIFICATION_SENTENCE = (
     "The source bundle and supplementary artifacts (manifest.json and "
     "methods_pack.json when present) define the evidence state; detailed "
@@ -5048,8 +4877,8 @@ def _phase_d_source_verification_transparency(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    wants_verification = _revision_asks_source_verification_transparency(feedback)
-    wants_citation_map = _revision_asks_citation_traceability_map(feedback)
+    wants_verification = _feedback_asks(feedback, revision_coverage._asks_source_verification_transparency)
+    wants_citation_map = _feedback_asks(feedback, revision_coverage._asks_citation_traceability_map)
     if not (wants_verification or wants_citation_map):
         return text, []
     methods = re.search(r"^## Methods\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
@@ -5082,15 +4911,6 @@ def _phase_d_source_verification_transparency(
         n_changes=len(insertions),
         detail=detail,
     )]
-
-
-def _revision_asks_source_verification_transparency(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        ("source bundle" in lower or "reference-only" in lower)
-        and any(token in lower for token in ("external verification", "independently verified", "exact statistics", "detailed quantitative"))
-        and any(token in lower for token in ("manifest", "methods_pack", "supplementary artifact", "supplemental artifact"))
-    )
 
 
 def _phase_d_revision_audit_notes(
@@ -5258,7 +5078,7 @@ def _phase_d_single_source_proportionality(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_single_source_proportionality(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_single_source_proportionality):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
@@ -5293,24 +5113,12 @@ def _phase_d_single_source_proportionality(
     return text, []
 
 
-def _revision_asks_single_source_proportionality(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        ("single-source" in lower or "single source" in lower)
-        and any(token in lower for token in ("hypothesis-generating", "proportionality", "reduce narrative depth"))
-    ) or (
-        "outcome class" in lower
-        and ("n=1" in lower or "one-source" in lower or "one source" in lower)
-        and any(token in lower for token in ("context-only", "parallel evidence", "merge them"))
-    )
-
-
 def _phase_d_actionable_gaps(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_actionable_gaps(feedback) or _actionable_gaps_are_present(text):
+    if not _feedback_asks(feedback, revision_coverage._asks_actionable_gaps) or _actionable_gaps_are_present(text):
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
@@ -5347,18 +5155,6 @@ def _phase_d_actionable_gaps(
     )]
 
 
-def _revision_asks_actionable_gaps(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return (
-        ("gaps identified" in lower or "strengthen gaps" in lower or "gaps with" in lower)
-        and any(token in lower for token in ("actionable", "future research", "next steps", "concrete studies", "concrete actionable"))
-    ) or (
-        "gaps section" in lower
-        and any(token in lower for token in ("cover all", "all five", "full outcome"))
-        and any(token in lower for token in ("outcome class", "outcome classes"))
-    )
-
-
 def _actionable_gaps_are_present(text: str) -> bool:
     match = re.search(r"^## (?:Gaps Identified|Evidence-Gap Priority)\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not match:
@@ -5379,7 +5175,7 @@ def _phase_d_prior_publication_differentiation(
 ) -> tuple[str, list[FinalizerLogEntry]]:
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
-    if not _revision_asks_prior_publication_differentiation(feedback):
+    if not _feedback_asks(feedback, revision_coverage._asks_prior_publication_differentiation):
         return text, []
     if "prior-brief differentiation:" in text.lower():
         return text, []
@@ -5414,15 +5210,6 @@ def _phase_d_prior_publication_differentiation(
                 detail=f"added prior-brief differentiation note to {heading}",
             )]
     return text, []
-
-
-def _revision_asks_prior_publication_differentiation(feedback: str) -> bool:
-    lower = " ".join(feedback.lower().split())
-    return "high overlap with publication" in lower or (
-        "differentiate" in lower
-        and "publication" in lower
-        and any(token in lower for token in ("angle", "findings", "population"))
-    )
 
 
 _REFERENCE_ID_RE = re.compile(

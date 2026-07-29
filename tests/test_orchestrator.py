@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+from collections.abc import Callable
 from pathlib import Path
 from types import MappingProxyType
 
@@ -114,7 +115,7 @@ def _make_handler(
     extract_claim: str = "Metformin reduced HbA1c by 0.5%",
     extract_pvalue: str = "0.003",
     judge_verdict: str = "accept",
-) -> callable:
+) -> Callable[[httpx.Request], httpx.Response]:
     """Compose a single MockTransport handler that routes by system
     prompt content — fact extractor vs. SPAR judges."""
     def handler(request: httpx.Request) -> httpx.Response:

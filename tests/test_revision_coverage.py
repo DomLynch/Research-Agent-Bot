@@ -1958,6 +1958,47 @@ def test_detects_reviewer_request_to_replace_unclear_direction_codes() -> None:
     assert revision_coverage.asks_effect_direction_reconciliation(feedback) is True
 
 
+def test_receipt_contract_fields_are_authorized_only_by_explicit_recode_asks() -> None:
+    assert revision_coverage.authorized_receipt_contract_fields(
+        "Reconcile outcome-class assignments. Move one source into Mechanism.",
+    ) == {"outcome_class"}
+    assert revision_coverage.authorized_receipt_contract_fields(
+        "Recode Harris 2008 as a primary RCT, not review; correct direct/indirect and proper tier.",
+    ) == {"directness", "evidence_tier"}
+    assert revision_coverage.authorized_receipt_contract_fields(
+        "Improve the discussion and conclusion.",
+    ) == set()
+
+
+def test_receipt_contract_authorization_is_limited_to_named_sources() -> None:
+    feedback = (
+        "Move Schmid 2021 into the Mechanism outcome class and Dorneles 2020 "
+        "into Immune/Inflammation; Recode Harris 2008 as a primary RCT, not "
+        "review; correct directness and tier. The Harris 2008 effect direction "
+        "is inconsistent with the underlying source."
+    )
+    rows = {
+        "schmid": {"source_title": "MiRNA126 RGS16 CXCL12 cascade"},
+        "dorneles": {"source_title": "Immunoregulation after exercise"},
+        "harris": {"source_title": "Flow-mediated dilation response"},
+        "unrelated": {"source_title": "Unrelated trial"},
+    }
+    aliases = {
+        "schmid": ("Schmid 2021",),
+        "dorneles": ("Dorneles 2020",),
+        "harris": ("Harris 2008",),
+        "unrelated": ("Other 2020",),
+    }
+
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        feedback, rows, aliases,
+    ) == {
+        "schmid": {"outcome_class"},
+        "dorneles": {"outcome_class"},
+        "harris": {"directness", "evidence_tier", "effect_direction"},
+    }
+
+
 def test_inferential_bridge_boundary_satisfies_dedicated_section_ask() -> None:
     ask = (
         "Add a dedicated 'Inferential Bridge' section covering the mechanistic-to-clinical gap, "

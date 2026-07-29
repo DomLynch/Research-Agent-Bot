@@ -46,7 +46,7 @@ from agent.revision_evidence import (  # noqa: E402
 
 
 def _write_revision_feedback_sidecar(out_dir: Path) -> None:
-    feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
+    feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())
     path = out_dir / "researka_revision_request.json"
     if not feedback or path.is_file():
         return
@@ -1756,11 +1756,22 @@ def _title_guarded_effect_direction(
 
 
 def _is_randomized_trial(paper_meta: dict) -> bool:
-    return _taxonomy.is_primary_randomized_study(str(paper_meta.get("title") or ""), study_design=str(paper_meta.get("study_design") or ""))
+    sections = paper_meta.get("sections")
+    abstract = paper_meta.get("abstract") or (
+        sections.get("abstract") if isinstance(sections, dict) else ""
+    )
+    return _taxonomy.is_primary_randomized_study(
+        str(paper_meta.get("title") or ""),
+        str(abstract or ""),
+        study_design=str(paper_meta.get("study_design") or ""),
+    )
 
 
 def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tuple[str, str]:
     """Classify evidence tier and directness from structured metadata."""
+    sections = paper_meta.get("sections")
+    if not paper_meta.get("abstract") and isinstance(sections, dict):
+        paper_meta = {**paper_meta, "abstract": sections.get("abstract")}
     pack = _get_topic_pack()
     is_rct_papers = pack.canonical_rct_paper_ids if pack is not None else ()
     paper_id_l = paper_id.lower()
@@ -1790,14 +1801,11 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     # ("MASTERS", "MET_PREVENT", "Konopka_2019") — now reads from
     # the active topic pack's canonical_rct_paper_ids.
     if cls.tier == "unknown":
-        if paper_id.startswith("PMC"):
-            # P1 reviewer fix: PMC* prefix alone is NOT a reliable
-            # mechanistic signal — many PMC papers are human
-            # observational mortality studies. Default to B2 here so
-            # we err toward "human-direct" rather than misclassifying
-            # as mechanistic.
-            return "B2", "indirect"
-        return "B1", "review"
+        # An identifier namespace is not a study design. Reviews are detected
+        # above from title/abstract; an otherwise unknown source stays indirect
+        # instead of being promoted to review evidence solely because it has a
+        # PMID rather than a PMCID.
+        return "B2", "indirect"
     return cls.tier, cls.directness
 
 
@@ -2180,6 +2188,7 @@ def build_receipts_from_quant_claims(
     *,
     receipt_ids: frozenset[str] = frozenset(),
     receipt_contracts: dict[str, dict[str, Any]] | None = None,
+    authorized_contract_fields: dict[str, set[str]] | None = None,
 ) -> list[ReceiptSummary]:
     """Build one role-aware receipt per contributing quant-claim paper."""
     paper_meta_by_id = _load_paper_meta_by_id()
@@ -2300,6 +2309,18 @@ def build_receipts_from_quant_claims(
             receipt, directness=effective_directness(receipt),
             outcome_class=refine_other_outcome_class(receipt, receipt.outcome_class),
         )
+        locked = receipt_contracts.get(paper_id, {})
+        allowed = (authorized_contract_fields or {}).get(paper_id, set())
+        updates: dict[str, Any] = {}
+        for field in dataclasses.fields(receipt):
+            name = field.name
+            if name not in locked or name in allowed or name in {"receipt_id", "receipt_path"}:
+                continue
+            if name == "directness" and effective_directness(receipt) == effective_directness(locked):
+                continue
+            updates[name] = tuple(locked[name] or ()) if name == "p_values" else locked[name]
+        if updates:
+            receipt = dataclasses.replace(receipt, **updates)
         typed.append((receipt, _taxonomy.population_of(identity)))
     typed.sort(key=lambda rp: -rp[0].n_claims)
     if receipt_ids:
@@ -2748,10 +2769,39 @@ async def _run(
     (out_dir / "receipt_funnel.md").write_text(
         render_receipt_funnel_markdown(receipt_funnel),
     )
+    allowed_by_receipt: dict[str, set[str]] = {}
+    if revision_receipt_ids:
+        revision_feedback = os.getenv("RESEARKA_REVISION_FEEDBACK", "")
+        aliases_by_receipt: dict[str, tuple[str, ...]] = {}
+        if evidence_lock.citation_registry is not None:
+            try:
+                source_registry = json.loads(
+                    evidence_lock.citation_registry.read_text(),
+                )
+            except (OSError, json.JSONDecodeError):
+                source_registry = {}
+            if isinstance(source_registry, dict):
+                aliases_by_receipt = {
+                    str(receipt_id): tuple(
+                        str(row.get(field) or "").strip()
+                        for field in ("body_citation", "citation_token", "reference_id")
+                        if str(row.get(field) or "").strip()
+                    )
+                    for receipt_id, row in source_registry.items()
+                    if isinstance(row, dict)
+                }
+        allowed_by_receipt = (
+            _revision_coverage.authorized_receipt_contract_fields_by_receipt(
+                revision_feedback,
+                evidence_lock.receipt_rows,
+                aliases_by_receipt,
+            )
+        )
     receipts = build_receipts_from_quant_claims(
         topic=topic,
         receipt_ids=revision_receipt_ids,
         receipt_contracts=evidence_lock.receipt_rows,
+        authorized_contract_fields=allowed_by_receipt,
     )
     if revision_receipt_ids:
         missing = sorted(revision_receipt_ids - {r.receipt_id for r in receipts})
@@ -2766,9 +2816,15 @@ async def _run(
                 file=sys.stderr,
             )
             return 5
-        mismatches = receipt_contract_mismatches(receipts, evidence_lock.receipt_rows, allowed_fields=(allowed_fields := {"effect_direction"} if _revision_coverage.asks_effect_direction_reconciliation(os.getenv("RESEARKA_REVISION_FEEDBACK", "")) else set()))
+        mismatches = [
+            mismatch for mismatch in receipt_contract_mismatches(receipts, evidence_lock.receipt_rows)
+            if (parts := mismatch.split(":", 1))[1] not in allowed_by_receipt.get(parts[0], set())
+        ]
         continuity["contract_mismatches"] = mismatches
-        continuity["authorized_contract_fields"] = sorted(allowed_fields)
+        continuity["authorized_contract_fields_by_receipt"] = {
+            receipt_id: sorted(fields)
+            for receipt_id, fields in sorted(allowed_by_receipt.items())
+        }
         if mismatches:
             (out_dir / "revision_evidence_continuity.json").write_text(
                 json.dumps(continuity, indent=2),

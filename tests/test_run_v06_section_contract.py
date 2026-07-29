@@ -1206,3 +1206,21 @@ def test_canonical_rct_topic_pack_override_wins_before_abstract_inference() -> N
     finally:
         orch._TOPIC_PACK = old_pack
     assert (tier, directness) == ("A1", "direct")
+
+
+def test_paper_tier_reads_abstract_and_never_infers_review_from_identifier() -> None:
+    tier, directness = orch._classify_paper_tier(
+        "PMID123",
+        4,
+        {
+            "title": "Flow-mediated dilation after acute exercise",
+            "sections": {
+                "abstract": "We randomized 16 men in a controlled crossover trial.",
+            },
+        },
+    )
+    assert (tier, directness) == ("A1", "direct")
+
+    assert orch._classify_paper_tier(
+        "PMID456", 2, {"title": "Unclassified exercise report", "abstract": ""},
+    ) == ("B2", "indirect")

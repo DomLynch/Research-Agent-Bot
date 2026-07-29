@@ -292,6 +292,22 @@ def test_locked_receipt_contract_preserves_original_claim_membership(
     assert locked[0].n_claims == original[0].n_claims
     assert locked[0].thesis_text == original[0].thesis_text
 
+    contract = {
+        "outcome_class": "mechanism",
+        "effect_direction": "negative",
+        "directness": "mechanistic",
+        "evidence_tier": "C1",
+    }
+    preserved = orch.build_receipts_from_quant_claims(
+        topic="test_topic",
+        receipt_ids=frozenset({"mixed"}),
+        receipt_contracts={"mixed": contract},
+        authorized_contract_fields={"mixed": {"outcome_class", "effect_direction"}},
+    )[0]
+    assert preserved.outcome_class == original[0].outcome_class
+    assert preserved.effect_direction == original[0].effect_direction
+    assert (preserved.directness, preserved.evidence_tier) == ("mechanistic", "C1")
+
 
 def test_restore_revision_citations_is_exact_and_fail_closed(tmp_path: Path) -> None:
     import dataclasses as _dataclasses

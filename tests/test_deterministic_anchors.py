@@ -175,6 +175,8 @@ def test_conclusion_anchor_uses_non_orthogonal_tension_count() -> None:
     text = build_conclusion_anchor(receipts, matrix)
     assert "1 documented cross-receipt tensions" in text  # len(non_orthogonal())
     assert "3 documented" not in text  # not len(pairs)
+    assert "Population boundary:" in text
+    assert "Conclusions apply only within those represented populations" in text
 
 
 # ---- #8: cross-section hedge dedup (no duplicated meta-hedge) ----------

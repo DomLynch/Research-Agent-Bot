@@ -180,6 +180,7 @@ def build_conclusion_anchor(
     tier_counts: Counter[str] = Counter(r.evidence_tier for r in accepted if r.evidence_tier)
     direct_counts: Counter[str] = Counter(r.directness for r in accepted if r.directness)
     direction_counts: Counter[str] = Counter(r.effect_direction for r in accepted if r.effect_direction)
+    populations = list(dict.fromkeys(r.population_summary.strip() for r in accepted if r.population_summary and r.population_summary.strip()))
     # Canonical public count = non-orthogonal tensions (== manifest
     # n_non_orthogonal_tensions), the value every other surface uses. Using
     # len(matrix.pairs) here leaked the full pairwise count (e.g. 528 vs 86).
@@ -188,6 +189,7 @@ def build_conclusion_anchor(
     structural = "\n\n".join([
         "### Bounded conclusion",
         f"This synthesis supports a bounded interpretation across {len(accepted)} accepted receipts. The evidence tiers are {_format_kinds(tier_counts)}, and directness is {_format_kinds(direct_counts)}. Effect directions are {_format_kinds(direction_counts)}, with {n_with_p} receipts carrying source-traced p-values and {n_tensions} documented cross-receipt tensions. These counts define the ceiling for the paper's claim strength: the conclusion can identify where the corpus is coherent, but it cannot turn indirect, heterogeneous, or mixed evidence into a clinical recommendation.",
+        f"Population boundary: the accepted receipts document {len(populations)} distinct population summaries: {_format_populations(populations)}. Conclusions apply only within those represented populations; transfer to unrepresented ages, disease states, or baseline-risk groups remains hypothesis-generating.",
         "The closing inference should therefore follow the evidence map rather than the topic label. Direct human receipts carry the most weight when they measure clinically proximate outcomes in the population under review. Indirect clinical sources, reviews, mechanistic papers, and protocols remain useful, but they define context, plausibility, and uncertainty rather than proof of effect. Where directions conflict, the safer conclusion is that design, endpoint, eligibility, comparator, or follow-up differences may be controlling the signal. Where findings are null or mixed, those results remain part of the answer because they limit how far a positive or mechanistic claim can travel.",
         "The practical takeaway is bounded and revisable. The paper should be read as a source-traced map of what the current receipt set can support, not as a treatment guideline or a pooled efficacy claim. A stronger future conclusion would require aligned direct evidence, durable endpoints, and fewer unresolved cross-receipt tensions. Until then, the responsible conclusion is to preserve uncertainty, state the strongest supported signal narrowly, make the remaining research gaps visible, and keep downstream reuse tied to the same receipt-level limits.",
     ])
@@ -211,10 +213,7 @@ def _format_populations(pops: list[str]) -> str:
     if not pops:
         return "none documented"
     # Truncate each population summary for compactness
-    items = [
-        (p[:60] + "…") if len(p) > 60 else p
-        for p in pops[:4]
-    ]
+    items = [(p[:60] + "…") if len(p) > 60 else p for p in pops[:4]]
     if len(pops) > 4:
         items.append(f"and {len(pops) - 4} additional summaries")
     return "; ".join(items)

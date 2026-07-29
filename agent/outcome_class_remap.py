@@ -50,14 +50,14 @@ OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
     "cardiometabolic": ("Cardiometabolic", (), ()),
     "cognitive": ("Cognitive", (), ()),
     "contextual_other": ("Contextual Adjacent Evidence", ("contextual other", "adjacent evidence"), ()),
-    "deficiency_prevalence": ("Deficiency Prevalence", ("deficiency prevalence",), ("deficiency", "insufficiency", "prevalence", "serum", "status")),
+    "deficiency_prevalence": ("Deficiency Prevalence", ("deficiency prevalence",), ("deficiency", "insufficiency", "prevalence")),
     "dosing_pharmacokinetics": ("Dosing and Pharmacokinetics", ("dosing pharmacokinetics",), ("dose", "dosing", "pharmacokinetic")),
     "frailty": ("Frailty", (), ()),
     "healthspan_qol": ("Healthspan and Quality of Life", ("healthspan qol", "quality of life"), ()),
     # "immune" is merged into immune_inflammation (same domain) so a corpus
     # does not fragment into two singleton sections; outcome_key canonicalizes
     # both ids to immune_inflammation.
-    "immune_inflammation": ("Immune and Inflammation", ("immune inflammation", "immune"), ("inflammation", "immune", "sepsis", "infection", "cytokine")),
+    "immune_inflammation": ("Immune and Inflammation", ("immune inflammation", "immune"), ("inflammation", "immune", "immunoregulat", "sepsis", "infection", "cytokine")),
     "longevity": ("Longevity", (), ()),
     "mechanism": ("Mechanism", (), ()),
     "mortality_survival": ("Mortality and Survival", ("mortality survival",), ("mortality", "survival", "death", "cause_specific_death")),
@@ -146,7 +146,7 @@ def refine_other_outcome_class(receipt: object, current_class: str) -> str:
     }:
         return source_override
     if current_class != "other":
-        return current_class
+        return outcome_key(current_class)
     for label, needles in BIOMEDICAL_OTHER_OUTCOME_RULES:
         if any(needle in text for needle in needles):
             return label

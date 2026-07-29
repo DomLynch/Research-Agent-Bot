@@ -126,6 +126,7 @@ def test_tension_directness_normalizes_review_records(tmp_path: Path) -> None:
             self.receipt_id = rid
             self.evidence_tier = "B1"
             self.directness = directness
+            self.outcome_class = "immune"
             self.p_values = ()
 
     class Tension:
@@ -143,6 +144,12 @@ def test_tension_directness_normalizes_review_records(tmp_path: Path) -> None:
 
     payload = pqr.write_tension_plans(tmp_path, Matrix())
     assert payload["plans"][0]["paper_a"] == "A"
+    assert payload["calculation"]["all_dyads"] == 1
+    assert payload["calculation"]["non_orthogonal_dyads"] == 1
+    assert payload["calculation"]["by_outcome"] == {"immune": 1}
+    assert "Each unordered receipt pair is counted once" in (
+        tmp_path / "tension_elaboration_plans.md"
+    ).read_text()
 
 
 def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:

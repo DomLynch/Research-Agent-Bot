@@ -1621,7 +1621,7 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
                 or row.get("publishedAt")
                 or row.get("published_at")
             ),
-            "feedback": " ".join("; ".join(required).split())[:4000],
+            "feedback": " ".join("; ".join(required).split()),
         }
         if required:
             request["required_revisions"] = required
@@ -3138,7 +3138,7 @@ def _run_synthesis(
         if not dry_run:
             env["RESEARCH_AGENT_PUBLIC_FULL_ONLY"] = "1"
         if revision_feedback:
-            env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
+            env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback
         if review_type_override:
             env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
         if revision_source_run:
@@ -3447,7 +3447,7 @@ def _repair_existing_run(
         if revision_source or revision_feedback:
             payload = dict(revision_source or {})
             payload.setdefault("source_run", source_dir.name)
-            payload["feedback"] = (revision_feedback or "")[:4000]
+            payload["feedback"] = revision_feedback or ""
             _write_json(out_dir / "researka_revision_request.json", payload)
             if payload.get("retry_unchanged"):
                 _write_json(out_dir / REVISION_COVERAGE_GATE, {"passed": True, "unmet": [], "mode": "unchanged_external_verifier_retry"})

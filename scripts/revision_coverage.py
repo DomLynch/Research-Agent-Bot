@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import asyncio
 import re
-from collections.abc import Awaitable, Callable, Iterable, Sequence
+from collections.abc import Awaitable, Callable, Collection, Iterable, Mapping, Sequence
 from typing import Any
 
 from agent.llm_client import LLMError, LLMResponse, build_judge_chain, chat_json
@@ -300,6 +300,62 @@ def asks_effect_direction_reconciliation(text: str) -> bool:
     return _asks_effect_direction_reconciliation(_normalised_feedback(text))
 
 
+def authorized_receipt_contract_fields(text: str) -> set[str]:
+    """Receipt fields a reviewer explicitly asked this revision to recode."""
+    lower = _normalised_feedback(text)
+    fields = {"effect_direction"} if _asks_effect_direction_reconciliation(lower) else set()
+    action = any(token in lower for token in (
+        "correct", "move", "reclassify", "recode", "reconcile", "reroute",
+        "inconsistent", "misclassified", "not a review", "underlying source",
+    ))
+    if action and "effect direction" in lower:
+        fields.add("effect_direction")
+    if action and any(token in lower for token in ("outcome class", "outcome-class")):
+        fields.add("outcome_class")
+    study_recode = action and (
+        any(token in lower for token in ("directness", "direct/indirect", "evidence tier", "proper tier"))
+        or all(token in lower for token in ("primary", "review"))
+        and any(token in lower for token in ("rct", "randomized", "randomised"))
+    )
+    if study_recode:
+        fields.update(("directness", "evidence_tier"))
+    return fields
+
+
+def authorized_receipt_contract_fields_by_receipt(
+    text: str,
+    rows: dict[str, dict[str, Any]],
+    aliases_by_receipt: Mapping[str, Collection[str]] | None = None,
+) -> dict[str, set[str]]:
+    """Map source-specific reviewer recode asks to only the named receipts."""
+    aliases_by_receipt = aliases_by_receipt or {}
+    segments = [
+        _normalised_feedback(segment)
+        for segment in re.split(r"(?:\r?\n)+|;\s+", text)
+        if segment.strip()
+    ]
+    authorized: dict[str, set[str]] = {}
+    for receipt_id, row in rows.items():
+        aliases = {
+            str(value).casefold().strip()
+            for value in (
+                receipt_id,
+                row.get("source_title"),
+                row.get("source_doi"),
+                row.get("source_pmid"),
+                *aliases_by_receipt.get(receipt_id, ()),
+            )
+            if str(value or "").strip()
+        }
+        fields: set[str] = set()
+        for segment in segments:
+            if any(alias in segment for alias in aliases):
+                fields.update(authorized_receipt_contract_fields(segment))
+        if fields:
+            authorized[receipt_id] = fields
+    return authorized
+
+
 def asks_admission_direction_tally_reconciliation(text: str) -> bool:
     return _asks_admission_direction_tally_reconciliation(_normalised_feedback(text))
 
@@ -487,6 +543,18 @@ def _asks_source_inclusion_rationale(text: str) -> bool:
     )
 
 
+def _asks_source_inclusion_rationale_note(text: str) -> bool:
+    note_terms = (
+        "included under", "inclusion criteria", "why sources", "umbrella",
+        "operationalize", "directly study", "directly addresses", "justify",
+        "adjacent context", "primary content", "prune", "reclassify", "define",
+        "operationally", "population strata", "subgrouping axes",
+    )
+    return _asks_source_inclusion_rationale(text) or (
+        "source" in text and any(token in text for token in note_terms)
+    )
+
+
 def _asks_species_study_design_summary(text: str) -> bool:
     return (
         "species" in text
@@ -642,6 +710,15 @@ def _asks_concrete_research_question(text: str) -> bool:
         "research question" in text
         and any(token in text for token in ("clear", "specific", "concrete", "answerable", "fix", "framing"))
     )
+
+
+def _asks_concrete_research_question_note(text: str) -> bool:
+    terms = (
+        "clear", "specific", "concrete", "answerable", "directly answerable",
+        "fix", "framing", "substantive", "self-referential",
+        "two-part", "two part", "both halves",
+    )
+    return "research question" in text and any(token in text for token in terms)
 
 
 def _author_inference_action_clause(text: str) -> str:
@@ -936,6 +1013,14 @@ def _asks_directional_coding(text: str) -> bool:
     )
 
 
+def _asks_directional_coding_note(text: str) -> bool:
+    return _asks_directional_coding(text) or (
+        "evidence landscape" in text and "strongest signal" in text and "directional signal" in text
+    ) or ("contextual claim" in text and "directional signal" in text) or (
+        "null" in text and "absence of support" in text
+    )
+
+
 def _asks_direction_coding_visibility(text: str) -> bool:
     return (
         any(token in text for token in ("direction-coding", "direction coding", "directional coding"))
@@ -1187,6 +1272,10 @@ def _asks_numeric_effect_audit(text: str) -> bool:
         any(token in text for token in ("audit all reported p-values", "audit all reported p values", "reported p-values", "reported p values"))
         and any(token in text for token in ("effect directions", "source bundle excerpts", "discrepancies"))
     )
+
+
+def _asks_numeric_effect_audit_note(text: str) -> bool:
+    return any(token in text for token in ("audit all reported p-values", "audit all reported p values", "reported p-values", "reported p values"))
 
 
 def _asks_named_numeric_correction(text: str) -> bool:

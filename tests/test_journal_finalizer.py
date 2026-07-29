@@ -881,7 +881,7 @@ def test_admission_funnel_clarification_adds_additive_screening_flow(tmp_path: P
 
     ask = (
         "Replace or supplement the non-additive claim-binding funnel with a clearly "
-        "additive screening flow (records screened -> excluded with reasons -> "
+        "additive-screening flow (records screened -> excluded with reasons -> "
         "eligible -> admitted) so the funnel is auditable."
     )
     paper = (
@@ -3226,6 +3226,39 @@ def test_tensions_and_gaps_breadth_repairs_revision_ask(tmp_path: Path) -> None:
             detail="added Tensions and Gaps breadth note for cognition, menopause, acute-care",
         )
     ]
+
+
+def test_tension_count_revision_renders_dyad_rule_and_outcome_tally(
+    tmp_path: Path,
+) -> None:
+    (tmp_path / "audit").mkdir()
+    (tmp_path / "manifest.json").write_text('{"receipts": []}')
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": (
+            "Define and audit the pairwise disagreement tension count; "
+            "state the dyad rule and per-outcome tally."
+        ),
+    }))
+    (tmp_path / "audit" / "tension_elaboration_plans.json").write_text(
+        json.dumps({"calculation": {
+            "rule": "Each unordered receipt pair is counted once.",
+            "all_dyads": 6,
+            "non_orthogonal_dyads": 2,
+            "by_outcome": {"immune_inflammation": 2},
+        }}),
+    )
+    paper = (
+        "## Tensions and Gaps\n\nThe prior count was not auditable.\n\n"
+        "## Evidence Snapshot\n\nBounded."
+    )
+
+    fixed, _ = journal_finalizer._phase_d_tensions_and_gaps_breadth(
+        paper, tmp_path,
+    )
+
+    assert "Each unordered receipt pair is counted once." in fixed
+    assert "6 unordered dyads; 2 are non-orthogonal" in fixed
+    assert "Immune and Inflammation=2" in fixed
 
 
 def test_tensions_and_gaps_breadth_repairs_cross_source_disagreement_ask(tmp_path: Path) -> None:

@@ -183,6 +183,22 @@ def test_refine_other_splits_biomedical_junk_drawer() -> None:
     assert "contextual_other" not in classes
 
 
+def test_refine_other_routes_immunoregulation_without_serum_false_positive() -> None:
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Immunoregulation induced by autologous serum after exercise",
+        population_summary="adults with obesity",
+    )
+    assert refine_other_outcome_class(receipt, "other") == "immune_inflammation"
+
+    generic = SimpleNamespace(
+        receipt_id="s",
+        source_title="Serum biomarker status after exercise",
+        population_summary="adults",
+    )
+    assert refine_other_outcome_class(generic, "other") != "deficiency_prevalence"
+
+
 def test_refine_other_keeps_non_other_unchanged() -> None:
     receipt = SimpleNamespace(receipt_id="bone", source_title="Bone trial", population_summary="")
     assert refine_other_outcome_class(receipt, "longevity") == "longevity"
@@ -278,6 +294,10 @@ def test_immune_and_immune_inflammation_canonicalize_together() -> None:
     corpus does not fragment into two singleton sections."""
     assert outcome_key("immune") == outcome_key("immune_inflammation")
     assert outcome_key("immune") == "immune_inflammation"
+    receipt = SimpleNamespace(
+        receipt_id="r", source_title="Immune study", population_summary="",
+    )
+    assert refine_other_outcome_class(receipt, "immune") == "immune_inflammation"
 
 
 def test_dosing_pharmacokinetics_needles_carry_no_topic_specific_compounds() -> None:
