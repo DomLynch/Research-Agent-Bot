@@ -6596,6 +6596,37 @@ def test_payload_source_bundle_revision_ask_rejects_generic_registry_summaries(t
     )
 
 
+def test_authoritative_abstract_revision_ask_checks_every_named_doi(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    excerpt = (
+        "The authoritative abstract reports the study design, population, intervention, "
+        "measured endpoint, and bounded result for this source."
+    )
+    bundle = [
+        {"doi": "10.1000/alpha.1", "pmid": "123", "excerpt": excerpt},
+        {"doi": "10.1000/beta.2", "pmid": "456", "excerpt": excerpt},
+    ]
+    monkeypatch.setattr(
+        cycle.submit_bridge, "build_payload", lambda _out_dir: {"source_bundle": bundle},
+    )
+    ask = (
+        "submitted evidence text could not be reconciled with available authoritative "
+        "abstracts: doi:10.1000/alpha.1, doi:10.1000/beta.2"
+    )
+
+    assert cycle._payload_revision_ask_satisfied(out_dir, ask)
+    bundle[1]["excerpt"] = ""
+    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
+    bundle[1]["excerpt"] = "Source-bundle audit for this topic reports generated metadata instead of exact source evidence."
+    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
+    bundle[1]["excerpt"] = excerpt
+    bundle.pop()
+    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
+
+
 def test_payload_source_bundle_topicality_revision_ask_requires_all_rows_for_all_sources_ask(
     tmp_path: Path, monkeypatch,
 ) -> None:
