@@ -8,6 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
+from agent import revision_claim_trace  # noqa: E402
 
 
 def test_p_value_untraceable_flagged() -> None:
@@ -78,6 +79,54 @@ def test_all_traceable_passes() -> None:
     corpus = {"32", "32.0", "0.05", "0.85", "120", "850"}
     ok, msg = audit._check_numeric_integrity(paper, corpus_nums=corpus)
     assert ok, msg
+
+
+def test_exact_source_trace_metadata_is_not_reaudited_as_authored_prose() -> None:
+    row = {
+        "citation_token": "Baraf 2023",
+        "source_doi": "10.1093/rheumatology/kead333",
+        "directness": "direct",
+        "evidence_tier": "A1",
+        "endpoints": ["adverse events"],
+        "thesis_text": (
+            "Source excerpts: Adverse events differed: gout flares "
+            "(60.2% vs 50.6%) and infections (25.3%)."
+        ),
+    }
+    ask = "Add exact source tokens to major claims; exactly traceable; required 1."
+    paper, changed = revision_claim_trace.repair_major_claim_trace(
+        "## Results\n\nBounded synthesis.", ask, [row],
+    )
+
+    assert changed == 1
+    assert "60.2%" in paper
+    statement = next(
+        part for part in paper.split("\n\n") if "Baraf 2023 [bundle:1] reports:" in part
+    )
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums=set(), manifest={"receipts": [row]},
+    )
+    assert ok, msg
+
+    wrapped = paper.replace(statement, f"  {statement}  ")
+    ok, msg = audit._check_numeric_integrity(
+        wrapped, corpus_nums=set(), manifest={"receipts": [row]},
+    )
+    assert ok, msg
+
+    embedded = paper.replace(statement, f"Authored framing: {statement} End framing.")
+    ok, msg = audit._check_numeric_integrity(
+        embedded, corpus_nums=set(), manifest={"receipts": [row]},
+    )
+    assert not ok
+    assert "60.2" in msg
+
+    tampered = paper.replace("60.2%", "61.2%")
+    ok, msg = audit._check_numeric_integrity(
+        tampered, corpus_nums=set(), manifest={"receipts": [row]},
+    )
+    assert not ok
+    assert "61.2" in msg
 
 
 def test_grouped_and_brief_numerics_are_detected_and_trace() -> None:

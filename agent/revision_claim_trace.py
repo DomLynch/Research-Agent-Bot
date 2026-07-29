@@ -46,6 +46,12 @@ def major_claim_trace_capacity(ask: str, rows: Sequence[dict[str, Any]]) -> tupl
 
 def strip_validated_trace_support(paper_md: str, rows: Sequence[dict[str, Any]]) -> str:
     rows = _ordered_rows(rows)
+    statements = {statement for _key, _number, statement in _source_owned_results(rows)}
+    parts = re.split(r"(\n\s*\n)", paper_md)
+    for index in range(0, len(parts), 2):
+        if " ".join(parts[index].split()) in statements:
+            parts[index] = "Validated source-owned result trace."
+    paper_md = "".join(parts)
     source_bound_claims = {(claim, number) for claim, number, _row in _source_bound_claims(paper_md, rows)}
     def replace(match: re.Match[str]) -> str:
         claim, number = match.group("claim").strip(), int(match.group("bundle"))
