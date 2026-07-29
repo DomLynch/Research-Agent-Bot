@@ -6620,7 +6620,10 @@ def test_authoritative_abstract_revision_ask_checks_every_named_doi(
     assert cycle._payload_revision_ask_satisfied(out_dir, ask)
     monkeypatch.setattr(
         cycle.submit_bridge, "_revision_gate_report",
-        lambda *_args, **_kwargs: {"passed": False, "unmet_asks": [ask]},
+        lambda *_args, payload_satisfied, **_kwargs: {
+            "passed": payload_satisfied(ask),
+            "unmet_asks": [] if payload_satisfied(ask) else [ask],
+        },
     )
     assert cycle.submit_bridge._refresh_revision_coverage_gate(out_dir, {})
     assert json.loads((out_dir / cycle.REVISION_COVERAGE_GATE).read_text()) == {
@@ -6629,7 +6632,10 @@ def test_authoritative_abstract_revision_ask_checks_every_named_doi(
     other_ask = "Verify the exact p-value reported by doi:10.1000/alpha.1."
     monkeypatch.setattr(
         cycle.submit_bridge, "_revision_gate_report",
-        lambda *_args, **_kwargs: {"passed": False, "unmet_asks": [other_ask]},
+        lambda *_args, payload_satisfied, **_kwargs: {
+            "passed": payload_satisfied(other_ask),
+            "unmet_asks": [] if payload_satisfied(other_ask) else [other_ask],
+        },
     )
     assert cycle.submit_bridge._refresh_revision_coverage_gate(out_dir, {})
     assert json.loads((out_dir / cycle.REVISION_COVERAGE_GATE).read_text())["passed"] is False

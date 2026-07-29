@@ -597,13 +597,11 @@ def _revision_coverage_status(run: Path) -> str:
 def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
     try:
         import revision_coverage
-        report = _revision_gate_report(run, revision_coverage, refreshed_by="daily_submit")
+        report = _revision_gate_report(run, revision_coverage, refreshed_by="daily_submit", payload_satisfied=lambda ask: authoritative_doi_repair_satisfied(run, ask))
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
     if report is None:
         return False
-    report["unmet_asks"] = [ask for ask in report.get("unmet_asks", []) if not authoritative_doi_repair_satisfied(run, ask)]
-    report["passed"] = not report["unmet_asks"]
     _write_json(run / REVISION_COVERAGE_GATE, report)
     return True
 

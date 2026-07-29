@@ -4,7 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 
 def ask_fingerprint(asks: list[str]) -> str:
@@ -24,7 +24,7 @@ def needs_coverage(request: Any) -> bool:
     return bool(feedback(request).strip()) or not isinstance(request, dict) or request.get("retry_unchanged") is not True
 
 
-def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str) -> dict[str, Any] | None:
+def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str, payload_satisfied: Callable[[str], bool] | None = None) -> dict[str, Any] | None:
     def load(name: str) -> dict[str, Any]:
         try:
             value = json.loads((out_dir / name).read_text(encoding="utf-8"))
@@ -43,9 +43,9 @@ def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str) -> dict[str,
     rows_raw = manifest.get("receipts")
     rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
     known = coverage.deterministic_known_asks(asks, evidence_rows=rows)
-    if not asks or not known:
+    known_set = set(known) | {ask for ask in asks if payload_satisfied and payload_satisfied(ask)}
+    if not asks or not known_set:
         return None
-    known_set = set(known)
     unknown = [ask for ask in asks if ask not in known_set]
     previous = load("revision_coverage_gate.json")
     previous_unmet = previous.get("unmet_asks")
