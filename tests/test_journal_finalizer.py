@@ -3602,6 +3602,95 @@ def test_finalizer_disaggregates_contextual_bundle_and_tightens_scope(tmp_path: 
     }
 
 
+def test_finalizer_disaggregates_generic_contextual_subdomains(tmp_path: Path) -> None:
+    import revision_coverage
+
+    feedback = (
+        "Disaggregate the Contextual Adjacent Evidence class into cognitive, "
+        "immune/inflammation-adjacent, vascular/hemodynamic, and nutrition-interaction "
+        "sub-classes, or justify the lumping and discuss what is lost."
+    )
+    paper = "## Key Findings\n\nThin summary.\n\n## Results\n\nThin summary.\n"
+    rows = [
+        {"citation_token": "Cognition 2025", "source_title": "Acute exercise and executive cognitive performance", "outcome_class": "contextual_other"},
+        {"citation_token": "Immune 2024", "source_title": "Inflammatory cytokine responses after exercise", "outcome_class": "contextual_other"},
+        {"citation_token": "Vascular 2023", "source_title": "Flow-mediated dilation and vascular function", "outcome_class": "contextual_other"},
+        {"citation_token": "Nutrition 2022", "source_title": "Caffeine supplementation during exercise", "outcome_class": "contextual_other"},
+    ]
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": feedback}))
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+
+    fixed, _ = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+
+    assert revision_coverage.deterministic_unmet_asks(fixed, [feedback]) == []
+    assert "cognitive and neurobehavioral evidence" in fixed
+    assert "immune and inflammation-adjacent evidence" in fixed
+    assert "vascular and hemodynamic evidence" in fixed
+    assert "nutrition-interaction evidence" in fixed
+    assert "single adjacent bucket would obscure endpoint, population, and intervention differences" in fixed
+
+    noun_feedback = feedback.replace("Disaggregate", "Provide a disaggregation of")
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": noun_feedback}))
+    noun_fixed, _ = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+    assert revision_coverage.deterministic_unmet_asks(noun_fixed, [noun_feedback]) == []
+
+
+def test_contextual_disaggregation_is_request_specific_and_does_not_misclassify_protein() -> None:
+    import revision_coverage
+
+    ask = "Disaggregate contextual evidence into prognostic, causal-risk, and mechanism sub-classes."
+    paper = (
+        "Contextual-adjacent subdomain map: prognostic and survival-marker evidence; "
+        "causal-risk and Mendelian-randomization evidence; biology-mechanism and molecular-context evidence."
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    negated = ask.replace("causal-risk, and mechanism", "prognostic/survival; do not create causal or mechanism categories")
+    assert revision_coverage.deterministic_unmet_asks(
+        "Contextual-adjacent subdomain map: prognostic and survival-marker evidence.", [negated],
+    ) == []
+    plain_categories = "Disaggregate contextual evidence into prognostic and causal categories."
+    assert revision_coverage.deterministic_unmet_asks(
+        paper.replace("biology-mechanism and molecular-context evidence", ""), [plain_categories],
+    ) == []
+    prefixed = "Classify sources by directness and outcome classes; disaggregate contextual evidence into cognitive and immune sub-classes."
+    assert revision_coverage.deterministic_unmet_asks(paper, [prefixed]) == [prefixed]
+    suffix_list = "Disaggregate contextual evidence into sub-classes: cognitive, immune, and vascular."
+    assert revision_coverage.deterministic_unmet_asks(
+        "Contextual-adjacent subdomain map: adjacent clinical-context evidence.", [suffix_list],
+    ) == [suffix_list]
+    assert not revision_coverage._asks_contextual_subdomain_disaggregation("Do not disaggregate contextual evidence.")
+    partly_negated = "Disaggregate contextual evidence into prognostic but not causal categories."
+    assert revision_coverage.deterministic_unmet_asks(
+        "Contextual-adjacent subdomain map: prognostic and survival-marker evidence.", [partly_negated],
+    ) == []
+    rationale = "Disaggregate contextual evidence into cognitive and immune sub-classes because treatment mechanisms differ."
+    complete = "Contextual-adjacent subdomain map: cognitive and neurobehavioral evidence; immune and inflammation-adjacent evidence."
+    assert revision_coverage.deterministic_unmet_asks(complete, [rationale]) == []
+    suffix_rationale = "Disaggregate contextual evidence into sub-classes: cognitive, immune, and vascular because treatment mechanisms differ."
+    assert revision_coverage.deterministic_unmet_asks(complete + " vascular and hemodynamic evidence.", [suffix_rationale]) == []
+    for wording in (
+        "Never disaggregate contextual evidence.",
+        "Contextual evidence cannot be disaggregated.",
+        "There is no need to disaggregate contextual evidence.",
+    ):
+        assert not revision_coverage._asks_contextual_subdomain_disaggregation(wording)
+    for wording in (
+        "Without pooling contextual evidence, disaggregate it into cognitive and immune classes.",
+        "Avoid pooling and disaggregate contextual evidence into cognitive and immune classes.",
+        "Avoid broad pooling and disaggregate contextual evidence into cognitive and immune classes.",
+    ):
+        assert revision_coverage._asks_contextual_subdomain_disaggregation(wording)
+    not_only = "Disaggregate contextual evidence into not only cognitive but also immune sub-classes."
+    assert revision_coverage.deterministic_unmet_asks(complete.replace("cognitive and neurobehavioral evidence; ", ""), [not_only]) == [not_only]
+    assert journal_finalizer._manifest_subdomain_bucket(
+        {"source_title": "C-reactive protein response", "outcome_class": "contextual_other"}
+    ) != "nutrition-interaction evidence"
+    assert journal_finalizer._manifest_subdomain_bucket(
+        {"source_title": "Protein kinase signaling mechanism", "outcome_class": "contextual_other"}
+    ) == "biology-mechanism and molecular-context evidence"
+
+
 def test_latest_telomere_reviewer_asks_are_repaired_generically(tmp_path: Path) -> None:
     import revision_coverage
 

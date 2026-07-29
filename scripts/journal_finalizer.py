@@ -2649,14 +2649,14 @@ def _phase_d_substantive_evidence_synthesis(
     if direction_highlights:
         direction_highlights += "\n\n"
     subdomain_lines = _manifest_contextual_subdomain_lines(rows) if (
-        full_source_surface or "disaggregate" in feedback.lower() or needs_taxonomy_note
+        full_source_surface or revision_coverage._asks_contextual_subdomain_disaggregation(feedback) or needs_taxonomy_note
     ) else []
     subdomain_sentence = ""
     if subdomain_lines:
         subdomain_sentence = (
             "Contextual-adjacent subdomain map:\n\n"
             + "\n".join(f"- {line}" for line in subdomain_lines)
-            + "\n\n"
+            + "\n\nResidual contextual evidence is not pooled: a single adjacent bucket would obscure endpoint, population, and intervention differences, losing domain-specific direction and applicability.\n\n"
         )
     counts: dict[str, int] = {}
     for row in rows:
@@ -2711,6 +2711,7 @@ def _phase_d_substantive_evidence_synthesis(
     )
     patched, n1 = _prepend_generated_section_paragraph(text, "Evidence Landscape", landscape, "substantive evidence synthesis:", create=True)
     patched, n2 = _prepend_generated_section_paragraph(patched, "Key Findings", key_findings, "key findings from source synthesis:", create=True)
+    patched, n4 = _prepend_generated_section_paragraph(patched, "Key Findings", subdomain_sentence.strip(), "residual contextual evidence is not pooled:", create=True) if revision_coverage._asks_contextual_subdomain_disaggregation(feedback) and subdomain_sentence else (patched, 0)
     if effect_reconciliation and not n2:
         patched, n2 = _prepend_generated_section_paragraph(patched, "Results", outcome_direction_tally_note(rows), "outcome-class coded-direction reconciliation:", create=True)
     conclusion_note = (
@@ -2720,12 +2721,12 @@ def _phase_d_substantive_evidence_synthesis(
         if pattern_summary else ""
     )
     patched, n3 = _prepend_generated_section_paragraph(patched, "Conclusion", conclusion_note, "substantive conclusion for ") if conclusion_note else (patched, 0)
-    if not (n1 or n2 or n3 or legacy_n or conclusion_cleanup_n):
+    if not (n1 or n2 or n3 or n4 or legacy_n or conclusion_cleanup_n):
         return text, []
     return patched, [FinalizerLogEntry(
         phase="D_substantive_evidence_synthesis",
         rule="add_manifest_grounded_evidence_landscape_and_key_findings",
-        n_changes=n1 + n2 + n3 + legacy_n + conclusion_cleanup_n,
+        n_changes=n1 + n2 + n3 + n4 + legacy_n + conclusion_cleanup_n,
         detail=f"added manifest-grounded synthesis notes from {len(rows)} receipt(s); removed legacy source-pattern paragraphs={legacy_n}",
     )]
 
@@ -2811,10 +2812,7 @@ def _revision_asks_substantive_evidence_synthesis(feedback: str) -> bool:
                 "substantive conclusion",
             ))
         )
-        or (
-            "disaggregate" in lower
-            and any(token in lower for token in ("contextual adjacent", "heterogeneous", "sub-domain", "subdomain"))
-        )
+        or revision_coverage._asks_contextual_subdomain_disaggregation(feedback)
         or revision_coverage.asks_outcome_taxonomy_separation(feedback)
         or revision_coverage.asks_conclusion_weight_boundary(feedback)
         or revision_coverage.asks_direction_tally_audit(feedback)
@@ -2980,36 +2978,30 @@ def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) ->
 def _manifest_contextual_subdomain_lines(rows: list[dict[str, Any]]) -> list[str]:
     buckets: dict[str, list[str]] = {}
     for row in rows:
-        outcome = str(row.get("outcome_class") or "").lower()
-        if "contextual" not in outcome and "adjacent" not in outcome:
+        if not {"contextual", "adjacent"} & set(str(row.get("outcome_class") or "").lower().split("_")):
             continue
         bucket = _manifest_subdomain_bucket(row)
         label = str(row.get("citation_token") or row.get("source_title") or row.get("receipt_id") or "source").strip()
         if label:
             buckets.setdefault(bucket, []).append(label)
-    lines = []
-    for bucket, labels in sorted(buckets.items()):
-        unique = list(dict.fromkeys(labels))
-        lines.append(f"{bucket}: {', '.join(unique[:8])}" + ("; additional sources retained in manifest" if len(unique) > 8 else ""))
-    return lines
+    return [f"{bucket}: {', '.join(labels[:8])}" + ("; additional sources retained in manifest" if len(labels) > 8 else "") for bucket, raw_labels in sorted(buckets.items()) if (labels := list(dict.fromkeys(raw_labels)))]
 
 
 def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
     outcome = str(row.get("outcome_class") or "").lower()
     title = str(row.get("source_title") or row.get("citation_token") or row.get("receipt_id") or "")
     scope = f"{title} {outcome}".lower()
-    if any(token in scope for token in ("prognostic", "survival", "recurrence", "mortality")):
-        return "prognostic and survival-marker evidence"
-    if any(token in scope for token in (
-        "mendelian", "genetic", "genetically", "causal",
-        "risk factor", "incident cancer risk",
-    )):
-        return "causal-risk and Mendelian-randomization evidence"
-    if any(token in scope for token in ("treatment", "therapy", "radio", "chemo", "intervention", "supplement")):
-        return "treatment or intervention-response evidence"
-    if any(token in scope for token in ("mechanism", "gene", "expression", "telomerase", "mitochondrial", "lnc")):
-        return "biology-mechanism and molecular-context evidence"
-    return "adjacent clinical-context evidence"
+    buckets = {
+        "prognostic and survival-marker evidence": ("prognostic", "survival", "recurrence", "mortality"),
+        "causal-risk and Mendelian-randomization evidence": ("mendelian", "genetic", "genetically", "causal", "risk factor", "incident cancer risk"),
+        "cognitive and neurobehavioral evidence": ("cognitive", "memory", "executive", "affect", "mood", "sleep"),
+        "immune and inflammation-adjacent evidence": ("immune", "inflamm", "cytokine", "vaccine", "airway"),
+        "vascular and hemodynamic evidence": ("vascular", "hemodynamic", "blood pressure", "flow-mediated", "heart rate variability"),
+        "nutrition-interaction evidence": ("nutrition", "diet", "supplement", "caffeine", "flavonoid"),
+        "treatment or intervention-response evidence": ("treatment", "therapy", "radio", "chemo", "intervention", "supplement"),
+        "biology-mechanism and molecular-context evidence": ("mechanism", "gene", "expression", "telomerase", "mitochondrial", "lnc"),
+    }
+    return next((label for label, tokens in buckets.items() if any(token in scope for token in tokens)), "adjacent clinical-context evidence")
 
 
 def _evidence_role_outcome_display(row: dict[str, Any]) -> str:

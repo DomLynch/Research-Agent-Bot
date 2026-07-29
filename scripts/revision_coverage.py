@@ -826,6 +826,11 @@ def _asks_substantive_evidence_synthesis(text: str) -> bool:
     )
 
 
+def _asks_contextual_subdomain_disaggregation(text: str) -> bool:
+    text = _normalised_feedback(text)
+    return "disaggregat" in text and "contextual" in text and not re.search(r"\b(?:do not|don t|avoid|without|never|cannot|can not|no need to)\s+(?:(?!and\b)\w+\s+){0,2}disaggregat", text)
+
+
 def _asks_substantive_conclusion(text: str) -> bool:
     return (
         "conclusion" in text
@@ -3211,6 +3216,15 @@ def _substantive_evidence_satisfied(paper_md: str, ask: str, _lower: str) -> boo
     return _substantive_evidence_synthesis_is_stated(paper_md) and _full_surface_sources_are_visible(paper_md, ask)
 
 
+def _contextual_subdomain_disaggregation_is_stated(paper_md: str, ask: str, _lower: str) -> bool:
+    paper, requested = " ".join(paper_md.lower().split()), " ".join(ask.lower().split())
+    labels = {"cognitive": "cognitive and neurobehavioral evidence", "immune": "immune and inflammation-adjacent evidence", "vascular": "vascular and hemodynamic evidence", "nutrition": "nutrition-interaction evidence", "prognostic": "prognostic and survival-marker evidence", "survival": "prognostic and survival-marker evidence", "causal": "causal-risk and mendelian-randomization evidence", "mendelian": "causal-risk and mendelian-randomization evidence", "mechanism": "biology-mechanism and molecular-context evidence", "molecular": "biology-mechanism and molecular-context evidence", "treatment": "treatment or intervention-response evidence", "intervention": "treatment or intervention-response evidence"}
+    tail = requested[requested.find("disaggregat"):]
+    match = re.search(r"\b(?:into|by)\s+(?!sub[- ]?(?:classes|domains)\b|classes\b|categories\b)(.+?)\s+(?:sub[- ]?(?:classes|domains)|classes|categories)\b", tail) or re.search(r"\b(?:sub[- ]?(?:classes|domains)|classes|categories)\s*:\s*([^.;]+)", tail)
+    scope = re.split(r"[.;]|\b(?:because|since|while|whereas|so that)\b", match.group(1) if match else tail, 1)[0]
+    return "contextual-adjacent subdomain map" in paper and all(label in paper for cue, label in labels.items() if cue in scope and not re.search(rf"\b(?:not(?!\s+only\b)|exclude|excluding|without)\b[^,;]{{0,40}}\b{cue}\b", scope)) and (not any(token in requested for token in ("justify", "lumping", "what is lost")) or "single adjacent bucket would obscure" in paper)
+
+
 def _numeric_effect_audit_satisfied(paper_md: str, _ask: str, _lower: str) -> bool:
     return _numeric_effect_audit_is_stated(paper_md) and not numeric_effect_direction_issues(paper_md)
 
@@ -3271,6 +3285,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_combination_product_signal_boundary, _paper_only(_combination_product_signal_boundary_is_stated)),
     (_asks_directional_coding, _paper_only(_directional_coding_explanation_is_material)),
     (_asks_substantive_evidence_synthesis, _substantive_evidence_satisfied),
+    (_asks_contextual_subdomain_disaggregation, _contextual_subdomain_disaggregation_is_stated),
     (_asks_forward_dated_ai_disclosure_note, _paper_only(_forward_dated_ai_disclosure_note_is_stated)),
     (_asks_publication_year_note, _paper_only(_publication_year_note_is_stated)),
     (_asks_intervention_target_boundary, _paper_only(_intervention_target_boundary_is_stated)),
