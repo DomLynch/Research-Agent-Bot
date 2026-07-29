@@ -1158,7 +1158,7 @@ def test_major_claim_trace_is_idempotent_with_duplicate_citation_tokens() -> Non
 def test_major_claim_trace_rejects_unverifiable_or_procedural_spans() -> None:
     ask = "Add exact source tokens to major claims; required 1."
     paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
-    cases = [
+    cases: list[tuple[dict[str, object], list[str], str]] = [
         ({}, ["body weight"], "Body weight decreased by 5%."),
         ({"source_doi": "10.1000/method"}, ["body weight"], "Participants were assigned to higher-dose and lower-dose groups to examine the effect of treatment."),
         ({"source_doi": "10.1000/baseline"}, ["body weight"], "Baseline characteristics showed 120 participants with a mean age of 52 years."),
@@ -1178,6 +1178,11 @@ def test_major_claim_trace_rejects_unverifiable_or_procedural_spans() -> None:
         ({"source_doi": "10.1000/doses", "outcome_class": "cardiometabolic"}, ["insulin"], "Insulin doses decreased by 20%."),
         ({"source_doi": "10.1000/dosages", "outcome_class": "cardiometabolic"}, ["insulin"], "Insulin dosages decreased by 20%."),
         ({"source_doi": "10.1000/dosing", "outcome_class": "cardiometabolic"}, ["insulin"], "Insulin dosing decreased by 20%."),
+        ({"source_doi": "10.1000/unverified", "spar_verdict": "reject_critical"}, [], "Maximal heart rate was unaffected."),
+        ({"source_doi": "10.1000/truncated"}, ["body weight"], "Body weight decreased by 8% in participants…"),
+        ({"source_doi": "10.1000/definition"}, ["blood pressure"], "Response was defined as a blood-pressure decrease of at least 10%."),
+        ({"source_doi": "10.1000/fragment", "spar_verdict": "accept_clean", "n_failed_traces": 0}, [], "Whereas leukocytes remained elevated."),
+        ({"source_doi": "10.1000/secondhand", "spar_verdict": "accept_clean", "n_failed_traces": 0}, [], "Meta-analyses have indicated a significant improvement."),
     ]
     for extra, endpoints, text in cases:
         row = {
@@ -1416,6 +1421,53 @@ def test_major_claim_trace_allows_quantified_direct_primary_outcome_fallback() -
     assert changed == 1
     assert "Liver stiffness significantly decreased" in fixed
     assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, [row]) is True
+
+
+def test_major_claim_trace_uses_verified_results_when_endpoint_metadata_is_sparse() -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "0/3 claims are exactly traceable (required 3)."
+    )
+    rows = [
+        {
+            "citation_token": "Study1 2025",
+            "source_doi": "10.1000/verified.1",
+            "spar_verdict": "accept_clean",
+            "n_failed_traces": 0,
+            "endpoints": ["inflammation"],
+            "thesis_text": (
+                "Source excerpts: Acute exercise elevated CRP by 7.7% "
+                "[95% CI, 5.5-10.0]."
+            ),
+        },
+        {
+            "citation_token": "Study2 2025",
+            "source_doi": "10.1000/verified.2",
+            "spar_verdict": "accept_clean",
+            "n_failed_traces": 0,
+            "endpoints": [],
+            "thesis_text": "Source excerpts: Maximal heart rate was unaffected.",
+        },
+        {
+            "citation_token": "Study3 2025",
+            "source_doi": "10.1000/verified.3",
+            "spar_verdict": "accept_caveated",
+            "n_failed_traces": 0,
+            "endpoints": [],
+            "thesis_text": (
+                "Source excerpts: The exercise group had a greater learning effect "
+                "than control (p = 0.02)."
+            ),
+        },
+    ]
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert revision_claim_trace.major_claim_trace_capacity(ask, rows) == (3, 3)
+    assert fixed.count("[exact source: https://doi.org/") == 3
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is True
 
 
 def test_major_claim_trace_rejects_protocol_recommendation_and_incomplete_comparison() -> None:
