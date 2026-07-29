@@ -1043,13 +1043,16 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
     h3s = list(re.finditer(r"^###\s+(.+?Outcomes?)\s*$", block, flags=re.M))
     if not cmap or len(h3s) < 2:
         return text, []
-    headings = [m.group(0) for m in h3s]
+    headings = [f"### {m.group(1).strip()}" for m in h3s]
     keys = [_outcome_key(m.group(1)) for m in h3s]
     bodies: list[list[str]] = [[] for _ in h3s]
+    fallback = "Evidence for this outcome class is represented in the structured results table, but the retained narrative paragraphs were more strongly assigned to adjacent outcome classes. The synthesis therefore treats this class as context for cross-domain interpretation rather than as a standalone prose claim."
     n_moved = 0
     for i, m in enumerate(h3s):
         end = h3s[i + 1].start() if i + 1 < len(h3s) else len(block)
         for para in (p.strip() for p in re.split(r"\n\n+", block[m.end():end]) if p.strip()):
+            if para == fallback or (para.startswith("See the structured evidence table for ") and para.endswith(" signals.")):
+                continue
             cls = Counter(cmap[x] for x in _CITE_AY_RE.findall(para) if x in cmap)
             chunks = _SENTENCE_SPLIT_RE.split(para) if len(cls) > 1 else [para]
             for chunk in chunks:
@@ -1064,7 +1067,6 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
                 j = keys.index(top_key) if top_key in keys else i
                 bodies[j].append(chunk)
                 n_moved += int(j != i)
-    fallback = "Evidence for this outcome class is represented in the structured results table, but the retained narrative paragraphs were more strongly assigned to adjacent outcome classes. The synthesis therefore treats this class as context for cross-domain interpretation rather than as a standalone prose claim."
     filled = sum(1 for body in bodies if not body)
     # Emit the long generic fallback for at most ONE empty class. Additional
     # empty classes get a SHORT class-specific pointer (<30 tokens), so two
@@ -5783,7 +5785,7 @@ def _phase_f_reconcile_results_table(
     missing_blocks = []
     for slug, display, n, n_claims, signal, directness, limitation in stubs:
         matching = groups.get(slug, [])
-        aliases = {slug, *(_outcome_key(str(row.get("outcome_class") or "")) for row in matching)}
+        aliases = {slug, _outcome_key(_reviewer_adjusted_outcome_label(display, feedback)), *(_outcome_key(str(row.get("outcome_class") or "")) for row in matching)}
         block = "### " + display + " Outcomes\n\n" + _outcome_slice_narrative(
             display=display,
             topic_anchor=topic_anchor,
@@ -5814,7 +5816,7 @@ def _phase_f_reconcile_results_table(
         if auto_generated:
             new_results = new_results[:auto_generated.start()] + block + new_results[auto_generated.end():]
             continue
-        if slug in existing:
+        if aliases & existing:
             continue
         missing_blocks.append(block)
     if missing_blocks:

@@ -53,6 +53,27 @@ def test_phase_f_fills_existing_empty_results_outcome_heading(tmp_path: Path) ->
     assert "### Cardiometabolic Outcomes\n\nCardiometabolic remains a separate Results slice for Everolimus" in fixed
 
 
+def test_phase_f_keeps_reviewer_renamed_outcome_heading_idempotent(tmp_path: Path) -> None:
+    paper = (
+        "## Results\n\n### Exposure and Dose-Adjacent Evidence Outcomes\n\n"
+        "Bounded dose-adjacent result.\n\n## Discussion\n\nInterpretation.\n"
+    )
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{
+        "outcome_class": "dosing_pharmacokinetics",
+        "effect_direction": "unclear",
+        "directness": "indirect",
+    }]}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Fix Results subsections on Dosing and Pharmacokinetics.",
+    }))
+
+    fixed, _ = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+    stable, _ = journal_finalizer._phase_f_reconcile_results_table(fixed, tmp_path)
+
+    assert fixed.count("### Exposure and Dose-Adjacent Evidence Outcomes") == 1
+    assert stable == fixed
+
+
 def test_phase_f_fills_outcome_heading_with_source_level_findings(tmp_path: Path) -> None:
     paper = (
         "## Results\n\n"
@@ -5923,8 +5944,10 @@ def test_phase_k_no_duplicate_fallback_for_multiple_thin_outcome_classes(tmp_pat
         "## Discussion\n\nContext.\n"
     )
     out, _ = journal_finalizer._phase_k_route_outcome_paragraphs(text, tmp_path)
+    stable, _ = journal_finalizer._phase_k_route_outcome_paragraphs(out, tmp_path)
     # exactly one long fallback paragraph across both thin classes
     assert out.count("Evidence for this outcome class is represented") == 1
+    assert stable == out
     # and the production journal-surface gate finds no duplicate paragraph
     report = evaluate_journal_surface(out)
     assert not any(issue.code == "duplicate_paragraph" for issue in report.issues)
