@@ -602,6 +602,8 @@ def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
         return False
     if report is None:
         return False
+    report["unmet_asks"] = [ask for ask in report.get("unmet_asks", []) if not authoritative_doi_repair_satisfied(run, ask)]
+    report["passed"] = not report["unmet_asks"]
     _write_json(run / REVISION_COVERAGE_GATE, report)
     return True
 
@@ -1319,6 +1321,16 @@ def _has_stable_source_locator(row: dict[str, Any]) -> bool:
     url = urllib.parse.urlparse(str(row.get("url") or "").strip())
     pmid = str(row.get("pmid") or (row.get("id") if row.get("source_type") == "pubmed" else "")).strip()
     return bool(re.fullmatch(r"10\.\d{4,9}/\S+", doi, flags=re.I) or pmid.isdigit() or url.scheme in {"http", "https"} and url.netloc)
+
+
+def _has_authoritative_excerpt(row: dict[str, Any]) -> bool:
+    return len((excerpt := str(row.get("excerpt") or "")).split()) >= 12 and " is registered as " not in excerpt.lower() and "source-bundle audit for " not in excerpt.lower()
+
+
+def authoritative_doi_repair_satisfied(run: Path, ask: str) -> bool:
+    requested = {_clean_doi(match.group()).lower() for match in re.finditer(r"10\.\d{4,9}/[^\s,;]+", ask, re.I)}
+    matched = [row for row in build_payload(run).get("source_bundle", []) if isinstance(row, dict) and _clean_doi(row.get("doi")).lower() in requested] if requested else []
+    return "evidence text" in ask.lower() and "authoritative abstract" in ask.lower() and bool(requested) and len(matched) == len(requested) and all(_has_stable_source_locator(row) and _has_authoritative_excerpt(row) for row in matched)
 
 
 def _has_source_citation(row: dict[str, Any]) -> bool:

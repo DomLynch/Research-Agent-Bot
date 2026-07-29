@@ -6618,6 +6618,21 @@ def test_authoritative_abstract_revision_ask_checks_every_named_doi(
     )
 
     assert cycle._payload_revision_ask_satisfied(out_dir, ask)
+    monkeypatch.setattr(
+        cycle.submit_bridge, "_revision_gate_report",
+        lambda *_args, **_kwargs: {"passed": False, "unmet_asks": [ask]},
+    )
+    assert cycle.submit_bridge._refresh_revision_coverage_gate(out_dir, {})
+    assert json.loads((out_dir / cycle.REVISION_COVERAGE_GATE).read_text()) == {
+        "passed": True, "unmet_asks": [],
+    }
+    other_ask = "Verify the exact p-value reported by doi:10.1000/alpha.1."
+    monkeypatch.setattr(
+        cycle.submit_bridge, "_revision_gate_report",
+        lambda *_args, **_kwargs: {"passed": False, "unmet_asks": [other_ask]},
+    )
+    assert cycle.submit_bridge._refresh_revision_coverage_gate(out_dir, {})
+    assert json.loads((out_dir / cycle.REVISION_COVERAGE_GATE).read_text())["passed"] is False
     bundle[1]["excerpt"] = ""
     assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
     bundle[1]["excerpt"] = "Source-bundle audit for this topic reports generated metadata instead of exact source evidence."

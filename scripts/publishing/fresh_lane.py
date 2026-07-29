@@ -2847,19 +2847,12 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         if evidence_type_ask and "primary" not in {str(row.get("evidence_type") or "").lower() for row in rows}:
             return False
         if source_excerpt_ask:
-            requested_dois = {submit_bridge._clean_doi(match.group()).lower() for match in re.finditer(r"10\.\d{4,9}/[^\s,;]+", ask, re.I)}
-            if requested_dois:
-                top_rows = [row for row in rows if submit_bridge._clean_doi(row.get("doi")).lower() in requested_dois]
-                if len(top_rows) != len(requested_dois) or any(not submit_bridge._has_stable_source_locator(row) for row in top_rows):
-                    return False
-            else:
-                top_rows = rows[:min(14, len(rows))]
+            if re.search(r"10\.\d{4,9}/[^\s,;]+", ask, re.I):
+                return submit_bridge.authoritative_doi_repair_satisfied(out_dir, ask)
+            top_rows = rows[:min(14, len(rows))]
             meaningful = [
                 str(row.get("excerpt") or "")
-                for row in top_rows
-                if len(str(row.get("excerpt") or "").split()) >= 12
-                and " is registered as " not in str(row.get("excerpt") or "").lower()
-                and "source-bundle audit for " not in str(row.get("excerpt") or "").lower()
+                for row in top_rows if submit_bridge._has_authoritative_excerpt(row)
             ]
             return len(meaningful) == len(top_rows)
         return True
