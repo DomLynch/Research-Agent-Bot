@@ -18,39 +18,45 @@ def review_agent_mismatch(rows: Sequence[dict[str, Any]], allowed: Collection[st
     return f"review_agent_id_mismatch:{','.join(unknown)}" if unknown else None
 
 
+def _revision_item_text(item: Any) -> str:
+    if isinstance(item, dict):
+        item = next((item.get(key) for key in ("message", "description", "name", "check", "issue", "reason") if item.get(key)), "")
+    return str(item).strip()
+
+
 def required_revision_items(row: dict[str, Any]) -> list[str]:
-    raw = row.get("requiredRevisions") or row.get("required_revisions")
-    return (
-        [str(item).strip() for item in raw if str(item).strip()]
-        if isinstance(raw, list)
-        else []
-    )
+    items: list[str] = []
+    for snake, camel in (("required_revisions", "requiredRevisions"), ("failed_checks", "failedChecks"), ("major_issues", "majorIssues")):
+        raw = row.get(snake) or row.get(camel)
+        values = raw if isinstance(raw, list) else [raw] if isinstance(raw, str) else []
+        items.extend(text for item in values if (text := _revision_item_text(item)))
+    return list(dict.fromkeys(items))
 
 
 def calibration_only_revision(text: str) -> bool:
     lower = " ".join(str(text or "").lower().split())
-    return (
-        "calibration rules" in lower
-        and "revise" in lower
-        and (
-            "direct clinical evidence" in lower
-            or "broad population-level proof is missing" in lower
-            or "underlying evidence base" in lower
-        )
-    )
+    tokens = ("direct clinical evidence", "broad population-level proof is missing", "underlying evidence base")
+    return "calibration rules" in lower and "revise" in lower and any(token in lower for token in tokens)
 
 
 def actionable_revisions(row: dict[str, Any]) -> list[str]:
-    return [
-        item
-        for item in required_revision_items(row)
-        if not calibration_only_revision(item)
-    ]
+    items = [item for item in required_revision_items(row) if not calibration_only_revision(item)]
+    fallback = [str(row.get("reviewSummary") or row.get("review_summary") or "").strip(), *(map(str, notes) if isinstance(notes := row.get("notes"), list) else [str(notes or "")])]
+    verbs = r"(?:add|address|clarify|correct|reconcile|remove|replace|rewrite|update|verify)"
+    clauses = [clause.strip() for text in fallback for clause in re.split(r"[.!?;]+|,\s*(?:and|but|however|whereas)\s+", text, flags=re.I) if clause.strip()]
+    return items or [clause for clause in clauses if re.search(rf"(?:^(?:please\s+)?{verbs}\b|\b(?:must|should|needs? to|required to)\s+(?:please\s+)?{verbs}\b)", clause, re.I) and not re.search(rf"\b(?:no(?:\s+\w+){{0,2}}\s+need to|(?:do|does) not need to|don['’]?t need to|need not|not required to|should not|must not)\s+{verbs}\b", clause, re.I) and not calibration_only_revision(clause)]
 
 
-def revision_detail_score(row: dict[str, Any]) -> tuple[int, int]:
-    submission_id = row.get("submissionId") or row.get("submission_id")
-    return int(bool(str(submission_id or "").strip())), len(required_revision_items(row))
+def terminal_revision(row: dict[str, Any]) -> bool:
+    if str(row.get("decision") or "").strip().lower() != "revise":
+        return False
+    if actionable_revisions(row):
+        return False
+    category = str(row.get("failureCategory") or row.get("failure_category") or "").strip().lower()
+    summary = row.get("reviewSummary") or row.get("review_summary") or ""
+    text = " ".join((*required_revision_items(row), str(summary), str(row.get("notes") or "")))
+    terminal_text = re.search(r"\bhigh overlap with publication\b|\bno revisions? (?:are )?required\b", text, re.I)
+    return category in {"integrity_duplicate", "duplicate_remote_publication", "publication_overlap"} or calibration_only_revision(text) or bool(terminal_text)
 
 
 def revise_reason_bucket(text: str) -> str:

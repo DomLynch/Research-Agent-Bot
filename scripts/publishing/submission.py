@@ -1232,10 +1232,7 @@ def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
     limit = int(os.getenv("RESEARKA_SOURCE_ABSTRACT_LIMIT", "120") or "0")
     if not unique or limit <= 0:
         return {}
-    url = (
-        "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
-        f"?db=pubmed&id={','.join(unique[:limit])}&retmode=xml"
-    )
+    url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi" f"?db=pubmed&id={','.join(unique[:limit])}&retmode=xml"
     try:
         with urllib.request.urlopen(url, timeout=20) as response:
             root = ET.fromstring(response.read())
@@ -1256,26 +1253,6 @@ def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
     return out
 
 
-def _structured_source_excerpt(topic: str, row: dict[str, Any], receipt: dict[str, Any], title: str) -> str:
-    ids = " | ".join(
-        part for part in (
-            f"DOI {_clean_doi(row.get('source_doi'))}" if _clean_doi(row.get("source_doi")) else "",
-            f"PMID {row.get('source_pmid')}" if row.get("source_pmid") else "",
-            f"reference {row.get('reference_id')}" if row.get("reference_id") else "",
-        )
-        if part
-    )
-    identifiers = f" Identifiers: {ids}" if ids else ""
-    return _clip_text(
-        f"{title}. Source-bundle audit for {_display_topic(topic)}: "
-        f"outcome={receipt.get('outcome_class') or 'unspecified'}; "
-        f"effect_direction={receipt.get('effect_direction') or 'unclear'}; "
-        f"directness={receipt.get('directness') or 'unspecified'}; "
-        f"evidence_tier={receipt.get('evidence_tier') or 'unspecified'}; "
-        f"extracted_claims={receipt.get('n_claims') or 0}.{identifiers}"
-    )
-
-
 def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     manifest = _read_json(run / "manifest.json")
     registry = _read_json(run / "citation_registry.json")
@@ -1293,19 +1270,11 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     bundle = []
     for row in rows[:limit]:
         receipt = receipts.get(str(row.get("receipt_id")), {})
-        title = str(
-            row.get("title")
-            or receipt.get("source_title")
-            or "Evidence receipt"
-        )[:300]
+        title = str(row.get("title") or receipt.get("source_title") or "Evidence receipt")[:300]
         claim_excerpt = _claim_excerpt(topic, str(row.get("receipt_id") or ""))
         pmid = str(row.get("source_pmid") or "")
-        excerpt = (
-            pubmed_abstracts.get(pmid)
-            or claim_excerpt
-            or _parsed_source_excerpt(topic, str(row.get("receipt_id") or ""))
-            or _structured_source_excerpt(topic, row, receipt, title)
-        )
+        excerpt = pubmed_abstracts.get(pmid) or _parsed_source_excerpt(topic, str(row.get("receipt_id") or ""))
+        quote = claim_excerpt if claim_excerpt and " ".join(claim_excerpt.lower().split()) in " ".join(excerpt.lower().split()) else None
         receipt_id = str(row.get("receipt_id") or "")
         cited_as = str(row.get("body_citation") or "")
         rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)
@@ -1317,7 +1286,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             "doi": _clean_doi(row.get("source_doi")) or None,
             "pmid": str(row.get("source_pmid") or "") or None,
             "excerpt": excerpt,
-            "quote": claim_excerpt or None,
+            "quote": quote,
             "year": row.get("source_year") if isinstance(row.get("source_year"), int) else None,
             "evidence_type": _evidence_type_for_source(receipt),
             "evidence_context": _source_context_for_receipt(receipt),
@@ -1345,6 +1314,13 @@ def _row_context(row: dict[str, Any]) -> str:
     return "adjacent" if evidence_type == "primary" else ""
 
 
+def _has_stable_source_locator(row: dict[str, Any]) -> bool:
+    doi = _clean_doi(row.get("doi"))
+    url = urllib.parse.urlparse(str(row.get("url") or "").strip())
+    pmid = str(row.get("pmid") or (row.get("id") if row.get("source_type") == "pubmed" else "")).strip()
+    return bool(re.fullmatch(r"10\.\d{4,9}/\S+", doi, flags=re.I) or pmid.isdigit() or url.scheme in {"http", "https"} and url.netloc)
+
+
 def _has_source_citation(row: dict[str, Any]) -> bool:
     cited_as = str(row.get("cited_as") or "")
     if re.search(r"\b(?:19|20)\d{2}\b", cited_as):
@@ -1361,16 +1337,9 @@ def _has_source_citation(row: dict[str, Any]) -> bool:
     if matches_expected:
         return True
     author = re.sub(r"\s+n\.d(?:\.[a-z]+)?\.?\s*$", "", cited_as, flags=re.I).strip()
-    doi = _clean_doi(row.get("doi"))
-    url = urllib.parse.urlparse(str(row.get("url") or "").strip())
-    stable_locator = bool(
-        re.fullmatch(r"10\.\d{4,9}/\S+", doi, flags=re.I)
-        or url.scheme in {"http", "https"} and url.netloc
-        or row.get("source_type") == "pubmed" and str(row.get("id") or "").strip().isdigit()
-    )
     author_expected = _body_citation_from_metadata({
         "title": title, "authors": [author], "year": 9999,
-    }) if author and stable_locator else None
+    }) if author and _has_stable_source_locator(row) else None
     expected = " ".join(str(author_expected or "").lower().split()).rstrip(".")
     if expected and (
         normalized == expected or re.fullmatch(rf"{re.escape(expected)}\.[a-z]+", normalized)
@@ -1398,13 +1367,17 @@ def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
     missing_context = sum(_row_context(row) not in SOURCE_CONTEXTS for row in bundle)
     if missing_context:
         return f"source_bundle_missing_context:{missing_context}/{len(bundle)}"
+    unverified_direct = sum(
+        _row_context(row) == "direct"
+        and (not str(row.get("excerpt") or "").strip() or not _has_stable_source_locator(row))
+        for row in bundle
+    )
+    if unverified_direct:
+        return f"source_bundle_unverified_direct_sources:{unverified_direct}/{len(bundle)}"
     missing_outcome = sum(not str(row.get("outcome_class") or "").strip() for row in bundle)
     missing_citation = sum(not _has_source_citation(row) for row in bundle)
     if missing_outcome or missing_citation:
-        if (
-            not missing_outcome
-            and _missing_citation_tolerated(bundle, missing_citation)
-        ):
+        if not missing_outcome and _missing_citation_tolerated(bundle, missing_citation):
             return "eligible"
         return f"source_bundle_unmapped_sources:outcome={missing_outcome},citation={missing_citation}"
     return "eligible"

@@ -69,7 +69,7 @@ from agent.publishing.revision_lane import (  # noqa: E402
     required_revision_items as _required_revision_items,
     requests_domain_scope_reset as _revision_requests_domain_scope_reset,
     revise_reason_bucket as _revise_reason_bucket,
-    revision_detail_score as _revision_detail_score,
+    terminal_revision as _terminal_revision,
 )
 from agent.publishing.reconciliation import (  # noqa: E402
     child_submission_counts as _child_submission_counts,
@@ -1274,15 +1274,6 @@ def _submitted_record_ts(record: dict[str, Any]) -> dt.datetime | None:
     return _parse_time(str(record.get("submitted_at") or record.get("date") or ""))
 
 
-def _recent_capped_revision_topics(records: Sequence[dict[str, Any]], runs_root: Path) -> set[str]:
-    topics = (
-        submit_bridge._normalized_key(str(row.get("topic") or submit_bridge._run_topic(runs_root / str(row.get("run") or "")))) for row in records
-        if row.get("status") == "submitted_to_researka" and (submitted_at := _submitted_record_ts(row)) is not None
-        and submitted_at >= dt.datetime.now(dt.UTC) - dt.timedelta(days=1)
-    )
-    return {topic for topic, count in Counter(topics).items() if topic and count >= MAX_REVISE_ROUNDS}
-
-
 def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
     """Latest research_paper review per paper title for this agent. Researka
     assigns a new artifactId per submission, so latest-wins by reviewedAt drops
@@ -1309,7 +1300,7 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
         if agent_ids and str(row.get("agentId") or row.get("agent_id") or "") not in agent_ids:
             continue
         key = submit_bridge._title_marker(str(row.get("title") or ""))
-        if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+        if key and (key not in latest or _should_replace_review_row(latest[key], row)):
             latest[key] = row
     if mismatch := _review_agent_mismatch(rows, agent_ids):
         return {}, mismatch
@@ -1382,6 +1373,9 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
                 "reviewedAt", "reviewed_at", "createdAt", "created_at", "updatedAt", "updated_at",
             ),
             "required_revisions": ("required_revisions", "requiredRevisions"),
+            "failed_checks": ("failed_checks", "failedChecks"),
+            "major_issues": ("major_issues", "majorIssues"),
+            "minor_issues": ("minor_issues", "minorIssues"),
             "review_summary": ("review_summary", "reviewSummary"),
             "failure_category": ("failure_category", "failureCategory"),
             "publication_status": ("publication_status", "publicationStatus"),
@@ -1425,6 +1419,9 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
                 or effective.get("date")
             ),
             "required_revisions": effective.get("required_revisions") or [],
+            "failed_checks": effective.get("failed_checks") or [],
+            "major_issues": effective.get("major_issues") or [],
+            "minor_issues": effective.get("minor_issues") or [],
             "review_summary": effective.get("review_summary"),
             "publication": effective.get("publication"),
             "failure_category": effective.get("failure_category"),
@@ -1434,7 +1431,7 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
             ),
         }
         key = submit_bridge._title_marker(title)
-        if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+        if key and (key not in latest or _should_replace_review_row(latest[key], row)):
             latest[key] = row
     if updates:
         def merge(current: list[dict[str, Any]]) -> None:
@@ -1462,41 +1459,15 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
     return latest, None if latest else first_error
 
 
-def _review_day_key(row: dict[str, Any]) -> str:
-    raw = str(
-        row.get("reviewedAt")
-        or row.get("reviewed_at")
-        or row.get("createdAt")
-        or row.get("created_at")
-        or row.get("publishedAt")
-        or row.get("published_at")
-        or ""
-    ).strip()
-    if DAY_KEY_RE.fullmatch(raw):
-        return raw
-    ts = _review_ts(row)
-    if ts == dt.datetime.min.replace(tzinfo=dt.UTC):
-        return ""
-    timezone: dt.tzinfo
-    try:
-        timezone = ZoneInfo(os.getenv("RESEARCH_AGENT_CYCLE_TIMEZONE", DEFAULT_CYCLE_TIMEZONE))
-    except ZoneInfoNotFoundError:
-        timezone = dt.UTC
-    return ts.astimezone(timezone).date().isoformat()
-
-
 def _should_replace_review_row(existing: dict[str, Any], candidate: dict[str, Any]) -> bool:
     existing_ts = _review_ts(existing)
     candidate_ts = _review_ts(candidate)
-    if candidate_ts > existing_ts:
-        return True
-    if candidate_ts == existing_ts:
-        return _revision_detail_score(candidate) > _revision_detail_score(existing)
-    return (
-        _review_day_key(candidate) == _review_day_key(existing)
-        and str(candidate.get("decision") or "").lower() == str(existing.get("decision") or "").lower()
-        and _revision_detail_score(candidate) > _revision_detail_score(existing)
-    )
+    if candidate_ts != existing_ts:
+        return candidate_ts > existing_ts
+    rank = {"accept": 3, "accepted": 3, "reject": 2, "rejected": 2, "revise": 1}
+    existing_key = rank.get(str(existing.get("decision") or "").lower(), 0), str(existing.get("decisionObjectId") or existing.get("decisionId") or existing.get("decision_id") or existing.get("artifactId") or "")
+    candidate_key = rank.get(str(candidate.get("decision") or "").lower(), 0), str(candidate.get("decisionObjectId") or candidate.get("decisionId") or candidate.get("decision_id") or candidate.get("artifactId") or "")
+    return candidate_key > existing_key
 
 
 def _merge_latest_by_title(*sources: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -1618,19 +1589,25 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
         err = direct_err if not latest else None
     out: list[dict[str, Any]] = []
     for row in latest.values():
+        decision = str(row.get("decision") or "").lower()
         required = _actionable_revisions(row)
         notes = " ".join(map(str, raw_notes)) if isinstance(raw_notes := row.get("notes"), list) else str(raw_notes or "")
+        failure_category = str(row.get("failure_category") or row.get("failureCategory") or "").strip().lower()
         retry_unchanged = (
             not required
             and isinstance(resubmission := row.get("resubmission"), dict)
             and resubmission.get("allowed") is True
             and (
-                str(row.get("failure_category") or "") == "source_authority_available"
+                failure_category == "source_authority_available"
                 or bool(re.search(r"\b(?:source(?: metadata)? verification|doi resolver) unavailable\b", notes, re.I))
             )
         )
-        if str(row.get("decision") or "").lower() != "revise" or (not required and not retry_unchanged):
+        if decision != "revise" or _terminal_revision(row):
             continue
+        unparsed = not required and not retry_unchanged
+        if unparsed:
+            summary = str(row.get("review_summary") or row.get("reviewSummary") or "").strip()
+            required = [summary or notes or f"Resolve reviewer failure category: {failure_category or 'unparsed_review'}."]
         request = {
             "artifactId": row.get("artifactId") or row.get("artifact_id"),
             "submissionId": row.get("submissionId") or row.get("submission_id"),
@@ -1648,10 +1625,32 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
         }
         if required:
             request["required_revisions"] = required
+        if failure_category:
+            request["failure_category"] = failure_category
+        if unparsed:
+            request["unparsed_review"] = True
         if retry_unchanged:
-            request.update({"retry_unchanged": True, "failure_category": row.get("failure_category")})
+            request["retry_unchanged"] = True
         out.append(request)
     return sorted(out, key=_review_ts, reverse=True), None
+
+
+def _revision_identity(row: dict[str, Any]) -> tuple[str, str]:
+    return str(row.get("submissionId") or row.get("submission_id") or "").strip(), str(row.get("artifactId") or row.get("artifact_id") or "").strip()
+
+
+def _revision_identity_applies(row: dict[str, Any], submission_id: str, artifact_id: str) -> bool:
+    if not (submission_id or artifact_id):
+        return True
+    row_submission, row_artifact = _revision_identity(row)
+    comparisons = [(row_submission, submission_id), (row_artifact, artifact_id)]
+    comparable = [(left, right) for left, right in comparisons if left and right]
+    return all(left == right for left, right in comparable) if comparable else not submission_id and not (row_submission or row_artifact)
+
+
+def _revision_request_fingerprint(row: dict[str, Any]) -> str:
+    identity = [*_revision_identity(row), str(row.get("reviewedAt") or row.get("reviewed_at") or ""), str(row.get("failure_category") or row.get("failureCategory") or ""), *sorted(_required_revision_items(row))]
+    return ask_fingerprint(identity)
 
 
 def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
@@ -1668,14 +1667,20 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         _revision_key(row): _parse_review_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
         for row in (active_requests or [])
     }
-    active_submission_ids: dict[str, set[str]] = {}
-    for row in active_requests or []:
-        submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
-        if submission_id:
-            active_submission_ids.setdefault(_revision_key(row), set()).add(submission_id)
+    active_identities = {_revision_key(row): _revision_identity(row) for row in active_requests or []}
+    active_fingerprints = {_revision_key(row): _revision_request_fingerprint(row) for row in active_requests or []}
 
     def _row_applies_to_active_request(row: dict[str, Any]) -> bool:
-        reviewed_at = active_reviewed.get(_revision_key(row))
+        key = _revision_key(row)
+        if key not in active_reviewed:
+            return True
+        reviewed_at = active_reviewed[key]
+        stored_fingerprint = str(row.get("request_fingerprint") or "")
+        if stored_fingerprint:
+            return stored_fingerprint == active_fingerprints.get(key)
+        active_submission, active_artifact = active_identities.get(key, ("", ""))
+        if not _revision_identity_applies(row, active_submission, active_artifact):
+            return False
         if reviewed_at is None:
             return True
         handled_at = _parse_time(str(row.get("handled_at") or ""))
@@ -1684,11 +1689,11 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
     def _submitted_row_is_superseded_by_active_decision(row: dict[str, Any]) -> bool:
         if str(row.get("status") or "") != "submitted_to_researka":
             return False
-        active_ids = active_submission_ids.get(_revision_key(row))
-        if not active_ids:
+        active_submission = active_identities.get(_revision_key(row), ("", ""))[0]
+        if not active_submission:
             return False
-        row_submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
-        return not row_submission_id or row_submission_id in active_ids
+        row_submission_id = _revision_identity(row)[0]
+        return not row_submission_id or row_submission_id == active_submission
 
     def _counts_toward_current_round_cap(row: dict[str, Any]) -> bool:
         status = str(row.get("status") or "")
@@ -1723,13 +1728,8 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         if (
             isinstance(row, dict)
             and row.get("title")
-            and (
-                str(row.get("status") or "") in _TERMINAL_REVISION_STATUSES
-                or (
-                    str(row.get("status") or "") in _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES
-                    and _row_applies_to_active_request(row)
-                )
-            )
+            and str(row.get("status") or "") in (_TERMINAL_REVISION_STATUSES | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES)
+            and _row_applies_to_active_request(row)
         )
     }
     # Callers look up by raw marker: re-expand each capped canonical key to the
@@ -1751,7 +1751,14 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
     return handled
 
 
-def _handled_revision_statuses(ledger_dir: Path, key: str, reviewed_at: str = "") -> tuple[str, ...]:
+def _handled_revision_statuses(
+    ledger_dir: Path,
+    key: str,
+    reviewed_at: str = "",
+    request_fingerprint: str = "",
+    submission_id: str = "",
+    artifact_id: str = "",
+) -> tuple[str, ...]:
     rows = _read_json(ledger_dir / HANDLED_REVISIONS).get("handled")
     if not isinstance(rows, list):
         return ()
@@ -1760,10 +1767,16 @@ def _handled_revision_statuses(ledger_dir: Path, key: str, reviewed_at: str = ""
     for row in rows:
         if not isinstance(row, dict) or str(row.get("key") or _revision_key(row)) != key:
             continue
+        status = str(row.get("status") or "")
+        stored_fingerprint = str(row.get("request_fingerprint") or "")
+        if request_fingerprint and stored_fingerprint and stored_fingerprint != request_fingerprint:
+            continue
+        identity_scoped = status not in (_TERMINAL_REVISION_STATUSES | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES)
+        if request_fingerprint and not stored_fingerprint and identity_scoped and not _revision_identity_applies(row, submission_id, artifact_id):
+            continue
         handled_at = _parse_time(str(row.get("handled_at") or ""))
         if reviewed and handled_at and handled_at < reviewed:
             continue
-        status = str(row.get("status") or "")
         if (
             status in _RETRYABLE_REVISION_STATUSES
             and str(row.get("repair_epoch") or "") != str(REVISION_REPAIR_EPOCH)
@@ -1837,6 +1850,7 @@ def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str
         "artifactId": row.get("artifactId") or row.get("artifact_id"),
         "submissionId": row.get("submissionId") or row.get("submission_id"),
         "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
+        "request_fingerprint": _revision_request_fingerprint(row),
         "repair_epoch": REVISION_REPAIR_EPOCH,
         "handled_at": dt.datetime.now(dt.UTC).isoformat(),
     })
@@ -1873,7 +1887,6 @@ def _pending_remote_revision(
     if published_loader is not None:
         remote_seen, _remote_error = published_loader()
     records = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
-    capped_topics = _recent_capped_revision_topics(records, runs_root)
     for request in rows:
         request_key = _revision_key(request)
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
@@ -1891,8 +1904,6 @@ def _pending_remote_revision(
             }
             if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
                 matches.append((record, run, record_topic))
-        if not request.get("retry_unchanged") and any(submit_bridge._normalized_key(topic) in capped_topics for _, _, topic in matches):
-            continue
         request_submission_id = str(request.get("submissionId") or request.get("submission_id") or "").strip()
         request_reviewed = _review_ts(request)
         if any(
@@ -1918,6 +1929,9 @@ def _pending_remote_revision(
         if request_key in handled:
             handled_status_rows = _handled_revision_statuses(
                 ledger_dir, request_key, str(request.get("reviewedAt") or request.get("reviewed_at") or ""),
+                _revision_request_fingerprint(request),
+                str(request.get("submissionId") or request.get("submission_id") or ""),
+                str(request.get("artifactId") or request.get("artifact_id") or ""),
             )
             retryable_failures = sum(
                 status in _RETRYABLE_REVISION_STATUSES for status in handled_status_rows
@@ -1936,7 +1950,11 @@ def _pending_remote_revision(
             )
             current_code_clears_source_manifest = (
                 "terminal_revision_source_manifest_unavailable" in handled_statuses
-                and _revision_requests_source_precision(str(request.get("feedback") or ""))
+                and (
+                    str(request.get("failure_category") or request.get("failureCategory") or "").lower()
+                    == "source_evidence_match"
+                    or _revision_requests_source_precision(str(request.get("feedback") or ""))
+                )
             )
             if not (
                 current_code_repairs_surface
@@ -2071,7 +2089,7 @@ def _terminal_topics(
         for row in latest.values()
         if row.get("title") and (
             (decision := str(row.get("decision") or "").lower()) == "reject"
-            or (decision == "revise" and not _actionable_revisions(row))
+            or (decision == "revise" and _terminal_revision(row))
         )
     }
     if not terminal_markers:
@@ -4690,7 +4708,10 @@ def run_cycle(
                 finish_terminal_revision(revision_source, selected, out_dir, "terminal_revision_trace_evidence_insufficient", revision_trace_capacity=revision_trace_capacity)
                 continue
             existing_source_preflight = _existing_receipt_preflight(revision_source_run) if revision_source else None
-            revision_source_repair = _revision_requests_source_precision(revision_feedback)
+            revision_source_repair = (
+                str((revision_source or {}).get("failure_category") or "") == "source_evidence_match"
+                or _revision_requests_source_precision(revision_feedback)
+            )
             source_manifest_availability = (
                 _source_manifest_availability(selected, revision_source_run)
                 if revision_source

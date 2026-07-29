@@ -230,6 +230,159 @@ def test_named_source_revisions_are_repaired_from_receipt_truth() -> None:
     assert repair_revision_quality(fixed, rows, feedback) == (fixed, [])
 
 
+def test_pending_protocol_and_reviewer_boilerplate_repairs_converge(tmp_path: Path) -> None:
+    asks = [
+        (
+            "Resolve the Smith 2024 internal contradiction: the Results claim that no numerics "
+            "are available, while the Evidence Snapshot cites a representative statistic for "
+            "Smith 2024 — pick one framing and align the other section."
+        ),
+        (
+            "Delete the boilerplate/word-floor/recommendation-boundary paragraphs that do not "
+            "advance evidence synthesis (Abstract closing paragraph; scattered public word floor lines)."
+        ),
+        (
+            "Make Smith 2024 and Smith 2026 evidence pending if no numerics can be cited, "
+            "and remove unverified effect direction inferences."
+        ),
+    ]
+    rows: list[dict[str, Any]] = [
+        {
+            "citation_token": "Smith 2024",
+            "source_title": "Protocol for a randomized study to evaluate treatment effects",
+            "effect_direction": "null",
+            "p_values": [],
+            "thesis_text": "Participants will be randomly assigned; a prior cohort reported RR = 0.75.",
+        },
+        {
+            "citation_token": "Smith 2026",
+            "effect_direction": "positive",
+            "p_values": ["p = 0.089"],
+            "thesis_text": "The primary analysis reported p = 0.089.",
+        },
+    ]
+    paper = (
+        "# Paper\n\n## Abstract\n\nBounded synthesis.\n\n"
+        "This paragraph marks that evidence boundary and adds no result or recommendation "
+        "beyond the cited corpus.\n\n"
+        "## Evidence Landscape\n\n### Findings Map\n\n"
+        "| Source | Direction |\n| --- | --- |\n| Smith 2024 | direction=null |\n"
+        "| Smith 2026 | direction=positive |\n\n"
+        "## Results\n\nSource-statistic reconciliation (Smith 2024; exact statistic): "
+        "Smith 2024 has no bundle-traceable exact statistic; other exact values are excluded, "
+        "and no direction is inferred from a statistic alone. "
+        "Existing evidence suffix: Smith 2024 [bundle:1] reports RR = 0.75.\n\n"
+        "Smith 2024 direction=null. Smith 2026 direction=positive.\n\n"
+        "This section-scoped result reports Smith 2026 [bundle:2] at p = 0.089.\n\n"
+        "## Cross-Domain Synthesis\n\nA null signal is represented by Smith 2024.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, rows, "; ".join(asks))
+
+    assert details == [
+        "named_direction_reconciliation", "named_statistic_reconciliation",
+        "fragmentary_prose",
+    ]
+    assert "Smith 2024 has no bundle-traceable exact statistic and remains evidence-pending" in fixed
+    assert fixed.count("Smith 2024 has no bundle-traceable exact statistic and remains evidence-pending") == 1
+    assert "Existing evidence suffix: Smith 2024 [bundle:1] reports RR = 0.75." in fixed
+    assert "direction=null" not in fixed
+    assert "Smith 2026 direction=positive" in fixed
+    assert "null signal is represented by Smith 2024" not in fixed
+    assert "An unclear signal is represented by Smith 2024" in fixed
+    assert "This paragraph marks that evidence boundary" not in fixed
+    assert "This section-scoped result reports Smith 2026" in fixed
+    assert revision_coverage.deterministic_known_asks(asks, evidence_rows=rows) == asks
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows,
+    ) == []
+    assert repair_revision_quality(fixed, rows, "; ".join(asks)) == (fixed, [])
+
+    (tmp_path / "full_paper.md").write_text(fixed)
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "citation_registry.json").write_text("{}")
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "; ".join(asks), "required_revisions": asks,
+    }))
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps({
+        "passed": False, "ask_count": len(asks), "unmet_asks": asks,
+    }))
+
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") == {
+        "passed": True,
+        "ask_count": len(asks),
+        "unmet_asks": [],
+        "refreshed_by": "test",
+    }
+
+
+def test_boilerplate_cleanup_preserves_neighboring_evidence() -> None:
+    ask = "Delete the boilerplate recommendation-boundary paragraph."
+    paper = (
+        "## Abstract\n\nSmith 2027 [bundle:1] reported RR = 0.75. "
+        "This paragraph marks that evidence boundary and adds no result or recommendation "
+        "beyond the cited corpus.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert details == ["fragmentary_prose"]
+    assert "Smith 2027 [bundle:1] reported RR = 0.75." in fixed
+    assert "This paragraph marks that evidence boundary" not in fixed
+
+
+def test_boilerplate_cleanup_is_decimal_safe_and_idempotent() -> None:
+    ask = "Delete public word floor boilerplate."
+    paper = (
+        "## Results\n\nSmith 2027 [bundle:1] reported RR = 0.75. "
+        "The public word floor is preserved. Smith 2028 [bundle:2] reported p = 0.089.\n\n"
+        "Because the public word floor is preserved by preprocessing, Smith 2029 remains traceable.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert details == ["fragmentary_prose"]
+    assert "RR = 0.75" in fixed and "p = 0.089" in fixed
+    assert "0.75.089" not in fixed
+    assert "Because the public word floor is preserved by preprocessing" in fixed
+    assert repair_revision_quality(fixed, [], ask) == (fixed, [])
+
+
+def test_boilerplate_cleanup_handles_doubled_whitespace_exact_sentence() -> None:
+    ask = "Delete public word floor boilerplate."
+    paper = (
+        "## Results\n\nSmith 2027 reported RR = 0.75.  "
+        "The public  word floor is preserved.  Smith 2028 reported p = 0.089.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert details == ["fragmentary_prose"]
+    assert "public  word floor" not in fixed.lower()
+    assert "RR = 0.75. Smith 2028" in fixed
+    assert repair_revision_quality(fixed, [], ask) == (fixed, [])
+
+
+def test_evidence_pending_condition_preserves_traceable_non_p_statistic() -> None:
+    ask = (
+        "Make Smith 2027 evidence pending if no numerics can be cited, "
+        "and remove unverified effect direction inferences."
+    )
+    rows = [{
+        "citation_token": "Smith 2027",
+        "effect_direction": "positive",
+        "thesis_text": "The completed trial reported RR = 0.75.",
+    }]
+    paper = "## Results\n\nSmith 2027 direction=positive and reported RR = 0.75.\n"
+
+    fixed, _ = repair_revision_quality(paper, rows, ask)
+
+    assert "direction=positive" in fixed
+    assert "RR = 0.75" in fixed
+    assert "remains evidence-pending" not in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, rows) is True
+
+
 def test_named_direction_repair_accepts_coding_alignment_wording() -> None:
     ask = (
         "Reconcile the Opstad 2022 framing: explicitly state whether the 'positive' "

@@ -49,8 +49,6 @@ _LEGACY_SOURCE_SIGNIFICANCE_NOTE_RE = re.compile(
     r"\b(?:statistically significant|non-significant|not significant|significance threshold)\b",
     re.I,
 )
-
-
 def revision_quality_ask_known(ask: str, evidence_rows: Sequence[dict[str, Any]] | None = None) -> bool:
     lower = _normalise(ask)
     return any(check(lower) for check in (
@@ -101,9 +99,8 @@ def repair_revision_quality(
 ) -> tuple[str, list[str]]:
     lower = _normalise(feedback)
     rows = _ordered_rows(evidence_rows)
-    patched = paper_md
     details: list[str] = []
-    patched, consistency_details = _consistency.repair(patched, rows, feedback)
+    patched, consistency_details = _consistency.repair(paper_md, rows, feedback)
     details.extend(consistency_details)
     if _asks_exact_stat_trace(lower):
         patched, changed = _repair_untraceable_statistics(patched, rows)
@@ -147,11 +144,18 @@ def _normalise(text: str) -> str:
     return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
 
 
+def protocol_only_source(title: str, evidence_text: str) -> bool:
+    current_evidence = re.sub(r"\b(?:background|prior|earlier|previous(?:ly published)?)\b[^.!?]{0,40}\bresults?\s+show(?:ed|s)?\b.*?(?=,\s*(?:and|but|however,?|whereas|while|yet)\s+(?=(?:(?:in\s+)?(?:(?:this|current|present|our)\s+(?:trial|study|cohort)|the\s+(?:current|present)\s+(?:trial|study|cohort))|we)\b)|\n+\s*(?=(?:(?:in\s+)?(?:(?:this|current|present|our)\s+(?:trial|study|cohort)|the\s+(?:current|present)\s+(?:trial|study|cohort))|we)\b)|[.;!?]|$)", "", evidence_text, flags=re.I | re.S)
+    planned = re.search(r"\bprotocol\b|\b(?:study|trial)\s+to\s+(?:evaluate|assess|determine|examine)\b", title, re.I) and re.search(r"\b(?:participants?|patients?|subjects?)\s+(?:will|are\s+to)\s+(?:be\s+)?(?:randomly\s+)?(?:assigned|enrolled|recruited|randomi[sz]ed)\b", evidence_text, re.I)
+    completed = re.search(r"\bparticipants?\s+(?:were|was)\s+(?:randomly\s+)?assigned\b|\b(?:primary|secondary|adjusted|intention.to.treat)\s+(?:analysis|results?)\s+(?:show(?:ed|s)?|found|report(?:ed|s)?)\b|\b(?:primary|secondary)\s+endpoint\s+(?:was|were)\s+(?:met|not\s+met|null|mixed|positive|negative|significant|non[- ]significant|associated|reduced|increased|unchanged|\d)|\bresults?\s+show(?:ed|s)?\b|\b(?:we|(?:this|current|present|our)\s+(?:study|trial|cohort)|the\s+(?:(?:current|present)\s+)?(?:study|trial|cohort))\s+(?:found|reported|showed)\b", current_evidence, re.I)
+    return bool(planned and not completed)
+
+
+def _evidence_pending_requested(ask: str) -> bool: return "evidence pending" in (lower := _normalise(ask)) and "unverified effect direction" in lower
+
+
 def _ordered_rows(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
-    values = list(rows)
-    return ordered_source_rows(values, {
-        str(row.get("receipt_id") or ""): row for row in values
-    })
+    return ordered_source_rows(rows, {str(row.get("receipt_id") or ""): row for row in rows})
 
 
 def receipt_direction(row: dict[str, Any]) -> str:
@@ -241,9 +245,7 @@ def _model_context(scope: str) -> str:
 
 
 def _matching_feedback(feedback: str, predicate: Any) -> str:
-    return " ".join(
-        part for part in _feedback_parts(feedback) if predicate(_normalise(part))
-    )
+    return " ".join(part for part in _feedback_parts(feedback) if predicate(_normalise(part)))
 
 
 def _feedback_parts(feedback: str) -> list[str]:
@@ -278,7 +280,8 @@ def _asks_fragment_cleanup(text: str) -> bool:
     return any(token in text for token in (
         "fragmentary prose", "fragementary prose", "opening fragment", "opening comma",
         "ending mid sentence", "broken mid sentence", "garbled section fragment",
-        "orphaned prose",
+        "orphaned prose", "word floor", "recommendation boundary", "recommendation-boundary",
+        "this paragraph marks that evidence boundary",
     ))
 
 
@@ -298,22 +301,25 @@ def _asks_named_direction_reconciliation(text: str) -> bool:
         token in text for token in ("numeric correction", "unclear/null", "null/mixed", "non-significant")
     ):
         return False
-    request = (
+    request = _evidence_pending_requested(text) or (
         "direction" in text
         and any(token in text for token in ("consistent wording", "recheck", "realign", "recode", "coded direction", "coding", "direction reflects", "source direction", "bundle records"))
     ) or all(token in text for token in ("coding", "align", "refers to"))
-    return _has_named_source(text) and request and any(token in text for token in ("positive", "negative", "null", "mixed", "unclear"))
+    return _has_named_source(text) and request and ("evidence pending" in text or any(
+        token in text for token in ("positive", "negative", "null", "mixed", "unclear")
+    ))
 
 
 def _asks_named_statistic_reconciliation(text: str) -> bool:
-    return _has_named_source(text) and any(
+    return _has_named_source(text) and (
+        "no numerics" in text and ("evidence pending" in text or "internal contradiction" in text) or any(
         token in text for token in ("statistic", "p value", "p <", "p =", "effect estimate")
     ) and any(token in text for token in (
         "if it is not present", "if not present", "not present in", "per endpoint",
         "which endpoint", "located in the source excerpt", "representative statistic",
     )) and any(token in text for token in ("add", "clarify", "verify", "correct", "remove", "reconcile")) and any(
         token in text for token in ("bundle", "excerpt", "source", "trace")
-    )
+    ))
 
 
 def _asks_named_topic_fit_boundary(text: str) -> bool:
@@ -328,14 +334,16 @@ def _has_named_source(text: str) -> bool:
     return re.search(r"\b[A-Z][A-Za-z'’.\-]+(?:\s+et\s+al\.?)?\s+(?:19|20)\d{2}[a-z]?\b", text, re.I) is not None
 
 
+def _source_has_result_statistic(row: dict[str, Any]) -> bool: return not protocol_only_source(str(row.get("source_title") or ""), str(row.get("thesis_text") or "")) and bool(_traceable_effect_statistics(row))
+
+
 def _label(row: dict[str, Any]) -> str:
     return str(row.get("citation_token") or row.get("cited_as") or
                row.get("body_citation") or row.get("receipt_id") or "").strip()
 
 
 def _findings_map(paper_md: str) -> str:
-    matches = re.findall(r"^### Findings Map\b.*?(?=^### |^## |\Z)", paper_md, re.M | re.S | re.I)
-    return matches[0] if len(matches) == 1 else ""
+    return matches[0] if len(matches := re.findall(r"^### Findings Map\b.*?(?=^### |^## |\Z)", paper_md, re.M | re.S | re.I)) == 1 else ""
 
 
 def _findings_map_is_exact(paper_md: str, rows: Sequence[dict[str, Any]]) -> bool:
@@ -484,8 +492,7 @@ def _statistics_are_source_bound(paper_md: str, rows: Sequence[dict[str, Any]]) 
 
 
 def _table_source_row(line: str, rows: Sequence[dict[str, Any]]) -> dict[str, Any] | None:
-    found = _named_rows(line, rows)
-    return found[0] if len(found) == 1 else None
+    return found[0] if len(found := _named_rows(line, rows)) == 1 else None
 
 
 def _repair_findings_map_statistics(
@@ -553,17 +560,15 @@ def _fragmentary(paragraph: str) -> bool:
     stripped = paragraph.strip()
     if not stripped or stripped.startswith(("#", "|", "-", "*", "```")):
         return False
-    return bool(re.match(r"^[,;]", stripped)) or (
-        len(stripped.split()) >= 8 and re.search(r"[.!?:][\"')\]]?$", stripped) is None
-    )
+    return bool(_REVIEWER_BOILERPLATE_SENTENCE_RE.search(paragraph)) or bool(re.match(r"^[,;]", stripped)) or (len(stripped.split()) >= 8 and re.search(r"[.!?:][\"')\]]?$", stripped) is None)
+
+
+_REVIEWER_BOILERPLATE_SENTENCE_RE = re.compile(r"(?P<lead>^|(?<=[.!?])\s+)(?:this\s+paragraph\s+marks\s+that\s+evidence\s+boundary\s+and\s+adds\s+no\s+result\s+or\s+recommendation\s+beyond\s+the\s+cited\s+corpus|(?:the\s+)?public\s+word\s+floor\s+is\s+preserved)\s*(?:[.!?](?=\s|$)[ \t]*|$)", re.I)
 
 
 def _target_headings(paper_md: str, ask: str) -> set[str]:
     ask_words = set(re.findall(r"[a-z]{4,}", ask.lower()))
-    return {
-        heading for heading in re.findall(r"^#{2,3}\s+(.+?)\s*$", paper_md, re.M)
-        if set(re.findall(r"[a-z]{4,}", heading.lower())) & ask_words
-    }
+    return {heading for heading in re.findall(r"^#{2,3}\s+(.+?)\s*$", paper_md, re.M) if set(re.findall(r"[a-z]{4,}", heading.lower())) & ask_words}
 
 
 def _paragraphs_with_headings(paper_md: str) -> list[tuple[str, str]]:
@@ -599,6 +604,10 @@ def _repair_fragmentary_prose(paper_md: str, ask: str) -> tuple[str, int]:
         part, stripped = parts[index], parts[index].strip()
         if match := re.match(r"^#{2,3}\s+(.+?)\s*$", stripped):
             heading = match.group(1)
+            continue
+        if _REVIEWER_BOILERPLATE_SENTENCE_RE.search(part):
+            fixed = _REVIEWER_BOILERPLATE_SENTENCE_RE.sub(lambda match: " " if match.group("lead") else "", part).strip()
+            parts[index], changed = (fixed, changed + 1) if fixed != part else (part, changed)
             continue
         if not _fragmentary(part):
             continue
@@ -636,19 +645,13 @@ def _mention_key(text: str) -> str:
 
 def _named_rows(ask: str, rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
     lower = _mention_key(ask)
-    return [row for row in rows if any(
-        value and re.search(rf"(?<!\w){re.escape(_mention_key(value))}(?!\w)", lower)
-        for value in (_label(row), str(row.get("source_title") or "").strip())
-    )]
+    return [row for row in rows if any(value and re.search(rf"(?<!\w){re.escape(_mention_key(value))}(?!\w)", lower) for value in (_label(row), str(row.get("source_title") or "").strip()))]
 
 
 def _topic_fit_is_deterministic(ask: str, rows: Sequence[dict[str, Any]]) -> bool:
     named = _named_rows(ask, rows)
-    return bool(named) and all(
-        (directness := str(row.get("directness") or "").strip().lower())
-        and directness != "unknown" and not directness.startswith("direct")
-        for row in named
-    )
+    return bool(named) and all((directness := str(row.get("directness") or "").strip().lower())
+                               not in {"", "unknown"} and not directness.startswith("direct") for row in named)
 
 
 def _section_span(paper_md: str, heading: str) -> tuple[int, int] | None:
@@ -662,11 +665,7 @@ def _section_span(paper_md: str, heading: str) -> tuple[int, int] | None:
 
 def _requested_headings(paper_md: str, ask: str) -> list[str]:
     lower = _normalise(ask)
-    return [
-        heading.strip()
-        for heading in re.findall(r"^#{2,3}\s+(.+?)[ \t]*$", paper_md, re.M)
-        if _normalise(heading) in lower
-    ]
+    return [heading.strip() for heading in re.findall(r"^#{2,3}\s+(.+?)[ \t]*$", paper_md, re.M) if _normalise(heading) in lower]
 
 
 def _upsert_section_note(paper_md: str, heading: str, marker: str, note: str) -> tuple[str, int]:
@@ -679,27 +678,28 @@ def _upsert_section_note(paper_md: str, heading: str, marker: str, note: str) ->
     if existing:
         if existing.group(0) == note:
             return paper_md, 0
+        old = existing.group(0)
+        ending = next((value for value in ("no direction is inferred from a statistic alone.", "endpoint-specific findings remain separately qualified.", "direct effect accounting for the paper topic.") if value in old), "")
+        tail = old.split(ending, 1)[1].strip() if ending else old[len(marker):].strip()
+        replacement = note + (f"\n\n{tail}" if tail else "")
         left, right = start + existing.start(), start + existing.end()
-        return paper_md[:left] + note + paper_md[right:], 1
+        return paper_md[:left] + replacement + paper_md[right:], 1
     return paper_md[:start] + "\n\n" + note + paper_md[start:], 1
 
 
 def _section_has_note(paper_md: str, heading: str, note: str) -> bool:
-    span = _section_span(paper_md, heading)
-    return bool(span and note in paper_md[span[0]:span[1]])
+    return bool((span := _section_span(paper_md, heading)) and note in paper_md[span[0]:span[1]])
 
 
 def _revision_headings(paper_md: str, ask: str, kind: str) -> list[str]:
     requested = _requested_headings(paper_md, ask)
-    if kind == "direction" and requested:
-        return requested
+    if requested:
+        return requested if kind == "direction" else requested[:1]
     defaults = {
         "direction": ("Evidence Landscape", "Evidence Snapshot", "Results", "Cross-Domain Synthesis", "Conclusion"),
         "statistic": ("Evidence Snapshot", "Evidence Landscape", "Results"),
         "topic_fit": ("Evidence Landscape", "Limitations", "Results"),
     }[kind]
-    if requested:
-        return requested[:1]
     return [name for name in defaults if _section_span(paper_md, name)]
 
 
@@ -723,17 +723,18 @@ def _requested_direction(ask: str) -> str:
     return ""
 
 
+def _revision_direction(row: dict[str, Any], ask: str) -> str:
+    return "unclear" if _evidence_pending_requested(ask) and not _source_has_result_statistic(row) else _requested_direction(ask) or resolved_effect_direction(row)
+
+
 def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tuple[str, str] | None:
     label = _label(row)
     if kind == "direction":
-        direction = _requested_direction(ask) or resolved_effect_direction(row)
+        direction = _revision_direction(row, ask)
         marker = f"Source-direction reconciliation ({label}):"
-        detail = (
-            f"reviewer-reconciled direction={direction} is used consistently; "
-            "endpoint-specific findings remain separately qualified."
-        )
+        detail = f"reviewer-reconciled direction={direction} is used consistently; endpoint-specific findings remain separately qualified."
     elif kind == "statistic":
-        stats = _consistency.preferred_replacement_statistics(ask, _traceable_effect_statistics(row))
+        stats = () if "no numerics" in _normalise(ask) and not _source_has_result_statistic(row) else _consistency.preferred_replacement_statistics(ask, _traceable_effect_statistics(row))
         if re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
             statistic_kind = "p-value"
             stats = tuple(stat for stat in stats if stat.lower().startswith("p"))
@@ -747,6 +748,7 @@ def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tupl
             f"{label} [bundle:{index}] retains {stats[0]} as bundle-traceable"
             if stats
             else f"{label} has no bundle-traceable exact statistic"
+            + (" and remains evidence-pending" if _evidence_pending_requested(ask) else "")
         )
         detail = f"{finding}; other exact values are excluded, and no direction is inferred from a statistic alone."
     else:
@@ -770,7 +772,7 @@ def _direction_patterns(label: str) -> tuple[str, ...]:
         rf"(?P<prefix>{re.escape(label)}[^\n.;]{{0,100}}?\b(?:show(?:s|ed)?|support(?:s|ed)?|"
         rf"indicat(?:e|es|ed)|report(?:s|ed)?|ha(?:s|d))\s+(?:an?\s+)?){direction}"
         rf"(?P<suffix>\s+(?:direction|effect|signal|finding)\b)",
-        rf"(?P<prefix>\b(?:strong-but-subgroup-conditional\s+)?){direction}"
+        rf"(?P<prefix>\b(?:an?\s+)?(?:strong-but-subgroup-conditional\s+)?){direction}"
         rf"(?P<suffix>\s+(?:direction|effect|signal|finding)\b[^.\n]{{0,100}}?{re.escape(label)})",
     )
 
@@ -779,7 +781,7 @@ def _reconcile_direction_mentions(
     paper_md: str, row: dict[str, Any], headings: Sequence[str], ask: str,
 ) -> tuple[str, int]:
     label = _label(row)
-    resolved = _requested_direction(ask) or resolved_effect_direction(row)
+    resolved = _revision_direction(row, ask)
     changed = 0
     patched = paper_md
     for heading in headings:
@@ -791,10 +793,13 @@ def _reconcile_direction_mentions(
         for pattern in _direction_patterns(label):
             def replace(match: re.Match[str]) -> str:
                 nonlocal changed
-                if match.group("direction").lower() == resolved:
+                prefix = match.group("prefix")
+                grammar = resolved == "unclear" and prefix.casefold().endswith("a ")
+                if match.group("direction").lower() == resolved and not grammar:
                     return match.group(0)
                 changed += 1
-                return match.group("prefix") + resolved + match.group("suffix")
+                prefix = prefix[:-2] + ("An " if prefix[-2] == "A" else "an ") if grammar else prefix
+                return prefix + resolved + match.group("suffix")
             section = re.sub(pattern, replace, section, flags=re.I)
         patched = patched[:start] + section + patched[end:]
     return patched, changed
@@ -803,7 +808,7 @@ def _reconcile_direction_mentions(
 def _direction_mentions_are_consistent(
     paper_md: str, row: dict[str, Any], headings: Sequence[str], ask: str,
 ) -> bool:
-    resolved = _requested_direction(ask) or resolved_effect_direction(row)
+    resolved = _revision_direction(row, ask)
     for heading in headings:
         span = _section_span(paper_md, heading)
         section = paper_md[span[0]:span[1]] if span else ""

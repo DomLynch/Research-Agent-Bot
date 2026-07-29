@@ -23,8 +23,9 @@ import daily_research_paper_submit as daily  # type: ignore[import-not-found]  #
 
 
 @pytest.fixture(autouse=True)
-def _disable_live_pubmed_fetch(monkeypatch: pytest.MonkeyPatch) -> None:
+def _disable_live_pubmed_fetch(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("RESEARKA_SOURCE_ABSTRACT_LIMIT", "0")
+    monkeypatch.setattr(daily, "ROOT", tmp_path)
     monkeypatch.setattr(daily, "_retraction_gate_status", lambda _run: ("eligible", []))
 
 
@@ -132,6 +133,12 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
         "n_non_orthogonal_tensions": tensions,
         "receipts": receipts,
     })
+    for row in receipts:
+        _write_json(
+            daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed"
+            / f"{row['receipt_id']}.paper_sections.json",
+            {"sections": {"abstract": "Topic intervention trial reports an authoritative endpoint result."}},
+        )
     _write_json(run / "citation_registry.json", {
         row["receipt_id"]: {
             "receipt_id": row["receipt_id"],
@@ -160,6 +167,12 @@ def _retopic(run: Path, topic: str) -> None:
     manifest["topic"] = topic
     manifest["receipts"] = receipts
     _write_json(run / "manifest.json", manifest)
+    for row in receipts:
+        _write_json(
+            daily.ROOT / "docs" / "quality-reference" / topic / "parsed"
+            / f"{row['receipt_id']}.paper_sections.json",
+            {"sections": {"abstract": f"{topic} intervention trial reports an authoritative endpoint result."}},
+        )
     _write_json(run / "citation_registry.json", {
         row["receipt_id"]: {
             "receipt_id": row["receipt_id"],
@@ -823,7 +836,7 @@ def test_researka_preflight_requires_twelve_sources(tmp_path: Path) -> None:
     assert daily._researka_preflight_status(payload) == "researka_preflight_insufficient_sources:11 < 12"
 
 
-def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, monkeypatch) -> None:
+def test_source_bundle_does_not_export_unverified_claim_as_source_excerpt(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(daily, "ROOT", tmp_path)
     run = _run(tmp_path)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
@@ -854,8 +867,54 @@ def test_source_bundle_uses_claim_excerpt_and_directness_type(tmp_path: Path, mo
     assert payload["source_bundle"][0]["evidence_context"] == "adjacent"
     assert payload["source_bundle"][0]["outcome_class"] == "longevity"
     assert payload["source_bundle"][0]["directness"] == "indirect"
-    assert payload["source_bundle"][0]["excerpt"] == "GDF11 changed a measured endpoint in the retained source."
+    assert payload["source_bundle"][0]["excerpt"] == ""
+    assert payload["source_bundle"][0]["quote"] is None
     assert payload["source_bundle"][0]["cited_as"] == "Smith 2026"
+
+
+def test_doi_only_parsed_abstract_precedes_unverified_claim_summary(tmp_path: Path, monkeypatch) -> None:
+    run = _run(tmp_path)
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["receipts"] = [{
+        "receipt_id": "r1",
+        "source_title": "Verified DOI source",
+        "outcome_class": "longevity",
+        "n_claims": 3,
+        "effect_direction": "mixed",
+        "directness": "direct",
+    }]
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "citation_registry.json", {
+        "r1": {
+            "receipt_id": "r1",
+            "body_citation": "Smith 2026",
+            "source_year": 2026,
+            "source_doi": "10.1234/example",
+        },
+    })
+    _write_json(
+        daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed" / "r1.paper_sections.json",
+        {"sections": {"abstract": "Authoritative abstract text from the DOI source."}},
+    )
+    _write_json(
+        daily.ROOT / "docs" / "quality-reference" / "topic" / "quant_claims" / "r1.quant_claims.json",
+        {"claims": [{"sentence": "Model-produced claim summary.", "binding_confidence": "high"}]},
+    )
+
+    row = daily.build_payload(run)["source_bundle"][0]
+
+    assert row["excerpt"] == "Authoritative abstract text from the DOI source."
+    assert row["quote"] is None
+
+
+def test_direct_source_without_authoritative_text_fails_local_preflight(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    parsed = daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed" / "topic_effect_0.paper_sections.json"
+    parsed.unlink()
+
+    status = daily._researka_preflight_status(daily.build_payload(run))
+
+    assert status == "source_bundle_unverified_direct_sources:1/12"
 
 
 def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, monkeypatch) -> None:
@@ -868,6 +927,9 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     parsed = tmp_path / "docs" / "quality-reference" / "topic" / "parsed"
     _write_json(parsed / f"{receipt_id}.paper_sections.json", {
         "source_pdf": "https://clinicaltrials.gov/study/NCT01234567",
+        "sections": {
+            "abstract": "The trial reported a source-linked quantitative result.",
+        },
     })
     claims = tmp_path / "docs" / "quality-reference" / "topic" / "quant_claims"
     _write_json(claims / f"{receipt_id}.quant_claims.json", {
@@ -892,6 +954,7 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     row = payload["source_bundle"][0]
 
     assert row["url"] == "https://clinicaltrials.gov/study/NCT01234567"
+    assert row["excerpt"] == "The trial reported a source-linked quantitative result."
     assert row["quote"] == "The trial reported a source-linked quantitative result."
     assert row["risk_of_bias"] == "some_concerns"
     assert "[bundle:1]" in payload["body_markdown"]
@@ -1448,16 +1511,16 @@ def test_source_bundle_grounds_author_year_citation_via_cited_as(tmp_path: Path,
     assert entry["excerpt"] == "Abstract body text."
 
 
-def test_source_bundle_structured_fallback_is_audit_specific(tmp_path: Path, monkeypatch) -> None:
+def test_source_bundle_never_exports_synthetic_audit_text_as_evidence(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(daily, "_pubmed_abstracts", lambda pmids: {})
+    monkeypatch.setattr(daily, "_parsed_source_excerpt", lambda *_args: "")
     run = _run(tmp_path)
 
     payload = daily.build_payload(run)
 
     excerpt = payload["source_bundle"][0]["excerpt"]
-    assert "Source-bundle audit" in excerpt
-    assert "effect_direction=" in excerpt
-    assert "registered as" not in excerpt
+    assert excerpt == ""
+    assert payload["source_bundle"][0]["quote"] is None
 
 
 def test_high_null_no_direct_abstract_bundle_blocks_without_generation_reconciliation(tmp_path: Path, monkeypatch) -> None:

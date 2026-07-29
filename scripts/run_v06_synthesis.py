@@ -1729,16 +1729,15 @@ _TITLE_NEGATIVE_EFFECT_RE = re.compile(
     r".{0,40}\b(?:risk|incidence|mortality|dementia)\b",
     re.IGNORECASE,
 )
-
-
 def _title_guarded_effect_direction(
     title: str, current: str, evidence_text: str = "",
 ) -> str:
-    title = title or ""
-    current = current or "unclear"
+    title, current = title or "", current or "unclear"
+    scope = f"{title} {evidence_text}".strip()
+    if _revision_quality.protocol_only_source(title, evidence_text):
+        return "unclear"
     if current != "unclear":
         return "null" if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title) else current
-    scope = f"{title} {evidence_text}".strip()
     no_benefit = bool(_TITLE_NO_BENEFIT_RE.search(scope))
     directional_scope = _TITLE_NO_BENEFIT_RE.sub("", scope)
     positive = bool(_TITLE_POSITIVE_EFFECT_RE.search(directional_scope))

@@ -7235,6 +7235,8 @@ def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
             payload.update({
                 "failure_stage": "editorial",
                 "failure_category": "source_evidence_match",
+                "failedChecks": [{"name": "Verify the disputed source excerpts."}],
+                "majorIssues": ["Replace unverifiable source metadata."],
                 "notes": ["source metadata verification unavailable (fail-closed)"],
             })
         return payload, None
@@ -7247,6 +7249,13 @@ def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
     old = next(row for row in latest.values() if row["submissionId"] == "sub-0")
     assert old["decision"] == "revise"
     assert old["notes"] == ["source metadata verification unavailable (fail-closed)"]
+    assert old["failed_checks"] == [{"name": "Verify the disputed source excerpts."}]
+    assert old["major_issues"] == ["Replace unverifiable source metadata."]
+    assert cycle._required_revision_items(old) == [
+        "Repair the old topic evidence.",
+        "Verify the disputed source excerpts.",
+        "Replace unverifiable source metadata.",
+    ]
     persisted = json.loads(
         (runs_root / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
         .read_text(encoding="utf-8")
@@ -7258,6 +7267,61 @@ def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
     assert old_record["reviewed_at"] == "2026-07-25T08:36:00+04:00"
     assert old_record["remote_revision_requested"] is True
     assert old_record["required_revisions"] == ["Repair the old topic evidence."]
+    assert old_record["failed_checks"] == [{"name": "Verify the disputed source excerpts."}]
+    assert old_record["major_issues"] == ["Replace unverifiable source metadata."]
+
+
+def test_terminal_revision_does_not_discard_real_failed_check() -> None:
+    row = {
+        "decision": "revise",
+        "requiredRevisions": [
+            "Revise under calibration rules because direct clinical evidence is missing.",
+        ],
+        "failedChecks": ["Correct the reported p-value against the retained source."],
+        "reviewSummary": "No revisions are required.",
+    }
+
+    assert cycle._terminal_revision(row) is False
+
+
+def test_terminal_revision_does_not_discard_actionable_fallback_note() -> None:
+    row = {
+        "decision": "revise",
+        "reviewSummary": "No revisions are required under the calibration-only assessment.",
+        "notes": ["Replace the mismatched source excerpt with authoritative source text."],
+    }
+
+    assert cycle._terminal_revision(row) is False
+    assert cycle._actionable_revisions(row) == [
+        "Replace the mismatched source excerpt with authoritative source text",
+    ]
+
+
+def test_terminal_revision_ignores_negated_fallback_action() -> None:
+    row = {
+        "decision": "revise",
+        "reviewSummary": "No revisions are required.",
+        "notes": ["No immediate need to replace the source excerpt."],
+    }
+
+    assert cycle._actionable_revisions(row) == []
+    assert cycle._terminal_revision(row) is True
+    row["notes"] = ["No need to replace the source excerpt, but verify the DOI."]
+    assert cycle._actionable_revisions(row) == ["verify the DOI"]
+    assert cycle._terminal_revision(row) is False
+    row["notes"] = ["The author is not required to replace the verified excerpt."]
+    assert cycle._actionable_revisions(row) == []
+
+
+def test_terminal_revision_skips_true_noop_duplicate() -> None:
+    row = {
+        "decision": "revise",
+        "requiredRevisions": [],
+        "reviewSummary": "No revisions are required because of high overlap with publication 123.",
+        "failureCategory": "publication_overlap",
+    }
+
+    assert cycle._terminal_revision(row) is True
 
 
 def test_submission_decision_writeback_preserves_concurrent_append(
@@ -7822,7 +7886,7 @@ def test_compaction_uses_input_order_to_break_durable_timestamp_ties() -> None:
     assert compacted[0]["submissionId"] == "new-sub"
 
 
-def test_terminal_revision_row_before_newer_review_still_blocks(tmp_path: Path) -> None:
+def test_terminal_revision_row_before_newer_review_does_not_block(tmp_path: Path) -> None:
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     title = "Research Synthesis: Brain Age MRI — full paper"
@@ -7836,7 +7900,7 @@ def test_terminal_revision_row_before_newer_review_still_blocks(tmp_path: Path) 
 
     active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
 
-    assert marker in cycle._handled_revision_ids(ledger_dir, active)
+    assert marker not in cycle._handled_revision_ids(ledger_dir, active)
 
 
 def test_terminal_revision_row_after_active_review_still_blocks(tmp_path: Path) -> None:
@@ -7854,6 +7918,45 @@ def test_terminal_revision_row_after_active_review_still_blocks(tmp_path: Path) 
     active = [{"title": title, "reviewedAt": "2026-06-01T10:00:00+00:00"}]
 
     assert marker in cycle._handled_revision_ids(ledger_dir, active)
+
+
+def test_dateless_new_review_identity_ignores_stale_terminal(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": title,
+        "status": "terminal_source_precision_repair_incomplete",
+        "submissionId": "old-submission",
+        "artifactId": "old-artifact",
+    }]})
+    active = [{
+        "title": title,
+        "submissionId": "new-submission",
+        "artifactId": "new-artifact",
+    }]
+
+    assert marker not in cycle._handled_revision_ids(ledger_dir, active)
+
+
+def test_dateless_submission_identity_rejects_incomparable_stale_artifact(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    title = "Research Synthesis: Brain Age MRI — full paper"
+    marker = cycle.submit_bridge._title_marker(title)
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": marker,
+        "title": title,
+        "status": "terminal_source_precision_repair_incomplete",
+        "artifactId": "old-artifact",
+    }]})
+
+    assert marker not in cycle._handled_revision_ids(
+        ledger_dir,
+        [{"title": title, "submissionId": "new-submission"}],
+    )
 
 
 def test_terminal_source_precision_handled_row_bypasses_round_cap(tmp_path: Path) -> None:
@@ -8231,14 +8334,13 @@ def test_pending_remote_revision_retry_budget_resumes_same_review(
     assert pending and pending["artifactId"] == "cardio-review"
 
 
-@pytest.mark.parametrize(("submission_count", "expected_pending"), [
-    (cycle.MAX_REVISE_ROUNDS - 1, True),
-    (cycle.MAX_REVISE_ROUNDS, False),
+@pytest.mark.parametrize("submission_count", [
+    cycle.MAX_REVISE_ROUNDS - 1,
+    cycle.MAX_REVISE_ROUNDS,
 ])
-def test_pending_remote_revision_caps_same_topic_across_new_review_ids(
+def test_pending_remote_revision_does_not_cap_changed_review_request_by_topic(
     tmp_path: Path,
     submission_count: int,
-    expected_pending: bool,
 ) -> None:
     runs = tmp_path / "runs"
     ledger_dir = runs / cycle.LEDGER_DIR
@@ -8257,6 +8359,7 @@ def test_pending_remote_revision_caps_same_topic_across_new_review_ids(
         "artifactId": "new-review-id",
         "title": title,
         "feedback": "Reconcile the same unsupported claim.",
+        "reviewedAt": (now + dt.timedelta(seconds=1)).isoformat(),
     }
 
     pending, error = cycle._pending_remote_revision(
@@ -8264,7 +8367,52 @@ def test_pending_remote_revision_caps_same_topic_across_new_review_ids(
     )
 
     assert error is None
-    assert (pending is not None) is expected_pending
+    assert pending is not None
+
+
+def test_changed_review_fingerprint_gets_fresh_retry_budget(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    title = "Research Synthesis: Metformin Treatment Effects — full paper"
+    _seed_submitted_run(runs, "metformin_treatment_effects", f"# {title}")
+    old_request = {
+        "artifactId": "old-artifact",
+        "submissionId": "old-submission",
+        "title": title,
+        "reviewedAt": "2026-07-29T08:00:00+00:00",
+        "required_revisions": ["Repair the old claim trace."],
+    }
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+        {
+            **old_request,
+            "key": cycle._revision_key(old_request),
+            "request_fingerprint": cycle._revision_request_fingerprint(old_request),
+            "status": "revision_coverage_unmet",
+            "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
+            "handled_at": f"2026-07-29T12:0{index}:00+00:00",
+        }
+        for index in range(cycle.MAX_REVISE_ROUNDS)
+    ]})
+    new_request = {
+        "artifactId": "new-artifact",
+        "submissionId": "new-submission",
+        "title": title,
+        "topic": "metformin_treatment_effects",
+        "reviewedAt": "2026-07-29T11:00:00+00:00",
+        "feedback": "Verify the new source evidence mismatch.",
+        "required_revisions": ["Verify the new source evidence mismatch."],
+        "failure_category": "source_evidence_match",
+    }
+
+    pending, error = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([new_request], None),
+    )
+
+    assert error is None
+    assert pending is not None
+    assert pending["artifactId"] == "new-artifact"
 
 
 def test_pending_remote_revision_topic_cap_exempts_external_retry(
@@ -8499,6 +8647,31 @@ def test_remote_revision_suppressed_when_latest_decision_is_reject(monkeypatch) 
     assert out == []  # latest decision is reject -> no revise routed
 
 
+def test_equal_timestamp_accept_wins_over_verbose_revise(monkeypatch) -> None:
+    title = "Research Synthesis: Equal Timestamp — full paper"
+    timestamp = "2026-07-29T08:00:00+00:00"
+    base = {
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper",
+        "title": title,
+        "reviewedAt": timestamp,
+    }
+    _patch_reviews(monkeypatch, [
+        {**base, "decision": "accept", "decisionObjectId": "accept-1"},
+        {
+            **base,
+            "decision": "revise",
+            "decisionObjectId": "revise-2",
+            "requiredRevisions": ["A very detailed but stale revision request."],
+        },
+    ])
+
+    latest, err = cycle._latest_reviews_by_title("http://reviews.test")
+
+    assert err is None
+    assert next(iter(latest.values()))["decision"] == "accept"
+
+
 def test_remote_revision_skips_revise_with_no_required_revisions(monkeypatch) -> None:
     # Researka can return decision=revise with zero requiredRevisions ("No
     # revisions are required"); routing it burns a ~15-min re-render for nothing.
@@ -8511,6 +8684,36 @@ def test_remote_revision_skips_revise_with_no_required_revisions(monkeypatch) ->
     out, err = cycle._remote_revision_requests("http://reviews.test")
     assert err is None
     assert out == []  # no concrete required revisions -> no-op revise skipped
+
+
+def test_remote_revision_routes_failed_checks_without_required_revisions(monkeypatch) -> None:
+    title = "Research Synthesis: Acute Exercise Effects — full paper"
+    _patch_reviews(monkeypatch, [{
+        "artifactType": "research_paper",
+        "agentId": "agent-v3-full-paper",
+        "artifactId": "decision-source-match",
+        "submissionId": "submission-source-match",
+        "title": title,
+        "decision": "revise",
+        "reviewedAt": "2026-07-29T08:00:00+00:00",
+        "requiredRevisions": [],
+        "failedChecks": [
+            {"name": "Verify or replace evidence excerpts that do not match authoritative abstracts."},
+        ],
+        "majorIssues": ["Rebuild the source bundle from verified source text."],
+        "failureCategory": "source_evidence_match",
+    }])
+
+    out, err = cycle._remote_revision_requests("http://reviews.test")
+
+    assert err is None
+    assert len(out) == 1
+    assert out[0]["failure_category"] == "source_evidence_match"
+    assert out[0]["required_revisions"] == [
+        "Verify or replace evidence excerpts that do not match authoritative abstracts.",
+        "Rebuild the source bundle from verified source text.",
+    ]
+    assert out[0].get("unparsed_review") is None
 
 
 def test_remote_revision_retries_unchanged_after_source_authority_outage(monkeypatch) -> None:
@@ -8575,7 +8778,7 @@ def test_remote_revision_retries_semantic_source_verifier_outage(monkeypatch, no
     "source evidence does not support the submitted claim",
     "DOI resolver was available; the source is unavailable because its DOI is invalid",
 ])
-def test_remote_revision_does_not_retry_content_source_failure_unchanged(monkeypatch, note: str) -> None:
+def test_remote_revision_routes_content_source_failure_for_repair(monkeypatch, note: str) -> None:
     _patch_reviews(monkeypatch, [{
         "artifactType": "research_paper",
         "agentId": "agent-v3-full-paper",
@@ -8594,7 +8797,11 @@ def test_remote_revision_does_not_retry_content_source_failure_unchanged(monkeyp
     out, err = cycle._remote_revision_requests("http://reviews.test")
 
     assert err is None
-    assert out == []
+    assert len(out) == 1
+    assert out[0]["feedback"] == note
+    assert out[0]["failure_category"] == "source_evidence_match"
+    assert out[0]["unparsed_review"] is True
+    assert out[0].get("retry_unchanged") is None
 
 
 def test_external_authority_retry_reuses_unchanged_approved_run(tmp_path: Path, monkeypatch) -> None:
@@ -8785,6 +8992,8 @@ def test_submission_decision_fallback_accepts_camel_case_payload(tmp_path: Path,
         "decision": "revise",
         "decisionObjectId": "decision-1",
         "requiredRevisions": ["Define rates operationally."],
+        "failedChecks": ["Verify the dose-specific source excerpt."],
+        "majorIssues": [{"description": "Reconcile the effect-direction claim."}],
         "reviewSummary": "Define rates operationally.",
         "createdAt": "2026-07-09T15:20:00+00:00",
         "publication": None,
@@ -8797,10 +9006,13 @@ def test_submission_decision_fallback_accepts_camel_case_payload(tmp_path: Path,
     assert rows[0]["artifactId"] == "decision-1"
     assert rows[0]["submissionId"] == "submission-1"
     assert rows[0]["reviewedAt"] == "2026-07-09T15:20:00+00:00"
-    assert rows[0]["feedback"] == "Define rates operationally."
+    assert rows[0]["feedback"] == (
+        "Define rates operationally.; Verify the dose-specific source excerpt.; "
+        "Reconcile the effect-direction claim."
+    )
 
 
-def test_direct_submission_decision_beats_same_day_feed_row_without_submission_id(
+def test_newer_feed_row_beats_older_same_day_detailed_submission_decision(
     tmp_path: Path,
     monkeypatch,
 ) -> None:
@@ -8840,10 +9052,10 @@ def test_direct_submission_decision_beats_same_day_feed_row_without_submission_i
 
     assert err is None
     assert len(rows) == 1
-    assert rows[0]["artifactId"] == "direct-decision"
-    assert rows[0]["submissionId"] == "submission-1"
-    assert rows[0]["reviewedAt"] == "2026-07-09"
-    assert rows[0]["feedback"] == "Define rates operationally.; Reconcile dose mismatch."
+    assert rows[0]["artifactId"] == "feed-decision"
+    assert rows[0]["submissionId"] is None
+    assert rows[0]["reviewedAt"] == "2026-07-09T16:00:00+00:00"
+    assert rows[0]["feedback"] == "Short feed ask."
 
 
 def test_direct_revision_routes_exact_submission_despite_older_pending_same_topic(
@@ -8942,6 +9154,43 @@ def test_pending_revision_retries_source_manifest_terminal_after_source_repair_r
     assert pending["source_run"] == run.name
 
 
+@pytest.mark.parametrize("handled_at", [
+    "2026-07-29T05:00:00+00:00",
+    "2026-07-29T07:00:00+00:00",
+])
+def test_source_evidence_category_reopens_source_manifest_terminal(
+    tmp_path: Path,
+    handled_at: str,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    title = "Research Synthesis: Acute Exercise Effects — full paper"
+    run = _seed_submitted_run(runs, "acute_exercise_effects", f"# {title}")
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "title": title,
+        "status": "terminal_revision_source_manifest_unavailable",
+        "handled_at": handled_at,
+    }]})
+    request = {
+        "artifactId": "source-match-review",
+        "title": title,
+        "topic": "acute_exercise_effects",
+        "feedback": "Verify the disputed evidence.",
+        "failure_category": "source_evidence_match",
+        "reviewedAt": "2026-07-29T06:00:00+00:00",
+    }
+
+    pending, err = cycle._pending_remote_revision(
+        runs,
+        ledger_dir,
+        loader=lambda: ([request], None),
+    )
+
+    assert err is None
+    assert pending is not None
+    assert pending["source_run"] == run.name
+
+
 def test_submission_decision_fallback_does_not_route_accepted_publication(tmp_path: Path, monkeypatch) -> None:
     runs = tmp_path / "runs"
     run = _seed_submitted_run(runs, "senolytics", "# Hypothesis-Generating Brief: ABT-263 — full paper")
@@ -8981,6 +9230,28 @@ def test_terminal_topics_ignores_topic_with_actionable_revise(tmp_path: Path) ->
                     "requiredRevisions": ["Add a clinical-use caveat."]}}
     out = cycle._terminal_topics(runs, loader=lambda: (latest, None))
     assert out == set()  # actionable revise -> re-processed, not terminal
+
+
+def test_terminal_topics_does_not_strand_failed_checks_revision(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
+    latest = {"k": {
+        "decision": "revise",
+        "title": "Research Synthesis: Foo Topic",
+        "requiredRevisions": [],
+        "failedChecks": ["Verify the source excerpts against authoritative abstracts."],
+        "failureCategory": "source_evidence_match",
+    }}
+
+    assert cycle._terminal_topics(runs, loader=lambda: (latest, None)) == set()
+
+
+def test_terminal_topics_does_not_silently_terminalize_unknown_revise(tmp_path: Path) -> None:
+    runs = tmp_path / "runs"
+    _seed_submitted_run(runs, "foo_topic", "# Research Synthesis: Foo Topic")
+    latest = {"k": {"decision": "revise", "title": "Research Synthesis: Foo Topic"}}
+
+    assert cycle._terminal_topics(runs, loader=lambda: (latest, None)) == set()
 
 
 def test_terminal_topics_excludes_revise_with_no_actionable_revisions(tmp_path: Path) -> None:

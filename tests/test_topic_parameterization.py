@@ -582,6 +582,81 @@ def test_secondary_positive_prose_cannot_override_a_structured_null_primary() ->
     ) == "null"
 
 
+def test_planned_protocol_cannot_claim_an_observed_effect_direction() -> None:
+    evidence = (
+        "Participants will be randomly assigned to intervention or placebo. "
+        "Background literature reports a 1% annual decline."
+    )
+
+    assert orch._title_guarded_effect_direction(
+        "A randomized study to evaluate treatment effects", "null", evidence,
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Completed trial results under the study protocol", "null",
+        "Participants were randomly assigned and the primary endpoint was null.",
+    ) == "null"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a trial with prospective follow-up", "positive",
+        "Participants will be enrolled for follow-up. The primary analysis showed improved function.",
+    ) == "positive"
+    assert orch._title_guarded_effect_direction(
+        "Completed cohort outcomes with extended follow-up", "null",
+        "The cohort observed stable function; participants will be enrolled for follow-up.",
+    ) == "null"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "null",
+        "Background results showed prior benefit. Participants will be randomly assigned.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "null",
+        "Participants will be randomly assigned. The primary endpoint was prespecified.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "null",
+        "Participants will be randomly assigned. Prior results showed lower event rates.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Prior trial results showed lower event rates.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Previously published results showed lower event rates.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Previously published results showed that the primary endpoint was null.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Prior results showed no benefit, but this trial found improved function.",
+    ) == "positive"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Prior results showed no benefit, and this trial found improved function.",
+    ) == "positive"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Prior results showed, however, that the primary endpoint was null.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Prior results showed no benefit, but in this trial we found improvement.",
+    ) == "positive"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be randomized. Prior results showed\nthat the primary endpoint was null.",
+    ) == "unclear"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "null",
+        "Participants will be randomly assigned. The primary endpoint was null.",
+    ) == "null"
+    assert orch._title_guarded_effect_direction(
+        "Protocol for a randomized trial", "positive",
+        "Participants will be enrolled later. Results showed improved function.",
+    ) == "positive"
+
+
 def test_topic_pack_endpoint_polarity_drives_effect_sign() -> None:
     """Topic-pack endpoint polarity must drive non-metformin topics
     without adding scripts/vocab/<topic>.py or Python topic tables."""
