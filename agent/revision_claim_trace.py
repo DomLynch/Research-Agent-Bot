@@ -3,14 +3,13 @@ from __future__ import annotations
 
 import re
 from collections.abc import Sequence
-from itertools import zip_longest
 from typing import Any
 
 from agent.endpoint_evidence import endpoint_key
 from agent.outcome_class_remap import BIOMEDICAL_OTHER_OUTCOME_RULES, outcome_key
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
 
-_TRACE_LINE_RE = re.compile(r"^- \*\*Manuscript claim (?P<number>\d+)\.\*\* (?P<claim>.*?) \*\*Supporting source:\*\* (?P<support>.*?\[bundle:(?P<bundle>\d+)\].*?) \*\*Evidence span:\*\* (?P<span>.+)$", re.I)
+_TRACE_LINE_RE = re.compile(r"^- \*\*Manuscript claim (?P<number>\d+)\.\*\* (?P<claim>.*?) \*\*Supporting source:\*\* (?P<support>.*?\[bundle:(?P<bundle>\d+)\].*?) \*\*Evidence span:\*\* (?P<span>.+)$", re.I | re.M)
 _ABBREVIATION_RE = re.compile(r"\b(?:vs|e\.g|i\.e|et al)\.", re.I)
 _RESULT_SIGNAL_RE = re.compile(r"\b(?:lower(?:s|ed|ing)?|decreas(?:e[sd]?|ing)|improv(?:e[sd]?|ing|ement|ements)|increas(?:e[sd]?|ing)|reduc(?:e[sd]?|ing|tion|tions)|unchanged|differ(?:ed|ence|ences)|associated|association)\b|\b(?:no|not|statistically)\s+significant\b|\bdid not (?:change|decrease|improve|increase|reduce)\b|\b(?:better|worse)\b.{0,80}\b(?:than|compared (?:with|to))\b", re.I)
 _STATISTIC_RE = re.compile(r"(?i:\bp\s*[<=>]\s*\.?\d|\b(?:confidence interval|ci|md|smd|wmd|rr|hr)\s*(?::|=)?\s*-?\.?\d|\d+(?:\.\d+)?\s*%)|\b(?:OR|(?i:odds ratio))\s*(?::|=)?\s*-?\.?\d")
@@ -31,32 +30,32 @@ def asks_major_claim_trace(text: str) -> bool:
 
 def major_claim_trace_is_stated(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> bool:
     rows = _ordered_rows(rows)
-    claims = _source_bound_claims(_without_trace(paper_md), rows)
-    return len({claim for claim, _number, _row in claims if _claim_is_fully_traced(claim, rows)}) >= _requested_count(ask, len(claims))
+    if "exactly traceable" in ask.casefold():
+        valid = {key for key, _number, statement in _source_owned_results(rows) if _source_owned_result_is_stated(statement, paper_md)}
+        return len(valid) >= _requested_count(ask, len(valid))
+    source_claims = _source_bound_claims(_without_trace(paper_md), rows)
+    return len({claim for claim, _number, _row in source_claims if _claim_is_fully_traced(claim, rows)}) >= _requested_count(ask, len(source_claims))
+
+
+def major_claim_trace_capacity(ask: str, rows: Sequence[dict[str, Any]]) -> tuple[int, int] | None:
+    if "exactly traceable" not in ask.casefold():
+        return None
+    available = {key for key, _number, _statement in _source_owned_results(_ordered_rows(rows))}
+    return len(available), _requested_count(ask, len(available))
 
 
 def strip_validated_trace_support(paper_md: str, rows: Sequence[dict[str, Any]]) -> str:
     rows = _ordered_rows(rows)
-    scope = _scope(paper_md)
-    if not scope:
-        return paper_md
     source_bound_claims = {(claim, number) for claim, number, _row in _source_bound_claims(paper_md, rows)}
-    lines = []
-    for line in scope.splitlines():
-        match = _TRACE_LINE_RE.match(line)
-        if match and _trace_line_is_valid(match, source_bound_claims, rows):
-            line = f"- **Manuscript claim {match.group('number')}.** {match.group('claim').strip()} **Supporting source:** validated manifest source."
-        lines.append(line)
-    return paper_md.replace(scope, "\n".join(lines), 1)
-
-
-def _trace_line_is_valid(match: re.Match[str], source_bound_claims: set[tuple[str, int]], rows: Sequence[dict[str, Any]]) -> bool:
-    claim, bundle_number = match.group("claim").strip(), int(match.group("bundle"))
-    if not 1 <= bundle_number <= len(rows):
-        return False
-    row = rows[bundle_number - 1]
-    support = f"{_label(row)} [bundle:{bundle_number}]" + (f" {_stable_locator(row)}" if _stable_locator(row) else "")
-    return bool(_evidence_span(row) and (claim, bundle_number) in source_bound_claims and f"[bundle:{bundle_number}]" in claim and match.group("support").strip() == support and match.group("span").strip() == _evidence_span(row))
+    def replace(match: re.Match[str]) -> str:
+        claim, number = match.group("claim").strip(), int(match.group("bundle"))
+        if not 1 <= number <= len(rows):
+            return match.group(0)
+        row = rows[number - 1]
+        support = f"{_label(row)} [bundle:{number}]" + (f" {_stable_locator(row)}" if _stable_locator(row) else "")
+        valid = _evidence_span(row) and (claim, number) in source_bound_claims and f"[bundle:{number}]" in claim and match.group("support").strip() == support and match.group("span").strip() == _evidence_span(row)
+        return f"- **Manuscript claim {match.group('number')}.** {claim} **Supporting source:** validated manifest source." if valid else match.group(0)
+    return _TRACE_LINE_RE.sub(replace, paper_md)
 
 
 def repair_major_claim_trace(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> tuple[str, int]:
@@ -76,29 +75,27 @@ def repair_major_claim_trace(paper_md: str, ask: str, rows: Sequence[dict[str, A
 
 
 def _add_source_trace_findings(paper_md: str, rows: Sequence[dict[str, Any]], ask: str) -> str:
-    valid = [(claim, number) for claim, number, _row in _source_bound_claims(paper_md, rows) if _claim_is_fully_traced(claim, rows)]
-    missing = _requested_count(ask, len(rows)) - len(valid)
+    if "exactly traceable" in ask.casefold():
+        valid = [(key, number) for key, number, statement in _source_owned_results(rows) if _source_owned_result_is_stated(statement, paper_md)]
+        findings = {key: "" for key, _number in valid}
+    else:
+        valid = [(claim, number) for claim, number, _row in _source_bound_claims(paper_md, rows) if _claim_is_fully_traced(claim, rows)]
+        findings = {_claim_key(claim, rows): "" for claim, _number in valid}
+    missing = _requested_count(ask, len(rows)) - len(findings)
     if missing <= 0:
         return paper_md
     used = {number for _claim, number in valid}
-    findings = {_claim_key(claim, rows): "" for claim, _number in valid}
-    candidates: list[list[tuple[int, str, str, str]]] = []
-    for number, row in sorted(enumerate(rows, 1), key=lambda item: (item[0] in used, str(item[1].get("directness") or "").lower() != "direct", not str(item[1].get("evidence_tier") or "").upper().startswith("A"), item[0])):
+    candidates: list[tuple[bool, bool, bool, int, int, str, str, str]] = []
+    for number, row in enumerate(rows, 1):
         label, locator = _label(row), _stable_locator(row)
         if label and locator and row.get("thesis_text"):
-            candidates.append([(number, label, locator, span) for span in _result_spans(row)])
+            candidates.extend((number in used, str(row.get("directness") or "").lower() != "direct", not str(row.get("evidence_tier") or "").upper().startswith("A"), depth, number, label, locator, span) for depth, span in enumerate(_result_spans(row)))
     added = 0
-    for level in zip_longest(*candidates):
-        for item in level:
-            if item is None:
-                continue
-            number, label, locator, span = item
-            if (key := _claim_key(span, rows)) in findings:
-                continue
-            findings[key] = f"{label} [bundle:{number}] reports: {span} [exact source: {locator}]."
-            added += 1
-            if added >= missing:
-                break
+    for _used, _indirect, _lower_tier, _depth, number, label, locator, span in sorted(candidates):
+        if (key := _claim_key(span, rows)) in findings:
+            continue
+        findings[key] = f"{label} [bundle:{number}] reports: {span} [exact source: {locator}]."
+        added += 1
         if added >= missing:
             break
     block = "### Source-Traced Findings\n\n" + "\n\n".join(value for value in findings.values() if value)
@@ -106,8 +103,7 @@ def _add_source_trace_findings(paper_md: str, rows: Sequence[dict[str, Any]], as
 
 
 def _append_inline_locator(claim: str, locator: str) -> str:
-    terminal = re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", claim)
-    return f"{claim} [exact source: {locator}]" if not terminal else f"{claim[:terminal.start()]} [exact source: {locator}]{claim[terminal.start():]}"
+    return f"{claim} [exact source: {locator}]" if not (terminal := re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", claim)) else f"{claim[:terminal.start()]} [exact source: {locator}]{claim[terminal.start():]}"
 
 
 def _requested_count(ask: str, available: int) -> int:
@@ -149,17 +145,12 @@ def _result_spans(row: dict[str, Any]) -> list[str]:
 
 
 def _without_trace(paper_md: str) -> str:
-    return paper_md.replace(scope, "", 1) if (scope := _scope(paper_md)) else paper_md
-
-
-def _scope(paper_md: str) -> str:
-    return match.group(0) if (match := re.search(r"^## Major Claim Trace\b.*?(?=^## |\Z)", paper_md, re.M | re.S | re.I)) else ""
+    return re.sub(r"^## Major Claim Trace\b.*?(?=^## |\Z)", "", paper_md, count=1, flags=re.M | re.S | re.I)
 
 
 def _sentences(text: str) -> list[str]:
     protected = _ABBREVIATION_RE.sub(lambda match: match.group(0)[:-1] + _PROTECTED_PERIOD, text)
-    boundary = r"(?:(?<=[.!?])|(?<=[.!?][\"')\]]))\s+(?=(?:[\"'(\[]|\*{1,2}|_{1,2})?[A-Z0-9])"
-    return [claim.replace(_PROTECTED_PERIOD, ".") for claim in re.split(boundary, protected)]
+    return [claim.replace(_PROTECTED_PERIOD, ".") for claim in re.split(r"(?:(?<=[.!?])|(?<=[.!?][\"')\]]))\s+(?=(?:[\"'(\[]|\*{1,2}|_{1,2})?[A-Z0-9])", protected)]
 
 
 def _bundle_numbers(claim: str, row_count: int) -> list[int]:
@@ -168,8 +159,23 @@ def _bundle_numbers(claim: str, row_count: int) -> list[int]:
 
 
 def _claim_is_fully_traced(claim: str, rows: Sequence[dict[str, Any]]) -> bool:
-    numbers = _bundle_numbers(claim, len(rows))
-    return bool(numbers and all((locator := _stable_locator(rows[number - 1])) and _locator_is_stated(claim, locator) for number in numbers))
+    return bool((numbers := _bundle_numbers(claim, len(rows))) and all((locator := _stable_locator(rows[number - 1])) and _locator_is_stated(claim, locator) for number in numbers))
+
+
+def _source_owned_results(rows: Sequence[dict[str, Any]]) -> list[tuple[str, int, str]]:
+    results: list[tuple[str, int, str]] = []
+    for number, row in enumerate(rows, 1):
+        label, locator = _label(row), _stable_locator(row)
+        if label and locator:
+            results.extend(
+                (key, number, f"{label} [bundle:{number}] reports: {span} [exact source: {locator}].")
+                for span in _result_spans(row) if (key := _claim_key(span, [row]))
+            )
+    return results
+
+
+def _source_owned_result_is_stated(statement: str, paper_md: str) -> bool:
+    return any(" ".join(paragraph.split()) == statement for paragraph in re.split(r"\n\s*\n", paper_md))
 
 
 def _locator_is_stated(claim: str, locator: str) -> bool:
@@ -249,19 +255,14 @@ def _drop_unmatched_parentheses(text: str) -> str:
     for index, character in enumerate(text):
         if character == "(":
             open_positions.append(index)
+        elif character == ")" and open_positions:
+            open_positions.pop()
         elif character == ")":
-            if open_positions:
-                open_positions.pop()
-            else:
-                remove.add(index)
+            remove.add(index)
     remove.update(open_positions)
     return "".join(character for index, character in enumerate(text) if index not in remove)
 
 
 def _stable_locator(row: dict[str, Any]) -> str:
     doi = str(row.get("source_doi") or row.get("doi") or "").strip()
-    if doi:
-        doi = re.sub(r"^(?:doi:\s*|https?://(?:dx\.)?doi\.org/)", "", doi, flags=re.I)
-        return f"https://doi.org/{doi}"
-    pmid = str(row.get("source_pmid") or row.get("pmid") or "").strip()
-    return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else ""
+    return "https://doi.org/" + re.sub(r"^(?:doi:\s*|https?://(?:dx\.)?doi\.org/)", "", doi, flags=re.I) if doi else f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if (pmid := str(row.get("source_pmid") or row.get("pmid") or "").strip()) else ""

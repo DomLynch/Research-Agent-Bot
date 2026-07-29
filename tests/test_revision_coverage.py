@@ -838,16 +838,17 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
             "directness": "direct",
             "evidence_tier": "A1",
             "n_claims": 20 - i,
-            "thesis_text": f"Study {i} — source excerpts: Retained evidence span {i}.",
+            "endpoints": [f"Outcome {i}"],
+            "thesis_text": (
+                f"Study {i} — source excerpts: Outcome {i} decreased by {i}% "
+                "after treatment."
+            ),
         }
         for i in range(1, 21)
     ]
     paper = (
         "## Results\n\n"
-        + "\n\n".join(
-            f"Study{i} 2025 reported bounded manuscript finding {i}."
-            for i in range(1, 21)
-        )
+        "The retained evidence remains mixed across outcomes and populations."
         + "\n\n## Major Claim Trace\n\n"
         "- **Manuscript claim 1.** Stale duplicated claim.\n\n"
         "## References\n\n- Study1 2025.\n"
@@ -858,11 +859,86 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert details == ["major_claim_trace"]
     assert "Study1 2025 [bundle:" in fixed
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("[exact source: https://doi.org/") == 20
+    assert fixed.count("[exact source: https://doi.org/") == 16
     assert "https://doi.org/10.1000/study.1" in fixed
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
     assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_quantified_trace_requires_source_owned_results_not_generic_locators() -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "1/2 claims are exactly traceable (required 2)."
+    )
+    rows = [
+        {
+            "citation_token": "Study1 2025",
+            "source_doi": "10.1000/result.1",
+            "endpoints": ["body weight"],
+            "thesis_text": "Source excerpts: Body weight decreased by 5% (p = 0.01).",
+        },
+        {
+            "citation_token": "Study2 2025",
+            "source_doi": "10.1000/method.2",
+            "endpoints": ["body weight"],
+            "thesis_text": "Source excerpts: We aimed to evaluate whether body weight changed.",
+        },
+    ]
+    paper = (
+        "## Results\n\n"
+        "Study1 2025 [bundle:1] reports: Body weight decreased by 5% (p = 0.01) "
+        "[exact source: https://doi.org/10.1000/result.1].\n\n"
+        "Study2 2025 [bundle:2] reported a bounded manuscript finding "
+        "[exact source: https://doi.org/10.1000/method.2]."
+    )
+
+    assert revision_claim_trace.major_claim_trace_capacity(ask, rows) == (1, 2)
+    assert revision_claim_trace.major_claim_trace_is_stated(paper, ask, rows) is False
+    assert revision_claim_trace.repair_major_claim_trace(paper, ask, rows) == (paper, 0)
+    overclaim = paper.replace(
+        "Body weight decreased by 5% (p = 0.01)",
+        "Body weight decreased by 5% (p = 0.01), proving a mortality benefit",
+    )
+    assert revision_claim_trace.major_claim_trace_is_stated(overclaim, ask, rows) is False
+    assert revision_claim_trace.major_claim_trace_capacity(
+        "Correct direction coding in 1/2 claims (required 2).", rows,
+    ) is None
+
+
+def test_quantified_trace_dedupes_existing_results_before_repairing() -> None:
+    ask = (
+        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+        "1/3 claims are exactly traceable (required 2)."
+    )
+    findings = (
+        (["body weight", "LDL cholesterol"], "LDL cholesterol decreased by 10% (p = 0.02). | Body weight decreased by 5% (p = 0.01)."),
+        (["body weight"], "Body weight decreased by 5% (p = 0.01)."),
+        (["body weight", "blood pressure"], "Body weight decreased by 5% (p = 0.01). | Blood pressure decreased by 6% (p = 0.03)."),
+    )
+    rows = [{
+        "citation_token": f"Study{i} 2025",
+        "source_doi": f"10.1000/dedupe.{i}",
+        "endpoints": endpoints,
+        "thesis_text": f"Source excerpts: {finding}",
+    } for i, (endpoints, finding) in enumerate(findings, 1)]
+    paper = (
+        "## Results\n\n"
+        + "\n\n".join(
+            f"Study{i} 2025 [bundle:{i}] reports: Body weight decreased by 5% "
+            f"(p = 0.01) [exact source: https://doi.org/10.1000/dedupe.{i}]."
+            for i in (1, 2)
+        )
+    )
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert "Blood pressure decreased by 6%" in fixed
+    assert "LDL cholesterol decreased by 10%" not in fixed
+    assert revision_claim_trace.major_claim_trace_capacity(ask, rows) == (3, 2)
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is True
+    assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
 
 
 def test_major_claim_trace_adds_only_source_owned_findings_when_prose_is_generic() -> None:

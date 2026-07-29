@@ -6640,11 +6640,18 @@ def test_revision_surface_notes_proactively_repair_major_claim_trace(tmp_path: P
             "directness": "direct",
             "evidence_tier": "A1",
             "n_claims": 20 - i,
-            "thesis_text": f"Source excerpts: Retained evidence span {i}.",
+            "endpoints": [f"Outcome {i}"],
+            "thesis_text": (
+                f"Source excerpts: Outcome {i} decreased by {i}% after treatment."
+            ),
         }
         for i in range(1, 21)
     ]
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": ask,
+        "required_revisions": [ask],
+    }))
     paper = (
         "## Results\n\n"
         + "\n\n".join(

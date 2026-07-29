@@ -81,6 +81,7 @@ from agent.publishing.reconciliation import (  # noqa: E402
     sync_reconciled_children as _sync_reconciled_children,
 )
 from agent.revision_contract import ask_fingerprint  # noqa: E402
+from agent.revision_claim_trace import major_claim_trace_capacity  # noqa: E402
 from agent.revision_evidence import load_revision_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
@@ -179,6 +180,7 @@ _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
     "terminal_domain_scope_mismatch",
     "terminal_latest_run_missing_manifest",
     "terminal_preflight_insufficient_corpus",
+    "terminal_revision_trace_evidence_insufficient",
 })
 _RETRYABLE_REVISION_STATUSES = frozenset({
     "revision_coverage_unmet",
@@ -2658,6 +2660,20 @@ def _revision_asks(feedback: str, required_revisions: Sequence[str] | None = Non
     return revision_coverage.revision_asks(feedback, required_revisions)
 
 
+def _revision_trace_capacity(source_run: Path | None, feedback: str, required_revisions: Sequence[str] | None = None) -> dict[str, Any] | None:
+    if source_run is None or not source_run.is_dir():
+        return None
+    rows_raw = _read_json(source_run / "manifest.json").get("receipts")
+    rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
+    if not rows:
+        return None
+    shortages = []
+    for ask in _revision_asks(feedback, required_revisions):
+        if (capacity := major_claim_trace_capacity(ask, rows)) and capacity[0] < capacity[1]:
+            shortages.append({"ask": ask, "available_source_owned_results": capacity[0], "required_exact_traces": capacity[1]})
+    return {"passed": False, "status": "terminal_revision_trace_evidence_insufficient", "shortages": shortages} if shortages else None
+
+
 def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
     request = _read_json(out_dir / "researka_revision_request.json")
     required_revisions = _required_revision_items(request)
@@ -4363,6 +4379,18 @@ def run_cycle(
         attempt_count = 0
         receipt_preflight_repairs_used = 0
         topic_supply_created: set[str] = set()
+
+        def finish_terminal_revision(revision: dict[str, Any], selected_topic: str, run_dir: Path, status: str, *, ledger_status: str | None = None, attempt: dict[str, Any] | None = None, **details: Any) -> None:
+            nonlocal remote_revision
+            terminal_attempt = attempt or _gate_attempt(selected_topic, run_dir, status, **details)
+            ledger["attempts"].append(terminal_attempt)
+            ledger["status"] = ledger_status or status
+            _record_attempt_blocker(ledger_dir, date, ledger, terminal_attempt)
+            _mark_revision_handled(ledger_dir, revision, status=status)
+            revise_window_excluded.add(_revision_key(revision))
+            attempted.add(selected_topic)
+            remote_revision = None
+
         while True:
             if topic and attempt_count:
                 break
@@ -4645,41 +4673,22 @@ def run_cycle(
                 break
             revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
             if revision_source and _revision_requests_domain_scope_reset(revision_feedback):
-                gate_status = "terminal_domain_scope_mismatch"
-                attempt = _gate_attempt(selected, out_dir, gate_status)
-                ledger["attempts"].append(attempt)
-                ledger["status"] = "revise_terminal_domain_scope_mismatch"
-                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
-                _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                revise_window_excluded.add(_revision_key(revision_source))
-                attempted.add(selected)
-                remote_revision = None
+                finish_terminal_revision(revision_source, selected, out_dir, "terminal_domain_scope_mismatch", ledger_status="revise_terminal_domain_scope_mismatch")
                 continue
             # A pending revise whose topic keeps failing the SAME deterministic gate
             # cannot be fixed by re-rendering — mark it terminal so it stops
             # monopolising revise slots instead of re-synthesising every cycle.
             if revision_source and selected in surface_repeat:
-                attempt = _gate_attempt(selected, out_dir, "terminal_surface_repeat")
-                ledger["attempts"].append(attempt)
-                ledger["status"] = "revise_terminal_surface_repeat"
-                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
-                _mark_revision_handled(ledger_dir, revision_source, status="terminal_surface_repeat")
-                revise_window_excluded.add(_revision_key(revision_source))
-                attempted.add(selected)
-                remote_revision = None
+                finish_terminal_revision(revision_source, selected, out_dir, "terminal_surface_repeat", ledger_status="revise_terminal_surface_repeat")
                 continue
             if revision_source and selected in _unrepairable_source_precision_topics(ledger_dir):
-                gate_status = "terminal_source_precision_repair_incomplete"
-                attempt = _gate_attempt(selected, out_dir, gate_status)
-                ledger["attempts"].append(attempt)
-                ledger["status"] = "revise_terminal_source_precision_repair_incomplete"
-                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
-                _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                revise_window_excluded.add(_revision_key(revision_source))
-                attempted.add(selected)
-                remote_revision = None
+                finish_terminal_revision(revision_source, selected, out_dir, "terminal_source_precision_repair_incomplete", ledger_status="revise_terminal_source_precision_repair_incomplete")
                 continue
             revision_source_run = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
+            revision_trace_capacity = _revision_trace_capacity(revision_source_run, revision_feedback, _required_revision_items(revision_source or {}))
+            if revision_source and revision_trace_capacity:
+                finish_terminal_revision(revision_source, selected, out_dir, "terminal_revision_trace_evidence_insufficient", revision_trace_capacity=revision_trace_capacity)
+                continue
             existing_source_preflight = _existing_receipt_preflight(revision_source_run) if revision_source else None
             revision_source_repair = _revision_requests_source_precision(revision_feedback)
             source_manifest_availability = (
@@ -4703,21 +4712,8 @@ def run_cycle(
                 and not source_manifest_availability.get("passed")
                 and not revision_source_repair
             ):
-                gate_status = "terminal_revision_source_manifest_unavailable"
-                attempt = _gate_attempt(
-                    selected,
-                    out_dir,
-                    gate_status,
-                    source_manifest_availability=source_manifest_availability,
-                )
-                ledger["attempts"].append(attempt)
-                ledger["status"] = gate_status
-                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
-                if revision_source:
-                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                    revise_window_excluded.add(_revision_key(revision_source))
-                    remote_revision = None
-                attempted.add(selected)
+                assert revision_source is not None
+                finish_terminal_revision(revision_source, selected, out_dir, "terminal_revision_source_manifest_unavailable", source_manifest_availability=source_manifest_availability)
                 continue
             snapshot_evidence_locked = bool(
                 source_manifest_availability
@@ -4967,20 +4963,23 @@ def run_cycle(
                     "submitted": 0,
                     "preflight": preflight,
                 }
-                ledger["attempts"].append(attempt)
-                ledger["status"] = (
+                ledger_status = (
                     "revise_terminal_latest_run_missing_manifest"
                     if terminal_missing_manifest
                     else "revise_terminal_preflight_insufficient_corpus"
                     if revision_source is not None
                     else "preflight_skipped_no_submission"
                 )
-                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source is not None:
-                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                    revise_window_excluded.add(_revision_key(revision_source))
-                    remote_revision = None
-                attempted.add(selected)
+                    finish_terminal_revision(
+                        revision_source, selected, out_dir, gate_status,
+                        ledger_status=ledger_status, attempt=attempt,
+                    )
+                else:
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = ledger_status
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                    attempted.add(selected)
                 continue
             terminal_strategy = _paper_strategy(corpus, preflight, revision_feedback)
             if terminal_strategy.get("action") == "skip_topic":
@@ -4990,19 +4989,18 @@ def run_cycle(
                     "strategy_evidence_insufficient",
                     paper_strategy=terminal_strategy,
                 )
-                ledger["attempts"].append(attempt)
                 ledger["paper_strategy"] = terminal_strategy
-                ledger["status"] = "strategy_skipped_no_submission"
-                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source:
-                    _mark_revision_handled(
-                        ledger_dir,
-                        revision_source,
-                        status="strategy_evidence_insufficient",
+                    finish_terminal_revision(
+                        revision_source, selected, out_dir,
+                        "strategy_evidence_insufficient",
+                        ledger_status="strategy_skipped_no_submission", attempt=attempt,
                     )
-                    revise_window_excluded.add(_revision_key(revision_source))
-                    remote_revision = None
-                attempted.add(selected)
+                else:
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = "strategy_skipped_no_submission"
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                    attempted.add(selected)
                 continue
             if revision_source:
                 ledger["revision_source"] = {
@@ -5063,14 +5061,10 @@ def run_cycle(
                         revise_attempt=revise_attempt,
                         remaining_budget_seconds=retry_budget,
                     )
-                    ledger["attempts"].append(attempt)
-                    ledger["status"] = gate_status
-                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
-                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    finish_terminal_revision(
+                        revision_source, selected, out_dir, gate_status, attempt=attempt,
+                    )
                     revision_round_recorded = True
-                    revise_window_excluded.add(_revision_key(revision_source))
-                    remote_revision = None
-                    attempted.add(selected)
                     break
                 # Reuse prior manuscripts only when deterministic repair covers every ask.
                 repair_attempted = bool(revision_base_dir and (repair_reason or revision_feedback))
@@ -5152,8 +5146,7 @@ def run_cycle(
                         revise_attempt=revise_attempt,
                         receipt_preflight=receipt_preflight,
                     )
-                    ledger["attempts"].append(attempt)
-                    ledger["status"] = (
+                    ledger_status = (
                         "revise_terminal_receipt_preflight_insufficient"
                         if gate_status == "terminal_receipt_preflight_insufficient"
                         else
@@ -5161,13 +5154,17 @@ def run_cycle(
                         if revision_source
                         else "receipt_preflight_skipped_no_submission"
                     )
-                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
-                        _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                        revise_window_excluded.add(_revision_key(revision_source))
-                        remote_revision = None
+                        finish_terminal_revision(
+                            revision_source, selected, out_dir, gate_status,
+                            ledger_status=ledger_status, attempt=attempt,
+                        )
+                    else:
+                        ledger["attempts"].append(attempt)
+                        ledger["status"] = ledger_status
+                        _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                        attempted.add(selected)
                     last_attempt = attempt
-                    attempted.add(selected)
                     break
                 strategy_preflight = {
                     **preflight,
@@ -5193,19 +5190,22 @@ def run_cycle(
                         paper_strategy=strategy,
                         receipt_preflight=receipt_preflight,
                     )
-                    ledger["attempts"].append(attempt)
-                    ledger["status"] = (
+                    ledger_status = (
                         "needs_corpus_expansion_no_submission"
                         if gate_status == "needs_corpus_expansion"
                         else "strategy_skipped_no_submission"
                     )
-                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
-                        _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                        revise_window_excluded.add(_revision_key(revision_source))
-                        remote_revision = None
+                        finish_terminal_revision(
+                            revision_source, selected, out_dir, gate_status,
+                            ledger_status=ledger_status, attempt=attempt,
+                        )
+                    else:
+                        ledger["attempts"].append(attempt)
+                        ledger["status"] = ledger_status
+                        _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                        attempted.add(selected)
                     last_attempt = attempt
-                    attempted.add(selected)
                     break
                 synthesis_kwargs["timeout"] = child_timeout()
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)

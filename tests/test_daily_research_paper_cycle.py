@@ -5930,6 +5930,80 @@ def test_revise_source_manifest_drift_fails_fast_before_synthesis(tmp_path: Path
     assert handled["handled"][0]["status"] == "terminal_revision_source_manifest_unavailable"
 
 
+def test_revise_trace_shortage_fails_fast_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    source = next((tmp_path / "runs").glob("synthesis-aspirin_geroprotection-*"))
+    manifest = json.loads((source / "manifest.json").read_text(encoding="utf-8"))
+    manifest["receipts"][0].update({
+        "citation_token": "Study1 2025",
+        "source_doi": "10.1000/result.1",
+        "endpoints": ["body weight"],
+        "thesis_text": "Source excerpts: Body weight decreased by 5% (p = 0.01).",
+    })
+    manifest["receipts"][1].update({
+        "citation_token": "Study2 2025",
+        "source_doi": "10.1000/method.2",
+        "endpoints": ["body weight"],
+        "thesis_text": "Source excerpts: We aimed to evaluate whether body weight changed.",
+    })
+    _write_json(source / "manifest.json", manifest)
+    monkeypatch.setattr(
+        cycle,
+        "_run_synthesis",
+        lambda *_a, **_k: pytest.fail("an impossible trace request must not synthesize"),
+    )
+    request = {
+        **_aspirin_revise_loader()[0][0],
+        "reviewedAt": (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat(),
+        "feedback": (
+            "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
+            "1/2 claims are exactly traceable (required 2)."
+        ),
+    }
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs",
+        date="2026-07-29",
+        run_synthesis=True,
+        submit=True,
+        mode="revise",
+        remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_k: pytest.fail("an impossible trace request must not submit"),
+    )
+
+    attempt = ledger["attempts"][0]
+    assert ledger["status"] == "terminal_revision_trace_evidence_insufficient"
+    assert attempt["revision_trace_capacity"]["shortages"][0] == {
+        "ask": request["feedback"],
+        "available_source_owned_results": 1,
+        "required_exact_traces": 2,
+    }
+    handled = json.loads(
+        (tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS).read_text()
+    )
+    assert handled["handled"][0]["status"] == "terminal_revision_trace_evidence_insufficient"
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([request], None),
+    )
+    assert error is None
+    assert pending is None
+    newer = {
+        **request,
+        "submissionId": "sub-2",
+        "reviewedAt": (dt.datetime.now(dt.UTC) + dt.timedelta(hours=1)).isoformat(),
+    }
+    pending, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([newer], None),
+    )
+    assert error is None
+    assert pending and pending["submissionId"] == "sub-2"
+
+
 def test_revise_restores_source_manifest_files_from_quarantine(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     qdir = tmp_path / "docs" / "quality-reference" / "aspirin_geroprotection" / "quant_claims"
