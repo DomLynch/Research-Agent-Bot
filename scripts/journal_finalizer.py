@@ -63,6 +63,7 @@ _GENERATED_ANIMAL_LEAD_RE = re.compile(
     r"Animal/preclinical context(?:\s*\([^)]*\))?:\s*)",
     re.I,
 )
+_OUTCOME_RENAME_MARKER = "\0OUTCOME_RENAME\0"
 
 
 def _lowercase_first_letter(text: str) -> str:
@@ -3932,8 +3933,8 @@ def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
 
 def _reviewer_adjusted_outcome_label(label: str, feedback: str) -> str:
     for old, new in _outcome_label_renames(feedback):
-        if re.search(rf"\b{re.escape(old)}\b", label, flags=re.I):
-            return re.sub(rf"\b{re.escape(old)}\b", new, label, flags=re.I)
+        label = re.sub(re.escape(new), _OUTCOME_RENAME_MARKER, label, flags=re.I) if old.casefold() in new.casefold() else label
+        label = re.sub(rf"\b{re.escape(old)}\b", new, label, flags=re.I).replace(_OUTCOME_RENAME_MARKER, new)
     return label
 
 
@@ -4588,6 +4589,7 @@ def _phase_d_outcome_label_cleanup(text: str, out_dir: Path) -> tuple[str, list[
         return text, []
     patched, n = text, 0
     for old, new in renames:
+        patched = re.sub(re.escape(new), _OUTCOME_RENAME_MARKER, patched, flags=re.I) if old.casefold() in new.casefold() else patched
         patterns = (rf"()\b{re.escape(old)}\b",) if old == "Dosing and Pharmacokinetics" else (
             rf"(^#{{2,4}}\s*){re.escape(old)}(?=\s+Outcomes?\s*$)",
             rf"(\|\s*){re.escape(old)}(?=\s*\|)",
@@ -4597,6 +4599,7 @@ def _phase_d_outcome_label_cleanup(text: str, out_dir: Path) -> tuple[str, list[
         for pattern in patterns:
             patched, changed = re.subn(pattern, lambda match: f"{match[1]}{new}", patched, flags=re.I | re.M)
             n += changed
+        patched = patched.replace(_OUTCOME_RENAME_MARKER, new)
     if not n:
         return text, []
     if any(new == "Exposure and Dose-Adjacent Evidence" for _, new in renames):
@@ -4606,10 +4609,8 @@ def _phase_d_outcome_label_cleanup(text: str, out_dir: Path) -> tuple[str, list[
             patched, changed = _prepend_or_create_section_paragraph(patched, "Results", note)
             n += changed
     return patched, [FinalizerLogEntry(
-        phase="D_outcome_label_cleanup",
-        rule="apply_reviewer_outcome_label_rename",
-        n_changes=n,
-        detail=f"applied {len(renames)} reviewer-requested outcome-label rename(s)",
+        phase="D_outcome_label_cleanup", rule="apply_reviewer_outcome_label_rename",
+        n_changes=n, detail=f"applied {len(renames)} reviewer-requested outcome-label rename(s)",
     )]
 
 

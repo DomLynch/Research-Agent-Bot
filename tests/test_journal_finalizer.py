@@ -64,14 +64,36 @@ def test_phase_f_keeps_reviewer_renamed_outcome_heading_idempotent(tmp_path: Pat
         "directness": "indirect",
     }]}))
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({
-        "feedback": "Fix Results subsections on Dosing and Pharmacokinetics.",
+        "feedback": (
+            "Rename the outcome class 'Dosing and Pharmacokinetics' to "
+            "'Exposure and Dose-Adjacent Evidence'."
+        ),
     }))
 
     fixed, _ = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
     stable, _ = journal_finalizer._phase_f_reconcile_results_table(fixed, tmp_path)
 
     assert fixed.count("### Exposure and Dose-Adjacent Evidence Outcomes") == 1
+    assert "### Dosing and Pharmacokinetics Outcomes" not in fixed
     assert stable == fixed
+
+
+def test_reviewer_adjusted_outcome_label_does_not_expand_completed_rename() -> None:
+    feedback = "Rename the outcome class 'Safety' to 'Safety and Tolerability'."
+    label = "Safety and Tolerability Outcomes; Safety remains secondary."
+
+    fixed = journal_finalizer._reviewer_adjusted_outcome_label(label, feedback)
+    stable = journal_finalizer._reviewer_adjusted_outcome_label(fixed, feedback)
+
+    assert fixed == (
+        "Safety and Tolerability Outcomes; "
+        "Safety and Tolerability remains secondary."
+    )
+    assert stable == fixed
+    assert journal_finalizer._reviewer_adjusted_outcome_label(
+        "Safety and Tolerability Outcomes",
+        "Rename the outcome class 'Safety and Tolerability' to 'Safety'.",
+    ) == "Safety Outcomes"
 
 
 def test_phase_f_fills_outcome_heading_with_source_level_findings(tmp_path: Path) -> None:
@@ -3972,6 +3994,29 @@ def test_outcome_label_cleanup_applies_generic_reviewer_rename(tmp_path: Path) -
     assert "Human longevity remains" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].rule == "apply_reviewer_outcome_label_rename"
+
+
+def test_outcome_label_cleanup_does_not_expand_completed_generic_rename(tmp_path: Path) -> None:
+    ask = "Rename the outcome class 'Safety' to 'Safety and Tolerability'."
+    paper = (
+        "## Results\n\n### Safety Outcomes\n\n"
+        "- Smith 2024: outcome=Safety; direction=mixed.\n"
+    )
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
+
+    fixed, _ = journal_finalizer._phase_d_outcome_label_cleanup(paper, tmp_path)
+    stable, logs = journal_finalizer._phase_d_outcome_label_cleanup(fixed, tmp_path)
+
+    assert fixed.count("Safety and Tolerability") == 2
+    assert stable == fixed
+    assert logs == []
+
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Rename the outcome class 'Safety and Tolerability' to 'Safety'.",
+    }))
+    contracted, _ = journal_finalizer._phase_d_outcome_label_cleanup(fixed, tmp_path)
+    assert "Safety and Tolerability" not in contracted
+    assert contracted.count("Safety") == 2
 
 
 def test_outcome_router_respects_reviewer_renamed_class(tmp_path: Path) -> None:
