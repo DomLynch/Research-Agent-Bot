@@ -1999,6 +1999,18 @@ def test_receipt_contract_authorization_is_limited_to_named_sources() -> None:
     }
 
 
+def test_primary_rct_reclassification_is_verified_from_named_source_row() -> None:
+    ask = (
+        "Recode or reroute Harris 2008: the source is a primary RCT, not a "
+        "review; change the directness and reset the tier to match an RCT code."
+    )
+    fixed = "- Harris 2008: outcome=immune; directness=direct; tier=A1."
+    stale = "- Harris 2008: outcome=immune; directness=review; tier=B1."
+
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(stale, [ask]) == [ask]
+
+
 def test_inferential_bridge_boundary_satisfies_dedicated_section_ask() -> None:
     ask = (
         "Add a dedicated 'Inferential Bridge' section covering the mechanistic-to-clinical gap, "

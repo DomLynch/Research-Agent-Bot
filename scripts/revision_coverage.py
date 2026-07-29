@@ -469,13 +469,12 @@ def _asks_source_classification_map(text: str) -> bool:
 def _asks_evidence_type_metadata(text: str) -> bool:
     return (
         _asks_mechanistic_content_reconciliation(text)
-        or
-        "evidence_type" in text
+        or "evidence_type" in text
         or ("evidence type" in text and "metadata" in text)
         or (
-            "misclassified" in text
-            and any(token in text for token in ("human intervention", "intervention studies", "clinical intervention"))
-            and any(token in text for token in ("indirect", "review", "evidence"))
+            any(token in text for token in ("misclassified", "recode", "reroute", "not a review"))
+            and any(token in text for token in ("human intervention", "intervention studies", "clinical intervention", "rct"))
+            and any(token in text for token in ("indirect", "review", "evidence", "directness", "tier"))
         )
     )
 
@@ -1601,15 +1600,13 @@ def _evidence_type_metadata_is_resolved(paper_md: str, ask: str) -> bool:
     if _asks_mechanistic_content_reconciliation(ask.lower()):
         # The evidence-aware quality proof validates the exact row-derived note.
         return True
-    scope = " ".join(
-        part
-        for part in (
-            _section(paper_md, "Methods"),
-            _section(paper_md, "Evidence Snapshot"),
-            _section(paper_md, "Evidence Landscape"),
-            _section(paper_md, "Results"),
-        ) if part
-    ).lower()
+    labels = _source_labels_from_ask(ask)
+    if labels and all(any(label.lower() in line.lower() and re.search(
+        r"\bdirectness=(?:direct|indirect)\b.*\btier=A[12]\b", line, re.I,
+    ) for line in paper_md.splitlines()) for label in labels):
+        return True
+    scope = " ".join(filter(None, (_section(paper_md, "Methods"), _section(paper_md, "Evidence Snapshot"),
+                                   _section(paper_md, "Evidence Landscape"), _section(paper_md, "Results")))).lower()
     if all(token in scope for token in (
         "evidence-type reconciliation:", "directness=review", "direct clinical rct",
     )):
