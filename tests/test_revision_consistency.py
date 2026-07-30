@@ -78,6 +78,16 @@ ASKS = [
     "Add a one-paragraph substantive background with the biological and clinical rationale before the methodological framing.",
 ]
 
+
+def test_every_number_and_unit_reviewer_ask_is_deterministic() -> None:
+    ask = (
+        "Align every number and unit in the abstract and conclusion with its "
+        "cited evidence span."
+    )
+
+    assert revision_quality_ask_known(ask, ROWS)
+
+
 PAPER = """# Research Synthesis: Caloric Restriction Effects
 
 ## Abstract

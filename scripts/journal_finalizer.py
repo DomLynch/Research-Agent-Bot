@@ -1755,21 +1755,75 @@ def _phase_d_evidence_boundary_note(
     )]
 
 
+def _directionalize_decisive_corpus_counts(text: str) -> tuple[str, int]:
+    def directionalize(body: str) -> tuple[str, int]:
+        patterns = (
+            (
+                r"\bacross \d[\d,]* (?:accepted|included) source papers and "
+                r"\d[\d,]* high-confidence extracted claims\b",
+                "across the retained source corpus and high-confidence extracted claim set",
+            ),
+            (
+                r"The evidence profile contains .*?across the evidence base\.",
+                "The evidence profile separates direct clinical evidence from adjacent, "
+                "review, context, and mechanistic evidence, while retaining surfaced "
+                "cross-study disagreements.",
+            ),
+            (
+                r"\b\d+\s*/\s*\d+\s+retained sources are coded as "
+                r"null or no extracted directional signal",
+                "At least half of the retained sources are coded as null or no "
+                "extracted directional signal",
+            ),
+            (
+                r"\b\d+\s*/\s*\d+\s+retained sources are indirect, review-level, "
+                r"adjacent, or mechanistic",
+                "A subset of the retained sources is indirect, review-level, adjacent, "
+                "or mechanistic",
+            ),
+        )
+        changed = 0
+        for pattern, replacement in patterns:
+            body, n = re.subn(pattern, replacement, body, flags=re.I | re.S)
+            changed += n
+        return body, changed
+
+    section_re = re.compile(
+        r"(?P<head>^## (?:Abstract|Conclusion)\s*\n)(?P<body>.*?)(?=^## |\Z)",
+        re.M | re.S | re.I,
+    )
+    changes = 0
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal changes
+        body, n = directionalize(match.group("body"))
+        changes += n
+        return match.group("head") + body
+
+    return section_re.sub(replace, text), changes
+
+
 def _phase_d_evidence_honesty_guard(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
+    patched, count_n = _directionalize_decisive_corpus_counts(text)
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     receipts = manifest.get("receipts") if isinstance(manifest, dict) else None
     rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
     if not rows:
-        return text, []
+        return patched, ([FinalizerLogEntry(
+            phase="D_evidence_honesty_guard",
+            rule="directionalize_decisive_corpus_counts",
+            n_changes=count_n,
+            detail=f"directionalized decisive corpus count statements={count_n}",
+        )] if count_n else [])
     total = len(rows)
     nullish = sum(1 for row in rows if _receipt_has_null_or_no_signal(row))
     direct = sum(1 for row in rows if str(row.get("directness") or "").lower().startswith("direct"))
     pieces: list[str] = []
     if nullish / total >= 0.5:
         pieces.append(
-            f"{nullish}/{total} retained sources are coded as null or no extracted directional signal; "
+            "At least half of the retained sources are coded as null or no extracted directional signal; "
             "this corpus is non-supportive for clinical efficacy claims and hypothesis-generating only. "
             + _SOURCE_BUNDLE_RECONCILIATION_SENTENCE
         )
@@ -1780,17 +1834,21 @@ def _phase_d_evidence_honesty_guard(
         )
     elif direct < total:
         pieces.append(
-            f"{total - direct}/{total} retained sources are indirect, review-level, adjacent, or "
-            "mechanistic and are used only to bound interpretation."
+            "A subset of the retained sources is indirect, review-level, adjacent, or "
+            "mechanistic and is used only to bound interpretation."
         )
     if not pieces:
-        return text, []
+        return patched, ([FinalizerLogEntry(
+            phase="D_evidence_honesty_guard",
+            rule="directionalize_decisive_corpus_counts",
+            n_changes=count_n,
+            detail=f"directionalized decisive corpus count statements={count_n}",
+        )] if count_n else [])
     note = (
         "Evidence scope: "
         + " ".join(pieces)
         + " The conclusion therefore does not support broad causal, clinical, or policy claims."
     )
-    patched = text
     note_n = 0
     for heading in ("Abstract", "Conclusion"):
         if any(label in _section_body(patched, heading).lower() for label in ("evidence scope:", "evidence-honesty note:")):
@@ -1803,14 +1861,14 @@ def _phase_d_evidence_honesty_guard(
             patched, added = _create_section_paragraph(patched, heading, note)
         note_n += added
     patched, claim_n = _replace_unsupported_general_health_claim(patched) if (nullish / total >= 0.5 or direct == 0) else (patched, 0)
-    n = note_n + claim_n
+    n = count_n + note_n + claim_n
     if not n:
         return text, []
     return patched, [FinalizerLogEntry(
         phase="D_evidence_honesty_guard",
         rule="bound_null_signal_and_directness_claims",
         n_changes=n,
-        detail=f"added evidence-honesty note to {note_n} section(s); replaced unsupported conclusion claims={claim_n}; null_or_no_signal={nullish}/{total}; direct={direct}/{total}",
+        detail=f"directionalized decisive corpus counts={count_n}; added evidence-honesty note to {note_n} section(s); replaced unsupported conclusion claims={claim_n}; null_or_no_signal={nullish}/{total}; direct={direct}/{total}",
     )]
 
 

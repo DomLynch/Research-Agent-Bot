@@ -20,6 +20,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from collections.abc import Callable
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
 
@@ -136,6 +137,16 @@ _BUNDLE_REFERENCE_RE = re.compile(r"\[bundle:(\d+)\]", re.I)
 _NUMERIC_CITATION_RE = re.compile(r"\[((?:\d+[\s,;-]*)+)\]")
 _DOI_RE = re.compile(r"\b10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
 _PMID_RE = re.compile(r"\bPMID\s*:?\s*(\d+)\b", re.I)
+_QUANTITY_RE = re.compile(
+    r"(?<![\w./])(?P<number>[+-]?(?:\d+(?:,\d{3})*(?:\.\d+)?|\.\d+))(?:\s*-\s*|\s*)"
+    r"(?P<unit>(?:%|percent(?:age)?(?:\s+points?)?|pp|mmol|mol|mmhg|bpm|hz|"
+    r"mg|kg|ug|µg|μg|ng|ml|km|cm|mm|g|l|m|seconds?|minutes?|hours?|days?|weeks?|months?|years?)"
+    r"(?:/[A-Za-zµμ]+)?)?(?![A-Za-z])",
+    re.I,
+)
+_BUNDLE_COUNT_RE = re.compile(
+    r"^\s*(?:sources?|papers?|studies|findings|receipts|claims)\b", re.I,
+)
 SUBMISSION_REQUIRED_FILES = (
     "full_paper.md",
     "manifest.json",
@@ -590,6 +601,89 @@ def _researka_claim_trace_status(
     )
 
 
+def _quantity_tokens(
+    text: str, sources: list[dict[str, Any]] | None = None,
+) -> set[tuple[str, str]]:
+    cleaned = _BUNDLE_REFERENCE_RE.sub(
+        " ", _DOI_RE.sub(" ", _PMID_RE.sub(" ", _NUMERIC_CITATION_RE.sub(" ", text))),
+    )
+    for source in sources or []:
+        for field in ("doi", "cited_as"):
+            value = str(source.get(field) or "").strip()
+            if value:
+                cleaned = re.sub(re.escape(value), " ", cleaned, flags=re.I)
+    tokens: set[tuple[str, str]] = set()
+    for match in _QUANTITY_RE.finditer(cleaned):
+        raw_number = match.group("number").replace(",", "")
+        raw_unit = (match.group("unit") or "").strip().lower()
+        if not raw_unit and _BUNDLE_COUNT_RE.match(cleaned[match.end():]):
+            continue
+        try:
+            decimal_value = Decimal(raw_number)
+            number = format(decimal_value.normalize(), "f")
+        except InvalidOperation:
+            continue
+        if (
+            not raw_unit
+            and decimal_value == int(decimal_value)
+            and 1900 <= int(decimal_value) <= 2100
+        ):
+            continue
+        unit = raw_unit.replace("μ", "u").replace("µ", "u")
+        if unit.startswith("percent"):
+            unit = "pp" if "point" in unit else "%"
+        elif unit.endswith("s") and unit != "mmhg":
+            unit = unit[:-1]
+        tokens.add((number, unit))
+    return tokens
+
+
+def _quantitative_claim_candidates(text: str) -> list[str]:
+    return [
+        part.strip()
+        for part in re.split(r"\n+|(?<=[.!?])\s+", text)
+        if len(part.strip()) >= 40 and _quantity_tokens(part)
+    ][:30]
+
+
+def _quantities_agree(claim: str, sources: list[dict[str, Any]]) -> bool:
+    claim_tokens = _quantity_tokens(claim, sources)
+    evidence_tokens: set[tuple[str, str]] = set()
+    for source in sources:
+        evidence = " ".join(
+            str(source.get(field) or "")
+            for field in ("quote", "evidence_span", "excerpt", "effect")
+        )
+        evidence_tokens.update(_quantity_tokens(evidence))
+    evidence_tokens.update((number, "") for number, _ in tuple(evidence_tokens))
+    return claim_tokens <= evidence_tokens
+
+
+def _researka_quantitative_trace_status(
+    payload: dict[str, Any], source_bundle: list[dict[str, Any]],
+) -> str:
+    sections_raw = payload.get("sections")
+    sections = sections_raw if isinstance(sections_raw, dict) else {}
+    conclusion = "\n".join(
+        str(value) for name, value in sections.items()
+        if str(name).strip().lower() == "conclusion"
+    )
+    claims = _quantitative_claim_candidates(
+        "\n".join((str(payload.get("abstract") or ""), conclusion)),
+    )
+    aligned = 0
+    for claim in claims:
+        sources = [
+            source_bundle[index] for index in _citation_indexes(claim, source_bundle)
+            if _evidence_aligns(claim, source_bundle[index])
+        ]
+        aligned += bool(sources) and _quantities_agree(claim, sources)
+    return (
+        "eligible" if aligned == len(claims)
+        else f"researka_quantitative_trace_insufficient:aligned={aligned}/{len(claims)}"
+    )
+
+
 def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     if article_type != DEFAULT_ARTICLE_TYPE:
@@ -635,6 +729,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
             return f"researka_preflight_body_words:{body_words} < {min_body_words}"
     if (claim_trace_status := _researka_claim_trace_status(payload, source_bundle)) != "eligible":
         return claim_trace_status
+    if (quantity_status := _researka_quantitative_trace_status(payload, source_bundle)) != "eligible":
+        return quantity_status
     if enforce_recency and (recency_status := _recency_ratio_status(payload)) != "eligible":
         return recency_status
     if (doi_status := _doi_existence_status(payload)) != "eligible":

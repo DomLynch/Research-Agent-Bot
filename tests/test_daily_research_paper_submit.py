@@ -1078,6 +1078,34 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
 
 
+def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Path) -> None:
+    claim = (
+        "Smith 2026 [bundle:1] reports that a 10 mg Topic intervention dose supports "
+        "a bounded cardiovascular interpretation in the retained randomized trial."
+    )
+    payload = daily.build_payload(_run(tmp_path))
+    payload["abstract"] = claim + " " + payload["abstract"]
+    payload["sections"]["Abstract"] = payload["abstract"]
+    bundle = payload["source_bundle"]
+    bundle[0]["cited_as"] = "Smith 2026"
+    bundle[0]["excerpt"] = (
+        "Smith 2026 reports that a 5 mg Topic intervention dose supports a bounded "
+        "cardiovascular interpretation in the retained randomized trial."
+    )
+    bundle[0]["evidence_span"] = bundle[0]["excerpt"]
+
+    assert daily._researka_quantitative_trace_status(payload, bundle) == (
+        "researka_quantitative_trace_insufficient:aligned=0/1"
+    )
+    assert daily._researka_preflight_status(payload, enforce_recency=False) == (
+        "researka_quantitative_trace_insufficient:aligned=0/1"
+    )
+
+    bundle[0]["excerpt"] = bundle[0]["excerpt"].replace("5 mg", "10 mg")
+    bundle[0]["evidence_span"] = bundle[0]["excerpt"]
+    assert daily._researka_quantitative_trace_status(payload, bundle) == "eligible"
+
+
 def test_bundle_reference_marker_rebinds_after_canonical_source_sort() -> None:
     rows = [
         {"receipt_id": "old", "cited_as": "Old 2019", "source_year": 2019, "n_claims": 2},

@@ -256,14 +256,14 @@ def _asks_outcome_roster(text: str) -> bool:
 def _asks_exact_stat_trace(text: str) -> bool:
     source_bound = any(token in text for token in (
         "bundle", "source excerpt", "source number", "trace", "verif",
-        "extraction artifact",
+        "extraction artifact", "evidence span",
     ))
     return source_bound and (
         any(token in text for token in (
             "every exact statistic", "every exact p value", "exact p value",
             "every exact interval", "exact confidence interval", "exact bundle token",
             "effect estimate", "percentage cited", "each numeric statistic",
-            "numeric statistic cited",
+            "numeric statistic cited", "every number and unit",
         ))
         or re.search(
             r"\b(?:each|every|all)\s+representative statistic", text,

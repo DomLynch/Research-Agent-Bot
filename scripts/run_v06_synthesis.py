@@ -580,17 +580,13 @@ def _compile_public_section_backstop(
     paragraphs_by_title = {
         "Abstract": [
             (
-                f"This paper synthesizes evidence on {topic} across "
-                f"{receipt_n} accepted source papers and "
-                f"{claim_n} high-confidence extracted claims."
+                f"This paper synthesizes evidence on {topic} across the retained "
+                "source corpus and high-confidence extracted claim set."
             ),
             (
-                "The evidence profile contains "
-                f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
-                f"{_evidence_tier_phrase(indirect, 'adjacent, review, or context')}, "
-                f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, "
-                f"with {tension_phrase} "
-                "across the evidence base."
+                "The evidence profile separates direct clinical evidence from "
+                "adjacent, review, context, and mechanistic evidence, while "
+                "retaining surfaced cross-study disagreements."
             ),
             (
                 f"{signal_profile} The paper "

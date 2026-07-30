@@ -1506,7 +1506,7 @@ def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Pa
             phase="D_evidence_honesty_guard",
             rule="bound_null_signal_and_directness_claims",
             n_changes=3,
-            detail="added evidence-honesty note to 2 section(s); replaced unsupported conclusion claims=1; null_or_no_signal=3/4; direct=0/4",
+            detail="directionalized decisive corpus counts=0; added evidence-honesty note to 2 section(s); replaced unsupported conclusion claims=1; null_or_no_signal=3/4; direct=0/4",
         )
     ]
 
@@ -1767,7 +1767,7 @@ def test_general_health_claim_repair_covers_affirmative_variants() -> None:
     assert fixed.count("non-supportive for clinical efficacy or general health-intervention claims") == 1
 
 
-def test_evidence_honesty_guard_preserves_count_and_reconciles_source_bundle(tmp_path: Path) -> None:
+def test_evidence_honesty_guard_directionalizes_count_and_reconciles_source_bundle(tmp_path: Path) -> None:
     paper = "## Abstract\n\nInitial synthesis.\n\n## Conclusion\n\nInitial conclusion.\n"
     (tmp_path / "manifest.json").write_text(json.dumps({
         "receipts": [
@@ -1778,7 +1778,8 @@ def test_evidence_honesty_guard_preserves_count_and_reconciles_source_bundle(tmp
 
     fixed, logs = journal_finalizer._phase_d_evidence_honesty_guard(paper, tmp_path)
 
-    assert "15/16 retained sources are coded as null or no extracted directional signal" in fixed
+    assert "15/16 retained sources" not in fixed
+    assert "At least half of the retained sources are coded as null" in fixed
     assert "Source-bundle reconciliation note:" in fixed
     assert "not a statement that the source texts contain no directional findings" in fixed
     assert logs == [
@@ -1786,9 +1787,35 @@ def test_evidence_honesty_guard_preserves_count_and_reconciles_source_bundle(tmp
             phase="D_evidence_honesty_guard",
             rule="bound_null_signal_and_directness_claims",
             n_changes=2,
-            detail="added evidence-honesty note to 2 section(s); replaced unsupported conclusion claims=0; null_or_no_signal=15/16; direct=0/16",
+            detail="directionalized decisive corpus counts=0; added evidence-honesty note to 2 section(s); replaced unsupported conclusion claims=0; null_or_no_signal=15/16; direct=0/16",
         )
     ]
+
+
+def test_decisive_corpus_counts_are_rendered_directionally() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "This paper synthesizes evidence on aspirin effects across 12 included "
+        "source papers and 1,000 high-confidence extracted claims.\n\n"
+        "The evidence profile contains 8 direct clinical sources, 4 adjacent, "
+        "review, or context sources, and no sources classified primarily as "
+        "mechanistic evidence, with 34 cross-study disagreements across the "
+        "evidence base.\n\n"
+        "## Results\n\nThe Findings Map retains 12 source papers for audit.\n\n"
+        "## Conclusion\n\nEvidence scope: 4/12 retained sources are indirect, "
+        "review-level, adjacent, or mechanistic and are used only to bound "
+        "interpretation."
+    )
+
+    fixed, changed = journal_finalizer._directionalize_decisive_corpus_counts(paper)
+
+    assert changed == 3
+    assert "12 included source papers" not in fixed
+    assert "1,000 high-confidence" not in fixed
+    assert "8 direct clinical sources" not in fixed
+    assert "34 cross-study disagreements" not in fixed
+    assert "4/12 retained sources" not in fixed
+    assert "The Findings Map retains 12 source papers for audit." in fixed
 
 
 def test_strip_surface_duplicate_paragraphs_repairs_journal_surface_gate() -> None:
