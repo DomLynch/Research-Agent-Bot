@@ -24,8 +24,12 @@ _NON_CLAIM_PREFIXES = ("Evidence-type reconciliation:", "Source-direction reconc
 
 
 def asks_major_claim_trace(text: str) -> bool:
-    tokens = ("exact source token", "doi/pmid", "doi or pmid", "evidence span", "exactly traceable")
-    return "major claim" in text and any(token in text for token in tokens)
+    claim_scope = any(token in text for token in ("major claim", "substantive claim", "claim sentence"))
+    trace_request = any(token in text for token in (
+        "exact source token", "doi/pmid", "doi or pmid", "evidence span",
+        "exactly traceable", "inline citation", "in-text token",
+    ))
+    return claim_scope and trace_request
 
 
 def major_claim_trace_is_stated(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> bool:

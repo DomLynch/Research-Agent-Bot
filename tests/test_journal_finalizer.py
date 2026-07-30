@@ -6818,8 +6818,9 @@ def test_pmid_revision_retries_a_transient_provider_failure(
 
 def test_revision_surface_notes_proactively_repair_major_claim_trace(tmp_path: Path) -> None:
     ask = (
-        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
-        "10/20 claims are exactly traceable (required 16)."
+        "Cite inline, inside each substantive claim sentence: an in-text token matching "
+        "a bundle entry's cited_as, [bundle:n], DOI, or PMID. 13/30 claim sentences "
+        "carry an inline citation (required 24)."
     )
     rows = [
         {
@@ -6829,13 +6830,13 @@ def test_revision_surface_notes_proactively_repair_major_claim_trace(tmp_path: P
             "source_doi": f"10.1000/study.{i}",
             "directness": "direct",
             "evidence_tier": "A1",
-            "n_claims": 20 - i,
+            "n_claims": 31 - i,
             "endpoints": [f"Outcome {i}"],
             "thesis_text": (
                 f"Source excerpts: Outcome {i} decreased by {i}% after treatment."
             ),
         }
-        for i in range(1, 21)
+        for i in range(1, 31)
     ]
     (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({
@@ -6846,7 +6847,7 @@ def test_revision_surface_notes_proactively_repair_major_claim_trace(tmp_path: P
         "## Results\n\n"
         + "\n\n".join(
             f"Study{i} 2025 reported bounded manuscript finding {i}."
-            for i in range(1, 21)
+            for i in range(1, 31)
         )
         + "\n\n"
         "## References\n\n- Study1 2025.\n"
@@ -6856,7 +6857,7 @@ def test_revision_surface_notes_proactively_repair_major_claim_trace(tmp_path: P
 
     assert any("major_claim_trace" in entry.detail for entry in logs)
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("[exact source: https://doi.org/") >= len(rows)
+    assert fixed.count("[exact source: https://doi.org/") >= 24
     assert journal_finalizer.revision_coverage.deterministic_unmet_asks(
         fixed, [ask], evidence_rows=rows,
     ) == []

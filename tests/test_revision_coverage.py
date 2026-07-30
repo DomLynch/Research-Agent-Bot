@@ -980,8 +980,9 @@ def test_generic_representative_statistic_request_removes_unverified_token() -> 
 
 def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None:
     ask = (
-        "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
-        "10/20 claims are exactly traceable (required 16)."
+        "Cite inline, inside each substantive claim sentence: an in-text token matching "
+        "a bundle entry's cited_as, [bundle:n], DOI, or PMID. 13/30 claim sentences "
+        "carry an inline citation (required 24)."
     )
     rows = [
         {
@@ -990,14 +991,14 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
             "source_doi": f"10.1000/study.{i}",
             "directness": "direct",
             "evidence_tier": "A1",
-            "n_claims": 20 - i,
+            "n_claims": 31 - i,
             "endpoints": [f"Outcome {i}"],
             "thesis_text": (
                 f"Study {i} — source excerpts: Outcome {i} decreased by {i}% "
                 "after treatment."
             ),
         }
-        for i in range(1, 21)
+        for i in range(1, 31)
     ]
     paper = (
         "## Results\n\n"
@@ -1012,7 +1013,7 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert details == ["major_claim_trace"]
     assert "Study1 2025 [bundle:" in fixed
     assert "## Major Claim Trace" not in fixed
-    assert fixed.count("[exact source: https://doi.org/") == 16
+    assert fixed.count("[exact source: https://doi.org/") == 24
     assert "https://doi.org/10.1000/study.1" in fixed
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
