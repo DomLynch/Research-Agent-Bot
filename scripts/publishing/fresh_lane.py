@@ -117,7 +117,7 @@ DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
 # while bounding resubmissions to the live platform.
 MAX_REVISE_ROUNDS = 3
-REVISION_REPAIR_EPOCH = _positive_env_int("RESEARCH_AGENT_REVISION_REPAIR_EPOCH", 14)
+REVISION_REPAIR_EPOCH = _positive_env_int("RESEARCH_AGENT_REVISION_REPAIR_EPOCH", 15)
 PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
@@ -2724,6 +2724,11 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
 
 def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     ask_lower = ask.lower()
+    if submit_bridge._asks_source_evidence_span(ask):
+        try:
+            return submit_bridge.payload_revision_ask_satisfied(out_dir, ask)
+        except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+            return False
     paper_text = ""
     with suppress(OSError):
         paper_text = (out_dir / "full_paper.md").read_text(encoding="utf-8").lower()

@@ -597,7 +597,10 @@ def _revision_coverage_status(run: Path) -> str:
 def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
     try:
         import revision_coverage
-        report = _revision_gate_report(run, revision_coverage, refreshed_by="daily_submit", payload_satisfied=lambda ask: authoritative_doi_repair_satisfied(run, ask))
+        report = _revision_gate_report(
+            run, revision_coverage, refreshed_by="daily_submit",
+            payload_satisfied=lambda ask: payload_revision_ask_satisfied(run, ask),
+        )
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
     if report is None:
@@ -1325,10 +1328,55 @@ def _has_authoritative_excerpt(row: dict[str, Any]) -> bool:
     return len((excerpt := str(row.get("excerpt") or "")).split()) >= 12 and " is registered as " not in excerpt.lower() and "source-bundle audit for " not in excerpt.lower()
 
 
+def _source_evidence_span(row: dict[str, Any]) -> str:
+    for key in ("quote", "excerpt"):
+        text = " ".join(str(row.get(key) or "").split())
+        lower = text.lower()
+        if (
+            len(text.split()) >= 12
+            and not any(token in lower for token in (
+                "placeholder", "evidence pending", "source excerpt unavailable",
+                "validated source-owned result trace", "source-bundle audit for",
+            ))
+        ):
+            return text if len(text) <= 600 else text[:600].rsplit(" ", 1)[0] + " [excerpt truncated]."
+    return ""
+
+
+def _asks_source_evidence_span(ask: str) -> bool:
+    lower = " ".join(ask.lower().split())
+    return (
+        ("evidence span" in lower or "evidence_span" in lower)
+        and any(token in lower for token in ("source", "bundle"))
+        and any(token in lower for token in ("load bearing", "placeholder", "substantive", "audit"))
+    )
+
+
+def _source_evidence_span_ask_satisfied(payload: dict[str, Any], ask: str) -> bool:
+    if not _asks_source_evidence_span(ask):
+        return False
+    direct = [
+        row for row in payload.get("source_bundle", [])
+        if isinstance(row, dict) and str(row.get("directness") or "").lower() == "direct"
+    ]
+    return bool(direct) and all(
+        _has_stable_source_locator(row) and bool(_source_evidence_span(row))
+        for row in direct
+    )
+
+
 def authoritative_doi_repair_satisfied(run: Path, ask: str) -> bool:
     requested = {_clean_doi(match.group()).lower() for match in re.finditer(r"10\.\d{4,9}/[^\s,;]+", ask, re.I)}
     matched = [row for row in build_payload(run).get("source_bundle", []) if isinstance(row, dict) and _clean_doi(row.get("doi")).lower() in requested] if requested else []
     return "evidence text" in ask.lower() and "authoritative abstract" in ask.lower() and bool(requested) and len(matched) == len(requested) and all(_has_stable_source_locator(row) and _has_authoritative_excerpt(row) for row in matched)
+
+
+def payload_revision_ask_satisfied(run: Path, ask: str) -> bool:
+    return (
+        authoritative_doi_repair_satisfied(run, ask)
+        or _asks_source_evidence_span(ask)
+        and _source_evidence_span_ask_satisfied(build_payload(run), ask)
+    )
 
 
 def _has_source_citation(row: dict[str, Any]) -> bool:
@@ -1583,6 +1631,9 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     # Preserve the agent's existing source URLs, source-level appraisals, and
     # exact body-to-bundle links instead of dropping them at the API boundary.
     source_bundle = _source_bundle(run, limit=max_sources)
+    for row in source_bundle:
+        if span := _source_evidence_span(row):
+            row["evidence_span"] = span
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     _publication_evidence.attach_evidence_spans(paper, source_bundle)
     parts = _sections(paper)

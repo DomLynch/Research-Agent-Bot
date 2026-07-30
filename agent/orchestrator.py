@@ -30,9 +30,8 @@ Caller responsibilities (kept outside this module to preserve test seams):
   - choosing the LLM call chains (mock vs real)
   - choosing the trace clients (fixture vs httpx)
 
-Day 5.1 ships the orchestrator + tests. Day 5.3's
-`scripts/e2e_metformin_proof_001.py` is the live entry point that
-calls retrieve + bundle, then run_proof.
+Day 5.1 ships the orchestrator + tests. Live callers supply retrieval,
+bundling, and provider-specific clients before invoking run_proof.
 """
 from __future__ import annotations
 

@@ -119,7 +119,7 @@ def attach_evidence_spans(paper: str, bundle: list[dict[str, Any]]) -> None:
             line for line in cited
             if len(set(re.findall(r"\[bundle:\d+\]", line, re.I))) == 1
         ), "")
-        span = trace or source_specific or next(iter(cited), "")
+        span = str(row.get("evidence_span") or "").strip() or trace or source_specific or next(iter(cited), "")
         span = span or next(iter(candidates), "")
         if span:
             row["evidence_span"] = span

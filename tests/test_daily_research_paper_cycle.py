@@ -6648,6 +6648,33 @@ def test_authoritative_abstract_revision_ask_checks_every_named_doi(
     assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
 
 
+def test_payload_source_evidence_span_ask_uses_submitter_contract(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    source = {
+        "directness": "direct",
+        "doi": "10.1000/alpha.1",
+        "excerpt": (
+            "The randomized trial reported lower body weight and body mass index after "
+            "twelve weeks, with p = 0.01 for both outcomes."
+        ),
+    }
+    monkeypatch.setattr(
+        cycle.submit_bridge, "build_payload",
+        lambda _out_dir: {"source_bundle": [source]},
+    )
+    ask = (
+        "Provide substantive, non-placeholder evidence_span quotes for each load-bearing "
+        "source so numerics can be audited at the bundle level."
+    )
+
+    assert cycle._payload_revision_ask_satisfied(out_dir, ask)
+    source["excerpt"] = "placeholder"
+    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
+
+
 def test_payload_source_bundle_topicality_revision_ask_requires_all_rows_for_all_sources_ask(
     tmp_path: Path, monkeypatch,
 ) -> None:
@@ -7775,7 +7802,7 @@ def test_handled_revision_ids_round_cap_still_applies_within_active_review(tmp_p
 
 
 def test_retryable_round_cap_reopens_after_repair_epoch(tmp_path: Path) -> None:
-    assert cycle.REVISION_REPAIR_EPOCH == 14
+    assert cycle.REVISION_REPAIR_EPOCH == 15
     ledger_dir = tmp_path / "ledger"
     ledger_dir.mkdir()
     title = "Research Synthesis: Statin — full paper"

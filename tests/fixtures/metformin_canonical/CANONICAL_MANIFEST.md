@@ -10,10 +10,8 @@ failures, and rejection rationales — without selective omission.
 
 **Anti-gaming contract:**
 - This file lists every paper in the corpus before any run.
-- The `--canonical-corpus metformin` flag in
-  `scripts/e2e_metformin_proof_001.py` reads the
-  `tests/fixtures/metformin_canonical/` fixture and runs the
-  multi-receipt pipeline ONLY against those 7 papers.
+- Tests read the `tests/fixtures/metformin_canonical/` fixture and run the
+  multi-receipt pipeline only against those seven papers.
 - Any paper rejected by SPAR is recorded in
   `multi_receipt_manifest.json` and quarantined in the synthesis
   paper's `Rejected / Contested Evidence` section. Rejection

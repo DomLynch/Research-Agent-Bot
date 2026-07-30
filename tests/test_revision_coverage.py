@@ -1949,6 +1949,33 @@ def test_generic_fragment_request_preserves_complete_markdown_link() -> None:
     assert revision_quality_proof_is_stated(fixed, ask, []) is True
 
 
+def test_fragment_repair_removes_quoted_garble_from_heading() -> None:
+    ask = 'Remove the garbled section fragment ("Malformed heading tail") from the Results.'
+    paper = "## Results Malformed heading tail\n\nComplete result paragraph.\n"
+
+    fixed, changed = revision_coverage.repair_fragment_headings(paper, ask)
+
+    assert fixed.startswith("## Results\n")
+    assert changed == 1
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_internal_duplication_repair_converges_and_is_idempotent() -> None:
+    ask = "Streamline the Gaps Identified and Discussion sections to avoid verbatim repetition."
+    repeated = (
+        "The current corpus is mixed and hypothesis-generating, with evidence distribution statistics "
+        "showing indirect and review evidence rather than settled clinical translation."
+    )
+    paper = f"## Gaps Identified\n\n{repeated}\n\n## Discussion\n\n{repeated}\n"
+
+    fixed, changed = revision_coverage.repair_internal_duplication(paper, ask)
+
+    assert changed == 1
+    assert fixed.count(repeated) == 1
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert revision_coverage.repair_internal_duplication(fixed, ask) == (fixed, 0)
+
+
 def test_detects_reviewer_request_to_replace_unclear_direction_codes() -> None:
     feedback = (
         "Integrate the positive/null MACE signals from the named studies rather "

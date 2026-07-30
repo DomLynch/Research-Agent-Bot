@@ -1082,6 +1082,43 @@ def test_evidence_spans_do_not_infer_source_from_bundle_order() -> None:
     assert "evidence_span" not in bundle[0]
 
 
+def test_evidence_spans_prefer_authoritative_source_text() -> None:
+    paper = "## Results\n\nSmith 2026 [bundle:1] supports an aggregate interpretation."
+    source_text = (
+        "The randomized trial reported a twelve-week reduction in body weight and "
+        "body mass index, with p = 0.01 for both outcomes."
+    )
+    bundle = [{
+        "cited_as": "Smith 2026",
+        "directness": "direct",
+        "excerpt": source_text,
+    }]
+
+    bundle[0]["evidence_span"] = daily._source_evidence_span(bundle[0])
+    daily._publication_evidence.attach_evidence_spans(paper, bundle)
+
+    assert bundle[0]["evidence_span"] == source_text
+
+
+def test_load_bearing_source_span_ask_checks_outgoing_payload() -> None:
+    ask = (
+        "Provide substantive, non-placeholder evidence_span quotes for each load-bearing "
+        "source so numerics can be audited at the bundle level."
+    )
+    source = {
+        "directness": "direct",
+        "doi": "10.1000/herz.2024",
+        "excerpt": (
+            "The randomized trial reported lower body weight and body mass index after "
+            "twelve weeks, with p = 0.01 for both outcomes."
+        ),
+    }
+
+    assert daily._source_evidence_span_ask_satisfied({"source_bundle": [source]}, ask) is True
+    source["excerpt"] = "placeholder"
+    assert daily._source_evidence_span_ask_satisfied({"source_bundle": [source]}, ask) is False
+
+
 def test_source_bundle_does_not_promote_citation_token_to_source_title(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
 

@@ -22,8 +22,7 @@ gate-fired scenario is the orchestrator-level integration of the
 trust-spine gate already proven at the SPAR level (4.2-fix tests)
 and at the citation_trace level (4-fix planted-failure E2E).
 
-Test-only — no new runtime modules. The live counterpart is
-`scripts/e2e_metformin_proof_001.py` (Day 5.3).
+Test-only — no runtime proof runner.
 """
 from __future__ import annotations
 

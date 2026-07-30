@@ -1570,6 +1570,65 @@ def _internal_duplication_scope(paper_md: str, ask: str) -> str:
     return "\n\n".join(sections) if named else paper_md
 
 
+def repair_internal_duplication(paper_md: str, ask: str) -> tuple[str, int]:
+    if not _asks_internal_duplication(" ".join(ask.lower().split())):
+        return paper_md, 0
+    names = (
+        "Evidence Landscape", "Key Findings", "Results", "Gaps Identified",
+        "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
+    )
+    targets = {name for name in names if name.lower() in ask.lower()}
+    parts = re.split(r"(\n\s*\n)", paper_md)
+    heading, changed = "", 0
+    seen_paragraphs: list[set[str]] = []
+    seen_sentences: set[str] = set()
+    for index in range(0, len(parts), 2):
+        stripped = parts[index].strip()
+        if match := re.match(r"^#{2,3}\s+(.+?)\s*$", stripped):
+            heading = match.group(1)
+            continue
+        if not stripped or targets and heading not in targets or stripped.startswith(("|", "```")):
+            continue
+        kept = []
+        for sentence in re.split(r"(?<=[.!?])\s+", stripped):
+            key = " ".join(re.findall(r"[a-z0-9]+", sentence.lower()))
+            if len(key.split()) >= 6 and key in seen_sentences:
+                changed += 1
+                continue
+            if len(key.split()) >= 6:
+                seen_sentences.add(key)
+            kept.append(sentence)
+        candidate = " ".join(kept).strip()
+        tokens = set(re.findall(r"[a-z0-9]+", candidate.lower()))
+        if len(tokens) >= 18 and any(
+            len(tokens & prior) / max(1, min(len(tokens), len(prior))) >= 0.75
+            for prior in seen_paragraphs
+        ):
+            parts[index], changed = "", changed + 1
+            continue
+        if tokens:
+            seen_paragraphs.append(tokens)
+        parts[index] = candidate
+    return re.sub(r"\n{3,}", "\n\n", "".join(parts)), changed
+
+
+def repair_fragment_headings(paper_md: str, ask: str) -> tuple[str, int]:
+    if "garbled section fragment" not in ask.lower():
+        return paper_md, 0
+    fragments = [next(value for value in match.groups() if value) for match in re.finditer(
+        r"'([^'\n]{8,})'|\"([^\"\n]{8,})\"|“([^”\n]{8,})”|‘([^’\n]{8,})’", ask)]
+    changed = 0
+    def clean(match: re.Match[str]) -> str:
+        nonlocal changed
+        heading = match.group(0)
+        for fragment in fragments:
+            heading = re.sub(re.escape(fragment), "", heading, flags=re.I)
+        heading = re.sub(r"\s{2,}", " ", heading).rstrip(" -:;,")
+        changed += int(heading != match.group(0))
+        return heading
+    return re.sub(r"^#{2,3}\s+.+?$", clean, paper_md, flags=re.M), changed
+
+
 def _internal_duplication_is_low(paper_md: str, ask: str = "") -> bool:
     seen: list[set[str]] = []
     seen_sentences: set[str] = set()

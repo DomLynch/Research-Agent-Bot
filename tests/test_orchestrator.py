@@ -6,9 +6,7 @@ uses fixture trace clients (FixtureTrialRegistryClient +
 FixtureDrugAliasClient), and asserts the 8 receipts are produced
 and JSON-loadable.
 
-The live counterpart is `scripts/e2e_metformin_proof_001.py` (Day 5.3),
-which calls retrieve + bundle + run_proof against real APIs and a
-real LLM chain.
+Live publication execution belongs to the maintained V3 lanes.
 """
 from __future__ import annotations
 

@@ -20,10 +20,8 @@ Why fixture-replay rather than real APIs in pytest:
   produce, so the pipeline path is identical. The only difference is the
   transport.
 
-For a fresh real-API smoke, run
-`scripts/e2e_metformin_proof_001.py --live --retrieve-only`
-deliverable; opt-in network call) which captures a new baseline and
-optionally refreshes the fixtures.
+Live V3 publication checks use the maintained publishing lanes; this fixture
+remains the deterministic retrieval regression.
 """
 from __future__ import annotations
 

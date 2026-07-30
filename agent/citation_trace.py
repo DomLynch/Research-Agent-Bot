@@ -323,10 +323,8 @@ def registry_ids_for(item: EvidenceItem) -> list[str]:
     would have its role pinned by the override but receive NO external
     citation trace — silently inconsistent.
 
-    Day 5.3-fix-2 promoted this from private — `scripts/e2e_metformin_proof_001.py`
-    uses it for canonical-trial detection in `--max-items` capping. Keeping
-    the surface-scan logic in one place avoids drift between the script
-    and trace_nct_exists.
+    Keeping the surface-scan logic public and centralized avoids drift
+    between pipeline callers and trace_nct_exists.
     """
     ids: list[str] = []
     seen: set[str] = set()

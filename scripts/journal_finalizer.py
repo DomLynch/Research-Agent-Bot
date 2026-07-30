@@ -4664,6 +4664,10 @@ def _phase_d_revision_surface_notes(
     patched, quality_details = repair_revision_quality(patched, receipts, feedback)
     n += len(quality_details)
     details.extend(quality_details)
+    patched, changed = revision_coverage.repair_fragment_headings(patched, feedback)
+    record(changed, "fragment_heading_cleanup")
+    patched, changed = revision_coverage.repair_internal_duplication(patched, feedback)
+    record(changed, "internal_duplication")
     wants_design_limit = (
         "limitations" in lower
         and "protocol" in lower
