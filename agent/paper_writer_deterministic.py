@@ -272,6 +272,7 @@ def _append_research_contribution_layer(
             f"| {_public_label(oc)} | {direct} | {indirect} | "
             f"{directions or 'unclear'} | {gap} |"
         )
+    lines.append("\nMatrix accounting note: Direct and indirect source counts are cumulative within each outcome class and reconcile to the Results outcome-class roster.")
     top = rows[:5]
     lines += [
         "",

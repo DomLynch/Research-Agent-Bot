@@ -806,6 +806,36 @@ def test_named_statistic_repair_retains_traceable_effect_estimate() -> None:
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
+def test_named_statistic_repair_transcribes_all_requested_smds() -> None:
+    ask = (
+        "The Results section's Muscle Function and Immune and Inflammation prose subsections "
+        "assert 'context-dependent' and 'preliminary' verdicts while the source bundle for "
+        "Khalafi 2025a directly reports numeric SMDs with CIs (TNF-alpha SMD -0.31 p=0.009, "
+        "CRP SMD -0.19 p=0.04, leptin SMD -0.57 p=0.005) - the manuscript should transcribe "
+        "these bundle-supported numerics into the immune/inflammation subsection or clearly "
+        "mark them as not transcribed because they fall in a separate biomarker-coded source."
+    )
+    rows = [{
+        "citation_token": "Khalafi 2025a",
+        "directness": "review",
+        "thesis_text": (
+            "IF reduced TNF-alpha [SMD: -0.31, p = 0.009], "
+            "CRP [SMD: -0.19, p = 0.04], and leptin [SMD: -0.57, p = 0.005]."
+        ),
+    }]
+    paper = "## Results\n\n### Immune Results\n\nKhalafi 2025a reported pooled effects.\n"
+
+    fixed, details = repair_revision_quality(paper, rows, ask)
+
+    assert details == ["named_statistic_reconciliation"]
+    assert "Khalafi 2025a [bundle:1]" in fixed
+    assert all(value in fixed for value in ("SMD: -0.31", "SMD: -0.19", "SMD: -0.57"))
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
 def test_topic_fit_repair_does_not_fabricate_boundary_for_direct_source() -> None:
     ask = (
         "Justify inclusion of Smith 2025 under the paper topic or flag it as a structural "
@@ -5471,3 +5501,32 @@ def test_structured_required_revisions_preserve_every_reviewer_item() -> None:
 
     assert revision_coverage.revision_asks(feedback, required) == required
     assert revision_coverage.revision_asks(feedback) == required
+
+
+def test_matrix_and_dyad_reviewer_asks_are_verified_deterministically() -> None:
+    asks = [
+        (
+            "Reconcile the Directness Map table in What This Synthesis Adds with the Results "
+            "outcome-class table; either remove the redundant table or annotate that the "
+            "'direct' counts are cumulative across the outcome class and match the Results slice."
+        ),
+        (
+            "Provide a one-sentence operational definition of 'non-orthogonal dyad' so the "
+            "706-count claim is auditable."
+        ),
+    ]
+    weak = (
+        "### Boundary-Condition Matrix\n\n| Outcome class | Direct sources |\n|---|---:|\n"
+        "| immune | 2 |\n\n## Tensions and Gaps\n\nTwo dyads were counted.\n"
+    )
+    repaired = weak + (
+        "\nMatrix accounting note: Direct and indirect source counts are cumulative within "
+        "each outcome class and reconcile to the Results outcome-class roster.\n\n"
+        "Pairwise tension audit: Each unordered receipt pair is counted once. A dyad is "
+        "non-orthogonal only when the deterministic classifier finds a directness gap, "
+        "a mechanism-clinical boundary, or differing directions on a shared endpoint.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(weak, asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []

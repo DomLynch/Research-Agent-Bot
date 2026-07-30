@@ -1106,6 +1106,41 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
     )
 
 
+def _asks_boundary_matrix_reconciliation(text: str) -> bool:
+    return (
+        any(token in text for token in ("directness map", "boundary-condition matrix"))
+        and "outcome-class table" in text
+        and any(token in text for token in ("reconcile", "cumulative", "match"))
+    )
+
+
+def _boundary_matrix_reconciliation_is_stated(paper_md: str) -> bool:
+    text = " ".join(paper_md.lower().split())
+    return (
+        "source counts are cumulative within each outcome class" in text
+        and "reconcile to the results outcome-class roster" in text
+    )
+
+
+def _asks_non_orthogonal_dyad_definition(text: str) -> bool:
+    return (
+        "non-orthogonal dyad" in text
+        and any(token in text for token in ("define", "definition", "operational"))
+    )
+
+
+def _non_orthogonal_dyad_definition_is_stated(paper_md: str) -> bool:
+    text = " ".join(paper_md.lower().split())
+    return (
+        "unordered receipt pair" in text
+        and "counted once" in text
+        and "non-orthogonal" in text
+        and all(token in text for token in (
+            "directness gap", "mechanism-clinical boundary", "differing directions",
+        ))
+    )
+
+
 def _asks_subgroup_lens_narrative(text: str) -> bool:
     return (
         "subgroup lens" in text
@@ -3400,6 +3435,8 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_subgroup_lens_narrative, _paper_lower(_subgroup_lens_narrative_is_stated)),
     (_asks_underpopulated_outcome_subsections, _paper_lower(_underpopulated_outcome_subsections_are_stated)),
     (_asks_replaced_surface_tensions, _paper_lower(_replaced_surface_tensions_are_stated)),
+    (_asks_boundary_matrix_reconciliation, _paper_only(_boundary_matrix_reconciliation_is_stated)),
+    (_asks_non_orthogonal_dyad_definition, _paper_only(_non_orthogonal_dyad_definition_is_stated)),
     (_asks_concrete_tensions_gaps, _paper_ask(_concrete_tensions_gaps_are_stated)),
     (_asks_internal_duplication, _paper_lower(_internal_duplication_is_low)),
     (_asks_long_term_safety_scope, _paper_only(_long_term_safety_scope_is_stated)),

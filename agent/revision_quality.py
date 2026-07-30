@@ -19,7 +19,7 @@ from agent.revision_identity import (
 
 
 _EFFECT_STAT_RE = re.compile(
-    r"\b(?:HR|OR|RR|NNT)\s*(?:=|:)?\s*\d+(?:\.\d+)?"
+    r"\b(?:HR|OR|RR|NNT|SMD|MD)\s*(?:=|:)?\s*-?\d+(?:\.\d+)?"
     r"|\b(?:95\s*%\s*)?(?:CI|confidence interval)\s*[:=]?\s*"
     r"\d+(?:\.\d+)?\s*(?:-|–|to)\s*\d+(?:\.\d+)?"
     r"|\bp\s*(?:<|>|=|≤|≥)\s*(?:0?\.\d+|1(?:\.0+)?)"
@@ -62,8 +62,7 @@ def revision_quality_ask_known(ask: str, evidence_rows: Sequence[dict[str, Any]]
     ))
 
 
-def asks_exact_stat_trace(feedback: str) -> bool:
-    return _asks_exact_stat_trace(_normalise(feedback))
+def asks_exact_stat_trace(feedback: str) -> bool: return _asks_exact_stat_trace(_normalise(feedback))
 
 
 def revision_quality_proof_is_stated(
@@ -140,8 +139,7 @@ def repair_revision_quality(
     return patched, details
 
 
-def _normalise(text: str) -> str:
-    return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
+def _normalise(text: str) -> str: return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
 
 
 def protocol_only_source(title: str, evidence_text: str) -> bool:
@@ -154,8 +152,7 @@ def protocol_only_source(title: str, evidence_text: str) -> bool:
 def _evidence_pending_requested(ask: str) -> bool: return "evidence pending" in (lower := _normalise(ask)) and "unverified effect direction" in lower
 
 
-def _ordered_rows(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
-    return ordered_source_rows(rows, {str(row.get("receipt_id") or ""): row for row in rows})
+def _ordered_rows(rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]: return ordered_source_rows(rows, {str(row.get("receipt_id") or ""): row for row in rows})
 
 
 def receipt_direction(row: dict[str, Any]) -> str:
@@ -244,12 +241,10 @@ def _model_context(scope: str) -> str:
     return ""
 
 
-def _matching_feedback(feedback: str, predicate: Any) -> str:
-    return " ".join(part for part in _feedback_parts(feedback) if predicate(_normalise(part)))
+def _matching_feedback(feedback: str, predicate: Any) -> str: return " ".join(part for part in _feedback_parts(feedback) if predicate(_normalise(part)))
 
 
-def _feedback_parts(feedback: str) -> list[str]:
-    return [part.strip() for part in re.split(r";\s+(?=[A-Z])", feedback) if part.strip()]
+def _feedback_parts(feedback: str) -> list[str]: return [part.strip() for part in re.split(r";\s+(?=[A-Z])", feedback) if part.strip()]
 
 
 def _asks_outcome_roster(text: str) -> bool:
@@ -312,14 +307,21 @@ def _asks_named_direction_reconciliation(text: str) -> bool:
 
 def _asks_named_statistic_reconciliation(text: str) -> bool:
     return _has_named_source(text) and (
-        "no numerics" in text and ("evidence pending" in text or "internal contradiction" in text) or any(
-        token in text for token in ("statistic", "p value", "p <", "p =", "effect estimate")
-    ) and any(token in text for token in (
-        "if it is not present", "if not present", "not present in", "per endpoint",
-        "which endpoint", "located in the source excerpt", "representative statistic",
-    )) and any(token in text for token in ("add", "clarify", "verify", "correct", "remove", "reconcile")) and any(
-        token in text for token in ("bundle", "excerpt", "source", "trace")
-    ))
+        "no numerics" in text
+        and ("evidence pending" in text or "internal contradiction" in text)
+        or any(token in text for token in (
+            "statistic", "p value", "p <", "p =", "effect estimate", "smd", "numeric", "numerics",
+        ))
+        and any(token in text for token in (
+            "if it is not present", "if not present", "not present in", "per endpoint",
+            "which endpoint", "located in the source excerpt", "representative statistic",
+            "transcribe", "not transcribed", "bundle supported",
+        ))
+        and any(token in text for token in (
+            "add", "clarify", "verify", "correct", "remove", "reconcile", "transcribe", "mark",
+        ))
+        and any(token in text for token in ("bundle", "excerpt", "source", "trace"))
+    )
 
 
 def _asks_named_topic_fit_boundary(text: str) -> bool:
@@ -338,8 +340,8 @@ def _source_has_result_statistic(row: dict[str, Any]) -> bool: return not protoc
 
 
 def _label(row: dict[str, Any]) -> str:
-    return str(row.get("citation_token") or row.get("cited_as") or
-               row.get("body_citation") or row.get("receipt_id") or "").strip()
+    return str(row.get("citation_token") or row.get("cited_as") or row.get("body_citation")
+               or row.get("receipt_id") or "").strip()
 
 
 def _findings_map(paper_md: str) -> str:
@@ -388,22 +390,18 @@ def _prose_paragraphs(text: str) -> list[str]:
     ]
 
 
-def _row_evidence(row: dict[str, Any]) -> str:
-    return " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
+def _row_evidence(row: dict[str, Any]) -> str: return " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
 
 
 def traceable_p_values(row: dict[str, Any]) -> tuple[str, ...]:
     values = row.get("p_values")
-    return tuple(
-        value for raw in values if (value := str(raw).strip()) and _stat_supported(value, row)
-    ) if isinstance(values, list) else ()
+    return tuple(value for raw in values if (value := str(raw).strip())
+                 and _stat_supported(value, row)) if isinstance(values, list) else ()
 
 
 def _traceable_effect_statistics(row: dict[str, Any]) -> tuple[str, ...]:
-    return tuple(dict.fromkeys(
-        match.group(0) for match in _EFFECT_STAT_RE.finditer(_row_evidence(row))
-        if _stat_supported(match.group(0), row)
-    ))
+    return tuple(dict.fromkeys(match.group(0) for match in _EFFECT_STAT_RE.finditer(
+        _row_evidence(row)) if _stat_supported(match.group(0), row)))
 
 
 def resolved_effect_direction(row: dict[str, Any]) -> str:
@@ -434,7 +432,7 @@ def _numbers(text: str) -> tuple[str, ...]:
 def _stat_supported(stat: str, row: dict[str, Any]) -> bool:
     evidence = _row_evidence(row).casefold().replace("–", "-")
     evidence_numbers = set(_numbers(evidence))
-    metric = next((token for token in ("nnt", "hr", "or", "rr", "ci", "p", "%") if token in stat.casefold()), "")
+    metric = next((token for token in ("smd", "nnt", "hr", "or", "rr", "md", "ci", "p", "%") if token in stat.casefold()), "")
     metric_present = metric == "%" and "%" in evidence or bool(metric and re.search(rf"\b{re.escape(metric)}\b", evidence))
     p_relations = _p_relations(stat)
     return (not p_relations or set(p_relations) <= set(_p_relations(evidence))) and metric_present and all(
@@ -639,8 +637,7 @@ def _subset_scope_is_stated(paper_md: str, rows: Sequence[dict[str, Any]]) -> bo
     return _normalise(_SUBSET_NOTE) in _normalise(paper_md) and _findings_map_is_exact(paper_md, rows)
 
 
-def _mention_key(text: str) -> str:
-    return _normalise(re.sub(r"\bet\s+al\.?", "", text, flags=re.I))
+def _mention_key(text: str) -> str: return _normalise(re.sub(r"\bet\s+al\.?", "", text, flags=re.I))
 
 
 def _named_rows(ask: str, rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -735,18 +732,20 @@ def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tupl
         detail = f"reviewer-reconciled direction={direction} is used consistently; endpoint-specific findings remain separately qualified."
     elif kind == "statistic":
         stats = () if "no numerics" in _normalise(ask) and not _source_has_result_statistic(row) else _consistency.preferred_replacement_statistics(ask, _traceable_effect_statistics(row))
-        if re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
+        all_requested = any(token in _normalise(ask) for token in ("transcribe", "numeric", "numerics", "smd"))
+        if not all_requested and re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
             statistic_kind = "p-value"
             stats = tuple(stat for stat in stats if stat.lower().startswith("p"))
-        elif "effect estimate" in ask.lower():
+        elif not all_requested and "effect estimate" in ask.lower():
             statistic_kind = "effect estimate"
             stats = tuple(stat for stat in stats if not stat.lower().startswith("p"))
         else:
             statistic_kind = "exact statistic"
         marker = f"Source-statistic reconciliation ({label}; {statistic_kind}):"
+        rendered = ", ".join(stats) if all_requested else stats[0] if stats else ""
         finding = (
-            f"{label} [bundle:{index}] retains {stats[0]} as bundle-traceable"
-            if stats
+            f"{label} [bundle:{index}] retains {rendered} as bundle-traceable"
+            if rendered
             else f"{label} has no bundle-traceable exact statistic"
             + (" and remains evidence-pending" if _evidence_pending_requested(ask) else "")
         )

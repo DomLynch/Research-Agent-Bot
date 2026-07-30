@@ -4178,12 +4178,13 @@ def _phase_d_tensions_and_gaps_breadth(
             or "surfaced tension" in lower
             or "pairwise disagreement" in lower
             or "tension count" in lower
+            or "non-orthogonal dyad" in lower
         )
         and any(token in lower for token in (
             "substantiated", "enumerated", "actually-surfaced",
             "actually surfaced", "correct", "replace", "specific",
             "named sources", "enumerate", "where the disagreements lie",
-            "audit", "define", "tally",
+            "audit", "define", "definition", "operational", "tally",
         ))
     )
     if "tensions and gaps" not in lower and "0 cross-study disagreements" not in lower and not asks_count_evidence:

@@ -220,6 +220,8 @@ def test_section_includes_research_contribution_layer() -> None:
         receipts, _matrix(receipts), _thesis(), topic="metformin",
     )
     assert "### Boundary-Condition Matrix" in md
+    assert "source counts are cumulative within each outcome class" in md
+    assert "reconcile to the Results outcome-class roster" in md
     assert "### Evidence-Gap Priority" in md
     assert "### Next-Study Design Recommendation" in md
     assert "| cognitive | 0 | 1 |" in md

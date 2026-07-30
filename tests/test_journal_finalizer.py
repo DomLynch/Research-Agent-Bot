@@ -3235,8 +3235,8 @@ def test_tension_count_revision_renders_dyad_rule_and_outcome_tally(
     (tmp_path / "manifest.json").write_text('{"receipts": []}')
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({
         "feedback": (
-            "Define and audit the pairwise disagreement tension count; "
-            "state the dyad rule and per-outcome tally."
+            "Provide a one-sentence operational definition of a non-orthogonal dyad "
+            "and state the per-outcome tally."
         ),
     }))
     (tmp_path / "audit" / "tension_elaboration_plans.json").write_text(
