@@ -1132,7 +1132,10 @@ def _asks_replaced_surface_tensions(text: str) -> bool:
 
 
 def _asks_internal_duplication(text: str) -> bool:
-    return any(token in text for token in ("internal duplication", "repetitive narrative", "verbatim repetition", "non-repetitive", "duplicate sentence"))
+    return any(token in text for token in (
+        "internal duplication", "repetitive narrative", "verbatim repetition",
+        "non-repetitive", "duplicate sentence", "near-duplicate", "near duplicate",
+    ))
 
 
 def _asks_long_term_safety_scope(text: str) -> bool:
@@ -1554,7 +1557,7 @@ def _replaced_surface_tensions_are_stated(
 
 def _internal_duplication_scope(paper_md: str, ask: str) -> str:
     names = (
-        "Evidence Landscape", "Key Findings", "Results", "Full Manuscript",
+        "Abstract", "Evidence Landscape", "Key Findings", "Results", "Full Manuscript",
         "Gaps Identified", "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
     )
     sections = []
@@ -1574,7 +1577,7 @@ def repair_internal_duplication(paper_md: str, ask: str) -> tuple[str, int]:
     if not _asks_internal_duplication(" ".join(ask.lower().split())):
         return paper_md, 0
     names = (
-        "Evidence Landscape", "Key Findings", "Results", "Gaps Identified",
+        "Abstract", "Evidence Landscape", "Key Findings", "Results", "Gaps Identified",
         "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
     )
     targets = {name for name in names if name.lower() in ask.lower()}
@@ -1648,7 +1651,16 @@ def _internal_duplication_is_low(paper_md: str, ask: str = "") -> bool:
         if any(len(tokens & prior) / max(1, min(len(tokens), len(prior))) >= 0.75 for prior in seen):
             return False
         seen.append(tokens)
-    return True
+    if not all(token in ask for token in ("conclusion", "falsifiable")):
+        return True
+    conclusion = _section(paper_md, "Conclusion").lower()
+    return (
+        len(conclusion.split()) >= 40
+        and any(token in conclusion for token in (
+            "would require", "future evidence", "future conclusion",
+            "until then", "would be falsified", "testable",
+        ))
+    )
 
 
 def _long_term_safety_scope_is_stated(paper_md: str) -> bool:

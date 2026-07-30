@@ -1976,6 +1976,41 @@ def test_internal_duplication_repair_converges_and_is_idempotent() -> None:
     assert revision_coverage.repair_internal_duplication(fixed, ask) == (fixed, 0)
 
 
+def test_abstract_conclusion_resolution_ask_is_re_evaluated() -> None:
+    ask = (
+        "Tighten the Abstract vs Conclusion — they are near-duplicates. "
+        "Convert the Conclusion into a falsifiable resolution statement."
+    )
+    repeated = (
+        "The retained evidence remains mixed and supports only a bounded interpretation "
+        "of the intervention across heterogeneous populations and endpoints."
+    )
+    stale = f"## Abstract\n\n{repeated}\n\n## Conclusion\n\n{repeated}\n"
+    unresolved = (
+        f"## Abstract\n\n{repeated}\n\n## Conclusion\n\n"
+        "The evidence differs across populations, comparators, and follow-up "
+        "periods. Those differences support a bounded descriptive conclusion "
+        "and do not establish one pooled treatment effect across the included "
+        "studies, endpoints, or intervention schedules."
+    )
+    repaired = (
+        f"## Abstract\n\n{repeated}\n\n## Conclusion\n\n"
+        "The current evidence does not establish a general treatment effect across the "
+        "represented populations. A stronger future conclusion would require aligned "
+        "direct trials with durable clinical endpoints and prespecified comparators. "
+        "Until then, the interpretation remains a source-bounded evidence map rather "
+        "than a clinical recommendation or pooled efficacy estimate."
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(stale, [ask]) == [ask]
+    deduplicated, changed = revision_coverage.repair_internal_duplication(stale, ask)
+    assert changed == 1
+    assert deduplicated.count(repeated) == 1
+    assert revision_coverage.deterministic_unmet_asks(unresolved, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
 def test_detects_reviewer_request_to_replace_unclear_direction_codes() -> None:
     feedback = (
         "Integrate the positive/null MACE signals from the named studies rather "
