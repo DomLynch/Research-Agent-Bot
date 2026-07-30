@@ -126,6 +126,16 @@ RESEARKA_RECOMMENDED_SECTIONS = {
         "References",
     ),
 }
+_PUBLIC_CLAIM_SECTIONS = frozenset({"abstract", "key findings", "findings", "results", "conclusion"})
+_CLAIM_MARKERS = ("support", "suggest", "risk", "increase", "decrease", "null", "evidence")
+_GENERIC_EVIDENCE_WORDS = frozenset({
+    "about", "across", "evidence", "finding", "findings", "reported", "results",
+    "review", "source", "study", "studies", "support", "supports", "suggests", "trial",
+})
+_BUNDLE_REFERENCE_RE = re.compile(r"\[bundle:(\d+)\]", re.I)
+_NUMERIC_CITATION_RE = re.compile(r"\[((?:\d+[\s,;-]*)+)\]")
+_DOI_RE = re.compile(r"\b10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
+_PMID_RE = re.compile(r"\bPMID\s*:?\s*(\d+)\b", re.I)
 SUBMISSION_REQUIRED_FILES = (
     "full_paper.md",
     "manifest.json",
@@ -456,6 +466,130 @@ def _word_count(text: object) -> int:
     return len(str(text or "").split())
 
 
+def _claim_candidates(text: str) -> list[str]:
+    return [
+        clean for line in text.splitlines()
+        if len(clean := line.strip(" -*")) >= 80
+        and any(marker in clean.lower() for marker in _CLAIM_MARKERS)
+    ][:30]
+
+
+def _evidence_words(text: object) -> set[str]:
+    return {
+        word for word in re.findall(r"[a-z0-9]+", str(text or "").lower())
+        if len(word) >= 5 and word not in _GENERIC_EVIDENCE_WORDS
+    }
+
+
+def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
+    claim_words = _evidence_words(claim)
+    for key in ("quote", "evidence_span", "excerpt"):
+        evidence = " ".join(str(source.get(key) or "").lower().split())
+        if len(evidence) < 20:
+            continue
+        if evidence in claim.lower() or claim.lower() in evidence:
+            return True
+        required = min(4, max(2, (len(claim_words) + 4) // 5))
+        if len(claim_words & _evidence_words(evidence)) >= required:
+            return True
+    return False
+
+
+def _citation_indexes(text: str, bundle: list[dict[str, Any]]) -> set[int]:
+    lower = text.lower()
+    indexes = {int(value) - 1 for value in _BUNDLE_REFERENCE_RE.findall(text)}
+    indexes.update(
+        int(value) - 1 for group in _NUMERIC_CITATION_RE.findall(text)
+        for value in re.findall(r"\d+", group)
+    )
+    pmids = set(_PMID_RE.findall(text))
+    dois = {value.lower().rstrip(".,") for value in _DOI_RE.findall(text)}
+    for index, row in enumerate(bundle):
+        cited_as = str(row.get("cited_as") or "").strip().lower()
+        pmid = re.sub(r"\D", "", str(row.get("pmid") or ""))
+        doi = str(row.get("doi") or "").strip().lower().rstrip(".,")
+        spans = (str(row.get("quote") or "").strip(), str(row.get("evidence_span") or "").strip())
+        if (
+            cited_as and len(cited_as) >= 4 and cited_as in lower
+            or pmid and pmid in pmids
+            or doi and doi in dois
+            or any(len(span) >= 8 and span.lower() in lower for span in spans)
+        ):
+            indexes.add(index)
+    return {index for index in indexes if 0 <= index < len(bundle)}
+
+
+def _claim_trace_counts(
+    text: str, bundle: list[dict[str, Any]],
+) -> tuple[int, int, int]:
+    claims = _claim_candidates(text)
+    indexes = [_citation_indexes(claim, bundle) for claim in claims]
+    return (
+        len(claims),
+        sum(bool(values) for values in indexes),
+        sum(any(_evidence_aligns(claim, bundle[index]) for index in values)
+            for claim, values in zip(claims, indexes, strict=True)),
+    )
+
+
+def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -> str:
+    lines: list[str] = []
+    section = ""
+    for line in paper.splitlines():
+        if heading := re.match(r"^##\s+(.+?)\s*$", line):
+            section = heading.group(1).strip().lower()
+        clean = line.strip(" -*")
+        candidate = bool(_claim_candidates(clean))
+        if section in _PUBLIC_CLAIM_SECTIONS and not line.lstrip().startswith(("#", "|", "```")) and candidate:
+            if not _citation_indexes(clean, bundle):
+                aligned = [index for index, row in enumerate(bundle) if _evidence_aligns(clean, row)]
+                if aligned:
+                    def rank(index: int) -> tuple[int, bool, bool, int]:
+                        row = bundle[index]
+                        overlap = max(
+                            (len(_evidence_words(clean) & _evidence_words(row.get(key)))
+                             for key in ("quote", "evidence_span", "excerpt")),
+                            default=0,
+                        )
+                        return (
+                            overlap,
+                            str(row.get("directness") or "").lower().startswith("direct"),
+                            str(row.get("evidence_tier") or "").upper().startswith("A"),
+                            -index,
+                        )
+                    index = max(aligned, key=rank)
+                    marker = f"[bundle:{index + 1}]"
+                    terminal = re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", line)
+                    line = (
+                        f"{line[:terminal.start()]} {marker}{line[terminal.start():]}"
+                        if terminal else f"{line} {marker}"
+                    )
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def _researka_claim_trace_status(
+    payload: dict[str, Any], source_bundle: list[dict[str, Any]],
+) -> str:
+    sections_raw = payload.get("sections")
+    sections = sections_raw if isinstance(sections_raw, dict) else {}
+    major = [
+        str(value) for name, value in sections.items()
+        if str(name).strip().lower() in {"key findings", "findings", "results", "conclusion"}
+    ]
+    prose = "\n".join([str(payload.get("abstract") or ""), *major])
+    prose = "\n".join(line for line in prose.splitlines() if not line.lstrip().startswith("|"))
+    count, cited, aligned = _claim_trace_counts(prose, source_bundle)
+    if not count:
+        return "eligible"
+    required = (count * 4 + 4) // 5
+    return (
+        "eligible" if aligned >= required
+        else f"researka_claim_trace_insufficient:cited={cited}/{count},"
+        f"aligned={aligned}/{count},required={required}"
+    )
+
+
 def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     if article_type != DEFAULT_ARTICLE_TYPE:
@@ -499,6 +633,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
         )
         if body_words < min_body_words:
             return f"researka_preflight_body_words:{body_words} < {min_body_words}"
+    if (claim_trace_status := _researka_claim_trace_status(payload, source_bundle)) != "eligible":
+        return claim_trace_status
     if enforce_recency and (recency_status := _recency_ratio_status(payload)) != "eligible":
         return recency_status
     if (doi_status := _doi_existence_status(payload)) != "eligible":
@@ -1635,6 +1771,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         if span := _source_evidence_span(row):
             row["evidence_span"] = span
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
+    paper = _attach_aligned_claim_references(paper, source_bundle)
     _publication_evidence.attach_evidence_spans(paper, source_bundle)
     parts = _sections(paper)
     abstract = _section(paper, "Abstract", fallback=str(manifest.get("thesis") or ""))

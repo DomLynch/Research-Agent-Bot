@@ -1009,6 +1009,75 @@ def test_bundle_reference_marker_moves_legacy_suffix_and_preserves_markdown_link
     assert "[Smith 2026 [bundle:1]]" not in traced
 
 
+def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
+    bundle = [
+        {
+            "cited_as": f"Study {index} 2026",
+            "directness": "direct",
+            "evidence_tier": "A1",
+            "excerpt": (
+                f"Outcome {index} evidence showed a clinically bounded increase "
+                f"in biomarker {index} during the intervention period."
+            ),
+        }
+        for index in range(1, 6)
+    ]
+    lines = [
+        (
+            f"Outcome {index} evidence showed a clinically bounded increase in "
+            f"biomarker {index} during the intervention period."
+            + (" [bundle:1]" if index == 1 else "")
+        )
+        for index in range(1, 6)
+    ]
+    paper = "## Results\n\n" + "\n".join(lines)
+
+    repaired = daily._attach_aligned_claim_references(paper, bundle)
+    counts = daily._claim_trace_counts(
+        repaired.split("## Results\n\n", 1)[1], bundle,
+    )
+
+    assert counts == (5, 5, 5)
+    assert repaired.count("[bundle:") == 5
+    assert daily._attach_aligned_claim_references(repaired, bundle) == repaired
+
+    unsupported = (
+        "## Results\n\nThe evidence supports a clinically certain neurological benefit "
+        "that is absent from every retained source excerpt."
+    )
+    assert daily._attach_aligned_claim_references(unsupported, bundle) == unsupported
+    assert daily._claim_trace_counts(unsupported.split("\n\n", 1)[1], bundle) == (1, 0, 0)
+
+
+def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    claims = [
+        (
+            f"Outcome {index} evidence showed a clinically bounded increase in "
+            f"biomarker {index} during the intervention period."
+            + (f" [bundle:{index}]" if index <= 3 else "")
+        )
+        for index in range(1, 6)
+    ]
+    payload["sections"]["Results"] = "\n".join(claims)
+    for index, row in enumerate(payload["source_bundle"][:5], start=1):
+        row["excerpt"] = (
+            f"Independent trial evidence showed a clinically bounded increase in "
+            f"biomarker {index} during treatment."
+        )
+        row["evidence_span"] = row["excerpt"]
+
+    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == (
+        "researka_claim_trace_insufficient:cited=3/5,aligned=3/5,required=4"
+    )
+
+    payload["sections"]["Results"] = payload["sections"]["Results"].replace(
+        "intervention period.\nOutcome 5",
+        "intervention period. [bundle:4]\nOutcome 5",
+    )
+    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+
+
 def test_bundle_reference_marker_rebinds_after_canonical_source_sort() -> None:
     rows = [
         {"receipt_id": "old", "cited_as": "Old 2019", "source_year": 2019, "n_claims": 2},
@@ -1608,7 +1677,8 @@ def test_high_null_no_direct_abstract_bundle_blocks_without_generation_reconcili
 def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_path: Path, monkeypatch) -> None:
     run = _run(tmp_path)
     note = (
-        "Evidence-honesty note: 15/16 retained sources are coded as null or no extracted directional signal; "
+        "Evidence-honesty note for Topic: Source 0 2026 [bundle:1] reports that 15/16 retained sources "
+        "are coded as null or no extracted directional signal; "
         "this corpus is non-supportive for clinical efficacy claims and hypothesis-generating only. "
         "Source-bundle reconciliation note: Directional coding is conservative claim-level coding from extracted claim records, "
         "not a statement that the source texts contain no directional findings.\n\n"
@@ -1653,7 +1723,14 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",
-        lambda pmids: {pmid: f"BACKGROUND: Topic source {pmid} reports extractable outcome direction." for pmid in pmids},
+        lambda pmids: {
+            pmid: (
+                note.replace(" [bundle:1]", "").strip()
+                if pmid == "1000"
+                else f"BACKGROUND: Topic source {pmid} reports extractable outcome direction."
+            )
+            for pmid in pmids
+        },
     )
     submitted: list[dict[str, Any]] = []
 
