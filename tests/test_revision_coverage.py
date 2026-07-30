@@ -2005,8 +2005,9 @@ def test_abstract_conclusion_resolution_ask_is_re_evaluated() -> None:
     assert revision_coverage.deterministic_known_asks([ask]) == [ask]
     assert revision_coverage.deterministic_unmet_asks(stale, [ask]) == [ask]
     deduplicated, changed = revision_coverage.repair_internal_duplication(stale, ask)
-    assert changed == 1
+    assert changed == 2
     assert deduplicated.count(repeated) == 1
+    assert revision_coverage.deterministic_unmet_asks(deduplicated, [ask]) == []
     assert revision_coverage.deterministic_unmet_asks(unresolved, [ask]) == [ask]
     assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
 

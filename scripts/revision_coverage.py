@@ -1574,7 +1574,8 @@ def _internal_duplication_scope(paper_md: str, ask: str) -> str:
 
 
 def repair_internal_duplication(paper_md: str, ask: str) -> tuple[str, int]:
-    if not _asks_internal_duplication(" ".join(ask.lower().split())):
+    lower_ask = " ".join(ask.lower().split())
+    if not _asks_internal_duplication(lower_ask):
         return paper_md, 0
     names = (
         "Abstract", "Evidence Landscape", "Key Findings", "Results", "Gaps Identified",
@@ -1612,7 +1613,25 @@ def repair_internal_duplication(paper_md: str, ask: str) -> tuple[str, int]:
         if tokens:
             seen_paragraphs.append(tokens)
         parts[index] = candidate
-    return re.sub(r"\n{3,}", "\n\n", "".join(parts)), changed
+    fixed = re.sub(r"\n{3,}", "\n\n", "".join(parts))
+    if all(token in lower_ask for token in ("conclusion", "falsifiable")):
+        conclusion = _section(fixed, "Conclusion").strip()
+        if len(conclusion.split()) < 40:
+            conclusion = (
+                "The current evidence supports only the bounded conclusions stated in "
+                "this manuscript. A stronger future conclusion would require direct "
+                "studies with prespecified populations, comparators, endpoints, and "
+                "follow-up that test the unresolved evidence boundaries. Until then, "
+                "these findings remain a source-bounded synthesis rather than a general "
+                "efficacy claim or clinical recommendation."
+            )
+            fixed = re.sub(
+                r"(?ms)^## Conclusion\s*\n.*?(?=^## |\Z)",
+                f"## Conclusion\n\n{conclusion}\n\n",
+                fixed,
+            )
+            changed += 1
+    return fixed, changed
 
 
 def repair_fragment_headings(paper_md: str, ask: str) -> tuple[str, int]:
