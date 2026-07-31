@@ -372,6 +372,22 @@ def test_generated_suffix_terms_are_not_required_for_entity_specificity() -> Non
     )
 
 
+def test_biomedical_axis_does_not_hide_named_intervention() -> None:
+    topic = "liraglutide_cardiovascular_subgroups"
+    aliases = source_gate_aliases(topic, ("liraglutide cardiovascular subgroups",))
+
+    assert is_source_topic_specific(
+        topic,
+        "Effects of liraglutide on diastolic function in coronary artery disease",
+        aliases=aliases,
+    )
+    assert not is_source_topic_specific(
+        topic,
+        "Cardiovascular outcomes in adults with type 2 diabetes",
+        aliases=aliases,
+    )
+
+
 def test_compound_generated_topic_accepts_redundant_acronym_phrase() -> None:
     assert is_source_topic_specific(
         "immune_checkpoint_inhibitors_icis_rates",

@@ -25,7 +25,7 @@ PHRASE_FRAGMENT_WORDS = {
 
 BIOMED_ANCHORS = {
     "adult", "aged", "animal", "biomarker", "cell", "clinical", "cohort",
-    "disease", "health", "human", "inflammation", "intervention", "mice",
+    "cardiovascular", "disease", "health", "human", "inflammation", "intervention", "mice",
     "mouse", "patient", "randomized", "rat", "review", "trial",
 }
 SCOPE_TOKENS = {"age", "aging", "healthspan", "lifespan", "longevity"}
