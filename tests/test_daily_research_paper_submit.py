@@ -1126,6 +1126,20 @@ def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Pa
     assert daily._researka_quantitative_trace_status(payload, bundle) == "eligible"
 
 
+def test_quantitative_preflight_ignores_identifiers_and_corpus_accounting() -> None:
+    text = (
+        "GLP-1 therapies are used in type 2 diabetes.\n"
+        "This synthesis includes 19 sources.\n"
+        "The evidence tiers are A1 (n=7), B1 (n=3), and directness is direct (n=6).\n"
+        "The included sources document 2 population summaries."
+    )
+
+    assert daily._quantitative_claim_candidates(text) == []
+    assert daily._researka_quantitative_trace_status(
+        {"abstract": text, "sections": {}}, [],
+    ) == "eligible"
+
+
 def test_bundle_reference_marker_rebinds_after_canonical_source_sort() -> None:
     rows = [
         {"receipt_id": "old", "cited_as": "Old 2019", "source_year": 2019, "n_claims": 2},

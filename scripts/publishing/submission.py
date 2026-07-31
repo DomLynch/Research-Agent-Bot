@@ -133,6 +133,10 @@ _GENERIC_EVIDENCE_WORDS = frozenset({
     "about", "across", "evidence", "finding", "findings", "reported", "results",
     "review", "source", "study", "studies", "support", "supports", "suggests", "trial",
 })
+_CORPUS_ACCOUNTING_MARKERS = (
+    "retained reference papers", "included sources", "evidence tiers", "directness is",
+    "effect directions are", "cross-source tensions", "population summaries",
+)
 _BUNDLE_REFERENCE_RE = re.compile(r"\[bundle:(\d+)\]", re.I)
 _NUMERIC_CITATION_RE = re.compile(r"\[((?:\d+[\s,;-]*)+)\]")
 _DOI_RE = re.compile(r"\b10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
@@ -608,6 +612,7 @@ def _quantity_tokens(
     cleaned = _BUNDLE_REFERENCE_RE.sub(
         " ", _DOI_RE.sub(" ", _PMID_RE.sub(" ", _NUMERIC_CITATION_RE.sub(" ", text))),
     )
+    cleaned = re.sub(r"\btype\s+[12]\s+diabet(?:es|ic)\b|(?<=[A-Za-z])-\d+\b", " ", cleaned, flags=re.I)
     for source in sources or []:
         for field in ("doi", "cited_as"):
             value = str(source.get(field) or "").strip()
@@ -644,6 +649,7 @@ def _quantitative_claim_candidates(text: str) -> list[str]:
         part.strip()
         for part in re.split(r"\n+|(?<=[.!?])\s+", text)
         if len(part.strip()) >= 40 and _quantity_tokens(part)
+        and not any(marker in part.lower() for marker in _CORPUS_ACCOUNTING_MARKERS)
     ][:30]
 
 
