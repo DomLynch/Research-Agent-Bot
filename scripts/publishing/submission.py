@@ -1457,11 +1457,12 @@ def _receipt_evidence_excerpt(receipt: dict[str, Any], paper_text: str) -> str:
     if len(source) != 2:
         return ""
     paper_words = " ".join(re.findall(r"[a-z0-9]+", paper_text.lower()))
-    matches = [
-        excerpt.strip() for excerpt in source[1].split(" | ")
-        if len(excerpt.strip()) >= 20
-        and " ".join(re.findall(r"[a-z0-9]+", excerpt.lower())) in paper_words
-    ]
+    matches: list[str] = []
+    for excerpt in (part.strip() for part in source[1].split(" | ")):
+        words = " ".join(re.findall(r"[a-z0-9]+", excerpt.lower()))
+        anchor = " ".join(words.split()[:12])
+        if len(excerpt) >= 20 and (words in paper_words or len(anchor.split()) == 12 and anchor in paper_words):
+            matches.append(excerpt)
     return " ".join(matches[:2])[:900]
 
 

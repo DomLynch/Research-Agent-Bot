@@ -1220,14 +1220,19 @@ def test_evidence_spans_prefer_authoritative_source_text() -> None:
 def test_receipt_evidence_excerpt_uses_only_source_text_present_in_paper() -> None:
     receipt = {
         "thesis_text": (
-            "Study title — source excerpts: Exact result decreased risk by 12 percent. | "
+            "Study title — source excerpts: Exact source finding reduced cardiovascular risk in adults "
+            "with diabetes after long follow-up, while uncertainty remained high. | "
             "Unused result increased risk by 40 percent."
         ),
     }
-    paper = "## Results\n\nStudy 2025 reports: Exact result decreased risk by 12 percent."
+    paper = (
+        "## Results\n\nStudy 2025 reports: Exact source finding reduced cardiovascular risk "
+        "in adults with diabetes after long follow-up."
+    )
 
     assert daily._receipt_evidence_excerpt(receipt, paper) == (
-        "Exact result decreased risk by 12 percent."
+        "Exact source finding reduced cardiovascular risk in adults with diabetes after long "
+        "follow-up, while uncertainty remained high."
     )
 
 
