@@ -5903,6 +5903,8 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
         _g("refresh_public_exports_post_finalizer", 1, "DOCX, Typst, PaperIR, and export manifest rebuilt from final Markdown")
     if _refresh_audit_sidecar(out_dir):
         _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
+    if _script_module("paper_quality_runtime").refresh_publication_score(out_dir):
+        _g("refresh_publication_score_post_finalizer", 1, "publication score refreshed against post-finalizer manuscript")
     n_resolved = 0
     try:
         n_resolved = int(importlib.import_module("scripts.run_v06_synthesis")._resolve_absent_reviewer_p1s(out_dir))

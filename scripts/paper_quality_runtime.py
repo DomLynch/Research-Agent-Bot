@@ -50,6 +50,42 @@ def _has_clinical_practice_boundary(text: str) -> bool:
     )
 
 
+def refresh_publication_score(out_dir: Path) -> bool:
+    """Refresh prose- and audit-derived score inputs after finalization."""
+    path = next((p for p in (
+        out_dir / "audit" / "publication_score.json",
+        out_dir / "publication_score.json",
+    ) if p.is_file()), None)
+    paper_path = out_dir / "full_paper.md"
+    if path is None or not paper_path.is_file():
+        return False
+    try:
+        payload = json.loads(path.read_text())
+        inputs = dict(payload["inputs"])
+        paper_text = paper_path.read_text()
+        audit_path = out_dir / "full_paper.audit.json"
+        audit = json.loads(audit_path.read_text()) if audit_path.is_file() else None
+        template = evaluate_template_gate(paper_text, source=str(paper_path))
+        inputs.update(
+            has_limitations_section="## limitations" in paper_text.lower(),
+            has_clinical_practice_statement=_has_clinical_practice_boundary(paper_text),
+            template_language_blocking=template.template_language_blocking,
+        )
+        if isinstance(audit, dict):
+            inputs.update(numeric_coverage=_numeric_coverage(audit), audit_gates_passed=_audit_passed(audit))
+        score = score_publication(ScoreInputs(**inputs))
+    except (KeyError, OSError, TypeError, ValueError, json.JSONDecodeError):
+        return False
+    fresh = {"inputs": inputs, "result": dataclasses.asdict(score)}
+    if payload == fresh:
+        return False
+    path.write_text(json.dumps(fresh, indent=2))
+    for md in (out_dir / "publication_score.md", out_dir / "readable" / "publication_score.md"):
+        if md.exists():
+            md.write_text("# Publication Score\n\n" + score.summary + "\n")
+    return True
+
+
 def _parsed_text(parsed_dir: Path, paper_id: str) -> str:
     matches = list(parsed_dir.glob(f"{paper_id}.paper_sections.json"))
     if not matches:

@@ -392,6 +392,37 @@ def test_clinical_practice_boundary_rejects_promotional_mentions() -> None:
     )
 
 
+def test_refresh_publication_score_replaces_stale_clinical_boundary(tmp_path: Path) -> None:
+    score_dir = tmp_path / "audit"
+    score_dir.mkdir()
+    readable = tmp_path / "readable"
+    readable.mkdir()
+    stale_inputs = pqr.ScoreInputs(
+        n_receipts=19, n_outcome_classes=3, n_tensions=82,
+        rob_coverage=1.0, grade_coverage=1.0, numeric_coverage=1.0,
+        citation_registry_complete=True, audit_gates_passed=True,
+        template_language_blocking=False, field_engagements_supported=0,
+        field_engagements_total=5, has_explicit_thesis=True,
+        has_limitations_section=True, has_clinical_practice_statement=False,
+        unresolved_reviewer_p1_count=0,
+    )
+    inputs = pqr.dataclasses.asdict(stale_inputs)
+    stale = pqr.score_publication(stale_inputs)
+    (score_dir / "publication_score.json").write_text(json.dumps({
+        "inputs": inputs, "result": pqr.dataclasses.asdict(stale),
+    }))
+    (readable / "publication_score.md").write_text(stale.summary)
+    (tmp_path / "full_paper.md").write_text(
+        "## Limitations\n\nThis evidence cannot support a clinical recommendation.\n"
+    )
+
+    assert pqr.refresh_publication_score(tmp_path)
+    fresh = json.loads((score_dir / "publication_score.json").read_text())
+    assert fresh["inputs"]["has_clinical_practice_statement"] is True
+    assert fresh["result"]["verdict"] == "accept"
+    assert "ACCEPT - 28/30" in (readable / "publication_score.md").read_text()
+
+
 def test_write_final_quality_gates_emits_provenance_sidecar(tmp_path: Path) -> None:
     from agent.provenance_sidecar import verify_provenance_sidecar
     parsed = tmp_path / "parsed"

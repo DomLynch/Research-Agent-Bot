@@ -5,11 +5,32 @@ import importlib
 import re
 import time
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 
 from agent import journal_finalizer, revision_quality
 from agent.journal_surface_gate import evaluate_journal_surface
 from agent.sources.pubmed import pmid_rows_fingerprint
+
+
+def test_phase_g_refreshes_publication_score(monkeypatch: Any, tmp_path: Path) -> None:
+    original = journal_finalizer._script_module
+    calls: list[Path] = []
+
+    def refresh(path: Path) -> bool:
+        calls.append(path)
+        return True
+
+    def module(name: str) -> Any:
+        if name == "paper_quality_runtime":
+            return SimpleNamespace(refresh_publication_score=refresh)
+        return original(name)
+
+    monkeypatch.setattr(journal_finalizer, "_script_module", module)
+    logs = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
+
+    assert calls == [tmp_path]
+    assert any(log.rule == "refresh_publication_score_post_finalizer" for log in logs)
 
 
 def test_domain_frame_template_cleanup_removes_submit_blocked_aging_phrases() -> None:
