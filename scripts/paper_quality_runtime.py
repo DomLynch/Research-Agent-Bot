@@ -35,6 +35,21 @@ from agent.template_gate_adapter import evaluate_template_gate
 from agent.tension_elaboration import TensionRecord, select_top_tensions
 
 
+def _has_clinical_practice_boundary(text: str) -> bool:
+    """Recognize an explicit boundary on clinical use without requiring one phrase."""
+    practice = r"(?:clinical (?:practice|recommendation)|treatment guideline|off-label)"
+    boundary = r"(?:cannot|does not|do not|should not|insufficient to|unsupported for)"
+    lower = text.lower()
+    return bool(
+        re.search(rf"\b{boundary}\b[^.\n]{{0,180}}\b{practice}\b", lower)
+        or re.search(
+            r"\bnot (?:(?:intended )?(?:for use )?as )?(?:a )?"
+            r"(?:clinical recommendation|treatment guideline)\b",
+            lower,
+        )
+    )
+
+
 def _parsed_text(parsed_dir: Path, paper_id: str) -> str:
     matches = list(parsed_dir.glob(f"{paper_id}.paper_sections.json"))
     if not matches:
@@ -845,7 +860,7 @@ def write_final_quality_gates(
         field_engagements_total=len(field),
         has_explicit_thesis=bool(str(manifest.get("thesis") or "").strip()),
         has_limitations_section="## limitations" in text_lower,
-        has_clinical_practice_statement="should not be used off-label" in text_lower,
+        has_clinical_practice_statement=_has_clinical_practice_boundary(paper_text),
         unresolved_reviewer_p1_count=int((reviewer_patches or {}).get("unresolved_p1_count", 0)),
     )
     score = score_publication(score_inputs)

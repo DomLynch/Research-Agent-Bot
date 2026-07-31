@@ -161,8 +161,7 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     ]))
     paper = (
         "## Limitations\n\n"
-        "Pending further trials, rapamycin should not be used off-label "
-        "for healthspan extension outside clinical-trial settings.\n"
+        "This evidence cannot support a clinical recommendation for routine use.\n"
     )
     manifest = {
         "n_receipts": 40,
@@ -370,6 +369,27 @@ def test_write_quality_methods_emits_rob_consistency_sidecar(tmp_path: Path) -> 
     # `_overall` already derives worst-domain, so live data is internally
     # consistent — the sidecar is a forward guard, expected clean here.
     assert data["n_inconsistent"] == 0
+
+
+def test_clinical_practice_boundary_accepts_topic_neutral_guidance() -> None:
+    assert pqr._has_clinical_practice_boundary(
+        "This evidence cannot support a clinical recommendation for routine use."
+    )
+    assert pqr._has_clinical_practice_boundary(
+        "The synthesis is an evidence map, not a treatment guideline or efficacy claim."
+    )
+    assert pqr._has_clinical_practice_boundary(
+        "Pending further trials, rapamycin should not be used off-label."
+    )
+
+
+def test_clinical_practice_boundary_rejects_promotional_mentions() -> None:
+    assert not pqr._has_clinical_practice_boundary(
+        "These findings may inform clinical practice and treatment guidelines."
+    )
+    assert not pqr._has_clinical_practice_boundary(
+        "This is not only a clinical recommendation, but a treatment mandate."
+    )
 
 
 def test_write_final_quality_gates_emits_provenance_sidecar(tmp_path: Path) -> None:
