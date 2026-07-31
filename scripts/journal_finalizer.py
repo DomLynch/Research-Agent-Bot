@@ -306,6 +306,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     for phase in (_phase_m_strip_terminal_thesis_duplicates, lambda t: _phase_d_revision_surface_notes(t, out_dir, proactive=True), _phase_c_terminology):
         text, log = phase(text)
         entries.extend(log)
+    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
+    entries.extend(log)
     return text, entries
 
 

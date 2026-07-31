@@ -1988,6 +1988,42 @@ def test_run_text_phases_strips_thesis_duplicates_added_at_terminal_phase(
     assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
 
 
+def test_run_text_phases_strips_duplicate_added_by_final_surface_floor(
+    tmp_path: Path, monkeypatch: Any,
+) -> None:
+    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+
+    duplicate = (
+        "The retained corpus is interpreted as hypothesis-generating because it combines direct, "
+        "adjacent, and contextual sources across several cardiovascular outcome classes. This "
+        "paragraph deliberately contains enough distinct scientific tokens for a late surface-floor "
+        "restoration to reproduce the duplicate-paragraph failure seen in production."
+    )
+    calls = 0
+
+    def restore(text: str, _out_dir: Path, entries: list[Any], _entry_type: Any):
+        nonlocal calls
+        calls += 1
+        return (
+            text + "\n\n## Cross-Domain Synthesis\n\n" + duplicate
+            if calls == 5 else text,
+            entries,
+        )
+
+    monkeypatch.setattr(journal_finalizer.review_noise_control, "restore_surface_floors", restore)
+    paper = (
+        "## Abstract\n\n" + duplicate + "\n\n"
+        "## Results\n\nThe structured table separates direct and contextual evidence.\n"
+    )
+
+    fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
+
+    assert calls == 5
+    assert _duplicate_paragraph_issue_messages(fixed) == ()
+    assert fixed.count(duplicate) == 1
+    assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
+
+
 def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: Path) -> None:
     from agent.journal_surface_gate import evaluate_journal_surface
 
