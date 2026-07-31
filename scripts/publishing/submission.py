@@ -482,6 +482,7 @@ def _claim_candidates(text: str) -> list[str]:
         clean for line in text.splitlines()
         if len(clean := line.strip(" -*")) >= 80
         and any(marker in clean.lower() for marker in _CLAIM_MARKERS)
+        and "receipt-level direction is the coded finding" not in clean.lower()
     ][:30]
 
 
@@ -1451,6 +1452,19 @@ def _claim_excerpt(topic: str, receipt_id: str, *, limit: int = 2) -> str:
     return " ".join(sentences)[:900]
 
 
+def _receipt_evidence_excerpt(receipt: dict[str, Any], paper_text: str) -> str:
+    source = re.split(r"\bsource excerpts:\s*", str(receipt.get("thesis_text") or ""), maxsplit=1, flags=re.I)
+    if len(source) != 2:
+        return ""
+    paper_words = " ".join(re.findall(r"[a-z0-9]+", paper_text.lower()))
+    matches = [
+        excerpt.strip() for excerpt in source[1].split(" | ")
+        if len(excerpt.strip()) >= 20
+        and " ".join(re.findall(r"[a-z0-9]+", excerpt.lower())) in paper_words
+    ]
+    return " ".join(matches[:2])[:900]
+
+
 def _parsed_source_excerpt(topic: str, receipt_id: str) -> str:
     data = _read_json(ROOT / "docs" / "quality-reference" / topic / "parsed" / f"{receipt_id}.paper_sections.json")
     raw_sections = data.get("sections")
@@ -1500,6 +1514,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     rows = _publication_evidence.ordered_source_rows(
         _publication_evidence.source_rows(registry, receipts), receipts,
     )
+    paper_text = (run / "full_paper.md").read_text(encoding="utf-8")
     pubmed_abstracts = _pubmed_abstracts([str(row.get("source_pmid") or "") for row in rows[:limit]])
     rob_ratings = _publication_evidence.risk_of_bias_ratings(run)
     bundle = []
@@ -1507,9 +1522,12 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         receipt = receipts.get(str(row.get("receipt_id")), {})
         title = str(row.get("title") or receipt.get("source_title") or "Evidence receipt")[:300]
         claim_excerpt = _claim_excerpt(topic, str(row.get("receipt_id") or ""))
+        receipt_excerpt = _receipt_evidence_excerpt(receipt, paper_text)
         pmid = str(row.get("source_pmid") or "")
         excerpt = pubmed_abstracts.get(pmid) or _parsed_source_excerpt(topic, str(row.get("receipt_id") or ""))
-        quote = claim_excerpt if claim_excerpt and " ".join(claim_excerpt.lower().split()) in " ".join(excerpt.lower().split()) else None
+        quote = receipt_excerpt or (
+            claim_excerpt if claim_excerpt and " ".join(claim_excerpt.lower().split()) in " ".join(excerpt.lower().split()) else None
+        )
         receipt_id = str(row.get("receipt_id") or "")
         cited_as = str(row.get("body_citation") or "")
         rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)

@@ -1217,6 +1217,29 @@ def test_evidence_spans_prefer_authoritative_source_text() -> None:
     assert bundle[0]["evidence_span"] == source_text
 
 
+def test_receipt_evidence_excerpt_uses_only_source_text_present_in_paper() -> None:
+    receipt = {
+        "thesis_text": (
+            "Study title — source excerpts: Exact result decreased risk by 12 percent. | "
+            "Unused result increased risk by 40 percent."
+        ),
+    }
+    paper = "## Results\n\nStudy 2025 reports: Exact result decreased risk by 12 percent."
+
+    assert daily._receipt_evidence_excerpt(receipt, paper) == (
+        "Exact result decreased risk by 12 percent."
+    )
+
+
+def test_claim_candidates_ignore_internal_direction_coding_metadata() -> None:
+    line = (
+        "Study 2025 reports 25 extracted claims; receipt-level direction is the coded "
+        "finding; outcome=cardiometabolic; direction=unclear; directness=direct."
+    )
+
+    assert daily._claim_candidates(line) == []
+
+
 def test_load_bearing_source_span_ask_checks_outgoing_payload() -> None:
     ask = (
         "Provide substantive, non-placeholder evidence_span quotes for each load-bearing "
