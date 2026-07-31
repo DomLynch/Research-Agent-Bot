@@ -1170,6 +1170,8 @@ def _asks_internal_duplication(text: str) -> bool:
     return any(token in text for token in (
         "internal duplication", "repetitive narrative", "verbatim repetition",
         "non-repetitive", "duplicate sentence", "near-duplicate", "near duplicate",
+        "repetitive template", "template-style language", "template style language",
+        "source-by-source narration", "source by source narration",
     ))
 
 
@@ -1608,17 +1610,50 @@ def _internal_duplication_scope(paper_md: str, ask: str) -> str:
     return "\n\n".join(sections) if named else paper_md
 
 
+_RESULT_TRACE_RE = re.compile(
+    r"^[^\n]{1,160}\[bundle:\d+\]\s+reports:\s+.+\[exact source:\s*https?://[^\]]+\]\.\s*$",
+    re.I | re.S,
+)
+
+
+def _results_trace_paragraphs(paper_md: str) -> list[str]:
+    return [
+        part.strip() for part in re.split(r"\n\s*\n", _section(paper_md, "Results"))
+        if _RESULT_TRACE_RE.fullmatch(part.strip())
+    ]
+
+
+def _move_results_trace_dump(paper_md: str) -> tuple[str, int]:
+    traces = _results_trace_paragraphs(paper_md)
+    match = re.search(r"(?ms)^## Results\b(?P<body>.*?)(?=^## |\Z)", paper_md)
+    if len(traces) < 3 or not match:
+        return paper_md, 0
+    kept = [part.strip() for part in re.split(r"\n\s*\n", match.group("body")) if part.strip() and part.strip() not in traces]
+    fixed = paper_md[:match.start("body")] + "\n\n" + "\n\n".join(kept) + "\n\n" + paper_md[match.end("body"):].lstrip("\n")
+    existing = re.search(r"(?ms)^## Claim-to-Source Trace\b(?P<body>.*?)(?=^## |\Z)", fixed)
+    prior = [part.strip() for part in re.split(r"\n\s*\n", existing.group("body")) if part.strip()] if existing else []
+    if existing:
+        fixed = fixed[:existing.start()] + fixed[existing.end():].lstrip("\n")
+    block = "## Claim-to-Source Trace\n\n" + "\n\n".join(dict.fromkeys(prior + traces)) + "\n\n"
+    reference = re.search(r"^## References\b", fixed, re.M | re.I)
+    fixed = fixed[:reference.start()] + block + fixed[reference.start():] if reference else fixed.rstrip() + "\n\n" + block
+    return fixed, len(traces)
+
+
 def repair_internal_duplication(paper_md: str, ask: str) -> tuple[str, int]:
     lower_ask = " ".join(ask.lower().split())
     if not _asks_internal_duplication(lower_ask):
         return paper_md, 0
+    moved = 0
+    if "results" in lower_ask and "template" in lower_ask:
+        paper_md, moved = _move_results_trace_dump(paper_md)
     names = (
         "Abstract", "Evidence Landscape", "Key Findings", "Results", "Gaps Identified",
         "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
     )
     targets = {name for name in names if name.lower() in ask.lower()}
     parts = re.split(r"(\n\s*\n)", paper_md)
-    heading, changed = "", 0
+    heading, changed = "", moved
     seen_paragraphs: list[set[str]] = []
     seen_sentences: set[str] = set()
     for index in range(0, len(parts), 2):
@@ -1687,6 +1722,8 @@ def repair_fragment_headings(paper_md: str, ask: str) -> tuple[str, int]:
 
 
 def _internal_duplication_is_low(paper_md: str, ask: str = "") -> bool:
+    if "results" in ask and "template" in ask and len(_results_trace_paragraphs(paper_md)) >= 3:
+        return False
     seen: list[set[str]] = []
     seen_sentences: set[str] = set()
     for paragraph in re.split(r"\n\s*\n", _internal_duplication_scope(paper_md, ask)):

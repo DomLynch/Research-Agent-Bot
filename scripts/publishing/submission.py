@@ -1513,13 +1513,25 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         receipt_id = str(row.get("receipt_id") or "")
         cited_as = str(row.get("body_citation") or "")
         rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)
+        url = _citation_url(row) or _publication_evidence.parsed_source_url(ROOT, topic, receipt_id)
+        identity_text = " ".join(str(value or "") for value in (url, title))
+        registry_id = next((
+            str(row.get(key) or "").strip()
+            for key in ("registry_id", "canonical_trial_id", "trial_id", "nct")
+            if str(row.get(key) or "").strip()
+        ), None) or next(iter(re.findall(r"\b(?:NCT\d{8}|ISRCTN\d{8}|ACTRN\d{14})\b", identity_text, re.I)), None)
+        openalex_id = str(row.get("source_openalex_id") or row.get("openalex_id") or "").strip() or None
+        if not openalex_id and (match := re.search(r"(?:https?://openalex\.org/)?\b(W\d+)\b", identity_text, re.I)):
+            openalex_id = match.group(1).upper()
         bundle.append({
             "source_type": "pubmed" if row.get("source_pmid") else "corpus",
             "id": str(row.get("source_pmid") or row.get("source_pmcid") or row.get("reference_id") or row.get("receipt_id") or ""),
             "title": title,
-            "url": _citation_url(row) or _publication_evidence.parsed_source_url(ROOT, topic, receipt_id),
+            "url": url,
             "doi": _clean_doi(row.get("source_doi")) or None,
             "pmid": str(row.get("source_pmid") or "") or None,
+            "openalex_id": openalex_id,
+            "registry_id": registry_id.upper() if registry_id else None,
             "excerpt": excerpt,
             "quote": quote,
             "year": row.get("source_year") if isinstance(row.get("source_year"), int) else None,
@@ -1554,6 +1566,15 @@ def _has_stable_source_locator(row: dict[str, Any]) -> bool:
     url = urllib.parse.urlparse(str(row.get("url") or "").strip())
     pmid = str(row.get("pmid") or (row.get("id") if row.get("source_type") == "pubmed" else "")).strip()
     return bool(re.fullmatch(r"10\.\d{4,9}/\S+", doi, flags=re.I) or pmid.isdigit() or url.scheme in {"http", "https"} and url.netloc)
+
+
+def _has_registered_source_locator(row: dict[str, Any]) -> bool:
+    return bool(
+        re.fullmatch(r"10\.\d{4,9}/\S+", _clean_doi(row.get("doi")), flags=re.I)
+        or re.fullmatch(r"\d{4,12}", str(row.get("pmid") or ""))
+        or re.fullmatch(r"(?:https?://openalex\.org/)?W\d+", str(row.get("openalex_id") or ""), re.I)
+        or re.fullmatch(r"[A-Za-z][A-Za-z0-9._/-]{3,127}", str(row.get("registry_id") or ""))
+    )
 
 
 def _has_authoritative_excerpt(row: dict[str, Any]) -> bool:
@@ -1657,6 +1678,13 @@ def _source_bundle_reconciliation_status(payload: dict[str, Any]) -> str:
     missing_context = sum(_row_context(row) not in SOURCE_CONTEXTS for row in bundle)
     if missing_context:
         return f"source_bundle_missing_context:{missing_context}/{len(bundle)}"
+    unregistered_primary = sum(
+        str(row.get("evidence_type") or "").lower() == "primary"
+        and not _has_registered_source_locator(row)
+        for row in bundle
+    )
+    if unregistered_primary:
+        return f"source_bundle_unregistered_primary_sources:{unregistered_primary}/{len(bundle)}"
     unverified_direct = sum(
         _row_context(row) == "direct"
         and (not str(row.get("excerpt") or "").strip() or not _has_stable_source_locator(row))

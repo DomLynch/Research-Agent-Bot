@@ -146,7 +146,7 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
             "reference_id": f"R{idx:02d}",
             "source_year": 2026,
             "source_doi": "10.1/x" if idx == 1 else f"10.1/{idx}",
-            "source_pmid": str(123 + idx),
+            "source_pmid": str(9123 + idx),
         }
         for idx, row in enumerate(receipts, start=1)
     })
@@ -180,7 +180,7 @@ def _retopic(run: Path, topic: str) -> None:
             "reference_id": f"R{idx:02d}",
             "source_year": 2026,
             "source_doi": f"10.1/{topic}.{idx}",
-            "source_pmid": str(123 + idx),
+            "source_pmid": str(9123 + idx),
         }
         for idx, row in enumerate(receipts, start=1)
     })
@@ -398,9 +398,9 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
         lambda pmids: {
                 pmid: (
                     "Laparoscopic donor nephrectomy perioperative outcomes."
-                    if pmid == "124"
+                    if pmid == "9124"
                     else "Dietary protein timing in older adults."
-                    if pmid == "125"
+                    if pmid == "9125"
                     else "Aspirin trial reports cardiovascular prevention outcomes."
                     if int(pmid) >= 9000
                     else "Low-dose naltrexone was evaluated in adults with chronic pain."
@@ -954,11 +954,31 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     row = payload["source_bundle"][0]
 
     assert row["url"] == "https://clinicaltrials.gov/study/NCT01234567"
+    assert row["registry_id"] == "NCT01234567"
     assert row["excerpt"] == "The trial reported a source-linked quantitative result."
     assert row["quote"] == "The trial reported a source-linked quantitative result."
     assert row["risk_of_bias"] == "some_concerns"
     assert "[bundle:1]" in payload["body_markdown"]
     assert row["evidence_span"] in payload["body_markdown"]
+
+
+def test_primary_source_without_registered_identity_fails_local_preflight(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    receipt_id = "topic_effect_0"
+    registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
+    registry[receipt_id].update({"source_doi": "", "source_pmid": "", "source_pmcid": ""})
+    _write_json(run / "citation_registry.json", registry)
+    parsed = daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed"
+    _write_json(parsed / f"{receipt_id}.paper_sections.json", {
+        "source_pdf": "https://example.org/trial-report",
+        "sections": {"abstract": "The primary trial reported an authoritative endpoint result."},
+    })
+
+    status = daily._researka_preflight_status(daily.build_payload(run))
+
+    assert status == "source_bundle_unregistered_primary_sources:1/12"
+    assert not daily._has_registered_source_locator({"pmid": "1"})
+    assert not daily._has_registered_source_locator({"registry_id": "bad id"})
 
 
 def test_source_bundle_excludes_notice_only_record(tmp_path: Path) -> None:

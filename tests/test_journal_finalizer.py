@@ -7136,6 +7136,38 @@ def test_multi_issue_reviewer_revision_repairs_and_verifies_all_requirements(tmp
     )
 
 
+def test_results_template_cleanup_moves_audit_dump_out_of_narrative() -> None:
+    ask = (
+        "Clean up the Results section to remove repetitive template-style language and ensure "
+        "a smoother narrative flow between the quantitative tables and the prose analysis."
+    )
+    traces = [
+        f"Study {index} 2026 [bundle:{index}] reports: Endpoint {index} changed by {index}% "
+        f"[exact source: https://doi.org/10.1234/{index}]."
+        for index in range(1, 5)
+    ]
+    paper = (
+        "## Results\n\n| Outcome | Finding |\n|---|---|\n| Biomarker | Mixed |\n\n"
+        "The retained evidence is heterogeneous across endpoints.\n\n"
+        + "\n\n".join(traces)
+        + "\n\n## Discussion\n\nInterpretation remains bounded.\n\n"
+        + "## Claim-to-Source Trace\n\n" + traces[0]
+        + "\n\n## References\n\nReferences.\n"
+    )
+
+    fixed, changed = journal_finalizer.revision_coverage.repair_internal_duplication(paper, ask)
+    results = fixed.split("## Results", 1)[1].split("## Discussion", 1)[0]
+
+    assert changed == 4
+    assert "reports:" not in results
+    assert fixed.count("## Claim-to-Source Trace") == 1
+    assert all(trace in fixed for trace in traces)
+    assert fixed.count(traces[0]) == 1
+    assert journal_finalizer.revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert journal_finalizer.revision_coverage.repair_internal_duplication(fixed, ask) == (fixed, 0)
+
+
 def test_structured_revision_feedback_is_not_truncated() -> None:
     required = ["A" * 4100, "Ensure the final requirement is repaired."]
 
