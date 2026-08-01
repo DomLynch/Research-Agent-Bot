@@ -1,21 +1,4 @@
-"""Effect-size normalization primitives from raw study reports to EffectRow.
-
-Phase 5 upstream complement to `agent.meta_analysis`. Stdlib-only.
-
-Bridges the typical reporting shapes (per-arm mean+SD+n; per-arm events+n;
-or pre-computed effect+SE) into the `EffectRow` shape the pooler consumes.
-Strict construction-time validation; fail-closed on degenerate inputs.
-
-Supported metrics:
-  - "MD"     mean difference for continuous outcomes.
-  - "log_RR" log risk ratio for binary outcomes.
-  - "log_OR" log odds ratio for binary outcomes.
-  - passthrough for any metric label when effect+SE are pre-computed.
-
-No continuity correction is applied for zero-event arms; callers must
-apply Haldane (+0.5) or pseudo-count corrections upstream and pass the
-adjusted counts. Failing closed beats silently injecting a correction.
-"""
+"""Normalize supported study-report shapes into validated EffectRows."""
 from __future__ import annotations
 
 import math
@@ -267,6 +250,9 @@ def normalize_record(record: dict) -> EffectRow:
             metric=str(record["metric"]),
         )
     if has_continuous:
+        metric = str(record.get("metric") or "md").strip().lower()
+        if metric != "md":
+            raise ValueError(f"unsupported continuous metric: {metric!r}")
         return normalize_md(RawContinuous(
             study_id=study_id,
             mean_t=float(record["mean_t"]), sd_t=float(record["sd_t"]),
@@ -280,10 +266,16 @@ def normalize_record(record: dict) -> EffectRow:
             events_t=int(record["events_t"]), n_t=int(record["n_t"]),
             events_c=int(record["events_c"]), n_c=int(record["n_c"]),
         )
-        if str(record.get("metric") or "").lower() == "log_or":
+        metric = str(record.get("metric") or "log_rr").strip().lower()
+        if metric == "log_or":
             return normalize_log_or(raw)
-        return normalize_log_rr(raw)
+        if metric == "log_rr":
+            return normalize_log_rr(raw)
+        raise ValueError(f"unsupported binary metric: {metric!r}")
     if has_hr:
+        metric = str(record.get("metric") or "log_hr").strip().lower()
+        if metric != "log_hr":
+            raise ValueError(f"unsupported hazard-ratio metric: {metric!r}")
         return normalize_log_hr(RawHazardRatio(
             study_id=study_id,
             hr=float(record["hr"]),

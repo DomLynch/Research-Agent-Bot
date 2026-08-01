@@ -30,7 +30,6 @@ from agent.forest_plot_svg import render_forest_plot_svg
 from agent.meta_analysis import EffectRow, pool_random_effects
 from agent.publication_scorer import ScoreInputs, score_publication
 from agent.quality_methods_bundle import build_quality_methods_bundle
-from agent.risk_of_bias_schema import DOMAINS_BY_TOOL
 from agent.template_gate_adapter import evaluate_template_gate
 from agent.tension_elaboration import TensionRecord, select_top_tensions
 
@@ -102,107 +101,37 @@ def _parsed_text(parsed_dir: Path, paper_id: str) -> str:
     return json.dumps(data).lower()
 
 
-def _design_for_receipt(receipt: dict[str, Any], source_text: str) -> str:
-    tier = str(receipt.get("evidence_tier") or "").upper()
-    directness = str(receipt.get("directness") or "").lower()
-    identity = " ".join(str(receipt.get(k) or "") for k in ("paper_id", "receipt_id")).lower()
-    if directness == "mechanistic" or tier.startswith("C") or any(
-        token in source_text + " " + identity
-        for token in (" mice ", " mouse ", " murine ", " rat ", " drosophila ", " c. elegans ")
-    ):
-        return "animal"
-    if directness == "direct" and tier.startswith("A"):
-        return "rct"
-    return "observational"
-
-
-def _rating_for_domain(design: str, domain: str, source_text: str) -> str:
-    if design == "rct":
-        if domain == "randomization":
-            return "low" if "random" in source_text else "some_concerns"
-        if domain == "deviations":
-            return "low" if "double-blind" in source_text or "placebo" in source_text else "some_concerns"
-        if domain in {"missing_data", "selective_reporting"}:
-            return "some_concerns"
-        return "low" if "blinded" in source_text else "some_concerns"
-    if design == "observational":
-        if domain == "confounding":
-            return "some_concerns"
-        if domain == "selection":
-            return "some_concerns"
-        return "low" if domain in {"intervention_classification", "selective_reporting"} else "some_concerns"
-    if domain in {"sequence_generation", "random_housing", "blinding"}:
-        return "unclear"
-    return "some_concerns"
-
-
-def _overall(ratings: list[str]) -> str:
-    if "high" in ratings:
-        return "high"
-    if "some_concerns" in ratings or "unclear" in ratings:
-        return "some_concerns"
-    return "low"
+def _validated_assessment(
+    receipt: dict[str, Any], key: str,
+) -> dict[str, Any] | None:
+    wrapper = receipt.get(key)
+    if not isinstance(wrapper, dict) or wrapper.get("validated") is not True:
+        return None
+    assessment = wrapper.get("assessment")
+    return dict(assessment) if isinstance(assessment, dict) else None
 
 
 def build_quality_method_payloads(
     receipts: list[dict[str, Any]], parsed_dir: Path
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    del parsed_dir
     rob_payload: list[dict[str, Any]] = []
-    by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    grade_by_outcome: dict[str, dict[str, Any]] = {}
     for receipt in receipts:
-        paper_id = str(receipt.get("paper_id") or receipt.get("receipt_id") or "")
-        source_text = _parsed_text(parsed_dir, paper_id)
-        design = _design_for_receipt(receipt, source_text)
-        tool = {"rct": "rob2", "observational": "robins_i", "animal": "syrcle"}[design]
-        domains = []
-        ratings = []
-        for domain in DOMAINS_BY_TOOL[tool]:
-            rating = _rating_for_domain(design, domain, source_text)
-            ratings.append(rating)
-            domains.append({
-                "domain": domain,
-                "rating": rating,
-                "rationale": (
-                    f"Automated preliminary rating from accepted receipt metadata "
-                    f"(design={design}, tier={receipt.get('evidence_tier')}, "
-                    f"directness={receipt.get('directness')})."
-                ),
-            })
-        rob_payload.append({
-            "study_id": str(receipt.get("citation_token") or paper_id),
-            "design": design,
-            "tool": tool,
-            "overall_rating": _overall(ratings),
-            "domains": domains,
-            "notes": "Preliminary automated assessment; source-linked receipt remains the trace unit.",
-        })
-        by_outcome[str(receipt.get("outcome_class") or "other")].append({
-            **receipt, "design": design, "overall_rating": _overall(ratings),
-        })
-
-    grade_payload: list[dict[str, Any]] = []
-    for outcome, rows in sorted(by_outcome.items()):
-        designs = {r["design"] for r in rows}
-        directions = {str(r.get("effect_direction") or "unclear").lower() for r in rows}
-        directness = {str(r.get("directness") or "").lower() for r in rows}
-        start = "high" if "rct" in designs else "low"
-        downgrades: list[dict[str, Any]] = []
-        if any(r.get("overall_rating") != "low" for r in rows):
-            downgrades.append({"reason": "rob", "levels": 1, "rationale": "At least one contributing receipt has non-low automated RoB."})
-        if len(directions - {"unclear"}) > 1:
-            downgrades.append({"reason": "inconsistency", "levels": 1, "rationale": "Contributing receipts do not share a single effect direction."})
-        if directness - {"direct"}:
-            downgrades.append({"reason": "indirectness", "levels": 1, "rationale": "Outcome includes indirect or mechanistic receipts."})
-        if len(rows) < 3:
-            downgrades.append({"reason": "imprecision", "levels": 1, "rationale": "Fewer than three accepted receipts in this outcome class."})
-        grade_payload.append({
-            "outcome": outcome,
-            "starting_certainty": start,
-            "downgrades": downgrades,
-            "upgrades": [],
-            "notes": f"Generated from {len(rows)} accepted receipt(s).",
-        })
-    return rob_payload, grade_payload
+        identities = {
+            str(receipt.get(field) or "").strip().casefold()
+            for field in ("citation_token", "paper_id", "receipt_id")
+        } - {""}
+        if (rob := _validated_assessment(receipt, "risk_of_bias_assessment")) and str(
+            rob.get("study_id") or ""
+        ).strip().casefold() in identities:
+            rob_payload.append(rob)
+        outcome = str(receipt.get("outcome_class") or "other")
+        if (grade := _validated_assessment(receipt, "grade_assessment")) and str(
+            grade.get("outcome") or ""
+        ).strip().casefold() == outcome.casefold():
+            grade_by_outcome.setdefault(outcome.casefold(), grade)
+    return rob_payload, list(grade_by_outcome.values())
 
 
 def _write_rob_consistency_sidecar(out_dir: Path, rob_payload: list[dict[str, Any]]) -> None:
@@ -322,6 +251,7 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
     (out_dir / "grade_assessment.json").write_text(json.dumps(grade_payload, indent=2))
     (out_dir / "quality_methods.md").write_text(bundle.markdown)
     summary = {
+        "appraisal_status": "Appraised" if rob_payload or grade_payload else "NotAppraised",
         "rob_coverage": bundle.rob_coverage,
         "grade_coverage": bundle.grade_coverage,
         "receipt_count": bundle.receipt_count,
@@ -343,7 +273,8 @@ def render_quality_section_for_paper(bundle: Any) -> str:
         "study-level overall rating and outcome-level certainty label; the "
         "full domain table is preserved in `quality_methods.md`."
         if has_rob or has_grade
-        else "No populated public risk-of-bias or GRADE rows were available "
+        else "Formal appraisal status: NotAppraised. No validated public "
+        "risk-of-bias or GRADE rows were available "
         "for this run. Interpretation therefore remains bounded by source "
         "tier, directness, and receipt traceability rather than formal "
         "RoB/GRADE appraisal."
@@ -399,13 +330,25 @@ def _effect_rows_from_claims(receipts: list[dict[str, Any]], quant_dir: Path) ->
             claims = json.loads(path.read_text()).get("claims", [])
         except (OSError, json.JSONDecodeError, AttributeError):
             continue
-        outcome = str(receipt.get("outcome_class") or "other")
         study = str(receipt.get("citation_token") or paper_id)
         for claim in claims:
+            contract = claim.get("pooling_contract")
+            required = (
+                "intervention", "comparator", "population", "endpoint",
+                "unit", "follow_up", "estimator",
+            )
+            if not isinstance(contract, dict) or any(
+                not str(contract.get(field) or "").strip() for field in required
+            ):
+                continue
             text = " ".join(str(claim.get(k) or "") for k in ("raw_text", "sentence"))
             matches = (("MD", _MD_RE.search(text)), ("log_OR", _OR_RE.search(text)))
             for metric, match in matches:
-                if not match or study in groups[f"{outcome}:{metric}"]:
+                estimator = str(contract["estimator"]).strip().casefold()
+                if not match or estimator != metric.casefold():
+                    continue
+                group = "|".join(str(contract[field]).strip().casefold() for field in required)
+                if study in groups[group]:
                     continue
                 effect, lo, hi = (float(v) for v in match.groups())
                 if metric == "log_OR":
@@ -416,7 +359,7 @@ def _effect_rows_from_claims(receipts: list[dict[str, Any]], quant_dir: Path) ->
                     lo, hi = hi, lo
                 se = (hi - lo) / (2 * z)
                 if se > 0 and math.isfinite(se):
-                    groups[f"{outcome}:{metric}"][study] = EffectRow(study, effect, se, 1, metric)
+                    groups[group][study] = EffectRow(study, effect, se, 1, metric)
     return {key: list(value.values()) for key, value in groups.items()}
 
 

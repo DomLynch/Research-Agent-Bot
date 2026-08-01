@@ -17,6 +17,8 @@ from pathlib import Path
 from types import SimpleNamespace
 from typing import Any, cast
 
+import httpx
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
@@ -37,6 +39,10 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
 )
 from agent import revision_consistency as _revision_consistency, revision_quality as _revision_quality  # noqa: E402
 from agent.source_hygiene import is_notice_only_source_title  # noqa: E402
+from agent.manuscript_prisma import (  # noqa: E402
+    FrozenRetrievalRecord,
+    frozen_retrieval_record,
+)
 from agent.revision_evidence import (  # noqa: E402
     SNAPSHOT_DIR,
     create_revision_evidence_snapshot,
@@ -159,6 +165,26 @@ _ACTIVE_TOPIC: str = ""
 # scripts/final_consistency_audit.py:_check_numeric_role_guard) can
 # resolve receipt → quant_claims via the same global.
 _ACTIVE_MANIFEST: dict | None = None
+
+_EVIDENCE_OWNED_SECTIONS = frozenset({
+    "Results", "Cross-Domain Synthesis", "Discussion", "Conclusion",
+})
+_REQUIRED_FINAL_JSON_ARTIFACTS = (
+    "manifest.json",
+    "citation_registry.json",
+    "full_paper.audit.json",
+    "full_paper.journal_surface.json",
+    "pre_submit_gate.json",
+    "artifact_consistency.json",
+    "target_journal_pack.json",
+)
+
+EXIT_PUBLICATION_READY = 0
+EXIT_EVIDENCE_INSUFFICIENT = 6
+EXIT_LOCAL_GATE_BLOCKED = 7
+EXIT_FINAL_STATUS_FAILED = 8
+EXIT_REQUIRED_ARTIFACT_INVALID = 9
+EXIT_TIMEOUT = 124
 
 _TOP_LEVEL_RUN_ARTIFACTS = frozenset({
     "full_paper.md",
@@ -415,6 +441,8 @@ def _restore_required_section_bodies(
             and _word_count(_section_body_text(original, heading)) >= floor
         )
         replacement_md = original if original_long_enough else fallback_md
+        if not replacement_md:
+            continue
         if rendered is not None:
             rendered_body = rendered.group(1)
             if _word_count(rendered_body) >= floor:
@@ -500,52 +528,17 @@ def _topic_display_name() -> str:
     return humanize_topic(_ACTIVE_TOPIC, root=REPO_ROOT)
 
 
-def _intervention_class() -> str:
-    manifest = _ACTIVE_MANIFEST or {}
-    value = manifest.get("intervention_class") or manifest.get("drug_class") or manifest.get("class_")
-    if value:
-        return str(value).strip().lower()
-    pack = _get_topic_pack()
-    if pack is not None and getattr(pack, "topic", "") != _ACTIVE_TOPIC:
-        return ""
-    return str(getattr(pack, "drug_class", "") or "").strip().lower()
-
-
-def _translation_boundary_statement(topic: str) -> str:
-    intervention_class = _intervention_class()
-    pharmacologic = not intervention_class or any(k in intervention_class for k in (
-        "drug", "compound", "pharmac", "small_molecule", "supplement",
-        "nutraceutical", "boosting", "precursor",
-    ))
-    if pharmacologic:
-        return (
-            "Pending further trials, the intervention should not be used "
-            "off-label for broad aging-related prevention claims outside "
-            "clinical-trial settings given current evidence."
-        )
-    return (
-        f"The current corpus maps evidence for {topic} but does not establish "
-        "a general health, lifestyle, clinical, or policy recommendation. Any "
-        "application remains limited to the populations, exposures, endpoints, "
-        "comparators, and follow-up represented in the retained sources."
-    )
-
-
 def _compile_public_section_backstop(
     title: str, floor: int, existing_text: str = "",
 ) -> str:
-    """Compile conservative fallback prose from manifest-level facts."""
-    allowed = {
-        "Abstract", "Introduction", "Background", "Results",
-        "Cross-Domain Synthesis", "Discussion", "Limitations", "Conclusion",
-    }
+    """Compile deterministic framing/disclosure prose, never evidence sections."""
+    allowed = {"Abstract", "Introduction", "Background", "Limitations"}
     if title not in allowed:
         return ""
     topic = _topic_display_name()
     ctx = _section_backstop_context()
     receipt_n = cast(int, ctx["receipt_n"])
     claim_n = cast(int, ctx["claim_n"])
-    tension_phrase = cast(str, ctx["tension_phrase"])
     direct = cast(int, ctx["direct"])
     indirect = cast(int, ctx["indirect"])
     mechanistic = cast(int, ctx["mechanistic"])
@@ -555,9 +548,6 @@ def _compile_public_section_backstop(
     mixed = ctx["mixed"]
     direct_refs = ctx["direct_refs"]
     mech_refs = ctx["mech_refs"]
-    pos_refs = ctx["positive_refs"]
-    null_refs = ctx["null_refs"]
-    neg_refs = ctx["negative_refs"]
     evidence_basis = "the retained evidence profile"
     if direct > 0 and mechanistic > 0:
         evidence_basis = "the retained clinical and mechanistic evidence profile"
@@ -570,13 +560,6 @@ def _compile_public_section_backstop(
         if pos != "no dominant outcome class"
         else f"No single positive outcome class dominates the retained corpus; null signals cluster in {null}, and negative signals cluster in {neg}."
     )
-    if title == "Results":
-        results_backstop = _compile_results_outcome_backstop(topic, ctx, floor)
-        if results_backstop:
-            return results_backstop
-    if title == "Cross-Domain Synthesis":
-        return _compile_cross_domain_backstop(topic, ctx, floor, existing_text=existing_text)
-
     paragraphs_by_title = {
         "Abstract": [
             (
@@ -655,73 +638,6 @@ def _compile_public_section_backstop(
                 "interpretation."
             ),
         ],
-        "Results": [
-            (
-                f"The retained {topic} corpus contributes {receipt_n} study-"
-                f"level summaries and {claim_n} high-confidence observations. "
-                f"Positive study-level signals are represented by {pos_refs}; "
-                f"null signals by {null_refs}; and negative signals by "
-                f"{neg_refs}. These groupings describe the direction of the "
-                "validated study summaries, not a pooled treatment estimate."
-            ),
-            (
-                f"Outcome-level interpretation remains mixed. Positive signals "
-                f"are concentrated in {pos}, while null signals are concentrated "
-                f"in {null}. Negative signals are concentrated in {neg}. The "
-                "result is not a single uniform effect profile, but a set of "
-                "domain-specific findings that differ by endpoint, evidence "
-                "tier, and study context."
-            ),
-            (
-                f"The synthesis identifies {tension_phrase}. These disagreements are load-bearing because they show "
-                "where sources do not simply accumulate in the same direction. "
-                "The synthesis therefore treats disagreement and null findings "
-                "as evidence, not as noise to be smoothed away."
-            ),
-        ],
-        "Discussion": [
-            (
-                f"The {topic} evidence base is best interpreted as conditionally "
-                "supportive rather than definitive. The evidence base contains "
-                f"{_evidence_tier_phrase(direct, 'direct clinical')} and "
-                f"{_evidence_tier_phrase(mechanistic, 'mechanistic')}, so the strongest claims concern where "
-                "signals converge and where translation remains uncertain."
-            ),
-            (
-                f"Positive sources ({pos_refs}) are important, but they must be "
-                f"read alongside null sources ({null_refs}) and negative "
-                f"sources ({neg_refs}). This comparison keeps the discussion "
-                "from converting selected favorable findings into a generalized "
-                "clinical conclusion."
-            ),
-            (
-                "The practical implication is a calibrated research position. "
-                f"{topic[:1].upper() + topic[1:]} may justify further targeted testing when the "
-                "mechanistic rationale, clinical endpoint, and population risk "
-                "profile align, but the present corpus does not justify claims "
-                "that ignore the null or adverse parts of the evidence base."
-            ),
-            (
-                f"The favorable evidence should therefore be read as endpoint-"
-                f"specific rather than global. Signals in {pos} can justify "
-                "continued mechanistic and clinical follow-up, but they do not "
-                f"cancel null results in {null} or adverse results in {neg}. "
-                "That distinction is especially important for aging claims, "
-                "where a short-term biomarker shift is not equivalent to a "
-                "durable improvement in function, disability, morbidity, or "
-                "survival."
-            ),
-            (
-                "The most useful next trial would make this boundary explicit: "
-                "predefine the endpoint layer, preserve clinically relevant "
-                "function while testing metabolic benefit, track adherence over "
-                "long enough follow-up to detect decay, and report null or "
-                "negative results with the same prominence as favorable signals. "
-                "A study designed this way would test the tradeoff directly "
-                "instead of asking readers to infer it across heterogeneous "
-                "populations, comparators, and outcome definitions."
-            ),
-        ],
         "Limitations": [
             (
                 f"The principal limitation is evidence-role imbalance. The "
@@ -744,72 +660,6 @@ def _compile_public_section_backstop(
                 "correct source role and citation context. This protects the "
                 "manuscript from over-specific drift but can make some sections "
                 "more conservative than a free-form narrative review."
-            ),
-        ],
-        "Conclusion": [
-            (
-                f"For {topic}, the final interpretation is deliberately tiered: "
-                f"{evidence_basis} defines a bounded evidence rationale, "
-                "but the corpus does not support treating "
-                "mechanistic target engagement, intermediate biomarkers, and "
-                "patient-relevant outcomes as interchangeable evidence. "
-                "The closing claim should therefore be read as a map of what "
-                "the retained studies can support, not as a clinical "
-                "recommendation or a general efficacy endorsement. Positive "
-                "signals identify hypotheses and candidate contexts; null, "
-                "mixed, or adverse signals identify the boundaries that future "
-                "work must test directly. The evidence hierarchy remains "
-                "load-bearing here: direct clinical records carry more "
-                "interpretive weight than adjacent/context evidence, and both "
-                "carry more translational weight than mechanistic or model "
-                "systems. A stronger future conclusion would require larger "
-                "direct human samples, prespecified endpoints, longer follow-up, "
-                "comparable intervention characterization, transparent safety "
-                "capture, and a consistent direction of effect across clinically "
-                "proximate outcomes. Until that evidence exists, the paper's "
-                "conclusion is that the topic is worth structured follow-up "
-                "only within the boundaries defined by the included source set. "
-                "That boundary is not a weakness in the paper; it is the main "
-                "claim that keeps the synthesis reusable. Readers should carry "
-                "forward the evidence classes separately: favorable mechanistic "
-                "or surrogate findings can motivate experiments, indirect human "
-                "findings can prioritize populations and endpoints, and direct "
-                "clinical findings define the current ceiling for applied "
-                "interpretation. "
-                f"{_translation_boundary_statement(topic)} Any downstream use "
-                "should preserve that tiered reading rather than compressing "
-                "the corpus into a simple yes/no verdict for clinical practice "
-                "or public messaging."
-            ),
-            (
-                f"The strongest interpretation is that {signal_profile[0].lower()}{signal_profile[1:]} "
-                "That profile supports further targeted research and "
-                "careful hypothesis refinement, not unqualified clinical or "
-                "public-health claims."
-            ),
-            (
-                f"{_translation_boundary_statement(topic)} The safer translation "
-                "path is a registered trial that specifies the endpoint layer "
-                "in advance, pairs dosing with monitoring for metabolic and "
-                "immune safety, and reports null or adverse signals with the "
-                "same visibility as favorable results."
-            ),
-            (
-                f"Future work should prioritize studies that connect "
-                f"mechanistic studies ({mech_refs}) to direct clinical outcomes "
-                f"represented by {direct_refs}. Until that bridge is stronger, "
-                f"{topic} remains a promising but bounded evidence case whose "
-                "most useful contribution is to define the next trial rather "
-                "than to justify current clinical adoption."
-            ),
-            (
-                "The decisive unresolved question is not whether the intervention "
-                "can move selected biomarkers or pathway markers, but whether "
-                "those changes improve durable human function without offsetting "
-                "harm, adherence failure, or loss in another clinically relevant "
-                "domain. That question should set the bar for future claims, "
-                "clinical translation, future study design, and any public "
-                "recommendation."
             ),
         ],
     }
@@ -930,12 +780,10 @@ def _compile_public_section_backstop(
         ),
     ]
     paragraphs = paragraphs_by_title[title]
-    if title != "Conclusion":
-        # Stable title-keyed rotation: sections draw from different points in
-        # the shared pool, so one padded section does not starve the next
-        # (each paragraph still appears at most once via existing_text).
-        off = sum(ord(ch) for ch in title) % max(1, len(shared))
-        paragraphs += shared[off:] + shared[:off]
+    # Stable title-keyed rotation prevents deterministic disclosure sections
+    # from repeating the same paragraph order.
+    off = sum(ord(ch) for ch in title) % max(1, len(shared))
+    paragraphs += shared[off:] + shared[:off]
     selected: list[str] = []
     for paragraph in paragraphs:
         if existing_text and paragraph in existing_text:
@@ -1093,74 +941,6 @@ def _section_backstop_outcome_rows(
             "refs": ", ".join(r for r in refs if r) or "the retained evidence base",
         })
     return rows
-
-
-def _compile_results_outcome_backstop(
-    topic: str, ctx: dict[str, object], floor: int,
-) -> str:
-    raw_rows = ctx.get("outcome_rows")
-    rows = [r for r in raw_rows if isinstance(r, dict)] if isinstance(raw_rows, list) else []
-    if not rows:
-        return ""
-    lines = [
-        "## Results",
-        "",
-        f"The retained {topic} corpus is reported by outcome class before any cross-domain interpretation. This structure prevents favorable, null, mixed, and adverse evidence from being blended across biologically different endpoints.",
-        "",
-    ]
-    for row in rows:
-        label = str(row.get("label") or "Other")
-        lines.extend([
-            f"### {label} Outcomes",
-            "",
-            f"The {label.lower()} evidence packet includes {row.get('n')} source-level summaries and {row.get('claims')} high-confidence observations. Directional coding within this packet is {row.get('directions')}, and directness coding is {row.get('directness')}. These counts describe the frozen evidence state for this outcome, not a pooled treatment estimate.",
-            "",
-            f"Representative sources: {row.get('refs')}.",
-            "",
-        ])
-    shared = (
-        "Across outcome classes, the manuscript treats disagreement as part of the evidence rather than as noise to smooth away. A null or adverse signal in one section does not cancel a favorable signal in another; it defines the boundary condition for interpretation.",
-        "The section-owned layout also protects citation integrity. Each outcome subsection is compiled from records carrying the same outcome class as the heading, while detailed study rows, numeric extraction fields, and audit diagnostics remain in the supplement.",
-    )
-    for paragraph in shared:
-        if _word_count("\n\n".join(lines)) >= floor + 25:
-            break
-        lines.extend([paragraph, ""])
-    return "\n".join(lines).rstrip()
-
-
-def _compile_cross_domain_backstop(topic: str, ctx: dict[str, object], floor: int, existing_text: str = "") -> str:
-    """Evidence-role synthesis without generic section-padding templates."""
-    raw_rows = ctx.get("outcome_rows")
-    rows = [row for row in raw_rows if isinstance(row, dict)] if isinstance(raw_rows, list) else []
-    row_map = "; ".join(
-        f"{row.get('label')} ({row.get('directions')}; {row.get('directness')}; sources {row.get('refs')})"
-        for row in rows[:4]
-    ) or "the retained outcome packets"
-    thesis = str(ctx["thesis"]).replace(_ACTIVE_TOPIC, topic) if _ACTIVE_TOPIC else str(ctx["thesis"])
-    paragraphs = (
-        f"Agreement between mechanism and clinical signal is strongest where the biological rationale and the directly observed outcome point in the same bounded direction. For {topic}, direct sources such as {ctx['direct_refs']} define the human evidence perimeter, while mechanistic sources such as {ctx['mech_refs']} explain why an effect could occur. Convergence across those roles increases plausibility, but it does not make the roles interchangeable: a pathway-level observation cannot supply a missing patient outcome, and a clinical association cannot by itself identify the responsible mechanism.",
-        f"Divergence is equally informative. Positive signals represented by {ctx['positive_refs']} occur alongside null signals represented by {ctx['null_refs']} and negative or adverse signals represented by {ctx['negative_refs']}. Their outcome distribution spans {ctx['positive']}, {ctx['null']}, and {ctx['negative']}. This pattern rejects a single global verdict. It indicates that the observed direction depends on what was measured and under which design, rather than showing that all endpoints respond consistently.",
-        f"The outcome-class map makes that heterogeneity auditable: {row_map}. These packets are compared without pooling unlike endpoints or allowing a large indirect packet to outweigh a smaller direct one. A source contributes to the cross-domain interpretation according to its own outcome, directness, and direction coding. Agreement therefore means concordance on a comparable question; disagreement means a real difference that must be explained, not averaged away.",
-        "Population is the first boundary on transfer. Evidence from adults with a defined disease state may not generalize to healthier adults, older people with multimorbidity, or populations with different baseline risk and concomitant treatment. Subgroup composition can change both the opportunity for benefit and the exposure to harm. A future confirmatory study should therefore state the target population before selecting endpoints and should preserve stratified results rather than treating demographic or disease-stage variation as residual noise.",
-        "Dose and schedule form a separate boundary. Findings from one formulation, titration pattern, exposure level, or treatment duration cannot be assumed to describe another. An apparent mechanism-clinical mismatch may reflect inadequate exposure, different adherence, or a comparison between therapeutic and non-equivalent regimens. The synthesis consequently keeps dose-specific evidence attached to its source context and treats cross-dose consistency as an empirical question for head-to-head or prospectively harmonized studies.",
-        "Endpoint distance is the third boundary. Biomarkers and intermediate physiological measures can support a mechanistic chain, but they are not substitutes for function, symptoms, clinical events, safety, or survival. Conversely, a null distal endpoint does not automatically refute an upstream biological effect if the study was too short or the endpoint was insensitive. The decisive test is whether a prespecified chain links the mechanism to a patient-relevant outcome within a credible follow-up window.",
-        "Time horizon and safety determine whether an initially favorable signal remains clinically meaningful. Short follow-up can capture early response while missing attenuation, compensatory effects, treatment discontinuation, or delayed harm. Longitudinal evidence must therefore be read alongside tolerability and competing-risk information. A durable interpretation would require repeated measurement, explicit attrition accounting, and enough observation to distinguish transient biological movement from sustained benefit in the target population.",
-        "Comparator choice determines what a directional result can mean. Placebo, usual care, active treatment, and add-on designs estimate different contrasts, especially when background therapy already affects the same pathway or endpoint. Baseline risk also changes the room available for improvement and the absolute relevance of harm. Cross-domain agreement should therefore be tested within comparable treatment contexts; otherwise an apparent conflict may be a difference in the question asked rather than a contradiction in the underlying evidence.",
-        "Measurement and analysis complete the boundary map. Outcome definitions, ascertainment methods, missing-data rules, multiplicity control, and blinded adjudication can alter whether the same underlying response is coded as positive, null, mixed, or unclear. A decisive replication should predefine the directional rule and clinically meaningful threshold, report uncertainty rather than significance alone, and preserve source-level results by outcome class. Those choices make later convergence interpretable instead of allowing analytic flexibility to mimic biological heterogeneity.",
-        "Causal interpretation requires the full sequence to remain intact. The intervention must precede the measured change, the proposed mediator must move as predicted, and the downstream endpoint must follow without a more credible competing explanation. Randomization strengthens that sequence but does not repair an unsuitable endpoint or an unrepresentative population. Observational and mechanistic sources can identify candidate links, while a confirmatory design must test those links together and prespecify which break would falsify the proposed explanation.",
-        f"Across the retained evidence, {ctx['tension_phrase']} are treated as design information. Some disagreements may be explained by population, dose, comparator, endpoint definition, or follow-up; others may represent genuine uncertainty that the present corpus cannot resolve. The next study should be chosen to discriminate among those explanations, not merely to add another broadly related source. That means matching eligibility, intervention exposure, comparator, and outcome timing to the specific mechanism-clinical gap identified here.",
-        f"The resulting interpretation is conditional rather than indecisive. {thesis} The strongest conclusion follows the direct clinical evidence, with mechanistic material used to explain convergence or divergence and adjacent evidence used to define external boundaries. Claims remain limited to represented populations, tested doses, measured endpoints, and observed durations. Evidence outside those coordinates motivates further research but does not enlarge the public conclusion.",
-    )
-    selected: list[str] = []
-    for paragraph in paragraphs[:-1]:
-        if existing_text and paragraph in existing_text:
-            paragraph = _section_scoped_backstop_paragraph("Cross-Domain Synthesis", paragraph)
-        selected.append(paragraph)
-        if _word_count("\n\n".join(selected)) >= floor + 25:
-            break
-    selected.append(paragraphs[-1])
-    return "## Cross-Domain Synthesis\n\n" + "\n\n".join(selected)
 
 
 def _section_heading_from_body(section_md: str) -> str:
@@ -1932,6 +1712,24 @@ def _load_active_paper_ids() -> set[str] | None:
     return {str(x) for x in ids if str(x).strip()} or None
 
 
+def _load_frozen_retrieval_record(
+    source_run: Path | None,
+) -> FrozenRetrievalRecord:
+    """Freeze explicit retrieval evidence; never infer it from receipts."""
+    manifest_path = (
+        source_run / "manifest.json"
+        if source_run is not None
+        else QUANT_DIR.parent / "corpus_manifest.json"
+    )
+    try:
+        payload = json.loads(manifest_path.read_text())
+    except (OSError, json.JSONDecodeError):
+        return FrozenRetrievalRecord()
+    if not isinstance(payload, dict):
+        return FrozenRetrievalRecord()
+    return frozen_retrieval_record(payload)
+
+
 def _strict_clinical_receipt_scope() -> bool:
     """Whether the active pack permits only core clinical receipts."""
     pack = _get_topic_pack()
@@ -2668,6 +2466,153 @@ def _public_surface_return_code(*review_types: str) -> int:
     return 6 if os.getenv("RESEARCH_AGENT_PUBLIC_FULL_ONLY", "").strip() == "1" and any(review_type in COMPACT_REVIEW_TYPES for review_type in review_types) else 0
 
 
+def _write_benchmark_runtime(
+    out_dir: Path,
+    started_at: dt.datetime,
+    return_code: int,
+    reason: str,
+    details: tuple[str, ...] = (),
+) -> None:
+    completed_at = dt.datetime.now(dt.timezone.utc)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "benchmark_runtime.json").write_text(json.dumps({
+        "return_code": return_code,
+        "reason": reason,
+        "details": list(details),
+        "started_at": started_at.isoformat(timespec="seconds"),
+        "completed_at": completed_at.isoformat(timespec="seconds"),
+        "duration_s": round((completed_at - started_at).total_seconds(), 3),
+        "topic": str(_ACTIVE_TOPIC),
+    }, indent=2))
+
+
+def _record_synthesis_exit(
+    out_dir: Path,
+    started_at: dt.datetime,
+    return_code: int,
+    reason: str,
+    details: tuple[str, ...] = (),
+) -> int:
+    _write_benchmark_runtime(out_dir, started_at, return_code, reason, details)
+    print(
+        f"[pipeline] exit={return_code} reason={reason}"
+        + (f" details={'; '.join(details)}" if details else ""),
+        file=sys.stderr,
+    )
+    return return_code
+
+
+def _required_artifact_error(out_dir: Path) -> str:
+    paper_path = out_dir / "full_paper.md"
+    try:
+        if not paper_path.is_file() or not paper_path.read_text().strip():
+            return "full_paper.md missing or empty"
+    except (OSError, UnicodeError):
+        return "full_paper.md unreadable"
+    for name in _REQUIRED_FINAL_JSON_ARTIFACTS:
+        path = out_dir / name
+        try:
+            payload = json.loads(path.read_text())
+        except (OSError, json.JSONDecodeError, UnicodeError):
+            return f"{name} missing or corrupt"
+        if not isinstance(payload, dict):
+            return f"{name} has invalid shape"
+    return ""
+
+
+def _insufficient_evidence_owned_section_depth(
+    paper_md: str,
+    review_type: str | None,
+) -> tuple[str, ...]:
+    from agent.journal_surface_gate import _REQUIRED_SECTIONS, _REQUIRED_SECTIONS_THIN
+    from agent.review_type import COMPACT_REVIEW_TYPES
+
+    required = (
+        _REQUIRED_SECTIONS_THIN
+        if review_type in COMPACT_REVIEW_TYPES
+        else _REQUIRED_SECTIONS
+    )
+    insufficient: list[str] = []
+    for title, floor in required.items():
+        if title not in _EVIDENCE_OWNED_SECTIONS:
+            continue
+        match = _rendered_section_match(paper_md, f"## {title}")
+        words = _word_count(match.group(1)) if match is not None else 0
+        if words < floor:
+            insufficient.append(f"{title}={words}/{floor}")
+    return tuple(insufficient)
+
+
+def _finalize_synthesis_exit(
+    out_dir: Path,
+    started_at: dt.datetime,
+    paper_md: str,
+    review_type: str | None,
+) -> int:
+    artifact_error = _required_artifact_error(out_dir)
+    if artifact_error:
+        return _record_synthesis_exit(
+            out_dir, started_at, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_artifact_missing_or_corrupt", (artifact_error,),
+        )
+    insufficient = _insufficient_evidence_owned_section_depth(
+        paper_md, review_type,
+    )
+    if insufficient:
+        return _record_synthesis_exit(
+            out_dir, started_at, EXIT_EVIDENCE_INSUFFICIENT,
+            "insufficient_evidence_owned_section_depth", insufficient,
+        )
+
+    from agent.final_status import compute_and_write
+    try:
+        preliminary = compute_and_write(out_dir)
+    except Exception as exc:
+        return _record_synthesis_exit(
+            out_dir, started_at, EXIT_FINAL_STATUS_FAILED,
+            "final_status_convergence_failed", (str(exc),),
+        )
+    blockers = tuple(
+        reason for reason in preliminary.blocking_reasons
+        if reason.stage not in {"runtime", "target_journal", "human_signoff"}
+    )
+    if blockers:
+        code = _record_synthesis_exit(
+            out_dir, started_at, EXIT_LOCAL_GATE_BLOCKED,
+            "local_gate_blocked",
+            tuple(f"{reason.stage}:{reason.code}" for reason in blockers),
+        )
+        try:
+            compute_and_write(out_dir)
+        except Exception as exc:
+            return _record_synthesis_exit(
+                out_dir, started_at, EXIT_FINAL_STATUS_FAILED,
+                "final_status_convergence_failed", (str(exc),),
+            )
+        return code
+
+    _write_benchmark_runtime(
+        out_dir, started_at, EXIT_PUBLICATION_READY, "publication_ready",
+    )
+    try:
+        final = compute_and_write(out_dir)
+        final_payload = json.loads((out_dir / "final_status.json").read_text())
+        converged = (
+            final.researka_publish_ready
+            and isinstance(final_payload, dict)
+            and final_payload.get("researka_publish_ready") is True
+        )
+    except Exception:
+        converged = False
+    if not converged:
+        return _record_synthesis_exit(
+            out_dir, started_at, EXIT_FINAL_STATUS_FAILED,
+            "final_status_convergence_failed",
+        )
+    print("[pipeline] publication-ready final_status converged", file=sys.stderr)
+    return EXIT_PUBLICATION_READY
+
+
 async def _run(
     out_dir: Path,
     *,
@@ -2678,10 +2623,14 @@ async def _run(
     # Slice 21: capture wall-clock start so we can write
     # benchmark_runtime.json with a real duration at pipeline exit.
     _run_start_ts = dt.datetime.now(dt.timezone.utc)
+    (out_dir / "benchmark_runtime.json").unlink(missing_ok=True)
     settings = load_settings()
     if not settings.bot_enabled:
         print("BOT_ENABLED=false; aborting.", file=sys.stderr)
-        return 1
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_runtime_configuration_missing", ("BOT_ENABLED=false",),
+        )
 
     # Workstream A: lock the corpus dirs to the requested topic
     # before any downstream code reads them.
@@ -2717,7 +2666,10 @@ async def _run(
             json.dumps(continuity, indent=2),
         )
         print("Revision evidence lock failed: invalid source snapshot.", file=sys.stderr)
-        return 5
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_evidence_snapshot_missing_or_corrupt",
+        )
     if not QUANT_DIR.exists():
         print(
             f"corpus directory does not exist for topic={topic!r}: "
@@ -2726,7 +2678,11 @@ async def _run(
             f"with at least one *.quant_claims.json.",
             file=sys.stderr,
         )
-        return 5 if source_run else 4
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_corpus_missing", (str(QUANT_DIR),),
+        )
+    retrieval_record = _load_frozen_retrieval_record(source_run)
     if source_run is not None:
         available = {
             path.stem.removesuffix(".quant_claims")
@@ -2749,7 +2705,10 @@ async def _run(
                 f"{len(missing)} quant / {len(missing_parsed)} parsed file(s) are missing.",
                 file=sys.stderr,
             )
-            return 5
+            return _record_synthesis_exit(
+                out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+                "required_evidence_snapshot_missing_or_corrupt",
+            )
 
     print(
         f"Loading v0.6.0 quant_claims (topic={topic!r})...",
@@ -2811,7 +2770,10 @@ async def _run(
                 "were not admitted.",
                 file=sys.stderr,
             )
-            return 5
+            return _record_synthesis_exit(
+                out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+                "required_evidence_snapshot_missing_or_corrupt",
+            )
         mismatches = [
             mismatch for mismatch in receipt_contract_mismatches(receipts, evidence_lock.receipt_rows)
             if (parts := mismatch.split(":", 1))[1] not in allowed_by_receipt.get(parts[0], set())
@@ -2829,7 +2791,10 @@ async def _run(
                 f"Revision evidence lock failed: {len(mismatches)} receipt contract mismatch(es).",
                 file=sys.stderr,
             )
-            return 5
+            return _record_synthesis_exit(
+                out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+                "required_evidence_snapshot_missing_or_corrupt",
+            )
     receipt_funnel = reconcile_receipt_funnel_report(receipt_funnel, receipts)
     (out_dir / "receipt_funnel.json").write_text(json.dumps(receipt_funnel, indent=2))
     (out_dir / "receipt_funnel.md").write_text(render_receipt_funnel_markdown(receipt_funnel))
@@ -2849,7 +2814,10 @@ async def _run(
     )
     if not receipts:
         print("No high-confidence claims found.", file=sys.stderr)
-        return 2
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_EVIDENCE_INSUFFICIENT,
+            "insufficient_evidence",
+        )
     # Single canonical tension classifier (agent.synthesis) — the manifest
     # count, review-type routing, and consistency-audit replay must all read
     # the SAME matrix. A divergent local copy here previously inflated the
@@ -2908,7 +2876,10 @@ async def _run(
             "citation entrie(s) were not restored.",
             file=sys.stderr,
         )
-        return 5
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_evidence_snapshot_missing_or_corrupt",
+        )
     citation_registry_path = out_dir / "citation_registry.json"
     citation_registry_path.write_text(json.dumps({
         rid: dataclasses.asdict(entry)
@@ -2928,7 +2899,10 @@ async def _run(
             json.dumps(continuity, indent=2),
         )
         print("Revision evidence snapshot failed: source files are incomplete.", file=sys.stderr)
-        return 5
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_evidence_snapshot_missing_or_corrupt",
+        )
     snapshot_root = out_dir / SNAPSHOT_DIR
     QUANT_DIR, PARSED_DIR = snapshot_root / "quant_claims", snapshot_root / "parsed"
     _audit_v06.QUANT_DIR, _audit_v06.PARSED_DIR = QUANT_DIR, PARSED_DIR
@@ -2959,7 +2933,10 @@ async def _run(
             json.dumps(continuity, indent=2),
         )
         print("Revision evidence snapshot failed: copied evidence drifted.", file=sys.stderr)
-        return 5
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_evidence_snapshot_missing_or_corrupt",
+        )
     receipts = snapshot_receipts
     if revision_receipt_ids:
         continuity["passed"] = True
@@ -2967,12 +2944,18 @@ async def _run(
             json.dumps(continuity, indent=2),
         )
     if dry_run:
-        return 0
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_artifact_not_rendered_dry_run", ("full_paper.md",),
+        )
 
     chain = _build_call_chain()
     if not chain:
         print("No LLM keys configured.", file=sys.stderr)
-        return 3
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "required_runtime_configuration_missing", ("LLM provider key",),
+        )
 
     out_dir.mkdir(parents=True, exist_ok=True)
     submission_id = out_dir.name
@@ -3025,14 +3008,17 @@ async def _run(
             f"Public full-only policy blocked compact surface {_review_type_effective!r}.",
             file=sys.stderr,
         )
-        return surface_code
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, surface_code,
+            "insufficient_evidence_for_full_public_surface",
+            (_review_type_effective,),
+        )
     print(
         f"\nCalling render_full_paper (review_type={_review_type_effective!r}, "
         "tiered validation)...",
         file=sys.stderr,
     )
     bglit_entries = list(_bglit.load_registry().values())
-    import httpx
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(
             writer_receipts, writer_matrix, thesis,
@@ -3135,6 +3121,7 @@ async def _run(
         submission_id=submission_id,
         n_papers=len(receipts),
         n_claims=sum(r.n_claims for r in receipts),
+        source_inventory=retrieval_record.sources,
     )
     contract_errors = _run_mode.validate_contract(contract)
     if contract_errors:
@@ -3183,6 +3170,7 @@ async def _run(
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,
         "receipts": manifest_receipts,
+        "retrieval": retrieval_record.to_manifest(),
         "receipt_funnel": receipt_funnel,
         "field_engagement_path": "field_engagement.json",
         "quality_methods_path": "quality_methods.json",
@@ -3226,6 +3214,7 @@ async def _run(
         "n_non_orthogonal_tensions": len(matrix.non_orthogonal()),
         "thesis": thesis.text,
         "receipts": manifest_receipts,
+        "retrieval": retrieval_record.to_manifest(),
         "receipt_funnel": receipt_funnel,
         "field_engagement_path": "field_engagement.json",
         "quality_methods_path": "quality_methods.json",
@@ -3313,11 +3302,7 @@ async def _run(
         for r in manifest.get("receipts", ())
         if r.get("outcome_class")
     })
-    _search_queries = (
-        tuple(_TOPIC_PACK.corpus_search_queries)
-        if _TOPIC_PACK is not None
-        else ()
-    )
+    _search_queries = retrieval_record.queries
     _methods_pack = build_methods_pack(
         review_type=str(manifest.get("review_type", "")),
         topic=_ACTIVE_TOPIC,
@@ -3332,6 +3317,7 @@ async def _run(
         n_rejected=int(_funnel.get("rejected", 0))
         or int(_funnel.get("n_rejected", 0)),
         outcome_classes=_outcome_classes,
+        source_inventory=retrieval_record.sources,
         receipt_funnel=_funnel,
         accountability_model=str(
             manifest.get("accountability_model")
@@ -3351,12 +3337,11 @@ async def _run(
         paper_path=paper_path, manifest=manifest, out_dir=out_dir,
         citation_registry=citation_registry, sections=sections,
         methods_md=methods_md, quality_bundle=quality_artifact["bundle"],
-        run_start_ts=_run_start_ts,
     )
     word_count = len(final_paper_md.split())
     # Bug-fix 2026-05-13: section_words was the writer's first-pass
-    # count, but the post-paper pipeline regenerates the bounded
-    # abstract/conclusion and auto-fixes many sentences. Re-measure
+    # count, but the post-paper pipeline repairs the rendered paper.
+    # Re-measure
     # from the final paper and rewrite the manifest so sidecars stay
     # consistent (no more "manifest says 570 / pre_submit says 299").
     # Slice 16 (2026-05-14): single deterministic compiler-owned
@@ -3390,39 +3375,23 @@ async def _run(
     _consistency_report = verify_run_artifacts(out_dir)
     write_consistency_sidecar(out_dir, _consistency_report)
 
-    # Slice 22 (2026-05-15): the pipeline's Stage 5d inside
-    # `_run_post_paper_pipeline` computed `final_status.json` BEFORE
-    # `finalize_run` (Phase G surface re-eval) and `artifact_consistency`
-    # sidecar writes happened. That snapshot's accountability_pass +
-    # journal_surface counts were therefore stale. Re-run final_status
-    # convergence once all sidecars are in their final state.
-    # Universal — operates on whatever sidecars exist; fail-soft.
-    try:
-        from agent.final_status import compute_and_write as _fs_recompute
-        _fs_final = _fs_recompute(out_dir)
-        print(
-            f"[pipeline] Stage 5d* — final_status reconciled: "
-            f"{_fs_final.maturity_label} (submission_ready="
-            f"{_fs_final.submission_ready}, "
-            f"blockers={len(_fs_final.blocking_reasons)})",
-            file=sys.stderr,
-        )
-    except Exception as _e:  # pragma: no cover — fail-soft
-        print(
-            f"[pipeline] Stage 5d* — final_status reconcile skipped: {_e}",
-            file=sys.stderr,
-        )
-
-    print(f"\nDONE: {paper_path}", file=sys.stderr)
-    print(f"  final_words: {word_count}", file=sys.stderr)
-    print(f"  per-section: {section_words}", file=sys.stderr)
-    print(
-        f"  llm_calls: {manifest['n_llm_calls']} "
-        f"cost_usd: ${manifest['total_cost_usd']:.4f} (writer-only; "
-        f"final-layer review cost in {out_dir.name}/full_paper.review_patches.json)",
-        file=sys.stderr,
+    exit_code = _finalize_synthesis_exit(
+        out_dir,
+        _run_start_ts,
+        final_paper_md,
+        str(manifest.get("review_type") or ""),
     )
-    return 0
+    if exit_code == EXIT_PUBLICATION_READY:
+        print(f"\nDONE: {paper_path}", file=sys.stderr)
+        print(f"  final_words: {word_count}", file=sys.stderr)
+        print(f"  per-section: {manifest['section_words']}", file=sys.stderr)
+        print(
+            f"  llm_calls: {manifest['n_llm_calls']} "
+            f"cost_usd: ${manifest['total_cost_usd']:.4f} (writer-only; "
+            f"final-layer review cost in {out_dir.name}/full_paper.review_patches.json)",
+            file=sys.stderr,
+        )
+    return exit_code
 
 
 def _write_stage5c_quality_gates(
@@ -3463,7 +3432,6 @@ async def _run_post_paper_pipeline(
     sections: tuple[SynthesisSection, ...] = (),
     methods_md: str = "",
     quality_bundle: Any | None = None,
-    run_start_ts: dt.datetime | None = None,
 ) -> str:
     """Run deterministic audit, repair, and final-layer review."""
     paper_md = paper_path.read_text()
@@ -4139,28 +4107,14 @@ async def _run_post_paper_pipeline(
         )
         raise
 
-    # Stage 5cc (Slice 21 — 2026-05-15): write the two promotion sidecars
-    # that final_status's 6-dim ladder reads. `benchmark_runtime.json`
-    # records that the pipeline reached this point without raising
-    # (return_code=0) + wall-clock duration. `target_journal_pack.json`
-    # records the submission target declared in the topic pack, or a
+    # Stage 5cc: write the target-journal readiness input. Benchmark success
+    # is withheld until every independent final-status dimension passes.
+    # The target sidecar records the submission target declared in the topic pack, or a
     # universal placeholder when none is declared (final_status then
     # reports `target_journal not declared in topic pack` honestly
     # rather than `target_journal_pack.json missing`). Universal —
     # no topic-specific defaults. Fail-soft per Stage 5d pattern.
     try:
-        _now = dt.datetime.now(dt.timezone.utc)
-        _start = run_start_ts or _now
-        _runtime_payload = {
-            "return_code": 0,
-            "started_at": _start.isoformat(timespec="seconds"),
-            "completed_at": _now.isoformat(timespec="seconds"),
-            "duration_s": round((_now - _start).total_seconds(), 3),
-            "topic": str(_ACTIVE_TOPIC),
-        }
-        (out_dir / "benchmark_runtime.json").write_text(
-            json.dumps(_runtime_payload, indent=2),
-        )
         _declared_target = (
             str(_TOPIC_PACK.target_journal).strip()
             if (
@@ -4180,42 +4134,13 @@ async def _run_post_paper_pipeline(
             json.dumps(_target_payload, indent=2),
         )
         print(
-            f"[pipeline] Stage 5cc — promotion sidecars written "
-            f"(runtime + target_journal "
-            f"declared={_target_payload['declared_in_topic_pack']})",
+            f"[pipeline] Stage 5cc — target_journal readiness input written "
+            f"(declared={_target_payload['declared_in_topic_pack']})",
             file=sys.stderr,
         )
     except Exception as _e:  # pragma: no cover — fail-soft
         print(
             f"[pipeline] Stage 5cc — promotion sidecars skipped: {_e}",
-            file=sys.stderr,
-        )
-
-    # Stage 5d (Wave 47 — status convergence): consolidate every sidecar
-    # into ONE source of truth (`final_status.json`). Reads runtime /
-    # audit / journal_surface / pre_submit / target_journal / human_signoff
-    # and emits a strict 6-boolean hierarchy + frozen L1–L5 label. No
-    # "AAA" string is emitted; the label is the only public level
-    # identifier. Fail-soft — if this stage breaks, the run still
-    # publishes the per-stage sidecars.
-    try:
-        from agent.final_status import (  # type: ignore[import-not-found]
-            compute_and_write as _final_status_write,
-        )
-        _fs = _final_status_write(out_dir)
-        print(
-            f"[pipeline] Stage 5d — final_status: "
-            f"{_fs.maturity_label} (submission_ready={_fs.submission_ready}, "
-            f"blockers={len(_fs.blocking_reasons)})",
-            file=sys.stderr,
-        )
-        # Refresh provenance.json so its verdict reflects the reconciled
-        # final_status — the finalize-time write (Stage 5c) predates this and
-        # would otherwise report a pre-reconcile "blocked" for a promoted run.
-        _paper_quality._write_provenance_sidecar(out_dir, manifest, {})
-    except Exception as _e:  # pragma: no cover — fail-soft
-        print(
-            f"[pipeline] Stage 5d — final_status skipped: {_e}",
             file=sys.stderr,
         )
 
@@ -4726,6 +4651,7 @@ def _issue_to_dict(issue) -> dict[str, Any]:
 def _build_run_mode_contract(
     *, settings: Any, topic: str, submission_id: str,
     n_papers: int, n_claims: int,
+    source_inventory: tuple[tuple[str, str], ...] = (),
 ) -> _run_mode.RunModeContract:
     """Build the literal run-mode contract."""
     return _run_mode.RunModeContract(
@@ -4743,6 +4669,23 @@ def _build_run_mode_contract(
         multi_receipt_clusters_ran=False,
         llm_fact_extraction_ran=False,
         rejected_evidence_quarantine_ran=False,
+        deterministic_stages=(
+            "quant-claim receipt construction",
+            "cross-receipt tension matrix construction",
+            "citation-registry substitution",
+            "contract-derived Methods replacement",
+        ),
+        source_inventory=source_inventory,
+        methods_protocol=(
+            "### Evidence handling\n\n"
+            "The run constructed one evidence receipt per contributing paper "
+            "from the frozen quant-claim corpus, then built a deterministic "
+            "cross-receipt tension matrix before manuscript drafting.",
+            "### Manuscript controls\n\n"
+            "The run built the citation registry before manuscript drafting "
+            "and replaced the drafted Methods section with this "
+            "contract-derived text before the audit stages.",
+        ),
     )
 
 
@@ -5250,10 +5193,30 @@ def main(argv: list[str] | None = None) -> int:
         out_dir = (
             REPO_ROOT / "runs" / f"synthesis-{args.topic}-v06-{ts}"
         )
+    started_at = dt.datetime.now(dt.timezone.utc)
     try:
-        return asyncio.run(_run(
-            out_dir, dry_run=args.dry_run, topic=args.topic,
-        ))
+        try:
+            return asyncio.run(_run(
+                out_dir, dry_run=args.dry_run, topic=args.topic,
+            ))
+        except (TimeoutError, httpx.TimeoutException) as exc:
+            return _record_synthesis_exit(
+                out_dir, started_at, EXIT_TIMEOUT, "timeout", (str(exc),),
+            )
+        except (FileNotFoundError, json.JSONDecodeError, UnicodeError) as exc:
+            return _record_synthesis_exit(
+                out_dir, started_at, EXIT_REQUIRED_ARTIFACT_INVALID,
+                "required_artifact_missing_or_corrupt", (str(exc),),
+            )
+        except Exception as exc:
+            rendered = (out_dir / "full_paper.md").is_file()
+            return _record_synthesis_exit(
+                out_dir,
+                started_at,
+                EXIT_LOCAL_GATE_BLOCKED if rendered else EXIT_REQUIRED_ARTIFACT_INVALID,
+                "local_gate_execution_failed" if rendered else "required_artifact_missing_or_corrupt",
+                (str(exc),),
+            )
     finally:
         if not args.dry_run and out_dir.exists():
             moved_artifacts = _organize_run_artifacts(out_dir)

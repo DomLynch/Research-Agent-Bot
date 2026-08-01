@@ -53,6 +53,12 @@ def _parse_p_value(raw_text: str) -> float | None:
       'p = 1.2e-5' (scientific notation, P1 reviewer fix), 'P ≤ 0.01',
       'Padj < 0.05', 'p_corr < 0.05' (subscripted P variants).
     """
+    parsed = _parse_p_comparison(raw_text)
+    return parsed[1] if parsed else None
+
+
+def _parse_p_comparison(raw_text: str) -> tuple[str, float] | None:
+    """Return the normalized comparator and value for a p-value."""
     if not raw_text:
         return None
     s = raw_text.replace("\xa0", " ").strip()
@@ -62,21 +68,34 @@ def _parse_p_value(raw_text: str) -> float | None:
     # bare `:` (for 'P-value: 0.05'). Scientific notation tried FIRST
     # so `1.2e-5` doesn't get truncated to 1.2.
     m = re.search(
-        r"[Pp][_\-a-zA-Z]*\s*(?:[<>=≤≥]|:)\s*"
+        r"[Pp][_\-a-zA-Z]*\s*(<=|>=|[<>=≤≥]|:)\s*"
         r"(\d+\.?\d*[eE][+-]?\d+|0?\.\d+|\d+\.\d+|\d+)",
         s,
     )
     if not m:
         return None
     try:
-        val = float(m.group(1))
+        val = float(m.group(2))
     except (ValueError, TypeError):
         return None
     # Sanity: a parsed p-value should be in (0, 1]. Outside that range
     # is almost certainly a parsing collision (a non-p-value number).
     if not (0.0 <= val <= 1.0):
         return None
-    return val
+    comparator = {"≤": "<=", "≥": ">=", ":": "="}.get(
+        m.group(1), m.group(1),
+    )
+    return comparator, val
+
+
+def _comparison_is_significant(comparator: str, value: float, alpha: float) -> bool:
+    if not (0.0 <= value <= 1.0):
+        return False
+    if comparator in ("<", "<="):
+        return value <= alpha
+    if comparator == "=":
+        return value < alpha
+    return False
 
 
 # Endpoints whose effect magnitudes are reported in units where
@@ -214,21 +233,18 @@ def _significance_by_endpoint(
         if c.get("claim_type") != "p_value":
             continue
         endpoint = (c.get("endpoint") or "").strip()
-        # numeric_values takes precedence
+        parsed = _parse_p_comparison(c.get("raw_text") or "")
+        comparator = str(c.get("comparator") or (parsed[0] if parsed else "="))
+        values = c.get("numeric_values") or (() if parsed is None else (parsed[1],))
         sig = False
-        for v in c.get("numeric_values") or []:
+        for value in values:
             try:
-                p = float(v)
-            except (ValueError, TypeError):
+                numeric = float(value)
+            except (TypeError, ValueError):
                 continue
-            if 0.0 < p < alpha:
+            if _comparison_is_significant(comparator, numeric, alpha):
                 sig = True
                 break
-        # Fallback to raw_text parsing
-        if not sig:
-            parsed_p = _parse_p_value(c.get("raw_text") or "")
-            if parsed_p is not None and 0.0 < parsed_p < alpha:
-                sig = True
         if sig:
             has_sig[endpoint] = True
     return has_sig

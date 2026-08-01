@@ -8,12 +8,15 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from agent.final_status import (  # type: ignore[import-not-found]
     LABELS,
     BlockingReason,
     compute,
     compute_and_write,
 )
+from agent.human_signoff import HumanSignoff, write as write_human_signoff
 
 
 # ---- helpers --------------------------------------------------------------
@@ -23,7 +26,15 @@ def _write(run: Path, name: str, payload: dict) -> None:
     (run / name).write_text(json.dumps(payload))
 
 
+_REGISTRY = {"R1": {"body_citation": "Smith 2024"}}
+_AUTOMATED_ACCOUNTABILITY = (
+    "## Methods\n\n### Accountability\n\n"
+    "Accountability is established through reproducible artifacts and deterministic gates.\n"
+)
+
+
 def _all_pass_sidecars(run: Path) -> None:
+    (run / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
     _write(run, "benchmark_runtime.json", {"return_code": 0})
     _write(run, "full_paper.audit.json", {
         "n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.6,
@@ -38,9 +49,12 @@ def _all_pass_sidecars(run: Path) -> None:
     _write(run, "manifest.json", {
         "accountability_model": "researka_agent_certified",
     })
-    _write(run, "citation_registry.json", {})
+    _write(run, "citation_registry.json", _REGISTRY)
     _write(run, "artifact_consistency.json", {"passed": True, "checks": []})
-    _write(run, "human_signoff.json", {"ready_to_submit": True})
+    write_human_signoff(run, HumanSignoff(
+        author="Test Author", reviewed=True, evidence_claims_reviewed=True,
+        conflicts_declared=True, ready_to_submit=True, signature="test-signature",
+    ))
 
 
 # ---- maturity ladder ------------------------------------------------------
@@ -87,6 +101,34 @@ def test_journal_surface_failure_blocks_l5_and_submission_ready(tmp_path: Path) 
     assert s.submission_ready is False
 
 
+def test_unresolved_stat_placeholder_blocks_even_with_passing_surface_sidecar(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    (tmp_path / "full_paper.md").write_text(
+        _AUTOMATED_ACCOUNTABILITY + "\nExact statistic unavailable in retained source excerpt.\n"
+    )
+    s = compute(tmp_path)
+    assert s.journal_surface_pass is False
+    assert any(b.code == "unresolved_stat_placeholder" for b in s.blocking_reasons)
+
+
+def test_agent_certified_human_verification_claim_blocks_final_status(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    (tmp_path / "full_paper.md").write_text(
+        _AUTOMATED_ACCOUNTABILITY + "\nFinal eligibility decisions are author-verified.\n"
+    )
+    s = compute(tmp_path)
+    assert s.journal_surface_pass is False
+    assert any(b.code == "unsupported_human_verification" for b in s.blocking_reasons)
+
+
+def test_agent_certified_requires_automated_accountability_statement(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    (tmp_path / "full_paper.md").write_text("## Methods\n\n### Accountability\n\nAccountability statement pending.\n")
+    s = compute(tmp_path)
+    assert s.journal_surface_pass is False
+    assert any(b.code == "automated_accountability_missing" for b in s.blocking_reasons)
+
+
 def test_no_runtime_yields_l1(tmp_path: Path) -> None:
     # Nothing written — runtime fails first.
     s = compute(tmp_path)
@@ -121,14 +163,14 @@ def test_audit_pass_surface_fail_yields_l3(tmp_path: Path) -> None:
     assert s.journal_surface_pass is False
 
 
-def test_advisory_audit_miss_does_not_block_audit_pass(tmp_path: Path) -> None:
+def test_incomplete_audit_fails_closed_even_when_p1_passes(tmp_path: Path) -> None:
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {
         "n_total": 14, "n_pass": 13, "p1_pass": True, "score_out_of_10": 9.3,
     })
     s = compute(tmp_path)
-    assert s.audit_pass is True
-    assert not [b for b in s.blocking_reasons if b.stage == "audit"]
+    assert s.audit_pass is False
+    assert [b for b in s.blocking_reasons if b.stage == "audit"]
 
 
 def test_audit_surface_pass_pre_submit_fail_yields_l3(tmp_path: Path) -> None:
@@ -143,6 +185,7 @@ def test_audit_surface_pass_pre_submit_fail_yields_l3(tmp_path: Path) -> None:
     _write(tmp_path, "pre_submit_gate.json", {
         "result": {"passed": False, "failures": ["audit_gates_failed"]},
     })
+    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
     s = compute(tmp_path)
     assert s.maturity_level == 3
     assert s.pre_submit_pass is False
@@ -171,6 +214,7 @@ def test_readiness_contract_blocker_overrides_pre_submit_pass(tmp_path: Path) ->
 
 def test_advisory_readiness_item_does_not_block_l4(tmp_path: Path) -> None:
     """Administrative/readiness roadmap gaps should not demote a clean paper below L4."""
+    (tmp_path / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {
         "n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.5,
@@ -192,18 +236,21 @@ def test_advisory_readiness_item_does_not_block_l4(tmp_path: Path) -> None:
             )
         ],
     })
+    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
     s = compute(tmp_path)
     assert s.pre_submit_pass is True
     assert s.maturity_level == 4
 
 
 def test_three_pass_no_target_journal_yields_l4(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {
         "n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.5,
     })
     _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
+    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
     # No target_journal_pack.json, no human_signoff.json
     s = compute(tmp_path)
     assert s.maturity_level == 4
@@ -286,6 +333,23 @@ def test_audit_with_zero_total_fails_closed(tmp_path: Path) -> None:
     assert s.audit_pass is False
 
 
+def test_pre_submit_requires_positive_artifact_consistency(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    _write(tmp_path, "artifact_consistency.json", {"passed": None, "checks": []})
+    status = compute(tmp_path)
+    assert status.pre_submit_pass is False
+    assert status.researka_publish_ready is False
+
+
+def test_missing_manuscript_fails_closed(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    (tmp_path / "full_paper.md").unlink()
+    status = compute(tmp_path)
+    assert status.journal_surface_pass is False
+    assert status.researka_publish_ready is False
+    assert any(reason.code == "public_text_integrity_failed" for reason in status.blocking_reasons)
+
+
 # ---- Slice 17: accountability-model split ---------------------------------
 
 
@@ -293,6 +357,7 @@ def test_researka_model_reaches_l5_without_human_signoff(tmp_path: Path) -> None
     """Researka-native ladder: no human_signoff file required. L5 is
     reached on the artifact spine alone (audit + surface + pre_submit
     + artifact_consistency + citation_registry + target_journal)."""
+    (tmp_path / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {
         "n_total": 14, "n_pass": 14, "p1_pass": True,
@@ -304,7 +369,7 @@ def test_researka_model_reaches_l5_without_human_signoff(tmp_path: Path) -> None
     _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "researka_agent_certified"})
-    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "citation_registry.json", _REGISTRY)
     _write(tmp_path, "artifact_consistency.json",
            {"passed": True, "checks": []})
     # Deliberately NO human_signoff.json
@@ -317,6 +382,7 @@ def test_researka_model_reaches_l5_without_human_signoff(tmp_path: Path) -> None
 def test_legacy_model_blocks_l5_without_human_signoff(tmp_path: Path) -> None:
     """Legacy journal ladder: ICMJE/COPE compliance — still requires
     a named human-author signoff with ready_to_submit=true."""
+    (tmp_path / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {
         "n_total": 14, "n_pass": 14, "p1_pass": True,
@@ -328,7 +394,7 @@ def test_legacy_model_blocks_l5_without_human_signoff(tmp_path: Path) -> None:
     _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "legacy_journal_submission"})
-    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "citation_registry.json", _REGISTRY)
     _write(tmp_path, "artifact_consistency.json",
            {"passed": True, "checks": []})
     s = compute(tmp_path)
@@ -351,23 +417,50 @@ def test_legacy_model_reaches_l5_with_human_signoff(tmp_path: Path) -> None:
     _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "legacy_journal_submission"})
-    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "citation_registry.json", _REGISTRY)
     _write(tmp_path, "artifact_consistency.json",
            {"passed": True, "checks": []})
-    _write(tmp_path, "human_signoff.json", {"ready_to_submit": True})
+    (tmp_path / "full_paper.md").write_text(
+        "## Methods\n\n### Accountability\n\nFinal eligibility decisions are author-verified.\n"
+    )
+    write_human_signoff(tmp_path, HumanSignoff(
+        author="Dom Lynch", reviewed=True, evidence_claims_reviewed=True,
+        conflicts_declared=True, ready_to_submit=True, signature="Dom Lynch",
+    ))
     s = compute(tmp_path)
     assert s.maturity_level == 5
     assert s.accountability_pass is True
 
 
-def test_unknown_accountability_model_falls_back_to_researka(tmp_path: Path) -> None:
-    """An unknown/typo model in manifest → defaults to researka_agent_certified
-    (the conservative non-blocking default). Universal — fail-soft."""
+def test_legacy_human_claim_fails_after_signed_manuscript_changes(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    _write(tmp_path, "manifest.json", {"accountability_model": "legacy_journal_submission"})
+    paper = tmp_path / "full_paper.md"
+    paper.write_text("## Methods\n\n### Accountability\n\nFinal decisions are author-verified.\n")
+    write_human_signoff(tmp_path, HumanSignoff(
+        author="Dom Lynch", reviewed=True, evidence_claims_reviewed=True,
+        conflicts_declared=True, ready_to_submit=True, signature="Dom Lynch",
+    ))
+    paper.write_text(paper.read_text() + "Changed after signature.\n")
+    s = compute(tmp_path)
+    assert s.accountability_pass is False
+    assert s.journal_surface_pass is False
+    assert s.researka_publish_ready is False
+
+
+def test_unknown_accountability_model_fails_closed(tmp_path: Path) -> None:
     from agent.accountability import resolve_model
     assert resolve_model(None) == "researka_agent_certified"
     assert resolve_model("") == "researka_agent_certified"
-    assert resolve_model("typo_unknown") == "researka_agent_certified"
+    with pytest.raises(ValueError, match="unknown accountability model"):
+        resolve_model("typo_unknown")
     assert resolve_model("legacy_journal_submission") == "legacy_journal_submission"
+    _all_pass_sidecars(tmp_path)
+    _write(tmp_path, "manifest.json", {"accountability_model": "typo_unknown"})
+    status = compute(tmp_path)
+    assert status.accountability_model == "invalid"
+    assert status.accountability_pass is False
+    assert status.researka_publish_ready is False
 
 
 def test_human_signoff_pass_backward_compat_mirror(tmp_path: Path) -> None:
@@ -384,7 +477,7 @@ def test_human_signoff_pass_backward_compat_mirror(tmp_path: Path) -> None:
     _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
     _write(tmp_path, "manifest.json",
            {"accountability_model": "researka_agent_certified"})
-    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "citation_registry.json", _REGISTRY)
     _write(tmp_path, "artifact_consistency.json",
            {"passed": True, "checks": []})
     s = compute(tmp_path)
@@ -396,6 +489,7 @@ def test_undeclared_target_journal_blocks_journal_submission_not_researka(tmp_pa
     (auto-generated fallback) must NOT count as a valid submission target.
     Previously this path quietly promoted runs to L5/submission_ready=True
     with no human-affirmed journal — the overclaim path. Universal."""
+    (tmp_path / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {"n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.6, "checks": []})
     _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
@@ -405,7 +499,7 @@ def test_undeclared_target_journal_blocks_journal_submission_not_researka(tmp_pa
         "declared_in_topic_pack": False,
     })
     _write(tmp_path, "manifest.json", {"accountability_model": "researka_agent_certified"})
-    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "citation_registry.json", _REGISTRY)
     _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
     s = compute(tmp_path)
     assert s.target_journal_pass is False
@@ -420,6 +514,7 @@ def test_undeclared_target_journal_blocks_journal_submission_not_researka(tmp_pa
 def test_slice36_declared_target_journal_clears_l4_ceiling(tmp_path: Path) -> None:
     """Slice 36: explicit declared_in_topic_pack=True passes the guard
     (companion to the negative case above). This is the only path to L5."""
+    (tmp_path / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
     _write(tmp_path, "benchmark_runtime.json", {"return_code": 0})
     _write(tmp_path, "full_paper.audit.json", {"n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.6, "checks": []})
     _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
@@ -428,11 +523,26 @@ def test_slice36_declared_target_journal_clears_l4_ceiling(tmp_path: Path) -> No
         "journal": "Journal of Climate Modelling", "declared_in_topic_pack": True,
     })
     _write(tmp_path, "manifest.json", {"accountability_model": "researka_agent_certified"})
-    _write(tmp_path, "citation_registry.json", {})
+    _write(tmp_path, "citation_registry.json", _REGISTRY)
     _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    write_human_signoff(tmp_path, HumanSignoff(
+        author="Test Author", reviewed=True, evidence_claims_reviewed=True,
+        conflicts_declared=True, ready_to_submit=True, signature="test-signature",
+    ))
     s = compute(tmp_path)
     assert s.target_journal_pass is True
     assert s.researka_publish_ready is True
     assert s.journal_submission_ready is True
     assert s.submission_ready is True
     assert s.maturity_level == 5
+
+
+def test_declared_journal_requires_valid_signoff_for_package_readiness(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    (tmp_path / "human_signoff.json").unlink()
+
+    status = compute(tmp_path)
+
+    assert status.researka_publish_ready is True
+    assert status.journal_submission_ready is False
+    assert any(reason.code == "human_signoff_invalid" for reason in status.blocking_reasons)

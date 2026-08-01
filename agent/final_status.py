@@ -73,6 +73,13 @@ def _load(p: Path) -> dict[str, Any] | None:
     return data if isinstance(data, dict) else None
 
 
+def _accountability_model(run_dir: Path) -> str:
+    from agent.accountability import resolve_model
+    manifest = _load(run_dir / "manifest.json") or {}
+    declared = manifest.get("accountability_model")
+    return resolve_model(declared if isinstance(declared, str) else None)
+
+
 def _read_runtime(run_dir: Path) -> tuple[bool, str]:
     d = _load(run_dir / "benchmark_runtime.json")
     if d is None:
@@ -87,10 +94,12 @@ def _read_audit(run_dir: Path) -> tuple[bool, str]:
     d = _load(run_dir / "full_paper.audit.json")
     if not isinstance(d, dict):
         return (False, "full_paper.audit.json missing or unreadable")
-    n_pass = int(d.get("n_pass") or 0)
-    n_total = int(d.get("n_total") or 0)
-    p1 = bool(d.get("p1_pass"))
-    if p1 and n_total > 0:
+    raw_pass = d.get("n_pass")
+    raw_total = d.get("n_total")
+    n_pass = raw_pass if isinstance(raw_pass, int) and not isinstance(raw_pass, bool) else 0
+    n_total = raw_total if isinstance(raw_total, int) and not isinstance(raw_total, bool) else 0
+    p1 = d.get("p1_pass") is True
+    if p1 and n_total > 0 and n_pass == n_total:
         return (True, "")
     return (False, f"p1_pass={p1} pass={n_pass}/{n_total}")
 
@@ -99,11 +108,31 @@ def _read_journal_surface(run_dir: Path) -> tuple[bool, str]:
     d = _load(run_dir / "full_paper.journal_surface.json")
     if not isinstance(d, dict):
         return (False, "journal_surface missing")
-    if d.get("passed"):
-        return (True, "")
-    issues = d.get("issues") or []
-    n = len(issues) if isinstance(issues, list) else 0
-    return (False, f"{n} surface issues")
+    if d.get("passed") is not True:
+        issues = d.get("issues") or []
+        n = len(issues) if isinstance(issues, list) else 0
+        return (False, f"{n} surface issues")
+    paper_path = run_dir / "full_paper.md"
+    if not paper_path.is_file():
+        return (False, "public_text_integrity: full_paper.md missing")
+    try:
+        paper_md = paper_path.read_text()
+    except OSError:
+        return (False, "public_text_integrity: manuscript unreadable")
+    try:
+        model = _accountability_model(run_dir)
+    except ValueError:
+        model = "invalid"
+    human_valid = False
+    if model == "legacy_journal_submission":
+        from agent.human_signoff import load_and_validate
+        signoff, signoff_issues = load_and_validate(run_dir)
+        human_valid = signoff is not None and not signoff_issues
+    from agent.journal_surface_gate import public_text_integrity_issue_messages
+    issues = public_text_integrity_issue_messages(paper_md, accountability_model=model, human_signoff_validated=human_valid)
+    if issues:
+        return (False, "public_text_integrity: " + issues[0])
+    return (True, "")
 
 
 def _read_pre_submit(run_dir: Path) -> tuple[bool, str]:
@@ -112,7 +141,7 @@ def _read_pre_submit(run_dir: Path) -> tuple[bool, str]:
         return (False, "pre_submit_gate missing")
     raw = d.get("result")
     result: dict[str, Any] = raw if isinstance(raw, dict) else {}
-    if not result.get("passed"):
+    if result.get("passed") is not True:
         fails = result.get("failures") or []
         head = ",".join(str(f) for f in fails[:3]) if isinstance(fails, list) else ""
         return (False, head or "pre_submit not passed")
@@ -125,22 +154,18 @@ def _read_pre_submit(run_dir: Path) -> tuple[bool, str]:
         ]
         if blockers:
             return (False, "journal_readiness_contract:" + ",".join(blockers[:3]))
-    # Slice 14 (2026-05-14): fold artifact consistency into the
-    # pre_submit dimension. Kills the stale-PDF / desync-supplement
-    # reviewer trap — if any visible artifact (PDF/DOCX export,
-    # supplement mirror, citation_registry) drifts from the markdown
-    # source of truth, pre_submit fails even when the LLM-gate pipeline
-    # said pass. The artifact_consistency.json sidecar is optional;
-    # absence is treated as "not yet verified" → fail-soft pass so
-    # legacy runs without the sidecar don't regress.
+    # Artifact consistency is a required trust artifact. Missing, malformed,
+    # null, or merely non-false values are not evidence of consistency.
     consistency = _load(run_dir / "artifact_consistency.json")
-    if isinstance(consistency, dict) and consistency.get("passed") is False:
+    if not isinstance(consistency, dict) or consistency.get("passed") is not True:
+        checks = consistency.get("checks", ()) if isinstance(consistency, dict) else ()
         failing = [
             c.get("name", "?")
-            for c in consistency.get("checks", ())
+            for c in checks
             if isinstance(c, dict) and c.get("passed") is False
         ]
-        return (False, "artifact_consistency:" + ",".join(failing[:3]))
+        detail = ",".join(failing[:3]) or "missing_or_not_passed"
+        return (False, "artifact_consistency:" + detail)
     return (True, "")
 
 
@@ -162,10 +187,11 @@ def _read_accountability(run_dir: Path) -> tuple[bool, str]:
     accountability_model. researka_agent_certified (default) trusts
     the machine artifact spine; legacy_journal_submission additionally
     requires named human-author signoff. See agent/accountability.py."""
-    from agent.accountability import accountability_pass, resolve_model
-    manifest = _load(run_dir / "manifest.json") or {}
-    declared = manifest.get("accountability_model")
-    model = resolve_model(declared if isinstance(declared, str) else None)
+    from agent.accountability import accountability_pass
+    try:
+        model = _accountability_model(run_dir)
+    except ValueError as exc:
+        return (False, str(exc))
     ok, detail = accountability_pass(run_dir, model)
     if ok:
         return (True, "")
@@ -182,6 +208,10 @@ _REASON_CODES: tuple[tuple[str, str, str], ...] = (
     ("audit", "missing", "audit_missing"),
     ("audit", "p1_pass=false", "audit_p1_failed"),
     ("audit", "pass=", "audit_check_failed"),
+    ("journal_surface", "unresolved statistic placeholder", "unresolved_stat_placeholder"),
+    ("journal_surface", "unsupported human-verification", "unsupported_human_verification"),
+    ("journal_surface", "automated-gate accountability", "automated_accountability_missing"),
+    ("journal_surface", "public_text_integrity", "public_text_integrity_failed"),
     ("journal_surface", "missing", "journal_surface_missing"),
     ("journal_surface", "issues", "journal_surface_issues"),
     ("pre_submit", "missing", "pre_submit_missing"),
@@ -259,12 +289,10 @@ def compute(run_dir: Path) -> FinalStatus:
     )
     # Resolve the declared model so callers can see which path the
     # accountability_pass dimension was evaluated under.
-    from agent.accountability import resolve_model
-    _manifest = _load(run_dir / "manifest.json") or {}
-    model = resolve_model(
-        _manifest.get("accountability_model")
-        if isinstance(_manifest, dict) else None,
-    )
+    try:
+        model = _accountability_model(run_dir)
+    except ValueError:
+        model = "invalid"
     level = _compute_level(dims)
     researka_publish_ready = all(
         dims[name]
@@ -276,7 +304,17 @@ def compute(run_dir: Path) -> FinalStatus:
             "accountability_pass",
         )
     )
-    journal_submission_ready = researka_publish_ready and dims["target_journal_pass"]
+    from agent.human_signoff import load_and_validate
+    signoff, signoff_issues = load_and_validate(run_dir)
+    journal_signoff_pass = signoff is not None and not signoff_issues
+    if dims["target_journal_pass"] and not journal_signoff_pass:
+        detail = ",".join(issue.code for issue in signoff_issues) or "signoff_missing"
+        blockers += (BlockingReason(
+            stage="human_signoff", code="human_signoff_invalid", detail=detail,
+        ),)
+    journal_submission_ready = (
+        researka_publish_ready and dims["target_journal_pass"] and journal_signoff_pass
+    )
     return FinalStatus(
         runtime_pass=dims["runtime_pass"],
         audit_pass=dims["audit_pass"],

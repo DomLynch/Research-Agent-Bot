@@ -137,7 +137,7 @@ def test_final_preflight_live_mode_is_advisory_only(tmp_path: Path, monkeypatch)
     assert "doi_not_in_source_bundle" in payload["metadata"]["preflight_qa"]["advisory_codes"]
 
 
-def test_final_preflight_hook_missing_tool_reports_without_crashing(
+def test_final_preflight_hook_missing_tool_blocks_enforce_mode(
     tmp_path: Path, monkeypatch,
 ) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
@@ -147,7 +147,7 @@ def test_final_preflight_hook_missing_tool_reports_without_crashing(
 
     payload, report = submit._run_preflight_qa(_payload("Body."), run)  # type: ignore[attr-defined]
 
-    assert payload is not None
-    assert report and report["status"] == "pass"
+    assert payload is None
+    assert report and report["status"] == "blocked"
+    assert report["blocked_reasons"] == ["preflight_tool_missing"]
     assert "preflight_tool_missing" in {r["code"] for r in report["advisories"]}
-    assert "preflight_tool_missing" in payload["metadata"]["preflight_qa"]["advisory_codes"]

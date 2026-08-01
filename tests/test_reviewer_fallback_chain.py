@@ -374,5 +374,64 @@ def test_cost_estimate_is_real_not_zero() -> None:
     )
     # Mistral: $0.15/Mtok in, $0.60/Mtok out → $0.15 + $0.06 = $0.21
     assert 0.20 < mistral_cost < 0.22, f"unexpected mistral cost: {mistral_cost}"
-    unknown_cost = final_reviewer._estimate_cost("foo/bar-99", 1_000_000, 100_000)
-    assert unknown_cost == 0.0  # no pricing table → 0
+    with pytest.raises(ValueError, match="no pricing configured"):
+        final_reviewer._estimate_cost("foo/bar-99", 1_000_000, 100_000)
+
+
+def test_unknown_model_fails_before_provider_call() -> None:
+    client = MagicMock()
+    client.post = AsyncMock()
+
+    with pytest.raises(ValueError, match="no pricing configured"):
+        asyncio.run(final_reviewer._call_with_fallback(
+            "sys", "user", "unknown/model",
+            "mistralai/mistral-small-2603",
+            "test-key", "https://openrouter.ai/api/v1", client,
+        ))
+    client.post.assert_not_called()
+
+
+def test_cost_cap_fails_before_provider_call() -> None:
+    client = MagicMock()
+    client.post = AsyncMock()
+
+    with pytest.raises(RuntimeError, match="cost ceiling"):
+        asyncio.run(final_reviewer.review_paper(
+            "paper", {"receipts": []}, {"p1_pass": True},
+            api_key="test-key", client=client, max_cost_usd=0.0,
+        ))
+    client.post.assert_not_called()
+
+
+def test_cost_cap_defaults_fail_closed(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv("FINAL_LAYER_MAX_COST_USD", raising=False)
+    assert final_reviewer._review_cost_cap(None) == 1.0
+
+
+def test_review_paper_honors_environment_provider_controls(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv(
+        "FINAL_LAYER_REVIEWER_MODEL", "mistralai/mistral-small-2603",
+    )
+    monkeypatch.setenv(
+        "FINAL_LAYER_FALLBACK_MODEL", "google/gemini-3.1-flash-lite:exacto",
+    )
+    monkeypatch.setenv("OPENROUTER_BASE_URL", "https://router.example/v1")
+    monkeypatch.delenv("FINAL_LAYER_LOW_PATCH_FALLBACK_MODEL", raising=False)
+    monkeypatch.delenv("FINAL_LAYER_MAX_COST_USD", raising=False)
+    client = MagicMock()
+    client.post = AsyncMock(return_value=_mock_chat_response(
+        "mistralai/mistral-small-2603", {"patches": []},
+    ))
+
+    _patches, _raw, model_used, _cost = asyncio.run(
+        final_reviewer.review_paper(
+            "paper", {"receipts": []}, {"p1_pass": True},
+            api_key="test-key", client=client,
+        )
+    )
+
+    assert model_used == "mistralai/mistral-small-2603"
+    assert client.post.call_args.args[0] == "https://router.example/v1/chat/completions"
+    assert client.post.call_args.kwargs["json"]["model"] == model_used

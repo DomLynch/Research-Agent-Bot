@@ -5901,6 +5901,12 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     from agent.artifact_consistency import refresh_public_exports
     if refresh_public_exports(out_dir):
         _g("refresh_public_exports_post_finalizer", 1, "DOCX, Typst, PaperIR, and export manifest rebuilt from final Markdown")
+    package_paper = out_dir / "submission_package" / "final_manuscript.md"
+    if paper_path.is_file() and package_paper.is_file():
+        final_text = paper_path.read_text()
+        if package_paper.read_text() != final_text:
+            package_paper.write_text(final_text)
+            _g("refresh_submission_manuscript_post_finalizer", 1, "submission-package mirror refreshed from final Markdown")
     if _refresh_audit_sidecar(out_dir):
         _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
     if _script_module("paper_quality_runtime").refresh_publication_score(out_dir):

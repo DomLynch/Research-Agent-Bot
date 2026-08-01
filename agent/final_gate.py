@@ -66,7 +66,12 @@ class GateThresholds:
 DEFAULT_THRESHOLDS: GateThresholds = GateThresholds()
 
 
-def landscape_thresholds(n_receipts: int, n_tensions: int) -> GateThresholds | None:
+def landscape_thresholds(
+    n_receipts: int,
+    n_tensions: int,
+    *,
+    declared_review_type: str | None = None,
+) -> GateThresholds | None:
     """Relaxed thresholds for a zero-tension evidence_map landscape, else None.
 
     An evidence_map is reviewed for fidelity, not convergence: a corpus with no
@@ -77,7 +82,11 @@ def landscape_thresholds(n_receipts: int, n_tensions: int) -> GateThresholds | N
     corpora so the caller falls back to DEFAULT_THRESHOLDS. High-tension
     landscapes already clear min_tensions=1, so only the zero-tension case
     needs relaxing here. Universal — keyed on tension count, not topic."""
-    if n_receipts > 0 and n_tensions <= 0:
+    if (
+        declared_review_type == "evidence_map"
+        and n_receipts > 0
+        and n_tensions <= 0
+    ):
         return GateThresholds(min_tensions=0)
     return None
 

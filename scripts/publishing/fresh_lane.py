@@ -9,6 +9,8 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import fcntl
+import hashlib
+import importlib
 import json
 import os
 import re
@@ -48,7 +50,9 @@ from agent.publishing.io import (  # noqa: E402
     write_json as _write_json,
 )
 from agent.publishing.candidate_prepare import (  # noqa: E402
+    CandidateBinding,
     buffer_status as _candidate_buffer_status,
+    candidate_binding as _candidate_binding,
     prepared_candidate_rows as _validated_candidate_rows,
     recent_attempts as _recent_preparation_attempts,
 )
@@ -82,7 +86,7 @@ from agent.publishing.reconciliation import (  # noqa: E402
 )
 from agent.revision_contract import ask_fingerprint  # noqa: E402
 from agent.revision_claim_trace import major_claim_trace_capacity  # noqa: E402
-from agent.revision_evidence import load_revision_evidence  # noqa: E402
+from agent.revision_evidence import RECEIPT_CONTRACT_FIELDS, load_revision_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
     COMPACT_REVIEW_TYPES,
     DEFAULT_REVIEW_TYPE,
@@ -614,7 +618,7 @@ def _reconcile_published_ledger(
     return True
 
 
-def reconcile_publication_ledgers(
+def _reconcile_publication_ledgers_unlocked(
     *,
     runs_root: Path = RUNS,
     date: str | None = None,
@@ -691,6 +695,16 @@ def reconcile_publication_ledgers(
     }
     _write_reconcile_artifact(ledger_dir, date=date, mode=mode, result=result)
     return result
+
+
+def reconcile_publication_ledgers(
+    *, runs_root: Path = RUNS, date: str | None = None,
+    mode: str | None = None, remote_loader: RemoteLoader | None = None,
+) -> dict[str, Any]:
+    with submit_bridge.submission_lock(runs_root):
+        return _reconcile_publication_ledgers_unlocked(
+            runs_root=runs_root, date=date, mode=mode, remote_loader=remote_loader,
+        )
 
 
 def discover_topics(
@@ -944,14 +958,10 @@ def _surface_passes_current_finalizer(run: Path) -> bool:
             probe = Path(tmp) / run.name
             shutil.copytree(run, probe)
             from agent.journal_finalizer import finalize_run
-            from agent.journal_surface_gate import evaluate_journal_surface
-
             finalize_run(probe)
             paper = (probe / "full_paper.md").read_text(encoding="utf-8")
-            return evaluate_journal_surface(
-                paper,
-                declared_review_type=_declared_review_type(probe),
-            ).passed
+            report = importlib.import_module("scripts.journal_finalizer")._surface_report(paper, probe)
+            return bool(report and report.passed)
     except (OSError, RuntimeError, ValueError, ImportError):
         return False
 
@@ -1491,9 +1501,9 @@ def _latest_public_decisions_by_title() -> tuple[dict[str, dict[str, Any]], str 
 def _public_decision_markers(rows: dict[str, dict[str, Any]]) -> set[str]:
     markers: set[str] = set()
     for row in rows.values():
-        decision = str(row.get("decision") or "").strip().lower()
-        status = str(row.get("status") or "").strip().lower()
-        if decision not in {"accept", "accepted"} and status not in {"accepted", "public", "published"}:
+        raw_metadata = row.get("metadata")
+        metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
+        if not submit_bridge._publication_row_has_public_proof(row, metadata):
             continue
         title = str(row.get("title") or "")
         if title:
@@ -1838,12 +1848,15 @@ def _compact_handled_revision_rows(rows: list[Any]) -> list[dict[str, Any]]:
     return sorted(compacted, key=_row_time)
 
 
-def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str) -> None:
+def _mark_revision_handled(
+    ledger_dir: Path, row: dict[str, Any], *, status: str,
+    resume_run: str | None = None,
+) -> None:
     path = ledger_dir / HANDLED_REVISIONS
     data = _read_json(path)
     raw_rows = data.get("handled")
     rows: list[dict[str, Any]] = raw_rows if isinstance(raw_rows, list) else []
-    rows.append({
+    record = {
         "key": _revision_key(row),
         "status": status,
         "title": row.get("title"),
@@ -1853,7 +1866,10 @@ def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str
         "request_fingerprint": _revision_request_fingerprint(row),
         "repair_epoch": REVISION_REPAIR_EPOCH,
         "handled_at": dt.datetime.now(dt.UTC).isoformat(),
-    })
+    }
+    if resume_run:
+        record["resume_run"] = Path(resume_run).name
+    rows.append(record)
     _write_json(path, {"handled": _compact_handled_revision_rows(rows)})
 
 
@@ -1867,6 +1883,82 @@ def _revision_submission_row(
         if marker.startswith("submission:")
     )
     return {**row, "submissionId": submission_ids[0]} if submission_ids else row
+
+
+def _revision_timeout_checkpoint(
+    runs_root: Path, ledger_dir: Path, request: dict[str, Any],
+    source_run: Path, topic: str,
+) -> Path | None:
+    rows = _read_json(ledger_dir / HANDLED_REVISIONS).get("handled")
+    if not isinstance(rows, list):
+        return None
+    request_fingerprint = _revision_request_fingerprint(request)
+    source_rows = _read_json(source_run / "manifest.json").get("receipts")
+    receipts = {
+        str(row.get("receipt_id")): row for row in source_rows or []
+        if isinstance(row, dict) and row.get("receipt_id")
+    }
+    authorized = revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        str(request.get("feedback") or ""), receipts,
+    )
+    source_contract = _source_manifest_receipt_contract_hash(source_run, authorized)
+    if not source_contract:
+        return None
+    for row in reversed(rows):
+        if (
+            not isinstance(row, dict)
+            or row.get("status") != "synthesis_timeout"
+            or row.get("key") != _revision_key(request)
+            or row.get("request_fingerprint") != request_fingerprint
+            or str(row.get("repair_epoch") or "") != str(REVISION_REPAIR_EPOCH)
+        ):
+            continue
+        name = str(row.get("resume_run") or "")
+        if not name or Path(name).name != name:
+            continue
+        checkpoint = runs_root / name
+        required = (
+            "full_paper.md", "manifest.json", "full_paper.audit.json",
+            "full_paper.consistency.json",
+        )
+        manifest = _read_json(checkpoint / "manifest.json")
+        if (
+            not all((checkpoint / filename).is_file() for filename in required)
+            or submit_bridge._normalized_key(str(manifest.get("topic") or ""))
+            != submit_bridge._normalized_key(topic)
+            or _source_manifest_receipt_contract_hash(checkpoint, authorized) != source_contract
+        ):
+            continue
+        availability = _source_manifest_availability(
+            topic, checkpoint, authorized_contract_fields=authorized,
+        )
+        if (
+            availability and availability.get("passed")
+            and availability.get("evidence_mode") == "snapshot"
+        ):
+            return checkpoint
+    return None
+
+
+def _source_manifest_receipt_contract_hash(
+    run: Path, authorized_contract_fields: Mapping[str, Collection[str]] | None = None,
+) -> str:
+    rows = _read_json(run / "manifest.json").get("receipts")
+    if not isinstance(rows, list) or not rows:
+        return ""
+    keys = ("receipt_id", "source_url", *RECEIPT_CONTRACT_FIELDS)
+    contract = []
+    for row in rows:
+        if not isinstance(row, dict) or not row.get("receipt_id"):
+            continue
+        allowed = set((authorized_contract_fields or {}).get(str(row["receipt_id"]), ()))
+        contract.append({key: row.get(key) for key in keys if key not in allowed})
+    if not contract:
+        return ""
+    contract.sort(key=lambda row: str(row["receipt_id"]))
+    return hashlib.sha256(
+        json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
 
 
 def _pending_remote_revision(
@@ -1989,6 +2081,12 @@ def _pending_remote_revision(
                     continue
                 request["unchanged_retry_count"] = prior_count + 1
             request["topic"], request["source_run"] = record_topic, run.name
+            request.pop("resume_run", None)
+            checkpoint = _revision_timeout_checkpoint(
+                runs_root, ledger_dir, request, run, record_topic,
+            )
+            if checkpoint:
+                request["resume_run"] = checkpoint.name
             return request, None
     return None, None
 
@@ -2382,15 +2480,68 @@ def _candidate_buffer_thresholds() -> dict[str, int]:
     return _CANDIDATE_THRESHOLDS.as_dict()
 
 
+def _current_candidate_binding(topic: str) -> CandidateBinding | None:
+    corpus_root = CORPORA / topic
+    paths = sorted(
+        (*((corpus_root / "quant_claims").glob("*.quant_claims.json")),
+         *((corpus_root / "parsed").glob("*.paper_sections.json"))),
+        key=lambda path: str(path.relative_to(corpus_root)),
+    )
+    corpus, receipts = hashlib.sha256(), hashlib.sha256()
+    pack_path = TOPIC_PACKS / f"{topic}.toml"
+    if pack_path.is_file():
+        corpus.update(b"topic_pack\0" + pack_path.read_bytes())
+    else:
+        pack_data = _read_json(TOPIC_PACKS_DB / topic / "latest.json").get("pack_data")
+        corpus.update(
+            b"topic_pack\0" + json.dumps(
+                pack_data if isinstance(pack_data, dict) else {},
+                sort_keys=True, separators=(",", ":"),
+            ).encode()
+        )
+    for path in paths:
+        name = str(path.relative_to(corpus_root)).encode()
+        if path.name.endswith(".quant_claims.json"):
+            receipts.update(name)
+        corpus.update(name + b"\0" + path.read_bytes())
+    try:
+        code_sha = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
+        ).strip()
+        return _candidate_binding(
+            topic,
+            code_sha=code_sha,
+            corpus_hash=corpus.hexdigest(),
+            receipt_set_hash=receipts.hexdigest(),
+            review_type=_topic_declared_review_type(topic),
+            thresholds=_CANDIDATE_THRESHOLDS,
+        )
+    except (OSError, subprocess.SubprocessError, ValueError):
+        return None
+
+
 def _prepared_candidate_rows(
     ledger_dir: Path, *, now: dt.datetime | None = None,
 ) -> dict[str, dict[str, Any]]:
+    report = _read_json(ledger_dir / CANDIDATE_BUFFER)
+    rows: list[Any] = []
+    for key in ("ready", "attempts"):
+        raw_rows = report.get(key)
+        if isinstance(raw_rows, list):
+            rows.extend(raw_rows)
+    bindings = {
+        topic: binding
+        for row in rows
+        if isinstance(row, dict) and (topic := str(row.get("topic") or ""))
+        if (binding := _current_candidate_binding(topic))
+    }
     return _validated_candidate_rows(
-        _read_json(ledger_dir / CANDIDATE_BUFFER),
+        report,
         thresholds=_CANDIDATE_THRESHOLDS,
         now=now or dt.datetime.now(dt.UTC),
         max_age_hours=CANDIDATE_BUFFER_MAX_AGE_HOURS,
         precision_floor=SOURCE_TOPIC_REPAIR_FLOOR,
+        current_bindings=bindings,
     )
 
 
@@ -3355,7 +3506,10 @@ def _source_manifest_receipt_ids(source_run: Path | None) -> list[str]:
     ]
 
 
-def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[str, Any] | None:
+def _source_manifest_availability(
+    topic: str, source_run: Path | None, *,
+    authorized_contract_fields: Mapping[str, Collection[str]] | None = None,
+) -> dict[str, Any] | None:
     receipt_ids = _source_manifest_receipt_ids(source_run)
     if not receipt_ids:
         return None
@@ -3368,6 +3522,7 @@ def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[s
             quant_dir=CORPORA / topic / "quant_claims",
             parsed_dir=CORPORA / topic / "parsed",
             expected_topic=topic,
+            authorized_contract_fields=authorized_contract_fields,
         )
         available = lock.mode == "snapshot" and not lock.errors
         return {
@@ -3437,10 +3592,11 @@ def _repair_existing_run(
     revision_source: dict[str, Any] | None = None,
     revision_feedback: str | None = None,
     repair_reason: str | None = None,
+    resume_checkpoint: bool = False,
 ) -> tuple[bool, str]:
     if not (revision_feedback or repair_reason) or not (source_dir / "full_paper.md").is_file() or out_dir.exists():
         return False, "repair_precondition_failed"
-    if revision_feedback:
+    if revision_feedback and not resume_checkpoint:
         rows = [row for row in _read_json(source_dir / "manifest.json").get("receipts", []) if isinstance(row, dict)]
         asks = _revision_asks(revision_feedback, _required_revision_items(revision_source or {}))
         if not asks or re.search(r"\b(?:rebuild|reset|revise|replace)\b.{0,50}\b(?:source bundle|corpus)\b|\b(?:remove|exclude)\b.{0,50}\b(?:off[ -]?topic|unrelated)\b", revision_feedback, re.I) or len(revision_coverage.deterministic_known_asks(asks, evidence_rows=rows)) != len(asks):
@@ -3468,10 +3624,9 @@ def _repair_existing_run(
                 shutil.rmtree(out_dir, ignore_errors=True)
                 return False, "repair_noop"
             if repair_reason == "journal_surface_not_passed":
-                from agent.journal_surface_gate import evaluate_journal_surface
-                surface = evaluate_journal_surface(after, declared_review_type=_declared_review_type(out_dir))
-                if not surface.passed:
-                    codes = ",".join(sorted({issue.code for issue in surface.issues}))
+                surface = importlib.import_module("scripts.journal_finalizer")._surface_report(after, out_dir)
+                if surface is None or not surface.passed:
+                    codes = ",".join(sorted({issue.code for issue in surface.issues})) if surface else "surface_report_unavailable"
                     shutil.rmtree(out_dir, ignore_errors=True)
                     return False, f"surface_after_repair_failed:{codes}"
     except (OSError, RuntimeError, ValueError, ImportError) as exc:
@@ -3863,20 +4018,26 @@ def prepare_candidate_buffer(
             ready = decision.ready_for_synthesis and preflight.get("passed") is True
         elif not ready:
             repair = {"status": "repair_budget_exhausted"}
+        binding = _current_candidate_binding(topic) if ready else None
+        ready = ready and binding is not None
         row = {
             "topic": topic, "attempted_at": now.isoformat(),
             "quant_claims": quant_claims, "repair_status": repair.get("status"),
             "receipt_preflight": preflight, "source_topic_precision_after": source_precision,
+            **(binding.as_dict() if binding else {}),
         }
         report["attempts"].append(row)
         report["attempted_count"] += 1
         if ready:
+            assert binding is not None
             report["ready"].append({
                 "topic": topic, "validated_at": now.isoformat(),
                 "n_quant_claims": quant_claims, "n_receipts": int(preflight.get("n_receipts") or 0),
                 "n_primary_tier": int(preflight.get("n_primary_tier") or 0),
                 "n_direct_receipts": int(preflight.get("n_direct_receipts") or 0),
                 "source_topic_precision": source_precision,
+                "state": "receipt_ready",
+                **binding.as_dict(),
             })
         report.update({"status": "candidate_buffer_building", "ready_count": len(report["ready"])})
         _write_json(ledger_dir / CANDIDATE_BUFFER, report)
@@ -5058,8 +5219,17 @@ def run_cycle(
                     ledger["status"] = "cycle_budget_exhausted"
                     break
                 source_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
-                revision_base_dir = source_base_dir
+                resume_name = str((revision_source or {}).get("resume_run") or "")
+                resume_base_dir = (
+                    runs_root / resume_name
+                    if resume_name and Path(resume_name).name == resume_name
+                    and (runs_root / resume_name).is_dir()
+                    else None
+                )
+                revision_base_dir = resume_base_dir or source_base_dir
+                resuming_checkpoint = resume_base_dir is not None
                 if revise_attempt > 1:
+                    resuming_checkpoint = False
                     previous_out_dir = out_dir
                     if not revision_source or _existing_receipt_preflight(previous_out_dir):
                         revision_base_dir = previous_out_dir
@@ -5106,6 +5276,7 @@ def run_cycle(
                         out_dir,
                         revision_source=revision_source, revision_feedback=revision_feedback or None,
                         repair_reason=repair_reason or None,
+                        resume_checkpoint=resuming_checkpoint,
                     )
                 synthesis_kwargs: dict[str, Any] = {
                     "dry_run": synthesis_dry_run,
@@ -5113,7 +5284,7 @@ def run_cycle(
                 }
                 if review_type_override:
                     synthesis_kwargs["review_type_override"] = review_type_override
-                revision_evidence_source = (
+                revision_evidence_source = source_base_dir if resuming_checkpoint else (
                     revision_base_dir
                     if revision_source
                     and revision_base_dir
@@ -5285,25 +5456,21 @@ def run_cycle(
                     and not overclaims
                     and public_surface.get("passed")
                 ):
-                    # Submission stays single-threaded across lanes: the fresh and
-                    # revise lanes run concurrently but share one blocking submit
-                    # lock so they never race the fingerprint-dedupe / double-submit.
-                    with _lock(ledger_dir, ".submit.lock", block=True):
-                        if submit_cycle is None:
-                            bridge = _submit_current_candidate(
-                                runs_root=runs_root,
-                                date=date,
-                                submit=submit,
-                                remote_seen=remote_seen,
-                                candidate_run=out_dir,
-                            )
-                        else:
-                            bridge = submit_cycle(
-                                runs_root=runs_root,
-                                date=date,
-                                submit=submit,
-                                remote_loader=(lambda: (remote_seen, None)) if submit else None,
-                            )
+                    if submit_cycle is None:
+                        bridge = _submit_current_candidate(
+                            runs_root=runs_root,
+                            date=date,
+                            submit=submit,
+                            remote_seen=remote_seen,
+                            candidate_run=out_dir,
+                        )
+                    else:
+                        bridge = submit_cycle(
+                            runs_root=runs_root,
+                            date=date,
+                            submit=submit,
+                            remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                        )
                 gate_status = (
                     "synthesis_timeout" if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE
                     else "needs_corpus_expansion" if return_code == NEEDS_CORPUS_RETURN_CODE
@@ -5417,7 +5584,10 @@ def run_cycle(
                     if revision_source:
                         timeout_status = "synthesis_timeout"
                         attempt["revision_timeout_status"] = timeout_status
-                        _mark_revision_handled(ledger_dir, revision_source, status=timeout_status)
+                        _mark_revision_handled(
+                            ledger_dir, revision_source, status=timeout_status,
+                            resume_run=out_dir.name,
+                        )
                     ledger["status"] = "synthesis_timeout_no_submission"
                     ledger["no_submission_reason"] = gate_status
                 elif return_code == NEEDS_CORPUS_RETURN_CODE:

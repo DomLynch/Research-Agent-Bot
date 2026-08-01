@@ -1,9 +1,4 @@
-"""Inferential Bridge layer.
-
-D1 bridge claims are explicitly inferential: they may explain how a
-mechanism could translate across species, scale, or domain, but they
-never count as core evidence or raise certification floors.
-"""
+"""Validate explicitly inferential D1 bridge claims."""
 from __future__ import annotations
 
 import re
@@ -86,7 +81,7 @@ def validate_inference(
     missing_human = [h for h in human_refs if h not in receipt_ids]
     if missing_human:
         errors.append(f"unknown existing_human_signal: {', '.join(missing_human)}")
-    if claim.confidence == "high" and not claim.existing_human_signal:
+    if claim.confidence == "high" and not human_refs:
         errors.append("high confidence requires existing_human_signal")
     effects = receipt_effects or {}
     anchor_effects = {effects.get(a, "") for a in claim.mechanism_anchor}

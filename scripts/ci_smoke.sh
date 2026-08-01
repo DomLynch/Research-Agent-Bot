@@ -15,7 +15,15 @@ echo "=== 1. ruff check ==="
 "$PROJECT_DIR/.venv/bin/python" -m ruff check .
 
 echo ""
-echo "=== 2. unit tests (skip gold_smoke + full_matrix) ==="
+echo "=== 2. type check ==="
+"$PROJECT_DIR/.venv/bin/python" -m mypy agent scripts
+
+echo ""
+echo "=== 3. LOC budgets ==="
+"$PROJECT_DIR/.venv/bin/python" -m pytest -q tests/test_loc_budget.py
+
+echo ""
+echo "=== 4. unit tests (skip gold_smoke + full_matrix) ==="
 "$PROJECT_DIR/.venv/bin/python" -m pytest tests/ -v --tb=short -m "not gold_smoke and not full_matrix"
 
 echo ""

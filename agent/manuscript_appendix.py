@@ -1,100 +1,26 @@
-"""Researka manuscript appendix composer (Phase A polish).
-
-Adds the four publication-ready sections that journals expect from
-AI-generated research synthesis:
-
-  1. Search Provenance     — honest reconstruction of what databases
-                             were queried, what filters applied, what
-                             scoring decided which papers reached
-                             synthesis. Acknowledges this is NOT a
-                             PRISMA-compliant systematic review; it's
-                             an auditable agent-to-agent synthesis
-                             with the equivalent transparency layer.
-  2. AI-Use Disclosure     — ICMJE-compliant statement. Names every
-                             model used, what role it played, what
-                             gates constrained it. Modeled on Nature/
-                             BMJ/ICMJE 2024 guidance.
-  3. Human Accountability  — template for the human submitter to
-                             fill in their name, affiliation, and
-                             accountability statement (per ICMJE,
-                             AI cannot be an author).
-  4. Data & Code Availability — links to the public bundle, run ID,
-                             git SHA at certification, and
-                             reproduction recipe.
-
-Pure-Python composer. No LLM calls. Reads from the run manifest,
-audit, and model-stack metadata.
-
-Usage from orchestrator (Stage 5 post-audit):
-    from agent.manuscript_appendix import compose_appendix
-    appendix_md = compose_appendix(manifest, audit, model_stack,
-                                   run_id=..., git_sha=...)
-    paper_md = paper_md.replace(
-        "## References", appendix_md + "\\n\\n## References", 1,
-    )
-"""
+"""Compose journal appendices from frozen run evidence."""
 from __future__ import annotations
 
 import re
 from collections import Counter
 from typing import Any
 
+from agent.manuscript_prisma import (
+    FrozenRetrievalRecord,
+    frozen_retrieval_record,
+    source_inventory_summary,
+)
 from agent.selection_flow import render_selection_flow_lines
 
 
 __all__ = ["build_search_provenance_appendix", "build_ai_use_disclosure", "build_human_accountability_template", "build_data_code_availability", "compose_appendix"]
 
 
-# Databases the retrieval layer can query. Source of truth:
-# agent/sources/*.py (clinicaltrials, europepmc, openalex, pubmed).
-# bioRxiv + ChEMBL are MCP-available but not yet wired into the
-# default retrieval; documented honestly here.
-_DATABASES_QUERIED = [
-    {
-        "name": "PubMed",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
-        "client": "agent.sources.pubmed.PubMedClient",
-        "purpose": "biomedical literature, indexed",
-    },
-    {
-        "name": "Europe PMC",
-        "url": "https://europepmc.org/",
-        "client": "agent.sources.europepmc.EuropePMCClient",
-        "purpose": "biomedical literature + preprints + full-text",
-    },
-    {
-        "name": "OpenAlex",
-        "url": "https://openalex.org/",
-        "client": "agent.sources.openalex.OpenAlexClient",
-        "purpose": "open scholarly graph (250M+ works)",
-    },
-    {
-        "name": "ClinicalTrials.gov",
-        "url": "https://clinicaltrials.gov/",
-        "client": "agent.sources.clinicaltrials.ClinicalTrialsClient",
-        "purpose": "registered clinical trials (NCT IDs)",
-    },
-]
-
-_DATABASES_NOT_QUERIED = [
-    "bioRxiv / medRxiv (preprints — MCP-available, not in default "
-    "retrieval pipeline)",
-    "Web of Science (subscription, not used)",
-    "Scopus (subscription, not used)",
-    "Google Scholar (no stable API; not used)",
-    "Cochrane Library (not yet integrated)",
-]
-
-
 def build_search_provenance_appendix(
     manifest: dict[str, Any], topic: str,
+    retrieval_record: FrozenRetrievalRecord | None = None,
 ) -> str:
-    """Compose the Search Provenance section.
-
-    Reads from the manifest to report receipts, claims, tensions,
-    tier/directness distribution. Names every database queried.
-    Acknowledges what was NOT queried. Honest framing as 'auditable
-    agent-to-agent synthesis' NOT 'PRISMA systematic review'."""
+    """Compose search provenance from the frozen manifest."""
     receipts = manifest.get("receipts", [])
     # Prefer explicit n_receipts field; fall back to list length.
     # The orchestrator writes both, but a synthetic test fixture
@@ -103,6 +29,8 @@ def build_search_provenance_appendix(
     n_claims = manifest.get("n_high_confidence_claims_total", 0)
     n_tensions = manifest.get("n_non_orthogonal_tensions", 0)
     receipt_funnel = manifest.get("receipt_funnel") or {}
+    retrieval = retrieval_record or frozen_retrieval_record(manifest)
+    sources = retrieval.sources
 
     tier_counts = Counter(
         r.get("evidence_tier", "?") for r in receipts
@@ -125,32 +53,22 @@ def build_search_provenance_appendix(
         f"section reports the equivalent transparency layer the "
         f"Researka pipeline produces automatically.",
         "",
-        "### Databases queried",
+        "### Retrieval sources recorded in the frozen manifest",
         "",
-        "| Database | Purpose | Client |",
+        "| Source | Enabled | Frozen outcome |",
         "|---|---|---|",
     ]
-    for db in _DATABASES_QUERIED:
+    lines.extend(f"| {name} | yes | {status} |" for name, status in sources)
+    if not sources:
         lines.append(
-            f"| [{db['name']}]({db['url']}) | {db['purpose']} | "
-            f"`{db['client']}` |"
+            "| _(inventory unavailable)_ | - | No source-count claim is made. |",
         )
-    lines += [
-        "",
-        "### Databases NOT queried (transparency)",
-        "",
-    ]
-    for skipped_db in _DATABASES_NOT_QUERIED:
-        lines.append(f"- {skipped_db}")
     lines += [
         "",
         "### Selection logic",
         "",
-        "Papers were retrieved per topic via the deterministic "
-        f"`agent/sources/` clients above. The retrieval pool was "
-        f"filtered to a corpus of high-confidence quant-extractable "
-        f"papers (full corpus: see "
-        f"`docs/quality-reference/{topic}/quant_claims/`). Of these, "
+        "This synthesis consumed a corpus frozen before manuscript "
+        "rendering. Of the corpus records, "
         f"**{n_receipts} contributing papers** had sufficient claim "
         f"density to enter the synthesis as evidence receipts. "
         f"Selection was deterministic — the LLM proposed; "
@@ -159,6 +77,13 @@ def build_search_provenance_appendix(
         "",
     ]
     lines.extend(render_selection_flow_lines(receipt_funnel))
+    source_limitation = (
+        f"- Frozen source outcomes: {source_inventory_summary(sources)}; "
+        "no unrecorded database coverage is claimed."
+        if sources else
+        "- The source inventory was not frozen in the run manifest; "
+        "no source-count or database-coverage claim is made."
+    )
     lines += [
         "### Per-receipt summary",
         "",
@@ -207,7 +132,7 @@ def build_search_provenance_appendix(
         "",
         "### What this enables a reader to verify",
         "",
-        "1. Reproduce the database queries via the source clients.",
+        "1. Inspect the frozen query strings and source outcomes, when present.",
         "2. Recompute the receipt-density filter on the corpus.",
         "3. Trace every numeric claim in the synthesis to its "
         "source receipt + corpus quant-claim file.",
@@ -222,27 +147,15 @@ def build_search_provenance_appendix(
         "- No prospective protocol registration (cf. PROSPERO).",
         "- No blinded dual-screener pass.",
         "- No formal risk-of-bias scoring per Cochrane RoB tools.",
-        "- Database coverage is narrower than a full systematic "
-        "review (4 databases vs typical 6-10).",
+        source_limitation,
         "- The synthesis is automated and reproducible, but "
         "automation does not substitute for domain-expert framing "
         "of the question or interpretation of clinical implications.",
-        "",
-        "Future versions of the Researka pipeline will add bioRxiv, "
-        "Cochrane, and dual-screener support to close the gap "
-        "toward formal systematic-review compliance.",
     ]
     return "\n".join(lines) + "\n"
 
 def _verdict_phrase(verdict: str) -> str:
-    """Conditional certification phrase. Verdict-honest by construction:
-    AAA            → 'Researka-Certified A2A-AAA artifact'
-    Trust-Spine    → 'Researka Trust-Spine Pass audit artifact'
-    SHIP-BLOCKED   → 'Researka preliminary audit artifact'
-    other / unset  → 'Researka audit-trail artifact'
-    Reviewer P1 (2026-05-05): the prior hardcoded 'A2A-AAA-certified'
-    language overclaimed for Trust-Spine Pass artifacts (e.g. the
-    statins publication run, which fails Q9 honestly)."""
+    """Return certification language that matches the verdict."""
     v = (verdict or "").strip()
     if v == "AAA":
         return "Researka-Certified A2A-AAA artifact"
@@ -284,24 +197,7 @@ def build_ai_use_disclosure(
     *,
     verdict: str = "",
 ) -> str:
-    """AI-use disclosure (Researka A2A-AAA audit protocol).
-
-    Designed to **complement** conventional editorial and peer-review
-    evaluation, not to replace it. Every claim, citation, and numeric
-    in the manuscript is gate-checked by deterministic rules (the
-    trust spine), every automated revision is logged, and the public
-    bundle exposes the full provenance trail for inspection by any
-    third party. The protocol is offered as an additional
-    reproducibility and provenance layer that traditional human
-    review may evaluate alongside its usual checks.
-
-    A named human submits the manuscript and accepts liability for
-    public release; the audit trail provides the per-claim
-    verification surface that supports the submitter's attestation.
-    Reviewer wave 9 (2026-05-05): softened from earlier 'does not
-    defer to ICMJE/Nature/BMJ' framing, which was tonally combative
-    for journal submission contexts. The substantive architecture
-    is unchanged."""
+    """Render the AI-use disclosure from the frozen run record."""
     model_stack = model_stack or {}
     n_llm_calls = manifest.get("n_llm_calls", 0)
     cost_usd = float(manifest.get("total_cost_usd", 0.0))
@@ -438,21 +334,7 @@ def build_ai_use_disclosure(
 
 
 def build_human_accountability_template(*, verdict: str = "") -> str:
-    """Researka Submitter Block — replaces the legacy 'human author
-    accountability statement' framing.
-
-    Researka's standard: the audit trail IS the primary accountability
-    mechanism. The named human submits the artifact and accepts
-    liability for the act of public release; they do NOT certify
-    that they personally read every word, because that's not what
-    Researka treats as the trust mechanism. The trust mechanism is
-    the inspectable + reproducible bundle.
-
-    Verifier-grade attestation is binary: 'I, named submitter,
-    publicly release this Researka-Certified A2A-AAA artifact and
-    invite error-reporting against it. The Researka audit trail,
-    not my private review, is the primary accountability surface.'
-    """
+    """Render the human submitter accountability block."""
     attestation = _submitter_attestation_text(verdict)
     return (
         "## Researka Submitter Block\n"
@@ -497,13 +379,7 @@ def build_data_code_availability(
     topic: str = "the_topic",
     verdict: str = "",
 ) -> str:
-    """Data and Code Availability — links to the public bundle so
-    a reviewer can reproduce the synthesis end-to-end.
-
-    Refactor 2026-05-04: takes `topic` so the reproduce command
-    matches the actual topic ('--topic rapamycin' not the previous
-    hardcoded '--topic metformin' which broke rapamycin/statins/etc.
-    papers' provenance)."""
+    """Render reproducible data and code availability details."""
     bundle_str = (
         f"`{bundle_path}`" if bundle_path
         else "see `bundles/<run_id>/` in the source repository"
@@ -586,22 +462,16 @@ def compose_appendix(
     bundle_path: str | None = None,
     verdict: str = "",
 ) -> str:
-    """Top-level composer. Returns the full appendix block, ready
-    to splice into the paper before the References section.
-
-    Order matters — Search Provenance comes first because it sets
-    the methodological frame; AI-Use is the longest and most
-    journal-required; Accountability and Data/Code are short
-    closers.
-
-    Verdict-aware (2026-05-05 wave 6 P1 reviewer fix): the
-    'A2A-AAA-certified' language in the submitter block + AI-use
-    disclosure is gated on the actual verdict. Trust-Spine Pass and
-    SHIP-BLOCKED artifacts no longer overclaim AAA."""
+    """Compose the verdict-aware publication appendix."""
     from agent.manuscript_prisma import build_prisma_bridge_appendix
+    retrieval_record = frozen_retrieval_record(manifest)
     blocks = [
-        build_search_provenance_appendix(manifest, topic=topic),
-        build_prisma_bridge_appendix(manifest, topic=topic),
+        build_search_provenance_appendix(
+            manifest, topic=topic, retrieval_record=retrieval_record,
+        ),
+        build_prisma_bridge_appendix(
+            manifest, topic=topic, retrieval_record=retrieval_record,
+        ),
         build_ai_use_disclosure(
             manifest, audit, model_stack, verdict=verdict,
         ),
@@ -623,12 +493,7 @@ _REFERENCES_SPLICE_RE = re.compile(
 def splice_appendix_before_references(
     paper_md: str, appendix_md: str,
 ) -> str:
-    """Splice the appendix into the paper just before '## References'.
-
-    Idempotent — if the appendix's lead heading already exists in
-    the paper, returns the paper unchanged. Otherwise inserts the
-    appendix block immediately before the first '## References'
-    occurrence; if no References section exists, appends to end."""
+    """Splice the appendix before references, idempotently."""
     if "## Publication Appendix" not in appendix_md:
         appendix_md = "## Publication Appendix\n\n" + appendix_md.lstrip()
     # Idempotency: don't double-insert; wrap historical bare appendix.

@@ -1,44 +1,4 @@
-"""Citation trace — the moat orchestrator.
-
-Connects validators.py (claim-vs-source local checks) with trace_clients.py
-(external registry/alias/literature lookups), producing a stream of
-CitationTrace records per claim. Each record names a single check on a
-single (claim_id, ref) pair: passed/failed + human-readable detail +
-optional source-text excerpt.
-
-DESIGN-001 §6.1 names citation-trace as **the moat**. It is what
-distinguishes Researka-style adjudication from arXiv: every cited NCT,
-every cited p-value, every cited percentage, every drug-alias claim is
-verified against an authoritative source AND against the source's own
-abstract. The 5 TraceType values (frozen at Day 1 in agent/schemas.py)
-correspond to 5 checks here:
-
-| TraceType            | Check                                              |
-|----------------------|----------------------------------------------------|
-| nct_exists           | TrialRegistryClient.get_trial(source.nct) != None |
-| p_value_in_text      | every p-value in claim.text appears in abstract   |
-| percentage_in_text   | every percentage in claim.text appears in abstract |
-| alias_match          | DrugAliasClient.lookup() resolves names in claim   |
-| role_match           | claim.directness aligns with cited evidence roles  |
-
-Hard rule (DESIGN-001 §1, posted at top of compiler.py):
-  LLM PROPOSES. CODE DISPOSES.
-  - Claim membership in claim_receipt.md: gated by claim_graph.json. LLM cannot add claims.
-
-Citation trace is the audit-trail half of "code disposes". The LLM may
-propose claims, but each claim ships a per-check trace receipt; failed
-traces become rejection rationale at the SPAR layer (Day 4).
-
-Day 3.1 ships:
-- 5 trace functions (one per TraceType)
-- 1 orchestrator: trace_claim
-- 1 graph orchestrator: trace_claim_graph
-- 26 tests covering each trace + orchestrator + planted-failure cases 2/3/4
-
-Day 3.3 will swap the fixture trace_clients backends for httpx + MCP
-without changing this module — citation_trace.py only knows the
-Protocol contract.
-"""
+"""Trace claim citations against source text and authoritative registries."""
 from __future__ import annotations
 
 import re
@@ -138,12 +98,7 @@ _NUMERIC_RE = re.compile(
 
 
 def _normalize_numeric_text(text: str) -> str:
-    """Lowercase + collapse whitespace + Unicode middle-dot/en-dash → ASCII.
-
-    Mirrors fact_extractor._normalize_unicode but keeps the trace layer
-    self-contained (no cross-module import for one helper). Applied to
-    both claim and abstract before substring comparison.
-    """
+    """Normalize claim and source numerics for trace comparison."""
     return " ".join(
         text.replace("·", ".").replace("–", "-").replace("—", "-").split()
     ).lower()
@@ -188,15 +143,7 @@ def _label_value_co_occurs(
     value_raw: str,
     abstract: str,
 ) -> bool:
-    """Strict co-occurrence check: label (or a known synonym) within
-    ±60 normalized-chars of the value in the source abstract.
-
-    Compact form (whitespace stripped) is used for substring matching
-    so range separators like `0.66 - 0.95` (claim) and `0.66-0.95`
-    (abstract) match. Returns False when either the value isn't found
-    OR no occurrence has a nearby label — closes the false-positive
-    bypass where the value alone passed.
-    """
+    """Require a value and label synonym to co-occur in source text."""
     abstract_compact = _normalize_numeric_text(abstract).replace(" ", "")
     label_compact = _normalize_numeric_text(label_raw).replace(" ", "")
     value_compact = _normalize_numeric_text(value_raw).replace(" ", "")
@@ -310,45 +257,14 @@ _RESULTS_AVAILABLE_STATUSES: frozenset[TrialStatus] = frozenset({
 
 
 def registry_ids_for(item: EvidenceItem) -> list[str]:
-    """Collect all registry IDs (NCT/ISRCTN) from an EvidenceItem's surfaces.
-
-    Mirrors the lookup-precedence in registry_overrides.lookup_override:
-    source.nct first, then ISRCTN-in-source.url, then NCT/ISRCTN scanned
-    from the abstract text. Deduplicates while preserving first-seen
-    order so the trace records list reads predictably.
-
-    Day 3.0 added the abstract scan to lookup_override; Day 3.1 P1.2
-    follow-up makes citation_trace consult the same surfaces. Without
-    this, a live MASTERS-style record (NCT only in abstract, source.nct=None)
-    would have its role pinned by the override but receive NO external
-    citation trace — silently inconsistent.
-
-    Keeping the surface-scan logic public and centralized avoids drift
-    between pipeline callers and trace_nct_exists.
-    """
-    ids: list[str] = []
-    seen: set[str] = set()
-
-    def _add(candidate: str | None) -> None:
-        if not candidate:
-            return
-        canonical = candidate.strip().upper()
-        if canonical in seen:
-            return
-        seen.add(canonical)
-        ids.append(canonical)
-
-    if item.source.nct:
-        _add(item.source.nct)
-    if item.source.url:
-        for digits in _ISRCTN_RE.findall(item.source.url):
-            _add(f"ISRCTN{digits}")
-    if item.abstract:
-        for nct in _NCT_RE.findall(item.abstract):
-            _add(nct)
-        for digits in _ISRCTN_RE.findall(item.abstract):
-            _add(f"ISRCTN{digits}")
-    return ids
+    """Collect first-seen NCT/ISRCTN IDs from all evidence-item surfaces."""
+    candidates = [
+        item.source.nct,
+        *(f"ISRCTN{digits}" for digits in _ISRCTN_RE.findall(item.source.url or "")),
+        *_NCT_RE.findall(item.abstract or ""),
+        *(f"ISRCTN{digits}" for digits in _ISRCTN_RE.findall(item.abstract or "")),
+    ]
+    return list(dict.fromkeys(value.strip().upper() for value in candidates if value))
 
 
 def trace_nct_exists(
@@ -356,44 +272,7 @@ def trace_nct_exists(
     item: EvidenceItem,
     registry: TrialRegistryClient,
 ) -> Iterator[CitationTrace]:
-    """Yield one CitationTrace per registry id found across the item's
-    source.nct + source.url + abstract surfaces.
-
-    Outcomes per id:
-      1. registry has no record       → passed=False (case 2 fab NCT)
-      2. registry has record, but
-         item.role='published_results' AND record.has_results=False:
-         - if item.source.pmid is set (truthy: non-empty string,
-           matched the upstream PubMed indexing) → passed=True with
-           caveat (Day 10.14 fix: many real published RCTs have
-           has_results=False on the registry because PIs publish to
-           journal but don't update the registry post-hoc — the paper
-           IS the results, the registry just lags. Empirical: caused
-           MILES + MET-PREVENT to spuriously fail in Day 10.13
-           canonical-corpus benchmark.)
-
-           ACCEPTED RISK (Day 10.14 reviewer note): the bypass does
-           not verify that the PMID's abstract actually mentions the
-           NCT — an upstream pipeline that paired an unrelated PMID
-           with a registry-only NCT could pass this trace. The
-           protocol-as-claim filter (Day 10.11 OBJECTIVE_PATTERN_RE)
-           and the SPAR Domain Skeptic both catch that drift at
-           higher layers, so the bypass is sound for the
-           supervised-corpus regime; it would need tightening if the
-           bot ever consumed adversarial input.
-         - else (registry stub with no published paper)
-                                       → passed=False (P1.1: case 1
-           protocol-as-results — registry says no results AND there
-           is no peer-reviewed paper backing the claim either; the
-           pipeline classified the cite as published_results in
-           error)
-      3. registry has record, and
-         (role != 'published_results'
-          OR record.has_results)      → passed=True
-
-    Yields nothing when no registry IDs exist on any surface — there's
-    nothing to trace, which is not a failure.
-    """
+    """Trace each registry ID; bind lagging results to PMID plus the same abstract ID."""
     for nct in registry_ids_for(item):
         record = registry.get_trial(nct)
         if record is None:
@@ -404,15 +283,19 @@ def trace_nct_exists(
             )
             continue
         if item.role == "published_results" and not record.has_results:
-            if item.source.pmid:
+            abstract_ids = {
+                *(value.upper() for value in _NCT_RE.findall(item.abstract or "")),
+                *(f"ISRCTN{digits}" for digits in _ISRCTN_RE.findall(item.abstract or "")),
+            }
+            if item.source.pmid and nct in abstract_ids:
                 yield CitationTrace(
                     claim_id=claim.claim_id, ref=item.source.ref,
                     trace_type="nct_exists", passed=True,
                     detail=(
                         f"{nct} found: status={record.status}, "
                         f"registry has_results=False but item has "
-                        f"PMID {item.source.pmid} — peer-reviewed paper "
-                        f"is the results source, registry lags."
+                        f"PMID {item.source.pmid} whose abstract names {nct} — "
+                        f"peer-reviewed paper is bound to the lagging registry."
                     ),
                 )
                 continue
@@ -422,8 +305,9 @@ def trace_nct_exists(
                 detail=(
                     f"{nct} role='published_results' but registry says "
                     f"has_results=False (status={record.status}) AND "
-                    f"item has no PMID — no peer-reviewed publication "
-                    f"backing the claim. Protocol-as-results contradiction."
+                    f"item has no PMID-to-{nct} abstract binding — no verified "
+                    f"peer-reviewed publication backing the registry record. "
+                    f"Protocol-as-results contradiction."
                 ),
             )
             continue
@@ -441,11 +325,7 @@ def trace_role_match(
     claim: Claim,
     items_by_ref: Mapping[int, EvidenceItem],
 ) -> CitationTrace:
-    """Wrap validators.check_role_claim_match into the trace shape.
-
-    One CitationTrace per claim (not per ref) because the role-match check
-    operates on the claim's full ref set, not individual refs.
-    """
+    """Trace claim-level role compatibility across all supporting refs."""
     failure = check_role_claim_match(claim, items_by_ref)
     if failure is None:
         return CitationTrace(
@@ -467,12 +347,7 @@ def trace_p_value_in_text(
     claim: Claim,
     item: EvidenceItem,
 ) -> Iterator[CitationTrace]:
-    """One CitationTrace per p-value cited in the claim. Each verifies the
-    (op, digits) tuple appears in the source abstract.
-
-    Yields nothing if the claim has no p-values — there's nothing to
-    trace, which is not a failure.
-    """
+    """Trace each claim p-value to the source abstract."""
     claim_pvs = list(PVALUE_RE.findall(claim.text))
     if not claim_pvs:
         return
@@ -496,9 +371,7 @@ def trace_percentage_in_text(
     claim: Claim,
     item: EvidenceItem,
 ) -> Iterator[CitationTrace]:
-    """One CitationTrace per percentage cited in the claim. Each verifies
-    the numeric value (e.g., "30") appears in the source abstract as a
-    percentage."""
+    """Trace each claim percentage to the source abstract."""
     claim_pcts = list(_PERCENTAGE_RE.findall(claim.text))
     if not claim_pcts:
         return
@@ -521,19 +394,7 @@ def trace_numeric_in_text(
     claim: Claim,
     item: EvidenceItem,
 ) -> Iterator[CitationTrace]:
-    """One CitationTrace per effect-size numeric (HR / OR / RR / ηp² / β /
-    CI / etc.) cited in the claim text. Each verifies the (name, value)
-    pair appears in the source abstract — Unicode-normalized so a claim
-    rendered with ASCII `0.79` traces against an abstract that writes
-    `0·79` (Lancet / BMJ middle-dot convention).
-
-    Yields nothing when the claim has no detected numeric tokens — that's
-    not a failure. Day 9.1 added this trace to close the auditor's
-    main rejection reason: "untraced numeric in claim" was firing on
-    every PEARL run (rapamycin) and every PROTECTOR run (everolimus)
-    because their primary outcomes are reported as ηp² / HR / OR pairs
-    rather than p-values + percentages.
-    """
+    """Trace each normalized effect-size label/value pair to source text."""
     matches = list(_NUMERIC_RE.findall(claim.text))
     if not matches:
         return
@@ -554,15 +415,7 @@ def trace_numeric_in_text(
 
 
 def _trial_name_tokens(pack: TopicPack) -> frozenset[str]:
-    """Build the set of capitalized tokens appearing in canonical_trial
-    names. Used by trace_alias_match to avoid false-flagging trial
-    acronyms (MASTERS, TAME, MILES, etc.) as drug-alias drift.
-
-    For multi-word names like 'MET-PREVENT', extracts each capitalized
-    fragment (≥3 chars) so 'PREVENT' alone in prose also passes.
-    Includes the full name uppercased so the regex's stricter ≥4-char
-    rule still skips short fragments embedded in matches.
-    """
+    """Return canonical trial-name tokens exempt from drug-alias lookup."""
     out: set[str] = set()
     for ct in pack.canonical_trials:
         out.add(ct.name.upper())
@@ -578,22 +431,7 @@ def trace_alias_match(
     drug_client: DrugAliasClient,
     item: EvidenceItem | None = None,
 ) -> Iterator[CitationTrace]:
-    """For each drug-name-like capitalized token in the claim text, look
-    up the alias in DrugAliasClient. None response = case 4 (alias drift)
-    caught at the external layer.
-
-    Skips:
-      - tokens already in the pack alias whitelist (valid by definition)
-      - common false-positive stopwords (Trial, Study, etc.)
-      - canonical trial-name tokens (P1.3 fix: prose like 'MASTERS
-        demonstrated...' was false-flagging MASTERS as a drug drift
-        because trial acronyms look like drug names to the regex)
-      - all-caps acronyms ≤6 chars (Day 6.3): VSMCs, SASP, AMPK, mTOR-
-        style biological abbreviations are never drug names. Real drugs
-        are mixed-case (Glucophage, Rapamycin) or trade-name proper
-        nouns. The all-caps short-token shape is reserved for acronyms
-        in scientific prose, never for drug aliases.
-    """
+    """Trace source-bound pack aliases and drug-like claim tokens."""
     seen: set[str] = set()
     trial_tokens = _trial_name_tokens(pack)
     # When an EvidenceItem is supplied, bind each alias to THAT source: the
@@ -604,12 +442,27 @@ def trace_alias_match(
     # globally but never tied them to the sources backing the claim.
     abstract = (getattr(item, "abstract", "") or "").lower() if item is not None else None
     ref = item.source.ref if item is not None else 0
+    claim_low = claim.text.lower()
+    for alias in sorted(pack.aliases):
+        pattern = rf"(?<!\w){re.escape(alias)}(?!\w)"
+        if not re.search(pattern, claim_low):
+            continue
+        seen.update(re.findall(r"[a-z0-9]+", alias))
+        in_source = abstract is None or re.search(pattern, abstract) is not None
+        yield CitationTrace(
+            claim_id=claim.claim_id, ref=ref,
+            trace_type="alias_match", passed=in_source,
+            detail=(
+                f"known topic alias {alias!r}"
+                + ("" if abstract is None else (
+                    "; present in source" if in_source else "; ABSENT from source"
+                ))
+            ),
+        )
     for raw_token in _DRUG_CANDIDATE_RE.findall(claim.text):
         token = raw_token
         if token.lower() in _DRUG_CANDIDATE_STOPWORDS:
             continue
-        if pack.has_alias(token):
-            continue  # known topic alias — already validated
         if token.upper() in trial_tokens:
             continue  # canonical trial acronym — not a drug-alias claim
         # All-caps acronym OR all-caps-with-trailing-lowercase-plural
@@ -646,20 +499,7 @@ def trace_claim(
     drug_client: DrugAliasClient,
     literature: LiteratureClient | None = None,  # reserved for Day 3.2+
 ) -> list[CitationTrace]:
-    """Run every trace check for one claim. Returns the full record list.
-
-    Order:
-      1. role_match (claim-level)
-      2. for each supporting_ref:
-         a. nct_exists (if source.nct populated)
-         b. p_value_in_text (per p-value)
-         c. percentage_in_text (per percentage)
-         d. numeric_in_text (per HR/OR/RR/ηp²/β/CI/etc — Day 9.1)
-         e. alias_match (per drug-name candidate, bound to this source)
-
-    `literature` is wired for Day 3.2+ (fact-extraction will fetch
-    abstracts when the local copy is missing). Unused in Day 3.1 traces.
-    """
+    """Run all claim-level and source-level citation traces in stable order."""
     traces: list[CitationTrace] = [trace_role_match(claim, items_by_ref)]
 
     for ref in claim.supporting_refs:
@@ -690,8 +530,7 @@ def trace_claim_graph(
     drug_client: DrugAliasClient,
     literature: LiteratureClient | None = None,
 ) -> list[CitationTrace]:
-    """Run trace_claim on every claim in the graph. Returns the flat list
-    suitable for serialization to citation_trace.json."""
+    """Return flattened citation traces for every claim in the graph."""
     out: list[CitationTrace] = []
     for claim in graph.claims:
         out.extend(trace_claim(
@@ -703,8 +542,7 @@ def trace_claim_graph(
 
 
 def summary(traces: Iterable[CitationTrace]) -> dict[str, int]:
-    """Per-TraceType pass/fail counts. Useful for logs and the
-    citation-trace failure dashboard (DESIGN-001 §6.1)."""
+    """Count pass/fail traces by trace type."""
     counts: dict[str, int] = {}
     for t in traces:
         key = f"{t.trace_type}:{'pass' if t.passed else 'fail'}"

@@ -9,8 +9,8 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 29,150 LOC (raised 2026-06-10 from 24,150 by
-operator request for 5,000 LOC of headroom while keeping the per-file cap).
+Current ceiling: 29,250 LOC (raised 2026-08-01 by 100 LOC for immutable
+source-proof, signoff-readiness, and authorized-resume trust invariants).
 Earlier waves:
 
 Wave 15 - Publication scorer + HR normalizer (20,750 -> 21,250):
@@ -229,7 +229,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 29150  # 2026-06-10 operator-approved +5,000 headroom over 24,150; per-file cap remains the anti-bloat guardrail.
+TOTAL_LIMIT = 29250  # 2026-08-01: +100 trust-spine headroom; per-file cap unchanged.
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 SCRIPTS_DIR = AGENT_DIR.parent / "scripts"

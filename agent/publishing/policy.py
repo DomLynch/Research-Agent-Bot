@@ -13,7 +13,8 @@ class PublicationSurface(StrEnum):
 
 
 class CandidateState(StrEnum):
-    READY_FOR_SYNTHESIS = "ready_for_synthesis"
+    RECEIPT_READY = "receipt_ready"
+    READY_FOR_SYNTHESIS = "receipt_ready"  # compatibility alias
     PUBLISHABLE = "publishable"
     INTERNAL_ALPHA = "internal_alpha"
     NEEDS_CORPUS = "needs_corpus"
@@ -65,7 +66,11 @@ class CandidateDecision:
 
     @property
     def ready_for_synthesis(self) -> bool:
-        return self.state is CandidateState.READY_FOR_SYNTHESIS
+        return self.receipt_ready
+
+    @property
+    def receipt_ready(self) -> bool:
+        return self.state is CandidateState.RECEIPT_READY
 
 
 def publication_surface(review_type: str | None) -> PublicationSurface:
@@ -136,7 +141,7 @@ def decide_candidate(
     return (
         _decision(candidate_id, surface, CandidateState.NEEDS_CORPUS, blocker, True, "repair_corpus")
         if blocker
-        else _decision(candidate_id, surface, CandidateState.READY_FOR_SYNTHESIS, None, False, "synthesize")
+        else _decision(candidate_id, surface, CandidateState.RECEIPT_READY, None, False, "synthesize")
     )
 
 

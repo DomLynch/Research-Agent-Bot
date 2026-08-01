@@ -73,9 +73,8 @@ def test_build_prisma_bridge_appendix_renders_universal_scaffolding() -> None:
     )
     assert "## PRISMA Bridge — Search and Selection Transparency" in out
     assert "**Topic:** example_topic_with_no_pack" in out
-    # When pack is missing, function emits a NOTE about it (universal
-    # fail-soft behaviour — not a fatal error).
-    assert "topic pack not loaded" in out
+    assert "no database coverage or execution claim is made" in out
+    assert "no query-execution claim" in out
 
 
 def test_build_prisma_bridge_appendix_handles_missing_manifest_fields() -> None:

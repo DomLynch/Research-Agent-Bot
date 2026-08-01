@@ -14,7 +14,8 @@ import asyncio
 import json
 from collections.abc import Callable
 from pathlib import Path
-from types import MappingProxyType
+from types import MappingProxyType, SimpleNamespace
+from typing import cast
 
 import httpx
 import pytest
@@ -23,9 +24,11 @@ from agent.llm_client import CallSpec
 from agent.orchestrator import (
     OrchestratorError,
     RunReceipts,
+    _cluster_manifest_rows,
     run_proof,
     run_proof_multi_receipt,
 )
+from agent.schemas import ClaimGraph
 from agent.topic_pack import TopicPack
 from agent.trace_clients import (
     FixtureDrugAliasClient,
@@ -84,6 +87,35 @@ def _spec() -> CallSpec:
     )
 
 
+def test_cluster_manifest_preserves_original_indices_after_failure(
+    tmp_path: Path,
+) -> None:
+    def success(cluster_index: int) -> tuple[int, ClaimGraph, RunReceipts]:
+        output_dir = tmp_path / f"cluster_{cluster_index:02d}"
+        output_dir.mkdir()
+        spar_review = output_dir / "spar_review.json"
+        spar_review.write_text('{"verdict": "accept_clean"}', encoding="utf-8")
+        placeholder = output_dir / "placeholder"
+        paths = RunReceipts(
+            output_dir=output_dir,
+            claim_receipt_md=placeholder,
+            claim_graph=placeholder,
+            citation_traces=placeholder,
+            spar_review=spar_review,
+            evidence_cards=placeholder,
+            cost_log=placeholder,
+            fact_extraction_log=placeholder,
+            run_metadata=placeholder,
+        )
+        graph = cast(ClaimGraph, SimpleNamespace(claims=(object(),)))
+        return cluster_index, graph, paths
+
+    rows = _cluster_manifest_rows([success(2), success(4)])
+
+    assert [row["cluster_index"] for row in rows] == [2, 4]
+    assert [row["subdir"] for row in rows] == ["cluster_02", "cluster_04"]
+
+
 def _extractor_response(claim: str, p_value: str = "0.003") -> dict:
     """Mock fact_extractor LLM response — one valid Fact."""
     return {
@@ -110,7 +142,7 @@ def _judge_response(verdict: str = "accept") -> dict:
 
 
 def _make_handler(
-    extract_claim: str = "Metformin reduced HbA1c by 0.5%",
+    extract_claim: str = "Metformin reduced HbA1c by 0.5% (p=0.003)",
     extract_pvalue: str = "0.003",
     judge_verdict: str = "accept",
 ) -> Callable[[httpx.Request], httpx.Response]:
@@ -209,7 +241,7 @@ def test_run_proof_gate_override_path_renders_rejection(tmp_path: Path) -> None:
         abstract="Trial NCT99999999 reported metformin outcomes (p=0.003).",
     )]
     handler = _make_handler(
-        extract_claim="metformin outcomes",  # verbatim span of the abstract
+        extract_claim="metformin outcomes (p=0.003)",  # verbatim span of the abstract
         judge_verdict="accept",
     )
 
@@ -365,7 +397,7 @@ def test_run_proof_fact_log_includes_accepted_and_rejected(tmp_path: Path) -> No
                 "choices": [{"message": {"content": json.dumps({
                     "facts": [
                         {  # valid: verbatim span of default abstract
-                            "source_quote": "Metformin reduced HbA1c by 0.5%",
+                            "source_quote": "Metformin reduced HbA1c by 0.5% (p=0.003)",
                             "outcome": "HbA1c", "estimate": None,
                             "p_value": "0.003", "ci": None,
                         },
@@ -638,7 +670,7 @@ def test_run_proof_compile_error_wraps_in_orchestrator_error(
         sys_msg = next(m for m in body["messages"] if m["role"] == "system")
         if "extract structured FACTS" in sys_msg["content"]:
             return httpx.Response(200, json=_extractor_response(
-                "Metformin reduced HbA1c by 0.5%",  # verbatim span
+                "Metformin reduced HbA1c by 0.5% (p=0.003)",  # verbatim span
             ))
         return httpx.Response(200, json=_judge_response("accept"))
 
@@ -804,12 +836,12 @@ def test_run_proof_multi_receipt_two_clusters_when_refs_overlap(
         "choices": [{"message": {"content": json.dumps({
             "facts": [
                 {
-                    "source_quote": "Metformin reduced HbA1c by 0.5%",
+                    "source_quote": "Metformin reduced HbA1c by 0.5% (p=0.003)",
                     "outcome": "HbA1c", "estimate": None,
                     "p_value": "0.003", "ci": None,
                 },
                 {
-                    "source_quote": "Metformin reduced fasting glucose by 1.0",
+                    "source_quote": "Metformin reduced fasting glucose by 1.0 (p=0.01)",
                     "outcome": "fasting glucose", "estimate": None,
                     "p_value": "0.01", "ci": None,
                 },
@@ -834,7 +866,7 @@ def test_run_proof_multi_receipt_two_clusters_when_refs_overlap(
             if call_count["extract"] == 1:
                 return httpx.Response(200, json=multi_fact_resp)
             return httpx.Response(200, json=_extractor_response(
-                "Metformin reduced HbA1c by 0.5%",
+                "Metformin reduced HbA1c by 0.5% (p=0.003)",
             ))
         return httpx.Response(200, json=_judge_response("accept"))
 
@@ -885,12 +917,12 @@ def test_run_proof_multi_receipt_max_clusters_caps_emission(
         "choices": [{"message": {"content": json.dumps({
             "facts": [
                 {
-                    "source_quote": "Metformin reduced HbA1c by 0.5%",
+                    "source_quote": "Metformin reduced HbA1c by 0.5% (p=0.003)",
                     "outcome": "HbA1c", "estimate": None,
                     "p_value": "0.003", "ci": None,
                 },
                 {
-                    "source_quote": "Metformin reduced fasting glucose by 1.0",
+                    "source_quote": "Metformin reduced fasting glucose by 1.0 (p=0.01)",
                     "outcome": "fasting glucose", "estimate": None,
                     "p_value": "0.01", "ci": None,
                 },
@@ -908,7 +940,7 @@ def test_run_proof_multi_receipt_max_clusters_caps_emission(
             if call_count["extract"] == 1:
                 return httpx.Response(200, json=multi_fact_resp)
             return httpx.Response(200, json=_extractor_response(
-                "Metformin reduced HbA1c by 0.5%",
+                "Metformin reduced HbA1c by 0.5% (p=0.003)",
             ))
         return httpx.Response(200, json=_judge_response("accept"))
 

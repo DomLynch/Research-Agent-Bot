@@ -147,7 +147,10 @@ def load(run_dir: Path) -> TargetJournalPack | None:
         return None
     if not isinstance(raw, dict):
         return None
-    return TargetJournalPack.from_dict(raw)
+    try:
+        return TargetJournalPack.from_dict(raw)
+    except (TypeError, ValueError):
+        return None
 
 
 def write(run_dir: Path, pack: TargetJournalPack) -> Path:

@@ -504,24 +504,25 @@ def _repair_findings_map_statistics(
         if not line.startswith("|") or not _EFFECT_STAT_RE.search(line):
             continue
         row = _table_source_row(line, rows)
-        lines[index] = _EFFECT_STAT_RE.sub(
-            lambda match: match.group(0)
-            if row and _stat_supported(match.group(0), row)
-            else "exact statistic unavailable in retained source excerpt",
-            line,
-        )
+        if not row or any(
+            not _stat_supported(match.group(0), row)
+            for match in _EFFECT_STAT_RE.finditer(line)
+        ):
+            lines[index] = ""
     fixed = "".join(lines)
     return (paper_md, 0) if fixed == scope else (paper_md.replace(scope, fixed, 1), 1)
 
 
-def _soften_statistics(paragraph: str) -> str:
-    paragraph = re.sub(
-        r"\([^()\n]{0,220}\)",
-        lambda match: "" if _EFFECT_STAT_RE.search(match.group(0)) else match.group(0),
-        paragraph,
-    )
-    paragraph = _EFFECT_STAT_RE.sub("exact statistic unavailable in retained source excerpt", paragraph)
-    return re.sub(r"\s{2,}", " ", re.sub(r"\s+([,.;:])", r"\1", paragraph))
+def _remove_unbound_stat_sentences(
+    paragraph: str, rows: Sequence[dict[str, Any]],
+) -> str:
+    sentences = re.split(r"(?<=[.!?])\s+", paragraph)
+    kept = []
+    for sentence in sentences:
+        matches = list(_EFFECT_STAT_RE.finditer(sentence))
+        if not any(not _stat_is_source_bound(sentence, match, rows) for match in matches):
+            kept.append(sentence)
+    return " ".join(kept).strip()
 
 
 def _repair_untraceable_statistics(
@@ -548,7 +549,7 @@ def _repair_untraceable_statistics(
         elif not matches:
             continue
         else:
-            fixed = _soften_statistics(paragraph) if has_unbound else paragraph
+            fixed = _remove_unbound_stat_sentences(paragraph, rows) if has_unbound else paragraph
         if fixed != original:
             parts[index], changed = fixed, changed + 1
     return "".join(parts), changed

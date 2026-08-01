@@ -68,10 +68,16 @@ def repair_receipt_ids(
 
 
 _NUMERIC_RE = re.compile(
-    r"\b(?:p\s*[<=>]\s*0?\.\d+|"
-    r"\d+(?:\.\d+)?\s*%|"
-    r"(?:hr|or|rr|ahr|aor|arr|ηp[2²]|β)\s*[=:,\-]?\s*\d+(?:\.\d+)?"
-    r")\b",
+    r"(?<![\w.])(?:"
+    r"p\s*[<=>]\s*0?\.\d+|"
+    r"(?:\d+(?:\.\d+)?\s*%\s*)?ci\s*[=:]?\s*"
+    r"-?\d+(?:\.\d+)?\s*(?:-|to|–)\s*-?\d+(?:\.\d+)?|"
+    r"(?:n|mean|median|sd|se|age(?:d)?)\s*[=:]?\s*-?\d+(?:\.\d+)?|"
+    r"-?\d+(?:\.\d+)?\s*(?:%|mmol/l|mg/dl|mcg|µg|mg|kg|ml|g|l|"
+    r"hours?|days?|weeks?|months?|years?)\b|"
+    r"(?:hr|or|rr|ahr|aor|arr|ηp[2²]|β)\s*[=:,\-]?\s*-?\d+(?:\.\d+)?|"
+    r"-?\d+(?:\.\d+)?"
+    r")(?![\w.])",
     re.IGNORECASE,
 )
 
@@ -87,12 +93,17 @@ def _topic_aliases(topic: str) -> tuple[str, ...]:
     return tuple(_normalize(v) for v in variants if _normalize(v))
 
 
-def _accepted_corpus_norm(receipts: Sequence[ReceiptSummary]) -> str:
-    parts: list[str] = []
-    for r in receipts:
-        parts.extend(r.p_values)
-        parts.append(r.thesis_text)
-    return _normalize(" ".join(parts))
+def _numeric_token(text: str) -> str:
+    return re.sub(r"\s+", "", _normalize(text))
+
+
+def _accepted_numeric_tokens(receipts: Sequence[ReceiptSummary]) -> set[str]:
+    corpus = " ".join(
+        value
+        for receipt in receipts
+        for value in (*receipt.p_values, receipt.thesis_text)
+    )
+    return {_numeric_token(match.group(0)) for match in _NUMERIC_RE.finditer(corpus)}
 
 
 def _label_for_outcome(outcome: str) -> str:
@@ -157,7 +168,7 @@ def _check_anchored_paragraph(
     text: str,
     receipt_ids: Sequence[str],
     accepted_ids: set[str],
-    accepted_corpus_norm: str,
+    accepted_numerics: set[str],
 ) -> tuple[bool, str]:
     if not text.strip():
         return False, "empty_paragraph"
@@ -165,8 +176,8 @@ def _check_anchored_paragraph(
     if not cited:
         return False, f"no_accepted_anchor:{list(receipt_ids)}"
     for m in _NUMERIC_RE.finditer(text):
-        tok = _normalize(m.group(0))
-        if tok not in accepted_corpus_norm:
+        tok = _numeric_token(m.group(0))
+        if tok not in accepted_numerics:
             return False, f"novel_numeric:{tok!r}"
     return True, "ok"
 
@@ -185,10 +196,14 @@ def _check_scoped_paragraph(
     text: str,
     topic: str,
     receipt_ids: Sequence[str],
-    accepted_corpus_norm: str,
+    accepted_ids: set[str],
+    accepted_numerics: set[str],
 ) -> tuple[bool, str]:
     if not text.strip():
         return False, "empty_paragraph"
+    cited = [receipt_id for receipt_id in receipt_ids if receipt_id in accepted_ids]
+    if not cited:
+        return False, f"no_accepted_anchor:{list(receipt_ids)}"
     norm = _normalize(text)
     aliases = _topic_aliases(topic)
     if aliases and max(norm.count(a) for a in aliases) < 2:
@@ -196,8 +211,8 @@ def _check_scoped_paragraph(
     if not any(h in norm for h in _HEDGE_PHRASES):
         return False, "missing_hedge_phrase"
     for m in _NUMERIC_RE.finditer(text):
-        tok = _normalize(m.group(0))
-        if tok not in accepted_corpus_norm:
+        tok = _numeric_token(m.group(0))
+        if tok not in accepted_numerics:
             return False, f"novel_numeric:{tok!r}"
     return True, "ok"
 
@@ -210,7 +225,7 @@ def build_anchored_from_parsed(
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
-    corpus_norm = _accepted_corpus_norm(accepted)
+    accepted_numerics = _accepted_numeric_tokens(accepted)
     paragraphs = parsed.get("paragraphs") or []
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
@@ -228,7 +243,7 @@ def build_anchored_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         ok, _reason = _check_anchored_paragraph(
-            text, repaired_rids, accepted_ids, corpus_norm,
+            text, repaired_rids, accepted_ids, accepted_numerics,
         )
         if not ok:
             continue
@@ -241,7 +256,7 @@ def build_anchored_from_parsed(
             sentence=text.strip(),
             receipt_ids=tuple(repaired_rids),
             numerics=tuple(
-                _normalize(m.group(0))
+                _numeric_token(m.group(0))
                 for m in _NUMERIC_RE.finditer(text)
             ),
         ))
@@ -262,7 +277,7 @@ def build_scoped_from_parsed(
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
-    corpus_norm = _accepted_corpus_norm(accepted)
+    accepted_numerics = _accepted_numeric_tokens(accepted)
     paragraphs = parsed.get("paragraphs") or []
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
@@ -278,7 +293,7 @@ def build_scoped_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         ok, _reason = _check_scoped_paragraph(
-            text, topic, repaired_rids, corpus_norm,
+            text, topic, repaired_rids, accepted_ids, accepted_numerics,
         )
         if not ok:
             continue
@@ -315,7 +330,7 @@ def build_results_from_parsed(
     by_outcome: dict[str, list[ReceiptSummary]] = {}
     for receipt in accepted:
         by_outcome.setdefault(outcome_key(receipt.outcome_class), []).append(receipt)
-    corpus_norm = _accepted_corpus_norm(accepted)
+    accepted_numerics = _accepted_numeric_tokens(accepted)
     body_lines: list[str] = ["## Results", ""]
     outcome_bodies: dict[str, list[str]] = {}
     anchors: list[SynthesisClaimAnchor] = []
@@ -349,7 +364,7 @@ def build_results_from_parsed(
                 repaired_rids, subsection_outcome, receipt_outcomes,
             )
             ok, _reason = _check_anchored_paragraph(
-                text, repaired_rids, accepted_ids, corpus_norm,
+                text, repaired_rids, accepted_ids, accepted_numerics,
             )
             if not ok:
                 continue
@@ -366,7 +381,7 @@ def build_results_from_parsed(
                 sentence=text.strip(),
                 receipt_ids=tuple(repaired_rids),
                 numerics=tuple(
-                    _normalize(m.group(0))
+                    _numeric_token(m.group(0))
                     for m in _NUMERIC_RE.finditer(text)
                 ),
             ))

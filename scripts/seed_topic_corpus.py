@@ -40,6 +40,7 @@ from typing import Any
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 DISCOVERY_TIMEOUT_SECONDS = 30.0
+CORPUS_CHILD_TIMEOUT_SECONDS = 300.0
 
 from agent.sources.aggregator import (  # noqa: E402
     discover, list_available_sources,
@@ -105,6 +106,76 @@ def _discovery_timeout_seconds() -> float:
         return min(120.0, max(1.0, float(raw)))
     except ValueError:
         return DISCOVERY_TIMEOUT_SECONDS
+
+
+def _child_timeout_seconds() -> float:
+    raw = os.environ.get(
+        "RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS",
+        str(CORPUS_CHILD_TIMEOUT_SECONDS),
+    )
+    try:
+        value = float(raw)
+    except ValueError as exc:
+        raise RuntimeError(
+            "RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS must be positive",
+        ) from exc
+    if value <= 0:
+        raise RuntimeError(
+            "RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS must be positive",
+        )
+    return value
+
+
+def _run_child(
+    script: str, *args: str, capture_output: bool = False,
+    env: dict[str, str] | None = None,
+) -> None:
+    cmd = [sys.executable, str(REPO / "scripts" / script), *args]
+    try:
+        subprocess.run(
+            cmd,
+            check=True,
+            cwd=REPO,
+            capture_output=capture_output,
+            env=env,
+            timeout=_child_timeout_seconds(),
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(
+            f"{script} timed out after {_child_timeout_seconds():g}s",
+        ) from exc
+    except subprocess.CalledProcessError as exc:
+        raise RuntimeError(f"{script} exited {exc.returncode}") from exc
+
+
+def _read_json_object(path: Path) -> dict[str, Any]:
+    try:
+        data = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"invalid child artifact: {path}") from exc
+    if not isinstance(data, dict):
+        raise RuntimeError(f"invalid child artifact: {path}")
+    return data
+
+
+def _validate_parsed_artifact(path: Path, *, expected_pmcid: str | None = None) -> str:
+    data = _read_json_object(path)
+    paper_id = str(data.get("paper_id") or "").strip()
+    sections = data.get("sections")
+    if (
+        not paper_id
+        or (expected_pmcid and not paper_id.startswith(expected_pmcid))
+        or not isinstance(sections, dict)
+        or not any(str(value or "").strip() for value in sections.values())
+    ):
+        raise RuntimeError(f"invalid parsed corpus artifact: {path}")
+    return paper_id
+
+
+def _validate_quant_artifact(path: Path, *, expected_paper_id: str) -> None:
+    data = _read_json_object(path)
+    if data.get("paper_id") != expected_paper_id or not isinstance(data.get("claims"), list):
+        raise RuntimeError(f"invalid quant-claim artifact: {path}")
 
 
 def _corpus_paths(topic: str) -> tuple[Path, Path]:
@@ -382,7 +453,7 @@ async def _do_seed(
             f"Active sources: see --list-sources",
             file=sys.stderr,
         )
-        all_hits = []
+        all_hits: list[Any] = []
         for query in pack.corpus_search_queries:
             print(f"\n[query] {query}", file=sys.stderr)
             hits = await discover(
@@ -472,28 +543,17 @@ async def _do_seed(
             f"\n=== Fetching {len(pmcids)} papers ===",
             file=sys.stderr,
         )
-        cmd = [
-            "python3", str(REPO / "scripts/fetch_oa_corpus.py"),
+        _run_child(
+            "fetch_oa_corpus.py",
             "--pmcids", ",".join(pmcids),
             "--out-dir", str(parsed_dir),
-        ]
-        try:
-            subprocess.run(cmd, check=True, cwd=REPO)
-        except subprocess.CalledProcessError as e:
-            print(
-                f"  ! fetch_oa_corpus exited {e.returncode}",
-                file=sys.stderr,
-            )
+        )
         for pmcid in pmcids:
-            if _parsed_paths_for_pmcid(parsed_dir, pmcid):
-                continue
-            fallback_id = _write_abstract_fallback(
-                pmcid_hit_map[pmcid], parsed_dir,
-                reason="fulltext_unavailable",
-                resolved_meta=pmcid_hit_map.get(f"{pmcid}:meta"),
-            )
-            if fallback_id:
-                fallback_paper_ids.append(fallback_id)
+            paths = _parsed_paths_for_pmcid(parsed_dir, pmcid)
+            if not paths:
+                raise RuntimeError(f"fetch_oa_corpus produced no artifact for {pmcid}")
+            for path in paths:
+                _validate_parsed_artifact(path, expected_pmcid=pmcid)
 
     # 4. Extract quant claims
     print(
@@ -512,31 +572,31 @@ async def _do_seed(
         )
     ]
     for pf in parsed_files:
-        paper_id = _paper_id_from_parsed_path(pf)
+        paper_id = _validate_parsed_artifact(pf)
         active_paper_ids.append(paper_id)
         target = quant_dir / (
             paper_id + ".quant_claims.json"
         )
         if target.exists() and not force_extract:
-            n_extracted += 1
-            continue
-        cmd = [
-            "python3",
-            str(REPO / "scripts/quant_claim_extract.py"),
+            try:
+                _validate_quant_artifact(target, expected_paper_id=paper_id)
+                n_extracted += 1
+                continue
+            except RuntimeError:
+                pass
+        _run_child(
+            "quant_claim_extract.py",
             str(pf), "--out", str(target),
-        ]
-        try:
-            subprocess.run(
-                cmd, check=True, cwd=REPO,
-                capture_output=True,
-                env={**os.environ, "TOPIC_DOMAIN": topic},
-            )
-            n_extracted += 1
-        except subprocess.CalledProcessError as e:
-            print(
-                f"  ! extract failed for {pf.name}: {e}",
-                file=sys.stderr,
-            )
+            capture_output=True,
+            env={**os.environ, "TOPIC_DOMAIN": topic},
+        )
+        _validate_quant_artifact(target, expected_paper_id=paper_id)
+        n_extracted += 1
+
+    if n_extracted != len(active_paper_ids):
+        raise RuntimeError(
+            f"quant extraction incomplete: {n_extracted}/{len(active_paper_ids)}",
+        )
 
     # Write report. `deduped` only exists on the legacy path; the
     # calibrated path uses run_waves and writes its own corpus_manifest
@@ -658,7 +718,7 @@ def main(argv: list[str] | None = None) -> int:
             sources=args.sources,
             force_extract=args.force_extract,
         ))
-    except (FileNotFoundError, ValueError) as e:
+    except (FileNotFoundError, RuntimeError, ValueError) as e:
         print(f"Error: {e}", file=sys.stderr)
         return 2
     _print_report(report)

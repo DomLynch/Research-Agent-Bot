@@ -24,7 +24,6 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
-import daily_research_paper_submit as submit  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 
 
@@ -88,7 +87,7 @@ def test_set_topic_returns_to_metformin_cleanly() -> None:
 
 def test_run_aborts_cleanly_on_missing_corpus(tmp_path) -> None:
     """When _run is called with a topic whose corpus dir doesn't
-    exist, it returns exit code 4 (corpus-missing) — NOT a
+    exist, it returns exit code 9 (required input missing) — NOT a
     FileNotFoundError traceback."""
     # Use a topic that definitely doesn't have a corpus
     out_dir = tmp_path / "test-run"
@@ -101,7 +100,7 @@ def test_run_aborts_cleanly_on_missing_corpus(tmp_path) -> None:
     rc = asyncio.run(_go())
     # Reset to metformin so other tests don't see the bad path
     orch._set_topic("metformin")
-    assert rc == 4, f"expected exit 4 (corpus-missing), got {rc}"
+    assert rc == 9, f"expected exit 9 (required input missing), got {rc}"
 
 
 def test_run_fails_closed_on_corrupt_required_revision_snapshot(
@@ -130,21 +129,21 @@ def test_run_fails_closed_on_corrupt_required_revision_snapshot(
     continuity = _json.loads((out_dir / "revision_evidence_continuity.json").read_text())
 
     orch._set_topic("metformin")
-    assert rc == 5
+    assert rc == 9
     assert "snapshot_receipt_set_mismatch" in continuity["errors"]
 
 
 def test_main_accepts_topic_cli_arg() -> None:
     """The CLI exposes --topic. main() with --dry-run + a missing
-    corpus exits with code 4 (corpus-missing); proves the arg
+    corpus exits with code 9 (required input missing); proves the arg
     parser threaded through to _run."""
-    # parse + dispatch — a missing-corpus topic exits 4
+    # parse + dispatch — a missing-corpus topic exits 9
     rc = orch.main([
         "--topic", "nonexistent-zzz", "--dry-run",
         "--out-dir", "/tmp/_topic_test_run",
     ])
     orch._set_topic("metformin")  # reset
-    assert rc == 4
+    assert rc == 9
 
 
 def test_default_out_dir_includes_topic() -> None:
@@ -744,7 +743,7 @@ def test_thesis_template_handles_plural_topic_names() -> None:
     assert "curated reference papers, statins shows" not in thesis.text
 
 
-def test_section_backstop_handles_plural_topic_names() -> None:
+def test_section_backstop_refuses_conclusion_for_plural_topic_names() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     old_topic = orch._ACTIVE_TOPIC
     try:
@@ -766,13 +765,10 @@ def test_section_backstop_handles_plural_topic_names() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
         orch._ACTIVE_TOPIC = old_topic
 
-    assert "For NAD+ precursor, the final interpretation is deliberately tiered" in backstop
-    assert "off-label for broad aging-related prevention claims" in backstop
-    assert "In conclusion, nad precursors has enough" not in backstop
-    assert submit._domain_frame_status({"body_markdown": backstop}) == "eligible"
+    assert backstop == ""
 
 
-def test_section_backstop_uses_lifestyle_boundary_for_exercise() -> None:
+def test_section_backstop_refuses_lifestyle_conclusion_padding() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     old_topic = orch._ACTIVE_TOPIC
     try:
@@ -795,8 +791,4 @@ def test_section_backstop_uses_lifestyle_boundary_for_exercise() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
         orch._ACTIVE_TOPIC = old_topic
 
-    assert "general health or lifestyle intervention" not in backstop
-    assert "does not establish a general health, lifestyle, clinical, or policy recommendation" in backstop
-    assert "populations, exposures, endpoints, comparators, and follow-up" in backstop
-    assert "should not be used off-label" not in backstop
-    assert submit._domain_frame_status({"body_markdown": backstop}) == "eligible"
+    assert backstop == ""

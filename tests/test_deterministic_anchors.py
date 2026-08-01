@@ -96,6 +96,18 @@ def test_cross_domain_anchor_summarizes_tensions():
     assert "convergent" in md
 
 
+def test_cross_domain_anchor_counts_only_non_orthogonal_tensions():
+    receipts = [_r("r1"), _r("r2"), _r("r3")]
+    matrix = _matrix(
+        _t("r1", "r2", kind="orthogonal"),
+        _t("r1", "r3", kind="direct_disagreement", sev=3),
+    )
+    md = build_cross_domain_anchor(receipts, matrix)
+    assert "contains 1 pairwise tensions" in md
+    assert "direct disagreement (n=1)" in md
+    assert "orthogonal" not in md
+
+
 def test_cross_domain_anchor_empty_when_no_accepted():
     rejected = [_r("r1", verdict="reject_low_evidence")]
     assert build_cross_domain_anchor(rejected, _matrix()) == ""
@@ -136,6 +148,17 @@ def test_discussion_anchor_population_dedup():
     md = build_discussion_anchor(receipts, _matrix())
     # 2 distinct populations after dedup
     assert "2 distinct summaries" in md or "2 distinct" in md
+
+
+def test_discussion_anchor_population_order_is_first_seen():
+    receipts = [
+        _r("r1", pop="zeta population"),
+        _r("r2", pop="alpha population"),
+        _r("r3", pop="gamma population"),
+    ]
+    md = build_discussion_anchor(receipts, _matrix())
+    assert md.index("zeta population") < md.index("alpha population")
+    assert md.index("alpha population") < md.index("gamma population")
 
 
 def test_discussion_anchor_empty_when_no_accepted():

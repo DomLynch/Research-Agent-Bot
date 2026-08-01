@@ -5,9 +5,16 @@ from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
-from .io import read_json
+from .io import AtomicJsonState, CorruptJsonState, JsonStateStatus
 
 Publishable = Callable[..., bool]
+
+
+def _generated_record(path: Path) -> dict[str, Any] | None:
+    state = AtomicJsonState[dict[str, Any]](path, dict).read()
+    if state.status is JsonStateStatus.CORRUPT:
+        raise CorruptJsonState(f"{path}: {state.error}")
+    return state.value
 
 
 def discover_topics(
@@ -23,9 +30,10 @@ def discover_topics(
     }
     peer_records = generated_pack_records(topic_pack_db)
     for path in topic_pack_db.glob("*/latest.json"):
-        record = read_json(path)
+        record = _generated_record(path)
         if (
             not path.parent.name.startswith("_")
+            and record is not None
             and isinstance(record.get("pack_data"), dict)
             and generated_pack_publishable(record, peer_records=peer_records)
         ):
@@ -37,7 +45,7 @@ def generated_pack_records(topic_pack_db: Path) -> list[dict[str, Any]]:
     return [
         record
         for path in sorted(topic_pack_db.glob("*/latest.json"))
-        if (record := read_json(path))
+        if (record := _generated_record(path))
     ]
 
 

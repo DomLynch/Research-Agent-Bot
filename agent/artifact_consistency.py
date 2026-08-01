@@ -1,24 +1,4 @@
-"""Final artifact verifier — kills the stale-PDF / desync-supplement
-reviewer trap.
-
-Reviewer feedback 2026-05-14: when L5 is declared, every visible
-artifact (markdown, PDF if exported, DOCX if exported, supplement,
-sidecars) must tell the same story. The exported artifact is what
-reviewers see; the trust-spine is meaningless if the PDF is from a
-prior render.
-
-This module:
-  - canonicalises text for comparison (strips whitespace + bullet
-    markers + bold/italic markers so cosmetic re-export differences
-    don't trip false positives)
-  - cross-checks `full_paper.md` ↔ `submission_package/final_manuscript.md`
-    (identical content required when both exist)
-  - cross-checks reference tokens between body + citation_registry
-  - cross-checks claim counts between manifest + final_status
-  - emits `artifact_consistency.json` sidecar with verdict + checks
-
-Universal — no per-topic logic; works on any topic's run dir.
-"""
+"""Verify that all rendered and sidecar artifacts describe one run."""
 from __future__ import annotations
 
 import hashlib
@@ -44,18 +24,11 @@ class ArtifactConsistencyReport:
     checks: tuple[ConsistencyCheck, ...]
 
     def to_json(self) -> dict[str, object]:
-        return {
-            "passed": self.passed,
-            "checks": [asdict(c) for c in self.checks],
-        }
+        return {"passed": self.passed, "checks": [asdict(c) for c in self.checks]}
 
 
 def _canonicalize(text: str) -> str:
-    """Universal text canonicalisation for cross-artifact comparison.
-    Drops formatting noise (whitespace runs, bullet markers, bold/
-    italic asterisks) that vary between export pipelines (markdown →
-    PDF → docx all re-render whitespace differently). Keeps the
-    semantic content stable."""
+    """Remove formatting noise before comparing rendered artifacts."""
     # Collapse whitespace
     out = re.sub(r"\s+", " ", text)
     # Strip bullet markers + leading hyphens
@@ -71,8 +44,7 @@ def _content_hash(text: str) -> str:
 
 def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
     """Verify all artifacts in a run dir tell the same story.
-    Universal — works on any run; gracefully skips checks for
-    artifacts that don't exist."""
+    Universal — required trust artifacts fail closed when absent."""
     checks: list[ConsistencyCheck] = []
 
     paper_path = run_dir / "full_paper.md"
@@ -92,7 +64,8 @@ def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
     ))
 
     # Submission-package mirror must hash-match
-    submission_paper = run_dir / "submission_package" / "final_manuscript.md"
+    package_dir = run_dir / "submission_package"
+    submission_paper = package_dir / "final_manuscript.md"
     if submission_paper.is_file():
         sub_hash = _content_hash(submission_paper.read_text())
         ok = sub_hash == paper_hash
@@ -104,10 +77,14 @@ def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
                 f"full_paper.md hash {paper_hash[:12]}"
             ),
         ))
+    elif package_dir.exists():
+        checks.append(ConsistencyCheck(
+            name="submission_package_match", passed=False,
+            detail="submission_package/final_manuscript.md missing",
+        ))
 
     # PDF / DOCX exports (if present) — extract plaintext and hash
-    # against the markdown. Fail-soft when the extractor (pypdf /
-    # python-docx) isn't importable in this environment.
+    # against the markdown. A present export that cannot be inspected fails.
     for ext, exporter in (("pdf", _extract_pdf_text),
                           ("docx", _extract_docx_text)):
         export_path = paper_path.with_suffix(f".{ext}")
@@ -130,8 +107,8 @@ def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
             export_text = exporter(export_path)
         except ImportError as e:
             checks.append(ConsistencyCheck(
-                name=f"{ext}_extraction_skipped", passed=ext != "docx",
-                detail=f"{ext} present without a source hash and optional text extractor unavailable: {e!r}",
+                name=f"{ext}_extracted", passed=False,
+                detail=f"{ext} present but text extractor unavailable: {e!r}",
             ))
             continue
         except (OSError, ValueError) as e:
@@ -184,6 +161,10 @@ def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
     if registry_path.is_file():
         try:
             reg = json.loads(registry_path.read_text())
+            if not isinstance(reg, dict) or not reg:
+                raise ValueError("citation registry must be a non-empty object")
+            if any(not isinstance(entry, dict) for entry in reg.values()):
+                raise ValueError("citation registry entries must be objects")
             refs_section = _section(paper_text, "References")
             missing = [
                 entry.get("body_citation", "")
@@ -204,11 +185,16 @@ def verify_run_artifacts(run_dir: Path) -> ArtifactConsistencyReport:
                     f"body References (first 3: {missing[:3]})"
                 ),
             ))
-        except (OSError, json.JSONDecodeError) as e:
+        except (OSError, json.JSONDecodeError, ValueError) as e:
             checks.append(ConsistencyCheck(
                 name="citation_registry_coverage", passed=False,
                 detail=f"failed to parse citation_registry.json: {e!r}",
             ))
+    else:
+        checks.append(ConsistencyCheck(
+            name="citation_registry_coverage", passed=False,
+            detail="citation_registry.json missing",
+        ))
 
     passed = all(c.passed for c in checks)
     return ArtifactConsistencyReport(passed=passed, checks=tuple(checks))

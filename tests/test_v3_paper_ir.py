@@ -148,8 +148,13 @@ def test_docx_export_does_not_truncate_long_manuscript(tmp_path: Path) -> None:
 
     paper = "# Long paper\n\n" + "\n\n".join(
         f"Source paragraph {index} remains visible." for index in range(705)
-    )
+    ) + "\n\n## References\n\n- Source 2026.\n"
     (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
+    (tmp_path / "submission_package").mkdir()
+    (tmp_path / "submission_package" / "final_manuscript.md").write_text(paper, encoding="utf-8")
+    (tmp_path / "citation_registry.json").write_text(
+        json.dumps({"source": {"body_citation": "Source 2026"}}), encoding="utf-8",
+    )
     ir._write_docx(tmp_path / "full_paper.docx", paper)
 
     with zipfile.ZipFile(tmp_path / "full_paper.docx") as archive:

@@ -1,6 +1,8 @@
 """Tests for the Phase 8 deterministic final-cert gate."""
 from __future__ import annotations
 
+from typing import Any
+
 import pytest
 
 from agent.final_gate import (
@@ -13,9 +15,9 @@ from agent.final_gate import (
 )
 
 
-def _green_inputs(**overrides) -> GateInputs:
+def _green_inputs(**overrides: Any) -> GateInputs:
     """All-green inputs that pass DEFAULT_THRESHOLDS; override fields as needed."""
-    base = dict(
+    base: dict[str, Any] = dict(
         numeric_coverage=1.0,
         audit_gates_passed=True,
         journal_surface_passed=True,
@@ -239,7 +241,9 @@ def test_gate_result_failures_are_tuple() -> None:
 # --- evidence_map zero-tension landscape relaxation (publish-consistency fix) -
 
 def test_landscape_thresholds_relaxes_only_tension_for_zero_tension() -> None:
-    th = landscape_thresholds(n_receipts=12, n_tensions=0)
+    th = landscape_thresholds(
+        n_receipts=12, n_tensions=0, declared_review_type="evidence_map",
+    )
     assert th is not None and th.min_tensions == 0
     # every other integrity threshold is unchanged from the default
     assert th.min_numeric_coverage == DEFAULT_THRESHOLDS.min_numeric_coverage
@@ -249,14 +253,26 @@ def test_landscape_thresholds_relaxes_only_tension_for_zero_tension() -> None:
 
 
 def test_landscape_thresholds_none_for_tensioned_or_empty() -> None:
-    assert landscape_thresholds(n_receipts=12, n_tensions=3) is None  # has tension
-    assert landscape_thresholds(n_receipts=0, n_tensions=0) is None   # no corpus
+    assert landscape_thresholds(
+        n_receipts=12, n_tensions=3, declared_review_type="evidence_map",
+    ) is None
+    assert landscape_thresholds(
+        n_receipts=0, n_tensions=0, declared_review_type="evidence_map",
+    ) is None
+    assert landscape_thresholds(n_receipts=12, n_tensions=0) is None
+    assert landscape_thresholds(
+        n_receipts=12, n_tensions=0, declared_review_type="evidence_brief",
+    ) is None
 
 
 def test_zero_tension_corpus_blocked_by_default_but_passes_as_landscape() -> None:
     inputs = _green_inputs(n_tensions=0, n_receipts=12)
     assert evaluate_final_gate(inputs).passed is False  # default min_tensions=1 blocks
-    th = landscape_thresholds(inputs.n_receipts, inputs.n_tensions)
+    th = landscape_thresholds(
+        inputs.n_receipts,
+        inputs.n_tensions,
+        declared_review_type="evidence_map",
+    )
     assert evaluate_final_gate(inputs, thresholds=th).passed is True
 
 
@@ -264,7 +280,11 @@ def test_landscape_relaxation_does_not_waive_other_integrity_failures() -> None:
     # A zero-tension corpus that also fails an integrity check still fails —
     # landscape lifts ONLY the tension floor, nothing else.
     inputs = _green_inputs(n_tensions=0, n_receipts=12, rob_coverage=0.1)
-    th = landscape_thresholds(inputs.n_receipts, inputs.n_tensions)
+    th = landscape_thresholds(
+        inputs.n_receipts,
+        inputs.n_tensions,
+        declared_review_type="evidence_map",
+    )
     result = evaluate_final_gate(inputs, thresholds=th)
     assert result.passed is False
     assert any("rob_coverage" in f for f in result.failures)

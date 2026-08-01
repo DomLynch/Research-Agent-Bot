@@ -252,10 +252,18 @@ def _join_paragraph_text(sec: ET.Element) -> str:
     Preserves paragraph breaks but flattens within-paragraph soft
     breaks (the quant extractor cares about sentences, not paragraphs)."""
     paragraphs: list[str] = []
-    for p in sec.findall(".//p"):
-        text = _text_of(p)
-        if text:
-            paragraphs.append(text)
+
+    def visit(element: ET.Element) -> None:
+        for child in element:
+            if child.tag == "sec":
+                continue
+            if child.tag == "p":
+                if text := _text_of(child):
+                    paragraphs.append(text)
+            else:
+                visit(child)
+
+    visit(sec)
     return "\n\n".join(paragraphs)
 
 
@@ -379,15 +387,17 @@ def parse_jats_to_paper_sections(
         # generic outer <sec sec-type=""> with the real
         # introduction/methods/results as nested children — pre-fix
         # these were silently dropped (PMC12954315 was the smoking
-        # gun: 0 sections detected). First-wins guard prevents
-        # subsection text from clobbering the parent section.
+        # gun: 0 sections detected). Paragraph extraction skips nested
+        # <sec> bodies so each section is appended exactly once.
         for sec in body.iter("sec"):
             canonical = _section_to_canonical(sec)
             if not canonical:
                 continue
             text = _join_paragraph_text(sec)
-            if text and not sections_text[canonical]:
-                sections_text[canonical] = text
+            if text:
+                sections_text[canonical] = "\n\n".join(
+                    filter(None, (sections_text[canonical], text)),
+                )
                 if canonical not in detected:
                     detected.append(canonical)
 

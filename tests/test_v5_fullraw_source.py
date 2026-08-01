@@ -36,9 +36,12 @@ async def test_fullraw_disabled_without_url_or_token(monkeypatch: pytest.MonkeyP
         return httpx.Response(200, json={})
 
     async with _mock_client(responder) as client:
-        hits = await V5FullRawClient().search(client, "metformin longevity", limit=3)
+        result = await V5FullRawClient().search_result(
+            client, "metformin longevity", limit=3,
+        )
 
-    assert hits == []
+    assert result.hits == []
+    assert result.status == "not_configured"
     assert calls == []
 
 
@@ -192,15 +195,20 @@ async def test_fullraw_returns_no_hits_until_complete_receipt(fullraw_env: None)
         )
 
     async with _mock_client(responder) as client:
-        hits = await V5FullRawClient().search(client, "metformin longevity", limit=3)
+        result = await V5FullRawClient().search_result(
+            client, "metformin longevity", limit=3,
+        )
 
-    assert hits == []
+    assert result.hits == []
+    assert result.status == "incomplete_coverage"
 
 
 @pytest.mark.asyncio
 async def test_fullraw_fail_soft_on_http_error(fullraw_env: None) -> None:
     async with _mock_client(lambda request: httpx.Response(503, content=b"down")) as client:
-        assert await V5FullRawClient().search(client, "metformin", limit=3) == []
+        result = await V5FullRawClient().search_result(client, "metformin", limit=3)
+    assert result.hits == []
+    assert result.status == "server_error"
 
 
 @pytest.mark.asyncio
@@ -209,4 +217,8 @@ async def test_fullraw_fail_soft_on_timeout(fullraw_env: None) -> None:
         raise httpx.ReadTimeout("slow fullraw shard sweep", request=request)
 
     async with _mock_client(responder) as client:
-        assert await V5FullRawClient().search(client, "low dose lithium aging", limit=3) == []
+        result = await V5FullRawClient().search_result(
+            client, "low dose lithium aging", limit=3,
+        )
+    assert result.hits == []
+    assert result.status == "transport_error"

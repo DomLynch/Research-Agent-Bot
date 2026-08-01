@@ -15,7 +15,7 @@ from pathlib import Path
 
 import pytest
 
-from agent.evidence_cards import bundle
+from agent.evidence_cards import bundle, confidence_verdict, risk_of_bias
 from agent.retrieve import normalize_and_dedup
 from agent.types import EvidenceItem, RawHit, Source
 
@@ -56,7 +56,24 @@ def _bundle_one(
     )[0]
 
 
+def _a1_rct(ref: int = 1) -> EvidenceItem:
+    return EvidenceItem(
+        source=_src(ref), abstract="reported result", design="rct",
+        role="published_results", tier="A1", direct=True, strict=True,
+    )
+
+
 # --- Step 1: role classification (truth table) -----------------------------
+
+
+def test_structural_a1_label_does_not_claim_low_risk_of_bias() -> None:
+    assert risk_of_bias(_a1_rct()) == "not assessed"
+
+
+def test_rct_count_does_not_claim_unmeasured_convergence() -> None:
+    label, rationale = confidence_verdict([_a1_rct(i) for i in range(1, 4)])
+    assert label == "moderate"
+    assert "convergence was not assessed" in rationale
 
 
 def test_role_clinicaltrials_with_results_is_published_results():

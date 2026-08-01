@@ -541,9 +541,7 @@ def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> N
     assert len(limitations.split()) >= 250
 
 
-def test_public_surface_backstop_reuses_shared_prose_with_section_scope() -> None:
-    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
-
+def test_public_surface_backstop_refuses_substantive_sections() -> None:
     orch: Any = importlib.import_module("scripts.run_v06_synthesis")
 
     orch._ACTIVE_TOPIC = "glp_1_longevity"
@@ -581,8 +579,8 @@ def test_public_surface_backstop_reuses_shared_prose_with_section_scope() -> Non
     discussion = orch._compile_public_section_backstop("Discussion", 800, "")
     cross_domain = orch._compile_public_section_backstop("Cross-Domain Synthesis", 850, discussion)
 
-    assert len(cross_domain.split()) >= 850
-    assert not _duplicate_paragraph_issue_messages(discussion + "\n\n" + cross_domain)
+    assert discussion == ""
+    assert cross_domain == ""
 
 
 def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp_path: Path) -> None:
@@ -2047,6 +2045,7 @@ def test_run_text_phases_strips_duplicate_added_by_final_surface_floor(
 
 def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: Path) -> None:
     from agent.journal_surface_gate import evaluate_journal_surface
+    orch: Any = importlib.import_module("scripts.run_v06_synthesis")
 
     duplicate = (
         "The thesis is: Across curated reference papers, the evidence base shows a "
@@ -2084,7 +2083,10 @@ def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: 
     cross = fixed.split("## Cross-Domain Synthesis", 1)[1].split("## Discussion", 1)[0]
 
     assert len(intro.split()) >= 400
-    assert len(cross.split()) >= 850
+    assert len(cross.split()) < 850
+    assert orch._insufficient_evidence_owned_section_depth(
+        fixed, None,
+    )[1] == "Cross-Domain Synthesis=0/850"
     assert "ramadan_fasting_effects" not in fixed
     assert not any(issue.code == "duplicate_paragraph" for issue in report.issues)
     assert not any(
@@ -6264,7 +6266,10 @@ def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: 
     from agent.journal_surface_gate import evaluate_journal_surface
     assert not any(i.code == "citation_artifact" for i in evaluate_journal_surface(paper).issues)
     after = verify_run_artifacts(tmp_path)
-    assert after.passed is True
+    assert any(
+        check.name == "citation_registry_coverage" and check.passed
+        for check in after.checks
+    )
 
 
 def test_phase_g_refreshes_public_exports_from_final_markdown(tmp_path: Path) -> None:
@@ -6288,6 +6293,26 @@ def test_phase_g_refreshes_public_exports_from_final_markdown(tmp_path: Path) ->
         assert b"Final revised evidence" in archive.read("word/document.xml")
     assert (tmp_path / "full_paper.typ").read_text().startswith(f"// source-sha256: {source_hash}\n")
     assert refresh_public_exports(tmp_path) is False
+
+
+def test_artifact_consistency_requires_package_mirror_only_after_package_exists(
+    tmp_path: Path,
+) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    paper = "# Paper\n\n## References\n\nSource 2026\n"
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "source": {"body_citation": "Source 2026"},
+    }))
+    assert verify_run_artifacts(tmp_path).passed is True
+    (tmp_path / "submission_package").mkdir()
+    report = verify_run_artifacts(tmp_path)
+    assert report.passed is False
+    assert any(
+        check.name == "submission_package_match" and not check.passed
+        for check in report.checks
+    )
 
 
 def test_revision_surface_notes_insert_manifest_backed_thin_brief_notes(tmp_path: Path) -> None:

@@ -246,11 +246,13 @@ def test_validate_proposed_p_value_field_not_in_source_rejects() -> None:
     assert reason == "p_value_field_not_in_source"
 
 
-def test_validate_proposed_p_value_field_in_source_accepts() -> None:
-    """Same field, p-value present in abstract → accepted."""
+def test_validate_proposed_p_value_field_in_quote_accepts() -> None:
     item = _item(abstract="Metformin had a significant effect (p<0.001).")
     fact, reason = _validate_proposed(
-        {"source_quote": "Metformin had a significant effect", "p_value": "<0.001"},
+        {
+            "source_quote": "Metformin had a significant effect (p<0.001)",
+            "p_value": "<0.001",
+        },
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -258,28 +260,39 @@ def test_validate_proposed_p_value_field_in_source_accepts() -> None:
     assert fact.p_value == "<0.001"
 
 
-def test_validate_proposed_p_value_field_with_p_prefix_accepts() -> None:
-    """LLM emits p_value='p<0.001' (with prefix); synthetic builder strips
-    the prefix and re-applies, matching the abstract's verbatim form."""
+def test_validate_proposed_p_value_elsewhere_in_abstract_rejects() -> None:
     item = _item(abstract="Metformin had a significant effect (p<0.001).")
     fact, reason = _validate_proposed(
         {"source_quote": "Metformin had a significant effect", "p_value": "p<0.001"},
         item=item, pack=_pack(), require_source_trace=True,
     )
-    assert reason is None
-    assert fact is not None
+    assert fact is None
+    assert reason == "p_value_field_not_in_source"
 
 
-def test_validate_proposed_p_value_field_bare_number_in_source_accepts() -> None:
-    """LLM emits bare '0.003'; synthesizer wraps as 'p=0.003'."""
+def test_validate_proposed_bare_p_value_elsewhere_in_abstract_rejects() -> None:
     item = _item(abstract="Effect reported (p=0.003).")
     fact, reason = _validate_proposed(
         {"source_quote": "Effect reported", "p_value": "0.003"},
         item=item, pack=_pack(), require_source_trace=True,
     )
+    assert fact is None
+    assert reason == "p_value_field_not_in_source"
+
+
+def test_validate_proposed_nulls_outcome_not_in_quote() -> None:
+    item = _item(abstract="Metformin reduced HbA1c by 0.5% (p=0.003).")
+    fact, reason = _validate_proposed(
+        {
+            "source_quote": "Metformin reduced HbA1c by 0.5% (p=0.003)",
+            "outcome": "mortality",
+        },
+        item=item,
+        pack=_pack(),
+        require_source_trace=True,
+    )
     assert reason is None
-    assert fact is not None
-    assert fact.p_value == "0.003"
+    assert fact is not None and fact.outcome is None
 
 
 def test_validate_proposed_nulls_untraced_estimate_keeps_fact() -> None:
@@ -502,7 +515,10 @@ def test_validate_proposed_p_value_field_dot_only_form_accepts() -> None:
     """LLM emits '.001' (no leading zero); grammar gate accepts via 0?\\.NNN."""
     item = _item(abstract="Metformin had a significant effect (p<.001).")
     fact, reason = _validate_proposed(
-        {"source_quote": "Metformin had a significant effect", "p_value": "<.001"},
+        {
+            "source_quote": "Metformin had a significant effect (p<.001)",
+            "p_value": "<.001",
+        },
         item=item, pack=_pack(), require_source_trace=True,
     )
     assert reason is None
@@ -530,7 +546,7 @@ def test_build_user_prompt_is_deterministic() -> None:
 def test_prompt_version_is_anchored() -> None:
     """Anchored constant — cost_log.json records this for reproducibility.
     Day 10.11 bumped after objective-as-claim filter + prompt strengthening."""
-    assert PROMPT_VERSION == "fact-extractor/2026-04-29-day10-12-mechanism-inflation"
+    assert PROMPT_VERSION == "fact-extractor/2026-08-01-quote-bound-metadata"
 
 
 # --- extract_facts_from_item ---------------------------------------------
@@ -543,7 +559,7 @@ def test_extract_facts_from_item_happy_path() -> None:
         return httpx.Response(200, json=_ok_body({
             "facts": [
                 {
-                    "source_quote": "Metformin reduced HbA1c by 0.5%",
+                    "source_quote": "Metformin reduced HbA1c by 0.5% (p=0.003)",
                     "outcome": "HbA1c", "estimate": "0.5%",
                     "p_value": "0.003", "ci": None,
                 },

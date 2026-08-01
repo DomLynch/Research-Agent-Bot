@@ -140,6 +140,12 @@ _CITATION_ARTIFACT_RE = re.compile(r"\[(?:citation needed|source|ref|pmid|doi|TO
 _REFERENCE_DUMP_RE = re.compile(r"\b(?:DOI|PMID):\s*\S+", re.IGNORECASE)
 _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain|preliminary|context[- ]dependent|not definitive|requires confirmation)\.?$", re.IGNORECASE)
 _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
+_UNRESOLVED_STAT_RE = re.compile(
+    r"\b(?:(?:exact\s+)?(?:statistic|effect estimate|p[- ]?value|confidence interval)\s+(?:is\s+|was\s+)?(?:unavailable|unknown|not\s+(?:available|reported|retained|extracted|extractable))|(?:retained\s+)?source excerpt\s+(?:does not|did not|cannot)\s+(?:contain|include|report|retain)\s+(?:the\s+)?(?:exact\s+)?(?:statistic|effect estimate|p[- ]?value|confidence interval))\b",
+    re.IGNORECASE,
+)
+_HUMAN_VERIFICATION_RE = re.compile(r"\b(?:(?:author|human)[- ](?:verified|reviewed)|(?:author|human) verification|verified by (?:the )?(?:author|human))\b", re.IGNORECASE)
+_AUTOMATED_ACCOUNTABILITY_RE = re.compile(r"\b(?:accountability is established through reproducible artifacts|(?:automated|deterministic)(?:\s+\w+){0,3}\s+gates?)\b", re.IGNORECASE)
 _GRAMMAR_ARTIFACT_RE = re.compile(
     r"(?:\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
     r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were)"
@@ -178,6 +184,8 @@ def evaluate_journal_surface(
     animal_citations: Iterable[str] | None = None,
     citation_outcome_map: dict[str, str] | None = None,
     declared_review_type: str | None = None,
+    accountability_model: str | None = None,
+    human_signoff_validated: bool = False,
 ) -> SurfaceReport:
     issues: list[SurfaceIssue] = []
     body_md = _journal_body(paper_md)
@@ -207,11 +215,24 @@ def evaluate_journal_surface(
     issues.extend(SurfaceIssue("limitations_leak", msg) for msg in _limitations_summary_leak_issue_messages(paper_md))
     issues.extend(SurfaceIssue("undeclared_thesis", msg) for msg in _undeclared_thesis_in_discussion_issue_messages(paper_md))
     issues.extend(SurfaceIssue("unsupported_novelty", msg) for msg in _unsupported_novelty_claim_issue_messages(body_md))
-    if animal_citations is not None:
+    issues.extend(SurfaceIssue("public_text_integrity", msg) for msg in public_text_integrity_issue_messages(paper_md, accountability_model=accountability_model, human_signoff_validated=human_signoff_validated))
+    if animal_citations is None:
+        issues.append(SurfaceIssue(
+            "missing_semantic_context", "animal_citations not supplied",
+        ))
+    else:
         issues.extend(SurfaceIssue("evidence_lane", msg) for msg in _unlabeled_animal_citation_issue_messages(paper_md, animal_citations))
-    if citation_outcome_map is not None:
+    if citation_outcome_map is None:
+        issues.append(SurfaceIssue(
+            "missing_semantic_context", "citation_outcome_map not supplied",
+        ))
+    else:
         issues.extend(SurfaceIssue("outcome_routing", msg) for msg in _outcome_class_mismatch_issue_messages(paper_md, citation_outcome_map))
-    if declared_review_type:
+    if not declared_review_type:
+        issues.append(SurfaceIssue(
+            "missing_semantic_context", "declared_review_type not supplied",
+        ))
+    else:
         issues.extend(SurfaceIssue("review_type_overclaim", msg) for msg in _review_type_overclaim_issue_messages(paper_md, declared_review_type))
         issues.extend(SurfaceIssue("methods_pack_incomplete", msg) for msg in _methods_pack_completeness_issue_messages(paper_md, declared_review_type))
     for _msgs in (
@@ -223,6 +244,19 @@ def evaluate_journal_surface(
     for row in _extract_qei_rows(body_md):
         issues.extend(SurfaceIssue("qei_surface", msg) for msg in qei_row_issue_messages(row))
     return SurfaceReport(passed=not issues, issues=tuple(issues))
+
+
+def public_text_integrity_issue_messages(
+    paper_md: str, *, accountability_model: str | None = None,
+    human_signoff_validated: bool = False,
+) -> tuple[str, ...]:
+    issues = [f"unresolved statistic placeholder: {m.group(0)!r}" for m in _UNRESOLVED_STAT_RE.finditer(paper_md)]
+    allow_human = accountability_model == "legacy_journal_submission" and human_signoff_validated
+    if not allow_human:
+        issues.extend(f"unsupported human-verification claim: {m.group(0)!r}" for m in _HUMAN_VERIFICATION_RE.finditer(paper_md))
+    if accountability_model == "researka_agent_certified" and not _AUTOMATED_ACCOUNTABILITY_RE.search(paper_md):
+        issues.append("agent-certified manuscript missing automated-gate accountability statement")
+    return tuple(issues)
 
 
 def _journal_body(paper_md: str) -> str:
@@ -262,7 +296,7 @@ def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
     stat = _norm(row.get("statistic", ""))
     study = row.get("study_label", row.get("study", "")).strip()
     issues: list[str] = []
-    if endpoint in _BAD_ENDPOINTS:
+    if not endpoint or endpoint in _BAD_ENDPOINTS:
         issues.append(f"unpublishable endpoint: {endpoint or 'blank'}")
     if value in _DASHES and unit in _DASHES and stat in _DASHES:
         issues.append(f"empty QEI row: {study or 'unknown study'}")
@@ -542,10 +576,7 @@ def _citation_artifact_issue_messages(paper_md: str) -> tuple[str, ...]:
 
 
 def _pipeline_jargon_issue_messages(paper_md: str) -> tuple[str, ...]:
-    """Flag pipeline-internal vocabulary in the public manuscript body.
-    Each match emits the offending token + the academic-language
-    replacement so the auto-fixer or a human author can swap it in.
-    Universal — no topic-specific tokens."""
+    """Report public-body pipeline jargon with its academic replacement."""
     out: list[str] = []
     for jargon, replacement in _PIPELINE_JARGON_PUBLIC:
         if re.search(rf"(?<![\w-]){re.escape(jargon)}(?![\w-])", paper_md, re.I):
@@ -554,14 +585,7 @@ def _pipeline_jargon_issue_messages(paper_md: str) -> tuple[str, ...]:
 
 
 def apply_pipeline_jargon_replacements(paper_md: str) -> str:
-    """Deterministic post-render scrubber — replaces every pipeline-
-    jargon token in the manuscript body with its academic-language
-    equivalent. Universal — applies the same _PIPELINE_JARGON_PUBLIC
-    table the gate uses (single source of truth). Caller (the
-    pipeline) runs this AFTER the writer to make sure the body is
-    journal-language-clean without depending on the LLM to comply with
-    prompt rules. Longest patterns are replaced first so 'source-bound
-    observation' wins over 'source-bound' alone."""
+    """Replace public-body pipeline jargon using the gate's replacement table."""
     out = paper_md
     ordered = sorted(_PIPELINE_JARGON_PUBLIC, key=lambda kv: -len(kv[0]))
     for jargon, replacement in ordered:
@@ -610,10 +634,7 @@ _LIMITATIONS_LEAK_RE = re.compile(
 
 
 def _limitations_summary_leak_issue_messages(paper_md: str) -> tuple[str, ...]:
-    """The Limitations section must name LIMITATIONS, not summarise
-    findings or assert synthesis contributions. Catches summary-prose
-    leakage like 'Positive signals appear in...' and synthesis-novelty
-    leakage like 'It separates endpoint-specific evidence...'."""
+    """Report findings or contribution prose leaked into Limitations."""
     body = _section_body(paper_md, "Limitations") or ""
     if not body:
         return ()
@@ -641,8 +662,7 @@ _RESOLUTION_MARKER_RE = re.compile(
 def _review_type_overclaim_issue_messages(
     paper_md: str, declared_review_type: str | None,
 ) -> tuple[str, ...]:
-    """Thin wrapper: extracts Abstract + Methods sections and
-    delegates to `agent.review_type.review_type_overclaim_issue_messages`."""
+    """Check Abstract and Methods for review-type overclaim."""
     from agent.review_type import review_type_overclaim_issue_messages
     return review_type_overclaim_issue_messages(
         _section_body(paper_md, "Abstract") or "",
@@ -654,8 +674,7 @@ def _review_type_overclaim_issue_messages(
 def _methods_pack_completeness_issue_messages(
     paper_md: str, declared_review_type: str | None,
 ) -> tuple[str, ...]:
-    """Thin wrapper: extracts Methods section and delegates to
-    `agent.methods_pack.methods_pack_completeness_issue_messages`."""
+    """Check Methods against the declared review-type contract."""
     from agent.methods_pack import methods_pack_completeness_issue_messages
     return methods_pack_completeness_issue_messages(
         _section_body(paper_md, "Methods") or "",
@@ -666,11 +685,7 @@ def _methods_pack_completeness_issue_messages(
 def _undeclared_thesis_in_discussion_issue_messages(
     paper_md: str,
 ) -> tuple[str, ...]:
-    """Discussion must take a position, not hedge into 'context-
-    dependent' boilerplate. Bug-fix 2026-05-14: require the writer to
-    emit a literal `**Thesis:**` marker so the reader can locate the
-    paper's claimed position in one scan. Universal — the marker is
-    topic-agnostic; the gate just confirms presence."""
+    """Require a literal thesis marker in Discussion."""
     body = _section_body(paper_md, "Discussion") or ""
     if not body:
         return ()
@@ -693,11 +708,7 @@ def _undeclared_thesis_in_discussion_issue_messages(
 
 
 def _unsupported_novelty_claim_issue_messages(paper_md: str) -> tuple[str, ...]:
-    """A paragraph that asserts novelty/framework contribution must
-    cite ≥1 prior Author-Year reference in the same paragraph. Catches
-    the "we propose a novel framework" with zero engagement with prior
-    literature failure mode (the metabolic-functional tradeoff issue).
-    Universal — works for any domain."""
+    """Require prior-literature citation beside novelty claims."""
     issues: list[str] = []
     for para in re.split(r"\n\s*\n", paper_md):
         novelty = _NOVELTY_CLAIM_RE.search(para)
@@ -738,12 +749,7 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
 
 
 def _reference_entries(paper_md: str) -> Iterable[tuple[str, str]]:
-    """Yield (raw_token, folded_token) for each reference list entry.
-    Only the FIRST Author-Year on a line is the canonical label; later
-    matches on the same line are journal abbreviations inside the full
-    citation body (e.g. 'J Am Geriatr Soc. 2006' or 'BMJ. 2010').
-    Universal — works for `- **Author Year.**` and `[N] Author Year`
-    reference styles alike."""
+    """Yield raw and folded canonical Author-Year reference labels."""
     refs = _section_body(paper_md, "References") or ""
     for line in refs.splitlines():
         line = line.strip()
@@ -770,12 +776,7 @@ def _reference_nonlabel_tokens(paper_md: str) -> set[str]:
 
 
 def orphan_reference_tokens(paper_md: str) -> tuple[str, ...]:
-    """Mirror of `unreferenced_citation_tokens`: every Author-Year row
-    in the References section MUST be cited at least once in the body.
-    A reference with zero body cites is an orphan — usually means the
-    paper was parsed into the corpus but the writer never named it,
-    or a citation-token mismatch (the bug that surfaced 'renovar 2023'
-    as the only place that source appeared)."""
+    """Return bibliography labels with no inline body citation."""
     body = _journal_body(paper_md)
     body_folded = {_fold(f"{m.group(1)} {m.group(2)}") for m in _AUTHOR_YEAR_RE.finditer(body) if m.group(1).casefold().rstrip(".") not in _MONTH_AUTHOR_TOKENS}
     out: list[str] = []
@@ -807,13 +808,7 @@ def _outcome_slug(label: str) -> str:
 def _outcome_class_mismatch_issue_messages(
     paper_md: str, citation_outcome_map: dict[str, str],
 ) -> tuple[str, ...]:
-    """For each `### X Outcomes` subsection in Results, every cited
-    Author-Year must be from a receipt whose outcome_class normalises
-    to X. Mismatches signal evidence routing errors (e.g. Beavers 2022
-    with outcome_class=frailty cited inside the Cardiometabolic
-    subsection). Universal — the caller passes the citation→outcome
-    map derived from manifest.receipts; this gate adds no per-topic
-    knowledge."""
+    """Report citations routed to the wrong Results outcome subsection."""
     if not citation_outcome_map:
         return ()
     folded_map = {_fold(k): v for k, v in citation_outcome_map.items()}
@@ -864,11 +859,7 @@ def _outcome_class_mismatch_issue_messages(
 def _unlabeled_animal_citation_issue_messages(
     paper_md: str, animal_citations: Iterable[str],
 ) -> tuple[str, ...]:
-    """For each animal-lane citation (as listed by the caller) that
-    appears in a body paragraph WITHOUT any animal-lane qualifier in
-    the same paragraph, emit an issue. Universal — `animal_citations`
-    is a free list of author-year tokens the caller has identified as
-    non-human; this gate adds no per-topic knowledge."""
+    """Report animal citations lacking a same-paragraph lane qualifier."""
     animal_set = {_fold(re.sub(r"\s+et\s+al\.?", "", c, flags=re.I).strip()) for c in animal_citations if c and c.strip()}  # noqa: E501
     if not animal_set:
         return ()

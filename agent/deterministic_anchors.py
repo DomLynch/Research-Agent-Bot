@@ -1,22 +1,4 @@
-"""Deterministic anchor paragraphs for Q11 / Q12 audit floors.
-
-Reviewer-flagged variance issue (2026-05-04): even with the writer
-backstop's audit-aware rerender, Discussion (Q11) and Cross-Domain
-Synthesis (Q12) sometimes ship below the 800-word floor on thin
-corpora or unlucky LLM samples. This module provides a final
-structural fallback — a corpus-derived deterministic paragraph
-appended to the section when the LLM (after retry) still falls
-short.
-
-Universal across topics: every input is corpus-derived
-(receipts, tension matrix, outcome class counts). No LLM cost,
-no fabrication risk — all values trace to existing extracted
-data. Same code path for metformin, rapamycin, statins, and
-future topics.
-
-The anchor paragraphs use neutral public headings and provide the
-structural baseline that guarantees Q11/Q12 pass.
-"""
+"""Build corpus-derived fallback text for deterministic audit floors."""
 from __future__ import annotations
 
 from collections import Counter
@@ -49,9 +31,10 @@ def build_cross_domain_anchor(
     by_direction: Counter[str] = Counter(
         r.effect_direction for r in accepted if r.effect_direction
     )
-    n_tensions = len(matrix.pairs)
-    n_severe = sum(1 for t in matrix.pairs if t.severity >= 3)
-    tension_kinds: Counter[str] = Counter(t.kind for t in matrix.pairs)
+    tensions = matrix.non_orthogonal()
+    n_tensions = len(tensions)
+    n_severe = sum(1 for t in tensions if t.severity >= 3)
+    tension_kinds: Counter[str] = Counter(t.kind for t in tensions)
 
     classes_str = ", ".join(
         f"{cls.replace('_', ' ')} (n={n})"
@@ -134,10 +117,9 @@ def build_discussion_anchor(
         r.directness for r in accepted if r.directness
     )
     n_with_p = sum(1 for r in accepted if r.p_values)
-    populations = list({
-        r.population_summary for r in accepted
-        if r.population_summary
-    })
+    populations = list(dict.fromkeys(
+        r.population_summary for r in accepted if r.population_summary
+    ))
 
     tier_str = ", ".join(
         f"{tier} (n={n})" for tier, n in tier_counts.most_common()

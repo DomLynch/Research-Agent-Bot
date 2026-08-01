@@ -3,6 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import sys
+import tempfile
 import urllib.request
 
 import pytest
@@ -14,12 +15,79 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # noqa: E402
+from agent.publication_evidence import source_proof_fields  # noqa: E402
+from agent.methods_pack import REQUIRED_METHODS_H3_MARKERS  # noqa: E402
 from agent.revision_evidence import (  # noqa: E402
     create_revision_evidence_snapshot,
     load_revision_evidence,
 )
 
 _REAL_UNMET_REVISION_ASKS = cycle._unmet_revision_asks
+
+
+def _proven_source(**values: Any) -> dict[str, Any]:
+    row = {
+        "source_type": "pubmed",
+        "id": str(values.get("pmid") or values.get("id") or "12345678"),
+        "title": "Authoritative source report",
+        **values,
+    }
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory)
+        source = root / "run"
+        quant = root / "quant"
+        parsed = root / "parsed"
+        receipt = {"receipt_id": "source", "topic": "test"}
+        _write_json(source / "manifest.json", {
+            "topic": "test", "receipts": [receipt],
+            "revision_evidence_snapshot": {"required": True},
+        })
+        _write_json(quant / "source.quant_claims.json", {"claims": []})
+        _write_json(parsed / "source.paper_sections.json", {
+            "sections": {"abstract": row.get("excerpt")},
+        })
+        _write_json(source / "citation_registry.json", {"source": {"receipt_id": "source"}})
+        create_revision_evidence_snapshot(
+            source, quant_dir=quant, parsed_dir=parsed,
+            citation_registry=source / "citation_registry.json", receipt_ids={"source"},
+            receipt_contracts=[receipt], topic="test",
+        )
+        evidence = load_revision_evidence(
+            source, quant_dir=quant, parsed_dir=parsed, expected_topic="test",
+        )
+        row.update(source_proof_fields(
+            row, origin="pubmed", evidence=evidence,
+            topic="test", receipt_id="source",
+        ))
+    return row
+
+
+def _test_candidate_binding(topic: str, review_type: str = "prisma_scr_scoping_synthesis"):
+    return cycle._candidate_binding(
+        topic,
+        code_sha="a" * 40,
+        corpus_hash="b" * 64,
+        receipt_set_hash="c" * 64,
+        review_type=review_type,
+        thresholds=cycle._CANDIDATE_THRESHOLDS,
+    )
+
+
+def _bound_candidate(topic: str, **values: Any) -> dict[str, Any]:
+    return {
+        "topic": topic,
+        "state": "receipt_ready",
+        **_test_candidate_binding(topic).as_dict(),
+        **values,
+    }
+
+
+def _mock_candidate_bindings(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(
+        cycle,
+        "_current_candidate_binding",
+        lambda topic: _test_candidate_binding(topic),
+    )
 
 
 def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
@@ -383,6 +451,10 @@ def _words(n: int, prefix: str) -> str:
 
 
 def _surface_passing_paper(*, discussion_extra: str = "") -> str:
+    methods_contract = "\n\n".join(
+        f"{marker}\n\nThe method is declared for this synthetic fixture."
+        for marker in REQUIRED_METHODS_H3_MARKERS
+    )
     return (
         f"## Abstract\n\n{_words(160, 'abstract')}\n\n"
         f"## Introduction\n\nSmith 2024 provides prior context. {_words(410, 'intro')}\n\n"
@@ -391,7 +463,7 @@ def _surface_passing_paper(*, discussion_extra: str = "") -> str:
         "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
         "|---|---|---|---|---|---|\n"
         "| Smith 2024 | fasting glucose | treatment | 89 mg/dL | mg/dL | mean |\n\n"
-        f"## Methods\n\n{_words(310, 'methods')}\n\n"
+        f"## Methods\n\n{_words(310, 'methods')}\n\n{methods_contract}\n\n"
         f"## Results\n\n{_words(510, 'results')}\n\n"
         f"## Cross-Domain Synthesis\n\n{_words(860, 'cross')}\n\n"
         "## Discussion\n\n"
@@ -1076,6 +1148,31 @@ def test_reconcile_publication_ledgers_uses_unique_title_when_public_api_omits_s
     assert ledger["publication_reconciliation"]["matched"] == [cycle.submit_bridge._title_marker(title)]
 
 
+def test_reconcile_publication_ledgers_uses_submission_lock(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    events: list[str] = []
+
+    class Lock:
+        def __enter__(self) -> None:
+            events.append("lock")
+
+        def __exit__(self, *_args: object) -> None:
+            events.append("unlock")
+
+    def fake_reconcile(**_kwargs: Any) -> dict[str, Any]:
+        events.append("reconcile")
+        return {"status": "ok"}
+
+    monkeypatch.setattr(cycle.submit_bridge, "submission_lock", lambda _root: Lock())
+    monkeypatch.setattr(cycle, "_reconcile_publication_ledgers_unlocked", fake_reconcile)
+
+    result = cycle.reconcile_publication_ledgers(runs_root=tmp_path)
+
+    assert result == {"status": "ok"}
+    assert events == ["lock", "reconcile", "unlock"]
+
+
 def test_reconcile_publication_ledgers_does_not_title_match_unsubmitted_cycle(tmp_path: Path) -> None:
     runs_root = tmp_path / "runs"
     title = "Hypothesis-Generating Brief: Berberine hydrochloride"
@@ -1279,8 +1376,7 @@ def test_public_feed_receipt_derives_url_from_visible_artifact_id(monkeypatch) -
         "doi": "10.17605/OSF.IO/TEST2",
         "publication_id": publication_id,
     }
-    assert "public_url" not in receipts["submission:review-only-submission"]
-    assert "publication_id" not in receipts["submission:review-only-submission"]
+    assert "submission:review-only-submission" not in receipts
 
 
 def test_reconcile_publication_ledgers_date_scope_includes_daily_submit_cycle(tmp_path: Path) -> None:
@@ -1674,10 +1770,10 @@ def test_select_topic_prefers_recent_prepared_candidate(tmp_path: Path, monkeypa
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "thresholds": cycle._candidate_buffer_thresholds(),
-        "ready": [{
-            "topic": "zzz_prepared",
-            "validated_at": dt.datetime.now(dt.UTC).isoformat(),
-        }],
+        "ready": [_bound_candidate(
+            "zzz_prepared",
+            validated_at=dt.datetime.now(dt.UTC).isoformat(),
+        )],
     })
     _write_json(ledger_dir / "2026-07-14-fresh.json", {
         "started_at": (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat(),
@@ -1686,6 +1782,7 @@ def test_select_topic_prefers_recent_prepared_candidate(tmp_path: Path, monkeypa
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    _mock_candidate_bindings(monkeypatch)
 
     selected = cycle.select_topic(
         ["aaa_unprepared", "zzz_prepared"],
@@ -1716,21 +1813,22 @@ def test_prepared_candidates_expire_and_invalidate_on_threshold_change(tmp_path:
 
 
 def test_prepared_candidate_remains_valid_after_manuscript_attempt(
-    tmp_path: Path,
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     now = dt.datetime.now(dt.UTC)
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "thresholds": cycle._candidate_buffer_thresholds(),
-        "ready": [{
-            "topic": "failed_after_validation",
-            "validated_at": (now - dt.timedelta(hours=1)).isoformat(),
-        }],
+        "ready": [_bound_candidate(
+            "failed_after_validation",
+            validated_at=(now - dt.timedelta(hours=1)).isoformat(),
+        )],
     })
     _write_json(ledger_dir / "2026-07-15-fresh.json", {
         "started_at": now.isoformat(),
         "attempts": [{"topic": "failed_after_validation", "gate_status": "synthesis_timeout"}],
     })
+    _mock_candidate_bindings(monkeypatch)
     assert cycle._prepared_candidate_topics(
         ledger_dir, now=now,
     ) == {"failed_after_validation"}
@@ -1741,6 +1839,7 @@ def test_prepared_candidates_recover_from_successful_validation_attempt(
 ) -> None:
     ledger_dir = tmp_path / cycle.LEDGER_DIR
     now = dt.datetime.now(dt.UTC)
+    binding = _test_candidate_binding("recovered_topic")
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "thresholds": cycle._candidate_buffer_thresholds(),
         "ready": [],
@@ -1760,6 +1859,8 @@ def test_prepared_candidates_recover_from_successful_validation_attempt(
                 "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
                 "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
             },
+            "state": "receipt_ready",
+            **binding.as_dict(),
         }, {
             "topic": "missing_preflight",
             "attempted_at": now.isoformat(),
@@ -1837,6 +1938,7 @@ def test_prepared_candidates_recover_from_successful_validation_attempt(
             [],
         ),
     )
+    _mock_candidate_bindings(monkeypatch)
 
     assert cycle._prepared_candidate_topics(
         ledger_dir, now=now,
@@ -1849,6 +1951,7 @@ def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
     runs_root = tmp_path / "runs"
     ledger_dir = runs_root / cycle.LEDGER_DIR
     now = dt.datetime.now(dt.UTC)
+    binding = _test_candidate_binding("recovered_topic")
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "generated_at": now.isoformat(),
         "thresholds": cycle._candidate_buffer_thresholds(),
@@ -1867,6 +1970,8 @@ def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
                 "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
                 "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
             },
+            "state": "receipt_ready",
+            **binding.as_dict(),
         }],
     })
     monkeypatch.setattr(cycle, "discover_topics", lambda: ["recovered_topic"])
@@ -1878,6 +1983,7 @@ def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
         cycle, "_quant_claim_source_precision",
         lambda *_a, **_k: (True, "source_topic_precision_ok:20/20", []),
     )
+    _mock_candidate_bindings(monkeypatch)
 
     report = cycle.prepare_candidate_buffer(
         runs_root=runs_root,
@@ -1886,7 +1992,7 @@ def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
         remote_loader=lambda: (set(), None),
     )
 
-    assert report["status"] == "candidate_buffer_ready"
+    assert report["status"] == "candidate_buffer_receipt_ready"
     assert report["ready_count"] == 1
     assert report["ready"][0]["topic"] == "recovered_topic"
     assert report["attempted_count"] == 0
@@ -1919,6 +2025,48 @@ def test_candidate_buffer_invalidates_ready_count_when_source_precision_drifts(
 
     assert report["ready_count"] == 0
     assert report["ready"] == []
+
+
+def test_candidate_binding_tracks_topic_pack_and_parsed_corpus_drift(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    topic = "binding_topic"
+    packs = tmp_path / "topic_packs"
+    corpus = tmp_path / "corpus"
+    packs.mkdir()
+    quant = corpus / topic / "quant_claims"
+    parsed = corpus / topic / "parsed"
+    quant.mkdir(parents=True)
+    parsed.mkdir()
+    (packs / f"{topic}.toml").write_text(
+        'review_type = "prisma_scr_scoping_synthesis"\n', encoding="utf-8",
+    )
+    _write_json(quant / "r1.quant_claims.json", {"claims": [{"sentence": "Result"}]})
+    _write_json(parsed / "r1.paper_sections.json", {"sections": {"abstract": "Original"}})
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", packs)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", corpus)
+
+    original = cycle._current_candidate_binding(topic)
+    assert original is not None
+    _write_json(parsed / "r1.paper_sections.json", {"sections": {"abstract": "Changed"}})
+    parsed_changed = cycle._current_candidate_binding(topic)
+    assert parsed_changed is not None and parsed_changed.corpus_hash != original.corpus_hash
+    (packs / f"{topic}.toml").write_text(
+        'review_type = "prisma_scr_scoping_synthesis"\naliases = ["new alias"]\n',
+        encoding="utf-8",
+    )
+    pack_policy_changed = cycle._current_candidate_binding(topic)
+    assert pack_policy_changed is not None
+    assert pack_policy_changed.review_type == parsed_changed.review_type
+    assert pack_policy_changed.corpus_hash != parsed_changed.corpus_hash
+    (packs / f"{topic}.toml").write_text(
+        'review_type = "structured_narrative_synthesis"\n', encoding="utf-8",
+    )
+    pack_changed = cycle._current_candidate_binding(topic)
+    assert pack_changed is not None
+    assert pack_changed.review_type != parsed_changed.review_type
+    assert pack_changed.candidate_id != parsed_changed.candidate_id
 
 
 def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, monkeypatch) -> None:
@@ -1955,6 +2103,7 @@ def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, mon
     monkeypatch.setattr(cycle, "_repair_topic_corpus", fake_repair)
     monkeypatch.setattr(cycle, "_receipt_preflight", fake_preflight)
     monkeypatch.setattr(cycle, "_quant_claim_count", quant_claims.__getitem__)
+    _mock_candidate_bindings(monkeypatch)
 
     report = cycle.prepare_candidate_buffer(
         runs_root=tmp_path / "runs",
@@ -1965,7 +2114,7 @@ def test_prepare_candidate_buffer_repairs_until_target_ready(tmp_path: Path, mon
 
     assert repairs == topics
     assert selection_options == [True, True, True]
-    assert report["status"] == "candidate_buffer_ready"
+    assert report["status"] == "candidate_buffer_receipt_ready"
     assert [row["topic"] for row in report["ready"]] == ["aaa_sparse", "ccc_ready"]
     assert report["ready_count"] == 2
     persisted = json.loads(
@@ -4000,7 +4149,19 @@ def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkey
         "n_tensions": 727,
         "n_primary_tier": 1,
     })
-    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: cycle.SYNTHESIS_TIMEOUT_RETURN_CODE)
+    monkeypatch.setattr(cycle, "_source_manifest_availability", lambda *_a, **_k: {
+        "passed": True, "evidence_mode": "snapshot",
+    })
+
+    def timeout_with_checkpoint(_topic_name: str, out_dir: Path, **_kwargs: Any) -> int:
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text(f"# {title}\n\nPartial revision.\n", encoding="utf-8")
+        _write_json(out_dir / "manifest.json", json.loads((source / "manifest.json").read_text()))
+        _write_json(out_dir / "full_paper.audit.json", {"status": "pass"})
+        _write_json(out_dir / "full_paper.consistency.json", {"passed": True})
+        return cycle.SYNTHESIS_TIMEOUT_RETURN_CODE
+
+    monkeypatch.setattr(cycle, "_run_synthesis", timeout_with_checkpoint)
 
     reviewed_at = (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat()
     request = {
@@ -4008,6 +4169,7 @@ def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkey
         "title": title,
         "feedback": "Revise the dense evidence-map language and resubmit.",
         "reviewedAt": reviewed_at,
+        "resume_run": "untrusted-remote-run",
     }
 
     ledger = cycle.run_cycle(
@@ -4028,6 +4190,7 @@ def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkey
     handled_path = tmp_path / "runs" / cycle.LEDGER_DIR / cycle.HANDLED_REVISIONS
     handled = json.loads(handled_path.read_text(encoding="utf-8"))
     assert handled["handled"][0]["status"] == "synthesis_timeout"
+    assert handled["handled"][0]["resume_run"] == ledger["out_dir"]
     pending, error = cycle._pending_remote_revision(
         tmp_path / "runs",
         tmp_path / "runs" / cycle.LEDGER_DIR,
@@ -4035,6 +4198,33 @@ def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkey
     )
     assert error is None
     assert pending is not None
+    assert pending["source_run"] == source.name
+    assert pending["resume_run"] == ledger["out_dir"]
+
+    checkpoint = tmp_path / "runs" / ledger["out_dir"]
+    changed_manifest = json.loads((checkpoint / "manifest.json").read_text())
+    changed_manifest["receipts"][0]["source_title"] = "Different source with same receipt ID"
+    _write_json(checkpoint / "manifest.json", changed_manifest)
+    fallback, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([dict(request)], None),
+    )
+    assert error is None
+    assert fallback and "resume_run" not in fallback
+    _write_json(checkpoint / "manifest.json", json.loads((source / "manifest.json").read_text()))
+
+    invalid_manifest = json.loads((checkpoint / "manifest.json").read_text())
+    invalid_manifest["receipts"] = []
+    _write_json(checkpoint / "manifest.json", invalid_manifest)
+    fallback, error = cycle._pending_remote_revision(
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: ([dict(request)], None),
+    )
+    assert error is None
+    assert fallback and fallback["source_run"] == source.name
+    assert "resume_run" not in fallback
 
     after_review = (dt.datetime.fromisoformat(reviewed_at) + dt.timedelta(minutes=1)).isoformat()
     handled["handled"].extend(
@@ -4058,6 +4248,100 @@ def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkey
     )
     assert error is None
     assert pending and pending["artifactId"] == "taurine-review-2"
+
+
+def test_revise_cycle_resumes_timeout_checkpoint_with_original_parent(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    runs = tmp_path / "runs"
+    source = next(runs.glob("synthesis-aspirin_geroprotection-*"))
+    source_manifest = json.loads((source / "manifest.json").read_text())
+    receipt_id = str(source_manifest["receipts"][0]["receipt_id"])
+    request = {
+        "artifactId": "review-timeout", "submissionId": "submission-original",
+        "title": "Research Synthesis: Aspirin Geroprotection — full paper",
+        "feedback": f"Correct the effect direction for {receipt_id} and hedge the cognitive claims",
+        "reviewedAt": (dt.datetime.now(dt.UTC) - dt.timedelta(hours=1)).isoformat(),
+    }
+    checkpoint = runs / "synthesis-aspirin_geroprotection-timeout-checkpoint"
+    checkpoint.mkdir()
+    (checkpoint / "full_paper.md").write_text("# Partial reviewed revision\n", encoding="utf-8")
+    checkpoint_manifest = json.loads((source / "manifest.json").read_text())
+    checkpoint_manifest["receipts"][0]["effect_direction"] = "negative"
+    _write_json(checkpoint / "manifest.json", checkpoint_manifest)
+    _write_json(checkpoint / "full_paper.audit.json", {"status": "pass"})
+    _write_json(checkpoint / "full_paper.consistency.json", {"passed": True})
+    ledger_dir = runs / cycle.LEDGER_DIR
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [{
+        "key": cycle._revision_key(request),
+        "status": "synthesis_timeout",
+        "request_fingerprint": cycle._revision_request_fingerprint(request),
+        "repair_epoch": cycle.REVISION_REPAIR_EPOCH,
+        "handled_at": dt.datetime.now(dt.UTC).isoformat(),
+        "resume_run": checkpoint.name,
+    }]})
+    availability_runs: list[Path] = []
+    monkeypatch.setattr(cycle, "_source_manifest_availability", lambda _topic, run, **_kwargs: (
+        availability_runs.append(run) or {"passed": True, "evidence_mode": "snapshot"}
+    ))
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda *_a, **_k: [])
+    monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda *_a, **_k: [])
+    monkeypatch.setattr(cycle, "_abstract_overclaims", lambda *_a, **_k: [])
+    monkeypatch.setattr(cycle, "_numeric_effect_direction_issues", lambda *_a, **_k: [])
+    seen: dict[str, Any] = {}
+
+    def fake_repair(source_dir: Path, out_dir: Path, **kwargs: Any) -> tuple[bool, str]:
+        seen.update({"source_dir": source_dir, **kwargs})
+        out_dir.mkdir(parents=True)
+        (out_dir / "full_paper.md").write_text(
+            (source_dir / "full_paper.md").read_text(), encoding="utf-8",
+        )
+        return True, ""
+
+    monkeypatch.setattr(cycle, "_repair_existing_run", fake_repair)
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: pytest.fail("checkpoint must resume"))
+
+    ledger = cycle.run_cycle(
+        runs_root=runs, date="2026-06-25", run_synthesis=True, submit=True,
+        mode="revise", remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([dict(request)], None),
+        submit_cycle=lambda **_k: {
+            "status": "submitted_to_researka", "submitted": 1, "published": 0,
+        },
+        max_revise_attempts=1,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+    assert seen["source_dir"] == checkpoint
+    assert checkpoint in availability_runs
+    assert seen["resume_checkpoint"] is True
+    assert seen["revision_source"]["source_run"] == source.name
+    assert seen["revision_source"]["submissionId"] == "submission-original"
+    sidecar = json.loads((runs / ledger["out_dir"] / "researka_revision_request.json").read_text())
+    assert sidecar["source_run"] == source.name
+    assert sidecar["submissionId"] == "submission-original"
+
+
+def test_revision_timeout_contract_hash_binds_claim_count(tmp_path: Path) -> None:
+    source = tmp_path / "source"
+    changed = tmp_path / "changed"
+    source.mkdir()
+    changed.mkdir()
+    manifest = {
+        "receipts": [{
+            "receipt_id": "r1", "source_title": "Trial", "n_claims": 1,
+        }],
+    }
+    _write_json(source / "manifest.json", manifest)
+    manifest["receipts"][0]["n_claims"] = 99
+    _write_json(changed / "manifest.json", manifest)
+
+    assert cycle._source_manifest_receipt_contract_hash(source)
+    assert (
+        cycle._source_manifest_receipt_contract_hash(source)
+        != cycle._source_manifest_receipt_contract_hash(changed)
+    )
 
 
 def test_retryable_revision_statuses_obey_round_cap_across_windows(tmp_path: Path) -> None:
@@ -6572,10 +6856,16 @@ def test_payload_source_bundle_revision_ask_can_be_satisfied_by_payload(tmp_path
     out_dir = tmp_path / "run"
     out_dir.mkdir()
     bundle = [
-        {"evidence_type": "primary", "excerpt": "This source reports GDF11 dosing, measured outcomes, and directional effects in a bounded experiment."}
-        for _ in range(14)
+        _proven_source(
+            id=str(index), evidence_type="primary",
+            excerpt="This source reports GDF11 dosing, measured outcomes, and directional effects in a bounded experiment.",
+        )
+        for index in range(14)
     ]
-    bundle.append({"evidence_type": "review", "excerpt": "This review summarizes context without being counted as primary evidence."})
+    bundle.append(_proven_source(
+        id="review", evidence_type="review",
+        excerpt="This review summarizes context without being counted as primary evidence in the bounded synthesis.",
+    ))
     monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {"source_bundle": bundle})
 
     assert cycle._payload_revision_ask_satisfied(
@@ -6615,8 +6905,8 @@ def test_authoritative_abstract_revision_ask_checks_every_named_doi(
         "measured endpoint, and bounded result for this source."
     )
     bundle = [
-        {"doi": "10.1000/alpha.1", "pmid": "123", "excerpt": excerpt},
-        {"doi": "10.1000/beta.2", "pmid": "456", "excerpt": excerpt},
+        _proven_source(doi="10.1000/alpha.1", pmid="123", excerpt=excerpt),
+        _proven_source(doi="10.1000/beta.2", pmid="456", excerpt=excerpt),
     ]
     monkeypatch.setattr(
         cycle.submit_bridge, "build_payload", lambda _out_dir: {"source_bundle": bundle},
@@ -6662,14 +6952,14 @@ def test_payload_source_evidence_span_ask_uses_submitter_contract(
 ) -> None:
     out_dir = tmp_path / "run"
     out_dir.mkdir()
-    source = {
+    source = _proven_source(**{
         "directness": "direct",
         "doi": "10.1000/alpha.1",
         "excerpt": (
             "The randomized trial reported lower body weight and body mass index after "
             "twelve weeks, with p = 0.01 for both outcomes."
         ),
-    }
+    })
     monkeypatch.setattr(
         cycle.submit_bridge, "build_payload",
         lambda _out_dir: {"source_bundle": [source]},
@@ -9864,6 +10154,11 @@ def test_cycle_reuses_existing_work_for_compiler_fixable_retry(tmp_path: Path, m
             ),
             encoding="utf-8",
         )
+        _write_json(out_dir / "manifest.json", {
+            "review_type": "prisma_scr_scoping_synthesis",
+            "receipts": [],
+        })
+        _write_json(out_dir / "citation_registry.json", {})
         return 0
 
     def fake_submit(**_kwargs: Any) -> dict[str, Any]:
@@ -9958,6 +10253,11 @@ def test_internal_repair_clears_surface_novelty_without_resynthesis(tmp_path: Pa
     source = tmp_path / "source"
     out = tmp_path / "out"
     source.mkdir()
+    _write_json(source / "manifest.json", {
+        "review_type": "prisma_scr_scoping_synthesis",
+        "receipts": [],
+    })
+    _write_json(source / "citation_registry.json", {})
     (source / "full_paper.md").write_text(
         _surface_passing_paper(
             discussion_extra="This novel approach organizes the evidence without claiming treatment guidance.",
@@ -12201,15 +12501,15 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
     }])
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "thresholds": cycle._candidate_buffer_thresholds(),
-        "ready": [{
-            "topic": topic,
-            "validated_at": dt.datetime.now(dt.UTC).isoformat(),
-        }],
+        "ready": [_bound_candidate(
+            topic, validated_at=dt.datetime.now(dt.UTC).isoformat(),
+        )],
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    _mock_candidate_bindings(monkeypatch)
     monkeypatch.setattr(
         cycle, "_quant_claim_source_precision",
         lambda *_a, **_k: (True, "source_topic_precision_ok:24/24", []),
@@ -12431,15 +12731,16 @@ def test_source_precision_repair_prioritizes_prepared_candidate(tmp_path: Path, 
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "thresholds": cycle._candidate_buffer_thresholds(),
-        "ready": [{
-            "topic": "zzz_prepared_low_source",
-            "validated_at": dt.datetime.now(dt.UTC).isoformat(),
-        }],
+        "ready": [_bound_candidate(
+            "zzz_prepared_low_source",
+            validated_at=dt.datetime.now(dt.UTC).isoformat(),
+        )],
     })
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_corpus_repair_limit", lambda: 2)
+    _mock_candidate_bindings(monkeypatch)
     monkeypatch.setattr(cycle, "_quant_claim_count", lambda topic: {
         "aaa_richer_low_source": 120,
         "zzz_prepared_low_source": 50,

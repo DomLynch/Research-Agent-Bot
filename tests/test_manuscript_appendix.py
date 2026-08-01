@@ -26,6 +26,15 @@ def _fake_manifest() -> dict:
         "total_cost_usd": 0.022104,
         "extractor_version": "v0.6.0",
         "claim_strength_repairs": 8,
+        "retrieval": {
+            "sources": [
+                {"name": "PubMed", "status": "ok"},
+                {"name": "OpenAlex", "status": "rate_limited"},
+            ],
+            "queries": ["metformin AND aging"],
+            "expected_evidence_slots": ["clinical_trial"],
+            "counts": {"parsed": 136, "quant_extracted": 120},
+        },
         "receipt_funnel": {
             "quant_claim_files": 287,
             "active_paper_ids": 136,
@@ -82,22 +91,40 @@ def _fake_model_stack() -> dict:
 
 
 def test_search_provenance_names_databases_queried() -> None:
-    """All four backbone databases must be named so a reader can
-    reproduce the retrieval pool."""
+    """Only frozen retrieval sources may be disclosed."""
     md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
     assert "PubMed" in md
-    assert "Europe PMC" in md
     assert "OpenAlex" in md
-    assert "ClinicalTrials.gov" in md
+    assert "failed" in md
+    assert "rate_limited" not in md
+    assert "Europe PMC" not in md
+    assert "ClinicalTrials.gov" not in md
 
 
-def test_search_provenance_acknowledges_databases_not_queried() -> None:
-    """Honest framing: name what we DIDN'T query so reviewers
-    aren't surprised. PRISMA-grade transparency."""
+def test_search_provenance_has_no_hardcoded_database_inventory() -> None:
     md = appx.build_search_provenance_appendix(_fake_manifest(), topic="metformin")
-    assert "bioRxiv" in md or "biorxiv" in md.lower()
-    assert "Web of Science" in md or "scopus" in md.lower()
-    assert "Google Scholar" in md or "Cochrane" in md
+    assert "bioRxiv" not in md
+    assert "Web of Science" not in md
+    assert "Google Scholar" not in md
+    assert "17 sources" not in md
+
+
+def test_search_provenance_without_inventory_claims_no_source_count() -> None:
+    manifest = _fake_manifest()
+    manifest.pop("retrieval")
+    manifest["receipts"] = []
+    md = appx.build_search_provenance_appendix(manifest, topic="metformin")
+    assert "source inventory was not frozen" in md
+    assert "17 sources" not in md
+
+
+def test_receipt_sources_do_not_fabricate_retrieval_inventory() -> None:
+    manifest = _fake_manifest()
+    manifest.pop("retrieval")
+    manifest["receipts"] = [{"source": "PubMed"}]
+    md = appx.build_search_provenance_appendix(manifest, topic="metformin")
+    assert "inventory unavailable" in md
+    assert "| PubMed |" not in md
 
 
 def test_search_provenance_does_not_claim_prisma_compliance() -> None:
@@ -318,6 +345,21 @@ def test_compose_appendix_assembles_all_four_sections() -> None:
     assert ai_pos > sp_pos
     assert sb_pos > ai_pos
     assert dc_pos > sb_pos
+
+
+def test_compose_disclosures_share_frozen_retrieval_manifest() -> None:
+    md = appx.compose_appendix(
+        _fake_manifest(),
+        model_stack=_fake_model_stack(),
+        topic="metformin",
+        run_id="r1",
+        git_sha="abc1234",
+    )
+    assert md.count("2 enabled; 1 succeeded; 1 failed") == 2
+    assert "`metformin AND aging`" in md
+    assert "Papers parsed into the corpus: **136**" in md
+    assert "Papers with quant-extracted claims: **120**" in md
+    assert "17 sources" not in md
 
 
 def test_compose_appendix_does_not_emit_stale_spar_adjudication_phrase() -> None:

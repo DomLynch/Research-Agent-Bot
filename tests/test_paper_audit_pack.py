@@ -30,12 +30,37 @@ def _run(tmp_path: Path, *, verdict: dict[str, Any], registry: dict[str, Any] = 
 
 def test_reference_audit_counts_resolved_and_unresolved(tmp_path: Path) -> None:
     pack = pap.compose_audit_pack(_run(tmp_path, verdict=_GREEN_VERDICT), retracted=[])
-    assert pack["reference_audit"] == {"total": 3, "resolved": 2, "unresolved": 1, "retracted": []}
+    assert pack["reference_audit"] == {
+        "total": 3, "resolved": 2, "unresolved": 1, "retracted": [],
+        "retraction_check_available": True,
+    }
 
 
 def test_all_green_journal_ready_ships(tmp_path: Path) -> None:
-    pack = pap.compose_audit_pack(_run(tmp_path, verdict=_GREEN_VERDICT), retracted=[])
+    resolved = {key: value for key, value in _REGISTRY.items() if key != "r3"}
+    pack = pap.compose_audit_pack(
+        _run(tmp_path, verdict=_GREEN_VERDICT, registry=resolved), retracted=[],
+    )
     assert pack["ship_recommendation"].startswith("SHIP")
+
+
+def test_unresolved_reference_blocks_ship(tmp_path: Path) -> None:
+    pack = pap.compose_audit_pack(_run(tmp_path, verdict=_GREEN_VERDICT), retracted=[])
+    assert pack["ship_recommendation"] == "BLOCK — unresolved references"
+
+
+def test_unavailable_retraction_check_blocks_ship(tmp_path: Path) -> None:
+    resolved = {key: value for key, value in _REGISTRY.items() if key != "r3"}
+
+    def unavailable(_run_dir: Path) -> list[str]:
+        raise OSError("offline")
+
+    pack = pap.compose_audit_pack(
+        _run(tmp_path, verdict=_GREEN_VERDICT, registry=resolved),
+        retracted_fetch=unavailable,
+    )
+    assert pack["reference_audit"]["retraction_check_available"] is False
+    assert pack["ship_recommendation"] == "BLOCK — retraction check unavailable"
 
 
 def test_retracted_source_blocks_and_is_listed(tmp_path: Path) -> None:
@@ -50,7 +75,15 @@ def test_not_p1_clean_blocks(tmp_path: Path) -> None:
 
 
 def test_below_journal_ready_is_caveat(tmp_path: Path) -> None:
-    pack = pap.compose_audit_pack(_run(tmp_path, verdict={**_GREEN_VERDICT, "journal_ready": False}), retracted=[])
+    resolved = {key: value for key, value in _REGISTRY.items() if key != "r3"}
+    pack = pap.compose_audit_pack(
+        _run(
+            tmp_path,
+            verdict={**_GREEN_VERDICT, "journal_ready": False},
+            registry=resolved,
+        ),
+        retracted=[],
+    )
     assert pack["ship_recommendation"].startswith("CAVEAT")
 
 

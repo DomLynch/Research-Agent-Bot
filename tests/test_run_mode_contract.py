@@ -55,20 +55,48 @@ def test_methods_excludes_operational_absence_disclosures() -> None:
     assert "LLM fact extraction" not in methods
 
 
-def test_public_methods_meets_journal_surface_depth_floor() -> None:
-    """Regression for urolithin_a live repro: deterministic Methods must
-    clear the public journal-surface depth floor without operational prose."""
+def test_public_methods_without_operation_evidence_is_fail_closed() -> None:
+    """A legacy contract without positive evidence may report counts only."""
     methods = rmc.render_methods(_v06_contract())
-    body = re.search(r"^## Methods\n\n(.*)", methods, flags=re.S).group(1)
-    assert len(re.findall(r"\b\w+\b", body)) >= 300
+    match = re.search(r"^## Methods\n\n(.*)", methods, flags=re.S)
+    assert match is not None
+    body = match.group(1)
+    assert "screened" not in body
+    assert "retained" not in body
+    assert "role, unit, and citation checks" not in body
+    assert "Evidence selection and synthesis" not in body
     assert rmc.validate_rendered(methods) == []
 
 
-def test_public_methods_names_search_and_eligibility_bounds() -> None:
-    methods = rmc.render_methods(_v06_contract())
-    assert "bibliographic, trial, and project-curated source indexes" in methods
-    assert "structured evidence synthesis" in methods
-    assert "traceable endpoint, citation, or study identity" in methods
+def test_public_methods_protocol_is_owned_by_contract() -> None:
+    contract = dataclasses.replace(
+        _v06_contract(),
+        methods_protocol=("### Contracted protocol\n\nOnly this protocol ran.",),
+    )
+    methods = rmc.render_methods(contract)
+    assert "Only this protocol ran." in methods
+    assert "traceable endpoint, citation, or study identity" not in methods
+    assert "bibliographic, trial, and project-curated source indexes" not in methods
+
+
+def test_source_inventory_discloses_outcomes_from_contract_only() -> None:
+    contract = dataclasses.replace(
+        _v06_contract(),
+        source_inventory=(
+            ("PubMed", "succeeded"),
+            ("OpenAlex", "failed"),
+            ("Crossref", "enabled"),
+        ),
+    )
+    methods = rmc.render_methods(contract)
+    assert "3 enabled sources: 1 succeeded, 1 failed, and 1 enabled" in methods
+
+
+def test_contract_rejects_unknown_source_status() -> None:
+    contract = dataclasses.replace(
+        _v06_contract(), source_inventory=(("PubMed", "unknown"),),
+    )
+    assert any("source_inventory" in error for error in rmc.validate_contract(contract))
 
 
 def test_render_methods_humanizes_topic_slug() -> None:
@@ -197,7 +225,7 @@ def test_contract_is_frozen() -> None:
     accept attribute mutation."""
     c = _v06_contract()
     with pytest.raises(Exception):  # FrozenInstanceError
-        c.run_mode = "mutated"
+        setattr(c, "run_mode", "mutated")
 
 
 # ----- Reviewer-fix discriminating tests (post-2x review) ---------------
@@ -208,7 +236,7 @@ def test_contract_is_kw_only_blocks_positional_swap() -> None:
     caller could swap n_papers and n_high_confidence_claims_used_by_writer
     silently — both bare ints, both pass int validation."""
     with pytest.raises(TypeError):
-        rmc.RunModeContract(  # type: ignore[call-arg]
+        getattr(rmc, "RunModeContract")(
             "v0.6", "metformin", "test", 15, 100,
             "mimo", "gemma", "grok", "mistral", "src",
         )
@@ -237,6 +265,22 @@ def test_replace_methods_handles_methods_in_code_fence() -> None:
     assert "fake methods inside code" in out
     assert "## Conclusion" in out
     assert "Real conclusion." in out
+
+
+def test_replace_methods_preserves_offsets_when_fence_precedes_methods() -> None:
+    paper = (
+        "Example:\n\n```text\n## Methods\nnot a section\n```\n\n"
+        "## Methods\n\nOld real methods.\n\n"
+        "## Results\n\nReal findings.\n"
+    )
+    out = rmc.replace_methods_in_paper(
+        paper, "## Methods\n\nContract-derived methods.\n",
+    )
+
+    assert "not a section" in out
+    assert "Old real methods" not in out
+    assert "Contract-derived methods" in out
+    assert "## Results\n\nReal findings." in out
 
 
 def test_replace_methods_does_not_match_methods_section_suffix() -> None:

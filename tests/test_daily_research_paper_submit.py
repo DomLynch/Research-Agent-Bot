@@ -4,8 +4,11 @@ import datetime as dt
 import json
 import os
 import re
+import shutil
 import sys
+import threading
 import time
+import tempfile
 import urllib.error
 import urllib.request
 from email.message import Message
@@ -20,6 +23,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import daily_research_paper_submit as daily  # type: ignore[import-not-found]  # noqa: E402
+from agent.revision_evidence import create_revision_evidence_snapshot, load_revision_evidence  # noqa: E402
 
 
 @pytest.fixture(autouse=True)
@@ -36,6 +40,44 @@ def _write_json(path: Path, payload: Any) -> None:
 
 def _words(token: str, count: int) -> str:
     return " ".join([token] * count)
+
+
+def _source_lock(root: Path, topic: str, receipt_id: str, excerpt: object):
+    run = root / "run"
+    corpus = root / "corpus" / topic
+    receipt = {"receipt_id": receipt_id, "topic": topic}
+    _write_json(run / "manifest.json", {
+        "topic": topic, "receipts": [receipt],
+        "revision_evidence_snapshot": {"required": True},
+    })
+    _write_json(corpus / "quant_claims" / f"{receipt_id}.quant_claims.json", {"claims": []})
+    _write_json(corpus / "parsed" / f"{receipt_id}.paper_sections.json", {
+        "sections": {"abstract": excerpt},
+    })
+    _write_json(run / "citation_registry.json", {receipt_id: {"receipt_id": receipt_id}})
+    create_revision_evidence_snapshot(
+        run, quant_dir=corpus / "quant_claims", parsed_dir=corpus / "parsed",
+        citation_registry=run / "citation_registry.json", receipt_ids={receipt_id},
+        receipt_contracts=[receipt], topic=topic,
+    )
+    return load_revision_evidence(
+        run, quant_dir=corpus / "quant_claims", parsed_dir=corpus / "parsed",
+        expected_topic=topic,
+    )
+
+
+def _seal_source(row: dict[str, Any]) -> None:
+    with tempfile.TemporaryDirectory() as directory:
+        evidence = _source_lock(Path(directory), "test", "source", row.get("excerpt"))
+        proof = daily._publication_evidence.source_proof_fields(
+            row, origin=str(row.get("evidence_origin") or "full_text"),
+            evidence=evidence, topic="test", receipt_id="source",
+        )
+    row.update(proof)
+    if span := daily._source_evidence_span(row):
+        row["evidence_span"] = span
+    else:
+        row.pop("evidence_span", None)
 
 
 def test_seen_field_reads_valid_string_fields_only(tmp_path: Path) -> None:
@@ -63,14 +105,67 @@ def test_animal_receipt_is_submitted_as_context_not_direct() -> None:
     assert daily._source_context_for_receipt(receipt) == "context"
 
 
-def test_preflight_runtime_error_does_not_reuse_stale_cleaned_payload(
+def test_run_cycle_holds_submission_lock_for_full_transaction(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    events: list[object] = []
+
+    class Lock:
+        def __enter__(self) -> None:
+            events.append(("lock", tmp_path))
+
+        def __exit__(self, *_args: object) -> None:
+            events.append("unlock")
+
+    def fake_run(**_kwargs: Any) -> dict[str, Any]:
+        events.append("run")
+        return {"status": "ok"}
+
+    monkeypatch.setattr(daily, "submission_lock", lambda _root: Lock())
+    monkeypatch.setattr(daily, "_run_cycle_unlocked", fake_run)
+
+    result = daily.run_cycle(runs_root=tmp_path, date="2026-08-01")
+
+    assert result == {"status": "ok"}
+    assert events == [("lock", tmp_path), "run", "unlock"]
+
+
+def test_submission_lock_blocks_contender_until_transaction_finishes(tmp_path: Path) -> None:
+    entered = threading.Event()
+
+    def contend() -> None:
+        with daily.submission_lock(tmp_path):
+            entered.set()
+
+    with daily.submission_lock(tmp_path):
+        thread = threading.Thread(target=contend)
+        thread.start()
+        assert entered.wait(0.05) is False
+    assert entered.wait(1) is True
+    thread.join(timeout=1)
+    assert not thread.is_alive()
+
+
+@pytest.mark.parametrize(
+    ("failure", "reason"),
+    [
+        ("missing_tool", "preflight_tool_missing"),
+        ("runtime", "preflight_runtime_error"),
+        ("missing_report", "preflight_report_missing"),
+        ("missing_cleaned", "preflight_missing_cleaned_payload"),
+    ],
+)
+def test_preflight_enforce_fails_closed_without_complete_runtime_outputs(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
+    failure: str,
+    reason: str,
 ) -> None:
     run = tmp_path / "run"
     run.mkdir()
     tool_root = tmp_path / "preflight"
-    tool_root.mkdir()
+    if failure != "missing_tool":
+        tool_root.mkdir()
     stale = {"body_markdown": "STALE", "metadata": {"content_hash": "sha256:stale"}}
     _write_json(run / "researka_preflight_cleaned_payload.json", stale)
     payload = {
@@ -86,19 +181,26 @@ def test_preflight_runtime_error_does_not_reuse_stale_cleaned_payload(
     }
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(tool_root))
-    monkeypatch.setattr(
-        daily.subprocess,
-        "run",
-        lambda *_args, **_kwargs: SimpleNamespace(returncode=1, stdout="", stderr="boom"),
-    )
+    if failure != "missing_tool":
+        def fake_run(*_args: Any, **_kwargs: Any) -> SimpleNamespace:
+            if failure == "runtime":
+                return SimpleNamespace(returncode=1, stdout="", stderr="boom")
+            if failure == "missing_cleaned":
+                _write_json(run / "researka_preflight_report.json", {
+                    "status": "pass", "qa_version": "preflight-v2",
+                })
+            return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+        monkeypatch.setattr(daily.subprocess, "run", fake_run)
 
     checked, report = daily._run_preflight_qa(payload, run)
 
-    assert checked is payload
-    assert checked["body_markdown"] == "FRESH"
-    assert report and report["status"] == "pass"
-    metadata: Any = checked["metadata"]
-    assert "preflight_runtime_error" in metadata["preflight_qa"]["advisory_codes"]
+    assert checked is None
+    assert report and report["status"] == "blocked"
+    assert reason in report["blocked_reasons"]
+    assert not (run / "researka_preflight_cleaned_payload.json").exists()
+    metadata: Any = payload["metadata"]
+    assert reason in metadata["preflight_qa"]["advisory_codes"]
 
 
 def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 5) -> Path:
@@ -137,7 +239,10 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
         _write_json(
             daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed"
             / f"{row['receipt_id']}.paper_sections.json",
-            {"sections": {"abstract": "Topic intervention trial reports an authoritative endpoint result."}},
+            {"sections": {"abstract": (
+                "Topic intervention trial reports an authoritative endpoint result from "
+                "source-owned full text content."
+            )}},
         )
     _write_json(run / "citation_registry.json", {
         row["receipt_id"]: {
@@ -150,6 +255,7 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
         }
         for idx, row in enumerate(receipts, start=1)
     })
+    _snapshot_run(run)
     _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 14, "n_total": 14})
     _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write_json(run / "full_paper.final_verdict.json", {"verdict": "AAA"})
@@ -171,7 +277,10 @@ def _retopic(run: Path, topic: str) -> None:
         _write_json(
             daily.ROOT / "docs" / "quality-reference" / topic / "parsed"
             / f"{row['receipt_id']}.paper_sections.json",
-            {"sections": {"abstract": f"{topic} intervention trial reports an authoritative endpoint result."}},
+            {"sections": {"abstract": (
+                f"{topic} intervention trial reports an authoritative endpoint result from "
+                "source-owned full text content."
+            )}},
         )
     _write_json(run / "citation_registry.json", {
         row["receipt_id"]: {
@@ -184,6 +293,60 @@ def _retopic(run: Path, topic: str) -> None:
         }
         for idx, row in enumerate(receipts, start=1)
     })
+    shutil.rmtree(run / "revision_evidence_snapshot", ignore_errors=True)
+    _snapshot_run(run)
+
+
+def _snapshot_run(run: Path) -> None:
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    topic = str(manifest["topic"])
+    corpus = daily.ROOT / "docs" / "quality-reference" / topic
+    receipt_ids = {str(row["receipt_id"]) for row in manifest["receipts"]}
+    for receipt_id in receipt_ids:
+        path = corpus / "quant_claims" / f"{receipt_id}.quant_claims.json"
+        if not path.is_file():
+            _write_json(path, {"paper_id": receipt_id, "claims": []})
+    manifest["revision_evidence_snapshot"] = {"required": True}
+    _write_json(run / "manifest.json", manifest)
+    report = create_revision_evidence_snapshot(
+        run, quant_dir=corpus / "quant_claims", parsed_dir=corpus / "parsed",
+        citation_registry=run / "citation_registry.json", receipt_ids=receipt_ids,
+        receipt_contracts=manifest["receipts"], topic=topic,
+    )
+    assert report["passed"] is True
+
+
+def test_preflight_cleaned_payload_rebinds_source_identity(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run = _run(tmp_path)
+    payload = daily.build_payload(run)
+    original_identity = payload["metadata"]["submission_identity_key"]
+    original_source_hash = payload["metadata"]["source_citation_hash"]
+    tool_root = tmp_path / "preflight"
+    tool_root.mkdir()
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(tool_root))
+
+    def fake_run(*_args: Any, **_kwargs: Any) -> SimpleNamespace:
+        cleaned = json.loads(json.dumps(payload))
+        cleaned["source_bundle"][0]["directness"] = "adjacent"
+        _write_json(run / "researka_preflight_report.json", {
+            "status": "pass", "qa_version": "preflight-v2", "blocked_reasons": [],
+        })
+        _write_json(run / "researka_preflight_cleaned_payload.json", cleaned)
+        return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(daily.subprocess, "run", fake_run)
+
+    checked, _report = daily._run_preflight_qa(payload, run)
+
+    assert checked is not None
+    assert checked["metadata"]["source_citation_hash"] == daily._source_citation_hash(
+        checked["source_bundle"],
+    )
+    assert checked["metadata"]["source_citation_hash"] != original_source_hash
+    assert checked["metadata"]["submission_identity_key"] != original_identity
 
 
 def _trust_revision_gate(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -286,6 +449,7 @@ def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     first_key = sorted(registry)[0]
     registry[first_key]["source_doi"] = "10.3344/kjp.24202."
     _write_json(run / "citation_registry.json", registry)
+    _snapshot_run(run)
 
     payload = daily.build_payload(run)
     row = next(row for row in payload["source_bundle"] if row["doi"] == "10.3344/kjp.24202")
@@ -350,6 +514,7 @@ def test_run_cycle_capped_continues_past_researka_preflight_block(tmp_path: Path
     registry[first_key].pop("body_citation", None)
     registry[first_key].pop("source_year", None)
     _write_json(blocked / "citation_registry.json", registry)
+    _snapshot_run(blocked)
     now = time.time()
     os.utime(ready, (now - 10, now - 10))
     os.utime(blocked, (now, now))
@@ -388,22 +553,41 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
     manifest["receipts"][0]["source_title"] = "LDN laparoscopic donor nephrectomy cohort"
     manifest["receipts"][1]["source_title"] = "Dietary protein timing in older adults"
     _write_json(blocked / "manifest.json", manifest)
+    parsed = daily.ROOT / "docs" / "quality-reference" / "low_dose_naltrexone_inflammation" / "parsed"
+    _write_json(parsed / f"{manifest['receipts'][0]['receipt_id']}.paper_sections.json", {
+        "sections": {"abstract": (
+            "Laparoscopic donor nephrectomy was evaluated for perioperative surgical outcomes "
+            "in a prospectively followed adult transplant cohort."
+        )},
+    })
+    _write_json(parsed / f"{manifest['receipts'][1]['receipt_id']}.paper_sections.json", {
+        "sections": {"abstract": (
+            "Dietary protein timing was evaluated for muscle outcomes in a prospectively "
+            "followed cohort of community-dwelling older adults."
+        )},
+    })
+    _snapshot_run(blocked)
     ready_registry = json.loads((ready / "citation_registry.json").read_text(encoding="utf-8"))
     for idx, row in enumerate(ready_registry.values(), start=1):
         row["source_pmid"] = str(9000 + idx)
     _write_json(ready / "citation_registry.json", ready_registry)
+    _snapshot_run(ready)
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",
         lambda pmids: {
                 pmid: (
-                    "Laparoscopic donor nephrectomy perioperative outcomes."
+                    "Laparoscopic donor nephrectomy source reports perioperative outcomes across "
+                    "a prospectively followed adult surgical cohort."
                     if pmid == "9124"
-                    else "Dietary protein timing in older adults."
+                    else "Dietary protein timing source reports clinical outcomes across a "
+                    "prospectively followed cohort of older adults."
                     if pmid == "9125"
-                    else "Aspirin trial reports cardiovascular prevention outcomes."
+                    else "Aspirin trial reports cardiovascular prevention outcomes across a "
+                    "prospectively followed randomized cohort of adults."
                     if int(pmid) >= 9000
-                    else "Low-dose naltrexone was evaluated in adults with chronic pain."
+                    else "Low-dose naltrexone was evaluated for clinical outcomes in a "
+                    "prospectively followed cohort of adults with chronic pain."
                 )
             for pmid in pmids
         },
@@ -481,6 +665,60 @@ def test_select_candidate_skips_missing_sidecar_before_expensive_eligibility(
 
     assert selected is None
     assert considered[0]["status"] == "missing:pre_submit_gate.json"
+
+
+def test_select_candidate_skips_corrupt_run_and_keeps_scanning(tmp_path: Path) -> None:
+    valid = _run(tmp_path, "synthesis-valid-v06-test")
+    _retopic(valid, "valid")
+    corrupt = _run(tmp_path, "synthesis-corrupt-v06-test")
+    (corrupt / "manifest.json").write_text("{truncated", encoding="utf-8")
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert considered[0]["status"] == "run_artifact_invalid:manifest.json"
+    assert selected == valid
+
+
+def test_select_candidate_skips_non_utf8_run_and_keeps_scanning(tmp_path: Path) -> None:
+    valid = _run(tmp_path, "synthesis-valid-v06-test")
+    _retopic(valid, "valid")
+    corrupt = _run(tmp_path, "synthesis-corrupt-v06-test")
+    (corrupt / "manifest.json").write_bytes(b"\xff\xfe")
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert considered[0]["status"] == "run_artifact_invalid:manifest.json"
+    assert selected == valid
+
+
+def test_select_candidate_skips_non_utf8_manuscript_and_keeps_scanning(
+    tmp_path: Path,
+) -> None:
+    valid = _run(tmp_path, "synthesis-valid-v06-test")
+    _retopic(valid, "valid")
+    corrupt = _run(tmp_path, "synthesis-corrupt-v06-test")
+    (corrupt / "full_paper.md").write_bytes(b"\xff\xfe")
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert considered[0]["status"] == "run_artifact_invalid:full_paper.md"
+    assert selected == valid
+
+
+def test_paper_title_isolates_non_utf8_manuscript(tmp_path: Path) -> None:
+    paper = tmp_path / "full_paper.md"
+    paper.write_bytes(b"\xff\xfe")
+
+    assert daily._paper_title(paper) == ""
 
 
 def test_select_candidate_skips_old_failed_surface_before_expensive_eligibility(
@@ -753,6 +991,30 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert "published" not in payload
 
 
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("excerpt", "Changed source-owned excerpt with enough exact words to remain authoritative and auditable."),
+        ("pmid", "99999999"),
+        ("directness", "adjacent"),
+    ],
+)
+def test_submission_identity_covers_complete_source_proof(
+    tmp_path: Path, field: str, value: str,
+) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    metadata = payload["metadata"]
+    payload["source_bundle"][0][field] = value
+    _seal_source(payload["source_bundle"][0])
+    source_hash = daily._source_citation_hash(payload["source_bundle"])
+
+    assert source_hash != metadata["source_citation_hash"]
+    assert daily._submission_identity_key(
+        agent_slug=payload["author_agent_id"], title=payload["title"],
+        content_hash=metadata["content_hash"], source_citation_hash=source_hash,
+    ) != metadata["submission_identity_key"]
+
+
 def test_researka_preflight_blocks_thin_full_paper_before_submit(tmp_path: Path) -> None:
     run = _run(tmp_path)
     (run / "full_paper.md").write_text(
@@ -853,13 +1115,19 @@ def test_source_bundle_does_not_export_unverified_claim_as_source_excerpt(tmp_pa
         "r1": {"receipt_id": "r1", "body_citation": "Smith 2026", "reference_id": "R01", "source_year": 2026, "source_doi": "10.1/x", "source_pmid": "123"}
     })
     claims_dir = tmp_path / "docs" / "quality-reference" / "topic" / "quant_claims"
-    claims_dir.mkdir(parents=True)
+    claims_dir.mkdir(parents=True, exist_ok=True)
     _write_json(claims_dir / "r1.quant_claims.json", {
         "claims": [
             {"sentence": "Generic extraction noise.", "binding_confidence": "none"},
             {"sentence": "GDF11 changed a measured endpoint in the retained source.", "binding_confidence": "partial"},
         ],
     })
+    _write_json(
+        tmp_path / "docs" / "quality-reference" / "topic" / "parsed"
+        / "r1.paper_sections.json",
+        {"sections": {}},
+    )
+    _snapshot_run(run)
 
     payload = daily.build_payload(run)
 
@@ -900,6 +1168,7 @@ def test_doi_only_parsed_abstract_precedes_unverified_claim_summary(tmp_path: Pa
         daily.ROOT / "docs" / "quality-reference" / "topic" / "quant_claims" / "r1.quant_claims.json",
         {"claims": [{"sentence": "Model-produced claim summary.", "binding_confidence": "high"}]},
     )
+    _snapshot_run(run)
 
     row = daily.build_payload(run)["source_bundle"][0]
 
@@ -910,7 +1179,8 @@ def test_doi_only_parsed_abstract_precedes_unverified_claim_summary(tmp_path: Pa
 def test_direct_source_without_authoritative_text_fails_local_preflight(tmp_path: Path) -> None:
     run = _run(tmp_path)
     parsed = daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed" / "topic_effect_0.paper_sections.json"
-    parsed.unlink()
+    _write_json(parsed, {"sections": {}})
+    _snapshot_run(run)
 
     status = daily._researka_preflight_status(daily.build_payload(run))
 
@@ -928,13 +1198,19 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     _write_json(parsed / f"{receipt_id}.paper_sections.json", {
         "source_pdf": "https://clinicaltrials.gov/study/NCT01234567",
         "sections": {
-            "abstract": "The trial reported a source-linked quantitative result.",
+            "abstract": (
+                "The trial reported a source-linked quantitative result with durable follow-up "
+                "across the randomized adult cohort."
+            ),
         },
     })
     claims = tmp_path / "docs" / "quality-reference" / "topic" / "quant_claims"
     _write_json(claims / f"{receipt_id}.quant_claims.json", {
         "claims": [{
-            "sentence": "The trial reported a source-linked quantitative result.",
+            "sentence": (
+                "The trial reported a source-linked quantitative result with durable follow-up "
+                "across the randomized adult cohort."
+            ),
             "binding_confidence": "high",
         }],
     })
@@ -949,17 +1225,34 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
         1,
     )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
+    _snapshot_run(run)
 
     payload = daily.build_payload(run)
     row = payload["source_bundle"][0]
 
     assert row["url"] == "https://clinicaltrials.gov/study/NCT01234567"
     assert row["registry_id"] == "NCT01234567"
-    assert row["excerpt"] == "The trial reported a source-linked quantitative result."
-    assert row["quote"] == "The trial reported a source-linked quantitative result."
+    assert row["excerpt"] == (
+        "The trial reported a source-linked quantitative result with durable follow-up across "
+        "the randomized adult cohort."
+    )
+    assert row["quote"] == row["excerpt"]
+    assert row["quote_verified"] is True
+    assert row["evidence_origin"] == "full_text"
+    assert row["source_content_hash"].startswith("sha256:")
+    assert row["source_identity_hash"].startswith("sha256:")
     assert row["risk_of_bias"] == "some_concerns"
     assert "[bundle:1]" in payload["body_markdown"]
-    assert row["evidence_span"] in payload["body_markdown"]
+    assert row["evidence_span"] == row["excerpt"]
+    assert row["claim_span"] in payload["body_markdown"]
+    assert row["evidence_span"] not in payload["body_markdown"]
+    original_hash = row["source_record_hash"]
+    _write_json(parsed / f"{receipt_id}.paper_sections.json", {
+        "sections": {"abstract": "Mutable corpus text changed after the run snapshot was sealed."},
+    })
+    rebound = daily.build_payload(run)["source_bundle"][0]
+    assert rebound["excerpt"] == row["excerpt"]
+    assert rebound["source_record_hash"] == original_hash
 
 
 def test_primary_source_without_registered_identity_fails_local_preflight(tmp_path: Path) -> None:
@@ -973,6 +1266,7 @@ def test_primary_source_without_registered_identity_fails_local_preflight(tmp_pa
         "source_pdf": "https://example.org/trial-report",
         "sections": {"abstract": "The primary trial reported an authoritative endpoint result."},
     })
+    _snapshot_run(run)
 
     status = daily._researka_preflight_status(daily.build_payload(run))
 
@@ -986,6 +1280,7 @@ def test_source_bundle_excludes_notice_only_record(tmp_path: Path) -> None:
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     manifest["receipts"][0]["source_title"] = "Correction: Topic trial"
     _write_json(run / "manifest.json", manifest)
+    _snapshot_run(run)
 
     bundle = daily._source_bundle(run, limit=1000)
 
@@ -1112,7 +1407,7 @@ def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Pa
         "Smith 2026 reports that a 5 mg Topic intervention dose supports a bounded "
         "cardiovascular interpretation in the retained randomized trial."
     )
-    bundle[0]["evidence_span"] = bundle[0]["excerpt"]
+    _seal_source(bundle[0])
 
     assert daily._researka_quantitative_trace_status(payload, bundle) == (
         "researka_quantitative_trace_insufficient:aligned=0/1"
@@ -1122,7 +1417,7 @@ def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Pa
     )
 
     bundle[0]["excerpt"] = bundle[0]["excerpt"].replace("5 mg", "10 mg")
-    bundle[0]["evidence_span"] = bundle[0]["excerpt"]
+    _seal_source(bundle[0])
     assert daily._researka_quantitative_trace_status(payload, bundle) == "eligible"
 
 
@@ -1173,8 +1468,9 @@ def test_evidence_spans_keep_source_specific_trace_over_aggregate_prose() -> Non
 
     daily._publication_evidence.attach_evidence_spans(paper, bundle)
 
-    assert bundle[0]["evidence_span"] == "Smith 2026 reported the direct result. [bundle:1]"
-    assert bundle[1]["evidence_span"] == "Jones 2025 supplied indirect context. [bundle:2]"
+    assert bundle[0]["claim_span"] == "Smith 2026 reported the direct result. [bundle:1]"
+    assert bundle[1]["claim_span"] == "Jones 2025 supplied indirect context. [bundle:2]"
+    assert all("evidence_span" not in row and "quote" not in row for row in bundle)
 
 
 def test_evidence_spans_prefer_explicit_major_claim_trace() -> None:
@@ -1197,8 +1493,9 @@ def test_evidence_spans_prefer_explicit_major_claim_trace() -> None:
         bundle,
     )
 
-    assert bundle[0]["evidence_span"].startswith("Manuscript claim 1.")
-    assert bundle[1]["evidence_span"] == aggregate
+    assert bundle[0]["claim_span"].startswith("Manuscript claim 1.")
+    assert bundle[1]["claim_span"] == aggregate
+    assert all("evidence_span" not in row and "quote" not in row for row in bundle)
 
 
 def test_evidence_spans_do_not_infer_source_from_bundle_order() -> None:
@@ -1213,7 +1510,7 @@ def test_evidence_spans_do_not_infer_source_from_bundle_order() -> None:
     assert "evidence_span" not in bundle[0]
 
 
-def test_evidence_spans_prefer_authoritative_source_text() -> None:
+def test_evidence_spans_prefer_authoritative_source_text(tmp_path: Path) -> None:
     paper = "## Results\n\nSmith 2026 [bundle:1] supports an aggregate interpretation."
     source_text = (
         "The randomized trial reported a twelve-week reduction in body weight and "
@@ -1222,16 +1519,35 @@ def test_evidence_spans_prefer_authoritative_source_text() -> None:
     bundle = [{
         "cited_as": "Smith 2026",
         "directness": "direct",
+        "doi": "10.1000/smith",
         "excerpt": source_text,
     }]
+    evidence = _source_lock(tmp_path, "smith", "r1", source_text)
+    bundle[0].update(daily._publication_evidence.source_proof_fields(
+        bundle[0], origin="publisher", evidence=evidence,
+        topic="smith", receipt_id="r1",
+    ))
 
     bundle[0]["evidence_span"] = daily._source_evidence_span(bundle[0])
     daily._publication_evidence.attach_evidence_spans(paper, bundle)
 
     assert bundle[0]["evidence_span"] == source_text
+    assert bundle[0]["claim_span"] in paper
+    bundle[0]["evidence_span"] = bundle[0]["claim_span"]
+    assert daily._source_evidence_span(bundle[0]) == ""
 
 
-def test_receipt_evidence_excerpt_uses_only_source_text_present_in_paper() -> None:
+def test_source_proof_requires_backing_record() -> None:
+    row = {
+        "doi": "10.1000/invented",
+        "excerpt": "An invented excerpt with enough words to resemble an authoritative source record.",
+    }
+    assert daily._publication_evidence.source_proof_fields(
+        row, origin="publisher",
+    ) == {}
+
+
+def test_receipt_evidence_excerpt_requires_exact_source_owned_text() -> None:
     receipt = {
         "thesis_text": (
             "Study title — source excerpts: Exact source finding reduced cardiovascular risk in adults "
@@ -1239,15 +1555,17 @@ def test_receipt_evidence_excerpt_uses_only_source_text_present_in_paper() -> No
             "Unused result increased risk by 40 percent."
         ),
     }
-    paper = (
-        "## Results\n\nStudy 2025 reports: Exact source finding reduced cardiovascular risk "
-        "in adults with diabetes after long follow-up."
-    )
-
-    assert daily._receipt_evidence_excerpt(receipt, paper) == (
+    source_text = (
         "Exact source finding reduced cardiovascular risk in adults with diabetes after long "
         "follow-up, while uncertainty remained high."
     )
+
+    assert daily._receipt_evidence_excerpt(receipt, source_text) == (
+        "Exact source finding reduced cardiovascular risk in adults with diabetes after long "
+        "follow-up, while uncertainty remained high."
+    )
+    manuscript_only = "Exact source finding reduced cardiovascular risk in adults with diabetes."
+    assert daily._receipt_evidence_excerpt(receipt, manuscript_only) == ""
 
 
 def test_claim_candidates_ignore_internal_direction_coding_metadata() -> None:
@@ -1259,7 +1577,7 @@ def test_claim_candidates_ignore_internal_direction_coding_metadata() -> None:
     assert daily._claim_candidates(line) == []
 
 
-def test_load_bearing_source_span_ask_checks_outgoing_payload() -> None:
+def test_load_bearing_source_span_ask_checks_outgoing_payload(tmp_path: Path) -> None:
     ask = (
         "Provide substantive, non-placeholder evidence_span quotes for each load-bearing "
         "source so numerics can be audited at the bundle level."
@@ -1272,6 +1590,11 @@ def test_load_bearing_source_span_ask_checks_outgoing_payload() -> None:
             "twelve weeks, with p = 0.01 for both outcomes."
         ),
     }
+    evidence = _source_lock(tmp_path, "herz", "r1", source["excerpt"])
+    source.update(daily._publication_evidence.source_proof_fields(
+        source, origin="publisher", evidence=evidence,
+        topic="herz", receipt_id="r1",
+    ))
 
     assert daily._source_evidence_span_ask_satisfied({"source_bundle": [source]}, ask) is True
     source["excerpt"] = "placeholder"
@@ -1301,6 +1624,7 @@ def test_researka_preflight_accepts_named_source_without_publication_date(tmp_pa
         "title": "TRIal of STatin Therapy Effect on Androgen Status and Erectile functioN in Men",
         "year": None,
     })
+    _seal_source(payload["source_bundle"][0])
 
     assert daily._researka_preflight_status(payload) == "eligible"
 
@@ -1428,10 +1752,13 @@ def test_researka_preflight_blocks_off_topic_source_bundle_rows(tmp_path: Path) 
         row["excerpt"] = "Low-dose naltrexone was evaluated in adults with chronic pain."
         row["outcome_class"] = "dosing_pharmacokinetics"
         row["evidence_context"] = "adjacent"
+        _seal_source(row)
     payload["source_bundle"][1]["title"] = "LDN laparoscopic donor nephrectomy cohort"
     payload["source_bundle"][1]["excerpt"] = "Laparoscopic donor nephrectomy perioperative outcomes."
     payload["source_bundle"][2]["title"] = "Dietary protein timing in older adults"
     payload["source_bundle"][2]["excerpt"] = "Dietary intervention study in older adults."
+    _seal_source(payload["source_bundle"][1])
+    _seal_source(payload["source_bundle"][2])
 
     assert daily._researka_preflight_status(payload) == "source_bundle_topic_mismatch:2/12:rows=2,3"
 
@@ -1508,14 +1835,22 @@ def test_off_topic_direct_row_cannot_complete_public_direct_floor(tmp_path: Path
     for idx, row in enumerate(payload["source_bundle"]):
         row.update({
             "title": "Low-dose naltrexone trial in chronic pain",
-            "excerpt": "Low-dose naltrexone was evaluated in adults with chronic pain.",
+            "excerpt": (
+                "Low-dose naltrexone was evaluated for clinical outcomes in a prospectively "
+                "followed cohort of adults with chronic pain."
+            ),
             "evidence_context": "direct" if idx < 4 else "adjacent",
             "directness": "direct" if idx < 4 else "indirect",
         })
+        _seal_source(row)
     payload["source_bundle"][3].update({
         "title": "Dietary protein timing in older adults",
-        "excerpt": "Dietary intervention study in older adults.",
+        "excerpt": (
+            "Dietary protein timing was evaluated for clinical outcomes in a prospectively "
+            "followed cohort of older adults."
+        ),
     })
+    _seal_source(payload["source_bundle"][3])
 
     assert daily._researka_preflight_status(
         payload, enforce_recency=False,
@@ -1642,6 +1977,7 @@ def test_weak_direct_corpus_cannot_publish_as_full_research(tmp_path: Path) -> N
     for row in manifest["receipts"]:
         row["directness"] = "indirect"
     _write_json(run / "manifest.json", manifest)
+    _snapshot_run(run)
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
     (run / "full_paper.md").write_text(
         paper.replace("## Conclusion\n\n" + _words("conclusion", 120) + ".", "## Conclusion\n\nThe conclusion is bounded and hypothesis-generating; it does not support clinical efficacy."),
@@ -1747,6 +2083,17 @@ def test_high_null_no_direct_abstract_bundle_blocks_without_generation_reconcili
         f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "reference_id": f"R{i:02d}"}
         for i in range(16)
     })
+    for i in range(16):
+        receipt_id = f"topic_r{i}"
+        _write_json(
+            daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed"
+            / f"{receipt_id}.paper_sections.json",
+            {"sections": {"abstract": (
+                f"BACKGROUND: Topic source {1000 + i} reports extractable outcome direction "
+                "from a prospectively followed adult clinical cohort."
+            )}},
+        )
+    _snapshot_run(run)
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",
@@ -1810,6 +2157,18 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
         }
         for i in range(16)
     })
+    for i in range(16):
+        receipt_id = f"topic_r{i}"
+        _write_json(
+            daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed"
+            / f"{receipt_id}.paper_sections.json",
+            {"sections": {"abstract": (
+                note.replace(" [bundle:1]", "").strip() if i == 0 else
+                f"BACKGROUND: Topic source {1000 + i} reports extractable outcome direction "
+                "from a prospectively followed adult clinical cohort."
+            )}},
+        )
+    _snapshot_run(run)
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",
@@ -1817,7 +2176,10 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
             pmid: (
                 note.replace(" [bundle:1]", "").strip()
                 if pmid == "1000"
-                else f"BACKGROUND: Topic source {pmid} reports extractable outcome direction."
+                    else (
+                        f"BACKGROUND: Topic source {pmid} reports extractable outcome direction "
+                        "from a prospectively followed adult clinical cohort."
+                    )
             )
             for pmid in pmids
         },
@@ -1826,7 +2188,7 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
 
     def submitter(payload: dict[str, Any]) -> dict[str, Any]:
         submitted.append(payload)
-        return {"ok": True, "status": 201, "response": {}}
+        return {"ok": True, "status": 201, "response": {"id": "sub-test"}}
 
     ledger = daily.run_cycle(
         runs_root=tmp_path,
@@ -2249,7 +2611,7 @@ def test_preflight_and_submitter_block_low_recency_before_http(tmp_path: Path, m
     monkeypatch.setattr(urllib.request, "urlopen", fail_urlopen)
 
     assert daily._researka_preflight_status(payload) == "recency_ratio_low:0/12<0.50"
-    result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(payload)
+    result = daily._submitter("https://api.researka.org/submissions", "secret", "agent-v3")(payload)
 
     assert result == {
         "ok": False,
@@ -2262,6 +2624,7 @@ def test_preflight_and_submitter_block_low_recency_before_http(tmp_path: Path, m
 def test_preflight_and_submitter_block_missing_doi_before_http(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     payload = daily.build_payload(_run(tmp_path))
     payload["source_bundle"][0]["doi"] = "10.9999/ghost"
+    _seal_source(payload["source_bundle"][0])
     monkeypatch.setenv("RESEARKA_DOI_PREFLIGHT_ENABLED", "1")
     submit_calls = 0
 
@@ -2290,7 +2653,7 @@ def test_preflight_and_submitter_block_missing_doi_before_http(tmp_path: Path, m
     monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
 
     assert daily._researka_preflight_status(payload) == "doi_exists_missing:10.9999/ghost"
-    result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(payload)
+    result = daily._submitter("https://api.researka.org/submissions", "secret", "agent-v3")(payload)
 
     assert result == {
         "ok": False,
@@ -2420,7 +2783,7 @@ def test_already_submitted_topic_still_allows_explicit_revision(
         runs_root=tmp_path,
         date="2026-06-15",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: (set(), None),
         candidate_run=run,
     )
@@ -2510,6 +2873,29 @@ def test_researka_rejection_records_and_skips_same_paper(tmp_path: Path) -> None
     assert retry["considered"][0]["status"] == "researka_rejected_fingerprint"
 
 
+@pytest.mark.parametrize("status_code", [408, 425, 429, 503])
+def test_transient_submission_status_remains_retryable(
+    tmp_path: Path, status_code: int,
+) -> None:
+    _run(tmp_path)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-05-23",
+        submit=True,
+        submitter=lambda _payload: {
+            "ok": False, "status": status_code, "response": "try later",
+        },
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submission_failed"
+    assert ledger["retryable"] is True
+    assert not (tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).exists()
+    retry = daily.run_cycle(runs_root=tmp_path, date="2026-05-24")
+    assert retry["status"] == "dry_run_selected"
+
+
 def test_researka_revise_records_feedback_and_skips_same_paper(tmp_path: Path) -> None:
     _run(tmp_path)
 
@@ -2571,7 +2957,7 @@ def test_remote_publication_dedupe_blocks_resubmission_without_local_seed(tmp_pa
         runs_root=tmp_path,
         date="2026-05-23",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: ({fp}, None),
     )
 
@@ -2589,7 +2975,7 @@ def test_remote_publication_dedupe_blocks_same_title_rerun(tmp_path: Path) -> No
         runs_root=tmp_path,
         date="2026-05-23",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: ({marker}, None),
     )
 
@@ -2690,7 +3076,7 @@ def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(
         runs_root=tmp_path,
         date="2026-05-23",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: ({marker}, None),
         candidate_run=run,
     )
@@ -2739,6 +3125,7 @@ def test_explicit_revision_candidate_bypasses_recency_floor_only(tmp_path: Path,
     for row in registry.values():
         row["source_year"] = 2001
     _write_json(run / "citation_registry.json", registry)
+    _snapshot_run(run)
     monkeypatch.setenv("RESEARKA_API_KEY_V3", "secret")
 
     class Response:
@@ -2789,7 +3176,7 @@ def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(
         runs_root=tmp_path,
         date="2026-05-23",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: (content_markers, None),
     )
 
@@ -2955,7 +3342,7 @@ def test_selection_skips_stale_older_runs_for_same_topic(tmp_path: Path) -> None
         runs_root=tmp_path,
         date="2026-05-23",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: ({daily.build_payload(newer)["metadata"]["content_hash"]}, None),
     )
 
@@ -2976,7 +3363,7 @@ def test_selection_submits_older_retry_when_newer_retry_fails_gates(tmp_path: Pa
         runs_root=tmp_path,
         date="2026-05-28",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: (set(), None),
     )
 
@@ -3021,7 +3408,10 @@ def test_selection_repairs_stale_accountability_sidecar_before_skip(
         runs_root=tmp_path,
         date="2026-05-28",
         submit=True,
-        submitter=lambda payload: {"ok": True, "status": 201, "response": {"title": payload["title"]}},
+        submitter=lambda payload: {
+            "ok": True, "status": 201,
+            "response": {"id": "sub-test", "title": payload["title"]},
+        },
         remote_loader=lambda: (set(), None),
     )
     gate = json.loads((run / "pre_submit_gate.json").read_text(encoding="utf-8"))
@@ -3143,7 +3533,7 @@ def test_submit_holds_when_remote_dedupe_fails(tmp_path: Path) -> None:
         runs_root=tmp_path,
         date="2026-05-23",
         submit=True,
-        submitter=lambda _payload: {"ok": True, "status": 201, "response": {}},
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-test"}},
         remote_loader=lambda: (set(), "timeout"),
     )
 
@@ -3214,7 +3604,7 @@ def test_remote_published_fingerprints_ignores_title_only_publication_row(monkey
     assert markers == set()
 
 
-def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_remote_published_fingerprints_keeps_visible_publication_row(monkeypatch: pytest.MonkeyPatch) -> None:
     title = "Research Synthesis: Vitamin D Supplementation Effects — full paper"
     payload = {
         "publications": [{
@@ -3223,6 +3613,7 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
             "topic": "vitamin_d_supplementation",
             "metadata": {"content_hash": "sha256:abc", "submission_identity_key": "sha256:identity"},
             "decision": "accept",
+            "publicVisible": True,
         }],
     }
 
@@ -3252,6 +3643,33 @@ def test_remote_published_fingerprints_keeps_accepted_publication_row(monkeypatc
     assert daily._title_marker("Vitamin D Supplementation Effects") in markers
 
 
+def test_remote_published_fingerprints_ignores_accept_without_public_proof(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    payload = {"publications": [{
+        "title": "Accepted review only", "submission_id": "sub-review",
+        "decision": "accept", "status": "accepted",
+        "metadata": {"content_hash": "sha256:review-only"},
+    }]}
+
+    class Response:
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(payload).encode("utf-8")
+
+    monkeypatch.setattr(urllib.request, "urlopen", lambda _req, timeout: Response())
+
+    markers, error = daily._remote_published_fingerprints("https://api.example/publications")
+
+    assert error is None
+    assert markers == set()
+
+
 def test_http_submitter_sends_runtime_key_headers_and_idempotency(tmp_path: Path, monkeypatch) -> None:
     seen: dict[str, Any] = {}
 
@@ -3275,13 +3693,126 @@ def test_http_submitter_sends_runtime_key_headers_and_idempotency(tmp_path: Path
     monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
 
     payload = daily.build_payload(_run(tmp_path))
-    result = daily._submitter("https://api.example/submissions", "secret", "agent-v3")(payload)
+    result = daily._submitter("https://api.researka.org/submissions", "secret", "agent-v3")(payload)
 
     assert result["ok"] is True
     assert seen["headers"]["Authorization"] == "Bearer secret"
     assert seen["headers"]["X-api-key"] == "secret"
     assert seen["headers"]["X-agent-slug"] == "agent-v3"
     assert seen["headers"]["Idempotency-key"] == payload["metadata"]["submission_identity_key"]
+
+
+@pytest.mark.parametrize("url", [
+    "http://api.researka.org/submissions",
+    "https://api.researka.org.evil.test/submissions",
+    "https://user:pass@api.researka.org/submissions",
+    "https://api.researka.org:8443/submissions",
+])
+def test_credentialed_submitter_rejects_untrusted_url(
+    monkeypatch: pytest.MonkeyPatch, url: str,
+) -> None:
+    monkeypatch.setattr(
+        urllib.request, "urlopen",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("must not call HTTP")),
+    )
+
+    result = daily._submitter(url, "secret", "agent-v3")({})
+
+    assert result == {
+        "ok": False, "status": 0, "response": "untrusted_submission_url", "preflight": True,
+    }
+
+
+@pytest.mark.parametrize("response_body", [b'{"status":"queued"}', b'{"id":"not valid"}'])
+def test_http_2xx_without_valid_submission_id_is_retryable_unknown(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, response_body: bytes,
+) -> None:
+    class Response:
+        status = 202
+
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return response_body
+
+    monkeypatch.setattr(urllib.request, "urlopen", lambda _req, timeout: Response())
+
+    result = daily._submitter(
+        "https://api.researka.org/submissions", "secret", "agent-v3",
+    )(daily.build_payload(_run(tmp_path)))
+
+    assert result["ok"] is False
+    assert result["retryable"] is True
+    assert result["unknown_submission"] is True
+
+
+@pytest.mark.parametrize(
+    ("status", "response"),
+    [(202, {"status": "queued"}), (302, {"id": "sub-redirect"})],
+)
+def test_run_cycle_requires_2xx_and_submission_id(
+    tmp_path: Path, status: int, response: dict[str, str],
+) -> None:
+    _run(tmp_path)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path, date="2026-08-01", submit=True,
+        submitter=lambda _payload: {"ok": True, "status": status, "response": response},
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submission_failed"
+    assert ledger["retryable"] is True
+    assert ledger["submission"]["unknown_submission"] is True
+    assert not (tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json").exists()
+
+
+@pytest.mark.parametrize("failure", ["network", "timeout", "malformed_json"])
+def test_transport_failures_are_retryable_and_persisted(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, failure: str,
+) -> None:
+    _run(tmp_path)
+    monkeypatch.setenv("RESEARKA_API_KEY_V3", "secret")
+
+    class Response:
+        status = 201
+
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b"not-json"
+
+    def fake_urlopen(_req: Request, timeout: int) -> Response:
+        if failure == "network":
+            raise urllib.error.URLError("offline")
+        if failure == "timeout":
+            raise TimeoutError("timed out")
+        return Response()
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path, date="2026-05-23", submit=True,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submission_failed"
+    assert ledger["retryable"] is True
+    assert ledger["submission"]["retryable"] is True
+    persisted = json.loads(
+        (tmp_path / daily.LEDGER_DIR / "2026-05-23.json").read_text(encoding="utf-8")
+    )
+    assert persisted["status"] == "submission_failed"
+    assert persisted["submission"]["response"]
+    assert not (tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).exists()
 
 
 def test_researka_preflight_rejects_non_full_public_surface() -> None:

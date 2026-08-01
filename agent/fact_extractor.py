@@ -1,16 +1,4 @@
-"""LLM fact extraction — abstracts → typed Facts. The first LLM in the spine.
-
-Hard rule: LLM PROPOSES. CODE DISPOSES. The LLM never proposes `ref` (pinned
-to `item.source.ref`) or `kind` (pinned by `_kind_for_role(item.role)`).
-Code disposes via: schema check on `claim`, `validators.check_verb_ban`
-(planted case 1's 5th defense), `validators.check_p_value_in_source`
-(planted case 3 at extraction time), and within-item dedupe.
-
-`off_domain` items are SKIPPED — no LLM call, no cost. Day 3.4 wraps this
-into the run orchestrator with `compile_claims` + `assert_invariants`.
-Returns `(accepted_facts, rejections)` so run logs show what was proposed
-and why rejections happened.
-"""
+"""Extract source-bound typed facts from abstracts through an LLM proposal."""
 from __future__ import annotations
 
 import asyncio
@@ -54,7 +42,7 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 
-PROMPT_VERSION = "fact-extractor/2026-04-29-day10-12-mechanism-inflation"
+PROMPT_VERSION = "fact-extractor/2026-08-01-quote-bound-metadata"
 
 _MAX_CLAIM_LEN = 500
 
@@ -72,7 +60,7 @@ Output one JSON object with this exact shape:
   "facts": [
     {
       "source_quote": "verbatim span copied from the abstract — typically a single claim-bearing sentence or fragment, ≤500 chars",
-      "outcome": "endpoint name like 'lean body mass' or null",
+      "outcome": "CONTIGUOUS endpoint-name substring of source_quote or null",
       "estimate": "CONTIGUOUS substring of source_quote like '+5.2 kg' or 'HR 0.79' — or null if not a clean substring",
       "p_value": "CONTIGUOUS substring of source_quote like '0.003' or '<0.001' — or null if not a clean substring",
       "ci": "CONTIGUOUS substring of source_quote like '0.66-0.95' — or null if not a clean substring"
@@ -85,7 +73,7 @@ Rules:
    abstract. Whitespace differences are tolerated; semantic edits are
    NOT. Code rejects any quote that doesn't appear verbatim in the
    abstract.
-2. `estimate`, `p_value`, `ci` MUST appear as a CONTIGUOUS substring of
+2. `outcome`, `estimate`, `p_value`, `ci` MUST appear as a CONTIGUOUS substring of
    the source_quote you chose. If you cannot copy a clean contiguous
    substring, set the field to null. DO NOT rephrase. DO NOT compute.
    DO NOT combine values from multiple spans. DO NOT split a value out
@@ -333,8 +321,9 @@ def _validate_proposed(
       0. source_quote appears verbatim in the abstract (Day 5.2-fix P1)
       1. p-values embedded in the quote → check_p_value_in_source
       2. proposed `p_value` field → synthesized + PVALUE_RE-traced
-      3. proposed `estimate` / `ci` fields → kept only when they appear
-         as substrings of the verified source_quote; otherwise NULLED.
+      3. proposed `outcome` / `estimate` / `ci` fields → kept only when
+         they appear as substrings of the verified source_quote;
+         otherwise NULLED.
          Day 8.2 (reviewer P2): nulling instead of rejecting the whole
          fact preserves the verified quote while keeping unverified
          metadata out of the audit log. The receipt's structured fields
@@ -388,11 +377,11 @@ def _validate_proposed(
         pval_in_quote = check_p_value_in_source(quote, item.abstract)
         if pval_in_quote is not None:
             return None, f"p_value_not_in_source:{pval_in_quote.code}"
-        # 2. p_value field — bypasses quote-text check when LLM puts the
-        # number in the structured field instead of inside the quote.
-        if p_value is not None and not _check_p_value_field(p_value, item.abstract):
+        # 2. Structured metadata is bound to this exact quote, not merely
+        # somewhere else in the abstract.
+        if p_value is not None and not _check_p_value_field(p_value, quote):
             return None, "p_value_field_not_in_source"
-        # 3. estimate / ci — null instead of reject when they don't trace
+        # 3. outcome / estimate / ci — null instead of reject when they don't trace
         # to the VERIFIED source_quote (not the full abstract). Day 8.2
         # closes the reviewer P2 gap: pre-fix, an LLM could write an
         # arbitrary 'HR 0.10' into Fact.estimate and it would flow into
@@ -403,6 +392,8 @@ def _validate_proposed(
             estimate = None
         if ci is not None and not _trace_field_in_source(ci, quote):
             ci = None
+        if outcome is not None and not _trace_field_in_source(outcome, quote):
+            outcome = None
 
     return Fact(
         ref=item.source.ref,

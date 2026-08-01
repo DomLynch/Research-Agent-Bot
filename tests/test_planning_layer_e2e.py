@@ -224,7 +224,7 @@ def test_e2e_dirty_template_blocks_final_gate() -> None:
     inputs = build_gate_inputs_from_artifacts(
         audit={"all_pass": True},
         journal_surface={"pass": True},
-        reviewer_patches=None,
+        reviewer_patches={"unresolved_p1_count": 0},
         template_gate=template_report,
         quality_methods=quality_bundle,
         numeric_coverage=1.0, citation_registry_complete=True,
@@ -247,7 +247,7 @@ def test_e2e_missing_rob_blocks_on_coverage() -> None:
     inputs = build_gate_inputs_from_artifacts(
         audit={"all_pass": True},
         journal_surface={"pass": True},
-        reviewer_patches=None,
+        reviewer_patches={"unresolved_p1_count": 0},
         template_gate=template_report,
         quality_methods=quality_bundle,
         numeric_coverage=1.0, citation_registry_complete=True,
@@ -269,7 +269,7 @@ def test_e2e_audit_failure_blocks() -> None:
     inputs = build_gate_inputs_from_artifacts(
         audit={"pass_count": 13, "total_count": 14},  # 13/14, not clean.
         journal_surface={"pass": True},
-        reviewer_patches=None,
+        reviewer_patches={"unresolved_p1_count": 0},
         template_gate=template_report,
         quality_methods=quality_bundle,
         numeric_coverage=1.0, citation_registry_complete=True,

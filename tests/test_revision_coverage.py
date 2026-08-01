@@ -942,7 +942,7 @@ def test_exact_stat_trace_checks_bulleted_bold_prose() -> None:
     assert revision_quality_proof_is_stated(paper, ask, rows) is False
     fixed, details = repair_revision_quality(paper, rows, ask)
 
-    assert "Smith 2025 [bundle:1]" in fixed
+    assert fixed == ""
     assert "HR = 999" not in fixed
     assert details == ["exact_stat_trace"]
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
@@ -1000,7 +1000,8 @@ def test_generic_representative_statistic_request_removes_unverified_token() -> 
 
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert "p = 0.001" not in fixed
-    assert "exact statistic unavailable in retained source excerpt" in fixed
+    assert "exact statistic unavailable in retained source excerpt" not in fixed
+    assert "Han 2020" not in fixed
     assert "a source-reported estimate" not in fixed
     assert details == ["exact_stat_trace"]
     assert revision_coverage.deterministic_unmet_asks(
@@ -1300,6 +1301,32 @@ def test_major_claim_trace_dedupes_source_reporting_wrapper() -> None:
 
     assert "### Source-Traced Findings" not in fixed
     assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, [row]) is False
+
+
+def test_open_ended_exact_trace_uses_actual_major_claim_count() -> None:
+    ask = "Make every major claim exactly traceable to an evidence span and DOI/PMID."
+    rows = [
+        {
+            "citation_token": "Study1 2025",
+            "source_doi": "10.1000/result.1",
+            "endpoints": ["body weight"],
+            "thesis_text": "Source excerpts: Body weight decreased by 5% (p = 0.01).",
+        },
+        {
+            "citation_token": "Study2 2025",
+            "source_doi": "10.1000/result.2",
+            "endpoints": ["blood pressure"],
+            "thesis_text": "Source excerpts: Blood pressure decreased by 6% (p = 0.03).",
+        },
+    ]
+    paper = (
+        "## Results\n\n"
+        "Study1 2025 [bundle:1] reports: Body weight decreased by 5% (p = 0.01) "
+        "[exact source: https://doi.org/10.1000/result.1].\n\n"
+        "Study2 2025 [bundle:2] reported a second substantive outcome without a locator."
+    )
+
+    assert revision_claim_trace.major_claim_trace_is_stated(paper, ask, rows) is False
 
 
 def test_major_claim_trace_skips_wrapped_duplicate_and_adds_distinct_result() -> None:
@@ -2091,6 +2118,39 @@ def test_receipt_contract_authorization_is_limited_to_named_sources() -> None:
         "dorneles": {"outcome_class"},
         "harris": {"directness", "evidence_tier", "effect_direction"},
     }
+
+
+def test_ambiguous_multi_source_recode_authorizes_nothing() -> None:
+    rows = {
+        "schmid": {"source_title": "Schmid 2021"},
+        "harris": {"source_title": "Harris 2008"},
+    }
+    feedback = (
+        "Correct Schmid 2021 outcome class and Harris 2008 directness and evidence tier."
+    )
+
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        feedback, rows,
+    ) == {}
+
+
+def test_receipt_alias_matching_does_not_authorize_prefix_collision() -> None:
+    rows = {
+        "topic_effect_1": {"source_title": "First trial"},
+        "topic_effect_10": {"source_title": "Tenth trial"},
+    }
+
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        "Correct topic_effect_10 outcome class.", rows,
+    ) == {"topic_effect_10": {"outcome_class"}}
+
+
+def test_receipt_alias_matching_normalizes_dashes_consistently() -> None:
+    rows = {"r1": {"source_title": "Long-term trial"}}
+
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        "Correct the Long‑term trial outcome class.", rows,
+    ) == {"r1": {"outcome_class"}}
 
 
 def test_primary_rct_reclassification_is_verified_from_named_source_row() -> None:

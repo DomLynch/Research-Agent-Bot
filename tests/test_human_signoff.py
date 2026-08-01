@@ -8,6 +8,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from agent.human_signoff import (  # type: ignore[import-not-found]
     SIGNOFF_FILENAME,
     HumanSignoff,
@@ -27,6 +29,9 @@ def _ready(**over: object) -> HumanSignoff:
         evidence_claims_reviewed=True,
         conflicts_declared=True,
         ready_to_submit=True,
+        timestamp="2026-08-01T00:00:00+00:00",
+        signature="Dom Lynch",
+        manuscript_sha256="0" * 64,
     )
     base.update(over)
     return HumanSignoff(**base)  # type: ignore[arg-type]
@@ -67,6 +72,21 @@ def test_from_dict_defaults_to_unreviewed() -> None:
     assert s.conflicts_declared is False
     assert s.ready_to_submit is False
     assert s.timestamp == ""
+    assert s.signature == ""
+    assert s.manuscript_sha256 == ""
+
+
+def test_from_dict_rejects_string_booleans() -> None:
+    s = HumanSignoff.from_dict({
+        "reviewed": "false",
+        "evidence_claims_reviewed": "true",
+        "conflicts_declared": "true",
+        "ready_to_submit": "true",
+    })
+    assert not any((
+        s.reviewed, s.evidence_claims_reviewed,
+        s.conflicts_declared, s.ready_to_submit,
+    ))
 
 
 # ---- validate ------------------------------------------------------------
@@ -105,11 +125,17 @@ def test_validate_flags_ready_without_conflicts_declared() -> None:
     assert "ready_without_review" in codes
 
 
+def test_validate_requires_signature_timestamp_and_hash() -> None:
+    codes = {i.code for i in validate(_ready(signature="", timestamp="", manuscript_sha256="bad"))}
+    assert {"unsigned", "missing_timestamp", "invalid_manuscript_hash"} <= codes
+
+
 # ---- write / load round trip --------------------------------------------
 
 
 def test_write_stamps_timestamp_when_absent(tmp_path: Path) -> None:
-    s = _ready()  # no timestamp
+    (tmp_path / "full_paper.md").write_text("final manuscript")
+    s = _ready(timestamp="", manuscript_sha256="")
     out = write(tmp_path, s)
     assert out.name == SIGNOFF_FILENAME
     loaded = load(tmp_path)
@@ -118,10 +144,12 @@ def test_write_stamps_timestamp_when_absent(tmp_path: Path) -> None:
     assert "T" in loaded.timestamp and (
         loaded.timestamp.endswith("+00:00") or "Z" in loaded.timestamp
     )
+    assert len(loaded.manuscript_sha256) == 64
 
 
 def test_write_preserves_explicit_timestamp(tmp_path: Path) -> None:
-    s = _ready(timestamp="2026-05-13T00:00:00+00:00")
+    (tmp_path / "full_paper.md").write_text("final manuscript")
+    s = _ready(timestamp="2026-05-13T00:00:00+00:00", manuscript_sha256="")
     write(tmp_path, s)
     loaded = load(tmp_path)
     assert loaded is not None
@@ -152,10 +180,26 @@ def test_load_and_validate_reports_missing_file(tmp_path: Path) -> None:
 
 
 def test_load_and_validate_passes_ready_signoff(tmp_path: Path) -> None:
-    write(tmp_path, _ready())
+    (tmp_path / "full_paper.md").write_text("final manuscript")
+    write(tmp_path, _ready(manuscript_sha256=""))
     s, issues = load_and_validate(tmp_path)
     assert s is not None
     assert issues == ()
+
+
+def test_load_and_validate_rejects_manuscript_changed_after_signing(tmp_path: Path) -> None:
+    manuscript = tmp_path / "full_paper.md"
+    manuscript.write_text("signed manuscript")
+    write(tmp_path, _ready(manuscript_sha256=""))
+    manuscript.write_text("changed manuscript")
+    _, issues = load_and_validate(tmp_path)
+    assert any(i.code == "manuscript_hash_mismatch" for i in issues)
+
+
+def test_write_rejects_supplied_stale_manuscript_hash(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.md").write_text("final manuscript")
+    with pytest.raises(ValueError, match="does not match"):
+        write(tmp_path, _ready())
 
 
 # ---- shape guards --------------------------------------------------------

@@ -421,7 +421,7 @@ def test_clean_paper_passes_through_with_no_gate_trigger(
         role="published_results",
         nct="NCT02308228",  # MASTERS, completed, has_results=True
         abstract=(
-            "The MASTERS trial reported lean body mass changes "
+            "The metformin MASTERS trial reported lean body mass changes "
             "(p=0.003) and thigh muscle area (p=0.005) in older adults."
         ),
     )

@@ -15,6 +15,7 @@ from agent.sources.aggregator import (
     UNPAYWALL_LOOKUP_LIMIT, _auth_configured, _build_registry,
     _merge_and_dedupe, discover, discover_calibrated,
 )
+from agent.sources._base import SourceProviderError, record_source_provider_failure
 from agent.retrieval_modes import resolve_params
 from agent.topic_pack import RetrievalSpec
 from agent.types import RawHit
@@ -124,6 +125,9 @@ def test_calibrated_discovery_runs_per_source_query(monkeypatch):
     assert len(hits) == 2
     assert stats["raw_pubmed"] == 1
     assert stats["raw_europepmc"] == 1
+    assert stats["status_pubmed"] == "ok"
+    assert stats["status_europepmc"] == "ok"
+    assert stats["provider_failures"] == 0
     assert stats["aggregated_total"] == 2
 
 
@@ -161,6 +165,53 @@ def test_calibrated_discovery_skips_empty_query(monkeypatch):
     hits, stats = asyncio.run(_run())
     assert hits == []
     assert stats.get("empty_pubmed") == 1
+
+
+def test_calibrated_discovery_distinguishes_zero_hits_from_provider_failure(
+    monkeypatch,
+) -> None:
+    class FailingClient:
+        async def search(self, _http, _query, *, limit):
+            raise SourceProviderError("rate_limited", "HTTP 429")
+
+    class FailSoftClient:
+        async def search(self, _http, _query, *, limit):
+            record_source_provider_failure("server_error", "HTTP 503")
+            return []
+
+    registry = {
+        "zero": (_FakeClient("zero", []), True, None),
+        "failed": (FailingClient(), True, None),
+        "soft_failed": (FailSoftClient(), True, None),
+    }
+    monkeypatch.setattr(
+        "agent.sources.aggregator._build_registry", lambda: registry,
+    )
+    spec = RetrievalSpec(topic_terms=("metformin",))
+
+    hits, stats = asyncio.run(discover_calibrated(
+        spec, enabled_sources=("zero", "failed", "soft_failed"),
+    ))
+
+    assert hits == []
+    assert stats["status_zero"] == "ok"
+    assert stats["raw_zero"] == 0
+    assert stats["status_failed"] == "rate_limited"
+    assert stats["err_failed"] == 1
+    assert stats["status_soft_failed"] == "server_error"
+    assert stats["provider_failures"] == 2
+
+
+def test_legacy_discovery_can_return_provider_status(monkeypatch) -> None:
+    _patch_registry(monkeypatch, {"pubmed": []})
+    result = asyncio.run(discover(
+        "metformin AND aging", enabled_sources=("pubmed",), return_stats=True,
+    ))
+    assert isinstance(result, tuple)
+    hits, stats = result
+    assert hits == []
+    assert stats["status_pubmed"] == "ok"
+    assert stats["provider_failures"] == 0
 
 
 def test_calibrated_discovery_with_multiple_sources_dedupes(monkeypatch):

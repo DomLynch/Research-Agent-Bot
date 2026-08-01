@@ -1,38 +1,4 @@
-"""Orchestrator — single-call Proof 001 pipeline driver.
-
-Wires the trust-spine modules into one async call and emits the 8
-mandatory JSON receipts (DESIGN-001 §6.1) to `output_dir`:
-
-  claim_receipt.md           — writer.write_paper output (deterministic)
-  claim_graph.json           — full ClaimGraph (source of truth)
-  citation_traces.json       — every per-claim trace + pass/fail
-  spar_review.json           — 3-judge verdict + dissent + gate_override
-  evidence_cards.json        — bundled corpus the spine ran against
-  cost_log.json              — extract + judge LLM cost breakdown
-  fact_extraction_log.json   — LLM-proposed facts + rejection reasons
-  run_metadata.json          — timestamps, prompt versions, settings
-
-The orchestrator is integration glue ONLY (v4 Rule 49 — one module,
-one reason). It does not classify, gate, or judge — that's all upstream.
-It just wires call-order, threads errors, and serializes receipts.
-
-Flow:
-  bundled_items
-    → fact_extractor.extract_facts_from_bundle    (LLM #1)
-    → compiler.compile_claims
-    → compiler.compile_claim_graph
-    → citation_trace.trace_claim_graph
-    → spar.run_spar                               (LLM #2 — 3 judges)
-    → writer.write_paper                          (deterministic; was LLM #3 pre-Day-4-fix)
-
-Caller responsibilities (kept outside this module to preserve test seams):
-  - retrieve + bundle (live or fixture-replay)
-  - choosing the LLM call chains (mock vs real)
-  - choosing the trace clients (fixture vs httpx)
-
-Day 5.1 ships the orchestrator + tests. Live callers supply retrieval,
-bundling, and provider-specific clients before invoking run_proof.
-"""
+"""Wire the trust-spine pipeline and emit its mandatory receipts."""
 from __future__ import annotations
 
 import dataclasses
@@ -78,24 +44,12 @@ __all__ = [
 
 
 class OrchestratorError(RuntimeError):
-    """Raised when the pipeline cannot produce a valid receipt set —
-    e.g., LLM extraction yielded zero facts, or SPAR raised."""
+    """Raised when the pipeline cannot produce a valid receipt set."""
 
 
 @dataclass(frozen=True, slots=True)
 class RunReceipts:
-    """Paths to the 8 mandatory artifacts for one Proof 001 run.
-    Returned so callers can read / verify / post-process.
-
-    Day 9.5 rename: `paper_md` → `claim_receipt_md` and the corresponding
-    file output `paper.md` → `claim_receipt.md`. The output of the
-    current pipeline is a CLAIM RECEIPT (atomic verified evidence
-    bundle anchored on one source-paper cluster), not a synthesis
-    paper. The Day 10 synthesis layer aggregates many receipts into a
-    `paper_synthesis.md` artifact — that's the "paper" in the
-    Researka product framing. Mislabeling these as "paper.md" pre-9.5
-    made every reviewer conversation about quality miss the actual
-    architectural truth."""
+    """Paths to the eight mandatory artifacts for one Proof 001 run."""
     output_dir: Path
     claim_receipt_md: Path
     claim_graph: Path
@@ -119,13 +73,25 @@ def _json_default(obj: object) -> object:
 
 
 def _atomic_write_text(path: Path, content: str) -> None:
-    """Write `content` to `path` atomically (write to .tmp, then rename).
-    A partial-write on disk-full / permission revoke leaves the OLD
-    receipt untouched rather than a half-written one — audit-trail
-    integrity matters more than write-throughput here."""
+    """Write content atomically without exposing a partial receipt."""
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(content, encoding="utf-8")
     tmp.replace(path)
+
+
+def _cluster_manifest_rows(
+    successes: Sequence[tuple[int, ClaimGraph, RunReceipts]],
+) -> list[dict[str, object]]:
+    """Render successful clusters without compacting their identities."""
+    return [
+        {
+            "cluster_index": cluster_index,
+            "subdir": paths.output_dir.name,
+            "n_claims": len(graph.claims),
+            "spar_verdict": json.loads(paths.spar_review.read_text())["verdict"],
+        }
+        for cluster_index, graph, paths in successes
+    ]
 
 
 def _write_json(path: Path, data: object) -> None:
@@ -136,9 +102,7 @@ def _write_json(path: Path, data: object) -> None:
 
 
 def _claim_graph_to_dict(graph: ClaimGraph) -> dict:
-    """Serialize a ClaimGraph via dataclasses.asdict — recurses through
-    Claim / ClaimEdge dataclasses; tuples are encoded as JSON arrays
-    by `json.dumps` natively."""
+    """Serialize a ClaimGraph recursively."""
     return dataclasses.asdict(graph)
 
 
@@ -159,10 +123,7 @@ _RECEIPT_NAMES: tuple[str, ...] = (
 
 
 def _check_no_existing_receipts(output_dir: Path) -> None:
-    """Audit-trail integrity: refuse to overwrite a prior run's receipts.
-    A clobbered receipt set silently destroys the audit record.
-    Callers either use a fresh output_dir per submission OR pass
-    `force_overwrite=True` to `run_proof` for explicit re-runs."""
+    """Refuse to overwrite prior receipts without explicit consent."""
     existing = [
         name for name in _RECEIPT_NAMES if (output_dir / name).exists()
     ]
@@ -180,15 +141,7 @@ def _emit_partial_diagnostics(
     rejections: list,
     accepted_facts: list | None = None,
 ) -> None:
-    """Write the two diagnostic receipts (fact_extraction_log,
-    cost_log) even on extraction failure — they're independent of
-    the rest of the pipeline and the operator needs them to debug.
-
-    Day 6.1c: include any accepted facts too. Pre-fix the receipt
-    always wrote `accepted: []` even when invariant-failure happened
-    AFTER some facts had been validated — masking real progress and
-    making the audit trail misleading.
-    """
+    """Persist extraction diagnostics even when the pipeline fails."""
     _write_json(output_dir / "fact_extraction_log.json", {
         "accepted": (
             [dataclasses.asdict(f) for f in accepted_facts]
@@ -222,30 +175,7 @@ async def run_proof(
     force_overwrite: bool = False,
     seed: int | None = None,
 ) -> RunReceipts:
-    """Run the full Proof 001 pipeline; emit 8 receipts to output_dir.
-
-    Caller has already done retrieve + bundle and passes the
-    `EvidenceItem` corpus directly. This keeps the orchestrator
-    focused on the trust spine, leaves the retrieval contract free
-    to evolve, and lets fixture-replay tests inject items without
-    network or schema overhead.
-
-    `force_overwrite=False` (default) refuses to start when
-    `output_dir` already contains any receipt — the safe audit-trail
-    default. Pass True for controlled re-runs (e.g., after a
-    partial-write crash); the operator opts in explicitly.
-
-    Idempotency / crash recovery: a crash mid-pipeline leaves the
-    receipts written so far on disk. Re-running into the same
-    `output_dir` requires `force_overwrite=True`. The orchestrator
-    does NOT itself attempt resume — each call is a fresh end-to-end
-    pipeline run.
-
-    Raises OrchestratorError when the pipeline can't produce a valid
-    receipt set (zero accepted facts, invariant violation, compile
-    error, writer regression). SPARError, LLMError, and httpx errors
-    propagate uncaught per their own contracts.
-    """
+    """Run Proof 001 and emit eight receipts without implicit overwrite."""
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     # P1-3 + Gap-1 escape hatch: refuse to clobber a prior run's audit
@@ -440,24 +370,7 @@ async def run_proof_multi_receipt(
     seed: int | None = None,
     max_clusters: int | None = None,
 ) -> tuple[RunReceipts, ...]:
-    """Multi-receipt Day 10.8b mode: one receipt set per cohesive cluster.
-
-    The cross-source synthesis gate (≥3 unique canonical trials) cannot
-    trip on a single-receipt run because the compiler deliberately picks
-    ONE cluster. This entry-point shares the LLM extract stage across
-    all clusters then fans the per-graph stages (trace → SPAR → write →
-    emit receipts) over every cluster the compiler returns. Output:
-      output_dir/cluster_01/<8 receipts>
-      output_dir/cluster_02/<8 receipts>
-      ...
-      output_dir/multi_receipt_manifest.json
-
-    Cost: extract runs once. SPAR runs N times. Predictable scaling.
-
-    `max_clusters` caps emission to the top-N clusters (sorted by the
-    compiler's canonical/directness/tier/size key). None → all.
-    Returns the per-cluster RunReceipts in best-first order.
-    """
+    """Share extraction, then emit one receipt set per original cluster."""
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = output_dir / "multi_receipt_manifest.json"
@@ -527,7 +440,7 @@ async def run_proof_multi_receipt(
         # mode emits ONLY clusters with at least one published_results
         # / mechanistic / review item driving the cluster's claims.
         protocol_only_excluded: list[int] = []
-        kept_graphs: list[ClaimGraph] = []
+        kept_graphs: list[tuple[int, ClaimGraph]] = []
         for original_idx, g in enumerate(graphs, start=1):
             cluster_refs: set[int] = set()
             for cl in g.claims:
@@ -540,15 +453,14 @@ async def run_proof_multi_receipt(
             ):
                 protocol_only_excluded.append(original_idx)
                 continue
-            kept_graphs.append(g)
-        graphs = tuple(kept_graphs)
+            kept_graphs.append((original_idx, g))
 
         if max_clusters is not None and max_clusters > 0:
-            graphs = graphs[:max_clusters]
+            kept_graphs = kept_graphs[:max_clusters]
 
-        per_cluster_receipts: list[RunReceipts] = []
+        successful_clusters: list[tuple[int, ClaimGraph, RunReceipts]] = []
         per_cluster_failures: list[dict] = []
-        for idx, graph in enumerate(graphs, start=1):
+        for idx, graph in kept_graphs:
             cluster_dir = output_dir / f"cluster_{idx:02d}"
             cluster_dir.mkdir(parents=True, exist_ok=True)
             if not force_overwrite:
@@ -626,7 +538,7 @@ async def run_proof_multi_receipt(
                 "submission_id": f"{submission_id}-c{idx:02d}",
                 "parent_submission_id": submission_id,
                 "cluster_index": idx,
-                "n_clusters": len(graphs),
+                "n_clusters": len(kept_graphs),
                 "topic": topic,
                 "domain": domain,
                 "started_at": started_at,
@@ -644,7 +556,7 @@ async def run_proof_multi_receipt(
                 "render_version": RENDER_VERSION,
                 "multi_receipt": True,
             })
-            per_cluster_receipts.append(paths)
+            successful_clusters.append((idx, graph, paths))
 
         # Write manifest BEFORE the finally clause: if the httpx client
         # cleanup hangs (observed empirically when SPAR fires across
@@ -657,22 +569,12 @@ async def run_proof_multi_receipt(
             "submission_id": submission_id,
             "topic": topic,
             "domain": domain,
-            "n_clusters": len(per_cluster_receipts),
+            "n_clusters": len(successful_clusters),
             "n_cluster_failures": len(per_cluster_failures),
             "cluster_failures": per_cluster_failures,
             "n_protocol_only_excluded": len(protocol_only_excluded),
             "protocol_only_excluded_indices": protocol_only_excluded,
-            "clusters": [
-                {
-                    "cluster_index": i + 1,
-                    "subdir": p.output_dir.name,
-                    "n_claims": len(graphs[i].claims),
-                    "spar_verdict": json.loads(
-                        p.spar_review.read_text()
-                    )["verdict"],
-                }
-                for i, p in enumerate(per_cluster_receipts)
-            ],
+            "clusters": _cluster_manifest_rows(successful_clusters),
             "started_at": started_at,
             "finished_at": datetime.now(timezone.utc).isoformat(),
         })
@@ -680,4 +582,4 @@ async def run_proof_multi_receipt(
         if own_client:
             await c.aclose()
 
-    return tuple(per_cluster_receipts)
+    return tuple(paths for _index, _graph, paths in successful_clusters)

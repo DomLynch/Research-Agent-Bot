@@ -1,26 +1,4 @@
-"""SPAR — Structured Panel Adjudication Review.
-
-Three role-bound LLM judges adjudicate a ClaimGraph + its citation traces:
-
-  Evidence Auditor  — scrutinizes whether each claim is supported by its
-                      cited evidence (trace failures, numeric mismatches,
-                      role/claim consistency). Does NOT debate the
-                      domain merit — that's the Domain Skeptic.
-  Domain Skeptic    — domain expert critic. Looks for over-claiming,
-                      missing caveats, mechanism-inflation,
-                      off-topic drift. Does NOT verify citations.
-  Final Judge       — integrates both prior reviews, votes independently,
-                      and EXPLICITLY weighs dissent in the rationale.
-
-Each judge votes accept/reject. The verdict is the deterministic
-`compute_spar_verdict` tally — Final Judge is one of three votes, not
-an override. Dissent (the minority voice in any 2-1 split) is always
-published per `SPARReview` schema invariants.
-
-Auditor + Skeptic run in parallel; Final Judge runs after both so it
-can see them as panel context. Mock-tested via httpx.MockTransport;
-opt-in live smoke lives in `scripts/e2e_spar_smoke.py` (Day 4.4).
-"""
+"""Run structured panel review with deterministic trace enforcement."""
 from __future__ import annotations
 
 import asyncio
@@ -58,8 +36,7 @@ PROMPT_VERSION = "spar/2026-04-28"
 
 
 class SPARError(RuntimeError):
-    """Raised when a judge response can't be parsed into a JudgeReview, or
-    when the panel can't be assembled into a structurally valid SPARReview."""
+    """Raised when a valid three-judge review cannot be assembled."""
 
 
 # --- Prompts --------------------------------------------------------------
@@ -156,20 +133,7 @@ def render_brief(
     submission_id: str,
     items_by_ref: "Mapping[int, EvidenceItem] | None" = None,
 ) -> str:
-    """Render the claim graph + traces as a judge-readable text block.
-
-    Public so tests can inspect prompt determinism + run logs can show
-    exactly what the judges saw.
-
-    `items_by_ref` (Day 10.14): when provided, an EVIDENCE ABSTRACTS
-    section is appended listing the source abstract per ref cited by
-    any claim in the graph (truncated to ~2000 chars to keep prompt
-    size bounded). Without this, the Evidence Auditor judge cannot
-    verify claim ↔ source correspondence and rejects with rationales
-    like 'no source abstracts provided in input.' Empirical: 3 of 4
-    rejections in the Day 10.14 hardened canonical-corpus benchmark
-    cited this exact gap.
-    """
+    """Render the graph, traces, and optional source abstracts for judges."""
     thesis = next(
         (c for c in graph.claims if c.claim_id == graph.thesis_claim_id),
         None,
@@ -259,11 +223,7 @@ def _parse_judge_review(
     judge_role: JudgeRole,
     model: str,
 ) -> JudgeReview:
-    """Validate the LLM's JSON against the JudgeReview schema.
-
-    Raises SPARError for malformed output (the panel can't proceed
-    without three valid reviews; caller can retry the whole SPAR pass).
-    """
+    """Validate one judge's JSON response."""
     verdict = parsed.get("verdict")
     if verdict not in ("accept", "reject"):
         raise SPARError(
@@ -334,11 +294,7 @@ def _identify_dissent(
     reviews: tuple[JudgeReview, JudgeReview, JudgeReview],
     verdict: SPARVerdict,
 ) -> JudgeReview | None:
-    """Return the minority-voice review for a 2-1 split, else None.
-
-    Unanimous (3-0 / 0-3) → None. The schema invariant
-    `assert_spar_invariants` re-validates this matches the votes.
-    """
+    """Return the minority review for a 2-1 split."""
     if verdict in ("accept_clean", "reject_critical"):
         return None
     minority_verdict = "reject" if verdict == "accept_caveated" else "accept"
@@ -349,13 +305,7 @@ def _validate_flagged_against_graph(
     reviews: tuple[JudgeReview, ...],
     graph: ClaimGraph,
 ) -> None:
-    """Reject any review whose flagged_claims reference unknown claim_ids.
-
-    The Auditor / Skeptic / Final Judge see the full claim graph in
-    their prompt, so a flagged_claim that isn't in the graph is either
-    a hallucinated id or a typo — either way it corrupts the audit
-    trail. Code disposes: SPARError, caller decides retry vs skip.
-    """
+    """Reject reviews that flag claim IDs absent from the graph."""
     valid_ids = {c.claim_id for c in graph.claims}
     for r in reviews:
         unknown = [cid for cid in r.flagged_claims if cid not in valid_ids]
@@ -369,37 +319,48 @@ def _validate_flagged_against_graph(
 def _enforce_trace_gate(
     panel_verdict: SPARVerdict,
     traces: Sequence[CitationTrace],
+    graph: ClaimGraph | None = None,
 ) -> GateOverride | None:
-    """Trust-spine gate: failed citation traces force reject regardless
-    of the LLM panel's votes.
-
-    The Auditor's prompt instructs judges to reject on failed traces,
-    but code cannot rely on LLM compliance — if all three voted accept
-    while traces failed, the deterministic spine overrides. Returns a
-    GateOverride record when triggered; None otherwise (the panel's
-    verdict stands).
-
-    Triggers ONLY when (a) any trace failed AND (b) the panel verdict
-    points at accept_*. If the panel already rejects, no override
-    needed; if all traces pass, the LLM's accept stands.
-    """
+    """Override accepting panels when traces fail or lack full coverage."""
     if panel_verdict not in ("accept_clean", "accept_caveated"):
         return None
     failed = [t for t in traces if not t.passed]
-    if not failed:
+    covered = {(t.claim_id, t.ref) for t in traces}
+    missing = (
+        [] if graph is None else [
+            (claim.claim_id, ref)
+            for claim in graph.claims
+            for ref in claim.supporting_refs
+            if (claim.claim_id, ref) not in covered
+        ]
+    )
+    unsupported = (
+        [] if graph is None else [
+            claim.claim_id for claim in graph.claims
+            if not claim.supporting_refs
+        ]
+    )
+    if not failed and not missing and not unsupported:
         return None
-    sample = failed[0]
+    if failed:
+        sample = failed[0]
+        detail = (
+            f"{len(failed)} citation trace(s) failed (e.g., "
+            f"{sample.trace_type} on claim={sample.claim_id} "
+            f"ref={sample.ref}: {sample.detail!r})"
+        )
+    else:
+        detail = (
+            f"trace coverage is incomplete: {len(missing)} claim/ref pair(s) "
+            f"missing and {len(unsupported)} claim(s) have no supporting refs"
+        )
     rationale = (
         f"Trust-spine trace gate triggered: panel returned "
-        f"{panel_verdict!r} but {len(failed)} citation trace(s) failed "
-        f"(e.g., {sample.trace_type} on claim={sample.claim_id} "
-        f"ref={sample.ref}: {sample.detail!r}). The Auditor prompt "
-        f"instructs reject on failed traces; code disposes when LLM "
-        f"compliance fails. Verdict forced to reject_critical."
+        f"{panel_verdict!r} but {detail}. Verdict forced to reject_critical."
     )
     return GateOverride(
         pre_gate_verdict=panel_verdict,
-        failed_trace_count=len(failed),
+        failed_trace_count=len(failed) + len(missing) + len(unsupported),
         rationale=rationale,
     )
 
@@ -420,24 +381,7 @@ async def run_spar(
     seed: int | None = None,
     items_by_ref: Mapping[int, EvidenceItem] | None = None,
 ) -> SPARReview:
-    """Run the 3-judge panel; return a structurally valid SPARReview.
-
-    Auditor + Skeptic run in parallel (independent inputs). Final Judge
-    runs after both so it can see their reviews as panel context.
-
-    Raises SPARError on any judge parse/transport failure — a caller
-    that wants resilience can wrap with retry, but the default is
-    fail-loud so trust-spine failures don't get silently swallowed.
-
-    Day 9.4: when `seed` is set, each judge gets a per-judge seed
-    derived from `(seed, judge_role_index)` so different judges receive
-    DIFFERENT seeds (otherwise three "auditor"-style models would all
-    produce the same answer at temp 0). Same base seed + same brief
-    → same per-judge seeds → same panel verdict → byte-identical
-    spar_review.json. When seed is set, temperature is also forced to
-    0.0 — at temp 0.2 (the default for stochastic-judge mode), seed
-    alone doesn't pin the output even when the provider honors it.
-    """
+    """Run the fail-loud three-judge panel with deterministic seeding."""
     base_brief = render_brief(
         graph, traces, topic=topic, submission_id=submission_id,
         items_by_ref=items_by_ref,
@@ -486,7 +430,7 @@ async def run_spar(
     _validate_flagged_against_graph(reviews, graph)
 
     panel_verdict = compute_spar_verdict(reviews)
-    gate = _enforce_trace_gate(panel_verdict, traces)
+    gate = _enforce_trace_gate(panel_verdict, traces, graph)
     if gate is not None:
         # Trust-spine gate triggered: panel votes preserved; verdict
         # forced to reject_critical; dissent suppressed (the gate's

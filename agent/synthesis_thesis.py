@@ -1,37 +1,4 @@
-"""Synthesis thesis tournament — Day 10.3.
-
-Given N claim receipts and a TensionMatrix, propose K thesis
-candidates via LLM, validate each candidate against the trust
-contract, and pick the winner deterministically.
-
-The trust contract for synthesis theses (stricter than the schema-
-level invariants in synthesis_schemas.assert_synthesis_invariants):
-
-  1. text non-empty, ≤30 words (the reference papers' theses are
-     14-25 words; longer theses overclaim)
-  2. receipt_ids_referenced ⊂ input receipt_ids (no LLM-fabricated
-     ids — the synthesis-layer analogue of spar.py's
-     `_validate_flagged_against_graph`)
-  3. ≥3 distinct receipts referenced (single-trial generalization
-     is the most common synthesis failure mode; require breadth)
-  4. ≥1 non-orthogonal tension addressed (when the matrix has any
-     non-orthogonal pairs — otherwise the synthesis is just a list,
-     not a synthesis)
-  5. no numerics absent from any receipt's `p_values` or thesis_text
-     (no new numerics may enter the synthesis layer)
-
-Picker rank (lower tuple = better):
-  (-receipts_referenced, -tensions_addressed, +word_count, claim_id)
-
-So: most receipts wins, more tensions addressed wins, brevity wins.
-Ties broken alphabetically by candidate text (deterministic re-runs).
-
-Failure mode: if no candidate validates, fall back to a deterministic
-stub thesis ("[topic] evidence is mixed across the [N] receipts
-examined") so the synthesis paper still ships. The stub carries an
-explicit `picker_rationale = "all candidates rejected"` so audit
-code can flag the run for re-prompting.
-"""
+"""Validate and select source-grounded synthesis theses deterministically."""
 from __future__ import annotations
 
 import re
@@ -50,6 +17,7 @@ from agent.synthesis_schemas import (
 
 __all__ = [
     "THESIS_PROMPT_VERSION",
+    "SynthesisThesisBlocked",
     "ThesisRejection",
     "build_thesis_user_prompt",
     "validate_thesis_candidate",
@@ -64,6 +32,17 @@ THESIS_PROMPT_VERSION = "synthesis-thesis/2026-04-29"
 _MAX_THESIS_WORDS = 30
 _REQUIRED_RECEIPT_REFERENCES = 3
 _DEFAULT_K = 3
+
+
+class SynthesisThesisBlocked(RuntimeError):
+    """No proposed thesis satisfied the deterministic trust contract."""
+
+    def __init__(self, rejections: Sequence["ThesisRejection"]) -> None:
+        self.rejections = tuple(rejections)
+        detail = "; ".join(rejection.reason for rejection in self.rejections)
+        super().__init__(
+            f"all synthesis thesis candidates rejected: {detail or 'none supplied'}"
+        )
 
 
 # --- Prompts --------------------------------------------------------------
@@ -151,8 +130,7 @@ def build_thesis_user_prompt(
     topic: str,
     k: int = _DEFAULT_K,
 ) -> str:
-    """Render the user-message body deterministically. Same inputs →
-    same prompt → same LLM response (when the provider honors seed)."""
+    """Render the deterministic thesis proposal prompt."""
     lines: list[str] = [
         f"Topic: {topic}",
         f"K (number of candidates required): {k}",
@@ -210,8 +188,7 @@ def _normalize(text: str) -> str:
 
 @dataclass(frozen=True, slots=True)
 class ThesisRejection:
-    """Why a candidate was rejected. Kept on the picker output for
-    audit visibility."""
+    """Audit-visible reason a candidate was rejected."""
     candidate_text: str
     reason: str
 
@@ -235,12 +212,7 @@ def validate_thesis_candidate(
     receipts: Sequence[ReceiptSummary],
     matrix: TensionMatrix,
 ) -> ThesisRejection | None:
-    """Pure deterministic validator. None = candidate is acceptable;
-    a ThesisRejection means the candidate fails the contract.
-
-    Order of checks: cheap and load-bearing first so failures are
-    informative.
-    """
+    """Return None only when the candidate satisfies the trust contract."""
     # 1. Text shape
     if not candidate.text.strip():
         return ThesisRejection(candidate.text, "empty_text")
@@ -334,20 +306,7 @@ def pick_synthesis_thesis(
     *,
     topic: str = "",
 ) -> SynthesisThesis:
-    """Validate every candidate, pick the best valid one, build a
-    SynthesisThesis with rejected candidates preserved for audit.
-
-    Ranking key (lower is better):
-      (-receipts_referenced_count, -tensions_addressed_count,
-       +word_count, candidate.text)
-
-    So more receipts wins → more tensions wins → shorter wins → text
-    alpha order is the deterministic tiebreaker.
-
-    When NO candidate validates, falls back to a deterministic stub
-    thesis (`build_fallback_thesis`) and records "all candidates
-    rejected" in the picker rationale.
-    """
+    """Pick the best valid thesis or raise SynthesisThesisBlocked."""
     accepted: list[SynthesisThesisCandidate] = []
     rejected: list[SynthesisThesisCandidate] = []
     rejection_reasons: list[ThesisRejection] = []
@@ -361,11 +320,7 @@ def pick_synthesis_thesis(
             rejection_reasons.append(rej)
 
     if not accepted:
-        return build_fallback_thesis(
-            receipts, matrix, topic=topic,
-            rejected=tuple(rejected),
-            rejection_reasons=tuple(rejection_reasons),
-        )
+        raise SynthesisThesisBlocked(rejection_reasons)
 
     def sort_key(c: SynthesisThesisCandidate) -> tuple[int, int, int, str]:
         return (
@@ -408,14 +363,7 @@ def build_fallback_thesis(
     rejected: Sequence[SynthesisThesisCandidate] = (),
     rejection_reasons: Sequence[ThesisRejection] = (),
 ) -> SynthesisThesis:
-    """Deterministic stub thesis when no candidate validates.
-
-    Shape: "[topic] evidence is mixed across [N] receipts examined,
-    with [tension shape] across direct human trials and mechanistic
-    studies." Conservative by design — the audit-checklist Q1
-    (borderline-p hedging) and Q5 (indirect-for-longevity discipline)
-    must still pass.
-    """
+    """Build the explicit diagnostic fallback used outside production selection."""
     n = len(receipts)
     non_orth = matrix.non_orthogonal()
     # Day 10.17 Fix C.1: name the highest-severity tension EXPLICITLY
@@ -459,9 +407,7 @@ def build_fallback_thesis(
 def _parse_candidates_from_response(
     parsed: dict,
 ) -> list[SynthesisThesisCandidate]:
-    """Parse the LLM JSON response into SynthesisThesisCandidate
-    objects. Defensive — silently drops malformed entries (the
-    picker handles "no valid candidate" with a fallback stub)."""
+    """Parse candidates, dropping malformed entries for the picker to block."""
     raw = parsed.get("candidates")
     if not isinstance(raw, list):
         return []
@@ -500,17 +446,7 @@ async def synthesize_thesis(
     ledger: CostLedger | None = None,
     seed: int | None = None,
 ) -> SynthesisThesis:
-    """Drive the full thesis tournament: LLM proposes K candidates,
-    code disposes, picker selects.
-
-    `seed` (Day 9.4 plumbing carried over): when set, forwarded to
-    chat_json so the LLM call is reproducible. `ledger` accumulates
-    cost.
-
-    Returns a SynthesisThesis — ALWAYS, even when every candidate is
-    rejected (falls back to deterministic stub). The synthesis writer
-    can render either way.
-    """
+    """Propose theses and return only a deterministically validated winner."""
     user_prompt = build_thesis_user_prompt(
         receipts, matrix, topic=topic, k=k,
     )

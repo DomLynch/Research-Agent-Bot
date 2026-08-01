@@ -4,11 +4,12 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 
+from agent.risk_of_bias_schema import DOMAINS_BY_TOOL
 from scripts import paper_quality_runtime as pqr
 
 
 def _receipts() -> list[dict]:
-    return [
+    rows = [
         {
             "paper_id": "S1",
             "receipt_id": "S1",
@@ -40,6 +41,27 @@ def _receipts() -> list[dict]:
             "n_claims": 4,
         },
     ]
+    for row in rows:
+        design, tool = ("rct", "rob2") if row["directness"] == "direct" else ("observational", "robins_i")
+        row["risk_of_bias_assessment"] = {
+            "validated": True,
+            "assessment": {
+                "study_id": row["citation_token"], "design": design, "tool": tool,
+                "overall_rating": "some_concerns",
+                "domains": [
+                    {"domain": domain, "rating": "some_concerns"}
+                    for domain in DOMAINS_BY_TOOL[tool]
+                ],
+            },
+        }
+        row["grade_assessment"] = {
+            "validated": True,
+            "assessment": {
+                "outcome": row["outcome_class"], "starting_certainty": "high",
+                "downgrades": [], "upgrades": [],
+            },
+        }
+    return rows
 
 
 def test_quality_methods_payloads_cover_receipts_and_outcomes(tmp_path: Path) -> None:
@@ -63,7 +85,7 @@ def test_quality_methods_payloads_cover_receipts_and_outcomes(tmp_path: Path) ->
 def test_quality_section_empty_sidecars_do_not_claim_appraisal() -> None:
     bundle = SimpleNamespace(rob_assessments=(), grade_assessments=())
     paper_md = pqr.render_quality_section_for_paper(bundle)
-    assert "No populated public risk-of-bias or GRADE rows" in paper_md
+    assert "Formal appraisal status: NotAppraised" in paper_md
     assert "judgments are generated" not in paper_md
 
 
@@ -72,6 +94,11 @@ def _claim(text: str) -> dict:
         "claim_type": "confidence_interval",
         "raw_text": text,
         "sentence": text,
+        "pooling_contract": {
+            "intervention": "active", "comparator": "placebo",
+            "population": "adults", "endpoint": "immune score",
+            "unit": "points", "follow_up": "12 weeks", "estimator": "MD",
+        },
     }
 
 
@@ -90,7 +117,7 @@ def test_meta_analysis_pools_when_three_compatible_rows(tmp_path: Path) -> None:
     result = pqr.write_meta_analysis(tmp_path, receipts, qdir)
 
     assert len(result["pools"]) == 1
-    assert result["pools"][0]["group"] == "immune:MD"
+    assert "immune score" in result["pools"][0]["group"]
     assert (tmp_path / result["pools"][0]["plot"]).exists()
     assert "Random-effects pooled effect" in (tmp_path / "meta_analysis_results.md").read_text()
 

@@ -4,7 +4,9 @@ from __future__ import annotations
 from agent.journal_surface_gate import (
     evaluate_journal_surface,
     is_publishable_qei_row,
+    qei_row_issue_messages,
 )
+from agent.methods_pack import REQUIRED_METHODS_H3_MARKERS
 from agent.results_table import EvidenceRow
 
 
@@ -42,6 +44,20 @@ def _paper(row: str) -> str:
     )
 
 
+def _complete_surface(paper: str):
+    methods = "\n\n".join(
+        f"{marker}\n\nMethod detail {i}."
+        for i, marker in enumerate(REQUIRED_METHODS_H3_MARKERS, start=1)
+    )
+    paper = paper.replace("## Methods\n\n", f"## Methods\n\n{methods}\n\n", 1)
+    return evaluate_journal_surface(
+        paper,
+        animal_citations=[],
+        citation_outcome_map={},
+        declared_review_type="thin_corpus_brief",
+    )
+
+
 def test_qei_surface_gate_flags_endpoint_unit_mismatches():
     bad_rows = [
         "| Cheung 2024 | mortality | pooled | 2.86 mg/dL | mg/dL | — |",
@@ -68,6 +84,14 @@ def test_qei_surface_gate_flags_empty_and_malformed_rows():
     details = " ".join(i.detail for i in report.issues)
     assert "empty QEI row" in details
     assert "malformed study id" in details
+
+
+def test_qei_surface_gate_rejects_blank_endpoint_with_numeric_value() -> None:
+    issues = qei_row_issue_messages({
+        "study_label": "Smith 2024", "endpoint": "", "value": "1.2",
+        "unit_or_type": "mg/dL", "statistic": "p=0.01",
+    })
+    assert "unpublishable endpoint: blank" in issues
 
 
 def test_qei_surface_gate_flags_author_year_suffix_garbage():
@@ -110,7 +134,7 @@ def test_surface_gate_flags_consecutive_duplicate_qei_headings():
             "## Quantitative Evidence Index — urolithin_a\n\n"
         ),
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert any(i.code == "duplicate_heading" for i in report.issues)
 
@@ -118,7 +142,7 @@ def test_surface_gate_flags_consecutive_duplicate_qei_headings():
 def test_surface_gate_flags_public_topic_slug_artifacts():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("background1", "urolithin_a", 1)
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert any(i.code == "topic_slug_artifact" for i in report.issues)
 
@@ -126,7 +150,7 @@ def test_surface_gate_flags_public_topic_slug_artifacts():
 def test_surface_gate_flags_platform_wrapper_artifacts():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("abstract1", "DECISION: ACCEPT", 1)
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert any(i.code == "public_artifact" and "decision: accept" in i.detail for i in report.issues)
 
@@ -134,7 +158,7 @@ def test_surface_gate_flags_platform_wrapper_artifacts():
 def test_surface_gate_flags_not_extracted_preview_text():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("abstract1", "not extracted", 1)
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert any(i.code == "public_artifact" and "not extracted" in i.detail for i in report.issues)
 
@@ -146,7 +170,7 @@ def test_surface_gate_allows_methods_risk_of_bias_tool_names():
         "Cochrane RoB-2, ROBINS-I, and risk-of-bias roll-up methods were prespecified.",
         1,
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not any(i.code == "public_artifact" and "risk-of-bias" in i.detail for i in report.issues)
 
 
@@ -157,7 +181,7 @@ def test_malformed_qei_row_in_appendix_does_not_block_public_body():
         "## Quantitative Evidence Index\n\n"
         "| Kell 2026 | mTOR signaling | placebo | p<0.001 |\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert report.passed
 
 
@@ -167,9 +191,64 @@ def test_placeholder_prose_blocks_journal_surface():
         "This paper evaluates the topic through accepted receipts.\n\n"
         "## Methods\n\nMethods.\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert report.issues[0].code == "placeholder_prose"
+
+
+def test_unresolved_stat_placeholder_variants_block_journal_surface() -> None:
+    phrases = (
+        "Exact statistic unavailable in retained source excerpt.",
+        "Exact p-value not available in retained source excerpt.",
+        "The retained source excerpt does not report the exact confidence interval.",
+        "The effect estimate was not extractable from the retained source excerpt.",
+    )
+    for phrase in phrases:
+        paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+        report = _complete_surface(paper.replace("abstract1", phrase, 1))
+        assert any(i.code == "public_text_integrity" and "unresolved statistic" in i.detail for i in report.issues)
+
+
+def test_agent_certified_blocks_human_verification_even_with_signoff_flag() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "methods1",
+        "Accountability is established through reproducible artifacts and deterministic gates. Final decisions are author-verified.",
+        1,
+    )
+    report = evaluate_journal_surface(
+        paper, animal_citations=[], citation_outcome_map={},
+        declared_review_type="thin_corpus_brief",
+        accountability_model="researka_agent_certified",
+        human_signoff_validated=True,
+    )
+    assert any("unsupported human-verification" in i.detail for i in report.issues)
+
+
+def test_legacy_human_verification_requires_validated_signoff() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("methods1", "Final decisions are author-verified.", 1)
+    invalid = evaluate_journal_surface(
+        paper, accountability_model="legacy_journal_submission",
+        human_signoff_validated=False,
+    )
+    valid = evaluate_journal_surface(
+        paper, accountability_model="legacy_journal_submission",
+        human_signoff_validated=True,
+    )
+    assert any("unsupported human-verification" in i.detail for i in invalid.issues)
+    assert not any("unsupported human-verification" in i.detail for i in valid.issues)
+
+
+def test_agent_certified_requires_automated_gate_accountability_text() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    missing = evaluate_journal_surface(paper, accountability_model="researka_agent_certified")
+    present = evaluate_journal_surface(
+        paper.replace("methods1", "Accountability is established through reproducible artifacts and deterministic gates.", 1),
+        accountability_model="researka_agent_certified",
+    )
+    assert any("missing automated-gate accountability" in i.detail for i in missing.issues)
+    assert not any("missing automated-gate accountability" in i.detail for i in present.issues)
 
 
 def test_conclusion_fallback_prose_blocks_journal_surface():
@@ -178,7 +257,7 @@ def test_conclusion_fallback_prose_blocks_journal_surface():
         "The conclusion is limited to claims that survive receipt "
         "qualification, source-context checks, and final audit gates.\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert report.issues[0].code == "placeholder_prose"
 
@@ -190,7 +269,7 @@ def test_bounded_conclusion_backfill_blocks_journal_surface():
         "receipt-traced evidence to justify structured interpretation, but "
         "the evidence should be read through its tiered profile.\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert report.issues[0].code == "placeholder_prose"
 
@@ -201,7 +280,7 @@ def test_validation_contract_meta_prose_blocks_journal_surface():
         "The interpretation remains cautious when section generation "
         "cannot satisfy the validation contract.\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert report.issues[0].code == "placeholder_prose"
 
@@ -212,7 +291,7 @@ def test_llm_meta_slogans_block_journal_surface():
         "The load-bearing principle is LLM proposes, code disposes, "
         "with no LLM authorship.\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert not report.passed
     assert report.issues[0].code == "placeholder_prose"
 
@@ -223,7 +302,7 @@ def test_appendix_meta_language_does_not_block_body_surface():
         + "\n\n## Data and Code Availability\n\n"
         "The audit appendix can describe that LLM proposes, code disposes.\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert report.passed
 
 
@@ -563,7 +642,7 @@ def test_unreferenced_author_year_citation_blocks_surface():
 def test_lowercase_reference_label_matches_inline_author_year():
     paper = _paper("| Velayati 2025 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("- Smith 2024.", "- **velayati 2025.** DOI: 10.1/example.")
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert report.passed
 
 
@@ -579,7 +658,7 @@ def test_labeled_table_reference_passes_journal_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("## Results\n\n", "## Results\n\nTable 2. Endpoint summary.\n\n")
     paper = paper.replace("results1", "Table 2 presents endpoint evidence", 1)
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert report.passed
 
 
@@ -620,7 +699,7 @@ def test_duplicate_appendix_paragraph_does_not_block_body_surface():
     good = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     para = " ".join(f"alpha{i}" for i in range(35))
     paper = good + f"\n\n## Publication Appendix\n\n{para}\n\n{para}\n"
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert report.passed
 
 
@@ -660,7 +739,7 @@ def test_citation_artifacts_and_hedge_fragments_allowed_in_appendix():
         _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
         + "\n\n## Publication Appendix\n\n[citation needed]\n\nMay.\n"
     )
-    report = evaluate_journal_surface(paper)
+    report = _complete_surface(paper)
     assert report.passed
 
 
@@ -797,7 +876,7 @@ def test_valid_rows_pass_surface_gate():
         statistic="—", citation="Smith 2024",
     )
     assert is_publishable_qei_row(row)
-    report = evaluate_journal_surface(_paper(
+    report = _complete_surface(_paper(
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
     ))
     assert report.passed
@@ -980,13 +1059,16 @@ def test_animal_citation_with_lane_qualifier_passes() -> None:
     assert not any(i.code == "evidence_lane" for i in report.issues)
 
 
-def test_evidence_lane_check_skipped_when_no_sidecar() -> None:
-    """Backward-compat: existing callers that do not pass
-    animal_citations must see identical behaviour to pre-Slice-4."""
+def test_missing_semantic_inputs_fail_closed() -> None:
     paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
-    report_old = evaluate_journal_surface(paper)
-    report_new = evaluate_journal_surface(paper, animal_citations=None)
-    assert [i.code for i in report_old.issues] == [i.code for i in report_new.issues]
+    report = evaluate_journal_surface(paper)
+    missing = [i for i in report.issues if i.code == "missing_semantic_context"]
+    assert not report.passed
+    assert {i.detail for i in missing} == {
+        "animal_citations not supplied",
+        "citation_outcome_map not supplied",
+        "declared_review_type not supplied",
+    }
 
 
 # Bug-fix: novelty / framework claims must be grounded in prior
@@ -1101,12 +1183,16 @@ def test_outcome_cross_reference_in_anchored_sentence_passes() -> None:
     assert not any(i.code == "outcome_routing" for i in report.issues)
 
 
-def test_outcome_routing_check_skipped_without_map() -> None:
-    """Backward-compat: no map → no check (previous callers untouched)."""
+def test_outcome_routing_missing_map_is_explicit_failure() -> None:
     paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
-    report_old = evaluate_journal_surface(paper)
-    report_new = evaluate_journal_surface(paper, citation_outcome_map=None)
-    assert [i.code for i in report_old.issues] == [i.code for i in report_new.issues]
+    report = evaluate_journal_surface(
+        paper, animal_citations=[], declared_review_type="evidence_map",
+    )
+    assert any(
+        i.code == "missing_semantic_context"
+        and i.detail == "citation_outcome_map not supplied"
+        for i in report.issues
+    )
 
 
 # Bug-fix: Limitations summary-prose leak detector (Slice 7).
@@ -1233,14 +1319,18 @@ def test_review_type_check_skipped_for_strongest_tier() -> None:
     assert _review_type_overclaim_issue_messages(paper, "meta_analysis") == ()
 
 
-def test_review_type_check_skipped_when_undeclared() -> None:
-    """Backward-compat: caller does not declare a review_type → no check."""
+def test_undeclared_review_type_is_explicit_failure() -> None:
     paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
     paper = paper.replace(
         "## Methods\n\n",
         "## Methods\n\nWe conducted a systematic review and meta-analysis.\n\n",
     )
     report_no_type = evaluate_journal_surface(paper)
+    assert any(
+        i.code == "missing_semantic_context"
+        and i.detail == "declared_review_type not supplied"
+        for i in report_no_type.issues
+    )
     assert not any(i.code == "review_type_overclaim" for i in report_no_type.issues)
     report_with_type = evaluate_journal_surface(
         paper, declared_review_type="prisma_scr_scoping_synthesis",
@@ -1573,14 +1663,28 @@ def test_reference_style_consistency_skipped_when_no_style() -> None:
 # no per-topic knowledge.
 
 
-def test_artifact_consistency_passes_minimal_run(tmp_path) -> None:
-    """A run dir with just full_paper.md passes (no other artifacts
-    to mismatch). Universal — graceful when optional files absent."""
+def test_artifact_consistency_fails_when_required_artifacts_are_missing(tmp_path) -> None:
     from agent.artifact_consistency import verify_run_artifacts
     (tmp_path / "full_paper.md").write_text("## Abstract\n\nText.\n")
     report = verify_run_artifacts(tmp_path)
-    assert report.passed
+    assert not report.passed
     assert any(c.name == "paper_present" and c.passed for c in report.checks)
+    assert not any(c.name == "submission_package_match" for c in report.checks)
+    assert any(c.name == "citation_registry_coverage" and not c.passed for c in report.checks)
+    assert any(c.name == "citation_registry_coverage" and not c.passed for c in report.checks)
+
+
+def test_artifact_consistency_passes_complete_trust_artifacts(tmp_path) -> None:
+    import json as _json
+    from agent.artifact_consistency import verify_run_artifacts
+    paper = "## Abstract\n\nSmith 2024 reported.\n\n## References\n\n- Smith 2024.\n"
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "submission_package").mkdir()
+    (tmp_path / "submission_package" / "final_manuscript.md").write_text(paper)
+    (tmp_path / "citation_registry.json").write_text(_json.dumps({
+        "R1": {"body_citation": "Smith 2024"},
+    }))
+    assert verify_run_artifacts(tmp_path).passed
 
 
 def test_artifact_consistency_flags_missing_paper(tmp_path) -> None:
@@ -1662,14 +1766,14 @@ def test_artifact_consistency_sidecar_round_trip(tmp_path) -> None:
     assert len(payload["checks"]) == len(report.checks)
 
 
-def test_artifact_consistency_skips_missing_optional_docx_extractor(tmp_path, monkeypatch) -> None:
+def test_artifact_consistency_fails_when_docx_extractor_is_unavailable(tmp_path, monkeypatch) -> None:
     from agent import artifact_consistency as ac
     (tmp_path / "full_paper.md").write_text("## Abstract\n\nOK.\n")
     (tmp_path / "full_paper.docx").write_bytes(b"not parsed without optional dependency")
     monkeypatch.setattr(ac, "_extract_docx_text", lambda _p: (_ for _ in ()).throw(ImportError("No module named 'docx'")))
     report = ac.verify_run_artifacts(tmp_path)
     assert report.passed is False
-    assert any(c.name == "docx_extraction_skipped" and not c.passed for c in report.checks)
+    assert any(c.name == "docx_extracted" and not c.passed for c in report.checks)
 
 
 # Slice 15 — writer-compliance scrubber. The deterministic post-render
@@ -1934,7 +2038,12 @@ def test_finalizer_iterates_until_deterministic_surface_repairs_converge(tmp_pat
     assert "novel approach" not in new_text.lower()
     assert "structured approach" in new_text.lower()
     assert any(e.rule == "soften_unsupported_novelty" for e in report.entries)
-    assert evaluate_journal_surface(new_text, declared_review_type="thin_corpus_brief").passed
+    assert evaluate_journal_surface(
+        new_text,
+        animal_citations=[],
+        citation_outcome_map={},
+        declared_review_type="thin_corpus_brief",
+    ).passed
 
 
 def test_finalizer_idempotent(tmp_path) -> None:

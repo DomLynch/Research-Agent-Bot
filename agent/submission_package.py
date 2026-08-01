@@ -19,7 +19,7 @@ Output layout (under `<run_dir>/submission_package/`):
   final_status.json               — copy of run_dir/final_status.json
   manifest.json                   — list of all package files + provenance
 
-Gate: refuses to compose unless `final_status.maturity_level >= 4`. This
+Gate: refuses to compose unless `final_status.maturity_level >= 5`. This
 prevents shipping a submission package built on top of a paper that
 failed runtime / audit / surface / pre-submit.
 
@@ -32,6 +32,8 @@ import shutil
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
+
+from agent.target_journal_pack import load_and_validate
 
 PACKAGE_DIRNAME = "submission_package"
 
@@ -69,21 +71,22 @@ def _read_final_status(run_dir: Path) -> dict[str, Any]:
 
 
 def _read_pack(run_dir: Path) -> dict[str, Any]:
-    p = run_dir / "target_journal_pack.json"
-    if not p.is_file():
+    pack, issues = load_and_validate(run_dir)
+    if pack is None or issues:
+        detail = "; ".join(f"{issue.field}:{issue.code}" for issue in issues)
         raise SubmissionPackageError(
-            "target_journal_pack.json missing — write one before finalizing",
+            f"target_journal_pack.json invalid: {detail}",
         )
-    return json.loads(p.read_text())
+    return asdict(pack)
 
 
 def _read_signoff(run_dir: Path) -> dict[str, Any]:
-    p = run_dir / "human_signoff.json"
-    if not p.is_file():
-        raise SubmissionPackageError(
-            "human_signoff.json missing — author must sign off",
-        )
-    return json.loads(p.read_text())
+    from agent.human_signoff import load_and_validate
+    signoff, issues = load_and_validate(run_dir)
+    if signoff is None or issues:
+        detail = "; ".join(f"{issue.field}:{issue.code}" for issue in issues)
+        raise SubmissionPackageError(f"human_signoff.json invalid: {detail}")
+    return asdict(signoff)
 
 
 # --- builders for the two stub files (templates, not synthesized) ---------
@@ -161,18 +164,26 @@ def compose(
 ) -> PackageManifest:
     """Build the submission package under `<run_dir>/submission_package/`.
 
-    Refuses to compose unless `final_status.maturity_level >= 4`, since
-    a sub-L4 paper failed runtime / audit / surface / pre-submit and is
-    not appropriate for journal submission. Override with
-    `allow_below_l4=True` for ops/testing only.
+    Refuses to compose unless `final_status.maturity_level >= 5`, since
+    only L5 is journal-submission ready. The legacy-named
+    `allow_below_l4=True` override bypasses this gate for ops/testing.
     """
     fs = _read_final_status(run_dir)
     level = int(fs.get("maturity_level") or 0)
-    if level < 4 and not allow_below_l4:
+    if not allow_below_l4 and (
+        level < 5 or fs.get("journal_submission_ready") is not True
+    ):
         raise SubmissionPackageError(
-            f"maturity_level={level} < 4; not eligible for submission "
+            f"maturity_level={level}; journal_submission_ready must be true. "
+            f"Not eligible for submission "
             f"package. Resolve blocking_reasons first or pass "
             f"allow_below_l4=True for testing.",
+        )
+
+    manuscript = run_dir / "full_paper.md"
+    if not manuscript.is_file() or not manuscript.read_text().strip():
+        raise SubmissionPackageError(
+            "full_paper.md missing or empty — manuscript is required",
         )
 
     pack = _read_pack(run_dir)
@@ -183,6 +194,24 @@ def compose(
     audit_data: dict[str, Any] | None = None
     if (run_dir / "full_paper.audit.json").is_file():
         audit_data = json.loads((run_dir / "full_paper.audit.json").read_text())
+
+    topic = str(manifest_data.get("topic") or "unknown")
+    verdict = str(fs.get("maturity_label") or "")
+    from agent.manuscript_appendix import (
+        build_ai_use_disclosure,
+        build_data_code_availability,
+        build_search_provenance_appendix,
+    )
+    search_provenance = build_search_provenance_appendix(
+        manifest_data, topic=topic,
+    )
+    ai_use_disclosure = build_ai_use_disclosure(
+        manifest_data, audit_data, None, verdict=verdict,
+    )
+    data_code_availability = build_data_code_availability(
+        run_id=run_dir.name, git_sha="unknown",
+        bundle_path=None, topic=topic, verdict=verdict,
+    )
 
     pkg = run_dir / PACKAGE_DIRNAME
     pkg.mkdir(exist_ok=True)
@@ -198,43 +227,14 @@ def compose(
             shutil.copy(src, pkg / dst_name)
             files.append(dst_name)
 
-    # Manuscript + supplement: copy as-is
+    # Manuscript is mandatory; supplement is optional.
     _copy("full_paper.md", "final_manuscript.md")
     _copy("structured_evidence_tables.md", "structured_evidence_tables.md")
 
     # Disclosure blocks: reuse existing builders (no duplication)
-    topic = str(manifest_data.get("topic") or "unknown")
-    verdict = str(fs.get("maturity_label") or "")
-    try:
-        from agent.manuscript_appendix import (
-            build_ai_use_disclosure,
-            build_data_code_availability,
-            build_search_provenance_appendix,
-        )
-        _emit(
-            "search_provenance.md",
-            build_search_provenance_appendix(manifest_data, topic=topic),
-        )
-        _emit(
-            "AI_use_disclosure.md",
-            build_ai_use_disclosure(
-                manifest_data, audit_data, None, verdict=verdict,
-            ),
-        )
-        _emit(
-            "data_code_availability.md",
-            build_data_code_availability(
-                run_id=run_dir.name, git_sha="unknown",
-                bundle_path=None, topic=topic, verdict=verdict,
-            ),
-        )
-    except Exception:  # pragma: no cover — fail-soft: emit stubs
-        for stub_name in (
-            "search_provenance.md",
-            "AI_use_disclosure.md",
-            "data_code_availability.md",
-        ):
-            _emit(stub_name, f"# {stub_name}\n\n_(Builder unavailable.)_\n")
+    _emit("search_provenance.md", search_provenance)
+    _emit("AI_use_disclosure.md", ai_use_disclosure)
+    _emit("data_code_availability.md", data_code_availability)
 
     # Human-fillable stubs (universal — no domain assumptions)
     _emit("ethics_funding_conflict.md", _build_ethics_stub())
@@ -268,7 +268,7 @@ def _main(argv: list[str] | None = None) -> int:
     parser.add_argument("run_dir", type=Path)
     parser.add_argument(
         "--allow-below-l4", action="store_true",
-        help="bypass the L4-minimum gate (ops/testing only)",
+        help="bypass the L5 gate; legacy option name (ops/testing only)",
     )
     args = parser.parse_args(argv)
     try:

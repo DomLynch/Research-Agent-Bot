@@ -23,6 +23,7 @@ import httpx
 from agent.sources._base import (
     clean_text,
     normalize_doi,
+    record_source_provider_failure,
     safe_get_json,
     safe_get_text,
 )
@@ -235,7 +236,8 @@ class PubMedClient:
             return []
         try:
             root = ET.fromstring(text)
-        except ET.ParseError:
+        except ET.ParseError as exc:
+            record_source_provider_failure("bad_xml", str(exc))
             return []
         hits: list[RawHit] = []
         for article in root.findall(".//PubmedArticle"):

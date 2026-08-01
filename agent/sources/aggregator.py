@@ -4,7 +4,7 @@ from __future__ import annotations
 import asyncio
 import os
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Iterable
+from typing import TYPE_CHECKING, Any, Iterable
 
 import httpx
 
@@ -13,6 +13,11 @@ if TYPE_CHECKING:
     from agent.topic_pack import RetrievalSpec
 
 from agent.types import RawHit
+from agent.sources._base import (
+    SourceProviderError,
+    reset_source_provider_status,
+    source_provider_status,
+)
 
 
 # --- Source registry --------------------------------------------------
@@ -148,13 +153,44 @@ def _doi_lookup_query(results: Iterable[Iterable[RawHit]], limit: int) -> str:
     return ",".join(list(dois)[:min(limit, UNPAYWALL_LOOKUP_LIMIT)])
 
 
+async def _search_source(
+    http: httpx.AsyncClient,
+    client: Any,
+    name: str,
+    query: str,
+    limit: int,
+    stats: dict[str, int | str],
+) -> list[RawHit]:
+    reset_source_provider_status()
+    try:
+        if hasattr(client, "search_result"):
+            result = await client.search_result(http, query, limit=limit)
+            hits, status, detail = result.hits, result.status, result.error
+        else:
+            hits = await client.search(http, query, limit=limit)
+            failure = source_provider_status()
+            status, detail = failure or ("ok", "")
+    except SourceProviderError as exc:
+        hits, status, detail = [], exc.status, str(exc)
+    except (httpx.HTTPError, ValueError, OSError) as exc:
+        hits, status, detail = [], "provider_error", str(exc)
+        print(f"  ! source {name} failed: {type(exc).__name__}: {detail[:120]}")
+    stats[f"status_{name}"] = status
+    stats[f"raw_{name}"] = len(hits)
+    if status != "ok":
+        stats[f"err_{name}"] = 1
+        if detail:
+            stats[f"err_{name}_detail"] = detail[:160]
+    return hits
+
+
 async def discover_calibrated(
     spec: RetrievalSpec,
     *,
     params: RetrievalParams | None = None,
     enabled_sources: Iterable[str] | None = None,
     timeout: float = 120.0,
-) -> tuple[list[AggregatedHit], dict[str, int]]:
+) -> tuple[list[AggregatedHit], dict[str, int | str]]:
     """Calibrated multi-source discovery with per-source stats."""
     from agent.query_builder import build_query_for_source
     from agent.retrieval_modes import resolve_params
@@ -170,29 +206,7 @@ async def discover_calibrated(
     # Per-source limit: ample enough to pull real corpora but
     # bounded by source-API caps (most cap at ~100/call internally).
     per_source_limit = max(100, p.page_size * 10)
-    stats: dict[str, int] = {}
-
-    async def _safe_search(name: str, client, query: str):
-        try:
-            if hasattr(client, "search_result"):
-                result = await client.search_result(http, query, limit=per_source_limit)
-                hits = result.hits
-                stats[f"status_{name}"] = result.status
-                if result.status != "ok":
-                    stats[f"err_{name}"] = 1
-                    if result.error:
-                        stats[f"err_{name}_detail"] = result.error[:160]
-            else:
-                hits = await client.search(http, query, limit=per_source_limit)
-            stats[f"raw_{name}"] = len(hits)
-            return hits
-        except (httpx.HTTPError, ValueError, OSError) as e:
-            stats[f"err_{name}"] = 1
-            print(
-                f"  ! source {name} failed: "
-                f"{type(e).__name__}: {str(e)[:120]}",
-            )
-            return []
+    stats: dict[str, int | str] = {}
 
     async with httpx.AsyncClient(
         timeout=timeout,
@@ -211,13 +225,16 @@ async def discover_calibrated(
             if not query_for_source:
                 stats[f"empty_{name}"] = 1
                 continue
-            tasks.append(_safe_search(name, client, query_for_source))
+            tasks.append(_search_source(
+                http, client, name, query_for_source, per_source_limit, stats,
+            ))
         results = list(await asyncio.gather(*tasks, return_exceptions=False))
         if "unpaywall" in enabled_sources and "unpaywall" in registry:
             doi_query = _doi_lookup_query(results, per_source_limit)
             if doi_query:
-                results.append(await _safe_search(
-                    "unpaywall", registry["unpaywall"][0], doi_query,
+                results.append(await _search_source(
+                    http, registry["unpaywall"][0], "unpaywall", doi_query,
+                    per_source_limit, stats,
                 ))
             else:
                 stats["empty_unpaywall"] = 1
@@ -228,11 +245,15 @@ async def discover_calibrated(
         stats["safety_cap_triggered"] = 1
         out = out[: p.safety_cap]
     stats["aggregated_total"] = len(out)
+    stats["provider_failures"] = sum(
+        value != "ok" for key, value in stats.items()
+        if key.startswith("status_")
+    )
     return out, stats
 
 
 def _merge_and_dedupe(
-    results: list[list[RawHit]], stats: dict[str, int],
+    results: list[list[RawHit]], stats: dict[str, Any],
 ) -> list[AggregatedHit]:
     """Flatten per-source raw hits into deduped AggregatedHits."""
     all_hits: list[RawHit] = []
@@ -284,7 +305,8 @@ async def discover(
     enabled_sources: Iterable[str] | None = None,
     limit_per_source: int = 25,
     timeout: float = 60.0,
-) -> list[AggregatedHit]:
+    return_stats: bool = False,
+) -> list[AggregatedHit] | tuple[list[AggregatedHit], dict[str, int | str]]:
     """Fan-out keyword search across enabled sources."""
     registry = _build_registry()
     if enabled_sources is None:
@@ -295,18 +317,7 @@ async def discover(
             if default_en and _auth_configured(auth_env)
         ]
     enabled_sources = tuple(enabled_sources)
-
-    async def _safe_search(name: str, client, query: str = topic_keywords) -> list[RawHit]:
-        try:
-            if hasattr(client, "search_result"):
-                return (await client.search_result(http, query, limit=limit_per_source)).hits
-            return await client.search(http, query, limit=limit_per_source)
-        except (httpx.HTTPError, ValueError, OSError) as e:
-            print(
-                f"  ! source {name} failed: "
-                f"{type(e).__name__}: {str(e)[:80]}",
-            )
-            return []
+    stats: dict[str, int | str] = {}
 
     async with httpx.AsyncClient(
         timeout=timeout,
@@ -321,14 +332,25 @@ async def discover(
             if name == "unpaywall":
                 continue
             client, _, _ = registry[name]
-            tasks.append(_safe_search(name, client))
+            tasks.append(_search_source(
+                http, client, name, topic_keywords, limit_per_source, stats,
+            ))
         results = list(await asyncio.gather(
             *tasks, return_exceptions=False,
         ))
         if "unpaywall" in enabled_sources and "unpaywall" in registry:
             doi_query = _doi_lookup_query(results, limit_per_source)
             if doi_query:
-                results.append(await _safe_search("unpaywall", registry["unpaywall"][0], doi_query))
+                results.append(await _search_source(
+                    http, registry["unpaywall"][0], "unpaywall", doi_query,
+                    limit_per_source, stats,
+                ))
 
     # Flatten + dedupe via shared helper (Slice 6 step 4 refactor).
-    return _merge_and_dedupe(results, stats={})
+    out = _merge_and_dedupe(results, stats)
+    stats["aggregated_total"] = len(out)
+    stats["provider_failures"] = sum(
+        value != "ok" for key, value in stats.items()
+        if key.startswith("status_")
+    )
+    return (out, stats) if return_stats else out

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import html
 import re
+from contextvars import ContextVar
 from dataclasses import dataclass
 from typing import Any, Protocol
 
@@ -18,6 +19,31 @@ class SourceResult:
     hits: list[RawHit]
     status: SourceStatus
     error: str = ""
+
+
+class SourceProviderError(RuntimeError):
+    """Typed provider failure; never confused with a valid empty result."""
+
+    def __init__(self, status: SourceStatus, detail: str) -> None:
+        super().__init__(detail)
+        self.status = status
+
+
+_PROVIDER_FAILURE: ContextVar[tuple[SourceStatus, str] | None] = ContextVar(
+    "source_provider_failure", default=None,
+)
+
+
+def reset_source_provider_status() -> None:
+    _PROVIDER_FAILURE.set(None)
+
+
+def record_source_provider_failure(status: SourceStatus, detail: str) -> None:
+    _PROVIDER_FAILURE.set((status, detail))
+
+
+def source_provider_status() -> tuple[SourceStatus, str] | None:
+    return _PROVIDER_FAILURE.get()
 
 USER_AGENT = "research-agent/1.0 (+https://research-agent.domlynch.com)"
 
@@ -35,21 +61,41 @@ async def safe_get_json(
     headers: dict[str, str] | None = None,
     timeout: float = _DEFAULT_TIMEOUT,
 ) -> dict[str, Any] | None:
-    """GET + parse JSON, fail-soft on transport/status/parse failure."""
+    """GET + parse JSON; record provider failures and preserve fail-soft IO."""
     try:
         response = await client.get(
             url, params=params, headers=headers, timeout=timeout,
         )
-    except httpx.HTTPError:
+    except httpx.HTTPError as exc:
+        record_source_provider_failure(
+            "transport_error", f"{type(exc).__name__}: {exc}",
+        )
         return None
-    if response.status_code in (401, 403, 429):
+    if response.status_code in (401, 403):
+        record_source_provider_failure("auth_failed", f"HTTP {response.status_code}")
         return None
-    if response.status_code >= 500 or response.status_code != 200:
+    if response.status_code == 429:
+        record_source_provider_failure("rate_limited", "HTTP 429")
+        return None
+    if response.status_code >= 500:
+        record_source_provider_failure("server_error", f"HTTP {response.status_code}")
+        return None
+    if response.status_code != 200:
+        record_source_provider_failure("http_error", f"HTTP {response.status_code}")
         return None
     try:
-        return response.json()
-    except ValueError:
+        data = response.json()
+    except ValueError as exc:
+        record_source_provider_failure(
+            "bad_json", f"{type(exc).__name__}: {exc}",
+        )
         return None
+    if not isinstance(data, dict):
+        record_source_provider_failure(
+            "bad_shape", f"JSON root is {type(data).__name__}, not object",
+        )
+        return None
+    return data
 
 
 async def safe_get_text(
@@ -60,18 +106,32 @@ async def safe_get_text(
     headers: dict[str, str] | None = None,
     timeout: float = _DEFAULT_TIMEOUT,
 ) -> str | None:
-    """GET raw text body, fail-soft for XML/Atom adapters."""
+    """GET raw text body; record provider failures and preserve fail-soft IO."""
     try:
         response = await client.get(
             url, params=params, headers=headers, timeout=timeout,
         )
-    except httpx.HTTPError:
+    except httpx.HTTPError as exc:
+        record_source_provider_failure(
+            "transport_error", f"{type(exc).__name__}: {exc}",
+        )
         return None
-    if response.status_code in (401, 403, 429):
+    if response.status_code in (401, 403):
+        record_source_provider_failure("auth_failed", f"HTTP {response.status_code}")
         return None
-    if response.status_code >= 500 or response.status_code != 200:
+    if response.status_code == 429:
+        record_source_provider_failure("rate_limited", "HTTP 429")
         return None
-    return response.text or None
+    if response.status_code >= 500:
+        record_source_provider_failure("server_error", f"HTTP {response.status_code}")
+        return None
+    if response.status_code != 200:
+        record_source_provider_failure("http_error", f"HTTP {response.status_code}")
+        return None
+    if not response.text:
+        record_source_provider_failure("empty_body", "HTTP 200 empty body")
+        return None
+    return response.text
 
 
 # Inline formatting tags — '<sup>13</sup>C' should become '13C', not '13 C'.

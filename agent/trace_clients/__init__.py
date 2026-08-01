@@ -58,8 +58,17 @@ __all__ = [
 
 
 def _backend() -> str:
-    """Return the active TRACE_BACKEND. Default `fixture`."""
-    return os.environ.get("TRACE_BACKEND", "fixture").strip().lower()
+    """Return the explicitly configured backend; fixtures are test-only."""
+    backend = os.environ.get("TRACE_BACKEND", "").strip().lower()
+    if not backend:
+        raise TraceBackendError(
+            "TRACE_BACKEND must be explicitly set to 'http' or 'fixture'",
+        )
+    if backend == "fixture" and os.environ.get("TRACE_ALLOW_FIXTURES") != "1":
+        raise TraceBackendError(
+            "TRACE_BACKEND='fixture' requires TRACE_ALLOW_FIXTURES=1",
+        )
+    return backend
 
 
 def _unimplemented(backend: str, kind: str) -> TraceBackendError:
@@ -70,7 +79,7 @@ def _unimplemented(backend: str, kind: str) -> TraceBackendError:
 
 
 def get_trial_registry_client() -> TrialRegistryClient:
-    """Return the active TrialRegistryClient. Defaults to fixture."""
+    """Return the explicitly selected TrialRegistryClient."""
     backend = _backend()
     if backend == "fixture":
         return FixtureTrialRegistryClient()

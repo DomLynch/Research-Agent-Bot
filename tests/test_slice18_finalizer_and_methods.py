@@ -21,6 +21,8 @@ import importlib
 import json
 from pathlib import Path
 
+import pytest
+
 from agent.journal_finalizer import (  # type: ignore[import-not-found]
     _lowercase_first_letter,
     _phase_c_terminology,
@@ -77,9 +79,9 @@ def test_accountability_text_legacy_cites_human_signoff() -> None:
     assert "AI assistance does not transfer authorship" in text
 
 
-def test_accountability_text_unknown_token_falls_back_to_researka() -> None:
-    text = _accountability_text("nonsense_value")
-    assert "researka_agent_certified" in text
+def test_accountability_text_unknown_token_fails_closed() -> None:
+    with pytest.raises(ValueError, match="unknown accountability model"):
+        _accountability_text("nonsense_value")
 
 
 def test_methods_pack_h3_markers_no_longer_say_human_accountability() -> None:
@@ -305,7 +307,10 @@ def _make_run(tmp_path: Path, *, surface_passed: bool,
     """Set up a minimal stale-sidecar run dir for Phase G tests."""
     run = tmp_path / "run"
     run.mkdir()
-    (run / "full_paper.md").write_text("# Stub\n")
+    paper = "# Stub\n\n## References\n\n- Stub 2026.\n"
+    (run / "full_paper.md").write_text(paper)
+    (run / "submission_package").mkdir()
+    (run / "submission_package" / "final_manuscript.md").write_text(paper)
     (run / "manifest.json").write_text(json.dumps({
         "accountability_model": accountability_model,
     }))
@@ -337,7 +342,9 @@ def _make_run(tmp_path: Path, *, surface_passed: bool,
         ],
     }))
     # Spine artifacts so researka_check passes when needed
-    (run / "citation_registry.json").write_text("{}")
+    (run / "citation_registry.json").write_text(json.dumps({
+        "stub": {"body_citation": "Stub 2026"},
+    }))
     if artifact_consistency:
         (run / "artifact_consistency.json").write_text(json.dumps({
             "passed": True,
@@ -528,8 +535,12 @@ def test_phase_g_writes_consistency_before_readiness_contract(
     item_13 = next(i for i in gate["journal_readiness_contract"] if i["id"] == 13)
 
     assert (run / "artifact_consistency.json").is_file()
+    assert (run / "submission_package" / "final_manuscript.md").read_text() == (
+        run / "full_paper.md"
+    ).read_text()
     assert item_13["name"] == "accountability"
     assert item_13["status"] == "pass"
+    assert "refresh_submission_manuscript_post_finalizer" in [e.rule for e in log]
     assert "refresh_artifact_consistency_post_finalizer" in [e.rule for e in log]
 
 
@@ -600,10 +611,21 @@ def test_phase_g_rebuilds_readiness_contract_for_legacy(
         accountability_model="legacy_journal_submission",
         old_contract_name="accountability",  # stale researka shape
     )
-    # legacy needs human_signoff.json ready
-    (run / "human_signoff.json").write_text(json.dumps({
-        "ready_to_submit": True,
-    }))
+    # Stabilize before signing; changing signed content must invalidate signoff.
+    _phase_g_refresh_sidecars(run)
+    from agent.human_signoff import HumanSignoff, write as write_human_signoff
+    write_human_signoff(run, HumanSignoff(
+        author="Test Author",
+        reviewed=True,
+        evidence_claims_reviewed=True,
+        conflicts_declared=True,
+        ready_to_submit=True,
+        signature="Test Author",
+    ))
+    gate = json.loads((run / "pre_submit_gate.json").read_text())
+    item_13 = next(i for i in gate["journal_readiness_contract"] if i["id"] == 13)
+    item_13.update({"name": "accountability", "status": "not_ready", "audit": "stale"})
+    (run / "pre_submit_gate.json").write_text(json.dumps(gate))
     _phase_g_refresh_sidecars(run)
     gate = json.loads((run / "pre_submit_gate.json").read_text())
     item_13 = next(

@@ -6,6 +6,8 @@ from pathlib import Path
 from types import SimpleNamespace
 from typing import Any, cast
 
+import pytest
+
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
@@ -715,7 +717,7 @@ def test_restore_required_section_body_does_not_reintroduce_unsafe_source() -> N
     assert orch._word_count(match.group(1)) >= 400
 
 
-def test_restore_required_section_body_compiles_safe_fallback() -> None:
+def test_restore_required_section_body_does_not_pad_short_conclusion() -> None:
     paper = "## Conclusion\n\nToo short.\n"
     sections = (
         SynthesisSection(
@@ -727,13 +729,10 @@ def test_restore_required_section_body_compiles_safe_fallback() -> None:
     out = orch._restore_rendered_section_contract(paper, sections)
     match = orch._rendered_section_match(out, "## Conclusion")
     assert match is not None
-    assert orch._word_count(match.group(1)) >= 250
-    assert orch._word_count(match.group(1).split("\n\n", 1)[0]) >= 250
-    assert "Too short." not in out
-    assert "compiled from" not in out
-    assert "compiler" not in out
-    assert "final interpretation is deliberately tiered" in out
-    assert "receipt-bound synthesis" not in out
+    assert match.group(1).strip() == "Too short."
+    assert orch._insufficient_evidence_owned_section_depth(
+        out, "thin_corpus_brief",
+    ) == ("Results=0/200", "Conclusion=2/80")
 
 
 def test_restore_public_surface_floors_without_typed_sections() -> None:
@@ -801,35 +800,15 @@ def test_restore_public_surface_floors_respects_thin_review_type() -> None:
     assert "## Discussion" not in out
 
 
-def test_cross_domain_backstop_scopes_existing_prose_and_humanizes_thesis(
-    monkeypatch,
-) -> None:
-    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
-
-    monkeypatch.setattr(orch, "_ACTIVE_TOPIC", "urolithin_a_effects")
-    ctx: dict[str, object] = {
-        "direct_refs": "Smith 2024",
-        "mech_refs": "Jones 2023",
-        "positive_refs": "Smith 2024",
-        "null_refs": "Jones 2023",
-        "negative_refs": "Brown 2022",
-        "positive": "muscle function",
-        "null": "cardiometabolic",
-        "negative": "immune inflammation",
-        "outcome_rows": [],
-        "tension_phrase": "several endpoint-specific disagreements",
-        "thesis": "The evidence base for urolithin_a_effects is mixed.",
-    }
-    baseline = orch._compile_cross_domain_backstop("Urolithin A effects", ctx, 900)
-    duplicate = next(p for p in baseline.split("\n\n") if p.startswith("Population is"))
-    existing = f"## Results\n\n{duplicate}"
-
-    fixed = orch._compile_cross_domain_backstop(
-        "Urolithin A effects", ctx, 900, existing_text=existing,
+def test_thin_review_depth_ignores_full_only_sections() -> None:
+    paper = (
+        "## Results\n\n" + _words(200) + "\n\n"
+        "## Conclusion\n\n" + _words(80) + "\n"
     )
 
-    assert "urolithin_a_effects" not in fixed
-    assert _duplicate_paragraph_issue_messages(existing + "\n\n" + fixed) == ()
+    assert orch._insufficient_evidence_owned_section_depth(
+        paper, "thin_corpus_brief",
+    ) == ()
 
 
 def test_abstract_claim_strength_repair_runs_before_gate() -> None:
@@ -971,8 +950,10 @@ def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     assert match is not None
     body = match.group(1)
     assert "word499" not in body
-    assert "study-level summaries" in body
-    assert orch._word_count(body) >= 500
+    assert body.strip() == "Too short."
+    assert orch._insufficient_evidence_owned_section_depth(
+        out, "structured_narrative_synthesis",
+    )[0] == "Results=2/500"
 
 
 def test_restore_contract_collapses_consecutive_qei_headings() -> None:
@@ -1094,89 +1075,211 @@ def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() 
     assert "the immune and inflammation outcome class" in md
 
 
-def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -> None:
-    md = orch._compile_public_section_backstop("Results", 500)
-    body = md.split("\n\n", 1)[1]
-    paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
-    assert orch._word_count(body) >= 500
-    assert len(paragraphs) == len(set(paragraphs))
+def test_public_section_backstop_refuses_evidence_owned_sections() -> None:
+    for title, floor in (
+        ("Results", 500),
+        ("Cross-Domain Synthesis", 850),
+        ("Discussion", 800),
+        ("Conclusion", 250),
+    ):
+        assert orch._compile_public_section_backstop(title, floor) == ""
 
 
-def test_cross_domain_backstop_materially_addresses_repetition_feedback() -> None:
-    import revision_coverage  # type: ignore[import-not-found]
+def _write_required_final_artifacts(tmp_path: Path, paper: str) -> None:
+    (tmp_path / "full_paper.md").write_text(paper)
+    for name in orch._REQUIRED_FINAL_JSON_ARTIFACTS:
+        (tmp_path / name).write_text("{}")
 
-    old_manifest = orch._ACTIVE_MANIFEST
-    old_topic = orch._ACTIVE_TOPIC
-    try:
-        orch._ACTIVE_TOPIC = "intervention_outcomes"
-        orch._ACTIVE_MANIFEST = {
-            "n_receipts": 4,
-            "n_high_confidence_claims_total": 40,
-            "n_non_orthogonal_tensions": 6,
-            "thesis": "The clinical signal is conditional on endpoint and exposure.",
-            "receipts": [
-                {"directness": "direct", "effect_direction": "positive", "outcome_class": "cardiometabolic", "citation_token": "Direct Trial 2025"},
-                {"directness": "mechanistic", "effect_direction": "positive", "outcome_class": "biomarker", "citation_token": "Mechanism Study 2024"},
-                {"directness": "direct", "effect_direction": "null", "outcome_class": "longevity", "citation_token": "Null Trial 2026"},
-                {"directness": "indirect", "effect_direction": "negative", "outcome_class": "safety", "citation_token": "Safety Cohort 2025"},
-            ],
-        }
-        paper = orch._compile_public_section_backstop("Cross-Domain Synthesis", 850)
-    finally:
-        orch._ACTIVE_MANIFEST = old_manifest
-        orch._ACTIVE_TOPIC = old_topic
 
-    ask = (
-        "Rewrite the Cross-Domain Synthesis section to remove the repeated paragraph template. "
-        "Replace with a substantive, non-repetitive integration that explicitly names where mechanism "
-        "and clinical signal agree, where they diverge, and what population/endpoint/dose boundary each "
-        "divergence implies. Do not reuse the same paragraph structure more than once."
+def _full_evidence_owned_paper() -> str:
+    return (
+        "## Results\n\n" + _words(500) + "\n\n"
+        "## Cross-Domain Synthesis\n\n" + _words(850) + "\n\n"
+        "## Discussion\n\n" + _words(800) + "\n\n"
+        "## Conclusion\n\n" + _words(250) + "\n"
     )
-    assert orch._word_count(paper) >= 850
-    assert "this paragraph connects evidence tiers" not in paper.lower()
-    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
-def test_results_outcome_backstop_uses_compact_source_lines_to_avoid_surface_duplicates() -> None:
-    old_manifest = orch._ACTIVE_MANIFEST
-    try:
-        orch._ACTIVE_MANIFEST = {
-            "n_receipts": 3,
-            "n_high_confidence_claims_total": 222,
-            "n_non_orthogonal_tensions": 0,
-            "receipts": [
-                {
-                    "directness": "direct",
-                    "effect_direction": "mixed",
-                    "outcome_class": "cardiometabolic",
-                    "citation_token": "Yang 2026",
-                    "n_claims": 50,
-                },
-                {
-                    "directness": "indirect",
-                    "effect_direction": "null",
-                    "outcome_class": "deficiency_prevalence",
-                    "citation_token": "Meer 2026",
-                    "n_claims": 121,
-                },
-                {
-                    "directness": "indirect",
-                    "effect_direction": "unclear",
-                    "outcome_class": "skeletal_fracture_bone",
-                    "citation_token": "Moretti 2026",
-                    "n_claims": 51,
-                },
-            ],
-        }
-        md = orch._compile_public_section_backstop("Results", 200)
-    finally:
-        orch._ACTIVE_MANIFEST = old_manifest
+def test_final_exit_code_9_for_missing_required_artifact(tmp_path: Path) -> None:
+    started = orch.dt.datetime.now(orch.dt.timezone.utc)
 
-    from agent.journal_surface_gate import _duplicate_paragraph_issue_messages
+    code = orch._finalize_synthesis_exit(
+        tmp_path, started, "", "structured_narrative_synthesis",
+    )
 
-    assert "This outcome is interpreted within its own packet first" not in md
-    assert "Representative sources: Yang 2026." in md
-    assert _duplicate_paragraph_issue_messages(md) == ()
+    payload = json.loads((tmp_path / "benchmark_runtime.json").read_text())
+    assert code == orch.EXIT_REQUIRED_ARTIFACT_INVALID
+    assert payload["return_code"] == 9
+    assert payload["reason"] == "required_artifact_missing_or_corrupt"
+
+
+def test_final_exit_code_6_for_insufficient_evidence_depth(tmp_path: Path) -> None:
+    paper = "## Results\n\nToo short.\n\n## Conclusion\n\nToo short.\n"
+    _write_required_final_artifacts(tmp_path, paper)
+
+    code = orch._finalize_synthesis_exit(
+        tmp_path,
+        orch.dt.datetime.now(orch.dt.timezone.utc),
+        paper,
+        "thin_corpus_brief",
+    )
+
+    payload = json.loads((tmp_path / "benchmark_runtime.json").read_text())
+    assert code == orch.EXIT_EVIDENCE_INSUFFICIENT
+    assert payload["reason"] == "insufficient_evidence_owned_section_depth"
+    assert payload["details"] == ["Results=2/200", "Conclusion=2/80"]
+
+
+def test_final_exit_code_7_for_independent_local_gate_block(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    from agent import final_status
+
+    paper = _full_evidence_owned_paper()
+    _write_required_final_artifacts(tmp_path, paper)
+    blocked = SimpleNamespace(
+        submission_ready=False,
+        blocking_reasons=(
+            SimpleNamespace(stage="runtime", code="runtime_missing"),
+            SimpleNamespace(stage="audit", code="audit_check_failed"),
+        ),
+    )
+    monkeypatch.setattr(final_status, "compute_and_write", lambda _path: blocked)
+
+    code = orch._finalize_synthesis_exit(
+        tmp_path,
+        orch.dt.datetime.now(orch.dt.timezone.utc),
+        paper,
+        "structured_narrative_synthesis",
+    )
+
+    payload = json.loads((tmp_path / "benchmark_runtime.json").read_text())
+    assert code == orch.EXIT_LOCAL_GATE_BLOCKED
+    assert payload["return_code"] == 7
+    assert payload["details"] == ["audit:audit_check_failed"]
+
+
+def test_final_exit_code_8_when_status_cannot_converge(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    from agent import final_status
+
+    paper = _full_evidence_owned_paper()
+    _write_required_final_artifacts(tmp_path, paper)
+
+    def fail(_path: Path) -> None:
+        raise RuntimeError("status writer failed")
+
+    monkeypatch.setattr(final_status, "compute_and_write", fail)
+    code = orch._finalize_synthesis_exit(
+        tmp_path,
+        orch.dt.datetime.now(orch.dt.timezone.utc),
+        paper,
+        "structured_narrative_synthesis",
+    )
+
+    payload = json.loads((tmp_path / "benchmark_runtime.json").read_text())
+    assert code == orch.EXIT_FINAL_STATUS_FAILED
+    assert payload["return_code"] == 8
+    assert payload["reason"] == "final_status_convergence_failed"
+
+
+def test_final_exit_code_0_is_written_only_after_independent_readiness(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    from agent import final_status
+
+    paper = _full_evidence_owned_paper()
+    _write_required_final_artifacts(tmp_path, paper)
+    calls = 0
+
+    def converge(path: Path) -> SimpleNamespace:
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            assert not (path / "benchmark_runtime.json").exists()
+            return SimpleNamespace(
+                submission_ready=False,
+                researka_publish_ready=False,
+                blocking_reasons=(
+                    SimpleNamespace(stage="runtime", code="runtime_missing"),
+                ),
+            )
+        runtime = json.loads((path / "benchmark_runtime.json").read_text())
+        assert runtime["return_code"] == 0
+        (path / "final_status.json").write_text(
+            json.dumps({"submission_ready": False, "researka_publish_ready": True}),
+        )
+        return SimpleNamespace(
+            submission_ready=False,
+            researka_publish_ready=True,
+            blocking_reasons=(),
+        )
+
+    monkeypatch.setattr(final_status, "compute_and_write", converge)
+    code = orch._finalize_synthesis_exit(
+        tmp_path,
+        orch.dt.datetime.now(orch.dt.timezone.utc),
+        paper,
+        "structured_narrative_synthesis",
+    )
+
+    assert code == orch.EXIT_PUBLICATION_READY
+    assert calls == 2
+    assert json.loads((tmp_path / "benchmark_runtime.json").read_text())[
+        "return_code"
+    ] == 0
+
+
+@pytest.mark.parametrize(("stage", "reason_code"), [
+    ("target_journal", "target_journal_not_author_declared"),
+    ("human_signoff", "human_signoff_invalid"),
+])
+def test_final_exit_ignores_external_journal_only_blocker(
+    tmp_path: Path, monkeypatch, stage: str, reason_code: str,
+) -> None:
+    from agent import final_status
+
+    paper = _full_evidence_owned_paper()
+    _write_required_final_artifacts(tmp_path, paper)
+
+    def converge(path: Path) -> SimpleNamespace:
+        runtime_ready = (path / "benchmark_runtime.json").is_file()
+        (path / "final_status.json").write_text(json.dumps({
+            "researka_publish_ready": runtime_ready,
+            "journal_submission_ready": False,
+            "submission_ready": False,
+        }))
+        return SimpleNamespace(
+            researka_publish_ready=runtime_ready,
+            submission_ready=False,
+            blocking_reasons=(SimpleNamespace(
+                stage=stage, code=reason_code,
+            ),),
+        )
+
+    monkeypatch.setattr(final_status, "compute_and_write", converge)
+    assert orch._finalize_synthesis_exit(
+        tmp_path, orch.dt.datetime.now(orch.dt.timezone.utc), paper,
+        "structured_narrative_synthesis",
+    ) == orch.EXIT_PUBLICATION_READY
+
+
+def test_main_returns_124_on_timeout(tmp_path: Path, monkeypatch) -> None:
+    def timeout(coro: Any) -> None:
+        coro.close()
+        raise orch.httpx.ReadTimeout("deadline")
+
+    monkeypatch.setattr(orch.asyncio, "run", timeout)
+    out_dir = tmp_path / "timed-out"
+
+    code = orch.main([
+        "--topic", "metformin", "--out-dir", str(out_dir),
+    ])
+
+    payload = json.loads((out_dir / "benchmark_runtime.json").read_text())
+    assert code == orch.EXIT_TIMEOUT
+    assert payload["return_code"] == 124
 
 
 def test_section_backstop_rows_merge_alias_outcome_labels() -> None:

@@ -25,10 +25,11 @@ def _accepted(
     *,
     outcome_class: OutcomeClass = "muscle_function",
     p_values: tuple[str, ...] = (),
+    thesis_text: str | None = None,
 ) -> ReceiptSummary:
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
-        thesis_text=f"thesis for {rid}",
+        thesis_text=thesis_text or f"thesis for {rid}",
         spar_verdict="accept_clean",
         n_claims=1, n_failed_traces=0, canonical_trial_id=None,
         evidence_tier="A1", directness="direct",
@@ -102,7 +103,7 @@ def test_scoped_repairs_receipt_id_with_one_char_typo() -> None:
     assert "cfab-01`" not in body
 
 
-def test_scoped_accepts_prose_topic_alias_for_underscore_topic() -> None:
+def test_scoped_requires_anchor_for_prose_topic_alias() -> None:
     """Topic ids are file-safe, but manuscripts use prose labels.
     `intermittent_fasting` must validate against `intermittent fasting`.
     """
@@ -117,7 +118,49 @@ def test_scoped_accepts_prose_topic_alias_for_underscore_topic() -> None:
         parsed, name="discussion", heading="## Discussion",
         topic="intermittent_fasting", accepted=[_accepted("r1")],
     )
+    assert section is None
+
+
+def test_scoped_accepts_anchored_prose_topic_alias() -> None:
+    parsed = {"paragraphs": [{
+        "text": (
+            "Intermittent fasting may improve cardiometabolic outcomes, "
+            "but intermittent fasting remains context-dependent."
+        ),
+        "receipt_ids": ["r1"],
+    }]}
+    section = build_scoped_from_parsed(
+        parsed, name="discussion", heading="## Discussion",
+        topic="intermittent_fasting", accepted=[_accepted("r1")],
+    )
     assert section is not None
+
+
+def test_scoped_numeric_forms_must_exist_in_anchored_corpus() -> None:
+    numeric_text = (
+        "The trial enrolled n = 120 at age 65, used 10 mg for 12 weeks, "
+        "and reported mean 4.2."
+    )
+    accepted = [_accepted("r1", thesis_text=numeric_text)]
+    parsed = {"paragraphs": [{
+        "text": (
+            "Metformin may remain uncertain after n = 120 participants at age 65 "
+            "used 10 mg for 12 weeks and metformin produced mean 4.2."
+        ),
+        "receipt_ids": ["r1"],
+    }]}
+    assert build_scoped_from_parsed(
+        parsed, name="discussion", heading="## Discussion",
+        topic="metformin", accepted=accepted,
+    ) is not None
+
+    parsed["paragraphs"][0]["text"] = (
+        "Metformin may remain uncertain when metformin uses 20 mg for 12 weeks."
+    )
+    assert build_scoped_from_parsed(
+        parsed, name="discussion", heading="## Discussion",
+        topic="metformin", accepted=accepted,
+    ) is None
 
 
 def test_anchored_drops_fabricated_receipt_id_with_no_close_match() -> None:

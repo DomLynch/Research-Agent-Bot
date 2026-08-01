@@ -220,12 +220,27 @@ def test_trace_nct_exists_passes_published_results_no_results_with_pmid(
         role="published_results",
         nct="NCT04264897",   # registry says has_results=False
         pmid="12345678",     # but the paper has been peer-reviewed
+        abstract="Published results for NCT04264897.",
     )
     traces = list(trace_nct_exists(claim, item, registry))
     assert len(traces) == 1
     assert traces[0].passed is True, traces[0].detail
     assert "PMID 12345678" in traces[0].detail
-    assert "registry lags" in traces[0].detail
+    assert "lagging registry" in traces[0].detail
+
+
+def test_trace_nct_exists_rejects_unbound_pmid(
+    registry: FixtureTrialRegistryClient,
+) -> None:
+    item = _item(
+        role="published_results",
+        nct="NCT04264897",
+        pmid="12345678",
+        abstract="Published results for a different trial.",
+    )
+    traces = list(trace_nct_exists(_claim(), item, registry))
+    assert len(traces) == 1 and traces[0].passed is False
+    assert "no PMID-to-NCT04264897 abstract binding" in traces[0].detail
 
 
 def test_trace_nct_exists_still_fails_published_results_no_results_no_pmid(
@@ -647,6 +662,18 @@ def test_trace_alias_match_skips_canonical_trial_names(
                 f"canonical trial token {trial_name!r} false-flagged as "
                 f"drug drift: {t.detail!r}"
             )
+
+
+def test_trace_alias_match_binds_lowercase_known_alias_to_source(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    claim = _claim(text="metformin improved the endpoint.")
+    item = _item(abstract="Placebo improved the endpoint.")
+    traces = list(trace_alias_match(claim, metformin_pack, drug_client, item))
+    alias = [t for t in traces if "known topic alias 'metformin'" in t.detail]
+    assert len(alias) == 1 and alias[0].passed is False
+    assert "ABSENT from source" in alias[0].detail
 
 
 def test_trace_alias_match_skips_generic_biology_terms(

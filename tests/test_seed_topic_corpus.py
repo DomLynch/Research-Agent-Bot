@@ -2,10 +2,13 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any, cast
+
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import seed_topic_corpus as seed  # type: ignore[import-not-found]  # noqa: E402
@@ -194,3 +197,39 @@ def test_docling_fallback_can_replace_abstract_fallback(tmp_path, monkeypatch):
 
     monkeypatch.setattr(seed._optional_adapters, "write_docling_paper_sections", fake_docling)
     assert seed._write_abstract_fallback(hit, tmp_path, reason="fulltext_unavailable") == "PMID123_closed_paper_with_source_pdf"
+
+
+def test_child_runner_uses_current_interpreter_and_timeout(monkeypatch) -> None:
+    seen: dict[str, Any] = {}
+
+    def fake_run(command, **kwargs):
+        seen["command"] = command
+        seen.update(kwargs)
+
+    monkeypatch.setenv("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", "17")
+    monkeypatch.setattr(seed.subprocess, "run", fake_run)
+    seed._run_child("quant_claim_extract.py", "input.json")
+
+    assert seen["command"][0] == sys.executable
+    assert seen["timeout"] == 17.0
+    assert seen["check"] is True
+
+
+def test_child_failure_propagates(monkeypatch) -> None:
+    def fail(*_args, **_kwargs):
+        raise subprocess.CalledProcessError(7, ["child"])
+
+    monkeypatch.setattr(seed.subprocess, "run", fail)
+    with pytest.raises(RuntimeError, match="exited 7"):
+        seed._run_child("fetch_oa_corpus.py")
+
+
+def test_child_artifacts_are_schema_validated(tmp_path: Path) -> None:
+    parsed = tmp_path / "PMC1_x.paper_sections.json"
+    parsed.write_text(json.dumps({"paper_id": "PMC1_x", "sections": {"results": "x"}}))
+    assert seed._validate_parsed_artifact(parsed, expected_pmcid="PMC1") == "PMC1_x"
+
+    quant = tmp_path / "PMC1_x.quant_claims.json"
+    quant.write_text(json.dumps({"paper_id": "wrong", "claims": []}))
+    with pytest.raises(RuntimeError, match="invalid quant-claim artifact"):
+        seed._validate_quant_artifact(quant, expected_paper_id="PMC1_x")

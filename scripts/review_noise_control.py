@@ -346,12 +346,19 @@ def _dedupe_duplicate_table_rows(text: str) -> tuple[str, int]:
         if min(idxs) < 0:
             out.extend(table)
             continue
+        timepoint_idx = next(
+            (j for j, c in enumerate(header) if any(
+                name in c for name in ("timepoint", "time point", "follow-up", "follow up")
+            )),
+            -1,
+        )
+        key_idxs = idxs + ([timepoint_idx] if timepoint_idx >= 0 else [])
         seen: set[tuple[str, ...]] = set()
         kept = table[:2]
         for row in table[2:]:
             cells = _cells(row)
-            key = tuple(cells[j].lower() for j in idxs if j < len(cells))
-            if len(key) == len(idxs) and key in seen:
+            key = tuple(cells[j].lower() for j in key_idxs if j < len(cells))
+            if len(key) == len(key_idxs) and key in seen:
                 removed += 1
             else:
                 seen.add(key)

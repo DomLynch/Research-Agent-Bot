@@ -3,7 +3,7 @@ from __future__ import annotations
 import dataclasses
 import json
 from pathlib import Path
-from typing import cast
+from typing import Any, cast
 
 import agent.revision_evidence as revision_evidence
 from agent.revision_evidence import (
@@ -66,6 +66,13 @@ def test_snapshot_hashes_quant_and_parsed_inputs(tmp_path: Path, monkeypatch) ->
     assert lock.mode == "snapshot"
     assert lock.errors == ()
     assert lock.citation_registry is not None
+    snapshot_manifest = source / SNAPSHOT_DIR / "manifest.json"
+    snapshot_bytes = snapshot_manifest.read_bytes()
+    snapshot_manifest.write_bytes(b"\xff")
+    assert "snapshot_manifest:UnicodeDecodeError" in load_revision_evidence(
+        source, quant_dir=quant, parsed_dir=parsed,
+    ).errors
+    snapshot_manifest.write_bytes(snapshot_bytes)
     source_manifest = json.loads((source / "manifest.json").read_text())
     assert "source_topic_mismatch" in load_revision_evidence(
         source, quant_dir=quant, parsed_dir=parsed, expected_topic="aspirin",
@@ -98,7 +105,6 @@ def test_snapshot_hashes_quant_and_parsed_inputs(tmp_path: Path, monkeypatch) ->
     assert "source_manifest_contract_drift:r1" in drifted.errors
     source_manifest["receipts"][0]["n_claims"] = 2
     (source / "manifest.json").write_text(json.dumps(source_manifest))
-    snapshot_manifest = source / SNAPSHOT_DIR / "manifest.json"
     snapshot_payload = json.loads(snapshot_manifest.read_text())
     snapshot_payload["receipt_contracts"]["r1"]["n_claims"] = 3
     snapshot_manifest.write_text(json.dumps(snapshot_payload))
@@ -156,6 +162,41 @@ def test_legacy_contract_detects_same_id_content_drift() -> None:
     assert receipt_contract_mismatches(
         [dataclasses.replace(receipt, population_summary="different population")], rows,
     ) == ["r1:population_summary"]
+
+
+def test_snapshot_allows_only_explicitly_authorized_contract_field(tmp_path: Path) -> None:
+    quant = tmp_path / "quant"
+    parsed = tmp_path / "parsed"
+    source = tmp_path / "source"
+    source.mkdir()
+
+    def _write(path: Path, value: Any) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(value))
+
+    _write(quant / "r1.quant_claims.json", {"paper_id": "r1"})
+    _write(parsed / "r1.paper_sections.json", {"paper_id": "r1"})
+    _write(source / "citation_registry.json", {"r1": {"body_citation": "Trial 2024"}})
+    manifest: dict[str, Any] = {
+        "topic": "statins", "receipts": [_contract(_receipt())],
+        "revision_evidence_snapshot": {"required": True},
+    }
+    _write(source / "manifest.json", manifest)
+    create_revision_evidence_snapshot(
+        source, quant_dir=quant, parsed_dir=parsed,
+        citation_registry=source / "citation_registry.json", receipt_ids={"r1"},
+        topic="statins",
+    )
+    manifest["receipts"][0]["effect_direction"] = "negative"
+    _write(source / "manifest.json", manifest)
+
+    assert "source_manifest_contract_drift:r1" in load_revision_evidence(
+        source, quant_dir=quant, parsed_dir=parsed, expected_topic="statins",
+    ).errors
+    assert load_revision_evidence(
+        source, quant_dir=quant, parsed_dir=parsed, expected_topic="statins",
+        authorized_contract_fields={"r1": {"effect_direction"}},
+    ).errors == ()
 
 
 def test_contract_allows_only_deterministic_animal_directness_normalization() -> None:

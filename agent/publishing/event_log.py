@@ -2,20 +2,16 @@
 from __future__ import annotations
 
 import datetime as dt
-import json
 import re
 from collections.abc import Iterable, Mapping
 from pathlib import Path
 from typing import Any
 
+from .io import AtomicJsonState, CorruptJsonState
+
 _STAGES = (
-    "discovered",
-    "prepared",
-    "synthesized",
-    "local_gate_pass",
-    "submitted",
-    "revise",
-    "accepted",
+    "discovered", "prepared", "synthesized", "local_gate_pass",
+    "submitted", "revise", "accepted",
 )
 _NON_BLOCKING = {"", "eligible", "published", "submitted_to_researka"}
 _DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -146,18 +142,6 @@ def record_daily_throughput(
     if not _DAY_KEY_RE.fullmatch(date) or not started_at:
         return
     path = ledger_dir / filename
-    try:
-        loaded = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        loaded = {}
-    data = loaded if isinstance(loaded, dict) else {}
-    days = data.get("days")
-    if not isinstance(days, dict):
-        days = {}
-    day = days.setdefault(date, {})
-    runs = day.setdefault("runs", [])
-    if not isinstance(runs, list):
-        runs = []
     run_id = f"{ledger.get('mode') or 'mixed'}:{started_at}"
     run_row = {
         "run_id": run_id,
@@ -172,27 +156,38 @@ def record_daily_throughput(
         ),
         "started_at": started_at,
     }
-    existing = next(
-        (run for run in runs if isinstance(run, dict) and run.get("run_id") == run_id),
-        None,
-    )
-    existing.update(run_row) if existing is not None else runs.append(run_row)
-    day.update({
-        "runs": runs,
-        "submitted": sum(
-            int(run.get("submitted") or 0) for run in runs if isinstance(run, dict)
-        ),
-        "published": sum(
-            int(run.get("published") or 0) for run in runs if isinstance(run, dict)
-        ),
-        "cycles": sum(isinstance(run, dict) for run in runs),
-        "latest_status": max(
-            (run for run in runs if isinstance(run, dict)),
-            key=lambda run: str(run.get("started_at") or ""),
-            default={},
-        ).get("status") or "unknown",
-        "updated_at": dt.datetime.now(dt.UTC).isoformat(),
-    })
-    data["days"] = days
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, sort_keys=True), encoding="utf-8")
+
+    def update(data: dict[str, Any]) -> None:
+        days = data.get("days")
+        if days is not None and not isinstance(days, dict):
+            raise CorruptJsonState(f"{path}: days is not an object")
+        days = days or {}
+        day = days.get(date)
+        if day is not None and not isinstance(day, dict):
+            raise CorruptJsonState(f"{path}: day {date} is not an object")
+        day = day or {}
+        runs = day.get("runs")
+        if runs is not None and not isinstance(runs, list):
+            raise CorruptJsonState(f"{path}: day {date} runs is not a list")
+        runs = runs or []
+        existing = next(
+            (run for run in runs if isinstance(run, dict) and run.get("run_id") == run_id),
+            None,
+        )
+        existing.update(run_row) if existing is not None else runs.append(run_row)
+        day.update({
+            "runs": runs,
+            "submitted": sum(int(run.get("submitted") or 0) for run in _rows(runs)),
+            "published": sum(int(run.get("published") or 0) for run in _rows(runs)),
+            "cycles": len(_rows(runs)),
+            "latest_status": max(
+                _rows(runs),
+                key=lambda run: str(run.get("started_at") or ""),
+                default={},
+            ).get("status") or "unknown",
+            "updated_at": dt.datetime.now(dt.UTC).isoformat(),
+        })
+        days[date] = day
+        data["days"] = days
+
+    AtomicJsonState[dict[str, Any]](path, dict).update(update, missing_factory=dict)

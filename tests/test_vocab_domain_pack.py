@@ -175,6 +175,25 @@ def test_topic_pack_endpoint_polarity_extends_auto_vocab() -> None:
     assert qe.ENDPOINT_POLARITY["cognition"] == +1
 
 
+@pytest.mark.parametrize(
+    ("domain", "outcome_term", "intervention_term"),
+    [
+        ("aspirin_geroprotection", "inflammation", "low-dose aspirin"),
+        ("low_dose_naltrexone_inflammation", "immune modulation", "LDN"),
+        ("vitamin_d_healthspan", "frailty", "cholecalciferol"),
+        ("vo2max_longevity", "mortality", "VO2 max"),
+    ],
+)
+def test_outcome_axis_terms_do_not_bind_as_active_arms(
+    domain: str, outcome_term: str, intervention_term: str,
+) -> None:
+    os.environ["TOPIC_DOMAIN"] = domain
+    qe = _reload_quant_endpoints()
+
+    assert qe.match_arm(f"{outcome_term} improved significantly.") == ""
+    assert qe.match_arm(f"The {intervention_term} group improved.")
+
+
 # Reviewer-fix MEDIUM 2 regression: ARM_VOCAB is per-domain.
 def test_rapamycin_arm_binds_to_active_drug_synonym() -> None:
     """Pre-fix the rapamycin pack inherited 'metformin'/'placebo' as

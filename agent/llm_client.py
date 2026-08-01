@@ -1,30 +1,4 @@
-"""LLM client — single dependency surface for every LLM call.
-
-Hard rule: LLM PROPOSES. CODE DISPOSES. This module proposes only — every
-caller (fact extractor in 3.2c, judge + writer in Day 4) must validate the
-returned dict against schema invariants before trusting it.
-
-Three things this module does:
-  1. Generic OpenAI-compatible chat-completion calls via httpx — no provider
-     SDKs (openai, anthropic, google) so the runtime stays single-dep.
-  2. Robust JSON extraction from prose / fence / <think>-wrapped output that
-     real models actually emit, even with `response_format=json_object`.
-  3. Fallback chains: try `CallSpec`s in order; on transport / parse failure,
-     fall through to the next spec. If a spec has no api_key configured,
-     skip it (don't fail) — partial-config environments still work.
-     Only when every spec fails does `LLMError` fire.
-
-Cost ledger is opt-in: pass a `CostLedger` to `chat_json()` and the response
-is appended for later serialization to `cost_log.json`. Without one, the
-per-call cost lives on the `LLMResponse` but no aggregation happens.
-
-Async-only. Sync callers wrap with `asyncio.run`. Fact-extraction in Day
-3.2c will run N abstract calls concurrently; that concurrency gain is
-the whole reason this layer is async.
-
-Day 3.2b ships `chat_json` + `CostLedger` + `build_extract_chain`. Day 4
-adds `build_judge_chain` and `build_write_chain` when SPAR / writer land.
-"""
+"""Provide async LLM calls, JSON parsing, fallback chains, and cost logging."""
 from __future__ import annotations
 
 import asyncio
@@ -238,13 +212,16 @@ def _anthropic_messages(
 def _anthropic_text(body: Mapping[str, Any]) -> str:
     blocks = body.get("content")
     if not isinstance(blocks, list):
-        return "{}"
+        raise ValueError("Anthropic response has no content block list")
     text_parts = [
         block.get("text", "")
         for block in blocks
         if isinstance(block, dict) and block.get("type") == "text"
     ]
-    return "\n".join(part for part in text_parts if isinstance(part, str)) or "{}"
+    text = "\n".join(part for part in text_parts if isinstance(part, str)).strip()
+    if not text:
+        raise ValueError("Anthropic response has no text content")
+    return text
 
 
 def _err_summary(exc: BaseException) -> str:
@@ -271,7 +248,10 @@ def _is_retryable_error(exc: BaseException) -> bool:
     # Some OpenRouter models occasionally return non-JSON despite
     # response_format=json_object. One retry often recovers; schema checks
     # still own correctness after parsing.
-    return isinstance(exc, (ValueError, KeyError, json.JSONDecodeError))
+    return isinstance(
+        exc,
+        (ValueError, KeyError, TypeError, IndexError, json.JSONDecodeError),
+    )
 
 
 async def _call_one(
@@ -304,9 +284,12 @@ async def _call_one(
         )
         response.raise_for_status()
         body = response.json()
+        if not isinstance(body, Mapping):
+            raise ValueError("Anthropic response body is not an object")
         text = _anthropic_text(body)
         parsed = extract_json(text)
-        usage = body.get("usage", {}) or {}
+        raw_usage = body.get("usage")
+        usage = raw_usage if isinstance(raw_usage, Mapping) else {}
         in_tok = int(usage.get("input_tokens", 0) or 0)
         out_tok = int(usage.get("output_tokens", 0) or 0)
         return LLMResponse(
@@ -339,10 +322,21 @@ async def _call_one(
     )
     response.raise_for_status()
     body = response.json()
-    choice = body["choices"][0]["message"]
-    text = choice.get("content") or choice.get("reasoning_content") or "{}"
+    if not isinstance(body, Mapping):
+        raise ValueError("chat response body is not an object")
+    choices = body.get("choices")
+    if not isinstance(choices, list) or not choices:
+        raise ValueError("chat response has no choices")
+    first = choices[0]
+    if not isinstance(first, Mapping) or not isinstance(first.get("message"), Mapping):
+        raise ValueError("chat response has no message object")
+    choice = first["message"]
+    text = choice.get("content") or choice.get("reasoning_content")
+    if not isinstance(text, str) or not text.strip():
+        raise ValueError("chat response has no assistant text")
     parsed = extract_json(text)
-    usage = body.get("usage", {}) or {}
+    raw_usage = body.get("usage")
+    usage = raw_usage if isinstance(raw_usage, Mapping) else {}
     in_tok = int(usage.get("prompt_tokens", 0) or 0)
     out_tok = int(usage.get("completion_tokens", 0) or 0)
     return LLMResponse(
@@ -417,7 +411,14 @@ async def chat_json(
                         max_tokens=max_tokens,
                         seed=seed,
                     )
-                except (_HTTPX_HTTP_ERROR, ValueError, KeyError, LLMError) as exc:
+                except (
+                    _HTTPX_HTTP_ERROR,
+                    ValueError,
+                    KeyError,
+                    TypeError,
+                    IndexError,
+                    LLMError,
+                ) as exc:
                     retryable = _is_retryable_error(exc)
                     summary = _err_summary(exc)
                     errors.append((spec.model, summary))
@@ -504,17 +505,18 @@ def _model_family(model: str) -> str:
 
 
 def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """SPAR judge chain: Gemma 4 (primary) → Mistral (fallback).
+    """Build the SPAR judge chain from independent model families only.
 
     Trust-spine rule — *judge != writer*: a model cannot independently grade
-    its own output, so the judge chain must never contain the writer/extractor
-    family (``settings.minimax_model``). Any writer-family spec is dropped —
-    including a misconfigured primary — so a provider outage can never silently
-    route judging back to the writer. Non-writer specs with empty api_keys are
-    kept (``chat_json`` skips them at call time). Raises if no non-writer judge
+    its own output, so the judge chain excludes both configured writer families
+    (primary and fallback). Non-writer specs with empty api_keys are kept
+    (``chat_json`` skips them at call time). Raises if no independent judge
     model remains.
     """
-    writer_family = _model_family(settings.minimax_model)
+    writer_families = {
+        _model_family(settings.minimax_model),
+        _model_family(settings.fallback_model),
+    }
     candidates = (
         CallSpec(
             base_url=settings.openrouter_base_url,
@@ -538,11 +540,13 @@ def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
-    chain = tuple(c for c in candidates if _model_family(c.model) != writer_family)
+    chain = tuple(
+        c for c in candidates if _model_family(c.model) not in writer_families
+    )
     if not chain:
         raise ValueError(
-            "build_judge_chain: no judge model outside the writer family "
-            f"{writer_family!r}; set JUDGE_MODEL/FALLBACK_MODEL to a different "
-            "family than the writer (never let a model grade its own output)."
+            "build_judge_chain: no judge model outside writer families "
+            f"{sorted(writer_families)!r}; set JUDGE_MODEL to a different "
+            "family than every writer fallback."
         )
     return chain

@@ -281,18 +281,21 @@ def _build_reviewer_prompt(
     return system, user
 
 
-# Per-1M-token pricing (input, output) in USD. Falls back to (0, 0) for
-# anything not listed so we record cost as zero rather than crash. The
-# user has explicitly said cost is not a concern; this exists for
-# transparency / retroactive audit, not budgeting.
+# Per-1M-token pricing (input, output) in USD. Unpriced models are rejected
+# before any provider call so cost reporting cannot silently become zero.
 _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
     "x-ai/grok-4.3": (3.00, 15.00),
     "google/gemini-3.1-flash-lite:exacto": (0.25, 1.50),
     "mistralai/mistral-small-2603": (0.15, 0.60),
 }
 
-_PRIMARY_ATTEMPTS = int(os.environ.get("FINAL_LAYER_PRIMARY_ATTEMPTS", "3"))
-_FALLBACK_ATTEMPTS = int(os.environ.get("FINAL_LAYER_FALLBACK_ATTEMPTS", "1"))
+_PRIMARY_ATTEMPTS = 3
+_FALLBACK_ATTEMPTS = 1
+_MAX_OUTPUT_TOKENS = 12_000
+_DEFAULT_REVIEWER_MODEL = "google/gemini-3.1-flash-lite:exacto"
+_DEFAULT_FALLBACK_MODEL = "mistralai/mistral-small-2603"
+_DEFAULT_BASE_URL = "https://openrouter.ai/api/v1"
+_DEFAULT_MAX_COST_USD = 1.0
 _RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 
 
@@ -314,7 +317,7 @@ async def _call_one(
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ],
-        "max_tokens": 12000,
+        "max_tokens": _MAX_OUTPUT_TOKENS,
         "response_format": {"type": "json_object"},
     }
     if model.startswith("google/gemini-3.1"):
@@ -343,14 +346,77 @@ async def _call_one(
 
 
 def _estimate_cost(model: str, in_tok: int, out_tok: int) -> float:
-    in_per, out_per = _PRICING_PER_MTOK.get(model, (0.0, 0.0))
+    try:
+        in_per, out_per = _PRICING_PER_MTOK[model]
+    except KeyError as exc:
+        raise ValueError(f"no pricing configured for reviewer model {model!r}") from exc
     return (in_tok / 1_000_000.0) * in_per + (out_tok / 1_000_000.0) * out_per
+
+
+def _positive_int_setting(name: str, default: int) -> int:
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return default
+    try:
+        value = int(raw)
+    except ValueError as exc:
+        raise RuntimeError(f"{name} must be a positive integer") from exc
+    if value < 1:
+        raise RuntimeError(f"{name} must be a positive integer")
+    return value
 
 
 def _attempt_count(model: str, primary_model: str) -> int:
     if model == primary_model:
-        return max(1, _PRIMARY_ATTEMPTS)
-    return max(1, _FALLBACK_ATTEMPTS)
+        return _positive_int_setting("FINAL_LAYER_PRIMARY_ATTEMPTS", _PRIMARY_ATTEMPTS)
+    return _positive_int_setting("FINAL_LAYER_FALLBACK_ATTEMPTS", _FALLBACK_ATTEMPTS)
+
+
+def _configured_value(explicit: str | None, env_name: str, default: str) -> str:
+    return (explicit or os.environ.get(env_name, "").strip() or default).strip()
+
+
+def _review_cost_cap(explicit: float | None) -> float | None:
+    raw = str(explicit) if explicit is not None else os.environ.get(
+        "FINAL_LAYER_MAX_COST_USD", "",
+    ).strip()
+    if not raw:
+        return _DEFAULT_MAX_COST_USD
+    try:
+        value = float(raw)
+    except ValueError as exc:
+        raise RuntimeError("FINAL_LAYER_MAX_COST_USD must be a non-negative number") from exc
+    if value < 0:
+        raise RuntimeError("FINAL_LAYER_MAX_COST_USD must be a non-negative number")
+    return value
+
+
+def _request_cost_ceiling(model: str, system: str, user: str) -> float:
+    # UTF-8 bytes are a conservative tokenizer-independent input-token ceiling.
+    return _estimate_cost(
+        model, len((system + user).encode("utf-8")), _MAX_OUTPUT_TOKENS,
+    )
+
+
+def _enforce_cost_cap(
+    system: str, user: str, primary_model: str, fallback_model: str,
+    escalation_model: str | None, max_cost_usd: float | None,
+) -> None:
+    cap = _review_cost_cap(max_cost_usd)
+    models = (
+        [(primary_model, _attempt_count(primary_model, primary_model))]
+        + [(fallback_model, _attempt_count(fallback_model, primary_model))]
+        + ([(escalation_model, 1)] if escalation_model else [])
+    )
+    ceiling = sum(
+        _request_cost_ceiling(model, system, user) * attempts
+        for model, attempts in models
+    )
+    if cap is not None and ceiling > cap:
+        raise RuntimeError(
+            f"review cost ceiling ${ceiling:.4f} exceeds "
+            f"FINAL_LAYER_MAX_COST_USD=${cap:.4f}"
+        )
 
 
 def _err_summary(exc: BaseException) -> str:
@@ -387,9 +453,11 @@ def _review_call_timeout_sec() -> float:
     raw = os.environ.get("FINAL_LAYER_REVIEW_TIMEOUT_SEC", "120")
     try:
         value = float(raw)
-    except ValueError:
-        return 120.0
-    return max(5.0, value)
+    except ValueError as exc:
+        raise RuntimeError("FINAL_LAYER_REVIEW_TIMEOUT_SEC must be positive") from exc
+    if value <= 0:
+        raise RuntimeError("FINAL_LAYER_REVIEW_TIMEOUT_SEC must be positive")
+    return value
 
 
 async def _call_one_bounded(
@@ -419,6 +487,8 @@ async def _call_with_fallback(
         TimeoutError, ValueError, KeyError, json.JSONDecodeError,
     )
     attempts: list[dict[str, Any]] = []
+    for model in (primary_model, fallback_model):
+        _estimate_cost(model, 0, 0)
     for model in (primary_model, fallback_model):
         max_attempts = _attempt_count(model, primary_model)
         for attempt in range(1, max_attempts + 1):
@@ -580,11 +650,12 @@ async def repair_flagged_patches(
     flagged: list[tuple[Any, str]],
     paper_md: str,
     *,
-    model: str = "google/gemini-3.1-flash-lite:exacto",
-    fallback_model: str = "mistralai/mistral-small-2603",
+    model: str | None = None,
+    fallback_model: str | None = None,
     api_key: str | None = None,
-    base_url: str = "https://openrouter.ai/api/v1",
+    base_url: str | None = None,
     client: Any | None = None,
+    max_cost_usd: float | None = None,
 ) -> list[TypedPatch]:
     """Fix #49: agent-to-agent repair pass. Re-prompts the reviewer with the
     rejection reasons; returns repaired TypedPatch list (or empty
@@ -598,7 +669,15 @@ async def repair_flagged_patches(
     api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
         return []  # silently skip if no key
+    model = _configured_value(model, "FINAL_LAYER_REVIEWER_MODEL", _DEFAULT_REVIEWER_MODEL)
+    fallback_model = _configured_value(
+        fallback_model, "FINAL_LAYER_FALLBACK_MODEL", _DEFAULT_FALLBACK_MODEL,
+    )
+    base_url = _configured_value(base_url, "OPENROUTER_BASE_URL", _DEFAULT_BASE_URL)
     system, user = _build_repair_prompt(flagged, paper_md)
+    _enforce_cost_cap(
+        system, user, model, fallback_model, None, max_cost_usd,
+    )
     own_client = client is None
     if own_client:
         import httpx
@@ -617,16 +696,17 @@ async def repair_flagged_patches(
 
 async def review_paper(
     paper_md: str, manifest: dict, audit: dict,
-    *, model: str = "google/gemini-3.1-flash-lite:exacto",
-    fallback_model: str = "mistralai/mistral-small-2603",
+    *, model: str | None = None,
+    fallback_model: str | None = None,
     escalation_model: str | None = None,
     api_key: str | None = None,
-    base_url: str = "https://openrouter.ai/api/v1",
+    base_url: str | None = None,
     client: Any | None = None,
     citation_registry: dict | None = None,
+    max_cost_usd: float | None = None,
 ) -> tuple[list[TypedPatch], dict, str, float]:
     """Run the final-layer review. Returns (patches, raw_response,
-    model_used, cost_usd). The configured primary runs first; Mistral
+    model_used, successful-call cost estimate). The configured primary runs first; Mistral
     Small is the fallback that only fires on primary outage or invalid
     JSON."""
     api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
@@ -634,8 +714,21 @@ async def review_paper(
         raise RuntimeError(
             "OPENROUTER_API_KEY not set; cannot run final-layer review"
         )
+    model = _configured_value(model, "FINAL_LAYER_REVIEWER_MODEL", _DEFAULT_REVIEWER_MODEL)
+    fallback_model = _configured_value(
+        fallback_model, "FINAL_LAYER_FALLBACK_MODEL", _DEFAULT_FALLBACK_MODEL,
+    )
+    base_url = _configured_value(base_url, "OPENROUTER_BASE_URL", _DEFAULT_BASE_URL)
+    escalation_model = (
+        escalation_model
+        or os.environ.get("FINAL_LAYER_LOW_PATCH_FALLBACK_MODEL", "").strip()
+        or None
+    )
     system, user = _build_reviewer_prompt(
         paper_md, manifest, audit, citation_registry=citation_registry,
+    )
+    _enforce_cost_cap(
+        system, user, model, fallback_model, escalation_model, max_cost_usd,
     )
     own_client = client is None
     if own_client:
@@ -648,14 +741,9 @@ async def review_paper(
             system, user, model, fallback_model, api_key, base_url, c,
         )
         patches = _typed_patches(raw)
-        escalation_model = (
-            escalation_model
-            or os.environ.get("FINAL_LAYER_LOW_PATCH_FALLBACK_MODEL", "").strip()
-            or None
-        )
         if escalation_model and _needs_low_patch_escalation(paper_md, patches):
             try:
-                esc_raw, in_tok, out_tok = await _call_one(
+                esc_raw, in_tok, out_tok = await _call_one_bounded(
                     system, user, escalation_model, api_key, base_url, c,
                 )
                 esc_patches = _typed_patches(esc_raw)
@@ -692,7 +780,7 @@ def _format_summary(
         return (
             f"# Final-Layer Review ({model_used})\n\n"
             f"**No patches proposed.** Paper looks clean to the LLM "
-            f"reviewer.\n\nActual cost: ${cost_usd:.4f}\n"
+            f"reviewer.\n\nEstimated successful-call cost: ${cost_usd:.4f}\n"
         )
     by_type: dict[str, int] = {}
     by_sev: dict[str, int] = {}
@@ -705,7 +793,7 @@ def _format_summary(
         f"**{len(patches)} patches proposed.**",
         f"- By type: {by_type}",
         f"- By severity: {by_sev}",
-        f"- Actual cost: ${cost_usd:.4f}",
+        f"- Estimated successful-call cost: ${cost_usd:.4f}",
         "",
         "## Patches",
         "",
@@ -727,12 +815,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("paper_md", help="full_paper.md")
     parser.add_argument(
         "--model",
-        default=os.environ.get(
-            "FINAL_LAYER_REVIEWER_MODEL",
-            "google/gemini-3.1-flash-lite:exacto",
-        ),
-        help="OpenRouter model id (default: google/gemini-3.1-flash-lite:exacto)",
+        default=None,
+        help="OpenRouter primary model id (or FINAL_LAYER_REVIEWER_MODEL)",
     )
+    parser.add_argument("--fallback-model", default=None)
+    parser.add_argument("--base-url", default=None)
+    parser.add_argument("--max-cost-usd", type=float, default=None)
     args = parser.parse_args(argv)
     paper_path = Path(args.paper_md).resolve()
     if not paper_path.exists():
@@ -750,14 +838,24 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     patches, raw, model_used, cost_usd = asyncio.run(
-        review_paper(paper, manifest, audit, model=args.model),
+        review_paper(
+            paper, manifest, audit,
+            model=args.model,
+            fallback_model=args.fallback_model,
+            base_url=args.base_url,
+            max_cost_usd=args.max_cost_usd,
+        ),
     )
     out_json = paper_path.with_suffix(".review_patches.json")
     out_md = paper_path.with_suffix(".review_summary.md")
     out_json.write_text(json.dumps({
-        "model_requested": args.model,
+        "model_requested": _configured_value(
+            args.model, "FINAL_LAYER_REVIEWER_MODEL", _DEFAULT_REVIEWER_MODEL,
+        ),
         "model_used": model_used,
         "cost_usd": cost_usd,
+        "cost_usd_estimate": cost_usd,
+        "cost_basis": "provider-reported usage for successful calls only",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "n_patches": len(patches),
         "patches": [asdict(p) for p in patches],

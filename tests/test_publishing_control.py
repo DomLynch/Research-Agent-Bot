@@ -1,12 +1,24 @@
 from __future__ import annotations
 
 import datetime as dt
+from dataclasses import replace
+from pathlib import Path
+
+import pytest
 
 from agent.publishing.candidate_prepare import (
+    candidate_binding,
     buffer_status,
     prepared_candidate_rows,
 )
-from agent.publishing.event_log import conversion_funnel
+from agent.publishing.event_log import conversion_funnel, record_daily_throughput
+from agent.publishing.io import (
+    AtomicJsonState,
+    CorruptJsonState,
+    JsonStateStatus,
+    update_json_list,
+    write_json,
+)
 from agent.publishing.policy import (
     CandidateEvidence,
     CandidateState,
@@ -15,6 +27,7 @@ from agent.publishing.policy import (
     decide_candidate,
     decision_from_status,
 )
+from agent.publishing.topic_supply import generated_pack_records
 
 
 THRESHOLDS = CandidateThresholds(
@@ -53,8 +66,10 @@ def test_candidate_policy_is_full_only_and_typed() -> None:
     )
 
     assert full.publishable is False
+    assert full.receipt_ready is True
     assert full.ready_for_synthesis is True
-    assert full.state is CandidateState.READY_FOR_SYNTHESIS
+    assert full.state is CandidateState.RECEIPT_READY
+    assert full.state.value == "receipt_ready"
     assert full.surface is PublicationSurface.RESEARCH_SYNTHESIS
     assert full.next_action == "synthesize"
     assert compact.publishable is False
@@ -139,11 +154,24 @@ def test_status_policy_separates_operational_failure_from_revision() -> None:
 def test_prepared_rows_use_the_same_candidate_policy() -> None:
     now = dt.datetime(2026, 7, 24, tzinfo=dt.UTC)
     precision = "source_topic_precision_ok:10/10"
+    bindings = {
+        topic: candidate_binding(
+            topic,
+            code_sha="a" * 40,
+            corpus_hash="b" * 64,
+            receipt_set_hash="c" * 64,
+            review_type="systematic_review",
+            thresholds=THRESHOLDS,
+        )
+        for topic in ("ready", "thin")
+    }
     report = {
         "thresholds": THRESHOLDS.as_dict(),
         "attempts": [
             {
                 "topic": "ready",
+                "state": "receipt_ready",
+                **bindings["ready"].as_dict(),
                 "attempted_at": now.isoformat(),
                 "quant_claims": 10,
                 "source_topic_precision_after": precision,
@@ -156,6 +184,8 @@ def test_prepared_rows_use_the_same_candidate_policy() -> None:
             },
             {
                 "topic": "thin",
+                "state": "receipt_ready",
+                **bindings["thin"].as_dict(),
                 "attempted_at": now.isoformat(),
                 "quant_claims": 10,
                 "source_topic_precision_after": precision,
@@ -175,10 +205,153 @@ def test_prepared_rows_use_the_same_candidate_policy() -> None:
         now=now,
         max_age_hours=24,
         precision_floor=0.5,
+        current_bindings=bindings,
     )
 
     assert set(rows) == {"ready"}
+    assert rows["ready"]["state"] == "receipt_ready"
+    assert rows["ready"]["candidate_id"] == bindings["ready"].candidate_id
     assert buffer_status(len(rows), 3) == "candidate_buffer_partial"
+    assert buffer_status(3, 3) == "candidate_buffer_receipt_ready"
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("candidate_id", "different-candidate"),
+        ("code_sha", "b" * 40),
+        ("policy_hash", "different-policy"),
+        ("corpus_hash", "d" * 64),
+        ("receipt_set_hash", "e" * 64),
+        ("review_type", "meta_analysis"),
+    ],
+)
+def test_prepared_rows_invalidate_binding_mismatches(field: str, value: str) -> None:
+    now = dt.datetime(2026, 8, 1, tzinfo=dt.UTC)
+    binding = candidate_binding(
+        "metformin",
+        code_sha="a" * 40,
+        corpus_hash="b" * 64,
+        receipt_set_hash="c" * 64,
+        review_type="systematic_review",
+        thresholds=THRESHOLDS,
+    )
+    row = {
+        "topic": "metformin",
+        "state": "receipt_ready",
+        "validated_at": now.isoformat(),
+        **binding.as_dict(),
+    }
+    rows = prepared_candidate_rows(
+        {"thresholds": THRESHOLDS.as_dict(), "ready": [row]},
+        thresholds=THRESHOLDS,
+        now=now,
+        max_age_hours=24,
+        precision_floor=0.5,
+        current_bindings={"metformin": replace(binding, **{field: value})},
+    )
+
+    assert rows == {}
+
+
+def test_prepared_rows_reject_unbound_and_non_receipt_ready_rows() -> None:
+    now = dt.datetime(2026, 8, 1, tzinfo=dt.UTC)
+    binding = candidate_binding(
+        "metformin",
+        code_sha="a" * 40,
+        corpus_hash="b" * 64,
+        receipt_set_hash="c" * 64,
+        review_type="systematic_review",
+        thresholds=THRESHOLDS,
+    )
+    unbound = {"topic": "metformin", "validated_at": now.isoformat()}
+    wrong_state = {**unbound, **binding.as_dict(), "state": "publishable"}
+
+    for row in (unbound, wrong_state):
+        assert prepared_candidate_rows(
+            {"thresholds": THRESHOLDS.as_dict(), "ready": [row]},
+            thresholds=THRESHOLDS,
+            now=now,
+            max_age_hours=24,
+            precision_floor=0.5,
+            current_bindings={"metformin": binding},
+        ) == {}
+
+
+def test_atomic_json_state_distinguishes_missing_corrupt_and_valid(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    path = tmp_path / "state.json"
+    store = AtomicJsonState[dict[str, object]](path, dict)
+    assert store.read().status is JsonStateStatus.MISSING
+
+    path.write_text("{broken", encoding="utf-8")
+    assert store.read().status is JsonStateStatus.CORRUPT
+    with pytest.raises(CorruptJsonState):
+        store.write({"fabricated": True})
+    assert path.read_text(encoding="utf-8") == "{broken"
+
+    path.unlink()
+    fsync_calls: list[int] = []
+    monkeypatch.setattr("agent.publishing.io.os.fsync", fsync_calls.append)
+    store.write({"state": "receipt_ready"})
+    result = store.read()
+    assert result.status is JsonStateStatus.VALID
+    assert result.value == {"state": "receipt_ready"}
+    assert len(fsync_calls) == 2
+    assert not list(tmp_path.glob("*.tmp"))
+
+
+def test_atomic_updates_do_not_replace_corrupt_state(tmp_path: Path) -> None:
+    path = tmp_path / "rows.json"
+    path.write_text("not-json", encoding="utf-8")
+
+    with pytest.raises(CorruptJsonState):
+        update_json_list(path, lambda rows: rows.append({"id": "new"}))
+    with pytest.raises(CorruptJsonState):
+        write_json(path, [])
+    assert path.read_text(encoding="utf-8") == "not-json"
+
+
+def test_candidate_buffer_writer_rejects_unbound_ready_rows(tmp_path: Path) -> None:
+    path = tmp_path / "candidate-buffer.json"
+    payload = {
+        "target_ready": 1,
+        "thresholds": THRESHOLDS.as_dict(),
+        "ready": [{"topic": "metformin", "state": "receipt_ready"}],
+    }
+
+    with pytest.raises(ValueError, match="unbound prepared row"):
+        write_json(path, payload)
+    assert not path.exists()
+
+
+@pytest.mark.parametrize("contents", ["{broken", '{"days": []}'])
+def test_daily_throughput_refuses_corrupt_existing_state(
+    tmp_path: Path,
+    contents: str,
+) -> None:
+    path = tmp_path / "_daily_throughput_summary.json"
+    path.write_text(contents, encoding="utf-8")
+    ledger = {
+        "date": "2026-08-01",
+        "started_at": "2026-08-01T00:00:00+00:00",
+        "status": "submitted_to_researka",
+    }
+
+    with pytest.raises(CorruptJsonState):
+        record_daily_throughput(tmp_path, ledger)
+    assert path.read_text(encoding="utf-8") == contents
+
+
+def test_generated_pack_reader_surfaces_corrupt_state(tmp_path: Path) -> None:
+    path = tmp_path / "metformin" / "latest.json"
+    path.parent.mkdir()
+    path.write_text("{broken", encoding="utf-8")
+
+    with pytest.raises(CorruptJsonState):
+        generated_pack_records(tmp_path)
 
 
 def test_conversion_funnel_counts_unique_candidates_not_retries() -> None:

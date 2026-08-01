@@ -11,7 +11,7 @@ from typing import Any
 
 import httpx
 
-from agent.sources._base import USER_AGENT, clean_text, normalize_doi
+from agent.sources._base import SourceResult, USER_AGENT, clean_text, normalize_doi
 from agent.types import RawHit
 
 DEFAULT_TIMEOUT_SECONDS = 60.0
@@ -168,17 +168,17 @@ def _parse_hit(item: dict[str, Any], query: str, receipt: dict[str, object]) -> 
 class V5FullRawClient:
     name = "v5_fullraw"
 
-    async def search(
+    async def search_result(
         self,
         client: httpx.AsyncClient,
         query: str,
         *,
         limit: int,
-    ) -> list[RawHit]:
+    ) -> SourceResult:
         url = _fullraw_url()
         token = _fullraw_token()
         if not url or not token:
-            return []
+            return SourceResult([], "not_configured", "fullraw URL/token missing")
         payload = {
             "query": clean_text(query, limit=1024),
             "limit": max(1, min(limit, 50)),
@@ -193,24 +193,44 @@ class V5FullRawClient:
         }
         try:
             response = await client.post(url, json=payload, headers=headers, timeout=_timeout_seconds())
-        except httpx.HTTPError:
-            return []
+        except httpx.HTTPError as exc:
+            return SourceResult(
+                [], "transport_error", f"{type(exc).__name__}: {exc}",
+            )
         if response.status_code != 200:
-            return []
+            status = (
+                "auth_failed" if response.status_code in (401, 403)
+                else "rate_limited" if response.status_code == 429
+                else "server_error" if response.status_code >= 500
+                else "http_error"
+            )
+            return SourceResult([], status, f"HTTP {response.status_code}")
         try:
             data = response.json()
-        except ValueError:
-            return []
+        except ValueError as exc:
+            return SourceResult([], "bad_json", f"{type(exc).__name__}: {exc}")
         results = data.get("results") if isinstance(data, dict) else None
         if not isinstance(results, list):
-            return []
+            return SourceResult([], "bad_shape", "results is not a list")
         receipt = _shard_receipt(data)
         if not _receipt_complete(receipt):
-            return []
-        return [
+            return SourceResult(
+                [], "incomplete_coverage", "fullraw shard receipt incomplete",
+            )
+        hits = [
             hit
             for item in results
             if isinstance(item, dict)
             for hit in [_parse_hit(item, query, receipt)]
             if hit
         ]
+        return SourceResult(hits, "ok")
+
+    async def search(
+        self,
+        client: httpx.AsyncClient,
+        query: str,
+        *,
+        limit: int,
+    ) -> list[RawHit]:
+        return (await self.search_result(client, query, limit=limit)).hits

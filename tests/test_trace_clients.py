@@ -189,16 +189,25 @@ def test_unknown_doi_returns_none() -> None:
 # --- Backend selectors ----------------------------------------------------
 
 
-def test_default_backend_is_fixture(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_backend_must_be_explicit(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.delenv("TRACE_BACKEND", raising=False)
+    with pytest.raises(TraceBackendError, match="explicitly set"):
+        get_trial_registry_client()
+
+
+def test_explicit_fixture_backend(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("TRACE_BACKEND", "fixture")
+    monkeypatch.setenv("TRACE_ALLOW_FIXTURES", "1")
     assert isinstance(get_trial_registry_client(), FixtureTrialRegistryClient)
     assert isinstance(get_drug_alias_client(), FixtureDrugAliasClient)
     assert isinstance(get_literature_client(), FixtureLiteratureClient)
 
 
-def test_explicit_fixture_backend(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_fixture_backend_requires_test_mode(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("TRACE_BACKEND", "fixture")
-    assert isinstance(get_trial_registry_client(), FixtureTrialRegistryClient)
+    monkeypatch.delenv("TRACE_ALLOW_FIXTURES", raising=False)
+    with pytest.raises(TraceBackendError, match="TRACE_ALLOW_FIXTURES=1"):
+        get_trial_registry_client()
 
 
 def test_http_backend_returns_httpx_clients(monkeypatch: pytest.MonkeyPatch) -> None:

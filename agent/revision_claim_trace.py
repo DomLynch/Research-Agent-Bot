@@ -36,7 +36,8 @@ def major_claim_trace_is_stated(paper_md: str, ask: str, rows: Sequence[dict[str
     rows = _ordered_rows(rows)
     if "exactly traceable" in ask.casefold():
         valid = {key for key, _number, statement in _source_owned_results(rows) if _source_owned_result_is_stated(statement, paper_md)}
-        return len(valid) >= _requested_count(ask, len(valid))
+        actual = len({_claim_key(claim, rows) for claim, _number, _row in _source_bound_claims(_without_trace(paper_md), rows)})
+        return len(valid) >= _requested_count(ask, len(valid), actual=actual)
     source_claims = _source_bound_claims(_without_trace(paper_md), rows)
     return len({claim for claim, _number, _row in source_claims if _claim_is_fully_traced(claim, rows)}) >= _requested_count(ask, len(source_claims))
 
@@ -116,8 +117,14 @@ def _append_inline_locator(claim: str, locator: str) -> str:
     return f"{claim} [exact source: {locator}]" if not (terminal := re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", claim)) else f"{claim[:terminal.start()]} [exact source: {locator}]{claim[terminal.start():]}"
 
 
-def _requested_count(ask: str, available: int) -> int:
-    return max(1, int(match.group(1)) if (match := re.search(r"\brequired\s+(\d+)\b", ask, re.I)) else min(16, available))
+def _requested_count(ask: str, available: int, *, actual: int | None = None) -> int:
+    if match := re.search(r"\brequired\s+(\d+)\b", ask, re.I):
+        return max(1, int(match.group(1)))
+    if match := re.search(r"\b\d+\s*/\s*(\d+)\s+(?:major\s+|substantive\s+)?claims?\b", ask, re.I):
+        return max(1, int(match.group(1)))
+    if actual is not None:
+        return max(1, actual)
+    return max(1, min(16, available))
 
 
 def _claim_key(claim: str, rows: Sequence[dict[str, Any]] = ()) -> str:

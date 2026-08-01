@@ -9,7 +9,7 @@ ship recommendation. This is the "paper + machine-readable audit pack" product
 gap; the signals already exist scattered across sidecars — here they are rolled
 up, not recomputed.
 
-Deterministic except the retraction lookup (itself fail-open). The per-claim
+Deterministic except the retraction lookup (which blocks SHIP when unavailable). The per-claim
 evidence/contradiction-snippet layer needs persisted CitationTrace records
 (traces are in-memory only today) — flagged as the next slice. Topic-agnostic.
 """
@@ -54,6 +54,10 @@ def _references(registry: dict[str, Any], retracted: set[str]) -> list[dict[str,
 def _ship_recommendation(verdict: dict[str, Any], ref_audit: dict[str, Any]) -> str:
     if ref_audit["retracted"]:
         return "BLOCK — cites a retracted source"
+    if ref_audit.get("unresolved"):
+        return "BLOCK — unresolved references"
+    if ref_audit.get("retraction_check_available") is not True:
+        return "BLOCK — retraction check unavailable"
     if not (verdict.get("p1_clean") if verdict.get("p1_clean") is not None else verdict.get("all_green")):
         return "BLOCK — unresolved P1 / not all-green"
     if verdict.get("all_green") and verdict.get("journal_ready"):
@@ -71,11 +75,13 @@ def compose_audit_pack(
     registry = _read_json(run_dir, "citation_registry.json") or {}
     audit = _read_json(run_dir, "full_paper.audit.json") or {}
     verdict = _read_json(run_dir, "full_paper.final_verdict.json") or {}
+    retraction_check_available = retracted is not None
     if retracted is None:
         try:
             import retraction_check
             retracted = (retracted_fetch or retraction_check.retracted_cited_sources)(run_dir)
-        except (ImportError, OSError, ValueError, TypeError):
+            retraction_check_available = True
+        except Exception:
             retracted = []
     retracted_set = {_bare_doi(d) for d in (retracted or []) if d}
     refs = _references(registry if isinstance(registry, dict) else {}, retracted_set)
@@ -84,6 +90,7 @@ def compose_audit_pack(
         "resolved": sum(1 for r in refs if r["resolved"]),
         "unresolved": sum(1 for r in refs if not r["resolved"]),
         "retracted": [r["reference_id"] for r in refs if r["retracted"]],
+        "retraction_check_available": retraction_check_available,
     }
     paper_verdict = {
         "maturity_level": verdict.get("maturity_level"),
@@ -112,7 +119,8 @@ def _render_md(pack: dict[str, Any]) -> str:
         f"all_green={pv.get('all_green')} · journal_ready={pv.get('journal_ready')} · "
         f"p1_clean={pv.get('p1_clean')} · audit={pv.get('audit_score')}/10", "",
         f"**References:** {ra['total']} total · {ra['resolved']} resolved · "
-        f"{ra['unresolved']} unresolved · {len(ra['retracted'])} retracted", "",
+        f"{ra['unresolved']} unresolved · {len(ra['retracted'])} retracted · "
+        f"retraction check available={ra['retraction_check_available']}", "",
     ]
     if ra["retracted"]:
         lines += [f"**RETRACTED sources cited:** {', '.join(str(r) for r in ra['retracted'])}", ""]

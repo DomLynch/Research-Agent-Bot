@@ -28,17 +28,9 @@ jobs:
           UNPAYWALL_EMAIL: ${{ vars.UNPAYWALL_EMAIL }}
         run: PYTHONPATH=. python scripts/unpaywall_smoke.py
 
-      - name: Weekly report
-        run: PYTHONPATH=. python scripts/weekly_report.py
-
       - name: Upload reports
         uses: actions/upload-artifact@v4
         with:
           name: weekly-reports
-          path: |
-            runs/
-
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: weekly report auto-update"
-          file_pattern: docs/weekly/*
+          path: docs/weekly/
+          if-no-files-found: error

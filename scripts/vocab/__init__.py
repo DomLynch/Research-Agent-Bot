@@ -105,6 +105,19 @@ def _outcome_class_for_endpoint(key: str) -> str:
     return "other"
 
 
+def _is_outcome_axis_term(term: str, topic: str, endpoint_keys: Any) -> bool:
+    label = _endpoint_label(term.replace("-", "_"))
+    topic_label = _endpoint_label(topic)
+    if re.sub(r"\W", "", label) == re.sub(r"\W", "", topic_label):
+        return False
+    endpoint_labels = {_endpoint_label(str(key)) for key in endpoint_keys}
+    return (
+        label in endpoint_labels
+        or _outcome_class_for_endpoint(label) != "other"
+        or bool(re.fullmatch(r"falls?|immunity|immune modulation|.+ prevention", label))
+    )
+
+
 def _resolve_domain() -> str:
     """Return the active domain from TOPIC_DOMAIN env var.
 
@@ -206,13 +219,13 @@ def _synthesize_from_pack(domain: str) -> Any:
     # retrieval.topic_terms (e.g. RAD001, mTOR inhibitor). Bind those
     # to the active intervention canon so extraction stays topic-aware
     # without per-topic Python vocab files.
-    primary_active = (
-        sorted(pack.active_arm_synonyms, key=len, reverse=True)[0]
-        if pack.active_arm_synonyms else pack.topic
-    )
     active_terms: dict[str, tuple[str, str]] = {}
     for syn in sorted(pack.active_arm_synonyms, key=len, reverse=True):
-        active_terms.setdefault(syn.lower(), (syn, syn))
+        if not _is_outcome_axis_term(syn, pack.topic, pack.endpoint_polarity):
+            active_terms.setdefault(syn.lower(), (syn, syn))
+    primary_active = next(
+        (canon for canon, _syn in active_terms.values()), pack.topic,
+    )
     extra_terms = (
         tuple(pack.aliases_display)
         + tuple(pack.aliases)
@@ -220,7 +233,9 @@ def _synthesize_from_pack(domain: str) -> Any:
     )
     for syn in sorted(extra_terms, key=len, reverse=True):
         clean = str(syn).strip()
-        if clean:
+        if clean and not _is_outcome_axis_term(
+            clean, pack.topic, pack.endpoint_polarity,
+        ):
             active_terms.setdefault(clean.lower(), (primary_active, clean))
 
     # Order: longer/more-specific patterns first; bare keywords last.

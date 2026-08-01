@@ -6,13 +6,13 @@ import json
 import shutil
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Collection, Iterable
+from typing import Any, Collection, Iterable, Mapping
 
 from agent.evidence_lanes import effective_directness
 from agent.synthesis_schemas import ReceiptSummary
 
 SNAPSHOT_DIR = "revision_evidence_snapshot"
-_CONTRACT_FIELDS = (
+RECEIPT_CONTRACT_FIELDS = (
     "topic", "thesis_text", "spar_verdict", "n_claims", "n_failed_traces",
     "population_summary", "canonical_trial_id",
     "evidence_tier", "directness", "source_year", "source_venue",
@@ -46,7 +46,7 @@ def _contract_rows(
     return {
         str(row["receipt_id"]): {
             "receipt_id": str(row["receipt_id"]),
-            **{field: row[field] for field in _CONTRACT_FIELDS if field in row},
+            **{field: row[field] for field in RECEIPT_CONTRACT_FIELDS if field in row},
         }
         for row in rows
         if isinstance(row, dict) and str(row.get("receipt_id") or "") in wanted
@@ -71,6 +71,7 @@ class RevisionEvidenceLock:
 def load_revision_evidence(
     source_run: Path | None, *, quant_dir: Path, parsed_dir: Path,
     expected_topic: str | None = None,
+    authorized_contract_fields: Mapping[str, Collection[str]] | None = None,
 ) -> RevisionEvidenceLock:
     if source_run is None:
         return RevisionEvidenceLock(None, {}, quant_dir, parsed_dir, None, "none")
@@ -136,7 +137,7 @@ def load_revision_evidence(
     try:
         snapshot_payload = json.loads(snapshot_manifest.read_text())
         records = snapshot_payload.get("receipts", [])
-    except (OSError, json.JSONDecodeError, AttributeError) as exc:
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, AttributeError) as exc:
         snapshot_payload = {}
         records = []
         errors.append(f"snapshot_manifest:{type(exc).__name__}")
@@ -179,11 +180,14 @@ def load_revision_evidence(
             errors.append("snapshot_receipt_contracts")
         for receipt_id, source_row in rows.items():
             frozen = frozen_rows.get(receipt_id, {})
+            allowed = set((authorized_contract_fields or {}).get(receipt_id, ()))
             source_projection = {
-                field: source_row[field] for field in _CONTRACT_FIELDS if field in source_row
+                field: source_row[field]
+                for field in RECEIPT_CONTRACT_FIELDS if field in source_row and field not in allowed
             }
             frozen_projection = {
-                field: frozen[field] for field in _CONTRACT_FIELDS if field in frozen
+                field: frozen[field]
+                for field in RECEIPT_CONTRACT_FIELDS if field in frozen and field not in allowed
             }
             if source_projection != frozen_projection:
                 errors.append(f"source_manifest_contract_drift:{receipt_id}")
@@ -296,7 +300,7 @@ def receipt_contract_mismatches(
         if expected is None:
             mismatches.append(f"missing_contract:{receipt.receipt_id}")
             continue
-        for field in _CONTRACT_FIELDS:
+        for field in RECEIPT_CONTRACT_FIELDS:
             if field in allowed_fields:
                 continue
             if field not in expected:

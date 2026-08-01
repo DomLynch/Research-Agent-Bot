@@ -70,7 +70,9 @@ __all__ = [
 ]
 
 
-EXTRACTOR_VERSION = "0.6.0"
+EXTRACTOR_VERSION = "0.7.0"
+# v0.7.0 — p-value comparators are explicit schema fields and claim IDs
+# include source-section identity so equal offsets in two sections stay unique.
 # v0.6.0 — diagnostic-paper audit response. Two semantic-binding
 # bugs in the v0.5.0 extractor surfaced when a real LLM tried to
 # turn the bound claims into prose:
@@ -184,6 +186,7 @@ class QuantClaim:
     source_offset: int
     sentence: str
     context_window: str
+    comparator: str = ""
     # Day 10.17 Phase 2.1 — semantic role of the value within the
     # paper. `claim_type` says WHAT shape the number has (p_value,
     # percentage, etc.). `claim_role` says WHAT IT MEANS in the
@@ -268,7 +271,7 @@ def _normalize(text: str) -> str:
 # four standard comparators (we keep the Unicode ≤≥ even though
 # normalization keeps them — they're rare but valid).
 _P_VALUE_RE = re.compile(
-    r"\b([Pp])\s*([<>=≤≥])\s*(0?\.\d+)\b",
+    r"\b([Pp])\s*(<=|>=|[<>=≤≥])\s*(0?\.\d+)\b",
 )
 
 
@@ -562,6 +565,10 @@ def _context_window(text: str, start: int, end: int, radius: int = 60) -> str:
 # --- Per-pattern extractors ----------------------------------------------
 
 
+def _claim_id(paper_id: str, section: str, kind: str, offset: int) -> str:
+    return f"{paper_id}-{section}-{kind}-{offset}"
+
+
 def _extract_p_values(
     text: str, section: str, paper_id: str, sentences: list[tuple[int, str]],
 ) -> list[QuantClaim]:
@@ -574,7 +581,7 @@ def _extract_p_values(
         except ValueError:
             continue
         out.append(QuantClaim(
-            claim_id=f"{paper_id}-p-{m.start()}",
+            claim_id=_claim_id(paper_id, section, "p", m.start()),
             claim_type="p_value",
             raw_text=m.group(0),
             numeric_values=(value,),
@@ -583,6 +590,7 @@ def _extract_p_values(
             source_offset=m.start(),
             sentence=_sentence_for_offset(m.start(), sentences),
             context_window=_context_window(text, m.start(), m.end()),
+            comparator={"≤": "<=", "≥": ">="}.get(m.group(2), m.group(2)),
         ))
     return out
 
@@ -603,7 +611,7 @@ def _extract_confidence_intervals(
         except (ValueError, IndexError):
             continue
         out.append(QuantClaim(
-            claim_id=f"{paper_id}-ci-{m.start()}",
+            claim_id=_claim_id(paper_id, section, "ci", m.start()),
             claim_type="confidence_interval",
             raw_text=m.group(0),
             numeric_values=(lo, hi),
@@ -626,7 +634,7 @@ def _extract_sample_sizes(
         except ValueError:
             continue
         out.append(QuantClaim(
-            claim_id=f"{paper_id}-n-{m.start()}",
+            claim_id=_claim_id(paper_id, section, "n", m.start()),
             claim_type="sample_size",
             raw_text=m.group(0),
             numeric_values=(float(value),),
@@ -650,7 +658,7 @@ def _extract_mean_sd(
         except ValueError:
             continue
         out.append(QuantClaim(
-            claim_id=f"{paper_id}-msd-{m.start()}",
+            claim_id=_claim_id(paper_id, section, "msd", m.start()),
             claim_type="mean_sd",
             raw_text=m.group(0),
             numeric_values=(mean, sd),
@@ -695,7 +703,7 @@ def _extract_percentages(
         except ValueError:
             continue
         out.append(QuantClaim(
-            claim_id=f"{paper_id}-pct-{m.start()}",
+            claim_id=_claim_id(paper_id, section, "pct", m.start()),
             claim_type="percentage",
             raw_text=m.group(0),
             numeric_values=(value,),
@@ -762,7 +770,7 @@ def _extract_effect_sizes(
             if claim_type == "correlation" and value < -1.0:
                 continue
             out.append(QuantClaim(
-                claim_id=f"{paper_id}-{prefix}-{m.start()}",
+                claim_id=_claim_id(paper_id, section, prefix, m.start()),
                 claim_type=claim_type,
                 raw_text=m.group(0),
                 numeric_values=(value,),
@@ -791,7 +799,7 @@ def _extract_unit_values(
             continue
         unit = m.group(2)
         out.append(QuantClaim(
-            claim_id=f"{paper_id}-u-{m.start()}",
+            claim_id=_claim_id(paper_id, section, "u", m.start()),
             claim_type="unit_value",
             raw_text=m.group(0),
             numeric_values=(value,),

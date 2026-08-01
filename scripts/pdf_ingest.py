@@ -1,9 +1,8 @@
 """Day 10.17 Path B-prime Phase 1 — full-text PDF ingestion.
 
-Lives under scripts/ (not agent/) to preserve the AGENTS.md
-"Runtime dep: httpx only" rule. The runtime synthesis pipeline
-reads the produced JSON via stdlib; only this offline tool needs
-PyMuPDF / pypdf / pdfplumber.
+Lives under scripts/ (not agent/). The runtime synthesis pipeline
+reads the produced JSON via stdlib; this ingestion tool requires the
+PDF parser dependencies declared in pyproject.toml.
 
 Output: paper_sections.json per PDF — structured fields the
 downstream claim extractor (Phase 2) and ablation harness (Phase 5)
@@ -29,11 +28,11 @@ from pathlib import Path
 
 try:
     import fitz  # PyMuPDF
-except ModuleNotFoundError:  # optional offline PDF dependency
+except ModuleNotFoundError:
     fitz = None  # type: ignore[assignment]
 try:
     import pdfplumber
-except ModuleNotFoundError:  # optional offline PDF dependency
+except ModuleNotFoundError:
     pdfplumber = None  # type: ignore[assignment]
 
 __all__ = [
@@ -297,9 +296,10 @@ def _split_sections(full_text: str) -> tuple[Sections, list[str]]:
     for i, (name, _start, header_end) in enumerate(matches):
         next_start = matches[i + 1][1] if i + 1 < len(matches) else len(full_text)
         body = full_text[header_end:next_start].strip()
-        if body and not sections[name]:  # first match wins
-            sections[name] = body
-            detected.append(name)
+        if body:
+            sections[name] = "\n\n".join(filter(None, (sections[name], body)))
+            if name not in detected:
+                detected.append(name)
     return Sections(**sections), detected
 
 
@@ -845,118 +845,6 @@ def ingest_pdf(pdf_path: Path) -> PaperSections:
     )
 
 
-_REFERENCE_FIXTURES: dict[str, tuple[str, int, str, str, str]] = {
-    "Walton_2019_MASTERS": (
-        "Metformin blunts muscle hypertrophy in response to progressive "
-        "resistance exercise training in older adults: the MASTERS trial",
-        2019,
-        "Aging Cell",
-        "10.1111/acel.13039",
-        "NCT02308228",
-    ),
-    "Konopka_2019": (
-        "Metformin inhibits mitochondrial adaptations to aerobic exercise "
-        "training in older adults",
-        2019,
-        "Aging Cell",
-        "10.1111/acel.12880",
-        "NCT02570672",
-    ),
-    "Kulkarni_2018_MILES": (
-        "Metformin regulates metabolic and nonmetabolic pathways in skeletal "
-        "muscle and subcutaneous adipose tissues of older adults",
-        2018,
-        "Aging Cell",
-        "10.1111/acel.12723",
-        "NCT02432287",
-    ),
-    "Kulkarni_2022": (
-        "Geroscience-guided repurposing of FDA-approved drugs to target aging",
-        2022,
-        "Aging Cell",
-        "10.1111/acel.13596",
-        "NCT04264897",
-    ),
-    "Keys_2025": (
-        "Metformin as an anti-aging therapeutic in humans: emerging uncertainty",
-        2025,
-        "Ageing Research Reviews",
-        "10.1016/j.arr.2025.102817",
-        "NCT04264897",
-    ),
-    "Witham_2025_MET_PREVENT": (
-        "Metformin and physical performance in older people with sarcopenia: "
-        "the MET-PREVENT trial",
-        2025,
-        "Lancet Healthy Longevity",
-        "",
-        "ISRCTN29932357",
-    ),
-    "Mohammed_2021": (
-        "Metformin as a potential anti-aging drug: a critical review of the evidence",
-        2021,
-        "Frontiers in Endocrinology",
-        "10.3389/fendo.2021.718942",
-        "NCT02432287",
-    ),
-}
-
-
-def _reference_fixture_text(pdf_path: Path) -> str:
-    """System-Python CI fallback for the checked-in PDF-ingest fixtures.
-
-    The real parser still uses PyMuPDF/pypdf/pdfplumber when installed.
-    If none are available, only the seven known metformin reference PDFs
-    get deterministic fixture text; arbitrary production PDFs still fail.
-    """
-    hit = next(
-        (data for marker, data in _REFERENCE_FIXTURES.items() if marker in pdf_path.name),
-        None,
-    )
-    if hit is None:
-        return ""
-    title, year, journal, doi, trial_id = hit
-    doi_line = f" doi: {doi}" if doi else ""
-    return f"""{title}
-Alice A. Smith, Bob B. Jones
-{journal}. {year};18:e13039.{doi_line} Trial registry: {trial_id}. PMID: 31557380
-
-Abstract
-This reference fixture summarizes the metformin study in older adults. It
-contains enough parser-facing prose to validate section splitting, metadata
-extraction, and identifier detection when optional PDF parser dependencies are
-not installed. The findings concern metformin, aging biology, exercise
-adaptation, and clinical translation.
-
-Introduction
-Metformin has been proposed as a geroscience intervention because it affects
-AMPK, mTORC1, insulin signaling, inflammation, and cellular stress responses.
-This paper evaluates whether those mechanisms translate into measurable human
-or preclinical aging outcomes.
-
-Methods
-Participants or experimental models were assigned to metformin-relevant
-conditions and comparator conditions. The study captured prespecified outcomes,
-including physical performance, resistance training response, mitochondrial
-adaptation, metabolic biomarkers, and safety observations.
-
-Results
-Metformin was associated with measurable differences in training adaptation,
-resistance exercise response, hypertrophy, AMPK signaling, and mTORC1-related
-markers. The results section is intentionally distinct from methods and
-discussion so parser tests can detect separation.
-
-Discussion
-The findings support cautious interpretation of metformin as an aging
-intervention. They also show why endpoint selection matters: proximal
-mechanistic changes may not imply improved physical performance or healthspan.
-
-References
-1. {title}. {journal}. {year}.
-2. Trial registry {trial_id}.
-"""
-
-
 def _extract_text(pdf_path: Path) -> tuple[str, list[str], bool]:
     """Return (full_text, page_texts, used_fallback). Tries PyMuPDF
     first; falls back to pypdf on any failure."""
@@ -973,11 +861,8 @@ def _extract_text(pdf_path: Path) -> tuple[str, list[str], bool]:
         reader = pypdf.PdfReader(str(pdf_path))
         page_texts = [p.extract_text() or "" for p in reader.pages]
         return "\n\n".join(page_texts), page_texts, True
-    except Exception:
-        fallback = _reference_fixture_text(pdf_path)
-        if fallback:
-            return fallback, [fallback], True
-        raise RuntimeError(f"no PDF parser available for {pdf_path}")
+    except Exception as exc:
+        raise RuntimeError(f"PDF extraction failed for {pdf_path}") from exc
 
 
 def _to_json_dict(paper: PaperSections) -> dict:

@@ -176,6 +176,23 @@ def test_normalize_record_dispatches_binary_log_or_when_requested() -> None:
     assert r.metric == "log_OR"
 
 
+@pytest.mark.parametrize("metric", ["MD", "log_HR", "unknown"])
+def test_normalize_record_rejects_unsupported_binary_metric(metric: str) -> None:
+    with pytest.raises(ValueError, match="unsupported binary metric"):
+        normalize_record({
+            "study_id": "D", "events_t": 30, "n_t": 100,
+            "events_c": 20, "n_c": 100, "metric": metric,
+        })
+
+
+def test_normalize_record_rejects_metric_incompatible_with_shape() -> None:
+    with pytest.raises(ValueError, match="unsupported continuous metric"):
+        normalize_record({
+            "study_id": "B", "mean_t": 5, "sd_t": 1, "n_t": 30,
+            "mean_c": 3, "sd_c": 1, "n_c": 30, "metric": "log_RR",
+        })
+
+
 def test_normalize_record_rejects_ambiguous_shape() -> None:
     with pytest.raises(ValueError, match="no recognised effect-size shape"):
         normalize_record({"study_id": "Z", "irrelevant": 1})

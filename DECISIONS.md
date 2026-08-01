@@ -675,3 +675,15 @@ chosen ordering preserves fail-closed behavior at the authoritative boundary.
 
 **Revisit if:** A refreshed canonical state changes on disk or fails the
 journal-surface gate; those cases must continue to raise.
+## 2026-08-01 — Minimal trust-spine LOC headroom
+**Decision:** Raise the `agent/` cloc ceiling from 29,150 to 29,250. Keep the
+800-line per-file ceiling and the 41,000-line `scripts/` ceiling unchanged.
+
+**Why:** Immutable revision-snapshot source proof, journal-signoff readiness,
+and reviewer-authorized timeout-resume validation close three independently
+reproduced integrity gaps. The resulting runtime is 29,170 cloc. The operator
+allowed up to 5,000 additional lines if necessary; only 100 are opened.
+
+**Rejected:** Raising by 5,000 would normalize bloat. Deleting documentation to
+hide required trust logic would make the measured gate pass without simplifying
+the runtime.

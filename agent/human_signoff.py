@@ -35,12 +35,16 @@ Stdlib-only, no LLM.
 from __future__ import annotations
 
 import datetime as _dt
+import hashlib
 import json
-from dataclasses import asdict, dataclass
+import re
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any
 
 SIGNOFF_FILENAME = "human_signoff.json"
+MANUSCRIPT_FILENAME = "full_paper.md"
+_SHA256_RE = re.compile(r"[0-9a-f]{64}", re.IGNORECASE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -61,6 +65,8 @@ class HumanSignoff:
     ready_to_submit: bool
     timestamp: str = ""
     notes: str = ""
+    signature: str = ""
+    manuscript_sha256: str = ""
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "HumanSignoff":
@@ -68,22 +74,32 @@ class HumanSignoff:
         `clinical_claims_reviewed` as an alias for
         `evidence_claims_reviewed` (the universal name) so existing
         biomedical-domain signoffs migrate cleanly."""
-        evidence_reviewed = bool(
-            raw.get("evidence_claims_reviewed",
-                    raw.get("clinical_claims_reviewed", False))
-        )
+        evidence_reviewed = raw.get(
+            "evidence_claims_reviewed", raw.get("clinical_claims_reviewed", False),
+        ) is True
         return cls(
             author=str(raw.get("author") or ""),
-            reviewed=bool(raw.get("reviewed", False)),
+            reviewed=raw.get("reviewed") is True,
             evidence_claims_reviewed=evidence_reviewed,
-            conflicts_declared=bool(raw.get("conflicts_declared", False)),
-            ready_to_submit=bool(raw.get("ready_to_submit", False)),
+            conflicts_declared=raw.get("conflicts_declared") is True,
+            ready_to_submit=raw.get("ready_to_submit") is True,
             timestamp=str(raw.get("timestamp") or ""),
             notes=str(raw.get("notes") or ""),
+            signature=str(raw.get("signature") or ""),
+            manuscript_sha256=str(raw.get("manuscript_sha256") or ""),
         )
 
 
-def validate(s: HumanSignoff) -> tuple[SignoffIssue, ...]:
+def _manuscript_sha256(path: Path) -> str | None:
+    try:
+        return hashlib.sha256(path.read_bytes()).hexdigest()
+    except OSError:
+        return None
+
+
+def validate(
+    s: HumanSignoff, manuscript_path: Path | None = None,
+) -> tuple[SignoffIssue, ...]:
     """Structural validation. Empty tuple → ready for L5 promotion."""
     issues: list[SignoffIssue] = []
     if not s.author.strip():
@@ -91,6 +107,18 @@ def validate(s: HumanSignoff) -> tuple[SignoffIssue, ...]:
             field="author", code="empty_author",
             detail="'author' must be a non-empty string",
         ))
+    if not s.signature.strip():
+        issues.append(SignoffIssue("signature", "unsigned", "human signoff requires an explicit signature"))
+    if not s.timestamp.strip():
+        issues.append(SignoffIssue("timestamp", "missing_timestamp", "signed signoff requires a timestamp"))
+    if not _SHA256_RE.fullmatch(s.manuscript_sha256):
+        issues.append(SignoffIssue("manuscript_sha256", "invalid_manuscript_hash", "manuscript_sha256 must be 64 hexadecimal characters"))
+    if manuscript_path is not None:
+        digest = _manuscript_sha256(manuscript_path)
+        if digest is None:
+            issues.append(SignoffIssue("manuscript_sha256", "manuscript_missing", f"{manuscript_path.name} missing or unreadable"))
+        elif digest != s.manuscript_sha256.lower():
+            issues.append(SignoffIssue("manuscript_sha256", "manuscript_hash_mismatch", "signoff is not bound to the current manuscript"))
     # The four review bits must all be True before ready_to_submit
     # can legitimately be True — author cannot "ready" while denying
     # they reviewed.
@@ -130,17 +158,20 @@ def load(run_dir: Path) -> HumanSignoff | None:
 def write(run_dir: Path, signoff: HumanSignoff) -> Path:
     """Write the signoff to `<run_dir>/human_signoff.json`. If the
     record has no timestamp, stamp UTC ISO-8601 at write time."""
-    if not signoff.timestamp:
-        ts = _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
-        signoff = HumanSignoff(
-            author=signoff.author,
-            reviewed=signoff.reviewed,
-            evidence_claims_reviewed=signoff.evidence_claims_reviewed,
-            conflicts_declared=signoff.conflicts_declared,
-            ready_to_submit=signoff.ready_to_submit,
-            timestamp=ts,
-            notes=signoff.notes,
-        )
+    manuscript = run_dir / MANUSCRIPT_FILENAME
+    digest = _manuscript_sha256(manuscript)
+    if digest is None:
+        raise ValueError(f"{MANUSCRIPT_FILENAME} missing or unreadable")
+    if signoff.manuscript_sha256 and signoff.manuscript_sha256.lower() != digest:
+        raise ValueError("provided manuscript_sha256 does not match current manuscript")
+    signoff = replace(
+        signoff,
+        timestamp=signoff.timestamp or _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+        manuscript_sha256=digest,
+    )
+    issues = validate(signoff, manuscript)
+    if issues:
+        raise ValueError("invalid human signoff: " + ", ".join(issue.code for issue in issues))
     out = run_dir / SIGNOFF_FILENAME
     out.write_text(json.dumps(asdict(signoff), indent=2) + "\n")
     return out
@@ -157,7 +188,7 @@ def load_and_validate(
             field="file", code="signoff_missing",
             detail=f"{SIGNOFF_FILENAME} not present in run_dir",
         ),)
-    return s, validate(s)
+    return s, validate(s, run_dir / MANUSCRIPT_FILENAME)
 
 
 def _main(argv: list[str] | None = None) -> int:
@@ -177,6 +208,7 @@ def _main(argv: list[str] | None = None) -> int:
     )
     pw.add_argument("--conflicts-declared", action="store_true")
     pw.add_argument("--ready-to-submit", action="store_true")
+    pw.add_argument("--signature", required=True)
     pw.add_argument("--notes", default="")
 
     pc = sub.add_parser("check", help="validate an existing signoff")
@@ -192,15 +224,13 @@ def _main(argv: list[str] | None = None) -> int:
             conflicts_declared=args.conflicts_declared,
             ready_to_submit=args.ready_to_submit,
             notes=args.notes,
+            signature=args.signature,
         )
-        issues = validate(signoff)
-        if issues:
-            print(json.dumps({
-                "ok": False,
-                "issues": [asdict(i) for i in issues],
-            }, indent=2))
+        try:
+            out = write(args.run_dir, signoff)
+        except ValueError as exc:
+            print(json.dumps({"ok": False, "error": str(exc)}, indent=2))
             return 2
-        out = write(args.run_dir, signoff)
         print(json.dumps({"ok": True, "wrote": str(out)}, indent=2))
         return 0
 

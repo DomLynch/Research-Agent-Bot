@@ -10,22 +10,6 @@ import re
 from dataclasses import dataclass
 
 
-_DEFAULT_DETERMINISTIC_STAGES: tuple[str, ...] = (
-    "quant-claim extraction (deterministic regex over per-paper sources)",
-    "receipt summarization (group claims by paper, aggregate "
-    "outcome class + effect direction)",
-    "tension matrix construction (cross-paper direction conflicts)",
-    "thesis selection (deterministic dominant-pattern picker — "
-    "the LLM is NOT allowed to invent the thesis)",
-    "claim-strength repair (regex over over-claimed prose)",
-    "paper_id → Author Year substitution",
-    "References block append",
-    "Stage-1 audit (Q1-Q10) + Stage-2 consistency audit + auto-fix",
-    "final-layer LLM review (with single-occurrence patch safety)",
-    "final audit + unified verdict (worst-of stage1, stage2)",
-)
-
-
 @dataclass(frozen=True, slots=True, kw_only=True)
 class RunModeContract:
     """What actually ran in this pipeline. Source of truth for the
@@ -57,9 +41,12 @@ class RunModeContract:
     llm_fact_extraction_ran: bool = False
     rejected_evidence_quarantine_ran: bool = False
 
-    # Pipeline stages that did run, in chronological order. Default is
-    # a module-level constant tuple (immutable, no factory needed).
-    deterministic_stages: tuple[str, ...] = _DEFAULT_DETERMINISTIC_STAGES
+    # Empty defaults are fail-closed: callers must freeze positive evidence.
+    deterministic_stages: tuple[str, ...] = ()
+    source_inventory: tuple[tuple[str, str], ...] = ()
+    # Public protocol statements are part of the frozen run contract;
+    # render_methods must not invent process claims outside this tuple.
+    methods_protocol: tuple[str, ...] = ()
 
 
 # Phrases the renderer MUST NOT emit. Matched case-insensitively as
@@ -172,6 +159,17 @@ def validate_contract(c: RunModeContract) -> list[str]:
             f"claim_source contains unsubstituted placeholder: "
             f"{c.claim_source!r}"
         )
+    if any(not item.strip() for item in c.methods_protocol):
+        errors.append("methods_protocol must contain only non-empty statements")
+    valid_statuses = {"enabled", "succeeded", "failed"}
+    if any(
+        not name.strip() or status not in valid_statuses
+        for name, status in c.source_inventory
+    ):
+        errors.append(
+            "source_inventory entries require a name and an "
+            "enabled/succeeded/failed status"
+        )
     return errors
 
 
@@ -179,58 +177,29 @@ def render_methods(c: RunModeContract) -> str:
     """Deterministic Methods section. Pure function over the contract;
     output is bounded so it cannot contain blocked phrases."""
     topic_label = c.topic.replace("_", " ").replace("-", " ").strip()
-    return (
-        f"## Methods\n\n"
-        f"The review used a predeclared corpus of {c.n_papers_in_corpus} "
-        f"source papers on {topic_label}. Source documents were screened for "
-        f"quantitative outcome statements, and "
-        f"{c.n_high_confidence_claims_used_by_writer} source-bound "
-        f"observations were retained for synthesis after role, unit, and "
-        f"citation checks. Corpus construction used the topic query terms "
-        f"with aging, longevity, healthspan, frailty, cardiometabolic, "
-        f"immune, safety, and function terms across bibliographic, trial, "
-        f"and project-curated source indexes when available. The output is "
-        f"therefore framed as a structured evidence synthesis rather than a "
-        f"claim of exhaustive systematic-review coverage.\n\n"
-        f"### Evidence selection and synthesis\n\n"
-        f"Claims were retained only when their numeric value, endpoint, and "
-        f"study label could be reconciled with the source record. Evidence "
-        f"was grouped by outcome class, study design, direction of effect, "
-        f"and endpoint proximity. Cross-paper tensions were summarized when "
-        f"two retained findings addressed related outcomes but differed in "
-        f"direction, directness, population, comparator, or follow-up. "
-        f"Records that lacked a traceable endpoint, citation, or study "
-        f"identity were excluded from main-text inference and kept in the "
-        f"supplementary audit trail when available.\n\n"
-        f"### Manuscript controls\n\n"
-        f"Public prose was constrained to the retained evidence set. Numeric "
-        f"statements were checked against the source-bound claim table, and "
-        f"rows with unresolved endpoint, unit, study-label, or citation "
-        f"problems were kept out of the journal main text.\n\n"
-        f"### Interpretation rules\n\n"
-        f"Clinical, observational, review, and mechanistic findings were "
-        f"interpreted according to their design limits. Direct human trials "
-        f"were weighted most heavily for clinical endpoints, whereas cellular, "
-        f"animal, or tissue-level findings were used to clarify plausible "
-        f"mechanisms and boundary conditions rather than to establish clinical "
-        f"benefit. Directional agreement was treated as stronger when findings "
-        f"shared population, comparator, endpoint, and follow-up context. "
-        f"Disagreement was retained when it reflected different outcome "
-        f"classes, exposure windows, disease states, or measurement methods, "
-        f"because those differences define where the synthesis should remain "
-        f"conditional.\n\n"
-        f"### Quantitative handling\n\n"
-        f"Effect estimates, confidence intervals, p-values, sample sizes, and "
-        f"threshold comparisons were used only when the surrounding source "
-        f"context identified the same endpoint and study arm. Measures with "
-        f"incompatible units were not pooled narratively as if they measured "
-        f"the same construct. When a finding came from indirect evidence, the "
-        f"manuscript used cautious language and separated mechanism from "
-        f"clinical inference. Topic-level conclusions were therefore bounded "
-        f"by the strongest matched human evidence. This approach keeps the "
-        f"Methods section focused on reproducible evidence handling rather "
-        f"than implementation metadata.\n"
-    )
+    parts = [
+        "## Methods",
+        (
+            f"The frozen run contract records {c.n_papers_in_corpus} "
+            f"source papers on {topic_label} and "
+            f"{c.n_high_confidence_claims_used_by_writer} source-bound "
+            "observations supplied to the manuscript writer."
+        ),
+    ]
+    if c.source_inventory:
+        succeeded = sum(
+            status == "succeeded" for _, status in c.source_inventory
+        )
+        failed = sum(status == "failed" for _, status in c.source_inventory)
+        pending = sum(status == "enabled" for _, status in c.source_inventory)
+        parts.append(
+            "### Information sources\n\n"
+            f"The frozen inventory records {len(c.source_inventory)} enabled "
+            f"sources: {succeeded} succeeded, {failed} failed, and {pending} "
+            "enabled without a recorded outcome."
+        )
+    parts.extend(c.methods_protocol)
+    return "\n\n".join(parts) + "\n"
 
 
 def validate_rendered(methods_md: str) -> list[str]:
@@ -249,12 +218,11 @@ def validate_rendered(methods_md: str) -> list[str]:
 def _strip_code_fences(s: str) -> str:
     """Replace fenced code blocks with newline-equivalent whitespace
     so regex matching against headers ignores ``` blocks. Preserves
-    line count so position-based logic isn't disturbed."""
+    exact string length so offsets still address the original text."""
     fence_re = re.compile(r"```.*?```", re.DOTALL)
 
     def _blank(m: re.Match[str]) -> str:
-        # Replace the matched span with newlines preserving line count
-        return "\n" * m.group(0).count("\n")
+        return "".join("\n" if char == "\n" else " " for char in m.group(0))
     return fence_re.sub(_blank, s)
 
 

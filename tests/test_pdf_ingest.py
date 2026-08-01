@@ -13,6 +13,7 @@ to surface any parser failures honestly.
 from __future__ import annotations
 
 import json
+import importlib.util
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -22,6 +23,10 @@ import pytest
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import pdf_ingest  # noqa: E402
+
+HAS_PDF_PARSER = (
+    pdf_ingest.fitz is not None or importlib.util.find_spec("pypdf") is not None
+)
 
 PDFS_DIR = (
     Path(__file__).resolve().parent.parent
@@ -54,6 +59,27 @@ def test_table_extraction_handles_null_cells(monkeypatch: pytest.MonkeyPatch) ->
     assert tables[0].raw_text == "value | "
 
 
+def test_parser_failure_never_synthesizes_known_fixture_evidence(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    fake = tmp_path / "Walton_2019_MASTERS_metformin_blunts.pdf"
+    fake.write_bytes(b"not a PDF")
+    monkeypatch.setattr(pdf_ingest, "fitz", None)
+
+    with pytest.raises(RuntimeError, match="PDF extraction failed"):
+        pdf_ingest._extract_text(fake)
+
+
+def test_repeated_pdf_sections_are_preserved_in_source_order() -> None:
+    sections, detected = pdf_ingest._split_sections(
+        "Results\nFirst result.\n\nMethods\nMethod text.\n\n"
+        "Results\nSecond result.\n\nDiscussion\nInterpretation."
+    )
+
+    assert sections.results == "First result.\n\nSecond result."
+    assert detected.count("results") == 1
+
+
 def _all_pdfs() -> list[Path]:
     return sorted(PDFS_DIR.glob("*.pdf"))
 
@@ -64,8 +90,8 @@ def _all_pdfs() -> list[Path]:
 
 
 @pytest.mark.skipif(
-    not MASTERS_PDF.exists(),
-    reason="MASTERS PDF not present (gitignored, see Phase 1 README)",
+    not HAS_PDF_PARSER or not MASTERS_PDF.exists(),
+    reason="PDF parser runtime or MASTERS PDF not present",
 )
 class TestMastersExtraction:
     """Discriminating tests against the Walton 2019 MASTERS PDF.
@@ -171,8 +197,8 @@ class TestMastersExtraction:
 
 
 @pytest.mark.skipif(
-    not _all_pdfs(),
-    reason="No PDFs in docs/quality-reference/metformin/pdfs/",
+    not HAS_PDF_PARSER or not _all_pdfs(),
+    reason="PDF parser runtime or reference PDFs not present",
 )
 def test_all_seven_reference_papers_extract_minimum_fields() -> None:
     """Run the parser against all 7 reference PDFs and assert the
@@ -238,8 +264,8 @@ def test_all_seven_reference_papers_extract_minimum_fields() -> None:
 
 
 @pytest.mark.skipif(
-    not MASTERS_PDF.exists(),
-    reason="MASTERS PDF not present",
+    not HAS_PDF_PARSER or not MASTERS_PDF.exists(),
+    reason="PDF parser runtime or MASTERS PDF not present",
 )
 def test_paper_sections_json_round_trip(tmp_path: Path) -> None:
     """The artifact must serialize to JSON and round-trip without
@@ -352,8 +378,8 @@ def _find_pdf(substring: str) -> Path | None:
 
 
 @pytest.mark.skipif(
-    not _all_pdfs(),
-    reason="No reference PDFs present",
+    not HAS_PDF_PARSER or not _all_pdfs(),
+    reason="PDF parser runtime or reference PDFs not present",
 )
 @pytest.mark.parametrize(
     "pdf_marker,exp_year,exp_journal,exp_title_sub,exp_doi", _GOLD,
@@ -422,8 +448,8 @@ def test_per_paper_metadata_matches_readme_gold(
 
 
 @pytest.mark.skipif(
-    not _all_pdfs(),
-    reason="No reference PDFs present",
+    not HAS_PDF_PARSER or not _all_pdfs(),
+    reason="PDF parser runtime or reference PDFs not present",
 )
 def test_all_seven_papers_have_abstract_after_phase_1_5() -> None:
     """Reviewer pin: Keys + Mohammed had no abstract because they

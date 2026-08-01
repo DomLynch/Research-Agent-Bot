@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import datetime as dt
 import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -24,6 +23,7 @@ class MethodsPack:
     synthesis_approach: str
     ai_use_disclosure: str
     human_accountability: str
+    source_inventory: tuple[tuple[str, str], ...] = ()
 
     def to_json(self) -> dict[str, Any]:
         d = asdict(self)
@@ -50,13 +50,20 @@ def build_methods_pack(
     n_included: int,
     n_rejected: int,
     outcome_classes: Sequence[str],
+    source_inventory: Sequence[tuple[str, str]] = (),
     receipt_funnel: Any | None = None,
     rob_method: str = "",
     search_dates_iso: str = "",
     accountability_model: str = "researka_agent_certified",
 ) -> MethodsPack:
-    if not search_dates_iso:
-        search_dates_iso = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    frozen_sources = tuple(source_inventory)
+    if any(
+        not name.strip() or status not in {"enabled", "succeeded", "failed"}
+        for name, status in frozen_sources
+    ):
+        raise ValueError(
+            "source_inventory requires named enabled/succeeded/failed entries"
+        )
     # Universal default eligibility — explicit; caller may override
     # by passing a richer pack via override fields in a later slice.
     eligibility = (
@@ -127,10 +134,9 @@ def build_methods_pack(
     )
     return MethodsPack(
         review_type=review_type,
-        databases_searched=(
-            "PubMed", "Europe PMC", "OpenAlex", "Semantic Scholar",
-            "Crossref", "DOAJ", "OpenAIRE", "PMC OAI", "bioRxiv",
-            "medRxiv", "arXiv", "ClinicalTrials.gov",
+        databases_searched=tuple(
+            name for name, status in frozen_sources
+            if status == "succeeded"
         ),
         search_strings=tuple(corpus_search_queries),
         search_dates=search_dates_iso,
@@ -148,14 +154,14 @@ def build_methods_pack(
             "effect estimates."
         ),
         ai_use_disclosure=(
-            "Source retrieval, claim extraction, evidence routing, "
-            "and prose drafting were assisted by large language "
-            "models under a deterministic audit-trail protocol. Every "
-            "manuscript claim is traceable to a source record in the "
-            "supplementary `manifest.json`. Final eligibility and "
-            "interpretation decisions are author-verified."
+            "Manuscript drafting used large language models under a "
+            "deterministic audit-trail protocol. Claim and citation "
+            "trace artifacts are recorded in the supplementary "
+            "`manifest.json`; source-provider outcomes are limited to "
+            "the frozen inventory reported above."
         ),
         human_accountability=_accountability_text(accountability_model),
+        source_inventory=frozen_sources,
     )
 
 
@@ -194,27 +200,42 @@ def write_methods_pack(out_dir: Path, pack: MethodsPack) -> Path:
 
 
 def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
+    from agent.manuscript_prisma import source_inventory_summary
     from agent.review_type import display_label
+    inventory = pack.source_inventory
+    source_disclosure = (
+        "The frozen retrieval record reports "
+        f"{source_inventory_summary(inventory)}."
+        if inventory else
+        "No database inventory was frozen; no database coverage or "
+        "execution claim is made."
+    )
+    date_disclosure = (
+        f" Retrieval record date: {pack.search_dates}."
+        if pack.search_dates else
+        " No retrieval date was frozen."
+    )
     lines: list[str] = [
         "## Methods",
         "",
         "### Review type and protocol",
         f"This manuscript is reported as a {display_label(pack.review_type)}. "
-        "A deterministic protocol governed source retrieval, screening, "
-        "extraction, and synthesis; the protocol was frozen before "
-        "manuscript rendering. The full audit trail is in the "
+        "This methods pack freezes the run-reported selection counts, "
+        "extraction fields, and synthesis settings used for manuscript "
+        "rendering. The full audit trail is in the "
         f"supplementary `methods_pack.json` and the timestamped "
         f"submission directory `{submission_id}`.",
         "",
         "### Information sources",
-        "Sources were retrieved across " +
-        ", ".join(pack.databases_searched[:-1]) +
-        f", and {pack.databases_searched[-1]}. Retrieval window: "
-        f"{pack.search_dates}.",
+        source_disclosure + date_disclosure,
         "",
         "### Search strategy",
-        "The following topic-anchored queries were executed against the "
-        "information sources listed above:",
+        (
+            "The following query strings are recorded in the frozen "
+            "retrieval record:"
+            if pack.search_strings else
+            "No query strings were frozen; no query-execution claim is made."
+        ),
         "",
     ]
     lines.extend(f"- `{q}`" for q in pack.search_strings[:10])

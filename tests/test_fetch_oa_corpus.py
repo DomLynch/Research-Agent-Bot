@@ -135,6 +135,22 @@ def test_falls_back_to_title_keyword_when_sec_type_missing() -> None:
     assert doc["sections"]["results"] == "Results text."
 
 
+def test_repeated_and_nested_jats_sections_are_preserved_once() -> None:
+    xml = """<?xml version="1.0"?>
+<article>
+  <front><article-meta><title-group><article-title>X</article-title></title-group></article-meta></front>
+  <body>
+    <sec sec-type="results"><title>Results</title><p>First.</p>
+      <sec sec-type="results"><title>Subresult</title><p>Nested.</p></sec>
+    </sec>
+    <sec sec-type="results"><title>Results continued</title><p>Second.</p></sec>
+  </body>
+</article>"""
+    doc = fetch_oa_corpus.parse_jats_to_paper_sections(xml)
+
+    assert doc["sections"]["results"] == "First.\n\nNested.\n\nSecond."
+
+
 # ============================================================
 # JATS parsing — metadata
 # ============================================================

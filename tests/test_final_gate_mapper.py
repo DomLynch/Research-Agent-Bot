@@ -39,25 +39,25 @@ def test_audit_all_pass_true_returns_true() -> None:
     assert extract_audit_gates_passed({"all_pass": True}) is True
 
 
-def test_audit_p1_pass_with_max_score_returns_true() -> None:
+def test_audit_p1_pass_without_counts_fails_closed() -> None:
     assert extract_audit_gates_passed(
         {"p1_pass": True, "score": 10, "max_score": 10}
-    ) is True
+    ) is False
 
 
-def test_audit_p1_pass_with_partial_score_returns_true() -> None:
+def test_audit_p1_pass_with_partial_score_fails_closed() -> None:
     assert extract_audit_gates_passed(
         {"p1_pass": True, "score": 8.5, "max_score": 10}
-    ) is True
+    ) is False
 
 
-def test_audit_pass_rate_string_format_parsed() -> None:
+def test_audit_pass_rate_string_without_counts_fails_closed() -> None:
     assert extract_audit_gates_passed(
         {"p1_pass": True, "pass_rate": "14/14"}
-    ) is True
+    ) is False
     assert extract_audit_gates_passed(
         {"p1_pass": True, "pass_rate": "10/14"}
-    ) is True
+    ) is False
 
 
 def test_audit_pass_count_total_count_format() -> None:
@@ -122,8 +122,9 @@ def test_unresolved_p1_from_patch_list() -> None:
     assert extract_unresolved_reviewer_p1_count(patches) == 1
 
 
-def test_unresolved_p1_none_returns_zero() -> None:
-    assert extract_unresolved_reviewer_p1_count(None) == 0
+def test_unresolved_p1_missing_artifact_fails_closed() -> None:
+    with pytest.raises(ValueError, match="missing or malformed"):
+        extract_unresolved_reviewer_p1_count(None)
 
 
 def test_unresolved_p1_empty_patches_returns_zero() -> None:
@@ -214,7 +215,7 @@ def test_from_artifacts_missing_audit_fails_audit_gate() -> None:
     inputs = build_gate_inputs_from_artifacts(
         audit=None,
         journal_surface={"pass": True},
-        reviewer_patches=None,
+        reviewer_patches={"patches": []},
         template_gate=tg, quality_methods=qm,
         numeric_coverage=1.0, citation_registry_complete=True,
         n_tensions=5, n_receipts=34,
@@ -230,7 +231,7 @@ def test_from_artifacts_dirty_template_gate_blocks_final() -> None:
     inputs = build_gate_inputs_from_artifacts(
         audit={"all_pass": True},
         journal_surface={"pass": True},
-        reviewer_patches=None,
+        reviewer_patches={"patches": []},
         template_gate=tg, quality_methods=qm,
         numeric_coverage=1.0, citation_registry_complete=True,
         n_tensions=5, n_receipts=34,
@@ -251,7 +252,7 @@ def test_from_artifacts_partial_quality_coverage_propagates() -> None:
     inputs = build_gate_inputs_from_artifacts(
         audit={"all_pass": True},
         journal_surface={"pass": True},
-        reviewer_patches=None,
+        reviewer_patches={"patches": []},
         template_gate=tg, quality_methods=qm,
         numeric_coverage=1.0, citation_registry_complete=True,
         n_tensions=5, n_receipts=10,
@@ -285,7 +286,7 @@ def test_from_artifacts_journal_surface_failure_blocks() -> None:
     inputs = build_gate_inputs_from_artifacts(
         audit={"all_pass": True},
         journal_surface={"verdict": "fail"},
-        reviewer_patches=None,
+        reviewer_patches={"patches": []},
         template_gate=tg, quality_methods=qm,
         numeric_coverage=1.0, citation_registry_complete=True,
         n_tensions=5, n_receipts=34,

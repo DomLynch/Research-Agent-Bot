@@ -1,22 +1,4 @@
-"""Phase 8 final-gate input mapper.
-
-Bridges the synthesis-pipeline artifacts (audit.json, journal_surface.json,
-review_patch_log.json, template-gate report, quality-methods bundle,
-manifest counts) into a typed `agent.final_gate.GateInputs` instance.
-
-Stdlib-only, no LLM. Two entry points:
-
-  build_gate_inputs(...)            — caller passes already-extracted
-                                      typed values (preferred path; the
-                                      orchestrator does the extraction).
-  build_gate_inputs_from_artifacts(...)
-                                    — caller passes the raw dicts loaded
-                                      from disk; this module extracts
-                                      with explicit fail-closed defaults.
-
-Fail-closed contract: missing required fields raise ValueError. Coverage
-values out of [0,1] raise via GateInputs.__post_init__.
-"""
+"""Map synthesis artifacts into fail-closed final-gate inputs."""
 from __future__ import annotations
 
 from typing import Any
@@ -38,33 +20,21 @@ __all__ = [
 
 
 def extract_audit_gates_passed(audit: dict | None) -> bool:
-    """True iff the Stage-1 audit reports no P1 ship-blockers.
-
-    Tolerant to common shapes:
-      - {"p1_pass": True, "score": 8.5, "pass_rate": "10/14"} → True
-      - {"all_pass": True} → True
-      - {"pass_count": 14, "total_count": 14} → True
-      - {"score": 10, "max_score": 10} → True
-      - missing/None → False (fail-closed)
-    """
+    """Accept only an explicit all-pass or complete Stage-1 audit count."""
     if not isinstance(audit, dict):
         return False
     if audit.get("all_pass") is True:
         return True
-    if audit.get("p1_pass") is True:
-        return True
-    pc = audit.get("pass_count")
-    tc = audit.get("total_count")
+    pc = audit.get("pass_count", audit.get("n_pass"))
+    tc = audit.get("total_count", audit.get("n_total"))
     if isinstance(pc, int) and isinstance(tc, int) and tc > 0:
-        return pc >= tc
+        complete = not isinstance(pc, bool) and not isinstance(tc, bool) and pc == tc
+        return complete and audit.get("p1_pass", True) is True
     return False
 
 
 def extract_journal_surface_passed(journal_surface: dict | None) -> bool:
-    """True iff the journal-surface gate reports a pass.
-
-    Tolerant: 'pass', 'passed', or 'verdict' fields all consulted.
-    """
+    """Read an explicit journal-surface pass from supported artifact shapes."""
     if not isinstance(journal_surface, dict):
         return False
     for key in ("pass", "passed"):
@@ -78,32 +48,22 @@ def extract_journal_surface_passed(journal_surface: dict | None) -> bool:
 
 
 def extract_unresolved_reviewer_p1_count(patches: dict | None) -> int:
-    """Count of P1 patches that did not resolve.
-
-    Tolerant to common shapes:
-      - {"unresolved_p1_count": 3} → 3
-      - {"patches": [...]} → counts patches with severity=='P1' and
-        status not in {'applied', 'resolved'}
-      - missing → 0 (treat as no unresolved issues; the audit gate itself
-        handles the case where reviewer ran)
-    """
+    """Count unresolved P1 patches and reject missing or malformed review state."""
     if not isinstance(patches, dict):
-        return 0
+        raise ValueError("reviewer patch artifact missing or malformed")
     direct = patches.get("unresolved_p1_count")
-    if isinstance(direct, int) and direct >= 0:
+    if isinstance(direct, int) and not isinstance(direct, bool) and direct >= 0:
         return direct
     patch_list = patches.get("patches")
     if isinstance(patch_list, list):
-        unresolved = 0
-        for p in patch_list:
-            if not isinstance(p, dict):
-                continue
-            severity = str(p.get("severity") or "").upper()
-            status = str(p.get("status") or "").lower()
-            if severity == "P1" and status not in ("applied", "resolved", "auto_strip"):
-                unresolved += 1
-        return unresolved
-    return 0
+        if any(not isinstance(p, dict) for p in patch_list):
+            raise ValueError("reviewer patch artifact contains a malformed patch")
+        return sum(
+            str(p.get("severity") or "").upper() == "P1"
+            and str(p.get("status") or "").lower() not in ("applied", "resolved", "auto_strip")
+            for p in patch_list
+        )
+    raise ValueError("reviewer patch artifact has no unresolved count or patch list")
 
 
 # ---- Builders --------------------------------------------------------------
@@ -155,20 +115,7 @@ def build_gate_inputs_from_artifacts(
     n_tensions: int,
     n_receipts: int,
 ) -> GateInputs:
-    """Artifact-shaped builder. Extracts the audit / journal_surface /
-    reviewer_patches signals from raw dicts using the explicit extractors
-    above, then composes the GateInputs.
-
-    Required typed inputs (numeric_coverage, citation_registry_complete,
-    n_tensions, n_receipts) must be supplied by the orchestrator —
-    extracting these from JSON shape is more variable across runs and
-    belongs in the live runner, not here.
-
-    Fails closed:
-      - template_gate missing → TypeError on attribute access (caller bug).
-      - quality_methods missing → TypeError likewise.
-      - numeric_coverage / n_tensions / n_receipts None → ValueError.
-    """
+    """Build final-gate inputs from artifacts, rejecting missing required state."""
     _require(template_gate, "template_gate")
     _require(quality_methods, "quality_methods")
     _require(numeric_coverage, "numeric_coverage")

@@ -70,6 +70,33 @@ def test_p_value_lt_extracted_with_comparator() -> None:
     assert len(p_claims) == 1
     assert p_claims[0].numeric_values == (0.001,)
     assert "<" in p_claims[0].raw_text
+    assert p_claims[0].comparator == "<"
+
+
+def test_multichar_p_value_comparator_is_retained() -> None:
+    claims = quant_claim_extract.extract_from_text(
+        "The lower bound was reported as p >= .001.", "results",
+    )
+    p_claim = next(c for c in claims if c.claim_type == "p_value")
+    assert p_claim.comparator == ">="
+    assert p_claim.numeric_values == (0.001,)
+
+
+def test_quant_claim_ids_include_section_identity(tmp_path: Path) -> None:
+    parsed = tmp_path / "paper.paper_sections.json"
+    parsed.write_text(json.dumps({
+        "paper_id": "paper-1",
+        "sections": {
+            "abstract": "Metformin reduced HbA1c (p = 0.03).",
+            "results": "Metformin reduced HbA1c (p = 0.03).",
+        },
+    }))
+
+    claims = quant_claim_extract.extract_from_paper_sections(parsed)
+    p_claims = [claim for claim in claims if claim.claim_type == "p_value"]
+    assert len({claim.claim_id for claim in p_claims}) == 2
+    assert {claim.source_section for claim in p_claims} == {"abstract", "results"}
+    assert any("-abstract-p-" in claim.claim_id for claim in p_claims)
 
 
 def test_uppercase_p_value_extracted() -> None:
@@ -386,6 +413,7 @@ def test_review_paper_has_fewer_claims_than_rct() -> None:
     the extractor over-fires on prose."""
     walton_p = _find_parsed("Walton_2019_MASTERS")
     mohammed_p = _find_parsed("Mohammed_2021")
+    assert walton_p is not None and mohammed_p is not None
     walton_claims = quant_claim_extract.extract_from_paper_sections(walton_p)
     mohammed_claims = quant_claim_extract.extract_from_paper_sections(mohammed_p)
     assert len(walton_claims) > len(mohammed_claims), (

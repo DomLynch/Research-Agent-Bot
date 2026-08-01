@@ -184,6 +184,25 @@ def test_p_value_above_alpha_does_not_count_as_significant() -> None:
     assert result == "unclear"
 
 
+def test_lower_bound_p_value_does_not_count_as_significant() -> None:
+    claims = [
+        {
+            "claim_type": "effect", "endpoint": "VO2max",
+            "direction": "increase", "arm": "metformin",
+            "numeric_values": [2.5],
+        },
+        {
+            "claim_type": "p_value", "endpoint": "VO2max",
+            "raw_text": "p > 0.001", "numeric_values": [0.001],
+            "comparator": ">",
+        },
+    ]
+
+    assert ed.infer_effect_direction(
+        claims, metformin_effect_fn=_const(1),
+    ) == "unclear"
+
+
 def test_alpha_can_be_tightened() -> None:
     """Caller can pass a stricter alpha for sensitivity-analysis runs."""
     claims = [

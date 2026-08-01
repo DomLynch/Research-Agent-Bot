@@ -334,10 +334,10 @@ def authorized_receipt_contract_fields_by_receipt(
         for segment in re.split(r"(?:\r?\n)+|;\s+", text)
         if segment.strip()
     ]
-    authorized: dict[str, set[str]] = {}
+    alias_sets: dict[str, set[str]] = {}
     for receipt_id, row in rows.items():
-        aliases = {
-            str(value).casefold().strip()
+        alias_sets[receipt_id] = {
+            _normalised_feedback(str(value))
             for value in (
                 receipt_id,
                 row.get("source_title"),
@@ -347,12 +347,20 @@ def authorized_receipt_contract_fields_by_receipt(
             )
             if str(value or "").strip()
         }
-        fields: set[str] = set()
-        for segment in segments:
-            if any(alias in segment for alias in aliases):
-                fields.update(authorized_receipt_contract_fields(segment))
-        if fields:
-            authorized[receipt_id] = fields
+    authorized: dict[str, set[str]] = {}
+    for segment in segments:
+        named = [
+            receipt_id for receipt_id, aliases in alias_sets.items()
+            if any(
+                re.search(rf"(?<!\w){re.escape(alias)}(?!\w)", segment)
+                for alias in aliases
+            )
+        ]
+        fields = authorized_receipt_contract_fields(segment)
+        if not named or not fields or len(named) > 1 and len(fields) > 1:
+            continue
+        for receipt_id in named:
+            authorized.setdefault(receipt_id, set()).update(fields)
     return authorized
 
 

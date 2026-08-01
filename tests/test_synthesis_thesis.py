@@ -3,8 +3,7 @@
 Discriminating tests cover:
   - validation contract: each rule fails for the right reason
   - picker ranking: more receipts > more tensions > brevity > alpha
-  - fallback stub: produces a valid SynthesisThesis when all candidates
-    fail validation
+  - all-invalid candidate sets block instead of fabricating a thesis
   - LLM-mock proposal flow: build_thesis_user_prompt is deterministic,
     parsing is defensive, end-to-end synthesize_thesis works
 
@@ -18,6 +17,7 @@ import asyncio
 import json
 
 import httpx
+import pytest
 
 from agent.llm_client import CallSpec
 from agent.synthesis_schemas import (
@@ -30,6 +30,7 @@ from agent.synthesis_schemas import (
 )
 from agent.synthesis_thesis import (
     SYSTEM_PROMPT,
+    SynthesisThesisBlocked,
     THESIS_PROMPT_VERSION,
     build_fallback_thesis,
     build_thesis_user_prompt,
@@ -350,21 +351,16 @@ def test_picker_prefers_brevity_at_equal_receipts_and_tensions() -> None:
     assert thesis.text == short.text
 
 
-def test_picker_returns_fallback_stub_when_all_candidates_rejected() -> None:
-    """When every candidate fails validation, the picker returns a
-    deterministic stub thesis instead of raising. This keeps the
-    synthesis pipeline shipping even when the LLM is misbehaving."""
+def test_picker_blocks_when_all_candidates_rejected() -> None:
     receipts = _receipts_three()
     matrix = _matrix_with_one_tension(receipts)
     bad_1 = _candidate(refs=("r-A",))  # too few receipts
     bad_2 = _candidate(refs=("r-A", "r-B", "r-FAKE"))  # unknown id
-    thesis = pick_synthesis_thesis(
-        [bad_1, bad_2], receipts, matrix, topic="metformin",
-    )
-    assert "fallback" in thesis.picker_rationale.lower()
-    assert "rejected" in thesis.picker_rationale.lower()
-    # Fallback still references all receipts so downstream invariants hold
-    assert set(thesis.receipt_ids_referenced) == {"r-A", "r-B", "r-C"}
+    with pytest.raises(SynthesisThesisBlocked) as caught:
+        pick_synthesis_thesis(
+            [bad_1, bad_2], receipts, matrix, topic="metformin",
+        )
+    assert len(caught.value.rejections) == 2
 
 
 def test_picker_preserves_rejected_candidates_for_audit() -> None:
@@ -681,8 +677,8 @@ def test_synthesize_thesis_picks_winner_from_llm_proposal() -> None:
     )
 
 
-def test_synthesize_thesis_falls_back_when_llm_returns_garbage() -> None:
-    """Defensive: malformed LLM JSON → no candidates → fallback stub."""
+def test_synthesize_thesis_blocks_when_llm_returns_garbage() -> None:
+    """Malformed LLM JSON must not produce a publishable thesis."""
     receipts = _receipts_three()
     matrix = _matrix_with_one_tension(receipts)
 
@@ -705,8 +701,8 @@ def test_synthesize_thesis_falls_back_when_llm_returns_garbage() -> None:
         finally:
             await client.aclose()
 
-    thesis = asyncio.run(go())
-    assert "fallback" in thesis.picker_rationale.lower()
+    with pytest.raises(SynthesisThesisBlocked):
+        asyncio.run(go())
 
 
 # ============================================================

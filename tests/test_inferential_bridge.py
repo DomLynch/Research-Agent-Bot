@@ -77,6 +77,24 @@ def test_high_confidence_requires_existing_human_signal() -> None:
     assert "high confidence requires existing_human_signal" in errors
 
 
+def test_high_confidence_rejects_no_signal_sentinel() -> None:
+    claim = InferenceClaim(
+        claim="The mechanism has a direct translational bridge.",
+        mechanism_anchor=("r1",),
+        conservation_argument="Canon supports the bridge.",
+        canon_refs=("Canon 2020",),
+        existing_human_signal=("none identified",),
+        confidence="high",
+        testability="Run a prospective validation.",
+    )
+    errors = validate_inference(
+        claim,
+        receipt_ids={"r1"},
+        canon_refs={"Canon 2020"},
+    )
+    assert "high confidence requires existing_human_signal" in errors
+
+
 def test_existing_human_signal_must_resolve_to_receipt() -> None:
     claim = InferenceClaim(
         claim="The bridge remains tentative.",

@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+from collections.abc import Callable
 
 import httpx
 import pytest
@@ -310,7 +311,7 @@ def _make_spar_handler(
     auditor_verdict: str = "accept",
     skeptic_verdict: str = "accept",
     final_verdict: str = "accept",
-) -> tuple[callable, dict]:
+) -> tuple[Callable, dict]:
     """Build a MockTransport handler that returns one canned verdict per
     call ROLE (decoded from the system prompt). Returns (handler, log)
     so the test can inspect call order + final's user prompt."""
@@ -621,8 +622,21 @@ def test_prompt_version_anchored() -> None:
 
 def test_trace_gate_returns_none_when_all_traces_pass() -> None:
     """Happy path: no failed traces → no override; panel verdict stands."""
-    assert _enforce_trace_gate("accept_clean", [_trace(passed=True)]) is None
-    assert _enforce_trace_gate("accept_caveated", [_trace(passed=True)]) is None
+    assert _enforce_trace_gate("accept_clean", [_trace(passed=True)], _graph()) is None
+    assert _enforce_trace_gate("accept_caveated", [_trace(passed=True)], _graph()) is None
+
+
+def test_trace_gate_rejects_missing_and_unsupported_claim_traces() -> None:
+    graph = _graph(
+        _claim("C001", refs=(1, 2)),
+        _claim("C002", refs=()),
+    )
+    override = _enforce_trace_gate(
+        "accept_clean", [_trace(claim_id="C001", ref=1)], graph,
+    )
+    assert override is not None
+    assert override.failed_trace_count == 2
+    assert "coverage is incomplete" in override.rationale
 
 
 def test_trace_gate_returns_none_when_panel_already_rejects() -> None:
@@ -683,6 +697,27 @@ def test_run_spar_trace_gate_overrides_accept_when_trace_failed() -> None:
     assert all(r.verdict == "accept" for r in review.reviews)
     # Resolution prose includes both Final Judge's rationale AND the gate note
     assert "Trace-gate override" in review.final_judge_resolution
+
+
+def test_run_spar_missing_trace_coverage_overrides_accept() -> None:
+    handler, _ = _make_spar_handler("accept", "accept", "accept")
+    graph = _graph(_claim("C001"), _claim("C002", refs=(2,)))
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await run_spar(
+                graph, [_trace(claim_id="C001", ref=1)],
+                topic="metformin", submission_id="run-gate-missing",
+                chain=(_spec(),), client=client,
+            )
+        finally:
+            await client.aclose()
+
+    review = _run(go())
+    assert review.verdict == "reject_critical"
+    assert review.gate_override is not None
+    assert review.gate_override.failed_trace_count == 1
 
 
 def test_run_spar_trace_gate_does_not_trigger_when_traces_all_pass() -> None:

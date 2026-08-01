@@ -326,6 +326,59 @@ def test_chat_json_falls_back_on_5xx() -> None:
     assert call_count["n"] == 2
 
 
+def test_chat_json_falls_back_on_missing_provider_content() -> None:
+    call_count = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        call_count["n"] += 1
+        if call_count["n"] == 1:
+            return httpx.Response(200, json={"content": []})
+        return httpx.Response(200, json=_ok_body('{"fallback": true}'))
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(
+                    _spec("primary", base_url="https://api.minimax.io/anthropic"),
+                    _spec("fallback"),
+                ),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.model == "fallback"
+    assert resp.parsed == {"fallback": True}
+    assert call_count["n"] == 2
+
+
+def test_chat_json_falls_back_on_malformed_openai_shape() -> None:
+    call_count = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        call_count["n"] += 1
+        body = {"choices": []} if call_count["n"] == 1 else _ok_body('{"ok": true}')
+        return httpx.Response(200, json=body)
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "hi"}],
+                chain=(_spec("primary"), _spec("fallback")),
+                client=client,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.model == "fallback"
+    assert resp.parsed == {"ok": True}
+
+
 def test_chat_json_retries_retryable_status_before_fallback() -> None:
     """Transient 5xx on a provider should retry the same model first."""
     call_count = {"n": 0}
@@ -762,7 +815,7 @@ def test_build_judge_chain_excludes_writer_family() -> None:
     back to the writer (never let a model grade its own output)."""
     chain = build_judge_chain(_settings())
     models = [s.model for s in chain]
-    assert models == ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"]
+    assert models == ["google/gemma-4-31b-it"]
     assert "MiniMax-M3" not in models
 
 
@@ -770,18 +823,13 @@ def test_build_judge_chain_keeps_empty_keys_but_drops_writer_family() -> None:
     """Non-writer specs with empty api_keys remain (chat_json skips them at
     call time); the writer-family spec is dropped regardless of key."""
     chain = build_judge_chain(_settings(openrouter_key=""))
-    assert [s.model for s in chain] == [
-        "google/gemma-4-31b-it",
-        "mistralai/mistral-small-2603",
-    ]
-    assert all(s.api_key == "" for s in chain)  # both under OpenRouter
+    assert [s.model for s in chain] == ["google/gemma-4-31b-it"]
+    assert all(s.api_key == "" for s in chain)
 
 
 def test_build_judge_chain_drops_writer_family_judge_primary() -> None:
     """A judge_model misconfigured to the writer's family is dropped rather
     than allowed to grade its own output; the chain falls through to a
     non-writer model."""
-    chain = build_judge_chain(_settings(judge_model="MiniMax-M3"))
-    models = [s.model for s in chain]
-    assert "MiniMax-M3" not in models
-    assert "mistralai/mistral-small-2603" in models
+    with pytest.raises(ValueError, match="no judge model outside writer families"):
+        build_judge_chain(_settings(judge_model="MiniMax-M3"))
