@@ -470,7 +470,8 @@ def _detect_tables_via_pdfplumber(pdf_path: Path) -> tuple[Table, ...]:
                         label = f"Table {cm.group(1)}"
                         caption_text = cm.group(2).strip()
                     raw_text = "\n".join(
-                        " | ".join(c.strip() for c in row) for row in raw_table
+                        " | ".join((c or "").strip() for c in row)
+                        for row in raw_table
                     )
                     out.append(Table(
                         label=label or f"Table (page {page_idx})",

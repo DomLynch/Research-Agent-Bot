@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -27,6 +28,30 @@ PDFS_DIR = (
     / "docs" / "quality-reference" / "metformin" / "pdfs"
 )
 MASTERS_PDF = PDFS_DIR / "Walton_2019_MASTERS_metformin_blunts_resistance_hypertrophy.pdf"
+
+
+def test_table_extraction_handles_null_cells(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FakePdf:
+        pages = [SimpleNamespace(
+            extract_text=lambda: "Table 1 Results",
+            extract_tables=lambda: [[["value", None]]],
+        )]
+
+        def __enter__(self) -> FakePdf:
+            return self
+
+        def __exit__(self, *_args: object) -> None:
+            return None
+
+    monkeypatch.setattr(
+        pdf_ingest,
+        "pdfplumber",
+        SimpleNamespace(open=lambda _path: FakePdf()),
+    )
+
+    tables = pdf_ingest._detect_tables_via_pdfplumber(Path("unused.pdf"))
+
+    assert tables[0].raw_text == "value | "
 
 
 def _all_pdfs() -> list[Path]:
