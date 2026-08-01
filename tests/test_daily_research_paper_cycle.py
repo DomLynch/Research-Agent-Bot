@@ -1980,6 +1980,15 @@ def test_prepare_candidate_buffer_scans_past_repair_budget(
 ) -> None:
     topics = ["aaa_thin", "bbb_thin", "ccc_thin", "ddd_ready"]
     repairs: list[str] = []
+    now = dt.datetime.now(dt.UTC)
+    _write_json(tmp_path / "runs" / cycle.LEDGER_DIR / cycle.CANDIDATE_BUFFER, {
+        "generated_at": now.isoformat(),
+        "attempts": [{
+            "topic": "aaa_thin",
+            "attempted_at": now.isoformat(),
+            "repair_status": "repair_budget_exhausted",
+        }],
+    })
 
     monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
     monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda *_a, **_k: topics)
@@ -2423,7 +2432,7 @@ def test_recent_receipt_counts_use_latest_timestamp_not_file_order(tmp_path: Pat
         }],
     })
     _write_json(newer, {
-        "started_at": "2026-07-25T11:00:00+00:00",
+        "generated_at": "2026-07-25T11:00:00+00:00",
         "attempts": [{
             "topic": topic,
             "receipt_preflight": {

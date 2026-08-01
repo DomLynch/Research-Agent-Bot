@@ -2308,7 +2308,7 @@ def _recent_receipt_preflight_counts(
     latest_counts: tuple[int, int, int] | None = None
     for path in ledger_dir.glob("*.json"):
         row = _read_json(path)
-        started = _parse_time(str(row.get("started_at") or ""))
+        started = _parse_time(str(row.get("started_at") or row.get("generated_at") or ""))
         if started is None or started < cutoff or (latest_at is not None and started <= latest_at):
             continue
         for attempt in row.get("attempts", []):
@@ -3800,7 +3800,11 @@ def prepare_candidate_buffer(
     }
     report["ready"] = [row for topic, row in prepared_rows.items() if topic in still_prepared]
     report["attempts"] = _recent_candidate_buffer_attempts(previous, now=now)
-    recent_attempted = {str(row.get("topic") or "") for row in report["attempts"] if row.get("topic")}
+    recent_attempted = {
+        str(row.get("topic") or "")
+        for row in report["attempts"]
+        if row.get("topic") and row.get("repair_status") != "repair_budget_exhausted"
+    }
     attempted = terminal | still_prepared | (recent_attempted - (prepared - still_prepared))
     while len(report["ready"]) < target_ready and report["attempted_count"] < max_attempts:
         topic = select_topic(
