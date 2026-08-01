@@ -2432,7 +2432,7 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
         "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
         "--max-attempts 12" in service
     )
-    assert "SuccessExitStatus=3" not in service
+    assert "SuccessExitStatus=3" in service
     assert "Restart=on-failure" in service
     assert "RestartPreventExitStatus=3" in service
     assert "StartLimitIntervalSec=21600" in service

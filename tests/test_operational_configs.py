@@ -22,6 +22,12 @@ def test_long_paper_lanes_do_not_share_one_nonblocking_lock() -> None:
     assert "TimeoutStartSec=900" in daily_submit
 
 
+def test_no_work_exit_is_success_for_publication_lanes() -> None:
+    for name in ("prepare", "fresh", "revise", "daily-cycle", "daily-submit"):
+        text = (REPO / "deploy" / f"research-agent-paper-{name}.service").read_text()
+        assert "SuccessExitStatus=3" in text, name
+
+
 def test_weekly_workflow_runs_existing_report_and_never_commits() -> None:
     text = (REPO / ".github/workflows/weekly-reports.yml").read_text()
     assert "scripts/weekly_report.py" not in text

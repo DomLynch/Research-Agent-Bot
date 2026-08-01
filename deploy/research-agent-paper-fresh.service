@@ -7,6 +7,7 @@ StartLimitBurst=2
 
 [Service]
 Type=oneshot
+SuccessExitStatus=3
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
 ExecStart=/usr/bin/flock --shared --nonblock /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode fresh --run-synthesis --submit --max-attempts 0 --cycle-budget-sec 10800
