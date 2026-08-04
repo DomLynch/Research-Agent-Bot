@@ -2589,6 +2589,16 @@ def _fresh_topic_pool(
     return [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
 
 
+def _recorded_direct_yield(topic: str, ledger_dir: Path) -> int:
+    """Direct receipts measured by this topic's most recent receipt preflight.
+
+    0 when the topic has never been probed, so unprobed topics keep whatever
+    ordering the remaining keys give them rather than jumping the queue.
+    """
+    counts = _recent_receipt_preflight_counts(topic, ledger_dir)
+    return counts[2] if counts else 0
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -2630,6 +2640,15 @@ def select_topic(
         0 if topic in synthesis_ready else 1,
         0 if topic in untried else 1,
         source_fit_rank[topic] if not prefer_source_fit else (),
+        # Measured direct-receipt yield beats raw corpus size. Corpus size does
+        # not predict how much DIRECT evidence a topic produces: metabolism_effects
+        # has 395 quant-claim files but yields 1 direct receipt, while
+        # aerobic_exercise_effects has 210 and yields 46. Ranking on size alone
+        # kept selecting broad review-heavy corpora that can never clear the
+        # direct/primary floors, leaving the buffer empty while a qualifying
+        # candidate sat unpicked. Prefer topics whose last preflight actually
+        # measured direct receipts; unprobed topics keep their prior ordering.
+        -_recorded_direct_yield(topic, ledger_dir),
         -_quant_claim_count(topic),
         -_publication_score(topic, ledger_dir, runs_root),
         -_topic_support_score(topic),
