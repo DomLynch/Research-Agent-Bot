@@ -2944,9 +2944,16 @@ async def _run(
             json.dumps(continuity, indent=2),
         )
     if dry_run:
+        # A dry run intentionally stops before rendering full_paper.md: its job is
+        # to measure the receipt corpus, not to produce a manuscript. Reporting the
+        # unrendered manuscript as EXIT_REQUIRED_ARTIFACT_INVALID made every probe
+        # exit 9 while _receipt_preflight only accepts rc == 0, so no candidate
+        # could ever become receipt_ready and the buffer could never refill.
+        # Exit 0 = "preflight completed"; genuine artifact corruption still exits 9
+        # from the non-dry-run paths, so the two stay distinguishable.
         return _record_synthesis_exit(
-            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
-            "required_artifact_not_rendered_dry_run", ("full_paper.md",),
+            out_dir, _run_start_ts, EXIT_PUBLICATION_READY,
+            "receipt_preflight_ready",
         )
 
     chain = _build_call_chain()
