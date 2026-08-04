@@ -3938,6 +3938,18 @@ def prepare_candidate_buffer(
         return report
 
     terminal = _terminal_topics(runs_root)
+    # _terminal_topics only covers Researka review outcomes. A topic that keeps
+    # failing receipt preflight (n_primary_tier/n_direct_receipts below floor)
+    # never becomes terminal, so meta-research shapes — *_measurement_methods,
+    # *_rates, *_adverse_safety — whose literature is surveys/registries rather
+    # than trials were re-attempted every window and consumed the whole budget
+    # while outcome-style topics with rich corpora waited behind them. Exclude
+    # recent preflight failures too, so the pool advances instead of re-walking
+    # candidates that cannot clear the evidence floor. Universal: keyed on the
+    # measured blocker code, not on topic names.
+    terminal = terminal | _recent_blocked_topics_by_status(
+        ledger_dir, {"receipt_preflight_insufficient"}, now=now,
+    )
     pool = _fresh_topic_pool(
         topics,
         ledger_dir,
