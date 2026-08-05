@@ -9968,8 +9968,12 @@ def test_preflight_recent_failure_does_not_block_full_research_track(tmp_path: P
 
 
 def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatch) -> None:
+    # Stamp the run as *just now*: a manifest-less run only signals "the last
+    # render failed" while it is recent. The date must not be hardcoded or the
+    # fixture ages out of the cooldown window and stops testing the block.
+    stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%S")
     _topic(tmp_path, "cancer_biomarker_subgroups", target_journal=True)
-    run = tmp_path / "runs" / "synthesis-cancer_biomarker_subgroups-v06-DAILY-2026-06-01T16-04-43Z"
+    run = tmp_path / "runs" / f"synthesis-cancer_biomarker_subgroups-v06-DAILY-{stamp}Z"
     run.mkdir(parents=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
 
@@ -9983,6 +9987,32 @@ def test_preflight_blocks_latest_run_without_manifest(tmp_path: Path, monkeypatc
     assert preflight["passed"] is False
     assert preflight["latest_run"] == run.name
     assert preflight["reasons"] == ["latest_run_missing_manifest"]
+
+
+def test_preflight_allows_stale_manifestless_run(tmp_path: Path, monkeypatch) -> None:
+    """A manifest-less run older than the cooldown must not retire a topic.
+
+    Regression: aerobic_exercise_effects was pinned out of selection for weeks by
+    a 5-week-old run dir with no manifest, though a fresh preflight measured
+    46 receipts / 46 primary / 46 direct. Every other check in _preflight already
+    skips when has_manifest is False; this one rejected on the absence itself.
+    """
+    _topic(tmp_path, "cancer_biomarker_subgroups", target_journal=True)
+    stale = dt.datetime.now(dt.UTC) - dt.timedelta(hours=cycle.RECENT_FAILURE_COOLDOWN_HOURS + 24)
+    run = tmp_path / "runs" / (
+        f"synthesis-cancer_biomarker_subgroups-v06-DAILY-{stale.strftime('%Y-%m-%dT%H-%M-%S')}Z"
+    )
+    run.mkdir(parents=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight(
+        "cancer_biomarker_subgroups",
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        current_quant_claims=39,
+    )
+
+    assert "latest_run_missing_manifest" not in preflight["reasons"]
 
 
 def test_preflight_allows_prepared_candidate_over_manifestless_old_run(

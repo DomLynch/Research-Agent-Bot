@@ -2694,6 +2694,26 @@ def _preflight_reason_survives_corpus_refresh(reason: str) -> bool:
     return reason.startswith(("n_receipts=", "n_tensions=", "n_outcome_classes=")) and reason.endswith("(split topic)")
 
 
+def _run_is_recent(run: Path, *, now: dt.datetime | None = None) -> bool:
+    """True when *run* was started within the failure-cooldown window.
+
+    Used to decide whether a manifest-less run still says anything about the
+    topic. A recent one means the last render failed; an old one is just a
+    stale directory and must not keep a viable topic out of selection.
+    """
+    # Run dirs stamp the time with dashes (…-v06-DAILY-2026-06-29T12-52-24Z-R2),
+    # which is not ISO, so parse it explicitly. mtime is not a fallback: probes
+    # and repairs touch the directory and would make an ancient run look fresh.
+    match = re.search(r"(\d{4}-\d{2}-\d{2})T(\d{2})-(\d{2})-(\d{2})Z", run.name if run else "")
+    if not match:
+        return True
+    started = dt.datetime.fromisoformat(
+        f"{match.group(1)}T{match.group(2)}:{match.group(3)}:{match.group(4)}+00:00",
+    )
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    return started >= cutoff
+
+
 def _preflight(
     topic: str,
     runs_root: Path,
@@ -2709,7 +2729,19 @@ def _preflight(
     reasons = []
     if not publication_track:
         reasons.append("public_surface_not_full_research")
-    if latest and not counts["has_manifest"] and not prepared_candidate:
+    if (
+        latest
+        and not counts["has_manifest"]
+        and not prepared_candidate
+        and _run_is_recent(latest)
+    ):
+        # A manifest-less run means the LAST attempt failed to render — worth
+        # blocking on while it is recent. A stale one is not evidence about the
+        # topic: aerobic_exercise_effects was pinned by a 5-week-old run dir with
+        # no manifest and never measured, though a fresh preflight gives it
+        # 46 receipts / 46 primary / 46 direct. Every other check below already
+        # skips when has_manifest is False; this one rejected on the absence
+        # itself, so an old failed render permanently retired a viable topic.
         reasons.append("latest_run_missing_manifest")
     if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
         reasons.append(f"n_receipts={counts['n_receipts']} < {PREFLIGHT_MIN_RECEIPTS}")
