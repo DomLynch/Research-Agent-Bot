@@ -83,3 +83,18 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 - Mirror path: `/root/Research-Agent-Bot`.
 - Never deploy from a dirty state.
 - Verify service status and HTTP 200 live status endpoint after deploy.
+
+
+## Never run destructive git on VPS /opt
+
+`/opt/research-agent-bot` is the live publishing checkout. NEVER run
+`git stash`, `git checkout <ref>`, `git clean`, or `git reset` there to test
+or compare code. Incidents: a `git stash` for an A/B test left /opt in a
+merge-conflicted state mid-drought, and the cleanup dropped a teammate's
+pre-existing stash (recovered only via `git fsck --unreachable`).
+
+To A/B a change against production state, copy the tree first:
+    cp -a /opt/research-agent-bot /tmp/ab && cd /tmp/ab && <experiment>
+Deploy to /opt only via `git fetch && git reset --hard origin/<branch>` after
+the change is committed and pushed. Read-only commands (`git log`, `status`,
+`show`, `pytest`) are fine in place.
