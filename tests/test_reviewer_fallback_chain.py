@@ -435,3 +435,25 @@ def test_review_paper_honors_environment_provider_controls(
     assert model_used == "mistralai/mistral-small-2603"
     assert client.post.call_args.args[0] == "https://router.example/v1/chat/completions"
     assert client.post.call_args.kwargs["json"]["model"] == model_used
+
+
+def test_every_configured_reviewer_model_is_priced() -> None:
+    """A model swap must fail here, not at exit 7 after a paper is rendered.
+
+    _estimate_cost raises on unpriced models by design (cost must never silently
+    read zero), but that fires mid-run once the paper is already written and paid
+    for. Enumerating the config defaults keeps the blast radius in CI.
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from agent.settings import load_settings
+
+    settings = load_settings()
+    configured = {
+        settings.judge_model,
+        settings.fallback_model,
+        settings.final_layer_reviewer_model,
+        final_reviewer._DEFAULT_REVIEWER_MODEL,
+        final_reviewer._DEFAULT_FALLBACK_MODEL,
+    }
+    unpriced = sorted(configured - set(final_reviewer._PRICING_PER_MTOK))
+    assert not unpriced, f"add pricing to _PRICING_PER_MTOK for: {unpriced}"

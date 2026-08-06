@@ -286,6 +286,12 @@ def _build_reviewer_prompt(
 _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
     "x-ai/grok-4.3": (3.00, 15.00),
     "google/gemini-3.1-flash-lite:exacto": (0.25, 1.50),
+    # JUDGE_MODEL default (agent/settings.py). Absent here, _estimate_cost raised
+    # "no pricing configured for reviewer model 'google/gemma-4-31b-it'", the local
+    # gate exited 7 (local_gate_execution_failed), and every synthesis died after
+    # rendering a full paper. Rates match agent/llm_client.py:53 (per-1k there,
+    # per-Mtok here).
+    "google/gemma-4-31b-it": (0.10, 0.34),
     "mistralai/mistral-small-2603": (0.15, 0.60),
 }
 
