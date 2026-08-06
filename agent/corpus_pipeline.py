@@ -39,6 +39,28 @@ _KEEP_CLASSES: frozenset[str] = frozenset((
 ))
 # Classes that are dropped (no extraction).
 _DROP_CLASSES: frozenset[str] = frozenset(("off_thesis", "reject"))
+# Tiers that satisfy the publication primary-tier floor, mirroring
+# run_v06_synthesis._receipt counts (A1/A2/B1).
+_PRIMARY_TIERS: frozenset[str] = frozenset(("A1", "A2", "B1"))
+
+
+def _is_primary_tier(paper: dict[str, Any]) -> bool:
+    """True when title/abstract identify primary-tier evidence.
+
+    Imported lazily: evidence_taxonomy lives under scripts/ and is resolved as
+    a namespace package, so a caller running without the repo root on sys.path
+    keeps the previous drop behaviour instead of failing retrieval outright.
+    """
+    try:
+        from scripts.evidence_taxonomy import infer_from_paper_meta
+    except ImportError:
+        return False
+    meta = dict(paper)
+    if not meta.get("abstract"):
+        sections = meta.get("sections")
+        if isinstance(sections, dict):
+            meta["abstract"] = sections.get("abstract")
+    return infer_from_paper_meta(meta).tier in _PRIMARY_TIERS
 
 
 @dataclass(frozen=True, slots=True)
@@ -102,6 +124,7 @@ def classify_and_filter(
     entries: list[CorpusEntry] = []
     n_kept = 0
     n_dropped = 0
+    n_rescued = 0
     class_counts: dict[str, int] = {}
     for i, hit in enumerate(report.all_hits):
         paper_dict = _hit_to_paper_dict(hit, fallback_id=f"hit_{i}")
@@ -112,7 +135,31 @@ def classify_and_filter(
             exclude_terms=exclude_terms,
         )
         keep = cls.classification in _KEEP_CLASSES
-        if cls.classification == "core_on_thesis":
+        rescued = False
+        if not keep and cls.classification != "reject":
+            # Evidence rescue. The 5-class gate scores TOPICAL fit, so a
+            # rigorous trial that misses thesis keywords is dropped here and
+            # can never become a receipt, while keyword-matching mechanistic
+            # reviews survive. Publication needs 3 primary-tier / 4 direct
+            # receipts, and measured corpora starve exactly there:
+            # resistance_training parsed 180 primary-tier papers and only 32
+            # reached extraction; metabolism_effects extracted 125 non-primary
+            # papers against 24 primary. Downstream topic-specificity and
+            # receipt admission still filter relevance, so this cannot smuggle
+            # off-topic work into a paper — but a source never extracted is
+            # unrecoverable. Hard "reject" is left alone: that verdict means
+            # wrong species/topic outright, not merely off-thesis.
+            if _is_primary_tier(paper_dict):
+                keep = True
+                rescued = True
+                n_rescued += 1
+        if rescued:
+            # Rescued papers are off-thesis by the topical classifier, so they
+            # are adjacent evidence — never core. Without this they fall to the
+            # wave-pool default of "core" and would inflate on-thesis evidence
+            # with work the classifier judged off-thesis.
+            pool = "adjacent"
+        elif cls.classification == "core_on_thesis":
             pool = "core"
         elif cls.classification == "background_mechanism":
             pool = "background"
@@ -136,6 +183,7 @@ def classify_and_filter(
         "retrieved": len(report.all_hits),
         "classified_keep": n_kept,
         "classified_drop": n_dropped,
+        "primary_tier_rescued": n_rescued,
         "extractable_core": sum(
             1 for e in entries
             if e.keep_for_extraction and e.pool == "core"

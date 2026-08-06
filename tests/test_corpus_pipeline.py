@@ -271,3 +271,46 @@ def test_extraction_pools_include_background_when_inference_enabled():
     assert cp.extraction_pools_for_pack(pack) == frozenset((
         "adjacent", "background", "core",
     ))
+
+
+def test_primary_tier_off_thesis_paper_is_rescued_into_adjacent_pool():
+    """A rigorous trial that misses thesis keywords must still be extracted.
+
+    The 5-class gate scores topical fit, so primary-tier trials were dropped
+    before extraction and could never become receipts, while keyword-matching
+    mechanistic reviews survived. Publication needs 3 primary-tier / 4 direct
+    receipts, so starving that class stalls publishing. Rescued papers are
+    adjacent evidence, never core — they are off-thesis by the classifier.
+    """
+    hits = [
+        _hit(doi="10.1/RESCUE",
+             title="Randomized controlled trial of supervised walking",
+             abstract="In this randomized controlled trial, participants "
+                      "were randomly assigned to supervised walking or "
+                      "usual care and followed for 12 months."),
+    ]
+    manifest = classify_and_filter(
+        _wave_report(hits), topic="statins", topic_aliases=("statin",),
+    )
+    entry = manifest.entries[0]
+    assert entry.classification.classification == "off_thesis"
+    assert entry.keep_for_extraction, "primary-tier evidence must reach extraction"
+    assert entry.pool == "adjacent", "rescued papers must not inflate the core pool"
+    assert manifest.funnel["primary_tier_rescued"] == 1
+
+
+def test_hard_reject_is_not_rescued_even_when_primary_tier():
+    """`reject` means wrong species/topic outright, not merely off-thesis."""
+    hits = [
+        _hit(doi="10.1/REJECT",
+             title="Randomized trial of cardioversion in atrial fibrillation",
+             abstract="AF patients underwent cardioversion in a randomized "
+                      "controlled trial."),
+    ]
+    manifest = classify_and_filter(
+        _wave_report(hits), topic="statins", topic_aliases=("statin",),
+    )
+    entry = manifest.entries[0]
+    assert entry.classification.classification == "reject"
+    assert not entry.keep_for_extraction
+    assert manifest.funnel["primary_tier_rescued"] == 0
