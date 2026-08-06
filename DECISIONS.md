@@ -687,3 +687,29 @@ allowed up to 5,000 additional lines if necessary; only 100 are opened.
 **Rejected:** Raising by 5,000 would normalize bloat. Deleting documentation to
 hide required trust logic would make the measured gate pass without simplifying
 the runtime.
+## 2026-08-06 — Delete Proof-001; combined LOC ceiling replaces split caps
+**Decision:** Delete the dormant Proof-001 engine (orchestrator, compiler,
+fact_extractor, citation_trace, spar, writer, schemas, validators,
+submission_package, thesis_tournament, synthesis_audit*, trace_clients/) with
+its 18 test files — 35 files, 16,028 raw lines. Ratchet the `agent/` ceiling
+29,250 -> 25,000 and add `COMBINED_LIMIT = 66,000` over agent/+scripts/.
+
+**Why:** Only run_v06 ships; the daily cycle never invoked Proof-001. Static
+reachability from the four live systemd entrypoints put the whole cluster
+outside the closure, every inter-module reference was internal to the cluster,
+and all 18 test files were cluster-only. Full suite went 4700 -> 4191 passed,
+exactly the 509 tests those files owned, with skipped/xpassed unchanged — so no
+live test lost coverage.
+
+The split caps were the real defect: `scripts/` sat at 40,898 of 41,000 while
+`agent/` had 4,736 spare, so new code could dodge the agent budget by landing in
+scripts/. One combined ceiling removes that escape hatch. The ratchet exists so
+a large deletion locks in the gain instead of banking headroom for new bloat.
+
+**Rejected:** Deleting by static import analysis alone — that marks
+journal_finalizer.py (6,088 lines, the largest file) as dead when it is loaded
+via importlib.import_module("scripts.journal_finalizer"). Dynamic and
+subprocess linkage had to be resolved before any file was removed.
+
+**Revisit if:** Proof-001/SPAR is revived as a live engine; recover from git
+history rather than re-implementing.
