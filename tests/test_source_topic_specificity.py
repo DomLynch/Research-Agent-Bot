@@ -555,3 +555,35 @@ def test_topic_aliases_loads_local_and_generated_terms(tmp_path) -> None:
         "hydrogen-rich water",
         "h2",
     )
+
+
+def test_axis_token_optional_when_subject_matches() -> None:
+    """Sources rarely echo the analytical angle in a topic slug verbatim.
+
+    liraglutide_adverse_effects requires "adverse", but real trials say
+    "safety". Demanding it rejected 1,943 of 1,944 candidate sources, including
+    all 920 primary-tier ones, so no topic could reach the 3-primary floor.
+    """
+    assert is_source_topic_specific(
+        "liraglutide_adverse_effects",
+        "Efficacy and safety of liraglutide in type 2 diabetes",
+    )
+    assert is_source_topic_specific(
+        "liraglutide_adverse_effects",
+        "Liraglutide and renal outcomes: a randomized trial",
+    )
+    assert is_source_topic_specific(
+        "metformin_measurement_methods",
+        "Serum metformin concentrations in older adults",
+    )
+
+
+def test_axis_token_never_admits_a_different_subject() -> None:
+    """The subject stays mandatory, so cross-subject leakage stays blocked."""
+    assert not is_source_topic_specific(
+        "liraglutide_adverse_effects", "Metformin and cardiovascular outcomes",
+    )
+    assert not is_source_topic_specific(
+        "liraglutide_adverse_effects",
+        "Adverse events of chemotherapy in breast cancer",
+    )

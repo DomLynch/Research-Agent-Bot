@@ -29,6 +29,22 @@ BIOMED_ANCHORS = {
     "mouse", "patient", "randomized", "rat", "review", "trial",
 }
 SCOPE_TOKENS = {"age", "aging", "healthspan", "lifespan", "longevity"}
+# Analytical-angle words. Topic slugs pair a SUBJECT with an angle
+# (liraglutide_adverse_effects, metformin_measurement_methods). The subject is
+# the identity and stays mandatory; the angle is how the subject is examined and
+# is rarely echoed verbatim by a source -- "Efficacy and safety of liraglutide"
+# never says "adverse". Requiring the angle rejected 1,943 of 1,944 candidate
+# liraglutide sources, including all 920 primary-tier ones. Treated as optional
+# only when the subject already matched, exactly like BIOMED_ANCHORS, so
+# cross-subject leakage stays blocked: a metformin paper matches no liraglutide
+# token, gets no specific hit, and is still rejected.
+# TOPIC_STOPWORDS already strips effects/rates/subgroups/therapy/treatment;
+# these are the remaining angles seen across live topic slugs.
+# Stored in _specificity_token's normalized (singular) form, as BIOMED_ANCHORS is.
+AXIS_TOKENS = {
+    "adverse", "duration", "measurement", "method",
+    "regimen", "safety", "threshold",
+}
 SCOPE_ANCHORS = {
     "aged", "aging", "anti-aging", "elderly", "geriatric", "healthspan",
     "lifespan", "longevity", "older adult", "older people",
@@ -263,7 +279,7 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
         token for token in normalized_tokens
         if not _topic_token_hit(token, haystack_tokens, haystack_words)
     ]
-    if specific_hits and all(token in BIOMED_ANCHORS for token in missing_tokens):
+    if specific_hits and all(token in BIOMED_ANCHORS | AXIS_TOKENS for token in missing_tokens):
         return True
     optional_axis = _post_acronym_axis_tokens(topic)
     if specific_hits and all(token in BIOMED_ANCHORS | optional_axis for token in missing_tokens):
