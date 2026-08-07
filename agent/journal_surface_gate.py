@@ -473,7 +473,13 @@ def _table_cells(line: str) -> list[str]:
 
 
 def _outcome_key(text: str) -> str:
-    return outcome_key(text).replace("_", " ")
+    # The results table renders its Outcome class cell as
+    # "<topic anchor> / <outcome>", while the matching H3 heading carries the
+    # bare outcome. Comparing the two verbatim reported every section as BOTH
+    # missing (expected name) and unexpected (emitted name) whenever a topic
+    # anchor was present. Key on the outcome alone so the two agree; the anchor
+    # is presentation, not identity.
+    return outcome_key(text.rsplit("/", 1)[-1].strip() or text).replace("_", " ")
 
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
