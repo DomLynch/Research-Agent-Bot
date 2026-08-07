@@ -237,3 +237,29 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 - `AGENTS.md`, `PROJECT_STATE.md`, and active task plan match current mission.
 - Full suite and ruff pass.
 - Commit pushed and VPS paths synced clean.
+
+## Deployment verification status — 2026-08-07
+
+`662f930e` (source-specificity axis tokens) is **deployed and verified at the
+receipt-funnel stage, NOT end-to-end to a published paper.**
+
+Verified: liraglutide_adverse_effects primary-tier receipts 1 -> 25+ via a live
+`run_v06_synthesis --dry-run` probe; full suite 4196 passed; both
+cross-subject-leakage directions covered by tests.
+
+NOT verified: no paper has published since deploy. This is not attributable to
+`662f930e` — `journal_finalizer` fails to converge on every manuscript
+regardless of evidence quality, so no change to evidence selection can produce
+a publication until that is fixed. Reverting `662f930e` would restore the
+primary-tier starvation (every probed topic scored 0-2 against a floor of 3)
+without unblocking publication, so it stays deployed.
+
+Open blocker: `journal_finalizer` repair loop oscillates between two
+surface-invalid states. Current failure, now stated explicitly rather than as
+`exit=7 local_gate_execution_failed`:
+`structure_surface: section too short: Cross-Domain Synthesis 535/850 words`.
+
+Ruled out by test, do not retry blind:
+- terminal `_phase_b_lane_qualifier` pass (identical cycle; reverted unshipped)
+- disabling `review_noise_control.restore_surface_floors` (identical cycle), so
+  the padding that inserts rule-violating citations is inside `_run_text_phases`

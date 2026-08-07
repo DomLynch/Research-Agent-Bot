@@ -174,17 +174,41 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
             entries.extend(_phase_g_refresh_sidecars(out_dir))
             refreshed = paper_path.read_text()
             if refreshed != text or not getattr(_surface_report(refreshed, out_dir), "passed", False):
-                raise RuntimeError("journal finalizer did not reach a fixed point")
+                raise RuntimeError(_non_convergence_detail(refreshed, out_dir, len(cycle)))
             break
         states.append(text)
     else:
-        raise RuntimeError("journal finalizer did not reach a fixed point")
+        raise RuntimeError(_non_convergence_detail(text, out_dir, 0))
     changed = text != original
     report = FinalizerReport(paper_changed=changed, final_word_count=len(text.split()), entries=tuple(entries))  # noqa: E501
     report_path = out_dir / "journal_finalizer.json"
     if changed or entries or not report_path.exists():
         report_path.write_text(json.dumps(asdict(report), indent=2))
     return report
+
+
+def _non_convergence_detail(text: str, out_dir: Path, cycle_len: int) -> str:
+    """Name the surface issues that blocked convergence.
+
+    The bare "did not reach a fixed point" surfaced as
+    `exit=7 local_gate_execution_failed`, so a manuscript-quality shortfall was
+    indistinguishable from an infrastructure crash and cost hours to attribute.
+    The repair loop only fails when some surface issue survives every phase, so
+    report which ones -- that is the actionable part.
+    """
+    issues = getattr(_surface_report(text, out_dir), "issues", ())
+    seen: list[str] = []
+    for issue in issues:
+        detail = f"{getattr(issue, 'code', '?')}: {getattr(issue, 'detail', '')}"
+        if detail not in seen:
+            seen.append(detail)
+    where = f"repair cycle of {cycle_len} states" if cycle_len else "40 passes"
+    if not seen:
+        return f"journal finalizer did not reach a fixed point ({where})"
+    return (
+        f"journal finalizer did not reach a fixed point ({where}); "
+        f"unresolved surface issues: " + "; ".join(seen[:6])
+    )
 
 
 def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:

@@ -7324,3 +7324,49 @@ def test_live_reviewer_wording_repairs_existing_manuscript_without_regeneration(
         fixed, asks, evidence_rows=rows,
     ) == []
     assert logs and "no_extractable_outcome_numerics" in logs[0].detail
+
+
+def test_non_convergence_detail_names_unresolved_surface_issues(tmp_path):
+    """A quality shortfall must not read as an infrastructure crash.
+
+    The bare "did not reach a fixed point" surfaced as exit=7
+    local_gate_execution_failed, so a paper that merely had a short section was
+    indistinguishable from a crashed pipeline.
+    """
+    class _Issue:
+        def __init__(self, code, detail):
+            self.code, self.detail = code, detail
+
+    class _Report:
+        passed = False
+        issues = (
+            _Issue("structure_surface", "section too short: Cross-Domain Synthesis 535/850 words"),
+            _Issue("outcome_routing", "outcome-class mismatch: Long 2025"),
+        )
+
+    original = journal_finalizer._surface_report
+    journal_finalizer._surface_report = lambda *a, **k: _Report()
+    try:
+        msg = journal_finalizer._non_convergence_detail("paper", tmp_path, 2)
+    finally:
+        journal_finalizer._surface_report = original
+
+    assert "repair cycle of 2 states" in msg
+    assert "section too short" in msg
+    assert "outcome-class mismatch" in msg
+
+
+def test_non_convergence_detail_survives_an_empty_issue_list(tmp_path):
+    """Never lose the error just because the report is empty."""
+    class _Report:
+        passed = False
+        issues = ()
+
+    original = journal_finalizer._surface_report
+    journal_finalizer._surface_report = lambda *a, **k: _Report()
+    try:
+        msg = journal_finalizer._non_convergence_detail("paper", tmp_path, 0)
+    finally:
+        journal_finalizer._surface_report = original
+    assert "did not reach a fixed point" in msg
+    assert "40 passes" in msg
