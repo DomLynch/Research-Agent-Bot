@@ -355,3 +355,44 @@ FIX OPTIONS (untested):
 Option (a) looks right. Verify with the command in the BLOCKED section above;
 success = the missing/unexpected pairs disappear, leaving only the single
 Cross-Domain Synthesis short-section fault.
+
+## ROOT CAUSE 2026-08-07 (evening) — THE WRITER EMITS STUBS
+
+Every downstream gate we fixed this week sits below a writer that produces
+~15-word sections. From a live liraglutide run (/tmp/pub4.log):
+
+    [paper_writer] introduction              done — 15 words   (floor 400)
+    [paper_writer] background                done — 17 words   (floor 300)
+    [paper_writer] results                   done — 243 words  (floor 500)
+    [paper_writer] cross_domain_synthesis    done — 14 words   (floor 850)
+    [paper_writer] discussion                done — 18 words   (floor 800)
+    [paper_writer] limitations_full          done — 14 words
+    [paper_writer] conclusion                done — 16 words
+
+DETERMINISTIC sections on the SAME run are full size:
+
+    quantitative_results_table (deterministic)  709 words
+    references_full            (deterministic) 2110 words
+    methods                    (deterministic)  258 words
+
+So the pipeline is healthy and the corpus is healthy; the LLM-written sections
+are stubs. The backstop rescues discussion (18 -> 838) and conclusion
+(16 -> 325) with deterministic anchors, but its cross-domain anchor is only
+~150-250 words and cannot bridge 14 -> 850. That single unbridged section is
+what fails Stage 5c and hangs the finalizer repair loop.
+
+NOT the model or the credentials. A direct call to the configured writer
+(MiniMax-M3 @ https://api.minimax.io/anthropic, /v1/messages) returned a full,
+well-formed 120-word answer on request. The key is present and valid, and no
+error/timeout/429 appears anywhere in the run log — the calls "succeed" and
+return near-empty content.
+
+The uniformity (15/17/14/18/14/16 words) looks like one sentence per section,
+i.e. a preamble or refusal-shaped reply being accepted as the section body.
+
+START HERE NEXT. Do not add more gate/floor/finalizer fixes above this. Capture
+the raw provider response for one section call (agent/llm_client.py ~line 264
+builds the payload; max_tokens defaults to 4096, so truncation is unlikely) and
+compare the prompt actually sent against the working direct call. Historical
+runs prove the writer CAN do this: 691 of 723 papers cleared the 850-word
+Cross-Domain floor, median 1015 words. This is a regression, not a limit.
