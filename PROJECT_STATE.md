@@ -244,7 +244,7 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 receipt-funnel stage, NOT end-to-end to a published paper.**
 
 Verified: liraglutide_adverse_effects primary-tier receipts 1 -> 25+ via a live
-`run_v06_synthesis --dry-run` probe; full suite 4196 passed; both
+`run_v06_synthesis --dry-run` probe; full suite 4198 passed (4243 collected); both
 cross-subject-leakage directions covered by tests.
 
 NOT verified: no paper has published since deploy. This is not attributable to
@@ -261,5 +261,25 @@ surface-invalid states. Current failure, now stated explicitly rather than as
 
 Ruled out by test, do not retry blind:
 - terminal `_phase_b_lane_qualifier` pass (identical cycle; reverted unshipped)
-- disabling `review_noise_control.restore_surface_floors` (identical cycle), so
-  the padding that inserts rule-violating citations is inside `_run_text_phases`
+- disabling `review_noise_control.restore_surface_floors` (identical cycle)
+
+LOCALIZED 2026-08-07. The manuscript arrives with ONE fault. Measured on the
+pristine liraglutide paper before any repair phase runs:
+
+    pristine issues: ['structure_surface']   # Cross-Domain Synthesis 535/850
+
+Every other fault is MANUFACTURED by the repair stack. Running each phase
+independently against that pristine text:
+
+    _phase_a_methods_replace                INTRODUCES ['pipeline_jargon']
+    _phase_d_evidence_honesty_guard         INTRODUCES ['duplicate_paragraph']
+    _phase_f_reconcile_results_table        INTRODUCES ['public_artifact']
+    _phase_l_strengthen_analytical_sections INTRODUCES ['grammar_artifact']
+
+So the loop cannot converge because the repairs damage the manuscript faster
+than they fix it. This is the audit's thesis with direct evidence: the fix is to
+shrink the repair stack, not to add another phase.
+
+Phase behaviour IS deterministic — an earlier claim that sidecar state made
+localization non-reproducible was WRONG and is retracted. A/B on pristine copies
+gave identical issue sets and identical sidecar hashes.
