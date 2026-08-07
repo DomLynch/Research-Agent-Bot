@@ -229,6 +229,7 @@ def build_anchored_from_parsed(
     paragraphs = parsed.get("paragraphs") or []
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
+    rejections: list[str] = []
     for entry in paragraphs:
         if not isinstance(entry, dict):
             continue
@@ -242,10 +243,11 @@ def build_anchored_from_parsed(
         repaired_rids, _repair_log = repair_receipt_ids(
             [str(r) for r in rids], accepted_ids,
         )
-        ok, _reason = _check_anchored_paragraph(
+        ok, reason = _check_anchored_paragraph(
             text, repaired_rids, accepted_ids, accepted_numerics,
         )
         if not ok:
+            rejections.append(reason)
             continue
         body_lines.append(text.strip())
         body_lines.append("")
@@ -261,6 +263,17 @@ def build_anchored_from_parsed(
             ),
         ))
     if not anchors:
+        # Every paragraph failed anchor validation, so the caller falls back to
+        # a ~15-word placeholder that cannot meet any section floor. The reason
+        # used to be discarded, which made a total writer failure look like a
+        # downstream gate error. Report why the first few were rejected.
+        counts = Counter(rejections)
+        detail = "; ".join(f"{r} x{n}" for r, n in counts.most_common(3))
+        print(
+            f"[paper_writer] {name}: all {len(paragraphs)} paragraph(s) failed "
+            f"anchor validation — {detail or 'no paragraphs returned'}",
+            flush=True,
+        )
         return None
     return SynthesisSection(
         name=name, body_md="\n".join(body_lines).rstrip() + "\n",
