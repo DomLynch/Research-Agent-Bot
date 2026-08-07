@@ -318,3 +318,40 @@ table rows rather than headed sections. Verify with:
     print(sorted(i.code for i in J._surface_report(o,d).issues))"
 
 Success = that list does not grow relative to the pristine `['structure_surface']`.
+
+## ROOT CAUSE FOUND 2026-08-07 — topic-anchor mismatch, not short sections
+
+Four fixes failed because the diagnosis was wrong. The 11 `structure_surface`
+faults are NOT 11 short sections. Actual breakdown after
+`_phase_f_reconcile_results_table` on the real liraglutide run:
+
+    missing Results outcome section: Liraglutide Adverse Effects / Cardiometabolic
+    missing Results outcome section: Liraglutide Adverse Effects / Safety
+    missing Results outcome section: Liraglutide Adverse Effects / Longevity
+    missing ... / Contextual Adjacent Evidence, ... / Animal/Preclinical Context
+    unexpected Results outcome section: cardiometabolic
+    unexpected Results outcome section: safety
+    unexpected Results outcome section: longevity
+    unexpected Results outcome section: contextual other, animal preclinical context
+    section too short: Cross-Domain Synthesis 295/850 words
+
+The SAME five sections are reported missing (under the expected name) and
+unexpected (under the emitted name). Only ONE genuine short section exists.
+
+Mechanism: `agent/journal_surface_gate._results_outcome_section_issue_messages`
+derives expected sections from the TABLE's "Outcome class" column.
+`_phase_f_reconcile_results_table` writes that cell as
+`f"{topic_anchor} / {display}"` but writes the H3 heading as bare `display`.
+`_outcome_key()` of the two never matches. Only manifests when `topic_anchor`
+is non-empty, so it is a regression from when anchors were added to table rows
+without updating headings or the gate.
+
+FIX OPTIONS (untested):
+ a) strip a leading "<anchor> / " when deriving expected keys in the gate
+    (keeps the human-readable anchored table, matches existing headings)
+ b) emit the anchored form in the H3 heading (verbose, redundant in a paper
+    already titled for that topic)
+ c) drop the anchor from the table cell (loses disambiguation)
+Option (a) looks right. Verify with the command in the BLOCKED section above;
+success = the missing/unexpected pairs disappear, leaving only the single
+Cross-Domain Synthesis short-section fault.
