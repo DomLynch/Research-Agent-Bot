@@ -2472,3 +2472,22 @@ def test_slice35_thin_corpus_brief_still_enforces_minimum_sections() -> None:
     missing = [i for i in issues if i.startswith("missing required section:")]
     assert any("Methods" in m for m in missing)
     assert any("Results" in m for m in missing)
+
+
+def test_outcome_sections_key_on_outcome_not_topic_anchor() -> None:
+    """The results table anchors its Outcome class cell; headings do not.
+
+    The table renders "<topic anchor> / <outcome>" while the matching H3 carries
+    the bare outcome. Comparing them verbatim reported the SAME section as both
+    missing and unexpected, turning one real fault into eleven and preventing
+    the finalizer repair loop from ever reaching a fixed point.
+    """
+    from agent.journal_surface_gate import _outcome_key
+
+    assert _outcome_key("Liraglutide Adverse Effects / Cardiometabolic") == _outcome_key(
+        "Cardiometabolic Outcomes",
+    )
+    # A bare outcome with no anchor must still key to itself.
+    assert _outcome_key("Safety") == _outcome_key("Safety Outcomes")
+    # Distinct outcomes must NOT collide just because they share an anchor.
+    assert _outcome_key("Topic X / Safety") != _outcome_key("Topic X / Longevity")
