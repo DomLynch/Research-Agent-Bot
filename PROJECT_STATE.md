@@ -283,3 +283,38 @@ shrink the repair stack, not to add another phase.
 Phase behaviour IS deterministic — an earlier claim that sidecar state made
 localization non-reproducible was WRONG and is retracted. A/B on pristine copies
 gave identical issue sets and identical sidecar hashes.
+
+## BLOCKED — publication gated on journal_finalizer, 2026-08-07
+
+Status: **BLOCKED, not done.** Evidence selection is fixed and deployed; no
+paper can publish because `journal_finalizer` cannot converge.
+
+Known defect, reproducible, deliberately NOT fixed:
+`_phase_f_reconcile_results_table` (scripts/journal_finalizer.py:5558) turns one
+`structure_surface` fault into eleven. It groups receipts by `outcome_class` and
+rebuilds `## Results` with a subsection per group, so each group becomes a
+short section. More receipts => more outcome groups => more short subsections.
+
+Note the interaction: `662f930e` raised liraglutide from 5 admitted receipts to
+68, which INCREASES the number of outcome groups and therefore makes this phase
+amplify harder. Fixing evidence selection made this defect more visible, not
+less.
+
+Three fixes attempted and reverted, each failing its own test — do not retry
+blind:
+1. terminal `_phase_b_lane_qualifier` pass (identical cycle)
+2. disabling `review_noise_control.restore_surface_floors` (identical cycle)
+3. phase-by-phase culprit scan gated on a state that never occurs
+
+CONCRETE NEXT ACTION: make `_phase_f_reconcile_results_table` stop emitting one
+subsection per outcome group when that would create sections below the surface
+floor — either merge small groups into a single subsection or render them as
+table rows rather than headed sections. Verify with:
+
+    cp -r runs/synthesis-liraglutide_adverse_effects-v06-DAILY-2026-08-06T18-18-34Z /tmp/x
+    .venv/bin/python -c "import sys;sys.path.insert(0,'scripts');sys.path.insert(0,'.');\
+    import journal_finalizer as J;from pathlib import Path;d=Path('/tmp/x');\
+    t=(d/'full_paper.md').read_text();o,_=J._phase_f_reconcile_results_table(t,d);\
+    print(sorted(i.code for i in J._surface_report(o,d).issues))"
+
+Success = that list does not grow relative to the pristine `['structure_surface']`.
