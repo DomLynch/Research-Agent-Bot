@@ -98,3 +98,21 @@ To A/B a change against production state, copy the tree first:
 Deploy to /opt only via `git fetch && git reset --hard origin/<branch>` after
 the change is committed and pushed. Read-only commands (`git log`, `status`,
 `show`, `pytest`) are fine in place.
+
+## Never bundle a status check with a destructive command
+
+Put the check and the destructive action in SEPARATE calls, and read the check
+before acting on it.
+
+On 2026-08-07 a single command did:
+
+    ps ... | grep run_v06_synthesis   # "is anything mid-flight?"
+    pkill -f "mode fresh --run-synthesis"
+
+Both ran before the output could be read. A liraglutide synthesis WAS
+mid-flight and was killed. The guard was written, executed, and useless,
+because a guard you cannot read is not a guard.
+
+Applies to pkill/kill, rm -rf, git reset --hard, systemctl stop, DROP/DELETE.
+Same rule as "never deploy from a dirty state": verify in one call, act in the
+next.
