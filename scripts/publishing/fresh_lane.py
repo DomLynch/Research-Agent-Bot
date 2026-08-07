@@ -127,6 +127,15 @@ PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = THIN_CORPUS_MIN_PRIMARY_TIER
 PREFLIGHT_MIN_DIRECT_RECEIPTS = submit_bridge.PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS
+# Papers to fetch per admitted receipt. Seeding budgets are PAPER counts, so a
+# receipt floor has to be scaled by the observed yield before it can serve as
+# one; flooring at min_receipts asked 12 papers to produce 12 receipts.
+# Measured fetch->admitted yield: liraglutide 419 fetched -> 68 admitted (16%),
+# freshly seeded topics fetching ~120 -> 8-11 admitted (6.7-9.2%). Sized from
+# the WORST observed yield, not the average: at 6.7%, clearing a 12-receipt
+# floor needs ~180 papers, so 20 leaves real margin instead of landing exactly
+# on the line. Still bounded above by the caller's GLOBAL_SAFETY_CAP.
+SEED_PAPERS_PER_RECEIPT = 20
 _CANDIDATE_THRESHOLDS = CandidateThresholds(
     min_quant_claims=PREFLIGHT_MIN_QUANT_CLAIMS,
     min_receipts=PREFLIGHT_MIN_RECEIPTS,
@@ -3825,7 +3834,17 @@ def _receipt_repair_seed_limit(
     current_quant_claims = max(0, current_quant_claims)
     observed_receipts = max(1, n_receipts)
     claims_per_receipt = max(1, (max(current_quant_claims, observed_receipts) + observed_receipts - 1) // observed_receipts)
-    return max(min_receipts, current_quant_claims + missing * claims_per_receipt * (round_idx + 1))
+    # The floor is a PAPER-FETCH budget, not a receipt count, so flooring at
+    # min_receipts asked for 12 papers to produce 12 receipts. Measured
+    # fetch->admitted-receipt yield is ~8% (liraglutide: 885 selected, 419
+    # fetched, 68 admitted; freshly seeded topics at 120 landed at 8-11
+    # admitted — one or two short of the floor, every time). Scaling the floor
+    # by that yield is what turns "nearly enough" into "enough". Still bounded
+    # above by the caller's GLOBAL_SAFETY_CAP.
+    return max(
+        min_receipts * SEED_PAPERS_PER_RECEIPT,
+        current_quant_claims + missing * claims_per_receipt * (round_idx + 1),
+    )
 
 
 def _seed_topic(

@@ -11406,8 +11406,8 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
     assert result["n_receipts"] == cycle.DEFAULT_THRESHOLDS.min_receipts
     assert [probe["n_receipts"] for probe in result["probes"]] == [7, 9, cycle.DEFAULT_THRESHOLDS.min_receipts]
     assert repairs == [
-        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts, "force_extract": False, "status": "corpus_repaired"},
-        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts, "force_extract": False, "status": "corpus_repaired"},
+        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts * cycle.SEED_PAPERS_PER_RECEIPT, "force_extract": False, "status": "corpus_repaired"},
+        {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts * cycle.SEED_PAPERS_PER_RECEIPT, "force_extract": False, "status": "corpus_repaired"},
     ]
     assert result["repairs"] == repairs
 
@@ -11443,7 +11443,10 @@ def test_receipt_preflight_repair_keeps_best_probe_after_regression(tmp_path: Pa
 
     assert result["passed"] is True
     assert [probe["n_receipts"] for probe in result["probes"]] == [7, 0, cycle.DEFAULT_THRESHOLDS.min_receipts]
-    assert [repair["seed_limit"] for repair in repairs] == [59, 84]
+    # Seeding budgets are PAPER counts; the floor is min_receipts scaled by
+    # observed fetch->receipt yield, so a starved topic gets a budget that
+    # can actually reach the receipt floor (was 59/84 -- under-fetching).
+    assert [repair["seed_limit"] for repair in repairs] == [240, 240]
     assert all(repair["force_extract"] is False for repair in repairs)
 
 
