@@ -333,12 +333,29 @@ async def _write_anchored_section(
             system_prompt=system_prompt, user_prompt=current_prompt,
             chain=chain, client=client, ledger=ledger, seed=seed,
         )
+        # These two failures used to be bare `continue`s. When every section
+        # call failed, the writer silently emitted its hardcoded fallback_body
+        # (~15 words) for every LLM-written section, the paper failed its word
+        # floors, and the finalizer looped forever on a "section too short"
+        # it could not repair. The gate reported an execution error, so the
+        # cause looked like anything except the writer. Say which step failed.
         if not parsed:
+            print(
+                f"[paper_writer] {name}: LLM call returned no parseable object "
+                f"(attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1})",
+                flush=True,
+            )
             continue
         section = build_anchored_from_parsed(
             parsed, name=name, heading=heading, accepted=accepted,
         )
         if section is None:
+            print(
+                f"[paper_writer] {name}: parsed object rejected by builder; "
+                f"keys={sorted(parsed)[:6]} "
+                f"(attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1})",
+                flush=True,
+            )
             continue
         words = _section_word_count(section)
         if words > best_words:
@@ -363,6 +380,16 @@ async def _write_anchored_section(
         chain=chain, client=client, ledger=ledger, seed=seed,
         call_llm_fn=_call_llm_section,
     )
+    if best is None:
+        # Never silent: the fallback body is a ~15-word placeholder that cannot
+        # meet any section floor, so emitting it guarantees a downstream gate
+        # failure. Announce it where the cause is still visible.
+        print(
+            f"[paper_writer] {name}: ALL {SECTION_RETRY_BUDGET + 1} attempts "
+            f"failed — emitting placeholder fallback_body "
+            f"({len(fallback_body.split())} words, floor {floor})",
+            flush=True,
+        )
     return best or SynthesisSection(
         name=name, body_md=fallback_body, anchors=(),
     )
@@ -424,6 +451,16 @@ async def _write_scoped_section(
         chain=chain, client=client, ledger=ledger, seed=seed,
         call_llm_fn=_call_llm_section,
     )
+    if best is None:
+        # Never silent: the fallback body is a ~15-word placeholder that cannot
+        # meet any section floor, so emitting it guarantees a downstream gate
+        # failure. Announce it where the cause is still visible.
+        print(
+            f"[paper_writer] {name}: ALL {SECTION_RETRY_BUDGET + 1} attempts "
+            f"failed — emitting placeholder fallback_body "
+            f"({len(fallback_body.split())} words, floor {floor})",
+            flush=True,
+        )
     return best or SynthesisSection(
         name=name, body_md=fallback_body, anchors=(),
     )
