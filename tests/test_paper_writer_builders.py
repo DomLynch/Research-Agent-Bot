@@ -322,3 +322,31 @@ def test_results_builder_merges_duplicate_llm_outcome_subsections() -> None:
     assert section.body_md.count("### Immune and Inflammation Outcomes") == 1
     assert "Immune first paragraph." in section.body_md
     assert "Immune second paragraph." in section.body_md
+
+
+def test_calendar_year_is_not_treated_as_a_fabricated_numeric() -> None:
+    """Years are bibliographic context, not quantitative claims.
+
+    A bare four-digit year can never appear in a receipt's numeric set, so
+    rejecting on it discarded every paragraph that dated a study. On a live run
+    all 5 cross-domain paragraphs failed on '2025'/'2015', so the writer emitted
+    a ~15-word placeholder for every LLM section.
+    """
+    from agent.paper_writer_builders import _check_anchored_paragraph
+
+    ok, reason = _check_anchored_paragraph(
+        "A 2025 randomized trial reported the endpoint.",
+        ["r1"], {"r1"}, set(),
+    )
+    assert ok, f"year must not be a fabricated numeric (got {reason})"
+
+
+def test_untraceable_statistic_is_still_rejected() -> None:
+    """The fabrication guard must survive the year exemption."""
+    from agent.paper_writer_builders import _check_anchored_paragraph
+
+    ok, reason = _check_anchored_paragraph(
+        "The intervention reduced the endpoint by 42.7%.",
+        ["r1"], {"r1"}, set(),
+    )
+    assert not ok and "novel_numeric" in reason, reason

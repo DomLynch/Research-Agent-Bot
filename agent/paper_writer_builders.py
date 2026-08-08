@@ -93,6 +93,10 @@ def _topic_aliases(topic: str) -> tuple[str, ...]:
     return tuple(_normalize(v) for v in variants if _normalize(v))
 
 
+# Bare four-digit calendar years are bibliographic, not quantitative.
+_CALENDAR_YEAR_RE = re.compile(r"(?:19|20)\d{2}")
+
+
 def _numeric_token(text: str) -> str:
     return re.sub(r"\s+", "", _normalize(text))
 
@@ -177,8 +181,19 @@ def _check_anchored_paragraph(
         return False, f"no_accepted_anchor:{list(receipt_ids)}"
     for m in _NUMERIC_RE.finditer(text):
         tok = _numeric_token(m.group(0))
-        if tok not in accepted_numerics:
-            return False, f"novel_numeric:{tok!r}"
+        if tok in accepted_numerics:
+            continue
+        # A bare four-digit calendar year is bibliographic context ("a 2025
+        # trial", "the 2015 cohort"), not a quantitative claim, so it can never
+        # appear in a receipt's numeric set. Rejecting on it discarded EVERY
+        # paragraph that dated a study — measured on a live run, all 5
+        # cross-domain paragraphs failed on '2025'/'2015' — which made the
+        # writer emit a ~15-word placeholder for every LLM section and hung the
+        # finalizer on a section it could not repair. The fabrication guard
+        # still applies to percentages, p-values, CIs and effect sizes.
+        if _CALENDAR_YEAR_RE.fullmatch(tok):
+            continue
+        return False, f"novel_numeric:{tok!r}"
     return True, "ok"
 
 
@@ -212,8 +227,19 @@ def _check_scoped_paragraph(
         return False, "missing_hedge_phrase"
     for m in _NUMERIC_RE.finditer(text):
         tok = _numeric_token(m.group(0))
-        if tok not in accepted_numerics:
-            return False, f"novel_numeric:{tok!r}"
+        if tok in accepted_numerics:
+            continue
+        # A bare four-digit calendar year is bibliographic context ("a 2025
+        # trial", "the 2015 cohort"), not a quantitative claim, so it can never
+        # appear in a receipt's numeric set. Rejecting on it discarded EVERY
+        # paragraph that dated a study — measured on a live run, all 5
+        # cross-domain paragraphs failed on '2025'/'2015' — which made the
+        # writer emit a ~15-word placeholder for every LLM section and hung the
+        # finalizer on a section it could not repair. The fabrication guard
+        # still applies to percentages, p-values, CIs and effect sizes.
+        if _CALENDAR_YEAR_RE.fullmatch(tok):
+            continue
+        return False, f"novel_numeric:{tok!r}"
     return True, "ok"
 
 
