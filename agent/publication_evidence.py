@@ -201,7 +201,11 @@ def _mark_citation(line: str, token: str, marker: str) -> str:
     protected = re.compile(rf"\[{token_re}\](?:\([^)]+\))?", re.I)
     parts = protected.split(line)
     citations = protected.findall(line)
-    marked = [re.sub(token_re, lambda match: f"{match.group(0)} {marker}", part, flags=re.I) for part in parts]
+
+    def append_marker(match: re.Match[str]) -> str:
+        return f"{match.group(0)} {marker}"
+
+    marked = [re.sub(token_re, append_marker, part, flags=re.I) for part in parts]
     out = marked[0]
     for citation, tail in zip(citations, marked[1:], strict=True):
         out += f"{citation} {marker}{tail}"

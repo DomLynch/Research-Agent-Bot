@@ -584,7 +584,12 @@ def _repair_unbalanced_parentheses(text: str) -> str:
 
 
 def _repair_dangling_abbrev_artifacts(text: str) -> tuple[str, int]:
-    out, malformed_n = re.subn(r"\be\.g\.,|(?<=[A-Za-z])\.g\.,", lambda m: "for example," if m.group(0).lower().startswith("e") else ". For example,", text, flags=re.I)
+    def replace_abbrev(match: re.Match[str]) -> str:
+        return "for example," if match.group(0).lower().startswith("e") else ". For example,"
+
+    out, malformed_n = re.subn(
+        r"\be\.g\.,|(?<=[A-Za-z])\.g\.,", replace_abbrev, text, flags=re.I,
+    )
     out, truncated_n = re.subn(
         r"\s+\((?:e|i)\.\s*(?=\n\s*\n|\Z)", "", out, flags=re.I,
     )
@@ -4524,6 +4529,10 @@ def _phase_d_outcome_label_cleanup(text: str, out_dir: Path) -> tuple[str, list[
     patched, n = text, 0
     for old, new in renames:
         patched = re.sub(re.escape(new), _OUTCOME_RENAME_MARKER, patched, flags=re.I) if old.casefold() in new.casefold() else patched
+
+        def apply_rename(match: re.Match[str]) -> str:
+            return f"{match.group(1)}{new}"
+
         patterns = (rf"()\b{re.escape(old)}\b",) if old == "Dosing and Pharmacokinetics" else (
             rf"(^#{{2,4}}\s*){re.escape(old)}(?=\s+Outcomes?\s*$)",
             rf"(\|\s*){re.escape(old)}(?=\s*\|)",
@@ -4531,7 +4540,7 @@ def _phase_d_outcome_label_cleanup(text: str, out_dir: Path) -> tuple[str, list[
             rf"()\b{re.escape(old)}(?=\s+outcome class\b)",
         )
         for pattern in patterns:
-            patched, changed = re.subn(pattern, lambda match: f"{match[1]}{new}", patched, flags=re.I | re.M)
+            patched, changed = re.subn(pattern, apply_rename, patched, flags=re.I | re.M)
             n += changed
         patched = patched.replace(_OUTCOME_RENAME_MARKER, new)
     if not n:
