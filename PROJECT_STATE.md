@@ -536,3 +536,37 @@ assignment right after the retry loop. Consider keeping the longer of the two
 rather than unconditionally replacing, since the word floor is the binding gate.
 
 Do NOT re-investigate journal_finalizer for this. It is measured clean.
+
+### _run_citation_fix_pass ELIMINATED as the 964 -> 680 suspect
+
+Read the implementation (agent/paper_writer_citations.py run_citation_fix_pass).
+It is fully guarded and CANNOT shrink a section:
+
+    if section is None or not background_lit_entries: return section
+    if not issues:                                    return section
+    if not parsed:                                    return section
+    if new_section is None:                           return section
+    if len(new_issues) < len(issues):                 return new_section
+    return section                                    # otherwise original
+
+The replacement requires a STRICT reduction in citation-issue count, with an
+explicit comment that this defends against the LLM rewriting the section.
+So the earlier note naming it as prime suspect was WRONG -- disregard it.
+
+Measured-clean list for the 964 -> 680 loss now covers: all numbered
+journal_finalizer _phase_* functions, the three post-loop passes, and
+run_citation_fix_pass.
+
+REMAINING candidates, unmeasured:
+ 1. The "964 words" log line is emitted by _log_section_done against the
+    in-memory SynthesisSection; the rendered figure counts the section body in
+    full_paper.md AFTER _strip_rendered_citation_markers() runs in
+    render_full_paper. That strip removes inline "_Cited: `id`_" markers, which
+    the builder appends after EVERY paragraph -- roughly 4-6 words per
+    paragraph. That is a plausible mechanical explanation for a ~280-word gap
+    and is CHEAP TO CHECK FIRST: count the markers in the section.
+ 2. section_word_count() in paper_writer_helpers drops the first line before
+    counting, so writer-side and gate-side word counts are not measuring the
+    same text. Compare the two definitions before assuming content was lost.
+
+Check (1) before touching any code: the loss may not be content loss at all.
