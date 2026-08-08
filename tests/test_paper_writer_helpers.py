@@ -79,17 +79,6 @@ def test_retry_prompt_forbids_unsourced_numbers() -> None:
     assert "instead of inventing" in lowered
 
 
-@pytest.mark.xfail(
-    reason=(
-        "UNRESOLVED 2026-08-08: _check_anchored_paragraph ACCEPTED "
-        "Weight fell by 7.4kg. against a corpus containing no numerics at "
-        "all. Either the anchor guard has a hole for unit-bearing tokens or "
-        "this fixture is wrong -- undetermined. Kept xfail rather than deleted "
-        "so the question is not lost; resolve before trusting the guard to "
-        "block fabricated doses."
-    ),
-    strict=False,
-)
 def test_unsourced_number_is_dropped_and_the_retry_says_why() -> None:
     """End-to-end: the guard drops the paragraph, the retry names the cause.
 

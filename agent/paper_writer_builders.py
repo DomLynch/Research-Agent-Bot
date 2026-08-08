@@ -77,7 +77,11 @@ _NUMERIC_RE = re.compile(
     r"hours?|days?|weeks?|months?|years?)\b|"
     r"(?:hr|or|rr|ahr|aor|arr|ηp[2²]|β)\s*[=:,\-]?\s*-?\d+(?:\.\d+)?|"
     r"-?\d+(?:\.\d+)?"
-    r")(?![\w.])",
+    # Trailing "." must not veto the match: a sentence-final numeric
+    # ("Dose was 50mg.", "p = 0.03.") otherwise escaped the fabrication guard
+    # entirely and was never checked for traceability. Excluding only \w still
+    # prevents matching a partial number, since digits are word characters.
+    r")(?!\w)",
     re.IGNORECASE,
 )
 
