@@ -602,3 +602,35 @@ Add a test asserting writer count == gate count for a section containing
 _Cited: markers.
 
 Do NOT raise the floor or pad the section; the counts simply need to agree.
+
+### 2026-08-08 — parity fix worked; "finalizer exonerated" was WRONG
+
+339d7246 (writer counts words the way the gate does) had a large effect. The
+retry loop now optimises the enforced number:
+
+    introduction            15 -> 935 words   (was a placeholder ALL WEEK)
+    cross_domain_synthesis  14 -> 932
+    results                243 -> 2429
+    abstract                89 -> 368
+
+But Stage 5c still fails:
+
+    section too short: Cross-Domain Synthesis 679/850 words
+    empty heading: Conclusion
+
+Writer builds 932 (markers stripped, gate rule). Rendered is 679. So ~253 words
+are still lost between section assembly and full_paper.md.
+
+RETRACTION: the earlier "finalizer EXONERATED" note is INVALID. That probe
+applied journal_finalizer phases to an ALREADY-FINALIZED full_paper.md, so
++0 deltas prove nothing -- the phases had already run. The erosion happens on
+the FIRST finalizer pass over the fresh render, which was never measured.
+
+NEXT (do this properly): capture the section body at three points in ONE run --
+(a) SynthesisSection.body_md as built, (b) full_paper.md immediately after
+render_full_paper and BEFORE journal_finalizer, (c) after the finalizer. That
+isolates render-vs-finalizer in a single measurement instead of comparing
+across runs or across already-processed artifacts, which has produced three
+wrong conclusions today.
+
+Background is still a 19-word placeholder (1 remaining fallback), separate cause.
