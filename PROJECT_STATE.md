@@ -656,3 +656,33 @@ claim and MUST trace. The two are not the same case.
 Correct response to these rejections: the retry prompt should tell the model to
 use only corpus numerics, or the section should be allowed to be shorter --
 never to admit untraceable numbers.
+
+### RETRACTION: novel_numeric rejections ARE a bug after all (2026-08-08)
+
+The note above ("NOT a bug -- do not fix") is WRONG and must not be relied on.
+Its evidence was a grep against a receipt_funnel.json that DID NOT EXIST in that
+run dir; grep returned 0 matches because there was no file, not because the
+values were absent.
+
+Re-run against a run that actually has the file
+(...2026-08-08T06-06-26Z-R2/receipt_funnel.json, 5155 bytes):
+
+    1.22  occurrences: 0
+    3.8   occurrences: 3     <- PRESENT in corpus, still rejected
+    125   occurrences: 1     <- PRESENT in corpus, still rejected
+
+So _check_anchored_paragraph rejects values that DO trace to receipts. That is a
+matching/normalisation defect, not fabrication. Likely causes: the accepted set
+is built only from receipt.p_values + receipt.thesis_text
+(_accepted_numeric_tokens), so a value appearing elsewhere in the funnel is not
+admitted; and unit-bearing tokens ("3.8kg") normalise differently from a bare
+"3.8" in the source.
+
+NEXT: compare the exact token the paragraph emits against _accepted_numeric_tokens
+for the same run, then widen the accepted set to the numerics actually present in
+the receipts rather than loosening the guard. Do NOT simply allow untraceable
+numbers -- 1.22 really is absent, so the guard must still reject that one.
+
+LESSON: verify the file exists before trusting a zero-match grep. This is the
+second time today a missing/mismatched artifact produced a confident wrong
+conclusion.
