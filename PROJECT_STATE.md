@@ -634,3 +634,25 @@ across runs or across already-processed artifacts, which has produced three
 wrong conclusions today.
 
 Background is still a 19-word placeholder (1 remaining fallback), separate cause.
+
+### novel_numeric rejections are NOT a bug — do not "fix" them (2026-08-08)
+
+Diagnostics showed paragraphs rejected with novel_numeric:1.22mmol/l, 3.8kg,
+n=125. Checked whether those values exist in the run corpus:
+
+    value 1.22 in receipt_funnel.json: 0 times
+    value 3.8                        : 0 times
+    value 125                        : 0 times
+
+They are absent. The model INVENTED them. The guard is doing exactly what it
+exists for -- keeping fabricated clinical values out of a published biomedical
+paper. Loosening numeric traceability to make a section reach its word floor
+would trade the trust spine for word count. DO NOT DO IT.
+
+The calendar-year fix (f1a2f1ad) was correct because a year is bibliographic and
+can never appear in a receipt numeric set. A dose or sample size is a factual
+claim and MUST trace. The two are not the same case.
+
+Correct response to these rejections: the retry prompt should tell the model to
+use only corpus numerics, or the section should be allowed to be shorter --
+never to admit untraceable numbers.
