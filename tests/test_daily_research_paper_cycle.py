@@ -145,13 +145,13 @@ def test_preflight_thin_quant_blocker_is_classified_and_backfills_unknown(tmp_pa
     assert blockers["audit_p1_failed"]["class"] == "C_writer_fixable"
 
 
-def test_fresh_lane_keeps_8h_cadence_with_larger_search_budget() -> None:
+def test_fresh_lane_keeps_8h_cadence_with_bounded_search_budget() -> None:
     service = (REPO / "deploy" / "research-agent-paper-fresh.service").read_text(encoding="utf-8")
     timer = (REPO / "deploy" / "research-agent-paper-fresh.timer").read_text(encoding="utf-8")
 
     assert "OnCalendar=*-*-* 00/8:00:00" in timer
-    assert "--max-attempts 0" in service
-    assert "--cycle-budget-sec 10800" in service
+    assert "--max-attempts 3" in service
+    assert "--cycle-budget-sec 3600" in service
     assert "RESEARKA_DOI_PREFLIGHT_ENABLED=1" in service
     assert "RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300" in service
     assert "RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT=200" in service
