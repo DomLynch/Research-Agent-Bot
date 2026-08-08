@@ -104,7 +104,13 @@ def build_retry_prompt(
         f"of substantive prose. Concretely: produce more paragraphs, "
         f"and make each paragraph longer (8-12 sentences each instead "
         f"of 3-5). Do NOT default to summary mode. The reader needs "
-        f"the full publishable density."
+        f"the full publishable density.\n"
+        f"CRITICAL: every numeric value you write must appear verbatim in "
+        f"the sources given above. Any number that does not is dropped along "
+        f"with the whole paragraph containing it, which is why the previous "
+        f"attempt came back short. If you cannot source a figure, describe "
+        f"the finding in words instead of inventing a value. Longer prose "
+        f"with no new numbers beats precise-looking prose that is discarded."
     )
 
 
