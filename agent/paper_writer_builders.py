@@ -110,12 +110,34 @@ def _topic_aliases(topic: str) -> tuple[str, ...]:
     return tuple(_normalize(v) for v in variants if _normalize(v))
 
 
-# Bare four-digit calendar years are bibliographic, not quantitative.
+# Four-digit years are bibliographic only when their prose context says so.
 _CALENDAR_YEAR_RE = re.compile(r"(?:19|20)\d{2}")
+_YEAR_PREFIX_RE = re.compile(r"\b(?:in|from|since|during|by)\s*$", re.IGNORECASE)
+_YEAR_STUDY_RE = re.compile(
+    r"\s*(?:(?:randomi[sz]ed|prospective|retrospective|observational|clinical)\s+)*"
+    r"(?:trial|study|cohort|report|analysis|publication|paper|review|registry)\b",
+    re.IGNORECASE,
+)
+_YEAR_COUNT_RE = re.compile(
+    r"\s*(?:participants|patients|subjects|cases|records|people|individuals|"
+    r"adults|children|samples|observations)\b",
+    re.IGNORECASE,
+)
 
 
 def _numeric_token(text: str) -> str:
     return re.sub(r"\s+", "", _normalize(text))
+
+
+def _is_bibliographic_year(text: str, match: re.Match[str]) -> bool:
+    """Distinguish study dates from four-digit sample sizes."""
+    if not _CALENDAR_YEAR_RE.fullmatch(_numeric_token(match.group(0))):
+        return False
+    before = text[max(0, match.start() - 16):match.start()]
+    after = text[match.end():match.end() + 40]
+    if _YEAR_COUNT_RE.match(after):
+        return False
+    return bool(_YEAR_PREFIX_RE.search(before) or _YEAR_STUDY_RE.match(after))
 
 
 def _accepted_numeric_tokens(receipts: Sequence[ReceiptSummary]) -> set[str]:
@@ -223,15 +245,7 @@ def _check_anchored_paragraph(
         tok = _numeric_token(m.group(0))
         if tok in accepted_numerics:
             continue
-        # A bare four-digit calendar year is bibliographic context ("a 2025
-        # trial", "the 2015 cohort"), not a quantitative claim, so it can never
-        # appear in a receipt's numeric set. Rejecting on it discarded EVERY
-        # paragraph that dated a study — measured on a live run, all 5
-        # cross-domain paragraphs failed on '2025'/'2015' — which made the
-        # writer emit a ~15-word placeholder for every LLM section and hung the
-        # finalizer on a section it could not repair. The fabrication guard
-        # still applies to percentages, p-values, CIs and effect sizes.
-        if _CALENDAR_YEAR_RE.fullmatch(tok):
+        if _is_bibliographic_year(text, m):
             continue
         return False, f"novel_numeric:{tok!r}"
     return True, "ok"
@@ -269,15 +283,7 @@ def _check_scoped_paragraph(
         tok = _numeric_token(m.group(0))
         if tok in accepted_numerics:
             continue
-        # A bare four-digit calendar year is bibliographic context ("a 2025
-        # trial", "the 2015 cohort"), not a quantitative claim, so it can never
-        # appear in a receipt's numeric set. Rejecting on it discarded EVERY
-        # paragraph that dated a study — measured on a live run, all 5
-        # cross-domain paragraphs failed on '2025'/'2015' — which made the
-        # writer emit a ~15-word placeholder for every LLM section and hung the
-        # finalizer on a section it could not repair. The fabrication guard
-        # still applies to percentages, p-values, CIs and effect sizes.
-        if _CALENDAR_YEAR_RE.fullmatch(tok):
+        if _is_bibliographic_year(text, m):
             continue
         return False, f"novel_numeric:{tok!r}"
     return True, "ok"
@@ -357,7 +363,7 @@ def build_scoped_from_parsed(
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
     accepted_numerics = _accepted_numeric_tokens(accepted)
-    paragraphs = parsed.get("paragraphs") or []
+    paragraphs = _paragraph_list(parsed)
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
     for entry in paragraphs:

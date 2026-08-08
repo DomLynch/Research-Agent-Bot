@@ -232,8 +232,8 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 - `select_best_runs()` excludes stale runs missing certification track or complete
   14/14 audit.
 - Meta-synthesis artifact regenerated from corrected run set.
-- LOC budgets documented in `DECISIONS.md` and enforced at 29,250 cloc for
-  `agent/` and 41,000 cloc for `scripts/`.
+- LOC budgets documented in `DECISIONS.md` and enforced at 25,000 effective LOC
+  for `agent/`, 41,000 for `scripts/`, and 66,000 combined.
 - `AGENTS.md`, `PROJECT_STATE.md`, and active task plan match current mission.
 - Full suite and ruff pass.
 - Commit pushed and VPS paths synced clean.

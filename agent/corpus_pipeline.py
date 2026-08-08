@@ -47,12 +47,12 @@ _PRIMARY_TIERS: frozenset[str] = frozenset(("A1", "A2", "B1"))
 def _is_primary_tier(paper: dict[str, Any]) -> bool:
     """True when title/abstract identify primary-tier evidence.
 
-    Imported lazily: evidence_taxonomy lives under scripts/ and is resolved as
-    a namespace package, so a caller running without the repo root on sys.path
+    Imported lazily: evidence_taxonomy lives under scripts/, so a caller
+    running without the scripts directory on sys.path
     keeps the previous drop behaviour instead of failing retrieval outright.
     """
     try:
-        from scripts.evidence_taxonomy import infer_from_paper_meta
+        from evidence_taxonomy import infer_from_paper_meta
     except ImportError:
         return False
     meta = dict(paper)

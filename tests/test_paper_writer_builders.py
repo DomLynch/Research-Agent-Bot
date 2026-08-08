@@ -341,6 +341,26 @@ def test_calendar_year_is_not_treated_as_a_fabricated_numeric() -> None:
     assert ok, f"year must not be a fabricated numeric (got {reason})"
 
 
+def test_calendar_year_exemption_does_not_hide_sample_sizes() -> None:
+    """Four-digit counts remain quantitative even when they resemble years."""
+    from agent.paper_writer_builders import (
+        _check_anchored_paragraph,
+        _check_scoped_paragraph,
+    )
+
+    anchored_ok, anchored_reason = _check_anchored_paragraph(
+        "The analysis used data from 2025 participants.",
+        ["r1"], {"r1"}, set(),
+    )
+    assert not anchored_ok and "novel_numeric" in anchored_reason
+
+    scoped_ok, scoped_reason = _check_scoped_paragraph(
+        "Metformin may remain uncertain because metformin included 2015 patients.",
+        "metformin", ["r1"], {"r1"}, set(),
+    )
+    assert not scoped_ok and "novel_numeric" in scoped_reason
+
+
 def test_untraceable_statistic_is_still_rejected() -> None:
     """The fabrication guard must survive the year exemption."""
     from agent.paper_writer_builders import _check_anchored_paragraph
@@ -400,6 +420,28 @@ def test_bare_single_paragraph_is_accepted() -> None:
     assert _paragraph_list(wrapped) == wrapped["paragraphs"]
 
     assert _paragraph_list({"unrelated": 1}) == []
+
+
+def test_scoped_builder_accepts_bare_single_paragraph() -> None:
+    """The scoped builder must consume the shared bare-paragraph envelope."""
+    parsed = {
+        "text": (
+            "Metformin may affect metabolic pathways, although metformin "
+            "remains uncertain in this evidence base."
+        ),
+        "receipt_ids": ["r1"],
+    }
+
+    section = build_scoped_from_parsed(
+        parsed,
+        name="discussion",
+        heading="## Discussion",
+        topic="metformin",
+        accepted=[_accepted("r1")],
+    )
+
+    assert section is not None
+    assert "Metformin may affect metabolic pathways" in section.body_md
 
 
 def test_enrolment_numerics_from_population_summary_are_traceable() -> None:
