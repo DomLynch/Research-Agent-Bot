@@ -279,8 +279,8 @@ def build_ai_use_disclosure(
         "",
         "### Trust-spine architecture (what gates AI output)",
         "",
-        "Every LLM-produced sentence in this manuscript survived "
-        "the following deterministic gates:",
+        "LLM-produced text is evaluated by the following deterministic gates; "
+        "the run sidecars record which checks passed:",
         "",
         "1. **Citation registry** — every citation must resolve to "
         "a registered receipt or background-literature entry.",
@@ -380,55 +380,57 @@ def build_data_code_availability(
     verdict: str = "",
 ) -> str:
     """Render reproducible data and code availability details."""
-    bundle_str = (
-        f"`{bundle_path}`" if bundle_path
-        else "see `bundles/<run_id>/` in the source repository"
-    )
+    verified_sha = git_sha if re.fullmatch(r"[0-9a-f]{7,40}", git_sha or "", re.I) else ""
+    bundle_str = f"`{bundle_path}`" if bundle_path else "not verified as public"
     verdict_clean = (verdict or "").strip()
     if verdict_clean == "AAA":
-        bundle_verdict_phrase = "the Researka A2A-AAA certification record"
+        record_label = "the Researka A2A-AAA certification record"
         sha_label = "Git SHA at certification"
         code_label = "Cert/verdict code"
     else:
-        bundle_verdict_phrase = "the unified verdict and audit record"
+        record_label = "the unified verdict and audit record"
         sha_label = "Git SHA at run"
         code_label = "Verdict code"
+    identity = (
+        f"**{sha_label}:** `{verified_sha}`\n" if verified_sha
+        else f"**{sha_label}:** not verified\n"
+    )
+    bundle_note = (
+        "The run manifest declares this bundle path. Its contents and public "
+        "availability must be checked independently.\n"
+        if bundle_path else
+        "No verified public reproducibility bundle is declared for this run.\n"
+    )
+    reproduce = (
+        "### Reproduce the synthesis\n\n"
+        "```bash\n"
+        f"git clone {repo_url}\n"
+        f"cd Research-Agent-Bot && git checkout {verified_sha}\n"
+        f"python scripts/run_v06_synthesis.py --topic {topic}\n"
+        "```\n\n"
+        "This identifies the code revision; exact reproduction also requires "
+        "the frozen corpus, topic pack, provider configuration, and seeds.\n\n"
+        if verified_sha else
+        "### Reproduce the synthesis\n\n"
+        "No verified Git revision is available, so a runnable reproduction "
+        "command is not asserted for this package.\n\n"
+    )
     return (
         "## Data and Code Availability\n"
         "\n"
-        "This manuscript is reproducible end-to-end. All artifacts "
-        "are public.\n"
+        "The available run artifacts and reproducibility identifiers are "
+        "listed below; public availability is not asserted without a verified bundle.\n"
         "\n"
         "### Public bundle\n"
         "\n"
         f"**Run ID:** `{run_id}`\n"
-        f"**{sha_label}:** `{git_sha}`\n"
+        f"{identity}"
         f"**Bundle path:** {bundle_str}\n"
+        f"**Expected verification record:** {record_label}\n"
         "\n"
-        "The bundle contains: the manuscript itself, the Stage-1 "
-        "audit (Q1-Q14), the Stage-2 consistency audit (C01-C14), "
-        f"{bundle_verdict_phrase}, "
-        "the full Grok review-patch list (raw), the orchestrator's "
-        "decision per patch, the deterministic auto-fix log, the "
-        "citation registry with traceback to corpus, the run "
-        "manifest, and the no-regression report vs the prior "
-        "baseline. README.md in the bundle root explains the "
-        "layout and verification recipe.\n"
+        f"{bundle_note}"
         "\n"
-        "### Reproduce the synthesis\n"
-        "\n"
-        "```bash\n"
-        f"git clone {repo_url}\n"
-        f"cd Research-Agent-Bot && git checkout {git_sha}\n"
-        f"python scripts/run_v06_synthesis.py --topic {topic}\n"
-        "```\n"
-        "\n"
-        "The pipeline is deterministic given the corpus + topic "
-        "pack + LLM seed. Re-running on the same corpus produces "
-        "the same receipts, the same tensions, and the same "
-        "audit verdict; the writer's prose varies stochastically "
-        "but the trust-spine gates ensure the verdict converges.\n"
-        "\n"
+        f"{reproduce}"
         "### Inspect the trust spine\n"
         "\n"
         "- Audit code: `scripts/audit_v06_paper.py` + "

@@ -143,6 +143,18 @@ def test_validate_anchor_rejects_novel_numeric() -> None:
     assert "novel_numeric" in reason
 
 
+def test_validate_anchor_rejects_numeric_from_unreferenced_receipt() -> None:
+    receipts = [
+        _summary("r-A", p_values=("p=0.003",)),
+        _summary("r-B", p_values=("p=0.99",)),
+    ]
+    ok, reason = validate_anchored_sentence(
+        "The result was p=0.99", ("r-A",), receipts=receipts,
+    )
+    assert not ok
+    assert "novel_numeric" in reason
+
+
 def test_validate_anchor_rejects_no_anchor() -> None:
     receipts = [_summary("r-A")]
     ok, reason = validate_anchored_sentence(
@@ -536,15 +548,15 @@ def test_writer_version_is_anchored() -> None:
 # ============================================================
 
 
-def test_is_accepted_for_synthesis_only_for_accept_verdicts() -> None:
-    """SPAR is the gate. Only accept_clean and accept_caveated are
-    eligible to be cited as evidence in the synthesis layer."""
+def test_is_accepted_for_synthesis_uses_canonical_verdicts() -> None:
     accepted = _summary("r-A")  # default verdict accept_clean
     caveated = ReceiptSummary(**{**dataclasses_asdict(accepted), "spar_verdict": "accept_caveated"})
+    admitted = ReceiptSummary(**{**dataclasses_asdict(accepted), "spar_verdict": "deterministic_admitted"})
     rejected_critical = ReceiptSummary(**{**dataclasses_asdict(accepted), "spar_verdict": "reject_critical"})
     rejected_majority = ReceiptSummary(**{**dataclasses_asdict(accepted), "spar_verdict": "reject_majority"})
     assert is_accepted_for_synthesis(accepted) is True
     assert is_accepted_for_synthesis(caveated) is True
+    assert is_accepted_for_synthesis(admitted) is True
     assert is_accepted_for_synthesis(rejected_critical) is False
     assert is_accepted_for_synthesis(rejected_majority) is False
 
@@ -557,6 +569,20 @@ def test_filter_accepted_keeps_only_accept_verdicts() -> None:
     out = filter_accepted([accepted, rejected])
     assert len(out) == 1
     assert out[0].receipt_id == "r-A"
+
+
+def test_full_paper_references_accept_deterministic_admission() -> None:
+    from agent.paper_writer_deterministic import build_references_full_section
+
+    receipt = ReceiptSummary(**{
+        **dataclasses_asdict(_summary("r-deterministic")),
+        "spar_verdict": "deterministic_admitted",
+    })
+
+    body = build_references_full_section([receipt]).body_md
+
+    assert "[accepted: deterministic_admitted]" in body
+    assert "QUARANTINED" not in body
 
 
 def test_direct_evidence_section_excludes_spar_rejected() -> None:

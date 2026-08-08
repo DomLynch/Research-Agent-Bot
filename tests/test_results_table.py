@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 from agent.results_table import (
     EvidenceRow,
     _arm_belongs_to_topic,
@@ -34,17 +36,12 @@ def test_high_confidence_always_admitted():
                                    "claim_type": "hazard_ratio"})
 
 
-def test_partial_admitted_for_all_numeric_types():
-    """Universal-fix wave 2 (2026-05-04): partial-confidence claims
-    admitted regardless of claim type — the value IS in the corpus
-    even when the (endpoint, arm, direction) binding is uncertain.
-    Aligns table admissibility with audit's _load_corpus_numerics
-    so the table can't emit untraceable numerics."""
+def test_partial_confidence_is_not_public_qei_evidence():
     for ct in ("sample_size", "hazard_ratio", "p_value", "percentage",
                "confidence_interval", "odds_ratio", "unit_value"):
-        assert _confidence_admissible(
+        assert not _confidence_admissible(
             {"binding_confidence": "partial", "claim_type": ct}
-        ), f"partial-confidence {ct} should be admitted"
+        ), f"partial-confidence {ct} must stay outside the public QEI"
 
 
 def test_unbound_or_none_rejected():
@@ -75,6 +72,13 @@ def test_format_statistic_confidence_interval():
          "numeric_values": [0.81, 1.13]}, 0.81,
     )
     assert s == "(0.81–1.13)"
+
+
+@pytest.mark.parametrize(
+    "values", [[0.8, "exact statistic unavailable"], [float("nan"), 1.2], [1.2, 0.8]],
+)
+def test_format_statistic_rejects_malformed_confidence_interval(values) -> None:
+    assert _format_statistic({"claim_type": "confidence_interval", "numeric_values": values}, 0.0) == "—"
 
 
 def test_format_statistic_default_dash():
@@ -112,6 +116,15 @@ def test_short_citation_falls_back_when_no_year():
 def test_claim_to_row_skips_no_numeric():
     """Claim with empty numeric_values returns None."""
     assert _claim_to_row({"raw_text": "no number"}, paper_id="x") is None
+
+
+@pytest.mark.parametrize("value", [float("nan"), float("inf"), float("-inf")])
+def test_claim_to_row_skips_nonfinite_numeric(value: float) -> None:
+    assert _claim_to_row({
+        "claim_type": "effect_size", "raw_text": str(value),
+        "numeric_values": [value], "endpoint": "mortality",
+        "binding_confidence": "high",
+    }, paper_id="x") is None
 
 
 def test_claim_to_row_drops_background_and_protocol_numerics():
@@ -191,6 +204,15 @@ def test_claim_to_row_renders_confidence_interval_once():
     assert row.value == "—"
     assert row.unit_or_type == "95%CI"
     assert row.statistic == "(-28.97–19.71)"
+
+
+@pytest.mark.parametrize("values", [[1.2, 0.8], [0.8, float("inf")], [0.8, 1.2, 9.9]])
+def test_claim_to_row_drops_malformed_confidence_interval(values) -> None:
+    assert _claim_to_row({
+        "claim_type": "confidence_interval", "raw_text": "95% CI malformed",
+        "numeric_values": values, "units": "95%CI", "endpoint": "mortality",
+        "binding_confidence": "high", "claim_role": "effect",
+    }, paper_id="x") is None
 
 
 def test_claim_to_row_drops_ambiguous_multi_endpoint_p_value():

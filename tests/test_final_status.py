@@ -16,6 +16,10 @@ from agent.final_status import (  # type: ignore[import-not-found]
     compute,
     compute_and_write,
 )
+from agent.artifact_consistency import (
+    verify_run_artifacts,
+    write_consistency_sidecar,
+)
 from agent.human_signoff import HumanSignoff, write as write_human_signoff
 
 
@@ -26,10 +30,51 @@ def _write(run: Path, name: str, payload: dict) -> None:
     (run / name).write_text(json.dumps(payload))
 
 
-_REGISTRY = {"R1": {"body_citation": "Smith 2024"}}
+def _write_target_pack(run: Path, *, declared: bool = True) -> None:
+    _write(run, "target_journal_pack.json", {
+        "journal": "Aging Cell", "article_type": "Review",
+        "abstract_max_words": 250, "main_word_limit": 6000,
+        "reference_style": "Vancouver", "declared_in_topic_pack": declared,
+    })
+
+
+def _write_consistency(run: Path, *, passed: object = True) -> None:
+    if not (run / "full_paper.md").exists():
+        (run / "full_paper.md").write_text(_AUTOMATED_ACCOUNTABILITY)
+    paper = (run / "full_paper.md").read_text()
+    if "Smith 2024" not in paper:
+        (run / "full_paper.md").write_text(paper.rstrip() + "\n\n## References\n\nSmith 2024\n")
+    manifest = {}
+    if (run / "manifest.json").exists():
+        manifest = json.loads((run / "manifest.json").read_text())
+    manifest.setdefault("accountability_model", "researka_agent_certified")
+    manifest.setdefault("n_receipts", 1)
+    manifest.setdefault("receipts", [{"receipt_id": "R1", "n_claims": 0}])
+    _write(run, "manifest.json", manifest)
+    if not (run / "citation_registry.json").exists():
+        _write(run, "citation_registry.json", _REGISTRY)
+    _write(run, "full_paper.review_patches.json", {
+        "review_available": True, "patches": [],
+    })
+    report = verify_run_artifacts(run)
+    if passed is True:
+        write_consistency_sidecar(run, report)
+    else:
+        payload = report.to_json()
+        payload["passed"] = passed
+        checks = payload.get("checks")
+        assert isinstance(checks, list)
+        for check in checks:
+            assert isinstance(check, dict)
+            check["passed"] = False
+        _write(run, "artifact_consistency.json", payload)
+
+
+_REGISTRY = {"R1": {"receipt_id": "R1", "body_citation": "Smith 2024"}}
 _AUTOMATED_ACCOUNTABILITY = (
     "## Methods\n\n### Accountability\n\n"
     "Accountability is established through reproducible artifacts and deterministic gates.\n"
+    "\n## References\n\nSmith 2024\n"
 )
 
 
@@ -41,7 +86,7 @@ def _all_pass_sidecars(run: Path) -> None:
     })
     _write(run, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(run, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
-    _write(run, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
+    _write_target_pack(run)
     # Slice 17: default accountability model is researka_agent_certified,
     # which requires citation_registry.json + artifact_consistency.json
     # (and ignores human_signoff.json). The legacy ladder test below
@@ -50,7 +95,7 @@ def _all_pass_sidecars(run: Path) -> None:
         "accountability_model": "researka_agent_certified",
     })
     _write(run, "citation_registry.json", _REGISTRY)
-    _write(run, "artifact_consistency.json", {"passed": True, "checks": []})
+    _write_consistency(run)
     write_human_signoff(run, HumanSignoff(
         author="Test Author", reviewed=True, evidence_claims_reviewed=True,
         conflicts_declared=True, ready_to_submit=True, signature="test-signature",
@@ -185,7 +230,7 @@ def test_audit_surface_pass_pre_submit_fail_yields_l3(tmp_path: Path) -> None:
     _write(tmp_path, "pre_submit_gate.json", {
         "result": {"passed": False, "failures": ["audit_gates_failed"]},
     })
-    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    _write_consistency(tmp_path)
     s = compute(tmp_path)
     assert s.maturity_level == 3
     assert s.pre_submit_pass is False
@@ -236,7 +281,7 @@ def test_advisory_readiness_item_does_not_block_l4(tmp_path: Path) -> None:
             )
         ],
     })
-    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    _write_consistency(tmp_path)
     s = compute(tmp_path)
     assert s.pre_submit_pass is True
     assert s.maturity_level == 4
@@ -250,12 +295,25 @@ def test_three_pass_no_target_journal_yields_l4(tmp_path: Path) -> None:
     })
     _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    _write(tmp_path, "manifest.json", {"accountability_model": "legacy_journal_submission"})
+    _write_consistency(tmp_path)
     # No target_journal_pack.json, no human_signoff.json
     s = compute(tmp_path)
     assert s.maturity_level == 4
     assert s.target_journal_pass is False
     assert s.human_signoff_pass is False
+
+
+def test_journal_submission_ready_rejects_manuscript_over_target_word_limit(
+    tmp_path: Path,
+) -> None:
+    _all_pass_sidecars(tmp_path)
+    pack = json.loads((tmp_path / "target_journal_pack.json").read_text())
+    pack["main_word_limit"] = 1
+    (tmp_path / "target_journal_pack.json").write_text(json.dumps(pack))
+    status = compute(tmp_path)
+    assert status.target_journal_pass is False
+    assert status.journal_submission_ready is False
 
 
 # ---- reason codes (universal across topics, no per-topic logic) ----------
@@ -341,6 +399,36 @@ def test_pre_submit_requires_positive_artifact_consistency(tmp_path: Path) -> No
     assert status.researka_publish_ready is False
 
 
+@pytest.mark.parametrize(
+    "checks", [[], [{"passed": True}], [{"name": "invented", "passed": True}]],
+)
+def test_pre_submit_rejects_invalid_artifact_consistency_checks(
+    tmp_path: Path, checks: list[dict[str, object]],
+) -> None:
+    _all_pass_sidecars(tmp_path)
+    receipt = json.loads((tmp_path / "artifact_consistency.json").read_text())
+    receipt["checks"] = checks
+    _write(tmp_path, "artifact_consistency.json", receipt)
+
+    status = compute(tmp_path)
+
+    assert status.journal_submission_ready is False
+    assert any("checks_missing" in reason.detail for reason in status.blocking_reasons)
+
+
+def test_pre_submit_rejects_fabricated_canonical_consistency_rows(tmp_path: Path) -> None:
+    _all_pass_sidecars(tmp_path)
+    receipt = json.loads((tmp_path / "artifact_consistency.json").read_text())
+    for check in receipt["checks"]:
+        check["detail"] = "forged canonical pass"
+    _write(tmp_path, "artifact_consistency.json", receipt)
+
+    status = compute(tmp_path)
+
+    assert status.journal_submission_ready is False
+    assert any("stale_or_fabricated" in reason.detail for reason in status.blocking_reasons)
+
+
 def test_missing_manuscript_fails_closed(tmp_path: Path) -> None:
     _all_pass_sidecars(tmp_path)
     (tmp_path / "full_paper.md").unlink()
@@ -366,12 +454,11 @@ def test_researka_model_reaches_l5_without_human_signoff(tmp_path: Path) -> None
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
+    _write_target_pack(tmp_path)
     _write(tmp_path, "manifest.json",
            {"accountability_model": "researka_agent_certified"})
     _write(tmp_path, "citation_registry.json", _REGISTRY)
-    _write(tmp_path, "artifact_consistency.json",
-           {"passed": True, "checks": []})
+    _write_consistency(tmp_path)
     # Deliberately NO human_signoff.json
     s = compute(tmp_path)
     assert s.maturity_level == 5
@@ -391,12 +478,11 @@ def test_legacy_model_blocks_l5_without_human_signoff(tmp_path: Path) -> None:
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
+    _write_target_pack(tmp_path)
     _write(tmp_path, "manifest.json",
            {"accountability_model": "legacy_journal_submission"})
     _write(tmp_path, "citation_registry.json", _REGISTRY)
-    _write(tmp_path, "artifact_consistency.json",
-           {"passed": True, "checks": []})
+    _write_consistency(tmp_path)
     s = compute(tmp_path)
     # No human signoff → accountability fails → blocked at L4
     assert s.accountability_pass is False
@@ -414,15 +500,14 @@ def test_legacy_model_reaches_l5_with_human_signoff(tmp_path: Path) -> None:
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
+    _write_target_pack(tmp_path)
     _write(tmp_path, "manifest.json",
            {"accountability_model": "legacy_journal_submission"})
     _write(tmp_path, "citation_registry.json", _REGISTRY)
-    _write(tmp_path, "artifact_consistency.json",
-           {"passed": True, "checks": []})
     (tmp_path / "full_paper.md").write_text(
         "## Methods\n\n### Accountability\n\nFinal eligibility decisions are author-verified.\n"
     )
+    _write_consistency(tmp_path)
     write_human_signoff(tmp_path, HumanSignoff(
         author="Dom Lynch", reviewed=True, evidence_claims_reviewed=True,
         conflicts_declared=True, ready_to_submit=True, signature="Dom Lynch",
@@ -474,12 +559,11 @@ def test_human_signoff_pass_backward_compat_mirror(tmp_path: Path) -> None:
            {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json",
            {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {"journal": "Aging Cell", "declared_in_topic_pack": True})
+    _write_target_pack(tmp_path)
     _write(tmp_path, "manifest.json",
            {"accountability_model": "researka_agent_certified"})
     _write(tmp_path, "citation_registry.json", _REGISTRY)
-    _write(tmp_path, "artifact_consistency.json",
-           {"passed": True, "checks": []})
+    _write_consistency(tmp_path)
     s = compute(tmp_path)
     assert s.human_signoff_pass == s.accountability_pass
 
@@ -494,13 +578,10 @@ def test_undeclared_target_journal_blocks_journal_submission_not_researka(tmp_pa
     _write(tmp_path, "full_paper.audit.json", {"n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.6, "checks": []})
     _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {
-        "journal": "Open-access general scholarly journal (topic-pack target_journal not declared)",
-        "declared_in_topic_pack": False,
-    })
+    _write_target_pack(tmp_path, declared=False)
     _write(tmp_path, "manifest.json", {"accountability_model": "researka_agent_certified"})
     _write(tmp_path, "citation_registry.json", _REGISTRY)
-    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    _write_consistency(tmp_path)
     s = compute(tmp_path)
     assert s.target_journal_pass is False
     assert s.researka_publish_ready is True
@@ -519,12 +600,10 @@ def test_slice36_declared_target_journal_clears_l4_ceiling(tmp_path: Path) -> No
     _write(tmp_path, "full_paper.audit.json", {"n_total": 14, "n_pass": 14, "p1_pass": True, "score_out_of_10": 9.6, "checks": []})
     _write(tmp_path, "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write(tmp_path, "pre_submit_gate.json", {"result": {"passed": True, "failures": []}})
-    _write(tmp_path, "target_journal_pack.json", {
-        "journal": "Journal of Climate Modelling", "declared_in_topic_pack": True,
-    })
+    _write_target_pack(tmp_path)
     _write(tmp_path, "manifest.json", {"accountability_model": "researka_agent_certified"})
     _write(tmp_path, "citation_registry.json", _REGISTRY)
-    _write(tmp_path, "artifact_consistency.json", {"passed": True, "checks": []})
+    _write_consistency(tmp_path)
     write_human_signoff(tmp_path, HumanSignoff(
         author="Test Author", reviewed=True, evidence_claims_reviewed=True,
         conflicts_declared=True, ready_to_submit=True, signature="test-signature",

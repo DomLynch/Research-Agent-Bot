@@ -43,6 +43,8 @@ def filter_receipts(
     outcome_filtered = [
         r for r in receipts if _matches_outcome(r, query.outcome_classes)
     ]
+    if query.outcome_classes and not outcome_filtered:
+        return ()
     candidates = outcome_filtered or receipts
     scored = [
         (score, idx, r) for idx, r in enumerate(candidates)

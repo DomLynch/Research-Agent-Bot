@@ -33,7 +33,28 @@ def test_generates_mainstream_biomedical_candidate() -> None:
     assert data["class_"] == "generated_biomedical"
     assert "metformin" in pack.topic_terms
     assert "biguanide" in pack.aliases
-    assert data["retrieval"]["species"] == []
+    retrieval = data["retrieval"]
+    assert isinstance(retrieval, dict) and retrieval["species"] == []
+
+
+def test_generated_queries_anchor_every_context_term_to_the_fact_entity() -> None:
+    pack = generate_candidate_topic_pack(
+        "metformin metabolism effects",
+        seed_terms=("metformin", "metabolism"),
+        query_anchor="metformin",
+    )
+
+    assert all("metformin" in query.lower() for query in pack.corpus_search_queries)
+    assert "metabolism randomized controlled trial" not in pack.corpus_search_queries
+
+
+def test_short_anchor_does_not_match_inside_longer_context_term() -> None:
+    pack = generate_candidate_topic_pack(
+        "RA rapamycin effects", seed_terms=("RA", "rapamycin"), query_anchor="RA",
+    )
+
+    assert "rapamycin" not in pack.corpus_search_queries
+    assert all("RA" in query.split() for query in pack.corpus_search_queries)
 
 
 def test_precursor_expansion_for_urolithin_a() -> None:
@@ -123,13 +144,18 @@ def test_generated_pack_is_compatible_with_biomedical_default() -> None:
     )
     pack = generate_candidate_topic_pack("vitamin D frailty")
     data = pack.to_topic_pack_dict()
+    slots = data["expected_evidence_slots"]
+    retrieval = data["retrieval"]
 
+    assert isinstance(slots, list)
     assert set(default.expected_evidence_slots).issubset(
-        set(data["expected_evidence_slots"])
+        set(slots)
     )
-    assert default.retrieval is not None
+    assert default.retrieval is not None and isinstance(retrieval, dict)
+    background = retrieval["background"]
+    assert isinstance(background, dict) and isinstance(background["allow"], list)
     assert set(default.retrieval.background_allow).issubset(
-        set(data["retrieval"]["background"]["allow"])
+        set(background["allow"])
     )
     assert data["known_role_overrides"] == {}
     assert data["canonical_trials"] == []

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -324,6 +325,8 @@ def _claim_to_row(
         primary_value = float(nums[0])
     except (TypeError, ValueError):
         return None
+    if not math.isfinite(primary_value):
+        return None
     raw = (claim.get("raw_text") or "").strip()
     units = (claim.get("units") or "").strip()
     claim_type = (claim.get("claim_type") or "").strip()
@@ -332,11 +335,13 @@ def _claim_to_row(
     role = (claim.get("claim_role") or "").strip()
     # Statistic column: pull a paired p or CI from the claim if present.
     statistic = _format_statistic(claim, primary_value)
+    if claim_type == "confidence_interval" and statistic == "—":
+        return None
     # Pick the best display string for value: raw_text if it's compact,
     # else format the numeric. Confidence intervals render their interval
     # once in Statistic; repeating/truncating the CI in Value creates
     # public-table residue and unsafe reviewer patches.
-    if claim_type == "confidence_interval" and statistic != "—":
+    if claim_type == "confidence_interval":
         value_str = "—"
     elif claim_type == "p_value":
         value_str = _format_p_value(raw, primary_value)
@@ -396,7 +401,7 @@ def _publishable_surface_row(row: EvidenceRow) -> bool:
     try:
         from agent.journal_surface_gate import is_publishable_qei_row
     except ImportError:
-        return True
+        return False
     return is_publishable_qei_row(row)
 
 
@@ -453,13 +458,14 @@ def _format_statistic(claim: dict[str, Any], value: float) -> str:
         return "—"
     if ct == "confidence_interval":
         nums = claim.get("numeric_values") or []
-        if len(nums) >= 2:
+        if len(nums) == 2:
             try:
-                lo = float(nums[0])
-                hi = float(nums[1])
-                return f"({lo:.2f}–{hi:.2f})"
+                lo_value, hi_value = float(nums[0]), float(nums[1])
             except (TypeError, ValueError):
                 return "—"
+            if not math.isfinite(lo_value) or not math.isfinite(hi_value) or lo_value > hi_value:
+                return "—"
+            return f"({lo_value:.2f}–{hi_value:.2f})"
     return "—"
 
 
@@ -498,21 +504,9 @@ def _short_citation(paper_id: str) -> str:
     return paper_id[:24]
 
 
-# Admissibility matches the audit's _load_corpus_numerics rule
-# (scripts/audit_v06_paper.py, post-2026-05-04 Q2 universal-fix
-# wave 2): high OR partial confidence is accepted for any numeric
-# claim type. The 'partial' label reflects binding-uncertainty
-# about which (endpoint, arm, direction) tuple a value ties to,
-# not whether the number is in the corpus. Single source of truth:
-# the table cannot emit a numeric the Q2 audit will reject as
-# untraceable. Fabrication prevention is handled at the writer
-# prompt layer, not here.
-
-
 def _confidence_admissible(claim: dict[str, Any]) -> bool:
-    """High or partial confidence admitted; 'none' / unbound rejected."""
-    conf = (claim.get("binding_confidence") or "").lower()
-    return conf in ("high", "partial")
+    """Public QEI rows require a fully bound source/endpoint tuple."""
+    return (claim.get("binding_confidence") or "").lower() == "high"
 
 
 def resolve_accepted_paper_ids(
@@ -647,7 +641,7 @@ def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
     rows_list = list(rows)
     title = (
         f"## Quantitative Evidence Index — {topic}\n\n"
-        f"_Quantitative Evidence Index: top {len(rows_list)} high-confidence numeric claims from the "
+        f"_Quantitative Evidence Index: top {len(rows_list)} source-bound numeric claims from the "
         f"corpus. Every row traces to a corpus-bound claim and a registered citation._\n\n"
         "**Numeric verification note:** P-values are rendered from extracted "
         "source statistics; rounded zero values are reported at their implied "

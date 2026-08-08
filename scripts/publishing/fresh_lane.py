@@ -41,9 +41,10 @@ ROOT = Path(__file__).resolve().parents[2]
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
 import revision_coverage  # noqa: E402
-from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
+from source_topic_specificity import frozen_topic_aliases_complete, generated_pack_publishable, is_source_topic_specific, requires_frozen_topic_aliases, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
+    CorruptJsonState,
     parse_time as _parse_time,
     read_json as _read_json,
     update_json_list as _update_json_list,
@@ -165,6 +166,7 @@ DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
 MIN_REVISE_RETRY_BUDGET_SECONDS = 1200
 SYNTHESIS_TIMEOUT_RETURN_CODE = 124
+SYNTHESIS_RECEIPT_PROBE_RETURN_CODE = 10
 NEEDS_CORPUS_RETURN_CODE = 6
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
@@ -626,12 +628,12 @@ def _reconcile_publication_ledgers_unlocked(
     remote_loader: RemoteLoader | None = None,
 ) -> dict[str, Any]:
     ledger_dir = runs_root / LEDGER_DIR
+    title_marker_counts = _submitted_title_marker_counts(runs_root)
     remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
     if remote_error:
         result = {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
         _write_reconcile_artifact(ledger_dir, date=date, mode=mode, result=result)
         return result
-    title_marker_counts = _submitted_title_marker_counts(runs_root)
     decision_records = 0
     decision_seen: set[str] = set()
     decision_summary: dict[str, Any] = {"counts": {}, "records": []}
@@ -702,9 +704,14 @@ def reconcile_publication_ledgers(
     mode: str | None = None, remote_loader: RemoteLoader | None = None,
 ) -> dict[str, Any]:
     with submit_bridge.submission_lock(runs_root):
-        return _reconcile_publication_ledgers_unlocked(
-            runs_root=runs_root, date=date, mode=mode, remote_loader=remote_loader,
-        )
+        try:
+            return _reconcile_publication_ledgers_unlocked(
+                runs_root=runs_root, date=date, mode=mode, remote_loader=remote_loader,
+            )
+        except CorruptJsonState as exc:
+            result = {"status": "local_state_corrupt", "reason": str(exc), "checked": 0, "updated": 0}
+            _write_reconcile_artifact(runs_root / LEDGER_DIR, date=date, mode=mode, result=result)
+            return result
 
 
 def discover_topics(
@@ -779,7 +786,8 @@ def _created_topic_slugs(refresh: Mapping[str, Any]) -> set[str]:
 
 
 def _generated_pack_records(topic_pack_db: Path | None = None) -> list[dict[str, Any]]:
-    return topic_supply.generated_pack_records(topic_pack_db or TOPIC_PACKS_DB)
+    return [record for record in topic_supply.generated_pack_records(topic_pack_db or TOPIC_PACKS_DB)
+            if generated_pack_publishable(record, peer_records=())]
 
 
 def _quant_claim_count(topic: str) -> int:
@@ -2097,7 +2105,8 @@ def _submitted_record_has_pending_decision(record: dict[str, Any]) -> bool:
         return False
     payload, err = _fetch_submission_decision(submission_id)
     if err or not payload:
-        return False
+        # Unknown remote state must not authorize a duplicate submission.
+        return True
     if str(payload.get("decision") or "").strip():
         return False
     return str(payload.get("status") or "").strip().lower() in {
@@ -2984,8 +2993,18 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         if source_topic_ask:
             metadata = payload.get("metadata")
             topic = str(metadata.get("topic") or "") if isinstance(metadata, dict) else ""
+            frozen_aliases = metadata.get("topic_aliases") if isinstance(metadata, dict) else None
+            if requires_frozen_topic_aliases(topic) and not (
+                isinstance(frozen_aliases, list) and frozen_topic_aliases_complete(topic, frozen_aliases)
+            ):
+                return False
+            alias_source = (
+                tuple(str(alias) for alias in frozen_aliases if str(alias).strip())
+                if isinstance(frozen_aliases, list)
+                else topic_aliases(topic, root=TOPIC_PACKS.parent, include_generated_terms=False)
+            )
             aliases = source_gate_aliases(
-                topic, topic_aliases(topic, root=TOPIC_PACKS.parent, include_generated_terms=False),
+                topic, alias_source,
             )
             row_texts = [
                 " ".join(str(row.get(key) or "") for key in ("title", "excerpt", "doi", "id", "url", "evidence_type")).lower()
@@ -3100,8 +3119,8 @@ def _retracted_cited_sources(out_dir: Path) -> list[str] | None:
 
 def _abstract_overclaims(out_dir: Path) -> list[str]:
     """Abstract claims the paper's evidence does not support / overstates
-    (claim-support judge). Fail-open (empty on any error); monkeypatched in
-    tests so they stay offline."""
+    (claim-support judge). Unavailable or malformed judge results are returned
+    as blocking issues by ``unsupported_abstract_claims``."""
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return []
@@ -3391,11 +3410,11 @@ def _receipt_preflight(
             "n_outcome_classes": n_outcome_classes,
             "predicted_review_type": predicted_review_type,
         })
-        if rc == 0 and n_receipts >= min_receipts and not source_fit_reasons and not surface_reasons:
+        if rc in (0, SYNTHESIS_RECEIPT_PROBE_RETURN_CODE) and n_receipts >= min_receipts and not source_fit_reasons and not surface_reasons:
             break
-        if rc == 0 and n_receipts == 0:
+        if rc in (0, SYNTHESIS_RECEIPT_PROBE_RETURN_CODE) and n_receipts == 0:
             break
-        if round_idx > 0 and rc == 0 and (
+        if round_idx > 0 and rc in (0, SYNTHESIS_RECEIPT_PROBE_RETURN_CODE) and (
             best_receipts,
             best_primary_tier,
             best_direct_receipts,
@@ -3433,7 +3452,7 @@ def _receipt_preflight(
         if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
             break
     source_fit_reasons = _receipt_source_fit_reasons(n_primary_tier, n_direct_receipts, n_receipts)
-    passed = rc == 0 and n_receipts >= min_receipts and not source_fit_reasons and not surface_reasons
+    passed = rc in (0, SYNTHESIS_RECEIPT_PROBE_RETURN_CODE) and n_receipts >= min_receipts and not source_fit_reasons and not surface_reasons
     return {
         "passed": passed,
         "status": "receipt_preflight_ok" if passed else "receipt_preflight_insufficient",
@@ -4152,7 +4171,7 @@ def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> 
     floor = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR if floor is None else floor
     tokens = submit_bridge._topic_tokens(topic)
     aliases = source_gate_aliases(
-        topic, topic_aliases(topic, root=TOPIC_PACKS.parent, include_generated_terms=False),
+        topic, topic_aliases(topic, root=TOPIC_PACKS.parent),
     )
     paths = sorted((CORPORA / topic / "quant_claims").glob("*.quant_claims.json"))
     if not tokens or not paths:
@@ -4365,6 +4384,14 @@ def run_cycle(
             ledger["status"] = "cycle_already_running"
             _write_json(ledger_path, ledger)
             return ledger
+        try:
+            for historical_ledger in ledger_dir.glob("*.json"):
+                _read_json(historical_ledger)
+        except CorruptJsonState as exc:
+            historical_ledger.replace(historical_ledger.with_suffix(".json.corrupt"))
+            ledger.update({"status": "local_state_corrupt", "reason": str(exc)})
+            _write_json(ledger_path, ledger)
+            return ledger
         topics = discover_topics()
         if topic and topic not in topics:
             ledger.update({"status": "topic_not_available", "topic": topic})
@@ -4390,23 +4417,29 @@ def run_cycle(
         remote_revision: dict[str, Any] | None = None
         terminal_excluded: set[str] = set()
         if submit and topic is None and mode != "fresh" and (revision_loader is not None or submit_cycle is None):
-            remote_revision, revision_error = _pending_remote_revision(
-                runs_root,
-                ledger_dir,
-                loader=revision_loader,
-                published_loader=lambda: (remote_seen, None),
-            )
+            try:
+                remote_revision, revision_error = _pending_remote_revision(
+                    runs_root, ledger_dir, loader=revision_loader,
+                    published_loader=lambda: (remote_seen, None),
+                )
+            except CorruptJsonState as exc:
+                ledger.update({"status": "local_state_corrupt", "reason": str(exc)})
+                _write_json(ledger_path, ledger)
+                return ledger
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
                 ledger["remote_revisions"]["error"] = revision_error
         pending_revision_excluded: set[str] = set()
         if submit and topic is None and mode == "fresh" and revision_loader is None and submit_cycle is None:
-            pending_revision_excluded, revision_error = _pending_remote_revision_topics(
-                runs_root,
-                ledger_dir,
-                loader=revision_loader,
-                published_loader=lambda: (remote_seen, None),
-            )
+            try:
+                pending_revision_excluded, revision_error = _pending_remote_revision_topics(
+                    runs_root, ledger_dir, loader=revision_loader,
+                    published_loader=lambda: (remote_seen, None),
+                )
+            except CorruptJsonState as exc:
+                ledger.update({"status": "local_state_corrupt", "reason": str(exc)})
+                _write_json(ledger_path, ledger)
+                return ledger
             ledger["pending_revision_exclusions"] = {"checked": True, "topics": sorted(pending_revision_excluded)}
             if revision_error:
                 ledger["pending_revision_exclusions"]["error"] = revision_error
@@ -4603,13 +4636,16 @@ def run_cycle(
                 and (revision_loader is not None or submit_cycle is None)
             ):
                 previous_key = _revision_key(remote_revision) if remote_revision else ""
-                next_revision, revision_error = _pending_remote_revision(
-                    runs_root,
-                    ledger_dir,
-                    loader=revision_loader,
-                    published_loader=lambda: (remote_seen, None),
-                    exclude_keys=revise_window_excluded,
-                )
+                try:
+                    next_revision, revision_error = _pending_remote_revision(
+                        runs_root, ledger_dir, loader=revision_loader,
+                        published_loader=lambda: (remote_seen, None),
+                        exclude_keys=revise_window_excluded,
+                    )
+                except CorruptJsonState as exc:
+                    ledger.update({"status": "local_state_corrupt", "reason": str(exc)})
+                    _write_json(ledger_path, ledger)
+                    return ledger
                 ledger.setdefault("remote_revisions", {"checked": True})["refreshed_after_attempt"] = True
                 if revision_error:
                     ledger["remote_revisions"]["refresh_error"] = revision_error
@@ -5443,9 +5479,7 @@ def run_cycle(
                     abstract_repaired = True
                     overclaims = _abstract_overclaims(out_dir)
                 advisory_overclaims = list(overclaims)
-                abstract_overclaim_advisory = bool(overclaims and _final_status_submission_ready(out_dir))
-                if abstract_overclaim_advisory:
-                    overclaims = []
+                abstract_overclaim_advisory = False
                 bridge: dict[str, Any] = {}
                 if (
                     return_code == 0
@@ -5473,6 +5507,7 @@ def run_cycle(
                         )
                 gate_status = (
                     "synthesis_timeout" if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE
+                    else "synthesis_probe_complete" if synthesis_dry_run and return_code == SYNTHESIS_RECEIPT_PROBE_RETURN_CODE
                     else "needs_corpus_expansion" if return_code == NEEDS_CORPUS_RETURN_CODE
                     else "synthesis_failed" if return_code != 0
                     else "retraction_check_unavailable" if retraction_unverified
@@ -5590,6 +5625,9 @@ def run_cycle(
                         )
                     ledger["status"] = "synthesis_timeout_no_submission"
                     ledger["no_submission_reason"] = gate_status
+                elif synthesis_dry_run and return_code == SYNTHESIS_RECEIPT_PROBE_RETURN_CODE:
+                    ledger["status"] = "synthesis_probe_complete"
+                    break
                 elif return_code == NEEDS_CORPUS_RETURN_CODE:
                     ledger["status"] = "needs_corpus_expansion_no_submission"
                     ledger["no_submission_reason"] = gate_status
@@ -5626,6 +5664,12 @@ def run_cycle(
                     break
                 elif bridge.get("status") == "submission_failed":
                     ledger["status"] = "submission_failed"
+                elif bridge.get("status") == "local_state_corrupt":
+                    ledger.update({
+                        "status": "local_state_corrupt",
+                        "no_submission_reason": str(bridge.get("reason") or "local_state_corrupt"),
+                    })
+                    break
                 elif retraction_unverified:
                     ledger.update({"status": "retraction_check_unavailable", "no_submission_reason": gate_status})
                 else:
@@ -5718,7 +5762,7 @@ def main(argv: list[str] | None = None) -> int:
             f"[daily-v3-cycle] status={result['status']} checked={result['checked']} "
             f"updated={result['updated']} ledgers={','.join(result.get('updated_ledgers', [])) or '-'}"
         )
-        return 0 if result["status"] != "remote_dedupe_failed" else 2
+        return 2 if result["status"] in {"remote_dedupe_failed", "local_state_corrupt"} else 0
     if args.prepare_only:
         result = prepare_candidate_buffer(
             runs_root=args.runs_root,
@@ -5766,9 +5810,11 @@ def main(argv: list[str] | None = None) -> int:
         f"submitted_topic={ledger.get('submitted_topic', '-')} "
         f"submitted={ledger['submitted']} published={ledger['published']}"
     )
-    failures = {"submission_failed", "synthesis_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
+    failures = {"submission_failed", "synthesis_failed", "remote_dedupe_failed", "local_state_corrupt", "submit_not_configured", "topic_not_available"}
     if ledger["status"] in failures:
         return 2
+    if args.synthesis_dry_run and ledger["status"] == "synthesis_probe_complete":
+        return 0
     no_output = args.submit and not int(ledger.get("submitted") or 0)
     if no_output and not (args.mode == "revise" and ledger["status"] == "no_revise_pending"):
         return 3

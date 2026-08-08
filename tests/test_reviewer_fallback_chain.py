@@ -91,6 +91,91 @@ def test_low_patch_long_paper_can_escalate() -> None:
     assert cost > 0
 
 
+def test_empty_escalation_preserves_original_patches() -> None:
+    original = {
+        "id": "P01", "patch_type": "formatting", "severity": "P1",
+        "location": "Body", "before": "artifact", "after": "",
+        "reason": "Public artifact.",
+    }
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": [original]}),
+        _mock_chat_response("x-ai/grok-4.3", {"patches": []}),
+    ])
+
+    patches, raw, model_used, cost = asyncio.run(final_reviewer.review_paper(
+        "word " * 10_001, {"receipts": []},
+        {"p1_pass": True, "score_out_of_10": 10},
+        model="google/gemini-3.1-flash-lite:exacto",
+        fallback_model="mistralai/mistral-small-2603",
+        escalation_model="x-ai/grok-4.3", api_key="test-key", client=client,
+    ))
+
+    assert [patch.id for patch in patches] == ["P01"]
+    assert raw["low_patch_escalation_error"] == "ValueError"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto"
+    assert cost == pytest.approx(
+        final_reviewer._estimate_cost("google/gemini-3.1-flash-lite:exacto", 100, 200)
+        + final_reviewer._estimate_cost("x-ai/grok-4.3", 100, 200),
+    )
+
+
+def test_escalation_cannot_replace_original_p1() -> None:
+    original = {
+        "id": "P01", "patch_type": "formatting", "severity": "P1",
+        "location": "Body", "before": "artifact", "after": "",
+        "reason": "Blocking issue.",
+    }
+    weaker = {
+        "id": "P99", "patch_type": "formatting", "severity": "P3",
+        "location": "Body", "before": "style", "after": "",
+        "reason": "Minor style issue.",
+    }
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": [original]}),
+        _mock_chat_response("x-ai/grok-4.3", {"patches": [weaker]}),
+    ])
+
+    patches, raw, model_used, _cost = asyncio.run(final_reviewer.review_paper(
+        "word " * 10_001, {"receipts": []},
+        {"p1_pass": True, "score_out_of_10": 10},
+        model="google/gemini-3.1-flash-lite:exacto",
+        fallback_model="mistralai/mistral-small-2603",
+        escalation_model="x-ai/grok-4.3", api_key="test-key", client=client,
+    ))
+
+    assert [(patch.id, patch.severity) for patch in patches] == [("P01", "P1"), ("P99", "P3")]
+    assert raw["low_patch_escalation_new_patch_count"] == 1
+    assert model_used == "google/gemini-3.1-flash-lite:exacto→x-ai/grok-4.3"
+
+
+def test_escalation_id_collision_preserves_distinct_blocker() -> None:
+    original = {
+        "id": "P01", "patch_type": "formatting", "severity": "P3",
+        "location": "Body", "before": "style", "after": "clean style",
+        "reason": "Minor style issue.",
+    }
+    blocker = {
+        "id": "P01", "patch_type": "claim", "severity": "P1",
+        "location": "Results", "before": "unsupported", "after": "",
+        "reason": "Unsupported major claim.",
+    }
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": [original]}),
+        _mock_chat_response("x-ai/grok-4.3", {"patches": [blocker]}),
+    ])
+
+    patches, raw, _model, _cost = asyncio.run(final_reviewer.review_paper(
+        "word " * 10_001, {"receipts": []}, {"p1_pass": True},
+        escalation_model="x-ai/grok-4.3", api_key="test-key", client=client,
+    ))
+
+    assert [(patch.id, patch.severity) for patch in patches] == [("P01", "P3"), ("P01-E1", "P1")]
+    assert raw["low_patch_escalation_new_patch_count"] == 1
+
+
 def test_low_patch_short_paper_does_not_escalate() -> None:
     client = MagicMock()
     client.post = AsyncMock(return_value=_mock_chat_response(
@@ -115,14 +200,17 @@ def test_low_patch_short_paper_does_not_escalate() -> None:
     assert client.post.call_count == 1
 
 
-def test_review_paper_tolerates_non_list_patches() -> None:
+def test_review_paper_rejects_non_list_patches() -> None:
     client = MagicMock()
-    client.post = AsyncMock(return_value=_mock_chat_response(
-        "google/gemini-3.1-flash-lite:exacto", {"patches": 0},
-    ))
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": 0}),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": 0}),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": 0}),
+        _mock_chat_response("mistralai/mistral-small-2603", {"patches": 0}),
+    ])
 
-    patches, raw, _model_used, _cost = asyncio.run(
-        final_reviewer.review_paper(
+    with pytest.raises(RuntimeError, match="failed for review call"):
+        asyncio.run(final_reviewer.review_paper(
             "short clean paper",
             {"receipts": []},
             {"p1_pass": True, "score_out_of_10": 10},
@@ -130,14 +218,89 @@ def test_review_paper_tolerates_non_list_patches() -> None:
             fallback_model="mistralai/mistral-small-2603",
             api_key="test-key",
             client=client,
-        )
-    )
+        ))
+
+
+def test_review_paper_retries_malformed_patch_fields_then_uses_fallback() -> None:
+    malformed = {"patches": [{
+        "id": "P01", "patch_type": "formatting", "severity": 1,
+        "before": "bad", "after": "good",
+    }]}
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", malformed),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", malformed),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", malformed),
+        _mock_chat_response("mistralai/mistral-small-2603", {"patches": []}),
+    ])
+
+    patches, _raw, model_used, _cost = asyncio.run(final_reviewer.review_paper(
+        "short clean paper", {"receipts": []}, {"p1_pass": True},
+        model="google/gemini-3.1-flash-lite:exacto",
+        fallback_model="mistralai/mistral-small-2603",
+        api_key="test-key", client=client,
+    ))
 
     assert patches == []
-    assert raw["patches_parse_warning"] == "int"
+    assert model_used == "mistralai/mistral-small-2603"
+    assert client.post.call_count == 4
 
 
-def test_low_patch_escalation_tolerates_non_list_patches() -> None:
+@pytest.mark.parametrize("severity", [None, "", "HIGH", "CRITICAL", "P0", "typo"])
+def test_missing_or_unknown_patch_severity_is_invalid(severity: object) -> None:
+    raw = {"patches": [{
+        "id": "P01", "patch_type": "claim", "severity": severity,
+        "before": "unsupported claim", "after": "bounded claim",
+    }]}
+
+    with pytest.raises(ValueError, match="missing required fields"):
+        final_reviewer._validate_review_payload(raw)
+
+
+def test_review_paper_rejects_unfixable_initial_verdict() -> None:
+    client = MagicMock()
+    response = {"patches": [{"patch_type": "unfixable"}]}
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", response),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", response),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", response),
+        _mock_chat_response("mistralai/mistral-small-2603", response),
+    ])
+
+    with pytest.raises(RuntimeError, match="failed for review call"):
+        asyncio.run(final_reviewer.review_paper(
+            "short paper",
+            {"receipts": []},
+            {"p1_pass": True, "score_out_of_10": 10},
+            model="google/gemini-3.1-flash-lite:exacto",
+            fallback_model="mistralai/mistral-small-2603",
+            api_key="test-key",
+            client=client,
+        ))
+
+
+def test_explicit_repair_allows_unfixable_verdict() -> None:
+    client = MagicMock()
+    client.post = AsyncMock(return_value=_mock_chat_response(
+        "google/gemini-3.1-flash-lite:exacto",
+        {"patches": [{"id": "P01", "patch_type": "unfixable"}]},
+    ))
+    rejected = MagicMock(
+        patch_id="P01", patch_type="claim", location="Results",
+        before="unsupported", after="replacement", reason="unsupported",
+    )
+
+    repaired = asyncio.run(final_reviewer.repair_flagged_patches(
+        [(rejected, "unsafe replacement")], "paper",
+        model="google/gemini-3.1-flash-lite:exacto",
+        fallback_model="mistralai/mistral-small-2603",
+        api_key="test-key", client=client,
+    ))
+
+    assert repaired == []
+
+
+def test_low_patch_escalation_rejects_non_list_patches() -> None:
     client = MagicMock()
     client.post = AsyncMock(side_effect=[
         _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": []}),
@@ -158,8 +321,8 @@ def test_low_patch_escalation_tolerates_non_list_patches() -> None:
     )
 
     assert patches == []
-    assert raw["patches_parse_warning"] == "int"
-    assert model_used == "google/gemini-3.1-flash-lite:exacto→x-ai/grok-4.3"
+    assert raw["low_patch_escalation_error"] == "ValueError"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto"
 
 
 def test_primary_retry_recovers_before_mistral() -> None:
@@ -374,6 +537,10 @@ def test_cost_estimate_is_real_not_zero() -> None:
     )
     # Mistral: $0.15/Mtok in, $0.60/Mtok out → $0.15 + $0.06 = $0.21
     assert 0.20 < mistral_cost < 0.22, f"unexpected mistral cost: {mistral_cost}"
+    gemma_cost = final_reviewer._estimate_cost(
+        "google/gemma-4-31b-it", 1_000_000, 100_000,
+    )
+    assert 0.13 < gemma_cost < 0.14, f"unexpected Gemma cost: {gemma_cost}"
     with pytest.raises(ValueError, match="no pricing configured"):
         final_reviewer._estimate_cost("foo/bar-99", 1_000_000, 100_000)
 
@@ -389,6 +556,16 @@ def test_unknown_model_fails_before_provider_call() -> None:
             "test-key", "https://openrouter.ai/api/v1", client,
         ))
     client.post.assert_not_called()
+
+
+def test_deployed_gemma_chain_passes_cost_preflight() -> None:
+    final_reviewer._enforce_cost_cap(
+        "system", "user",
+        "google/gemma-4-31b-it",
+        "mistralai/mistral-small-2603",
+        None,
+        1.0,
+    )
 
 
 def test_cost_cap_fails_before_provider_call() -> None:

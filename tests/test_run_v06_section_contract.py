@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import dataclasses
 import sys
 from pathlib import Path
 from types import SimpleNamespace
@@ -11,10 +12,11 @@ import pytest
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import apply_patches as ap  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 from agent import revision_consistency  # noqa: E402
 from agent.synthesis_schemas import ReceiptSummary, SynthesisSection  # noqa: E402
+from agent.publication_evidence import source_proof_matches_record, verified_source_span  # noqa: E402
+from agent.revision_evidence import RevisionEvidenceLock  # noqa: E402
 
 
 def _words(n: int) -> str:
@@ -38,6 +40,373 @@ def _receipt(rid: str, directness: str) -> ReceiptSummary:
         p_values=(),
         population_summary="adults",
     )
+
+
+def test_manifest_receipt_preserves_verified_snapshot_source_proof(tmp_path: Path) -> None:
+    parsed = tmp_path / "parsed"
+    parsed.mkdir()
+    thesis = "The retained trial reported a source-bound hazard ratio of 0.72 for mortality outcomes."
+    (parsed / "r1.paper_sections.json").write_text(json.dumps({"results": thesis}))
+    receipt = dataclasses.replace(
+        _receipt("r1", "direct"), thesis_text=thesis,
+        source_title="Mortality trial",
+    )
+    evidence = RevisionEvidenceLock(
+        tmp_path, {"r1": {"topic": "topic"}}, tmp_path / "quant", parsed,
+        None, "snapshot",
+    )
+
+    row = orch._manifest_receipt_dict(receipt, {}, evidence)
+
+    assert verified_source_span(row) == thesis
+    source_path = parsed / "r1.paper_sections.json"
+    assert source_proof_matches_record(row, source_path) is True
+    source_path.write_text(json.dumps({"results": "mutated retained record"}))
+    assert source_proof_matches_record(row, source_path) is False
+
+
+def test_manifest_receipt_extracts_source_owned_fragment_from_thesis(tmp_path: Path) -> None:
+    parsed = tmp_path / "parsed"
+    parsed.mkdir()
+    sentence = "The retained trial reported a source-bound hazard ratio of 0.72 for mortality outcomes."
+    (parsed / "r1.paper_sections.json").write_text(json.dumps({"results": sentence}))
+    receipt = dataclasses.replace(
+        _receipt("r1", "direct"),
+        thesis_text=f"Mortality trial — source excerpts: {sentence}",
+        source_title="Mortality trial", evidence_tier="A1",
+    )
+    evidence = RevisionEvidenceLock(
+        tmp_path, {"r1": {"topic": "topic"}}, tmp_path / "quant", parsed,
+        None, "snapshot",
+    )
+
+    row = orch._manifest_receipt_dict(receipt, {}, evidence)
+
+    assert row["excerpt"] == sentence
+    assert source_proof_matches_record(row, parsed / "r1.paper_sections.json")
+
+
+def test_artifact_consistency_rejects_missing_direct_source_proof(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1,
+        "receipts": [{
+            "receipt_id": "r1", "directness": "direct",
+            "evidence_tier": "A1", "n_claims": 1,
+        }],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Study 2025"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "source_proof_integrity")
+    assert check.passed is False
+    assert "required direct proofs 0/1" in check.detail
+
+
+@pytest.mark.parametrize("n_claims", [None, False, 0.0, -0.5, 0.5, "0", "invalid"])
+def test_artifact_consistency_rejects_malformed_claim_count(
+    tmp_path: Path, n_claims: object,
+) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1,
+        "receipts": [{
+            "receipt_id": "r1", "directness": "direct",
+            "evidence_tier": "A1", "n_claims": n_claims,
+        }],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Study 2025"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "source_proof_integrity")
+    assert check.passed is False
+    assert check.detail == "manifest n_claims malformed"
+
+
+def test_artifact_consistency_rejects_declared_receipt_count_mismatch(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 30, "receipts": [],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({"r1": {}}))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "manifest_receipt_count")
+    assert check.passed is False
+    assert "n_receipts=30; receipt rows=0" in check.detail
+
+
+@pytest.mark.parametrize("receipt_ids", [["r1", "r1"], ["r1", ""]])
+def test_artifact_consistency_rejects_invalid_manifest_receipt_ids(
+    tmp_path: Path, receipt_ids: list[str],
+) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 2,
+        "receipts": [{"receipt_id": receipt_id, "n_claims": 0} for receipt_id in receipt_ids],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Study 2025"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "manifest_receipt_count")
+    assert check.passed is False
+
+
+def test_artifact_consistency_rejects_unregistered_manifest_receipt(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 2,
+        "receipts": [
+            {"receipt_id": "r1", "n_claims": 0},
+            {"receipt_id": "r2", "n_claims": 0},
+        ],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Study 2025"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "manifest_registry_identity")
+    assert check.passed is False
+
+
+def test_artifact_consistency_rejects_cross_bound_registry_receipt_ids(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 1\nStudy 2\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 2,
+        "receipts": [
+            {"receipt_id": "r1", "n_claims": 0},
+            {"receipt_id": "r2", "n_claims": 0},
+        ],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"receipt_id": "r2", "body_citation": "Study 1"},
+        "r2": {"receipt_id": "r1", "body_citation": "Study 2"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "manifest_registry_identity")
+    assert check.passed is False
+
+
+def test_artifact_consistency_rejects_manifest_registry_source_conflict(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 1\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1,
+        "receipts": [{
+            "receipt_id": "r1", "n_claims": 0,
+            "source_doi": "10.1000/correct", "source_title": "Correct study",
+        }],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {
+            "receipt_id": "r1", "body_citation": "Study 1",
+            "source_doi": "10.1000/wrong", "source_title": "Wrong study",
+        },
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "manifest_registry_identity")
+    assert check.passed is False
+
+
+def test_artifact_consistency_rejects_noncanonical_registry_key(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 1\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1, "receipts": [{"receipt_id": "r1", "n_claims": 0}],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        " r1 ": {"receipt_id": "r1", "body_citation": "Study 1"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "manifest_registry_identity")
+    assert check.passed is False
+
+
+def test_artifact_consistency_rejects_missing_body_citation(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1, "receipts": [{"receipt_id": "r1", "n_claims": 0}],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"receipt_id": "r1"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "citation_registry_coverage")
+    assert check.passed is False
+
+
+def test_artifact_consistency_rejects_negative_claim_count(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1,
+        "receipts": [{
+            "receipt_id": "r1", "directness": "direct",
+            "evidence_tier": "A1", "n_claims": -1,
+        }],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Study 2025"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "source_proof_integrity")
+    assert check.passed is False
+    assert check.detail == "manifest n_claims negative"
+
+
+def test_artifact_consistency_rejects_patch_log_without_decision(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1, "receipts": [{"receipt_id": "r1", "n_claims": 0}],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"body_citation": "Study 2025"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [{"id": "P01", "severity": "P3"}],
+    }))
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01"}],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "reviewer_evidence")
+    assert check.passed is False
+
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01", "severity": "P3", "decision": "auto_stripped"}],
+    }))
+    report = verify_run_artifacts(tmp_path)
+    check = next(item for item in report.checks if item.name == "reviewer_evidence")
+    assert check.passed is True
+
+
+def test_artifact_consistency_rejects_unresolved_p1_reviewer_patch(tmp_path: Path) -> None:
+    from agent.artifact_consistency import verify_run_artifacts
+
+    (tmp_path / "full_paper.md").write_text("## References\n\nStudy 2025\n")
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1, "receipts": [{"receipt_id": "r1", "n_claims": 0}],
+    }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "r1": {"receipt_id": "r1", "body_citation": "Study 2025"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [{"id": "P01", "severity": "P1"}],
+    }))
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01", "decision": "rejected"}],
+    }))
+
+    report = verify_run_artifacts(tmp_path)
+
+    check = next(item for item in report.checks if item.name == "reviewer_evidence")
+    assert check.passed is False
+
+
+@pytest.mark.parametrize("severity", ["P0", "HIGH", "typo"])
+def test_artifact_consistency_rejects_unknown_reviewer_severity(
+    tmp_path: Path, severity: str,
+) -> None:
+    from agent.artifact_consistency import _reviewer_evidence_check
+
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [{"id": "P01", "severity": severity}],
+    }))
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01", "severity": severity, "decision": "rejected"}],
+    }))
+
+    assert _reviewer_evidence_check(tmp_path).passed is False
+
+
+def test_artifact_consistency_rejects_stale_log_after_zero_patch_review(tmp_path: Path) -> None:
+    from agent.artifact_consistency import _reviewer_evidence_check
+
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01", "severity": "P1", "decision": "rejected"}],
+    }))
+
+    assert _reviewer_evidence_check(tmp_path).passed is False
 
 
 def test_structured_evidence_p_values_are_normalized_idempotently(tmp_path: Path) -> None:
@@ -156,6 +525,7 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
         "full_paper.certification.json",
         "full_paper.certification.md",
         "full_paper.final_verdict.json",
+        "full_paper.review_patches.json",
         "full_paper.review_patch_log.json",
         "biomed_normalization.json",
         "docling_fallback.json",
@@ -176,6 +546,7 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "full_paper.md").exists()
     assert (tmp_path / "manifest.json").exists()
     assert (tmp_path / "full_paper.audit.json").exists()
+    assert (tmp_path / "full_paper.review_patches.json").exists()
     assert (tmp_path / "debug" / "full_paper.review_patch_log.json").exists()
     assert (tmp_path / "audit" / "full_paper.certification.json").exists()
     assert (tmp_path / "readable" / "full_paper.certification.md").exists()
@@ -573,38 +944,6 @@ def test_requested_inferential_bridge_stays_in_main_manuscript(monkeypatch) -> N
     assert supplement == ""
 
 
-def test_absent_flagged_patch_resolved_after_final_cleanup() -> None:
-    result = ap.PatchResult(
-        patch_id="P02",
-        patch_type="structure",
-        severity="P1",
-        decision="flagged",
-        reason_for_decision="structure patch flag-only",
-        before="8. Results-like prose leaked into Methods.",
-        after="",
-    )
-    clean_paper = "## Methods\n\nDeterministic Methods only.\n"
-    resolved = orch._resolve_absent_flagged_patches([result], clean_paper)
-    assert resolved[0].decision == "applied"
-    assert "FINAL-CLEANUP-RESOLVED" in resolved[0].reason_for_decision
-
-
-def test_absent_rejected_patch_resolved_after_final_cleanup() -> None:
-    result = ap.PatchResult(
-        patch_id="P07",
-        patch_type="formatting",
-        severity="P1",
-        decision="rejected",
-        reason_for_decision="truncated patch contract",
-        before="DOI: 10.1007/example.",
-        after="",
-    )
-    clean_paper = "## What This Synthesis Adds\n\nClean prose only.\n"
-    resolved = orch._resolve_absent_flagged_patches([result], clean_paper)
-    assert resolved[0].decision == "applied"
-    assert "FINAL-CLEANUP-RESOLVED" in resolved[0].reason_for_decision
-
-
 def test_restore_cross_domain_heading_by_structural_boundary() -> None:
     paper = (
         "## Results\n\n"
@@ -888,6 +1227,7 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
     def evaluate(paper: str, **_kwargs: Any) -> SimpleNamespace:
         events.append("surface")
         captured["surface_text"] = paper
+        captured["surface_kwargs"] = _kwargs
         return SimpleNamespace(passed=True, issues=())
 
     def write_gates(**kwargs: Any) -> dict[str, Any]:
@@ -918,6 +1258,8 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
     assert events == ["finalize", "audit", "surface", "gate"]
     assert captured["audit_text"] == "after finalizer"
     assert captured["surface_text"] == "after finalizer"
+    assert captured["surface_kwargs"]["accountability_model"] == "researka_agent_certified"
+    assert captured["surface_kwargs"]["human_signoff_validated"] is False
     assert captured["gate_text"] == "after finalizer"
     assert captured["gate_audit"] == report
     assert gates["final_gate"]["passed"] is True

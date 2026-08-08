@@ -464,6 +464,7 @@ def _surface_passing_paper(*, discussion_extra: str = "") -> str:
         "|---|---|---|---|---|---|\n"
         "| Smith 2024 | fasting glucose | treatment | 89 mg/dL | mg/dL | mean |\n\n"
         f"## Methods\n\n{_words(310, 'methods')}\n\n{methods_contract}\n\n"
+        "Accountability is established through reproducible artifacts.\n\n"
         f"## Results\n\n{_words(510, 'results')}\n\n"
         f"## Cross-Domain Synthesis\n\n{_words(860, 'cross')}\n\n"
         "## Discussion\n\n"
@@ -614,6 +615,10 @@ def test_discover_topics_excludes_low_information_generated_pack_records(tmp_pat
         "candidate_count": 12,
         "pack_data": {"topic": "telomere_biomarker_effects", "aliases": ["telomere biomarker effects", "telomere"], "target_journal": "GeroScience"},
     })
+    _write_json(tmp_path / "topic_packs_db" / "ra_effects" / "latest.json", {
+        "candidate_count": 20,
+        "pack_data": {"topic": "ra_effects", "aliases": ["RA effects", "RA", "rapamycin"], "retrieval": {"topic_terms": ["RA", "rapamycin"]}},
+    })
 
     topics = cycle.discover_topics(
         tmp_path / "topic_packs",
@@ -622,6 +627,48 @@ def test_discover_topics_excludes_low_information_generated_pack_records(tmp_pat
     )
 
     assert topics == ["telomere_biomarker_effects"]
+
+
+def test_discover_topics_ignores_rejected_records_when_scoring_peer_rarity(tmp_path: Path) -> None:
+    records = {
+        "telomere_shortening_effects": ["telomere shortening effects", "telomere shortening"],
+        "telomere_shortening_rate_effects": ["telomere shortening rate effects", "telomere shortening"],
+        "telomere_shortening_rates_effects": ["telomere shortening rates effects", "telomere shortening"],
+        "telomere_shortening_threshold_effects": ["telomere shortening threshold effects", "telomere shortening"],
+        "telomere_shortening_measurement_method_effects": ["telomere shortening measurement method effects", "telomere shortening"],
+    }
+    for topic, aliases in records.items():
+        _write_json(tmp_path / "topic_packs_db" / topic / "latest.json", {
+            "candidate_count": 12,
+            "pack_data": {"topic": topic, "aliases": aliases, "target_journal": "GeroScience"},
+        })
+
+    topics = cycle.discover_topics(
+        tmp_path / "topic_packs",
+        tmp_path / "docs" / "quality-reference",
+        tmp_path / "topic_packs_db",
+    )
+
+    assert topics == ["telomere_shortening_effects"]
+
+
+def test_discover_topics_rejects_generated_pack_topic_path_mismatch(tmp_path: Path) -> None:
+    _write_json(tmp_path / "topic_packs_db" / "statin_prescription_rates" / "latest.json", {
+        "candidate_count": 12,
+        "pack_data": {
+            "topic": "metformin_effects",
+            "aliases": ["metformin effects", "metformin"],
+            "target_journal": "GeroScience",
+        },
+    })
+
+    topics = cycle.discover_topics(
+        tmp_path / "topic_packs",
+        tmp_path / "docs" / "quality-reference",
+        tmp_path / "topic_packs_db",
+    )
+
+    assert topics == []
 
 
 def test_generated_pack_record_counts_as_publication_track(tmp_path: Path, monkeypatch) -> None:
@@ -633,6 +680,25 @@ def test_generated_pack_record_counts_as_publication_track(tmp_path: Path, monke
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
 
     assert cycle._publication_track_topic("senescence_biomarker_effects") is True
+
+
+def test_publication_track_ignores_rejected_generated_peers(tmp_path: Path, monkeypatch) -> None:
+    records = {
+        "navitoclax_inhibitor_effects": ["navitoclax inhibitor effects", "navitoclax inhibitor"],
+        "navitoclax_inhibitor_rate_effects": ["navitoclax inhibitor rate effects", "navitoclax inhibitor"],
+        "navitoclax_inhibitor_rates_effects": ["navitoclax inhibitor rates effects", "navitoclax inhibitor"],
+        "navitoclax_inhibitor_threshold_effects": ["navitoclax inhibitor threshold effects", "navitoclax inhibitor"],
+        "navitoclax_inhibitor_measurement_method_effects": ["navitoclax inhibitor measurement method effects", "navitoclax inhibitor"],
+    }
+    for topic, aliases in records.items():
+        _write_json(tmp_path / "topic_packs_db" / topic / "latest.json", {
+            "candidate_count": 12,
+            "pack_data": {"topic": topic, "aliases": aliases, "target_journal": "GeroScience"},
+        })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+
+    assert cycle._publication_track_topic("navitoclax_inhibitor_effects") is True
 
 
 def test_low_information_generated_pack_is_not_publication_track(tmp_path: Path, monkeypatch) -> None:
@@ -6227,12 +6293,20 @@ def test_revise_trace_shortage_fails_fast_before_synthesis(tmp_path: Path, monke
     _seed_delayed_revise(tmp_path, monkeypatch)
     source = next((tmp_path / "runs").glob("synthesis-aspirin_geroprotection-*"))
     manifest = json.loads((source / "manifest.json").read_text(encoding="utf-8"))
-    manifest["receipts"][0].update({
-        "citation_token": "Study1 2025",
-        "source_doi": "10.1000/result.1",
-        "endpoints": ["body weight"],
-        "thesis_text": "Source excerpts: Body weight decreased by 5% (p = 0.01).",
-    })
+    manifest["receipts"][0].update(_proven_source(
+        citation_token="Study1 2025",
+        source_doi="10.1000/result.1",
+        doi="10.1000/result.1",
+        endpoints=["body weight"],
+        excerpt=(
+            "Body weight decreased by 5% after treatment in the randomized "
+            "study population during follow-up (p = 0.01)."
+        ),
+        thesis_text=(
+            "Source excerpts: Body weight decreased by 5% after treatment in the "
+            "randomized study population during follow-up (p = 0.01)."
+        ),
+    ))
     manifest["receipts"][1].update({
         "citation_token": "Study2 2025",
         "source_doi": "10.1000/method.2",
@@ -6895,6 +6969,48 @@ def test_payload_source_bundle_revision_ask_rejects_generic_registry_summaries(t
     )
 
 
+@pytest.mark.parametrize("frozen_aliases", [None, [], [None], ["vaccine effectiveness"], ["COVID 1"]])
+def test_source_topic_revision_requires_ambiguous_numeric_alias_snapshot(
+    tmp_path: Path, monkeypatch, frozen_aliases: list[object] | None,
+) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    metadata = {"topic": "covid_19_vaccine_effectiveness"}
+    if frozen_aliases is not None:
+        metadata["topic_aliases"] = frozen_aliases
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "metadata": metadata,
+        "source_bundle": [{
+            "title": "COVID-20 vaccine effectiveness was 19% in the cohort",
+            "excerpt": "COVID-20 vaccine response was measured.",
+        }],
+    })
+
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir, "Address the off-topic source bundle entries.",
+    )
+
+
+def test_source_topic_revision_requires_every_numeric_identity_alias(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    out_dir = tmp_path / "run"
+    out_dir.mkdir()
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "metadata": {
+            "topic": "covid_19_vaccine_effectiveness_in_c57bl_6j_mice",
+            "topic_aliases": ["COVID 19"],
+        },
+        "source_bundle": [{
+            "title": "COVID-19 vaccine effectiveness in C57BL/7J mice with 6J controls",
+        }],
+    })
+
+    assert not cycle._payload_revision_ask_satisfied(
+        out_dir, "Address the off-topic source bundle entries.",
+    )
+
+
 def test_authoritative_abstract_revision_ask_checks_every_named_doi(
     tmp_path: Path, monkeypatch,
 ) -> None:
@@ -7531,9 +7647,16 @@ def test_manifestless_revision_is_attempted_once_and_stays_terminal(
         loader=lambda: ([request], None),
         published_loader=lambda: (set(), None),
     )
-
     assert error is None
     assert pending is None
+
+
+def test_pending_decision_transport_error_blocks_duplicate(monkeypatch) -> None:
+    monkeypatch.setattr(
+        cycle, "_fetch_submission_decision",
+        lambda _submission_id: (None, "transport unavailable"),
+    )
+    assert cycle._submitted_record_has_pending_decision({"submission_id": "sub-1"})
 
 
 def test_retracted_source_blocks_submit(tmp_path: Path, monkeypatch) -> None:
@@ -7874,7 +7997,7 @@ def test_abstract_overclaim_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert ledger["attempts"][0]["abstract_overclaims"] == ["EGCG reverses aging"]
 
 
-def test_submission_ready_final_status_makes_duplicate_overclaim_advisory(tmp_path: Path, monkeypatch) -> None:
+def test_submission_ready_final_status_does_not_override_abstract_overclaim(tmp_path: Path, monkeypatch) -> None:
     _seed_delayed_revise(tmp_path, monkeypatch)
     monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: ["profile summary overclaim"])
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: [])
@@ -7908,9 +8031,9 @@ def test_submission_ready_final_status_makes_duplicate_overclaim_advisory(tmp_pa
         submit_cycle=lambda **_k: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
     )
 
-    assert ledger["attempts"][0]["gate_status"] == "submitted_to_researka"
-    assert ledger["attempts"][0]["abstract_overclaim_advisory"] is True
-    assert ledger["attempts"][0]["abstract_overclaim_advisory_claims"] == ["profile summary overclaim"]
+    assert ledger["attempts"][0]["gate_status"] == "abstract_overclaim"
+    assert ledger["attempts"][0]["submitted"] == 0
+    assert ledger["attempts"][0]["abstract_overclaims"] == ["profile summary overclaim"]
 
 
 def test_abstract_overclaim_repair_handles_paraphrased_judge_claim(tmp_path: Path) -> None:
@@ -11384,6 +11507,199 @@ def test_receipt_preflight_repairs_and_reprobes_until_floor(tmp_path: Path, monk
         {"topic": "urolithin_a", "dry_run": False, "timeout": 99, "seed_limit": cycle.DEFAULT_THRESHOLDS.min_receipts, "force_extract": False, "status": "corpus_repaired"},
     ]
     assert result["repairs"] == repairs
+
+
+def test_receipt_preflight_accepts_explicit_probe_completion_code(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from scripts import run_v06_synthesis as synthesis
+
+    assert (
+        cycle.SYNTHESIS_RECEIPT_PROBE_RETURN_CODE
+        == synthesis.EXIT_RECEIPT_PROBE_COMPLETE
+    )
+
+    def fake_synthesis(
+        _topic: str, out_dir: Path, *, dry_run: bool, **_kwargs: Any,
+    ) -> int:
+        assert dry_run is True
+        out_dir.mkdir(parents=True)
+        n = cycle.DEFAULT_THRESHOLDS.min_receipts
+        _write_json(out_dir / "receipt_funnel.json", {"counts": {
+            "admitted_receipts": n,
+            "primary_tier_receipts": n,
+            "direct_receipts": n,
+            "non_orthogonal_tensions": cycle.PREFLIGHT_MIN_TENSIONS,
+            "outcome_classes": 2,
+        }})
+        return synthesis.EXIT_RECEIPT_PROBE_COMPLETE
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
+
+    result = cycle._receipt_preflight(
+        "urolithin_a", tmp_path / "run", repair=False,
+    )
+
+    assert result["passed"] is True
+    assert result["return_code"] == synthesis.EXIT_RECEIPT_PROBE_COMPLETE
+
+
+def test_full_cycle_dry_run_reports_probe_completion(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _topic(tmp_path, "urolithin_a", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {
+        "passed": True,
+        "n_receipts": cycle.DEFAULT_THRESHOLDS.min_receipts,
+        "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+        "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+    })
+    monkeypatch.setattr(
+        cycle, "_run_synthesis",
+        lambda *_a, **_k: cycle.SYNTHESIS_RECEIPT_PROBE_RETURN_CODE,
+    )
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-08-01", topic="urolithin_a",
+        run_synthesis=True, synthesis_dry_run=True, submit=False,
+    )
+
+    assert ledger["status"] == "synthesis_probe_complete"
+    assert ledger["synthesis_return_code"] == cycle.SYNTHESIS_RECEIPT_PROBE_RETURN_CODE
+
+
+def test_reconcile_reports_corrupt_submission_history(tmp_path: Path) -> None:
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    submit_dir = tmp_path / cycle.submit_bridge.LEDGER_DIR
+    ledger_dir.mkdir()
+    submit_dir.mkdir()
+    _write_json(submit_dir / "2026-08-01.json", {
+        "date": "2026-08-01", "submitted": 1, "published": 1,
+    })
+    (submit_dir / "_submitted_fingerprints.json").write_text("{broken")
+
+    remote_calls = 0
+
+    def remote_loader() -> tuple[set[str], None]:
+        nonlocal remote_calls
+        remote_calls += 1
+        return set(), None
+
+    result = cycle.reconcile_publication_ledgers(
+        runs_root=tmp_path, date="2026-08-01", remote_loader=remote_loader,
+    )
+
+    assert result["status"] == "local_state_corrupt"
+    assert remote_calls == 0
+
+
+def test_reconcile_cli_fails_when_local_state_is_corrupt(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(cycle, "reconcile_publication_ledgers", lambda **_kwargs: {
+        "status": "local_state_corrupt", "checked": 0, "updated": 0,
+    })
+
+    assert cycle.main(["--reconcile-publications"]) == 2
+
+
+def test_primary_cycle_propagates_submit_bridge_corruption(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _seed_delayed_revise(tmp_path, monkeypatch)
+    ledger, _ = _run_coverage_cycle(
+        tmp_path, monkeypatch, unmet=[],
+        submit_cycle=lambda **_kwargs: {
+            "status": "local_state_corrupt", "reason": "corrupt history",
+            "submitted": 0, "published": 0,
+        },
+        mode="revise",
+    )
+
+    assert ledger["status"] == "local_state_corrupt"
+    assert ledger["no_submission_reason"] == "corrupt history"
+
+
+def test_revise_cycle_records_corrupt_submission_history(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs = tmp_path / "runs"
+    submit_dir = runs / cycle.submit_bridge.LEDGER_DIR
+    submit_dir.mkdir(parents=True)
+    (submit_dir / "_submitted_fingerprints.json").write_text("{broken")
+    monkeypatch.setattr(cycle, "discover_topics", lambda: ["topic"])
+
+    result = cycle.run_cycle(
+        runs_root=runs, date="2026-08-01", submit=True, mode="revise",
+        remote_loader=lambda: (set(), None), revision_loader=lambda: ([{
+            "artifactId": "revise-1", "title": "Research Synthesis: Topic",
+            "topic": "topic", "feedback": "Repair the evidence trace.",
+        }], None), submit_cycle=lambda **_kwargs: {},
+    )
+
+    assert result["status"] == "local_state_corrupt"
+    assert "_submitted_fingerprints.json" in result["reason"]
+    stored = json.loads(cycle._cycle_ledger_path(
+        runs / cycle.LEDGER_DIR, "2026-08-01", "revise",
+    ).read_text())
+    assert stored["status"] == "local_state_corrupt"
+
+
+def test_primary_cycle_cli_fails_when_local_state_is_corrupt(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(cycle, "run_cycle", lambda **_kwargs: {
+        "status": "local_state_corrupt", "submitted": 0, "published": 0,
+    })
+
+    assert cycle.main(["--submit"]) == 2
+
+
+def test_primary_cycle_records_corrupt_historical_cycle_ledger(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    (ledger_dir / "2026-08-02.json").write_text("{broken")
+    monkeypatch.setattr(cycle, "discover_topics", lambda: ["urolithin_a"])
+
+    result = cycle.run_cycle(
+        runs_root=runs, date="2026-08-03", run_synthesis=True,
+    )
+
+    assert result["status"] == "local_state_corrupt"
+    assert "2026-08-02.json" in result["reason"]
+    assert not (ledger_dir / "2026-08-02.json").exists()
+    assert (ledger_dir / "2026-08-02.json.corrupt").read_text() == "{broken"
+    stored = json.loads(cycle._cycle_ledger_path(
+        ledger_dir, "2026-08-03", "mixed",
+    ).read_text())
+    assert stored["status"] == "local_state_corrupt"
+
+    retry = cycle.run_cycle(runs_root=runs, date="2026-08-04")
+
+    assert retry["status"] != "local_state_corrupt"
+
+
+def test_primary_cycle_quarantines_corrupt_current_cycle_ledger(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs = tmp_path / "runs"
+    ledger_dir = runs / cycle.LEDGER_DIR
+    ledger_dir.mkdir(parents=True)
+    ledger_path = cycle._cycle_ledger_path(ledger_dir, "2026-08-03", "mixed")
+    ledger_path.write_text("{broken")
+    monkeypatch.setattr(cycle, "discover_topics", lambda: ["urolithin_a"])
+
+    result = cycle.run_cycle(runs_root=runs, date="2026-08-03")
+
+    assert result["status"] == "local_state_corrupt"
+    assert json.loads(ledger_path.read_text())["status"] == "local_state_corrupt"
+    assert ledger_path.with_suffix(".json.corrupt").read_text() == "{broken"
 
 
 def test_receipt_preflight_repair_keeps_best_probe_after_regression(tmp_path: Path, monkeypatch) -> None:

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -83,6 +84,28 @@ def test_materialize_rows_keeps_specific_generic_subtopic_pack_publishable(tmp_p
     assert result["skipped"] == []
 
 
+def test_rejected_stored_packs_do_not_poison_valid_peer_specificity(tmp_path: Path) -> None:
+    for slug in (
+        "metformin_rate_effects", "metformin_rates_effects",
+        "metformin_threshold_effects", "metformin_measurement_method_effects",
+    ):
+        path = tmp_path / slug / "latest.json"
+        path.parent.mkdir()
+        path.write_text(json.dumps({
+            "candidate_count": 20,
+            "pack_data": {"topic": slug, "aliases": [slug.replace("_", " "), "metformin"]},
+        }))
+    rows = [{
+        "topic": "metformin", "sub_topic": "other", "claim_type": "effect_size",
+        "facts": 65, "exact_facts": 65, "papers": 12,
+    }]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=False)
+
+    assert [item["slug"] for item in result["created"]] == ["metformin_effects"]
+    assert result["skipped"] == []
+
+
 def test_materialize_rows_uses_existing_peer_records_for_specificity(tmp_path: Path) -> None:
     for slug in [
         "longevity_lifespan_effects",
@@ -160,6 +183,58 @@ def test_materialize_rows_keeps_repeated_intervention_population_pack(tmp_path: 
     assert result["skipped"] == []
 
 
+def test_materialize_rows_preserves_named_numeric_identities_and_rejects_noise(tmp_path: Path) -> None:
+    rows = [
+        {"topic": "COVID-19", "sub_topic": "vaccine effectiveness", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "C57BL/6", "sub_topic": "mice lifespan", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        *(
+            {"topic": name, "sub_topic": "inhibitor therapy", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5}
+            for name in ("4machine", "5medicine", "7phone", "9routine")
+        ),
+        {"topic": "4machine", "sub_topic": "machine inhibitor", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+    ]
+
+    result = materializer.materialize_rows(rows, db_dir=tmp_path, persist=False)
+
+    assert [item["slug"] for item in result["created"]] == [
+        "covid_19_vaccine_effectiveness", "c57bl_6_mice_lifespan_effects",
+    ]
+    assert [item["reason"] for item in result["skipped"]] == [
+        "low_information_topic", "low_information_topic",
+        "low_information_topic", "low_information_topic", "low_information_topic",
+    ]
+
+
+def test_high_precision_materialization_rejects_unnamed_numeric_prefixes(tmp_path: Path) -> None:
+    rows = [
+        {"topic": prefix, "sub_topic": "19 vaccine effectiveness", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5}
+        for prefix in ("study", "year", "random", "STUDY", "YEAR", "RANDOM")
+    ]
+
+    result = materializer.materialize_rows(
+        rows, db_dir=tmp_path, persist=False, quality_mode="high-precision",
+    )
+
+    assert result["created"] == []
+    assert [item["reason"] for item in result["skipped"]] == [
+        "low_information_topic", "low_information_topic", "low_information_topic",
+        "low_information_topic", "low_information_topic", "low_information_topic",
+    ]
+
+
+def test_materialization_accepts_normalized_uppercase_numeric_identities(tmp_path: Path) -> None:
+    for index, (topic, sub_topic, expected) in enumerate((
+        ("COVID 19", "vaccine effectiveness", "covid_19_vaccine_effectiveness"),
+        ("C57BL 6", "mice lifespan", "c57bl_6_mice_lifespan_effects"),
+    )):
+        result = materializer.materialize_rows([{
+            "topic": topic, "sub_topic": sub_topic, "claim_type": "effect_size",
+            "facts": 20, "exact_facts": 20, "papers": 5,
+        }], db_dir=tmp_path / str(index), persist=False)
+
+        assert [item["slug"] for item in result["created"]] == [expected]
+
+
 def test_build_topic_name_does_not_repeat_overlapping_topic_and_subtopic() -> None:
     assert materializer.build_topic_name({
         "topic": "resveratrol supplementation",
@@ -182,9 +257,51 @@ def test_high_precision_quality_mode_filters_demographic_exposure(tmp_path: Path
     assert [item["slug"] for item in result["created"]] == ["metformin_metabolism_effects"]
     assert [item["reason"] for item in result["skipped"]] == [
         "quality_filter_failed",
-        "quality_filter_failed",
-        "quality_filter_failed",
         "low_information_topic",
+        "low_information_topic",
+        "low_information_topic",
+    ]
+
+
+def test_high_precision_quality_mode_rejects_non_synthesis_claim_axes(tmp_path: Path) -> None:
+    rows = [
+        {"topic": "statin prescription", "sub_topic": "general", "claim_type": "rate", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "general", "claim_type": "threshold", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "rate", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "measurement methods", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "measurement technique", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "threshold value", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "metformin", "sub_topic": "general", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+    ]
+
+    result = materializer.materialize_rows(
+        rows, db_dir=tmp_path, persist=False, quality_mode="high-precision",
+    )
+
+    assert [item["slug"] for item in result["created"]] == ["metformin_effects"]
+    assert [item["reason"] for item in result["skipped"]] == [
+        "low_information_topic", "low_information_topic",
+        "low_information_topic", "low_information_topic",
+        "low_information_topic", "low_information_topic",
+    ]
+
+
+def test_high_precision_quality_mode_rejects_ambiguous_short_entity(tmp_path: Path) -> None:
+    rows = [
+        {
+            "topic": topic, "sub_topic": "rapamycin", "claim_type": "effect_size",
+            "facts": 20, "exact_facts": 20, "papers": 5,
+        }
+        for topic in ("RA", "RA effects")
+    ]
+
+    result = materializer.materialize_rows(
+        rows, db_dir=tmp_path, persist=False, quality_mode="high-precision",
+    )
+
+    assert result["created"] == []
+    assert [item["reason"] for item in result["skipped"]] == [
+        "low_information_topic", "low_information_topic",
     ]
 
 

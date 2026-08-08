@@ -141,10 +141,12 @@ def frozen_retrieval_record(manifest: dict[str, Any]) -> FrozenRetrievalRecord:
         queries=queries,
         expected_evidence_slots=slots,
         n_parsed=_nonnegative_int(
-            counts.get("parsed") or funnel.get("active_paper_ids"),
+            counts.get("parsed") if counts.get("parsed") is not None
+            else funnel.get("active_paper_ids"),
         ),
         n_extracted=_nonnegative_int(
-            counts.get("quant_extracted") or funnel.get("quant_claim_files"),
+            counts.get("quant_extracted") if counts.get("quant_extracted") is not None
+            else funnel.get("quant_claim_files"),
         ),
     )
 

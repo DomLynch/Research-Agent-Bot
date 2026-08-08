@@ -28,11 +28,20 @@ Stdlib-only, no LLM. Fail-closed: invalid JSON → empty pack → invalid.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
 PACK_FILENAME = "target_journal_pack.json"
+PRISMA_FLOW_FILES = ("prisma_flow_diagram.md", "prisma_flow_diagram.png", "prisma_flow_diagram.pdf")
+
+
+def _bool_field(raw: dict[str, Any], name: str, default: bool) -> bool:
+    value = raw.get(name, default)
+    if type(value) is not bool:
+        raise TypeError(f"{name} must be a boolean")
+    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -73,11 +82,9 @@ class TargetJournalPack:
             abstract_max_words=int(raw.get("abstract_max_words") or 0),
             main_word_limit=int(raw.get("main_word_limit") or 0),
             reference_style=str(raw.get("reference_style") or ""),
-            requires_prisma=bool(raw.get("requires_prisma", False)),
-            requires_ai_disclosure=bool(
-                raw.get("requires_ai_disclosure", False),
-            ),
-            allows_supplement=bool(raw.get("allows_supplement", True)),
+            requires_prisma=_bool_field(raw, "requires_prisma", False),
+            requires_ai_disclosure=_bool_field(raw, "requires_ai_disclosure", False),
+            allows_supplement=_bool_field(raw, "allows_supplement", True),
             notes=str(raw.get("notes") or ""),
         )
 
@@ -132,6 +139,18 @@ def validate(pack: TargetJournalPack) -> tuple[PackIssue, ...]:
     return tuple(issues)
 
 
+def package_requirement_issues(run_dir: Path, pack: TargetJournalPack) -> tuple[str, ...]:
+    def nonempty(path: Path) -> bool:
+        try:
+            return path.is_file() and bool(path.read_bytes().strip())
+        except OSError:
+            return False
+
+    if pack.requires_prisma and not any(nonempty(run_dir / name) for name in PRISMA_FLOW_FILES):
+        return ("prisma_flow_diagram_missing",)
+    return ()
+
+
 # ---- IO helpers -----------------------------------------------------------
 
 
@@ -172,6 +191,28 @@ def load_and_validate(
             detail=f"{PACK_FILENAME} not present in run_dir",
         ),)
     return pack, validate(pack)
+
+
+def manuscript_limit_issues(
+    paper_md: str, pack: TargetJournalPack | None,
+) -> tuple[str, ...]:
+    """Validate journal word caps against the current manuscript text."""
+    if pack is None:
+        return ("pack_missing",)
+    abstract_match = re.search(
+        r"^##\s+Abstract\b(.*?)(?=^##\s+|\Z)", paper_md, re.M | re.S | re.I,
+    )
+    abstract = abstract_match.group(1) if abstract_match else ""
+    main = re.sub(r"^##\s+Abstract\b.*?(?=^##\s+|\Z)", "", paper_md, flags=re.M | re.S | re.I)
+    main = re.sub(r"^##\s+(?:References|Publication Appendix)\b.*\Z", "", main, flags=re.M | re.S | re.I)
+    def words(text: str) -> int:
+        return len(re.findall(r"\b[\w'-]+\b", text))
+    issues: list[str] = []
+    if words(abstract) > pack.abstract_max_words:
+        issues.append("abstract_word_limit_exceeded")
+    if words(main) > pack.main_word_limit:
+        issues.append("main_word_limit_exceeded")
+    return tuple(issues)
 
 
 # ---- CLI ------------------------------------------------------------------

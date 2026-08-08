@@ -1052,12 +1052,12 @@ def _post_apply_audit_safe(
         import audit_v06_paper as _audit_v06
         import final_consistency_audit as _consistency
     except ImportError as e:
-        return True, f"audit modules unavailable ({e}); skip"
+        return False, f"audit modules unavailable ({e})"
     try:
         pre_audit = _audit_v06.audit(pre_md)
         post_audit = _audit_v06.audit(post_md)
     except Exception as e:  # noqa: BLE001
-        return True, f"Q2 audit failed ({e}); skip"
+        return False, f"Q2 audit failed ({e})"
     pre_q2 = next(
         (c for c in pre_audit.get("checks", [])
          if c.get("name") == "Q2_numeric_integrity"),
@@ -1085,7 +1085,7 @@ def _post_apply_audit_safe(
             post_md, manifest, post_audit,
         )
     except Exception as e:  # noqa: BLE001
-        return True, f"Stage-2 consistency failed ({e}); skip"
+        return False, f"Stage-2 consistency failed ({e})"
     advisory_issue_types = {
         "abstract_results_direction_consistency",
         "metadata_prose_direction_consistency",

@@ -17,13 +17,20 @@ from agent.revision_identity import (
     direction_attribution_requested,
 )
 
+_StatKey = tuple[str, tuple[str, ...]]
+_StatReplacement = tuple[_StatKey, _StatKey, str]
 
 _EFFECT_STAT_RE = re.compile(
-    r"\b(?:HR|OR|RR|NNT|SMD|MD)\s*(?:=|:)?\s*-?\d+(?:\.\d+)?"
+    r"\b(?:hazard ratio(?:\s*\(\s*HR\s*\))?|odds ratio(?:\s*\(\s*OR\s*\))?|HR|OR|RR|NNT|SMD|MD)\s*"
+    r"(?:(?:=|:|of)\s*)?[+−-]?(?:\d+(?:\.\d+)?|\.\d+)"
     r"|\b(?:95\s*%\s*)?(?:CI|confidence interval)\s*[:=]?\s*"
-    r"\d+(?:\.\d+)?\s*(?:-|–|to)\s*\d+(?:\.\d+)?"
+    r"[+−-]?\d+(?:\.\d+)?\s*(?:-|–|to)\s*[+−-]?\d+(?:\.\d+)?"
     r"|\bp\s*(?:<|>|=|≤|≥)\s*(?:0?\.\d+|1(?:\.0+)?)"
     r"|\b\d+(?:\.\d+)?\s*%(?!\w)",
+    re.I,
+)
+_STAT_SCOPE_ANCHOR_RE = re.compile(
+    r"\b(?:primary|secondary|tertiary|exploratory|post hoc|subgroup|endpoint|outcome|analysis)\b",
     re.I,
 )
 _STRONG_CLAIM_RE = re.compile(
@@ -63,6 +70,7 @@ def revision_quality_ask_known(ask: str, evidence_rows: Sequence[dict[str, Any]]
 
 
 def asks_exact_stat_trace(feedback: str) -> bool: return _asks_exact_stat_trace(_normalise(feedback))
+def _asks_effect_measure(text: str) -> bool: return any(token in _normalise(text) for token in ("effect estimate", "effect size", "effect measure", "point estimate"))
 
 
 def revision_quality_proof_is_stated(
@@ -306,16 +314,21 @@ def _asks_named_direction_reconciliation(text: str) -> bool:
 
 
 def _asks_named_statistic_reconciliation(text: str) -> bool:
+    metrics = {_stat_key(match.group(0))[0] for match in _EFFECT_STAT_RE.finditer(text)}
+    if metrics and metrics <= {"p", "ci"} and any(token in text for token in (
+        "non-significant", "non significant", "not significant",
+    )) and not _asks_effect_measure(text):
+        return False
     return _has_named_source(text) and (
         "no numerics" in text
         and ("evidence pending" in text or "internal contradiction" in text)
-        or any(token in text for token in (
+        or (any(token in text for token in (
             "statistic", "p value", "p <", "p =", "effect estimate", "smd", "numeric", "numerics",
-        ))
+        )) or _asks_effect_measure(text) or bool(_EFFECT_STAT_RE.search(text)))
         and any(token in text for token in (
             "if it is not present", "if not present", "not present in", "per endpoint",
             "which endpoint", "located in the source excerpt", "representative statistic",
-            "transcribe", "not transcribed", "bundle supported",
+            "transcribe", "not transcribed", "bundle supported", "source excerpt",
         ))
         and any(token in text for token in (
             "add", "clarify", "verify", "correct", "remove", "reconcile", "transcribe", "mark",
@@ -404,6 +417,47 @@ def _traceable_effect_statistics(row: dict[str, Any]) -> tuple[str, ...]:
         _row_evidence(row)) if _stat_supported(match.group(0), row)))
 
 
+def _stat_key(stat: str) -> tuple[str, tuple[str, ...]]:
+    lower = stat.casefold().replace("hazard ratio", "hr").replace("odds ratio", "or")
+    metric = next(
+        (token for token in ("smd", "nnt", "hr", "or", "rr", "md", "ci", "p", "%")
+         if token == "%" and "%" in lower or token != "%" and re.search(rf"\b{token}\b", lower)),
+        "",
+    )
+    return metric, _numbers(stat)
+
+
+def _stat_replacement_requests(
+    ask: str,
+) -> tuple[_StatReplacement, ...]:
+    matches = list(_EFFECT_STAT_RE.finditer(ask))
+    requests: list[_StatReplacement] = []
+    for index, (old, new) in enumerate(zip(matches, matches[1:])):
+        between = ask[old.end():new.start()]
+        prefix = ask[matches[index - 1].end() if index else max(0, old.start() - 140):old.start()]
+        if (re.search(r"\breplace\b", prefix, re.I) or requests and _STAT_SCOPE_ANCHOR_RE.search(prefix) and _stat_key(old.group(0))[0] == _stat_key(new.group(0))[0]) and re.search(r"\bwith\b", between, re.I):
+            scope = _normalise(re.split(r"\breplace\b", prefix, maxsplit=1, flags=re.I)[-1])
+            scope = re.sub(r"^(?:(?:and|then)\s+)?(?:(?:the|a|an)\s+)?", "", scope)
+            if (match := re.search(
+                r"\b(?:for|in|on)\s+(?:the\s+)?([a-z][a-z0-9 -]{0,60}?"
+                r"(?:endpoint|subgroup|outcome|analysis))\b",
+                between + ask[new.end():new.end() + 120], re.I,
+            )) and (not scope or not _STAT_SCOPE_ANCHOR_RE.search(scope)):
+                scope = _normalise(match.group(1))
+            requests.append((_stat_key(old.group(0)), _stat_key(new.group(0)), scope))
+    if not requests and (verb := re.search(r"\breplace\b", ask, re.I)) and (separator := re.search(r"\bwith\b", ask[verb.end():], re.I)):
+        split = verb.end() + separator.start()
+        old_matches = [match for match in matches if verb.end() < match.start() < split]
+        new_matches = [match for match in matches if match.start() > split]
+        if len(old_matches) == len(new_matches):
+            for index, (old, new) in enumerate(zip(old_matches, new_matches)):
+                prefix = ask[verb.end() if index == 0 else old_matches[index - 1].end():old.start()]
+                scope = re.sub(r"^(?:and\s+)?(?:the\s+)?", "", _normalise(prefix))
+                if _STAT_SCOPE_ANCHOR_RE.search(scope) and _stat_key(old.group(0))[0] == _stat_key(new.group(0))[0]:
+                    requests.append((_stat_key(old.group(0)), _stat_key(new.group(0)), scope))
+    return tuple(requests)
+
+
 def resolved_effect_direction(row: dict[str, Any]) -> str:
     raw = receipt_direction(row)
     if raw != "null":
@@ -422,17 +476,19 @@ def resolved_effect_direction(row: dict[str, Any]) -> str:
 
 
 def _numbers(text: str) -> tuple[str, ...]:
-    values = [
-        f"0{value}" if value.startswith(".") else value
-        for value in re.findall(r"(?<![A-Za-z])(?:\d+\.\d+|\.\d+|\d+)", text)
-    ]
-    return tuple(value.rstrip("0").rstrip(".") if "." in value else value for value in values)
+    values = re.findall(r"(?<![A-Za-z0-9])[+−-]?(?:\d+\.\d+|\.\d+|\d+)", text)
+    normalized = []
+    for value in values:
+        sign, magnitude = (value[0].replace("−", "-"), value[1:]) if value[:1] in "+−-" else ("", value)
+        magnitude = f"0{magnitude}" if magnitude.startswith(".") else magnitude
+        normalized.append(sign + (magnitude.rstrip("0").rstrip(".") if "." in magnitude else magnitude))
+    return tuple(normalized)
 
 
 def _stat_supported(stat: str, row: dict[str, Any]) -> bool:
-    evidence = _row_evidence(row).casefold().replace("–", "-")
+    evidence = _row_evidence(row).casefold().replace("–", "-").replace("−", "-").replace("hazard ratio", "hr").replace("odds ratio", "or")
     evidence_numbers = set(_numbers(evidence))
-    metric = next((token for token in ("smd", "nnt", "hr", "or", "rr", "md", "ci", "p", "%") if token in stat.casefold()), "")
+    metric = _stat_key(stat)[0]
     metric_present = metric == "%" and "%" in evidence or bool(metric and re.search(rf"\b{re.escape(metric)}\b", evidence))
     p_relations = _p_relations(stat)
     return (not p_relations or set(p_relations) <= set(_p_relations(evidence))) and metric_present and all(
@@ -466,13 +522,54 @@ def _nearest_row(
     return (found[0][2], found[0][3], found[0][4]) if (found := sorted(found, key=lambda item: item[:2])) else None
 
 
-def _stat_is_source_bound(paragraph: str, match: re.Match[str], rows: Sequence[dict[str, Any]]) -> bool:
+def _source_bound_row(
+    paragraph: str, match: re.Match[str], rows: Sequence[dict[str, Any]], *,
+    require_supported: bool = True,
+) -> dict[str, Any] | None:
     nearest = _nearest_row(paragraph, match.start(), rows)
     if not nearest:
-        return False
+        return None
     row, index, label_end = nearest
     marker = re.match(rf"(?:\](?:\([^)]+\))?)?\s*\[bundle:{index}\]", paragraph[label_end:], re.I)
-    return marker is not None and _stat_supported(match.group(0), row)
+    return row if marker is not None and (
+        not require_supported or _stat_supported(match.group(0), row)
+    ) else None
+
+
+def _stat_matches_scope(paragraph: str, match: re.Match[str], scope: str) -> bool:
+    if not scope:
+        return True
+    prefix = _normalise(paragraph[:match.start()])
+    scope_at = prefix.rfind(scope)
+    return scope_at >= 0 and not _STAT_SCOPE_ANCHOR_RE.search(
+        prefix[scope_at + len(scope):],
+    )
+
+
+def _repair_stat_replacement(
+    paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
+) -> tuple[str, int]:
+    requests, named = _stat_replacement_requests(ask), _named_rows(ask, rows)
+    if not requests or not named:
+        return paper_md, 0
+    parts, changed = re.split(r"(\n\s*\n)", paper_md), 0
+    for index in range(0, len(parts), 2):
+        paragraph = parts[index]
+        for match in reversed(list(_EFFECT_STAT_RE.finditer(paragraph))):
+            row = _source_bound_row(paragraph, match, rows, require_supported=False)
+            request = next((item for item in requests if _stat_key(match.group(0)) == item[0]
+                            and _stat_matches_scope(paragraph, match, item[2])), None)
+            replacement = next((stat for stat in _traceable_effect_statistics(row or {})
+                                if request and _stat_key(stat) == request[1]), "")
+            if row in named and request and replacement:
+                paragraph = paragraph[:match.start()] + replacement + paragraph[match.end():]
+                changed += 1
+        parts[index] = paragraph
+    return "".join(parts), changed
+
+
+def _stat_is_source_bound(paragraph: str, match: re.Match[str], rows: Sequence[dict[str, Any]]) -> bool:
+    return _source_bound_row(paragraph, match, rows) is not None
 
 
 def _statistics_are_source_bound(paper_md: str, rows: Sequence[dict[str, Any]]) -> bool:
@@ -725,6 +822,10 @@ def _revision_direction(row: dict[str, Any], ask: str) -> str:
     return "unclear" if _evidence_pending_requested(ask) and not _source_has_result_statistic(row) else _requested_direction(ask) or resolved_effect_direction(row)
 
 
+def _requests_statistic_correction(ask: str) -> bool:
+    return bool(re.search(r"\b(?:correct|delete|remove|replace)\b|\bif\s+(?:it\s+)?is\s+not\s+(?:present|reported|supported|traceable)\b", ask, re.I))
+
+
 def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tuple[str, str] | None:
     label = _label(row)
     if kind == "direction":
@@ -733,13 +834,24 @@ def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tupl
         detail = f"reviewer-reconciled direction={direction} is used consistently; endpoint-specific findings remain separately qualified."
     elif kind == "statistic":
         stats = () if "no numerics" in _normalise(ask) and not _source_has_result_statistic(row) else _consistency.preferred_replacement_statistics(ask, _traceable_effect_statistics(row))
-        all_requested = any(token in _normalise(ask) for token in ("transcribe", "numeric", "numerics", "smd"))
-        if not all_requested and re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
+        targets = tuple(match.group(0) for match in _EFFECT_STAT_RE.finditer(ask))
+        replacements = _stat_replacement_requests(ask)
+        if replacements:
+            stats = tuple(stat for stat in stats if _stat_key(stat) in {item[1] for item in replacements})
+        if targets and not _requests_statistic_correction(ask):
+            target_keys = {_stat_key(target) for target in targets}
+            stats = tuple(stat for stat in stats if _stat_key(stat) in target_keys)
+        all_requested = len(replacements) > 1 or not replacements and (
+            any(token in _normalise(ask) for token in ("transcribe", "numeric", "numerics", "smd"))
+            or len({_stat_key(target) for target in targets}) > 1
+            or _asks_effect_measure(ask) and bool(targets)
+        )
+        if not all_requested and _asks_effect_measure(ask):
+            statistic_kind = "effect estimate"
+            stats = tuple(stat for stat in stats if _stat_key(stat)[0] not in {"p", "ci"})
+        elif not all_requested and re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
             statistic_kind = "p-value"
             stats = tuple(stat for stat in stats if stat.lower().startswith("p"))
-        elif not all_requested and "effect estimate" in ask.lower():
-            statistic_kind = "effect estimate"
-            stats = tuple(stat for stat in stats if not stat.lower().startswith("p"))
         else:
             statistic_kind = "exact statistic"
         marker = f"Source-statistic reconciliation ({label}; {statistic_kind}):"
@@ -824,10 +936,12 @@ def _direction_mentions_are_consistent(
 def _repair_named_revision(
     paper_md: str, ask: str, rows: Sequence[dict[str, Any]], kind: str,
 ) -> tuple[str, int]:
-    source_clean = _consistency.remove_disputed_p_values_near_sources(ask, paper_md, tuple(_label(row) for row in _named_rows(ask, rows)), tuple(_label(row) for row in rows))
-    patched, changed = (
+    source_clean, changed = _repair_stat_replacement(paper_md, ask, rows) if kind == "statistic" else (paper_md, 0)
+    source_clean = _consistency.remove_disputed_p_values_near_sources(ask, source_clean, tuple(_label(row) for row in _named_rows(ask, rows)), tuple(_label(row) for row in rows))
+    patched, secondary = (
         _repair_untraceable_statistics(source_clean, rows) if kind == "statistic" else (paper_md, 0)
     )
+    changed += secondary
     headings = _revision_headings(patched, ask, kind)
     named = _named_rows(ask, rows)
     if kind == "direction":
@@ -870,15 +984,44 @@ def _named_statistics_are_resolved(
     paper_md: str, ask: str, rows: Sequence[dict[str, Any]],
 ) -> bool:
     named = _named_rows(ask, rows)
-    targets = tuple(match.group(0) for match in _EFFECT_STAT_RE.finditer(ask))
-    for paragraph in _prose_paragraphs(paper_md):
-        if not any(_label(row).lower() in paragraph.lower() for row in named):
-            continue
-        for target in targets:
-            for match in re.finditer(re.escape(target), paragraph, re.I):
-                if not _stat_is_source_bound(paragraph, match, rows):
-                    return False
-    return bool(named) and not _consistency.disputed_p_value_near_sources(ask, paper_md, tuple(_label(row) for row in named), tuple(_label(row) for row in rows))
+    targets = {_stat_key(match.group(0)) for match in _EFFECT_STAT_RE.finditer(ask)}
+    paragraphs = _prose_paragraphs(paper_md)
+    replacements = _stat_replacement_requests(ask)
+    if re.search(r"\breplace\b", ask, re.I) and not replacements:
+        return False
+    requested_metrics = {metric for metric, _values in targets}
+    if _asks_effect_measure(ask):
+        requested_metrics |= {_stat_key(stat)[0] for row in named
+                              for stat in _traceable_effect_statistics(row)} - {"p", "ci"}
+    target_match = all(
+        (
+            all(new in scoped and old not in scoped for old, new, scoped in scoped_statistics)
+            if replacements else
+            requested_metrics <= {metric for metric, _values in paper_statistics}
+            and all(statistic in source_statistics for statistic in paper_statistics
+                    if statistic[0] in requested_metrics)
+            if _requests_statistic_correction(ask)
+            else targets <= paper_statistics
+        )
+        for row in named
+        for source_statistics, paper_statistics, scoped_statistics in [({
+            _stat_key(statistic) for statistic in _traceable_effect_statistics(row)
+        }, {
+            _stat_key(match.group(0))
+            for paragraph in paragraphs
+            for match in _EFFECT_STAT_RE.finditer(paragraph)
+            if _source_bound_row(paragraph, match, rows, require_supported=False) is row
+        }, tuple((old, new, {
+            _stat_key(match.group(0)) for paragraph in paragraphs
+            for match in _EFFECT_STAT_RE.finditer(paragraph)
+            if _source_bound_row(paragraph, match, rows, require_supported=False) is row
+            and _stat_matches_scope(paragraph, match, scope)
+        }) for old, new, scope in replacements))]
+    )
+    return bool(named) and target_match and not _consistency.disputed_p_value_near_sources(
+        ask, paper_md, tuple(_label(row) for row in named),
+        tuple(_label(row) for row in rows),
+    )
 
 
 def _named_outcomes(ask: str, rows: Sequence[dict[str, Any]]) -> set[str]:

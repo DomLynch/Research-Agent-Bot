@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 import unicodedata
 from collections import Counter
@@ -141,11 +142,17 @@ _REFERENCE_DUMP_RE = re.compile(r"\b(?:DOI|PMID):\s*\S+", re.IGNORECASE)
 _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain|preliminary|context[- ]dependent|not definitive|requires confirmation)\.?$", re.IGNORECASE)
 _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
 _UNRESOLVED_STAT_RE = re.compile(
-    r"\b(?:(?:exact\s+)?(?:statistic|effect estimate|p[- ]?value|confidence interval)\s+(?:is\s+|was\s+)?(?:unavailable|unknown|not\s+(?:available|reported|retained|extracted|extractable))|(?:retained\s+)?source excerpt\s+(?:does not|did not|cannot)\s+(?:contain|include|report|retain)\s+(?:the\s+)?(?:exact\s+)?(?:statistic|effect estimate|p[- ]?value|confidence interval))\b",
+    r"\b(?:(?:exact\s+)?(?:statistic|effect estimate|effect size|hazard ratio|risk ratio|odds ratio|(?:standardized )?mean difference|(?-i:HR|RR|OR|SMD|WMD|MD)|p[- ]?value|confidence interval)\s+(?:(?:is|was|remains)\s+)?(?:unavailable|unknown|not\s+(?:available|reported|retained|extracted|extractable)|could\s+not\s+be\s+(?:recovered|extracted))|(?:retained\s+)?source excerpt\s+(?:(?:does not|did not|cannot)\s+(?:contain|include|report|retain)|lacks?)\s+(?:the\s+)?(?:exact\s+)?(?:statistic|effect estimate|effect size|hazard ratio|risk ratio|odds ratio|(?:standardized )?mean difference|(?-i:HR|RR|OR|SMD|WMD|MD)|p[- ]?value|confidence interval)|has\s+no\s+bundle-traceable\s+exact\s+statistic)\b",
     re.IGNORECASE,
 )
-_HUMAN_VERIFICATION_RE = re.compile(r"\b(?:(?:author|human)[- ](?:verified|reviewed)|(?:author|human) verification|verified by (?:the )?(?:author|human))\b", re.IGNORECASE)
-_AUTOMATED_ACCOUNTABILITY_RE = re.compile(r"\b(?:accountability is established through reproducible artifacts|(?:automated|deterministic)(?:\s+\w+){0,3}\s+gates?)\b", re.IGNORECASE)
+_HUMAN_VERIFICATION_RE = re.compile(r"\b(?:(?:author|human)[- ](?:verified|reviewed)|(?:author|human) verification|verified by (?:the )?(?:author|human)|(?:the\s+)?authors?\s+(?:verified|reviewed)\s+(?:all\s+)?(?:the\s+)?(?:extracted\s+)?(?:manuscript|evidence|claims|outcomes|results|final decisions)|(?:all\s+)?(?:extracted\s+)?(?:claims|outcomes|results)\s+(?:were\s+)?(?:checked|validated)\s+by\s+(?:the\s+)?(?:author|human)|(?:a\s+)?human(?:\s+expert)?\s+(?:checked|validated)\s+(?:all|every)\s+(?:extracted\s+)?(?:claim|claims|outcome|outcomes|result|results))\b", re.IGNORECASE)
+_AUTOMATED_ACCOUNTABILITY_RE = re.compile(r"\baccountability is established through reproducible artifacts\b", re.IGNORECASE)
+_AUTOMATED_ACCOUNTABILITY_NEGATION_RE = re.compile(
+    r"\b(?:not|never|false\s+that|incorrect\s+that|not\s+true\s+that|"
+    r"(?:un)?clear\s+whether|uncertain\s+whether|unknown\s+whether|if|whether)"
+    r"[^.!?]{0,32}$",
+    re.IGNORECASE,
+)
 _GRAMMAR_ARTIFACT_RE = re.compile(
     r"(?:\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
     r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were)"
@@ -254,7 +261,11 @@ def public_text_integrity_issue_messages(
     allow_human = accountability_model == "legacy_journal_submission" and human_signoff_validated
     if not allow_human:
         issues.extend(f"unsupported human-verification claim: {m.group(0)!r}" for m in _HUMAN_VERIFICATION_RE.finditer(paper_md))
-    if accountability_model == "researka_agent_certified" and not _AUTOMATED_ACCOUNTABILITY_RE.search(paper_md):
+    accountability_matches = (
+        match for match in _AUTOMATED_ACCOUNTABILITY_RE.finditer(paper_md)
+        if not _AUTOMATED_ACCOUNTABILITY_NEGATION_RE.search(paper_md[max(0, match.start() - 40):match.start()])
+    )
+    if accountability_model == "researka_agent_certified" and next(accountability_matches, None) is None:
         issues.append("agent-certified manuscript missing automated-gate accountability statement")
     return tuple(issues)
 
@@ -304,6 +315,11 @@ def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
         issues.append(f"malformed study id: {study}")
     if _MALFORMED_NUMERIC_RE.search(f"{value} {unit} {stat}"):
         issues.append(f"malformed numeric artifact: {value} {unit}")
+    ci_text = f"{value} {unit} {stat}"
+    if ci_label := re.search(r"(?:95\s*%\s*)?(?:ci|confidence(?:\s+interval|…|\.\.\.)?)", ci_text, re.I):
+        bounds = re.findall(r"-?(?:\d+(?:\.\d+)?|\.\d+)|[-+]?inf|nan", ci_text[ci_label.end():].replace("−", "-"), re.I)
+        if len(bounds) != 2 or any(not math.isfinite(float(bound)) for bound in bounds) or float(bounds[0]) > float(bounds[1]):
+            issues.append(f"malformed confidence interval: {ci_text.strip()}")
     unit_class = _unit_class(unit, value)
     endpoint_class = _endpoint_class(endpoint)
     if endpoint_class and unit_class:

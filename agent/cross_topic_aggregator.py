@@ -199,7 +199,8 @@ def _canonical_counts(run_dir: Path) -> dict[str, int]:
 
 
 def _count_value(counts: dict[str, int], key: str, *, fallback: int) -> int:
-    return int(counts.get(key) or fallback)
+    value = counts.get(key)
+    return fallback if value is None else int(value)
 
 
 def _count_field(rows: list[dict[str, Any]], field: str) -> dict[str, int]:

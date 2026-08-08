@@ -5,6 +5,7 @@ from collections import Counter
 from typing import Sequence
 
 from agent.synthesis_schemas import ReceiptSummary, TensionMatrix
+from agent.synthesis_writer import filter_accepted
 
 
 def build_cross_domain_anchor(
@@ -19,10 +20,7 @@ def build_cross_domain_anchor(
     structure. ~150-250 words, all corpus-traced. `existing_text` is
     accepted for uniform anchor-call signature; this anchor carries no
     generic hedge to dedup, so it is unused here."""
-    accepted = [
-        r for r in receipts
-        if r.spar_verdict in ("accept_clean", "accept_caveated")
-    ]
+    accepted = filter_accepted(receipts)
     if not accepted:
         return ""
     by_class: Counter[str] = Counter(
@@ -104,10 +102,7 @@ def build_discussion_anchor(
     framing. Corpus-derived deterministic paragraph (~150-220
     words). The generic interpretation-constraints hedge is omitted when
     `existing_text` already carries it (see CONSERVATIVE_FRAMING_MARKER)."""
-    accepted = [
-        r for r in receipts
-        if r.spar_verdict in ("accept_clean", "accept_caveated")
-    ]
+    accepted = filter_accepted(receipts)
     if not accepted:
         return ""
     tier_counts: Counter[str] = Counter(
@@ -156,7 +151,7 @@ def build_conclusion_anchor(
     closing when the LLM returns a tiny conclusion and the retry does not
     improve it. The generic conservative-framing hedge is omitted when
     `existing_text` already carries it (see CONSERVATIVE_FRAMING_MARKER)."""
-    accepted = [r for r in receipts if r.spar_verdict in ("accept_clean", "accept_caveated")]
+    accepted = filter_accepted(receipts)
     if not accepted:
         return ""
     tier_counts: Counter[str] = Counter(r.evidence_tier for r in accepted if r.evidence_tier)

@@ -163,6 +163,31 @@ def test_scoped_numeric_forms_must_exist_in_anchored_corpus() -> None:
     ) is None
 
 
+def test_anchored_paragraph_rejects_unicode_minus_direction_reversal() -> None:
+    accepted = [_accepted("r1", thesis_text="The source reports SMD = −0.31.")]
+    parsed = {"paragraphs": [{
+        "text": "The cited trial reported SMD = 0.31.", "receipt_ids": ["r1"],
+    }]}
+
+    assert build_anchored_from_parsed(
+        parsed, name="results", heading="## Results", accepted=accepted,
+    ) is None
+
+
+def test_anchored_paragraph_rejects_numeric_from_uncited_receipt() -> None:
+    accepted = [
+        _accepted("r1", p_values=("p=0.01",)),
+        _accepted("r2", p_values=("p=0.99",)),
+    ]
+    parsed = {"paragraphs": [{
+        "text": "The cited trial reported p=0.99.",
+        "receipt_ids": ["r1"],
+    }]}
+    assert build_anchored_from_parsed(
+        parsed, name="results", heading="## Results", accepted=accepted,
+    ) is None
+
+
 def test_anchored_drops_fabricated_receipt_id_with_no_close_match() -> None:
     """LLM hallucinates a totally fake id ('metformin-fake-cluster-99').
     No valid id is within fuzzy-match distance, so the id gets dropped

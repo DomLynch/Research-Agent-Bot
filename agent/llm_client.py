@@ -50,7 +50,7 @@ _PRICING: Mapping[str, tuple[float, float]] = {
     # Mistral Small via OpenRouter: ~$0.10/1M in, ~$0.30/1M out
     "mistralai/mistral-small-2603": (0.00010, 0.00030),
     # Gemma 4 31B via OpenRouter — Day 4 judge primary
-    "google/gemma-4-31b-it": (0.00010, 0.00030),
+    "google/gemma-4-31b-it": (0.00010, 0.00034),
 }
 
 

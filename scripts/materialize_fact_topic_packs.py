@@ -21,7 +21,7 @@ sys.path.insert(0, str(REPO_ROOT))
 
 from agent.topic_pack_generator import generate_candidate_topic_pack  # noqa: E402
 from agent.topic_pack_store import pack_hash, persist_generated_pack  # noqa: E402
-from source_topic_specificity import generated_pack_publishable  # noqa: E402
+from source_topic_specificity import generated_pack_publishable, topic_tokens  # noqa: E402
 
 FACT_TOPIC_SQL = """
 WITH grouped AS (
@@ -199,12 +199,15 @@ def materialize_rows(
             term for term in (_label(row.get("topic")), _label(row.get("sub_topic")))
             if term and term.lower() not in GENERIC_SUBTOPICS
         )
-        pack = generate_candidate_topic_pack(build_topic_name(row), seed_terms=seed_terms)
+        pack = generate_candidate_topic_pack(build_topic_name(row), seed_terms=seed_terms, query_anchor=_label(row.get("topic")))
         candidates.append((row, pack, {
             "pack_data": pack.to_topic_pack_dict(),
             "candidate_count": int(row.get("exact_facts") or row.get("facts") or 0),
         }))
-    peer_records = _existing_records(db_dir) + [record for _, _, record in candidates]
+    peer_records = [record for record in _existing_records(db_dir) + [
+        record for row, pack, record in candidates
+        if quality_mode != "high-precision" or _high_precision_pack(row, pack)
+    ] if generated_pack_publishable(record, peer_records=())]
     batch_slugs: set[str] = set()
     for row, pack, record in candidates:
         if pack.status != "proceed" or pack.validation_errors:
@@ -338,7 +341,7 @@ def _post_json(url: str, token: str, payload: dict[str, object]) -> object:
 
 
 def _label(value: object) -> str:
-    return " ".join(str(value or "").replace("_", " ").replace("-", " ").split())
+    return " ".join(str(value or "").replace("_", " ").split())
 
 
 def _singular_label(value: str) -> str:
@@ -346,7 +349,10 @@ def _singular_label(value: str) -> str:
 
 
 def _high_precision_pack(row: dict[str, Any], pack: object) -> bool:
-    if str(row.get("claim_type") or "").strip() == "methodology":
+    if not topic_tokens(_label(row.get("topic"))) or set(_singular_label(_label(row.get("claim_type"))).lower().split()) & {"method", "methodology", "rate", "technique", "threshold"}:
+        return False
+    sub_topic = _singular_label(_label(row.get("sub_topic"))).lower()
+    if set(sub_topic.split()) & {"method", "rate", "technique", "threshold"}:
         return False
     tier = str(getattr(pack, "tier", ""))
     if tier in {"mainstream", "emerging", "contested"}:

@@ -137,7 +137,7 @@ def build_references_full_section(
         citation = format_bibliographic_citation(r)
         verdict_tag = (
             f"[accepted: {r.spar_verdict}]"
-            if r.spar_verdict.startswith("accept")
+            if r.receipt_id in accepted_ids
             else f"[QUARANTINED: {r.spar_verdict}]"
         )
         thesis_excerpt = r.thesis_text[:160].rstrip()

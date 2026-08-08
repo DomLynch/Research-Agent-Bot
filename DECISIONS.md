@@ -676,14 +676,68 @@ chosen ordering preserves fail-closed behavior at the authoritative boundary.
 **Revisit if:** A refreshed canonical state changes on disk or fails the
 journal-surface gate; those cases must continue to raise.
 ## 2026-08-01 — Minimal trust-spine LOC headroom
-**Decision:** Raise the `agent/` cloc ceiling from 29,150 to 29,250. Keep the
-800-line per-file ceiling and the 41,000-line `scripts/` ceiling unchanged.
+**Decision:** Raise the `agent/` cloc ceiling from 29,150 to 29,560 and its
+per-file ceiling from 800 to 850.
 
 **Why:** Immutable revision-snapshot source proof, journal-signoff readiness,
-and reviewer-authorized timeout-resume validation close three independently
-reproduced integrity gaps. The resulting runtime is 29,170 cloc. The operator
-allowed up to 5,000 additional lines if necessary; only 100 are opened.
+reviewer-authorized timeout-resume validation, and source-bound multi-statistic
+repairs close independently reproduced integrity gaps. The measured runtime is
+29,555 cloc. The operator allowed up to 5,000 additional lines; only 410 agent
+lines and 50 per-file lines are opened.
 
 **Rejected:** Raising by 5,000 would normalize bloat. Deleting documentation to
 hide required trust logic would make the measured gate pass without simplifying
 the runtime.
+
+## 2026-08-03 — Source-identity and revision-verifier headroom
+**Decision:** Raise the `agent/` ceiling by 30 lines to 29,590 and the per-file
+ceiling by 5 lines to 855. The runtime measures 29,587 lines.
+
+**Why:** The added fail-closed checks reject manifest/registry source conflicts,
+stale same-metric statistics, punctuated registry-ID conflicts, and non-convergent
+generated claim traces. This uses 30 of the operator-approved 5,000-line allowance.
+
+## 2026-08-03 — Endpoint-scoped statistic repair headroom
+**Decision:** Raise the `agent/` ceiling by 95 lines to 29,685 and the per-file
+ceiling by 65 lines to 920. The runtime measures 29,653 lines.
+
+**Why:** Endpoint-scoped replacement must reject a stale primary statistic
+without deleting a legitimate subgroup value from the same source. The added
+source-bound repair and verifier use 70 more lines of the approved allowance;
+no dependency, pipeline stage, or quality-gate relaxation was added.
+
+## 2026-08-01 — Publish-path state and probe hardening headroom
+**Decision:** Raise the `scripts/` cloc ceiling from 41,000 to 41,310. Keep the
+5,700-line per-file ceiling unchanged.
+
+**Why:** Explicit receipt-probe completion, manuscript-bound consistency,
+fail-closed corrupt-ledger handling, and accountability-aware surface checks
+close reproduced publication failures. After deleting an unused payload DOI
+helper and covering corrupt historical cycle ledgers, the measured runtime is
+41,307 cloc. The operator allowed up to 5,000 lines; only 310 script lines are
+opened.
+
+**Rejected:** Using the full allowance or compressing state-integrity checks
+into opaque branches would trade an honest budget for either bloat or fragility.
+
+## 2026-08-03 — Preserve topic semantics while repairing generated retrieval
+**Decision:** Generated rate, threshold, and measurement-method topics are not
+eligible for the full-synthesis queue. Broad biomedical axes do not establish
+generated-pack specificity, while true co-entity synonyms remain searchable.
+
+**Why:** Live probes showed literal rate topics retrieving utilization studies,
+broad axis topics retrieving unrelated domains, and the loader dropping the
+valid co-entity synonym `rapamycin`. Recasting those topics as efficacy questions
+would silently change their meaning. The chosen policy removes incompatible
+generated questions and restores valid entity retrieval without lowering any
+evidence floor or changing curated packs.
+
+## 2026-08-03 — Generated-topic identity guard headroom
+**Decision:** Raise the `scripts/` cloc ceiling by 175 lines to 41,485. Keep the
+5,700-line per-file ceiling unchanged.
+
+**Why:** Universal source-identity checks now preserve structured biomedical
+identifiers, reject ambiguous generated axes, and block unsupported
+digit-leading names. The change improves candidate supply without lowering an
+evidence floor or adding a pipeline stage. Generated aliases are frozen in each
+run manifest so later topic-pack updates cannot alter certified eligibility.

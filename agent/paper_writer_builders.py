@@ -71,19 +71,19 @@ _NUMERIC_RE = re.compile(
     r"(?<![\w.])(?:"
     r"p\s*[<=>]\s*0?\.\d+|"
     r"(?:\d+(?:\.\d+)?\s*%\s*)?ci\s*[=:]?\s*"
-    r"-?\d+(?:\.\d+)?\s*(?:-|to|–)\s*-?\d+(?:\.\d+)?|"
-    r"(?:n|mean|median|sd|se|age(?:d)?)\s*[=:]?\s*-?\d+(?:\.\d+)?|"
-    r"-?\d+(?:\.\d+)?\s*(?:%|mmol/l|mg/dl|mcg|µg|mg|kg|ml|g|l|"
+    r"[+−-]?\d+(?:\.\d+)?\s*(?:-|to|–)\s*[+−-]?\d+(?:\.\d+)?|"
+    r"(?:n|mean|median|sd|se|age(?:d)?)\s*[=:]?\s*[+−-]?\d+(?:\.\d+)?|"
+    r"[+−-]?\d+(?:\.\d+)?\s*(?:%|mmol/l|mg/dl|mcg|µg|mg|kg|ml|g|l|"
     r"hours?|days?|weeks?|months?|years?)\b|"
-    r"(?:hr|or|rr|ahr|aor|arr|ηp[2²]|β)\s*[=:,\-]?\s*-?\d+(?:\.\d+)?|"
-    r"-?\d+(?:\.\d+)?"
-    r")(?![\w.])",
+    r"(?:hr|or|rr|ahr|aor|arr|ηp[2²]|β|smd|md)\s*[=:,\-]?\s*[+−-]?\d+(?:\.\d+)?|"
+    r"[+−-]?\d+(?:\.\d+)?"
+    r")(?!\w|\.\d)",
     re.IGNORECASE,
 )
 
 
 def _normalize(text: str) -> str:
-    return " ".join(text.replace("·", ".").split()).lower()
+    return " ".join(text.replace("·", ".").replace("−", "-").split()).lower()
 
 
 def _topic_aliases(topic: str) -> tuple[str, ...]:
@@ -123,13 +123,13 @@ def _resolve_results_outcome(
     label = _norm_label(
         " ".join(str(sub.get(k) or "") for k in ("outcome_class", "heading"))
     )
-    outcomes = set(receipt_outcomes.values())
+    outcomes = sorted(set(receipt_outcomes.values()))
     for outcome in outcomes:
         aliases = (_norm_label(outcome), _norm_label(_label_for_outcome(outcome)))
         if any(alias and alias in label for alias in aliases):
             return outcome
     cited = {receipt_outcomes[rid] for rid in receipt_ids if rid in receipt_outcomes}
-    return next(iter(cited)) if len(cited) == 1 else None
+    return min(cited) if len(cited) == 1 else None
 
 
 def _same_outcome_receipt_ids(
@@ -225,7 +225,6 @@ def build_anchored_from_parsed(
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
-    accepted_numerics = _accepted_numeric_tokens(accepted)
     paragraphs = parsed.get("paragraphs") or []
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
@@ -243,7 +242,10 @@ def build_anchored_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         ok, _reason = _check_anchored_paragraph(
-            text, repaired_rids, accepted_ids, accepted_numerics,
+            text, repaired_rids, accepted_ids,
+            _accepted_numeric_tokens([
+                receipt for receipt in accepted if receipt.receipt_id in repaired_rids
+            ]),
         )
         if not ok:
             continue
@@ -277,7 +279,6 @@ def build_scoped_from_parsed(
     accepted: Sequence[ReceiptSummary],
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
-    accepted_numerics = _accepted_numeric_tokens(accepted)
     paragraphs = parsed.get("paragraphs") or []
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
@@ -293,7 +294,10 @@ def build_scoped_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         ok, _reason = _check_scoped_paragraph(
-            text, topic, repaired_rids, accepted_ids, accepted_numerics,
+            text, topic, repaired_rids, accepted_ids,
+            _accepted_numeric_tokens([
+                receipt for receipt in accepted if receipt.receipt_id in repaired_rids
+            ]),
         )
         if not ok:
             continue
@@ -330,7 +334,6 @@ def build_results_from_parsed(
     by_outcome: dict[str, list[ReceiptSummary]] = {}
     for receipt in accepted:
         by_outcome.setdefault(outcome_key(receipt.outcome_class), []).append(receipt)
-    accepted_numerics = _accepted_numeric_tokens(accepted)
     body_lines: list[str] = ["## Results", ""]
     outcome_bodies: dict[str, list[str]] = {}
     anchors: list[SynthesisClaimAnchor] = []
@@ -364,7 +367,10 @@ def build_results_from_parsed(
                 repaired_rids, subsection_outcome, receipt_outcomes,
             )
             ok, _reason = _check_anchored_paragraph(
-                text, repaired_rids, accepted_ids, accepted_numerics,
+                text, repaired_rids, accepted_ids,
+                _accepted_numeric_tokens([
+                    receipt for receipt in accepted if receipt.receipt_id in repaired_rids
+                ]),
             )
             if not ok:
                 continue

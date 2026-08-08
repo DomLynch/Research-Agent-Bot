@@ -63,6 +63,13 @@ source row's own result-bearing excerpt plus its stable DOI/PMID. The repair
 does not infer source support from nearby prose, and repair epoch 12 reopens
 requests exhausted before this engine change exactly once.
 
+## Generated topic retrieval policy (2026-08-03)
+The full-synthesis queue excludes generated rate, threshold, and
+measurement-method topics and generated topics whose only apparent specificity
+comes from broad biomedical axes. Retrieval retains genuine co-entity synonyms
+such as `rapamycin` for `sirolimus_rapamycin_effects`. Curated packs and all
+publication evidence floors remain unchanged.
+
 ## System Boundary
 ```text
 research-agent-bot = paper-producing synthesis engine
@@ -232,8 +239,8 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 - `select_best_runs()` excludes stale runs missing certification track or complete
   14/14 audit.
 - Meta-synthesis artifact regenerated from corrected run set.
-- LOC budgets documented in `DECISIONS.md` and enforced at 29,250 cloc for
-  `agent/` and 41,000 cloc for `scripts/`.
+- LOC budgets documented in `DECISIONS.md` and enforced at 29,685 cloc for
+  `agent/` and 41,310 cloc for `scripts/`.
 - `AGENTS.md`, `PROJECT_STATE.md`, and active task plan match current mission.
 - Full suite and ruff pass.
 - Commit pushed and VPS paths synced clean.

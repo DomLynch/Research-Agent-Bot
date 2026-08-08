@@ -125,7 +125,7 @@ class ReceiptSummary:
     receipt_path: str              # filesystem path to the receipt dir
     topic: str
     thesis_text: str
-    spar_verdict: str              # accept_clean / accept_caveated / reject_*
+    spar_verdict: str              # accept_* / deterministic_admitted / reject_*
     n_claims: int
     n_failed_traces: int
     canonical_trial_id: str | None  # NCT / ISRCTN if anchored on a canonical trial

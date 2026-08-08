@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import sys
+from types import SimpleNamespace
 from pathlib import Path
 from unittest.mock import patch as mock_patch
 
@@ -866,3 +867,17 @@ def test_section_contract_restores_heading_after_review_patch() -> None:
         and r.decision == "applied"
         for r in results
     )
+
+
+def test_post_apply_audit_fails_closed_when_q2_audit_errors(monkeypatch) -> None:
+    monkeypatch.setattr(
+        apply_patches, "_audit_v06",
+        SimpleNamespace(audit=lambda _paper: (_ for _ in ()).throw(RuntimeError("boom"))),
+        raising=False,
+    )
+    monkeypatch.setitem(sys.modules, "audit_v06_paper", apply_patches._audit_v06)
+    ok, reason = apply_patches._post_apply_audit_safe(
+        pre_md="before", post_md="after", manifest={},
+    )
+    assert not ok
+    assert "Q2 audit failed" in reason

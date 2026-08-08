@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import sys
 from pathlib import Path
 from typing import Any
+
+import pytest
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
@@ -20,11 +23,21 @@ from agent.revision_identity import (  # noqa: E402
 )
 from agent.revision_quality import (  # noqa: E402
     _findings_map_is_exact,
+    _stat_supported,
     findings_map_row,
     manifest_row_finding,
     repair_revision_quality,
     revision_quality_proof_is_stated,
 )
+
+
+@pytest.fixture(autouse=True)
+def _source_proof_boundary_isolated_for_trace_parser_tests(monkeypatch) -> None:
+    """Legacy parser tests exercise span selection; proof validity has its own test."""
+    monkeypatch.setattr(
+        revision_claim_trace, "verified_source_span",
+        lambda row: str(row.get("thesis_text") or "").split("Source excerpts:", 1)[-1].strip(),
+    )
 
 
 def _chat(parsed: dict[str, Any]) -> Any:
@@ -806,6 +819,270 @@ def test_named_statistic_repair_retains_traceable_effect_estimate() -> None:
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
+@pytest.mark.parametrize("suffix", [
+    "", "; the association was not significant.",
+    "; p = 0.08 was not significant.",
+])
+def test_named_factual_error_requires_correct_source_bound_effect_estimate(suffix: str) -> None:
+    ask = (
+        "Correct the factual error for Smith 2025: replace HR = 0.85 with HR = 0.72 "
+        f"from the source excerpt{suffix}"
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "The retained source excerpt reports HR = 0.72.",
+    }]
+    stale = "## Results\n\nSmith 2025 [bundle:1] reported HR = 0.85.\n"
+
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(
+        stale, [ask], evidence_rows=rows,
+    ) == [ask]
+
+
+@pytest.mark.parametrize(("stale_stat", "correct_stat"), [
+    ("HR = .85", "HR = .72"), ("HR of 0.85", "HR of 0.72"),
+    ("hazard ratio (HR) = 0.85", "hazard ratio (HR) = 0.72"),
+    ("hazard ratio = 0.85", "hazard ratio = 0.72"),
+    ("odds ratio = 0.85", "odds ratio = 0.72"),
+])
+def test_named_effect_statistic_common_forms_stay_source_bound(
+    stale_stat: str, correct_stat: str,
+) -> None:
+    ask = (
+        f"Correct Smith 2025: replace {stale_stat} with {correct_stat} from the source excerpt; "
+        "p = .08 was not significant."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": f"The source excerpt reports {correct_stat}; p = .08.",
+    }]
+    stale = f"## Results\n\nSmith 2025 [bundle:1] reported {stale_stat}; p = .08 was not significant.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(
+        stale, [ask], evidence_rows=rows,
+    ) == [ask]
+    fixed, _details = repair_revision_quality(stale, rows, ask)
+    assert correct_stat in fixed and stale_stat not in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_generic_effect_measure_cannot_hide_stale_hr_behind_correct_p_value() -> None:
+    ask = (
+        "Correct Smith 2025's effect size from the source excerpt; "
+        "p = 0.08 was not significant."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "The source excerpt reports HR = 0.72; p = 0.08.",
+    }]
+    stale = (
+        "## Results\n\nSmith 2025 [bundle:1] reported HR = 0.85; "
+        "p = 0.08 was not significant.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(
+        stale, [ask], evidence_rows=rows,
+    ) == [ask]
+    fixed, _details = repair_revision_quality(stale, rows, ask)
+    assert "HR = 0.72" in fixed and "HR = 0.85" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_generic_effect_measure_rejects_stale_same_metric_beside_correction() -> None:
+    ask = "Correct Smith 2025's effect size from the source excerpt."
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "The source excerpt reports HR = 0.72.",
+    }]
+    paper = "## Results\n\nSmith 2025 [bundle:1] reports HR = 0.72 and HR = 0.85.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(
+        paper, [ask], evidence_rows=rows,
+    ) == [ask]
+
+
+@pytest.mark.parametrize("ask", [
+    "Correct Smith 2025: Replace the primary-endpoint HR = 0.85 with HR = 0.72 "
+    "from the source excerpt.",
+    "Correct Smith 2025: replace HR = 0.85 with HR = 0.72 for the primary endpoint "
+    "from the source excerpt.",
+    "Correct Smith 2025: replace the HR = 0.85 with HR = 0.72 for the primary endpoint "
+    "from the source excerpt.",
+    "Correct Smith 2025: replace HR = 0.85 for the primary endpoint with HR = 0.72 "
+    "from the source excerpt.",
+])
+def test_named_statistic_replacement_is_endpoint_scoped(ask: str) -> None:
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": (
+            "The primary endpoint reports HR = 0.72; "
+            "a separate subgroup reports HR = 0.85."
+        ),
+    }]
+    paper = (
+        "## Results\n\n"
+        "Smith 2025 [bundle:1] reported a primary-endpoint HR = 0.85.\n\n"
+        "Smith 2025 [bundle:1] reported a subgroup HR = 0.85.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(
+        paper, [ask], evidence_rows=rows,
+    ) == [ask]
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+    assert "primary-endpoint HR = 0.72" in fixed
+    assert "primary-endpoint HR = 0.85" not in fixed
+    assert "subgroup HR = 0.85" in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_named_statistic_replacement_preserves_same_paragraph_subgroup() -> None:
+    ask = (
+        "Correct Smith 2025: replace HR = 0.85 with HR = 0.72 for the primary endpoint "
+        "from the source excerpt."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": (
+            "The primary endpoint reports HR = 0.72; "
+            "a separate subgroup reports HR = 0.85."
+        ),
+    }]
+    paper = (
+        "## Results\n\nSmith 2025 [bundle:1] reported a primary-endpoint HR = 0.85 "
+        "and a subgroup HR = 0.85.\n"
+    )
+
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+    assert "primary-endpoint HR = 0.72" in fixed
+    assert "subgroup HR = 0.85" in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_named_statistic_replacement_repairs_every_scoped_pair() -> None:
+    ask = (
+        "Correct Smith 2025: replace primary endpoint HR = 0.85 with HR = 0.72 "
+        "and treated subgroup HR = 0.90 with HR = 0.80 from the source excerpt."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": (
+            "The primary endpoint reports HR = 0.72; the treated subgroup reports "
+            "HR = 0.80; an exploratory subgroup reports HR = 0.90."
+        ),
+    }]
+    paper = (
+        "## Results\n\nSmith 2025 [bundle:1] reported primary endpoint HR = 0.85, "
+        "treated subgroup HR = 0.90, and exploratory subgroup HR = 0.90.\n"
+    )
+
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+
+    assert "primary endpoint HR = 0.72" in fixed
+    assert "treated subgroup HR = 0.80" in fixed
+    assert "exploratory subgroup HR = 0.90" in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_named_statistic_replacement_does_not_consume_p_value_with_ci() -> None:
+    ask = (
+        "Correct Smith 2025: replace primary endpoint HR = 0.85 with HR = 0.72 "
+        "and the treated subgroup reports p = 0.04 with 95% CI 0.60-0.90 "
+        "from the source excerpt."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "Primary endpoint HR = 0.72, p = 0.04 with 95% CI 0.60-0.90.",
+    }]
+    paper = (
+        "## Results\n\nSmith 2025 [bundle:1] reported primary endpoint HR = 0.85, "
+        "p = 0.04 with 95% CI 0.60-0.90.\n"
+    )
+
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+
+    assert "primary endpoint HR = 0.72" in fixed
+    assert "p = 0.04 with 95% CI 0.60-0.90" in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == []
+
+
+def test_named_statistic_replacement_repairs_coordinated_pairs() -> None:
+    ask = (
+        "Correct Smith 2025: replace primary endpoint HR = 0.85 and subgroup HR = 0.90 "
+        "with HR = 0.72 and HR = 0.80 from the source excerpt."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": (
+            "Primary endpoint HR = 0.72; subgroup HR = 0.80; "
+            "exploratory outcome HR = 0.85 and HR = 0.90."
+        ),
+    }]
+    paper = (
+        "## Results\n\nSmith 2025 [bundle:1] reported primary endpoint HR = 0.85 "
+        "and subgroup HR = 0.90.\n"
+    )
+
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+
+    assert "primary endpoint HR = 0.72" in fixed
+    assert "subgroup HR = 0.80" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []
+
+
+def test_incomplete_coordinated_statistic_replacement_fails_closed() -> None:
+    ask = (
+        "Correct Smith 2025: replace primary endpoint HR = 0.85 and subgroup HR = 0.90 "
+        "with HR = 0.72 from the source excerpt."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "Primary endpoint HR = 0.72; exploratory HR = 0.85 and HR = 0.90.",
+    }]
+    paper = (
+        "## Results\n\nSmith 2025 [bundle:1] reported primary endpoint HR = 0.85 "
+        "and subgroup HR = 0.90.\n"
+    )
+
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+
+    assert "HR = 0.85" in fixed and "HR = 0.90" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == [ask]
+
+
+def test_named_statistic_replacement_fails_closed_when_scope_is_absent() -> None:
+    ask = (
+        "Correct Smith 2025: replace HR = 0.85 with HR = 0.72 for the primary endpoint "
+        "from the source excerpt."
+    )
+    rows = [{
+        "citation_token": "Smith 2025", "directness": "direct",
+        "thesis_text": "Primary endpoint HR = 0.72; subgroup HR = 0.85.",
+    }]
+    paper = (
+        "## Results\n\nSmith 2025 [bundle:1] reported a main-outcome HR = 0.85 "
+        "and a subgroup HR = 0.85.\n"
+    )
+
+    fixed, _details = repair_revision_quality(paper, rows, ask)
+    assert "main-outcome HR = 0.85" in fixed
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, [ask], evidence_rows=rows,
+    ) == [ask]
+
+
 def test_named_statistic_repair_transcribes_all_requested_smds() -> None:
     ask = (
         "The Results section's Muscle Function and Immune and Inflammation prose subsections "
@@ -1051,6 +1328,38 @@ def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None
     assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
 
 
+def test_major_claim_trace_requires_verified_source_proof(monkeypatch) -> None:
+    from agent.publication_evidence import source_identity_hash, verified_source_span
+
+    monkeypatch.setattr(revision_claim_trace, "verified_source_span", verified_source_span)
+    paper = "## Results\n\nThe retained evidence remains uncertain."
+    ask = "Add exact source tokens to major claims; required 1."
+    excerpt = (
+        "Body weight decreased by 5% after treatment in the randomized "
+        "study population during follow-up."
+    )
+    row: dict[str, Any] = {
+        "citation_token": "Study 2025", "source_doi": "10.1000/proof.1",
+        "doi": "10.1000/proof.1", "endpoints": ["body weight"],
+        "thesis_text": f"Source excerpts: {excerpt}",
+    }
+    assert revision_claim_trace.repair_major_claim_trace(paper, ask, [row]) == (paper, 0)
+
+    row.update({
+        "excerpt": excerpt,
+        "receipt_id": "study-2025",
+        "evidence_origin": "pubmed",
+        "source_record_locator": "revision-snapshot:fixture:topic:study-2025",
+        "source_record_hash": "sha256:" + hashlib.sha256(b"fixture").hexdigest(),
+        "source_record_verified": True,
+        "source_content_hash": "sha256:" + hashlib.sha256(excerpt.encode()).hexdigest(),
+    })
+    row["source_identity_hash"] = source_identity_hash(row, origin="pubmed")
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, [row])
+    assert changed == 1
+    assert "[exact source: https://doi.org/10.1000/proof.1]" in fixed
+
+
 def test_quantified_trace_requires_source_owned_results_not_generic_locators() -> None:
     ask = (
         "Add exact source tokens, DOI/PMID links, or evidence spans to major claims; "
@@ -1228,6 +1537,24 @@ def test_major_claim_trace_rejects_unverifiable_or_procedural_spans() -> None:
         assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, [row]) is False
 
 
+def test_major_claim_trace_accepts_deterministically_admitted_source() -> None:
+    ask = "Add exact source tokens to major claims; required 1."
+    paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
+    row = {
+        "citation_token": "Smith 2025",
+        "source_doi": "10.1000/deterministic",
+        "endpoints": [],
+        "thesis_text": "Source excerpts: Maximal oxygen uptake improved by 12% after treatment (p = 0.01).",
+        "spar_verdict": "deterministic_admitted",
+        "n_failed_traces": 0,
+    }
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, [row])
+
+    assert changed == 1
+    assert "Maximal oxygen uptake improved by 12%" in fixed
+
+
 def test_major_claim_trace_rejects_numeric_methods_and_aim_clauses() -> None:
     ask = "Add exact source tokens to major claims; required 1."
     paper = "## Results\n\nThe retained evidence remains uncertain and incomplete."
@@ -1327,6 +1654,51 @@ def test_open_ended_exact_trace_uses_actual_major_claim_count() -> None:
     )
 
     assert revision_claim_trace.major_claim_trace_is_stated(paper, ask, rows) is False
+
+
+def test_open_ended_exact_trace_repair_does_not_count_generated_findings() -> None:
+    ask = "Make every major claim exactly traceable to an evidence span and DOI/PMID."
+    rows = [
+        {
+            "citation_token": "Study1 2025", "source_doi": "10.1000/result.1",
+            "endpoints": ["body weight"],
+            "thesis_text": "Source excerpts: Body weight decreased by 5% (p = 0.01).",
+        },
+        {
+            "citation_token": "Study2 2025", "source_doi": "10.1000/result.2",
+            "endpoints": ["blood pressure"],
+            "thesis_text": "Source excerpts: Blood pressure decreased by 6% (p = 0.03).",
+        },
+    ]
+    paper = (
+        "## Results\n\nStudy1 2025 [bundle:1] reported the first substantive outcome.\n\n"
+        "Study1 2025 [bundle:1] reported a second bounded interpretation.\n\n"
+        "Study2 2025 [bundle:2] reported a third substantive outcome.\n"
+    )
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert "### Source-Traced Findings" not in fixed
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is False
+    assert revision_claim_trace.repair_major_claim_trace(fixed, ask, rows) == (fixed, 0)
+
+
+def test_exact_trace_does_not_bless_an_unrelated_manuscript_claim() -> None:
+    ask = "Make every major claim exactly traceable to an evidence span and DOI/PMID."
+    rows = [{
+        "citation_token": "Study1 2025", "source_doi": "10.1000/result.1",
+        "endpoints": ["body weight"],
+        "thesis_text": "Source excerpts: Body weight decreased by 5% (p = 0.01).",
+    }]
+    paper = (
+        "## Results\n\nStudy1 2025 [bundle:1] reported fewer myocardial infarctions.\n"
+    )
+
+    fixed, changed = revision_claim_trace.repair_major_claim_trace(paper, ask, rows)
+
+    assert changed == 1
+    assert revision_claim_trace.major_claim_trace_is_stated(fixed, ask, rows) is False
 
 
 def test_major_claim_trace_skips_wrapped_duplicate_and_adds_distinct_result() -> None:
@@ -3821,13 +4193,15 @@ def test_unsupported_abstract_claims_no_abstract_is_empty(monkeypatch) -> None:
     assert revision_coverage.unsupported_abstract_claims("## Results\n\nx\n", chat=_chat({"unsupported": ["x"]}), settings=object()) == []
 
 
-def test_unsupported_abstract_claims_failopen_on_error(monkeypatch) -> None:
+def test_unsupported_abstract_claims_fail_closed_on_error(monkeypatch) -> None:
     monkeypatch.setattr(revision_coverage, "build_judge_chain", lambda _s: ())
 
     async def boom(**_kwargs: Any) -> Any:
         raise revision_coverage.LLMError("judge down")
 
-    assert revision_coverage.unsupported_abstract_claims(_PAPER, chat=boom, settings=object()) == []
+    assert revision_coverage.unsupported_abstract_claims(
+        _PAPER, chat=boom, settings=object(),
+    ) == ["abstract support check unavailable"]
 
 
 def test_numeric_effect_direction_flags_non_significant_p_value_called_significant() -> None:
@@ -3901,6 +4275,21 @@ def test_numeric_effect_direction_flags_ci_crossing_null_called_significant() ->
     assert revision_coverage.numeric_effect_direction_issues(paper) == [
         "CI crossing null described as significant: The pooled effect was statistically significant (95% CI 0.84-1.18)."
     ]
+
+
+def test_numeric_effect_direction_flags_unicode_minus_ci_crossing_null() -> None:
+    paper = "## Abstract\n\nThe effect was statistically significant (95% CI −0.4 to 0.2).\n"
+
+    assert revision_coverage.numeric_effect_direction_issues(paper) == [
+        "CI crossing null described as significant: The effect was statistically significant (95% CI −0.4 to 0.2)."
+    ]
+
+
+def test_revision_stat_support_normalizes_unicode_minus() -> None:
+    row = {"thesis_text": "The source reports SMD = −0.31 (95% CI −0.55 to −0.07)."}
+
+    assert _stat_supported("SMD = −0.31", row)
+    assert _stat_supported("95% CI −0.55 to −0.07", row)
 
 
 def test_deterministic_unmet_flags_missing_numeric_effect_audit_statement() -> None:
@@ -4155,7 +4544,7 @@ def test_disputed_representative_statistic_uses_source_excerpt_values() -> None:
         assert "Han 2020 reported a representative statistic P = 0.001" not in fixed
         assert "Li 2025 [bundle:2] reported P = 0.001" in fixed
         assert "P = 0.001 in Li 2025 [bundle:2] was separately supported" in fixed
-        assert "Han 2020 [bundle:1] retains p=0.002 as bundle-traceable" in fixed
+        assert "Han 2020 [bundle:1] retains p=0.002, p=0.049 as bundle-traceable" in fixed
         assert details == ["named_statistic_reconciliation"]
         assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
         assert revision_coverage.deterministic_unmet_asks(fixed, [ask], evidence_rows=rows) == []

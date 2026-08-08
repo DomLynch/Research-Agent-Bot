@@ -7,7 +7,12 @@ from typing import Any
 
 from agent.endpoint_evidence import endpoint_key
 from agent.outcome_class_remap import BIOMEDICAL_OTHER_OUTCOME_RULES, outcome_key
-from agent.publication_evidence import attach_bundle_references, ordered_source_rows
+from agent.publication_evidence import (
+    attach_bundle_references,
+    ordered_source_rows,
+    verified_source_span,
+)
+from agent.synthesis_writer import ACCEPTED_VERDICTS
 
 _TRACE_LINE_RE = re.compile(r"^- \*\*Manuscript claim (?P<number>\d+)\.\*\* (?P<claim>.*?) \*\*Supporting source:\*\* (?P<support>.*?\[bundle:(?P<bundle>\d+)\].*?) \*\*Evidence span:\*\* (?P<span>.+)$", re.I | re.M)
 _ABBREVIATION_RE = re.compile(r"\b(?:vs|e\.g|i\.e|et al)\.", re.I)
@@ -35,9 +40,14 @@ def asks_major_claim_trace(text: str) -> bool:
 def major_claim_trace_is_stated(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> bool:
     rows = _ordered_rows(rows)
     if "exactly traceable" in ask.casefold():
-        valid = {key for key, _number, statement in _source_owned_results(rows) if _source_owned_result_is_stated(statement, paper_md)}
-        actual = len({_claim_key(claim, rows) for claim, _number, _row in _source_bound_claims(_without_trace(paper_md), rows)})
-        return len(valid) >= _requested_count(ask, len(valid), actual=actual)
+        available = _source_owned_results(rows)
+        valid = {key for key, _number, statement in available if _source_owned_result_is_stated(statement, paper_md)}
+        actual = {_claim_key(claim, rows) for claim, _number, _row in _source_bound_claims(
+            _without_generated_trace(_without_trace(paper_md)), rows,
+        )}
+        return actual <= valid and len(valid) >= _requested_count(
+            ask, len(valid), actual=len(actual),
+        )
     source_claims = _source_bound_claims(_without_trace(paper_md), rows)
     return len({claim for claim, _number, _row in source_claims if _claim_is_fully_traced(claim, rows)}) >= _requested_count(ask, len(source_claims))
 
@@ -71,7 +81,7 @@ def strip_validated_trace_support(paper_md: str, rows: Sequence[dict[str, Any]])
 
 def repair_major_claim_trace(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> tuple[str, int]:
     rows = _ordered_rows(rows)
-    patched = attach_bundle_references(re.sub(r"\s*\(evidence anchor:\s*.*?\s+\[bundle:\d+\]\)(?:\s*\[exact source:\s*https?://[^\]]+\])?", "", re.sub(r"(?ms)^### Source-Traced Findings\b.*?(?=^## |\Z)", "", _without_trace(paper_md)), flags=re.I), rows)
+    patched = attach_bundle_references(re.sub(r"\s*\(evidence anchor:\s*.*?\s+\[bundle:\d+\]\)(?:\s*\[exact source:\s*https?://[^\]]+\])?", "", _without_generated_trace(_without_trace(paper_md)), flags=re.I), rows)
     claims = _source_bound_claims(patched, rows)
     for claim, _bundle_number, _row in claims:
         traced = claim
@@ -87,12 +97,19 @@ def repair_major_claim_trace(paper_md: str, ask: str, rows: Sequence[dict[str, A
 
 def _add_source_trace_findings(paper_md: str, rows: Sequence[dict[str, Any]], ask: str) -> str:
     if "exactly traceable" in ask.casefold():
-        valid = [(key, number) for key, number, statement in _source_owned_results(rows) if _source_owned_result_is_stated(statement, paper_md)]
+        available = _source_owned_results(rows)
+        valid = [(key, number) for key, number, statement in available if _source_owned_result_is_stated(statement, paper_md)]
         findings = {key: "" for key, _number in valid}
+        capacity = len({key for key, _number, _statement in available})
+        actual = len({_claim_key(claim, rows) for claim, _number, _row in _source_bound_claims(_without_generated_trace(paper_md), rows)})
+        target = _requested_count(ask, capacity, actual=actual)
+        if target > capacity:
+            return paper_md
     else:
         valid = [(claim, number) for claim, number, _row in _source_bound_claims(paper_md, rows) if _claim_is_fully_traced(claim, rows)]
         findings = {_claim_key(claim, rows): "" for claim, _number in valid}
-    missing = _requested_count(ask, len(rows)) - len(findings)
+        target = len(rows)
+    missing = target - len(findings) if "exactly traceable" in ask.casefold() else _requested_count(ask, target) - len(findings)
     if missing <= 0:
         return paper_md
     used = {number for _claim, number in valid}
@@ -144,7 +161,10 @@ def _result_spans(row: dict[str, Any]) -> list[str]:
     outcome_terms = next((tuple(term for term in terms if endpoint_key(term) not in _AMBIGUOUS_TRACE_TERMS) for label, terms in BIOMEDICAL_OTHER_OUTCOME_RULES if label == outcome), ()) + _TRACE_OUTCOME_ALIASES.get(outcome, ())
     groups: tuple[list[str], list[str]] = ([], [])
     seen: set[str] = set()
-    for part in re.split(r"source excerpts:\s*", str(row.get("thesis_text") or ""), maxsplit=1, flags=re.I)[-1].split("|"):
+    source_text = verified_source_span(row)
+    if not source_text:
+        return []
+    for part in source_text.split("|"):
         for sentence in _sentences(part.strip()):
             for clause in re.split(r";\s*|,\s*(?=(?:while|whereas|but)\b)", sentence, flags=re.I):
                 normalized = endpoint_key(clause)
@@ -154,7 +174,7 @@ def _result_spans(row: dict[str, Any]) -> list[str]:
                 if len(span) < 20 or "[excerpt truncated]" in span or "…" in span or "..." in span or re.match(r"^(?:and|but|whereas|meta-analyses?\s+have\s+indicated)\b", span, re.I) or re.search(r"\b(?:compared (?:to|with)|versus|vs)\.?\s*$", span, re.I) or (key := _claim_key(span, [row])) in seen:
                     continue
                 matched = any(re.search(rf"\b{re.escape(value)}\b", normalized) for value in endpoint_terms) or any(len(initials) >= 2 and re.search(rf"\b(?:[SD])?{'[^A-Za-z0-9]*'.join(initials)}\b", clause) for initials in endpoint_acronyms)
-                if not matched and not (any(re.search(rf"\b{re.escape(endpoint_key(term))}\b", normalized) for term in outcome_terms) and str(row.get("directness") or "").lower() == "direct" and str(row.get("evidence_tier") or "").upper().startswith("A") and bool(_STATISTIC_RE.search(clause) or _EFFECT_ESTIMATE_RE.search(clause))) and not (str(row.get("spar_verdict") or "").lower() in {"accept_clean", "accept_caveated"} and row.get("n_failed_traces") == 0):
+                if not matched and not (any(re.search(rf"\b{re.escape(endpoint_key(term))}\b", normalized) for term in outcome_terms) and str(row.get("directness") or "").lower() == "direct" and str(row.get("evidence_tier") or "").upper().startswith("A") and bool(_STATISTIC_RE.search(clause) or _EFFECT_ESTIMATE_RE.search(clause))) and not (str(row.get("spar_verdict") or "").lower() in ACCEPTED_VERDICTS and row.get("n_failed_traces") == 0):
                     continue
                 seen.add(key)
                 groups[int(not matched)].append(span)
@@ -163,6 +183,10 @@ def _result_spans(row: dict[str, Any]) -> list[str]:
 
 def _without_trace(paper_md: str) -> str:
     return re.sub(r"^## Major Claim Trace\b.*?(?=^## |\Z)", "", paper_md, count=1, flags=re.M | re.S | re.I)
+
+
+def _without_generated_trace(paper_md: str) -> str:
+    return re.sub(r"^### Source-Traced Findings\b.*?(?=^## |\Z)", "", paper_md, count=1, flags=re.M | re.S | re.I)
 
 
 def _sentences(text: str) -> list[str]:

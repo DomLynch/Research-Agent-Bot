@@ -29,13 +29,23 @@ from __future__ import annotations
 
 import json
 import shutil
+import tempfile
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
-from agent.target_journal_pack import load_and_validate
+from agent.target_journal_pack import PRISMA_FLOW_FILES, load_and_validate, package_requirement_issues
 
 PACKAGE_DIRNAME = "submission_package"
+_PACKAGE_SOURCE_FILES = (
+    "full_paper.md", "structured_evidence_tables.md", "manifest.json",
+    "citation_registry.json", "artifact_consistency.json", "full_paper.audit.json",
+    "full_paper.review_patches.json", "debug/full_paper.review_patch_log.json",
+    "benchmark_runtime.json", "full_paper.journal_surface.json", "pre_submit_gate.json",
+    "final_status.json", "target_journal_pack.json", "human_signoff.json", *PRISMA_FLOW_FILES,
+    "revision_evidence_snapshot/citation_registry.json",
+)
+_PACKAGE_SOURCE_GLOBS = ("revision_evidence_snapshot/parsed/*.paper_sections.json",)
 
 
 @dataclass(frozen=True, slots=True)
@@ -49,6 +59,7 @@ class PackageManifest:
     maturity_label: str
     target_journal: str
     author: str
+    paper_sha256: str
     notes: str = ""
 
 
@@ -56,18 +67,15 @@ class SubmissionPackageError(RuntimeError):
     """Raised when the run_dir lacks the prerequisites for finalization."""
 
 
-def _read_final_status(run_dir: Path) -> dict[str, Any]:
-    p = run_dir / "final_status.json"
-    if not p.is_file():
-        raise SubmissionPackageError(
-            "final_status.json missing — run Stage 5d first",
-        )
+def _source_snapshot(run_dir: Path) -> dict[str, bytes]:
     try:
-        return json.loads(p.read_text())
-    except (OSError, ValueError) as e:
-        raise SubmissionPackageError(
-            f"final_status.json unreadable: {e!r}",
-        ) from e
+        paths = [run_dir / name for name in _PACKAGE_SOURCE_FILES]
+        for pattern in _PACKAGE_SOURCE_GLOBS:
+            paths.extend(run_dir.glob(pattern))
+        return {path.relative_to(run_dir).as_posix(): path.read_bytes()
+                for path in paths if path.is_file()}
+    except OSError as exc:
+        raise SubmissionPackageError(f"submission source snapshot unreadable: {exc!r}") from exc
 
 
 def _read_pack(run_dir: Path) -> dict[str, Any]:
@@ -87,6 +95,40 @@ def _read_signoff(run_dir: Path) -> dict[str, Any]:
         detail = "; ".join(f"{issue.field}:{issue.code}" for issue in issues)
         raise SubmissionPackageError(f"human_signoff.json invalid: {detail}")
     return asdict(signoff)
+
+
+def _validate_source_snapshot(
+    source_snapshot: dict[str, bytes], *, allow_below_l4: bool,
+) -> None:
+    with tempfile.TemporaryDirectory(prefix="v3-package-source-") as tmp:
+        snapshot_dir = Path(tmp)
+        for name, content in source_snapshot.items():
+            path = snapshot_dir / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(content)
+        if not allow_below_l4:
+            from agent.artifact_consistency import consistency_receipt_matches
+            consistency = json.loads(source_snapshot.get("artifact_consistency.json", b"{}"))
+            if not consistency_receipt_matches(snapshot_dir, consistency):
+                raise SubmissionPackageError(
+                    "artifact_consistency is missing or stale; refresh final status before composing",
+                )
+        pack = _read_pack(snapshot_dir)
+        from agent.target_journal_pack import TargetJournalPack
+        if requirements := package_requirement_issues(
+            snapshot_dir, TargetJournalPack.from_dict(pack),
+        ):
+            raise SubmissionPackageError(
+                "target journal requirements unmet: " + ",".join(requirements),
+            )
+        _read_signoff(snapshot_dir)
+        if not allow_below_l4:
+            from agent.final_status import compute
+            live = compute(snapshot_dir)
+            if not live.journal_submission_ready or live.maturity_level < 5:
+                raise SubmissionPackageError(
+                    "stored final status is stale; live readiness is not L5",
+                )
 
 
 # --- builders for the two stub files (templates, not synthesized) ---------
@@ -168,7 +210,16 @@ def compose(
     only L5 is journal-submission ready. The legacy-named
     `allow_below_l4=True` override bypasses this gate for ops/testing.
     """
-    fs = _read_final_status(run_dir)
+    pkg = run_dir / PACKAGE_DIRNAME
+    if pkg.exists():
+        shutil.rmtree(pkg)
+    source_snapshot = _source_snapshot(run_dir)
+    if "final_status.json" not in source_snapshot:
+        raise SubmissionPackageError("final_status.json missing — run Stage 5d first")
+    try:
+        fs = json.loads(source_snapshot["final_status.json"])
+    except ValueError as exc:
+        raise SubmissionPackageError(f"final_status.json unreadable: {exc!r}") from exc
     level = int(fs.get("maturity_level") or 0)
     if not allow_below_l4 and (
         level < 5 or fs.get("journal_submission_ready") is not True
@@ -179,21 +230,20 @@ def compose(
             f"package. Resolve blocking_reasons first or pass "
             f"allow_below_l4=True for testing.",
         )
-
-    manuscript = run_dir / "full_paper.md"
-    if not manuscript.is_file() or not manuscript.read_text().strip():
-        raise SubmissionPackageError(
-            "full_paper.md missing or empty — manuscript is required",
-        )
-
-    pack = _read_pack(run_dir)
-    signoff = _read_signoff(run_dir)
+    manuscript_text = source_snapshot.get("full_paper.md", b"").decode()
+    if not manuscript_text.strip():
+        raise SubmissionPackageError("full_paper.md missing or empty — manuscript is required")
+    _validate_source_snapshot(source_snapshot, allow_below_l4=allow_below_l4)
+    pack = json.loads(source_snapshot.get("target_journal_pack.json", b"{}"))
+    from agent.target_journal_pack import TargetJournalPack
+    pack_contract = TargetJournalPack.from_dict(pack)
+    signoff = json.loads(source_snapshot.get("human_signoff.json", b"{}"))
 
     # Manifest is needed by the existing manuscript_appendix builders.
-    manifest_data = json.loads((run_dir / "manifest.json").read_text())
+    manifest_data = json.loads(source_snapshot["manifest.json"])
     audit_data: dict[str, Any] | None = None
-    if (run_dir / "full_paper.audit.json").is_file():
-        audit_data = json.loads((run_dir / "full_paper.audit.json").read_text())
+    if source_snapshot.get("full_paper.audit.json"):
+        audit_data = json.loads(source_snapshot["full_paper.audit.json"])
 
     topic = str(manifest_data.get("topic") or "unknown")
     verdict = str(fs.get("maturity_label") or "")
@@ -209,56 +259,66 @@ def compose(
         manifest_data, audit_data, None, verdict=verdict,
     )
     data_code_availability = build_data_code_availability(
-        run_id=run_dir.name, git_sha="unknown",
-        bundle_path=None, topic=topic, verdict=verdict,
+        run_id=run_dir.name,
+        git_sha=str(manifest_data.get("git_sha") or manifest_data.get("commit_sha") or ""),
+        bundle_path=(str(manifest_data["bundle_path"]) if manifest_data.get("bundle_path") else None),
+        topic=topic, verdict=verdict,
     )
 
-    pkg = run_dir / PACKAGE_DIRNAME
-    pkg.mkdir(exist_ok=True)
-    files: list[str] = []
+    staging = Path(tempfile.mkdtemp(prefix=f".{PACKAGE_DIRNAME}-", dir=run_dir))
+    try:
+        files: list[str] = []
 
-    def _emit(name: str, content: str) -> None:
-        (pkg / name).write_text(content)
-        files.append(name)
+        def _emit(name: str, content: str) -> None:
+            (staging / name).write_text(content)
+            files.append(name)
 
-    def _copy(src_name: str, dst_name: str) -> None:
-        src = run_dir / src_name
-        if src.is_file():
-            shutil.copy(src, pkg / dst_name)
-            files.append(dst_name)
+        def _copy(src_name: str, dst_name: str) -> None:
+            content = source_snapshot.get(src_name)
+            if content is not None:
+                (staging / dst_name).write_bytes(content)
+                files.append(dst_name)
 
-    # Manuscript is mandatory; supplement is optional.
-    _copy("full_paper.md", "final_manuscript.md")
-    _copy("structured_evidence_tables.md", "structured_evidence_tables.md")
+        _copy("full_paper.md", "final_manuscript.md")
+        if pack_contract.allows_supplement:
+            _copy("structured_evidence_tables.md", "structured_evidence_tables.md")
+        if pack_contract.requires_prisma:
+            prisma_name = next(
+                name for name in PRISMA_FLOW_FILES
+                if source_snapshot.get(name, b"").strip()
+            )
+            _copy(prisma_name, prisma_name)
 
-    # Disclosure blocks: reuse existing builders (no duplication)
-    _emit("search_provenance.md", search_provenance)
-    _emit("AI_use_disclosure.md", ai_use_disclosure)
-    _emit("data_code_availability.md", data_code_availability)
+        from agent.artifact_consistency import paper_content_hash
+        paper_sha256 = paper_content_hash(manuscript_text)
+        if paper_content_hash((staging / "final_manuscript.md").read_text()) != paper_sha256:
+            raise SubmissionPackageError("final_manuscript.md does not match full_paper.md")
 
-    # Human-fillable stubs (universal — no domain assumptions)
-    _emit("ethics_funding_conflict.md", _build_ethics_stub())
-    _emit(
-        "cover_letter.md",
-        _build_cover_letter(pack, str(signoff.get("author") or "")),
-    )
+        _emit("search_provenance.md", search_provenance)
+        _emit("AI_use_disclosure.md", ai_use_disclosure)
+        _emit("data_code_availability.md", data_code_availability)
+        _emit("ethics_funding_conflict.md", _build_ethics_stub())
+        _emit("cover_letter.md", _build_cover_letter(pack, str(signoff.get("author") or "")))
+        _copy("final_status.json", "final_status.json")
+        _copy("target_journal_pack.json", "target_journal_pack.json")
+        _copy("human_signoff.json", "human_signoff.json")
+        _copy("full_paper.review_patches.json", "review_patches.json")
+        _copy("debug/full_paper.review_patch_log.json", "review_patch_log.json")
 
-    # Copy final_status + signoff + pack as provenance
-    _copy("final_status.json", "final_status.json")
-    _copy("target_journal_pack.json", "target_journal_pack.json")
-    _copy("human_signoff.json", "human_signoff.json")
-
-    manifest = PackageManifest(
-        run_dir=str(run_dir),
-        package_dir=str(pkg),
-        files=tuple(sorted(set(files))),
-        maturity_level=level,
-        maturity_label=str(fs.get("maturity_label") or ""),
-        target_journal=str(pack.get("journal") or ""),
-        author=str(signoff.get("author") or ""),
-    )
-    (pkg / "manifest.json").write_text(json.dumps(asdict(manifest), indent=2) + "\n")
-    return manifest
+        manifest = PackageManifest(
+            run_dir=str(run_dir), package_dir=str(pkg), files=tuple(sorted(set(files))),
+            maturity_level=level, maturity_label=str(fs.get("maturity_label") or ""),
+            target_journal=str(pack.get("journal") or ""),
+            author=str(signoff.get("author") or ""), paper_sha256=paper_sha256,
+        )
+        (staging / "manifest.json").write_text(json.dumps(asdict(manifest), indent=2) + "\n")
+        if _source_snapshot(run_dir) != source_snapshot:
+            raise SubmissionPackageError("submission sources changed during package composition")
+        staging.replace(pkg)
+        return manifest
+    except BaseException:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
 
 
 def _main(argv: list[str] | None = None) -> int:

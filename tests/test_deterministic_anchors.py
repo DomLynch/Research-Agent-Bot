@@ -113,6 +113,14 @@ def test_cross_domain_anchor_empty_when_no_accepted():
     assert build_cross_domain_anchor(rejected, _matrix()) == ""
 
 
+def test_anchors_include_deterministically_admitted_receipts():
+    receipts = [_r("r1", verdict="deterministic_admitted")]
+
+    assert "1 accepted receipts" in build_cross_domain_anchor(receipts, _matrix())
+    assert "1 accepted receipts" in build_discussion_anchor(receipts, _matrix())
+    assert "1 accepted receipts" in build_conclusion_anchor(receipts, _matrix())
+
+
 # ---------- discussion anchor --------------------------------------
 
 def test_discussion_anchor_includes_tier_distribution():

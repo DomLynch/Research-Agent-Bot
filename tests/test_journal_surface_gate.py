@@ -1,6 +1,8 @@
 """Tests for the deterministic journal-surface gate."""
 from __future__ import annotations
 
+import pytest
+
 from agent.journal_surface_gate import (
     evaluate_journal_surface,
     is_publishable_qei_row,
@@ -92,6 +94,29 @@ def test_qei_surface_gate_rejects_blank_endpoint_with_numeric_value() -> None:
         "unit_or_type": "mg/dL", "statistic": "p=0.01",
     })
     assert "unpublishable endpoint: blank" in issues
+
+
+@pytest.mark.parametrize("interval", [
+    "95% CI 1.20 to 0.80", "95% CI 0.80 to inf", "95% CI 0.80 to 1.20 to 1.50",
+    "95% CI 0.80 to 1.20; 2.30", "(1.20–0.80)", "(0.80–inf)", "(nan–1.20)",
+    "95% CI −0.5 to −1.2",
+])
+def test_qei_surface_gate_rejects_malformed_confidence_interval(interval: str) -> None:
+    issues = qei_row_issue_messages({
+        "study_label": "Smith 2024", "endpoint": "mortality", "value": interval,
+        "unit_or_type": "confidence interval", "statistic": "—",
+    })
+    assert any("malformed confidence interval" in issue for issue in issues)
+
+
+def test_qei_surface_gate_accepts_ordered_unicode_minus_confidence_interval() -> None:
+    issues = qei_row_issue_messages({
+        "study_label": "Smith 2024", "endpoint": "mortality",
+        "value": "95% CI −1.2 to −0.5",
+        "unit_or_type": "confidence interval", "statistic": "—",
+    })
+
+    assert not any("malformed confidence interval" in issue for issue in issues)
 
 
 def test_qei_surface_gate_flags_author_year_suffix_garbage():
@@ -202,11 +227,24 @@ def test_unresolved_stat_placeholder_variants_block_journal_surface() -> None:
         "Exact p-value not available in retained source excerpt.",
         "The retained source excerpt does not report the exact confidence interval.",
         "The effect estimate was not extractable from the retained source excerpt.",
+        "The exact effect size could not be recovered.",
+        "The retained source excerpt lacks the exact effect estimate.",
+        "The exact p-value remains unavailable.",
+        "The exact hazard ratio is unavailable in the retained source excerpt.",
+        "The exact risk ratio could not be recovered from the retained source excerpt.",
+        "The exact HR was not reported in the retained source excerpt.",
+        "The retained source excerpt does not report the exact SMD.",
+        "Smith 2024 has no bundle-traceable exact statistic.",
     )
     for phrase in phrases:
         paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
         report = _complete_surface(paper.replace("abstract1", phrase, 1))
         assert any(i.code == "public_text_integrity" and "unresolved statistic" in i.detail for i in report.issues)
+
+    report = _complete_surface(_paper(
+        "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
+    ).replace("abstract1", "The intervention was compared with usual care or placebo.", 1))
+    assert not any("unresolved statistic" in i.detail for i in report.issues)
 
 
 def test_agent_certified_blocks_human_verification_even_with_signoff_flag() -> None:
@@ -223,6 +261,36 @@ def test_agent_certified_blocks_human_verification_even_with_signoff_flag() -> N
         human_signoff_validated=True,
     )
     assert any("unsupported human-verification" in i.detail for i in report.issues)
+
+
+def test_agent_certified_blocks_plural_author_verification_claim() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    report = evaluate_journal_surface(
+        paper.replace("methods1", "The authors verified all extracted outcomes.", 1),
+        accountability_model="researka_agent_certified",
+    )
+    assert any("unsupported human-verification" in i.detail for i in report.issues)
+
+
+@pytest.mark.parametrize("claim", [
+    "All extracted claims were checked by the author.",
+    "A human expert validated every result.",
+])
+def test_agent_certified_blocks_human_verification_synonyms(claim: str) -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    report = evaluate_journal_surface(
+        paper.replace("methods1", claim, 1), accountability_model="researka_agent_certified",
+    )
+    assert any("unsupported human-verification" in issue.detail for issue in report.issues)
+
+
+def test_agent_certified_allows_ordinary_study_selection_prose() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    report = evaluate_journal_surface(
+        paper.replace("methods1", "The authors reviewed 12 included studies.", 1),
+        accountability_model="researka_agent_certified",
+    )
+    assert not any("unsupported human-verification" in i.detail for i in report.issues)
 
 
 def test_legacy_human_verification_requires_validated_signoff() -> None:
@@ -249,6 +317,47 @@ def test_agent_certified_requires_automated_gate_accountability_text() -> None:
     )
     assert any("missing automated-gate accountability" in i.detail for i in missing.issues)
     assert not any("missing automated-gate accountability" in i.detail for i in present.issues)
+
+
+def test_agent_certified_rejects_negated_automated_gate_statement() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    report = evaluate_journal_surface(
+        paper.replace("methods1", "Automated quality gates were not run.", 1),
+        accountability_model="researka_agent_certified",
+    )
+    assert any("missing automated-gate accountability" in i.detail for i in report.issues)
+
+
+def test_agent_certified_rejects_negated_canonical_accountability_statement() -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    report = evaluate_journal_surface(
+        paper.replace(
+            "methods1",
+            "It is false that accountability is established through reproducible artifacts.",
+            1,
+        ),
+        accountability_model="researka_agent_certified",
+    )
+    assert any("missing automated-gate accountability" in i.detail for i in report.issues)
+
+
+@pytest.mark.parametrize("lead", [
+    "It remains unclear whether ",
+    "It is uncertain whether ",
+    "If ",
+])
+def test_agent_accountability_statement_must_be_affirmative(lead: str) -> None:
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    report = evaluate_journal_surface(
+        paper.replace(
+            "methods1",
+            f"{lead}accountability is established through reproducible artifacts.",
+            1,
+        ),
+        accountability_model="researka_agent_certified",
+    )
+
+    assert any("missing automated-gate accountability" in i.detail for i in report.issues)
 
 
 def test_conclusion_fallback_prose_blocks_journal_surface():
@@ -1679,10 +1788,14 @@ def test_artifact_consistency_passes_complete_trust_artifacts(tmp_path) -> None:
     from agent.artifact_consistency import verify_run_artifacts
     paper = "## Abstract\n\nSmith 2024 reported.\n\n## References\n\n- Smith 2024.\n"
     (tmp_path / "full_paper.md").write_text(paper)
-    (tmp_path / "submission_package").mkdir()
-    (tmp_path / "submission_package" / "final_manuscript.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(_json.dumps({
+        "n_receipts": 1, "receipts": [{"receipt_id": "R1", "n_claims": 0}],
+    }))
     (tmp_path / "citation_registry.json").write_text(_json.dumps({
-        "R1": {"body_citation": "Smith 2024"},
+        "R1": {"receipt_id": "R1", "body_citation": "Smith 2024"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(_json.dumps({
+        "review_available": True, "patches": [],
     }))
     assert verify_run_artifacts(tmp_path).passed
 
@@ -1695,38 +1808,11 @@ def test_artifact_consistency_flags_missing_paper(tmp_path) -> None:
     assert report.checks[0].name == "paper_present"
 
 
-def test_artifact_consistency_detects_submission_drift(tmp_path) -> None:
-    """When submission_package/final_manuscript.md drifts from
-    full_paper.md → flag."""
-    from agent.artifact_consistency import verify_run_artifacts
-    (tmp_path / "full_paper.md").write_text("## Abstract\n\nOriginal.\n")
-    (tmp_path / "submission_package").mkdir()
-    (tmp_path / "submission_package" / "final_manuscript.md").write_text(
-        "## Abstract\n\nStale supplement copy.\n",
-    )
-    report = verify_run_artifacts(tmp_path)
-    assert not report.passed
-    assert any(
-        c.name == "submission_package_match" and not c.passed
-        for c in report.checks
-    )
-
-
-def test_artifact_consistency_canonicalises_whitespace(tmp_path) -> None:
-    """Cosmetic whitespace/bullet-marker differences between the
-    submission mirror and the source must NOT trip the gate —
-    canonicalisation strips them."""
-    from agent.artifact_consistency import verify_run_artifacts
+def test_paper_content_hash_binds_exact_manuscript_text() -> None:
+    from agent.artifact_consistency import paper_content_hash
     body = "## Abstract\n\nA result is reported.\n"
-    spaced = "## Abstract\n\nA   result   is reported.\n"  # whitespace runs
-    (tmp_path / "full_paper.md").write_text(body)
-    (tmp_path / "submission_package").mkdir()
-    (tmp_path / "submission_package" / "final_manuscript.md").write_text(spaced)
-    report = verify_run_artifacts(tmp_path)
-    assert any(
-        c.name == "submission_package_match" and c.passed
-        for c in report.checks
-    )
+    spaced = "## Abstract\n\nA   result   is reported.\n"
+    assert paper_content_hash(body) != paper_content_hash(spaced)
 
 
 def test_artifact_consistency_flags_orphan_registry_entries(tmp_path) -> None:

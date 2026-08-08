@@ -10,6 +10,7 @@ from typing import Any
 
 from agent import journal_finalizer, revision_quality
 from agent.journal_surface_gate import evaluate_journal_surface
+from agent.human_signoff import HumanSignoff, write as write_human_signoff
 from agent.sources.pubmed import pmid_rows_fingerprint
 
 
@@ -31,6 +32,28 @@ def test_phase_g_refreshes_publication_score(monkeypatch: Any, tmp_path: Path) -
 
     assert calls == [tmp_path]
     assert any(log.rule == "refresh_publication_score_post_finalizer" for log in logs)
+
+
+def test_surface_report_uses_legacy_accountability_and_valid_signoff(tmp_path: Path) -> None:
+    paper = "## Methods\n\nFinal decisions are author-verified.\n\n## References\n"
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "accountability_model": "legacy_journal_submission",
+        "review_type": "thin_corpus_brief",
+    }))
+    write_human_signoff(tmp_path, HumanSignoff(
+        author="Test Author",
+        reviewed=True,
+        evidence_claims_reviewed=True,
+        conflicts_declared=True,
+        ready_to_submit=True,
+        signature="Test Author",
+    ))
+
+    report = journal_finalizer._surface_report(paper, tmp_path)
+
+    assert report is not None
+    assert not any("unsupported human-verification" in issue.detail for issue in report.issues)
 
 
 def test_domain_frame_template_cleanup_removes_submit_blocked_aging_phrases() -> None:
@@ -2356,6 +2379,12 @@ def test_numeric_significance_correction_repairs_p_value_revision(tmp_path: Path
             detail="corrected explicit p-value/CI significance contradictions",
         )
     ]
+
+
+def test_numeric_significance_detects_unicode_minus_ci_crossing_null() -> None:
+    assert journal_finalizer._numeric_sentence_overstates_significance(
+        "The effect was statistically significant (95% CI −0.4 to 0.2).",
+    )
 
 
 def test_numeric_significance_correction_keeps_existing_non_significant_wording(tmp_path: Path) -> None:
@@ -6295,24 +6324,62 @@ def test_phase_g_refreshes_public_exports_from_final_markdown(tmp_path: Path) ->
     assert refresh_public_exports(tmp_path) is False
 
 
-def test_artifact_consistency_requires_package_mirror_only_after_package_exists(
+def test_artifact_consistency_is_independent_of_package_lifecycle(
     tmp_path: Path,
 ) -> None:
     from agent.artifact_consistency import verify_run_artifacts
 
     paper = "# Paper\n\n## References\n\nSource 2026\n"
     (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1, "receipts": [{"receipt_id": "source", "n_claims": 0}],
+    }))
     (tmp_path / "citation_registry.json").write_text(json.dumps({
-        "source": {"body_citation": "Source 2026"},
+        "source": {"receipt_id": "source", "body_citation": "Source 2026"},
+    }))
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
     }))
     assert verify_run_artifacts(tmp_path).passed is True
     (tmp_path / "submission_package").mkdir()
-    report = verify_run_artifacts(tmp_path)
-    assert report.passed is False
-    assert any(
-        check.name == "submission_package_match" and not check.passed
-        for check in report.checks
-    )
+    assert verify_run_artifacts(tmp_path).passed is True
+
+
+def test_phase_g_invalidates_existing_submission_package(tmp_path: Path) -> None:
+    package = tmp_path / "submission_package"
+    package.mkdir()
+    (package / "final_manuscript.md").write_text("stale")
+
+    log = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
+
+    assert not package.exists()
+    assert "invalidate_submission_package_post_finalizer" in {
+        entry.rule for entry in log
+    }
+
+
+def test_phase_g_recomposes_preexisting_package_after_refresh(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    import agent.submission_package as submission_package
+
+    package = tmp_path / "submission_package"
+    package.mkdir()
+    (package / "final_manuscript.md").write_text("stale")
+    recomposed: list[Path] = []
+
+    def compose(run_dir: Path) -> None:
+        recomposed.append(run_dir)
+        (run_dir / "submission_package").mkdir()
+        (run_dir / "submission_package" / "final_manuscript.md").write_text("fresh")
+
+    monkeypatch.setattr(submission_package, "compose", compose)
+
+    log = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
+
+    assert recomposed == [tmp_path]
+    assert (package / "final_manuscript.md").read_text() == "fresh"
+    assert "recompose_submission_package_post_finalizer" in {entry.rule for entry in log}
 
 
 def test_revision_surface_notes_insert_manifest_backed_thin_brief_notes(tmp_path: Path) -> None:

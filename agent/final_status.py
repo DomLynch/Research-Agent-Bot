@@ -166,6 +166,11 @@ def _read_pre_submit(run_dir: Path) -> tuple[bool, str]:
         ]
         detail = ",".join(failing[:3]) or "missing_or_not_passed"
         return (False, "artifact_consistency:" + detail)
+    from agent.artifact_consistency import consistency_checks_pass, consistency_receipt_matches
+    if not consistency_checks_pass(consistency.get("checks")):
+        return (False, "artifact_consistency:checks_missing_or_not_passed")
+    if not consistency_receipt_matches(run_dir, consistency):
+        return (False, "artifact_consistency:stale_or_fabricated")
     return (True, "")
 
 
@@ -174,10 +179,21 @@ def _read_target_journal(run_dir: Path) -> tuple[bool, str]:
     d = _load(run_dir / "target_journal_pack.json")
     if not isinstance(d, dict):
         return (False, "no target_journal_pack.json")
-    if not d.get("journal"):
-        return (False, "target_journal_pack missing 'journal' field")
-    if not d.get("declared_in_topic_pack"):
+    if d.get("declared_in_topic_pack") is not True:
         return (False, "target_journal not author-declared in topic_pack")
+    from agent.target_journal_pack import load_and_validate
+    pack, issues = load_and_validate(run_dir)
+    if issues:
+        return (False, "target_journal_pack:" + ",".join(issue.code for issue in issues[:3]))
+    try:
+        paper_md = (run_dir / "full_paper.md").read_text()
+    except OSError:
+        return (False, "target_journal_pack:manuscript_unreadable")
+    from agent.target_journal_pack import manuscript_limit_issues, package_requirement_issues
+    limit_issues = manuscript_limit_issues(paper_md, pack)
+    requirement_issues = package_requirement_issues(run_dir, pack) if pack is not None else ()
+    if limit_issues or requirement_issues:
+        return (False, "target_journal_pack:" + ",".join((*limit_issues, *requirement_issues)[:3]))
     return (True, "")
 
 

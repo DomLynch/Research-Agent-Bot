@@ -115,6 +115,10 @@ REVIEW_TYPE_SELF_CLAIM_TERMS: Final[dict[str, tuple[str, ...]]] = {
         "systematic review", "scoping review", "meta-analysis",
         "meta analysis", "prospero", "prisma",
     ),
+    "thin_corpus_brief": (
+        "systematic review", "scoping review", "meta-analysis",
+        "meta analysis", "prospero", "prisma",
+    ),
     "evidence_map": (
         "systematic review", "scoping review", "meta-analysis",
         "meta analysis", "prospero", "prisma",

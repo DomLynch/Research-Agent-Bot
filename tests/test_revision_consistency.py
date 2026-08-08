@@ -158,8 +158,14 @@ def test_latest_reviewer_consistency_bundle_is_repaired_and_proven() -> None:
         "consistent_animal_source_flags",
     }
     assert all(revision_quality_ask_known(ask, ROWS) for ask in ASKS)
-    assert all(revision_quality_proof_is_stated(fixed, ask, ROWS) for ask in ASKS)
-    assert revision_coverage.deterministic_unmet_asks(fixed, ASKS, evidence_rows=ROWS) == []
+    assert all(
+        revision_quality_proof_is_stated(fixed, ask, ROWS)
+        for ask in ASKS if ask != ASKS[2]
+    )
+    assert not revision_quality_proof_is_stated(fixed, ASKS[2], ROWS)
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, ASKS, evidence_rows=ROWS,
+    ) == [ASKS[2]]
     assert "A fourth and overarching tension" in fixed
     assert "20 high-confidence extracted claims" in fixed
     assert "extracted-claim counts across 4 included sources" in fixed
@@ -734,6 +740,70 @@ def test_requested_direction_uses_supported_value_not_negated_current_value() ->
     assert "reviewer-reconciled direction=null" in negated
     assert "reviewer-reconciled direction=null" in qualified
     assert "reviewer-reconciled direction=null" in no_evidence
+
+
+def test_named_statistic_repair_requires_the_requested_effect_estimate() -> None:
+    row = {
+        "citation_token": "Study 2025",
+        "source_title": "Trial with HR = 0.72 and SMD = -0.31",
+        "thesis_text": "The source reports HR = 0.72 and SMD = -0.31.",
+        "outcome_class": "longevity",
+        "effect_direction": "positive",
+    }
+    ask = (
+        "For Study 2025, verify and transcribe the exact effect estimate "
+        "HR = 0.72 from the source excerpt."
+    )
+    paper = "## Results\n\nStudy 2025 [bundle:1] reports SMD = -0.31.\n"
+
+    assert not revision_quality_proof_is_stated(paper, ask, [row])
+    fixed, details = repair_revision_quality(paper, [row], ask)
+
+    assert "named_statistic_reconciliation" in details
+    assert "retains HR = 0.72 as bundle-traceable" in fixed
+    assert revision_quality_proof_is_stated(fixed, ask, [row])
+
+
+def test_named_statistic_correction_requires_requested_metric_family() -> None:
+    row = {
+        "citation_token": "Study 2025",
+        "source_title": "Trial with HR = 0.72 and SMD = -0.31",
+        "thesis_text": "The source reports HR = 0.72 and SMD = -0.31.",
+        "outcome_class": "longevity",
+        "effect_direction": "positive",
+    }
+    ask = "For Study 2025, correct the reported HR = 0.72 using the source excerpt."
+    paper = "## Results\n\nStudy 2025 [bundle:1] reports SMD = -0.31.\n"
+
+    assert revision_quality_proof_is_stated(paper, ask, [row]) is False
+
+
+def test_named_statistic_must_be_bound_to_the_requested_source() -> None:
+    smith = {
+        "citation_token": "Smith 2025", "source_title": "Smith trial",
+        "thesis_text": "The source reports RR = 0.81.",
+        "outcome_class": "longevity", "effect_direction": "positive",
+    }
+    jones = {
+        "citation_token": "Jones 2025", "source_title": "Jones trial",
+        "thesis_text": "The source reports HR = 0.72.",
+        "outcome_class": "longevity", "effect_direction": "positive",
+    }
+    ask = "For Smith 2025, correct the reported HR = 0.72 using the source excerpt."
+    paper = (
+        "## Results\n\nSmith 2025 [bundle:1] reports RR = 0.81; "
+        "Jones 2025 [bundle:2] reports HR = 0.72.\n"
+    )
+
+    assert revision_quality_proof_is_stated(paper, ask, [smith, jones]) is False
+
+
+def test_named_statistic_support_preserves_effect_sign() -> None:
+    from agent.revision_quality import _stat_key, _stat_supported
+
+    row = {"thesis_text": "The source reports SMD = 0.31."}
+    assert _stat_key("SMD = -0.31") != _stat_key("SMD = 0.31")
+    assert not _stat_supported("SMD = -0.31", row)
 
 
 def test_animal_proof_requires_source_accounting_not_only_marker() -> None:

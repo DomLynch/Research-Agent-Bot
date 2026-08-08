@@ -37,12 +37,13 @@ def _summary(
     directness: str = "direct",
     p_values: tuple[str, ...] = ("p=0.003",),
     n_claims: int = 4,
+    verdict: str = "accept_clean",
 ) -> ReceiptSummary:
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}",
         topic="metformin",
         thesis_text=f"thesis for {rid}",
-        spar_verdict="accept_clean",
+        spar_verdict=verdict,
         n_claims=n_claims, n_failed_traces=0,
         canonical_trial_id=f"NCT-{rid}",
         evidence_tier=tier, directness=directness,
@@ -581,6 +582,16 @@ def test_q8_passes_when_no_rejected_receipts() -> None:
     paper = _paper("body without any rejected ID", receipts)
     audit = audit_synthesis_paper(paper, receipts)
     q8 = next(c for c in audit.checks if c.question_id.startswith("Q8"))
+    assert q8.applicable is False
+    assert q8.passed is True
+
+
+def test_q8_treats_deterministic_admission_as_accepted() -> None:
+    receipt = _summary("r-deterministic", verdict="deterministic_admitted")
+    paper = _paper("## Background\n\nr-deterministic supports the result.", (receipt,))
+
+    q8 = next(c for c in audit_synthesis_paper(paper, (receipt,)).checks if c.question_id.startswith("Q8"))
+
     assert q8.applicable is False
     assert q8.passed is True
 

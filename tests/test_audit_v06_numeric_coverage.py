@@ -3,12 +3,14 @@
 percentages. A discriminating test per category."""
 from __future__ import annotations
 
+import hashlib
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
 from agent import revision_claim_trace  # noqa: E402
+from agent.publication_evidence import source_identity_hash  # noqa: E402
 
 
 def test_p_value_untraceable_flagged() -> None:
@@ -82,17 +84,27 @@ def test_all_traceable_passes() -> None:
 
 
 def test_exact_source_trace_metadata_is_not_reaudited_as_authored_prose() -> None:
+    excerpt = (
+        "Adverse events differed between treatment groups: gout flares occurred "
+        "in 60.2% versus 50.6%, and infections occurred in 25.3%."
+    )
     row = {
         "citation_token": "Baraf 2023",
         "source_doi": "10.1093/rheumatology/kead333",
+        "doi": "10.1093/rheumatology/kead333",
         "directness": "direct",
         "evidence_tier": "A1",
         "endpoints": ["adverse events"],
-        "thesis_text": (
-            "Source excerpts: Adverse events differed: gout flares "
-            "(60.2% vs 50.6%) and infections (25.3%)."
-        ),
+        "thesis_text": f"Source excerpts: {excerpt}",
+        "excerpt": excerpt,
+        "receipt_id": "baraf-2023",
+        "evidence_origin": "pubmed",
+        "source_record_locator": "revision-snapshot:fixture:topic:baraf-2023",
+        "source_record_hash": "sha256:" + hashlib.sha256(b"fixture").hexdigest(),
+        "source_record_verified": True,
+        "source_content_hash": "sha256:" + hashlib.sha256(excerpt.encode()).hexdigest(),
     }
+    row["source_identity_hash"] = source_identity_hash(row, origin="pubmed")
     ask = "Add exact source tokens to major claims; exactly traceable; required 1."
     paper, changed = revision_claim_trace.repair_major_claim_trace(
         "## Results\n\nBounded synthesis.", ask, [row],

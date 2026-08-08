@@ -12,6 +12,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 
+import pytest
+
 try:
     import httpx  # noqa: F401
 except ModuleNotFoundError:
@@ -82,10 +84,10 @@ def test_stage2_p1_blocks_even_if_stage1_passes() -> None:
     assert u.stage2_p1 == 1
 
 
-def test_post_finalizer_verdict_refresh_resolves_absent_reviewer_p1(tmp_path: Path) -> None:
+def test_post_finalizer_verdict_keeps_unverified_absent_reviewer_p1(tmp_path: Path) -> None:
     (tmp_path / "debug").mkdir()
     (tmp_path / "full_paper.md").write_text("Clean final paper after deterministic cleanup.")
-    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
         "patches": [{"id": "P01", "severity": "P1", "before": "flagged blob"}],
     }))
     (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
@@ -100,17 +102,18 @@ def test_post_finalizer_verdict_refresh_resolves_absent_reviewer_p1(tmp_path: Pa
     (tmp_path / "full_paper.journal_surface.json").write_text(json.dumps({"passed": True, "issues": []}))
     (tmp_path / "full_paper.consistency.json").write_text("[]")
 
-    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 1
-    assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, 0)
+    assert orch._resolve_absent_reviewer_p1s(tmp_path) == 0
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
     assert orch._refresh_post_finalizer_verdict(tmp_path) is True
     verdict = json.loads((tmp_path / "full_paper.final_verdict.json").read_text())
-    assert verdict["verdict"] == "AAA"
+    assert verdict["verdict"] == "Trust-Spine Pass — Agent Review Unresolved"
 
 
-def test_pre_submit_gate_uses_resolved_reviewer_p1_count(tmp_path: Path) -> None:
+def test_pre_submit_gate_keeps_unverified_absent_reviewer_p1(tmp_path: Path) -> None:
     (tmp_path / "debug").mkdir()
     (tmp_path / "full_paper.md").write_text("Clean final paper after deterministic cleanup.")
-    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True,
         "patches": [{"id": "P01", "severity": "P1", "before": "duplicate outcome section"}],
     }))
     (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
@@ -119,14 +122,135 @@ def test_pre_submit_gate_uses_resolved_reviewer_p1_count(tmp_path: Path) -> None
 
     payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=1)
 
+    assert payload["unresolved_p1_count"] == 1
+    assert orch._reviewer_p1_counts_from_log(tmp_path) == (1, 1, 0)
+
+
+def test_pre_submit_gate_blocks_when_final_reviewer_unavailable(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": False,
+        "review_error": "provider unavailable",
+        "patches": [],
+    }))
+    payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=0)
+    assert payload["unresolved_p1_count"] == 1
+
+
+@pytest.mark.parametrize("contents", [None, "{broken"])
+def test_pre_submit_gate_blocks_missing_or_corrupt_reviewer_receipt(
+    tmp_path: Path, contents: str | None,
+) -> None:
+    if contents is not None:
+        (tmp_path / "full_paper.review_patches.json").write_text(contents)
+
+    payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=0)
+
+    assert payload["unresolved_p1_count"] == 1
+
+
+def test_pre_submit_gate_blocks_corrupt_required_patch_log(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True,
+        "patches": [{"id": "P01", "severity": "P1"}],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text("{broken")
+
+    payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=0)
+
+    assert payload["unresolved_p1_count"] == 1
+
+
+def test_pre_submit_gate_blocks_missing_required_patch_log(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True,
+        "patches": [{"id": "P01", "severity": "P1"}],
+    }))
+
+    payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=0)
+
+    assert payload["unresolved_p1_count"] == 1
+
+
+@pytest.mark.parametrize("patches", [[], [{}]])
+def test_pre_submit_gate_blocks_incomplete_required_patch_log(
+    tmp_path: Path, patches: list[dict[str, object]],
+) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True,
+        "patches": [{"id": "P01", "severity": "P1"}],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(
+        json.dumps({"patches": patches}),
+    )
+
+    payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=0)
+
+    assert payload["unresolved_p1_count"] == 1
+
+
+def test_pre_submit_gate_accepts_valid_zero_patch_review(tmp_path: Path) -> None:
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True,
+        "patches": [],
+    }))
+
+    payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=0)
+
     assert payload["unresolved_p1_count"] == 0
-    assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, 0)
+
+
+def test_pre_submit_gate_blocks_stale_log_after_zero_patch_review(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01", "severity": "P1", "decision": "rejected"}],
+    }))
+
+    assert orch._reviewer_patches_for_gate(
+        tmp_path, fallback_unresolved_p1=0,
+    )["unresolved_p1_count"] == 1
+
+
+def test_pre_submit_gate_blocks_unknown_persisted_reviewer_severity(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [{"id": "P01", "severity": "P0"}],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{"patch_id": "P01", "severity": "P0", "decision": "rejected"}],
+    }))
+
+    assert orch._reviewer_patches_for_gate(
+        tmp_path, fallback_unresolved_p1=0,
+    )["unresolved_p1_count"] == 1
+
+
+def test_pre_submit_gate_accepts_applied_repair_log_decision(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True,
+        "patches": [{"id": "P01", "severity": "P1"}],
+    }))
+    (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
+        "patches": [{
+            "patch_id": "P01", "severity": "P1",
+            "decision": "applied_via_repair",
+        }],
+    }))
+
+    payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=1)
+
+    assert payload["unresolved_p1_count"] == 0
 
 
 def test_rejected_duplicate_heading_p1_resolves_when_heading_is_not_duplicate(tmp_path: Path) -> None:
     (tmp_path / "debug").mkdir()
     (tmp_path / "full_paper.md").write_text("## Results\n\n### Immune and Inflammation Outcomes\n\nClean text.")
-    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
         "patches": [{"id": "P01", "severity": "P1", "before": "clipped duplicate-heading patch"}],
     }))
     (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
@@ -150,7 +274,7 @@ def test_flagged_duplicated_section_p1_resolves_when_heading_is_unique(tmp_path:
     (tmp_path / "full_paper.md").write_text(
         "## Results\n\n### Immune and Inflammation Outcomes\n\nCombined analysis."
     )
-    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
         "patches": [{"id": "P01", "severity": "P1", "before": "clipped section patch"}],
     }))
     (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
@@ -175,7 +299,7 @@ def test_rejected_duplicate_heading_p1_stays_blocking_when_heading_is_still_dupl
         "## Results\n\n### Immune and Inflammation Outcomes\n\nA.\n\n"
         "### Immune and Inflammation Outcomes\n\nB."
     )
-    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(json.dumps({
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
         "patches": [{"id": "P01", "severity": "P1", "before": "clipped duplicate-heading patch"}],
     }))
     (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({
@@ -226,7 +350,7 @@ def _write_animal_role_case(
         "after": citation,
         "reason": reason,
     }
-    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(
+    (tmp_path / "full_paper.review_patches.json").write_text(
         json.dumps({"patches": [patch]})
     )
     (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(
@@ -269,7 +393,7 @@ def test_animal_role_p1_stays_blocking_while_findings_map_calls_it_direct(
         "after": "Smith 2026",
         "reason": "This veterinary cat study cannot count as human clinical evidence.",
     }
-    (tmp_path / "debug" / "full_paper.review_patches.json").write_text(
+    (tmp_path / "full_paper.review_patches.json").write_text(
         json.dumps({"patches": [patch]})
     )
     (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(

@@ -3223,7 +3223,7 @@ _PROFILE_SUMMARY_RE = re.compile(
     re.I,
 )
 _P_VALUE_RE = re.compile(r"\bp\s*(?:=|>|≥|>=)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
-_CI_RE = re.compile(r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?(-?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(-?\d+(?:\.\d+)?)", re.I)
+_CI_RE = re.compile(r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?([+−-]?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*([+−-]?\d+(?:\.\d+)?)", re.I)
 _SIG_RE = re.compile(r"\b(?:statistically\s+)?significant(?:ly)?\b", re.I)
 _NONSIG_RE = re.compile(
     r"\b(?:non[- ]?significant(?:ly)?|(?:no|not)\s+(?:statistically\s+)?significant(?:ly)?|did\s+not\s+reach\s+significance)\b",
@@ -3235,7 +3235,7 @@ def explicit_stat_is_non_significant(text: str) -> bool | None:
     if p_value := _P_VALUE_RE.search(text):
         return float(p_value.group(1)) >= 0.05
     if interval := _CI_RE.search(text):
-        low, high = map(float, interval.groups())
+        low, high = (float(value.replace("−", "-")) for value in interval.groups())
         return low <= 0 <= high or (
             low <= 1 <= high and min(abs(low), abs(high)) > 0
         )
@@ -3289,7 +3289,7 @@ def numeric_effect_direction_issues(paper_md: str) -> list[str]:
                 issues.append(f"non-significant p-value described as significant: {sentence}")
                 break
         for lo, hi in _CI_RE.findall(sentence):
-            low, high = float(lo), float(hi)
+            low, high = float(lo.replace("−", "-")), float(hi.replace("−", "-"))
             if low <= 0 <= high or (low <= 1 <= high and min(abs(low), abs(high)) > 0):
                 issues.append(f"CI crossing null described as significant: {sentence}")
                 break
@@ -3303,9 +3303,7 @@ def unsupported_abstract_claims(
     runner: Callable[..., Any] = asyncio.run,
     settings: Any | None = None,
 ) -> list[str]:
-    """Abstract claims the manuscript's evidence does not support / overstates
-    (paper-qa contradiction-check borrow). Empty when the abstract is supported,
-    or fail-open ([]) on any error/malformed verdict. Bounded: one judge call."""
+    """Return unsupported abstract claims; unresolved judge checks fail closed."""
     abstract = _abstract(paper_md)
     if not abstract:
         return []
@@ -3322,9 +3320,9 @@ def unsupported_abstract_claims(
         ))
         claims = resp.parsed.get("unsupported", [])
     except (LLMError, ValueError, KeyError, TypeError, AttributeError, OSError, RuntimeError):
-        return []  # fail-open
+        return ["abstract support check unavailable"]
     if not isinstance(claims, list):
-        return []
+        return ["abstract support check returned a malformed verdict"]
     return [
         claim for c in claims
         if (claim := str(c).strip()) and not _PROFILE_SUMMARY_RE.search(claim)

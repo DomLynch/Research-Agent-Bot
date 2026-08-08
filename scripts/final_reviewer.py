@@ -36,7 +36,7 @@ import json
 import os
 import re
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any
 
@@ -286,6 +286,7 @@ def _build_reviewer_prompt(
 _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
     "x-ai/grok-4.3": (3.00, 15.00),
     "google/gemini-3.1-flash-lite:exacto": (0.25, 1.50),
+    "google/gemma-4-31b-it": (0.10, 0.34),
     "mistralai/mistral-small-2603": (0.15, 0.60),
 }
 
@@ -474,6 +475,7 @@ async def _call_one_bounded(
 async def _call_with_fallback(
     system: str, user: str, primary_model: str,
     fallback_model: str, api_key: str, base_url: str, client: Any,
+    *, allow_unfixable: bool = False,
 ) -> tuple[dict[str, Any], str, float]:
     """Try primary first; on any HTTP/parse failure, fall back. Returns
     (parsed_json, model_used, cost_usd_estimate). The fallback only
@@ -496,6 +498,7 @@ async def _call_with_fallback(
                 parsed, in_tok, out_tok = await _call_one_bounded(
                     system, user, model, api_key, base_url, client,
                 )
+                _validate_review_payload(parsed, allow_unfixable=allow_unfixable)
                 cost = _estimate_cost(model, in_tok, out_tok)
                 attempts.append({
                     "model": model,
@@ -546,26 +549,34 @@ async def _call_with_fallback(
 def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
     """Coerce a raw reviewer-emitted dict into a TypedPatch. Returns None
     if the dict can't be salvaged (missing required fields)."""
-    pt = (p_raw.get("patch_type") or "").strip().lower()
+    def text_field(name: str, default: str = "", *, strip: bool = True) -> str:
+        value = p_raw.get(name)
+        if value is None or value == "":
+            return default
+        if not isinstance(value, str):
+            raise ValueError(f"review patch {name} must be a string")
+        return value.strip() if strip else value
+
+    pt = text_field("patch_type").lower()
     if pt not in PATCH_TYPES:
         return None
-    severity = (p_raw.get("severity") or "P3").strip()
+    severity = text_field("severity").upper()
     if severity not in ("P1", "P2", "P3"):
-        severity = "P3"
-    before = p_raw.get("before") or ""
-    after = p_raw.get("after") or ""
+        return None
+    before = text_field("before", strip=False)
+    after = text_field("after", strip=False)
     if not before:
         return None
     auto = pt == "formatting"
     requires_trace = pt in ("numeric", "citation")
     return TypedPatch(
-        id=p_raw.get("id") or f"P{idx:02d}",
+        id=text_field("id", f"P{idx:02d}"),
         patch_type=pt,
         severity=severity,
-        location=(p_raw.get("location") or "").strip(),
+        location=text_field("location"),
         before=before,
         after=after,
-        reason=(p_raw.get("reason") or "").strip()[:400],
+        reason=text_field("reason")[:400],
         auto_applicable=auto,
         requires_trace=requires_trace,
     )
@@ -579,6 +590,23 @@ def _patch_dicts(raw: dict) -> list[dict]:
         return [patches]
     raw["patches_parse_warning"] = type(patches).__name__
     return []
+
+
+def _validate_review_payload(
+    raw: dict[str, Any], *, allow_unfixable: bool = False,
+) -> None:
+    patches = raw.get("patches")
+    if not isinstance(patches, list):
+        raise ValueError("review patches must be a list")
+    for idx, patch in enumerate(patches, start=1):
+        if not isinstance(patch, dict):
+            raise ValueError("review patches must contain objects")
+        if str(patch.get("patch_type") or "").lower() == "unfixable":
+            if allow_unfixable:
+                continue
+            raise ValueError("unfixable is valid only for an explicit repair attempt")
+        if _normalize_patch(patch, idx) is None:
+            raise ValueError("review patch is missing required fields")
 
 
 def _typed_patches(raw: dict) -> list[TypedPatch]:
@@ -687,6 +715,7 @@ async def repair_flagged_patches(
     try:
         raw, _model_used, _cost = await _call_with_fallback(
             system, user, model, fallback_model, api_key, base_url, c,
+            allow_unfixable=True,
         )
     finally:
         if own_client:
@@ -746,11 +775,27 @@ async def review_paper(
                 esc_raw, in_tok, out_tok = await _call_one_bounded(
                     system, user, escalation_model, api_key, base_url, c,
                 )
-                esc_patches = _typed_patches(esc_raw)
-                raw = esc_raw
-                patches = esc_patches
-                model_used = f"{model_used}→{escalation_model}"
                 cost += _estimate_cost(escalation_model, in_tok, out_tok)
+                _validate_review_payload(esc_raw)
+                esc_patches = _typed_patches(esc_raw)
+                if not esc_patches:
+                    raise ValueError("escalation returned no actionable patches")
+                existing = {patch.id: patch for patch in patches}
+                new_patches = []
+                for index, patch in enumerate(esc_patches, 1):
+                    if patch.id in existing and patch == existing[patch.id]:
+                        continue
+                    candidate = patch.id
+                    while candidate in existing:
+                        candidate = f"{patch.id}-E{index}"
+                        index += 1
+                    patch = replace(patch, id=candidate)
+                    existing[candidate] = patch
+                    new_patches.append(patch)
+                patches = [*patches, *new_patches]
+                raw["low_patch_escalation_patch_count"] = len(esc_patches)
+                raw["low_patch_escalation_new_patch_count"] = len(new_patches)
+                model_used = f"{model_used}→{escalation_model}"
             except Exception as exc:
                 raw.setdefault("low_patch_escalation_error", type(exc).__name__)
     finally:

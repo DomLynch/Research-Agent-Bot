@@ -19,7 +19,7 @@ TOPIC_STOPWORDS = {
     "use", "uses", "usage", "rates",
 }
 PHRASE_FRAGMENT_WORDS = {
-    "and", "as", "at", "by", "for", "from", "in", "of", "on", "respectively",
+    "a", "an", "and", "as", "at", "by", "for", "from", "in", "of", "on", "respectively",
     "the", "to", "via", "with",
 }
 
@@ -35,6 +35,26 @@ SCOPE_ANCHORS = {
 }
 _SCOPE_MODIFIERS = {"a", "an", "average", "baseline", "comparative", "conventional", "exceptional", "experimental", "extended", "extreme", "general", "greater", "healthy", "increased", "longitudinal", "maximum", "maximal", "natural", "normal", "observational", "ordinary", "prospective", "randomized", "reduced", "retrospective", "routine", "shortened", "standard", "typical", "usual"}
 _GENERIC_QUALIFIER_RE = re.compile(r"(?:al|ary|ful|ic|ical|ible|ive|less|ory|ous)$")
+_GENERIC_BIOMEDICAL_AXES = {
+    "arm", "baseline", "biomarker", "cancer", "cardiovascular", "clinical", "cohort", "control",
+    "diabetes", "disease", "dose", "effect", "endpoint", "evidence", "group", "health",
+    "hospitalization", "inhibitor", "intervention", "measurement", "metabolism", "method",
+    "mortality", "mutation", "outcome", "patient", "population", "rate", "response", "subgroup",
+    "therapy", "threshold", "treatment", "trial", "use", "vaccine",
+}
+_NON_SYNTHESIS_TOPIC_RE = re.compile(r"(?:^|_)(?:(?:measurement_)?(?:methods?|techniques?)|rates?|thresholds?|threshold_values?)(?:_|$)")
+_ID_SEP = r"[ _\-\u2010-\u2014\u2212]*"
+_COMPACT_ID_RE = re.compile(r"(?<![a-z0-9])(?=[a-z0-9]*[a-z])(?=[a-z0-9]*\d)([a-z0-9]+)(?![a-z0-9])(?!\s*%)", re.I)
+_LETTER_ID_RE = re.compile(rf"(?<![a-z0-9])([a-z]{{1,4}})({_ID_SEP})(\d+[a-z]*)(?![a-z0-9])(?!\s*%)", re.I)
+_NUMERIC_ID_RE = re.compile(rf"(?<![a-z0-9])(\d+)({_ID_SEP}|\s*%\s*)([a-z][a-z0-9]*)(?![a-z0-9])", re.I)
+_EXPLICIT_PREFIX_ID_RE = re.compile(r"(?<![a-z0-9])([a-z][a-z0-9]{1,11})[-/\u2010-\u2014\u2212](\d+[a-z]*)(?![a-z0-9])(?!\s*%)", re.I)
+_ACRONYM_ID_RE = re.compile(r"(?<![A-Za-z0-9])([A-Z][A-Z0-9]{1,11})\s+(\d+[A-Za-z]*)(?![A-Za-z0-9])(?!\s*%)")
+_NUMERIC_CLASSIFIERS = {"grade", "phase", "stage", "type"}
+_CLASSIFIER_ID_RE = re.compile(rf"(?<![a-z0-9])({'|'.join(sorted(_NUMERIC_CLASSIFIERS))}){_ID_SEP}(\d+[a-z]*)(?![a-z0-9])(?!\s*%)", re.I)
+_NON_IDENTITY_PREFIXES = BIOMED_ANCHORS | _GENERIC_BIOMEDICAL_AXES | _SCOPE_MODIFIERS | TOPIC_STOPWORDS | {
+    "analysis", "article", "author", "data", "day", "experiment", "finding", "month",
+    "random", "report", "result", "sample", "study", "week", "year",
+}
 _SCOPE_PREDICATE_RE = re.compile(r"(?:affect|alter|assess|characterize|compare|estimate|evaluate|examine|extend|increase|investigate|lengthen|measure|modulate|predict|prolong|reduce|report|shorten|test|track)(?:s|ed|ing)?$|^(?:and|of|on|or|to)$")
 _SCOPE_OBJECT_RE = re.compile(
     r"\b(?:lifespan|longevity)(?:(?:\s+(?:and|or)\s+(?:lifespan|longevity))*|"
@@ -53,9 +73,11 @@ SCOPE_NON_BIOMED_DRIFT = NON_BIOMED_DRIFT | set("accessory|battery cell|brand|br
 
 
 def topic_tokens(topic: str) -> list[str]:
+    words = _words(topic)
     return [
-        token for token in _words(topic)
-        if len(token) >= 3 and token not in TOPIC_STOPWORDS
+        token for index, token in enumerate(words) if token not in TOPIC_STOPWORDS and (
+            len(token) >= 3 or token.isdigit() and index > 0 and words[index - 1].isalpha()
+            or token.isalpha() and index + 1 < len(words) and words[index + 1].isdigit())
     ]
 
 
@@ -88,9 +110,10 @@ def topic_aliases(
                 out.extend(term for term in retrieval.get("topic_terms", []) if isinstance(term, str))
     seen: set[str] = set()
     aliases: list[str] = []
-    for alias in (item.strip().lower() for item in out):
-        if alias and alias not in seen:
-            seen.add(alias)
+    for alias in (item.strip() for item in out):
+        key = alias.casefold()
+        if alias and key not in seen:
+            seen.add(key)
             aliases.append(alias)
     return tuple(aliases)
 
@@ -139,16 +162,144 @@ def _gate_tokens(text: str) -> set[str]:
 
 
 def _gate_token_list(text: str) -> list[str]:
-    out: list[str] = []
-    for raw in _words(text):
-        token = _specificity_token(raw)
-        if len(token) > 2 and token not in TOPIC_STOPWORDS:
-            out.append(token)
-    return out
+    return [_specificity_token(token) for token in topic_tokens(text)]
 
 
 def _words(text: object) -> list[str]:
     return re.findall(r"[a-z0-9]+", str(text).replace("_", " ").replace("-", " ").lower())
+
+
+def _structured_identities(text: object) -> set[str]:
+    raw = str(text)
+    identities = {match.lower() for match in _COMPACT_ID_RE.findall(raw)}
+    identities.update(
+        f"{match[1]}{match[2]}".lower()
+        for pattern in (_EXPLICIT_PREFIX_ID_RE, _ACRONYM_ID_RE, _CLASSIFIER_ID_RE)
+        for match in pattern.finditer(raw)
+        if pattern is not _ACRONYM_ID_RE or match[1].lower() not in _NON_IDENTITY_PREFIXES
+    )
+    letter_matches = [match for match in _LETTER_ID_RE.finditer(raw) if match[1].lower() not in PHRASE_FRAGMENT_WORDS and not (len(match[1]) == 1 and match[2].isspace())]
+    identities.update(f"{match[1]}{match[3]}".lower() for match in letter_matches)
+    identities.update(
+        f"{match[1]}{match[3]}".lower() for match in _NUMERIC_ID_RE.finditer(raw)
+        if not any(letter.start() <= match.start() < letter.end() for letter in letter_matches)
+        and not _numeric_has_identity_prefix(raw, match.start())
+    )
+    return identities
+
+
+def _numeric_has_identity_prefix(text: str, number_start: int) -> bool:
+    match = re.search(rf"([a-z]+){_ID_SEP}$", text[:number_start], re.I)
+    if not match or match[1].lower() in PHRASE_FRAGMENT_WORDS:
+        return False
+    return not match[1].lower().endswith(("ing", "tion", "ment"))
+
+
+def _structured_identities_match(
+    topic: object, text: object, aliases: Iterable[object] = (),
+) -> bool:
+    present = _structured_identities(text)
+    required = _required_structured_identities(topic, aliases)
+    for identity in required - present:
+        parts = re.fullmatch(r"([a-z]+)(\d[a-z0-9]*)", identity)
+        numeric = re.fullmatch(r"(\d+)([a-z][a-z0-9]*)", identity)
+        if numeric:
+            pattern = rf"(?<![a-z0-9]){re.escape(numeric[1])}(?:{_ID_SEP}|\s*%\s*){re.escape(numeric[2])}(?![a-z0-9])"
+            if any(
+                not _numeric_has_identity_prefix(str(text), match.start())
+                for match in re.finditer(pattern, str(text), re.I)
+            ):
+                continue
+            return False
+        pattern = rf"{re.escape(parts[1])}{_ID_SEP}{re.escape(parts[2])}(?!\s*%)" if parts else "(?!)"
+        if not re.search(rf"(?<![a-z0-9]){pattern}(?![a-z0-9])", str(text), re.I):
+            return False
+    return True
+
+
+def _required_structured_identities(
+    topic: object, aliases: Iterable[object] = (),
+) -> set[str]:
+    topic_words = _words(topic)
+    return _structured_identities(topic) | {
+        identity for alias in aliases for identity in _structured_identities(alias)
+        if identity in topic_words or any(
+            identity == f"{left}{right}" for left, right in zip(topic_words, topic_words[1:])
+        )
+    }
+
+
+def has_structured_topic_identity(topic: object, aliases: Iterable[object] = ()) -> bool:
+    return bool(_required_structured_identities(topic, aliases))
+
+
+def _has_unbound_numeric_segment(topic: object, identities: set[str]) -> bool:
+    words = _words(topic)
+    return any(
+        re.fullmatch(r"\d+[a-z]*", word) and not identities & (
+            {f"{words[index - 1]}{word}"}
+            if index and any(char.isdigit() for char in words[index - 1])
+            else {
+                word,
+                f"{words[index - 1]}{word}" if index else "",
+                f"{word}{words[index + 1]}" if index + 1 < len(words) else "",
+            }
+        )
+        for index, word in enumerate(words)
+    )
+
+
+def requires_frozen_topic_aliases(topic: object) -> bool:
+    return _has_unbound_numeric_segment(topic, _structured_identities(topic))
+
+
+def frozen_topic_aliases_complete(topic: object, aliases: Iterable[object]) -> bool:
+    return not _has_unbound_numeric_segment(
+        topic, _required_structured_identities(topic, aliases),
+    )
+
+
+def _numeric_generic_topic(topic: str, aliases: Iterable[object] = ()) -> bool:
+    raw_words = _words(topic)
+    words = [_normalize_pack_token(word) for word in raw_words]
+    generic = BIOMED_ANCHORS | _GENERIC_BIOMEDICAL_AXES | TOPIC_STOPWORDS
+    return any(
+        left.isdigit() and right in generic
+        and not (
+            index > 0 and _numeric_identity_supported(words[index - 1], left, aliases)
+        )
+        for index, (left, right) in enumerate(zip(words, words[1:]))
+    ) or any(
+        _ambiguous_numeric_compact(word, generic) for word in raw_words
+    )
+
+
+def _numeric_identity_supported(prefix: str, number: str, aliases: Iterable[object]) -> bool:
+    if prefix in _NUMERIC_CLASSIFIERS:
+        return True
+    identity = f"{prefix}{number}"
+    return any(
+        identity == f"{match[1]}{match[2]}".lower()
+        for alias in aliases
+        for pattern in (_EXPLICIT_PREFIX_ID_RE, _ACRONYM_ID_RE)
+        for match in pattern.finditer(str(alias))
+        if pattern is not _ACRONYM_ID_RE or match[1].lower() not in _NON_IDENTITY_PREFIXES
+    )
+
+
+def _ambiguous_numeric_compact(word: str, generic: set[str]) -> bool:
+    suffix = re.sub(r"^\d+", "", word)
+    return word[:1].isdigit() and (suffix in generic or _normalize_pack_token(suffix) in generic)
+
+
+def _unsupported_digit_leading_identity(topic: str, aliases: Iterable[object]) -> bool:
+    """Require independent alias evidence for compact digit-leading names."""
+    alias_identities = {words[0] for alias in aliases if len(words := _words(alias)) == 1}
+    for word in _words(topic):
+        match = re.fullmatch(r"\d+([a-z][a-z0-9]+)", word)
+        if match and match[1] not in alias_identities:
+            return True
+    return False
 
 
 def _acronym_match(token: str, words: Sequence[str]) -> bool:
@@ -169,7 +320,7 @@ def _acronym_match(token: str, words: Sequence[str]) -> bool:
 
 
 def _topic_token_hit(token: str, haystack_tokens: set[str], haystack_words: Sequence[str]) -> bool:
-    return token in haystack_tokens or _acronym_match(token, haystack_words)
+    return token in haystack_tokens or len(token) < 3 and token in haystack_words or _acronym_match(token, haystack_words)
 
 
 def _post_acronym_axis_tokens(topic: str) -> set[str]:
@@ -226,10 +377,15 @@ def _scope_subject_supported(text: str) -> bool:
 
 
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
-    haystack = " ".join(str(text or "").replace("_", " ").replace("-", " ").lower().split())
+    raw_text = str(text or "")
+    haystack = " ".join(raw_text.replace("_", " ").replace("-", " ").lower().split())
     tokens = topic_tokens(topic)
-    if not haystack or not tokens:
-        return True
+    alias_hit = any(
+        len(alias_text) > 2 and re.search(rf"(?<!\w){re.escape(alias_text)}(?!\w)", haystack)
+        for alias in aliases if (alias_text := " ".join(str(alias or "").replace("_", " ").replace("-", " ").lower().split()))
+    )
+    if not tokens:
+        return alias_hit
     haystack_words = _words(haystack)
     normalized_tokens = [_specificity_token(token) for token in tokens]
     haystack_tokens = {
@@ -237,12 +393,10 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
         for token in haystack_words
         if len(token) > 2
     }
-    token_hits = sum(1 for token in normalized_tokens if _topic_token_hit(token, haystack_tokens, haystack_words))
-    alias_hit = any(
-        " ".join(str(alias or "").replace("_", " ").replace("-", " ").lower().split()) in haystack
-        for alias in aliases
-        if str(alias or "").strip()
-    )
+    if not _structured_identities_match(topic, raw_text, aliases):
+        return False
+    structured_identities = _structured_identities(topic)
+    token_hits = sum(1 for token in normalized_tokens if token in structured_identities or _topic_token_hit(token, haystack_tokens, haystack_words))
     full_match = alias_hit or token_hits == len(tokens)
     scope_only = set(normalized_tokens) <= SCOPE_TOKENS
     scope_subject = _scope_subject_supported(haystack)
@@ -290,21 +444,26 @@ def generated_pack_publishable(
     raw_count = record.get("candidate_count")
     candidate_count = raw_count if isinstance(raw_count, int) else 0
     topic = str(pack_data.get("topic") or "") if isinstance(pack_data, dict) else ""
-    if _generic_fallback_topic(topic) or _fragment_topic(topic):
+    aliases = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
+    if not topic_tokens(topic) or _numeric_generic_topic(topic, aliases) or _generic_fallback_topic(topic) or _fragment_topic(topic) or _NON_SYNTHESIS_TOPIC_RE.search(topic.replace(" ", "_")):
         return False
-    raw_terms = list(pack_data.get("aliases", ())) if isinstance(pack_data, dict) else []
+    raw_terms = list(aliases)
     retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
     if isinstance(retrieval, dict) and isinstance(retrieval.get("topic_terms"), list | tuple):
         raw_terms.extend(retrieval["topic_terms"])
-    if not raw_terms:
+    if (
+        not raw_terms
+        or _ambiguous_short_identity(topic, raw_terms)
+        or _unsupported_digit_leading_identity(topic, aliases)
+    ):
         return False
     terms = _pack_tokens(raw_terms)
     scope_terms = _pack_tokens(retrieval.get("scope_terms", ())) if isinstance(retrieval, dict) else set()
-    entity_like = any(any(ch.isdigit() for ch in str(term)) or any(
+    entity_like = any(_COMPACT_ID_RE.search(str(term)) or any(
         any(ch.isupper() for ch in word[1:])
         for word in re.findall(r"[A-Za-z0-9-]+", str(term))
     ) for term in raw_terms)
-    specificity_exclusions = scope_terms | BIOMED_ANCHORS | SCOPE_TOKENS | SCOPE_ANCHORS | _SCOPE_MODIFIERS | {"anti"}
+    specificity_exclusions = scope_terms | BIOMED_ANCHORS | SCOPE_TOKENS | SCOPE_ANCHORS | _SCOPE_MODIFIERS | _GENERIC_BIOMEDICAL_AXES | {"anti"}
     specific_terms = {term for term in terms - specificity_exclusions if not _GENERIC_QUALIFIER_RE.search(term)}
     rare_terms = _peer_rare_tokens(specific_terms, peer_records) - specificity_exclusions
     structurally_specific = bool(
@@ -323,6 +482,17 @@ def generated_pack_publishable(
 
 def _generic_fallback_topic(topic: str) -> bool:
     return topic.endswith("_aging_evidence") or topic.endswith(" aging evidence")
+
+
+def _ambiguous_short_identity(topic: str, aliases: Iterable[object]) -> bool:
+    words = _words(topic)
+    alias_words = [_words(alias) for alias in aliases]
+    return any(
+        len(word) == 2 and word.isalpha() and word not in PHRASE_FRAGMENT_WORDS
+        and not (index + 1 < len(words) and words[index + 1].isdigit())
+        and not any(_acronym_match(word, candidate) for candidate in alias_words)
+        for index, word in enumerate(words)
+    )
 
 
 def _fragment_topic(topic: str) -> bool:

@@ -153,8 +153,16 @@ def test_docx_export_does_not_truncate_long_manuscript(tmp_path: Path) -> None:
     (tmp_path / "submission_package").mkdir()
     (tmp_path / "submission_package" / "final_manuscript.md").write_text(paper, encoding="utf-8")
     (tmp_path / "citation_registry.json").write_text(
-        json.dumps({"source": {"body_citation": "Source 2026"}}), encoding="utf-8",
+        json.dumps({"source": {
+            "receipt_id": "source", "body_citation": "Source 2026",
+        }}), encoding="utf-8",
     )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "n_receipts": 1, "receipts": [{"receipt_id": "source", "n_claims": 0}],
+    }), encoding="utf-8")
+    (tmp_path / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
+    }), encoding="utf-8")
     ir._write_docx(tmp_path / "full_paper.docx", paper)
 
     with zipfile.ZipFile(tmp_path / "full_paper.docx") as archive:

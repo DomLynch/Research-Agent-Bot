@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 from collections.abc import Mapping
 
-from agent.registry_overrides import lookup_override
+from agent.registry_overrides import resolve_override
 from agent.role_classifier import classify_design, classify_role
 from agent.text_signals import (
     ADULT_DOMAIN_MARKERS,
@@ -67,7 +67,9 @@ def bundle(
         # canonical NCT/ISRCTN is in the abstract text only (e.g., live
         # OpenAlex returns MASTERS with NCT02308228 in abstract but no
         # source.nct because the dedup-merge with CT.gov didn't fire).
-        override = lookup_override(src, topic_pack, abstract=abstract)
+        override, registry_conflict = resolve_override(src, topic_pack, abstract=abstract)
+        if registry_conflict:
+            continue
         if override is not None:
             role: Role = override.role
             design: Design = override.design

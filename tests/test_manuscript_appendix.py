@@ -285,6 +285,21 @@ def test_data_code_availability_includes_run_id_and_sha() -> None:
     assert "274648e" in md
 
 
+def test_unverified_bundle_does_not_claim_public_or_all_gates() -> None:
+    availability = appx.build_data_code_availability(
+        run_id="r1", git_sha="unknown", bundle_path=None,
+    )
+    disclosure = appx.build_ai_use_disclosure(
+        _fake_manifest(), None, _fake_model_stack(), verdict="Trust-Spine Pass",
+    )
+    assert "All artifacts are public" not in availability
+    assert "not verified as public" in availability
+    assert "git checkout unknown" not in availability
+    assert "Grok" not in availability
+    assert "The bundle contains" not in availability
+    assert "Every LLM-produced sentence" not in disclosure
+
+
 def test_data_code_availability_includes_clone_recipe() -> None:
     """Reproduction recipe must be a runnable command, not prose."""
     md = appx.build_data_code_availability(

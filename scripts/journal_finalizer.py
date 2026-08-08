@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 from collections import Counter
 from dataclasses import asdict, dataclass, field
 import importlib
@@ -319,8 +320,19 @@ def _surface_report(text: str, out_dir: Path) -> Any | None:
     oc = {r["receipt_id"]: _reviewer_adjusted_outcome_label(_outcome_display(r["outcome_class"]), feedback) for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
     cmap = {e["body_citation"]: oc[rid] for rid, e in (registry.items() if isinstance(registry, dict) else ()) if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     try:
+        from agent.accountability import resolve_model
+        from agent.human_signoff import load_and_validate
         from agent.journal_surface_gate import evaluate_journal_surface
-        return evaluate_journal_surface(text, animal_citations=animal, citation_outcome_map=cmap, declared_review_type=manifest.get("review_type"))
+        accountability_model = resolve_model(manifest.get("accountability_model"))
+        signoff, signoff_issues = load_and_validate(out_dir)
+        return evaluate_journal_surface(
+            text,
+            animal_citations=animal,
+            citation_outcome_map=cmap,
+            declared_review_type=manifest.get("review_type"),
+            accountability_model=accountability_model,
+            human_signoff_validated=signoff is not None and not signoff_issues,
+        )
     except (ImportError, ValueError):
         return None
 
@@ -2103,7 +2115,7 @@ def _revision_asks_unproven_human_longevity(feedback: str) -> bool:
 
 _FINALIZER_P_VALUE_RE = re.compile(r"\bp\s*(?:=|>|≥|>=)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
 _FINALIZER_CI_RE = re.compile(
-    r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?(-?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*(-?\d+(?:\.\d+)?)",
+    r"\b(?:CI|confidence interval)\b[^.\n;:]{0,80}?([+−-]?\d+(?:\.\d+)?)\s*(?:-|–|to)\s*([+−-]?\d+(?:\.\d+)?)",
     re.I,
 )
 _FINALIZER_SIGNIFICANT_RE = re.compile(r"\b(?:statistically\s+)?significant(?:ly)?\b", re.I)
@@ -2232,7 +2244,7 @@ def _numeric_sentence_overstates_significance(sentence: str) -> bool:
         if float(value) >= 0.05:
             return True
     for lo, hi in _FINALIZER_CI_RE.findall(sentence):
-        low, high = float(lo), float(hi)
+        low, high = float(lo.replace("−", "-")), float(hi.replace("−", "-"))
         if low <= 0 <= high or (low <= 1 <= high and min(abs(low), abs(high)) > 0):
             return True
     return False
@@ -5901,12 +5913,11 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     from agent.artifact_consistency import refresh_public_exports
     if refresh_public_exports(out_dir):
         _g("refresh_public_exports_post_finalizer", 1, "DOCX, Typst, PaperIR, and export manifest rebuilt from final Markdown")
-    package_paper = out_dir / "submission_package" / "final_manuscript.md"
-    if paper_path.is_file() and package_paper.is_file():
-        final_text = paper_path.read_text()
-        if package_paper.read_text() != final_text:
-            package_paper.write_text(final_text)
-            _g("refresh_submission_manuscript_post_finalizer", 1, "submission-package mirror refreshed from final Markdown")
+    package_dir = out_dir / "submission_package"
+    had_package = package_dir.exists()
+    if package_dir.exists():
+        shutil.rmtree(package_dir)
+        _g("invalidate_submission_package_post_finalizer", 1, "stale journal package removed; compose again after L5 convergence")
     if _refresh_audit_sidecar(out_dir):
         _g("refresh_audit_post_finalizer", 1, "full_paper.audit refreshed against post-finalizer manuscript")
     if _script_module("paper_quality_runtime").refresh_publication_score(out_dir):
@@ -5936,6 +5947,13 @@ def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
         _g("reconcile_readiness_contract_items", n_items, f"refreshed {n_items} stale readiness-contract item(s) against post-Phase-G sidecars")
     if _refresh_final_status(out_dir):
         _g("refresh_final_status_post_finalizer", 1, "final_status refreshed against post-finalizer sidecars")
+    if had_package:
+        try:
+            importlib.import_module("agent.submission_package").compose(out_dir)
+        except (ImportError, OSError, RuntimeError, TypeError, ValueError):
+            pass
+        else:
+            _g("recompose_submission_package_post_finalizer", 1, "journal package rebuilt from converged L5 artifacts")
     return log
 
 

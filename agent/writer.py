@@ -142,14 +142,15 @@ def _make_title(thesis: Claim, topic: str) -> str:
 def _render_claim_with_cites(claim: Claim) -> str:
     """Render a claim's text with its supporting citations appended.
 
-    If the claim text already contains `[N]` cites, leave them alone —
-    the fact_extractor pinned `Claim.text` to vetted prose, and we
-    don't want to double-cite. If no cites are in the text, append the
-    full supporting_refs list.
+    Existing numeric cites are retained only when they exactly match the
+    claim graph. Otherwise they are replaced by the graph-owned references.
     """
     text = claim.text.strip()
-    if _CITE_RE.search(text):
+    embedded = tuple(int(value) for value in _CITE_RE.findall(text))
+    if embedded and embedded == claim.supporting_refs:
         return text
+    if embedded:
+        text = re.sub(r"\s*\[\d+\]", "", text).strip()
     if not claim.supporting_refs:
         return text
     cites = " ".join(f"[{ref}]" for ref in claim.supporting_refs)

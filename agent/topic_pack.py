@@ -343,6 +343,16 @@ def load_topic_pack(path: str | Path) -> TopicPack:
         return load_topic_pack_data(tomllib.load(fh), p)
 
 
+_RETRIEVAL_AXIS_TOKENS = {
+    "adverse", "biomarker", "biomarkers", "cancer", "cardiovascular",
+    "duration", "durations", "effect", "effects", "intervention",
+    "aging", "healthspan", "lifespan", "longevity", "measurement", "metabolism", "method", "methods", "mortality",
+    "population", "prescription", "prescriptions", "rate", "rates",
+    "regimen", "regimens", "safety", "subgroup", "subgroups",
+    "therapy", "threshold", "thresholds", "treatment", "usage", "use",
+}
+
+
 def _anchor_topic_terms(topic: str, topic_terms: tuple[str, ...]) -> tuple[str, ...]:
     """Drop bare single-word retrieval terms that are non-entity slug
     modifiers — the lone ``cancer`` in ``resveratrol_cancer_thresholds`` or
@@ -367,6 +377,7 @@ def _anchor_topic_terms(topic: str, topic_terms: tuple[str, ...]) -> tuple[str, 
         if " " in term.strip()
         or term.strip().lower() == entity
         or term.strip().lower() not in modifiers
+        or term.strip().lower() not in _RETRIEVAL_AXIS_TOKENS
     )
     return kept or topic_terms
 

@@ -37,6 +37,7 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
     repair_abstract_claim_strength,
     repair_claim_strength,
 )
+from agent import publication_evidence as _publication_evidence  # noqa: E402
 from agent import revision_consistency as _revision_consistency, revision_quality as _revision_quality  # noqa: E402
 from agent.source_hygiene import is_notice_only_source_title  # noqa: E402
 from agent.manuscript_prisma import (  # noqa: E402
@@ -44,6 +45,7 @@ from agent.manuscript_prisma import (  # noqa: E402
     frozen_retrieval_record,
 )
 from agent.revision_evidence import (  # noqa: E402
+    RevisionEvidenceLock,
     SNAPSHOT_DIR,
     create_revision_evidence_snapshot,
     load_revision_evidence,
@@ -184,6 +186,7 @@ EXIT_EVIDENCE_INSUFFICIENT = 6
 EXIT_LOCAL_GATE_BLOCKED = 7
 EXIT_FINAL_STATUS_FAILED = 8
 EXIT_REQUIRED_ARTIFACT_INVALID = 9
+EXIT_RECEIPT_PROBE_COMPLETE = 10
 EXIT_TIMEOUT = 124
 
 _TOP_LEVEL_RUN_ARTIFACTS = frozenset({
@@ -192,6 +195,7 @@ _TOP_LEVEL_RUN_ARTIFACTS = frozenset({
     "manifest.json",
     "citation_registry.json",
     "full_paper.audit.json",
+    "full_paper.review_patches.json",
     "full_paper.consistency.json",
     "full_paper.final_verdict.json",
     "full_paper.journal_surface.json",
@@ -227,7 +231,6 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "full_paper.final_fixed_log.json",
         "full_paper.pre_review_template_repair_log.json",
         "full_paper.review_patch_log.json",
-        "full_paper.review_patches.json",
         "full_paper.template_repair_log.json",
         "numeric_claim_quarantine.json",
         "qei_quarantined.json",
@@ -1314,10 +1317,12 @@ def _author_year_token(receipt) -> str | None:
     return None
 
 
-def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
+def _manifest_receipt_dict(
+    receipt, citation_registry: dict, evidence: RevisionEvidenceLock | None = None,
+) -> dict[str, Any]:
     """Serialize receipt evidence and citation identity into the manifest."""
     entry = citation_registry.get(receipt.receipt_id)
-    return {
+    row = {
         "receipt_id": receipt.receipt_id,
         "topic": receipt.topic,
         "spar_verdict": receipt.spar_verdict,
@@ -1345,6 +1350,28 @@ def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
         "source_doi": receipt.source_doi,
         "source_pmid": receipt.source_pmid,
     }
+    proof_source = {
+        **row,
+        "id": receipt.receipt_id,
+        "title": receipt.source_title,
+        "doi": receipt.source_doi,
+        "pmid": receipt.source_pmid,
+        "excerpt": receipt.thesis_text,
+    }
+    proof = _publication_evidence.source_proof_fields(
+        proof_source, origin="full_text", evidence=evidence,
+        topic=receipt.topic, receipt_id=receipt.receipt_id,
+    )
+    if proof:
+        row.update({
+            "id": receipt.receipt_id,
+            "title": receipt.source_title,
+            "doi": receipt.source_doi,
+            "pmid": receipt.source_pmid,
+            "excerpt": receipt.thesis_text,
+            **proof,
+        })
+    return row
 
 
 def _claim_topic_effect(claim: dict) -> int:
@@ -1990,7 +2017,7 @@ def build_receipts_from_quant_claims(
     paper_class_map = _load_paper_class_map()
     receipt_contracts = receipt_contracts or {}
     aliases = source_gate_aliases(
-        topic, topic_aliases(topic, root=REPO_ROOT, include_generated_terms=False),
+        topic, topic_aliases(topic, root=REPO_ROOT),
     )
 
     # Group admittable claims by paper_id (PMC prefix → class lookup)
@@ -2069,7 +2096,9 @@ def build_receipts_from_quant_claims(
             receipt_path=str(QUANT_DIR / f"{paper_id}.quant_claims.json"),
             topic=topic,
             thesis_text=thesis_text,
-            spar_verdict="accept_clean",  # v0.6.0 high-conf passes our filter
+            # The v0.6 quant adapter does not run SPAR. Preserve deterministic
+            # admission without fabricating a panel verdict.
+            spar_verdict="deterministic_admitted",
             n_claims=agg["n_claims"],
             n_failed_traces=0,
             canonical_trial_id=_extract_canonical_trial_id(claims),
@@ -2945,8 +2974,8 @@ async def _run(
         )
     if dry_run:
         return _record_synthesis_exit(
-            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
-            "required_artifact_not_rendered_dry_run", ("full_paper.md",),
+            out_dir, _run_start_ts, EXIT_RECEIPT_PROBE_COMPLETE,
+            "receipt_probe_complete",
         )
 
     chain = _build_call_chain()
@@ -2966,8 +2995,16 @@ async def _run(
     writer_matrix = _citations.transform_matrix_for_writer(
         matrix, citation_registry,
     )
+    snapshot_evidence = RevisionEvidenceLock(
+        out_dir,
+        snapshot.get("receipt_contracts", {}),
+        QUANT_DIR,
+        PARSED_DIR,
+        snapshot_root / "citation_registry.json",
+        "snapshot",
+    )
     manifest_receipts = [
-        _manifest_receipt_dict(r, citation_registry) for r in receipts
+        _manifest_receipt_dict(r, citation_registry, snapshot_evidence) for r in receipts
     ]
     field_engagement = tuple(
         dataclasses.asdict(item)
@@ -3208,6 +3245,7 @@ async def _run(
         # background_literature for the active topic without
         # depending on module globals.
         "topic": _ACTIVE_TOPIC,
+        "topic_aliases": list(getattr(_TOPIC_PACK, "aliases_display", ()) or ()),
         "n_receipts": len(receipts),
         **source_fit_counts,
         "n_high_confidence_claims_total": sum(r.n_claims for r in receipts),
@@ -3394,6 +3432,15 @@ async def _run(
     return exit_code
 
 
+def _surface_accountability_context(
+    out_dir: Path, manifest: dict[str, Any],
+) -> tuple[str, bool]:
+    from agent.accountability import resolve_model
+    from agent.human_signoff import load_and_validate
+    signoff, issues = load_and_validate(out_dir)
+    return resolve_model(manifest.get("accountability_model")), signoff is not None and not issues
+
+
 def _write_stage5c_quality_gates(
     *, paper_path: Path, paper_md: str, manifest: dict[str, Any],
     citation_registry: dict[str, Any] | None, reviewer_patches: dict[str, int],
@@ -3410,9 +3457,14 @@ def _write_stage5c_quality_gates(
     )
     paper_path.with_suffix(".audit.json").write_text(json.dumps(audit_report, indent=2))
     paper_path.with_suffix(".audit.md").write_text(_audit_v06._format_summary(audit_report))
+    accountability_model, signoff_validated = _surface_accountability_context(
+        paper_path.parent, manifest,
+    )
     surface_report = journal_surface_gate.evaluate_journal_surface(
         paper_md, animal_citations=animal_citations, citation_outcome_map=citation_outcome_map,
         declared_review_type=manifest.get("review_type"),
+        accountability_model=accountability_model,
+        human_signoff_validated=signoff_validated,
     )
     surface_payload = {"passed": surface_report.passed, "issues": [dataclasses.asdict(issue) for issue in surface_report.issues]}
     paper_path.with_suffix(".journal_surface.json").write_text(json.dumps(surface_payload, indent=2))
@@ -3531,6 +3583,8 @@ async def _run_post_paper_pipeline(
         "[pipeline] Stage 3/5 — final-layer review (primary → fallback)...",
         file=sys.stderr,
     )
+    reviewer_available = True
+    reviewer_error = ""
     try:
         from agent.settings import load_settings as _load_settings
 
@@ -3545,18 +3599,20 @@ async def _run_post_paper_pipeline(
             citation_registry=citation_registry,
         )
     except RuntimeError as exc:
-        # No OPENROUTER_API_KEY OR both primary and fallback failed. Log
-        # but don't crash the whole run — the deterministic Layer 1
-        # work has already happened. The reviewer artifact records
-        # the gap for transparency.
+        # Preserve deterministic work, but record the missing review so the
+        # existing pre-submit gate blocks publication.
         print(
             f"[pipeline] final-layer review unavailable: {exc}",
             file=sys.stderr,
         )
         patches, model_used, cost = [], "none", 0.0
+        reviewer_available = False
+        reviewer_error = str(exc)
     paper_path.with_suffix(".review_patches.json").write_text(json.dumps({
         "model_used": model_used,
         "cost_usd": cost,
+        "review_available": reviewer_available,
+        "review_error": reviewer_error,
         "n_patches": len(patches),
         "patches": [
             {
@@ -3614,7 +3670,6 @@ async def _run_post_paper_pipeline(
                 _patch_applier._collapse_consecutive_qei_headings(paper_md)
             )
         paper_md = _strip_rendered_citation_markers(paper_md)
-        results = _resolve_absent_flagged_patches(results, paper_md)
 
         paper_path.write_text(paper_md)
         paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
@@ -3863,11 +3918,16 @@ async def _run_post_paper_pipeline(
     )
     try:
         from agent.journal_surface_gate import evaluate_journal_surface
+        accountability_model, signoff_validated = _surface_accountability_context(
+            out_dir, manifest,
+        )
         surface_report = evaluate_journal_surface(
             paper_md,
             animal_citations=_animal_citations,
             citation_outcome_map=_citation_outcome_map,
             declared_review_type=manifest.get("review_type"),
+            accountability_model=accountability_model,
+            human_signoff_validated=signoff_validated,
         )
         _surface_issues = tuple(
             f"{i.code}: {i.detail}" for i in surface_report.issues
@@ -4291,43 +4351,36 @@ async def _agent_repair_loop(
     return paper_md, results
 
 
-def _resolve_absent_flagged_patches(results: list[Any], paper_md: str) -> list[Any]:
-    """Mark reviewer P1 targets removed by finalization as applied."""
-    out: list[Any] = []
-    for r in results:
-        if (
-            r.decision in {"flagged", "rejected"}
-            and (r.severity or "").upper() in {"P1", "HIGH", "CRITICAL"}
-            and r.before
-            and r.before not in paper_md
-        ):
-            out.append(_patch_applier.PatchResult(
-                patch_id=r.patch_id,
-                patch_type=r.patch_type,
-                severity=r.severity,
-                decision="applied",
-                reason_for_decision=(
-                    "FINAL-CLEANUP-RESOLVED: unapplied BEFORE region "
-                    "is absent after deterministic section restoration "
-                    f"and cleanup. {r.reason_for_decision}"
-                ),
-                before=r.before,
-                after=r.after,
-            ))
-        else:
-            out.append(r)
-    return out
-
-
 def _is_unresolved_reviewer_p1(row: dict[str, Any]) -> bool:
-    return row.get("decision") in {"flagged", "rejected"} and str(row.get("severity") or "").upper() in {"P1", "HIGH", "CRITICAL"}
+    return row.get("decision") in {"flagged", "rejected"} and str(row.get("severity") or "").upper() not in {"P2", "P3"}
+
+
+def _reviewer_patch_log(out_dir: Path) -> tuple[list[dict[str, Any]], bool, bool]:
+    path = out_dir / "debug" / "full_paper.review_patch_log.json"
+    if not path.exists():
+        return [], False, True
+    try:
+        raw = json.loads(path.read_text())
+    except (OSError, ValueError, json.JSONDecodeError):
+        return [], True, False
+    rows = raw.get("patches") if isinstance(raw, dict) else None
+    if not isinstance(rows, list):
+        return [], True, False
+    valid = all(
+        isinstance(row, dict)
+        and isinstance(row.get("patch_id"), str)
+        and bool(row["patch_id"].strip())
+        and row.get("decision") in {
+            "applied", "applied_via_repair", "flagged", "rejected", "auto_stripped",
+        }
+        and str(row.get("severity") or "").upper() in {"P1", "P2", "P3"}
+        for row in rows
+    )
+    return [row for row in rows if isinstance(row, dict)], True, valid
 
 
 def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
-    try:
-        rows = json.loads((out_dir / "debug" / "full_paper.review_patch_log.json").read_text()).get("patches") or []
-    except (OSError, ValueError, json.JSONDecodeError):
-        return 0, 0, 0
+    rows, _exists, _valid = _reviewer_patch_log(out_dir)
     unresolved = sum(1 for r in rows if isinstance(r, dict) and _is_unresolved_reviewer_p1(r))
     flagged = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "flagged")
     stripped = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "auto_stripped")
@@ -4338,8 +4391,37 @@ def _reviewer_patches_for_gate(out_dir: Path, fallback_unresolved_p1: int) -> di
     if _resolve_absent_reviewer_p1s(out_dir):
         _refresh_post_finalizer_verdict(out_dir)
     unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
-    if not (out_dir / "debug" / "full_paper.review_patch_log.json").exists():
+    rows, log_exists, log_valid = _reviewer_patch_log(out_dir)
+    receipt_paths = (
+        out_dir / "full_paper.review_patches.json",
+        out_dir / "debug" / "full_paper.review_patches.json",
+    )
+    receipt_path = next((path for path in receipt_paths if path.is_file()), receipt_paths[0])
+    try:
+        review_receipt = json.loads(receipt_path.read_text())
+    except (OSError, json.JSONDecodeError, ValueError):
+        review_receipt = None
+    receipt_valid = (
+        isinstance(review_receipt, dict)
+        and isinstance(review_receipt.get("review_available"), bool)
+        and isinstance(review_receipt.get("patches"), list)
+    )
+    expected_ids = {
+        str(patch.get("id") or "").strip()
+        for patch in review_receipt.get("patches", [])
+        if isinstance(patch, dict) and str(patch.get("id") or "").strip()
+    } if receipt_valid else set()
+    logged_ids = {str(row.get("patch_id") or "").strip() for row in rows}
+    expected_log = log_exists or bool(review_receipt.get("patches")) if receipt_valid else True
+    if not log_exists:
         unresolved = max(0, int(fallback_unresolved_p1))
+    if (
+        not receipt_valid
+        or expected_log and (not log_exists or not log_valid or expected_ids != logged_ids)
+    ):
+        unresolved = max(1, unresolved)
+    elif review_receipt.get("review_available") is False:
+        unresolved = max(1, unresolved)
     return {
         "unresolved_p1_count": unresolved,
         "flagged_p1_count": flagged,
@@ -4350,7 +4432,7 @@ def _reviewer_patches_for_gate(out_dir: Path, fallback_unresolved_p1: int) -> di
 def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
     try:
         text = (out_dir / "full_paper.md").read_text()
-        patches = json.loads((out_dir / "debug" / "full_paper.review_patches.json").read_text()).get("patches") or []
+        patches = json.loads((out_dir / "full_paper.review_patches.json").read_text()).get("patches") or []
         log_path = out_dir / "debug" / "full_paper.review_patch_log.json"
         log = json.loads(log_path.read_text())
     except (OSError, ValueError, json.JSONDecodeError):
@@ -4361,7 +4443,6 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
     changed = 0
     for row in log.get("patches") or []:
         patch = patch_by_id.get(str(row.get("patch_id"))) if isinstance(row, dict) else None
-        target = str(patch.get("before") or "") if isinstance(patch, dict) else ""
         if not (isinstance(row, dict) and _is_unresolved_reviewer_p1(row)):
             continue
         reason = str(row.get("reason_for_decision") or "")
@@ -4376,7 +4457,6 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
                 duplicate_heading
                 and _heading_occurrences(duplicate_heading, text) <= 1
             )
-            or (not duplicate_heading and target and target not in text)
             or animal_role_resolved
         ):
             row["decision"] = "applied"
@@ -4386,7 +4466,7 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
                 else (
                     "animal/preclinical source is explicitly contextual in the final Findings Map"
                     if animal_role_resolved
-                    else "flagged BEFORE region is absent after deterministic finalization"
+                    else "animal/preclinical source is explicitly contextual in the final Findings Map"
                 )
             )
             row["reason_for_decision"] = "FINALIZER-RESOLVED: " + detail + ". " + reason

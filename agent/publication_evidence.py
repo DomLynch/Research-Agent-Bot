@@ -70,19 +70,31 @@ def source_proof_fields(
         record = json.loads(raw.decode("utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         return {}
-    excerpt = _normalized_text(row.get("excerpt"))
+    source_text = _record_text(record)
+    excerpt = exact_source_quote(row.get("excerpt"), source_text)
+    if not excerpt:
+        source_fragments = re.split(
+            r"\bsource excerpts:\s*", _normalized_text(row.get("excerpt")),
+            maxsplit=1, flags=re.I,
+        )
+        excerpt = next((
+            quote for fragment in source_fragments[-1].split(" | ")
+            if (quote := exact_source_quote(fragment, source_text))
+        ), None)
     source_run = evidence.source_run.name if evidence.source_run else "unknown"
     locator = f"revision-snapshot:{source_run}:{topic}:{receipt_id}"
     identity_hash = source_identity_hash(
         {**row, "source_record_locator": locator}, origin=origin,
     )
-    if not excerpt or not exact_source_quote(excerpt, _record_text(record)) or not identity_hash:
+    if not excerpt or not identity_hash:
         return {}
     quote = _normalized_text(row.get("quote"))
     return {
         "evidence_origin": origin,
         "source_record_locator": locator,
         "source_record_hash": "sha256:" + hashlib.sha256(raw).hexdigest(),
+        "source_record_verified": True,
+        "excerpt": excerpt,
         "source_content_hash": _sha256_text(excerpt),
         "source_identity_hash": identity_hash,
         "quote_verified": bool(quote and exact_source_quote(quote, excerpt)),
@@ -96,8 +108,10 @@ def source_proof_is_valid(row: dict[str, Any]) -> bool:
     if (
         origin not in SOURCE_PROOF_ORIGINS
         or not excerpt
-        or not locator
+        or row.get("source_record_verified") is not True
+        or not re.fullmatch(r"revision-snapshot:[^:\s]+:[^:\s]+:[^:\s]+", locator)
         or not re.fullmatch(r"sha256:[0-9a-f]{64}", str(row.get("source_record_hash") or ""))
+        or row.get("source_record_hash") == "sha256:" + "0" * 64
         or row.get("source_content_hash") != _sha256_text(excerpt)
         or row.get("source_identity_hash") != source_identity_hash(row, origin=origin)
     ):
@@ -106,6 +120,23 @@ def source_proof_is_valid(row: dict[str, Any]) -> bool:
     evidence_span = _normalized_text(row.get("evidence_span"))
     quote_ok = not quote or row.get("quote_verified") is True and exact_source_quote(quote, excerpt)
     return bool(quote_ok and (not evidence_span or exact_source_quote(evidence_span, excerpt)))
+
+
+def source_proof_matches_record(row: dict[str, Any], source_path: Path) -> bool:
+    """Verify a structural proof against the retained source-record bytes."""
+    receipt_id = _normalized_text(row.get("receipt_id") or row.get("id"))
+    locator = _normalized_text(row.get("source_record_locator"))
+    if not source_proof_is_valid(row) or not receipt_id or locator.rsplit(":", 1)[-1] != receipt_id:
+        return False
+    try:
+        raw = source_path.read_bytes()
+        record = json.loads(raw.decode("utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return False
+    return bool(
+        row.get("source_record_hash") == "sha256:" + hashlib.sha256(raw).hexdigest()
+        and exact_source_quote(row.get("excerpt"), _record_text(record))
+    )
 
 
 def verified_source_span(row: dict[str, Any]) -> str:

@@ -402,6 +402,21 @@ def test_anchor_keeps_non_slug_single_word_synonyms() -> None:
     assert {"nad", "niacinamide", "nicotinamide riboside"} <= set(out)
 
 
+def test_anchor_keeps_named_co_entity_but_drops_broad_axes() -> None:
+    assert _anchor_topic_terms(
+        "sirolimus_rapamycin_effects",
+        ("sirolimus rapamycin effects", "sirolimus", "rapamycin"),
+    ) == ("sirolimus rapamycin effects", "sirolimus", "rapamycin")
+    assert _anchor_topic_terms(
+        "metabolism_cardiovascular_effects",
+        ("metabolism cardiovascular effects", "metabolism", "cardiovascular"),
+    ) == ("metabolism cardiovascular effects", "metabolism")
+    assert _anchor_topic_terms(
+        "rapamycin_lifespan_effects",
+        ("rapamycin lifespan effects", "rapamycin", "lifespan"),
+    ) == ("rapamycin lifespan effects", "rapamycin")
+
+
 def test_anchor_is_noop_for_clean_single_entity_pack() -> None:
     # Working topics (every term already entity-anchored) are unchanged.
     terms = ("semaglutide intervention semaglutide 2.4 mg effects",

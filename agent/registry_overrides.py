@@ -44,7 +44,7 @@ import re
 from agent.topic_pack import OverrideRecord, TopicPack
 from agent.types import Source
 
-__all__ = ["lookup_override"]
+__all__ = ["lookup_override", "resolve_override"]
 
 # Match `ISRCTN` followed by 1+ digits, case-insensitive. Required because
 # the same string `ISRCTN` appears in the domain `isrctn.com` (no digits
@@ -62,64 +62,57 @@ _ISRCTN_RE = re.compile(r"ISRCTN(\d+)", re.IGNORECASE)
 _NCT_RE = re.compile(r"\bNCT\d{8}\b", re.IGNORECASE)
 
 
-def lookup_override(
-    source: Source,
-    pack: TopicPack | None,
-    abstract: str = "",
-) -> OverrideRecord | None:
-    """Return the pinned override for a Source, or None.
+def lookup_override(source: Source, pack: TopicPack | None,
+                    abstract: str = "") -> OverrideRecord | None:
+    """Return one unambiguous pinned override across structured and declared IDs."""
+    return resolve_override(source, pack, abstract=abstract)[0]
 
-    Lookup precedence (each step short-circuits on a hit):
-      1. NCT (`source.nct`) — primary registry id for clinicaltrials.gov
-         hits; the adapter normally populates this.
-      2. ISRCTN-in-URL — only if `source.url` carries the marker `ISRCTN`.
-         Source has no dedicated ISRCTN field; the V1.1 retrieval adapters
-         encode it in URL.
-      3. NCT/ISRCTN in `abstract` — Day 3.0 addition. PubMed and OpenAlex
-         routinely return papers with the trial registry id only in the
-         abstract text (e.g., "ClinicalTrials.gov Identifier: NCT02308228")
-         rather than in any structured field. Without this scan, the live
-         retrieval misses canonical-trial overrides whenever the
-         dedup-merge with CT.gov doesn't fire.
 
-    Returns None if:
-      - pack is None (caller didn't load a topic pack)
-      - source has no NCT, no ISRCTN-URL, and no NCT/ISRCTN in abstract
-      - none of the above ids are in the pack's known_role_overrides table
-
-    None means: fall through to role_classifier.classify_role with the
-    abstract as input. The override is opt-in by registry hit, not a
-    requirement.
-    """
+def resolve_override(source: Source, pack: TopicPack | None,
+                     abstract: str = "") -> tuple[OverrideRecord | None, bool]:
+    """Return the override and whether known registry identities conflict."""
     if pack is None:
-        return None
+        return None, False
 
-    # 1. NCT in source.nct — most clinicaltrials.gov adapter results.
+    structured_ids: set[str] = set()
     if source.nct:
-        record = pack.lookup_role_override(source.nct)
-        if record is not None:
-            return record
+        structured_ids.add(source.nct.upper())
 
-    # 2. ISRCTN in source.url — V1.1 adapters encode ISRCTN ids in URLs.
     if source.url:
         isrctn_id = _extract_isrctn(source.url)
         if isrctn_id is not None:
-            record = pack.lookup_role_override(isrctn_id)
-            if record is not None:
-                return record
+            structured_ids.add(isrctn_id)
 
-    # 3. NCT or ISRCTN in abstract — Day 3.0 addition.
+    declared_ids: set[str] = set()
     if abstract:
-        for nct_match in _NCT_RE.findall(abstract):
-            record = pack.lookup_role_override(nct_match)
-            if record is not None:
-                return record
-        for isrctn_match in _ISRCTN_RE.findall(abstract):
-            record = pack.lookup_role_override(f"ISRCTN{isrctn_match}")
-            if record is not None:
-                return record
+        registration_context = re.compile(
+            r"(?:clinicaltrials\.gov(?:\s+(?:identifier|registration|number))?\s*:|"
+            r"clinicaltrials\.gov\s+(?:identifier|registration|number)|"
+            r"(?:trial\s+)?(?:registered|registration)\s*(?::\s*|(?:as|number)\s*)?|"
+            r"registration\s+(?:identifier|number))",
+            re.I,
+        )
+        declared_ids = {
+            identifier.upper()
+            for match in registration_context.finditer(abstract)
+            for identifier in (
+                *_NCT_RE.findall(abstract[match.start():match.end() + 120]),
+                *(f"ISRCTN{value}" for value in _ISRCTN_RE.findall(
+                    abstract[match.start():match.end() + 120]
+                )),
+            )
+        }
+    identities = structured_ids | declared_ids
+    matches = {
+        identifier: record for identifier in sorted(identities)
+        if (record := pack.lookup_role_override(identifier)) is not None
+    }
+    # Every supplied identity must resolve, and all resolutions must agree.
+    # A known ID beside an unknown or conflicting ID is ambiguous.
+    if len(identities) == 1 and matches.keys() == identities:
+        return next(iter(matches.values())), False
 
-    return None
+    return None, bool(matches)
 
 
 def _extract_isrctn(url: str) -> str | None:

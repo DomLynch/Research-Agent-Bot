@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 from agent.evidence_cards import bundle
-from agent.registry_overrides import _extract_isrctn, lookup_override
+from agent.registry_overrides import _extract_isrctn, lookup_override, resolve_override
 from agent.topic_pack import TopicPack, load_topic_pack
 from agent.types import Source
 
@@ -157,16 +157,43 @@ def test_lookup_override_hits_on_nct_in_abstract(metformin_pack: TopicPack) -> N
     assert rec.tier == "A1"
 
 
+def test_lookup_override_accepts_id_before_registration_and_deduplicates(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct=None)
+    abstract = (
+        "NCT04264897 was registered as the trial identifier. "
+        "The trial was registered as NCT04264897 before enrollment."
+    )
+
+    rec = lookup_override(src, metformin_pack, abstract=abstract)
+
+    assert rec is not None
+    assert rec.role == "registered_pending"
+
+
+@pytest.mark.parametrize(
+    "other_id",
+    ["NCT99999999", "NCT02308228"],
+)
+def test_lookup_override_rejects_ambiguous_declared_registry_ids(
+    metformin_pack: TopicPack, other_id: str,
+) -> None:
+    src = _src(nct=None)
+    abstract = f"The trial was registered as NCT04264897 and {other_id}."
+
+    assert lookup_override(src, metformin_pack, abstract=abstract) is None
+
+
 def test_lookup_override_hits_on_first_known_nct_in_abstract(
     metformin_pack: TopicPack,
 ) -> None:
-    """Multiple NCTs in the abstract — first KNOWN match wins."""
+    """Incidental registry mentions do not pin a source role."""
     src = _src(nct=None)
     # NCT99999999 is unknown; NCT02308228 is MASTERS; NCT04264897 is TAME.
     abstract = "compared NCT99999999 baseline against NCT02308228 results."
     rec = lookup_override(src, metformin_pack, abstract=abstract)
-    assert rec is not None
-    assert rec.role == "published_results"  # MASTERS, not the unknown one
+    assert rec is None
 
 
 def test_lookup_override_hits_on_isrctn_in_abstract(
@@ -210,6 +237,70 @@ def test_lookup_override_source_nct_takes_precedence_over_abstract(
     assert rec.role == "published_results"
 
 
+def test_lookup_override_rejects_conflicting_structured_and_declared_ids(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT02308228")
+    abstract = "The trial was registered as NCT04264897."
+
+    assert lookup_override(src, metformin_pack, abstract=abstract) is None
+
+
+def test_lookup_override_detects_clinicaltrials_number_conflict(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT02308228")
+    abstract = "Funded study; ClinicalTrials.gov number NCT04264897."
+
+    record, conflict = resolve_override(src, metformin_pack, abstract=abstract)
+
+    assert record is None
+    assert conflict is True
+
+
+def test_lookup_override_detects_colon_registration_conflict(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT02308228")
+    abstract = "Trial registration: ClinicalTrials.gov NCT04264897."
+
+    record, conflict = resolve_override(src, metformin_pack, abstract=abstract)
+
+    assert record is None
+    assert conflict is True
+
+
+def test_lookup_override_detects_clinicaltrials_colon_conflict(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT02308228")
+    abstract = "Trial registration: ClinicalTrials.gov: NCT04264897."
+
+    record, conflict = resolve_override(src, metformin_pack, abstract=abstract)
+
+    assert record is None
+    assert conflict is True
+
+
+def test_lookup_override_rejects_unknown_structured_id_beside_known_declaration(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT99999999")
+    abstract = "The trial was registered as NCT02308228."
+
+    assert lookup_override(src, metformin_pack, abstract=abstract) is None
+
+
+def test_lookup_override_accepts_matching_structured_and_declared_ids(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT02308228")
+    abstract = "ClinicalTrials.gov Identifier: NCT02308228."
+
+    rec = lookup_override(src, metformin_pack, abstract=abstract)
+    assert rec is not None and rec.role == "published_results"
+
+
 def test_lookup_override_empty_abstract_arg_does_no_extra_work(
     metformin_pack: TopicPack,
 ) -> None:
@@ -231,6 +322,32 @@ def test_lookup_override_abstract_scan_returns_none_for_no_known_ids(
     abstract = "compared NCT99999999 to NCT00000001 in a meta-analysis."
     rec = lookup_override(src, metformin_pack, abstract=abstract)
     assert rec is None
+
+
+def test_bundle_rejects_conflicting_known_registry_identities(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT02308228", title="Conflicting trial identity")
+    abstract = "Trial registered as NCT04264897 in ClinicalTrials.gov registration."
+
+    assert lookup_override(src, metformin_pack, abstract=abstract) is None
+    assert bundle(
+        [src], {src.ref: abstract}, topic="metformin", domain="longevity",
+        topic_pack=metformin_pack,
+    ) == []
+
+
+def test_bundle_rejects_distinct_known_ids_with_equal_overrides(
+    metformin_pack: TopicPack,
+) -> None:
+    src = _src(nct="NCT02308228", title="Conflicting published-trial identities")
+    abstract = "Trial registered as NCT01765946 in ClinicalTrials.gov registration."
+
+    assert lookup_override(src, metformin_pack, abstract=abstract) is None
+    assert bundle(
+        [src], {src.ref: abstract}, topic="metformin", domain="longevity",
+        topic_pack=metformin_pack,
+    ) == []
 
 
 # --- Day 3.0 follow-up: case-insensitivity of registry IDs (P2 fix) -------

@@ -195,11 +195,13 @@ def generate_candidate_topic_pack(
     topic_name: str,
     *,
     seed_terms: tuple[str, ...] = (),
+    query_anchor: str | None = None,
 ) -> GeneratedTopicPack:
     topic = _clean_topic(topic_name)
     classification = classify_topic(topic, seed_terms)
     aliases = _dedupe((topic, topic.replace("-", " "), *seed_terms))
-    topic_terms = _dedupe((topic, *seed_terms, *precursor_terms(topic, seed_terms)))
+    anchor = _clean_topic(query_anchor) if query_anchor else topic
+    topic_terms = _dedupe((anchor, topic, *seed_terms, *precursor_terms(topic, seed_terms)))
     pack = GeneratedTopicPack(
         topic=topic,
         slug=slugify(topic),
@@ -361,13 +363,11 @@ def _clean_topic(value: str) -> str:
 
 
 def _queries(topic_terms: tuple[str, ...]) -> tuple[str, ...]:
-    queries: list[str] = []
-    for term in topic_terms[:5]:
-        queries.extend((
-            f"{term} aging",
-            f"{term} older adults",
-            f"{term} randomized controlled trial",
-        ))
+    anchor, *context = topic_terms
+    queries = [f"{anchor} aging", f"{anchor} older adults", f"{anchor} randomized controlled trial"]
+    for term in context[:3]:
+        combined = term if re.search(rf"(?<!\w){re.escape(anchor)}(?!\w)", term, re.I) else f"{anchor} {term}"
+        queries.extend((combined, f"{combined} randomized controlled trial"))
     return _dedupe(queries)[:10]
 
 

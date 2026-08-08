@@ -24,6 +24,7 @@ from agent.synthesis_schemas import (
     ReceiptSummary,
     SynthesisPaper,
 )
+from agent.synthesis_writer import is_accepted_for_synthesis
 
 __all__ = ["check_q8", "check_q9", "check_q10", "check_q11"]
 
@@ -80,13 +81,7 @@ def check_q8(
     """Quarantined receipts may only appear in the Rejected/Contested,
     Methods, or References sections. Day 10.10 trust-spine rule:
     rejected evidence must not be cited in headline prose."""
-    # Defensive: spar_verdict could be None or have unexpected casing
-    # if a malformed receipt slips through; treat anything not starting
-    # with "accept" (case-insensitive) as rejected.
-    rejected = [
-        r for r in receipts
-        if not (r.spar_verdict or "").lower().startswith("accept")
-    ]
+    rejected = [r for r in receipts if not is_accepted_for_synthesis(r)]
     if not rejected:
         return QualityCheckResult(
             question_id="Q8-quarantine-leakage",

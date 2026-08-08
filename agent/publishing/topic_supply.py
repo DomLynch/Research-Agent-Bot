@@ -28,13 +28,17 @@ def discover_topics(
         for path in topic_packs.glob("*.toml")
         if not path.stem.startswith("_")
     }
-    peer_records = generated_pack_records(topic_pack_db)
+    peer_records = [
+        record for record in generated_pack_records(topic_pack_db)
+        if generated_pack_publishable(record, peer_records=())
+    ]
     for path in topic_pack_db.glob("*/latest.json"):
         record = _generated_record(path)
         if (
             not path.parent.name.startswith("_")
             and record is not None
             and isinstance(record.get("pack_data"), dict)
+            and record["pack_data"].get("topic") == path.parent.name
             and generated_pack_publishable(record, peer_records=peer_records)
         ):
             topics.add(path.parent.name)

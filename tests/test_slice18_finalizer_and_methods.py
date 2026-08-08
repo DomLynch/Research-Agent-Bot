@@ -313,6 +313,8 @@ def _make_run(tmp_path: Path, *, surface_passed: bool,
     (run / "submission_package" / "final_manuscript.md").write_text(paper)
     (run / "manifest.json").write_text(json.dumps({
         "accountability_model": accountability_model,
+        "n_receipts": 1,
+        "receipts": [{"receipt_id": "stub", "n_claims": 0}],
     }))
     # Authoritative surface report (post-finalizer)
     (run / "full_paper.journal_surface.json").write_text(json.dumps({
@@ -343,7 +345,10 @@ def _make_run(tmp_path: Path, *, surface_passed: bool,
     }))
     # Spine artifacts so researka_check passes when needed
     (run / "citation_registry.json").write_text(json.dumps({
-        "stub": {"body_citation": "Stub 2026"},
+        "stub": {"receipt_id": "stub", "body_citation": "Stub 2026"},
+    }))
+    (run / "full_paper.review_patches.json").write_text(json.dumps({
+        "review_available": True, "patches": [],
     }))
     if artifact_consistency:
         (run / "artifact_consistency.json").write_text(json.dumps({
@@ -535,12 +540,10 @@ def test_phase_g_writes_consistency_before_readiness_contract(
     item_13 = next(i for i in gate["journal_readiness_contract"] if i["id"] == 13)
 
     assert (run / "artifact_consistency.json").is_file()
-    assert (run / "submission_package" / "final_manuscript.md").read_text() == (
-        run / "full_paper.md"
-    ).read_text()
+    assert not (run / "submission_package").exists()
     assert item_13["name"] == "accountability"
     assert item_13["status"] == "pass"
-    assert "refresh_submission_manuscript_post_finalizer" in [e.rule for e in log]
+    assert "invalidate_submission_package_post_finalizer" in [e.rule for e in log]
     assert "refresh_artifact_consistency_post_finalizer" in [e.rule for e in log]
 
 

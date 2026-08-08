@@ -84,13 +84,12 @@ WRITER_VERSION = "synthesis-writer/2026-04-29-day10-10"
 # for transparency but do NOT contribute to direct/indirect/synthesis
 # bullets, the thesis tournament, or the cross-source gate.
 ACCEPTED_VERDICTS: frozenset[str] = frozenset({
-    "accept_clean", "accept_caveated",
+    "accept_clean", "accept_caveated", "deterministic_admitted",
 })
 
 
 def is_accepted_for_synthesis(receipt: ReceiptSummary) -> bool:
-    """Trust-spine gate: a receipt is eligible to be cited as evidence
-    in the synthesis layer iff SPAR accepted it."""
+    """Trust-spine gate for SPAR-accepted or deterministically admitted receipts."""
     return receipt.spar_verdict in ACCEPTED_VERDICTS
 
 
@@ -134,9 +133,10 @@ def validate_anchored_sentence(
     if not referenced_ids:
         return False, "no_receipt_anchor"
     # Numeric check
+    referenced = set(referenced_ids)
     receipt_numeric_corpus = _normalize(" ".join(
         " ".join(r.p_values) + " " + r.thesis_text
-        for r in receipts
+        for r in receipts if r.receipt_id in referenced
     ))
     for m in _NUMERIC_RE.finditer(sentence):
         tok = _normalize(m.group(0))
