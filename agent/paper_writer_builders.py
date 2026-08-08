@@ -115,10 +115,15 @@ def _numeric_token(text: str) -> str:
 
 
 def _accepted_numeric_tokens(receipts: Sequence[ReceiptSummary]) -> set[str]:
+    # population_summary is source-derived text (e.g. "older adults, age 65+")
+    # and carries the enrolment numerics a paragraph legitimately cites. Omitting
+    # it made the guard reject sample sizes that DO trace to a receipt -- observed
+    # live as novel_numeric:n=125 while 125 was present in the corpus. Still
+    # source-bounded: nothing outside the receipts is admitted.
     corpus = " ".join(
         value
         for receipt in receipts
-        for value in (*receipt.p_values, receipt.thesis_text)
+        for value in (*receipt.p_values, receipt.thesis_text, receipt.population_summary)
     )
     return {_numeric_token(match.group(0)) for match in _NUMERIC_RE.finditer(corpus)}
 

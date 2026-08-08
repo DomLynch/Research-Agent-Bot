@@ -400,3 +400,26 @@ def test_bare_single_paragraph_is_accepted() -> None:
     assert _paragraph_list(wrapped) == wrapped["paragraphs"]
 
     assert _paragraph_list({"unrelated": 1}) == []
+
+
+def test_enrolment_numerics_from_population_summary_are_traceable() -> None:
+    """A sample size stated in the source must not read as fabricated.
+
+    population_summary is source-derived, but was excluded from the accepted
+    numeric set, so a paragraph citing the enrolment count was rejected with
+    novel_numeric even though the value traced to a receipt.
+    """
+    from agent.paper_writer_builders import _accepted_numeric_tokens, _check_anchored_paragraph
+    from agent.synthesis_schemas import ReceiptSummary
+
+    r = ReceiptSummary(
+        receipt_id="r1", receipt_path="/tmp/r1", topic="t", thesis_text="No numbers here.",
+        spar_verdict="accept_clean", n_claims=1, n_failed_traces=0, canonical_trial_id=None,
+        evidence_tier="A1", directness="direct", outcome_class="cardiometabolic",
+        effect_direction="null", p_values=(), population_summary="adults, n=125",
+    )
+    assert "n=125" in _accepted_numeric_tokens([r])
+    ok, reason = _check_anchored_paragraph(
+        "The trial enrolled n=125 participants.", ["r1"], {"r1"}, _accepted_numeric_tokens([r]),
+    )
+    assert ok, reason
