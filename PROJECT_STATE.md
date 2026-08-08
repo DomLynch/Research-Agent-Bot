@@ -686,3 +686,29 @@ numbers -- 1.22 really is absent, so the guard must still reject that one.
 LESSON: verify the file exists before trusting a zero-match grep. This is the
 second time today a missing/mismatched artifact produced a confident wrong
 conclusion.
+
+### CORRECTION 3: the retraction overcorrected (2026-08-08)
+
+The retraction above claimed 3.8 appeared 3 times in the corpus and was being
+wrongly rejected. That count came from `grep -o "3.8"` with an UNESCAPED dot,
+which matches any character -- it was counting 328, 3x8, etc.
+
+With `grep -o "3\.8"` the real counts against
+...2026-08-08T06-06-26Z-R2/receipt_funnel.json are:
+
+    n=125 : 1   PRESENT  -> was wrongly rejected; fixed by ad1417dc
+    3.8   : 0   ABSENT   -> correctly rejected (model invented it)
+    1.22  : 0   ABSENT   -> correctly rejected
+
+So the anti-fabrication guard was substantially CORRECT. Only the enrolment case
+was a real defect: population_summary was omitted from _accepted_numeric_tokens,
+so a paragraph citing its own sample size read as fabricated. ad1417dc fixes
+exactly that and nothing more, which is the right scope.
+
+Do not widen the numeric guard further on the strength of the retraction note --
+it was based on a bad regex.
+
+LESSON (third time today): escape dots in grep, and verify the file exists
+before trusting a count. Three wrong conclusions today came from bad evidence
+gathering, not bad reasoning: mismatched run artifacts, a grep on a missing
+file, and an unescaped regex dot.
