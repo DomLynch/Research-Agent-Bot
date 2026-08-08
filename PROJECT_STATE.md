@@ -511,3 +511,28 @@ _phase_l_strengthen_analytical_sections changing this section (+220), so the
 loss likely happens in the post-loop passes
 (_phase_m_strip_surface_duplicate_paragraphs / review_noise_control) rather than
 the numbered phases.
+
+### Finalizer EXONERATED for the 964 -> 680 loss (2026-08-08)
+
+Measured on the rendered artifact of run ...2026-08-08T06-43-47Z-R2:
+
+    rendered Cross-Domain: 680 words (floor 850)
+      +0  _phase_m_strip_surface_duplicate_paragraphs
+      +0  _phase_m_repair_surface_artifacts
+      +0  review_noise_control.apply_review_noise_control
+
+An earlier per-phase probe over the numbered _phase_* functions found only
+_phase_l_strengthen_analytical_sections changing this section, and it ADDS
+(+220). So neither the numbered phases nor the post-loop passes remove the
+~280 words.
+
+CONCLUSION: the loss is UPSTREAM, inside the writer. _write_anchored_section
+keeps the best-scoring attempt (logged 964) and THEN calls
+_run_citation_fix_pass, which re-invokes build_anchored_from_parsed on a fresh
+LLM response and overwrites `best` with whatever it returns -- including a
+shorter section. That is the prime suspect and is where to look next:
+agent/paper_writer.py, the `best = await _run_citation_fix_pass(...)`
+assignment right after the retry loop. Consider keeping the longer of the two
+rather than unconditionally replacing, since the word floor is the binding gate.
+
+Do NOT re-investigate journal_finalizer for this. It is measured clean.
