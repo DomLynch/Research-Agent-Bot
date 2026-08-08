@@ -479,3 +479,35 @@ cross_domain_synthesis is ordered/emitted and why it is skipped while
 discussion/conclusion survive. Check whether it is gated on something
 (e.g. a matrix/tension precondition) that silently omits the section rather
 than emitting a short one.
+
+### 2026-08-08 SAME-RUN evidence — corrects two wrong theories
+
+Run synthesis-liraglutide_adverse_effects-v06-DAILY-2026-08-08T06-43-47Z-R2,
+log and rendered paper from the SAME run (earlier comparisons mixed two runs
+and were invalid):
+
+    cross-domain headings in full_paper.md : 1     <- present
+    total "##" sections                    : 14
+    paper words                            : 9781
+    writer built cross_domain_synthesis    : 964 words
+    rendered cross_domain_synthesis        : 680 words
+
+WRONG THEORY 1 (heading collision): there is exactly ONE heading. Not duplicated,
+not mis-levelled.
+WRONG THEORY 2 (section dropped): it renders. Not dropped by section ordering;
+_FULL_PAPER_SECTION_ORDER includes it and the paper rendered full, not thin.
+
+REAL REMAINING ISSUE: the finalizer repair stack SHRINKS the section, 964 -> 680
+against an 850 floor. Same erosion seen earlier (295 -> 256). Stage 5c now reads:
+
+    structure_surface: section too short: Cross-Domain Synthesis 680/850 words
+    structure_surface: empty heading: Conclusion
+
+NEXT: measure per-phase word delta on the RENDERED section (a phase harness over
+journal_finalizer phases applied to this run dir), find which phase removes ~280
+words from cross_domain_synthesis, and stop it removing content from a section
+already under its floor. Note an earlier per-phase probe found only
+_phase_l_strengthen_analytical_sections changing this section (+220), so the
+loss likely happens in the post-loop passes
+(_phase_m_strip_surface_duplicate_paragraphs / review_noise_control) rather than
+the numbered phases.
