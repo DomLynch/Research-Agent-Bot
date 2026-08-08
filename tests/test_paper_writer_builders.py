@@ -350,3 +350,34 @@ def test_untraceable_statistic_is_still_rejected() -> None:
         ["r1"], {"r1"}, set(),
     )
     assert not ok and "novel_numeric" in reason, reason
+
+
+def test_writer_word_count_matches_the_gate() -> None:
+    """The retry loop must optimise the number the gate enforces.
+
+    section_word_count used to count split() over text still carrying the
+    per-paragraph "_Cited: `id`_" markers the builder appends, while the gate
+    counts \\b\\w+\\b over full_paper.md after render strips them. On a live run
+    the writer saw 964 words and stopped retrying; the gate saw 680 against an
+    850 floor and failed the manuscript.
+    """
+    import re as _re
+
+    from agent.paper_writer import _strip_rendered_citation_markers as _strip
+    from agent.paper_writer_helpers import section_word_count
+    from agent.synthesis_schemas import SynthesisSection
+
+    body = "## Cross-Domain Synthesis\n\n"
+    for _ in range(5):
+        body += "Liraglutide reduced the endpoint in the pooled analysis. " * 4 + "\n\n"
+        body += "  _Cited: `cfab-c01`, `cfab-c02`, `cfab-c03`_\n\n"
+
+    writer = section_word_count(
+        SynthesisSection(name="cross_domain_synthesis", body_md=body, anchors=()),
+    )
+    match = _re.search(
+        r"^##\s+Cross-Domain Synthesis\b.*?\n(.*?)\Z", _strip(body), _re.M | _re.S,
+    )
+    assert match is not None
+    gate = len(_re.findall(r"\b\w+\b", match.group(1)))
+    assert writer == gate, f"writer {writer} != gate {gate}"
