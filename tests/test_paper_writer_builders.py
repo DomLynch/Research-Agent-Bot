@@ -335,7 +335,7 @@ def test_calendar_year_is_not_treated_as_a_fabricated_numeric() -> None:
     from agent.paper_writer_builders import _check_anchored_paragraph
 
     ok, reason = _check_anchored_paragraph(
-        "A 2025 randomized trial reported the endpoint.",
+        "Smith et al. (2025) reported the endpoint.",
         ["r1"], {"r1"}, set(),
     )
     assert ok, f"year must not be a fabricated numeric (got {reason})"

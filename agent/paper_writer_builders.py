@@ -113,6 +113,7 @@ def _topic_aliases(topic: str) -> tuple[str, ...]:
 # Four-digit years are bibliographic only when their prose context says so.
 _CALENDAR_YEAR_RE = re.compile(r"(?:19|20)\d{2}")
 _YEAR_PREFIX_RE = re.compile(r"\b(?:in|from|since|during|by)\s*$", re.IGNORECASE)
+_YEAR_CITATION_RE = re.compile(r"\b[A-Z][A-Za-z'’-]+(?:\s+et\s+al\.)?\s*\(?\s*$")
 _YEAR_STUDY_RE = re.compile(
     r"\s*(?:(?:randomi[sz]ed|prospective|retrospective|observational|clinical)\s+)*"
     r"(?:trial|study|cohort|report|analysis|publication|paper|review|registry)\b",
@@ -137,7 +138,7 @@ def _is_bibliographic_year(text: str, match: re.Match[str]) -> bool:
     after = text[match.end():match.end() + 40]
     if _YEAR_COUNT_RE.match(after):
         return False
-    return bool(_YEAR_PREFIX_RE.search(before) or _YEAR_STUDY_RE.match(after))
+    return bool(_YEAR_PREFIX_RE.search(before) or _YEAR_STUDY_RE.match(after) or _YEAR_CITATION_RE.search(before))
 
 
 def _accepted_numeric_tokens(receipts: Sequence[ReceiptSummary]) -> set[str]:
