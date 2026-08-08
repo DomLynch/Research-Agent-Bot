@@ -87,9 +87,22 @@ def _normalize(text: str) -> str:
 
 
 def _topic_aliases(topic: str) -> tuple[str, ...]:
-    """Accept file-safe and prose topic labels."""
+    """Accept file-safe and prose topic labels, plus the lead entity.
+
+    The scoped validator requires an alias to appear at least twice in a
+    paragraph to prove it is on-topic. Matching only the whole slug demanded
+    prose repeat "liraglutide adverse effects" verbatim twice, which no real
+    writing does -- it says "liraglutide". Every scoped paragraph was therefore
+    rejected and the section fell back to a ~15-word placeholder.
+
+    The lead entity is the subject of the topic, so counting it preserves the
+    on-topic guarantee: a paragraph naming a different drug still fails.
+    """
     raw = topic.strip()
     variants = {raw, raw.replace("_", " "), raw.replace("-", " ")}
+    lead = re.split(r"[_\s-]+", raw.strip())
+    if lead and lead[0]:
+        variants.add(lead[0])
     return tuple(_normalize(v) for v in variants if _normalize(v))
 
 
