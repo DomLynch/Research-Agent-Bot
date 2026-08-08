@@ -3950,6 +3950,7 @@ def _repair_topic_corpus(
 def prepare_candidate_buffer(
     *,
     runs_root: Path = RUNS,
+    requested_topic: str | None = None,
     target_ready: int = 3,
     max_repairs: int = 3,
     max_attempts: int | None = None,
@@ -3963,7 +3964,8 @@ def prepare_candidate_buffer(
     max_attempts = max(target_ready, max_repairs) if max_attempts is None else max(1, max_attempts)
     ledger_dir = runs_root / LEDGER_DIR
     now = dt.datetime.now(dt.UTC)
-    topics = discover_topics()
+    topics = [requested_topic] if requested_topic else discover_topics()
+    retry_exempt = {requested_topic} if requested_topic else set()
     remote_seen, remote_error = (remote_loader or submit_bridge._remote_published_fingerprints)()
     report: dict[str, Any] = {
         "generated_at": now.isoformat(), "target_ready": target_ready,
@@ -3985,9 +3987,9 @@ def prepare_candidate_buffer(
     # recent preflight failures too, so the pool advances instead of re-walking
     # candidates that cannot clear the evidence floor. Universal: keyed on the
     # measured blocker code, not on topic names.
-    terminal = terminal | _recent_blocked_topics_by_status(
+    terminal |= _recent_blocked_topics_by_status(
         ledger_dir, {"receipt_preflight_insufficient"}, now=now,
-    )
+    ) - retry_exempt
     pool = _fresh_topic_pool(
         topics,
         ledger_dir,
@@ -4010,7 +4012,7 @@ def prepare_candidate_buffer(
         for row in report["attempts"]
         if row.get("topic") and row.get("repair_status") != "repair_budget_exhausted"
     }
-    attempted = terminal | still_prepared | (recent_attempted - (prepared - still_prepared))
+    attempted = terminal | still_prepared | (recent_attempted - (prepared - still_prepared) - retry_exempt)
     while len(report["ready"]) < target_ready and report["attempted_count"] < max_attempts:
         topic = select_topic(
             topics,
@@ -5772,6 +5774,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.prepare_only:
         result = prepare_candidate_buffer(
             runs_root=args.runs_root,
+            **({"requested_topic": args.topic} if args.topic else {}),
             target_ready=args.prepare_target,
             max_repairs=args.prepare_max_repairs,
             max_attempts=args.max_attempts or None,
