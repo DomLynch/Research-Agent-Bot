@@ -396,3 +396,31 @@ builds the payload; max_tokens defaults to 4096, so truncation is unlikely) and
 compare the prompt actually sent against the working direct call. Historical
 runs prove the writer CAN do this: 691 of 723 papers cleared the 850-word
 Cross-Domain floor, median 1015 words. This is a regression, not a limit.
+
+## 2026-08-08 — year fix landed; blocker moved
+
+f1a2f1ad (calendar years no longer count as fabricated numerics) produced the
+first healthy writer output of the week:
+
+    section                 before -> after
+    results                    243 -> 2427
+    cross_domain_synthesis      14 -> 905   (floor 850, now PASSING)
+    abstract                    89 -> 267
+
+Stage 5c no longer reports "section too short". It now reports:
+
+    unresolved surface issues: structure_surface:
+      missing required section: Cross-Domain Synthesis
+
+So the writer produces 905 words but the section does not survive into the
+rendered manuscript as a "## Cross-Domain Synthesis" heading. The gate matches
+^##; the model emits its own "# Cross-Domain Synthesis: <subtitle>" inside
+body_md (observed directly when probing the writer chain), and the builder also
+prepends the canonical heading. Suspect a duplicate/!=level heading collision in
+the render or finalizer section splitter. START HERE.
+
+STILL STUBS, different cause: introduction (15 words, floor 800) and background
+(19, floor 700) go through _write_scoped_section, whose extra validators
+(_check_scoped_paragraph: topic_alias_under_count needs the topic name >=2x,
+and missing_hedge_phrase) are NOT instrumented. Add the same rejection logging
+there next -- the year fix does not cover them.
