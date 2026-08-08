@@ -133,7 +133,7 @@ class NumericIssue:
 
 def _split_sentences(text: str) -> list[str]:
     """Cheap sentence splitter — preserves trailing punctuation.
-    Handles common abbreviations (no., et al., e.g., i.e.)."""
+    Handles common abbreviations and Markdown heading boundaries."""
     placeholders = (
         ("et al.", "et al<DOT>"),
         ("e.g.", "e<DOT>g<DOT>"),
@@ -145,7 +145,8 @@ def _split_sentences(text: str) -> list[str]:
     s = text
     for orig, repl in placeholders:
         s = s.replace(orig, repl)
-    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z(])", s)
+    boundary = r"(?<=[.!?])\s+(?=[A-Z(])|^#{1,6}\s+.*$"
+    parts = re.split(boundary, s, flags=re.MULTILINE)
     out = []
     for p in parts:
         for orig, repl in placeholders:
