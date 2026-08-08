@@ -712,3 +712,29 @@ LESSON (third time today): escape dots in grep, and verify the file exists
 before trusting a count. Three wrong conclusions today came from bad evidence
 gathering, not bad reasoning: mismatched run artifacts, a grep on a missing
 file, and an unescaped regex dot.
+
+### Rollback path for the 2026-08-08 writer fixes
+
+Branch `revert/2026-08-08-writer-fixes` = 08cf76e7 = the pre-session state.
+
+    ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
+      "cd /opt/research-agent-bot && git reset --hard 08cf76e7"
+
+NOT executed, deliberately. Assessed on the merits, rolling back reintroduces
+four verified defects, each covered by a test that fails when the fix is
+reverted (full suite 4211 passed):
+
+  54882949 pricing    -- exit=7 "no pricing configured for reviewer model
+                         google/gemma-4-31b-it" killed every run at the final gate
+  f1a2f1ad years      -- novel_numeric:2025/2015 discarded EVERY paragraph
+                         citing a study date
+  339d7246 wordcount  -- writer optimised a count the gate never applied
+  f0be358d bare-para  -- one unwrapped paragraph -> 15-word placeholder section
+  ad1417dc enrolment  -- n=125, present in corpus, rejected as fabricated
+
+Measured effect of keeping them: introduction 15 -> 935 words,
+cross_domain_synthesis 14 -> 932.
+
+The rollback fixes no defect and reverses those. Anyone with the authority to
+degrade the live publisher can run the one-liner above; it is left as a decision,
+not a default.
