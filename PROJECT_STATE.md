@@ -460,3 +460,22 @@ build_anchored_from_parsed before prepending the canonical one.
 
 Introduction is still a 15-word fallback (1 remaining) -- separate cause, not
 yet diagnosed; it survives both fixes.
+
+### Heading-collision theory DISPROVEN (2026-08-08)
+
+Do not chase it. Checked the rendered full_paper.md directly:
+
+    grep -nE "^#{1,4}.*Cross-Domain" full_paper.md   -> 0 matches (ANY level)
+
+The section is not mis-levelled or duplicated, it is ABSENT. The rendered paper
+runs Results -> Endpoint-Sensitivity Framework -> Discussion, 14 "##" sections,
+9661 words, with no Cross-Domain Synthesis at all. So stripping a model-emitted
+heading in build_anchored_from_parsed would fix nothing.
+
+The writer logs 964 words for cross_domain_synthesis, so the section is built
+and then dropped between section assembly and full_paper.md. NEXT: trace the
+section list in agent/paper_writer.render_full_paper -- find where
+cross_domain_synthesis is ordered/emitted and why it is skipped while
+discussion/conclusion survive. Check whether it is gated on something
+(e.g. a matrix/tension precondition) that silently omits the section rather
+than emitting a short one.
