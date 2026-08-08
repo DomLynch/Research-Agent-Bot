@@ -181,6 +181,24 @@ def _backfill_results_subsection(
     return lines, [SynthesisClaimAnchor(sentence=text, receipt_ids=ids, numerics=())]
 
 
+def _paragraph_list(parsed: Mapping[str, object]) -> list[object]:
+    """Return the paragraph entries, tolerating a bare single paragraph.
+
+    The writer asks for {"paragraphs": [...]}, but the model sometimes returns
+    ONE paragraph unwrapped, e.g. keys=["receipt_ids", "tension_kind", "text"].
+    Reading only "paragraphs" then yielded zero entries, the builder returned
+    None, and the section fell back to a ~15-word placeholder that cannot meet
+    any word floor -- observed live on cross_domain_synthesis. Which section it
+    hits varies per run, which made it look like several unrelated defects.
+    """
+    paragraphs = parsed.get("paragraphs")
+    if isinstance(paragraphs, list):
+        return paragraphs
+    if parsed.get("text") or parsed.get("sentence"):
+        return [dict(parsed)]
+    return []
+
+
 def _check_anchored_paragraph(
     text: str,
     receipt_ids: Sequence[str],
@@ -265,7 +283,7 @@ def build_anchored_from_parsed(
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
     accepted_numerics = _accepted_numeric_tokens(accepted)
-    paragraphs = parsed.get("paragraphs") or []
+    paragraphs = _paragraph_list(parsed)
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
     rejections: list[str] = []

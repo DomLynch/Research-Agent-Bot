@@ -381,3 +381,22 @@ def test_writer_word_count_matches_the_gate() -> None:
     assert match is not None
     gate = len(_re.findall(r"\b\w+\b", match.group(1)))
     assert writer == gate, f"writer {writer} != gate {gate}"
+
+
+def test_bare_single_paragraph_is_accepted() -> None:
+    """The model sometimes returns ONE paragraph unwrapped.
+
+    Observed live: keys=["receipt_ids", "tension_kind", "text"]. Reading only
+    "paragraphs" yielded zero entries, the builder returned None, and the
+    section fell back to a ~15-word placeholder that cannot meet any word floor.
+    """
+    from agent.paper_writer_builders import _paragraph_list
+
+    bare = {"text": "Liraglutide reduced the endpoint.", "receipt_ids": ["r1"],
+            "tension_kind": "none"}
+    assert _paragraph_list(bare) == [bare]
+
+    wrapped = {"paragraphs": [{"text": "x", "receipt_ids": ["r1"]}]}
+    assert _paragraph_list(wrapped) == wrapped["paragraphs"]
+
+    assert _paragraph_list({"unrelated": 1}) == []
