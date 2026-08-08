@@ -16,26 +16,50 @@ import glob
 import json
 import os
 import re
-rows=[]
-for man in glob.glob("runs/synthesis-*/manifest.json"):
-    d=os.path.dirname(man); paper=os.path.join(d,"full_paper.md")
-    if not os.path.exists(paper): continue
-    try: sw=(json.load(open(man)) or {}).get("section_words") or {}
-    except Exception: continue
-    b=sw.get("cross_domain_synthesis")
-    if not b: continue
-    t=open(paper,errors="replace").read()
-    m=re.search(r"^##\s+Cross-Domain Synthesis\b.*?\n(.*?)(?=^##\s+|\Z)", t, re.M|re.S)
-    r=len(re.findall(r"\b\w+\b", m.group(1))) if m else 0
-    rows.append((b-r, b, r, os.path.basename(d)[:44]))
-rows.sort(reverse=True)
-print(f"completed runs with both artifacts: {len(rows)}")
-if rows:
-    losses=[x[0] for x in rows]
-    pos=[l for l in losses if l>0]
-    print(f"  runs where rendered < built: {len(pos)}/{len(rows)}")
-    print(f"  median loss: {sorted(losses)[len(losses)//2]}")
+
+SECTION = "cross_domain_synthesis"
+HEADING = "Cross-Domain Synthesis"
+
+
+def rendered_words(paper: str, heading: str) -> int:
+    match = re.search(
+        rf"^##\s+{re.escape(heading)}\b.*?\n(.*?)(?=^##\s+|\Z)", paper, re.M | re.S,
+    )
+    return len(re.findall(r"\b\w+\b", match.group(1))) if match else 0
+
+
+def main() -> int:
+    rows: list[tuple[int, int, int, str]] = []
+    for manifest in glob.glob("runs/synthesis-*/manifest.json"):
+        run_dir = os.path.dirname(manifest)
+        paper_path = os.path.join(run_dir, "full_paper.md")
+        if not os.path.exists(paper_path):
+            continue
+        try:
+            section_words = (json.load(open(manifest)) or {}).get("section_words") or {}
+        except (OSError, ValueError):
+            continue
+        built = section_words.get(SECTION)
+        if not built:
+            continue
+        paper = open(paper_path, errors="replace").read()
+        rendered = rendered_words(paper, HEADING)
+        rows.append((built - rendered, built, rendered, os.path.basename(run_dir)[:44]))
+
+    rows.sort(reverse=True)
+    print(f"completed runs with both artifacts: {len(rows)}")
+    if not rows:
+        return 0
+    losses = [row[0] for row in rows]
+    absent = [row for row in rows if row[2] == 0]
+    print(f"  runs where rendered < built: {sum(1 for x in losses if x > 0)}/{len(rows)}")
+    print(f"  runs where section is ABSENT (rendered=0): {len(absent)}")
+    print(f"  median delta (negative = finalizer added): {sorted(losses)[len(losses) // 2]}")
     print("  largest losses:")
-    for l,b,r,n in rows[:4]: print(f"    -{l:<5} built={b:<5} rendered={r:<5} {n}")
-    print("  smallest:")
-    for l,b,r,n in rows[-3:]: print(f"    {-l:<6} built={b:<5} rendered={r:<5} {n}")
+    for loss, built, rendered, name in rows[:4]:
+        print(f"    -{loss:<5} built={built:<5} rendered={rendered:<5} {name}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
