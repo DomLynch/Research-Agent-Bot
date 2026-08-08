@@ -576,7 +576,7 @@ def main(argv: list[str] | None = None) -> int:
         cache_dir=Path(args.cache_dir),
     )
     print(f"Done: {n_ok} OK, {n_fail} FAIL", file=sys.stderr)
-    return 0 if n_fail == 0 else 2
+    return 0 if n_ok else 2
 
 
 if __name__ == "__main__":

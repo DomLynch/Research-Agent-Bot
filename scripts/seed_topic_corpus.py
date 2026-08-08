@@ -551,7 +551,8 @@ async def _do_seed(
         for pmcid in pmcids:
             paths = _parsed_paths_for_pmcid(parsed_dir, pmcid)
             if not paths:
-                raise RuntimeError(f"fetch_oa_corpus produced no artifact for {pmcid}")
+                failures.append({"pmcid": pmcid, "reason": "full text unavailable"})
+                continue
             for path in paths:
                 _validate_parsed_artifact(path, expected_pmcid=pmcid)
 
