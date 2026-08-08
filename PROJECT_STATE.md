@@ -424,3 +424,39 @@ STILL STUBS, different cause: introduction (15 words, floor 800) and background
 (_check_scoped_paragraph: topic_alias_under_count needs the topic name >=2x,
 and missing_hedge_phrase) are NOT instrumented. Add the same rejection logging
 there next -- the year fix does not cover them.
+
+## 2026-08-08 (later) — both writer fixes live; ONE blocker left
+
+f1a2f1ad (calendar years) + 0d64c018 (lead-entity alias) produced a healthy
+manuscript. Section word counts on the latest run:
+
+    abstract                372   (was 89)
+    background              161   (was 17)
+    results                2317   (was 243)
+    cross_domain_synthesis  964   (was 14; floor 850)
+
+Remaining Stage 5c blocker, verbatim:
+
+    unresolved surface issues:
+      structure_surface: missing required section: Cross-Domain Synthesis;
+      structure_surface: section too short: Conclusion 88/250 words
+
+The Cross-Domain one is the blocker that matters and it is NOT a length problem
+any more: the writer produces 964 words but the section does not appear in the
+rendered manuscript under a "## Cross-Domain Synthesis" heading, which is what
+_section_body() matches (regex ^##\s+<heading>\b).
+
+Confirmed lead: when the writer chain is probed directly, the model returns
+body_md beginning with its OWN heading:
+
+    "# Cross-Domain Synthesis: Liraglutide Adverse Effects Across ..."
+
+while build_anchored_from_parsed separately prepends the canonical
+"## Cross-Domain Synthesis". So the rendered section likely carries a nested or
+duplicated heading, and either the renderer or a finalizer phase drops/rewrites
+one of them. NEXT STEP: dump the rendered full_paper.md around Cross-Domain and
+compare heading levels; strip any model-emitted leading heading in
+build_anchored_from_parsed before prepending the canonical one.
+
+Introduction is still a 15-word fallback (1 remaining) -- separate cause, not
+yet diagnosed; it survives both fixes.
