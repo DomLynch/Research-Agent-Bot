@@ -570,3 +570,35 @@ REMAINING candidates, unmeasured:
     same text. Compare the two definitions before assuming content was lost.
 
 Check (1) before touching any code: the loss may not be content loss at all.
+
+### ROOT CAUSE of 964 vs 680: writer and gate count different text (2026-08-08)
+
+Both checks EXECUTED against run ...06-43-47Z-R2, not inferred:
+
+  A) rendered Cross-Domain = 680 words; "_Cited:" markers remaining = 0;
+     writer-logged = 964; gap = 284.
+  B) run_citation_fix_pass executed with a shrinking rewrite: 302 -> 302 words.
+     The guard HOLDS. That suspect is eliminated by execution.
+
+The gap is a MEASUREMENT MISMATCH, not lost content:
+
+  writer  agent/paper_writer_helpers.section_word_count():
+            len(body.split()) over lines[1:], on text that STILL CONTAINS the
+            per-paragraph "  _Cited: `id`, `id`_" markers the builder appends.
+  gate    agent/journal_surface_gate._section_issue_messages():
+            len(re.findall(r"\b\w+\b", body)) on full_paper.md, i.e. AFTER
+            render_full_paper calls _strip_rendered_citation_markers().
+
+So the writer stops retrying when IT measures 964 >= 850, and the gate then
+measures 680 < 850 and fails. The writer is satisfied by text the gate never
+sees. Same failure family as the outcome-anchor keying and axis-token bugs:
+two components measuring the same thing differently.
+
+FIX (small, shippable): make section_word_count() strip rendered citation
+markers before counting and count with the same \b\w+\b rule the gate uses, so
+the retry loop optimises the number the gate will actually apply. The helper
+already imports strip_rendered_citation_markers in the same module.
+Add a test asserting writer count == gate count for a section containing
+_Cited: markers.
+
+Do NOT raise the floor or pad the section; the counts simply need to agree.
