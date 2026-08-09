@@ -2618,12 +2618,11 @@ def test_recent_receipt_counts_use_latest_timestamp_not_file_order(tmp_path: Pat
             return [newer, older]
 
     counts = cycle._recent_receipt_preflight_counts(
-        topic,
         ReverseChronologicalLedger(),  # type: ignore[arg-type]
         now=dt.datetime(2026, 7, 25, 12, tzinfo=dt.UTC),
     )
 
-    assert counts == (20, 8, 6)
+    assert counts[topic] == (20, 8, 6)
 
 
 def test_select_topic_prefers_public_research_surface_over_brief_risk(

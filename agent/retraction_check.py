@@ -212,9 +212,12 @@ def retracted_dois(
             continue
         valid.append(row)
     seen = {_bare_doi(str(row["doi"])) for row in valid}
+    retracted = sorted(_bare_doi(str(row["doi"])) for row in valid if row["is_retracted"])
+    if retracted:
+        return retracted
     if strict and set(clean) - seen:
         raise RetractionCheckUnavailable("incomplete retraction result")
-    return sorted(_bare_doi(str(row["doi"])) for row in valid if row["is_retracted"])
+    return []
 
 
 def retracted_cited_sources(

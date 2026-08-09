@@ -115,6 +115,10 @@ def test_crossref_retractions_are_complete_and_rate_limited() -> None:
 def test_retracted_dois_strict_rejects_incomplete_results() -> None:
     with pytest.raises(rc.RetractionCheckUnavailable):
         rc.retracted_dois(["10.1/x"], fetch=_fetch([]), strict=True)
+    assert rc.retracted_dois(
+        ["10.1/x", "10.2/missing"],
+        fetch=_fetch([{"doi": "10.1/x", "is_retracted": True}]), strict=True,
+    ) == ["10.1/x"]
 
 
 @pytest.mark.parametrize("row", [

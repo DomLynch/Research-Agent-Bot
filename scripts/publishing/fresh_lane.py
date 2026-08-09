@@ -816,16 +816,28 @@ def _claim_bearing_quant_count(topic: str) -> tuple[int, int]:
     return usable, total
 
 
-def _attempted_at(topic: str, ledger_dir: Path) -> str:
-    latest = ""
+def _topic_attempt_history(ledger_dir: Path, *, now: dt.datetime | None = None) -> dict[str, tuple[str, int]]:
+    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
+    history: dict[str, tuple[str, int]] = {}
     for path in ledger_dir.glob("*.json"):
         row = _read_json(path)
-        if row.get("topic") == topic and str(row.get("started_at", "")) > latest:
-            latest = str(row["started_at"])
+        started_at = str(row.get("started_at") or "")
+        started = _parse_time(started_at)
+        row_topic = str(row.get("topic") or "")
+        if row_topic:
+            latest, failures = history.get(row_topic, ("", 0))
+            history[row_topic] = (max(latest, started_at), failures)
         for attempt in row.get("attempts", []):
-            if isinstance(attempt, dict) and attempt.get("topic") == topic and str(row.get("started_at", "")) > latest:
-                latest = str(row["started_at"])
-    return latest
+            if not isinstance(attempt, dict) or not (topic := str(attempt.get("topic") or "")):
+                continue
+            latest, failures = history.get(topic, ("", 0))
+            failures += int(started is not None and started >= cutoff and int(attempt.get("submitted") or 0) == 0)
+            history[topic] = (max(latest, started_at), failures)
+    return history
+
+
+def _attempted_at(topic: str, ledger_dir: Path) -> str:
+    return _topic_attempt_history(ledger_dir).get(topic, ("", 0))[0]
 
 def _parse_review_time(value: str) -> dt.datetime | None:
     value = str(value or "").strip()
@@ -886,22 +898,7 @@ def _topic_run_stats(topic: str, runs_root: Path) -> tuple[int, int]:
 
 
 def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | None = None) -> int:
-    now = now or dt.datetime.now(dt.UTC)
-    cutoff = now - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    failures = 0
-    for path in ledger_dir.glob("*.json"):
-        row = _read_json(path)
-        started = _parse_time(str(row.get("started_at") or ""))
-        if started is None or started < cutoff:
-            continue
-        for attempt in row.get("attempts", []):
-            if (
-                isinstance(attempt, dict)
-                and attempt.get("topic") == topic
-                and int(attempt.get("submitted") or 0) == 0
-            ):
-                failures += 1
-    return failures
+    return _topic_attempt_history(ledger_dir, now=now).get(topic, ("", 0))[1]
 
 
 # Statuses that are transient or already routed elsewhere — they must never
@@ -2255,14 +2252,15 @@ def _poll_remote_revision(
         sleeper(min(float(meta["interval_seconds"]), remaining))
 
 
-def _publication_track_topic(topic: str) -> bool:
+def _publication_track_topic(topic: str, *, peer_records: list[dict[str, Any]] | None = None) -> bool:
     try:
         data = tomllib.loads((TOPIC_PACKS / f"{topic}.toml").read_text(encoding="utf-8"))
     except (OSError, tomllib.TOMLDecodeError):
         record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
         pack_data = record.get("pack_data")
         data = pack_data if isinstance(pack_data, dict) else {}
-        if data and not generated_pack_publishable(record, peer_records=_generated_pack_records()):
+        peers = peer_records if peer_records is not None else _generated_pack_records()
+        if data and not generated_pack_publishable(record, peer_records=peers):
             return False
     if not data:
         return False
@@ -2289,17 +2287,12 @@ def _topic_declared_review_type(topic: str) -> str:
         return "thin_corpus_brief"
 
 
-def _publication_score(topic: str, ledger_dir: Path, runs_root: Path) -> int:
+def _publication_score(topic: str, ledger_dir: Path, runs_root: Path, history: Mapping[str, tuple[str, int]] | None = None) -> int:
     total, l4plus = _topic_run_stats(topic, runs_root)
-    pass_rate = (l4plus / total) if total else 0
-    last = _parse_time(_attempted_at(topic, ledger_dir))
-    freshness = 2 if last is None or dt.datetime.now(dt.UTC) - last > dt.timedelta(days=14) else 0
-    return (
-        round(pass_rate * 5)
-        + int(_publication_track_topic(topic)) * 3
-        + freshness
-        - _recent_failed_attempts(topic, ledger_dir) * 2
-    )
+    attempted_at, failures = (history if history is not None else _topic_attempt_history(ledger_dir)).get(topic, ("", 0))
+    last = _parse_time(attempted_at)
+    freshness = int(last is None or dt.datetime.now(dt.UTC) - last > dt.timedelta(days=14)) * 2
+    return round((l4plus / total if total else 0) * 5) + freshness - failures * 2
 
 
 def _topic_support_score(topic: str) -> int:
@@ -2314,7 +2307,7 @@ def _topic_has_quant_floor(topic: str) -> bool:
     return _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
 
 
-def _fresh_seed_candidate(topic: str) -> bool:
+def _fresh_seed_candidate(topic: str, *, peer_records: list[dict[str, Any]] | None = None) -> bool:
     if _topic_has_quant_floor(topic):
         return True
     if (TOPIC_PACKS / f"{topic}.toml").exists():
@@ -2322,7 +2315,8 @@ def _fresh_seed_candidate(topic: str) -> bool:
     record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
     if not record:
         return True
-    if generated_pack_publishable(record, peer_records=_generated_pack_records()):
+    peers = peer_records if peer_records is not None else _generated_pack_records()
+    if generated_pack_publishable(record, peer_records=peers):
         return True
     return _topic_support_score(topic) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
 
@@ -2405,36 +2399,36 @@ def _receipt_source_fit_rank_from_counts(
 
 
 def _recent_receipt_preflight_counts(
-    topic: str,
     ledger_dir: Path,
     *,
     now: dt.datetime | None = None,
-) -> tuple[int, int, int] | None:
+) -> dict[str, tuple[int, int, int]]:
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    latest_at: dt.datetime | None = None
-    latest_counts: tuple[int, int, int] | None = None
+    latest: dict[str, tuple[dt.datetime, tuple[int, int, int]]] = {}
     for path in ledger_dir.glob("*.json"):
         row = _read_json(path)
         started = _parse_time(str(row.get("started_at") or row.get("generated_at") or ""))
-        if started is None or started < cutoff or (latest_at is not None and started <= latest_at):
+        if started is None or started < cutoff:
             continue
+        row_counts: dict[str, tuple[int, int, int]] = {}
         for attempt in row.get("attempts", []):
-            if not isinstance(attempt, dict) or attempt.get("topic") != topic:
+            if not isinstance(attempt, dict) or not (topic := str(attempt.get("topic") or "")):
                 continue
             report = attempt.get("receipt_preflight")
             if not isinstance(report, dict):
                 continue
-            latest_at = started
-            latest_counts = (
+            row_counts[topic] = (
                 int(report.get("n_receipts") or 0),
                 int(report.get("n_primary_tier") or 0),
                 int(report.get("n_direct_receipts") or 0),
             )
-    return latest_counts if latest_at else None
+        for topic, counts in row_counts.items():
+            if topic not in latest or started > latest[topic][0]:
+                latest[topic] = started, counts
+    return {topic: counts for topic, (_started, counts) in latest.items()}
 
 
-def _receipt_source_fit_rank(topic: str, runs_root: Path, ledger_dir: Path) -> tuple[int, int, int, int, int, int, int, int]:
-    recent_counts = _recent_receipt_preflight_counts(topic, ledger_dir)
+def _receipt_source_fit_rank(topic: str, runs_root: Path, recent_counts: tuple[int, int, int] | None) -> tuple[int, int, int, int, int, int, int, int]:
     if recent_counts is not None:
         return _receipt_source_fit_rank_from_counts(*recent_counts)
     counts = _manifest_counts(_latest_topic_run(topic, runs_root))
@@ -2579,6 +2573,7 @@ def _fresh_topic_pool(
     allow_recent_blocked_fallback: bool = True,
     prefer_without_recent_failures: bool = True,
     recent_failure_exempt: set[str] | None = None,
+    history: Mapping[str, tuple[str, int]] | None = None,
 ) -> list[str]:
     blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
@@ -2586,26 +2581,20 @@ def _fresh_topic_pool(
         return []
     if prefer_without_recent_failures:
         recent_blocked = _recent_blocked_topics(ledger_dir)
+        history = history if history is not None else _topic_attempt_history(ledger_dir)
         fresh_candidates = [
             topic for topic in candidates
             if topic in (recent_failure_exempt or set())
-            or (topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0)
+            or (topic not in recent_blocked and history.get(topic, ("", 0))[1] == 0)
         ]
         if fresh_candidates:
             candidates = fresh_candidates
         elif not allow_recent_blocked_fallback:
             return []
-    return [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
-
-
-def _recorded_direct_yield(topic: str, ledger_dir: Path) -> int:
-    """Direct receipts measured by this topic's most recent receipt preflight.
-
-    0 when the topic has never been probed, so unprobed topics keep whatever
-    ordering the remaining keys give them rather than jumping the queue.
-    """
-    counts = _recent_receipt_preflight_counts(topic, ledger_dir)
-    return counts[2] if counts else 0
+    peer_records = _generated_pack_records()
+    return [topic for topic in candidates
+            if _publication_track_topic(topic, peer_records=peer_records)
+            and _fresh_seed_candidate(topic, peer_records=peer_records)]
 
 
 def select_topic(
@@ -2620,6 +2609,7 @@ def select_topic(
     prefer_source_fit: bool = False,
 ) -> str | None:
     prepared = _prepared_candidate_topics(ledger_dir)
+    history = _topic_attempt_history(ledger_dir)
     pool = _fresh_topic_pool(
         topics,
         ledger_dir,
@@ -2628,6 +2618,7 @@ def select_topic(
         allow_recent_blocked_fallback=allow_recent_blocked_fallback,
         prefer_without_recent_failures=prefer_without_recent_failures,
         recent_failure_exempt=prepared,
+        history=history,
     )
     if not pool:
         return None
@@ -2636,7 +2627,9 @@ def select_topic(
         for topic in pool
         if _topic_candidate_decision(topic, runs_root).ready_for_synthesis
     }
-    source_fit_rank = {topic: _receipt_source_fit_rank(topic, runs_root, ledger_dir) for topic in pool}
+    recent_counts = _recent_receipt_preflight_counts(ledger_dir)
+    source_fit_rank = {topic: _receipt_source_fit_rank(topic, runs_root, recent_counts.get(topic))
+                       for topic in pool}
     # Prefer known synthesis-ready corpora before frontier exploration so the
     # publication lane consumes its strongest available candidate first.
     # Within each group prefer direct-source fit before raw corpus size; broad
@@ -2649,19 +2642,10 @@ def select_topic(
         0 if topic in synthesis_ready else 1,
         0 if topic in untried else 1,
         source_fit_rank[topic] if not prefer_source_fit else (),
-        # Measured direct-receipt yield beats raw corpus size. Corpus size does
-        # not predict how much DIRECT evidence a topic produces: metabolism_effects
-        # has 395 quant-claim files but yields 1 direct receipt, while
-        # aerobic_exercise_effects has 210 and yields 46. Ranking on size alone
-        # kept selecting broad review-heavy corpora that can never clear the
-        # direct/primary floors, leaving the buffer empty while a qualifying
-        # candidate sat unpicked. Prefer topics whose last preflight actually
-        # measured direct receipts; unprobed topics keep their prior ordering.
-        -_recorded_direct_yield(topic, ledger_dir),
         -_quant_claim_count(topic),
-        -_publication_score(topic, ledger_dir, runs_root),
+        -_publication_score(topic, ledger_dir, runs_root, history),
         -_topic_support_score(topic),
-        _attempted_at(topic, ledger_dir),
+        history.get(topic, ("", 0))[0],
         topic,
     ))
 
