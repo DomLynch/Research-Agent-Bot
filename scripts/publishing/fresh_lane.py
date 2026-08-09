@@ -1114,6 +1114,8 @@ def _unrepairable_source_precision_topics(ledger_dir: Path, *, now: dt.datetime 
 def _current_low_source_precision_topics(topics: list[str]) -> set[str]:
     out: set[str] = set()
     for topic in topics:
+        if not _topic_has_quant_floor(topic):
+            continue
         ok, _status, _misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
         if not ok:
             out.add(topic)
@@ -3996,7 +3998,13 @@ def prepare_candidate_buffer(
         for row in report["attempts"]
         if row.get("topic") and row.get("repair_status") != "repair_budget_exhausted"
     }
-    attempted = terminal | still_prepared | (recent_attempted - (prepared - still_prepared) - retry_exempt)
+    stale_ready = {
+        str(row.get("topic") or "")
+        for row in report["attempts"]
+        if isinstance(row.get("receipt_preflight"), dict)
+        and row["receipt_preflight"].get("passed") is True
+    } - still_prepared
+    attempted = terminal | still_prepared | (recent_attempted - stale_ready - retry_exempt)
     while len(report["ready"]) < target_ready and report["attempted_count"] < max_attempts:
         topic = select_topic(
             topics,

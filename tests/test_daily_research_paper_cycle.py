@@ -2258,15 +2258,18 @@ def test_prepare_candidate_buffer_repairs_source_precision_before_ready(
     assert report["attempts"][-1]["source_topic_precision_after"] == "source_topic_precision_ok:25/25"
 
 
-def test_prepare_candidate_buffer_rotates_recent_failures(tmp_path: Path, monkeypatch) -> None:
-    topics = ["aaa_recent_failure", "bbb_next_candidate"]
+def test_prepare_candidate_buffer_revalidates_stale_ready_and_rotates_failures(tmp_path: Path, monkeypatch) -> None:
+    topics = ["aaa_stale_ready", "bbb_recent_failure", "ccc_next_candidate"]
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     now = dt.datetime.now(dt.UTC)
     _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
         "generated_at": now.isoformat(),
         "thresholds": cycle._candidate_buffer_thresholds(),
         "ready": [],
-        "attempts": [{"topic": "aaa_recent_failure", "receipt_preflight": {"passed": False}}],
+        "attempts": [
+            {"topic": "aaa_stale_ready", "receipt_preflight": {"passed": True}},
+            {"topic": "bbb_recent_failure", "receipt_preflight": {"passed": False}},
+        ],
     })
     repaired: list[str] = []
     monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
@@ -2299,14 +2302,14 @@ def test_prepare_candidate_buffer_rotates_recent_failures(tmp_path: Path, monkey
 
     report = cycle.prepare_candidate_buffer(
         runs_root=tmp_path / "runs",
-        target_ready=1,
+        target_ready=2,
         max_repairs=1,
         remote_loader=lambda: (set(), None),
     )
 
     assert repaired == []
-    assert report["attempted_count"] == 1
-    assert [row["topic"] for row in report["ready"]] == ["bbb_next_candidate"]
+    assert report["attempted_count"] == 2
+    assert [row["topic"] for row in report["ready"]] == ["aaa_stale_ready", "ccc_next_candidate"]
     assert {row["topic"] for row in report["attempts"]} == set(topics)
 
 

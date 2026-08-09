@@ -261,9 +261,8 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     )
     full_match = alias_hit or token_hits == len(tokens)
     scope_only = set(normalized_tokens) <= SCOPE_TOKENS
-    scope_subject = _scope_subject_supported(haystack)
     if scope_only:
-        return token_hits > 0 and scope_subject
+        return token_hits > 0 and _scope_subject_supported(haystack)
     biomed = any(anchor in haystack for anchor in BIOMED_ANCHORS)
     drift = any(term in haystack for term in NON_BIOMED_DRIFT)
     if drift and not any(anchor in haystack for anchor in DRIFT_RESCUE_ANCHORS):
