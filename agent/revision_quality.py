@@ -8,14 +8,11 @@ from typing import Any
 
 from agent import revision_source_roles as _source_roles
 from agent import revision_consistency as _consistency
+from agent import revision_identity as _identity
 from agent.evidence_lanes import is_animal_context
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
 from agent.revision_claim_trace import asks_major_claim_trace, major_claim_trace_is_stated, repair_major_claim_trace
-from agent.revision_identity import (
-    direction_attribution_is_stated,
-    direction_attribution_requested,
-)
 
 
 _EFFECT_STAT_RE = re.compile(
@@ -299,7 +296,8 @@ def _asks_named_direction_reconciliation(text: str) -> bool:
     request = _evidence_pending_requested(text) or (
         "direction" in text
         and any(token in text for token in ("consistent wording", "recheck", "realign", "recode", "coded direction", "coding", "direction reflects", "source direction", "bundle records"))
-    ) or all(token in text for token in ("coding", "align", "refers to"))
+    ) or all(token in text for token in ("coding", "align", "refers to")) or all(
+        token in text for token in ("tagged", "oscillat", "reconcil"))
     return _has_named_source(text) and request and ("evidence pending" in text or any(
         token in text for token in ("positive", "negative", "null", "mixed", "unclear")
     ))
@@ -674,7 +672,7 @@ def _upsert_section_note(paper_md: str, heading: str, marker: str, note: str) ->
     section = paper_md[start:end]
     existing = re.search(rf"^{re.escape(marker)}.*$", section, re.M)
     if existing:
-        if existing.group(0) == note:
+        if note in section or note.removeprefix(marker).strip() in section:
             return paper_md, 0
         old = existing.group(0)
         ending = next((value for value in ("no direction is inferred from a statistic alone.", "endpoint-specific findings remain separately qualified.", "direct effect accounting for the paper topic.") if value in old), "")
@@ -730,7 +728,10 @@ def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tupl
     if kind == "direction":
         direction = _revision_direction(row, ask)
         marker = f"Source-direction reconciliation ({label}):"
-        detail = f"reviewer-reconciled direction={direction} is used consistently; endpoint-specific findings remain separately qualified."
+        detail = _identity.direction_attribution_note(label, direction, ask, _row_evidence(row)) or (
+            f"reviewer-reconciled direction={direction} is used consistently; "
+            "endpoint-specific findings remain separately qualified."
+        )
     elif kind == "statistic":
         stats = () if "no numerics" in _normalise(ask) and not _source_has_result_statistic(row) else _consistency.preferred_replacement_statistics(ask, _traceable_effect_statistics(row))
         all_requested = any(token in _normalise(ask) for token in ("transcribe", "numeric", "numerics", "smd"))
@@ -854,12 +855,12 @@ def _named_revision_is_stated(
     if not named or not headings or any(note is None for _, note in notes):
         return False
     note_headings = ["Results"] if kind == "direction" and "Results" in headings else headings[:1]
-    endpoint_attribution = kind == "direction" and direction_attribution_requested(ask)
+    endpoint_attribution = kind == "direction" and _identity.direction_attribution_requested(ask)
     statistics_ok = kind != "statistic" or _named_statistics_are_resolved(paper_md, ask, rows)
     directions_ok = kind != "direction" or all(
         _direction_mentions_are_consistent(paper_md, row, headings, ask) for row in named
     )
-    proofs_ok = all((direction_attribution_is_stated(
+    proofs_ok = all((_identity.direction_attribution_is_stated(
         _prose_paragraphs(paper_md), _label(row), resolved_effect_direction(row), ask) if endpoint_attribution else
                      _section_has_note(paper_md, heading, note[1]))
                     for row, note in notes if note is not None for heading in note_headings)

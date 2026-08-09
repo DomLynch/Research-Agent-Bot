@@ -32,6 +32,29 @@ def direction_attribution_requested(ask: str) -> bool:
     return _endpoint_pair(ask, _ENDPOINT_ASK_RE) is not None
 
 
+def direction_attribution_note(
+    label: str, direction: str, ask: str, evidence: str,
+) -> str:
+    """Resolve an either/or endpoint ask only when one side carries a traced statistic."""
+    match = _ENDPOINT_ASK_RE.search(_normalise(ask))
+    if not match:
+        return ""
+    alternatives = match.groups()
+    evidence = _normalise(evidence)
+    supported = [
+        index for index, alternative in enumerate(alternatives)
+        if (stats := re.findall(r"\bp\s*(?:<=|>=|<|>|=)\s*(?:0?\.\d+|1(?:\.0+)?)", alternative))
+        and all(stat in evidence for stat in stats)
+    ]
+    if len(supported) != 1:
+        return ""
+    target = supported[0]
+    return (
+        f"{label} {direction} coding refers specifically to {alternatives[target]}, "
+        f"not to {alternatives[1 - target]}."
+    )
+
+
 def direction_attribution_is_stated(
     scopes: list[str], label: str, direction: str, ask: str,
 ) -> bool:

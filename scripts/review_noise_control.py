@@ -12,7 +12,10 @@ Change = tuple[str, int, str]
 def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Change]]:
     changes: list[Change] = []
     feedback = _revision_feedback(out_dir)
-    text, n = re.subn(r"\bContextual Other\b", "Contextual Adjacent Evidence", text)
+    text, n = re.subn(
+        r"\bcontextual(?:[_ ]other)\b", "Contextual Adjacent Evidence", text,
+        flags=re.I,
+    )
     if n:
         changes.append(("rename_contextual_other", n, "renamed broad contextual bucket"))
     if "Contextual Adjacent Evidence" in text and "not pooled with direct outcome evidence" not in text:

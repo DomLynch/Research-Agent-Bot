@@ -9,6 +9,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import revision_coverage  # type: ignore[import-not-found]  # noqa: E402
+import review_noise_control  # type: ignore[import-not-found]  # noqa: E402
 from agent import revision_claim_trace  # noqa: E402
 from agent.evidence_lanes import effective_directness  # noqa: E402
 from agent.revision_contract import ask_fingerprint, gate_report  # noqa: E402
@@ -405,6 +406,43 @@ def test_named_direction_repair_accepts_coding_alignment_wording() -> None:
     assert details == ["named_direction_reconciliation"]
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert revision_quality_proof_is_stated(fixed, ask, rows) is False
+
+
+def test_evidence_backed_endpoint_and_public_label_repairs_close_revision_gate(
+    tmp_path: Path,
+) -> None:
+    asks = [
+        "Reconcile the Opstad 2022 framing: explicitly state whether the 'positive' coding "
+        "refers to the within-trial LTL change contrast (p = 0.02) or the secondary "
+        "cardiovascular mortality finding, and align the Results accordingly.",
+        "Harmonize outcome-class terminology: choose 'contextual adjacent evidence' or "
+        "'contextual_other' and apply uniformly across tables and prose.",
+        "Several outcome-class sections lack explicit numeric summaries tied to specific studies.",
+        "The Opstad 2022 row is tagged 'positive', but the narrative oscillates without "
+        "reconciling the endpoint framing.",
+    ]
+    rows = [{
+        "citation_token": "Opstad 2022", "effect_direction": "positive",
+        "directness": "direct", "outcome_class": "cardiometabolic",
+        "thesis_text": "At 42 months, LTL changed +0.019 vs -0.129 (p = 0.02).",
+    }]
+    paper = (
+        "## Results\n\nOpstad 2022 direction=positive across contextual other evidence.\n\n"
+        "## Key Findings\n\nOutcome-class key findings: Cardiometabolic: admitted n=1; "
+        "direction=positive; directness=direct; Opstad 2022 reported p = 0.02.\n"
+    )
+
+    repaired, _ = repair_revision_quality(paper, rows, "; ".join(asks))
+    stable, _ = repair_revision_quality(repaired, rows, "; ".join(asks))
+    fixed, _ = review_noise_control.apply_review_noise_control(repaired, tmp_path)
+
+    assert stable == repaired
+    assert "positive coding refers specifically to the within trial ltl change contrast" in fixed.lower()
+    assert fixed.lower().count("positive coding refers specifically") == 1
+    assert "contextual other" not in fixed.lower()
+    assert revision_coverage.deterministic_unmet_asks(
+        fixed, asks, evidence_rows=rows,
+    ) == []
 
 
 def test_named_direction_proof_accepts_explicit_endpoint_attribution() -> None:

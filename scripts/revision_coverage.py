@@ -702,6 +702,10 @@ def _asks_outcome_class_key_findings(text: str) -> bool:
         "key findings" in text
         and any(token in text for token in ("outcome-class", "outcome class", "outcome-class slices"))
         and any(token in text for token in ("bullet", "source", "sources support", "concrete"))
+    ) or (
+        any(token in text for token in ("outcome-class sections", "outcome class sections"))
+        and "numeric summar" in text
+        and any(token in text for token in ("specific studies", "specific sources"))
     )
 
 
@@ -1275,6 +1279,11 @@ def _asks_structured_table_stub_replacement(text: str) -> bool:
 
 def outcome_label_rename(text: str) -> tuple[str, str] | None:
     lower = " ".join(text.lower().split())
+    if (
+        "harmonize" in lower and "outcome-class terminology" in lower
+        and "contextual adjacent evidence" in lower and "contextual_other" in lower
+    ):
+        return "Contextual Other", "Contextual Adjacent Evidence"
     if "outcome class" in lower and any(token in lower for token in ("rename", "re-label", "relabel")) and len(labels := re.findall(r"['\"]([^'\"]{2,80})['\"]", text)) >= 2:
         return labels[0].strip(), labels[1].strip()
     dosing = any(label in lower for label in ("dosing and pharmacokinetics", "dosing/pharmacokinetics", "dosing pharmacokinetics")) and any(token in lower for token in (
@@ -2925,6 +2934,10 @@ def _structured_table_stubs_are_replaced(paper_md: str) -> bool:
 def outcome_label_cleanup_is_stated(paper_md: str, ask: str) -> bool:
     if not (rename := outcome_label_rename(ask)):
         return True
+    if rename[0] == "Contextual Other":
+        return rename[1].lower() in paper_md.lower() and not re.search(
+            r"\bcontextual(?:[_ ]other)\b", paper_md, flags=re.I,
+        )
     old_label = rf"(?:^#{{2,4}}\s*{re.escape(rename[0])}(?:\s+Outcomes?)?\s*$|\|\s*{re.escape(rename[0])}\s*\||\b(?:outcome(?:\s+class)?|evidence domain)\s*[:=]\s*{re.escape(rename[0])}\b|\b{re.escape(rename[0])}\s+outcome class\b)"
     return rename[1].lower() in paper_md.lower() and not re.search(old_label, paper_md, flags=re.I | re.M)
 
