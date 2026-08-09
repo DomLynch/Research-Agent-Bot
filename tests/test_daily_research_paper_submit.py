@@ -1231,8 +1231,12 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
     _snapshot_run(run)
 
+    monkeypatch.setenv("RESEARKA_SUBMITTER_NAME", "Legacy Submitter")
+    monkeypatch.setenv("RESEARKA_SUBMITTER_ORCID", "0000-0000-0000-0000")
     payload = daily.build_payload(run)
     row = payload["source_bundle"][0]
+    assert "submitter_name" not in payload
+    assert "submitter_orcid" not in payload
 
     assert row["url"] == "https://clinicaltrials.gov/study/NCT01234567"
     assert row["registry_id"] == "NCT01234567"

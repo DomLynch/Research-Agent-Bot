@@ -2182,8 +2182,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "sections": sections,
         "source_bundle": source_bundle,
         "author_agent_id": agent_slug,
-        "submitter_name": os.getenv("RESEARKA_SUBMITTER_NAME") or None,
-        "submitter_orcid": os.getenv("RESEARKA_SUBMITTER_ORCID") or None,
         "article_type": article_type,
         "domain_slug": domain_slug,
         "category": category,
