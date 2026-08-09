@@ -3,7 +3,7 @@ Description=Run Research Agent v3 FRESH lane every 8h
 
 [Timer]
 OnCalendar=*-*-* 00/8:00:00
-Persistent=false
+Persistent=true
 Unit=research-agent-paper-fresh.service
 
 [Install]

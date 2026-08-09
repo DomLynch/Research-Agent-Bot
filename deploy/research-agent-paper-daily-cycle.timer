@@ -3,7 +3,7 @@ Description=Run Research Agent v3 daily paper production cycle every 4h
 
 [Timer]
 OnCalendar=*-*-* 01/4:30:00
-Persistent=false
+Persistent=true
 Unit=research-agent-paper-daily-cycle.service
 
 [Install]

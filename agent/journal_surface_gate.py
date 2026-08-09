@@ -483,6 +483,10 @@ def _outcome_key(text: str) -> str:
 
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
+    cross_reference_text = "\n".join(
+        line for line in paper_md.splitlines()
+        if "[exact source:" not in line.lower()
+    )
     defined = {
         number
         for m in re.finditer(
@@ -494,7 +498,7 @@ def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
         if number
     }
     missing = sorted(
-        {m.group(1) for m in _TABLE_REF_RE.finditer(paper_md) if m.group(1) not in defined},
+        {m.group(1) for m in _TABLE_REF_RE.finditer(cross_reference_text) if m.group(1) not in defined},
         key=int,
     )
     return tuple(f"orphan table reference: Table {n}" for n in missing)

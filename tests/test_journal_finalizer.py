@@ -5588,14 +5588,14 @@ def test_finalizer_canonicalizes_surface_valid_cycle(tmp_path: Path, monkeypatch
     from types import SimpleNamespace
 
     paper = (
-        "A\n\n## Cross-Domain Synthesis\n\n" + "word " * 820
+        "Z\n\n## Cross-Domain Synthesis\n\n" + "word " * 820
         + "\n\n## Conclusion\n\n" + "word " * 180
     )
     (tmp_path / "full_paper.md").write_text(paper)
     (tmp_path / "manifest.json").write_text(json.dumps({"section_words": {}}))
     monkeypatch.setattr(
         journal_finalizer, "_run_text_phases",
-        lambda text, _out: (("B" if text.startswith("A") else "A") + text[1:], []),
+        lambda text, _out: (("A" if text.startswith("Z") else "Z") + text[1:], []),
     )
     monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _out: [])
     monkeypatch.setattr(journal_finalizer, "_surface_report", lambda _text, _out: SimpleNamespace(passed=True))
@@ -5605,7 +5605,7 @@ def test_finalizer_canonicalizes_surface_valid_cycle(tmp_path: Path, monkeypatch
 
     final = (tmp_path / "full_paper.md").read_text()
     apply_consistency_fixes = journal_finalizer._script_module("apply_consistency_fixes")
-    assert final.startswith("A")
+    assert final.startswith("Z")
     assert apply_consistency_fixes._section_word_count(final, "Cross-Domain Synthesis") >= 850
     assert apply_consistency_fixes._section_word_count(final, "Conclusion") >= 250
     assert any(entry.rule == "canonicalize_surface_valid_repair_cycle" for entry in first.entries)

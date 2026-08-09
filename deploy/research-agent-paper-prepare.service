@@ -7,10 +7,10 @@ StartLimitBurst=2
 
 [Service]
 Type=oneshot
-SuccessExitStatus=3 75
+SuccessExitStatus=3
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/usr/bin/flock --conflict-exit-code 75 --exclusive --nonblock /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --prepare-only --prepare-target 3 --prepare-max-repairs 3 --max-attempts 12 --timeout-sec 600
+ExecStart=/usr/bin/flock --conflict-exit-code 75 --exclusive --wait 900 /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --prepare-only --prepare-target 3 --prepare-max-repairs 3 --max-attempts 12 --timeout-sec 600
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT=200
@@ -19,4 +19,4 @@ Environment=RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED=5
 Restart=on-failure
 RestartPreventExitStatus=3
 RestartSec=60
-TimeoutStartSec=12600
+TimeoutStartSec=7500

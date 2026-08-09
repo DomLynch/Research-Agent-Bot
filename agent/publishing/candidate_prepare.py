@@ -83,7 +83,11 @@ def _binding_matches(
     expected: CandidateBinding | None,
     thresholds: CandidateThresholds,
 ) -> bool:
-    if expected is None or row.get("state") != "receipt_ready":
+    if (
+        expected is None
+        or row.get("state") != "receipt_ready"
+        or not _CODE_SHA_RE.fullmatch(str(row.get("code_sha") or ""))
+    ):
         return False
     try:
         canonical = candidate_binding(
@@ -98,6 +102,7 @@ def _binding_matches(
         return False
     return expected == canonical and all(
         row.get(field) == value for field, value in expected.as_dict().items()
+        if field != "code_sha"
     )
 
 def precision_was_valid(

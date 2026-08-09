@@ -2445,14 +2445,15 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
         "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
         "--max-attempts 12" in service
     )
-    assert "SuccessExitStatus=3 75" in service
+    assert "SuccessExitStatus=3" in service
     assert "Restart=on-failure" in service
     assert "RestartPreventExitStatus=3" in service
     assert "StartLimitIntervalSec=21600" in service
     assert "StartLimitBurst=2" in service
-    assert "/usr/bin/flock --conflict-exit-code 75 --exclusive --nonblock /run/research-agent-paper-prepare.lock" in service
-    assert "TimeoutStartSec=12600" in service
-    assert "OnCalendar=*-*-* 06/8:00:00" in timer
+    assert "/usr/bin/flock --conflict-exit-code 75 --exclusive --wait 900 /run/research-agent-paper-prepare.lock" in service
+    assert "TimeoutStartSec=7500" in service
+    assert "OnCalendar=*-*-* 02/8:00:00" in timer
+    assert "Persistent=true" in timer
 
 
 def test_synthesis_units_share_prepare_exclusion_lock() -> None:
@@ -2462,7 +2463,7 @@ def test_synthesis_units_share_prepare_exclusion_lock() -> None:
         "research-agent-paper-revise.service",
     ):
         service = (REPO / "deploy" / name).read_text(encoding="utf-8")
-        assert "/usr/bin/flock --conflict-exit-code 75 --shared --nonblock /run/research-agent-paper-prepare.lock" in service
+        assert "/usr/bin/flock --conflict-exit-code 75 --shared --wait 900 /run/research-agent-paper-prepare.lock" in service
 
 
 def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:
@@ -3909,16 +3910,23 @@ def test_clean_ready_helper_excludes_published_and_source_low(tmp_path: Path, mo
     _topic(tmp_path, "clean_ready", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(
+        cycle,
+        "_topic_candidate_decision",
+        lambda topic, _runs: SimpleNamespace(ready_for_synthesis=topic == "clean_ready"),
+    )
 
     assert not cycle._topic_has_quant_floor("missing_topic")
     assert cycle._topic_has_quant_floor("clean_ready")
     assert cycle._has_clean_ready_topic(
         ["published_clean", "source_low", "clean_ready"],
+        runs_root=tmp_path / "runs",
         exclude={"published_clean"},
         source_precision_blocked={"source_low"},
     )
     assert not cycle._has_clean_ready_topic(
         ["published_clean", "source_low"],
+        runs_root=tmp_path / "runs",
         exclude={"published_clean"},
         source_precision_blocked={"source_low"},
     )

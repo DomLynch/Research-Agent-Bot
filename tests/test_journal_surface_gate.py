@@ -654,6 +654,16 @@ def test_orphan_table_reference_blocks_journal_surface():
     assert any("orphan table reference: Table 2" in i.detail for i in report.issues)
 
 
+def test_source_internal_table_reference_is_not_a_manuscript_cross_reference():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "results1",
+        "Smith 2024 reports values in Table 2 [exact source: https://doi.org/10.1/example].",
+        1,
+    )
+    assert _complete_surface(paper).passed
+
+
 def test_labeled_table_reference_passes_journal_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("## Results\n\n", "## Results\n\nTable 2. Endpoint summary.\n\n")

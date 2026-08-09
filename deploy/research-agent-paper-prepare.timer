@@ -2,8 +2,8 @@
 Description=Prepare V3 publish candidates between fresh windows
 
 [Timer]
-OnCalendar=*-*-* 06/8:00:00
-Persistent=false
+OnCalendar=*-*-* 02/8:00:00
+Persistent=true
 Unit=research-agent-paper-prepare.service
 
 [Install]

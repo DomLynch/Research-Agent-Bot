@@ -2336,14 +2336,14 @@ def _fresh_corpus_repair_candidate(topic: str) -> bool:
 def _has_clean_ready_topic(
     topics: list[str],
     *,
+    runs_root: Path,
     exclude: set[str],
     source_precision_blocked: set[str],
 ) -> bool:
     return any(
         candidate not in exclude
         and candidate not in source_precision_blocked
-        and _publication_track_topic(candidate)
-        and _topic_has_quant_floor(candidate)
+        and _topic_candidate_decision(candidate, runs_root).ready_for_synthesis
         for candidate in topics
     )
 
@@ -4695,6 +4695,7 @@ def run_cycle(
                 recent_blocked = _recent_blocked_topics(ledger_dir)
                 clean_ready_now = _has_clean_ready_topic(
                     topics,
+                    runs_root=runs_root,
                     exclude=selection_excluded | submitted_topics | published_topics | recent_blocked,
                     source_precision_blocked=current_source_precision,
                 )
@@ -4716,6 +4717,7 @@ def run_cycle(
                 and not any(_topic_has_quant_floor(t) for t in preflight_blocked - receipt_preflight_blocked)
                 and not _has_clean_ready_topic(
                     topics,
+                    runs_root=runs_root,
                     exclude=selection_excluded | submitted_topics | published_topics | _recent_blocked_topics(ledger_dir),
                     source_precision_blocked=current_source_precision,
                 )

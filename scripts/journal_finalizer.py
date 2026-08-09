@@ -4,6 +4,7 @@ import json
 import re
 from collections import Counter
 from dataclasses import asdict, dataclass, field
+from difflib import SequenceMatcher
 import importlib
 from itertools import combinations
 from pathlib import Path
@@ -184,7 +185,13 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
                 for state in cycle
                 if getattr(_surface_report(state, out_dir), "passed", False)
             ]
-            text = min(valid or cycle)
+            original_lines = original.splitlines()
+            text = max(
+                valid or cycle,
+                key=lambda state: SequenceMatcher(
+                    None, original_lines, state.splitlines(), autojunk=False,
+                ).ratio(),
+            )
             paper_path.write_text(text)
             entries.append(FinalizerLogEntry("M_fixed_point_guard", "canonicalize_surface_valid_repair_cycle", 1, "selected deterministic journal-surface-valid state from repair cycle"))
             entries.extend(_phase_g_refresh_sidecars(out_dir))

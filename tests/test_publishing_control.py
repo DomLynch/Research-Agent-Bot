@@ -205,7 +205,10 @@ def test_prepared_rows_use_the_same_candidate_policy() -> None:
         now=now,
         max_age_hours=24,
         precision_floor=0.5,
-        current_bindings=bindings,
+        current_bindings={
+            **bindings,
+            "ready": replace(bindings["ready"], code_sha="d" * 40),
+        },
     )
 
     assert set(rows) == {"ready"}
@@ -219,7 +222,6 @@ def test_prepared_rows_use_the_same_candidate_policy() -> None:
     "field,value",
     [
         ("candidate_id", "different-candidate"),
-        ("code_sha", "b" * 40),
         ("policy_hash", "different-policy"),
         ("corpus_hash", "d" * 64),
         ("receipt_set_hash", "e" * 64),
@@ -266,8 +268,9 @@ def test_prepared_rows_reject_unbound_and_non_receipt_ready_rows() -> None:
     )
     unbound = {"topic": "metformin", "validated_at": now.isoformat()}
     wrong_state = {**unbound, **binding.as_dict(), "state": "publishable"}
+    missing_sha = {**unbound, **binding.as_dict(), "state": "receipt_ready", "code_sha": ""}
 
-    for row in (unbound, wrong_state):
+    for row in (unbound, wrong_state, missing_sha):
         assert prepared_candidate_rows(
             {"thresholds": THRESHOLDS.as_dict(), "ready": [row]},
             thresholds=THRESHOLDS,
