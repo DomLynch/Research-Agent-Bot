@@ -2018,7 +2018,7 @@ def _replace_unsupported_general_health_claim(text: str) -> tuple[str, int]:
     )
     patched, tiered_n = re.subn(
         r"\bThe paper therefore interprets the corpus as a tiered evidence profile rather than as a single pooled effect\.",
-        "The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.",
+        "This is a source-directness and outcome-class map rather than a pooled effect.",
         patched,
         flags=re.I,
     )

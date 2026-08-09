@@ -564,7 +564,8 @@ def _corpus_accounting_only(text: str) -> bool:
 def _claim_candidates(text: str) -> list[str]:
     return [
         clean for line in text.splitlines()
-        if len(clean := line.strip(" -*")) >= 80
+        for sentence in _revision_claim_trace._sentences(line)
+        if len(clean := sentence.strip(" -*")) >= 80
         and (
             any(marker in clean.lower() for marker in _CLAIM_MARKERS)
             or _empirical_claim(clean)
@@ -685,32 +686,33 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
     for line in paper.splitlines():
         if heading := re.match(r"^##\s+(.+?)\s*$", line):
             section = heading.group(1).strip().lower()
-        clean = line.strip(" -*")
-        candidate = bool(_claim_candidates(clean))
-        if section in _PUBLIC_CLAIM_SECTIONS and not line.lstrip().startswith(("#", "|", "```")) and candidate:
-            if not _citation_indexes(clean, bundle):
-                aligned = [index for index, row in enumerate(bundle) if _evidence_aligns(clean, row)]
-                if aligned:
-                    def rank(index: int) -> tuple[int, bool, bool, int]:
-                        row = bundle[index]
-                        overlap = max(
-                            (len(_evidence_words(clean) & _evidence_words(row.get(key)))
-                             for key in ("quote", "evidence_span", "excerpt")),
-                            default=0,
+        if section in _PUBLIC_CLAIM_SECTIONS and not line.lstrip().startswith(("#", "|", "```")):
+            sentences: list[str] = []
+            for sentence in _revision_claim_trace._sentences(line):
+                clean = sentence.strip(" -*")
+                if _claim_candidates(clean) and not _citation_indexes(clean, bundle):
+                    aligned = [index for index, row in enumerate(bundle) if _evidence_aligns(clean, row)]
+                    if aligned:
+                        def rank(index: int) -> tuple[int, bool, bool, int]:
+                            row = bundle[index]
+                            return (
+                                max(
+                                    (len(_evidence_words(clean) & _evidence_words(row.get(key)))
+                                     for key in ("quote", "evidence_span", "excerpt")),
+                                    default=0,
+                                ),
+                                str(row.get("directness") or "").lower().startswith("direct"),
+                                str(row.get("evidence_tier") or "").upper().startswith("A"),
+                                -index,
+                            )
+                        index = max(aligned, key=rank)
+                        terminal = re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", sentence)
+                        sentence = (
+                            f"{sentence[:terminal.start()]} [bundle:{index + 1}]{sentence[terminal.start():]}"
+                            if terminal else f"{sentence} [bundle:{index + 1}]"
                         )
-                        return (
-                            overlap,
-                            str(row.get("directness") or "").lower().startswith("direct"),
-                            str(row.get("evidence_tier") or "").upper().startswith("A"),
-                            -index,
-                        )
-                    index = max(aligned, key=rank)
-                    marker = f"[bundle:{index + 1}]"
-                    terminal = re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", line)
-                    line = (
-                        f"{line[:terminal.start()]} {marker}{line[terminal.start():]}"
-                        if terminal else f"{line} {marker}"
-                    )
+                sentences.append(sentence)
+            line = " ".join(sentences)
         lines.append(line)
     return "\n".join(lines)
 
@@ -2137,6 +2139,7 @@ def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
 
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = _strip_background_references(_clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8")))
+    paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.")
     paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)

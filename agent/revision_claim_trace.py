@@ -167,7 +167,7 @@ def _without_trace(paper_md: str) -> str:
 
 def _sentences(text: str) -> list[str]:
     protected = _ABBREVIATION_RE.sub(lambda match: match.group(0)[:-1] + _PROTECTED_PERIOD, text)
-    return [claim.replace(_PROTECTED_PERIOD, ".") for claim in re.split(r"(?:(?<=[.!?])|(?<=[.!?][\"')\]]))\s+(?=(?:[\"'(\[]|\*{1,2}|_{1,2})?[A-Z0-9])", protected)]
+    return [claim.replace(_PROTECTED_PERIOD, ".") for claim in re.split(r"(?:(?<=[.!?])|(?<=[.!?][\"')\]]))\s+(?=(?:[\"'(\[]|\*{1,2}|_{1,2})?(?:[A-Z0-9]|[a-z]{1,3}[A-Z0-9]))", protected)]
 
 
 def _bundle_numbers(claim: str, row_count: int) -> list[int]:

@@ -1386,6 +1386,14 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
     assert counts == (5, 5, 5)
     assert repaired.count("[bundle:") == 5
     assert daily._attach_aligned_claim_references(repaired, bundle) == repaired
+    paragraph = "## Results\n\n" + (
+        "Outcome 4 evidence showed a clinically bounded increase in biomarker 4 during the intervention period. "
+        "eGFR evidence for Outcome 3 showed a clinically bounded increase in biomarker 3 during the intervention period. "
+        "p53 evidence for Outcome 2 showed a clinically bounded increase in biomarker 2 during the intervention period. "
+        "miR-21 evidence for Outcome 1 showed a clinically bounded increase in biomarker 1 during the intervention period."
+    )
+    repaired_paragraph = daily._attach_aligned_claim_references(paragraph, bundle)
+    assert daily._claim_trace_counts(repaired_paragraph.split("\n\n", 1)[1], bundle) == (4, 4, 4)
 
     unsupported = (
         "## Results\n\nThe evidence supports a clinically certain neurological benefit "
