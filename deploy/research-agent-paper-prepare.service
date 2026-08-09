@@ -2,15 +2,16 @@
 Description=Research Agent v3 candidate preparation lane
 After=network-online.target
 Wants=network-online.target
+Before=research-agent-paper-fresh.service research-agent-paper-revise.service research-agent-paper-daily-cycle.service research-agent-paper-daily-submit.service
 StartLimitIntervalSec=21600
-StartLimitBurst=2
+StartLimitBurst=4
 
 [Service]
 Type=oneshot
 SuccessExitStatus=3
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/usr/bin/flock --conflict-exit-code 75 --exclusive --wait 900 /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --prepare-only --prepare-target 3 --prepare-max-repairs 3 --max-attempts 12 --timeout-sec 600
+ExecStart=/usr/bin/flock --conflict-exit-code 75 --exclusive --wait 900 /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --prepare-only --prepare-target 3 --prepare-max-repairs 3 --max-attempts 12 --timeout-sec 300
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS=300
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT=200

@@ -3,7 +3,7 @@ Description=Research Agent v3 FRESH lane — always attempt a new paper (never b
 After=network-online.target
 Wants=network-online.target
 StartLimitIntervalSec=21600
-StartLimitBurst=2
+StartLimitBurst=4
 
 [Service]
 Type=oneshot

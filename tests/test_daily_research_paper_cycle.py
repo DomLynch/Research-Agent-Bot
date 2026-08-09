@@ -169,7 +169,7 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
         assert "Restart=on-failure" in service
         assert "RestartSec=60" in service
         assert "StartLimitIntervalSec=21600" in service
-        assert "StartLimitBurst=2" in service
+        assert "StartLimitBurst=4" in service
     fresh = (REPO / "deploy" / "research-agent-paper-fresh.service").read_text(encoding="utf-8")
     assert "RestartPreventExitStatus=3" in fresh
 
@@ -180,7 +180,7 @@ def test_revise_lane_allows_all_three_bounded_review_rounds() -> None:
     assert "--max-revise-attempts 3" in service
     assert "--cycle-budget-sec 3600" in service
     assert "RestartPreventExitStatus=3" in service
-    assert "TimeoutStartSec=4200" in service
+    assert "TimeoutStartSec=8100" in service
 
 
 def test_submit_units_enable_doi_preflight() -> None:
@@ -2443,16 +2443,20 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
 
     assert (
         "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
-        "--max-attempts 12" in service
+        "--max-attempts 12 --timeout-sec 300" in service
     )
     assert "SuccessExitStatus=3" in service
     assert "Restart=on-failure" in service
     assert "RestartPreventExitStatus=3" in service
     assert "StartLimitIntervalSec=21600" in service
-    assert "StartLimitBurst=2" in service
+    assert "StartLimitBurst=4" in service
     assert "/usr/bin/flock --conflict-exit-code 75 --exclusive --wait 900 /run/research-agent-paper-prepare.lock" in service
     assert "TimeoutStartSec=7500" in service
-    assert "OnCalendar=*-*-* 02/8:00:00" in timer
+    assert (
+        "Before=research-agent-paper-fresh.service research-agent-paper-revise.service "
+        "research-agent-paper-daily-cycle.service research-agent-paper-daily-submit.service"
+    ) in service
+    assert "OnCalendar=*-*-* 03/8:30:00" in timer
     assert "Persistent=true" in timer
 
 
@@ -2460,10 +2464,13 @@ def test_synthesis_units_share_prepare_exclusion_lock() -> None:
     for name in (
         "research-agent-paper-daily-cycle.service",
         "research-agent-paper-fresh.service",
-        "research-agent-paper-revise.service",
+        "research-agent-paper-daily-submit.service",
     ):
         service = (REPO / "deploy" / name).read_text(encoding="utf-8")
         assert "/usr/bin/flock --conflict-exit-code 75 --shared --wait 900 /run/research-agent-paper-prepare.lock" in service
+    revise = (REPO / "deploy" / "research-agent-paper-revise.service").read_text(encoding="utf-8")
+    assert "/usr/bin/flock --conflict-exit-code 75 --shared --wait 4200 /run/research-agent-paper-prepare.lock" in revise
+    assert "TimeoutStartSec=8100" in revise
 
 
 def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:

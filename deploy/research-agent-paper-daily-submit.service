@@ -8,7 +8,7 @@ Type=oneshot
 SuccessExitStatus=3
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_submit.py --submit
+ExecStart=/usr/bin/flock --conflict-exit-code 75 --shared --wait 900 /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_submit.py --submit
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARKA_DOI_PREFLIGHT_ENABLED=1
-TimeoutStartSec=900
+TimeoutStartSec=1800

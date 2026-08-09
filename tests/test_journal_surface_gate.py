@@ -658,10 +658,22 @@ def test_source_internal_table_reference_is_not_a_manuscript_cross_reference():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(
         "results1",
-        "Smith 2024 reports values in Table 2 [exact source: https://doi.org/10.1/example].",
+        "\n\nSmith 2024 [bundle:1] reports: values in Table 2 "
+        "[exact source: https://doi.org/10.1/example].\n\n",
         1,
     )
     assert _complete_surface(paper).passed
+
+
+def test_exact_source_marker_does_not_bypass_orphan_table_check():
+    source = "Smith 2024 [bundle:1] reports: values [exact source: https://doi.org/10.1/example]."
+    for claim in (f"As shown in Table 99. {source}", f"{source} As shown in Table 99."):
+        paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+        paper = paper.replace("results1", claim, 1)
+        assert any(
+            "orphan table reference: Table 99" in issue.detail
+            for issue in evaluate_journal_surface(paper).issues
+        )
 
 
 def test_labeled_table_reference_passes_journal_surface():

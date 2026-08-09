@@ -1195,22 +1195,20 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     registry[receipt_id].update({"source_doi": "", "source_pmid": "", "source_pmcid": ""})
     _write_json(run / "citation_registry.json", registry)
     parsed = tmp_path / "docs" / "quality-reference" / "topic" / "parsed"
+    source_finding = (
+        "The trial reported a source–linked quantitative result with durable follow-up "
+        "across the randomized adult cohort."
+    )
     _write_json(parsed / f"{receipt_id}.paper_sections.json", {
         "source_pdf": "https://clinicaltrials.gov/study/NCT01234567",
         "sections": {
-            "abstract": (
-                "The trial reported a source-linked quantitative result with durable follow-up "
-                "across the randomized adult cohort."
-            ),
+            "methods": source_finding,
         },
     })
     claims = tmp_path / "docs" / "quality-reference" / "topic" / "quant_claims"
     _write_json(claims / f"{receipt_id}.quant_claims.json", {
         "claims": [{
-            "sentence": (
-                "The trial reported a source-linked quantitative result with durable follow-up "
-                "across the randomized adult cohort."
-            ),
+            "sentence": source_finding,
             "binding_confidence": "high",
         }],
     })
@@ -1218,6 +1216,12 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
         "study_id": "Smith 1 2026",
         "overall_rating": "some_concerns",
     }])
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    manifest["receipts"][0]["thesis_text"] = (
+        "Trial — source excerpts: The trial reported a source-linked quantitative result "
+        "with durable follow-up across the randomized adult cohort."
+    )
+    _write_json(run / "manifest.json", manifest)
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
     paper = paper.replace(
         "results results results results results results results results results results",
@@ -1233,7 +1237,7 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     assert row["url"] == "https://clinicaltrials.gov/study/NCT01234567"
     assert row["registry_id"] == "NCT01234567"
     assert row["excerpt"] == (
-        "The trial reported a source-linked quantitative result with durable follow-up across "
+        "The trial reported a source–linked quantitative result with durable follow-up across "
         "the randomized adult cohort."
     )
     assert row["quote"] == row["excerpt"]
@@ -1246,6 +1250,13 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     assert row["evidence_span"] == row["excerpt"]
     assert row["claim_span"] in payload["body_markdown"]
     assert row["evidence_span"] not in payload["body_markdown"]
+    assert daily._receipt_evidence_excerpt(
+        {"thesis_text": "Trial — source excerpts: The trial used a 10 mg dose."},
+        "The trial used a 5 mg dose.",
+    ) == ""
+    assert daily._quantity_tokens("The result was −3.2 mm.") == daily._quantity_tokens(
+        "The result was -3.2 mm.",
+    )
     original_hash = row["source_record_hash"]
     _write_json(parsed / f"{receipt_id}.paper_sections.json", {
         "sections": {"abstract": "Mutable corpus text changed after the run snapshot was sealed."},
@@ -1358,10 +1369,83 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
 
     unsupported = (
         "## Results\n\nThe evidence supports a clinically certain neurological benefit "
-        "that is absent from every retained source excerpt."
+        "that is absent from every retained source excerpt.\n"
+        "The evidence also supports a mortality reduction that no retained source reports.\n"
+        "Mortality improved substantially in adults, although no retained source reports this result.\n"
+        "The intervention prevented neurological harm without support from any retained source.\n"
+        "The intervention prolonged survival without support from any retained source during follow-up.\n"
+        "The intervention demonstrated durable neurological recovery without retained source support.\n"
+        "The intervention achieved complete remission during follow-up without retained source support.\n"
+        "The intervention produced a sustained survival benefit without retained source support.\n"
+        "Participants experienced complete remission during follow-up without retained source support.\n"
+        "The intervention conferred durable neurological protection without retained source support."
     )
     assert daily._attach_aligned_claim_references(unsupported, bundle) == unsupported
-    assert daily._claim_trace_counts(unsupported.split("\n\n", 1)[1], bundle) == (1, 0, 0)
+    assert daily._claim_trace_counts(unsupported.split("\n\n", 1)[1], bundle) == (10, 0, 0)
+
+    author_interpretation = (
+        "The practical takeaway is bounded and revisable. The evidence map should guide "
+        "interpretation rather than support a pooled efficacy claim or treatment guideline."
+    )
+    assert daily._claim_trace_counts(author_interpretation, bundle) == (0, 0, 0)
+
+    mismatch = (
+        "Smith 2026 [bundle:1] reports evidence of severe neurological harm among "
+        "treated children receiving therapy."
+    )
+    mismatch_bundle = [{
+        "cited_as": "Smith 2026",
+        "excerpt": (
+            "Smith 2026 reported evidence of reduced cardiovascular mortality among "
+            "treated adults receiving standard therapy."
+        ),
+    }]
+    assert daily._claim_trace_counts(mismatch, mismatch_bundle) == (1, 1, 0)
+
+    opposite = (
+        "The randomized study found atorvastatin [bundle:1] reduced cardiovascular mortality "
+        "among treated adults during five-year follow-up."
+    )
+    opposite_bundle = [{
+        "cited_as": "Atorvastatin",
+        "excerpt": (
+            "The randomized study found atorvastatin increased cardiovascular mortality "
+            "among treated adults during five-year follow-up."
+        ),
+    }]
+    assert daily._claim_trace_counts(opposite, opposite_bundle) == (1, 1, 0)
+
+    null_claim = (
+        "The randomized study found atorvastatin [bundle:1] produced no difference in "
+        "cardiovascular mortality among treated adults during five-year follow-up."
+    )
+    harm_claim = (
+        "The randomized study found atorvastatin [bundle:1] produced a neurological benefit "
+        "among treated adults during five-year follow-up."
+    )
+    assert daily._claim_trace_counts(null_claim, opposite_bundle) == (1, 1, 0)
+    assert daily._claim_trace_counts(harm_claim, [{
+        "cited_as": "Atorvastatin",
+        "excerpt": (
+            "The randomized study found atorvastatin produced neurological harm among "
+            "treated adults during five-year follow-up."
+        ),
+    }]) == (1, 1, 0)
+
+    positive_bundle = [{
+        "cited_as": "Atorvastatin",
+        "excerpt": (
+            "The randomized study found atorvastatin increased mortality and improved survival "
+            "among treated adults during five-year follow-up."
+        ),
+    }]
+    for negated in (
+        "The randomized study found atorvastatin [bundle:1] did not increase mortality among treated adults during five-year follow-up.",
+        "The randomized study found atorvastatin [bundle:1] was not associated with increased mortality among treated adults during follow-up.",
+        "The randomized study found atorvastatin [bundle:1] did not improve survival among treated adults during five-year follow-up.",
+        "The randomized study found atorvastatin [bundle:1] produced no significant improvement in neurological recovery during follow-up.",
+    ):
+        assert daily._claim_trace_counts(negated, positive_bundle) == (1, 1, 0)
 
 
 def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Path) -> None:
@@ -1425,6 +1509,7 @@ def test_quantitative_preflight_ignores_identifiers_and_corpus_accounting() -> N
     text = (
         "GLP-1 therapies are used in type 2 diabetes.\n"
         "This synthesis includes 19 sources.\n"
+        "The audit trail spans 18 curated reference papers.\n"
         "The evidence tiers are A1 (n=7), B1 (n=3), and directness is direct (n=6).\n"
         "The included sources document 2 population summaries."
     )
@@ -1433,6 +1518,12 @@ def test_quantitative_preflight_ignores_identifiers_and_corpus_accounting() -> N
     assert daily._researka_quantitative_trace_status(
         {"abstract": text, "sections": {}}, [],
     ) == "eligible"
+
+    empirical = (
+        "The included sources show a significant 55 percent mortality reduction during follow-up."
+    )
+    assert daily._claim_trace_counts(empirical, []) == (1, 0, 0)
+    assert daily._quantitative_claim_candidates(empirical) == [empirical]
 
 
 def test_bundle_reference_marker_rebinds_after_canonical_source_sort() -> None:

@@ -1630,7 +1630,41 @@ def _build_receipt_thesis_text(
     """Build a neutral receipt summary from verbatim source sentences."""
     evidence_lines: list[str] = []
     seen: set[str] = set()
-    for claim in claims:
+    generic_title_words = {
+        "analysis", "clinical", "cohort", "effect", "effects", "patients", "randomized",
+        "study", "trial", "trials", "treatment",
+    }
+    title_terms = {
+        word for word in re.findall(r"[a-z0-9]+", paper_title.lower())
+        if len(word) >= 5 and word not in generic_title_words
+    }
+    confidence_rank = {"high": 0, "partial": 1, "none": 2}
+    section_rank = {"results": 0, "abstract": 1, "conclusion": 2, "discussion": 3}
+
+    def claim_rank(item: tuple[int, dict]) -> tuple[bool, bool, bool, int, bool, int, int]:
+        index, claim = item
+        sentence = str(claim.get("sentence") or "")
+        section = str(claim.get("source_section") or "").lower()
+        effect = str(claim.get("claim_role") or "").lower() == "effect"
+        directional = bool(str(claim.get("direction") or claim.get("comparator") or "").strip())
+        title_match = any(re.search(rf"\b{re.escape(term)}\b", sentence, re.I) for term in title_terms)
+        outcome_bearing = effect and directional
+        preferred = outcome_bearing and section in {"results", "abstract", "conclusion"}
+        return (
+            not preferred,
+            not outcome_bearing,
+            not title_match,
+            confidence_rank.get(str(claim.get("binding_confidence") or "").lower(), 3),
+            len(sentence) > 180,
+            section_rank.get(section, 4),
+            index,
+        )
+
+    ranked_claims = sorted(
+        enumerate(claims),
+        key=claim_rank,
+    )
+    for _index, claim in ranked_claims:
         sentence = _shorten_claim_sentence(claim.get("sentence") or "")
         if not sentence or sentence in seen:
             continue

@@ -158,13 +158,38 @@ RESEARKA_RECOMMENDED_SECTIONS = {
 _PUBLIC_CLAIM_SECTIONS = frozenset({"abstract", "key findings", "findings", "results", "conclusion"})
 _CLAIM_MARKERS = ("support", "suggest", "risk", "increase", "decrease", "null", "evidence")
 _GENERIC_EVIDENCE_WORDS = frozenset({
-    "about", "across", "evidence", "finding", "findings", "reported", "results",
-    "review", "source", "study", "studies", "support", "supports", "suggests", "trial",
+    "about", "across", "adults", "after", "among", "associated", "before", "bundle", "cohort", "compared", "evidence",
+    "finding", "findings", "group", "groups", "intervention", "patients", "reported", "results",
+    "receiving", "review", "significant", "significantly", "source", "studies", "study", "support",
+    "supports", "suggests", "therapy", "treated", "treatment", "trial", "trials",
 })
 _CORPUS_ACCOUNTING_MARKERS = (
-    "retained reference papers", "included sources", "evidence tiers", "directness is",
+    "reference papers", "included sources", "evidence tiers", "directness is",
     "effect directions are", "cross-source tensions", "population summaries",
+    "receipt-level direction coded",
 )
+_EMPIRICAL_CLAIM_RE = re.compile(
+    r"\b(?:achiev(?:e[ds]?|ing)|associat(?:ed|ion)|benefit|decreas(?:e[sd]?|ing)|"
+    r"conferr(?:ed|ing|s)|demonstrat(?:e[ds]?|ing)|differ(?:ed|ence|ences)|experienc(?:ed|es|ing)|"
+    r"found|harm|higher|"
+    r"improv(?:e[sd]?|ement|ing)|increas(?:e[sd]?|ing)|lower|null (?:effect|finding|result|signal)|"
+    r"observed|prevent(?:ed|ing|s)|prolong(?:ed|ing|s)|protect(?:ed|ing|ion|ive|s)|"
+    r"reduc(?:e[sd]?|ing|tion)|report(?:ed|s)|"
+    r"produc(?:e[ds]?|ing)|show(?:ed|s)|worsen(?:ed|ing|s)|yield(?:ed|ing|s))\b",
+    re.I,
+)
+_INCREASE_RE = re.compile(r"\b(?:elevat(?:e[ds]?|ion)|greater|higher|increas(?:e[ds]?|ing)|rose|rising)\b", re.I)
+_DECREASE_RE = re.compile(r"\b(?:decreas(?:e[ds]?|ing)|declin(?:e[ds]?|ing)|fell|lower(?:ed|ing|s)?|reduc(?:e[ds]?|ing|tion))\b", re.I)
+_NULL_RE = re.compile(
+    r"\b(?:did not (?:achieve|change|confer|decrease|demonstrate|differ|experience|improve|increase|"
+    r"prevent|produce|protect|reduce|show|worsen)|no (?:(?:statistically )?significant )?"
+    r"(?:association|benefit|change|difference|effect|improvement|increase|reduction)|"
+    r"not (?:associated|linked|related)|unchanged|"
+    r"non[- ]?significant|null (?:effect|finding|result|signal)|similar)\b",
+    re.I,
+)
+_BENEFIT_RE = re.compile(r"\b(?:benefit|beneficial|improv(?:e[ds]?|ement|ing)|protect(?:ed|ing|ion|ive)|remission|recovery)\b", re.I)
+_HARM_RE = re.compile(r"\b(?:adverse|complication|deteriorat(?:e[ds]?|ion|ing)|harm|toxicity|worsen(?:ed|ing|s))\b", re.I)
 _BUNDLE_REFERENCE_RE = re.compile(r"\[bundle:(\d+)\]", re.I)
 _NUMERIC_CITATION_RE = re.compile(r"\[((?:\d+[\s,;-]*)+)\]")
 _DOI_RE = re.compile(r"\b10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
@@ -527,12 +552,31 @@ def _word_count(text: object) -> int:
     return len(str(text or "").split())
 
 
+def _empirical_claim(text: str) -> bool:
+    return bool(_EMPIRICAL_CLAIM_RE.search(text))
+
+
+def _corpus_accounting_only(text: str) -> bool:
+    return any(marker in text.lower() for marker in _CORPUS_ACCOUNTING_MARKERS) and not _empirical_claim(text)
+
+
 def _claim_candidates(text: str) -> list[str]:
     return [
         clean for line in text.splitlines()
         if len(clean := line.strip(" -*")) >= 80
-        and any(marker in clean.lower() for marker in _CLAIM_MARKERS)
+        and (
+            any(marker in clean.lower() for marker in _CLAIM_MARKERS)
+            or _empirical_claim(clean)
+        )
+        and not (clean.lower().startswith("outcome-class note:") and not _empirical_claim(clean))
         and "receipt-level direction is the coded finding" not in clean.lower()
+        and not _corpus_accounting_only(clean)
+        and bool(
+            _BUNDLE_REFERENCE_RE.search(clean)
+            or _DOI_RE.search(clean)
+            or _PMID_RE.search(clean)
+            or _empirical_claim(clean)
+        )
     ][:30]
 
 
@@ -543,17 +587,47 @@ def _evidence_words(text: object) -> set[str]:
     }
 
 
+def _direction_labels(text: str) -> set[str]:
+    if _NULL_RE.search(text):
+        return {"null"}
+    labels = {
+        name for name, pattern in (
+            ("up", _INCREASE_RE), ("down", _DECREASE_RE),
+        ) if pattern.search(text)
+    }
+    if _BENEFIT_RE.search(text):
+        labels.add("benefit")
+    if _HARM_RE.search(text) and "down" not in labels:
+        labels.add("harm")
+    return labels
+
+
+def _directions_compatible(claim: str, evidence: str) -> bool:
+    claim_labels = _direction_labels(claim)
+    evidence_labels = _direction_labels(evidence)
+    for axis in ({"up", "down", "null"}, {"benefit", "harm", "null"}):
+        claim_axis = claim_labels & axis
+        evidence_axis = evidence_labels & axis
+        if claim_axis and evidence_axis and claim_axis.isdisjoint(evidence_axis):
+            return False
+    return True
+
+
 def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
-    claim_words = _evidence_words(claim)
+    label_words = _evidence_words(source.get("cited_as"))
+    claim_words = _evidence_words(claim) - label_words
+    required = min(4, max(3, (len(claim_words) + 4) // 5))
     for key in ("quote", "evidence_span", "excerpt"):
         evidence = " ".join(str(source.get(key) or "").lower().split())
         if len(evidence) < 20:
             continue
-        if evidence in claim.lower() or claim.lower() in evidence:
-            return True
-        required = min(4, max(2, (len(claim_words) + 4) // 5))
-        if len(claim_words & _evidence_words(evidence)) >= required:
-            return True
+        for passage in re.split(r"(?<=[.!?])\s+", evidence):
+            if not _directions_compatible(claim, passage):
+                continue
+            if passage in claim.lower() or claim.lower() in passage:
+                return True
+            if len(claim_words & (_evidence_words(passage) - label_words)) >= required:
+                return True
     return False
 
 
@@ -655,6 +729,7 @@ def _researka_claim_trace_status(
 def _quantity_tokens(
     text: str, sources: list[dict[str, Any]] | None = None,
 ) -> set[tuple[str, str]]:
+    text = text.replace("−", "-").replace("–", "-").replace("—", "-")
     cleaned = _BUNDLE_REFERENCE_RE.sub(
         " ", _DOI_RE.sub(" ", _PMID_RE.sub(" ", _NUMERIC_CITATION_RE.sub(" ", text))),
     )
@@ -695,7 +770,7 @@ def _quantitative_claim_candidates(text: str) -> list[str]:
         part.strip()
         for part in re.split(r"\n+|(?<=[.!?])\s+", text)
         if len(part.strip()) >= 40 and _quantity_tokens(part)
-        and not any(marker in part.lower() for marker in _CORPUS_ACCOUNTING_MARKERS)
+        and not _corpus_accounting_only(part)
     ][:30]
 
 
@@ -1528,10 +1603,40 @@ def _receipt_evidence_excerpt(receipt: dict[str, Any], source_text: str) -> str:
     source = re.split(r"\bsource excerpts:\s*", str(receipt.get("thesis_text") or ""), maxsplit=1, flags=re.I)
     if len(source) != 2:
         return ""
+    spans: list[tuple[int, int]] = []
     for excerpt in (part.strip() for part in source[1].split(" | ")):
-        if quote := _publication_evidence.exact_source_quote(excerpt, source_text):
-            return quote[:900]
-    return ""
+        candidate = excerpt.removesuffix("…").rstrip()
+        if not candidate:
+            continue
+        if (start := source_text.find(candidate)) >= 0:
+            spans.append((start, start + len(candidate)))
+            continue
+        candidate_words = _evidence_words(candidate)
+        if len(candidate_words) < 5:
+            continue
+        candidate_quantities = _quantity_tokens(candidate)
+        matches: list[tuple[float, int, int, int]] = []
+        for sentence in re.split(r"(?<=[.!?])\s+", source_text):
+            sentence_words = _evidence_words(sentence)
+            overlap = len(candidate_words & sentence_words)
+            coverage = overlap / len(candidate_words)
+            if coverage < 0.8 or (
+                candidate_quantities
+                and not candidate_quantities.issubset(_quantity_tokens(sentence))
+            ):
+                continue
+            sentence_start = source_text.find(sentence)
+            if sentence_start >= 0:
+                matches.append((coverage, overlap, sentence_start, len(sentence)))
+        if matches:
+            _coverage, _overlap, start, length = max(matches)
+            spans.append((start, start + length))
+    if not spans:
+        return ""
+    start, end = min(value[0] for value in spans), max(value[1] for value in spans)
+    if end - start > 12_000:
+        start, end = spans[0]
+    return source_text[start:end]
 
 
 def _parsed_source_excerpt(parsed_dir: Path, receipt_id: str) -> str:
@@ -1543,6 +1648,17 @@ def _parsed_source_excerpt(parsed_dir: Path, receipt_id: str) -> str:
         if text:
             return _clip_text(text, limit=1200)
     return ""
+
+
+def _parsed_source_text(parsed_dir: Path, receipt_id: str) -> str:
+    data = _read_json(parsed_dir / f"{receipt_id}.paper_sections.json")
+    sections = data.get("sections")
+    if not isinstance(sections, dict):
+        return ""
+    return " ".join(
+        " ".join(value.split()) for value in sections.values()
+        if isinstance(value, str) and value.strip()
+    )
 
 
 def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
@@ -1603,9 +1719,11 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         pubmed_excerpt = pubmed_abstracts.get(pmid)
         receipt_id = str(row.get("receipt_id") or "")
         parsed_excerpt = _parsed_source_excerpt(parsed_dir, receipt_id)
-        excerpt = parsed_excerpt or pubmed_excerpt or ""
-        receipt_excerpt = _receipt_evidence_excerpt(receipt, excerpt)
-        quote = receipt_excerpt or _publication_evidence.exact_source_quote(claim_excerpt, excerpt)
+        receipt_excerpt = _receipt_evidence_excerpt(
+            receipt, _parsed_source_text(parsed_dir, receipt_id),
+        )
+        excerpt = receipt_excerpt or parsed_excerpt or pubmed_excerpt or ""
+        quote = _publication_evidence.exact_source_quote(claim_excerpt, excerpt)
         cited_as = str(row.get("body_citation") or "")
         rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)
         url = _citation_url(row) or _publication_evidence.parsed_source_url(
@@ -1648,7 +1766,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         source.update(_publication_evidence.source_proof_fields(
             source,
             origin="full_text",
-            evidence=evidence if snapshot and parsed_excerpt else None,
+            evidence=evidence if snapshot else None,
             topic=topic,
             receipt_id=receipt_id,
         ))

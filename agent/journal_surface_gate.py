@@ -164,6 +164,10 @@ _CLASSIFICATION_META_ROW_RE = re.compile(
 )
 _PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
 _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
+_SOURCE_OWNED_SPAN_RE = re.compile(
+    r"(\[bundle:\d+\]\s+reports:\s+).*?(\s*\[exact source:\s*https?://[^\]]+\])",
+    re.IGNORECASE,
+)
 _UNRESOLVED_TEMPLATE_RE = re.compile(r"(?<![a-z])(?:source|study|trial|paper)\((?:s|es)\)(?![a-z])|\bstudy/studies\b", re.IGNORECASE)
 _COUNT_CLAIM_RE = re.compile(r"\b(?:spans|contains|includes|covers|across)\s+(\d+)\s+(?:curated\s+)?(?:references?|sources?|studies|papers)\b", re.IGNORECASE)
 _ANALYTIC_STUB_RE = re.compile(
@@ -483,9 +487,9 @@ def _outcome_key(text: str) -> str:
 
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
-    cross_reference_text = "\n".join(
-        line for line in paper_md.splitlines()
-        if "[exact source:" not in line.lower()
+    cross_reference_text = _SOURCE_OWNED_SPAN_RE.sub(
+        r"\1[source-owned evidence]\2",
+        paper_md,
     )
     defined = {
         number

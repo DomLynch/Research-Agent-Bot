@@ -15,24 +15,37 @@ def test_long_paper_lanes_wait_for_the_prepare_lock() -> None:
         assert "research-agent-paper-lane.lock" not in text, name
     prepare = (REPO / "deploy" / "research-agent-paper-prepare.service").read_text()
     assert "flock --conflict-exit-code 75 --exclusive --wait 900 /run/research-agent-paper-prepare.lock" in prepare
-    for name in ("fresh", "revise", "daily-cycle"):
+    for name in ("fresh", "daily-cycle", "daily-submit"):
         text = (REPO / "deploy" / f"research-agent-paper-{name}.service").read_text()
         assert "flock --conflict-exit-code 75 --shared --wait 900 /run/research-agent-paper-prepare.lock" in text
+    revise = (REPO / "deploy" / "research-agent-paper-revise.service").read_text()
+    assert "flock --conflict-exit-code 75 --shared --wait 4200 /run/research-agent-paper-prepare.lock" in revise
+    assert "TimeoutStartSec=8100" in revise
     daily_submit = (REPO / "deploy" / "research-agent-paper-daily-submit.service").read_text()
-    assert "TimeoutStartSec=900" in daily_submit
+    assert "TimeoutStartSec=1800" in daily_submit
 
 
 def test_no_work_exit_is_success_for_publication_lanes() -> None:
+    # Exit 3 is a bounded no-work result; the drought guard owns SLO recovery.
     for name in ("prepare", "fresh", "revise", "daily-cycle", "daily-submit"):
         text = (REPO / "deploy" / f"research-agent-paper-{name}.service").read_text()
         assert "SuccessExitStatus=3" in text, name
         assert "SuccessExitStatus=3 75" not in text, name
 
 
+def test_manual_runs_cannot_suppress_the_next_scheduled_long_lane() -> None:
+    for name in ("prepare", "fresh", "revise"):
+        text = (REPO / "deploy" / f"research-agent-paper-{name}.service").read_text()
+        assert "StartLimitIntervalSec=21600" in text, name
+        assert "StartLimitBurst=4" in text, name
+
+
 def test_prepare_runs_between_long_paper_windows_and_timers_catch_up() -> None:
     prepare = (REPO / "deploy" / "research-agent-paper-prepare.timer").read_text()
-    assert "OnCalendar=*-*-* 02/8:00:00" in prepare
-    for name in ("prepare", "fresh", "revise", "daily-cycle"):
+    assert "OnCalendar=*-*-* 03/8:30:00" in prepare
+    prepare_service = (REPO / "deploy" / "research-agent-paper-prepare.service").read_text()
+    assert "research-agent-paper-daily-submit.service" in prepare_service
+    for name in ("prepare", "fresh", "revise", "daily-cycle", "daily-submit"):
         text = (REPO / "deploy" / f"research-agent-paper-{name}.timer").read_text()
         assert "Persistent=true" in text, name
 

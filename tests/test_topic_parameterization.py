@@ -489,6 +489,20 @@ def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
     assert "metformin increase" not in thesis
 
 
+def test_receipt_thesis_prefers_results_over_methods() -> None:
+    thesis = orch._build_receipt_thesis_text(
+        paper_id="paper",
+        paper_title="Statin trial",
+        claims=[
+            {"sentence": "The statin methods specified a 40 mg dose.", "source_section": "methods", "claim_role": "effect", "direction": "increase", "binding_confidence": "high"},
+            {"sentence": "Statin exposure reduced mortality in the cohort.", "source_section": "results", "claim_role": "effect", "direction": "decrease", "binding_confidence": "partial"},
+        ],
+    )
+
+    assert "Statin exposure reduced mortality" in thesis
+    assert thesis.index("Statin exposure") < thesis.index("40 mg dose")
+
+
 def test_population_summary_does_not_render_derived_sample_sum() -> None:
     """Population summaries must not synthesize derived n totals.
 
