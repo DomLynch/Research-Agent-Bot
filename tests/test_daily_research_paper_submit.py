@@ -161,7 +161,8 @@ def test_preflight_enforce_fails_closed_without_complete_runtime_outputs(
     failure: str,
     reason: str,
 ) -> None:
-    run = tmp_path / "run"
+    monkeypatch.chdir(tmp_path)
+    run = Path("run")
     run.mkdir()
     tool_root = tmp_path / "preflight"
     if failure != "missing_tool":
@@ -183,6 +184,9 @@ def test_preflight_enforce_fails_closed_without_complete_runtime_outputs(
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(tool_root))
     if failure != "missing_tool":
         def fake_run(*_args: Any, **_kwargs: Any) -> SimpleNamespace:
+            cmd = _args[0]
+            assert all(Path(cmd[cmd.index(flag) + 1]).is_absolute()
+                       for flag in ("--input", "--out", "--clean-out"))
             if failure == "runtime":
                 return SimpleNamespace(returncode=1, stdout="", stderr="boom")
             if failure == "missing_cleaned":

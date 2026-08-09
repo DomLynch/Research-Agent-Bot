@@ -297,9 +297,9 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     if mode == "off":
         return payload, None
     tool_root = Path(os.getenv("RESEARKA_PREFLIGHT_QA_ROOT", ROOT.parent / "researka-preflight-qa"))
-    input_path = run / "researka_preflight_input.json"
-    report_path = run / "researka_preflight_report.json"
-    clean_path = run / "researka_preflight_cleaned_payload.json"
+    input_path = (run / "researka_preflight_input.json").resolve()
+    report_path = (run / "researka_preflight_report.json").resolve()
+    clean_path = (run / "researka_preflight_cleaned_payload.json").resolve()
     _write_json(input_path, payload)
     for stale_path in (report_path, clean_path):
         with contextlib.suppress(OSError):
