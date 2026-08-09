@@ -152,34 +152,19 @@ def build_conclusion_anchor(
     *,
     existing_text: str = "",
 ) -> str:
-    """Conclusion-section anchor. Gives the paper a bounded, corpus-derived
-    closing when the LLM returns a tiny conclusion and the retry does not
-    improve it. The generic conservative-framing hedge is omitted when
-    `existing_text` already carries it (see CONSERVATIVE_FRAMING_MARKER)."""
+    """Return a bounded fallback without adding uncited empirical claims."""
     accepted = [r for r in receipts if r.spar_verdict in ("accept_clean", "accept_caveated")]
     if not accepted:
         return ""
-    tier_counts: Counter[str] = Counter(r.evidence_tier for r in accepted if r.evidence_tier)
-    direct_counts: Counter[str] = Counter(r.directness for r in accepted if r.directness)
-    direction_counts: Counter[str] = Counter(r.effect_direction for r in accepted if r.effect_direction)
-    populations = list(dict.fromkeys(r.population_summary.strip() for r in accepted if r.population_summary and r.population_summary.strip()))
-    # Canonical public count = non-orthogonal tensions (== manifest
-    # n_non_orthogonal_tensions), the value every other surface uses. Using
-    # len(matrix.pairs) here leaked the full pairwise count (e.g. 528 vs 86).
-    n_tensions = len(matrix.non_orthogonal())
-    n_with_p = sum(1 for r in accepted if r.p_values)
+    del matrix, existing_text
     structural = "\n\n".join([
         "### Bounded conclusion",
-        f"This synthesis supports a bounded interpretation across {len(accepted)} accepted receipts. The evidence tiers are {_format_kinds(tier_counts)}, and directness is {_format_kinds(direct_counts)}. Effect directions are {_format_kinds(direction_counts)}, with {n_with_p} receipts carrying source-traced p-values and {n_tensions} documented cross-receipt tensions. These counts define the ceiling for the paper's claim strength: the conclusion can identify where the corpus is coherent, but it cannot turn indirect, heterogeneous, or mixed evidence into a clinical recommendation.",
-        f"Population boundary: the accepted receipts document {len(populations)} distinct population summaries: {_format_populations(populations)}. Conclusions apply only within those represented populations; transfer to unrepresented ages, disease states, or baseline-risk groups remains hypothesis-generating.",
-        "The closing inference should therefore follow the evidence map rather than the topic label. Direct human receipts carry the most weight when they measure clinically proximate outcomes in the population under review. Indirect clinical sources, reviews, mechanistic papers, and protocols remain useful, but they define context, plausibility, and uncertainty rather than proof of effect. Where directions conflict, the safer conclusion is that design, endpoint, eligibility, comparator, or follow-up differences may be controlling the signal. Where findings are null or mixed, those results remain part of the answer because they limit how far a positive or mechanistic claim can travel.",
-        "The practical takeaway is bounded and revisable. The paper should be read as a source-traced map of what the current receipt set can support, not as a treatment guideline or a pooled efficacy claim. A stronger future conclusion would require aligned direct evidence, durable endpoints, and fewer unresolved cross-receipt tensions. Until then, the responsible conclusion is to preserve uncertainty, state the strongest supported signal narrowly, make the remaining research gaps visible, and keep downstream reuse tied to the same receipt-level limits.",
+        "The closing interpretation must remain inside the scope of the retained source record. Direct human receipts deserve the greatest weight when their populations, comparators, endpoints, and follow-up windows match the question under review. Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility, but they cannot substitute for clinically proximate observations. The conclusion therefore preserves distinctions among evidence tier, directness, outcome class, and study design instead of blending them into a single confidence statement.",
+        "Interpretation also depends on fit. A claim that is appropriate for one population, exposure, comparator, or endpoint may be inappropriate elsewhere even when the topic label is similar. Discordant material should define the boundary of inference rather than disappear from the narrative. Variation in eligibility, dose, adherence, baseline condition, measurement strategy, and follow-up can change how a reader should apply the evidence map. Where those modifiers remain unresolved, the conclusion stays conditional and avoids treatment, policy, or population-wide advice.",
+        "The practical takeaway is therefore a method for reading the synthesis, not a new factual claim. Readers should give priority to source-traced passages that align with the question and should treat adjacent material as context. Mechanistic plausibility can explain why an effect might occur, but it cannot replace direct outcome evidence. Reviews can organize a field, but they do not carry the same role as the underlying studies. Safety, tolerability, and null material remain relevant because they constrain interpretation even when the narrative emphasizes a promising direction.",
+        "This boundary makes the conclusion revisable without making it vague. Future retrieval may strengthen or narrow the synthesis, but any update should use the same standard: claims remain tied to identifiable sources, quantitative statements remain tied to matching source values, and practical language remains proportionate to directness and design quality. The paper is therefore best used as a structured evidence map rather than a pooled estimate, treatment guideline, or substitute for professional judgment. Its value lies in separating what the retained record can justify from what still requires better aligned research.",
     ])
-    hedge = "\n\n".join([
-        "The practical result is therefore deliberately conservative. Positive or negative signals should be read only inside the populations, outcome classes, follow-up windows, and evidence tiers represented in the accepted receipts. Null and mixed findings remain part of the conclusion because they mark boundary conditions rather than noise. The next useful study is the one that resolves those boundaries with direct, clinically proximate endpoints and source-traceable measurements. Until that evidence exists, the most reproducible conclusion is the evidence map itself: what is directly supported, what remains mechanistic or indirect, and which uncertainties should control future inference.",
-        "This closing statement is intentionally limited to corpus structure. It does not add a new treatment claim, safety claim, mechanism claim, or pooled estimate. It records the inference boundary that follows from the accepted receipts: stronger conclusions require aligned direct evidence, clinically meaningful endpoints, and fewer unresolved contradictions; weaker or indirect findings remain useful for hypothesis generation and study design. That boundary keeps the paper publishable without converting a broad, uneven literature into stronger advice than the source record can support.",
-    ])
-    return _join_anchor_blocks(structural, hedge, existing_text)
+    return structural
 
 
 def _format_kinds(kinds: Counter[str]) -> str:

@@ -331,6 +331,11 @@ def test_preflight_cleaned_payload_rebinds_source_identity(
     def fake_run(*_args: Any, **_kwargs: Any) -> SimpleNamespace:
         cleaned = json.loads(json.dumps(payload))
         cleaned["source_bundle"][0]["directness"] = "adjacent"
+        cleaned["sections"]["Conclusion"] = (
+            "The evidence tiers include A1 (n=7), directness is direct (n=6), "
+            "and this synthesis includes 12 accepted sources."
+        )
+        cleaned["core_claims_resolved"] = True
         _write_json(run / "researka_preflight_report.json", {
             "status": "pass", "qa_version": "preflight-v2", "blocked_reasons": [],
         })
@@ -347,6 +352,7 @@ def test_preflight_cleaned_payload_rebinds_source_identity(
     )
     assert checked["metadata"]["source_citation_hash"] != original_source_hash
     assert checked["metadata"]["submission_identity_key"] != original_identity
+    assert checked["core_claims_resolved"] is False
 
 
 def _trust_revision_gate(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -1479,6 +1485,34 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
         "intervention period. [bundle:4]\nOutcome 5",
     )
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+
+
+def test_core_claim_trace_blocks_uncited_conclusion_accounting(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    paper = paper.replace(
+        "## Conclusion\n\n" + _words("conclusion", 120) + ".",
+        "## Conclusion\n\nThe evidence tiers include A1 (n=7), directness is direct "
+        "(n=6), and this synthesis includes 12 accepted sources.",
+    )
+    (run / "full_paper.md").write_text(paper, encoding="utf-8")
+
+    payload = daily.build_payload(run)
+
+    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    assert payload["core_claims_resolved"] is False
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == (
+        "researka_core_claims_unresolved:cited=0/1,aligned=0/1"
+    )
+    assert daily._researka_preflight_status(payload, enforce_recency=False) == (
+        "researka_core_claims_unresolved:cited=0/1,aligned=0/1"
+    )
+
+    payload["sections"]["Conclusion"] += " [bundle:1]"
+    payload["core_claims_resolved"] = (
+        daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    )
+    assert payload["core_claims_resolved"] is True
 
 
 def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Path) -> None:

@@ -185,21 +185,18 @@ def test_anchors_contribute_meaningful_word_count():
         assert hedge in disc.lower()
 
 
-def test_conclusion_anchor_uses_non_orthogonal_tension_count() -> None:
-    """The Bounded conclusion must report the canonical non-orthogonal tension
-    count (== manifest n_non_orthogonal_tensions), not len(matrix.pairs) — the
-    latter leaked the full pairwise count (e.g. 528 vs 86)."""
+def test_conclusion_anchor_avoids_untraceable_corpus_counts() -> None:
     receipts = [_r("r1"), _r("r2"), _r("r3")]
     matrix = _matrix(
         _t("r1", "r2", kind="orthogonal", sev=0),
         _t("r1", "r3", kind="orthogonal", sev=0),
-        _t("r2", "r3", kind="null_vs_positive", sev=4),  # the only non-orthogonal
+        _t("r2", "r3", kind="null_vs_positive", sev=4),
     )
     text = build_conclusion_anchor(receipts, matrix)
-    assert "1 documented cross-receipt tensions" in text  # len(non_orthogonal())
-    assert "3 documented" not in text  # not len(pairs)
-    assert "Population boundary:" in text
-    assert "Conclusions apply only within those represented populations" in text
+    assert len(text.split()) >= 250
+    assert "accepted receipts" not in text
+    assert "documented cross-receipt tensions" not in text
+    assert "population summaries" not in text
 
 
 # ---- #8: cross-section hedge dedup (no duplicated meta-hedge) ----------

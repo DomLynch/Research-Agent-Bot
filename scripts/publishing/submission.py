@@ -374,6 +374,7 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
                 or ""
             ) if isinstance(cleaned_metadata.get("revision_of"), dict) else "",
         )
+        cleaned["core_claims_resolved"] = _researka_core_claim_trace_status(cleaned, source_bundle) == "eligible"
         cleaned_metadata["submission_payload_hash"] = _payload_fingerprint(cleaned)
     return cleaned, report
 
@@ -726,6 +727,36 @@ def _researka_claim_trace_status(
     )
 
 
+def _researka_core_claim_trace_status(
+    payload: dict[str, Any], source_bundle: list[dict[str, Any]],
+) -> str:
+    sections_raw = payload.get("sections")
+    sections = sections_raw if isinstance(sections_raw, dict) else {}
+    conclusion = "\n\n".join(str(value) for name, value in sections.items() if str(name).strip().lower() == "conclusion")
+    paragraphs = [
+        part.strip()
+        for text in (str(payload.get("abstract") or ""), conclusion)
+        for part in re.split(r"\n\s*\n", text)
+        if part.strip() and not part.lstrip().startswith("#")
+    ]
+    claims = [
+        part for part in paragraphs
+        if _empirical_claim(part)
+        or (_corpus_accounting_only(part) and bool(re.search(r"\d", part)))
+    ]
+    cited = aligned = 0
+    for claim in claims:
+        indexes = _citation_indexes(claim, source_bundle)
+        cited += bool(indexes)
+        aligned += bool(indexes) and (
+            _corpus_accounting_only(claim)
+            or any(_evidence_aligns(claim, source_bundle[index]) for index in indexes)
+        )
+    if aligned == len(claims):
+        return "eligible"
+    return f"researka_core_claims_unresolved:cited={cited}/{len(claims)},aligned={aligned}/{len(claims)}"
+
+
 def _quantity_tokens(
     text: str, sources: list[dict[str, Any]] | None = None,
 ) -> set[tuple[str, str]]:
@@ -857,6 +888,8 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
             return f"researka_preflight_body_words:{body_words} < {min_body_words}"
     if (claim_trace_status := _researka_claim_trace_status(payload, source_bundle)) != "eligible":
         return claim_trace_status
+    if (core_status := _researka_core_claim_trace_status(payload, source_bundle)) != "eligible":
+        return core_status
     if (quantity_status := _researka_quantitative_trace_status(payload, source_bundle)) != "eligible":
         return quantity_status
     if enforce_recency and (recency_status := _recency_ratio_status(payload)) != "eligible":
@@ -2185,10 +2218,11 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
         "article_type": article_type,
         "domain_slug": domain_slug,
         "category": category,
-        "core_claims_resolved": True,
+        "core_claims_resolved": False,
         "author_signature": content_hash,
         "metadata": metadata,
     } | ({"parent_submission_id": revision_parent} if revision.get("submissionId") else {})
+    payload["core_claims_resolved"] = _researka_core_claim_trace_status(payload, source_bundle) == "eligible"
     metadata["submission_payload_hash"] = _payload_fingerprint(payload)
     return payload
 
