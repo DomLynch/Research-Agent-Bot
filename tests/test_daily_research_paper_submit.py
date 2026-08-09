@@ -1156,6 +1156,7 @@ def test_doi_only_parsed_abstract_precedes_unverified_claim_summary(tmp_path: Pa
         "n_claims": 3,
         "effect_direction": "mixed",
         "directness": "direct",
+        "thesis_text": "Study - source excerpts: Brief exact source finding.",
     }]
     _write_json(run / "manifest.json", manifest)
     _write_json(run / "citation_registry.json", {
@@ -1166,9 +1167,13 @@ def test_doi_only_parsed_abstract_precedes_unverified_claim_summary(tmp_path: Pa
             "source_doi": "10.1234/example",
         },
     })
+    parsed_abstract = (
+        "Brief exact source finding. This authoritative abstract text from the DOI "
+        "source contains enough context for independent verification."
+    )
     _write_json(
         daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed" / "r1.paper_sections.json",
-        {"sections": {"abstract": "Authoritative abstract text from the DOI source."}},
+        {"sections": {"abstract": parsed_abstract}},
     )
     _write_json(
         daily.ROOT / "docs" / "quality-reference" / "topic" / "quant_claims" / "r1.quant_claims.json",
@@ -1178,7 +1183,8 @@ def test_doi_only_parsed_abstract_precedes_unverified_claim_summary(tmp_path: Pa
 
     row = daily.build_payload(run)["source_bundle"][0]
 
-    assert row["excerpt"] == "Authoritative abstract text from the DOI source."
+    assert row["excerpt"] == parsed_abstract
+    assert daily._source_evidence_span(row) == row["excerpt"]
     assert row["quote"] is None
 
 

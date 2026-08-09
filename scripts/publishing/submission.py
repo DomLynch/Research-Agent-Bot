@@ -1755,7 +1755,9 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         receipt_excerpt = _receipt_evidence_excerpt(
             receipt, _parsed_source_text(parsed_dir, receipt_id),
         )
-        excerpt = receipt_excerpt or parsed_excerpt or pubmed_excerpt or ""
+        excerpt = receipt_excerpt if len(receipt_excerpt.split()) >= 12 else (
+            parsed_excerpt or pubmed_excerpt or ""
+        )
         quote = _publication_evidence.exact_source_quote(claim_excerpt, excerpt)
         cited_as = str(row.get("body_citation") or "")
         rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)
