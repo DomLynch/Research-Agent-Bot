@@ -68,6 +68,7 @@ class ScoreInputs:
     has_limitations_section: bool       # paper has Limitations section
     has_clinical_practice_statement: bool  # Bug 3: conclusion has the line
     unresolved_reviewer_p1_count: int
+    appraisal_required: bool = True
 
     def __post_init__(self) -> None:
         for name in ("rob_coverage", "grade_coverage", "numeric_coverage"):
@@ -214,7 +215,7 @@ def _score_limitations(s: ScoreInputs) -> tuple[int, list[str]]:
         score += 2
     else:
         notes.append("limitations: missing clinical-practice statement (Bug 3)")
-    if s.rob_coverage >= 0.5:
+    if not s.appraisal_required or s.rob_coverage >= 0.5:
         score += 1
     return min(5, score), notes
 
@@ -226,14 +227,16 @@ def _score_source_grounding(s: ScoreInputs) -> tuple[int, list[str]]:
         score += 2
     else:
         notes.append("source_grounding: citation registry incomplete")
-    if s.rob_coverage >= 0.8:
+    if not s.appraisal_required:
+        score += 2
+    elif s.rob_coverage >= 0.8:
         score += 1
     elif s.rob_coverage >= 0.5:
         score += 0  # explicit no-credit
         notes.append(
             f"source_grounding: rob_coverage={s.rob_coverage:.2f} (target >=0.8)"
         )
-    if s.grade_coverage >= 1.0:
+    if s.appraisal_required and s.grade_coverage >= 1.0:
         score += 1
     if s.field_engagements_total > 0 and s.field_engagements_supported >= 1:
         score += 1

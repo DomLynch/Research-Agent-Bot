@@ -59,6 +59,14 @@ def test_clean_post_fix_paper_yields_accept() -> None:
     assert r.blockers == ()
 
 
+def test_not_appraised_method_is_not_penalized_for_missing_rob_grade() -> None:
+    r = score_publication(_green_inputs(
+        rob_coverage=0.0, grade_coverage=0.0, appraisal_required=False,
+    ))
+    assert r.verdict == "accept"
+    assert r.rubric.total == 30
+
+
 def test_aaa4_baseline_yields_revise() -> None:
     """3 receipts + no RoB/GRADE + no clinical-practice statement."""
     inputs = _green_inputs(

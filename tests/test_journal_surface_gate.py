@@ -2256,6 +2256,8 @@ def test_finalizer_load_bearing_tensions_are_public_safe(tmp_path) -> None:
     (tmp_path / "full_paper.md").write_text(
         "## Abstract\n\nA.\n\n"
         "## Cross-Domain Synthesis\n\nA 2026 and B 2026 disagree on dosing.\n\n"
+        + ("context --- " * 500)
+        + "\n\n"
         "## Discussion\n\nD.\n"
     )
     (tmp_path / "manifest.json").write_text(_json.dumps({"receipts": []}))

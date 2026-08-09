@@ -1170,7 +1170,7 @@ def _phase_l_strengthen_analytical_sections(text: str, out_dir: Path) -> tuple[s
     def append(name: str, block: str, rule: str) -> None:
         nonlocal text
         m = body(name)
-        if m and block.splitlines()[0] not in m.group(1) and len(m.group(1).split()) < (850 if name.startswith("Cross") else 800):
+        if m and block.splitlines()[0] not in m.group(1) and len(re.findall(r"\b\w+\b", m.group(1))) < (850 if name.startswith("Cross") else 800):
             text = text[:m.end(1)] + "\n\n" + block + "\n" + text[m.end(1):]
             entries.append(FinalizerLogEntry("L_analytical_depth", rule, 1, f"appended manifest-derived analytical depth to {name}"))
 
@@ -5839,6 +5839,9 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
             thresholds=landscape_thresholds(
                 int(fresh.get("n_receipts", 0) or 0),
                 int(fresh.get("n_tensions", 0) or 0),
+                declared_review_type=(
+                    (_load_sidecar(out_dir / "manifest.json") or {}).get("review_type")
+                ),
             ),
         )
     except (ImportError, TypeError, ValueError):

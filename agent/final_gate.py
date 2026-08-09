@@ -3,6 +3,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from agent.review_type import formal_appraisal_required, parse_review_type
+
 __all__ = [
     "GateThresholds",
     "GateInputs",
@@ -72,23 +74,22 @@ def landscape_thresholds(
     *,
     declared_review_type: str | None = None,
 ) -> GateThresholds | None:
-    """Relaxed thresholds for a zero-tension evidence_map landscape, else None.
+    """Apply method-aware appraisal and evidence-map tension thresholds.
 
     An evidence_map is reviewed for fidelity, not convergence: a corpus with no
-    non-orthogonal cross-source tension is a valid landscape survey (nothing to
-    adjudicate), not a failed thesis. For such corpora the >=1-tension floor is
-    lifted; every integrity threshold (numeric trace, citation registry, RoB,
-    GRADE, receipts, template language) is unchanged. Returns None for ordinary
-    corpora so the caller falls back to DEFAULT_THRESHOLDS. High-tension
-    landscapes already clear min_tensions=1, so only the zero-tension case
-    needs relaxing here. Universal — keyed on tension count, not topic."""
-    if (
-        declared_review_type == "evidence_map"
-        and n_receipts > 0
-        and n_tensions <= 0
-    ):
-        return GateThresholds(min_tensions=0)
-    return None
+    non-orthogonal cross-source tension is a valid landscape survey. Formal
+    RoB/GRADE remains mandatory for systematic and meta-analytic methods, but
+    is not fabricated for methods that declare it NotAppraised."""
+    review_type = parse_review_type(declared_review_type)
+    optional_appraisal = not formal_appraisal_required(review_type)
+    zero_tension_map = review_type == "evidence_map" and n_receipts > 0 and n_tensions <= 0
+    if not optional_appraisal and not zero_tension_map:
+        return None
+    return GateThresholds(
+        min_rob_coverage=0.0 if optional_appraisal else DEFAULT_THRESHOLDS.min_rob_coverage,
+        min_grade_coverage=0.0 if optional_appraisal else DEFAULT_THRESHOLDS.min_grade_coverage,
+        min_tensions=0 if zero_tension_map else DEFAULT_THRESHOLDS.min_tensions,
+    )
 
 
 @dataclass(frozen=True, slots=True)

@@ -182,7 +182,7 @@ def test_tension_directness_normalizes_review_records(tmp_path: Path) -> None:
 def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     parsed = tmp_path / "parsed"
     parsed.mkdir()
-    artifact = pqr.write_quality_methods(tmp_path, _receipts(), parsed)
+    pqr.write_quality_methods(tmp_path, _receipts(), parsed)
     (tmp_path / "field_engagement.json").write_text(json.dumps([
         {"framework_name": "Mannick", "status": "support"},
     ]))
@@ -193,6 +193,7 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     manifest = {
         "n_receipts": 40,
         "n_non_orthogonal_tensions": 5,
+        "review_type": "prisma_scr_scoping_synthesis",
         "thesis": "Receipt-bound thesis.",
         "receipts": _receipts(),
     }
@@ -207,7 +208,7 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
         audit=audit,
         journal_surface={"passed": True},
         reviewer_patches={"unresolved_p1_count": 0},
-        quality_bundle=artifact["bundle"],
+        quality_bundle=SimpleNamespace(rob_coverage=0.0, grade_coverage=0.0),
         citation_registry_complete=True,
     )
 
@@ -426,7 +427,7 @@ def test_refresh_publication_score_replaces_stale_clinical_boundary(tmp_path: Pa
     readable.mkdir()
     stale_inputs = pqr.ScoreInputs(
         n_receipts=19, n_outcome_classes=3, n_tensions=82,
-        rob_coverage=1.0, grade_coverage=1.0, numeric_coverage=1.0,
+        rob_coverage=0.0, grade_coverage=0.0, numeric_coverage=1.0,
         citation_registry_complete=True, audit_gates_passed=True,
         template_language_blocking=False, field_engagements_supported=0,
         field_engagements_total=5, has_explicit_thesis=True,
@@ -442,10 +443,14 @@ def test_refresh_publication_score_replaces_stale_clinical_boundary(tmp_path: Pa
     (tmp_path / "full_paper.md").write_text(
         "## Limitations\n\nThis evidence cannot support a clinical recommendation.\n"
     )
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "review_type": "prisma_scr_scoping_synthesis",
+    }))
 
     assert pqr.refresh_publication_score(tmp_path)
     fresh = json.loads((score_dir / "publication_score.json").read_text())
     assert fresh["inputs"]["has_clinical_practice_statement"] is True
+    assert fresh["inputs"]["appraisal_required"] is False
     assert fresh["result"]["verdict"] == "accept"
     assert "ACCEPT - 28/30" in (readable / "publication_score.md").read_text()
 

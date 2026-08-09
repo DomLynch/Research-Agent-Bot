@@ -21,6 +21,9 @@ REVIEW_TYPES: Final[dict[str, str]] = {
 COMPACT_REVIEW_TYPES: Final[frozenset[str]] = frozenset({
     "thin_corpus_brief", "evidence_brief", "evidence_map",
 })
+APPRAISAL_OPTIONAL_REVIEW_TYPES: Final[frozenset[str]] = frozenset({
+    "prisma_scr_scoping_synthesis",
+})
 
 DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"
 # Slice 31 universal thresholds — no topic-specific values.
@@ -81,6 +84,11 @@ def parse_review_type(token: str | None) -> str:
             f"{sorted(REVIEW_TYPES)}",
         )
     return norm
+
+
+def formal_appraisal_required(token: str | None) -> bool:
+    """Whether the declared method requires formal RoB and GRADE appraisal."""
+    return parse_review_type(token) not in APPRAISAL_OPTIONAL_REVIEW_TYPES
 
 
 def display_label(token: str) -> str:

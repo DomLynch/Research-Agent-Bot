@@ -30,6 +30,7 @@ from agent.forest_plot_svg import render_forest_plot_svg
 from agent.meta_analysis import EffectRow, pool_random_effects
 from agent.publication_scorer import ScoreInputs, score_publication
 from agent.quality_methods_bundle import build_quality_methods_bundle
+from agent.review_type import formal_appraisal_required, parse_review_type
 from agent.template_gate_adapter import evaluate_template_gate
 from agent.tension_elaboration import TensionRecord, select_top_tensions
 
@@ -64,11 +65,14 @@ def refresh_publication_score(out_dir: Path) -> bool:
         paper_text = paper_path.read_text()
         audit_path = out_dir / "full_paper.audit.json"
         audit = json.loads(audit_path.read_text()) if audit_path.is_file() else None
+        manifest_path = out_dir / "manifest.json"
+        manifest = json.loads(manifest_path.read_text()) if manifest_path.is_file() else {}
         template = evaluate_template_gate(paper_text, source=str(paper_path))
         inputs.update(
             has_limitations_section="## limitations" in paper_text.lower(),
             has_clinical_practice_statement=_has_clinical_practice_boundary(paper_text),
             template_language_blocking=template.template_language_blocking,
+            appraisal_required=formal_appraisal_required(manifest.get("review_type")),
         )
         if isinstance(audit, dict):
             inputs.update(numeric_coverage=_numeric_coverage(audit), audit_gates_passed=_audit_passed(audit))
@@ -797,6 +801,7 @@ def write_final_quality_gates(
     quality_bundle: Any,
     citation_registry_complete: bool,
 ) -> dict[str, Any]:
+    review_type = parse_review_type(manifest.get("review_type"))
     template = evaluate_template_gate(paper_text, source=str(out_dir / "full_paper.md"))
     (out_dir / "template_language_gate.json").write_text(template.json_report)
     (out_dir / "template_language_gate.md").write_text(template.markdown_report)
@@ -817,7 +822,11 @@ def write_final_quality_gates(
     gate = _gate_with_runtime_integrity(
         evaluate_final_gate(
             inputs,
-            thresholds=landscape_thresholds(inputs.n_receipts, inputs.n_tensions),
+            thresholds=landscape_thresholds(
+                inputs.n_receipts,
+                inputs.n_tensions,
+                declared_review_type=review_type,
+            ),
         ),
         runtime_failure,
     )
@@ -841,6 +850,7 @@ def write_final_quality_gates(
         has_limitations_section="## limitations" in text_lower,
         has_clinical_practice_statement=_has_clinical_practice_boundary(paper_text),
         unresolved_reviewer_p1_count=int((reviewer_patches or {}).get("unresolved_p1_count", 0)),
+        appraisal_required=formal_appraisal_required(review_type),
     )
     score = score_publication(score_inputs)
     # Resolve accountability model + pass state from the run state so

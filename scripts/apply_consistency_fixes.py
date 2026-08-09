@@ -1768,7 +1768,7 @@ def _section_word_count(paper: str, heading: str) -> int:
     )
     if not m:
         return 0
-    return len(m.group(1).split())
+    return len(re.findall(r"\b\w+\b", m.group(1)))
 
 
 def _extract_section(paper: str, heading: str) -> tuple[int, int, str]:
@@ -3207,25 +3207,32 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
         s, e, section = _extract_section(paper_md, heading)
         if s < 0:
             continue
-        if _paragraph_already_present(paper_md, paragraph):
-            continue
-        updated = section.rstrip() + "\n\n" + paragraph + "\n\n"
-        paper_md = paper_md[:s] + updated + paper_md[e:]
+        n_blocks = 0
+        if not _paragraph_already_present(paper_md, paragraph):
+            updated = section.rstrip() + "\n\n" + paragraph + "\n\n"
+            paper_md = paper_md[:s] + updated + paper_md[e:]
+            n_blocks = 1
         new_count = _section_word_count(paper_md, heading)
-        n_blocks = 1
-        while new_count < floor and n_blocks < 8:
+        extension_index = 1
+        while new_count < floor and extension_index <= 7:
+            extension = _depth_backfill_extension(heading, extension_index)
+            extension_index += 1
+            if _paragraph_already_present(paper_md, extension):
+                continue
             s, e, section = _extract_section(paper_md, heading)
             if s < 0:
                 break
             updated = (
                 section.rstrip()
                 + "\n\n"
-                + _depth_backfill_extension(heading, n_blocks)
+                + extension
                 + "\n\n"
             )
             paper_md = paper_md[:s] + updated + paper_md[e:]
             new_count = _section_word_count(paper_md, heading)
             n_blocks += 1
+        if not n_blocks:
+            continue
         log.append({
             "fix_type": "analytical_depth_backfill",
             "n_changes": n_blocks,

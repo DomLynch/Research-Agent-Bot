@@ -1561,7 +1561,7 @@ def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
     ]
 
 
-def test_apply_fixes_depth_backfill_is_document_global_idempotent() -> None:
+def test_apply_fixes_depth_backfill_reuses_existing_base_without_duplication() -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
@@ -1575,7 +1575,8 @@ def test_apply_fixes_depth_backfill_is_document_global_idempotent() -> None:
     )
     fixed, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
     assert fixed.count("### Evidence Context") == 1
-    assert not [
+    assert fixer._section_word_count(fixed, "Background") >= 300
+    assert [
         e for e in log
         if e["fix_type"] == "analytical_depth_backfill"
         and "'Background'" in e["description"]
@@ -2124,7 +2125,7 @@ def test_apply_fixes_backfills_cross_domain_after_review_trim() -> None:
 
     paper = (
         "## Cross-Domain Synthesis\n\n"
-        + ("word " * 758)
+        + ("word --- " * 758)
         + "\n\n## Discussion\n\n"
         + ("word " * 900)
         + "\n\n## References\n\n- entry\n"
