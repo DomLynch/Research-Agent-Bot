@@ -3247,7 +3247,7 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
 
 def _depth_backfill_extension(heading: str, index: int) -> str:
     prefixes = (
-        "Population fit, comparator alignment, endpoint proximity, follow-up "
+        "Population fit, comparator alignment, clinical directness, follow-up "
         "length, ascertainment method, baseline risk, adherence, exposure "
         "dose, and external validity are kept separate during interpretation.",
         "Cellular mechanism, animal-model response, observational association, "
@@ -3446,7 +3446,7 @@ also the uneven directness of the evidence across outcome classes.
 Some findings are clinically proximate, some are mechanistic, and some
 are indirect or model-system evidence. The paper therefore avoids
 treating all sources as equivalent. Its conclusions are strongest
-where directness, endpoint proximity, and source-context safety align,
+where study design, clinical directness, and source-context safety align,
 and weaker where evidence must be translated across populations,
 species, intervention schedules, or measurement systems."""
 

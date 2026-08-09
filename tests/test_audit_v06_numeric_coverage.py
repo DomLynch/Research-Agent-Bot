@@ -367,7 +367,20 @@ def test_q9_contract_version_in_message() -> None:
     paper = "## Discussion\n\nQualitative text."
     _ok, msg = audit._check_numeric_density(paper)
     assert "contract=" in msg
-    assert "2026-07-10-v3" in msg
+    assert "2026-08-09-v4" in msg
+
+
+def test_q9_density_excludes_non_evidence_sections_from_denominator() -> None:
+    paper = (
+        "## Methods\n\n" + "method " * 500
+        + "\n\n## Results\n\n" + "word " * 98 + "n=1 n=2"
+        + "\n\n## References\n\n" + "citation " * 500
+    )
+
+    ok, msg = audit._check_numeric_density(paper)
+
+    assert ok is True, msg
+    assert "references excluded" in msg
 
 
 def test_q2_or_does_not_match_english_word_or() -> None:

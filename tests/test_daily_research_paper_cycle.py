@@ -2445,12 +2445,12 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
         "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
         "--max-attempts 12" in service
     )
-    assert "SuccessExitStatus=3" in service
+    assert "SuccessExitStatus=3 75" in service
     assert "Restart=on-failure" in service
     assert "RestartPreventExitStatus=3" in service
     assert "StartLimitIntervalSec=21600" in service
     assert "StartLimitBurst=2" in service
-    assert "/usr/bin/flock --exclusive --nonblock /run/research-agent-paper-prepare.lock" in service
+    assert "/usr/bin/flock --conflict-exit-code 75 --exclusive --nonblock /run/research-agent-paper-prepare.lock" in service
     assert "TimeoutStartSec=12600" in service
     assert "OnCalendar=*-*-* 06/8:00:00" in timer
 
@@ -2462,7 +2462,7 @@ def test_synthesis_units_share_prepare_exclusion_lock() -> None:
         "research-agent-paper-revise.service",
     ):
         service = (REPO / "deploy" / name).read_text(encoding="utf-8")
-        assert "/usr/bin/flock --shared --nonblock /run/research-agent-paper-prepare.lock" in service
+        assert "/usr/bin/flock --conflict-exit-code 75 --shared --nonblock /run/research-agent-paper-prepare.lock" in service
 
 
 def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:

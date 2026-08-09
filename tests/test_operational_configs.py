@@ -14,10 +14,10 @@ def test_long_paper_lanes_do_not_share_one_nonblocking_lock() -> None:
         text = (REPO / "deploy" / f"research-agent-paper-{name}.service").read_text()
         assert "research-agent-paper-lane.lock" not in text, name
     prepare = (REPO / "deploy" / "research-agent-paper-prepare.service").read_text()
-    assert "flock --exclusive --nonblock /run/research-agent-paper-prepare.lock" in prepare
+    assert "flock --conflict-exit-code 75 --exclusive --nonblock /run/research-agent-paper-prepare.lock" in prepare
     for name in ("fresh", "revise", "daily-cycle"):
         text = (REPO / "deploy" / f"research-agent-paper-{name}.service").read_text()
-        assert "flock --shared --nonblock /run/research-agent-paper-prepare.lock" in text
+        assert "flock --conflict-exit-code 75 --shared --nonblock /run/research-agent-paper-prepare.lock" in text
     daily_submit = (REPO / "deploy" / "research-agent-paper-daily-submit.service").read_text()
     assert "TimeoutStartSec=900" in daily_submit
 
@@ -25,7 +25,8 @@ def test_long_paper_lanes_do_not_share_one_nonblocking_lock() -> None:
 def test_no_work_exit_is_success_for_publication_lanes() -> None:
     for name in ("prepare", "fresh", "revise", "daily-cycle", "daily-submit"):
         text = (REPO / "deploy" / f"research-agent-paper-{name}.service").read_text()
-        assert "SuccessExitStatus=3" in text, name
+        expected = "SuccessExitStatus=3 75" if name in {"prepare", "fresh", "revise", "daily-cycle"} else "SuccessExitStatus=3"
+        assert expected in text, name
 
 
 def test_weekly_workflow_runs_existing_report_and_never_commits() -> None:

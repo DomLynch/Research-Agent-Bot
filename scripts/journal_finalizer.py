@@ -148,12 +148,28 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
             n_changes=1,
             detail="rebuilt evidence lanes from current manifest before text repair",
         ))
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    enforce_depth = isinstance(manifest, dict) and isinstance(
+        manifest.get("section_words"), dict,
+    )
     states = [text]
 
     for _ in range(40):
         before = text
         new_text, log = _run_text_phases(text, out_dir)
         entries.extend(log)
+        depth_repairs: list[dict[str, Any]] = []
+        if enforce_depth:
+            new_text, depth_repairs = _script_module(
+                "apply_consistency_fixes",
+            )._ensure_analytical_depth_floors(new_text)
+        entries.extend(
+            FinalizerLogEntry(
+                "L_analytical_depth", str(item["fix_type"]),
+                int(item["n_changes"]), str(item["description"]),
+            )
+            for item in depth_repairs
+        )
         if new_text != text:
             paper_path.write_text(new_text)
         text = new_text

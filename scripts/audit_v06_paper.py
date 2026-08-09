@@ -634,7 +634,7 @@ def _check_thesis_present(paper: str) -> tuple[bool, str]:
 # Versioned metric contract — surfaced in audit output so a future
 # replay-on-old-paper run can't be mis-attributed to "paper improved"
 # when only the metric changed.
-_DENSITY_CONTRACT_VERSION = "2026-07-10-v3"
+_DENSITY_CONTRACT_VERSION = "2026-08-09-v4"
 
 # Ratios MUST have an explicit `=` or `:` separator + a digit.
 # Without that, `OR` matches the English word "or" in prose like
@@ -715,6 +715,22 @@ _ANALYTICAL_DENOMINATOR_EXCLUDE_RE = re.compile(
     r"Tables\b|Evidence Landscape\b|Table\s+\d+\b|Table\s+\d+\s*\(|References\b)",
     re.IGNORECASE,
 )
+_NUMERIC_DENSITY_EXCLUDE_RE = re.compile(
+    r"^##\s+(?:Abstract\b|Research Question\b|Introduction\b|"
+    r"Background\b|Methods\b|What This Synthesis Adds\b|References\b)",
+    re.IGNORECASE,
+)
+
+
+def _strip_h2_sections(paper: str, excluded: re.Pattern[str]) -> str:
+    out: list[str] = []
+    skipping = False
+    for line in paper.splitlines():
+        if line.startswith("## "):
+            skipping = bool(excluded.match(line))
+        if not skipping:
+            out.append(line)
+    return "\n".join(out)
 
 
 def _strip_non_prose_sections_for_analytical_ratio(paper: str) -> str:
@@ -726,23 +742,17 @@ def _strip_non_prose_sections_for_analytical_ratio(paper: str) -> str:
     papers fail for being auditable. The 15% threshold stays strict;
     the denominator is the narrative synthesis body."""
     text = _strip_publication_appendix(paper)
-    lines = text.splitlines()
-    out: list[str] = []
-    skipping = False
-    for line in lines:
-        if line.startswith("## "):
-            skipping = bool(_ANALYTICAL_DENOMINATOR_EXCLUDE_RE.match(line))
-        if not skipping:
-            out.append(line)
-    return "\n".join(out)
+    return _strip_h2_sections(text, _ANALYTICAL_DENOMINATOR_EXCLUDE_RE)
 
 
 def _check_numeric_density(
     paper: str, threshold: float = 8.0,
 ) -> tuple[bool, str]:
-    # Exclude publication-prep appendix from density calculation —
-    # appendix is pure prose with no claim numerics by design.
-    synthesis_content = _strip_publication_appendix(paper)
+    # Measure evidence-bearing synthesis, not framing, methods, novelty,
+    # references, or publication metadata that need no claim numerics.
+    synthesis_content = _strip_h2_sections(
+        _strip_publication_appendix(paper), _NUMERIC_DENSITY_EXCLUDE_RE,
+    )
     wc = len(synthesis_content.split())
     total = sum(
         len(re.findall(pat, synthesis_content))
@@ -753,7 +763,7 @@ def _check_numeric_density(
     return reported_density >= threshold, (
         f"density {reported_density:.1f} numerics/1000 words "
         f"(threshold ≥{threshold}; contract={_DENSITY_CONTRACT_VERSION}; "
-        f"appendix excluded)"
+        f"front matter/methods/novelty/appendix/references excluded)"
     )
 
 

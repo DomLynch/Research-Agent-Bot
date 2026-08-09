@@ -5,9 +5,9 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-SuccessExitStatus=3
+SuccessExitStatus=3 75
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/usr/bin/flock --shared --nonblock /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --run-synthesis --submit --max-attempts 5 --max-revise-attempts 3
+ExecStart=/usr/bin/flock --conflict-exit-code 75 --shared --nonblock /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --run-synthesis --submit --max-attempts 5 --max-revise-attempts 3
 Environment=PYTHONUNBUFFERED=1
 TimeoutStartSec=21600
