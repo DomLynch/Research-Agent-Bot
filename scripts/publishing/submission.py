@@ -35,7 +35,7 @@ from source_topic_specificity import (  # noqa: E402
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.evidence_lanes import derive_receipt_lane  # noqa: E402
-from agent import publication_evidence as _publication_evidence  # noqa: E402
+from agent import publication_evidence as _publication_evidence, revision_claim_trace as _revision_claim_trace  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
     CorruptJsonState,
     read_json as _read_json_state,
@@ -582,10 +582,8 @@ def _claim_candidates(text: str) -> list[str]:
 
 
 def _evidence_words(text: object) -> set[str]:
-    return {
-        word for word in re.findall(r"[a-z0-9]+", str(text or "").lower())
-        if len(word) >= 5 and word not in _GENERIC_EVIDENCE_WORDS
-    }
+    return {word for word in re.findall(r"[a-z0-9]+", str(text or "").lower())
+            if len(word) >= 5 and word not in _GENERIC_EVIDENCE_WORDS}
 
 
 def _direction_labels(text: str) -> set[str]:
@@ -614,21 +612,36 @@ def _directions_compatible(claim: str, evidence: str) -> bool:
     return True
 
 
+def _quantities_match(claim_quantities: set[tuple[str, str]], evidence: str) -> bool:
+    evidence_quantities = _quantity_tokens(evidence)
+    return all(token in evidence_quantities or token[0].startswith("-") and "down" in _direction_labels(evidence) and (token[0][1:], token[1]) in evidence_quantities for token in claim_quantities)
+
+
 def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
     label_words = _evidence_words(source.get("cited_as"))
     claim_words = _evidence_words(claim) - label_words
     required = min(4, max(3, (len(claim_words) + 4) // 5))
+    claim_text = claim.lower().split(" reports: ", 1)[-1].split(" [exact source:", 1)[0]
+    claim_quantities = _quantity_tokens(claim, [source])
     for key in ("quote", "evidence_span", "excerpt"):
-        evidence = " ".join(str(source.get(key) or "").lower().split())
+        evidence = " ".join(str(source.get(key) or "").lower().split()).replace("−", "-").replace("–", "-").replace("—", "-")
         if len(evidence) < 20:
             continue
-        for passage in re.split(r"(?<=[.!?])\s+", evidence):
-            if not _directions_compatible(claim, passage):
-                continue
-            if passage in claim.lower() or claim.lower() in passage:
+        for sentence in _revision_claim_trace._sentences(evidence):
+            passages = re.split(r";\s*|,\s*(?=[a-z])|\s+and\s+(?=[^,;.]{0,80}(?:[+-]?\d|\.\d)|[^,;.]{0,60}\b(?:did not|had no|no (?:statistically )?significant|remained unchanged))", sentence, flags=re.I)
+            direction_conflict = not _directions_compatible(claim, sentence)
+            distinct_null = any(_NULL_RE.search(part) and bool(_evidence_words(part) - claim_words - {"change", "control", "controls", "difference", "effect", "effects", "individuals", "observed", "overall", "participant", "participants", "population", "populations", "same", "sample", "subject", "subjects", "these", "those"}) for part in passages)
+            if len(sentence) >= 20 and claim_text and (sentence in claim_text or claim_text in sentence) and (not claim_quantities or _quantities_match(claim_quantities, sentence)) and (not direction_conflict or distinct_null):
                 return True
-            if len(claim_words & (_evidence_words(passage) - label_words)) >= required:
-                return True
+            for passage in passages:
+                if not passage or not _directions_compatible(claim, passage) or direction_conflict and not distinct_null:
+                    continue
+                overlap = len(claim_words & (_evidence_words(passage) - label_words))
+                quantity_match = _quantities_match(claim_quantities, passage)
+                if len(passage) >= 20 and claim_text and (passage in claim_text or claim_text in passage) and (not claim_quantities or quantity_match):
+                    return True
+                if overlap >= (2 if claim_quantities else required) and (not claim_quantities or quantity_match):
+                    return True
     return False
 
 
@@ -661,12 +674,9 @@ def _claim_trace_counts(
 ) -> tuple[int, int, int]:
     claims = _claim_candidates(text)
     indexes = [_citation_indexes(claim, bundle) for claim in claims]
-    return (
-        len(claims),
-        sum(bool(values) for values in indexes),
-        sum(any(_evidence_aligns(claim, bundle[index]) for index in values)
-            for claim, values in zip(claims, indexes, strict=True)),
-    )
+    return len(claims), sum(bool(values) for values in indexes), sum(
+        any(_evidence_aligns(claim, bundle[index]) for index in values)
+        for claim, values in zip(claims, indexes, strict=True))
 
 
 def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -> str:
@@ -757,13 +767,12 @@ def _researka_core_claim_trace_status(
     return f"researka_core_claims_unresolved:cited={cited}/{len(claims)},aligned={aligned}/{len(claims)}"
 
 
-def _quantity_tokens(
-    text: str, sources: list[dict[str, Any]] | None = None,
-) -> set[tuple[str, str]]:
+def _quantity_tokens(text: str, sources: list[dict[str, Any]] | None = None) -> set[tuple[str, str]]:
     text = text.replace("−", "-").replace("–", "-").replace("—", "-")
     cleaned = _BUNDLE_REFERENCE_RE.sub(
         " ", _DOI_RE.sub(" ", _PMID_RE.sub(" ", _NUMERIC_CITATION_RE.sub(" ", text))),
     )
+    cleaned = re.sub(r"(%|percent(?:age)?|pp)\s*=\s*([+-]?(?:\d+(?:\.\d+)?|\.\d+))", r"\2\1", cleaned, flags=re.I)
     cleaned = re.sub(r"\btype\s+[12]\s+diabet(?:es|ic)\b|(?<=[A-Za-z])-\d+\b", " ", cleaned, flags=re.I)
     for source in sources or []:
         for field in ("doi", "cited_as"):
@@ -779,13 +788,10 @@ def _quantity_tokens(
         try:
             decimal_value = Decimal(raw_number)
             number = format(decimal_value.normalize(), "f")
+            number = f"+{number}" if raw_number.startswith("+") else number
         except InvalidOperation:
             continue
-        if (
-            not raw_unit
-            and decimal_value == int(decimal_value)
-            and 1900 <= int(decimal_value) <= 2100
-        ):
+        if not raw_unit and decimal_value == int(decimal_value) and 1900 <= int(decimal_value) <= 2100:
             continue
         unit = raw_unit.replace("μ", "u").replace("µ", "u")
         if unit.startswith("percent"):
@@ -807,15 +813,9 @@ def _quantitative_claim_candidates(text: str) -> list[str]:
 
 def _quantities_agree(claim: str, sources: list[dict[str, Any]]) -> bool:
     claim_tokens = _quantity_tokens(claim, sources)
-    evidence_tokens: set[tuple[str, str]] = set()
-    for source in sources:
-        evidence = " ".join(
-            str(source.get(field) or "")
-            for field in ("quote", "evidence_span", "excerpt", "effect")
-        )
-        evidence_tokens.update(_quantity_tokens(evidence))
-    evidence_tokens.update((number, "") for number, _ in tuple(evidence_tokens))
-    return claim_tokens <= evidence_tokens
+    evidence = " ".join(str(source.get(field) or "") for source in sources for field in (
+        "quote", "evidence_span", "excerpt", "effect"))
+    return _quantities_match(claim_tokens, evidence)
 
 
 def _researka_quantitative_trace_status(

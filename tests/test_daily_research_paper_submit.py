@@ -1463,6 +1463,60 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
     ):
         assert daily._claim_trace_counts(negated, positive_bundle) == (1, 1, 0)
 
+    mixed_result = (
+        "Wu 2025a [bundle:1] reports: RT reduced fatigue and improved sleep quality and "
+        "psychological symptoms (P < 0.05) [exact source: https://doi.org/10.1234/example]."
+    )
+    assert daily._claim_trace_counts(mixed_result, [{
+        "cited_as": "Wu 2025a",
+        "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
+        "(P < 0.05), but had no effect on cognition or overall quality of life.",
+    }]) == (1, 1, 1)
+    assert daily._claim_trace_counts(mixed_result, [{
+        "cited_as": "Wu 2025a",
+        "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
+        "(P < 0.05) and had no effect on those same symptoms.",
+    }]) == (1, 1, 0)
+    assert daily._claim_trace_counts(mixed_result, [{
+        "cited_as": "Wu 2025a",
+        "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
+        "(P < 0.05), but no significant effect was observed.",
+    }]) == (1, 1, 0)
+    assert daily._claim_trace_counts(mixed_result, [{
+        "cited_as": "Wu 2025a",
+        "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
+        "(P < 0.05), but no significant effect was observed among participants.",
+    }]) == (1, 1, 0)
+    assert daily._claim_trace_counts(mixed_result, [{
+        "cited_as": "Wu 2025a",
+        "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
+        "(P < 0.05) and had no effect on cognition.",
+    }]) == (1, 1, 1)
+    assert not daily._evidence_aligns(mixed_result, {"cited_as": "Wu 2025a", "excerpt": "A sufficiently long unrelated evidence statement; and"})
+
+    percentage_result = (
+        "Fuentes-Barria 2025 [bundle:1] reports: Both groups improved significantly in "
+        "waist circumference IBRT: -1.85% [exact source: https://doi.org/10.1234/example]."
+    )
+    percentage_bundle = [{
+        "cited_as": "Fuentes-Barria 2025",
+        "excerpt": "Significant improvements were noted in waist circumference reduction "
+        "(p <= 0.01, % = 1.85) and dominant hand grip strength (% = 5.47).",
+    }]
+    assert daily._claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 1)
+    percentage_bundle[0]["excerpt"] = "Grip strength improved by 1.85% after treatment."
+    assert daily._claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 0)
+    percentage_bundle[0]["excerpt"] = "Waist circumference reduction was 1.85% after treatment."
+    assert daily._claim_trace_counts(percentage_result.replace("-1.85%", "+1.85%"), percentage_bundle) == (1, 1, 0)
+    percentage_bundle[0]["excerpt"] = "Waist circumference reduction was 5.47% after treatment."
+    assert daily._claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 0)
+    percentage_bundle[0]["excerpt"] = (
+        "Waist circumference reduction was 1.85% and grip strength improved 5.47%."
+    )
+    assert daily._claim_trace_counts(percentage_result.replace("-1.85%", "-5.47%"), percentage_bundle) == (1, 1, 0)
+    percentage_bundle[0]["excerpt"] = "Waist circumference reduction was 1.85% after treatment."
+    assert daily._quantities_agree(percentage_result, percentage_bundle)
+
 
 def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
@@ -1541,7 +1595,7 @@ def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Pa
         "researka_quantitative_trace_insufficient:aligned=0/1"
     )
     assert daily._researka_preflight_status(payload, enforce_recency=False) == (
-        "researka_quantitative_trace_insufficient:aligned=0/1"
+        "researka_claim_trace_insufficient:cited=1/1,aligned=0/1,required=1"
     )
 
     bundle[0]["excerpt"] = bundle[0]["excerpt"].replace("5 mg", "10 mg")
