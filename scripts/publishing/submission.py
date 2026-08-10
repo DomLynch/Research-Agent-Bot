@@ -745,8 +745,10 @@ def _researka_claim_trace_status(
 def _researka_core_claim_trace_status(
     payload: dict[str, Any], source_bundle: list[dict[str, Any]],
 ) -> str:
-    body = str(payload.get("body_markdown") or "")
-    sections = {heading.strip().lower(): value for heading, value in _sections(body).items()}
+    sections = {heading.strip().lower(): value for heading, value in _sections(str(payload.get("body_markdown") or "")).items()}
+    decisive = "\n".join(map(str, (payload.get("title") or "", payload.get("abstract") or "", sections.get("conclusion") or "")))
+    if re.search(r"(?:\b(?:todo|tbd|unresolved|placeholder)\b|\[(?:to fill|insert|pending)[^]]*\]|\?\?\?)", decisive, re.I):
+        return "researka_core_claims_unresolved:placeholder_token"
     claims: list[str] = []
     for name in ("abstract", "conclusion"):
         text = re.sub(r"^#{1,6}\s+(.+?)\s*$", r"\1.", sections.get(name, ""), flags=re.M)
@@ -2093,13 +2095,11 @@ def _repair_domain_frame_template_file(run: Path) -> list[str]:
 
 
 def _domain_frame_status(payload: dict[str, Any]) -> str:
-    text = " ".join(
-        str(payload.get(key) or "")
-        for key in ("title", "abstract", "body_markdown")
-    )
     sections = payload.get("sections")
+    values = [payload.get(key) for key in ("title", "abstract", "body_markdown")]
     if isinstance(sections, dict):
-        text += " " + " ".join(str(value or "") for value in sections.values())
+        values.extend(sections.values())
+    text = " ".join(map(str, filter(None, values)))
     for code, pattern in _UNSUPPORTED_DOMAIN_FRAME_PATTERNS:
         if re.search(pattern, text, flags=re.I):
             return f"domain_frame_template_leak:{code}"
@@ -2143,7 +2143,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
-    title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"
     # Preserve the agent's existing source URLs, source-level appraisals, and
     # exact body-to-bundle links instead of dropping them at the API boundary.
     source_bundle = _source_bundle(run, limit=max_sources)
@@ -2152,9 +2151,11 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             row["evidence_span"] = span
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)
+    paper = re.sub(r"(?ims)(\A# [^\n]+|^## (?:Abstract|Conclusion)\b.*?(?=^## |\Z))", lambda block: re.sub(r"\bunresolved\b", lambda word: "Unsettled" if word.group()[0].isupper() else "unsettled", block.group()), paper)
+    title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"
     _publication_evidence.attach_evidence_spans(paper, source_bundle)
-    parts = _sections(paper)
-    abstract = parts.get("Abstract") or str(manifest.get("thesis") or "")
+    sections = _sections(paper)
+    abstract = sections.get("Abstract") or str(manifest.get("thesis") or "")
     # source_bundle is the RETAINED/ON-TOPIC source set (== the receipts the
     # paper body reports), so the public surface can never certify more
     # "sources on topic" than the evidence base actually has. Cited external
@@ -2211,7 +2212,6 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
             if revision.get(key)
         }
         metadata["revision_feedback"] = revision.get("feedback")
-    sections = parts
     payload = {
         "title": title[:300],
         "abstract": abstract,

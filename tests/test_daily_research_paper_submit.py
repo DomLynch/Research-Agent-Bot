@@ -272,6 +272,23 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
     return run
 
 
+def test_payload_avoids_platform_false_positive_for_scientific_unresolved(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    paper = run / "full_paper.md"
+    paper.write_text(paper.read_text(encoding="utf-8").replace("endpoint result", "unresolved endpoint result").replace("methods methods", "unresolved methods issue methods"), encoding="utf-8")
+
+    payload = daily.build_payload(run)
+    sections = daily._sections(payload["body_markdown"])
+    decisive = "\n".join((payload["title"], payload["abstract"], sections["Conclusion"]))
+
+    assert "unresolved" not in decisive.lower()
+    assert "unsettled endpoint result" in payload["body_markdown"]
+    assert "unresolved methods issue" in payload["body_markdown"]
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    payload["abstract"] += " This remains unresolved."
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "researka_core_claims_unresolved:placeholder_token"
+
+
 def _retopic(run: Path, topic: str) -> None:
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     receipts = []
