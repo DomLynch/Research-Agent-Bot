@@ -690,7 +690,8 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
             sentences: list[str] = []
             for sentence in _revision_claim_trace._sentences(line):
                 clean = sentence.strip(" -*")
-                if _claim_candidates(clean) and not _citation_indexes(clean, bundle):
+                candidate = bool(_claim_candidates(clean)) or section in {"abstract", "conclusion"} and len(clean) >= 80 and any(marker in clean.lower() for marker in _CLAIM_MARKERS)
+                if candidate and not _citation_indexes(clean, bundle):
                     aligned = [index for index, row in enumerate(bundle) if _evidence_aligns(clean, row)]
                     if aligned:
                         def rank(index: int) -> tuple[int, bool, bool, int]:
@@ -742,27 +743,26 @@ def _researka_claim_trace_status(
 def _researka_core_claim_trace_status(
     payload: dict[str, Any], source_bundle: list[dict[str, Any]],
 ) -> str:
-    sections_raw = payload.get("sections")
-    sections = sections_raw if isinstance(sections_raw, dict) else {}
-    conclusion = "\n\n".join(str(value) for name, value in sections.items() if str(name).strip().lower() == "conclusion")
-    paragraphs = [
-        part.strip()
-        for text in (str(payload.get("abstract") or ""), conclusion)
-        for part in re.split(r"\n\s*\n", text)
-        if part.strip() and not part.lstrip().startswith("#")
-    ]
-    claims = [
-        part for part in paragraphs
-        if _empirical_claim(part)
-        or (_corpus_accounting_only(part) and bool(re.search(r"\d", part)))
-    ]
+    body = str(payload.get("body_markdown") or "")
+    sections = {heading.strip().lower(): value for heading, value in _sections(body).items()}
+    claims: list[str] = []
+    for name in ("abstract", "conclusion"):
+        text = sections.get(name, "")
+        section_claims = [
+            sentence.strip() for sentence in _revision_claim_trace._sentences(text)
+            if sentence.strip() and (bool(_claim_candidates(sentence))
+            or _empirical_claim(sentence)
+            or (_corpus_accounting_only(sentence) and bool(re.search(r"\d", sentence))))
+        ]
+        if not section_claims:
+            return f"researka_core_claims_unresolved:{name}_claims=0"
+        claims.extend(section_claims)
     cited = aligned = 0
     for claim in claims:
         indexes = _citation_indexes(claim, source_bundle)
         cited += bool(indexes)
-        aligned += bool(indexes) and (
-            _corpus_accounting_only(claim)
-            or any(_evidence_aligns(claim, source_bundle[index]) for index in indexes)
+        aligned += bool(indexes) and any(
+            _evidence_aligns(claim, source_bundle[index]) for index in indexes
         )
     if aligned == len(claims):
         return "eligible"
@@ -2139,7 +2139,7 @@ def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
 
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = _strip_background_references(_clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8")))
-    paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.")
+    paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility")
     paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)

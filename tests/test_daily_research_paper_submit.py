@@ -212,13 +212,15 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
     run.mkdir(parents=True)
     (run / "full_paper.md").write_text(
         "# Research Synthesis: Topic\n\n"
-        f"## Abstract\n\n{_words('abstract', 90)}.\n\n"
+        "## Abstract\n\nAlpha 2026 reports: Topic intervention trial reports an authoritative "
+        f"endpoint result from source-owned full text content. {_words('abstract', 90)}.\n\n"
         f"## Introduction\n\n{_words('introduction', 350)}.\n\n"
         f"## Methods\n\n{_words('methods', 300)}.\n\n"
         f"## Results\n\n{_words('results', 850)}.\n\n"
         f"## Discussion\n\n{_words('discussion', 500)}.\n\n"
         f"## Limitations\n\n{_words('limitations', 200)}.\n\n"
-        f"## Conclusion\n\n{_words('conclusion', 120)}.\n\n"
+        "## Conclusion\n\nBeta 2025 reports: Topic intervention trial reports an authoritative "
+        f"endpoint result from source-owned full text content. {_words('conclusion', 120)}.\n\n"
         "## References\n\nR01.",
         encoding="utf-8",
     )
@@ -251,7 +253,10 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
     _write_json(run / "citation_registry.json", {
         row["receipt_id"]: {
             "receipt_id": row["receipt_id"],
-            "body_citation": f"Smith {idx} 2026",
+            "body_citation": (
+                "Alpha 2026" if idx == 1 else "Beta 2025" if idx == 2
+                else f"Smith {idx} 2026"
+            ),
             "reference_id": f"R{idx:02d}",
             "source_year": 2026,
             "source_doi": "10.1/x" if idx == 1 else f"10.1/{idx}",
@@ -289,7 +294,10 @@ def _retopic(run: Path, topic: str) -> None:
     _write_json(run / "citation_registry.json", {
         row["receipt_id"]: {
             "receipt_id": row["receipt_id"],
-            "body_citation": f"Smith {idx} 2026",
+            "body_citation": (
+                "Alpha 2026" if idx == 1 else "Beta 2025" if idx == 2
+                else f"Smith {idx} 2026"
+            ),
             "reference_id": f"R{idx:02d}",
             "source_year": 2026,
             "source_doi": f"10.1/{topic}.{idx}",
@@ -356,7 +364,7 @@ def test_preflight_cleaned_payload_rebinds_source_identity(
     )
     assert checked["metadata"]["source_citation_hash"] != original_source_hash
     assert checked["metadata"]["submission_identity_key"] != original_identity
-    assert checked["core_claims_resolved"] is False
+    assert checked["core_claims_resolved"] is True
 
 
 def _trust_revision_gate(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -1229,7 +1237,7 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
         }],
     })
     _write_json(run / "risk_of_bias.json", [{
-        "study_id": "Smith 1 2026",
+        "study_id": "Alpha 2026",
         "overall_rating": "some_concerns",
     }])
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
@@ -1241,7 +1249,7 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
     paper = paper.replace(
         "results results results results results results results results results results",
-        "The evidence supports a bounded quantitative finding reported by Smith 1 2026.",
+        "The evidence supports a bounded quantitative finding reported by Alpha 2026.",
         1,
     )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
@@ -1549,7 +1557,7 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
         row["evidence_span"] = row["excerpt"]
 
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == (
-        "researka_claim_trace_insufficient:cited=3/5,aligned=3/5,required=4"
+        "researka_claim_trace_insufficient:cited=5/7,aligned=5/7,required=6"
     )
 
     payload["sections"]["Results"] = payload["sections"]["Results"].replace(
@@ -1562,29 +1570,44 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
 def test_core_claim_trace_blocks_uncited_conclusion_accounting(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
-    paper = paper.replace(
-        "## Conclusion\n\n" + _words("conclusion", 120) + ".",
-        "## Conclusion\n\nThe evidence tiers include A1 (n=7), directness is direct "
-        "(n=6), and this synthesis includes 12 accepted sources.",
+    paper = re.sub(
+        r"(?ms)^## Conclusion\n\n.*?(?=^## References)",
+        "## Conclusion\n\n" + "Context remains bounded by the retained record. " * 40
+        + "Alpha 2026 reports: The evidence tiers include A1 (n=7), "
+        "directness is direct (n=6), and this synthesis includes 12 accepted sources.\n\n",
+        paper,
     )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
 
     payload = daily.build_payload(run)
 
-    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == (
+        "researka_claim_trace_insufficient:cited=2/2,aligned=1/2,required=2"
+    )
     assert payload["core_claims_resolved"] is False
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == (
-        "researka_core_claims_unresolved:cited=0/1,aligned=0/1"
+        "researka_core_claims_unresolved:cited=2/2,aligned=1/2"
     )
     assert daily._researka_preflight_status(payload, enforce_recency=False) == (
-        "researka_core_claims_unresolved:cited=0/1,aligned=0/1"
+        "researka_claim_trace_insufficient:cited=2/2,aligned=1/2,required=2"
     )
 
-    payload["sections"]["Conclusion"] += " [bundle:1]"
-    payload["core_claims_resolved"] = (
-        daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    payload["sections"]["Conclusion"] = payload["sections"]["Abstract"]
+    payload["core_claims_resolved"] = True
+    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    assert daily._researka_preflight_status(payload, enforce_recency=False) == (
+        "researka_core_claims_unresolved:cited=2/2,aligned=1/2"
     )
-    assert payload["core_claims_resolved"] is True
+
+    payload["body_markdown"] = re.sub(
+        r"(?ms)^## Conclusion\n.*?(?=^## References)",
+        "## Conclusion\n\nBackground context for the Topic intervention trial appears in "
+        "source-owned full text content from Beta 2025 [bundle:2].\n\n",
+        payload["body_markdown"],
+    )
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == (
+        "researka_core_claims_unresolved:conclusion_claims=0"
+    )
 
 
 def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Path) -> None:
@@ -1607,7 +1630,7 @@ def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Pa
         "researka_quantitative_trace_insufficient:aligned=0/1"
     )
     assert daily._researka_preflight_status(payload, enforce_recency=False) == (
-        "researka_claim_trace_insufficient:cited=1/1,aligned=0/1,required=1"
+        "researka_claim_trace_insufficient:cited=3/3,aligned=2/3,required=3"
     )
 
     bundle[0]["excerpt"] = bundle[0]["excerpt"].replace("5 mg", "10 mg")
@@ -1806,7 +1829,7 @@ def test_source_bundle_does_not_promote_citation_token_to_source_title(tmp_path:
     payload = daily.build_payload(_run(tmp_path))
 
     assert payload["source_bundle"][0]["title"] == "Evidence receipt"
-    assert payload["source_bundle"][0]["cited_as"] == "Smith 1 2026"
+    assert payload["source_bundle"][0]["cited_as"] == "Alpha 2026"
 
 
 def test_researka_preflight_requires_source_bundle_outcome_and_citation_mapping(tmp_path: Path) -> None:
