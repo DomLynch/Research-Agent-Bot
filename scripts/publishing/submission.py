@@ -749,7 +749,7 @@ def _researka_core_claim_trace_status(
     sections = {heading.strip().lower(): value for heading, value in _sections(body).items()}
     claims: list[str] = []
     for name in ("abstract", "conclusion"):
-        text = sections.get(name, "")
+        text = re.sub(r"^#{1,6}\s+(.+?)\s*$", r"\1.", sections.get(name, ""), flags=re.M)
         section_claims = [
             sentence.strip() for sentence in _revision_claim_trace._sentences(text)
             if sentence.strip() and (bool(_claim_candidates(sentence)) or _empirical_claim(sentence) or (_corpus_accounting_only(sentence) and bool(re.search(r"\d", sentence))) or "synthesizes evidence on" in sentence.lower())

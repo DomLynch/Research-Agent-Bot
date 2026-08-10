@@ -1630,8 +1630,19 @@ def test_payload_cites_abstract_synthesis_claim_without_truncating_trace(tmp_pat
 
     assert len(payload["abstract"]) > 1400
     assert payload["abstract"] == payload["sections"]["Abstract"] == daily._sections(payload["body_markdown"])["Abstract"]
-    assert re.search(r"synthesizes evidence on resistance training regimens.*\[bundle:\d+\]", payload["abstract"])
+    scope = re.search(r"This paper synthesizes evidence on resistance training regimens.*?\[bundle:\d+\]", payload["abstract"])
+    assert scope
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    payload["body_markdown"] = payload["body_markdown"].replace(
+        "## Conclusion\n\n",
+        f"## Conclusion\n\n{scope.group(0)}.\n\n### Bounded conclusion\n\n",
+        1,
+    )
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    unsupported_heading = {**payload, "body_markdown": payload["body_markdown"].replace(
+        "### Bounded conclusion", "### Aspirin reduces cardiovascular mortality by 90%",
+    )}
+    assert daily._researka_core_claim_trace_status(unsupported_heading, payload["source_bundle"]) != "eligible"
     assert not daily._evidence_aligns("This paper synthesizes evidence on aspirin cardiovascular mortality across the retained source corpus and high-confidence extracted claim set.", {"title": "Exercise cardiovascular mortality outcomes"})
     assert not daily._evidence_aligns("This paper synthesizes evidence on immune checkpoint inhibitors across the retained source corpus and high-confidence extracted claim set.", {"title": "Immune checkpoint biomarkers"})
     assert not daily._evidence_aligns("This paper synthesizes evidence on aspirin cardiovascular effects across the retained source corpus and high-confidence extracted claim set with 90% mortality reduction.", {"title": "Aspirin cardiovascular effects", "excerpt": "Mortality increased by 20%."})
