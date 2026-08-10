@@ -920,7 +920,7 @@ def test_polish_catches_duplicated_word() -> None:
 
 def test_polish_whitelists_had_had() -> None:
     """C08: 'had had' is grammatically valid past-perfect; not flagged."""
-    paper = "## Discussion\n\nParticipants had had prior exposure.\n"
+    paper = "## Discussion\n\nParticipants had had prior exposure.\n\n### Accountability\nAccountability is established.\n"
     issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
     dups = [i for i in issues if i.issue_type == "duplicated_phrase"]
     assert dups == []
@@ -1976,10 +1976,11 @@ def test_auto_fixer_preserves_valid_duplicate_words() -> None:
     ))
     import apply_consistency_fixes as fixer
 
-    paper = "## Discussion\n\nParticipants had had prior exposure.\n"
+    paper = "## Discussion\n\nParticipants had had prior exposure.\n\n### Accountability\nAccountability is established.\n"
     fixed, log = fixer.apply_fixes(paper, [])
 
     assert "had had" in fixed
+    assert "### Accountability\nAccountability" in fixed
     assert not any(
         e.get("fix_type") == "duplicate_word_collapse" for e in log
     )
@@ -2225,7 +2226,7 @@ def test_no_future_citation_when_years_past() -> None:
 
 
 def test_unbacked_appraisal_claim_is_p1(tmp_path: Path) -> None:
-    paper = "## Methods\n\nRisk of bias was rated with RoB-2 and ROBINS-I.\n"
+    paper = "## Abstract\n\nWe applied grade.\n\n## METHODS\n\nRisk of bias was rated with rob 2 and amstar 2.\n"
     issues = audit._check_unbacked_appraisal_claim(paper, tmp_path)
     assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
     assert issues[0].severity == "P1"
@@ -2240,10 +2241,11 @@ def test_appraisal_claim_backed_by_section_passes(tmp_path: Path) -> None:
 
 
 def test_appraisal_claim_backed_by_populated_sidecar_passes(tmp_path: Path) -> None:
-    (tmp_path / "risk_of_bias.json").write_text(
-        '{"r1": {"tool": "RoB-2", "judgment": "low"}}', encoding="utf-8",
+    (tmp_path / "grade_assessment.json").write_text(
+        '[{"outcome": "mortality", "starting_certainty": "high"}]', encoding="utf-8",
     )
-    assert audit._check_unbacked_appraisal_claim("AMSTAR-2 was applied.\n", tmp_path) == []
+    assert audit._check_unbacked_appraisal_claim("GRADE was applied.\n", tmp_path) == []
+    assert audit._check_unbacked_appraisal_claim("RoB-2 and GRADE were applied.\n", tmp_path)
 
 
 def test_appraisal_backed_by_populated_sidecar_in_subfolder(tmp_path: Path) -> None:
@@ -2255,7 +2257,7 @@ def test_appraisal_backed_by_populated_sidecar_in_subfolder(tmp_path: Path) -> N
         '[{"study_id": "Greilberger 2023", "tool": "robins_i", "overall_rating": "some_concerns"}]',
         encoding="utf-8",
     )
-    assert audit._check_unbacked_appraisal_claim("RoB-2 and ROBINS-I were applied.\n", tmp_path) == []
+    assert audit._check_unbacked_appraisal_claim("ROBINS-I was applied.\n", tmp_path) == []
 
 
 def test_appraisal_stub_section_with_missing_sidecar_is_unbacked(tmp_path: Path) -> None:
@@ -2270,13 +2272,18 @@ def test_appraisal_stub_section_with_missing_sidecar_is_unbacked(tmp_path: Path)
 
 
 def test_empty_sidecar_does_not_back_claim(tmp_path: Path) -> None:
-    (tmp_path / "risk_of_bias.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "risk_of_bias.json").write_text('{"rows": [{}], "status": "not_appraised"}', encoding="utf-8")
     issues = audit._check_unbacked_appraisal_claim("RoB-2 was applied.\n", tmp_path)
     assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
+    (tmp_path / "risk_of_bias.json").write_text('{"rows": [{"rating": "bogus"}]}', encoding="utf-8")
+    assert audit._check_unbacked_appraisal_claim("RoB-2 was applied.\n", tmp_path)
+    (tmp_path / "risk_of_bias.json").write_text('{"rows": [{"rating": "low"}, {"rating": "bogus"}]}', encoding="utf-8")
+    assert audit._check_unbacked_appraisal_claim("RoB-2 was applied.\n", tmp_path)
 
 
 def test_paper_naming_no_framework_does_not_trip() -> None:
-    assert audit._check_unbacked_appraisal_claim("We screened and summarized.\n", None) == []
+    paper = "## Results\n\nThe trial reported GRADE 3 and grade III adverse events; tumor grade was reported separately.\n\n## References\n\n- RoB-2: a revised tool.\n"
+    assert audit._check_unbacked_appraisal_claim(paper, None) == []
 
 
 def test_classification_claim_contradiction_is_flagged() -> None:

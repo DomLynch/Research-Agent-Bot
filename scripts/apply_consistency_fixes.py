@@ -418,7 +418,7 @@ def _ensure_public_thesis_marker(
 
 
 def _collapse_adjacent_duplicate_words(paper_md: str) -> tuple[str, int]:
-    dup_word_re = re.compile(r"\b(\w{3,})\s+\1\b", re.IGNORECASE)
+    dup_word_re = re.compile(r"\b(\w{3,})[ \t]+\1\b", re.IGNORECASE)
     n_dup_words = 0
 
     def repl(match: re.Match[str]) -> str:
@@ -3251,7 +3251,7 @@ def _depth_backfill_extension(heading: str, index: int) -> str:
         "length, ascertainment method, baseline risk, adherence, exposure "
         "dose, and external validity are kept separate during interpretation.",
         "Cellular mechanism, animal-model response, observational association, "
-        "pilot-trial signal, randomized evidence, surrogate endpoint behavior, "
+        "pilot-trial signal, randomized evidence, intermediate outcome behavior, "
         "and hard clinical outcomes are treated as different evidentiary layers.",
         "Direction of effect is read alongside measurement precision, confidence "
         "bounds, sample size, study setting, eligibility criteria, intervention "

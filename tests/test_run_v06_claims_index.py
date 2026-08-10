@@ -84,8 +84,7 @@ def test_build_claims_skips_paper_with_no_high_conf_claims(
 def test_post_finalizer_auto_fixable_issues_are_repaired(
     tmp_path: Path, monkeypatch,
 ) -> None:
-    """Finalizer-side mutations get one last deterministic fix pass
-    before final verdict sidecars are computed."""
+    """Post-finalizer repairs iterate until the manuscript is stable."""
     paper_path = tmp_path / "full_paper.md"
     paper_path.write_text("Bad finalizer numeric 123.")
     issue = SimpleNamespace(auto_fixable=True)
@@ -97,23 +96,21 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
     monkeypatch.setattr(
         orch._consistency_audit,
         "run_audit",
-        lambda *args, **kwargs: [issue],
+        lambda md, *_args, **_kwargs: [] if md == "Clean finalizer paper." else [issue],
     )
+    repairs = iter(("Intermediate paper.", "Clean finalizer paper."))
     monkeypatch.setattr(
         orch._consistency_fixer,
         "apply_fixes",
         lambda *args, **kwargs: (
-            "Clean finalizer paper.",
+            next(repairs),
             [{"fix_type": "numeric_role_guard_strip", "n_changes": 1}],
         ),
     )
     monkeypatch.setattr(
         orch,
         "_restore_public_surface_floors",
-        lambda md, **_kwargs: (
-            md + " Restored surface floor.",
-            [{"fix_type": "surface_floor_backstop", "section": "Introduction"}],
-        ),
+        lambda md, **_kwargs: (md, []),
     )
 
     fixed, log = orch._repair_post_finalizer_auto_fixables(
@@ -124,10 +121,11 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
         quant_claims_dir=tmp_path / "quant_claims",
     )
 
-    assert fixed == "Clean finalizer paper. Restored surface floor."
+    assert fixed == "Clean finalizer paper."
     assert paper_path.read_text() == fixed
-    assert log[0]["fix_type"] == "numeric_role_guard_strip"
-    assert log[1]["fix_type"] == "surface_floor_backstop"
+    assert [row["fix_type"] for row in log] == [
+        "numeric_role_guard_strip", "numeric_role_guard_strip",
+    ]
     assert (tmp_path / "full_paper.post_finalizer_fixed_log.json").is_file()
 
 

@@ -52,6 +52,7 @@ from direction_consistency import (
     outcome_prose_direction_mismatches,
 )
 from agent.statistical_consistency import significance_wording_mismatch
+from revision_coverage import APPRAISAL_RATINGS, appraisal_kinds
 
 __all__ = ["ConsistencyIssue", "run_audit", "main"]
 
@@ -517,25 +518,23 @@ def _check_future_dated_citations(
     return issues
 
 
-def _appraisal_is_backed(paper: str, run_dir: Path | None) -> bool:
-    """True only when a named appraisal framework is backed by *evidence*, not
-    just a heading: either a populated risk-of-bias sidecar, or an in-paper
-    appraisal section containing an actual table (header + ≥1 data row). A
-    prose section that defers to a sidecar which doesn't exist is NOT backing —
-    that is precisely the unbacked-claim failure this gate exists to catch."""
+def _appraisal_is_backed(paper: str, run_dir: Path | None, frameworks: set[str]) -> bool:
+    """Require populated matching appraisal rows or an in-paper ratings table."""
+    required, backed = {"grade" if name.casefold() == "grade" else "risk" for name in frameworks}, set[str]()
     if run_dir is not None:
         # rglob, not glob: the pipeline writes risk_of_bias.json to the run root
-        # but _organize_run_artifacts relocates it into the audit/ subfolder, so
-        # the backing artifact can live at either depth depending on stage.
+        # _organize_run_artifacts may relocate backing artifacts into audit/.
         for p in run_dir.rglob("*.json"):
-            if not re.search(r"risk[_-]?of[_-]?bias|appraisal", p.name, re.IGNORECASE):
+            if not re.search(r"risk[_-]?of[_-]?bias|appraisal|grade[_-]?assessment", p.name, re.IGNORECASE):
                 continue
             try:
                 data = json.loads(p.read_text())
             except (OSError, ValueError):
                 continue
-            if data:  # non-empty dict/list of ratings
-                return True
+            rows, grade = data if isinstance(data, list) else data.get("rows") if isinstance(data, dict) else None, p.name.casefold() == "grade_assessment.json"
+            fields = ("final_certainty", "starting_certainty") if grade else ("overall_rating", "rating", "judgment")
+            if isinstance(rows, list) and rows and all(isinstance(row, dict) and str(next((row.get(field) for field in fields if row.get(field)), "")).casefold().replace("_", " ") in APPRAISAL_RATINGS["grade" if grade else "risk"] for row in rows):
+                backed.add("grade" if grade else "risk")
     section = re.search(
         r"(?im)^#{2,4}\s+(?:risk[ -]of[ -]bias|quality appraisal).*?(?=^#{2,4}\s|\Z)",
         paper, re.DOTALL,
@@ -543,13 +542,9 @@ def _appraisal_is_backed(paper: str, run_dir: Path | None) -> bool:
     if section:
         # Count only non-separator table rows: a header + >=1 data row means a
         # populated appraisal. An empty scaffold (header + `|---|`) does not.
-        rows = [
-            r for r in re.findall(r"^\s*\|.*\|\s*$", section.group(0), re.MULTILINE)
-            if not re.fullmatch(r"\s*\|[\s:|-]+\|\s*", r)
-        ]
-        if len(rows) >= 2:
-            return True
-    return False
+        if sum(1 for row in re.findall(r"^\s*\|.*\|\s*$", section.group(0), re.MULTILINE) if not re.fullmatch(r"\s*\|[\s:|-]+\|\s*", row)) >= 2:
+            backed.add("risk")
+    return required <= backed
 
 
 def _check_unbacked_appraisal_claim(
@@ -558,13 +553,16 @@ def _check_unbacked_appraisal_claim(
     """Naming a formal risk-of-bias / quality-appraisal framework asserts it
     was applied. Require backing — a populated risk-of-bias sidecar OR an
     in-paper appraisal table — else the methodology claim is unbacked."""
+    scope = re.split(r"^##\s+References\b", paper, maxsplit=1, flags=re.M | re.I)[0]
     named = sorted({
         fw for fw in _APPRAISAL_FRAMEWORKS
-        if re.search(rf"\b{re.escape(fw)}\b", paper)
+        if fw != "GRADE" and re.search(rf"\b{re.escape(fw)}\b", scope, re.IGNORECASE)
     })
+    if appraisal_kinds(scope)[1]:
+        named.append("GRADE")
     if not named:
         return []
-    if _appraisal_is_backed(paper, run_dir):
+    if _appraisal_is_backed(paper, run_dir, set(named)):
         return []
     return [ConsistencyIssue(
         id="C21-unbacked-appraisal-claim",
@@ -1206,7 +1204,7 @@ def _check_surface_polish(paper_md: str) -> list[ConsistencyIssue]:
     # Duplicated adjacent phrase ("the the", "of of", "is is" etc.)
     # — common LLM-generation artifact.
     for m in re.finditer(
-        r"\b(\w{3,})\s+\1\b", haystack, re.IGNORECASE,
+        r"\b(\w{3,})[ \t]+\1\b", haystack, re.IGNORECASE,
     ):
         word = m.group(1).lower()
         # Whitelist legitimate doublings ("had had", "that that").

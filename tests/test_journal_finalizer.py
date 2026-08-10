@@ -4430,24 +4430,20 @@ def test_rct_count_reconciliation_removes_single_rct_claim(tmp_path: Path) -> No
     assert logs[0].phase == "D_rct_count_reconciliation"
 
 
-def test_unbacked_appraisal_names_are_removed_without_ratings(tmp_path: Path) -> None:
-    import revision_coverage
-
-    ask = "Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources, or remove the framework name if no appraisal was performed."
+def test_unbacked_appraisal_names_are_removed_without_feedback_or_ratings(
+    tmp_path: Path,
+) -> None:
     paper = (
-        "## Methods\n\nRisk-of-bias framework assignment follows study design "
-        "(RoB-2 for RCTs, ROBINS-I for non-randomised studies, AMSTAR-2 for systematic reviews).\n"
+        "## Abstract\n\nWe applied GRADE.\n\n## METHODS\n\nRisk-of-bias framework assignment follows study design "
+        "(RoB 2 for RCTs, ROBINS-I for non-randomised studies, AMSTAR 2 and GRADE for reviews).\n\n"
+        "## References\n\n- RoB-2: a revised tool for assessing risk of bias.\n"
     )
-    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
-
-    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
 
-    assert "RoB-2" not in fixed
-    assert "ROBINS-I" not in fixed
-    assert "AMSTAR-2" not in fixed
+    body = fixed.split("## References", 1)[0]
+    assert not any(name in body for name in ("RoB 2", "ROBINS-I", "AMSTAR 2", "GRADE"))
+    assert "- RoB-2: a revised tool" in fixed
     assert "Risk-of-bias honesty note" in fixed
-    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_unbacked_appraisal_names"
 
 
@@ -4478,25 +4474,68 @@ def test_populated_appraisal_artifact_is_summarized(tmp_path: Path) -> None:
     assert logs[0].rule == "summarize_populated_appraisal_artifact"
 
 
-def test_populated_appraisal_artifact_is_summarized_for_rob_judgment_ask(tmp_path: Path) -> None:
+def test_populated_grade_artifact_is_summarized(tmp_path: Path) -> None:
     import revision_coverage
 
-    ask = "Relabel review-level rows and report RoB judgments for the admitted RCT and cohort sources."
-    paper = "## Methods\n\nRisk-of-bias judgments are source-level where reported.\n"
+    ask = "Provide GRADE ratings for each outcome."
+    paper = "## METHODS\n\nRoB-2 and GRADE were applied at outcome level.\n\nRisk-of-bias appraisal summary: No ratings were available.\nGRADE certainty appraisal summary: No ratings were available.\n"
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}))
-    (tmp_path / "risk_of_bias.json").write_text(json.dumps([
-        {"study_id": "Smith 2025", "tool": "rob2", "overall_rating": "some_concerns"},
-        {"study_id": "Jones 2024", "tool": "robins_i", "overall_rating": "low"},
+    (tmp_path / "grade_assessment.json").write_text(json.dumps([
+        {"outcome": "mortality", "starting_certainty": "high"},
+        {"outcome": "hospitalization", "starting_certainty": "moderate"},
     ]))
+    (tmp_path / "risk_of_bias.json").write_text(json.dumps([{"study_id": "Trial 2025", "tool": "rob2", "overall_rating": "low"}]))
 
     fixed, logs = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
 
+    assert "GRADE certainty appraisal summary" in fixed
     assert "Risk-of-bias appraisal summary" in fixed
-    assert "2 source-level rating row(s)" in fixed
-    assert "RoB-2" in fixed
-    assert "ROBINS-I" in fixed
+    assert "Risk-of-bias honesty note" not in fixed
+    assert "2 outcome-level rating row(s)" in fixed
+    assert "high=1" in fixed and "moderate=1" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: No ratings were available.\nRisk-of-bias appraisal summary: ratings are low=1.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: No ratings were available.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: ratings are low=0.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: ratings are some concerns=1.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: ratings are high=1, pending=99.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: ratings are high=1, pending.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: ratings are high=1, unavailable.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("GRADE certainty appraisal summary: ratings are high=1, not rated.", [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("## Methods\n\nRisk-of-bias honesty note.\n\n## References\n\nGRADE certainty appraisal summary: ratings are high=1.", [ask]) == [ask]
+    risk_ask = "Report RoB judgments for the included sources."
+    assert revision_coverage.deterministic_unmet_asks("Risk-of-bias appraisal summary: No ratings were available.\nGRADE certainty appraisal summary: ratings are high=1.", [risk_ask]) == [risk_ask]
+    assert revision_coverage.deterministic_unmet_asks("Risk-of-bias appraisal summary: ratings are very low=1.", [risk_ask]) == [risk_ask]
+    lowercase_grade_ask = "Provide grade ratings for each outcome."
+    assert revision_coverage.deterministic_unmet_asks("Risk-of-bias appraisal summary: ratings are low=1.", [lowercase_grade_ask]) == [lowercase_grade_ask]
+    assert revision_coverage.deterministic_unmet_asks(fixed, ["Perform GRADE assessments for each outcome."]) == []
+    assert not revision_coverage._asks_unbacked_appraisal_names("Report the tumor grade assessment for each biopsy.")
+    assert not revision_coverage._asks_unbacked_appraisal_names("Report adverse-event grade ratings.")
+    assert not revision_coverage._asks_unbacked_appraisal_names("Provide histologic grade ratings.")
     assert logs[0].rule == "summarize_populated_appraisal_artifact"
+
+
+def test_appraisal_summary_replacement_is_body_scoped(tmp_path: Path) -> None:
+    paper = (
+        "## Methods\n\nRisk-of-bias appraisal summary:\nNo ratings were available.\n\n"
+        "## References\n\nRisk-of-bias appraisal summary: Reference title only.\n"
+    )
+    (tmp_path / "risk_of_bias.json").write_text(json.dumps([
+        {"study_id": "Trial 2025", "tool": "rob2", "overall_rating": "low"},
+    ]))
+
+    fixed, _ = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
+
+    body, references = fixed.split("## References", 1)
+    assert "No ratings were available" not in body
+    assert "ratings are low=1" in body
+    assert "Risk-of-bias appraisal summary: Reference title only." in references
+
+
+def test_appraisal_sidecars_do_not_cross_rating_fields(tmp_path: Path) -> None:
+    (tmp_path / "risk_of_bias.json").write_text(json.dumps([{"final_certainty": "high"}]))
+    (tmp_path / "grade_assessment.json").write_text(json.dumps({"rows": None}))
+    assert journal_finalizer._appraisal_artifact_summaries(tmp_path) == {}
 
 
 def test_existing_appraisal_summary_labels_are_normalized(tmp_path: Path) -> None:
@@ -4515,11 +4554,12 @@ def test_existing_appraisal_summary_labels_are_normalized(tmp_path: Path) -> Non
     fixed, logs = journal_finalizer._phase_d_unbacked_appraisal_names(paper, tmp_path)
 
     assert "ROBINS-I" in fixed
-    assert "SYRCLE" in fixed
-    assert "some concerns=65" in fixed
+    assert "SYRCLE" not in fixed
+    assert "1 source-level rating row(s)" in fixed
+    assert "some concerns=1" in fixed
     assert "robins_i" not in fixed
     assert "some_concerns" not in fixed
-    assert logs[0].rule == "normalize_public_appraisal_labels"
+    assert logs[0].rule == "summarize_populated_appraisal_artifact"
 
 
 def test_reference_closure_removes_registry_unsupported_orphan_reference(tmp_path: Path) -> None:

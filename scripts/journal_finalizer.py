@@ -2528,12 +2528,12 @@ def _numeric_correction_outcome(feedback: str) -> str:
 
 
 def _section_body(text: str, section: str) -> str:
-    match = re.search(rf"^## {re.escape(section)}\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
+    match = re.search(rf"^## {re.escape(section)}\b(.*?)(?=^## (?!#)|\Z)", text, flags=re.M | re.S | re.I)
     return match.group(1) if match else ""
 
 
 def _prepend_section_paragraph(text: str, section: str, paragraph: str) -> tuple[str, int]:
-    match = re.search(rf"^## {re.escape(section)}\b", text, flags=re.M)
+    match = re.search(rf"^## {re.escape(section)}\b", text, flags=re.M | re.I)
     if not match:
         return text, 0
     insert_at = match.end()
@@ -3718,85 +3718,74 @@ def _phase_d_rct_count_reconciliation(
     )]
 
 
-def _phase_d_unbacked_appraisal_names(
-    text: str, out_dir: Path,
-) -> tuple[str, list[FinalizerLogEntry]]:
-    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = _revision_feedback(request)
-    if not _feedback_asks(feedback, revision_coverage._asks_unbacked_appraisal_names):
+def _phase_d_unbacked_appraisal_names(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
+    feedback = _revision_feedback(_load_sidecar(out_dir / "researka_revision_request.json") or {})
+    parts = re.split(r"(?ims)(^##\s+References\b.*)", text, maxsplit=1)
+    body, tail = parts[0], "".join(parts[1:])
+    risk_named, grade_named = revision_coverage.appraisal_kinds(body)
+    risk_requested, grade_requested = revision_coverage.appraisal_kinds(feedback, request=True)
+    requested = risk_requested or grade_requested or _feedback_asks(feedback, revision_coverage._asks_unbacked_appraisal_names)
+    if not (risk_named or grade_named or requested or re.search(r"(?im)^(?:Risk-of-bias|GRADE certainty) appraisal summary:", body)):
         return text, []
-    normalized = _normalize_public_appraisal_labels(text)
-    if summary := _appraisal_artifact_summary(out_dir):
-        if "risk-of-bias appraisal summary:" in normalized.lower():
-            if normalized == text:
-                return text, []
-            return normalized, [FinalizerLogEntry(
-                phase="D_unbacked_appraisal_names",
-                rule="normalize_public_appraisal_labels",
-                n_changes=1,
-                detail="normalized public risk-of-bias appraisal labels",
-            )]
-        patched, n = _prepend_or_create_section_paragraph(normalized, "Methods", summary)
-        if not n:
-            return text, []
-        return patched, [FinalizerLogEntry(
-            phase="D_unbacked_appraisal_names",
-            rule="summarize_populated_appraisal_artifact",
-            n_changes=1,
-            detail="reported risk-of-bias appraisal summary from populated artifact",
-        )]
-    patched = normalized
-    patched = re.sub(r"\bRoB-2\b", "risk-of-bias appraisal", patched)
-    patched = re.sub(r"\bROBINS-I\b", "non-randomized-study appraisal", patched)
-    patched = re.sub(r"\bAMSTAR-2\b", "review-quality appraisal", patched)
-    note = (
-        "Risk-of-bias honesty note: No populated per-source public appraisal "
-        "ratings are reported in this artifact. Risk-of-bias language is "
-        "therefore descriptive of source design and directness, not a claim that "
-        "formal framework-specific scoring was completed."
-    )
-    patched, n = _prepend_or_create_section_paragraph(patched, "Methods", note)
-    if patched == text and not n:
+    patched_body = _normalize_public_appraisal_labels(body)
+    summaries = _appraisal_artifact_summaries(out_dir)
+    if "risk" not in summaries:
+        for pattern, replacement in ((r"\bRoB(?:-| )2\b", "risk-of-bias appraisal"), (r"\bROBINS-I\b", "non-randomized-study appraisal"), (r"\bAMSTAR(?:-| )2\b", "review-quality appraisal")):
+            patched_body = re.sub(pattern, replacement, patched_body, flags=re.I)
+    if "grade" not in summaries:
+        patched_body = revision_coverage.replace_grade_framework(patched_body, "certainty appraisal")
+    n = 0
+    for summary in summaries.values():
+        label = re.escape(summary.split(":", 1)[0])
+        pattern = rf"(?im)^{label}:[^\n]*(?:\n(?![ \t]*(?:$|#|(?:Risk-of-bias|GRADE certainty) appraisal summary:))[^\n]+)*"
+        updated, replaced = re.subn(pattern, summary, patched_body, count=1)
+        n += int(bool(replaced) and updated != patched_body)
+        patched_body, added = (updated, 0) if replaced else _prepend_or_create_section_paragraph(patched_body, "Methods", summary)
+        n += added
+    note = ("Risk-of-bias honesty note: No populated per-source public appraisal ratings are reported in this "
+            "artifact. Risk-of-bias language is therefore descriptive of source design and directness, not a claim that formal framework-specific scoring was completed.")
+    unbacked = risk_named and "risk" not in summaries or grade_named and "grade" not in summaries
+    if unbacked or risk_requested and "risk" not in summaries or grade_requested and "grade" not in summaries or requested and not summaries:
+        patched_body, added = _prepend_or_create_section_paragraph(patched_body, "Methods", note)
+        n += added
+    patched = patched_body + tail
+    if patched == text:
         return text, []
-    return patched, [FinalizerLogEntry(
-        phase="D_unbacked_appraisal_names",
-        rule="remove_formal_appraisal_framework_claim_without_ratings",
-        n_changes=1,
-        detail="removed unbacked formal risk-of-bias framework names",
-    )]
+    rule = "summarize_populated_appraisal_artifact" if n and summaries else "remove_formal_appraisal_framework_claim_without_ratings" if unbacked else "normalize_public_appraisal_labels"
+    return patched, [FinalizerLogEntry("D_unbacked_appraisal_names", rule, 1, "aligned formal appraisal claims with populated public artifacts")]
 
 
-def _appraisal_artifact_summary(out_dir: Path) -> str:
+def _appraisal_artifact_summaries(out_dir: Path) -> dict[str, str]:
+    summaries: dict[str, str] = {}
     for path in out_dir.rglob("*.json"):
-        if not re.search(r"risk[_-]?of[_-]?bias|appraisal", path.name, re.I):
+        if not re.search(r"risk[_-]?of[_-]?bias|appraisal|grade[_-]?assessment", path.name, re.I):
             continue
         try:
             data = json.loads(path.read_text())
         except (OSError, ValueError):
             continue
-        rows = data if isinstance(data, list) else data.get("rows", []) if isinstance(data, dict) else []
-        rows = [row for row in rows if isinstance(row, dict)]
-        if not rows:
+        is_grade = path.name.lower() == "grade_assessment.json"
+        source_rows = data if isinstance(data, list) else data.get("rows", []) if isinstance(data, dict) and isinstance(data.get("rows"), list) else []
+        kind = "grade" if is_grade else "risk"
+        fields = ("final_certainty", "starting_certainty") if is_grade else ("overall_rating", "rating", "judgment")
+        valid = [
+            (row, rating) for row in source_rows if isinstance(row, dict)
+            if (rating := _public_appraisal_label(str(next((row.get(field) for field in fields if row.get(field)), "")).strip())).casefold() in revision_coverage.APPRAISAL_RATINGS[kind]
+        ]
+        if not valid:
             continue
-        ratings: dict[str, int] = {}
-        tools: set[str] = set()
-        for row in rows:
-            rating = str(row.get("overall_rating") or row.get("rating") or "not_rated").strip() or "not_rated"
-            rating = _public_appraisal_label(rating)
-            ratings[rating] = ratings.get(rating, 0) + 1
-            tool = str(row.get("tool") or "").strip()
-            if tool:
-                tools.add(_public_appraisal_label(tool))
+        ratings = Counter(rating for _, rating in valid)
+        tools = {_public_appraisal_label(tool) for row, _ in valid if (tool := str(row.get("tool") or ("GRADE" if is_grade else "")).strip())}
         rating_text = ", ".join(f"{key}={ratings[key]}" for key in sorted(ratings))
         tool_text = ", ".join(sorted(tools)) or "design-appropriate appraisal tools"
-        return (
-            "Risk-of-bias appraisal summary: The public appraisal artifact reports "
-            f"{len(rows)} source-level rating row(s) using {tool_text}; overall "
+        summaries["grade" if is_grade else "risk"] = (
+            f"{'GRADE certainty' if is_grade else 'Risk-of-bias'} appraisal summary: The public appraisal artifact reports "
+            f"{len(valid)} {'outcome' if is_grade else 'source'}-level rating row(s) using {tool_text}; overall "
             f"ratings are {rating_text}. These ratings summarize preliminary "
-            "source-level appraisal and do not upgrade indirect or adjacent evidence "
+            f"{'outcome-level certainty' if is_grade else 'source-level appraisal'} and do not upgrade indirect or adjacent evidence "
             "into direct clinical proof."
         )
-    return ""
+    return summaries
 
 
 def _public_appraisal_label(value: str) -> str:
@@ -4607,7 +4596,7 @@ def _prepend_or_create_section_paragraph(text: str, section: str, paragraph: str
     if paragraph.lower() in text.lower():
         return text, 0
     for target in ("Results", "Key Findings", "Discussion", "References"):
-        match = re.search(rf"^## {target}\b", text, flags=re.M)
+        match = re.search(rf"^## {target}\b", text, flags=re.M | re.I)
         if match:
             insert = f"## {section}\n\n{paragraph}\n\n"
             prefix = text[:match.start()].rstrip()

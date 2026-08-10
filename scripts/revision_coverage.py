@@ -891,11 +891,22 @@ def _asks_rct_count_reconciliation(text: str) -> bool:
     return "rct" in text and any(token in text for token in ("single rct", "single direct rct", "two rcts", "more than one rct"))
 
 
+_GRADE_FRAMEWORK_RE = re.compile(r"\b(?:(?i:apply|applied|use|used|using|follow|followed|provide|provided|perform|performed)\s+(?:the\s+)?)GRADE\b|\bGRADE\s+(?i:certainty(?:\s+appraisal)?|assessments?|ratings?|framework|judgments?)\b|\bGRADE\b(?=\s+(?i:was\s+(?:applied|used)|for\s+(?:reviews?|outcomes?|evidence))\b)")
+APPRAISAL_RATINGS = {"risk": {"low", "some concerns", "high", "unclear"}, "grade": {"high", "moderate", "low", "very low"}}
+
+
+def replace_grade_framework(text: str, replacement: str) -> str:
+    return _GRADE_FRAMEWORK_RE.sub(lambda match: re.sub(r"\bgrade\b(?:\s+(?:certainty(?:\s+appraisal)?|assessment|ratings?|framework|judgments?))?", replacement, match.group(), flags=re.I), text)
+
+
+def appraisal_kinds(text: str, *, request: bool = False) -> tuple[bool, bool]:
+    lower = text.casefold()
+    return any(token in lower for token in ("rob-2", "rob 2", "robins-i", "amstar-2", "amstar 2", "risk-of-bias", "risk of bias", "rob judgment")), bool(_GRADE_FRAMEWORK_RE.search(text)) or request and ("grade certainty" in lower or "grade framework" in lower or bool(re.search(r"\b(?:provide|perform|populate|report)\s+(?:the\s+)?grade ratings\b", lower)))
+
+
 def _asks_unbacked_appraisal_names(text: str) -> bool:
-    return any(token in text for token in (
-        "rob-2", "robins-i", "amstar-2", "risk-of-bias", "risk of bias",
-        "appraisal", "rob judgment", "rob judgments",
-    ))
+    risk, grade = appraisal_kinds(text, request=True)
+    return risk or grade or "appraisal" in text
 
 
 def _asks_evidence_tier_directness_bounds(text: str) -> bool:
@@ -2637,14 +2648,27 @@ def _rct_count_reconciliation_is_stated(paper_md: str) -> bool:
     return "rct-count reconciliation" in lower and "source-coding count" in lower
 
 
-def _unbacked_appraisal_names_are_resolved(paper_md: str) -> bool:
-    lower = paper_md.lower()
-    if "risk-of-bias appraisal summary:" in lower and "overall ratings" in lower:
-        return True
-    formal = re.search(r"\b(?:RoB-2|RoB 2|ROBINS-I|AMSTAR-2|AMSTAR 2)\b", paper_md)
-    if formal:
+def _unbacked_appraisal_names_are_resolved(paper_md: str, ask: str) -> bool:
+    lower = re.split(r"(?im)^##\s+References\b", paper_md, maxsplit=1)[0].lower()
+    risk_named, grade_named = appraisal_kinds(lower)
+    risk_backed, grade_backed = (_appraisal_summary_has_positive_rating(lower, kind) for kind in ("risk", "grade"))
+    ask_risk, ask_grade = appraisal_kinds(ask, request=True)
+    strict = any(token in ask.casefold() for token in ("report", "provide", "populate", "perform")) and "or remove" not in ask.casefold()
+    if strict and (ask_risk and not risk_backed or ask_grade and not grade_backed):
         return False
-    return "risk-of-bias honesty note" in lower or "per-source public appraisal ratings" in lower
+    if risk_named or grade_named:
+        return (not risk_named or risk_backed) and (not grade_named or grade_backed)
+    return risk_backed or grade_backed or "risk-of-bias honesty note" in lower or "per-source public appraisal ratings" in lower
+
+
+def _appraisal_summary_has_positive_rating(text: str, kind: str) -> bool:
+    match = re.search(rf"(?im)^{'risk-of-bias' if kind == 'risk' else 'grade certainty'} appraisal summary:[^\n]*(?:\n(?![ \t]*(?:$|#|(?:risk-of-bias|grade certainty) appraisal summary:))[^\n]*)*", text)
+    if not match or not (ratings := re.search(r"ratings are\s+([^.]+)", match.group(), re.I | re.S)):
+        return False
+    if not re.fullmatch(r"[a-z][a-z ]*=\d+(?:,\s*[a-z][a-z ]*=\d+)*", clause := ratings.group(1).strip(), re.I):
+        return False
+    pairs = re.findall(r"(?:^|,\s*)([a-z][a-z ]*?)=(\d+)(?=,|$)", clause, re.I)
+    return bool(pairs) and all(name.casefold().strip() in APPRAISAL_RATINGS[kind] and int(count) > 0 for name, count in pairs)
 
 
 def _has_source_trace_marker(text: str) -> bool:
@@ -3473,7 +3497,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_publication_year_note, _paper_only(_publication_year_note_is_stated)),
     (_asks_intervention_target_boundary, _paper_only(_intervention_target_boundary_is_stated)),
     (_asks_rct_count_reconciliation, _paper_only(_rct_count_reconciliation_is_stated)),
-    (_asks_unbacked_appraisal_names, _paper_only(_unbacked_appraisal_names_are_resolved)),
+    (_asks_unbacked_appraisal_names, _paper_ask(_unbacked_appraisal_names_are_resolved)),
     (_asks_evidence_tier_directness_bounds, _paper_only(_evidence_tier_directness_bounds_are_stated)),
     (_asks_search_summary_scope_note, _paper_only(_search_summary_scope_note_is_stated)),
     (_asks_additive_screening_flow, _paper_only(_additive_screening_flow_is_stated)),

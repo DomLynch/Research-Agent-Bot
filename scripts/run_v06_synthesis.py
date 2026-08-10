@@ -4538,32 +4538,28 @@ def _repair_post_finalizer_auto_fixables(
     *,
     quant_claims_dir: Path,
 ) -> tuple[str, list[dict[str, Any]]]:
-    audit = audit_fn(paper_md)
-    audit_md = _audit_v06._format_summary(audit)
-    issues = _consistency_audit.run_audit(
-        paper_md, manifest, audit, audit_md, run_dir=paper_path.parent,
-    )
-    if not any(getattr(i, "auto_fixable", False) for i in issues):
+    original_md, all_log = paper_md, list[dict[str, Any]]()
+    for _ in range(3):
+        audit = audit_fn(paper_md)
+        issues = _consistency_audit.run_audit(paper_md, manifest, audit, _audit_v06._format_summary(audit), run_dir=paper_path.parent)
+        if not any(getattr(i, "auto_fixable", False) for i in issues):
+            break
+        fixed_md, log = _consistency_fixer.apply_fixes(
+            paper_md, issues, manifest=manifest,
+            quant_claims_dir=quant_claims_dir,
+            numeric_quarantine_path=paper_path.with_name("numeric_claim_quarantine.json"),
+        )
+        fixed_md = _strip_rendered_citation_markers(fixed_md)
+        fixed_md, surface_log = _restore_public_surface_floors(fixed_md, review_type=manifest.get("review_type"))
+        if fixed_md == paper_md:
+            break
+        paper_md = fixed_md
+        all_log.extend((*log, *surface_log))
+    if paper_md == original_md:
         return paper_md, []
-    fixed_md, log = _consistency_fixer.apply_fixes(
-        paper_md, issues, manifest=manifest,
-        quant_claims_dir=quant_claims_dir,
-        numeric_quarantine_path=paper_path.with_name(
-            "numeric_claim_quarantine.json",
-        ),
-    )
-    fixed_md = _strip_rendered_citation_markers(fixed_md)
-    fixed_md, surface_log = _restore_public_surface_floors(
-        fixed_md, review_type=manifest.get("review_type"),
-    )
-    log.extend(surface_log)
-    if fixed_md == paper_md and not log:
-        return paper_md, []
-    paper_path.write_text(fixed_md)
-    paper_path.with_suffix(".post_finalizer_fixed_log.json").write_text(
-        json.dumps(log, indent=2),
-    )
-    return fixed_md, log
+    paper_path.write_text(paper_md)
+    paper_path.with_suffix(".post_finalizer_fixed_log.json").write_text(json.dumps(all_log, indent=2))
+    return paper_md, all_log
 
 
 def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:
