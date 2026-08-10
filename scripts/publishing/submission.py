@@ -1346,12 +1346,12 @@ def _seen(path: Path) -> set[str]:
     return out
 
 
-def _seen_field(path: Path, key: str) -> set[str]:
-    return {
-        str(row[key])
-        for row in _ledger_rows(path)
-        if isinstance(row.get(key), str) and row[key]
-    }
+def _seen_field(path: Path, key: str, *, latest_active: bool = False) -> set[str]:
+    rows = _ledger_rows(path)
+    if latest_active:
+        rows = list({str(row[key]): row for row in rows if isinstance(row.get(key), str) and row[key]}.values())
+    return {str(row[key]) for row in rows if isinstance(row.get(key), str) and row[key]
+            and (not latest_active or str(row.get("decision") or "").strip().lower() != "reject")}
 
 
 def _submitted_count_for_date(path: Path, date: str) -> int:
@@ -1437,7 +1437,7 @@ def select_candidate(
     local_seen = _seen(submitted_path)
     rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
     revision_seen = _seen(submitted_path.with_name(REVISION_FINGERPRINTS))
-    submitted_topics = _seen_field(submitted_path, "topic")
+    submitted_topics = _seen_field(submitted_path, "topic", latest_active=True)
     revision_topics = _seen_field(submitted_path.with_name(REVISION_FINGERPRINTS), "topic")
     published_seen = remote_seen or set()
     considered = []

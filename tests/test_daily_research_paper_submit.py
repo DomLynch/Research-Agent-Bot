@@ -2976,6 +2976,33 @@ def test_already_submitted_pending_topic_is_not_resubmitted(tmp_path: Path) -> N
     assert ledger["considered"][0]["status"] == "topic_already_submitted_pending"
 
 
+def test_terminal_reject_does_not_leave_topic_pending(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        [
+            {"topic": "topic", "fingerprint": "sha256:older-pending"},
+            {
+                "topic": "topic",
+                "fingerprint": "sha256:old-content",
+                "decision": "reject",
+                "decision_status": "complete",
+            },
+        ],
+    )
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-06-16",
+        submit=True,
+        submitter=lambda _payload: {"ok": True, "status": 201, "response": {"id": "sub-fixed"}},
+        remote_loader=lambda: (set(), None),
+        candidate_run=run,
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+
+
 def test_duplicate_submission_response_seeds_pending_topic_skip(tmp_path: Path) -> None:
     """Researka's duplicate_submission means the journal already has this topic
     pending. Record it in the submitted ledger too; otherwise a regenerated run
