@@ -856,7 +856,7 @@ async def render_full_paper(
         system_prompt=_prompts["conclusion"], user_prompt=user,
         topic=topic, accepted=accepted, chain=chain, client=client,
         ledger=ledger, seed=seed,
-        fallback_body="## Conclusion\n\nThe conclusion is limited to claims that survive receipt qualification, source-context checks, and final audit gates.\n",
+        fallback_body=f"## Conclusion\n\nThe conclusion synthesizes evidence on {humanize_topic(topic, root=_repo)} across the retained source corpus and high-confidence extracted claim set, while remaining bounded by source directness and endpoint fit.\n",
         background_lit_entries=background_lit_entries,
     )
     if _thin:

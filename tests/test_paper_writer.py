@@ -344,8 +344,10 @@ def test_thin_revision_renders_only_requested_long_form_sections(monkeypatch) ->
 
 def test_full_revision_reapplies_author_boundary_after_backstop(monkeypatch) -> None:
     receipts = [_summary("r-direct")]
+    fallbacks: dict[str, str] = {}
 
     async def fake_section(**kwargs):
+        fallbacks[kwargs["name"]] = kwargs["fallback_body"]
         return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nDraft.\n", anchors=())
 
     async def fake_results(*_args, **_kwargs):
@@ -376,6 +378,7 @@ def test_full_revision_reapplies_author_boundary_after_backstop(monkeypatch) -> 
 
     assert "Backstop replacement." in md
     assert "**Author-inference boundary:**" in md
+    assert "the conclusion synthesizes evidence on vitamin d" in fallbacks["conclusion"].lower()
 
 
 def test_evidence_map_uses_compact_writer_path(monkeypatch) -> None:

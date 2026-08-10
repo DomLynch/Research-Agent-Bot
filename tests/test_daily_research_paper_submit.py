@@ -1610,6 +1610,33 @@ def test_core_claim_trace_blocks_uncited_conclusion_accounting(tmp_path: Path) -
     )
 
 
+def test_payload_cites_abstract_synthesis_claim_without_truncating_trace(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
+    registry["topic_effect_0"]["title"] = "Resistance training trial"
+    _write_json(run / "citation_registry.json", registry)
+    shutil.rmtree(run / "revision_evidence_snapshot")
+    _snapshot_run(run)
+    paper = (run / "full_paper.md").read_text(encoding="utf-8").replace(
+        "Alpha 2026 reports:",
+        "This paper synthesizes evidence on resistance training regimens across the retained source corpus "
+        "and high-confidence extracted claim set.\n\nAlpha 2026 reports:",
+        1,
+    )
+    paper = paper.replace("\n## Introduction", f"\n{'Abstract detail. ' * 40}\n## Introduction", 1)
+    (run / "full_paper.md").write_text(paper, encoding="utf-8")
+
+    payload = daily.build_payload(run)
+
+    assert len(payload["abstract"]) > 1400
+    assert payload["abstract"] == payload["sections"]["Abstract"] == daily._sections(payload["body_markdown"])["Abstract"]
+    assert re.search(r"synthesizes evidence on resistance training regimens.*\[bundle:\d+\]", payload["abstract"])
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    assert not daily._evidence_aligns("This paper synthesizes evidence on aspirin cardiovascular mortality across the retained source corpus and high-confidence extracted claim set.", {"title": "Exercise cardiovascular mortality outcomes"})
+    assert not daily._evidence_aligns("This paper synthesizes evidence on immune checkpoint inhibitors across the retained source corpus and high-confidence extracted claim set.", {"title": "Immune checkpoint biomarkers"})
+    assert not daily._evidence_aligns("This paper synthesizes evidence on aspirin cardiovascular effects across the retained source corpus and high-confidence extracted claim set with 90% mortality reduction.", {"title": "Aspirin cardiovascular effects", "excerpt": "Mortality increased by 20%."})
+
+
 def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Path) -> None:
     claim = (
         "Smith 2026 [bundle:1] reports that a 10 mg Topic intervention dose supports "
