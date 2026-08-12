@@ -227,29 +227,62 @@ def checked_retracted_dois(
     strict: bool = False,
 ) -> list[str]:
     """Check DOI retractions with the same failover used at submission."""
+    retracted, unverified = screen_retraction_dois(
+        dois, fetch=fetch, crossref_fetch=crossref_fetch, pubmed_fetch=pubmed_fetch,
+    )
+    if strict and unverified:
+        raise RetractionCheckUnavailable(f"unverified DOI(s): {', '.join(unverified)}")
+    return retracted
+
+
+def screen_retraction_dois(
+    dois: list[str], *, fetch: Callable[[list[str]], list[dict]] = _fetch_openalex,
+    crossref_fetch: Callable[[list[str]], tuple[list[str], list[str]]] = _fetch_crossref_retractions,
+    pubmed_fetch: Callable[[list[str]], list[str]] = _fetch_pubmed_retractions,
+) -> tuple[list[str], list[str]]:
+    """Return confirmed retractions and DOIs no provider could verify."""
+    clean = sorted({_bare_doi(doi) for doi in dois if doi.strip()})
+    verified: set[str] = set()
+    retracted: set[str] = set()
     try:
-        return retracted_dois(dois, fetch=fetch, strict=strict)
-    except RetractionCheckUnavailable as primary:
+        rows = fetch(clean)
+        for row in rows:
+            if not isinstance(row, dict) or type(row.get("is_retracted")) is not bool:
+                continue
+            doi = _bare_doi(str(row.get("doi") or ""))
+            if doi not in clean:
+                continue
+            verified.add(doi)
+            if row["is_retracted"]:
+                retracted.add(doi)
+    except (OSError, ValueError, KeyError, TypeError, urllib.error.URLError):
+        pass
+    missing = sorted(set(clean) - verified)
+    if missing:
         try:
-            crossref_retracted, missing = crossref_fetch(dois)
-            return sorted({*crossref_retracted, *(pubmed_fetch(missing) if missing else [])})
-        except (OSError, ValueError, KeyError, TypeError, RetractionCheckUnavailable) as secondary:
-            try:
-                return pubmed_fetch(dois)
-            except (OSError, ValueError, KeyError, TypeError, RetractionCheckUnavailable) as fallback:
-                raise RetractionCheckUnavailable(
-                    f"OpenAlex unavailable ({primary}); Crossref unavailable ({secondary}); "
-                    f"PubMed unavailable ({fallback})"
-                ) from fallback
+            crossref_retracted, crossref_missing = crossref_fetch(missing)
+            retracted.update(crossref_retracted)
+            verified.update(set(missing) - set(crossref_missing))
+        except (OSError, ValueError, KeyError, TypeError, urllib.error.URLError):
+            pass
+    missing = sorted(set(clean) - verified)
+    if missing:
+        try:
+            retracted.update(pubmed_fetch(missing))
+            verified.update(missing)
+        except (OSError, ValueError, KeyError, TypeError, RetractionCheckUnavailable):
+            pass
+    return sorted(retracted), sorted(set(clean) - verified)
 
 
 def exclude_retracted(
     records: list[_T], *, doi_of: Callable[[_T], str | None],
-    checker: Callable[..., list[str]] = checked_retracted_dois,
-) -> tuple[list[_T], list[str]]:
-    blocked = set(checker([doi for row in records if (doi := doi_of(row))], strict=True))
+    checker: Callable[..., tuple[list[str], list[str]]] = screen_retraction_dois,
+) -> tuple[list[_T], list[str], list[str]]:
+    retracted, unverified = checker([doi for row in records if (doi := doi_of(row))])
+    blocked = {*retracted, *unverified}
     kept = [row for row in records if not (doi := doi_of(row)) or _bare_doi(doi) not in blocked]
-    return kept, sorted(blocked)
+    return kept, retracted, unverified
 
 
 def retracted_cited_sources(

@@ -151,13 +151,31 @@ def test_checked_retracted_dois_preserves_fallback_without_run_artifacts() -> No
 
 
 def test_exclude_retracted_filters_records_by_normalized_doi() -> None:
-    rows = [{"doi": "10.1/good"}, {"doi": "https://doi.org/10.2/BAD"}]
-    kept, blocked = rc.exclude_retracted(
+    rows = [
+        {"doi": "10.1/good"}, {"doi": "https://doi.org/10.2/BAD"},
+        {"doi": "10.3/unverified"},
+    ]
+    kept, retracted, unverified = rc.exclude_retracted(
         rows, doi_of=lambda row: row["doi"],
-        checker=lambda _dois, strict: ["10.2/bad"],
+        checker=lambda _dois: (["10.2/bad"], ["10.3/unverified"]),
     )
     assert kept == [rows[0]]
-    assert blocked == ["10.2/bad"]
+    assert retracted == ["10.2/bad"]
+    assert unverified == ["10.3/unverified"]
+
+
+def test_screen_retractions_keeps_partial_findings_and_marks_unknowns() -> None:
+    retracted, unverified = rc.screen_retraction_dois(
+        ["10.1/good", "10.2/bad", "10.3/unknown"],
+        fetch=_fetch([
+            {"doi": "10.1/good", "is_retracted": False},
+            {"doi": "10.2/bad", "is_retracted": True},
+        ]),
+        crossref_fetch=lambda missing: ([], missing),
+        pubmed_fetch=lambda _missing: (_ for _ in ()).throw(rc.RetractionCheckUnavailable("missing")),
+    )
+    assert retracted == ["10.2/bad"]
+    assert unverified == ["10.3/unknown"]
 
 
 def test_cited_dois_reads_registry(tmp_path: Path) -> None:

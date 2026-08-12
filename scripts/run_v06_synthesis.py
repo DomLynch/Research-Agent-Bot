@@ -2794,19 +2794,19 @@ async def _run(
         authorized_contract_fields=allowed_by_receipt,
     )
     try:
-        receipts, retracted = _retraction_check.exclude_retracted(
-            receipts, doi_of=lambda receipt: receipt.source_doi,
-        )
+        receipts, retracted, unverified = _retraction_check.exclude_retracted(
+            receipts, doi_of=lambda receipt: receipt.source_doi)
     except _retraction_check.RetractionCheckUnavailable:
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
             "retraction_check_unavailable",
         )
-    receipt_funnel["retraction_preflight"] = {"retracted_dois": retracted}
-    if retracted and revision_receipt_ids:
+    receipt_funnel["retraction_preflight"] = {"retracted_dois": retracted, "unverified_dois": unverified}
+    if (retracted or unverified) and revision_receipt_ids:
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
-            "retracted_source_cited", tuple(retracted),
+            "retracted_source_cited" if retracted else "retraction_check_unavailable",
+            tuple(retracted or unverified),
         )
     if revision_receipt_ids:
         missing = sorted(revision_receipt_ids - {r.receipt_id for r in receipts})
