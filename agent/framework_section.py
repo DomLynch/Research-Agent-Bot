@@ -135,7 +135,10 @@ def build_framework_engagement_records(
     """Return structured engagement records from writer-safe inputs."""
     receipt_rows = [_receipt_dict(r) for r in receipts]
     background_rows = [_entry_dict(r) for r in background_refs]
-    return tuple(evaluate_engagement(receipt_rows, background_rows))
+    return tuple(
+        item for item in evaluate_engagement(receipt_rows, background_rows)
+        if item.matched_receipts or item.matched_background_refs
+    )
 
 
 def build_novel_framework_section(

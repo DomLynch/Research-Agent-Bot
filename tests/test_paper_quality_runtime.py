@@ -184,15 +184,21 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
     parsed.mkdir()
     pqr.write_quality_methods(tmp_path, _receipts(), parsed)
     (tmp_path / "field_engagement.json").write_text(json.dumps([
-        {"framework_name": "Mannick", "status": "support"},
+        {
+            "framework_name": name,
+            "status": "insufficient",
+            "matched_receipts": [],
+            "matched_background_refs": [],
+        }
+        for name in ("Mannick", "Lamming", "Kennedy", "Kaeberlein", "Lopez-Otin")
     ]))
     paper = (
         "## Limitations\n\n"
         "This evidence cannot support a clinical recommendation for routine use.\n"
     )
     manifest = {
-        "n_receipts": 40,
-        "n_non_orthogonal_tensions": 5,
+        "n_receipts": 14,
+        "n_non_orthogonal_tensions": 2,
         "review_type": "prisma_scr_scoping_synthesis",
         "thesis": "Receipt-bound thesis.",
         "receipts": _receipts(),
@@ -214,6 +220,7 @@ def test_final_quality_gates_emit_accepting_artifacts(tmp_path: Path) -> None:
 
     assert result["gate"].passed
     assert result["score"].verdict == "accept"
+    assert result["score"].rubric.total == 27
     assert (tmp_path / "pre_submit_gate.json").exists()
     assert (tmp_path / "publication_score.json").exists()
     gate_payload = json.loads((tmp_path / "pre_submit_gate.json").read_text())

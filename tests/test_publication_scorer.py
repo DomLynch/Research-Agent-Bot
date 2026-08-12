@@ -1,6 +1,8 @@
 """Tests for the publication-readiness scorer (panel rubric)."""
 from __future__ import annotations
 
+from typing import Any
+
 import pytest
 
 from agent.publication_scorer import (
@@ -12,9 +14,9 @@ from agent.publication_scorer import (
 )
 
 
-def _green_inputs(**overrides) -> ScoreInputs:
+def _green_inputs(**overrides: Any) -> ScoreInputs:
     """All-green inputs that yield ACCEPT (30/30); override per test."""
-    base = dict(
+    base: dict[str, Any] = dict(
         n_receipts=42, n_outcome_classes=4, n_tensions=5,
         rob_coverage=0.85, grade_coverage=1.0, numeric_coverage=1.0,
         citation_registry_complete=True, audit_gates_passed=True,
@@ -122,7 +124,7 @@ def test_research_question_scores_higher_with_multi_outcome() -> None:
 
 def test_synthesis_scales_with_receipt_count() -> None:
     thin = score_publication(_green_inputs(n_receipts=3)).rubric.synthesis
-    mid = score_publication(_green_inputs(n_receipts=15)).rubric.synthesis
+    mid = score_publication(_green_inputs(n_receipts=12)).rubric.synthesis
     fat = score_publication(_green_inputs(n_receipts=30)).rubric.synthesis
     assert thin < mid < fat or thin <= mid <= fat
 

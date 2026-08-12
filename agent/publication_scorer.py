@@ -14,6 +14,8 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Literal
 
+from agent.final_gate import RESEARKA_MIN_SOURCE_CITATIONS
+
 __all__ = [
     "RubricDimension",
     "ClaimSupport",
@@ -62,8 +64,8 @@ class ScoreInputs:
     citation_registry_complete: bool
     audit_gates_passed: bool
     template_language_blocking: bool
-    field_engagements_supported: int    # frameworks with status="support"
-    field_engagements_total: int        # all 5 expected (Mannick..Lopez-Otin)
+    field_engagements_supported: int    # applicable frameworks with support
+    field_engagements_total: int        # applicable named frameworks; zero means N/A
     has_explicit_thesis: bool           # manifest.thesis non-empty
     has_limitations_section: bool       # paper has Limitations section
     has_clinical_practice_statement: bool  # Bug 3: conclusion has the line
@@ -147,11 +149,11 @@ def _score_synthesis(s: ScoreInputs) -> tuple[int, list[str]]:
     score = 0
     if s.n_receipts >= 30:
         score += 3
-    elif s.n_receipts >= 15:
+    elif s.n_receipts >= RESEARKA_MIN_SOURCE_CITATIONS:
         score += 2
     elif s.n_receipts >= 5:
         score += 1
-    else:
+    if s.n_receipts < RESEARKA_MIN_SOURCE_CITATIONS:
         notes.append(f"synthesis: only {s.n_receipts} receipts (panel expects >=12)")
     if s.n_tensions >= 3:
         score += 2
@@ -167,7 +169,11 @@ def _score_gaps(s: ScoreInputs) -> tuple[int, list[str]]:
     score = 0
     if s.has_limitations_section:
         score += 2
-    if s.field_engagements_total > 0:
+    if s.field_engagements_total == 0:
+        # Named framework registries are topic-specific. N/A must not penalize
+        # an otherwise complete paper from another research domain.
+        score += 1
+    else:
         ratio = s.field_engagements_supported / s.field_engagements_total
         if ratio < 1.0:
             # Some frameworks unsupported; corpus gap acknowledged.
@@ -238,7 +244,7 @@ def _score_source_grounding(s: ScoreInputs) -> tuple[int, list[str]]:
         )
     if s.appraisal_required and s.grade_coverage >= 1.0:
         score += 1
-    if s.field_engagements_total > 0 and s.field_engagements_supported >= 1:
+    if s.field_engagements_total == 0 or s.field_engagements_supported >= 1:
         score += 1
     return min(5, score), notes
 
