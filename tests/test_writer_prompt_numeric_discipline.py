@@ -73,10 +73,14 @@ def test_numeric_discipline_rule_describes_qualitative_fallback() -> None:
 
 
 def test_numeric_discipline_requires_inline_sentence_receipts() -> None:
-    assert "every empirical sentence" in NUMERIC_DISCIPLINE_RULE.lower()
+    assert "every sentence" in NUMERIC_DISCIPLINE_RULE.lower()
     assert "same sentence" in NUMERIC_DISCIPLINE_RULE.lower()
     assert "metadata alone is not an inline citation" in NUMERIC_DISCIPLINE_RULE.lower()
     assert "spell out period-bearing abbreviations" in NUMERIC_DISCIPLINE_RULE.lower()
+    assert "metadata alone does not" in CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT
+    assert "[r-a]" in CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT
+    assert "[r-a]" in ABSTRACT_SYSTEM_PROMPT
+    assert "metadata alone does not" in LIMITATIONS_FULL_SYSTEM_PROMPT
 
 
 def test_numeric_discipline_rule_is_self_contained() -> None:

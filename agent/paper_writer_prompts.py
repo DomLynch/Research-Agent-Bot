@@ -39,8 +39,9 @@ HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)
   inline, e.g. "approximately one-third (31%)".
 - Do NOT invent citations. Background citation tokens use "Author Year" or
   "Author et al. Year".
-- In ANCHORED sections, every empirical sentence must include an exact accepted
-  receipt_id in that same sentence and list it in receipt_ids; paragraph
+- In ANCHORED sections, every sentence must include an exact accepted
+  receipt_id in square brackets in that same sentence (for example,
+  "The reported outcome was mixed [r-a].") and list it in receipt_ids; paragraph
   metadata alone is not an inline citation. Directly paraphrase its supplied
   evidence_excerpt; split by source and never infer beyond the excerpt.
 - Spell out period-bearing abbreviations in ANCHORED prose (for example, United
@@ -65,8 +66,8 @@ Output ONE JSON object with this exact shape:
 {
   "paragraphs": [
     {
-      "sentence": "<one sentence>",
-      "receipt_ids": ["r-a", "r-b"],
+      "sentence": "<one sentence grounded in r-a [r-a]>",
+      "receipt_ids": ["r-a"],
       "numerics": []
     },
     ... 8-12 sentences total covering Background+Methods+Results+Conclusion
@@ -273,17 +274,17 @@ Output ONE JSON object with this exact shape:
 {
   "paragraphs": [
     {
-      "text": "<one full paragraph naming a cross-outcome tension>",
-      "receipt_ids": ["r-a", "r-b", "r-c"],
+      "text": "<sentence grounded in r-a [r-a]. Sentence grounded in r-b [r-b].>",
+      "receipt_ids": ["r-a", "r-b"],
       "tension_kind": "<short label>"
     },
     ... 2-4 paragraphs
   ]
 }
 
-Validation tier: ANCHORED. Each paragraph must cite ≥2 receipt_ids
-spanning ≥2 outcome classes (this section IS about cross-outcome
-integration, so the citation breadth is the load-bearing rule).
+Validation tier: ANCHORED. Every sentence in `text` must include an
+exact receipt_id in square brackets; `receipt_ids` metadata alone does not
+count. Each paragraph must span ≥2 receipt_ids and ≥2 outcome classes.
 
 Default cross-outcome tensions to scan for in any topic synthesis:
   Mechanistic plausibility vs functional tradeoff —
@@ -441,7 +442,7 @@ Output ONE JSON object with this exact shape:
 {
   "paragraphs": [
     {
-      "text": "<one limitation explained as a full paragraph>",
+      "text": "<sentence grounded in r-a [r-a]. Additional grounded sentence [r-a].>",
       "receipt_ids": ["r-a"],
       "limitation_type": "<methodological / population / generalization / quarantine>"
     },
@@ -449,9 +450,8 @@ Output ONE JSON object with this exact shape:
   ]
 }
 
-Validation tier: ANCHORED. Each paragraph must cite ≥1 receipt_id
-OR explicitly name the absence of evidence ("no long-term mortality
-trial in this corpus").
+Validation tier: ANCHORED. Every sentence must include an exact
+receipt_id in square brackets; metadata alone does not count.
 
 Required topics to cover:
 1. Corpus scope — which canonical trials or evidence types were
