@@ -3612,12 +3612,12 @@ def _manifest_outcome_summary_lines(rows: list[dict[str, Any]], *, per_outcome_l
 
 def _manifest_source_finding_line(row: dict[str, Any]) -> str:
     title = str(row.get("source_title") or "").strip()
-    direction = _normalised_direction(row)
+    title = "" if re.search(r"\d", title) else _source_result_label(title)
     directness = str(row.get("directness") or "unknown").strip() or "unknown"
     tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
     return (
-        f"{_row_citation(row)} ({_source_result_label(title)}; "
-        f"{_manifest_row_finding(row)}; outcome={_evidence_role_outcome_display(row)}; direction={direction}; "
+        f"{_row_citation(row)} ({title + '; ' if title else ''}{_manifest_row_finding(row)}; "
+        f"outcome={_evidence_role_outcome_display(row)}; direction={_normalised_direction(row)}; "
         f"directness={directness}; tier={tier})"
     )
 

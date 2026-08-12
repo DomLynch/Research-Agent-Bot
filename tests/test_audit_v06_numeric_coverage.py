@@ -8,6 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import audit_v06_paper as audit  # type: ignore[import-not-found]  # noqa: E402
+import journal_finalizer  # type: ignore[import-not-found]  # noqa: E402
 from agent import revision_claim_trace  # noqa: E402
 
 
@@ -192,6 +193,17 @@ def test_evidence_snapshot_representative_p_values_are_appendix_metadata() -> No
     )
     ok, msg = audit._check_numeric_integrity(paper, corpus_nums=set())
     assert ok, msg
+
+
+def test_source_title_numeric_is_not_repeated_as_result_claim() -> None:
+    row = {
+        "citation_token": "Khatri 2025",
+        "source_title": "Lessons from over 90,000 procedures", "n_claims": 3,
+    }
+    line = journal_finalizer._manifest_source_finding_line(row)
+    assert "90,000" not in line
+    assert "Khatri 2025" in line
+    assert audit._check_numeric_integrity(line, set(), {"receipts": [row]})[0]
 
 
 def test_percentage_still_filtered_for_trivial_values() -> None:
