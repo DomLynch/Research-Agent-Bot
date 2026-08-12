@@ -491,7 +491,7 @@ def _token() -> tuple[str, str]:
 def _runs(root: Path) -> list[Path]:
     return sorted(
         (p for p in root.glob("synthesis-*") if p.is_dir()),
-        key=lambda p: p.stat().st_mtime,
+        key=lambda p: p.name.rsplit("-DAILY-", 1)[-1] if "-DAILY-" in p.name else f"{p.stat().st_mtime:020.6f}",
         reverse=True,
     )
 
