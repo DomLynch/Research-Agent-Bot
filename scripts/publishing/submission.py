@@ -36,6 +36,7 @@ from source_topic_specificity import (  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.evidence_lanes import derive_receipt_lane  # noqa: E402
 from agent import publication_evidence as _publication_evidence, revision_claim_trace as _revision_claim_trace  # noqa: E402
+from agent.outcome_class_remap import outcome_display  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
     CorruptJsonState,
     read_json as _read_json_state,
@@ -549,8 +550,7 @@ def _public_research_surface_status(run: Path) -> str:
     )
 
 
-def _word_count(text: object) -> int:
-    return len(str(text or "").split())
+def _word_count(text: object) -> int: return len(str(text or "").split())
 
 
 def _empirical_claim(text: str) -> bool:
@@ -618,6 +618,22 @@ def _quantities_match(claim_quantities: set[tuple[str, str]], evidence: str) -> 
     return all(token in evidence_quantities or token[0].startswith("-") and "down" in _direction_labels(evidence) and (token[0][1:], token[1]) in evidence_quantities for token in claim_quantities)
 
 
+def _structured_source_summary_aligns(claim: str, source: dict[str, Any], quantities: set[tuple[str, str]]) -> bool:
+    fields = {key.lower(): value for key, value in re.findall(r"\b(outcome|direction|directness|tier)=([^;.)]+)", claim, re.I)}
+    expected = (
+        ("outcome", outcome_display(str(source.get("outcome_class") or "contextual_other"))),
+        ("direction", resolved_effect_direction(source)),
+        ("directness", str(source.get("directness") or "")),
+        ("tier", str(source.get("evidence_tier") or "")),
+    )
+    return (
+        bool(quantities) and bool(re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I))
+        and _normalized_key(claim.split(" [bundle:", 1)[0]) == _normalized_key(str(source.get("cited_as") or ""))
+        and all(value and _normalized_key(fields.get(key, "")) == _normalized_key(value) for key, value in expected)
+        and any(_quantities_match(quantities, str(source.get(key) or "")) for key in ("quote", "evidence_span", "excerpt"))
+    )
+
+
 def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
     label_words = _evidence_words(source.get("cited_as"))
     claim_words = _evidence_words(claim) - label_words
@@ -626,6 +642,8 @@ def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
     required = min(4, max(3, (len(claim_words) + 4) // 5))
     claim_text = claim.lower().split(" reports: ", 1)[-1].split(" [exact source:", 1)[0]
     claim_quantities = _quantity_tokens(claim, [source])
+    if _structured_source_summary_aligns(claim, source, claim_quantities):
+        return True
     for key in ("quote", "evidence_span", "excerpt"):
         evidence = " ".join(str(source.get(key) or "").lower().split()).replace("−", "-").replace("–", "-").replace("—", "-")
         if len(evidence) < 20:
@@ -732,11 +750,9 @@ def _researka_claim_trace_status(
     prose = "\n".join([str(payload.get("abstract") or ""), *major])
     prose = "\n".join(line for line in prose.splitlines() if not line.lstrip().startswith("|"))
     count, cited, aligned = _claim_trace_counts(prose, source_bundle)
-    if not count:
-        return "eligible"
-    required = (count * 4 + 4) // 5
+    required = (count * 4 + 4) // 5 if count else 0
     return (
-        "eligible" if aligned >= required
+        "eligible" if not count or aligned >= required
         else f"researka_claim_trace_insufficient:cited={cited}/{count},"
         f"aligned={aligned}/{count},required={required}"
     )
@@ -759,13 +775,10 @@ def _researka_core_claim_trace_status(
         if not section_claims:
             return f"researka_core_claims_unresolved:{name}_claims=0"
         claims.extend(section_claims)
-    cited = aligned = 0
-    for claim in claims:
-        indexes = _citation_indexes(claim, source_bundle)
-        cited += bool(indexes)
-        aligned += bool(indexes) and any(
-            _evidence_aligns(claim, source_bundle[index]) for index in indexes
-        )
+    indexes = [_citation_indexes(claim, source_bundle) for claim in claims]
+    cited = sum(bool(values) for values in indexes)
+    aligned = sum(any(_evidence_aligns(claim, source_bundle[index]) for index in values)
+                  for claim, values in zip(claims, indexes, strict=True))
     if aligned == len(claims):
         return "eligible"
     return f"researka_core_claims_unresolved:cited={cited}/{len(claims)},aligned={aligned}/{len(claims)}"
@@ -858,12 +871,9 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
     min_citations = int(_threshold(article_type, "min_citations"))
     if len(source_bundle) < min_citations:
         return f"researka_preflight_insufficient_sources:{len(source_bundle)} < {min_citations}"
-    if (surface_status := _public_grade_surface_status(payload)) != "eligible":
-        return surface_status
-    if (bundle_status := _source_bundle_reconciliation_status(payload)) != "eligible":
-        return bundle_status
-    if (topic_status := _source_bundle_topic_status(payload)) != "eligible":
-        return topic_status
+    for check in (_public_grade_surface_status, _source_bundle_reconciliation_status, _source_bundle_topic_status):
+        if (status := check(payload)) != "eligible":
+            return status
     direct = sum(_row_context(row) == "direct" for row in source_bundle)
     if direct < PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS:
         return f"public_surface_direct_receipts_below_floor:{direct} < {PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS}"
@@ -873,21 +883,15 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
     if missing:
         return "researka_preflight_missing_sections:" + ",".join(missing)
 
-    question_section = "Abstract"
     minimum_question_words = int(_threshold(article_type, "min_question_words"))
-    question_words = _word_count(sections.get(question_section))
+    question_words = _word_count(sections.get("Abstract"))
     if question_words < minimum_question_words:
-        return (
-            "researka_preflight_question_words:"
-            f"{question_section}={question_words} < {minimum_question_words}"
-        )
+        return f"researka_preflight_question_words:Abstract={question_words} < {minimum_question_words}"
 
     min_body_words = int(_threshold(article_type, "min_body_words"))
     if min_body_words:
-        body_words = sum(
-            _word_count(sections.get(name))
-            for name in (*required_sections, *RESEARKA_RECOMMENDED_SECTIONS.get(article_type, ()))
-        )
+        body_words = sum(_word_count(sections.get(name)) for name in (
+            *required_sections, *RESEARKA_RECOMMENDED_SECTIONS.get(article_type, ())))
         if body_words < min_body_words:
             return f"researka_preflight_body_words:{body_words} < {min_body_words}"
     if (claim_trace_status := _researka_claim_trace_status(payload, source_bundle)) != "eligible":
@@ -906,9 +910,7 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
 
 
 def _final_status_ready(data: dict[str, Any]) -> bool:
-    if "researka_publish_ready" in data:
-        return bool(data.get("researka_publish_ready") is True)
-    return bool(data.get("submission_ready") is True)
+    return data.get("researka_publish_ready" if "researka_publish_ready" in data else "submission_ready") is True
 
 
 def _inside_refresh_window(run: Path) -> bool:

@@ -1584,6 +1584,28 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
 
 
+def test_source_bound_structured_statistic_requires_matching_evidence_and_metadata() -> None:
+    source = {
+        "cited_as": "Faqihi 2021",
+        "outcome_class": "longevity",
+        "effect_direction": "mixed",
+        "directness": "direct",
+        "evidence_tier": "A1",
+        "excerpt": "Days on ventilation were lower in the exchange group (p = 0.007).",
+    }
+    claim = (
+        "Faqihi 2021 [bundle:1] (representative statistic p = 0.007; "
+        "source-level statistic reported; outcome=Longevity; direction=mixed; "
+        "directness=direct; tier=A1)."
+    )
+
+    assert daily._claim_trace_counts(claim, [source]) == (1, 1, 1)
+    assert daily._claim_trace_counts(claim.replace("0.007", "0.008"), [source]) == (1, 1, 0)
+    assert daily._claim_trace_counts(claim.replace("direction=mixed", "direction=positive"), [source]) == (1, 1, 0)
+    assert daily._claim_trace_counts(claim.replace("outcome=Longevity", "outcome=Safety"), [source]) == (1, 1, 0)
+    assert daily._claim_trace_counts(claim.replace("Faqihi 2021", "Wrong 2021"), [source]) == (1, 1, 0)
+
+
 def test_core_claim_trace_blocks_uncited_conclusion_accounting(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
