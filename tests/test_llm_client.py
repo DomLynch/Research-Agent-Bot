@@ -775,26 +775,22 @@ def _settings(
     )
 
 
-def test_build_extract_chain_yields_minimax_then_mistral() -> None:
+def test_build_extract_chain_uses_only_configured_writer() -> None:
     chain = build_extract_chain(_settings())
-    assert len(chain) == 2
-    assert chain[0].model == "MiniMax-M3"
-    assert chain[1].model == "mistralai/mistral-small-2603"
+    assert [spec.model for spec in chain] == ["MiniMax-M3"]
 
 
 def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
     """Specs with empty api_keys stay in the chain — chat_json skips them."""
     chain = build_extract_chain(_settings(minimax_key=""))
-    assert len(chain) == 2
+    assert len(chain) == 1
     assert chain[0].api_key == ""  # unset, will be skipped at call time
-    assert chain[1].api_key == "or-key"
 
 
 def test_build_extract_chain_uses_settings_timeout() -> None:
     s = _settings()
     chain = build_extract_chain(s)
     assert chain[0].timeout_sec == s.minimax_timeout_sec
-    assert chain[1].timeout_sec == s.minimax_timeout_sec  # both share MiniMax timeout
 
 
 def test_build_extract_chain_sets_retry_attempts(
@@ -802,7 +798,7 @@ def test_build_extract_chain_sets_retry_attempts(
 ) -> None:
     monkeypatch.setenv("LLM_CALL_ATTEMPTS", "3")
     chain = build_extract_chain(_settings())
-    assert [s.max_attempts for s in chain] == [3, 3]
+    assert [s.max_attempts for s in chain] == [3]
 
 
 # --- build_judge_chain (Day 5.3) -----------------------------------------
@@ -815,7 +811,7 @@ def test_build_judge_chain_excludes_writer_family() -> None:
     back to the writer (never let a model grade its own output)."""
     chain = build_judge_chain(_settings())
     models = [s.model for s in chain]
-    assert models == ["google/gemma-4-31b-it"]
+    assert models == ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"]
     assert "MiniMax-M3" not in models
 
 
@@ -823,7 +819,10 @@ def test_build_judge_chain_keeps_empty_keys_but_drops_writer_family() -> None:
     """Non-writer specs with empty api_keys remain (chat_json skips them at
     call time); the writer-family spec is dropped regardless of key."""
     chain = build_judge_chain(_settings(openrouter_key=""))
-    assert [s.model for s in chain] == ["google/gemma-4-31b-it"]
+    assert [s.model for s in chain] == [
+        "google/gemma-4-31b-it",
+        "mistralai/mistral-small-2603",
+    ]
     assert all(s.api_key == "" for s in chain)
 
 
@@ -831,5 +830,5 @@ def test_build_judge_chain_drops_writer_family_judge_primary() -> None:
     """A judge_model misconfigured to the writer's family is dropped rather
     than allowed to grade its own output; the chain falls through to a
     non-writer model."""
-    with pytest.raises(ValueError, match="no judge model outside writer families"):
-        build_judge_chain(_settings(judge_model="MiniMax-M3"))
+    chain = build_judge_chain(_settings(judge_model="MiniMax-M3"))
+    assert [s.model for s in chain] == ["mistralai/mistral-small-2603"]

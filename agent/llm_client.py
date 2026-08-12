@@ -468,12 +468,7 @@ async def chat_json(
 
 
 def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """Fact-extraction default chain: MiniMax (primary) → Mistral (fallback).
-
-    Specs with empty api_keys remain in the chain — `chat_json` skips them.
-    A partially-configured environment (only Mistral set, MiniMax missing)
-    still produces useful work without crashing the pipeline.
-    """
+    """Build the configured writer/extractor route without a paid fallback."""
     return (
         CallSpec(
             base_url=settings.minimax_base_url,
@@ -481,13 +476,6 @@ def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
             model=settings.minimax_model,
             timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.minimax_base_url),
-        ),
-        CallSpec(
-            base_url=settings.openrouter_base_url,
-            api_key=settings.openrouter_api_key,
-            model=settings.fallback_model,
-            timeout_sec=settings.minimax_timeout_sec,
-            max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
 
@@ -508,15 +496,12 @@ def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
     """Build the SPAR judge chain from independent model families only.
 
     Trust-spine rule — *judge != writer*: a model cannot independently grade
-    its own output, so the judge chain excludes both configured writer families
-    (primary and fallback). Non-writer specs with empty api_keys are kept
+    its own output, so the judge chain excludes the configured writer family.
+    Non-writer specs with empty api_keys are kept
     (``chat_json`` skips them at call time). Raises if no independent judge
     model remains.
     """
-    writer_families = {
-        _model_family(settings.minimax_model),
-        _model_family(settings.fallback_model),
-    }
+    writer_families = {_model_family(settings.minimax_model)}
     candidates = (
         CallSpec(
             base_url=settings.openrouter_base_url,

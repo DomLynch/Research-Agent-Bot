@@ -41,11 +41,11 @@ class Settings:
     minimax_base_url: str
     minimax_timeout_sec: float
 
-    # OpenRouter — judge primary + shared fallback for writer & judge
+    # OpenRouter — independent judge primary + fallback
     openrouter_api_key: str
     openrouter_base_url: str
     judge_model: str       # Gemma 4 (primary judge)
-    fallback_model: str    # Ministral — shared fallback for MiniMax writer AND Gemma judge
+    fallback_model: str    # Mistral judge fallback
     final_layer_reviewer_model: str  # final fail-safe reviewer
 
     # Safety rails
