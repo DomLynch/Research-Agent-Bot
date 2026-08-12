@@ -362,6 +362,13 @@ async def _write_anchored_section(
                 f"(attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1})",
                 flush=True,
             )
+            sample_id = accepted[0].receipt_id if accepted else "r-a"
+            current_prompt = (
+                f"{user_prompt}\n\nANCHOR REPAIR REQUIRED: The previous JSON was rejected. "
+                "Every sentence in each text/sentence value must contain an exact accepted "
+                f'receipt ID, for example: "The finding was mixed [{sample_id}]." '
+                "List that same ID in receipt_ids. Return JSON only."
+            )
             continue
         words = _section_word_count(section)
         if words > best_words:

@@ -242,6 +242,32 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
     assert "lifespan" not in immune_body
 
 
+def test_anchored_writer_repairs_missing_inline_receipts(monkeypatch) -> None:
+    prompts: list[str] = []
+
+    async def fake_call(**kwargs):
+        prompt = str(kwargs["user_prompt"])
+        prompts.append(prompt)
+        text = "Evidence remained mixed [r-a]." if "ANCHOR REPAIR REQUIRED" in prompt else "Evidence remained mixed."
+        return {"paragraphs": [{"text": text, "receipt_ids": ["r-a"]}]}
+
+    async def no_citation_fix(section, **_kwargs):
+        return section
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", fake_call)
+    monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", no_citation_fix)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 1)
+
+    section = asyncio.run(paper_writer._write_anchored_section(
+        name="abstract", heading="## Abstract", system_prompt="system",
+        user_prompt="base", accepted=[_summary("r-a")], chain=(), client=None,
+        ledger=None, seed=None, fallback_body="fallback",
+    ))
+
+    assert "[r-a]" in section.body_md
+    assert len(prompts) == 2
+
+
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
     receipts = [
         _summary(
