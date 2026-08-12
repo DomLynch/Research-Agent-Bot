@@ -11,11 +11,13 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from collections.abc import Callable
 from pathlib import Path
+from typing import TypeVar
 
 _OPENALEX = "https://api.openalex.org/works"
 _CROSSREF = "https://api.crossref.org/works"
 _PUBMED = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 _DOI_RE = re.compile(r"10\.\d{4,9}/[^\s\]|>]+", re.I)
+_T = TypeVar("_T")
 
 
 class RetractionCheckUnavailable(RuntimeError):
@@ -213,20 +215,18 @@ def retracted_dois(
         valid.append(row)
     seen = {_bare_doi(str(row["doi"])) for row in valid}
     retracted = sorted(_bare_doi(str(row["doi"])) for row in valid if row["is_retracted"])
-    if retracted:
-        return retracted
     if strict and set(clean) - seen:
         raise RetractionCheckUnavailable("incomplete retraction result")
-    return []
+    return retracted
 
 
-def retracted_cited_sources(
-    run_dir: Path, *, fetch: Callable[[list[str]], list[dict]] = _fetch_openalex,
+def checked_retracted_dois(
+    dois: list[str], *, fetch: Callable[[list[str]], list[dict]] = _fetch_openalex,
     crossref_fetch: Callable[[list[str]], tuple[list[str], list[str]]] = _fetch_crossref_retractions,
     pubmed_fetch: Callable[[list[str]], list[str]] = _fetch_pubmed_retractions,
     strict: bool = False,
 ) -> list[str]:
-    dois = cited_dois(run_dir, strict=strict)
+    """Check DOI retractions with the same failover used at submission."""
     try:
         return retracted_dois(dois, fetch=fetch, strict=strict)
     except RetractionCheckUnavailable as primary:
@@ -241,3 +241,25 @@ def retracted_cited_sources(
                     f"OpenAlex unavailable ({primary}); Crossref unavailable ({secondary}); "
                     f"PubMed unavailable ({fallback})"
                 ) from fallback
+
+
+def exclude_retracted(
+    records: list[_T], *, doi_of: Callable[[_T], str | None],
+    checker: Callable[..., list[str]] = checked_retracted_dois,
+) -> tuple[list[_T], list[str]]:
+    blocked = set(checker([doi for row in records if (doi := doi_of(row))], strict=True))
+    kept = [row for row in records if not (doi := doi_of(row)) or _bare_doi(doi) not in blocked]
+    return kept, sorted(blocked)
+
+
+def retracted_cited_sources(
+    run_dir: Path, *, fetch: Callable[[list[str]], list[dict]] = _fetch_openalex,
+    crossref_fetch: Callable[[list[str]], tuple[list[str], list[str]]] = _fetch_crossref_retractions,
+    pubmed_fetch: Callable[[list[str]], list[str]] = _fetch_pubmed_retractions,
+    strict: bool = False,
+) -> list[str]:
+    dois = cited_dois(run_dir, strict=strict)
+    return checked_retracted_dois(
+        dois, fetch=fetch, crossref_fetch=crossref_fetch,
+        pubmed_fetch=pubmed_fetch, strict=strict,
+    )

@@ -2298,7 +2298,7 @@ def _submit_url() -> str:
 
 
 def _retraction_gate_status(run: Path) -> tuple[str, list[str]]:
-    import retraction_check
+    from agent import retraction_check
     try:
         retracted = retraction_check.retracted_cited_sources(run, strict=True)
     except retraction_check.RetractionCheckUnavailable:

@@ -78,7 +78,7 @@ def compose_audit_pack(
     retraction_check_available = retracted is not None
     if retracted is None:
         try:
-            import retraction_check
+            from agent import retraction_check
             retracted = (retracted_fetch or retraction_check.retracted_cited_sources)(run_dir)
             retraction_check_available = True
         except Exception:

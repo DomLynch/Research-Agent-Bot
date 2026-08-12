@@ -3105,7 +3105,7 @@ def _strict_source_topic_revision_ask(ask_lower: str) -> bool:
 
 def _retracted_cited_sources(out_dir: Path) -> list[str] | None:
     """Retracted DOIs, or None when the strict publication check is unavailable."""
-    import retraction_check
+    from agent import retraction_check
     try:
         return retraction_check.retracted_cited_sources(out_dir, strict=True)
     except retraction_check.RetractionCheckUnavailable:

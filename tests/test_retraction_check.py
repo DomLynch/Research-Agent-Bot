@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import sys
 import urllib.error
 from email.message import Message
 from pathlib import Path
@@ -9,12 +8,8 @@ from typing import Any
 
 import pytest
 
+from agent import retraction_check as rc
 from agent import retraction_check as retraction_impl
-
-REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "scripts"))
-
-import retraction_check as rc  # type: ignore[import-not-found]  # noqa: E402
 
 
 def _fetch(results: list[dict[str, Any]]):
@@ -115,10 +110,11 @@ def test_crossref_retractions_are_complete_and_rate_limited() -> None:
 def test_retracted_dois_strict_rejects_incomplete_results() -> None:
     with pytest.raises(rc.RetractionCheckUnavailable):
         rc.retracted_dois(["10.1/x"], fetch=_fetch([]), strict=True)
-    assert rc.retracted_dois(
-        ["10.1/x", "10.2/missing"],
-        fetch=_fetch([{"doi": "10.1/x", "is_retracted": True}]), strict=True,
-    ) == ["10.1/x"]
+    with pytest.raises(rc.RetractionCheckUnavailable):
+        rc.retracted_dois(
+            ["10.1/x", "10.2/missing"],
+            fetch=_fetch([{"doi": "10.1/x", "is_retracted": True}]), strict=True,
+        )
 
 
 @pytest.mark.parametrize("row", [
@@ -142,6 +138,26 @@ def test_retracted_dois_failopen_on_fetch_error() -> None:
 
 def test_retracted_dois_empty_input() -> None:
     assert rc.retracted_dois([], fetch=_fetch([])) == []
+
+
+def test_checked_retracted_dois_preserves_fallback_without_run_artifacts() -> None:
+    assert rc.checked_retracted_dois(
+        ["10.1/good", "10.2/bad"],
+        fetch=_fetch([{"doi": "10.1/good", "is_retracted": False}]),
+        crossref_fetch=lambda _dois: (["10.2/bad"], []),
+        pubmed_fetch=lambda _dois: pytest.fail("complete Crossref coverage must not call PubMed"),
+        strict=True,
+    ) == ["10.2/bad"]
+
+
+def test_exclude_retracted_filters_records_by_normalized_doi() -> None:
+    rows = [{"doi": "10.1/good"}, {"doi": "https://doi.org/10.2/BAD"}]
+    kept, blocked = rc.exclude_retracted(
+        rows, doi_of=lambda row: row["doi"],
+        checker=lambda _dois, strict: ["10.2/bad"],
+    )
+    assert kept == [rows[0]]
+    assert blocked == ["10.2/bad"]
 
 
 def test_cited_dois_reads_registry(tmp_path: Path) -> None:

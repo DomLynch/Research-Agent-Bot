@@ -39,6 +39,7 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
 )
 from agent import revision_consistency as _revision_consistency, revision_quality as _revision_quality  # noqa: E402
 from agent.source_hygiene import is_notice_only_source_title  # noqa: E402
+from agent import retraction_check as _retraction_check  # noqa: E402
 from agent.manuscript_prisma import (  # noqa: E402
     FrozenRetrievalRecord,
     frozen_retrieval_record,
@@ -2792,6 +2793,21 @@ async def _run(
         receipt_contracts=evidence_lock.receipt_rows,
         authorized_contract_fields=allowed_by_receipt,
     )
+    try:
+        receipts, retracted = _retraction_check.exclude_retracted(
+            receipts, doi_of=lambda receipt: receipt.source_doi,
+        )
+    except _retraction_check.RetractionCheckUnavailable:
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "retraction_check_unavailable",
+        )
+    receipt_funnel["retraction_preflight"] = {"retracted_dois": retracted}
+    if retracted and revision_receipt_ids:
+        return _record_synthesis_exit(
+            out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
+            "retracted_source_cited", tuple(retracted),
+        )
     if revision_receipt_ids:
         missing = sorted(revision_receipt_ids - {r.receipt_id for r in receipts})
         continuity["missing_admitted_receipts"] = missing
