@@ -268,25 +268,36 @@ def test_source_context_drift_passes_correct_attribution(tmp_path):
     )
 
 
-def test_source_context_drift_skips_compiler_source_map_bullets(tmp_path):
+def test_source_context_drift_skips_compiler_source_rows(tmp_path):
     qc_dir = tmp_path / "quant_claims"
     qc_dir.mkdir()
     (qc_dir / "study.quant_claims.json").write_text(
         '{"paper_id":"study","claims":[{'
-        '"numeric_values":[5],"binding_confidence":"high",'
+        '"numeric_values":[4],"binding_confidence":"high",'
         '"claim_type":"unit_value","claim_role":"effect"}]}'
     )
     manifest = {"receipts": [{
         "paper_id": "study",
-        "citation_token": "Smith 2024",
+        "receipt_id": "study",
+        "citation_token": "Smith 2024a",
         "outcome_class": "clinical",
+        "endpoints": ["endpoint"],
         "effect_direction": "positive",
         "directness": "direct",
+        "evidence_tier": "A1",
+        "spar_verdict": "accept_clean",
+        "n_failed_traces": 0,
         "n_claims": 1,
+        "source_doi": "10.1000/example",
+        "thesis_text": "source excerpts: The treatment reduced the endpoint by 5%.",
     }]}
     paper = (
         "Clinical remains a separate Results slice. Source-level findings are:\n"
         "- Smith 2024 (representative statistic 50 mg; source-level statistic reported).\n\n"
+        "Smith 2024a [bundle:1] reports: The treatment reduced the endpoint by 5% "
+        "[exact source: https://doi.org/10.1000/example].\n\n"
+        "Smith 2024a [bundle:1] reports: The treatment reduced the endpoint by 50% "
+        "[exact source: https://doi.org/10.1000/example].\n\n"
         "Reviewer-classification audit uses the map below.\n\n"
         "### Source Classification Map\n\n"
         "- Smith 2024: outcome=clinical; direction=positive; directness=direct; tier=A1.\n\n"
@@ -298,7 +309,8 @@ def test_source_context_drift_skips_compiler_source_map_bullets(tmp_path):
         paper, manifest=manifest, quant_claims_dir=qc_dir,
     )
 
-    assert not [i for i in issues if i.issue_type == "source_context_drift"]
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert len(drift) == 1 and "50%" in drift[0].sentence
 
 
 def test_source_context_drift_skips_compiler_manifest_synthesis_blocks(tmp_path):

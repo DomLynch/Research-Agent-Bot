@@ -72,6 +72,13 @@ def test_numeric_discipline_rule_describes_qualitative_fallback() -> None:
     assert "qualitatively" in NUMERIC_DISCIPLINE_RULE
 
 
+def test_numeric_discipline_requires_inline_sentence_receipts() -> None:
+    assert "every empirical sentence" in NUMERIC_DISCIPLINE_RULE.lower()
+    assert "same sentence" in NUMERIC_DISCIPLINE_RULE.lower()
+    assert "metadata alone is not an inline citation" in NUMERIC_DISCIPLINE_RULE.lower()
+    assert "spell out period-bearing abbreviations" in NUMERIC_DISCIPLINE_RULE.lower()
+
+
 def test_numeric_discipline_rule_is_self_contained() -> None:
     """The rule should be readable in isolation (the writer sees it
     prepended; if it depends on context elsewhere in the prompt, that

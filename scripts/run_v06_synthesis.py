@@ -3461,7 +3461,7 @@ def _write_stage5c_quality_gates(
     citation_registry_complete = bool(citation_registry and all(rid in citation_registry for rid in receipt_ids if rid))
     gate_artifacts = _paper_quality.write_final_quality_gates(
         out_dir=paper_path.parent, paper_text=paper_md, manifest=manifest, audit=audit_report,
-        journal_surface=surface_payload, reviewer_patches=reviewer_patches, quality_bundle=quality_bundle,
+        journal_surface=surface_payload, reviewer_patches=_reviewer_patches_for_gate(paper_path.parent, int(reviewer_patches.get("unresolved_p1_count", 0))), quality_bundle=quality_bundle,
         citation_registry_complete=citation_registry_complete,
     )
     return paper_md, audit_report, gate_artifacts
@@ -4366,26 +4366,23 @@ def _is_unresolved_reviewer_p1(row: dict[str, Any]) -> bool:
 
 def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
     try:
-        rows = json.loads((out_dir / "debug" / "full_paper.review_patch_log.json").read_text()).get("patches") or []
-    except (OSError, ValueError, json.JSONDecodeError):
+        payload = json.loads((out_dir / "debug" / "full_paper.review_patch_log.json").read_text())
+    except FileNotFoundError:
         return 0, 0, 0
-    unresolved = sum(1 for r in rows if isinstance(r, dict) and _is_unresolved_reviewer_p1(r))
-    flagged = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "flagged")
-    stripped = sum(1 for r in rows if isinstance(r, dict) and r.get("decision") == "auto_stripped")
-    return unresolved, flagged, stripped
+    except (OSError, ValueError, json.JSONDecodeError):
+        return 1, 0, 0
+    rows = payload.get("patches") if isinstance(payload, dict) else None
+    if not isinstance(rows, list) or any(not isinstance(row, dict) or row.get("decision") not in {"applied", "applied_via_repair", "auto_stripped", "flagged", "rejected"} or str(row.get("severity") or "").upper() not in {"P1", "P2", "P3"} for row in rows):
+        return 1, 0, 0
+    unresolved = sum(1 for r in rows if _is_unresolved_reviewer_p1(r))
+    return unresolved, sum(1 for r in rows if r.get("decision") == "flagged"), sum(1 for r in rows if r.get("decision") == "auto_stripped")
 
 
 def _reviewer_patches_for_gate(out_dir: Path, fallback_unresolved_p1: int) -> dict[str, int]:
-    if _resolve_absent_reviewer_p1s(out_dir):
-        _refresh_post_finalizer_verdict(out_dir)
+    _resolve_absent_reviewer_p1s(out_dir) and _refresh_post_finalizer_verdict(out_dir)
     unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
-    if not (out_dir / "debug" / "full_paper.review_patch_log.json").exists():
-        unresolved = max(0, int(fallback_unresolved_p1))
-    return {
-        "unresolved_p1_count": unresolved,
-        "flagged_p1_count": flagged,
-        "auto_stripped_count": stripped,
-    }
+    unresolved = max(0, int(fallback_unresolved_p1)) if not (out_dir / "debug" / "full_paper.review_patch_log.json").exists() else unresolved
+    return {"unresolved_p1_count": unresolved, "flagged_p1_count": flagged, "auto_stripped_count": stripped}
 
 
 def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
@@ -4394,13 +4391,14 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
         patches = json.loads((out_dir / "debug" / "full_paper.review_patches.json").read_text()).get("patches") or []
         log_path = out_dir / "debug" / "full_paper.review_patch_log.json"
         log = json.loads(log_path.read_text())
-    except (OSError, ValueError, json.JSONDecodeError):
+    except (AttributeError, OSError, TypeError, ValueError, json.JSONDecodeError):
         return 0
     patch_by_id = {
         str(p.get("id")): p for p in patches if isinstance(p, dict)
     }
     changed = 0
-    for row in log.get("patches") or []:
+    log_rows = log.get("patches") if isinstance(log, dict) else None
+    for row in log_rows if isinstance(log_rows, list) else ():
         patch = patch_by_id.get(str(row.get("patch_id"))) if isinstance(row, dict) else None
         target = str(patch.get("before") or "") if isinstance(patch, dict) else ""
         if not (isinstance(row, dict) and _is_unresolved_reviewer_p1(row)):

@@ -39,10 +39,12 @@ HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)
   inline, e.g. "approximately one-third (31%)".
 - Do NOT invent citations. Background citation tokens use "Author Year" or
   "Author et al. Year".
-- In ANCHORED sections, every empirical paragraph must list receipt_ids that
-  directly support every empirical sentence in that paragraph.
-- Use the supplied evidence_excerpt. Never infer a result from a source title,
-  study design, missing reporting, or general domain knowledge.
+- In ANCHORED sections, every empirical sentence must include an exact accepted
+  receipt_id in that same sentence and list it in receipt_ids; paragraph
+  metadata alone is not an inline citation. Directly paraphrase its supplied
+  evidence_excerpt; split by source and never infer beyond the excerpt.
+- Spell out period-bearing abbreviations in ANCHORED prose (for example, United
+  States, intravenous, Figure, Equation); only Author et al. (Year) is allowed.
 
 ACTIVE NUMERIC TARGET: ≥8 reportable numerics per 1000 body words.
 Reportable = percentages, p-values, HR/OR/RR, n=..., dose, follow-up, CI.

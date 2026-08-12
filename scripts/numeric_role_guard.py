@@ -1157,8 +1157,10 @@ def _strip_markdown_table_lines(paper_md: str) -> str:
     )
 
 
-def _strip_compiler_source_finding_lines(paper_md: str) -> str:
+def _strip_compiler_source_finding_lines(paper_md: str, manifest: dict | None) -> str:
     """Drop finalizer-owned source-map bullets before prose scanning."""
+    from agent.revision_claim_trace import _source_owned_results
+    trusted_rows = {re.sub(r"\[bundle:\d+\]", "[bundle]", " ".join(statement.split())) for _key, _number, statement in _source_owned_results(list(manifest.get("receipts") or ()))} if isinstance(manifest, dict) else set()
     paper_md = re.sub(
         r"^Substantive evidence synthesis:.*?(?=\n\s*\n|^## |\Z)"
         r"|^Key findings from source synthesis:.*?"
@@ -1170,7 +1172,7 @@ def _strip_compiler_source_finding_lines(paper_md: str) -> str:
     )
     out: list[str] = []
     mode = ""
-    for line in paper_md.splitlines():
+    for line in (line for line in paper_md.splitlines() if re.sub(r"\[bundle:\d+\]", "[bundle]", " ".join(line.split())) not in trusted_rows):
         if line.startswith("### Source Classification Map"):
             mode = "section"
             continue
@@ -1180,8 +1182,7 @@ def _strip_compiler_source_finding_lines(paper_md: str) -> str:
             continue
         if mode == "section" and not line.startswith(("## ", "### ")):
             continue
-        if mode == "section":
-            mode = ""
+        mode = "" if mode == "section" else mode
         if mode == "bullets" and line.lstrip().startswith("- "):
             continue
         if mode == "bullets" and line.strip():
@@ -1255,7 +1256,7 @@ def scan_paper(
     )
     prose_md = _strip_markdown_table_lines(_strip_citation_footer_lines(
         _strip_compiler_source_finding_lines(
-            _strip_non_prose_guard_sections(paper_md),
+            _strip_non_prose_guard_sections(paper_md), manifest,
         ),
     ))
     body_for_drift = _strip_references_section(prose_md)

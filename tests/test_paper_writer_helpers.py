@@ -77,6 +77,9 @@ def test_retry_prompt_forbids_unsourced_numbers() -> None:
     assert "850" in prompt and "14" in prompt
     assert "must appear verbatim in the sources" in lowered
     assert "instead of inventing" in lowered
+    assert "every empirical sentence" in lowered
+    assert "exact accepted receipt_id" in lowered
+    assert "8-12 sentences" not in lowered
 
 
 def test_unsourced_number_is_dropped_and_the_retry_says_why() -> None:
@@ -102,13 +105,13 @@ def test_unsourced_number_is_dropped_and_the_retry_says_why() -> None:
 
     # An invented figure must still cost the paragraph.
     ok, reason = _check_anchored_paragraph(
-        "Weight fell by 7.4kg.", ["r1"], {"r1"}, accepted,
+        "Weight fell by 7.4kg [r1].", ["r1"], {"r1"}, accepted,
     )
     assert not ok and "novel_numeric" in reason, reason
 
     # The same finding stated without a number must survive.
     ok_words, reason_words = _check_anchored_paragraph(
-        "Weight fell in the treatment arm.", ["r1"], {"r1"}, accepted,
+        "Weight fell in the treatment arm [r1].", ["r1"], {"r1"}, accepted,
     )
     assert ok_words, reason_words
 

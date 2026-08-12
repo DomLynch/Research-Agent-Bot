@@ -58,7 +58,7 @@ def test_anchored_repairs_receipt_id_with_one_char_typo() -> None:
     parsed = {
         "paragraphs": [
             {
-                "text": "Direct trial reported reductions at p=0.005.",
+                "text": "Direct trial reported reductions at p=0.005 [metformin-multi-001-cfab-c01].",
                 "receipt_ids": ["metformin-multi-001-cfab-01"],  # typo
             },
         ],
@@ -177,7 +177,7 @@ def test_anchored_drops_fabricated_receipt_id_with_no_close_match() -> None:
     parsed = {
         "paragraphs": [
             {
-                "text": "Trial finding cited at p=0.005.",
+                "text": "Trial finding cited at p=0.005 [metformin-multi-001-cfab-c01].",
                 "receipt_ids": ["metformin-fake-cluster-99"],  # fabricated
             },
         ],
@@ -192,10 +192,26 @@ def test_anchored_keeps_correct_receipt_id_unchanged() -> None:
     """Sanity: when the LLM emits the right id, the builder doesn't
     touch it."""
     accepted = [_accepted("metformin-multi-001-cfab-c01", p_values=("p=0.005",))]
+    from agent.paper_writer_builders import _check_anchored_paragraph
+    for invalid in ("Metadata-only claim.", f"Unanchored claim. Anchored [{accepted[0].receipt_id}].", f"Wrong prefix [{accepted[0].receipt_id}0].", f"Anchored [{accepted[0].receipt_id}]. \"Unanchored.\"", f"Anchored [{accepted[0].receipt_id}]. **Unanchored.**", f"Anchored [{accepted[0].receipt_id}]. lowercase unanchored.", f"\"Anchored [{accepted[0].receipt_id}].\" Unanchored.", f"**Anchored [{accepted[0].receipt_id}].** Unanchored.", f"`Anchored [{accepted[0].receipt_id}].` Unanchored.", f"The evidence [{accepted[0].receipt_id}] was grade A. Unsupported.", f"The intervention [{accepted[0].receipt_id}] was vitamin C. Unsupported.", f"The finding [{accepted[0].receipt_id}] was reported by Smith et al. Unsupported.", f"The sponsor [{accepted[0].receipt_id}] was Acme Inc. Unsupported.", f"The finding [{accepted[0].receipt_id}] was reported by Smith et al. BMI increased.", f"The sponsor [{accepted[0].receipt_id}] was Acme Inc. RCT evidence was absent.", f"The source [{accepted[0].receipt_id}] named the Dept. DNA evidence was absent.", f"The setting [{accepted[0].receipt_id}] was U.S. RCT evidence was absent.", f"Participants were enrolled in the U.S. The FDA guidance supported this [{accepted[0].receipt_id}].", f"The drug was administered i.v. The PK profile supported this [{accepted[0].receipt_id}].", f"The finding was reported by Smith et al. [{accepted[0].receipt_id}] Another finding was unsupported."):
+        ok, reason = _check_anchored_paragraph(invalid, [accepted[0].receipt_id], {accepted[0].receipt_id}, set())
+        assert not ok and "missing_inline_anchor" in reason
+    cross_paragraph = f"The setting was U.S.\n\nRCT evidence was absent [{accepted[0].receipt_id}]."
+    assert not _check_anchored_paragraph(cross_paragraph, [accepted[0].receipt_id], {accepted[0].receipt_id}, set())[0]
+    et_al_paragraph = f"The endpoint improved according to Smith et al.\n\nthis separate paragraph contains [{accepted[0].receipt_id}]."
+    assert not _check_anchored_paragraph(et_al_paragraph, [accepted[0].receipt_id], {accepted[0].receipt_id}, set())[0]
+    for valid in (f"Doctor Smith reported the result [{accepted[0].receipt_id}].", f"Figure 1 reports the result [{accepted[0].receipt_id}].", f"Equation 2 reports the result [{accepted[0].receipt_id}]."):
+        assert _check_anchored_paragraph(valid, [accepted[0].receipt_id], {accepted[0].receipt_id}, {"1", "2"})[0]
+    for valid in (f"Outcomes included for example BMI and LDL [{accepted[0].receipt_id}].", f"Figure S1 reports the result [{accepted[0].receipt_id}].", f"Equation A1 defines the result [{accepted[0].receipt_id}]."):
+        assert _check_anchored_paragraph(valid, [accepted[0].receipt_id], {accepted[0].receipt_id}, {"1"})[0]
+    for valid in (f"The United States cohort reported the result [{accepted[0].receipt_id}].", f"The intravenous route reported the result [{accepted[0].receipt_id}]."):
+        assert _check_anchored_paragraph(valid, [accepted[0].receipt_id], {accepted[0].receipt_id}, set())[0]
+    for valid in (f"The United States FDA guidance supported the result [{accepted[0].receipt_id}].", f"The United States Food and Drug Administration supported the result [{accepted[0].receipt_id}].", f"The intravenous PK profile supported the result [{accepted[0].receipt_id}].", f"Outcomes included for example α-tocopherol [{accepted[0].receipt_id}]."):
+        assert _check_anchored_paragraph(valid, [accepted[0].receipt_id], {accepted[0].receipt_id}, set())[0]
     parsed = {
         "paragraphs": [
             {
-                "text": "Trial finding cited at p=0.005.",
+                "text": "Trial finding cited at p=0.005 [metformin-multi-001-cfab-c01].",
                 "receipt_ids": ["metformin-multi-001-cfab-c01"],
             },
         ],
@@ -218,7 +234,7 @@ def test_anchored_repair_handles_mixed_correct_and_typo_ids() -> None:
     parsed = {
         "paragraphs": [
             {
-                "text": "Two-receipt sentence at p=0.005.",
+                "text": "Two-receipt sentence at p=0.005 [metformin-multi-001-cfab-c01] [metformin-multi-001-cfab-c04].",
                 "receipt_ids": [
                     "metformin-multi-001-cfab-c01",  # correct
                     "metformin-multi-001-cfab-04",   # typo
@@ -303,14 +319,14 @@ def test_results_builder_merges_duplicate_llm_outcome_subsections() -> None:
                 "outcome_class": "immune",
                 "heading": "Immune Outcomes",
                 "paragraphs": [
-                    {"text": "Immune first paragraph.", "receipt_ids": ["r-immune"]},
+                    {"text": "Immune first paragraph [r-immune].", "receipt_ids": ["r-immune"]},
                 ],
             },
             {
                 "outcome_class": "immune",
                 "heading": "Immune Outcomes",
                 "paragraphs": [
-                    {"text": "Immune second paragraph.", "receipt_ids": ["r-immune"]},
+                    {"text": "Immune second paragraph [r-immune].", "receipt_ids": ["r-immune"]},
                 ],
             },
         ],
@@ -320,8 +336,8 @@ def test_results_builder_merges_duplicate_llm_outcome_subsections() -> None:
 
     assert section is not None
     assert section.body_md.count("### Immune and Inflammation Outcomes") == 1
-    assert "Immune first paragraph." in section.body_md
-    assert "Immune second paragraph." in section.body_md
+    assert "Immune first paragraph [r-immune]." in section.body_md
+    assert "Immune second paragraph [r-immune]." in section.body_md
 
 
 def test_calendar_year_is_not_treated_as_a_fabricated_numeric() -> None:
@@ -335,7 +351,7 @@ def test_calendar_year_is_not_treated_as_a_fabricated_numeric() -> None:
     from agent.paper_writer_builders import _check_anchored_paragraph
 
     ok, reason = _check_anchored_paragraph(
-        "Smith et al. (2025) reported the endpoint.",
+        "Smith et al. (2025) reported the endpoint [r1].",
         ["r1"], {"r1"}, set(),
     )
     assert ok, f"year must not be a fabricated numeric (got {reason})"
@@ -349,7 +365,7 @@ def test_calendar_year_exemption_does_not_hide_sample_sizes() -> None:
     )
 
     anchored_ok, anchored_reason = _check_anchored_paragraph(
-        "The analysis used data from 2025 participants.",
+        "The analysis used data from 2025 participants [r1].",
         ["r1"], {"r1"}, set(),
     )
     assert not anchored_ok and "novel_numeric" in anchored_reason
@@ -366,7 +382,7 @@ def test_untraceable_statistic_is_still_rejected() -> None:
     from agent.paper_writer_builders import _check_anchored_paragraph
 
     ok, reason = _check_anchored_paragraph(
-        "The intervention reduced the endpoint by 42.7%.",
+        "The intervention reduced the endpoint by 42.7% [r1].",
         ["r1"], {"r1"}, set(),
     )
     assert not ok and "novel_numeric" in reason, reason
@@ -462,6 +478,6 @@ def test_enrolment_numerics_from_population_summary_are_traceable() -> None:
     )
     assert "n=125" in _accepted_numeric_tokens([r])
     ok, reason = _check_anchored_paragraph(
-        "The trial enrolled n=125 participants.", ["r1"], {"r1"}, _accepted_numeric_tokens([r]),
+        "The trial enrolled n=125 participants [r1].", ["r1"], {"r1"}, _accepted_numeric_tokens([r]),
     )
     assert ok, reason

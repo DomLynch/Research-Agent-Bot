@@ -28,6 +28,8 @@ __all__ = [
 # to avoid snapping fabricated ids to real ones, loose enough to
 # repair the empirical 1-char typo class.
 _RECEIPT_ID_REPAIR_CUTOFF = 0.85
+_CONTINUING_ABBREVIATION_RE = re.compile(r"\bet al\.(?=[ \t]+(?-i:[a-z0-9(]))", re.I)
+_SENTENCE_BREAK_RE = re.compile(r"[.!?][^\w\s]*\s+")
 
 
 def repair_receipt_ids(
@@ -242,7 +244,11 @@ def _check_anchored_paragraph(
     cited = [r for r in receipt_ids if r in accepted_ids]
     if not cited:
         return False, f"no_accepted_anchor:{list(receipt_ids)}"
-    for m in _NUMERIC_RE.finditer(text):
+    inline = re.compile(r"(?<![A-Za-z0-9_-])(?:" + "|".join(map(re.escape, cited)) + r")(?![A-Za-z0-9_-])")
+    protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
+    if any(not inline.search(sentence) for sentence in _SENTENCE_BREAK_RE.split(protected)):
+        return False, "missing_inline_anchor"
+    for m in _NUMERIC_RE.finditer(inline.sub("", text)):
         tok = _numeric_token(m.group(0))
         if tok in accepted_numerics:
             continue

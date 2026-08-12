@@ -123,6 +123,19 @@ def test_pre_submit_gate_uses_resolved_reviewer_p1_count(tmp_path: Path) -> None
     assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, 0)
 
 
+def test_pre_submit_gate_fails_closed_on_corrupt_reviewer_log(tmp_path: Path) -> None:
+    (tmp_path / "debug").mkdir()
+    (tmp_path / "full_paper.md").write_text("Current final paper.")
+    (tmp_path / "debug" / "full_paper.review_patches.json").write_text('{"patches":[]}')
+    for malformed in ("{", "{}", '{"patches":"garbage"}', "[]", '{"patches":[null]}', '{"patches":[{}]}', '{"patches":[{"decision":"flagged"}]}', '{"patches":[{"decision":"unknown","severity":"P1"}]}'):
+        (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(malformed)
+        payload = orch._reviewer_patches_for_gate(tmp_path, fallback_unresolved_p1=0)
+        assert payload["unresolved_p1_count"] == 1
+    for decision in ("applied", "applied_via_repair", "auto_stripped"):
+        (tmp_path / "debug" / "full_paper.review_patch_log.json").write_text(json.dumps({"patches": [{"decision": decision, "severity": "P1"}]}))
+        assert orch._reviewer_p1_counts_from_log(tmp_path) == (0, 0, int(decision == "auto_stripped"))
+
+
 def test_rejected_duplicate_heading_p1_resolves_when_heading_is_not_duplicate(tmp_path: Path) -> None:
     (tmp_path / "debug").mkdir()
     (tmp_path / "full_paper.md").write_text("## Results\n\n### Immune and Inflammation Outcomes\n\nClean text.")

@@ -880,6 +880,11 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
         (out_dir / "full_paper.md").write_text("after finalizer")
         return SimpleNamespace(paper_changed=True)
 
+    def reviewer_patches(out_dir: Path, fallback: int) -> dict[str, int]:
+        events.append("reviewer")
+        captured["reviewer_refresh"] = (out_dir, fallback)
+        return {"unresolved_p1_count": 0}
+
     def audit(paper: str, **_kwargs: Any) -> dict[str, Any]:
         events.append("audit")
         captured["audit_text"] = paper
@@ -894,9 +899,11 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
         events.append("gate")
         captured["gate_text"] = kwargs["paper_text"]
         captured["gate_audit"] = kwargs["audit"]
+        captured["gate_reviewer_patches"] = kwargs["reviewer_patches"]
         return {"final_gate": {"passed": True}}
 
     monkeypatch.setattr(journal_finalizer, "finalize_run", finalize)
+    monkeypatch.setattr(orch, "_reviewer_patches_for_gate", reviewer_patches)
     monkeypatch.setattr(orch._audit_v06, "audit", audit)
     monkeypatch.setattr(orch._audit_v06, "_format_summary", lambda report: str(report))
     monkeypatch.setattr(journal_surface_gate, "evaluate_journal_surface", evaluate)
@@ -907,7 +914,7 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
         paper_md="before finalizer",
         manifest={"review_type": "thin_corpus_brief", "receipts": []},
         citation_registry=None,
-        reviewer_patches={"unresolved_p1_count": 0},
+        reviewer_patches={"unresolved_p1_count": 2},
         quality_bundle=SimpleNamespace(),
         animal_citations=[],
         citation_outcome_map={},
@@ -915,11 +922,13 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
 
     assert paper == "after finalizer"
     assert captured["finalizer_input"] == "before finalizer"
-    assert events == ["finalize", "audit", "surface", "gate"]
+    assert events == ["finalize", "audit", "surface", "reviewer", "gate"]
+    assert captured["reviewer_refresh"] == (tmp_path, 2)
     assert captured["audit_text"] == "after finalizer"
     assert captured["surface_text"] == "after finalizer"
     assert captured["gate_text"] == "after finalizer"
     assert captured["gate_audit"] == report
+    assert captured["gate_reviewer_patches"] == {"unresolved_p1_count": 0}
     assert gates["final_gate"]["passed"] is True
 
 
