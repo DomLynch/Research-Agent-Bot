@@ -32,10 +32,11 @@ def _summary(
     spar_verdict: str = "accept_clean",
     source_title: str | None = None,
     source_year: int | None = None,
+    thesis_text: str | None = None,
 ) -> ReceiptSummary:
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
-        thesis_text=f"thesis for {rid}",
+        thesis_text=thesis_text or f"thesis for {rid}",
         spar_verdict=spar_verdict,
         n_claims=4, n_failed_traces=0,
         canonical_trial_id=f"NCT-{rid}",
@@ -108,7 +109,12 @@ def test_build_user_prompt_does_not_emit_quarantined_block_header() -> None:
 def test_build_user_prompt_includes_accepted_receipt_ids() -> None:
     """Sanity: the prompt MUST still include accepted receipts —
     Fix A is about suppressing only the rejected ones."""
-    accepted = [_summary("r-A"), _summary("r-B")]
+    long_excerpt = "x" * 350 + " exact-result " + "y" * 10_000
+    accepted = [
+        _summary("r-A", thesis_text=long_excerpt),
+        _summary("r-B", thesis_text=long_excerpt),
+        *(_summary(f"r-{i}", thesis_text=long_excerpt) for i in range(48)),
+    ]
     rejected = [_summary("r-rej-X", spar_verdict="reject_majority")]
     prompt = _build_user_prompt(
         accepted, rejected, _matrix(accepted), _thesis(),
@@ -116,6 +122,8 @@ def test_build_user_prompt_includes_accepted_receipt_ids() -> None:
     )
     assert "r-A" in prompt
     assert "r-B" in prompt
+    assert "exact-result" in prompt
+    assert len(prompt) < 100_000
 
 
 def test_build_user_prompt_no_rejected_input_still_works() -> None:

@@ -75,6 +75,8 @@ FULL_PAPER_WORD_FLOOR = 5000
 # turns ~50% of the misses into AAA. Worst-case wall time is +1
 # section call (~30s), acceptable trade.
 SECTION_RETRY_BUDGET = 2
+MAX_EVIDENCE_CHARS_PER_RECEIPT = 1_200
+MAX_EVIDENCE_CHARS_TOTAL = 60_000
 
 
 def _revision_feedback_block() -> str:
@@ -255,6 +257,10 @@ def _build_user_prompt(
     """Common prompt block: accepted receipts, tensions, and thesis."""
     _ = rejected  # Day 10.17 Fix A — intentionally unused, see docstring.
     lines = [f"Topic: {topic}", "", "ACCEPTED RECEIPTS:"]
+    evidence_limit = max(1, min(
+        MAX_EVIDENCE_CHARS_PER_RECEIPT,
+        MAX_EVIDENCE_CHARS_TOTAL // max(1, len(receipts)),
+    ))
     for r in receipts:
         paper_tier_raw = derive_paper_tier(r)
         # Fix #33: write a HUMAN-READABLE study-design label into the
@@ -280,7 +286,7 @@ def _build_user_prompt(
             f"    canonical_trial_id: {r.canonical_trial_id or '(none)'}\n"
             f"    population: {pop}\n"
             f"    p_values: {list(r.p_values)}\n"
-            f"    thesis: {r.thesis_text[:300]}"
+            f"    evidence_excerpt: {r.thesis_text[:evidence_limit]}"
         )
     non_orth = matrix.non_orthogonal()
     lines.extend(["", "TENSION MATRIX (non-orthogonal pairs):"])
