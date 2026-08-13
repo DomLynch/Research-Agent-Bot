@@ -238,7 +238,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("fixture", type=Path)
     parser.add_argument("--provider", choices=("dry-run", "mock", "live"), default="dry-run")
-    parser.add_argument("--model", default="google/gemini-3.1-flash-lite:exacto")
+    parser.add_argument("--model", default="google/gemma-4-31b-it")
     parser.add_argument("--fallback-model", default="mistralai/mistral-small-2603")
     parser.add_argument("--allow-live", action="store_true")
     parser.add_argument("--limit", type=int, default=None)

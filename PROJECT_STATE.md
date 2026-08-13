@@ -12,15 +12,14 @@ from a certified AAA/L6 artifact to candidate-publication quality.
 - Rapamycin paper sprint has an executable plan and first high-impact paper
   quality slice completed without weakening the trust spine.
 
-## Current Truth - 2026-05-09
+## Current Truth - 2026-08-13
 ```text
 Last pre-switch clean baseline: 415621b2
-Current branch target: model-agnostic final-reviewer naming
+Current branch target: MiMo v2.5 Pro writer/extractor with independent Gemma review
 Final deployed commit: verify with git rev-parse --short HEAD after deploy
 Service: research-agent-bot.service active
 Endpoint: HTTP 200 live status page
-Full pytest at current branch validation: 2961 passed, 5 warnings
-Ruff: clean
+Validation: run from the current checkout before deployment
 ```
 
 ## Canonical deploy branch (#9, 2026-06-13)

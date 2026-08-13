@@ -298,7 +298,7 @@ _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
 _PRIMARY_ATTEMPTS = 3
 _FALLBACK_ATTEMPTS = 1
 _MAX_OUTPUT_TOKENS = 12_000
-_DEFAULT_REVIEWER_MODEL = "google/gemini-3.1-flash-lite:exacto"
+_DEFAULT_REVIEWER_MODEL = "google/gemma-4-31b-it"
 _DEFAULT_FALLBACK_MODEL = "mistralai/mistral-small-2603"
 _DEFAULT_BASE_URL = "https://openrouter.ai/api/v1"
 _DEFAULT_MAX_COST_USD = 1.0
@@ -780,7 +780,7 @@ def _needs_low_patch_escalation(
 def _format_summary(
     patches: list[TypedPatch],
     cost_usd: float = 0.0,
-    model_used: str = "google/gemini-3.1-flash-lite:exacto",
+    model_used: str = "google/gemma-4-31b-it",
 ) -> str:
     if not patches:
         return (

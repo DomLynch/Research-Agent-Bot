@@ -9,18 +9,19 @@ full trust-spine audit trail.
 Researka/public reader/provenance is downstream. This repo's job is the research
 agent and paper engine.
 
-## Current State - 2026-05-09
+## Current State - 2026-08-13
 - Last pre-switch clean baseline: `415621b2`.
-- Current branch target: Gemini Exacto reviewer switch; verify the exact deployed
-  commit with `git rev-parse --short HEAD` after deploy.
+- Current branch target: MiMo v2.5 Pro writer/extractor with independent
+  Gemma review and Mistral fallback.
 - Service: `research-agent-bot.service`.
 - Live endpoint: deploy-safe live status page, HTTP 200 by design.
 - Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
 - Flagship: rapamycin AAA/L6 reproducibly journal-ready baseline; current
   paper-quality sprint has lifted runner-admitted receipts from 16 to 40 via
   source-validated vocabulary and qualification fixes.
-- Current reviewer target: `google/gemini-3.1-flash-lite:exacto` with high
-  thinking; Mistral Small is bounded fallback only, not a third arbitrator.
+- Current writer/extractor: `mimo-v2.5-pro`.
+- Current reviewer: `google/gemma-4-31b-it`; Mistral Small is bounded fallback,
+  not a writer or silent acceptance override.
 - Generated topic-pack V1 shipped but full generated-pack synthesis remains gated.
 - Cross-topic meta-synthesis V1 shipped; auto-selection must use only fully
   certified 14/14 runs.

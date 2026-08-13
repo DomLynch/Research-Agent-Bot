@@ -1,11 +1,11 @@
-# Model Stack Decision - 2026-05-09
+# Model Stack Decision - updated 2026-08-13
 
 ## Decision
 
 Use this stack for the current synthesis/review path:
 
 1. Writer / extractor: `mimo-v2.5-pro`
-2. Final-layer reviewer: `google/gemini-3.1-flash-lite:exacto`
+2. Final-layer reviewer: `google/gemma-4-31b-it`
 3. Fallback + bounded arbitrator: `mistralai/mistral-small-2603`
 
 `scripts/final_reviewer.py` is the model-agnostic final-reviewer module.
@@ -17,13 +17,14 @@ defaults have moved off older branded reviewers.
 
 Committed defaults:
 
-- `agent/settings.py`: `MIMO_MODEL` defaults to `mimo-v2.5-pro`.
+- `agent/settings.py`: `MIMO_MODEL` defaults to `mimo-v2.5-pro`; `MINIMAX_*`
+  names remain rollback aliases only.
 - `agent/settings.py`: `FINAL_LAYER_REVIEWER_MODEL` defaults to
-  `google/gemini-3.1-flash-lite:exacto`.
+  `google/gemma-4-31b-it`.
 - `agent/settings.py`: `FALLBACK_MODEL` defaults to
   `mistralai/mistral-small-2603`.
-- `scripts/final_reviewer.py`: `review_paper(...)` defaults to Gemini
-  3.1 Flash Lite Exacto with high thinking and Mistral fallback.
+- `scripts/final_reviewer.py`: `review_paper(...)` defaults to Gemma 4 31B
+  with Mistral fallback.
 - `scripts/run_v06_synthesis.py`: arbitration model defaults to Mistral when
   `ARBITRATOR_ENABLED` is explicitly enabled.
 
@@ -69,10 +70,9 @@ The local pricing table in `scripts/final_reviewer.py` records:
   tokens.
 - Mistral Small 2603: `$0.15` input / `$0.60` output per million tokens.
 
-Gemini Exacto is the final reviewer because the requested model supports a
-quality-first Exacto route, large context, and high thinking while remaining
-cheaper than Grok. Mistral is the arbitrator/fallback because the arbitration
-task is narrow: judge an existing patch, do not write new prose.
+Gemma 4 31B is the independent final reviewer; MiMo writes/extracts and must not
+grade its own output. Mistral is the arbitrator/fallback because the task is
+narrow: judge an existing patch, do not write new prose.
 
 ## Safety Boundary
 
@@ -104,8 +104,8 @@ Conservative `ESCALATE` blocks clean certification rather than upgrading it.
 
 ## Known Limits
 
-- Gemini Exacto is newly selected and still needs a reviewer replay before it
-  can be called Grok-equivalent.
+- The current Gemma reviewer still requires ongoing replay/calibration; provider
+  selection does not itself prove research quality.
 - DeepSeek is demoted because reviewer recall/latency validation was weak.
 - Numeric review recall still depends on deterministic numeric gates.
 - Mistral mixed-sample live validation is small (`6` cases).
@@ -115,6 +115,6 @@ Conservative `ESCALATE` blocks clean certification rather than upgrading it.
 
 ## Rollback / Fallback Plan
 
-Keep Grok as an explicit escalation model for suspiciously clean long papers
-or failed replay thresholds. Do not claim Gemini Exacto is Grok-equivalent
-until a replay set clears the agreed recall bar with acceptable latency.
+Keep explicit rollback aliases for provider incidents. Do not weaken independent
+review or claim model equivalence without a replay set that clears the agreed
+recall bar with acceptable latency.

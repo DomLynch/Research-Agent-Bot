@@ -79,25 +79,24 @@ class Settings:
 def load_settings() -> Settings:
     _load_dotenv_if_present()
     return Settings(
-        # Legacy MIMO_* fallbacks are deploy-rollback compatibility only.
-        # Remove after 2026-07-10 once all live env files have run on MINIMAX_*.
+        # MINIMAX_* remains a rollback alias while MIMO_* is canonical.
         minimax_api_key=(
-            os.environ.get("MINIMAX_API_KEY")
-            or os.environ.get("MIMO_API_KEY", "")
+            os.environ.get("MIMO_API_KEY")
+            or os.environ.get("MINIMAX_API_KEY", "")
         ).strip(),
-        minimax_model=os.environ.get("MINIMAX_MODEL")
-        or os.environ.get("MIMO_MODEL", "MiniMax-M3"),
-        minimax_base_url=os.environ.get("MINIMAX_BASE_URL")
-        or os.environ.get("MIMO_BASE_URL", "https://api.minimax.io/anthropic"),
+        minimax_model=os.environ.get("MIMO_MODEL")
+        or os.environ.get("MINIMAX_MODEL", "mimo-v2.5-pro"),
+        minimax_base_url=os.environ.get("MIMO_BASE_URL")
+        or os.environ.get("MINIMAX_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"),
         minimax_timeout_sec=_float(
-            "MINIMAX_TIMEOUT_SEC",
-            _float("MIMO_TIMEOUT_SEC", 180.0),
+            "MIMO_TIMEOUT_SEC",
+            _float("MINIMAX_TIMEOUT_SEC", 180.0),
         ),
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
         openrouter_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
         judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-31b-it"),
         fallback_model=os.environ.get("FALLBACK_MODEL", "mistralai/mistral-small-2603"),
-        final_layer_reviewer_model=os.environ.get("FINAL_LAYER_REVIEWER_MODEL", "google/gemini-3.1-flash-lite:exacto"),
+        final_layer_reviewer_model=os.environ.get("FINAL_LAYER_REVIEWER_MODEL", "google/gemma-4-31b-it"),
         bot_enabled=_bool("BOT_ENABLED", True),
         daily_cost_cap_usd=_float("DAILY_COST_CAP_USD", 10.0),
         dashboard_host=os.environ.get("DASHBOARD_HOST", "127.0.0.1"),

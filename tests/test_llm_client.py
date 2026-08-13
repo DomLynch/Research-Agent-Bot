@@ -761,14 +761,14 @@ def _settings(
 ) -> Settings:
     return Settings(
         minimax_api_key=minimax_key,
-        minimax_model="MiniMax-M3",
-        minimax_base_url="https://api.minimax.io/anthropic",
+        minimax_model="mimo-v2.5-pro",
+        minimax_base_url="https://token-plan-sgp.xiaomimimo.com/v1",
         minimax_timeout_sec=30.0,
         openrouter_api_key=openrouter_key,
         openrouter_base_url="https://or.example/v1",
         judge_model=judge_model,
         fallback_model="mistralai/mistral-small-2603",
-        final_layer_reviewer_model="google/gemini-3.1-flash-lite:exacto",
+        final_layer_reviewer_model="google/gemma-4-31b-it",
         bot_enabled=True, daily_cost_cap_usd=10.0,
         dashboard_host="127.0.0.1", dashboard_port=8791,
         runs_dir="runs",
@@ -777,7 +777,7 @@ def _settings(
 
 def test_build_extract_chain_uses_only_configured_writer() -> None:
     chain = build_extract_chain(_settings())
-    assert [spec.model for spec in chain] == ["MiniMax-M3"]
+    assert [spec.model for spec in chain] == ["mimo-v2.5-pro"]
 
 
 def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
@@ -807,12 +807,12 @@ def test_build_extract_chain_sets_retry_attempts(
 def test_build_judge_chain_excludes_writer_family() -> None:
     """Trust-spine rule (judge != writer): the judge chain must never contain
     the writer/extractor family. Gemma (primary) → Mistral (fallback); the
-    MiniMax writer model is dropped so a provider outage can't route judging
+    MiMo writer model is dropped so a provider outage can't route judging
     back to the writer (never let a model grade its own output)."""
     chain = build_judge_chain(_settings())
     models = [s.model for s in chain]
     assert models == ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"]
-    assert "MiniMax-M3" not in models
+    assert "mimo-v2.5-pro" not in models
 
 
 def test_build_judge_chain_keeps_empty_keys_but_drops_writer_family() -> None:
@@ -830,5 +830,5 @@ def test_build_judge_chain_drops_writer_family_judge_primary() -> None:
     """A judge_model misconfigured to the writer's family is dropped rather
     than allowed to grade its own output; the chain falls through to a
     non-writer model."""
-    chain = build_judge_chain(_settings(judge_model="MiniMax-M3"))
+    chain = build_judge_chain(_settings(judge_model="mimo-v2.5-pro"))
     assert [s.model for s in chain] == ["mistralai/mistral-small-2603"]

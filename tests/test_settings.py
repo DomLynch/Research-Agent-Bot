@@ -96,11 +96,11 @@ def test_load_settings_defaults_when_unset(
     s = settings_module.load_settings()
     assert s.minimax_api_key == ""
     assert s.openrouter_api_key == ""
-    assert s.minimax_model == "MiniMax-M3"
-    assert s.minimax_base_url == "https://api.minimax.io/anthropic"
+    assert s.minimax_model == "mimo-v2.5-pro"
+    assert s.minimax_base_url == "https://token-plan-sgp.xiaomimimo.com/v1"
     assert s.judge_model == "google/gemma-4-31b-it"
     assert s.fallback_model == "mistralai/mistral-small-2603"
-    assert s.final_layer_reviewer_model == "google/gemini-3.1-flash-lite:exacto"
+    assert s.final_layer_reviewer_model == "google/gemma-4-31b-it"
 
 
 def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:
@@ -114,7 +114,7 @@ def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:
     assert s.openrouter_api_key == "or-test-key"
 
 
-def test_load_settings_prefers_minimax_key_alias(
+def test_load_settings_prefers_mimo_key(
     isolated_dotenv: Path,
 ) -> None:
     (isolated_dotenv / ".env").write_text(
@@ -123,10 +123,10 @@ def test_load_settings_prefers_minimax_key_alias(
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_api_key == "minimax-test-key"
+    assert s.minimax_api_key == "mimo-test-key"
 
 
-def test_load_settings_prefers_minimax_provider_names(
+def test_load_settings_prefers_mimo_provider_names(
     isolated_dotenv: Path,
 ) -> None:
     (isolated_dotenv / ".env").write_text(
@@ -139,24 +139,24 @@ def test_load_settings_prefers_minimax_provider_names(
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_model == "MiniMax-M3"
-    assert s.minimax_base_url == "https://api.minimax.io/anthropic"
-    assert s.minimax_timeout_sec == 30.0
+    assert s.minimax_model == "legacy-mimo"
+    assert s.minimax_base_url == "https://legacy.example/v1"
+    assert s.minimax_timeout_sec == 9.0
     assert s.mimo_model == s.minimax_model
 
 
-def test_load_settings_keeps_legacy_mimo_provider_fallback_until_sunset(
+def test_load_settings_keeps_minimax_provider_rollback_alias(
     isolated_dotenv: Path,
 ) -> None:
     (isolated_dotenv / ".env").write_text(
-        "MIMO_MODEL=legacy-m3\n"
-        "MIMO_BASE_URL=https://legacy.example/v1\n"
-        "MIMO_TIMEOUT_SEC=9\n",
+        "MINIMAX_MODEL=MiniMax-M3\n"
+        "MINIMAX_BASE_URL=https://api.minimax.io/anthropic\n"
+        "MINIMAX_TIMEOUT_SEC=9\n",
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_model == "legacy-m3"
-    assert s.minimax_base_url == "https://legacy.example/v1"
+    assert s.minimax_model == "MiniMax-M3"
+    assert s.minimax_base_url == "https://api.minimax.io/anthropic"
     assert s.minimax_timeout_sec == 9.0
 
 
