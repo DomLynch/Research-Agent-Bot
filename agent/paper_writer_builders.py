@@ -162,13 +162,13 @@ def _topic_aliases(topic: str) -> tuple[str, ...]:
     """Accept file-safe and prose topic labels, plus the lead entity.
 
     The scoped validator requires an alias to appear at least twice in a
-    paragraph to prove it is on-topic. Matching only the whole slug demanded
+    section to prove it is on-topic. Matching only the whole slug demanded
     prose repeat "liraglutide adverse effects" verbatim twice, which no real
     writing does -- it says "liraglutide". Every scoped paragraph was therefore
     rejected and the section fell back to a ~15-word placeholder.
 
     The lead entity is the subject of the topic, so counting it preserves the
-    on-topic guarantee: a paragraph naming a different drug still fails.
+    on-topic guarantee: a section centered on a different drug still fails.
     """
     raw = topic.strip()
     variants = {raw, raw.replace("_", " "), raw.replace("-", " ")}
@@ -350,7 +350,6 @@ _HEDGE_PHRASES = (
 
 def _check_scoped_paragraph(
     text: str,
-    topic: str,
     receipt_ids: Sequence[str],
     accepted_ids: set[str],
     accepted_numerics: set[str],
@@ -360,12 +359,6 @@ def _check_scoped_paragraph(
     cited = [receipt_id for receipt_id in receipt_ids if receipt_id in accepted_ids]
     if not cited:
         return False, f"no_accepted_anchor:{list(receipt_ids)}"
-    norm = _normalize(text)
-    aliases = _topic_aliases(topic)
-    if aliases and max(norm.count(a) for a in aliases) < 2:
-        return False, f"topic_alias_under_count:<2:{aliases[0]!r}"
-    if not any(h in norm for h in _HEDGE_PHRASES):
-        return False, "missing_hedge_phrase"
     for m in _NUMERIC_RE.finditer(text):
         tok = _numeric_token(m.group(0))
         if tok in accepted_numerics:
@@ -508,7 +501,7 @@ def build_scoped_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         ok, _reason = _check_scoped_paragraph(
-            text, topic, repaired_rids, accepted_ids, accepted_numerics,
+            text, repaired_rids, accepted_ids, accepted_numerics,
         )
         if not ok:
             continue
@@ -524,6 +517,12 @@ def build_scoped_from_parsed(
             numerics=(),
         ))
     if not anchors:
+        return None
+    section_text = _normalize(" ".join(anchor.sentence for anchor in anchors))
+    aliases = _topic_aliases(topic)
+    if aliases and max(section_text.count(alias) for alias in aliases) < 2:
+        return None
+    if not any(hedge in section_text for hedge in _HEDGE_PHRASES):
         return None
     return SynthesisSection(
         name=name, body_md="\n".join(body_lines).rstrip() + "\n",

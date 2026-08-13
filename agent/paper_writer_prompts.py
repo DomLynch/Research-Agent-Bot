@@ -142,8 +142,8 @@ Output ONE JSON object with this exact shape:
 
 Validation tier: SCOPED. Every paragraph MUST list at least one accepted
 receipt_id in `receipt_ids`; inline receipt tokens are not required. Each paragraph also MUST:
-  - mention the topic alias (e.g. "{topic}", "the drug") ≥2 times
-  - contain a hedge phrase ("may", "appears to", "evidence suggests",
+  - keep claims relevant to the topic; the section must name "{topic}" ≥2 times
+  - use calibrated uncertainty across the section ("may", "appears to", "evidence suggests",
     "remains uncertain", "has been proposed", "the question of whether")
   - not introduce numerics absent from the receipts
   - not assert clinical efficacy ("{topic} extends lifespan",
@@ -192,7 +192,7 @@ Output ONE JSON object with this exact shape:
 
 Validation tier: SCOPED. Every paragraph MUST list at least one accepted
 receipt_id in `receipt_ids`; inline receipt tokens are not required. The same
-SCOPED rules apply: topic mentions ≥2x per paragraph, hedge phrase present,
+SCOPED rules apply: the section names the topic ≥2x and uses calibrated uncertainty,
 no novel numerics.
 
 REQUIRED STRUCTURE (5 paragraphs, each 6-9 sentences, 100-200 words):
@@ -373,10 +373,10 @@ Output ONE JSON object with this exact shape:
 }
 
 Validation tier: SCOPED. Every paragraph MUST list at least one accepted
-receipt_id in `receipt_ids`; inline receipt tokens are not required. Pure
-interpretive paragraphs still MUST contain an explicit interpretation marker — "we interpret",
-"this suggests", "one reading is", "the evidence supports", "in our
-view" — so the reader can distinguish evidence from interpretation.
+receipt_id in `receipt_ids`; inline receipt tokens are not required. Across the
+section, distinguish interpretation from evidence with calibrated uncertainty
+or an explicit marker such as "we interpret", "this suggests", "one reading
+is", "the evidence supports", or "in our view".
 
 **MANDATORY thesis discipline (bug-fix 2026-05-14):** The Discussion
 must take a position, not hedge into "context-dependent" boilerplate.
@@ -523,8 +523,8 @@ Output ONE JSON object with this exact shape:
 }
 
 Validation tier: SCOPED. Every paragraph MUST list at least one accepted
-receipt_id in `receipt_ids` and contain a hedge phrase. Inline receipt tokens
-are not required. The conclusion is the most overclaim-
+receipt_id in `receipt_ids`; the section MUST contain calibrated uncertainty
+or a hedge phrase. Inline receipt tokens are not required. The conclusion is the most overclaim-
 prone section in research papers; the validator is strict about
 unhedged clinical claims.
 

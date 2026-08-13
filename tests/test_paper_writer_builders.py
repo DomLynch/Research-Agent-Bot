@@ -249,8 +249,7 @@ def test_cross_domain_rejects_indexed_multi_sentence_records() -> None:
 
 def test_scoped_repairs_receipt_id_with_one_char_typo() -> None:
     """Same fix in the scoped builder (Background, Discussion, etc.).
-    Text must satisfy the SCOPED validator: topic alias ≥2x + hedge
-    phrase per paragraph."""
+    Text must satisfy the section-level topic and hedge contract."""
     accepted = [_accepted("metformin-multi-001-cfab-c01")]
     parsed = {
         "paragraphs": [
@@ -305,6 +304,23 @@ def test_scoped_accepts_anchored_prose_topic_alias() -> None:
         topic="intermittent_fasting", accepted=[_accepted("r1")],
     )
     assert section is not None
+
+
+def test_scoped_applies_topic_and_hedge_contract_across_section() -> None:
+    parsed = {"paragraphs": [
+        {"text": "Metformin evidence is receipt grounded.", "receipt_ids": ["r1"]},
+        {"text": "Metformin may remain context dependent.", "receipt_ids": ["r1"]},
+    ]}
+    section = build_scoped_from_parsed(
+        parsed, name="background", heading="## Background",
+        topic="metformin", accepted=[_accepted("r1")],
+    )
+    assert section is not None
+    parsed["paragraphs"][1]["text"] = "The evidence remains descriptive."
+    assert build_scoped_from_parsed(
+        parsed, name="background", heading="## Background",
+        topic="metformin", accepted=[_accepted("r1")],
+    ) is None
 
 
 def test_scoped_numeric_forms_must_exist_in_anchored_corpus() -> None:
@@ -543,7 +559,7 @@ def test_calendar_year_exemption_does_not_hide_sample_sizes() -> None:
 
     scoped_ok, scoped_reason = _check_scoped_paragraph(
         "Metformin may remain uncertain because metformin included 2015 patients.",
-        "metformin", ["r1"], {"r1"}, set(),
+        ["r1"], {"r1"}, set(),
     )
     assert not scoped_ok and "novel_numeric" in scoped_reason
 
