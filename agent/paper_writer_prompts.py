@@ -16,17 +16,19 @@ __all__ = (
 
 def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) -> str:
     format_reasons = {"missing_inline_anchor", "invalid_sentence_record_contract"}
-    if section_name != "cross_domain_synthesis" or not reasons:
+    if not reasons:
         return base
     guidance: list[str] = []
     if set(reasons) & format_reasons:
-        guidance.append(
+        guidance.append((
             "FORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry. Give each "
             "entry a paragraph_index, exact receipt_ids that support only that sentence, and "
             "those exact IDs inline in square brackets. Return 4-6 paragraph_index groups with "
             "6-9 entries per group; each group must cite at least two distinct receipt IDs from "
             "at least two outcome classes."
-        )
+        ) if section_name == "cross_domain_synthesis" else
+            "FORMAT RETRY REQUIRED: Preserve the requested JSON shape and put exact receipt_ids "
+            "inline in every sentence; metadata alone does not count.")
     unsupported = list(dict.fromkeys(
         reason.removeprefix("novel_numeric:")
         for reason in reasons if reason.startswith("novel_numeric:")

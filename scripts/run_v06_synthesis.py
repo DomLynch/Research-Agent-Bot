@@ -3872,6 +3872,7 @@ async def _run_post_paper_pipeline(
         paper_md = paper_path.read_text()
     paper_md, _post_finalizer_fix_log = _repair_post_finalizer_auto_fixables(
         paper_md, manifest, paper_path, _audit, quant_claims_dir=QUANT_DIR,
+        sections=sections,
     )
     if _post_finalizer_fix_log:
         print(
@@ -4527,6 +4528,7 @@ def _repair_post_finalizer_auto_fixables(
     audit_fn,
     *,
     quant_claims_dir: Path,
+    sections: tuple[SynthesisSection, ...] = (),
 ) -> tuple[str, list[dict[str, Any]]]:
     original_md, all_log = paper_md, list[dict[str, Any]]()
     for _ in range(3):
@@ -4539,6 +4541,8 @@ def _repair_post_finalizer_auto_fixables(
             quant_claims_dir=quant_claims_dir,
             numeric_quarantine_path=paper_path.with_name("numeric_claim_quarantine.json"),
         )
+        safe_typed = not any(x.get("fix_type") == "numeric_role_guard_strip" for x in log)
+        fixed_md = _restore_rendered_section_contract(fixed_md, sections, prefer_typed_sections=safe_typed)
         fixed_md = _strip_rendered_citation_markers(fixed_md)
         fixed_md, surface_log = _restore_public_surface_floors(fixed_md, review_type=manifest.get("review_type"))
         if fixed_md == paper_md:

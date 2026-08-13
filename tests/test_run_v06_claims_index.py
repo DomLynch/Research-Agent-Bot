@@ -112,6 +112,14 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
         "_restore_public_surface_floors",
         lambda md, **_kwargs: (md, []),
     )
+    restored: list[tuple[tuple, bool]] = []
+    def restore(md: str, sections: tuple, *, prefer_typed_sections: bool) -> str:
+        restored.append((sections, prefer_typed_sections))
+        return md
+    monkeypatch.setattr(
+        orch, "_restore_rendered_section_contract",
+        restore,
+    )
 
     fixed, log = orch._repair_post_finalizer_auto_fixables(
         paper_path.read_text(),
@@ -126,6 +134,7 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
     assert [row["fix_type"] for row in log] == [
         "numeric_role_guard_strip", "numeric_role_guard_strip",
     ]
+    assert restored == [((), False), ((), False)]
     assert (tmp_path / "full_paper.post_finalizer_fixed_log.json").is_file()
 
 

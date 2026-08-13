@@ -391,6 +391,9 @@ def test_cross_domain_retry_names_unsupported_numerics() -> None:
     assert "6-9 entries per group" in prompt
     assert "NUMERIC RETRY REQUIRED" in prompt
     assert "'50'" in prompt and "state the point qualitatively" in prompt
+    prompt = paper_writer.cross_domain_retry_prompt("base", "limitations_full", ["novel_numeric:'50'", "missing_inline_anchor"])
+    assert "NUMERIC RETRY REQUIRED" in prompt and "FORMAT RETRY REQUIRED" in prompt
+    assert "paragraph_index groups" not in prompt
 
 
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
