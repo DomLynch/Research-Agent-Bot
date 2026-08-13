@@ -158,6 +158,9 @@ def _p_value_signatures(text: str) -> set[tuple[str, float]]:
 
 def _representative_p_value_coherent(r: object) -> str:
     """Select an excerpt-grounded p-value coherent with the coded direction."""
+    direction = str(getattr(r, "effect_direction", "") or "").lower()
+    if direction in {"mixed", "unclear"}:
+        return "—"
     pvals = [p for p in (getattr(r, "p_values", None) or ()) if p and p.strip()]
     thesis = str(getattr(r, "thesis_text", "") or "")
     if thesis:
@@ -166,7 +169,7 @@ def _representative_p_value_coherent(r: object) -> str:
             p for p in pvals
             if _p_value_signatures(p) & supported
         ]
-    if str(getattr(r, "effect_direction", "") or "").lower() == "null":
+    if direction == "null":
         pvals = [p for p in pvals if not _has_significant_p_value(p)]
     return _smallest_p_string(pvals)
 

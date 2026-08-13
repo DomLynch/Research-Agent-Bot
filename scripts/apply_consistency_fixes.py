@@ -669,7 +669,24 @@ def _strip_thin_analytic_paragraphs(paper_md: str) -> tuple[str, int]:
             and not re.search(r"\d|;|:", text)
             and not text.startswith(("#", "|"))
         )
-        if is_stub:
+        lower = text.lower()
+        is_cross_topic_template = all(phrase in lower for phrase in (
+            "biomedical intervention",
+            "management field experiment",
+            "economics policy corpus",
+        ))
+        is_legacy_backstop = lower.startswith((
+            "findings are therefore grouped by outcome domain",
+            "this guardrail is deliberately numeric-free",
+            "descriptive findings remain separate from interpretation",
+            "the principal limitation is evidence-role imbalance",
+            "a second limitation is endpoint heterogeneity",
+            "a third limitation is that unsafe source-level numerics",
+            "the final interpretation is therefore intentionally resistant",
+            "readers can weigh each section against the provenance trail",
+            "interpretation is deliberately scoped to the retained corpus",
+        ))
+        if is_stub or is_cross_topic_template or is_legacy_backstop:
             n += 1
             continue
         out.append(para)
@@ -1255,10 +1272,7 @@ def _is_depth_backfill_paragraph(text: str) -> bool:
         for name in (
             "_INTRODUCTION_BACKFILL",
             "_BACKGROUND_BACKFILL",
-            "_RESULTS_BACKFILL",
-            "_CROSS_DOMAIN_BACKFILL",
             "_DISCUSSION_BACKFILL",
-            "_LIMITATIONS_BACKFILL",
             "_CONCLUSION_BACKFILL",
             "_DEPTH_BACKFILL_EXTENSION",
         )
@@ -1295,7 +1309,7 @@ def _strip_duplicate_long_sentences(paper_md: str) -> tuple[str, int]:
             for sent in sentence_re.split(para):
                 norm = re.sub(r"\s+", " ", sent.strip()).lower()
                 is_long_prose = (
-                    len(norm.split()) >= 14
+                    len(norm.split()) >= 8
                     and "[" not in norm
                     and "http" not in norm
                 )
@@ -2126,6 +2140,22 @@ def apply_fixes(
             ),
         })
 
+    new_md, n_fused_repeat = re.subn(
+        r"(?P<sentence>[A-Z][^.!?\n]{20,})(?<!doi)\.org/10\.\d{4,9}/"
+        r"[^\s\]]+\]\.\s+(?P=sentence)\.",
+        r"\g<sentence>.", new_md,
+    )
+    new_md, n_malformed_doi = re.subn(
+        r"(?<!doi)(?<=[A-Za-z])\.org/10\.\d{4,9}/[^\s\]]+\]", "", new_md,
+        flags=re.I,
+    )
+    if n_fused_repeat or n_malformed_doi:
+        log.append({
+            "fix_type": "malformed_doi_tail",
+            "n_changes": n_fused_repeat + n_malformed_doi,
+            "description": "removed a DOI tail fused onto manuscript prose",
+        })
+
     new_md, n_dup_sentences = _strip_duplicate_long_sentences(new_md)
     if n_dup_sentences:
         log.append({
@@ -2532,6 +2562,12 @@ def apply_fixes(
         pre_count = len(pre_strip_sections[heading].split())
         if pre_count < floor:
             continue  # was already below floor — not strip-caused
+        snapshot = pre_strip_sections[heading]
+        if (
+            _strip_fuzzy_duplicate_paragraphs(snapshot)[1]
+            or _strip_duplicate_long_sentences(snapshot)[1]
+        ):
+            continue  # never restore writer repetition removed by dedupe
         # Strips pushed a previously-deep section below its floor.
         # Restore the snapshot.
         s, e, _body = _extract_section(new_md, heading)
@@ -2780,11 +2816,7 @@ def apply_fixes(
                         ),
                     })
 
-    # Final depth floor backfill (post-Grok safety). The writer's
-    # backstop runs before final-layer review; Grok can later shorten
-    # Cross-Domain / Discussion below the 800-word audit floor. Add a
-    # short, numeric-free analytical paragraph rather than lowering
-    # Q11/Q12 or trusting another LLM pass.
+    # Final depth floor backfill for non-evidence framing sections.
     if manifest is not None:
         new_md, cross_dup_log = _strip_conclusion_paragraphs_repeated_earlier(
             new_md,
@@ -2875,6 +2907,14 @@ def apply_fixes(
                 "re-normalized public p-values after all restoration and "
                 "numeric-role repair paths"
             ),
+        })
+
+    new_md, n_final_thin = _strip_thin_analytic_paragraphs(new_md)
+    if n_final_thin:
+        log.append({
+            "fix_type": "thin_analytic_restrip_post_depth",
+            "n_changes": n_final_thin,
+            "description": "re-removed generic prose restored by depth guards",
         })
 
     return new_md, log
@@ -3181,20 +3221,8 @@ def _ensure_analytical_depth_floors(paper_md: str) -> tuple[str, list[dict]]:
             _BACKGROUND_BACKFILL,
         ),
         (
-            "Results", 500,
-            _RESULTS_BACKFILL,
-        ),
-        (
-            "Cross-Domain Synthesis", 850,
-            _CROSS_DOMAIN_BACKFILL,
-        ),
-        (
             "Discussion", 800,
             _DISCUSSION_BACKFILL,
-        ),
-        (
-            "Limitations", 250,
-            _LIMITATIONS_BACKFILL,
         ),
         (
             "Conclusion", 250,
@@ -3389,42 +3417,6 @@ source-traced findings converge strongly enough to justify further
 clinical testing while keeping patient-facing claims conservative."""
 
 
-_CROSS_DOMAIN_BACKFILL = """### Boundary-condition synthesis
-
-Interpreting the cross-domain evidence requires treating each domain as
-part of a boundary-condition map rather than as a single pooled effect.
-Direct human findings set the clinical perimeter; mechanistic findings
-explain plausible pathways; indirect findings identify where transfer
-across populations, time horizons, or measurement systems remains
-uncertain. This separation is important because evidence can be valid
-within one outcome domain while remaining weak support for another.
-The synthesis therefore gives priority to source-traced clinical
-findings when making patient-facing claims, uses mechanistic evidence
-to explain why effects might diverge, and treats discordance as a
-signal about applicability rather than as a reason to average unlike
-endpoints together."""
-
-
-_RESULTS_BACKFILL = """**Result-interpretation guardrail.**
-
-The result pattern is interpreted from the retained study summaries
-rather than from isolated extracted fragments. Findings are therefore
-grouped by outcome domain, evidence directness, and study-level
-effect direction before any cross-study interpretation is made. This
-keeps direct clinical signals separate from mechanistic or indirect
-signals, preserves null and mixed findings as informative rather than
-discarding them, and prevents a single repaired or quarantined numeric
-sentence from hollowing out the result narrative. The public results
-section reports the surviving source-bound pattern and leaves unsafe
-or poorly bound extraction artifacts to the audit trail.
-
-This guardrail is deliberately numeric-free. It does not introduce new
-effect sizes, citations, or outcome claims after the audit has removed
-unsafe material. Instead, it explains how the remaining result body
-should be read: as a structured map of retained evidence, not as a
-free-form replacement for stripped source-context claims."""
-
-
 _DISCUSSION_BACKFILL = """### Interpretation constraints
 
 The discussion interprets evidence boundaries rather than converting
@@ -3437,18 +3429,6 @@ are therefore weighed together. Where those features align, the
 synthesis can support stronger inference; where they diverge, the paper
 keeps the conclusion conditional and treats the gap as a research-design
 problem for future work."""
-
-
-_LIMITATIONS_BACKFILL = """### Residual uncertainty
-
-The main limitation is not only the size of the retained corpus, but
-also the uneven directness of the evidence across outcome classes.
-Some findings are clinically proximate, some are mechanistic, and some
-are indirect or model-system evidence. The paper therefore avoids
-treating all sources as equivalent. Its conclusions are strongest
-where study design, clinical directness, and source-context safety align,
-and weaker where evidence must be translated across populations,
-species, intervention schedules, or measurement systems."""
 
 
 _CONCLUSION_BACKFILL = """A defensible next study should pre-specify

@@ -28,11 +28,16 @@ _SOURCE_STATUS_ALIASES = {
     "error": "failed",
     "failed": "failed",
     "rate_limited": "failed",
+    "auth_failed": "failed",
+    "http_error": "failed",
+    "provider_error": "failed",
+    "server_error": "failed",
+    "transport_error": "failed",
     "timeout": "failed",
     "timed_out": "failed",
     "unavailable": "failed",
 }
-_SOURCE_STATUS_PRIORITY = {"enabled": 0, "succeeded": 1, "failed": 2}
+_SOURCE_STATUS_PRIORITY = {"enabled": 0, "failed": 1, "succeeded": 2}
 
 
 @dataclass(frozen=True, slots=True)
@@ -114,13 +119,34 @@ def frozen_retrieval_record(manifest: dict[str, Any]) -> FrozenRetrievalRecord:
             elif isinstance(row, list | tuple) and len(row) == 2:
                 add_source(row[0], row[1])
 
+    if not sources:
+        for wave in manifest.get("per_wave_stats") or ():
+            stats = wave.get("stats") if isinstance(wave, dict) else None
+            if not isinstance(stats, dict):
+                continue
+            for key, status in stats.items():
+                if str(key).startswith("status_"):
+                    add_source(str(key).removeprefix("status_").replace("_", " "), status)
+
+    wave_queries: list[str] = []
+    for wave in manifest.get("per_wave_stats") or ():
+        stats = wave.get("stats") if isinstance(wave, dict) else None
+        if not isinstance(stats, dict):
+            continue
+        wave_queries.extend(
+            str(query).strip()
+            for key, query in stats.items()
+            if str(key).startswith("query_") and str(query).strip()
+        )
     raw_queries = (
         retrieval.get("queries")
-        if "queries" in retrieval
-        else manifest.get("search_queries", ())
+        or manifest.get("search_queries")
+        or wave_queries
     )
     queries = (
-        tuple(str(query).strip() for query in raw_queries if str(query).strip())
+        tuple(dict.fromkeys(
+            str(query).strip() for query in raw_queries if str(query).strip()
+        ))
         if isinstance(raw_queries, list | tuple) else ()
     )
     raw_slots = (

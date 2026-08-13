@@ -533,7 +533,7 @@ def _compile_public_section_backstop(
     title: str, floor: int, existing_text: str = "",
 ) -> str:
     """Compile deterministic framing/disclosure prose, never evidence sections."""
-    allowed = {"Abstract", "Introduction", "Background", "Limitations"}
+    allowed = {"Abstract", "Introduction", "Background"}
     if title not in allowed:
         return ""
     topic = _topic_display_name()
@@ -546,7 +546,6 @@ def _compile_public_section_backstop(
     pos = ctx["positive"]
     neg = ctx["negative"]
     null = ctx["null"]
-    mixed = ctx["mixed"]
     direct_refs = ctx["direct_refs"]
     mech_refs = ctx["mech_refs"]
     evidence_basis = "the retained evidence profile"
@@ -639,30 +638,6 @@ def _compile_public_section_backstop(
                 "interpretation."
             ),
         ],
-        "Limitations": [
-            (
-                f"The principal limitation is evidence-role imbalance. The "
-                "retained corpus contains "
-                f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
-                f"{_evidence_tier_phrase(indirect, 'adjacent, review, or context')}, "
-                f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, which means causal "
-                "interpretation depends on how much weight is assigned to each "
-                "evidence tier."
-            ),
-            (
-                "A second limitation is endpoint heterogeneity. Study-level "
-                f"signals span {pos}, {null}, {neg}, and {mixed}; these domains "
-                "cannot be pooled narratively without losing clinically relevant "
-                "differences in measurement, population, and study design."
-            ),
-            (
-                "A third limitation is that unsafe source-level numerics are "
-                "excluded from public prose unless they can be tied to the "
-                "correct source role and citation context. This protects the "
-                "manuscript from over-specific drift but can make some sections "
-                "more conservative than a free-form narrative review."
-            ),
-        ],
     }
     shared = [
         (
@@ -743,13 +718,6 @@ def _compile_public_section_backstop(
             "trials, cleaner endpoint harmonization, and repeated evidence in "
             "the same outcome class. Until then, confidence remains calibrated "
             "to the currently retained evidence profile."
-        ),
-        (
-            "This framing also preserves comparability across topics. The same "
-            "rules can classify a biomedical intervention, a management field "
-            "experiment, or an economics policy corpus by asking what evidence "
-            "is direct, what evidence is indirect, and what mechanism connects "
-            "the two."
         ),
         (
             "The final interpretation is therefore intentionally resistant to "
@@ -1762,7 +1730,15 @@ def _load_frozen_retrieval_record(
         return FrozenRetrievalRecord()
     if not isinstance(payload, dict):
         return FrozenRetrievalRecord()
-    return frozen_retrieval_record(payload)
+    record = frozen_retrieval_record(payload)
+    if source_run is not None:
+        return record
+    n_active = len(_load_active_paper_ids() or ())
+    return dataclasses.replace(
+        record,
+        n_parsed=record.n_parsed or n_active,
+        n_extracted=record.n_extracted or n_active,
+    )
 
 
 def _strict_clinical_receipt_scope() -> bool:

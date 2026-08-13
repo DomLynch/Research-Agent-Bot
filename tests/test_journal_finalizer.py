@@ -489,7 +489,7 @@ def test_phase_f_uses_canonical_role_for_direct_animal_source(tmp_path: Path) ->
     assert "| 1 direct |" not in results
 
 
-def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> None:
+def test_phase_n_does_not_pad_short_limitations_with_generic_prose(tmp_path: Path) -> None:
     restore_surface_floors = journal_finalizer.review_noise_control.restore_surface_floors
 
     paper = (
@@ -529,16 +529,9 @@ def test_phase_n_restores_short_limitations_after_finalizer(tmp_path: Path) -> N
         journal_finalizer.FinalizerLogEntry,
     )
 
-    assert logs == [
-        journal_finalizer.FinalizerLogEntry(
-            phase="N_surface_floor_backstop",
-            rule="replace_short_section",
-            n_changes=1,
-            detail="Limitations: restored journal-surface floor",
-        )
-    ]
+    assert logs == []
     limitations = fixed.split("## Limitations", 1)[1].split("## Conclusion", 1)[0]
-    assert len(limitations.split()) >= 250
+    assert len(limitations.split()) == 165
 
 
 def test_public_surface_backstop_refuses_substantive_sections() -> None:
@@ -583,7 +576,7 @@ def test_public_surface_backstop_refuses_substantive_sections() -> None:
     assert cross_domain == ""
 
 
-def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp_path: Path) -> None:
+def test_finalize_run_does_not_inflate_thin_limitations(tmp_path: Path) -> None:
     paper = (
         "## Abstract\n\n" + ("alpha " * 160) + "\n\n"
         "## Introduction\n\n" + ("intro " * 420) + "\n\n"
@@ -612,8 +605,8 @@ def test_finalize_run_applies_surface_floor_backstop_for_production_manifest(tmp
 
     text = (tmp_path / "full_paper.md").read_text(encoding="utf-8")
     limitations = text.split("## Limitations", 1)[1].split("## Conclusion", 1)[0]
-    assert len(limitations.split()) >= 250
-    assert any(entry.phase == "N_surface_floor_backstop" for entry in report.entries)
+    assert len(limitations.split()) == 165
+    assert not any(entry.phase == "N_surface_floor_backstop" for entry in report.entries)
 
 
 def test_finalize_run_preserves_unproven_human_longevity_after_surface_restore(tmp_path: Path) -> None:
@@ -5646,7 +5639,7 @@ def test_finalizer_canonicalizes_surface_valid_cycle(tmp_path: Path, monkeypatch
     final = (tmp_path / "full_paper.md").read_text()
     apply_consistency_fixes = journal_finalizer._script_module("apply_consistency_fixes")
     assert final.startswith("Z")
-    assert apply_consistency_fixes._section_word_count(final, "Cross-Domain Synthesis") >= 850
+    assert apply_consistency_fixes._section_word_count(final, "Cross-Domain Synthesis") == 820
     assert apply_consistency_fixes._section_word_count(final, "Conclusion") >= 250
     assert any(entry.rule == "canonicalize_surface_valid_repair_cycle" for entry in first.entries)
     assert not second.paper_changed

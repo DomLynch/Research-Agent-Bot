@@ -300,8 +300,16 @@ def _paragraph_list(parsed: Mapping[str, object]) -> list[object]:
 
 
 def _materialize_inline_receipts(text: str, receipt_ids: Sequence[str]) -> str:
-    """Render canonical metadata inline when the sentence has no inline IDs."""
-    if not text.strip() or not receipt_ids or _INLINE_RECEIPT_RE.search(text):
+    """Render missing canonical metadata inline without changing the claim."""
+    if not text.strip() or not receipt_ids:
+        return text
+    if _has_internal_sentence_boundary(text):
+        return text
+    inline_ids = _INLINE_RECEIPT_RE.findall(text)
+    if any(receipt_id not in receipt_ids for receipt_id in inline_ids):
+        return text
+    receipt_ids = [receipt_id for receipt_id in receipt_ids if receipt_id not in inline_ids]
+    if not receipt_ids:
         return text
     text = text.rstrip()
     citations = " ".join(f"[{receipt_id}]" for receipt_id in receipt_ids)
@@ -399,8 +407,7 @@ def build_anchored_from_parsed(
         repaired_rids, _repair_log = repair_receipt_ids(
             [str(r) for r in rids], accepted_ids,
         )
-        if name == "cross_domain_synthesis":
-            text = _materialize_inline_receipts(text, repaired_rids)
+        text = _materialize_inline_receipts(text, repaired_rids)
         ok, reason = _check_anchored_paragraph(
             text, repaired_rids, accepted_ids, accepted_numerics,
         )
@@ -410,7 +417,7 @@ def build_anchored_from_parsed(
         paragraph_index = entry.get("paragraph_index")
         if name == "cross_domain_synthesis":
             if (
-                _INLINE_RECEIPT_RE.findall(text) != repaired_rids
+                Counter(_INLINE_RECEIPT_RE.findall(text)) != Counter(repaired_rids)
                 or isinstance(paragraph_index, bool)
                 or not isinstance(paragraph_index, int)
                 or not 1 <= paragraph_index <= 6

@@ -28,14 +28,13 @@ def _per_claim(signs: list[int]):
     return _fn
 
 
-def test_no_signed_claims_no_p_values_returns_null() -> None:
-    """A paper with no signed claims and no p-values reports nothing
-    measurable → null (no movement reported anywhere)."""
+def test_no_signed_claims_no_p_values_returns_unclear() -> None:
+    """No signed measurement is ambiguous, not evidence of no effect."""
     claims: list[dict[str, Any]] = [
         {"claim_type": "endpoint", "endpoint": "VO2max"},
     ]
     result = ed.infer_effect_direction(claims, metformin_effect_fn=_const(0))
-    assert result == "null"
+    assert result == "unclear"
 
 
 def test_significant_unsigned_claim_returns_unclear_not_null() -> None:
@@ -52,6 +51,18 @@ def test_significant_unsigned_claim_returns_unclear_not_null() -> None:
     ]
     result = ed.infer_effect_direction(claims, metformin_effect_fn=_const(0))
     assert result == "unclear"
+
+
+def test_explicit_no_change_with_nonsignificant_p_returns_null() -> None:
+    claims = [
+        {
+            "claim_type": "p_value", "endpoint": "muscle mass",
+            "direction": "no_change", "raw_text": "p = 0.96",
+        },
+    ]
+    assert ed.infer_effect_direction(
+        claims, metformin_effect_fn=_const(0),
+    ) == "null"
 
 
 def test_witham_met_prevent_null_walk_speed_returns_null() -> None:

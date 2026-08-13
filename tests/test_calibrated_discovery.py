@@ -109,7 +109,9 @@ def test_calibrated_discovery_runs_per_source_query(monkeypatch):
     spec — not the raw topic_terms list."""
     a = _hit(source="pubmed", doi="10.1/x")
     b = _hit(source="europepmc", doi="10.1/y")
-    _patch_registry(monkeypatch, {"pubmed": [a], "europepmc": [b]})
+    registry = _patch_registry(
+        monkeypatch, {"pubmed": [a], "europepmc": [b]},
+    )
 
     spec = RetrievalSpec(
         topic_terms=("rapamycin",),
@@ -127,6 +129,7 @@ def test_calibrated_discovery_runs_per_source_query(monkeypatch):
     assert stats["raw_europepmc"] == 1
     assert stats["status_pubmed"] == "ok"
     assert stats["status_europepmc"] == "ok"
+    assert stats["query_pubmed"] == registry["pubmed"][0].queries[0]
     assert stats["provider_failures"] == 0
     assert stats["aggregated_total"] == 2
 

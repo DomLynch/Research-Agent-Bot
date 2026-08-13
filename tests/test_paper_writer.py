@@ -242,25 +242,20 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
     assert "lifespan" not in immune_body
 
 
-def test_anchored_writer_repairs_missing_inline_receipts(monkeypatch) -> None:
+def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> None:
     prompts: list[str] = []
 
     async def fake_call(**kwargs):
         prompt = str(kwargs["user_prompt"])
         prompts.append(prompt)
-        if "RETRY GUIDANCE:" in prompt:
+        if len(prompts) > 1:
             return {"paragraphs": [
-                {"text": "Evidence improved within a bounded population [r-a].", "receipt_ids": ["r-a"]},
-                {"text": "Evidence remained null in the direct trial [r-b].", "receipt_ids": ["r-b"]},
-            ]}
-        if "PREVIOUS JSON:" in prompt:
-            return {"paragraphs": [
-                {"text": "Evidence improved [r-a].", "receipt_ids": ["r-a"]},
-                {"text": "Evidence remained null [r-b].", "receipt_ids": ["r-b"]},
+                {"text": "Evidence improved.", "receipt_ids": ["r-a"]},
+                {"text": "Evidence remained null.", "receipt_ids": ["r-b"]},
             ]}
         return {"paragraphs": [
-            {"text": "Evidence improved.", "receipt_ids": ["r-a"]},
-            {"text": "Evidence remained null.", "receipt_ids": ["r-b"]},
+            {"text": "Evidence improved. The population was bounded.", "receipt_ids": ["r-a"]},
+            {"text": "Evidence remained null. Follow-up was short.", "receipt_ids": ["r-b"]},
         ]}
 
     async def no_citation_fix(section, **_kwargs):
@@ -269,7 +264,7 @@ def test_anchored_writer_repairs_missing_inline_receipts(monkeypatch) -> None:
     monkeypatch.setattr(paper_writer, "_call_llm_section", fake_call)
     monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", no_citation_fix)
     monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 2)
-    monkeypatch.setattr(paper_writer, "SECTION_WORD_FLOORS", {"abstract": 10})
+    monkeypatch.setattr(paper_writer, "SECTION_WORD_FLOORS", {"abstract": 5})
 
     section = asyncio.run(paper_writer._write_anchored_section(
         name="abstract", heading="## Abstract", system_prompt="system",
@@ -278,11 +273,7 @@ def test_anchored_writer_repairs_missing_inline_receipts(monkeypatch) -> None:
     ))
 
     assert "[r-a]" in section.body_md and "[r-b]" in section.body_md
-    assert '"receipt_ids": ["r-a"]' in prompts[1]
-    assert '"receipt_ids": ["r-b"]' in prompts[1]
-    assert "Do not add, remove, or substitute sources" in prompts[1]
-    assert "bounded population" in section.body_md
-    assert len(prompts) == 3
+    assert len(prompts) == 2
 
 
 def test_citation_only_repair_rejects_content_or_source_changes() -> None:
@@ -388,6 +379,8 @@ def test_cross_domain_retry_names_unsupported_numerics() -> None:
         ["novel_numeric:'50'", "missing_inline_anchor", "invalid_sentence_record_contract"],
     )
     assert "FORMAT RETRY REQUIRED" in prompt
+    assert "4-6 paragraph_index groups" in prompt
+    assert "6-9 entries per group" in prompt
     assert "NUMERIC RETRY REQUIRED" in prompt
     assert "'50'" in prompt and "state the point qualitatively" in prompt
 

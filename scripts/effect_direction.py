@@ -117,7 +117,7 @@ _NEGLIGIBLE_CHECK_ENDPOINTS: frozenset[str] = frozenset({
 # negligible check. Pre-fix `numeric_values` from `sample_size` claims
 # (n=120) defeated the negligibility check for the Witham case.
 _EFFECT_MAGNITUDE_CLAIM_TYPES: frozenset[str] = frozenset({
-    "effect", "endpoint_change", "outcome", "endpoint",
+    "effect", "endpoint_change", "outcome", "endpoint", "unit_value",
 })
 
 
@@ -156,7 +156,7 @@ def infer_effect_direction(
             - both         → mixed
       4. No significant signs:
             - signed-but-negligible-magnitude (whitelisted endpoints) → null
-            - claims exist but all unsigned → null
+            - claims exist but all unsigned → unclear
             - signed with non-negligible magnitude → unclear
 
     Empty claims list returns "unclear" (no information, NOT a null
@@ -169,6 +169,7 @@ def infer_effect_direction(
     sig_positive = False
     sig_negative = False
     any_signed = False
+    explicit_null = False
     effect_magnitudes_whitelisted: list[float] = []
 
     for c in claims:
@@ -177,6 +178,8 @@ def infer_effect_direction(
             any_signed = True
         endpoint = (c.get("endpoint") or "").strip()
         ctype = c.get("claim_type") or ""
+        if c.get("direction") == "no_change":
+            explicit_null = True
         # Magnitude collection: ONLY from effect-type claims AND only
         # for endpoints whose units make the negligible check meaningful.
         if (
@@ -204,16 +207,12 @@ def infer_effect_direction(
         return "positive"
     if sig_negative:
         return "negative"
-    # Significant but unsigned evidence is not a null result. This
-    # happens when the source reports a significant statistic but the
-    # extracted effect claim cannot safely infer polarity for the active
-    # intervention/outcome. Keep it ambiguous rather than manufacturing
-    # a contradiction between "significant p-value" and "null direction".
-    any_significant = any(significance_by_endpoint.values())
+    # Unsigned evidence is not a measured null result. Keep it ambiguous
+    # unless an explicit negligible signed magnitude established nullity.
     if not any_signed:
-        if any_significant:
-            return "unclear"
-        return "null"
+        if explicit_null and not any(significance_by_endpoint.values()):
+            return "null"
+        return "unclear"
     # No significant signed evidence.
     if effect_magnitudes_whitelisted and _negligible(
         effect_magnitudes_whitelisted

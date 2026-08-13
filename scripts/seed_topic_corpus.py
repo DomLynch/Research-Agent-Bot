@@ -82,6 +82,7 @@ def _manifest_to_dict(manifest) -> dict[str, Any]:
         "topic": manifest.topic,
         "funnel": dict(manifest.funnel),
         "per_wave_stats": [dict(s) for s in manifest.per_wave_stats],
+        "expected_evidence_slots": list(manifest.expected_evidence_slots),
         "entries": [_manifest_entry_to_dict(e) for e in manifest.entries],
     }
 

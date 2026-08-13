@@ -125,16 +125,14 @@ def test_cross_domain_normalizes_metadata_and_drops_invalid_records() -> None:
         {
             "paragraph_index": group,
             "text": (
-                "Unanchored claim.  "
-                if row == 8 else
                 "Direct evidence supports change [r-a]."
                 if row % 2 else
                 "Frailty evidence remains uncertain [r-b]."
             ),
             "receipt_ids": ["r-a" if row % 2 else "r-b"],
         }
-        for group in range(1, 5)
-        for row in range(1, 9)
+        for group in range(1, 7)
+        for row in range(1, 7)
     ]
     section = build_anchored_from_parsed(
         {"paragraphs": paragraphs},
@@ -142,7 +140,6 @@ def test_cross_domain_normalizes_metadata_and_drops_invalid_records() -> None:
         accepted=accepted,
     )
     assert section is not None
-    assert "Unanchored claim [r-b]." in section.body_md
 
     for text, receipt_ids, expected_reason in (
         ("Mismatched citation claim [r-a].", ["r-b"], "missing_inline_anchor"),
@@ -182,8 +179,6 @@ def test_cross_domain_normalizes_metadata_and_drops_invalid_records() -> None:
         accepted=accepted, rejection_reasons=reasons,
     ) is not None
     assert reasons.count("empty_paragraph") == 4
-
-
 def test_cross_domain_requires_four_to_six_balanced_paragraph_groups() -> None:
     reasons: list[str] = []
     section = build_anchored_from_parsed(

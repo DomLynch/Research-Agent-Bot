@@ -225,6 +225,7 @@ async def discover_calibrated(
             if not query_for_source:
                 stats[f"empty_{name}"] = 1
                 continue
+            stats[f"query_{name}"] = query_for_source
             tasks.append(_search_source(
                 http, client, name, query_for_source, per_source_limit, stats,
             ))

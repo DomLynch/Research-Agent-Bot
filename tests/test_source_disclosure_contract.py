@@ -86,19 +86,53 @@ def test_revision_run_does_not_fall_back_to_mutable_corpus_manifest(
 
     corpus_root = tmp_path / "corpus"
     quant_dir = corpus_root / "quant_claims"
+    parsed_dir = corpus_root / "parsed"
     quant_dir.mkdir(parents=True)
+    parsed_dir.mkdir()
+    (quant_dir / "paper.quant_claims.json").write_text("{}")
+    (quant_dir / "stale.quant_claims.json").write_text("{}")
+    (parsed_dir / "paper.paper_sections.json").write_text("{}")
+    (parsed_dir / "stale.paper_sections.json").write_text("{}")
+    (corpus_root / "_extract_report.json").write_text(json.dumps({
+        "active_paper_ids": ["paper"],
+    }))
     (corpus_root / "corpus_manifest.json").write_text(json.dumps({
-        "retrieval": {"sources": {"PubMed": "succeeded"}},
+        "retrieval": {"queries": []},
+        "per_wave_stats": [
+            {"stats": {
+                "status_pubmed": "ok",
+                "query_pubmed": "urolithin[tiab] AND muscle[tiab]",
+            }},
+            {"stats": {
+                "status_pubmed": "server_error",
+                "status_openalex": "provider_error",
+                "query_pubmed": "urolithin[tiab]",
+            }},
+        ],
+        "expected_evidence_slots": ["muscle function"],
     }))
     source_run = tmp_path / "source-run"
     source_run.mkdir()
     (source_run / "manifest.json").write_text(json.dumps({"receipts": []}))
     monkeypatch.setattr(synthesis, "QUANT_DIR", quant_dir)
+    monkeypatch.setattr(synthesis, "PARSED_DIR", parsed_dir)
+    monkeypatch.setattr(synthesis, "_TOPIC_PACK", SimpleNamespace(
+        corpus_search_queries=("stale query that was not executed",),
+    ))
 
     assert synthesis._load_frozen_retrieval_record(source_run).sources == ()
-    assert synthesis._load_frozen_retrieval_record(None).sources == (
-        ("PubMed", "succeeded"),
+    record = synthesis._load_frozen_retrieval_record(None)
+    assert record.sources == (
+        ("openalex", "failed"),
+        ("pubmed", "succeeded"),
     )
+    assert record.n_parsed == 1
+    assert record.n_extracted == 1
+    assert record.queries == (
+        "urolithin[tiab] AND muscle[tiab]",
+        "urolithin[tiab]",
+    )
+    assert record.expected_evidence_slots == ("muscle function",)
 
 
 def test_v06_contract_freezes_only_executed_methods_operations() -> None:

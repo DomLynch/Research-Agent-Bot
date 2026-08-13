@@ -79,6 +79,7 @@ def test_funnel_reports_retrieve_classify_extractable_counts():
     report = _wave_report(hits)
     manifest = classify_and_filter(
         report, topic="statins", topic_aliases=("statin",),
+        expected_slots=("all-cause mortality",),
     )
     f = manifest.funnel
     assert f["retrieved"] == 5
@@ -88,6 +89,7 @@ def test_funnel_reports_retrieve_classify_extractable_counts():
     assert f["extractable_core"] == 5
     assert f["extractable_background"] == 0
     assert f["extractable_adjacent"] == 0
+    assert manifest.expected_evidence_slots == ("all-cause mortality",)
 
 
 def test_background_class_lands_in_background_pool():

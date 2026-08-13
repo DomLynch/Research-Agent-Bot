@@ -83,6 +83,7 @@ class CorpusManifest:
     per_wave_stats: tuple[dict[str, Any], ...] = field(
         default_factory=tuple,
     )
+    expected_evidence_slots: tuple[str, ...] = field(default_factory=tuple)
 
     def kept(self) -> tuple[CorpusEntry, ...]:
         return tuple(e for e in self.entries if e.keep_for_extraction)
@@ -204,6 +205,7 @@ def classify_and_filter(
         entries=tuple(entries),
         funnel=funnel,
         per_wave_stats=report.per_wave_stats,
+        expected_evidence_slots=expected_slots,
     )
 
 

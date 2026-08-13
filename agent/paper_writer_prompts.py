@@ -23,7 +23,9 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
         guidance.append(
             "FORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry. Give each "
             "entry a paragraph_index, exact receipt_ids that support only that sentence, and "
-            "those exact IDs inline in square brackets."
+            "those exact IDs inline in square brackets. Return 4-6 paragraph_index groups with "
+            "6-9 entries per group; each group must cite at least two distinct receipt IDs from "
+            "at least two outcome classes."
         )
     unsupported = list(dict.fromkeys(
         reason.removeprefix("novel_numeric:")

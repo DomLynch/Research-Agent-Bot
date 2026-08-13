@@ -335,9 +335,15 @@ def test_representative_p_value_coherent_reconciles_null_with_significant_stat()
         effect_direction: str = "positive"
         p_values: tuple[str, ...] = ("p < 0.001",)
 
+    @dataclass
+    class _RAmbiguous:
+        effect_direction: str = "unclear"
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.20")
+
     assert tr._representative_p_value_coherent(_RNull()) == "p = 0.20"
     assert tr._representative_p_value_coherent(_RNullAllSig()) == "—"
     assert tr._representative_p_value_coherent(_RPos()) == "p < 0.001"
+    assert tr._representative_p_value_coherent(_RAmbiguous()) == "—"
 
 
 def test_representative_p_value_coherent_uses_receipt_excerpt() -> None:

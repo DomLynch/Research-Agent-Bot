@@ -129,6 +129,8 @@ def test_lightweight_polish_repairs_surface_contract_defects() -> None:
         "### Cardiometabolic Outcomes\n\n"
         "The cardiometabolic evidence base spans 15 curated references.\n\n"
         "Meta-analytic evidence corroborates the glycemic signal.\n\n"
+        "The same rules can classify a biomedical intervention, a management "
+        "field experiment, or an economics policy corpus.\n\n"
         "## Conclusion\n\n"
         "It separates endpoint-specific evidence from broad treatment claims. "
         "The final interpretation remains bounded.\n\n"
@@ -138,6 +140,7 @@ def test_lightweight_polish_repairs_surface_contract_defects() -> None:
     out, log = fixes.apply_lightweight_public_polish(paper)
     assert "spans 14 curated references" in out
     assert "Meta-analytic evidence corroborates" not in out
+    assert "management field experiment" not in out
     assert "It separates endpoint-specific evidence" not in out
     fix_types = {i["fix_type"] for i in log}
     assert "results_count_claim_alignment" in fix_types
@@ -209,10 +212,6 @@ def test_duplicate_subsection_strip_preserves_distinct_outcome_sections() -> Non
     out, n = fixes._strip_duplicate_subsections(paper)
     assert n == 0
     assert "### Longevity Outcomes" in out and "### Immune Outcomes" in out
-
-
-def test_results_depth_backfill_is_not_an_outcome_h3() -> None:
-    assert not fixes._RESULTS_BACKFILL.startswith("###")
 
 
 def test_unexpected_results_h3_is_demoted() -> None:
@@ -317,6 +316,33 @@ def test_apply_fixes_skips_full_depth_backfill_for_thin_brief() -> None:
     out, log = fixes.apply_fixes(paper, [], manifest={"review_type": "thin_corpus_brief"})
     assert "Result-interpretation guardrail" not in out
     assert "analytical_depth_backfill" not in {i["fix_type"] for i in log}
+
+
+def test_apply_fixes_does_not_restore_cross_topic_template_for_depth() -> None:
+    template = (
+        "The same rules classify a biomedical intervention, a management field "
+        "experiment, or an economics policy corpus."
+    )
+    legacy = "This guardrail is deliberately numeric-free and adds no evidence."
+    paper = (
+        "## Cross-Domain Synthesis\n\n" + "evidence " * 840
+        + "\n\n" + template + "\n\n" + legacy
+    )
+    out, _log = fixes.apply_fixes(paper, [])
+    assert "management field experiment" not in out
+    assert "guardrail is deliberately" not in out
+
+
+def test_apply_fixes_removes_fused_doi_tail_and_adjacent_repeat() -> None:
+    paper = (
+        "## Background\n\nTranslational relevance to humans remains uncertain.org/"
+        "10.1016/j.ebiom.2021.103227]. Translational relevance to humans "
+        "remains uncertain. A valid DOI remains doi.org/10.1000/example."
+    )
+    out, log = fixes.apply_fixes(paper, [])
+    assert out.count("Translational relevance to humans remains uncertain.") == 1
+    assert "doi.org/10.1000/example" in out
+    assert any(item["fix_type"] == "malformed_doi_tail" for item in log)
 
 
 def test_lightweight_polish_rebuilds_thin_results_from_manifest() -> None:
