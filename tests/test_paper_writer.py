@@ -304,12 +304,16 @@ def test_citation_only_repair_rejects_content_or_source_changes() -> None:
         {"paragraphs": [before["paragraphs"][0], {"text": "Outcome [fabricated] remained uncertain [r-b].", "receipt_ids": ["r-b"]}]},
     ):
         assert not paper_writer.citation_only_repair(before, invalid, {"r-a", "r-b"})
-    for internal_boundary in ("U.S. cohort", "Dr. report", "Corp. RCT", 'Fig. **S1**'):
-        assert not paper_writer.citation_only_repair(
-            {"text": f"The source was {internal_boundary} and bounded.", "receipt_ids": ["r-a"]},
-            {"text": f"The source was {internal_boundary} and bounded [r-a].", "receipt_ids": ["r-a"]},
-            {"r-a"},
-        )
+    assert not paper_writer.citation_only_repair(
+        {"text": "Evidence improved. Outcome remained null.", "receipt_ids": ["r-a"]},
+        {"text": "Evidence improved [r-a]. Outcome remained null [r-a].", "receipt_ids": ["r-a"]},
+        {"r-a"},
+    )
+    assert paper_writer.citation_only_repair(
+        {"text": "The combined evidence remained mixed.", "receipt_ids": ["r-a", "r-b"]},
+        {"text": "The combined evidence remained mixed [r-a] [r-b].", "receipt_ids": ["r-a", "r-b"]},
+        {"r-a", "r-b"},
+    )
 
 
 def test_anchored_writer_regenerates_non_citation_failure(monkeypatch) -> None:
@@ -338,13 +342,25 @@ def test_anchored_writer_regenerates_non_citation_failure(monkeypatch) -> None:
     assert "ANCHOR REPAIR REQUIRED" not in prompts[1]
 
 
-def test_anchored_writer_regenerates_multi_sentence_failure(monkeypatch) -> None:
+def test_cross_domain_writer_regenerates_sentence_level_records(monkeypatch) -> None:
     prompts: list[str] = []
 
     async def fake_call(**kwargs):
         prompts.append(str(kwargs["user_prompt"]))
-        text = "Evidence improved. Outcome remained null." if len(prompts) == 1 else "Outcome remained bounded [r-a]."
-        return {"paragraphs": [{"text": text, "receipt_ids": ["r-a"]}]}
+        if len(prompts) == 1:
+            return {"paragraphs": [{
+                "text": "Davies improved. Khamis remained null.",
+                "receipt_ids": ["r-a", "r-b"],
+            }]}
+        return {"paragraphs": [
+            {
+                "paragraph_index": group,
+                "text": "Davies improved [r-a]." if row % 2 else "Khamis remained null [r-b].",
+                "receipt_ids": ["r-a"] if row % 2 else ["r-b"],
+            }
+            for group in range(1, 5)
+            for row in range(6)
+        ]}
 
     async def no_citation_fix(section, **_kwargs):
         return section
@@ -354,13 +370,15 @@ def test_anchored_writer_regenerates_multi_sentence_failure(monkeypatch) -> None
     monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 1)
 
     section = asyncio.run(paper_writer._write_anchored_section(
-        name="abstract", heading="## Abstract", system_prompt="system",
-        user_prompt="base", accepted=[_summary("r-a")], chain=(), client=None,
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis", system_prompt="system",
+        user_prompt="base", accepted=[_summary("r-a"), _summary("r-b", outcome="frailty")], chain=(), client=None,
         ledger=None, seed=None, fallback_body="fallback",
     ))
 
-    assert "Outcome remained bounded" in section.body_md
+    assert "Davies improved [r-a]. Khamis remained null [r-b]." in section.body_md
+    assert section.body_md.count("_Cited:") == 4
     assert len(prompts) == 2
+    assert "FORMAT RETRY REQUIRED" in prompts[1]
     assert "ANCHOR REPAIR REQUIRED" not in prompts[1]
 
 

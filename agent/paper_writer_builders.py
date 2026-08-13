@@ -33,7 +33,11 @@ _RECEIPT_ID_REPAIR_CUTOFF = 0.85
 _CONTINUING_ABBREVIATION_RE = re.compile(r"\bet al\.(?=[ \t]+(?-i:[a-z0-9(]))", re.I)
 _SENTENCE_BREAK_RE = re.compile(r"[.!?][^\w\s]*\s+")
 _INLINE_RECEIPT_RE = re.compile(r"\[([^\[\]\n]+)\]")
-_INTERNAL_SENTENCE_BOUNDARY_RE = re.compile(r"[.!?][\"'`*_)\]]*\s+\S")
+def _has_internal_sentence_boundary(text: str) -> bool:
+    protected = _CONTINUING_ABBREVIATION_RE.sub(
+        lambda match: match.group().replace(".", "<DOT>"), text,
+    )
+    return len(_SENTENCE_BREAK_RE.split(protected)) > 1
 
 
 def _repair_rows(payload: Mapping[str, object]) -> list[object]:
@@ -45,11 +49,9 @@ def citation_only_repair_eligible(payload: Mapping[str, object]) -> bool:
     rows = _repair_rows(payload)
     return bool(rows) and all(
         isinstance(row, dict)
-        and isinstance(row.get("receipt_ids"), list)
+        and isinstance(row.get("receipt_ids"), list) and bool(row.get("receipt_ids"))
         and isinstance(row.get("text") or row.get("sentence"), str)
-        and not _INTERNAL_SENTENCE_BOUNDARY_RE.search(
-            str(row.get("text") or row.get("sentence")),
-        )
+        and not _has_internal_sentence_boundary(str(row.get("text") or row.get("sentence")))
         for row in rows
     )
 
@@ -82,14 +84,16 @@ def citation_only_repair(
             return False
         old_tokens = _INLINE_RECEIPT_RE.findall(old_text)
         new_tokens = _INLINE_RECEIPT_RE.findall(new_text)
-        old_known = [token for token in old_tokens if token in ids]
         new_known = [token for token in new_tokens if token in ids]
         if (
             [token for token in old_tokens if token not in ids]
             != [token for token in new_tokens if token not in ids]
-            or (old_known and new_known != old_known)
-            or (not old_known and not new_known)
+            or not new_known
         ):
+            return False
+        expected = list(map(str, ids))
+        old_mapped = [token for token in old_tokens if token in ids]
+        if new_known != (old_mapped or expected):
             return False
     return True
 
@@ -369,11 +373,15 @@ def build_anchored_from_parsed(
     rejection_reasons: list[str] | None = None,
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
+    accepted_outcomes = {r.receipt_id: r.outcome_class for r in accepted}
     accepted_numerics = _accepted_numeric_tokens(accepted)
     paragraphs = _paragraph_list(parsed)
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
     rejections: list[str] = []
+    grouped: dict[str, tuple[list[str], list[str]]] = {}
+    sentence_contract_valid = True
+    cross_domain_indices: list[int] = []
     for entry in paragraphs:
         if not isinstance(entry, dict):
             continue
@@ -393,11 +401,22 @@ def build_anchored_from_parsed(
         if not ok:
             rejections.append(reason)
             continue
-        body_lines.append(text.strip())
-        body_lines.append("")
-        cite_str = ", ".join(f"`{i}`" for i in repaired_rids)
-        body_lines.append(f"  _Cited: {cite_str}_")
-        body_lines.append("")
+        if name == "cross_domain_synthesis" and [
+            token for token in _INLINE_RECEIPT_RE.findall(text) if token in accepted_ids
+        ] != repaired_rids:
+            sentence_contract_valid = False
+        paragraph_index = entry.get("paragraph_index")
+        if name == "cross_domain_synthesis":
+            if isinstance(paragraph_index, bool) or not isinstance(paragraph_index, int):
+                sentence_contract_valid = False
+            else:
+                cross_domain_indices.append(paragraph_index)
+        if paragraph_index is None:
+            body_lines.extend((text.strip(), "", f"  _Cited: {', '.join(f'`{i}`' for i in repaired_rids)}_", ""))
+        else:
+            group_text, group_ids = grouped.setdefault(str(paragraph_index), ([], []))
+            group_text.append(text.strip())
+            group_ids.extend(rid for rid in repaired_rids if rid not in group_ids)
         anchors.append(SynthesisClaimAnchor(
             sentence=text.strip(),
             receipt_ids=tuple(repaired_rids),
@@ -406,6 +425,34 @@ def build_anchored_from_parsed(
                 for m in _NUMERIC_RE.finditer(text)
             ),
         ))
+    for group_text, group_ids in grouped.values():
+        body_lines.extend((
+            " ".join(group_text), "",
+            f"  _Cited: {', '.join(f'`{rid}`' for rid in group_ids)}_", "",
+        ))
+    if name == "cross_domain_synthesis":
+        index_counts = Counter(cross_domain_indices)
+        expected_indices = set(range(1, len(index_counts) + 1))
+        if (
+            not sentence_contract_valid
+            or len(anchors) != len(paragraphs)
+            or set(index_counts) != expected_indices
+            or not 4 <= len(index_counts) <= 6
+            or any(not 6 <= count <= 9 for count in index_counts.values())
+            or any(
+                len(group_ids) < 2
+                or len({accepted_outcomes[rid] for rid in group_ids}) < 2
+                for _, group_ids in grouped.values()
+            )
+            or any(
+                not isinstance(entry, dict)
+                or entry.get("paragraph_index") is None
+                or _has_internal_sentence_boundary(str(entry.get("text") or entry.get("sentence") or ""))
+                for entry in paragraphs
+            )
+        ):
+            rejections.append("invalid_sentence_record_contract")
+            anchors.clear()
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
     if not anchors:

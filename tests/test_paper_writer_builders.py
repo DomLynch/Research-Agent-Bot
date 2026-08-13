@@ -76,6 +76,110 @@ def test_anchored_repairs_receipt_id_with_one_char_typo() -> None:
     assert section.anchors[0].receipt_ids == ("metformin-multi-001-cfab-c01",)
 
 
+def test_cross_domain_rejects_partial_sentence_records() -> None:
+    reasons: list[str] = []
+    section = build_anchored_from_parsed(
+        {"paragraphs": [
+            {"paragraph_index": 1, "text": "Davies improved [r-a].", "receipt_ids": ["r-a"]},
+            {"paragraph_index": 1, "text": "Khamis remained null.", "receipt_ids": ["r-b"]},
+        ]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a"), _accepted("r-b")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert "missing_inline_anchor" in reasons
+    assert "invalid_sentence_record_contract" in reasons
+
+
+def test_cross_domain_requires_sentence_record_indices() -> None:
+    reasons: list[str] = []
+    section = build_anchored_from_parsed(
+        {"paragraphs": [{"text": "Davies improved [r-a].", "receipt_ids": ["r-a"]}]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert reasons == ["invalid_sentence_record_contract"]
+
+
+def test_cross_domain_requires_inline_ids_to_match_sentence_metadata() -> None:
+    reasons: list[str] = []
+    section = build_anchored_from_parsed(
+        {"paragraphs": [{
+            "paragraph_index": 1,
+            "text": "Davies improved [r-a].",
+            "receipt_ids": ["r-a", "r-b"],
+        }]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a"), _accepted("r-b")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert "invalid_sentence_record_contract" in reasons
+
+
+def test_cross_domain_requires_four_to_six_balanced_paragraph_groups() -> None:
+    reasons: list[str] = []
+    section = build_anchored_from_parsed(
+        {"paragraphs": [
+            {
+                "paragraph_index": 1,
+                "text": "Davies improved [r-a].",
+                "receipt_ids": ["r-a"],
+            }
+            for _ in range(24)
+        ]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert "invalid_sentence_record_contract" in reasons
+
+    reasons.clear()
+    section = build_anchored_from_parsed(
+        {"paragraphs": [
+            {
+                "paragraph_index": group,
+                "text": "Davies improved [r-a].",
+                "receipt_ids": ["r-a"],
+            }
+            for group in range(1, 5)
+            for _ in range(6)
+        ]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert "invalid_sentence_record_contract" in reasons
+
+
+def test_cross_domain_rejects_indexed_multi_sentence_records() -> None:
+    reasons: list[str] = []
+    section = build_anchored_from_parsed(
+        {"paragraphs": [{
+            "paragraph_index": 1,
+            "text": "Davies improved [r-a]. Khamis remained null [r-b].",
+            "receipt_ids": ["r-a", "r-b"],
+        }]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a"), _accepted("r-b")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert "invalid_sentence_record_contract" in reasons
+
+    reasons.clear()
+    section = build_anchored_from_parsed(
+        {"paragraphs": [{
+            "paragraph_index": 1,
+            "text": "Davies improved [r-a].\u201d Khamis remained null [r-b].",
+            "receipt_ids": ["r-a", "r-b"],
+        }]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a"), _accepted("r-b")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert "invalid_sentence_record_contract" in reasons
+
+
 def test_scoped_repairs_receipt_id_with_one_char_typo() -> None:
     """Same fix in the scoped builder (Background, Discussion, etc.).
     Text must satisfy the SCOPED validator: topic alias ≥2x + hedge

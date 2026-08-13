@@ -37,6 +37,7 @@ from agent.paper_writer_helpers import (
     section_word_count as _section_word_count,
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
 )
+from agent.paper_writer_prompts import cross_domain_retry_prompt
 from agent.review_type import COMPACT_REVIEW_TYPES
 from agent.synthesis_schemas import (
     ReceiptSummary,
@@ -381,14 +382,15 @@ async def _write_anchored_section(
                 current_prompt = (
                     f"{user_prompt}\n\nANCHOR REPAIR REQUIRED: The previous JSON was rejected. "
                     "Repair only its citation formatting: preserve each paragraph's prose and "
-                    "receipt_ids mapping, and put the relevant ID from that paragraph's existing "
-                    "receipt_ids in square brackets in every sentence. Do not add, remove, or "
-                    "substitute sources. Return the complete repaired JSON only.\nPREVIOUS JSON:\n"
+                    "receipt_ids mapping. In every sentence without a mapped citation, add every "
+                    "ID from that paragraph's existing receipt_ids, in the same order. Do not "
+                    "change citations in already cited sentences. Do not add, remove, or substitute "
+                    "sources. Return the complete repaired JSON only.\nPREVIOUS JSON:\n"
                     + json.dumps(parsed, ensure_ascii=True)
                 )
                 rejected_json = parsed
             else:
-                current_prompt = user_prompt
+                current_prompt = cross_domain_retry_prompt(user_prompt, name, rejection_reasons)
                 rejected_json = None
             continue
         words = _section_word_count(section)

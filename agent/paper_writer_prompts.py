@@ -10,8 +10,19 @@ __all__ = (
     "INTRODUCTION_SYSTEM_PROMPT", "BACKGROUND_SYSTEM_PROMPT",
     "RESULTS_SYSTEM_PROMPT", "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT",
     "DISCUSSION_SYSTEM_PROMPT", "LIMITATIONS_FULL_SYSTEM_PROMPT",
-    "CONCLUSION_SYSTEM_PROMPT", "format_prompts_for_topic",
+    "CONCLUSION_SYSTEM_PROMPT", "cross_domain_retry_prompt", "format_prompts_for_topic",
 )
+
+
+def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) -> str:
+    format_reasons = {"missing_inline_anchor", "invalid_sentence_record_contract"}
+    if section_name != "cross_domain_synthesis" or not reasons or not set(reasons) <= format_reasons:
+        return base
+    return (
+        f"{base}\n\nFORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry. "
+        "Give each entry a paragraph_index, exact receipt_ids that support only that sentence, "
+        "and those exact IDs inline in square brackets. JSON only."
+    )
 
 
 # Fix #17: shared hard rule prepended to EVERY section prompt below.
@@ -252,8 +263,8 @@ CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE = """You write the CROSS-DOMAIN
 SYNTHESIS section. Its job: surface tensions BETWEEN outcome classes
 that single-outcome subsections miss.
 
-**HARD MINIMUM: 900-1,300 words across 4-6 paragraphs of 6-9
-sentences each.** Fix #45 reverses the over-compression. The
+**HARD MINIMUM: 900-1,300 words across 4-6 logical paragraphs of 6-9
+sentence records each.** Fix #45 reverses the over-compression. The
 Cross-Domain Synthesis is the paper's intellectual core — explicit
 adjudication of cross-outcome tensions. 525 words is too thin to
 do that work.
@@ -274,17 +285,18 @@ Output ONE JSON object with this exact shape:
 {
   "paragraphs": [
     {
-      "text": "<sentence grounded in r-a [r-a]. Sentence grounded in r-b [r-b].>",
-      "receipt_ids": ["r-a", "r-b"],
-      "tension_kind": "<short label>"
+      "paragraph_index": 1,
+      "text": "<exactly one sentence grounded in r-a [r-a].>",
+      "receipt_ids": ["r-a"]
     },
-    ... 2-4 paragraphs
+    ... 24-54 sentence records grouped under paragraph_index 1-6
   ]
 }
 
-Validation tier: ANCHORED. Every sentence in `text` must include an
-exact receipt_id in square brackets; `receipt_ids` metadata alone does not
-count. Each paragraph must span ≥2 receipt_ids and ≥2 outcome classes.
+Validation tier: ANCHORED. Each `text` value must contain exactly one sentence
+and include every supporting `receipt_id` inline in square brackets;
+`receipt_ids` metadata alone does not count. Across all sentence records, each
+logical paragraph must span ≥2 receipt_ids and ≥2 outcome classes.
 
 Default cross-outcome tensions to scan for in any topic synthesis:
   Mechanistic plausibility vs functional tradeoff —
