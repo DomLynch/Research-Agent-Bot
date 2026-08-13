@@ -433,28 +433,38 @@ def build_anchored_from_parsed(
                 for m in _NUMERIC_RE.finditer(text)
             ),
         ))
+    if name == "cross_domain_synthesis":
+        index_counts = Counter(cross_domain_indices)
+        valid_indices = {
+            index for index, count in index_counts.items()
+            if 5 <= count <= 9
+            and len(grouped[str(index)][1]) >= 2
+            and len({accepted_outcomes[rid] for rid in grouped[str(index)][1]}) >= 2
+        }
+        if len(valid_indices) != len(index_counts):
+            rejections.append("invalid_sentence_record_contract")
+        if (
+            not 4 <= len(valid_indices) <= 6
+            or sum(index_counts[index] for index in valid_indices) < 24
+        ):
+            if "invalid_sentence_record_contract" not in rejections:
+                rejections.append("invalid_sentence_record_contract")
+            anchors.clear()
+            grouped.clear()
+        else:
+            anchors = [
+                anchor for index, anchor in zip(cross_domain_indices, anchors, strict=True)
+                if index in valid_indices
+            ]
+            grouped = {
+                key: value for key, value in grouped.items()
+                if int(key) in valid_indices
+            }
     for group_text, group_ids in grouped.values():
         body_lines.extend((
             " ".join(group_text), "",
             f"  _Cited: {', '.join(f'`{rid}`' for rid in group_ids)}_", "",
         ))
-    if name == "cross_domain_synthesis":
-        index_counts = Counter(cross_domain_indices)
-        expected_indices = set(range(1, len(index_counts) + 1))
-        if (
-            set(index_counts) != expected_indices
-            or not 4 <= len(index_counts) <= 6
-            or len(anchors) < 24
-            or any(not 5 <= count <= 9 for count in index_counts.values())
-            or any(
-                len(group_ids) < 2
-                or len({accepted_outcomes[rid] for rid in group_ids}) < 2
-                for _, group_ids in grouped.values()
-            )
-        ):
-            if "invalid_sentence_record_contract" not in rejections:
-                rejections.append("invalid_sentence_record_contract")
-            anchors.clear()
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
     if not anchors:

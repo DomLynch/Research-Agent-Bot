@@ -219,6 +219,32 @@ def test_cross_domain_requires_four_to_six_balanced_paragraph_groups() -> None:
     assert "invalid_sentence_record_contract" in reasons
 
 
+def test_cross_domain_retains_four_valid_groups_when_one_group_is_invalid() -> None:
+    accepted = [_accepted("r-a"), _accepted("r-b", outcome_class="frailty")]
+    paragraphs = [
+        {
+            "paragraph_index": group,
+            "text": (
+                "Grounded evidence supports change [r-a]." if row % 2
+                else "Frailty evidence remains uncertain [r-b]."
+            ),
+            "receipt_ids": ["r-a" if row % 2 else "r-b"],
+        }
+        for group in range(1, 6)
+        for row in range(1, 7)
+    ]
+    for entry in paragraphs[-6:]:
+        entry["text"] = "Single-source sentence [r-a]."
+        entry["receipt_ids"] = ["r-a"]
+    section = build_anchored_from_parsed(
+        {"paragraphs": paragraphs}, name="cross_domain_synthesis",
+        heading="## Cross-Domain Synthesis", accepted=accepted,
+    )
+    assert section is not None
+    assert len(section.anchors) == 24
+    assert "Single-source sentence" not in section.body_md
+
+
 def test_cross_domain_rejects_indexed_multi_sentence_records() -> None:
     reasons: list[str] = []
     section = build_anchored_from_parsed(
