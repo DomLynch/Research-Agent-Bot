@@ -18,6 +18,8 @@ __all__ = [
     "build_anchored_from_parsed",
     "build_scoped_from_parsed",
     "build_results_from_parsed",
+    "citation_only_repair",
+    "citation_only_repair_eligible",
     "repair_receipt_ids",
 ]
 
@@ -30,6 +32,66 @@ __all__ = [
 _RECEIPT_ID_REPAIR_CUTOFF = 0.85
 _CONTINUING_ABBREVIATION_RE = re.compile(r"\bet al\.(?=[ \t]+(?-i:[a-z0-9(]))", re.I)
 _SENTENCE_BREAK_RE = re.compile(r"[.!?][^\w\s]*\s+")
+_INLINE_RECEIPT_RE = re.compile(r"\[([^\[\]\n]+)\]")
+_INTERNAL_SENTENCE_BOUNDARY_RE = re.compile(r"[.!?][\"'`*_)\]]*\s+\S")
+
+
+def _repair_rows(payload: Mapping[str, object]) -> list[object]:
+    value = payload.get("paragraphs")
+    return value if isinstance(value, list) else [payload]
+
+
+def citation_only_repair_eligible(payload: Mapping[str, object]) -> bool:
+    rows = _repair_rows(payload)
+    return bool(rows) and all(
+        isinstance(row, dict)
+        and isinstance(row.get("receipt_ids"), list)
+        and isinstance(row.get("text") or row.get("sentence"), str)
+        and not _INTERNAL_SENTENCE_BOUNDARY_RE.search(
+            str(row.get("text") or row.get("sentence")),
+        )
+        for row in rows
+    )
+
+
+def citation_only_repair(
+    before: Mapping[str, object], after: Mapping[str, object], accepted_ids: set[str],
+) -> bool:
+    def prose(text: str, ids: list[object]) -> str:
+        text = _INLINE_RECEIPT_RE.sub(
+            lambda match: "" if match.group(1) in ids else match.group(), text,
+        )
+        text = " ".join(text.split())
+        return re.sub(r"\s+([.!?,;:])", r"\1", text)
+
+    original, repaired = _repair_rows(before), _repair_rows(after)
+    if not citation_only_repair_eligible(before) or len(original) != len(repaired):
+        return False
+    for old, new in zip(original, repaired, strict=True):
+        if not isinstance(old, dict) or not isinstance(new, dict):
+            return False
+        ids, new_ids = old.get("receipt_ids"), new.get("receipt_ids")
+        old_text = old.get("text") or old.get("sentence")
+        new_text = new.get("text") or new.get("sentence")
+        if (
+            not isinstance(ids, list) or new_ids != ids
+            or not set(map(str, ids)) <= accepted_ids
+            or not isinstance(old_text, str) or not isinstance(new_text, str)
+            or prose(old_text, ids) != prose(new_text, ids)
+        ):
+            return False
+        old_tokens = _INLINE_RECEIPT_RE.findall(old_text)
+        new_tokens = _INLINE_RECEIPT_RE.findall(new_text)
+        old_known = [token for token in old_tokens if token in ids]
+        new_known = [token for token in new_tokens if token in ids]
+        if (
+            [token for token in old_tokens if token not in ids]
+            != [token for token in new_tokens if token not in ids]
+            or (old_known and new_known != old_known)
+            or (not old_known and not new_known)
+        ):
+            return False
+    return True
 
 
 def repair_receipt_ids(
@@ -245,7 +307,9 @@ def _check_anchored_paragraph(
     if not cited:
         return False, f"no_accepted_anchor:{list(receipt_ids)}"
     inline = re.compile(r"(?<![A-Za-z0-9_-])(?:" + "|".join(map(re.escape, cited)) + r")(?![A-Za-z0-9_-])")
-    protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
+    protected = _CONTINUING_ABBREVIATION_RE.sub(
+        lambda match: match.group().replace(".", "<DOT>"), text,
+    )
     if any(not inline.search(sentence) for sentence in _SENTENCE_BREAK_RE.split(protected)):
         return False, "missing_inline_anchor"
     for m in _NUMERIC_RE.finditer(inline.sub("", text)):
@@ -302,6 +366,7 @@ def build_anchored_from_parsed(
     name: SectionName,
     heading: str,
     accepted: Sequence[ReceiptSummary],
+    rejection_reasons: list[str] | None = None,
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
     accepted_numerics = _accepted_numeric_tokens(accepted)
@@ -341,6 +406,8 @@ def build_anchored_from_parsed(
                 for m in _NUMERIC_RE.finditer(text)
             ),
         ))
+    if rejection_reasons is not None:
+        rejection_reasons.extend(rejections)
     if not anchors:
         # Every paragraph failed anchor validation, so the caller falls back to
         # a ~15-word placeholder that cannot meet any section floor. The reason

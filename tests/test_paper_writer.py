@@ -248,7 +248,76 @@ def test_anchored_writer_repairs_missing_inline_receipts(monkeypatch) -> None:
     async def fake_call(**kwargs):
         prompt = str(kwargs["user_prompt"])
         prompts.append(prompt)
-        text = "Evidence remained mixed [r-a]." if "ANCHOR REPAIR REQUIRED" in prompt else "Evidence remained mixed."
+        if "RETRY GUIDANCE:" in prompt:
+            return {"paragraphs": [
+                {"text": "Evidence improved within a bounded population [r-a].", "receipt_ids": ["r-a"]},
+                {"text": "Evidence remained null in the direct trial [r-b].", "receipt_ids": ["r-b"]},
+            ]}
+        if "PREVIOUS JSON:" in prompt:
+            return {"paragraphs": [
+                {"text": "Evidence improved [r-a].", "receipt_ids": ["r-a"]},
+                {"text": "Evidence remained null [r-b].", "receipt_ids": ["r-b"]},
+            ]}
+        return {"paragraphs": [
+            {"text": "Evidence improved.", "receipt_ids": ["r-a"]},
+            {"text": "Evidence remained null.", "receipt_ids": ["r-b"]},
+        ]}
+
+    async def no_citation_fix(section, **_kwargs):
+        return section
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", fake_call)
+    monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", no_citation_fix)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 2)
+    monkeypatch.setattr(paper_writer, "SECTION_WORD_FLOORS", {"abstract": 10})
+
+    section = asyncio.run(paper_writer._write_anchored_section(
+        name="abstract", heading="## Abstract", system_prompt="system",
+        user_prompt="base", accepted=[_summary("r-a"), _summary("r-b")], chain=(), client=None,
+        ledger=None, seed=None, fallback_body="fallback",
+    ))
+
+    assert "[r-a]" in section.body_md and "[r-b]" in section.body_md
+    assert '"receipt_ids": ["r-a"]' in prompts[1]
+    assert '"receipt_ids": ["r-b"]' in prompts[1]
+    assert "Do not add, remove, or substitute sources" in prompts[1]
+    assert "bounded population" in section.body_md
+    assert len(prompts) == 3
+
+
+def test_citation_only_repair_rejects_content_or_source_changes() -> None:
+    before = {"paragraphs": [
+        {"text": "Bounded finding [r-a].", "receipt_ids": ["r-a"]},
+        {"text": "Outcome [not assessed] remained uncertain.", "receipt_ids": ["r-b"]},
+    ]}
+    assert paper_writer.citation_only_repair(
+        before,
+        {"paragraphs": [
+            {"text": "Bounded finding [r-a].", "receipt_ids": ["r-a"]},
+            {"text": "Outcome [not assessed] remained uncertain [r-b].", "receipt_ids": ["r-b"]},
+        ]},
+        {"r-a", "r-b"},
+    )
+    for invalid in (
+        {"paragraphs": [{"text": "Bounded finding [r-b].", "receipt_ids": ["r-a"]}, *before["paragraphs"][1:]]},
+        {"paragraphs": [{"text": "Changed finding [r-a].", "receipt_ids": ["r-a"]}, *before["paragraphs"][1:]]},
+        {"paragraphs": [before["paragraphs"][0], {"text": "Outcome [fabricated] remained uncertain [r-b].", "receipt_ids": ["r-b"]}]},
+    ):
+        assert not paper_writer.citation_only_repair(before, invalid, {"r-a", "r-b"})
+    for internal_boundary in ("U.S. cohort", "Dr. report", "Corp. RCT", 'Fig. **S1**'):
+        assert not paper_writer.citation_only_repair(
+            {"text": f"The source was {internal_boundary} and bounded.", "receipt_ids": ["r-a"]},
+            {"text": f"The source was {internal_boundary} and bounded [r-a].", "receipt_ids": ["r-a"]},
+            {"r-a"},
+        )
+
+
+def test_anchored_writer_regenerates_non_citation_failure(monkeypatch) -> None:
+    prompts: list[str] = []
+
+    async def fake_call(**kwargs):
+        prompts.append(str(kwargs["user_prompt"]))
+        text = "Unsupported result was 999 percent [r-a]." if len(prompts) == 1 else "Result remained bounded [r-a]."
         return {"paragraphs": [{"text": text, "receipt_ids": ["r-a"]}]}
 
     async def no_citation_fix(section, **_kwargs):
@@ -264,8 +333,35 @@ def test_anchored_writer_repairs_missing_inline_receipts(monkeypatch) -> None:
         ledger=None, seed=None, fallback_body="fallback",
     ))
 
-    assert "[r-a]" in section.body_md
+    assert "Result remained bounded" in section.body_md
     assert len(prompts) == 2
+    assert "ANCHOR REPAIR REQUIRED" not in prompts[1]
+
+
+def test_anchored_writer_regenerates_multi_sentence_failure(monkeypatch) -> None:
+    prompts: list[str] = []
+
+    async def fake_call(**kwargs):
+        prompts.append(str(kwargs["user_prompt"]))
+        text = "Evidence improved. Outcome remained null." if len(prompts) == 1 else "Outcome remained bounded [r-a]."
+        return {"paragraphs": [{"text": text, "receipt_ids": ["r-a"]}]}
+
+    async def no_citation_fix(section, **_kwargs):
+        return section
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", fake_call)
+    monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", no_citation_fix)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 1)
+
+    section = asyncio.run(paper_writer._write_anchored_section(
+        name="abstract", heading="## Abstract", system_prompt="system",
+        user_prompt="base", accepted=[_summary("r-a")], chain=(), client=None,
+        ledger=None, seed=None, fallback_body="fallback",
+    ))
+
+    assert "Outcome remained bounded" in section.body_md
+    assert len(prompts) == 2
+    assert "ANCHOR REPAIR REQUIRED" not in prompts[1]
 
 
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:

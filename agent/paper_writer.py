@@ -1,6 +1,7 @@
 """Full-paper writer for trust-spine synthesis manuscripts."""
 from __future__ import annotations
 
+import json
 import os
 import re
 from collections.abc import Mapping, Sequence
@@ -18,6 +19,8 @@ from agent.paper_writer_builders import (
     build_anchored_from_parsed,
     build_results_from_parsed,
     build_scoped_from_parsed,
+    citation_only_repair,
+    citation_only_repair_eligible,
 )
 from agent.paper_writer_citations import (
     build_background_lit_block as _build_background_lit_block,
@@ -334,6 +337,7 @@ async def _write_anchored_section(
     best: SynthesisSection | None = None
     best_words = 0
     current_prompt = user_prompt
+    rejected_json: Mapping[str, Any] | None = None
     for attempt in range(SECTION_RETRY_BUDGET + 1):
         parsed = await _call_llm_section(
             system_prompt=system_prompt, user_prompt=current_prompt,
@@ -352,8 +356,17 @@ async def _write_anchored_section(
                 flush=True,
             )
             continue
+        if rejected_json is not None:
+            if not citation_only_repair(
+                rejected_json, parsed, {receipt.receipt_id for receipt in accepted},
+            ):
+                print(f"[paper_writer] {name}: citation repair changed content", flush=True)
+                continue
+            rejected_json = None
+        rejection_reasons: list[str] = []
         section = build_anchored_from_parsed(
             parsed, name=name, heading=heading, accepted=accepted,
+            rejection_reasons=rejection_reasons,
         )
         if section is None:
             print(
@@ -362,13 +375,21 @@ async def _write_anchored_section(
                 f"(attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1})",
                 flush=True,
             )
-            sample_id = accepted[0].receipt_id if accepted else "r-a"
-            current_prompt = (
-                f"{user_prompt}\n\nANCHOR REPAIR REQUIRED: The previous JSON was rejected. "
-                "Every sentence in each text/sentence value must contain an exact accepted "
-                f'receipt ID, for example: "The finding was mixed [{sample_id}]." '
-                "List that same ID in receipt_ids. Return JSON only."
-            )
+            if rejection_reasons and all(
+                reason == "missing_inline_anchor" for reason in rejection_reasons
+            ) and citation_only_repair_eligible(parsed):
+                current_prompt = (
+                    f"{user_prompt}\n\nANCHOR REPAIR REQUIRED: The previous JSON was rejected. "
+                    "Repair only its citation formatting: preserve each paragraph's prose and "
+                    "receipt_ids mapping, and put the relevant ID from that paragraph's existing "
+                    "receipt_ids in square brackets in every sentence. Do not add, remove, or "
+                    "substitute sources. Return the complete repaired JSON only.\nPREVIOUS JSON:\n"
+                    + json.dumps(parsed, ensure_ascii=True)
+                )
+                rejected_json = parsed
+            else:
+                current_prompt = user_prompt
+                rejected_json = None
             continue
         words = _section_word_count(section)
         if words > best_words:
