@@ -47,6 +47,14 @@ def test_every_section_prompt_starts_with_numeric_discipline() -> None:
         )
 
 
+def test_scoped_prompts_match_builder_receipt_contract() -> None:
+    for prompt in (
+        INTRODUCTION_SYSTEM_PROMPT, BACKGROUND_SYSTEM_PROMPT,
+        DISCUSSION_SYSTEM_PROMPT, CONCLUSION_SYSTEM_PROMPT,
+    ):
+        assert "MUST list at least one accepted\nreceipt_id" in prompt
+
+
 def test_numeric_discipline_rule_names_specific_forbidden_examples() -> None:
     """The rule is concrete: it names actual MiMo-hallucination
     patterns from the latest E2E (0.8 m/s, 95% sensitivity, 1500 mg)."""

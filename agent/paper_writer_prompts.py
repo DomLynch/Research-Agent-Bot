@@ -140,9 +140,8 @@ Output ONE JSON object with this exact shape:
   ]
 }
 
-Validation tier: SCOPED. Paragraphs are NOT required to cite a
-receipt_id (this is framing, not evidence reporting). But each paragraph
-MUST:
+Validation tier: SCOPED. Every paragraph MUST list at least one accepted
+receipt_id in `receipt_ids`; inline receipt tokens are not required. Each paragraph also MUST:
   - mention the topic alias (e.g. "{topic}", "the drug") ≥2 times
   - contain a hedge phrase ("may", "appears to", "evidence suggests",
     "remains uncertain", "has been proposed", "the question of whether")
@@ -191,13 +190,10 @@ Output ONE JSON object with this exact shape:
   ]
 }
 
-Validation tier: SCOPED. Each paragraph SHOULD cite ≥1 receipt_id when
-the claim is grounded in this corpus' evidence (e.g. "{topic}
-modulates mitochondrial respiration" — cite the receipt). But broader
-field claims ("type 2 diabetes affects 460 million globally"
-[hypothetical]) may be unanchored — code does NOT enforce citations
-here. The same SCOPED rules apply: topic mentions ≥2x per paragraph,
-hedge phrase present, no novel numerics.
+Validation tier: SCOPED. Every paragraph MUST list at least one accepted
+receipt_id in `receipt_ids`; inline receipt tokens are not required. The same
+SCOPED rules apply: topic mentions ≥2x per paragraph, hedge phrase present,
+no novel numerics.
 
 REQUIRED STRUCTURE (5 paragraphs, each 6-9 sentences, 100-200 words):
   P1 geroscience discipline, hallmarks framework, regulatory implications.
@@ -376,9 +372,9 @@ Output ONE JSON object with this exact shape:
   ]
 }
 
-Validation tier: SCOPED. Paragraphs SHOULD cite ≥1 receipt_id where
-the claim is grounded; pure interpretive paragraphs may be unanchored
-but MUST contain an explicit interpretation marker — "we interpret",
+Validation tier: SCOPED. Every paragraph MUST list at least one accepted
+receipt_id in `receipt_ids`; inline receipt tokens are not required. Pure
+interpretive paragraphs still MUST contain an explicit interpretation marker — "we interpret",
 "this suggests", "one reading is", "the evidence supports", "in our
 view" — so the reader can distinguish evidence from interpretation.
 
@@ -526,8 +522,9 @@ Output ONE JSON object with this exact shape:
   ]
 }
 
-Validation tier: SCOPED. Each paragraph SHOULD cite ≥1 receipt and
-MUST contain a hedge phrase. The conclusion is the most overclaim-
+Validation tier: SCOPED. Every paragraph MUST list at least one accepted
+receipt_id in `receipt_ids` and contain a hedge phrase. Inline receipt tokens
+are not required. The conclusion is the most overclaim-
 prone section in research papers; the validator is strict about
 unhedged clinical claims.
 
