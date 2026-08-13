@@ -116,7 +116,7 @@ def test_cross_domain_requires_inline_ids_to_match_sentence_metadata() -> None:
     assert "invalid_sentence_record_contract" in reasons
 
 
-def test_cross_domain_drops_invalid_records_without_losing_valid_section() -> None:
+def test_cross_domain_normalizes_metadata_and_drops_invalid_records() -> None:
     accepted = [
         _accepted("r-a"),
         _accepted("r-b", outcome_class="frailty"),
@@ -125,7 +125,7 @@ def test_cross_domain_drops_invalid_records_without_losing_valid_section() -> No
         {
             "paragraph_index": group,
             "text": (
-                "Unanchored claim."
+                "Unanchored claim.  "
                 if row == 8 else
                 "Direct evidence supports change [r-a]."
                 if row % 2 else
@@ -142,7 +142,7 @@ def test_cross_domain_drops_invalid_records_without_losing_valid_section() -> No
         accepted=accepted,
     )
     assert section is not None
-    assert "Unanchored claim." not in section.body_md
+    assert "Unanchored claim [r-b]." in section.body_md
 
     for text, receipt_ids, expected_reason in (
         ("Mismatched citation claim [r-a].", ["r-b"], "missing_inline_anchor"),

@@ -299,6 +299,18 @@ def _paragraph_list(parsed: Mapping[str, object]) -> list[object]:
     return []
 
 
+def _materialize_inline_receipts(text: str, receipt_ids: Sequence[str]) -> str:
+    """Render canonical metadata inline when the sentence has no inline IDs."""
+    if not text.strip() or not receipt_ids or _INLINE_RECEIPT_RE.search(text):
+        return text
+    text = text.rstrip()
+    citations = " ".join(f"[{receipt_id}]" for receipt_id in receipt_ids)
+    ending = re.search(r"([.!?][^\w\s]*)$", text)
+    if not ending:
+        return f"{text.rstrip()} {citations}"
+    return f"{text[:ending.start()].rstrip()} {citations}{ending.group(1)}"
+
+
 def _check_anchored_paragraph(
     text: str,
     receipt_ids: Sequence[str],
@@ -394,6 +406,8 @@ def build_anchored_from_parsed(
         repaired_rids, _repair_log = repair_receipt_ids(
             [str(r) for r in rids], accepted_ids,
         )
+        if name == "cross_domain_synthesis":
+            text = _materialize_inline_receipts(text, repaired_rids)
         ok, reason = _check_anchored_paragraph(
             text, repaired_rids, accepted_ids, accepted_numerics,
         )
