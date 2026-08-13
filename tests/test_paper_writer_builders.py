@@ -89,7 +89,6 @@ def test_cross_domain_rejects_partial_sentence_records() -> None:
     assert section is None
     assert "invalid_sentence_record_contract" in reasons
 
-
 def test_cross_domain_requires_sentence_record_indices() -> None:
     reasons: list[str] = []
     section = build_anchored_from_parsed(
@@ -111,6 +110,23 @@ def test_cross_domain_requires_inline_ids_to_match_sentence_metadata() -> None:
         }]},
         name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
         accepted=[_accepted("r-a"), _accepted("r-b")], rejection_reasons=reasons,
+    )
+    assert section is None
+    assert "invalid_sentence_record_contract" in reasons
+
+    reasons.clear()
+    section = build_anchored_from_parsed(
+        {"paragraphs": [
+            {
+                "paragraph_index": group,
+                "text": "Davies improved [r-a].",
+                "receipt_ids": ["r-a"],
+            }
+            for group in range(1, 5)
+            for _ in range(6)
+        ]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=[_accepted("r-a")], rejection_reasons=reasons,
     )
     assert section is None
     assert "invalid_sentence_record_contract" in reasons
@@ -196,22 +212,43 @@ def test_cross_domain_requires_four_to_six_balanced_paragraph_groups() -> None:
     assert section is None
     assert "invalid_sentence_record_contract" in reasons
 
-    reasons.clear()
+
+def test_cross_domain_recovers_valid_sentences_from_bad_grouping() -> None:
+    accepted = [_accepted("r-a"), _accepted("r-b", outcome_class="frailty")]
     section = build_anchored_from_parsed(
         {"paragraphs": [
             {
-                "paragraph_index": group,
-                "text": "Davies improved [r-a].",
-                "receipt_ids": ["r-a"],
+                "paragraph_index": 1,
+                "text": "Direct evidence supports change [r-a]." if row % 2
+                else "Frailty evidence remains uncertain [r-b].",
+                "receipt_ids": ["r-a" if row % 2 else "r-b"],
             }
-            for group in range(1, 5)
-            for _ in range(6)
+            for row in range(36)
         ]},
         name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
-        accepted=[_accepted("r-a")], rejection_reasons=reasons,
+        accepted=accepted,
+    )
+    assert section is not None
+    assert len(section.anchors) == 36
+    assert section.body_md.count("_Cited:") == 4
+
+
+def test_cross_domain_recovery_keeps_24_sentence_floor() -> None:
+    accepted = [_accepted("r-a"), _accepted("r-b", outcome_class="frailty")]
+    section = build_anchored_from_parsed(
+        {"paragraphs": [
+            {
+                "paragraph_index": 1,
+                "text": "Direct evidence supports change [r-a]." if row % 2
+                else "Frailty evidence remains uncertain [r-b].",
+                "receipt_ids": ["r-a" if row % 2 else "r-b"],
+            }
+            for row in range(20)
+        ]},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=accepted,
     )
     assert section is None
-    assert "invalid_sentence_record_contract" in reasons
 
 
 def test_cross_domain_retains_four_valid_groups_when_one_group_is_invalid() -> None:

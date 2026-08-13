@@ -51,7 +51,8 @@ def citation_only_repair_eligible(payload: Mapping[str, object]) -> bool:
         isinstance(row, dict)
         and isinstance(row.get("receipt_ids"), list) and bool(row.get("receipt_ids"))
         and isinstance(row.get("text") or row.get("sentence"), str)
-        and not _has_internal_sentence_boundary(str(row.get("text") or row.get("sentence")))
+        and (not _has_internal_sentence_boundary(str(row.get("text") or row.get("sentence")))
+             or len(set(map(str, row["receipt_ids"]))) == 1)
         for row in rows
     )
 
@@ -92,8 +93,17 @@ def citation_only_repair(
         ):
             return False
         expected = list(map(str, ids))
-        old_mapped = [token for token in old_tokens if token in ids]
-        if new_known != (old_mapped or expected):
+        protected = _CONTINUING_ABBREVIATION_RE.sub(
+            lambda match: match.group().replace(".", "<DOT>"), new_text)
+        sentence_ids = [
+            {token for token in _INLINE_RECEIPT_RE.findall(sentence) if token in ids}
+            for sentence in _SENTENCE_BREAK_RE.split(protected)
+        ]
+        if (
+            set(new_known) != set(expected)
+            or (len(sentence_ids) > 1
+                and any(sentence != set(expected) for sentence in sentence_ids))
+        ):
             return False
     return True
 
@@ -346,6 +356,33 @@ def _check_anchored_paragraph(
     return True, "ok"
 
 
+def _balanced_cross_domain_groups(
+    records: Sequence[tuple[str, list[str], SynthesisClaimAnchor]],
+    accepted_outcomes: Mapping[str, str],
+) -> tuple[dict[str, tuple[list[str], list[str]]], list[SynthesisClaimAnchor]] | None:
+    records = records[:54]
+    if len(records) < 24:
+        return None
+    for group_count in range(4, 7):
+        if not 5 * group_count <= len(records) <= 9 * group_count:
+            continue
+        base, extra = divmod(len(records), group_count)
+        groups: dict[str, tuple[list[str], list[str]]] = {}
+        kept: list[SynthesisClaimAnchor] = []
+        offset = 0
+        for index in range(1, group_count + 1):
+            chunk = records[offset:offset + base + (index <= extra)]
+            offset += len(chunk)
+            ids = list(dict.fromkeys(rid for _, rids, _ in chunk for rid in rids))
+            if len(ids) < 2 or len({accepted_outcomes[rid] for rid in ids}) < 2:
+                break
+            groups[str(index)] = ([text for text, _, _ in chunk], ids)
+            kept.extend(anchor for _, _, anchor in chunk)
+        else:
+            return groups, kept
+    return None
+
+
 _HEDGE_PHRASES = (
     "may ", "appears to", "evidence suggests", "remains uncertain",
     "has been proposed", "the question of whether", "we interpret",
@@ -393,7 +430,7 @@ def build_anchored_from_parsed(
     anchors: list[SynthesisClaimAnchor] = []
     rejections: list[str] = []
     grouped: dict[str, tuple[list[str], list[str]]] = {}
-    cross_domain_indices: list[int] = []
+    cross_domain_records: list[tuple[int | None, str, list[str], SynthesisClaimAnchor]] = []
     for entry in paragraphs:
         if not isinstance(entry, dict):
             continue
@@ -414,59 +451,67 @@ def build_anchored_from_parsed(
         if not ok:
             rejections.append(reason)
             continue
-        paragraph_index = entry.get("paragraph_index")
-        if name == "cross_domain_synthesis":
-            if (
-                Counter(_INLINE_RECEIPT_RE.findall(text)) != Counter(repaired_rids)
-                or isinstance(paragraph_index, bool)
-                or not isinstance(paragraph_index, int)
-                or not 1 <= paragraph_index <= 6
-                or _has_internal_sentence_boundary(text)
-            ):
-                rejections.append("invalid_sentence_record_contract")
-                continue
-            cross_domain_indices.append(paragraph_index)
-        if paragraph_index is None:
-            body_lines.extend((text.strip(), "", f"  _Cited: {', '.join(f'`{i}`' for i in repaired_rids)}_", ""))
-        else:
-            group_text, group_ids = grouped.setdefault(str(paragraph_index), ([], []))
-            group_text.append(text.strip())
-            group_ids.extend(rid for rid in repaired_rids if rid not in group_ids)
-        anchors.append(SynthesisClaimAnchor(
+        anchor = SynthesisClaimAnchor(
             sentence=text.strip(),
             receipt_ids=tuple(repaired_rids),
             numerics=tuple(
                 _numeric_token(m.group(0))
                 for m in _NUMERIC_RE.finditer(text)
             ),
-        ))
+        )
+        paragraph_index = entry.get("paragraph_index")
+        if name == "cross_domain_synthesis":
+            if (
+                Counter(_INLINE_RECEIPT_RE.findall(text)) != Counter(repaired_rids)
+                or _has_internal_sentence_boundary(text)
+            ):
+                rejections.append("invalid_sentence_record_contract")
+                continue
+            if (
+                isinstance(paragraph_index, bool)
+                or not isinstance(paragraph_index, int)
+                or not 1 <= paragraph_index <= 6
+            ):
+                rejections.append("invalid_sentence_record_contract")
+                paragraph_index = None
+            cross_domain_records.append((paragraph_index, text.strip(), repaired_rids, anchor))
+        if paragraph_index is None:
+            if name != "cross_domain_synthesis":
+                body_lines.extend((text.strip(), "", f"  _Cited: {', '.join(f'`{i}`' for i in repaired_rids)}_", ""))
+        else:
+            group_text, group_ids = grouped.setdefault(str(paragraph_index), ([], []))
+            group_text.append(text.strip())
+            group_ids.extend(rid for rid in repaired_rids if rid not in group_ids)
+        anchors.append(anchor)
     if name == "cross_domain_synthesis":
-        index_counts = Counter(cross_domain_indices)
+        index_counts = Counter(index for index, *_ in cross_domain_records if index is not None)
         valid_indices = {
             index for index, count in index_counts.items()
             if 5 <= count <= 9
             and len(grouped[str(index)][1]) >= 2
             and len({accepted_outcomes[rid] for rid in grouped[str(index)][1]}) >= 2
         }
-        if len(valid_indices) != len(index_counts):
-            rejections.append("invalid_sentence_record_contract")
-        if (
-            not 4 <= len(valid_indices) <= 6
-            or sum(index_counts[index] for index in valid_indices) < 24
-        ):
-            if "invalid_sentence_record_contract" not in rejections:
-                rejections.append("invalid_sentence_record_contract")
-            anchors.clear()
-            grouped.clear()
-        else:
+        declared_layout_ok = (
+            4 <= len(valid_indices) <= 6
+            and sum(index_counts[index] for index in valid_indices) >= 24
+        )
+        if declared_layout_ok:
             anchors = [
-                anchor for index, anchor in zip(cross_domain_indices, anchors, strict=True)
+                anchor for index, _, _, anchor in cross_domain_records
                 if index in valid_indices
             ]
             grouped = {
                 key: value for key, value in grouped.items()
                 if int(key) in valid_indices
             }
+        else:
+            if "invalid_sentence_record_contract" not in rejections:
+                rejections.append("invalid_sentence_record_contract")
+            recovered = _balanced_cross_domain_groups(
+                [(text, ids, anchor) for _, text, ids, anchor in cross_domain_records],
+                accepted_outcomes,
+            )
+            grouped, anchors = recovered or ({}, [])
     for group_text, group_ids in grouped.values():
         body_lines.extend((
             " ".join(group_text), "",

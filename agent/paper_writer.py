@@ -362,6 +362,7 @@ async def _write_anchored_section(
                 rejected_json, parsed, {receipt.receipt_id for receipt in accepted},
             ):
                 print(f"[paper_writer] {name}: citation repair changed content", flush=True)
+                rejected_json, current_prompt = None, user_prompt
                 continue
             rejected_json = None
         rejection_reasons: list[str] = []

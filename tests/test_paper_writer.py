@@ -273,7 +273,7 @@ def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> No
     ))
 
     assert "[r-a]" in section.body_md and "[r-b]" in section.body_md
-    assert len(prompts) == 2
+    assert len(prompts) == 3
 
 
 def test_citation_only_repair_rejects_content_or_source_changes() -> None:
@@ -295,10 +295,18 @@ def test_citation_only_repair_rejects_content_or_source_changes() -> None:
         {"paragraphs": [before["paragraphs"][0], {"text": "Outcome [fabricated] remained uncertain [r-b].", "receipt_ids": ["r-b"]}]},
     ):
         assert not paper_writer.citation_only_repair(before, invalid, {"r-a", "r-b"})
-    assert not paper_writer.citation_only_repair(
+    assert paper_writer.citation_only_repair(
         {"text": "Evidence improved. Outcome remained null.", "receipt_ids": ["r-a"]},
         {"text": "Evidence improved [r-a]. Outcome remained null [r-a].", "receipt_ids": ["r-a"]},
         {"r-a"},
+    )
+    assert not paper_writer.citation_only_repair(
+        {"text": "Evidence improved [r-a]. Outcome remained null [r-b].", "receipt_ids": ["r-a", "r-b"]},
+        {"text": "Evidence improved [r-b]. Outcome remained null [r-a].", "receipt_ids": ["r-a", "r-b"]},
+        {"r-a", "r-b"},
+    )
+    assert not paper_writer.citation_only_repair_eligible(
+        {"text": "Evidence improved. Outcome remained null.", "receipt_ids": ["r-a", "r-b"]},
     )
     assert paper_writer.citation_only_repair(
         {"text": "The combined evidence remained mixed.", "receipt_ids": ["r-a", "r-b"]},
