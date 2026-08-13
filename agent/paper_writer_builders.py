@@ -299,23 +299,6 @@ def _paragraph_list(parsed: Mapping[str, object]) -> list[object]:
     return []
 
 
-def _add_missing_inline_receipts(
-    text: str, receipt_ids: Sequence[str],
-) -> str:
-    """Add validated metadata citations only when a sentence has none."""
-    if not text.strip() or not receipt_ids or _has_internal_sentence_boundary(text):
-        return text
-    tokens = _INLINE_RECEIPT_RE.findall(text)
-    if tokens:
-        return text
-    prose = " ".join(text.split())
-    citations = " ".join(f"[{receipt_id}]" for receipt_id in receipt_ids)
-    ending = re.search(r"([.!?][^\w\s]*)$", prose)
-    if ending:
-        return f"{prose[:ending.start()].rstrip()} {citations}{ending.group(1)}"
-    return f"{prose.rstrip()} {citations}"
-
-
 def _check_anchored_paragraph(
     text: str,
     receipt_ids: Sequence[str],
@@ -411,8 +394,6 @@ def build_anchored_from_parsed(
         repaired_rids, _repair_log = repair_receipt_ids(
             [str(r) for r in rids], accepted_ids,
         )
-        if name == "cross_domain_synthesis":
-            text = _add_missing_inline_receipts(text, repaired_rids)
         ok, reason = _check_anchored_paragraph(
             text, repaired_rids, accepted_ids, accepted_numerics,
         )
@@ -425,6 +406,7 @@ def build_anchored_from_parsed(
                 _INLINE_RECEIPT_RE.findall(text) != repaired_rids
                 or isinstance(paragraph_index, bool)
                 or not isinstance(paragraph_index, int)
+                or not 1 <= paragraph_index <= 6
                 or _has_internal_sentence_boundary(text)
             ):
                 rejections.append("invalid_sentence_record_contract")
@@ -455,7 +437,8 @@ def build_anchored_from_parsed(
         if (
             set(index_counts) != expected_indices
             or not 4 <= len(index_counts) <= 6
-            or any(not 6 <= count <= 9 for count in index_counts.values())
+            or len(anchors) < 24
+            or any(not 5 <= count <= 9 for count in index_counts.values())
             or any(
                 len(group_ids) < 2
                 or len({accepted_outcomes[rid] for rid in group_ids}) < 2
