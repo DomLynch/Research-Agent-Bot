@@ -299,6 +299,23 @@ def _paragraph_list(parsed: Mapping[str, object]) -> list[object]:
     return []
 
 
+def _add_missing_inline_receipts(
+    text: str, receipt_ids: Sequence[str],
+) -> str:
+    """Add validated metadata citations only when a sentence has none."""
+    if not text.strip() or not receipt_ids or _has_internal_sentence_boundary(text):
+        return text
+    tokens = _INLINE_RECEIPT_RE.findall(text)
+    if tokens:
+        return text
+    prose = " ".join(text.split())
+    citations = " ".join(f"[{receipt_id}]" for receipt_id in receipt_ids)
+    ending = re.search(r"([.!?][^\w\s]*)$", prose)
+    if ending:
+        return f"{prose[:ending.start()].rstrip()} {citations}{ending.group(1)}"
+    return f"{prose.rstrip()} {citations}"
+
+
 def _check_anchored_paragraph(
     text: str,
     receipt_ids: Sequence[str],
@@ -395,15 +412,17 @@ def build_anchored_from_parsed(
         repaired_rids, _repair_log = repair_receipt_ids(
             [str(r) for r in rids], accepted_ids,
         )
+        if name == "cross_domain_synthesis":
+            text = _add_missing_inline_receipts(text, repaired_rids)
         ok, reason = _check_anchored_paragraph(
             text, repaired_rids, accepted_ids, accepted_numerics,
         )
         if not ok:
             rejections.append(reason)
             continue
-        if name == "cross_domain_synthesis" and [
-            token for token in _INLINE_RECEIPT_RE.findall(text) if token in accepted_ids
-        ] != repaired_rids:
+        if name == "cross_domain_synthesis" and (
+            _INLINE_RECEIPT_RE.findall(text) != repaired_rids
+        ):
             sentence_contract_valid = False
         paragraph_index = entry.get("paragraph_index")
         if name == "cross_domain_synthesis":

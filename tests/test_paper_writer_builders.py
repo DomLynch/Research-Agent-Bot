@@ -87,7 +87,6 @@ def test_cross_domain_rejects_partial_sentence_records() -> None:
         accepted=[_accepted("r-a"), _accepted("r-b")], rejection_reasons=reasons,
     )
     assert section is None
-    assert "missing_inline_anchor" in reasons
     assert "invalid_sentence_record_contract" in reasons
 
 
@@ -115,6 +114,43 @@ def test_cross_domain_requires_inline_ids_to_match_sentence_metadata() -> None:
     )
     assert section is None
     assert "invalid_sentence_record_contract" in reasons
+
+
+def test_cross_domain_repairs_one_missing_inline_receipt_without_model_retry() -> None:
+    accepted = [
+        _accepted("r-a"),
+        _accepted("r-b", outcome_class="frailty"),
+    ]
+    paragraphs = [
+        {
+            "paragraph_index": group,
+            "text": "Direct evidence supports change [r-a]." if row % 2 else "Frailty evidence remains uncertain.",
+            "receipt_ids": ["r-a" if row % 2 else "r-b"],
+        }
+        for group in range(1, 5)
+        for row in range(1, 7)
+    ]
+    section = build_anchored_from_parsed(
+        {"paragraphs": paragraphs},
+        name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+        accepted=accepted,
+    )
+    assert section is not None
+    assert "Frailty evidence remains uncertain [r-b]." in section.body_md
+
+    for text, receipt_ids, expected_reason in (
+        ("Direct evidence supports change [r-a].", ["r-b"], "invalid_sentence_record_contract"),
+        ("Direct evidence supports change [r-a] [fabricated].", ["r-a"], "invalid_sentence_record_contract"),
+        ("", ["r-a"], "empty_paragraph"),
+    ):
+        paragraphs[0].update(text=text, receipt_ids=receipt_ids)
+        reasons: list[str] = []
+        assert build_anchored_from_parsed(
+            {"paragraphs": paragraphs},
+            name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
+            accepted=accepted, rejection_reasons=reasons,
+        ) is None
+        assert expected_reason in reasons
 
 
 def test_cross_domain_requires_four_to_six_balanced_paragraph_groups() -> None:
