@@ -6519,9 +6519,9 @@ def test_revise_prose_consistency_feedback_keeps_source_manifest(tmp_path: Path,
     feedback_seen: list[str | None] = []
     monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen))
     feedback = (
-        "Reconcile the Methods funnel arithmetic; either remove the funnel numbers "
-        "and state the corpus size directly. Soften or remove the positive framing "
-        "because only 3/19 sources are coded positive."
+        "Remove or substantially revise the generic, non-topic-specific paragraphs "
+        "in the Limitations and Results sections that appear to be template boilerplate "
+        "rather than analysis of this specific evidence base."
     )
 
     ledger = cycle.run_cycle(
@@ -6536,6 +6536,7 @@ def test_revise_prose_consistency_feedback_keeps_source_manifest(tmp_path: Path,
     )
 
     assert ledger["corpus"]["source"] == "existing_source_manifest"
+    assert not cycle._revision_requests_source_precision(feedback)
     assert feedback_seen == []
     assert ledger["attempts"][0]["existing_work_reused"] is True
     assert ledger["attempts"][0]["submitted"] == 1
@@ -10099,6 +10100,28 @@ def test_preflight_uses_revise_source_run_over_newer_manifestless_run(tmp_path: 
     assert "latest_run_missing_manifest" not in preflight["reasons"]
 
 
+def test_preflight_does_not_replace_missing_reviewed_source_with_another_run(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    topic = "cardiovascular_subgroups"
+    _topic(tmp_path, topic, target_journal=True)
+    _prior_run(tmp_path, topic, receipts=37, tensions=113, level=5)
+    missing_source = tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-reviewed"
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+
+    preflight = cycle._preflight(
+        topic,
+        tmp_path / "runs",
+        tmp_path / "runs" / cycle.LEDGER_DIR,
+        current_quant_claims=39,
+        source_run=missing_source,
+    )
+
+    assert preflight["passed"] is False
+    assert preflight["latest_run"] == missing_source.name
+    assert preflight["reasons"] == ["latest_run_missing_manifest"]
+
+
 def test_preflight_blocks_revise_source_run_without_manifest(tmp_path: Path, monkeypatch) -> None:
     topic = "therapeutic_plasma_exchange"
     _topic(tmp_path, topic, target_journal=True)
@@ -13293,6 +13316,8 @@ def test_revise_source_precision_repair_clears_recent_failure_cooldown(tmp_path:
         "topic": topic,
         "fingerprint": cycle.submit_bridge._sha256(paper),
     }])
+    # An unrelated partial run must not replace the exact reviewed source in preflight.
+    (tmp_path / "runs" / f"synthesis-{topic}-v06-DAILY-partial").mkdir()
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     cycle._record_blockers(
         ledger_dir,
@@ -13514,16 +13539,26 @@ def test_revision_source_precision_is_clause_and_negation_aware() -> None:
     )
 
 
-def test_revision_source_precision_ignores_prose_only_consistency_requests() -> None:
-    assert not cycle._revision_requests_source_precision(
-        "Reconcile the Methods funnel arithmetic so the admitted-source count and "
-        "classified-candidate count are consistent; either report actual candidate "
-        "counts or remove the funnel numbers and state the corpus size directly."
-    )
-    assert not cycle._revision_requests_source_precision(
-        "Soften or remove the 'overwhelmingly positive' framing because the Findings "
-        "Map shows only 3/19 sources coded positive."
-    )
+@pytest.mark.parametrize(("expected", "feedback"), [
+    (False, "Reconcile Methods funnel arithmetic; remove the funnel numbers."),
+    (False, "Remove positive framing because only 3/19 sources are coded positive."),
+    (False, "Revise the evidence narrative to make the topic-specific wording less generic."),
+    (False, "Remove the evidence narrative because it is off-topic boilerplate."),
+    (False, "Replace the evidence wording with topic-specific prose."),
+    (False, "Remove the narrative about unrelated evidence from the Discussion."),
+    (True, "Remove sources whose prose is unrelated to the topic."),
+    (False, "Narrow the manuscript claims to only evidence directly supported by topic-specific sources."),
+    (False, "Revise the Discussion claims to reflect only direct evidence."),
+    (False, "Remove the evidence's off-topic wording from Discussion."),
+    (True, "Remove clearly unrelated sources."),
+    (True, "Clarify how many of the 52 sources directly address the topic."),
+    (False, "Revise the indirect evidence wording to be more topic-specific."),
+    (False, "Remove the off-topic evidence paragraph from Results."),
+])
+def test_revision_source_precision_distinguishes_prose_from_sources(
+    expected: bool, feedback: str,
+) -> None:
+    assert cycle._revision_requests_source_precision(feedback) is expected
 
 
 def test_revise_lane_does_not_reseed_recent_unrepairable_source_precision(tmp_path: Path, monkeypatch) -> None:

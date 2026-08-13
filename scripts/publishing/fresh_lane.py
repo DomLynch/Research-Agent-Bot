@@ -1134,6 +1134,21 @@ def _source_precision_repair_candidate(topic: str) -> bool:
 def _revision_requests_source_precision(feedback: str) -> bool:
     text = str(feedback or "").lower()
     decision: bool | None = None
+    repair_verbs = r"clarify|exclude|fix|narrow|rebuild|reclassify|remove|replace|reset|revise|swap|verify"
+    source_modifiers = (
+        r"actual(?:ly)?|adjacent|all|any|bundle|current|direct(?:ly)?|each|evidence|existing|"
+        r"how|included|indirect|many|off[ -]?topic|only|retained|source|that|the|these|this|those|"
+        r"topic[ -]?specific|unrelated|what|which|whose|with|from|in|of|[a-z]+ly|[0-9]+"
+    )
+    surface_heads = (
+        r"abstract|claims?|conclusions?|description|discussion|framing|limitations?|methods?|"
+        r"narrative|paragraphs?|prose|results?|sections?|tables?|text|wording"
+    )
+    source_objects = (
+        r"sources|stud(?:y|ies)|trials?|papers?|records?|corpus|(?:source|evidence)\s+bundle|"
+        rf"(?:actual|adjacent|direct|indirect|off[ -]?topic|unrelated|topic[ -]?specific)\s+evidence"
+        rf"(?!(?:['’]s)?(?:\s+[\w-]+){{0,2}}\s+(?:{surface_heads})\b)"
+    )
     for clause in re.split(
         r"[.;\n]+|\b(?:but|except|while|then)\b", text,
     ):
@@ -1154,15 +1169,11 @@ def _revision_requests_source_precision(feedback: str) -> bool:
             r"topic[ -]?specific|actually|only)\b",
             clause,
         )
-        action = re.search(
-            r"\b(?:clarify|exclude|fix|narrow|rebuild|reclassify|remove|replace|reset|revise|swap|verify)\b", clause)
-        non_source_surface_action = re.search(
-            r"\b(?:clarify|fix|remove|replace|revise)\b.{0,80}"
-            r"\b(?:arithmetic|boilerplate|counts?|framing|funnel|narrative|"
-            r"numbers?|numerics?|prose|sentences?|title|wording)\b", clause)
         source_action = re.search(
-            r"\b(?:clarify|exclude|fix|narrow|rebuild|reclassify|remove|replace|reset|revise|swap|verify)\b"
-            r"(?:\s+\w+){0,4}\s+(?:sources?|evidence|stud(?:y|ies)|trials?|papers?|records?|corpus|bundle)\b", clause)
+            rf"\b(?:{repair_verbs})\b(?:\s+(?:{source_modifiers})){{0,8}}\s+"
+            rf"(?:{source_objects})\b",
+            clause,
+        )
         negated_action = re.search(
             r"\b(?:(?:do|does|should|must|shall|can|could|would)(?:\s+not|n['’]?t)|"
             r"don['’]?t|never|not\s+to|(?:there\s+is\s+)?no\s+need\s+to)\s+"
@@ -1174,7 +1185,7 @@ def _revision_requests_source_precision(feedback: str) -> bool:
         if evidence and scope:
             if negated_action:
                 decision = False
-            elif (action or "off-topic" in clause) and (not non_source_surface_action or source_action):
+            elif source_action is not None:
                 decision = True
     return bool(decision)
 
@@ -2698,7 +2709,7 @@ def _preflight(
     ignore_recent_failures: bool = False,
     source_run: Path | None = None, prepared_candidate: bool = False,
 ) -> dict[str, Any]:
-    latest = source_run if source_run and source_run.is_dir() else _latest_topic_run(topic, runs_root)
+    latest = source_run if source_run is not None else _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
     publication_track = _publication_track_topic(topic)
     reasons = []
@@ -5171,11 +5182,7 @@ def run_cycle(
                         or source_precision_repair_cleared
                     )
                 ),
-                source_run=(
-                    revision_source_run
-                    if revision_source and not revision_source_repair
-                    else None
-                ),
+                source_run=revision_source_run if revision_source else None,
                 prepared_candidate=not revision_source and selected in _prepared_candidate_topics(ledger_dir),
             )
             if not preflight["passed"]:
