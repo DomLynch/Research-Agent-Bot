@@ -397,7 +397,6 @@ def build_anchored_from_parsed(
     anchors: list[SynthesisClaimAnchor] = []
     rejections: list[str] = []
     grouped: dict[str, tuple[list[str], list[str]]] = {}
-    sentence_contract_valid = True
     cross_domain_indices: list[int] = []
     for entry in paragraphs:
         if not isinstance(entry, dict):
@@ -420,16 +419,17 @@ def build_anchored_from_parsed(
         if not ok:
             rejections.append(reason)
             continue
-        if name == "cross_domain_synthesis" and (
-            _INLINE_RECEIPT_RE.findall(text) != repaired_rids
-        ):
-            sentence_contract_valid = False
         paragraph_index = entry.get("paragraph_index")
         if name == "cross_domain_synthesis":
-            if isinstance(paragraph_index, bool) or not isinstance(paragraph_index, int):
-                sentence_contract_valid = False
-            else:
-                cross_domain_indices.append(paragraph_index)
+            if (
+                _INLINE_RECEIPT_RE.findall(text) != repaired_rids
+                or isinstance(paragraph_index, bool)
+                or not isinstance(paragraph_index, int)
+                or _has_internal_sentence_boundary(text)
+            ):
+                rejections.append("invalid_sentence_record_contract")
+                continue
+            cross_domain_indices.append(paragraph_index)
         if paragraph_index is None:
             body_lines.extend((text.strip(), "", f"  _Cited: {', '.join(f'`{i}`' for i in repaired_rids)}_", ""))
         else:
@@ -453,9 +453,7 @@ def build_anchored_from_parsed(
         index_counts = Counter(cross_domain_indices)
         expected_indices = set(range(1, len(index_counts) + 1))
         if (
-            not sentence_contract_valid
-            or len(anchors) != len(paragraphs)
-            or set(index_counts) != expected_indices
+            set(index_counts) != expected_indices
             or not 4 <= len(index_counts) <= 6
             or any(not 6 <= count <= 9 for count in index_counts.values())
             or any(
@@ -463,14 +461,9 @@ def build_anchored_from_parsed(
                 or len({accepted_outcomes[rid] for rid in group_ids}) < 2
                 for _, group_ids in grouped.values()
             )
-            or any(
-                not isinstance(entry, dict)
-                or entry.get("paragraph_index") is None
-                or _has_internal_sentence_boundary(str(entry.get("text") or entry.get("sentence") or ""))
-                for entry in paragraphs
-            )
         ):
-            rejections.append("invalid_sentence_record_contract")
+            if "invalid_sentence_record_contract" not in rejections:
+                rejections.append("invalid_sentence_record_contract")
             anchors.clear()
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)

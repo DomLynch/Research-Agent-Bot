@@ -128,7 +128,7 @@ def test_cross_domain_repairs_one_missing_inline_receipt_without_model_retry() -
             "receipt_ids": ["r-a" if row % 2 else "r-b"],
         }
         for group in range(1, 5)
-        for row in range(1, 7)
+        for row in range(1, 8)
     ]
     section = build_anchored_from_parsed(
         {"paragraphs": paragraphs},
@@ -139,17 +139,19 @@ def test_cross_domain_repairs_one_missing_inline_receipt_without_model_retry() -
     assert "Frailty evidence remains uncertain [r-b]." in section.body_md
 
     for text, receipt_ids, expected_reason in (
-        ("Direct evidence supports change [r-a].", ["r-b"], "invalid_sentence_record_contract"),
-        ("Direct evidence supports change [r-a] [fabricated].", ["r-a"], "invalid_sentence_record_contract"),
+        ("Mismatched citation claim [r-a].", ["r-b"], "missing_inline_anchor"),
+        ("Fabricated citation claim [r-a] [fabricated].", ["r-a"], "invalid_sentence_record_contract"),
         ("", ["r-a"], "empty_paragraph"),
     ):
         paragraphs[0].update(text=text, receipt_ids=receipt_ids)
         reasons: list[str] = []
-        assert build_anchored_from_parsed(
+        repaired = build_anchored_from_parsed(
             {"paragraphs": paragraphs},
             name="cross_domain_synthesis", heading="## Cross-Domain Synthesis",
             accepted=accepted, rejection_reasons=reasons,
-        ) is None
+        )
+        assert repaired is not None
+        assert not any(anchor.sentence == text for anchor in repaired.anchors)
         assert expected_reason in reasons
 
 
