@@ -382,6 +382,16 @@ def test_cross_domain_writer_regenerates_sentence_level_records(monkeypatch) -> 
     assert "ANCHOR REPAIR REQUIRED" not in prompts[1]
 
 
+def test_cross_domain_retry_names_unsupported_numerics() -> None:
+    prompt = paper_writer.cross_domain_retry_prompt(
+        "base", "cross_domain_synthesis",
+        ["novel_numeric:'50'", "missing_inline_anchor", "invalid_sentence_record_contract"],
+    )
+    assert "FORMAT RETRY REQUIRED" in prompt
+    assert "NUMERIC RETRY REQUIRED" in prompt
+    assert "'50'" in prompt and "state the point qualitatively" in prompt
+
+
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
     receipts = [
         _summary(

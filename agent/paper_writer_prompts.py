@@ -16,13 +16,26 @@ __all__ = (
 
 def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) -> str:
     format_reasons = {"missing_inline_anchor", "invalid_sentence_record_contract"}
-    if section_name != "cross_domain_synthesis" or not reasons or not set(reasons) <= format_reasons:
+    if section_name != "cross_domain_synthesis" or not reasons:
         return base
-    return (
-        f"{base}\n\nFORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry. "
-        "Give each entry a paragraph_index, exact receipt_ids that support only that sentence, "
-        "and those exact IDs inline in square brackets. JSON only."
-    )
+    guidance: list[str] = []
+    if set(reasons) & format_reasons:
+        guidance.append(
+            "FORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry. Give each "
+            "entry a paragraph_index, exact receipt_ids that support only that sentence, and "
+            "those exact IDs inline in square brackets."
+        )
+    unsupported = list(dict.fromkeys(
+        reason.removeprefix("novel_numeric:")
+        for reason in reasons if reason.startswith("novel_numeric:")
+    ))[:6]
+    if unsupported:
+        guidance.append(
+            "NUMERIC RETRY REQUIRED: The previous output used unsupported numeric tokens "
+            f"({', '.join(unsupported)}). Do not repeat them. Use a numeric token only when it "
+            "appears verbatim in ACCEPTED RECEIPTS; otherwise state the point qualitatively."
+        )
+    return f"{base}\n\n{' '.join(guidance)} JSON only." if guidance else base
 
 
 # Fix #17: shared hard rule prepended to EVERY section prompt below.
