@@ -142,6 +142,14 @@ def test_direction_increase_matches_walton_form() -> None:
     ) == "increase"
 
 
+def test_direction_increase_matches_improvement_noun() -> None:
+    assert quant_endpoints.match_direction(
+        "The data show significant improvements in muscle strength (12%).",
+    ) == "increase"
+    assert quant_endpoints.match_direction("No significant improvements were observed.") == "no_change"
+    assert quant_endpoints.match_direction("No improvements were observed.") == "no_change"
+
+
 def test_direction_decrease_matches_metformin_attenuated() -> None:
     """'metformin attenuated' should map to decrease (the gain was
     blunted)."""

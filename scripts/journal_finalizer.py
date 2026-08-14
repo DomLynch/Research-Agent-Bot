@@ -786,6 +786,7 @@ def _phase_a_methods_replace(
             synthesis_approach=d["synthesis_approach"],
             ai_use_disclosure=d["ai_use_disclosure"],
             human_accountability=d["human_accountability"],
+            source_inventory=tuple(tuple(row) for row in d.get("source_inventory", ())),
         )
     except (OSError, KeyError, TypeError, json.JSONDecodeError):
         return text, []
@@ -1548,13 +1549,21 @@ def _phase_d_search_summary_scope_note(
     feedback = _revision_feedback(request)
     if not _feedback_asks(feedback, revision_coverage._asks_search_summary_scope_note):
         return text, []
+    stale = "Search-summary scope note: Retrieval date ranges are reported in the Information Sources section."
+    replacement = "Search-summary scope note: Database coverage, executed query strings, and retrieval date ranges are reported only when preserved in the frozen retrieval record; absent fields remain unavailable and no execution claim is made."
+    if stale in text:
+        return text.replace(stale, replacement, 1), [FinalizerLogEntry(
+            phase="D_search_summary_scope",
+            rule="correct_stale_search_provenance_claim",
+            n_changes=1,
+            detail="replaced stale retrieval-date execution claim",
+        )]
     if "search-summary scope note:" in text.lower():
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     topic = _topic_display_anchor(manifest if isinstance(manifest, dict) else {}) or "the target topic"
     note = (
-        "Search-summary scope note: Retrieval date ranges are reported in the Information Sources "
-        "section. The topic was operationalized by requiring traceable title, abstract, or claim-record "
+        f"{replacement} The topic was operationalized by requiring traceable title, abstract, or claim-record "
         f"evidence for {topic}; the candidate-to-admitted narrowing reflects claim-binding confidence, "
         "source traceability, and topic fit rather than a second unlogged manual exclusion step."
     )

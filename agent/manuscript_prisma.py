@@ -46,6 +46,7 @@ class FrozenRetrievalRecord:
 
     sources: tuple[tuple[str, str], ...] = ()
     queries: tuple[str, ...] = ()
+    retrieved_at: str = ""
     expected_evidence_slots: tuple[str, ...] = ()
     n_parsed: int = 0
     n_extracted: int = 0
@@ -57,6 +58,7 @@ class FrozenRetrievalRecord:
                 for name, status in self.sources
             ],
             "queries": list(self.queries),
+            "retrieved_at": self.retrieved_at,
             "expected_evidence_slots": list(self.expected_evidence_slots),
             "counts": {
                 "parsed": self.n_parsed,
@@ -165,6 +167,7 @@ def frozen_retrieval_record(manifest: dict[str, Any]) -> FrozenRetrievalRecord:
     return FrozenRetrievalRecord(
         sources=tuple(sorted(sources.items())),
         queries=queries,
+        retrieved_at=str(retrieval.get("retrieved_at") or manifest.get("retrieved_at") or "").strip(),
         expected_evidence_slots=slots,
         n_parsed=_nonnegative_int(
             counts.get("parsed") or funnel.get("active_paper_ids"),

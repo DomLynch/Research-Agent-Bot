@@ -101,3 +101,26 @@ def test_non_effect_p_value_stays_unsigned() -> None:
     }
 
     assert run_v06._claim_topic_effect(claim) == 0
+
+
+def test_frozen_claim_recovers_improvement_direction_from_sentence() -> None:
+    run_v06._set_topic("creatine")
+    claim = {
+        "claim_type": "percentage",
+        "endpoint": "muscle strength",
+        "direction": "",
+        "arm": "creatine",
+        "numeric_values": [12.0],
+        "sentence": "The data show significant improvements in muscle strength (12%) with creatine.",
+    }
+
+    assert run_v06._claim_topic_effect(claim) == 1
+
+    claim.update({
+        "raw_text": "12%",
+        "sentence": "Strength decreased 8% initially but improved 12% after treatment.",
+    })
+    assert run_v06._claim_topic_effect(claim) == 1
+
+    claim["direction"] = "mixed"
+    assert run_v06._claim_topic_effect(claim) == 0

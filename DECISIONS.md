@@ -713,3 +713,15 @@ subprocess linkage had to be resolved before any file was removed.
 
 **Revisit if:** Proof-001/SPAR is revived as a live engine; recover from git
 history rather than re-implementing.
+
+## 2026-08-13 — Bounded LOC allowance for reviewer-defect repair
+**Decision:** Use 100 of the operator-approved 5,000-line allowance: raise the
+`agent/` ceiling by 10 and the `scripts/` and combined ceilings by 100.
+
+**Why:** The measured patch adds 101 effective production lines to remove four
+reproduced author-side defects: repeated/template prose, missing frozen search
+provenance, incorrect significance/direction coding, and stale provenance text.
+The resulting totals are 25,005 agent, 41,079 scripts, and 66,084 combined.
+
+**Rejected:** Raising by the full 5,000 or weakening manuscript gates. The
+allowance is limited to the measured change plus at most 21 lines of headroom.

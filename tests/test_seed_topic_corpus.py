@@ -14,6 +14,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import seed_topic_corpus as seed  # type: ignore[import-not-found]  # noqa: E402
 
 
+def test_manifest_freezes_retrieval_time() -> None:
+    manifest = SimpleNamespace(
+        topic="example", funnel={}, per_wave_stats=(),
+        expected_evidence_slots=(), entries=(),
+    )
+
+    payload = seed._manifest_to_dict(
+        manifest, retrieved_at="2026-08-13T19:00:00+00:00",
+    )
+
+    assert payload["retrieved_at"] == "2026-08-13T19:00:00+00:00"
+
+
 def test_abstract_fallback_writes_paper_sections_schema(tmp_path):
     hit = SimpleNamespace(
         title="mTOR inhibition improves immune function in the elderly",

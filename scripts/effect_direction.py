@@ -119,6 +119,43 @@ _NEGLIGIBLE_CHECK_ENDPOINTS: frozenset[str] = frozenset({
 _EFFECT_MAGNITUDE_CLAIM_TYPES: frozenset[str] = frozenset({
     "effect", "endpoint_change", "outcome", "endpoint", "unit_value",
 })
+_DIRECTION_TERM = r"(?:improv(?:e[ds]?|ing|ements?)|increas(?:e[ds]?|ing)|decreas(?:e[ds]?|ing)|reduc(?:e[ds]?|ing))"
+_SIGNIFICANCE_RE = re.compile(
+    rf"\b(?:statistically\s+)?significant(?:ly)?\s+{_DIRECTION_TERM}\b"
+    rf"|\b{_DIRECTION_TERM}\s+(?:was\s+)?(?:statistically\s+)?significant(?:ly)?\b",
+    re.I,
+)
+_NEGATED_SIGNIFICANCE_RE = re.compile(
+    r"\b(?:no|not|without|lack(?:ed|ing|s)?|absen(?:t|ce))\b"
+    r"|\b(?:fail(?:ed|s)?|failure)\s+to\b|\bnon[-\s]?$",
+    re.I,
+)
+
+
+def _reports_significance(claim: dict) -> bool:
+    text = str(claim.get("sentence") or claim.get("context_window") or "")
+    clauses = re.split(r";|(?<!\d)[.!?](?!\d)|,?\s+\b(?:but|while|whereas)\b\s+", text, flags=re.I)
+    raw = str(claim.get("raw_text") or "").lower()
+    endpoint = str(claim.get("endpoint") or "").lower()
+    scores = [int(bool(raw and raw in part.lower())) + 2 * int(bool(endpoint and endpoint in part.lower())) for part in clauses]
+    best = max(scores, default=0)
+    if best and scores.count(best) != 1:
+        return False
+    scope = clauses[scores.index(best)] if best else text
+    matches = list(_SIGNIFICANCE_RE.finditer(scope))
+    if not matches:
+        return False
+    lower_scope = scope.lower()
+    raw_positions = [match.start() for match in re.finditer(re.escape(raw), lower_scope)] if raw else []
+    endpoint_positions = [match.start() for match in re.finditer(re.escape(endpoint), lower_scope)] if endpoint else []
+    anchor = raw_positions[0] if len(raw_positions) == 1 else endpoint_positions[0] if len(endpoint_positions) == 1 else -1
+    if anchor < 0:
+        return False
+    match = min(matches, key=lambda item: abs(item.start() - anchor))
+    prefix = re.split(r",\s+and\s+", scope[:match.start()], flags=re.I)[-1]
+    suffix = re.split(r",\s+and\s+", scope[match.end():], maxsplit=1, flags=re.I)[0]
+    return not (_NEGATED_SIGNIFICANCE_RE.search(prefix) or re.search(r"\bclinically\s*$", prefix, re.I)
+                or _NEGATED_SIGNIFICANCE_RE.search(suffix))
 
 
 def _negligible(values: list[float]) -> bool:
@@ -195,7 +232,13 @@ def infer_effect_direction(
         # contributes to the significant tally ONLY IF its specific
         # endpoint has a significant p-value (paper-level signal is
         # not enough — the original bug we're fixing).
-        if sign != 0 and significance_by_endpoint.get(endpoint, False):
+        if sign != 0 and (
+            significance_by_endpoint.get(endpoint, False)
+            or (
+                endpoint not in significance_by_endpoint
+                and _reports_significance(c)
+            )
+        ):
             if sign > 0:
                 sig_positive = True
             elif sign < 0:
@@ -224,9 +267,7 @@ def infer_effect_direction(
 def _significance_by_endpoint(
     claims: list[dict], alpha: float,
 ) -> dict[str, bool]:
-    """Build {endpoint: True} for every endpoint that has at least
-    one significant p-value (p < alpha). Used by the per-endpoint
-    significance attribution in infer_effect_direction."""
+    """Build endpoint significance while retaining explicit null p-values."""
     has_sig: dict[str, bool] = {}
     for c in claims:
         if c.get("claim_type") != "p_value":
@@ -236,14 +277,16 @@ def _significance_by_endpoint(
         comparator = str(c.get("comparator") or (parsed[0] if parsed else "="))
         values = c.get("numeric_values") or (() if parsed is None else (parsed[1],))
         sig = False
+        valid = False
         for value in values:
             try:
                 numeric = float(value)
             except (TypeError, ValueError):
                 continue
+            valid = True
             if _comparison_is_significant(comparator, numeric, alpha):
                 sig = True
                 break
-        if sig:
-            has_sig[endpoint] = True
+        if valid:
+            has_sig[endpoint] = has_sig.get(endpoint, False) or sig
     return has_sig

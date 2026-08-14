@@ -117,6 +117,7 @@ import run_mode_contract as _run_mode  # noqa: E402
 import citation_registry as _citations  # noqa: E402
 import evidence_taxonomy as _taxonomy  # noqa: E402
 import effect_direction as _direction  # noqa: E402
+import quant_endpoints as _quant_endpoints  # noqa: E402
 import table_renderer as _tables  # noqa: E402
 import background_literature as _bglit  # noqa: E402
 import paper_quality_runtime as _paper_quality  # noqa: E402
@@ -1319,6 +1320,12 @@ def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
 def _claim_topic_effect(claim: dict) -> int:
     """Return beneficial (+1), harmful (-1), or unclear (0) direction."""
     direction = claim.get("direction") or ""
+    if not direction:
+        text = str(claim.get("sentence") or claim.get("context_window") or "")
+        raw_text = str(claim.get("raw_text") or "")
+        direction = _quant_endpoints.match_direction(
+            text, anchor_offset=text.find(raw_text) if raw_text and raw_text in text else None,
+        )
     arm = (claim.get("arm") or "").strip().lower()
     endpoint = claim.get("endpoint") or ""
     polarity = _polarity_for_endpoint(endpoint)
@@ -1343,7 +1350,7 @@ def _claim_topic_effect(claim: dict) -> int:
         and claim.get("claim_role") != "effect"
     ):
         return 0
-    if not direction or direction == "no_change":
+    if direction not in {"increase", "decrease"}:
         return 0
     direction_sign = +1 if direction == "increase" else -1
     # If the direction is described from the active arm, +1.
@@ -3352,6 +3359,7 @@ async def _run(
         outcome_classes=_outcome_classes,
         source_inventory=retrieval_record.sources,
         receipt_funnel=_funnel,
+        search_dates_iso=retrieval_record.retrieved_at,
         accountability_model=str(
             manifest.get("accountability_model")
             or "researka_agent_certified"

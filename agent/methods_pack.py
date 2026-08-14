@@ -205,7 +205,9 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
     inventory = pack.source_inventory
     source_disclosure = (
         "The frozen retrieval record reports "
-        f"{source_inventory_summary(inventory)}."
+        f"{source_inventory_summary(inventory)}. Named sources: "
+        + "; ".join(f"{name} ({status})" for name, status in inventory)
+        + "."
         if inventory else
         "No database inventory was frozen; no database coverage or "
         "execution claim is made."

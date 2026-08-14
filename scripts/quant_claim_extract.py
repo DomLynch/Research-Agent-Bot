@@ -412,7 +412,8 @@ _ROLE_KEYWORD_BACKGROUND = (
 )
 _ROLE_KEYWORD_EFFECT = (
     # Direction verbs
-    "increased", "decreased", "improved", "reduced", "blunted",
+    "increased", "decreased", "improved", "improvement", "improvements",
+    "reduced", "blunted",
     "attenuated", "enhanced", "elevated", "lowered", "diminished",
     "suppressed", "inhibited", "declined", "rose", "rose by",
     # Phase 2.2-fix: P1 #3 / Walton-class regressions. The pre-fix

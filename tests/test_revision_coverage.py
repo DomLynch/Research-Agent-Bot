@@ -2072,6 +2072,51 @@ def test_internal_duplication_repair_converges_and_is_idempotent() -> None:
     assert revision_coverage.repair_internal_duplication(fixed, ask) == (fixed, 0)
 
 
+def test_internal_duplication_repair_applies_below_subheadings() -> None:
+    ask = (
+        "Remove verbatim repetition in Cross-Domain Synthesis. Remove generic, "
+        "non-topic-specific paragraphs in Limitations and the Results guardrail section."
+    )
+    repeated = (
+        "Cross-domain interpretation compares outcome classes and identifies where signals "
+        "converge or diverge across populations, endpoints, and study designs."
+    )
+    boilerplate = "The same rules can classify evidence across topics in any research domain."
+    paper = (
+        f"## Results\n\n**Result-interpretation guardrail.**\n\n{boilerplate}\n\n"
+        f"## Cross-Domain Synthesis\n\n### Boundary conditions\n\n{repeated}\n\n{repeated}\n\n"
+        f"## Limitations\n\n{boilerplate}\n"
+    )
+
+    fixed, changed = revision_coverage.repair_internal_duplication(paper, ask)
+
+    assert changed >= 3
+    assert fixed.count(repeated) == 1
+    assert "Result-interpretation guardrail" not in fixed
+    assert "across topics" not in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+
+
+def test_explicit_search_provenance_requires_real_frozen_details() -> None:
+    ask = (
+        "Document the search strategy and database coverage, including the time frame "
+        "and search terms, to support reproducibility."
+    )
+    unavailable = (
+        "## Methods\n\nNo database inventory was frozen; no retrieval date was frozen. "
+        "No query strings were frozen.\n"
+    )
+    complete = (
+        "## Methods\n\n### Information sources\n\nNamed sources: PubMed (succeeded). "
+        "Retrieval record date: 2026-08-13T19:00:00+00:00.\n\n"
+        "### Search strategy\n\nThe following query strings are recorded in the frozen retrieval record:\n\n"
+        "- `urolithin[tiab] AND muscle[tiab]`\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(unavailable, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(complete, [ask]) == []
+
+
 def test_abstract_conclusion_resolution_ask_is_re_evaluated() -> None:
     ask = (
         "Tighten the Abstract vs Conclusion — they are near-duplicates. "

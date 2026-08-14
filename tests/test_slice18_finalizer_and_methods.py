@@ -144,6 +144,7 @@ def test_finalizer_methods_replacement_preserves_directness_criteria(
         corpus_search_queries=("example query",),
         n_retrieved=10, n_screened=10, n_included=8, n_rejected=2,
         outcome_classes=("primary_outcome",),
+        source_inventory=(("PubMed", "succeeded"),),
         accountability_model="researka_agent_certified",
     )
     write_methods_pack(tmp_path, pack)
@@ -153,6 +154,7 @@ def test_finalizer_methods_replacement_preserves_directness_criteria(
 
     assert "### Directness coding criteria" in finalized
     assert "coded as direct only when" in finalized
+    assert "Named sources: PubMed (succeeded)" in finalized
     assert "## Results\n\nResults body." in finalized
     assert log and log[0].phase == "A_methods_replace"
 

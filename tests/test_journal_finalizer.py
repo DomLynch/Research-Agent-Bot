@@ -4145,10 +4145,19 @@ def test_search_summary_scope_note_repairs_date_operationalization_ask(tmp_path:
 
     assert "Search-summary scope note:" in fixed
     assert "date ranges" in fixed
+    assert "no execution claim is made" in fixed
     assert "operationalized" in fixed
     assert "candidate-to-admitted narrowing" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_search_summary_scope"
+
+    stale = fixed.replace(
+        "Database coverage, executed query strings, and retrieval date ranges are reported only when preserved in the frozen retrieval record; absent fields remain unavailable and no execution claim is made.",
+        "Retrieval date ranges are reported in the Information Sources section.",
+    )
+    corrected, logs = journal_finalizer._phase_d_search_summary_scope_note(stale, tmp_path)
+    assert "Retrieval date ranges are reported in the Information Sources section" not in corrected
+    assert logs[0].rule == "correct_stale_search_provenance_claim"
 
 
 def test_outcome_label_cleanup_repairs_non_pk_slice_ask(tmp_path: Path) -> None:

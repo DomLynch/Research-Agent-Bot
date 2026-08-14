@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import datetime as dt
 import json
 import os
 import re
@@ -77,9 +78,10 @@ def _manifest_entry_to_dict(entry) -> dict[str, Any]:
     }
 
 
-def _manifest_to_dict(manifest) -> dict[str, Any]:
+def _manifest_to_dict(manifest, *, retrieved_at: str = "") -> dict[str, Any]:
     return {
         "topic": manifest.topic,
+        "retrieved_at": retrieved_at or dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "funnel": dict(manifest.funnel),
         "per_wave_stats": [dict(s) for s in manifest.per_wave_stats],
         "expected_evidence_slots": list(manifest.expected_evidence_slots),

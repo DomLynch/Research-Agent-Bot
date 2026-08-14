@@ -28,6 +28,7 @@ def _build_pack(*, source_inventory: tuple[tuple[str, str], ...] = ()):
 def test_frozen_inventory_normalizes_outcomes_and_ignores_receipts() -> None:
     record = frozen_retrieval_record({
         "retrieval": {
+            "retrieved_at": "2026-08-13T19:00:00+00:00",
             "sources": [
                 {"name": "PubMed", "status": "ok"},
                 {"name": "OpenAlex", "status": "rate_limited"},
@@ -45,6 +46,8 @@ def test_frozen_inventory_normalizes_outcomes_and_ignores_receipts() -> None:
     )
     assert "Semantic Scholar" not in dict(record.sources)
     assert "Unknown" not in dict(record.sources)
+    assert record.retrieved_at == "2026-08-13T19:00:00+00:00"
+    assert record.to_manifest()["retrieved_at"] == record.retrieved_at
 
 
 def test_methods_pack_uses_only_frozen_source_inventory() -> None:
@@ -61,6 +64,8 @@ def test_methods_pack_uses_only_frozen_source_inventory() -> None:
     rendered = render_methods_md(pack, submission_id="run-test")
 
     assert "3 enabled; 1 succeeded; 1 failed; 1 enabled" in rendered
+    assert "PubMed (succeeded)" in rendered
+    assert "OpenAlex (failed)" in rendered
     assert "Europe PMC" not in rendered
     assert pack.source_inventory == record.sources
     assert pack.databases_searched == ("PubMed",)
@@ -97,6 +102,7 @@ def test_revision_run_does_not_fall_back_to_mutable_corpus_manifest(
         "active_paper_ids": ["paper"],
     }))
     (corpus_root / "corpus_manifest.json").write_text(json.dumps({
+        "retrieved_at": "2026-08-13T19:00:00+00:00",
         "retrieval": {"queries": []},
         "per_wave_stats": [
             {"stats": {
@@ -132,6 +138,7 @@ def test_revision_run_does_not_fall_back_to_mutable_corpus_manifest(
         "urolithin[tiab] AND muscle[tiab]",
         "urolithin[tiab]",
     )
+    assert record.retrieved_at == "2026-08-13T19:00:00+00:00"
     assert record.expected_evidence_slots == ("muscle function",)
 
 

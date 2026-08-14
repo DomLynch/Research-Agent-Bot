@@ -160,6 +160,62 @@ def test_signed_but_no_significance_signal_returns_unclear() -> None:
     assert result == "unclear"
 
 
+def test_explicit_significance_without_p_value_is_directional() -> None:
+    positive = [{
+        "claim_type": "percentage", "endpoint": "muscle strength",
+        "sentence": "The data show significant improvements in muscle strength (12%).",
+    }]
+    nonsignificant = [{
+        "claim_type": "percentage", "endpoint": "muscle strength",
+        "sentence": "The data show non-significant improvements in muscle strength (12%).",
+    }]
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "positive"
+    assert ed.infer_effect_direction(nonsignificant, metformin_effect_fn=_const(1)) == "unclear"
+
+    conflicting = positive + [{
+        "claim_type": "p_value", "endpoint": "muscle strength",
+        "raw_text": "p = 0.08", "numeric_values": [0.08],
+    }]
+    assert ed.infer_effect_direction(conflicting, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "The change was not clinically significant improvement."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Significant comorbidity was present; strength improved 12%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0].update({
+        "raw_text": "12.5%",
+        "sentence": "Fat mass decreased significantly, while muscle strength improved 12.5%.",
+    })
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Fat mass decreased significantly. Muscle strength improved 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Fat mass decreased significantly by 12.5%, while muscle strength improved by 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Muscle strength did not significantly improve by 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Muscle strength failed to significantly improve by 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Muscle strength changed without a statistically significant improvement of 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Muscle strength failed to show any evidence of a statistically significant improvement of 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "In heart failure patients, significant improvements in muscle strength reached 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "positive"
+    positive[0]["sentence"] = "Clinically significant improvements in muscle strength reached 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Fat mass significantly decreased, and muscle strength did not significantly improve by 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Muscle strength significantly increased 5%, and muscle strength did not significantly improve by 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "Fat mass did not change, and muscle strength significantly improved by 12.5%."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "positive"
+    positive[0]["sentence"] = "Muscle strength significantly improved by 12.5%, and fatigue was not observed."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "positive"
+    positive[0]["sentence"] = "A statistically significant improvement in muscle strength of 12.5% was absent."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+    positive[0]["sentence"] = "An absence of statistically significant improvement in muscle strength of 12.5% was reported."
+    assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
+
+
 def test_negligible_signed_no_p_values_returns_null() -> None:
     """Signs exist BUT all magnitudes negligible (≈ 0) AND no p-values
     → null (the change is too small to matter)."""

@@ -959,6 +959,13 @@ def _asks_search_summary_scope_note(text: str) -> bool:
             "date range", "date ranges", "topic-operationalization",
             "operationalization", "narrowing",
         ))
+    ) or _asks_explicit_search_provenance(text)
+
+
+def _asks_explicit_search_provenance(text: str) -> bool:
+    return (
+        any(token in text for token in ("search strategy", "database coverage"))
+        and any(token in text for token in ("time frame", "timeframe", "search terms", "reproducib"))
     )
 
 
@@ -1194,6 +1201,7 @@ def _asks_internal_duplication(text: str) -> bool:
         "internal duplication", "repetitive narrative", "verbatim repetition",
         "non-repetitive", "duplicate sentence", "near-duplicate", "near duplicate",
         "repetitive template", "template-style language", "template style language",
+        "template boilerplate", "generic, non-topic-specific", "generic non-topic-specific",
         "source-by-source narration", "source by source narration",
     ))
 
@@ -1681,15 +1689,38 @@ def repair_internal_duplication(paper_md: str, ask: str) -> tuple[str, int]:
     )
     targets = {name for name in names if name.lower() in ask.lower()}
     parts = re.split(r"(\n\s*\n)", paper_md)
-    heading, changed = "", moved
+    heading, changed, drop_subsection = "", moved, False
+    generic_cleanup = any(token in lower_ask for token in ("generic", "boilerplate", "template"))
     seen_paragraphs: list[set[str]] = []
     seen_sentences: set[str] = set()
     for index in range(0, len(parts), 2):
         stripped = parts[index].strip()
-        if match := re.match(r"^#{2,3}\s+(.+?)\s*$", stripped):
-            heading = match.group(1)
+        if match := re.match(r"^##\s+([^#].*?)\s*$", stripped):
+            heading, drop_subsection = match.group(1), False
+            continue
+        if match := re.match(r"^###\s+(.+?)\s*$", stripped):
+            drop_subsection = (
+                generic_cleanup and heading == "Results"
+                and "guardrail" in match.group(1).lower() and "guardrail" in lower_ask
+            )
+            if drop_subsection:
+                parts[index], changed = "", changed + 1
+            continue
+        if (
+            generic_cleanup and heading == "Results" and "guardrail" in lower_ask
+            and re.fullmatch(r"\*\*[^*]*guardrail[^*]*\*\*", stripped, re.I)
+        ):
+            parts[index], changed, drop_subsection = "", changed + 1, True
+            continue
+        if drop_subsection:
+            parts[index], changed = "", changed + 1
             continue
         if not stripped or targets and heading not in targets or stripped.startswith(("|", "```")):
+            continue
+        if generic_cleanup and heading == "Limitations" and re.search(
+            r"\bacross topics\b|\bsame rules can classify\b", stripped, re.I,
+        ):
+            parts[index], changed = "", changed + 1
             continue
         kept = []
         for sentence in re.split(r"(?<=[.!?])\s+", stripped):
@@ -1750,6 +1781,14 @@ def repair_fragment_headings(paper_md: str, ask: str) -> tuple[str, int]:
 
 
 def _internal_duplication_is_low(paper_md: str, ask: str = "") -> bool:
+    if any(token in ask for token in ("generic", "boilerplate", "template")) and not any(
+        token in ask for token in ("repetition", "repetitive", "duplicate", "near-duplicate")
+    ):
+        return not re.search(
+            r"result-interpretation guardrail|comparability across topics|same rules can classify",
+            " ".join((_section(paper_md, "Results"), _section(paper_md, "Limitations"))),
+            re.I,
+        )
     if "results" in ask and "template" in ask and len(_results_trace_paragraphs(paper_md)) >= 3:
         return False
     seen: list[set[str]] = []
@@ -2203,6 +2242,8 @@ def _asks_outcome_taxonomy_separation(text: str) -> bool:
 
 
 def _asks_source_scope_annex(text: str) -> bool:
+    if "non-topic-specific" in text or "non topic specific" in text:
+        return False
     return any(token in text for token in ("remove", "move", "segregate", "relabel", "re-label")) and any(
         token in text for token in (
             "annex", "non-cancer evidence", "non cancer evidence",
@@ -2798,8 +2839,20 @@ def _admission_funnel_numeric_consistency_is_stated(paper_md: str, ask: str) -> 
     return no_extractable != admitted
 
 
-def _search_summary_scope_note_is_stated(paper_md: str) -> bool:
-    scope = " ".join(part for part in (_section(paper_md, "Methods"), _section(paper_md, "Evidence Landscape")) if part).lower()
+def _search_summary_scope_note_is_stated(paper_md: str, ask: str = "") -> bool:
+    methods = _section(paper_md, "Methods").lower()
+    if _asks_explicit_search_provenance(ask):
+        return (
+            "named sources:" in methods
+            and "retrieval record date:" in methods
+            and "query strings are recorded" in methods
+            and bool(re.search(r"(?m)^- `.+`", methods))
+            and not any(token in methods for token in (
+                "no database inventory was frozen", "no retrieval date was frozen",
+                "no query strings were frozen",
+            ))
+        )
+    scope = " ".join(part for part in (methods, _section(paper_md, "Evidence Landscape")) if part).lower()
     return (
         "search-summary scope note:" in scope
         and "date range" in scope
@@ -3499,7 +3552,7 @@ _DETERMINISTIC_ASK_RULES: tuple[tuple[_AskMatcher, _AskCheck], ...] = (
     (_asks_rct_count_reconciliation, _paper_only(_rct_count_reconciliation_is_stated)),
     (_asks_unbacked_appraisal_names, _paper_ask(_unbacked_appraisal_names_are_resolved)),
     (_asks_evidence_tier_directness_bounds, _paper_only(_evidence_tier_directness_bounds_are_stated)),
-    (_asks_search_summary_scope_note, _paper_only(_search_summary_scope_note_is_stated)),
+    (_asks_search_summary_scope_note, _paper_ask(_search_summary_scope_note_is_stated)),
     (_asks_additive_screening_flow, _paper_only(_additive_screening_flow_is_stated)),
     (_asks_admission_funnel_numeric_consistency, _paper_ask(_admission_funnel_numeric_consistency_is_stated)),
     (_asks_prisma_all_included_rationale, _paper_only(_prisma_all_included_rationale_is_stated)),
