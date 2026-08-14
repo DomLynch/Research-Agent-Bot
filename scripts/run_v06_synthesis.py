@@ -549,40 +549,11 @@ def _compile_public_section_backstop(
     null = ctx["null"]
     direct_refs = ctx["direct_refs"]
     mech_refs = ctx["mech_refs"]
-    evidence_basis = "the retained evidence profile"
-    if direct > 0 and mechanistic > 0:
-        evidence_basis = "the retained clinical and mechanistic evidence profile"
-    elif direct + indirect > 0:
-        evidence_basis = "the retained direct, adjacent, and context evidence profile"
-    elif mechanistic > 0:
-        evidence_basis = "the retained mechanistic evidence profile"
-    signal_profile = (
-        f"Positive study-level signals are summarized in {pos}, null signals in {null}, and negative signals in {neg}."
-        if pos != "no dominant outcome class"
-        else f"No single positive outcome class dominates the retained corpus; null signals cluster in {null}, and negative signals cluster in {neg}."
-    )
     paragraphs_by_title = {
         "Abstract": [
             (
                 f"This paper synthesizes evidence on {topic} across the retained "
                 "source corpus and high-confidence extracted claim set."
-            ),
-            (
-                "The evidence profile separates direct clinical evidence from "
-                "adjacent, review, context, and mechanistic evidence, while "
-                "retaining surfaced cross-study disagreements."
-            ),
-            (
-                f"{signal_profile} The paper "
-                "therefore interprets the corpus as a tiered evidence profile "
-                "rather than as a single pooled effect."
-            ),
-            (
-                f"The conclusion is that {topic} remains a bounded "
-                f"evidence case: {evidence_basis} defines the scope for targeted "
-                "testing, while "
-                "mixed and null findings limit any unqualified broad clinical "
-                "claim."
             ),
         ],
         "Introduction": [
@@ -668,7 +639,7 @@ def _compile_public_section_backstop(
         (
             "This distinction matters for publication because it makes the "
             "paper falsifiable. A future source can strengthen, weaken, or "
-            "reverse the synthesis by changing the evidence tier, direction, "
+            "reverse the synthesis by changing the source tier, direction, "
             "or outcome-class balance."
         ),
         (

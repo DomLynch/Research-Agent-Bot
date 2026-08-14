@@ -9,6 +9,7 @@ from agent.deterministic_anchors import (
     build_conclusion_anchor,
     build_cross_domain_anchor,
     build_discussion_anchor,
+    build_source_bounded_conclusion,
     _format_kinds,
     _format_populations,
 )
@@ -228,13 +229,24 @@ def test_conclusion_anchor_drops_hedge_once_discussion_added_it():
     receipts = [_r("a"), _r("b")]
     disc = build_discussion_anchor(receipts, _matrix())
     concl = build_conclusion_anchor(receipts, _matrix(), existing_text=disc)
-    assert "### Bounded conclusion" in concl          # structural kept
+    assert "### Corpus boundary" in concl             # structural kept
     assert CONSERVATIVE_FRAMING_MARKER not in concl   # hedge skipped
     # Across both sections the marker appears exactly once.
     assert (disc + "\n" + concl).count(CONSERVATIVE_FRAMING_MARKER) == 1
     # The conclusion still has to satisfy its own downstream floor when
     # the shared hedge was already emitted by Discussion.
     assert len(concl.split()) >= 250
+
+
+def test_source_bounded_conclusion_preserves_recorded_direction_labels():
+    receipts = [
+        _r("a", cls="risk", direction="null"),
+        _r("b", cls="increase", direction="positive"),
+    ]
+    conclusion = build_source_bounded_conclusion(receipts)
+    assert "Outcome coding spans increase, risk" in conclusion
+    assert "direction coding spans null, positive" in conclusion
+    assert "direction coding spans bounded" not in conclusion
 
 
 def test_anchor_hedge_is_idempotent_on_rerun():

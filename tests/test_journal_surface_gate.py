@@ -2376,8 +2376,8 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
     assert "Contextual Other" not in new_text
     assert "Contextual Adjacent Evidence" in new_text
     assert new_text.count("This front matter deliberately recaps") == 2
-    assert "not pooled with direct outcome evidence" in new_text
-    assert "these sources bound scope, safety, methods, and translation" in new_text
+    assert "not pooled with direct outcome evidence" not in new_text
+    assert "these sources bound scope, safety, methods, and translation" not in new_text
     assert new_text.count("| Smith 2024 | glucose | treatment |") == 1
     assert new_text.count("Key findings repeated verbatim") == 1
     assert new_text.count("The search protocol used identical eligibility checks") == 1
@@ -2387,7 +2387,6 @@ def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> No
     assert "verification-limited context" in new_text
     assert {
         "rename_contextual_other",
-        "explain_contextual_adjacent_evidence",
         "dedupe_repeated_blocks",
         "dedupe_duplicate_table_rows",
         "dedupe_repeated_h3_blocks",

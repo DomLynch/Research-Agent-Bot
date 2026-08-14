@@ -1004,9 +1004,11 @@ def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
 
     assert "Positive study-level signals concentrate in no dominant outcome class" not in md
-    assert "mechanistic plausibility" not in md
-    assert "No single positive outcome class dominates the retained corpus" in md
-    assert "the retained direct, adjacent, and context evidence profile defines the scope" in md
+    assert "No single positive outcome class dominates the retained corpus" not in md
+    assert "the retained direct, adjacent, and context evidence profile defines the scope" not in md
+    assert "This paper synthesizes evidence on Metformin" in md
+    assert "changing the source tier" in md and "changing the evidence tier" not in md
+    assert orch._word_count(md) >= 150
 
 
 def test_public_section_backstop_demarcates_context_rows_from_adjacent_clinical() -> None:
@@ -1081,7 +1083,8 @@ def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() 
     # "immune" now canonicalizes to immune_inflammation, so the two receipts
     # collapse to one class (no duplicate "immune and immune and inflammation").
     assert "immune and immune and inflammation" not in md
-    assert "the immune and inflammation outcome class" in md
+    assert "This paper synthesizes evidence on Metformin" in md
+    assert orch._word_count(md) >= 150
 
 
 def test_public_section_backstop_refuses_evidence_owned_sections() -> None:

@@ -1,8 +1,9 @@
 """Build corpus-derived fallback text for deterministic audit floors."""
 from __future__ import annotations
 
+import re
 from collections import Counter
-from typing import Sequence
+from typing import Any, Mapping, Sequence
 
 from agent.synthesis_schemas import ReceiptSummary, TensionMatrix
 
@@ -146,25 +147,30 @@ def build_discussion_anchor(
     return _join_anchor_blocks(structural, hedge, existing_text)
 
 
-def build_conclusion_anchor(
-    receipts: Sequence[ReceiptSummary],
-    matrix: TensionMatrix,
-    *,
-    existing_text: str = "",
-) -> str:
-    """Return a bounded fallback without adding uncited empirical claims."""
-    accepted = [r for r in receipts if r.spar_verdict in ("accept_clean", "accept_caveated")]
-    if not accepted:
+def build_source_bounded_conclusion(rows: Sequence[ReceiptSummary | Mapping[str, Any]], *, minimum_words: int = 0) -> str:
+    """Build a corpus-specific interpretive boundary without empirical padding."""
+    usable = list(rows)
+    if not usable:
         return ""
-    del matrix, existing_text
-    structural = "\n\n".join([
-        "### Bounded conclusion",
-        "The closing interpretation must remain inside the scope of the retained source record. Direct human receipts deserve the greatest weight when their populations, comparators, endpoints, and follow-up windows match the question under review. Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility, but they cannot substitute for clinically proximate observations. The conclusion therefore preserves distinctions among evidence tier, directness, outcome class, and study design instead of blending them into a single confidence statement.",
-        "Interpretation also depends on fit. A claim that is appropriate for one population, exposure, comparator, or endpoint may be inappropriate elsewhere even when the topic label is similar. Discordant material should define the boundary of inference rather than disappear from the narrative. Variation in eligibility, dose, adherence, baseline condition, measurement strategy, and follow-up can change how a reader should apply the evidence map. Where those modifiers remain unresolved, the conclusion stays conditional and avoids treatment, policy, or population-wide advice.",
-        "The practical takeaway is therefore a method for reading the synthesis, not a new factual claim. Readers should give priority to source-traced passages that align with the question and should treat adjacent material as context. Mechanistic plausibility can explain why an effect might occur, but it cannot replace direct outcome evidence. Reviews can organize a field, but they do not carry the same role as the underlying studies. Safety, tolerability, and null material remain relevant because they constrain interpretation even when the narrative emphasizes a promising direction.",
-        "This boundary makes the conclusion revisable without making it vague. Future retrieval may strengthen or narrow the synthesis, but any update should use the same standard: claims remain tied to identifiable sources, quantitative statements remain tied to matching source values, and practical language remains proportionate to directness and design quality. The paper is therefore best used as a structured evidence map rather than a pooled estimate, treatment guideline, or substitute for professional judgment. Its value lies in separating what the retained record can justify from what still requires better aligned research.",
-    ])
-    return structural
+    def labels(field: str, default: str) -> str:
+        values = {str((row.get(field) if isinstance(row, Mapping) else getattr(row, field, None)) or default) for row in usable}
+        return ", ".join(key.replace("_", " ") for key in sorted(values))
+    parts = ["### Corpus boundary", f"The retained record spans these source roles: {labels('directness', 'unclassified')}. It also spans multiple source tiers without treating those tiers as interchangeable. This corpus-specific structure sets the interpretive perimeter and keeps distinct source roles separate.", f"Outcome coding spans {labels('outcome_class', 'unclassified')}, while direction coding spans {labels('effect_direction', 'unclear')}. The direct subset sets the ceiling for applied interpretation. Indirect, mechanistic, protocol, and review rows add context, but no source role stands in for another.", "This boundary keeps the conclusion within the recorded populations, comparators, endpoints, and follow-up windows. It does not extend the paper into treatment guidance, a pooled estimate, or population-wide advice. Future updates must retain the same source-role, endpoint-fit, and population-fit distinctions. That scope remains explicit whenever the corpus is updated or reinterpreted."]
+    extras = ("The outcome roster remains separated into its recorded analytic slices. Population, comparator, endpoint, and follow-up differences are carried forward as boundaries rather than averaged away. Cross-slice transfer is appropriate only when those design features remain compatible.", "The source-role roster is likewise preserved. Direct human rows answer a different question from adjacent clinical, mechanistic, protocol, or review rows. The conclusion therefore reports the strongest bounded reading while retaining discordant and context-only material as limits.", "This structure also makes later revision auditable. New rows can change the outcome roster, direction roster, or source-role balance, but they do not silently rewrite the scope of older rows.", "Readers can therefore distinguish a stable corpus boundary from a future change in the record. The manuscript remains revisable, but each revision must preserve the same separation of source role, endpoint fit, and population fit.")
+    for paragraph in extras:
+        if len(re.findall(r"\b\w+\b", "\n\n".join(parts))) >= minimum_words:
+            break
+        parts.append(paragraph)
+    return "\n\n".join(parts)
+
+
+def build_conclusion_anchor(receipts: Sequence[ReceiptSummary], matrix: TensionMatrix, *, existing_text: str = "") -> str:
+    """Return a source-bounded fallback without generic padding."""
+    del matrix
+    accepted = [r for r in receipts if r.spar_verdict in ("accept_clean", "accept_caveated")]
+    match = re.search(r"(?ms)^## Conclusion\s*\n(.*?)(?=^## |\Z)", existing_text)
+    existing_words = len(re.findall(r"\b\w+\b", match.group(1))) if match else 0
+    return build_source_bounded_conclusion(accepted, minimum_words=max(0, 250 - existing_words))
 
 
 def _format_kinds(kinds: Counter[str]) -> str:

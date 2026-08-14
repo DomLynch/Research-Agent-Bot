@@ -18,24 +18,6 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     )
     if n:
         changes.append(("rename_contextual_other", n, "renamed broad contextual bucket"))
-    if "Contextual Adjacent Evidence" in text and "not pooled with direct outcome evidence" not in text:
-        note = (
-            "\n\n**Outcome-class note:** Contextual Adjacent Evidence denotes "
-            "background, boundary-condition, or adjacent-outcome sources. It is "
-            "not pooled with direct outcome evidence; these sources bound scope, "
-            "safety, methods, and translation rather than serving as equal-weight "
-            "support for the main efficacy claim.\n"
-        )
-        text, n = re.subn(r"(^## Results\b)", r"\1" + note, text, count=1, flags=re.M)
-        if n:
-            changes.append(("explain_contextual_adjacent_evidence", 1, "defined broad adjacent-evidence bucket"))
-    text, n = re.subn(
-        r"not pooled with direct outcome evidence\.",
-        "not pooled with direct outcome evidence; these sources bound scope, safety, methods, and translation rather than serving as equal-weight support for the main efficacy claim.",
-        text,
-    )
-    if n:
-        changes.append(("expand_contextual_adjacent_evidence_note", n, "clarified contextual-source integration role"))
     text, n = _repair_public_artifact_phrases(text)
     if n:
         changes.append(("repair_public_artifact_phrase", n, f"rewrote {n} public artifact phrase(s)"))

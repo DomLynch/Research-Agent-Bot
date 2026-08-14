@@ -202,8 +202,23 @@ def test_source_title_numeric_is_not_repeated_as_result_claim() -> None:
     }
     line = journal_finalizer._manifest_source_finding_line(row)
     assert "90,000" not in line
+    assert "Lessons from over procedures" not in line
     assert "Khatri 2025" in line
     assert audit._check_numeric_integrity(line, set(), {"receipts": [row]})[0]
+
+
+def test_source_title_preserves_alphanumeric_entity_identifiers() -> None:
+    for identifier in ("TA-65", "HHV‑6", "8‐OHdG", "6‒OHDA", "5−FU"):
+        row = {
+            "citation_token": "Harley 2011",
+            "source_title": f"A source study of {identifier} outcomes",
+            "outcome_class": "telomere_length",
+            "effect_direction": "positive",
+            "directness": "direct",
+            "evidence_tier": "A1",
+        }
+        line = journal_finalizer._manifest_source_finding_line(row)
+        assert identifier in line
 
 
 def test_percentage_still_filtered_for_trivial_values() -> None:

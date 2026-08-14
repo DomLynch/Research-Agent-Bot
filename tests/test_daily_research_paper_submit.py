@@ -213,14 +213,14 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
     (run / "full_paper.md").write_text(
         "# Research Synthesis: Topic\n\n"
         "## Abstract\n\nAlpha 2026 reports: Topic intervention trial reports an authoritative "
-        f"endpoint result from source-owned full text content. {_words('abstract', 90)}.\n\n"
+        f"endpoint result from source-owned full text content. {_words('abstract context detail.', 30)}\n\n"
         f"## Introduction\n\n{_words('introduction', 350)}.\n\n"
         f"## Methods\n\n{_words('methods', 300)}.\n\n"
-        f"## Results\n\n{_words('results', 850)}.\n\n"
+        f"## Results\n\n{_words('results context detail.', 284)}\n\n"
         f"## Discussion\n\n{_words('discussion', 500)}.\n\n"
         f"## Limitations\n\n{_words('limitations', 200)}.\n\n"
         "## Conclusion\n\nBeta 2025 reports: Topic intervention trial reports an authoritative "
-        f"endpoint result from source-owned full text content. {_words('conclusion', 120)}.\n\n"
+        f"endpoint result from source-owned full text content. {_words('conclusion context detail.', 40)}\n\n"
         "## References\n\nR01.",
         encoding="utf-8",
     )
@@ -1573,6 +1573,12 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
         )
         row["evidence_span"] = row["excerpt"]
 
+    exact_claims = daily._researka_claim_candidates(payload["sections"]["Results"])
+    exact_indexes = [daily._citation_indexes(item, payload["source_bundle"]) for item in exact_claims]
+    assert (len(exact_claims), sum(map(bool, exact_indexes)), sum(
+        any(daily._researka_evidence_aligns(item, payload["source_bundle"][index]) for index in indexes)
+        for item, indexes in zip(exact_claims, exact_indexes, strict=True)
+    )) == (5, 3, 3)
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == (
         "researka_claim_trace_insufficient:cited=5/7,aligned=5/7,required=6"
     )
@@ -1604,6 +1610,40 @@ def test_source_bound_structured_statistic_requires_matching_evidence_and_metada
     assert daily._claim_trace_counts(claim.replace("direction=mixed", "direction=positive"), [source]) == (1, 1, 0)
     assert daily._claim_trace_counts(claim.replace("outcome=Longevity", "outcome=Safety"), [source]) == (1, 1, 0)
     assert daily._claim_trace_counts(claim.replace("Faqihi 2021", "Wrong 2021"), [source]) == (1, 1, 0)
+    wrong_direction = claim.replace("direction=mixed", "direction=positive")
+    overlap_source = {**source, "excerpt": claim}
+    assert daily._researka_evidence_aligns(wrong_direction, overlap_source)
+    assert daily._researka_claim_trace_status(
+        {"abstract": "", "sections": {"Results": wrong_direction}}, [overlap_source],
+    ) == "researka_claim_trace_insufficient:cited=1/1,aligned=0/1,required=1"
+    assert daily.role_outcome_display({
+        "title": "Telomere length and frailty", "outcome_class": "frailty",
+        "directness": "indirect",
+    }) == "Biomarker/Adjacent Frailty"
+
+    model_source = {
+        **source,
+        "source_title": "Mouse model mechanism",
+        "outcome_class": "mechanism",
+        "directness": "mechanistic",
+    }
+    model_claim = claim.replace(
+        "outcome=Longevity; direction=mixed; directness=direct; tier=A1",
+        "outcome=Mechanism (mouse); direction=mixed; directness=mechanistic; tier=A1",
+    )
+    assert daily._structured_source_summary_aligns(
+        model_claim, model_source, daily._quantity_tokens(model_claim, [model_source]),
+    )
+
+
+def test_quantity_tokens_ignore_alphanumeric_source_identifiers() -> None:
+    for hyphen in "-‐‑‒–—−":
+        for identifier in (f"TA{hyphen}65", f"HHV{hyphen}6", f"8{hyphen}OHdG"):
+            assert daily._quantity_tokens(f"The source evaluates {identifier} outcomes.") == set()
+        assert daily._quantity_tokens(f"A 5{hyphen}Year-old received a 10{hyphen}Mg-dose.") == {
+            ("5", "year"), ("10", "mg"),
+        }
+    assert not daily._quantities_agree("10-Year-old cohort", [{"evidence_span": "5-Year-old cohort"}])
 
 
 def test_core_claim_trace_blocks_uncited_conclusion_accounting(tmp_path: Path) -> None:
@@ -1663,12 +1703,34 @@ def test_payload_cites_abstract_synthesis_claim_without_truncating_trace(tmp_pat
         1,
     )
     paper = paper.replace("\n## Introduction", f"\n{'Abstract detail. ' * 40}\n## Introduction", 1)
+    paper = paper.replace(
+        "## Results\n\n",
+        "## Results\n\n**Outcome-class note:** Generated evidence-scope boilerplate.\n"
+        "Clinical remains a separate Results slice for Topic and is not pooled. "
+        "Source-level findings are:\n"
+        "Direction reconciliation: receipt-level null or unclear coding is conservative "
+        "claim-level coding. Generated evidence boilerplate.\n",
+        1,
+    )
+    paper = paper.replace(
+        "## References",
+        "### Bounded conclusion\n\nThe closing interpretation must remain inside the scope of the retained source record.\n\n"
+        "### Source-backed boundary\n\nPreserve this source-backed subsection.\n\n## References",
+        1,
+    )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
 
     payload = daily.build_payload(run)
 
     assert len(payload["abstract"]) > 1400
     assert payload["abstract"] == payload["sections"]["Abstract"] == daily._sections(payload["body_markdown"])["Abstract"]
+    assert all(marker not in payload["body_markdown"] for marker in (
+        "Outcome-class note:", "remains a separate Results slice",
+        "Direction reconciliation:", "### Bounded conclusion",
+    ))
+    assert "### Source-backed boundary" in payload["body_markdown"]
+    assert "### Corpus boundary" in payload["sections"]["Conclusion"]
+    assert daily._word_count(payload["sections"]["Conclusion"]) >= 250
     scope = re.search(r"This paper synthesizes evidence on resistance training regimens.*?\[bundle:\d+\]", payload["abstract"])
     assert scope
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"

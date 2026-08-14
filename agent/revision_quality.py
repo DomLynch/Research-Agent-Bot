@@ -199,7 +199,7 @@ def findings_map_row(row: dict[str, Any]) -> tuple[str, str, str, str, str, str,
 
 def _findings_map_outcome(row: dict[str, Any]) -> str:
     current = str(row.get("outcome_class") or "contextual_other").strip() or "contextual_other"
-    receipt = SimpleNamespace(receipt_id=row.get("receipt_id"), source_title=row.get("source_title"),
+    receipt = SimpleNamespace(receipt_id=row.get("receipt_id"), source_title=row.get("source_title") or row.get("title"),
                               population_summary=row.get("population_summary"), directness=row.get("directness"))
     return outcome_display(refine_other_outcome_class(receipt, current))
 
@@ -209,7 +209,7 @@ def _findings_map_role_outcome(row: dict[str, Any], outcome: str) -> str:
     if directness.startswith("direct"):
         return outcome
     scope = " ".join(str(row.get(key) or "") for key in (
-        "source_title", "outcome_class", "endpoint", "population_summary", "evidence_type",
+        "source_title", "title", "outcome_class", "endpoint", "population_summary", "evidence_type",
     )).lower()
     model = _model_context(scope)
     if "mechanistic" in directness or "mechanism" in scope or model:
@@ -222,6 +222,10 @@ def _findings_map_role_outcome(row: dict[str, Any], outcome: str) -> str:
     )):
         return "Biomarker/Adjacent Evidence" if outcome in {"Contextual Adjacent Evidence", "Other"} else f"Biomarker/Adjacent {outcome}"
     return outcome
+
+
+def role_outcome_display(row: dict[str, Any]) -> str:
+    return _findings_map_role_outcome(row, _findings_map_outcome(row))
 
 
 def _model_context(scope: str) -> str:

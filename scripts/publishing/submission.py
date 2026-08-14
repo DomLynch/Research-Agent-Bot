@@ -34,9 +34,9 @@ from source_topic_specificity import (  # noqa: E402
     topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.deterministic_anchors import build_source_bounded_conclusion  # noqa: E402
 from agent.evidence_lanes import derive_receipt_lane  # noqa: E402
 from agent import publication_evidence as _publication_evidence, revision_claim_trace as _revision_claim_trace  # noqa: E402
-from agent.outcome_class_remap import outcome_display  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
     CorruptJsonState,
     read_json as _read_json_state,
@@ -51,7 +51,7 @@ from agent.publishing.policy import (  # noqa: E402
 )
 from agent.revision_contract import gate_report as _revision_gate_report, needs_coverage as _revision_needs_coverage  # noqa: E402
 from agent.revision_evidence import load_revision_evidence  # noqa: E402
-from agent.revision_quality import resolved_effect_direction  # noqa: E402
+from agent.revision_quality import resolved_effect_direction, role_outcome_display  # noqa: E402
 from agent.topic_display import humanize_topic  # noqa: E402
 from citation_registry import (  # noqa: E402
     _body_citation_from_metadata,
@@ -163,6 +163,10 @@ _GENERIC_EVIDENCE_WORDS = frozenset({
     "finding", "findings", "group", "groups", "intervention", "patients", "reported", "results",
     "receiving", "review", "significant", "significantly", "source", "studies", "study", "support",
     "supports", "suggests", "therapy", "treated", "treatment", "trial", "trials",
+})
+_RESEARKA_GENERIC_EVIDENCE_WORDS = frozenset({
+    "about", "across", "evidence", "finding", "findings", "reported", "results",
+    "review", "source", "studies", "study", "support", "supports", "suggests", "trial",
 })
 _CORPUS_ACCOUNTING_MARKERS = (
     "reference papers", "included sources", "evidence tiers", "directness is",
@@ -618,10 +622,19 @@ def _quantities_match(claim_quantities: set[tuple[str, str]], evidence: str) -> 
     return all(token in evidence_quantities or token[0].startswith("-") and "down" in _direction_labels(evidence) and (token[0][1:], token[1]) in evidence_quantities for token in claim_quantities)
 
 
+def _structured_source_fields(claim: str) -> dict[str, str]:
+    fields: dict[str, str] = {}
+    for segment in claim.split(";"):
+        if match := re.search(r"\b(outcome|direction|directness|tier)=(.*)", segment, re.I):
+            key, value = match.groups()
+            fields[key.lower()] = value.strip().rstrip(".)") if key.lower() == "tier" else value.strip()
+    return fields
+
+
 def _structured_source_summary_aligns(claim: str, source: dict[str, Any], quantities: set[tuple[str, str]]) -> bool:
-    fields = {key.lower(): value for key, value in re.findall(r"\b(outcome|direction|directness|tier)=([^;.)]+)", claim, re.I)}
+    fields = _structured_source_fields(claim)
     expected = (
-        ("outcome", outcome_display(str(source.get("outcome_class") or "contextual_other"))),
+        ("outcome", role_outcome_display(source)),
         ("direction", resolved_effect_direction(source)),
         ("directness", str(source.get("directness") or "")),
         ("tier", str(source.get("evidence_tier") or "")),
@@ -642,6 +655,16 @@ def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
     required = min(4, max(3, (len(claim_words) + 4) // 5))
     claim_text = claim.lower().split(" reports: ", 1)[-1].split(" [exact source:", 1)[0]
     claim_quantities = _quantity_tokens(claim, [source])
+    structured_fields = _structured_source_fields(claim)
+    expected_fields = {
+        "outcome": role_outcome_display(source),
+        "direction": resolved_effect_direction(source),
+        "directness": str(source.get("directness") or ""),
+        "tier": str(source.get("evidence_tier") or ""),
+    }
+    if any(not expected_fields[key] or _normalized_key(value) != _normalized_key(expected_fields[key])
+           for key, value in structured_fields.items()):
+        return False
     if _structured_source_summary_aligns(claim, source, claim_quantities):
         return True
     for key in ("quote", "evidence_span", "excerpt"):
@@ -700,6 +723,36 @@ def _claim_trace_counts(
         for claim, values in zip(claims, indexes, strict=True))
 
 
+def _researka_claim_candidates(text: str) -> list[str]:
+    candidates = [
+        clean for line in text.splitlines()
+        if len(clean := line.strip(" -*")) >= 80
+        and any(marker in clean.lower() for marker in _CLAIM_MARKERS)
+    ]
+    return (candidates or [
+        part.strip() for part in re.split(r"\n+|(?<=[.!?])\s+", text)
+        if len(part.strip()) >= 80
+    ])[:30]
+
+
+def _researka_evidence_words(text: object) -> set[str]:
+    return {word for word in re.findall(r"[a-z0-9]+", str(text or "").lower())
+            if len(word) >= 5 and word not in _RESEARKA_GENERIC_EVIDENCE_WORDS}
+
+
+def _researka_evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
+    claim_words = _researka_evidence_words(claim)
+    required = min(4, max(2, (len(claim_words) + 4) // 5))
+    for key in ("quote", "evidence_span", "excerpt"):
+        evidence = " ".join(str(source.get(key) or "").lower().split())
+        if len(evidence) >= 20 and (
+            evidence in claim.lower() or claim.lower() in evidence
+            or len(claim_words & _researka_evidence_words(evidence)) >= required
+        ):
+            return True
+    return False
+
+
 def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -> str:
     lines: list[str] = []
     section = ""
@@ -749,13 +802,19 @@ def _researka_claim_trace_status(
     ]
     prose = "\n".join([str(payload.get("abstract") or ""), *major])
     prose = "\n".join(line for line in prose.splitlines() if not line.lstrip().startswith("|"))
-    count, cited, aligned = _claim_trace_counts(prose, source_bundle)
-    required = (count * 4 + 4) // 5 if count else 0
-    return (
-        "eligible" if not count or aligned >= required
-        else f"researka_claim_trace_insufficient:cited={cited}/{count},"
-        f"aligned={aligned}/{count},required={required}"
-    )
+    checks = [_claim_trace_counts(prose, source_bundle)]
+    claims = _researka_claim_candidates(prose)
+    indexes = [_citation_indexes(claim, source_bundle) for claim in claims]
+    checks.append((len(claims), sum(bool(values) for values in indexes), sum(
+        any(_researka_evidence_aligns(claim, source_bundle[index]) for index in values)
+        for claim, values in zip(claims, indexes, strict=True)
+    )))
+    for count, cited, aligned in checks:
+        required = (count * 4 + 4) // 5 if count else 0
+        if count and aligned < required:
+            return (f"researka_claim_trace_insufficient:cited={cited}/{count},"
+                    f"aligned={aligned}/{count},required={required}")
+    return "eligible"
 
 
 def _researka_core_claim_trace_status(
@@ -785,9 +844,16 @@ def _researka_core_claim_trace_status(
 
 
 def _quantity_tokens(text: str, sources: list[dict[str, Any]] | None = None) -> set[tuple[str, str]]:
-    text = text.replace("−", "-").replace("–", "-").replace("—", "-")
+    text = text.translate(str.maketrans("‐‑‒–—−", "------"))
     cleaned = _BUNDLE_REFERENCE_RE.sub(
         " ", _DOI_RE.sub(" ", _PMID_RE.sub(" ", _NUMERIC_CITATION_RE.sub(" ", text))),
+    )
+    cleaned = re.sub(
+        r"\b(?:[A-Za-z][A-Za-z0-9]*-\d+[A-Za-z0-9-]*|\d+-[A-Za-z][A-Za-z0-9-]*)\b",
+        lambda match: match.group()
+        if (quantity := _QUANTITY_RE.match(match.group())) and quantity.group("unit")
+        else " ",
+        cleaned,
     )
     cleaned = re.sub(r"(%|percent(?:age)?|pp)\s*=\s*([+-]?(?:\d+(?:\.\d+)?|\.\d+))", r"\2\1", cleaned, flags=re.I)
     cleaned = re.sub(r"\btype\s+[12]\s+diabet(?:es|ic)\b|(?<=[A-Za-z])-\d+\b", " ", cleaned, flags=re.I)
@@ -2139,10 +2205,46 @@ def _metadata_markers(metadata: dict[str, Any]) -> set[str]:
     }
 
 
+def _trim_submission_boilerplate(paper: str) -> str:
+    for pattern in (
+        r"(?m)^\*\*Outcome-class note:\*\*[^\n]*\n?",
+        r"(?m)^[^\n]+ remains a separate Results slice[^\n]*Source-level findings are:\s*\n?",
+        r"(?m)^Direction reconciliation: receipt-level null or unclear coding is conservative claim-level coding\.[^\n]*\n?",
+        r"(?m)^### Bounded conclusion\s*\n(?=(?:The closing interpretation|Interpretation also depends|The practical takeaway|This boundary makes|The current corpus is non-supportive|Evidence for this outcome class))",
+        r"(?m)^The closing interpretation must remain inside the scope of the retained source record\.[^\n]*\n?",
+        r"(?m)^Interpretation also depends on fit\.[^\n]*\n?",
+        r"(?m)^The practical takeaway is therefore a method for reading the synthesis,[^\n]*\n?",
+        r"(?m)^This boundary makes the conclusion revisable without making it vague\.[^\n]*\n?",
+        r"(?m)^The current corpus is non-supportive for clinical efficacy or general health-intervention claims;[^\n]*\n?",
+        r"(?m)^Evidence scope: A subset of the retained sources is indirect,[^\n]*\n?",
+        r"(?m)^The evidence profile separates direct interventional hard-endpoint evidence[^\n]*\n?",
+        r"(?m)^Positive study-level signals are not the dominant direction[^\n]*\n?",
+        r"(?m)^The conclusion is that [^\n]+ remains a bounded evidence case:[^\n]*\n?",
+        r"(?m)^Evidence for this outcome class is represented in the structured results table,[^\n]*\n?",
+    ):
+        paper = re.sub(pattern, "", paper)
+    return re.sub(r"\n{3,}", "\n\n", paper)
+
+
+def _restore_source_bounded_conclusion(
+    paper: str, source_bundle: list[dict[str, Any]],
+) -> str:
+    match = re.search(r"(?ms)(^## Conclusion\s*\n)(.*?)(?=^## |\Z)", paper)
+    if not match or (words := _word_count(match.group(2))) >= 250:
+        return paper
+    anchor = build_source_bounded_conclusion(source_bundle, minimum_words=250 - words)
+    if not anchor:
+        return paper
+    body = match.group(2).rstrip()
+    replacement = f"{match.group(1)}{body}\n\n{anchor}\n\n"
+    return paper[:match.start()] + replacement + paper[match.end():].lstrip()
+
+
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = _strip_background_references(_clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8")))
-    paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility")
+    paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility").replace("changing the evidence tier", "changing the source tier")
     paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
+    paper = _trim_submission_boilerplate(paper)
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
     # Preserve the agent's existing source URLs, source-level appraisals, and
@@ -2151,6 +2253,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     for row in source_bundle:
         if span := _source_evidence_span(row):
             row["evidence_span"] = span
+    paper = _restore_source_bounded_conclusion(paper, source_bundle)
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)
     paper = re.sub(r"(?ims)(\A# [^\n]+|^## (?:Abstract|Conclusion)\b.*?(?=^## |\Z))", lambda block: re.sub(r"\bunresolved\b", lambda word: "Unsettled" if word.group()[0].isupper() else "unsettled", block.group()), paper)

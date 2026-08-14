@@ -71,7 +71,9 @@ def test_phase_f_fills_existing_empty_results_outcome_heading(tmp_path: Path) ->
     fixed, logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
     assert logs
     assert "| Everolimus / Cardiometabolic | n=2; claims=9 |" in fixed
-    assert "### Cardiometabolic Outcomes\n\nCardiometabolic remains a separate Results slice for Everolimus" in fixed
+    assert "### Cardiometabolic Outcomes\n\n- " in fixed
+    assert "outcome=Cardiometabolic; direction=mixed; directness=indirect" in fixed
+    assert "remains a separate Results slice" not in fixed
 
 
 def test_phase_f_keeps_reviewer_renamed_outcome_heading_idempotent(tmp_path: Path) -> None:
@@ -147,7 +149,7 @@ def test_phase_f_fills_outcome_heading_with_source_level_findings(tmp_path: Path
     assert "Wang 2024 (Impact of a Precision Intervention for Vascular Health" in section
     assert "representative statistic p < 0.05" in section
     assert "direction=unclear; directness=direct; tier=A1" in section
-    assert "Direction reconciliation:" in section
+    assert "Direction reconciliation:" not in section
 
 
 def test_phase_f_does_not_render_extraction_null_as_outcome_null(tmp_path: Path) -> None:
@@ -360,10 +362,8 @@ def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> Non
 
     assert logs
     assert "Directional coding: null=1" not in fixed
-    assert (
-        "Contextual Adjacent Evidence remains a separate Results slice for Everolimus "
-        "(n=1; claims=28; positive=0, negative=0, null=1, mixed=0, unclear=0 (n=1)"
-    ) in fixed
+    assert "### Contextual Adjacent Evidence Outcomes\n\n- STAT3 Polymorphism" in fixed
+    assert "remains a separate Results slice" not in fixed
 
 
 def test_phase_f_replaces_stale_summary_with_one_canonical_direction_table(

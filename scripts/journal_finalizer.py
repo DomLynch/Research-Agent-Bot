@@ -22,6 +22,7 @@ from agent.revision_quality import (
     findings_map_row,
     manifest_row_finding as _manifest_row_finding,
     repair_revision_quality,
+    role_outcome_display,
     resolved_effect_direction as _resolved_effect_direction,
     traceable_p_values as _traceable_p_values,
 )
@@ -3080,7 +3081,7 @@ def _manifest_signal_examples(rows: list[dict[str, Any]], *, limit: int = 12) ->
     for row in sorted(rows, key=score)[:limit]:
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
         title = str(row.get("source_title") or "").strip()
-        outcome = _evidence_role_outcome_display(row)
+        outcome = role_outcome_display(row)
         direction = _normalised_direction(row)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
@@ -3125,47 +3126,6 @@ def _manifest_subdomain_bucket(row: dict[str, Any]) -> str:
     return next((label for label, tokens in buckets.items() if any(token in scope for token in tokens)), "adjacent clinical-context evidence")
 
 
-def _evidence_role_outcome_display(row: dict[str, Any]) -> str:
-    original = _outcome_display(_row_outcome_class(row))
-    directness = str(row.get("directness") or "").strip().lower()
-    if directness.startswith("direct"):
-        return original
-    scope = " ".join(str(row.get(key) or "") for key in (
-        "source_title", "outcome_class", "endpoint", "population_summary", "evidence_type",
-    )).lower()
-    model = _model_context_label(scope)
-    if "mechanistic" in directness or "mechanism" in scope or model:
-        label = original if original == "Mechanism" else f"Mechanism/{original}"
-        return f"{label} ({model})" if model and model.lower() not in label.lower() else label
-    if any(token in scope for token in (
-        "biomarker", "marker", "blood-based", "serum", "plasma", "8-ohdg",
-        "8ohdg", "8-hydroxy", "mtdna", "mitochondrial dna", "deletion",
-        "heteroplasmy", "telomere length", "dna methylation",
-    )):
-        if original in {"Contextual Adjacent Evidence", "Other"}:
-            return "Biomarker/Adjacent Evidence"
-        return f"Biomarker/Adjacent {original}"
-    return original
-
-
-def _model_context_label(scope: str) -> str:
-    if "c. elegans" in scope or "caenorhabditis" in scope:
-        return "C. elegans"
-    if "drosophila" in scope or re.search(r"\bfruit fl(?:y|ies)\b", scope):
-        return "Drosophila"
-    if "zebrafish" in scope:
-        return "zebrafish"
-    if re.search(r"\b(mouse|mice|murine)\b", scope):
-        return "mouse"
-    if re.search(r"\b(rat|rats|rodent)\b", scope):
-        return "rodent"
-    if any(token in scope for token in ("cell", "cells", "in vitro", "organoid", "ex vivo")):
-        return "cell/in vitro"
-    if any(token in scope for token in ("animal", "preclinical", "model organism", "model-system", "model system")):
-        return "animal/preclinical"
-    return ""
-
-
 def _manifest_outcome_taxonomy_note(rows: list[dict[str, Any]]) -> str:
     buckets: dict[str, list[str]] = {}
     for row in rows:
@@ -3201,7 +3161,7 @@ def _manifest_most_supported_signal_note(feedback: str, rows: list[dict[str, Any
 def _manifest_direction_coded_highlights(rows: list[dict[str, Any]]) -> str:
     by_outcome: dict[str, dict[str, Any]] = {}
     for row in sorted(rows, key=_manifest_key_finding_score):
-        outcome = _evidence_role_outcome_display(row)
+        outcome = role_outcome_display(row)
         by_outcome.setdefault(outcome, row)
     lines = [_manifest_source_finding_line(row) for row in list(by_outcome.values())[:8]]
     return "Direction-coded source highlights:\n\n" + "\n".join(f"- {line}" for line in lines)
@@ -3557,7 +3517,7 @@ def _manifest_direction_visibility_note(rows: list[dict[str, Any]], feedback: st
 def _manifest_direction_heterogeneity_note(rows: list[dict[str, Any]]) -> str:
     grouped: dict[str, dict[str, list[str]]] = {}
     for row in rows:
-        outcome = re.sub(r"\s+\([^)]*\)$", "", _evidence_role_outcome_display(row))
+        outcome = re.sub(r"\s+\([^)]*\)$", "", role_outcome_display(row))
         direction = _normalised_direction(row)
         grouped.setdefault(outcome, {}).setdefault(direction, []).append(_row_citation(row))
     parts = []
@@ -3579,7 +3539,7 @@ def _manifest_key_finding_lines(rows: list[dict[str, Any]], *, limit: int = 8) -
     for row in sorted(rows, key=_manifest_key_finding_score):
         title = str(row.get("source_title") or "").strip()
         citation = str(row.get("citation_token") or row.get("receipt_id") or "source").strip()
-        outcome = _evidence_role_outcome_display(row)
+        outcome = role_outcome_display(row)
         direction = _normalised_direction(row)
         directness = str(row.get("directness") or "unknown").strip() or "unknown"
         tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
@@ -3607,7 +3567,7 @@ def _manifest_key_finding_score(row: dict[str, Any]) -> tuple[int, int, int]:
 def _manifest_outcome_summary_lines(rows: list[dict[str, Any]], *, per_outcome_limit: int | None = 3) -> list[str]:
     grouped: dict[str, list[dict[str, Any]]] = {}
     for row in rows:
-        outcome = _evidence_role_outcome_display(row)
+        outcome = role_outcome_display(row)
         grouped.setdefault(outcome, []).append(row)
     lines: list[str] = []
     for slug, matching in sorted(grouped.items(), key=lambda item: _outcome_display(item[0])):
@@ -3621,12 +3581,17 @@ def _manifest_outcome_summary_lines(rows: list[dict[str, Any]], *, per_outcome_l
 
 def _manifest_source_finding_line(row: dict[str, Any]) -> str:
     title = str(row.get("source_title") or "").strip()
-    title = "" if re.search(r"\d", title) else _source_result_label(title)
+    comparable_title = title.translate(str.maketrans("‐‑‒–—−", "------"))
+    title = (
+        ""
+        if re.search(r"(?<![A-Za-z0-9-])\d[\d,]*(?:\.\d+)?(?![A-Za-z0-9]|-[A-Za-z])", comparable_title)
+        else _source_result_label(title)
+    )
     directness = str(row.get("directness") or "unknown").strip() or "unknown"
     tier = str(row.get("evidence_tier") or "unknown").strip() or "unknown"
     return (
         f"{_row_citation(row)} ({title + '; ' if title else ''}{_manifest_row_finding(row)}; "
-        f"outcome={_evidence_role_outcome_display(row)}; direction={_normalised_direction(row)}; "
+        f"outcome={role_outcome_display(row)}; direction={_normalised_direction(row)}; "
         f"directness={directness}; tier={tier})"
     )
 
@@ -3657,37 +3622,13 @@ def _manifest_direction_audit_table(rows: list[dict[str, Any]]) -> str:
 
 def _outcome_slice_narrative(
     *,
-    display: str,
-    topic_anchor: str,
     matching: list[dict[str, Any]],
-    n: int,
-    n_claims: int,
-    signal: str,
-    directness: str,
-    limitation: str,
 ) -> str:
-    scope = f" for {topic_anchor}" if topic_anchor else ""
-    intro = (
-        f"{display} remains a separate Results slice{scope} "
-        f"(n={n}; claims={n_claims}; {signal}; {directness}; {limitation}) "
-        "and is not pooled into adjacent endpoint classes. Source-level findings are:"
-    )
     bullets = [
         "- " + _manifest_source_finding_line(row) + "."
         for row in sorted(matching, key=_manifest_key_finding_score)[:4]
     ] or ["- No named source-level finding is available in the manifest for this outcome class."]
-    has_conservative_direction = any(
-        str(row.get("effect_direction") or "").strip().lower() in {"null", "unclear"}
-        and bool(_traceable_p_values(row))
-        for row in matching
-    )
-    direction_note = (
-        "\n\nDirection reconciliation: receipt-level null or unclear coding is conservative "
-        "claim-level coding. Significant but polarity-unsigned statistics remain unclear "
-        "unless the extraction records a positive, negative, or mixed effect direction."
-        if has_conservative_direction else ""
-    )
-    return intro + "\n" + "\n".join(bullets) + direction_note
+    return "\n".join(bullets)
 
 
 def _source_result_label(title: str) -> str:
@@ -3864,7 +3805,7 @@ def _phase_d_source_inclusion_rationale(
 
 def _reviewer_adjusted_outcome(row: dict[str, Any], feedback: str) -> str:
     lower = feedback.lower()
-    original = _evidence_role_outcome_display(row)
+    original = role_outcome_display(row)
     directness = str(row.get("directness") or "").strip().lower()
     if directness.startswith("direct"):
         return _reviewer_adjusted_outcome_label(original, feedback)
@@ -4446,7 +4387,7 @@ def _manifest_tension_examples(
     selected_pairs = selected_pairs[:3]
     lines = [
         f"- {citation(left)} vs {citation(right)}: surfaced tension/disagreement in "
-        f"{_evidence_role_outcome_display(left)} on {endpoint} because directions are "
+        f"{role_outcome_display(left)} on {endpoint} because directions are "
         f"{left_direction} versus {right_direction}; "
         "interpret this as endpoint, population, directness, or study-design heterogeneity rather than a pooled effect."
         for _, _, _, endpoint, left_direction, right_direction, left, right in selected_pairs
@@ -4474,9 +4415,9 @@ def _manifest_tension_examples(
         lines.append(
             f"- {citation(left)} vs {citation(right)}: surfaced cross-source tension in evidence role; "
             f"{citation(left)} is {_row_directness_label(left)}/{_normalised_direction(left)} in "
-            f"{_evidence_role_outcome_display(left)}, whereas {citation(right)} is "
+            f"{role_outcome_display(left)}, whereas {citation(right)} is "
             f"{_row_directness_label(right)}/{_normalised_direction(right)} in "
-            f"{_evidence_role_outcome_display(right)}. These are not same-endpoint estimates and are "
+            f"{role_outcome_display(right)}. These are not same-endpoint estimates and are "
             "not pooled; the contrast identifies a translation gap rather than a head-to-head effect disagreement."
         )
         used.add(pair)
@@ -5686,14 +5627,7 @@ def _phase_f_reconcile_results_table(
         matching = groups.get(slug, [])
         aliases = {slug, _outcome_key(_reviewer_adjusted_outcome_label(display, feedback)), *(_outcome_key(str(row.get("outcome_class") or "")) for row in matching)}
         block = "### " + display + " Outcomes\n\n" + _outcome_slice_narrative(
-            display=display,
-            topic_anchor=topic_anchor,
             matching=matching,
-            n=n,
-            n_claims=n_claims,
-            signal=signal,
-            directness=directness,
-            limitation=limitation,
         ) + "\n"
         empty = re.search(rf"(?ms)^###\s+{re.escape(display)}\s+Outcomes\s*\n\s*(?=^###\s+|^##\s+|\Z)", new_results)
         if empty:
