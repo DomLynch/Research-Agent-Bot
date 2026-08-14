@@ -659,10 +659,25 @@ def test_restore_conclusion_heading_after_limitations_citations() -> None:
 def test_public_evidence_snapshot_stays_in_body_without_raw_tables() -> None:
     paper = "## Conclusion\n\nThe synthesis remains bounded."
     tables = "## Evidence Snapshot\n\n- Study A; N=n=120; p=0.01.\n"
-    out = orch._append_structured_tables_to_public_body(paper, tables)
+    qei = "## Quantitative Evidence Index\n\n| Value |\n|---|\n| n=80 |\n"
+    out = orch._append_structured_tables_to_public_body(paper, tables, qei)
     assert "## Evidence Snapshot" in out
+    assert "## Quantitative Evidence Index" not in out
     assert "|---|" not in out
     assert out.index("## Conclusion") < out.index("## Evidence Snapshot")
+
+
+def test_public_body_restores_qei_only_when_numeric_density_is_low() -> None:
+    paper = "## Results\n\n" + "result " * 1000
+    snapshot = "## Evidence Snapshot\n\nEvidence remains bounded."
+    qei = "## Quantitative Evidence Index\n\n" + "\n".join(
+        f"| n={n} |" for n in range(1, 13)
+    )
+
+    out = orch._append_structured_tables_to_public_body(paper, snapshot, qei)
+
+    assert "## Quantitative Evidence Index" in out
+    assert orch._audit_v06._check_numeric_density(out)[0] is True
 
 
 def test_restore_required_section_body_when_post_processing_strips_depth() -> None:

@@ -363,11 +363,17 @@ def _run_polish_compiler_gate(out_dir: Path) -> dict[str, Any]:
     return report
 
 
-def _append_structured_tables_to_public_body(markdown: str, tables_md: str) -> str:
+def _append_structured_tables_to_public_body(
+    markdown: str, tables_md: str, qei_md: str = "",
+) -> str:
     tables = tables_md.strip()
     if not tables or "## Evidence Snapshot" in markdown:
         return markdown
-    return markdown.rstrip() + "\n\n" + tables + "\n"
+    public = markdown.rstrip() + "\n\n" + tables + "\n"
+    qei = qei_md.strip()
+    if qei and not _audit_v06._check_numeric_density(public)[0]:
+        public = public.rstrip() + "\n\n" + qei + "\n"
+    return public
 
 
 def _restore_rendered_section_headings(
@@ -3114,7 +3120,7 @@ async def _run(
             writer_receipts, writer_matrix,
         )
         full_paper_md = _append_structured_tables_to_public_body(
-            full_paper_md, public_tables_md,
+            full_paper_md, public_tables_md, qei_md,
         )
         supplement_parts.append(tables_md.rstrip())
     # Pass the registry to References so its Author-Year tokens come
