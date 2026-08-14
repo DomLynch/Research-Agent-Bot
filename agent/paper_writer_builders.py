@@ -24,13 +24,14 @@ __all__ = [
 ]
 
 
-# Day 10.17 Fix C.3 — fuzzy-match cutoff for receipt-id repair.
-# 0.85 ratio matches "cfab-01" against "cfab-c01" (ratio 0.86) but
-# rejects "cfab-99" against "cfab-c01" (ratio 0.71). Tight enough
-# to avoid snapping fabricated ids to real ones, loose enough to
-# repair the empirical 1-char typo class.
+# Matches one-character receipt-id drift without snapping unrelated IDs.
 _RECEIPT_ID_REPAIR_CUTOFF = 0.85
 _CONTINUING_ABBREVIATION_RE = re.compile(r"\bet al\.(?=[ \t]+(?-i:[a-z0-9(]))", re.I)
+_AMBIGUOUS_ABBREVIATION_RE = re.compile(
+    r"\b(?:(?-i:[A-Z])\.|(?:[A-Za-z]\.){2,}|(?:dr|mr|mrs|ms|prof|sr|jr|st|figs?|eqs?|refs?|"
+    r"secs?|dept|nos?|vol|inc|ltd|co|etc|approx|vs|cf|et al)\.)[,;:]?\s+",
+    re.I,
+)
 _SENTENCE_BREAK_RE = re.compile(r"[.!?][^\w\s]*\s+")
 _INLINE_RECEIPT_RE = re.compile(r"\[([^\[\]\n]+)\]")
 def _has_internal_sentence_boundary(text: str) -> bool:
@@ -52,7 +53,8 @@ def citation_only_repair_eligible(payload: Mapping[str, object]) -> bool:
         and isinstance(row.get("receipt_ids"), list) and bool(row.get("receipt_ids"))
         and isinstance(row.get("text") or row.get("sentence"), str)
         and (not _has_internal_sentence_boundary(str(row.get("text") or row.get("sentence")))
-             or len(set(map(str, row["receipt_ids"]))) == 1)
+             or (len(set(map(str, row["receipt_ids"]))) == 1
+                 and not _AMBIGUOUS_ABBREVIATION_RE.search(str(row.get("text") or row.get("sentence")))))
         for row in rows
     )
 
@@ -111,22 +113,7 @@ def citation_only_repair(
 def repair_receipt_ids(
     rids: Sequence[str], accepted_ids: set[str],
 ) -> tuple[list[str], list[tuple[str, str]]]:
-    """Snap each id in `rids` to its closest match in `accepted_ids`
-    via stdlib difflib. Exact matches pass through. Near-misses
-    (SequenceMatcher ratio ≥ 0.85) are repaired. Fabricated ids
-    (no close match) are dropped.
-
-    Returns (repaired_list, log_of_changes). Log entries are
-    (original, repaired_or_dropped_to). The caller can write the
-    log to artifact for audit trail.
-
-    Day 10.17 Fix C.3 prescription from external review: prevent
-    Q9 receipt-id-format failures at the builder layer rather than
-    catching them after rendering. The empirical typo class is
-    1-char insertions/deletions in the cluster suffix (LLM dropped
-    the 'c' prefix in "cfab-c01" → "cfab-01"); difflib catches that
-    cleanly without snapping fabricated ids.
-    """
+    """Repair near-miss receipt IDs; return repaired IDs and a change log."""
     repaired: list[str] = []
     log: list[tuple[str, str]] = []
     valid_list = list(accepted_ids)
@@ -292,15 +279,7 @@ def _backfill_results_subsection(
 
 
 def _paragraph_list(parsed: Mapping[str, object]) -> list[object]:
-    """Return the paragraph entries, tolerating a bare single paragraph.
-
-    The writer asks for {"paragraphs": [...]}, but the model sometimes returns
-    ONE paragraph unwrapped, e.g. keys=["receipt_ids", "tension_kind", "text"].
-    Reading only "paragraphs" then yielded zero entries, the builder returned
-    None, and the section fell back to a ~15-word placeholder that cannot meet
-    any word floor -- observed live on cross_domain_synthesis. Which section it
-    hits varies per run, which made it look like several unrelated defects.
-    """
+    """Return paragraph entries, tolerating a bare single paragraph."""
     paragraphs = parsed.get("paragraphs")
     if isinstance(paragraphs, list):
         return paragraphs
@@ -313,19 +292,28 @@ def _materialize_inline_receipts(text: str, receipt_ids: Sequence[str]) -> str:
     """Render missing canonical metadata inline without changing the claim."""
     if not text.strip() or not receipt_ids:
         return text
-    if _has_internal_sentence_boundary(text):
-        return text
     inline_ids = _INLINE_RECEIPT_RE.findall(text)
     if any(receipt_id not in receipt_ids for receipt_id in inline_ids):
         return text
-    receipt_ids = [receipt_id for receipt_id in receipt_ids if receipt_id not in inline_ids]
-    if not receipt_ids:
+
+    if _has_internal_sentence_boundary(text):
+        if len(set(receipt_ids)) != 1 or _AMBIGUOUS_ABBREVIATION_RE.search(text):
+            return text
+        protected = _CONTINUING_ABBREVIATION_RE.sub(
+            lambda match: match.group().replace(".", "<DOT>"), text,
+        )
+        parts = re.split(f"({_SENTENCE_BREAK_RE.pattern})", protected)
+        for index in range(0, len(parts), 2):
+            parts[index] = _materialize_inline_receipts(parts[index], receipt_ids)
+        return "".join(parts).replace("<DOT>", ".")
+    missing = [rid for rid in receipt_ids if rid not in inline_ids]
+    if not missing:
         return text
     text = text.rstrip()
-    citations = " ".join(f"[{receipt_id}]" for receipt_id in receipt_ids)
+    citations = " ".join(f"[{rid}]" for rid in missing)
     ending = re.search(r"([.!?][^\w\s]*)$", text)
     if not ending:
-        return f"{text.rstrip()} {citations}"
+        return f"{text} {citations}"
     return f"{text[:ending.start()].rstrip()} {citations}{ending.group(1)}"
 
 
@@ -438,9 +426,7 @@ def build_anchored_from_parsed(
         rids = entry.get("receipt_ids") or []
         if not isinstance(text, str) or not isinstance(rids, list):
             continue
-        # Day 10.17 Fix C.3: repair LLM-emitted receipt-id typos
-        # before validation. The empirical pattern is 1-char drops
-        # (e.g. "cfab-c01" → "cfab-01"); difflib snaps them back.
+        # Repair one-character receipt-id drift before validation.
         repaired_rids, _repair_log = repair_receipt_ids(
             [str(r) for r in rids], accepted_ids,
         )

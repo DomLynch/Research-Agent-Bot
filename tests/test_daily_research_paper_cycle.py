@@ -100,6 +100,7 @@ def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
 def test_terminal_statuses_and_retryable_timeouts_do_not_drift() -> None:
     terminal = cycle._TERMINAL_REVISION_STATUSES | cycle._ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES
     assert all(cycle._failure_class(status) == "D_no_action" for status in terminal)
+    assert cycle._failure_class("topic_already_submitted_pending") == "D_no_action"
 
     retryable_timeouts = {
         status for status in cycle._RETRYABLE_REVISION_STATUSES

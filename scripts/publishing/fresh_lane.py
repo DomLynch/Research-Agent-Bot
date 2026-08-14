@@ -2846,6 +2846,7 @@ def _failure_class(status: str) -> str:
         "audit_p1_failed": "C_writer_fixable",
         "missing": "C_writer_fixable",
         "superseded_topic_run": "D_no_action",
+        "topic_already_submitted_pending": "D_no_action",
         "terminal_synthesis_timeout": "D_no_action",
     }.get(code, "unknown")
 

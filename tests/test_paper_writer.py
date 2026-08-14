@@ -273,7 +273,7 @@ def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> No
     ))
 
     assert "[r-a]" in section.body_md and "[r-b]" in section.body_md
-    assert len(prompts) == 3
+    assert len(prompts) == 1
 
 
 def test_citation_only_repair_rejects_content_or_source_changes() -> None:

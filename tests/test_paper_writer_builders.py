@@ -13,9 +13,11 @@ that don't fuzzy-match any valid receipt.
 from __future__ import annotations
 
 from agent.paper_writer_builders import (
+    _materialize_inline_receipts,
     build_anchored_from_parsed,
     build_results_from_parsed,
     build_scoped_from_parsed,
+    citation_only_repair_eligible,
 )
 from agent.synthesis_schemas import OutcomeClass, ReceiptSummary
 
@@ -303,6 +305,23 @@ def test_cross_domain_rejects_indexed_multi_sentence_records() -> None:
     )
     assert section is None
     assert "invalid_sentence_record_contract" in reasons
+
+
+def test_multi_sentence_paragraph_can_receive_citation_only_repair() -> None:
+    section = build_anchored_from_parsed(
+        {"paragraphs": [{
+            "text": "Evidence remains limited. Interpretation remains cautious.",
+            "receipt_ids": ["r-a"],
+        }]},
+        name="limitations_full", heading="## Limitations",
+        accepted=[_accepted("r-a")],
+    )
+    assert section is not None
+    assert "Evidence remains limited [r-a]. Interpretation remains cautious [r-a]." in section.body_md
+
+    for ambiguous in ("A. Smith observed change.", "Dr.\nSmith observed change.", "Results varied, e.g., by subgroup.", "Dose was given i.v.\nbefore sampling."):
+        assert _materialize_inline_receipts(ambiguous, ["r-a"]) == ambiguous
+        assert not citation_only_repair_eligible({"text": ambiguous, "receipt_ids": ["r-a"]})
 
 
 def test_scoped_repairs_receipt_id_with_one_char_typo() -> None:
