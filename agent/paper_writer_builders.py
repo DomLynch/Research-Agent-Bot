@@ -142,10 +142,7 @@ _NUMERIC_RE = re.compile(
     r"hours?|days?|weeks?|months?|years?)\b|"
     r"(?:hr|or|rr|ahr|aor|arr|ηp[2²]|β)\s*[=:,\-]?\s*-?\d+(?:\.\d+)?|"
     r"-?\d+(?:\.\d+)?"
-    # Trailing "." must not veto the match: a sentence-final numeric
-    # ("Dose was 50mg.", "p = 0.03.") otherwise escaped the fabrication guard
-    # entirely and was never checked for traceability. Excluding only \w still
-    # prevents matching a partial number, since digits are word characters.
+    # Allow sentence-final punctuation without matching partial numbers.
     r")(?!\w)",
     re.IGNORECASE,
 )
@@ -446,21 +443,25 @@ def build_anchored_from_parsed(
             ),
         )
         paragraph_index = entry.get("paragraph_index")
-        if name == "cross_domain_synthesis":
+        if name in {"cross_domain_synthesis", "limitations_full"}:
             if (
                 Counter(_INLINE_RECEIPT_RE.findall(text)) != Counter(repaired_rids)
                 or _has_internal_sentence_boundary(text)
             ):
                 rejections.append("invalid_sentence_record_contract")
                 continue
+            max_index = 6 if name == "cross_domain_synthesis" else 4
             if (
                 isinstance(paragraph_index, bool)
                 or not isinstance(paragraph_index, int)
-                or not 1 <= paragraph_index <= 6
+                or not 1 <= paragraph_index <= max_index
             ):
                 rejections.append("invalid_sentence_record_contract")
+                if name == "limitations_full":
+                    continue
                 paragraph_index = None
-            cross_domain_records.append((paragraph_index, text.strip(), repaired_rids, anchor))
+            if name == "cross_domain_synthesis":
+                cross_domain_records.append((paragraph_index, text.strip(), repaired_rids, anchor))
         if paragraph_index is None:
             if name != "cross_domain_synthesis":
                 body_lines.extend((text.strip(), "", f"  _Cited: {', '.join(f'`{i}`' for i in repaired_rids)}_", ""))
@@ -498,6 +499,12 @@ def build_anchored_from_parsed(
                 accepted_outcomes,
             )
             grouped, anchors = recovered or ({}, [])
+    elif name == "limitations_full" and (
+        set(grouped) != {"1", "2", "3", "4"}
+        or any(not 4 <= len(texts) <= 5 for texts, _ in grouped.values())
+    ):
+        rejections.append("invalid_sentence_record_contract")
+        grouped, anchors = {}, []
     for group_text, group_ids in grouped.values():
         body_lines.extend((
             " ".join(group_text), "",
@@ -506,10 +513,7 @@ def build_anchored_from_parsed(
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
     if not anchors:
-        # Every paragraph failed anchor validation, so the caller falls back to
-        # a ~15-word placeholder that cannot meet any section floor. The reason
-        # used to be discarded, which made a total writer failure look like a
-        # downstream gate error. Report why the first few were rejected.
+        # Report the upstream cause before the caller emits its short fallback.
         counts = Counter(rejections)
         detail = "; ".join(f"{r} x{n}" for r, n in counts.most_common(3))
         print(

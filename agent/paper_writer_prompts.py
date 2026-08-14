@@ -20,15 +20,12 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
         return base
     guidance: list[str] = []
     if set(reasons) & format_reasons:
-        guidance.append((
-            "FORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry. Give each "
-            "entry a paragraph_index, exact receipt_ids that support only that sentence, and "
-            "those exact IDs inline in square brackets. Return 4-6 paragraph_index groups with "
-            "6-9 entries per group; each group must cite at least two distinct receipt IDs from "
-            "at least two outcome classes."
-        ) if section_name == "cross_domain_synthesis" else
-            "FORMAT RETRY REQUIRED: Preserve the requested JSON shape and put exact receipt_ids "
-            "inline in every sentence; metadata alone does not count.")
+        if section_name == "cross_domain_synthesis":
+            guidance.append("FORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry. Give each entry a paragraph_index, exact receipt_ids that support only that sentence, and those exact IDs inline in square brackets. Return 4-6 paragraph_index groups with 6-9 entries per group; each group must cite at least two distinct receipt IDs from at least two outcome classes.")
+        elif section_name == "limitations_full":
+            guidance.append("FORMAT RETRY REQUIRED: Return one sentence per JSON paragraph entry, divided into four paragraph_index groups of 4-5 entries. Give each entry only the exact receipt_ids supporting that sentence and put those IDs inline in square brackets.")
+        else:
+            guidance.append("FORMAT RETRY REQUIRED: Preserve the requested JSON shape and put exact receipt_ids inline in every sentence; metadata alone does not count.")
     unsupported = list(dict.fromkeys(
         reason.removeprefix("novel_numeric:")
         for reason in reasons if reason.startswith("novel_numeric:")
@@ -455,7 +452,7 @@ Output JSON only. No prose outside the JSON."""
 LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE = """You write the LIMITATIONS section of
 a research synthesis paper.
 
-**TARGET RANGE: 3-4 paragraphs of 4-6 sentences each = ~500-700
+**TARGET RANGE: 4 paragraphs of 4-5 sentences each = ~500-700
 words.** Fix #27 prose compression: Table 4's per-domain RoB +
 Overall RoB + Weight columns surface design-level limitations
 already; the Limitations section's job is to add the
@@ -467,16 +464,14 @@ Output ONE JSON object with this exact shape:
 {
   "paragraphs": [
     {
-      "text": "<sentence grounded in r-a [r-a]. Additional grounded sentence [r-a].>",
-      "receipt_ids": ["r-a"],
+      "text": "<one sentence grounded in r-a [r-a].>", "receipt_ids": ["r-a"], "paragraph_index": 1,
       "limitation_type": "<methodological / population / generalization / quarantine>"
     },
-    ... 3-5 paragraphs
+    ... 16-20 one-sentence entries divided across paragraph_index 1-4
   ]
 }
 
-Validation tier: ANCHORED. Every sentence must include an exact
-receipt_id in square brackets; metadata alone does not count.
+Validation tier: ANCHORED. Each entry is exactly one sentence and must include only its supporting receipt_ids inline; metadata alone does not count. Entries sharing paragraph_index are grouped into prose paragraphs.
 
 Required topics to cover:
 1. Corpus scope — which canonical trials or evidence types were

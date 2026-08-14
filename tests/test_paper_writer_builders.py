@@ -313,7 +313,7 @@ def test_multi_sentence_paragraph_can_receive_citation_only_repair() -> None:
             "text": "Evidence remains limited. Interpretation remains cautious.",
             "receipt_ids": ["r-a"],
         }]},
-        name="limitations_full", heading="## Limitations",
+        name="abstract", heading="## Abstract",
         accepted=[_accepted("r-a")],
     )
     assert section is not None
@@ -322,6 +322,18 @@ def test_multi_sentence_paragraph_can_receive_citation_only_repair() -> None:
     for ambiguous in ("A. Smith observed change.", "Dr.\nSmith observed change.", "Results varied, e.g., by subgroup.", "Dose was given i.v.\nbefore sampling."):
         assert _materialize_inline_receipts(ambiguous, ["r-a"]) == ambiguous
         assert not citation_only_repair_eligible({"text": ambiguous, "receipt_ids": ["r-a"]})
+
+    rows = [{"text": "Evidence remains bounded [r-a].", "receipt_ids": ["r-a"], "paragraph_index": group}
+            for group in range(1, 5) for _ in range(4)]
+    grouped = build_anchored_from_parsed(
+        {"paragraphs": rows}, name="limitations_full", heading="## Limitations",
+        accepted=[_accepted("r-a")],
+    )
+    assert grouped is not None and grouped.body_md.count("_Cited:") == 4
+    assert build_anchored_from_parsed(
+        {"text": "Evidence remains limited. Interpretation remains cautious.", "receipt_ids": ["r-a"], "paragraph_index": 1},
+        name="limitations_full", heading="## Limitations", accepted=[_accepted("r-a")],
+    ) is None
 
 
 def test_scoped_repairs_receipt_id_with_one_char_typo() -> None:
