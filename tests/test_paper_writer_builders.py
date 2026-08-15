@@ -325,11 +325,13 @@ def test_multi_sentence_paragraph_can_receive_citation_only_repair() -> None:
 
     rows = [{"text": "Evidence remains bounded [r-a].", "receipt_ids": ["r-a"], "paragraph_index": group}
             for group in range(1, 5) for _ in range(4)]
+    rows[-1]["text"] = "The accepted p=0.05 result remains bounded [r-a]."
     grouped = build_anchored_from_parsed(
         {"paragraphs": rows}, name="limitations_full", heading="## Limitations",
-        accepted=[_accepted("r-a")],
+        accepted=[_accepted("r-a", p_values=("p=0.05",))],
     )
     assert grouped is not None and grouped.body_md.count("_Cited:") == 4
+    assert "p=0.05" not in grouped.body_md and len(grouped.anchors) == 15
     assert build_anchored_from_parsed(
         {"text": "Evidence remains limited. Interpretation remains cautious.", "receipt_ids": ["r-a"], "paragraph_index": 1},
         name="limitations_full", heading="## Limitations", accepted=[_accepted("r-a")],

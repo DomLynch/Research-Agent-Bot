@@ -89,6 +89,8 @@ def test_numeric_discipline_requires_inline_sentence_receipts() -> None:
     assert "[r-a]" in CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT
     assert "[r-a]" in ABSTRACT_SYSTEM_PROMPT
     assert "metadata alone does not" in LIMITATIONS_FULL_SYSTEM_PROMPT
+    for prompt in (CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT, LIMITATIONS_FULL_SYSTEM_PROMPT):
+        assert "Keep this analytical section qualitative" in prompt
 
 
 def test_numeric_discipline_rule_is_self_contained() -> None:

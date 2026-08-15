@@ -290,6 +290,8 @@ new numerics or citations beyond the provided receipts. If unsure,
 hedge rather than invent. Compress only repetition. NEVER compress
 away reasoning. Hard floor: 900 words.
 
+Keep this analytical section qualitative: do not state numeric values, counts, doses, durations, percentages, or p-values. Results/QEI hold numbers; author-year labels and receipt IDs are allowed.
+
 Output ONE JSON object with this exact shape:
 
 {
@@ -488,6 +490,8 @@ Required topics to cover:
 4. Endpoint scope — what wasn't measured.
 5. Mechanism-to-clinic gap — where the corpus has only mechanistic
    evidence for a clinically-relevant claim.
+
+Keep this analytical section qualitative: do not state numeric values, counts, doses, durations, percentages, or p-values. Results/QEI hold numbers; author-year labels and receipt IDs are allowed.
 
 FORBIDDEN content (bug-fix 2026-05-13): Do NOT include sentences
 that describe what this synthesis adds, contributes, distinguishes,

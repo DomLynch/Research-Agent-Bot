@@ -976,7 +976,8 @@ def test_phase_b_collapses_bundle_annotated_generated_qualifiers(
         },
     }))
     paper = (
-        "# Paper\n\n"
+        "# Paper\n\n## Framework Smith 2022 [bundle:9] provides "
+        "animal/preclinical context only.\n\n"
         "Smith 2022 [bundle:9] reported context while Wilson 2023 reported "
         "human data. Smith 2022 [bundle:9] provides animal/preclinical "
         "context only. Smith 2022 [bundle:9] provides animal/preclinical "
@@ -986,6 +987,7 @@ def test_phase_b_collapses_bundle_annotated_generated_qualifiers(
     fixed, log = _phase_b_lane_qualifier(paper, tmp_path)
 
     assert len(log) == 1
+    assert "## Framework\n" in fixed
     assert fixed.count("provides animal/preclinical context only.") == 1
     assert "Smith 2022 provides animal/preclinical context only." in fixed
     assert _phase_b_lane_qualifier(fixed, tmp_path) == (fixed, [])

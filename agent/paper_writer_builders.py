@@ -319,6 +319,8 @@ def _check_anchored_paragraph(
     receipt_ids: Sequence[str],
     accepted_ids: set[str],
     accepted_numerics: set[str],
+    *,
+    allow_numerics: bool = True,
 ) -> tuple[bool, str]:
     if not text.strip():
         return False, "empty_paragraph"
@@ -333,9 +335,11 @@ def _check_anchored_paragraph(
         return False, "missing_inline_anchor"
     for m in _NUMERIC_RE.finditer(inline.sub("", text)):
         tok = _numeric_token(m.group(0))
-        if tok in accepted_numerics:
-            continue
         if _is_bibliographic_year(text, m):
+            continue
+        if not allow_numerics:
+            return False, f"novel_numeric:{tok!r}"
+        if tok in accepted_numerics:
             continue
         return False, f"novel_numeric:{tok!r}"
     return True, "ok"
@@ -430,6 +434,7 @@ def build_anchored_from_parsed(
         text = _materialize_inline_receipts(text, repaired_rids)
         ok, reason = _check_anchored_paragraph(
             text, repaired_rids, accepted_ids, accepted_numerics,
+            allow_numerics=name not in {"cross_domain_synthesis", "limitations_full"},
         )
         if not ok:
             rejections.append(reason)
@@ -499,12 +504,6 @@ def build_anchored_from_parsed(
                 accepted_outcomes,
             )
             grouped, anchors = recovered or ({}, [])
-    elif name == "limitations_full" and (
-        set(grouped) != {"1", "2", "3", "4"}
-        or any(not 4 <= len(texts) <= 5 for texts, _ in grouped.values())
-    ):
-        rejections.append("invalid_sentence_record_contract")
-        grouped, anchors = {}, []
     for group_text, group_ids in grouped.values():
         body_lines.extend((
             " ".join(group_text), "",

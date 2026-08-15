@@ -23,7 +23,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 from agent.llm_client import (  # noqa: E402
-    CallSpec, CostLedger, configured_attempts_for_url,
+    CallSpec, CostLedger, build_extract_chain,
 )
 from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
@@ -2425,29 +2425,8 @@ def _used_background_lit_entries(paper_md: str) -> list:
 
 
 def _build_call_chain() -> list[CallSpec]:
-    """Build the configured primary and fallback writer chain."""
-    settings = load_settings()
-    chain: list[CallSpec] = []
-    if settings.minimax_api_key:
-        chain.append(CallSpec(
-            base_url=settings.minimax_base_url,
-            api_key=settings.minimax_api_key,
-            model=settings.minimax_model,
-            timeout_sec=settings.minimax_timeout_sec,
-            max_attempts=configured_attempts_for_url(settings.minimax_base_url),
-        ))
-    if settings.openrouter_api_key:
-        for openrouter_model in (settings.fallback_model, settings.judge_model):
-            chain.append(CallSpec(
-                base_url=settings.openrouter_base_url,
-                api_key=settings.openrouter_api_key,
-                model=openrouter_model,
-                timeout_sec=settings.minimax_timeout_sec,
-                max_attempts=configured_attempts_for_url(
-                    settings.openrouter_base_url,
-                ),
-            ))
-    return chain
+    """Build the MiMo-only writer chain; reviewers remain independent."""
+    return list(build_extract_chain(load_settings()))
 
 
 def _public_surface_return_code(*review_types: str) -> int:

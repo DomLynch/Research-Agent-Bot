@@ -867,7 +867,16 @@ def _phase_b_lane_qualifier(
     for i in range(0, len(paragraphs), 2):
         para = paragraphs[i]
         stripped = para.lstrip()
-        if not stripped or stripped.startswith(("##", "###", "|")):
+        if not stripped:
+            continue
+        if stripped.startswith(("##", "###")):
+            clean, suffix_n = suffix_re.subn("", stripped, count=1) if suffix_re else (stripped, 0)
+            if suffix_n:
+                trailing = "\n" if para.endswith("\n") else ""
+                paragraphs[i] = para[: len(para) - len(stripped)] + clean.strip() + trailing
+                n_patched += 1
+            continue
+        if stripped.startswith("|"):
             continue
         structured_note = stripped.startswith(("Findings Map completeness note:", "Findings Map accounting note:", "Direction heterogeneity note:"))
         bullet = re.match(r"^([-*]\s+)(.+)$", stripped, flags=re.S)
