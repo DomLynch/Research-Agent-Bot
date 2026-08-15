@@ -371,7 +371,7 @@ def _append_structured_tables_to_public_body(
         return markdown
     public = markdown.rstrip() + "\n\n" + tables + "\n"
     qei = qei_md.strip()
-    if qei and not _audit_v06._check_numeric_density(public)[0]:
+    if qei:
         public = public.rstrip() + "\n\n" + qei + "\n"
     return public
 
