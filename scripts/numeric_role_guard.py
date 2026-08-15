@@ -200,48 +200,37 @@ def _has_absolute_threshold(sentence: str) -> bool:
 def _extract_numeric_pairs(
     sentence: str,
 ) -> list[tuple[float, str, float]]:
-    """Find sentences with form 'X <comparison> Y' where X and Y are
-    numeric values (with units like m/s, mg, %). Returns list of
-    (X, comparison_word, Y) tuples for arithmetic validation.
-    Empty list when no comparable pair is found."""
+    """Return unambiguous same-unit pairs for deterministic arithmetic checks."""
     # Match number + unit + comparison + number + unit
     # Conservative: only flag clear "X (below|at or below|exceeds) Y"
-    # patterns where both X and Y have the same unit (so comparison
+    # patterns where both X and Y have the same explicit unit (so comparison
     # is well-defined).
     pairs: list[tuple[float, str, float]] = []
-    # Optional determiner ("the" / "this" / "that") + value + optional unit.
-    # `_UNIT` covers the common biomedical units we audit (m/s, mg, %, kg,
-    # mmHg, kg/m²); add more conservatively (false positives more costly
-    # than misses).
-    _UNIT = r"(?:m/s|mg|%|kg/m²|kg|mmHg|μM|mcg)?"
-    _DET = r"(?:(?:the|this|that)\s+)?"
-    # Try below-comparisons first
-    for cmp_pat in _BELOW_WORDS:
-        m = re.search(
-            rf"(\d+\.?\d*)\s*{_UNIT}[^.]*?{cmp_pat}\s+"
-            rf"{_DET}(\d+\.?\d*)\s*{_UNIT}",
-            sentence, flags=re.IGNORECASE,
-        )
-        if m:
-            try:
-                pairs.append((
-                    float(m.group(1)), "below", float(m.group(2)),
-                ))
-            except (TypeError, ValueError):
-                pass
-    for cmp_pat in _ABOVE_WORDS:
-        m = re.search(
-            rf"(\d+\.?\d*)\s*{_UNIT}[^.]*?{cmp_pat}\s+"
-            rf"{_DET}(\d+\.?\d*)\s*{_UNIT}",
-            sentence, flags=re.IGNORECASE,
-        )
-        if m:
-            try:
-                pairs.append((
-                    float(m.group(1)), "above", float(m.group(2)),
-                ))
-            except (TypeError, ValueError):
-                pass
+    claim_text = _NON_CLAIM_NUMERIC_RE.sub(lambda m: " " * len(m[0]), sentence)
+    _NUMBER = r"[+\-−]?(?:\d{1,3}(?:[ ,  ]\d{3})+(?:\.\d+)?|\d+(?:\.\d*)?|\.\d+)(?:[eE][+\-−]?\d+)?"
+    _UNIT = r"(mg/dL|mg/L|g/dL|g/L|ng/mL|mcg/mL|m/s|kg/m²|mmHg|μM|mM|nM|mcg|mg|kg|g|%)"
+    _UNIT_END = r"(?![\w/·⋅^−⁻-]|\s+(?:daily|weekly|monthly|yearly|annually)\b|\s+(?:every|each)\s+[A-Za-z]+|\s+per\s+(?:\d+\s+)?[A-Za-zμ]+|\s+[A-Za-zμ]+(?:[−⁻-]|\^-?)?\d+)"
+    pair_re = re.compile(
+        rf"(?<![\w.,'’/∕⁄:∶+\-−–—≈∼~])({_NUMBER})\s*-?\s*{_UNIT}{_UNIT_END}"
+        rf"(?:\s+(?:change|value|result|estimate)(?:\s+at\s+(?:week|month|day)\s+\d+)?)?\s+"
+        rf"(?:(?:is|was|were|falls?|fell|remains?|remained)\s+)?"
+        rf"(?P<relation>at\s+or\s+below|below|less\s+than|at\s+or\s+above|above|greater\s+than|exceeds?)\s+"
+        rf"(?:(?:the|this|that)\s+)?({_NUMBER})\s*-?\s*{_UNIT}{_UNIT_END}",
+        re.I,
+    )
+    ambiguous_prefix = re.compile(
+        r"(?:±|\+/-|plus\s+or\s+minus|\d+\s+to|between\s+\d+\s+and|"
+        r"\b(?:about|approx\.?|approximately|roughly|around|nearly|circa|at\s+most|at\s+least|up\s+to))\s*$",
+        re.I,
+    )
+    for match in pair_re.finditer(claim_text):
+        if ambiguous_prefix.search(claim_text[max(0, match.start() - 32):match.start()]):
+            continue
+        if match.group(2).lower() != match.group(5).lower():
+            continue
+        values = [float(re.sub(r"[ ,  ]", "", match.group(i)).replace("−", "-")) for i in (1, 4)]
+        relation = match.group("relation").lower()
+        pairs.append((values[0], "below" if "below" in relation or "less" in relation else "above", values[1]))
     return pairs
 
 
@@ -426,6 +415,10 @@ _DRIFT_NUMERIC_RE = re.compile(
     r"(?<![\w.])(\d+\.\d+|\.\d+|\d+)\s*"
     r"(?:%|mg|g|kg|mL|L|m/s|months?|years?|weeks?|days?|"
     r"mmHg|bpm|U/L)?",
+)
+_NON_CLAIM_NUMERIC_RE = re.compile(
+    r"\[bundle:\d+\]|\[exact source:[^\]]+\]|https?://\S+|"
+    r"(?<!\w)10\.\d{4,9}/\S+", flags=re.IGNORECASE,
 )
 _NUMERIC_RANGE_RE = re.compile(
     r"(?<![\w.])(\d+(?:\.\d+)?)\s*(?:-|–|—|to)\s*"
@@ -624,9 +617,10 @@ def _untraceable_reportable_numerics(
 ) -> list[str]:
     if not allowed_numerics:
         return []
+    clean = _NON_CLAIM_NUMERIC_RE.sub("", sentence)
     clean = re.sub(
         r"\b(?:95|99|99\.9|90)\s*%\s*CI\b", "",
-        sentence, flags=re.IGNORECASE,
+        clean, flags=re.IGNORECASE,
     )
     bad: set[str] = set()
     for category, pattern in _REPORTABLE_NUMERIC_PATTERNS:
@@ -1001,8 +995,9 @@ def _check_source_context_drift(
     cite_matches = list(_CITATION_TOKEN_RE.finditer(sentence))
     if not cite_matches:
         return None
+    claim_text = _NON_CLAIM_NUMERIC_RE.sub(lambda m: " " * len(m[0]), sentence)
     num_positions: list[tuple[int, str]] = []
-    for m in _DRIFT_NUMERIC_RE.finditer(sentence):
+    for m in _DRIFT_NUMERIC_RE.finditer(claim_text):
         raw = m.group(1)
         try:
             f = float(raw)

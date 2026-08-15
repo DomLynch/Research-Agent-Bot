@@ -35,6 +35,14 @@ def test_arithmetic_violation_metformin_pattern():
     assert issue is not None
     assert issue.issue_type == "arithmetic_violation"
     assert issue.severity == "P1"
+    assert _check_arithmetic_violations(
+        "A 0.13 m/s change at week 24 is below 0.1 m/s."
+    ) is not None
+    assert _check_arithmetic_violations(
+        "The assay is below the limit, but 0.13 m/s is below 0.1 m/s."
+    ) is not None
+    assert _check_arithmetic_violations("Allocation was 1:2 and 20 mg is below 10 mg.") is not None
+    assert _check_arithmetic_violations("A level of 20 mg/L is below 10 mg/L.") is not None
 
 
 def test_arithmetic_violation_above_pattern():
@@ -49,6 +57,41 @@ def test_arithmetic_correct_below_passes():
     """Correct claim: 0.5 m/s IS below 0.6 m/s. No issue."""
     s = "Walk speed of 0.5 m/s falls below the 0.6 m/s severe-frailty cutoff."
     assert _check_arithmetic_violations(s) is None
+
+
+def test_arithmetic_does_not_bind_duration_to_p_value():
+    for p_value in ("P <= 0.03", "*P* <= 0.03", "**P** <= 0.03", "_P_ <= 0.03", "p-value <= 1e-3"):
+        assert _check_arithmetic_violations(f"Mean at 24 hours ({p_value}).") is None
+    assert _check_arithmetic_violations("A score of 13 at week 24 is below 10.") is None
+    assert _check_arithmetic_violations("A duration of 24 months is below 18 months.") is None
+    assert _check_arithmetic_violations("At 24 months, the value is below 18 months.") is None
+    assert _check_arithmetic_violations("A change of -0.13 m/s is below 0.1 m/s.") is None
+    assert _check_arithmetic_violations("A level of 20 mg/L is below 10 mg/dL.") is None
+    assert _check_arithmetic_violations(
+        "A 0.05 m/s change at week 24 is below 0.1 m/s."
+    ) is None
+    assert _check_arithmetic_violations("A dose of 1e-3 mg is below 0.01 mg.") is None
+    assert _check_arithmetic_violations(
+        "A dose of 20 mg (95% CI 10-30 mg) is below 25 mg."
+    ) is None
+    assert _check_arithmetic_violations("A dose of 1,000 mg is above 500 mg.") is None
+    assert _check_arithmetic_violations("A dose of 1 000 mg is above 500 mg.") is None
+    assert _check_arithmetic_violations("A dose of 1,000.5 mg is above 500 mg.") is None
+    assert _check_arithmetic_violations("A change of −0.13 m/s is below 0.1 m/s.") is None
+    assert _check_arithmetic_violations("A dose of 2 mg·L−1 is below 10 mg.") is None
+    assert _check_arithmetic_violations("A dose of 20 mg per week is below 10 mg per day.") is None
+    for quantity in ("20 ± 2 mg", "1/2 mg", "10–20 mg", "about 20 mg", "approximately 20 mg"):
+        assert _check_arithmetic_violations(f"A dose of {quantity} is above 10 mg.") is None
+    assert _check_arithmetic_violations("A dose of 20 mg weekly is below 10 mg daily.") is None
+    assert _check_arithmetic_violations("A dose of 20 mg per 24 hours is below 10 mg per day.") is None
+    assert _check_arithmetic_violations("A dose of 20 mg is not below 10 mg.") is None
+    assert _check_arithmetic_violations("A dose of 20 mg is not greater than 30 mg.") is None
+
+
+def test_arithmetic_supports_unambiguous_scientific_notation():
+    issue = _check_arithmetic_violations("A dose of 1e-2 mg is below 1e-3 mg.")
+    assert issue is not None
+    assert issue.issue_type == "arithmetic_violation"
 
 
 def test_arithmetic_universal_units_bmi():
@@ -311,6 +354,29 @@ def test_source_context_drift_skips_compiler_source_rows(tmp_path):
 
     drift = [i for i in issues if i.issue_type == "source_context_drift"]
     assert len(drift) == 1 and "50%" in drift[0].sentence
+
+
+def test_source_context_drift_ignores_citation_identifiers(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "study.quant_claims.json").write_text(
+        '{"paper_id":"study","claims":[{'
+        '"numeric_values":[5],"binding_confidence":"high",'
+        '"claim_role":"effect"},{"numeric_values":[10],'
+        '"binding_confidence":"high","claim_role":"threshold"}]}'
+    )
+    manifest = {"receipts": [{
+        "paper_id": "study", "citation_token": "Smith 2024",
+    }]}
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        "Smith 2024 reported a 5% change [bundle:16] that is below "
+        "10% [exact source: https://doi.org/10.1000/20mg]."
+    )
+    issues = scan_paper(paper, manifest=manifest, quant_claims_dir=qc_dir)
+    fixed, n = auto_strip_offending_sentences(paper, issues)
+    assert not issues and n == 0
+    assert "## Cross-Domain Synthesis" in fixed
 
 
 def test_source_context_drift_skips_compiler_manifest_synthesis_blocks(tmp_path):
