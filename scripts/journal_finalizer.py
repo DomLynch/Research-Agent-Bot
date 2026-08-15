@@ -356,7 +356,21 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         entries.extend(log)
     text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
     entries.extend(log)
+    text, log = _phase_o_restore_numeric_evidence_index(text, out_dir)
+    entries.extend(log)
     return text, entries
+
+
+def _phase_o_restore_numeric_evidence_index(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
+    audit_v06 = _script_module("audit_v06_paper")
+    manifest = _load_sidecar(out_dir / "manifest.json")
+    if (isinstance(manifest, dict) and manifest.get("review_type") in audit_v06.COMPACT_REVIEW_TYPES) or audit_v06._check_numeric_density(text)[0]:
+        return text, []
+    patched, changes = review_noise_control.repair_revision_surface(text, "quantitative evidence index", out_dir)
+    if "quantitative_evidence_index" not in changes or not audit_v06._check_numeric_density(patched)[0]:
+        return text, []
+    return patched, [FinalizerLogEntry("O_numeric_density", "restore_verified_quantitative_evidence_index", 1,
+                                       "restored the supplemental evidence index after it cleared the final numeric-density audit")]
 
 
 def _surface_report(text: str, out_dir: Path) -> Any | None:

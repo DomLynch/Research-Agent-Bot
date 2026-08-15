@@ -656,13 +656,12 @@ def test_restore_conclusion_heading_after_limitations_citations() -> None:
     assert out.index("## Conclusion") < out.index("## Structured Evidence Tables")
 
 
-def test_public_snapshot_and_qei_stay_in_body_without_raw_tables() -> None:
+def test_public_evidence_snapshot_stays_in_body_without_raw_tables() -> None:
     paper = "## Conclusion\n\nThe synthesis remains bounded."
     tables = "## Evidence Snapshot\n\n- Study A; N=n=120; p=0.01.\n"
-    qei = "## Quantitative Evidence Index\n\n| Value |\n|---|\n| n=80 |\n"
-    out = orch._append_structured_tables_to_public_body(paper, tables, qei)
+    out = orch._append_structured_tables_to_public_body(paper, tables)
     assert "## Evidence Snapshot" in out
-    assert "## Quantitative Evidence Index" in out
+    assert "|---|" not in out
     assert out.index("## Conclusion") < out.index("## Evidence Snapshot")
 
 

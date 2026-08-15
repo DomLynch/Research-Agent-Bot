@@ -6899,6 +6899,39 @@ def test_revision_surface_moves_named_tensions_and_reconciles_mechanistic_framin
     assert "mechanistic_content_framing" in logs[0].detail
 
 
+def test_numeric_density_restores_verified_index_when_it_clears_floor(tmp_path: Path) -> None:
+    paper = "## Results\n\n" + " ".join(f"word{i}" for i in range(1200)) + "\n\n## References\n\n- Ref.\n"
+    rows = "\n".join(
+        f"| Study {i} | outcome | mixed | P = 0.0{i + 1} | p-value | source |"
+        for i in range(12)
+    )
+    (tmp_path / "structured_evidence_tables.md").write_text(
+        "## Quantitative Evidence Index\n\n"
+        "| Study | Outcome | Direction | Estimate | Type | Source |\n"
+        "|---|---|---|---|---|---|\n" + rows + "\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"review_type": "evidence_brief"}), encoding="utf-8",
+    )
+    assert journal_finalizer._phase_o_restore_numeric_evidence_index(
+        paper, tmp_path,
+    ) == (paper, [])
+    (tmp_path / "manifest.json").write_text(
+        json.dumps({"review_type": "systematic_review"}), encoding="utf-8",
+    )
+
+    fixed, logs = journal_finalizer._phase_o_restore_numeric_evidence_index(
+        paper, tmp_path,
+    )
+
+    assert "## Quantitative Evidence Index" in fixed
+    assert fixed.index("## Quantitative Evidence Index") < fixed.index("## References")
+    assert journal_finalizer._script_module("audit_v06_paper")._check_numeric_density(fixed)[0]
+    assert logs[0].rule == "restore_verified_quantitative_evidence_index"
+    assert journal_finalizer._phase_o_restore_numeric_evidence_index(fixed, tmp_path) == (fixed, [])
+
+
 def test_influenza_revision_adds_verified_pmid_and_authoritative_tally_notes(
     tmp_path: Path, monkeypatch,
 ) -> None:
