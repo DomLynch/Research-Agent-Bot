@@ -5072,6 +5072,9 @@ def run_cycle(
                     and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
                 )
             )
+            prepared_candidate = not revision_source and selected in prepared_candidates
+            if prepared_candidate:
+                source_precision_needs_repair = False
             if (
                 revision_source
                 and (existing_source_preflight or snapshot_evidence_locked)
@@ -5184,7 +5187,7 @@ def run_cycle(
                     )
                 ),
                 source_run=revision_source_run if revision_source else None,
-                prepared_candidate=not revision_source and selected in _prepared_candidate_topics(ledger_dir),
+                prepared_candidate=prepared_candidate,
             )
             if not preflight["passed"]:
                 terminal_missing_manifest = (

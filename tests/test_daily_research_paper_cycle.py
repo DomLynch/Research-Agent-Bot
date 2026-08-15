@@ -12578,11 +12578,15 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS * 2)
     _mock_candidate_bindings(monkeypatch)
     monkeypatch.setattr(
         cycle, "_quant_claim_source_precision",
-        lambda *_a, **_k: (True, "source_topic_precision_ok:24/24", []),
+        lambda *_a, **_k: (True, "source_topic_precision_ok:20/24", [Path("adjacent.json")]),
+    )
+    monkeypatch.setattr(
+        cycle, "_repair_low_source_precision_corpus",
+        lambda *_a, **_k: pytest.fail("bound prepared evidence must not be rewritten"),
     )
     receipt_preflights: list[str] = []
     preflight_sources: list[Path | None] = []
