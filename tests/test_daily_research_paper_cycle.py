@@ -2446,8 +2446,8 @@ def test_candidate_prepare_timer_runs_between_publish_windows() -> None:
     timer = (REPO / "deploy" / "research-agent-paper-prepare.timer").read_text(encoding="utf-8")
 
     assert (
-        "--prepare-only --prepare-target 3 --prepare-max-repairs 3 "
-        "--max-attempts 12 --timeout-sec 300" in service
+        "--prepare-only --prepare-target 3 --prepare-max-repairs 6 "
+        "--max-attempts 24 --timeout-sec 300" in service
     )
     assert "SuccessExitStatus=3" in service
     assert "Restart=on-failure" in service
