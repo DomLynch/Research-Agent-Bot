@@ -2514,3 +2514,32 @@ def test_outcome_sections_key_on_outcome_not_topic_anchor() -> None:
     assert _outcome_key("Safety") == _outcome_key("Safety Outcomes")
     # Distinct outcomes must NOT collide just because they share an anchor.
     assert _outcome_key("Topic X / Safety") != _outcome_key("Topic X / Longevity")
+
+
+def test_animal_citation_in_data_table_is_not_flagged_unlabelled() -> None:
+    """A stats table is not prose and carries no lane column by design.
+
+    The quantitative-evidence table is Study/Endpoint/Arm/Value/Type/Statistic,
+    so every animal citation inside it was reported as an unlabelled paragraph.
+    That blocked a 28/30 paper on a formatting artefact while the prose was
+    correctly labelled.
+    """
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    paper = (
+        "## Results\n\n"
+        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
+        "|---|---|---|---|---|---|\n"
+        "| Simon 2024 | cognition | nad | P = 0.03 | p-value | - |\n"
+    )
+    assert not _unlabeled_animal_citation_issue_messages(paper, ["Simon 2024"])
+
+
+def test_animal_citation_in_unlabelled_prose_is_still_flagged() -> None:
+    """The guard must still catch prose presenting animal data as human."""
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    paper = (
+        "## Results\n\n"
+        "Cognitive function improved substantially (Simon 2024), supporting "
+        "the primary endpoint across the cohort.\n"
+    )
+    assert _unlabeled_animal_citation_issue_messages(paper, ["Simon 2024"])

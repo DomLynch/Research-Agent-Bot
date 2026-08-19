@@ -885,7 +885,13 @@ def _unlabeled_animal_citation_issue_messages(
         # Slice 26: word-boundary match against the centralised qualifier
         # set (includes everyday terms like "mice"/"rat" alongside the
         # formal "rodent"/"murine"). Avoids "rat" → "iterate" false hits.
-        if qualifier_re.search(para):
+        # A leading "|" is a data table: it makes no narrative claim and the
+        # quantitative-evidence table has no lane column by construction, so
+        # every animal citation in it read as unlabelled and blocked
+        # publishable papers. This rule guards PROSE presenting animal
+        # findings as human evidence; lanes are declared per source in the
+        # classification map.
+        if para.lstrip().startswith("|") or qualifier_re.search(para):
             continue
         for match in _AUTHOR_YEAR_RE.finditer(para):
             token = f"{match.group(1)} {match.group(2)}"
