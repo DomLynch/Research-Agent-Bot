@@ -231,5 +231,5 @@ async def test_backstop_appends_conclusion_anchor_when_rerender_does_not_improve
         write_scoped_fn=write_scoped,
     )
 
-    assert "### Bounded conclusion" in out["conclusion"].body_md
+    assert "### Corpus boundary" in out["conclusion"].body_md
     assert backstop._section_word_count(out["conclusion"]) >= backstop.AUDIT_GATED_FLOORS["conclusion"]

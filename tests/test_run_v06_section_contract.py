@@ -987,7 +987,9 @@ def test_public_section_backstop_covers_abstract() -> None:
 
 def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
+    old_topic = orch._ACTIVE_TOPIC
     try:
+        orch._ACTIVE_TOPIC = "metformin"
         orch._ACTIVE_MANIFEST = {
             "n_receipts": 1,
             "n_high_confidence_claims_total": 8,
@@ -1002,6 +1004,7 @@ def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
         md = orch._compile_public_section_backstop("Abstract", 150)
     finally:
         orch._ACTIVE_MANIFEST = old_manifest
+        orch._ACTIVE_TOPIC = old_topic
 
     assert "Positive study-level signals concentrate in no dominant outcome class" not in md
     assert "No single positive outcome class dominates the retained corpus" not in md
@@ -1056,7 +1059,9 @@ def test_aggregate_paper_keeps_significant_unsigned_statistics_unclear() -> None
 
 def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
+    old_topic = orch._ACTIVE_TOPIC
     try:
+        orch._ACTIVE_TOPIC = "metformin"
         orch._ACTIVE_MANIFEST = {
             "n_receipts": 2,
             "n_high_confidence_claims_total": 12,
@@ -1079,6 +1084,7 @@ def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() 
         md = orch._compile_public_section_backstop("Abstract", 150)
     finally:
         orch._ACTIVE_MANIFEST = old_manifest
+        orch._ACTIVE_TOPIC = old_topic
 
     # "immune" now canonicalizes to immune_inflammation, so the two receipts
     # collapse to one class (no duplicate "immune and immune and inflammation").

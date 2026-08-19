@@ -2491,7 +2491,9 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
         "## Results\n\n" + _words("results", 850) + ".\n\n"
         "## Discussion\n\n" + _words("discussion", 500) + ".\n\n"
         "## Limitations\n\n" + _words("limitations", 200) + ".\n\n"
-        "## Conclusion\n\n" + note + _words("conclusion", 120) + ".\n\n"
+        # >=250 words so _restore_source_bounded_conclusion does not pad: this
+        # test asserts a COMPLIANT paper submits byte-identical to disk.
+        "## Conclusion\n\n" + note + _words("conclusion", 200) + ".\n\n"
     )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
