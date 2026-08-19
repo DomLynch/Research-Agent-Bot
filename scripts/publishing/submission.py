@@ -724,15 +724,14 @@ def _claim_trace_counts(
 
 
 def _researka_claim_candidates(text: str) -> list[str]:
-    candidates = [
-        clean for line in text.splitlines()
-        if len(clean := line.strip(" -*")) >= 80
-        and any(marker in clean.lower() for marker in _CLAIM_MARKERS)
-    ]
-    return (candidates or [
-        part.strip() for part in re.split(r"\n+|(?<=[.!?])\s+", text)
-        if len(part.strip()) >= 80
-    ])[:30]
+    # Share _claim_candidates' definition of a claim. The old sentence-length
+    # fallback counted the payload builder's own scope/framing prose ("This
+    # boundary keeps the conclusion within...", "Future updates must retain...")
+    # as claims needing citations. Boilerplate cannot be cited, so a 2-real-claim
+    # paper measured 2/8 aligned against a 7 floor and was rejected. This check
+    # exists to apply the STRICTER _researka_evidence_aligns to real claims, not
+    # to widen what counts as one.
+    return _claim_candidates(text)[:30]
 
 
 def _researka_evidence_words(text: object) -> set[str]:
