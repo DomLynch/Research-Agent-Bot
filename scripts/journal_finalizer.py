@@ -378,7 +378,7 @@ def _surface_report(text: str, out_dir: Path) -> Any | None:
     lanes, registry = _load_sidecar(out_dir / "evidence_lanes.json") or {}, _load_sidecar(out_dir / "citation_registry.json") or {}
     animal = [str(a.get("citation", "")) for a in (lanes.get("animal_citations") or []) if isinstance(a, dict) and a.get("citation")]
     feedback = _revision_feedback(_load_sidecar(out_dir / "researka_revision_request.json") or {})
-    oc = {r["receipt_id"]: _reviewer_adjusted_outcome_label(_outcome_display(r["outcome_class"]), feedback) for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
+    oc = {r["receipt_id"]: _reviewer_adjusted_outcome_label(_outcome_display(_row_outcome_class(r)), feedback) for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
     cmap = {e["body_citation"]: oc[rid] for rid, e in (registry.items() if isinstance(registry, dict) else ()) if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     try:
         from agent.journal_surface_gate import evaluate_journal_surface
@@ -5548,6 +5548,10 @@ def _phase_e_structural_fallback(
 
 # --- Phase F: Reconcile Results table with H3 subsections -------------
 
+_GENERATED_RESULTS_FALLBACK_RE = re.compile(
+    r"The .+ evidence base comprised \d+ sources?; the directness profile was .+?, and the dominant direction was [^.]+\."
+    r"(?: These sources define the outcome-specific signal for this domain before cross-domain interpretation\.)?", re.I)
+
 
 def _phase_f_reconcile_results_table(
     text: str, out_dir: Path,
@@ -5585,7 +5589,7 @@ def _phase_f_reconcile_results_table(
         "| Outcome class | Corpus slice | Direction profile | Directness | Main limitation |",
         "|---|---|---|---|---|",
     ]
-    stubs: list[tuple[str, str, int, int, str, str, str]] = []
+    stubs: list[tuple[str, str]] = []
     for slug, matching in sorted(
         groups.items(), key=lambda kv: (-len(kv[1]), _outcome_display(kv[0])),
     ):
@@ -5611,20 +5615,13 @@ def _phase_f_reconcile_results_table(
             f"| {row_display} | n={n}; claims={n_claims} | {signal_cell} "
             f"| {directness_cell} | {limitation_cell} |"
         )
-        stubs.append((
-            slug, display, n, n_claims, signal_cell,
-            directness_cell, limitation_cell,
-        ))
+        stubs.append((slug, display))
     context_table = source_context_map(receipts)
     table = "\n".join(rows) + "\n" + (f"\n{context_table}" if context_table else "")
     lines = results.splitlines(keepends=True)
     legacy_header = rows[0].replace("Direction profile", "Strongest signal")
-    header_candidates = {
-        rows[0],
-        rows[0].replace("Outcome class", "Evidence domain"),
-        legacy_header,
-        legacy_header.replace("Outcome class", "Evidence domain"),
-    }
+    header_candidates = {rows[0], legacy_header}
+    header_candidates |= {h.replace("Outcome class", "Evidence domain") for h in tuple(header_candidates)}
     try:
         start = next(i for i, line in enumerate(lines) if line.strip() in header_candidates)
     except StopIteration:
@@ -5646,9 +5643,12 @@ def _phase_f_reconcile_results_table(
         for m in re.finditer(r"^###\s+(.+?)\s*$", new_results, flags=re.M)
     }
     missing_blocks = []
-    for slug, display, n, n_claims, signal, directness, limitation in stubs:
+    for slug, display in stubs:
         matching = groups.get(slug, [])
-        aliases = {slug, _outcome_key(_reviewer_adjusted_outcome_label(display, feedback)), *(_outcome_key(str(row.get("outcome_class") or "")) for row in matching)}
+        section_aliases = {
+            slug, _outcome_key(_reviewer_adjusted_outcome_label(display, feedback)),
+        }
+        aliases = section_aliases | ({_outcome_key(str(row.get("outcome_class") or "")) for row in matching} - set(groups))
         block = "### " + display + " Outcomes\n\n" + _outcome_slice_narrative(
             matching=matching,
         ) + "\n"
@@ -5661,8 +5661,9 @@ def _phase_f_reconcile_results_table(
                 r"(?ms)^###\s+([^\n]+?)\s+Outcomes\s*\n\n(.*?)(?=^###\s+|^##\s+|\Z)",
                 new_results,
             )
-            if _outcome_key(match.group(1)) in aliases and (
+            if _outcome_key(match.group(1)) in section_aliases and (
                 match.group(2).strip().startswith(f"{display} remains a separate Results slice")
+                or _GENERATED_RESULTS_FALLBACK_RE.fullmatch(match.group(2).strip())
                 or re.match(
                     r"\d+ included sources? (?:was|were) assigned to this outcome class\.",
                     match.group(2).strip(),

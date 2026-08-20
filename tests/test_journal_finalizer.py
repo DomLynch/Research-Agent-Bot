@@ -343,7 +343,10 @@ def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> Non
         "|---|---|---|---|---|\n"
         "| Contextual Other | n=1; claims=28 | no extracted directional signal in 1/1 sources | 1 indirect | limited |\n\n"
         "### Contextual Other Outcomes\n\n"
-        "1 included source was assigned to this outcome class. Directional coding: null=1. Directness coding: indirect=1.\n\n"
+        "The contextual adjacent evidence base comprised 1 source; the "
+        "directness profile was 1 indirect, and the dominant direction was null. "
+        "These sources define the outcome-specific signal for this domain before "
+        "cross-domain interpretation.\n\n"
         "## References\n\n- Smith 2024.\n"
     )
     (tmp_path / "manifest.json").write_text(json.dumps({
@@ -364,6 +367,23 @@ def test_phase_f_refreshes_stale_generated_outcome_blocks(tmp_path: Path) -> Non
     assert "Directional coding: null=1" not in fixed
     assert "### Contextual Adjacent Evidence Outcomes\n\n- STAT3 Polymorphism" in fixed
     assert "remains a separate Results slice" not in fixed
+
+
+def test_phase_f_preserves_sourced_results_with_generated_prefix(tmp_path: Path) -> None:
+    finding = (
+        "The cardiometabolic evidence base comprised 1 source; the directness "
+        "profile was 1 direct, and the dominant direction was null. Smith 2024 "
+        "reported a bounded source-specific finding [Smith 2024]."
+    )
+    paper = f"## Results\n\n### Cardiometabolic Outcomes\n\n{finding}\n\n## References\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{
+        "citation_token": "Smith 2024", "outcome_class": "cardiometabolic",
+        "effect_direction": "null", "directness": "direct",
+    }]}))
+
+    fixed, _ = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+
+    assert finding in fixed
 
 
 def test_phase_f_replaces_stale_summary_with_one_canonical_direction_table(
@@ -471,22 +491,33 @@ def test_phase_f_preserves_authored_single_line_summary(tmp_path: Path) -> None:
 
 
 def test_phase_f_uses_canonical_role_for_direct_animal_source(tmp_path: Path) -> None:
-    paper = "## Results\n\nExisting bounded results.\n\n## Discussion\n\nInterpretation.\n"
+    paper = (
+        "## Results\n\n### Contextual Adjacent Evidence Outcomes\n\n"
+        "The contextual adjacent evidence base comprised 1 source; the directness "
+        "profile was 1 direct, and the dominant direction was null.\n\n"
+        "## Discussion\n\nInterpretation.\n"
+    )
     (tmp_path / "manifest.json").write_text(json.dumps({
-        "receipts": [{
-            "outcome_class": "contextual_other",
-            "effect_direction": "null",
-            "directness": "direct",
-            "evidence_tier": "A1",
-            "source_title": "Randomized intervention in mice",
-        }],
+        "receipts": [
+            {"outcome_class": "contextual_other", "effect_direction": "null",
+             "directness": "direct", "evidence_tier": "A1",
+             "source_title": "Randomized intervention in mice"},
+            {"outcome_class": "contextual_other", "effect_direction": "null",
+             "directness": "direct", "evidence_tier": "A1",
+             "source_title": "Human observational cohort"},
+        ],
     }))
 
     fixed, _logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+    stable, _ = journal_finalizer._phase_f_reconcile_results_table(fixed, tmp_path)
     results = fixed.split("## Results", 1)[1].split("## Discussion", 1)[0]
 
     assert "| 1 mechanistic |" in results
-    assert "| 1 direct |" not in results
+    assert "| 1 direct |" in results
+    assert results.count("### Contextual Adjacent Evidence Outcomes") == 1
+    assert results.count("### Animal/Preclinical Context Outcomes") == 1
+    assert "Human observational cohort" in results
+    assert stable == fixed
 
 
 def test_phase_n_does_not_pad_short_limitations_with_generic_prose(tmp_path: Path) -> None:
