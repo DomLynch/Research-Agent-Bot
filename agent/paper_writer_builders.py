@@ -3,8 +3,10 @@ from __future__ import annotations
 
 import difflib
 import re
+import sys
 from collections import Counter
 from collections.abc import Mapping, Sequence
+from pathlib import Path
 
 from agent.synthesis_schemas import (
     ReceiptSummary,
@@ -147,23 +149,12 @@ _NUMERIC_RE = re.compile(
     re.IGNORECASE,
 )
 
-
 def _normalize(text: str) -> str:
     return " ".join(text.replace("·", ".").split()).lower()
 
 
 def _topic_aliases(topic: str) -> tuple[str, ...]:
-    """Accept file-safe and prose topic labels, plus the lead entity.
-
-    The scoped validator requires an alias to appear at least twice in a
-    section to prove it is on-topic. Matching only the whole slug demanded
-    prose repeat "liraglutide adverse effects" verbatim twice, which no real
-    writing does -- it says "liraglutide". Every scoped paragraph was therefore
-    rejected and the section fell back to a ~15-word placeholder.
-
-    The lead entity is the subject of the topic, so counting it preserves the
-    on-topic guarantee: a section centered on a different drug still fails.
-    """
+    """Return full topic variants plus its lead entity."""
     raw = topic.strip()
     variants = {raw, raw.replace("_", " "), raw.replace("-", " ")}
     lead = re.split(r"[_\s-]+", raw.strip())
@@ -215,6 +206,30 @@ def _accepted_numeric_tokens(receipts: Sequence[ReceiptSummary]) -> set[str]:
         for value in (*receipt.p_values, receipt.thesis_text, receipt.population_summary)
     )
     return {_numeric_token(match.group(0)) for match in _NUMERIC_RE.finditer(corpus)}
+
+
+def _source_grounding_reason(text: str, receipt_ids: Sequence[str], receipts_by_id: Mapping[str, ReceiptSummary]) -> str | None:
+    if (scripts := str(Path(__file__).resolve().parents[1] / "scripts")) not in sys.path:
+        sys.path.insert(0, scripts)
+    from publishing.submission import _evidence_aligns, _source_language_clauses
+    source_by_id: dict[str, dict] = {}
+    for receipt in (receipts_by_id[rid] for rid in receipt_ids if rid in receipts_by_id):
+        parts = re.split(r"\bsource excerpts:\s*", receipt.thesis_text, maxsplit=1, flags=re.I)
+        excerpt = " | ".join(filter(None, (
+            parts[1] if len(parts) == 2 else "", *receipt.p_values,
+            receipt.population_summary,
+        )))
+        source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class,
+                                                   "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
+    protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
+    for sentence in _SENTENCE_BREAK_RE.split(protected):
+        clean, sentence_ids = sentence.replace("<DOT>", ".").strip(), set(_INLINE_RECEIPT_RE.findall(sentence)) or set(receipt_ids)
+        for clause in _source_language_clauses(clean):
+            atom_ids = set(_INLINE_RECEIPT_RE.findall(clause)) or sentence_ids
+            atom = _INLINE_RECEIPT_RE.sub("[bundle:1]", clause)
+            if not any(_evidence_aligns(atom, source_by_id[rid], source_language=True) for rid in atom_ids if rid in source_by_id):
+                return "source_grounding:" + ",".join(sorted(atom_ids))
+    return None
 
 
 def _label_for_outcome(outcome: str) -> str:
@@ -412,8 +427,8 @@ def build_anchored_from_parsed(
     rejection_reasons: list[str] | None = None,
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
+    accepted_by_id = {r.receipt_id: r for r in accepted}
     accepted_outcomes = {r.receipt_id: r.outcome_class for r in accepted}
-    accepted_numerics = _accepted_numeric_tokens(accepted)
     paragraphs = _paragraph_list(parsed)
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
@@ -432,12 +447,18 @@ def build_anchored_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         text = _materialize_inline_receipts(text, repaired_rids)
+        mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
         ok, reason = _check_anchored_paragraph(
-            text, repaired_rids, accepted_ids, accepted_numerics,
+            text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts),
             allow_numerics=name not in {"cross_domain_synthesis", "limitations_full"},
         )
         if not ok:
             rejections.append(reason)
+            continue
+        if name in {"abstract", "results"} and (
+            grounding_reason := _source_grounding_reason(text, repaired_rids, accepted_by_id)
+        ):
+            rejections.append(grounding_reason)
             continue
         anchor = SynthesisClaimAnchor(
             sentence=text.strip(),
@@ -511,6 +532,8 @@ def build_anchored_from_parsed(
         ))
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
+    if any(reason.startswith("source_grounding:") for reason in rejections):
+        return None
     if not anchors:
         # Report the upstream cause before the caller emits its short fallback.
         counts = Counter(rejections)
@@ -534,12 +557,14 @@ def build_scoped_from_parsed(
     heading: str,
     topic: str,
     accepted: Sequence[ReceiptSummary],
+    rejection_reasons: list[str] | None = None,
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
-    accepted_numerics = _accepted_numeric_tokens(accepted)
+    accepted_by_id = {r.receipt_id: r for r in accepted}
     paragraphs = _paragraph_list(parsed)
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
+    rejections: list[str] = []
     for entry in paragraphs:
         if not isinstance(entry, dict):
             continue
@@ -551,10 +576,17 @@ def build_scoped_from_parsed(
         repaired_rids, _repair_log = repair_receipt_ids(
             [str(r) for r in rids], accepted_ids,
         )
-        ok, _reason = _check_scoped_paragraph(
-            text, repaired_rids, accepted_ids, accepted_numerics,
+        mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
+        ok, reason = _check_scoped_paragraph(
+            text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts),
         )
         if not ok:
+            rejections.append(reason)
+            continue
+        if name == "conclusion" and (
+            grounding_reason := _source_grounding_reason(text, repaired_rids, accepted_by_id)
+        ):
+            rejections.append(grounding_reason)
             continue
         body_lines.append(text.strip())
         body_lines.append("")
@@ -567,7 +599,9 @@ def build_scoped_from_parsed(
             receipt_ids=tuple(repaired_rids),
             numerics=(),
         ))
-    if not anchors:
+    if rejection_reasons is not None:
+        rejection_reasons.extend(rejections)
+    if not anchors or any(reason.startswith("source_grounding:") for reason in rejections):
         return None
     section_text = _normalize(" ".join(anchor.sentence for anchor in anchors))
     aliases = _topic_aliases(topic)
@@ -585,8 +619,10 @@ def build_results_from_parsed(
     parsed: dict,
     *,
     accepted: Sequence[ReceiptSummary],
+    rejection_reasons: list[str] | None = None,
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
+    accepted_by_id = {r.receipt_id: r for r in accepted}
     # Group/resolve on the CANONICAL outcome key (outcome_key) so near-duplicate
     # classes (e.g. "immune" vs "immune_inflammation") collapse to one section,
     # matching the finalizer's _outcome_key routing. Idempotent for classes that
@@ -595,11 +631,11 @@ def build_results_from_parsed(
     by_outcome: dict[str, list[ReceiptSummary]] = {}
     for receipt in accepted:
         by_outcome.setdefault(outcome_key(receipt.outcome_class), []).append(receipt)
-    accepted_numerics = _accepted_numeric_tokens(accepted)
     body_lines: list[str] = ["## Results", ""]
     outcome_bodies: dict[str, list[str]] = {}
     anchors: list[SynthesisClaimAnchor] = []
     rendered_outcomes: set[str] = set()
+    rejections: list[str] = []
     for sub in parsed.get("subsections") or []:
         if not isinstance(sub, dict):
             continue
@@ -628,10 +664,15 @@ def build_results_from_parsed(
             repaired_rids = _same_outcome_receipt_ids(
                 repaired_rids, subsection_outcome, receipt_outcomes,
             )
-            ok, _reason = _check_anchored_paragraph(
-                text, repaired_rids, accepted_ids, accepted_numerics,
+            mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
+            ok, reason = _check_anchored_paragraph(
+                text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts),
             )
             if not ok:
+                rejections.append(reason)
+                continue
+            if grounding_reason := _source_grounding_reason(text, repaired_rids, accepted_by_id):
+                rejections.append(grounding_reason)
                 continue
             if not sub_body:
                 sub_body = [
@@ -657,6 +698,10 @@ def build_results_from_parsed(
                 outcome_bodies[subsection_outcome] = sub_body
             anchors.extend(sub_anchors)
             rendered_outcomes.add(subsection_outcome)
+    if rejection_reasons is not None:
+        rejection_reasons.extend(rejections)
+    if any(reason.startswith("source_grounding:") for reason in rejections):
+        return None
     for outcome in sorted(outcome_bodies):
         body_lines.extend(outcome_bodies[outcome])
     for outcome in sorted(by_outcome):

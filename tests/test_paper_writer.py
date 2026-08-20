@@ -250,12 +250,12 @@ def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> No
         prompts.append(prompt)
         if len(prompts) > 1:
             return {"paragraphs": [
-                {"text": "Evidence improved.", "receipt_ids": ["r-a"]},
-                {"text": "Evidence remained null.", "receipt_ids": ["r-b"]},
+                {"text": "The measured endpoint improved.", "receipt_ids": ["r-a"]},
+                {"text": "The measured endpoint remained null.", "receipt_ids": ["r-b"]},
             ]}
         return {"paragraphs": [
-            {"text": "Evidence improved. The population was bounded.", "receipt_ids": ["r-a"]},
-            {"text": "Evidence remained null. Follow-up was short.", "receipt_ids": ["r-b"]},
+            {"text": "The measured endpoint improved. The population was bounded.", "receipt_ids": ["r-a"]},
+            {"text": "The measured endpoint remained null. Follow-up was short.", "receipt_ids": ["r-b"]},
         ]}
 
     async def no_citation_fix(section, **_kwargs):
@@ -268,7 +268,10 @@ def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> No
 
     section = asyncio.run(paper_writer._write_anchored_section(
         name="abstract", heading="## Abstract", system_prompt="system",
-        user_prompt="base", accepted=[_summary("r-a"), _summary("r-b")], chain=(), client=None,
+        user_prompt="base", accepted=[
+            _summary("r-a", direction="positive", thesis_text="Trial - source excerpts: The measured endpoint improved. The population was bounded."),
+            _summary("r-b", direction="null", thesis_text="Trial - source excerpts: The measured endpoint remained null. Follow-up was short."),
+        ], chain=(), client=None,
         ledger=None, seed=None, fallback_body="fallback",
     ))
 
@@ -332,7 +335,9 @@ def test_anchored_writer_regenerates_non_citation_failure(monkeypatch) -> None:
 
     section = asyncio.run(paper_writer._write_anchored_section(
         name="abstract", heading="## Abstract", system_prompt="system",
-        user_prompt="base", accepted=[_summary("r-a")], chain=(), client=None,
+        user_prompt="base", accepted=[_summary(
+            "r-a", thesis_text="Study - source excerpts: Result remained bounded.",
+        )], chain=(), client=None,
         ledger=None, seed=None, fallback_body="fallback",
     ))
 
@@ -395,6 +400,14 @@ def test_cross_domain_retry_names_unsupported_numerics() -> None:
     assert "NUMERIC RETRY REQUIRED" in prompt and "FORMAT RETRY REQUIRED" in prompt
     assert "four paragraph_index groups" in prompt
     assert "one sentence per JSON paragraph entry" in prompt
+
+
+def test_retry_prompt_requires_mapped_source_language() -> None:
+    prompt = paper_writer.cross_domain_retry_prompt(
+        "base", "results", ["source_grounding:r-cardio"],
+    )
+    assert "SOURCE-GROUNDING RETRY REQUIRED" in prompt
+    assert "evidence_excerpt" in prompt
 
 
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:

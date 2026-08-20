@@ -1530,6 +1530,10 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
         "(P < 0.05) and had no effect on cognition.",
     }]) == (1, 1, 1)
     assert not daily._evidence_aligns(mixed_result, {"cited_as": "Wu 2025a", "excerpt": "A sufficiently long unrelated evidence statement; and"})
+    assert not daily._evidence_aligns(
+        "No significant effect was observed [bundle:1].",
+        {"excerpt": "No significant effect was observed."},
+    )
 
     percentage_result = (
         "Fuentes-Barria 2025 [bundle:1] reports: Both groups improved significantly in "

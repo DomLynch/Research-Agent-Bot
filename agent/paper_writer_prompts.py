@@ -1,19 +1,6 @@
 """LLM system prompts for generic multi-topic full-paper sections."""
 from __future__ import annotations
 
-__all__ = (
-    "NUMERIC_DISCIPLINE_RULE", "ABSTRACT_SYSTEM_PROMPT_TEMPLATE",
-    "INTRODUCTION_SYSTEM_PROMPT_TEMPLATE", "BACKGROUND_SYSTEM_PROMPT_TEMPLATE",
-    "RESULTS_SYSTEM_PROMPT_TEMPLATE", "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE",
-    "DISCUSSION_SYSTEM_PROMPT_TEMPLATE", "LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE",
-    "CONCLUSION_SYSTEM_PROMPT_TEMPLATE", "ABSTRACT_SYSTEM_PROMPT",
-    "INTRODUCTION_SYSTEM_PROMPT", "BACKGROUND_SYSTEM_PROMPT",
-    "RESULTS_SYSTEM_PROMPT", "CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT",
-    "DISCUSSION_SYSTEM_PROMPT", "LIMITATIONS_FULL_SYSTEM_PROMPT",
-    "CONCLUSION_SYSTEM_PROMPT", "cross_domain_retry_prompt", "format_prompts_for_topic",
-)
-
-
 def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) -> str:
     format_reasons = {"missing_inline_anchor", "invalid_sentence_record_contract"}
     if not reasons:
@@ -35,6 +22,13 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
             "NUMERIC RETRY REQUIRED: The previous output used unsupported numeric tokens "
             f"({', '.join(unsupported)}). Do not repeat them. Use a numeric token only when it "
             "appears verbatim in ACCEPTED RECEIPTS; otherwise state the point qualitatively."
+        )
+    if any(reason.startswith("source_grounding:") for reason in reasons):
+        guidance.append(
+            "SOURCE-GROUNDING RETRY REQUIRED: The previous empirical prose was not supported by "
+            "the receipt IDs it cited. Rewrite each claim using only endpoint, population, direction, "
+            "and effect language present in those receipts' evidence_excerpt fields. Do not add a "
+            "mechanism, interpretation, or benefit absent from the mapped excerpt."
         )
     return f"{base}\n\n{' '.join(guidance)} JSON only." if guidance else base
 
@@ -598,58 +592,19 @@ CONCLUSION_SYSTEM_PROMPT_TEMPLATE = (
 # any other curly braces in template text are escaped as {{ / }}.
 
 def _fill(template: str, topic: str, drug_class: str) -> str:
-    """Substitute topic placeholders without touching JSON-shape braces."""
-    return (
-        template
-        .replace("{topic}", topic)
-        .replace("{drug_class}", drug_class)
-    )
+    return template.replace("{topic}", topic).replace("{drug_class}", drug_class)
 
 
-def format_prompts_for_topic(
-    topic: str, drug_class: str = "drug",
-) -> dict[str, str]:
-    """Return a dict of formatted prompt strings for the given topic.
-
-    Required: topic (e.g. 'metformin', 'rapamycin', 'statins').
-    Optional: drug_class (e.g. 'biguanide', 'mTOR inhibitor',
-    'HMG-CoA reductase inhibitor'). Falls back to 'drug' if not
-    provided — generic but still safe.
-
-    All callers in agent/paper_writer.py must use this function
-    instead of importing the module-level *_SYSTEM_PROMPT constants
-    directly. The constants exist as backward-compat (default-fill
-    with topic='the drug') so legacy imports don't break, but they
-    contain literal '{topic}' placeholders that will confuse the LLM
-    if used unformatted on a real run.
-    """
+def format_prompts_for_topic(topic: str, drug_class: str = "drug") -> dict[str, str]:
     return {
-        "abstract": _fill(
-            ABSTRACT_SYSTEM_PROMPT_TEMPLATE, topic, drug_class,
-        ),
-        "introduction": _fill(
-            INTRODUCTION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class,
-        ),
-        "background": _fill(
-            BACKGROUND_SYSTEM_PROMPT_TEMPLATE, topic, drug_class,
-        ),
-        "results": _fill(
-            RESULTS_SYSTEM_PROMPT_TEMPLATE, topic, drug_class,
-        ),
-        "cross_domain_synthesis": _fill(
-            CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE,
-            topic, drug_class,
-        ),
-        "discussion": _fill(
-            DISCUSSION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class,
-        ),
-        "limitations_full": _fill(
-            LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE,
-            topic, drug_class,
-        ),
-        "conclusion": _fill(
-            CONCLUSION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class,
-        ),
+        "abstract": _fill(ABSTRACT_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
+        "introduction": _fill(INTRODUCTION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
+        "background": _fill(BACKGROUND_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
+        "results": _fill(RESULTS_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
+        "cross_domain_synthesis": _fill(CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
+        "discussion": _fill(DISCUSSION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
+        "limitations_full": _fill(LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
+        "conclusion": _fill(CONCLUSION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
     }
 
 
@@ -657,27 +612,11 @@ def format_prompts_for_topic(
 # any legacy import that still uses them gets a generic 'the drug' /
 # 'drug' fill (won't crash, won't pollute with metformin specifics).
 # New code should call format_prompts_for_topic() instead.
-ABSTRACT_SYSTEM_PROMPT = _fill(
-    ABSTRACT_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
-INTRODUCTION_SYSTEM_PROMPT = _fill(
-    INTRODUCTION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
-BACKGROUND_SYSTEM_PROMPT = _fill(
-    BACKGROUND_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
-RESULTS_SYSTEM_PROMPT = _fill(
-    RESULTS_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
-CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = _fill(
-    CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
-DISCUSSION_SYSTEM_PROMPT = _fill(
-    DISCUSSION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
-LIMITATIONS_FULL_SYSTEM_PROMPT = _fill(
-    LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
-CONCLUSION_SYSTEM_PROMPT = _fill(
-    CONCLUSION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug",
-)
+ABSTRACT_SYSTEM_PROMPT = _fill(ABSTRACT_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+INTRODUCTION_SYSTEM_PROMPT = _fill(INTRODUCTION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+BACKGROUND_SYSTEM_PROMPT = _fill(BACKGROUND_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+RESULTS_SYSTEM_PROMPT = _fill(RESULTS_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = _fill(CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+DISCUSSION_SYSTEM_PROMPT = _fill(DISCUSSION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+LIMITATIONS_FULL_SYSTEM_PROMPT = _fill(LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+CONCLUSION_SYSTEM_PROMPT = _fill(CONCLUSION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")

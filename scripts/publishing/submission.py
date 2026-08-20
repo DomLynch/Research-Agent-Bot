@@ -57,6 +57,7 @@ from citation_registry import (  # noqa: E402
     _body_citation_from_metadata,
     _title_citation_from_metadata,
 )
+from evidence_taxonomy import _ANIMAL_TEXT_RE, _HUMAN_TEXT_RE  # noqa: E402
 
 RUNS = ROOT / "runs"
 LEDGER_DIR = "_daily_research_paper_ledger"
@@ -177,7 +178,7 @@ _EMPIRICAL_CLAIM_RE = re.compile(
     r"\b(?:achiev(?:e[ds]?|ing)|associat(?:ed|ion)|benefit|decreas(?:e[sd]?|ing)|"
     r"conferr(?:ed|ing|s)|demonstrat(?:e[ds]?|ing)|differ(?:ed|ence|ences)|experienc(?:ed|es|ing)|"
     r"found|harm|higher|"
-    r"improv(?:e[sd]?|ement|ing)|increas(?:e[sd]?|ing)|lower|null (?:effect|finding|result|signal)|"
+    r"improv(?:e[sd]?|ement|ing)|increas(?:e[sd]?|ing)|lower(?:ed|ing|s)?|null (?:effect|finding|result|signal)|"
     r"observed|prevent(?:ed|ing|s)|prolong(?:ed|ing|s)|protect(?:ed|ing|ion|ive|s)|"
     r"reduc(?:e[sd]?|ing|tion)|report(?:ed|s)|"
     r"produc(?:e[ds]?|ing)|show(?:ed|s)|worsen(?:ed|ing|s)|yield(?:ed|ing|s))\b",
@@ -591,6 +592,13 @@ def _evidence_words(text: object) -> set[str]:
             if len(word) >= 5 and word not in _GENERIC_EVIDENCE_WORDS}
 
 
+_GROUNDING_FREE_WORDS = frozenset({"and", "appear", "appeared", "appears", "are", "bounded", "broader", "but", "cautious", "clinical", "conclusion", "could", "evidence", "established", "for", "from", "has", "have", "interpretation", "likely", "limited", "may", "might", "not", "perhaps", "possibly", "remain", "remained", "remains", "seem", "seemed", "seems", "significance", "suggests", "the", "this", "uncertain", "unclear", "unknown", "was", "were", "with"})
+def _grounding_words(text: object) -> set[str]:
+    return ({word[:-1] if word in {"adults", "patients"} else word for word in re.findall(r"[a-z0-9]+", str(text or "").lower()) if len(word) >= 3} - _GENERIC_EVIDENCE_WORDS) - _GROUNDING_FREE_WORDS
+
+
+def _source_language_clauses(text: str) -> list[str]:
+    return [part.strip() for clause in re.split(r"\s*\|\s*|;\s*|,?\s+\b(?:although|but|while|whereas|yet)\b\s+", text, flags=re.I) for comma_parts in [re.split(r",\s*", clause)] for comma_clause in (comma_parts if len(comma_parts) > 1 and all(_empirical_claim(value) for value in comma_parts) else [clause]) for and_parts in [re.split(r",?\s+and\s+", comma_clause, flags=re.I)] for part in (and_parts if len(and_parts) > 1 and all(_empirical_claim(value) for value in and_parts) else [comma_clause]) if part.strip()]
 def _direction_labels(text: str) -> set[str]:
     if _NULL_RE.search(text):
         return {"null"}
@@ -606,13 +614,13 @@ def _direction_labels(text: str) -> set[str]:
     return labels
 
 
-def _directions_compatible(claim: str, evidence: str) -> bool:
+def _directions_compatible(claim: str, evidence: str, *, exact: bool = False) -> bool:
     claim_labels = _direction_labels(claim)
     evidence_labels = _direction_labels(evidence)
     for axis in ({"up", "down", "null"}, {"benefit", "harm", "null"}):
         claim_axis = claim_labels & axis
         evidence_axis = evidence_labels & axis
-        if claim_axis and evidence_axis and claim_axis.isdisjoint(evidence_axis):
+        if claim_axis and evidence_axis and (claim_axis.isdisjoint(evidence_axis) or exact and not evidence_axis <= claim_axis):
             return False
     return True
 
@@ -647,13 +655,20 @@ def _structured_source_summary_aligns(claim: str, source: dict[str, Any], quanti
     )
 
 
-def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
+def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: bool = False) -> bool:
     label_words = _evidence_words(source.get("cited_as"))
     claim_words = _evidence_words(claim) - label_words
+    grounding_claim = _grounding_words(claim) - _grounding_words(source.get("cited_as"))
+    claim_population = (bool(_HUMAN_TEXT_RE.search(claim)), bool(_ANIMAL_TEXT_RE.search(claim))) if source_language else (False, False)
+    cautious = source_language and bool(re.search(r"\b(?:remain(?:s|ed)? (?:bounded|cautious|limited|uncertain)|is (?:unclear|unknown|not established))\b", claim, re.I))
+    if cautious and not grounding_claim:
+        return True
     if (match := re.fullmatch(r"(?:This paper|The conclusion) synthesizes evidence on (?P<topic>.+?) across the retained source corpus and high-confidence extracted claim set(?:, while remaining bounded by source directness and endpoint fit)?(?: \[bundle:\d+\])?[.!?]?", " ".join(claim.split()), re.I)) and is_source_topic_specific(match.group("topic"), str(source.get("title") or "")):
         return True
     required = min(4, max(3, (len(claim_words) + 4) // 5))
     claim_text = claim.lower().split(" reports: ", 1)[-1].split(" [exact source:", 1)[0]
+    if source_language:
+        claim_text = re.sub(r"\s+([.,;:!?])", r"\1", _BUNDLE_REFERENCE_RE.sub("", claim_text)).strip()
     claim_quantities = _quantity_tokens(claim, [source])
     structured_fields = _structured_source_fields(claim)
     expected_fields = {
@@ -668,23 +683,35 @@ def _evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
     if _structured_source_summary_aligns(claim, source, claim_quantities):
         return True
     for key in ("quote", "evidence_span", "excerpt"):
-        evidence = " ".join(str(source.get(key) or "").lower().split()).replace("−", "-").replace("–", "-").replace("—", "-")
+        evidence = (raw_evidence := " ".join(str(source.get(key) or "").split()).replace("−", "-").replace("–", "-").replace("—", "-")).lower()
         if len(evidence) < 20:
             continue
-        for sentence in _revision_claim_trace._sentences(evidence):
-            passages = re.split(r";\s*|,\s*(?=[a-z])|\s+and\s+(?=[^,;.]{0,80}(?:[+-]?\d|\.\d)|[^,;.]{0,60}\b(?:did not|had no|no (?:statistically )?significant|remained unchanged))", sentence, flags=re.I)
+        sentences = _revision_claim_trace._sentences(raw_evidence if source_language else evidence)
+        if source_language:
+            sentences = [part for sentence in sentences for part in re.split(r"(?<=[.!?])\s+", sentence)]
+        for raw_sentence in sentences:
+            sentence = raw_sentence.lower()
+            passages = _source_language_clauses(sentence) if source_language else re.split(r";\s*|,\s*(?=[a-z])|\s+and\s+(?=[^,;.]{0,80}(?:[+-]?\d|\.\d)|[^,;.]{0,60}\b(?:did not|had no|no (?:statistically )?significant|remained unchanged))", sentence, flags=re.I)
             direction_conflict = not _directions_compatible(claim, sentence)
             distinct_null = any(_NULL_RE.search(part) and bool(_evidence_words(part) - claim_words - {"change", "control", "controls", "difference", "effect", "effects", "individuals", "observed", "overall", "participant", "participants", "population", "populations", "same", "sample", "subject", "subjects", "these", "those"}) for part in passages)
-            if len(sentence) >= 20 and claim_text and (sentence in claim_text or claim_text in sentence) and (not claim_quantities or _quantities_match(claim_quantities, sentence)) and (not direction_conflict or distinct_null):
+            if len(sentence) >= 20 and claim_text and (claim_text in sentence or not source_language and sentence in claim_text) and (not claim_quantities or _quantities_match(claim_quantities, sentence)) and (not direction_conflict or distinct_null):
                 return True
             for passage in passages:
-                if not passage or not _directions_compatible(claim, passage) or direction_conflict and not distinct_null:
+                if not passage or not _directions_compatible(claim, passage, exact=source_language) or direction_conflict and not distinct_null:
                     continue
-                overlap = len(claim_words & (_evidence_words(passage) - label_words))
+                if source_language and any(claim_population) and any(evidence_population := (bool(_HUMAN_TEXT_RE.search(passage)), bool(_ANIMAL_TEXT_RE.search(passage)))) and evidence_population != claim_population:
+                    continue
+                passage_words = _evidence_words(passage) - label_words
+                overlap = len(claim_words & passage_words)
                 quantity_match = _quantities_match(claim_quantities, passage)
-                if len(passage) >= 20 and claim_text and (passage in claim_text or claim_text in passage) and (not claim_quantities or quantity_match):
+                if len(passage) >= 20 and claim_text and (claim_text in passage or not source_language and passage in claim_text) and (not claim_quantities or quantity_match):
                     return True
-                if overlap >= (2 if claim_quantities else required) and (not claim_quantities or quantity_match):
+                if source_language:
+                    grounding_passage = _grounding_words(passage) - _grounding_words(source.get("cited_as"))
+                    grounding_required = min(4, max(1, (len(grounding_claim) + 4) // 5))
+                    if len(grounding_claim & grounding_passage) >= grounding_required and not grounding_claim - grounding_passage and (cautious or not claim_quantities or quantity_match):
+                        return True
+                elif overlap >= (2 if claim_quantities else required) and (not claim_quantities or quantity_match):
                     return True
     return False
 

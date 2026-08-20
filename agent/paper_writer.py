@@ -259,25 +259,11 @@ def _build_user_prompt(
     background_lit_entries: Sequence[Any] | None = None,
 ) -> str:
     """Common prompt block: accepted receipts, tensions, and thesis."""
-    _ = rejected  # Day 10.17 Fix A — intentionally unused, see docstring.
     lines = [f"Topic: {topic}", "", "ACCEPTED RECEIPTS:"]
-    evidence_limit = max(1, min(
-        MAX_EVIDENCE_CHARS_PER_RECEIPT,
-        MAX_EVIDENCE_CHARS_TOTAL // max(1, len(receipts)),
-    ))
+    evidence_limit = max(1, min(MAX_EVIDENCE_CHARS_PER_RECEIPT,
+                                MAX_EVIDENCE_CHARS_TOTAL // max(1, len(receipts))))
     for r in receipts:
-        paper_tier_raw = derive_paper_tier(r)
-        # Fix #33: write a HUMAN-READABLE study-design label into the
-        # prompt context instead of the internal `A1_clinical_RCT`
-        # / `C1_preclinical` / `A2_human_mechanistic` / `B1_review`
-        # token. MiMo was copy-pasting the internal token verbatim
-        # into prose ("the C1_preclinical evidence from..."), which
-        # leaks pipeline machinery into the published paper.
-        paper_tier = _humanize_paper_tier(paper_tier_raw)
-        # Day 10.17a: empty population_summary now means tier-gated-out
-        # (mechanistic / indirect receipt) per agent/synthesis.py. Use
-        # an explicit sentinel so the LLM hedges honestly instead of
-        # hallucinate-filling a clinical population it doesn't have.
+        paper_tier = _humanize_paper_tier(derive_paper_tier(r))
         pop = r.population_summary or (
             "N/A (mechanistic / indirect — no enrolled clinical population)"
         )
@@ -459,11 +445,13 @@ async def _write_scoped_section(
         )
         if not parsed:
             continue
+        rejection_reasons: list[str] = []
         section = build_scoped_from_parsed(
-            parsed, name=name, heading=heading,
-            topic=topic, accepted=accepted,
+            parsed, name=name, heading=heading, topic=topic, accepted=accepted,
+            rejection_reasons=rejection_reasons,
         )
         if section is None:
+            current_prompt = cross_domain_retry_prompt(user_prompt, name, rejection_reasons)
             continue
         words = _section_word_count(section)
         if words > best_words:
@@ -477,10 +465,7 @@ async def _write_scoped_section(
 
     # Fix #20: citation fix pass.
     def _builder(parsed_dict: dict) -> SynthesisSection | None:
-        return build_scoped_from_parsed(
-            parsed_dict, name=name, heading=heading,
-            topic=topic, accepted=accepted,
-        )
+        return build_scoped_from_parsed(parsed_dict, name=name, heading=heading, topic=topic, accepted=accepted)
     best = await _run_citation_fix_pass(
         best, base_user_prompt=user_prompt,
         system_prompt=system_prompt, builder_fn=_builder,
@@ -568,8 +553,14 @@ async def write_results_section(
             )
             if not parsed:
                 continue
-            section = build_results_from_parsed(parsed, accepted=group)
+            rejection_reasons: list[str] = []
+            section = build_results_from_parsed(
+                parsed, accepted=group, rejection_reasons=rejection_reasons,
+            )
             if section is None:
+                current_prompt = cross_domain_retry_prompt(
+                    user, "results", rejection_reasons,
+                )
                 continue
             words = _section_word_count(section)
             if words > best_words:
@@ -655,8 +646,7 @@ async def render_full_paper(
     qei_quarantine_path: Any | None = None,
     review_type: str | None = None,
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
-    """Render full paper markdown plus per-section anchors. Slice 35:
-    review_type=thin_corpus_brief skips long-form section generation."""
+    """Render a full paper, or the compact brief path for thin corpora."""
     _thin = review_type in COMPACT_REVIEW_TYPES
     _revision_feedback = re.sub(
         r"[-\u2010-\u2015]+", " ", _revision_feedback_text().lower(),

@@ -12,6 +12,8 @@ that don't fuzzy-match any valid receipt.
 """
 from __future__ import annotations
 
+from dataclasses import replace
+
 from agent.paper_writer_builders import (
     _materialize_inline_receipts,
     build_anchored_from_parsed,
@@ -56,7 +58,11 @@ def test_anchored_repairs_receipt_id_with_one_char_typo() -> None:
     """LLM emits 'cfab-01' in receipt_ids; the closest valid id is
     'metformin-multi-001-cfab-c01' — stdlib difflib should snap to
     it. The repaired _Cited: footer must show the corrected id."""
-    accepted = [_accepted("metformin-multi-001-cfab-c01", p_values=("p=0.005",))]
+    accepted = [_accepted(
+        "metformin-multi-001-cfab-c01",
+        p_values=("p=0.005",),
+        thesis_text="Trial - source excerpts: Direct trial reported reductions at p=0.005.",
+    )]
     parsed = {
         "paragraphs": [
             {
@@ -451,11 +457,15 @@ def test_anchored_drops_fabricated_receipt_id_with_no_close_match() -> None:
     `is None or fabricated-not-in-body` — the loose form would
     silently pass a regression where a fabricated id rendered next
     to a hallucinated valid id."""
-    accepted = [_accepted("metformin-multi-001-cfab-c01", p_values=("p=0.005",))]
+    accepted = [_accepted(
+        "metformin-multi-001-cfab-c01",
+        p_values=("p=0.005",),
+        thesis_text="Trial - source excerpts: Glycemic biomarker trajectory declined at p=0.005.",
+    )]
     parsed = {
         "paragraphs": [
             {
-                "text": "Trial finding cited at p=0.005 [metformin-multi-001-cfab-c01].",
+                "text": "Glycemic biomarker trajectory declined at p=0.005 [metformin-multi-001-cfab-c01].",
                 "receipt_ids": ["metformin-fake-cluster-99"],  # fabricated
             },
         ],
@@ -469,7 +479,11 @@ def test_anchored_drops_fabricated_receipt_id_with_no_close_match() -> None:
 def test_anchored_keeps_correct_receipt_id_unchanged() -> None:
     """Sanity: when the LLM emits the right id, the builder doesn't
     touch it."""
-    accepted = [_accepted("metformin-multi-001-cfab-c01", p_values=("p=0.005",))]
+    accepted = [_accepted(
+        "metformin-multi-001-cfab-c01",
+        p_values=("p=0.005",),
+        thesis_text="Trial - source excerpts: Glycemic biomarker trajectory declined at p=0.005.",
+    )]
     from agent.paper_writer_builders import _check_anchored_paragraph
     for invalid in ("Metadata-only claim.", f"Unanchored claim. Anchored [{accepted[0].receipt_id}].", f"Wrong prefix [{accepted[0].receipt_id}0].", f"Anchored [{accepted[0].receipt_id}]. \"Unanchored.\"", f"Anchored [{accepted[0].receipt_id}]. **Unanchored.**", f"Anchored [{accepted[0].receipt_id}]. lowercase unanchored.", f"\"Anchored [{accepted[0].receipt_id}].\" Unanchored.", f"**Anchored [{accepted[0].receipt_id}].** Unanchored.", f"`Anchored [{accepted[0].receipt_id}].` Unanchored.", f"The evidence [{accepted[0].receipt_id}] was grade A. Unsupported.", f"The intervention [{accepted[0].receipt_id}] was vitamin C. Unsupported.", f"The finding [{accepted[0].receipt_id}] was reported by Smith et al. Unsupported.", f"The sponsor [{accepted[0].receipt_id}] was Acme Inc. Unsupported.", f"The finding [{accepted[0].receipt_id}] was reported by Smith et al. BMI increased.", f"The sponsor [{accepted[0].receipt_id}] was Acme Inc. RCT evidence was absent.", f"The source [{accepted[0].receipt_id}] named the Dept. DNA evidence was absent.", f"The setting [{accepted[0].receipt_id}] was U.S. RCT evidence was absent.", f"Participants were enrolled in the U.S. The FDA guidance supported this [{accepted[0].receipt_id}].", f"The drug was administered i.v. The PK profile supported this [{accepted[0].receipt_id}].", f"The finding was reported by Smith et al. [{accepted[0].receipt_id}] Another finding was unsupported."):
         ok, reason = _check_anchored_paragraph(invalid, [accepted[0].receipt_id], {accepted[0].receipt_id}, set())
@@ -489,7 +503,7 @@ def test_anchored_keeps_correct_receipt_id_unchanged() -> None:
     parsed = {
         "paragraphs": [
             {
-                "text": "Trial finding cited at p=0.005 [metformin-multi-001-cfab-c01].",
+                "text": "Glycemic biomarker trajectory declined at p=0.005 [metformin-multi-001-cfab-c01].",
                 "receipt_ids": ["metformin-multi-001-cfab-c01"],
             },
         ],
@@ -506,13 +520,20 @@ def test_anchored_repair_handles_mixed_correct_and_typo_ids() -> None:
     repaired; the correct one stays. Final receipt_ids list contains
     both real ids."""
     accepted = [
-        _accepted("metformin-multi-001-cfab-c01", p_values=("p=0.005",)),
-        _accepted("metformin-multi-001-cfab-c04"),
+        _accepted(
+            "metformin-multi-001-cfab-c01",
+            p_values=("p=0.005",),
+            thesis_text="Trial - source excerpts: Glycemic biomarker trajectory declined at p=0.005.",
+        ),
+        _accepted(
+            "metformin-multi-001-cfab-c04",
+            thesis_text="Trial - source excerpts: Glycemic biomarker trajectory declined at p=0.005.",
+        ),
     ]
     parsed = {
         "paragraphs": [
             {
-                "text": "Two-receipt sentence at p=0.005 [metformin-multi-001-cfab-c01] [metformin-multi-001-cfab-c04].",
+                "text": "Glycemic biomarker trajectory declined at p=0.005 [metformin-multi-001-cfab-c01] [metformin-multi-001-cfab-c04].",
                 "receipt_ids": [
                     "metformin-multi-001-cfab-c01",  # correct
                     "metformin-multi-001-cfab-04",   # typo
@@ -590,7 +611,11 @@ def test_results_builder_backfills_missing_outcome_sections() -> None:
 
 
 def test_results_builder_merges_duplicate_llm_outcome_subsections() -> None:
-    accepted = [_accepted("r-immune", outcome_class="immune")]
+    accepted = [_accepted(
+        "r-immune",
+        outcome_class="immune",
+        thesis_text="Study - source excerpts: Immune first paragraph. Immune second paragraph.",
+    )]
     parsed = {
         "subsections": [
             {
@@ -616,6 +641,185 @@ def test_results_builder_merges_duplicate_llm_outcome_subsections() -> None:
     assert section.body_md.count("### Immune and Inflammation Outcomes") == 1
     assert "Immune first paragraph [r-immune]." in section.body_md
     assert "Immune second paragraph [r-immune]." in section.body_md
+
+
+def _grounded_receipt(thesis: str | None = None) -> ReceiptSummary:
+    return replace(
+        _accepted(
+            "r-cardio", outcome_class="cardiometabolic",
+            thesis_text=thesis or (
+                "Trial - source excerpts: Metformin treatment reduced fasting glucose "
+                "among adults with type 2 diabetes during follow-up."
+            ),
+        ),
+        source_title="Metformin fasting glucose trial",
+    )
+
+
+def _results_payload(text: str, receipt_ids: list[str] | None = None) -> dict:
+    return {"subsections": [{"outcome_class": "cardiometabolic", "paragraphs": [
+        {"text": text, "receipt_ids": receipt_ids or ["r-cardio"]},
+    ]}]}
+
+
+def test_writer_builders_enforce_mapped_source_grounding() -> None:
+    for text in (
+        "The intervention showed a strong protective effect against pancreatic cancer and supports "
+        "broad use for cancer chemoprevention [r-cardio].",
+        "Among adults with type 2 diabetes, metformin treatment increased fasting glucose during "
+        "follow-up [r-cardio].",
+        "Metformin prevented pancreatic cancer [r-cardio].",
+        "Metformin treatment reduced fasting glucose during follow-up and prevented pancreatic "
+        "cancer [r-cardio].",
+        "Metformin treatment reduced fasting glucose during follow-up and lowered cancer mortality "
+        "[r-cardio].",
+        "Metformin treatment reduced fasting glucose during follow-up and raised cancer mortality "
+        "[r-cardio].",
+        "Metformin treatment reduced fasting glucose during follow-up and cut cancer mortality "
+        "[r-cardio].",
+    ):
+        reasons: list[str] = []
+        assert build_results_from_parsed(
+            _results_payload(text), accepted=[_grounded_receipt()], rejection_reasons=reasons,
+        ) is None
+        assert reasons == ["source_grounding:r-cardio"]
+
+    grounded = build_results_from_parsed(_results_payload(
+        "Among adults with type 2 diabetes, metformin treatment reduced fasting glucose during "
+        "follow-up [r-cardio].",
+    ), accepted=[_grounded_receipt()])
+    assert grounded is not None and "reduced fasting glucose" in grounded.body_md
+
+    reasons = []
+    assert build_results_from_parsed(_results_payload(
+        "Metformin treatment reduced fasting glucose among adults with diabetes during clinical "
+        "follow-up [r-cardio].",
+    ), accepted=[_grounded_receipt("Trial title only")], rejection_reasons=reasons) is None
+    assert reasons == ["source_grounding:r-cardio"]
+
+
+def test_source_grounding_checks_leading_clause_citation_identity_and_scope() -> None:
+    glucose = _grounded_receipt()
+    cancer = replace(
+        _grounded_receipt("Trial - source excerpts: Metformin lowered cancer mortality during follow-up."),
+        receipt_id="r-cancer", source_title="Metformin cancer mortality trial",
+    )
+    pediatric = replace(
+        _grounded_receipt("Trial - source excerpts: LDL cholesterol declined among children with type 1 diabetes."),
+        receipt_id="r-pediatric", source_title="Pediatric LDL trial",
+    )
+    spliced = _grounded_receipt(
+        "Trial - source excerpts: Metformin reduced fasting glucose among adults. "
+        "LDL cholesterol declined among children with type 1 diabetes."
+    )
+    mouse = _grounded_receipt(
+        "Trial - source excerpts: Metformin reduced fasting glucose in mice."
+    )
+    title_endpoint = replace(
+        glucose, source_title="Metformin pancreatic cancer trial",
+    )
+    mixed_species = _grounded_receipt(
+        "Trial - source excerpts: Metformin reduced fasting glucose in a mouse model of human diabetes."
+    )
+    mixed_direction = _grounded_receipt(
+        "Trial - source excerpts: Pancreatic cancer increased among adults while fasting glucose decreased among adults."
+    )
+    for text, accepted in (
+        ("Metformin raised cancer mortality and reduced fasting glucose [r-cardio].", [glucose]),
+        ("Metformin treatment reduced fasting insulin among children with diabetes [r-cardio].", [glucose]),
+        ("Metformin reduced fasting glucose in mice [r-cardio].", [glucose]),
+        ("Metformin reduced fasting glucose in boys [r-cardio].", [glucose]),
+        ("Metformin reduced fasting glucose in men [r-cardio].", [glucose]),
+        ("Metformin reduced fasting glucose among adults [r-cardio].", [mouse]),
+        ("Mortality and fasting glucose decreased among adults [r-cardio].", [glucose]),
+        ("Pancreatic cancer risk remains uncertain [r-cardio].", [glucose]),
+        ("Metformin reduced pancreatic cancer [r-cardio].", [title_endpoint]),
+        ("Metformin reduced fasting glucose in a human model of diabetes [r-cardio].", [mixed_species]),
+        ("Pancreatic cancer and fasting glucose decreased among adults [r-cardio].", [mixed_direction]),
+        ("Metformin reduced fasting glucose among children with type 1 diabetes [r-cardio] [r-pediatric].", [glucose, pediatric]),
+        ("Metformin reduced fasting glucose among children with type 1 diabetes [r-cardio].", [spliced]),
+        ("Metformin reduced fasting glucose [r-cancer] and lowered cancer mortality [r-cardio].", [glucose, cancer]),
+    ):
+        reasons: list[str] = []
+        ids = [receipt.receipt_id for receipt in accepted]
+        assert build_results_from_parsed(
+            _results_payload(text, ids), accepted=accepted, rejection_reasons=reasons,
+        ) is None
+        assert reasons and reasons[0].startswith("source_grounding:")
+    for conjunction in ("and", "although", "but", "while", "whereas", "yet", ":"):
+        opposed = _grounded_receipt(
+            "Trial - source excerpts: Fasting glucose decreased among adults "
+            f"{conjunction} cancer mortality increased among adults."
+        )
+        assert build_results_from_parsed(_results_payload(
+            "Cancer mortality decreased among adults [r-cardio].",
+        ), accepted=[opposed]) is None
+    assert build_scoped_from_parsed(
+        {"paragraphs": [{
+            "text": (
+                "Evidence suggests metformin treatment reduced fasting glucose among adults with "
+                "type 2 diabetes, while clinical significance for metformin remains uncertain."
+            ),
+            "receipt_ids": ["r-cardio"],
+        }]},
+        name="conclusion", heading="## Conclusion", topic="metformin",
+        accepted=[_grounded_receipt()],
+    ) is not None
+    assert build_results_from_parsed(_results_payload(
+        "Metformin may have reduced fasting glucose [r-cardio].",
+    ), accepted=[glucose]) is not None
+    assert build_results_from_parsed(_results_payload(
+        "Metformin appeared to have reduced fasting glucose [r-cardio].",
+    ), accepted=[glucose]) is not None
+    assert build_results_from_parsed(_results_payload(
+        "Metformin seems to have reduced fasting glucose [r-cardio].",
+    ), accepted=[glucose]) is not None
+    adult_patients = _grounded_receipt(
+        "Trial - source excerpts: Metformin reduced fasting glucose in adult patients."
+    )
+    assert build_results_from_parsed(_results_payload(
+        "Metformin reduced fasting glucose among adults [r-cardio].",
+    ), accepted=[adult_patients]) is not None
+    coordinated = _grounded_receipt(
+        "Trial - source excerpts: Morbidity and mortality decreased among adults."
+    )
+    assert build_results_from_parsed(_results_payload(
+        "Mortality and morbidity decreased among adults [r-cardio].",
+    ), accepted=[coordinated]) is not None
+    three_endpoints = _grounded_receipt(
+        "Trial - source excerpts: Morbidity, mortality, and fasting glucose decreased among adults."
+    )
+    assert build_results_from_parsed(_results_payload(
+        "Fasting glucose, morbidity, and mortality decreased among adults [r-cardio].",
+    ), accepted=[three_endpoints]) is not None
+    opposed_list = _grounded_receipt(
+        "Trial - source excerpts: Morbidity increased, mortality and fasting glucose decreased among adults."
+    )
+    assert build_results_from_parsed(_results_payload(
+        "Morbidity, mortality, and fasting glucose decreased among adults [r-cardio].",
+    ), accepted=[opposed_list]) is None
+    reasons = []
+    assert build_anchored_from_parsed(
+        {"paragraphs": [
+            {
+                "text": (
+                    "Among adults with type 2 diabetes, metformin treatment reduced fasting "
+                    "glucose during follow-up [r-cardio]."
+                ),
+                "receipt_ids": ["r-cardio"],
+            },
+            {
+                "text": (
+                    "The intervention showed a strong protective effect against pancreatic cancer "
+                    "and supports broad use for chemoprevention [r-cardio]."
+                ),
+                "receipt_ids": ["r-cardio"],
+            },
+        ]},
+        name="abstract", heading="## Abstract", accepted=[_grounded_receipt()],
+        rejection_reasons=reasons,
+    ) is None
+    assert reasons == ["source_grounding:r-cardio"]
 
 
 def test_calendar_year_is_not_treated_as_a_fabricated_numeric() -> None:
