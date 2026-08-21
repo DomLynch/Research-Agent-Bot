@@ -168,6 +168,21 @@ def test_payload_canonicalizes_nested_source_locator(tmp_path: Path, monkeypatch
     assert f"[kept](https://doi.org/{parenthetical_doi})" in cleaned
     assert "10.1000/drop" not in cleaned
     assert "[drop]()" not in cleaned
+    assert submit.payload_revision_ask_satisfied(
+        run, "Every DOI/PMID cited in the manuscript must appear in the source bundle; missing: doi:10.1002/14651858."
+    )
+    assert not submit.payload_revision_ask_satisfied(
+        run, "Every DOI cited must appear in the source bundle and include authoritative evidence text."
+    )
+    assert not submit.payload_revision_ask_satisfied(
+        run, "Every DOI cited must appear in the source bundle and include the source abstract."
+    )
+    assert not submit.payload_revision_ask_satisfied(
+        run, "Every DOI cited must appear in the source bundle, and unsupported claims must be removed."
+    )
+    assert not submit.payload_revision_ask_satisfied(
+        run, "Every DOI cited must appear in the source bundle; plus unsupported claims must be removed."
+    )
 
 
 def test_final_preflight_hook_missing_tool_blocks_enforce_mode(

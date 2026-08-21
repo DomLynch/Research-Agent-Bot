@@ -6921,6 +6921,13 @@ def test_payload_source_bundle_revision_ask_can_be_satisfied_by_payload(tmp_path
         out_dir,
         "Clarify why all source_bundle entries have evidence_type review when the manuscript claims primary and review evidence.",
     )
+    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
+        "body_markdown": "Supported claim (DOI: 10.1000/kept).",
+        "source_bundle": [{"doi": "10.1000/kept"}],
+    })
+    assert cycle._payload_revision_ask_satisfied(
+        out_dir, "Every DOI/PMID cited in the manuscript must appear in the source bundle."
+    )
 
 
 def test_payload_source_bundle_revision_ask_rejects_generic_registry_summaries(tmp_path: Path, monkeypatch) -> None:

@@ -1918,31 +1918,31 @@ def _asks_source_evidence_span(ask: str) -> bool:
 def _source_evidence_span_ask_satisfied(payload: dict[str, Any], ask: str) -> bool:
     if not _asks_source_evidence_span(ask):
         return False
-    direct = [
-        row for row in payload.get("source_bundle", [])
-        if isinstance(row, dict) and str(row.get("directness") or "").lower() == "direct"
-    ]
-    return bool(direct) and all(
-        _has_stable_source_locator(row) and bool(_source_evidence_span(row))
-        for row in direct
-    )
+    direct = [row for row in payload.get("source_bundle", []) if isinstance(row, dict) and str(row.get("directness") or "").lower() == "direct"]
+    return bool(direct) and all(_has_stable_source_locator(row) and bool(_source_evidence_span(row)) for row in direct)
+
+
+def _asks_source_locator_membership(ask: str) -> bool:
+    text = " ".join(ask.lower().replace("_", " ").split()).replace("doi and pmid", "doi/pmid").replace("pmid and doi", "doi/pmid")
+    return "source bundle" in text and any(token in text for token in ("doi", "pmid")) and any(token in text for token in ("must appear", "must be present", "not in the source bundle", "not present in the source bundle")) and not re.search(r"\b(?:and|plus|with|also)\b", text) and re.fullmatch(r"(?:[.;]\s*missing:\s*(?:(?:doi|pmid):\S+(?:,\s*)?)*)?[.]?", text.split("source bundle", 1)[1].strip()) is not None and not any(token in text for token in ("authoritative", "abstract", "evidence text", "evidence span", "excerpt", "full text", "source content", "claim extraction", "directional coding"))
 
 
 def authoritative_doi_repair_satisfied(run: Path, ask: str) -> bool:
+    if _asks_source_locator_membership(ask):
+        payload = build_payload(run)
+        rows = [row for row in payload.get("source_bundle", []) if isinstance(row, dict)]
+        body = str(payload.get("body_markdown") or "")
+        dois = {normalize_doi(row.get("doi") or row.get("source_doi")) for row in rows}
+        pmids = {str(row.get("pmid") or row.get("source_pmid") or "").strip() for row in rows}
+        return all(_clean_doi(match.group()).lower() in dois for match in _DOI_RE.finditer(body)) and all(match.group(1) in pmids for match in _PMID_RE.finditer(body))
     unavailable = reviewer_unavailable_source_dois(ask)
     requested = unavailable or {_clean_doi(match.group()).lower() for match in re.finditer(r"10\.\d{4,9}/[^\s,;]+", ask, re.I)}
     matched = [row for row in build_payload(run).get("source_bundle", []) if isinstance(row, dict) and _clean_doi(row.get("doi")).lower() in requested] if requested else []
-    if unavailable:
-        return not matched
-    return "evidence text" in ask.lower() and "authoritative abstract" in ask.lower() and bool(requested) and len(matched) == len(requested) and all(_has_stable_source_locator(row) and _has_authoritative_excerpt(row) for row in matched)
+    return not matched if unavailable else "evidence text" in ask.lower() and "authoritative abstract" in ask.lower() and bool(requested) and len(matched) == len(requested) and all(_has_stable_source_locator(row) and _has_authoritative_excerpt(row) for row in matched)
 
 
 def payload_revision_ask_satisfied(run: Path, ask: str) -> bool:
-    return (
-        authoritative_doi_repair_satisfied(run, ask)
-        or _asks_source_evidence_span(ask)
-        and _source_evidence_span_ask_satisfied(build_payload(run), ask)
-    )
+    return authoritative_doi_repair_satisfied(run, ask) or _asks_source_evidence_span(ask) and _source_evidence_span_ask_satisfied(build_payload(run), ask)
 
 
 def _has_source_citation(row: dict[str, Any]) -> bool:

@@ -2901,7 +2901,7 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
 
 def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     ask_lower = ask.lower()
-    if submit_bridge._asks_source_evidence_span(ask):
+    if submit_bridge._asks_source_evidence_span(ask) or submit_bridge._asks_source_locator_membership(ask):
         try:
             return submit_bridge.payload_revision_ask_satisfied(out_dir, ask)
         except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
