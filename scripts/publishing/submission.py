@@ -165,18 +165,15 @@ _GENERIC_EVIDENCE_WORDS = frozenset({
     "receiving", "review", "significant", "significantly", "source", "studies", "study", "support",
     "supports", "suggests", "therapy", "treated", "treatment", "trial", "trials",
 })
-_RESEARKA_GENERIC_EVIDENCE_WORDS = frozenset({
-    "about", "across", "evidence", "finding", "findings", "reported", "results",
-    "review", "source", "studies", "study", "support", "supports", "suggests", "trial",
-})
 _CORPUS_ACCOUNTING_MARKERS = (
     "reference papers", "included sources", "evidence tiers", "directness is",
-    "effect directions are", "cross-source tensions", "population summaries",
+    "effect directions are", "cross-source tensions", "population summaries", "retained sources", "accepted sources",
+    "this corpus", "directional coding", "source-bundle reconciliation note",
     "receipt-level direction coded",
 )
 _EMPIRICAL_CLAIM_RE = re.compile(
     r"\b(?:achiev(?:e[ds]?|ing)|associat(?:ed|ion)|benefit|decreas(?:e[sd]?|ing)|"
-    r"conferr(?:ed|ing|s)|demonstrat(?:e[ds]?|ing)|differ(?:ed|ence|ences)|experienc(?:ed|es|ing)|"
+    r"caus(?:e[ds]?|ing)|conferr(?:ed|ing|s)|demonstrat(?:e[ds]?|ing)|differ(?:ed|ence|ences)|experienc(?:ed|es|ing)|"
     r"found|harm|higher|"
     r"improv(?:e[sd]?|ement|ing)|increas(?:e[sd]?|ing)|lower(?:ed|ing|s)?|null (?:effect|finding|result|signal)|"
     r"observed|prevent(?:ed|ing|s)|prolong(?:ed|ing|s)|protect(?:ed|ing|ion|ive|s)|"
@@ -563,7 +560,7 @@ def _empirical_claim(text: str) -> bool:
 
 
 def _corpus_accounting_only(text: str) -> bool:
-    return any(marker in text.lower() for marker in _CORPUS_ACCOUNTING_MARKERS) and not _empirical_claim(text)
+    return bool(clauses := re.split(r"\s*;\s*|,\s*(?=(?:the|this|that|it|participants?|patients?|subjects?)\b)|\s+\band\b\s+(?=(?:the|this|that|it|participants?|patients?|subjects?)\b)|\s+\b(?:although|but|while|whereas|yet)\b\s+", text, flags=re.I)) and all(any(marker in clause.lower() for marker in _CORPUS_ACCOUNTING_MARKERS) and (not _empirical_claim(clause) or bool(re.search(r"\b\d+/\d+ retained sources (?:are )?(?:coded|classified)\b", clause, re.I))) for clause in clauses)
 
 
 def _claim_candidates(text: str) -> list[str]:
@@ -750,33 +747,25 @@ def _claim_trace_counts(
         for claim, values in zip(claims, indexes, strict=True))
 
 
-def _researka_claim_candidates(text: str) -> list[str]:
-    # Share _claim_candidates' definition of a claim. The old sentence-length
-    # fallback counted the payload builder's own scope/framing prose ("This
-    # boundary keeps the conclusion within...", "Future updates must retain...")
-    # as claims needing citations. Boilerplate cannot be cited, so a 2-real-claim
-    # paper measured 2/8 aligned against a 7 floor and was rejected. This check
-    # exists to apply the STRICTER _researka_evidence_aligns to real claims, not
-    # to widen what counts as one.
-    return _claim_candidates(text)[:30]
-
-
-def _researka_evidence_words(text: object) -> set[str]:
-    return {word for word in re.findall(r"[a-z0-9]+", str(text or "").lower())
-            if len(word) >= 5 and word not in _RESEARKA_GENERIC_EVIDENCE_WORDS}
-
-
 def _researka_evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
-    claim_words = _researka_evidence_words(claim)
+    claim_words = _evidence_words(claim)
+    if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
+        return _structured_source_summary_aligns(claim, source, _quantity_tokens(claim, [source]))
     required = min(4, max(2, (len(claim_words) + 4) // 5))
-    for key in ("quote", "evidence_span", "excerpt"):
-        evidence = " ".join(str(source.get(key) or "").lower().split())
-        if len(evidence) >= 20 and (
-            evidence in claim.lower() or claim.lower() in evidence
-            or len(claim_words & _researka_evidence_words(evidence)) >= required
-        ):
-            return True
-    return False
+    return any(len(evidence := " ".join(str(source.get(key) or "").lower().split())) >= 20 and (evidence in claim.lower() or claim.lower() in evidence or len(claim_words & _evidence_words(evidence)) >= required) for key in ("quote", "evidence_span", "excerpt"))
+
+
+def _claim_clauses(text: str) -> list[str]:
+    return [clause.strip() for clause in re.split(r"\s*;\s*|,?\s+\b(?:although|but|while|whereas|yet)\b\s+|\s+\band\b\s+(?=(?:(?:can|could|may|might|should|will|would)\s+[a-z]+|[a-z]+(?:ed|ing|s))\b)", text, flags=re.I) if len(_grounding_words(clause)) >= 2]
+
+
+def _cited_claim_aligns(claim: str, bundle: list[dict[str, Any]], indexes: set[int]) -> bool:
+    if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
+        return any(_evidence_aligns(claim, bundle[index]) for index in indexes)
+    clauses = _claim_clauses(claim)
+    if len(clauses) < 2:
+        return any(_evidence_aligns(claim, bundle[index]) for index in indexes)
+    return all(any(_evidence_aligns(clause, bundle[index], source_language=True) for index in (_citation_indexes(clause, bundle) or indexes)) for clause in clauses)
 
 
 def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -> str:
@@ -789,8 +778,13 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
             sentences: list[str] = []
             for sentence in _revision_claim_trace._sentences(line):
                 clean = sentence.strip(" -*")
-                candidate = bool(_claim_candidates(clean)) or section in {"abstract", "conclusion"} and len(clean) >= 80 and any(marker in clean.lower() for marker in _CLAIM_MARKERS)
-                if candidate and not _citation_indexes(clean, bundle):
+                candidate = not _corpus_accounting_only(clean) and (bool(_claim_candidates(clean)) or len(clean) >= 80 and (section in {"abstract", "conclusion"} and any(marker in clean.lower() for marker in _CLAIM_MARKERS) or bool(re.search(r"\b(?:drug|intervention|patients?|participants?|subjects?|therapy|treatment)\s+[a-z]+(?:ed|ing)\b", clean, re.I))))
+                indexes = _citation_indexes(clean, bundle)
+                if candidate and indexes and not _cited_claim_aligns(clean, bundle, indexes):
+                    continue
+                if candidate and not indexes:
+                    if len(_claim_clauses(clean)) > 1:
+                        continue
                     aligned = [index for index, row in enumerate(bundle) if _evidence_aligns(clean, row)]
                     if aligned:
                         def rank(index: int) -> tuple[int, bool, bool, int]:
@@ -811,6 +805,8 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
                             f"{sentence[:terminal.start()]} [bundle:{index + 1}]{sentence[terminal.start():]}"
                             if terminal else f"{sentence} [bundle:{index + 1}]"
                         )
+                    else:
+                        continue
                 sentences.append(sentence)
             line = " ".join(sentences)
         lines.append(line)
@@ -820,22 +816,19 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
 def _researka_claim_trace_status(
     payload: dict[str, Any], source_bundle: list[dict[str, Any]],
 ) -> str:
-    sections_raw = payload.get("sections")
-    sections = sections_raw if isinstance(sections_raw, dict) else {}
+    sections = raw if isinstance(raw := payload.get("sections"), dict) else {}
     major = [
         str(value) for name, value in sections.items()
         if str(name).strip().lower() in {"key findings", "findings", "results", "conclusion"}
     ]
-    prose = "\n".join([str(payload.get("abstract") or ""), *major])
-    prose = "\n".join(line for line in prose.splitlines() if not line.lstrip().startswith("|"))
-    checks = [_claim_trace_counts(prose, source_bundle)]
-    claims = _researka_claim_candidates(prose)
+    prose = "\n".join(line for line in "\n".join([str(payload.get("abstract") or ""), *major]).splitlines() if not line.lstrip().startswith("|"))
+    claims = _claim_candidates(prose)[:30]
     indexes = [_citation_indexes(claim, source_bundle) for claim in claims]
-    checks.append((len(claims), sum(bool(values) for values in indexes), sum(
+    strict = (len(claims), sum(bool(values) for values in indexes), sum(
         any(_researka_evidence_aligns(claim, source_bundle[index]) for index in values)
         for claim, values in zip(claims, indexes, strict=True)
-    )))
-    for count, cited, aligned in checks:
+    ))
+    for count, cited, aligned in (_claim_trace_counts(prose, source_bundle), strict):
         required = (count * 4 + 4) // 5 if count else 0
         if count and aligned < required:
             return (f"researka_claim_trace_insufficient:cited={cited}/{count},"

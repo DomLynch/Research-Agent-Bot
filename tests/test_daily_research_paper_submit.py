@@ -1433,7 +1433,18 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
         "Participants experienced complete remission during follow-up without retained source support.\n"
         "The intervention conferred durable neurological protection without retained source support."
     )
-    assert daily._attach_aligned_claim_references(unsupported, bundle) == unsupported
+    repaired_unsupported = daily._attach_aligned_claim_references(unsupported, bundle)
+    assert daily._claim_candidates(repaired_unsupported) == []
+    assert "neurological benefit" not in repaired_unsupported
+    for verb in ("triggered", "causes", "may cause"):
+        mixed = "## Results\n\n" + lines[0].rstrip(".") + f" and {verb} dementia in children [bundle:1]."
+        assert f"{verb} dementia" not in daily._attach_aligned_claim_references(mixed, bundle)
+    valid_compound = "## Results\n\n" + lines[0].replace(". [bundle:1]", " [bundle:1]") + ", while " + lines[1].rstrip(".") + " [bundle:2]."
+    assert daily._attach_aligned_claim_references(valid_compound, bundle) == valid_compound
+    retained_harm = "Evidence-honesty note: 12/12 retained sources are coded as null; yet the intervention triggered pancreatic cancer in children."
+    assert not daily._corpus_accounting_only(retained_harm)
+    assert retained_harm not in daily._attach_aligned_claim_references("## Results\n\n" + retained_harm, bundle)
+    assert not daily._corpus_accounting_only("12/12 retained sources are coded as null and the intervention causes pancreatic cancer.")
     assert daily._claim_trace_counts(unsupported.split("\n\n", 1)[1], bundle) == (10, 0, 0)
 
     author_interpretation = (
@@ -1577,7 +1588,7 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
         )
         row["evidence_span"] = row["excerpt"]
 
-    exact_claims = daily._researka_claim_candidates(payload["sections"]["Results"])
+    exact_claims = daily._claim_candidates(payload["sections"]["Results"])[:30]
     exact_indexes = [daily._citation_indexes(item, payload["source_bundle"]) for item in exact_claims]
     assert (len(exact_claims), sum(map(bool, exact_indexes)), sum(
         any(daily._researka_evidence_aligns(item, payload["source_bundle"][index]) for index in indexes)
@@ -1616,7 +1627,8 @@ def test_source_bound_structured_statistic_requires_matching_evidence_and_metada
     assert daily._claim_trace_counts(claim.replace("Faqihi 2021", "Wrong 2021"), [source]) == (1, 1, 0)
     wrong_direction = claim.replace("direction=mixed", "direction=positive")
     overlap_source = {**source, "excerpt": claim}
-    assert daily._researka_evidence_aligns(wrong_direction, overlap_source)
+    assert daily._researka_evidence_aligns(claim, source)
+    assert not daily._researka_evidence_aligns(wrong_direction, overlap_source)
     assert daily._researka_claim_trace_status(
         {"abstract": "", "sections": {"Results": wrong_direction}}, [overlap_source],
     ) == "researka_claim_trace_insufficient:cited=1/1,aligned=0/1,required=1"
@@ -1650,7 +1662,7 @@ def test_quantity_tokens_ignore_alphanumeric_source_identifiers() -> None:
     assert not daily._quantities_agree("10-Year-old cohort", [{"evidence_span": "5-Year-old cohort"}])
 
 
-def test_core_claim_trace_blocks_uncited_conclusion_accounting(tmp_path: Path) -> None:
+def test_core_claim_trace_drops_unsupported_conclusion_accounting(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
     paper = re.sub(
@@ -1664,22 +1676,14 @@ def test_core_claim_trace_blocks_uncited_conclusion_accounting(tmp_path: Path) -
 
     payload = daily.build_payload(run)
 
-    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == (
-        "researka_claim_trace_insufficient:cited=2/2,aligned=1/2,required=2"
-    )
+    assert "The evidence tiers include A1" not in payload["body_markdown"]
+    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
     assert payload["core_claims_resolved"] is False
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == (
-        "researka_core_claims_unresolved:cited=2/2,aligned=1/2"
+        "researka_core_claims_unresolved:conclusion_claims=0"
     )
     assert daily._researka_preflight_status(payload, enforce_recency=False) == (
-        "researka_claim_trace_insufficient:cited=2/2,aligned=1/2,required=2"
-    )
-
-    payload["sections"]["Conclusion"] = payload["sections"]["Abstract"]
-    payload["core_claims_resolved"] = True
-    assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
-    assert daily._researka_preflight_status(payload, enforce_recency=False) == (
-        "researka_core_claims_unresolved:cited=2/2,aligned=1/2"
+        "researka_core_claims_unresolved:conclusion_claims=0"
     )
 
     payload["body_markdown"] = re.sub(
