@@ -15,6 +15,7 @@ from types import SimpleNamespace
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import run_v06_synthesis as orch  # noqa: E402
 import citation_registry as cr  # noqa: E402
+from agent.revision_evidence import RevisionEvidenceLock  # noqa: E402
 
 
 @dataclass(frozen=True)
@@ -26,6 +27,20 @@ class _Receipt:
     source_pmcid: str | None = None
     source_journal: str | None = None
     title: str | None = None
+
+
+def test_reviewer_unavailable_sources_filter_canonical_dois(tmp_path: Path) -> None:
+    evidence = RevisionEvidenceLock(None, {
+        "blocked": {"source_doi": "https://doi.org/10.1000/blocked"},
+        "kept": {"source_doi": "10.1000/kept"},
+    }, tmp_path, tmp_path, None, "snapshot")
+
+    filtered, blocked = orch._without_reviewer_unavailable_sources(
+        evidence, "No independently available authoritative text: doi:10.1000/blocked",
+    )
+
+    assert blocked == {"10.1000/blocked"}
+    assert filtered.receipt_ids == {"kept"}
 
 
 def _write_quant_file(parent: Path, paper_id: str, claims: list) -> None:

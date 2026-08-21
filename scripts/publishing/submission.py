@@ -1,9 +1,4 @@
-"""Daily v3 research-paper submit bridge.
-
-Safe by default: select one ready run, write a ledger, and only call
-Researka when `--submit` is explicit. A successful POST is recorded as
-submitted_to_researka, not published.
-"""
+"""Safe-by-default daily V3 research-paper submission bridge."""
 from __future__ import annotations
 
 import argparse
@@ -50,8 +45,9 @@ from agent.publishing.policy import (  # noqa: E402
     publication_surface,
 )
 from agent.revision_contract import gate_report as _revision_gate_report, needs_coverage as _revision_needs_coverage  # noqa: E402
-from agent.revision_evidence import load_revision_evidence  # noqa: E402
+from agent.revision_evidence import load_revision_evidence, reviewer_unavailable_source_dois  # noqa: E402
 from agent.revision_quality import resolved_effect_direction, role_outcome_display  # noqa: E402
+from agent.sources._base import normalize_doi  # noqa: E402
 from agent.topic_display import humanize_topic  # noqa: E402
 from citation_registry import (  # noqa: E402
     _body_citation_from_metadata,
@@ -454,7 +450,7 @@ def _env_or_default(name: str, default: str) -> str:
 
 
 def _clean_doi(value: object) -> str:
-    return str(value or "").strip().rstrip(".,;")
+    return (normalize_doi(value) or "").rstrip(".,;:)]}")
 
 
 _DOI_TEXT_RE = re.compile(r"(?i)(\bDOI:\s*)(10\.\d{4,9}/\S+)")
@@ -1110,20 +1106,7 @@ def _receipt_haystack(row: dict[str, Any]) -> str:
 
 
 def _entity_rescue(tokens: list[str], haystacks: list[str]) -> tuple[int, str | None]:
-    """Corpus-dominant-entity rescue for compound topics.
-
-    The per-source gate (`is_source_topic_specific`) requires EVERY specificity
-    token, so a focused corpus whose titles name the entity but rarely a
-    secondary axis term (e.g. "resveratrol_metabolism": titles say
-    "resveratrol", seldom "metabolism") scores below the floor even though every
-    source is about the named entity. The entity is the specificity token
-    covering the most receipt titles; count the sources that name it in a
-    biomedical (non-drift) context. Returns (rescued_hits, entity | None).
-
-    Additive by construction: callers apply it only when the strict ratio is
-    already below the floor, so it can never demote a run; the drift guard
-    (mirrors `is_source_topic_specific`) keeps off-domain sources out.
-    """
+    """Count non-drift receipts naming a compound topic's dominant entity."""
     specific = [
         token for token in (_specificity_token(tok) for tok in tokens)
         if token not in BIOMED_ANCHORS
@@ -1184,12 +1167,7 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
 
 
 def _recency_ratio_status(payload: dict[str, Any]) -> str:
-    """Pre-submit mirror of Researka's intake recency gate. Computed over the
-    BUILT source bundle (not the registry): citation-floor padding appends
-    older reference-list stubs that drag the published recency down, so only
-    the bundle the journal actually receives predicts the gate. The floor is
-    per-article-type (evidence maps tolerate an older corpus). Universal —
-    year-based, no topic/domain assumptions; fail-open when no years are known."""
+    """Mirror Researka's article-type recency floor over the submitted bundle."""
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     floor = _threshold(article_type, "recency_ratio")
     bundle = payload.get("source_bundle")
@@ -1964,8 +1942,11 @@ def _source_evidence_span_ask_satisfied(payload: dict[str, Any], ask: str) -> bo
 
 
 def authoritative_doi_repair_satisfied(run: Path, ask: str) -> bool:
-    requested = {_clean_doi(match.group()).lower() for match in re.finditer(r"10\.\d{4,9}/[^\s,;]+", ask, re.I)}
+    unavailable = reviewer_unavailable_source_dois(ask)
+    requested = unavailable or {_clean_doi(match.group()).lower() for match in re.finditer(r"10\.\d{4,9}/[^\s,;]+", ask, re.I)}
     matched = [row for row in build_payload(run).get("source_bundle", []) if isinstance(row, dict) and _clean_doi(row.get("doi")).lower() in requested] if requested else []
+    if unavailable:
+        return not matched
     return "evidence text" in ask.lower() and "authoritative abstract" in ask.lower() and bool(requested) and len(matched) == len(requested) and all(_has_stable_source_locator(row) and _has_authoritative_excerpt(row) for row in matched)
 
 
@@ -2683,20 +2664,7 @@ def run_cycle_capped(
     remote_loader: RemoteLoader | None = None,
     max_submissions: int = 1,
 ) -> dict[str, Any]:
-    """Submit up to `max_submissions` distinct ready candidates this cycle.
-
-    Each underlying `run_cycle` re-selects via the submitted-fingerprints
-    file, so successive calls return the next distinct topic (a submitted
-    fingerprint is excluded on the following pass). A candidate-specific
-    blocker — submitted, rejected/revise-requested, or selected then blocked by
-    preflight — does NOT stop the cycle; the loop moves on to the next ready
-    candidate. It stops only on a no-candidate/no-progress terminal status.
-
-    `max_submissions <= 1` is an exact passthrough to `run_cycle` — same
-    ledger shape, same behaviour, no extra remote-dedupe fetches — so the
-    fresh lane and existing callers are unaffected. Only the standalone
-    submit lane opts into a higher cap to drain the ready backlog.
-    """
+    """Submit distinct ready candidates until capped or no progress remains."""
     if max_submissions <= 1:
         return run_cycle(
             runs_root=runs_root, date=date, submit=submit,

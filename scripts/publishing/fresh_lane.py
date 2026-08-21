@@ -2991,6 +2991,7 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     source_excerpt_ask = (
         any(token in ask_lower for token in ("source_bundle", "source bundle", "source", "evidence text"))
         and any(token in ask_lower for token in ("abstract", "excerpt", "directional coding", "claim extraction"))
+        or bool(submit_bridge.reviewer_unavailable_source_dois(ask))
     )
     evidence_type_ask = (
         "evidence_type" in ask_lower

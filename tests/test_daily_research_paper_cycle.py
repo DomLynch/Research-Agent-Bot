@@ -6990,6 +6990,14 @@ def test_authoritative_abstract_revision_ask_checks_every_named_doi(
     bundle[1]["excerpt"] = excerpt
     bundle.pop()
     assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
+    bundle[:] = [_proven_source(doi="10.1000/kept", excerpt=excerpt)]
+    unavailable = (
+        "Submitted evidence has no independently available authoritative text: "
+        "doi:10.1000/blocked"
+    )
+    assert cycle._payload_revision_ask_satisfied(out_dir, unavailable)
+    bundle.append(_proven_source(doi="doi:10.1000/blocked", excerpt=excerpt))
+    assert not cycle._payload_revision_ask_satisfied(out_dir, unavailable)
 
 
 def test_payload_source_evidence_span_ask_uses_submitter_contract(
@@ -9270,6 +9278,24 @@ def test_content_revision_reuses_existing_run_when_finalizer_covers_asks(tmp_pat
     assert ok is True
     assert error == ""
     assert "Repaired." in (out / "full_paper.md").read_text(encoding="utf-8")
+
+
+def test_unavailable_authority_revision_requires_full_synthesis(tmp_path: Path) -> None:
+    source = tmp_path / "source"
+    source.mkdir()
+    (source / "full_paper.md").write_text("# Research Synthesis: Topic\n", encoding="utf-8")
+
+    ok, error = cycle._repair_existing_run(
+        source,
+        tmp_path / "out",
+        revision_feedback=(
+            "Submitted evidence has no independently available authoritative text: "
+            "doi:10.1000/blocked"
+        ),
+    )
+
+    assert ok is False
+    assert error == "revision_repair_not_deterministic"
 
 
 def test_external_authority_retry_advances_persisted_retry_count(tmp_path: Path) -> None:

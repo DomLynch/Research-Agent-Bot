@@ -39,17 +39,29 @@ from agent.paper_writer_claim_repair import (  # noqa: E402
 )
 from agent import revision_consistency as _revision_consistency, revision_quality as _revision_quality  # noqa: E402
 from agent.source_hygiene import is_notice_only_source_title  # noqa: E402
+from agent.sources._base import normalize_doi  # noqa: E402
 from agent import retraction_check as _retraction_check  # noqa: E402
 from agent.manuscript_prisma import (  # noqa: E402
     FrozenRetrievalRecord,
     frozen_retrieval_record,
 )
 from agent.revision_evidence import (  # noqa: E402
+    RevisionEvidenceLock,
     SNAPSHOT_DIR,
     create_revision_evidence_snapshot,
     load_revision_evidence,
     receipt_contract_mismatches,
+    reviewer_unavailable_source_dois,
 )
+
+
+def _without_reviewer_unavailable_sources(
+    evidence: RevisionEvidenceLock, feedback: str,
+) -> tuple[RevisionEvidenceLock, frozenset[str]]:
+    blocked = reviewer_unavailable_source_dois(feedback)
+    rows = {rid: row for rid, row in evidence.receipt_rows.items()
+            if normalize_doi(row.get("source_doi") or row.get("doi")) not in blocked}
+    return (dataclasses.replace(evidence, receipt_rows=rows) if blocked else evidence), blocked
 
 
 def _write_revision_feedback_sidecar(out_dir: Path) -> None:
@@ -283,11 +295,7 @@ def _organize_run_artifacts(run_dir: Path) -> dict[str, str]:
 
 
 def _section_words_from_paper(paper_md: str) -> dict[str, int]:
-    """Count words per H2 section of the final paper.md. Universal —
-    keys are slugified H2 headings (`## Cross-Domain Synthesis` →
-    `cross_domain_synthesis`). Used to overwrite manifest.section_words
-    after the post-paper pipeline regenerates bounded abstract /
-    auto-fixes etc., so the manifest matches the file actually shipped."""
+    """Count final-paper words by slugified H2 heading."""
     out: dict[str, int] = {}
     parts = re.split(r"^##\s+([^\n#].*?)\s*$", paper_md, flags=re.M)
     # re.split returns [pre, h1, body1, h2, body2, ...]
@@ -2609,6 +2617,9 @@ async def _run(
         requested_source, quant_dir=QUANT_DIR, parsed_dir=PARSED_DIR,
         expected_topic=topic,
     )
+    evidence_lock, reviewer_excluded_dois = _without_reviewer_unavailable_sources(
+        evidence_lock, os.getenv("RESEARKA_REVISION_FEEDBACK", ""),
+    )
     if evidence_lock.mode == "snapshot":
         QUANT_DIR, PARSED_DIR = evidence_lock.quant_dir, evidence_lock.parsed_dir
         _audit_v06.QUANT_DIR, _audit_v06.PARSED_DIR = QUANT_DIR, PARSED_DIR
@@ -2618,6 +2629,7 @@ async def _run(
         "source_run": source_run.name if source_run else None,
         "mode": evidence_lock.mode,
         "requested_receipts": len(revision_receipt_ids),
+        "reviewer_excluded_dois": sorted(reviewer_excluded_dois),
         "errors": list(evidence_lock.errors),
         "missing_quant_claims": [],
         "missing_parsed_metadata": [],

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import shutil
 from dataclasses import dataclass
 from pathlib import Path
@@ -31,12 +32,7 @@ def _json_sha256(value: Any) -> str:
 
 
 def _valid_n_claims(row: dict[str, Any]) -> bool:
-    value = row.get("n_claims")
-    return "n_claims" not in row or (type(value) is int and value >= 0)
-
-
-def _valid_claim_count(value: Any) -> bool:
-    return type(value) is int and value >= 0
+    return "n_claims" not in row or (type(row.get("n_claims")) is int and row["n_claims"] >= 0)
 
 
 def _contract_rows(
@@ -66,6 +62,21 @@ class RevisionEvidenceLock:
     @property
     def receipt_ids(self) -> frozenset[str]:
         return frozenset(self.receipt_rows)
+
+
+def reviewer_unavailable_source_dois(feedback: str) -> frozenset[str]:
+    text = " ".join(str(feedback or "").split())
+    unavailable = re.search(
+        r"(?:no independently available authoritative text|source evidence authority unavailable)\s*:?\s*(.+)", text, re.I,
+    )
+    clauses = re.split(r";|\.\s+(?=[A-Za-z])", unavailable.group(1)) if unavailable else ()
+    scope = " ".join(clause for index, clause in enumerate(clauses) if index == 0 or not re.search(
+        r"\b(?:verified|retain(?:ed)?|keep|replace(?:ment)?)\b|\bis available\b", clause, re.I,
+    ))
+    return frozenset(
+        match.group().rstrip(".,;:)]}").lower()
+        for match in re.finditer(r"10\.\d{4,9}/[^\s,;]+", scope, re.I)
+    )
 
 
 def load_revision_evidence(
@@ -310,7 +321,7 @@ def receipt_contract_mismatches(
             if field == "directness":
                 actual, wanted = effective_directness(receipt), effective_directness(expected)
             if field == "n_claims" and (
-                not _valid_claim_count(wanted) or not _valid_claim_count(actual)
+                type(wanted) is not int or wanted < 0 or type(actual) is not int or actual < 0
             ):
                 mismatches.append(f"{receipt.receipt_id}:{field}")
                 continue

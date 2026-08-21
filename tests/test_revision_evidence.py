@@ -11,6 +11,7 @@ from agent.revision_evidence import (
     create_revision_evidence_snapshot,
     load_revision_evidence,
     receipt_contract_mismatches,
+    reviewer_unavailable_source_dois,
 )
 from agent.synthesis_schemas import ReceiptSummary
 
@@ -32,6 +33,34 @@ def _contract(receipt: ReceiptSummary) -> dict[str, object]:
         key: list(value) if key == "p_values" else value
         for key, value in dataclasses.asdict(receipt).items()
     }
+
+
+def test_reviewer_unavailable_source_dois_are_explicit_and_exact() -> None:
+    feedback = (
+        "Submitted evidence has no independently available authoritative text: "
+        "doi:10.1000/blocked, doi:10.1000/second."
+    )
+    blocked = reviewer_unavailable_source_dois(feedback)
+
+    assert blocked == {"10.1000/blocked", "10.1000/second"}
+    assert reviewer_unavailable_source_dois(
+        "No independently available authoritative text: [10.1000/blocked]. "
+        "Verified replacement DOI: 10.1000/keep",
+    ) == {"10.1000/blocked"}
+    assert reviewer_unavailable_source_dois(
+        "No independently available authoritative text: 10.1000/blocked; "
+        "retain verified DOI 10.1000/keep",
+    ) == {"10.1000/blocked"}
+    assert reviewer_unavailable_source_dois(
+        "No independently available authoritative text: 10.1000/blocked; "
+        "however, DOI 10.1000/keep is verified; the verified DOI 10.1000/also-keep",
+    ) == {"10.1000/blocked"}
+    assert reviewer_unavailable_source_dois(
+        "No independently available authoritative text: 10.1000/one; 10.1000/two",
+    ) == {"10.1000/one", "10.1000/two"}
+    assert reviewer_unavailable_source_dois(
+        "Verify these DOI sources against authoritative abstracts: 10.1000/blocked",
+    ) == set()
 
 
 def test_snapshot_hashes_quant_and_parsed_inputs(tmp_path: Path, monkeypatch) -> None:

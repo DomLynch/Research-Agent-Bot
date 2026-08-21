@@ -1228,6 +1228,24 @@ def test_direct_source_without_authoritative_text_fails_local_preflight(tmp_path
     assert status == "source_bundle_unverified_direct_sources:1/12"
 
 
+def test_unavailable_authority_revision_passes_only_after_named_dois_are_absent(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    ask = (
+        "Submitted evidence has no independently available authoritative text: "
+        "doi:10.1000/blocked, doi:10.1000/second"
+    )
+    monkeypatch.setattr(daily, "build_payload", lambda _run: {
+        "source_bundle": [{"doi": "10.1000/kept"}],
+    })
+    assert daily.authoritative_doi_repair_satisfied(tmp_path, ask)
+
+    monkeypatch.setattr(daily, "build_payload", lambda _run: {
+        "source_bundle": [{"doi": "https://doi.org/10.1000/blocked"}],
+    })
+    assert not daily.authoritative_doi_repair_satisfied(tmp_path, ask)
+
+
 def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(daily, "ROOT", tmp_path)
     run = _run(tmp_path)
