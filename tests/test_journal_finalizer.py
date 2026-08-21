@@ -493,31 +493,44 @@ def test_phase_f_preserves_authored_single_line_summary(tmp_path: Path) -> None:
 def test_phase_f_uses_canonical_role_for_direct_animal_source(tmp_path: Path) -> None:
     paper = (
         "## Results\n\n### Contextual Adjacent Evidence Outcomes\n\n"
-        "The contextual adjacent evidence base comprised 1 source; the directness "
-        "profile was 1 direct, and the dominant direction was null.\n\n"
+        "- In animal/preclinical evidence, Mouse 2024 [bundle:1] (misrouted source).\n"
+        "- Human 2024 [bundle:2] (correctly routed source).\n\n"
+        "### Animal/Preclinical Context Outcomes\n\n"
+        "Evidence for this outcome class is represented in the structured results table, "
+        "but the retained narrative paragraphs were assigned elsewhere.\n\n"
         "## Discussion\n\nInterpretation.\n"
     )
     (tmp_path / "manifest.json").write_text(json.dumps({
         "receipts": [
             {"outcome_class": "contextual_other", "effect_direction": "null",
              "directness": "direct", "evidence_tier": "A1",
-             "source_title": "Randomized intervention in mice"},
+             "source_title": "Randomized intervention in mice",
+             "citation_token": "Mouse 2024", "receipt_id": "mouse"},
             {"outcome_class": "contextual_other", "effect_direction": "null",
              "directness": "direct", "evidence_tier": "A1",
-             "source_title": "Human observational cohort"},
+             "source_title": "Human observational cohort",
+             "citation_token": "Human 2024", "receipt_id": "human"},
         ],
     }))
+    (tmp_path / "citation_registry.json").write_text(json.dumps({
+        "mouse": {"body_citation": "Mouse 2024"},
+        "human": {"body_citation": "Human 2024"},
+    }))
 
-    fixed, _logs = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
-    stable, _ = journal_finalizer._phase_f_reconcile_results_table(fixed, tmp_path)
+    fixed, _logs = journal_finalizer._run_text_phases(paper, tmp_path)
+    stable, _ = journal_finalizer._run_text_phases(fixed, tmp_path)
     results = fixed.split("## Results", 1)[1].split("## Discussion", 1)[0]
 
     assert "| 1 mechanistic |" in results
     assert "| 1 direct |" in results
     assert results.count("### Contextual Adjacent Evidence Outcomes") == 1
     assert results.count("### Animal/Preclinical Context Outcomes") == 1
-    assert "Human observational cohort" in results
-    assert stable == fixed
+    assert "Human 2024" in results
+    contextual = results.split("### Contextual Adjacent Evidence Outcomes", 1)[1].split("###", 1)[0]
+    animal = results.split("### Animal/Preclinical Context Outcomes", 1)[1].split("###", 1)[0]
+    assert "Mouse 2024" not in contextual
+    assert "Mouse 2024" in animal
+    assert stable.rstrip() == fixed.rstrip()
 
 
 def test_phase_n_does_not_pad_short_limitations_with_generic_prose(tmp_path: Path) -> None:

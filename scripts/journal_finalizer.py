@@ -1121,7 +1121,7 @@ def _phase_k_route_outcome_paragraphs(text: str, out_dir: Path) -> tuple[str, li
     rs = re.search(r"^## Results\b.*?(?=^## (?!#)|\Z)", text, flags=re.M | re.S)
     if not (isinstance(manifest, dict) and isinstance(registry, dict) and rs):
         return text, []
-    oc = {r["receipt_id"]: r["outcome_class"] for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
+    oc = {r["receipt_id"]: _row_outcome_class(r) for r in (manifest.get("receipts") or ()) if isinstance(r, dict) and r.get("outcome_class") and r.get("receipt_id")}
     cmap = {e["body_citation"]: oc[rid] for rid, e in registry.items() if isinstance(e, dict) and e.get("body_citation") and rid in oc}
     block = rs.group(0)
     h3s = list(re.finditer(r"^###\s+(.+?Outcomes?)\s*$", block, flags=re.M))
