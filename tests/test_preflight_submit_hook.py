@@ -167,6 +167,7 @@ def test_payload_canonicalizes_nested_source_locator(tmp_path: Path, monkeypatch
     assert "http://doi.org/10.1002/14651858 [exact source:" not in cleaned
     assert f"[kept](https://doi.org/{parenthetical_doi})" in cleaned
     assert "10.1000/drop" not in cleaned
+    assert "[drop]()" not in cleaned
 
 
 def test_final_preflight_hook_missing_tool_blocks_enforce_mode(

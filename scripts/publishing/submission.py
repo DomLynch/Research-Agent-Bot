@@ -2253,7 +2253,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = re.sub(r"(?i)https?://pubmed\.ncbi\.nlm\.nih\.gov/(\d+)/?", lambda match: match.group(0) if match.group(1) in bundle_pmids else "", paper)
     paper = _DOI_TEXT_RE.sub(lambda match: match.group(0) if _clean_doi(match.group(2)) in bundle_dois else "", paper)
     paper = _PMID_RE.sub(lambda match: match.group(0) if match.group(1) in bundle_pmids else "", paper)
-    paper = re.sub(r"\[exact source:\s*\]", "", paper, flags=re.I)
+    paper = re.sub(r"\[([^\]\n]+)\]\(\s*\)", r"\1", re.sub(r"\[exact source:\s*\]", "", paper, flags=re.I))
     paper = _restore_source_bounded_conclusion(paper, source_bundle)
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)
