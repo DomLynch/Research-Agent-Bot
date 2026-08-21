@@ -270,9 +270,7 @@ def _preflight_summary(report: dict[str, Any]) -> dict[str, Any]:
 
 def _preflight_mode() -> str:
     mode = os.getenv(PREFLIGHT_MODE_ENV, "off").strip().lower()
-    if mode == "live":
-        return "enforce"
-    return mode if mode in {"off", "shadow", "enforce"} else "off"
+    return "enforce" if mode == "live" else mode if mode in {"off", "shadow", "enforce"} else "off"
 
 
 def _preflight_failure(
@@ -283,10 +281,9 @@ def _preflight_failure(
         "blocked_reasons": [code],
         "advisories": [{"code": code, "severity": "major", "message": message}],
     }
-    metadata = payload.setdefault("metadata", {})
+    metadata = payload.get("metadata")
     if not isinstance(metadata, dict):
-        metadata = {}
-        payload["metadata"] = metadata
+        metadata = payload["metadata"] = {}
     metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
     return (payload if mode == "shadow" else None), report
 
@@ -322,8 +319,7 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
         return _preflight_failure(
             payload, mode, "preflight_runtime_error", f"{type(exc).__name__}: {exc}",
         )
-    runtime_error = proc.returncode not in {0, 2}
-    if runtime_error:
+    if proc.returncode not in {0, 2}:
         return _preflight_failure(
             payload, mode, "preflight_runtime_error",
             (proc.stderr or proc.stdout or "preflight QA failed")[-500:],
@@ -334,12 +330,15 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
             payload, mode, "preflight_report_missing",
             "Preflight did not write a valid report.",
         )
-    metadata = payload.setdefault("metadata", {})
+    critical = [str(row.get("code")) for row in report.get("advisories") or []
+                if isinstance(row, dict) and str(row.get("severity")).casefold() == "critical"]
+    if mode != "shadow" and critical:
+        report.update(status="blocked", blocked_reasons=critical)
+        _write_json(report_path, report)
+    metadata = payload.get("metadata")
     if not isinstance(metadata, dict):
-        metadata = {}
-        payload["metadata"] = metadata
-    if isinstance(metadata, dict):
-        metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
+        metadata = payload["metadata"] = {}
+    metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
     if mode == "shadow":
         return payload, report
     if report.get("status") != "pass":
@@ -354,14 +353,14 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
     if isinstance(cleaned_metadata, dict):
         cleaned_metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
         body = str(cleaned.get("body_markdown") or "")
+        cleaned["sections"] = sections = _sections(body)
+        cleaned["abstract"] = sections.get("Abstract") or cleaned.get("abstract")
         content_hash = "sha256:" + hashlib.sha256(body.encode("utf-8")).hexdigest()
         cleaned_metadata["preflight_original_content_hash"] = cleaned_metadata.get("content_hash")
         cleaned_metadata["content_hash"] = content_hash
         cleaned["author_signature"] = content_hash
-        raw_bundle = cleaned.get("source_bundle")
-        source_bundle = [row for row in raw_bundle if isinstance(row, dict)] if isinstance(raw_bundle, list) else []
-        source_hash = _source_citation_hash(source_bundle)
-        cleaned_metadata["source_citation_hash"] = source_hash
+        source_bundle = [row for row in (cleaned.get("source_bundle") or []) if isinstance(row, dict)]
+        cleaned_metadata["source_citation_hash"] = source_hash = _source_citation_hash(source_bundle)
         cleaned_metadata["submission_identity_key"] = _submission_identity_key(
             agent_slug=str(cleaned.get("author_agent_id") or ""),
             title=str(cleaned.get("title") or ""),
@@ -453,20 +452,12 @@ def _clean_doi(value: object) -> str:
     return (normalize_doi(value) or "").rstrip(".,;:)]}")
 
 
-_DOI_TEXT_RE = re.compile(r"(?i)(\bDOI:\s*)(10\.\d{4,9}/\S+)")
-
-
-def _clean_doi_text(text: str) -> str:
-    return _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), text)
+_DOI_TEXT_RE = re.compile(r"(?i)(\bDOI\s*:?\s*)(10\.\d{4,9}/\S+)")
 
 
 _BACKGROUND_REFERENCES_RE = re.compile(
     r"(?ims)^###\s+Background References\b.*?(?=^#{1,3}\s+\S|\Z)"
 )
-
-
-def _strip_background_references(text: str) -> str:
-    return _BACKGROUND_REFERENCES_RE.sub("", text)
 
 
 def _agent_slug() -> str:
@@ -2241,7 +2232,7 @@ def _restore_source_bounded_conclusion(
 
 
 def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
-    paper = _strip_background_references(_clean_doi_text((run / "full_paper.md").read_text(encoding="utf-8")))
+    paper = _BACKGROUND_REFERENCES_RE.sub("", _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), (run / "full_paper.md").read_text(encoding="utf-8")))
     paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility").replace("changing the evidence tier", "changing the source tier")
     paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
     paper = _trim_submission_boilerplate(paper)
@@ -2253,6 +2244,17 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     for row in source_bundle:
         if span := _source_evidence_span(row):
             row["evidence_span"] = span
+        if doi := normalize_doi(row.get("doi") or row.get("source_doi")):
+            locator = f"https://doi.org/{doi}"
+            doi_pattern = re.escape(doi).replace(r"\.", r"\.\s*")
+            locator_pattern = rf"https?://doi\.org/{doi_pattern}"
+            nested = rf"\[exact source:\s*https?://[^\]\n]*?\[exact source:\s*{locator_pattern}\]\.?\s*[^\]\n]*\]"
+            paper = re.sub(nested, f"[exact source: {locator}]", paper, flags=re.I)
+            paper = re.sub(locator_pattern, locator, paper, flags=re.I)
+    bundle_dois = {normalize_doi(row.get("doi") or row.get("source_doi")) for row in source_bundle}
+    bundle_pmids = {str(row.get("pmid") or row.get("source_pmid") or "").strip() for row in source_bundle}
+    paper = _DOI_TEXT_RE.sub(lambda match: match.group(0) if _clean_doi(match.group(2)) in bundle_dois else "", paper)
+    paper = _PMID_RE.sub(lambda match: match.group(0) if match.group(1) in bundle_pmids else "", paper)
     paper = _restore_source_bounded_conclusion(paper, source_bundle)
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)

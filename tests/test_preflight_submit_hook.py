@@ -46,7 +46,7 @@ def _payload(body: str) -> dict:
 def test_payload_source_bundle_excludes_cited_only_references(tmp_path: Path, monkeypatch) -> None:
     """source_bundle is the RETAINED/on-topic source set (== receipts), so a
     cited external reference that is NOT a retained source must NOT be padded
-    into it — otherwise the public surface certifies more "sources on topic"
+    into it or retain an outgoing locator — otherwise the public surface certifies more "sources on topic"
     than the evidence base has (the 13-receipts-but-22-bundle mismatch). Such
     cited references remain in the body's ## References, not this count."""
     monkeypatch.setenv("RESEARKA_ARTICLE_TYPE_V3", "research_synthesis")
@@ -83,6 +83,7 @@ def test_payload_source_bundle_excludes_cited_only_references(tmp_path: Path, mo
         for row in payload["source_bundle"]
     )
     assert len(payload["source_bundle"]) == 0
+    assert "10.1001/jama.2010.1923" not in payload["body_markdown"]
 
 
 def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
@@ -91,19 +92,19 @@ def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, mon
     run = tmp_path / "run"
     run.mkdir()
 
-    payload, report = submit._run_preflight_qa(  # type: ignore[attr-defined]
-        _payload("## Result\n\nThis may be limited.\n\nThis may be limited."),
-        run,
-    )
+    original = _payload("## Abstract\n\nThis may be limited.\n\nThis may be limited.\n\n## Result\n\nBounded.")
+    original["abstract"] = "This may be limited. This may be limited."
+    payload, report = submit._run_preflight_qa(original, run)  # type: ignore[attr-defined]
 
     assert report and report["status"] == "pass"
     assert payload is not None
     assert payload["body_markdown"].count("This may be limited.") == 1
+    assert payload["abstract"] == payload["sections"]["Abstract"]
     assert payload["metadata"]["preflight_qa"]["status"] == "pass"
     assert payload["metadata"]["content_hash"] != "sha256:old"
 
 
-def test_final_preflight_hook_reports_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
+def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
@@ -114,13 +115,14 @@ def test_final_preflight_hook_reports_bad_payload_in_enforce_mode(tmp_path: Path
         run,
     )
 
-    assert payload is not None
-    assert report and report["status"] == "pass"
+    assert payload is None
+    assert report and report["status"] == "blocked"
     assert "doi_not_in_source_bundle" in {r["code"] for r in report["advisories"]}
-    assert "doi_not_in_source_bundle" in payload["metadata"]["preflight_qa"]["advisory_codes"]
+    assert report["blocked_reasons"] == ["doi_not_in_source_bundle"]
+    assert submit._read_json(run / "researka_preflight_report.json")["status"] == "blocked"  # type: ignore[attr-defined]
 
 
-def test_final_preflight_live_mode_is_advisory_only(tmp_path: Path, monkeypatch) -> None:
+def test_final_preflight_live_mode_blocks_critical_advisory(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "live")
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
@@ -131,10 +133,28 @@ def test_final_preflight_live_mode_is_advisory_only(tmp_path: Path, monkeypatch)
         run,
     )
 
-    assert payload is not None
-    assert report and report["status"] == "pass"
+    assert payload is None
+    assert report and report["status"] == "blocked"
     assert "doi_not_in_source_bundle" in {r["code"] for r in report["advisories"]}
-    assert "doi_not_in_source_bundle" in payload["metadata"]["preflight_qa"]["advisory_codes"]
+    assert report["blocked_reasons"] == ["doi_not_in_source_bundle"]
+
+
+def test_payload_canonicalizes_nested_source_locator(tmp_path: Path, monkeypatch) -> None:
+    doi = "10.1002/14651858.cd016141"
+    run = tmp_path / "synthesis-metformin-v06-test"
+    run.mkdir()
+    run.joinpath("full_paper.md").write_text(
+        "Devall 2026 [bundle:1] reported the result "
+        f"[exact source: http://doi.org/10.1002/14651858 [exact source: http://doi.org/{doi}]. CD016141].",
+        encoding="utf-8",
+    )
+    run.joinpath("manifest.json").write_text('{"topic":"metformin"}', encoding="utf-8")
+    monkeypatch.setattr(submit, "_source_bundle", lambda *_args, **_kwargs: [{"doi": doi}])
+
+    cleaned = submit.build_payload(run)["body_markdown"]  # type: ignore[attr-defined]
+
+    assert cleaned.count(f"[exact source: https://doi.org/{doi}]") == 1
+    assert "https://doi.org/10.1002/14651858 [exact source:" not in cleaned
 
 
 def test_final_preflight_hook_missing_tool_blocks_enforce_mode(
