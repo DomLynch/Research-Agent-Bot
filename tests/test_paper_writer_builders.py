@@ -585,6 +585,10 @@ def test_results_builder_backfills_missing_outcome_sections() -> None:
     accepted = [
         _accepted("r-cardio", outcome_class="cardiometabolic"),
         _accepted("r-frailty", outcome_class="frailty"),
+        replace(
+            _accepted("r-animal", outcome_class="cardiometabolic"),
+            directness="mechanistic", population_summary="mice",
+        ),
     ]
     parsed = {
         "subsections": [
@@ -605,7 +609,9 @@ def test_results_builder_backfills_missing_outcome_sections() -> None:
 
     assert section is not None
     assert "### Cardiometabolic Outcomes" in section.body_md
+    assert "### Animal/Preclinical Context Outcomes" in section.body_md
     assert "### Frailty Outcomes" in section.body_md
+    assert "`r-animal`" not in section.body_md.split("### Cardiometabolic Outcomes", 1)[1].split("###", 1)[0]
     frailty_body = section.body_md.split("### Frailty Outcomes", 1)[1]
     assert "`r-frailty`" in frailty_body
 

@@ -643,8 +643,6 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
     cautious = source_language and bool(re.search(r"\b(?:remain(?:s|ed)? (?:bounded|cautious|limited|uncertain)|is (?:unclear|unknown|not established))\b", claim, re.I))
     if cautious and not grounding_claim:
         return True
-    if (match := re.fullmatch(r"(?:This paper|The conclusion) synthesizes evidence on (?P<topic>.+?) across the retained source corpus and high-confidence extracted claim set(?:, while remaining bounded by source directness and endpoint fit)?(?: \[bundle:\d+\])?[.!?]?", " ".join(claim.split()), re.I)) and is_source_topic_specific(match.group("topic"), str(source.get("title") or "")):
-        return True
     required = min(4, max(3, (len(claim_words) + 4) // 5))
     claim_text = claim.lower().split(" reports: ", 1)[-1].split(" [exact source:", 1)[0]
     if source_language:
@@ -699,10 +697,8 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
 def _citation_indexes(text: str, bundle: list[dict[str, Any]]) -> set[int]:
     lower = text.lower()
     indexes = {int(value) - 1 for value in _BUNDLE_REFERENCE_RE.findall(text)}
-    indexes.update(
-        int(value) - 1 for group in _NUMERIC_CITATION_RE.findall(text)
-        for value in re.findall(r"\d+", group)
-    )
+    indexes.update(int(value) - 1 for group in _NUMERIC_CITATION_RE.findall(text)
+                   for value in re.findall(r"\d+", group))
     pmids = set(_PMID_RE.findall(text))
     dois = {value.lower().rstrip(".,") for value in _DOI_RE.findall(text)}
     for index, row in enumerate(bundle):
@@ -725,9 +721,8 @@ def _claim_trace_counts(
 ) -> tuple[int, int, int]:
     claims = _claim_candidates(text)
     indexes = [_citation_indexes(claim, bundle) for claim in claims]
-    return len(claims), sum(bool(values) for values in indexes), sum(
-        any(_evidence_aligns(claim, bundle[index]) for index in values)
-        for claim, values in zip(claims, indexes, strict=True))
+    return len(claims), sum(map(bool, indexes)), sum(any(_evidence_aligns(claim, bundle[index]) for index in values)
+                                                     for claim, values in zip(claims, indexes, strict=True))
 
 
 def _researka_evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
@@ -770,19 +765,12 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
                         continue
                     aligned = [index for index, row in enumerate(bundle) if _evidence_aligns(clean, row)]
                     if aligned:
-                        def rank(index: int) -> tuple[int, bool, bool, int]:
-                            row = bundle[index]
-                            return (
-                                max(
-                                    (len(_evidence_words(clean) & _evidence_words(row.get(key)))
-                                     for key in ("quote", "evidence_span", "excerpt")),
-                                    default=0,
-                                ),
-                                str(row.get("directness") or "").lower().startswith("direct"),
-                                str(row.get("evidence_tier") or "").upper().startswith("A"),
-                                -index,
-                            )
-                        index = max(aligned, key=rank)
+                        index = max(aligned, key=lambda index: (
+                            max((len(_evidence_words(clean) & _evidence_words(bundle[index].get(key)))
+                                 for key in ("quote", "evidence_span", "excerpt")), default=0),
+                            str(bundle[index].get("directness") or "").lower().startswith("direct"),
+                            str(bundle[index].get("evidence_tier") or "").upper().startswith("A"), -index,
+                        ))
                         terminal = re.search(r"""[.!?](?:["')\]]|\*{1,2}|_{1,2})*$""", sentence)
                         sentence = (
                             f"{sentence[:terminal.start()]} [bundle:{index + 1}]{sentence[terminal.start():]}"
@@ -807,10 +795,8 @@ def _researka_claim_trace_status(
     prose = "\n".join(line for line in "\n".join([str(payload.get("abstract") or ""), *major]).splitlines() if not line.lstrip().startswith("|"))
     claims = _claim_candidates(prose)[:30]
     indexes = [_citation_indexes(claim, source_bundle) for claim in claims]
-    strict = (len(claims), sum(bool(values) for values in indexes), sum(
-        any(_researka_evidence_aligns(claim, source_bundle[index]) for index in values)
-        for claim, values in zip(claims, indexes, strict=True)
-    ))
+    strict = (len(claims), sum(map(bool, indexes)), sum(any(_researka_evidence_aligns(claim, source_bundle[index]) for index in values)
+                                                        for claim, values in zip(claims, indexes, strict=True)))
     for count, cited, aligned in (_claim_trace_counts(prose, source_bundle), strict):
         required = (count * 4 + 4) // 5 if count else 0
         if count and aligned < required:
@@ -2208,9 +2194,25 @@ def _trim_submission_boilerplate(paper: str) -> str:
         r"(?m)^Positive study-level signals are not the dominant direction[^\n]*\n?",
         r"(?m)^The conclusion is that [^\n]+ remains a bounded evidence case:[^\n]*\n?",
         r"(?m)^Evidence for this outcome class is represented in the structured results table,[^\n]*\n?",
+        r"(?i)(?:This paper|The conclusion) synthesizes evidence on [^.!\n]+? across the retained source corpus and high-confidence extracted claim set(?:, while remaining bounded by source directness and endpoint fit)?(?: \[bundle:\d+\])?[.!?]?", r"(?i)Population, comparator, endpoint, and follow-up differences are carried forward as boundaries rather than averaged away(?: \[bundle:\d+\])?[.!?]?",
+        r"(?i)The [^;\n]+ evidence base comprised \d+ sources?;.*?These sources define the outcome-specific signal for this domain before cross-domain interpretation\.",
     ):
         paper = re.sub(pattern, "", paper)
     return re.sub(r"\n{3,}", "\n\n", paper)
+
+
+def _ensure_core_source_traces(paper: str, bundle: list[dict[str, Any]]) -> str:
+    used = {_normalized_key(claim) for heading in ("Abstract", "Conclusion") if (match := re.search(rf"(?ms)^## {heading}\s*\n(.*?)(?=^## |\Z)", paper)) for claim in _claim_candidates(match.group(1)) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))}
+    aligned = iter(claim for claim in _claim_candidates(paper) if _normalized_key(claim) not in used and _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle)))
+    for heading in ("Abstract", "Conclusion"):
+        if not (match := re.search(rf"(?ms)(^## {heading}\s*\n)(.*?)(?=^## |\Z)", paper)) or any(_cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))
+                            for claim in _claim_candidates(match.group(2))):
+            continue
+        if not (claim := next(aligned, "")):
+            return paper
+        used.add(_normalized_key(claim))
+        paper = paper[:match.start()] + f"{match.group(1)}{match.group(2).rstrip()}\n\n{claim}\n\n" + paper[match.end():].lstrip()
+    return paper
 
 
 def _restore_source_bounded_conclusion(
@@ -2254,9 +2256,10 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     paper = _DOI_TEXT_RE.sub(lambda match: match.group(0) if _clean_doi(match.group(2)) in bundle_dois else "", paper)
     paper = _PMID_RE.sub(lambda match: match.group(0) if match.group(1) in bundle_pmids else "", paper)
     paper = re.sub(r"\[([^\]\n]+)\]\(\s*\)", r"\1", re.sub(r"\[exact source:\s*\]", "", paper, flags=re.I))
-    paper = _restore_source_bounded_conclusion(paper, source_bundle)
+    paper = _trim_submission_boilerplate(_restore_source_bounded_conclusion(paper, source_bundle))
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)
+    paper = _ensure_core_source_traces(paper, source_bundle)
     paper = re.sub(r"(?ims)(\A# [^\n]+|^## (?:Abstract|Conclusion)\b.*?(?=^## |\Z))", lambda block: re.sub(r"\bunresolved\b", lambda word: "Unsettled" if word.group()[0].isupper() else "unsettled", block.group()), paper)
     title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"
     _publication_evidence.attach_evidence_spans(paper, source_bundle)

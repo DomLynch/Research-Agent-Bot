@@ -1588,6 +1588,19 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
     assert daily._quantities_agree(percentage_result, percentage_bundle)
 
 
+def test_submission_removes_non_evidence_claims_and_redundant_counts() -> None:
+    paper = daily._trim_submission_boilerplate(
+        "This paper synthesizes evidence on metformin biomarkers across the retained source corpus "
+        "and high-confidence extracted claim set [bundle:2]. Valid result remains [bundle:3]. Population, comparator, endpoint, and "
+        "follow-up differences are carried forward as boundaries rather than averaged away [bundle:1].\n"
+        "The cardiometabolic evidence base comprised 15 sources; the directness profile was mixed. "
+        "These sources define the outcome-specific signal for this domain before cross-domain interpretation."
+    )
+    assert "Valid result remains [bundle:3]." in paper
+    assert "synthesizes evidence on metformin biomarkers" not in paper
+    assert "comprised 15 sources" not in paper
+
+
 def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     claims = [
@@ -1680,9 +1693,11 @@ def test_quantity_tokens_ignore_alphanumeric_source_identifiers() -> None:
     assert not daily._quantities_agree("10-Year-old cohort", [{"evidence_span": "5-Year-old cohort"}])
 
 
-def test_core_claim_trace_drops_unsupported_conclusion_accounting(tmp_path: Path) -> None:
+def test_core_claim_trace_replaces_unsupported_conclusion_accounting(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    beta = "Beta 2025 reports: Topic intervention trial reports an authoritative endpoint result from source-owned full text content."
+    paper = paper.replace("## Results\n\n", f"## Results\n\n{beta}\n\n", 1)
     paper = re.sub(
         r"(?ms)^## Conclusion\n\n.*?(?=^## References)",
         "## Conclusion\n\n" + "Context remains bounded by the retained record. " * 40
@@ -1696,13 +1711,12 @@ def test_core_claim_trace_drops_unsupported_conclusion_accounting(tmp_path: Path
 
     assert "The evidence tiers include A1" not in payload["body_markdown"]
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
-    assert payload["core_claims_resolved"] is False
-    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == (
-        "researka_core_claims_unresolved:conclusion_claims=0"
-    )
-    assert daily._researka_preflight_status(payload, enforce_recency=False) == (
-        "researka_core_claims_unresolved:conclusion_claims=0"
-    )
+    assert payload["core_claims_resolved"] is True
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    assert daily._researka_preflight_status(payload, enforce_recency=False) == "eligible"
+    abstract_claims = set(map(daily._normalized_key, daily._claim_candidates(payload["abstract"])))
+    conclusion_claims = set(map(daily._normalized_key, daily._claim_candidates(payload["sections"]["Conclusion"])))
+    assert abstract_claims.isdisjoint(conclusion_claims)
 
     payload["body_markdown"] = re.sub(
         r"(?ms)^## Conclusion\n.*?(?=^## References)",
@@ -1715,7 +1729,7 @@ def test_core_claim_trace_drops_unsupported_conclusion_accounting(tmp_path: Path
     )
 
 
-def test_payload_cites_abstract_synthesis_claim_without_truncating_trace(tmp_path: Path) -> None:
+def test_payload_preserves_abstract_scope_without_false_source_trace(tmp_path: Path) -> None:
     run = _run(tmp_path)
     registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
     registry["topic_effect_0"]["title"] = "Resistance training trial"
@@ -1757,15 +1771,15 @@ def test_payload_cites_abstract_synthesis_claim_without_truncating_trace(tmp_pat
     assert "### Source-backed boundary" in payload["body_markdown"]
     assert "### Corpus boundary" in payload["sections"]["Conclusion"]
     assert daily._word_count(payload["sections"]["Conclusion"]) >= 250
-    scope = re.search(r"This paper synthesizes evidence on resistance training regimens.*?\[bundle:\d+\]", payload["abstract"])
-    assert scope
+    scope = "This paper synthesizes evidence on resistance training regimens across the retained source corpus and high-confidence extracted claim set."
+    assert scope not in payload["abstract"]
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
     payload["body_markdown"] = payload["body_markdown"].replace(
         "## Conclusion\n\n",
-        f"## Conclusion\n\n{scope.group(0)}.\n\n### Bounded conclusion\n\n",
+        f"## Conclusion\n\n{scope}\n\n### Bounded conclusion\n\n",
         1,
     )
-    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) != "eligible"
     unsupported_heading = {**payload, "body_markdown": payload["body_markdown"].replace(
         "### Bounded conclusion", "### Aspirin reduces cardiovascular mortality by 90%",
     )}

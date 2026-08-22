@@ -8,13 +8,14 @@ from collections import Counter
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 
+from agent.evidence_lanes import is_animal_context
+from agent.outcome_class_remap import outcome_display, outcome_key
 from agent.synthesis_schemas import (
     ReceiptSummary,
     SectionName,
     SynthesisClaimAnchor,
     SynthesisSection,
 )
-from agent.outcome_class_remap import outcome_display, outcome_key
 
 __all__ = [
     "build_anchored_from_parsed",
@@ -37,15 +38,16 @@ _AMBIGUOUS_ABBREVIATION_RE = re.compile(
 _SENTENCE_BREAK_RE = re.compile(r"[.!?][^\w\s]*\s+")
 _INLINE_RECEIPT_RE = re.compile(r"\[([^\[\]\n]+)\]")
 def _has_internal_sentence_boundary(text: str) -> bool:
-    protected = _CONTINUING_ABBREVIATION_RE.sub(
-        lambda match: match.group().replace(".", "<DOT>"), text,
-    )
+    protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
     return len(_SENTENCE_BREAK_RE.split(protected)) > 1
 
 
 def _repair_rows(payload: Mapping[str, object]) -> list[object]:
-    value = payload.get("paragraphs")
-    return value if isinstance(value, list) else [payload]
+    return value if isinstance(value := payload.get("paragraphs"), list) else [payload]
+
+
+def _receipt_outcome(receipt: ReceiptSummary) -> str:
+    return "animal_preclinical_context" if is_animal_context(receipt) else outcome_key(receipt.outcome_class)
 
 
 def citation_only_repair_eligible(payload: Mapping[str, object]) -> bool:
@@ -627,10 +629,10 @@ def build_results_from_parsed(
     # classes (e.g. "immune" vs "immune_inflammation") collapse to one section,
     # matching the finalizer's _outcome_key routing. Idempotent for classes that
     # are already canonical.
-    receipt_outcomes = {r.receipt_id: outcome_key(r.outcome_class) for r in accepted}
+    receipt_outcomes = {r.receipt_id: _receipt_outcome(r) for r in accepted}
     by_outcome: dict[str, list[ReceiptSummary]] = {}
     for receipt in accepted:
-        by_outcome.setdefault(outcome_key(receipt.outcome_class), []).append(receipt)
+        by_outcome.setdefault(_receipt_outcome(receipt), []).append(receipt)
     body_lines: list[str] = ["## Results", ""]
     outcome_bodies: dict[str, list[str]] = {}
     anchors: list[SynthesisClaimAnchor] = []
