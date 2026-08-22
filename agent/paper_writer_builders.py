@@ -534,8 +534,6 @@ def build_anchored_from_parsed(
         ))
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
-    if any(reason.startswith("source_grounding:") for reason in rejections):
-        return None
     if not anchors:
         # Report the upstream cause before the caller emits its short fallback.
         counts = Counter(rejections)
@@ -603,7 +601,7 @@ def build_scoped_from_parsed(
         ))
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
-    if not anchors or any(reason.startswith("source_grounding:") for reason in rejections):
+    if not anchors:
         return None
     section_text = _normalize(" ".join(anchor.sentence for anchor in anchors))
     aliases = _topic_aliases(topic)

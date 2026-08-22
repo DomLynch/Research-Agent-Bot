@@ -760,17 +760,21 @@ def test_source_grounding_checks_leading_clause_citation_identity_and_scope() ->
         assert build_results_from_parsed(_results_payload(
             "Cancer mortality decreased among adults [r-cardio].",
         ), accepted=[opposed]) is None
-    assert build_scoped_from_parsed(
+    conclusion = build_scoped_from_parsed(
         {"paragraphs": [{
             "text": (
                 "Evidence suggests metformin treatment reduced fasting glucose among adults with "
                 "type 2 diabetes, while clinical significance for metformin remains uncertain."
             ),
             "receipt_ids": ["r-cardio"],
+        }, {
+            "text": "Metformin prevented pancreatic cancer, although metformin remains uncertain.",
+            "receipt_ids": ["r-cardio"],
         }]},
         name="conclusion", heading="## Conclusion", topic="metformin",
         accepted=[_grounded_receipt()],
-    ) is not None
+    )
+    assert conclusion is not None and "pancreatic cancer" not in conclusion.body_md
     assert build_results_from_parsed(_results_payload(
         "Metformin may have reduced fasting glucose [r-cardio].",
     ), accepted=[glucose]) is not None
@@ -805,7 +809,7 @@ def test_source_grounding_checks_leading_clause_citation_identity_and_scope() ->
         "Morbidity, mortality, and fasting glucose decreased among adults [r-cardio].",
     ), accepted=[opposed_list]) is None
     reasons = []
-    assert build_anchored_from_parsed(
+    abstract = build_anchored_from_parsed(
         {"paragraphs": [
             {
                 "text": (
@@ -824,9 +828,11 @@ def test_source_grounding_checks_leading_clause_citation_identity_and_scope() ->
         ]},
         name="abstract", heading="## Abstract", accepted=[_grounded_receipt()],
         rejection_reasons=reasons,
-    ) is None
+    )
+    assert abstract is not None
+    assert "reduced fasting glucose" in abstract.body_md
+    assert "pancreatic cancer" not in abstract.body_md
     assert reasons == ["source_grounding:r-cardio"]
-
 
 def test_calendar_year_is_not_treated_as_a_fabricated_numeric() -> None:
     """Years are bibliographic context, not quantitative claims.
