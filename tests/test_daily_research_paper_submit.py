@@ -1418,6 +1418,34 @@ def test_registered_url_identifiers_require_authoritative_hosts() -> None:
     assert daily._registered_url_identifiers("ftp://doi.org/10.1000/spoof") == {}
 
 
+@pytest.mark.parametrize(("structured_doi", "source_url", "parsed_url", "expected_doi"), [
+    ("", "https://doi.org/10.1000/first-paper", "https://pubmed.ncbi.nlm.nih.gov/34849008/", "10.1000/first-paper"),
+    ("10.1000/structured-paper", "https://pubmed.ncbi.nlm.nih.gov/34849008/", "https://pmc.ncbi.nlm.nih.gov/articles/PMC8627262/", "10.1000/structured-paper"),
+])
+def test_source_bundle_does_not_merge_conflicting_identities(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, structured_doi: str,
+    source_url: str, parsed_url: str, expected_doi: str,
+) -> None:
+    run = _run(tmp_path)
+    receipt_id = "topic_effect_0"
+    registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
+    registry[receipt_id].update({
+        "source_doi": structured_doi, "source_pmid": "", "source_pmcid": "",
+        "source_url": source_url,
+    })
+    _write_json(run / "citation_registry.json", registry)
+    _snapshot_run(run)
+    monkeypatch.setattr(
+        daily._publication_evidence, "parsed_source_url",
+        lambda *_args, **_kwargs: parsed_url,
+    )
+
+    source = daily._source_bundle(run, limit=1)[0]
+
+    assert source["doi"] == expected_doi
+    assert source["pmid"] is None
+
+
 def test_source_bundle_excludes_notice_only_record(tmp_path: Path) -> None:
     run = _run(tmp_path)
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))

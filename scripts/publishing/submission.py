@@ -1855,25 +1855,31 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             ROOT, topic, receipt_id, parsed_dir=parsed_dir,
         )
         title = str(row.get("title") or receipt.get("source_title") or "Evidence receipt")[:300]
-        url_ids: dict[str, str] = {}
-        for value in (row.get("source_url"), row.get("url"), parsed_url):
-            url_ids.update(_registered_url_identifiers(value))
-        registry_id = next((
+        url_ids = next((
+            identifiers
+            for value in (row.get("source_url"), row.get("url"), parsed_url)
+            if (identifiers := _registered_url_identifiers(value))
+        ), {})
+        explicit_registry_id = next((
             str(row.get(key) or "").strip()
             for key in ("registry_id", "canonical_trial_id", "trial_id", "nct")
             if str(row.get(key) or "").strip()
-        ), None) or url_ids.get("registry_id")
-        openalex_id = str(row.get("source_openalex_id") or row.get("openalex_id") or url_ids.get("openalex_id") or "").strip() or None
-        known = {
-            "doi": row.get("source_doi") or url_ids.get("doi"), "pmid": row.get("source_pmid") or url_ids.get("pmid"),
-            "pmcid": row.get("source_pmcid") or url_ids.get("pmcid"),
-            "openalex_id": openalex_id, "registry_id": registry_id,
+        ), None)
+        explicit_ids = {
+            "doi": row.get("source_doi"), "pmid": row.get("source_pmid"),
+            "pmcid": row.get("source_pmcid"),
+            "openalex_id": row.get("source_openalex_id") or row.get("openalex_id"),
+            "registry_id": explicit_registry_id,
         }
+        known = explicit_ids if any(str(value or "").strip() for value in explicit_ids.values()) else url_ids
         missing_primary_id = _evidence_type_for_source(receipt) == "primary" and not _has_registered_source_locator(known)
         identifiers = _europe_pmc_identifiers(title) if missing_primary_id else {}
-        doi = _clean_doi(row.get("source_doi") or url_ids.get("doi") or identifiers.get("doi")) or None
-        pmid = str(row.get("source_pmid") or url_ids.get("pmid") or identifiers.get("pmid") or "") or None
-        pmcid = str(row.get("source_pmcid") or url_ids.get("pmcid") or identifiers.get("pmcid") or "") or None
+        resolved_ids = identifiers or known
+        registry_id = str(resolved_ids.get("registry_id") or "").strip() or None
+        openalex_id = str(resolved_ids.get("openalex_id") or "").strip() or None
+        doi = _clean_doi(resolved_ids.get("doi")) or None
+        pmid = str(resolved_ids.get("pmid") or "") or None
+        pmcid = str(resolved_ids.get("pmcid") or "") or None
         claim_excerpt = _claim_excerpt(quant_dir, str(row.get("receipt_id") or ""))
         pubmed_excerpt = pubmed_abstracts.get(pmid or "")
         parsed_excerpt = _parsed_source_excerpt(parsed_dir, receipt_id)
