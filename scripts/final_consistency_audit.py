@@ -1,41 +1,4 @@
-"""Day 10.17 Phase 6.2 Layer 1 — deterministic final-consistency audit.
-
-The 3 converged audits caught issues that the local-pattern audit
-(scripts/audit_v06_paper.py) missed because they're cross-artifact
-consistency problems:
-
-  * "Methods says 7 papers accepted, body says MET-PREVENT rejected"
-    — manifest ↔ paper contradiction
-  * "Audit verdict says AAA but Q9 failed"
-    — verdict gate logic
-  * "Duplicate References block (writer-rendered + post-processed)"
-    — formatting / pipeline contract
-  * "### ### malformed headers"
-    — formatting
-  * "(potentially) inline repair artifacts"
-    — stale Phase 2 patches
-  * "Methods describes SPAR but no SPAR ran in this run"
-    — stale boilerplate
-
-Per the converged reviewer plan: code catches structured consistency
-problems perfectly; LLM is downstream. This script is Layer 1 — runs
-on (paper, manifest, audit) and emits a list of typed inconsistencies.
-
-Output: <paper>.consistency.json (list of issues + auto-fixable flag)
-        <paper>.consistency.md   (markdown summary)
-
-Per-issue contract:
-  {
-    "id": "C01",
-    "severity": "P1" | "P2",
-    "issue_type": "manifest_contradiction" | "stale_method" | ...,
-    "auto_fixable": bool,
-    "evidence": "<paper text snippet that triggered it>",
-    "suggested_fix": "<deterministic patch description>",
-  }
-
-Exits 0 if no P1 issues; 1 otherwise.
-"""
+"""Audit final manuscript artifacts for deterministic consistency defects."""
 from __future__ import annotations
 
 import argparse

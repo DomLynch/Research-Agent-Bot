@@ -1,37 +1,4 @@
-"""Fix #5: Effect-direction inference with null and mixed states.
-
-Pre-fix `_aggregate_paper` collapsed all per-claim signs into a single
-sum and emitted `positive | negative | unclear`. This had two real
-bugs:
-
-  1. **Null was missing.** A trial reporting 0.001 m/s walk-speed
-     improvement (p=0.96) — the literal MET-PREVENT (Witham 2025)
-     primary outcome — got tagged `unclear` rather than `null`,
-     which then propagated to the synthesis as either ambiguous or
-     mis-grouped under positive/negative effect classes.
-
-  2. **Mixed was missing.** A paper reporting both significant
-     positive (HbA1c improvement) AND significant negative
-     (resistance-training adaptation blunting) findings collapsed
-     to whichever sign won the sum, hiding the conflict.
-
-Fix: deterministic per-claim significance + sign aggregation,
-producing one of {positive, negative, null, mixed, unclear}.
-
-  - `null`     : no statistically-significant claim AND any signed
-                 claims have negligible magnitude
-  - `mixed`    : significant signed claims disagree across endpoints
-  - `positive` : significant signed claims agree positive
-  - `negative` : significant signed claims agree negative
-  - `unclear`  : signed claims with no significance signal AND no
-                 negligible-magnitude evidence (legacy behaviour)
-
-Acceptance is about source validity, not benefit direction. A null
-or mixed result is a valid SHIPPED state — the writer can then
-truthfully report 'no improvement' or 'context-dependent effect'.
-
-Architecture: pure deterministic, no LLM. Operates on the same
-claim-dict shape `_aggregate_paper` already builds."""
+"""Infer positive, negative, null, mixed, or unclear effect direction."""
 from __future__ import annotations
 
 import re

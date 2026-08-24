@@ -2738,6 +2738,12 @@ async def _run(
         receipt_contracts=evidence_lock.receipt_rows,
         authorized_contract_fields=allowed_by_receipt,
     )
+    from agent.synthesis import dedupe_receipts
+    original_receipt_count = len(receipts)
+    receipts = list(dedupe_receipts(receipts))
+    continuity["duplicate_receipts_removed"] = original_receipt_count - len(receipts)
+    if revision_receipt_ids:
+        revision_receipt_ids = frozenset(receipt.receipt_id for receipt in receipts)
     try:
         receipts, retracted, unverified = _retraction_check.exclude_retracted(
             receipts, doi_of=lambda receipt: receipt.source_doi)

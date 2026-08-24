@@ -28,6 +28,8 @@ unclear+unclear), the discriminating tests catch it.
 """
 from __future__ import annotations
 
+from dataclasses import replace
+
 from agent.synthesis import (
     MIN_UNIQUE_TRIALS_FOR_SYNTHESIS,
     _detect_population_summary,
@@ -923,6 +925,27 @@ def test_dedupe_receipts_keeps_distinct_trials() -> None:
     ]
     deduped = dedupe_receipts(receipts)
     assert len(deduped) == 3
+
+
+def test_dedupe_receipts_prefers_registered_copy_without_merging_conflicting_doi() -> None:
+    title = "Efficacy and Safety of Liraglutide: A Systematic Review"
+    bare = replace(_summary("bare", n_claims=11), source_title=title)
+    canonical = replace(
+        _summary("canonical", n_claims=45), source_title=title,
+        source_doi="10.2147/clep.s391819", source_pmid="36510488",
+    )
+    alias = replace(
+        _summary("alias"), source_title="Abbreviated systematic review title",
+        source_doi="10.2147/clep.s391819",
+    )
+    distinct = replace(
+        _summary("distinct"), source_title=title,
+        source_doi="10.1000/distinct", source_pmid="9999",
+    )
+
+    assert [row.receipt_id for row in dedupe_receipts((bare, alias, canonical, distinct))] == [
+        "canonical", "distinct",
+    ]
 
 
 def test_min_unique_trials_for_synthesis_is_three() -> None:

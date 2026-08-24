@@ -1,49 +1,4 @@
-"""Synthesis layer — Day 10 paper engine.
-
-Aggregates N claim receipts (Day 1-9 output) into a synthesis paper
-artifact (`paper_synthesis.md`) audited against the 7-paper Quality
-Reference Corpus rubric.
-
-Day 10.2 added the deterministic foundation: build_receipt_summary +
-build_tension_matrix. Day 10.3 (this slice) adds the synthesis thesis
-tournament — LLM proposes K candidates, code disposes:
-  - thesis must reference ≥3 receipts
-  - thesis must address ≥1 non-orthogonal tension
-  - no numerics absent from any receipt
-  - rank by (-receipts_referenced, -tensions_addressed, +word_count)
-
-Subsequent slices add:
-  Day 10.4: render_synthesis_paper (sectioned writer)
-  Day 10.5: orchestration glue + --synthesize flag
-  Day 10.6: empirical metformin run + audit ≥8.5/10
-
-Design decisions for the tension matrix:
-
-  1. NO LLM in tension detection — branches considered:
-     (A) deterministic keyword/sign classifier (chosen)
-     (B) LLM-aided pairing — rejected, defeats CODE DISPOSES
-     (C) ClaimEdge-based — rejected, Day 1-9 left edges empty
-
-  2. outcome_class derivation: case-insensitive substring match against
-     curated keyword sets per class. First-seen-wins ordering covers
-     the metformin reference corpus cleanly (muscle_function before
-     mechanism, etc.) without per-pack tuning.
-
-  3. effect_direction derivation: heuristic combining
-     - "blunted/attenuated/reduced/decreased" verbs → negative
-     - "improved/increased/enhanced" verbs → positive
-     - "no significant difference/comparable/null" verbs → null
-     - p-value ≥ 0.05 with no signed effect verb → null
-     - HR/OR/RR with explicit numeric → sign from value
-     - mechanism-only (no human outcome) → unclear
-
-  4. Pair classification produces ONE Tension per (a, b) with
-     a.receipt_id < b.receipt_id (canonical ordering, no double-count).
-
-  5. severity is 0 (orthogonal) → 5 (direct disagreement on same
-     outcome). The synthesis writer uses severity to prioritize which
-     tensions get prose treatment in the Tensions section.
-"""
+"""Deterministic evidence synthesis and source-level deduplication."""
 from __future__ import annotations
 
 import json
@@ -121,24 +76,34 @@ def unique_evidence_key(r: ReceiptSummary) -> tuple[str, str]:
 def dedupe_receipts(
     summaries: Sequence[ReceiptSummary],
 ) -> tuple[ReceiptSummary, ...]:
-    """Keep one receipt per `unique_evidence_key` (first-seen wins).
+    """Keep one receipt per evidence unit or bibliographic source.
 
-    Order-preserving: re-running with the same input order produces
-    the same deduped output. The synthesis orchestrator calls this
-    before `build_tension_matrix` so duplicate runs of the same
-    cluster don't pollute the matrix with same-trial / same-thesis
-    self-pairs that would show as "agreement" but are actually one
-    finding observed N times.
+    Exact-title matches collapse only when registered identifiers do not
+    conflict. The strongest identified, highest-claim receipt wins.
     """
-    seen: set[tuple[str, str]] = set()
-    out: list[ReceiptSummary] = []
-    for s in summaries:
-        key = unique_evidence_key(s)
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append(s)
-    return tuple(out)
+    def identifiers(row: ReceiptSummary) -> tuple[str, str]:
+        return (row.source_doi or "").lower(), (row.source_pmid or "").lstrip("0")
+
+    def same_source(left: ReceiptSummary, right: ReceiptSummary) -> bool:
+        pairs = tuple(zip(identifiers(left), identifiers(right), strict=True))
+        if any(a and b and a != b for a, b in pairs):
+            return False
+        left_title = re.sub(r"[^a-z0-9]+", "", (left.source_title or "").lower())
+        right_title = re.sub(r"[^a-z0-9]+", "", (right.source_title or "").lower())
+        return (
+            unique_evidence_key(left) == unique_evidence_key(right)
+            or any(a and a == b for a, b in pairs)
+            or bool(left_title and left_title == right_title)
+        )
+
+    ranked = sorted(enumerate(summaries), key=lambda item: (
+        -(bool(item[1].source_doi) + bool(item[1].source_pmid)), -item[1].n_claims, item[0],
+    ))
+    kept: list[tuple[int, ReceiptSummary]] = []
+    for item in ranked:
+        if not any(same_source(item[1], other) for _, other in kept):
+            kept.append(item)
+    return tuple(row for _, row in sorted(kept))
 
 
 def count_unique_trials(summaries: Sequence[ReceiptSummary]) -> int:
