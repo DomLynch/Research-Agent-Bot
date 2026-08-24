@@ -17,6 +17,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from collections.abc import Callable, Iterator
 from decimal import Decimal, InvalidOperation
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -87,6 +88,8 @@ SOURCE_BUNDLE_INDIRECT_TOLERANCE_RATIO = 0.15
 SOURCE_BUNDLE_MAPPING_TOLERANCE_MIN_ROWS = 20
 SOURCE_BUNDLE_MAPPING_TOLERANCE_MAX_MISSING_CITATIONS = 3
 SOURCE_BUNDLE_MAPPING_TOLERANCE_RATIO = 0.10
+SOURCE_ID_LOOKUP_LIMIT = 3
+_source_id_lookups = 0
 PUBLIC_BLOCKED_TITLE_PREFIXES = (
     "adjacent evidence brief:", "evidence brief:", "evidence map:",
     "hypothesis-generating brief:", "mechanistic evidence brief:",
@@ -1630,6 +1633,28 @@ def _citation_url(row: dict[str, Any]) -> str | None:
     return f"https://www.ncbi.nlm.nih.gov/pmc/articles/{pmcid}/" if pmcid else None
 
 
+def _registered_url_identifiers(value: object) -> dict[str, str]:
+    url = urllib.parse.urlparse(str(value or "").strip())
+    if url.scheme not in {"http", "https"}:
+        return {}
+    host, path = (url.hostname or "").lower().removeprefix("www."), urllib.parse.unquote(url.path)
+    patterns = {
+        "doi": (host in {"doi.org", "dx.doi.org"}, r"^/(10\.\d{4,9}/\S+)$"),
+        "pmid": (host == "pubmed.ncbi.nlm.nih.gov", r"^/(\d+)/?$"),
+        "pmcid": (host in {"ncbi.nlm.nih.gov", "pmc.ncbi.nlm.nih.gov"}, r"^/(?:pmc/)?articles/(PMC\d+)/?$",),
+        "openalex_id": (host == "openalex.org", r"^/(W\d+)/?$"),
+        "registry_id": (host == "clinicaltrials.gov", r"^/study/(NCT\d{8})/?$"),
+    }
+    identifiers = {
+        key: match.group(1).upper() if key != "doi" else _clean_doi(match.group(1))
+        for key, (trusted, pattern) in patterns.items()
+        if trusted and (match := re.search(pattern, path, re.I))
+    }
+    if host == "europepmc.org" and (match := re.search(r"^/article/PMC/(PMC\d+)/?$", path, re.I)):
+        identifiers["pmcid"] = match.group(1).upper()
+    return identifiers
+
+
 def _evidence_type_for_source(receipt: dict[str, Any]) -> str:
     directness = str(receipt.get("directness") or "").lower()
     if directness == "review":
@@ -1762,6 +1787,43 @@ def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
     return out
 
 
+@lru_cache(maxsize=256)
+def _europe_pmc_identifiers(title: str) -> dict[str, str]:
+    global _source_id_lookups
+    normalized = " ".join(re.findall(r"[a-z0-9]+", title.casefold()))
+    if len(normalized.split()) < 4 or _source_id_lookups >= SOURCE_ID_LOOKUP_LIMIT:
+        return {}
+    _source_id_lookups += 1
+    query = urllib.parse.urlencode({
+        "query": f'TITLE:"{title}"', "format": "json",
+        "pageSize": "25", "resultType": "core",
+    })
+    try:
+        with urllib.request.urlopen(
+            f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?{query}",
+            timeout=5,
+        ) as response:
+            result = json.loads(response.read())
+        records = (result.get("resultList") or {}).get("result") or []
+        if not isinstance(records, list) or int(result.get("hitCount") or len(records)) > len(records):
+            return {}
+        matches = [
+            record for record in records if isinstance(record, dict)
+            and " ".join(re.findall(r"[a-z0-9]+", str(record.get("title") or "").casefold())) == normalized
+        ]
+    except Exception:
+        return {}
+    if len(matches) != 1:
+        return {}
+    return {
+        key: value for key, value in {
+            "doi": normalize_doi(matches[0].get("doi")) or "",
+            "pmid": str(matches[0].get("pmid") or "").strip(),
+            "pmcid": str(matches[0].get("pmcid") or "").strip().upper(),
+        }.items() if value
+    }
+
+
 def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
@@ -1788,11 +1850,32 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     bundle = []
     for row in rows[:limit]:
         receipt = receipts.get(str(row.get("receipt_id")), {})
-        title = str(row.get("title") or receipt.get("source_title") or "Evidence receipt")[:300]
-        claim_excerpt = _claim_excerpt(quant_dir, str(row.get("receipt_id") or ""))
-        pmid = str(row.get("source_pmid") or "")
-        pubmed_excerpt = pubmed_abstracts.get(pmid)
         receipt_id = str(row.get("receipt_id") or "")
+        parsed_url = _publication_evidence.parsed_source_url(
+            ROOT, topic, receipt_id, parsed_dir=parsed_dir,
+        )
+        title = str(row.get("title") or receipt.get("source_title") or "Evidence receipt")[:300]
+        url_ids: dict[str, str] = {}
+        for value in (row.get("source_url"), row.get("url"), parsed_url):
+            url_ids.update(_registered_url_identifiers(value))
+        registry_id = next((
+            str(row.get(key) or "").strip()
+            for key in ("registry_id", "canonical_trial_id", "trial_id", "nct")
+            if str(row.get(key) or "").strip()
+        ), None) or url_ids.get("registry_id")
+        openalex_id = str(row.get("source_openalex_id") or row.get("openalex_id") or url_ids.get("openalex_id") or "").strip() or None
+        known = {
+            "doi": row.get("source_doi") or url_ids.get("doi"), "pmid": row.get("source_pmid") or url_ids.get("pmid"),
+            "pmcid": row.get("source_pmcid") or url_ids.get("pmcid"),
+            "openalex_id": openalex_id, "registry_id": registry_id,
+        }
+        missing_primary_id = _evidence_type_for_source(receipt) == "primary" and not _has_registered_source_locator(known)
+        identifiers = _europe_pmc_identifiers(title) if missing_primary_id else {}
+        doi = _clean_doi(row.get("source_doi") or url_ids.get("doi") or identifiers.get("doi")) or None
+        pmid = str(row.get("source_pmid") or url_ids.get("pmid") or identifiers.get("pmid") or "") or None
+        pmcid = str(row.get("source_pmcid") or url_ids.get("pmcid") or identifiers.get("pmcid") or "") or None
+        claim_excerpt = _claim_excerpt(quant_dir, str(row.get("receipt_id") or ""))
+        pubmed_excerpt = pubmed_abstracts.get(pmid or "")
         parsed_excerpt = _parsed_source_excerpt(parsed_dir, receipt_id)
         receipt_excerpt = _receipt_evidence_excerpt(
             receipt, _parsed_source_text(parsed_dir, receipt_id),
@@ -1803,25 +1886,15 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         quote = _publication_evidence.exact_source_quote(claim_excerpt, excerpt)
         cited_as = str(row.get("body_citation") or "")
         rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)
-        url = _citation_url(row) or _publication_evidence.parsed_source_url(
-            ROOT, topic, receipt_id, parsed_dir=parsed_dir,
-        )
-        identity_text = " ".join(str(value or "") for value in (url, title))
-        registry_id = next((
-            str(row.get(key) or "").strip()
-            for key in ("registry_id", "canonical_trial_id", "trial_id", "nct")
-            if str(row.get(key) or "").strip()
-        ), None) or next(iter(re.findall(r"\b(?:NCT\d{8}|ISRCTN\d{8}|ACTRN\d{14})\b", identity_text, re.I)), None)
-        openalex_id = str(row.get("source_openalex_id") or row.get("openalex_id") or "").strip() or None
-        if not openalex_id and (match := re.search(r"(?:https?://openalex\.org/)?\b(W\d+)\b", identity_text, re.I)):
-            openalex_id = match.group(1).upper()
+        url = _citation_url({"source_doi": doi, "source_pmid": pmid, "source_pmcid": pmcid}) or parsed_url
         source = {
-            "source_type": "pubmed" if row.get("source_pmid") else "corpus",
-            "id": str(row.get("source_pmid") or row.get("source_pmcid") or row.get("reference_id") or row.get("receipt_id") or ""),
+            "source_type": "pubmed" if pmid else "corpus",
+            "id": str(pmid or pmcid or row.get("reference_id") or row.get("receipt_id") or ""),
             "title": title,
             "url": url,
-            "doi": _clean_doi(row.get("source_doi")) or None,
-            "pmid": str(row.get("source_pmid") or "") or None,
+            "doi": doi,
+            "pmid": pmid,
+            "pmcid": pmcid,
             "openalex_id": openalex_id,
             "registry_id": registry_id.upper() if registry_id else None,
             "excerpt": excerpt,
@@ -1872,8 +1945,9 @@ def _has_registered_source_locator(row: dict[str, Any]) -> bool:
     return bool(
         re.fullmatch(r"10\.\d{4,9}/\S+", _clean_doi(row.get("doi")), flags=re.I)
         or re.fullmatch(r"\d{4,12}", str(row.get("pmid") or ""))
+        or re.fullmatch(r"PMC[1-9]\d{3,11}", str(row.get("pmcid") or ""), re.I)
         or re.fullmatch(r"(?:https?://openalex\.org/)?W\d+", str(row.get("openalex_id") or ""), re.I)
-        or re.fullmatch(r"[A-Za-z][A-Za-z0-9._/-]{3,127}", str(row.get("registry_id") or ""))
+        or re.fullmatch(r"(?:NCT\d{8}|ISRCTN\d{8}|ACTRN\d{14})", str(row.get("registry_id") or ""), re.I)
     )
 
 
@@ -2203,12 +2277,25 @@ def _trim_submission_boilerplate(paper: str) -> str:
 
 def _ensure_core_source_traces(paper: str, bundle: list[dict[str, Any]]) -> str:
     used = {_normalized_key(claim) for heading in ("Abstract", "Conclusion") if (match := re.search(rf"(?ms)^## {heading}\s*\n(.*?)(?=^## |\Z)", paper)) for claim in _claim_candidates(match.group(1)) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))}
-    aligned = iter(claim for claim in _claim_candidates(paper) if _normalized_key(claim) not in used and _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle)))
+    aligned = [claim for claim in _claim_candidates(paper) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))]
     for heading in ("Abstract", "Conclusion"):
         if not (match := re.search(rf"(?ms)(^## {heading}\s*\n)(.*?)(?=^## |\Z)", paper)) or any(_cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))
                             for claim in _claim_candidates(match.group(2))):
             continue
-        if not (claim := next(aligned, "")):
+        claim = next((item for item in aligned if _normalized_key(item) not in used), "")
+        if not claim and aligned:
+            original = aligned[0]
+            candidates = [
+                (index, sentence.strip())
+                for index in _citation_indexes(original, bundle)
+                for key in ("quote", "evidence_span", "excerpt")
+                for sentence in _revision_claim_trace._sentences(str(bundle[index].get(key) or ""))
+                if len(sentence.strip()) >= 20
+            ]
+            if candidates:
+                index, sentence = max(candidates, key=lambda item: len(_evidence_words(original) & _evidence_words(item[1])))
+                claim = f"The cited source reports the following finding: {sentence.rstrip('.')} [bundle:{index + 1}]."
+        if not claim:
             return paper
         used.add(_normalized_key(claim))
         paper = paper[:match.start()] + f"{match.group(1)}{match.group(2).rstrip()}\n\n{claim}\n\n" + paper[match.end():].lstrip()
@@ -2219,7 +2306,7 @@ def _restore_source_bounded_conclusion(
     paper: str, source_bundle: list[dict[str, Any]],
 ) -> str:
     match = re.search(r"(?ms)(^## Conclusion\s*\n)(.*?)(?=^## |\Z)", paper)
-    if not match or (words := _word_count(match.group(2))) >= 250:
+    if not match or "### Corpus boundary" in match.group(2) or (words := _word_count(match.group(2))) >= 250:
         return paper
     anchor = build_source_bounded_conclusion(source_bundle, minimum_words=250 - words)
     if not anchor:

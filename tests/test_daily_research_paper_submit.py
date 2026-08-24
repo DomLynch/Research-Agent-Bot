@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import io
 import json
 import os
 import re
@@ -25,11 +26,14 @@ sys.path.insert(0, str(REPO / "scripts"))
 import daily_research_paper_submit as daily  # type: ignore[import-not-found]  # noqa: E402
 from agent.revision_evidence import create_revision_evidence_snapshot, load_revision_evidence  # noqa: E402
 
+_REAL_EUROPE_PMC_IDENTIFIERS = daily._europe_pmc_identifiers
+
 
 @pytest.fixture(autouse=True)
 def _disable_live_pubmed_fetch(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("RESEARKA_SOURCE_ABSTRACT_LIMIT", "0")
     monkeypatch.setattr(daily, "ROOT", tmp_path)
+    monkeypatch.setattr(daily, "_europe_pmc_identifiers", lambda _title: {})
     monkeypatch.setattr(daily, "_retraction_gate_status", lambda _run: ("eligible", []))
 
 
@@ -1329,16 +1333,23 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
     assert rebound["source_record_hash"] == original_hash
 
 
-def test_primary_source_without_registered_identity_fails_local_preflight(tmp_path: Path) -> None:
+def test_primary_source_without_registered_identity_is_enriched_or_fails_closed(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     run = _run(tmp_path)
     receipt_id = "topic_effect_0"
     registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
-    registry[receipt_id].update({"source_doi": "", "source_pmid": "", "source_pmcid": ""})
+    registry[receipt_id].update({
+        "title": "Topic primary intervention trial", "source_doi": "", "source_pmid": "", "source_pmcid": "",
+    })
     _write_json(run / "citation_registry.json", registry)
     parsed = daily.ROOT / "docs" / "quality-reference" / "topic" / "parsed"
     _write_json(parsed / f"{receipt_id}.paper_sections.json", {
         "source_pdf": "https://example.org/trial-report",
-        "sections": {"abstract": "The primary trial reported an authoritative endpoint result."},
+        "sections": {"abstract": (
+            "The primary randomized trial reported an authoritative endpoint result with durable "
+            "follow-up across the enrolled adult cohort."
+        )},
     })
     _snapshot_run(run)
 
@@ -1347,6 +1358,64 @@ def test_primary_source_without_registered_identity_fails_local_preflight(tmp_pa
     assert status == "source_bundle_unregistered_primary_sources:1/12"
     assert not daily._has_registered_source_locator({"pmid": "1"})
     assert not daily._has_registered_source_locator({"registry_id": "bad id"})
+    assert not daily._has_registered_source_locator({"registry_id": "none"})
+    assert not daily._has_registered_source_locator({"pmcid": "PMC0000"})
+    assert daily._has_registered_source_locator({"pmcid": "PMC8627262"})
+
+    monkeypatch.setattr(daily, "_europe_pmc_identifiers", lambda _title: {
+        "doi": "10.2147/IJGM.S336904", "pmid": "34849008", "pmcid": "PMC8627262",
+    })
+    payload = daily.build_payload(run)
+    assert daily._source_bundle_reconciliation_status(payload) == "eligible"
+    assert daily._researka_preflight_status(payload) == "eligible"
+    assert payload["source_bundle"][0]["pmid"] == "34849008"
+
+
+def test_europe_pmc_identity_lookup_is_unique_and_cached(monkeypatch: pytest.MonkeyPatch) -> None:
+    title = "The Efficacy and Safety of Liraglutide for Weight Management"
+    record = {"title": title, "doi": "10.2147/IJGM.S336904", "pmid": "34849008", "pmcid": "PMC8627262"}
+    calls = 0
+
+    def response(_request: object, *, timeout: int) -> io.BytesIO:
+        nonlocal calls
+        calls += 1
+        assert timeout == 5
+        return io.BytesIO(json.dumps({"resultList": {"result": [record]}}).encode())
+
+    _REAL_EUROPE_PMC_IDENTIFIERS.cache_clear()
+    daily._source_id_lookups = 0
+    monkeypatch.setattr(daily.urllib.request, "urlopen", response)
+    assert _REAL_EUROPE_PMC_IDENTIFIERS(title)["pmid"] == "34849008"
+    assert _REAL_EUROPE_PMC_IDENTIFIERS(title)["pmid"] == "34849008"
+    assert calls == 1
+
+    _REAL_EUROPE_PMC_IDENTIFIERS.cache_clear()
+    daily._source_id_lookups = 0
+    ambiguous = {"hitCount": 2, "resultList": {"result": [record, {**record, "doi": "10.1000/other"}]}}
+    monkeypatch.setattr(daily.urllib.request, "urlopen", lambda *_args, **_kwargs: io.BytesIO(json.dumps(ambiguous).encode()))
+    assert _REAL_EUROPE_PMC_IDENTIFIERS(title) == {}
+
+    _REAL_EUROPE_PMC_IDENTIFIERS.cache_clear()
+    daily._source_id_lookups = 0
+    truncated = {"hitCount": 26, "resultList": {"result": [record]}}
+    monkeypatch.setattr(daily.urllib.request, "urlopen", lambda *_args, **_kwargs: io.BytesIO(json.dumps(truncated).encode()))
+    assert _REAL_EUROPE_PMC_IDENTIFIERS(title) == {}
+
+    _REAL_EUROPE_PMC_IDENTIFIERS.cache_clear()
+    daily._source_id_lookups = 0
+    malformed = {"resultList": {"result": [None]}}
+    monkeypatch.setattr(daily.urllib.request, "urlopen", lambda *_args, **_kwargs: io.BytesIO(json.dumps(malformed).encode()))
+    assert _REAL_EUROPE_PMC_IDENTIFIERS(title) == {}
+
+
+def test_registered_url_identifiers_require_authoritative_hosts() -> None:
+    assert daily._registered_url_identifiers("https://pmc.ncbi.nlm.nih.gov/articles/PMC8627262/") == {
+        "pmcid": "PMC8627262",
+    }
+    assert daily._registered_url_identifiers("https://example.org/?next=https://doi.org/10.1000/spoof") == {}
+    assert daily._registered_url_identifiers("https://example.org/W123456") == {}
+    assert daily._registered_url_identifiers("https://pubmed.ncbi.nlm.nih.gov/34849008/garbage") == {}
+    assert daily._registered_url_identifiers("ftp://doi.org/10.1000/spoof") == {}
 
 
 def test_source_bundle_excludes_notice_only_record(tmp_path: Path) -> None:
@@ -1727,6 +1796,23 @@ def test_core_claim_trace_replaces_unsupported_conclusion_accounting(tmp_path: P
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == (
         "researka_core_claims_unresolved:conclusion_claims=0"
     )
+
+
+def test_core_claim_trace_restates_verified_finding_without_duplicate_prose(tmp_path: Path) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    bundle = payload["source_bundle"]
+    claim = next(item for item in daily._claim_candidates(payload["body_markdown"])
+                 if daily._cited_claim_aligns(item, bundle, daily._citation_indexes(item, bundle)))
+    paper = f"# Research Synthesis: Topic\n\n## Abstract\n\n{claim}\n\n## Conclusion\n\nScope remains bounded.\n"
+
+    repaired = daily._ensure_core_source_traces(paper, bundle)
+
+    assert repaired.count(claim) == 1
+    assert "The cited source reports the following finding:" in repaired
+    assert daily._researka_core_claim_trace_status({"body_markdown": repaired}, bundle) == "eligible"
+    paragraphs = [set(re.findall(r"[a-z0-9]+", item.lower())) for item in repaired.split("\n\n") if len(item.split()) >= 8]
+    assert all(len(left & right) / max(1, len(left | right)) < 0.9
+               for index, left in enumerate(paragraphs) for right in paragraphs[index + 1:])
 
 
 def test_payload_preserves_abstract_scope_without_false_source_trace(tmp_path: Path) -> None:
