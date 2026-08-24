@@ -1900,7 +1900,6 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
             "url": url,
             "doi": doi,
             "pmid": pmid,
-            "pmcid": pmcid,
             "openalex_id": openalex_id,
             "registry_id": registry_id.upper() if registry_id else None,
             "excerpt": excerpt,
@@ -1952,6 +1951,7 @@ def _has_registered_source_locator(row: dict[str, Any]) -> bool:
         re.fullmatch(r"10\.\d{4,9}/\S+", _clean_doi(row.get("doi")), flags=re.I)
         or re.fullmatch(r"\d{4,12}", str(row.get("pmid") or ""))
         or re.fullmatch(r"PMC[1-9]\d{3,11}", str(row.get("pmcid") or ""), re.I)
+        or _registered_url_identifiers(row.get("url"))
         or re.fullmatch(r"(?:https?://openalex\.org/)?W\d+", str(row.get("openalex_id") or ""), re.I)
         or re.fullmatch(r"(?:NCT\d{8}|ISRCTN\d{8}|ACTRN\d{14})", str(row.get("registry_id") or ""), re.I)
     )

@@ -1369,6 +1369,7 @@ def test_primary_source_without_registered_identity_is_enriched_or_fails_closed(
     assert daily._source_bundle_reconciliation_status(payload) == "eligible"
     assert daily._researka_preflight_status(payload) == "eligible"
     assert payload["source_bundle"][0]["pmid"] == "34849008"
+    assert "pmcid" not in payload["source_bundle"][0]
 
 
 def test_europe_pmc_identity_lookup_is_unique_and_cached(monkeypatch: pytest.MonkeyPatch) -> None:
