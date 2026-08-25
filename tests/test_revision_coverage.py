@@ -800,28 +800,26 @@ def test_gate_refresh_rejects_stale_unknown_ask_verdict(tmp_path: Path) -> None:
     assert gate_report(tmp_path, revision_coverage, refreshed_by="test") is None
 
 
-def test_named_statistic_repair_covers_findings_map_tables() -> None:
+def test_named_statistic_repair_includes_reviewer_requested_source_value() -> None:
     ask = (
-        "Clarify or correct the Stanfield 2026 'P < 0.001' statistic if it is not present "
-        "in the bundle excerpt."
+        "In the 'Cross-Domain Synthesis' section, Kelly 2020 is supported by the source, "
+        "which states 81 of 125 (64.8%) vs. 46 of 126 (36.5%). The exact statistic from "
+        "the source should be included in the narrative."
     )
     rows = [{
-        "citation_token": "Stanfield 2026", "directness": "direct",
-        "thesis_text": "The retained excerpt reports p = 0.089.",
+        "citation_token": "Kelly 2020", "directness": "direct",
+        "thesis_text": "Gastrointestinal events: 81 of 125 (64.8%) vs. 46 of 126 (36.5%).",
     }]
     paper = (
-        "## Evidence Landscape\n\n### Findings Map\n\n"
-        "| Source | Finding |\n| --- | --- |\n"
-        "| Stanfield 2026 | P < 0.001 |\n\n"
-        "## Results\n\nBounded result.\n"
+        "## Cross-Domain Synthesis\n\n"
+        "Kelly 2020 reported adverse events in a substantial proportion of participants.\n"
     )
 
     assert revision_quality_proof_is_stated(paper, ask, rows) is False
     fixed, details = repair_revision_quality(paper, rows, ask)
 
     assert details == ["named_statistic_reconciliation"]
-    assert "P < 0.001" not in fixed
-    assert "Stanfield 2026 [bundle:1] retains p = 0.089" in fixed
+    assert "Kelly 2020 [bundle:1] retains 64.8%" in fixed
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
     assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
 

@@ -317,10 +317,10 @@ def _asks_named_statistic_reconciliation(text: str) -> bool:
         and any(token in text for token in (
             "if it is not present", "if not present", "not present in", "per endpoint",
             "which endpoint", "located in the source excerpt", "representative statistic",
-            "transcribe", "not transcribed", "bundle supported",
+            "transcribe", "not transcribed", "bundle supported", "from the source",
         ))
         and any(token in text for token in (
-            "add", "clarify", "verify", "correct", "remove", "reconcile", "transcribe", "mark",
+            "add", "clarify", "verify", "correct", "remove", "reconcile", "transcribe", "mark", "include",
         ))
         and any(token in text for token in ("bundle", "excerpt", "source", "trace"))
     )
