@@ -647,15 +647,15 @@ def apply_patches(
     for p in patches:
         ptype_raw = p.get("patch_type")
         ptype = ptype_raw if ptype_raw in known_types else "unknown"
-        before = p.get("before") or ""
-        after = p.get("after") or ""
+        before = value if isinstance(value := p.get("before"), str) else ""
+        after = value if isinstance(value := p.get("after"), str) else ""
         pid = p.get("id", "?")
         sev = p.get("severity", "P3")
         location = p.get("location") or ""
         # Reviewer P1: clamp proposer_reason length so a 50KB final-layer reviewer
         # hallucination can't bloat the JSON log. 500 chars is enough
         # for any human-readable reason; truncate with ellipsis.
-        raw_reason = (p.get("reason") or "").strip()
+        raw_reason = value.strip() if isinstance(value := p.get("reason"), str) else ""
         proposer_reason = raw_reason[:500] + (
             "...[truncated]" if len(raw_reason) > 500 else ""
         )

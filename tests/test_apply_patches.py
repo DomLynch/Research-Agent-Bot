@@ -729,6 +729,18 @@ def test_proposer_reason_is_clamped_to_500_chars() -> None:
     assert len(results[0].reason_for_decision) < 1000
 
 
+def test_malformed_numeric_before_is_rejected_without_crashing() -> None:
+    patch = {
+        "id": "P01", "patch_type": "claim", "severity": "P1",
+        "location": "Discussion", "before": -80, "after": "",
+    }
+    paper, results = apply_patches.apply_patches(
+        "## Discussion\n\nText.\n", [patch], _manifest(),
+    )
+    assert paper == "## Discussion\n\nText.\n"
+    assert results[0].decision == "rejected"
+
+
 def test_citation_patch_introducing_long_pmc_handle_is_flagged() -> None:
     """Fix #11: pre-fix final-layer reviewer could ship a citation patch whose `after`
     was `PMC12978362_molecular_mechanisms_of_metformin` and the
