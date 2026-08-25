@@ -1839,7 +1839,8 @@ def test_core_claim_trace_restates_verified_finding_without_duplicate_prose(tmp_
     bundle = payload["source_bundle"]
     claim = next(item for item in daily._claim_candidates(payload["body_markdown"])
                  if daily._cited_claim_aligns(item, bundle, daily._citation_indexes(item, bundle)))
-    paper = f"# Research Synthesis: Topic\n\n## Abstract\n\n{claim}\n\n## Conclusion\n\nScope remains bounded.\n"
+    table = "\n".join(f"| {index} | The trial reported a 12% change in a synthetic unsupported endpoint without a citation. |" for index in range(31))
+    paper = f"# Research Synthesis: Topic\n\n## Results\n\n{table}\n\n## Abstract\n\n{claim}\n\n## Conclusion\n\nScope remains bounded.\n"
 
     repaired = daily._ensure_core_source_traces(paper, bundle)
 

@@ -301,6 +301,10 @@ def test_locked_receipt_contract_preserves_original_claim_membership(
     )[0]
     assert "64.8% vs. 36.5%)" in completed.thesis_text
     assert allowed == {"mixed": {"thesis_text"}}
+    assert not orch._completes_locked_comparison(
+        "Test topic trial — source excerpts: Events occurred in 64.8% vs. unsupported interpretation)",
+        "Test topic trial — source excerpts: Events occurred in 64.8% vs.",
+    )
 
     contract = {
         "outcome_class": "mechanism",

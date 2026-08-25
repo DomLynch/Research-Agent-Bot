@@ -1582,7 +1582,7 @@ def _completes_locked_comparison(current: str, locked: Any) -> bool:
     excerpt = text.partition("source excerpts: ")[2].partition(" | ")[0]
     prefix, _, suffix = text.partition(excerpt)
     delta = current[len(prefix + excerpt):len(current) - len(suffix) if suffix else None]
-    return bool(excerpt and re.search(r"\b(?:vs\.?|versus)\s*$", excerpt, re.I) and current.startswith(prefix + excerpt) and current.endswith(suffix) and re.fullmatch(r"\s+[^|\n]{1,80}\)", delta))
+    return bool(excerpt and re.search(r"\b(?:vs\.?|versus)\s*$", excerpt, re.I) and current.startswith(prefix + excerpt) and current.endswith(suffix) and re.fullmatch(r"\s+(?:\d+/\d+\s+\()?\d+(?:\.\d+)?%\)\.?", delta))
 
 
 def _build_receipt_thesis_text(

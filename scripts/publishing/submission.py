@@ -2283,7 +2283,7 @@ def _trim_submission_boilerplate(paper: str) -> str:
 
 def _ensure_core_source_traces(paper: str, bundle: list[dict[str, Any]]) -> str:
     used = {_normalized_key(claim) for heading in ("Abstract", "Conclusion") if (match := re.search(rf"(?ms)^## {heading}\s*\n(.*?)(?=^## |\Z)", paper)) for claim in _claim_candidates(match.group(1)) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))}
-    aligned = [claim for claim in _claim_candidates(paper) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))]
+    aligned = [claim for claim in _claim_candidates("\n".join(line for line in paper.splitlines() if not line.lstrip().startswith("|"))) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))]
     for heading in ("Abstract", "Conclusion"):
         if not (match := re.search(rf"(?ms)(^## {heading}\s*\n)(.*?)(?=^## |\Z)", paper)) or any(_cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))
                             for claim in _claim_candidates(match.group(2))):
