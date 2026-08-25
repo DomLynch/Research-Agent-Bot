@@ -20,7 +20,8 @@ def test_long_paper_lanes_wait_for_the_prepare_lock() -> None:
         assert "flock --conflict-exit-code 75 --shared --wait 900 /run/research-agent-paper-prepare.lock" in text
     revise = (REPO / "deploy" / "research-agent-paper-revise.service").read_text()
     assert "flock --conflict-exit-code 75 --shared --wait 4200 /run/research-agent-paper-prepare.lock" in revise
-    assert "TimeoutStartSec=8100" in revise
+    assert "--max-revise-attempts 1 --cycle-budget-sec 10800" in revise
+    assert "TimeoutStartSec=16200" in revise
     daily_submit = (REPO / "deploy" / "research-agent-paper-daily-submit.service").read_text()
     assert "TimeoutStartSec=1800" in daily_submit
 

@@ -2474,7 +2474,8 @@ def test_synthesis_units_share_prepare_exclusion_lock() -> None:
         assert "/usr/bin/flock --conflict-exit-code 75 --shared --wait 900 /run/research-agent-paper-prepare.lock" in service
     revise = (REPO / "deploy" / "research-agent-paper-revise.service").read_text(encoding="utf-8")
     assert "/usr/bin/flock --conflict-exit-code 75 --shared --wait 4200 /run/research-agent-paper-prepare.lock" in revise
-    assert "TimeoutStartSec=8100" in revise
+    assert "--max-revise-attempts 1 --cycle-budget-sec 10800" in revise
+    assert "TimeoutStartSec=16200" in revise
 
 
 def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:
