@@ -1577,6 +1577,14 @@ def _shorten_claim_sentence(sentence: str, limit: int = 180) -> str:
     return clean[: limit - 1].rstrip() + "…"
 
 
+def _completes_locked_comparison(current: str, locked: Any) -> bool:
+    text = str(locked or "")
+    excerpt = text.partition("source excerpts: ")[2].partition(" | ")[0]
+    prefix, _, suffix = text.partition(excerpt)
+    delta = current[len(prefix + excerpt):len(current) - len(suffix) if suffix else None]
+    return bool(excerpt and re.search(r"\b(?:vs\.?|versus)\s*$", excerpt, re.I) and current.startswith(prefix + excerpt) and current.endswith(suffix) and re.fullmatch(r"\s+[^|\n]{1,80}\)", delta))
+
+
 def _build_receipt_thesis_text(
     paper_id: str,
     paper_title: str,
@@ -1615,25 +1623,22 @@ def _build_receipt_thesis_text(
             index,
         )
 
-    ranked_claims = sorted(enumerate(claims), key=claim_rank)
-    for _index, claim in ranked_claims:
+    for _index, claim in sorted(enumerate(claims), key=claim_rank):
         raw_sentence = str(claim.get("sentence") or "")
-        continuation = re.match(r".{1,80}?\)", str(claims[_index + 1].get("sentence") or "")) if re.search(r"\b(?:vs\.?|versus)\s*$", raw_sentence, re.I) and _index + 1 < len(claims) else None
-        sentence = _shorten_claim_sentence(f"{raw_sentence} {continuation.group()}" if continuation else raw_sentence)
+        context, anchor = str(claim.get("context_window") or ""), raw_sentence[-20:]
+        following = context.partition(anchor)[2] if anchor and context.count(anchor) == 1 else str(claims[_index + 1].get("sentence") or "") if not context and _index + 1 < len(claims) else ""
+        continuation = re.match(r"\s*(.{1,80}?\))", following) if re.search(r"\b(?:vs\.?|versus)\s*$", raw_sentence, re.I) else None
+        sentence = _shorten_claim_sentence(f"{raw_sentence} {continuation.group(1)}" if continuation else raw_sentence)
         if not sentence or sentence in seen:
             continue
         seen.add(sentence)
-        raw = (claim.get("raw_text") or "").strip()
-        if raw and raw not in sentence:
+        if (raw := (claim.get("raw_text") or "").strip()) and raw not in sentence:
             evidence_lines.append(f"{sentence} [{raw}]")
         else:
             evidence_lines.append(sentence)
         if len(evidence_lines) >= 3:
             break
-    title = paper_title or paper_id
-    if not evidence_lines:
-        return f"{title} — high-confidence quantitative evidence available."
-    return f"{title} — source excerpts: " + " | ".join(evidence_lines)
+    return f"{paper_title or paper_id} — " + ("source excerpts: " + " | ".join(evidence_lines) if evidence_lines else "high-confidence quantitative evidence available.")
 
 
 def _receipt_topic_identity(paper_id: str, paper_meta: dict, claims: list[dict]) -> str:
@@ -1985,9 +1990,7 @@ def build_receipts_from_quant_claims(
     active_paper_ids = None if receipt_ids else _load_receipt_candidate_paper_ids()
     paper_class_map = _load_paper_class_map()
     receipt_contracts = receipt_contracts or {}
-    aliases = source_gate_aliases(
-        topic, topic_aliases(topic, root=REPO_ROOT, include_generated_terms=False),
-    )
+    aliases = source_gate_aliases(topic, topic_aliases(topic, root=REPO_ROOT, include_generated_terms=False))
 
     # Group admittable claims by paper_id (PMC prefix → class lookup)
     by_paper: dict[str, list[dict]] = defaultdict(list)
@@ -2043,12 +2046,6 @@ def build_receipts_from_quant_claims(
             )
         ):
             continue
-        # Slice 37: partial-only papers downgrade tier so the audit
-        # spine reflects that the receipt is review-tier evidence, not
-        # a primary endpoint paper. Universal — no topic-specific logic.
-        # Exempt primary RCTs: a randomized trial is a primary endpoint paper
-        # regardless of high-confidence-claim count, so it must keep its
-        # direct/interventional coding (the Monda 2026 downgrade-to-review bug).
         if (
             paper_id not in high_papers
             and tier in ("A1", "A2", "B1")
@@ -2080,11 +2077,6 @@ def build_receipts_from_quant_claims(
                     thesis_text,
                 ),
             ),
-            # Dedup + a generous bound (was [:6], which dropped cited
-            # source p-values in stats-dense papers — e.g. Janic 2019 has
-            # 19, so the 7th+ never reached the Q2 numeric pool and failed
-            # the 100% gate). Consumers (table_renderer, quality scoring)
-            # pick a representative, so a longer list does not bloat output.
             p_values=tuple(dict.fromkeys(agg["p_values"]))[:40],
             population_summary=_build_population_summary(meta, agg["sample_sizes"]),
             endpoints=agg["endpoints"],
@@ -2100,11 +2092,14 @@ def build_receipts_from_quant_claims(
             outcome_class=refine_other_outcome_class(receipt, receipt.outcome_class),
         )
         locked = receipt_contracts.get(paper_id, {})
-        allowed = (authorized_contract_fields or {}).get(paper_id, set())
+        allowed = set() if authorized_contract_fields is None else authorized_contract_fields.setdefault(paper_id, set())
         updates: dict[str, Any] = {}
         for field in dataclasses.fields(receipt):
             name = field.name
             if name not in locked or name in allowed or name in {"receipt_id", "receipt_path"}:
+                continue
+            if name == "thesis_text" and _completes_locked_comparison(receipt.thesis_text, locked[name]):
+                allowed.add("thesis_text")
                 continue
             if name == "directness" and effective_directness(receipt) == effective_directness(locked):
                 continue
@@ -2113,9 +2108,7 @@ def build_receipts_from_quant_claims(
             receipt = dataclasses.replace(receipt, **updates)
         typed.append((receipt, _taxonomy.population_of(identity)))
     typed.sort(key=lambda rp: -rp[0].n_claims)
-    if receipt_ids:
-        return [receipt for receipt, _population in typed]
-    return _enforce_population_coherence(typed, high_papers)
+    return [receipt for receipt, _population in typed] if receipt_ids else _enforce_population_coherence(typed, high_papers)
 
 
 def build_thesis(

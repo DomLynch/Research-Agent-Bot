@@ -261,8 +261,10 @@ def test_locked_receipt_contract_preserves_original_claim_membership(
         "claims": [
             {
                 "binding_confidence": "high", "claim_type": "p_value",
-                "raw_text": "p < 0.05", "endpoint": "mortality",
+                "raw_text": "64.8%", "endpoint": "mortality",
                 "arm": "test topic", "direction": "positive",
+                "sentence": "Events occurred in 64.8% vs.",
+                "context_window": "Other outcome was 10% vs. 20%). Events occurred in 64.8% vs. 36.5%).",
             },
             {
                 "binding_confidence": "partial", "claim_type": "effect_size",
@@ -290,6 +292,15 @@ def test_locked_receipt_contract_preserves_original_claim_membership(
     assert original[0].n_claims == 1
     assert locked[0].n_claims == original[0].n_claims
     assert locked[0].thesis_text == original[0].thesis_text
+
+    allowed: dict[str, set[str]] = {}
+    completed = orch.build_receipts_from_quant_claims(
+        topic="test_topic", receipt_ids=frozenset({"mixed"}),
+        receipt_contracts={"mixed": {"n_claims": 1, "thesis_text": "Test topic trial — source excerpts: Events occurred in 64.8% vs."}},
+        authorized_contract_fields=allowed,
+    )[0]
+    assert "64.8% vs. 36.5%)" in completed.thesis_text
+    assert allowed == {"mixed": {"thesis_text"}}
 
     contract = {
         "outcome_class": "mechanism",
@@ -491,13 +502,35 @@ def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
 
 def test_receipt_thesis_preserves_late_source_statistics() -> None:
     claims = [
-        {"sentence": "The intervention group had more adverse events (81 of 125 [64.8%] vs."},
-        {"sentence": "46 of 126 [36.5%]) and fewer discontinuations afterward."},
+        {
+            "sentence": "The intervention group had more adverse events (81 of 125 [64.8%] vs.",
+            "context_window": "Other outcome was 10% vs. 20%). adverse events (81 of 125 [64.8%] vs. 46 of 126 [36.5%]) and fewer",
+        },
     ]
 
     thesis = orch._build_receipt_thesis_text("paper", "Safety trial", claims)
 
     assert "81 of 125 [64.8%] vs. 46 of 126 [36.5%]" in thesis
+
+
+def test_locked_receipt_thesis_allows_only_comparison_completion() -> None:
+    locked = "Safety trial — source excerpts: Events occurred in 64.8% vs. | Conclusion."
+    completed = "Safety trial — source excerpts: Events occurred in 64.8% vs. 36.5%) | Conclusion."
+
+    assert orch._completes_locked_comparison(completed, locked)
+    assert not orch._completes_locked_comparison("Safety trial — source excerpts: Different result.", locked)
+    assert not orch._completes_locked_comparison(completed.replace("Conclusion.", "Changed."), locked)
+    assert not orch._completes_locked_comparison(completed + " | New unrelated excerpt.", locked)
+
+
+def test_receipt_thesis_rejects_repeated_comparison_anchor() -> None:
+    thesis = orch._build_receipt_thesis_text("paper", "Safety trial", [{
+        "sentence": "Target result was 64.8% vs.",
+        "context_window": "Target result was 64.8% vs. 20%). Target result was 64.8% vs. 36.5%).",
+    }])
+
+    assert "vs. 20%)" not in thesis
+    assert "vs. 36.5%)" not in thesis
 
 
 def test_receipt_thesis_prefers_results_over_methods() -> None:
