@@ -10,12 +10,7 @@ from pathlib import Path
 
 from agent.evidence_lanes import is_animal_context
 from agent.outcome_class_remap import outcome_display, outcome_key
-from agent.synthesis_schemas import (
-    ReceiptSummary,
-    SectionName,
-    SynthesisClaimAnchor,
-    SynthesisSection,
-)
+from agent.synthesis_schemas import ReceiptSummary, SectionName, SynthesisClaimAnchor, SynthesisSection
 
 __all__ = [
     "build_anchored_from_parsed",
@@ -202,11 +197,7 @@ def _accepted_numeric_tokens(receipts: Sequence[ReceiptSummary]) -> set[str]:
     # it made the guard reject sample sizes that DO trace to a receipt -- observed
     # live as novel_numeric:n=125 while 125 was present in the corpus. Still
     # source-bounded: nothing outside the receipts is admitted.
-    corpus = " ".join(
-        value
-        for receipt in receipts
-        for value in (*receipt.p_values, receipt.thesis_text, receipt.population_summary)
-    )
+    corpus = " ".join(value for receipt in receipts for value in (*receipt.p_values, receipt.thesis_text, receipt.population_summary))
     return {_numeric_token(match.group(0)) for match in _NUMERIC_RE.finditer(corpus)}
 
 
@@ -217,12 +208,9 @@ def _source_grounding_reason(text: str, receipt_ids: Sequence[str], receipts_by_
     source_by_id: dict[str, dict] = {}
     for receipt in (receipts_by_id[rid] for rid in receipt_ids if rid in receipts_by_id):
         parts = re.split(r"\bsource excerpts:\s*", receipt.thesis_text, maxsplit=1, flags=re.I)
-        excerpt = " | ".join(filter(None, (
-            parts[1] if len(parts) == 2 else "", *receipt.p_values,
-            receipt.population_summary,
-        )))
-        source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class,
-                                                   "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
+        excerpt = " | ".join(filter(None, (parts[1] if len(parts) == 2 else "", *receipt.p_values,
+                                                  receipt.population_summary)))
+        source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class, "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
     protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
     for sentence in _SENTENCE_BREAK_RE.split(protected):
         clean, sentence_ids = sentence.replace("<DOT>", ".").strip(), set(_INLINE_RECEIPT_RE.findall(sentence)) or set(receipt_ids)
@@ -392,10 +380,9 @@ def _balanced_cross_domain_groups(
 _HEDGE_PHRASES = (
     "may ", "appears to", "evidence suggests", "remains uncertain",
     "has been proposed", "the question of whether", "we interpret",
-    "this suggests", "one reading is", "the evidence supports",
-    "in our view", "remains to be confirmed", "is not yet established",
-    "is unresolved", "is unclear", "could ", "might ",
-    "proposed as", "hypothesized", "tentative",
+    "this suggests", "one reading is", "the evidence supports", "in our view",
+    "remains to be confirmed", "is not yet established", "is unresolved", "is unclear",
+    "could ", "might ", "proposed as", "hypothesized", "tentative",
 )
 
 
@@ -431,6 +418,7 @@ def build_anchored_from_parsed(
     accepted_ids = {r.receipt_id for r in accepted}
     accepted_by_id = {r.receipt_id: r for r in accepted}
     accepted_outcomes = {r.receipt_id: r.outcome_class for r in accepted}
+    numeric_sources = {token: {r.receipt_id for r in accepted if token in _accepted_numeric_tokens([r])} for token in _accepted_numeric_tokens(accepted)}
     paragraphs = _paragraph_list(parsed)
     body_lines: list[str] = [heading, ""]
     anchors: list[SynthesisClaimAnchor] = []
@@ -445,9 +433,20 @@ def build_anchored_from_parsed(
         if not isinstance(text, str) or not isinstance(rids, list):
             continue
         # Repair one-character receipt-id drift before validation.
-        repaired_rids, _repair_log = repair_receipt_ids(
-            [str(r) for r in rids], accepted_ids,
-        )
+        original_rids = [str(r) for r in rids]
+        repaired_rids, _repair_log = repair_receipt_ids(original_rids, accepted_ids)
+        mapped_numerics = _accepted_numeric_tokens([accepted_by_id[rid] for rid in repaired_rids])
+        for match in _NUMERIC_RE.finditer(text) if repaired_rids else ():
+            token = _numeric_token(match.group(0))
+            quantity = bool(re.search(r"[.%<=>A-Za-zµβ]", match.group(0)) or re.match(r"\s*(?:of\b|participants?|patients?|subjects?|people|adults?|children)\b", text[match.end():], re.I))
+            candidate_ids = sorted(numeric_sources.get(token, set()) - set(repaired_rids))
+            if (quantity and token not in mapped_numerics and not _is_bibliographic_year(text, match)
+                    and not re.search(r"\b(?:fig(?:ure)?|table|equation|section|appendix)\s*$", text[:match.start()], re.I)
+                    and len(candidate_ids) == 1 and not _source_grounding_reason(
+                        _INLINE_RECEIPT_RE.sub("", text), candidate_ids, accepted_by_id)):
+                old_markers = r"\[(?:" + "|".join(map(re.escape, original_rids)) + r")\]"
+                text, repaired_rids = re.sub(old_markers, "", re.sub(old_markers, f"[{candidate_ids[0]}]", text, count=1)), candidate_ids
+                break
         text = _materialize_inline_receipts(text, repaired_rids)
         mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
         ok, reason = _check_anchored_paragraph(

@@ -882,6 +882,46 @@ def test_untraceable_statistic_is_still_rejected() -> None:
     assert not ok and "novel_numeric" in reason, reason
 
 
+def test_anchored_repairs_uniquely_supported_numeric_receipt() -> None:
+    wrong = _accepted("wrong", thesis_text="Konwar reported gastrointestinal adverse events.")
+    right = _accepted(
+        "right",
+        thesis_text=(
+            "Kelly trial - source excerpts: Kelly reported gastrointestinal adverse events in 81 of 125 participants "
+            "(64.8%) versus 46 of 126 controls (36.5%; 95% CI 30-40)."
+        ),
+    )
+    parsed = {"paragraphs": [{
+        "text": "Kelly reported gastrointestinal adverse events in 36.5% of controls [95% CI 30-40] [wrong].",
+        "receipt_ids": ["wrong"],
+    }]}
+
+    section = build_anchored_from_parsed(
+        parsed, name="abstract", heading="## Abstract", accepted=[wrong, right],
+    )
+
+    assert section is not None
+    assert section.anchors[0].receipt_ids == ("right",)
+    assert "[95% CI 30-40]" in section.body_md
+    repaired = build_anchored_from_parsed(
+        {"paragraphs": [{
+            "text": "Kelly reported gastrointestinal adverse events in 36.5% of controls [wrong] [fabricated].",
+            "receipt_ids": ["wrong", "fabricated"],
+        }]},
+        name="abstract", heading="## Abstract", accepted=[wrong, right],
+    )
+    assert repaired is not None and "fabricated" not in repaired.body_md
+    assert repaired.body_md.count("[right]") == 1
+    duplicate = replace(right, receipt_id="duplicate")
+    assert build_anchored_from_parsed(
+        parsed, name="abstract", heading="## Abstract", accepted=[wrong, right, duplicate],
+    ) is None
+    assert build_anchored_from_parsed(
+        {"paragraphs": [{"text": "Figure 1 reports the result [wrong].", "receipt_ids": ["wrong"]}]},
+        name="abstract", heading="## Abstract", accepted=[wrong, replace(right, thesis_text="Figure 1 reports the result.")],
+    ) is None
+
+
 def test_writer_word_count_matches_the_gate() -> None:
     """The retry loop must optimise the number the gate enforces.
 
