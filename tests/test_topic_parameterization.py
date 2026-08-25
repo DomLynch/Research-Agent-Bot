@@ -489,6 +489,17 @@ def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
     assert "metformin increase" not in thesis
 
 
+def test_receipt_thesis_preserves_late_source_statistics() -> None:
+    claims = [
+        {"sentence": "The intervention group had more adverse events (81 of 125 [64.8%] vs."},
+        {"sentence": "46 of 126 [36.5%]) and fewer discontinuations afterward."},
+    ]
+
+    thesis = orch._build_receipt_thesis_text("paper", "Safety trial", claims)
+
+    assert "81 of 125 [64.8%] vs. 46 of 126 [36.5%]" in thesis
+
+
 def test_receipt_thesis_prefers_results_over_methods() -> None:
     thesis = orch._build_receipt_thesis_text(
         paper_id="paper",

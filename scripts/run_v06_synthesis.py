@@ -1615,12 +1615,11 @@ def _build_receipt_thesis_text(
             index,
         )
 
-    ranked_claims = sorted(
-        enumerate(claims),
-        key=claim_rank,
-    )
+    ranked_claims = sorted(enumerate(claims), key=claim_rank)
     for _index, claim in ranked_claims:
-        sentence = _shorten_claim_sentence(claim.get("sentence") or "")
+        raw_sentence = str(claim.get("sentence") or "")
+        continuation = re.match(r".{1,80}?\)", str(claims[_index + 1].get("sentence") or "")) if re.search(r"\b(?:vs\.?|versus)\s*$", raw_sentence, re.I) and _index + 1 < len(claims) else None
+        sentence = _shorten_claim_sentence(f"{raw_sentence} {continuation.group()}" if continuation else raw_sentence)
         if not sentence or sentence in seen:
             continue
         seen.add(sentence)
