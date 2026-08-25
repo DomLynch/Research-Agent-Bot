@@ -704,6 +704,30 @@ def test_writer_builders_enforce_mapped_source_grounding() -> None:
     assert reasons == ["source_grounding:r-cardio"]
 
 
+def test_source_grounding_accepts_bounded_quantitative_paraphrase_without_title_splicing() -> None:
+    kelly = replace(
+        _grounded_receipt(
+            "A Randomized Controlled Trial of Liraglutide for Adolescents with Obesity - source excerpts: "
+            "More participants in the liraglutide group than placebo had gastrointestinal adverse events "
+            "(81 of 125 [64.8%] vs 46 of 126 [36.5%])."
+        ),
+        receipt_id="r-kelly", source_title="A Randomized Controlled Trial of Liraglutide for Adolescents with Obesity",
+        population_summary="adults", directness="direct", outcome_class="safety",
+    )
+    assert build_results_from_parsed(_results_payload(
+        "In a randomized trial of adolescents with obesity, gastrointestinal adverse events occurred in "
+        "64.8% (81 of 125) of liraglutide-treated participants compared with 36.5% (46 of 126) in the "
+        "placebo group [r-kelly].", ["r-kelly"],
+    ), accepted=[kelly]) is not None
+
+    spliced = replace(_grounded_receipt(
+        "Trial - source excerpts: Metformin reduced fasting glucose by 50% among adults."
+    ), source_title="Metformin pancreatic cancer trial")
+    assert build_results_from_parsed(_results_payload(
+        "Metformin reduced pancreatic cancer by 50% among adults [r-cardio]."
+    ), accepted=[spliced]) is None
+
+
 def test_source_grounding_checks_leading_clause_citation_identity_and_scope() -> None:
     glucose = _grounded_receipt()
     cancer = replace(

@@ -690,7 +690,7 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
                 if source_language:
                     grounding_passage = _grounding_words(passage) - _grounding_words(source.get("cited_as"))
                     grounding_required = min(4, max(1, (len(grounding_claim) + 4) // 5))
-                    if len(grounding_claim & grounding_passage) >= grounding_required and not grounding_claim - grounding_passage and (cautious or not claim_quantities or quantity_match):
+                    if len(grounding_claim & grounding_passage) >= grounding_required and (not grounding_claim - grounding_passage or bool(claim_quantities) and any(match.group().lower() in passage.lower() for match in re.finditer(r"\b[a-z]{3,}(?:\s+[a-z]{3,}){2}\b", claim, re.I)) and len(grounding_claim & (grounding_passage | _grounding_words(" ".join(str(source.get(key) or "") for key in ("title", "population", "directness"))))) * 5 >= len(grounding_claim) * 4) and (cautious or not claim_quantities or quantity_match):
                         return True
                 elif overlap >= (2 if claim_quantities else required) and (not claim_quantities or quantity_match):
                     return True

@@ -210,7 +210,7 @@ def _source_grounding_reason(text: str, receipt_ids: Sequence[str], receipts_by_
         parts = re.split(r"\bsource excerpts:\s*", receipt.thesis_text, maxsplit=1, flags=re.I)
         excerpt = " | ".join(filter(None, (parts[1] if len(parts) == 2 else "", *receipt.p_values,
                                                   receipt.population_summary)))
-        source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class, "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
+        source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "population": receipt.population_summary, "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class, "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
     protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
     for sentence in _SENTENCE_BREAK_RE.split(protected):
         clean, sentence_ids = sentence.replace("<DOT>", ".").strip(), set(_INLINE_RECEIPT_RE.findall(sentence)) or set(receipt_ids)
