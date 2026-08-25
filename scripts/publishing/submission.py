@@ -647,9 +647,9 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
     if cautious and not grounding_claim:
         return True
     required = min(4, max(3, (len(claim_words) + 4) // 5))
-    claim_text = claim.lower().split(" reports: ", 1)[-1].split(" [exact source:", 1)[0]
-    if source_language:
-        claim_text = re.sub(r"\s+([.,;:!?])", r"\1", _BUNDLE_REFERENCE_RE.sub("", claim_text)).strip()
+    claim_text = (claim.lower().split(":", 1)[-1] if (generated_trace := claim.lower().startswith("the cited source reports the following finding:")) else claim.lower().split(" reports: ", 1)[-1]).split(" [exact source:", 1)[0]
+    if source_language or generated_trace:
+        claim_text = re.sub(r"\s+([.,;:!?])", r"\1", _BUNDLE_REFERENCE_RE.sub("", claim_text)).strip().translate(str.maketrans("‐‑‒–—−", "------"))
     claim_quantities = _quantity_tokens(claim, [source])
     structured_fields = _structured_source_fields(claim)
     expected_fields = {

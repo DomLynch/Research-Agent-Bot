@@ -1563,6 +1563,13 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
     assert not daily._corpus_accounting_only("12/12 retained sources are coded as null and the intervention causes pancreatic cancer.")
     assert daily._claim_trace_counts(unsupported.split("\n\n", 1)[1], bundle) == (10, 0, 0)
 
+    copied_source = {
+        "cited_as": "Study 2026", "directness": "direct", "evidence_tier": "A1",
+        "excerpt": "Context used 58 participants. Multivariate analysis showed no difference at 6 months (0.2 mmol/mol, −11.3, 11.6, p = 0.98) however, at 12 months HbA1c was higher (10.",
+    }
+    copied_claim = "The cited source reports the following finding: " + copied_source["excerpt"].split(". ", 1)[1].rstrip(".") + " [bundle:1]."
+    assert daily._evidence_aligns(copied_claim, copied_source)
+
     author_interpretation = (
         "The practical takeaway is bounded and revisable. The evidence map should guide "
         "interpretation rather than support a pooled efficacy claim or treatment guideline."
