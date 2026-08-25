@@ -1851,6 +1851,17 @@ def test_core_claim_trace_restates_verified_finding_without_duplicate_prose(tmp_
                for index, left in enumerate(paragraphs) for right in paragraphs[index + 1:])
 
 
+def test_core_claim_trace_does_not_copy_truncated_source_sentence() -> None:
+    excerpt = "Multivariate analysis reported HbA1c improvement (HbA1c:10."
+    bundle = [{"cited_as": "Coelho 2026", "excerpt": excerpt}]
+    claim = f"The cited source reports the following finding: {excerpt.rstrip('.')} [bundle:1]."
+    paper = f"## Abstract\n\n{claim}\n\n## Conclusion\n\nScope remains bounded.\n"
+
+    repaired = daily._ensure_core_source_traces(paper, bundle)
+
+    assert repaired == paper
+
+
 def test_payload_preserves_abstract_scope_without_false_source_trace(tmp_path: Path) -> None:
     run = _run(tmp_path)
     registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))

@@ -2296,7 +2296,7 @@ def _ensure_core_source_traces(paper: str, bundle: list[dict[str, Any]]) -> str:
                 for index in _citation_indexes(original, bundle)
                 for key in ("quote", "evidence_span", "excerpt")
                 for sentence in _revision_claim_trace._sentences(str(bundle[index].get(key) or ""))
-                if len(sentence.strip()) >= 20
+                if len(sentence.strip()) >= 20 and _revision_claim_trace._drop_unmatched_parentheses(sentence) == sentence
             ]
             if candidates:
                 index, sentence = max(candidates, key=lambda item: len(_evidence_words(original) & _evidence_words(item[1])))
