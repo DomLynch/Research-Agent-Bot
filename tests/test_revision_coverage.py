@@ -5673,3 +5673,19 @@ def test_matrix_and_dyad_reviewer_asks_are_verified_deterministically() -> None:
     assert revision_coverage.deterministic_known_asks(asks) == asks
     assert revision_coverage.deterministic_unmet_asks(weak, asks) == asks
     assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_duplicate_source_revision_clears_only_after_bundle_is_unique() -> None:
+    ask = "Canonical source aliases identify duplicate sources at indices: 21."
+    canonical = {
+        "receipt_id": "PMC9738168", "source_title": "Efficacy and Safety of Liraglutide",
+        "source_year": 2022, "source_doi": "10.2147/CLEP.S391819", "source_pmid": "36510488",
+    }
+    duplicate = {
+        "receipt_id": "publisher-copy", "source_title": "Efficacy and Safety of Liraglutide",
+        "source_year": 2022,
+    }
+
+    assert revision_coverage.deterministic_known_asks([ask], evidence_rows=[canonical, duplicate]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("paper", [ask], evidence_rows=[canonical, duplicate]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks("paper", [ask], evidence_rows=[canonical]) == []

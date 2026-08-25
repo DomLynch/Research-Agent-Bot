@@ -7,6 +7,7 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map, endpoint_key
+from agent.sources._base import normalize_doi
 from agent.synthesis_schemas import (
     EffectDirection,
     OutcomeClass,
@@ -23,6 +24,8 @@ __all__ = [
     "detect_effect_direction",
     "load_receipt_summary",
     "unique_evidence_key",
+    "same_bibliographic_source",
+    "bibliographic_sources_unique",
     "dedupe_receipts",
     "count_unique_trials",
     "InsufficientUniqueEvidenceError",
@@ -73,6 +76,43 @@ def unique_evidence_key(r: ReceiptSummary) -> tuple[str, str]:
     return (trial, thesis_sig)
 
 
+def same_bibliographic_source(left: object, right: object) -> bool:
+    """Match source rows by non-conflicting registered identity or exact title."""
+    def value(row: object, *names: str) -> str:
+        values = (row.get(name) for name in names) if isinstance(row, Mapping) else (
+            getattr(row, name, None) for name in names
+        )
+        return next((str(item).strip() for item in values if item not in (None, "")), "")
+
+    pairs = (
+        (normalize_doi(value(left, "source_doi", "doi")) or "",
+         normalize_doi(value(right, "source_doi", "doi")) or ""),
+        (value(left, "source_pmid", "pmid").lstrip("0"),
+         value(right, "source_pmid", "pmid").lstrip("0")),
+        (value(left, "source_pmcid", "pmcid").upper(),
+         value(right, "source_pmcid", "pmcid").upper()),
+    )
+    if any(a and b and a != b for a, b in pairs):
+        return False
+    if any(a and a == b for a, b in pairs):
+        return True
+    years = value(left, "source_year", "year"), value(right, "source_year", "year")
+    if all(years) and years[0] != years[1]:
+        return False
+    titles = tuple(
+        re.sub(r"[^a-z0-9]+", "", value(row, "source_title", "title").lower())
+        for row in (left, right)
+    )
+    return bool(titles[0] and titles[0] == titles[1])
+
+
+def bibliographic_sources_unique(rows: Sequence[object]) -> bool:
+    return bool(rows) and not any(
+        same_bibliographic_source(row, other)
+        for index, row in enumerate(rows) for other in rows[index + 1:]
+    )
+
+
 def dedupe_receipts(
     summaries: Sequence[ReceiptSummary],
 ) -> tuple[ReceiptSummary, ...]:
@@ -81,27 +121,16 @@ def dedupe_receipts(
     Exact-title matches collapse only when registered identifiers do not
     conflict. The strongest identified, highest-claim receipt wins.
     """
-    def identifiers(row: ReceiptSummary) -> tuple[str, str]:
-        return (row.source_doi or "").lower(), (row.source_pmid or "").lstrip("0")
-
-    def same_source(left: ReceiptSummary, right: ReceiptSummary) -> bool:
-        pairs = tuple(zip(identifiers(left), identifiers(right), strict=True))
-        if any(a and b and a != b for a, b in pairs):
-            return False
-        left_title = re.sub(r"[^a-z0-9]+", "", (left.source_title or "").lower())
-        right_title = re.sub(r"[^a-z0-9]+", "", (right.source_title or "").lower())
-        return (
-            unique_evidence_key(left) == unique_evidence_key(right)
-            or any(a and a == b for a, b in pairs)
-            or bool(left_title and left_title == right_title)
-        )
-
     ranked = sorted(enumerate(summaries), key=lambda item: (
         -(bool(item[1].source_doi) + bool(item[1].source_pmid)), -item[1].n_claims, item[0],
     ))
     kept: list[tuple[int, ReceiptSummary]] = []
     for item in ranked:
-        if not any(same_source(item[1], other) for _, other in kept):
+        if not any(
+            unique_evidence_key(item[1]) == unique_evidence_key(other)
+            or same_bibliographic_source(item[1], other)
+            for _, other in kept
+        ):
             kept.append(item)
     return tuple(row for _, row in sorted(kept))
 

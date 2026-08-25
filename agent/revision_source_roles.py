@@ -7,6 +7,7 @@ from typing import Any, Callable
 
 from agent.evidence_lanes import derive_receipt_lane
 from agent.revision_identity import review_role_contradiction
+from agent.synthesis import bibliographic_sources_unique
 
 _PROPOSED_TRIAL_NOTE = (
     "Design-gap boundary: The proposed long-duration randomized trial is not represented in the retained "
@@ -87,11 +88,16 @@ def _asks_consistent_animal_flag(text: str) -> bool:
     )
 
 
+def _asks_source_uniqueness(text: str) -> bool:
+    return "duplicate source" in text or "source uniqueness" in text
+
+
 def ask_known(ask: str, _rows: Sequence[dict[str, Any]] | None = None) -> bool:
     text = _normalise(ask)
     return any(check(text) for check in (
         _asks_role_reconciliation, _asks_source_indexing,
         _asks_unrepresented_trial, _asks_coded_polarity, _asks_consistent_animal_flag,
+        _asks_source_uniqueness,
     ))
 
 
@@ -375,6 +381,7 @@ def proof_is_stated(paper_md: str, ask: str, rows: Sequence[dict[str, Any]]) -> 
         (_asks_unrepresented_trial, _has_note(paper_md, "Cross-Domain Synthesis", _PROPOSED_TRIAL_NOTE)),
         (_asks_coded_polarity, _has_note(paper_md, "Abstract", _CODED_POLARITY_NOTE)),
         (_asks_consistent_animal_flag, _animal_flags_are_stated(paper_md, ask, rows)),
+        (_asks_source_uniqueness, bibliographic_sources_unique(rows)),
     )
     return all(not matches(text) or passed for matches, passed in checks)
 
