@@ -2008,6 +2008,30 @@ def test_generic_fragment_request_repairs_unnamed_trailing_fragment() -> None:
     assert revision_quality_proof_is_stated(fixed, ask, []) is True
 
 
+def test_fragment_repair_preserves_adjacent_section_heading() -> None:
+    ask = "Delete public word floor boilerplate."
+    paper = (
+        "## Cross-Domain Synthesis\n\nBounded result.\n## Discussion\n\n"
+        "**Thesis:** Bounded.\n\n**Resolution criteria:** Direct evidence.\n\n"
+        "## Limitations\n\nBounded limitation.\n"
+    )
+
+    fixed, details = repair_revision_quality(paper, [], ask)
+
+    assert "\n## Discussion\n\n" in fixed
+    assert details == []
+    assert repair_revision_quality(fixed, [], ask) == (fixed, [])
+    damaged = paper.replace("## Discussion\n\n", "")
+    restored, _details = repair_revision_quality(damaged, [], ask)
+    assert "## Discussion\n\n**Thesis:**" in restored
+    assert repair_revision_quality(restored, [], ask) == (restored, [])
+    unrelated = "## Abstract\n\n**Thesis:** Bounded.\n\n**Resolution criteria:** Direct evidence.\n"
+    assert repair_revision_quality(unrelated, [], ask) == (unrelated, [])
+    for opening, closing in (("```", "```"), ("  ```", "  ```"), ("````", "`````"), ("~~~", "~~~~"), ("`````", "```\n## fake\n`````"), ("`````", "`````not-close\n## fake\n`````")):
+        fenced = damaged.replace("## Cross-Domain Synthesis", f"{opening}text\n## Discussion\n{closing}\n## Cross-Domain Synthesis")
+        assert "\n## Discussion\n\n**Thesis:**" in repair_revision_quality(fenced, [], ask)[0]
+
+
 def test_garbled_named_fragment_request_is_deterministically_satisfied() -> None:
     ask = (
         "Repair the two garbled section fragments (the 'He Longevity Outcomes' "

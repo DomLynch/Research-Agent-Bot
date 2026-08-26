@@ -2,9 +2,8 @@
 
 Phase 6 of the WORLDCLASS rapamycin sprint. Stdlib-only, no LLM.
 
-Scans markdown paper text for AI-template phrases that draw senior-reviewer
-comments without changing the paper's claims. The detector is regex-driven;
-the rewriter (a separate concern) is the only LLM-touching surface.
+Scans markdown paper text for AI-template phrases that draw senior-reviewer comments without changing claims.
+The detector is regex-driven; the rewriter is the only LLM-touching surface.
 
 Categories:
   - generic_research_cliche: "further research is needed"-class phrases
@@ -12,8 +11,7 @@ Categories:
   - vague_limitation:        "evidence base is limited" without specifics
   - unsupported_authority:   "it is clear that", "undeniably", "proves that"
 
-Skipped: code fences (```), markdown table rows (|), references and
-audit-metadata sections (until next heading of equal/higher level).
+Skipped: code fences, tables, references, and audit metadata sections.
 
 Severity:
   - P1: unsupported_authority (overclaiming; gates pass/fail)
@@ -31,6 +29,7 @@ __all__ = [
     "Category",
     "Hit",
     "detect_template_language",
+    "mask_fenced_markdown",
     "hit_to_dict",
     "has_blocking_severity",
     "DENYLIST_ALWAYS",
@@ -168,6 +167,16 @@ def _heading_level_and_text(stripped: str) -> tuple[int, str] | None:
     return len(m.group(1)), m.group(2).strip().lower()
 
 
+def mask_fenced_markdown(markdown: str) -> str:
+    out, fence = [], ""
+    for line in markdown.splitlines(keepends=True):
+        marker = match.group(1) if (match := re.match(r"^[ \t]{0,3}(`{3,}|~{3,})", line)) else ""
+        if marker and (not fence or marker[0] == fence[0] and len(marker) >= len(fence) and not line[len(line) - len(line.lstrip()) + len(marker):].strip()):
+            fence = "" if fence else marker
+        out.append(re.sub(r"[^\n]", " ", line) if fence or marker else line)
+    return "".join(out)
+
+
 def detect_template_language(text: str) -> list[Hit]:
     """Scan markdown text for template-language hits.
 
@@ -175,17 +184,10 @@ def detect_template_language(text: str) -> list[Hit]:
     whose names match SKIP_SECTION_HEADINGS (until the next heading at
     the same or higher level)."""
     hits: list[Hit] = []
-    in_code_fence = False
     skip_until_level: int | None = None
 
-    for i, line in enumerate(text.splitlines(), start=1):
+    for i, line in enumerate(mask_fenced_markdown(text).splitlines(), start=1):
         stripped = line.strip()
-
-        if stripped.startswith("```"):
-            in_code_fence = not in_code_fence
-            continue
-        if in_code_fence:
-            continue
 
         heading = _heading_level_and_text(stripped)
         if heading is not None:

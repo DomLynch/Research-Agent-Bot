@@ -5698,6 +5698,27 @@ def test_finalizer_canonicalizes_surface_valid_cycle(tmp_path: Path, monkeypatch
     assert not second.paper_changed
 
 
+def test_finalizer_restores_missing_discussion_without_cycling(tmp_path: Path, monkeypatch) -> None:
+    from types import SimpleNamespace
+
+    paper = (
+        "## Cross-Domain Synthesis\n\nBounded result.\n"
+        "**Thesis:** Bounded.\n\n**Resolution criteria:** Direct evidence.\n\n"
+        "## Limitations\n\nBounded limitation.\n"
+    )
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "manifest.json").write_text(json.dumps({"receipts": [{"receipt_id": "r1"}]}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": "Delete public word floor boilerplate."}))
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _out: [])
+    monkeypatch.setattr(journal_finalizer, "_surface_report", lambda _text, _out: SimpleNamespace(passed=True))
+
+    first = journal_finalizer.finalize_run(tmp_path)
+    second = journal_finalizer.finalize_run(tmp_path)
+
+    assert (tmp_path / "full_paper.md").read_text().count("## Discussion") == 1
+    assert first.paper_changed and not second.paper_changed
+
+
 def test_finalizer_refreshes_cycle_before_rejecting_stale_surface_state(
     tmp_path: Path, monkeypatch,
 ) -> None:

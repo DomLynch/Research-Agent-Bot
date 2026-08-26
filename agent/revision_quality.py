@@ -13,6 +13,7 @@ from agent.evidence_lanes import is_animal_context
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
 from agent.revision_claim_trace import asks_major_claim_trace, major_claim_trace_is_stated, repair_major_claim_trace
+from agent.template_language import mask_fenced_markdown
 
 
 _EFFECT_STAT_RE = re.compile(
@@ -558,7 +559,7 @@ def _repair_untraceable_statistics(
 
 
 def _fragmentary(paragraph: str) -> bool:
-    stripped = paragraph.strip()
+    stripped = re.sub(r"\n#{2,3}\s+[^\n]+\s*$", "", paragraph).strip()
     if not stripped or stripped.startswith(("#", "|", "-", "*", "```")):
         return False
     return bool(_REVIEWER_BOILERPLATE_SENTENCE_RE.search(paragraph)) or bool(re.match(r"^[,;]", stripped)) or (len(stripped.split()) >= 8 and re.search(r"[.!?:][\"')\]]?$", stripped) is None)
@@ -584,22 +585,21 @@ def _paragraphs_with_headings(paper_md: str) -> list[tuple[str, str]]:
 
 
 def _reviewed_fragments_are_absent(paper_md: str, ask: str) -> bool:
-    if (match := re.search(r"garbled section fragments?\s*\(([^)]*)\)", ask, re.I)) and any(
-        _normalise(fragment) in _normalise(paper_md)
-        for fragment in re.findall(r"['\"]([^'\"]+)['\"]", match.group(1))
-    ):
+    fragments = re.findall(r"['\"]([^'\"]+)['\"]", match.group(1)) if (match := re.search(r"garbled section fragments?\s*\(([^)]*)\)", ask, re.I)) else ()
+    if any(_normalise(fragment) in _normalise(paper_md) for fragment in fragments):
         return False
     targets = _target_headings(paper_md, ask)
-    for heading, paragraph in _paragraphs_with_headings(paper_md):
-        if _fragmentary(paragraph) and (re.match(r"^[,;]", paragraph.strip()) or not targets or heading in targets):
-            return False
-    return True
+    return not any(_fragmentary(paragraph) and (re.match(r"^[,;]", paragraph.strip()) or not targets or heading in targets) for heading, paragraph in _paragraphs_with_headings(paper_md))
 
 
 def _repair_fragmentary_prose(paper_md: str, ask: str) -> tuple[str, int]:
-    targets = _target_headings(paper_md, ask)
-    parts = re.split(r"(\n\s*\n)", paper_md)
-    heading, changed = "", 0
+    visible = mask_fenced_markdown(paper_md)
+    cross, restored = re.search(r"(?ms)^## Cross-Domain Synthesis\b(?P<body>.*?)(?=^## |\Z)", visible), 0
+    if not re.search(r"(?m)^## Discussion\b", visible) and cross and all(marker in cross["body"] for marker in ("**Thesis:**", "**Resolution criteria:**")):
+        pos = cross.start("body") + cross["body"].index("**Thesis:**")
+        paper_md, restored = paper_md[:pos] + "## Discussion\n\n" + paper_md[pos:], 1
+    targets, parts = _target_headings(paper_md, ask), re.split(r"(\n\s*\n)", paper_md)
+    heading, changed = "", restored
     boundary = "This subsection remains bounded to the source-level findings reported in the Findings Map."
     for index in range(0, len(parts), 2):
         part, stripped = parts[index], parts[index].strip()

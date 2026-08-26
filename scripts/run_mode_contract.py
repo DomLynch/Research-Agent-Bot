@@ -9,6 +9,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
+from agent.template_language import mask_fenced_markdown
+
 
 @dataclass(frozen=True, slots=True, kw_only=True)
 class RunModeContract:
@@ -215,17 +217,6 @@ def validate_rendered(methods_md: str) -> list[str]:
     return sorted(found)
 
 
-def _strip_code_fences(s: str) -> str:
-    """Replace fenced code blocks with newline-equivalent whitespace
-    so regex matching against headers ignores ``` blocks. Preserves
-    exact string length so offsets still address the original text."""
-    fence_re = re.compile(r"```.*?```", re.DOTALL)
-
-    def _blank(m: re.Match[str]) -> str:
-        return "".join("\n" if char == "\n" else " " for char in m.group(0))
-    return fence_re.sub(_blank, s)
-
-
 def replace_methods_in_paper(paper_md: str, new_methods_md: str) -> str:
     """Surgically replace the existing `## Methods` block with the
     new deterministic block. Finds the Methods header (case-insensitive,
@@ -238,7 +229,7 @@ def replace_methods_in_paper(paper_md: str, new_methods_md: str) -> str:
 
     Idempotent: running twice produces the same paper (triple-newline
     runs collapsed after substitution)."""
-    safe = _strip_code_fences(paper_md)
+    safe = mask_fenced_markdown(paper_md)
     # Header pattern: line-start + `## Methods` + optional whitespace
     # + end-of-line. Refuses `## Methods Section`, `## Methods and
     # Materials`, etc. Case-insensitive in case the writer drops case.
