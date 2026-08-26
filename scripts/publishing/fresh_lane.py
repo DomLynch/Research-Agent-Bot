@@ -3626,7 +3626,7 @@ def _repair_existing_run(
     if revision_feedback and not resume_checkpoint:
         rows = [row for row in _read_json(source_dir / "manifest.json").get("receipts", []) if isinstance(row, dict)]
         asks = _revision_asks(revision_feedback, _required_revision_items(revision_source or {}))
-        if not asks or re.search(r"\b(?:rebuild|reset|revise|replace)\b.{0,50}\b(?:source bundle|corpus)\b|\b(?:remove|exclude)\b.{0,50}\b(?:off[ -]?topic|unrelated)\b", revision_feedback, re.I) or len(revision_coverage.deterministic_known_asks(asks, evidence_rows=rows)) != len(asks):
+        if not asks or re.search(r"\b(?:rebuild|reset|revise|replace)\b.{0,50}\b(?:source bundle|corpus)\b|\b(?:remove|exclude)\b.{0,50}\b(?:off[ -]?topic|unrelated)\b", revision_feedback, re.I) or not revision_coverage.deterministic_known_asks(asks, evidence_rows=rows):
             return False, "revision_repair_not_deterministic"
     try:
         shutil.copytree(source_dir, out_dir)
@@ -5324,7 +5324,7 @@ def run_cycle(
                     )
                     revision_round_recorded = True
                     break
-                # Reuse prior manuscripts only when deterministic repair covers every ask.
+                # Reuse when any deterministic ask is repairable; coverage still blocks unmet asks.
                 repair_attempted = bool(revision_base_dir and (repair_reason or revision_feedback))
                 existing_repair = False
                 repair_error = ""

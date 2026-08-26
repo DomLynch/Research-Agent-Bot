@@ -175,13 +175,13 @@ def test_long_running_paper_units_restart_after_signal_failures() -> None:
     assert "RestartPreventExitStatus=3" in fresh
 
 
-def test_revise_lane_allows_all_three_bounded_review_rounds() -> None:
+def test_revise_lane_gives_one_review_round_the_full_budget() -> None:
     service = (REPO / "deploy" / "research-agent-paper-revise.service").read_text(encoding="utf-8")
 
-    assert "--max-revise-attempts 3" in service
-    assert "--cycle-budget-sec 3600" in service
+    assert "--max-revise-attempts 1" in service
+    assert "--cycle-budget-sec 10800" in service
     assert "RestartPreventExitStatus=3" in service
-    assert "TimeoutStartSec=8100" in service
+    assert "TimeoutStartSec=16200" in service
 
 
 def test_submit_units_enable_doi_preflight() -> None:
@@ -9280,7 +9280,10 @@ def test_content_revision_reuses_existing_run_when_finalizer_covers_asks(tmp_pat
 
     ok, error = cycle._repair_existing_run(
         source, out, revision_source={"submissionId": "submission-1"},
-        revision_feedback="Add exact source tokens to major claims.",
+        revision_feedback=(
+            "Add exact source tokens to major claims; "
+            "Clarify the implications for clinical practice."
+        ),
     )
 
     assert ok is True
