@@ -317,7 +317,7 @@ def _asks_named_statistic_reconciliation(text: str) -> bool:
         ))
         and any(token in text for token in (
             "if it is not present", "if not present", "not present in", "per endpoint",
-            "which endpoint", "located in the source excerpt", "representative statistic",
+            "which endpoint", "located in the source excerpt", "representative statistic", "all numeric", "every numeric",
             "transcribe", "not transcribed", "bundle supported", "from the source",
         ))
         and any(token in text for token in (
@@ -738,7 +738,7 @@ def _revision_note(kind: str, row: dict[str, Any], index: int, ask: str) -> tupl
         )
     elif kind == "statistic":
         stats = () if "no numerics" in _normalise(ask) and not _source_has_result_statistic(row) else _consistency.preferred_replacement_statistics(ask, _traceable_effect_statistics(row))
-        all_requested = any(token in _normalise(ask) for token in ("transcribe", "numeric", "numerics", "smd"))
+        all_requested = any(token in _normalise(ask) for token in ("transcribe", "all numeric", "every numeric", "smd"))
         if not all_requested and re.search(r"\bp\s*(?:value|[<>=])", ask, re.I):
             statistic_kind = "p-value"
             stats = tuple(stat for stat in stats if stat.lower().startswith("p"))

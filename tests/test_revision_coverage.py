@@ -944,6 +944,18 @@ def test_p_value_and_effect_estimate_repairs_do_not_overwrite_each_other() -> No
     assert repair_revision_quality(fixed, rows, feedback) == (fixed, [])
 
 
+def test_numeric_traceability_p_value_request_does_not_copy_other_statistics() -> None:
+    ask = "Verify Smith 2025 P < 0.001 from the source excerpt and tighten numeric traceability."
+    rows = [{"citation_token": "Smith 2025", "thesis_text": "Uptake was 49.1% versus 17.6%, P < 0.001."}]
+
+    fixed, _ = repair_revision_quality("## Results\n\nBounded result.\n", rows, ask)
+
+    assert "retains P < 0.001" in fixed
+    assert "49.1%" not in fixed and "17.6%" not in fixed
+    all_fixed, _ = repair_revision_quality("## Results\n\nBounded result.\n", rows, "Include every numeric statistic from Smith 2025 with source traceability.")
+    assert "49.1%" in all_fixed and "17.6%" in all_fixed
+
+
 def test_exact_stat_trace_cannot_borrow_a_different_source_value() -> None:
     ask = "For every exact statistic, attach the bundle token or use directional language."
     rows = [
