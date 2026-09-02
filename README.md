@@ -58,3 +58,6 @@ eligibility. Markdown is a rendering target, not the source of truth.
 The live bot runs from `/opt/research-agent-bot` on the VPS. Deploy only from a
 clean tree, fast-forward both VPS checkouts, then verify the service and HTTP
 status endpoint.
+
+
+<!-- Security scan triggered at 2026-09-02 15:43:28 -->
