@@ -278,11 +278,11 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
         if re.match(r"\*\*\s*(?:thesis|resolution\s+criteria)\s*:", norm, flags=re.I) or norm.lower().startswith("outcome-class coded-direction reconciliation:"):
             continue
         table_like = block.lstrip().startswith("|") and block.count("\n|") >= 1
-        # A bulleted / numbered block is structured enumeration, not prose
+        # Lists and source-specific revision notes are enumeration, not prose
         # recap. Its vocabulary is often a small subset of richer prose (e.g. a
         # templated search-query list), which falsely trips the asymmetric
         # near-duplicate test below. Prune lists only on EXACT duplication.
-        list_like = bool(re.match(r"\s*(?:[-*]|\d+[.)])\s", block))
+        list_like = bool(re.match(r"\s*(?:[-*]|\d+[.)])\s|^Source-(?:statistic reconciliation|direction reconciliation|scope boundary) \(", block))
         tokens = set(re.findall(r"[a-z0-9]+", norm.lower()))
         near_seen = not (list_like or table_like) and len(words) >= 18 and any(
             _token_overlap(tokens, prior) >= 0.85 for prior in seen_tokens

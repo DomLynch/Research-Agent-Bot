@@ -5945,6 +5945,28 @@ def test_dedupe_keeps_methods_search_query_list_with_subset_vocab() -> None:
     assert "fasting aging older adults randomized trial" in out
 
 
+def test_source_revision_notes_do_not_oscillate_during_cleanup() -> None:
+    from agent.revision_quality import _upsert_section_note
+
+    dedupe = journal_finalizer.review_noise_control._dedupe_repeated_blocks
+    notes = [
+        f"Source-statistic reconciliation ({name} 2025; p-value): {name} 2025 "
+        "has no bundle-traceable exact statistic; other exact values are excluded, "
+        "and no direction is inferred from a statistic alone."
+        for name in ("Wan", "Hou")
+    ]
+    paper = "## Results\n\nExisting results.\n"
+    for _ in range(3):
+        for note in notes:
+            paper, _ = _upsert_section_note(paper, "Results", note.split(":", 1)[0] + ":", note)
+        before = paper
+        paper, removed = dedupe(paper)
+        assert removed == 0 and paper == before
+        assert all(paper.count(note) == 1 for note in notes)
+    paper, removed = dedupe(paper + "\n\n" + notes[0])
+    assert removed == 1 and paper.count(notes[0]) == 1
+
+
 def test_dedupe_keeps_domain_public_extraction_table_with_subset_vocab() -> None:
     _dedupe_repeated_blocks = journal_finalizer.review_noise_control._dedupe_repeated_blocks
 

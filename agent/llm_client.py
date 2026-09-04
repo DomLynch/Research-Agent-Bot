@@ -521,13 +521,6 @@ def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
         CallSpec(
-            base_url=settings.minimax_base_url,
-            api_key=settings.minimax_api_key,
-            model=settings.minimax_model,
-            timeout_sec=settings.minimax_timeout_sec,
-            max_attempts=_configured_attempts(settings.minimax_base_url),
-        ),
-        CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.fallback_model,
