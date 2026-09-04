@@ -43,6 +43,8 @@ _RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 # fall back to (0, 0) so cost is recorded as 0 rather than crashing the
 # pipeline when a new model is wired up but not yet priced.
 _PRICING: Mapping[str, tuple[float, float]] = {
+    # GLM standard rates; OpenRouter's returned cost includes discounts/cache.
+    "z-ai/glm-5.3-flash": (0.00015, 0.00050),
     # MiniMax M3 standard tier, <=512k input tokens: $0.30/1M in, $1.20/1M out
     "MiniMax-M3": (0.00030, 0.00120),
     # Legacy MiMo V2.5 Pro (Xiaomi-hosted): $0.14/1M in, $0.28/1M out
@@ -309,6 +311,9 @@ async def _call_one(
         payload["response_format"] = {"type": "json_object"}
     if max_tokens is not None:
         payload["max_tokens"] = max_tokens
+    if spec.model == "z-ai/glm-5.3-flash":
+        payload["reasoning"] = {"effort": "low", "exclude": True}
+        payload.setdefault("max_tokens", 16384)
     if seed is not None:
         # OpenAI-compatible seed: same seed + same prompt + temperature 0
         # → byte-identical response (best-effort; some providers honor
@@ -331,7 +336,9 @@ async def _call_one(
     if not isinstance(first, Mapping) or not isinstance(first.get("message"), Mapping):
         raise ValueError("chat response has no message object")
     choice = first["message"]
-    text = choice.get("content") or choice.get("reasoning_content")
+    text = choice.get("content")
+    if not text and spec.model != "z-ai/glm-5.3-flash":
+        text = choice.get("reasoning_content")
     if not isinstance(text, str) or not text.strip():
         raise ValueError("chat response has no assistant text")
     parsed = extract_json(text)
@@ -345,7 +352,10 @@ async def _call_one(
         model=spec.model,
         input_tokens=in_tok,
         output_tokens=out_tok,
-        estimated_cost_usd=_estimate_cost(spec.model, in_tok, out_tok),
+        estimated_cost_usd=(
+            float(usage["cost"]) if usage.get("cost") is not None
+            else _estimate_cost(spec.model, in_tok, out_tok)
+        ),
     )
 
 

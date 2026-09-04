@@ -32,6 +32,7 @@ def isolated_dotenv(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
         "MINIMAX_API_KEY", "MIMO_API_KEY", "OPENROUTER_API_KEY",
         "MINIMAX_MODEL", "MINIMAX_BASE_URL", "MINIMAX_TIMEOUT_SEC",
         "MIMO_MODEL", "MIMO_BASE_URL", "MIMO_TIMEOUT_SEC",
+        "WRITER_MODEL", "WRITER_TIMEOUT_SEC", "OPENROUTER_BASE_URL",
         "JUDGE_MODEL", "FALLBACK_MODEL",
         "DOTENV_TEST_KEY", "DOTENV_QUOTED", "FINAL_LAYER_REVIEWER_MODEL",
         "DOTENV_OVERRIDE_TEST",
@@ -96,8 +97,8 @@ def test_load_settings_defaults_when_unset(
     s = settings_module.load_settings()
     assert s.minimax_api_key == ""
     assert s.openrouter_api_key == ""
-    assert s.minimax_model == "mimo-v2.5-pro"
-    assert s.minimax_base_url == "https://token-plan-sgp.xiaomimimo.com/v1"
+    assert s.minimax_model == "z-ai/glm-5.3-flash"
+    assert s.minimax_base_url == "https://openrouter.ai/api/v1"
     assert s.judge_model == "google/gemma-4-31b-it"
     assert s.fallback_model == "mistralai/mistral-small-2603"
     assert s.final_layer_reviewer_model == "google/gemma-4-31b-it"
@@ -110,11 +111,11 @@ def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_api_key == "mimo-test-key"
+    assert s.minimax_api_key == "or-test-key"
     assert s.openrouter_api_key == "or-test-key"
 
 
-def test_load_settings_prefers_mimo_key(
+def test_load_settings_never_sends_legacy_keys_to_openrouter(
     isolated_dotenv: Path,
 ) -> None:
     (isolated_dotenv / ".env").write_text(
@@ -123,10 +124,10 @@ def test_load_settings_prefers_mimo_key(
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_api_key == "mimo-test-key"
+    assert s.minimax_api_key == ""
 
 
-def test_load_settings_prefers_mimo_provider_names(
+def test_load_settings_ignores_stale_writer_provider_names(
     isolated_dotenv: Path,
 ) -> None:
     (isolated_dotenv / ".env").write_text(
@@ -139,24 +140,24 @@ def test_load_settings_prefers_mimo_provider_names(
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_model == "legacy-mimo"
-    assert s.minimax_base_url == "https://legacy.example/v1"
-    assert s.minimax_timeout_sec == 9.0
+    assert s.minimax_model == "z-ai/glm-5.3-flash"
+    assert s.minimax_base_url == "https://openrouter.ai/api/v1"
+    assert s.minimax_timeout_sec == 180.0
     assert s.mimo_model == s.minimax_model
 
 
-def test_load_settings_keeps_minimax_provider_rollback_alias(
+def test_load_settings_accepts_explicit_writer_configuration(
     isolated_dotenv: Path,
 ) -> None:
     (isolated_dotenv / ".env").write_text(
-        "MINIMAX_MODEL=MiniMax-M3\n"
-        "MINIMAX_BASE_URL=https://api.minimax.io/anthropic\n"
-        "MINIMAX_TIMEOUT_SEC=9\n",
+        "WRITER_MODEL=vendor/writer\n"
+        "OPENROUTER_BASE_URL=https://openrouter.example/api/v1\n"
+        "WRITER_TIMEOUT_SEC=9\n",
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_model == "MiniMax-M3"
-    assert s.minimax_base_url == "https://api.minimax.io/anthropic"
+    assert s.minimax_model == "vendor/writer"
+    assert s.minimax_base_url == "https://openrouter.example/api/v1"
     assert s.minimax_timeout_sec == 9.0
 
 

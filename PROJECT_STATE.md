@@ -1,5 +1,12 @@
 # PROJECT_STATE.md
 
+## Writer Route - 2026-09-04
+Main writer/extractor now uses OpenRouter `z-ai/glm-5.3-flash`, not the moving
+latest alias. Gemma review and Mistral reviewer fallback are unchanged. GLM
+uses low reasoning effort with a 16,384-token default ceiling (explicit caller
+limits win). API-reported cost takes precedence over standard-rate estimates.
+No publication gate or schedule changed; full-manuscript quality is not yet measured.
+
 ## Current Objective
 Make Research Agent Bot produce genuinely world-class biomedical research papers.
 Immediate sprint: clear release-green blockers, then raise the rapamycin paper

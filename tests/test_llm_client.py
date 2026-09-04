@@ -560,6 +560,53 @@ def test_chat_json_estimates_cost_for_known_model() -> None:
     assert resp.estimated_cost_usd == pytest.approx(0.00042, abs=1e-7)
 
 
+@pytest.mark.parametrize("max_tokens", [None, 512])
+@pytest.mark.parametrize("cost", [None, 0.0, 0.0001])
+def test_glm_writer_request_and_cost(max_tokens: int | None, cost: float | None) -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        payload = json.loads(request.content)
+        assert str(request.url) == "https://openrouter.ai/api/v1/chat/completions"
+        assert request.headers["Authorization"] == "Bearer or-key"
+        assert payload["model"] == "z-ai/glm-5.3-flash"
+        assert payload["reasoning"] == {"effort": "low", "exclude": True}
+        assert payload["max_tokens"] == (16384 if max_tokens is None else max_tokens)
+        assert payload["response_format"] == {"type": "json_object"}
+        body = _ok_body(prompt_tok=1000, comp_tok=1000)
+        body["usage"]["cost"] = cost
+        return httpx.Response(200, json=body)
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[{"role": "user", "content": "Return JSON."}],
+                chain=build_extract_chain(_settings()), client=client, max_tokens=max_tokens,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert resp.parsed == {"x": 1}
+    assert resp.estimated_cost_usd == pytest.approx(0.00065 if cost is None else cost)
+
+
+def test_glm_does_not_treat_reasoning_as_a_finished_answer() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        body = _ok_body("")
+        body["choices"][0]["message"]["reasoning_content"] = '{"not_final": true}'
+        return httpx.Response(200, json=body)
+
+    async def go() -> None:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            await chat_json(messages=[], chain=(_spec("z-ai/glm-5.3-flash"),), client=client)
+        finally:
+            await client.aclose()
+
+    with pytest.raises(LLMError, match="no assistant text"):
+        _run(go())
+
+
 def test_chat_json_unknown_model_costs_zero() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(
@@ -756,13 +803,13 @@ def test_chat_json_seed_forwarded_to_every_chain_spec() -> None:
 
 
 def _settings(
-    minimax_key: str = "minimax-key", openrouter_key: str = "or-key",
+    minimax_key: str = "or-key", openrouter_key: str = "or-key",
     judge_model: str = "google/gemma-4-31b-it",
 ) -> Settings:
     return Settings(
         minimax_api_key=minimax_key,
-        minimax_model="mimo-v2.5-pro",
-        minimax_base_url="https://token-plan-sgp.xiaomimimo.com/v1",
+        minimax_model="z-ai/glm-5.3-flash",
+        minimax_base_url="https://openrouter.ai/api/v1",
         minimax_timeout_sec=30.0,
         openrouter_api_key=openrouter_key,
         openrouter_base_url="https://or.example/v1",
@@ -777,7 +824,7 @@ def _settings(
 
 def test_build_extract_chain_uses_only_configured_writer() -> None:
     chain = build_extract_chain(_settings())
-    assert [spec.model for spec in chain] == ["mimo-v2.5-pro"]
+    assert [spec.model for spec in chain] == ["z-ai/glm-5.3-flash"]
 
 
 def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
@@ -797,6 +844,7 @@ def test_build_extract_chain_sets_retry_attempts(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setenv("LLM_CALL_ATTEMPTS", "3")
+    monkeypatch.setenv("OPENROUTER_CALL_ATTEMPTS", "3")
     chain = build_extract_chain(_settings())
     assert [s.max_attempts for s in chain] == [3]
 
@@ -807,12 +855,12 @@ def test_build_extract_chain_sets_retry_attempts(
 def test_build_judge_chain_excludes_writer_family() -> None:
     """Trust-spine rule (judge != writer): the judge chain must never contain
     the writer/extractor family. Gemma (primary) → Mistral (fallback); the
-    MiMo writer model is dropped so a provider outage can't route judging
+    GLM writer model is dropped so a provider outage can't route judging
     back to the writer (never let a model grade its own output)."""
     chain = build_judge_chain(_settings())
     models = [s.model for s in chain]
     assert models == ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"]
-    assert "mimo-v2.5-pro" not in models
+    assert "z-ai/glm-5.3-flash" not in models
 
 
 def test_build_judge_chain_keeps_empty_keys_but_drops_writer_family() -> None:
@@ -830,5 +878,5 @@ def test_build_judge_chain_drops_writer_family_judge_primary() -> None:
     """A judge_model misconfigured to the writer's family is dropped rather
     than allowed to grade its own output; the chain falls through to a
     non-writer model."""
-    chain = build_judge_chain(_settings(judge_model="mimo-v2.5-pro"))
+    chain = build_judge_chain(_settings(judge_model="z-ai/glm-5.3-flash"))
     assert [s.model for s in chain] == ["mistralai/mistral-small-2603"]

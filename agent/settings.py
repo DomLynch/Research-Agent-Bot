@@ -35,7 +35,7 @@ def _float(name: str, default: float) -> float:
 
 @dataclass(frozen=True, slots=True)
 class Settings:
-    # Provider — primary writer/extractor
+    # Primary writer/extractor; legacy field names preserve caller compatibility.
     minimax_api_key: str
     minimax_model: str
     minimax_base_url: str
@@ -79,19 +79,10 @@ class Settings:
 def load_settings() -> Settings:
     _load_dotenv_if_present()
     return Settings(
-        # MINIMAX_* remains a rollback alias while MIMO_* is canonical.
-        minimax_api_key=(
-            os.environ.get("MIMO_API_KEY")
-            or os.environ.get("MINIMAX_API_KEY", "")
-        ).strip(),
-        minimax_model=os.environ.get("MIMO_MODEL")
-        or os.environ.get("MINIMAX_MODEL", "mimo-v2.5-pro"),
-        minimax_base_url=os.environ.get("MIMO_BASE_URL")
-        or os.environ.get("MINIMAX_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"),
-        minimax_timeout_sec=_float(
-            "MIMO_TIMEOUT_SEC",
-            _float("MINIMAX_TIMEOUT_SEC", 180.0),
-        ),
+        minimax_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
+        minimax_model=os.environ.get("WRITER_MODEL", "z-ai/glm-5.3-flash"),
+        minimax_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+        minimax_timeout_sec=_float("WRITER_TIMEOUT_SEC", 180.0),
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
         openrouter_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
         judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-31b-it"),
