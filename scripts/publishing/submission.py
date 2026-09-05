@@ -2329,7 +2329,7 @@ def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = 
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)
     paper = _ensure_core_source_traces(paper, source_bundle)
-    paper = re.sub(r"(?ims)(\A# [^\n]+|^## (?:Abstract|Conclusion)\b.*?(?=^## |\Z))", lambda block: re.sub(r"\bunresolved\b", lambda word: "Unsettled" if word.group()[0].isupper() else "unsettled", block.group()), paper)
+    paper = re.sub(r"(?ims)(\A# [^\n]+|^## (?:Abstract|Conclusion)\b.*?(?=^## |\Z))", lambda block: re.sub(r"\bunresolved\b", lambda word: "Unsettled" if word.group()[:1].isupper() else "unsettled", block.group()), paper)
     title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"
     _publication_evidence.attach_evidence_spans(paper, source_bundle)
     sections = _sections(paper)
