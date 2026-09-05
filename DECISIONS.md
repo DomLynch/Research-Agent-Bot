@@ -727,6 +727,13 @@ subprocess linkage had to be resolved before any file was removed.
 **Revisit if:** Proof-001/SPAR is revived as a live engine; recover from git
 history rather than re-implementing.
 
+## 2026-09-05 — Keep diagnostic tooling optional
+**Decision:** Add state, order, branch-coverage, replay, and live-process tools
+under `.[diagnostics]`, outside runtime and normal CI dependencies.
+
+**Why:** They localize intermittent V3 failures without adding production code,
+hook latency, or default-suite randomness. Install them only for a focused run.
+
 ## 2026-08-13 — Bounded LOC allowance for reviewer-defect repair
 **Decision:** Use 100 of the operator-approved 5,000-line allowance: raise the
 `agent/` ceiling by 10 and the `scripts/` and combined ceilings by 100.

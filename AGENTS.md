@@ -79,6 +79,10 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 'cd /opt/research-agent-bot && git rev-parse --short HEAD && git status --short && systemctl is-active research-agent-bot.service && curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8791/'
 ```
 
+Focused investigations may install `.[diagnostics]`: use Hypothesis for state
+transitions, pytest-randomly for order dependence, coverage for the failing
+branch, VizTracer for controlled replay, and py-spy for a live stuck process.
+
 ## Deploy Notes
 - VPS public IP: `49.12.7.18`; Tailscale IP: `100.96.74.1`.
 - SSH key: `~/.ssh/binance_futures_tool`.
